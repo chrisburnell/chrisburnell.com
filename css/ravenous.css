@@ -22,8 +22,9 @@
 
 /* Hide the fonts from use.typekit.com before they have finished loading */
 .wf-loading .logo, .wf-loading h1, .wf-loading h2, .wf-loading h3 {
-    color: transparent !important;
-    text-shadow: none !important;
+    color: transparent;
+    text-shadow: none;
+    visibility: hidden;
 }
 .wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3 {
     -webkit-animation: fadeIn 1s;
@@ -351,7 +352,7 @@ article, .articles {
             margin-bottom: .25em;
         }
     .article-description {
-        font-size: 1.25em;
+        font-size: 1.5em;
     }
 
 .video-container {
