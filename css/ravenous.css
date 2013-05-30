@@ -148,7 +148,7 @@ h3 {
 p {
     margin: 0;
 }
-    article p:not(:last-child) {
+    article > p:not(:last-child) {
         margin-bottom: 1em;
     }
 
@@ -435,7 +435,7 @@ aside {
             }
         .related-articles h3 {
             padding: .5em 0;
-            border-bottom: .25em solid rgba(6,6,6,.05);
+            border-top: .25em solid rgba(6,6,6,.05);
         }
         .related-articles ul {
             list-style: none;
