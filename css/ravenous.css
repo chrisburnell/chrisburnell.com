@@ -434,7 +434,8 @@ aside {
                 background: none;
             }
         .related-articles h3 {
-            margin-bottom: .5em;
+            padding: .5em 0;
+            border-bottom: .25em solid rgba(6,6,6,.05);
         }
         .related-articles ul {
             list-style: none;
