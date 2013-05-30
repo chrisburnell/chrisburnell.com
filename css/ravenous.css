@@ -345,12 +345,12 @@ article, .articles {
             padding-bottom: 1em;
             border-bottom: .25em solid rgba(6,6,6,.05);
         }
-        .articles-list h1 {
-            margin-bottom: .1em;
-        }
         .articles-list h3 {
-            margin-bottom: .25em;
+            margin-bottom: .5em;
         }
+            .articles-list h3:before {
+                content: "&ndash; ";
+            }
     .article-introduction {
         font-size: 1.25em;
     }
