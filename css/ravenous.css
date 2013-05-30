@@ -87,10 +87,10 @@ a {
     -moz-user-select:    none;
     user-select:         none;
 }
-    article a {
+    article a, .articles a {
         color: rgba(95,138,166,.9);
     }
-        article a:hover {
+        article a:hover, .articles a:hover {
             text-decoration: underline;
         }
 
@@ -425,19 +425,16 @@ aside {
         }
         .related-articles ul {
             list-style: none;
-            line-height: 1.2em;
+            line-height: 1.25em;
         }
-            .related-articles .article-title {
-                font-size: .9375em;
-                font-weight: 600;
-            }
             .related-articles .article-date {
                 font-size: .81em;
+                padding-left: .75em;
             }
 
 /* ---- 09. Forms ---- */
 
-
+/* need to extract this stuff from comments.css */
 
 /* ---- 10. Code Blocks ---- */
 
