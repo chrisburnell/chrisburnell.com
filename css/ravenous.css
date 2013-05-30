@@ -80,8 +80,8 @@ body {
 
 a {
     text-decoration: none;
-    -webkit-transition: background-color .25s ease .1s, color .25s ease .1s, text-shadow .25s ease .1s;
-    transition:         background-color .25s ease .1s, color .25s ease .1s, text-shadow .25s ease .1s;
+    -webkit-transition: background-color .25s ease-in-out .1s, color .25s ease-in-out .1s, text-shadow .25s  ease-in-out .1s;
+    transition:         background-color .25s ease-in-out .1s, color .25s ease-in-out .1s, text-shadow .25s  ease-in-out .1s;
     -webkit-user-select: none;
     -moz-user-select:    none;
     user-select:         none;
