@@ -520,6 +520,11 @@ footer {
 .s, .logo:after { background: url("/img/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
+.twitter { color: #1AB2E8 !important; background-image: url("/img/glyph-twitter.png"); }
+.forrst { color: #223F17 !important; background-image: url("/img/glyph-forrst.png"); }
+.lastfm { color: #D51007 !important; background-image: url("/img/glyph-lastfm.png"); }
+.codepen { color: #999!important; background-image: url("/img/glyph-codepen.png"); }
+
 .gray { color: #6f6f6f; }
 .blue { color: #5f8aa6; }
 .red { color: #dd3322; }
@@ -561,8 +566,3 @@ strong, .bold { font-weight: 600; }
 .no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
 
 sup { top: -0.3em; }
-
-.twitter { color: #1AB2E8; background-image: url("/img/glyph-twitter.png"); }
-.forrst { color: #223F17; background-image: url("/img/glyph-forrst.png"); }
-.lastfm { color: #D51007; background-image: url("/img/glyph-lastfm.png"); }
-.codepen { color: #999; background-image: url("/img/glyph-codepen.png"); }
