@@ -1,0 +1,119 @@
+/* ---- ##. Comments ---- */
+
+.comments-title {
+    padding-top: 20px;
+    border-top: 4px solid rgba(6,6,6,.05);
+}
+.comments ul {
+    list-style: none;
+}
+    .comments ul li {
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+        .comments ul aside {
+            min-height: 64px;
+            text-align: right;
+        }
+            .comments ul .comment p {
+                font-family: "proxima-nova";
+            }
+            .comments ul aside img {
+                width: 64px;
+                height: 64px;
+                margin-left: 10px;
+                float: right;
+            }
+            .comments ul aside div {
+                width: 169px;
+                margin: 0 0 0.8em;
+                float: left;
+                font-weight: 600;
+                font-size: .875em;
+                font-family: "proxima-nova", sans-serif;
+                text-transform: uppercase;
+                word-wrap: break-word;
+            }
+                .comments ul aside div span {
+                    font-family: "ff-meta-serif-web-pro", serif;
+                    font-weight: 400;
+                    font-style: italic;
+                    text-transform: lowercase;
+                }
+
+.comments-title, .comments li, .comments .notifications, .comments .name, .comments .email, .comments .textarea, .comments .submit {
+    padding-left: 269px;
+}
+    .comments .notifications p {
+        padding-bottom: 20px;
+        font-family: "proxima-nova", sans-serif;
+    }
+
+.comments-form {
+    padding: 20px 0;
+}
+    .comments-form aside label, .comments-form aside em {
+        width: 100%;
+        display: block;
+        clear: both;
+        font-family: "proxima-nova", sans-serif;
+        text-align: right;
+    }
+        .comments-form div {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+            .comments-form label {
+                margin-top: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .comments-form em {
+                font-size: 0.875em;
+            }
+            .comments .error {
+                color: #ff3333;
+            }
+    .comments-form input[type="text"], .comments-form input[type="email"], .comments-form textarea {
+        background: rgba(249,249,249,.3);
+        color: #9f9f9f;
+        width: 250px;
+        height: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 2px solid rgba(6,6,6,.05);
+        font: 600 1em/20px "proxima-nova", sans-serif;
+        text-shadow: 0 -1px 0 rgba(249,249,249,.4);
+        border-radius: .1875em;
+        -webkit-transition: border-color .25s ease-in-out, color .25s ease-in-out, background .25s ease-in-out;
+        transition:         border-color .25s ease-in-out, color .25s ease-in-out, background .25s ease-in-out;
+    }
+        .comments-form textarea {
+            width: 96%;
+            min-width: 250px;
+            max-width: 400px;
+            height: 150px;
+            min-height: 100px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+            textarea:after {
+                color: rgba(6,6,6,.3);
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                content: "\2712";
+                font: 400 720px/22px "Entypo";
+            }
+        .comments-form input[type="text"]:focus, .comments-form input[type="email"]:focus, .comments-form textarea:focus {
+            background: rgba(249,249,249,.9);
+            color: #4f4f4f;
+            border-color: rgba(95,138,166,.6);
+        }
+        .comments-form input[type="text"].error, .comments-form input[type="email"].error, .comments-form textarea.error {
+            border-color: rgba(255,51,51,.6);
+        }
+            .comments-form input[type="text"].error:focus, .comments-form input[type="email"].error:focus, .comments-form textarea.error:focus {
+                border-color: rgba(255,51,51,.85);
+            }

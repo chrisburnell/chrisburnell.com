@@ -1,0 +1,21 @@
+title: Chris Burnell
+author: Chris Burnell
+author_biography: 'Chris is a Canadian front-end web developer living in London UK and working at <a href="http://squiz.co.uk/" rel="work">Squiz</a>. Driven by a passion for clean CSS, he hopes to someday see the death of hasLayout and all that Internet Explorer does to destroy his life.'
+description: "I'm Chris Burnell, a Canadian front-end web developer living in London, UK. This is where I write about and share my true passion: CSS architecture, design, innovation, and standards."
+url: http://chrisburnell.com
+
+destination: ./_site
+plugins: ./_plugins
+layouts: ./_layouts
+
+include: ['.htaccess']
+exclude: []
+
+permalink: /articles/:title
+paginate: 10
+paginate_path: 'page:num'
+
+markdown: maruku
+markdown_ext: markdown,mkd,mkdn,md
+
+regenerate: -w

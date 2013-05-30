@@ -1,0 +1,29 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Chris Burnell</title>
+ <link href="http://chrisburnell.com/feed.xml" rel="self"/>
+ <link href="http://chrisburnell.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://chrisburnell.com/</id>
+ <author>
+     <name>Chris Burnell</name>
+     <email>me@chrisburnell.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+     <title>{{ post.title }}</title>
+     <link href="http://chrisburnell.com{{ post.url }}"/>
+     <updated>{{ post.date | date_to_xmlschema }}</updated>
+     <id>http://chrisburnell.com{{ post.id }}</id>
+     {% if post.meta %}
+        <content type="html">{{ post.meta }}</content>
+        {% endif %}
+ </entry>
+ {% endfor %}
+
+</feed>

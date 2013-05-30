@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<!--N
+  DIIII8
+    N7III7Z
+      $IIIII78
+       $IIIII7
+       NIIIIIIZ               N
+        77IIIII             D $D
+        87IIIII7         DN Z$O$ $
+         7IIIIIIZ     $Z8NI7NIIIO7
+          8IIIIII77I77IIIIIIIIIIII
+           N7IIIIIIIIIIIIIIIIIIIII
+7DN      O777IIIIIIIIIIIIIIII7$7$N
+ III7I7O$IIIIIIIIIIIIIIIII7O
+  O7IIIIIIIIIIIIIIIIIII7ZN
+   8$IIIIIIIIIIIIIIIIIII7
+     NO$IIIIIIIIII777IIIIN
+            7DZIZ     7I$
+          NOI7N        7Z
+           8NZ
+           -->
+
+<html lang="en" class="page-article  {{ page.page-class }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <!-- Prefetch DNS for external assets (Analytics, Typekit, etc.) -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+
+    <title>{{ site.author }} &ndash; {{ page.title }}</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.min.css">
+    <link rel="stylesheet" href="/css/ravenous.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var config = {
+            kitId: 'bbn1puz',
+            scriptTimeout: 3000
+        };
+        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+    </script>
+
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/icon.png">
+    <meta name="apple-mobile-web-app-title" content="chrisburnell">
+    <meta name="description" content="{{ site.description }}">
+
+</head>
+<body>
+
+    <header class="wrap  clear">
+        <a href="{{ site.url }}" class="logo  no-select"><span>{{ site.author }}</span></a>
+        <nav role="navigation">
+            <ul class="main-nav">
+                <li class="main-nav-home"><a href="/">Home</a></li><!--
+             --><li class="main-nav-about"><a href="/about/">About</a></li><!--
+             --><li class="main-nav-contact"><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content  wrap  clear">
+        <article>
+            <h1>{{ page.title }}</h1>
+            <aside class="author">
+                <div class="author-information">
+                    <img src="/img/avatar.png" class="author-image  rounded" rel="author">
+                    <div class="author-name">by <strong>{{ site.author }}</strong></div>
+                    <div class="article-date">{{ page.date | date: "%d %B, %Y" }}</div>
+                    <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>
+                </div>
+                <div class="author-biography">
+                    <p>{{ site.author_biography }}</p>
+                </div>
+                <div class="related-posts">
+                    <h3>Related Posts</h3>
+                    <ul>
+                        {{ site.related_posts }}
+                    </ul>
+                </div>
+            </aside>
+            <img src="{{ site.url }}/img/article-banners/{{ page.slug }}.png" class="banner  rounded">
+            <p class="article-introduction">{{ page.introduction }}</p>
+            {{ content }}
+        </article>
+    </section>
+
+    <footer>
+        <section class="footer-container  wrap  clear">
+            <div class="float  left"><a href="/" title="{{ site.author }}" class="s"></a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" title="Creative Commons License">&copy; 2013 {{ site.author }}</a></div>
+            <div class="float  right">
+                <a href="http://twitter.com/iamchrisburnell" title="Twitter" rel="twitter" class="twitter  no-text">Twitter</a>
+                <a href="http://codepen.io/chrisburnell" title="CodePen" rel="codepen" class="codepen  no-text">CodePen</a>
+                <a href="http://forrst.me/chrisburnell" title="Forrst" rel="forrst" class="forrst  no-text">Forrst</a>
+                <a href="http://last.fm/user/chrisburnell" title="Last.FM" rel="lastfm" class="lastfm  no-text">Last.FM</a>
+            </div>
+        </section>
+    </footer>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10353655-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>
