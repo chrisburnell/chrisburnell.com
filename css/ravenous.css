@@ -181,7 +181,7 @@ button, .button {
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-    color: #f9f9f9;
+    color: #f9f9f9 !important;
     min-width: 8em;
     margin: 0;
     padding: 0 .625em;
@@ -192,7 +192,7 @@ button, .button {
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     text-transform: uppercase;
     text-shadow: 0 -0.0625em 0 rgba(6,6,6,.15);
     cursor: pointer;
@@ -356,6 +356,7 @@ article, .articles {
             }
     .article-introduction {
         font-size: 1.25em;
+        margin-bottom: .5em;
     }
 
 .video-container {
