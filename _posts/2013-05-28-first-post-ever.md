@@ -3,7 +3,7 @@ title: First Post Ever
 slug: first-post-ever
 date: 2013-05-28 11:00:00
 layout: article
-introduction: Lintroduction ipsum dolor sit amet, consectetur adipiscing elit.
+introduction: Llllllllllintrodwuction ipsum dolor sit amet, consectetur adipiscing elit.
 tags:
 - css
 - html
