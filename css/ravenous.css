@@ -413,6 +413,11 @@ aside {
             clear: both;
             font-size: .875em;
         }
+            .author-biography .twitter,
+            .author-biography .codepen,
+            .author-biography .lastfm {
+                background: none;
+            }
 
 /* ---- 09. Forms ---- */
 
@@ -557,7 +562,7 @@ strong, .bold { font-weight: 600; }
 
 sup { top: -0.3em; }
 
-.twitter { background-image: url("/img/glyph-twitter.png"); }
-.forrst { background-image: url("/img/glyph-forrst.png"); }
-.lastfm { background-image: url("/img/glyph-lastfm.png"); }
-.codepen { background-image: url("/img/glyph-codepen.png"); }
+.twitter { color: #1AB2E8; background-image: url("/img/glyph-twitter.png"); }
+.forrst { color: #223F17; background-image: url("/img/glyph-forrst.png"); }
+.lastfm { color: #D51007; background-image: url("/img/glyph-lastfm.png"); }
+.codepen { color: #999; background-image: url("/img/glyph-codepen.png"); }
