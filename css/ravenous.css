@@ -1,29 +1,31 @@
 /**
- *    Ravenous
- *    The sixth iteration of chrisburnell.com.
- *    by Chris Burnell
+ *  Ravenous
+ *  The sixth iteration of chrisburnell.com.
+ *  by Chris Burnell
+ *
+ *  Table of Contents:
+ *  01: Typekit Preload
+ *  02: Symbol font-face Load
+ *  03: General and Typography
+ *  04: Buttons
+ *  05: Header
+ *  06: Navigation
+ *  07: Articles
+ *  08: Asides
+ *  09: Forms
+ *  10: Code Blocks
+ *  11: Footer
+ *  12: Miscellaneous
  */
 
-/* ---- ##. Symbol Font Face ---- */
+/* ---- 01. Typekit Preload ---- */
 
-@font-face {
-    font-family: "Entypo";
-    font-weight: normal;
-    font-style: normal;
-    src: url("../fonts/entypo.eot");
-    src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/entypo.woff") format("woff"),
-         url("../fonts/entypo.ttf") format("truetype"),
-         url("../fonts/entypo.svg#entypo") format("svg");
-}
-
-/* ---- ##. Typekit Preload ---- */
-
-.wf-loading .typekit {
+/* Hide the fonts from use.typekit.com before they have finished loading */
+.wf-loading .logo, .wf-loading h1, .wf-loading h2, .wf-loading h3 {
     color: transparent !important;
     text-shadow: none !important;
 }
-.wf-active .typekit {
+.wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3 {
     -webkit-animation: fadeIn 1s;
     animation:         fadeIn 1s;
 }
@@ -36,7 +38,20 @@
     100% { opacity: 1; }
 }
 
-/* ---- ##. General and Typography ---- */
+/* ---- 02. Symbol font-face Load ---- */
+
+@font-face {
+    font-family: "Entypo";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/entypo.eot");
+    src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/entypo.woff") format("woff"),
+         url("../fonts/entypo.ttf") format("truetype"),
+         url("../fonts/entypo.svg#entypo") format("svg");
+}
+
+/* ---- 03. General and Typography ---- */
 
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
 ::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
@@ -155,7 +170,7 @@ hr {
     display: block;
 }
 
-/* ---- ##. Buttons ---- */
+/* ---- 04. Buttons ---- */
 
 button, .button {
     background-color: #6f96af;
@@ -215,7 +230,7 @@ button, .button {
             bottom: 0;
         }
 
-/* ---- ##. Header ---- */
+/* ---- 05. Header ---- */
 
 header {
     height: 110px;
@@ -253,7 +268,7 @@ header {
             top: 2px;
         }
 
-/* ---- ##. Navigation ---- */
+/* ---- 06. Navigation ---- */
 
 nav {
     margin-top: 1.25em;
@@ -315,7 +330,7 @@ nav {
                     line-height: 1.15em;
                 }
 
-/* ---- ##. Main Content ---- */
+/* ---- 07. Articles ---- */
 
 article, .articles {
     margin-bottom: 1em;
@@ -356,7 +371,7 @@ article, .articles {
         left: 0;
     }
 
-/* ---- ##. Asides ---- */
+/* ---- 08. Asides ---- */
 
 aside {
     width: 243px; /* 30% at 100% body width */
@@ -400,7 +415,11 @@ aside {
             text-align: justify;
         }
 
-/* ---- ##. Code Blocks ---- */
+/* ---- 09. Forms ---- */
+
+
+
+/* ---- 10. Code Blocks ---- */
 
 pre:not(.codepen), code {
     font-family: Monaco, 'Courier New', serif;
@@ -426,7 +445,7 @@ pre:not(.codepen), code {
             z-index: 0;
         }
 
-/* ---- ##. Footer ---- */
+/* ---- 11. Footer ---- */
 
 footer {
     background: #4f4f4f;
@@ -492,7 +511,7 @@ footer {
                 top: .14em;
             }
 
-/* ---- ##. Miscellaneous ---- */
+/* ---- 12. Miscellaneous ---- */
 
 .s, .logo:after { background: url("/img/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
