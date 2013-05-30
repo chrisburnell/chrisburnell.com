@@ -351,8 +351,8 @@ article, .articles {
         .articles-list h3 {
             margin-bottom: .25em;
         }
-    .article-description {
-        font-size: 1.5em;
+    .article-introduction {
+        font-size: 1.25em;
     }
 
 .video-container {
