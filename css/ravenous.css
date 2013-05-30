@@ -108,7 +108,7 @@ h1 {
     text-shadow: .048em .048em 0 rgba(0,0,0,.08);
 }
     h1 a {
-        color: inherit;
+        color: #4f4f4f;
         display: inline-block;
     }
         h1 a:hover {
