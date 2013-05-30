@@ -420,6 +420,9 @@ aside {
             .author-biography .lastfm {
                 background: none;
             }
+        .related-posts ul {
+            list-style: none;
+        }
 
 /* ---- 09. Forms ---- */
 

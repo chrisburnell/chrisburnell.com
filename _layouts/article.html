@@ -18,7 +18,10 @@
                     <h3>Related Posts</h3>
                     <ul>
                         {% for post in site.related_posts limit:3 %}
-                        <li><a href="{{ post.url }}">{{ post.title }} <small class="gray">{{ post.date | date: "%b %d, %Y" }}</small></a></li>
+                        <li>
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                            <div class="small  gray">{{ post.date | date: "%b %d, %Y" }}</div>
+                        </li>
                         {% endfor %}
                     </ul>
                 </div>
