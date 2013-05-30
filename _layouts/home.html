@@ -71,11 +71,11 @@
                 <div class="author-information">
                     <img src="/img/avatar.png" class="author-image  rounded" rel="author">
                     <div class="author-name">about<br><strong>{{ site.author }}</strong></div>
-                    <div class="author-age">I'm <strong>23</strong> years old</div>
-                    <div class="author-employer">I work at <a href="http://squiz.net" rel="employer">Squiz UK</a></div>
+                    <div class="author-age"><strong>23</strong> years old</div>
+                    <div class="author-employer">working at <a href="{{ site.employer_url }}" rel="employer">{{ site.employer }}</a></div>
                 </div>
                 <div class="author-biography">
-                    <p>{{ site.author_biography }}</p>
+                    <p>I am a Canadian front-end web developer living in London UK and working at <a href="{{ site.employer_url }}" rel="employer">{{ site.employer }}</a>. Driven by a passion for clean CSS I hope to someday see the death of hasLayout and all that early Internet Explorer does to destroy my life. I also <a href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a href="{{ site.codepen_url }}" title="{{ site.author }} on Codepen">pen code</a>, and <a href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if my list of enthralling articles doesn't capture your mind, heart, and soul.</p>
                 </div>
             </aside>
             {{ content }}
@@ -86,10 +86,10 @@
         <section class="footer-container  wrap  clear">
             <div class="float  left"><a href="/" title="{{ site.author }}" class="s"></a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" title="Creative Commons License">&copy; 2013 {{ site.author }}</a></div>
             <div class="float  right">
-                <a href="http://twitter.com/iamchrisburnell" title="Twitter" rel="twitter" class="twitter  no-text">Twitter</a>
-                <a href="http://codepen.io/chrisburnell" title="CodePen" rel="codepen" class="codepen  no-text">CodePen</a>
-                <a href="http://forrst.me/chrisburnell" title="Forrst" rel="forrst" class="forrst  no-text">Forrst</a>
-                <a href="http://last.fm/user/chrisburnell" title="Last.FM" rel="lastfm" class="lastfm  no-text">Last.FM</a>
+                <a href="{{ site.twitter_url }}" title="Twitter" rel="twitter" class="twitter  no-text">Twitter</a>
+                <a href="{{ site.codepen_url }}" title="CodePen" rel="codepen" class="codepen  no-text">CodePen</a>
+                <a href="{{ site.forrst_url }}" title="Forrst" rel="forrst" class="forrst  no-text">Forrst</a>
+                <a href="{{ site.lastfm_url }}" title="Last.FM" rel="lastfm" class="lastfm  no-text">Last.FM</a>
             </div>
         </section>
     </footer>
