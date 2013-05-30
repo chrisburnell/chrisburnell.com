@@ -1,0 +1,42 @@
+---
+title: I'm ravenous for CSS.
+layout: home
+---
+
+            <h1>Oh, Hi There</h1>
+            <h2>You're probably wondering why the site looks so bare...</h2>
+            <p>If you're coming here from the wonderful <a href="http://responsivedesignweekly.com">Responsive Design Weekly</a>, or maybe just on your own, I'm embarassed to admit my site is a bit of a mess at the moment. Wanting to try something completely new and needing to feed a powerful hunger for <em>git</em> and <em>markdown</em>, I decided to start completely afresh on my site and go with Jekyll hosted on Github Pages. As <a href="https://twitter.com/justinavery">Justin</a> highlighted in the newsletter, I have been working on the design aspect of this update for a while now, but haven't had the time or the kick up the ass to get to it and get it done. What better motivation than shiny, new technology? ... So anyway, basically I migrated my domain over to Github with the barebones of a template and absolutely no content whatsoever, so please bear with whatever state you are reading this in. :)</p>
+            <hr>
+
+            <ul class="articles-list">
+                {% for post in paginator.posts %}
+                <li>
+                    <h1 class="article-link"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+                    <h3>{{ post.date | date: "%b %d, %Y" }}</h3>
+                    <p class="article-introduction">{{ post.introduction }}</p>
+                    <a href="{{ post.url }}" class="button">Read more</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <!--ol class="nav  pagination">
+                <li class="pagination__prev">
+                    {% if paginator.previous_page %}
+                    {% if paginator.previous_page == 1 %}
+                        <a href="/">Previous</a>
+                    {% else %}
+                        <a href="/page{{paginator.previous_page}}">Previous</a>
+                    {% endif %}
+                    {% else %}
+                        Previous
+                    {% endif %}
+                </li><!-*
+
+             *-><li class="pagination__next">
+                    {% if paginator.next_page %}
+                        <a href="/page{{paginator.next_page}}">Next</a>
+                    {% else %}
+                        Next
+                    {% endif %}
+                </li>
+            </ol-->

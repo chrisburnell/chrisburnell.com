@@ -1,0 +1,35 @@
+{% include header.html %}
+
+    <section class="content  wrap  clear">
+        <article>
+            <h1>{{ page.title }}</h1>
+            <aside class="author">
+                <div class="author-information">
+                    <img src="/img/avatar.png" class="author-image  rounded" rel="author">
+                    <div class="author-name">by <strong>{{ site.author }}</strong></div>
+                    <div class="article-date"><strong>{{ page.date | date: "%b %d, %Y" }}</strong></div>
+                    <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>
+                </div>
+                <div class="author-biography">
+                    <p>I am a Canadian front-end web developer living in London UK and working at <a href="{{ site.employer_url }}" rel="employer">{{ site.employer }}</a>. Driven by a passion for clean CSS I hope to someday see the death of hasLayout and all that early Internet Explorer does to destroy my life.</p>
+                    <p>I also <a href="{{ site.twitter_url }}" rel="twitter" class="twitter" title="{{ site.author }} on Twitter">tweet</a>, <a href="{{ site.codepen_url }}" rel="codepen" class="codepen" title="{{ site.author }} on Codepen">write code</a>, and <a href="{{ site.lastfm_url }}" rel="lastfm" class="lastfm" title="{{ site.author }} on Last.FM">listen to music</a> if this article makes you want to claw your eyeballs out.</p>
+                </div>
+                <div class="related-articles">
+                    <h3>Related Articles</h3>
+                    <ul>
+                        {% for post in site.related_posts limit:3 %}
+                        <li>
+                            <a href="{{ post.url }}" class="bold">{{ post.title }}</a>
+                            <div class="article-date">{{ post.date | date: "%b %d, %Y" }}</div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
+            <img src="{{ site.url }}/img/article-banners/{{ page.slug }}.png" class="banner  rounded">
+            <p class="article-introduction">{{ page.introduction }}</p>
+            {{ content }}
+        </article>
+    </section>
+
+{% include footer.html %}

@@ -1,0 +1,10 @@
+/* TEAM */
+
+Chris Burnell
+http://chrisburnell.com
+@iamchrisburnell
+
+/* SITE */
+
+Standards: HTML5, CSS3, jQuery 2.0
+Running on: Jekyll, Github Pages

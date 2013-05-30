@@ -1,0 +1,30 @@
+title: Chris Burnell
+description: "I'm Chris Burnell, a Canadian front-end web developer living in London, UK. This is where I write about and share my true passion: CSS architecture, design, innovation, and standards."
+author: Chris Burnell
+url: http://chrisburnell.com
+
+twitter_url: http://twitter.com/iamchrisburnell
+codepen_url: http://codepen.io/chrisburnell
+forrst_url: http://forrst.me/chrisburnell
+lastfm_url: http://last.fm/user/chrisburnell
+
+employer: Squiz UK
+employer_url: http://squiz.net
+
+destination: ./_site
+plugins: ./_plugins
+layouts: ./_layouts
+
+include: ['.htaccess']
+exclude: []
+
+permalink: /articles/:title
+paginate: 10
+paginate_path: 'page:num'
+
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+markdown_ext: markdown,mkd,mkdn,md
+
+regenerate: -w
