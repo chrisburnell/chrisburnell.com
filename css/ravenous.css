@@ -433,18 +433,21 @@ aside {
             .author-biography .lastfm {
                 background: none;
             }
-        .related-articles h3 {
-            padding: .5em 0;
+        .related-articles {
+            padding-top: .5em;
             border-top: .25em solid rgba(6,6,6,.05);
         }
-        .related-articles ul {
-            list-style: none;
-            line-height: 1.25em;
-        }
-            .related-articles .article-date {
-                padding-left: .75em;
-                font-size: .81em;
+            .related-articles h3 {
+                padding-bottom: .5em;
             }
+            .related-articles ul {
+                list-style: none;
+                line-height: 1.25em;
+            }
+                .related-articles .article-date {
+                    padding-left: .75em;
+                    font-size: .81em;
+                }
 
 /* ---- 09. Forms ---- */
 
