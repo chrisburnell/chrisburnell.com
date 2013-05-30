@@ -56,9 +56,9 @@
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
 ::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
 ::selection {         background: #5f8aa6; color: #f9f9f9; }
-    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: 0; }
-    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: 0; }
-    pre::selection, code::selection {                 background: black; color: white; text-shadow: 0; }
+    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: none; }
+    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: none; }
+    pre::selection, code::selection {                 background: black; color: white; text-shadow: none; }
 
 html, body {
     min-height: 100%;
@@ -127,7 +127,7 @@ h1 {
                 background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
                 background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
                 color: rgba(249,249,249,.9);
-                text-shadow: 0;
+                text-shadow: none;
             }
 h2 {
     font-family: "ff-meta-serif-web-pro", sans-serif;
@@ -191,7 +191,7 @@ button, .button {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    text-shadow: 0 -0.0625em 0 rgba(6,6,6,.2);
+    text-shadow: 0 -0.0625em 0 rgba(6,6,6,.15);
     cursor: pointer;
     border-radius: .1875em;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #395264;
@@ -326,8 +326,8 @@ nav {
                 .main-nav a:active {
                     margin-top: .1em; /* 16px x 1.25em x 0.1em = 2px */
                     position: relative;
-                    top: 2px;
-                    line-height: 1.15em;
+                    top: .1em;
+                    line-height: 1.15em; /* 1.25em - .1em = 1.15em */
                 }
 
 /* ---- 07. Articles ---- */
