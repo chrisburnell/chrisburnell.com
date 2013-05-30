@@ -563,7 +563,8 @@ footer {
     *:hover .debug * { background: rgba(0,0,0,.3); outline: 1px solid rgba(0,0,0,.5); }
 
 strong, .bold { font-weight: 600; }
-.em { font-style: italic; }
+.italic { font-style: italic; }
+.small { font-size: small; }
 
 .no-text { color: transparent !important; text-indent: -999em !important; }
 .no-margin { margin: 0 !important; }
