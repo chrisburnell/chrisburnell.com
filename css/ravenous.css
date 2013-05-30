@@ -23,8 +23,8 @@
 /* Hide the fonts from use.typekit.com before they have finished loading */
 .wf-loading .logo, .wf-loading h1, .wf-loading h2, .wf-loading h3 {
     color: transparent;
-    text-shadow: none;
     visibility: hidden;
+    text-shadow: none;
 }
 .wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3 {
     -webkit-animation: fadeIn 1s;
@@ -118,6 +118,7 @@ h1 {
         margin-left: -0.1em;
     }
         .article-link a {
+            color: inherit;
             padding: 0 .1em;
             border-radius: .1875em;
         }
@@ -128,6 +129,7 @@ h1 {
                 background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
                 background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
                 color: rgba(249,249,249,.9);
+                text-decoration: none;
                 text-shadow: none;
             }
 h2 {
@@ -349,8 +351,8 @@ article, .articles {
             margin-bottom: .5em;
         }
             .articles-list h3:before {
-                content: "\2013 \0020";
                 color: #6f6f6f;
+                content: "\2013 \0020";
             }
     .article-introduction {
         font-size: 1.25em;
@@ -429,8 +431,8 @@ aside {
             line-height: 1.25em;
         }
             .related-articles .article-date {
-                font-size: .81em;
                 padding-left: .75em;
+                font-size: .81em;
             }
 
 /* ---- 09. Forms ---- */
@@ -534,10 +536,10 @@ footer {
 .s, .logo:after { background: url("/img/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
-.twitter { color: #1AB2E8 !important; background-image: url("/img/glyph-twitter.png"); }
-.forrst { color: #223F17 !important; background-image: url("/img/glyph-forrst.png"); }
-.lastfm { color: #D51007 !important; background-image: url("/img/glyph-lastfm.png"); }
-.codepen { color: #999!important; background-image: url("/img/glyph-codepen.png"); }
+.twitter { background-image: url("/img/glyph-twitter.png"); color: #1AB2E8 !important; }
+.forrst { background-image: url("/img/glyph-forrst.png"); color: #223F17 !important; }
+.lastfm { background-image: url("/img/glyph-lastfm.png"); color: #D51007 !important; }
+.codepen { background-image: url("/img/glyph-codepen.png"); color: #999!important; }
 
 .gray { color: #6f6f6f; }
 .blue { color: #5f8aa6; }
