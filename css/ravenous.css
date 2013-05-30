@@ -379,7 +379,8 @@ aside {
     margin-left: -269px; /* 33% of 75% = 25% = <article> padding-left at 100% body width */
     float: left;
 }
-    .author {
+    .author,
+    .related-posts {
         font-family: "proxima-nova", sans-serif;
     }
         .author a {
