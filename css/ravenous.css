@@ -348,6 +348,8 @@ article, .articles {
             margin-bottom: 1.5em;
             padding-bottom: 1em;
             border-bottom: .25em solid rgba(6,6,6,.05);
+            display: inline-block;
+            width: 100%;
             clear: both;
         }
             .articles-list li:last-child {
