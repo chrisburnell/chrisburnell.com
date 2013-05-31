@@ -16,6 +16,7 @@
  *  10: Code Blocks
  *  11: Footer
  *  12: Miscellaneous
+ *  13: Media Queries
  */
 
 /* ---- 01. Typekit Preload ---- */
@@ -75,8 +76,8 @@ body {
 .wrap {
     width: auto;
     max-width: 1080px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     padding: 0 1.25em;
 }
 
@@ -222,15 +223,18 @@ button, .button {
 /* ---- 05. Header ---- */
 
 header {
-    height: 110px; /* 110px */
+    height: 110px;
 }
     .logo {
         color: #4f4f4f;
         height: 110px;
         padding-left: 100px;
+        float: left;
         display: inline-block;
         position: relative;
-        font: 400 3.2em/110px "league-gothic", sans-serif;
+        font-family: "league-gothic", sans-serif;
+        font-size: 3.2em;
+        line-height: 110px;
         text-transform: uppercase;
         text-shadow: .048em .048em 0 rgba(0,0,0,.08);
         z-index: 1;
@@ -324,8 +328,8 @@ nav {
     margin-bottom: 2.25em;
 }
 article, .articles {
-    border-top: .25em solid #5f8aa6;
     padding: 2.25em 0 0 269px; /* 25% of max .content width = 269px */
+    border-top: .25em solid #5f8aa6;
 }
     article {
         margin-bottom: 1em;
@@ -340,10 +344,10 @@ article, .articles {
             margin-bottom: .8em;
         }
         .articles-list li {
+            width: 100%;
             padding: 1.5em 0;
             border-top: .25em solid rgba(6,6,6,.05);
             display: inline-block;
-            width: 100%;
             clear: both;
         }
             .articles-list li:last-child {
@@ -360,8 +364,8 @@ article, .articles {
                 content: "\2013 \0020";
             }
     .article-introduction {
-        font-size: 1.25em;
         margin-bottom: .5em;
+        font-size: 1.25em;
     }
 
 .video-container {
@@ -594,7 +598,10 @@ strong, .bold { font-weight: 600; }
 
 sup { top: -0.3em; }
 
-/* ---- ##. MEDIA QUERY: ANCHOR TITLES ---- */
+/* ---- ##. Media Queries ---- */
+/* ---- i   Article Links ---- */
+/* ---- ii  Tablet 766px  ---- */
+/* ---- iii Mobile 500px  ---- */
 
 @media (min-width: 768px) {
     .article-link {
@@ -616,9 +623,6 @@ sup { top: -0.3em; }
                 text-shadow: none;
             }
 }
-
-/* ---- ##. MEDIA QUERY: TABLET ---- */
-
 @media (max-width: 767px) {
     header {
         height: 170px;
@@ -651,9 +655,6 @@ sup { top: -0.3em; }
         float: none;
     }
 }
-
-/* ---- ##. MEDIA QUERY: MOBLIE ---- */
-
 @media (max-width: 500px) {
     .wrap {
         padding-right: 10px;
