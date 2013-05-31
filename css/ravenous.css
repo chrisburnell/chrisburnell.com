@@ -75,7 +75,8 @@ body {
 .wrap {
     width: auto;
     max-width: 1080px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1.25em;
 }
 
