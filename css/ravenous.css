@@ -115,24 +115,6 @@ h1 {
         h1 a:hover {
             color: rgba(95,138,166,.9);
         }
-    .article-link {
-        margin-left: -0.1em;
-    }
-        .article-link a {
-            color: inherit;
-            padding: 0 .1em;
-            border-radius: .1875em;
-        }
-            .article-link a:hover {
-                background-color: rgba(95,138,166,.9);
-                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
-                background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                color: rgba(249,249,249,.9);
-                text-decoration: none;
-                text-shadow: none;
-            }
 h2 {
     margin-bottom: .25em;
     font-family: "ff-meta-serif-web-pro", sans-serif;
@@ -239,7 +221,7 @@ button, .button {
 /* ---- 05. Header ---- */
 
 header {
-    height: 110px;
+    height: 110px; /* 110px */
 }
     .logo {
         color: #4f4f4f;
@@ -276,7 +258,7 @@ header {
 /* ---- 06. Navigation ---- */
 
 nav {
-    margin-top: 1.25em;
+    margin-top: 20px;
     float: right;
 }
     .main-nav {
@@ -341,7 +323,7 @@ nav {
     margin-bottom: 2.25em;
 }
 article, .articles {
-    border-top: .25em solid rgba(95,138,166,.9);
+    border-top: .25em solid #5f8aa6;
     padding: 2.25em 0 0 269px; /* 25% of max .content width = 269px */
 }
     article {
@@ -353,7 +335,7 @@ article, .articles {
     .site-introduction {
         padding-bottom: 1.5em;
     }
-        .site-title, .site-subtitle {
+        .site-subtitle, .site-introduction-title {
             margin-bottom: .8em;
         }
         .articles-list li {
@@ -610,3 +592,80 @@ strong, .bold { font-weight: 600; }
 .no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
 
 sup { top: -0.3em; }
+
+/* ---- ##. MEDIA QUERY: ANCHOR TITLES ---- */
+
+@media (min-width: 768px) {
+    .article-link {
+        margin-left: -0.1em;
+    }
+        .article-link a {
+            color: inherit;
+            padding: 0 .1em;
+            border-radius: .1875em;
+        }
+            .article-link a:hover {
+                background-color: rgba(95,138,166,.9);
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
+                background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
+                background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
+                background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
+                color: rgba(249,249,249,.9);
+                text-decoration: none;
+                text-shadow: none;
+            }
+}
+
+/* ---- ##. MEDIA QUERY: TABLET ---- */
+
+@media (max-width: 767px) {
+    header {
+        height: 170px;
+        text-align: center;
+    }
+        .logo {
+            height: 90px;
+            float: none;
+            display: inline-block;
+        }
+        nav {
+            width: 100%;
+            margin-top: 0;
+            float: none;
+        }
+            .main-nav {
+                float: none;
+                text-align: center;
+            }
+            .main-nav li {
+                float: none;
+                display: inline-block;
+            }
+    article, .articles {
+        padding-left: 0;
+    }
+    aside {
+        width: 100%;
+        margin: 0 0 1em;
+        float: none;
+    }
+}
+
+/* ---- ##. MEDIA QUERY: MOBLIE ---- */
+
+@media (max-width: 500px) {
+    .wrap {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    footer {
+        height: 80px;
+    }
+        footer div {
+            float: none !important;
+            text-align: center;
+        }
+            footer div .lastfm {
+                margin-right: 0;
+            }
+}
