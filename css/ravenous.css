@@ -91,7 +91,7 @@ a {
 }
     article a, .articles a {
     }
-        article a:hover, .articles a:hover {
+        article a:hover, aside a:hover {
             text-decoration: underline;
         }
 
