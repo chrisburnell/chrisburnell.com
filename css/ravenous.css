@@ -341,9 +341,11 @@ nav {
 /* ---- 07. Articles ---- */
 
 article, .articles {
-    margin-bottom: 1em;
     padding: 0 0 0 269px; /* 25% of max .content width = 269px */
 }
+    article {
+        margin-bottom: 1em;
+    }
     .articles-list {
         list-style: none;
     }
