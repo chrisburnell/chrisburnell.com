@@ -96,7 +96,7 @@ a {
         }
 
 h1, h2, h3, h4, h5, h6 {
-    height: 1.2em; /* override some browser defaults */
+    min-height: 1.2em; /* override some browser defaults */
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -658,6 +658,9 @@ sup { top: -0.3em; }
     .wrap {
         padding-right: 10px;
         padding-left: 10px;
+    }
+    .author-biography {
+        font-size: 1em;
     }
     footer {
         height: 80px;
