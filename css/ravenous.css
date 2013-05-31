@@ -351,7 +351,7 @@ article, .articles {
     }
         .articles-list li {
             margin-bottom: 1.5em;
-            padding-bottom: 1em;
+            padding: 1em 0 2em;
             border-bottom: .25em solid rgba(6,6,6,.05);
             display: inline-block;
             width: 100%;
