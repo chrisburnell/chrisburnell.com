@@ -133,7 +133,7 @@ h3 {
 p {
     margin: 0;
 }
-    article > p:not(:last-child) {
+    article > p + p:not(:last-child) {
         margin-bottom: 1em;
     }
 

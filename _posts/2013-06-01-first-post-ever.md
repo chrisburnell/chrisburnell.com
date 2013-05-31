@@ -5,11 +5,11 @@ date: 2013-06-01 01:00:00
 layout: article
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
+- CSS
+- GitHub
+- Design
 - Jekyll
 - Markdown
-- GitHub
-- CSS
-- Design
 ---
 
 I can tell you it wasn't a completely smooth process. And it's not even like I'm new to migrating things or trying out new technologies&mdash;over the years, I've gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server.
