@@ -354,7 +354,7 @@ article, .articles {
         padding-bottom: 2em;
     }
         .site-title, .site-subtitle {
-            margin-bottom: 1em;
+            margin-bottom: .8em;
         }
         .articles-list li {
             padding: 1.5em 0;
