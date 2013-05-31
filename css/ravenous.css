@@ -265,21 +265,34 @@ header {
             transform:         translate3d(0,-42px,0);
             -webkit-transform-origin: center top;
             transform-origin:         center top;
+            -webkit-animation: loopdeloop 2s ease-in-out 0 infinite;
+            animation:         loopdeloop 2s ease-in-out 0 infinite;
+            -webkit-animation-play-state: paused;
+            animation-play-state:         paused;
         }
+            @-webkit-keyframes loopdeloop {
+                0% {
+                    -webkit-transform: translate3d(0,-42px,0);
+                    transform:         translate3d(0,-42px,0);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
+                    transform:         rotate(360deg), translate3d(0,-42px,0);
+                }
+            }
+            @keyframes loopdeloop {
+                0% {
+                    -webkit-transform: translate3d(0,-42px,0);
+                    transform:         translate3d(0,-42px,0);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
+                    transform:         rotate(360deg), translate3d(0,-42px,0);
+                }
+            }
         .logo:hover {
-            -webkit-animation: loopdeloop 2s ease-in-out;
-            animation:         loopdeloop 2s ease-in-out;
-
-        }
-        @keyframes loopdeloop {
-            0% {
-                -webkit-transform: translate3d(0,-42px,0);
-                transform:         translate3d(0,-42px,0);
-            }
-            100% {
-                -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
-                transform:         rotate(360deg), translate3d(0,-42px,0);
-            }
+            -webkit-animation-play-state: running;
+            animation-play-state:         running;
         }
         .logo:active {
             top: 2px;
