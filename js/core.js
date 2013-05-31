@@ -3,7 +3,7 @@ $(document).ready( function() {
     // Forces external links to open in a new tab without breaking validation
     $("a[href*='http://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
     $('a').click( function(k,v) {
-        //k.preventDefault();
+        k.preventDefault();
     });
 
     commentErrorsHighlight();
