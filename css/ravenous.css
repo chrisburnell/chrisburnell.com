@@ -21,12 +21,12 @@
 /* ---- 01. Typekit Preload ---- */
 
 /* Hide the fonts from use.typekit.com before they have finished loading */
-.wf-loading .logo, .wf-loading h1, .wf-loading h2, .wf-loading h3 {
+.wf-loading .logo, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading .button {
     color: transparent;
     visibility: hidden;
     text-shadow: none;
 }
-.wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3 {
+.wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
     -webkit-animation: fadeIn 1s;
     animation:         fadeIn 1s;
 }
