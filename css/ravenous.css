@@ -240,8 +240,6 @@ button, .button {
 
 header {
     height: 110px;
-    margin-bottom: 2.25em;
-    border-bottom: .25em solid rgba(95,138,166,.9);
 }
     .logo {
         color: #4f4f4f;
@@ -343,7 +341,8 @@ nav {
     margin-bottom: 2.25em;
 }
 article, .articles {
-    padding: 0 0 0 269px; /* 25% of max .content width = 269px */
+    border-top: .25em solid rgba(95,138,166,.9);
+    padding: 2.25em 0 0 269px; /* 25% of max .content width = 269px */
 }
     article {
         margin-bottom: 1em;
