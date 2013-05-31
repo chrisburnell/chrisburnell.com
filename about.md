@@ -1,7 +1,6 @@
 ---
-layout: article
 title: About me
-permalink: /about/
+layout: home
 ---
 
-HAPPY NOW YOU FUCKING WIZARD?!
+    Testing some features and stuff innit.
