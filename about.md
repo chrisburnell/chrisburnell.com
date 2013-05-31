@@ -3,4 +3,4 @@ title: About me
 layout: home
 ---
 
-    Testing some features and stuff innit.
+Happy now Mr. Wizard? Jesusssss...
