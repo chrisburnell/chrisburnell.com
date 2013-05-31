@@ -290,7 +290,7 @@ header {
                     transform:         rotate(360deg), translate3d(0,-42px,0);
                 }
             }
-        .logo:hover {
+        .logo:hover:after {
             -webkit-animation-play-state: running;
             animation-play-state:         running;
         }
