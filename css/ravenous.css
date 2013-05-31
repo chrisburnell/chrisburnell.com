@@ -186,7 +186,7 @@ button, .button {
     color: #f9f9f9 !important;
     min-width: 6em;
     height: 1.2em;
-    margin: 0;
+    margin: 0 0 5px;
     padding: .25em .625em;
     border: 0.5px solid #51768e; /* retina display fix */
     display: inline-block;
