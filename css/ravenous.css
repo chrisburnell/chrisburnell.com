@@ -235,6 +235,7 @@ header {
     height: 110px;
 }
     .logo {
+        color: #4f4f4f;
         height: 110px;
         padding-left: 100px;
         float: left;
@@ -336,7 +337,7 @@ nav {
     margin-bottom: 2.25em;
 }
 article, .articles {
-    padding: 2.25em 0 0 269px; /* 25% of max .content width = 269px */
+    padding: 2.25em 0 0 270px; /* 25% of max .content width = 269px */
     border-top: .25em solid #5f8aa6;
 }
     article {
@@ -397,7 +398,7 @@ article, .articles {
 
 aside {
     width: 243px; /* 30% at 100% body width */
-    margin-left: -269px; /* 33% of 75% = 25% = <article> padding-left at 100% body width */
+    margin-left: -270px; /* 33% of 75% = 25% = <article> padding-left at 100% body width */
     float: left;
 }
     .author,
