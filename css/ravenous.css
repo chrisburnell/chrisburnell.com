@@ -81,6 +81,7 @@ body {
 }
 
 a {
+    color: #5f8aa6;
     text-decoration: none;
     -webkit-transition: background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
     transition:         background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
@@ -89,7 +90,6 @@ a {
     user-select:         none;
 }
     article a, .articles a {
-        color: rgba(95,138,166,.9);
     }
         article a:hover, .articles a:hover {
             text-decoration: underline;
@@ -114,6 +114,7 @@ h1 {
     }
         h1 a:hover {
             color: rgba(95,138,166,.9);
+            text-decoration: none;
         }
 h2 {
     margin-bottom: .25em;
