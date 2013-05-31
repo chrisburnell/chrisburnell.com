@@ -352,8 +352,6 @@ article, .articles {
     }
     .site-introduction {
         padding-bottom: 2.25em;
-        border-bottom: .25em solid rgba(6,6,6,.5);
-        margin-bottom: 2.25em;
     }
         .site-title, .site-subtitle {
             margin-bottom: 1em;
