@@ -3,7 +3,7 @@ how_lucky: are you
 you_get: to see this post before it goes live
 title: First Post Ever
 slug: first-post-ever
-date: 2013-06-03 01:00:00
+date: 2013-05-31 01:00:00
 layout: article
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
