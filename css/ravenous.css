@@ -78,6 +78,9 @@ body {
     margin: 0 auto 1.25em;
     padding: 0 1.25em;
 }
+    header.wrap {
+        margin-bottom: 2.25em;
+    }
 
 a {
     text-decoration: none;
@@ -451,7 +454,7 @@ aside {
 
 /* ---- 09. Forms ---- */
 
-/* need to extract this stuff from comments.css */
+    /* need to extract this stuff from comments.css */
 
 /* ---- 10. Code Blocks ---- */
 
@@ -463,7 +466,7 @@ pre:not(.codepen), code {
         background: #4f4f4f;
         color: #f9f9f9;
         padding: .714em;
-        border: .286em solid rgba(6,6,6,.05);
+        border: .286em solid rgba(249,249,249,.05);
         position: relative;
         overflow: hidden;
         overflow-x: auto;
