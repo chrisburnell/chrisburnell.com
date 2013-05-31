@@ -350,6 +350,14 @@ article, .articles {
     .articles-list {
         list-style: none;
     }
+    .site-introduction {
+        padding-bottom: 2.25em;
+        border-bottom: .25em solid rgba(6,6,6,.5);
+        margin-bottom: 2.25em;
+    }
+        .site-title, .site-subtitle {
+            margin-bottom: 1em;
+        }
         .articles-list li {
             padding: 1.5em 0;
             border-top: .25em solid rgba(6,6,6,.05);
