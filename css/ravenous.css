@@ -151,6 +151,15 @@ img, a img {
     border: 0;
 }
 
+blockquote:not(.twitter-tweet) {
+    font-style: italic;
+    color: #6f6f6f;
+}
+    .blockquote:not(.twitter-tweet):before,
+    .blockquote:not(.twitter-tweet):after {
+        content: "\0022";
+    }
+
 hr {
     background: rgba(6,6,6,.05);
     width: 100%;
@@ -226,7 +235,6 @@ header {
     height: 110px;
 }
     .logo {
-        color: #4f4f4f;
         height: 110px;
         padding-left: 100px;
         float: left;
