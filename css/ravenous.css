@@ -262,8 +262,24 @@ header {
             content: "";
             z-index: 0;
             -webkit-transform: translate3d(0,-42px,0);
-            -moz-transform:    translate3d(0,-42px,0);
             transform:         translate3d(0,-42px,0);
+            -webkit-transform-origin: center top;
+            transform-origin:         center top;
+        }
+        .logo:hover {
+            -webkit-animation: loopdeloop 2s ease-in-out;
+            animation:         loopdeloop 2s ease-in-out;
+
+        }
+        @keyframes loopdeloop {
+            0% {
+                -webkit-transform: translate3d(0,-42px,0);
+                transform:         translate3d(0,-42px,0);
+            }
+            100% {
+                -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
+                transform:         rotate(360deg), translate3d(0,-42px,0);
+            }
         }
         .logo:active {
             top: 2px;
