@@ -5,6 +5,7 @@ title: First Post Ever
 slug: first-post-ever
 date: 2013-05-31 01:00:00
 layout: article
+page_class: article
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
 - CSS
