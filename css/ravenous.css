@@ -537,22 +537,11 @@ footer {
         height: 2.875em;
         display: inline-block;
     }
-    .footer-copyright a {
-        color: #ddd;
-        display: inline-block;
-        text-decoration: none;
-    }
-        .footer-copyright a:hover {
-            text-decoration: underline;
-        }
     .footer-copyright,
     .footer-social {
         overflow: hidden;
         float: left;
     }
-        .footer-social {
-            float: right;
-        }
         footer .home-link {
             margin-right: 1em;
             vertical-align: middle;
@@ -562,28 +551,41 @@ footer {
                 position: relative;
                 top: .14em;
             }
-        .footer-social a {
-            opacity: 0.6;
-            width: 30px;
-            height: 30px;
-            margin: 5px 0.5em 5px 0;
-            vertical-align: middle;
-            -webkit-transition: opacity 0.25s ease-in-out;
-            transition:         opacity 0.25s ease-in-out;
+        .footer-copyright a {
+            color: #ddd;
+            display: inline-block;
+            text-decoration: none;
         }
-            .footer-social a:hover {
-                opacity: 0.9;
+            .footer-copyright a:hover {
+                text-decoration: underline;
             }
-            .footer-social a:active {
-                position: relative;
-                top: .14em;
+        .footer-social {
+            float: right;
+            font-size: 0; /* close gap between links */
+        }
+            .footer-social a {
+                opacity: 0.6;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                margin: 5px 0.5em 5px 0;
+                vertical-align: middle;
+                -webkit-transition: opacity 0.25s ease-in-out;
+                transition:         opacity 0.25s ease-in-out;
             }
-            .footer-social a:last-of-type {
-                margin-right: 0;
-            }
-            .footer-social .forrst {
-                width: 20px;
-            }
+                .footer-social a:hover {
+                    opacity: 0.9;
+                }
+                .footer-social a:active {
+                    position: relative;
+                    top: .14em;
+                }
+                .footer-social a:last-of-type {
+                    margin-right: 0;
+                }
+                .footer-social .forrst {
+                    width: 20px;
+                }
 
 /* ---- 12. Miscellaneous ---- */
 
