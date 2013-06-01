@@ -499,7 +499,6 @@ pre:not(.codepen), code {
         background: #4f4f4f;
         color: #f9f9f9;
         padding: .714em;
-        border: .286em solid rgba(6,6,6,.05);
         position: relative;
         overflow: hidden;
         overflow-x: auto;

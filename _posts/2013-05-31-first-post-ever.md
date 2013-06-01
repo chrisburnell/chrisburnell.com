@@ -44,6 +44,8 @@ Since my last update, I started working at [Squiz](http://squiz.net) and expande
 
 Enforcing strict CSS standards goes beyond keeping an eye out for <code>!important</code>s or excessively long chained selectors&mdash;the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I'll be writing on this soon!)
 
+### Where are the comments?
+
 
 
 
