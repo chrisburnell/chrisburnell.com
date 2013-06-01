@@ -492,7 +492,7 @@ aside {
 /* ---- 10. Code Blocks ---- */
 
 pre:not(.codepen), code {
-    font-family: Monaco, 'Courier New', serif;
+    font-family: Monaco, 'Courier New', monospace;
     font-size: 0.875em;
 }
     pre:not(.codepen) {
