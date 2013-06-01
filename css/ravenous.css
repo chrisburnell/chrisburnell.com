@@ -392,7 +392,7 @@ article, .articles {
             .articles-list .button {
                 margin: 1em 0;
             }
-        .articles-list h3 {
+        article h3, .articles-list h3 {
             margin-bottom: .5em;
         }
             .articles-list h3:before {

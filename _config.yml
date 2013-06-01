@@ -17,7 +17,6 @@ layouts: ./_layouts
 include: ['.htaccess']
 exclude: []
 
-future: false
 timezone: Europe/London
 permalink: /articles/:title
 paginate: 10
