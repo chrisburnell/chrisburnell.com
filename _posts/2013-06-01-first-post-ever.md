@@ -34,7 +34,7 @@ That's something else I'm quite new to but thoroughly enjoying picking up: Markd
 
     This is some paragraph, and [this](http://foo.com) is a link.
 
-The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in. <aside><p>Again, if you have any suggestions as far as the source code for the site goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code for the site goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside> The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
 ### So, what's new in the stylesheet?
 

@@ -133,7 +133,7 @@ h3 {
 p {
     margin: 0;
 }
-    article > p + p:not(:last-child) {
+    article > p:not(.article-introduction):not(:last-child) {
         margin-bottom: 1em;
     }
 
@@ -503,9 +503,13 @@ pre:not(.codepen), code {
         position: relative;
         overflow: hidden;
         overflow-x: auto;
+        border-radius: .1875em;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
     }
         pre:not(.codepen):after {
-            color: rgba(6,6,6,.03);
+            color: rgba(249,249,249,.05);
             display: block;
             position: absolute;
             top: 50px;
@@ -603,7 +607,7 @@ footer {
 .remove { display: none; }
 .hide, .hidden { visibility: hidden; }
 
-.rounded { background-clip: padding-box; border-radius: .1875em; -moz-background-clip: padding; -webkit-background-clip: padding-box; }
+.rounded { border-radius: .1875em; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
     .rounded.large { border-radius: .375em; }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
