@@ -17,6 +17,7 @@ layouts: ./_layouts
 include: ['.htaccess']
 exclude: []
 
+future: false1
 permalink: /articles/:title
 paginate: 10
 paginate_path: 'page:num'
