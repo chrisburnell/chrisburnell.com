@@ -20,7 +20,7 @@
                     <ul>
                         {% for post in site.related_posts limit:3 %}
                         <li>
-                            <a href="{{ post.url }}" class="bold">{{ post.title }}</a>
+                            <a href="{{ post.url }}#disqus_thread" class="bold">{{ post.title }}</a>
                             <div class="article-date">{{ post.date | date: "%b %d, %Y" }}</div>
                         </li>
                         {% endfor %}

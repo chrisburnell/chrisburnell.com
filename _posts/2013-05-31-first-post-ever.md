@@ -9,8 +9,8 @@ page_class: page-articles
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
 - CSS
-- GitHub
 - Design
+- GitHub
 - Jekyll
 - Markdown
 ---
