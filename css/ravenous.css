@@ -335,14 +335,14 @@ nav {
             }
                 .main-nav a:hover,
                 .page-home .main-nav-home a,
-                .page-about .main-nav-about a,
+                .page-articles .main-nav-articles a,
                 .page-contact .main-nav-contact a {
                     color: #4f4f4f;
                     padding-bottom: 8px;
                     border-bottom-width: 4px;
                 }
                 .page-home .main-nav-home a:after,
-                .page-about .main-nav-about a:after,
+                .page-articles .main-nav-articles a:after,
                 .page-contact .main-nav-contact a:after {
                     margin-left: -3px;
                     border-top: 5px solid rgba(95,138,166,.9);

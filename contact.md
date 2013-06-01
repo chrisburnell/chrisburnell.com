@@ -1,7 +1,7 @@
 ---
 title: contact
 layout: home
-page_class: contact
+page_class: page-contact
 ---
 
 Coming soon maybe.
