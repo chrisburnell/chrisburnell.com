@@ -546,12 +546,12 @@ footer {
         overflow: hidden;
         float: left;
     }
-        footer .home-link {
+        .footer-copyright .home-link {
             margin-right: 1em;
             vertical-align: middle;
             text-decoration: none;
         }
-            footer .home-link:active {
+            .footer-copyright .home-link:active {
                 position: relative;
                 top: .14em;
             }
@@ -716,6 +716,7 @@ sup { top: -0.3em; }
     }
         .footer-copyright,
         .footer-social {
+            width: 100%;
             float: none;
             text-align: center;
         }
