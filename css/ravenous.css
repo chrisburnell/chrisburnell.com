@@ -459,7 +459,7 @@ aside {
             float: left;
             display: inline-block;
         }
-        .author-biography {
+        aside p {
             margin-bottom: .5em;
             clear: both;
             font-size: .875em;
@@ -704,7 +704,7 @@ sup { top: -0.3em; }
     .logo {
         font-size: 2.4em;
     }
-    .author-biography {
+    aside p {
         font-size: 1em;
     }
     footer {
