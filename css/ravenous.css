@@ -561,7 +561,6 @@ footer {
             }
         .footer-social {
             float: right;
-            font-size: 0; /* close gap between links */
         }
             .footer-social a {
                 opacity: 0.6;
