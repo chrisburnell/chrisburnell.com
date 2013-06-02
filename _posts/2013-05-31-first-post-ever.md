@@ -1,6 +1,5 @@
 ---
-how_lucky: are you
-you_get: to see this post before it goes live
+published: false
 title: First Post Ever
 slug: first-post-ever
 date: 2013-05-31 01:00:00
@@ -31,7 +30,6 @@ That's something else I'm quite new to but thoroughly enjoying picking up: Markd
     ### This is an H3
     > This is a blockquote
         Tabbed content becomes a code block like this one.
-
     This is some paragraph, and [this](http://foo.com) is a link.
 
 <aside><p>Again, if you have any suggestions as far as the source code for the site goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside> The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
@@ -40,11 +38,15 @@ That's something else I'm quite new to but thoroughly enjoying picking up: Markd
 
 Since my last update, I started working at [Squiz](http://squiz.net) and expanded my horizons exponentially, stepping into the fast-paced role of front-end web developer at the London office. Since September of last year, I've been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto Matrix, an extremely powerful and flexible Content Management System. My role in the small team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we're adhering to some standards as part of making improvements during the migration.
 
+But let's get down to brass tacks. During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a simple transition from desktop to mobile responsive layouts as well as making the process in Markdown simple as well. Other improvements to my CSS skills have been made as well; basically, read this incredible article by Harry Roberts of CSSWizardry and don't make any of the mistakes he outlined, and you're on your way to greatness.
+
 ### More than meets the eye
 
 Enforcing strict CSS standards goes beyond keeping an eye out for <code>!important</code>s or excessively long chained selectors&mdash;the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I'll be writing on this soon!)
 
-### Where are the comments?
+Part of the challenge was realising that decisions I made at the beginning would have a profound impact on how certain aspects of the project would go further on: the naming convention, architecture of both CSS and the file structure on which Matrix (the Content Management System) was built, etc.
+
+
 
 
 

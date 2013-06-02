@@ -17,7 +17,8 @@ layouts: ./_layouts
 include: ['.htaccess']
 exclude: []
 
-future: false1
+auto: true
+future: false
 permalink: /articles/:title
 paginate: 10
 paginate_path: 'page:num'
@@ -26,5 +27,3 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 markdown_ext: markdown,mkd,mkdn,md
-
-regenerate: -w
