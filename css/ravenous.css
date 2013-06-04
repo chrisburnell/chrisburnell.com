@@ -22,10 +22,10 @@
 /* ---- 01. Typekit Preload ---- */
 
 /* Hide the fonts from use.typekit.com before they have finished loading */
-header, .content, footer {
+.logo, nav, h1, h2, h3, .button {
     visibility: hidden;
 }
-.wf-active header, .wf-active .content, .wf-active footer {
+.wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
     -webkit-animation: fadeIn 1s;
     animation:         fadeIn 1s;
     visibility: visible;
