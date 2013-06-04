@@ -22,10 +22,10 @@
 /* ---- 01. Typekit Preload ---- */
 
 /* Hide the fonts from use.typekit.com before they have finished loading */
-.logo, h1, h2, h3, .button {
+.logo, nav, h1, h2, h3, .button {
     visibility: hidden;
 }
-.wf-active .logo, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
+.wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
     -webkit-animation: fadeIn 1s;
     animation:         fadeIn 1s;
     visibility: visible;
@@ -512,7 +512,7 @@ pre:not(.codepen), code {
             position: absolute;
             top: 50px;
             left: 40px;
-            content: "";
+            content: "\E714";
             font: 400 720px/22px "Entypo";
             z-index: 0;
         }
