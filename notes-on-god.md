@@ -1,7 +1,7 @@
 # Notes on GATE OV DOOM
 
 1. meta itemprop? wotszis?
-2. You should define a language on your HTML tag: <html lang="en">
+2. You should define a language on your HTML tag: &lt;html lang="en"&gt;
 3. Linking to [a JS file on another site](http://trentrichardson.com/Impromptu/jquery-impromptu.js) which isn't publicly available. What does the jQuery Impromptu thing do that you need?
 4. Inline CSS between &lt;style&gt; tags. This should go in your CSS.
 5. Got some Inline JS between &lt;script&gt; tags. This should go in a dedicated JS file.
