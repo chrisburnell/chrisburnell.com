@@ -1,5 +1,4 @@
 ---
-published: false
 title: First Article Ever
 slug: first-article-ever
 date: 2013-05-31 01:00:00
@@ -13,6 +12,8 @@ tags:
 - Jekyll
 - Markdown
 ---
+
+<h1>This is still in progress. Just testing. Thanks!</h1>
 
 I can tell you it wasn't a completely smooth process. And it's not even like I'm new to migrating things or trying out new technologies&mdash;over the years, I've gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server.
 
