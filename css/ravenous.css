@@ -372,12 +372,6 @@ article, .articles {
     .articles-list {
         list-style: none;
     }
-    .site-introduction {
-        padding-bottom: 1.5em;
-    }
-        .site-subtitle, .site-introduction-title {
-            margin-bottom: .8em;
-        }
         .articles-list li {
             width: 100%;
             padding: 1.5em 0;
@@ -398,6 +392,12 @@ article, .articles {
                 color: #6f6f6f;
                 content: "\2013 \0020";
             }
+    .site-introduction {
+        padding-bottom: 1.5em;
+    }
+        .site-subtitle, .site-introduction-title {
+            margin-bottom: .8em;
+        }
     .article-introduction {
         margin-bottom: .5em;
         font-size: 1.25em;
@@ -410,7 +410,7 @@ article, .articles {
         transition:         border-color .2s ease-in-out;
     }
         .article-link a:hover {
-            color: inherit;
+            color: #4f4f4f;
             border-bottom-color: rgba(95,138,166,.9);
         }
 
