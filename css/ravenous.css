@@ -123,8 +123,12 @@ h2 {
     text-shadow: 0 -1px 0 rgba(255,255,255,.3);
 }
     h2 a {
-        color: #4f4f4f;
+        color: inherit;
+        border-bottom: 2px solid transparent;
     }
+        h2 a:hover {
+            border-bottom-color: rgba(95,138,166,.9);
+        }
 h3 {
     font-family: "proxima-nova", serif;
     font-size: 1em; /* override browser default */
