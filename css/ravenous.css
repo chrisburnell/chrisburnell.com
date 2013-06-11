@@ -108,33 +108,26 @@ h1 {
     text-transform: uppercase;
     text-shadow: .048em .048em 0 rgba(0,0,0,.08);
 }
-    h1 a {
-        color: #4f4f4f;
-        display: inline-block;
-    }
-        h1 a:hover {
-            color: rgba(95,138,166,.9);
-            text-decoration: none;
-        }
 h2 {
     margin-bottom: .25em;
     font-family: "ff-meta-serif-web-pro", sans-serif;
     font-size: 1.613em;
     text-shadow: 0 -1px 0 rgba(255,255,255,.3);
 }
-    h2 a {
-        color: inherit;
-        border-bottom: 2px solid transparent;
-    }
-        h2 a:hover {
-            border-bottom-color: rgba(95,138,166,.9);
-        }
 h3 {
     font-family: "proxima-nova", serif;
     font-size: 1em; /* override browser default */
     font-weight: 600;
     text-transform: uppercase;
 }
+    h1 a, h2 a, h3 a {
+        color: #4f4f4f;
+        display: inline-block;
+    }
+        h1 a:hover, h2 a:hover, h3 a:hover {
+            color: rgba(95,138,166,.9);
+            text-decoration: none;
+        }
 
 p {
     margin: 0;
@@ -409,6 +402,12 @@ article, .articles {
         margin-bottom: .5em;
         font-size: 1.25em;
     }
+    .article-link a {
+        border-bottom: .1875em solid transparent;
+    }
+        .article-link a:hover {
+            border-bottom-color: rgba(95,138,166,.9);
+        }
 
 .video-container {
     height: 0;
@@ -649,30 +648,9 @@ strong, .bold { font-weight: 600; }
 sup { top: -0.3em; }
 
 /* ---- ##. Media Queries ---- */
-/* ---- i   Article Links ---- */
-/* ---- ii  Tablet 766px  ---- */
-/* ---- iii Mobile 500px  ---- */
+/* ----  i. Tablet 766px  ---- */
+/* ---- ii. Mobile 500px  ---- */
 
-@media (min-width: 768px) {
-    .article-link {
-        margin-left: -0.1em;
-    }
-        .article-link a {
-            color: inherit;
-            padding: 0 .1em;
-            border-radius: .1875em;
-        }
-            .article-link a:hover {
-                background-color: rgba(95,138,166,.9);
-                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
-                background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-                color: rgba(249,249,249,.9);
-                text-decoration: none;
-                text-shadow: none;
-            }
-}
 @media (max-width: 767px) {
     header {
         height: 170px;
