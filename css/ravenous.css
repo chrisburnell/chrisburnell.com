@@ -403,9 +403,14 @@ article, .articles {
         font-size: 1.25em;
     }
     .article-link a {
+        padding: 0 .25em;
+        margin: 0 0 .35em -0.25em;
         border-bottom: .1875em solid transparent;
+        -webkit-transition: border-color .2s ease-in-out;
+        transition:         border-color .2s ease-in-out;
     }
         .article-link a:hover {
+            color: inherit;
             border-bottom-color: rgba(95,138,166,.9);
         }
 
