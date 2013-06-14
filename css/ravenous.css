@@ -19,12 +19,22 @@
  *  13: Media Queries
  */
 
-/* ---- 01. Typekit Preload ---- */
+/*------------------------------------*\
+    01. Typekit Preload
+\*------------------------------------*/
 
-/* Hide the fonts from use.typekit.com before they have finished loading */
+/**
+ * Hide the fonts from Typekit before they have finished loading...
+ */
+
 .logo, nav, h1, h2, h3, .button {
     visibility: hidden;
 }
+
+/**
+ * and show them when they have finished loading.
+ */
+
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
     -webkit-animation: fadeIn 1s;
     animation:         fadeIn 1s;
@@ -39,7 +49,13 @@
     100% { opacity: 1; }
 }
 
-/* ---- 02. Symbol font-face Load ---- */
+/*------------------------------------*\
+    02. Symbol @font-face Load
+\*------------------------------------*/
+
+/**
+ * Entypo Pictogram Suite - http://www.entypo.com
+ */
 
 @font-face {
     font-family: "Entypo";
@@ -52,7 +68,9 @@
          url("../fonts/entypo.svg#entypo") format("svg");
 }
 
-/* ---- 03. General and Typography ---- */
+/*------------------------------------*\
+    03. General and Typography
+\*------------------------------------*/
 
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
 ::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
@@ -96,7 +114,7 @@ a {
         }
 
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.2em; /* override some browser defaults */
+    min-height: 1.2em; /* so that elements can be floated inside headings */
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -104,19 +122,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-family: "league-gothic", sans-serif;
-    font-size: 2.625em;
+    font-size: 2.625em; /* 42px */
     text-transform: uppercase;
     text-shadow: .048em .048em 0 rgba(0,0,0,.08);
 }
 h2 {
     margin-bottom: .25em;
     font-family: "ff-meta-serif-web-pro", sans-serif;
-    font-size: 1.613em;
+    font-size: 1.625em; /* 26px */
     text-shadow: 0 -1px 0 rgba(255,255,255,.3);
 }
 h3 {
     font-family: "proxima-nova", serif;
-    font-size: 1em; /* override browser default */
+    font-size: 1em; /* 16px - override browser default */
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -167,7 +185,9 @@ hr {
     display: block;
 }
 
-/* ---- 04. Buttons ---- */
+/*------------------------------------*\
+    04. Buttons
+\*------------------------------------*/
 
 button, .button {
     background-color: #6f96af;
@@ -185,7 +205,7 @@ button, .button {
     position: relative;
     clear: both;
     font-family: "league-gothic", sans-serif;
-    font-size: 1.375em;
+    font-size: 1.375em; /* 22px */
     text-align: center;
     text-decoration: none !important;
     text-transform: uppercase;
@@ -228,7 +248,9 @@ button, .button {
             bottom: 0;
         }
 
-/* ---- 05. Header ---- */
+/*------------------------------------*\
+    05. Header
+\*------------------------------------*/
 
 header {
     height: 110px;
@@ -241,7 +263,7 @@ header {
         display: inline-block;
         position: relative;
         font-family: "league-gothic", sans-serif;
-        font-size: 3.2em;
+        font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
         text-shadow: .048em .048em 0 rgba(0,0,0,.08);
@@ -297,7 +319,9 @@ header {
             top: 2px;
         }
 
-/* ---- 06. Navigation ---- */
+/*------------------------------------*\
+    06. Navigation
+\*------------------------------------*/
 
 nav {
     margin-top: 20px;
@@ -326,7 +350,7 @@ nav {
                 display: block;
                 position: relative;
                 font-family: "league-gothic", sans-serif;
-                font-size: 1.25em;
+                font-size: 1.25em; /* 20px */
                 line-height: 1.25em;
                 text-transform: uppercase;
                 -webkit-transition: color .2s ease 0s, border-bottom-width .07s ease 0s, margin-top .07s ease-in-out, padding-bottom .07s ease 0s;
@@ -346,7 +370,7 @@ nav {
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
                     position: absolute;
-                    bottom: -9px;
+                    bottom: -0.425em;
                     left: 48%;
                     content: "";
                 }
@@ -357,13 +381,26 @@ nav {
                     line-height: 1.15em; /* 1.25em - .1em = 1.15em */
                 }
 
-/* ---- 07. Articles ---- */
+/*------------------------------------*\
+    07. Articles and Article Lists
+\*------------------------------------*/
 
 .content {
     margin-bottom: 2.25em;
 }
+
+/**
+ * The width of the articles is dynamic, and always has padding on the left-hand
+ * side to make room for any asides, which can appear anywhere inside an
+ * article or list of articles.
+ * Maximum total width of container
+ *      = 1080px
+ * Left-hand padding
+ *      = 25% of 1080px
+ *      = 270px
+ */
 article, .articles {
-    padding: 2.25em 0 0 270px; /* 25% of max .content width = 269px */
+    padding: 2.25em 0 0 270px; /* 25% of max .content width = 270px */
     border-top: .25em solid #5f8aa6;
 }
     article {
@@ -400,7 +437,7 @@ article, .articles {
         }
     .article-introduction {
         margin-bottom: .5em;
-        font-size: 1.25em;
+        font-size: 1.25em; /* 20px */
     }
     .article-link a {
         padding: 0 .25em;
@@ -414,6 +451,10 @@ article, .articles {
             border-bottom-color: rgba(95,138,166,.9);
         }
 
+/**
+ * Contains YouTube and Vimeo embedded videos properly and allows them to be
+ * dynamically resized.
+ */
 .video-container {
     height: 0;
     padding-top: 30px;
@@ -431,11 +472,17 @@ article, .articles {
         left: 0;
     }
 
-/* ---- 08. Asides ---- */
+/*------------------------------------*\
+    08. Asides
+\*------------------------------------*/
 
+/**
+ * The width of the asides is static and and always floated within an article or
+ * list of articles. The math is calculated as in the Articles section.
+ */
 aside {
-    width: 243px; /* 30% at 100% body width */
-    margin-left: -270px; /* 33% of 75% = 25% = <article> padding-left at 100% body width */
+    width: 243px;
+    margin-left: -270px;
     float: left;
 }
     .author,
@@ -451,7 +498,7 @@ aside {
         .author-information {
             margin-bottom: .5em;
             font-family: "ff-meta-serif-web-pro", serif;
-            font-size: .875em;
+            font-size: .875em; /* 14px */
             font-style: italic;
         }
         .author-information strong,
@@ -472,7 +519,7 @@ aside {
         aside p {
             margin-bottom: .5em;
             clear: both;
-            font-size: .875em;
+            font-size: .875em; /* 14px */
         }
             .author-biography .twitter,
             .author-biography .codepen,
@@ -492,43 +539,53 @@ aside {
             }
                 .related-articles .article-date {
                     padding-left: .75em;
-                    font-size: .81em;
+                    font-size: .8124em; /* 13px */
                 }
 
-/* ---- 09. Forms ---- */
+/*------------------------------------*\
+    09. Forms
+\*------------------------------------*/
 
-    /* need to extract this stuff from comments.css */
 
-/* ---- 10. Code Blocks ---- */
+/**
+ * I need to extract this stuff from comments.css if I don't use Disqus.
+ */
 
-pre:not(.codepen), code {
+
+/*------------------------------------*\
+    10. Code and Code Blocks
+\*------------------------------------*/
+
+code {
     font-family: Monaco, 'Courier New', monospace;
-    font-size: 0.875em;
+    font-size: 0.875em; /* 14px */
 }
-    pre:not(.codepen) {
-        background: #4f4f4f;
-        color: #f9f9f9;
-        padding: .714em;
-        position: relative;
-        overflow: hidden;
-        overflow-x: auto;
-        border-radius: .1875em;
-        -webkit-background-clip: padding-box;
-        -moz-background-clip: padding;
-        background-clip: padding-box;
+pre:not(.codepen) {
+    background: #4f4f4f;
+    color: #f9f9f9;
+    padding: .714em;
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    border-radius: .1875em;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+    pre:not(.codepen):after {
+        color: rgba(249,249,249,.05);
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+        content: "\E714";
+        font: 400 720px/22px "Entypo";
+        z-index: 0;
     }
-        pre:not(.codepen):after {
-            color: rgba(249,249,249,.05);
-            display: block;
-            position: absolute;
-            top: 50px;
-            left: 40px;
-            content: "\E714";
-            font: 400 720px/22px "Entypo";
-            z-index: 0;
-        }
 
-/* ---- 11. Footer ---- */
+/*------------------------------------*\
+    11. Footer
+\*------------------------------------*/
 
 footer {
     background: #4f4f4f;
@@ -541,7 +598,9 @@ footer {
     height: 40px;
     padding: 2.14em 0;
     border-top: .286em solid rgba(95,138,166,.9);
-    font: 600 .875em "proxima-nova", sans-serif;
+    font-weight: 600;
+    font-size: .875em; /* 14px */
+    font-family: "proxima-nova", sans-serif;
     text-transform: uppercase;
 }
     footer .s {
@@ -599,7 +658,9 @@ footer {
                     width: 20px;
                 }
 
-/* ---- 12. Miscellaneous ---- */
+/*------------------------------------*\
+    12. Miscellaneous
+\*------------------------------------*/
 
 .s, .logo:after { background: url("/img/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
@@ -652,9 +713,11 @@ strong, .bold { font-weight: 600; }
 
 sup { top: -0.3em; }
 
-/* ---- ##. Media Queries ---- */
-/* ----  i. Tablet 766px  ---- */
-/* ---- ii. Mobile 500px  ---- */
+/*------------------------------------*\
+    ##. Media Queries
+    i.  Tablet - 766px
+    ii. Mobile - 500px
+\*------------------------------------*/
 
 @media (max-width: 767px) {
     header {
@@ -694,10 +757,10 @@ sup { top: -0.3em; }
         padding-left: 10px;
     }
     .logo {
-        font-size: 2.4em;
+        font-size: 2.25em; /* 36px */
     }
     aside p {
-        font-size: 1em;
+        font-size: 1em; /* 16px */
     }
     footer {
         height: 80px;
