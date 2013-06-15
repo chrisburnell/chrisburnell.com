@@ -60,35 +60,23 @@ I can't take all the credit for this website, really. It's the culmination of be
 
 <aside><a href="http://browser.londonwebstandards.org/gallery_2013.php"><img src="{{ site.url }}/images/articles/sotb-2013.png" class="banner  rounded"></a><p class="italic  gray">Image courtesy of [London Web Standards](http://browser.londonwebstandards.org/).</p></aside>I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), [State of the Browser](http://browser.londonwebstandards.org/), which was really motivating for me, and opened my eyes to some parts of the browser space that I don't pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I'm just going to reel off here in no particular order (other than alphabetical):
 
-> [Jake Archibald (Google)](http://www.jakearchibald.com/)
-
-> [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/)
-
-> [Andreas Bovens (Opera)](http://dev.opera.com/)
-
-> [Christian Heilmann (Mozilla)](http://christianheilmann.com/)
-
-> [Laura Kalbag](http://laurakalbag.com/)
-
-> [Paul Kinlan (Google)](http://paul.kinlan.me/)
-
-> [Seb Lee-Delisle](http://seb.ly/)
-
-> [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/)
+- [Jake Archibald (Google)](http://www.jakearchibald.com/)
+- [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/)
+- [Andreas Bovens (Opera)](http://dev.opera.com/)
+- [Christian Heilmann (Mozilla)](http://christianheilmann.com/)
+- [Laura Kalbag](http://laurakalbag.com/)
+- [Paul Kinlan (Google)](http://paul.kinlan.me/)
+- [Seb Lee-Delisle](http://seb.ly/)
+- [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/)
 
 I also have to mention a few blogs run by some clever folks because they're what gave me the knowledge that helped me really improve my CSS skills, again in no particular order:
 
-> [A List Apart](http://alistapart.com/)
-
-> [CSS Wizardary](http://csswizardry.com/) by [Harry Roberts](https://twitter.com/csswizardry)
-
-> [CSS-Tricks](http://css-tricks.com/) by [Chris Coyier](https://twitter.com/chriscoyier)
-
-> [Smashing Magazine](http://www.smashingmagazine.com/)
-
-> [Responsive Design Newsletter](http://responsivedesignweekly.com/) by [Justin Avery](http://surfthedream.com.au/)
-
-> [Visual Idiot](http://visualidiot.com/)
+- [A List Apart](http://alistapart.com/)
+- [CSS Wizardary](http://csswizardry.com/) by [Harry Roberts](https://twitter.com/csswizardry)
+- [CSS-Tricks](http://css-tricks.com/) by [Chris Coyier](https://twitter.com/chriscoyier)
+- [Smashing Magazine](http://www.smashingmagazine.com/)
+- [Responsive Design Newsletter](http://responsivedesignweekly.com/) by [Justin Avery](http://surfthedream.com.au/)
+- [Visual Idiot](http://visualidiot.com/)
 
 ### And that's basically it!
 
