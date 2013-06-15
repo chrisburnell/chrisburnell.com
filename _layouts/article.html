@@ -27,7 +27,9 @@
                     </ul>
                 </div-->
             </aside>
-            <img src="{{ site.url }}/img/article-banners/{{ page.slug }}.png" class="banner  rounded">
+            {% if page.banner != "" %}
+            <img src="{{ site.url }}/img/article-banners/{{ page.banner }}" class="banner  rounded">
+            {% endif %}
             <p class="article-introduction">{{ page.introduction }}</p>
             {{ content }}
         </article>

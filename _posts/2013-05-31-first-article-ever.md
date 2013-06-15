@@ -12,8 +12,6 @@ tags:
 - Markdown
 ---
 
-#This is still in progress. Just testing. Thanks!
-
 I can tell you it wasn't a completely smooth process. And it's not even like I'm new to migrating things or trying out new technologies&mdash;over the years, I've gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn't easy to port the content because of how specifically I wanted each to be set up. It was basically poor planning on my part over and over again. Pretty stupid. That's where Jekyll came in; I needed a platform to host my site/blog on that wasn't going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
 
 ### What is Jekyll?
