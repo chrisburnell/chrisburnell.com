@@ -152,7 +152,9 @@ h3 {
 p {
     margin: 0;
 }
-    article > p:not(.article-introduction):not(:last-child) {
+    article > p:not(.article-introduction):not(:last-child),
+    article > ul,
+    article > ol {
         margin-bottom: 1em;
     }
 
