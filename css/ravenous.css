@@ -19,6 +19,7 @@
  *  13: Media Queries
  */
 
+
 /*------------------------------------*\
     01. Typekit Preload
 \*------------------------------------*/
@@ -26,15 +27,12 @@
 /**
  * Hide the fonts from Typekit before they have finished loading...
  */
-
 .logo, nav, h1, h2, h3, .button {
     visibility: hidden;
 }
-
 /**
  * and show them when they have finished loading.
  */
-
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active .button {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
@@ -48,6 +46,7 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
 
 /*------------------------------------*\
     02. Symbol @font-face Load
@@ -192,6 +191,7 @@ hr {
     display: block;
 }
 
+
 /*------------------------------------*\
     04. Buttons
 \*------------------------------------*/
@@ -258,6 +258,7 @@ button, .button {
             top: -0.136em;
             bottom: 0;
         }
+
 
 /*------------------------------------*\
     05. Header
@@ -340,6 +341,7 @@ header {
             top: 2px;
         }
 
+
 /*------------------------------------*\
     06. Navigation
 \*------------------------------------*/
@@ -379,13 +381,13 @@ nav {
             }
                 .site-nav a:hover,
                 .page-home .site-nav-home a,
-                .page-articles .site-nav-articles a {
+                .page-articles .site-nav-archive a {
                     color: #4f4f4f;
                     padding-bottom: 8px;
                     border-bottom-width: 4px;
                 }
                 .page-home .site-nav-home a:after,
-                .page-articles .site-nav-articles a:after {
+                .page-articles .site-nav-archive a:after {
                     margin-left: -3px;
                     border-top: 5px solid rgba(95,138,166,.9);
                     border-right: 5px solid transparent;
@@ -401,6 +403,7 @@ nav {
                     top: .1em;
                     line-height: 1.15em; /* 1.25em - .1em = 1.15em */
                 }
+
 
 /*------------------------------------*\
     07. Articles and Article Lists
@@ -493,6 +496,7 @@ article, .articles {
         left: 0;
     }
 
+
 /*------------------------------------*\
     08. Asides
 \*------------------------------------*/
@@ -563,10 +567,10 @@ aside {
                     font-size: .8124em; /* 13px */
                 }
 
+
 /*------------------------------------*\
     09. Forms
 \*------------------------------------*/
-
 
 /**
  * I need to extract this stuff from comments.css if I don't use Disqus.
@@ -603,6 +607,7 @@ pre:not(.codepen) {
         font: 400 720px/22px "Entypo";
         z-index: 0;
     }
+
 
 /*------------------------------------*\
     11. Footer
@@ -679,6 +684,7 @@ footer {
                     width: 20px;
                 }
 
+
 /*------------------------------------*\
     12. Miscellaneous
 \*------------------------------------*/
@@ -732,6 +738,7 @@ sup { top: -0.3em; }
 .no-margin { margin: 0 !important; }
 .no-padding { padding: 0 !important; }
 .no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
+
 
 /*------------------------------------*\
     ##. Media Queries
