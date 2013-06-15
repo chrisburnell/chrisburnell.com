@@ -1,7 +1,7 @@
 ---
 title: First Article Ever
 slug: first-article-ever
-date: 2013-05-31 01:00:00
+date: 2013-05-15 13:13:13
 layout: article
 page_class: page-articles
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
