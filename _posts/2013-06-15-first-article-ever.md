@@ -72,7 +72,7 @@ I can't take all the credit for this website, really. It's the culmination of be
 I also have to mention a few blogs run by some clever folks because they're what gave me the knowledge that helped me really improve my CSS skills, again in no particular order:
 
 - [A List Apart](http://alistapart.com/)
-- [CSS Wizardary](http://csswizardry.com/) by [Harry Roberts](https://twitter.com/csswizardry)
+- [CSS Wizardry](http://csswizardry.com/) by [Harry Roberts](https://twitter.com/csswizardry)
 - [CSS-Tricks](http://css-tricks.com/) by [Chris Coyier](https://twitter.com/chriscoyier)
 - [Smashing Magazine](http://www.smashingmagazine.com/)
 - [Responsive Design Newsletter](http://responsivedesignweekly.com/) by [Justin Avery](http://surfthedream.com.au/)
