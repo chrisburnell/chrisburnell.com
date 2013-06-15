@@ -38,7 +38,7 @@ This is what it looks like when you're writing it:
 
 ### So, what's new in the stylesheet?
 
-Since my last desgin update, I started working at [Squiz](http://squiz.net) and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I've been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we're adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
+Since my last design update, I started working at [Squiz](http://squiz.net) and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I've been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we're adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
 ### More than meets the eye
 
