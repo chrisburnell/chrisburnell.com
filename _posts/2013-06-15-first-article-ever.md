@@ -1,7 +1,7 @@
 ---
 title: First Article Ever
 slug: first-article-ever
-date: 2013-05-15 13:13:13
+date: 2013-05-15 13:21:00
 layout: article
 page_class: page-articles
 introduction: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
@@ -90,4 +90,4 @@ I also have to mention a few blogs run by some clever folks because they're what
 
 ### And that's basically it!
 
-I guess if you have anything else you want to know about this stuff, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or <a href="mailto:me@chrisburnell">send me an email</a>! I hope to get comments up here soon! **I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)**
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](http://chrisburnell.com/feed.xml) if you're interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or <a href="mailto:me@chrisburnell">send me an email</a>! I hope to get comments up here soon! I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)
