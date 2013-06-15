@@ -450,11 +450,11 @@ article, .articles {
                 content: "\2013 \0020";
             }
     .site-introduction {
-        padding-bottom: 1.5em;
+        margin-bottom: .8em;
     }
-        .site-subtitle, .site-introduction-title {
-            margin-bottom: .8em;
-        }
+    .article-title {
+        margin-bottom: .4em;
+    }
     .article-introduction {
         margin-bottom: .5em;
         font-size: 1.25em; /* 20px */
