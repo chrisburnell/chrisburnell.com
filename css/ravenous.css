@@ -149,12 +149,6 @@ h3 {
 p {
     margin: 0;
 }
-    article > p:not(.article-introduction):not(:last-child),
-    article > ul,
-    article > ol {
-        margin-bottom: 1em;
-    }
-
 /**
  * I don't like the default margins attached to lists, so they're CUT.
  */
@@ -165,6 +159,11 @@ ol, ul {
 }
     ol {
         list-style-type: decimal-leading-zero;
+    }
+    article > p:not(.article-introduction):not(:last-child),
+    article > ul,
+    article > ol {
+        margin-bottom: 1em;
     }
 
 img, a img {
