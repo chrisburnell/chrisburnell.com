@@ -56,7 +56,7 @@ I encourage everyone to approach their passions with the same aggression and vig
 
 I can't take all the credit for this website, really. It's the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I'm going to give a few shout-outs to some awesome people who helped me immensely.
 
-<aside><img src="{{ site.url }}/images/articles/sotb-2013.png" class="banner  rounded"><p class="italic  gray">Image courtesy of [London Web Standards](http://browser.londonwebstandards.org/)</p></aside>I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), **[State of the Browser](http://browser.londonwebstandards.org/)**, which was really motivating for me, and opened my eyes to some parts of the browser space that I don't pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I'm just going to reel off here in no particular order (other than alphabetical):
+<aside><img src="{{ site.url }}/images/articles/sotb-2013.png" class="banner  rounded"><p class="italic  gray">Image courtesy of [London Web Standards](http://browser.londonwebstandards.org/).</p></aside>I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), [State of the Browser](http://browser.londonwebstandards.org/), which was really motivating for me, and opened my eyes to some parts of the browser space that I don't pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I'm just going to reel off here in no particular order (other than alphabetical):
 
 > [Jake Archibald (Google)](http://www.jakearchibald.com/)
 
@@ -68,11 +68,11 @@ I can't take all the credit for this website, really. It's the culmination of be
 
 > [Laura Kalbag](http://laurakalbag.com/)
 
-> [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/)
-
 > [Paul Kinlan (Google)](http://paul.kinlan.me/)
 
 > [Seb Lee-Delisle](http://seb.ly/)
+
+> [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/)
 
 I also have to mention a few blogs run by some clever folks because they're what gave me the knowledge that helped me really improve my CSS skills, again in no particular order:
 
@@ -86,6 +86,8 @@ I also have to mention a few blogs run by some clever folks because they're what
 
 > [Responsive Design Newsletter](http://responsivedesignweekly.com/) by [Justin Avery](http://surfthedream.com.au/)
 
+> [Visual Idiot](http://visualidiot.com/)
+
 ### And that's basically it!
 
-I guess if you have anything else you want to know about this stuff, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or send me an email <a href="mailto:me@chrisburnell"></a>! I hope to get comments up here soon! I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)
+I guess if you have anything else you want to know about this stuff, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or send me an email <a href="mailto:me@chrisburnell"></a>! I hope to get comments up here soon! **I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)**
