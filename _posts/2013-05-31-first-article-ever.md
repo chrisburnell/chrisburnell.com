@@ -90,4 +90,4 @@ I also have to mention a few blogs run by some clever folks because they're what
 
 ### And that's basically it!
 
-I guess if you have anything else you want to know about this stuff, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or send me an email <a href="mailto:me@chrisburnell"></a>! I hope to get comments up here soon! **I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)**
+I guess if you have anything else you want to know about this stuff, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or <a href="mailto:me@chrisburnell">send me an email</a>! I hope to get comments up here soon! **I'm still trying to decide between a Jekyll plugin, [Disqus](http://disqus.com/), or an alternative, so if you have any suggestions, see above. :)**
