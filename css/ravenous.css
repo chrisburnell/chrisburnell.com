@@ -272,7 +272,7 @@ header {
         transition:         none;
     }
         .logo:after {
-            background: url("../img/raven.png") no-repeat;
+            background: url("/images/raven.png") no-repeat;
             background-size: 120px 120px;
             width: 120px;
             height: 120px;
@@ -662,13 +662,13 @@ footer {
     12. Miscellaneous
 \*------------------------------------*/
 
-.s, .logo:after { background: url("/img/raven.svg") no-repeat; }
+.s, .logo:after { background: url("/images/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
-.twitter { background-image: url("/img/glyph-twitter.png"); color: #1AB2E8 !important; }
-.forrst { background-image: url("/img/glyph-forrst.png"); color: #223F17 !important; }
-.lastfm { background-image: url("/img/glyph-lastfm.png"); color: #D51007 !important; }
-.codepen { background-image: url("/img/glyph-codepen.png"); color: #999!important; }
+.twitter { background-image: url("/images/glyph-twitter.png"); color: #1AB2E8 !important; }
+.forrst { background-image: url("/images/glyph-forrst.png"); color: #223F17 !important; }
+.lastfm { background-image: url("/images/glyph-lastfm.png"); color: #D51007 !important; }
+.codepen { background-image: url("/images/glyph-codepen.png"); color: #999!important; }
 
 .gray { color: #6f6f6f; }
 .blue { color: #5f8aa6; }
