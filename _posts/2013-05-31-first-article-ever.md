@@ -1,5 +1,4 @@
 ---
-published: false
 title: First Article Ever
 slug: first-article-ever
 date: 2013-05-31 01:00:00
