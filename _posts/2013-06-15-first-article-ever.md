@@ -52,6 +52,8 @@ During this learning phase, I adopted a number of intelligent and new technologi
 
 I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](http://codepen.io) often whenever anything intriguing crosses your mind. I'm really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these simple steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
 
+The most important lesson of them all, of course, is to **keep it simple**. Whether it's code or design, just stick to what you need and you're sure to find success.
+
 ### Major props
 
 I can't take all the credit for this website, really. It's the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I'm going to give a few shout-outs to some awesome people who helped me immensely.
