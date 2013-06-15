@@ -11,8 +11,8 @@ forrst_url: http://forrst.me/chrisburnell
 lastfm_url: http://last.fm/user/chrisburnell
 
 destination: ./_site
-layouts: ./_layouts
 plugins: ./_plugins
+layouts: ./_layouts
 
 include: ['.htaccess']
 exclude: []
