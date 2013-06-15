@@ -56,7 +56,6 @@
 /**
  * Entypo Pictogram Suite - http://www.entypo.com
  */
-
 @font-face {
     font-family: "Entypo";
     font-weight: normal;
@@ -98,6 +97,10 @@ body {
     padding: 0 1.25em;
 }
 
+/**
+ * I don't want users to be able to select buttons, and select half a link is
+ * kind of peculiar, so I just *dictate* that they shouldn't be selectable.
+ */
 a {
     color: #5f8aa6;
     text-decoration: none;
@@ -154,6 +157,9 @@ p {
         margin-bottom: 1em;
     }
 
+/**
+ * I don't like the default margins attached to lists, so they're CUT.
+ */
 ol, ul {
     margin: 0;
     padding: 0;
@@ -189,6 +195,10 @@ hr {
     04. Buttons
 \*------------------------------------*/
 
+/**
+ * I may need to revisit this at some point to make sure it's as streamlined
+ * as I can make it. If you have suggestions, please fork on GitHub.
+ */
 button, .button {
     background-color: #6f96af;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
@@ -286,12 +296,17 @@ header {
             transform:         translate3d(0,-42px,0);
             -webkit-transform-origin: center top;
             transform-origin:         center top;
-            -webkit-animation: loopdeloop 2s ease-in-out 0 infinite;
-            animation:         loopdeloop 2s ease-in-out 0 infinite;
+            -webkit-animation: looptheloop 2s ease-in-out 0 infinite;
+            animation:         looptheloop 2s ease-in-out 0 infinite;
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
-            @-webkit-keyframes loopdeloop {
+            /**
+             * This isn't working yet, and I'm having trouble getting the
+             * animation just in the browser. I need to revisit this.
+             * Please fork if you have ideas!
+             */
+            @-webkit-keyframes looptheloop {
                 0% {
                     -webkit-transform: translate3d(0,-42px,0);
                     transform:         translate3d(0,-42px,0);
@@ -301,7 +316,7 @@ header {
                     transform:         rotate(360deg), translate3d(0,-42px,0);
                 }
             }
-            @keyframes loopdeloop {
+            @keyframes looptheloop {
                 0% {
                     -webkit-transform: translate3d(0,-42px,0);
                     transform:         translate3d(0,-42px,0);
@@ -311,6 +326,11 @@ header {
                     transform:         rotate(360deg), translate3d(0,-42px,0);
                 }
             }
+        /**
+         * And the idea was that the bird would be still until the user hovers,
+         * upon which it would appear to soar in a breeze. Abandoned that and
+         * tried and failed at a loop-the-loop. Ideas? Please fork.
+         */
         .logo:hover:after {
             -webkit-animation-play-state: running;
             animation-play-state:         running;
@@ -670,6 +690,11 @@ footer {
 .lastfm { background-image: url("/images/glyph-lastfm.png"); color: #D51007 !important; }
 .codepen { background-image: url("/images/glyph-codepen.png"); color: #999!important; }
 
+strong, .bold { font-weight: 600; }
+.italic { font-style: italic; }
+.small { font-size: small; }
+sup { top: -0.3em; }
+
 .gray { color: #6f6f6f; }
 .blue { color: #5f8aa6; }
 .red { color: #dd3322; }
@@ -686,10 +711,6 @@ footer {
     .clear:before, .clear:after { display: table; content: ''; }
     .clear:after { clear: both; }
 
-.ghost, .disabled { filter: alpha(opacity=50); opacity: .5; }
-    .ghost.super { filter: alpha(opacity=20); opacity: .2; }
-    .ghost.sub { filter: alpha(opacity=80); opacity: .8; }
-
 .align { margin: 0 auto; }
     .align.text { text-align: center; }
     .align.right { text-align: right; }
@@ -699,19 +720,17 @@ footer {
     .float.left { float: left; }
     .float.right { float: right; }
 
+.ghost, .disabled { filter: alpha(opacity=50); opacity: .5; }
+    .ghost.super { filter: alpha(opacity=20); opacity: .2; }
+    .ghost.sub { filter: alpha(opacity=80); opacity: .8; }
+
 .debug *[href='#'], .debug *[src=''], .debug *[alt=''], .debug *:not([title]), .debug *:not([src]), .debug *:not([href]), .debug *:not([alt]), .debug *[title=''], .debug *[style] { outline: 1px dotted #f0f; }
     *:hover .debug * { background: rgba(0,0,0,.3); outline: 1px solid rgba(0,0,0,.5); }
-
-strong, .bold { font-weight: 600; }
-.italic { font-style: italic; }
-.small { font-size: small; }
 
 .no-text { color: transparent !important; text-indent: -999em !important; }
 .no-margin { margin: 0 !important; }
 .no-padding { padding: 0 !important; }
 .no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
-
-sup { top: -0.3em; }
 
 /*------------------------------------*\
     ##. Media Queries
@@ -720,6 +739,9 @@ sup { top: -0.3em; }
 \*------------------------------------*/
 
 @media (max-width: 767px) {
+    /**
+     * Center the logo and make room for the navigation to drop under the logo.
+     */
     header {
         height: 170px;
         text-align: center;
@@ -734,6 +756,9 @@ sup { top: -0.3em; }
             margin-top: 0;
             float: none;
         }
+            /**
+             * Center the navigation items.
+             */
             .site-nav {
                 float: none;
                 text-align: center;
@@ -742,6 +767,10 @@ sup { top: -0.3em; }
                 float: none;
                 display: inline-block;
             }
+    /**
+     * When you hit the tablet breakpoint, articles, article lists, and asides
+     * becomes full width.
+     */
     article, .articles {
         padding-left: 0;
     }
@@ -752,10 +781,18 @@ sup { top: -0.3em; }
     }
 }
 @media (max-width: 500px) {
+    /**
+     * Let's make intelligent use of mobile viewport and reduce the padding
+     * on either side of the wrapper. We can't remove it or the text will sit
+     * right at the edge, creating a readability issue.
+     */
     .wrap {
         padding-right: 10px;
         padding-left: 10px;
     }
+    /**
+     * Shrink the logo font size down a bit to fit inside the viewport.
+     */
     .logo {
         font-size: 2.25em; /* 36px */
     }
@@ -765,12 +802,18 @@ sup { top: -0.3em; }
     footer {
         height: 80px;
     }
+        /**
+         * Center the footer copyright text and social icons.
+         */
         .footer-copyright,
         .footer-social {
             width: 100%;
             float: none;
             text-align: center;
         }
+            /**
+             * Since we're centered, we shouldn't have the right-hand offeset.
+             */
             .footer-social .lastfm {
                 margin-right: 0;
             }
