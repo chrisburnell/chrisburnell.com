@@ -81,7 +81,7 @@ html, body {
     min-height: 100%;
 }
 body {
-    background: #f9f9f9;
+    background: #f9f9f9 url("/images/bg-body.png");
     color: #4f4f4f;
     position: relative;
     font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
