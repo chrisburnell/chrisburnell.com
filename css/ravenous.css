@@ -569,9 +569,9 @@ aside {
     09. Forms
 \*------------------------------------*/
 
-/**
- * I need to extract this stuff from comments.css if I don't use Disqus.
- */
+.comments {
+    margin-top: 1em;
+}
 
 
 /*------------------------------------*\
