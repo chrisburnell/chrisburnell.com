@@ -584,7 +584,9 @@ aside {
 \*------------------------------------*/
 
 .comments {
-    margin-top: 1em;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: .25em solid rgba(6,6,6,.05);
 }
 
 

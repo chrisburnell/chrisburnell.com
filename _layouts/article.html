@@ -39,10 +39,10 @@
             {{ content }}
             <section class="pagination  clear">
                 {% if page.previous.url %}
-                <a href="{{ page.previous.url }}" class="button  prev-link">Previous</a>
+                <a href="{{ page.previous.url }}" class="button  prev-link" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
                 {% endif %}
                 {% if page.next.url %}
-                <a href="{{ page.next.url }}" class="button  next-link">Next</a>
+                <a href="{{ page.next.url }}" class="button  next-link" title="Next Article: {{ page.next.title }}">Next Article</a>
                 {% endif %}
             </section>
             <section class="comments  clear">
