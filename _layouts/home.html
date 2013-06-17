@@ -3,9 +3,6 @@
     <section class="content  wrap  clear">
         <section class="articles">
             <h1 class="site-introduction">{{ page.title }}</h1>
-            {% if page.page_class == "page-home" %}
-            <h2 class="site-introduction">{{ site.description }}</h2>
-            {% endif %}
             <aside class="author">
                 <div class="author-information">
                     <img src="/images/avatar.png" class="author-image  rounded" rel="author">
@@ -18,6 +15,9 @@
                     <p>I also <a href="{{ site.twitter_url }}" rel="twitter" class="twitter" title="{{ site.author }} on Twitter">tweet</a>, <a href="{{ site.codepen_url }}" rel="codepen" class="codepen" title="{{ site.author }} on Codepen">write code</a>, and <a href="{{ site.lastfm_url }}" rel="lastfm" class="lastfm" title="{{ site.author }} on Last.FM">listen to music</a> if my whimsical articles don't capture your child-like wonder.</p>
                 </div>
             </aside>
+            {% if page.page_class == "page-home" %}
+            <h2 class="site-introduction">{{ site.description }}</h2>
+            {% endif %}
             {{ content }}
         </section>
     </section>
