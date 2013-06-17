@@ -38,12 +38,11 @@
             {% endif %}
             {{ content }}
             <section class="pagination  clear">
-                {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path }}" class="align  left">Previous</a>
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url }}" class="align  left">Previous</a>
                 {% endif %}
-                <span class="align  text">{{ paginator.total_posts }} Articles</span>
-                {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path }}" class="align  right">Next</a>
+                {% if page.next.url %}
+                <a href="{{ page.next.url }}" class="align  right">Next</a>
                 {% endif %}
             </section>
             <section class="comments  clear">
