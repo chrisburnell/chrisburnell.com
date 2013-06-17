@@ -500,6 +500,12 @@ article, .articles {
 .pagination {
     width: 100%;
 }
+    .pagination .prev-link {
+        float: left;
+    }
+    .pagination .next-link {
+        float: right;
+    }
 
 
 /*------------------------------------*\
