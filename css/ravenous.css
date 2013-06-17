@@ -748,7 +748,7 @@ sup { top: -0.3em; }
     .ghost.sub { filter: alpha(opacity=80); opacity: .8; }
 
 .debug *[href='#'], .debug *[src=''], .debug *[alt=''], .debug *:not([title]), .debug *:not([src]), .debug *:not([href]), .debug *:not([alt]), .debug *[title=''], .debug *[style] { outline: 1px dotted #f0f; }
-    *:hover .debug * { background: rgba(0,0,0,.3); outline: 1px solid rgba(0,0,0,.5); }
+    .debug *:hover { background: rgba(0,0,0,.1); outline: 1px solid rgba(255,0,0,.5); }
 
 .no-text { color: transparent !important; text-indent: -999em !important; }
 .no-margin { margin: 0 !important; }
