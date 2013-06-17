@@ -494,6 +494,13 @@ article, .articles {
         left: 0;
     }
 
+/**
+ * Work in progress:
+ */
+.pagination {
+    width: 100%;
+}
+
 
 /*------------------------------------*\
     08. Asides
