@@ -297,6 +297,8 @@ header {
             z-index: 0;
             -webkit-transition: all .4s;
             transition:         all .4s;
+            -webkit-transform: translate3d(-0.2em,-1em,0);
+            transform:         translate3d(-0.2em,-1em,0);
             -webkit-animation: soaring 7s linear infinite;
             animation:         soaring 7s linear infinite;
             -webkit-animation-play-state: paused;
