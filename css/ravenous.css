@@ -308,13 +308,6 @@ header {
                 -webkit-transform: translate3d(0,-0.8em,0);
                 transform:         translate3d(0,-0.8em,0);
             }
-            /**
-             * Only animate when the user hovers the bird.
-             */
-            .logo:hover:after {
-                -webkit-animation-play-state: running;
-                animation-play-state:         running;
-            }
             @-webkit-keyframes soaring {
                 0% { transform: translate3d(0,-0.8em,0); }
                 12.5% { transform: translate3d(-0.05em,-0.65em,0); }
@@ -336,6 +329,13 @@ header {
                 75% { transform: translate3d(.2em,-0.45em,0); }
                 87.5% { transform: translate3d(-0.05em,-0.55em,0); }
                 100% { transform: translate3d(0,-0.8em,0); }
+            }
+            /**
+             * Only animate when the user hovers the bird.
+             */
+            .wf-active .logo:hover:after {
+                -webkit-animation-play-state: running;
+                animation-play-state:         running;
             }
 
 
