@@ -17,7 +17,7 @@ Nearing the end of the work-day yesterday, I was struck with an idea. Having rec
 
 My idea was basically this: I wonder how one could create a working version clock on the right-hand side of that pen using CSS3 *and still maintain a persistent source of light*. The trouble with the usual approach is that in using <code>transform</code> on an element, you are manipulating it's <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. If you <code>transform: rotate3d(0,0,1,90deg);</code> a box, what you now see as the top of the box is in fact it's <code>left</code> attribute. These shadow effects are typically done with <code>box-shadow</code>, and as the element rotates, the shadow will rotate with it&mdash;<code>box-shadow: 2em 2em 0 black;</code> would produce a diagonal *bottom-right* shadow without a transform, but with <code>transform: rotate3d(0,0,1,90deg);</code> it would become *bottom-left*! We've hit a snag.
 
-<aside><p>Here's an example of this effect (which [Chris Coyier loved on CodePen](http://codepen.io/chrisburnell/details/mglHp#lovers)!</p></aside><pre class="codepen" data-height="400" data-type="result" data-href="mglHp" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/mglHp">Check out this Pen!</a> </pre>
+<aside><p>Here's an example of this effect (which [Chris Coyier loved on CodePen](http://codepen.io/chrisburnell/details/mglHp#lovers)!</p></aside><pre class="codepen" data-height="425" data-type="result" data-href="mglHp" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/mglHp">Check out this Pen!</a> </pre>
 
 ### How does that work?
 
