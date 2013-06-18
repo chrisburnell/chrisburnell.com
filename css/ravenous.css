@@ -309,31 +309,31 @@ header {
                 transform:         translate3d(0,-0.8em,0);
             }
             @-webkit-keyframes soaring {
-                0% { transform: translate3d(0,-0.8em,0); }
-                12.5% { transform: translate3d(-0.05em,-0.65em,0); }
-                25% { transform: translate3d(.1em,-0.3em,0); }
-                37.5% { transform: translate3d(.3em,-0.35em,0); }
-                50% { transform: translate3d(.15em,-0.45em,0); }
-                62.5% { transform: translate3d(.05em,-0.25em,0); }
-                75% { transform: translate3d(.2em,-0.45em,0); }
-                87.5% { transform: translate3d(-0.05em,-0.55em,0); }
-                100% { transform: translate3d(0,-0.8em,0); }
+                0% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+                12.5% { -webkit-transform: translate3d(-0.05em,-0.65em,0); transform: translate3d(-0.05em,-0.65em,0); }
+                25% { -webkit-transform: translate3d(.1em,-0.3em,0); transform: translate3d(.1em,-0.3em,0); }
+                37.5% { -webkit-transform: translate3d(.3em,-0.35em,0); transform: translate3d(.3em,-0.35em,0); }
+                50% { -webkit-transform: translate3d(.15em,-0.45em,0); transform: translate3d(.15em,-0.45em,0); }
+                62.5% { -webkit-transform: translate3d(.05em,-0.25em,0); transform: translate3d(.05em,-0.25em,0); }
+                75% { -webkit-transform: translate3d(.2em,-0.45em,0); transform: translate3d(.2em,-0.45em,0); }
+                87.5% { -webkit-transform: translate3d(-0.05em,-0.55em,0); transform: translate3d(-0.05em,-0.55em,0); }
+                100% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
             }
             @keyframes soaring {
-                0% { transform: translate3d(0,-0.8em,0); }
-                12.5% { transform: translate3d(-0.05em,-0.65em,0); }
-                25% { transform: translate3d(.1em,-0.3em,0); }
-                37.5% { transform: translate3d(.3em,-0.35em,0); }
-                50% { transform: translate3d(.15em,-0.45em,0); }
-                62.5% { transform: translate3d(.05em,-0.25em,0); }
-                75% { transform: translate3d(.2em,-0.45em,0); }
-                87.5% { transform: translate3d(-0.05em,-0.55em,0); }
-                100% { transform: translate3d(0,-0.8em,0); }
+                0% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+                12.5% { -webkit-transform: translate3d(-0.05em,-0.65em,0); transform: translate3d(-0.05em,-0.65em,0); }
+                25% { -webkit-transform: translate3d(.1em,-0.3em,0); transform: translate3d(.1em,-0.3em,0); }
+                37.5% { -webkit-transform: translate3d(.3em,-0.35em,0); transform: translate3d(.3em,-0.35em,0); }
+                50% { -webkit-transform: translate3d(.15em,-0.45em,0); transform: translate3d(.15em,-0.45em,0); }
+                62.5% { -webkit-transform: translate3d(.05em,-0.25em,0); transform: translate3d(.05em,-0.25em,0); }
+                75% { -webkit-transform: translate3d(.2em,-0.45em,0); transform: translate3d(.2em,-0.45em,0); }
+                87.5% { -webkit-transform: translate3d(-0.05em,-0.55em,0); transform: translate3d(-0.05em,-0.55em,0); }
+                100% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
             }
             /**
              * Only animate when the user hovers the bird.
              */
-            .wf-active .logo:hover:after {
+            .logo:hover:after {
                 -webkit-animation-play-state: running;
                 animation-play-state:         running;
             }
