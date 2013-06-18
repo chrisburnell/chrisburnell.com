@@ -455,6 +455,7 @@ article, .articles {
     }
     .site-introduction {
         margin-bottom: .8em;
+        line-height: 1.4em;
     }
     .article-introduction {
         margin-bottom: 1em;
