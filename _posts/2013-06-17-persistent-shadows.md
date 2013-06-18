@@ -4,7 +4,7 @@ page_class: page-articles
 date: 2013-06-16 03:58:00
 title: Persistent Shadows
 slug: persistent-shadows
-introduction: After checking out Google's Visual Assets Guidelines
+introduction: How easy is it to have a persistent shadow when rotating an element?
 tags:
 - CodePen
 - CSS
