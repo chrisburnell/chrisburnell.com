@@ -103,8 +103,8 @@ body {
 a {
     color: #5f8aa6;
     text-decoration: none;
-    -webkit-transition: background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
-    transition:         background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
+    -webkit-transition: background .25s, color .25s, text-shadow .25s;
+    transition:         background .25s, color .25s, text-shadow .25s;
     -webkit-user-select: none;
     -moz-user-select:    none;
     user-select:         none;
@@ -199,13 +199,12 @@ hr {
  */
 button, .button {
     background-color: #6f96af;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     color: #f9f9f9 !important;
     min-width: 6em;
-    height: 1.2em;
+    height: 1.4em;
     margin: 0 0 5px;
     padding: .25em .625em;
     border: 0.5px solid #51768e; /* retina display fix */
@@ -213,34 +212,28 @@ button, .button {
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em; /* 22px */
+    line-height: 1.4em;
     text-align: center;
     text-decoration: none !important;
     text-transform: uppercase;
     text-shadow: 0 -0.0625em 0 rgba(6,6,6,.15);
     cursor: pointer;
     border-radius: .1875em;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #395264;
-    -moz-box-shadow:    inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #395264;
-    box-shadow:         inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #395264;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #395264;
     -webkit-transition: background-color .13s ease-in-out;
     transition:         background-color .13s ease-in-out;
 }
     button:hover, button.hover, .button:hover, .button.hover {
         background-color: #7fa6bf;
-        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #496274;
-        -moz-box-shadow:    inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #496274;
-        box-shadow:         inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #496274;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 2px rgba(0,0,0,.1), 0 4px 0 #496274;
     }
     button:active, button.active, .button:active, .button.active {
         background-color: #6f96af;
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(6,6,6,.1)), color-stop(100%, transparent));
         background-image: -webkit-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         background-image:    -moz-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         background-image:         linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         top: .136em;
-        -webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,.25), inset 0 2px 6px rgba(0,0,0,.25);
-        -moz-box-shadow:    inset 0 -1px 0 rgba(255,255,255,.25), inset 0 2px 6px rgba(0,0,0,.25);
-        box-shadow:         inset 0 -1px 0 rgba(255,255,255,.25), inset 0 2px 6px rgba(0,0,0,.25);
+        box-shadow: inset 0 -1px 0 rgba(255,255,255,.25), inset 0 2px 6px rgba(0,0,0,.25);
     }
     button:after, .button:after {
         width: 100%;
@@ -274,11 +267,17 @@ header {
         font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .048em .048em 0 rgba(0,0,0,.08);
+        text-shadow: .048em .048em 0 rgba(0,0,0,.08), 0 0 .1em #f9f9f9;
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
     }
+        .logo:active {
+            top: 0.04em; /* 2px */
+        }
+        /**
+         * The background image is overriden in the markup with the SVG version.
+         */
         .logo:after {
             background: url("/images/raven.png") no-repeat;
             background-size: 120px 120px;
@@ -289,53 +288,51 @@ header {
             top: 0;
             left: 0;
             content: "";
-            z-index: 0;
-            -webkit-transform: translate3d(0,-42px,0);
-            transform:         translate3d(0,-42px,0);
-            -webkit-transform-origin: center top;
-            transform-origin:         center top;
-            -webkit-animation: looptheloop 2s ease-in-out 0 infinite;
-            animation:         looptheloop 2s ease-in-out 0 infinite;
+            z-index: -1;
+            -webkit-transition: all .6s;
+            transition:         all .6s;
+            -webkit-animation: soaring 12s linear infinite;
+            animation:         soaring 12s linear infinite;
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
+            .wf-loading .logo:after {
+                -webkit-transform: translate3d(-0.2em,-1em,0);
+                transform:         translate3d(-0.2em,-1em,0);
+            }
+            .wf-active .logo:after {
+                -webkit-transform: translate3d(0,-0.8em,0);
+                transform:         translate3d(0,-0.8em,0);
+            }
+            @-webkit-keyframes soaring {
+                0% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+                12.5% { -webkit-transform: translate3d(-0.05em,-0.65em,0); transform: translate3d(-0.05em,-0.65em,0); }
+                25% { -webkit-transform: translate3d(.1em,-0.3em,0); transform: translate3d(.1em,-0.3em,0); }
+                37.5% { -webkit-transform: translate3d(.3em,-0.35em,0); transform: translate3d(.3em,-0.35em,0); }
+                50% { -webkit-transform: translate3d(.15em,-0.45em,0); transform: translate3d(.15em,-0.45em,0); }
+                62.5% { -webkit-transform: translate3d(.05em,-0.25em,0); transform: translate3d(.05em,-0.25em,0); }
+                75% { -webkit-transform: translate3d(.2em,-0.45em,0); transform: translate3d(.2em,-0.45em,0); }
+                87.5% { -webkit-transform: translate3d(-0.05em,-0.55em,0); transform: translate3d(-0.05em,-0.55em,0); }
+                100% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+            }
+            @keyframes soaring {
+                0% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+                12.5% { -webkit-transform: translate3d(-0.05em,-0.65em,0); transform: translate3d(-0.05em,-0.65em,0); }
+                25% { -webkit-transform: translate3d(.1em,-0.3em,0); transform: translate3d(.1em,-0.3em,0); }
+                37.5% { -webkit-transform: translate3d(.3em,-0.35em,0); transform: translate3d(.3em,-0.35em,0); }
+                50% { -webkit-transform: translate3d(.15em,-0.45em,0); transform: translate3d(.15em,-0.45em,0); }
+                62.5% { -webkit-transform: translate3d(.05em,-0.25em,0); transform: translate3d(.05em,-0.25em,0); }
+                75% { -webkit-transform: translate3d(.2em,-0.45em,0); transform: translate3d(.2em,-0.45em,0); }
+                87.5% { -webkit-transform: translate3d(-0.05em,-0.55em,0); transform: translate3d(-0.05em,-0.55em,0); }
+                100% { -webkit-transform: translate3d(0,-0.8em,0); transform: translate3d(0,-0.8em,0); }
+            }
             /**
-             * This isn't working yet, and I'm having trouble getting the
-             * animation just in the browser. I need to revisit this.
-             * Please fork if you have ideas!
+             * Only animate when the user hovers the bird.
              */
-            @-webkit-keyframes looptheloop {
-                0% {
-                    -webkit-transform: translate3d(0,-42px,0);
-                    transform:         translate3d(0,-42px,0);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
-                    transform:         rotate(360deg), translate3d(0,-42px,0);
-                }
+            .logo:hover:after {
+                -webkit-animation-play-state: running;
+                animation-play-state:         running;
             }
-            @keyframes looptheloop {
-                0% {
-                    -webkit-transform: translate3d(0,-42px,0);
-                    transform:         translate3d(0,-42px,0);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
-                    transform:         rotate(360deg), translate3d(0,-42px,0);
-                }
-            }
-        /**
-         * And the idea was that the bird would be still until the user hovers,
-         * upon which it would appear to soar in a breeze. Abandoned that and
-         * tried and failed at a loop-the-loop. Ideas? Please fork.
-         */
-        .logo:hover:after {
-            -webkit-animation-play-state: running;
-            animation-play-state:         running;
-        }
-        .logo:active {
-            top: 2px;
-        }
 
 
 /*------------------------------------*\
@@ -631,7 +628,6 @@ pre:not(.codepen) {
 
 footer {
     background: #4f4f4f;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
@@ -764,7 +760,7 @@ sup { top: -0.3em; }
 
 @media (max-width: 767px) {
     /**
-     * Center the logo and make room for the navigation to drop under the logo.
+     * Center the logo and make room for the navigation to drop underneath.
      */
     header {
         height: 170px;
@@ -793,7 +789,7 @@ sup { top: -0.3em; }
             }
     /**
      * When you hit the tablet breakpoint, articles, article lists, and asides
-     * becomes full width.
+     * become full width:
      */
     article, .articles {
         padding-left: 0;
@@ -814,9 +810,6 @@ sup { top: -0.3em; }
         padding-right: 10px;
         padding-left: 10px;
     }
-    /**
-     * Shrink the logo font size down a bit to fit inside the viewport.
-     */
     .logo {
         font-size: 2.25em; /* 36px */
     }
@@ -826,18 +819,12 @@ sup { top: -0.3em; }
     footer {
         height: 80px;
     }
-        /**
-         * Center the footer copyright text and social icons.
-         */
         .footer-copyright,
         .footer-social {
             width: 100%;
             float: none;
             text-align: center;
         }
-            /**
-             * Since we're centered, we shouldn't have the right-hand offeset.
-             */
             .footer-social .lastfm {
                 margin-right: 0;
             }
