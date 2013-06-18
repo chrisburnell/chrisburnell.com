@@ -2,28 +2,40 @@
 layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 
- <title>Chris Burnell</title>
- <link href="http://chrisburnell.com/feed.xml" rel="self"/>
- <link href="http://chrisburnell.com/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://chrisburnell.com/</id>
- <author>
-     <name>Chris Burnell</name>
-     <email>me@chrisburnell.com</email>
- </author>
+    <channel>
 
- {% for post in site.posts %}
- <entry>
-     <title>{{ post.title }}</title>
-     <link href="http://chrisburnell.com{{ post.url }}"/>
-     <updated>{{ post.date | date_to_xmlschema }}</updated>
-     <id>http://chrisburnell.com{{ post.id }}</id>
-     {% if post.meta %}
-        <content type="html">{{ post.meta }}</content>
-        {% endif %}
- </entry>
- {% endfor %}
+        <title>Chris Burnell</title>
+        <link href="http://chrisburnell.com"/>
+        <author>
+            <name>Chris Burnell</name>
+            <email>me@chrisburnell.com</email>
+        </author>
+        <language>en-gb</language>
+        <copyright>Copyright 2013 Chris Burnell under a Creative Commons license.</copyright>
 
-</feed>
+        <image>
+        <url>http://chrisburnell.com/icon.png</url>
+        <title>Chris Burnell</title>
+        <link>http://chrisburnell.com</link>
+        </image>
+
+        {% for post in site.posts %}
+        <item>
+            <title>{{ post.title }}</title>
+            <link>http://chrisburnell.com{{ post.url }}</link>
+            <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <id>http://chrisburnell.com{{ post.id }}</id>
+            {% if post.introduction %}
+            <description>{{ post.introduction }}</description>
+            {% endif %}
+            {% if post.tags %}
+            <tags>{{ post.tags }}</tags>
+            {% endif %}
+        </item>
+        {% endfor %}
+
+    <channel>
+
+</rss>
