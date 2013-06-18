@@ -267,7 +267,7 @@ header {
         font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .048em .048em 0 rgba(0,0,0,.08), 0 0 .1em #f9f9f9;
+        text-shadow: .048em .048em 0 rgba(0,0,0,.08);
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
