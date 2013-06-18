@@ -103,8 +103,8 @@ body {
 a {
     color: #5f8aa6;
     text-decoration: none;
-    -webkit-transition: background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
-    transition:         background .25s ease-in-out, color .25s ease-in-out, text-shadow .25s ease-in-out;
+    -webkit-transition: background .25s, color .25s, text-shadow .25s;
+    transition:         background .25s, color .25s, text-shadow .25s;
     -webkit-user-select: none;
     -moz-user-select:    none;
     user-select:         none;
@@ -199,7 +199,6 @@ hr {
  */
 button, .button {
     background-color: #6f96af;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
@@ -234,7 +233,6 @@ button, .button {
     }
     button:active, button.active, .button:active, .button.active {
         background-color: #6f96af;
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(6,6,6,.1)), color-stop(100%, transparent));
         background-image: -webkit-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         background-image:    -moz-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         background-image:         linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
@@ -280,6 +278,12 @@ header {
         -webkit-transition: none;
         transition:         none;
     }
+        .logo:active {
+            top: 0.04em; /* 2px */
+        }
+        /**
+         * The background image is overriden in the markup with the SVG version.
+         */
         .logo:after {
             background: url("/images/raven.png") no-repeat;
             background-size: 120px 120px;
@@ -291,52 +295,46 @@ header {
             left: 0;
             content: "";
             z-index: 0;
-            -webkit-transform: translate3d(0,-42px,0);
-            transform:         translate3d(0,-42px,0);
-            -webkit-transform-origin: center top;
-            transform-origin:         center top;
-            -webkit-animation: looptheloop 2s ease-in-out 0 infinite;
-            animation:         looptheloop 2s ease-in-out 0 infinite;
+            -webkit-transition: all .4s;
+            transition:         all .4s;
+            -webkit-animation: soaring 7s linear infinite;
+            animation:         soaring 7s linear infinite;
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
+            .wf-active .logo:after {
+                -webkit-transform: translate3d(0,-0.8em,0);
+                transform:         translate3d(0,-0.8em,0);
+            }
             /**
-             * This isn't working yet, and I'm having trouble getting the
-             * animation just in the browser. I need to revisit this.
-             * Please fork if you have ideas!
+             * Only animate when the user hovers the bird.
              */
-            @-webkit-keyframes looptheloop {
-                0% {
-                    -webkit-transform: translate3d(0,-42px,0);
-                    transform:         translate3d(0,-42px,0);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
-                    transform:         rotate(360deg), translate3d(0,-42px,0);
-                }
+            .logo:hover:after {
+                -webkit-animation-play-state: running;
+                animation-play-state:         running;
             }
-            @keyframes looptheloop {
-                0% {
-                    -webkit-transform: translate3d(0,-42px,0);
-                    transform:         translate3d(0,-42px,0);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg), translate3d(0,-42px,0);
-                    transform:         rotate(360deg), translate3d(0,-42px,0);
-                }
+            @-webkit-keyframes soaring {
+                0% { transform: translate3d(0,-0.8em,0); }
+                12.5% { transform: translate3d(-0.05em,-0.65em,0); }
+                25% { transform: translate3d(.1em,-0.3em,0); }
+                37.5% { transform: translate3d(.3em,-0.35em,0); }
+                50% { transform: translate3d(.15em,-0.45em,0); }
+                62.5% { transform: translate3d(.05em,-0.25em,0); }
+                75% { transform: translate3d(.2em,-0.45em,0); }
+                87.5% { transform: translate3d(-0.05em,-0.55em,0); }
+                100% { transform: translate3d(0,-0.8em,0); }
             }
-        /**
-         * And the idea was that the bird would be still until the user hovers,
-         * upon which it would appear to soar in a breeze. Abandoned that and
-         * tried and failed at a loop-the-loop. Ideas? Please fork.
-         */
-        .logo:hover:after {
-            -webkit-animation-play-state: running;
-            animation-play-state:         running;
-        }
-        .logo:active {
-            top: 2px;
-        }
+            @keyframes soaring {
+                0% { transform: translate3d(0,-0.8em,0); }
+                12.5% { transform: translate3d(-0.05em,-0.65em,0); }
+                25% { transform: translate3d(.1em,-0.3em,0); }
+                37.5% { transform: translate3d(.3em,-0.35em,0); }
+                50% { transform: translate3d(.15em,-0.45em,0); }
+                62.5% { transform: translate3d(.05em,-0.25em,0); }
+                75% { transform: translate3d(.2em,-0.45em,0); }
+                87.5% { transform: translate3d(-0.05em,-0.55em,0); }
+                100% { transform: translate3d(0,-0.8em,0); }
+            }
 
 
 /*------------------------------------*\
@@ -632,7 +630,6 @@ pre:not(.codepen) {
 
 footer {
     background: #4f4f4f;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(6,6,6,.15)));
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
