@@ -211,7 +211,6 @@ button, .button {
     border: 0.5px solid #51768e; /* retina display fix */
     display: inline-block;
     position: relative;
-    clear: both;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em; /* 22px */
     text-align: center;
