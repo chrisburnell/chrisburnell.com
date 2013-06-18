@@ -267,7 +267,7 @@ header {
         font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .048em .048em 0 rgba(0,0,0,.08);
+        text-shadow: .048em .048em 0 rgba(0,0,0,.08), 0 0 .1em #f9f9f9;
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
@@ -289,10 +289,10 @@ header {
             left: 0;
             content: "";
             z-index: -1;
-            -webkit-transition: all .4s;
-            transition:         all .4s;
-            -webkit-animation: soaring 8s linear infinite;
-            animation:         soaring 8s linear infinite;
+            -webkit-transition: all .6s;
+            transition:         all .6s;
+            -webkit-animation: soaring 12s linear infinite;
+            animation:         soaring 12s linear infinite;
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
@@ -760,7 +760,7 @@ sup { top: -0.3em; }
 
 @media (max-width: 767px) {
     /**
-     * Center the logo and make room for the navigation to drop under the logo.
+     * Center the logo and make room for the navigation to drop underneath.
      */
     header {
         height: 170px;
@@ -789,7 +789,7 @@ sup { top: -0.3em; }
             }
     /**
      * When you hit the tablet breakpoint, articles, article lists, and asides
-     * becomes full width.
+     * become full width:
      */
     article, .articles {
         padding-left: 0;
@@ -810,9 +810,6 @@ sup { top: -0.3em; }
         padding-right: 10px;
         padding-left: 10px;
     }
-    /**
-     * Shrink the logo font size down a bit to fit inside the viewport.
-     */
     .logo {
         font-size: 2.25em; /* 36px */
     }
@@ -822,18 +819,12 @@ sup { top: -0.3em; }
     footer {
         height: 80px;
     }
-        /**
-         * Center the footer copyright text and social icons.
-         */
         .footer-copyright,
         .footer-social {
             width: 100%;
             float: none;
             text-align: center;
         }
-            /**
-             * Since we're centered, we shouldn't have the right-hand offeset.
-             */
             .footer-social .lastfm {
                 margin-right: 0;
             }
