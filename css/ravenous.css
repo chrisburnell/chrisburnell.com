@@ -457,17 +457,20 @@ article, .articles {
         margin-bottom: 1em;
         font-size: 1.25em; /* 20px */
     }
-    .article-link a {
-        margin: 0 0 .35em -0.25em;
-        padding: 0 .25em;
-        border-bottom: .1875em solid transparent;
-        -webkit-transition: border-color .2s ease-in-out;
-        transition:         border-color .2s ease-in-out;
+    .article-link {
+        width: 100%;
     }
-        .article-link a:hover {
-            color: #4f4f4f;
-            border-bottom-color: rgba(95,138,166,.9);
+        .article-link a {
+            margin: 0 0 .35em -0.25em;
+            padding: 0 .25em;
+            border-bottom: .1875em solid transparent;
+            -webkit-transition: border-color .2s ease-in-out;
+            transition:         border-color .2s ease-in-out;
         }
+            .article-link a:hover {
+                color: #4f4f4f;
+                border-bottom-color: rgba(95,138,166,.9);
+            }
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
@@ -660,6 +663,7 @@ footer {
         .footer-copyright a {
             color: #ddd;
             display: inline-block;
+            white-space: nowrap;
             text-decoration: none;
         }
             .footer-copyright a:hover {
