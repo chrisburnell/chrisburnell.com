@@ -173,7 +173,6 @@ img, a img {
 blockquote:not(.twitter-tweet) {
     color: #6f6f6f;
     font-style: italic;
-    margin: 0 2em 1em;
 }
     .blockquote:not(.twitter-tweet):before,
     .blockquote:not(.twitter-tweet):after {
@@ -289,8 +288,6 @@ header {
             left: 0;
             content: "";
             z-index: -1;
-            -webkit-transform: translate3d(-0.2em,-1em,0);
-            transform:         translate3d(-0.2em,-1em,0);
             -webkit-transition: all .6s;
             transition:         all .6s;
             -webkit-animation: soaring 12s linear infinite;
@@ -298,6 +295,10 @@ header {
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
+            .wf-loading .logo:after {
+                -webkit-transform: translate3d(-0.2em,-1em,0);
+                transform:         translate3d(-0.2em,-1em,0);
+            }
             .wf-active .logo:after {
                 -webkit-transform: translate3d(0,-0.8em,0);
                 transform:         translate3d(0,-0.8em,0);
