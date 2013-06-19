@@ -808,6 +808,7 @@ sup { top: -0.3em; }
         float: none;
     }
         .author {
+            margin-bottom: 0;
             padding-top: 1em;
             border-top: .25em solid rgba(6,6,6,.05);
             -webkit-order: 999;
