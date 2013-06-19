@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<!--N
+  DIIII8
+    N7III7Z
+      $IIIII78
+       $IIIII7
+       NIIIIIIZ               N
+        77IIIII             D $D
+        87IIIII7         DN Z$O$ $
+         7IIIIIIZ     $Z8NI7NIIIO7
+          8IIIIII77I77IIIIIIIIIIII
+           N7IIIIIIIIIIIIIIIIIIIII
+7DN      O777IIIIIIIIIIIIIIII7$7$N
+ III7I7O$IIIIIIIIIIIIIIIII7O
+  O7IIIIIIIIIIIIIIIIIII7ZN
+   8$IIIIIIIIIIIIIIIIIII7
+     NO$IIIIIIIIII777IIIIN
+            7DZIZ     7I$
+          NOI7N        7Z
+           8NZ
+           -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <!-- Prefetch DNS for external assets (Analytics, Typekit, etc.) -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+
+    <title>{{ site.author }} &ndash; 404</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.min.css">
+    <link rel="stylesheet" href="/css/ravenous.min.css">
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/icon.png">
+
+    <script type="text/javascript">
+      (function() {
+        var config = {
+            kitId: 'bbn1puz',
+            scriptTimeout: 5000
+        };
+        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+    </script>
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+
+    <meta name="apple-mobile-web-app-title" content="chrisburnell">
+    <meta name="description" content="{{ site.description }}">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow">
+
+</head>
+<body>
+
+    <header class="wrap  clear">
+        <a href="{{ site.url }}" class="logo  no-select"><span>{{ site.author }}</span></a>
+        <nav role="navigation">
+            <ul class="site-nav">
+                <li class="site-nav-home"><a href="/">Home</a></li><!--
+             --><li class="site-nav-archive"><a href="/archive">Archive</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content  wrap  clear">
+        <section class="articles">
+            <h1>404 &ndash; Page not found</h1>
+            <p>Sorry, it looks like the page you requested cannot be found, please head back to <a href="{{ site.url }}">the homepage</a>.</p>
+        </section>
+    </section>
+
+    <footer>
+        <section class="footer-container  wrap  clear">
+            <div class="footer-copyright">
+                <a href="/" title="{{ site.author }}" class="s  home-link"></a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" title="Creative Commons License">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</a>
+            </div>
+            <div class="footer-social">
+                <a href="{{ site.twitter_url }}" title="Twitter" rel="twitter" class="twitter  no-text">Twitter</a>
+                <a href="{{ site.codepen_url }}" title="CodePen" rel="codepen" class="codepen  no-text">CodePen</a>
+                <a href="{{ site.lastfm_url }}" title="Last.FM" rel="lastfm" class="lastfm  no-text">Last.FM</a>
+            </div>
+        </section>
+    </footer>
+
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script async src="/js/core.min.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-10353655-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>
