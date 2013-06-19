@@ -19,7 +19,9 @@ My idea was basically this: I wonder how one could create a working version cloc
 
 ### We've hit a snag!
 
-<aside><p>Here's an example of this effect (which [Chris Coyier loved on CodePen](http://codepen.io/chrisburnell/details/mglHp#lovers)!</p></aside><pre class="codepen" data-height="425" data-type="result" data-href="mglHp" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/mglHp">Check out this Pen!</a> </pre>
+<aside><p>Here's an example of this effect (which [Chris Coyier loved on CodePen](http://codepen.io/chrisburnell/details/mglHp#lovers)!</p></aside>
+
+<pre class="codepen" data-height="425" data-type="result" data-href="mglHp" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/mglHp">Check out this Pen!</a> </pre>
 
 ### How does that work?
 
