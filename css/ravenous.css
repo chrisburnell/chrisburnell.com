@@ -616,6 +616,9 @@ pre:not(.codepen) {
         font: 400 720px/22px "Entypo";
         z-index: 0;
     }
+/**
+ * CodePen iframe
+ */
 .cp_embed_iframe {
     margin-bottom: 1em;
 }
@@ -788,17 +791,28 @@ sup { top: -0.3em; }
                 display: inline-block;
             }
     /**
-     * When you hit the tablet breakpoint, articles, article lists, and asides
-     * become full width:
+     * When you hit the tablet media query, articles, article lists, and asides
+     * become full width and the author information aside pushes to the bottom
+     * in browsers that support the latest iteration of flexbox.
      */
     article, .articles {
         padding-left: 0;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
     }
     aside {
         width: 100%;
         margin: 0 0 1em;
         float: none;
     }
+        .author {
+            padding-top: 1em;
+            border-top: .25em solid rgba(6,6,6,.05);
+            -webkit-order: 999;
+            order: 999;
+        }
 }
 @media (max-width: 500px) {
     /**
