@@ -692,9 +692,6 @@ footer {
                 .footer-social a:last-of-type {
                     margin-right: 0;
                 }
-                .footer-social .forrst {
-                    width: 20px;
-                }
 
 
 /*------------------------------------*\
@@ -705,9 +702,8 @@ footer {
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
 .twitter { background-image: url("/images/glyph-twitter.png"); color: #1AB2E8 !important; }
-.forrst { background-image: url("/images/glyph-forrst.png"); color: #223F17 !important; }
 .lastfm { background-image: url("/images/glyph-lastfm.png"); color: #D51007 !important; }
-.codepen { background-image: url("/images/glyph-codepen.png"); color: #999!important; }
+.codepen { background-image: url("/images/glyph-codepen.png"); color: #999 !important; }
 
 strong, .bold { font-weight: 600; }
 .italic { font-style: italic; }
@@ -717,8 +713,8 @@ sup { top: -0.3em; }
 .remove { display: none; }
 .hide, .hidden { visibility: hidden; }
 
-.rounded { background-clip: padding-box; border-radius: .1875em; -webkit-background-clip: padding-box; -moz-background-clip: padding; }
-    .rounded.large { border-radius: .375em; }
+.rounded { border-radius: .1875em; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
+    .rounded-large { border-radius: .375em; }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
     .clear.left { clear: left; }
