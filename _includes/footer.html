@@ -13,6 +13,10 @@
 
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script type="text/javascript">
+        // Remove the strong tags from the "and" in the tags list on articles
+        var innerText = document.getElementsByClassName('article-tags').innerHTML;
+        document.getElementsByClassName('article-tags')[0].innerHTML = innerText[0].replace('and','</strong>and<strong>');
+        // Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-10353655-1']);
         _gaq.push(['_trackPageview']);
