@@ -1,7 +1,5 @@
-require 'uri'
-
 module Jekyll
-  module AssetFilter
+  module Filters
     # Modification on the array_to_sentence_string filter
     # Adds strong tags around the tags
     def array_to_tags_string(array)
@@ -19,5 +17,3 @@ module Jekyll
     end
   end
 end
-
-Liquid::Template.register_filter(Jekyll::AssetFilter)
