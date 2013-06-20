@@ -270,6 +270,9 @@ header {
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
+        -webkit-user-select: none;
+        -moz-user-select:    none;
+        user-select:         none;
     }
         .logo:active {
             top: 0.04em; /* 2px */
@@ -290,8 +293,6 @@ header {
             z-index: -1;
             -webkit-transform: translate3d(0,-0.8em,0);
             transform:         translate3d(0,-0.8em,0);
-            -webkit-transition: none;
-            transition:         none;
             -webkit-animation: soaring 12s linear infinite;
             animation:         soaring 12s linear infinite;
             -webkit-animation-play-state: paused;
@@ -671,11 +672,13 @@ footer {
         }
             .footer-social a {
                 opacity: 0.6;
+                color: transparent;
                 width: 30px;
                 height: 30px;
                 margin: 5px 0.5em 5px 0;
                 display: inline-block;
                 vertical-align: middle;
+                text-indent: -999em !important;
                 -webkit-transition: opacity 0.25s ease-in-out;
                 transition:         opacity 0.25s ease-in-out;
             }
@@ -711,10 +714,6 @@ strong, .bold { font-weight: 600; }
 .small { font-size: small; }
 sup { top: -0.3em; }
 
-.gray { color: #6f6f6f; }
-.blue { color: #5f8aa6; }
-.red { color: #dd3322; }
-
 .remove { display: none; }
 .hide, .hidden { visibility: hidden; }
 
@@ -726,27 +725,6 @@ sup { top: -0.3em; }
     .clear.right { clear: right; }
     .clear:before, .clear:after { display: table; content: ''; }
     .clear:after { clear: both; }
-
-.align { margin: 0 auto; }
-    .align.text { text-align: center; }
-    .align.right { text-align: right; }
-    .align.vertical { position: absolute; top: 50%; left: 50%; vertical-align: middle; }
-
-.float { float: inherit; }
-    .float.left { float: left; }
-    .float.right { float: right; }
-
-.ghost, .disabled { filter: alpha(opacity=50); opacity: .5; }
-    .ghost.super { filter: alpha(opacity=20); opacity: .2; }
-    .ghost.sub { filter: alpha(opacity=80); opacity: .8; }
-
-.debug *[href='#'], .debug *[src=''], .debug *[alt=''], .debug *:not([title]), .debug *:not([src]), .debug *:not([href]), .debug *:not([alt]), .debug *[title=''], .debug *[style] { outline: 1px dotted #f0f; }
-    .debug *:hover { background: rgba(0,0,0,.1); outline: 1px solid rgba(255,0,0,.5); }
-
-.no-text { color: transparent !important; text-indent: -999em !important; }
-.no-margin { margin: 0 !important; }
-.no-padding { padding: 0 !important; }
-.no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
 
 
 /*------------------------------------*\

@@ -61,7 +61,7 @@
 <body>
 
     <header class="wrap  clear">
-        <a href="http://chrisburnell.com/" class="logo  no-select"><span>Chris Burnell</span></a>
+        <a href="http://chrisburnell.com/" class="logo"><span>Chris Burnell</span></a>
         <nav role="navigation">
             <ul class="site-nav">
                 <li class="site-nav-home"><a href="/">Home</a></li><!--
@@ -83,17 +83,19 @@
                 <a href="/" title="Chris Burnell" class="s  home-link"></a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" title="Creative Commons License">&copy; 2013 Chris Burnell</a>
             </div>
             <div class="footer-social">
-                <a href="http://twitter.com/iamchrisburnell" title="Twitter" rel="twitter" class="twitter  no-text">Twitter</a>
-                <a href="http://codepen.io/chrisburnell" title="CodePen" rel="codepen" class="codepen  no-text">CodePen</a>
-                <a href="http://last.fm/user/chrisburnell" title="Last.FM" rel="lastfm" class="lastfm  no-text">Last.FM</a>
+                <a href="http://twitter.com/iamchrisburnell" title="Twitter" rel="twitter" class="twitter">Twitter</a>
+                <a href="http://codepen.io/chrisburnell" title="CodePen" rel="codepen" class="codepen">CodePen</a>
+                <a href="http://last.fm/user/chrisburnell" title="Last.FM" rel="lastfm" class="lastfm">Last.FM</a>
             </div>
         </section>
     </footer>
 
-    <script async src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script async src="/js/core.min.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script type="text/javascript">
+        // Remove the strong tags from the "and" in the tags list on articles
+        var articleTags = document.getElementsByClassName('article-tags')[0];
+        articleTags.innerHTML = articleTags.innerHTML.replace('and','</strong>and<strong>');
+        // Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-10353655-1']);
         _gaq.push(['_trackPageview']);
