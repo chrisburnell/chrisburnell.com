@@ -51,7 +51,7 @@
 \*------------------------------------*/
 
 /**
- * Entypo Pictogram Suite - http://www.entypo.com
+ * Entypo Pictogram Suite -- http://entypo.com
  */
 @font-face {
     font-family: "Entypo";
@@ -67,16 +67,13 @@
 
 /*------------------------------------*\
     03. General and Typography
+    i   Layout
+    ii  Inline Elements
+    iii Block Elements
 \*------------------------------------*/
 
-::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
-::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
-::selection {         background: #5f8aa6; color: #f9f9f9; }
-    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: none; }
-    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: none; }
-    pre::selection, code::selection {                 background: black; color: white; text-shadow: none; }
-
-html, body {
+html,
+body {
     min-height: 100%;
 }
 body {
@@ -108,12 +105,38 @@ a {
     -moz-user-select:    none;
     user-select:         none;
 }
-    article a:hover, aside a:hover {
+    article a:hover,
+    aside a:hover {
         text-decoration: underline;
     }
+    h1 a,
+    h2 a,
+    h3 a {
+        color: #4f4f4f;
+        display: inline-block;
+    }
+        h1 a:hover,
+        h2 a:hover,
+        h3 a:hover {
+            color: rgba(95,138,166,.9);
+            text-decoration: none;
+        }
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+strong {
+    font-weight: 600;
+}
+sup {
+    top: -0.3em;
+}
 
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.2em; /* so that elements can be floated inside headings */
+    min-height: 1.2em; /* So that elements can be floated inside headings */
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -132,26 +155,15 @@ h2 {
 }
 h3 {
     font-family: "proxima-nova", serif;
-    font-size: 1em; /* 16px - override browser default */
+    font-size: 1em; /* Override browser default -- 16px */
     font-weight: 600;
     text-transform: uppercase;
 }
-    h1 a, h2 a, h3 a {
-        color: #4f4f4f;
-        display: inline-block;
-    }
-        h1 a:hover, h2 a:hover, h3 a:hover {
-            color: rgba(95,138,166,.9);
-            text-decoration: none;
-        }
-
 p {
     margin: 0;
 }
-/**
- * I don't like the default margins attached to lists, so they're CUT.
- */
-ol, ul {
+ol,
+ul {
     margin: 0;
     padding: 0;
     list-style: inside disc;
@@ -164,14 +176,6 @@ ol, ul {
     article > ol {
         margin-bottom: 1em;
     }
-
-img, a img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    border: 0;
-}
-
 blockquote:not(.twitter-tweet) {
     color: #6f6f6f;
     font-style: italic;
@@ -180,7 +184,6 @@ blockquote:not(.twitter-tweet) {
     .blockquote:not(.twitter-tweet):after {
         content: "\0022";
     }
-
 hr {
     background: rgba(6,6,6,.05);
     width: 100%;
@@ -188,9 +191,6 @@ hr {
     border: 0;
     display: block;
 }
-
-strong { font-weight: 600; }
-sup { top: -0.3em; }
 
 
 /*------------------------------------*\
@@ -201,7 +201,8 @@ sup { top: -0.3em; }
  * I may need to revisit this at some point to make sure it's as streamlined
  * as I can make it. If you have suggestions, please fork on GitHub.
  */
-button, .button {
+button,
+.button {
     background-color: #6f96af;
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
@@ -211,7 +212,7 @@ button, .button {
     height: 1.4em;
     margin: 0 0 5px;
     padding: .25em .625em;
-    border: 0.5px solid #51768e; /* retina display fix */
+    border: 0.5px solid #51768e; /* retina display fix -- 2 x .5 = 1 */
     display: inline-block;
     position: relative;
     font-family: "league-gothic", sans-serif;
@@ -227,11 +228,13 @@ button, .button {
     -webkit-transition: background-color .13s ease-in-out;
     transition:         background-color .13s ease-in-out;
 }
-    button:hover, button.hover, .button:hover, .button.hover {
+    button:hover,
+    .button:hover {
         background-color: #7fa6bf;
         box-shadow: inset 0 1px 0 rgba(249,249,249,.25), inset 0 0 2px rgba(6,6,6,.1), 0 4px 0 #496274;
     }
-    button:active, button.active, .button:active, .button.active {
+    button:active,
+    .button:active {
         background-color: #6f96af;
         background-image: -webkit-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
         background-image:    -moz-linear-gradient(top, rgba(6,6,6,.1) 0%, transparent 100%);
@@ -239,7 +242,8 @@ button, .button {
         top: .136em;
         box-shadow: inset 0 -1px 0 rgba(249,249,249,.25), inset 0 2px 6px rgba(6,6,6,.25);
     }
-    button:after, .button:after {
+    button:after,
+    .button:after {
         width: 100%;
         position: absolute;
         top: 0;
@@ -247,7 +251,8 @@ button, .button {
         left: 0;
         content: "";
     }
-        button:active:after, .button:active:after {
+        button:active:after,
+        .button:active:after {
             top: -0.136em;
             bottom: 0;
         }
@@ -282,11 +287,9 @@ header {
         .logo:active {
             top: 0.04em; /* 2px */
         }
-        /**
-         * The background image is overriden in the markup with the SVG version.
-         */
         .logo:after {
             background: url("/images/raven.png") no-repeat;
+            background-image: url("/images/raven.svg");
             background-size: 120px 120px;
             width: 120px;
             height: 120px;
@@ -326,7 +329,7 @@ header {
                 100% { -webkit-transform: translate3d(0,-0.8125em,0); transform: translate3d(0,-0.8125em,0); }
             }
             /**
-             * Only animate when the user hovers the bird.
+             * Only animate when the user hovers the logo.
              */
             .logo:hover:after {
                 -webkit-animation-play-state: running;
@@ -415,7 +418,8 @@ nav {
  *      = 25% of 1080px
  *      = 270px
  */
-article, .articles {
+article,
+.articles {
     padding: 2.25em 0 0 270px; /* 25% of max .content width = 270px */
     border-top: .25em solid #5f8aa6;
 }
@@ -438,7 +442,8 @@ article, .articles {
             .articles-list .button {
                 margin: .5em 0 1em;
             }
-        article h3, .articles-list h3 {
+        article h3,
+        .articles-list h3 {
             margin-bottom: 1em;
         }
             .articles-list .article-date:before {
@@ -600,8 +605,8 @@ code {
 }
 pre:not(.codepen) {
     background: #4f4f4f;
-    -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
     background-clip: padding-box;
     color: #f9f9f9;
     padding: .714em;
@@ -621,7 +626,7 @@ pre:not(.codepen) {
         z-index: 0;
     }
 /**
- * CodePen iframe
+ * CodePen iframe -- http://codepen.com
  */
 .cp_embed_iframe {
     margin-bottom: 1em;
@@ -660,6 +665,7 @@ footer {
     }
         .footer-copyright .home-link {
             background: url("/images/raven.png") no-repeat;
+            background-image: url("/images/raven.svg");
             margin-right: 1em;
             vertical-align: middle;
             text-decoration: none;
@@ -702,34 +708,52 @@ footer {
                 .footer-social a:last-of-type {
                     margin-right: 0;
                 }
+                .footer-social .codepen-link,
+                .footer-social .lastfm-link,
+                .footer-social .twitter-link {
+                    background-image: url("/images/glyphs.png");
+                }
 
 
 /*------------------------------------*\
     12. Miscellaneous
 \*------------------------------------*/
 
-.home-link, .logo:after { background-image: url("/images/raven.svg") no-repeat; }
-.symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
+.codepen-link {
+    color: #999 !important;
+}
+.lastfm-link {
+    background-position: -30px top;
+    color: #D51007 !important;
+}
+.twitter-link {
+    background-position: -60px top;
+    color: #1AB2E8 !important;
+}
 
-.footer-social .codepen-link,
-.footer-social .lastfm-link,
-.footer-social .twitter-link { background-image: url("/images/glyphs.png"); }
-.codepen-link { color: #999 !important; }
-.lastfm-link { background-position: -30px top; color: #D51007 !important; }
-.twitter-link { background-position: -60px top; color: #1AB2E8 !important; }
-
-.rounded { -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; border-radius: .1875em; }
+.rounded { -moz-background-clip: padding;-webkit-background-clip: padding-box; background-clip: padding-box; border-radius: .1875em; }
     .rounded-large { border-radius: .375em; }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
-    .clear:before, .clear:after { display: table; content: ''; }
+    .clear:before,
+    .clear:after {
+        display: table;
+        content: "";
+    }
     .clear:after { clear: both; }
+
+::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
+::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
+::selection {         background: #5f8aa6; color: #f9f9f9; }
+    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: none; }
+    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: none; }
+    pre::selection, code::selection {                 background: black; color: white; text-shadow: none; }
 
 
 /*------------------------------------*\
-    ##. Media Queries
-    i.  Tablet - 766px
-    ii. Mobile - 500px
+    13. Media Queries
+    i   Tablet - 767px
+    ii  Mobile - 500px
 \*------------------------------------*/
 
 @media (max-width: 767px) {
@@ -757,21 +781,22 @@ footer {
                 float: none;
                 text-align: center;
             }
-            .site-nav li {
-                float: none;
-                display: inline-block;
-            }
+                .site-nav li {
+                    float: none;
+                    display: inline-block;
+                }
     /**
      * When you hit the tablet media query, articles, article lists, and asides
      * become full width and the author information aside pushes to the bottom
      * in browsers that support the latest iteration of flexbox.
      */
-    article, .articles {
+    article,
+    .articles {
         padding-left: 0;
         display: -webkit-flex;
         display: flex;
-        flex-direction: column;
         -webkit-flex-direction: column;
+        flex-direction:         column;
     }
     aside {
         width: 100%;
@@ -783,7 +808,7 @@ footer {
             padding-top: 1em;
             border-top: .25em solid rgba(6,6,6,.05);
             -webkit-order: 999;
-            order: 999;
+            order:         999;
         }
 }
 @media (max-width: 500px) {
