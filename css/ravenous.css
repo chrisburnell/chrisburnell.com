@@ -659,6 +659,7 @@ footer {
         overflow: hidden;
     }
         .footer-copyright .home-link {
+            background: url("/images/raven.png") no-repeat;
             margin-right: 1em;
             vertical-align: middle;
             text-decoration: none;
@@ -707,7 +708,7 @@ footer {
     12. Miscellaneous
 \*------------------------------------*/
 
-.s, .logo:after { background: url("/images/raven.svg") no-repeat; }
+.home-link, .logo:after { background-image: url("/images/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
 .footer-social .codepen-link,
