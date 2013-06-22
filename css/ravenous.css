@@ -549,8 +549,8 @@ aside {
             display: inline-block;
         }
         .article-tags {
-            line-height: 1.3em;
             padding-top: .159em; /* 1.618em - 1.3em / 2 = .159em */
+            line-height: 1.3em;
         }
         aside p {
             margin-bottom: .5em;
