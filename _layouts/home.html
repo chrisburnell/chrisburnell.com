@@ -2,7 +2,9 @@
 
     <section class="content  wrap  clear">
         <section class="articles">
+
             <h1 class="site-tagline">{{ page.title }}</h1>
+
             <aside class="author">
                 <div class="author-information">
                     <img src="/images/avatar.png" class="author-image  rounded" alt="">
@@ -17,7 +19,7 @@
             </aside>
             {% if page.page_class == "page-home" %}
             <h2 class="site-introduction">{{ site.description }}</h2>
-            {% endif %}
+{% endif %}
             {{ content }}
         </section>
     </section>
