@@ -14,34 +14,22 @@
                     <p>I am a Canadian front-end web developer living in London UK and working at <a href="{{ site.employer_url }}">{{ site.employer }}</a>. Driven by a passion for clean CSS I hope to someday see the death of hasLayout and all that early Internet Explorer does to destroy my life.</p>
                     <p>I also <a href="{{ site.twitter_url }}" class="twitter-link" title="{{ site.author }} on Twitter">tweet</a>, <a href="{{ site.codepen_url }}" class="codepen-link" title="{{ site.author }} on Codepen">write code</a>, and <a href="{{ site.lastfm_url }}" class="lastfm-link" title="{{ site.author }} on Last.FM">listen to music</a> if this article isn't your style, and makes you want to claw your eyeballs out.</p>
                 </div>
-                {% if site.related_posts %}
-                <div class="related-articles">
+                {% if site.related_posts %}<div class="related-articles">
                     <h3>Related Articles</h3>
                     <ul>
-                        {% for post in site.related_posts limit:3 %}
-                        <li>
+                        {% for post in site.related_posts limit:3 %}<li>
                             <a href="{{ post.url }}#disqus_thread" class="bold">{{ post.title }}</a>
                             <div class="article-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                        </li>
-                        {% endfor %}
+                        </li>{% endfor %}
                     </ul>
-                </div>
-                {% endif %}
+                </div>{% endif %}
             </aside>
-            {% if page.banner %}
-            <img src="{{ site.url }}/images/article-banners/{{ page.banner }}" class="banner  rounded  rounded-large">
-            {% endif %}
-            {% if page.introduction %}
-            <p class="article-introduction">{{ page.introduction }}</p>
-            {% endif %}
+            {% if page.banner %}<img src="{{ site.url }}/images/article-banners/{{ page.banner }}" class="banner  rounded  rounded-large">{% endif %}
+            {% if page.introduction %}<p class="article-introduction">{{ page.introduction }}</p>{% endif %}
             {{ content }}
-            <section class="pagination  clear">
-                {% if page.previous.url %}
-                <a href="{{ page.previous.url }}" class="button  prev-link" title="Previous Article: {{ page.previous.title }}">&larr; Previous Article</a>
-                {% endif %}
-                {% if page.next.url %}
-                <a href="{{ page.next.url }}" class="button  next-link" title="Next Article: {{ page.next.title }}">Next Article &rarr;</a>
-                {% endif %}
+            <section class="pagination  clear">{% if page.previous.url %}
+                <a href="{{ page.previous.url }}" class="button  prev-link" title="Previous Article: {{ page.previous.title }}">&larr; Previous Article</a>{% endif %}{% if page.next.url %}
+                <a href="{{ page.next.url }}" class="button  next-link" title="Next Article: {{ page.next.title }}">Next Article &rarr;</a>{% endif %}
             </section>
             <section class="comments  clear">
                 <div id="disqus_thread"></div>
@@ -53,7 +41,7 @@
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>    </noscript>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </section>
         </article>
     </section>

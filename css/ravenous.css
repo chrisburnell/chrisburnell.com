@@ -600,6 +600,8 @@ code {
 }
 pre:not(.codepen) {
     background: #4f4f4f;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
     background-clip: padding-box;
     color: #f9f9f9;
     padding: .714em;
@@ -607,8 +609,6 @@ pre:not(.codepen) {
     overflow: hidden;
     overflow-x: auto;
     border-radius: .1875em;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
 }
     pre:not(.codepen):after {
         color: rgba(249,249,249,.05);
@@ -718,7 +718,7 @@ footer {
 .lastfm-link { background-position: -30px top; color: #D51007 !important; }
 .twitter-link { background-position: -60px top; color: #1AB2E8 !important; }
 
-.rounded { background-clip: padding-box; border-radius: .1875em; -webkit-background-clip: padding-box; -moz-background-clip: padding; }
+.rounded { -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; border-radius: .1875em; }
     .rounded-large { border-radius: .375em; }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
