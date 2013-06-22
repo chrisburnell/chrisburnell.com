@@ -706,10 +706,10 @@ footer {
 .s, .logo:after { background: url("/images/raven.svg") no-repeat; }
 .symbol { vertical-align: middle; font-family: "Entypo" !important; font-size: 2em; font-style: normal !important; }
 
-.codepen, .lastfm, .twitter { background-image: url("/images/glyphs.png"); }
-.codepen { color: #999 !important; }
-.lastfm { background-position: -30px top; color: #D51007 !important; }
-.twitter { background-position: -60px top; color: #1AB2E8 !important; }
+.codepen-link, .lastfm-link, .twitter-link { background-image: url("/images/glyphs.png"); }
+.codepen-link { color: #999 !important; }
+.lastfm-link { background-position: -30px top; color: #D51007 !important; }
+.twitter-link { background-position: -60px top; color: #1AB2E8 !important; }
 
 .rounded { background-clip: padding-box; border-radius: .1875em; -webkit-background-clip: padding-box; -moz-background-clip: padding; }
     .rounded-large { border-radius: .375em; }
