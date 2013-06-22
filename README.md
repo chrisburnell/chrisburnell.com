@@ -5,7 +5,7 @@ In the past five iterations of my website (since 2006), I have always deployed t
 
 I will update this README as I develop the site. Please peruse the code and structure at your will, and [contact me](mailto:me@chrisburnell.com) if you have any questions, or fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) if you have something to contribute&mdash;it's greatly appreciated.
 
-If any of the template tags *( {{ this.stuff }} )* look peculiar, it's been done in such a way that the markup is indented correctly on the front-end.
+If any of the template tags *{{ this.stuff }}* look peculiar, it's been done in such a way that the markup is indented correctly on the front-end. And if the super-indenting bothers you, there's also a [non-super-indented version](https://github.com/chrisburnell/chrisburnell.github.io/blob/master/css/ravenous.noindent.css).
 
 All code and content is copyright &copy; Chris Burnell.
 
