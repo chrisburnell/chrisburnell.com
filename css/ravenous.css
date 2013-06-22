@@ -146,7 +146,7 @@ h1 {
     font-family: "league-gothic", sans-serif;
     font-size: 2.625em; /* 42px */
     text-transform: uppercase;
-    text-shadow: .048em .048em 0 rgba(6,6,6,.1);
+    text-shadow: .0714em .0714em 0 rgba(6,6,6,.1); /* 3px */
 }
 h2 {
     font-family: "ff-meta-serif-web-pro", sans-serif;
@@ -187,7 +187,7 @@ blockquote:not(.twitter-tweet) {
 hr {
     background: rgba(6,6,6,.05);
     width: 100%;
-    height: .25em;
+    height: .25em; /* 4px */
     border: 0;
     display: block;
 }
@@ -212,7 +212,7 @@ button,
     height: 1.4em;
     margin: 0 0 5px;
     padding: .25em .625em;
-    border: 0.5px solid #51768e; /* retina display fix -- 2 x .5 = 1 */
+    border: .5px solid #51768e; /* retina display fix -- 2 x .5 = 1 */
     display: inline-block;
     position: relative;
     font-family: "league-gothic", sans-serif;
@@ -276,7 +276,7 @@ header {
         font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .048em .048em 0 rgba(6,6,6,.1);
+        text-shadow: .05769em .05769em 0 rgba(6,6,6,.1); /* 3px */
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
@@ -285,7 +285,7 @@ header {
         user-select:         none;
     }
         .logo:active {
-            top: 0.04em; /* 2px */
+            top: .0384em; /* 2px */
         }
         .logo:after {
             background: url("/images/raven.png") no-repeat;
@@ -353,7 +353,7 @@ nav {
         .site-nav li {
             height: 40px;
             margin-left: 1em;
-            padding: 0.375em 0;
+            padding: .375em 0;
             float: left;
             display: inline-block;
             text-align: center;
@@ -363,7 +363,7 @@ nav {
             }
             .site-nav a {
                 color: #7f7f7f;
-                padding: 0.75em;
+                padding: .75em;
                 border-bottom: 0px solid rgba(95,138,166,.9);
                 display: block;
                 position: relative;
@@ -393,10 +393,10 @@ nav {
                     content: "";
                 }
                 .site-nav a:active {
-                    margin-top: .1em; /* 16px x 1.25em x 0.1em = 2px */
+                    margin-top: .1em; /* 16px x 1.25em x .1em = 2px */
                     position: relative;
                     top: .1em;
-                    line-height: 1.15em; /* 1.25em - .1em = 1.15em */
+                    line-height: 1.15em; /* 1.25em - 0.1em = 1.15em */
                 }
 
 
@@ -601,7 +601,7 @@ aside {
 
 code {
     font-family: Monaco, 'Courier New', monospace;
-    font-size: 0.8125em; /* 13px */
+    font-size: .8125em; /* 13px */
 }
 pre:not(.codepen) {
     background: #4f4f4f;
@@ -687,14 +687,13 @@ footer {
             float: right;
         }
             .footer-social a {
-                opacity: 0.6;
+                opacity: .6;
                 color: transparent;
                 width: 30px;
                 height: 30px;
-                margin: .5em .5em 0;
+                margin: 7px 7px 0; /* Can't use EMs because font-size = 0 */
                 display: inline-block;
-                vertical-align: middle;
-                text-indent: -999em !important;
+                font-size: 0;
                 -webkit-transition: opacity .25s ease-in-out;
                 transition:         opacity .25s ease-in-out;
             }
@@ -818,8 +817,8 @@ footer {
      * right at the edge, creating a readability issue.
      */
     .wrap {
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: .625em; /* 10px */
+        padding-left: .625em;
     }
     .logo {
         font-size: 2.25em; /* 36px */
