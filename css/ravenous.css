@@ -298,8 +298,8 @@ header {
             z-index: -1;
             -webkit-transform: translate3d(0,-0.8em,0);
             transform:         translate3d(0,-0.8em,0);
-            -webkit-animation: soaring 12s linear infinite;
-            animation:         soaring 12s linear infinite;
+            -webkit-animation: soaring 30s linear alternate infinite;
+            animation:         soaring 30s linear alternate infinite;
             -webkit-animation-play-state: paused;
             animation-play-state:         paused;
         }
