@@ -603,6 +603,10 @@ code {
     font-family: Monaco, 'Courier New', monospace;
     font-size: .8125em; /* 13px */
 }
+    p > code {
+        background: rgba(95, 138, 166, .1);
+        padding: 0 .154em;
+    }
 pre:not(.codepen) {
     background: #4f4f4f;
     -moz-background-clip: padding;
