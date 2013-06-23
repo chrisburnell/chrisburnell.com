@@ -119,7 +119,7 @@ h3 a {
 h1 a:hover,
 h2 a:hover,
 h3 a:hover {
-    color: rgba(95,138,166,.9);
+    color: rgba(95, 138, 166, .9);
     text-decoration: none;
 }
 img,
@@ -147,12 +147,12 @@ h1 {
     font-family: "league-gothic", sans-serif;
     font-size: 2.625em; /* 42px */
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 rgba(6,6,6,.15); /* 3px */
+    text-shadow: .0714em .0714em 0 rgba(6, 6, 6, .15); /* 3px */
 }
 h2 {
     font-family: "ff-meta-serif-web-pro", sans-serif;
     font-size: 1.625em; /* 26px */
-    text-shadow: 0 -1px 0 rgba(249,249,249,.3);
+    text-shadow: 0 -1px 0 rgba(249, 249, 249, .3);
 }
 h3 {
     font-family: "proxima-nova", serif;
@@ -186,7 +186,7 @@ blockquote:not(.twitter-tweet) {
     content: "\0022";
 }
 hr {
-    background: rgba(6,6,6,.15);
+    background: rgba(6, 6, 6, .15);
     width: 100%;
     height: .25em; /* 4px */
     border: 0;
@@ -205,9 +205,9 @@ hr {
 button,
 .button {
     background-color: #6f96af;
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-    background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
+    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
+    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
     color: #f9f9f9 !important;
     min-width: 6em;
     height: 1.4em;
@@ -222,26 +222,26 @@ button,
     text-align: center;
     text-decoration: none !important;
     text-transform: uppercase;
-    text-shadow: 0 -0.0625em 0 rgba(6,6,6,.15);
+    text-shadow: 0 -0.0625em 0 rgba(6, 6, 6, .15);
     cursor: pointer;
     border-radius: .1875em;
-    box-shadow: inset 0 1px 0 rgba(249,249,249,.25), inset 0 0 2px rgba(6,6,6,.15), 0 4px 0 #395264;
+    box-shadow: inset 0 1px 0 rgba(249, 249, 249, .25), inset 0 0 2px rgba(6, 6, 6, .15), 0 4px 0 #395264;
     -webkit-transition: background-color .13s ease-in-out;
     transition:         background-color .13s ease-in-out;
 }
 button:hover,
 .button:hover {
     background-color: #7fa6bf;
-    box-shadow: inset 0 1px 0 rgba(249,249,249,.25), inset 0 0 2px rgba(6,6,6,.15), 0 4px 0 #496274;
+    box-shadow: inset 0 1px 0 rgba(249, 249, 249, .25), inset 0 0 2px rgba(6, 6, 6, .15), 0 4px 0 #496274;
 }
 button:active,
 .button:active {
     background-color: #6f96af;
-    background-image: -webkit-linear-gradient(top, rgba(6,6,6,.15) 0%, transparent 100%);
-    background-image:    -moz-linear-gradient(top, rgba(6,6,6,.15) 0%, transparent 100%);
-    background-image:         linear-gradient(top, rgba(6,6,6,.15) 0%, transparent 100%);
+    background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, .15) 0%, transparent 100%);
+    background-image:    -moz-linear-gradient(top, rgba(6, 6, 6, .15) 0%, transparent 100%);
+    background-image:         linear-gradient(top, rgba(6, 6, 6, .15) 0%, transparent 100%);
     top: .136em;
-    box-shadow: inset 0 -1px 0 rgba(249,249,249,.25), inset 0 2px 6px rgba(6,6,6,.25);
+    box-shadow: inset 0 -1px 0 rgba(249, 249, 249, .25), inset 0 2px 6px rgba(6, 6, 6, .25);
 }
 button:after,
 .button:after {
@@ -277,7 +277,7 @@ header {
     font-size: 3.25em; /* 52px */
     line-height: 110px;
     text-transform: uppercase;
-    text-shadow: .05769em .05769em 0 rgba(6,6,6,.15); /* 3px */
+    text-shadow: .05769em .05769em 0 rgba(6, 6, 6, .15); /* 3px */
     z-index: 1;
     -webkit-transition: none;
     transition:         none;
@@ -365,7 +365,7 @@ nav {
 .site-nav a {
     color: #7f7f7f;
     padding: .75em;
-    border-bottom: 0px solid rgba(95,138,166,.9);
+    border-bottom: 0px solid rgba(95, 138, 166, .9);
     display: block;
     position: relative;
     font-family: "league-gothic", sans-serif;
@@ -385,7 +385,7 @@ nav {
 .page-home .site-nav-home a:after,
 .page-articles .site-nav-archive a:after {
     margin-left: -3px;
-    border-top: 5px solid rgba(95,138,166,.9);
+    border-top: 5px solid rgba(95, 138, 166, .9);
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     position: absolute;
@@ -433,7 +433,7 @@ article {
 .articles-list li {
     width: 100%;
     padding: 1.5em 0;
-    border-top: .25em solid rgba(6,6,6,.15);
+    border-top: .25em solid rgba(6, 6, 6, .15);
     display: inline-block;
     clear: both;
 }
@@ -475,7 +475,7 @@ article h3,
 }
 .article-link a:hover {
     color: #4f4f4f;
-    border-bottom-color: rgba(95,138,166,.9);
+    border-bottom-color: rgba(95, 138, 166, .9);
 }
 
 /**
@@ -570,7 +570,7 @@ aside p {
 }
 .related-articles {
     padding-top: .5em;
-    border-top: .25em solid rgba(6,6,6,.15);
+    border-top: .25em solid rgba(6, 6, 6, .15);
 }
 .related-articles h3 {
     padding-bottom: .5em;
@@ -592,7 +592,7 @@ aside p {
 .comments {
     margin-top: 2em;
     padding-top: 1em;
-    border-top: .25em solid rgba(6,6,6,.15);
+    border-top: .25em solid rgba(6, 6, 6, .15);
 }
 
 
@@ -617,7 +617,7 @@ pre:not(.codepen) {
     border-radius: .1875em;
 }
 pre:not(.codepen):after {
-    color: rgba(249,249,249,.05);
+    color: rgba(249, 249, 249, .05);
     display: block;
     position: absolute;
     top: 50px;
@@ -640,14 +640,14 @@ pre:not(.codepen):after {
 
 footer {
     background: #4f4f4f;
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
-    background-image:         linear-gradient(top, transparent 0%, rgba(6,6,6,.15) 100%);
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
+    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
+    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .15) 100%);
     color: #ddd;
     width: auto;
     height: 40px;
     padding: 2.14em 0;
-    border-top: .286em solid rgba(95,138,166,.9);
+    border-top: .286em solid rgba(95, 138, 166, .9);
     font-family: "proxima-nova", sans-serif;
     font-size: .875em; /* 14px */
     font-weight: 600;
@@ -803,7 +803,7 @@ pre::selection, code::selection {                 background: black; color: whit
     .author {
         margin-bottom: 0;
         padding-top: 1em;
-        border-top: .25em solid rgba(6,6,6,.15);
+        border-top: .25em solid rgba(6, 6, 6, .15);
         -webkit-order: 999;
         order:         999;
     }
