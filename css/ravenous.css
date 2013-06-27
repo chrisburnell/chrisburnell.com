@@ -687,13 +687,14 @@ footer {
         .footer-social {
             float: right;
         }
+            .footer-social li { display: inline-block; }
             .footer-social a {
                 opacity: .6;
                 color: transparent;
                 width: 30px;
                 height: 30px;
                 margin: 7px 7px 0; /* Can't use EMs because font-size = 0 */
-                display: inline-block;
+                display: block;
                 font-size: 0;
                 -webkit-transition: opacity .25s ease-in-out;
                 transition:         opacity .25s ease-in-out;
