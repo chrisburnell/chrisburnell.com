@@ -687,33 +687,35 @@ footer {
         .footer-social {
             float: right;
         }
-            .footer-social li { display: inline-block; }
-            .footer-social a {
-                opacity: .6;
-                color: transparent;
-                width: 30px;
-                height: 30px;
-                margin: 7px 7px 0; /* Can't use EMs because font-size = 0 */
-                display: block;
-                font-size: 0;
-                -webkit-transition: opacity .25s ease-in-out;
-                transition:         opacity .25s ease-in-out;
+            .footer-social li {
+                display: inline-block;
+                margin-left: .5em;
             }
-                .footer-social a:hover {
-                    opacity: .9;
+                .footer-social li:first-child {
+                    margin-left: 0;
                 }
-                .footer-social a:active {
-                    position: relative;
-                    top: .14em;
+                .footer-social a {
+                    opacity: .6;
+                    color: transparent;
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    font-size: 0;
+                    -webkit-transition: opacity .25s ease-in-out;
+                    transition:         opacity .25s ease-in-out;
                 }
-                .footer-social a:last-of-type {
-                    margin-right: 0;
-                }
-                .footer-social .codepen-link,
-                .footer-social .lastfm-link,
-                .footer-social .twitter-link {
-                    background-image: url("/images/glyphs.png");
-                }
+                    .footer-social a:hover {
+                        opacity: .9;
+                    }
+                    .footer-social a:active {
+                        position: relative;
+                        top: .14em;
+                    }
+                    .footer-social .codepen-link,
+                    .footer-social .lastfm-link,
+                    .footer-social .twitter-link {
+                        background-image: url("/images/glyphs.png");
+                    }
 
 
 /*------------------------------------*\
@@ -837,7 +839,4 @@ footer {
             float: none;
             text-align: center;
         }
-            .footer-social .lastfm {
-                margin-right: 0;
-            }
 }
