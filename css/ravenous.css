@@ -136,7 +136,7 @@ sup {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.2em; /* So that elements can be floated inside headings */
+    min-height: 1.2em; /* so that elements can be floated inside headings */
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -155,7 +155,7 @@ h2 {
 }
 h3 {
     font-family: "proxima-nova", serif;
-    font-size: 1em; /* Override browser default -- 16px */
+    font-size: 1em; /* override browser default -- 16px */
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -197,10 +197,6 @@ hr {
     04. Buttons
 \*------------------------------------*/
 
-/**
- * I may need to revisit this at some point to make sure it's as streamlined
- * as I can make it. If you have suggestions, please fork on GitHub.
- */
 button,
 .button {
     background-color: #6f96af;
@@ -212,7 +208,7 @@ button,
     height: 1.4em;
     margin: 0 0 5px;
     padding: .25em .625em;
-    border: .5px solid #51768e; /* retina display fix -- 2 x .5 = 1 */
+    border: .5px solid #51768e; /* 2x density resolution fix -- 2 x .5 = 1 */
     display: inline-block;
     position: relative;
     font-family: "league-gothic", sans-serif;
