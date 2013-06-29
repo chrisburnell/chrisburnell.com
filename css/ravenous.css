@@ -451,6 +451,7 @@ article,
         margin-bottom: .4em;
     }
     .site-introduction {
+        max-width: 24em;
         margin-bottom: .8em;
         line-height: 1.4em;
     }
