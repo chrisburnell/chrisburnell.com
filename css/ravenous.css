@@ -473,6 +473,10 @@ article,
                 color: #4f4f4f;
                 border-bottom-color: rgba(95, 138, 166, .9);
             }
+    .article-date,
+    .related-date {
+        display: block; /* <time> element */
+    }
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
@@ -519,6 +523,11 @@ aside {
     margin-left: -270px;
     float: left;
 }
+    aside p {
+        margin-bottom: .5em;
+        clear: both;
+        font-size: .875em; /* 14px */
+    }
     .author,
     .related-articles {
         font-family: "proxima-nova", sans-serif;
@@ -535,37 +544,33 @@ aside {
             font-size: .875em; /* 14px */
             font-style: italic;
         }
-        .author-information a,
-        .author-information strong,
-        .author-information time {
-            color: inherit;
-            font-family: "proxima-nova";
-            font-weight: 600;
-            font-style: normal;
-            text-transform: uppercase;
-        }
-        .author-image {
-            width: 100px;
-            height: 100px;
-            margin-right: 10px;
-            float: left;
-            display: inline-block;
-        }
-        .article-tags {
-            padding-top: .159em; /* 1.618em - 1.3em / 2 = .159em */
-            line-height: 1.3em;
-        }
-        aside p {
-            margin-bottom: .5em;
-            clear: both;
-            font-size: .875em; /* 14px */
-        }
+            .author-information a,
+            .author-information strong,
+            .author-information time {
+                color: inherit;
+                font-family: "proxima-nova";
+                font-weight: 600;
+                font-style: normal;
+                text-transform: uppercase;
+            }
+            .author-image {
+                width: 100px;
+                height: 100px;
+                margin-right: 10px;
+                float: left;
+                display: inline-block;
+            }
+            .article-tags {
+                padding-top: .159em; /* 1.618em - 1.3em / 2 = .159em */
+                line-height: 1.3em;
+            }
             .author-biography .codepen,
             .author-biography .lastfm,
             .author-biography .twitter {
                 background: none;
             }
         .related-articles {
+            margin-top: .5em;
             padding-top: 1em;
             border-top: .25em solid rgba(6, 6, 6, .1);
         }
@@ -573,9 +578,13 @@ aside {
                 list-style: none;
                 line-height: 1.25em;
             }
-                .related-articles .article-date {
+                .related-title {
+                    font-weight: bold;
+                }
+                .related-date {
                     padding-left: .75em;
                     font-size: .8124em; /* 13px */
+                    font-style: italic;
                 }
 
 
