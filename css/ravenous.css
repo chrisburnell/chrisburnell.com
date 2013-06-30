@@ -566,12 +566,9 @@ aside {
                 background: none;
             }
         .related-articles {
-            padding-top: .5em;
+            padding-top: 1em;
             border-top: .25em solid rgba(6, 6, 6, .1);
         }
-            .related-articles h3 {
-                padding-bottom: .5em;
-            }
             .related-articles ul {
                 list-style: none;
                 line-height: 1.25em;
