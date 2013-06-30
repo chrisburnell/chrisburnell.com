@@ -724,11 +724,11 @@ footer {
 }
 .lastfm-link {
     background-position: -30px top;
-    color: #D51007 !important;
+    color: #d51007 !important;
 }
 .twitter-link {
     background-position: -60px top;
-    color: #1AB2E8 !important;
+    color: #00aced !important;
 }
 
 .rounded { -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; border-radius: .1875em; }
