@@ -446,8 +446,8 @@ article,
                 color: #6f6f6f;
                 content: "\2013 \0020";
             }
-    .site-tagline,
-    .article-title {
+    .article-title,
+    .site-tagline {
         margin-bottom: .4em;
     }
     .site-introduction {
@@ -535,8 +535,9 @@ aside {
             font-size: .875em; /* 14px */
             font-style: italic;
         }
+        .author-information a,
         .author-information strong,
-        .author-information a {
+        .author-information time {
             color: inherit;
             font-family: "proxima-nova";
             font-weight: 600;
@@ -559,9 +560,9 @@ aside {
             clear: both;
             font-size: .875em; /* 14px */
         }
-            .author-biography .twitter,
             .author-biography .codepen,
-            .author-biography .lastfm {
+            .author-biography .lastfm,
+            .author-biography .twitter {
                 background: none;
             }
         .related-articles {
@@ -627,7 +628,7 @@ pre:not(.codepen) {
         z-index: 0;
     }
 /**
- * CodePen iframe -- http://codepen.com
+ * CodePen iframe -- http://codepen.io
  */
 .cp_embed_iframe {
     margin-bottom: 1em;

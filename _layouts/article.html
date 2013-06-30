@@ -9,7 +9,7 @@
                 <div class="author-information">
                     <img src="/images/avatar.png" class="author-image  rounded" alt="">
                     <div class="author-name">by <strong>{{ site.author }}</strong></div>
-                    <div class="article-date"><strong>{{ page.date | date: "%b %d, %Y" }}</strong></div>
+                    <div class="article-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time></div>
                     <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>
                 </div>
                 <div class="author-biography">
@@ -21,7 +21,7 @@
                     <ul>{% for post in site.related_posts limit:3 %}
                         <li>
                             <a href="{{ post.url }}#disqus_thread" class="bold">{{ post.title }}</a>
-                            <div class="article-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                            <div class="article-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></div>
                         </li>{% endfor %}
                     </ul>
                 </div>{% endif %}
@@ -40,14 +40,13 @@
             <section class="comments  clear">
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
-                    var disqus_shortname = 'chrisburnell';
                     (function() {
                         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        dsq.src = '//chrisburnell.disqus.com/embed.js';
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <noscript>Please enable JavaScript to view comments.</noscript>
             </section>
 
         </article>
