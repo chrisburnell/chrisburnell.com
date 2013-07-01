@@ -303,7 +303,7 @@ header {
             animation-play-state:         paused;
         }
             @-webkit-keyframes soaring {
-                0% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
+                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
                 12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
                 25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
                 37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
@@ -311,10 +311,9 @@ header {
                 62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
                 75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
                 87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-                100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
             }
             @keyframes soaring {
-                0% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
+                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
                 12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
                 25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
                 37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
@@ -322,7 +321,6 @@ header {
                 62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
                 75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
                 87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-                100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
             }
             /**
              * Only animate when the user hovers the logo.
