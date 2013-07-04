@@ -457,6 +457,12 @@ article,
         margin-bottom: 1em;
         font-size: 1.25em; /* 20px */
     }
+    .article-banner {
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border-radius: .375em;
+    }
     .article-link {
         width: 100%;
     }
@@ -552,11 +558,16 @@ aside {
                 text-transform: uppercase;
             }
             .author-image {
+                -moz-background-clip: padding;
+                -webkit-background-clip: padding-box;
+                background-clip: padding-box;
+                background-size: 100px 100px;
                 width: 100px;
                 height: 100px;
                 margin-right: 10px;
                 float: left;
                 display: inline-block;
+                border-radius: .1875em;
             }
             .article-tags {
                 padding-top: .159em; /* 1.618em - 1.3em / 2 = .159em */
@@ -690,8 +701,8 @@ footer {
             float: right;
         }
             .footer-social li {
-                display: inline-block;
                 margin-left: .5em;
+                display: inline-block;
             }
                 .footer-social li:first-child {
                     margin-left: 0;
@@ -736,15 +747,9 @@ footer {
     color: #00aced !important;
 }
 
-.rounded { -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; border-radius: .1875em; }
-    .rounded-large { border-radius: .375em; }
-
 .clear { clear: both; overflow: hidden; zoom: 1; }
     .clear:before,
-    .clear:after {
-        display: table;
-        content: "";
-    }
+    .clear:after { display: table; content: ""; }
     .clear:after { clear: both; }
 
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
