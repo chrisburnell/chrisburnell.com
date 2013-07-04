@@ -208,7 +208,7 @@ button,
     height: 1.4em;
     margin: 0 0 5px;
     padding: .25em .625em;
-    border: .5px solid #51768e; /* 2x density resolution fix -- 2 x .5 = 1 */
+    border: .5px solid #51768e; /* retina DPI fix */
     display: inline-block;
     position: relative;
     font-family: "league-gothic", sans-serif;
