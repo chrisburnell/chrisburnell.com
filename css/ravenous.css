@@ -728,6 +728,7 @@ footer {
                     .footer-social .lastfm-link,
                     .footer-social .twitter-link {
                         background-image: url("/images/glyphs.png");
+                        background-size: 90px 30px;
                     }
 
 
