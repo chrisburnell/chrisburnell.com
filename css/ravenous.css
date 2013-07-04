@@ -27,7 +27,7 @@
 /**
  * Hide the fonts from Typekit before they have finished loading and show them
  * once they've finished. (5000 ms timeout)
- */
+ *
 .wf-loading .logo, .wf-loading nav, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading button, .wf-loading .button {
     visibility: hidden;
 }
@@ -44,6 +44,7 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+*/
 
 
 /*------------------------------------*\
@@ -297,10 +298,10 @@ header {
             z-index: -1;
             -webkit-transform: translate3d(0, -0.8125em, 0);
             transform:         translate3d(0, -0.8125em, 0);
-            -webkit-animation: soaring 30s linear alternate infinite;
+            /*-webkit-animation: soaring 30s linear alternate infinite;
             animation:         soaring 30s linear alternate infinite;
             -webkit-animation-play-state: paused;
-            animation-play-state:         paused;
+            animation-play-state:         paused; */
         }
             @-webkit-keyframes soaring {
                 0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
