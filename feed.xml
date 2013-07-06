@@ -21,7 +21,7 @@ layout: nil
         <link>http://chrisburnell.com</link>
         </image>
 
-        {% for post in site.posts %}
+        {% for post in site.posts %}{% unless post.draft %}
         <item>
             <title>{{ post.title }}</title>
             <link>http://chrisburnell.com{{ post.url }}</link>
@@ -34,7 +34,7 @@ layout: nil
             <tags>{{ post.tags }}</tags>
             {% endif %}
         </item>
-        {% endfor %}
+        {% endunless %}{% endfor %}
 
     <channel>
 
