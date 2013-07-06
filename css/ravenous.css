@@ -726,9 +726,10 @@ footer {
                     }
                     .footer-social .codepen-link,
                     .footer-social .lastfm-link,
+                    .footer-social .rss-link,
                     .footer-social .twitter-link {
                         background-image: url("/images/glyphs.png");
-                        background-size: 90px 30px;
+                        background-size: 120px 30px;
                     }
 
 
@@ -743,8 +744,11 @@ footer {
     background-position: -30px top;
     color: #d51007 !important;
 }
-.twitter-link {
+.rss-link {
     background-position: -60px top;
+}
+.twitter-link {
+    background-position: -90px top;
     color: #00aced !important;
 }
 
