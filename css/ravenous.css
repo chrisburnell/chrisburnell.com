@@ -675,7 +675,7 @@ footer {
         overflow: hidden;
     }
         .home-link {
-            background: url("/images/raven.png") no-repeat;
+            background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
             background-size: 2.857em 2.857em;
             width: 2.875em;
