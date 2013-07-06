@@ -430,9 +430,6 @@ article,
             display: inline-block;
             clear: both;
         }
-            .articles-list li:last-child {
-                padding-bottom: 0;
-            }
             .articles-list .button {
                 margin: .5em 0 1em;
             }
@@ -820,7 +817,7 @@ footer {
     }
         .author {
             margin-bottom: 0;
-            padding-top: 1em;
+            padding-top: 2.5em;
             border-top: .25em solid rgba(6, 6, 6, .1);
             -webkit-order: 999;
             order:         999;
