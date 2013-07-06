@@ -284,7 +284,7 @@ header {
             top: .0384em; /* 2px */
         }
         .logo:after {
-            background: url("/images/raven.png") no-repeat;
+            background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
             background-size: 120px 120px;
             width: 120px;
