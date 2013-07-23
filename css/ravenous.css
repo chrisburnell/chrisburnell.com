@@ -356,7 +356,7 @@ nav {
                 margin: 0;
             }
             .site-nav a {
-                color: #7f7f7f;
+                color: #737373;
                 padding: .75em;
                 border-bottom: 0px solid rgba(95, 138, 166, .9);
                 display: block;
@@ -679,6 +679,7 @@ footer {
             height: 2.875em;
             margin-right: 1em;
             vertical-align: middle;
+            font-size: 0;
             text-decoration: none;
         }
             .home-link:active {
@@ -735,7 +736,7 @@ footer {
 \*------------------------------------*/
 
 .codepen-link {
-    color: #999 !important;
+    color: #212121 !important;
 }
 .lastfm-link {
     background-position: -30px top;
@@ -746,7 +747,7 @@ footer {
 }
 .twitter-link {
     background-position: -90px top;
-    color: #00aced !important;
+    color: #0084b4 !important;
 }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
