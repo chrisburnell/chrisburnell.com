@@ -675,12 +675,13 @@ footer {
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
             background-size: 2.857em 2.857em;
+            color: transparent;
             width: 2.875em;
             height: 2.875em;
             margin-right: 1em;
             vertical-align: middle;
-            font-size: 0;
             text-decoration: none;
+            text-indent: -4em;
         }
             .home-link:active {
                 position: relative;
