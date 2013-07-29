@@ -438,10 +438,6 @@ article,
         .articles-list h3 {
             margin-bottom: 1em;
         }
-            .articles-list .article-date:before {
-                color: #6f6f6f;
-                content: "\2013 \0020";
-            }
     .article-title,
     .site-tagline {
         margin-bottom: .4em;
@@ -480,6 +476,10 @@ article,
         margin-bottom: .5em;
         display: block; /* <time> element */
     }
+        .articles-list .article-date:before {
+            color: #6f6f6f;
+            content: "\2013 \0020";
+        }
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
