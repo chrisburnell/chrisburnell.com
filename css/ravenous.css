@@ -672,22 +672,6 @@ footer {
         float: left;
         overflow: hidden;
     }
-        .home-link {
-            background: url("../icon.png") no-repeat;
-            background-image: url("/images/raven.svg");
-            background-size: 2.857em 2.857em;
-            color: transparent;
-            width: 2.875em;
-            height: 2.875em;
-            margin-right: 1em;
-            vertical-align: middle;
-            text-decoration: none;
-            text-indent: -4em;
-        }
-            .home-link:active {
-                position: relative;
-                top: .14em;
-            }
         .footer-copyright a {
             color: #ddd;
             display: inline-block;
@@ -697,6 +681,22 @@ footer {
             .footer-copyright a:hover {
                 text-decoration: underline;
             }
+            .home-link {
+                background: url("../icon.png") no-repeat;
+                background-image: url("/images/raven.svg");
+                background-size: 2.857em 2.857em;
+                color: transparent;
+                width: 2.875em;
+                height: 2.875em;
+                margin-right: 1em;
+                vertical-align: middle;
+                text-decoration: none;
+                text-indent: -4em;
+            }
+                .home-link:active {
+                    position: relative;
+                    top: .14em;
+                }
         .footer-social {
             float: right;
         }
