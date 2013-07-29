@@ -673,7 +673,6 @@ footer {
         overflow: hidden;
     }
         .footer-copyright a {
-            color: #ddd;
             display: inline-block;
             white-space: nowrap;
             text-decoration: none;
@@ -697,6 +696,9 @@ footer {
                     position: relative;
                     top: .14em;
                 }
+            .copyright-link {
+                color: #ddd;
+            }
         .footer-social {
             float: right;
         }
