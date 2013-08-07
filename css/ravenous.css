@@ -99,8 +99,8 @@ body {
 a {
     color: #5f8aa6;
     text-decoration: none;
-    -webkit-transition: background .25s, color .25s, text-shadow .25s;
-    transition:         background .25s, color .25s, text-shadow .25s;
+    -webkit-transition: background .2s, color .2s, text-shadow .2s;
+    transition:         background .2s, color .2s, text-shadow .2s;
     -webkit-user-select: none;
     -moz-user-select:    none;
     user-select:         none;
@@ -222,8 +222,8 @@ button,
     cursor: pointer;
     border-radius: .1875em;
     box-shadow: inset 0 1px 0 rgba(249, 249, 249, .25), inset 0 0 2px rgba(6, 6, 6, .1), 0 4px 0 #395264;
-    -webkit-transition: background-color .13s ease-in-out;
-    transition:         background-color .13s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition:         background-color .2s ease-in-out;
 }
     button:hover,
     .button:hover {
@@ -366,8 +366,8 @@ nav {
                 font-size: 1.25em; /* 20px */
                 line-height: 1.25em;
                 text-transform: uppercase;
-                -webkit-transition: color .2s ease .07s, border-bottom-width .07s, margin-top .07s, padding-bottom .07s;
-                transition:         color .2s ease .07s, border-bottom-width .07s, margin-top .07s, padding-bottom .07s;
+                -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
+                transition:         color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
             }
                 .site-nav a:hover,
                 .page-home .site-nav-home a,
@@ -719,8 +719,8 @@ footer {
                     height: 30px;
                     display: block;
                     font-size: 0;
-                    -webkit-transition: opacity .25s ease-in-out;
-                    transition:         opacity .25s ease-in-out;
+                    -webkit-transition: opacity .2s ease-in-out;
+                    transition:         opacity .2s ease-in-out;
                 }
                     .footer-social a:hover {
                         opacity: .9;
