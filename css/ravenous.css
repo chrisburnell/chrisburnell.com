@@ -542,7 +542,9 @@ aside {
                 text-decoration: underline;
             }
         .author-information {
+            width: 100%;
             margin-bottom: .5em;
+            float: left;
             font-family: "ff-meta-serif-web-pro", serif;
             font-size: .875em; /* 14px */
             font-style: italic;
