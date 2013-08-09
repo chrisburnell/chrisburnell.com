@@ -571,8 +571,7 @@ aside {
                 border-radius: .1875em;
             }
             .article-tags {
-                padding-top: .159em; /* 1.618em - 1.3em / 2 = .159em */
-                line-height: 1.3em;
+                line-height: 1.429em;
             }
             .author-biography .codepen,
             .author-biography .lastfm,
