@@ -5,18 +5,17 @@
  *
  * Table of Contents:
  * 01. Typekit Preload
- * 02. Symbol font-face Load
- * 03. General and Typography
- * 04. Buttons
- * 05. Header
- * 06. Navigation
- * 07. Articles
- * 08. Asides
- * 09. Comments
- * 10. Code Blocks
- * 11. Footer
- * 12. Miscellaneous
- * 13. Media Queries
+ * 02. General and Typography
+ * 03. Buttons
+ * 04. Header
+ * 05. Navigation
+ * 06. Articles
+ * 07. Asides
+ * 08. Comments
+ * 09. Code Blocks
+ * 10. Footer
+ * 11. Miscellaneous
+ * 12. Media Queries
  */
 
 
@@ -47,26 +46,7 @@
 
 
 /*------------------------------------*\
-    02. Symbol @font-face Load
-\*------------------------------------*/
-
-/**
- * Entypo Pictogram Suite -- http://entypo.com
- */
-@font-face {
-    font-family: "Entypo";
-    font-weight: normal;
-    font-style: normal;
-    src: url("../fonts/entypo.eot");
-    src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/entypo.woff") format("woff"),
-         url("../fonts/entypo.ttf") format("truetype"),
-         url("../fonts/entypo.svg#entypo") format("svg");
-}
-
-
-/*------------------------------------*\
-    03. General and Typography
+    02. General and Typography
     i   Layout
     ii  Inline Elements
     iii Block Elements
@@ -195,7 +175,7 @@ hr {
 
 
 /*------------------------------------*\
-    04. Buttons
+    03. Buttons
 \*------------------------------------*/
 
 button,
@@ -256,7 +236,7 @@ button,
 
 
 /*------------------------------------*\
-    05. Header
+    04. Header
 \*------------------------------------*/
 
 header {
@@ -333,7 +313,7 @@ header {
 
 
 /*------------------------------------*\
-    06. Navigation
+    05. Navigation
 \*------------------------------------*/
 
 nav {
@@ -396,7 +376,7 @@ nav {
 
 
 /*------------------------------------*\
-    07. Articles and Article Lists
+    06. Articles and Article Lists
 \*------------------------------------*/
 
 .content {
@@ -514,7 +494,7 @@ article,
 
 
 /*------------------------------------*\
-    08. Asides
+    07. Asides
 \*------------------------------------*/
 
 /**
@@ -598,7 +578,7 @@ aside {
 
 
 /*------------------------------------*\
-    09. Comments
+    08. Comments
 \*------------------------------------*/
 
 .comments {
@@ -609,7 +589,7 @@ aside {
 
 
 /*------------------------------------*\
-    10. Code and Code Blocks
+    09. Code and Code Blocks
 \*------------------------------------*/
 
 code {
@@ -633,13 +613,13 @@ pre:not(.codepen) {
     border-radius: .1875em;
 }
     pre:not(.codepen):after {
-        color: rgba(249, 249, 249, .05);
+        background: url("images/bg-pre.svg");
+        background-size: 720px 720px;
         display: block;
         position: absolute;
         top: 50px;
         left: 40px;
-        content: "\E714";
-        font: 400 720px/22px "Entypo";
+        content: "";
         z-index: 0;
     }
 /**
@@ -651,7 +631,7 @@ pre:not(.codepen) {
 
 
 /*------------------------------------*\
-    11. Footer
+    10. Footer
 \*------------------------------------*/
 
 footer {
@@ -738,7 +718,7 @@ footer {
 
 
 /*------------------------------------*\
-    12. Miscellaneous
+    11. Miscellaneous
 \*------------------------------------*/
 
 .codepen-link {
@@ -770,7 +750,7 @@ footer {
 
 
 /*------------------------------------*\
-    13. Media Queries
+    12. Media Queries
     i   Tablet - 767px
     ii  Mobile - 500px
 \*------------------------------------*/
