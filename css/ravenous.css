@@ -613,7 +613,7 @@ pre:not(.codepen) {
     border-radius: .1875em;
 }
     pre:not(.codepen):after {
-        background: url("images/bg-pre.svg");
+        background: url("/images/bg-pre.svg");
         background-size: 720px 720px;
         display: block;
         position: absolute;
