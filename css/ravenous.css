@@ -614,14 +614,16 @@ pre:not(.codepen) {
 }
     pre:not(.codepen):after {
         background: url("/images/bg-pre.svg");
-        background-size: 720px 720px;
+        background-size: 22.5em 13.532em;
+        width: 22.5em;
+        height: 13.532em;
         display: block;
         position: absolute;
-        top: 50px;
-        left: 40px;
+        top: 2em;
+        left: 2em;
         content: "";
         z-index: 0;
-        opacity: .9;
+        opacity: .2;
     }
 /**
  * CodePen iframe -- http://codepen.io
