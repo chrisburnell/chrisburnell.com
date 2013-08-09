@@ -621,6 +621,7 @@ pre:not(.codepen) {
         left: 40px;
         content: "";
         z-index: 0;
+        opacity: .9;
     }
 /**
  * CodePen iframe -- http://codepen.io
