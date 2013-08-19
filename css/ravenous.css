@@ -169,8 +169,8 @@ hr {
     background: rgba(6, 6, 6, .1);
     width: 100%;
     height: .25em; /* 4px */
-    border: 0;
     display: block;
+    border: 0;
 }
 
 
@@ -187,10 +187,10 @@ button,
     color: #f9f9f9 !important;
     min-width: 6em;
     height: 1.4em;
+    display: inline-block;
     margin: 0 0 5px;
     padding: .25em .625em;
     border: .5px solid #51768e; /* retina DPI fix */
-    display: inline-block;
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em; /* 22px */
@@ -245,9 +245,9 @@ header {
     .logo {
         color: #4f4f4f;
         height: 110px;
-        padding-left: 100px;
         float: left;
         display: inline-block;
+        padding-left: 100px;
         position: relative;
         font-family: "league-gothic", sans-serif;
         font-size: 3.25em; /* 52px */
@@ -317,8 +317,8 @@ header {
 \*------------------------------------*/
 
 nav {
-    margin-top: 20px;
     float: right;
+    margin-top: 20px;
 }
     .site-nav {
         height: 3.75em;
@@ -327,10 +327,10 @@ nav {
     }
         .site-nav li {
             height: 40px;
-            margin-left: 1em;
-            padding: .375em 0;
             float: left;
             display: inline-block;
+            margin-left: 1em;
+            padding: .375em 0;
             text-align: center;
         }
             .site-nav li:first-child {
@@ -338,9 +338,9 @@ nav {
             }
             .site-nav a {
                 color: #737373;
+                display: block;
                 padding: .75em;
                 border-bottom: 0px solid rgba(95, 138, 166, .9);
-                display: block;
                 position: relative;
                 font-family: "league-gothic", sans-serif;
                 font-size: 1.25em; /* 20px */
@@ -406,9 +406,9 @@ article,
     }
         .articles-list li {
             width: 100%;
+            display: inline-block;
             padding: 1.5em 0;
             border-top: .25em solid rgba(6, 6, 6, .1);
-            display: inline-block;
             clear: both;
         }
             .articles-list li:last-child {
@@ -453,8 +453,8 @@ article,
             }
     .article-date,
     .related-date {
-        margin-bottom: .5em;
         display: block; /* <time> element */
+        margin-bottom: .5em;
     }
         .articles-list .article-date:before {
             color: #6f6f6f;
@@ -503,8 +503,8 @@ article,
  */
 aside {
     width: 243px;
-    margin-left: -270px;
     float: left;
+    margin-left: -270px;
 }
     aside p {
         margin-bottom: .5em;
@@ -523,8 +523,8 @@ aside {
             }
         .author-information {
             width: 100%;
-            margin-bottom: .5em;
             float: left;
+            margin-bottom: .5em;
             font-family: "ff-meta-serif-web-pro", serif;
             font-size: .875em; /* 14px */
             font-style: italic;
@@ -545,9 +545,9 @@ aside {
                 background-size: 100px 100px;
                 width: 100px;
                 height: 100px;
-                margin-right: 10px;
                 float: left;
                 display: inline-block;
+                margin-right: 10px;
                 border-radius: .1875em;
             }
             .article-tags {
@@ -615,6 +615,7 @@ pre:not(.codepen) {
     pre:not(.codepen):after {
         background: url("/images/bg-pre.svg");
         background-size: 22.5em 13.532em;
+        opacity: .2;
         width: 22.5em;
         height: 13.532em;
         display: block;
@@ -623,7 +624,6 @@ pre:not(.codepen) {
         left: 2em;
         content: "";
         z-index: 0;
-        opacity: .2;
     }
 /**
  * CodePen iframe -- http://codepen.io
@@ -688,8 +688,8 @@ footer {
             float: right;
         }
             .footer-social li {
-                margin-left: .5em;
                 display: inline-block;
+                margin-left: .5em;
             }
                 .footer-social li:first-child {
                     margin-left: 0;
@@ -773,8 +773,8 @@ footer {
         }
         nav {
             width: 100%;
-            margin-top: 0;
             float: none;
+            margin-top: 0;
         }
             /**
              * Center the navigation items.
@@ -794,9 +794,9 @@ footer {
      */
     article,
     .articles {
-        padding-left: 0;
         display: -webkit-flex;
         display: flex;
+        padding-left: 0;
         -webkit-flex-direction: column;
         flex-direction:         column;
     }
@@ -812,8 +812,8 @@ footer {
         }
     aside {
         width: 100%;
-        margin: 0 0 1em;
         float: none;
+        margin: 0 0 1em;
     }
         .author {
             margin-bottom: 0;
