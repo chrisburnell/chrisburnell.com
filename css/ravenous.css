@@ -551,6 +551,7 @@ aside {
                 border-radius: .1875em;
             }
             .article-tags {
+                display: table-cell; /* don't wrap around .author-image */
                 line-height: 1.429em;
             }
             .author-biography .codepen,
