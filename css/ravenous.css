@@ -219,6 +219,8 @@ button,
         top: .136em;
         box-shadow: inset 0 -1px 0 rgba(249, 249, 249, .25), inset 0 2px 6px rgba(6, 6, 6, .25);
     }
+    button:before,
+    .button:before,
     button:after,
     .button:after {
         width: 100%;
@@ -228,6 +230,8 @@ button,
         left: 0;
         content: "";
     }
+        button:active:before,
+        .button:active:before,
         button:active:after,
         .button:active:after {
             top: -0.136em;
@@ -488,9 +492,17 @@ article,
     .pagination .prev-link {
         float: left;
     }
+        .pagination .prev-link:before {
+            position: relative; /* override the button:before fix */
+            content: "\2190\00a0";
+        }
     .pagination .next-link {
         float: right;
     }
+        .pagination .next-link:after {
+            position: relative; /* override the button:after fix */
+            content: "\00a0\2192";
+        }
 
 
 /*------------------------------------*\
@@ -583,7 +595,7 @@ aside {
 \*------------------------------------*/
 
 .comments {
-    margin-top: 2.25em;
+    margin-top: 2em;
     padding-top: 1em;
     border-top: .25em solid rgba(6, 6, 6, .1);
 }
@@ -837,6 +849,16 @@ footer {
     .logo {
         font-size: 2.25em; /* 36px */
     }
+    .pagination {
+        text-align: center;
+    }
+        .pagination .prev-link,
+        .pagination .next-link {
+            float: none;
+        }
+        .pagination .next-link {
+            margin-top: .5em;
+        }
     aside p {
         font-size: 1em; /* 16px */
     }

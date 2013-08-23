@@ -33,8 +33,8 @@
 {% endif %}
 {{ content }}
             <section class="pagination  clear">{% if page.previous.url %}
-                <a rel="prev" class="button  prev-link" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">&larr; Previous Article</a>{% endif %}{% if page.next.url %}
-                <a rel="next" class="button  next-link" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article &rarr;</a>{% endif %}
+                <a rel="prev" class="button  prev-link" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>{% endif %}{% if page.next.url %}
+                <a rel="next" class="button  next-link" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>{% endif %}
             </section>
 
             <section class="comments  clear">
