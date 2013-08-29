@@ -36,9 +36,9 @@ and are implemented like so:
 These tell the browser a number of things, respectively:
 
 - set the width of the viewport (<code><body></code> in most cases) to the width of the device's screen, in pixels
-- set the minimum scale the site can be viewed at to 1; for when a user tries to zoom in on something on the site (pinching on mobile, for example)
-- set the maximum scale the site can be viewed at to 1; for when a user tries to zoom out of the site
-- set the initial scale when the site loads to 1; in this case this does nothing as the minimum and maximum are the same, but you could set minimum to 1, maximum to 2, and initial to 1.5 if that's what would work on your particular project
+- set the minimum-scale the site can be viewed at to 1; for when a user tries to zoom in on something on the site (pinching on mobile, for example)
+- set the maximum-scale the site can be viewed at to 1; for when a user tries to zoom out of the site
+- set the initial-scale when the site loads to 1; in this case this does nothing as the minimum and maximum are the same, but you could set minimum to 1, maximum to 2, and initial to 1.5 if that's what would work on your particular project
 - toggle whether the user is allowed to rescale the site at all
 
 For reasons like having a consistent user experience for all users, this is a pivotal piece of your markup and if done incorrectly, could break your entire design and leave you barking up the wrong tree until you realise that yeah, maybe sometimes, syntax matters.
@@ -49,7 +49,7 @@ Fine. I've rambled enough.
 
 - Separate your variables with commas, _not semicolons_.
 - Don't set an arbitrary width. Just don't do it if you value your time and sanity later on. Responsive design is done best when it's fluid, so in 99% of cases, set this to device-width. But this is not a blanket statement, you must assess this on a per-project basis.
-- Use "maximum" and "minimum", other variations don't cut it.
+- Use "maximum-scale" and "minimum-scale", other variations don't cut it.
 - Scalable only has one _E_, at the end.
 
 This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won't understand if you're not very specific (à la olde ways).
