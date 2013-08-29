@@ -36,7 +36,7 @@
                 <a rel="prev" class="button  prev-link" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>{% endif %}{% if page.next.url %}
                 <a rel="next" class="button  next-link" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>{% endif %}
             </section>
-
+{% if page.comments != 'false' %}
             <section class="comments  clear">
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
@@ -48,7 +48,7 @@
                 </script>
                 <noscript>Please enable JavaScript to view comments.</noscript>
             </section>
-
+{% endif %}
         </article>
     </section>
 
