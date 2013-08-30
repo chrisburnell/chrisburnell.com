@@ -20,8 +20,8 @@ layout: nil
             <title>Chris Burnell</title>
             <link>http://chrisburnell.com/</link>
         </image>
-
-        {% for post in site.posts %}{% unless post.draft %}<item>
+        {% for post in site.posts %}{% unless post.draft %}
+        <item>
             <title>{{ post.title }}</title>
             <link>http://chrisburnell.com{{ post.url }}</link>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
@@ -29,7 +29,6 @@ layout: nil
             <description>{{ post.introduction }}</description>{% endif %}
         </item>
         {% endunless %}{% endfor %}
-
     <channel>
 
 </rss>
