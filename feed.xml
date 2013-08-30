@@ -26,8 +26,7 @@ layout: nil
             <link>http://chrisburnell.com{{ post.url }}</link>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
             <id>http://chrisburnell.com{{ post.id }}</id>{% if post.introduction %}
-            <description>{{ post.introduction }}</description>{% endif %}{% if post.tags %}
-            <tags>{{ post.tags | array_to_sentence_string }}</tags>{% endif %}
+            <description>{{ post.introduction }}</description>{% endif %}
         </item>
         {% endunless %}{% endfor %}
 
