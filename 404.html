@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 
@@ -38,32 +39,34 @@
 <body>
 
     <header class="wrap  clear">
-        <a href="http://chrisburnell.com/" class="logo"><span>Chris Burnell</span></a>
+        <a rel="home" class="logo" href="http://chrisburnell.com"><span>Chris Burnell</span></a>
         <nav role="navigation">
             <ul class="site-nav">
-                <li class="site-nav-home"><a href="/">Home</a></li><!--
-             --><li class="site-nav-archive"><a href="/archive">Archive</a></li>
+                <li class="site-nav-home"><a rel="home" href="/" title="Home">Home</a></li><!--
+             --><li class="site-nav-archive"><a href="/archive" title="Article Archive">Archive</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="content  wrap  clear">
         <section class="articles">
+
             <h1>404 &ndash; Page not found</h1>
             <p>Sorry, it looks like the page you requested cannot be found&mdash;please head back to <a href="http://chrisburnell.com/">the homepage</a>.</p>
+
         </section>
     </section>
 
     <footer>
         <section class="footer-container  wrap  clear">
             <div class="footer-copyright">
-                <a href="/" title="Chris Burnell" class="s  home-link"></a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" title="Creative Commons License">&copy; 2013 Chris Burnell</a>
+                <a rel="home" class="home-link" href="/" title="Home">Home</a> <a rel="license" class="copyright-link" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" title="Creative Commons License">&copy; 2013 Chris Burnell</a>
             </div>
             <ul class="footer-social">
-                <li><a href="{{ site.twitter_url }}" title="Twitter" class="twitter-link">Twitter</a></li>
-                <li><a href="{{ site.codepen_url }}" title="CodePen" class="codepen-link">CodePen</a></li>
-                <li><a href="{{ site.lastfm_url }}" title="Last.FM" class="lastfm-link">Last.FM</a></li>
-                <!--li><a href="{{ site.url }}/feed.xml" title="RSS" class="rss-link">RSS</a></li-->
+                <li><a rel="me publisher" class="twitter-link" href="http://twitter.com/iamchrisburnell" title="Chris Burnell on Twitter">Twitter</a></li>
+                <li><a rel="me publisher" class="codepen-link" href="http://codepen.io/chrisburnell" title="Chris Burnell on CodePen">CodePen</a></li>
+                <li><a rel="me publisher" class="lastfm-link" href="http://last.fm/user/chrisburnell" title="Chris Burnell on Last.FM">Last.FM</a></li>
+                <!--li><a rel="me author" class="rss-link" href="http://chrisburnell.com/feed.xml" title="RSS">RSS</a></li-->
             </ul>
         </section>
     </footer>
