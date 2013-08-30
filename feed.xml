@@ -16,23 +16,18 @@ layout: nil
         <copyright>Copyright 2013 Chris Burnell under a Creative Commons license.</copyright>
 
         <image>
-        <url>http://chrisburnell.com/icon.png</url>
-        <title>Chris Burnell</title>
-        <link>http://chrisburnell.com</link>
+            <url>http://chrisburnell.com/icon.png</url>
+            <title>Chris Burnell</title>
+            <link>http://chrisburnell.com/</link>
         </image>
 
-        {% for post in site.posts %}{% unless post.draft %}
-        <item>
+        {% for post in site.posts %}{% unless post.draft %}<item>
             <title>{{ post.title }}</title>
             <link>http://chrisburnell.com{{ post.url }}</link>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-            <id>http://chrisburnell.com{{ post.id }}</id>
-            {% if post.introduction %}
-            <description>{{ post.introduction }}</description>
-            {% endif %}
-            {% if post.tags %}
-            <tags>{{ post.tags }}</tags>
-            {% endif %}
+            <id>http://chrisburnell.com{{ post.id }}</id>{% if post.introduction %}
+            <description>{{ post.introduction }}</description>{% endif %}{% if post.tags %}
+            <tags>{{ post.tags | array_to_sentence_string }}</tags>{% endif %}
         </item>
         {% endunless %}{% endfor %}
 
