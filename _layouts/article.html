@@ -13,7 +13,7 @@
                     <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>{% endif %}
                 </div>
                 <div class="author-biography">
-                    <p>I'm a Canadian user interface developer living in London, UK and working at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a href="{% site.url %}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
+                    <p>I'm a Canadian user interface developer living in London, UK and working at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a href="{{ site.url }}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
                     <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on Codepen">write code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if this article isn't your style, and makes you want to claw your eyeballs out.</p>
                 </div>
                 {% if site.related_posts %}<div class="related-articles">
