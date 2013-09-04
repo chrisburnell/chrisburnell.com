@@ -615,9 +615,6 @@ code {
     }
 pre:not(.codepen) {
     background: #4f4f4f;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
     color: #f9f9f9;
     padding: .714em;
     position: relative;
@@ -625,19 +622,6 @@ pre:not(.codepen) {
     overflow-x: auto;
     border-radius: .1875em;
 }
-    pre:not(.codepen):after {
-        background: url("/images/bg-pre.svg");
-        background-size: 22.5em 13.532em;
-        opacity: .2;
-        width: 22.5em;
-        height: 13.532em;
-        display: block;
-        position: absolute;
-        top: 2em;
-        left: 2em;
-        content: "";
-        z-index: 0;
-    }
 /**
  * CodePen iframe -- http://codepen.io
  */
