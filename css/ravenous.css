@@ -614,7 +614,10 @@ code {
         padding: 0 .154em;
     }
 pre:not(.codepen) {
-    background: #4f4f4f;
+    background-color: #4f4f4f;
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
+    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
+    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
     color: #f9f9f9;
     padding: .714em;
     position: relative;
