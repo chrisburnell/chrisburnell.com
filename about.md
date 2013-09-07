@@ -1,6 +1,7 @@
 ---
 title: About me
 layout: home
+page_class: page-normal
 ---
 
 ### My name is Chris Burnell, and I'm a Canadian web developer living in London, UK.
