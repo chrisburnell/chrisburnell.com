@@ -18,16 +18,16 @@
                 </div>
                 {% if site.related_posts %}<div class="related-articles">
                     <h3>Related Articles</h3>
-                    <ul>{% for post in site.related_posts limit:3 %}
+                    <ul>{% for post in site.related_posts limit:2 %}
                         <li>
                             <a class="related-title" href="{{ post.url }}#disqus_thread" title="{{ post.title }}">{{ post.title }}</a>
-                            <time class="related-date" datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                            <time class="related-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         </li>{% endfor %}
                     </ul>
                 </div>{% endif %}
             </aside>
 {% if page.banner %}
-            <img alt="{{ page.introduction}}" class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}">
+            <img alt="" class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}">
 {% endif %}{% if page.introduction %}
             <p class="article-introduction">{{ page.introduction }}</p>
 {% endif %}
