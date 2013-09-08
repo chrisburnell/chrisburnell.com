@@ -153,7 +153,7 @@ ul {
         list-style-type: decimal-leading-zero;
     }
     article > p:not(.article-introduction):not(:last-child),
-    .page-normal .articles > p,
+    .page-normal .articles > p:not(:last-child),
     article > ul,
     article > ol {
         margin-bottom: 1em;
