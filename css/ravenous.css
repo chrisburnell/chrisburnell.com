@@ -356,12 +356,14 @@ nav {
             }
                 .site-nav a:hover,
                 .page-home .site-nav-home a,
+                .page-about .site-nav-about a,
                 .page-archive .site-nav-archive a {
                     color: #4f4f4f;
                     padding-bottom: 8px;
                     border-bottom-width: 4px;
                 }
                 .page-home .site-nav-home a:after,
+                .page-about .site-nav-about a:after,
                 .page-archive .site-nav-archive a:after {
                     margin-left: -3px;
                     border-top: 5px solid rgba(95, 138, 166, .9);
