@@ -29,7 +29,6 @@ piece of code on a project of your own. -->
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 
     <!-- Prefetch DNS for external assets (Google Analytics, Typekit, Twitter, Disqus) -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
@@ -58,11 +57,12 @@ piece of code on a project of your own. -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
 
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <meta name="description" content="{% if page.layout == "home" %}{{ site.description }}{% else %}{{ page.introduction }}{% endif %}">
+    <meta name="robots" content="follow index">
     <meta name="apple-mobile-web-app-title" content="{{ site.author }}{% if page.layout == "article" %} &ndash; {{ page.title }}{% endif %}">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="follow index">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@{{ site.twitter_user }}">
