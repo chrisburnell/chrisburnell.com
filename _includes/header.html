@@ -67,13 +67,13 @@ piece of code on a project of your own. -->
     <meta name="twitter:creator" content="@{{ site.twitter_user }}">
     <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{% if page.layout == "home" %}{{ site.description }}{% else %}{{ page.introduction }}{% endif %}">
-    <meta name="twitter:image:src" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/icon.png{% endif %}">
+    <meta name="twitter:image:src" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/raven.svg{% endif %}">
 
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{% if page.layout == "home" %}{{ site.description }}{% else %}{{ page.introduction }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url }}">
-    <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/icon.png{% endif %}">
+    <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/raven.svg{% endif %}">
 
 </head>
 <body>
