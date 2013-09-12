@@ -7,7 +7,6 @@ introduction: I've been around the block and seen just about every combination o
 tags:
 - HTML
 - Tutorials
-comments: false
 ---
 
 Oh, and if this article looks too long for a simple little tutorial, that's because it is&mdash;this article is full of my views and opinions on the state of responsive design for browsers in this day and age.

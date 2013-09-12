@@ -58,10 +58,16 @@ piece of code on a project of your own. -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
 
-    <meta name="apple-mobile-web-app-title" content="chrisburnell">
-    <meta name="description" content="{{ site.description }}">
+    {% if page.layout == "home" %}<meta name="description" content="{{ site.description }}">{% else %}<meta name="description" content="{{ page.introduction }}">{% endif %}
+    <meta name="apple-mobile-web-app-title" content="{{ site.author }}{% if page.layout == "article" %} &ndash; {{ page.title }}{% endif %}">
     <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">{% if page.layout == "article" %}
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@{{ site.twitter_user }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.introduction }}">{% if page.banner %}
+    <meta name="twitter:image" content="{{ site.url }}/images/article-banners/{{ page.banner }}">{% endif %}{% endif %}
 
 </head>
 <body>
