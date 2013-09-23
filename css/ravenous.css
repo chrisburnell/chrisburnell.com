@@ -100,7 +100,7 @@ a {
         h1 a:hover,
         h2 a:hover,
         h3 a:hover {
-            color: rgba(95, 138, 166, .9);
+            color: #5f8aa6;
             text-decoration: none;
         }
 img,
@@ -183,7 +183,7 @@ hr {
 
 button,
 .button {
-    background-color: #6f96af;
+    background-color: #5f8aa6;
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
     background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
     background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
@@ -215,7 +215,7 @@ button,
     }
     button:active,
     .button:active {
-        background-color: #6f96af;
+        background-color: #5f8aa6;
         background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
         background-image:    -moz-linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
         background-image:         linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
@@ -347,7 +347,7 @@ nav {
                 color: #737373;
                 display: block;
                 padding: .75em;
-                border-bottom: 0px solid rgba(95, 138, 166, .9);
+                border-bottom: 0px solid #5f8aa6;
                 position: relative;
                 font-family: "league-gothic", sans-serif;
                 font-size: 1.25em; /* 20px */
@@ -368,7 +368,7 @@ nav {
                 .page-about .site-nav-about a:after,
                 .page-archive .site-nav-archive a:after {
                     margin-left: -3px;
-                    border-top: 5px solid rgba(95, 138, 166, .9);
+                    border-top: 5px solid #5f8aa6;
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
                     position: absolute;
@@ -459,7 +459,7 @@ article,
         }
             .article-link a:hover {
                 color: #4f4f4f;
-                border-bottom-color: rgba(95, 138, 166, .9);
+                border-bottom-color: #5f8aa6;
             }
     .article-date,
     .related-date {
@@ -652,7 +652,7 @@ footer {
     width: auto;
     height: 40px;
     padding: 2.572em 0;
-    border-top: .286em solid rgba(95, 138, 166, .9);
+    border-top: .286em solid #5f8aa6;
     font-family: "proxima-nova", sans-serif;
     font-size: .875em; /* 14px */
     font-weight: 600;
