@@ -27,7 +27,7 @@
 
 /**
  * Hide the fonts from Typekit before they have finished loading and show them
- * once they’ve finished. (5000 ms timeout)
+ * once they've finished. (5000 ms timeout)
  */
 .wf-loading .logo, .wf-loading nav, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading button, .wf-loading .button {
     visibility: hidden;
@@ -75,8 +75,8 @@ body {
 }
 
 /**
- * I don’t want users to be able to select buttons, and select half a link is
- * kind of peculiar, so I just *dictate* that they shouldn’t be selectable.
+ * I don't want users to be able to select buttons, and select half a link is
+ * kind of peculiar, so I just *dictate* that they shouldn't be selectable.
  */
 a {
     color: #5f8aa6;
@@ -569,7 +569,7 @@ aside {
                 border-radius: .1875em;
             }
             .article-tags {
-                display: table-cell; /* don’t wrap around .author-image */
+                display: table-cell; /* don't wrap around .author-image */
                 line-height: 1.429em;
             }
             .author-biography .codepen,
@@ -831,8 +831,8 @@ footer {
 }
 @media (max-width: 500px) {
     /**
-     * Let’s make intelligent use of mobile viewport and reduce the padding
-     * on either side of the wrapper. We can’t remove it or the text will sit
+     * Let's make intelligent use of mobile viewport and reduce the padding
+     * on either side of the wrapper. We can't remove it or the text will sit
      * right at the edge, creating a readability issue.
      */
     .wrap {
