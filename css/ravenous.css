@@ -164,9 +164,11 @@ blockquote:not(.twitter-tweet) {
     color: #6f6f6f;
     font-style: italic;
 }
-    .blockquote:not(.twitter-tweet):before,
+    .blockquote:not(.twitter-tweet):before {
+        content: "\2018";
+    }
     .blockquote:not(.twitter-tweet):after {
-        content: "\0022";
+        content: "\2019";
     }
 hr {
     background: rgba(6, 6, 6, .1);
