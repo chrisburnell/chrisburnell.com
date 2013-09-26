@@ -166,9 +166,11 @@ blockquote:not(.twitter-tweet) {
 }
     blockquote:not(.twitter-tweet) p:before {
         content: "\2018";
+        padding-right: .2em;
     }
     blockquote:not(.twitter-tweet) p:after {
         content: "\2019";
+        padding-left: .2em;
     }
 hr {
     background: rgba(6, 6, 6, .1);
