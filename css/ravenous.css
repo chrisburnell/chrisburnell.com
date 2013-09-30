@@ -165,11 +165,11 @@ blockquote:not(.twitter-tweet) {
     font-style: italic;
 }
     blockquote:not(.twitter-tweet) p:before {
-        content: "\2018";
+        content: "\201C";
         padding-right: .2em;
     }
     blockquote:not(.twitter-tweet) p:after {
-        content: "\2019";
+        content: "\201D";
         padding-left: .2em;
     }
 hr {
@@ -230,12 +230,12 @@ button,
     .button:before,
     button:after,
     .button:after {
+        content: "";
         width: 100%;
         position: absolute;
         top: 0;
         bottom: -0.136em;
         left: 0;
-        content: "";
     }
         button:active:before,
         .button:active:before,
@@ -276,6 +276,7 @@ header {
             top: .0384em; /* 2px */
         }
         .logo:after {
+            content: "";
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
             background-size: 120px 120px;
@@ -285,7 +286,6 @@ header {
             position: absolute;
             top: 0;
             left: 0;
-            content: "";
             z-index: -1;
             -webkit-transform: translate3d(0, -0.8125em, 0);
             transform:         translate3d(0, -0.8125em, 0);
@@ -371,6 +371,7 @@ nav {
                 .page-home .site-nav-home a:after,
                 .page-about .site-nav-about a:after,
                 .page-archive .site-nav-archive a:after {
+                    content: "";
                     margin-left: -3px;
                     border-top: 5px solid #5f8aa6;
                     border-right: 5px solid transparent;
@@ -378,7 +379,6 @@ nav {
                     position: absolute;
                     bottom: -0.425em;
                     left: 48%;
-                    content: "";
                 }
                 .site-nav a:active {
                     margin-top: .1em; /* 16px x 1.25em x .1em = 2px */
@@ -471,8 +471,8 @@ article,
         margin-bottom: .5em;
     }
         .articles-list .article-date:before {
-            color: #6f6f6f;
             content: "\2013 \0020";
+            color: #6f6f6f;
         }
 
 /**
@@ -503,15 +503,15 @@ article,
         float: left;
     }
         .pagination .prev-link:before {
-            position: relative; /* override the button:before fix */
             content: "\2190\00a0";
+            position: relative; /* override the button:before fix */
         }
     .pagination .next-link {
         float: right;
     }
         .pagination .next-link:after {
-            position: relative; /* override the button:after fix */
             content: "\00a0\2192";
+            position: relative; /* override the button:after fix */
         }
 
 
@@ -751,7 +751,7 @@ footer {
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
     .clear:before,
-    .clear:after { display: table; content: ""; }
+    .clear:after { content: ""; display: table; }
     .clear:after { clear: both; }
 
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
