@@ -10,7 +10,8 @@
                     <img src="/images/avatar.png" srcset="/images/avatar-200.png 2x" class="author-image" alt="">
                     <div class="author-name">about <strong>{{ site.author }}</strong></div>
                     <div class="author-age">I’m <strong>23</strong> years old</div>
-                    <div class="author-employer">I work at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>
+                    <div class="author-employer">I work at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>{% if page.page_class != "page-home" %}
+                    <div>I’m ravenous for CSS.</div>{% endif %}
                 </div>
                 <div class="author-biography">{% if page.page_class == "page-home" %}
                     <p>I’m a Canadian user interface developer living in London, UK. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="{{ site.url }}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>{% endif %}
