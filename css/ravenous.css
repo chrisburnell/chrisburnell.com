@@ -363,7 +363,7 @@ nav {
                 color: #737373;
                 display: block;
                 padding: .75em;
-                border-bottom: 0px solid #5f8aa6; /* so we can modify border-color later */
+                border-bottom: 0px solid #5f8aa6; /* so we can modify border-width later */
                 position: relative;
                 font-family: "league-gothic", sans-serif;
                 font-size: 1.25em;
@@ -559,14 +559,11 @@ aside {
             .author-information time {
                 font-family: "proxima-nova";
                 font-weight: 600;
+                font-style: normal;
                 text-transform: uppercase;
             }
                 .author-information a {
                     color: inherit;
-                }
-                .author-information strong,
-                .author-information time {
-                    font-style: normal;
                 }
             .author-image {
                 -webkit-background-clip: padding-box;
