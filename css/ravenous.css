@@ -116,7 +116,6 @@ strong {
 sup {
     top: -0.3em;
 }
-
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; /* so that elements can be floated inside headings */
     margin: 0;
@@ -128,7 +127,7 @@ h1 {
     font-family: "league-gothic", sans-serif;
     font-size: 2.625em; /* 42px */
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 rgba(6, 6, 6, .1); /* 3px 3px */
+    text-shadow: .0714em .0714em 0 rgba(6, 6, 6, .1);
 }
 h2 {
     font-family: "ff-meta-serif-web-pro", sans-serif;
@@ -154,30 +153,45 @@ ul {
     ol {
         list-style-type: decimal-leading-zero;
     }
-    article > p:not(.article-introduction):not(:last-child),
-    .page-about .articles > p:not(:last-child),
-    article > ul,
-    article > ol {
-        margin-bottom: 1em; /* 16px */
-    }
 blockquote:not(.twitter-tweet) {
     color: #6f6f6f;
     font-style: italic;
 }
+    .pullquote {
+        font-size: 2em; /* 32px */
+        line-height: 1.25em;
+    }
+    .citation {
+        display: block;
+        margin-top: 1em;
+        font-size: 16px; /* citations should always be default font size */
+    }
     blockquote:not(.twitter-tweet) p:before {
         content: "\201C";
-        padding-right: .1875em; /* 3px */
+        padding-right: .1875em;
     }
     blockquote:not(.twitter-tweet) p:after {
         content: "\201D";
-        padding-left: .1875em; /* 3px */
+        padding-left: .1875em;
     }
 hr {
     background: rgba(6, 6, 6, .1);
     width: 100%;
-    height: .25em; /* 4px */
+    height: .25em;
     display: block;
     border: 0;
+}
+/**
+ * Add a bottom margin to a plethora of tasty elements.
+ */
+p:not(:last-child),
+ol:not(:last-child),
+ul:not(:last-child),
+h3:not(:last-child),
+article,
+.article-introduction,
+.cp_embed_iframe {
+    margin-bottom: 1em;
 }
 
 
@@ -193,22 +207,22 @@ button,
     background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
     color: #f9f9f9 !important;
     min-width: 6em; /* 132px */
-    height: 1.91em; /* 42px */
+    height: 1.91em;
     display: inline-block;
-    margin: 0 0 .364em; /* 0 0 8px */
-    padding: 0 .727em; /* 0 16px */
+    margin: 0 0 .364em;
+    padding: 0 .727em;
     border: .5px solid #51768e; /* .5px always rounds to 1 */
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em; /* 22px */
-    line-height: 1.91em; /* 42px */
+    line-height: 1.91em;
     text-align: center;
     text-decoration: none !important;
     text-transform: uppercase;
-    text-shadow: 0 -0.091em 0 rgba(6, 6, 6, .25); /* 0 2px */
+    text-shadow: 0 -0.045em 0 rgba(6, 6, 6, .25);
     cursor: pointer;
-    border-radius: .182em; /* 4px */
-    box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #395264; /* 0 1px 0, 0 0 2px, 0 4px 0 */
+    border-radius: .182em;
+    box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #395264;
     -webkit-transition: background-color .2s ease-in-out;
     transition:         background-color .2s ease-in-out;
 }
@@ -224,7 +238,7 @@ button,
         background-image:    -moz-linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
         background-image:         linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
         top: .136em;
-        box-shadow: inset 0 -0.045em 0 rgba(249, 249, 249, .25), inset 0 .091em .273em rgba(6, 6, 6, .25); /* 0 -1px 0, 0 2px 6px */
+        box-shadow: inset 0 -0.045em 0 rgba(249, 249, 249, .25), inset 0 .091em .273em rgba(6, 6, 6, .25);
     }
     button:before,
     .button:before,
@@ -234,14 +248,14 @@ button,
         width: 100%;
         position: absolute;
         top: 0;
-        bottom: -0.137em; /* 3px */
+        bottom: -0.137em;
         left: 0;
     }
         button:active:before,
         .button:active:before,
         button:active:after,
         .button:active:after {
-            top: -0.137em; /* 3px */
+            top: -0.137em;
             bottom: 0;
         }
 
@@ -264,7 +278,7 @@ header {
         font-size: 3.25em; /* 52px */
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .058em .058em 0 rgba(6, 6, 6, .075); /* 3px 3px */
+        text-shadow: .058em .058em 0 rgba(6, 6, 6, .075);
         z-index: 1;
         -webkit-transition: none;
         transition:         none;
@@ -273,7 +287,7 @@ header {
         user-select:         none;
     }
         .logo:active {
-            top: .039em; /* 2px */
+            top: .039em;
         }
         .logo:after {
             content: "";
@@ -340,22 +354,21 @@ nav {
             height: 40px;
             float: left;
             display: inline-block;
-            margin-left: 1em; /* 16px */
-            padding: .375em 0; /* 6px 0 */
+            padding: .375em 0;
             text-align: center;
         }
-            .site-nav li:first-child {
-                margin: 0;
+            .site-nav li + li {
+                margin-left: 1em;
             }
             .site-nav a {
                 color: #737373;
                 display: block;
-                padding: .75em; /* 12px */
-                border-bottom: 0px solid #5f8aa6; /* so we can modify color later */
+                padding: .75em;
+                border-bottom: 0px solid #5f8aa6; /* so we can modify border-color later */
                 position: relative;
                 font-family: "league-gothic", sans-serif;
-                font-size: 1.25em; /* 20px */
-                line-height: 1.25em; /* 20px */
+                font-size: 1.25em;
+                line-height: 1.25em;
                 text-transform: uppercase;
                 -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
                 transition:         color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
@@ -377,14 +390,14 @@ nav {
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
                     position: absolute;
-                    bottom: -0.4em; /* 8px */
+                    bottom: -0.4em;
                     left: 48%;
                 }
                 .site-nav a:active {
-                    margin-top: .1em; /* 2px */
+                    margin-top: .1em;
                     position: relative;
-                    top: .1em; /* 2px */
-                    line-height: 1.15em; /* 23px */
+                    top: .1em;
+                    line-height: 1.15em;
                 }
 
 
@@ -393,7 +406,7 @@ nav {
 \*------------------------------------*/
 
 .content {
-    margin-bottom: 2.25em; /* 36px */
+    margin-bottom: 2.25em;
 }
 
 /**
@@ -409,29 +422,21 @@ nav {
 article,
 .articles {
     padding: 2.25em 0 0 270px; /* 36px, 25% of max .content width = 270px */
-    border-top: .25em solid #5f8aa6; /* 4px */
+    border-top: .25em solid #5f8aa6;
 }
-    article {
-        margin-bottom: 1em; /* 16px */
-    }
     .articles-list {
         list-style: none;
     }
         .articles-list li {
             width: 100%;
             display: inline-block;
-            padding: 1.5em 0; /* 24px 0 */
-            border-top: .25em solid rgba(6, 6, 6, .1); /* 4px */
+            padding: 1.5em 0;
+            border-top: .25em solid rgba(6, 6, 6, .1);
             clear: both;
         }
             .articles-list li:last-child {
                 padding-bottom: 0;
             }
-        article h3,
-        .articles-list h3,
-        .page-about h3 {
-            margin-bottom: 1em; /* 16px */
-        }
     .article-title,
     .site-tagline {
         margin-bottom: .4em;
@@ -442,7 +447,6 @@ article,
         line-height: 1.4em;
     }
     .article-introduction {
-        margin-bottom: 1em;
         font-size: 1.25em; /* 20px */
     }
     .article-banner {
@@ -640,12 +644,6 @@ pre:not(.codepen) {
     overflow-x: auto;
     border-radius: .1875em;
 }
-/**
- * CodePen iframe -- http://codepen.io
- */
-.cp_embed_iframe {
-    margin-bottom: 1em;
-}
 
 
 /*------------------------------------*\
@@ -828,17 +826,17 @@ footer {
     aside {
         width: 100%;
         float: none;
-        margin: 0 0 1em; /* 0 0 16px */
+        margin: 0 0 1em;
     }
         .author {
             margin-bottom: 0;
-            padding-top: 2.25em; /* 36px */
-            border-top: .25em solid rgba(6, 6, 6, .1); /* 4px */
+            padding-top: 2.25em;
+            border-top: .25em solid rgba(6, 6, 6, .1);
             -webkit-order: 999;
             order:         999;
         }
             .page-about .author {
-                margin-top: 2.25em; /* 36px */
+                margin-top: 2.25em;
             }
 }
 @media (max-width: 500px) {
