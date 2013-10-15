@@ -153,18 +153,16 @@ ul {
     ol {
         list-style-type: decimal-leading-zero;
     }
-blockquote:not(.twitter-tweet) {
+abbr,
+blockquote:not(.twitter-tweet),
+cite,
+dfn {
     color: #6f6f6f;
     font-style: italic;
 }
-    .pullquote {
-        font-size: 2em; /* 32px */
-        line-height: 1.25em;
-    }
-    .citation {
-        display: block;
-        margin-top: 1em;
-        font-size: 16px; /* citations should always be default font size */
+    abbr {
+        border-bottom: 1px dotted #6f6f6f;
+        cursor: help;
     }
     blockquote:not(.twitter-tweet) p:before {
         content: "\201C";
@@ -174,6 +172,15 @@ blockquote:not(.twitter-tweet) {
         content: "\201D";
         padding-left: .1875em;
     }
+    .pullquote {
+        font-size: 2em; /* 32px */
+        line-height: 1.25em;
+    }
+        .pullquote .citation {
+            margin-top: 1em;
+            clear: both;
+            font-size: .5em; /* 16px */
+        }
 hr {
     background: rgba(6, 6, 6, .1);
     width: 100%;
@@ -450,8 +457,8 @@ article,
         font-size: 1.25em; /* 20px */
     }
     .article-banner {
-        -moz-background-clip: padding;
         -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
         background-clip: padding-box;
         border-radius: .375em;
     }
