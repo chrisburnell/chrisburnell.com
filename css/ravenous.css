@@ -34,8 +34,8 @@
 }
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
     visibility: visible;
-    -webkit-animation: fade 1s ease-out;
-    animation:         fade 1s ease-out;
+    -webkit-animation: fade .3s ease-out;
+    animation:         fade .3s ease-out;
 }
 
 
