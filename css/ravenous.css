@@ -34,16 +34,8 @@
 }
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
     visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation:         fadeIn 1s;
-}
-@-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    -webkit-animation: fade 1s ease-out;
+    animation:         fade 1s ease-out;
 }
 
 
@@ -763,6 +755,15 @@ footer {
     .clear:before,
     .clear:after { content: ""; display: table; }
     .clear:after { clear: both; }
+
+@-webkit-keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 ::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
 ::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
