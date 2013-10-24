@@ -157,12 +157,15 @@ dfn {
         border-bottom: 1px dotted #6f6f6f;
         cursor: help;
     }
+    blockquote:not(.twitter-tweet) {
+        quotes: "“" "”" "‘" "’";
+    }
     blockquote:not(.twitter-tweet) p:before {
-        content: "\201C";
+        content: open-quote;
         padding-right: .1875em;
     }
     blockquote:not(.twitter-tweet) p:after {
-        content: "\201D";
+        content: close-quote;
         padding-left: .1875em;
     }
     .pullquote {
