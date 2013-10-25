@@ -131,9 +131,11 @@ h3,
     font-family: "proxima-nova", serif;
     font-size: 1em; /* 16px -- override browser default */
     font-weight: 600;
-    letter-spacing: .0625em;
     text-transform: uppercase;
 }
+    h3 {
+        letter-spacing: .0625em;
+    }
 p {
     margin: 0;
 }
