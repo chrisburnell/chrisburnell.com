@@ -17,12 +17,14 @@ So, for example, if an editor creates an article with lists and pictures, it's i
 
 Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/)). We also have a table of contents for our template, which we'll also use an ordered list to mark up in HTML.
 
-    <pre><code><ol class="table-of-contents">
+    <ol class="table-of-contents">
         <li>Chapter 1</li>
         <li>Chapter 2</li>
-    </ol></code></pre>
+    </ol>
 
-	<pre><code>ol {
+And the CSS:
+
+	ol {
 		padding-left: 4em;
         list-style: outside decimal-leading-zero;
     }
@@ -31,7 +33,7 @@ Say we want the default ordered list to appear with <code>padding-left</code> an
         padding-left: 0;
         list-style: none;
         margin-bottom: 1em;
-    }</code></pre>
+    }
 
 Due to the cascading nature of CSS, the styles we've given to our default ordered list will *cascade* to our table of contents! As a result, we have to unset the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
 
