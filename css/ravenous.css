@@ -159,7 +159,8 @@ dfn {
         border-bottom: 1px dotted #6f6f6f;
         cursor: help;
     }
-    blockquote:not(.twitter-tweet) {
+    blockquote:not(.twitter-tweet),
+    q {
         quotes: "“" "”" "‘" "’";
     }
     blockquote:not(.twitter-tweet) p:before {
