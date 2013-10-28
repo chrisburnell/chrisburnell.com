@@ -11,19 +11,18 @@ tags:
 
 When building a site for a client who isn't very tech-savvy, it's important that they're able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it's then important that the CSS we write matches the output of the editor's content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you're used to.
 
-So, for example, if an editor creates an article with lists and pictures, it's important that our code doesn't mistake these basic elements for something else, and apply extra styles which we're trying to apply to a smaller subset of the given element, which we usually denote with a <def title="A class is a label which is assigned to element(s) to distinguish it from like elements.">class</def>.
+So, for example, if an editor creates an article with lists and pictures, it's important that our code doesn't mistake these basic elements for something else, and apply extra styles which we're trying to apply to a smaller subset of the given element, which we usually denote with a <dfn title="A class is a label which is assigned to element(s) to distinguish it from like elements.">class</dfn>.
 
 ### Let's look at some code.
 
 Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/)). We also have a table of contents for our template, which we'll also use an ordered list to mark up in HTML.
 
-    <ol class="table-of-contents">
+    <pre><code><ol class="table-of-contents">
         <li>Chapter 1</li>
         <li>Chapter 2</li>
-    </ol>
+    </ol></code></pre>
 
-
-	ol {
+	<pre><code>ol {
 		padding-left: 4em;
         list-style: outside decimal-leading-zero;
     }
@@ -32,7 +31,7 @@ Say we want the default ordered list to appear with <code>padding-left</code> an
         padding-left: 0;
         list-style: none;
         margin-bottom: 1em;
-    }
+    }</code></pre>
 
 Due to the cascading nature of CSS, the styles we've given to our default ordered list will *cascade* to our table of contents! As a result, we have to unset the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
 
@@ -51,4 +50,4 @@ We're basically saying that <q>for every ordered list that doesn't have a class 
 
 In this simple way, we're able to style some default elements that a content editor would output onto a page without having to repeatedly un-style them later on where they're not needed. Depending on when you're reading this article, check [Can I Use](http://caniuse.com/#search=not) for the statistics on using this technique.
 
-If you have any comments or performance notes about this, please let me know in the comments below or [http://twitter.com/iamchrisburnell](on twitter).
+If you have any comments or performance notes about this, please let me know in the comments below or [on twitter](http://twitter.com/iamchrisburnell).
