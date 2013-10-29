@@ -230,6 +230,7 @@ button,
     cursor: pointer;
     border-radius: .182em;
     box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #395264;
+    white-space: nowrap;
     -webkit-transition: background-color .2s ease-in-out;
     transition:         background-color .2s ease-in-out;
 }
@@ -879,7 +880,8 @@ footer {
         font-size: 1em; /* 16px */
     }
     footer {
-        height: 80px;
+        height: 85px;
+        padding: 2em 0;
     }
         .footer-copyright,
         .footer-social {
@@ -887,4 +889,7 @@ footer {
             float: none;
             text-align: center;
         }
+            .footer-social {
+                margin-top: .625em;
+            }
 }

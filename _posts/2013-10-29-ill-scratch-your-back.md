@@ -36,9 +36,11 @@ And the CSS:
         margin-bottom: 1em;
     }
 
-Due to the cascading nature of CSS, the styles we've given to our default ordered list will *cascade* to our table of contents! As a result, we have to unset the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
+Due to the cascading nature of CSS, the styles we've given to our default ordered list will *cascade* to our table of contents! As a result, we have to *unset* the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
 
-Well, in experimenting with CSS content and attribute selectors, I've discovered a neat trick to apply styles to elements **without** a class, with the caveat that you're styling the rest of the elements **with** classes. In my opinion, this is best practice anyway as part of a movement towards a modular approach to CSS.
+--------
+
+In experimenting with CSS content and attribute selectors, I've discovered a neat trick to apply styles to elements **without** a class, with the caveat that you're styling the rest of the elements **with** classes. In my opinion, this is best practice anyway as part of a movement towards a modular approach to CSS.
 
 ### So here it is:
 
