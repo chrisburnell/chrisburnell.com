@@ -4,10 +4,10 @@ date: 2013-10-28 23:22:00
 title: I'll Scratch Your Back, I'll Scratch Mine
 slug: ill-scratch-your-back
 introduction: I've been playing around with CSS content and attribute selectors recently, and come across a useful trick for styling default elements.
+banner: ill-scratch-your-back.png
 tags:
 - CSS
 - Tutorials
-banner: ill-scratch-your-back.png
 ---
 
 When building a site for a client who isn't very tech-savvy, it's important that they're able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it's then important that the CSS we write matches the output of the editor's content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you're used to.
@@ -53,6 +53,10 @@ In experimenting with CSS content and attribute selectors, I've discovered a nea
 
 We're basically saying that <q>for every ordered list that doesn't have a class attribute, apply some styles.</q> Normally, the attribute selector, <code>[ ]</code>, is used to style external links or elements with a specific <code>rel</code> attribute, but in this case we're using the barebones and **just** checking for the instance of a class attribute at all.
 
-In this simple way, we're able to style some default elements that a content editor would output onto a page without having to repeatedly un-style them later on where they're not needed. Depending on when you're reading this article, check [Can I Use](http://caniuse.com/#search=not) for the statistics on using this technique.
+Normally in CSS, we would use <code>.</code> to target an element by *class name*, but we can also use an attribute selector: <code>[class=table-of-contents]</code>. This will match elements with the class <code>table-of-contents</code> but what's nice about CSS3's attribute selectors is that they can be used like a boolean that checks for the attribute's existence only.
+
+--------
+
+In this simple way, we're able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they're not needed. Depending on when you're reading this article, check [Can I Use](http://caniuse.com/#search=not) for the statistics on using this technique.
 
 If you have any comments or performance notes about this, please let me know in the comments below or [on twitter](http://twitter.com/iamchrisburnell).
