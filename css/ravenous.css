@@ -131,6 +131,7 @@ h3,
     font-family: "proxima-nova", serif;
     font-size: 1em; /* 16px -- override browser default */
     font-weight: 600;
+    line-height: 1.618em;
     text-transform: uppercase;
 }
     h3 {
