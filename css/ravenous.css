@@ -131,6 +131,7 @@ h3,
     font-family: "proxima-nova", serif;
     font-size: 1em; /* 16px -- override browser default */
     font-weight: 600;
+    line-height: 1.618em;
     text-transform: uppercase;
 }
     h3 {
@@ -639,6 +640,9 @@ code {
         background: rgba(95, 138, 166, .1);
         padding: 0 .154em;
     }
+pre {
+    margin: 0 0 1em;
+}
 pre:not(.codepen) {
     background-color: #4f4f4f;
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .25) 100%);
