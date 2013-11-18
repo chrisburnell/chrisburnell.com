@@ -29,7 +29,7 @@
  * Hide the fonts from Typekit before they have finished loading and show them
  * once they've finished. (5000 ms timeout)
  */
-.wf-loading .logo, .wf-loading nav, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading button, .wf-loading .button {
+.sswf-loading .logo, .wf-loading nav, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading button, .wf-loading .button {
     visibility: hidden;
 }
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
