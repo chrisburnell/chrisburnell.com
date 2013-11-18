@@ -61,9 +61,9 @@ body {
 .wrap {
     width: auto;
     max-width: 1080px;
+    padding: 0 1.25em; /* 0 20px */
     margin-right: auto;
     margin-left: auto;
-    padding: 0 1.25em; /* 0 20px */
 }
 
 /**
@@ -110,8 +110,8 @@ sup {
 }
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; /* so that elements can be floated inside headings */
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-weight: 400;
     line-height: 1.2em;
 }
@@ -142,8 +142,8 @@ p {
 }
 ol,
 ul {
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: inside disc;
 }
     ol {
@@ -178,8 +178,8 @@ dfn[title] {
         line-height: 1.25em;
     }
         .pullquote .citation {
-            margin-top: 1em;
             clear: both;
+            margin-top: 1em;
             font-size: .5em; /* 16px */
         }
 hr {
@@ -187,8 +187,8 @@ hr {
     width: 100%;
     height: .25em;
     display: block;
-    margin: .5em 0 1.5em;
     border: 0;
+    margin: .5em 0 1.5em;
 }
 /**
  * Add a bottom margin to a plethora of tasty elements.
@@ -218,18 +218,18 @@ button,
     min-width: 6em; /* 132px */
     height: 1.91em;
     display: inline-block;
-    margin: 0 0 .364em;
     padding: 0 .727em;
     border: .5px solid #51768e; /* .5px always rounds to 1 */
+    margin: 0 0 .364em;
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em; /* 22px */
     line-height: 1.91em;
     text-align: center;
-    white-space: nowrap;
     text-decoration: none !important;
     text-transform: uppercase;
     text-shadow: 0 -0.045em 0 rgba(6, 6, 6, .25);
+    white-space: nowrap;
     cursor: pointer;
     border-radius: .182em;
     box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #395264;
@@ -280,8 +280,8 @@ header {
     .logo {
         color: #4f4f4f;
         height: 110px;
-        float: left;
         display: inline-block;
+        float: left;
         padding-left: 100px;
         position: relative;
         font-family: "league-gothic", sans-serif;
@@ -362,8 +362,8 @@ nav {
     }
         .site-nav li {
             height: 40px;
-            float: left;
             display: inline-block;
+            float: left;
             padding: .375em 0;
             text-align: center;
         }
@@ -395,10 +395,10 @@ nav {
                 .page-about .site-nav-about a:after,
                 .page-archive .site-nav-archive a:after {
                     content: "";
-                    margin-left: -3px;
                     border-top: 5px solid #5f8aa6;
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
+                    margin-left: -3px;
                     position: absolute;
                     bottom: -0.4em;
                     left: 48%;
@@ -440,9 +440,9 @@ article,
         .articles-list li {
             width: 100%;
             display: inline-block;
+            clear: both;
             padding: 1.5em 0;
             border-top: .25em solid rgba(6, 6, 6, .1);
-            clear: both;
         }
             .articles-list li:last-child {
                 padding-bottom: 0;
@@ -470,9 +470,9 @@ article,
         width: 100%;
     }
         .article-link a {
-            margin: 0 0 .35em -0.25em;
             padding: 0 .25em;
             border-bottom: .1875em solid transparent;
+            margin: 0 0 .35em -0.25em;
             -webkit-transition: border-color .2s ease-in-out;
             transition:         border-color .2s ease-in-out;
         }
@@ -544,8 +544,8 @@ aside {
     margin-left: -270px;
 }
     aside p {
-        margin-bottom: .5em;
         clear: both;
+        margin-bottom: .5em;
         font-size: .875em; /* 14px */
     }
     .author,
@@ -584,8 +584,8 @@ aside {
                 background-size: 100px 100px;
                 width: 100px;
                 height: 100px;
-                float: left;
                 display: inline-block;
+                float: left;
                 margin-right: 10px;
                 border-radius: .1875em;
             }
@@ -599,9 +599,9 @@ aside {
                 background: none;
             }
         .related-articles {
-            margin-top: 1em;
             padding-top: 1em;
             border-top: .25em solid rgba(6, 6, 6, .1);
+            margin-top: 1em;
         }
             .related-articles ul {
                 list-style: none;
@@ -622,9 +622,9 @@ aside {
 \*------------------------------------*/
 
 .comments {
-    margin-top: 2em;
     padding-top: 1em;
     border-top: .25em solid rgba(6, 6, 6, .1);
+    margin-top: 2em;
 }
 
 
@@ -683,8 +683,8 @@ footer {
     }
         .footer-copyright a {
             display: inline-block;
-            white-space: nowrap;
             text-decoration: none;
+            white-space: nowrap;
         }
             .footer-copyright a:hover {
                 text-decoration: underline;
@@ -801,8 +801,8 @@ footer {
     }
         .logo {
             height: 90px;
-            float: none;
             display: inline-block;
+            float: none;
         }
         nav {
             width: 100%;
@@ -817,8 +817,8 @@ footer {
                 text-align: center;
             }
                 .site-nav li {
-                    float: none;
                     display: inline-block;
+                    float: none;
                 }
     /**
      * When you hit the tablet media query, articles, article lists, and asides
@@ -849,9 +849,9 @@ footer {
         margin: 0 0 1em;
     }
         .author {
-            margin-bottom: 0;
             padding-top: 2.25em;
             border-top: .25em solid rgba(6, 6, 6, .1);
+            margin-bottom: 0;
             -webkit-order: 999;
             order:         999;
         }
