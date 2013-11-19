@@ -4,5 +4,3 @@
 Any questions&mdash;get in touch.
 
 All code and content is copyright &copy; Chris Burnell.
-
-*Chris*
