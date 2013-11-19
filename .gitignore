@@ -3,4 +3,3 @@ _site/
 Gruntfile.js
 grunt-package.json
 node_modules/
-git-hooks/
