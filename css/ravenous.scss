@@ -33,6 +33,29 @@ $gray-10:               rgba(6, 6, 6, .1);
 $gray-25:               rgba(6, 6, 6, .25);
 $off-white-25:          rgba(249, 249, 249, .25);
 
+@mixin gradient($top, $bottom) {
+    background-image: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+    background-image:    -moz-linear-gradient(top, $top 0%, $bottom 100%);
+    background-image:     -ms-linear-gradient(top, $top 0%, $bottom 100%);
+    background-image:         linear-gradient(top, $top 0%, $bottom 100%);
+}
+@mixin transition($transition: "all .15s ease-in-out") {
+    -webkit-transition: #{$transition};
+            transition: #{$transition};
+}
+@mixin translate3d($values: "0, 0, 0") {
+    -webkit-transform: translate3d(#{$values});
+            transform: translate3d(#{$values});
+}
+@mixin animation($animation: "fade .3s ease-out") {
+    -webkit-animation: #{$animation};
+            animation: #{$animation};
+}
+@mixin animation-play-state($value: "paused") {
+    -webkit-animation-play-state: #{$value};
+            animation-play-state: #{$value};
+}
+
 
 /*------------------------------------*\
     $ TYPEKIT PRELOAD
@@ -46,9 +69,8 @@ $off-white-25:          rgba(249, 249, 249, .25);
     visibility: hidden;
 }
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
+    @include animation();
     visibility: visible;
-    -webkit-animation: fade .3s ease-out;
-    animation:         fade .3s ease-out;
 }
 
 
@@ -80,10 +102,9 @@ body {
 }
 
 a {
+    @include transition("background .2s, color .2s, text-shadow .2s");
     color: $blue;
     text-decoration: none;
-    -webkit-transition: background .2s, color .2s, text-shadow .2s;
-    transition:         background .2s, color .2s, text-shadow .2s;
 }
     article a:hover,
     aside a:hover {
@@ -216,10 +237,9 @@ article,
 
 button,
 .button {
-    background-color: lighten($blue, 5%);
-    background-image: -webkit-linear-gradient(top, transparent 0%, $gray-5 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, $gray-5 100%);
-    background-image:         linear-gradient(top, transparent 0%, $gray-5 100%);
+    @include gradient(transparent, $gray-5);
+    @include transition("background-color .2s ease-in-out");
+    background-color: $blue;
     color: $off-white !important;
     min-width: 6em;
     height: 1.91em;
@@ -243,21 +263,17 @@ button,
     -webkit-user-select: none;
     -moz-user-select:    none;
     user-select:         none;
-    -webkit-transition: background-color .2s ease-in-out;
-    transition:         background-color .2s ease-in-out;
 }
     button:hover,
     .button:hover {
-        background-color: lighten($blue, 15%);
+        background-color: lighten($blue, 10%);
         box-shadow: inset 0 0 .091em $gray-10,
                     inset 0 .045em 0 $off-white-25,
                     0 .182em 0 darken($blue, 7.5%);
     }
     button:active,
     .button:active {
-        background-image: -webkit-linear-gradient(top, $gray-5 0%, transparent 100%);
-        background-image:    -moz-linear-gradient(top, $gray-5 0%, transparent 100%);
-        background-image:         linear-gradient(top, $gray-5 0%, transparent 100%);
+        @include gradient($gray-5, transparent);
         top: .137em;
         box-shadow: inset 0 .091em .273em $gray-25,
                     inset 0 -0.045em 0 $off-white-25,
@@ -291,6 +307,7 @@ header {
     height: 110px;
 }
     .logo {
+        @include transition("none");
         color: $text-color;
         height: 110px;
         display: inline-block;
@@ -303,8 +320,6 @@ header {
         text-transform: uppercase;
         text-shadow: .058em .058em 0 $gray-5;
         z-index: 1;
-        -webkit-transition: none;
-        transition:         none;
         -webkit-user-select: none;
         -moz-user-select:    none;
         user-select:         none;
@@ -313,6 +328,9 @@ header {
             top: .039em;
         }
         .logo:after {
+            @include translate3d("0, -0.808em, 0");
+            @include animation("soaring 30s linear alternate infinite");
+            @include animation-play-state("paused");
             content: "";
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
@@ -324,12 +342,6 @@ header {
             top: 0;
             left: 0;
             z-index: -1;
-            -webkit-transform: translate3d(0, -0.808em, 0);
-            transform:         translate3d(0, -0.808em, 0);
-            -webkit-animation: soaring 30s linear alternate infinite;
-            animation:         soaring 30s linear alternate infinite;
-            -webkit-animation-play-state: paused;
-            animation-play-state:         paused;
         }
             @-webkit-keyframes soaring {
                 0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
@@ -355,8 +367,7 @@ header {
              * Only animate when the user hovers the logo.
              */
             .logo:hover:after {
-                -webkit-animation-play-state: running;
-                animation-play-state:         running;
+                @include animation-play-state("running");
             }
 
 
@@ -384,6 +395,7 @@ nav {
                 margin-left: 1em;
             }
             .site-nav a {
+                @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
                 color: $text-color-alt;
                 display: block;
                 padding: .75em;
@@ -393,8 +405,6 @@ nav {
                 font-size: 1.25em;
                 line-height: 1.25em;
                 text-transform: uppercase;
-                -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
-                transition:         color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
             }
                 .site-nav a:hover,
                 .page-home .site-nav-home a,
@@ -475,8 +485,8 @@ article,
     }
     .article-banner {
         -webkit-background-clip: padding-box;
-        -moz-background-clip: padding;
-        background-clip: padding-box;
+           -moz-background-clip: padding;
+                background-clip: padding-box;
         margin-bottom: 1em;
         border-radius: .375em;
     }
@@ -484,11 +494,10 @@ article,
         width: 100%;
     }
         .article-link a {
+            @include transition("border-color .2s ease-in-out");
             padding: 0 .25em;
             border-bottom: .1875em solid transparent;
             margin: 0 0 .35em -0.25em;
-            -webkit-transition: border-color .2s ease-in-out;
-            transition:         border-color .2s ease-in-out;
         }
             .article-link a:hover {
                 color: $text-color;
@@ -593,8 +602,8 @@ aside {
                 }
             .author-image {
                 -webkit-background-clip: padding-box;
-                -moz-background-clip: padding;
-                background-clip: padding-box;
+                   -moz-background-clip: padding;
+                        background-clip: padding-box;
                 background-size: 100px 100px;
                 width: 100px;
                 height: 100px;
@@ -658,10 +667,8 @@ pre {
     margin: 0 0 1em;
 }
 pre:not(.codepen) {
+    @include gradient(transparent, $gray-25);
     background-color: $text-color;
-    background-image: -webkit-linear-gradient(top, transparent 0%, $gray-25 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, $gray-25 100%);
-    background-image:         linear-gradient(top, transparent 0%, $gray-25 100%);
     color: $off-white;
     padding: .714em;
     position: relative;
@@ -676,10 +683,8 @@ pre:not(.codepen) {
 \*------------------------------------*/
 
 footer {
+    @include gradient(transparent, $gray-10);
     background: $text-color;
-    background-image: -webkit-linear-gradient(top, transparent 0%, $gray-10 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, $gray-10 100%);
-    background-image:         linear-gradient(top, transparent 0%, $gray-10 100%);
     color: $text-color-light;
     width: auto;
     height: 40px;
@@ -733,14 +738,13 @@ footer {
                     margin-left: 0;
                 }
                 .footer-social a {
+                    @include transition("opacity .2s ease-in-out");
                     opacity: .6;
                     color: transparent;
                     width: 30px;
                     height: 30px;
                     display: block;
                     font-size: 0;
-                    -webkit-transition: opacity .2s ease-in-out;
-                    transition:         opacity .2s ease-in-out;
                 }
                     .footer-social a:hover {
                         opacity: .9;
@@ -846,7 +850,7 @@ footer {
         display: flex;
         padding-left: 0;
         -webkit-flex-direction: column;
-        flex-direction:         column;
+                flex-direction: column;
     }
         article {
             margin-bottom: 0;
@@ -868,7 +872,7 @@ footer {
             border-top: .25em solid $gray-10;
             margin-bottom: 0;
             -webkit-order: 999;
-            order:         999;
+                    order: 999;
         }
             .page-about .author {
                 margin-top: 2.25em;
