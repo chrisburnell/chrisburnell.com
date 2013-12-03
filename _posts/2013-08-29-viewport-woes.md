@@ -9,9 +9,9 @@ tags:
 - Tutorials
 ---
 
-Oh, and if this article looks too long for a simple little tutorial, that’s because it is&mdash;this article is full of my views and opinions on the state of responsive design for browsers in this day and age.
+Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.
 
-So <a href="#plain-and-simple">click here</a> if you want to jump to the main bit.
+So [click here](#plain-and-simple) if you want to jump to the main bit.
 
 --------
 
@@ -21,9 +21,9 @@ Browsers today can be pretty forgiving to us developers. Even HTML5, which is no
 
 It used to be the case that 72<abbr title="dots-per-inch">dpi</abbr> was the standard resolution for computer screens (or sometimes 96), and most computers displayed at this resolution; however, since the advent and massive popularity of mobile phones and tablet devices, there really is no standard resolution anymore. Many seem to follow the direction Apple take, likely due to the popularity of their devices, and cater to the resolution of the iPhone, *retina* iPhone, iPad, *retina* iPad, etc. While the resolutions Apple chooses are linear and make sense, it would be a mistake to turn a blind eye to the enormous variation found on Android, Blackberry, etc. devices. The size of the screen and the resolution vary from device to device without any pattern and some mobile devices even have DPI values as high as 300 today. You will have to assess the range you’re catering to and find a middle ground to deliver a fast and crisp experience for your users. as the various companies producing them feel no need to collaborate and try to reach a standard for this, and I don’t think it’s necessary either.
 
-This brings me to my point&mdash;that mobile and tablet browsers, though solid, are still new, and we need to tread carefully in our endeavours to cater to as many devices as makes sense for the project. We need to avoid being overly granular and bloating or detracting from the experience and code due to oversights on our part. It’s one thing to use an SVG for your logo; the method of fallback for non-supporting browsers is simple and works as we need it to across the various browsers, old and new.
+This brings me to my point—that mobile and tablet browsers, though solid, are still new, and we need to tread carefully in our endeavours to cater to as many devices as makes sense for the project. We need to avoid being overly granular and bloating or detracting from the experience and code due to oversights on our part. It’s one thing to use an SVG for your logo; the method of fallback for non-supporting browsers is simple and works as we need it to across the various browsers, old and new.
 
-### So what makes all this responsive, different-sized crap work?
+### So what makes all this responsive magic work?
 
 It’s the <code><meta name="viewport"></code> tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
 
@@ -51,10 +51,10 @@ For reasons like having a consistent user experience for all users, this is a pi
 
 Fine. I’ve rambled enough.
 
-- Separate your variables with commas, _not semicolons_.
+- Separate your variables with commas, *not semicolons*.
 - Don’t set an arbitrary width. Just don’t do it if you value your time and sanity later on. Responsive design is done best when it’s fluid, so in 99% of cases, set this to device-width. But this is not a blanket statement, you must assess this on a per-project basis.
 - Use “maximum-scale” and “minimum-scale”, other variations don’t cut it.
-- Scalable only has one _E_, at the end.
+- Scalable only has one *E*, at the end.
 
 This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/) is a great resource of popular devices and their respective viewport attributes.
 

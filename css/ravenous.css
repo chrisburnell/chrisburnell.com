@@ -5,192 +5,208 @@
  * by Chris Burnell (@iamchrisburnell)
  *
  * Please contact me if you want to learn about anything you see here.
- *
- * Table of Contents (search $ to jump to each section):
- *    01. Typekit Preload
- *    02. General and Typography
- *    03. Buttons
- *    04. Header
- *    05. Navigation
- *    06. Articles
- *    07. Asides
- *    08. Comments
- *    09. Code Blocks
- *    10. Footer
- *    11. Miscellaneous
- *    12. Media Queries
  */
-
-
+/**
+ * TYPEKIT PRELOAD........... Import the font-families from Typekit.
+ * GENERAL AND TYPOGRAPHY.... Set the default element styles.
+ * BUTTONS................... Set the default button styles.
+ * HEADER.................... Set the header styles.
+ * NAVIGATION................ Set the navigation styles.
+ * ARTICLES.................. Set the articles styles.
+ * ASIDES.................... Set the asides styles.
+ * COMMENTS.................. Set the comments styles.
+ * CODE BLOCKS............... Set the code block styles.
+ * FOOTER.................... Set the footer styles.
+ * MISCELLANEOUS............. Miscellaneous site-wide styles.
+ * MEDIA QUERIES............. Create the media query breakpoints.
+ */
 /*------------------------------------*\
-    $.01 Typekit Preload
+    $ TYPEKIT PRELOAD
 \*------------------------------------*/
-
 /**
  * Hide the fonts from Typekit before they have finished loading and show them
  * once they've finished. (5000 ms timeout)
  */
 .wf-loading .logo, .wf-loading nav, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading button, .wf-loading .button {
-    visibility: hidden;
-}
-.wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
-    visibility: visible;
-    -webkit-animation: fade .3s ease-out;
-    animation:         fade .3s ease-out;
+  visibility: hidden;
 }
 
+.wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
+  visibility: visible;
+  -webkit-animation: fade .3s ease-out;
+  animation: fade .3s ease-out;
+}
 
 /*------------------------------------*\
-    $.02 General and Typography
-    i    Layout
-    ii   Inline Elements
-    iii  Block Elements
+    $   GENERAL AND TYPOGRAPHY
+    i   Layout
+    ii  Inline Elements
+    iii Block Elements
 \*------------------------------------*/
-
 html,
 body {
-    min-height: 100%;
-}
-body {
-    background: #f9f9f9;
-    color: #4f4f4f;
-    position: relative;
-    font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
-.wrap {
-    width: auto;
-    max-width: 1080px;
-    padding: 0 1.25em; /* 0 20px */
-    margin-right: auto;
-    margin-left: auto;
+  min-height: 100%;
 }
 
-/**
- * I don't want users to be able to select buttons, and select half a link is
- * kind of peculiar, so I just *dictate* that they shouldn't be selectable.
- */
-a {
-    color: #5f8aa6;
-    text-decoration: none;
-    -webkit-transition: background .2s, color .2s, text-shadow .2s;
-    transition:         background .2s, color .2s, text-shadow .2s;
-    -webkit-user-select: none;
-    -moz-user-select:    none;
-    user-select:         none;
+body {
+  background: #f9f9f9;
+  color: #4f4f4f;
+  position: relative;
+  font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
-    article a:hover,
-    aside a:hover {
-        text-decoration: underline;
-    }
-    h1 a,
-    h2 a,
-    h3 a {
-        color: #4f4f4f;
-        display: inline-block;
-    }
-        h1 a:hover,
-        h2 a:hover,
-        h3 a:hover {
-            color: #5f8aa6;
-            text-decoration: none;
-        }
+
+.wrap {
+  width: auto;
+  max-width: 1080px;
+  padding: 0 1.25em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a {
+  color: #5f8aa6;
+  text-decoration: none;
+  -webkit-transition: background .2s, color .2s, text-shadow .2s;
+  transition: background .2s, color .2s, text-shadow .2s;
+}
+
+article a:hover,
+aside a:hover {
+  text-decoration: underline;
+}
+
+h1 a,
+h2 a,
+h3 a {
+  color: #4f4f4f;
+  display: inline-block;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+  color: #5f8aa6;
+  text-decoration: none;
+}
+
 img,
 a img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    border: 0;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 0;
 }
+
 strong {
-    font-weight: 600;
+  font-weight: 600;
 }
+
 sup {
-    top: -0.3em;
+  top: -0.3em;
 }
+
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.2em; /* so that elements can be floated inside headings */
-    padding: 0;
-    margin: 0;
-    font-weight: 400;
-    line-height: 1.2em;
+  min-height: 1.2em;
+  /* so that elements can be floated inside headings */
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.2em;
 }
+
 h1 {
-    font-family: "league-gothic", sans-serif;
-    font-size: 2.625em; /* 42px */
-    text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 rgba(6, 6, 6, .1);
+  font-family: "league-gothic", sans-serif;
+  font-size: 2.625em;
+  text-transform: uppercase;
+  text-shadow: 0.0714em 0.0714em 0 rgba(6, 6, 6, 0.05);
 }
+
 h2 {
-    font-family: "ff-meta-serif-web-pro", sans-serif;
-    font-size: 1.625em; /* 26px */
-    text-shadow: 0 -1px 0 rgba(249, 249, 249, .3);
+  font-family: "ff-meta-serif-web-pro", sans-serif;
+  font-size: 1.625em;
+  text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.25);
 }
+
 h3,
 .articles-list .article-date {
-    font-family: "proxima-nova", serif;
-    font-size: 1em; /* 16px -- override browser default */
-    font-weight: 600;
-    line-height: 1.618em;
-    text-transform: uppercase;
+  font-family: "proxima-nova", serif;
+  font-size: 1em;
+  /* 16px -- override browser default */
+  font-weight: 600;
+  line-height: 1.618em;
+  text-transform: uppercase;
 }
-    h3 {
-        letter-spacing: .0625em;
-    }
+
+h3 {
+  letter-spacing: .0625em;
+}
+
 p {
-    margin: 0;
+  margin: 0;
 }
+
 ol,
 ul {
-    padding: 0;
-    margin: 0;
-    list-style: inside disc;
+  padding: 0;
+  margin: 0;
+  list-style: inside disc;
 }
-    ol {
-        list-style-type: decimal-leading-zero;
-    }
+
+ol {
+  list-style-type: decimal-leading-zero;
+}
+
 abbr[title],
 blockquote:not(.twitter-tweet),
 cite,
 dfn[title] {
-    color: #6f6f6f;
-    font-style: italic;
+  color: #737373;
+  font-style: italic;
 }
-    abbr[title],
-    dfn[title] {
-        border-bottom: 1px dotted #6f6f6f;
-        cursor: help;
-    }
-    blockquote:not(.twitter-tweet),
-    q {
-        quotes: "“" "”" "‘" "’";
-    }
-    blockquote:not(.twitter-tweet) p:before {
-        content: open-quote;
-        padding-right: .1875em;
-    }
-    blockquote:not(.twitter-tweet) p:after {
-        content: close-quote;
-        padding-left: .1875em;
-    }
-    .pullquote {
-        font-size: 2em; /* 32px */
-        line-height: 1.25em;
-    }
-        .pullquote .citation {
-            clear: both;
-            margin-top: 1em;
-            font-size: .5em; /* 16px */
-        }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #737373;
+  cursor: help;
+}
+
+blockquote:not(.twitter-tweet),
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote:not(.twitter-tweet) p:before {
+  content: open-quote;
+  padding-right: .1875em;
+}
+
+blockquote:not(.twitter-tweet) p:after {
+  content: close-quote;
+  padding-left: .1875em;
+}
+
+.pullquote {
+  font-size: 2em;
+  line-height: 1.25em;
+}
+
+.pullquote .citation {
+  clear: both;
+  margin-top: 1em;
+  font-size: .5em;
+}
+
 hr {
-    background: rgba(6, 6, 6, .1);
-    width: 100%;
-    height: .25em;
-    display: block;
-    border: 0;
-    margin: .5em 0 1.5em;
+  background: rgba(6, 6, 6, 0.1);
+  width: 100%;
+  height: .25em;
+  display: block;
+  border: 0;
+  margin: .5em 0 1.5em;
 }
+
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
@@ -201,223 +217,295 @@ h3:not(:last-child),
 article,
 .article-introduction,
 .cp_embed_iframe {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-
 /*------------------------------------*\
-    $.03 Buttons
+    $ BUTTONS
 \*------------------------------------*/
-
 button,
 .button {
-    background-color: #5f8aa6;
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    color: #f9f9f9 !important;
-    min-width: 6em; /* 132px */
-    height: 1.91em;
-    display: inline-block;
-    padding: 0 .727em;
-    border: .5px solid #51768e; /* .5px always rounds to 1 */
-    margin: 0 0 .364em;
-    position: relative;
-    font-family: "league-gothic", sans-serif;
-    font-size: 1.375em; /* 22px */
-    line-height: 1.91em;
-    text-align: center;
-    text-decoration: none !important;
-    text-transform: uppercase;
-    text-shadow: 0 -0.045em 0 rgba(6, 6, 6, .25);
-    white-space: nowrap;
-    cursor: pointer;
-    border-radius: .182em;
-    box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #395264;
-    -webkit-transition: background-color .2s ease-in-out;
-    transition:         background-color .2s ease-in-out;
+  background-color: #6f96af;
+  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  color: #f9f9f9 !important;
+  min-width: 6em;
+  height: 1.91em;
+  display: inline-block;
+  padding: 0 .727em;
+  margin: 0 0 .364em;
+  position: relative;
+  font-family: "league-gothic", sans-serif;
+  font-size: 1.375em;
+  line-height: 1.91em;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  text-shadow: 0 -0.045em 0 rgba(6, 6, 6, 0.25);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: .182em;
+  box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #4b6f87;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
-    button:hover,
-    .button:hover {
-        background-color: #7fa6bf;
-        box-shadow: inset 0 .045em 0 rgba(249, 249, 249, .25), inset 0 0 .091em rgba(6, 6, 6, .1), 0 .182em 0 #496274;
-    }
-    button:active,
-    .button:active {
-        background-color: #5f8aa6;
-        background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
-        background-image:    -moz-linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
-        background-image:         linear-gradient(top, rgba(6, 6, 6, .1) 0%, transparent 100%);
-        top: .136em;
-        box-shadow: inset 0 -0.045em 0 rgba(249, 249, 249, .25), inset 0 .091em .273em rgba(6, 6, 6, .25);
-    }
-    button:before,
-    .button:before,
-    button:after,
-    .button:after {
-        content: "";
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: -0.137em;
-        left: 0;
-    }
-        button:active:before,
-        .button:active:before,
-        button:active:after,
-        .button:active:after {
-            top: -0.137em;
-            bottom: 0;
-        }
 
+button:hover,
+.button:hover {
+  background-color: #80a2b8;
+  box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #50768f;
+}
+
+button:active,
+.button:active {
+  background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
+  background-image: -moz-linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
+  background-image: linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
+  top: .137em;
+  box-shadow: inset 0 0.091em 0.273em rgba(6, 6, 6, 0.25), inset 0 -0.045em 0 rgba(249, 249, 249, 0.25), 0 0.046em 0 #50768f;
+}
+
+button:before,
+.button:before,
+button:after,
+.button:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: -0.137em;
+  left: 0;
+}
+
+button:active:before,
+.button:active:before,
+button:active:after,
+.button:active:after {
+  top: -0.137em;
+  bottom: 0;
+}
 
 /*------------------------------------*\
-    $.04 Header
+    $ HEADER
 \*------------------------------------*/
-
 header {
-    height: 110px;
+  height: 110px;
 }
-    .logo {
-        color: #4f4f4f;
-        height: 110px;
-        display: inline-block;
-        float: left;
-        padding-left: 100px;
-        position: relative;
-        font-family: "league-gothic", sans-serif;
-        font-size: 3.25em; /* 52px */
-        line-height: 110px;
-        text-transform: uppercase;
-        text-shadow: .058em .058em 0 rgba(6, 6, 6, .075);
-        z-index: 1;
-        -webkit-transition: none;
-        transition:         none;
-        -webkit-user-select: none;
-        -moz-user-select:    none;
-        user-select:         none;
-    }
-        .logo:active {
-            top: .039em;
-        }
-        .logo:after {
-            content: "";
-            background: url("../icon.png") no-repeat;
-            background-image: url("/images/raven.svg");
-            background-size: 120px 120px;
-            width: 120px;
-            height: 120px;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            -webkit-transform: translate3d(0, -0.808em, 0);
-            transform:         translate3d(0, -0.808em, 0);
-            -webkit-animation: soaring 30s linear alternate infinite;
-            animation:         soaring 30s linear alternate infinite;
-            -webkit-animation-play-state: paused;
-            animation-play-state:         paused;
-        }
-            @-webkit-keyframes soaring {
-                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
-                12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
-                25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
-                37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
-                50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
-                62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
-                75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
-                87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-            }
-            @keyframes soaring {
-                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
-                12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
-                25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
-                37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
-                50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
-                62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
-                75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
-                87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-            }
-            /**
-             * Only animate when the user hovers the logo.
-             */
-            .logo:hover:after {
-                -webkit-animation-play-state: running;
-                animation-play-state:         running;
-            }
 
+.logo {
+  color: #4f4f4f;
+  height: 110px;
+  display: inline-block;
+  float: left;
+  padding-left: 100px;
+  position: relative;
+  font-family: "league-gothic", sans-serif;
+  font-size: 3.25em;
+  line-height: 110px;
+  text-transform: uppercase;
+  text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
+  z-index: 1;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.logo:active {
+  top: .039em;
+}
+
+.logo:after {
+  content: "";
+  background: url("../icon.png") no-repeat;
+  background-image: url("/images/raven.svg");
+  background-size: 120px 120px;
+  width: 120px;
+  height: 120px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: translate3d(0, -0.808em, 0);
+  transform: translate3d(0, -0.808em, 0);
+  -webkit-animation: soaring 30s linear alternate infinite;
+  animation: soaring 30s linear alternate infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-webkit-keyframes soaring {
+  0%, 100% {
+    -webkit-transform: translate3d(0, -0.8125em, 0);
+    transform: translate3d(0, -0.8125em, 0);
+  }
+
+  12.5% {
+    -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
+    transform: translate3d(-0.0625em, -0.6875em, 0);
+  }
+
+  25% {
+    -webkit-transform: translate3d(0.125em, -0.3125em, 0);
+    transform: translate3d(0.125em, -0.3125em, 0);
+  }
+
+  37.5% {
+    -webkit-transform: translate3d(0.3125em, -0.375em, 0);
+    transform: translate3d(0.3125em, -0.375em, 0);
+  }
+
+  50% {
+    -webkit-transform: translate3d(0.125em, -0.4375em, 0);
+    transform: translate3d(0.125em, -0.4375em, 0);
+  }
+
+  62.5% {
+    -webkit-transform: translate3d(0.0625em, -0.25em, 0);
+    transform: translate3d(0.0625em, -0.25em, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0.1875em, -0.4375em, 0);
+    transform: translate3d(0.1875em, -0.4375em, 0);
+  }
+
+  87.5% {
+    -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
+    transform: translate3d(-0.0625em, -0.5625em, 0);
+  }
+}
+
+@keyframes soaring {
+  0%, 100% {
+    -webkit-transform: translate3d(0, -0.8125em, 0);
+    transform: translate3d(0, -0.8125em, 0);
+  }
+
+  12.5% {
+    -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
+    transform: translate3d(-0.0625em, -0.6875em, 0);
+  }
+
+  25% {
+    -webkit-transform: translate3d(0.125em, -0.3125em, 0);
+    transform: translate3d(0.125em, -0.3125em, 0);
+  }
+
+  37.5% {
+    -webkit-transform: translate3d(0.3125em, -0.375em, 0);
+    transform: translate3d(0.3125em, -0.375em, 0);
+  }
+
+  50% {
+    -webkit-transform: translate3d(0.125em, -0.4375em, 0);
+    transform: translate3d(0.125em, -0.4375em, 0);
+  }
+
+  62.5% {
+    -webkit-transform: translate3d(0.0625em, -0.25em, 0);
+    transform: translate3d(0.0625em, -0.25em, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0.1875em, -0.4375em, 0);
+    transform: translate3d(0.1875em, -0.4375em, 0);
+  }
+
+  87.5% {
+    -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
+    transform: translate3d(-0.0625em, -0.5625em, 0);
+  }
+}
+
+/**
+ * Only animate when the user hovers the logo.
+ */
+.logo:hover:after {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
 
 /*------------------------------------*\
-    $.05 Navigation
+    $ NAVIGATION
 \*------------------------------------*/
-
 nav {
-    float: right;
-    margin-top: 20px;
+  float: right;
+  margin-top: 20px;
 }
-    .site-nav {
-        height: 3.75em; /* 60px */
-        float: right;
-        list-style: none;
-    }
-        .site-nav li {
-            height: 40px;
-            display: inline-block;
-            float: left;
-            padding: .375em 0;
-            text-align: center;
-        }
-            .site-nav li + li {
-                margin-left: 1em;
-            }
-            .site-nav a {
-                color: #737373;
-                display: block;
-                padding: .75em;
-                border-bottom: 0px solid #5f8aa6; /* so we can modify border-width later */
-                position: relative;
-                font-family: "league-gothic", sans-serif;
-                font-size: 1.25em;
-                line-height: 1.25em;
-                text-transform: uppercase;
-                -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
-                transition:         color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
-            }
-                .site-nav a:hover,
-                .page-home .site-nav-home a,
-                .page-about .site-nav-about a,
-                .page-archive .site-nav-archive a {
-                    color: #4f4f4f;
-                    padding-bottom: 8px;
-                    border-bottom-width: 4px;
-                }
-                .page-home .site-nav-home a:after,
-                .page-about .site-nav-about a:after,
-                .page-archive .site-nav-archive a:after {
-                    content: "";
-                    border-top: 5px solid #5f8aa6;
-                    border-right: 5px solid transparent;
-                    border-left: 5px solid transparent;
-                    margin-left: -3px;
-                    position: absolute;
-                    bottom: -0.4em;
-                    left: 48%;
-                }
-                .site-nav a:active {
-                    margin-top: .1em;
-                    position: relative;
-                    top: .1em;
-                    line-height: 1.15em;
-                }
 
+.site-nav {
+  height: 3.75em;
+  float: right;
+  list-style: none;
+}
+
+.site-nav li {
+  height: 40px;
+  display: inline-block;
+  float: left;
+  padding: .375em 0;
+  text-align: center;
+}
+
+.site-nav li + li {
+  margin-left: 1em;
+}
+
+.site-nav a {
+  color: #737373;
+  display: block;
+  padding: .75em;
+  border-bottom: 0px solid #5f8aa6;
+  position: relative;
+  font-family: "league-gothic", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
+  transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
+}
+
+.site-nav a:hover,
+.page-home .site-nav-home a,
+.page-about .site-nav-about a,
+.page-archive .site-nav-archive a {
+  color: #4f4f4f;
+  padding-bottom: 8px;
+  border-bottom-width: 4px;
+}
+
+.page-home .site-nav-home a:after,
+.page-about .site-nav-about a:after,
+.page-archive .site-nav-archive a:after {
+  content: "";
+  border-top: 5px solid #5f8aa6;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  margin-left: -3px;
+  position: absolute;
+  bottom: -0.4em;
+  left: 48%;
+}
+
+.site-nav a:active {
+  margin-top: .1em;
+  position: relative;
+  top: .1em;
+  line-height: 1.15em;
+}
 
 /*------------------------------------*\
-    $.06 Articles and Article Lists
+    $ ARTICLES AND ARTICLE LISTS
 \*------------------------------------*/
-
 .content {
-    margin-bottom: 2.25em;
+  margin-bottom: 2.25em;
 }
 
 /**
@@ -432,471 +520,588 @@ nav {
  */
 article,
 .articles {
-    padding: 2.25em 0 0 270px; /* 36px, 25% of max .content width = 270px */
-    border-top: .25em solid #5f8aa6;
+  padding: 2.25em 0 0 270px;
+  /* 36px, 25% of max .content width = 270px */
+  border-top: 0.25em solid #5f8aa6;
 }
-    .articles-list {
-        list-style: none;
-    }
-        .articles-list li {
-            width: 100%;
-            display: inline-block;
-            clear: both;
-            padding: 1.5em 0;
-            border-top: .25em solid rgba(6, 6, 6, .1);
-        }
-            .articles-list li:last-child {
-                padding-bottom: 0;
-            }
-    .article-title,
-    .site-tagline {
-        margin-bottom: .4em;
-    }
-    .site-introduction {
-        max-width: 24em;
-        margin-bottom: .8em;
-        line-height: 1.4em;
-    }
-    .article-introduction {
-        font-size: 1.25em; /* 20px */
-    }
-    .article-banner {
-        -webkit-background-clip: padding-box;
-        -moz-background-clip: padding;
-        background-clip: padding-box;
-        margin-bottom: 1em;
-        border-radius: .375em;
-    }
-    .article-link {
-        width: 100%;
-    }
-        .article-link a {
-            padding: 0 .25em;
-            border-bottom: .1875em solid transparent;
-            margin: 0 0 .35em -0.25em;
-            -webkit-transition: border-color .2s ease-in-out;
-            transition:         border-color .2s ease-in-out;
-        }
-            .article-link a:hover {
-                color: #4f4f4f;
-                border-bottom-color: #5f8aa6;
-            }
-    .article-date,
-    .related-date {
-        display: block; /* <time> element */
-        margin-bottom: .5em;
-    }
-        .articles-list .article-date:before {
-            content: "\2013 \0020";
-            color: #6f6f6f;
-        }
+
+.articles-list {
+  list-style: none;
+}
+
+.articles-list li {
+  width: 100%;
+  display: inline-block;
+  clear: both;
+  padding: 1.5em 0;
+  border-top: 0.25em solid rgba(6, 6, 6, 0.1);
+}
+
+.articles-list li:last-child {
+  padding-bottom: 0;
+}
+
+.article-title,
+.site-tagline {
+  margin-bottom: .4em;
+}
+
+.site-introduction {
+  max-width: 24em;
+  margin-top: -0.2em;
+  /* make sure text cap-height aligns to the aside */
+  margin-bottom: .8em;
+  line-height: 1.4em;
+}
+
+.article-introduction {
+  font-size: 1.25em;
+}
+
+.article-banner {
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  margin-bottom: 1em;
+  border-radius: .375em;
+}
+
+.article-link {
+  width: 100%;
+}
+
+.article-link a {
+  padding: 0 .25em;
+  border-bottom: .1875em solid transparent;
+  margin: 0 0 .35em -0.25em;
+  -webkit-transition: border-color .2s ease-in-out;
+  transition: border-color .2s ease-in-out;
+}
+
+.article-link a:hover {
+  color: #4f4f4f;
+  border-bottom-color: #5f8aa6;
+}
+
+.article-date,
+.related-date {
+  display: block;
+  /* <time> element */
+  margin-bottom: .5em;
+}
+
+.articles-list .article-date:before {
+  content: "\2013 \0020";
+  color: #737373;
+}
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
  * dynamically resized.
  */
 .video-container {
-    height: 0;
-    padding-top: 30px;
-    padding-bottom: 56.65%;
-    position: relative;
-    overflow: hidden;
+  height: 0;
+  padding-top: 30px;
+  padding-bottom: 56.65%;
+  position: relative;
+  overflow: hidden;
 }
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .pagination {
-    width: 100%;
+  width: 100%;
 }
-    .pagination .prev-link {
-        float: left;
-    }
-        .pagination .prev-link:before {
-            content: "\2190\00a0";
-            position: relative; /* override the button:before fix */
-        }
-    .pagination .next-link {
-        float: right;
-    }
-        .pagination .next-link:after {
-            content: "\00a0\2192";
-            position: relative; /* override the button:after fix */
-        }
 
+.pagination .prev-link {
+  float: left;
+}
+
+.pagination .prev-link:before {
+  content: "\2190\00a0";
+  position: relative;
+  /* override the button:before fix */
+}
+
+.pagination .next-link {
+  float: right;
+}
+
+.pagination .next-link:after {
+  content: "\00a0\2192";
+  position: relative;
+  /* override the button:after fix */
+}
 
 /*------------------------------------*\
-    $.07 Asides
+    $ ASIDES
 \*------------------------------------*/
-
 /**
  * The width of the asides is static and and always floated within an article or
  * list of articles. The math is calculated as in the Articles section.
  */
 aside {
-    width: 243px;
-    float: left;
-    margin-left: -270px;
+  width: 243px;
+  float: left;
+  margin-left: -270px;
 }
-    aside p {
-        clear: both;
-        margin-bottom: .5em;
-        font-size: .875em; /* 14px */
-    }
-    .author,
-    .related-articles {
-        font-family: "proxima-nova", sans-serif;
-    }
-        .author a {
-            color: #5f8aa6;
-        }
-            .author a:hover {
-                text-decoration: underline;
-            }
-        .author-information {
-            width: 100%;
-            float: left;
-            margin-bottom: .5em;
-            font-family: "ff-meta-serif-web-pro", serif;
-            font-size: .875em; /* 14px */
-            font-style: italic;
-        }
-            .author-information a,
-            .author-information strong,
-            .author-information time {
-                font-family: "proxima-nova";
-                font-weight: 600;
-                font-style: normal;
-                text-transform: uppercase;
-            }
-                .author-information a {
-                    color: inherit;
-                }
-            .author-image {
-                -webkit-background-clip: padding-box;
-                -moz-background-clip: padding;
-                background-clip: padding-box;
-                background-size: 100px 100px;
-                width: 100px;
-                height: 100px;
-                display: inline-block;
-                float: left;
-                margin-right: 10px;
-                border-radius: .1875em;
-            }
-            .article-tags {
-                display: table-cell; /* don't wrap around .author-image */
-                line-height: 1.429em;
-            }
-            .author-biography .codepen,
-            .author-biography .lastfm,
-            .author-biography .twitter {
-                background: none;
-            }
-        .related-articles {
-            padding-top: 1em;
-            border-top: .25em solid rgba(6, 6, 6, .1);
-            margin-top: 1em;
-        }
-            .related-articles ul {
-                list-style: none;
-                line-height: 1.25em;
-            }
-                .related-title {
-                    font-weight: bold;
-                }
-                .related-date {
-                    padding-left: .75em;
-                    font-size: .8124em; /* 13px */
-                    font-style: italic;
-                }
 
+aside p {
+  clear: both;
+  margin-bottom: .5em;
+  font-size: .875em;
+}
+
+.author,
+.related-articles {
+  font-family: "proxima-nova", sans-serif;
+}
+
+.author a {
+  color: #5f8aa6;
+}
+
+.author a:hover {
+  text-decoration: underline;
+}
+
+.author-information {
+  width: 100%;
+  float: left;
+  margin-bottom: .5em;
+  font-family: "ff-meta-serif-web-pro", serif;
+  font-size: .875em;
+  font-style: italic;
+}
+
+.author-information a,
+.author-information strong,
+.author-information time {
+  font-family: "proxima-nova";
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.author-information a {
+  color: inherit;
+}
+
+.author-image {
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  border-radius: .1875em;
+}
+
+.article-tags {
+  display: table-cell;
+  /* don't wrap around .author-image */
+  line-height: 1.429em;
+}
+
+.author-biography .codepen,
+.author-biography .lastfm,
+.author-biography .twitter {
+  background: none;
+}
+
+.related-articles {
+  padding-top: 1em;
+  border-top: 0.25em solid rgba(6, 6, 6, 0.1);
+  margin-top: 1em;
+}
+
+.related-articles ul {
+  list-style: none;
+  line-height: 1.25em;
+}
+
+.related-title {
+  font-weight: bold;
+}
+
+.related-date {
+  padding-left: .75em;
+  font-size: .8124em;
+  font-style: italic;
+}
 
 /*------------------------------------*\
-    $.08 Comments
+    $ COMMENTS
 \*------------------------------------*/
-
 .comments {
-    padding-top: 1em;
-    border-top: .25em solid rgba(6, 6, 6, .1);
-    margin-top: 2em;
+  padding-top: 1em;
+  border-top: 0.25em solid rgba(6, 6, 6, 0.1);
+  margin-top: 2em;
 }
 
-
 /*------------------------------------*\
-    $.09 Code and Code Blocks
+    $ CODE AND CODE BLOCKS
 \*------------------------------------*/
-
 code {
-    font-family: Monaco, "Courier New", monospace;
-    font-size: .8125em; /* 13px */
+  font-family: Monaco, "Courier New", monospace;
+  font-size: .8125em;
 }
-    p > code {
-        background: rgba(95, 138, 166, .1);
-        padding: 0 .154em;
-    }
+
+p > code {
+  background: rgba(95, 138, 166, 0.1);
+  padding: 0 .154em;
+}
+
 pre {
-    margin: 0 0 1em;
+  margin: 0 0 1em;
 }
+
 pre:not(.codepen) {
-    background-color: #4f4f4f;
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .25) 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .25) 100%);
-    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .25) 100%);
-    color: #f9f9f9;
-    padding: .714em;
-    position: relative;
-    overflow: hidden;
-    overflow-x: auto;
-    border-radius: .1875em;
+  background-color: #4f4f4f;
+  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+  color: #f9f9f9;
+  padding: .714em;
+  position: relative;
+  overflow: hidden;
+  overflow-x: auto;
+  border-radius: .1875em;
 }
 
-
 /*------------------------------------*\
-    $.10 Footer
+    $ FOOTER
 \*------------------------------------*/
-
 footer {
-    background: #4f4f4f;
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    background-image:    -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    background-image:         linear-gradient(top, transparent 0%, rgba(6, 6, 6, .1) 100%);
-    color: #ddd;
-    width: auto;
-    height: 40px;
-    padding: 2.572em 0;
-    border-top: .286em solid #5f8aa6;
-    font-family: "proxima-nova", sans-serif;
-    font-size: .875em; /* 14px */
-    font-weight: 600;
-    text-transform: uppercase;
+  background: #4f4f4f;
+  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
+  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
+  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
+  color: #dddddd;
+  width: auto;
+  height: 40px;
+  padding: 2.572em 0;
+  border-top: 0.286em solid #5f8aa6;
+  font-family: "proxima-nova", sans-serif;
+  font-size: .875em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
-    .footer-copyright,
-    .footer-social {
-        float: left;
-        overflow: hidden;
-    }
-        .footer-copyright a {
-            display: inline-block;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-            .footer-copyright a:hover {
-                text-decoration: underline;
-            }
-            .home-link {
-                background: url("../icon.png") no-repeat;
-                background-image: url("/images/raven.svg");
-                background-size: 2.857em 2.857em;
-                color: transparent;
-                width: 2.875em;
-                height: 2.875em;
-                margin-right: 1em;
-                vertical-align: middle;
-                text-decoration: none;
-                text-indent: -4em;
-            }
-                .home-link:active {
-                    position: relative;
-                    top: .14em;
-                }
-            .copyright-link {
-                color: #ddd;
-            }
-        .footer-social {
-            float: right;
-        }
-            .footer-social li {
-                display: inline-block;
-                margin-left: .5em;
-            }
-                .footer-social li:first-child {
-                    margin-left: 0;
-                }
-                .footer-social a {
-                    opacity: .6;
-                    color: transparent;
-                    width: 30px;
-                    height: 30px;
-                    display: block;
-                    font-size: 0;
-                    -webkit-transition: opacity .2s ease-in-out;
-                    transition:         opacity .2s ease-in-out;
-                }
-                    .footer-social a:hover {
-                        opacity: .9;
-                    }
-                    .footer-social a:active {
-                        position: relative;
-                        top: .14em;
-                    }
-                    .footer-social .codepen-link,
-                    .footer-social .lastfm-link,
-                    .footer-social .rss-link,
-                    .footer-social .twitter-link {
-                        background-image: url("/images/glyphs.png");
-                        background-size: 120px 30px;
-                    }
 
+.footer-copyright,
+.footer-social {
+  float: left;
+  overflow: hidden;
+}
+
+.footer-copyright a {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline;
+}
+
+.home-link {
+  background: url("../icon.png") no-repeat;
+  background-image: url("/images/raven.svg");
+  background-size: 2.857em 2.857em;
+  color: transparent;
+  width: 2.875em;
+  height: 2.875em;
+  margin-right: 1em;
+  vertical-align: middle;
+  text-decoration: none;
+  text-indent: -4em;
+}
+
+.home-link:active {
+  position: relative;
+  top: .14em;
+}
+
+.copyright-link {
+  color: #dddddd;
+}
+
+.footer-social {
+  float: right;
+}
+
+.footer-social li {
+  display: inline-block;
+  margin-left: .5em;
+}
+
+.footer-social li:first-child {
+  margin-left: 0;
+}
+
+.footer-social a {
+  opacity: .6;
+  color: transparent;
+  width: 30px;
+  height: 30px;
+  display: block;
+  font-size: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.footer-social a:hover {
+  opacity: .9;
+}
+
+.footer-social a:active {
+  position: relative;
+  top: .14em;
+}
+
+.footer-social .codepen-link,
+.footer-social .lastfm-link,
+.footer-social .rss-link,
+.footer-social .twitter-link {
+  background-image: url("/images/glyphs.png");
+  background-size: 120px 30px;
+}
 
 /*------------------------------------*\
-    $.11 Miscellaneous
+    $ MISCELLANEOUS
 \*------------------------------------*/
-
+/*a*/
 .codepen-link {
-    color: #212121 !important;
-}
-.lastfm-link {
-    background-position: -30px top;
-    color: #d51007 !important;
-}
-.rss-link {
-    background-position: -60px top;
-}
-.twitter-link {
-    background-position: -90px top;
-    color: #007ba8 !important;
+  color: #212121 !important;
 }
 
-.clear { clear: both; overflow: hidden; zoom: 1; }
-    .clear:before,
-    .clear:after { content: ""; display: table; }
-    .clear:after { clear: both; }
+/*a*/
+.lastfm-link {
+  background-position: -30px top;
+  color: #d51007 !important;
+}
+
+/*a*/
+.rss-link {
+  background-position: -60px top;
+  /* uses the default anchor color */
+}
+
+/*a*/
+.twitter-link {
+  background-position: -90px top;
+  color: #007ba8 !important;
+}
+
+.clear {
+  clear: both;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+}
 
 @-webkit-keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-::-webkit-selection { background: #5f8aa6; color: #f9f9f9; }
-::-moz-selection {    background: #5f8aa6; color: #f9f9f9; }
-::selection {         background: #5f8aa6; color: #f9f9f9; }
-    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: none; }
-    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: none; }
-    pre::selection, code::selection {                 background: black; color: white; text-shadow: none; }
+::-webkit-selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
 
+::-moz-selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
+
+::selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
+
+pre::-webkit-selection, code::-webkit-selection {
+  background: black;
+  color: white;
+  text-shadow: none;
+}
+
+pre::-moz-selection, code::-moz-selection {
+  background: black;
+  color: white;
+  text-shadow: none;
+}
+
+pre::selection, code::selection {
+  background: black;
+  color: white;
+  text-shadow: none;
+}
 
 /*------------------------------------*\
-    $.12 Media Queries
+    $    MEDIA QUERIES
     i    Tablet - 767px
     ii   Mobile - 500px
 \*------------------------------------*/
-
 @media (max-width: 767px) {
-    /**
-     * Center the logo and make room for the navigation to drop underneath.
-     */
-    header {
-        height: 170px;
-        text-align: center;
-    }
-        .logo {
-            height: 90px;
-            display: inline-block;
-            float: none;
-        }
-        nav {
-            width: 100%;
-            float: none;
-            margin-top: 0;
-        }
-            /**
-             * Center the navigation items.
-             */
-            .site-nav {
-                float: none;
-                text-align: center;
-            }
-                .site-nav li {
-                    display: inline-block;
-                    float: none;
-                }
-    /**
-     * When you hit the tablet media query, articles, article lists, and asides
-     * become full width and the author information aside pushes to the bottom
-     * in browsers that support the latest iteration of flexbox.
-     */
-    article,
-    .articles {
-        display: -webkit-flex;
-        display: flex;
-        padding-left: 0;
-        -webkit-flex-direction: column;
-        flex-direction:         column;
-    }
-        article {
-            margin-bottom: 0;
-        }
-        .articles-list li,
-        .articles-list li:last-child {
-            padding: 2.25em 0;
-        }
-        .site-introduction {
-            margin-bottom: 1.385em;
-        }
-    aside {
-        width: 100%;
-        float: none;
-        margin: 0 0 1em;
-    }
-        .author {
-            padding-top: 2.25em;
-            border-top: .25em solid rgba(6, 6, 6, .1);
-            margin-bottom: 0;
-            -webkit-order: 999;
-            order:         999;
-        }
-            .page-about .author {
-                margin-top: 2.25em;
-            }
+  /**
+   * Center the logo and make room for the navigation to drop underneath.
+   */
+  header {
+    height: 170px;
+    text-align: center;
+  }
+
+  .logo {
+    height: 90px;
+    display: inline-block;
+    float: none;
+  }
+
+  nav {
+    width: 100%;
+    float: none;
+    margin-top: 0;
+  }
+
+  /**
+   * Center the navigation items.
+   */
+  .site-nav {
+    float: none;
+    text-align: center;
+  }
+
+  .site-nav li {
+    display: inline-block;
+    float: none;
+  }
+
+  /**
+   * When you hit the tablet media query, articles, article lists, and asides
+   * become full width and the author information aside pushes to the bottom
+   * in browsers that support the latest iteration of flexbox.
+   */
+  article,
+  .articles {
+    display: -webkit-flex;
+    display: flex;
+    padding-left: 0;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  article {
+    margin-bottom: 0;
+  }
+
+  .articles-list li,
+  .articles-list li:last-child {
+    padding: 2.25em 0;
+  }
+
+  .site-introduction {
+    margin-bottom: 1.385em;
+  }
+
+  aside {
+    width: 100%;
+    float: none;
+    margin: 0 0 1em;
+  }
+
+  .author {
+    padding-top: 2.25em;
+    border-top: 0.25em solid rgba(6, 6, 6, 0.1);
+    margin-bottom: 0;
+    -webkit-order: 999;
+    order: 999;
+  }
+
+  .page-about .author {
+    margin-top: 2.25em;
+  }
 }
 @media (max-width: 500px) {
-    /**
-     * Let's make intelligent use of mobile viewport and reduce the padding
-     * on either side of the wrapper. We can't remove it or the text will sit
-     * right at the edge, creating a readability issue.
-     */
-    .wrap {
-        padding-right: .625em; /* 10px */
-        padding-left: .625em;
-    }
-    .logo {
-        font-size: 2.25em; /* 36px */
-    }
-    .pagination {
-        text-align: center;
-    }
-        .pagination .prev-link,
-        .pagination .next-link {
-            float: none;
-        }
-        .pagination .next-link {
-            margin-top: .5em;
-        }
-    aside p {
-        font-size: 1em; /* 16px */
-    }
-    footer {
-        height: 85px;
-        padding: 2em 0;
-    }
-        .footer-copyright,
-        .footer-social {
-            width: 100%;
-            float: none;
-            text-align: center;
-        }
-            .footer-social {
-                margin-top: .625em;
-            }
+  /**
+   * Let's make intelligent use of the mobile viewport and reduce the padding
+   * on either side of the wrapper. We can't remove it or the text will sit
+   * right at the edge, creating a readability issue.
+   */
+  .wrap {
+    padding-right: .625em;
+    padding-left: .625em;
+  }
+
+  .logo {
+    font-size: 2.25em;
+  }
+
+  .pagination {
+    text-align: center;
+  }
+
+  .pagination .prev-link,
+  .pagination .next-link {
+    float: none;
+  }
+
+  .pagination .next-link {
+    margin-top: .5em;
+  }
+
+  aside p {
+    font-size: 1em;
+  }
+
+  footer {
+    height: 85px;
+    padding: 2em 0;
+  }
+
+  .footer-copyright,
+  .footer-social {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .footer-social {
+    margin-top: .625em;
+  }
 }

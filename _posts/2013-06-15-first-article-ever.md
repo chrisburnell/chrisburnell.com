@@ -79,4 +79,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 ### And that’s basically it!
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](http://chrisburnell.com/feed.xml) if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on <a href="{{ site.twitter_url }}">twitter</a> or <a href="mailto:me@chrisburnell">send me an email</a>!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](http://chrisburnell.com/feed.xml) if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }}) or [send me an email](mailto:me@chrisburnell)!
