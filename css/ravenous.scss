@@ -248,7 +248,7 @@ button,
 }
     button:hover,
     .button:hover {
-        background-color: lighten($blue, 10%);
+        background-color: lighten($blue, 15%);
         box-shadow: inset 0 0 .091em $gray-10,
                     inset 0 .045em 0 $off-white-25,
                     0 .182em 0 darken($blue, 7.5%);
