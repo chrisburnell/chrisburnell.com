@@ -159,7 +159,7 @@ ol {
 }
 
 abbr[title],
-blockquote:not(.twitter-tweet),
+blockquote,
 cite,
 dfn[title] {
   color: #737373;
@@ -172,17 +172,27 @@ dfn[title] {
   cursor: help;
 }
 
-blockquote:not(.twitter-tweet),
+blockquote,
 q {
   quotes: "“" "”" "‘" "’";
 }
 
-blockquote:not(.twitter-tweet) p:before {
+article blockquote {
+  margin-bottom: 1em;
+}
+
+aside blockquote {
+  padding: 1em 0;
+  border-top: 0.286em solid #5f8aa6;
+  border-bottom: 0.286em solid #5f8aa6;
+}
+
+blockquote p:before {
   content: open-quote;
   padding-right: .1875em;
 }
 
-blockquote:not(.twitter-tweet) p:after {
+blockquote p:after {
   content: close-quote;
   padding-left: .1875em;
 }
@@ -658,6 +668,10 @@ aside p {
   clear: both;
   margin-bottom: .5em;
   font-size: .875em;
+}
+
+aside blockquote p {
+  margin-bottom: 0;
 }
 
 .author,

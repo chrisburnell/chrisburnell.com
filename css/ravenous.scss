@@ -177,7 +177,7 @@ ul {
         list-style-type: decimal-leading-zero;
     }
 abbr[title],
-blockquote:not(.twitter-tweet),
+blockquote,
 cite,
 dfn[title] {
     color: $text-color-alt;
@@ -188,18 +188,26 @@ dfn[title] {
         border-bottom: 1px dotted $text-color-alt;
         cursor: help;
     }
-    blockquote:not(.twitter-tweet),
+    blockquote,
     q {
         quotes: "“" "”" "‘" "’";
     }
-    blockquote:not(.twitter-tweet) p:before {
-        content: open-quote;
-        padding-right: .1875em;
+    article blockquote {
+        margin-bottom: 1em;
     }
-    blockquote:not(.twitter-tweet) p:after {
-        content: close-quote;
-        padding-left: .1875em;
+    aside blockquote {
+        padding: 1em 0;
+        border-top: .286em solid $blue;
+        border-bottom: .286em solid $blue;
     }
+        blockquote p:before {
+            content: open-quote;
+            padding-right: .1875em;
+        }
+        blockquote p:after {
+            content: close-quote;
+            padding-left: .1875em;
+        }
     .pullquote {
         font-size: 2em;
         line-height: 1.25em;
@@ -570,6 +578,9 @@ aside {
         margin-bottom: .5em;
         font-size: .875em;
     }
+        aside blockquote p {
+            margin-bottom: 0;
+        }
     .author,
     .related-articles {
         font-family: "proxima-nova", sans-serif;
