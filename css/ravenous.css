@@ -908,6 +908,11 @@ footer {
   color: #007ba8 !important;
 }
 
+a[href^="http://"]:not([href*="chrisburnell.com"]):after {
+  content: "\1F517";
+  color: #4b6f87;
+}
+
 .clear {
   clear: both;
   overflow: hidden;
