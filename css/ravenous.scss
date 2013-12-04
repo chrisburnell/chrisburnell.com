@@ -86,7 +86,7 @@ body {
     min-height: 100%;
 }
 body {
-    background: $off-white;
+    background-color: $off-white;
     color: $text-color;
     position: relative;
     font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
@@ -245,7 +245,7 @@ button,
     height: 1.91em;
     display: inline-block;
     padding: 0 .727em;
-    margin: 0 0 .364em;
+    margin-bottom: .364em;
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.375em;
@@ -261,8 +261,8 @@ button,
                 inset 0 .045em 0 $off-white-25,
                 0 .182em 0 darken($blue, 10%);
     -webkit-user-select: none;
-    -moz-user-select:    none;
-    user-select:         none;
+       -moz-user-select: none;
+            user-select: none;
 }
     button:hover, button:focus,
     .button:hover, .button:focus {
@@ -321,8 +321,8 @@ header {
         text-shadow: .058em .058em 0 $gray-5;
         z-index: 1;
         -webkit-user-select: none;
-        -moz-user-select:    none;
-        user-select:         none;
+           -moz-user-select: none;
+                user-select: none;
     }
         .logo:active {
             top: .039em;
@@ -659,7 +659,7 @@ code {
     font-size: .8125em;
 }
     p > code {
-        background: rgba($blue, 0.1);
+        background-color: rgba($blue, 0.1);
         padding: 0 .154em;
     }
 pre {
@@ -683,7 +683,7 @@ pre:not(.codepen) {
 
 footer {
     @include gradient(transparent, $gray-10);
-    background: $text-color;
+    background-color: $text-color;
     color: $text-color-light;
     width: auto;
     height: 40px;
@@ -791,11 +791,11 @@ footer {
 }
 
 ::-webkit-selection { background: $blue; color: $off-white; }
-::-moz-selection {    background: $blue; color: $off-white; }
-::selection {         background: $blue; color: $off-white; }
-    pre::-webkit-selection, code::-webkit-selection { background: black; color: white; text-shadow: none; }
-    pre::-moz-selection, code::-moz-selection {       background: black; color: white; text-shadow: none; }
-    pre::selection, code::selection {                 background: black; color: white; text-shadow: none; }
+   ::-moz-selection { background: $blue; color: $off-white; }
+        ::selection { background: $blue; color: $off-white; }
+    code::-webkit-selection { background: black; color: white; text-shadow: none; }
+       code::-moz-selection { background: black; color: white; text-shadow: none; }
+            code::selection { background: black; color: white; text-shadow: none; }
 
 
 /*------------------------------------*\

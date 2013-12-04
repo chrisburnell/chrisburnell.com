@@ -49,7 +49,7 @@ body {
 }
 
 body {
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   color: #4f4f4f;
   position: relative;
   font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
@@ -237,7 +237,7 @@ button,
   height: 1.91em;
   display: inline-block;
   padding: 0 .727em;
-  margin: 0 0 .364em;
+  margin-bottom: .364em;
   position: relative;
   font-family: "league-gothic", sans-serif;
   font-size: 1.375em;
@@ -759,7 +759,7 @@ code {
 }
 
 p > code {
-  background: rgba(95, 138, 166, 0.1);
+  background-color: rgba(95, 138, 166, 0.1);
   padding: 0 .154em;
 }
 
@@ -789,7 +789,7 @@ footer {
   background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
   background-image: -ms-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
   background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
-  background: #4f4f4f;
+  background-color: #4f4f4f;
   color: #dddddd;
   width: auto;
   height: 40px;
@@ -951,19 +951,19 @@ footer {
   color: #f9f9f9;
 }
 
-pre::-webkit-selection, code::-webkit-selection {
+code::-webkit-selection {
   background: black;
   color: white;
   text-shadow: none;
 }
 
-pre::-moz-selection, code::-moz-selection {
+code::-moz-selection {
   background: black;
   color: white;
   text-shadow: none;
 }
 
-pre::selection, code::selection {
+code::selection {
   background: black;
   color: white;
   text-shadow: none;
