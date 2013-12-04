@@ -447,14 +447,13 @@ nav {
  * side to make room for any asides, which can appear anywhere inside an
  * article or list of articles.
  * Maximum total width of container
- *      = 1080px
+ * = 1080px
  * Left-hand padding
- *      = 25% of 1080px
- *      = 270px
+ * = 25% of 1080px  = 270px  = 16.875em
  */
 article,
 .articles {
-    padding: 2.25em 0 0 270px; /* 36px, 25% of max .content width = 270px */
+    padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
 }
     .articles-list {
@@ -562,9 +561,9 @@ article,
  * list of articles. The math is calculated as in the Articles section.
  */
 aside {
-    width: 243px;
+    width: 15.1875em;
     float: left;
-    margin-left: -270px;
+    margin-left: -16.875em;
 }
     aside p {
         clear: both;
