@@ -379,22 +379,22 @@ nav {
     float: right;
     margin-top: 20px;
 }
-    .site-nav {
+    .site-navigation {
         height: 3.75em;
         float: right;
         list-style: none;
     }
-        .site-nav li {
+        .site-navigation li {
             height: 40px;
             display: inline-block;
             float: left;
             padding: .375em 0;
             text-align: center;
         }
-            .site-nav li + li {
+            .site-navigation li + li {
                 margin-left: 1em;
             }
-            .site-nav a {
+            .site-navigation a {
                 @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
                 color: $text-color-alt;
                 display: block;
@@ -406,17 +406,17 @@ nav {
                 line-height: 1.25em;
                 text-transform: uppercase;
             }
-                .site-nav a:hover,
-                .page-home .site-nav-home a,
-                .page-about .site-nav-about a,
-                .page-archive .site-nav-archive a {
+                .site-navigation a:hover,
+                .page-home .site-navigation-home a,
+                .page-about .site-navigation-about a,
+                .page-archive .site-navigation-archive a {
                     color: $text-color;
                     padding-bottom: 8px;
                     border-bottom-width: 4px;
                 }
-                .page-home .site-nav-home a:after,
-                .page-about .site-nav-about a:after,
-                .page-archive .site-nav-archive a:after {
+                .page-home .site-navigation-home a:after,
+                .page-about .site-navigation-about a:after,
+                .page-archive .site-navigation-archive a:after {
                     content: "";
                     border-top: 5px solid $blue;
                     border-right: 5px solid transparent;
@@ -426,7 +426,7 @@ nav {
                     bottom: -0.4em;
                     left: 48%;
                 }
-                .site-nav a:active {
+                .site-navigation a:active {
                     margin-top: .1em;
                     position: relative;
                     top: .1em;
@@ -695,17 +695,17 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
 }
-    .footer-copyright,
-    .footer-social {
+    .copyright,
+    .social-icons {
         float: left;
         overflow: hidden;
     }
-        .footer-copyright a {
+        .copyright a {
             display: inline-block;
             text-decoration: none;
             white-space: nowrap;
         }
-            .footer-copyright a:hover {
+            .copyright a:hover {
                 text-decoration: underline;
             }
             .home-link {
@@ -727,17 +727,17 @@ footer {
             .copyright-link {
                 color: $text-color-light;
             }
-        .footer-social {
+        .social-icons {
             float: right;
         }
-            .footer-social li {
+            .social-icons li {
                 display: inline-block;
                 margin-left: .5em;
             }
-                .footer-social li:first-child {
+                .social-icons li:first-child {
                     margin-left: 0;
                 }
-                .footer-social a {
+                .social-icons a {
                     @include transition("opacity .2s ease-in-out");
                     opacity: .6;
                     color: transparent;
@@ -746,17 +746,17 @@ footer {
                     display: block;
                     font-size: 0;
                 }
-                    .footer-social a:hover {
+                    .social-icons a:hover {
                         opacity: .9;
                     }
-                    .footer-social a:active {
+                    .social-icons a:active {
                         position: relative;
                         top: .14em;
                     }
-                    .footer-social .codepen-link,
-                    .footer-social .lastfm-link,
-                    .footer-social .rss-link,
-                    .footer-social .twitter-link {
+                    .social-icons .codepen-link,
+                    .social-icons .lastfm-link,
+                    .social-icons .rss-link,
+                    .social-icons .twitter-link {
                         background-image: url("/images/glyphs.png");
                         background-size: 120px 30px;
                     }
@@ -780,11 +780,6 @@ footer {
 /*a*/.twitter-link {
     background-position: -90px top;
     color: #007ba8 !important;
-}
-
-a[href^="http://"]:not([href*="chrisburnell.com"]):after {
-    content: "\1F517";
-    color: darken($blue, 10%);
 }
 
 .clear { clear: both; overflow: hidden; zoom: 1; }
@@ -836,11 +831,11 @@ a[href^="http://"]:not([href*="chrisburnell.com"]):after {
             /**
              * Center the navigation items.
              */
-            .site-nav {
+            .site-navigation {
                 float: none;
                 text-align: center;
             }
-                .site-nav li {
+                .site-navigation li {
                     display: inline-block;
                     float: none;
                 }
@@ -913,13 +908,13 @@ a[href^="http://"]:not([href*="chrisburnell.com"]):after {
         height: 85px;
         padding: 2em 0;
     }
-        .footer-copyright,
-        .footer-social {
+        .copyright,
+        .social-icons {
             width: 100%;
             float: none;
             text-align: center;
         }
-            .footer-social {
+            .social-icons {
                 margin-top: .625em;
             }
 }
