@@ -106,8 +106,8 @@ a {
     color: $blue;
     text-decoration: none;
 }
-    article a:hover,
-    aside a:hover {
+    article a:hover, article a:focus, article a:active,
+    aside a:hover, aside a:focus, aside a:active {
         text-decoration: underline;
     }
     h1 a,
@@ -116,9 +116,9 @@ a {
         color: $text-color;
         display: inline-block;
     }
-        h1 a:hover,
-        h2 a:hover,
-        h3 a:hover {
+        h1 a:hover, h1 a:focus, h1 a:active,
+        h2 a:hover, h2 a:focus, h2 a:active,
+        h3 a:hover, h3 a:focus, h3 a:active {
             color: $blue;
             text-decoration: none;
         }
@@ -264,8 +264,8 @@ button,
     -moz-user-select:    none;
     user-select:         none;
 }
-    button:hover,
-    .button:hover {
+    button:hover, button:focus,
+    .button:hover, .button:focus {
         background-color: lighten($blue, 10%);
         box-shadow: inset 0 0 .091em $gray-10,
                     inset 0 .045em 0 $off-white-25,
@@ -366,7 +366,7 @@ header {
             /**
              * Only animate when the user hovers the logo.
              */
-            .logo:hover:after {
+            .logo:hover:after, .logo:focus:after, .logo:active:after {
                 @include animation-play-state("running");
             }
 
@@ -406,7 +406,7 @@ nav {
                 line-height: 1.25em;
                 text-transform: uppercase;
             }
-                .site-navigation a:hover,
+                .site-navigation a:hover, .site-navigation a:focus
                 .page-home .site-navigation-home a,
                 .page-about .site-navigation-about a,
                 .page-archive .site-navigation-archive a {
@@ -498,7 +498,7 @@ article,
             border-bottom: .1875em solid transparent;
             margin: 0 0 .35em -0.25em;
         }
-            .article-link a:hover {
+            .article-link a:hover, .article-link a:focus, .article-link a:active {
                 color: $text-color;
                 border-bottom-color: $blue;
             }
@@ -577,7 +577,7 @@ aside {
         .author a {
             color: $blue;
         }
-            .author a:hover {
+            .author a:hover, .author a:focus, .author a:active {
                 text-decoration: underline;
             }
         .author-information {
@@ -704,7 +704,7 @@ footer {
             text-decoration: none;
             white-space: nowrap;
         }
-            .copyright a:hover {
+            .copyright a:hover, .copyright a:focus, .copyright a:active {
                 text-decoration: underline;
             }
             .home-link {
@@ -736,8 +736,10 @@ footer {
                 .social-icons li:first-child {
                     margin-left: 0;
                 }
-                .social-icons a {
+                .social-icon {
                     @include transition("opacity .2s ease-in-out");
+                    background-image: url("/images/glyphs.png");
+                    background-size: 120px 30px;
                     opacity: .6;
                     color: transparent;
                     width: 30px;
@@ -745,19 +747,12 @@ footer {
                     display: block;
                     font-size: 0;
                 }
-                    .social-icons a:hover {
+                    .social-icon:hover, .social-icon:focus {
                         opacity: .9;
                     }
-                    .social-icons a:active {
+                    .social-icon:active {
                         position: relative;
                         top: .14em;
-                    }
-                    .social-icons .codepen-link,
-                    .social-icons .lastfm-link,
-                    .social-icons .rss-link,
-                    .social-icons .twitter-link {
-                        background-image: url("/images/glyphs.png");
-                        background-size: 120px 30px;
                     }
 
 

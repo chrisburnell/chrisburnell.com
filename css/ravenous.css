@@ -72,8 +72,8 @@ a {
   text-decoration: none;
 }
 
-article a:hover,
-aside a:hover {
+article a:hover, article a:focus, article a:active,
+aside a:hover, aside a:focus, aside a:active {
   text-decoration: underline;
 }
 
@@ -84,9 +84,9 @@ h3 a {
   display: inline-block;
 }
 
-h1 a:hover,
-h2 a:hover,
-h3 a:hover {
+h1 a:hover, h1 a:focus, h1 a:active,
+h2 a:hover, h2 a:focus, h2 a:active,
+h3 a:hover, h3 a:focus, h3 a:active {
   color: #5f8aa6;
   text-decoration: none;
 }
@@ -255,8 +255,8 @@ button,
   user-select: none;
 }
 
-button:hover,
-.button:hover {
+button:hover, button:focus,
+.button:hover, .button:focus {
   background-color: #80a2b8;
   box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #50768f;
 }
@@ -429,7 +429,7 @@ header {
 /**
  * Only animate when the user hovers the logo.
  */
-.logo:hover:after {
+.logo:hover:after, .logo:focus:after, .logo:active:after {
   -webkit-animation-play-state: running;
   animation-play-state: running;
 }
@@ -474,7 +474,7 @@ nav {
   text-transform: uppercase;
 }
 
-.site-navigation a:hover,
+.site-navigation a:hover, .site-navigation a:focus
 .page-home .site-navigation-home a,
 .page-about .site-navigation-about a,
 .page-archive .site-navigation-archive a {
@@ -578,7 +578,7 @@ article,
   margin: 0 0 .35em -0.25em;
 }
 
-.article-link a:hover {
+.article-link a:hover, .article-link a:focus, .article-link a:active {
   color: #4f4f4f;
   border-bottom-color: #5f8aa6;
 }
@@ -669,7 +669,7 @@ aside p {
   color: #5f8aa6;
 }
 
-.author a:hover {
+.author a:hover, .author a:focus, .author a:active {
   text-decoration: underline;
 }
 
@@ -813,7 +813,7 @@ footer {
   white-space: nowrap;
 }
 
-.copyright a:hover {
+.copyright a:hover, .copyright a:focus, .copyright a:active {
   text-decoration: underline;
 }
 
@@ -852,9 +852,11 @@ footer {
   margin-left: 0;
 }
 
-.social-icons a {
+.social-icon {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
+  background-image: url("/images/glyphs.png");
+  background-size: 120px 30px;
   opacity: .6;
   color: transparent;
   width: 30px;
@@ -863,21 +865,13 @@ footer {
   font-size: 0;
 }
 
-.social-icons a:hover {
+.social-icon:hover, .social-icon:focus {
   opacity: .9;
 }
 
-.social-icons a:active {
+.social-icon:active {
   position: relative;
   top: .14em;
-}
-
-.social-icons .codepen-link,
-.social-icons .lastfm-link,
-.social-icons .rss-link,
-.social-icons .twitter-link {
-  background-image: url("/images/glyphs.png");
-  background-size: 120px 30px;
 }
 
 /*------------------------------------*\
