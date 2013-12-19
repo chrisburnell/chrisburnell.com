@@ -504,17 +504,17 @@ nav {
 }
 
 .site-navigation a:hover, .site-navigation a:focus
-.page-home .site-navigation-home a,
-.page-about .site-navigation-about a,
-.page-archive .site-navigation-archive a {
+.home-page .site-navigation-home a,
+.about-page .site-navigation-about a,
+.archive-page .site-navigation-archive a {
   color: #4f4f4f;
   padding-bottom: 8px;
   border-bottom-width: 4px;
 }
 
-.page-home .site-navigation-home a:after,
-.page-about .site-navigation-about a:after,
-.page-archive .site-navigation-archive a:after {
+.home-page .site-navigation-home a:after,
+.about-page .site-navigation-about a:after,
+.archive-page .site-navigation-archive a:after {
   content: "";
   border-top: 5px solid #5f8aa6;
   border-right: 5px solid transparent;
