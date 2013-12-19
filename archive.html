@@ -4,7 +4,7 @@ layout: home
 page_class: archive-page
 ---
 
-<ol class="articles-list">{% for post in paginator.posts %}{% unless post.draft %}
+<ol class="articles-list">{% for post in site.posts %}{% unless post.draft %}
                 <li>
                     <h2 class="article-link"><a href="{{ post.url }}">{{ post.title }}</a></h2>
                     <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
