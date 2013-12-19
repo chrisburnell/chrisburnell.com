@@ -2,7 +2,6 @@
 layout: article
 date: 2013-06-16 03:58:00
 title: Annoying Navigation CSS
-slug: annoying-navigation-css
 introduction: Here’s a quick little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of.
 tags:
 - CodePen

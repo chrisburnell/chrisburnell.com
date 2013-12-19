@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<!--N
+  DIIII8
+    N7III7Z
+      $IIIII78
+       $IIIII7
+       NIIIIIIZ               N
+        77IIIII             D $D
+        87IIIII7         DN Z$O$ $
+         7IIIIIIZ     $Z8NI7NIIIO7
+          8IIIIII77I77IIIIIIIIIIII
+           N7IIIIIIIIIIIIIIIIIIIII
+7DN      O777IIIIIIIIIIIIIIII7$7$N
+ III7I7O$IIIIIIIIIIIIIIIII7O
+  O7IIIIIIIIIIIIIIIIIII7ZN
+   8$IIIIIIIIIIIIIIIIIII7
+     NO$IIIIIIIIII777IIIIN
+            7DZIZ     7I$
+          NOI7N        7Z
+           8NZ
+            7K
+
+Checking out the source code, eh? Check out the git repository:
+https://github.com/chrisburnell/chrisburnell.github.io
+Contact me if you want to know more about the code, or if you want to use a
+piece of code on a project of your own. -->
+
+<html lang="en" class="home-page">
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 
+    <!-- Prefetch DNS for external assets (Google Analytics, Disqus, Typekit, Twitter) -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//mediacdn.disqus.com">
+    <link rel="dns-prefetch" href="//use.typekit.net">
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
 
-    <title>Chris Burnell &ndash; 404</title>
+    <title>Chris Burnell &ndash; Page not found</title>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.min.css">
-    <link rel="stylesheet" href="/css/ravenous.min.css">
-    <link rel="alternate" type="application/rss+xml" href="http://chrisburnell.com/feed.xml">
+    <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- full version is at {{ site.url }}/css/ravenous.scss -->
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <link rel="shortcut icon" href="/icon.png">
     <link rel="apple-touch-icon-precomposed" href="/icon.png">
 
     <script type="text/javascript">
-      (function() {
-        var config = {
-            kitId: 'bbn1puz',
-            scriptTimeout: 5000
-        };
-        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-      })();
+        (function() {
+            var config = {
+                kitId: 'bbn1puz',
+                scriptTimeout: 5000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+        })();
     </script>
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
 
-    <meta name="apple-mobile-web-app-title" content="chrisburnell">
-    <meta name="description" content="I’m Chris Burnell, a Canadian front-end web developer living in London, UK. This is where I write about and share my true passion: CSS architecture, design, innovation, and standards.">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="description" content="I’m a Canadian user interface developer living in London, UK. This is where I write about and share my passion: CSS architecture, design, innovations, standards, and user experience.">
+    <meta name="apple-mobile-web-app-title" content="Chris Burnell - Page not found">
+
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="robots" content="noindex, nofollow">
@@ -39,11 +70,12 @@
 <body>
 
     <header class="wrap  clear">
-        <a rel="home" class="logo" href="http://chrisburnell.com"><span>Chris Burnell</span></a>
+        <a rel="home" class="logo" href="{{ site.url }}"><span>Chris Burnell</span></a>
         <nav role="navigation">
-            <ul class="site-nav">
-                <li class="site-nav-home"><a rel="home" href="/" title="Home">Home</a></li><!--
-             --><li class="site-nav-archive"><a href="/archive" title="Article Archive">Archive</a></li>
+            <ul class="site-navigation">
+                <li class="site-navigation-home"><a rel="home" href="/" title="Home">Home</a></li><!--
+             --><li class="site-navigation-about"><a href="/about" title="About me">About</a></li><!--
+             --><li class="site-navigation-archive"><a href="/archive" title="Articles Archive">Archive</a></li>
             </ul>
         </nav>
     </header>
@@ -51,27 +83,42 @@
     <section class="content  wrap  clear">
         <section class="articles">
 
-            <h1>404 &ndash; Page not found</h1>
-            <p>Sorry, it looks like the page you requested cannot be found&mdash;please head back to <a href="http://chrisburnell.com/">the homepage</a>.</p>
+            <h1 class="site-tagline" role="banner">404 &ndash; Page not found</h1>
+
+            <aside class="author" role="complementary">
+                <div class="author-information">
+                    <img src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" class="author-image" alt="">
+                    <div class="author-name">about <strong>Chris Burnell</strong></div>
+                    <div class="author-age">I’m <strong>23</strong> years old</div>
+                    <div class="author-employer">I work at <a rel="employer" href="http://squiz.net" title="Squiz UK">Squiz UK</a></div>
+                </div>
+                <div class="author-biography">
+                    <p>I’m a Canadian user interface developer living in London, UK. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="{{ site.url }}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
+                    <p>I also <a rel="me publisher" class="twitter-link" href="http://twitter.com/iamchrisburnell" title="Chris Burnell on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="http://codepen.io/chrisburnell" title="Chris Burnell on Codepen">write code</a>, and <a rel="me publisher" class="lastfm-link" href="http://last.fm/user/chrisburnell" title="Chris Burnell on Last.FM">listen to music</a> if my whimsical articles don’t capture your child-like wonder.</p>
+                </div>
+            </aside>
+
+            <p>Sorry, it looks like the page you requested cannot be found&mdash;if you were linked here, please drop me a line and let me know: me@chrisburnell.com. If you're stuck, head back to <a href="http://chrisburnell.com" title="Homepage">the homepage</a>.</p>
 
         </section>
     </section>
 
     <footer>
         <section class="footer-container  wrap  clear">
-            <div class="footer-copyright">
+            <div class="copyright" role="contentinfo">
                 <a rel="home" class="home-link" href="/" title="Home">Home</a> <a rel="license" class="copyright-link" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" title="Creative Commons License">&copy; 2013 Chris Burnell</a>
             </div>
-            <ul class="footer-social">
-                <li><a rel="me publisher" class="twitter-link" href="http://twitter.com/iamchrisburnell" title="Chris Burnell on Twitter">Twitter</a></li>
-                <li><a rel="me publisher" class="codepen-link" href="http://codepen.io/chrisburnell" title="Chris Burnell on CodePen">CodePen</a></li>
-                <li><a rel="me publisher" class="lastfm-link" href="http://last.fm/user/chrisburnell" title="Chris Burnell on Last.FM">Last.FM</a></li>
-                <!--li><a rel="me author" class="rss-link" href="http://chrisburnell.com/feed.xml" title="RSS">RSS</a></li-->
+            <ul class="social-icons">
+                <li><a rel="me publisher" class="social-icon  twitter-link" href="http://twitter.com/iamchrisburnell" title="Chris Burnell on Twitter">Twitter</a></li>
+                <li><a rel="me publisher" class="social-icon  codepen-link" href="http://codepen.io/chrisburnell" title="Chris Burnell on CodePen">CodePen</a></li>
+                <li><a rel="me publisher" class="social-icon  lastfm-link" href="http://last.fm/user/chrisburnell" title="Chris Burnell on Last.FM">Last.FM</a></li>
+                <li><a rel="me author" class="social-icon  rss-link" href="{{ site.url }}/feed.xml" title="RSS">RSS</a></li>
             </ul>
         </section>
     </footer>
 
     <script type="text/javascript">
+        // Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-10353655-1']);
         _gaq.push(['_trackPageview']);

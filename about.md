@@ -14,4 +14,4 @@ I’m just going to list stuff I care about: semantic code, web standards and be
 
 ### Want to get in touch?
 
-The best way to get in touch is through my email, me@chrisburnell.com.
+The best way to get in touch is through my email, {{ site.email }}.

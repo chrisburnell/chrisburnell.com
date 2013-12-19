@@ -1,22 +1,20 @@
 title: Chris Burnell
 description: "I’m a Canadian user interface developer living in London, UK. This is where I write about and share my passion: CSS architecture, design, innovations, standards, and user experience."
+tagline: "I’m ravenous for CSS"
 author: Chris Burnell
 url: http://chrisburnell.com
 employer: Squiz UK
 employer_url: http://squiz.net
 timezone: Europe/London
 
+email: me@chrisburnell.com
 twitter_user: iamchrisburnell
 twitter_url: http://twitter.com/iamchrisburnell
 codepen_url: http://codepen.io/chrisburnell
 lastfm_url: http://last.fm/user/chrisburnell
 
 destination: ./_site
-plugins: ./_plugins
 layouts: ./_layouts
-
-include: ['.htaccess']
-exclude: []
 
 future: false
 permalink: /articles/:title

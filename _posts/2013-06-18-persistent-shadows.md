@@ -2,7 +2,6 @@
 layout: article
 date: 2013-06-18 02:45:00
 title: Persistent Shadows
-slug: persistent-shadows
 introduction: How easy is it to keep a shadow’s direction consistent whilst rotating an element?
 tags:
 - CodePen

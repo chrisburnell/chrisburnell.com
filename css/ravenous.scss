@@ -114,13 +114,15 @@ a {
     h2 a,
     h3 a {
         color: $text-color;
-        display: inline-block;
+    }
+    h3 a {
+        text-decoration: underline;
     }
         h1 a:hover, h1 a:focus, h1 a:active,
         h2 a:hover, h2 a:focus, h2 a:active,
         h3 a:hover, h3 a:focus, h3 a:active {
             color: $blue;
-            text-decoration: none;
+            text-decoration: underline;
         }
 img,
 a img {
@@ -192,14 +194,18 @@ dfn[title] {
     q {
         quotes: "“" "”" "‘" "’";
     }
+
     article blockquote {
-        margin-bottom: 1em;
+        margin: 1em 2.5em;
     }
     aside blockquote {
         padding: 1em 0;
         border-top: .286em solid $blue;
         border-bottom: .286em solid $blue;
     }
+        blockquote p {
+            margin-bottom: 0 !important;
+        }
         blockquote p:before {
             content: open-quote;
             padding-right: .1875em;
@@ -208,15 +214,24 @@ dfn[title] {
             content: close-quote;
             padding-left: .1875em;
         }
+        blockquote + p .citation {
+            margin-left: 2.5em;
+        }
     .pullquote {
-        font-size: 2em;
+        font-size: 1.5em;
         line-height: 1.25em;
     }
+        blockquote + p .citation,
         .pullquote .citation {
-            clear: both;
             margin-top: 1em;
-            font-size: .5em;
         }
+        .pullquote .citation {
+            font-size: .667em;
+        }
+            blockquote + p .citation:before,
+            .pullquote .citation:before {
+                content: "\2014\00a0";
+            }
 hr {
     background: $gray-10;
     width: 100%;
