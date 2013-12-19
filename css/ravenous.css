@@ -602,6 +602,7 @@ article,
 .article-link a {
   -webkit-transition: border-color .2s ease-in-out;
   transition: border-color .2s ease-in-out;
+  display: inline-block;
   padding: 0 .25em;
   border-bottom: .1875em solid transparent;
   margin: 0 0 .35em -0.25em;
@@ -610,6 +611,7 @@ article,
 .article-link a:hover, .article-link a:focus, .article-link a:active {
   color: #4f4f4f;
   border-bottom-color: #5f8aa6;
+  text-decoration: none;
 }
 
 .article-date,
