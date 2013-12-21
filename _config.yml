@@ -3,16 +3,17 @@ description: "I’m a Canadian user interface developer living in London, UK. Th
 tagline: "I’m ravenous for CSS"
 author: Chris Burnell
 url: http://chrisburnell.com
-employer: Squiz UK
-employer_url: http://squiz.net
-timezone: Europe/London
-
 email: me@chrisburnell.com
 twitter_user: iamchrisburnell
+
+employer: Squiz UK
+employer_url: http://squiz.net
+
 twitter_url: http://twitter.com/iamchrisburnell
 codepen_url: http://codepen.io/chrisburnell
 lastfm_url: http://last.fm/user/chrisburnell
 
+timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
 
