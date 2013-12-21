@@ -20,7 +20,7 @@
                     <h3>Related Articles</h3>
                     <ul>{% for post in site.related_posts limit:2 %}
                         <li>
-                            <a class="related-title" href="{{ post.url }}#disqus_thread" title="{{ post.title }}">{{ post.title }}</a>
+                            <a class="related-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                             <time class="related-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         </li>{% endfor %}
                     </ul>
