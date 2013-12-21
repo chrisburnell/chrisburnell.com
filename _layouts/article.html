@@ -7,7 +7,7 @@
 
             <aside class="author" role="complementary">
                 <div class="author-information">
-                    <img src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" class="author-image" alt="">
+                    <img class="author-image" src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" alt="">
                     <div class="author-name">by <strong>{{ site.author }}</strong></div>
                     <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.tags %}
                     <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>{% endif %}
