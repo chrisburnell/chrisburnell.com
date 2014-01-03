@@ -46,7 +46,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'images/',
-                    src: ['*.svg'],
+                    src: ['*.svg', '!*.min.svg'],
                     dest: 'images/',
                     ext: '.min.svg'
                 }]
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         watch: {
             all: {
                 files: ['css/*.scss', '_posts/*.md', 'images/*'],
-                tasks: ['newer:sass:all', 'newer:cssmin:all', 'newer:imagemin', 'newer:svgmin']
+                tasks: ['newer:sass', 'newer:cssmin', 'newer:imagemin', 'newer:svgmin']
             }
         },
 
@@ -71,5 +71,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
     // Register Tasks
-    grunt.registerTask('default', ['sass', 'cssmin']);
+    grunt.registerTask('default', ['newer:sass', 'newer:cssmin']);
 };

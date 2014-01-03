@@ -135,9 +135,6 @@ a img {
 strong {
     font-weight: 600;
 }
-sup {
-    top: -0.3em;
-}
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; /* so that elements can be floated inside headings */
     padding: 0;
@@ -191,11 +188,9 @@ dfn[title] {
         border-bottom: 1px dotted $text-color-alt;
         cursor: help;
     }
-    blockquote,
-    q {
-        quotes: "“" "”" "‘" "’";
+    blockquote {
+        quotes: "\201C" "\201D" "\2018" "\2019";
     }
-
     article blockquote {
         margin: 1em 2.5em;
     }
