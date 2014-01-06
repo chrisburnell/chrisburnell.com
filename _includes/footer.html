@@ -13,12 +13,12 @@
     </footer>
 
     {% if page.layout == "article" %}<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    {% endif %}<script type="text/javascript">
+    {% endif %}<script type="text/javascript">{% if page.layout == "article" %}
         // Remove the strong tags from the "and" in the tags list on articles
         var articleTags = document.getElementsByClassName('article-tags');
         for (var i = 0; i < articleTags.length; i++) {
             articleTags[i].innerHTML = articleTags[i].innerHTML.replace('and','</strong>and<strong>');
-        };
+        };{% endif %}
         // Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-10353655-1']);
