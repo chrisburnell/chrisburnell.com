@@ -6,5 +6,8 @@ http://chrisburnell.com
 
 /* SITE */
 
-Standards: HTML5, CSS3, jQuery 2.0
+Language: English
+Doctype: HTML5
+Built with: HTML5, CSS3, Javascript
 Running on: Jekyll, Github Pages
+Last updated: {{ site.time | date_to_long_string }}
