@@ -57,13 +57,17 @@ module.exports = function(grunt) {
             all: {
                 files: ['css/*.scss', '_posts/*.md', 'images/*'],
                 tasks: ['newer:sass', 'newer:cssmin', 'newer:imagemin', 'newer:svgmin']
+            },
+            sass: {
+                files: ['css/*.scss'],
+                tasks: ['newer:sass', 'newer:cssmin']
             }
         },
 
     });
 
     // Load Plugins
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -72,4 +76,5 @@ module.exports = function(grunt) {
 
     // Register Tasks
     grunt.registerTask('default', ['newer:sass', 'newer:cssmin']);
+
 };
