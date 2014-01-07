@@ -5,9 +5,9 @@ module.exports = function(grunt) {
 
         sass: {
             all: {
-                options: {
-                    style: 'expanded'
-                },
+                /*options: {
+                    outputStyle: 'expanded'
+                },*/
                 files: [{
                     expand: true,
                     cwd: 'css/',
@@ -75,6 +75,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
     // Register Tasks
-    grunt.registerTask('default', ['newer:sass', 'newer:cssmin']);
+    grunt.registerTask('default', ['sass', 'cssmin']);
 
 };
