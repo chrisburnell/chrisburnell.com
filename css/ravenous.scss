@@ -2,13 +2,12 @@
 @import "normalize.css";
 /**
  * Ravenous
- * The sixth iteration design of chrisburnell.com.
  * by Chris Burnell (@iamchrisburnell)
- *
+ * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
- */
-
-/**
+ *
+ * Table of Contents:
+ *
  * TYPEKIT PRELOAD........... Import the font-families from Typekit.
  * GENERAL AND TYPOGRAPHY.... Set the default element styles.
  * BUTTONS................... Set the default button styles.
@@ -20,20 +19,40 @@
  * CODE BLOCKS............... Set the code block styles.
  * FOOTER.................... Set the footer styles.
  * MISCELLANEOUS............. Miscellaneous site-wide styles.
- * MEDIA QUERIES............. Create the media query breakpoints.
  */
 
 
-$blue:                  #5F8AA6;
-$off-white:             #F9F9F9;
-$text-color:            #4f4f4f;
-$text-color-alt:        #737373;
-$text-color-light:      #DDDDDD;
-$gray-5:                rgba(6, 6, 6, .05);
-$gray-10:               rgba(6, 6, 6, .1);
-$gray-25:               rgba(6, 6, 6, .25);
-$off-white-25:          rgba(249, 249, 249, .25);
+// Colour Palette
+$blue:             #5F8AA6;
+$white:            #F9F9F9;
+$text-color:       #4f4f4f;
+$text-color-alt:   #737373;
+$text-color-light: #DDDDDD;
+$black-5:          rgba(6, 6, 6, .05);
+$black-10:         rgba(6, 6, 6, .1);
+$black-25:         rgba(6, 6, 6, .25);
+$white-25:         rgba(249, 249, 249, .25);
 
+// Font Stack
+$base-font-size:       16px;
+$primary-font-stack:   "ff-meta-serif-web-pro", serif;
+$secondary-font-stack: "proxima-nova", sans-serif;
+$heading-font-stack:   "league-gothic", sans-serif;
+$code-font-stack:      Monaco, "Courier New", monospace;
+
+// Wrapper Widths
+$max-wrapper-width: 1080px;
+$wrapper-padding:   1.25em;
+
+// CSS3 Mixins
+@mixin breakpoint($width) {
+    @if $width == "tablet" {
+        @media (max-width: 48em) { @content ; }
+    }
+    @else if $width == "phone" {
+        @media (max-width: 31.25em) { @content ; }
+    }
+}
 @mixin gradient($top, $bottom) {
     background-image: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
     background-image:    -moz-linear-gradient(top, $top 0%, $bottom 100%);
@@ -87,19 +106,28 @@ body {
     min-height: 100%;
 }
 body {
-    background-color: $off-white;
+    background-color: $white;
     color: $text-color;
     position: relative;
-    font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
+    font: 400 normal #{$base-font-size}/1.618em $primary-font-stack;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 .wrap {
     width: auto;
-    max-width: 1080px;
-    padding: 0 1.25em;
+    max-width: $max-wrapper-width;
+    padding: 0 $wrapper-padding;
     margin-right: auto;
     margin-left: auto;
+    @include breakpoint("phone") {
+        /**
+         * Let's make intelligent use of the phone viewport and reduce the padding
+         * on either side of the wrapper. We can't remove it or the text will sit
+         * right at the edge, creating a readability issue.
+         */
+        padding-right: .625em;
+        padding-left: .625em;
+    }
 }
 
 a {
@@ -142,20 +170,20 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2em;
 }
 h1 {
-    font-family: "league-gothic", sans-serif;
+    font-family: $heading-font-stack;
     font-size: 2.625em;
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 $gray-5;
+    text-shadow: .0714em .0714em 0 $black-5;
 }
 h2 {
-    font-family: "ff-meta-serif-web-pro", sans-serif;
+    font-family: $primary-font-stack;
     font-size: 1.625em;
-    text-shadow: 0 -1px 0 $off-white-25;
+    text-shadow: 0 -1px 0 $white-25;
 }
 h3,
 .articles-list .article-date {
-    font-family: "proxima-nova", serif;
-    font-size: 1em; /* 16px -- override browser default */
+    font-family: $secondary-font-stack;
+    font-size: 1em; /* #{$base-font-size} -- override browser default */
     font-weight: 600;
     line-height: 1.618em;
     text-transform: uppercase;
@@ -228,7 +256,7 @@ dfn[title] {
                 content: "\2014\00a0";
             }
 hr {
-    background: $gray-10;
+    background: $black-10;
     width: 100%;
     height: .25em;
     display: block;
@@ -255,28 +283,28 @@ article,
 
 button,
 .button {
-    @include gradient(transparent, $gray-5);
+    @include gradient(transparent, $black-5);
     @include transition("background-color .2s ease-in-out");
     background-color: $blue;
-    color: $off-white !important;
+    color: $white !important;
     min-width: 6em;
     height: 1.91em;
     display: inline-block;
     padding: 0 .727em;
     margin-bottom: .364em;
     position: relative;
-    font-family: "league-gothic", sans-serif;
+    font-family: $heading-font-stack;
     font-size: 1.375em;
     line-height: 1.91em;
     text-align: center;
     text-decoration: none !important;
     text-transform: uppercase;
-    text-shadow: 0 -0.045em 0 $gray-25;
+    text-shadow: 0 -0.045em 0 $black-25;
     white-space: nowrap;
     cursor: pointer;
     border-radius: .182em;
-    box-shadow: inset 0 0 .091em $gray-10,
-                inset 0 .045em 0 $off-white-25,
+    box-shadow: inset 0 0 .091em $black-10,
+                inset 0 .045em 0 $white-25,
                 0 .182em 0 darken($blue, 10%);
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -285,16 +313,16 @@ button,
     button:hover, button:focus,
     .button:hover, .button:focus {
         background-color: lighten($blue, 10%);
-        box-shadow: inset 0 0 .091em $gray-10,
-                    inset 0 .045em 0 $off-white-25,
+        box-shadow: inset 0 0 .091em $black-10,
+                    inset 0 .045em 0 $white-25,
                     0 .182em 0 darken($blue, 7.5%);
     }
     button:active,
     .button:active {
-        @include gradient($gray-5, transparent);
+        @include gradient($black-5, transparent);
         top: .137em;
-        box-shadow: inset 0 .091em .273em $gray-25,
-                    inset 0 -0.045em 0 $off-white-25,
+        box-shadow: inset 0 .091em .273em $black-25,
+                    inset 0 -0.045em 0 $white-25,
                     0 .046em 0 darken($blue, 7.5%);
     }
     button:before,
@@ -323,6 +351,13 @@ button,
 
 header {
     height: 110px;
+    @include breakpoint("tablet") {
+        /**
+         * Center the logo and make room for the navigation to drop underneath.
+         */
+        height: 170px;
+        text-align: center;
+    }
 }
     .logo {
         @include transition("none");
@@ -332,15 +367,23 @@ header {
         float: left;
         padding-left: 100px;
         position: relative;
-        font-family: "league-gothic", sans-serif;
+        font-family: $heading-font-stack;
         font-size: 3.25em;
         line-height: 110px;
         text-transform: uppercase;
-        text-shadow: .058em .058em 0 $gray-5;
+        text-shadow: .058em .058em 0 $black-5;
         z-index: 1;
         -webkit-user-select: none;
            -moz-user-select: none;
                 user-select: none;
+        @include breakpoint("tablet") {
+            height: 90px;
+            display: inline-block;
+            float: none;
+        }
+        @include breakpoint("phone") {
+            font-size: 2.25em;
+        }
     }
         .logo:active {
             top: .039em;
@@ -396,11 +439,20 @@ header {
 nav {
     float: right;
     margin-top: 20px;
+    @include breakpoint("tablet") {
+        width: 100%;
+        float: none;
+        margin-top: 0;
+    }
 }
     .site-navigation {
         height: 3.75em;
         float: right;
         list-style: none;
+        @include breakpoint("tablet") {
+            float: none;
+            text-align: center;
+        }
     }
         .site-navigation li {
             height: 40px;
@@ -408,6 +460,10 @@ nav {
             float: left;
             padding: .375em 0;
             text-align: center;
+            @include breakpoint("tablet") {
+                display: inline-block;
+                float: none;
+            }
         }
             .site-navigation li + li {
                 margin-left: 1em;
@@ -419,7 +475,7 @@ nav {
                 padding: .75em;
                 border-bottom: 0px solid $blue;
                 position: relative;
-                font-family: "league-gothic", sans-serif;
+                font-family: $heading-font-stack;
                 font-size: 1.25em;
                 line-height: 1.25em;
                 text-transform: uppercase;
@@ -473,7 +529,25 @@ article,
 .articles {
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
+    @include breakpoint("tablet") {
+        /**
+         * When you hit the tablet media query, articles, article lists, and asides
+         * become full width and the author information aside pushes to the bottom
+         * in browsers that support the latest iteration of flexbox.
+         */
+        display: -webkit-flex;
+        display:         flex;
+        padding-left: 0;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+    }
 }
+
+    @include breakpoint("tablet") {
+        article {
+            margin-bottom: 0;
+        }
+    }
     .articles-list {
         list-style: none;
     }
@@ -482,10 +556,16 @@ article,
             display: inline-block;
             clear: both;
             padding: 1.5em 0;
-            border-top: .25em solid $gray-10;
+            border-top: .25em solid $black-10;
         }
             .articles-list li:last-child {
                 padding-bottom: 0;
+            }
+            .articles-list li,
+            .articles-list li:last-child {
+                @include breakpoint("tablet") {
+                    padding: 2.25em 0;
+                }
             }
     .article-title,
     .site-tagline {
@@ -496,6 +576,9 @@ article,
         margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
         margin-bottom: .8em;
         line-height: 1.4em;
+        @include breakpoint("tablet") {
+            margin-bottom: 1.385em;
+        }
     }
     .article-introduction {
         font-size: 1.25em;
@@ -555,6 +638,9 @@ article,
 
 .pagination {
     width: 100%;
+    @include breakpoint("phone") {
+        text-align: center;
+    }
 }
     .pagination .prev-link {
         float: left;
@@ -565,11 +651,20 @@ article,
         }
     .pagination .next-link {
         float: right;
+        @include breakpoint("phone") {
+            margin-top: .5em;
+        }
     }
         .pagination .next-link:after {
             content: "\00a0\2192";
             position: relative; /* override the button:after fix */
         }
+    @include breakpoint("phone") {
+        .pagination .prev-link,
+        .pagination .next-link {
+            float: none;
+        }
+    }
 
 
 /*------------------------------------*\
@@ -584,19 +679,39 @@ aside {
     width: 15.1875em;
     float: left;
     margin-left: -16.875em;
+    @include breakpoint("tablet") {
+        width: 100%;
+        float: none;
+        margin: 0 0 1em;
+    }
 }
     aside p {
         clear: both;
         margin-bottom: .5em;
         font-size: .875em;
+        @include breakpoint("phone") {
+            font-size: 1em;
+        }
     }
         aside blockquote p {
             margin-bottom: 0;
         }
     .author,
     .related-articles {
-        font-family: "proxima-nova", sans-serif;
+        font-family: $secondary-font-stack;
     }
+        @include breakpoint("tablet") {
+            .author {
+                padding-top: 2.25em;
+                border-top: .25em solid $black-10;
+                margin-bottom: 0;
+                -webkit-order: 999;
+                        order: 999;
+            }
+            .page-about .author {
+                margin-top: 2.25em;
+            }
+        }
         .author a {
             color: $blue;
         }
@@ -607,14 +722,14 @@ aside {
             width: 100%;
             float: left;
             margin-bottom: .5em;
-            font-family: "ff-meta-serif-web-pro", serif;
+            font-family: $primary-font-stack;
             font-size: .875em;
             font-style: italic;
         }
             .author-information a,
             .author-information strong,
             .author-information time {
-                font-family: "proxima-nova";
+                font-family: $secondary-font-stack;
                 font-weight: 600;
                 font-style: normal;
                 text-transform: uppercase;
@@ -645,7 +760,7 @@ aside {
             }
         .related-articles {
             padding-top: 1em;
-            border-top: .25em solid $gray-10;
+            border-top: .25em solid $black-10;
             margin-top: 1em;
         }
             .related-articles ul {
@@ -668,7 +783,7 @@ aside {
 
 .comments {
     padding-top: 1em;
-    border-top: .25em solid $gray-10;
+    border-top: .25em solid $black-10;
     margin-top: 2em;
 }
 
@@ -678,7 +793,7 @@ aside {
 \*------------------------------------*/
 
 code {
-    font-family: Monaco, "Courier New", monospace;
+    font-family: $code-font-stack;
     font-size: .8125em;
 }
     p > code {
@@ -689,9 +804,9 @@ pre {
     margin: 0 0 1em;
 }
 pre:not(.codepen) {
-    @include gradient(transparent, $gray-25);
+    @include gradient(transparent, $black-25);
     background-color: $text-color;
-    color: $off-white;
+    color: $white;
     padding: .714em;
     position: relative;
     overflow: hidden;
@@ -705,22 +820,31 @@ pre:not(.codepen) {
 \*------------------------------------*/
 
 footer {
-    @include gradient(transparent, $gray-10);
+    @include gradient(transparent, $black-10);
     background-color: $text-color;
     color: $text-color-light;
     width: auto;
     height: 40px;
     padding: 2.572em 0;
     border-top: .286em solid $blue;
-    font-family: "proxima-nova", sans-serif;
+    font-family: $secondary-font-stack;
     font-size: .875em;
     font-weight: 600;
     text-transform: uppercase;
+    @include breakpoint("phone") {
+        height: 85px;
+        padding: 2em 0;
+    }
 }
     .copyright,
     .social-icons {
         float: left;
         overflow: hidden;
+        @include breakpoint("phone") {
+            width: 100%;
+            float: none;
+            text-align: center;
+        }
     }
         .copyright a {
             display: inline-block;
@@ -751,6 +875,9 @@ footer {
             }
         .social-icons {
             float: right;
+            @include breakpoint("phone") {
+                margin-top: .625em;
+            }
         }
             .social-icons li {
                 display: inline-block;
@@ -813,125 +940,9 @@ footer {
     100% { opacity: 1; }
 }
 
-::-webkit-selection { background: $blue; color: $off-white; }
-   ::-moz-selection { background: $blue; color: $off-white; }
-        ::selection { background: $blue; color: $off-white; }
+::-webkit-selection { background: $blue; color: $white; }
+   ::-moz-selection { background: $blue; color: $white; }
+        ::selection { background: $blue; color: $white; }
     code::-webkit-selection { background: black; color: white; text-shadow: none; }
        code::-moz-selection { background: black; color: white; text-shadow: none; }
             code::selection { background: black; color: white; text-shadow: none; }
-
-
-/*------------------------------------*\
-    $    MEDIA QUERIES
-    i    Tablet - 767px
-    ii   Mobile - 500px
-\*------------------------------------*/
-
-@media (max-width: 767px) {
-    /**
-     * Center the logo and make room for the navigation to drop underneath.
-     */
-    header {
-        height: 170px;
-        text-align: center;
-    }
-        .logo {
-            height: 90px;
-            display: inline-block;
-            float: none;
-        }
-        nav {
-            width: 100%;
-            float: none;
-            margin-top: 0;
-        }
-            /**
-             * Center the navigation items.
-             */
-            .site-navigation {
-                float: none;
-                text-align: center;
-            }
-                .site-navigation li {
-                    display: inline-block;
-                    float: none;
-                }
-    /**
-     * When you hit the tablet media query, articles, article lists, and asides
-     * become full width and the author information aside pushes to the bottom
-     * in browsers that support the latest iteration of flexbox.
-     */
-    article,
-    .articles {
-        display: -webkit-flex;
-        display: flex;
-        padding-left: 0;
-        -webkit-flex-direction: column;
-                flex-direction: column;
-    }
-        article {
-            margin-bottom: 0;
-        }
-        .articles-list li,
-        .articles-list li:last-child {
-            padding: 2.25em 0;
-        }
-        .site-introduction {
-            margin-bottom: 1.385em;
-        }
-    aside {
-        width: 100%;
-        float: none;
-        margin: 0 0 1em;
-    }
-        .author {
-            padding-top: 2.25em;
-            border-top: .25em solid $gray-10;
-            margin-bottom: 0;
-            -webkit-order: 999;
-                    order: 999;
-        }
-            .page-about .author {
-                margin-top: 2.25em;
-            }
-}
-@media (max-width: 500px) {
-    /**
-     * Let's make intelligent use of the mobile viewport and reduce the padding
-     * on either side of the wrapper. We can't remove it or the text will sit
-     * right at the edge, creating a readability issue.
-     */
-    .wrap {
-        padding-right: .625em;
-        padding-left: .625em;
-    }
-    .logo {
-        font-size: 2.25em;
-    }
-    .pagination {
-        text-align: center;
-    }
-        .pagination .prev-link,
-        .pagination .next-link {
-            float: none;
-        }
-        .pagination .next-link {
-            margin-top: .5em;
-        }
-    aside p {
-        font-size: 1em;
-    }
-    footer {
-        height: 85px;
-        padding: 2em 0;
-    }
-        .copyright,
-        .social-icons {
-            width: 100%;
-            float: none;
-            text-align: center;
-        }
-            .social-icons {
-                margin-top: .625em;
-            }
-}

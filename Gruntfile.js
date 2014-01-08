@@ -5,9 +5,9 @@ module.exports = function(grunt) {
 
         sass: {
             all: {
-                /*options: {
-                    outputStyle: 'expanded'
-                },*/
+                options: {
+                    style: 'expanded'
+                },
                 files: [{
                     expand: true,
                     cwd: 'css/',
@@ -60,14 +60,14 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['css/*.scss'],
-                tasks: ['newer:sass', 'newer:cssmin']
+                tasks: ['sass', 'cssmin']
             }
         },
 
     });
 
     // Load Plugins
-    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
