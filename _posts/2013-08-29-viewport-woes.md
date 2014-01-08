@@ -9,9 +9,9 @@ tags:
 - Tutorials
 ---
 
-Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.
+*Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.*
 
-So [click here](#plain-and-simple) if you want to jump to the main bit.
+*So [click here](#plain-and-simple) if you want to jump to the main bit.*
 
 --------
 
