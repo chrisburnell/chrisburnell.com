@@ -3,6 +3,7 @@ layout: article
 date: 2013-06-16 03:58:00
 title: Annoying Navigation CSS
 introduction: Here’s a quick little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of.
+banner: annoying-navigation-css.png
 tags:
 - CodePen
 - CSS
