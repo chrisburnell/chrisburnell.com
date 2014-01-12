@@ -114,20 +114,20 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 .wrap {
-    width: auto;
-    max-width: $max-wrapper-width;
-    padding: 0 $wrapper-padding;
-    margin-right: auto;
-    margin-left: auto;
     @include breakpoint("phone") {
         /**
          * Let's make intelligent use of the phone viewport and reduce the padding
          * on either side of the wrapper. We can't remove it or the text will sit
          * right at the edge, creating a readability issue.
          */
-        padding-right: .625em;
-        padding-left: .625em;
+        padding-right: $wrapper-padding/2;
+        padding-left: $wrapper-padding/2;
     }
+    width: auto;
+    max-width: $max-wrapper-width;
+    padding: 0 $wrapper-padding;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 a {
@@ -309,26 +309,22 @@ button,
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
-}
-    button:hover, button:focus,
-    .button:hover, .button:focus {
+    &:hover,
+    &:focus {
         background-color: lighten($blue, 10%);
         box-shadow: inset 0 0 .091em $black-10,
                     inset 0 .045em 0 $white-25,
                     0 .182em 0 darken($blue, 7.5%);
     }
-    button:active,
-    .button:active {
+    &:active {
         @include gradient($black-5, transparent);
         top: .137em;
         box-shadow: inset 0 .091em .273em $black-25,
                     inset 0 -0.045em 0 $white-25,
                     0 .046em 0 darken($blue, 7.5%);
     }
-    button:before,
-    .button:before,
-    button:after,
-    .button:after {
+    &:before,
+    &:after {
         content: "";
         width: 100%;
         position: absolute;
@@ -336,13 +332,12 @@ button,
         bottom: -0.137em;
         left: 0;
     }
-        button:active:before,
-        .button:active:before,
-        button:active:after,
-        .button:active:after {
+        &:active:before,
+        &:active:after {
             top: -0.137em;
             bottom: 0;
         }
+}
 
 
 /*------------------------------------*\
@@ -350,7 +345,6 @@ button,
 \*------------------------------------*/
 
 header {
-    height: 110px;
     @include breakpoint("tablet") {
         /**
          * Center the logo and make room for the navigation to drop underneath.
@@ -358,9 +352,18 @@ header {
         height: 170px;
         text-align: center;
     }
+    height: 110px;
 }
     .logo {
         @include transition("none");
+        @include breakpoint("tablet") {
+            height: 90px;
+            display: inline-block;
+            float: none;
+        }
+        @include breakpoint("phone") {
+            font-size: 2.25em;
+        }
         color: $text-color;
         height: 110px;
         display: inline-block;
@@ -376,19 +379,10 @@ header {
         -webkit-user-select: none;
            -moz-user-select: none;
                 user-select: none;
-        @include breakpoint("tablet") {
-            height: 90px;
-            display: inline-block;
-            float: none;
-        }
-        @include breakpoint("phone") {
-            font-size: 2.25em;
-        }
-    }
-        .logo:active {
+        &:active {
             top: .039em;
         }
-        .logo:after {
+        &:after {
             @include translate3d("0, -0.808em, 0");
             @include animation("soaring 30s linear alternate infinite");
             @include animation-play-state("paused");
@@ -404,32 +398,36 @@ header {
             left: 0;
             z-index: -1;
         }
-            @-webkit-keyframes soaring {
-                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
-                12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
-                25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
-                37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
-                50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
-                62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
-                75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
-                87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-            }
-            @keyframes soaring {
-                0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
-                12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
-                25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
-                37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
-                50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
-                62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
-                75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
-                87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
-            }
-            /**
-             * Only animate when the user hovers the logo.
-             */
-            .logo:hover:after, .logo:focus:after, .logo:active:after {
-                @include animation-play-state("running");
-            }
+        /**
+         * Only animate when the user hovers the logo.
+         */
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+            @include animation-play-state("running");
+        }
+    }
+    @-webkit-keyframes soaring {
+        0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
+        12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
+        25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
+        37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
+        50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
+        62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
+        75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
+        87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
+    }
+    @keyframes soaring {
+        0%, 100% { -webkit-transform: translate3d(0, -0.8125em, 0); transform: translate3d(0, -0.8125em, 0); }
+        12.5% { -webkit-transform: translate3d(-0.0625em, -0.6875em, 0); transform: translate3d(-0.0625em, -0.6875em, 0); }
+        25% { -webkit-transform: translate3d(.125em, -0.3125em, 0); transform: translate3d(.125em, -0.3125em, 0); }
+        37.5% { -webkit-transform: translate3d(.3125em, -0.375em, 0); transform: translate3d(.3125em, -0.375em, 0); }
+        50% { -webkit-transform: translate3d(.125em, -0.4375em, 0); transform: translate3d(.125em, -0.4375em, 0); }
+        62.5% { -webkit-transform: translate3d(.0625em, -0.25em, 0); transform: translate3d(.0625em, -0.25em, 0); }
+        75% { -webkit-transform: translate3d(.1875em, -0.4375em, 0); transform: translate3d(.1875em, -0.4375em, 0); }
+        87.5% { -webkit-transform: translate3d(-0.0625em, -0.5625em, 0); transform: translate3d(-0.0625em, -0.5625em, 0); }
+    }
+
 
 
 /*------------------------------------*\
@@ -437,75 +435,75 @@ header {
 \*------------------------------------*/
 
 nav {
-    float: right;
-    margin-top: 20px;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
         margin-top: 0;
     }
+    float: right;
+    margin-top: 20px;
 }
     .site-navigation {
-        height: 3.75em;
-        float: right;
-        list-style: none;
         @include breakpoint("tablet") {
             float: none;
             text-align: center;
         }
-    }
-        .site-navigation li {
+        height: 3.75em;
+        float: right;
+        list-style: none;
+        li {
+            @include breakpoint("tablet") {
+                display: inline-block;
+                float: none;
+            }
             height: 40px;
             display: inline-block;
             float: left;
             padding: .375em 0;
             text-align: center;
-            @include breakpoint("tablet") {
-                display: inline-block;
-                float: none;
+        }
+        li + li {
+            margin-left: 1em;
+        }
+        a {
+            @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
+            color: $text-color-alt;
+            display: block;
+            padding: .75em;
+            border-bottom: 0px solid $blue;
+            position: relative;
+            font-family: $heading-font-stack;
+            font-size: 1.25em;
+            line-height: 1.25em;
+            text-transform: uppercase;
+            &:active {
+                margin-top: .1em;
+                position: relative;
+                top: .1em;
+                line-height: 1.15em;
             }
         }
-            .site-navigation li + li {
-                margin-left: 1em;
-            }
-            .site-navigation a {
-                @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
-                color: $text-color-alt;
-                display: block;
-                padding: .75em;
-                border-bottom: 0px solid $blue;
-                position: relative;
-                font-family: $heading-font-stack;
-                font-size: 1.25em;
-                line-height: 1.25em;
-                text-transform: uppercase;
-            }
-                .site-navigation a:hover, .site-navigation a:focus,
-                .home-page .site-navigation-home a,
-                .about-page .site-navigation-about a,
-                .archive-page .site-navigation-archive a {
-                    color: $text-color;
-                    padding-bottom: 8px;
-                    border-bottom-width: 4px;
-                }
-                .home-page .site-navigation-home a:after,
-                .about-page .site-navigation-about a:after,
-                .archive-page .site-navigation-archive a:after {
-                    content: "";
-                    border-top: 5px solid $blue;
-                    border-right: 5px solid transparent;
-                    border-left: 5px solid transparent;
-                    margin-left: -3px;
-                    position: absolute;
-                    bottom: -0.4em;
-                    left: 48%;
-                }
-                .site-navigation a:active {
-                    margin-top: .1em;
-                    position: relative;
-                    top: .1em;
-                    line-height: 1.15em;
-                }
+    }
+        .site-navigation a:hover, .site-navigation a:focus,
+        .home-page .site-navigation-home a,
+        .about-page .site-navigation-about a,
+        .archive-page .site-navigation-archive a {
+            color: $text-color;
+            padding-bottom: 8px;
+            border-bottom-width: 4px;
+        }
+        .home-page .site-navigation-home a:after,
+        .about-page .site-navigation-about a:after,
+        .archive-page .site-navigation-archive a:after {
+            content: "";
+            border-top: 5px solid $blue;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            margin-left: -3px;
+            position: absolute;
+            bottom: -0.4em;
+            left: 48%;
+        }
 
 
 /*------------------------------------*\
@@ -527,8 +525,6 @@ nav {
  */
 article,
 .articles {
-    padding: 2.25em 0 0 16.875em;
-    border-top: .25em solid $blue;
     @include breakpoint("tablet") {
         /**
          * When you hit the tablet media query, articles, article lists, and asides
@@ -541,8 +537,9 @@ article,
         -webkit-flex-direction: column;
                 flex-direction: column;
     }
+    padding: 2.25em 0 0 16.875em;
+    border-top: .25em solid $blue;
 }
-
     @include breakpoint("tablet") {
         article {
             margin-bottom: 0;
@@ -550,35 +547,35 @@ article,
     }
     .articles-list {
         list-style: none;
-    }
-        .articles-list li {
+        li {
+            @include breakpoint("tablet") {
+                padding: 2.25em 0;
+            }
             width: 100%;
             display: inline-block;
             clear: both;
             padding: 1.5em 0;
             border-top: .25em solid $black-10;
-        }
-            .articles-list li:last-child {
-                padding-bottom: 0;
-            }
-            .articles-list li,
-            .articles-list li:last-child {
+            &:last-child {
                 @include breakpoint("tablet") {
                     padding: 2.25em 0;
                 }
+                padding-bottom: 0;
             }
+        }
+    }
     .article-title,
     .site-tagline {
         margin-bottom: .4em;
     }
     .site-introduction {
+        @include breakpoint("tablet") {
+            margin-bottom: 1.385em;
+        }
         max-width: 24em;
         margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
         margin-bottom: .8em;
         line-height: 1.4em;
-        @include breakpoint("tablet") {
-            margin-bottom: 1.385em;
-        }
     }
     .article-introduction {
         font-size: 1.25em;
@@ -592,19 +589,19 @@ article,
     }
     .article-link {
         width: 100%;
-    }
-        .article-link a {
+        a {
             @include transition("border-color .2s ease-in-out");
             display: inline-block;
             padding: 0 .25em;
             border-bottom: .1875em solid transparent;
             margin: 0 0 .35em -0.25em;
-        }
-            .article-link a:hover, .article-link a:focus, .article-link a:active {
+            &:hover, &:focus, &:active {
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;
             }
+        }
+    }
     .article-date,
     .related-date {
         display: block; /* <time> element */
@@ -625,46 +622,44 @@ article,
     padding-bottom: 56.65%;
     position: relative;
     overflow: hidden;
-}
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
+    iframe,
+    object,
+    embed {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
     }
+}
 
 .pagination {
-    width: 100%;
     @include breakpoint("phone") {
         text-align: center;
     }
-}
-    .pagination .prev-link {
+    width: 100%;
+    .prev-link {
+        @include breakpoint("phone") {
+            float: none;
+        }
         float: left;
-    }
-        .pagination .prev-link:before {
+        &:before {
             content: "\2190\00a0";
             position: relative; /* override the button:before fix */
         }
-    .pagination .next-link {
-        float: right;
+    }
+    .next-link {
         @include breakpoint("phone") {
+            float: none;
             margin-top: .5em;
         }
-    }
-        .pagination .next-link:after {
+        float: right;
+        &:after {
             content: "\00a0\2192";
             position: relative; /* override the button:after fix */
         }
-    @include breakpoint("phone") {
-        .pagination .prev-link,
-        .pagination .next-link {
-            float: none;
-        }
     }
+}
 
 
 /*------------------------------------*\
@@ -676,105 +671,107 @@ article,
  * list of articles. The math is calculated as in the Articles section.
  */
 aside {
-    width: 15.1875em;
-    float: left;
-    margin-left: -16.875em;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
         margin: 0 0 1em;
     }
-}
-    aside p {
-        clear: both;
-        margin-bottom: .5em;
-        font-size: .875em;
+    width: 15.1875em;
+    float: left;
+    margin-left: -16.875em;
+    p {
         @include breakpoint("phone") {
             font-size: 1em;
         }
+        clear: both;
+        margin-bottom: .5em;
+        font-size: .875em;
     }
-        aside blockquote p {
-            margin-bottom: 0;
-        }
-    .author,
-    .related-articles {
-        font-family: $secondary-font-stack;
+    blockquote p {
+        margin-bottom: 0;
     }
-        @include breakpoint("tablet") {
-            .author {
-                padding-top: 2.25em;
-                border-top: .25em solid $black-10;
-                margin-bottom: 0;
-                -webkit-order: 999;
-                        order: 999;
-            }
-            .page-about .author {
-                margin-top: 2.25em;
-            }
-        }
-        .author a {
-            color: $blue;
-        }
-            .author a:hover, .author a:focus, .author a:active {
-                text-decoration: underline;
-            }
-        .author-information {
-            width: 100%;
-            float: left;
-            margin-bottom: .5em;
-            font-family: $primary-font-stack;
-            font-size: .875em;
-            font-style: italic;
-        }
-            .author-information a,
-            .author-information strong,
-            .author-information time {
-                font-family: $secondary-font-stack;
-                font-weight: 600;
-                font-style: normal;
-                text-transform: uppercase;
-            }
-                .author-information a {
-                    color: inherit;
-                }
-            .author-image {
-                -webkit-background-clip: padding-box;
-                   -moz-background-clip: padding;
-                        background-clip: padding-box;
-                background-size: 100px 100px;
-                width: 100px;
-                height: 100px;
-                display: inline-block;
-                float: left;
-                margin-right: 10px;
-                border-radius: .1875em;
-            }
-            .article-tags {
-                display: table-cell; /* don't wrap around .author-image */
-                line-height: 1.429em;
-            }
-            .author-biography .codepen,
-            .author-biography .lastfm,
-            .author-biography .twitter {
-                background: none;
-            }
-        .related-articles {
-            padding-top: 1em;
+}
+.author,
+.related-articles {
+    font-family: $secondary-font-stack;
+}
+    @include breakpoint("tablet") {
+        .author {
+            padding-top: 2.25em;
             border-top: .25em solid $black-10;
-            margin-top: 1em;
+            margin-bottom: 0;
+            -webkit-order: 999;
+                    order: 999;
         }
-            .related-articles ul {
-                list-style: none;
-                line-height: 1.25em;
-            }
-                .related-title {
-                    font-weight: bold;
-                }
-                .related-date {
-                    padding-left: .75em;
-                    font-size: .8124em;
-                    font-style: italic;
-                }
+        .page-about .author {
+            margin-top: 2.25em;
+        }
+    }
+    .author a {
+        color: $blue;
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+    .author-information {
+        width: 100%;
+        float: left;
+        margin-bottom: .5em;
+        font-family: $primary-font-stack;
+        font-size: .875em;
+        font-style: italic;
+        a,
+        strong,
+        time {
+            font-family: $secondary-font-stack;
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        a {
+            color: inherit;
+        }
+    }
+    .author-image {
+        -webkit-background-clip: padding-box;
+           -moz-background-clip: padding;
+                background-clip: padding-box;
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        float: left;
+        margin-right: 10px;
+        border-radius: .1875em;
+    }
+    .article-tags {
+        display: table-cell; /* don't wrap around .author-image */
+        line-height: 1.429em;
+    }
+    .author-biography .codepen,
+    .author-biography .lastfm,
+    .author-biography .twitter {
+        background: none;
+    }
+    .related-articles {
+        padding-top: 1em;
+        border-top: .25em solid $black-10;
+        margin-top: 1em;
+        ul {
+            list-style: none;
+            line-height: 1.25em;
+        }
+    }
+    .related-title {
+        font-weight: bold;
+    }
+    .related-date {
+        padding-left: .75em;
+        font-size: .8124em;
+        font-style: italic;
+    }
 
 
 /*------------------------------------*\
@@ -821,6 +818,10 @@ pre:not(.codepen) {
 
 footer {
     @include gradient(transparent, $black-10);
+    @include breakpoint("phone") {
+        height: 85px;
+        padding: 2em 0;
+    }
     background-color: $text-color;
     color: $text-color-light;
     width: auto;
@@ -831,20 +832,16 @@ footer {
     font-size: .875em;
     font-weight: 600;
     text-transform: uppercase;
-    @include breakpoint("phone") {
-        height: 85px;
-        padding: 2em 0;
-    }
 }
     .copyright,
     .social-icons {
-        float: left;
-        overflow: hidden;
         @include breakpoint("phone") {
             width: 100%;
             float: none;
             text-align: center;
         }
+        float: left;
+        overflow: hidden;
     }
         .copyright a {
             display: inline-block;
@@ -874,36 +871,37 @@ footer {
                 color: $text-color-light;
             }
         .social-icons {
-            float: right;
             @include breakpoint("phone") {
                 margin-top: .625em;
             }
-        }
-            .social-icons li {
+            float: right;
+            li {
                 display: inline-block;
                 margin-left: .5em;
-            }
-                .social-icons li:first-child {
+                &:first-child {
                     margin-left: 0;
                 }
-                .social-icon {
-                    @include transition("opacity .2s ease-in-out");
-                    background-image: url("/images/glyphs.png");
-                    background-size: 120px 30px;
-                    opacity: .6;
-                    color: transparent;
-                    width: 30px;
-                    height: 30px;
-                    display: block;
-                    font-size: 0;
-                }
-                    .social-icon:hover, .social-icon:focus {
-                        opacity: .9;
-                    }
-                    .social-icon:active {
-                        position: relative;
-                        top: .14em;
-                    }
+            }
+        }
+        .social-icon {
+            @include transition("opacity .2s ease-in-out");
+            background-image: url("/images/glyphs.png");
+            background-size: 120px 30px;
+            opacity: .6;
+            color: transparent;
+            width: 30px;
+            height: 30px;
+            display: block;
+            font-size: 0;
+            &:hover,
+            &:focus {
+                opacity: .9;
+            }
+            &:active {
+                position: relative;
+                top: .14em;
+            }
+        }
 
 
 /*------------------------------------*\
@@ -926,10 +924,19 @@ footer {
     color: #007ba8 !important;
 }
 
-.clear { clear: both; overflow: hidden; zoom: 1; }
-    .clear:before,
-    .clear:after { content: ""; display: table; }
-    .clear:after { clear: both; }
+.clear {
+    clear: both;
+    overflow: hidden;
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 @-webkit-keyframes fade {
     0% { opacity: 0; }
