@@ -20,6 +20,17 @@ module.exports = function(grunt) {
             }
         },
 
+        csscomb: {
+            all: {
+                options: {
+                    config: 'css/csscomb-config.json'
+                },
+                files: {
+                    'css/ravenous.css': ['css/ravenous.css']
+                }
+            }
+        },
+
         cssmin: {
             all: {
                 expand: true,
@@ -56,11 +67,11 @@ module.exports = function(grunt) {
         watch: {
             all: {
                 files: ['css/*.scss', '_posts/*.md', 'images/*'],
-                tasks: ['newer:sass', 'newer:cssmin', 'newer:imagemin', 'newer:svgmin']
+                tasks: ['newer:sass', 'newer:csscomb', 'newer:cssmin', 'newer:imagemin', 'newer:svgmin']
             },
             sass: {
                 files: ['css/*.scss'],
-                tasks: ['sass', 'cssmin']
+                tasks: ['sass', 'csscomb', 'cssmin']
             }
         },
 
@@ -71,10 +82,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-csscomb');
     grunt.loadNpmTasks('grunt-svgmin');
     grunt.loadNpmTasks('grunt-newer');
 
     // Register Tasks
-    grunt.registerTask('default', ['sass', 'cssmin']);
+    grunt.registerTask('default', ['sass', 'csscomb', 'cssmin']);
 
 };
