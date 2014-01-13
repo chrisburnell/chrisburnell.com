@@ -63,7 +63,7 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .wrap {
     /**
      * Let's make intelligent use of the phone viewport and reduce the padding
@@ -304,7 +304,7 @@ button:active:before, button:active:after,
 header {
   height: 110px;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   header {
     /**
      * Center the logo and make room for the navigation to drop underneath.
@@ -336,14 +336,14 @@ header {
    * Only animate when the user hovers the logo.
    */
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .logo {
     height: 90px;
     display: inline-block;
     float: none;
   }
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .logo {
     font-size: 2.25em;
   }
@@ -466,7 +466,7 @@ nav {
   float: right;
   margin-top: 20px;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   nav {
     width: 100%;
     float: none;
@@ -479,7 +479,7 @@ nav {
   float: right;
   list-style: none;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .site-navigation {
     float: none;
     text-align: center;
@@ -492,7 +492,7 @@ nav {
   padding: .375em 0;
   text-align: center;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .site-navigation li {
     display: inline-block;
     float: none;
@@ -564,7 +564,7 @@ article,
   padding: 2.25em 0 0 16.875em;
   border-top: 0.25em solid #5f8aa6;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   article,
   .articles {
     /**
@@ -580,7 +580,7 @@ article,
   }
 }
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   article {
     margin-bottom: 0;
   }
@@ -595,7 +595,7 @@ article,
   padding: 1.5em 0;
   border-top: 0.25em solid rgba(6, 6, 6, 0.1);
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .articles-list li {
     padding: 2.25em 0;
   }
@@ -603,7 +603,7 @@ article,
 .articles-list li:last-child {
   padding-bottom: 0;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .articles-list li:last-child {
     padding: 2.25em 0;
   }
@@ -621,7 +621,7 @@ article,
   margin-bottom: .8em;
   line-height: 1.4em;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .site-introduction {
     margin-bottom: 1.385em;
   }
@@ -692,7 +692,7 @@ article,
 .pagination {
   width: 100%;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .pagination {
     text-align: center;
   }
@@ -700,7 +700,7 @@ article,
 .pagination .prev-link {
   float: left;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .pagination .prev-link {
     float: none;
   }
@@ -713,7 +713,7 @@ article,
 .pagination .next-link {
   float: right;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .pagination .next-link {
     float: none;
     margin-top: .5em;
@@ -737,7 +737,7 @@ aside {
   float: left;
   margin-left: -16.875em;
 }
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   aside {
     width: 100%;
     float: none;
@@ -749,7 +749,7 @@ aside p {
   margin-bottom: .5em;
   font-size: .875em;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   aside p {
     font-size: 1em;
   }
@@ -763,7 +763,7 @@ aside blockquote p {
   font-family: "proxima-nova", sans-serif;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .author {
     padding-top: 2.25em;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);
@@ -907,7 +907,7 @@ footer {
   font-weight: 600;
   text-transform: uppercase;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   footer {
     height: 85px;
     padding: 2em 0;
@@ -919,7 +919,7 @@ footer {
   float: left;
   overflow: hidden;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .copyright,
   .social-icons {
     width: 100%;
@@ -963,7 +963,7 @@ footer {
 .social-icons {
   float: right;
 }
-@media (max-width: 31.25em) {
+@media (max-width: 500px) {
   .social-icons {
     margin-top: .625em;
   }
