@@ -1071,19 +1071,19 @@ footer {
 }
 
 code::-webkit-selection {
-  background: black;
-  color: white;
+  background: #4f4f4f;
+  color: #f9f9f9;
   text-shadow: none;
 }
 
 code::-moz-selection {
-  background: black;
-  color: white;
+  background: #4f4f4f;
+  color: #f9f9f9;
   text-shadow: none;
 }
 
 code::selection {
-  background: black;
-  color: white;
+  background: #4f4f4f;
+  color: #f9f9f9;
   text-shadow: none;
 }

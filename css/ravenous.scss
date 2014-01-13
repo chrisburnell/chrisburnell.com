@@ -950,6 +950,6 @@ footer {
 ::-webkit-selection { background: $blue; color: $white; }
    ::-moz-selection { background: $blue; color: $white; }
         ::selection { background: $blue; color: $white; }
-    code::-webkit-selection { background: black; color: white; text-shadow: none; }
-       code::-moz-selection { background: black; color: white; text-shadow: none; }
-            code::selection { background: black; color: white; text-shadow: none; }
+    code::-webkit-selection { background: $text-color; color: $white; text-shadow: none; }
+       code::-moz-selection { background: $text-color; color: $white; text-shadow: none; }
+            code::selection { background: $text-color; color: $white; text-shadow: none; }
