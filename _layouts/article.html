@@ -1,9 +1,9 @@
 {% include header.html %}
 
-    <section class="content  wrap  clear">
-        <article role="main">
+    <section class="content  wrap  clear" role="main">
+        <article role="article">
 
-            <h1 class="article-title" role="banner">{{ page.title }}</h1>
+            <h1 class="article-title" role="heading" aria-level="1">{{ page.title }}</h1>
 
             <aside class="author" role="complementary">
                 <div class="author-information">
@@ -38,14 +38,14 @@
             </section>
             <section class="comments  clear">
                 <div id="disqus_thread"></div>
-                <script type="text/javascript">
+                <script type="text/javascript" aria-hidden="true">
                     (function() {
                         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                         dsq.src = '//chrisburnell.disqus.com/embed.js';
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-                <noscript>Please enable Javascript to view comments.</noscript>
+                <noscript aria-hidden="true">Please enable Javascript to view comments.</noscript>
             </section>
         </article>
     </section>

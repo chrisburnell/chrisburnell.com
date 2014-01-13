@@ -1,9 +1,9 @@
 {% include header.html %}
 
-    <section class="content  wrap  clear">
-        <section class="articles" role="main">
+    <section class="content  wrap  clear" role="main">
+        <section class="articles">
 
-            <h1 class="site-tagline" role="banner">{% if page.title %}{{ page.title }}{% else %}{{ site.tagline }}.{% endif %}</h1>
+            <h1 class="site-tagline" role="heading" aria-level="1">{% if page.title %}{{ page.title }}{% else %}{{ site.tagline }}.{% endif %}</h1>
 
             <aside class="author" role="complementary">
                 <div class="author-information">
