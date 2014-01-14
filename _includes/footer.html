@@ -19,6 +19,16 @@
         for (var i = 0; i < articleTags.length; i++) {
             articleTags[i].innerHTML = articleTags[i].innerHTML.replace('and','</strong>and<strong>');
         };{% endif %}
+        // Luminosity
+        window.addEventListener('devicelight', function(e) {
+          var lux = e.value;
+          if(lux < 50) { // Dim
+            document.body.className = 'is-dim';
+          }
+          if(lux >= 50) { // Normal
+            document.body.className = '';
+          }
+        });
         // Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-10353655-1']);
