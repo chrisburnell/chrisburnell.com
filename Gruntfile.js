@@ -17,6 +17,14 @@ module.exports = function(grunt) {
                         return dest + src.replace('scss', 'css');
                     }
                 }]
+            },
+            build: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'css/ravenous.css': 'css/ravenous.scss'
+                }
             }
         },
 
@@ -46,6 +54,11 @@ module.exports = function(grunt) {
                 src: ['*.css', '!*.min.css'],
                 dest: 'css/',
                 ext: '.min.css'
+            },
+            build: {
+                files: {
+                    'css/ravenous.min.css': 'css/ravenous.css'
+                }
             }
         },
 
@@ -79,7 +92,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['css/*.scss'],
-                tasks: ['sass', 'csscomb', 'cssmin']
+                tasks: ['sass:build', 'csscomb:all', 'cssmin:build']
             }
         },
 
@@ -95,6 +108,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
     // Register Tasks
-    grunt.registerTask('default', ['sass', 'csscomb', 'cssmin']);
+    grunt.registerTask('default', ['sass:build', 'csscomb:all', 'cssmin:build']);
 
 };
