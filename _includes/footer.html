@@ -23,10 +23,10 @@
         window.addEventListener('devicelight', function(e) {
           var lux = e.value;
           if(lux < 50) { // Dim
-            document.body.className = 'is-dim';
+            document.html.className = 'is-dim';
           }
           if(lux >= 50) { // Normal
-            document.body.className = '';
+            document.html.className = '';
           }
         });
         // Google Analytics

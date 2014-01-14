@@ -26,7 +26,7 @@ https://github.com/chrisburnell/chrisburnell.github.io
 Contact me if you want to know more about the code, or if you want to use a
 piece of code on a project of your own. -->
 
-<html lang="en" class="{{ page.page_class }}">
+<html lang="en">
 <head>
 
     <meta charset="utf-8">
@@ -78,7 +78,7 @@ piece of code on a project of your own. -->
     <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">
 
 </head>
-<body>
+<body class="{{ page.page_class }}">
 
     <header class="wrap  clear" role="banner">
         <a rel="home" class="logo" href="/"><span>{{ site.title }}</span></a>

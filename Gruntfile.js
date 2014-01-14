@@ -28,6 +28,14 @@ module.exports = function(grunt) {
                 files: {
                     'css/ravenous.css': ['css/ravenous.css']
                 }
+            },
+            sass: {
+                options: {
+                    config: 'css/csscomb-config.json'
+                },
+                files: {
+                    'css/ravenous.scss': ['css/ravenous.scss']
+                }
             }
         },
 
