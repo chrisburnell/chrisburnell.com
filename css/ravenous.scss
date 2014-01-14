@@ -115,6 +115,7 @@ body {
     &.is-dim {
         background-color: $text-color;
         color: $white;
+        @include transition();
     }
 }
 .wrap {
@@ -150,6 +151,9 @@ a {
     h2 &,
     h3 & {
         color: $text-color;
+        .is-dim & {
+            color: $white;
+        }
         &:hover,
         &:focus,
         &:active {
@@ -214,11 +218,17 @@ cite,
 dfn[title] {
     color: $text-color-alt;
     font-style: italic;
+    .is-dim & {
+        color: $white;
+    }
 }
     abbr[title],
     dfn[title] {
         border-bottom: 1px dotted $text-color-alt;
         cursor: help;
+        .is-dim & {
+            border-bottom-color: $white;
+        }
     }
     blockquote {
         quotes: "\201C" "\201D" "\2018" "\2019";
@@ -383,6 +393,10 @@ header {
         -webkit-user-select: none;
            -moz-user-select: none;
                 user-select: none;
+        .is-dim & {
+            color: white;
+            text-shadow: .058em .058em 0 $white-25;
+        }
         &:active {
             top: .039em;
         }
@@ -486,6 +500,9 @@ nav {
                 top: .1em;
                 line-height: 1.15em;
             }
+            .is-dim & {
+                color: $white;
+            }
         }
     }
         .site-navigation a:hover, .site-navigation a:focus,
@@ -495,6 +512,9 @@ nav {
             color: $text-color;
             padding-bottom: 8px;
             border-bottom-width: 4px;
+            .is-dim & {
+                color: $white;
+            }
         }
         .home-page .site-navigation-home a:after,
         .about-page .site-navigation-about a:after,
@@ -603,6 +623,9 @@ article,
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;
+                .is-dim & {
+                    color: $white;
+                }
             }
         }
     }
