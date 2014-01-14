@@ -112,11 +112,6 @@ body {
     font: 400 normal #{$base-font-size}/1.618em $primary-font-stack;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    &.is-dim {
-        background-color: $text-color;
-        color: $white;
-        @include transition();
-    }
 }
 .wrap {
     @include breakpoint("phone") {
@@ -151,9 +146,6 @@ a {
     h2 &,
     h3 & {
         color: $text-color;
-        .is-dim & {
-            color: $white;
-        }
         &:hover,
         &:focus,
         &:active {
@@ -218,17 +210,11 @@ cite,
 dfn[title] {
     color: $text-color-alt;
     font-style: italic;
-    .is-dim & {
-        color: $white;
-    }
 }
     abbr[title],
     dfn[title] {
         border-bottom: 1px dotted $text-color-alt;
         cursor: help;
-        .is-dim & {
-            border-bottom-color: $white;
-        }
     }
     blockquote {
         quotes: "\201C" "\201D" "\2018" "\2019";
@@ -393,10 +379,6 @@ header {
         -webkit-user-select: none;
            -moz-user-select: none;
                 user-select: none;
-        .is-dim & {
-            color: white;
-            text-shadow: .058em .058em 0 $white-25;
-        }
         &:active {
             top: .039em;
         }
@@ -500,9 +482,6 @@ nav {
                 top: .1em;
                 line-height: 1.15em;
             }
-            .is-dim & {
-                color: $white;
-            }
         }
     }
         .site-navigation a:hover, .site-navigation a:focus,
@@ -512,9 +491,6 @@ nav {
             color: $text-color;
             padding-bottom: 8px;
             border-bottom-width: 4px;
-            .is-dim & {
-                color: $white;
-            }
         }
         .home-page .site-navigation-home a:after,
         .about-page .site-navigation-about a:after,
@@ -623,9 +599,6 @@ article,
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;
-                .is-dim & {
-                    color: $white;
-                }
             }
         }
     }
@@ -980,3 +953,37 @@ footer {
     code::-webkit-selection { background: $text-color; color: $white; text-shadow: none; }
        code::-moz-selection { background: $text-color; color: $white; text-shadow: none; }
             code::selection { background: $text-color; color: $white; text-shadow: none; }
+
+/**
+ * Luminosity
+ */
+body,
+.is-dim h1 a,
+.is-dim h2 a,
+.is-dim h3 a,
+.is-dim abbr[title],
+.is-dim blockquote,
+.is-dim cite,
+.is-dim dfn[title],
+.is-dim .logo,
+.is-dim .site-navigation a,
+.is-dim .site-navigation a:hover,
+.is-dim .site-navigation a:focus,
+.home-page .is-dim .site-navigation-home a,
+.about-page .is-dim .site-navigation-about a,
+.archive-page .is-dim .site-navigation-archive a,
+.is-dim .article-link a:hover,
+.is-dim .article-link a:focus,
+.is-dim .article-link a:active {
+    color: #f9f9f9;
+}
+body {
+    background-color: #4f4f4f;
+}
+.is-dim abbr[title],
+.is-dim dfn[title] {
+    border-bottom-color: #f9f9f9;
+}
+.is-dim .logo {
+    text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25);
+}

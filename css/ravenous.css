@@ -55,12 +55,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
-body.is-dim {
-  background-color: #4f4f4f;
-  color: #f9f9f9;
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
-}
 
 .wrap {
   width: auto;
@@ -92,9 +86,6 @@ article a:hover, article a:focus, article a:active, aside a:hover, aside a:focus
 }
 h1 a, h2 a, h3 a {
   color: #4f4f4f;
-}
-.is-dim h1 a, .is-dim h2 a, .is-dim h3 a {
-  color: #f9f9f9;
 }
 h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
   color: #5f8aa6;
@@ -168,21 +159,11 @@ dfn[title] {
   color: #737373;
   font-style: italic;
 }
-.is-dim abbr[title], .is-dim
-blockquote, .is-dim
-cite, .is-dim
-dfn[title] {
-  color: #f9f9f9;
-}
 
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted #737373;
   cursor: help;
-}
-.is-dim abbr[title], .is-dim
-dfn[title] {
-  border-bottom-color: #f9f9f9;
 }
 
 blockquote {
@@ -366,10 +347,6 @@ header {
     font-size: 2.25em;
   }
 }
-.is-dim .logo {
-  color: white;
-  text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25);
-}
 .logo:active {
   top: .039em;
 }
@@ -542,9 +519,6 @@ nav {
   top: .1em;
   line-height: 1.15em;
 }
-.is-dim .site-navigation a {
-  color: #f9f9f9;
-}
 
 .site-navigation a:hover, .site-navigation a:focus,
 .home-page .site-navigation-home a,
@@ -553,12 +527,6 @@ nav {
   color: #4f4f4f;
   padding-bottom: 8px;
   border-bottom-width: 4px;
-}
-.is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim
-.home-page .site-navigation-home a, .is-dim
-.about-page .site-navigation-about a, .is-dim
-.archive-page .site-navigation-archive a {
-  color: #f9f9f9;
 }
 
 .home-page .site-navigation-home a:after,
@@ -685,9 +653,6 @@ article,
   color: #4f4f4f;
   border-bottom-color: #5f8aa6;
   text-decoration: none;
-}
-.is-dim .article-link a:hover, .is-dim .article-link a:focus, .is-dim .article-link a:active {
-  color: #f9f9f9;
 }
 
 .article-date,
@@ -1120,4 +1085,41 @@ code::selection {
   background: #4f4f4f;
   color: #f9f9f9;
   text-shadow: none;
+}
+
+/**
+ * Luminosity
+ */
+body,
+.is-dim h1 a,
+.is-dim h2 a,
+.is-dim h3 a,
+.is-dim abbr[title],
+.is-dim blockquote,
+.is-dim cite,
+.is-dim dfn[title],
+.is-dim .logo,
+.is-dim .site-navigation a,
+.is-dim .site-navigation a:hover,
+.is-dim .site-navigation a:focus,
+.home-page .is-dim .site-navigation-home a,
+.about-page .is-dim .site-navigation-about a,
+.archive-page .is-dim .site-navigation-archive a,
+.is-dim .article-link a:hover,
+.is-dim .article-link a:focus,
+.is-dim .article-link a:active {
+  color: #f9f9f9;
+}
+
+body {
+  background-color: #4f4f4f;
+}
+
+.is-dim abbr[title],
+.is-dim dfn[title] {
+  border-bottom-color: #f9f9f9;
+}
+
+.is-dim .logo {
+  text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25);
 }
