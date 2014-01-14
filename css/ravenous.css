@@ -1090,7 +1090,7 @@ code::selection {
 /**
  * Luminosity
  */
-body,
+.is-dim body,
 .is-dim h1 a,
 .is-dim h2 a,
 .is-dim h3 a,
@@ -1111,7 +1111,7 @@ body,
   color: #f9f9f9;
 }
 
-body {
+.is-dim body {
   background-color: #4f4f4f;
 }
 
