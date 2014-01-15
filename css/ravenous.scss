@@ -201,9 +201,9 @@ ul {
     margin: 0;
     list-style: inside disc;
 }
-    ol {
-        list-style-type: decimal-leading-zero;
-    }
+ol {
+    list-style-type: decimal-leading-zero;
+}
 abbr[title],
 blockquote,
 cite,
@@ -211,36 +211,36 @@ dfn[title] {
     color: $text-color-alt;
     font-style: italic;
 }
-    abbr[title],
-    dfn[title] {
-        border-bottom: 1px dotted $text-color-alt;
-        cursor: help;
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $text-color-alt;
+    cursor: help;
+}
+blockquote {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    article & {
+        margin: 1em 2.5em;
     }
-    blockquote {
-        quotes: "\201C" "\201D" "\2018" "\2019";
-        article & {
-            margin: 1em 2.5em;
+    aside & {
+        padding: 1em 0;
+        border-top: .286em solid $blue;
+        border-bottom: .286em solid $blue;
+    }
+    & p {
+        margin-bottom: 0 !important;
+        &:before {
+            content: open-quote;
+            padding-right: .1875em;
         }
-        aside & {
-            padding: 1em 0;
-            border-top: .286em solid $blue;
-            border-bottom: .286em solid $blue;
-        }
-        & p {
-            margin-bottom: 0 !important;
-            &:before {
-                content: open-quote;
-                padding-right: .1875em;
-            }
-            &:after {
-                content: close-quote;
-                padding-left: .1875em;
-            }
-        }
-        & + p .citation {
-            margin-left: 2.5em;
+        &:after {
+            content: close-quote;
+            padding-left: .1875em;
         }
     }
+    & + p .citation {
+        margin-left: 2.5em;
+    }
+}
     .pullquote {
         font-size: 1.5em;
         line-height: 1.25em;
@@ -540,42 +540,33 @@ article,
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
 }
-    @include breakpoint("tablet") {
-        article {
-            margin-bottom: 0;
-        }
+@include breakpoint("tablet") {
+    article {
+        margin-bottom: 0;
     }
-    .articles-list {
-        list-style: none;
-        li {
+}
+.articles-list {
+    list-style: none;
+    li {
+        @include breakpoint("tablet") {
+            padding: 2.25em 0;
+        }
+        width: 100%;
+        display: inline-block;
+        clear: both;
+        padding: 1.5em 0;
+        border-top: .25em solid $black-10;
+        &:last-child {
             @include breakpoint("tablet") {
                 padding: 2.25em 0;
             }
-            width: 100%;
-            display: inline-block;
-            clear: both;
-            padding: 1.5em 0;
-            border-top: .25em solid $black-10;
-            &:last-child {
-                @include breakpoint("tablet") {
-                    padding: 2.25em 0;
-                }
-                padding-bottom: 0;
-            }
+            padding-bottom: 0;
         }
     }
+}
     .article-title,
     .site-tagline {
         margin-bottom: .4em;
-    }
-    .site-introduction {
-        @include breakpoint("tablet") {
-            margin-bottom: 1.385em;
-        }
-        max-width: 24em;
-        margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
-        margin-bottom: .8em;
-        line-height: 1.4em;
     }
     .article-introduction {
         font-size: 1.25em;
@@ -611,6 +602,15 @@ article,
             content: "\2013 \0020";
             color: $text-color-alt;
         }
+.site-introduction {
+    @include breakpoint("tablet") {
+        margin-bottom: 1.385em;
+    }
+    max-width: 24em;
+    margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
+    margin-bottom: .8em;
+    line-height: 1.4em;
+}
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
@@ -847,29 +847,31 @@ footer {
             display: inline-block;
             text-decoration: none;
             white-space: nowrap;
-        }
-            .copyright a:hover, .copyright a:focus, .copyright a:active {
+            &:hover,
+            &:focus,
+            &:active {
                 text-decoration: underline;
             }
-            .home-link {
-                background: url("../icon.png") no-repeat;
-                background-image: url("/images/raven.svg");
-                background-size: 2.857em 2.857em;
-                color: transparent;
-                width: 2.875em;
-                height: 2.875em;
-                margin-right: 1em;
-                vertical-align: middle;
-                text-decoration: none;
-                text-indent: -4em;
+        }
+        .home-link {
+            background: url("../icon.png") no-repeat;
+            background-image: url("/images/raven.svg");
+            background-size: 2.857em 2.857em;
+            color: transparent;
+            width: 2.875em;
+            height: 2.875em;
+            margin-right: 1em;
+            vertical-align: middle;
+            text-decoration: none;
+            text-indent: -4em;
+            &:active {
+                position: relative;
+                top: .14em;
             }
-                .home-link:active {
-                    position: relative;
-                    top: .14em;
-                }
-            .copyright-link {
-                color: $text-color-light;
-            }
+        }
+        .copyright-link {
+            color: $text-color-light;
+        }
         .social-icons {
             @include breakpoint("phone") {
                 margin-top: .625em;
@@ -975,12 +977,12 @@ footer {
 .is-dim .article-link a:hover,
 .is-dim .article-link a:focus,
 .is-dim .article-link a:active {
-    color: #f9f9f9;
     @include transition();
+    color: #f9f9f9;
 }
 .is-dim body {
-    background-color: #4f4f4f;
     @include transition();
+    background-color: #4f4f4f;
 }
 .is-dim abbr[title],
 .is-dim dfn[title] {
