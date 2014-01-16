@@ -36,6 +36,26 @@
   visibility: visible;
 }
 
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /*------------------------------------*\
     $   LAYOUT AND TYPOGRAPHY
     i   Page Layout
@@ -73,6 +93,19 @@ body {
     padding-right: 0.625em;
     padding-left: 0.625em;
   }
+}
+
+.clear {
+  clear: both;
+  overflow: hidden;
+  zoom: 1;
+}
+.clear:before, .clear:after {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
 }
 
 a {
@@ -229,6 +262,42 @@ article,
 .article-introduction,
 .cp_embed_iframe {
   margin-bottom: 1em;
+}
+
+/**
+ * Text Highlights
+ */
+::-webkit-selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
+
+::-moz-selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
+
+::selection {
+  background: #5f8aa6;
+  color: #f9f9f9;
+}
+
+code::-webkit-selection {
+  background: #4f4f4f;
+  color: #f9f9f9;
+  text-shadow: none;
+}
+
+code::-moz-selection {
+  background: #4f4f4f;
+  color: #f9f9f9;
+  text-shadow: none;
+}
+
+code::selection {
+  background: #4f4f4f;
+  color: #f9f9f9;
+  text-shadow: none;
 }
 
 /*------------------------------------*\
@@ -973,6 +1042,7 @@ footer {
   margin-left: 0;
 }
 
+/*a*/
 .social-icon {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
@@ -993,9 +1063,6 @@ footer {
   top: .14em;
 }
 
-/*------------------------------------*\
-    $ MISCELLANEOUS
-\*------------------------------------*/
 /*a*/
 .codepen-link {
   color: #212121 !important;
@@ -1019,76 +1086,13 @@ footer {
   color: #007ba8 !important;
 }
 
-.clear {
-  clear: both;
-  overflow: hidden;
-  zoom: 1;
-}
-.clear:before, .clear:after {
-  content: "";
-  display: table;
-}
-.clear:after {
-  clear: both;
-}
-
-@-webkit-keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-::-webkit-selection {
-  background: #5f8aa6;
-  color: #f9f9f9;
-}
-
-::-moz-selection {
-  background: #5f8aa6;
-  color: #f9f9f9;
-}
-
-::selection {
-  background: #5f8aa6;
-  color: #f9f9f9;
-}
-
-code::-webkit-selection {
-  background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none;
-}
-
-code::-moz-selection {
-  background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none;
-}
-
-code::selection {
-  background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none;
-}
-
+/*------------------------------------*\
+    $ MISCELLANEOUS
+\*------------------------------------*/
 /**
  * Luminosity
  */
-.is-dim body,
+.is-dim,
 .is-dim h1 a,
 .is-dim h2 a,
 .is-dim h3 a,
@@ -1100,21 +1104,21 @@ code::selection {
 .is-dim .site-navigation a,
 .is-dim .site-navigation a:hover,
 .is-dim .site-navigation a:focus,
-.is-dim .home-page .site-navigation-home a,
-.is-dim .about-page .site-navigation-about a,
-.is-dim .archive-page .site-navigation-archive a,
+.home-page .is-dim .site-navigation-home a,
+.about-page .is-dim .site-navigation-about a,
+.archive-page .is-dim .site-navigation-archive a,
 .is-dim .article-link a:hover,
 .is-dim .article-link a:focus,
 .is-dim .article-link a:active {
-  color: #f9f9f9;
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
+  color: #f9f9f9;
 }
 
-.is-dim body {
-  background-color: #4f4f4f;
+.is-dim {
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
+  background-color: #4f4f4f;
 }
 
 .is-dim abbr[title],

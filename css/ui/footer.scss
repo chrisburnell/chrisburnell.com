@@ -71,7 +71,7 @@ footer {
                 }
             }
         }
-        .social-icon {
+        /*a*/.social-icon {
             @include transition("opacity .2s ease-in-out");
             background-image: url("/images/glyphs.png");
             background-size: 120px 30px;
@@ -89,4 +89,19 @@ footer {
                 position: relative;
                 top: .14em;
             }
+        }
+        /*a*/.codepen-link {
+            color: #212121 !important;
+        }
+        /*a*/.lastfm-link {
+            background-position: -30px top;
+            color: #d51007 !important;
+        }
+        /*a*/.rss-link {
+            background-position: -60px top;
+            /* uses the default anchor color */
+        }
+        /*a*/.twitter-link {
+            background-position: -90px top;
+            color: #007ba8 !important;
         }

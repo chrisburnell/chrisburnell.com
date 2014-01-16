@@ -33,6 +33,19 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+.clear {
+    clear: both;
+    overflow: hidden;
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 a {
     @include transition("background .2s, color .2s, text-shadow .2s");
@@ -167,6 +180,7 @@ hr {
     border: 0;
     margin: .5em 0 1.5em;
 }
+
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
@@ -179,3 +193,12 @@ article,
 .cp_embed_iframe {
     margin-bottom: 1em;
 }
+/**
+ * Text Highlights
+ */
+::-webkit-selection { background: $blue; color: $white; }
+   ::-moz-selection { background: $blue; color: $white; }
+        ::selection { background: $blue; color: $white; }
+    code::-webkit-selection { background: $text-color; color: $white; text-shadow: none; }
+       code::-moz-selection { background: $text-color; color: $white; text-shadow: none; }
+            code::selection { background: $text-color; color: $white; text-shadow: none; }
