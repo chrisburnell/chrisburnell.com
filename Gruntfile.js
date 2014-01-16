@@ -87,11 +87,11 @@ module.exports = function(grunt) {
 
         watch: {
             all: {
-                files: ['css/*.scss', '_posts/*.md', 'images/*'],
+                files: ['css/*.scss', 'css/ui/*.scss', '_posts/*.md', 'images/*'],
                 tasks: ['newer:sass', 'newer:csscomb', 'newer:cssmin', 'newer:imagemin', 'newer:svgmin']
             },
             sass: {
-                files: ['css/*.scss'],
+                files: ['css/*.scss', 'css/ui/*.scss'],
                 tasks: ['sass:build', 'csscomb:all', 'cssmin:build']
             }
         },
