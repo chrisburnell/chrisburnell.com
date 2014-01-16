@@ -1,0 +1,92 @@
+/*------------------------------------*\
+    $ FOOTER
+\*------------------------------------*/
+
+footer {
+    @include gradient(transparent, $black-10);
+    @include breakpoint("phone") {
+        height: 85px;
+        padding: 2em 0;
+    }
+    background-color: $text-color;
+    color: $text-color-light;
+    width: auto;
+    height: 40px;
+    padding: 2.572em 0;
+    border-top: .286em solid $blue;
+    font-family: $secondary-font-stack;
+    font-size: .875em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+    .copyright,
+    .social-icons {
+        @include breakpoint("phone") {
+            width: 100%;
+            float: none;
+            text-align: center;
+        }
+        float: left;
+        overflow: hidden;
+    }
+        .copyright a {
+            display: inline-block;
+            text-decoration: none;
+            white-space: nowrap;
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: underline;
+            }
+        }
+        .home-link {
+            background: url("../icon.png") no-repeat;
+            background-image: url("/images/raven.svg");
+            background-size: 2.857em 2.857em;
+            color: transparent;
+            width: 2.875em;
+            height: 2.875em;
+            margin-right: 1em;
+            vertical-align: middle;
+            text-decoration: none;
+            text-indent: -4em;
+            &:active {
+                position: relative;
+                top: .14em;
+            }
+        }
+        .copyright-link {
+            color: $text-color-light;
+        }
+        .social-icons {
+            @include breakpoint("phone") {
+                margin-top: .625em;
+            }
+            float: right;
+            li {
+                display: inline-block;
+                margin-left: .5em;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        .social-icon {
+            @include transition("opacity .2s ease-in-out");
+            background-image: url("/images/glyphs.png");
+            background-size: 120px 30px;
+            opacity: .6;
+            color: transparent;
+            width: 30px;
+            height: 30px;
+            display: block;
+            font-size: 0;
+            &:hover,
+            &:focus {
+                opacity: .9;
+            }
+            &:active {
+                position: relative;
+                top: .14em;
+            }
+        }

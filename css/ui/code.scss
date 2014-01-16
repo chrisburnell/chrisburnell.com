@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    $ CODE AND CODE BLOCKS
+\*------------------------------------*/
+
+code {
+    font-family: $code-font-stack;
+    font-size: .8125em;
+}
+    p > code {
+        background-color: rgba($blue, 0.1);
+        padding: 0 .154em;
+    }
+pre {
+    margin: 0 0 1em;
+}
+pre:not(.codepen) {
+    @include gradient(transparent, $black-25);
+    background-color: $text-color;
+    color: $white;
+    padding: .714em;
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    border-radius: .1875em;
+}

@@ -1,0 +1,154 @@
+/*------------------------------------*\
+    $ ARTICLES AND ARTICLE LISTS
+\*------------------------------------*/
+
+.content {
+    margin-bottom: 2.25em;
+}
+
+/**
+ * The width of the articles is dynamic, and always has padding on the left-hand
+ * side to make room for any asides, which can appear anywhere inside an
+ * article or list of articles.
+ * Maximum total width of container
+ * = 1080px
+ * Left-hand padding
+ * = 25% of 1080px  = 270px  = 16.875em
+ */
+article,
+.articles {
+    @include breakpoint("tablet") {
+        /**
+         * When you hit the tablet media query, articles, article lists, and
+         * asides become full width and the author information aside pushes to
+         * the bottom in browsers that support the latest iteration of flexbox.
+         */
+        display: -webkit-flex;
+        display:         flex;
+        padding-left: 0;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+    }
+    padding: 2.25em 0 0 16.875em;
+    border-top: .25em solid $blue;
+}
+@include breakpoint("tablet") {
+    article {
+        margin-bottom: 0;
+    }
+}
+.articles-list {
+    list-style: none;
+    li {
+        @include breakpoint("tablet") {
+            padding: 2.25em 0;
+        }
+        width: 100%;
+        display: inline-block;
+        clear: both;
+        padding: 1.5em 0;
+        border-top: .25em solid $black-10;
+        &:last-child {
+            @include breakpoint("tablet") {
+                padding: 2.25em 0;
+            }
+            padding-bottom: 0;
+        }
+    }
+}
+    .article-title,
+    .site-tagline {
+        margin-bottom: .4em;
+    }
+    .article-introduction {
+        font-size: 1.25em;
+    }
+    .article-banner {
+        -webkit-background-clip: padding-box;
+           -moz-background-clip: padding;
+                background-clip: padding-box;
+        margin-bottom: 1em;
+        border-radius: .375em;
+    }
+    .article-link {
+        width: 100%;
+        a {
+            @include transition("border-color .2s ease-in-out");
+            display: inline-block;
+            padding: 0 .25em;
+            border-bottom: .1875em solid transparent;
+            margin: 0 0 .35em -0.25em;
+            &:hover, &:focus, &:active {
+                color: $text-color;
+                border-bottom-color: $blue;
+                text-decoration: none;
+            }
+        }
+    }
+    .article-date,
+    .related-date {
+        display: block; /* <time> element */
+        margin-bottom: .5em;
+    }
+        .articles-list .article-date:before {
+            content: "\2013 \0020";
+            color: $text-color-alt;
+        }
+.site-introduction {
+    @include breakpoint("tablet") {
+        margin-bottom: 1.385em;
+    }
+    max-width: 24em;
+    margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
+    margin-bottom: .8em;
+    line-height: 1.4em;
+}
+
+/**
+ * Contains YouTube and Vimeo embedded videos properly and allows them to be
+ * dynamically resized.
+ */
+.video-container {
+    height: 0;
+    padding-top: 30px;
+    padding-bottom: 56.65%;
+    position: relative;
+    overflow: hidden;
+    iframe,
+    object,
+    embed {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.pagination {
+    @include breakpoint("phone") {
+        text-align: center;
+    }
+    width: 100%;
+    .prev-link {
+        @include breakpoint("phone") {
+            float: none;
+        }
+        float: left;
+        &:before {
+            content: "\2190\00a0";
+            position: relative; /* override the button:before fix */
+        }
+    }
+    .next-link {
+        @include breakpoint("phone") {
+            float: none;
+            margin-top: .5em;
+        }
+        float: right;
+        &:after {
+            content: "\00a0\2192";
+            position: relative; /* override the button:after fix */
+        }
+    }
+}

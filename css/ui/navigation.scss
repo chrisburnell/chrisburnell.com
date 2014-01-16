@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    $ NAVIGATION
+\*------------------------------------*/
+
+nav {
+    @include breakpoint("tablet") {
+        width: 100%;
+        float: none;
+        margin-top: 0;
+    }
+    float: right;
+    margin-top: 20px;
+}
+    .site-navigation {
+        @include breakpoint("tablet") {
+            float: none;
+            text-align: center;
+        }
+        height: 3.75em;
+        float: right;
+        list-style: none;
+        li {
+            @include breakpoint("tablet") {
+                display: inline-block;
+                float: none;
+            }
+            height: 40px;
+            display: inline-block;
+            float: left;
+            padding: .375em 0;
+            text-align: center;
+        }
+        li + li {
+            margin-left: 1em;
+        }
+        a {
+            @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
+            color: $text-color-alt;
+            display: block;
+            padding: .75em;
+            border-bottom: 0px solid $blue;
+            position: relative;
+            font-family: $heading-font-stack;
+            font-size: 1.25em;
+            line-height: 1.25em;
+            text-transform: uppercase;
+            &:active {
+                margin-top: .1em;
+                position: relative;
+                top: .1em;
+                line-height: 1.15em;
+            }
+        }
+    }
+        .site-navigation a:hover, .site-navigation a:focus,
+        .home-page .site-navigation-home a,
+        .about-page .site-navigation-about a,
+        .archive-page .site-navigation-archive a {
+            color: $text-color;
+            padding-bottom: 8px;
+            border-bottom-width: 4px;
+        }
+        .home-page .site-navigation-home a:after,
+        .about-page .site-navigation-about a:after,
+        .archive-page .site-navigation-archive a:after {
+            content: "";
+            border-top: 5px solid $blue;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            margin-left: -3px;
+            position: absolute;
+            bottom: -0.4em;
+            left: 48%;
+        }

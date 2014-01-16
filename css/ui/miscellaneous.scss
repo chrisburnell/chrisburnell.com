@@ -1,0 +1,85 @@
+/*------------------------------------*\
+    $ MISCELLANEOUS
+\*------------------------------------*/
+
+/*a*/.codepen-link {
+    color: #212121 !important;
+}
+/*a*/.lastfm-link {
+    background-position: -30px top;
+    color: #d51007 !important;
+}
+/*a*/.rss-link {
+    background-position: -60px top;
+    /* uses the default anchor color */
+}
+/*a*/.twitter-link {
+    background-position: -90px top;
+    color: #007ba8 !important;
+}
+
+.clear {
+    clear: both;
+    overflow: hidden;
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@-webkit-keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+::-webkit-selection { background: $blue; color: $white; }
+   ::-moz-selection { background: $blue; color: $white; }
+        ::selection { background: $blue; color: $white; }
+    code::-webkit-selection { background: $text-color; color: $white; text-shadow: none; }
+       code::-moz-selection { background: $text-color; color: $white; text-shadow: none; }
+            code::selection { background: $text-color; color: $white; text-shadow: none; }
+
+/**
+ * Luminosity
+ */
+.is-dim body,
+.is-dim h1 a,
+.is-dim h2 a,
+.is-dim h3 a,
+.is-dim abbr[title],
+.is-dim blockquote,
+.is-dim cite,
+.is-dim dfn[title],
+.is-dim .logo,
+.is-dim .site-navigation a,
+.is-dim .site-navigation a:hover,
+.is-dim .site-navigation a:focus,
+.is-dim .home-page .site-navigation-home a,
+.is-dim .about-page .site-navigation-about a,
+.is-dim .archive-page .site-navigation-archive a,
+.is-dim .article-link a:hover,
+.is-dim .article-link a:focus,
+.is-dim .article-link a:active {
+    @include transition();
+    color: #f9f9f9;
+}
+.is-dim body {
+    @include transition();
+    background-color: #4f4f4f;
+}
+.is-dim abbr[title],
+.is-dim dfn[title] {
+    border-bottom-color: #f9f9f9;
+}
+.is-dim .logo {
+    text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25);
+}

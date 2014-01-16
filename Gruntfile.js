@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                     'css/ravenous.css': ['css/ravenous.css']
                 }
             },
-            sass: {
+            build: {
                 options: {
                     config: 'css/csscomb-config.json'
                 },

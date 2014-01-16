@@ -8,7 +8,7 @@
  * Table of Contents:
  *
  * TYPEKIT PRELOAD........... Import the font-families from Typekit.
- * GENERAL AND TYPOGRAPHY.... Set the default element styles.
+ * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
  * BUTTONS................... Set the default button styles.
  * HEADER.................... Set the header styles.
  * NAVIGATION................ Set the navigation styles.
@@ -37,8 +37,8 @@
 }
 
 /*------------------------------------*\
-    $   GENERAL AND TYPOGRAPHY
-    i   Layout
+    $   LAYOUT AND TYPOGRAPHY
+    i   Page Layout
     ii  Inline Elements
     iii Block Elements
 \*------------------------------------*/

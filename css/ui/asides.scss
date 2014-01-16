@@ -1,0 +1,110 @@
+/*------------------------------------*\
+    $ ASIDES
+\*------------------------------------*/
+
+/**
+ * The width of the asides is static and and always floated within an article or
+ * list of articles. The math is calculated as in the Articles section.
+ */
+aside {
+    @include breakpoint("tablet") {
+        width: 100%;
+        float: none;
+        margin: 0 0 1em;
+    }
+    width: 15.1875em;
+    float: left;
+    margin-left: -16.875em;
+    p {
+        @include breakpoint("phone") {
+            font-size: 1em;
+        }
+        clear: both;
+        margin-bottom: .5em;
+        font-size: .875em;
+    }
+    blockquote p {
+        margin-bottom: 0;
+    }
+}
+.author,
+.related-articles {
+    font-family: $secondary-font-stack;
+}
+    @include breakpoint("tablet") {
+        .author {
+            padding-top: 2.25em;
+            border-top: .25em solid $black-10;
+            margin-bottom: 0;
+            -webkit-order: 999;
+                    order: 999;
+        }
+        .page-about .author {
+            margin-top: 2.25em;
+        }
+    }
+    .author a {
+        color: $blue;
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+    .author-information {
+        width: 100%;
+        float: left;
+        margin-bottom: .5em;
+        font-family: $primary-font-stack;
+        font-size: .875em;
+        font-style: italic;
+        a,
+        strong,
+        time {
+            font-family: $secondary-font-stack;
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        a {
+            color: inherit;
+        }
+    }
+    .author-image {
+        -webkit-background-clip: padding-box;
+           -moz-background-clip: padding;
+                background-clip: padding-box;
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        float: left;
+        margin-right: 10px;
+        border-radius: .1875em;
+    }
+    .article-tags {
+        display: table-cell; /* don't wrap around .author-image */
+        line-height: 1.429em;
+    }
+    .author-biography .codepen,
+    .author-biography .lastfm,
+    .author-biography .twitter {
+        background: none;
+    }
+    .related-articles {
+        padding-top: 1em;
+        border-top: .25em solid $black-10;
+        margin-top: 1em;
+        ul {
+            list-style: none;
+            line-height: 1.25em;
+        }
+    }
+    .related-title {
+        font-weight: bold;
+    }
+    .related-date {
+        padding-left: .75em;
+        font-size: .8124em;
+        font-style: italic;
+    }
