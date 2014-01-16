@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "normalize.css";
 /**
  * Ravenous - version 2.0
  * by Chris Burnell (@iamchrisburnell)
@@ -8,6 +7,7 @@
  *
  * Table of Contents:
  *
+ * RESET..................... Reset the default browser styles.
  * TYPEKIT PRELOAD........... Import the font-families from Typekit.
  * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
  * BUTTONS................... Set the default button styles.
@@ -22,62 +22,9 @@
  */
 
 
-// Colour Palette
-$blue:             #5F8AA6;
-$white:            #F9F9F9;
-$text-color:       #4f4f4f;
-$text-color-alt:   #737373;
-$text-color-light: #DDDDDD;
-$black-5:          rgba(6, 6, 6, .05);
-$black-10:         rgba(6, 6, 6, .1);
-$black-25:         rgba(6, 6, 6, .25);
-$white-25:         rgba(249, 249, 249, .25);
-
-// Font Stack
-$base-font-size:       16px;
-$primary-font-stack:   "ff-meta-serif-web-pro", serif;
-$secondary-font-stack: "proxima-nova", sans-serif;
-$heading-font-stack:   "league-gothic", sans-serif;
-$code-font-stack:      Monaco, "Courier New", monospace;
-
-// Wrapper Widths
-$max-wrapper-width: 1080px;
-$wrapper-padding:   1.25em;
-
-// CSS3 Mixins
-@mixin breakpoint($width) {
-    @if $width == "tablet" {
-        @media (max-width: 768px) { @content ; }
-    }
-    @else if $width == "phone" {
-        @media (max-width: 500px) { @content ; }
-    }
-}
-@mixin gradient($top, $bottom) {
-    background-image: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:    -moz-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:     -ms-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:         linear-gradient(top, $top 0%, $bottom 100%);
-}
-@mixin transition($transition: "all .15s ease-in-out") {
-    -webkit-transition: #{$transition};
-            transition: #{$transition};
-}
-@mixin translate3d($values: "0, 0, 0") {
-    -webkit-transform: translate3d(#{$values});
-            transform: translate3d(#{$values});
-}
-@mixin animation($animation: "fade .3s ease-out") {
-    -webkit-animation: #{$animation};
-            animation: #{$animation};
-}
-@mixin animation-play-state($value: "paused") {
-    -webkit-animation-play-state: #{$value};
-            animation-play-state: #{$value};
-}
-
-
-@import "ui/typekit",
+@import "ui/vars",
+        "normalize.css",
+        "ui/typekit",
         "ui/layout-typography",
         "ui/buttons",
         "ui/header",
