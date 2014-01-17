@@ -38,9 +38,9 @@ aside {
             margin-bottom: 0;
             -webkit-order: 999;
                     order: 999;
-        }
-        .page-about .author {
-            margin-top: 2.25em;
+            .page-about & {
+                margin-top: 2.25em;
+            }
         }
     }
     .author a {
