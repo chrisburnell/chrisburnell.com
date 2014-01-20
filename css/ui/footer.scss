@@ -31,13 +31,7 @@ footer {
     }
         .copyright a {
             display: inline-block;
-            text-decoration: none;
             white-space: nowrap;
-            &:hover,
-            &:focus,
-            &:active {
-                text-decoration: underline;
-            }
         }
         .home-link {
             background: url("../icon.png") no-repeat;
@@ -50,9 +44,13 @@ footer {
             vertical-align: middle;
             text-decoration: none;
             text-indent: -4em;
+            &:hover,
+            &:focus,
             &:active {
-                position: relative;
-                top: .14em;
+                text-decoration: none;
+            }
+            &:active {
+                @include translate3d("0, .14em, 0")
             }
         }
         .copyright-link {
@@ -82,12 +80,13 @@ footer {
             display: block;
             font-size: 0;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 opacity: .9;
+                text-decoration: none;
             }
             &:active {
-                position: relative;
-                top: .14em;
+                @include translate3d("0, .14em, 0");
             }
         }
         /*a*/.codepen-link {

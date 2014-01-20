@@ -7,7 +7,7 @@ button,
     @include gradient(transparent, $black-5);
     @include transition("background-color .2s ease-in-out");
     background-color: $blue;
-    color: $white !important;
+    color: $white;
     min-width: 6em;
     height: 1.91em;
     display: inline-block;
@@ -18,7 +18,6 @@ button,
     font-size: 1.375em;
     line-height: 1.91em;
     text-align: center;
-    text-decoration: none !important;
     text-transform: uppercase;
     text-shadow: 0 -0.045em 0 $black-25;
     white-space: nowrap;
@@ -33,13 +32,15 @@ button,
     &:hover,
     &:focus {
         background-color: lighten($blue, 10%);
+        text-decoration: none;
         box-shadow: inset 0 0 .091em $black-10,
                     inset 0 .045em 0 $white-25,
                     0 .182em 0 darken($blue, 7.5%);
     }
     &:active {
         @include gradient($black-5, transparent);
-        top: .137em;
+        @include translate3d("0, .137em, 0");
+        text-decoration: none;
         box-shadow: inset 0 .091em .273em $black-25,
                     inset 0 -0.045em 0 $white-25,
                     0 .046em 0 darken($blue, 7.5%);

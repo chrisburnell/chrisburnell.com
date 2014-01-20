@@ -37,8 +37,13 @@ header {
         -webkit-user-select: none;
            -moz-user-select: none;
                 user-select: none;
+        &:hover,
+        &:focus,
         &:active {
-            top: .039em;
+            text-decoration: none;
+        }
+        &:active {
+            @include translate3d("0, .039em, 0");
         }
         &:after {
             @include translate3d("0, -0.808em, 0");

@@ -44,10 +44,14 @@ nav {
             font-size: 1.25em;
             line-height: 1.25em;
             text-transform: uppercase;
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+            }
             &:active {
                 margin-top: .1em;
-                position: relative;
-                top: .1em;
+                @include translate3d("0, .1em, 0");
                 line-height: 1.15em;
             }
         }
@@ -67,8 +71,8 @@ nav {
             border-top: 5px solid $blue;
             border-right: 5px solid transparent;
             border-left: 5px solid transparent;
-            margin-left: -3px;
             position: absolute;
             bottom: -0.4em;
-            left: 48%;
+            left: 50%;
+            @include translate3d("-50%, 0, 0");
         }

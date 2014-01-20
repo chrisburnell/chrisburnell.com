@@ -51,12 +51,9 @@ a {
     @include transition("background .2s, color .2s, text-shadow .2s");
     color: $blue;
     text-decoration: none;
-    article &:hover,
-    article &:focus,
-    article &:active,
-    aside &:hover,
-    aside &:focus,
-    aside &:active {
+    &:hover,
+    &:focus,
+    &:active {
         text-decoration: underline;
     }
     h1 &,
@@ -67,11 +64,7 @@ a {
         &:focus,
         &:active {
             color: $blue;
-            text-decoration: underline;
         }
-    }
-    h3 & {
-        text-decoration: underline;
     }
 }
 img,

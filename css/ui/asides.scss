@@ -45,11 +45,6 @@ aside {
     }
     .author a {
         color: $blue;
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: underline;
-        }
     }
     .author-information {
         width: 100%;
