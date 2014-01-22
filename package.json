@@ -16,6 +16,7 @@
     "gulp-sass": "~0.4.1",
     "gulp-rename": "~0.2.2",
     "gulp-notify": "~0.3.0",
-    "gulp-imagemin": "~0.1.4"
+    "gulp-imagemin": "~0.1.4",
+    "gulp-ruby-sass": "~0.2.0"
   }
 }

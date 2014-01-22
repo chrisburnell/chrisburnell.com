@@ -14,7 +14,7 @@ gulp.task('styles', function() {
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
         .pipe(gulp.dest('css/'))
-        .pipe(notify({ title: 'Gulp', message: 'SASS compiled.', onLast: true,  }));
+        .pipe(notify({ title: 'Gulp', message: 'SASS compiled.', onLast: true }));
 });
 
 gulp.task('default', function() {
