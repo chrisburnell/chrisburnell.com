@@ -50,7 +50,7 @@ footer {
                 text-decoration: none;
             }
             &:active {
-                @include translate3d("0, .14em, 0")
+                @include translate3d("0, .14em, 0");
             }
         }
         .copyright-link {

@@ -5,11 +5,13 @@ var gulp = require('gulp');
     minifycss = require('gulp-minify-css'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    autoprefix = require('gulp-autoprefixer');
 
 gulp.task('styles', function() {
     return gulp.src('css/ravenous.scss')
         .pipe(sass({ style: 'expanded', includePaths: ['css/'] }))
+        .pipe(autoprefix("last 2 versions", "> 1%"))
         .pipe(gulp.dest('css/'))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())

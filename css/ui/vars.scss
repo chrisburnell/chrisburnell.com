@@ -30,24 +30,17 @@ $wrapper-padding:   1.25em;
     }
 }
 @mixin gradient($top, $bottom) {
-    background-image: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:    -moz-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:     -ms-linear-gradient(top, $top 0%, $bottom 100%);
-    background-image:         linear-gradient(top, $top 0%, $bottom 100%);
+    background-image: linear-gradient(to bottom, $top 0%, $bottom 100%);
 }
 @mixin transition($transition: "all .15s ease-in-out") {
-    -webkit-transition: #{$transition};
-            transition: #{$transition};
+    transition: #{$transition};
 }
 @mixin translate3d($values: "0, 0, 0") {
-    -webkit-transform: translate3d(#{$values});
-            transform: translate3d(#{$values});
+    transform: translate3d(#{$values});
 }
 @mixin animation($animation: "fade .3s ease-out") {
-    -webkit-animation: #{$animation};
-            animation: #{$animation};
+    animation: #{$animation};
 }
 @mixin animation-play-state($value: "paused") {
-    -webkit-animation-play-state: #{$value};
-            animation-play-state: #{$value};
+    animation-play-state: #{$value};
 }

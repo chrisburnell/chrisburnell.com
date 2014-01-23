@@ -50,8 +50,8 @@ nav {
                 text-decoration: none;
             }
             &:active {
-                margin-top: .1em;
                 @include translate3d("0, .1em, 0");
+                margin-top: .1em;
                 line-height: 1.15em;
             }
         }
@@ -67,6 +67,7 @@ nav {
         .home-page .site-navigation-home a:after,
         .about-page .site-navigation-about a:after,
         .archive-page .site-navigation-archive a:after {
+            @include translate3d("-50%, 0, 0");
             content: "";
             border-top: 5px solid $blue;
             border-right: 5px solid transparent;
@@ -74,5 +75,4 @@ nav {
             position: absolute;
             bottom: -0.4em;
             left: 50%;
-            @include translate3d("-50%, 0, 0");
         }

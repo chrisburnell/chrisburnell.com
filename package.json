@@ -1,15 +1,7 @@
 {
   "name": "Ravenous",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-sass": "~0.6.0",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-imagemin": "~0.4.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-svgmin": "~0.3.0",
-    "grunt-newer": "~0.6.0",
-    "grunt-csscomb": "~2.0.1",
     "gulp": "~3.4.0",
     "gulp-markdown": "~0.1.2",
     "gulp-minify-css": "~0.2.0",

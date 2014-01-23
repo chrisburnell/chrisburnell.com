@@ -126,6 +126,7 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -274,6 +275,8 @@ button[disabled], html input[disabled] {
  * 2. Remove excess padding in IE 8/9/10.
  */
 input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -541,10 +544,9 @@ code::selection {
     $ BUTTONS
 \*------------------------------------*/
 button, .button {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.05)));
   background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
-  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
-  background-image: -ms-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
-  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
   -webkit-transition: background-color .2s ease-in-out;
   transition: background-color .2s ease-in-out;
   background-color: #5f8aa6;
@@ -564,22 +566,26 @@ button, .button {
   white-space: nowrap;
   cursor: pointer;
   border-radius: 0.182em;
+  -webkit-box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #4b7087;
   box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #4b7087;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #80a3b8;
     text-decoration: none;
+    -webkit-box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #50778f;
     box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #50778f; }
   button:active, .button:active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 6, 6, 0.05)), to(transparent));
     background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
-    background-image: -moz-linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
-    background-image: -ms-linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
-    background-image: linear-gradient(top, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
+    background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.05) 0%, transparent 100%);
     -webkit-transform: translate3d(0, .137em, 0);
+    -ms-transform: translate3d(0, .137em, 0);
     transform: translate3d(0, .137em, 0);
     text-decoration: none;
+    -webkit-box-shadow: inset 0 0.091em 0.273em rgba(6, 6, 6, 0.25), inset 0 -0.045em 0 rgba(249, 249, 249, 0.25), 0 0.046em 0 #50778f;
     box-shadow: inset 0 0.091em 0.273em rgba(6, 6, 6, 0.25), inset 0 -0.045em 0 rgba(249, 249, 249, 0.25), 0 0.046em 0 #50778f; }
     button:active:before, button:active:after, .button:active:before, .button:active:after {
       top: -0.137em;
@@ -622,6 +628,7 @@ header {
   z-index: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   /**
          * Only animate when the user hovers the logo.
@@ -638,9 +645,11 @@ header {
     text-decoration: none; }
   .logo:active {
     -webkit-transform: translate3d(0, .039em, 0);
+    -ms-transform: translate3d(0, .039em, 0);
     transform: translate3d(0, .039em, 0); }
   .logo:after {
     -webkit-transform: translate3d(0, -0.808em, 0);
+    -ms-transform: translate3d(0, -0.808em, 0);
     transform: translate3d(0, -0.808em, 0);
     -webkit-animation: soaring 30s linear alternate infinite;
     animation: soaring 30s linear alternate infinite;
@@ -649,6 +658,7 @@ header {
     content: "";
     background: url("../icon.png") no-repeat;
     background-image: url("/images/raven.svg");
+    -webkit-background-size: 120px 120px;
     background-size: 120px 120px;
     width: 120px;
     height: 120px;
@@ -671,24 +681,24 @@ header {
     transform: translate3d(-0.0625em, -0.6875em, 0); }
 
   25% {
-    -webkit-transform: translate3d(0.125em, -0.3125em, 0);
-    transform: translate3d(0.125em, -0.3125em, 0); }
+    -webkit-transform: translate3d(.125em, -0.3125em, 0);
+    transform: translate3d(.125em, -0.3125em, 0); }
 
   37.5% {
-    -webkit-transform: translate3d(0.3125em, -0.375em, 0);
-    transform: translate3d(0.3125em, -0.375em, 0); }
+    -webkit-transform: translate3d(.3125em, -0.375em, 0);
+    transform: translate3d(.3125em, -0.375em, 0); }
 
   50% {
-    -webkit-transform: translate3d(0.125em, -0.4375em, 0);
-    transform: translate3d(0.125em, -0.4375em, 0); }
+    -webkit-transform: translate3d(.125em, -0.4375em, 0);
+    transform: translate3d(.125em, -0.4375em, 0); }
 
   62.5% {
-    -webkit-transform: translate3d(0.0625em, -0.25em, 0);
-    transform: translate3d(0.0625em, -0.25em, 0); }
+    -webkit-transform: translate3d(.0625em, -0.25em, 0);
+    transform: translate3d(.0625em, -0.25em, 0); }
 
   75% {
-    -webkit-transform: translate3d(0.1875em, -0.4375em, 0);
-    transform: translate3d(0.1875em, -0.4375em, 0); }
+    -webkit-transform: translate3d(.1875em, -0.4375em, 0);
+    transform: translate3d(.1875em, -0.4375em, 0); }
 
   87.5% {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
@@ -697,34 +707,42 @@ header {
 @keyframes soaring {
   0%, 100% {
     -webkit-transform: translate3d(0, -0.8125em, 0);
+    -ms-transform: translate3d(0, -0.8125em, 0);
     transform: translate3d(0, -0.8125em, 0); }
 
   12.5% {
     -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
+    -ms-transform: translate3d(-0.0625em, -0.6875em, 0);
     transform: translate3d(-0.0625em, -0.6875em, 0); }
 
   25% {
-    -webkit-transform: translate3d(0.125em, -0.3125em, 0);
-    transform: translate3d(0.125em, -0.3125em, 0); }
+    -webkit-transform: translate3d(.125em, -0.3125em, 0);
+    -ms-transform: translate3d(.125em, -0.3125em, 0);
+    transform: translate3d(.125em, -0.3125em, 0); }
 
   37.5% {
-    -webkit-transform: translate3d(0.3125em, -0.375em, 0);
-    transform: translate3d(0.3125em, -0.375em, 0); }
+    -webkit-transform: translate3d(.3125em, -0.375em, 0);
+    -ms-transform: translate3d(.3125em, -0.375em, 0);
+    transform: translate3d(.3125em, -0.375em, 0); }
 
   50% {
-    -webkit-transform: translate3d(0.125em, -0.4375em, 0);
-    transform: translate3d(0.125em, -0.4375em, 0); }
+    -webkit-transform: translate3d(.125em, -0.4375em, 0);
+    -ms-transform: translate3d(.125em, -0.4375em, 0);
+    transform: translate3d(.125em, -0.4375em, 0); }
 
   62.5% {
-    -webkit-transform: translate3d(0.0625em, -0.25em, 0);
-    transform: translate3d(0.0625em, -0.25em, 0); }
+    -webkit-transform: translate3d(.0625em, -0.25em, 0);
+    -ms-transform: translate3d(.0625em, -0.25em, 0);
+    transform: translate3d(.0625em, -0.25em, 0); }
 
   75% {
-    -webkit-transform: translate3d(0.1875em, -0.4375em, 0);
-    transform: translate3d(0.1875em, -0.4375em, 0); }
+    -webkit-transform: translate3d(.1875em, -0.4375em, 0);
+    -ms-transform: translate3d(.1875em, -0.4375em, 0);
+    transform: translate3d(.1875em, -0.4375em, 0); }
 
   87.5% {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
+    -ms-transform: translate3d(-0.0625em, -0.5625em, 0);
     transform: translate3d(-0.0625em, -0.5625em, 0); } }
 
 /*------------------------------------*\
@@ -774,9 +792,10 @@ nav {
     .site-navigation a:hover, .site-navigation a:focus, .site-navigation a:active {
       text-decoration: none; }
     .site-navigation a:active {
-      margin-top: 0.1em;
       -webkit-transform: translate3d(0, .1em, 0);
+      -ms-transform: translate3d(0, .1em, 0);
       transform: translate3d(0, .1em, 0);
+      margin-top: 0.1em;
       line-height: 1.15em; }
 
 .site-navigation a:hover, .site-navigation a:focus, .home-page .site-navigation-home a, .about-page .site-navigation-about a, .archive-page .site-navigation-archive a {
@@ -785,15 +804,16 @@ nav {
   border-bottom-width: 4px; }
 
 .home-page .site-navigation-home a:after, .about-page .site-navigation-about a:after, .archive-page .site-navigation-archive a:after {
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
   content: "";
   border-top: 5px solid #5f8aa6;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   position: absolute;
   bottom: -0.4em;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0); }
+  left: 50%; }
 
 /*------------------------------------*\
     $ ARTICLES AND ARTICLE LISTS
@@ -821,9 +841,14 @@ article, .articles {
          * the bottom in browsers that support the latest iteration of flexbox.
          */
       display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       padding-left: 0;
       -webkit-flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column; } }
 
 @media (max-width: 768px) {
@@ -855,7 +880,6 @@ article, .articles {
 
 .article-banner {
   -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
   background-clip: padding-box;
   margin-bottom: 1em;
   border-radius: 0.375em; }
@@ -970,6 +994,8 @@ aside {
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);
     margin-bottom: 0;
     -webkit-order: 999;
+    -webkit-box-ordinal-group: 1000;
+    -ms-flex-order: 999;
     order: 999; }
     .page-about .author {
       margin-top: 2.25em; } }
@@ -994,8 +1020,8 @@ aside {
 
 .author-image {
   -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
   background-clip: padding-box;
+  -webkit-background-size: 100px 100px;
   background-size: 100px 100px;
   width: 100px;
   height: 100px;
@@ -1051,10 +1077,9 @@ pre {
   margin: 0 0 1em; }
 
 pre:not(.codepen) {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
   background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-  background-image: -ms-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
   background-color: #4f4f4f;
   color: #f9f9f9;
   padding: 0.714em;
@@ -1067,10 +1092,9 @@ pre:not(.codepen) {
     $ FOOTER
 \*------------------------------------*/
 footer {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.1)));
   background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
-  background-image: -moz-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
-  background-image: -ms-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
-  background-image: linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
   background-color: #4f4f4f;
   color: #dddddd;
   width: auto;
@@ -1102,6 +1126,7 @@ footer {
 .home-link {
   background: url("../icon.png") no-repeat;
   background-image: url("/images/raven.svg");
+  -webkit-background-size: 2.857em 2.857em;
   background-size: 2.857em 2.857em;
   color: transparent;
   width: 2.875em;
@@ -1114,6 +1139,7 @@ footer {
     text-decoration: none; }
   .home-link:active {
     -webkit-transform: translate3d(0, .14em, 0);
+    -ms-transform: translate3d(0, .14em, 0);
     transform: translate3d(0, .14em, 0); }
 
 .copyright-link {
@@ -1135,6 +1161,7 @@ footer {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
   background-image: url("/images/glyphs.png");
+  -webkit-background-size: 120px 30px;
   background-size: 120px 30px;
   opacity: 0.6;
   color: transparent;
@@ -1147,6 +1174,7 @@ footer {
     text-decoration: none; }
   .social-icon:active {
     -webkit-transform: translate3d(0, .14em, 0);
+    -ms-transform: translate3d(0, .14em, 0);
     transform: translate3d(0, .14em, 0); }
 
 /*a*/
