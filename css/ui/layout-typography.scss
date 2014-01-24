@@ -20,18 +20,19 @@ body {
 .wrap {
     @include breakpoint("phone") {
         /**
-         * Let's make intelligent use of the phone viewport and reduce the
+         * Let's make intelligent use of the phone viewport width and reduce the
          * padding on either side of the wrapper. We can't remove it or the text
          * will sit right at the edge, creating a readability issue.
          */
         padding-right: $wrapper-padding/2;
-        padding-left: $wrapper-padding/2;
+        padding-left:  $wrapper-padding/2;
     }
     width: auto;
     max-width: $max-wrapper-width;
-    padding: 0 $wrapper-padding;
+    padding-left:  $wrapper-padding;
+    padding-right: $wrapper-padding;
     margin-right: auto;
-    margin-left: auto;
+    margin-left:  auto;
 }
 .clear {
     clear: both;

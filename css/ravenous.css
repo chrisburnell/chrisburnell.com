@@ -378,13 +378,14 @@ body {
 .wrap {
   width: auto;
   max-width: 1080px;
-  padding: 0 1.25em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
   margin-right: auto;
   margin-left: auto; }
   @media (max-width: 500px) {
     .wrap {
       /**
-         * Let's make intelligent use of the phone viewport and reduce the
+         * Let's make intelligent use of the phone viewport width and reduce the
          * padding on either side of the wrapper. We can't remove it or the text
          * will sit right at the edge, creating a readability issue.
          */
