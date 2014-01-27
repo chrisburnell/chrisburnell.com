@@ -8,5 +8,5 @@ http://chrisburnell.com
 
 Language: English
 Doctype: HTML5
-Built with: HTML5, CSS3, Javascript
+Built with: HTML5, CSS3 (SCSS), Javascript, Gulp, Autoprefixer
 Running on: Jekyll, Github Pages
