@@ -1,6 +1,12 @@
 {
   "name": "Ravenous",
+  "author": "Chris Burnell <me@chrisburnell.com>",
   "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com:chrisburnell/chrisburnell.github.io.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "gulp": "~3.4.0",
     "gulp-markdown": "~0.1.2",
@@ -9,6 +15,8 @@
     "gulp-rename": "~0.2.2",
     "gulp-notify": "~0.3.0",
     "gulp-imagemin": "~0.1.4",
-    "gulp-ruby-sass": "~0.2.0"
+    "gulp-livereload": "~0.2.0",
+    "gulp-svgmin": "~0.4.1",
+    "tiny-lr": "0.0.5"
   }
 }
