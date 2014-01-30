@@ -36,8 +36,7 @@ aside {
             padding-top: 2.25em;
             border-top: .25em solid $black-10;
             margin-bottom: 0;
-            -webkit-order: 999;
-                    order: 999;
+            order: 999;
             .page-about & {
                 margin-top: 2.25em;
             }
@@ -66,9 +65,7 @@ aside {
         }
     }
     .author-image {
-        -webkit-background-clip: padding-box;
-           -moz-background-clip: padding;
-                background-clip: padding-box;
+        background-clip: padding-box;
         background-size: 100px 100px;
         width: 100px;
         height: 100px;

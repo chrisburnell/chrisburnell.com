@@ -678,14 +678,29 @@ article, .articles {
          * asides become full width and the author information aside pushes to
          * the bottom in browsers that support the latest iteration of flexbox.
          */
-      display: -webkit-flex;
       display: -webkit-box;
+      /**
+         * When you hit the tablet media query, articles, article lists, and
+         * asides become full width and the author information aside pushes to
+         * the bottom in browsers that support the latest iteration of flexbox.
+         */
+      display: -webkit-flex;
+      /**
+         * When you hit the tablet media query, articles, article lists, and
+         * asides become full width and the author information aside pushes to
+         * the bottom in browsers that support the latest iteration of flexbox.
+         */
       display: -ms-flexbox;
+      /**
+         * When you hit the tablet media query, articles, article lists, and
+         * asides become full width and the author information aside pushes to
+         * the bottom in browsers that support the latest iteration of flexbox.
+         */
       display: flex;
       padding-left: 0;
-      -webkit-flex-direction: column;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; } }
 
@@ -830,8 +845,8 @@ aside {
     padding-top: 2.25em;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);
     margin-bottom: 0;
-    -webkit-order: 999;
     -webkit-box-ordinal-group: 1000;
+    -webkit-order: 999;
     -ms-flex-order: 999;
     order: 999; }
     .page-about .author {

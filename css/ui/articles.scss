@@ -23,11 +23,9 @@ article,
          * asides become full width and the author information aside pushes to
          * the bottom in browsers that support the latest iteration of flexbox.
          */
-        display: -webkit-flex;
-        display:         flex;
+        display: flex;
         padding-left: 0;
-        -webkit-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
     }
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
@@ -64,9 +62,7 @@ article,
         font-size: 1.25em;
     }
     .article-banner {
-        -webkit-background-clip: padding-box;
-           -moz-background-clip: padding;
-                background-clip: padding-box;
+        background-clip: padding-box;
         margin-bottom: 1em;
         border-radius: .375em;
     }
