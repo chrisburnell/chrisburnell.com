@@ -21,9 +21,10 @@
         };{% endif %}
         // Luminosity - works only in Firefox for now. Let’s go CSS4!
         window.addEventListener('devicelight', function(e) {
-            var lux = e.value;
+            var lux = e.value,
+                element =
             if(lux < 40) { // Dim
-                document.html.className = 'is-dim';
+                document.html.className = document.html.className + ' is-dim';
             }
             if(lux >= 40) { // Normal
                 document.html.className = document.html.className.replace('is-dim', '');
