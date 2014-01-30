@@ -1039,7 +1039,7 @@ footer {
 /**
  * Luminosity
  */
-.is-dim, .is-dim h1 a, .is-dim h2 a, .is-dim h3 a, .is-dim abbr[title], .is-dim blockquote, .is-dim cite, .is-dim dfn[title], .is-dim .logo, .is-dim .site-navigation a, .is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim .home-page .site-navigation-home a, .is-dim .about-page .site-navigation-about a, .is-dim .archive-page .site-navigation-archive a, .is-dim .article-link a:hover, .is-dim .article-link a:focus, .is-dim .article-link a:active {
+.is-dim, .is-dim h1 a, .is-dim h2 a, .is-dim h3 a, .is-dim abbr[title], .is-dim blockquote, .is-dim cite, .is-dim dfn[title], .is-dim .logo, .is-dim .site-navigation a, .is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim .site-navigation-home a, .is-dim .site-navigation-about a, .is-dim .site-navigation-archive a, .is-dim .article-link a:hover, .is-dim .article-link a:focus, .is-dim .article-link a:active {
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
   color: #f9f9f9; }
