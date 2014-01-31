@@ -1,10 +1,19 @@
 # Ravenous
 
-#### The the source code for [chrisburnell.com](http://chrisburnell.com).
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chrisburnell/chrisburnell.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-chrisburnell.com is powered by [Github Pages](http://pages.github.com), [Jekyll](http://jekyllrb.com), [SCSS](http://sass-lang.com), [Autoprefixer](https://github.com/ai/autoprefixer), and [Gulp](http://gulpjs.com). If you have any questions, please don’t hesitate to get in touch&mdash;via [twitter](http://twitter.com/iamchrisburnell) or email.
+#### The source code for [chrisburnell.com](http://chrisburnell.com).
 
-----
+If you have any questions, please don’t hesitate to get in touch&mdash;via [twitter](http://twitter.com/iamchrisburnell) or email.
+
+## Development
+- [Github Pages](http://pages.github.com)
+- [Jekyll](http://jekyllrb.com)
+- [SCSS](http://sass-lang.com)
+- [Autoprefixer](https://github.com/ai/autoprefixer)
+- [Gulp](http://gulpjs.com)
+
+## License
 
 The MIT License (MIT)
 
@@ -27,7 +36,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-----
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chrisburnell/chrisburnell.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
