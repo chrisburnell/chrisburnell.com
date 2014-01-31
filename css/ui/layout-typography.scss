@@ -190,9 +190,11 @@ article,
 /**
  * Text Highlights
  */
-::-webkit-selection { background: $blue; color: $white; }
-   ::-moz-selection { background: $blue; color: $white; }
-        ::selection { background: $blue; color: $white; }
-    code::-webkit-selection { background: $text-color; color: $white; text-shadow: none; }
-       code::-moz-selection { background: $text-color; color: $white; text-shadow: none; }
-            code::selection { background: $text-color; color: $white; text-shadow: none; }
+::selection {
+    background: $blue;
+    color: $white;
+}
+code::selection {
+    background: $text-color;
+    color: $white;
+}

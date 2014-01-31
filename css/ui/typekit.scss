@@ -10,14 +10,10 @@
     visibility: hidden;
 }
 .wf-active .logo, .wf-active nav, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active button, .wf-active .button {
-    @include animation();
+    @include animation(); // default for mixin is fade, as below
     visibility: visible;
 }
 
-@-webkit-keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
 @keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }

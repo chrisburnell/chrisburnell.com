@@ -34,9 +34,7 @@ header {
         text-transform: uppercase;
         text-shadow: .058em .058em 0 $black-5;
         z-index: 1;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-                user-select: none;
+        user-select: none;
         &:hover,
         &:focus,
         &:active {

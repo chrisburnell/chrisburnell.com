@@ -351,32 +351,24 @@ p:not(:last-child), ol:not(:last-child), ul:not(:last-child), h3:not(:last-child
 /**
  * Text Highlights
  */
-::-webkit-selection {
-  background: #5f8aa6;
-  color: #f9f9f9; }
-
 ::-moz-selection {
   background: #5f8aa6;
   color: #f9f9f9; }
 
+/**
+ * Text Highlights
+ */
 ::selection {
   background: #5f8aa6;
   color: #f9f9f9; }
 
-code::-webkit-selection {
-  background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none; }
-
 code::-moz-selection {
   background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none; }
+  color: #f9f9f9; }
 
 code::selection {
   background: #4f4f4f;
-  color: #f9f9f9;
-  text-shadow: none; }
+  color: #f9f9f9; }
 
 /*------------------------------------*\
     $ BUTTONS
