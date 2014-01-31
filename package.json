@@ -17,6 +17,7 @@
     "gulp-imagemin": "~0.1.4",
     "gulp-livereload": "~0.2.0",
     "gulp-svgmin": "~0.4.1",
-    "tiny-lr": "0.0.5"
+    "tiny-lr": "0.0.5",
+    "gulp-csscomb": "~0.1.0"
   }
 }
