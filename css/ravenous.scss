@@ -1,6 +1,7 @@
 @charset "UTF-8";
+/*! Ravenous - version 2.0
+*/
 /**
- * Ravenous - version 2.0
  * by Chris Burnell (@iamchrisburnell)
  * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
@@ -22,8 +23,8 @@
  */
 
 
-@import "ui/vars",
-        "ui/normalize.min",
+@import "ui/normalize",
+        "ui/vars",
         "ui/typekit",
         "ui/layout-typography",
         "ui/buttons",
