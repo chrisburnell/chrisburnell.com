@@ -50,7 +50,7 @@ gulp.task('svg', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.run('styles');
+    gulp.start('styles');
 });
 
 // Watch files and perform tasks
@@ -64,13 +64,13 @@ gulp.task('watch', function() {
         // Watch CSS files
         gulp.watch(cssDir + '**/*.scss', function(event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-            gulp.run('styles');
+            gulp.start('styles');
         });
         // Watch images and SVGs
         gulp.watch(imagesDir + '**/*', function(event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-            gulp.run('images');
-            gulp.run('svg');
+            gulp.start('images');
+            gulp.start('svg');
         });
     });
 
