@@ -37,7 +37,7 @@ snippet of code on a project of your own. -->
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//cdn.api.twitter.com">
 
-    <title>{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}</title>
+    <title>{% if page.page_class != "home-page" %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} &ndash; {{ site.tagline }}{% endif %}</title>
 
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- full version is at https://raw.github.com/chrisburnell/chrisburnell.github.io/master/css/ravenous.scss -->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
