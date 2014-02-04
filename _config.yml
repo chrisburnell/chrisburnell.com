@@ -6,12 +6,10 @@ url: http://chrisburnell.com
 email: me@chrisburnell.com
 twitter_user: iamchrisburnell
 
-employer: Squiz UK
-employer_url: http://squiz.net
-
-twitter_url: http://twitter.com/iamchrisburnell
 codepen_url: http://codepen.io/chrisburnell
+github_url: https://github.com/chrisburnell
 lastfm_url: http://last.fm/user/chrisburnell
+twitter_url: http://twitter.com/iamchrisburnell
 
 timezone: Europe/London
 destination: ./_site

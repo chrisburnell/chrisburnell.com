@@ -92,15 +92,19 @@ footer {
         /*a*/.codepen-link {
             color: #212121 !important;
         }
-        /*a*/.lastfm-link {
+        /*a*/.github-link {
             background-position: -30px top;
+            color: black !important;
+        }
+        /*a*/.lastfm-link {
+            background-position: -60px top;
             color: #d51007 !important;
         }
         /*a*/.rss-link {
-            background-position: -60px top;
+            background-position: -90px top;
             /* uses the default anchor color */
         }
         /*a*/.twitter-link {
-            background-position: -90px top;
+            background-position: -120px top;
             color: #007ba8 !important;
         }
