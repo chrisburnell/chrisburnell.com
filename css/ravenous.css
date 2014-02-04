@@ -1178,8 +1178,8 @@ footer {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
   background-image: url("/images/glyphs.png");
-  -webkit-background-size: 120px 30px;
-  background-size: 120px 30px;
+  -webkit-background-size: 150px 30px;
+  background-size: 150px 30px;
   opacity: 0.6;
   color: transparent;
   width: 30px;

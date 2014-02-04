@@ -72,7 +72,7 @@ footer {
         /*a*/.social-icon {
             @include transition("opacity .2s ease-in-out");
             background-image: url("/images/glyphs.png");
-            background-size: 120px 30px;
+            background-size: 150px 30px;
             opacity: .6;
             color: transparent;
             width: 30px;
