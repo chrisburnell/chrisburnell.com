@@ -955,7 +955,8 @@ article, .articles {
     left: 0; }
 
 .pagination {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 2em; }
   @media (max-width: 500px) {
     .pagination {
       text-align: center; } }
@@ -978,6 +979,9 @@ article, .articles {
       content: "\00a0\2192";
       position: relative;
       /* override the button:after fix */ }
+
+.comments {
+  margin-top: 2em; }
 
 /*------------------------------------*\
     $ ASIDES
@@ -1038,6 +1042,9 @@ aside {
   .author-information a {
     color: inherit; }
 
+.author-biography {
+  margin-bottom: 1.5em; }
+
 .author-image {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -1059,8 +1066,6 @@ aside {
   background: none; }
 
 .related-articles {
-  padding-top: 1em;
-  border-top: 0.25em solid rgba(6, 6, 6, 0.1);
   margin-top: 1em; }
   .related-articles ul {
     list-style: none;
@@ -1073,14 +1078,6 @@ aside {
   padding-left: 0.75em;
   font-size: 0.8124em;
   font-style: italic; }
-
-/*------------------------------------*\
-    $ COMMENTS
-\*------------------------------------*/
-.comments {
-  padding-top: 1em;
-  border-top: 0.25em solid rgba(6, 6, 6, 0.1);
-  margin-top: 2em; }
 
 /*------------------------------------*\
     $ CODE AND CODE BLOCKS
@@ -1222,19 +1219,25 @@ footer {
 /**
  * Luminosity
  */
-.is-dim, .is-dim h1 a, .is-dim h2 a, .is-dim h3 a, .is-dim abbr[title], .is-dim blockquote, .is-dim cite, .is-dim dfn[title], .is-dim .logo, .is-dim .site-navigation a, .is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim .site-navigation-home a, .is-dim .site-navigation-about a, .is-dim .site-navigation-archive a, .is-dim .article-link a:hover, .is-dim .article-link a:focus, .is-dim .article-link a:active, .is-dim .codepen-link {
+.is-dim, .is-dim h1 a, .is-dim h2 a, .is-dim h3 a, .is-dim abbr[title], .is-dim blockquote, .is-dim cite, .is-dim dfn[title], .is-dim .logo, .is-dim .site-navigation a, .is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim .site-navigation-home a, .is-dim .site-navigation-about a, .is-dim .site-navigation-archive a, .is-dim .article-link a:hover, .is-dim .article-link a:focus, .is-dim .article-link a:active, .is-dim .articles-list .article-date:before, .is-dim .codepen-link {
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
   color: #f9f9f9 !important;
   /* just to override any specificity, this is temp */ }
 
-.is-dim, .is-dim hr {
+.is-dim {
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
   background-color: #4f4f4f; }
 
+.is-dim hr {
+  background-color: #dddddd; }
+
 .is-dim abbr[title], .is-dim dfn[title] {
-  border-bottom-color: #f9f9f9; }
+  border-bottom-color: #dddddd; }
 
 .is-dim .logo {
   text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25); }
+
+.is-dim .articles-list li {
+  border-top-color: #dddddd; }

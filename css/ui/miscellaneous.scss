@@ -23,19 +23,25 @@
 .is-dim .article-link a:hover,
 .is-dim .article-link a:focus,
 .is-dim .article-link a:active,
+.is-dim .articles-list .article-date:before,
 .is-dim /*a*/.codepen-link {
     @include transition();
-    color: #f9f9f9 !important; /* just to override any specificity, this is temp */
+    color: $white !important; /* just to override any specificity, this is temp */
 }
-.is-dim,
-.is-dim hr {
+.is-dim {
     @include transition();
-    background-color: #4f4f4f;
+    background-color: $text-color;
+}
+.is-dim hr {
+    background-color: $text-color-light;
 }
 .is-dim abbr[title],
 .is-dim dfn[title] {
-    border-bottom-color: #f9f9f9;
+    border-bottom-color: $text-color-light;
 }
 .is-dim .logo {
-    text-shadow: 0.058em 0.058em 0 rgba(249, 249, 249, 0.25);
+    text-shadow: 0.058em 0.058em 0 $white-25;
+}
+.is-dim .articles-list li {
+    border-top-color: $text-color-light;
 }
