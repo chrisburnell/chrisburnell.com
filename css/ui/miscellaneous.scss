@@ -22,11 +22,13 @@
 .is-dim .site-navigation-archive a,
 .is-dim .article-link a:hover,
 .is-dim .article-link a:focus,
-.is-dim .article-link a:active {
+.is-dim .article-link a:active,
+.is-dim /*a*/.codepen-link {
     @include transition();
-    color: #f9f9f9;
+    color: #f9f9f9 !important; /* just to override any specificity, this is temp */
 }
-.is-dim {
+.is-dim,
+.is-dim hr {
     @include transition();
     background-color: #4f4f4f;
 }
