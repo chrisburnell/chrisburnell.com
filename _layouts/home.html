@@ -13,10 +13,7 @@
                     <div class="author-employer">I work at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>{% else %}
                     <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>{% endif %}
                 </div>
-                <div class="author-biography">{% if page.page_class != "about-page" %}
-                    <p>I’m a Canadian {{ site.job_title }} living in London, UK and {% if site.employer %}working at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>{% else %}currently accepting freelance work{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="{{ site.url }}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>{% endif %}
-                    <p>{% if page.page_class != "home-page" %}<a rel="me author" class="rss-link" href="{{ site.url }}/feed.xml" title="Subscribe via RSS">Subscribe via RSS!</a> {% endif %}I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if my whimsical articles don’t capture your child-like wonder.</p>
-                </div>
+                {% include biography.html %}
             </aside>{% if page.page_class == "home-page" %}
 
             <h2 class="site-introduction">{{ site.description }}</h2>{% endif %}
