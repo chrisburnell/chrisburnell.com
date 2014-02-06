@@ -1014,15 +1014,15 @@ aside {
 
 @media (max-width: 768px) {
   .author {
-    padding-top: 2.25em;
+    padding-top: 2em;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);
     margin-bottom: 0;
     -webkit-box-ordinal-group: 1000;
     -webkit-order: 999;
     -ms-flex-order: 999;
     order: 999; }
-    .page-about .author {
-      margin-top: 2.25em; } }
+    .about-page .author {
+      margin-top: 2em; } }
 
 .author a {
   color: #5f8aa6; }

@@ -33,12 +33,12 @@ aside {
 }
     @include breakpoint("tablet") {
         .author {
-            padding-top: 2.25em;
+            padding-top: 2em;
             border-top: .25em solid $black-10;
             margin-bottom: 0;
             order: 999;
-            .page-about & {
-                margin-top: 2.25em;
+            .about-page & {
+                margin-top: 2em;
             }
         }
     }
