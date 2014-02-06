@@ -1,12 +1,29 @@
-/* TEAM */
+# humanstxt.org
 
-Chris Burnell
-http://chrisburnell.com
-@iamchrisburnell
+/* OWNER & DEVELOPER */
+
+    Name: Chris Burnell
+    Twitter: @iamchrisburnell
 
 /* SITE */
 
-Language: English
-Doctype: HTML5
-Built with: HTML5, CSS3 (SCSS), Javascript, Gulp, Autoprefixer
-Running on: Jekyll, Github Pages
+    URL: http://chrisburnell.com
+    Language: English
+    Doctype: HTML5
+    Fonts: League Gothic, FF Meta Serif Web Pro, Proxima Nova
+    Compiled with: Gulp, gulp-sass (libsass), gulp-cssmin (clean-css), gulp-autoprefixer (Autoprefixer)
+    Running on: Github Pages, Jekyll
+
+/* LANGUAGES */
+
+    HTML
+    CSS (SCSS)
+    Javascript
+    Markdown
+    XML
+
+/* SERVICES */
+
+    Google Analytics: http://google.com/analytics
+    Disqus: http://disqus.com
+    Typekit: http://typekit.com
