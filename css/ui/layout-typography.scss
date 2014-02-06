@@ -15,6 +15,7 @@ body {
     position: relative;
     font: 400 normal #{$base-font-size}/1.618em $primary-font-stack;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "kern";
     -webkit-font-smoothing: antialiased;
 }
 .wrap {
