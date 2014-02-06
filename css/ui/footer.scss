@@ -6,7 +6,7 @@ footer {
     @include gradient(transparent, $black-10);
     @include breakpoint("phone") {
         height: 85px;
-        padding: 2em 0;
+        padding: 2.25em 0;
     }
     background-color: $text-color;
     color: $text-color-light;

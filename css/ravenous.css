@@ -394,8 +394,8 @@ body {
 .wrap {
   width: auto;
   max-width: 1080px;
-  padding-left: 1.25em;
   padding-right: 1.25em;
+  padding-left: 1.25em;
   margin-right: auto;
   margin-left: auto; }
   @media (max-width: 500px) {
@@ -611,27 +611,27 @@ button, .button {
     $ HEADER
 \*------------------------------------*/
 header {
-  height: 110px; }
+  height: 6.875em; }
   @media (max-width: 768px) {
     header {
       /**
          * Center the logo and make room for the navigation to drop underneath.
          */
-      height: 170px;
+      height: 10.625em;
       text-align: center; } }
 
 .logo {
   -webkit-transition: none;
   transition: none;
   color: #4f4f4f;
-  height: 110px;
+  height: 2em;
   display: inline-block;
   float: left;
-  padding-left: 100px;
+  padding-left: 1.923em;
   position: relative;
   font-family: "league-gothic", sans-serif;
   font-size: 3.25em;
-  line-height: 110px;
+  line-height: 2em;
   text-transform: uppercase;
   text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
   z-index: 1;
@@ -644,12 +644,10 @@ header {
          */ }
   @media (max-width: 768px) {
     .logo {
-      height: 90px;
+      height: 1.74em;
       display: inline-block;
-      float: none; } }
-  @media (max-width: 500px) {
-    .logo {
-      font-size: 2.25em; } }
+      float: none;
+      line-height: 1.74em; } }
   .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
   .logo:active {
@@ -667,10 +665,10 @@ header {
     content: "";
     background: url("../icon.png") no-repeat;
     background-image: url("/images/raven.svg");
-    -webkit-background-size: 120px 120px;
-    background-size: 120px 120px;
-    width: 120px;
-    height: 120px;
+    -webkit-background-size: 2.307em 2.307em;
+    background-size: 2.307em 2.307em;
+    width: 2.307em;
+    height: 2.307em;
     display: block;
     position: absolute;
     top: 0;
@@ -679,6 +677,8 @@ header {
   .logo:hover:after, .logo:focus:after, .logo:active:after {
     -webkit-animation-play-state: running;
     animation-play-state: running; }
+  .logo span {
+    white-space: nowrap; }
 
 @-webkit-keyframes soaring {
   0%, 100% {
@@ -1128,7 +1128,7 @@ footer {
   @media (max-width: 500px) {
     footer {
       height: 85px;
-      padding: 2em 0; } }
+      padding: 2.25em 0; } }
 
 .copyright, .social-icons {
   float: left;

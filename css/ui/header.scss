@@ -7,30 +7,28 @@ header {
         /**
          * Center the logo and make room for the navigation to drop underneath.
          */
-        height: 170px;
+        height: 10.625em;
         text-align: center;
     }
-    height: 110px;
+    height: 6.875em;
 }
     .logo {
         @include transition("none");
         @include breakpoint("tablet") {
-            height: 90px;
+            height: 1.74em;
             display: inline-block;
             float: none;
-        }
-        @include breakpoint("phone") {
-            font-size: 2.25em;
+            line-height: 1.74em;
         }
         color: $text-color;
-        height: 110px;
+        height: 2em;
         display: inline-block;
         float: left;
-        padding-left: 100px;
+        padding-left: 1.923em;
         position: relative;
         font-family: $heading-font-stack;
         font-size: 3.25em;
-        line-height: 110px;
+        line-height: 2em;
         text-transform: uppercase;
         text-shadow: .058em .058em 0 $black-5;
         z-index: 1;
@@ -50,9 +48,9 @@ header {
             content: "";
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
-            background-size: 120px 120px;
-            width: 120px;
-            height: 120px;
+            background-size: 2.307em 2.307em;
+            width: 2.307em;
+            height: 2.307em;
             display: block;
             position: absolute;
             top: 0;
@@ -66,6 +64,9 @@ header {
         &:focus:after,
         &:active:after {
             @include animation-play-state("running");
+        }
+        span {
+            white-space: nowrap;
         }
     }
     @keyframes soaring {
