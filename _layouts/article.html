@@ -3,11 +3,11 @@
     <section class="content  wrap  clear">
         <article role="article" role="main">
 
-            <h1 class="article-title" role="heading" aria-level="1">{{ page.title }}</h1>
+            <h1 class="article-title" role="heading">{{ page.title }}</h1>
 
             <aside class="author" role="complementary">
                 <div class="author-information">
-                    <img class="author-image" src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" alt="">
+                    <img alt=" " class="author-image" src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x">
                     <div class="author-name">by <strong>{{ site.author }}</strong></div>
                     <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.tags %}
                     <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>{% endif %}

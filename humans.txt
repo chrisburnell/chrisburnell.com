@@ -10,8 +10,8 @@
     URL: http://chrisburnell.com
     Language: English
     Doctype: HTML5
-    Fonts: League Gothic, FF Meta Serif Web Pro, Proxima Nova
-    Compiled with: Gulp, gulp-sass (libsass), gulp-cssmin (clean-css), gulp-autoprefixer (Autoprefixer)
+    Fonts: FF Meta Serif Web Pro, Proxima Nova, League Gothic
+    Compiled with: Gulp, gulp-autoprefixer (Autoprefixer), gulp-csscomb (csscomb), gulp-cssmin (clean-css), gulp-sass (libsass)
     Running on: Github Pages, Jekyll
 
 /* LANGUAGES */
@@ -27,3 +27,4 @@
     Google Analytics: http://google.com/analytics
     Disqus: http://disqus.com
     Typekit: http://typekit.com
+    Twitter: http://dev.twitter.com

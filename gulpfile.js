@@ -2,14 +2,14 @@
  * Gulp Configuration
  */
 
-var gulp = require('gulp');
-    sass = require('gulp-sass'),
-    minifycss = require('gulp-minify-css'),
-    imagemin = require('gulp-imagemin'),
-    svgmin = require('gulp-svgmin'),
-    rename = require('gulp-rename'),
-    notify = require('gulp-notify'),
+var gulp = require('gulp'),
     autoprefix = require('gulp-autoprefixer'),
+    imagemin = require('gulp-imagemin'),
+    minifycss = require('gulp-minify-css'),
+    notify = require('gulp-notify'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    svgmin = require('gulp-svgmin'),
     livereload = require('gulp-livereload'),
     lr = require('tiny-lr'),
     server = lr();
