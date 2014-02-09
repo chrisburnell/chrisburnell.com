@@ -252,7 +252,7 @@ Here’s an example of what the CSS for my logo looked like prior to these chang
             }
         }
 
-Let’s face it, that’s a monumental amount of code to read let alone scroll past. Although it was organised well, there are a lot of repetitions and attributes that could be assigned to variables and used elsewhere in the CSS.
+Let’s face it, that’s a monumental amount of code to read let alone scroll past. Although I spent a monumental amount of time organising it well and ensuring it was super-maintainable, there are a lot of repetitions and property values that could be assigned to variables and used elsewhere in the CSS. The advantage of this becomes obvious when you find yourself having to remember bespoke colour values, but we also have a lot of repetitions due to the requirement of vendor prefixes. Although we will obviously need the vendor prefixes again when we deliver CSS to the user on the front-end, because we’re compiling our CSS beforehand, we can get rid of them in our uncompiled stylesheet.
 
 --------
 
@@ -447,7 +447,7 @@ The CSS here a lot more concise now, and the advantages are tremendous as you ge
 
 --------
 
-Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SASS files into one file in the output <code>.css</code> file. I’ve done exactly that with my SASS files—split them into <code>articles.scss</code>, <code>asides.scss</code>, <code>buttons.scss</code>, etc.—and this helps to create a bird’s-eye-view separation of components.
+Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SASS files into one file in the output <code>.css</code> file. I’ve done exactly that with my SASS files—split them into <dfn title="a SASS file named with a leading underscore to denote it is part of a whole CSS codebase">partials</dfn>: <code>_articles.scss</code>, <code>_asides.scss</code>, <code>_buttons.scss</code>, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
