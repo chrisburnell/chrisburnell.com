@@ -5,6 +5,7 @@
 var gulp = require('gulp'),
     autoprefix = require('gulp-autoprefixer'),
     imagemin = require('gulp-imagemin'),
+    jekyll = require('gulp-jekyll'),
     minifycss = require('gulp-minify-css'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
