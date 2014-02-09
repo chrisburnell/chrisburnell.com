@@ -28,6 +28,8 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
+--------
+
 Because I also decided to make the switch to SASS, I was wasting a lot of time in the command line, running <code>sass</code> to compile my SASS every time I made a change. *Then* I was minifying it because that’s what I serve to users. To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
 It’s only a small amount of time spent each time I wanted to compile my SASS, but as anyone who writes CSS knows, an awful lot of time is spent tweaking a value, refreshing the browser, tweaking a value, refreshing the browser, and so on. The time spent compiling the SASS “myself” added up to one big frustration.
