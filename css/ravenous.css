@@ -1084,7 +1084,7 @@ aside {
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 code {
-  font-family: Monaco, "Courier New", monospace;
+  font-family: Consolas, "Courier New", monospace;
   font-size: 0.8125em; }
 
 p > code {
