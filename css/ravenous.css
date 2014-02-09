@@ -646,6 +646,9 @@ header {
       display: inline-block;
       float: none;
       line-height: 1.74em; } }
+  @media (max-width: 500px) {
+    .logo {
+      font-size: 2.75em; } }
   .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
   .logo:active {

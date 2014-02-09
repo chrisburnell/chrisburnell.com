@@ -20,6 +20,9 @@ header {
             float: none;
             line-height: 1.74em;
         }
+        @include breakpoint("phone") {
+            font-size: 2.75em;
+        }
         color: $text-color;
         height: 2em;
         display: inline-block;
