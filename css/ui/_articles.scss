@@ -82,11 +82,14 @@ article,
             }
         }
     }
-    :not(aside) .article-date,
+    .article-date,
     .related-date {
         display: block;
-        margin-bottom: .5em;
     }
+        .articles-list .article-date,
+        .related-date {
+            margin-bottom: .5em;
+        }
         .articles-list .article-date:before {
             content: "\2013 \0020";
             color: $text-color-alt;

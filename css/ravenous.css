@@ -934,8 +934,10 @@ article, .articles {
       border-bottom-color: #5f8aa6;
       text-decoration: none; }
 
-:not(aside) .article-date, .related-date {
-  display: block;
+.article-date, .related-date {
+  display: block; }
+
+.articles-list .article-date, .related-date {
   margin-bottom: 0.5em; }
 
 .articles-list .article-date:before {
