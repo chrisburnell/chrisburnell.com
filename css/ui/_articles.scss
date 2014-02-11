@@ -69,6 +69,15 @@ article,
     }
         .article-banner {
             margin-bottom: 1em;
+            @include breakpoint("tablet") {
+                display: none;
+            }
+            &.mobile {
+                display: none;
+                @include breakpoint("tablet") {
+                    display: block;
+                }
+            }
         }
     .article-link {
         width: 100%;
