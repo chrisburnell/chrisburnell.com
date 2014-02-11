@@ -32,15 +32,16 @@ Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autopr
 
 Because I also decided to make the switch to SASS, I was wasting a lot of time in the command line, running <code>sass</code> to compile my SASS every time I made a change. *Then* I was minifying it because that’s what I serve to users. To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
-It’s only a small amount of time spent each time I wanted to compile my SASS, but as anyone who writes CSS knows, an awful lot of time is spent tweaking a value, refreshing the browser, tweaking a value, refreshing the browser, and so on. The time spent compiling the SASS “myself” added up to one big frustration.
+It’s only a small amount of time spent each time I wanted to compile my SASS, but as anyone who writes CSS knows, an awful lot of time is spent tweaking a value, refreshing the browser, tweaking a value, refreshing the browser, and so on. The time spent compiling the SASS *myself* added up to one big frustration.
 
 All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SASS for the most part.
 
 ### There must be a better way!
 
-<img src="http://i.imgur.com/cgFT4pk.jpg" class="banner  rounded" alt="Good news everyone!">
-
-There is.
+<figure>
+    <img src="http://i.imgur.com/cgFT4pk.jpg" class="banner  rounded" alt="Good news everyone!">
+    <figcaption>There is!</figcaption>
+</figure>
 
 And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a “streaming build system” built on *[node.js](http://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
 
@@ -404,6 +405,11 @@ Next, let’s turn this CSS into SASS.
         75% {   @include translate3d(".1875em, -0.4375em, 0"); }
         87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
     }
+
+<figure>
+    <img src="http://i.imgur.com/UK35trx.gif" alt="Just look at it... :')">
+    <figcaption>Success.</figcaption>
+</figure>
 
 You’ll notice a few major changes:
 

@@ -384,7 +384,7 @@ body {
   background-color: #f9f9f9;
   color: #4f4f4f;
   position: relative;
-  font: 400 normal 16px/1.618em "ff-meta-serif-web-pro", serif;
+  font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
@@ -427,11 +427,6 @@ a {
     h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5f8aa6; }
 
-img, a img {
-  width: auto;
-  max-width: 100%;
-  height: auto; }
-
 strong {
   font-weight: 600; }
 
@@ -464,6 +459,9 @@ h3, .articles-list .article-date {
 p {
   margin: 0; }
 
+article p {
+  line-height: ; }
+
 ol, ul {
   padding: 0;
   margin: 0;
@@ -471,6 +469,20 @@ ol, ul {
 
 ol {
   list-style-type: decimal-leading-zero; }
+
+img, a img {
+  width: auto;
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0 0 0.5em;
+  text-align: center; }
+
+figcaption {
+  padding-top: 0.444em;
+  font-size: 1.125em;
+  font-style: italic; }
 
 abbr[title], blockquote, cite, dfn[title] {
   color: #737373;
@@ -521,7 +533,7 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
-p:not(:last-child), ol:not(:last-child), ul:not(:last-child), h3:not(:last-child), article, .article-introduction, .cp_embed_iframe {
+p:not(:last-child), ol:not(:last-child), ul:not(:last-child), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
   margin-bottom: 1em; }
 
 /**
@@ -880,6 +892,8 @@ article, .articles {
   article {
     margin-bottom: 0; } }
 
+/* this is soooooo boring! */
+/* wow, so fast. */
 .articles-list {
   list-style: none; }
   .articles-list li {
@@ -901,7 +915,8 @@ article, .articles {
   margin-bottom: 0.4em; }
 
 .article-introduction {
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  margin-bottom: 1em; }
 
 .article-banner {
   -webkit-background-clip: padding-box;
@@ -997,7 +1012,8 @@ article, .articles {
 aside {
   width: 15.1875em;
   float: left;
-  margin-left: -16.875em; }
+  margin-left: -16.875em;
+  line-height: 1.618em; }
   @media (max-width: 768px) {
     aside {
       width: 100%;
@@ -1095,7 +1111,8 @@ p > code {
   padding: 0 0.154em; }
 
 pre {
-  margin: 0 0 1em; }
+  margin: 0 0 1em;
+  /* override _normalize.scss */ }
 
 pre:not(.codepen) {
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
@@ -1105,8 +1122,9 @@ pre:not(.codepen) {
   color: #f9f9f9;
   padding: 0.714em;
   position: relative;
-  overflow: hidden;
   overflow-x: auto;
+  overflow-y: hidden;
+  line-height: 1.5em;
   border-radius: 0.1875em; }
 
 /*------------------------------------*\
@@ -1250,3 +1268,12 @@ footer {
 
 .is-dim .articles-list li {
   border-top-color: #dddddd; }
+
+/**
+ * Today We Fight Back
+ */
+.tdwfb-container button, .tdwfb-container button:hover, .tdwfb-container button:focus, .tdwfb-container button:active {
+  min-width: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0; }

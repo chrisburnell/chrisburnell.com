@@ -15,6 +15,7 @@ aside {
     width: 15.1875em;
     float: left;
     margin-left: -16.875em;
+    line-height: 1.618em;
     p {
         @include breakpoint("phone") {
             font-size: 1em;

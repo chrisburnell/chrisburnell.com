@@ -13,7 +13,7 @@ body {
     background-color: $white;
     color: $text-color;
     position: relative;
-    font: 400 normal #{$base-font-size}/1.618em $primary-font-stack;
+    font: 400 normal #{$base-font-size}/1.875em $primary-font-stack;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -68,12 +68,6 @@ a {
         }
     }
 }
-img,
-a img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-}
 strong {
     font-weight: 600;
 }
@@ -106,6 +100,9 @@ h3,
 p {
     margin: 0;
 }
+    article p {
+        line-height:
+    }
 ol,
 ul {
     padding: 0;
@@ -115,6 +112,21 @@ ul {
 ol {
     list-style-type: decimal-leading-zero;
 }
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0 0 .5em;
+    text-align: center;
+}
+    figcaption {
+        padding-top: .444em;
+        font-size: 1.125em;
+        font-style: italic;
+    }
 abbr[title],
 blockquote,
 cite,
@@ -182,8 +194,8 @@ p:not(:last-child),
 ol:not(:last-child),
 ul:not(:last-child),
 h3:not(:last-child),
+figure:not(:last-child),
 article,
-.article-introduction,
 .cp_embed_iframe {
     margin-bottom: 1em;
 }
