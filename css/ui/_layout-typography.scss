@@ -88,7 +88,7 @@ h2 {
 }
 h3,
 .article-date {
-    border-bottom: .0625em solid;
+    border-bottom: .0625em solid $text-color-light;
     font-family: $secondary-font-stack;
     font-size: 1.125em;
     font-weight: 600;

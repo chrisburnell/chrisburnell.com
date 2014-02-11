@@ -447,7 +447,7 @@ h2 {
   text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.25); }
 
 h3, .article-date {
-  border-bottom: 0.0625em solid;
+  border-bottom: 0.0625em solid #dddddd;
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125em;
   font-weight: 600;
