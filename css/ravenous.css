@@ -447,13 +447,15 @@ h2 {
   text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.25); }
 
 h3, .article-date {
-  border-bottom: 0.125em solid #dddddd;
-  margin-top: 0.5em;
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125em;
   font-weight: 600;
   line-height: 1.618em;
   text-transform: uppercase; }
+
+h3 {
+  border-bottom: 0.125em solid #dddddd;
+  margin-top: 0.5em; }
 
 p {
   margin: 0; }
