@@ -421,7 +421,6 @@ You’ll notice a few major changes:
 <!-- useless break for code block, silly markdown -->
     .logo {
         ...
-        ...
         &:hover,
         &:focus,
         &:active {
