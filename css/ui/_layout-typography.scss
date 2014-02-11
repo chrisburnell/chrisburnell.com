@@ -88,7 +88,7 @@ h2 {
 }
 h3,
 .article-date {
-    border-bottom: .0625em solid $text-color-light;
+    border-bottom: .125em solid $text-color-light;
     margin-top: .5em;
     font-family: $secondary-font-stack;
     font-size: 1.125em;
@@ -177,7 +177,7 @@ blockquote {
 hr {
     background: $black-10;
     width: 100%;
-    height: .25em;
+    height: .125em;
     display: block;
     border: 0;
     margin: .5em 0 1.5em;

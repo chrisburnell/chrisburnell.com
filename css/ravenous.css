@@ -447,7 +447,7 @@ h2 {
   text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.25); }
 
 h3, .article-date {
-  border-bottom: 0.0625em solid #dddddd;
+  border-bottom: 0.125em solid #dddddd;
   margin-top: 0.5em;
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125em;
@@ -521,7 +521,7 @@ blockquote + p .citation, .pullquote .citation {
 hr {
   background: rgba(6, 6, 6, 0.1);
   width: 100%;
-  height: 0.25em;
+  height: 0.125em;
   display: block;
   border: 0;
   margin: 0.5em 0 1.5em; }
