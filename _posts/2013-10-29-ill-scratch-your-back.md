@@ -4,7 +4,7 @@ date: 2013-10-28 23:22:00
 title: I’ll Scratch Your Back, And Mine Too
 introduction: I’ve been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
 banner: ill-scratch-your-back.png
-banner: ill-scratch-your-back_mobile.png
+banner_mobile: ill-scratch-your-back_mobile.png
 tags:
 - CSS
 - Tutorials
