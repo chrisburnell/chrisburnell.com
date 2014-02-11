@@ -491,8 +491,6 @@ Another thing, which I won’t bother to illustrate here, is the splitting of fi
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
---------
-
 ### Useful Links
 
 - [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
