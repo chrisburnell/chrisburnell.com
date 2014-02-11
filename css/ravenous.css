@@ -934,7 +934,7 @@ article, .articles {
       border-bottom-color: #5f8aa6;
       text-decoration: none; }
 
-.article-date, .related-date {
+:not(aside) .article-date, .related-date {
   display: block;
   margin-bottom: 0.5em; }
 

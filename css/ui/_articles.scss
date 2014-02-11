@@ -82,7 +82,7 @@ article,
             }
         }
     }
-    .article-date,
+    :not(aside) .article-date,
     .related-date {
         display: block;
         margin-bottom: .5em;
