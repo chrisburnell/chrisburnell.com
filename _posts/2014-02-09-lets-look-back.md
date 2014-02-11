@@ -411,7 +411,7 @@ Next, let’s turn this CSS into SASS.
     <figcaption>Success.</figcaption>
 </figure>
 
-You’ll notice a few major changes:
+### You’ll notice a few major changes
 
 - the <code>hover</code>, <code>focus</code>, and <code>active</code> states are nested, using an <code>&</code> prefix
 - the <code>after</code> pseudo class is nested, using an <code>&</code> prefix
@@ -493,7 +493,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 --------
 
-Here are a few links to help you get familiarised with SASS if you haven’t already:
+### Useful Links
 
 - [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
 - [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
@@ -503,7 +503,7 @@ Here are a few links to help you get familiarised with SASS if you haven’t alr
 - [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
 - [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
 
-And if you want to start using *gulp*, here’s a fantastic guide, “[Getting started with gulp”](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")”, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear &mdash; Front-end designer and developer").
+And if you want to start using *gulp*, here’s a fantastic guide, “[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")”, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear &mdash; Front-end designer and developer").
 
 ### Wrapping it up
 
