@@ -532,7 +532,7 @@ hr {
  * Add a bottom margin to a plethora of tasty elements.
  */
 p:not(:last-child), ol:not(:last-child), ul:not(:last-child), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
-  margin-bottom: 1em; }
+  margin-bottom: 1.25em; }
 
 /**
  * Text Highlights
