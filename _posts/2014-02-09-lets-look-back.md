@@ -417,6 +417,41 @@ You’ll notice a few major changes:
 - the <code>after</code> pseudo class is nested, using an <code>&</code> prefix
 - the <code>span</code> child of <code>.logo</code> is nested directly inside <code>.logo</code>
 - the media query is nested inside the <code>.logo</code> declaration as <code>@include breakpoint()</code>
+
+<!-- useless break for code block, silly markdown -->
+    .logo {
+        ...
+        ...
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+        &:active {
+            @include translate3d("0, .039em, 0");
+        }
+        &:after {
+            ...
+        }
+        /**
+         * Only animate when the user hovers the logo.
+         */
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+            @include animation-play-state("running");
+        }
+        @include breakpoint("tablet") {
+            height: 1.74em;
+            display: inline-block;
+            float: none;
+            line-height: 1.74em;
+        }
+        span {
+            white-space: nowrap;
+        }
+    }
+
 - some declaration values are defined as variables, denoted by a preceding <code>$</code>
 - these variables are defined in the variables section of the SASS
 
