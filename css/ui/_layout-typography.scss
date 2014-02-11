@@ -68,9 +68,6 @@ a {
         }
     }
 }
-strong {
-    font-weight: 600;
-}
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; /* so that elements can be floated inside headings */
     padding: 0;
@@ -90,7 +87,8 @@ h2 {
     text-shadow: 0 -1px 0 $white-25;
 }
 h3,
-.articles-list .article-date {
+.article-date {
+    border-bottom: .0625em solid;
     font-family: $secondary-font-stack;
     font-size: 1.125em;
     font-weight: 600;
@@ -100,9 +98,6 @@ h3,
 p {
     margin: 0;
 }
-    article p {
-        line-height:
-    }
 ol,
 ul {
     padding: 0;

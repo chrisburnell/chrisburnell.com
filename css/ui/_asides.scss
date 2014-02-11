@@ -32,11 +32,13 @@ aside {
 .related-articles {
     font-family: $secondary-font-stack;
 }
+    .related-articles h3 {
+        border-bottom: 0;
+    }
     @include breakpoint("tablet") {
         .author {
             padding-top: 2em;
             border-top: .25em solid $black-10;
-            margin-bottom: 0;
             order: 999;
             .about-page & {
                 margin-top: 2em;
