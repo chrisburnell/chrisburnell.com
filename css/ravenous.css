@@ -914,11 +914,13 @@ article, .articles {
   font-size: 1.25em;
   margin-bottom: 1em; }
 
-.article-banner {
+.article-banner, .rounded {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  margin-bottom: 1em;
   border-radius: 0.375em; }
+
+.article-banner {
+  margin-bottom: 1em; }
 
 .article-link {
   width: 100%; }

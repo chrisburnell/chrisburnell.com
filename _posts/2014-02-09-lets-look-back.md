@@ -39,7 +39,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 ### There must be a better way!
 
 <figure>
-    <img src="http://i.imgur.com/cgFT4pk.jpg" class="banner  rounded" alt="Good news everyone!">
+    <img src="http://i.imgur.com/cgFT4pk.jpg" class="rounded" alt="Good news everyone!">
     <figcaption>There is!</figcaption>
 </figure>
 
@@ -407,7 +407,7 @@ Next, let’s turn this CSS into SASS.
     }
 
 <figure>
-    <img src="http://i.imgur.com/UK35trx.gif" alt="Just look at it... :')">
+    <img src="http://i.imgur.com/UK35trx.gif" class="rounded"alt="Just look at it... :')">
     <figcaption>Success.</figcaption>
 </figure>
 
