@@ -620,7 +620,7 @@ button, .button {
 \*------------------------------------*/
 header {
   height: 6.875em; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     header {
       /**
          * Center the logo and make room for the navigation to drop underneath.
@@ -650,7 +650,7 @@ header {
   /**
          * Only animate when the user hovers the logo.
          */ }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     .logo {
       height: 1.74em;
       display: inline-block;
@@ -771,7 +771,7 @@ header {
 nav {
   float: right;
   margin-top: 20px; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     nav {
       width: 100%;
       float: none;
@@ -781,7 +781,7 @@ nav {
   height: 3.75em;
   float: right;
   list-style: none; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     .site-navigation {
       float: none;
       text-align: center; } }
@@ -791,7 +791,7 @@ nav {
     float: left;
     padding: 0.375em 0;
     text-align: center; }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       .site-navigation li {
         display: inline-block;
         float: none; } }
@@ -853,7 +853,7 @@ nav {
 article, .articles {
   padding: 2.25em 0 0 16.875em;
   border-top: 0.25em solid #5f8aa6; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     article, .articles {
       /**
          * When you hit the tablet media query, articles, article lists, and
@@ -886,7 +886,7 @@ article, .articles {
       -ms-flex-direction: column;
       flex-direction: column; } }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   article {
     margin-bottom: 0; } }
 
@@ -898,12 +898,12 @@ article, .articles {
     clear: both;
     padding: 1.5em 0;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1); }
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       .articles-list li {
         padding: 2.25em 0; } }
     .articles-list li:last-child {
       padding-bottom: 0; }
-      @media (max-width: 768px) {
+      @media (max-width: 700px) {
         .articles-list li:last-child {
           padding: 2.25em 0; } }
 
@@ -952,7 +952,7 @@ article, .articles {
   /* make sure text cap-height aligns to the aside */
   margin-bottom: 0.8em;
   line-height: 1.4em; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     .site-introduction {
       margin-bottom: 1.385em; } }
 
@@ -1014,7 +1014,7 @@ aside {
   float: left;
   margin-left: -16.875em;
   line-height: 1.618em; }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     aside {
       width: 100%;
       float: none;
@@ -1036,7 +1036,7 @@ aside {
   border-bottom: 0;
   margin-top: 0; }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .author {
     padding-top: 2em;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);

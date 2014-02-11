@@ -23,7 +23,7 @@ $wrapper-padding:   1.25em;
 // CSS3 Mixins
 @mixin breakpoint($width) {
     @if $width == "tablet" {
-        @media (max-width: 768px) { @content ; }
+        @media (max-width: 700px) { @content ; }
     }
     @else if $width == "phone" {
         @media (max-width: 500px) { @content ; }
