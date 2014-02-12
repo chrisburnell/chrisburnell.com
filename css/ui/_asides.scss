@@ -35,6 +35,7 @@ aside {
     .related-articles h3 {
         border-bottom: 0;
         margin-top: 0;
+        margin-bottom: .5em;
     }
     @include breakpoint("tablet") {
         .author {
