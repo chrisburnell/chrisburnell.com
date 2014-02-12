@@ -957,9 +957,7 @@ article, .articles {
       text-decoration: none; }
 
 .article-date, .related-date {
-  display: block; }
-
-.articles-list .article-date, .related-date {
+  display: block;
   margin-bottom: 0.5em; }
 
 .articles-list .article-date:before {
