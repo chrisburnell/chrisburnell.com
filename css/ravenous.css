@@ -1125,8 +1125,7 @@ aside {
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 code {
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 0.8125em; }
+  font-family: Consolas, "Courier New", monospace; }
 
 p > code {
   background-color: rgba(95, 138, 166, 0.1);
