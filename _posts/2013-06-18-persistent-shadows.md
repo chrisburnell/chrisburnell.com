@@ -33,11 +33,11 @@ What else do you think we could do with an effect like this? I think it could do
 
 ### A little something-something extra, just for you
 
-Firstly, a CSS3 checkbox. Uses an invisible checkbox <code>input</code> field and some **CSS2.1 selector action** to toggle the style of the checkbox.
+Firstly, a CSS3 checkbox. Uses an invisible <code><input type="checkbox"></code> field and an <code>:after</code> attribute to toggle the style of the checkbox.
 
-<pre class="codepen" data-height="150" data-type="result" data-href="arouk" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/arouk) </pre>
+<aside><p>Add in a little bit of Javascript to toggle the text, but even that might not be necessary if you utilise the <code>:before</code> attribute.</p></aside><pre class="codepen" data-height="150" data-type="result" data-href="arouk" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/arouk) </pre>
 
-And secondly, here’s a stupid gimmick mockup I did as a joke to demonstrate to a friend at work that converting from *left-to-right* to *right-to-left* text was a piece of cake.
+And secondly, here’s a gimmicky mockup I made as a joke to demonstrate to a friend at work that converting from *left-to-right* to *right-to-left* text was a piece of cake.
 
 <pre class="codepen" data-height="200" data-type="result" data-href="DoJKw" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/DoJKw) </pre>
 <script src="http://codepen.io/assets/embed/ei.js"></script>
