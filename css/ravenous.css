@@ -1125,9 +1125,10 @@ aside {
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 code {
-  font-family: Consolas, "Courier New", monospace; }
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.875em; }
 
-p > code {
+p > code, ol code, ul code, blockquote {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0 0.154em; }
 

@@ -4,8 +4,12 @@
 
 code {
     font-family: $code-font-stack;
+    font-size: .875em;
 }
-    p > code {
+    p > code,
+    ol code,
+    ul code,
+    blockquote {
         background-color: rgba($blue, 0.1);
         padding: 0 .154em;
     }
