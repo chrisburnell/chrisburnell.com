@@ -69,23 +69,11 @@ article,
     }
         .article-banner {
             margin-bottom: 1em;
-            @include breakpoint("wide") {
-                display: none;
-            }
-            @include breakpoint("tablet") {
-                display: block;
-            }
             @include breakpoint("phone") {
                 display: none;
             }
             &.mobile {
                 display: none;
-                @include breakpoint("wide") {
-                    display: block;
-                }
-                @include breakpoint("tablet") {
-                    display: none;
-                }
                 @include breakpoint("phone") {
                     display: block;
                 }

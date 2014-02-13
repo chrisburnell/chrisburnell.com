@@ -620,7 +620,7 @@ button, .button {
 \*------------------------------------*/
 header {
   height: 6.875em; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     header {
       /**
          * Center the logo and make room for the navigation to drop underneath.
@@ -650,7 +650,7 @@ header {
   /**
          * Only animate when the user hovers the logo.
          */ }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     .logo {
       height: 1.74em;
       display: inline-block;
@@ -771,7 +771,7 @@ header {
 nav {
   float: right;
   margin-top: 20px; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     nav {
       width: 100%;
       float: none;
@@ -781,7 +781,7 @@ nav {
   height: 3.75em;
   float: right;
   list-style: none; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     .site-navigation {
       float: none;
       text-align: center; } }
@@ -791,7 +791,7 @@ nav {
     float: left;
     padding: 0.375em 0;
     text-align: center; }
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .site-navigation li {
         display: inline-block;
         float: none; } }
@@ -853,7 +853,7 @@ nav {
 article, .articles {
   padding: 2.25em 0 0 16.875em;
   border-top: 0.25em solid #5f8aa6; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     article, .articles {
       /**
          * When you hit the tablet media query, articles, article lists, and
@@ -886,7 +886,7 @@ article, .articles {
       -ms-flex-direction: column;
       flex-direction: column; } }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   article {
     margin-bottom: 0; } }
 
@@ -898,12 +898,12 @@ article, .articles {
     clear: both;
     padding: 1.5em 0;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1); }
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .articles-list li {
         padding: 2.25em 0; } }
     .articles-list li:last-child {
       padding-bottom: 0; }
-      @media (max-width: 700px) {
+      @media (max-width: 768px) {
         .articles-list li:last-child {
           padding: 2.25em 0; } }
 
@@ -921,23 +921,11 @@ article, .articles {
 
 .article-banner {
   margin-bottom: 1em; }
-  @media (max-width: 800px) {
-    .article-banner {
-      display: none; } }
-  @media (max-width: 700px) {
-    .article-banner {
-      display: block; } }
   @media (max-width: 500px) {
     .article-banner {
       display: none; } }
   .article-banner.mobile {
     display: none; }
-    @media (max-width: 800px) {
-      .article-banner.mobile {
-        display: block; } }
-    @media (max-width: 700px) {
-      .article-banner.mobile {
-        display: none; } }
     @media (max-width: 500px) {
       .article-banner.mobile {
         display: block; } }
@@ -970,7 +958,7 @@ article, .articles {
   /* make sure text cap-height aligns to the aside */
   margin-bottom: 0.8em;
   line-height: 1.4em; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     .site-introduction {
       margin-bottom: 1.385em; } }
 
@@ -1032,7 +1020,7 @@ aside {
   float: left;
   margin-left: -16.875em;
   line-height: 1.618em; }
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     aside {
       width: 100%;
       float: none;
@@ -1055,7 +1043,7 @@ aside {
   margin-top: 0;
   margin-bottom: 0.5em; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .author {
     padding-top: 2em;
     border-top: 0.25em solid rgba(6, 6, 6, 0.1);
@@ -1125,7 +1113,7 @@ aside {
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 code {
-  font-family: Consolas, "Courier New", monospace;
+  font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
 
 p > code, ol code, ul code, blockquote {
