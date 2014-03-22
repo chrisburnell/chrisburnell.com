@@ -18,7 +18,7 @@ layouts: ./_layouts
 
 future: false
 permalink: /articles/:title
-paginate: 10
+paginate: 5
 paginate_path: 'page:num'
 
 markdown: rdiscount
