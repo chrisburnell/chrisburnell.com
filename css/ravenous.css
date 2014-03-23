@@ -493,6 +493,8 @@ abbr[title], dfn[title] {
 blockquote {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
   article blockquote {
+    background-color: rgba(95, 138, 166, 0.1);
+    padding: 1em;
     margin: 1em 2.5em; }
   aside blockquote {
     padding: 1em 0;
@@ -533,6 +535,11 @@ hr {
  */
 p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
   margin-bottom: 1.25em; }
+
+.rounded, article blockquote, .article-banner {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-radius: 0.375em; }
 
 /**
  * Text Highlights
@@ -590,7 +597,7 @@ button, .button {
   -ms-user-select: none;
   user-select: none; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #80a3b8;
+    background-color: #789db4;
     text-decoration: none;
     -webkit-box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #5984a0;
     box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), inset 0 0.045em 0 rgba(249, 249, 249, 0.25), 0 0.182em 0 #5984a0; }
@@ -914,10 +921,6 @@ article, .articles {
   margin-bottom: 1em;
   font-size: 1.25em; }
 
-.article-banner, .rounded {
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border-radius: 0.375em; }
 
 .article-banner {
   margin-bottom: 1em; }
@@ -964,16 +967,11 @@ article, .articles {
 
 .pagination {
   width: 100%;
-  height: 3em;
   padding-top: 2em;
   border-top: 0.125em solid rgba(6, 6, 6, 0.1);
   margin-top: 1.25em;
   list-style: none;
   text-align: center; }
-  .pagination:after {
-    content: "";
-    width: 100%;
-    display: inline-block; }
   .pagination li {
     display: inline; }
     .pagination li:first-child a:before {
@@ -1118,7 +1116,7 @@ code {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
 
-p > code, ol code, ul code, blockquote {
+p > code, ol code, ul code {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0 0.154em; }
 

@@ -8,22 +8,22 @@ code {
 }
     p > code,
     ol code,
-    ul code,
-    blockquote {
+    ul code {
         background-color: rgba($blue, 0.1);
         padding: 0 .154em;
     }
+
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
 }
-pre:not(.codepen) {
-    @include gradient(transparent, $black-25);
-    background-color: $text-color;
-    color: $white;
-    padding: .714em;
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    line-height: 1.5em;
-    border-radius: .1875em;
-}
+    pre:not(.codepen) {
+        @include gradient(transparent, $black-25);
+        background-color: $text-color;
+        color: $white;
+        padding: .714em;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        line-height: 1.5em;
+        border-radius: .1875em;
+    }

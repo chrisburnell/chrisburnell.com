@@ -140,6 +140,9 @@ dfn[title] {
 blockquote {
     quotes: "\201C" "\201D" "\2018" "\2019";
     article & {
+        @extend .rounded;
+        background-color: rgba($blue, 0.1);
+        padding: 1em;
         margin: 1em 2.5em;
     }
     aside & {
@@ -184,7 +187,6 @@ hr {
     border: 0;
     margin: .5em 0 1.5em;
 }
-
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
@@ -196,6 +198,10 @@ figure:not(:last-child),
 article,
 .cp_embed_iframe {
     margin-bottom: 1.25em;
+}
+.rounded {
+    background-clip: padding-box;
+    border-radius: .375em;
 }
 /**
  * Text Highlights
