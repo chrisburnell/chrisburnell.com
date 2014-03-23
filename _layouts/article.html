@@ -13,29 +13,47 @@
                     <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>{% endif %}
                 </div>
                 {% include biography.html %}
-                {% if site.related_posts %}<hr>
-                <div class="related-articles">
-                    <h3>Related Articles</h3>
-                    <ul>{% for post in site.related_posts limit:2 %}
-                        <li>
-                            <a class="related-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                            <time class="related-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                        </li>{% endfor %}
-                    </ul>
-                </div>{% endif %}
+                {% if site.related_posts %}
+                    <hr>
+                    <div class="related-articles">
+                        <h3>Related Articles</h3>
+                        <ul>
+                            {% for post in site.related_posts limit:2 %}
+                                <li>
+                                    <a class="related-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                                    <time class="related-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </aside>
-{% if page.banner %}
-            <img alt=" " class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}">{% endif %}{% if page.banner_mobile %}
-            <img alt=" " class="article-banner mobile" src="{{ site.url }}/images/article-banners/{{ page.banner_mobile }}">{% endif %}
+
+            {% if page.banner %}
+                <img alt=" " class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}">
+            {% endif %}
+            {% if page.banner_mobile %}
+                <img alt=" " class="article-banner mobile" src="{{ site.url }}/images/article-banners/{{ page.banner_mobile }}">
+            {% endif %}
             {% if page.introduction %}
-            <p class="article-introduction">{{ page.introduction }}</p>
-{% endif %}
-{{ content }}
-            <section class="pagination  clear">{% if page.previous.url %}
-                <a rel="prev" class="button  prev-link" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>{% endif %}{% if page.next.url %}
-                <a rel="next" class="button  next-link" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>{% endif %}
-            </section>
-            <hr>
+                <p class="article-introduction">{{ page.introduction }}</p>
+            {% endif %}
+
+            {{ content }}
+
+            <ol class="pagination  clear">
+                <li>
+                    {% if page.previous.url %}
+                        <a rel="previous" class="button" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
+                    {% endif %}
+                </li><!--
+             --><li>
+                    {% if page.next.url %}
+                        <a rel="next" class="button" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
+                    {% endif %}
+                </li>
+            </ol>
+
             <section class="comments  clear">
                 <div id="disqus_thread"></div>
                 <script type="text/javascript" aria-hidden="true">
@@ -47,6 +65,7 @@
                 </script>
                 <noscript aria-hidden="true">Please enable Javascript to view comments.</noscript>
             </section>
+
         </article>
     </section>
 

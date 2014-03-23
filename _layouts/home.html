@@ -3,7 +3,13 @@
     <section class="content  wrap  clear">
         <section class="articles" role="main">
 
-            <h1 class="site-tagline" role="heading">{% if page.title %}{{ page.title }}{% else %}{{ site.tagline }}.{% endif %}</h1>
+            <h1 class="site-tagline" role="heading">
+                {% if page.title %}
+                    {{ page.title }}
+                {% else %}
+                    {{ site.tagline }}.
+                {% endif %}
+            </h1>
 
             <aside class="author" role="complementary">
                 <div class="author-information">
@@ -14,9 +20,11 @@
                     <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>{% endif %}
                 </div>
                 {% include biography.html %}
-            </aside>{% if page.page_class == "home-page" %}
+            </aside>
 
-            <h2 class="site-introduction">{{ site.description }}</h2>{% endif %}
+            {% if page.page_class == "home-page" %}
+                <h2 class="site-introduction">{{ site.description }}</h2>
+            {% endif %}
 
             {{ content }}
 

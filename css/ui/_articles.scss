@@ -45,7 +45,7 @@ article,
         display: inline-block;
         clear: both;
         padding: 1.5em 0;
-        border-top: .25em solid $black-10;
+        border-top: .125em solid $black-10;
         &:last-child {
             @include breakpoint("tablet") {
                 padding: 2.25em 0;
@@ -59,8 +59,8 @@ article,
         margin-bottom: .4em;
     }
     .article-introduction {
-        font-size: 1.25em;
         margin-bottom: 1em;
+        font-size: 1.25em;
     }
     .article-banner,
     /*img*/.rounded {
@@ -68,15 +68,15 @@ article,
         border-radius: .375em;
     }
         .article-banner {
-            margin-bottom: 1em;
             @include breakpoint("phone") {
                 display: none;
             }
+            margin-bottom: 1em;
             &.mobile {
-                display: none;
                 @include breakpoint("phone") {
                     display: block;
                 }
+                display: none;
             }
         }
     .article-link {
@@ -139,30 +139,38 @@ article,
         text-align: center;
     }
     width: 100%;
-    margin-bottom: 2em;
-    .prev-link {
-        @include breakpoint("phone") {
-            float: none;
-        }
-        float: left;
-        &:before {
+    height: 3em;
+    float: left;
+    padding-top: 1.25em;
+    border-top: .125em solid $black-10;
+    margin-top: 1.25em;
+    list-style: none;
+    text-align: justify;
+    &:after {
+        content: "";
+        width: 100%;
+        display: inline-block;
+    }
+    li {
+        display: inline;
+        &:first-child a:before {
             content: "\2190\00a0";
             position: relative; /* override the button:before fix */
         }
-    }
-    .next-link {
-        @include breakpoint("phone") {
-            float: none;
-            margin-top: .5em;
-        }
-        float: right;
-        &:after {
-            content: "\00a0\2192";
-            position: relative; /* override the button:after fix */
+        &:last-child a {
+            @include breakpoint("phone") {
+                margin-top: .5em;
+            }
+            &:after {
+                content: "\00a0\2192";
+                position: relative; /* override the button:after fix */
+            }
         }
     }
 }
 
 .comments {
+    width: 100%;
+    float: left;
     margin-top: 2em;
 }

@@ -531,7 +531,7 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
-p:not(:last-child), ol:not(:last-child), ul:not(:last-child), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
+p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
 /**
@@ -891,13 +891,14 @@ article, .articles {
     margin-bottom: 0; } }
 
 .articles-list {
+  margin-bottom: 0;
   list-style: none; }
   .articles-list li {
     width: 100%;
     display: inline-block;
     clear: both;
     padding: 1.5em 0;
-    border-top: 0.25em solid rgba(6, 6, 6, 0.1); }
+    border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
     @media (max-width: 768px) {
       .articles-list li {
         padding: 2.25em 0; } }
@@ -911,8 +912,8 @@ article, .articles {
   margin-bottom: 0.4em; }
 
 .article-introduction {
-  font-size: 1.25em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-size: 1.25em; }
 
 .article-banner, .rounded {
   -webkit-background-clip: padding-box;
@@ -981,26 +982,30 @@ article, .articles {
 
 .pagination {
   width: 100%;
-  margin-bottom: 2em; }
+  height: 3em;
+  float: left;
+  padding-top: 1.25em;
+  border-top: 0.125em solid rgba(6, 6, 6, 0.1);
+  margin-top: 1.25em;
+  list-style: none;
+  text-align: justify; }
   @media (max-width: 500px) {
     .pagination {
       text-align: center; } }
-  .pagination .prev-link {
-    float: left; }
-    @media (max-width: 500px) {
-      .pagination .prev-link {
-        float: none; } }
-    .pagination .prev-link:before {
+  .pagination:after {
+    content: "";
+    width: 100%;
+    display: inline-block; }
+  .pagination li {
+    display: inline; }
+    .pagination li:first-child a:before {
       content: "\2190\00a0";
       position: relative;
       /* override the button:before fix */ }
-  .pagination .next-link {
-    float: right; }
     @media (max-width: 500px) {
-      .pagination .next-link {
-        float: none;
+      .pagination li:last-child a {
         margin-top: 0.5em; } }
-    .pagination .next-link:after {
+    .pagination li:last-child a:after {
       content: "\00a0\2192";
       position: relative;
       /* override the button:after fix */ }
