@@ -692,7 +692,7 @@ header {
     top: 0;
     left: 0;
     z-index: -1; }
-  .logo:hover:after, .logo:active:after {
+  .logo:hover:after, .logo:focus:after, .logo:active:after {
     -webkit-animation-play-state: running;
     animation-play-state: running; }
   .logo span {
