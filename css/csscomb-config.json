@@ -2,6 +2,7 @@
     "custom_sort_order": true,
     "sort_order": [
         "$import",
+        "$extend",
         "$variable",
         "content",
         "background",
