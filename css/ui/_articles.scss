@@ -114,20 +114,13 @@ article,
 }
 
 .pagination {
-    @include breakpoint("phone") {
-        text-align: center;
-    }
-    .home-page & {
-        text-align: center;
-    }
     width: 100%;
     height: 3em;
-    float: left;
     padding-top: 2em;
     border-top: .125em solid $black-10;
     margin-top: 1.25em;
     list-style: none;
-    text-align: justify;
+    text-align: center;
     &:after {
         content: "";
         width: 100%;
@@ -138,6 +131,7 @@ article,
         &:first-child a:before {
             content: "\2190\00a0";
             position: relative; /* override the button:before fix */
+            top: 0;
         }
         &:last-child a {
             @include breakpoint("phone") {
@@ -146,14 +140,13 @@ article,
             &:after {
                 content: "\00a0\2192";
                 position: relative; /* override the button:after fix */
+                top: 0;
             }
         }
     }
 }
 
 .comments {
-    width: 100%;
-    float: left;
     margin-top: 2em;
 }
 
