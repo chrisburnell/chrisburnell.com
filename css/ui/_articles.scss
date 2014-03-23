@@ -55,10 +55,21 @@ article,
     }
 }
     .article-title,
+    .page-title,
     .site-tagline {
         margin-bottom: .4em;
     }
-    .article-introduction {
+    .site-description {
+        @include breakpoint("tablet") {
+            margin-bottom: 1.385em;
+        }
+        max-width: 24em;
+        margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
+        margin-bottom: .8em;
+        line-height: 1.4em;
+    }
+    .article-introduction,
+    .page-description {
         margin-bottom: 1em;
         font-size: 1.25em;
     }
@@ -101,15 +112,6 @@ article,
             content: "\2013 \0020";
             color: $text-color-alt;
         }
-.site-introduction {
-    @include breakpoint("tablet") {
-        margin-bottom: 1.385em;
-    }
-    max-width: 24em;
-    margin-top: -0.2em; /* make sure text cap-height aligns to the aside */
-    margin-bottom: .8em;
-    line-height: 1.4em;
-}
 
 .pagination {
     width: 100%;

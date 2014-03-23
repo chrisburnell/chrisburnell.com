@@ -23,7 +23,9 @@
             </aside>
 
             {% if page.page_class == "home-page" %}
-                <h2 class="site-introduction">{{ site.description }}</h2>
+                <h2 class="site-description">{{ site.description }}</h2>
+            {% elsif page.description %}
+                <h2 class="page-description">{{ page.description }}</h2>
             {% endif %}
 
             {{ content }}

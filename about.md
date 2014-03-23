@@ -1,10 +1,10 @@
 ---
 title: About me
-layout: home
+layout: default
 page_class: about-page
 ---
 
-### My name is Chris Burnell, and I’m a Canadian {{ site.job_title }} living in London, UK.
+### My name is Chris Burnell, and I’m a Canadian {{ site.job_title }} living in London, England.
 
 I have been doing freelance work for about six years, ranging from web design to web development to full web solutions (albeit small), but I was never really challenged on any of my early projects, and thirsted for a position in a company that shared my passion for the web.
 

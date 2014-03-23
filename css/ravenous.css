@@ -692,7 +692,7 @@ header {
     top: 0;
     left: 0;
     z-index: -1; }
-  .logo:hover:after, .logo:focus:after, .logo:active:after {
+  .logo:hover:after, .logo:active:after {
     -webkit-animation-play-state: running;
     animation-play-state: running; }
   .logo span {
@@ -914,10 +914,20 @@ article, .articles {
         .articles-list li:last-child {
           padding: 2.25em 0; } }
 
-.article-title, .site-tagline {
+.article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
 
-.article-introduction {
+.site-description {
+  max-width: 24em;
+  margin-top: -0.2em;
+  /* make sure text cap-height aligns to the aside */
+  margin-bottom: 0.8em;
+  line-height: 1.4em; }
+  @media (max-width: 768px) {
+    .site-description {
+      margin-bottom: 1.385em; } }
+
+.article-introduction, .page-description {
   margin-bottom: 1em;
   font-size: 1.25em; }
 
@@ -954,16 +964,6 @@ article, .articles {
 .articles-list .article-date:before {
   content: "\2013 \0020";
   color: #737373; }
-
-.site-introduction {
-  max-width: 24em;
-  margin-top: -0.2em;
-  /* make sure text cap-height aligns to the aside */
-  margin-bottom: 0.8em;
-  line-height: 1.4em; }
-  @media (max-width: 768px) {
-    .site-introduction {
-      margin-bottom: 1.385em; } }
 
 .pagination {
   width: 100%;
