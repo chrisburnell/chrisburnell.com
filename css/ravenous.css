@@ -636,8 +636,8 @@ header {
       text-align: center; } }
 
 .logo {
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
   color: #4f4f4f;
   height: 2em;
   display: inline-block;
@@ -672,14 +672,26 @@ header {
     -webkit-transform: translate3d(0, .039em, 0);
     -ms-transform: translate3d(0, .039em, 0);
     transform: translate3d(0, .039em, 0); }
+    .logo:active:after {
+      /**
+                 * In order to get the Raven to travel up 2x the distance the
+                 * logo text does, first the translate applied on the parent
+                 * (of the aside) has to be counteracted, then double 0.039em
+                 * is added, totalling 0.117em--made negative on the y-axis to
+                 * go up. We cannot use translate as it is used below for
+                 * further animating.
+                 */
+      top: -0.117em; }
   .logo:after {
-    -webkit-transform: translate3d(0, -0.808em, 0);
-    -ms-transform: translate3d(0, -0.808em, 0);
-    transform: translate3d(0, -0.808em, 0);
     -webkit-animation: soaring 30s linear alternate infinite;
     animation: soaring 30s linear alternate infinite;
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    -webkit-transform: translate3d(0, -0.808em, 0);
+    -ms-transform: translate3d(0, -0.808em, 0);
+    transform: translate3d(0, -0.808em, 0);
     content: "";
     background: url("../icon.png") no-repeat;
     background-image: url("/images/raven.svg");

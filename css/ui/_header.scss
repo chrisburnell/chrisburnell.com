@@ -13,7 +13,7 @@ header {
     height: 6.875em;
 }
     .logo {
-        @include transition("none");
+        @include transition();
         @include breakpoint("tablet") {
             height: 1.74em;
             display: inline-block;
@@ -43,11 +43,23 @@ header {
         }
         &:active {
             @include translate3d("0, .039em, 0");
+            &:after {
+                /**
+                 * In order to get the Raven to travel up 2x the distance the
+                 * logo text does, first the translate applied on the parent
+                 * (of the aside) has to be counteracted, then double 0.039em
+                 * is added, totalling 0.117em--made negative on the y-axis to
+                 * go up. We cannot use translate as it is used below for
+                 * further animating.
+                 */
+                top: -0.117em;
+            }
         }
         &:after {
-            @include translate3d("0, -0.808em, 0");
             @include animation("soaring 30s linear alternate infinite");
             @include animation-play-state("paused");
+            @include transition();
+            @include translate3d("0, -0.808em, 0");
             content: "";
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
