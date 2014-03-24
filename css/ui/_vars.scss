@@ -32,7 +32,7 @@ $wrapper-padding:   1.25em;
 @mixin gradient($top, $bottom) {
     background-image: linear-gradient(to bottom, $top 0%, $bottom 100%);
 }
-@mixin transition($transition: "all .15s ease-in-out") {
+@mixin transition($transition: "all .2s ease-in-out") {
     transition: #{$transition};
 }
 @mixin translate3d($values: "0, 0, 0") {

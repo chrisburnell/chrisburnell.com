@@ -46,15 +46,3 @@
 .is-dim .articles-list li {
     border-top-color: $text-color-light;
 }
-
-/**
- * Today We Fight Back
- */
-.tdwfb-container button,
-.tdwfb-container button:hover,
-.tdwfb-container button:focus,
-.tdwfb-container button:active {
-    min-width: 0;
-    box-shadow: none;
-    border-radius: 0;
-}
