@@ -3,13 +3,11 @@
     <section class="content  wrap  clear">
         <section class="articles" role="main">
 
-            <h1 class="site-tagline" role="heading">
-                {% if page.title %}
-                    {{ page.title }}
-                {% else %}
-                    {{ site.tagline }}.
-                {% endif %}
-            </h1>
+        {% if page.title %}
+            <h1 class="page-title" role="heading">{{ page.title }}</h1>
+        {% else %}
+            <h1 class="site-tagline" role="heading">{{ site.tagline }}.</h1>
+        {% endif %}
 
             <aside class="author" role="complementary">
                 <div class="author-information">
@@ -22,11 +20,11 @@
                 {% include biography.html %}
             </aside>
 
-            {% if page.page_class == "home-page" %}
-                <h2 class="site-description">{{ site.description }}</h2>
-            {% elsif page.description %}
-                <h2 class="page-description">{{ page.description }}</h2>
-            {% endif %}
+        {% if page.page_class == "home-page" %}
+            <h2 class="site-description">{{ site.description }}</h2>
+        {% elsif page.description %}
+            <h2 class="page-description">{{ page.description }}</h2>
+        {% endif %}
 
             {{ content }}
 
