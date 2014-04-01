@@ -1116,16 +1116,13 @@ aside {
   font-size: 0.8125em;
   font-style: italic; }
 
-/*------------------------------------*\
-    $ CODE AND CODE BLOCKS
-\*------------------------------------*/
-code {
+x code {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
 
 p > code, ol code, ul code {
   background-color: rgba(95, 138, 166, 0.1);
-  padding: 0 0.154em; }
+  padding: 0.214em; }
 
 pre {
   margin: 0 0 1em;
