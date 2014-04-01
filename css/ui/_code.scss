@@ -1,22 +1,21 @@
-x /*------------------------------------*\
+/*------------------------------------*\
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 
 code {
     font-family: $code-font-stack;
     font-size: .875em;
-}
-    p > code,
-    ol code,
-    ul code {
+    p > &,
+    ol &,
+    ul & {
         background-color: rgba($blue, 0.1);
         padding: .214em;
     }
+}
 
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
-}
-    pre:not(.codepen) {
+    &:not(.codepen) {
         @include gradient(transparent, $black-25);
         background-color: $text-color;
         color: $white;
@@ -27,3 +26,4 @@ pre {
         line-height: 1.5em;
         border-radius: .1875em;
     }
+}

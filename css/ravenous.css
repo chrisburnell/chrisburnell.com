@@ -1116,30 +1116,31 @@ aside {
   font-size: 0.8125em;
   font-style: italic; }
 
-x code {
+/*------------------------------------*\
+    $ CODE AND CODE BLOCKS
+\*------------------------------------*/
+code {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
-
-p > code, ol code, ul code {
-  background-color: rgba(95, 138, 166, 0.1);
-  padding: 0.214em; }
+  p > code, ol code, ul code {
+    background-color: rgba(95, 138, 166, 0.1);
+    padding: 0.214em; }
 
 pre {
   margin: 0 0 1em;
   /* override _normalize.scss */ }
-
-pre:not(.codepen) {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
-  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-  background-color: #4f4f4f;
-  color: #f9f9f9;
-  padding: 0.714em;
-  position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
-  line-height: 1.5em;
-  border-radius: 0.1875em; }
+  pre:not(.codepen) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+    background-color: #4f4f4f;
+    color: #f9f9f9;
+    padding: 0.714em;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    line-height: 1.5em;
+    border-radius: 0.1875em; }
 
 /*------------------------------------*\
     $ FOOTER
