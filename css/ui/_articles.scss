@@ -115,11 +115,15 @@ article,
 
 .pagination {
     width: 100%;
-    padding-top: 2em;
+    padding-top: 2.25em;
     border-top: .125em solid $black-10;
     margin-top: 1.25em;
     list-style: none;
     text-align: center;
+    @include breakpoint("tablet") {
+        margin-top: 0;
+        padding-bottom: 2.25em;
+    }
     li {
         display: inline;
         &:first-child a:before {

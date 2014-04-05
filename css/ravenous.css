@@ -556,11 +556,9 @@ p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([c
   color: #f9f9f9; }
 
 code::-moz-selection {
-  background: #4f4f4f;
   color: #f9f9f9; }
 
 code::selection {
-  background: #4f4f4f;
   color: #f9f9f9; }
 
 /*------------------------------------*\
@@ -974,11 +972,15 @@ article, .articles {
 
 .pagination {
   width: 100%;
-  padding-top: 2em;
+  padding-top: 2.25em;
   border-top: 0.125em solid rgba(6, 6, 6, 0.1);
   margin-top: 1.25em;
   list-style: none;
   text-align: center; }
+  @media (max-width: 768px) {
+    .pagination {
+      margin-top: 0;
+      padding-bottom: 2.25em; } }
   .pagination li {
     display: inline; }
     .pagination li:first-child a:before {
@@ -1052,8 +1054,9 @@ aside {
 
 @media (max-width: 768px) {
   .author {
-    padding-top: 2em;
-    border-top: 0.25em solid rgba(6, 6, 6, 0.1);
+    padding-top: 2.25em;
+    border-top: 0.125em solid rgba(6, 6, 6, 0.1);
+    margin-bottom: 0;
     -webkit-box-ordinal-group: 1000;
     -webkit-order: 999;
     -ms-flex-order: 999;
