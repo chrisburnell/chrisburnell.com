@@ -78,7 +78,7 @@ snippet of code on a project of your own. -->
     <meta property="og:title" content="{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}">
     <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
     <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
 </head>
