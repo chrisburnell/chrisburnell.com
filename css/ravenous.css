@@ -662,19 +662,20 @@ header {
   .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
   .logo:active {
-    -webkit-transform: translate3d(0, .039em, 0);
-    -ms-transform: translate3d(0, .039em, 0);
-    transform: translate3d(0, .039em, 0); }
+    -webkit-transform: translate3d(-0.039em, .039em, 0);
+    -ms-transform: translate3d(-0.039em, .039em, 0);
+    transform: translate3d(-0.039em, .039em, 0); }
     .logo:active:after {
       /**
                  * In order to get the Raven to travel up 2x the distance the
                  * logo text does, first the translate applied on the parent
-                 * (of the aside) has to be counteracted, then double 0.039em
+                 * (of the :after) has to be counteracted, then double 0.039em
                  * is added, totalling 0.117em--made negative on the y-axis to
-                 * go up. We cannot use translate as it is used below for
+                 * go up. We cannot use CSS3 translate as it is used below for
                  * further animating.
                  */
-      top: -0.117em; }
+      top: -0.117em;
+      left: 0.039em; }
   .logo:after {
     -webkit-animation: soaring 30s linear alternate infinite;
     animation: soaring 30s linear alternate infinite;
