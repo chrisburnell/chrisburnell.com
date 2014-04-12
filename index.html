@@ -7,7 +7,7 @@ page_class: home-page
                 {% for post in paginator.posts %}
                 {% unless post.draft %}
                     <li>
-                        <h2 class="article-link"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                        <h2 class="article-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
                         <p class="article-introduction">{{ post.introduction }}</p>
                         <a class="button" href="{{ post.url }}" title="Continue reading {{ post.title }}">Read more</a>
