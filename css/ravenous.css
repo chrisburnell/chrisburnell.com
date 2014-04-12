@@ -956,7 +956,7 @@ article, .articles {
     display: inline-block;
     padding: 0 0.27em;
     border-bottom: 0.077em solid transparent;
-    margin: 0 0 0.385em -0.27em; }
+    margin: 0 0 0 -0.27em; }
     .article-title a:hover, .article-title a:focus, .article-title a:active {
       color: #4f4f4f;
       border-bottom-color: #5f8aa6;
