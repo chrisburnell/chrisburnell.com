@@ -25,3 +25,6 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 markdown_ext: markdown,mkd,mkdn,md
+
+gems:
+  - jekyll-sitemap
