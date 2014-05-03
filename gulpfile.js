@@ -60,8 +60,8 @@ gulp.task('watch', function() {
     // Listen on port 35729
     server.listen(8888, function(err) {
         if (err) {
-            return console.log(err)
-        };
+            return console.log(err);
+        }
         // Watch CSS files
         gulp.watch(cssDir + '**/*.scss', function(event) {
             console.log('File ' + event.path + ' was ' + event.type + ', compiling SCSS...');
