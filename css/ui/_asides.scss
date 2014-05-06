@@ -17,7 +17,7 @@ aside {
     margin-left: -16.875em;
     line-height: 1.618em;
     p {
-        @include breakpoint("phone") {
+        @include breakpoint("mobile") {
             font-size: 1em;
         }
         clear: both;

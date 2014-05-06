@@ -18,9 +18,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 .wrap {
-    @include breakpoint("phone") {
+    @include breakpoint("mobile") {
         /**
-         * Let's make intelligent use of the phone viewport width and reduce the
+         * Let's make intelligent use of the mobile viewport and reduce the
          * padding on either side of the wrapper. We can't remove it or the text
          * will sit right at the edge, creating a readability issue.
          */

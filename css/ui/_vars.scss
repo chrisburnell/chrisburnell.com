@@ -25,7 +25,7 @@ $wrapper-padding:   1.25em;
     @if $width == "tablet" {
         @media (max-width: 768px) { @content ; }
     }
-    @else if $width == "phone" {
+    @else if $width == "mobile" {
         @media (max-width: 500px) { @content ; }
     }
 }

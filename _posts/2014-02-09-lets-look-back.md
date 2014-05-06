@@ -467,7 +467,7 @@ Next, let’s turn this CSS into SASS.
         @if $width == "tablet" {
             @media (max-width: 768px) { @content ; }
         }
-        @else if $width == "phone" {
+        @else if $width == "mobile" {
             @media (max-width: 500px) { @content ; }
         }
     }

@@ -4,7 +4,7 @@
 
 footer {
     @include gradient(transparent, $black-10);
-    @include breakpoint("phone") {
+    @include breakpoint("mobile") {
         height: 85px;
         padding: 2.25em 0;
     }
@@ -21,7 +21,7 @@ footer {
 }
     .copyright,
     .social-icons {
-        @include breakpoint("phone") {
+        @include breakpoint("mobile") {
             width: 100%;
             float: none;
             text-align: center;
@@ -57,7 +57,7 @@ footer {
             color: $text-color-light;
         }
         .social-icons {
-            @include breakpoint("phone") {
+            @include breakpoint("mobile") {
                 margin-top: .625em;
             }
             float: right;

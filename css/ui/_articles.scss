@@ -77,12 +77,12 @@ article,
         @extend .rounded;
     }
         .article-banner {
-            @include breakpoint("phone") {
+            @include breakpoint("mobile") {
                 display: none;
             }
             margin-bottom: 1em;
             &.mobile {
-                @include breakpoint("phone") {
+                @include breakpoint("mobile") {
                     display: block;
                 }
                 display: none;
@@ -132,7 +132,7 @@ article,
             top: 0;
         }
         &:last-child a {
-            @include breakpoint("phone") {
+            @include breakpoint("mobile") {
                 margin-top: .5em;
             }
             &:after {
