@@ -11,7 +11,10 @@
 
             <aside class="author" role="complementary">
                 <div class="author-information">
-                    <img class="author-image" src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" alt="">
+                    <picture class="author-image">
+                        <source srcset="/images/avatar.png 1x, /images/avatar-200.png 2x">
+                        <img src="/images/avatar.png" alt="">
+                    </picture>
                     <div class="author-name">about <strong>{{ site.author }}</strong></div>
                     <div class="author-age">I’m <strong>24</strong> years old</div>{% if site.employer %}
                     <div class="author-employer">I work at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>{% else %}
