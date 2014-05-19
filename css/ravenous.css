@@ -1062,13 +1062,13 @@ aside {
   height: 100px;
   display: inline-block;
   float: left;
-  margin-right: 10px; }
+  margin-right: 1em; }
   .author-image img {
-    border-radius: 0.1875em;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     -webkit-background-size: 100%;
-    background-size: 100%; }
+    background-size: 100%;
+    border-radius: 0.1875em; }
 
 .article-tags {
   display: table-cell;
