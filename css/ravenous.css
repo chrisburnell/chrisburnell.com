@@ -1056,17 +1056,19 @@ aside {
 .author-biography {
   margin-bottom: 1.5em; }
 
+/*picture*/
 .author-image {
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  -webkit-background-size: 100%;
-  background-size: 100%;
   width: 100px;
   height: 100px;
   display: inline-block;
   float: left;
-  margin-right: 10px;
-  border-radius: 0.1875em; }
+  margin-right: 10px; }
+  .author-image img {
+    border-radius: 0.1875em;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-background-size: 100%;
+    background-size: 100%; }
 
 .article-tags {
   display: table-cell;

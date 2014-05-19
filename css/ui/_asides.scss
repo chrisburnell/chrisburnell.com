@@ -73,15 +73,17 @@ aside {
     .author-biography {
         margin-bottom: 1.5em;
     }
-    .author-image {
-        background-clip: padding-box;
-        background-size: 100%;
+    /*picture*/.author-image {
         width: 100px;
         height: 100px;
         display: inline-block;
         float: left;
         margin-right: 10px;
-        border-radius: .1875em;
+        img {
+            border-radius: .1875em;
+            background-clip: padding-box;
+            background-size: 100%;
+        }
     }
     .article-tags {
         display: table-cell; /* don't wrap around .author-image */
