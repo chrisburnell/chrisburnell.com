@@ -1,21 +1,21 @@
 /**
- * Gulp Configuration
+ * Ravenous gulp Configuration
  */
 
-var gulp = require('gulp'),
+var gulp =       require('gulp'),
     autoprefix = require('gulp-autoprefixer'),
-    imagemin = require('gulp-imagemin'),
-    jekyll = require('gulp-jekyll'),
-    minifycss = require('gulp-minify-css'),
-    notify = require('gulp-notify'),
-    rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    svgmin = require('gulp-svgmin'),
+    imagemin =   require('gulp-imagemin'),
+    jekyll =     require('gulp-jekyll'),
+    minifycss =  require('gulp-minify-css'),
+    notify =     require('gulp-notify'),
+    rename =     require('gulp-rename'),
+    sass =       require('gulp-sass'),
+    svgmin =     require('gulp-svgmin'),
     livereload = require('gulp-livereload'),
-    lr = require('tiny-lr'),
-    server = lr();
+    lr =         require('tiny-lr'),
+    server =     lr();
 
-var cssDir = 'css/',
+var cssDir =    'css/',
     imagesDir = 'images/';
 
 // Compile SCSS, autoprefix CSS3, and minify
@@ -28,7 +28,7 @@ gulp.task('styles', function() {
         .pipe(minifycss())
         .pipe(gulp.dest(cssDir))
         .pipe(livereload(server))
-        .pipe(notify({ title: 'Gulp', message: 'CSS compiled.', onLast: true }));
+        .pipe(notify({ title: 'gulp', message: 'SCSS compiled.', onLast: true }));
 });
 
 // Crush images
@@ -37,7 +37,7 @@ gulp.task('images', function() {
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
         .pipe(gulp.dest(imagesDir))
         .pipe(livereload(server))
-        .pipe(notify({ title: 'Gulp', message: 'Images crushed.', onLast: true }));
+        .pipe(notify({ title: 'gulp', message: 'Images crushed.', onLast: true }));
 });
 
 // Crush SVGs
@@ -46,7 +46,7 @@ gulp.task('svg', function() {
         .pipe(svgmin())
         .pipe(gulp.dest(imagesDir))
         .pipe(livereload(server))
-        .pipe(notify({ title: 'Gulp', message: 'SVGs crushed.', onLast: true }));
+        .pipe(notify({ title: 'gulp', message: 'SVGs crushed.', onLast: true }));
 });
 
 // Default task

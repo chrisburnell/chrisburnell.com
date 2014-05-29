@@ -593,7 +593,6 @@ button, .button {
     text-decoration: none; }
   button:active, .button:active {
     -webkit-transform: translate3d(0, .182em, 0);
-    -ms-transform: translate3d(0, .182em, 0);
     transform: translate3d(0, .182em, 0);
     text-decoration: none;
     -webkit-box-shadow: 0 0.045em 0 #547e97;
@@ -657,7 +656,6 @@ header {
     text-decoration: none; }
   .logo:active {
     -webkit-transform: translate3d(0, .039em, 0);
-    -ms-transform: translate3d(0, .039em, 0);
     transform: translate3d(0, .039em, 0); }
     .logo:active:after {
       /**
@@ -677,7 +675,6 @@ header {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     -webkit-transform: translate3d(0, -0.808em, 0);
-    -ms-transform: translate3d(0, -0.808em, 0);
     transform: translate3d(0, -0.808em, 0);
     content: "";
     background: url("../icon.png") no-repeat;
@@ -811,7 +808,6 @@ nav {
       text-decoration: none; }
     .site-navigation a:active {
       -webkit-transform: translate3d(0, .1em, 0);
-      -ms-transform: translate3d(0, .1em, 0);
       transform: translate3d(0, .1em, 0);
       margin-top: 0.1em;
       line-height: 1.15em; }
@@ -823,7 +819,6 @@ nav {
 
 .home-page .site-navigation-home a:after, .about-page .site-navigation-about a:after, .archive-page .site-navigation-archive a:after {
   -webkit-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   content: "";
   border-top: 5px solid #5F8AA6;
@@ -1169,7 +1164,6 @@ footer {
     text-decoration: none; }
   .home-link:active {
     -webkit-transform: translate3d(0, .14em, 0);
-    -ms-transform: translate3d(0, .14em, 0);
     transform: translate3d(0, .14em, 0); }
 
 .copyright-link {
@@ -1204,7 +1198,6 @@ footer {
     text-decoration: none; }
   .social-icon:active {
     -webkit-transform: translate3d(0, .14em, 0);
-    -ms-transform: translate3d(0, .14em, 0);
     transform: translate3d(0, .14em, 0); }
 
 /*a*/

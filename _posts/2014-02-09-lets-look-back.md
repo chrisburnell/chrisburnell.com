@@ -501,6 +501,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 - [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
 - [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
 - [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
+- [My gulpfile configuration](https://gist.github.com/chrisburnell/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
 And if you want to start using *gulp*, here’s a fantastic guide, “[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")”, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear &mdash; Front-end designer and developer").
 
