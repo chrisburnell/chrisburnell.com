@@ -494,14 +494,14 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 ### Useful Links
 
-- [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
-- [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
-- [Sass Guide - Nesting](http://sass-lang.com/guide#3 "Sass: Sass Nesting")
-- [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
-- [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
-- [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
-- [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
-- [My gulpfile configuration](https://gist.github.com/chrisburnell/87346fa1e8e8538ee7ce "My gulpfile configuration")
+1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
+2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
+3. [Sass Guide - Nesting](http://sass-lang.com/guide#3 "Sass: Sass Nesting")
+4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
+5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
+6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
+7. [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
+8. [My gulpfile configuration](https://gist.github.com/chrisburnell/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
 And if you want to start using *gulp*, here’s a fantastic guide, “[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")”, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear &mdash; Front-end designer and developer").
 
