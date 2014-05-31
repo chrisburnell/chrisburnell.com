@@ -19,7 +19,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 ### I don’t want to do anything, anymore!
 
-<aside><p>I also wrote about [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](http://chrisburnell.com/articles/first-article-ever/ "First Ever Article").</p></aside>Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan) and [Jake Archibald](https://twitter.com/jaffathecake), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
+<aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](http://chrisburnell.com/articles/first-article-ever/ "First Ever Article").</p></aside>Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan) and [Jake Archibald](https://twitter.com/jaffathecake), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
 One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com)*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
@@ -40,7 +40,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 ### There must be a better way!
 
 <figure>
-    <img src="http://i.imgur.com/cgFT4pk.jpg" class="rounded" alt="Good news everyone!">
+    <img src="{{ site.url }}/images/articles/good-news-everyone.jpg" class="rounded" alt="Good news everyone!" role="presentation">
     <figcaption>There is!</figcaption>
 </figure>
 
@@ -408,7 +408,7 @@ Next, let’s turn this CSS into SASS.
     }
 
 <figure>
-    <img src="http://i.imgur.com/UK35trx.gif" class="rounded"alt="Just look at it... :')">
+    <img src="{{ site.url }}/images/articles/welldone.gif" class="rounded" alt="Just look at it... :')" role="presentation">
     <figcaption>Success.</figcaption>
 </figure>
 
