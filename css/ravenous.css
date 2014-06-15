@@ -788,7 +788,6 @@ nav {
     text-align: center; }
     @media (max-width: 768px) {
       .site-navigation li {
-        display: inline-block;
         float: none; } }
   .site-navigation li + li {
     margin-left: 1em; }
@@ -901,7 +900,6 @@ article, .articles {
 .article-introduction, .page-description {
   margin-bottom: 1em;
   font-size: 1.25em; }
-
 
 .article-banner {
   margin-bottom: 1em; }

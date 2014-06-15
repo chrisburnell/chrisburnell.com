@@ -21,7 +21,6 @@ nav {
         list-style: none;
         li {
             @include breakpoint("tablet") {
-                display: inline-block;
                 float: none;
             }
             height: 40px;

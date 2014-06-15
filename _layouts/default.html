@@ -17,7 +17,7 @@
                     </picture>
                     <div class="author-name">about <strong>{{ site.author }}</strong></div>
                     <div class="author-age">I’m <strong>24</strong> years old</div>{% if site.employer %}
-                    <div class="author-employer">I work at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>{% else %}
+                    <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong> working at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a></div>{% else %}
                     <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>{% endif %}
                 </div>
                 {% include biography.html %}
