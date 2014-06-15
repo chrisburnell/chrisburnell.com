@@ -13,4 +13,4 @@ I’m just going to list stuff I care about: semantic code, web standards and be
 
 ### Want to get in touch?
 
-The best way to get in touch is through my email, {{ site.email }}.
+I'm reachable through <a rel="me publisher" class="social-icon  twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">Twitter</a> or email me at chrisburnell dot com.
