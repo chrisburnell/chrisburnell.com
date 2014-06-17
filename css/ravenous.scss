@@ -6,17 +6,16 @@
  *
  * Table of Contents:
  *
- * RESET..................... Import normalize as a reset.
+ * NORMALIZE................. Import normalize as a reset.
  * TYPEKIT PRELOAD........... Import the font-families from Typekit.
  * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
- * BUTTONS................... Set the default button styles.
  * HEADER.................... Set the header styles.
  * NAVIGATION................ Set the navigation styles.
  * ARTICLES.................. Set the articles styles.
  * ASIDES.................... Set the asides styles.
- * COMMENTS.................. Set the comments styles.
- * CODE BLOCKS............... Set the code block styles.
  * FOOTER.................... Set the footer styles.
+ * BUTTONS................... Set the default button styles.
+ * CODE BLOCKS............... Set the code block styles.
  * MISCELLANEOUS............. Miscellaneous site-wide styles.
  */
 
@@ -25,11 +24,11 @@
         "ui/vars",
         "ui/typekit",
         "ui/layout-typography",
-        "ui/buttons",
         "ui/header",
         "ui/navigation",
         "ui/articles",
         "ui/asides",
-        "ui/code",
         "ui/footer",
+        "ui/buttons",
+        "ui/code",
         "ui/miscellaneous";
