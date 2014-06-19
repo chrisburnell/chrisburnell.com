@@ -1,21 +1,20 @@
-/*! Ravenous - version 2.0
- * by Chris Burnell (@iamchrisburnell)
+/*! Ravenous - version 2.0 */
+/* by Chris Burnell (@iamchrisburnell)
  * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
  *
  * Table of Contents:
  *
- * RESET..................... Import normalize as a reset.
+ * NORMALIZE................. Import normalize as a reset.
  * TYPEKIT PRELOAD........... Import the font-families from Typekit.
  * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
- * BUTTONS................... Set the default button styles.
  * HEADER.................... Set the header styles.
  * NAVIGATION................ Set the navigation styles.
  * ARTICLES.................. Set the articles styles.
  * ASIDES.................... Set the asides styles.
- * COMMENTS.................. Set the comments styles.
- * CODE BLOCKS............... Set the code block styles.
  * FOOTER.................... Set the footer styles.
+ * BUTTONS................... Set the default button styles.
+ * CODE BLOCKS............... Set the code block styles.
  * MISCELLANEOUS............. Miscellaneous site-wide styles.
  */
 /*! normalize.css v3.0.0-rc.1 | MIT License | git.io/normalize */
@@ -556,59 +555,6 @@ code::selection {
   color: #F9F9F9; }
 
 /*------------------------------------*\
-    $ BUTTONS
-\*------------------------------------*/
-button, .button {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.05)));
-  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
-  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
-  -webkit-transition: background-color .2s ease-in-out;
-  transition: background-color .2s ease-in-out;
-  background-color: #5F8AA6;
-  color: #F9F9F9;
-  min-width: 6em;
-  height: 1.91em;
-  display: inline-block;
-  padding: 0 0.727em;
-  border: 0;
-  margin-bottom: 0.364em;
-  position: relative;
-  font-family: "league-gothic", sans-serif;
-  font-size: 1.375em;
-  line-height: 1.91em;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 0 -0.045em 0 rgba(6, 6, 6, 0.25);
-  white-space: nowrap;
-  cursor: pointer;
-  border-radius: 0.182em;
-  -webkit-box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), 0 0.182em 0 #4b7087;
-  box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), 0 0.182em 0 #4b7087;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-  button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #6f97af;
-    text-decoration: none; }
-  button:active, .button:active {
-    -webkit-transform: translate3d(0, .182em, 0);
-    transform: translate3d(0, .182em, 0);
-    text-decoration: none;
-    -webkit-box-shadow: 0 0.045em 0 #547e97;
-    box-shadow: 0 0.045em 0 #547e97; }
-    button:active:before, button:active:after, .button:active:before, .button:active:after {
-      top: -0.182em;
-      bottom: 0; }
-  button:before, button:after, .button:before, .button:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: -0.182em;
-    left: 0; }
-
-/*------------------------------------*\
     $ HEADER
 \*------------------------------------*/
 header {
@@ -1011,11 +957,6 @@ aside {
 .author, .related-articles {
   font-family: "proxima-nova", sans-serif; }
 
-.related-articles h3 {
-  border-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0.5em; }
-
 @media (max-width: 768px) {
   .author {
     padding-top: 2.25em;
@@ -1032,9 +973,7 @@ aside {
   color: #5F8AA6; }
 
 .author-information {
-  width: 100%;
-  float: left;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-family: "ff-meta-serif-web-pro", serif;
   font-size: 0.875em;
   font-style: italic; }
@@ -1043,8 +982,6 @@ aside {
     font-weight: 600;
     font-style: normal;
     text-transform: uppercase; }
-  .author-information a {
-    color: inherit; }
 
 .author-biography {
   margin-bottom: 1.5em; }
@@ -1071,11 +1008,14 @@ aside {
 .author-biography .codepen, .author-biography .lastfm, .author-biography .twitter {
   background: none; }
 
-.related-articles {
-  margin-top: 1em; }
-  .related-articles ul {
-    list-style: none;
-    line-height: 1.25em; }
+.related-articles-title {
+  margin-top: 2em; }
+
+.related-article-list {
+  list-style: none;
+  line-height: 1.25em; }
+  .related-article-list li + li {
+    margin-top: 1em; }
 
 .related-title {
   font-weight: bold; }
@@ -1084,32 +1024,6 @@ aside {
   padding-left: 1em;
   font-size: 0.8125em;
   font-style: italic; }
-
-/*------------------------------------*\
-    $ CODE AND CODE BLOCKS
-\*------------------------------------*/
-code {
-  font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: 0.875em; }
-  p > code, ol code, ul code {
-    background-color: rgba(95, 138, 166, 0.1);
-    padding: 0.214em; }
-
-pre {
-  margin: 0 0 1em;
-  /* override _normalize.scss */ }
-  pre:not(.codepen) {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-    background-color: #4f4f4f;
-    color: #F9F9F9;
-    padding: 0.714em;
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    line-height: 1.5em;
-    border-radius: 0.1875em; }
 
 /*------------------------------------*\
     $ FOOTER
@@ -1221,6 +1135,85 @@ footer {
 .twitter-link {
   background-position: -120px top;
   color: #007ba8 !important; }
+
+/*------------------------------------*\
+    $ BUTTONS
+\*------------------------------------*/
+button, .button {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.05)));
+  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+  background-color: #5F8AA6;
+  color: #F9F9F9;
+  min-width: 6em;
+  height: 1.91em;
+  display: inline-block;
+  padding: 0 0.727em;
+  border: 0;
+  margin-bottom: 0.364em;
+  position: relative;
+  font-family: "league-gothic", sans-serif;
+  font-size: 1.375em;
+  line-height: 1.91em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 -0.045em 0 rgba(6, 6, 6, 0.25);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 0.182em;
+  -webkit-box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), 0 0.182em 0 #4b7087;
+  box-shadow: inset 0 0 0.091em rgba(6, 6, 6, 0.1), 0 0.182em 0 #4b7087;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  button:hover, button:focus, .button:hover, .button:focus {
+    background-color: #6f97af;
+    text-decoration: none; }
+  button:active, .button:active {
+    -webkit-transform: translate3d(0, .182em, 0);
+    transform: translate3d(0, .182em, 0);
+    text-decoration: none;
+    -webkit-box-shadow: 0 0.045em 0 #547e97;
+    box-shadow: 0 0.045em 0 #547e97; }
+    button:active:before, button:active:after, .button:active:before, .button:active:after {
+      top: -0.182em;
+      bottom: 0; }
+  button:before, button:after, .button:before, .button:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: -0.182em;
+    left: 0; }
+
+/*------------------------------------*\
+    $ CODE AND CODE BLOCKS
+\*------------------------------------*/
+code {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.875em; }
+  p > code, ol code, ul code {
+    background-color: rgba(95, 138, 166, 0.1);
+    padding: 0.214em; }
+
+pre {
+  margin: 0 0 1em;
+  /* override _normalize.scss */ }
+  pre:not(.codepen) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
+    background-color: #4f4f4f;
+    color: #F9F9F9;
+    padding: 0.714em;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    line-height: 1.5em;
+    border-radius: 0.1875em; }
 
 /*------------------------------------*\
     $ MISCELLANEOUS

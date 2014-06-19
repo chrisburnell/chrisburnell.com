@@ -32,11 +32,6 @@ aside {
 .related-articles {
     font-family: $secondary-font-stack;
 }
-    .related-articles h3 {
-        border-bottom: 0;
-        margin-top: 0;
-        margin-bottom: .5em;
-    }
     @include breakpoint("tablet") {
         .author {
             padding-top: 2.25em;
@@ -52,9 +47,7 @@ aside {
         color: $blue;
     }
     .author-information {
-        width: 100%;
-        float: left;
-        margin-bottom: .5em;
+        margin-bottom: 1em;
         font-family: $primary-font-stack;
         font-size: .875em;
         font-style: italic;
@@ -65,9 +58,6 @@ aside {
             font-weight: 600;
             font-style: normal;
             text-transform: uppercase;
-        }
-        a {
-            color: inherit;
         }
     }
     .author-biography {
@@ -94,11 +84,14 @@ aside {
     .author-biography .twitter {
         background: none;
     }
-    .related-articles {
-        margin-top: 1em;
-        ul {
-            list-style: none;
-            line-height: 1.25em;
+    .related-articles-title {
+        margin-top: 2em;
+    }
+    .related-article-list {
+        list-style: none;
+        line-height: 1.25em;
+        li + li {
+            margin-top: 1em;
         }
     }
     .related-title {
