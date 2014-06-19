@@ -3,10 +3,10 @@
     <section class="content  wrap  clear">
         <article role="article" role="main">
 
-            <h1 class="article-title" role="heading">{{ page.title }}</h1>
+            <h1 id="article" class="article-title" role="heading">{{ page.title }}</h1>
 
             <aside class="author" role="complementary">
-                <div class="author-information">
+                <div class="clear  author-information">
                     <picture class="author-image" role="presentation">
                         <source srcset="/images/avatar.png 1x, /images/avatar-200.png 2x">
                         <img src="/images/avatar.png" alt="">
@@ -17,10 +17,9 @@
                 </div>
                 {% include biography.html %}
                 {% if site.related_posts %}
-                    <hr>
                     <div class="related-articles">
-                        <h3>Related Articles</h3>
-                        <ul>
+                        <h3 class="related-articles-title">Related Articles</h3>
+                        <ul class="related-articles-list">
                             {% for post in site.related_posts limit:2 %}
                                 <li>
                                     <a class="related-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>

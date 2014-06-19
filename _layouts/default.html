@@ -10,7 +10,7 @@
         {% endif %}
 
             <aside class="author" role="complementary">
-                <div class="author-information">
+                <div class="clear  author-information">
                     <picture class="author-image" role="presentation">
                         <source srcset="/images/avatar.png 1x, /images/avatar-200.png 2x">
                         <img src="/images/avatar.png" alt="">
@@ -23,11 +23,11 @@
                 {% include biography.html %}
             </aside>
 
-        {% if page.page_class == "home-page" %}
-            <h2 class="site-description">{{ site.description }}</h2>
-        {% elsif page.description %}
-            <h2 class="page-description">{{ page.description }}</h2>
-        {% endif %}
+            {% if page.page_class == "home-page" %}
+                <h2 class="site-description">{{ site.description }}</h2>
+            {% elsif page.description %}
+                <h2 class="page-description">{{ page.description }}</h2>
+            {% endif %}
 
             {{ content }}
 
