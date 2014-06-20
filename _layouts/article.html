@@ -5,31 +5,7 @@
 
             <h1 id="article" class="article-title" role="heading">{{ page.title }}</h1>
 
-            <aside class="author" role="complementary">
-                <div class="clear  author-information">
-                    <picture class="author-image" role="presentation">
-                        <source srcset="/images/avatar.png 1x, /images/avatar-200.png 2x">
-                        <img src="/images/avatar.png" alt="">
-                    </picture>
-                    <div class="author-name">by <strong>{{ site.author }}</strong></div>
-                    <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.tags %}
-                    <div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>{% endif %}
-                </div>
-                {% include biography.html %}
-                {% if site.related_posts %}
-                    <div class="related-articles">
-                        <h3 class="related-articles-title">Related Articles</h3>
-                        <ul class="related-articles-list">
-                            {% for post in site.related_posts limit:2 %}
-                                <li>
-                                    <a class="related-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                                    <time class="related-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </aside>
+            {% include biography.html %}
 
             {% if page.banner %}
                 <img alt=" " class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}" role="presentation">
