@@ -63,7 +63,7 @@ aside {
     .author-biography {
         margin-bottom: 1.5em;
     }
-    /*picture*/.author-image {
+    /*img/picture*/.author-image {
         width: 100px;
         height: 100px;
         display: inline-block;
@@ -101,4 +101,7 @@ aside {
         padding-left: 1em;
         font-size: .8125em;
         font-style: italic;
+        &:before {
+            content: "- ";
+        }
     }

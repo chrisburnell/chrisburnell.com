@@ -986,7 +986,7 @@ aside {
 .author-biography {
   margin-bottom: 1.5em; }
 
-/*picture*/
+/*img/picture*/
 .author-image {
   width: 100px;
   height: 100px;
@@ -1024,6 +1024,8 @@ aside {
   padding-left: 1em;
   font-size: 0.8125em;
   font-style: italic; }
+  .related-date:before {
+    content: "- "; }
 
 /*------------------------------------*\
     $ FOOTER
