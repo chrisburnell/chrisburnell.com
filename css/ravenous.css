@@ -986,19 +986,17 @@ aside {
 .author-biography {
   margin-bottom: 1.5em; }
 
-/*img/picture*/
 .author-image {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-background-size: 100%;
+  background-size: 100%;
   width: 100px;
   height: 100px;
   display: inline-block;
   float: left;
-  margin-right: 10px; }
-  .author-image img {
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    -webkit-background-size: 100%;
-    background-size: 100%;
-    border-radius: 0.1875em; }
+  margin-right: 10px;
+  border-radius: 0.1875em; }
 
 .article-tags {
   display: table-cell;
@@ -1017,14 +1015,14 @@ aside {
   .related-articles-list li + li {
     margin-top: 1em; }
 
-.related-title {
+.related-article-title {
   font-weight: bold; }
 
-.related-date {
+.related-article-date {
   padding-left: 1em;
   font-size: 0.8125em;
   font-style: italic; }
-  .related-date:before {
+  .related-article-date:before {
     content: "- "; }
 
 /*------------------------------------*\

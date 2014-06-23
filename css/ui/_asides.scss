@@ -63,17 +63,15 @@ aside {
     .author-biography {
         margin-bottom: 1.5em;
     }
-    /*img/picture*/.author-image {
+    .author-image {
+        background-clip: padding-box;
+        background-size: 100%;
         width: 100px;
         height: 100px;
         display: inline-block;
         float: left;
         margin-right: 10px;
-        img {
-            background-clip: padding-box;
-            background-size: 100%;
-            border-radius: .1875em;
-        }
+        border-radius: .1875em;
     }
     .article-tags {
         display: table-cell; /* don't wrap around .author-image */
@@ -94,10 +92,10 @@ aside {
             margin-top: 1em;
         }
     }
-    .related-title {
+    .related-article-title {
         font-weight: bold;
     }
-    .related-date {
+    .related-article-date {
         padding-left: 1em;
         font-size: .8125em;
         font-style: italic;
