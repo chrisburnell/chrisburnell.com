@@ -39,16 +39,19 @@ article,
     list-style: none;
     li {
         @include breakpoint("tablet") {
-            padding: 2.25em 0;
+            padding: 2.25em 1em;
         }
         width: 100%;
         display: inline-block;
         clear: both;
-        padding: 1.5em 0;
+        padding: 1.5em 1em;
         border-top: .125em solid $black-10;
+        &:nth-child(even) {
+        background-color: $black-5;
+        }
         &:last-child {
             @include breakpoint("tablet") {
-                padding: 2.25em 0;
+                padding-bottom: 0;
             }
             padding-bottom: 0;
         }
@@ -95,8 +98,10 @@ article,
             display: inline-block;
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
-            margin-bottom: -0.27em;
-            &:hover, &:focus, &:active {
+            margin-left: -0.27em;
+            &:hover,
+            &:focus,
+            &:active {
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;

@@ -819,16 +819,18 @@ article, .articles {
     width: 100%;
     display: inline-block;
     clear: both;
-    padding: 1.5em 0;
+    padding: 1.5em 1em;
     border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
     @media (max-width: 768px) {
       .articles-list li {
-        padding: 2.25em 0; } }
+        padding: 2.25em 1em; } }
+    .articles-list li:nth-child(even) {
+      background-color: rgba(6, 6, 6, 0.05); }
     .articles-list li:last-child {
       padding-bottom: 0; }
       @media (max-width: 768px) {
         .articles-list li:last-child {
-          padding: 2.25em 0; } }
+          padding-bottom: 0; } }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
@@ -866,7 +868,7 @@ article, .articles {
     display: inline-block;
     padding: 0 0.27em;
     border-bottom: 0.077em solid transparent;
-    margin-bottom: -0.27em; }
+    margin-left: -0.27em; }
     .article-title a:hover, .article-title a:focus, .article-title a:active {
       color: #4f4f4f;
       border-bottom-color: #5F8AA6;
