@@ -1,0 +1,35 @@
+            <aside class="author" role="complementary">
+                <div class="clear  author-information">
+                    <img class="author-image" src="/images/avatar.png" srcset="/images/avatar.png 1x, /images/avatar-200.png 2x" alt="" role="presentation">
+                    {% if page.layout == "article" %}
+                    	<div class="author-name">by <strong>{{ site.author }}</strong></div>
+                    	<time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+                    	{% if page.tags %}
+                    		<div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>
+                    	{% endif %}
+                    {% else %}
+                    	<div class="author-name">about <strong>{{ site.author }}</strong></div>
+                    	<div class="author-age">I’m <strong>24</strong> years old</div>
+                    	<div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>
+                    {% endif %}
+                </div>
+                <div class="author-biography">
+                    <p>I’m a Canadian {{ site.job_title }} living in London, England{% if site.employer %} and currently working at <a rel="employer" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="{{ site.url }}/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
+                    <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {% if page.layout == "article" %}this article is boring and makes you want to claw your eyeballs out{% else %}my whimsical articles don’t capture your child-like wonder{% endif %}.</p>
+                </div>
+                {% if page.layout == "article" %}
+                	{% if site.related_posts %}
+                	    <div class="related-articles">
+                	        <h3 class="related-articles-title">Related Articles</h3>
+                	        <ul class="related-articles-list">
+                	            {% for post in site.related_posts limit:2 %}
+                	                <li>
+                	                    <a class="related-article-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                	                    <time class="related-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            	                    </li>
+            	                {% endfor %}
+            	            </ul>
+            	        </div>
+            	    {% endif %}
+            	{% endif %}
+            </aside>
