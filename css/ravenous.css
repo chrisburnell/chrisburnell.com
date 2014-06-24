@@ -505,19 +505,17 @@ blockquote {
     blockquote p:after {
       content: close-quote;
       padding-left: 0.1875em; }
-  blockquote + p .citation {
-    margin-left: 2.5em; }
+  blockquote .citation {
+    margin-left: 2em;
+    margin-top: 1em; }
+    blockquote .citation:before {
+      content: "\2014\00a0"; }
 
 .pullquote {
-  font-size: 1.5em;
-  line-height: 1.25em; }
+  font-size: 1.1em;
+  line-height: 2em; }
   .pullquote .citation {
-    font-size: 0.667em; }
-
-blockquote + p .citation, .pullquote .citation {
-  margin-top: 1em; }
-  blockquote + p .citation:before, .pullquote .citation:before {
-    content: "\2014\00a0"; }
+    font-size: 0.909em; }
 
 hr {
   background: rgba(6, 6, 6, 0.1);
@@ -1018,6 +1016,7 @@ aside {
     margin-top: 1em; }
 
 .related-article-title {
+  display: block;
   font-weight: bold; }
 
 .related-article-date {

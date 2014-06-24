@@ -150,7 +150,7 @@ blockquote {
         border-top: .286em solid $blue;
         border-bottom: .286em solid $blue;
     }
-    & p {
+    p {
         margin-bottom: 0 !important;
         &:before {
             content: open-quote;
@@ -161,22 +161,19 @@ blockquote {
             padding-left: .1875em;
         }
     }
-    & + p .citation {
-        margin-left: 2.5em;
-    }
-}
-    .pullquote {
-        font-size: 1.5em;
-        line-height: 1.25em;
-        & .citation {
-            font-size: .667em;
-        }
-    }
-    blockquote + p .citation,
-    .pullquote .citation {
+    .citation {
+        margin-left: 2em;
         margin-top: 1em;
         &:before {
             content: "\2014\00a0";
+        }
+    }
+}
+    .pullquote {
+        font-size: 1.1em;
+        line-height: 2em;
+        .citation {
+            font-size: .909em;
         }
     }
 hr {
