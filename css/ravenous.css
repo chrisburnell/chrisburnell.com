@@ -1,4 +1,4 @@
-/*! Ravenous - version 2.0 */
+/*! Ravenous - version 2.1 */
 /* by Chris Burnell (@iamchrisburnell)
  * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
@@ -814,7 +814,9 @@ article, .articles {
 .articles-list {
   list-style: none; }
   .articles-list li {
-    width: 100%;
+    width: auto;
+    min-width: 778px;
+    /* to make sure our articles take up the full width */
     display: inline-block;
     clear: both;
     padding: 1.5em 1em;
@@ -828,7 +830,7 @@ article, .articles {
       padding-bottom: 0; }
       @media (max-width: 768px) {
         .articles-list li:last-child {
-          padding-bottom: 0; } }
+          padding-bottom: 2.25em; } }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }

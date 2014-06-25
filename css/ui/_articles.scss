@@ -41,7 +41,8 @@ article,
         @include breakpoint("tablet") {
             padding: 2.25em 1em;
         }
-        width: 100%;
+        width: auto;
+        min-width: 778px; /* to make sure our articles take up the full width */
         display: inline-block;
         clear: both;
         padding: 1.5em 1em;
@@ -51,7 +52,7 @@ article,
         }
         &:last-child {
             @include breakpoint("tablet") {
-                padding-bottom: 0;
+                padding-bottom: 2.25em;
             }
             padding-bottom: 0;
         }
