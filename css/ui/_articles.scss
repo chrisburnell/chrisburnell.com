@@ -132,7 +132,7 @@ article,
     list-style: none;
     text-align: center;
     li {
-        display: inline;
+        display: inline-block;
         &:first-child a:before {
             content: "\2190\00a0";
             position: relative; /* override the button:before fix */
@@ -147,6 +147,12 @@ article,
                 position: relative; /* override the button:after fix */
                 top: 0;
             }
+        }
+        &:not(:empty) + li {
+            @include breakpoint("mobile") {
+                margin-left: 0;
+            }
+            margin-left: 1.875em;
         }
     }
 }

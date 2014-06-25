@@ -896,7 +896,7 @@ article, .articles {
       padding-bottom: 2.25em;
       margin-top: 0; } }
   .pagination li {
-    display: inline; }
+    display: inline-block; }
     .pagination li:first-child a:before {
       content: "\2190\00a0";
       position: relative;
@@ -910,6 +910,11 @@ article, .articles {
       position: relative;
       /* override the button:after fix */
       top: 0; }
+    .pagination li:not(:empty) + li {
+      margin-left: 1.875em; }
+      @media (max-width: 500px) {
+        .pagination li:not(:empty) + li {
+          margin-left: 0; } }
 
 .comments {
   margin-top: 2em; }
