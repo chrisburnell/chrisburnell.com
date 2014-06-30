@@ -1235,6 +1235,12 @@ pre {
     $ MISCELLANEOUS
 \*------------------------------------*/
 /**
+ * Hacky Shit
+ */
+p:empty {
+  display: none; }
+
+/**
  * Luminosity
  */
 .is-dim, .is-dim h1 a, .is-dim h2 a, .is-dim h3 a, .is-dim abbr[title], .is-dim blockquote, .is-dim cite, .is-dim dfn[title], .is-dim .logo, .is-dim .site-navigation a, .is-dim .site-navigation a:hover, .is-dim .site-navigation a:focus, .is-dim .site-navigation-home a, .is-dim .site-navigation-about a, .is-dim .site-navigation-archive a, .is-dim .article-title a:hover, .is-dim .article-title a:focus, .is-dim .article-title a:active, .is-dim .articles-list .article-date:before, .is-dim .codepen-link, .is-dim .github-link {
