@@ -952,7 +952,13 @@ aside {
     aside {
       width: 100%;
       float: none;
-      margin: 0 0 1em; } }
+      margin: 0 0 1em; }
+      aside:not(.author) {
+        background: rgba(6, 6, 6, 0.05);
+        padding: 1em 1em 0.5em;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; } }
   aside p {
     clear: both;
     margin-bottom: 0.5em;
