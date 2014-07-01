@@ -14,7 +14,7 @@ tags:
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
 <pre class="codepen" data-height="600" data-type="result" data-href="LHqFy" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/LHqFy">Check out this Pen!</a> </pre>
-<script src="http://codepen.io/assets/embed/ei.js"></script>
+<script src="http://codepen.io/assets/embed/ei.js" aria-hidden="true"></script>
 
 ### What’s going on here?
 

@@ -44,7 +44,9 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside><p>The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.</p>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside>
+
+The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
 ### Let’s get down to brass tacks
 
@@ -58,7 +60,9 @@ The most important lesson of them all, of course, is to **keep it simple**. Whet
 
 I can’t take all the credit for this website, really. It’s the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I’m going to give a few shout-outs to some awesome people who helped me immensely.
 
-<aside><a href="http://browser.londonwebstandards.org/gallery_2013.php" title="State of the Browser 2013 Gallery"><img src="{{ site.url }}/images/articles/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"></a><p class="italic  gray">Image courtesy of [State of the Browser](http://browser.londonwebstandards.org/).</p></aside><p>I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), [State of the Browser](http://browser.londonwebstandards.org/), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m just going to reel off here in no particular order (other than alphabetical):</p>
+<aside><a href="http://browser.londonwebstandards.org/gallery_2013.php" title="State of the Browser 2013 Gallery"><img src="{{ site.url }}/images/articles/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"></a><p class="italic  gray">Image courtesy of [State of the Browser](http://browser.londonwebstandards.org/).</p></aside>
+
+I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), [State of the Browser](http://browser.londonwebstandards.org/), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m just going to reel off here in no particular order (other than alphabetical):
 
 - [Jake Archibald (Google)](http://www.jakearchibald.com/)
 - [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/)
