@@ -12,6 +12,7 @@ aside {
         float: none;
         margin: 0 0 1em;
         &:not(.author) {
+            @extend .rounded;
             background: $black-5;
             padding: 1em 1em .5em;
             box-sizing: border-box;
