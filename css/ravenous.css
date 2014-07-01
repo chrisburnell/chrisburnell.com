@@ -492,10 +492,11 @@ blockquote {
   article blockquote {
     background-color: rgba(95, 138, 166, 0.1);
     padding: 1em;
-    margin: 1em 2.5em; }
+    margin: 0 2.5em 1em; }
     @media (max-width: 500px) {
       article blockquote {
-        margin: 1em; } }
+        margin-right: 1em;
+        margin-left: 1em; } }
   aside blockquote {
     padding: 1em 0;
     border-top: 0.286em solid #5F8AA6;

@@ -143,9 +143,10 @@ blockquote {
         @extend .rounded;
         background-color: rgba($blue, 0.1);
         padding: 1em;
-        margin: 1em 2.5em;
+        margin: 0 2.5em 1em;
         @include breakpoint("mobile") {
-            margin: 1em;
+            margin-right: 1em;
+            margin-left: 1em;
         }
     }
     aside & {
