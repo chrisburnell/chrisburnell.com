@@ -3,7 +3,7 @@ layout: default
 page_class: home-page
 ---
 
-            <ol class="articles-list" role="list">
+            <ol id="articles" class="articles-list" role="list">
                 {% for post in paginator.posts %}
                 {% unless post.draft %}
                     <li>
@@ -15,15 +15,16 @@ page_class: home-page
                 {% endunless %}
                 {% endfor %}
             </ol>
+
             <ol class="pagination  clear">
                 <li>{% if paginator.previous_page %}
                     {% if paginator.previous_page == 1 %}
-                        <a rel="previous" class="button" href="/">Previous Page</a>
+                        <a rel="previous" class="button" href="/#articles">Previous Page</a>
                     {% else %}
-                        <a rel="previous" class="button" href="/page{{paginator.previous_page}}">Previous Page</a>
+                        <a rel="previous" class="button" href="/page{{paginator.previous_page}}#articles">Previous Page</a>
                     {% endif %}
                 {% endif %}</li><!--
              --><li>{% if paginator.next_page %}
-                    <a rel="next" class="button" href="/page{{paginator.next_page}}">Next Page</a>
+                    <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Next Page</a>
                 {% endif %}</li>
             </ol>
