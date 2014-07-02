@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 header {
+    height: 6.875em;
     @include breakpoint("tablet") {
         /**
          * Center the logo and make room for the navigation to drop underneath.
@@ -10,19 +11,8 @@ header {
         height: 10.625em;
         text-align: center;
     }
-    height: 6.875em;
 }
     .logo {
-        @include transition();
-        @include breakpoint("tablet") {
-            height: 1.74em;
-            display: inline-block;
-            float: none;
-            line-height: 1.74em;
-        }
-        @include breakpoint("mobile") {
-            font-size: 2.75em;
-        }
         color: $text-color;
         height: 2em;
         display: inline-block;
@@ -36,6 +26,16 @@ header {
         text-shadow: .058em .058em 0 $black-5;
         z-index: 1;
         user-select: none;
+        @include transition();
+        @include breakpoint("tablet") {
+            height: 1.74em;
+            display: inline-block;
+            float: none;
+            line-height: 1.74em;
+        }
+        @include breakpoint("mobile") {
+            font-size: 2.75em;
+        }
         &:hover,
         &:focus,
         &:active {
@@ -56,10 +56,6 @@ header {
             }
         }
         &:after {
-            @include animation("soaring 30s linear alternate infinite");
-            @include animation-play-state("paused");
-            @include transition();
-            @include translate3d("0, -0.808em, 0");
             content: "";
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
@@ -71,6 +67,10 @@ header {
             top: 0;
             left: 0;
             z-index: -1;
+            @include animation("soaring 30s linear alternate infinite");
+            @include animation-play-state("paused");
+            @include transition();
+            @include translate3d("0, -0.808em, 0");
         }
         /**
          * Only animate when the user hovers the logo.

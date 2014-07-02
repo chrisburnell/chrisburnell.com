@@ -18,6 +18,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 .wrap {
+    width: auto;
+    max-width: $max-wrapper-width;
+    padding-right: $wrapper-padding;
+    padding-left:  $wrapper-padding;
+    margin-right: auto;
+    margin-left:  auto;
     @include breakpoint("mobile") {
         /**
          * Let's make intelligent use of the mobile viewport and reduce the
@@ -27,12 +33,6 @@ body {
         padding-right: $wrapper-padding/2;
         padding-left:  $wrapper-padding/2;
     }
-    width: auto;
-    max-width: $max-wrapper-width;
-    padding-right: $wrapper-padding;
-    padding-left:  $wrapper-padding;
-    margin-right: auto;
-    margin-left:  auto;
 }
 .clear {
     clear: both;
@@ -49,9 +49,9 @@ body {
 }
 
 a {
-    @include transition("background .2s, color .2s, text-shadow .2s");
     color: $blue;
     text-decoration: none;
+    @include transition("background .2s, color .2s, text-shadow .2s");
     &:hover,
     &:focus,
     &:active {

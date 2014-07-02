@@ -33,8 +33,8 @@ p:empty {
 .is-dim .articles-list .article-date:before,
 .is-dim /*a*/.codepen-link,
 .is-dim /*a*/.github-link {
-    @include transition();
     color: $white !important; /* just to override any specificity, this is temp */
+    @include transition();
 }
 .is-dim {
     @include transition();

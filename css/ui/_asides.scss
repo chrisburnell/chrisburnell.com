@@ -7,6 +7,10 @@
  * list of articles. The math is calculated as in the Articles section.
  */
 aside {
+    width: 15.1875em;
+    float: left;
+    margin-left: -16.875em;
+    line-height: 1.618em;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
@@ -14,44 +18,37 @@ aside {
         &:not(.author) {
             @extend .rounded;
             background: $black-5;
-            padding: 1em 1em .5em;
             box-sizing: border-box;
+            padding: 1em 1em .5em;
         }
     }
-    width: 15.1875em;
-    float: left;
-    margin-left: -16.875em;
-    line-height: 1.618em;
     p {
-        @include breakpoint("mobile") {
-            font-size: 1em;
-        }
         clear: both;
         margin-bottom: .5em;
         font-size: .875em;
+        @include breakpoint("mobile") {
+            font-size: 1em;
+        }
     }
     blockquote p {
         margin-bottom: 0;
     }
 }
-.author,
-.related-articles {
+.author {
     font-family: $secondary-font-stack;
-}
     @include breakpoint("tablet") {
-        .author {
-            padding-top: 2.25em;
-            border-top: .125em solid $black-10;
-            margin-bottom: 0;
-            order: 999;
-            .about-page & {
-                margin-top: 2em;
-            }
+        order: 999;
+        padding-top: 2.25em;
+        border-top: .125em solid $black-10;
+        margin-bottom: 0;
+        .about-page & {
+            margin-top: 2em;
         }
     }
-    .author a {
+    a {
         color: $blue;
     }
+}
     .author-information {
         margin-bottom: 1em;
         font-family: $primary-font-stack;

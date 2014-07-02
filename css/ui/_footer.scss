@@ -3,11 +3,6 @@
 \*------------------------------------*/
 
 footer {
-    @include gradient(transparent, $black-10);
-    @include breakpoint("mobile") {
-        height: 85px;
-        padding: 2.25em 0;
-    }
     background-color: $text-color;
     color: $text-color-light;
     width: auto;
@@ -18,16 +13,21 @@ footer {
     font-size: .875em;
     font-weight: 600;
     text-transform: uppercase;
+    @include gradient(transparent, $black-10);
+    @include breakpoint("mobile") {
+        height: 85px;
+        padding: 2.25em 0;
+    }
 }
     .copyright,
     .social-icons {
+        float: left;
+        overflow: hidden;
         @include breakpoint("mobile") {
             width: 100%;
             float: none;
             text-align: center;
         }
-        float: left;
-        overflow: hidden;
     }
         .copyright a {
             display: inline-block;
@@ -57,10 +57,10 @@ footer {
             color: $text-color-light;
         }
         .social-icons {
+            float: right;
             @include breakpoint("mobile") {
                 margin-top: .625em;
             }
-            float: right;
             li {
                 display: inline-block;
                 margin-left: .5em;
@@ -70,7 +70,6 @@ footer {
             }
         }
         /*a*/.social-icon {
-            @include transition("opacity .2s ease-in-out");
             background-image: url("/images/glyphs.png");
             background-size: 150px 30px;
             opacity: .6;
@@ -79,6 +78,7 @@ footer {
             height: 30px;
             display: block;
             font-size: 0;
+            @include transition("opacity .2s ease-in-out");
             &:hover,
             &:focus,
             &:active {

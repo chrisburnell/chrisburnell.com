@@ -3,37 +3,36 @@
 \*------------------------------------*/
 
 nav {
+    float: right;
+    margin-top: 20px;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
         margin-top: 0;
     }
-    float: right;
-    margin-top: 20px;
 }
     .site-navigation {
+        height: 3.75em;
+        float: right;
+        list-style: none;
         @include breakpoint("tablet") {
             float: none;
             text-align: center;
         }
-        height: 3.75em;
-        float: right;
-        list-style: none;
         li {
-            @include breakpoint("tablet") {
-                float: none;
-            }
             height: 40px;
             display: inline-block;
             float: left;
             padding: .375em 0;
             text-align: center;
-        }
-        li + li {
-            margin-left: 1em;
+            @include breakpoint("tablet") {
+                float: none;
+            }
+            + li {
+                margin-left: 1em;
+            }
         }
         a {
-            @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
             color: $text-color-alt;
             display: block;
             padding: .75em;
@@ -43,15 +42,16 @@ nav {
             font-size: 1.25em;
             line-height: 1.25em;
             text-transform: uppercase;
+            @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
             &:hover,
             &:focus,
             &:active {
                 text-decoration: none;
             }
             &:active {
-                @include translate3d("0, .1em, 0");
                 margin-top: .1em;
                 line-height: 1.15em;
+                @include translate3d("0, .1em, 0");
             }
         }
     }
@@ -66,7 +66,6 @@ nav {
         .home-page .site-navigation-home a:after,
         .about-page .site-navigation-about a:after,
         .archive-page .site-navigation-archive a:after {
-            @include translate3d("-50%, 0, 0");
             content: "";
             border-top: 5px solid $blue;
             border-right: 5px solid transparent;
@@ -74,4 +73,5 @@ nav {
             position: absolute;
             bottom: -0.4em;
             left: 50%;
+            @include translate3d("-50%, 0, 0");
         }

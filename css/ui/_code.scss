@@ -16,7 +16,6 @@ code {
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
     &:not(.codepen) {
-        @include gradient(transparent, $black-25);
         background-color: $text-color;
         color: $white;
         padding: .714em;
@@ -25,5 +24,6 @@ pre {
         overflow-y: hidden;
         line-height: 1.5em;
         border-radius: .1875em;
+        @include gradient(transparent, $black-25);
     }
 }
