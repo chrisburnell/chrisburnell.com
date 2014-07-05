@@ -26,13 +26,13 @@ This brings me to my point—that mobile and tablet browsers, though solid, are 
 
 ### So what makes all this responsive magic work?
 
-It’s the <code><meta name="viewport"></code> tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
+It’s the <code>&lt;meta name="viewport"&gt;</code> tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
 
-- width
-- minimum-scale
-- maximum-scale
-- initial-scale
-- user-scalable
+- <code>width</code>
+- <code>minimum-scale</code>
+- <code>maximum-scale</code>
+- <code>initial-scale</code>
+- <code>user-scalable</code>
 
 and are implemented like so:
 
