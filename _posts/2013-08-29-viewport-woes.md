@@ -40,7 +40,7 @@ and are implemented like so:
 
 These tell the browser a number of things, respectively:
 
-- Set the width of the viewport&mdash;<code><body></code> in most cases&mdash;to the width of the device’s screen, in pixels.
+- Set the width of the viewport&mdash;<code>&lt;body&gt;</code> in most cases&mdash;to the width of the device’s screen, in pixels.
 - Set the <code>minimum-scale</code> the site can be viewed at to 1; for when a user tries to zoom in on something on the site (pinching on mobile, for example).
 - Set the <code>maximum-scale</code> the site can be viewed at to 1; for when a user tries to zoom out of the site.
 - Set the <code>initial-scale</code> when the site loads to 1; in this case this does nothing as the minimum and maximum are the same, but you could set minimum to 1, maximum to 2, and initial to 1.5 if that’s what would work on your particular project.
