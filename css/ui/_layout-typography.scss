@@ -94,9 +94,12 @@ h3,
     line-height: 1.618em;
     text-transform: uppercase;
 }
+h2,
+h3 {
+    margin-top: .5em;
+}
 h3 {
     border-bottom: .125em solid $text-color-light;
-    margin-top: .5em;
 }
 p {
     margin: 0;

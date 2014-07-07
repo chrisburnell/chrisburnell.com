@@ -447,9 +447,11 @@ h3, .article-date {
   line-height: 1.618em;
   text-transform: uppercase; }
 
-h3 {
-  border-bottom: 0.125em solid #DDDDDD;
+h2, h3 {
   margin-top: 0.5em; }
+
+h3 {
+  border-bottom: 0.125em solid #DDDDDD; }
 
 p {
   margin: 0; }
