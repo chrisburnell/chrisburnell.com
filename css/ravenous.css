@@ -1088,7 +1088,7 @@ footer {
     -webkit-transform: translate3d(0, .14em, 0);
             transform: translate3d(0, .14em, 0); }
 
-.copyright-link {
+.copyright-link, .style-guide-link {
   color: #DDDDDD; }
 
 .social-icons {

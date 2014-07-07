@@ -53,7 +53,8 @@ footer {
                 @include translate3d("0, .14em, 0");
             }
         }
-        .copyright-link {
+        .copyright-link,
+        .style-guide-link {
             color: $text-color-light;
         }
         .social-icons {
