@@ -1069,6 +1069,8 @@ footer {
 .copyright a {
   display: inline-block;
   white-space: nowrap; }
+  .copyright a:hover, .copyright a:focus, .copyright a:active {
+    text-decoration: none; }
 
 .home-link {
   background: url("../icon.png") no-repeat;
@@ -1082,8 +1084,6 @@ footer {
   vertical-align: middle;
   text-decoration: none;
   text-indent: -4em; }
-  .home-link:hover, .home-link:focus, .home-link:active {
-    text-decoration: none; }
   .home-link:active {
     -webkit-transform: translate3d(0, .14em, 0);
             transform: translate3d(0, .14em, 0); }

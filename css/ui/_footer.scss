@@ -32,6 +32,11 @@ footer {
         .copyright a {
             display: inline-block;
             white-space: nowrap;
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+            }
         }
         .home-link {
             background: url("../icon.png") no-repeat;
@@ -44,11 +49,6 @@ footer {
             vertical-align: middle;
             text-decoration: none;
             text-indent: -4em;
-            &:hover,
-            &:focus,
-            &:active {
-                text-decoration: none;
-            }
             &:active {
                 @include translate3d("0, .14em, 0");
             }
