@@ -10,7 +10,6 @@
     list-style: none;
     li {
         @extend .rounded;
-        background-color: attr(data-color);
         color: $white;
         width: 100px;
         height: 100px;

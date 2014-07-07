@@ -1234,7 +1234,6 @@ pre {
 .color-block-list {
   list-style: none; }
   .color-block-list li {
-    background-color: attr(data-color);
     color: #F9F9F9;
     width: 100px;
     height: 100px;
