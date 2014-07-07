@@ -3,6 +3,30 @@
 \*------------------------------------*/
 
 /**
+ * Style Guide
+ */
+
+.color-block-list {
+    list-style: none;
+    li {
+        @extend .rounded;
+        background-color: attr(data-color);
+        color: $white;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        font-family: $code-font-stack;
+        font-weight: 600;
+        &[data-color="#F9F9F9"] {
+            color: $text-color;
+        }
+        + li {
+            margin-left: .5em;
+        }
+    }
+}
+
+/**
  * Hacky fix for inline asides
  */
 p:empty {
