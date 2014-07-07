@@ -17,8 +17,23 @@
         display: inline-block;
         font-family: $code-font-stack;
         font-weight: 600;
+        line-height: 100px;
+        text-align: center;
+        &[data-color="#5F8AA6"] {
+            background-color: #5F8AA6;
+        }
         &[data-color="#F9F9F9"] {
+            background-color: #F9F9F9;
             color: $text-color;
+        }
+        &[data-color="#4F4F4F"] {
+            background-color: #4F4F4F;
+        }
+        &[data-color="#737373"] {
+            background-color: #737373;
+        }
+        &[data-color="#DDDDDD"] {
+            background-color: #DDDDDD;
         }
         + li {
             margin-left: .5em;

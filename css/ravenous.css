@@ -1240,9 +1240,20 @@ pre {
     height: 100px;
     display: inline-block;
     font-family: Consolas, Monaco, "Courier New", monospace;
-    font-weight: 600; }
+    font-weight: 600;
+    line-height: 100px;
+    text-align: center; }
+    .color-block-list li[data-color="#5F8AA6"] {
+      background-color: #5F8AA6; }
     .color-block-list li[data-color="#F9F9F9"] {
+      background-color: #F9F9F9;
       color: #4f4f4f; }
+    .color-block-list li[data-color="#4F4F4F"] {
+      background-color: #4F4F4F; }
+    .color-block-list li[data-color="#737373"] {
+      background-color: #737373; }
+    .color-block-list li[data-color="#DDDDDD"] {
+      background-color: #DDDDDD; }
     .color-block-list li + li {
       margin-left: 0.5em; }
 
