@@ -1237,15 +1237,16 @@ pre {
   text-align: center; }
   .color-block-list li {
     color: #F9F9F9;
-    width: 100px;
-    height: 100px;
+    width: 6em;
+    height: 6em;
     display: inline-block;
     border: 0.25em solid rgba(6, 6, 6, 0.25);
     margin: 0 0.25em 0.5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 600;
-    line-height: 100px;
-    text-align: center; }
+    line-height: 3em;
+    text-align: center;
+    white-space: nowrap; }
     .color-block-list li[data-color="#5F8AA6"] {
       background-color: #5F8AA6; }
     .color-block-list li[data-color="#F9F9F9"] {
