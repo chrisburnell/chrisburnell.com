@@ -144,21 +144,14 @@ dfn[title] {
     cursor: help;
 }
 blockquote {
+    @extend .rounded;
     quotes: "\201C" "\201D" "\2018" "\2019";
-    article & {
-        @extend .rounded;
-        background-color: rgba($blue, 0.1);
-        padding: 1em;
-        margin: 0 2.5em 1em;
-        @include breakpoint("mobile") {
-            margin-right: 1em;
-            margin-left: 1em;
-        }
-    }
-    aside & {
-        padding: 1em 0;
-        border-top: .286em solid $blue;
-        border-bottom: .286em solid $blue;
+    background-color: rgba($blue, 0.1);
+    padding: 1em;
+    margin: 0 2.5em 1em;
+    @include breakpoint("mobile") {
+        margin-right: 1em;
+        margin-left: 1em;
     }
     p {
         margin-bottom: 0 !important;

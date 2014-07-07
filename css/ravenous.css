@@ -487,19 +487,14 @@ abbr[title], dfn[title] {
   cursor: help; }
 
 blockquote {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
-  article blockquote {
-    background-color: rgba(95, 138, 166, 0.1);
-    padding: 1em;
-    margin: 0 2.5em 1em; }
-    @media (max-width: 500px) {
-      article blockquote {
-        margin-right: 1em;
-        margin-left: 1em; } }
-  aside blockquote {
-    padding: 1em 0;
-    border-top: 0.286em solid #5F8AA6;
-    border-bottom: 0.286em solid #5F8AA6; }
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  background-color: rgba(95, 138, 166, 0.1);
+  padding: 1em;
+  margin: 0 2.5em 1em; }
+  @media (max-width: 500px) {
+    blockquote {
+      margin-right: 1em;
+      margin-left: 1em; } }
   blockquote p {
     margin-bottom: 0 !important; }
     blockquote p:before {
@@ -534,7 +529,7 @@ hr {
 p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
-.rounded, figure img, article blockquote, .article-banner, aside:not(.author) {
+.rounded, figure img, blockquote, .article-banner, aside:not(.author) {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border-radius: 0.375em; }
