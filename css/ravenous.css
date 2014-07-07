@@ -1241,7 +1241,7 @@ pre {
     height: 100px;
     display: inline-block;
     border: 0.25em solid rgba(6, 6, 6, 0.25);
-    margin: 0 0.5em 0.5em;
+    margin: 0 0.25em 0.5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 600;
     line-height: 100px;
