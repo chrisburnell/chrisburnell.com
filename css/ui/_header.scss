@@ -72,12 +72,12 @@ header {
             @include transition();
             @include translate3d("0, -0.808em, 0");
         }
-        /**
-         * Only animate when the user hovers the logo.
-         */
         &:hover:after,
         &:focus:after,
         &:active:after {
+            /**
+             * Only animate when the user hovers the logo.
+             */
             @include animation-play-state("running");
         }
         span {

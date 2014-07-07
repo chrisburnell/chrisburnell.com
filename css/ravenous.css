@@ -166,7 +166,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: 0; }
@@ -261,7 +260,6 @@ input {
  */
 input[type="checkbox"], input[type="radio"] {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
           box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -283,7 +281,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
@@ -587,10 +584,7 @@ header {
       -ms-user-select: none;
           user-select: none;
   -webkit-transition: all .2s ease-in-out;
-          transition: all .2s ease-in-out;
-  /**
-         * Only animate when the user hovers the logo.
-         */ }
+          transition: all .2s ease-in-out; }
   @media (max-width: 768px) {
     .logo {
       height: 1.74em;
@@ -637,6 +631,9 @@ header {
     -webkit-transform: translate3d(0, -0.808em, 0);
             transform: translate3d(0, -0.808em, 0); }
   .logo:hover:after, .logo:focus:after, .logo:active:after {
+    /**
+             * Only animate when the user hovers the logo.
+             */
     -webkit-animation-play-state: running;
             animation-play-state: running; }
   .logo span {
@@ -819,7 +816,6 @@ article, .articles {
   list-style: none; }
   .articles-list li {
     -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     display: inline-block;
@@ -960,7 +956,6 @@ aside {
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
         -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 1em 1em 0.5em; } }
   aside p {
