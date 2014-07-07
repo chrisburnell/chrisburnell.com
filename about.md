@@ -1,5 +1,5 @@
 ---
-title: About me
+title: About Me
 description: My name is Chris Burnell, and I’m a Canadian User Interface Developer living in London, England.
 layout: default
 page_class: about-page
