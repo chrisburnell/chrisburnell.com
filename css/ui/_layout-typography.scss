@@ -119,6 +119,9 @@ a img {
 figure {
     margin: 0 0 .5em;
     text-align: center;
+    img {
+        @extend .rounded;
+    }
 }
     figcaption {
         padding-top: .444em;
@@ -165,7 +168,7 @@ blockquote {
             padding-left: .1875em;
         }
     }
-    .citation {
+    cite {
         margin-left: 2em;
         margin-top: 1em;
         &:before {
@@ -176,7 +179,7 @@ blockquote {
     .pullquote {
         font-size: 1.1em;
         line-height: 2em;
-        .citation {
+        cite {
             font-size: .909em;
         }
     }
