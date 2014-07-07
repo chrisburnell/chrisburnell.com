@@ -54,7 +54,14 @@ banner_mobile: lets-look-back_mobile.png
 </blockquote>
 
 <pre>
-<code>var this = code_block();</code>
+<code>@mixin breakpoint($width) {
+    @if $width == "tablet" {
+        @media (max-width: 768px) { @content ; }
+    }
+    @else if $width == "mobile" {
+        @media (max-width: 500px) { @content ; }
+    }
+}</code>
 </pre>
 
 <ol class="pagination  clear">
