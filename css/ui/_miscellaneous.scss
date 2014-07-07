@@ -14,6 +14,7 @@
         width: 100px;
         height: 100px;
         display: inline-block;
+        border: .25em solid $black-25;
         font-family: $code-font-stack;
         font-weight: 600;
         line-height: 100px;
@@ -33,6 +34,7 @@
         }
         &[data-color="#DDDDDD"] {
             background-color: #DDDDDD;
+            color: $text-color;
         }
         + li {
             margin-left: .5em;

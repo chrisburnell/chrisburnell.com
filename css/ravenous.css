@@ -1238,6 +1238,7 @@ pre {
     width: 100px;
     height: 100px;
     display: inline-block;
+    border: 0.25em solid rgba(6, 6, 6, 0.25);
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 600;
     line-height: 100px;
@@ -1252,7 +1253,8 @@ pre {
     .color-block-list li[data-color="#737373"] {
       background-color: #737373; }
     .color-block-list li[data-color="#DDDDDD"] {
-      background-color: #DDDDDD; }
+      background-color: #DDDDDD;
+      color: #4f4f4f; }
     .color-block-list li + li {
       margin-left: 0.5em; }
 
