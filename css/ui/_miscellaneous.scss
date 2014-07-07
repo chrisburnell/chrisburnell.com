@@ -7,7 +7,9 @@
  */
 
 .color-block-list {
+    margin-bottom: .75em;
     list-style: none;
+    text-align: center;
     li {
         @extend .rounded;
         color: $white;
@@ -15,6 +17,7 @@
         height: 100px;
         display: inline-block;
         border: .25em solid $black-25;
+        margin: 0 .5em .5em;
         font-family: $code-font-stack;
         font-weight: 600;
         line-height: 100px;
@@ -35,9 +38,6 @@
         &[data-color="#DDDDDD"] {
             background-color: #DDDDDD;
             color: $text-color;
-        }
-        + li {
-            margin-left: .5em;
         }
     }
 }

@@ -1232,13 +1232,16 @@ pre {
  * Style Guide
  */
 .color-block-list {
-  list-style: none; }
+  margin-bottom: 0.75em;
+  list-style: none;
+  text-align: center; }
   .color-block-list li {
     color: #F9F9F9;
     width: 100px;
     height: 100px;
     display: inline-block;
     border: 0.25em solid rgba(6, 6, 6, 0.25);
+    margin: 0 0.5em 0.5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 600;
     line-height: 100px;
@@ -1255,8 +1258,6 @@ pre {
     .color-block-list li[data-color="#DDDDDD"] {
       background-color: #DDDDDD;
       color: #4f4f4f; }
-    .color-block-list li + li {
-      margin-left: 0.5em; }
 
 /**
  * Hacky fix for inline asides
