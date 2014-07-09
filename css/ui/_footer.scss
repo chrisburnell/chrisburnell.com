@@ -59,7 +59,7 @@ footer {
         }
         .social-icons {
             float: right;
-            @include breakpoint("mobile") {
+            @include breakpoint("tablet") {
                 margin-top: .625em;
             }
             li {

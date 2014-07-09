@@ -1093,7 +1093,7 @@ footer {
 
 .social-icons {
   float: right; }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .social-icons {
       margin-top: 0.625em; } }
   .social-icons li {
