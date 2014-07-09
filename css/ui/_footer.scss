@@ -23,7 +23,7 @@ footer {
     .social-icons {
         float: left;
         overflow: hidden;
-        @include breakpoint("mobile") {
+        @include breakpoint("tablet") {
             width: 100%;
             float: none;
             text-align: center;

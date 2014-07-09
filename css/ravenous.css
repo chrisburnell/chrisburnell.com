@@ -1060,7 +1060,7 @@ footer {
 .copyright, .social-icons {
   float: left;
   overflow: hidden; }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .copyright, .social-icons {
       width: 100%;
       float: none;
