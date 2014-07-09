@@ -6,7 +6,6 @@ footer {
     background-color: $text-color;
     color: $text-color-light;
     width: auto;
-    height: 40px;
     padding: 2.572em 0;
     border-top: .286em solid $blue;
     font-family: $secondary-font-stack;
@@ -15,7 +14,6 @@ footer {
     text-transform: uppercase;
     @include gradient(transparent, $black-10);
     @include breakpoint("mobile") {
-        height: 85px;
         padding: 2.25em 0;
     }
 }

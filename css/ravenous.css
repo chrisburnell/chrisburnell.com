@@ -1042,7 +1042,6 @@ footer {
   background-color: #4f4f4f;
   color: #DDDDDD;
   width: auto;
-  height: 40px;
   padding: 2.572em 0;
   border-top: 0.286em solid #5F8AA6;
   font-family: "proxima-nova", sans-serif;
@@ -1054,7 +1053,6 @@ footer {
   background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.1) 100%); }
   @media (max-width: 500px) {
     footer {
-      height: 85px;
       padding: 2.25em 0; } }
 
 .copyright, .social-icons {
