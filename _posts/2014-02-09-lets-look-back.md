@@ -494,7 +494,7 @@ The CSS here a lot more concise now, and the advantages are tremendous as you ge
 
 --------
 
-Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SASS files into one file in the output <code>.css</code> file. I’ve done exactly that with my SASS files—split them into <dfn title="a SASS file named with a leading underscore to denote it is a part of a whole SAS codebase">partials</dfn>: <code>\_articles.scss</code>, <code>\_asides.scss</code>, <code>\_buttons.scss</code>, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
+Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SASS files into one file in the output <code>.css</code> file. I’ve done exactly that with my SASS files—split them into <dfn title="a SASS file named with a leading underscore to denote it is a part of a whole SASS codebase">partials</dfn>: <code>\_articles.scss</code>, <code>\_asides.scss</code>, <code>\_buttons.scss</code>, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
