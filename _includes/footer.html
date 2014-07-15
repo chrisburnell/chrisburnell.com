@@ -15,6 +15,16 @@
 
     {% if page.layout == "article" %}
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {% elsif page.layout == "default" %}
+    <script type="text/javascript">
+        var disqus_shortname = 'chrisburnell';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
     {% endif %}
     <script type="text/javascript" aria-hidden="true">
         {% if page.layout == "article" %}

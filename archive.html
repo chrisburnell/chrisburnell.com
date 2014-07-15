@@ -13,6 +13,7 @@ page_class: archive-page
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
                         <p class="article-introduction">{{ post.introduction }}</p>
                         <a class="button" href="{{ post.url }}" title="Continue reading {{ post.title }}">Read more</a>
+                        <a class="comments-link" href="{{ post.url }}#disqus_thread" title="join the discussion on {{ post.title }}">Join the discussion</a>
                     </li>
                 {% endunless %}
                 {% endfor %}

@@ -376,7 +376,7 @@ html, body {
 
 body {
   background-color: #F9F9F9;
-  color: #4f4f4f;
+  color: #4F4F4F;
   position: relative;
   font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", serif;
   text-rendering: optimizeLegibility;
@@ -417,7 +417,7 @@ a {
   a:hover, a:focus, a:active {
     text-decoration: underline; }
   h1 a, h2 a, h3 a {
-    color: #4f4f4f; }
+    color: #4F4F4F; }
     h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5F8AA6; }
 
@@ -447,7 +447,7 @@ h3, .article-date {
   line-height: 1.618em;
   text-transform: uppercase; }
 
-h2, h3 {
+article h2, h3 {
   margin-top: 0.5em; }
 
 h3 {
@@ -564,7 +564,7 @@ header {
       text-align: center; } }
 
 .logo {
-  color: #4f4f4f;
+  color: #4F4F4F;
   height: 2em;
   display: inline-block;
   float: left;
@@ -754,7 +754,7 @@ nav {
               transform: translate3d(0, .1em, 0); }
 
 .site-navigation a:hover, .site-navigation a:focus, .home-page .site-navigation-home a, .about-page .site-navigation-about a, .archive-page .site-navigation-archive a {
-  color: #4f4f4f;
+  color: #4F4F4F;
   padding-bottom: 8px;
   border-bottom-width: 4px; }
 
@@ -869,7 +869,7 @@ article, .articles {
     -webkit-transition: border-color .2s ease-in-out;
             transition: border-color .2s ease-in-out; }
     .article-title a:hover, .article-title a:focus, .article-title a:active {
-      color: #4f4f4f;
+      color: #4F4F4F;
       border-bottom-color: #5F8AA6;
       text-decoration: none; }
 
@@ -880,6 +880,21 @@ article, .articles {
 .articles-list .article-date:before {
   content: "\2013 \0020";
   color: #737373; }
+
+.comments-link {
+  display: inline-block;
+  float: right;
+  margin-top: 1.625em;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 600;
+  line-height: 1em; }
+  .comments-link:after {
+    content: "\00a0\2192"; }
+  @media (max-width: 768px) {
+    .comments-link {
+      display: block;
+      float: none;
+      margin-top: 1.25em; } }
 
 .pagination {
   width: 100%;
@@ -1039,7 +1054,7 @@ aside {
     $ FOOTER
 \*------------------------------------*/
 footer {
-  background-color: #4f4f4f;
+  background-color: #4F4F4F;
   color: #DDDDDD;
   width: auto;
   padding: 2.572em 0;
@@ -1155,7 +1170,7 @@ button, .button {
   display: inline-block;
   padding: 0 0.727em;
   border: 0;
-  margin-bottom: 0.364em;
+  margin-bottom: 0.182em;
   position: relative;
   font-family: "league-gothic", sans-serif;
   font-size: 1.375em;
@@ -1211,7 +1226,7 @@ pre {
   margin: 0 0 1em;
   /* override _normalize.scss */ }
   pre:not(.codepen) {
-    background-color: #4f4f4f;
+    background-color: #4F4F4F;
     color: #F9F9F9;
     padding: 0.714em;
     position: relative;
@@ -1249,14 +1264,14 @@ pre {
       background-color: #5F8AA6; }
     .color-block-list li[data-color="#F9F9F9"] {
       background-color: #F9F9F9;
-      color: #4f4f4f; }
+      color: #4F4F4F; }
     .color-block-list li[data-color="#4F4F4F"] {
       background-color: #4F4F4F; }
     .color-block-list li[data-color="#737373"] {
       background-color: #737373; }
     .color-block-list li[data-color="#DDDDDD"] {
       background-color: #DDDDDD;
-      color: #4f4f4f; }
+      color: #4F4F4F; }
 
 /**
  * Hacky fix for inline asides

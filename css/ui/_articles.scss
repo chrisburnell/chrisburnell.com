@@ -113,12 +113,28 @@ article,
     .article-date,
     .related-date {
         display: block;
-            margin-bottom: .5em;
+        margin-bottom: .5em;
     }
         .articles-list .article-date:before {
             content: "\2013 \0020";
             color: $text-color-alt;
         }
+    .comments-link {
+        display: inline-block;
+        float: right;
+        margin-top: 1.625em;
+        font-family: $secondary-font-stack;
+        font-weight: 600;
+        line-height: 1em;
+        &:after {
+            content: "\00a0\2192"
+        }
+        @include breakpoint("tablet") {
+            display: block;
+            float: none;
+            margin-top: 1.25em;
+        }
+    }
 
 .pagination {
     width: 100%;
