@@ -127,7 +127,7 @@ article,
         font-weight: 600;
         line-height: 1em;
         &:after {
-            content: "\00a0\2192"
+            content: "\00a0\2192";
         }
         @include breakpoint("tablet") {
             display: block;

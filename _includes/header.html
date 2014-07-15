@@ -44,7 +44,7 @@ snippet of code on a project of your own. -->
     <title>{% if page.page_class != "home-page" %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} &ndash; {{ site.tagline }}{% endif %}</title>
 
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- pre-compiled version is at https://raw.github.com/chrisburnell/chrisburnell.github.io/master/css/ravenous.scss -->
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}feed.xml">
     <link rel="shortcut icon" href="/icon.png">
     <link rel="apple-touch-icon-precomposed" href="/icon.png">
     <link rel="author" type="text/plain" href="/humans.txt">
@@ -73,24 +73,24 @@ snippet of code on a project of your own. -->
     <meta name="twitter:creator" content="@{{ site.twitter_user }}">
     <meta name="twitter:title" content="{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}">
     <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:image:src" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">
+    <meta name="twitter:image:src" content="{% if page.banner %}{{ site.url }}images/article-banners/{{ page.banner }}{% else %}{{ site.url }}images/avatar-200.png{% endif %}">
 
     <meta property="og:title" content="{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}">
     <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-    <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
+    <meta property="og:image" content="{% if page.banner %}{{ site.url }}images/article-banners/{{ page.banner }}{% else %}{{ site.url }}images/avatar-200.png{% endif %}">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
 </head>
 <body class="{{ page.page_class }}">
 
     <header class="wrap  clear" role="banner">
-        <a rel="home" class="logo" href="/" title="Why is it moving?!?!"><span>{{ site.title }}</span></a>
+        <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore."><span>{{ site.title }}</span></a>
         <nav role="navigation">
             <ul class="site-navigation">
                 <li class="site-navigation-home"><a rel="home" href="/" title="Home" tabindex="1">Home</a></li><!--
-             --><li class="site-navigation-about"><a href="/about" title="About Me" tabindex="1">About</a></li><!--
-             --><li class="site-navigation-archive"><a href="/archive" title="Articles Archive" tabindex="1">Archive</a></li>
+             --><li class="site-navigation-about"><a href="/about" title="About Me" tabindex="2">About</a></li><!--
+             --><li class="site-navigation-archive"><a href="/archive" title="Articles Archive" tabindex="3">Archive</a></li>
             </ul>
         </nav>
     </header>
