@@ -3,12 +3,7 @@
 \*------------------------------------*/
 
 header {
-    height: 6.875em;
     @include breakpoint("tablet") {
-        /**
-         * Center the logo and make room for the navigation to drop underneath.
-         */
-        height: 10.625em;
         text-align: center;
     }
 }

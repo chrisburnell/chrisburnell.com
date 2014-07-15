@@ -555,15 +555,9 @@ code::selection {
 /*------------------------------------*\
     $ HEADER
 \*------------------------------------*/
-header {
-  height: 6.875em; }
-  @media (max-width: 768px) {
-    header {
-      /**
-         * Center the logo and make room for the navigation to drop underneath.
-         */
-      height: 10.625em;
-      text-align: center; } }
+@media (max-width: 768px) {
+  header {
+    text-align: center; } }
 
 .logo {
   color: #4F4F4F;
@@ -714,7 +708,8 @@ nav {
     nav {
       width: 100%;
       float: none;
-      margin-top: 0; } }
+      margin-top: 0;
+      margin-bottom: 1em; } }
 
 .site-navigation {
   height: 3.75em;
