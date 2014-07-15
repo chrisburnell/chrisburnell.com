@@ -26,6 +26,10 @@ page_class: home-page
                     {% endif %}
                 {% endif %}</li><!--
              --><li>{% if paginator.next_page %}
-                    <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Next Page</a>
+                    {% if paginator.next_page == paginator.total_pages %}
+                        <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Last Page</a>
+                    {% else %}
+                        <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Next Page</a>
+                    {% endif %}
                 {% endif %}</li>
             </ol>
