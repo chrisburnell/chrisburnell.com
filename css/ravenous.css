@@ -1214,7 +1214,8 @@ code {
   font-size: 0.875em; }
   p > code, ol code, ul code {
     background-color: rgba(95, 138, 166, 0.1);
-    padding: 0.214em; }
+    padding: 0.214em;
+    white-space: nowrap; }
 
 pre {
   margin: 0 0 1em;
