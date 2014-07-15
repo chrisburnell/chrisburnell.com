@@ -4,7 +4,7 @@
 
 nav {
     float: right;
-    margin-top: 20px;
+    margin-top: 1.25em;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
@@ -20,7 +20,7 @@ nav {
             text-align: center;
         }
         li {
-            height: 40px;
+            height: 2.5em;
             display: inline-block;
             float: left;
             padding: .375em 0;

@@ -5,6 +5,10 @@
     iii Block Elements
 \*------------------------------------*/
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     min-height: 100%;
@@ -187,12 +191,12 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
+article,
 p:not(:last-child),
 ol:not(:last-child):not([class]),
 ul:not(:last-child):not([class]),
 h3:not(:last-child),
 figure:not(:last-child),
-article,
 .cp_embed_iframe {
     margin-bottom: 1.25em;
 }

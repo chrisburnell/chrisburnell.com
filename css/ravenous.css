@@ -371,6 +371,10 @@ td, th {
     ii  Inline Elements
     iii Block Elements
 \*------------------------------------*/
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 html, body {
   min-height: 100%; }
 
@@ -384,7 +388,7 @@ body {
 
 .wrap {
   width: auto;
-  max-width: 1080px;
+  max-width: 1120px;
   padding-right: 1.25em;
   padding-left: 1.25em;
   margin-right: auto;
@@ -524,10 +528,10 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
-p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), article, .cp_embed_iframe {
+article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
-.rounded, figure img, blockquote, .article-banner, aside:not(.author), .color-block-list li {
+.rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, .color-block-list li {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border-radius: 0.375em; }
@@ -705,7 +709,7 @@ header {
 \*------------------------------------*/
 nav {
   float: right;
-  margin-top: 20px; }
+  margin-top: 1.25em; }
   @media (max-width: 768px) {
     nav {
       width: 100%;
@@ -721,7 +725,7 @@ nav {
       float: none;
       text-align: center; } }
   .site-navigation li {
-    height: 40px;
+    height: 2.5em;
     display: inline-block;
     float: left;
     padding: 0.375em 0;
@@ -810,8 +814,6 @@ article, .articles {
 .articles-list {
   list-style: none; }
   .articles-list li {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
     width: 100%;
     display: inline-block;
     clear: both;
@@ -965,8 +967,6 @@ aside {
       margin: 0 0 1em; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
         padding: 1em 1em 0.5em; } }
   aside p {
     clear: both;
@@ -1009,16 +1009,13 @@ aside {
   margin-bottom: 1.5em; }
 
 .author-image {
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   width: 100px;
   height: 100px;
   display: inline-block;
   float: left;
-  margin-right: 10px;
-  border-radius: 0.1875em; }
+  margin-right: 10px; }
 
 .article-tags {
   display: table-cell;
@@ -1054,7 +1051,7 @@ aside {
 footer {
   background-color: #4F4F4F;
   color: #DDDDDD;
-  width: auto;
+  width: 100%;
   padding: 2.572em 0;
   border-top: 0.286em solid #5F8AA6;
   font-family: "proxima-nova", sans-serif;
@@ -1108,10 +1105,9 @@ footer {
     .social-icons {
       margin-top: 0.625em; } }
   .social-icons li {
-    display: inline-block;
-    margin-left: 0.5em; }
-    .social-icons li:first-child {
-      margin-left: 0; }
+    display: inline-block; }
+    .social-icons li + li {
+      margin-left: 0.5em; }
 
 /*a*/
 .social-icon {
@@ -1163,7 +1159,7 @@ footer {
 button, .button {
   background-color: #5F8AA6;
   color: #F9F9F9;
-  min-width: 6em;
+  min-width: 8em;
   height: 1.91em;
   display: inline-block;
   padding: 0 0.727em;
@@ -1248,8 +1244,8 @@ pre {
   text-align: center; }
   .color-block-list li {
     color: #F9F9F9;
-    width: 6em;
-    height: 6em;
+    width: 6.5em;
+    height: 6.5em;
     display: inline-block;
     border: 0.25em solid rgba(6, 6, 6, 0.25);
     margin: 0 0.25em 0.5em;

@@ -18,7 +18,6 @@ aside {
         &:not(.author) {
             @extend .rounded;
             background: $black-5;
-            box-sizing: border-box;
             padding: 1em 1em .5em;
         }
     }
@@ -67,14 +66,13 @@ aside {
         margin-bottom: 1.5em;
     }
     .author-image {
-        background-clip: padding-box;
+        @extend .rounded;
         background-size: 100%;
         width: 100px;
         height: 100px;
         display: inline-block;
         float: left;
         margin-right: 10px;
-        border-radius: .1875em;
     }
     .article-tags {
         display: table-cell; /* don't wrap around .author-image */

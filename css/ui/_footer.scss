@@ -5,7 +5,7 @@
 footer {
     background-color: $text-color;
     color: $text-color-light;
-    width: auto;
+    width: 100%;
     padding: 2.572em 0;
     border-top: .286em solid $blue;
     font-family: $secondary-font-stack;
@@ -62,9 +62,8 @@ footer {
             }
             li {
                 display: inline-block;
-                margin-left: .5em;
-                &:first-child {
-                    margin-left: 0;
+                + li {
+                    margin-left: .5em;
                 }
             }
         }
