@@ -55,6 +55,7 @@ article,
         @include breakpoint("tablet") {
             padding-top: 1.875em;
             padding-bottom: 1.875em;
+            text-align: center;
         }
     }
 }
@@ -92,6 +93,13 @@ article,
                 display: none;
             }
         }
+    .article-title,
+    .article-date,
+    .article-introduction {
+        @include breakpoint("tablet") {
+            text-align: left;
+        }
+    }
     .article-title {
         width: 100%;
         a {

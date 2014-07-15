@@ -709,7 +709,7 @@ nav {
       width: 100%;
       float: none;
       margin-top: 0;
-      margin-bottom: 1em; } }
+      margin-bottom: 1.5em; } }
 
 .site-navigation {
   height: 3.75em;
@@ -824,7 +824,8 @@ article, .articles {
     @media (max-width: 768px) {
       .articles-list li {
         padding-top: 1.875em;
-        padding-bottom: 1.875em; } }
+        padding-bottom: 1.875em;
+        text-align: center; } }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
@@ -853,6 +854,10 @@ article, .articles {
   @media (max-width: 500px) {
     .article-banner {
       display: none; } }
+
+@media (max-width: 768px) {
+  .article-title, .article-date, .article-introduction {
+    text-align: left; } }
 
 .article-title {
   width: 100%; }
