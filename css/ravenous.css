@@ -816,11 +816,11 @@ article, .articles {
     border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
     .articles-list li:nth-child(even) {
       background-color: rgba(6, 6, 6, 0.05); }
-    .articles-list li:nth-child(odd):last-child:nth-child(odd) {
+    .articles-list li:nth-child(odd):last-child {
       padding-bottom: 0; }
-    @media (max-width: 768px) {
-      .articles-list li:nth-child(odd):last-child {
-        padding-bottom: 1.875em; } }
+      @media (max-width: 768px) {
+        .articles-list li:nth-child(odd):last-child {
+          padding-bottom: 1.875em; } }
     @media (max-width: 768px) {
       .articles-list li {
         padding-top: 1.875em;

@@ -47,9 +47,7 @@ article,
             background-color: $black-5;
         }
         &:nth-child(odd):last-child {
-            &:nth-child(odd) {
-                padding-bottom: 0;
-            }
+            padding-bottom: 0;
             @include breakpoint("tablet") {
                 padding-bottom: 1.875em;
             }
