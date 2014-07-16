@@ -63,15 +63,15 @@ footer {
             }
             &:before {
                 content: "\0026\0020";
-                &:hover,
-                &:focus,
-                &:active {
-                    text-decoration: none;
-                }
                 @include breakpoint("mobile") {
                     display: none;
                 }
             }
+                &:hover:before,
+                &:focus:before,
+                &:active:before {
+                    text-decoration: none;
+                }
         }
         .social-icons {
             float: right;

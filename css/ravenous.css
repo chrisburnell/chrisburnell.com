@@ -1107,11 +1107,11 @@ footer {
     display: block; } }
 .style-guide-link:before {
   content: "\0026\0020"; }
-  .style-guide-link:before:hover, .style-guide-link:before:focus, .style-guide-link:before:active {
-    text-decoration: none; }
   @media (max-width: 500px) {
     .style-guide-link:before {
       display: none; } }
+.style-guide-link:hover:before, .style-guide-link:focus:before, .style-guide-link:active:before {
+  text-decoration: none; }
 
 .social-icons {
   float: right; }
