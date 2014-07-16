@@ -878,7 +878,7 @@ article, .articles {
   margin-bottom: 0.5em; }
 
 .articles-list .article-date:before {
-  content: "\2013 \0020";
+  content: "\2013\0020";
   color: #737373; }
 
 .comments-link {
@@ -1098,6 +1098,9 @@ footer {
 
 .copyright-link, .style-guide-link {
   color: #DDDDDD; }
+
+.style-guide-link:before {
+  content: "\2013\0020"; }
 
 .social-icons {
   float: right; }

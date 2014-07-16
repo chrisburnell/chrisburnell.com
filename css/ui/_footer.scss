@@ -55,6 +55,9 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
+        .style-guide-link:before {
+            content: "\2013\0020";
+        }
         .social-icons {
             float: right;
             @include breakpoint("tablet") {

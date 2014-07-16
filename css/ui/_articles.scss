@@ -123,7 +123,7 @@ article,
         margin-bottom: .5em;
     }
         .articles-list .article-date:before {
-            content: "\2013 \0020";
+            content: "\2013\0020";
             color: $text-color-alt;
         }
     .comments-link {
