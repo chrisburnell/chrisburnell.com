@@ -55,8 +55,16 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
-        .style-guide-link:before {
-            content: "\2013\0020";
+        .style-guide-link {
+            @include breakpoint("mobile") {
+                display: block;
+            }
+            &:before {
+                content: "\2013\0020";
+                @include breakpoint("mobile") {
+                    display: none;
+                }
+            }
         }
         .social-icons {
             float: right;

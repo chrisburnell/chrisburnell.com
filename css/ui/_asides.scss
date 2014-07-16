@@ -64,6 +64,9 @@ aside {
     }
     .author-biography {
         margin-bottom: 1.5em;
+        @include breakpoint("tablet") {
+            margin-bottom: 0;
+        }
     }
     .author-image {
         @extend .rounded;

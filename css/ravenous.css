@@ -1007,6 +1007,9 @@ aside {
 
 .author-biography {
   margin-bottom: 1.5em; }
+  @media (max-width: 768px) {
+    .author-biography {
+      margin-bottom: 0; } }
 
 .author-image {
   -webkit-background-size: 100% 100%;
@@ -1099,8 +1102,14 @@ footer {
 .copyright-link, .style-guide-link {
   color: #DDDDDD; }
 
+@media (max-width: 500px) {
+  .style-guide-link {
+    display: block; } }
 .style-guide-link:before {
   content: "\2013\0020"; }
+  @media (max-width: 500px) {
+    .style-guide-link:before {
+      display: none; } }
 
 .social-icons {
   float: right; }
