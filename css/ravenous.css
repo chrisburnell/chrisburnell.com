@@ -1077,7 +1077,7 @@ footer {
       float: none;
       text-align: center; } }
 
-.copyright a {
+.home-link, .copyright-link, .style-guide-link {
   display: inline-block;
   white-space: nowrap; }
 
@@ -1096,8 +1096,8 @@ footer {
   .home-link:hover, .home-link:focus, .home-link:active {
     text-decoration: none; }
   .home-link:active {
-    -webkit-transform: translate3d(0, .14em, 0);
-            transform: translate3d(0, .14em, 0); }
+    -webkit-transform: translate3d(0, .143em, 0);
+            transform: translate3d(0, .143em, 0); }
 
 .copyright-link, .style-guide-link {
   color: #DDDDDD; }
