@@ -62,16 +62,11 @@ footer {
                 display: block;
             }
             &:before {
-                content: "\0026\0020";
+                content: "\2013\0020";
                 @include breakpoint("mobile") {
                     display: none;
                 }
             }
-                &:hover:before,
-                &:focus:before,
-                &:active:before {
-                    text-decoration: none;
-                }
         }
         .social-icons {
             float: right;

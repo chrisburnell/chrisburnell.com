@@ -1106,12 +1106,10 @@ footer {
   .style-guide-link {
     display: block; } }
 .style-guide-link:before {
-  content: "\0026\0020"; }
+  content: "\2013\0020"; }
   @media (max-width: 500px) {
     .style-guide-link:before {
       display: none; } }
-.style-guide-link:hover:before, .style-guide-link:focus:before, .style-guide-link:active:before {
-  text-decoration: none; }
 
 .social-icons {
   float: right; }
