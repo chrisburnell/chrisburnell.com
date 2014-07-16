@@ -46,8 +46,10 @@ article,
         &:nth-child(even) {
             background-color: $black-5;
         }
-        &:last-child {
-            padding-bottom: 0;
+        &:nth-child(odd):last-child {
+            &:nth-child(odd) {
+                padding-bottom: 0;
+            }
             @include breakpoint("tablet") {
                 padding-bottom: 1.875em;
             }

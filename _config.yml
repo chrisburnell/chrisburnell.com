@@ -32,3 +32,4 @@ markdown_ext: markdown,mkd,mkdn,md
 
 gems:
   - jekyll-sitemap
+  - jekyll-redirect-from

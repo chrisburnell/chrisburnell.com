@@ -62,7 +62,12 @@ footer {
                 display: block;
             }
             &:before {
-                content: "\2013\0020";
+                content: "\0026\0020";
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none;
+                }
                 @include breakpoint("mobile") {
                     display: none;
                 }
