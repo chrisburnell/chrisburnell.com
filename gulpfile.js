@@ -2,59 +2,65 @@
  * Ravenous gulp Configuration
  */
 
-var gulp =       require('gulp'),
-    autoprefix = require('gulp-autoprefixer'),
-    imagemin =   require('gulp-imagemin'),
-    jekyll =     require('gulp-jekyll'),
-    minifycss =  require('gulp-minify-css'),
-    notify =     require('gulp-notify'),
-    rename =     require('gulp-rename'),
-    sass =       require('gulp-sass'),
-    svgmin =     require('gulp-svgmin'),
-    livereload = require('gulp-livereload'),
-    lr =         require('tiny-lr'),
-    server =     lr();
+// Define gulp objects
+var gulp            = require('gulp'),
+    autoprefixer    = require('gulp-autoprefixer'),
+    imagemin        = require('gulp-imagemin'),
+    livereload      = require('gulp-livereload'),
+    minifycss       = require('gulp-minify-css'),
+    plumber         = require('gulp-plumber');
+    rename          = require('gulp-rename'),
+    sass            = require('gulp-sass'),
+    server          = require('tiny-lr'),
+    svgmin          = require('gulp-svgmin');
 
+// Define the locations of our assets
 var cssDir =    'css/',
     imagesDir = 'images/';
 
-// Compile SCSS, autoprefix CSS3, and minify
+// -----------------------------------------------------------------------------
+
+// Compile SASS, autoprefix properties, and minify
 gulp.task('styles', function() {
     return gulp.src(cssDir + 'ravenous.scss')
+        .pipe(plumber())
         .pipe(sass({ style: 'expanded', includePaths: [cssDir] }))
-        .pipe(autoprefix("last 2 versions", "> 1%"))
+        .pipe(autoprefixer("last 2 versions", "> 1%"))
         .pipe(gulp.dest(cssDir))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
         .pipe(gulp.dest(cssDir))
-        .pipe(livereload(server))
-        .pipe(notify({ title: 'gulp', message: 'SCSS compiled.', onLast: true }));
+        .pipe(livereload(server));
 });
 
-// Crush images
+// -----------------------------------------------------------------------------
+
+// Crush raster images
 gulp.task('images', function() {
     return gulp.src(imagesDir + '**/*')
+        .pipe(plumber())
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
         .pipe(gulp.dest(imagesDir))
-        .pipe(livereload(server))
-        .pipe(notify({ title: 'gulp', message: 'Images crushed.', onLast: true }));
+        .pipe(livereload(server));
 });
 
 // Crush SVGs
 gulp.task('svg', function() {
     return gulp.src(imagesDir + '**/*')
+        .pipe(plumber())
         .pipe(svgmin())
         .pipe(gulp.dest(imagesDir))
-        .pipe(livereload(server))
-        .pipe(notify({ title: 'gulp', message: 'SVGs crushed.', onLast: true }));
+        .pipe(livereload(server));
 });
+
+// -----------------------------------------------------------------------------
 
 // Default task
 gulp.task('default', function() {
     gulp.start('styles');
 });
 
-// Watch files and perform tasks
+// Watch files and perform appropriate tasks
 gulp.task('watch', function() {
 
     // Listen on port 1337
@@ -64,7 +70,7 @@ gulp.task('watch', function() {
         }
         // Watch CSS files
         gulp.watch(cssDir + '**/*.scss', function(event) {
-            console.log('File ' + event.path + ' was ' + event.type + ', compiling SCSS...');
+            console.log('File ' + event.path + ' was ' + event.type + ', compiling SASS...');
             gulp.start('styles');
         });
         // Watch images and SVGs

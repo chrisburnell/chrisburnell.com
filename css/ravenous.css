@@ -1084,8 +1084,8 @@ footer {
 .home-link {
   background: url("../icon.png") no-repeat;
   background-image: url("/images/raven.svg");
-  -webkit-background-size: 2.857em 2.857em;
-          background-size: 2.857em 2.857em;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
   width: 2.875em;
   height: 2.875em;
   margin-right: 1em;
