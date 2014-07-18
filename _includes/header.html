@@ -41,7 +41,7 @@ snippet of code on a project of your own. -->
     <link rel="dns-prefetch" href="//referrer.disqus.com">
     <link rel="dns-prefetch" href="//tempest.services.disqus.com">{% endif %}
 
-    <title>{% if page.page_class != "home-page" %}{{ page.title }} &ndash; {{ site.title }}{% else %}{{ site.title }} &ndash; {{ site.tagline }}{% endif %}</title>
+    <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- pre-compiled version is at https://raw.github.com/chrisburnell/chrisburnell.github.io/master/css/ravenous.scss -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
@@ -64,22 +64,22 @@ snippet of code on a project of your own. -->
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
     <meta name="description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="apple-mobile-web-app-title" content="{{ site.title }}{% if page.layout == "article" %} &ndash; {{ page.title }}{% endif %}">
+    <meta name="apple-mobile-web-app-title" content="{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}">
 
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     {% if page.page_class != "not-found-page" %}<meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@{{ site.twitter_user }}">
-    <meta name="twitter:title" content="{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}">
+    <meta name="twitter:title" content="{{ site.title }} &ndash; {% if page.page_class == "home-page" %}{{ site.tagline }}{% else %}{{ page.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:image:src" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
 
-    <meta property="og:title" content="{{ site.title }} &ndash; {% if page.page_class != "home-page" %}{{ page.title }}{% else %}{{ site.tagline }}{% endif %}">
+    <meta property="og:title" content="{{ site.title }} &ndash; {% if page.page_class == "home-page" %}{{ site.tagline }}{% else %}{{ page.title }}{% endif %}">
     <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-    <meta property="og:image" content="{% if page.banner %}{{ site.url }}/images/article-banners/{{ page.banner }}{% else %}{{ site.url }}/images/avatar-200.png{% endif %}">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
+    <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
 </head>
 <body class="{{ page.page_class }}">

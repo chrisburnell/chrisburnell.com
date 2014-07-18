@@ -36,14 +36,14 @@ footer {
         .home-link {
             background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
-            background-size: 2.857em 2.857em;
-            color: transparent;
+            background-size: 100%;
             width: 2.875em;
             height: 2.875em;
             margin-right: 1em;
+            overflow: hidden;
             vertical-align: middle;
-            text-decoration: none;
-            text-indent: -4em;
+            text-indent: 100%;
+            white-space: nowrap;
             &:hover,
             &:focus,
             &:active {
