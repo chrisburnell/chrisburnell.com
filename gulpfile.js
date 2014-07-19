@@ -10,7 +10,8 @@ var gulp            = require('gulp'),
     plumber         = require('gulp-plumber');
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
-    svgmin          = require('gulp-svgmin');
+    svgmin          = require('gulp-svgmin'),
+    watch           = require('gulp-watch');
 
 // Define the locations of our assets
 var cssDir =    'css/',
@@ -57,20 +58,13 @@ gulp.task('default', function() {
 
 // -----------------------------------------------------------------------------
 
-// Watch files and perform appropriate tasks
+// Watch files and perform the appropriate tasks
 gulp.task('watch', function() {
 
-    // Watch CSS files
-    gulp.watch(cssDir + '**/*.scss', function(event) {
-        console.log('File ' + event.path + ' was ' + event.type + ', compiling SASS...');
-        gulp.start('styles');
-    });
+    // Watch SASS files
+    watch({glob: cssDir + '**/*.scss'}, ['styles']);
 
-    // Watch images and SVGs
-    gulp.watch(imagesDir + '**/*', function(event) {
-        console.log('File ' + event.path + ' was ' + event.type + ', crushing images...');
-        gulp.start('images');
-        gulp.start('svg');
-    });
+    // Watch raster images and SVGs
+    watch({glob: imagesDir + '**/*'}, ['images', 'svg']);
 
 });
