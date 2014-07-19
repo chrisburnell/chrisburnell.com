@@ -44,6 +44,7 @@ footer {
             vertical-align: middle;
             text-indent: 100%;
             white-space: nowrap;
+            @include transition();
             &:hover,
             &:focus,
             &:active {
@@ -51,6 +52,9 @@ footer {
             }
             &:active {
                 @include translate3d("0, .143em, 0");
+            }
+            @include breakpoint("mobile") {
+                margin-right: .5em;
             }
         }
         .copyright-link,

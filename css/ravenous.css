@@ -1092,12 +1092,17 @@ footer {
   overflow: hidden;
   vertical-align: middle;
   text-indent: 100%;
-  white-space: nowrap; }
+  white-space: nowrap;
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
   .home-link:hover, .home-link:focus, .home-link:active {
     text-decoration: none; }
   .home-link:active {
     -webkit-transform: translate3d(0, .143em, 0);
             transform: translate3d(0, .143em, 0); }
+  @media (max-width: 500px) {
+    .home-link {
+      margin-right: 0.5em; } }
 
 .copyright-link, .style-guide-link {
   color: #DDDDDD; }
