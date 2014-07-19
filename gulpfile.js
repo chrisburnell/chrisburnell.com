@@ -10,7 +10,6 @@ var gulp            = require('gulp'),
     plumber         = require('gulp-plumber');
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
-    svgmin          = require('gulp-svgmin'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
@@ -33,19 +32,11 @@ gulp.task('styles', function() {
 
 // -----------------------------------------------------------------------------
 
-// Crush raster images
+// Crush raster and SVG images
 gulp.task('images', function() {
     return gulp.src(imagesDir + '**/*')
         .pipe(plumber())
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-        .pipe(gulp.dest(imagesDir));
-});
-
-// Crush SVGs
-gulp.task('svg', function() {
-    return gulp.src(imagesDir + '**/*')
-        .pipe(plumber())
-        .pipe(svgmin())
         .pipe(gulp.dest(imagesDir));
 });
 
@@ -61,10 +52,8 @@ gulp.task('default', function() {
 // Watch files and perform the appropriate tasks
 gulp.task('watch', function() {
 
-    // Watch SASS files
-    watch({glob: cssDir + '**/*.scss'}, ['styles']);
+    watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['styles']);
 
-    // Watch raster images and SVGs
-    watch({glob: imagesDir + '**/*'}, ['images', 'svg']);
+    // watch({glob: imagesDir + '**/*', emitOnGlob: false}, ['images']);
 
 });
