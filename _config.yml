@@ -31,6 +31,6 @@ rdiscount:
 markdown_ext: markdown,mkd,mkdn,md
 
 gems:
-  - jemoji
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jemoji
