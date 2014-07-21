@@ -33,21 +33,16 @@ snippet of code on a project of your own. -->
 
     <!-- Prefetch DNS for external assets (Google Analytics, Typekit) -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//use.typekit.net">
-    {% if page.layout == "article" %}
+    <link rel="dns-prefetch" href="//use.typekit.net">{% if page.layout == "article" %}
     <link rel="dns-prefetch" href="//a.disquscdn.com">
     <link rel="dns-prefetch" href="//disqus.com">
     <link rel="dns-prefetch" href="//go.disqus.com">
     <link rel="dns-prefetch" href="//juggler.services.disqus.com">
     <link rel="dns-prefetch" href="//referrer.disqus.com">
     <link rel="dns-prefetch" href="//tempest.services.disqus.com">
-    {% elsif page.page_class == "home-page" %}
-    {% for post in paginator.posts limit:1 %}
-    {% unless post.draft %}
+    {% elsif page.page_class == "home-page" %}{% for post in paginator.posts limit:1 %}{% unless post.draft %}
     <link rel="prerender" href="{{ post.url }}">
-    {% endunless %}
-    {% endfor %}
-    {% endif %}
+    {% endunless %}{% endfor %}{% endif %}
 
     <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
