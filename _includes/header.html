@@ -33,7 +33,8 @@ snippet of code on a project of your own. -->
 
     <!-- Prefetch DNS for external assets (Google Analytics, Typekit) -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//use.typekit.net">{% if page.layout == "article" %}
+    <link rel="dns-prefetch" href="//use.typekit.net">
+    {% if page.layout == "article" %}
     <link rel="dns-prefetch" href="//a.disquscdn.com">
     <link rel="dns-prefetch" href="//disqus.com">
     <link rel="dns-prefetch" href="//go.disqus.com">
