@@ -2,7 +2,9 @@
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
 
-code {
+code,
+kbd,
+samp {
     font-family: $code-font-stack;
     font-size: .875em;
     p > &,

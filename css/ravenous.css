@@ -703,13 +703,13 @@ code::selection {
 \*------------------------------------*/
 nav {
   float: right;
-  margin-top: 1.25em; }
+  margin-top: 1.5em; }
   @media (max-width: 768px) {
     nav {
       width: 100%;
       float: none;
       margin-top: 0;
-      margin-bottom: 1.5em; } }
+      margin-bottom: 1.25em; } }
 
 .site-navigation {
   height: 3.75em;
@@ -720,11 +720,8 @@ nav {
       float: none;
       text-align: center; } }
   .site-navigation li {
-    height: 2.5em;
     display: inline-block;
-    float: left;
-    padding: 0.375em 0;
-    text-align: center; }
+    float: left; }
     @media (max-width: 768px) {
       .site-navigation li {
         float: none; } }
@@ -735,36 +732,36 @@ nav {
     display: block;
     padding: 0.75em;
     border-bottom: 0px solid #5F8AA6;
+    margin-bottom: 0.3em;
     position: relative;
     font-family: "league-gothic", sans-serif;
     font-size: 1.25em;
     line-height: 1.25em;
     text-transform: uppercase;
-    -webkit-transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s;
-            transition: color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s; }
+    -webkit-transition: color .2s, padding-bottom .2s, border-bottom-width .2s, -webkit-transform .2s;
+            transition: color .2s, padding-bottom .2s, border-bottom-width .2s, transform .2s; }
     .site-navigation a:hover, .site-navigation a:focus, .site-navigation a:active {
       text-decoration: none; }
     .site-navigation a:active {
-      margin-top: 0.1em;
-      line-height: 1.15em;
-      -webkit-transform: translate3d(0, .1em, 0);
-              transform: translate3d(0, .1em, 0); }
+      -webkit-transform: translate3d(0, .2em, 0);
+              transform: translate3d(0, .2em, 0); }
 
 .site-navigation a:hover, .site-navigation a:focus, .home-page .site-navigation-home a, .about-page .site-navigation-about a, .archive-page .site-navigation-archive a {
   color: #4F4F4F;
-  padding-bottom: 8px;
-  border-bottom-width: 4px; }
+  padding-bottom: 0.55em;
+  border-bottom-width: 0.2em; }
 
 .home-page .site-navigation-home a:after, .about-page .site-navigation-about a:after, .archive-page .site-navigation-archive a:after {
   content: "";
-  border-top: 5px solid #5F8AA6;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
+  border-top: 0.3em solid #5F8AA6;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
   position: absolute;
-  bottom: -0.4em;
+  bottom: -0.5em;
   left: 50%;
-  -webkit-transform: translate3d(-50%, 0, 0);
-          transform: translate3d(-50%, 0, 0); }
+  -webkit-transform: translateX("-50%");
+      -ms-transform: translateX("-50%");
+          transform: translateX("-50%"); }
 
 /*------------------------------------*\
     $ ARTICLES AND ARTICLE LISTS
@@ -1226,10 +1223,10 @@ button, .button {
 /*------------------------------------*\
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
-code {
+code, kbd, samp {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
-  p > code, ol code, ul code {
+  p > code, ol code, ul code, p > kbd, ol kbd, ul kbd, p > samp, ol samp, ul samp {
     background-color: rgba(95, 138, 166, 0.1);
     padding: 0.214em;
     white-space: nowrap; }

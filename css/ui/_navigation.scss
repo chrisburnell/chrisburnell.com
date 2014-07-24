@@ -4,12 +4,12 @@
 
 nav {
     float: right;
-    margin-top: 1.25em;
+    margin-top: 1.5em;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
         margin-top: 0;
-        margin-bottom: 1.5em;
+        margin-bottom: 1.25em;
     }
 }
     .site-navigation {
@@ -21,11 +21,8 @@ nav {
             text-align: center;
         }
         li {
-            height: 2.5em;
             display: inline-block;
             float: left;
-            padding: .375em 0;
-            text-align: center;
             @include breakpoint("tablet") {
                 float: none;
             }
@@ -38,41 +35,41 @@ nav {
             display: block;
             padding: .75em;
             border-bottom: 0px solid $blue;
+            margin-bottom: .3em;
             position: relative;
             font-family: $heading-font-stack;
             font-size: 1.25em;
             line-height: 1.25em;
             text-transform: uppercase;
-            @include transition("color .2s, border-bottom-width .2s, margin-top .2s, padding-bottom .2s");
+            @include transition("color .2s, padding-bottom .2s, border-bottom-width .2s, transform .2s");
             &:hover,
             &:focus,
             &:active {
                 text-decoration: none;
             }
             &:active {
-                margin-top: .1em;
-                line-height: 1.15em;
-                @include translate3d("0, .1em, 0");
+                @include translate3d("0, .2em, 0");
             }
         }
     }
-        .site-navigation a:hover, .site-navigation a:focus,
+        .site-navigation a:hover,
+        .site-navigation a:focus,
         .home-page .site-navigation-home a,
         .about-page .site-navigation-about a,
         .archive-page .site-navigation-archive a {
             color: $text-color;
-            padding-bottom: 8px;
-            border-bottom-width: 4px;
+            padding-bottom: .55em;
+            border-bottom-width: .2em;
         }
         .home-page .site-navigation-home a:after,
         .about-page .site-navigation-about a:after,
         .archive-page .site-navigation-archive a:after {
             content: "";
-            border-top: 5px solid $blue;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
+            border-top: .3em solid $blue;
+            border-right: .3em solid transparent;
+            border-left: .3em solid transparent;
             position: absolute;
-            bottom: -0.4em;
+            bottom: -0.5em;
             left: 50%;
-            @include translate3d("-50%, 0, 0");
+            transform: translateX("-50%");
         }
