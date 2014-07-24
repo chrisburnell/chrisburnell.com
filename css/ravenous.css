@@ -759,9 +759,9 @@ nav {
   position: absolute;
   bottom: -0.5em;
   left: 50%;
-  -webkit-transform: translateX("-50%");
-      -ms-transform: translateX("-50%");
-          transform: translateX("-50%"); }
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
 
 /*------------------------------------*\
     $ ARTICLES AND ARTICLE LISTS
