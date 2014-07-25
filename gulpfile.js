@@ -21,6 +21,7 @@ gulp.task('styles', function() {
     return gulp.src(cssDir + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sass({
+            errLogToConsole: true,
             includePaths: [cssDir],
             // sourceComments: 'map',
             style: 'expanded'
