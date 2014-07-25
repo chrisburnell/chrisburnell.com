@@ -5,16 +5,13 @@
 // Define gulp objects
 var gulp            = require('gulp'),
     autoprefixer    = require('gulp-autoprefixer'),
-    imagemin        = require('gulp-imagemin'),
     minifycss       = require('gulp-minify-css'),
     plumber         = require('gulp-plumber');
     rename          = require('gulp-rename'),
-    sass            = require('gulp-sass'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
-var cssDir =    'css/',
-    imagesDir = 'images/';
+var cssDir =    'css/';
 
 // -----------------------------------------------------------------------------
 
@@ -36,16 +33,6 @@ gulp.task('styles', function() {
 
 // -----------------------------------------------------------------------------
 
-// Crush raster and SVG images
-gulp.task('images', function() {
-    return gulp.src(imagesDir + '**/*')
-        .pipe(plumber())
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-        .pipe(gulp.dest(imagesDir));
-});
-
-// -----------------------------------------------------------------------------
-
 // Default task
 gulp.task('default', function() {
     gulp.start('styles');
@@ -57,7 +44,5 @@ gulp.task('default', function() {
 gulp.task('watch', function() {
 
     watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['styles']);
-
-    // watch({glob: imagesDir + '**/*', emitOnGlob: false}, ['images']);
 
 });

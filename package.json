@@ -1,13 +1,12 @@
 {
   "name": "Ravenous",
   "author": "Chris Burnell (@iamchrisburnell)",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.8.6",
     "gulp-autoprefixer": "^0.0.8",
-    "gulp-imagemin": "^0.6.1",
     "gulp-minify-css": "^0.3.6",
     "gulp-plumber": "^0.6.3",
     "gulp-rename": "^1.2.0",
