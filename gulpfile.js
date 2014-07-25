@@ -8,6 +8,7 @@ var gulp            = require('gulp'),
     minifycss       = require('gulp-minify-css'),
     plumber         = require('gulp-plumber');
     rename          = require('gulp-rename'),
+    sass            = require('gulp-sass'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
