@@ -843,10 +843,10 @@ article, .articles {
 
 .article-banner {
   margin-bottom: 1em; }
-  .article-banner.mobile {
+  .article-banner.article-banner-mobile {
     display: none; }
     @media (max-width: 500px) {
-      .article-banner.mobile {
+      .article-banner.article-banner-mobile {
         display: block; } }
   @media (max-width: 500px) {
     .article-banner {
