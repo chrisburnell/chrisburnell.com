@@ -85,7 +85,7 @@ snippet of code on a project of your own. -->
     <meta name="twitter:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
-    <meta name="twitter:domain"> content="chrisburnell.com">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
+    <meta name="twitter:domain" content="chrisburnell.com">{% else %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
 </head>
 <body class="{{ page.page_class }}">
