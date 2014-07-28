@@ -9,7 +9,6 @@ header {
 }
     .logo {
         color: $text-color;
-        height: 2em;
         display: inline-block;
         float: left;
         padding-left: 1.923em;
@@ -23,7 +22,6 @@ header {
         user-select: none;
         @include transition();
         @include breakpoint("tablet") {
-            height: 1.74em;
             display: inline-block;
             float: none;
             line-height: 1.74em;
@@ -52,8 +50,8 @@ header {
         }
         &:after {
             content: "";
-            background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
+            background-repeat: no-repeat;
             background-size: 2.307em 2.307em;
             width: 2.307em;
             height: 2.307em;

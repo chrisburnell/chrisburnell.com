@@ -561,7 +561,6 @@ code::selection {
 
 .logo {
   color: #4F4F4F;
-  height: 2em;
   display: inline-block;
   float: left;
   padding-left: 1.923em;
@@ -580,7 +579,6 @@ code::selection {
           transition: all .2s ease-in-out; }
   @media (max-width: 768px) {
     .logo {
-      height: 1.74em;
       display: inline-block;
       float: none;
       line-height: 1.74em; } }
@@ -604,8 +602,8 @@ code::selection {
       top: -0.117em; }
   .logo:after {
     content: "";
-    background: url("../icon.png") no-repeat;
     background-image: url("/images/raven.svg");
+    background-repeat: no-repeat;
     -webkit-background-size: 2.307em 2.307em;
             background-size: 2.307em 2.307em;
     width: 2.307em;
@@ -1079,10 +1077,10 @@ footer {
   white-space: nowrap; }
 
 .home-link {
-  background: url("../icon.png") no-repeat;
   background-image: url("/images/raven.svg");
+  background-repeat: no-repeat;
   -webkit-background-size: 100% 100%;
-          background-size: 100%;
+          background-size: 100% 100%;
   width: 2.875em;
   height: 2.875em;
   margin-right: 1em;
@@ -1125,15 +1123,16 @@ footer {
 
 /*a*/
 .social-icon {
-  background-image: url("/images/glyphs.png");
-  -webkit-background-size: 150px 30px;
-          background-size: 150px 30px;
+  background-image: url("/images/glyphs.svg");
+  -webkit-background-size: 210px 32px;
+          background-size: 210px 32px;
   opacity: 0.6;
-  color: transparent;
-  width: 30px;
-  height: 30px;
+  width: 2.286em;
+  height: 2.286em;
   display: block;
-  font-size: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
   -webkit-transition: opacity .2s ease-in-out;
           transition: opacity .2s ease-in-out; }
   .social-icon:hover, .social-icon:focus, .social-icon:active {
@@ -1149,23 +1148,23 @@ footer {
 
 /*a*/
 .github-link {
-  background-position: -30px top;
-  color: black !important; }
+  background-position: -48px top;
+  color: #000000 !important; }
 
 /*a*/
 .lastfm-link {
-  background-position: -60px top;
-  color: #d51007 !important; }
+  background-position: -93px top;
+  color: #D51007 !important; }
 
 /*a*/
 .rss-link {
-  background-position: -90px top;
+  background-position: -133px top;
   /* uses the default anchor color */ }
 
 /*a*/
 .twitter-link {
-  background-position: -120px top;
-  color: #007ba8 !important; }
+  background-position: -178px top;
+  color: #007BA8 !important; }
 
 /*------------------------------------*\
     $ BUTTONS

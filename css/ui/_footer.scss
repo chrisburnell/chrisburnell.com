@@ -34,9 +34,9 @@ footer {
             white-space: nowrap;
         }
         .home-link {
-            background: url("../icon.png") no-repeat;
             background-image: url("/images/raven.svg");
-            background-size: 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
             width: 2.875em;
             height: 2.875em;
             margin-right: 1em;
@@ -85,14 +85,15 @@ footer {
             }
         }
         /*a*/.social-icon {
-            background-image: url("/images/glyphs.png");
-            background-size: 150px 30px;
+            background-image: url("/images/glyphs.svg");
+            background-size: 210px 32px;
             opacity: .6;
-            color: transparent;
-            width: 30px;
-            height: 30px;
+            width: 2.286em;
+            height: 2.286em;
             display: block;
-            font-size: 0;
+            overflow: hidden;
+            text-indent: 100%;
+            white-space: nowrap;
             @include transition("opacity .2s ease-in-out");
             &:hover,
             &:focus,
@@ -108,18 +109,18 @@ footer {
             color: #212121 !important;
         }
         /*a*/.github-link {
-            background-position: -30px top;
-            color: black !important;
+            background-position: -48px top;
+            color: #000000 !important;
         }
         /*a*/.lastfm-link {
-            background-position: -60px top;
-            color: #d51007 !important;
+            background-position: -93px top;
+            color: #D51007 !important;
         }
         /*a*/.rss-link {
-            background-position: -90px top;
+            background-position: -133px top;
             /* uses the default anchor color */
         }
         /*a*/.twitter-link {
-            background-position: -120px top;
-            color: #007ba8 !important;
+            background-position: -178px top;
+            color: #007BA8 !important;
         }
