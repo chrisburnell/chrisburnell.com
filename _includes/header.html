@@ -71,7 +71,8 @@ snippet of code on a project of your own. -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
 
-    {% if page.page_class != "not-found-page" %}<!-- OpenGraph and Twitter Microdata -->
+    {% if page.page_class != "not-found-page" %}
+        <!-- OpenGraph and Twitter Microdata -->
         <meta property="og:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
         <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
         <meta property="og:type" content="website">
