@@ -106,15 +106,15 @@ footer {
             }
         }
         /*a*/.codepen-link {
-            color: #212121 !important;
+            color: $codepen-color !important;
         }
         /*a*/.github-link {
             background-position: -48px top;
-            color: #000000 !important;
+            color: $github-color !important;
         }
         /*a*/.lastfm-link {
             background-position: -93px top;
-            color: #D51007 !important;
+            color: $lastfm-color !important;
         }
         /*a*/.rss-link {
             background-position: -133px top;
@@ -122,5 +122,5 @@ footer {
         }
         /*a*/.twitter-link {
             background-position: -178px top;
-            color: #3C93D5 !important;
+            color: darken($twitter-color, 10%) !important;
         }
