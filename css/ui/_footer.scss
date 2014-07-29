@@ -88,8 +88,8 @@ footer {
             background-image: url("/images/glyphs.svg");
             background-size: 210px 32px;
             opacity: .6;
-            width: 2.286em;
-            height: 2.286em;
+            width: 32px;
+            height: 32px;
             display: block;
             overflow: hidden;
             text-indent: 100%;
@@ -111,6 +111,9 @@ footer {
         /*a*/.github-link {
             background-position: -48px top;
             color: $github-color !important;
+            .social-icon & {
+                width: 31px;
+            }
         }
         /*a*/.lastfm-link {
             background-position: -93px top;
@@ -119,8 +122,14 @@ footer {
         /*a*/.rss-link {
             background-position: -133px top;
             /* uses the default anchor color */
+            .social-icon & {
+                width: 25px;
+            }
         }
         /*a*/.twitter-link {
             background-position: -178px top;
             color: darken($twitter-color, 10%) !important;
+            .social-icon & {
+                width: 30px;
+            }
         }
