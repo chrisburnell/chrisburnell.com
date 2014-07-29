@@ -86,7 +86,7 @@ footer {
         }
         /*a*/.social-icon {
             background-image: url("/images/glyphs.svg");
-            background-size: 210px 32px;
+            background-size: 190px 32px;
             opacity: .6;
             width: 32px;
             height: 32px;
@@ -109,25 +109,25 @@ footer {
             color: $codepen-color !important;
         }
         /*a*/.github-link {
-            background-position: -48px top;
+            background-position: -42px top;
             color: $github-color !important;
             &.social-icon {
                 width: 31px;
             }
         }
         /*a*/.lastfm-link {
-            background-position: -93px top;
+            background-position: -83px top;
             color: $lastfm-color !important;
         }
         /*a*/.rss-link {
-            background-position: -133px top;
+            background-position: -125px top;
             /* uses the default anchor color */
             &.social-icon {
                 width: 25px;
             }
         }
         /*a*/.twitter-link {
-            background-position: -178px top;
+            background-position: -160px top;
             color: darken($twitter-color, 10%) !important;
             &.social-icon {
                 width: 30px;
