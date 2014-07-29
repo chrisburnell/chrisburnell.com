@@ -1150,7 +1150,7 @@ footer {
 .github-link {
   background-position: -48px top;
   color: #333333 !important; }
-  .social-icon .github-link {
+  .github-link.social-icon {
     width: 31px; }
 
 /*a*/
@@ -1162,14 +1162,14 @@ footer {
 .rss-link {
   background-position: -133px top;
   /* uses the default anchor color */ }
-  .social-icon .rss-link {
+  .rss-link.social-icon {
     width: 25px; }
 
 /*a*/
 .twitter-link {
   background-position: -178px top;
   color: #2798e9 !important; }
-  .social-icon .twitter-link {
+  .twitter-link.social-icon {
     width: 30px; }
 
 /*------------------------------------*\
