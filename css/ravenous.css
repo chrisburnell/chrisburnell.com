@@ -1105,10 +1105,11 @@ footer {
 @media (max-width: 500px) {
   .style-guide-link {
     display: block; } }
-.style-guide-link:before {
-  content: "\2013\0020"; }
+
+.copyright-spacer {
+  color: #737373; }
   @media (max-width: 500px) {
-    .style-guide-link:before {
+    .copyright-spacer {
       display: none; } }
 
 .social-icons {

@@ -17,7 +17,7 @@ var cssDir =    'css/';
 // -----------------------------------------------------------------------------
 
 // Compile SASS, autoprefix properties, and minify
-gulp.task('styles', function() {
+gulp.task('css', function() {
     return gulp.src(cssDir + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sass({
@@ -37,7 +37,7 @@ gulp.task('styles', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('styles');
+    gulp.start('css');
 });
 
 // -----------------------------------------------------------------------------
@@ -45,6 +45,6 @@ gulp.task('default', function() {
 // Watch files and perform the appropriate tasks
 gulp.task('watch', function() {
 
-    watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['styles']);
+    watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['css']);
 
 });

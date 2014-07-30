@@ -65,11 +65,11 @@ footer {
             @include breakpoint("mobile") {
                 display: block;
             }
-            &:before {
-                content: "\2013\0020";
-                @include breakpoint("mobile") {
-                    display: none;
-                }
+        }
+        .copyright-spacer {
+            color: $text-color-alt;
+            @include breakpoint("mobile") {
+                display: none;
             }
         }
         .social-icons {
