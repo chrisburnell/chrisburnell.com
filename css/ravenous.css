@@ -1053,7 +1053,6 @@ footer {
   padding: 2.572em 0;
   border-top: 0.286em solid #5F8AA6;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.1)));
@@ -1159,7 +1158,7 @@ footer {
 /*a*/
 .lastfm-link {
   background-position: -99px top;
-  color: #D51007 !important; }
+  color: #E31B23 !important; }
 
 /*a*/
 .rss-link {
