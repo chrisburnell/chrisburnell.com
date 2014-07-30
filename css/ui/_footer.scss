@@ -36,9 +36,9 @@ footer {
         .home-link {
             background-image: url("/images/raven.svg");
             background-repeat: no-repeat;
-            background-size: 100% 100%;
-            width: 2.875em;
-            height: 2.875em;
+            background-size: 40px 40px;
+            width: 40px;
+            height: 40px;
             margin-right: 1em;
             overflow: hidden;
             vertical-align: middle;
@@ -80,16 +80,16 @@ footer {
             li {
                 display: inline-block;
                 + li {
-                    margin-left: .5em;
+                    margin-left: .75em;
                 }
             }
         }
         /*a*/.social-icon {
             background-image: url("/images/glyphs.svg");
-            background-size: 190px 32px;
+            background-size: 227px 40px;
             opacity: .6;
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             display: block;
             overflow: hidden;
             text-indent: 100%;
@@ -107,29 +107,32 @@ footer {
         }
         /*a*/.codepen-link {
             color: $codepen-color !important;
+            &.social-icon {
+                width: 41px;
+            }
         }
         /*a*/.github-link {
-            background-position: -42px top;
+            background-position: -51px top;
             color: $github-color !important;
+            &.social-icon {
+                width: 38px;
+            }
+        }
+        /*a*/.lastfm-link {
+            background-position: -99px top;
+            color: $lastfm-color !important;
+        }
+        /*a*/.rss-link {
+            background-position: -149px top;
+            /* uses the default anchor color */
             &.social-icon {
                 width: 31px;
             }
         }
-        /*a*/.lastfm-link {
-            background-position: -83px top;
-            color: $lastfm-color !important;
-        }
-        /*a*/.rss-link {
-            background-position: -125px top;
-            /* uses the default anchor color */
-            &.social-icon {
-                width: 25px;
-            }
-        }
         /*a*/.twitter-link {
-            background-position: -160px top;
+            background-position: -190px top;
             color: darken($twitter-color, 10%) !important;
             &.social-icon {
-                width: 30px;
+                width: 37px;
             }
         }
