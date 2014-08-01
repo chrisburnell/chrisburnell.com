@@ -9,6 +9,7 @@ var gulp            = require('gulp'),
     plumber         = require('gulp-plumber');
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
+    sourcemaps      = require('gulp-sourcemaps'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
@@ -44,7 +45,5 @@ gulp.task('default', function() {
 
 // Watch files and perform the appropriate tasks
 gulp.task('watch', function() {
-
     watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['css']);
-
 });
