@@ -23,16 +23,18 @@ $heading-font-stack:   "league-gothic", sans-serif;
 $code-font-stack:      Consolas, Monaco, "Courier New", monospace;
 
 // Wrapper Widths
-$max-wrapper-width: 1120px;
-$wrapper-padding:   1.25em;
+$max-wrapper-width:    1120px;
+$tablet-wrapper-width: 768px;
+$mobile-wrapper-width: 500px;
+$wrapper-padding:      1.25em;
 
 // CSS3 Mixins
 @mixin breakpoint($width) {
     @if $width == "tablet" {
-        @media (max-width: 768px) { @content ; }
+        @media (max-width: $tablet-wrapper-width) { @content ; }
     }
     @else if $width == "mobile" {
-        @media (max-width: 500px) { @content ; }
+        @media (max-width: $mobile-wrapper-width) { @content ; }
     }
 }
 @mixin gradient($top, $bottom) {

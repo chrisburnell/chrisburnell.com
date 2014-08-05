@@ -840,15 +840,11 @@ article, .articles {
   font-size: 1.25em; }
 
 .article-banner {
+  width: 810px;
   margin-bottom: 1em; }
-  .article-banner.article-banner-mobile {
-    display: none; }
-    @media (max-width: 500px) {
-      .article-banner.article-banner-mobile {
-        display: block; } }
   @media (max-width: 500px) {
     .article-banner {
-      display: none; } }
+      width: 500px; } }
 
 @media (max-width: 768px) {
   .article-title, .article-date, .article-introduction {

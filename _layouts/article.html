@@ -7,12 +7,15 @@
 
             {% include main-aside.html %}
 
-            {% if page.banner %}
-                <img alt=" " class="article-banner" src="{{ site.url }}/images/article-banners/{{ page.banner }}" width="810" height="300" role="presentation" lazyload>
+            {% if page.banner and page.banner_mobile %}
+                <img alt="" class="article-banner" role="presentation"
+                     src="/images/article-banners/{{ page.banner_mobile }}"
+                     sizes="(min-width: 541px) 810px,
+                            100vw"
+                     srcset="/images/article-banners/{{ page.banner_mobile }} 540w,
+                             /images/article-banners/{{ page.banner }} 810w">
             {% endif %}
-            {% if page.banner_mobile %}
-                <img alt=" " class="article-banner article-banner-mobile" src="{{ site.url }}/images/article-banners/{{ page.banner_mobile }}" width="500" height="300" role="presentation" lazyload>
-            {% endif %}
+
             {% if page.introduction %}
                 <p class="article-introduction">{{ page.introduction }}</p>
             {% endif %}

@@ -80,15 +80,10 @@ article,
     }
     .article-banner {
         @extend .rounded;
+        width: 810px;
         margin-bottom: 1em;
-        &.article-banner-mobile {
-            display: none;
-            @include breakpoint("mobile") {
-                display: block;
-            }
-        }
         @include breakpoint("mobile") {
-            display: none;
+            width: 500px;
         }
     }
     .article-title,

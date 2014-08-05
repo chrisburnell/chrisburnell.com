@@ -14,8 +14,10 @@
     </footer>
 
     {% if page.layout == "article" %}
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    {% elsif page.page_class == "home-page" or page.page_class == "archive-page" %}
+        <script src="/js/picturefill.min.js" async></script>
+        <script src="//platform.twitter.com/widgets.js" async></script>
+    {% endif %}
+    {% if page.page_class == "home-page" or page.page_class == "archive-page" %}
         <script type="text/javascript" aria-hidden="true">
             var disqus_shortname = 'chrisburnell';
             (function () {
