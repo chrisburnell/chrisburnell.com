@@ -80,19 +80,17 @@ article,
     }
     .article-banner {
         @extend .rounded;
-    }
-        .article-banner {
-            margin-bottom: 1em;
-            &.article-banner-mobile {
-                display: none;
-                @include breakpoint("mobile") {
-                    display: block;
-                }
-            }
+        margin-bottom: 1em;
+        &.article-banner-mobile {
+            display: none;
             @include breakpoint("mobile") {
-                display: none;
+                display: block;
             }
         }
+        @include breakpoint("mobile") {
+            display: none;
+        }
+    }
     .article-title,
     .article-date,
     .article-introduction {
