@@ -10,10 +10,8 @@
             {% if page.banner and page.banner_mobile %}
                 <img alt="" class="article-banner" role="presentation"
                      src="/images/article-banners/{{ page.banner_mobile }}"
-                     sizes="(min-width: 541px) 810px,
-                            100vw"
-                     srcset="/images/article-banners/{{ page.banner_mobile }} 540w,
-                             /images/article-banners/{{ page.banner }} 810w">
+                     sizes="(min-width: 541px) 810px, 100vw"
+                     srcset="/images/article-banners/{{ page.banner_mobile }} 540w, /images/article-banners/{{ page.banner }} 810w">
             {% endif %}
 
             {% if page.introduction %}
