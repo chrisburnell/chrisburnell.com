@@ -11,8 +11,8 @@
     Language: English
     Doctype: HTML5
     Fonts: FF Meta Serif Web Pro, Proxima Nova, League Gothic
-    Compiled with: Gulp, gulp-autoprefixer (Autoprefixer), gulp-csscomb (csscomb), gulp-cssmin (clean-css), gulp-sass (libsass)
-    Running on: Github Pages, Jekyll
+    Compiled with: Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
+    Running on: Jekyll on Github Pages
 
 /* LANGUAGES */
 
