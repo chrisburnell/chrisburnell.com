@@ -58,43 +58,45 @@ How does *gulp* work?
 
 Here’s a sample <code>gulpfile.js</code> that shows the workflow at play. It should give you a fairly good idea of what’s going on.
 
-    var gulp = require('gulp');
+{% highlight javascript %}
+var gulp = require('gulp');
 
-    var coffee = require('gulp-coffee');
-    var concat = require('gulp-concat');
-    var uglify = require('gulp-uglify');
-    var imagemin = require('gulp-imagemin');
+var coffee = require('gulp-coffee');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
 
-    var paths = {
-      scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee'],
-      images: 'client/img/**/*'
-    };
+var paths = {
+  scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee'],
+  images: 'client/img/**/*'
+};
 
-    gulp.task('scripts', function() {
-      // Minify and copy all JavaScript (except vendor scripts)
-      return gulp.src(paths.scripts)
-        .pipe(coffee())
-        .pipe(uglify())
-        .pipe(concat('all.min.js'))
-        .pipe(gulp.dest('build/js'));
-    });
+gulp.task('scripts', function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  return gulp.src(paths.scripts)
+    .pipe(coffee())
+    .pipe(uglify())
+    .pipe(concat('all.min.js'))
+    .pipe(gulp.dest('build/js'));
+});
 
-    // Copy all static images
-    gulp.task('images', function() {
-     return gulp.src(paths.images)
-        // Pass in options to the task
-        .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest('build/img'));
-    });
+// Copy all static images
+gulp.task('images', function() {
+ return gulp.src(paths.images)
+    // Pass in options to the task
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest('build/img'));
+});
 
-    // Rerun the task when a file changes
-    gulp.task('watch', function () {
-      gulp.watch(paths.scripts, ['scripts']);
-      gulp.watch(paths.images, ['images']);
-    });
+// Rerun the task when a file changes
+gulp.task('watch', function () {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.images, ['images']);
+});
 
-    // The default task (called when you run `gulp` from cli)
-    gulp.task('default', ['scripts', 'images', 'watch']);
+// The default task (called when you run `gulp` from cli)
+gulp.task('default', ['scripts', 'images', 'watch']);
+{% endhighlight %}
 
 What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The <code>watch</code> task is being used to listen for changes to particular files and run tasks subsequently. My particular <code>gulpfile.js</code> is used to compile my SASS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when <code>watch</code> is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* <code>watch</code> to compile, minify, and refesh for you!
 
@@ -102,163 +104,165 @@ What *gulp* does is runs a series of commands and even listens for and responds 
 
 Here’s an example of what the CSS for my logo looked like prior to these changes:
 
-    .logo {
-        color: #4f4f4f;
-        height: 2em;
-        display: inline-block;
-        float: left;
-        padding-left: 1.923em;
-        position: relative;
-        font-family: "league-gothic", sans-serif;
-        font-size: 3.25em;
-        line-height: 2em;
-        text-transform: uppercase;
-        text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
-        z-index: 1;
-        -webkit-transition: none;
-                transition: none;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
+{% highlight css %}
+.logo {
+    color: #4f4f4f;
+    height: 2em;
+    display: inline-block;
+    float: left;
+    padding-left: 1.923em;
+    position: relative;
+    font-family: "league-gothic", sans-serif;
+    font-size: 3.25em;
+    line-height: 2em;
+    text-transform: uppercase;
+    text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
+    z-index: 1;
+    -webkit-transition: none;
+            transition: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+    .logo:hover,
+    .logo:focus,
+    .logo:active {
+        text-decoration: none;
     }
-        .logo:hover,
-        .logo:focus,
-        .logo:active {
-            text-decoration: none;
-        }
-        .logo:active {
-            -webkit-transform: translate3d(0, .039em, 0);
-                -ms-transform: translate3d(0, .039em, 0);
-                    transform: translate3d(0, .039em, 0);
-        }
-        .logo:after {
-            content: "";
-            background: url("../icon.png") no-repeat;
-            background-image: url("/images/raven.svg");
-            -webkit-background-size: 2.307em 2.307em;
-                    background-size: 2.307em 2.307em;
-            width: 2.307em;
-            height: 2.307em;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            -webkit-transform: translate3d(0, -0.808em, 0);
-                -ms-transform: translate3d(0, -0.808em, 0);
-                    transform: translate3d(0, -0.808em, 0);
-            -webkit-animation: soaring 30s linear alternate infinite;
-                    animation: soaring 30s linear alternate infinite;
-            -webkit-animation-play-state: paused;
-                    animation-play-state: paused;
-        }
-        .logo:hover:after,
-        .logo:focus:after,
-        .logo:active:after {
-            -webkit-animation-play-state: running;
-                    animation-play-state: running;
-        }
-        .logo span {
-            white-space: nowrap;
-        }
+    .logo:active {
+        -webkit-transform: translate3d(0, .039em, 0);
+            -ms-transform: translate3d(0, .039em, 0);
+                transform: translate3d(0, .039em, 0);
+    }
+    .logo:after {
+        content: "";
+        background: url("../icon.png") no-repeat;
+        background-image: url("/images/raven.svg");
+        -webkit-background-size: 2.307em 2.307em;
+                background-size: 2.307em 2.307em;
+        width: 2.307em;
+        height: 2.307em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        -webkit-transform: translate3d(0, -0.808em, 0);
+            -ms-transform: translate3d(0, -0.808em, 0);
+                transform: translate3d(0, -0.808em, 0);
+        -webkit-animation: soaring 30s linear alternate infinite;
+                animation: soaring 30s linear alternate infinite;
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused;
+    }
+    .logo:hover:after,
+    .logo:focus:after,
+    .logo:active:after {
+        -webkit-animation-play-state: running;
+                animation-play-state: running;
+    }
+    .logo span {
+        white-space: nowrap;
+    }
 
-        @-webkit-keyframes soaring {
-            0%, 100% {
-                -webkit-transform: translate3d(0, -0.8125em, 0);
-                    -ms-transform: translate3d(0, -0.8125em, 0);
-                        transform: translate3d(0, -0.8125em, 0);
-            }
-            12.5% {
-                -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
-                    -ms-transform: translate3d(-0.0625em, -0.6875em, 0);
-                        transform: translate3d(-0.0625em, -0.6875em, 0);
-            }
-            25% {
-                -webkit-transform: translate3d(.125em, -0.3125em, 0);
-                    -ms-transform: translate3d(.125em, -0.3125em, 0);
-                        transform: translate3d(.125em, -0.3125em, 0);
-            }
-            37.5% {
-                -webkit-transform: translate3d(.3125em, -0.375em, 0);
-                    -ms-transform: translate3d(.3125em, -0.375em, 0);
-                        transform: translate3d(.3125em, -0.375em, 0);
-            }
-            50% {
-                -webkit-transform: translate3d(.125em, -0.4375em, 0);
-                    -ms-transform: translate3d(.125em, -0.4375em, 0);
-                        transform: translate3d(.125em, -0.4375em, 0);
-            }
-            62.5% {
-                -webkit-transform: translate3d(.0625em, -0.25em, 0);
-                    -ms-transform: translate3d(.0625em, -0.25em, 0);
-                        transform: translate3d(.0625em, -0.25em, 0);
-            }
-            75% {
-                -webkit-transform: translate3d(.1875em, -0.4375em, 0);
-                    -ms-transform: translate3d(.1875em, -0.4375em, 0);
-                        transform: translate3d(.1875em, -0.4375em, 0);
-            }
-            87.5% {
-                -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
-                    -ms-transform: translate3d(-0.0625em, -0.5625em, 0);
-                        transform: translate3d(-0.0625em, -0.5625em, 0);
-            }
+    @-webkit-keyframes soaring {
+        0%, 100% {
+            -webkit-transform: translate3d(0, -0.8125em, 0);
+                -ms-transform: translate3d(0, -0.8125em, 0);
+                    transform: translate3d(0, -0.8125em, 0);
         }
-        @keyframes soaring {
-            0%, 100% {
-                -webkit-transform: translate3d(0, -0.8125em, 0);
-                    -ms-transform: translate3d(0, -0.8125em, 0);
-                        transform: translate3d(0, -0.8125em, 0);
-            }
-            12.5% {
-                -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
-                    -ms-transform: translate3d(-0.0625em, -0.6875em, 0);
-                        transform: translate3d(-0.0625em, -0.6875em, 0);
-            }
-            25% {
-                -webkit-transform: translate3d(.125em, -0.3125em, 0);
-                    -ms-transform: translate3d(.125em, -0.3125em, 0);
-                        transform: translate3d(.125em, -0.3125em, 0);
-            }
-            37.5% {
-                -webkit-transform: translate3d(.3125em, -0.375em, 0);
-                    -ms-transform: translate3d(.3125em, -0.375em, 0);
-                        transform: translate3d(.3125em, -0.375em, 0);
-            }
-            50% {
-                -webkit-transform: translate3d(.125em, -0.4375em, 0);
-                    -ms-transform: translate3d(.125em, -0.4375em, 0);
-                        transform: translate3d(.125em, -0.4375em, 0);
-            }
-            62.5% {
-                -webkit-transform: translate3d(.0625em, -0.25em, 0);
-                    -ms-transform: translate3d(.0625em, -0.25em, 0);
-                        transform: translate3d(.0625em, -0.25em, 0);
-            }
-            75% {
-                -webkit-transform: translate3d(.1875em, -0.4375em, 0);
-                    -ms-transform: translate3d(.1875em, -0.4375em, 0);
-                        transform: translate3d(.1875em, -0.4375em, 0);
-            }
-            87.5% {
-                -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
-                    -ms-transform: translate3d(-0.0625em, -0.5625em, 0);
-                        transform: translate3d(-0.0625em, -0.5625em, 0);
-            }
+        12.5% {
+            -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
+                -ms-transform: translate3d(-0.0625em, -0.6875em, 0);
+                    transform: translate3d(-0.0625em, -0.6875em, 0);
         }
+        25% {
+            -webkit-transform: translate3d(.125em, -0.3125em, 0);
+                -ms-transform: translate3d(.125em, -0.3125em, 0);
+                    transform: translate3d(.125em, -0.3125em, 0);
+        }
+        37.5% {
+            -webkit-transform: translate3d(.3125em, -0.375em, 0);
+                -ms-transform: translate3d(.3125em, -0.375em, 0);
+                    transform: translate3d(.3125em, -0.375em, 0);
+        }
+        50% {
+            -webkit-transform: translate3d(.125em, -0.4375em, 0);
+                -ms-transform: translate3d(.125em, -0.4375em, 0);
+                    transform: translate3d(.125em, -0.4375em, 0);
+        }
+        62.5% {
+            -webkit-transform: translate3d(.0625em, -0.25em, 0);
+                -ms-transform: translate3d(.0625em, -0.25em, 0);
+                    transform: translate3d(.0625em, -0.25em, 0);
+        }
+        75% {
+            -webkit-transform: translate3d(.1875em, -0.4375em, 0);
+                -ms-transform: translate3d(.1875em, -0.4375em, 0);
+                    transform: translate3d(.1875em, -0.4375em, 0);
+        }
+        87.5% {
+            -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
+                -ms-transform: translate3d(-0.0625em, -0.5625em, 0);
+                    transform: translate3d(-0.0625em, -0.5625em, 0);
+        }
+    }
+    @keyframes soaring {
+        0%, 100% {
+            -webkit-transform: translate3d(0, -0.8125em, 0);
+                -ms-transform: translate3d(0, -0.8125em, 0);
+                    transform: translate3d(0, -0.8125em, 0);
+        }
+        12.5% {
+            -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
+                -ms-transform: translate3d(-0.0625em, -0.6875em, 0);
+                    transform: translate3d(-0.0625em, -0.6875em, 0);
+        }
+        25% {
+            -webkit-transform: translate3d(.125em, -0.3125em, 0);
+                -ms-transform: translate3d(.125em, -0.3125em, 0);
+                    transform: translate3d(.125em, -0.3125em, 0);
+        }
+        37.5% {
+            -webkit-transform: translate3d(.3125em, -0.375em, 0);
+                -ms-transform: translate3d(.3125em, -0.375em, 0);
+                    transform: translate3d(.3125em, -0.375em, 0);
+        }
+        50% {
+            -webkit-transform: translate3d(.125em, -0.4375em, 0);
+                -ms-transform: translate3d(.125em, -0.4375em, 0);
+                    transform: translate3d(.125em, -0.4375em, 0);
+        }
+        62.5% {
+            -webkit-transform: translate3d(.0625em, -0.25em, 0);
+                -ms-transform: translate3d(.0625em, -0.25em, 0);
+                    transform: translate3d(.0625em, -0.25em, 0);
+        }
+        75% {
+            -webkit-transform: translate3d(.1875em, -0.4375em, 0);
+                -ms-transform: translate3d(.1875em, -0.4375em, 0);
+                    transform: translate3d(.1875em, -0.4375em, 0);
+        }
+        87.5% {
+            -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
+                -ms-transform: translate3d(-0.0625em, -0.5625em, 0);
+                    transform: translate3d(-0.0625em, -0.5625em, 0);
+        }
+    }
 
-        /**
-         * Located separately in the file:
-         */
-        @media (max-width: 768px) {
-            .logo {
-                height: 1.74em;
-                display: inline-block;
-                float: none;
-                line-height: 1.74em;
-            }
+    /**
+     * Located separately in the file:
+     */
+    @media (max-width: 768px) {
+        .logo {
+            height: 1.74em;
+            display: inline-block;
+            float: none;
+            line-height: 1.74em;
         }
+    }
+{% endhighlight %}
 
 Let’s face it, that’s a monumental amount of code to read, let alone scroll through. Although I spent a monumental amount of time organising it well and ensuring it was super-maintainable, there are a lot of repetitions and property values that could be assigned to variables and used elsewhere in the CSS. The advantage of this becomes obvious when you find yourself having to remember bespoke colour values, but we also have a lot of repetitions due to the requirement of vendor prefixes. Although we will obviously need the vendor prefixes again when we deliver CSS to the user on the front-end, because we’re compiling our CSS beforehand, we can get rid of them in our uncompiled stylesheet.
 
@@ -266,77 +270,79 @@ Let’s face it, that’s a monumental amount of code to read, let alone scroll 
 
 Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I Use*.
 
-    .logo {
-        color: #4f4f4f;
-        height: 2em;
-        display: inline-block;
-        float: left;
-        padding-left: 1.923em;
-        position: relative;
-        font-family: "league-gothic", sans-serif;
-        font-size: 3.25em;
-        line-height: 2em;
-        text-transform: uppercase;
-        text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
-        z-index: 1;
-        transition: none;
-        user-select: none;
+{% highlight css %}
+.logo {
+    color: #4f4f4f;
+    height: 2em;
+    display: inline-block;
+    float: left;
+    padding-left: 1.923em;
+    position: relative;
+    font-family: "league-gothic", sans-serif;
+    font-size: 3.25em;
+    line-height: 2em;
+    text-transform: uppercase;
+    text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
+    z-index: 1;
+    transition: none;
+    user-select: none;
+}
+    .logo:hover,
+    .logo:focus,
+    .logo:active {
+        text-decoration: none;
     }
-        .logo:hover,
-        .logo:focus,
-        .logo:active {
-            text-decoration: none;
-        }
-        .logo:active {
-            transform: translate3d(0, .039em, 0);
-        }
-        .logo:after {
-            content: "";
-            background: url("../icon.png") no-repeat;
-            background-image: url("/images/raven.svg");
-            background-size: 2.307em 2.307em;
-            width: 2.307em;
-            height: 2.307em;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transform: translate3d(0, -0.808em, 0);
-            animation: soaring 30s linear alternate infinite;
-            animation-play-state: paused;
-        }
-        .logo:hover:after,
-        .logo:focus:after,
-        .logo:active:after {
-            animation-play-state: running;
-        }
-        .logo span {
-            white-space: nowrap;
-        }
+    .logo:active {
+        transform: translate3d(0, .039em, 0);
+    }
+    .logo:after {
+        content: "";
+        background: url("../icon.png") no-repeat;
+        background-image: url("/images/raven.svg");
+        background-size: 2.307em 2.307em;
+        width: 2.307em;
+        height: 2.307em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translate3d(0, -0.808em, 0);
+        animation: soaring 30s linear alternate infinite;
+        animation-play-state: paused;
+    }
+    .logo:hover:after,
+    .logo:focus:after,
+    .logo:active:after {
+        animation-play-state: running;
+    }
+    .logo span {
+        white-space: nowrap;
+    }
 
-        @keyframes soaring {
-            0%, 100% { transform: translate3d(0, -0.8125em, 0); }
-            12.5% { transform: translate3d(-0.0625em, -0.6875em, 0); }
-            25% { transform: translate3d(.125em, -0.3125em, 0); }
-            37.5% { transform: translate3d(.3125em, -0.375em, 0); }
-            50% { transform: translate3d(.125em, -0.4375em, 0); }
-            62.5% { transform: translate3d(.0625em, -0.25em, 0); }
-            75% { transform: translate3d(.1875em, -0.4375em, 0); }
-            87.5% { transform: translate3d(-0.0625em, -0.5625em, 0); }
-        }
+    @keyframes soaring {
+        0%, 100% { transform: translate3d(0, -0.8125em, 0); }
+        12.5% { transform: translate3d(-0.0625em, -0.6875em, 0); }
+        25% { transform: translate3d(.125em, -0.3125em, 0); }
+        37.5% { transform: translate3d(.3125em, -0.375em, 0); }
+        50% { transform: translate3d(.125em, -0.4375em, 0); }
+        62.5% { transform: translate3d(.0625em, -0.25em, 0); }
+        75% { transform: translate3d(.1875em, -0.4375em, 0); }
+        87.5% { transform: translate3d(-0.0625em, -0.5625em, 0); }
+    }
 
-        /**
-         * Located separately in the file:
-         */
-        @media (max-width: 768px) {
-            .logo {
-                height: 1.74em;
-                display: inline-block;
-                float: none;
-                line-height: 1.74em;
-            }
+    /**
+     * Located separately in the file:
+     */
+    @media (max-width: 768px) {
+        .logo {
+            height: 1.74em;
+            display: inline-block;
+            float: none;
+            line-height: 1.74em;
         }
+    }
+{% endhighlight %}
 
 Already looking much better! You’ll notice I was even able to exclude the entire repeated <code>-webkit-keyframes</code> declarations as *Autoprefixer* will include these for me when *gulp* runs.
 
@@ -344,74 +350,76 @@ Already looking much better! You’ll notice I was even able to exclude the enti
 
 Next, let’s turn this CSS into SASS.
 
-    .logo {
-        color: $text-color;
-        height: 2em;
+{% highlight scss %}
+.logo {
+    color: $text-color;
+    height: 2em;
+    display: inline-block;
+    float: left;
+    padding-left: 1.923em;
+    position: relative;
+    font-family: $heading-font-stack;
+    font-size: 3.25em;
+    line-height: 2em;
+    text-transform: uppercase;
+    text-shadow: .058em .058em 0 $black-5;
+    z-index: 1;
+    user-select: none;
+    @include transition("none");
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    &:active {
+        @include translate3d("0, .039em, 0");
+    }
+    &:after {
+        content: "";
+        background: url("../icon.png") no-repeat;
+        background-image: url("/images/raven.svg");
+        background-size: 2.307em 2.307em;
+        width: 2.307em;
+        height: 2.307em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include animation("soaring 30s linear alternate infinite");
+        @include animation-play-state("paused");
+        @include translate3d("0, -0.808em, 0");
+    }
+    /**
+     * Only animate when the user hovers the logo.
+     */
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+        @include animation-play-state("running");
+    }
+    @include breakpoint("tablet") {
+        height: 1.74em;
         display: inline-block;
-        float: left;
-        padding-left: 1.923em;
-        position: relative;
-        font-family: $heading-font-stack;
-        font-size: 3.25em;
-        line-height: 2em;
-        text-transform: uppercase;
-        text-shadow: .058em .058em 0 $black-5;
-        z-index: 1;
-        user-select: none;
-        @include transition("none");
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: none;
-        }
-        &:active {
-            @include translate3d("0, .039em, 0");
-        }
-        &:after {
-            content: "";
-            background: url("../icon.png") no-repeat;
-            background-image: url("/images/raven.svg");
-            background-size: 2.307em 2.307em;
-            width: 2.307em;
-            height: 2.307em;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            @include animation("soaring 30s linear alternate infinite");
-            @include animation-play-state("paused");
-            @include translate3d("0, -0.808em, 0");
-        }
-        /**
-         * Only animate when the user hovers the logo.
-         */
-        &:hover:after,
-        &:focus:after,
-        &:active:after {
-            @include animation-play-state("running");
-        }
-        @include breakpoint("tablet") {
-            height: 1.74em;
-            display: inline-block;
-            float: none;
-            line-height: 1.74em;
-        }
-        span {
-            white-space: nowrap;
-        }
+        float: none;
+        line-height: 1.74em;
     }
-    @keyframes soaring {
-        0%,
-        100% {  @include translate3d("0, -0.8125em, 0"); }
-        12.5% { @include translate3d("-0.0625em, -0.6875em, 0"); }
-        25% {   @include translate3d(".125em, -0.3125em, 0"); }
-        37.5% { @include translate3d(".3125em, -0.375em, 0"); }
-        50% {   @include translate3d(".125em, -0.4375em, 0"); }
-        62.5% { @include translate3d(".0625em, -0.25em, 0"); }
-        75% {   @include translate3d(".1875em, -0.4375em, 0"); }
-        87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
+    span {
+        white-space: nowrap;
     }
+}
+@keyframes soaring {
+    0%,
+    100% {  @include translate3d("0, -0.8125em, 0"); }
+    12.5% { @include translate3d("-0.0625em, -0.6875em, 0"); }
+    25% {   @include translate3d(".125em, -0.3125em, 0"); }
+    37.5% { @include translate3d(".3125em, -0.375em, 0"); }
+    50% {   @include translate3d(".125em, -0.4375em, 0"); }
+    62.5% { @include translate3d(".0625em, -0.25em, 0"); }
+    75% {   @include translate3d(".1875em, -0.4375em, 0"); }
+    87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
+}
+{% endhighlight %}
 
 <figure>
     <img src="{{ site.url }}/images/articles/welldone.gif" alt="Just look at it... :')" role="presentation">
@@ -425,70 +433,73 @@ Next, let’s turn this CSS into SASS.
 - the <code>span</code> child of <code>.logo</code> is nested directly inside <code>.logo</code>
 - the media query is nested inside the <code>.logo</code> declaration as <code>@include breakpoint()</code>
 
-<!-- useless break for code block, silly markdown -->
-    .logo {
-        ...
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: none;
-        }
-        &:active {
-            @include translate3d("0, .039em, 0");
-        }
-        &:after {
-            ...
-        }
-        /**
-         * Only animate when the user hovers the logo.
-         */
-        &:hover:after,
-        &:focus:after,
-        &:active:after {
-            @include animation-play-state("running");
-        }
-        @include breakpoint("tablet") {
-            height: 1.74em;
-            display: inline-block;
-            float: none;
-            line-height: 1.74em;
-        }
-        span {
-            white-space: nowrap;
-        }
+{% highlight scss %}
+.logo {
+    ...
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
     }
+    &:active {
+        @include translate3d("0, .039em, 0");
+    }
+    &:after {
+        ...
+    }
+    /**
+     * Only animate when the user hovers the logo.
+     */
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+        @include animation-play-state("running");
+    }
+    @include breakpoint("tablet") {
+        height: 1.74em;
+        display: inline-block;
+        float: none;
+        line-height: 1.74em;
+    }
+    span {
+        white-space: nowrap;
+    }
+}
+{% endhighlight %}
 
 - some declaration values are defined as variables, denoted by a preceding <code>$</code>
 - these variables are defined in the variables section of the SASS
 
-<!-- useless break for code block, silly markdown -->
-    $text-color: #4f4f4f;
-    $heading-font-stack: "league-gothic", sans-serif;
+{% highlight scss %}
+$text-color: #4f4f4f;
+$heading-font-stack: "league-gothic", sans-serif;
+{% endhighlight %}
 
 - liberal use of <code>@includes</code>
 - these reference <code>@mixins</code> that are defined in the variables section of the SASS
 
-<!-- useless break for code block, silly markdown -->
-    @mixin breakpoint($width) {
-        @if $width == "tablet" {
-            @media (max-width: 768px) { @content ; }
-        }
-        @else if $width == "mobile" {
-            @media (max-width: 500px) { @content ; }
-        }
+{% highlight scss %}
+@mixin breakpoint($width) {
+    @if $width == "tablet" {
+        @media (max-width: 768px) { @content ; }
     }
-    @mixin transition($transition: "all .15s ease-in-out") {
-        transition: #{$transition};
+    @else if $width == "mobile" {
+        @media (max-width: 500px) { @content ; }
     }
-    @mixin translate3d($values: "0, 0, 0") {
-        transform: translate3d(#{$values});
-    }
-    @mixin animation($animation: "fade .3s ease-out") {
-        animation: #{$animation};
-    }
-    @mixin animation-play-state($value: "paused") {
-        animation-play-state: #{$value};
-    }
+}
+@mixin transition($transition: "all .15s ease-in-out") {
+    transition: #{$transition};
+}
+@mixin translate3d($values: "0, 0, 0") {
+    transform: translate3d(#{$values});
+}
+@mixin animation($animation: "fade .3s ease-out") {
+    animation: #{$animation};
+}
+@mixin animation-play-state($value: "paused") {
+    animation-play-state: #{$value};
+}
+{% endhighlight %}
 
 The CSS here a lot more concise now, and the advantages are tremendous as you get over the learning curve, however short it may be for you. If you extrapolate this methodology of components you can imagine how it simplifies development across a codebase and between contributing developers. Because we’ve defined variables and mixins, it’s now a lot easier to change code across the entire site’s codebase at once, for example: breakpoints, colours, transition timings, typefaces, to name a few.
 

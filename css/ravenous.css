@@ -531,7 +531,7 @@ hr {
 article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
-.rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, .color-block-list li {
+.rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border-radius: 0.375em; }
@@ -1233,26 +1233,54 @@ button, .button {
 code, kbd, samp {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
-  p > code, ol code, ul code, p > kbd, ol kbd, ul kbd, p > samp, ol samp, ul samp {
+  p code, ol code, ul code, p kbd, ol kbd, ul kbd, p samp, ol samp, ul samp {
     background-color: rgba(95, 138, 166, 0.1);
-    padding: 0.214em;
+    padding: 0.215em;
     white-space: nowrap; }
 
 pre {
   margin: 0 0 1em;
   /* override _normalize.scss */ }
   pre:not(.codepen) {
-    background-color: #4F4F4F;
-    color: #F9F9F9;
-    padding: 0.714em;
+    background-color: #EEE;
+    padding: 1.5em;
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
-    line-height: 1.5em;
-    border-radius: 0.1875em;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.25)));
-    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.25) 100%);
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.25) 100%); }
+    line-height: 1.5em; }
+
+/**
+ * Github-style Code Highlighting
+ */
+.highlight .err {
+  background-color: #f7babd;
+  color: #E31B23;
+  font-weight: bold; }
+.highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+  color: #737373;
+  font-style: italic; }
+.highlight .gs, .highlight .k, .highlight .kc, .highlight .kd, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .nc, .highlight .ne, .highlight .nf, .highlight .o, .highlight .ow {
+  font-weight: bold; }
+.highlight .gr, .highlight .gt, .highlight .ne, .highlight .nf, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx {
+  color: #E31B23; }
+.highlight .gi, .highlight .gi .x {
+  background-color: #99d6bb; }
+.highlight .gd, .highlight .gd .x {
+  background-color: #f7babd; }
+.highlight .ge {
+  font-style: italic; }
+.highlight .m, .highlight .il, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .nb, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi {
+  color: #2ba7a7; }
+.highlight .sr {
+  color: black; }
+.highlight .bp, .highlight .gh, .highlight .go, .highlight .gp, .highlight .nn {
+  color: #737373; }
+.highlight .gu, .highlight .w {
+  color: #c0c0c0; }
+.highlight .kt, .highlight .na, .highlight .nc, .highlight .nt {
+  color: #5F8AA6; }
+.highlight .ni, .highlight .ss {
+  color: #85144B; }
 
 /*------------------------------------*\
     $ MISCELLANEOUS

@@ -30,6 +30,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 markdown_ext: markdown,mkd,mkdn,md
+highlighter: pygments
 
 gems:
   - jekyll-redirect-from

@@ -36,7 +36,9 @@ It’s the <code>&lt;meta name="viewport"&gt;</code> tag. This is what defines s
 
 and are implemented like so:
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1, user-scalable=0">
+{% highlight html %}
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1, user-scalable=0">
+{% endhighlight %}
 
 These tell the browser a number of things, respectively:
 

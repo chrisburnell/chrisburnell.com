@@ -18,23 +18,27 @@ So, for example, if an editor creates an article with lists and pictures, it’s
 
 Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/)). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
-    <ol class="table-of-contents">
-        <li>Chapter 1</li>
-        <li>Chapter 2</li>
-    </ol>
+{% highlight html %}
+<ol class="table-of-contents">
+    <li>Chapter 1</li>
+    <li>Chapter 2</li>
+</ol>
+{% endhighlight %}
 
 And the CSS:
 
-	ol {
-		padding-left: 4em;
-        list-style: outside decimal-leading-zero;
-    }
-    /* overqualified selector just for example: */
-    ol.table-of-contents {
-        padding-left: 0;
-        list-style: none;
-        margin-bottom: 1em;
-    }
+{% highlight css %}
+ol {
+	padding-left: 4em;
+    list-style: outside decimal-leading-zero;
+}
+/* overqualified selector just for example: */
+ol.table-of-contents {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 1em;
+}
+{% endhighlight %}
 
 Due to the cascading nature of CSS, the styles we’ve given to our default ordered list will *cascade* to our table of contents! As a result, we have to *unset* the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
 
@@ -44,10 +48,12 @@ In experimenting with CSS content and attribute selectors, I’ve discovered a n
 
 ### So here it is:
 
-	ol:not([class]) {
-		padding-left: 4em;
-        list-style: outside decimal-leading-zero;
-    }
+{% highlight css %}
+ol:not([class]) {
+	padding-left: 4em;
+    list-style: outside decimal-leading-zero;
+}
+{% endhighlight %}
 
 ### What’s going on here?
 
