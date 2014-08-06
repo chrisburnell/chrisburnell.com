@@ -30,6 +30,6 @@ layout: nil
             <tags>{{ post.tags | array_to_sentence_string }}</tags>{% endif %}
         </item>{% endunless %}{% endfor %}
 
-    <channel>
+    </channel>
 
 </rss>
