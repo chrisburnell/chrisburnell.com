@@ -1247,8 +1247,8 @@ code, kbd, samp {
     text-transform: uppercase;
     -webkit-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out; }
-  code:hover:before, code:focus:before, code:active:before, kbd:hover:before, kbd:focus:before, kbd:active:before, samp:hover:before, samp:focus:before, samp:active:before {
-    opacity: 0; }
+  pre:hover code:before, pre:focus code:before, pre:active code:before, pre:hover kbd:before, pre:focus kbd:before, pre:active kbd:before, pre:hover samp:before, pre:focus samp:before, pre:active samp:before {
+    opacity: 0.1; }
 
 pre {
   margin: 0 0 1em;

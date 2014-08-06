@@ -28,10 +28,10 @@ samp {
         text-transform: uppercase;
         @include transition();
     }
-        &:hover:before,
-        &:focus:before,
-        &:active:before {
-            opacity: 0;
+        pre:hover &:before,
+        pre:focus &:before,
+        pre:active &:before {
+            opacity: .1;
         }
 }
 
