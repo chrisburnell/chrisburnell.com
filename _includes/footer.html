@@ -13,10 +13,6 @@
         </section>
     </footer>
 
-    {% if page.layout == "article" %}
-        <script src="/js/picturefill.min.js" async></script>
-        <script src="//platform.twitter.com/widgets.js" async></script>
-    {% endif %}
     {% if page.page_class == "home-page" or page.page_class == "archive-page" %}
         <script type="text/javascript" aria-hidden="true">
             var disqus_shortname = 'chrisburnell';
@@ -28,6 +24,10 @@
             }());
         </script>
     {% endif %}
+    {% if page.layout == "article" %}
+        <script src="//platform.twitter.com/widgets.js" async></script>
+    {% endif %}
+    <script src="/js/picturefill.min.js" async></script>
     <script type="text/javascript" aria-hidden="true">
         {% if page.layout == "article" %}
             // Remove the strong tags from the "and" in the tags list on articles
