@@ -14,6 +14,25 @@ samp {
         padding: .215em;
         white-space: nowrap;
     }
+    &[data-lang]:before {
+        content: attr(data-lang);
+        background-color: rgba(#EEE, .5);
+        color: $text-color-alt;
+        display: block;
+        padding: 0 1em;
+        position: absolute;
+        right: .5em;
+        font-family: $secondary-font-stack;
+        font-weight: bold;
+        font-size: 1.25em;
+        text-transform: uppercase;
+        @include transition();
+    }
+        &:hover:before,
+        &:focus:before,
+        &:active:before {
+            opacity: 0;
+        }
 }
 
 pre {
@@ -26,6 +45,10 @@ pre {
         overflow-x: auto;
         overflow-y: hidden;
         line-height: 1.5em;
+        code {
+            min-width: 100%;
+            display: block;
+        }
     }
 }
 

@@ -1233,6 +1233,22 @@ code, kbd, samp {
     background-color: rgba(95, 138, 166, 0.1);
     padding: 0.215em;
     white-space: nowrap; }
+  code[data-lang]:before, kbd[data-lang]:before, samp[data-lang]:before {
+    content: attr(data-lang);
+    background-color: rgba(238, 238, 238, 0.5);
+    color: #737373;
+    display: block;
+    padding: 0 1em;
+    position: absolute;
+    right: 0.5em;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out; }
+  code:hover:before, code:focus:before, code:active:before, kbd:hover:before, kbd:focus:before, kbd:active:before, samp:hover:before, samp:focus:before, samp:active:before {
+    opacity: 0; }
 
 pre {
   margin: 0 0 1em;
@@ -1244,6 +1260,9 @@ pre {
     overflow-x: auto;
     overflow-y: hidden;
     line-height: 1.5em; }
+    pre:not(.codepen) code {
+      min-width: 100%;
+      display: block; }
 
 /**
  * Github-style Code Highlighting
