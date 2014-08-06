@@ -14,7 +14,7 @@
     </footer>
 
     {% if page.page_class == "home-page" or page.page_class == "archive-page" %}
-        <script type="text/javascript" aria-hidden="true">
+        <script type="text/javascript">
             var disqus_shortname = 'chrisburnell';
             (function () {
                 var s = document.createElement('script'); s.async = true;
@@ -28,7 +28,7 @@
         <script src="//platform.twitter.com/widgets.js" async></script>
     {% endif %}
     <script src="/js/picturefill.min.js" async></script>
-    <script type="text/javascript" aria-hidden="true">
+    <script type="text/javascript">
         {% if page.layout == "article" %}
             // Remove the strong tags from the "and" in the tags list on articles
             var articleTags = document.getElementsByClassName('article-tags');
