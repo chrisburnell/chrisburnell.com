@@ -12,13 +12,13 @@ layout: nil
             <name>Chris Burnell</name>
             <email>me@chrisburnell.com</email>
         </author>
-        <language>en-gb</language>
-        <copyright>Copyright 2013 Chris Burnell under a Creative Commons license.</copyright>
+        <language>en</language>
+        <copyright>Copyright 2014 Chris Burnell under a Creative Commons license.</copyright>
 
         <image>
             <url>http://chrisburnell.com/icon.png</url>
             <title>Chris Burnell</title>
-            <link>http://chrisburnell.com/</link>
+            <link>http://chrisburnell.com</link>
         </image>
 
         {% for post in site.posts %}{% unless post.draft %}<item>
