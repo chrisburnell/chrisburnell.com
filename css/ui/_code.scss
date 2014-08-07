@@ -4,37 +4,11 @@
 
 code,
 kbd,
-samp {
+samp,
+var {
     font-family: $code-font-stack;
     font-size: .875em;
-    p &,
-    ol &,
-    ul & {
-        background-color: rgba($blue, 0.1);
-        padding: .215em;
-        white-space: nowrap;
-    }
-    &[data-lang]:before {
-        content: attr(data-lang);
-        background-color: rgba(#EEE, .5);
-        color: $text-color-alt;
-        display: block;
-        padding: 0 1em;
-        position: absolute;
-        right: .5em;
-        font-family: $secondary-font-stack;
-        font-weight: bold;
-        font-size: 1.25em;
-        text-transform: uppercase;
-        @include transition();
-    }
-        pre:hover &:before,
-        pre:focus &:before,
-        pre:active &:before {
-            opacity: .1;
-        }
 }
-
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
     &:not(.codepen) {
@@ -50,6 +24,25 @@ pre {
             display: block;
         }
     }
+    [data-lang]:before {
+        content: attr(data-lang);
+        background-color: rgba(#EEE, .5);
+        color: $text-color-alt;
+        display: block;
+        padding: 0 1em;
+        position: absolute;
+        right: .5em;
+        font-family: $secondary-font-stack;
+        font-size: 1.25em;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include transition();
+    }
+        &:hover [data-lang]:before,
+        &:focus [data-lang]:before,
+        &:active [data-lang]:before {
+            opacity: .2;
+        }
 }
 
 /**

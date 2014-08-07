@@ -65,11 +65,11 @@ nav {
         .about-page .site-navigation-about a:after,
         .archive-page .site-navigation-archive a:after {
             content: "";
-            border-top: .3em solid $blue;
-            border-right: .3em solid transparent;
-            border-left: .3em solid transparent;
+            border-top: .5em solid $blue;
+            border-right: .5em solid transparent;
+            border-left: .5em solid transparent;
             position: absolute;
-            bottom: -0.5em;
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
         }

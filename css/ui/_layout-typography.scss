@@ -135,12 +135,18 @@ dfn[title] {
     border-bottom: 1px dotted $text-color-alt;
     cursor: help;
 }
+ins {
+    text-decoration: none;
+}
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
 blockquote {
     @extend .rounded;
-    quotes: "\201C" "\201D" "\2018" "\2019";
     background-color: rgba($blue, 0.1);
     padding: 1em;
     margin: 0 2.5em 1em;
+    quotes: "\201C" "\201D" "\2018" "\2019";
     @include breakpoint("mobile") {
         margin-right: 1em;
         margin-left: 1em;
@@ -171,6 +177,16 @@ blockquote {
             font-size: .909em;
         }
     }
+p code,
+ins,
+kbd,
+mark,
+samp,
+var {
+    background-color: rgba($blue, 0.1);
+    padding: .215em;
+    white-space: nowrap;
+}
 hr {
     background: $black-10;
     width: 100%;

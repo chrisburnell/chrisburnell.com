@@ -479,11 +479,17 @@ abbr[title], dfn[title] {
   border-bottom: 1px dotted #737373;
   cursor: help; }
 
+ins {
+  text-decoration: none; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
 blockquote {
-  quotes: "\201C" "\201D" "\2018" "\2019";
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1em;
-  margin: 0 2.5em 1em; }
+  margin: 0 2.5em 1em;
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
   @media (max-width: 500px) {
     blockquote {
       margin-right: 1em;
@@ -507,6 +513,11 @@ blockquote {
   line-height: 2em; }
   .pullquote cite {
     font-size: 0.909em; }
+
+p code, ins, kbd, mark, samp, var {
+  background-color: rgba(95, 138, 166, 0.1);
+  padding: 0.215em;
+  white-space: nowrap; }
 
 hr {
   background: rgba(6, 6, 6, 0.1);
@@ -742,11 +753,11 @@ nav {
 
 .home-page .site-navigation-home a:after, .about-page .site-navigation-about a:after, .archive-page .site-navigation-archive a:after {
   content: "";
-  border-top: 0.3em solid #5F8AA6;
-  border-right: 0.3em solid transparent;
-  border-left: 0.3em solid transparent;
+  border-top: 0.5em solid #5F8AA6;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
   position: absolute;
-  bottom: -0.5em;
+  top: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -1218,29 +1229,9 @@ button, .button {
 /*------------------------------------*\
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
-code, kbd, samp {
+code, kbd, samp, var {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
-  p code, ol code, ul code, p kbd, ol kbd, ul kbd, p samp, ol samp, ul samp {
-    background-color: rgba(95, 138, 166, 0.1);
-    padding: 0.215em;
-    white-space: nowrap; }
-  code[data-lang]:before, kbd[data-lang]:before, samp[data-lang]:before {
-    content: attr(data-lang);
-    background-color: rgba(238, 238, 238, 0.5);
-    color: #737373;
-    display: block;
-    padding: 0 1em;
-    position: absolute;
-    right: 0.5em;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: bold;
-    font-size: 1.25em;
-    text-transform: uppercase;
-    -webkit-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out; }
-  pre:hover code:before, pre:focus code:before, pre:active code:before, pre:hover kbd:before, pre:focus kbd:before, pre:active kbd:before, pre:hover samp:before, pre:focus samp:before, pre:active samp:before {
-    opacity: 0.1; }
 
 pre {
   margin: 0 0 1em;
@@ -1255,6 +1246,22 @@ pre {
     pre:not(.codepen) code {
       min-width: 100%;
       display: block; }
+  pre [data-lang]:before {
+    content: attr(data-lang);
+    background-color: rgba(238, 238, 238, 0.5);
+    color: #737373;
+    display: block;
+    padding: 0 1em;
+    position: absolute;
+    right: 0.5em;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out; }
+  pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
+    opacity: 0.2; }
 
 /**
  * Github-style Code Highlighting
