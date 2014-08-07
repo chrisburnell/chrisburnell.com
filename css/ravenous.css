@@ -514,11 +514,6 @@ blockquote {
   .pullquote cite {
     font-size: 0.909em; }
 
-p code, ins, kbd, mark, samp, var {
-  background-color: rgba(95, 138, 166, 0.1);
-  padding: 0.215em;
-  white-space: nowrap; }
-
 hr {
   background: rgba(6, 6, 6, 0.1);
   width: 100%;
@@ -1232,6 +1227,11 @@ button, .button {
 code, kbd, samp, var {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
+
+p code, ol code, ul code, ins, kbd, mark, samp, var {
+  background-color: rgba(95, 138, 166, 0.1);
+  padding: 0.215em;
+  white-space: nowrap; }
 
 pre {
   margin: 0 0 1em;

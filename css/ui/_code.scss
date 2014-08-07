@@ -9,6 +9,18 @@ var {
     font-family: $code-font-stack;
     font-size: .875em;
 }
+    p code,
+    ol code,
+    ul code,
+    ins,
+    kbd,
+    mark,
+    samp,
+    var {
+        background-color: rgba($blue, 0.1);
+        padding: .215em;
+        white-space: nowrap;
+    }
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
     &:not(.codepen) {
