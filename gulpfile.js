@@ -6,7 +6,8 @@
 var gulp            = require('gulp'),
     autoprefixer    = require('gulp-autoprefixer'),
     minifycss       = require('gulp-minify-css'),
-    plumber         = require('gulp-plumber');
+    plumber         = require('gulp-plumber'),
+    notify          = require('gulp-notify'),
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
     sourcemaps      = require('gulp-sourcemaps'),
@@ -31,7 +32,8 @@ gulp.task('css', function() {
         .pipe(gulp.dest(cssDir))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
-        .pipe(gulp.dest(cssDir));
+        .pipe(gulp.dest(cssDir))
+        .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
 
 // -----------------------------------------------------------------------------
