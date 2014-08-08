@@ -1269,9 +1269,7 @@ pre {
           transition: all .2s ease-in-out; }
   @media (max-width: 768px) {
     [data-lang]:before {
-      top: 1em;
-      right: auto;
-      left: 0.5em; } }
+      top: 1em; } }
 
 pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
   opacity: 0.2; }

@@ -59,8 +59,6 @@ pre {
         @include transition();
         @include breakpoint("tablet") {
             top: 1em;
-            right: auto;
-            left: .5em;
         }
     }
         pre:hover [data-lang]:before,
