@@ -23,6 +23,7 @@ var {
     }
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
+    position: relative;
     &:not(.codepen) {
         @extend .rounded;
         background-color: #EEE;
@@ -36,6 +37,13 @@ pre {
             display: block;
         }
     }
+}
+@include breakpoint("tablet") {
+    /* this is always applied to the code element inside a pre element */
+    [data-lang] {
+        padding-top: 2em;
+    }
+}
     [data-lang]:before {
         content: attr(data-lang);
         background-color: rgba(#EEE, .5);
@@ -49,13 +57,20 @@ pre {
         font-weight: bold;
         text-transform: uppercase;
         @include transition();
-    }
-        &:hover [data-lang]:before,
-        &:focus [data-lang]:before,
-        &:active [data-lang]:before {
-            opacity: .2;
+        @include breakpoint("tablet") {
+            top: 1em;
+            right: auto;
+            left: .5em;
         }
-}
+    }
+        pre:hover [data-lang]:before,
+        pre:focus [data-lang]:before,
+        pre:active [data-lang]:before {
+            opacity: .2;
+            @include breakpoint("tablet") {
+                opacity: 1;
+            }
+        }
 
 /**
  * Github-style Code Highlighting

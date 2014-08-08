@@ -1235,7 +1235,8 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
 
 pre {
   margin: 0 0 1em;
-  /* override _normalize.scss */ }
+  /* override _normalize.scss */
+  position: relative; }
   pre:not(.codepen) {
     background-color: #EEE;
     padding: 1.5em;
@@ -1246,22 +1247,37 @@ pre {
     pre:not(.codepen) code {
       min-width: 100%;
       display: block; }
-  pre [data-lang]:before {
-    content: attr(data-lang);
-    background-color: rgba(238, 238, 238, 0.5);
-    color: #737373;
-    display: block;
-    padding: 0 1em;
-    position: absolute;
-    right: 0.5em;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 1.25em;
-    font-weight: bold;
-    text-transform: uppercase;
-    -webkit-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out; }
-  pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
-    opacity: 0.2; }
+
+@media (max-width: 768px) {
+  /* this is always applied to the code element inside a pre element */
+  [data-lang] {
+    padding-top: 2em; } }
+
+[data-lang]:before {
+  content: attr(data-lang);
+  background-color: rgba(238, 238, 238, 0.5);
+  color: #737373;
+  display: block;
+  padding: 0 1em;
+  position: absolute;
+  right: 0.5em;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+  @media (max-width: 768px) {
+    [data-lang]:before {
+      top: 1em;
+      right: auto;
+      left: 0.5em; } }
+
+pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
+  opacity: 0.2; }
+  @media (max-width: 768px) {
+    pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
+      opacity: 1; } }
 
 /**
  * Github-style Code Highlighting
