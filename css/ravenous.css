@@ -1268,15 +1268,13 @@ pre {
           transition: all .2s ease-in-out; }
   @media (max-width: 768px) {
     [data-lang]:before {
+      opacity: 0.5;
       top: 1em;
       right: auto;
       left: 0.5em; } }
 
 pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
   opacity: 0.2; }
-  @media (max-width: 768px) {
-    pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
-      opacity: 0.5; } }
 
 /**
  * Github-style Code Highlighting

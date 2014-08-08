@@ -57,6 +57,7 @@ pre {
         text-transform: uppercase;
         @include transition();
         @include breakpoint("tablet") {
+            opacity: .5;
             top: 1em;
             right: auto;
             left: .5em;
@@ -66,9 +67,6 @@ pre {
         pre:focus [data-lang]:before,
         pre:active [data-lang]:before {
             opacity: .2;
-            @include breakpoint("tablet") {
-                opacity: .5;
-            }
         }
 
 /**
