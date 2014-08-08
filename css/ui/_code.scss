@@ -23,7 +23,6 @@ var {
     }
 pre {
     margin: 0 0 1em; /* override _normalize.scss */
-    position: relative;
     &:not(.codepen) {
         @extend .rounded;
         background-color: #EEE;
@@ -59,6 +58,8 @@ pre {
         @include transition();
         @include breakpoint("tablet") {
             top: 1em;
+            right: auto;
+            left: .5em;
         }
     }
         pre:hover [data-lang]:before,
@@ -66,7 +67,7 @@ pre {
         pre:active [data-lang]:before {
             opacity: .2;
             @include breakpoint("tablet") {
-                opacity: 1;
+                opacity: .5;
             }
         }
 

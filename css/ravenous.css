@@ -1235,8 +1235,7 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
 
 pre {
   margin: 0 0 1em;
-  /* override _normalize.scss */
-  position: relative; }
+  /* override _normalize.scss */ }
   pre:not(.codepen) {
     background-color: #EEE;
     padding: 1.5em;
@@ -1269,13 +1268,15 @@ pre {
           transition: all .2s ease-in-out; }
   @media (max-width: 768px) {
     [data-lang]:before {
-      top: 1em; } }
+      top: 1em;
+      right: auto;
+      left: 0.5em; } }
 
 pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
   opacity: 0.2; }
   @media (max-width: 768px) {
     pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
-      opacity: 1; } }
+      opacity: 0.5; } }
 
 /**
  * Github-style Code Highlighting
