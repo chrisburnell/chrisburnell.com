@@ -37,15 +37,15 @@ pre {
         }
     }
 }
-@include breakpoint("tablet") {
-    /* this is always applied to the code element inside a pre element */
-    [data-lang] {
+/* [data-lang] is always applied to a code element inside a pre element */
+[data-lang] {
+    @include breakpoint("tablet") {
         padding-top: 2em;
     }
-}
-    [data-lang]:before {
+    &:before {
         content: attr(data-lang);
         background-color: rgba(#EEE, .5);
+        opacity: .5;
         color: $text-color-alt;
         display: block;
         padding: 0 1em;
@@ -56,18 +56,18 @@ pre {
         font-weight: bold;
         text-transform: uppercase;
         @include transition();
+        pre:hover &,
+        pre:focus &,
+        pre:active & {
+            opacity: .2;
+        }
         @include breakpoint("tablet") {
-            opacity: .5;
             top: 1em;
             right: auto;
             left: .5em;
         }
     }
-        pre:hover [data-lang]:before,
-        pre:focus [data-lang]:before,
-        pre:active [data-lang]:before {
-            opacity: .2;
-        }
+}
 
 /**
  * Github-style Code Highlighting

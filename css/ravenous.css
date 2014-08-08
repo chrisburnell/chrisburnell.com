@@ -1247,14 +1247,14 @@ pre {
       min-width: 100%;
       display: block; }
 
+/* [data-lang] is always applied to a code element inside a pre element */
 @media (max-width: 768px) {
-  /* this is always applied to the code element inside a pre element */
   [data-lang] {
     padding-top: 2em; } }
-
 [data-lang]:before {
   content: attr(data-lang);
   background-color: rgba(238, 238, 238, 0.5);
+  opacity: 0.5;
   color: #737373;
   display: block;
   padding: 0 1em;
@@ -1266,15 +1266,13 @@ pre {
   text-transform: uppercase;
   -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
+  pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
+    opacity: 0.2; }
   @media (max-width: 768px) {
     [data-lang]:before {
-      opacity: 0.5;
       top: 1em;
       right: auto;
       left: 0.5em; } }
-
-pre:hover [data-lang]:before, pre:focus [data-lang]:before, pre:active [data-lang]:before {
-  opacity: 0.2; }
 
 /**
  * Github-style Code Highlighting
