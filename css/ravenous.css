@@ -337,10 +337,20 @@ td, th {
 
 /*------------------------------------*\
     $   LAYOUT AND TYPOGRAPHY
-    i   Page Layout
-    ii  Inline Elements
-    iii Block Elements
+    i   Typekit Handling
+    ii  Page Layout
+    iii Inline Elements
+    iv  Block Elements
 \*------------------------------------*/
+/**
+ * Hide the fonts from Typekit before they have finished loading and show them
+ * once they've finished. (5000 ms timeout)
+ */
+.wf-loading .logo span, .wf-loading nav a, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading .button {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap; }
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
