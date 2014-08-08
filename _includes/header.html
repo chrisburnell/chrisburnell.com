@@ -32,17 +32,15 @@ snippet of code on a project of your own. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
 
-    <!-- Prefetch DNS for external assets (Google Analytics, Typekit) -->
+    <!-- Prefetch DNS for external assets (Google Analytics, Typekit, Disqus) -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//use.typekit.net">
-    {% if page.layout == "article" %}
-        <link rel="dns-prefetch" href="//a.disquscdn.com">
-        <link rel="dns-prefetch" href="//disqus.com">
-        <link rel="dns-prefetch" href="//go.disqus.com">
-        <link rel="dns-prefetch" href="//juggler.services.disqus.com">
-        <link rel="dns-prefetch" href="//referrer.disqus.com">
-        <link rel="dns-prefetch" href="//tempest.services.disqus.com">
-    {% endif %}
+    <link rel="dns-prefetch" href="//a.disquscdn.com">
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//go.disqus.com">
+    <link rel="dns-prefetch" href="//juggler.services.disqus.com">
+    <link rel="dns-prefetch" href="//referrer.disqus.com">
+    <link rel="dns-prefetch" href="//tempest.services.disqus.com">
 
     <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
@@ -72,21 +70,21 @@ snippet of code on a project of your own. -->
     <![endif]-->
 
     {% if page.page_class != "not-found-page" %}
-        <!-- OpenGraph and Twitter Microdata -->
-        <meta property="og:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
-        <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-        <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
+    <!-- OpenGraph and Twitter Microdata -->
+    <meta property="og:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
+    <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
 
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@{{ site.twitter_user }}">
-        <meta name="twitter:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
-        <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-        <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
-        <meta name="twitter:domain" content="chrisburnell.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@{{ site.twitter_user }}">
+    <meta name="twitter:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
+    <meta name="twitter:domain" content="chrisburnell.com">
     {% else %}
-        <meta name="robots" content="noindex,nofollow">
+    <meta name="robots" content="noindex,nofollow">
     {% endif %}
 
 </head>

@@ -27,6 +27,10 @@
     {% if page.layout == "article" %}
         <script src="//platform.twitter.com/widgets.js" async></script>
     {% endif %}
+    <script type="text/javascript">
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
     <script src="/js/picturefill.min.js" async></script>
     <script type="text/javascript">
         {% if page.layout == "article" %}

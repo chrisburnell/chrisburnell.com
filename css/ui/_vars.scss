@@ -46,7 +46,7 @@ $wrapper-padding:      1.25em;
 @mixin translate3d($values: "0, 0, 0") {
     transform: translate3d(#{$values});
 }
-@mixin animation($animation: "fade .3s ease-out") {
+@mixin animation($animation) {
     animation: #{$animation};
 }
 @mixin animation-play-state($value: "paused") {

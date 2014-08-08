@@ -7,7 +7,6 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
- * TYPEKIT PRELOAD........... Import the font-families from Typekit.
  * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
  * HEADER.................... Set the header styles.
  * NAVIGATION................ Set the navigation styles.
@@ -22,7 +21,6 @@
 
 @import "ui/normalize",
         "ui/vars",
-        "ui/typekit",
         "ui/layout-typography",
         "ui/header",
         "ui/navigation",
