@@ -5,11 +5,11 @@
 nav {
     float: right;
     padding-top: 1.5em;
+    padding-bottom: 1.25em;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;
         padding-top: 0;
-        padding-bottom: 1.25em;
     }
 }
     .site-navigation {
