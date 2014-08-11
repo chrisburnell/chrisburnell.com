@@ -530,11 +530,11 @@ code::selection {
   color: #4F4F4F;
   display: inline-block;
   float: left;
-  padding-left: 1.923em;
+  padding: 0.5em 0 0.5em 1.923em;
   position: relative;
   font-family: "league-gothic", sans-serif;
   font-size: 3.25em;
-  line-height: 2em;
+  line-height: 1em;
   text-transform: uppercase;
   text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
   z-index: 1;
@@ -548,7 +548,7 @@ code::selection {
     .logo {
       display: inline-block;
       float: none;
-      line-height: 1.74em; } }
+      padding-bottom: 0; } }
   @media (max-width: 500px) {
     .logo {
       font-size: 2.75em; } }
@@ -668,13 +668,13 @@ code::selection {
 \*------------------------------------*/
 nav {
   float: right;
-  margin-top: 1.5em; }
+  padding-top: 1.5em; }
   @media (max-width: 768px) {
     nav {
       width: 100%;
       float: none;
-      margin-top: 0;
-      margin-bottom: 1.25em; } }
+      padding-top: 0;
+      padding-bottom: 1.25em; } }
 
 .site-navigation {
   height: 3.75em;

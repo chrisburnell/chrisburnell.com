@@ -11,11 +11,11 @@ header {
         color: $text-color;
         display: inline-block;
         float: left;
-        padding-left: 1.923em;
+        padding: .5em 0 .5em 1.923em;
         position: relative;
         font-family: $heading-font-stack;
         font-size: 3.25em;
-        line-height: 2em;
+        line-height: 1em;
         text-transform: uppercase;
         text-shadow: .058em .058em 0 $black-5;
         z-index: 1;
@@ -24,7 +24,7 @@ header {
         @include breakpoint("tablet") {
             display: inline-block;
             float: none;
-            line-height: 1.74em;
+            padding-bottom: 0;
         }
         @include breakpoint("mobile") {
             font-size: 2.75em;
