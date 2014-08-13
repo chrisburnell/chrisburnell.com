@@ -336,10 +336,7 @@ td, th {
   padding: 0; }
 
 /*------------------------------------*\
-    $   LAYOUT AND TYPOGRAPHY
-    i   Page Layout
-    ii  Inline Elements
-    iii Block Elements
+    $ LAYOUT
 \*------------------------------------*/
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -374,17 +371,15 @@ body {
   .clear:after {
     clear: both; }
 
-a {
-  color: #5F8AA6;
-  text-decoration: none;
-  -webkit-transition: background .2s, color .2s, text-shadow .2s;
-          transition: background .2s, color .2s, text-shadow .2s; }
-  a:hover, a:focus, a:active {
-    text-decoration: underline; }
-  h1 a, h2 a, h3 a {
-    color: #4F4F4F; }
-    h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
-      color: #5F8AA6; }
+/*------------------------------------*\
+    $ TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Make fonts nigh invisible before Typekit has finished loading
+ */
+.wf-loading .logo, .wf-loading nav a, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading .button {
+  color: #F9F9F9 !important;
+  text-shadow: none !important; }
 
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
@@ -415,6 +410,18 @@ h3, .article-date {
 h3 {
   margin-top: 0.5em;
   border-bottom: 0.125em solid #DDDDDD; }
+
+a {
+  color: #5F8AA6;
+  text-decoration: none;
+  -webkit-transition: background .2s, color .2s, text-shadow .2s;
+          transition: background .2s, color .2s, text-shadow .2s; }
+  a:hover, a:focus, a:active {
+    text-decoration: underline; }
+  h1 a, h2 a, h3 a {
+    color: #4F4F4F; }
+    h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
+      color: #5F8AA6; }
 
 p {
   margin: 0; }
@@ -498,6 +505,9 @@ hr {
 article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
+/**
+ * Round the corners
+ */
 .rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
@@ -511,12 +521,6 @@ article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-chil
   color: #F9F9F9; }
 ::selection {
   background: #5F8AA6;
-  color: #F9F9F9; }
-
-code::-moz-selection {
-  color: #F9F9F9; }
-
-code::selection {
   color: #F9F9F9; }
 
 /*------------------------------------*\
