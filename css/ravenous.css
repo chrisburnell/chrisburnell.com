@@ -377,7 +377,7 @@ body {
 /**
  * Make fonts nigh invisible before Typekit has finished loading
  */
-.wf-loading .logo, .wf-loading nav a, .wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading .button {
+.wf-loading *, .wf-loading *:before, .wf-loading *:after {
   color: #F9F9F9 !important;
   text-shadow: none !important; }
 
