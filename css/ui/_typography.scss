@@ -1,0 +1,172 @@
+/*------------------------------------*\
+    $ TYPOGRAPHY
+\*------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    min-height: 1.2em; /* so that elements can be floated inside headings */
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+h1 {
+    font-family: $heading-font-stack;
+    font-size: 2.625em;
+    text-transform: uppercase;
+    text-shadow: .0714em .0714em 0 $black-5;
+}
+h2 {
+    font-family: $primary-font-stack;
+    font-size: 1.625em;
+    text-shadow: 0 -1px 0 $white-25;
+}
+h3,
+.article-date {
+    font-family: $secondary-font-stack;
+    font-size: 1.125em;
+    font-weight: 600;
+    line-height: 1.618em;
+    text-transform: uppercase;
+}
+h3 {
+    margin-top: .5em;
+    border-bottom: .125em solid $text-color-light;
+}
+a {
+    color: $blue;
+    text-decoration: none;
+    @include transition("background .2s, color .2s, text-shadow .2s");
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+    h1 &,
+    h2 &,
+    h3 & {
+        color: $text-color;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $blue;
+        }
+    }
+}
+p {
+    margin: 0;
+}
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: inside disc;
+}
+ol {
+    list-style-type: decimal-leading-zero;
+}
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0 0 .5em;
+    text-align: center;
+    img {
+        @extend .rounded;
+    }
+}
+    figcaption {
+        padding-top: .444em;
+        font-size: 1.125em;
+        font-style: italic;
+    }
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+    color: $text-color-alt;
+    font-style: italic;
+}
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $text-color-alt;
+    cursor: help;
+}
+ins {
+    text-decoration: none;
+}
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote {
+    @extend .rounded;
+    background-color: rgba($blue, 0.1);
+    padding: 1em;
+    margin: 0 2.5em 1em;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    @include breakpoint("mobile") {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    p {
+        margin-bottom: 0 !important;
+        &:before {
+            content: open-quote;
+            padding-right: .1875em;
+        }
+        &:after {
+            content: close-quote;
+            padding-left: .1875em;
+        }
+    }
+    cite {
+        margin-left: 2em;
+        margin-top: 1em;
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
+}
+    .pullquote {
+        font-size: 1.1em;
+        line-height: 2em;
+        cite {
+            font-size: .909em;
+        }
+    }
+hr {
+    background: $black-10;
+    width: 100%;
+    height: .125em;
+    display: block;
+    border: 0;
+    margin: .5em 0 1.5em;
+}
+/**
+ * Add a bottom margin to a plethora of tasty elements.
+ */
+article,
+p:not(:last-child),
+ol:not(:last-child):not([class]),
+ul:not(:last-child):not([class]),
+h3:not(:last-child),
+figure:not(:last-child),
+.cp_embed_iframe {
+    margin-bottom: 1.25em;
+}
+/**
+ * Round the corners
+ */
+.rounded {
+    background-clip: padding-box;
+    border-radius: .375em;
+}
+/**
+ * Text Highlights
+ */
+::selection {
+    background: $blue;
+    color: $white;
+}
