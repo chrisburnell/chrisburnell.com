@@ -374,13 +374,6 @@ body {
 /*------------------------------------*\
     $ TYPOGRAPHY
 \*------------------------------------*/
-/**
- * Make fonts nigh invisible before Typekit has finished loading
- */
-.wf-loading *, .wf-loading *:before, .wf-loading *:after {
-  color: transparent !important;
-  text-shadow: none !important; }
-
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
   /* so that elements can be floated inside headings */
@@ -390,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em; }
 
 h1 {
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625em;
   text-transform: uppercase;
   text-shadow: 0.0714em 0.0714em 0 rgba(6, 6, 6, 0.05); }
@@ -537,7 +530,7 @@ article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-chil
   padding-top: 0.5em;
   padding-left: 1.923em;
   position: relative;
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", Impact, sans-serif;
   font-size: 3.25em;
   line-height: 1em;
   text-transform: uppercase;
@@ -703,7 +696,7 @@ nav {
     border-bottom: 0px solid #5F8AA6;
     margin-bottom: 0.3em;
     position: relative;
-    font-family: "league-gothic", Futura, sans-serif;
+    font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25em;
     line-height: 1.25em;
     text-transform: uppercase;
@@ -1155,7 +1148,7 @@ button, .button {
   border: 0;
   margin-bottom: 0.182em;
   position: relative;
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375em;
   line-height: 1.91em;
   text-align: center;
