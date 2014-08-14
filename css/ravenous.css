@@ -374,12 +374,6 @@ body {
 /*------------------------------------*\
     $ TYPOGRAPHY
 \*------------------------------------*/
-/**
- * Fix League Gothic while loading
- */
-.wf-loading .logo, .wf-loading h1, .wf-loading .site-navigation a {
-  letter-spacing: -0.095em; }
-
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
   /* so that elements can be floated inside headings */
