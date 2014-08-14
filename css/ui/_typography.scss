@@ -2,6 +2,16 @@
     $ TYPOGRAPHY
 \*------------------------------------*/
 
+/**
+ * Make fonts nigh invisible before Typekit has finished loading
+ */
+.wf-loading *,
+.wf-loading *:before,
+.wf-loading *:after {
+    color: $white !important;
+    text-shadow: none !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; /* so that elements can be floated inside headings */
     padding: 0;

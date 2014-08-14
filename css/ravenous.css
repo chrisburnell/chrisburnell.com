@@ -349,7 +349,7 @@ body {
   background-color: #F9F9F9;
   color: #4F4F4F;
   position: relative;
-  font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", Georgia, serif;
+  font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
@@ -374,6 +374,13 @@ body {
 /*------------------------------------*\
     $ TYPOGRAPHY
 \*------------------------------------*/
+/**
+ * Make fonts nigh invisible before Typekit has finished loading
+ */
+.wf-loading *, .wf-loading *:before, .wf-loading *:after {
+  color: #F9F9F9 !important;
+  text-shadow: none !important; }
+
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
   /* so that elements can be floated inside headings */
@@ -383,13 +390,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em; }
 
 h1 {
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", sans-serif;
   font-size: 2.625em;
   text-transform: uppercase;
   text-shadow: 0.0714em 0.0714em 0 rgba(6, 6, 6, 0.05); }
 
 h2 {
-  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-family: "ff-meta-serif-web-pro", serif;
   font-size: 1.625em;
   text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.25); }
 
@@ -530,7 +537,7 @@ article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-chil
   padding-top: 0.5em;
   padding-left: 1.923em;
   position: relative;
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", sans-serif;
   font-size: 3.25em;
   line-height: 1em;
   text-transform: uppercase;
@@ -696,7 +703,7 @@ nav {
     border-bottom: 0px solid #5F8AA6;
     margin-bottom: 0.3em;
     position: relative;
-    font-family: "league-gothic", Futura, sans-serif;
+    font-family: "league-gothic", sans-serif;
     font-size: 1.25em;
     line-height: 1.25em;
     text-transform: uppercase;
@@ -951,7 +958,7 @@ aside {
 
 .author-information {
   margin-bottom: 1em;
-  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-family: "ff-meta-serif-web-pro", serif;
   font-size: 0.875em;
   font-style: italic; }
   .author-information a, .author-information strong, .author-information time {
@@ -1148,7 +1155,7 @@ button, .button {
   border: 0;
   margin-bottom: 0.182em;
   position: relative;
-  font-family: "league-gothic", Futura, sans-serif;
+  font-family: "league-gothic", sans-serif;
   font-size: 1.375em;
   line-height: 1.91em;
   text-align: center;
