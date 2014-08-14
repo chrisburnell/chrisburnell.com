@@ -3,6 +3,7 @@ title: About Me
 description: My name is Chris Burnell, and I’m a Canadian User Interface Developer living in London, England.
 layout: default
 page_class: about-page
+redirect_from: /me.html
 ---
 
 I have been doing freelance work for about seven years, ranging from web design to web development to full web solutions (albeit small), but I was never really challenged on any of my early projects, and thirsted for a position in a company that shared my passion for the web.
