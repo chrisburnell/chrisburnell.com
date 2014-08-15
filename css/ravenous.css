@@ -411,6 +411,8 @@ a {
           transition: background .2s, color .2s, text-shadow .2s; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
+  article a:not(.button):visited {
+    color: #90aec1; }
   h1 a, h2 a, h3 a {
     color: #4F4F4F; }
     h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
@@ -495,7 +497,7 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements.
  */
-article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), h3:not(:last-child), figure:not(:last-child), .cp_embed_iframe {
+article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
 /**
@@ -1146,7 +1148,7 @@ button, .button {
   display: inline-block;
   padding: 0 0.727em;
   border: 0;
-  margin-bottom: 0.182em;
+  margin-bottom: 0.227em;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375em;
@@ -1173,8 +1175,8 @@ button, .button {
     text-decoration: none; }
   button:active, .button:active {
     text-decoration: none;
-    -webkit-box-shadow: 0 0.045em 0 #547e97;
-            box-shadow: 0 0.045em 0 #547e97;
+    -webkit-box-shadow: 0 0.046em 0 #547e97;
+            box-shadow: 0 0.046em 0 #547e97;
     -webkit-transform: translate3d(0, .182em, 0);
             transform: translate3d(0, .182em, 0); }
     button:active:before, button:active:after, .button:active:before, .button:active:after {

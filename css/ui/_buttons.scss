@@ -11,7 +11,7 @@ button,
     display: inline-block;
     padding: 0 .727em;
     border: 0;
-    margin-bottom: .182em;
+    margin-bottom: .227em;
     position: relative;
     font-family: $heading-font-stack;
     font-size: 1.375em;
@@ -34,7 +34,7 @@ button,
     }
     &:active {
         text-decoration: none;
-        box-shadow: 0 .045em 0 darken($blue, 5%);
+        box-shadow: 0 .046em 0 darken($blue, 5%);
         @include translate3d("0, .182em, 0");
         &:before,
         &:after {

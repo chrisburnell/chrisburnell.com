@@ -41,6 +41,9 @@ a {
     &:active {
         text-decoration: underline;
     }
+    article &:not(.button):visited {
+        color: lighten($blue, 15%);
+    }
     h1 &,
     h2 &,
     h3 & {
@@ -148,10 +151,10 @@ hr {
  * Add a bottom margin to a plethora of tasty elements.
  */
 article,
+h3:not(:last-child),
 p:not(:last-child),
 ol:not(:last-child):not([class]),
 ul:not(:last-child):not([class]),
-h3:not(:last-child),
 figure:not(:last-child),
 .cp_embed_iframe {
     margin-bottom: 1.25em;
