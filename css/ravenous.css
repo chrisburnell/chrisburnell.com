@@ -411,7 +411,7 @@ a {
           transition: background .2s, color .2s, text-shadow .2s; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
-  article a:not(.button):visited {
+  article > :not(.author) a:not(.button):visited {
     color: #90aec1; }
   h1 a, h2 a, h3 a {
     color: #4F4F4F; }
@@ -949,7 +949,7 @@ aside {
       .about-page .author {
         margin-top: 2em; } }
   .author a {
-    color: #5F8AA6 !important; }
+    color: #5F8AA6; }
 
 .author-information {
   margin-bottom: 1em;

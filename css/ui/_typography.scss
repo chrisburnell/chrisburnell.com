@@ -41,7 +41,7 @@ a {
     &:active {
         text-decoration: underline;
     }
-    article &:not(.button):visited {
+    article > :not(.author) &:not(.button):visited {
         color: lighten($blue, 15%);
     }
     h1 &,
