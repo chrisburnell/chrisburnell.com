@@ -949,7 +949,7 @@ aside {
       .about-page .author {
         margin-top: 2em; } }
   .author a {
-    color: #5F8AA6; }
+    color: #5F8AA6 !important; }
 
 .author-information {
   margin-bottom: 1em;
