@@ -583,8 +583,8 @@ article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-chil
             animation-play-state: paused;
     -webkit-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out;
-    -webkit-transform: translate3d(0, -0.808em, 0);
-            transform: translate3d(0, -0.808em, 0); }
+    -webkit-transform: translate3d(0, -0.8125em, 0);
+            transform: translate3d(0, -0.8125em, 0); }
   .logo:hover:after, .logo:focus:after, .logo:active:after {
     /**
              * Only animate when the user hovers the logo.

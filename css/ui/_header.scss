@@ -63,7 +63,7 @@ header {
             @include animation("soaring 30s linear alternate infinite");
             @include animation-play-state("paused");
             @include transition();
-            @include translate3d("0, -0.808em, 0");
+            @include translate3d("0, -0.8125em, 0");
         }
         &:hover:after,
         &:focus:after,
