@@ -556,8 +556,8 @@ article, p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-chil
             transform: translate3d(0, .039em, 0); }
     .logo:active:after {
       /**
-                 * In order to get the Raven to travel up 2x the distance the
-                 * logo text does, first the translate applied on the parent
+                 * In order to get the logo image to travel up 2x the distance
+                 * the logo text does, first the translate applied on the parent
                  * (of the aside) has to be counteracted, then double 0.039em
                  * is added, totalling 0.117em--made negative on the y-axis to
                  * go up. We cannot use translate as it is used below for
@@ -693,7 +693,7 @@ nav {
     color: #737373;
     display: block;
     padding: 0.75em;
-    border-bottom: 0px solid #5F8AA6;
+    border-bottom: 0 solid #5F8AA6;
     margin-bottom: 0.3em;
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
@@ -732,7 +732,7 @@ nav {
   margin-bottom: 2.25em; }
 
 /**
- * The width of the articles is dynamic, and always has padding on the left-hand
+ * The width of the articles is fluid, and always has padding on the left-hand
  * side to make room for any asides, which can appear anywhere inside an
  * article or list of articles.
  * Maximum total width of container
