@@ -18,7 +18,7 @@ All of the examples are interactive, so make sure you hover or click where neces
 
 ### Psychdelic Slice
 
-Hover the slive to see how this one works.
+Hover the slice to see how this one works.
 
 <pre class="codepen" data-height="350" data-type="result" data-href="apogK" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/apogK) </pre>
 

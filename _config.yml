@@ -21,7 +21,6 @@ timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
 
-future: false
 permalink: /articles/:title
 paginate: 5
 paginate_path: 'page:num'
