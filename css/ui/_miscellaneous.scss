@@ -41,10 +41,3 @@
         }
     }
 }
-
-/**
- * Hacky fix for inline asides
- */
-p:empty {
-    display: none;
-}

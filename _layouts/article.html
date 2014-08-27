@@ -29,17 +29,19 @@
                 {% endif %}</li>
             </ol>
 
-            <section class="comments  clear">
-                <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//chrisburnell.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable Javascript to view comments.</noscript>
-            </section>
+            {% if page.comments and page.comments == true %}
+                <section id="comments" class="comments  clear">
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//chrisburnell.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                    <noscript>Please enable Javascript to view comments.</noscript>
+                </section>
+            {% endif %}
 
         </article>
     </section>

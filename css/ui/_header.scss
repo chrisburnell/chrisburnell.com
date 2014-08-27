@@ -69,7 +69,7 @@ header {
         &:focus:after,
         &:active:after {
             /**
-             * Only animate when the user hovers the logo.
+             * Only animate the image when the user hovers the logo.
              */
             @include animation-play-state("running");
         }

@@ -9,12 +9,13 @@ tags:
 - CodePen
 - CSS
 - UX
+comments: true
+codepen: true
 ---
 
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
 <pre class="codepen" data-height="600" data-type="result" data-href="LHqFy" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/LHqFy">Check out this Pen!</a> </pre>
-<script src="http://codepen.io/assets/embed/ei.js" aria-hidden="true"></script>
 
 ### What’s going on here?
 
@@ -22,4 +23,4 @@ This is basically just a User Experience or accessibility issue. Anything we can
 
 ### Don’t throw away your visitors!
 
-Check me out [on CodePen](http://codepen.io/chrisburnell), if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](http://blog.codepen.io/rodeo/) if your motivation needs a kick up the rear!
+Check me out [on CodePen](http://codepen.io/chrisburnell "Chris Burnell on Codepen"), if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](http://blog.codepen.io/rodeo/ "The Pattern Rodeo") if your motivation needs a kick up the rear!

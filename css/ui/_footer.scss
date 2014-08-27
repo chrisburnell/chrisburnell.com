@@ -17,7 +17,7 @@ footer {
     }
 }
     .copyright,
-    .social-icons {
+    .social-icon-list {
         float: left;
         overflow: hidden;
         @include breakpoint("tablet") {
@@ -71,7 +71,7 @@ footer {
                 display: none;
             }
         }
-        .social-icons {
+        .social-icon-list {
             float: right;
             margin-top: .3125em;
             @include breakpoint("tablet") {
@@ -124,7 +124,7 @@ footer {
         }
         /*a*/.rss-link {
             background-position: -149px top;
-            /* uses the default anchor color */
+            // use the default anchor color
             &.social-icon {
                 width: 31px;
             }

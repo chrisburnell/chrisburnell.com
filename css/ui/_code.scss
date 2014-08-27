@@ -22,7 +22,7 @@ var {
         white-space: nowrap;
     }
 pre {
-    margin: 0 0 1em; /* override _normalize.scss */
+    margin: 0 0 1em; // override normalize
     &:not(.codepen) {
         @extend .rounded;
         background-color: #EEE;
@@ -37,7 +37,9 @@ pre {
         }
     }
 }
-/* [data-lang] is always applied to a code element inside a pre element */
+/**
+ * [data-lang] is always applied to a code element inside a pre element
+ */
 [data-lang] {
     @include breakpoint("tablet") {
         padding-top: 2em;

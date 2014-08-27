@@ -3,7 +3,7 @@
             <div class="copyright">
                 <a rel="home" class="home-link" href="/" title="Home">Home</a> <a rel="license" class="copyright-link" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" title="Creative Commons License">&copy; {{ site.time | date: "%Y" }} {{ site.author }}</a><span class="copyright-spacer"> &ndash; </span><a class="style-guide-link" href="/style-guide" title="Style Guide">Style Guide</a>
             </div>
-            <ul class="social-icons">
+            <ul class="social-icon-list">
                 <li><a rel="me publisher" class="social-icon  twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">Twitter</a></li>
                 <li><a rel="me publisher" class="social-icon  github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">Github</a></li>
                 <li><a rel="me publisher" class="social-icon  codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">CodePen</a></li>
@@ -13,6 +13,11 @@
         </section>
     </footer>
 
+    <script type="text/javascript">
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
+    <script src="/js/picturefill.min.js" async></script>
     {% if page.page_class == "home-page" or page.page_class == "archive-page" %}
         <script type="text/javascript">
             var disqus_shortname = 'chrisburnell';
@@ -24,14 +29,12 @@
             }());
         </script>
     {% endif %}
-    {% if page.layout == "article" %}
+    {% if page.codepen and page.codepen == true %}
+        <script src="//codepen.io/assets/embed/ei.js" async></script>
+    {% endif %}
+    {% if page.twitter and page.twitter == true %}
         <script src="//platform.twitter.com/widgets.js" async></script>
     {% endif %}
-    <script type="text/javascript">
-        // Picture element HTML5 shiv
-        document.createElement( "picture" );
-    </script>
-    <script src="/js/picturefill.min.js" async></script>
     <script type="text/javascript">
         {% if page.layout == "article" %}
             // Remove the strong tags from the "and" in the tags list on articles

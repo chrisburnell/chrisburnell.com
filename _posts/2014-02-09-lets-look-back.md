@@ -9,6 +9,7 @@ tags:
 - CSS
 - GitHub
 - Tutorials
+comments: true
 ---
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for simple maintenance and comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
@@ -19,11 +20,11 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 ### I don’t want to do anything, anymore!
 
-<aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](http://chrisburnell.com/articles/first-article-ever/ "First Ever Article").</p></aside>
+<aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](/articles/first-article-ever/ "First Ever Article").</p></aside>
 
-Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan) and [Jake Archibald](https://twitter.com/jaffathecake), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
+Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
-One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com)*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
+One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com "Can I Use")*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
 --------
 
@@ -520,7 +521,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 7. [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
 8. [My gulpfile configuration](https://gist.github.com/chrisburnell/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
-And if you want to start using *gulp*, here’s a fantastic guide, “[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")”, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear &mdash; Front-end designer and developer").
+And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
 
 ### Wrapping it up
 
@@ -536,4 +537,4 @@ To sum up, the site looks <s>pretty much</s> the same, but the codebase behind i
 
 You can see the raw, uncompiled SASS files on GitHub [here](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com"), and the README file of the repository [here](https://github.com/chrisburnell/chrisburnell.github.io "chrisburnell.com GitHub README").
 
-As always, please let me know if you have any comments, suggestions, or bug-fixes!
+As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github](https://github.com/chrisburnell/chrisburnell.github.io/issues "Create an Issue on Github")!

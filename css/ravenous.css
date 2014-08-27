@@ -376,7 +376,6 @@ body {
 \*------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
-  /* so that elements can be floated inside headings */
   padding: 0;
   margin: 0;
   font-weight: 400;
@@ -411,8 +410,6 @@ a {
           transition: background .2s, color .2s, text-shadow .2s; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
-  article > :not(.author) a:not(.button):visited {
-    color: #90aec1; }
   h1 a, h2 a, h3 a {
     color: #4F4F4F; }
     h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
@@ -455,6 +452,7 @@ ins {
   text-decoration: none; }
 
 q {
+  font-style: italic;
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 blockquote {
@@ -501,7 +499,7 @@ article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class
   margin-bottom: 1.25em; }
 
 /**
- * Round the corners
+ * We’re goin’ up around the bend
  */
 .rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
   -webkit-background-clip: padding-box;
@@ -509,7 +507,7 @@ article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class
   border-radius: 0.375em; }
 
 /**
- * Text Highlights
+ * Text Highlighting
  */
 ::-moz-selection {
   background: #5F8AA6;
@@ -589,7 +587,7 @@ article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class
             transform: translate3d(0, -0.8125em, 0); }
   .logo:hover:after, .logo:focus:after, .logo:active:after {
     /**
-             * Only animate when the user hovers the logo.
+             * Only animate the image when the user hovers the logo.
              */
     -webkit-animation-play-state: running;
             animation-play-state: running; }
@@ -794,7 +792,6 @@ article, .articles {
 .site-description {
   max-width: 24em;
   margin-top: -0.2em;
-  /* make sure text cap-height aligns to the aside */
   margin-bottom: 0.8em;
   line-height: 1.4em; }
   @media (max-width: 768px) {
@@ -869,7 +866,6 @@ article, .articles {
     .pagination li:first-child a:before {
       content: "\2190\00a0";
       position: relative;
-      /* override the button:before fix */
       top: 0; }
     @media (max-width: 500px) {
       .pagination li:last-child a {
@@ -877,7 +873,6 @@ article, .articles {
     .pagination li:last-child a:after {
       content: "\00a0\2192";
       position: relative;
-      /* override the button:after fix */
       top: 0; }
     .pagination li:not(:empty) + li {
       margin-left: 1.875em; }
@@ -910,7 +905,7 @@ article, .articles {
 \*------------------------------------*/
 /**
  * The width of the asides is static and and always floated within an article or
- * list of articles. The math is calculated as in the Articles section.
+ * list of articles. The math is calculated as in the articles partial.
  */
 aside {
   width: 15.1875em;
@@ -979,7 +974,6 @@ aside {
 
 .article-tags {
   display: table-cell;
-  /* don't wrap around .author-image */
   line-height: 1.429em; }
 
 .author-biography .codepen, .author-biography .lastfm, .author-biography .twitter {
@@ -1024,11 +1018,11 @@ footer {
     footer {
       padding: 2.25em 0; } }
 
-.copyright, .social-icons {
+.copyright, .social-icon-list {
   float: left;
   overflow: hidden; }
   @media (max-width: 768px) {
-    .copyright, .social-icons {
+    .copyright, .social-icon-list {
       width: 100%;
       float: none;
       text-align: center; } }
@@ -1073,15 +1067,15 @@ footer {
     .copyright-spacer {
       display: none; } }
 
-.social-icons {
+.social-icon-list {
   float: right;
   margin-top: 0.3125em; }
   @media (max-width: 768px) {
-    .social-icons {
+    .social-icon-list {
       margin-top: 0.625em; } }
-  .social-icons li {
+  .social-icon-list li {
     display: inline-block; }
-    .social-icons li + li {
+    .social-icon-list li + li {
       margin-left: 0.75em; }
 
 /*a*/
@@ -1125,8 +1119,7 @@ footer {
 
 /*a*/
 .rss-link {
-  background-position: -149px top;
-  /* uses the default anchor color */ }
+  background-position: -149px top; }
   .rss-link.social-icon {
     width: 31px; }
 
@@ -1203,8 +1196,7 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
   white-space: nowrap; }
 
 pre {
-  margin: 0 0 1em;
-  /* override _normalize.scss */ }
+  margin: 0 0 1em; }
   pre:not(.codepen) {
     background-color: #EEE;
     padding: 1.5em;
@@ -1216,7 +1208,9 @@ pre {
       min-width: 100%;
       display: block; }
 
-/* [data-lang] is always applied to a code element inside a pre element */
+/**
+ * [data-lang] is always applied to a code element inside a pre element
+ */
 @media (max-width: 768px) {
   [data-lang] {
     padding-top: 2em; } }
@@ -1310,9 +1304,3 @@ pre {
     .color-block-list li[data-color="#DDDDDD"] {
       background-color: #DDDDDD;
       color: #4F4F4F; }
-
-/**
- * Hacky fix for inline asides
- */
-p:empty {
-  display: none; }

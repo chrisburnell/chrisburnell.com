@@ -10,9 +10,10 @@ tags:
 - GitHub
 - Jekyll
 - Markdown
+comments: true
 ---
 
-Since my last design update, I started working at [Squiz](http://squiz.net) and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
+Since my last design update, I started working at [Squiz](http://squiz.net/uk "Squiz UK") and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix "Squiz Matrix"), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
 ### More than meets the eye
 
@@ -26,7 +27,7 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 ### What is Jekyll?
 
-> Jekyll (<http://jekyllrb.com/>) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com), which you can use to host your project’s page or blog \[on\] GitHub.
+> Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll &bull; Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
 
 ### Better, Faster, Stronger
 
@@ -44,7 +45,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io) and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io "The Github Repository of this website") and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -52,7 +53,7 @@ The CSS for this latest iteration of chrisburnell.com was also a labour of love.
 
 During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we developers can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a simple transition from desktop to mobile responsive layouts as well as making the process in Markdown simple as well. It’s been a flurry of knowledge into my *super-powerful* (read: tiny) brain, and these have only been a handful of the things I’ve learned.
 
-I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](http://codepen.io) often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these simple steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
+I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](http://codepen.io "Codepen") often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these simple steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
 
 The most important lesson of them all, of course, is to **keep it simple**. Whether it’s code or design, just stick to what you need and you’re sure to find success.
 
@@ -60,28 +61,28 @@ The most important lesson of them all, of course, is to **keep it simple**. Whet
 
 I can’t take all the credit for this website, really. It’s the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I’m going to give a few shout-outs to some awesome people who helped me immensely.
 
-<aside><a href="http://browser.londonwebstandards.org/gallery_2013.php" title="State of the Browser 2013 Gallery"><img src="{{ site.url }}/images/articles/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"></a><p class="italic  gray">Image courtesy of [State of the Browser](http://browser.londonwebstandards.org/).</p></aside>
+<aside><a href="http://browser.londonwebstandards.org/gallery_2013.php" title="State of the Browser 2013 Gallery"><img src="{{ site.url }}/images/articles/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"></a><p class="italic  gray">Image courtesy of [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference").</p></aside>
 
-I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/), [State of the Browser](http://browser.londonwebstandards.org/), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m just going to reel off here in no particular order (other than alphabetical):
+I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/ "London Web Standards"), [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference"), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m just going to reel off here in no particular order (other than alphabetical):
 
-- [Jake Archibald (Google)](http://www.jakearchibald.com/)
-- [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/)
-- [Andreas Bovens (Opera)](http://dev.opera.com/)
-- [Christian Heilmann (Mozilla)](http://christianheilmann.com/)
-- [Laura Kalbag](http://laurakalbag.com/)
-- [Paul Kinlan (Google)](http://paul.kinlan.me/)
-- [Seb Lee-Delisle](http://seb.ly/)
-- [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/)
+- [Jake Archibald (Google)](http://www.jakearchibald.com/ "Jake Archibald (Google)")
+- [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/ "Martin Beeby (Microsoft)")
+- [Andreas Bovens (Opera)](http://dev.opera.com/ "Andreas Bovens (Opera)")
+- [Christian Heilmann (Mozilla)](http://christianheilmann.com/ "Christian Heilmann (Mozilla)")
+- [Laura Kalbag](http://laurakalbag.com/ "Laura Kalbag")
+- [Paul Kinlan (Google)](http://paul.kinlan.me/ "Paul Kinlan (Google)")
+- [Seb Lee-Delisle](http://seb.ly/ "Seb Lee-Delisle")
+- [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/ "Alp Toker (Nuanti Browser Labs)")
 
 I also have to mention a few blogs run by some clever folks because they’re what gave me the knowledge that helped me really improve my CSS skills, again in no particular order:
 
-- [A List Apart](http://alistapart.com/)
-- [CSS Wizardry](http://csswizardry.com/) by [Harry Roberts](https://twitter.com/csswizardry)
-- [CSS-Tricks](http://css-tricks.com/) by [Chris Coyier](https://twitter.com/chriscoyier)
-- [Smashing Magazine](http://www.smashingmagazine.com/)
-- [Responsive Design Newsletter](http://responsivedesignweekly.com/) by [Justin Avery](http://surfthedream.com.au/)
-- [Visual Idiot](http://visualidiot.com/)
+- [A List Apart](http://alistapart.com/ "A List Apart")
+- [CSS Wizardry](http://csswizardry.com/ "CSS Wizardry") by [Harry Roberts](https://twitter.com/csswizardry "Harry Roberts")
+- [CSS-Tricks](http://css-tricks.com/ "CSS-Tricks") by [Chris Coyier](https://twitter.com/chriscoyier "Chris Coyier")
+- [Smashing Magazine](http://www.smashingmagazine.com/ "Smashing Magazine")
+- [Responsive Design Newsletter](http://responsivedesignweekly.com/ "Responsive Design Newsletter") by [Justin Avery](http://surfthedream.com.au/ "Justin Avery")
+- [Visual Idiot](http://visualidiot.com/ "Visual Idiot")
 
 ### And that’s basically it!
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](http://chrisburnell.com/feed.xml) if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }}) or [send me an email](mailto:me@chrisburnell)!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }} "My Twitter") or [send me an email](mailto:me@chrisburnell)!

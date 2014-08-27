@@ -8,6 +8,7 @@ banner_mobile: viewport-woes_mobile.png
 tags:
 - HTML
 - Tutorials
+comments: true
 ---
 
 *Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.*
@@ -59,6 +60,6 @@ Fine. I’ve rambled enough.
 - Use <code>maximum-scale</code> and <code>minimum-scale</code>, other variations don’t cut it.
 - Scalable only has one *E*, at the end.
 
-This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/) is a great resource of popular devices and their respective viewport attributes.
+This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/ "Viewport Sizes") is a great resource of popular devices and their respective viewport attributes.
 
-I’m sure I’ve missed something or even gotten something wrong somewhere. Please let me know in the comments if I did.
+I’m sure I’ve missed something or even gotten something wrong somewhere. Please let me know in the [comments](#comments) if I did.

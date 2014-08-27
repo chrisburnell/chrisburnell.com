@@ -4,7 +4,7 @@
 
 /**
  * The width of the asides is static and and always floated within an article or
- * list of articles. The math is calculated as in the Articles section.
+ * list of articles. The math is calculated as in the articles partial.
  */
 aside {
     width: 15.1875em;
@@ -78,7 +78,7 @@ aside {
         margin-right: 10px;
     }
     .article-tags {
-        display: table-cell; /* don't wrap around .author-image */
+        display: table-cell; // don’t wrap around .author-image
         line-height: 1.429em;
     }
     .author-biography .codepen,

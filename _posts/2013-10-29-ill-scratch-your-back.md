@@ -8,6 +8,7 @@ banner_mobile: ill-scratch-your-back_mobile.png
 tags:
 - CSS
 - Tutorials
+comments: true
 ---
 
 When building a site for a client who isn’t very tech-savvy, it’s important that they’re able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it’s then important that the CSS we write matches the output of the editor’s content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you’re used to.
@@ -16,7 +17,7 @@ So, for example, if an editor creates an article with lists and pictures, it’s
 
 ### Let’s look at some code.
 
-Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/)). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
+Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css")). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
 {% highlight html %}
 <ol class="table-of-contents">
@@ -63,6 +64,6 @@ Normally in CSS, we would use <code>.</code> to target an element by *class name
 
 --------
 
-In this simple way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not) for the specifics.
+In this simple way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector") for the specifics.
 
-If you have any comments or performance notes about this, please let me know in the comments below or [on twitter](http://twitter.com/iamchrisburnell).
+If you have any comments or performance notes about this, please let me know in the [comments below](#comments) or [on twitter](http://twitter.com/iamchrisburnell).
