@@ -48,7 +48,7 @@ This is a pen which I overhauled a bit since I first wrote about it in [Persiste
 
 <pre class="codepen" data-height="250" data-type="result" data-href="arouk" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/arouk) </pre>
 
-And the revisted version:
+And the revisited version:
 
 <pre class="codepen" data-height="250" data-type="result" data-href="Cbiun" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/Cbiun) </pre>
 
