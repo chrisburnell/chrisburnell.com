@@ -16,7 +16,7 @@ I’ve been making quite a few pens over on [Codepen](http://codepen.io "Codepen
 
 All of the examples are interactive, so make sure you hover or click where necessary.
 
-### Psychdelic Slice
+### Psychedelic Slice
 
 Hover the slice to see how this one works.
 
