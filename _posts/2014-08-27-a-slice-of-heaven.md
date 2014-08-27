@@ -26,15 +26,17 @@ In this Pen, I’m taking advantage of <code>border-radius</code> and <code>over
 
 ### Zoomy Anchor Thing
 
-This pen was inspired by an effect I saw on [Square](https://squareup.com#verticals "Square").
+This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals "Square").
 
 <pre class="codepen" data-height="350" data-type="result" data-href="lcEvB" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/lcEvB) </pre>
 
 ### Modal Container without JS
 
-This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off Javascript and won’t be able to use Codepen properly.
+This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off Javascript and won’t be able to use Codepen properly, as Codepen relies on Javascript to display Pens.
 
 <pre class="codepen" data-height="350" data-type="result" data-href="scyKF" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/scyKF) </pre>
+
+One of the often underused but **powerful** utilities available in HTML is the relationship between an <code>input</code> element and its <code>label</code> element—you can even use multiple <code>label</code>s to control your <code>input</code> field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
 ### Slip-n-slide Modal
 
@@ -51,6 +53,8 @@ This is a pen which I overhauled a bit since I first wrote about it in [Persiste
 And the revisited version:
 
 <pre class="codepen" data-height="250" data-type="result" data-href="Cbiun" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/Cbiun) </pre>
+
+Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
 
 ### Over to you
 
