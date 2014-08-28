@@ -54,7 +54,7 @@ And the revisited version:
 
 <pre class="codepen" data-height="250" data-type="result" data-href="Cbiun" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/Cbiun) </pre>
 
-Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>, see more [here](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
+Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
 
 ### Over to you
 
