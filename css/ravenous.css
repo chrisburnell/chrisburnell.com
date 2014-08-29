@@ -917,12 +917,12 @@ aside {
         background: rgba(6, 6, 6, 0.05);
         padding: 1em 1em 0.5em;
         margin-bottom: 1.5em; } }
-  aside p {
+  aside p, aside figcaption {
     clear: both;
     margin-bottom: 0.5em;
     font-size: 0.875em; }
     @media (max-width: 500px) {
-      aside p {
+      aside p, aside figcaption {
         font-size: 1em; } }
   aside blockquote p {
     margin-bottom: 0; }
