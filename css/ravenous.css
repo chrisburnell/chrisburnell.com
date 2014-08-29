@@ -991,8 +991,7 @@ aside {
 
 .related-article-date {
   padding-left: 1em;
-  font-size: 0.8125em;
-  font-style: italic; }
+  font-size: 0.8125em; }
   .related-article-date:before {
     content: "- "; }
 
