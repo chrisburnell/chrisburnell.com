@@ -79,7 +79,7 @@ article,
         font-size: 1.25em;
     }
     .article-banner {
-        @extend .rounded;
+        @extend %rounded;
         width: 810px;
         margin-bottom: 1em;
         @include breakpoint("mobile") {

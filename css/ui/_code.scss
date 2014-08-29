@@ -24,7 +24,7 @@ var {
 pre {
     margin: 0 0 1em; // override normalize
     &:not(.codepen) {
-        @extend .rounded;
+        @extend %rounded;
         background-color: #EEE;
         padding: 1.5em;
         position: relative;

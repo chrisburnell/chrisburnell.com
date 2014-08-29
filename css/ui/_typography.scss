@@ -74,12 +74,11 @@ figure {
     margin: 0 0 .5em;
     text-align: center;
     img {
-        @extend .rounded;
+        @extend %rounded;
     }
 }
     figcaption {
         padding-top: .444em;
-        font-size: 1.125em;
         font-style: italic;
     }
 abbr[title],
@@ -102,7 +101,7 @@ q {
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
 blockquote {
-    @extend .rounded;
+    @extend %rounded;
     background-color: rgba($blue, 0.1);
     padding: 1em;
     margin: 0 2.5em 1em;
@@ -146,7 +145,7 @@ hr {
     margin: .5em 0 1.5em;
 }
 /**
- * Add a bottom margin to a plethora of tasty elements.
+ * Add a bottom margin to a plethora of tasty elements
  */
 article,
 h3:not(:last-child),
@@ -157,10 +156,8 @@ figure:not(:last-child),
 .cp_embed_iframe {
     margin-bottom: 1.25em;
 }
-/**
- * We’re goin’ up around the bend
- */
-.rounded {
+// We’re goin’ up around the bend
+%rounded {
     background-clip: padding-box;
     border-radius: .375em;
 }

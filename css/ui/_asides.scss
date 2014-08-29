@@ -16,9 +16,10 @@ aside {
         float: none;
         margin: 0 0 1em;
         &:not(.author) {
-            @extend .rounded;
+            @extend %rounded;
             background: $black-5;
             padding: 1em 1em .5em;
+            margin-bottom: 1.5em;
         }
     }
     p {
@@ -69,7 +70,7 @@ aside {
         }
     }
     .author-image {
-        @extend .rounded;
+        @extend %rounded;
         background-size: 100%;
         width: 100px;
         height: 100px;

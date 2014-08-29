@@ -437,7 +437,6 @@ figure {
 
 figcaption {
   padding-top: 0.444em;
-  font-size: 1.125em;
   font-style: italic; }
 
 abbr[title], blockquote, cite, dfn[title] {
@@ -493,15 +492,12 @@ hr {
   margin: 0.5em 0 1.5em; }
 
 /**
- * Add a bottom margin to a plethora of tasty elements.
+ * Add a bottom margin to a plethora of tasty elements
  */
 article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
-/**
- * We’re goin’ up around the bend
- */
-.rounded, figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
+figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border-radius: 0.375em; }
@@ -919,7 +915,8 @@ aside {
       margin: 0 0 1em; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
-        padding: 1em 1em 0.5em; } }
+        padding: 1em 1em 0.5em;
+        margin-bottom: 1.5em; } }
   aside p {
     clear: both;
     margin-bottom: 0.5em;
@@ -1307,3 +1304,9 @@ pre {
     .color-block-list li[data-color="#DDDDDD"] {
       background-color: #DDDDDD;
       color: #4F4F4F; }
+
+/**
+ * Hide empty paragraph tags
+ */
+p:empty {
+  display: none; }

@@ -10,7 +10,7 @@
     list-style: none;
     text-align: center;
     li {
-        @extend .rounded;
+        @extend %rounded;
         color: $white;
         width: 6.5em;
         height: 6.5em;
@@ -40,4 +40,10 @@
             color: $text-color;
         }
     }
+}
+/**
+ * Hide empty paragraph tags
+ */
+p:empty {
+    display: none;
 }
