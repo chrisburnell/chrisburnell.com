@@ -32,7 +32,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 <pre class="codepen" data-height="350" data-type="result" data-href="lcEvB" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/lcEvB) </pre>
 
-*Edit: This pen was featured on Codepen’s front page, netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
+*Edit: This pen was featured on [Codepen’s front page](http://ss.chrisburnell.com/2014-08-28_1411.png "ego boost manifested in PNG format"), netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
 
 ### Modal Container without JS
 
