@@ -24,13 +24,15 @@ Hover the slice to see how this one works.
 
 In this Pen, I’m taking advantage of <code>border-radius</code> and <code>overflow</code> on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
-*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.*
+*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.*
 
 ### Zoomy Anchor Thing
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals "Square").
 
 <pre class="codepen" data-height="350" data-type="result" data-href="lcEvB" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/lcEvB) </pre>
+
+*Edit: This pen was featured on Codepen’s front page, netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
 
 ### Modal Container without JS
 
