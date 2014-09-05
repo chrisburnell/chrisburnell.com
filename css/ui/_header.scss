@@ -1,0 +1,9 @@
+/*------------------------------------*\
+    $ HEADER
+\*------------------------------------*/
+
+header {
+    @include breakpoint("tablet") {
+        text-align: center;
+    }
+}
