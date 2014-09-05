@@ -1,0 +1,85 @@
+/*------------------------------------*\
+    $ LOGO
+\*------------------------------------*/
+
+.logo {
+    color: $text-color;
+    display: inline-block;
+    float: left;
+    padding-top: .5em;
+    padding-left: 1.923em;
+    position: relative;
+    font-family: $heading-font-stack;
+    font-size: 3.25em;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-shadow: .058em .058em 0 $black-5;
+    z-index: 1;
+    user-select: none;
+    @include transition();
+    @include breakpoint("tablet") {
+        display: inline-block;
+        float: none;
+    }
+    @include breakpoint("mobile") {
+        font-size: 2.75em;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    &:active {
+        @include translate3d("0, .039em, 0");
+        &:after {
+            /**
+             * In order to get the logo image to travel up 2x the distance
+             * the logo text does, first the translate applied on the parent
+             * (of the aside) has to be counteracted, then double 0.039em
+             * is added, totalling 0.117em--made negative on the y-axis to
+             * go up. We cannot use translate as it is used below for
+             * further animating.
+             */
+            top: -0.117em;
+        }
+    }
+    &:after {
+        content: "";
+        background-image: url("/images/raven.svg");
+        background-repeat: no-repeat;
+        background-size: 2.307em 2.307em;
+        width: 2.307em;
+        height: 2.307em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include animation("soaring 30s linear alternate infinite");
+        @include animation-play-state("paused");
+        @include transition();
+        @include translate3d("0, -0.8125em, 0");
+    }
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+        /**
+         * Only animate the image when the user hovers the logo.
+         */
+        @include animation-play-state("running");
+    }
+    span {
+        white-space: nowrap;
+    }
+}
+@keyframes soaring {
+    0%,
+    100% {  @include translate3d("0, -0.8125em, 0"); }
+    12.5% { @include translate3d("-0.0625em, -0.6875em, 0"); }
+    25% {   @include translate3d(".125em, -0.3125em, 0"); }
+    37.5% { @include translate3d(".3125em, -0.375em, 0"); }
+    50% {   @include translate3d(".125em, -0.4375em, 0"); }
+    62.5% { @include translate3d(".0625em, -0.25em, 0"); }
+    75% {   @include translate3d(".1875em, -0.4375em, 0"); }
+    87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
+}
