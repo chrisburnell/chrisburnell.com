@@ -798,7 +798,8 @@ article, .articles {
 
 .article-introduction, .page-description {
   margin-bottom: 1em;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  line-height: 1.5em; }
 
 .article-banner {
   width: 810px;
