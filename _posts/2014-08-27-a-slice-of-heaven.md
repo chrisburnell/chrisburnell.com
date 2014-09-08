@@ -7,7 +7,7 @@ banner: a-slice-of-heaven.png
 banner_mobile: a-slice-of-heaven_mobile.png
 tags:
 - CSS
-- Tutorial
+- Tutorials
 comments: true
 codepen: true
 ---
