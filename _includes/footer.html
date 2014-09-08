@@ -36,13 +36,6 @@
         <script src="//platform.twitter.com/widgets.js" async></script>
     {% endif %}
     <script type="text/javascript">
-        {% if page.layout == "article" %}
-            // Remove the strong tags from the "and" in the tags list on articles
-            var articleTags = document.getElementsByClassName('article-tags');
-            for (var i = 0; i < articleTags.length; i++) {
-                articleTags[i].innerHTML = articleTags[i].innerHTML.replace('and', '</strong>and<strong>');
-            };
-        {% endif %}
         // Google Analytics
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

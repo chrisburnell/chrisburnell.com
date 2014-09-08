@@ -6,15 +6,19 @@
                          srcset="/images/avatar.png 1x,
                                  /images/avatar-200.png 2x">
                     {% if page.layout == "article" %}
-                    	<div class="author-name">by <strong>{{ site.author }}</strong></div>
-                    	<time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
-                    	{% if page.tags %}
-                    		<div class="article-tags">tagged under <strong>{{ page.tags | array_to_sentence_string }}</strong></div>
-                    	{% endif %}
+                        <div class="author-name">by <strong>{{ site.author }}</strong></div>
+                        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+                        {% if page.tags %}
+                            {% if page.tags.size > 2 %}
+                                <div class="article-tags">tagged under {% for tag in page.tags %}{% if forloop.last %}and <strong>{{ tag }}</strong>{% else %}<strong>{{ tag }}</strong>, {% endif %}{% endfor %}</div>
+                            {% else %}
+                                <div class="article-tags">tagged under {% for tag in page.tags %}{% if forloop.last %} and <strong>{{ tag }}</strong>{% else %}<strong>{{ tag }}</strong>{% endif %}{% endfor %}</div>
+                            {% endif %}
+                        {% endif %}
                     {% else %}
-                    	<div class="author-name">about <strong>{{ site.author }}</strong></div>
-                    	<div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
-                    	<div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>
+                        <div class="author-name">about <strong>{{ site.author }}</strong></div>
+                        <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
+                        <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>
                     {% endif %}
                 </div>
 
@@ -24,19 +28,19 @@
                 </div>
 
                 {% if page.layout == "article" %}
-                	{% if site.related_posts %}
-                	    <div class="related-articles">
-                	        <h3 class="related-articles-title">Related Articles</h3>
-                	        <ul class="related-articles-list">
-                	            {% for post in site.related_posts limit:2 %}
-                	                <li>
-                	                    <a class="related-article-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                	                    <time class="related-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            	                    </li>
-            	                {% endfor %}
-            	            </ul>
-            	        </div>
-            	    {% endif %}
-            	{% endif %}
+                    {% if site.related_posts %}
+                        <div class="related-articles">
+                            <h3 class="related-articles-title">Related Articles</h3>
+                            <ul class="related-articles-list">
+                                {% for post in site.related_posts limit:2 %}
+                                    <li>
+                                        <a class="related-article-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                                        <time class="related-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endif %}
 
             </aside>
