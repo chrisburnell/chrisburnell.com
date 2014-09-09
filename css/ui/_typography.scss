@@ -30,6 +30,21 @@ h3,
 h3 {
     margin-top: .5em;
     border-bottom: .125em solid $text-color-light;
+    position: relative;
+    .heading-anchor {
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        padding-right: 2em;
+        @include translate3d("0, -50%, 0");
+        &:active {
+            @include translate3d("0, -50%, 0");
+        }
+        @include breakpoint("tablet") {
+            right: 0;
+            padding-right: 0;
+        }
+    }
 }
 a {
     color: $blue;

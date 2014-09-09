@@ -400,7 +400,22 @@ h3, .article-date {
 
 h3 {
   margin-top: 0.5em;
-  border-bottom: 0.125em solid #DDDDDD; }
+  border-bottom: 0.125em solid #DDDDDD;
+  position: relative; }
+  h3 .heading-anchor {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    padding-right: 2em;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
+    h3 .heading-anchor:active {
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0); }
+    @media (max-width: 768px) {
+      h3 .heading-anchor {
+        right: 0;
+        padding-right: 0; } }
 
 a {
   color: #5F8AA6;
@@ -1079,6 +1094,17 @@ footer {
       float: none;
       text-align: center; } }
 
+.social-icon-list {
+  float: right;
+  margin-top: 0.3125em; }
+  @media (max-width: 768px) {
+    .social-icon-list {
+      margin-top: 0.625em; } }
+  .social-icon-list li {
+    display: inline-block; }
+    .social-icon-list li + li {
+      margin-left: 0.75em; }
+
 .home-link, .copyright-link, .style-guide-link {
   display: inline-block;
   white-space: nowrap; }
@@ -1118,72 +1144,6 @@ footer {
   @media (max-width: 500px) {
     .copyright-spacer {
       display: none; } }
-
-/*------------------------------------*\
-    $ SOCIAL ICONS
-\*------------------------------------*/
-.social-icon-list {
-  float: right;
-  margin-top: 0.3125em; }
-  @media (max-width: 768px) {
-    .social-icon-list {
-      margin-top: 0.625em; } }
-  .social-icon-list li {
-    display: inline-block; }
-    .social-icon-list li + li {
-      margin-left: 0.75em; }
-
-/*a*/
-.social-icon {
-  background-image: url("/images/glyphs.svg");
-  -webkit-background-size: 227px 40px;
-          background-size: 227px 40px;
-  opacity: 0.6;
-  width: 40px;
-  height: 40px;
-  display: block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  -webkit-transition: opacity .2s ease-in-out;
-          transition: opacity .2s ease-in-out; }
-  .social-icon:hover, .social-icon:focus, .social-icon:active {
-    opacity: 0.9;
-    text-decoration: none; }
-  .social-icon:active {
-    -webkit-transform: translate3d(0, .14em, 0);
-            transform: translate3d(0, .14em, 0); }
-
-/*a*/
-.codepen-link {
-  color: #212121 !important; }
-  .codepen-link.social-icon {
-    width: 41px; }
-
-/*a*/
-.github-link {
-  background-position: -51px top;
-  color: #333333 !important; }
-  .github-link.social-icon {
-    width: 38px; }
-
-/*a*/
-.lastfm-link {
-  background-position: -99px top;
-  color: #E31B23 !important; }
-
-/*a*/
-.rss-link {
-  background-position: -149px top; }
-  .rss-link.social-icon {
-    width: 31px; }
-
-/*a*/
-.twitter-link {
-  background-position: -190px top;
-  color: #2798e9 !important; }
-  .twitter-link.social-icon {
-    width: 37px; }
 
 /*------------------------------------*\
     $ CODE AND CODE BLOCKS
@@ -1274,6 +1234,73 @@ pre {
   color: #5F8AA6; }
 .highlight .ni, .highlight .ss {
   color: #85144B; }
+
+/*------------------------------------*\
+    $ ICONS
+\*------------------------------------*/
+/*a*/
+.icon, .heading-anchor {
+  background-image: url("/images/glyphs.svg");
+  -webkit-background-size: 272px 40px;
+          background-size: 272px 40px;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  width: 40px;
+  height: 40px;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: opacity .2s ease-in-out;
+          transition: opacity .2s ease-in-out; }
+  .icon:hover, .heading-anchor:hover, .icon:focus, .heading-anchor:focus, .icon:active, .heading-anchor:active {
+    opacity: 0.9;
+    text-decoration: none; }
+  .icon:active, .heading-anchor:active {
+    -webkit-transform: translate3d(0, .14em, 0);
+            transform: translate3d(0, .14em, 0); }
+
+/*a*/
+.codepen-link {
+  color: #212121 !important; }
+  .codepen-link.icon, .codepen-link.heading-anchor {
+    width: 41px; }
+
+/*a*/
+.github-link {
+  background-position: -51px top;
+  color: #333333 !important; }
+  .github-link.icon, .github-link.heading-anchor {
+    width: 38px; }
+
+/*a*/
+.lastfm-link {
+  background-position: -99px top;
+  color: #E31B23 !important; }
+
+/*a*/
+.rss-link {
+  background-position: -149px top; }
+  .rss-link.icon, .rss-link.heading-anchor {
+    width: 31px; }
+
+/*a*/
+.twitter-link {
+  background-position: -190px top;
+  color: #2798e9 !important; }
+  .twitter-link.icon, .twitter-link.heading-anchor {
+    width: 37px; }
+
+/*a*/
+.heading-anchor {
+  background-position: -176px top;
+  -webkit-background-size: 204px auto;
+          background-size: 204px auto;
+  opacity: 0;
+  width: 26px;
+  height: 30px; }
+  .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active, h3:hover .heading-anchor {
+    opacity: 0.7; }
 
 /*------------------------------------*\
     $ MISCELLANEOUS

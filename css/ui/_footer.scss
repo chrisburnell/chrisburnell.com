@@ -26,6 +26,19 @@ footer {
             text-align: center;
         }
     }
+    .social-icon-list {
+        float: right;
+        margin-top: .3125em;
+        @include breakpoint("tablet") {
+            margin-top: .625em;
+        }
+        li {
+            display: inline-block;
+            + li {
+                margin-left: .75em;
+            }
+        }
+    }
         .home-link,
         .copyright-link,
         .style-guide-link {
