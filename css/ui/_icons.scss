@@ -57,15 +57,13 @@
 }
 /*a*/.heading-anchor {
     @extend .icon;
+    background-color: rgba($white, .75);
     background-position: -176px top;
     background-size: 204px auto;
     opacity: 0;
     width: 26px;
     height: 30px;
-    &:hover,
-    &:focus,
-    &:active,
     h3:hover & {
-        opacity: .7;
+        opacity: .9;
     }
 }

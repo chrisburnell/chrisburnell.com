@@ -1293,14 +1293,15 @@ pre {
 
 /*a*/
 .heading-anchor {
+  background-color: rgba(249, 249, 249, 0.75);
   background-position: -176px top;
   -webkit-background-size: 204px auto;
           background-size: 204px auto;
   opacity: 0;
   width: 26px;
   height: 30px; }
-  .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active, h3:hover .heading-anchor {
-    opacity: 0.7; }
+  h3:hover .heading-anchor {
+    opacity: 0.9; }
 
 /*------------------------------------*\
     $ MISCELLANEOUS
