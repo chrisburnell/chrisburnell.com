@@ -508,7 +508,7 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements
  */
-article, h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), figure:not(:last-child), .cp_embed_iframe {
+h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), figure:not(:last-child), .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
 figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
@@ -873,29 +873,42 @@ article, .articles {
   text-align: center; }
   @media (max-width: 768px) {
     .pagination {
-      padding-bottom: 2.25em;
-      margin-top: 0; } }
+      margin-top: 0;
+      padding-bottom: 2.25em; } }
   .pagination li {
     display: inline-block; }
-    .pagination li:first-child a:before {
+    .pagination li + li {
+      margin-left: 1.875em; }
+      @media (max-width: 500px) {
+        .pagination li + li {
+          margin-left: 0; } }
+    .pagination li a[rel="previous"]:before {
       content: "\2190\00a0";
+      position: relative;
+      top: 0; }
+    .pagination li a[rel="next"]:after {
+      content: "\00a0\2192";
       position: relative;
       top: 0; }
     @media (max-width: 500px) {
       .pagination li:last-child a {
         margin-top: 0.5em; } }
-    .pagination li:last-child a:after {
-      content: "\00a0\2192";
-      position: relative;
-      top: 0; }
-    .pagination li:not(:empty) + li {
-      margin-left: 1.875em; }
-      @media (max-width: 500px) {
-        .pagination li:not(:empty) + li {
-          margin-left: 0; } }
+
+@media (max-width: 768px) {
+  .show-comments {
+    margin-bottom: 2em; } }
+.show-comments:before {
+  content: "\2711\00a0";
+  position: relative;
+  top: 0; }
 
 .comments {
-  margin-top: 2em; }
+  text-align: center; }
+  .pagination + .comments {
+    padding-top: 2.25em; }
+    @media (max-width: 768px) {
+      .pagination + .comments {
+        padding-top: 0; } }
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
@@ -1343,3 +1356,11 @@ pre {
  */
 p:empty {
   display: none; }
+
+/**
+ *
+ */
+@media (max-width: 768px) {
+  .not-found-page button {
+    display: block;
+    margin: 0 auto 2em; } }

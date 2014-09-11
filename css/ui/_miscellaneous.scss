@@ -47,3 +47,12 @@
 p:empty {
     display: none;
 }
+/**
+ *
+ */
+.not-found-page button {
+    @include breakpoint("tablet") {
+        display: block;
+        margin: 0 auto 2em;
+    }
+}

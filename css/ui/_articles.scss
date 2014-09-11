@@ -145,37 +145,53 @@ article,
     list-style: none;
     text-align: center;
     @include breakpoint("tablet") {
-        padding-bottom: 2.25em;
         margin-top: 0;
+        padding-bottom: 2.25em;
     }
     li {
         display: inline-block;
-        &:first-child a:before {
+        & + li {
+            margin-left: 1.875em;
+            @include breakpoint("mobile") {
+                margin-left: 0;
+            }
+        }
+        a[rel="previous"]:before {
             content: "\2190\00a0";
             position: relative; // override the button:before fix
+            top: 0;
+        }
+        a[rel="next"]:after {
+            content: "\00a0\2192";
+            position: relative; // override the button:after fix
             top: 0;
         }
         &:last-child a {
             @include breakpoint("mobile") {
                 margin-top: .5em;
             }
-            &:after {
-                content: "\00a0\2192";
-                position: relative; // override the button:after fix
-                top: 0;
-            }
-        }
-        &:not(:empty) + li {
-            margin-left: 1.875em;
-            @include breakpoint("mobile") {
-                margin-left: 0;
-            }
         }
     }
 }
 
+.show-comments {
+    @include breakpoint("tablet") {
+        margin-bottom: 2em;
+    }
+    &:before {
+        content: "\2711\00a0";
+        position: relative; // override the button:after fix
+        top: 0;
+    }
+}
 .comments {
-    margin-top: 2em;
+    text-align: center;
+    .pagination + & {
+        padding-top: 2.25em;
+        @include breakpoint("tablet") {
+            padding-top: 0;
+        }
+    }
 }
 
 /**
