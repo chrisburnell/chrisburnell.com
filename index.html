@@ -22,18 +22,18 @@ page_class: home-page
             </ol>
 
             <ol class="pagination  clear">
-                <li>{% if paginator.previous_page %}
+                {% if paginator.previous_page %}<li>
                     {% if paginator.previous_page == 1 %}
-                        <a rel="previous" class="button" href="/#articles">First Page</a>
+                        <a rel="previous" class="button  pagination-previous" href="/#articles" title="First Page">First Page</a>
                     {% else %}
-                        <a rel="previous" class="button" href="/page{{paginator.previous_page}}#articles">Previous Page</a>
+                        <a rel="previous" class="button  pagination-previous" href="/page{{paginator.previous_page}}#articles" title="Previous Page">Previous Page</a>
                     {% endif %}
-                {% endif %}</li><!--
-             --><li>{% if paginator.next_page %}
+                </li>{% endif %}
+                {% if paginator.next_page %}<li>
                     {% if paginator.next_page == paginator.total_pages %}
-                        <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Last Page</a>
+                        <a rel="next" class="button  pagination-next" href="/page{{paginator.next_page}}#articles" title="Last Page">Last Page</a>
                     {% else %}
-                        <a rel="next" class="button" href="/page{{paginator.next_page}}#articles">Next Page</a>
+                        <a rel="next" class="button  pagination-next" href="/page{{paginator.next_page}}#articles" title="Next Page">Next Page</a>
                     {% endif %}
-                {% endif %}</li>
+                </li>{% endif %}
             </ol>

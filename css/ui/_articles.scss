@@ -46,12 +46,6 @@ article,
         &:nth-child(even) {
             background-color: $black-5;
         }
-        &:nth-child(odd):last-child {
-            padding-bottom: 0;
-            @include breakpoint("tablet") {
-                padding-bottom: 1.875em;
-            }
-        }
         @include breakpoint("tablet") {
             padding-top: 1.875em;
             padding-bottom: 1.875em;
@@ -136,7 +130,7 @@ article,
     width: 100%;
     padding-top: 2.25em;
     border-top: .125em solid $black-10;
-    margin-top: 1.25em;
+    // margin-top: 1.25em;
     list-style: none;
     text-align: center;
     @include breakpoint("tablet") {
@@ -158,23 +152,27 @@ article,
             }
         }
     }
+}
+    .pagination-previous:before,
+    .pagination-previous:active:before,
+    .pagination-next:after,
+    .pagination-previous:active:after {
+        position: relative; // override the default button:before/:after
+        top: 0;
+    }
     .pagination-previous:before {
         content: "\2190\00a0\00a0";
-        position: relative; // override the button:before fix
-        top: 0;
     }
     .pagination-next:after {
         content: "\00a0\00a0\2192";
-        position: relative; // override the button:after fix
-        top: 0;
     }
-}
 
 .show-comments {
     @include breakpoint("tablet") {
         margin-bottom: 2em;
     }
-    &:before {
+    &:before,
+    &:active:before {
         content: "\2711\00a0\00a0";
         position: relative; // override the button:after fix
         top: 0;
