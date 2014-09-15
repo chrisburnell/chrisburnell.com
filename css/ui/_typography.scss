@@ -49,7 +49,7 @@ h3 {
 a {
     color: $blue;
     text-decoration: none;
-    @include transition("background .2s, color .2s, text-shadow .2s");
+    @include transition("background .2s, color .2s");
     &:hover,
     &:focus,
     &:active {

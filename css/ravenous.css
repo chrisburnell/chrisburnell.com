@@ -420,8 +420,8 @@ h3 {
 a {
   color: #5F8AA6;
   text-decoration: none;
-  -webkit-transition: background .2s, color .2s, text-shadow .2s;
-          transition: background .2s, color .2s, text-shadow .2s; }
+  -webkit-transition: background .2s, color .2s;
+          transition: background .2s, color .2s; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
   h1 a, h2 a, h3 a {
