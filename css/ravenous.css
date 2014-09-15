@@ -931,7 +931,7 @@ article, .articles {
         .pagination li + li {
           margin-left: 0; } }
 
-.pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-previous:active:after {
+.pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {
   position: relative;
   top: 0; }
 

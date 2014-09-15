@@ -156,7 +156,7 @@ article,
     .pagination-previous:before,
     .pagination-previous:active:before,
     .pagination-next:after,
-    .pagination-previous:active:after {
+    .pagination-next:active:after {
         position: relative; // override the default button:before/:after
         top: 0;
     }
