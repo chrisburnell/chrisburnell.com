@@ -7,7 +7,7 @@
                                  /images/avatar-200.png 2x">
                     {% if page.layout == "article" %}
                         <div class="author-name">by <strong>{{ site.author }}</strong></div>
-                        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+                        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
                         {% if page.tags %}
                             {% if page.tags.size > 2 %}
                                 <div class="article-tags">tagged under {% for tag in page.tags %}{% if forloop.last %}and <strong>{{ tag }}</strong>{% else %}<strong>{{ tag }}</strong>, {% endif %}{% endfor %}</div>

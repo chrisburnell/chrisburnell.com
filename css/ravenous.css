@@ -391,7 +391,7 @@ h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 1.625em; }
 
-h3, .article-date {
+h3, .articles-list .article-date {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125em;
   font-weight: 600;
@@ -841,10 +841,6 @@ article, .articles {
       border-bottom-color: #5F8AA6;
       text-decoration: none; }
 
-.article-date, .related-date {
-  display: block;
-  margin-bottom: 0.5em; }
-
 .articles-list .article-date:before {
   content: "\2013\0020";
   color: #737373; }
@@ -877,28 +873,30 @@ article, .articles {
       padding-bottom: 2.25em; } }
   .pagination li {
     display: inline-block; }
+    @media (max-width: 500px) {
+      .pagination li {
+        display: block; }
+        .pagination li:last-child {
+          margin-top: 0.6875em; } }
     .pagination li + li {
       margin-left: 1.875em; }
       @media (max-width: 500px) {
         .pagination li + li {
           margin-left: 0; } }
-    .pagination li a[rel="previous"]:before {
-      content: "\2190\00a0";
-      position: relative;
-      top: 0; }
-    .pagination li a[rel="next"]:after {
-      content: "\00a0\2192";
-      position: relative;
-      top: 0; }
-    @media (max-width: 500px) {
-      .pagination li:last-child a {
-        margin-top: 0.5em; } }
+  .pagination .pagination-previous:before {
+    content: "\2190\00a0\00a0";
+    position: relative;
+    top: 0; }
+  .pagination .pagination-next:after {
+    content: "\00a0\00a0\2192";
+    position: relative;
+    top: 0; }
 
 @media (max-width: 768px) {
   .show-comments {
     margin-bottom: 2em; } }
 .show-comments:before {
-  content: "\2711\00a0";
+  content: "\2711\00a0\00a0";
   position: relative;
   top: 0; }
 
@@ -979,7 +977,7 @@ aside {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 0.875em;
   font-style: italic; }
-  .author-information a, .author-information strong, .author-information time {
+  .author-information a, .author-information strong {
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -990,6 +988,13 @@ aside {
   @media (max-width: 768px) {
     .author-biography {
       margin-bottom: 0; } }
+
+.author-name, .author-age, .article-date, .related-date {
+  display: block;
+  margin-bottom: 0.5em; }
+
+.author-name {
+  line-height: 1.4em; }
 
 .author-image {
   -webkit-background-size: 100% 100%;
@@ -1003,9 +1008,6 @@ aside {
 .article-tags {
   display: table-cell;
   line-height: 1.429em; }
-
-.author-biography .codepen, .author-biography .lastfm, .author-biography .twitter {
-  background: none; }
 
 .related-articles-title {
   margin-top: 2em; }

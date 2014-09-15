@@ -56,8 +56,7 @@ aside {
         font-size: .875em;
         font-style: italic;
         a,
-        strong,
-        time {
+        strong {
             font-family: $secondary-font-stack;
             font-weight: 600;
             font-style: normal;
@@ -69,6 +68,16 @@ aside {
         @include breakpoint("tablet") {
             margin-bottom: 0;
         }
+    }
+    .author-name,
+    .author-age,
+    .article-date,
+    .related-date {
+        display: block;
+        margin-bottom: .5em;
+    }
+    .author-name {
+        line-height: 1.4em;
     }
     .author-image {
         @extend %rounded;
@@ -82,11 +91,6 @@ aside {
     .article-tags {
         display: table-cell; // don’t wrap around .author-image
         line-height: 1.429em;
-    }
-    .author-biography .codepen,
-    .author-biography .lastfm,
-    .author-biography .twitter {
-        background: none;
     }
     .related-articles-title {
         margin-top: 2em;

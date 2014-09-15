@@ -22,19 +22,19 @@
 
             <ol class="pagination  clear">
                 {% if page.previous.url %}<li>
-                    <a rel="previous" class="button" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
+                    <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
                 </li>{% endif %}
                 {% if page.next.url %}<li>
-                    <a rel="next" class="button" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
+                    <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
                 </li>{% endif %}
             </ol>
 
             {% if page.comments and page.comments == true %}
                 <section id="comments" class="comments  clear">
-                    <button id="show-comments" class="show-comments">Show Comments</button>
+                    <button class="show-comments  js-show-comments">Show Comments</button>
                     <div id="disqus_thread"></div>
                     <script type="text/javascript">
-                        document.getElementById('show-comments').addEventListener('click', function() {
+                        document.getElementsByClassName('js-show-comments')[0].addEventListener('click', function() {
                             this.parentNode.removeChild(this);
                             (function() {
                                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

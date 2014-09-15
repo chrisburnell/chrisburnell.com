@@ -111,15 +111,10 @@ article,
             @include transition("border-color .2s ease-in-out");
         }
     }
-    .article-date,
-    .related-date {
-        display: block;
-        margin-bottom: .5em;
+    .articles-list .article-date:before {
+        content: "\2013\0020";
+        color: $text-color-alt;
     }
-        .articles-list .article-date:before {
-            content: "\2013\0020";
-            color: $text-color-alt;
-        }
     .comments-link {
         display: inline-block;
         float: right;
@@ -150,27 +145,28 @@ article,
     }
     li {
         display: inline-block;
+        @include breakpoint("mobile") {
+            display: block;
+            &:last-child {
+                margin-top: .6875em;
+            }
+        }
         & + li {
             margin-left: 1.875em;
             @include breakpoint("mobile") {
                 margin-left: 0;
             }
         }
-        a[rel="previous"]:before {
-            content: "\2190\00a0";
-            position: relative; // override the button:before fix
-            top: 0;
-        }
-        a[rel="next"]:after {
-            content: "\00a0\2192";
-            position: relative; // override the button:after fix
-            top: 0;
-        }
-        &:last-child a {
-            @include breakpoint("mobile") {
-                margin-top: .5em;
-            }
-        }
+    }
+    .pagination-previous:before {
+        content: "\2190\00a0\00a0";
+        position: relative; // override the button:before fix
+        top: 0;
+    }
+    .pagination-next:after {
+        content: "\00a0\00a0\2192";
+        position: relative; // override the button:after fix
+        top: 0;
     }
 }
 
@@ -179,7 +175,7 @@ article,
         margin-bottom: 2em;
     }
     &:before {
-        content: "\2711\00a0";
+        content: "\2711\00a0\00a0";
         position: relative; // override the button:after fix
         top: 0;
     }
