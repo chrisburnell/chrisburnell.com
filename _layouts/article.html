@@ -34,14 +34,27 @@
                     <button class="show-comments  js-show-comments">Show Comments</button>
                     <div id="disqus_thread"></div>
                     <script type="text/javascript">
-                        document.getElementsByClassName('js-show-comments')[0].addEventListener('click', function() {
-                            this.parentNode.removeChild(this);
-                            (function() {
-                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                dsq.src = '//chrisburnell.disqus.com/embed.js';
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                            })();
+                        var showCommentsButton = document.getElementsByClassName('js-show-comments')[0];
+                        if( window.location.hash === "#comments" ) {
+                            showComments();
+                        }
+                        window.onhashchange = function() {
+                            if( location.hash === "#comments" ) {
+                                showComments();
+                            }
+                        }
+                        showCommentsButton.addEventListener('click', function() {
+                            showComments();
                         });
+                        function showComments() {
+                            if( document.getElementsByClassName('js-show-comments')[0] ) {
+                                showCommentsButton.parentNode.removeChild(showCommentsButton);
+                                (function() {
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    dsq.src = '//chrisburnell.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                        }
                     </script>
                     <noscript>Please enable Javascript to view comments.</noscript>
                 </section>
