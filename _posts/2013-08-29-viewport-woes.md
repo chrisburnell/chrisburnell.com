@@ -19,13 +19,13 @@ comments: true
 
 Browsers today can be pretty forgiving to us developers. Even HTML5, which is not at all new anymore, is very lenient about the syntax and formatting of markup. For example, it used to be that a long and unnecessarily complicated doctype would need to be supplied for browsers to properly interpret the page, like <code><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code>; today it’s as simple as <code><!doctype html></code>. This leaves developers with a lot of control over their code and allows for more natural coding, as developers are able to write their code how they choose and still remain confident it will work across all relevant devices and browsers.
 
-<h3 id="times-are-changing">The times, they are a-changing<a href="#times-are-changing" class="heading-anchor" title="#times-are-changing" aria-hidden="true"></a></h3>
+<h3 id="times-are-changing">The times, they are a-changing<a href="#times-are-changing" class="icon  heading-anchor" title="#times-are-changing" aria-hidden="true"></a></h3>
 
 It used to be the case that 72<abbr title="dots-per-inch">dpi</abbr> was the standard resolution for computer screens (or sometimes 96), and most computers displayed at this resolution; however, since the advent and massive popularity of mobile phones and tablet devices, there really is no standard resolution anymore. Many seem to follow the direction Apple take, likely due to the popularity of their devices, and cater to the resolution of the iPhone, *retina* iPhone, iPad, *retina* iPad, etc. While the resolutions Apple chooses are linear and make sense, it would be a mistake to turn a blind eye to the enormous variation found on Android, Blackberry, etc. devices. The size of the screen and the resolution vary from device to device without any pattern and some mobile devices even have DPI values as high as 300 today. You will have to assess the range you’re catering to and find a middle ground to deliver a fast and crisp experience for your users. as the various companies producing them feel no need to collaborate and try to reach a standard for this, and I don’t think it’s necessary either.
 
 This brings me to my point—that mobile and tablet browsers, though solid, are still new, and we need to tread carefully in our endeavours to cater to as many devices as makes sense for the project. We need to avoid being overly granular and bloating or detracting from the experience and code due to oversights on our part. It’s one thing to use an SVG for your logo; the method of fallback for non-supporting browsers is simple and works as we need it to across the various browsers, old and new.
 
-<h3 id="responsive-magic">So what makes all this responsive magic work?<a href="#responsive-magic" class="heading-anchor" title="#responsive-magic" aria-hidden="true"></a></h3>
+<h3 id="responsive-magic">So what makes all this responsive magic work?<a href="#responsive-magic" class="icon  heading-anchor" title="#responsive-magic" aria-hidden="true"></a></h3>
 
 It’s the <code>&lt;meta name="viewport"&gt;</code> tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
 
@@ -51,7 +51,7 @@ These tell the browser a number of things, respectively:
 
 For reasons like having a consistent user experience for all users, this is a pivotal piece of your markup and if done incorrectly, could break your entire design and leave you barking up the wrong tree until you realise that yeah, maybe sometimes, syntax matters.
 
-<h3 id="plain-and-simple">Just give it to me plain and simple<a href="#plain-and-simple" class="heading-anchor" title="#plain-and-simple" aria-hidden="true"></a></h3>
+<h3 id="plain-and-simple">Just give it to me plain and simple<a href="#plain-and-simple" class="icon  heading-anchor" title="#plain-and-simple" aria-hidden="true"></a></h3>
 
 Fine. I’ve rambled enough.
 

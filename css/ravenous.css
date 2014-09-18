@@ -1,4 +1,4 @@
-/*! Ravenous - version 2.1.1 */
+/*! Ravenous - version 2.2.0 */
 /* by Chris Burnell (@iamchrisburnell)
  * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
@@ -424,9 +424,9 @@ a {
           transition: background .2s, color .2s; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
-  h1 a, h2 a, h3 a {
+  h2 a, h3 a {
     color: #4F4F4F; }
-    h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
+    h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5F8AA6; }
 
 p {
@@ -1026,7 +1026,7 @@ aside {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 0.875em;
   font-style: italic; }
-  .author-information a, .author-information strong {
+  .author-information strong {
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -1038,7 +1038,7 @@ aside {
     .author-biography {
       margin-bottom: 0; } }
 
-.author-name, .author-age, .article-date, .related-date {
+.author-name, .author-age, .article-date {
   display: block;
   margin-bottom: 0.5em; }
 
@@ -1250,7 +1250,7 @@ pre {
     $ ICONS
 \*------------------------------------*/
 /*a*/
-.icon, .heading-anchor {
+.icon {
   background-image: url("/images/glyphs.svg");
   -webkit-background-size: 272px 40px;
           background-size: 272px 40px;
@@ -1264,24 +1264,24 @@ pre {
   white-space: nowrap;
   -webkit-transition: opacity .2s ease-in-out;
           transition: opacity .2s ease-in-out; }
-  .icon:hover, .heading-anchor:hover, .icon:focus, .heading-anchor:focus, .icon:active, .heading-anchor:active {
+  .icon:hover, .icon:focus, .icon:active {
     opacity: 0.9;
     text-decoration: none; }
-  .icon:active, .heading-anchor:active {
+  .icon:active {
     -webkit-transform: translate3d(0, .14em, 0);
             transform: translate3d(0, .14em, 0); }
 
 /*a*/
 .codepen-link {
   color: #212121 !important; }
-  .codepen-link.icon, .codepen-link.heading-anchor {
+  .codepen-link.icon {
     width: 41px; }
 
 /*a*/
 .github-link {
   background-position: -51px top;
   color: #333333 !important; }
-  .github-link.icon, .github-link.heading-anchor {
+  .github-link.icon {
     width: 38px; }
 
 /*a*/
@@ -1292,17 +1292,17 @@ pre {
 /*a*/
 .rss-link {
   background-position: -149px top; }
-  .rss-link.icon, .rss-link.heading-anchor {
+  .rss-link.icon {
     width: 31px; }
 
 /*a*/
 .twitter-link {
   background-position: -190px top;
   color: #2798e9 !important; }
-  .twitter-link.icon, .twitter-link.heading-anchor {
+  .twitter-link.icon {
     width: 37px; }
 
-/*a*/
+/*a.icon*/
 .heading-anchor {
   background-color: rgba(249, 249, 249, 0.75);
   background-position: -176px top;

@@ -16,7 +16,7 @@ I’ve been making quite a few pens over on [Codepen](http://codepen.io "Codepen
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
-<h3 id="psychedelic-slice">Psychedelic Slice<a href="#psychedelic-slice" class="heading-anchor" title="#psychedelic-slice" aria-hidden="true"></a></h3>
+<h3 id="psychedelic-slice">Psychedelic Slice<a href="#psychedelic-slice" class="icon  heading-anchor" title="#psychedelic-slice" aria-hidden="true"></a></h3>
 
 Hover the slice to see how this one works.
 
@@ -26,7 +26,7 @@ In this Pen, I’m taking advantage of <code>border-radius</code> and <code>over
 
 *Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.*
 
-<h3 id="zoomy-anchor-thing">Zoomy Anchor Thing<a href="#zoomy-anchor-thing" class="heading-anchor" title="#zoomy-anchor-thing" aria-hidden="true"></a></h3>
+<h3 id="zoomy-anchor-thing">Zoomy Anchor Thing<a href="#zoomy-anchor-thing" class="icon  heading-anchor" title="#zoomy-anchor-thing" aria-hidden="true"></a></h3>
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals "Square").
 
@@ -34,7 +34,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 *Edit: This pen was featured on [Codepen’s front page](http://ss.chrisburnell.com/2014-08-28_1411.png "ego boost manifested in PNG format"), netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
 
-<h3 id="modal-container-without-js">Modal Container without JS<a href="#modal-container-without-js" class="heading-anchor" title="#modal-container-without-js" aria-hidden="true"></a></h3>
+<h3 id="modal-container-without-js">Modal Container without JS<a href="#modal-container-without-js" class="icon  heading-anchor" title="#modal-container-without-js" aria-hidden="true"></a></h3>
 
 This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off Javascript and won’t be able to use Codepen properly, as Codepen relies on Javascript to display Pens.
 
@@ -42,13 +42,13 @@ This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.
 
 One of the often underused but **powerful** utilities available in HTML is the relationship between an <code>input</code> element and its <code>label</code> element—you can even use multiple <code>label</code>s to control your <code>input</code> field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
-<h3 id="slip-n-slide-modal">Slip-n-slide Modal<a href="#slip-n-slide-modal" class="heading-anchor" title="#slip-n-slide-modal" aria-hidden="true"></a></h3>
+<h3 id="slip-n-slide-modal">Slip-n-slide Modal<a href="#slip-n-slide-modal" class="icon  heading-anchor" title="#slip-n-slide-modal" aria-hidden="true"></a></h3>
 
 This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but simply never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
 
 <pre class="codepen" data-height="630" data-type="result" data-href="sDBJk" data-user="chrisburnell" data-safe="true"> <code> </code> [Check out this Pen!](http://codepen.io/chrisburnell/pen/sDBJk) </pre>
 
-<h3 id="simple-css-checkbox-revisited">Simple CSS Checkbox Revisited<a href="#simple-css-checkbox-revisited" class="heading-anchor" title="#simple-css-checkbox-revisited" aria-hidden="true"></a></h3>
+<h3 id="simple-css-checkbox-revisited">Simple CSS Checkbox Revisited<a href="#simple-css-checkbox-revisited" class="icon  heading-anchor" title="#simple-css-checkbox-revisited" aria-hidden="true"></a></h3>
 
 This is a pen which I overhauled a bit since I first wrote about it in [Persistent Shadows](/articles/persistent-shadows/ "Persistent Shadows"):
 
@@ -60,7 +60,7 @@ And the revisited version:
 
 Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
 
-<h3 id="over-to-you">Over to you<a href="#over-to-you" class="heading-anchor" title="#over-to-you" aria-hidden="true"></a></h3>
+<h3 id="over-to-you">Over to you<a href="#over-to-you" class="icon  heading-anchor" title="#over-to-you" aria-hidden="true"></a></h3>
 
 Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what's possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
 

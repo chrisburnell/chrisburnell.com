@@ -55,8 +55,7 @@
         width: 37px;
     }
 }
-/*a*/.heading-anchor {
-    @extend .icon;
+/*a.icon*/.heading-anchor {
     background-color: rgba($white, .75);
     background-position: -176px top;
     background-size: 204px auto;
