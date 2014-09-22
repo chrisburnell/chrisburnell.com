@@ -31,11 +31,15 @@
 
             {% if page.comments and page.comments == true %}
                 <section id="comments" class="comments  clear">
-                    <button class="show-comments  js-show-comments">Show Comments</button>
                     <div id="disqus_thread"></div>
                     <script type="text/javascript">
-                        var showCommentsButton = document.getElementsByClassName('js-show-comments')[0],
-                            commentsHash = "#comments";
+                        var commentsSection    = document.getElementById('comments'),
+                            commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>',
+                            commentsHash       = '#comments';
+                        // Create the show comments button
+                        commentsSection.innerHTML += commentsButtonHTML;
+                        // And a hook to our button
+                        var commentsButton = document.getElementsByClassName('js-show-comments')[0];
                         if( window.location.hash === commentsHash ) {
                             showComments();
                         }
@@ -44,12 +48,13 @@
                                 showComments();
                             }
                         }
-                        showCommentsButton.addEventListener('click', function() {
+                        commentsButton.addEventListener('click', function() {
                             showComments();
                         });
                         function showComments() {
+                            // Only if the button still exists should we load Disqus
                             if( document.getElementsByClassName('js-show-comments')[0] ) {
-                                showCommentsButton.parentNode.removeChild(showCommentsButton);
+                                commentsSection.removeChild(commentsButton);
                                 (function() {
                                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                                     dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -58,7 +63,7 @@
                             }
                         }
                     </script>
-                    <noscript><strong>Please enable Javascript to view comments.</strong></noscript>
+                    <noscript>Please enable Javascript to view comments.</noscript>
                 </section>
             {% endif %}
 

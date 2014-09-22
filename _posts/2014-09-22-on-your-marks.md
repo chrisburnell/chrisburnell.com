@@ -74,15 +74,18 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 <button class="show-comments  js-show-comments">Show Comments</button>
 {% endhighlight %}
 
-And let’s create some associated Javascript to hook onto our <code>button</code> and perform two actions: remove the <code>button</code> and load Disqus.
+And let’s create some associated Javascript to create and hook onto our <code>button</code> and perform two actions: remove the <code>button</code> and load Disqus.
 
 {% highlight javascript %}
-var showCommentsButton = document.getElementsByClassName('js-show-comments')[0];
-showCommentsButton.addEventListener('click', function() {
+var commentsSection    = document.getElementById('comments'),
+    commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>';
+commentsSection.innerHTML += commentsButtonHTML;
+var commentsButton = document.getElementsByClassName('js-show-comments')[0];
+commentsButton.addEventListener('click', function() {
     showComments();
 });
 function showComments() {
-    showCommentsButton.parentNode.removeChild(showCommentsButton);
+    commentsSection.removeChild(commentsButton);
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -127,12 +130,12 @@ If you remember, the <code>showComments()</code> function removes the <code>butt
 
 Almost there! Let’s create a failsafe—if our <code>button</code> no longer exists when the <code>showComments()</code> function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
-<aside><p>This isn’t actual ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the [comments](#comments "Jump to the comments").</p></aside>
+<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the [comments](#comments "Jump to the comments").</p></aside>
 
 {% highlight javascript %}
 function showComments() {
     if( document.getElementsByClassName('js-show-comments')[0] ) {
-        showCommentsButton.parentNode.removeChild(showCommentsButton);
+        commentsSection.removeChild(commentsButton);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -148,11 +151,15 @@ Here’s the entire snippet of code for my comments section:
 
 {% highlight html %}
 <section id="comments" class="comments  clear">
-    <button class="show-comments  js-show-comments">Show Comments</button>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
-        var showCommentsButton = document.getElementsByClassName('js-show-comments')[0],
-            commentsHash = "#comments";
+        var commentsSection    = document.getElementById('comments'),
+            commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>',
+            commentsHash       = '#comments';
+        // Create the show comments button
+        commentsSection.innerHTML += commentsButtonHTML;
+        // And a hook to our button
+        var commentsButton = document.getElementsByClassName('js-show-comments')[0];
         if( window.location.hash === commentsHash ) {
             showComments();
         }
@@ -161,12 +168,13 @@ Here’s the entire snippet of code for my comments section:
                 showComments();
             }
         }
-        showCommentsButton.addEventListener('click', function() {
+        commentsButton.addEventListener('click', function() {
             showComments();
         });
         function showComments() {
+            // Only if the button still exists should we load Disqus
             if( document.getElementsByClassName('js-show-comments')[0] ) {
-                showCommentsButton.parentNode.removeChild(showCommentsButton);
+                commentsSection.removeChild(commentsButton);
                 (function() {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                     dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -175,7 +183,7 @@ Here’s the entire snippet of code for my comments section:
             }
         }
     </script>
-    <noscript><strong>Please enable Javascript to view comments.</strong></noscript>
+    <noscript>Please enable Javascript to view comments.</noscript>
 </section>
 {% endhighlight %}
 
@@ -186,6 +194,12 @@ We’ve met all the conditions we set when we embarked upon this task:
 0. Load the comments if the user clicks an anchor to jump to <code>#comments</code> section
 
 As we saw in [the statistics](#the-weigh-in "The Weigh In") of Disqus’ impact, these aren’t massive savings, but they’ll certainly help out some of my users whom I know are browsing on slow connections and slow mobile phones.
+
+---
+
+We still have a small thorn when it comes to users without Javascript enabled. Of course, the <code>noscript</code> tag will display a message, <q>Please enable Javascript to view comments</q>, but there’s no way for those users to view the comments. Disqus does have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven"), but the URL isn’t predictable enough to print this URL with my CMS dynamically; furthermore, the page doesn’t work without Javascript enabled.
+
+[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [Client Education and Post-Launch Success Comments](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. <code>https://disqus.com/comments/?url=http://chrisburnell.com/articles/a-slice-of-heaven</code> is a possible solution—let’s hope Disqus implements something like this soon.
 
 ---
 
