@@ -203,4 +203,4 @@ We still have a small thorn when it comes to users without Javascript enabled. O
 
 ---
 
-Let me know, as always, [down below](#comments "Jump to the comments") if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!
+Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a Javascript wizard and close friend of mine, for helping me achieve this solution. And let me know, as always, [down below](#comments "Jump to the comments") if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!
