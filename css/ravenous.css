@@ -1366,3 +1366,15 @@ p:empty, .hidden {
   .not-found-page button {
     display: block;
     margin: 0 auto 2em; } }
+
+/*------------------------------------*\
+    $ PRINT
+\*------------------------------------*/
+@media print {
+  nav, .related-articles, .pagination, .comments, footer .home-link, .copyright-spacer, footer .style-guide-link, .social-icon-list {
+    display: none; }
+  button, .button {
+    color: #4F4F4F;
+    border: 1px solid #4F4F4F;
+    -webkit-box-shadow: none;
+            box-shadow: none; } }

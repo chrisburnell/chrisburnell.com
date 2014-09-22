@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    $ PRINT
+\*------------------------------------*/
+
+@media print {
+    nav,
+    .related-articles,
+    .pagination,
+    .comments,
+    footer .home-link,
+    .copyright-spacer,
+    footer .style-guide-link,
+    .social-icon-list {
+        display: none;
+    }
+    button,
+    .button {
+        color: $text-color;
+        border: 1px solid $text-color;
+        box-shadow: none;
+    }
+}
