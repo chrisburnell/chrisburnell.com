@@ -513,12 +513,6 @@ blockquote {
     blockquote cite:before {
       content: "\2014\00a0"; }
 
-.pullquote {
-  font-size: 1.1em;
-  line-height: 2em; }
-  .pullquote cite {
-    font-size: 0.909em; }
-
 hr {
   background: rgba(6, 6, 6, 0.1);
   width: 100%;
