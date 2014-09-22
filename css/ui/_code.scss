@@ -26,7 +26,7 @@ pre {
     &:not(.codepen) {
         @extend %rounded;
         background-color: #EEE;
-        padding: 1.5em;
+        padding: 1.5em 1.5em 1em;
         position: relative;
         overflow-x: auto;
         overflow-y: hidden;
@@ -44,9 +44,7 @@ pre {
  * [data-lang] is always applied to a code element inside a pre element
  */
 [data-lang] {
-    @include breakpoint("tablet") {
-        padding-top: 2em;
-    }
+    padding-top: 2em;
     &:before {
         content: attr(data-lang);
         background-color: rgba(#EEE, .5);
@@ -55,7 +53,8 @@ pre {
         display: block;
         padding: 0 1em;
         position: absolute;
-        right: .5em;
+        top: 1em;
+        left: .5em;
         font-family: $secondary-font-stack;
         font-size: 1.25em;
         font-weight: bold;
@@ -65,11 +64,6 @@ pre {
         pre:focus &,
         pre:active & {
             opacity: .2;
-        }
-        @include breakpoint("tablet") {
-            top: 1em;
-            right: auto;
-            left: .5em;
         }
     }
 }
