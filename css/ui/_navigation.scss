@@ -15,7 +15,6 @@ nav {
     .site-navigation {
         height: 3.75em;
         float: right;
-        list-style: none;
         @include breakpoint("tablet") {
             float: none;
             text-align: center;

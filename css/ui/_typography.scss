@@ -72,10 +72,40 @@ ol,
 ul {
     padding: 0;
     margin: 0;
-    list-style: inside disc;
+    list-style: none;
 }
-ol {
-    list-style-type: decimal-leading-zero;
+ol:not([class]),
+ul:not([class]) {
+    li {
+        padding-left: 2em;
+        margin-bottom: 1em;
+        position: relative;
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: $secondary-font-stack;
+            font-weight: bold;
+        }
+    }
+    ol:not([class]),
+    ul:not([class]) {
+        margin-top: 1em;
+    }
+}
+ol:not([class]) {
+    counter-reset: ordered-list;
+    li {
+        counter-increment: ordered-list;
+        &:before {
+            content: counter(ordered-list) ".";
+        }
+    }
+}
+ul:not([class]) li:before {
+    content: "\2022";
+    font-size: 1.5em;
+    line-height: 1em;
 }
 img,
 a img {
@@ -162,9 +192,8 @@ hr {
  */
 h3:not(:last-child),
 p:not(:last-child),
-ol:not(:last-child):not([class]),
-ul:not(:last-child):not([class]),
 figure:not(:last-child),
+pre,
 .cp_embed_iframe {
     margin-bottom: 1.25em;
 }

@@ -22,7 +22,7 @@ var {
         white-space: nowrap;
     }
 pre {
-    margin: 0 0 1em; // override normalize
+    margin-top: 0; // override normalize, margin-bottom in _typography.scss
     &:not(.codepen) {
         @extend %rounded;
         background-color: #EEE;

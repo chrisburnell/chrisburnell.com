@@ -35,22 +35,19 @@ article,
         margin-bottom: 0;
     }
 }
-.articles-list {
-    list-style: none;
-    li {
-        width: 100%;
-        display: inline-block;
-        clear: both;
-        padding: 1.5em 1em;
-        border-top: .125em solid $black-10;
-        &:nth-child(even) {
-            background-color: $black-5;
-        }
-        @include breakpoint("tablet") {
-            padding-top: 1.875em;
-            padding-bottom: 1.875em;
-            text-align: center;
-        }
+.articles-list li {
+    width: 100%;
+    display: inline-block;
+    clear: both;
+    padding: 1.5em 1em;
+    border-top: .125em solid $black-10;
+    &:nth-child(even) {
+        background-color: $black-5;
+    }
+    @include breakpoint("tablet") {
+        padding-top: 1.875em;
+        padding-bottom: 1.875em;
+        text-align: center;
     }
 }
     .article-title,
@@ -131,7 +128,6 @@ article,
     padding-top: 2.25em;
     border-top: .125em solid $black-10;
     // margin-top: 1.25em;
-    list-style: none;
     text-align: center;
     @include breakpoint("tablet") {
         margin-top: 0;

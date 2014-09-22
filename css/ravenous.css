@@ -435,10 +435,32 @@ p {
 ol, ul {
   padding: 0;
   margin: 0;
-  list-style: inside disc; }
+  list-style: none; }
 
-ol {
-  list-style-type: decimal-leading-zero; }
+ol:not([class]) li, ul:not([class]) li {
+  padding-left: 2em;
+  margin-bottom: 1em;
+  position: relative; }
+  ol:not([class]) li:before, ul:not([class]) li:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold; }
+ol:not([class]) ol:not([class]), ol:not([class]) ul:not([class]), ul:not([class]) ol:not([class]), ul:not([class]) ul:not([class]) {
+  margin-top: 1em; }
+
+ol:not([class]) {
+  counter-reset: ordered-list; }
+  ol:not([class]) li {
+    counter-increment: ordered-list; }
+    ol:not([class]) li:before {
+      content: counter(ordered-list) "."; }
+
+ul:not([class]) li:before {
+  content: "\2022";
+  font-size: 1.5em;
+  line-height: 1em; }
 
 img, a img {
   width: auto;
@@ -508,7 +530,7 @@ hr {
 /**
  * Add a bottom margin to a plethora of tasty elements
  */
-h3:not(:last-child), p:not(:last-child), ol:not(:last-child):not([class]), ul:not(:last-child):not([class]), figure:not(:last-child), .cp_embed_iframe {
+h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, .cp_embed_iframe {
   margin-bottom: 1.25em; }
 
 figure img, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
@@ -741,8 +763,7 @@ nav {
 
 .site-navigation {
   height: 3.75em;
-  float: right;
-  list-style: none; }
+  float: right; }
   @media (max-width: 768px) {
     .site-navigation {
       float: none;
@@ -831,21 +852,19 @@ article, .articles {
   article {
     margin-bottom: 0; } }
 
-.articles-list {
-  list-style: none; }
-  .articles-list li {
-    width: 100%;
-    display: inline-block;
-    clear: both;
-    padding: 1.5em 1em;
-    border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
-    .articles-list li:nth-child(even) {
-      background-color: rgba(6, 6, 6, 0.05); }
-    @media (max-width: 768px) {
-      .articles-list li {
-        padding-top: 1.875em;
-        padding-bottom: 1.875em;
-        text-align: center; } }
+.articles-list li {
+  width: 100%;
+  display: inline-block;
+  clear: both;
+  padding: 1.5em 1em;
+  border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
+  .articles-list li:nth-child(even) {
+    background-color: rgba(6, 6, 6, 0.05); }
+  @media (max-width: 768px) {
+    .articles-list li {
+      padding-top: 1.875em;
+      padding-bottom: 1.875em;
+      text-align: center; } }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
@@ -912,7 +931,6 @@ article, .articles {
   width: 100%;
   padding-top: 2.25em;
   border-top: 0.125em solid rgba(6, 6, 6, 0.1);
-  list-style: none;
   text-align: center; }
   @media (max-width: 768px) {
     .pagination {
@@ -1062,7 +1080,6 @@ aside {
   margin-top: 2em; }
 
 .related-articles-list {
-  list-style: none;
   line-height: 1.25em; }
   .related-articles-list li + li {
     margin-top: 1em; }
@@ -1169,7 +1186,7 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
   white-space: nowrap; }
 
 pre {
-  margin: 0 0 1em; }
+  margin-top: 0; }
   pre:not(.codepen) {
     background-color: #EEE;
     padding: 1.5em;
@@ -1322,7 +1339,6 @@ pre {
  */
 .color-block-list {
   margin-bottom: 0.75em;
-  list-style: none;
   text-align: center; }
   .color-block-list li {
     color: #F9F9F9;
