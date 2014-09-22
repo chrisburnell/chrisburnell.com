@@ -107,7 +107,7 @@ Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<
 <aside><p>Check out the support for [onhashchange on CanIUse](http://caniuse.com/#search=onhashchange "Support for onhashchange") before jumping in too deep!</p></aside>
 
 {% highlight javascript %}
-var commentsHash = "#comments";
+var commentsHash = '#comments';
 if( window.location.hash === commentsHash ) {
     showComments();
 }
