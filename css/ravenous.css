@@ -636,7 +636,7 @@ button, .button {
   .logo:active {
     -webkit-transform: translate3d(0, .039em, 0);
             transform: translate3d(0, .039em, 0); }
-    .logo:active:after {
+    .logo:active svg {
       /**
              * In order to get the logo image to travel up 2x the distance
              * the logo text does, first the translate applied on the parent
@@ -646,7 +646,7 @@ button, .button {
              * further animating.
              */
       top: -0.117em; }
-  .logo:after {
+  .logo svg {
     content: "";
     background-image: url("/images/raven.svg");
     background-repeat: no-repeat;
@@ -667,7 +667,7 @@ button, .button {
             transition: all .2s ease-in-out;
     -webkit-transform: translate3d(0, -0.8125em, 0);
             transform: translate3d(0, -0.8125em, 0); }
-  .logo:hover:after, .logo:focus:after, .logo:active:after {
+  .logo:hover svg, .logo:focus svg, .logo:active svg {
     /**
          * Only animate the image when the user hovers the logo.
          */
@@ -1356,11 +1356,11 @@ pre {
 /**
  * Hide empty paragraph tags
  */
-p:empty {
+p:empty, .hidden {
   display: none; }
 
 /**
- *
+ * 404 Page Button
  */
 @media (max-width: 768px) {
   .not-found-page button {

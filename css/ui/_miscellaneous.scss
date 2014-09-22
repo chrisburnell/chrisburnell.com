@@ -43,11 +43,12 @@
 /**
  * Hide empty paragraph tags
  */
-p:empty {
+p:empty,
+.hidden {
     display: none;
 }
 /**
- *
+ * 404 Page Button
  */
 .not-found-page button {
     @include breakpoint("tablet") {

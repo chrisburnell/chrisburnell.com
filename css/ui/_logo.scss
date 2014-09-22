@@ -31,7 +31,7 @@
     }
     &:active {
         @include translate3d("0, .039em, 0");
-        &:after {
+        svg {
             /**
              * In order to get the logo image to travel up 2x the distance
              * the logo text does, first the translate applied on the parent
@@ -43,7 +43,7 @@
             top: -0.117em;
         }
     }
-    &:after {
+    svg {
         content: "";
         background-image: url("/images/raven.svg");
         background-repeat: no-repeat;
@@ -60,9 +60,9 @@
         @include transition();
         @include translate3d("0, -0.8125em, 0");
     }
-    &:hover:after,
-    &:focus:after,
-    &:active:after {
+    &:hover svg,
+    &:focus svg,
+    &:active svg {
         /**
          * Only animate the image when the user hovers the logo.
          */
