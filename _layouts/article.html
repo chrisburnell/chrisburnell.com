@@ -34,12 +34,13 @@
                     <button class="show-comments  js-show-comments">Show Comments</button>
                     <div id="disqus_thread"></div>
                     <script type="text/javascript">
-                        var showCommentsButton = document.getElementsByClassName('js-show-comments')[0];
-                        if( window.location.hash === "#comments" ) {
+                        var showCommentsButton = document.getElementsByClassName('js-show-comments')[0],
+                            commentsHash = "#comments";
+                        if( window.location.hash === commentsHash ) {
                             showComments();
                         }
                         window.onhashchange = function() {
-                            if( location.hash === "#comments" ) {
+                            if( location.hash === commentsHash ) {
                                 showComments();
                             }
                         }
@@ -57,7 +58,7 @@
                             }
                         }
                     </script>
-                    <noscript>Please enable Javascript to view comments.</noscript>
+                    <noscript><strong>Please enable Javascript to view comments.</strong></noscript>
                 </section>
             {% endif %}
 

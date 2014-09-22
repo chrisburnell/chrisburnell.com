@@ -31,14 +31,14 @@
                     {% if site.related_posts %}
                         <div class="related-articles">
                             <h3 class="related-articles-title">Related Articles</h3>
-                            <ul class="related-articles-list">
+                            <ol class="related-articles-list">
                                 {% for post in site.related_posts limit:2 %}
                                     <li>
                                         <a class="related-article-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                                         <time class="related-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                                     </li>
                                 {% endfor %}
-                            </ul>
+                            </ol>
                         </div>
                     {% endif %}
                 {% endif %}
