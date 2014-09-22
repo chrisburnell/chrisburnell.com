@@ -13,6 +13,8 @@ comments: true
 
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
+In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.
+
 <h3 id="cons">The Cons<a href="#cons" class="icon  heading-anchor" title="#cons" aria-hidden="true">#cons</a></h3>
 
 - The greatest disadvantage of using Disqus may or may not be obvious, but it means you’re locked into using Disqus for your comments. Disqus do offer [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move to will make the importing of the exported Disqus an easy process.
@@ -41,6 +43,8 @@ First, let’s look at some statistics for loading Disqus comments on page load:
 - **40** requests are made from Disqus in order to display the comments section.
 
 By and large, this isn’t a massive hit. But we can *almost* always make things faster. I think it comes down what content is important—most people don’t comment on my articles, which begs the question: do most people care about the comments? That’s a difficult question to answer, but I think the point to drive home is that most people seem not to need the comments section—they’re here to read the articles. Maybe that will change over time, but with a mobile first approach, it’s important to consider what constraints mobile users could be under; namely, poor Internet connection speed and low processing power. The number of users browsing on mobile phones and tablets has only escalated in recent years, and we should be able to cater to their needs in ways other than just building responsively.
+
+<blockquote><p>Basically you shouldn’t impede your users access to your content by requiring them to download things that do not support it. Related articles, comments etc, these are secondary to the content itself, so if the user wants to see that they’ll be happy to exchange a single click over more DB queries at run time, or additional HTTP requests and JS interpretation. Essentially, build it progressively enhanced.</p><cite><a href="http://responsivedesign.is/" title="Justin Avery of Responsive Web Design fame" rel="external">Justin Avery</a></cite></blockquote>
 
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 

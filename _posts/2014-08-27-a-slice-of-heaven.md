@@ -60,6 +60,8 @@ And the revisited version:
 
 Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
 
+Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter") for helping me improve this even further by adding keyboard support for the hidden <code>input</code> field.
+
 <h3 id="over-to-you">Over to you<a href="#over-to-you" class="icon  heading-anchor" title="#over-to-you" aria-hidden="true">#over-to-you</a></h3>
 
 Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what's possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
