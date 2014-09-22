@@ -41,7 +41,7 @@ article,
     clear: both;
     padding: 1.5em 1em;
     border-top: .125em solid $black-10;
-    &:nth-child(even) {
+    &:nth-child(odd) {
         background-color: $black-5;
     }
     @include breakpoint("tablet") {

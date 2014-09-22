@@ -852,7 +852,7 @@ article, .articles {
   clear: both;
   padding: 1.5em 1em;
   border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
-  .articles-list li:nth-child(even) {
+  .articles-list li:nth-child(odd) {
     background-color: rgba(6, 6, 6, 0.05); }
   @media (max-width: 768px) {
     .articles-list li {
