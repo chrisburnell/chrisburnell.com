@@ -22,13 +22,14 @@ var cssDir =    'css/';
 gulp.task('css', function() {
     return gulp.src(cssDir + 'ravenous.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
             includePaths: [cssDir],
-            // sourceComments: 'map',
             style: 'expanded'
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%"))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(cssDir))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
