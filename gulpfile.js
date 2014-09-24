@@ -29,10 +29,10 @@ gulp.task('css', function() {
             style: 'expanded'
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%"))
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest(cssDir))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(cssDir))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
