@@ -2,7 +2,7 @@
     $ NAVIGATION
 \*------------------------------------*/
 
-nav {
+.primary-navigation {
     float: right;
     padding-top: 1.5em;
     padding-bottom: 1.25em;
@@ -12,7 +12,7 @@ nav {
         padding-top: 0;
     }
 }
-    .site-navigation {
+    .primary-navigation-list {
         height: 3.75em;
         float: right;
         @include breakpoint("tablet") {
@@ -51,18 +51,20 @@ nav {
             }
         }
     }
-        .site-navigation a:hover,
-        .site-navigation a:focus,
-        .home-page .site-navigation-home a,
-        .about-page .site-navigation-about a,
-        .archive-page .site-navigation-archive a {
+        // Primary Navigation Hover Effect
+        .primary-navigation-list a:hover,
+        .primary-navigation-list a:focus,
+        .home-page .primary-navigation-home a,
+        .about-page .primary-navigation-about a,
+        .archive-page .primary-navigation-archive a {
             color: $text-color;
             padding-bottom: .55em;
             border-bottom-width: .2em;
         }
-        .home-page .site-navigation-home a:after,
-        .about-page .site-navigation-about a:after,
-        .archive-page .site-navigation-archive a:after {
+        // Primary Navigation Active Page Arrow
+        .home-page .primary-navigation-home a:after,
+        .about-page .primary-navigation-about a:after,
+        .archive-page .primary-navigation-archive a:after {
             content: "";
             border-top: .5em solid $blue;
             border-right: .5em solid transparent;
