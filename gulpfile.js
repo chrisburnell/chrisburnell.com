@@ -32,7 +32,7 @@ gulp.task('css', function() {
         .pipe(gulp.dest(cssPath))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
-        .pipe(sourcemaps.write(cssPath))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
