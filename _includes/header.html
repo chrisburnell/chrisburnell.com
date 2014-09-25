@@ -44,7 +44,7 @@ snippet of code on a project of your own. -->
         <link rel="dns-prefetch" href="//referrer.disqus.com">
     {% endif %}
 
-    <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
+    <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
@@ -73,7 +73,7 @@ snippet of code on a project of your own. -->
 
     {% if page.page_class != "not-found-page" %}
     <!-- OpenGraph and Twitter Microdata -->
-    <meta property="og:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% else %}{{ page.title }}{% endif %}">
     <meta property="og:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
@@ -81,7 +81,7 @@ snippet of code on a project of your own. -->
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@{{ site.twitter_user }}">
-    <meta name="twitter:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+    <meta name="twitter:title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% else %}{{ page.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
     <meta name="twitter:domain" content="chrisburnell.com">
