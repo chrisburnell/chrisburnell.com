@@ -10,30 +10,27 @@ var gulp            = require('gulp'),
     notify          = require('gulp-notify'),
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
-    sourcemaps      = require('gulp-sourcemaps'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
-var cssDir =    'css/';
+var cssPath =    'css/';
 
 // -----------------------------------------------------------------------------
 
-// Compile SASS, autoprefix properties, and minify
+// Compile SASS, autoprefix properties and values, and minify
 gulp.task('css', function() {
-    return gulp.src(cssDir + 'ravenous.scss')
+    return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
-        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
-            includePaths: [cssDir],
+            includePaths: [cssPath],
             style: 'expanded'
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%"))
-        .pipe(gulp.dest(cssDir))
+        .pipe(gulp.dest(cssPath))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(cssDir))
+        .pipe(gulp.dest(cssPath))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
 
@@ -48,5 +45,5 @@ gulp.task('default', function() {
 
 // Watch files and perform the appropriate tasks
 gulp.task('watch', function() {
-    watch({glob: cssDir + '**/*.scss', emitOnGlob: false}, ['css']);
+    watch({glob: cssPath + '**/*.scss', emitOnGlob: false}, ['css']);
 });
