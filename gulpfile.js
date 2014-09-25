@@ -10,7 +10,6 @@ var gulp            = require('gulp'),
     notify          = require('gulp-notify'),
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
-    sourcemaps      = require('gulp-sourcemaps'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
@@ -22,7 +21,6 @@ var cssPath =    'css/';
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
-        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
             includePaths: [cssPath],
@@ -32,7 +30,6 @@ gulp.task('css', function() {
         .pipe(gulp.dest(cssPath))
         .pipe(rename('ravenous.min.css'))
         .pipe(minifycss())
-        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
