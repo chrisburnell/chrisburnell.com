@@ -6,6 +6,7 @@ introduction: We know that webpages are composed of text and boxes. Lots and lot
 banner: a-slice-of-heaven.png
 banner_mobile: a-slice-of-heaven_mobile.png
 tags:
+- CodePen
 - CSS
 - Tutorials
 comments: true
