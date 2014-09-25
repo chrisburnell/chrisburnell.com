@@ -32,15 +32,17 @@ snippet of code on a project of your own. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
 
-    <!-- Prefetch DNS for external assets (Google Analytics, Typekit, Disqus) -->
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
-    <link rel="dns-prefetch" href="//a.disquscdn.com">
-    <link rel="dns-prefetch" href="//disqus.com">
-    <link rel="dns-prefetch" href="//go.disqus.com">
-    <link rel="dns-prefetch" href="//juggler.services.disqus.com">
-    <link rel="dns-prefetch" href="//referrer.disqus.com">
-    <link rel="dns-prefetch" href="//tempest.services.disqus.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    {% if page.page_class == "home-page" or page.page_class == "archive-page" or page.layout == "article" %}
+        <link rel="dns-prefetch" href="//a.disquscdn.com">
+    {% endif %}
+    {% if page.layout == "article" %}
+        <link rel="dns-prefetch" href="//disqus.com">
+        <link rel="dns-prefetch" href="//juggler.services.disqus.com">
+        <link rel="dns-prefetch" href="//referrer.disqus.com">
+    {% endif %}
 
     <title>{% if page.page_class == "home-page" %}{{ site.title }} &ndash; {{ site.tagline }}{% else %}{{ page.title }} &ndash; {{ site.title }}{% endif %}</title>
 
