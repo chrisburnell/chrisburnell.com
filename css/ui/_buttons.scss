@@ -27,8 +27,7 @@ button,
     @include non-selectable;
     @include gradient(transparent, $black-5);
     @include transition("background-color .2s ease-in-out");
-    &:hover,
-    &:focus {
+    @include on-event {
         background-color: lighten($blue, 5%);
         text-decoration: none;
     }

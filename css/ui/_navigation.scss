@@ -41,9 +41,7 @@
             line-height: 1.25em;
             text-transform: uppercase;
             @include transition("color .2s, padding-bottom .2s, border-bottom-width .2s, transform .2s");
-            &:hover,
-            &:focus,
-            &:active {
+            @include on-event {
                 text-decoration: none;
             }
             &:active {
@@ -54,6 +52,7 @@
         // Primary Navigation Hover Effect
         .primary-navigation-list a:hover,
         .primary-navigation-list a:focus,
+        .primary-navigation-list a:active,
         .home-page .primary-navigation-home a,
         .about-page .primary-navigation-about a,
         .archive-page .primary-navigation-archive a {

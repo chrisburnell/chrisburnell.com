@@ -24,9 +24,7 @@
     @include breakpoint("mobile") {
         font-size: 2.75em;
     }
-    &:hover,
-    &:focus,
-    &:active {
+    @include on-event {
         text-decoration: none;
     }
     &:active {
@@ -60,9 +58,7 @@
         @include transition();
         @include translate3d("0, -0.8125em, 0");
     }
-    &:hover svg,
-    &:focus svg,
-    &:active svg {
+    @include on-event("svg") {
         /**
          * Only animate the image when the user hovers the logo.
          */

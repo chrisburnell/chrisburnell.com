@@ -92,9 +92,7 @@ article,
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
             margin-left: -0.27em;
-            &:hover,
-            &:focus,
-            &:active {
+            @include on-event {
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;

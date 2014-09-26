@@ -569,7 +569,7 @@ button, .button {
   background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
   -webkit-transition: background-color .2s ease-in-out;
           transition: background-color .2s ease-in-out; }
-  button:hover, button:focus, .button:hover, .button:focus {
+  button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active {
     background-color: #6f97af;
     text-decoration: none; }
   button:active, .button:active {
@@ -782,7 +782,7 @@ button, .button {
       -webkit-transform: translate3d(0, .2em, 0);
               transform: translate3d(0, .2em, 0); }
 
-.primary-navigation-list a:hover, .primary-navigation-list a:focus, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a {
+.primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a {
   color: #4F4F4F;
   padding-bottom: 0.55em;
   border-bottom-width: 0.2em; }

@@ -14,9 +14,7 @@
     text-indent: 100%;
     white-space: nowrap;
     @include transition("opacity .2s ease-in-out");
-    &:hover,
-    &:focus,
-    &:active {
+    @include on-event {
         opacity: .9;
         text-decoration: none;
     }
