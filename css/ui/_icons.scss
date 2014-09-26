@@ -2,8 +2,8 @@
     $ ICONS
 \*------------------------------------*/
 
-// Hide our logo injected just below <body>
-.logo-svg {
+// Hide our SVGs injected just below <body>
+body > svg {
     display: none;
 }
 
