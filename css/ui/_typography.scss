@@ -31,28 +31,26 @@ h3 {
     margin-top: .5em;
     border-bottom: .125em solid $text-color-light;
     position: relative;
+}
     .heading-anchor {
-        position: absolute;
-        top: 50%;
-        right: 100%;
-        padding-right: 2em;
-        @include translate3d("0, -50%, 0");
-        &:active {
-            @include translate3d("0, -50%, 0");
-        }
-        @include breakpoint("tablet") {
-            right: 0;
-            padding-right: 0;
+        color: $text-color-alt;
+        display: none;
+        padding-left: 1em;
+        font-size: .777em;
+        line-height: 1.618em;
+        text-transform: lowercase;
+        vertical-align: middle;
+        h3:hover &,
+        h3:focus &,
+        h3:active & {
+            display: inline-block;
         }
     }
-}
 a {
     color: $blue;
     text-decoration: none;
     @include transition("background .2s, color .2s");
-    &:hover,
-    &:focus,
-    &:active {
+    @include on-event {
         text-decoration: underline;
     }
     h2 &,
@@ -188,15 +186,16 @@ pre,
 .cp_embed_iframe {
     margin-bottom: 1.25em;
 }
-// We’re goin’ up around the bend
-%rounded {
-    background-clip: padding-box;
-    border-radius: .375em;
-}
 /**
  * Text Highlighting
  */
 ::selection {
     background: $blue;
     color: $white;
+}
+
+// We’re goin’ up around the bend
+%rounded {
+    background-clip: padding-box;
+    border-radius: .375em;
 }

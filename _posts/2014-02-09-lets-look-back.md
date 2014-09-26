@@ -14,11 +14,11 @@ comments: true
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for simple maintenance and comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
 
-<h3 id="in-comes-sass">In comes SASS<a href="#in-comes-sass" class="icon  heading-anchor" title="#in-comes-sass" aria-hidden="true">#in-comes-sass</a></h3>
+<h3 id="in-comes-sass">In comes SASS<a href="#in-comes-sass" class="heading-anchor" title="#in-comes-sass" aria-hidden="true">#in-comes-sass</a></h3>
 
 Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">SASS</dfn>](http://sass-lang.com "SASS: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in not just writing CSS but also in reading and understanding it. Because with SASS we can nest selectors, children selectors simply sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
-<h3 id="i-dont-want-to-do-anything">I don’t want to do anything, anymore!<a href="#i-dont-want-to-do-anything" class="icon  heading-anchor" title="#i-dont-want-to-do-anything" aria-hidden="true">#i-dont-want-to-do-anything</a></h3>
+<h3 id="i-dont-want-to-do-anything">I don’t want to do anything, anymore!<a href="#i-dont-want-to-do-anything" class="heading-anchor" title="#i-dont-want-to-do-anything" aria-hidden="true">#i-dont-want-to-do-anything</a></h3>
 
 <aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](/articles/first-article-ever/ "First Ever Article").</p></aside>
 
@@ -44,7 +44,7 @@ It’s only a small amount of time spent each time I wanted to compile my SASS, 
 
 All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SASS for the most part.
 
-<h3 id="a-better-way">There must be a better way!<a href="#a-better-way" class="icon  heading-anchor" title="#a-better-way" aria-hidden="true">#a-better-way</a></h3>
+<h3 id="a-better-way">There must be a better way!<a href="#a-better-way" class="heading-anchor" title="#a-better-way" aria-hidden="true">#a-better-way</a></h3>
 
 <figure>
     <img src="{{ site.url }}/images/articles/good-news-everyone.jpg" alt="Good news everyone!" role="presentation">
@@ -53,7 +53,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 
 And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a “streaming build system” built on *[node.js](http://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
 
-<h3 id="what-gulp-does-for-me">Let’s see what gulp does for me<a href="#what-gulp-does-for-me" class="icon  heading-anchor" title="#what-gulp-does-for-me" aria-hidden="true">#what-gulp-does-for-me</a></h3>
+<h3 id="what-gulp-does-for-me">Let’s see what gulp does for me<a href="#what-gulp-does-for-me" class="heading-anchor" title="#what-gulp-does-for-me" aria-hidden="true">#what-gulp-does-for-me</a></h3>
 
 How does *gulp* work?
 
@@ -101,7 +101,7 @@ gulp.task('default', ['scripts', 'images', 'watch']);
 
 What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The <code>watch</code> task is being used to listen for changes to particular files and run tasks subsequently. My particular <code>gulpfile.js</code> is used to compile my SASS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when <code>watch</code> is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* <code>watch</code> to compile, minify, and refesh for you!
 
-<h3 id="good-old-brass-tacks">Good old brass tacks<a href="#good-old-brass-tacks" class="icon  heading-anchor" title="#good-old-brass-tacks" aria-hidden="true">#good-old-brass-tacks</a></h3>
+<h3 id="good-old-brass-tacks">Good old brass tacks<a href="#good-old-brass-tacks" class="heading-anchor" title="#good-old-brass-tacks" aria-hidden="true">#good-old-brass-tacks</a></h3>
 
 Here’s an example of what the CSS for my logo looked like prior to these changes:
 
@@ -427,7 +427,7 @@ Next, let’s turn this CSS into SASS.
     <figcaption>Success.</figcaption>
 </figure>
 
-<h3 id="a-few-major-changes">You’ll notice a few major changes<a href="#a-few-major-changes" class="icon  heading-anchor" title="#a-few-major-changes" aria-hidden="true">#a-few-major-changes</a></h3>
+<h3 id="a-few-major-changes">You’ll notice a few major changes<a href="#a-few-major-changes" class="heading-anchor" title="#a-few-major-changes" aria-hidden="true">#a-few-major-changes</a></h3>
 
 - the <code>hover</code>, <code>focus</code>, and <code>active</code> states are nested, using an <code>&</code> prefix
 - the <code>after</code> pseudo class is nested, using an <code>&</code> prefix
@@ -510,7 +510,7 @@ Another thing, which I won’t bother to illustrate here, is the splitting of fi
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
-<h3 id="useful-links">Useful Links<a href="#useful-links" class="icon  heading-anchor" title="#useful-links" aria-hidden="true">#useful-links</a></h3>
+<h3 id="useful-links">Useful Links<a href="#useful-links" class="heading-anchor" title="#useful-links" aria-hidden="true">#useful-links</a></h3>
 
 1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
 2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
@@ -523,7 +523,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
 
-<h3 id="wrapping-it-up">Wrapping it up<a href="#wrapping-it-up" class="icon  heading-anchor" title="#wrapping-it-up" aria-hidden="true">#wrapping-it-up</a></h3>
+<h3 id="wrapping-it-up">Wrapping it up<a href="#wrapping-it-up" class="heading-anchor" title="#wrapping-it-up" aria-hidden="true">#wrapping-it-up</a></h3>
 
 I cannot stress how awesome SASS is and how it can drastically speed up your workflow. If you’ve never written SASS before, try it with variables first. When you’re building a big stylesheet, or group of stylesheets, it can be a pain to have to remember HEX colour values or font stacks. The advantage of SASS is that it allows you to set these values to variables and use them througout the rest of your CSS; furthermore, if you need to manipulate these colours (lighten, darken, opacity, etc.), SASS has the ability to do this for you, leaving you to only remember the variable names.
 
@@ -531,7 +531,7 @@ The power of *Autoprefixer* speaks for itself, really.
 
 And with *gulp* <code>watching</code>, the transition from the SASS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
 
-<h3 id="thats-whats-up">So that’s what’s up<a href="#thats-whats-up" class="icon  heading-anchor" title="#thats-whats-up" aria-hidden="true">#thats-whats-up</a></h3>
+<h3 id="thats-whats-up">So that’s what’s up<a href="#thats-whats-up" class="heading-anchor" title="#thats-whats-up" aria-hidden="true">#thats-whats-up</a></h3>
 
 To sum up, the site looks <s>pretty much</s> the same, but the codebase behind it is different. I can’t recommend getting into SASS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to “vanilla” CSS for so long, but writing SASS just feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
