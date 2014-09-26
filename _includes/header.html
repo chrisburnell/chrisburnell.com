@@ -51,8 +51,8 @@ snippet of code on a project of your own. -->
     <link rel="shortcut icon" href="/icon.png">
     <link rel="apple-touch-icon-precomposed" href="/icon.png">
     <link rel="author" type="text/plain" href="/humans.txt">
-    <meta name="description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="apple-mobile-web-app-title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+    <meta name="description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endif %}">
+    <meta name="apple-mobile-web-app-title" content="{% if page.page_class == "home-page" %}{{ site.title }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% else %}{{ page.title }}{% endif %}">
 
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
