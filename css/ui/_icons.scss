@@ -2,6 +2,11 @@
     $ ICONS
 \*------------------------------------*/
 
+// Hide our logo injected just below <body>
+.logo-svg {
+    display: none;
+}
+
 /*a*/.icon {
     background-image: url("/images/glyphs.svg");
     background-size: 272px 40px;
