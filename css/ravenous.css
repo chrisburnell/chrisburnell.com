@@ -564,6 +564,7 @@ button, .button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-touch-callout: none;
   background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
   background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.05) 100%);
   -webkit-transition: background-color .2s ease-in-out;
@@ -614,6 +615,7 @@ button, .button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-touch-callout: none;
   -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
   @media (max-width: 768px) {

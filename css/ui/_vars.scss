@@ -28,7 +28,7 @@ $tablet-wrapper-width: 768px;
 $mobile-wrapper-width: 500px;
 $wrapper-padding:      1.25em;
 
-// CSS3 Mixins
+// SCSS Mixins
 @mixin breakpoint($width) {
     @if $width == "tablet" {
         @media (max-width: $tablet-wrapper-width) { @content ; }
@@ -51,4 +51,8 @@ $wrapper-padding:      1.25em;
 }
 @mixin animation-play-state($value: "paused") {
     animation-play-state: #{$value};
+}
+@mixin non-selectable() {
+    user-select: none;
+    -webkit-touch-callout: none;
 }

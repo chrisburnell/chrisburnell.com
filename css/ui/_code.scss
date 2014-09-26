@@ -58,7 +58,7 @@ pre {
         font-size: 1.25em;
         font-weight: bold;
         text-transform: uppercase;
-        @include transition();
+        @include transition;
         pre:hover &,
         pre:focus &,
         pre:active & {
