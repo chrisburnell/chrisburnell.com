@@ -16,4 +16,4 @@ My website doubles as a blog and as a playground for me to perfect the code that
 
 ## License
 
-The contents of this repository are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License").
+The contents of this repository are licensed under a [BY-NC-SA Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en "BY-NC-SA Creative Commons License").
