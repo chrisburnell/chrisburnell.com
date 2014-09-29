@@ -36,7 +36,8 @@ h3 {
         color: $text-color-alt;
         display: none;
         padding-left: 1em;
-        font-size: .777em;
+        font-family: $code-font-stack;
+        font-size: .625em;
         line-height: 1.618em;
         text-transform: lowercase;
         vertical-align: middle;
@@ -46,6 +47,7 @@ h3 {
             display: inline-block;
         }
     }
+
 a {
     color: $blue;
     text-decoration: none;
@@ -61,9 +63,26 @@ a {
         }
     }
 }
+/**
+ * Branded Link Colors
+ */
+.codepen-link {
+    color: $codepen-color !important;
+}
+.github-link {
+    color: $github-color !important;
+}
+.lastfm-link {
+    color: $lastfm-color !important;
+}
+.twitter-link {
+    color: darken($twitter-color, 10%) !important;
+}
+
 p {
     margin: 0;
 }
+
 ol,
 ul {
     padding: 0;
@@ -103,6 +122,7 @@ ul:not([class]) li:before {
     font-size: 1.5em;
     line-height: 1em;
 }
+
 img,
 a img {
     width: auto;
@@ -120,6 +140,7 @@ figure {
         padding-top: .444em;
         font-style: italic;
     }
+
 abbr[title],
 blockquote,
 cite,
@@ -135,6 +156,7 @@ dfn[title] {
 ins {
     text-decoration: none;
 }
+
 q {
     font-style: italic;
     quotes: "\201C" "\201D" "\2018" "\2019";
@@ -168,6 +190,7 @@ blockquote {
         }
     }
 }
+
 hr {
     background: $black-10;
     width: 100%;
@@ -176,19 +199,7 @@ hr {
     border: 0;
     margin: .5em 0 1.5em;
 }
-/**
- * Add a bottom margin to a plethora of tasty elements
- */
-h3:not(:last-child),
-p:not(:last-child),
-figure:not(:last-child),
-pre,
-.cp_embed_iframe {
-    margin-bottom: 1.25em;
-}
-/**
- * Text Highlighting
- */
+
 ::selection {
     background: $blue;
     color: $white;

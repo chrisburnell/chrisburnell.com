@@ -367,6 +367,12 @@ body {
   .clear:after {
     clear: both; }
 
+/**
+ * Add a bottom margin to a plethora of tasty elements
+ */
+h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, .cp_embed_iframe {
+  margin-bottom: 1.25em; }
+
 /*------------------------------------*\
     $ TYPOGRAPHY
 \*------------------------------------*/
@@ -403,7 +409,8 @@ h3 {
   color: #737373;
   display: none;
   padding-left: 1em;
-  font-size: 0.777em;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.625em;
   line-height: 1.618em;
   text-transform: lowercase;
   vertical-align: middle; }
@@ -421,6 +428,21 @@ a {
     color: #4F4F4F; }
     h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5F8AA6; }
+
+/**
+ * Branded Link Colors
+ */
+.codepen-link {
+  color: #212121 !important; }
+
+.github-link {
+  color: #333333 !important; }
+
+.lastfm-link {
+  color: #E31B23 !important; }
+
+.twitter-link {
+  color: #2798e9 !important; }
 
 p {
   margin: 0; }
@@ -514,18 +536,10 @@ hr {
   border: 0;
   margin: 0.5em 0 1.5em; }
 
-/**
- * Add a bottom margin to a plethora of tasty elements
- */
-h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, .cp_embed_iframe {
-  margin-bottom: 1.25em; }
-
-/**
- * Text Highlighting
- */
 ::-moz-selection {
   background: #5F8AA6;
   color: #F9F9F9; }
+
 ::selection {
   background: #5F8AA6;
   color: #F9F9F9; }
@@ -1234,7 +1248,7 @@ pre {
 /*------------------------------------*\
     $ ICONS
 \*------------------------------------*/
-body > svg {
+.svg-master {
   display: none; }
 
 /*a*/
@@ -1253,43 +1267,20 @@ body > svg {
   .icon:active {
     -webkit-transform: translate3d(0, .14em, 0);
             transform: translate3d(0, .14em, 0); }
+  .icon.codepen-link {
+    width: 41px; }
+  .icon.github-link {
+    width: 38px; }
+  .icon.lastfm-link {
+    width: 40px; }
+  .icon.rss-link {
+    width: 31px; }
+  .icon.twitter-link {
+    width: 37px; }
   .icon svg {
     width: 100%;
     height: 100%;
     display: block; }
-
-/*a*/
-.codepen-link {
-  color: #212121 !important; }
-  .codepen-link.icon {
-    width: 41px; }
-
-/*a*/
-.github-link {
-  background-position: -51px top;
-  color: #333333 !important; }
-  .github-link.icon {
-    width: 38px; }
-
-/*a*/
-.lastfm-link {
-  background-position: -99px top;
-  color: #E31B23 !important; }
-  .lastfm-link.icon {
-    width: 40px; }
-
-/*a*/
-.rss-link {
-  background-position: -149px top; }
-  .rss-link.icon {
-    width: 31px; }
-
-/*a*/
-.twitter-link {
-  background-position: -190px top;
-  color: #2798e9 !important; }
-  .twitter-link.icon {
-    width: 37px; }
 
 /*------------------------------------*\
     $ MISCELLANEOUS
