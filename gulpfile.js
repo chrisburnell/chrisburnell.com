@@ -13,7 +13,7 @@ var gulp            = require('gulp'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
-var cssPath =    'css/';
+var cssPath = 'css/';
 
 // -----------------------------------------------------------------------------
 

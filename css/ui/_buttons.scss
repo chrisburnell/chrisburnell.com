@@ -50,4 +50,7 @@ button,
         bottom: -0.182em;
         left: 0;
     }
+    &[disabled] {
+        opacity: .4;
+    }
 }

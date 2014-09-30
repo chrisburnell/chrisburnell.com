@@ -90,7 +90,7 @@ snippet of code on a project of your own. -->
     {% endif %}
 
 </head>
-<body class="{{ page.page_class }}">
+<body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
 
 {% include inline-svgs.html %}
 

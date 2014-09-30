@@ -598,6 +598,8 @@ button, .button {
     top: 0;
     bottom: -0.182em;
     left: 0; }
+  button[disabled], .button[disabled] {
+    opacity: 0.4; }
 
 /*------------------------------------*\
     $ HEADER
