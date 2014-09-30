@@ -15,21 +15,21 @@ comments: true
 
 Since my last design update, I started working at [Squiz](http://squiz.net/uk "Squiz UK") and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix "Squiz Matrix"), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
-<h3 id="more-than-meets-the-eye">More than meets the eye<a href="#more-than-meets-the-eye" class="heading-anchor" title="#more-than-meets-the-eye" aria-hidden="true">#more-than-meets-the-eye</a></h3>
+{% include heading-anchor.html id="more-than-meets-the-eye" title="More than meets the eye" %}
 
 Enforcing strict CSS standards goes beyond keeping an eye out for <code>!important</code>s or excessively long chained selectors&mdash;the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I’ll be writing on this soon!)
 
 Part of the challenge was realising that decisions I made at the beginning would have a profound impact on how certain aspects of the project would go further on: the naming convention, architecture of both CSS and the file structure on which Matrix (the Content Management System) was built, etc.
 
-<h3 id="whats-new">What’s new in this iteration?<a href="#whats-new" class="heading-anchor" title="#whats-new" aria-hidden="true">#whats-new</a></h3>
+{% include heading-anchor.html id="whats-new" title="What’s new in this iteration?" %}
 
 I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies&mdash;over the years, I’ve gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was basically poor planning on my part over and over again. Pretty stupid. That’s where Jekyll came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
 
-<h3 id="what-is-jekyll">What is Jekyll?<a href="#what-is-jekyll" class="heading-anchor" title="#what-is-jekyll" aria-hidden="true">#what-is-jekyll</a></h3>
+{% include heading-anchor.html id="what-is-jekyll" title="What is Jekyll?" %}
 
 > Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll &bull; Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
 
-<h3 id="better-faster-stronger">Better, Faster, Stronger<a href="#better-faster-stronger" class="heading-anchor" title="#better-faster-stronger" aria-hidden="true">#better-faster-stronger</a></h3>
+{% include heading-anchor.html id="better-faster-stronger" title="Better, Faster, Stronger" %}
 
 I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing&mdash;<span class="gray">(Edit: and editing)</span>&mdash; actual content.
 
@@ -49,7 +49,7 @@ This is what it looks like when you’re writing it:
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
-<h3 id="brass-tacks">Let’s get down to brass tacks<a href="#brass-tacks" class="heading-anchor" title="#brass-tacks" aria-hidden="true">#brass-tacks</a></h3>
+{% include heading-anchor.html id="brass-tacks" title="Let’s get down to brass tacks" %}
 
 During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we developers can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a simple transition from desktop to mobile responsive layouts as well as making the process in Markdown simple as well. It’s been a flurry of knowledge into my *super-powerful* (read: tiny) brain, and these have only been a handful of the things I’ve learned.
 
@@ -57,7 +57,7 @@ I encourage everyone to approach their passions with the same aggression and vig
 
 The most important lesson of them all, of course, is to **keep it simple**. Whether it’s code or design, just stick to what you need and you’re sure to find success.
 
-<h3 id="major-props">Major props<a href="#major-props" class="heading-anchor" title="#major-props" aria-hidden="true">#major-props</a></h3>
+{% include heading-anchor.html id="major-props" title="Major props" %}
 
 I can’t take all the credit for this website, really. It’s the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I’m going to give a few shout-outs to some awesome people who helped me immensely.
 
@@ -83,6 +83,6 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 - [Responsive Design Newsletter](http://responsivedesignweekly.com/ "Responsive Design Newsletter") by [Justin Avery](http://surfthedream.com.au/ "Justin Avery")
 - [Visual Idiot](http://visualidiot.com/ "Visual Idiot")
 
-<h3 id="thats-it">And that’s basically it!<a href="#thats-it" class="heading-anchor" title="#thats-it" aria-hidden="true">#thats-it</a></h3>
+{% include heading-anchor.html id="thats-it" title="And that’s basically it!" %}
 
 Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }} "My Twitter") or [send me an email](mailto:me@chrisburnell)!

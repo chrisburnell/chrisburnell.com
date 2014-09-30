@@ -15,14 +15,14 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 
 In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.
 
-<h3 id="cons">The Cons of Disqus<a href="#cons" class="heading-anchor" title="#cons" aria-hidden="true">#cons</a></h3>
+{% include heading-anchor.html id="cons" title="The Cons of Disqus" %}
 
 - The greatest disadvantage of using Disqus may or may not be obvious, but it means you’re locked into using Disqus for your comments. Disqus do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options") and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with Disqus in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
 - Another issue with Disqus that isn’t terribly relevant anymore today, outside the context of a few edge case users, is that Disqus relies on Javascript to inject your comments and commenting form onto your page—users with Javascript turned off won’t be able to comment. I imagine there are also some aggressive ad-block browser plugins which would disallow Disqus from loading, but they’re probably also an edge case. In the case that the user doesn’t have Javascript turned on, a message is displayed using a <code>noscript</code> tag.
 - It’s beyond my knowledge how caching is affected by Disqus—whether or not it is cached, or available to be cached offline—but as the *movement* to bring offline support to the web ramps up, this could present an issue.
 
-<h3 id="pros">The Pros of Disqus<a href="#pros" class="heading-anchor" title="#pros" aria-hidden="true">#pros</a></h3>
+{% include heading-anchor.html id="pros" title="The Pros of Disqus" %}
 
 - Once you’ve signed up for a Disqus account, you’ll be able to comment on just about *any* site that has implemented Disqus for their commenting system.
 - Disqus has just about all the bells and whistles you could want for making comments:
@@ -33,7 +33,7 @@ In this article I’m going to run through how I manage my comments section from
 - Option to display related articles from your own blog or from other blogs using Disqus
 - Option to add targeted ads and monetise upon clickthroughs
 
-<h3 id="the-weigh-in">The Weigh In<a href="#the-weigh-in" class="heading-anchor" title="#the-weigh-in" aria-hidden="true">#the-weigh-in</a></h3>
+{% include heading-anchor.html id="the-weigh-in" title="The Weigh In" %}
 
 First, let’s look at some statistics for loading Disqus comments on page load:
 
@@ -48,7 +48,7 @@ By and large, this isn’t a massive hit. But we can *almost* always make things
 
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 
-<h3 id="at-my-signal">At My Signal, Unleash Hell<a href="#at-my-signal" class="heading-anchor" title="#at-my-signal" aria-hidden="true">#at-my-signal</a></h3>
+{% include heading-anchor.html id="at-my-signal" title="At My Signal, Unleash Hell" %}
 
 Let’s decide what the conditions are for loading the comments:
 
@@ -145,7 +145,7 @@ function showComments() {
 }
 {% endhighlight %}
 
-<h3 id="the-whole-nine-yards">The Whole Nine Yards<a href="#the-whole-nine-yards" class="heading-anchor" title="#the-whole-nine-yards" aria-hidden="true">#the-whole-nine-yards</a></h3>
+{% include heading-anchor.html id="the-whole-nine-yards" title="The Whole Nine Yards" %}
 
 Here’s the entire snippet of code for my comments section:
 

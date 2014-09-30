@@ -17,6 +17,9 @@ github_url: https://github.com/chrisburnell
 lastfm_url: http://last.fm/user/chrisburnell
 twitter_url: http://twitter.com/iamchrisburnell
 
+codepen_theme: 119
+codepen_tabfree: 8863
+
 timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
