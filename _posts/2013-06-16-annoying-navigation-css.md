@@ -15,7 +15,7 @@ codepen: true
 
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
-<pre class="codepen" data-height="600" data-theme-id="119" data-type="result" data-slug-hash="LHqFy" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/LHqFy">Check out this Pen!</a> </pre>
+<pre class="codepen" data-height="740" data-theme-id="8863" data-type="result" data-slug-hash="LHqFy" data-user="chrisburnell" data-safe="true"> <code> </code> <a href="http://codepen.io/chrisburnell/pen/LHqFy">Check out this Pen!</a> </pre>
 
 <h3 id="whats-going-on">What’s going on here?<a href="#whats-going-on" class="heading-anchor" title="#whats-going-on" aria-hidden="true">#whats-going-on</a></h3>
 
