@@ -395,7 +395,7 @@ h2 {
 
 h3, .articles-list .article-date {
   font-family: "proxima-nova", sans-serif;
-  font-size: 1.25em;
+  font-size: 1.125em;
   font-weight: 600;
   line-height: 1.875em;
   text-transform: uppercase; }
@@ -410,7 +410,7 @@ h3 {
   display: none;
   padding-left: 1em;
   font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: 0.65em;
+  font-size: 0.723em;
   line-height: 1.875em;
   text-transform: lowercase;
   vertical-align: middle; }
