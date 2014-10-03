@@ -11,11 +11,10 @@
         /**
          * Comment toggling for article pages
          */
-        var commentsSection    = document.getElementById('comments'),
-            commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>',
-            commentsHash       = '#comments';
+        var commentsSection = document.getElementById('comments'),
+            commentsHash    = '#comments';
         // Create the show comments button
-        commentsSection.innerHTML += commentsButtonHTML;
+        commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
         // And a hook to our button
         var commentsButton = document.getElementsByClassName('js-show-comments')[0];
         if( window.location.hash === commentsHash ) {

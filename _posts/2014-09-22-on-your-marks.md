@@ -82,9 +82,8 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 And let’s create some associated Javascript to create and hook onto our <code>button</code> and perform two actions: remove the <code>button</code> and load Disqus.
 
 {% highlight javascript %}
-var commentsSection    = document.getElementById('comments'),
-    commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>';
-commentsSection.innerHTML += commentsButtonHTML;
+var commentsSection    = document.getElementById('comments');
+commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
 var commentsButton = document.getElementsByClassName('js-show-comments')[0];
 commentsButton.addEventListener('click', function() {
     showComments();
@@ -159,10 +158,9 @@ Here’s the entire snippet of code for my comments section:
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var commentsSection    = document.getElementById('comments'),
-            commentsButtonHTML = '<button class="show-comments  js-show-comments">Show Comments</button>',
             commentsHash       = '#comments';
         // Create the show comments button
-        commentsSection.innerHTML += commentsButtonHTML;
+        commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
         // And a hook to our button
         var commentsButton = document.getElementsByClassName('js-show-comments')[0];
         if( window.location.hash === commentsHash ) {
