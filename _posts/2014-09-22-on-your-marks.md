@@ -82,7 +82,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 And let’s create some associated Javascript to create and hook onto our <code>button</code> and perform two actions: remove the <code>button</code> and load Disqus.
 
 {% highlight javascript %}
-var commentsSection    = document.getElementById('comments');
+var commentsSection = document.getElementById('comments');
 commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
 var commentsButton = document.getElementsByClassName('js-show-comments')[0];
 commentsButton.addEventListener('click', function() {
