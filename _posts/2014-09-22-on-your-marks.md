@@ -156,38 +156,39 @@ Here’s the entire snippet of code for my comments section:
 {% highlight html %}
 <section id="comments" class="comments  clear">
     <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var commentsSection    = document.getElementById('comments'),
-            commentsHash       = '#comments';
-        // Create the show comments button
-        commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
-        // And a hook to our button
-        var commentsButton = document.getElementsByClassName('js-show-comments')[0];
-        if( window.location.hash === commentsHash ) {
-            showComments();
-        }
-        window.onhashchange = function() {
-            if( location.hash === commentsHash ) {
-                showComments();
-            }
-        }
-        commentsButton.addEventListener('click', function() {
-            showComments();
-        });
-        function showComments() {
-            // Only if the button still exists should we load Disqus
-            if( document.getElementsByClassName('js-show-comments')[0] ) {
-                commentsSection.removeChild(commentsButton);
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//chrisburnell.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            }
-        }
-    </script>
     <noscript>Please enable Javascript to view comments.</noscript>
 </section>
+{% endhighlight %}
+
+{% highlight javascript %}
+var commentsSection    = document.getElementById('comments'),
+    commentsHash       = '#comments';
+// Create the show comments button
+commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
+// And a hook to our button
+var commentsButton = document.getElementsByClassName('js-show-comments')[0];
+if( window.location.hash === commentsHash ) {
+    showComments();
+}
+window.onhashchange = function() {
+    if( location.hash === commentsHash ) {
+        showComments();
+    }
+}
+commentsButton.addEventListener('click', function() {
+    showComments();
+});
+function showComments() {
+    // Only if the button still exists should we load Disqus
+    if( document.getElementsByClassName('js-show-comments')[0] ) {
+        commentsSection.removeChild(commentsButton);
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//chrisburnell.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    }
+}
 {% endhighlight %}
 
 We’ve met all the conditions we set when we embarked upon this task:
