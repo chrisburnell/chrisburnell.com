@@ -180,6 +180,11 @@ article,
             padding-top: 0;
         }
     }
+    noscript {
+        font-family: $secondary-font-stack;
+        font-size: 1.25em;
+        font-style: italic;
+    }
 }
 
 /**

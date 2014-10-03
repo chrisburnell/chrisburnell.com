@@ -968,6 +968,10 @@ article, .articles {
     @media screen and (max-width: 768px) {
       .pagination + .comments {
         padding-top: 0; } }
+  .comments noscript {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25em;
+    font-style: italic; }
 
 /**
  * Contains YouTube and Vimeo embedded videos properly and allows them to be
