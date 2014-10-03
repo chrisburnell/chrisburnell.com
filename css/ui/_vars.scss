@@ -31,10 +31,10 @@ $wrapper-padding:      1.25em;
 // SCSS Mixins
 @mixin breakpoint($width) {
     @if $width == "tablet" {
-        @media (max-width: $tablet-wrapper-width) { @content ; }
+        @media screen and (max-width: $tablet-wrapper-width) { @content ; }
     }
     @else if $width == "mobile" {
-        @media (max-width: $mobile-wrapper-width) { @content ; }
+        @media screen and (max-width: $mobile-wrapper-width) { @content ; }
     }
 }
 @mixin gradient($top, $bottom) {

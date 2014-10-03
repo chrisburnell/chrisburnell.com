@@ -22,9 +22,9 @@ h2 {
 h3,
 .articles-list .article-date {
     font-family: $secondary-font-stack;
-    font-size: 1.125em;
+    font-size: 1.25em;
     font-weight: 600;
-    line-height: 1.618em;
+    line-height: 1.875em;
     text-transform: uppercase;
 }
 h3 {
@@ -37,8 +37,8 @@ h3 {
         display: none;
         padding-left: 1em;
         font-family: $code-font-stack;
-        font-size: .625em;
-        line-height: 1.618em;
+        font-size: .65em;
+        line-height: 1.875em;
         text-transform: lowercase;
         vertical-align: middle;
         h3:hover &,
