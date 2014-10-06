@@ -14,18 +14,19 @@
     line-height: 1em;
     text-transform: uppercase;
     text-shadow: .058em .058em 0 $black-5;
+    white-space: nowrap;
     z-index: 1;
     @include non-selectable;
     @include transition;
+    @include on-event {
+        text-decoration: none;
+    }
     @include breakpoint("tablet") {
         display: inline-block;
         float: none;
     }
     @include breakpoint("mobile") {
         font-size: 2.75em;
-    }
-    @include on-event {
-        text-decoration: none;
     }
     &:active {
         @include translate3d("0, .039em, 0");
@@ -60,18 +61,15 @@
          */
         @include animation-play-state("running");
     }
-    span {
-        white-space: nowrap;
-    }
 }
 @keyframes soaring {
     0%,
-    100% {  @include translate3d("0, -0.8125em, 0"); }
+    100%  { @include translate3d(" 0,        -0.8125em, 0"); }
     12.5% { @include translate3d("-0.0625em, -0.6875em, 0"); }
-    25% {   @include translate3d(".125em, -0.3125em, 0"); }
-    37.5% { @include translate3d(".3125em, -0.375em, 0"); }
-    50% {   @include translate3d(".125em, -0.4375em, 0"); }
-    62.5% { @include translate3d(".0625em, -0.25em, 0"); }
-    75% {   @include translate3d(".1875em, -0.4375em, 0"); }
+    25%   { @include translate3d("  .125em,  -0.3125em, 0"); }
+    37.5% { @include translate3d("  .3125em, -0.375em,  0"); }
+    50%   { @include translate3d("  .125em,  -0.4375em, 0"); }
+    62.5% { @include translate3d("  .0625em, -0.25em,   0"); }
+    75%   { @include translate3d("  .1875em, -0.4375em, 0"); }
     87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
 }

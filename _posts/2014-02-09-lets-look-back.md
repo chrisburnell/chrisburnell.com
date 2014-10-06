@@ -47,7 +47,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 {% include heading-anchor.html id="a-better-way" title="There must be a better way!" %}
 
 <figure>
-    <img src="{{ site.url }}/images/articles/good-news-everyone.jpg" alt="Good news everyone!" role="presentation">
+    <img src="/images/articles/good-news-everyone.jpg" alt="Good news everyone!" role="presentation">
     <figcaption>There is!</figcaption>
 </figure>
 
@@ -423,7 +423,7 @@ Next, let’s turn this CSS into SASS.
 {% endhighlight %}
 
 <figure>
-    <img src="{{ site.url }}/images/articles/welldone.gif" alt="Just look at it... :')" role="presentation">
+    <img src="/images/articles/welldone.gif" alt="Just look at it... :')" role="presentation">
     <figcaption>Success.</figcaption>
 </figure>
 

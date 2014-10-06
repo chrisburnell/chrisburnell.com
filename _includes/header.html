@@ -48,7 +48,7 @@ snippet of code on a project of your own. -->
 
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
-    <link rel="shortcut icon" href="/icon.png">
+    <link rel="shortcut icon" href="/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/icon.png">
     <link rel="author" type="text/plain" href="/humans.txt">
     <meta name="description" content="{% if page.introduction %}{{ page.introduction }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endif %}">
@@ -85,7 +85,7 @@ snippet of code on a project of your own. -->
     <header class="wrap  clear" role="banner">
         <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="-1">
             <svg><use xlink:href="#raven" /></svg>
-            <span>{{ site.title }}</span>
+            {{ site.title }}
         </a>
         <nav class="primary-navigation" role="navigation">
             <ol class="primary-navigation-list">

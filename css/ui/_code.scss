@@ -5,7 +5,8 @@
 code,
 kbd,
 samp,
-var {
+var,
+.monospace {
     font-family: $code-font-stack;
     font-size: .875em;
 }

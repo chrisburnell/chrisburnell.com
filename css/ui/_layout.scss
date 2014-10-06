@@ -29,7 +29,6 @@ body {
 }
 .clear {
     clear: both;
-    overflow: hidden;
     zoom: 1;
     &:before,
     &:after {
@@ -39,6 +38,12 @@ body {
     &:after {
         clear: both;
     }
+}
+/**
+ * Allow for fixed-width content
+ */
+.max-width {
+    width: $max-wrapper-width;
 }
 /**
  * Add a bottom margin to a plethora of tasty elements

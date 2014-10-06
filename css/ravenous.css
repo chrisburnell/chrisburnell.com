@@ -359,13 +359,18 @@ body {
 
 .clear {
   clear: both;
-  overflow: hidden;
   zoom: 1; }
   .clear:before, .clear:after {
     content: "";
     display: table; }
   .clear:after {
     clear: both; }
+
+/**
+ * Allow for fixed-width content
+ */
+.max-width {
+  width: 1120px; }
 
 /**
  * Add a bottom margin to a plethora of tasty elements
@@ -624,6 +629,7 @@ button, .button {
   line-height: 1em;
   text-transform: uppercase;
   text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
+  white-space: nowrap;
   z-index: 1;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -632,6 +638,8 @@ button, .button {
   -webkit-touch-callout: none;
   -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
+  .logo:hover, .logo:focus, .logo:active {
+    text-decoration: none; }
   @media screen and (max-width: 768px) {
     .logo {
       display: inline-block;
@@ -639,8 +647,6 @@ button, .button {
   @media screen and (max-width: 500px) {
     .logo {
       font-size: 2.75em; } }
-  .logo:hover, .logo:focus, .logo:active {
-    text-decoration: none; }
   .logo:active {
     -webkit-transform: translate3d(0, .039em, 0);
             transform: translate3d(0, .039em, 0); }
@@ -676,37 +682,35 @@ button, .button {
          */
     -webkit-animation-play-state: running;
             animation-play-state: running; }
-  .logo span {
-    white-space: nowrap; }
 
 @-webkit-keyframes soaring {
   0%, 100% {
-    -webkit-transform: translate3d(0, -0.8125em, 0);
-            transform: translate3d(0, -0.8125em, 0); }
+    -webkit-transform: translate3d( 0,        -0.8125em, 0);
+            transform: translate3d( 0,        -0.8125em, 0); }
 
   12.5% {
     -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
             transform: translate3d(-0.0625em, -0.6875em, 0); }
 
   25% {
-    -webkit-transform: translate3d(.125em, -0.3125em, 0);
-            transform: translate3d(.125em, -0.3125em, 0); }
+    -webkit-transform: translate3d(  .125em,  -0.3125em, 0);
+            transform: translate3d(  .125em,  -0.3125em, 0); }
 
   37.5% {
-    -webkit-transform: translate3d(.3125em, -0.375em, 0);
-            transform: translate3d(.3125em, -0.375em, 0); }
+    -webkit-transform: translate3d(  .3125em, -0.375em,  0);
+            transform: translate3d(  .3125em, -0.375em,  0); }
 
   50% {
-    -webkit-transform: translate3d(.125em, -0.4375em, 0);
-            transform: translate3d(.125em, -0.4375em, 0); }
+    -webkit-transform: translate3d(  .125em,  -0.4375em, 0);
+            transform: translate3d(  .125em,  -0.4375em, 0); }
 
   62.5% {
-    -webkit-transform: translate3d(.0625em, -0.25em, 0);
-            transform: translate3d(.0625em, -0.25em, 0); }
+    -webkit-transform: translate3d(  .0625em, -0.25em,   0);
+            transform: translate3d(  .0625em, -0.25em,   0); }
 
   75% {
-    -webkit-transform: translate3d(.1875em, -0.4375em, 0);
-            transform: translate3d(.1875em, -0.4375em, 0); }
+    -webkit-transform: translate3d(  .1875em, -0.4375em, 0);
+            transform: translate3d(  .1875em, -0.4375em, 0); }
 
   87.5% {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
@@ -714,32 +718,32 @@ button, .button {
 
 @keyframes soaring {
   0%, 100% {
-    -webkit-transform: translate3d(0, -0.8125em, 0);
-            transform: translate3d(0, -0.8125em, 0); }
+    -webkit-transform: translate3d( 0,        -0.8125em, 0);
+            transform: translate3d( 0,        -0.8125em, 0); }
 
   12.5% {
     -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
             transform: translate3d(-0.0625em, -0.6875em, 0); }
 
   25% {
-    -webkit-transform: translate3d(.125em, -0.3125em, 0);
-            transform: translate3d(.125em, -0.3125em, 0); }
+    -webkit-transform: translate3d(  .125em,  -0.3125em, 0);
+            transform: translate3d(  .125em,  -0.3125em, 0); }
 
   37.5% {
-    -webkit-transform: translate3d(.3125em, -0.375em, 0);
-            transform: translate3d(.3125em, -0.375em, 0); }
+    -webkit-transform: translate3d(  .3125em, -0.375em,  0);
+            transform: translate3d(  .3125em, -0.375em,  0); }
 
   50% {
-    -webkit-transform: translate3d(.125em, -0.4375em, 0);
-            transform: translate3d(.125em, -0.4375em, 0); }
+    -webkit-transform: translate3d(  .125em,  -0.4375em, 0);
+            transform: translate3d(  .125em,  -0.4375em, 0); }
 
   62.5% {
-    -webkit-transform: translate3d(.0625em, -0.25em, 0);
-            transform: translate3d(.0625em, -0.25em, 0); }
+    -webkit-transform: translate3d(  .0625em, -0.25em,   0);
+            transform: translate3d(  .0625em, -0.25em,   0); }
 
   75% {
-    -webkit-transform: translate3d(.1875em, -0.4375em, 0);
-            transform: translate3d(.1875em, -0.4375em, 0); }
+    -webkit-transform: translate3d(  .1875em, -0.4375em, 0);
+            transform: translate3d(  .1875em, -0.4375em, 0); }
 
   87.5% {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
@@ -1171,7 +1175,7 @@ footer {
 /*------------------------------------*\
     $ CODE AND CODE BLOCKS
 \*------------------------------------*/
-code, kbd, samp, var {
+code, kbd, samp, var, .monospace {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 0.875em; }
 
