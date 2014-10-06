@@ -184,10 +184,11 @@ blockquote {
         }
     }
     cite {
+        display: block;
         margin-left: 2em;
         margin-top: 1em;
         &:before {
-            content: "\2014\00a0";
+            content: "\2013\00a0";
         }
     }
 }

@@ -529,10 +529,11 @@ blockquote {
       content: close-quote;
       padding-left: 0.1875em; }
   blockquote cite {
+    display: block;
     margin-left: 2em;
     margin-top: 1em; }
     blockquote cite:before {
-      content: "\2014\00a0"; }
+      content: "\2013\00a0"; }
 
 hr {
   background: rgba(6, 6, 6, 0.1);
@@ -1181,7 +1182,8 @@ code, kbd, samp, var, .monospace {
 
 p code, ol code, ul code, ins, kbd, mark, samp, var {
   background-color: rgba(95, 138, 166, 0.1);
-  padding: 0.215em; }
+  padding: 0.215em;
+  border-radius: 0.25em; }
 
 pre {
   margin-top: 0; }
