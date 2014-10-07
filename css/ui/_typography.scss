@@ -132,7 +132,8 @@ a img {
 figure {
     margin: 0 0 .5em;
     text-align: center;
-    img {
+    img,
+    svg {
         @extend %rounded;
     }
 }
