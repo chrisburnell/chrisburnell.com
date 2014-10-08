@@ -71,5 +71,5 @@
             position: absolute;
             top: 100%;
             left: 50%;
-            transform: translateX(-50%);
+            @include translate3d("-50%, 0, 0");
         }

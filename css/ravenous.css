@@ -810,9 +810,8 @@ button, .button {
   position: absolute;
   top: 100%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0); }
 
 /*------------------------------------*\
     $ ARTICLES AND ARTICLE LISTS
