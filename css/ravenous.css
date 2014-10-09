@@ -375,7 +375,7 @@ body {
 /**
  * Add a bottom margin to a plethora of tasty elements
  */
-h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, .cp_embed_iframe {
+h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, iframe {
   margin-bottom: 1.25em; }
 
 /*------------------------------------*\
@@ -993,6 +993,14 @@ article, .articles {
     position: absolute;
     top: 0;
     left: 0; }
+
+/**
+ * Fix iframes
+ */
+iframe {
+  width: 100%;
+  border: none;
+  overflow-x: hidden; }
 
 /*------------------------------------*\
     $ ASIDES
