@@ -1071,6 +1071,8 @@ aside {
 
 .author-name {
   line-height: 1.4em; }
+  .author-name strong {
+    display: inline-block; }
 
 .author-image {
   background-size: 100%;
