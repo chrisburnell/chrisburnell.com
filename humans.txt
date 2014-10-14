@@ -2,17 +2,17 @@
 
 /* OWNER & DEVELOPER */
 
-    Name: Chris Burnell
-    Twitter: @iamchrisburnell
+    Name:     Chris Burnell
+    Twitter:  @iamchrisburnell
 
 /* SITE */
 
-    URL: http://chrisburnell.com
-    Language: English
-    Doctype: HTML5
-    Fonts: FF Meta Serif Web Pro, Proxima Nova, League Gothic
-    Compiled with: Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
-    Running on: Jekyll on Github Pages
+    URL:            http://chrisburnell.com
+    Language:       English
+    Doctype:        HTML5
+    Fonts:          FF Meta Serif Web Pro, Proxima Nova, League Gothic
+    Compiled with:  Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
+    Running on:     Jekyll on Github Pages
 
 /* LANGUAGES */
 
@@ -24,7 +24,7 @@
 
 /* SERVICES */
 
-    Google Analytics: http://google.com/analytics
-    Disqus: http://disqus.com
-    Typekit: http://typekit.com
-    Twitter: http://dev.twitter.com
+    Google Analytics:  http://google.com/analytics
+    Disqus:            http://disqus.com
+    Typekit:           http://typekit.com
+    Twitter:           http://dev.twitter.com
