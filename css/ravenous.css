@@ -1053,7 +1053,8 @@ aside {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 0.875em;
   font-style: italic; }
-  .author-information strong {
+  .author-information a, .author-information strong {
+    color: inherit;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;

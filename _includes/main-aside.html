@@ -9,7 +9,16 @@
                         <div class="author-name">by <strong>{{ site.author }}</strong></div>
                         <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
                         {% if page.tags %}
-                            <div class="article-tags">tagged under {% for tag in page.tags %}{% if forloop.last %}and <strong>{{ tag }}</strong>{% else %}<strong>{{ tag }}</strong>{% if page.tags.size > 2 %},{% endif %} {% endif %}{% endfor %}</div>
+                            <div class="article-tags">
+                                tagged under
+                                {% for tag in page.tags %}
+                                    {% if forloop.last %}
+                                        and <a href="/tags#{{ tag | downcase }}" title="All posts tagged '{{ tag }}'">{{ tag }}</a>
+                                    {% else %}
+                                        <a href="/tags#{{ tag | downcase }}" title="All posts tagged '{{ tag }}'">{{ tag }}</a>{% if page.tags.size > 2 %},{% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         {% endif %}
                     {% else %}
                         <div class="author-name">about <strong>{{ site.author }}</strong></div>

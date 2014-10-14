@@ -14,7 +14,7 @@ page_class: tags-page
             {% endcapture %}
             {% assign sorted_tags = tags | split:' ' | sort %}
             {% for tag in sorted_tags %}
-                <h3>{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span></h3>
+                <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" title="#{{ tag | downcase }}" aria-hidden="true">#{{ tag | downcase }}</a></h3>
                 <ul class="tags-list" role="list">
                     {% for post in site.tags[tag] %}
                         <li>

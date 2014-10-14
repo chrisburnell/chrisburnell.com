@@ -55,7 +55,9 @@ aside {
         font-family: $primary-font-stack;
         font-size: .875em;
         font-style: italic;
+        a,
         strong {
+            color: inherit;
             font-family: $secondary-font-stack;
             font-weight: 600;
             font-style: normal;
