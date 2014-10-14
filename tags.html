@@ -1,0 +1,26 @@
+---
+title: Article Tags
+description: A list of tags and their prose counterparts.
+layout: default
+page_class: tags-page
+---
+
+{% capture tags %}
+    {% for tag in site.tags %}
+        {{ tag[0] }}
+    {% endfor %}
+{% endcapture %}
+
+{% assign sorted_tags = tags | split:' ' | sort %}
+
+{% for tag in sorted_tags %}
+    <h3>{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span></h3>
+    <ul class="tags-list">
+    {% for post in site.tags[tag] %}
+        <li>
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+        </li>
+    {% endfor %}
+    </ul>
+{% endfor %}

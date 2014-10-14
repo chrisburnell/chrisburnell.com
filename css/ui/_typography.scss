@@ -90,7 +90,8 @@ ul {
     list-style: none;
 }
 ol:not([class]),
-ul:not([class]) {
+ul:not([class]),
+.default-list {
     li {
         padding-left: 2em;
         margin-bottom: 1em;
@@ -104,11 +105,13 @@ ul:not([class]) {
         }
     }
     ol:not([class]),
-    ul:not([class]) {
+    ul:not([class]),
+    .default-list {
         margin-top: 1em;
     }
 }
-ol:not([class]) {
+ol:not([class]),
+ol.default-list {
     counter-reset: ordered-list;
     li {
         counter-increment: ordered-list;
@@ -117,7 +120,8 @@ ol:not([class]) {
         }
     }
 }
-ul:not([class]) li:before {
+ul:not([class]) li:before,
+ul.default-list li:before {
     content: "\2022";
     font-size: 1.5em;
     line-height: 1em;

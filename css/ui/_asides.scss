@@ -110,6 +110,6 @@ aside {
         padding-left: 1em;
         font-size: .8125em;
         &:before {
-            content: "- ";
+            content: "\2013\0020";
         }
     }

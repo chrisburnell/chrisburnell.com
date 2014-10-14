@@ -457,27 +457,27 @@ ol, ul {
   margin: 0;
   list-style: none; }
 
-ol:not([class]) li, ul:not([class]) li {
+ol:not([class]) li, ul:not([class]) li, .default-list li {
   padding-left: 2em;
   margin-bottom: 1em;
   position: relative; }
-  ol:not([class]) li:before, ul:not([class]) li:before {
+  ol:not([class]) li:before, ul:not([class]) li:before, .default-list li:before {
     position: absolute;
     top: 0;
     left: 0;
     font-family: "proxima-nova", sans-serif;
     font-weight: bold; }
-ol:not([class]) ol:not([class]), ol:not([class]) ul:not([class]), ul:not([class]) ol:not([class]), ul:not([class]) ul:not([class]) {
+ol:not([class]) ol:not([class]), ol:not([class]) ul:not([class]), ol:not([class]) .default-list, ul:not([class]) ol:not([class]), ul:not([class]) ul:not([class]), ul:not([class]) .default-list, .default-list ol:not([class]), .default-list ul:not([class]), .default-list .default-list {
   margin-top: 1em; }
 
-ol:not([class]) {
+ol:not([class]), ol.default-list {
   counter-reset: ordered-list; }
-  ol:not([class]) li {
+  ol:not([class]) li, ol.default-list li {
     counter-increment: ordered-list; }
-    ol:not([class]) li:before {
+    ol:not([class]) li:before, ol.default-list li:before {
       content: counter(ordered-list) "."; }
 
-ul:not([class]) li:before {
+ul:not([class]) li:before, ul.default-list li:before {
   content: "\2022";
   font-size: 1.5em;
   line-height: 1em; }
@@ -1102,7 +1102,7 @@ aside {
   padding-left: 1em;
   font-size: 0.8125em; }
   .related-article-date:before {
-    content: "- "; }
+    content: "\2013\0020"; }
 
 /*------------------------------------*\
     $ FOOTER
@@ -1307,6 +1307,29 @@ pre {
 /*------------------------------------*\
     $ MISCELLANEOUS
 \*------------------------------------*/
+/**
+ * Tags List
+ */
+.tags-count {
+  color: #737373; }
+
+.tags-list {
+  margin-bottom: 1em;
+  font-family: "proxima-nova", sans-serif; }
+  .tags-list a, .tags-list time {
+    font-style: normal;
+    font-weight: 600; }
+  .tags-list time {
+    color: #737373;
+    float: right; }
+    @media screen and (max-width: 500px) {
+      .tags-list time {
+        display: block;
+        float: none;
+        padding-left: 1em; }
+        .tags-list time:before {
+          content: "\2013\0020"; } }
+
 /**
  * Style Guide
  */

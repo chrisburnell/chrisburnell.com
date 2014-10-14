@@ -3,6 +3,34 @@
 \*------------------------------------*/
 
 /**
+ * Tags List
+ */
+.tags-count {
+    color: $text-color-alt;
+}
+.tags-list {
+    margin-bottom: 1em;
+    font-family: $secondary-font-stack;
+    a,
+    time {
+        font-style: normal;
+        font-weight: 600;
+    }
+    time {
+        color: $text-color-alt;
+        float: right;
+        @include breakpoint("mobile") {
+            display: block;
+            float: none;
+            padding-left: 1em;
+            &:before {
+                content: "\2013\0020";
+            }
+        }
+    }
+}
+
+/**
  * Style Guide
  */
 .color-block-list {
