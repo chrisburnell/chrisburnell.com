@@ -6,26 +6,26 @@ layout: null
 
     <channel>
 
-        <title>Chris Burnell</title>
-        <link href="http://chrisburnell.com"/>
+        <title>{{ site.author }}</title>
+        <link href="{{ site.url }}"/>
         <author>
-            <name>Chris Burnell</name>
-            <email>me@chrisburnell.com</email>
+            <name>{{ site.author }}</name>
+            <email>{{ site.author_email }}</email>
         </author>
         <language>en</language>
-        <copyright>Copyright 2014 Chris Burnell under a Creative Commons license.</copyright>
+        <copyright>Copyright 2014 {{ site.author }} under a Creative Commons license.</copyright>
 
         <image>
-            <url>http://chrisburnell.com/icon.png</url>
-            <title>Chris Burnell</title>
-            <link>http://chrisburnell.com</link>
+            <url>{{ site.url }}/favicon.png</url>
+            <title>{{ site.author }}</title>
+            <link>{{ site.url }}</link>
         </image>
 
         {% for post in site.posts %}{% unless post.draft %}<item>
             <title>{{ post.title }}</title>
-            <link>http://chrisburnell.com{{ post.url }}</link>
+            <link>{{ site.url }}{{ post.url }}</link>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-            <id>http://chrisburnell.com{{ post.id }}</id>{% if post.introduction %}
+            <id>{{ site.url }}{{ post.id }}</id>{% if post.introduction %}
             <description>{{ post.introduction }}</description>{% endif %}{% if post.tags %}
             <tags>{{ post.tags | array_to_sentence_string }}</tags>{% endif %}
         </item>{% endunless %}{% endfor %}

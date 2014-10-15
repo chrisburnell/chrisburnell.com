@@ -45,7 +45,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository](https://github.com/chrisburnell/chrisburnell.github.io "The Github Repository of this website") and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository]({{ site.github_url }}/chrisburnell.github.io "The Github Repository of this website") and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -85,4 +85,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 {% include heading-anchor.html id="thats-it" title="And that’s basically it!" %}
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe (http://chrisburnell.com/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }} "My Twitter") or [send me an email](mailto:me@chrisburnell)!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe ({{ site.url }}/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.twitter_url }} "My Twitter") or [send me an email](mailto:{{ site.author_email }})!
