@@ -11,7 +11,8 @@
                         {% if page.tags %}
                             <div class="article-tags">
                                 tagged under
-                                {% for tag in page.tags %}
+                                {% assign sorted_tags = (page.tags | sort:0) %}
+                                {% for tag in sorted_tags %}
                                     {% if forloop.last %}
                                         and <a href="/tags#{{ tag | downcase }}" title="All posts tagged '{{ tag }}'">{{ tag }}</a>
                                     {% else %}
