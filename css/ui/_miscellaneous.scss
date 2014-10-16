@@ -17,11 +17,7 @@
 .tags-list {
     margin-bottom: 1em;
     font-family: $secondary-font-stack;
-    a,
-    time {
-        font-style: normal;
-        font-weight: 600;
-    }
+    font-weight: 600;
     time {
         color: $text-color-alt;
         float: right;

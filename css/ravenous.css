@@ -562,7 +562,6 @@ button, .button {
   display: inline-block;
   padding: 0 0.727em 0.182em;
   border: 0;
-  margin-bottom: 0.227em;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375em;
@@ -1310,10 +1309,8 @@ figure img, figure svg, blockquote, .article-banner, aside:not(.author), .author
 
 .tags-list {
   margin-bottom: 1em;
-  font-family: "proxima-nova", sans-serif; }
-  .tags-list a, .tags-list time {
-    font-style: normal;
-    font-weight: 600; }
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 600; }
   .tags-list time {
     color: #737373;
     float: right; }
