@@ -7,48 +7,41 @@ button,
     background-color: $blue;
     color: $white;
     min-width: 8em;
-    height: 1.91em;
+    height: 2.182em;
     display: inline-block;
-    padding: 0 .727em;
+    padding: 0 .727em .182em;
     border: 0;
     margin-bottom: .227em;
     position: relative;
     font-family: $heading-font-stack;
     font-size: 1.375em;
-    line-height: 1.91em;
+    line-height: 2em;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 0 -0.045em 0 $black-25;
     white-space: nowrap;
     cursor: pointer;
     border-radius: .182em;
-    box-shadow: inset 0 0 .091em $black-10,
-                0 .182em 0 darken($blue, 10%);
+    box-shadow: inset 0 -0.182em 0 0 darken($blue, 10%);
     @include non-selectable;
-    @include gradient(transparent, $black-5);
     @include transition("background-color .2s ease-in-out");
     @include on-event {
         background-color: lighten($blue, 5%);
         text-decoration: none;
     }
     &:active {
-        text-decoration: none;
-        box-shadow: 0 .046em 0 darken($blue, 5%);
-        @include translate3d("0, .182em, 0");
+        height: 2em;
+        padding-bottom: 0;
+        margin-top: .182em;
+        box-shadow: inset 0 -0.046em 0 0 darken($blue, 10%);
         &:before,
         &:after {
+            content: "";
+            width: 100%;
+            height: .182em;
+            position: absolute;
             top: -0.182em;
-            bottom: 0;
+            left: 0;
         }
-    }
-    &:before,
-    &:after {
-        content: "";
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: -0.182em;
-        left: 0;
     }
     &[disabled] {
         opacity: .4;

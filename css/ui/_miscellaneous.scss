@@ -2,6 +2,12 @@
     $ MISCELLANEOUS
 \*------------------------------------*/
 
+// We’re goin’ up around the bend
+%rounded {
+    background-clip: padding-box;
+    border-radius: .375em;
+}
+
 /**
  * Tags List
  */
@@ -68,6 +74,7 @@
         }
     }
 }
+
 /**
  * Hide empty paragraph tags
  */
@@ -75,6 +82,7 @@ p:empty,
 .hidden {
     display: none;
 }
+
 /**
  * 404 Page Button
  */

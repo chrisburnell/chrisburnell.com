@@ -211,9 +211,3 @@ hr {
     background: $blue;
     color: $white;
 }
-
-// We’re goin’ up around the bend
-%rounded {
-    background-clip: padding-box;
-    border-radius: .375em;
-}
