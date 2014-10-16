@@ -13,13 +13,14 @@ var gulp            = require('gulp'),
     watch           = require('gulp-watch');
 
 // Define the locations of our assets
-var cssPath = 'css/';
+var cssPath = 'css/',
+    includesPath = '_includes';
 
 // -----------------------------------------------------------------------------
 
 // Compile SASS, autoprefix properties and values, and minify
 gulp.task('css', function() {
-    return gulp.src(cssPath + 'ravenous.scss')
+    return gulp.src(cssPath + '*.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -28,7 +29,7 @@ gulp.task('css', function() {
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%"))
         .pipe(gulp.dest(cssPath))
-        .pipe(rename('ravenous.min.css'))
+        .pipe(rename({ suffix: ".min" }))
         .pipe(minifycss())
         .pipe(gulp.dest(cssPath))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));

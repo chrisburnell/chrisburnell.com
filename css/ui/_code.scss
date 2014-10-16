@@ -18,7 +18,7 @@ var,
     mark,
     samp,
     var {
-        background-color: rgba($blue, 0.1);
+        background-color: rgba($blue, .1);
         padding: .215em;
         border-radius: .25em;
     }
@@ -26,7 +26,7 @@ pre {
     margin-top: 0; // override normalize, margin-bottom in _typography.scss
     &:not(.codepen) {
         @extend %rounded;
-        background-color: #EEE;
+        background-color: lighten($text-color-light, 6.5%); // #EEEEEE
         padding: 1.5em 1.5em 1em;
         position: relative;
         overflow-x: auto;
@@ -48,7 +48,7 @@ pre {
     padding-top: 2em;
     &:before {
         content: attr(data-lang);
-        background-color: rgba(#EEE, .5);
+        background-color: rgba(lighten($text-color-light, 6.5%), .5);
         opacity: .5;
         color: $text-color-alt;
         display: block;
