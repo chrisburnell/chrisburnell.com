@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 .logo {
+    @extend %non-selectable;
     color: $text-color;
     display: inline-block;
     float: left;
@@ -16,7 +17,6 @@
     text-shadow: .058em .058em 0 $black-5;
     white-space: nowrap;
     z-index: 1;
-    @include non-selectable;
     @include transition;
     @include on-event {
         text-decoration: none;

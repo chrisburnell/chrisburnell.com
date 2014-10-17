@@ -58,7 +58,7 @@ pre {
         left: .5em;
         font-family: $secondary-font-stack;
         font-size: 1.25em;
-        font-weight: bold;
+        font-weight: 600;
         text-transform: uppercase;
         @include transition;
         pre:hover &,
@@ -76,7 +76,7 @@ pre {
     .err {                              // Error
         background-color: lighten($lastfm-color, 35%);
         color: $lastfm-color;
-        font-weight: bold;
+        font-weight: 600;
     }
     .c,                                 // Comment
     .cm,                                // Comment - Multiline
@@ -98,7 +98,7 @@ pre {
     .nf,                                // Name - Function
     .o,                                 // Operator
     .ow {                               // Operator - Word
-        font-weight: bold;
+        font-weight: 600;
     }
     .gr,                                // Generic - Error
     .gt,                                // Generic - Traceback

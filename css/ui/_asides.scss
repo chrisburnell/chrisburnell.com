@@ -106,11 +106,13 @@ aside {
     }
     .related-article-title {
         display: block;
-        font-weight: bold;
+        font-weight: 600;
     }
     .related-article-date {
+        color: $text-color-alt;
         padding-left: 1em;
         font-size: .8125em;
+        font-weight: 600;
         &:before {
             content: "\2013\0020";
         }

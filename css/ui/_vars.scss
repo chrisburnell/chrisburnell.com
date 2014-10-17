@@ -63,7 +63,3 @@ $wrapper-padding:      1.25em;
         &:hover, &:focus, &:active { @content ; }
     }
 }
-@mixin non-selectable() {
-    user-select: none;
-    -webkit-touch-callout: none;
-}

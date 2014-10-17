@@ -151,8 +151,7 @@ article,
     .pagination-previous:active:before,
     .pagination-next:after,
     .pagination-next:active:after {
-        position: relative; // override the default button:before/:after
-        top: 0;
+        @extend %button-override;
     }
     .pagination-previous:before {
         content: "\2190\00a0\00a0";
@@ -167,9 +166,8 @@ article,
     }
     &:before,
     &:active:before {
+        @extend %button-override;
         content: "\2711\00a0\00a0";
-        position: relative; // override the button:after fix
-        top: 0;
     }
 }
 .comments {
