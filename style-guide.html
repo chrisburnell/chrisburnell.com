@@ -6,7 +6,7 @@ page_class: style-guide-page
 redirect_from: /styleguide.html
 ---
 
-<hr>
+<h3>Colours</h3>
 
 <ul class="color-block-list">
     <li data-color="#5F8AA6">#5F8AA6</li>
@@ -16,7 +16,8 @@ redirect_from: /styleguide.html
     <li data-color="#DDDDDD">#DDDDDD</li>
 </ul>
 
-<hr>
+
+<h3>Typography</h3>
 
 <h1>H1 &ndash; League Gothic</h1>
 
@@ -24,34 +25,27 @@ redirect_from: /styleguide.html
 
 <h3>H3 &ndash; Proxima Nova</h3>
 
-<img alt="Banner" class="article-banner" src="/images/article-banners/lets-look-back.png" role="presentation">
-<img alt="Banner for mobile" class="article-banner mobile" src="/images/article-banners/lets-look-back_mobile.png" role="presentation">
+<h4>H4 &ndash; Proxima Nova</h4>
 
-<hr>
-
-<p>Paragraph text is also <em>FF Meta Serif Web Pro</em>&mdash;all fonts provided by <a href="http://typekit.com" title="Typekit">Typekit</a>.</p>
+<p>Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness&mdash;a laughter that was mirthless as the smile of the sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.</p>
 
 <aside>
-    <p>This is an aside paragraph.</p>
+    <p>But there <strong>was</strong> life, abroad in the land and defiant.</p>
 </aside>
 
-<p>Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean toward each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness&mdash;a laughter that was mirthless as the smile of the Sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.</p>
+<p><em>Down the frozen waterway toiled a string of wolfish dogs.</em></p>
 
-<p><em>But there was life, abroad in the land and defiant.</em></p>
+<p><strong>Their bristly fur was rimed with frost.</strong></p>
 
-<p><strong>Down the frozen waterway toiled a string of wolfish dogs.</strong></p>
+<p><u>Their breath froze in the air as it left their mouths, spouting forth in spumes of vapour that settled upon the hair of their bodies and formed into crystals of frost.</u></p>
 
-<p><s>Their bristly fur was rimed with frost.</s></p>
+<p><s>Leather harness was on the dogs, and leather traces attached them to a sled which dragged along behind.</s></p>
 
-<p><u>Their breath froze in the air as it left their mouths, spouting forth in spumes of vapor that settled upon the hair of their bodies and formed into crystals of frost.</u></p>
+<p>The <dfn title="Wheee!!">sled</dfn> was without runners.</p>
 
-<p><dfn title="a definition">Define me!</dfn></p>
+<p>It was made of stout <abbr title="this isn’t a real definition">birch-bark</abbr>, and its full surface rested on the snow.</p>
 
-<p><abbr title="an abbreviation">Abbr.</abbr> me!</p>
-
-<p>Show me some <code>inline code</code>!</p>
-
-<hr>
+<p>The <code>front end</code> of the sled was turned up, like a scroll, in order to <code>force</code> down and under the bore of soft snow that surged like a wave before it.</p>
 
 <ul>
     <li>Unordered list</li>
@@ -65,46 +59,32 @@ redirect_from: /styleguide.html
     <li>Ordered list</li>
 </ol>
 
-<hr>
-
-<button>This is a button</button>
-
-<hr>
-
-<figure>
-    <img alt=" " src="/images/articles/welldone.gif">
-    <figcaption>Figure and caption.</figcaption>
-</figure>
-
-<hr>
-
 <blockquote>
-    <p>This is a blockquote.</p>
+    <p>On the sled, securely lashed, was a long and narrow oblong box.</p>
 </blockquote>
 
 <blockquote>
-    <p>This is a blockquote with a citation.</p>
+    <p>There were other things on the sled&mdash;blankets, an axe, and a coffee-pot and frying-pan; but prominent, occupying most of the space, was the long and narrow oblong box.</p>
     <cite>Jack London</cite>
 </blockquote>
 
-<hr>
+<figure>
+    <img alt=" " src="/images/white-wolf.png">
+    <figcaption>Wolf by <a href="https://www.flickr.com/photos/richard_lev/" title="RickyNJ on Flickr">RickyNJ</a></figcaption>
+</figure>
 
-<pre>
-<code>@mixin breakpoint($width) {
+<pre><code>@mixin breakpoint($width) {
     @if $width == "tablet" {
         @media (max-width: 768px) { @content ; }
     }
     @else if $width == "mobile" {
         @media (max-width: 500px) { @content ; }
     }
-}</code>
-</pre>
+}</code></pre>
 
-<ol class="pagination  clear">
-    <li>
-        <a rel="previous" class="button  pagination-previous" href="#" title="Pagination Previous">Pagination Previous</a>
-    </li><!--
- --><li>
-        <a rel="next" class="button  pagination-next" href="#" title="Pagination Previous">Pagination Next</a>
-    </li>
-</ol>
+
+<h3>Article Banner Variants</h3>
+
+<img alt="Banner" class="article-banner" src="/images/article-banners/lets-look-back.png" role="presentation">
+<img alt="Banner for mobile" class="article-banner mobile" src="/images/article-banners/lets-look-back_mobile.png" role="presentation">
+
