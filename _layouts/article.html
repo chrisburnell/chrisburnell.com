@@ -1,42 +1,38 @@
 {% include header.html %}
 
-    <section class="content  wrap  clear">
-        <article role="main">
 
-            <h1 id="article" class="article-title" role="heading">{{ page.title }}</h1>
+<h1 id="article" class="article-title" role="heading">{{ page.title }}</h1>
 
-            {% include main-aside.html %}
+{% include main-aside.html %}
 
-            {% if page.banner and page.banner_mobile %}
-                <img alt="" class="article-banner" role="presentation"
-                     src="/images/article-banners/{{ page.banner_mobile }}"
-                     sizes="(min-width: 541px) 810px, 100vw"
-                     srcset="/images/article-banners/{{ page.banner_mobile }} 540w, /images/article-banners/{{ page.banner }} 810w">
-            {% endif %}
+{% if page.banner and page.banner_mobile %}
+    <img alt="" class="article-banner" role="presentation" height="300"
+         src="/images/article-banners/{{ page.banner_mobile }}"
+         sizes="(min-width: 541px) 810px, 100vw"
+         srcset="/images/article-banners/{{ page.banner_mobile }} 540w, /images/article-banners/{{ page.banner }} 810w">
+{% endif %}
 
-            {% if page.introduction %}
-                <h2 class="article-introduction">{{ page.introduction }}</h2>
-            {% endif %}
+{% if page.introduction %}
+    <h2 class="article-introduction">{{ page.introduction }}</h2>
+{% endif %}
 
-            {{ content }}
+{{ content }}
 
-            <ol class="pagination  clear">
-                {% if page.previous.url %}<li>
-                    <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
-                </li>{% endif %}
-                {% if page.next.url %}<li>
-                    <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
-                </li>{% endif %}
-            </ol>
+<ol class="pagination  clear">
+    {% if page.previous.url %}<li>
+        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
+    </li>{% endif %}
+    {% if page.next.url %}<li>
+        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
+    </li>{% endif %}
+</ol>
 
-            {% if page.comments and page.comments == true %}
-                <section id="comments" class="comments  clear">
-                    <div id="disqus_thread"></div>
-                    <noscript>Please enable Javascript to view comments.</noscript>
-                </section>
-            {% endif %}
-
-        </article>
+{% if page.comments and page.comments == true %}
+    <section id="comments" class="comments  clear">
+        <div id="disqus_thread"></div>
+        <noscript>Please enable Javascript to view comments.</noscript>
     </section>
+{% endif %}
+
 
 {% include footer.html %}

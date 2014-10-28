@@ -6,15 +6,19 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
- * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
- * HEADER.................... Set the header styles.
- * NAVIGATION................ Set the navigation styles.
- * ARTICLES.................. Set the articles styles.
- * ASIDES.................... Set the asides styles.
- * FOOTER.................... Set the footer styles.
+ * LAYOUT.................... Set the general page layout.
+ * LAYOUT AND TYPOGRAPHY..... Set the default content styles.
  * BUTTONS................... Set the default button styles.
+ * HEADER.................... Set the header styles.
+ * LOGO...................... Set the logo styles.
+ * NAVIGATION................ Set the navigation styles.
+ * ARTICLE................... Set the article styles.
+ * ASIDE..................... Set the aside styles.
+ * FOOTER.................... Set the footer styles.
  * CODE BLOCKS............... Set the code block styles.
- * MISCELLANEOUS............. Miscellaneous site-wide styles.
+ * ICONS..................... Set the icon styles.
+ * MISCELLANEOUS............. Set some miscellaneous, site-wide styles.
+ * PRINT..................... Set the print styles.
  */
 /*! normalize.css v3.0.0-rc.1 | MIT License | git.io/normalize */
 /**
@@ -746,7 +750,8 @@ button, .button {
 .primary-navigation {
   float: right;
   padding-top: 1.5em;
-  padding-bottom: 1.25em; }
+  padding-bottom: 1.25em;
+  white-space: nowrap; }
   @media screen and (max-width: 768px) {
     .primary-navigation {
       width: 100%;
@@ -804,7 +809,7 @@ button, .button {
           transform: translate3d(-50%, 0, 0); }
 
 /*------------------------------------*\
-    $ ARTICLES AND ARTICLE LISTS
+    $ ARTICLE AND ARTICLE LISTS
 \*------------------------------------*/
 .content {
   margin-bottom: 2.25em; }
@@ -818,11 +823,11 @@ button, .button {
  * Left-hand padding
  * = 25% of 1080px  = 270px  = 16.875em
  */
-article, .articles {
+article {
   padding: 2.25em 0 0 16.875em;
   border-top: 0.25em solid #5F8AA6; }
   @media screen and (max-width: 768px) {
-    article, .articles {
+    article {
       /**
          * When you hit the tablet media query, articles, article lists, and
          * asides become full width and the author information aside pushes to
@@ -835,10 +840,6 @@ article, .articles {
           -ms-flex-direction: column;
               flex-direction: column;
       padding-left: 0; } }
-
-@media screen and (max-width: 768px) {
-  article {
-    margin-bottom: 0; } }
 
 .articles-list li {
   width: 100%;
@@ -987,7 +988,7 @@ iframe {
   overflow-x: hidden; }
 
 /*------------------------------------*\
-    $ ASIDES
+    $ ASIDE
 \*------------------------------------*/
 /**
  * The width of the asides is static and and always floated within an article or
@@ -1005,17 +1006,16 @@ aside {
       margin: 0 0 1em; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
-        padding: 1em 1em 0.5em;
+        padding: 1em;
         margin-bottom: 1.5em; } }
+  aside:not(.author) :last-child {
+    margin-bottom: 0; }
   aside p, aside figcaption {
     clear: both;
-    margin-bottom: 0.5em;
     font-size: 0.875em; }
     @media screen and (max-width: 500px) {
       aside p, aside figcaption {
         font-size: 1em; } }
-  aside blockquote p {
-    margin-bottom: 0; }
 
 .author {
   font-family: "proxima-nova", sans-serif; }

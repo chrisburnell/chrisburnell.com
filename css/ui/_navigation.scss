@@ -6,6 +6,7 @@
     float: right;
     padding-top: 1.5em;
     padding-bottom: 1.25em;
+    white-space: nowrap;
     @include breakpoint("tablet") {
         width: 100%;
         float: none;

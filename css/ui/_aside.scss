@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $ ASIDES
+    $ ASIDE
 \*------------------------------------*/
 
 /**
@@ -18,21 +18,20 @@ aside {
         &:not(.author) {
             @extend %rounded;
             background: $black-5;
-            padding: 1em 1em .5em;
+            padding: 1em;
             margin-bottom: 1.5em;
         }
+    }
+    &:not(.author) :last-child {
+        margin-bottom: 0;
     }
     p,
     figcaption {
         clear: both;
-        margin-bottom: .5em;
         font-size: .875em;
         @include breakpoint("mobile") {
             font-size: 1em;
         }
-    }
-    blockquote p {
-        margin-bottom: 0;
     }
 }
 .author {

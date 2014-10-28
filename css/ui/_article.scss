@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $ ARTICLES AND ARTICLE LISTS
+    $ ARTICLE AND ARTICLE LISTS
 \*------------------------------------*/
 
 .content {
@@ -15,8 +15,7 @@
  * Left-hand padding
  * = 25% of 1080px  = 270px  = 16.875em
  */
-article,
-.articles {
+article {
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
     @include breakpoint("tablet") {
@@ -28,11 +27,6 @@ article,
         display: flex;
         flex-direction: column;
         padding-left: 0;
-    }
-}
-@include breakpoint("tablet") {
-    article {
-        margin-bottom: 0;
     }
 }
 .articles-list li {

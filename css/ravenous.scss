@@ -7,15 +7,19 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
- * LAYOUT AND TYPOGRAPHY..... Set the page layout and default element styles.
- * HEADER.................... Set the header styles.
- * NAVIGATION................ Set the navigation styles.
- * ARTICLES.................. Set the articles styles.
- * ASIDES.................... Set the asides styles.
- * FOOTER.................... Set the footer styles.
+ * LAYOUT.................... Set the general page layout.
+ * LAYOUT AND TYPOGRAPHY..... Set the default content styles.
  * BUTTONS................... Set the default button styles.
+ * HEADER.................... Set the header styles.
+ * LOGO...................... Set the logo styles.
+ * NAVIGATION................ Set the navigation styles.
+ * ARTICLE................... Set the article styles.
+ * ASIDE..................... Set the aside styles.
+ * FOOTER.................... Set the footer styles.
  * CODE BLOCKS............... Set the code block styles.
- * MISCELLANEOUS............. Miscellaneous site-wide styles.
+ * ICONS..................... Set the icon styles.
+ * MISCELLANEOUS............. Set some miscellaneous, site-wide styles.
+ * PRINT..................... Set the print styles.
  */
 
 @import "ui/normalize",
@@ -26,8 +30,8 @@
         "ui/header",
         "ui/logo",
         "ui/navigation",
-        "ui/articles",
-        "ui/asides",
+        "ui/article",
+        "ui/aside",
         "ui/footer",
         "ui/code",
         "ui/icons",
