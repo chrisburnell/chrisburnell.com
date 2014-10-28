@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $ ARTICLE AND ARTICLE LISTS
+    $ MAIN CONTENT
 \*------------------------------------*/
 
 .content {
@@ -180,10 +180,9 @@ article {
 }
 
 /**
- * Contains YouTube and Vimeo embedded videos properly and allows them to be
- * dynamically resized.
+ * Contains embedded media properly and allows them to be dynamically resized.
  */
-.video-container {
+.media-container {
     height: 0;
     padding-top: 30px;
     padding-bottom: 56.65%;

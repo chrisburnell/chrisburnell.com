@@ -809,7 +809,7 @@ button, .button {
           transform: translate3d(-50%, 0, 0); }
 
 /*------------------------------------*\
-    $ ARTICLE AND ARTICLE LISTS
+    $ MAIN CONTENT
 \*------------------------------------*/
 .content {
   margin-bottom: 2.25em; }
@@ -963,16 +963,15 @@ article {
     font-style: italic; }
 
 /**
- * Contains YouTube and Vimeo embedded videos properly and allows them to be
- * dynamically resized.
+ * Contains embedded media properly and allows them to be dynamically resized.
  */
-.video-container {
+.media-container {
   height: 0;
   padding-top: 30px;
   padding-bottom: 56.65%;
   position: relative;
   overflow: hidden; }
-  .video-container iframe, .video-container object, .video-container embed {
+  .media-container iframe, .media-container object, .media-container embed {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -988,7 +987,7 @@ iframe {
   overflow-x: hidden; }
 
 /*------------------------------------*\
-    $ ASIDE
+    $ ASIDES
 \*------------------------------------*/
 /**
  * The width of the asides is static and and always floated within an article or
