@@ -398,10 +398,12 @@ h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 1.625em; }
 
-h3, .articles-list .article-date {
+h3, h4, .articles-list .article-date {
   font-family: "proxima-nova", sans-serif;
+  font-weight: 600; }
+
+h3, .articles-list .article-date {
   font-size: 1.125em;
-  font-weight: 600;
   line-height: 1.875em;
   text-transform: uppercase; }
 
@@ -421,6 +423,9 @@ h3 {
   vertical-align: middle; }
   h3:hover .heading-anchor, h3:focus .heading-anchor, h3:active .heading-anchor {
     display: inline-block; }
+
+h4 {
+  margin-bottom: 0.5em; }
 
 a {
   color: #5F8AA6;
@@ -1073,18 +1078,25 @@ aside {
   line-height: 1.25em; }
   .related-articles-list li + li {
     margin-top: 1em; }
-
-.related-article-title {
-  display: block;
-  font-weight: 600; }
-
-.related-article-date {
-  color: #737373;
-  padding-left: 1em;
-  font-size: 0.8125em;
-  font-weight: 600; }
-  .related-article-date:before {
-    content: "\2013\0020"; }
+  .related-articles-list a {
+    color: #4F4F4F;
+    display: block;
+    padding: 0.5em;
+    margin: 0 -0.5em; }
+    .related-articles-list a:hover, .related-articles-list a:focus, .related-articles-list a:active {
+      background-color: rgba(6, 6, 6, 0.05);
+      text-decoration: none; }
+  .related-articles-list .related-article-title {
+    color: #5F8AA6; }
+  .related-articles-list .related-article-introduction {
+    margin: 0.25em 0; }
+  .related-articles-list .related-article-date {
+    color: #737373;
+    padding-left: 1em;
+    font-size: 0.8125em;
+    font-weight: 600; }
+    .related-articles-list .related-article-date:before {
+      content: "\2013\0020"; }
 
 /*------------------------------------*\
     $ FOOTER
@@ -1289,7 +1301,7 @@ pre {
 /*------------------------------------*\
     $ MISCELLANEOUS
 \*------------------------------------*/
-figure img, figure svg, blockquote, .article-banner, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
+figure img, figure svg, blockquote, .article-banner, aside:not(.author), .author-image, .related-articles-list a, pre:not(.codepen), .color-block-list li {
   background-clip: padding-box;
   border-radius: 0.375em; }
 

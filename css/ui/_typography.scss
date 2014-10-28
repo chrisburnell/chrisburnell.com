@@ -20,10 +20,14 @@ h2 {
     font-size: 1.625em;
 }
 h3,
+h4,
 .articles-list .article-date {
     font-family: $secondary-font-stack;
-    font-size: 1.125em;
     font-weight: 600;
+}
+h3,
+.articles-list .article-date {
+    font-size: 1.125em;
     line-height: 1.875em;
     text-transform: uppercase;
 }
@@ -47,6 +51,9 @@ h3 {
             display: inline-block;
         }
     }
+h4 {
+    margin-bottom: .5em;
+}
 
 a {
     color: $blue;

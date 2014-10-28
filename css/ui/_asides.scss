@@ -95,18 +95,31 @@ aside {
         display: table-cell; // don’t wrap around .author-image
         line-height: 1.429em;
     }
-    .related-articles-title {
-        margin-top: 2em;
+
+.related-articles-title {
+    margin-top: 2em;
+}
+.related-articles-list {
+    line-height: 1.25em;
+    li + li {
+        margin-top: 1em;
     }
-    .related-articles-list {
-        line-height: 1.25em;
-        li + li {
-            margin-top: 1em;
+    a {
+        @extend %rounded;
+        color: $text-color;
+        display: block;
+        padding: .5em;
+        margin: 0 -0.5em;
+        @include on-event {
+            background-color: $black-5;
+            text-decoration: none;
         }
     }
     .related-article-title {
-        display: block;
-        font-weight: 600;
+        color: $blue;
+    }
+    .related-article-introduction {
+        margin: .25em 0;
     }
     .related-article-date {
         color: $text-color-alt;
@@ -117,3 +130,4 @@ aside {
             content: "\2013\0020";
         }
     }
+}

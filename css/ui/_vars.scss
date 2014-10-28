@@ -29,11 +29,14 @@ $mobile-wrapper-width: 500px;
 $wrapper-padding:      1.25em;
 
 // SCSS Mixins
-@mixin breakpoint($width) {
-    @if $width == "tablet" {
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == "desktop" {
+        @media screen and (min-width: $tablet-wrapper-width) { @content ; }
+    }
+    @else if $breakpoint == "tablet" {
         @media screen and (max-width: $tablet-wrapper-width) { @content ; }
     }
-    @else if $width == "mobile" {
+    @else if $breakpoint == "mobile" {
         @media screen and (max-width: $mobile-wrapper-width) { @content ; }
     }
 }
