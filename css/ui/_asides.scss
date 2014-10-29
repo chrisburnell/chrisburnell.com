@@ -109,7 +109,9 @@ aside {
         display: block;
         padding: .5em;
         margin: 0 -0.5em;
-        @include on-event {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $black-5;
             text-decoration: none;
         }

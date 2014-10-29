@@ -42,7 +42,9 @@
             line-height: 1.25em;
             text-transform: uppercase;
             @include transition("color .2s, padding-bottom .2s, border-bottom-width .2s, transform .2s");
-            @include on-event {
+            &:hover,
+            &:focus,
+            &:active {
                 text-decoration: none;
             }
             &:active {

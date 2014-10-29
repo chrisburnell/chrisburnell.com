@@ -59,13 +59,17 @@ a {
     color: $blue;
     text-decoration: none;
     @include transition("background .2s, color .2s");
-    @include on-event {
+    &:hover,
+    &:focus,
+    &:active {
         text-decoration: underline;
     }
     h2 &,
     h3 & {
         color: $text-color;
-        @include on-event {
+        &:hover,
+        &:focus,
+        &:active {
             color: $blue;
         }
     }

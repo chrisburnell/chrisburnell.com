@@ -1190,7 +1190,7 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
 pre {
   margin-top: 0; }
   pre:not(.codepen) {
-    background-color: #eeeeee;
+    background-color: rgba(6, 6, 6, 0.05);
     padding: 1.5em 1.5em 1em;
     position: relative;
     overflow-x: auto;
@@ -1210,7 +1210,6 @@ pre {
   padding-top: 2em; }
   [data-lang]:before {
     content: attr(data-lang);
-    background-color: rgba(237, 237, 237, 0.5);
     opacity: 0.5;
     color: #737373;
     display: block;

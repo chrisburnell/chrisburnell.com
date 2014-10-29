@@ -55,14 +55,3 @@ $wrapper-padding:      1.25em;
 @mixin animation-play-state($value: "paused") {
     animation-play-state: #{$value};
 }
-@mixin on-event($selector: false) {
-    @if $selector == "self" {
-        &, &:hover, &:focus, &:active { @content ; }
-    }
-    @else if $selector {
-        &:hover #{$selector}, &:focus #{$selector}, &:active #{$selector} { @content ; }
-    }
-    @else {
-        &:hover, &:focus, &:active { @content ; }
-    }
-}

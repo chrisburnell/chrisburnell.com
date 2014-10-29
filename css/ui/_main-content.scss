@@ -86,12 +86,14 @@ article {
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
             margin-left: -0.27em;
-            @include on-event {
+            @include transition("border-color .2s ease-in-out");
+            &:hover,
+            &:focus,
+            &:active {
                 color: $text-color;
                 border-bottom-color: $blue;
                 text-decoration: none;
             }
-            @include transition("border-color .2s ease-in-out");
         }
     }
     .articles-list .article-date:before {

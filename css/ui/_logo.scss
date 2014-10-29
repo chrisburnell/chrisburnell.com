@@ -18,7 +18,9 @@
     white-space: nowrap;
     z-index: 1;
     @include transition;
-    @include on-event {
+    &:hover,
+    &:focus,
+    &:active {
         text-decoration: none;
     }
     @include breakpoint("tablet") {
@@ -55,7 +57,9 @@
         @include transition();
         @include translate3d("0, -0.8125em, 0");
     }
-    @include on-event("svg") {
+    &:hover svg,
+    &:focus svg,
+    &:active svg {
         /**
          * Only animate the image when the user hovers the logo.
          */
