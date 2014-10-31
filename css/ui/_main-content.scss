@@ -181,7 +181,6 @@ article {
     width: 100%;
     padding-top: 2.25em;
     border-top: .125em solid $black-10;
-    // margin-top: 1.25em;
     text-align: center;
     @include breakpoint("tablet") {
         margin-top: 0;
@@ -207,7 +206,7 @@ article {
     .pagination-previous:active:before,
     .pagination-next:after,
     .pagination-next:active:after {
-        @extend %button-override;
+        position: relative;
     }
     .pagination-previous:before {
         content: "\2190\00a0\00a0";
@@ -222,8 +221,8 @@ article {
     }
     &:before,
     &:active:before {
-        @extend %button-override;
         content: "\2711\00a0\00a0";
+        position: relative;
     }
 }
 .comments {

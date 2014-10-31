@@ -2,22 +2,6 @@
     $ MISCELLANEOUS
 \*------------------------------------*/
 
-// We’re goin’ up around the bend
-%rounded {
-    background-clip: padding-box;
-    border-radius: .375em;
-}
-// Override the default button:before/:after
-%button-override {
-    position: relative;
-    top: 0;
-}
-// Non-selectable stuff
-%non-selectable {
-    user-select: none;
-    -webkit-touch-callout: none;
-}
-
 /**
  * Style Guide
  */

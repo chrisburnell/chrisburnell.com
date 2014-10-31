@@ -10,6 +10,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
 body {
     background-color: $white;
     color: $text-color;
@@ -18,6 +19,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
+
 .wrap {
     width: auto;
     max-width: $max-wrapper-width;
@@ -38,12 +40,14 @@ body {
         clear: both;
     }
 }
+
 /**
  * Allow for fixed-width content
  */
-.max-width {
+.fixed-width {
     width: $max-wrapper-width;
 }
+
 /**
  * Add a bottom margin to a plethora of tasty elements
  */
@@ -53,4 +57,21 @@ figure:not(:last-child),
 pre,
 iframe {
     margin-bottom: 1.25em;
+}
+
+// We’re goin’ up around the bend
+%rounded {
+    background-clip: padding-box;
+    border-radius: .375em;
+}
+
+// Override the default button:before/:after
+%button-override {
+    position: relative;
+}
+
+// Non-selectable stuff
+%non-selectable {
+    user-select: none;
+    -webkit-touch-callout: none;
 }

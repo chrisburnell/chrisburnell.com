@@ -28,7 +28,6 @@ pre {
         @extend %rounded;
         background-color: $black-5;
         padding: 1.5em 1.5em 1em;
-        position: relative;
         overflow-x: auto;
         overflow-y: hidden;
         line-height: 1.5em;
@@ -40,31 +39,44 @@ pre {
 }
 .highlight {
     margin-bottom: 1em;
+    position: relative;
 }
 /**
  * [data-lang] is always applied to a code element inside a pre element
  */
 [data-lang] {
-    padding-top: 2em;
+    padding-top: 2.5em;
     &:before {
+        @extend %rounded;
         content: attr(data-lang);
-        opacity: .5;
-        color: $text-color-alt;
+        background-color: $text-color-alt;
+        color: $white;
+        width: 100%;
         display: block;
-        padding: 0 1em;
+        padding: 0 1.5em;
         position: absolute;
-        top: 1em;
-        left: .5em;
+        top: 0;
+        left: 0;
         font-family: $secondary-font-stack;
         font-size: 1.25em;
         font-weight: 600;
+        line-height: 2.4em;
         text-transform: uppercase;
+        border-radius: .3em .3em 0 0;
         @include transition;
-        pre:hover &,
-        pre:focus &,
-        pre:active & {
-            opacity: .2;
-        }
+    }
+    &.language-html:before {
+        background-color: $html-color;
+    }
+    &.language-css:before {
+        background-color: $css-color;
+    }
+    &.language-sass:before,
+    &.language-scss:before {
+        background-color: $sass-color;
+    }
+    &.language-javascript:before {
+        background-color: $javascript-color;
     }
 }
 
