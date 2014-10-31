@@ -15,11 +15,16 @@ page_class: tags-page
             {% assign sorted_tags = tags | split:' ' | sort %}
             {% for tag in sorted_tags %}
                 <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" title="#{{ tag | downcase }}" aria-hidden="true">#{{ tag | downcase }}</a></h3>
-                <ul class="tags-list" role="list">
+                <ul class="small-articles-list" role="list">
                     {% for post in site.tags[tag] %}
                         <li>
-                            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+                            <a href="{{ post.url }}" title="Read {{ post.title }}">
+                                <h4 class="small-article-title">{{ post.title }}</h4>
+                                {% if post.introduction %}
+                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' | replace: ',...', '...' }}</p>
+                                {% endif %}
+                                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                            </a>
                         </li>
                     {% endfor %}
                 </ul>

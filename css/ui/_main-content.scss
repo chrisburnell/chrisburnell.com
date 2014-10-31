@@ -117,6 +117,66 @@ article {
         }
     }
 
+.small-articles-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -0.5em;
+    font-family: $secondary-font-stack;
+    line-height: 1.25em;
+    li {
+        width: 49.0125%;
+        display: inline-block;
+        &:nth-child(n+3) {
+            margin-top: 1em;
+        }
+        aside & {
+            width: 100%;
+            & + li {
+                margin-top: 1em;
+            }
+        }
+        @include breakpoint("mobile") {
+            width: 100%;
+            & + li {
+                margin-top: 1em;
+            }
+        }
+    }
+    a {
+        @extend %rounded;
+        display: block;
+        padding: .5em;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $black-5;
+            text-decoration: none;
+        }
+    }
+    .small-article-introduction {
+        color: $text-color;
+        margin: .25em 0;
+    }
+    .small-article-date {
+        color: $text-color-alt;
+        padding-left: 1em;
+        font-size: .8125em;
+        font-weight: 600;
+        &:before {
+            content: "\2013\0020";
+        }
+    }
+    aside &
+    .small-articles-list li {
+        width: 100%;
+        & + li {
+            margin-top: 1em;
+        }
+    }
+}
+
 .pagination {
     width: 100%;
     padding-top: 2.25em;

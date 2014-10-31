@@ -915,6 +915,57 @@ article {
       float: none;
       margin-top: 1.25em; } }
 
+.small-articles-list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 0 -0.5em;
+  font-family: "proxima-nova", sans-serif;
+  line-height: 1.25em; }
+  .small-articles-list li {
+    width: 49.0125%;
+    display: inline-block; }
+    .small-articles-list li:nth-child(n+3) {
+      margin-top: 1em; }
+    aside .small-articles-list li {
+      width: 100%; }
+      aside .small-articles-list li + li {
+        margin-top: 1em; }
+    @media screen and (max-width: 500px) {
+      .small-articles-list li {
+        width: 100%; }
+        .small-articles-list li + li {
+          margin-top: 1em; } }
+  .small-articles-list a {
+    display: block;
+    padding: 0.5em; }
+    .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
+      background-color: rgba(6, 6, 6, 0.05);
+      text-decoration: none; }
+  .small-articles-list .small-article-introduction {
+    color: #4F4F4F;
+    margin: 0.25em 0; }
+  .small-articles-list .small-article-date {
+    color: #737373;
+    padding-left: 1em;
+    font-size: 0.8125em;
+    font-weight: 600; }
+    .small-articles-list .small-article-date:before {
+      content: "\2013\0020"; }
+  aside .small-articles-list .small-articles-list li {
+    width: 100%; }
+    aside .small-articles-list .small-articles-list li + li {
+      margin-top: 1em; }
+
 .pagination {
   width: 100%;
   padding-top: 2.25em;
@@ -1014,6 +1065,10 @@ aside {
     @media screen and (max-width: 500px) {
       aside p, aside figcaption {
         font-size: 1em; } }
+  aside .small-articles-list li {
+    width: 100%; }
+    aside .small-articles-list li + li {
+      margin-top: 1em; }
 
 .author {
   font-family: "proxima-nova", sans-serif; }
@@ -1071,30 +1126,6 @@ aside {
 
 .related-articles-title {
   margin-top: 2em; }
-
-.related-articles-list {
-  line-height: 1.25em; }
-  .related-articles-list li + li {
-    margin-top: 1em; }
-  .related-articles-list a {
-    color: #4F4F4F;
-    display: block;
-    padding: 0.5em;
-    margin: 0 -0.5em; }
-    .related-articles-list a:hover, .related-articles-list a:focus, .related-articles-list a:active {
-      background-color: rgba(6, 6, 6, 0.05);
-      text-decoration: none; }
-  .related-articles-list .related-article-title {
-    color: #5F8AA6; }
-  .related-articles-list .related-article-introduction {
-    margin: 0.25em 0; }
-  .related-articles-list .related-article-date {
-    color: #737373;
-    padding-left: 1em;
-    font-size: 0.8125em;
-    font-weight: 600; }
-    .related-articles-list .related-article-date:before {
-      content: "\2013\0020"; }
 
 /*------------------------------------*\
     $ FOOTER
@@ -1298,7 +1329,7 @@ pre {
 /*------------------------------------*\
     $ MISCELLANEOUS
 \*------------------------------------*/
-figure img, figure svg, blockquote, .article-banner, aside:not(.author), .author-image, .related-articles-list a, pre:not(.codepen), .color-block-list li {
+figure img, figure svg, blockquote, .article-banner, .small-articles-list a, aside:not(.author), .author-image, pre:not(.codepen), .color-block-list li {
   background-clip: padding-box;
   border-radius: 0.375em; }
 
@@ -1312,27 +1343,6 @@ button, .button, .logo {
       -ms-user-select: none;
           user-select: none;
   -webkit-touch-callout: none; }
-
-/**
- * Tags List
- */
-.tags-count {
-  color: #737373; }
-
-.tags-list {
-  margin-bottom: 1em;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 600; }
-  .tags-list time {
-    color: #737373;
-    float: right; }
-    @media screen and (max-width: 500px) {
-      .tags-list time {
-        display: block;
-        float: none;
-        padding-left: 1em; }
-        .tags-list time:before {
-          content: "\2013\0020"; } }
 
 /**
  * Style Guide

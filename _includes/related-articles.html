@@ -1,15 +1,15 @@
 {% if site.related_posts %}
     <div class="related-articles">
         <h3 class="related-articles-title">Related Articles</h3>
-        <ol class="related-articles-list">
+        <ol class="small-articles-list" role="list">
             {% for post in site.related_posts limit:2 %}
                 <li>
                     <a href="{{ post.url }}" title="Read {{ post.title }}">
-                        <h4 class="related-article-title">{{ post.title }}</h4>
-                        {% if page.introduction %}
-                            <p class="related-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                        <h4 class="small-article-title">{{ post.title }}</h4>
+                        {% if post.introduction %}
+                            <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
                         {% endif %}
-                        <time class="related-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                     </a>
                 </li>
             {% endfor %}
