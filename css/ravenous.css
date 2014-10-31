@@ -1065,10 +1065,6 @@ aside {
     @media screen and (max-width: 500px) {
       aside p, aside figcaption {
         font-size: 1em; } }
-  aside .small-articles-list li {
-    width: 100%; }
-    aside .small-articles-list li + li {
-      margin-top: 1em; }
 
 .author {
   font-family: "proxima-nova", sans-serif; }

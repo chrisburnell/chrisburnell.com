@@ -33,12 +33,6 @@ aside {
             font-size: 1em;
         }
     }
-    .small-articles-list li {
-        width: 100%;
-        & + li {
-            margin-top: 1em;
-        }
-    }
 }
 .author {
     font-family: $secondary-font-stack;
