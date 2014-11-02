@@ -20,10 +20,10 @@
 
 <ol class="pagination  clear">
     {% if page.previous.url %}<li>
-        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">Previous Article</a>
+        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: ‘{{ page.previous.title }}’">Previous Article</a>
     </li>{% endif %}
     {% if page.next.url %}<li>
-        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">Next Article</a>
+        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: ‘{{ page.next.title }}’">Next Article</a>
     </li>{% endif %}
 </ol>
 
