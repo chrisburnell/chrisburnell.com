@@ -58,21 +58,23 @@
         .primary-navigation-list a:active,
         .home-page .primary-navigation-home a,
         .about-page .primary-navigation-about a,
-        .archive-page .primary-navigation-archive a {
+        .archive-page .primary-navigation-archive a,
+        .tags-page .primary-navigation-archive a {
             color: $text-color;
             padding-bottom: .55em;
             border-bottom-width: .2em;
         }
-        // Primary Navigation Active Page Arrow
-        .home-page .primary-navigation-home a:after,
-        .about-page .primary-navigation-about a:after,
-        .archive-page .primary-navigation-archive a:after {
-            content: "";
-            border-top: .5em solid $blue;
-            border-right: .5em solid transparent;
-            border-left: .5em solid transparent;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            @include translate3d("-50%, 0, 0");
-        }
+            // Primary Navigation Active Page Arrow
+            .home-page .primary-navigation-home a:after,
+            .about-page .primary-navigation-about a:after,
+            .archive-page .primary-navigation-archive a:after,
+            .tags-page .primary-navigation-archive a:after {
+                content: "";
+                border-top: .5em solid $blue;
+                border-right: .5em solid transparent;
+                border-left: .5em solid transparent;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                @include translate3d("-50%, 0, 0");
+            }

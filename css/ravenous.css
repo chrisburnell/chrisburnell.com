@@ -802,12 +802,12 @@ button, .button {
       -webkit-transform: translate3d(0, .2em, 0);
               transform: translate3d(0, .2em, 0); }
 
-.primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a {
+.primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a, .tags-page .primary-navigation-archive a {
   color: #4F4F4F;
   padding-bottom: 0.55em;
   border-bottom-width: 0.2em; }
 
-.home-page .primary-navigation-home a:after, .about-page .primary-navigation-about a:after, .archive-page .primary-navigation-archive a:after {
+.home-page .primary-navigation-home a:after, .about-page .primary-navigation-about a:after, .archive-page .primary-navigation-archive a:after, .tags-page .primary-navigation-archive a:after {
   content: "";
   border-top: 0.5em solid #5F8AA6;
   border-right: 0.5em solid transparent;
