@@ -23,7 +23,7 @@ var,
         border-radius: .25em;
     }
 pre {
-    margin-top: 0; // override normalize, margin-bottom in _typography.scss
+    margin-top: 0; // override normalize, margin-bottom in _layout.scss
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-5;
@@ -38,7 +38,6 @@ pre {
     }
 }
 .highlight {
-    margin-bottom: 1em;
     position: relative;
 }
 /**
