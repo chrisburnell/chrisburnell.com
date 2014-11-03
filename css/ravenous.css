@@ -1244,7 +1244,7 @@ pre {
   position: relative; }
 
 /**
- * [data-lang] is always applied to a code element inside a pre element
+ * [data-lang] is always applied to a code element inside div.highlight
  */
 [data-lang] {
   padding-top: 2.5em; }

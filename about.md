@@ -30,7 +30,7 @@ After a bit of searching, I found a job at a small startup company that did cab 
 {% include heading-anchor.html id="squiz" title="Squiz" %}
 
 <figure>
-    <img src="/images/content/logo-squiz.png" alt=" " width="350" height="230">
+    <a rel="external" href="http://squiz.net/uk" title="Squiz UK"><img src="/images/content/logo-squiz.png" alt=" " width="350" height="230"></a>
 </figure>
 
 In April of 2012, I joined the Production Team at <a rel="external" href="http://squiz.net" title="Squiz UK">*Squiz*</a> as a Front-end Web Developer. My job involved two general tasks: implementing a website’s functionality into *Squiz’s* CMS, Matrix, and creating <dfn title="the product of translating a website’s design (usually in PSD format) into HTML, CSS, Javascript, and media">cut-ups</dfn>. These tasks were almost always performed as client services and it was in this <q>the stakes have never been higher (for me)</q> environment that my passion and thirst for web development skyrocketed. Feeling particularly inclined towards the HTML and CSS side of things, I was often tasked with performing the cut-ups while other team members built the implementation side of things.
@@ -42,7 +42,7 @@ For a long time I was also the organiser of a weekly meeting, Imp Scrum, when th
 {% include heading-anchor.html id="city-university" title="City University" %}
 
 <figure>
-    <img src="/images/content/logo-city-university.svg" alt=" " width="350" height="109">
+    <a rel="external" href="http://www.city.ac.uk" title="City University London"><img src="/images/content/logo-city-university.svg" alt=" " width="350" height="109"></a>
 </figure>
 
 In June of 2014, I moved on to a role as <em>Web Developer</em> at <a rel="external" href="http://www.city.ac.uk" title="City University London">*City University London*</a>, where I’m looking forward to carrying the torch forward, and devoting my time and efforts towards perfecting and streamlining the codebase, promoting the ideologies and thirst for perfection I instilled as a UI Developer at *Squiz* and at Imp Scrum, and building a damn good website with a solid, new team.
