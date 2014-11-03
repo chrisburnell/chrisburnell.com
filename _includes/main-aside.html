@@ -13,7 +13,7 @@
                     tagged under
                     {% assign sorted_tags = (page.tags | sort:0) %}
                     {% for tag in sorted_tags %}
-                        {% if forloop.last and page.tags.size > 1 %} and {% endif %}<a href="/tags#{{ tag | handleize }}" title="All posts tagged '{{ tag }}'" rel="tag">{{ tag }}</a>{% if forloop.last == false and page.tags.size > 2 %}, {% endif %}
+                        {% if forloop.last and page.tags.size > 1 %} and {% endif %}<a href="/tags#{{ tag | handleize | downcase }}" title="All posts tagged '{{ tag }}'" rel="tag">{{ tag }}</a>{% if forloop.last == false and page.tags.size > 2 %}, {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}
