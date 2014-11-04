@@ -1226,6 +1226,7 @@ code, kbd, samp, var, .monospace {
 p code, ol code, ul code, ins, kbd, mark, samp, var {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0.215em;
+  word-wrap: break-word;
   border-radius: 0.25em; }
 
 pre {
