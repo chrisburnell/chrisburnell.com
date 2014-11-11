@@ -1000,7 +1000,8 @@ article {
           margin-left: 0; } }
 
 .pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {
-  position: relative; }
+  position: relative;
+  top: 0; }
 
 .pagination-previous:before {
   content: "\2190\00a0\00a0"; }
@@ -1022,6 +1023,9 @@ article {
     @media screen and (max-width: 768px) {
       .pagination + .comments {
         padding-top: 0; } }
+  .comments .show-comments:before, .comments .show-comments:active:before {
+    position: relative;
+    top: 0; }
   .comments noscript {
     font-family: "proxima-nova", sans-serif;
     font-size: 1.25em;

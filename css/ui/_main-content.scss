@@ -207,6 +207,7 @@ article {
     .pagination-next:after,
     .pagination-next:active:after {
         position: relative;
+        top: 0;
     }
     .pagination-previous:before {
         content: "\2190\00a0\00a0";
@@ -232,6 +233,11 @@ article {
         @include breakpoint("medium") {
             padding-top: 0;
         }
+    }
+    .show-comments:before,
+    .show-comments:active:before {
+        position: relative;
+        top: 0;
     }
     noscript {
         font-family: $secondary-font-stack;
