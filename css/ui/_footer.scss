@@ -12,7 +12,7 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
     @include gradient(transparent, $black-10);
-    @include breakpoint("mobile") {
+    @include breakpoint("small") {
         padding: 2.25em 0;
     }
 }
@@ -20,7 +20,7 @@ footer {
     .social-icon-list {
         float: left;
         overflow: hidden;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             width: 100%;
             float: none;
             text-align: center;
@@ -29,7 +29,7 @@ footer {
     .social-icon-list {
         float: right;
         margin-top: .3125em;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             margin-top: .625em;
         }
         li {
@@ -62,7 +62,7 @@ footer {
             &:active {
                 @include translate3d("0, .143em, 0");
             }
-            @include breakpoint("mobile") {
+            @include breakpoint("small") {
                 margin-right: .5em;
             }
             svg {
@@ -76,13 +76,13 @@ footer {
             color: $text-color-light;
         }
         .style-guide-link {
-            @include breakpoint("mobile") {
+            @include breakpoint("small") {
                 display: block;
             }
         }
         .copyright-spacer {
             color: $text-color-alt;
-            @include breakpoint("mobile") {
+            @include breakpoint("small") {
                 display: none;
             }
         }

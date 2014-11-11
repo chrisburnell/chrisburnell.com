@@ -23,11 +23,11 @@
     &:active {
         text-decoration: none;
     }
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         display: inline-block;
         float: none;
     }
-    @include breakpoint("mobile") {
+    @include breakpoint("small") {
         font-size: 2.75em;
     }
     &:active {

@@ -18,9 +18,9 @@
 article {
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         /**
-         * When you hit the tablet media query, articles, article lists, and
+         * When you hit the medium media query, articles, article lists, and
          * asides become full width and the author information aside pushes to
          * the bottom in browsers that support the latest iteration of flexbox.
          */
@@ -38,7 +38,7 @@ article {
     &:nth-child(odd) {
         background-color: $black-5;
     }
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         padding-top: 1.875em;
         padding-bottom: 1.875em;
         text-align: center;
@@ -54,7 +54,7 @@ article {
         margin-top: -0.2em; // make sure text cap-height aligns to the aside
         margin-bottom: .8em;
         line-height: 1.4em;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             margin-bottom: 1.385em;
         }
     }
@@ -68,14 +68,14 @@ article {
         @extend %rounded;
         width: 810px;
         margin-bottom: 1em;
-        @include breakpoint("mobile") {
+        @include breakpoint("small") {
             width: 500px;
         }
     }
     .article-title,
     .article-date,
     .article-introduction {
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             text-align: left;
         }
     }
@@ -110,7 +110,7 @@ article {
         &:after {
             content: "\00a0\2192";
         }
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             display: block;
             float: none;
             margin-top: 1.25em;
@@ -137,7 +137,7 @@ article {
                 margin-top: 1em;
             }
         }
-        @include breakpoint("mobile") {
+        @include breakpoint("small") {
             width: 100%;
             & + li {
                 margin-top: 1em;
@@ -182,13 +182,13 @@ article {
     padding-top: 2.25em;
     border-top: .125em solid $black-10;
     text-align: center;
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         margin-top: 0;
         padding-bottom: 2.25em;
     }
     li {
         display: inline-block;
-        @include breakpoint("mobile") {
+        @include breakpoint("small") {
             display: block;
             &:last-child {
                 margin-top: .6875em;
@@ -196,7 +196,7 @@ article {
         }
         & + li {
             margin-left: 1.875em;
-            @include breakpoint("mobile") {
+            @include breakpoint("small") {
                 margin-left: 0;
             }
         }
@@ -216,7 +216,7 @@ article {
     }
 
 .show-comments {
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         margin-bottom: 2em;
     }
     &:before,
@@ -229,7 +229,7 @@ article {
     text-align: center;
     .pagination + & {
         padding-top: 2.25em;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             padding-top: 0;
         }
     }

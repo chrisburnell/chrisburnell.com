@@ -53,7 +53,7 @@ p:empty,
  * 404 Page Button
  */
 .not-found-page button {
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         display: block;
         margin: 0 auto 2em;
     }

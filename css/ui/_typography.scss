@@ -183,7 +183,7 @@ blockquote {
     padding: 1em;
     margin: 0 2.5em 1em;
     quotes: "\201C" "\201D" "\2018" "\2019";
-    @include breakpoint("mobile") {
+    @include breakpoint("small") {
         margin-right: 1em;
         margin-left: 1em;
     }

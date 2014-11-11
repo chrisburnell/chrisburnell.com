@@ -7,7 +7,7 @@
     padding-top: 1.5em;
     padding-bottom: 1.25em;
     white-space: nowrap;
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         width: 100%;
         float: none;
         padding-top: 0;
@@ -16,14 +16,14 @@
     .primary-navigation-list {
         height: 3.75em;
         float: right;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             float: none;
             text-align: center;
         }
         li {
             display: inline-block;
             float: left;
-            @include breakpoint("tablet") {
+            @include breakpoint("medium") {
                 float: none;
             }
             + li {

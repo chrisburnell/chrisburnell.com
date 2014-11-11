@@ -30,20 +30,20 @@ $code-font-stack:      Consolas, Monaco, "Courier New", monospace;
 
 // Wrapper Widths
 $max-wrapper-width:    1120px;
-$tablet-wrapper-width: 768px;
-$mobile-wrapper-width: 500px;
+$medium-wrapper-width:  768px;
+$small-wrapper-width:   500px;
 $wrapper-padding:      1.25em;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {
-    @if $breakpoint == "desktop" {
-        @media screen and (min-width: $tablet-wrapper-width) { @content ; }
+    @if $breakpoint == "large" {
+        @media screen and (min-width: $medium-wrapper-width) { @content ; }
     }
-    @else if $breakpoint == "tablet" {
-        @media screen and (max-width: $tablet-wrapper-width) { @content ; }
+    @else if $breakpoint == "medium" {
+        @media screen and (max-width: $medium-wrapper-width) { @content ; }
     }
-    @else if $breakpoint == "mobile" {
-        @media screen and (max-width: $mobile-wrapper-width) { @content ; }
+    @else if $breakpoint == "small" {
+        @media screen and (max-width: $small-wrapper-width) { @content ; }
     }
 }
 @mixin gradient($top, $bottom) {

@@ -11,7 +11,7 @@ aside {
     float: left;
     margin-left: -16.875em;
     line-height: 1.618em;
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         width: 100%;
         float: none;
         margin: 0 0 1em;
@@ -29,14 +29,14 @@ aside {
     figcaption {
         clear: both;
         font-size: .875em;
-        @include breakpoint("mobile") {
+        @include breakpoint("small") {
             font-size: 1em;
         }
     }
 }
 .author {
     font-family: $secondary-font-stack;
-    @include breakpoint("tablet") {
+    @include breakpoint("medium") {
         order: 999;
         padding-top: 2.25em;
         border-top: .125em solid $black-10;
@@ -65,7 +65,7 @@ aside {
     }
     .author-biography {
         margin-bottom: 1.5em;
-        @include breakpoint("tablet") {
+        @include breakpoint("medium") {
             margin-bottom: 0;
         }
     }

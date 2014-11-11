@@ -839,7 +839,7 @@ article {
   @media screen and (max-width: 768px) {
     article {
       /**
-         * When you hit the tablet media query, articles, article lists, and
+         * When you hit the medium media query, articles, article lists, and
          * asides become full width and the author information aside pushes to
          * the bottom in browsers that support the latest iteration of flexbox.
          */
