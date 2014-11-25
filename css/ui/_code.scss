@@ -24,7 +24,7 @@ var,
         border-radius: .25em;
     }
 pre {
-    margin-top: 0; // override normalize, margin-bottom in _layout.scss
+    margin-top: 0; // override `_normalize.scss` and `margin-bottom` in `_layout.scss`
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-5;
@@ -42,7 +42,7 @@ pre {
     position: relative;
 }
 /**
- * [data-lang] is always applied to a code element inside div.highlight
+ * `data-lang` is always an attribute on a code element inside `div.highlight`
  */
 [data-lang] {
     padding-top: 2.5em;

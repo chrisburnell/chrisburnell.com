@@ -84,14 +84,14 @@ aside {
     .author-image {
         @extend %rounded;
         background-size: 100%;
-        width: 100px;
-        height: 100px;
+        width:  6.25em;
+        height: 6.25em;
         display: inline-block;
         float: left;
-        margin-right: 10px;
+        margin-right: .625em;
     }
     .article-tags {
-        display: table-cell; // don’t wrap around .author-image
+        display: table-cell; // don’t wrap around `.author-image`
         line-height: 1.429em;
     }
 

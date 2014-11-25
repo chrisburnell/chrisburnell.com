@@ -11,16 +11,16 @@
  * side to make room for any asides, which can appear anywhere inside an
  * article or list of articles.
  * Maximum total width of container
- * = 1080px
+ *   = 1080px
  * Left-hand padding
- * = 25% of 1080px  = 270px  = 16.875em
+ *   = 25% of 1080px = 270px  = 16.875em
  */
 article {
     padding: 2.25em 0 0 16.875em;
     border-top: .25em solid $blue;
     @include breakpoint("medium") {
         /**
-         * When you hit the medium media query, articles, article lists, and
+         * When you hit the `medium` media query, articles, article lists, and
          * asides become full width and the author information aside pushes to
          * the bottom in browsers that support the latest iteration of flexbox.
          */
