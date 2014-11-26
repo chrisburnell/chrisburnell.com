@@ -153,7 +153,7 @@ pre {
         color: darken(#39CCCC, 10%);
     }
     .sr {                               // Literal - String Regex
-        color: darken(#009926, 30%);
+        color: darken(#009926, 20%);
     }
     .bp,                                // Name - Builtin Pseudo
     .gh,                                // Generic - Heading
@@ -164,7 +164,7 @@ pre {
     }
     .gu,                                // Generic - Subheading
     .w {                                // Text - Whitespace
-        color: lighten($text-color-alt, 30%);
+        color: $text-color-light;
     }
     .kt,                                // Keyword - Type
     .na,                                // Name - Attribute

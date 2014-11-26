@@ -814,11 +814,11 @@ aside {
 
 .author-image {
   background-size: 100%;
-  width: 100px;
-  height: 100px;
+  width: 6.25em;
+  height: 6.25em;
   display: inline-block;
   float: left;
-  margin-right: 10px; }
+  margin-right: 0.625em; }
 
 .article-tags {
   display: table-cell;
@@ -988,11 +988,11 @@ pre {
 .highlight .m, .highlight .il, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .nb, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi {
   color: #2ba7a7; }
 .highlight .sr {
-  color: black; }
+  color: #00330c; }
 .highlight .bp, .highlight .gh, .highlight .go, .highlight .gp, .highlight .nn {
   color: #737373; }
 .highlight .gu, .highlight .w {
-  color: #c0c0c0; }
+  color: #DDDDDD; }
 .highlight .kt, .highlight .na, .highlight .nc, .highlight .nt {
   color: #5F8AA6; }
 .highlight .ni, .highlight .ss {
