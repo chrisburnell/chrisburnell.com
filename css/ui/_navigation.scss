@@ -41,14 +41,17 @@
             font-size: 1.25em;
             line-height: 1.25em;
             text-transform: uppercase;
-            @include transition("color .2s, padding-bottom .2s, border-bottom-width .2s, transform .2s");
+            @include transition(color               $transition-time ease,
+                                padding-bottom      $transition-time ease,
+                                border-bottom-width $transition-time ease,
+                                transform           $transition-time ease);
             &:hover,
             &:focus,
             &:active {
                 text-decoration: none;
             }
             &:active {
-                @include translate3d("0, .2em, 0");
+                @include translate3d(0, .2em, 0);
             }
         }
     }
@@ -70,11 +73,11 @@
             .archive-page .primary-navigation-archive a:after,
             .tags-page .primary-navigation-archive a:after {
                 content: "";
-                border-top: .5em solid $blue;
+                border-top:   .5em solid $blue;
                 border-right: .5em solid transparent;
-                border-left: .5em solid transparent;
+                border-left:  .5em solid transparent;
                 position: absolute;
                 top: 100%;
                 left: 50%;
-                @include translate3d("-50%, 0, 0");
+                @include translate3d(-50%, 0, 0);
             }

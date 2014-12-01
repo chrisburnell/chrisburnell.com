@@ -9,17 +9,18 @@ $black-10:         rgba(6, 6, 6, .1);
 $black-25:         rgba(6, 6, 6, .25);
 $white-25:         rgba($white, .25);
 
-// Brand Colours
-$codepen-color:    #212121;
-$github-color:     #333333;
-$lastfm-color:     #E31B23;
-$twitter-color:    #55ACEE;
+// Brands (name, color, icon width)
+$brands: codepen        #212121       41px,
+         github         #333333       38px,
+         lastfm         #E31B23       40px,
+         twitter darken(#55ACEE, 10%) 37px;
 
-// Language Colours
-$html-color:       #E54D26;
-$css-color:        #016FBA;
-$sass-color:       #C6538C;
-$javascript-color: #F1C54C;
+// Coding Language Colours (name, color)
+$coding-languages: css        #016FBA,
+                   html       #E54D26,
+                   javascript #F1C54C,
+                   sass       #C6538C,
+                   scss       #C6538C;
 
 // Font Stack
 $base-font-size:       16px;
@@ -33,6 +34,9 @@ $max-wrapper-width:    1120px;
 $medium-wrapper-width:  768px;
 $small-wrapper-width:   500px;
 $wrapper-padding:      1.25em;
+
+// SCSS Mixin Variables
+$transition-time: 0.2s;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {
@@ -49,15 +53,21 @@ $wrapper-padding:      1.25em;
 @mixin gradient($top, $bottom) {
     background-image: linear-gradient(to bottom, $top 0%, $bottom 100%);
 }
-@mixin transition($transition: "all .2s ease-in-out") {
-    transition: #{$transition};
+@mixin transition($values...) {
+    @if ( length($values) == 0 ) {
+        $values: all $transition-time ease;
+    }
+    transition: $values;
 }
-@mixin translate3d($values: "0, 0, 0") {
-    transform: translate3d(#{$values});
+@mixin translate3d($values...) {
+    @if ( length($values) == 0 ) {
+        $values: 0, 0, 0;
+    }
+    transform: translate3d($values);
 }
-@mixin animation($animation) {
-    animation: #{$animation};
+@mixin animation($values...) {
+    animation: $values;
 }
-@mixin animation-play-state($value: "paused") {
-    animation-play-state: #{$value};
+@mixin animation-play-state($value...) {
+    animation-play-state: $value;
 }

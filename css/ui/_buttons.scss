@@ -24,7 +24,7 @@ button,
     cursor: pointer;
     border-radius: .182em;
     box-shadow: inset 0 -0.182em 0 0 darken($blue, 10%);
-    @include transition("background-color .2s ease-in-out");
+    @include transition(background-color $transition-time ease);
     &:hover,
     &:focus,
     &:active {
@@ -36,7 +36,7 @@ button,
         padding-bottom: 0;
         margin-bottom: .182em;
         box-shadow: inset 0 -0.046em 0 0 darken($blue, 10%);
-        @include translate3d("0, .182em, 0");
+        @include translate3d(0, .182em, 0);
     }
     &:before,
     &:after {

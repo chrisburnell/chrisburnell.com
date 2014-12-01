@@ -2,7 +2,7 @@
     $ ICONS
 \*------------------------------------*/
 
-// Hide our SVGs injected just below <body>
+// Hide our SVGs injected just below `<body>`
 .svg-master {
     display: none;
 }
@@ -14,7 +14,7 @@
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
-    @include transition();
+    @include transition;
     &:hover,
     &:focus,
     &:active {
@@ -22,22 +22,17 @@
         text-decoration: none;
     }
     &:active {
-        @include translate3d("0, .14em, 0");
+        @include translate3d(0, .14em, 0);
     }
-    &.codepen-link {
-        width: 41px;
-    }
-    &.github-link {
-        width: 38px;
-    }
-    &.lastfm-link {
-        width: 40px;
+    @each $brand in $brands {
+        $name:  nth($brand, 1);
+        $width: nth($brand, 3);
+        &.#{$name}-link {
+            width: #{$width};
+        }
     }
     &.rss-link {
         width: 31px;
-    }
-    &.twitter-link {
-        width: 37px;
     }
     svg {
         width: 100%;

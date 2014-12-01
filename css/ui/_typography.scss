@@ -58,7 +58,8 @@ h4 {
 a {
     color: $blue;
     text-decoration: none;
-    @include transition("background .2s, color .2s");
+    @include transition(background $transition-time ease,
+                        color      $transition-time ease);
     &:hover,
     &:focus,
     &:active {
@@ -77,17 +78,12 @@ a {
 /**
  * Branded Link Colors
  */
-.codepen-link {
-    color: $codepen-color !important;
-}
-.github-link {
-    color: $github-color !important;
-}
-.lastfm-link {
-    color: $lastfm-color !important;
-}
-.twitter-link {
-    color: darken($twitter-color, 10%) !important;
+@each $brand in $brands {
+    $name:  nth($brand, 1);
+    $color: nth($brand, 2);
+    .#{$name}-link {
+        color: #{$color} !important;
+    }
 }
 
 p {

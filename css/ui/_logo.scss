@@ -31,7 +31,7 @@
         font-size: 2.75em;
     }
     &:active {
-        @include translate3d("0, .039em, 0");
+        @include translate3d(0, .039em, 0);
         svg {
             /**
              * In order to get the logo image to travel up 2x the distance
@@ -52,10 +52,10 @@
         top: 0;
         left: 0;
         z-index: -1;
-        @include animation("soaring 30s linear alternate infinite");
-        @include animation-play-state("paused");
-        @include transition();
-        @include translate3d("0, -0.8125em, 0");
+        @include animation(soaring 30s linear alternate infinite);
+        @include animation-play-state(paused);
+        @include transition;
+        @include translate3d(0, -0.8125em, 0);
     }
     &:hover svg,
     &:focus svg,
@@ -63,17 +63,17 @@
         /**
          * Only animate the image when the user hovers the logo.
          */
-        @include animation-play-state("running");
+        @include animation-play-state(running);
     }
 }
 @keyframes soaring {
     0%,
-    100%  { @include translate3d(" 0,        -0.8125em, 0"); }
-    12.5% { @include translate3d("-0.0625em, -0.6875em, 0"); }
-    25%   { @include translate3d("  .125em,  -0.3125em, 0"); }
-    37.5% { @include translate3d("  .3125em, -0.375em,  0"); }
-    50%   { @include translate3d("  .125em,  -0.4375em, 0"); }
-    62.5% { @include translate3d("  .0625em, -0.25em,   0"); }
-    75%   { @include translate3d("  .1875em, -0.4375em, 0"); }
-    87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
+    100%  { @include translate3d( 0,        -0.8125em, 0); }
+    12.5% { @include translate3d(-0.0625em, -0.6875em, 0); }
+    25%   { @include translate3d(  .125em,  -0.3125em, 0); }
+    37.5% { @include translate3d(  .3125em, -0.375em,  0); }
+    50%   { @include translate3d(  .125em,  -0.4375em, 0); }
+    62.5% { @include translate3d(  .0625em, -0.25em,   0); }
+    75%   { @include translate3d(  .1875em, -0.4375em, 0); }
+    87.5% { @include translate3d(-0.0625em, -0.5625em, 0); }
 }

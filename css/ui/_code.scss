@@ -24,7 +24,7 @@ var,
         border-radius: .25em;
     }
 pre {
-    margin-top: 0; // override `_normalize.scss` and `margin-bottom` in `_layout.scss`
+    margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-5;
@@ -65,18 +65,12 @@ pre {
         border-radius: .3em .3em 0 0;
         @include transition;
     }
-    &.language-html:before {
-        background-color: $html-color;
-    }
-    &.language-css:before {
-        background-color: $css-color;
-    }
-    &.language-sass:before,
-    &.language-scss:before {
-        background-color: $sass-color;
-    }
-    &.language-javascript:before {
-        background-color: $javascript-color;
+    @each $language in $coding-languages {
+        $name:  nth($language, 1);
+        $color: nth($language, 2);
+        &.language-#{$name}:before {
+            background-color: #{$color};
+        }
     }
 }
 
@@ -85,8 +79,8 @@ pre {
  */
 .highlight {
     .err {                              // Error
-        background-color: lighten($lastfm-color, 35%);
-        color: $lastfm-color;
+        background-color: lightcoral;
+        color: firebrick;
         font-weight: 600;
     }
     .c,                                 // Comment
@@ -125,15 +119,15 @@ pre {
     .sh,                                // Literal - String Heredoc
     .si,                                // Literal - String Interpol
     .sx {                               // Literal - String Other
-        color: $lastfm-color;
+        color: firebrick;
     }
     .gi,                                // Generic - Inserted
     .gi .x {                            // Generic - Inserted Specific
-        background-color: lighten(#3D9970, 30%);
+        background-color: turquoise;
     }
     .gd,                                // Generic - Deleted
     .gd .x {                            // Generic - Deleted Specific
-        background-color: lighten($lastfm-color, 35%);
+        background-color: lightcoral;
     }
     .ge {                               // Generic - Emph
         font-style: italic;
@@ -150,10 +144,10 @@ pre {
     .vc,                                // Name - Variable Class
     .vg,                                // Name - Variable Global
     .vi {                               // Name - Variable Instance
-        color: darken(#39CCCC, 10%);
+        color: cadetblue;
     }
     .sr {                               // Literal - String Regex
-        color: darken(#009926, 20%);
+        color: forestgreen;
     }
     .bp,                                // Name - Builtin Pseudo
     .gh,                                // Generic - Heading
@@ -174,6 +168,7 @@ pre {
     }
     .ni,                                // Name - Entity
     .ss {                               // Literal - String Symbol
-        color: #85144B;
+        color: slateblue;
+        color: rebeccapurple;
     }
 }
