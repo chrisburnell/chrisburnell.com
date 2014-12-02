@@ -30,13 +30,13 @@ One fantastic utility that helps immensely in trimming the fat, I learned about 
 
 Say an old version of Chrome becomes stale and the global usage of that version dips below an arbitrary percentage (which I do not support) such that I no longer need a webkit prefix for a property anymore; I would need to physically check the support tables, manually find out that the prefix fell out, and then crawl and update my entire codebase to remove the unnecessary code. That just isn’t good enough if I want smooth sailing.
 
-<aside><p><code>autoprefixer -i</code> to run *Autoprefixer* from command line</p></aside>
+<aside><p>`autoprefixer -i` to run *Autoprefixer* from command line</p></aside>
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 --------
 
-<aside><p><code>sass</code> to compile SASS or SCSS,  from command line</p></aside>
+<aside><p>`sass` to compile SASS or SCSS,  from command line</p></aside>
 
 Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
@@ -57,7 +57,7 @@ And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming b
 
 How does *gulp* work?
 
-Here’s a sample <code>gulpfile.js</code> that shows the workflow at play. It should give you a fairly good idea of what’s going on.
+Here’s a sample `gulpfile.js` that shows the workflow at play. It should give you a fairly good idea of what’s going on.
 
 {% highlight javascript %}
 var gulp = require('gulp');
@@ -99,7 +99,7 @@ gulp.task('watch', function () {
 gulp.task('default', ['scripts', 'images', 'watch']);
 {% endhighlight %}
 
-What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The <code>watch</code> task is being used to listen for changes to particular files and run tasks subsequently. My particular <code>gulpfile.js</code> is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when <code>watch</code> is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* <code>watch</code> to compile, minify, and refesh for you!
+What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
 
 {% include heading-anchor.html id="good-old-brass-tacks" title="Good old brass tacks" %}
 
@@ -345,7 +345,7 @@ Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* 
     }
 {% endhighlight %}
 
-Already looking much better! You’ll notice I was even able to exclude the entire repeated <code>-webkit-keyframes</code> declarations as *Autoprefixer* will include these for me when *gulp* runs.
+Already looking much better! You’ll notice I was even able to exclude the entire repeated `-webkit-keyframes` declarations as *Autoprefixer* will include these for me when *gulp* runs.
 
 --------
 
@@ -429,10 +429,10 @@ Next, let’s turn this CSS into SCSS.
 
 {% include heading-anchor.html id="a-few-major-changes" title="You’ll notice a few major changes" %}
 
-- the <code>hover</code>, <code>focus</code>, and <code>active</code> states are nested, using an <code>&</code> prefix
-- the <code>after</code> pseudo class is nested, using an <code>&</code> prefix
-- the <code>span</code> child of <code>.logo</code> is nested directly inside <code>.logo</code>
-- the media query is nested inside the <code>.logo</code> declaration as <code>@include breakpoint()</code>
+- the `hover`, `focus`, and `active` states are nested, using an `&` prefix
+- the `after` pseudo class is nested, using an `&` prefix
+- the `span` child of `.logo` is nested directly inside `.logo`
+- the media query is nested inside the `.logo` declaration as `@include breakpoint()`
 
 {% highlight scss %}
 .logo {
@@ -468,7 +468,7 @@ Next, let’s turn this CSS into SCSS.
 }
 {% endhighlight %}
 
-- some declaration values are defined as variables, denoted by a preceding <code>$</code>
+- some declaration values are defined as variables, denoted by a preceding `$`
 - these variables are defined in the variables section of the SCSS
 
 {% highlight scss %}
@@ -476,8 +476,8 @@ $text-color: #4f4f4f;
 $heading-font-stack: "league-gothic", sans-serif;
 {% endhighlight %}
 
-- liberal use of <code>@includes</code>
-- these reference <code>@mixins</code> that are defined in the variables section of the SCSS
+- liberal use of `@includes`
+- these reference `@mixins` that are defined in the variables section of the SCSS
 
 {% highlight scss %}
 @mixin breakpoint($width) {
@@ -506,7 +506,7 @@ The CSS here a lot more concise now, and the advantages are tremendous as you ge
 
 --------
 
-Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SCSS files into one file in the output <code>.css</code> file. I’ve done exactly that with my SCSS files—split them into <dfn title="a SASS file named with a leading underscore to denote it is a part of a whole SASS codebase">partials</dfn>: <code>\_articles.scss</code>, <code>\_asides.scss</code>, <code>\_buttons.scss</code>, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
+Another thing, which I won’t bother to illustrate here, is the splitting of files. Just like how I talked about building a componential CSS architecture, SASS allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <dfn title="a SASS file named with a leading underscore to denote it is a part of a whole SASS codebase">partials</dfn>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
@@ -529,7 +529,7 @@ I cannot stress how awesome SASS and SCSS are and how they can drastically speed
 
 The power of *Autoprefixer* speaks for itself, really.
 
-And with *gulp* <code>watching</code>, the transition from the SCSS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
+And with *gulp* `watching`, the transition from the SCSS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
 
 {% include heading-anchor.html id="thats-whats-up" title="So that’s what’s up" %}
 

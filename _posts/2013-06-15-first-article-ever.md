@@ -17,13 +17,13 @@ Since my last design update, I started working at [Squiz](http://squiz.net/uk "S
 
 {% include heading-anchor.html id="more-than-meets-the-eye" title="More than meets the eye" %}
 
-Enforcing strict CSS standards goes beyond keeping an eye out for <code>!important</code>s or excessively long chained selectors&mdash;the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I’ll be writing on this soon!)
+Enforcing strict CSS standards goes beyond keeping an eye out for `!important`s or excessively long chained selectors—the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I’ll be writing on this soon!)
 
 Part of the challenge was realising that decisions I made at the beginning would have a profound impact on how certain aspects of the project would go further on: the naming convention, architecture of both CSS and the file structure on which Matrix (the Content Management System) was built, etc.
 
 {% include heading-anchor.html id="whats-new" title="What’s new in this iteration?" %}
 
-I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies&mdash;over the years, I’ve gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was basically poor planning on my part over and over again. Pretty stupid. That’s where Jekyll came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
+I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies—over the years, I’ve gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was basically poor planning on my part over and over again. Pretty stupid. That’s where Jekyll came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
 
 {% include heading-anchor.html id="what-is-jekyll" title="What is Jekyll?" %}
 
@@ -31,7 +31,7 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 {% include heading-anchor.html id="better-faster-stronger" title="Better, Faster, Stronger" %}
 
-I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing&mdash;<span class="gray">(Edit: and editing)</span>&mdash; actual content.
+I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing—<span class="gray">(Edit: and editing)</span>— actual content.
 
 That’s something else I’m quite new to but thoroughly enjoying picking up: writing content in Markdown.
 

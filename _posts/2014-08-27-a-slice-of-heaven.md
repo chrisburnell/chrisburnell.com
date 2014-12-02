@@ -23,9 +23,9 @@ Hover the slice to see how this one works.
 
 {% include codepen-embed.html slug="apogK" height="350" %}
 
-In this Pen, I’m taking advantage of <code>border-radius</code> and <code>overflow</code> on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
+In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
-*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.*
+*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with `border-radius` and `overflow` not masking child elements property when modified with a `transform`. Hopefully this is fixed soon, but in the meantime, I’ve added a `border-radius` and an associated `transform` on the `:before` and `:after` elements.*
 
 {% include heading-anchor.html id="zoomy-anchor-thing" title="Zoomy Anchor Thing" %}
 
@@ -41,7 +41,7 @@ This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.
 
 {% include codepen-embed.html slug="scyKF" height="350" %}
 
-One of the often underused but **powerful** utilities available in HTML is the relationship between an <code>input</code> element and its <code>label</code> element—you can even use multiple <code>label</code>s to control your <code>input</code> field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
+One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
 {% include heading-anchor.html id="slip-n-slide-modal" title="Slip-n-slide Modal" %}
 
@@ -59,9 +59,9 @@ And the revisited version:
 
 {% include codepen-embed.html slug="Cbiun" height="250" %}
 
-Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (<code>+</code> and <code>~</code>, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the <code>input</code>’s associated <code>label</code> element based on the <code>:checked</code> state of the <code>input</code>.
+Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 
-Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter") for helping me improve this even further by adding keyboard support for the hidden <code>input</code> field.
+Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter") for helping me improve this even further by adding keyboard support for the hidden `input` field.
 
 {% include heading-anchor.html id="over-to-you" title="Over to you" %}
 

@@ -17,7 +17,7 @@ comments: true
 
 --------
 
-Browsers today can be pretty forgiving to us developers. Even HTML5, which is not at all new anymore, is very lenient about the syntax and formatting of markup. For example, it used to be that a long and unnecessarily complicated doctype would need to be supplied for browsers to properly interpret the page, like <code><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code>; today it’s as simple as <code><!doctype html></code>. This leaves developers with a lot of control over their code and allows for more natural coding, as developers are able to write their code how they choose and still remain confident it will work across all relevant devices and browsers.
+Browsers today can be pretty forgiving to us developers. Even HTML5, which is not at all new anymore, is very lenient about the syntax and formatting of markup. For example, it used to be that a long and unnecessarily complicated doctype would need to be supplied for browsers to properly interpret the page, like `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`; today it’s as simple as `<!doctype html>`. This leaves developers with a lot of control over their code and allows for more natural coding, as developers are able to write their code how they choose and still remain confident it will work across all relevant devices and browsers.
 
 {% include heading-anchor.html id="times-are-changing" title="The times, they are a-changing" %}
 
@@ -27,13 +27,13 @@ This brings me to my point—that mobile and tablet browsers, though solid, are 
 
 {% include heading-anchor.html id="responsive-magic" title="So what makes all this responsive magic work?" %}
 
-It’s the <code>&lt;meta name="viewport"&gt;</code> tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
+It’s the `<meta name="viewport">` tag. This is what defines some key variables for the browser to follow when rendering the HTML and CSS for the page. These key variables are as follows, but not limited to:
 
-- <code>width</code>
-- <code>minimum-scale</code>
-- <code>maximum-scale</code>
-- <code>initial-scale</code>
-- <code>user-scalable</code>
+- `width`
+- `minimum-scale`
+- `maximum-scale`
+- `initial-scale`
+- `user-scalable`
 
 and are implemented like so:
 
@@ -43,10 +43,10 @@ and are implemented like so:
 
 These tell the browser a number of things, respectively:
 
-- Set the width of the viewport&mdash;<code>&lt;body&gt;</code> in most cases&mdash;to the width of the device’s screen, in pixels.
-- Set the <code>minimum-scale</code> the site can be viewed at to 1; for when a user tries to zoom in on something on the site (pinching on mobile, for example).
-- Set the <code>maximum-scale</code> the site can be viewed at to 1; for when a user tries to zoom out of the site.
-- Set the <code>initial-scale</code> when the site loads to 1; in this case this does nothing as the minimum and maximum are the same, but you could set minimum to 1, maximum to 2, and initial to 1.5 if that’s what would work on your particular project.
+- Set the width of the viewport—`<body>` in most cases—to the width of the device’s screen, in pixels.
+- Set the `minimum-scale` the site can be viewed at to 1; for when a user tries to zoom in on something on the site (pinching on mobile, for example).
+- Set the `maximum-scale` the site can be viewed at to 1; for when a user tries to zoom out of the site.
+- Set the `initial-scale` when the site loads to 1; in this case this does nothing as the minimum and maximum are the same, but you could set minimum to 1, maximum to 2, and initial to 1.5 if that’s what would work on your particular project.
 - Toggle whether the user is allowed to rescale the site at all.
 
 For reasons like having a consistent user experience for all users, this is a pivotal piece of your markup and if done incorrectly, could break your entire design and leave you barking up the wrong tree until you realise that yeah, maybe sometimes, syntax matters.
@@ -56,8 +56,8 @@ For reasons like having a consistent user experience for all users, this is a pi
 Fine. I’ve rambled enough.
 
 - Separate your variables with commas, *not semicolons*.
-- Don’t set an arbitrary width. Just don’t do it if you value your time and sanity later on. Responsive design is done best when it’s fluid, so in 99% of cases, set this to <code>device-width</code>. But this is not a blanket statement, you must assess this on a per-project basis.
-- Use <code>maximum-scale</code> and <code>minimum-scale</code>, other variations don’t cut it.
+- Don’t set an arbitrary width. Just don’t do it if you value your time and sanity later on. Responsive design is done best when it’s fluid, so in 99% of cases, set this to `device-width`. But this is not a blanket statement, you must assess this on a per-project basis.
+- Use `maximum-scale` and `minimum-scale`, other variations don’t cut it.
 - Scalable only has one *E*, at the end.
 
 This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/ "Viewport Sizes") is a great resource of popular devices and their respective viewport attributes.

@@ -24,7 +24,7 @@ In this article I’m going to run through how I manage my comments section from
 
 - The greatest disadvantage of using Disqus may or may not be obvious, but it means you’re locked into using Disqus for your comments. Disqus do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options") and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with Disqus in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
-- Another issue with Disqus that isn’t terribly relevant anymore today, outside the context of a few edge case users, is that Disqus relies on Javascript to inject your comments and commenting form onto your page—users with Javascript turned off won’t be able to comment. I imagine there are also some aggressive ad-block browser plugins which would disallow Disqus from loading, but they’re probably also an edge case. In the case that the user doesn’t have Javascript turned on, a message is displayed using a <code>noscript</code> tag.
+- Another issue with Disqus that isn’t terribly relevant anymore today, outside the context of a few edge case users, is that Disqus relies on Javascript to inject your comments and commenting form onto your page—users with Javascript turned off won’t be able to comment. I imagine there are also some aggressive ad-block browser plugins which would disallow Disqus from loading, but they’re probably also an edge case. In the case that the user doesn’t have Javascript turned on, a message is displayed using a `noscript` tag.
 - It’s beyond my knowledge how caching is affected by Disqus—whether or not it is cached, or available to be cached offline—but as the *movement* to bring offline support to the web ramps up, this could present an issue.
 
 {% include heading-anchor.html id="pros" title="The Pros of Disqus" %}
@@ -58,8 +58,8 @@ So what can we do to reduce the page weight and load time for a majority of user
 Let’s decide what the conditions are for loading the comments:
 
 0. The user has finished reading the article, gets to the bottom of the page, and wants to read the comments
-0. The user navigates to the page from a link that directs them to the comments (with <code>#comments</code> appended to the URL)
-0. The user clicks a link to the comments section from within the article itself (also by <code>#comments</code> being appended to the URL)
+0. The user navigates to the page from a link that directs them to the comments (with `#comments` appended to the URL)
+0. The user clicks a link to the comments section from within the article itself (also by `#comments` being appended to the URL)
 
 Let’s dive into some code. Here’s how I was loading Disqus *non-conditionally*:
 
@@ -71,7 +71,7 @@ Let’s dive into some code. Here’s how I was loading Disqus *non-conditionall
 })();
 {% endhighlight %}
 
-I didn’t want to reinvent the wheel, so I followed in the footsteps of others who have done the same thing. First I wanted to create an action for the user to perform if they reached the bottom of an article and want to dip into the comments, and did so with a simple <code>button</code>.
+I didn’t want to reinvent the wheel, so I followed in the footsteps of others who have done the same thing. First I wanted to create an action for the user to perform if they reached the bottom of an article and want to dip into the comments, and did so with a simple `button`.
 
 <aside><p>Remember, don’t mix classes for styling and javascript hooks. You’ll save yourself potential pains later on at no cost right now!</p></aside>
 
@@ -79,7 +79,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 <button class="show-comments  js-show-comments">Show Comments</button>
 {% endhighlight %}
 
-And let’s create some associated Javascript to create and hook onto our <code>button</code> and perform two actions: remove the <code>button</code> and load Disqus.
+And let’s create some associated Javascript to create and hook onto our `button` and perform two actions: remove the `button` and load Disqus.
 
 {% highlight javascript %}
 var commentsSection = document.getElementById('comments');
@@ -100,13 +100,13 @@ function showComments() {
 
 What we’re doing here is:
 
-0. Assign our <code>button</code> to a variable
-0. Add an click event listener to our <code>button</code> (which fortunately also works via keyboard commands)
-0. When the <code>button</code> *is* clicked, remove the <code>button</code> and load in our comments
+0. Assign our `button` to a variable
+0. Add an click event listener to our `button` (which fortunately also works via keyboard commands)
+0. When the `button` *is* clicked, remove the `button` and load in our comments
 
 ---
 
-Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to <code>#comments</code>) or catching it when the page is loaded.
+Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comments`) or catching it when the page is loaded.
 
 <aside><p>Check out the support for [onhashchange on CanIUse](http://caniuse.com/#search=onhashchange "Support for onhashchange") before jumping in too deep!</p></aside>
 
@@ -125,16 +125,16 @@ window.onhashchange = function() {
 What we’re doing here is:
 
 0. Assign our hash value to a variable (because why not?)
-0. If the URL already contains our desired hash on page load, run the <code>showComments()</code> command
-0. If the hash changes in the URL after the page has loaded, and it matches our desired value, run the <code>showComments()</code> command
+0. If the URL already contains our desired hash on page load, run the `showComments()` command
+0. If the hash changes in the URL after the page has loaded, and it matches our desired value, run the `showComments()` command
 
-If you remember, the <code>showComments()</code> function removes the <code>button</code> we created before—we want to do the same thing if <code>#comments</code> is in the URL and we’re loading Disqus, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
+If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comments` is in the URL and we’re loading Disqus, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
 
 ---
 
-Almost there! Let’s create a failsafe—if our <code>button</code> no longer exists when the <code>showComments()</code> function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
+Almost there! Let’s create a failsafe—if our `button` no longer exists when the `showComments()` function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
-<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the [comments](#comments "Jump to the comments").</p></aside>
+<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our `button` until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the [comments](#comments "Jump to the comments").</p></aside>
 
 {% highlight javascript %}
 function showComments() {
@@ -194,16 +194,16 @@ function showComments() {
 We’ve met all the conditions we set when we embarked upon this task:
 
 0. Create a button to load the comments
-0. Load the comments if the page was navigated to with the <code>#comments</code> hash
-0. Load the comments if the user clicks an anchor to jump to <code>#comments</code> section
+0. Load the comments if the page was navigated to with the `#comments` hash
+0. Load the comments if the user clicks an anchor to jump to `#comments` section
 
 As we saw in [the statistics](#the-weigh-in "The Weigh In") of Disqus’ impact, these aren’t massive savings, but they’ll certainly help out some of my users whom I know are browsing on slow connections and slow mobile phones.
 
 ---
 
-We still have a small thorn when it comes to users without Javascript enabled. Of course, the <code>noscript</code> tag will display a message, <q>Please enable Javascript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, Disqus have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](http://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without Javascript enabled anyway.
+We still have a small thorn when it comes to users without Javascript enabled. Of course, the `noscript` tag will display a message, <q>Please enable Javascript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, Disqus have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](http://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without Javascript enabled anyway.
 
-[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. <code>https://disqus.com/comments/?url=http://chrisburnell.com/articles/a-slice-of-heaven</code> is a possible solution to a minor problem—let’s hope Disqus implements something like this soon.
+[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. `https://disqus.com/comments/?url=http://chrisburnell.com/articles/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope Disqus implements something like this soon.
 
 ---
 

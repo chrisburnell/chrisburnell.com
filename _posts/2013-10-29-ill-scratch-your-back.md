@@ -17,7 +17,7 @@ So, for example, if an editor creates an article with lists and pictures, it’s
 
 {% include heading-anchor.html id="lets-look-at-some-code" title="Let’s look at some code" %}
 
-Say we want the default ordered list to appear with <code>padding-left</code> and <code>list-style</code> that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css")). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
+Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css")). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
 {% highlight html %}
 <ol class="table-of-contents">
@@ -41,7 +41,7 @@ ol.table-of-contents {
 }
 {% endhighlight %}
 
-Due to the cascading nature of CSS, the styles we’ve given to our default ordered list will *cascade* to our table of contents! As a result, we have to *unset* the <code>padding-left</code> and <code>list-style</code> we *just* applied. This is a waste of precious code!
+Due to the cascading nature of CSS, the styles we’ve given to our default ordered list will *cascade* to our table of contents! As a result, we have to *unset* the `padding-left` and `list-style` we *just* applied. This is a waste of precious code!
 
 --------
 
@@ -58,9 +58,9 @@ ol:not([class]) {
 
 {% include heading-anchor.html id="whats-going-on-here" title="What’s going on here?" %}
 
-We’re basically saying that <q>for every ordered list that doesn’t have a class attribute, apply some styles.</q> Normally, the attribute selector, <code>[ ]</code>, is used to style external links or elements with a specific <code>rel</code> attribute, but in this case we’re using the barebones and **just** checking for the instance of a class attribute at all.
+We’re basically saying that <q>for every ordered list that doesn’t have a class attribute, apply some styles.</q> Normally, the attribute selector, `[ ]`, is used to style external links or elements with a specific `rel` attribute, but in this case we’re using the barebones and **just** checking for the instance of a class attribute at all.
 
-Normally in CSS, we would use <code>.</code> to target an element by *class name*, but we can also use an attribute selector: <code>[class=table-of-contents]</code>. This will match elements with the class, <code>table-of-contents</code>, but what’s nice about CSS3’s attribute selectors is that they can be used like a boolean to check for the attribute’s (or multiple attributes’) existence only.
+Normally in CSS, we would use `.` to target an element by *class name*, but we can also use an attribute selector: `[class=table-of-contents]`. This will match elements with the class, `table-of-contents`, but what’s nice about CSS3’s attribute selectors is that they can be used like a boolean to check for the attribute’s (or multiple attributes’) existence only.
 
 --------
 
