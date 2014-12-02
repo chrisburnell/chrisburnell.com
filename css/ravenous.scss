@@ -8,22 +8,23 @@
  *
  * NORMALIZE................. Import normalize as a reset.
  * LAYOUT.................... Set the general page layout.
- * LAYOUT AND TYPOGRAPHY..... Set the default content styles.
+ * TYPOGRAPHY................ Set the default content styles.
  * BUTTONS................... Set the default button styles.
  * HEADER.................... Set the header styles.
  * LOGO...................... Set the logo styles.
  * NAVIGATION................ Set the navigation styles.
- * ARTICLE................... Set the article styles.
- * ASIDE..................... Set the aside styles.
+ * MAIN CONTENT.............. Set the main content styles.
+ * ASIDES.................... Set the aside styles.
  * FOOTER.................... Set the footer styles.
  * CODE BLOCKS............... Set the code block styles.
  * ICONS..................... Set the icon styles.
- * MISCELLANEOUS............. Set some miscellaneous, site-wide styles.
  * PRINT..................... Set the print styles.
+ * SHAME..................... Shameful hacks, shims, and temporary fixes.
  */
 
-@import "normalize.css",
-        "ui/vars",
+@import "normalize.css";
+
+@import "ui/vars",
         "ui/layout",
         "ui/typography",
         "ui/buttons",
@@ -35,5 +36,5 @@
         "ui/footer",
         "ui/code",
         "ui/icons",
-        "ui/miscellaneous",
-        "ui/print";
+        "ui/print",
+        "ui/shame";

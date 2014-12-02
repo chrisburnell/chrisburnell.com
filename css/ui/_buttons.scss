@@ -54,4 +54,10 @@ button,
     &[disabled] {
         opacity: .4;
     }
+    .not-found-page & {
+        @include breakpoint("medium") {
+            display: block;
+            margin: 0 auto 2em;
+        }
+    }
 }

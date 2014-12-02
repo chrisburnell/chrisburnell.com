@@ -8,18 +8,18 @@
  *
  * NORMALIZE................. Import normalize as a reset.
  * LAYOUT.................... Set the general page layout.
- * LAYOUT AND TYPOGRAPHY..... Set the default content styles.
+ * TYPOGRAPHY................ Set the default content styles.
  * BUTTONS................... Set the default button styles.
  * HEADER.................... Set the header styles.
  * LOGO...................... Set the logo styles.
  * NAVIGATION................ Set the navigation styles.
- * ARTICLE................... Set the article styles.
- * ASIDE..................... Set the aside styles.
+ * MAIN CONTENT.............. Set the main content styles.
+ * ASIDES.................... Set the aside styles.
  * FOOTER.................... Set the footer styles.
  * CODE BLOCKS............... Set the code block styles.
  * ICONS..................... Set the icon styles.
- * MISCELLANEOUS............. Set some miscellaneous, site-wide styles.
  * PRINT..................... Set the print styles.
+ * SHAME..................... Shameful hacks, shims, and temporary fixes.
  */
 /*------------------------------------*\
     $ LAYOUT
@@ -56,18 +56,24 @@ body {
     clear: both; }
 
 /**
+ * Add a bottom margin to a plethora of tasty elements
+ */
+h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, iframe {
+  margin-bottom: 1.25em; }
+
+/**
  * Allow for fixed-width content
  */
 .fixed-width {
   width: 1120px; }
 
 /**
- * Add a bottom margin to a plethora of tasty elements
+ * Hide things... ’nuff said
  */
-h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, iframe {
-  margin-bottom: 1.25em; }
+.hidden, p:empty {
+  display: none; }
 
-figure img, figure svg, blockquote, .article-banner, .small-articles-list a, aside:not(.author), .author-image, pre:not(.codepen), [data-lang]:before, .color-block-list li {
+figure img, figure svg, blockquote, .article-banner, .small-articles-list a, .color-block-list li, aside:not(.author), .author-image, pre:not(.codepen), [data-lang]:before {
   background-clip: padding-box;
   border-radius: 0.375em; }
 
@@ -140,7 +146,7 @@ a {
       color: #5F8AA6; }
 
 /**
- * Branded Link Colors
+ * Brand Link Colours
  */
 .codepen-link {
   color: #212121 !important; }
@@ -301,6 +307,10 @@ button, .button {
     top: -0.182em; }
   button[disabled], .button[disabled] {
     opacity: 0.4; }
+  @media screen and (max-width: 768px) {
+    .not-found-page button, .not-found-page .button {
+      display: block;
+      margin: 0 auto 2em; } }
 
 /*------------------------------------*\
     $ HEADER
@@ -342,11 +352,11 @@ button, .button {
             transform: translate3d(0, 0.039em, 0); }
     .logo:active svg {
       /**
-             * In order to get the logo image to travel up 2x the distance
-             * the logo text does, first the translate applied on the parent
-             * (of the aside) has to be counteracted, then double 0.039em
+             * In order to get `.logo svg` to travel up 2x the distance the
+             * `.logo` text does, first the `translate` applied on the parent
+             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
              * is added, totalling 0.117em, made negative on the y-axis to
-             * go up. We cannot use translate as it is used below for
+             * go up. We cannot use `translate` as it is used below for
              * further animating.
              */
       top: -0.117em; }
@@ -368,7 +378,7 @@ button, .button {
             transform: translate3d(0, -0.8125em, 0); }
   .logo:hover svg, .logo:focus svg, .logo:active svg {
     /**
-         * Only animate the image when the user hovers the logo.
+         * Only animate the image when the user hovers `.logo`.
          */
     -webkit-animation-play-state: running;
             animation-play-state: running; }
@@ -511,8 +521,8 @@ button, .button {
 
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
- * side to make room for any asides, which can appear anywhere inside an
- * article or list of articles.
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
  * Maximum total width of container
  *   = 1080px
  * Left-hand padding
@@ -524,9 +534,9 @@ article {
   @media screen and (max-width: 768px) {
     article {
       /**
-         * When you hit the `medium` media query, articles, article lists, and
-         * asides become full width and the author information aside pushes to
-         * the bottom in browsers that support the latest iteration of flexbox.
+         * When you hit the `medium` media query, `article`, `article-list`, and
+         * `aside` becomes full width and `aside.author-information` pushes to
+         * the bottom of the page.
          */
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -717,6 +727,37 @@ article {
     font-style: italic; }
 
 /**
+ * Style Guide
+ */
+.color-block-list {
+  margin-bottom: 0.75em;
+  text-align: center; }
+  .color-block-list li {
+    color: #F9F9F9;
+    width: 6.5em;
+    height: 6.5em;
+    display: inline-block;
+    border: 0.25em solid rgba(6, 6, 6, 0.25);
+    margin: 0 0.25em 0.5em;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-weight: 700;
+    line-height: 6em;
+    text-align: center;
+    white-space: nowrap; }
+    .color-block-list li[data-color="#5F8AA6"] {
+      background-color: #5F8AA6; }
+    .color-block-list li[data-color="#F9F9F9"] {
+      background-color: #F9F9F9;
+      color: #4F4F4F; }
+    .color-block-list li[data-color="#4F4F4F"] {
+      background-color: #4F4F4F; }
+    .color-block-list li[data-color="#737373"] {
+      background-color: #737373; }
+    .color-block-list li[data-color="#DDDDDD"] {
+      background-color: #DDDDDD;
+      color: #4F4F4F; }
+
+/**
  * Contains embedded media properly and allows them to be dynamically resized.
  */
 .media-container {
@@ -733,7 +774,7 @@ article {
     left: 0; }
 
 /**
- * Fix iframes
+ * Fix `iframe`
  */
 iframe {
   width: 100%;
@@ -1039,54 +1080,6 @@ pre {
     display: block; }
 
 /*------------------------------------*\
-    $ MISCELLANEOUS
-\*------------------------------------*/
-/**
- * Style Guide
- */
-.color-block-list {
-  margin-bottom: 0.75em;
-  text-align: center; }
-  .color-block-list li {
-    color: #F9F9F9;
-    width: 6.5em;
-    height: 6.5em;
-    display: inline-block;
-    border: 0.25em solid rgba(6, 6, 6, 0.25);
-    margin: 0 0.25em 0.5em;
-    font-family: Consolas, Monaco, "Courier New", monospace;
-    font-weight: 700;
-    line-height: 6em;
-    text-align: center;
-    white-space: nowrap; }
-    .color-block-list li[data-color="#5F8AA6"] {
-      background-color: #5F8AA6; }
-    .color-block-list li[data-color="#F9F9F9"] {
-      background-color: #F9F9F9;
-      color: #4F4F4F; }
-    .color-block-list li[data-color="#4F4F4F"] {
-      background-color: #4F4F4F; }
-    .color-block-list li[data-color="#737373"] {
-      background-color: #737373; }
-    .color-block-list li[data-color="#DDDDDD"] {
-      background-color: #DDDDDD;
-      color: #4F4F4F; }
-
-/**
- * Hide things... 'nuff said
- */
-.hidden, p:empty {
-  display: none; }
-
-/**
- * 404 Page Button
- */
-@media screen and (max-width: 768px) {
-  .not-found-page button {
-    display: block;
-    margin: 0 auto 2em; } }
-
-/*------------------------------------*\
     $ PRINT
 \*------------------------------------*/
 @media print {
@@ -1096,3 +1089,7 @@ pre {
     color: #4F4F4F;
     border: 1px solid #4F4F4F;
     box-shadow: none; } }
+
+/*------------------------------------*\
+    $ SHAME
+\*------------------------------------*/

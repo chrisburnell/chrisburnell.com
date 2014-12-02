@@ -76,7 +76,7 @@ a {
     }
 }
 /**
- * Branded Link Colors
+ * Brand Link Colours
  */
 @each $brand in $brands {
     $name:  nth($brand, 1);

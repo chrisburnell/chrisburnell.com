@@ -8,8 +8,8 @@
 
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
- * side to make room for any asides, which can appear anywhere inside an
- * article or list of articles.
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
  * Maximum total width of container
  *   = 1080px
  * Left-hand padding
@@ -20,9 +20,9 @@ article {
     border-top: .25em solid $blue;
     @include breakpoint("medium") {
         /**
-         * When you hit the `medium` media query, articles, article lists, and
-         * asides become full width and the author information aside pushes to
-         * the bottom in browsers that support the latest iteration of flexbox.
+         * When you hit the `medium` media query, `article`, `article-list`, and
+         * `aside` becomes full width and `aside.author-information` pushes to
+         * the bottom of the page.
          */
         display: flex;
         flex-direction: column;
@@ -51,7 +51,7 @@ article {
     }
     .site-description {
         max-width: 24em;
-        margin-top: -0.2em; // make sure text cap-height aligns to the aside
+        margin-top: -0.2em; // make sure text cap-height aligns to the `aside`
         margin-bottom: .8em;
         line-height: 1.4em;
         @include breakpoint("medium") {
@@ -247,6 +247,45 @@ article {
 }
 
 /**
+ * Style Guide
+ */
+.color-block-list {
+    margin-bottom: .75em;
+    text-align: center;
+    li {
+        @extend %rounded;
+        color: $white;
+        width: 6.5em;
+        height: 6.5em;
+        display: inline-block;
+        border: .25em solid $black-25;
+        margin: 0 .25em .5em;
+        font-family: $code-font-stack;
+        font-weight: 700;
+        line-height: 6em;
+        text-align: center;
+        white-space: nowrap;
+        &[data-color="#5F8AA6"] {
+            background-color: #5F8AA6;
+        }
+        &[data-color="#F9F9F9"] {
+            background-color: #F9F9F9;
+            color: $text-color;
+        }
+        &[data-color="#4F4F4F"] {
+            background-color: #4F4F4F;
+        }
+        &[data-color="#737373"] {
+            background-color: #737373;
+        }
+        &[data-color="#DDDDDD"] {
+            background-color: #DDDDDD;
+            color: $text-color;
+        }
+    }
+}
+
+/**
  * Contains embedded media properly and allows them to be dynamically resized.
  */
 .media-container {
@@ -266,7 +305,7 @@ article {
     }
 }
 /**
- * Fix iframes
+ * Fix `iframe`
  */
 iframe {
     width: 100%;

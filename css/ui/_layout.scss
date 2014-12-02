@@ -42,13 +42,6 @@ body {
 }
 
 /**
- * Allow for fixed-width content
- */
-.fixed-width {
-    width: $max-wrapper-width;
-}
-
-/**
  * Add a bottom margin to a plethora of tasty elements
  */
 h3:not(:last-child),
@@ -57,6 +50,20 @@ figure:not(:last-child),
 pre,
 iframe {
     margin-bottom: 1.25em;
+}
+
+/**
+ * Allow for fixed-width content
+ */
+.fixed-width {
+    width: $max-wrapper-width;
+}
+
+/**
+ * Hide things... ’nuff said
+ */
+.hidden {
+    display: none;
 }
 
 // We’re goin’ up around the bend
