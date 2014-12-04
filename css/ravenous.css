@@ -795,7 +795,8 @@ aside {
   @media screen and (max-width: 768px) {
     aside {
       width: 100%;
-      float: none; }
+      float: none;
+      margin-left: 0; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
         padding: 1em;
