@@ -49,7 +49,7 @@ p:not(:last-child),
 figure:not(:last-child),
 pre,
 iframe {
-    margin-bottom: 1.25em;
+    margin-bottom: $default-margin;
 }
 
 /**

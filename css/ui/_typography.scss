@@ -180,7 +180,7 @@ blockquote {
     @extend %rounded;
     background-color: rgba($blue, 0.1);
     padding: 1em;
-    margin: 0 2.5em 1em;
+    margin: 0 $default-padding 1em;
     quotes: "\201C" "\201D" "\2018" "\2019";
     @include breakpoint("small") {
         margin-right: 1em;

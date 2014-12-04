@@ -45,7 +45,7 @@ pre {
  * `data-lang` is always an attribute on a code element inside `div.highlight`
  */
 [data-lang] {
-    padding-top: 2.5em;
+    padding-top: $default-padding;
     &:before {
         @extend %rounded;
         content: attr(data-lang);

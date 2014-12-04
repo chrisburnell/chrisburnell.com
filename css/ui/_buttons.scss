@@ -57,7 +57,7 @@ button,
     .not-found-page & {
         @include breakpoint("medium") {
             display: block;
-            margin: 0 auto 2em;
+            margin: 0 auto $default-margin;
         }
     }
 }

@@ -6,15 +6,12 @@ footer {
     background-color: $text-color;
     color: $text-color-light;
     width: 100%;
-    padding: 2.572em 0;
+    padding: $default-padding 0;
     border-top: .286em solid $blue;
     font-family: $secondary-font-stack;
     font-weight: 600;
     text-transform: uppercase;
     @include gradient(transparent, $black-10);
-    @include breakpoint("small") {
-        padding: 2.25em 0;
-    }
 }
     .copyright,
     .social-icon-list {

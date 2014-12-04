@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .content {
-    margin-bottom: 2.25em;
+    padding-bottom: $default-padding;
 }
 
 /**
@@ -16,8 +16,8 @@
  *   = 25% of 1080px = 270px  = 16.875em
  */
 article {
-    padding: 2.25em 0 0 16.875em;
-    border-top: .25em solid $blue;
+    padding: $default-padding 0 0 16.875em;
+    border-top: $default-border solid $blue;
     @include breakpoint("medium") {
         /**
          * When you hit the `medium` media query, `article`, `article-list`, and
@@ -34,7 +34,7 @@ article {
     display: inline-block;
     clear: both;
     padding: 1.5em 1em;
-    border-top: .125em solid $black-10;
+    border-top: ($default-border / 2) solid $black-10;
     &:nth-child(odd) {
         background-color: $black-5;
     }
@@ -113,7 +113,7 @@ article {
         @include breakpoint("medium") {
             display: block;
             float: none;
-            margin-top: 1.25em;
+            margin-top: $default-margin;
         }
     }
 
@@ -179,12 +179,12 @@ article {
 
 .pagination {
     width: 100%;
-    padding-top: 2.25em;
-    border-top: .125em solid $black-10;
+    padding-top: $default-padding;
+    border-top: ($default-border / 2) solid $black-10;
     text-align: center;
     @include breakpoint("medium") {
         margin-top: 0;
-        padding-bottom: 2.25em;
+        padding-bottom: $default-padding;
     }
     li {
         display: inline-block;
@@ -229,7 +229,7 @@ article {
 .comments {
     text-align: center;
     .pagination + & {
-        padding-top: 2.25em;
+        padding-top: $default-padding;
         @include breakpoint("medium") {
             padding-top: 0;
         }
@@ -258,7 +258,7 @@ article {
         width: 6.5em;
         height: 6.5em;
         display: inline-block;
-        border: .25em solid $black-25;
+        border: $default-border solid $black-25;
         margin: 0 .25em .5em;
         font-family: $code-font-stack;
         font-weight: 700;

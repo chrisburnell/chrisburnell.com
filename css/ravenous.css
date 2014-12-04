@@ -41,8 +41,8 @@ body {
 .wrap {
   width: auto;
   max-width: 1120px;
-  padding-right: 1.25em;
-  padding-left: 1.25em;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
   margin-right: auto;
   margin-left: auto; }
 
@@ -59,7 +59,7 @@ body {
  * Add a bottom margin to a plethora of tasty elements
  */
 h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, iframe {
-  margin-bottom: 1.25em; }
+  margin-bottom: 1.25rem; }
 
 /**
  * Allow for fixed-width content
@@ -224,7 +224,7 @@ q {
 blockquote {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1em;
-  margin: 0 2.5em 1em;
+  margin: 0 2.25rem 1em;
   quotes: "\201C" "\201D" "\2018" "\2019"; }
   @media screen and (max-width: 500px) {
     blockquote {
@@ -310,7 +310,7 @@ button, .button {
   @media screen and (max-width: 768px) {
     .not-found-page button, .not-found-page .button {
       display: block;
-      margin: 0 auto 2em; } }
+      margin: 0 auto 1.25rem; } }
 
 /*------------------------------------*\
     $ HEADER
@@ -517,7 +517,7 @@ button, .button {
     $ MAIN CONTENT
 \*------------------------------------*/
 .content {
-  margin-bottom: 2.25em; }
+  padding-bottom: 2.25rem; }
 
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
@@ -529,8 +529,8 @@ button, .button {
  *   = 25% of 1080px = 270px  = 16.875em
  */
 article {
-  padding: 2.25em 0 0 16.875em;
-  border-top: 0.25em solid #5F8AA6; }
+  padding: 2.25rem 0 0 16.875em;
+  border-top: 0.25rem solid #5F8AA6; }
   @media screen and (max-width: 768px) {
     article {
       /**
@@ -551,7 +551,7 @@ article {
   display: inline-block;
   clear: both;
   padding: 1.5em 1em;
-  border-top: 0.125em solid rgba(6, 6, 6, 0.1); }
+  border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
   .articles-list li:nth-child(odd) {
     background-color: rgba(6, 6, 6, 0.05); }
   @media screen and (max-width: 768px) {
@@ -619,7 +619,7 @@ article {
     .comments-link {
       display: block;
       float: none;
-      margin-top: 1.25em; } }
+      margin-top: 1.25rem; } }
 
 .small-articles-list {
   display: -webkit-flex;
@@ -674,13 +674,13 @@ article {
 
 .pagination {
   width: 100%;
-  padding-top: 2.25em;
-  border-top: 0.125em solid rgba(6, 6, 6, 0.1);
+  padding-top: 2.25rem;
+  border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   text-align: center; }
   @media screen and (max-width: 768px) {
     .pagination {
       margin-top: 0;
-      padding-bottom: 2.25em; } }
+      padding-bottom: 2.25rem; } }
   .pagination li {
     display: inline-block; }
     @media screen and (max-width: 500px) {
@@ -714,7 +714,7 @@ article {
 .comments {
   text-align: center; }
   .pagination + .comments {
-    padding-top: 2.25em; }
+    padding-top: 2.25rem; }
     @media screen and (max-width: 768px) {
       .pagination + .comments {
         padding-top: 0; } }
@@ -737,7 +737,7 @@ article {
     width: 6.5em;
     height: 6.5em;
     display: inline-block;
-    border: 0.25em solid rgba(6, 6, 6, 0.25);
+    border: 0.25rem solid rgba(6, 6, 6, 0.25);
     margin: 0 0.25em 0.5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 700;
@@ -791,19 +791,17 @@ iframe {
 aside {
   width: 15.1875em;
   float: left;
-  margin-left: -16.875em;
-  line-height: 1.618em; }
+  margin-left: -16.875em; }
   @media screen and (max-width: 768px) {
     aside {
       width: 100%;
-      float: none;
-      margin: 0 0 1em; }
+      float: none; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
         padding: 1em;
-        margin-bottom: 1.5em; } }
-  aside:not(.author) :last-child {
-    margin-bottom: 0; }
+        margin-bottom: 1.25rem; }
+      aside:not(.author):last-child {
+        margin-bottom: 0; } }
   aside p, aside figcaption {
     clear: both;
     font-size: 0.875em; }
@@ -811,6 +809,7 @@ aside {
       aside p, aside figcaption {
         font-size: 1em; } }
 
+/*aside*/
 .author {
   font-family: "proxima-nova", sans-serif; }
   @media screen and (max-width: 768px) {
@@ -818,13 +817,10 @@ aside {
       -webkit-order: 999;
           -ms-flex-order: 999;
               order: 999;
-      padding-top: 2.25em;
-      border-top: 0.125em solid rgba(6, 6, 6, 0.1);
-      margin-bottom: 0; }
+      padding-top: 2.25rem;
+      border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
       .about-page .author {
-        margin-top: 2em; } }
-  .author a {
-    color: #5F8AA6; }
+        margin-top: 1.25rem; } }
 
 .author-information {
   margin-bottom: 1em;
@@ -839,7 +835,7 @@ aside {
     text-transform: uppercase; }
 
 .author-biography {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.25rem; }
   @media screen and (max-width: 768px) {
     .author-biography {
       margin-bottom: 0; } }
@@ -866,7 +862,7 @@ aside {
   line-height: 1.429em; }
 
 .related-articles-title {
-  margin-top: 2em; }
+  margin-top: 1.25rem; }
 
 /*------------------------------------*\
     $ FOOTER
@@ -875,16 +871,13 @@ footer {
   background-color: #4F4F4F;
   color: #DDDDDD;
   width: 100%;
-  padding: 2.572em 0;
+  padding: 2.25rem 0;
   border-top: 0.286em solid #5F8AA6;
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   background-image: -webkit-linear-gradient(top, transparent 0%, rgba(6, 6, 6, 0.1) 100%);
   background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.1) 100%); }
-  @media screen and (max-width: 500px) {
-    footer {
-      padding: 2.25em 0; } }
 
 .copyright, .social-icon-list {
   float: left;
@@ -978,7 +971,7 @@ pre {
  * `data-lang` is always an attribute on a code element inside `div.highlight`
  */
 [data-lang] {
-  padding-top: 2.5em; }
+  padding-top: 2.25rem; }
   [data-lang]:before {
     content: attr(data-lang);
     background-color: #737373;

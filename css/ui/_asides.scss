@@ -10,20 +10,18 @@ aside {
     width: 15.1875em;
     float: left;
     margin-left: -16.875em;
-    line-height: 1.618em;
     @include breakpoint("medium") {
         width: 100%;
         float: none;
-        margin: 0 0 1em;
         &:not(.author) {
             @extend %rounded;
             background: $black-5;
             padding: 1em;
-            margin-bottom: 1.5em;
+            margin-bottom: $default-margin;
         }
-    }
-    &:not(.author) :last-child {
-        margin-bottom: 0;
+        &:not(.author):last-child {
+            margin-bottom: 0;
+        }
     }
     p,
     figcaption {
@@ -34,19 +32,15 @@ aside {
         }
     }
 }
-.author {
+/*aside*/.author {
     font-family: $secondary-font-stack;
     @include breakpoint("medium") {
         order: 999;
-        padding-top: 2.25em;
-        border-top: .125em solid $black-10;
-        margin-bottom: 0;
+        padding-top: $default-padding;
+        border-top: ($default-border / 2) solid $black-10;
         .about-page & {
-            margin-top: 2em;
+            margin-top: $default-margin;
         }
-    }
-    a {
-        color: $blue;
     }
 }
     .author-information {
@@ -64,7 +58,7 @@ aside {
         }
     }
     .author-biography {
-        margin-bottom: 1.5em;
+        margin-bottom: $default-margin;
         @include breakpoint("medium") {
             margin-bottom: 0;
         }
@@ -96,5 +90,5 @@ aside {
     }
 
 .related-articles-title {
-    margin-top: 2em;
+    margin-top: $default-margin;
 }
