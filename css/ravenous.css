@@ -1051,6 +1051,8 @@ pre {
             transition: all 0.2s ease; }
   [data-lang].language-css:before {
     background-color: #016FBA; }
+  [data-lang].language-haml:before {
+    background-color: #E54D26; }
   [data-lang].language-html:before {
     background-color: #E54D26; }
   [data-lang].language-javascript:before {

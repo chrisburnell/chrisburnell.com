@@ -36,11 +36,13 @@ $brands: codepen $codepen-color 1.025,
 // Coding Language Colours
 $css-color:        #016FBA;
 $html-color:       #E54D26;
+$haml-color:       $html-color;
 $javascript-color: #F1C54C;
 $sass-color:       #C6538C;
 $scss-color:       $sass-color;
 // Create Languages Array (name, colour)
 $coding-languages: css        $css-color,
+                   haml       $haml-color,
                    html       $html-color,
                    javascript $javascript-color,
                    sass       $sass-color,
