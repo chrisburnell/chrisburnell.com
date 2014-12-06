@@ -22,7 +22,7 @@ page_class: tags-page
                             <a href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">
                                 <h4 class="small-article-title">{{ post.title }}</h4>
                                 {% if post.introduction %}
-                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' | replace: ',...', '...' }}</p>
+                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
                                 {% endif %}
                                 <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                                 {% if post.layout == "codepen" %}
