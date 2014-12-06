@@ -712,7 +712,7 @@ article {
     stroke-width: 1; }
 
 .articles-list .icon {
-  opacity: 0.1;
+  opacity: 0.25;
   width: 10em !important;
   height: 10em;
   right: 1.25rem; }
@@ -723,10 +723,10 @@ article {
   height: 6.25em;
   right: 0.5em; }
 
-.articles-list li:hover .icon, .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
+.small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
   opacity: 0.25;
   text-decoration: none; }
-  .articles-list li:hover .icon svg, .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
+  .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
     stroke-width: 2; }
 
 .pagination {

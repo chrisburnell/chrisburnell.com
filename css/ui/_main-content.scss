@@ -215,7 +215,7 @@ article {
     }
 }
 .articles-list .icon {
-    opacity: $opacity-low;
+    opacity: $opacity-medium;
     width:  10em !important; // override `_icons.scss` + 4px
     height: 10em;
     right: $default-margin;
@@ -226,7 +226,6 @@ article {
     height: 6.25em;
     right: .5em;
 }
-    .articles-list li:hover .icon,
     .small-articles-list a:hover .icon,
     .small-articles-list a:focus .icon,
     .small-articles-list a:active .icon {
