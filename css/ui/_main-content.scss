@@ -176,17 +176,9 @@ article {
             text-decoration: none;
         }
     }
-    .small-article-introduction,
-    .small-article-label {
+    .small-article-introduction {
         color: $text-color;
         margin: .25em 0;
-    }
-    .small-article-label {
-        color: $text-color-alt;
-        padding-left: .875em;
-        font-size: .929em;
-        font-weight: bold;
-        text-transform: uppercase;
     }
     .small-article-date {
         color: $text-color-alt;

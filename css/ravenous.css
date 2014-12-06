@@ -678,15 +678,9 @@ article {
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(6, 6, 6, 0.05);
       text-decoration: none; }
-  .small-articles-list .small-article-introduction, .small-articles-list .small-article-label {
+  .small-articles-list .small-article-introduction {
     color: #4F4F4F;
     margin: 0.25em 0; }
-  .small-articles-list .small-article-label {
-    color: #737373;
-    padding-left: 0.875em;
-    font-size: 0.929em;
-    font-weight: bold;
-    text-transform: uppercase; }
   .small-articles-list .small-article-date {
     color: #737373;
     padding-left: 1em;
