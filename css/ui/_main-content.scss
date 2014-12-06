@@ -163,6 +163,7 @@ article {
         display: block;
         padding: .5em;
         position: relative;
+        overflow: hidden;
         &:hover,
         &:focus,
         &:active {
@@ -199,24 +200,39 @@ article {
         }
     }
 }
-    .articles-list .icon,
-    .small-articles-list .icon {
-        opacity: 0.4;
-        width:  ($icon-size * .769 + 4px) !important; // override `_icons.scss` + 4px
-        height: ($icon-size * .75 + 4px);
-        display: block;
-        padding: 2px; // add room for `stroke-width`
-        position: absolute;
-        top: 50%;
-        right: $default-margin;
-        z-index: -1;
-        @include transition;
-        @include translate3d(0, -50%, 0);
+.articles-list .icon,
+.small-articles-list .icon {
+    display: block;
+    padding: 2px;
+    position: absolute;
+    top: 50%;
+    right: $default-margin;
+    z-index: -1;
+    @include transition;
+    @include translate3d(0, -50%, 0);
+    svg {
+        stroke: $text-color;
+        stroke-width: 1;
     }
-    @include breakpoint("large") {
-        .articles-list .icon {
-            width:  ($icon-size * 1.25 * 1.025 + 4px) !important; // override `_icons.scss` + 4px
-            height: ($icon-size * 1.25 + 4px);
+}
+.articles-list .icon {
+    opacity: $opacity-low;
+    width:  10em !important; // override `_icons.scss` + 4px
+    height: 10em;
+}
+.small-articles-list .icon {
+    opacity: ($opacity-low / 2);
+    width:  6.25em !important; // override `_icons.scss` + 4px
+    height: 6.25em;
+}
+    .articles-list li:hover .icon,
+    .small-articles-list a:hover .icon,
+    .small-articles-list a:focus .icon,
+    .small-articles-list a:active .icon {
+        opacity: $opacity-medium;
+        text-decoration: none;
+        svg {
+            stroke-width: 2;
         }
     }
 

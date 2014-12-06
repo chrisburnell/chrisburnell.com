@@ -1,14 +1,24 @@
+// SCSS Variables
+$default-margin:  1.25rem;
+$default-padding: 2.25rem;
+$default-border:  0.25rem;
+$icon-size:         40px;
+$transition-time:  0.2s;
+$opacity-low:      0.10;
+$opacity-medium:   0.25;
+$opacity-high:     0.70;
+
 // Colour Palette
 $blue:             #5F8AA6;
 $text-color:       #4F4F4F;
 $text-color-alt:   #737373;
 $text-color-light: #DDDDDD;
 $white:            #F9F9F9;
-$white-25:         rgba($white, .25);
+$white-25:         rgba($white, $opacity-medium);
 $black:            #060606;
-$black-5:          rgba($black, .05);
-$black-10:         rgba($black, .10);
-$black-25:         rgba($black, .25);
+$black-5:          rgba($black, ($opacity-low / 2));
+$black-10:         rgba($black, $opacity-low);
+$black-25:         rgba($black, $opacity-medium);
 
 // Brands
 $codepen-color: #212121;
@@ -48,15 +58,6 @@ $max-wrapper-width:    1120px;
 $medium-wrapper-width:  768px;
 $small-wrapper-width:   500px;
 $wrapper-padding:      1.25rem;
-
-// SCSS Variables
-$default-margin:  1.25rem;
-$default-padding: 2.25rem;
-$default-border:  0.25rem;
-$icon-size:         40px;
-$transition-time:  0.2s;
-$opacity-low:      0.4;
-$opacity-high:     0.7;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {

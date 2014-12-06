@@ -671,7 +671,8 @@ article {
   .small-articles-list a {
     display: block;
     padding: 0.5em;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(6, 6, 6, 0.05);
       text-decoration: none; }
@@ -697,9 +698,6 @@ article {
       margin-top: 1em; }
 
 .articles-list .icon, .small-articles-list .icon {
-  opacity: 0.4;
-  width: 34.76px !important;
-  height: 34px;
   display: block;
   padding: 2px;
   position: absolute;
@@ -710,11 +708,25 @@ article {
           transition: all 0.2s ease;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
+  .articles-list .icon svg, .small-articles-list .icon svg {
+    stroke: #4F4F4F;
+    stroke-width: 1; }
 
-@media screen and (min-width: 768px) {
-  .articles-list .icon {
-    width: 55.25px !important;
-    height: 54px; } }
+.articles-list .icon {
+  opacity: 0.1;
+  width: 10em !important;
+  height: 10em; }
+
+.small-articles-list .icon {
+  opacity: 0.05;
+  width: 6.25em !important;
+  height: 6.25em; }
+
+.articles-list li:hover .icon, .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
+  opacity: 0.25;
+  text-decoration: none; }
+  .articles-list li:hover .icon svg, .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
+    stroke-width: 2; }
 
 .pagination {
   width: 100%;
@@ -1097,7 +1109,7 @@ pre {
   white-space: nowrap;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease; }
-  .icon:hover, .icon:focus, .icon:active, .articles-list li:hover .icon, .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
+  .icon:hover, .icon:focus, .icon:active {
     opacity: 1;
     text-decoration: none; }
   .icon:active {
@@ -1117,11 +1129,6 @@ pre {
     width: 100%;
     height: 100%;
     display: block; }
-    .articles-list .icon svg, .small-articles-list .icon svg {
-      stroke: #212121;
-      stroke-width: 1; }
-  .articles-list li:hover .icon svg, .articles-list a:hover .icon svg, .articles-list a:focus .icon svg, .articles-list a:active .icon svg {
-    stroke-width: 2; }
 
 /*------------------------------------*\
     $ PRINT

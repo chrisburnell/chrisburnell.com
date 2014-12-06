@@ -8,7 +8,7 @@
 }
 
 /*a*/.icon {
-    opacity: .7;
+    opacity: $opacity-high;
     height: $icon-size;
     display: block;
     overflow: hidden;
@@ -17,11 +17,7 @@
     @include transition;
     &:hover,
     &:focus,
-    &:active,
-    .articles-list li:hover &,
-    .small-articles-list a:hover &,
-    .small-articles-list a:focus &,
-    .small-articles-list a:active & {
+    &:active {
         opacity: 1;
         text-decoration: none;
     }
@@ -40,16 +36,5 @@
         width: 100%;
         height: 100%;
         display: block;
-        .articles-list &,
-        .small-articles-list & {
-            stroke: $codepen-color;
-            stroke-width: 1;
-        }
-    }
-    .articles-list li:hover & svg,
-    .articles-list a:hover & svg,
-    .articles-list a:focus & svg,
-    .articles-list a:active & svg {
-        stroke-width: 2;
     }
 }

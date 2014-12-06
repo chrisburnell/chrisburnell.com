@@ -18,7 +18,7 @@ var,
     mark,
     samp,
     var {
-        background-color: rgba($blue, .1);
+        background-color: rgba($blue, $opacity-low);
         padding: .215em;
         word-wrap: break-word;
         border-radius: .25em;
