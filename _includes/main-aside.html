@@ -21,7 +21,7 @@
                 </div>
             {% endif %}
         {% else %}
-            <div class="author-name">about <strong>{{ site.author }}</strong></div>
+            <div class="author-name">about <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
             <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
             <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>
         {% endif %}
