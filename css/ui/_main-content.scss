@@ -212,10 +212,6 @@ article {
         z-index: -1;
         @include transition;
         @include translate3d(0, -50%, 0);
-        @include breakpoint("small") {
-            top: 1.5em;
-            @include translate3d;
-        }
     }
     @include breakpoint("large") {
         .articles-list .icon {
