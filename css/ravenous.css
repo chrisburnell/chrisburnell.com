@@ -702,7 +702,6 @@ article {
   padding: 2px;
   position: absolute;
   top: 50%;
-  right: 1.25rem;
   z-index: -1;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -715,12 +714,14 @@ article {
 .articles-list .icon {
   opacity: 0.1;
   width: 10em !important;
-  height: 10em; }
+  height: 10em;
+  right: 1.25rem; }
 
 .small-articles-list .icon {
   opacity: 0.05;
   width: 6.25em !important;
-  height: 6.25em; }
+  height: 6.25em;
+  right: 0.5em; }
 
 .articles-list li:hover .icon, .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
   opacity: 0.25;

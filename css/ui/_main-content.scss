@@ -206,7 +206,6 @@ article {
     padding: 2px;
     position: absolute;
     top: 50%;
-    right: $default-margin;
     z-index: -1;
     @include transition;
     @include translate3d(0, -50%, 0);
@@ -219,11 +218,13 @@ article {
     opacity: $opacity-low;
     width:  10em !important; // override `_icons.scss` + 4px
     height: 10em;
+    right: $default-margin;
 }
 .small-articles-list .icon {
     opacity: ($opacity-low / 2);
     width:  6.25em !important; // override `_icons.scss` + 4px
     height: 6.25em;
+    right: .5em;
 }
     .articles-list li:hover .icon,
     .small-articles-list a:hover .icon,
