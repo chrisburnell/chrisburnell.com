@@ -8,6 +8,6 @@ codepen: true
 comments: true
 ---
 
-{% include codepen-embed.html slug="lBJnz" height="500" %}
+{% include codepen-embed.html slug="lBJnz" height="550" %}
 
 This pen is really more about the visual display.
