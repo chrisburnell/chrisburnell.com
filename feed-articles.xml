@@ -22,7 +22,7 @@ layout: null
         </image>
 
         {% for post in site.posts %}
-        {% unless post.draft or post.layout == "codepen" %}
+        {% unless post.draft or post.layout != "article" %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ site.url }}{{ post.url }}</link>

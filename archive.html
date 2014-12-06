@@ -8,30 +8,22 @@ redirect_from: /articles.html
 
             <p>Alternatively, you can browse the <a href="/tags" title="Article Tags Archive">Article Tags Archive</a> or the <a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>.</p>
 
+            <p>You can also subscribe to the <a rel="me author" class="rss-link" href="/feed-articles.xml" title="Articles Only RSS">Articles Only RSS Feed</a>.</p>
+
             <ol id="articles" class="articles-list" role="list">
                 {% for post in site.posts %}
-                {% unless post.draft or post.layout == "codepen" %}
+                {% unless post.draft or post.layout != "article" %}
                     <li>
                         <h2 class="article-title">
                             <a href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>
-                            {% if post.layout == "codepen" %}
-                                <span class="article-label">Featured Pen</span>
-                            {% endif %}
                         </h2>
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
                         {% if post.introduction %}
                             <p class="article-introduction">{{ post.introduction }}</p>
                         {% endif %}
-                        {% if post.layout == "codepen" %}
-                            <a class="button" href="{{ post.url }}" title="View ‘{{ post.title }}’">View the Pen</a>
-                        {% else %}
-                            <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
-                        {% endif %}
-                        {% if post.comments and post.comments == true and post.layout == "article" %}
+                        <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
+                        {% if post.comments and post.comments == true %}
                             <a class="comments-link" href="{{ site.url }}{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
-                        {% endif %}
-                        {% if post.layout == "codepen" %}
-                            <span class="icon  codepen-icon"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         {% endif %}
                     </li>
                 {% endunless %}
