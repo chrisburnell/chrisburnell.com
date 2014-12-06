@@ -6,7 +6,7 @@ layout: null
 
     <channel>
 
-        <title>{{ site.author }}</title>
+        <title>{{ site.author }} - Pens Only</title>
         <link href="{{ site.url }}"/>
         <author>
             <name>{{ site.author }}</name>
@@ -28,9 +28,6 @@ layout: null
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
                 <id>{{ site.url }}{{ post.id }}</id>
-                {% if post.introduction %}
-                    <description>{{ post.introduction }}</description>
-                {% endif %}
                 {% if post.tags %}
                     <tags>{{ post.tags | array_to_sentence_string }}</tags>
                 {% endif %}

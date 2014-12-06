@@ -55,4 +55,10 @@ I also play the piano from time to time.
 
 {% include heading-anchor.html id="get-in-touch" title="Want to get in touch?" %}
 
-I'm reachable through <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.
+There are a number of RSS Feeds you can subscribe to:
+
+- <a rel="me author" class="rss-link" href="/feed.xml" title="All Content RSS Feed">All Content RSS Feed</a>
+- <a rel="me author" class="rss-link" href="/feed-articles.xml" title="Articles only RSS Feed">Articles only RSS Feed</a>
+- <a rel="me author" class="rss-link" href="/feed-pens.xml" title="Pens only RSS Feed">Pens only RSS Feed</a>
+
+I'm contactable through <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.

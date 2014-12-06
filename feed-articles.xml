@@ -6,7 +6,7 @@ layout: null
 
     <channel>
 
-        <title>{{ site.author }}</title>
+        <title>{{ site.author }} - Articles Only</title>
         <link href="{{ site.url }}"/>
         <author>
             <name>{{ site.author }}</name>
