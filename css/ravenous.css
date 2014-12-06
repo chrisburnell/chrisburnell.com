@@ -576,6 +576,8 @@ article {
     @media screen and (max-width: 500px) {
       .articles-list li .article-label {
         display: none; } }
+    .articles-list li .article-label:hover:after, .articles-list li .article-label:focus:after, .articles-list li .article-label:active:after {
+      content: "\00a0\2192"; }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
@@ -607,14 +609,14 @@ article {
 
 .article-title {
   width: 100%; }
-  .article-title a {
+  .article-title .article-title-link {
     display: inline-block;
     padding: 0 0.27em;
     border-bottom: 0.077em solid transparent;
     margin-left: -0.27em;
     -webkit-transition: border-color 0.2s ease;
             transition: border-color 0.2s ease; }
-    .article-title a:hover, .article-title a:focus, .article-title a:active {
+    .article-title .article-title-link:hover, .article-title .article-title-link:focus, .article-title .article-title-link:active {
       color: #4F4F4F;
       border-bottom-color: #5F8AA6;
       text-decoration: none; }

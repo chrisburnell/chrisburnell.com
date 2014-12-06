@@ -9,6 +9,8 @@ page_class: pens-page
 
             <p>You can also subscribe to the <a rel="me author" class="rss-link" href="/feed-pens.xml" title="Pens only RSS">Pens only RSS Feed</a>.</p>
 
+            <hr />
+
             <ul class="small-articles-list" role="list">
                 {% for post in site.posts %}
                 {% unless post.draft or post.layout != "codepen" %}

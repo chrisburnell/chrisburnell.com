@@ -56,6 +56,11 @@ article {
         @include breakpoint("small") {
             display: none;
         }
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+            content: "\00a0\2192";
+        }
     }
 }
     .article-title,
@@ -95,7 +100,7 @@ article {
     }
     .article-title {
         width: 100%;
-        a {
+        .article-title-link {
             display: inline-block;
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
