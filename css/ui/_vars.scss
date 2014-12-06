@@ -14,12 +14,14 @@ $black-25:         rgba($black, .25);
 $codepen-color: #212121;
 $github-color:  #333333;
 $lastfm-color:  #E31B23;
+$rss-color:     $blue;
 $twitter-color: darken(#55ACEE, 10%);
-// Create Brands Array (name, colour, icon width)
-$brands: codepen $codepen-color 41px,
-         github  $github-color  38px,
-         lastfm  $lastfm-color  40px,
-         twitter $twitter-color 37px;
+// Create Brands Array (name, colour, icon width:height ratio)
+$brands: codepen $codepen-color 1.025,
+         github  $github-color  0.950,
+         lastfm  $lastfm-color  1.000,
+         rss     $rss-color     0.775,
+         twitter $twitter-color 0.925;
 
 // Coding Language Colours
 $css-color:        #016FBA;
@@ -51,7 +53,10 @@ $wrapper-padding:      1.25rem;
 $default-margin:  1.25rem;
 $default-padding: 2.25rem;
 $default-border:  0.25rem;
+$icon-size:         40px;
 $transition-time:  0.2s;
+$opacity-low:      0.4;
+$opacity-high:     0.7;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {

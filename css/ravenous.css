@@ -157,6 +157,9 @@ a {
 .lastfm-link {
   color: #E31B23 !important; }
 
+.rss-link {
+  color: #5F8AA6 !important; }
+
 .twitter-link {
   color: #2798e9 !important; }
 
@@ -273,7 +276,7 @@ button, .button {
   padding: 0 0.727em 0.182em;
   border: 0;
   margin-top: 0.182em;
-  outline-style: auto;
+  outline-style: none;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375em;
@@ -288,6 +291,7 @@ button, .button {
           transition: background-color 0.2s ease; }
   button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active {
     background-color: #6f97af;
+    outline-style: auto;
     text-decoration: none; }
   button:active, .button:active {
     height: 2em;
@@ -551,7 +555,8 @@ article {
   display: inline-block;
   clear: both;
   padding: 1.5em 1em;
-  border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
+  border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
+  position: relative; }
   .articles-list li:nth-child(odd) {
     background-color: rgba(6, 6, 6, 0.05); }
   @media screen and (max-width: 768px) {
@@ -559,6 +564,18 @@ article {
       padding-top: 1.875em;
       padding-bottom: 1.875em;
       text-align: center; } }
+  .articles-list li .article-label {
+    display: inline-block;
+    padding-left: 1.143em;
+    font-size: 0.538em;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 600;
+    line-height: 2.086em;
+    text-transform: uppercase;
+    vertical-align: top; }
+    @media screen and (max-width: 500px) {
+      .articles-list li .article-label {
+        display: none; } }
 
 .article-title, .page-title, .site-tagline {
   margin-bottom: 0.4em; }
@@ -653,13 +670,20 @@ article {
           margin-top: 1em; } }
   .small-articles-list a {
     display: block;
-    padding: 0.5em; }
+    padding: 0.5em;
+    position: relative; }
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(6, 6, 6, 0.05);
       text-decoration: none; }
-  .small-articles-list .small-article-introduction {
+  .small-articles-list .small-article-introduction, .small-articles-list .small-article-label {
     color: #4F4F4F;
     margin: 0.25em 0; }
+  .small-articles-list .small-article-label {
+    color: #737373;
+    padding-left: 0.875em;
+    font-size: 0.929em;
+    font-weight: bold;
+    text-transform: uppercase; }
   .small-articles-list .small-article-date {
     color: #737373;
     padding-left: 1em;
@@ -671,6 +695,31 @@ article {
     width: 100%; }
     aside .small-articles-list .small-articles-list li + li {
       margin-top: 1em; }
+
+.articles-list .icon, .small-articles-list .icon {
+  opacity: 0.4;
+  width: 34.76px !important;
+  height: 34px;
+  display: block;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0); }
+  @media screen and (max-width: 500px) {
+    .articles-list .icon, .small-articles-list .icon {
+      top: 1.5em;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); } }
+
+@media screen and (min-width: 768px) {
+  .articles-list .icon {
+    width: 55.25px !important;
+    height: 54px; } }
 
 .pagination {
   width: 100%;
@@ -824,7 +873,7 @@ aside {
         margin-top: 1.25rem; } }
 
 .author-information {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 0.875em;
   font-style: italic; }
@@ -833,7 +882,8 @@ aside {
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    white-space: nowrap; }
 
 .author-biography {
   margin-bottom: 1.25rem; }
@@ -841,14 +891,14 @@ aside {
     .author-biography {
       margin-bottom: 0; } }
 
-.author-name, .author-age, .article-date {
+.author-name, .author-age, .article-date, .author-information .article-label {
+  box-sizing: content-box;
   display: block;
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.5em;
+  line-height: 1.429em; }
 
-.author-name {
-  line-height: 1.4em; }
-  .author-name strong {
-    display: inline-block; }
+.author-information .article-label a:after {
+  content: "\00a0\2192"; }
 
 .author-image {
   background-size: 100%;
@@ -1052,26 +1102,31 @@ pre {
   white-space: nowrap;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease; }
-  .icon:hover, .icon:focus, .icon:active {
+  .icon:hover, .icon:focus, .icon:active, .articles-list li:hover .icon, .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
     opacity: 1;
     text-decoration: none; }
   .icon:active {
     -webkit-transform: translate3d(0, 0.14em, 0);
             transform: translate3d(0, 0.14em, 0); }
-  .icon.codepen-link {
+  .icon.codepen-icon, .icon.codepen-link {
     width: 41px; }
-  .icon.github-link {
+  .icon.github-icon, .icon.github-link {
     width: 38px; }
-  .icon.lastfm-link {
+  .icon.lastfm-icon, .icon.lastfm-link {
     width: 40px; }
-  .icon.twitter-link {
-    width: 37px; }
-  .icon.rss-link {
+  .icon.rss-icon, .icon.rss-link {
     width: 31px; }
+  .icon.twitter-icon, .icon.twitter-link {
+    width: 37px; }
   .icon svg {
     width: 100%;
     height: 100%;
     display: block; }
+    .articles-list .icon svg, .small-articles-list .icon svg {
+      stroke: #212121;
+      stroke-width: 1; }
+  .articles-list li:hover .icon svg, .articles-list a:hover .icon svg, .articles-list a:focus .icon svg, .articles-list a:active .icon svg {
+    stroke-width: 2; }
 
 /*------------------------------------*\
     $ PRINT

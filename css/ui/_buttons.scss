@@ -13,7 +13,7 @@ button,
     padding: 0 .727em .182em;
     border: 0;
     margin-top: .182em;
-    outline-style: auto;
+    outline-style: none;
     position: relative;
     font-family: $heading-font-stack;
     font-size: 1.375em;
@@ -29,6 +29,7 @@ button,
     &:focus,
     &:active {
         background-color: lighten($blue, 5%);
+        outline-style: auto;
         text-decoration: none;
     }
     &:active {

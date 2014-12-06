@@ -45,7 +45,7 @@ aside {
     }
 }
     .author-information {
-        margin-bottom: 1em;
+        margin-bottom: .5em;
         font-family: $primary-font-stack;
         font-size: .875em;
         font-style: italic;
@@ -56,6 +56,7 @@ aside {
             font-weight: 600;
             font-style: normal;
             text-transform: uppercase;
+            white-space: nowrap;
         }
     }
     .author-biography {
@@ -66,15 +67,15 @@ aside {
     }
     .author-name,
     .author-age,
-    .article-date {
+    .article-date,
+    .author-information .article-label {
+        box-sizing: content-box;
         display: block;
         margin-bottom: .5em;
+        line-height: 1.429em;
     }
-    .author-name {
-        line-height: 1.4em;
-        strong {
-            display: inline-block;
-        }
+    .author-information .article-label a:after {
+        content: "\00a0\2192";
     }
     .author-image {
         @extend %rounded;

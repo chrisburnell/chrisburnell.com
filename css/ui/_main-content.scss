@@ -35,6 +35,7 @@ article {
     clear: both;
     padding: 1.5em 1em;
     border-top: ($default-border / 2) solid $black-10;
+    position: relative;
     &:nth-child(odd) {
         background-color: $black-5;
     }
@@ -42,6 +43,19 @@ article {
         padding-top: 1.875em;
         padding-bottom: 1.875em;
         text-align: center;
+    }
+    .article-label {
+        display: inline-block;
+        padding-left: 1.143em;
+        font-size: .538em;
+        font-family: $secondary-font-stack;
+        font-weight: 600;
+        line-height: 2.086em;
+        text-transform: uppercase;
+        vertical-align: top;
+        @include breakpoint("small") {
+            display: none;
+        }
     }
 }
     .article-title,
@@ -148,6 +162,7 @@ article {
         @extend %rounded;
         display: block;
         padding: .5em;
+        position: relative;
         &:hover,
         &:focus,
         &:active {
@@ -155,9 +170,17 @@ article {
             text-decoration: none;
         }
     }
-    .small-article-introduction {
+    .small-article-introduction,
+    .small-article-label {
         color: $text-color;
         margin: .25em 0;
+    }
+    .small-article-label {
+        color: $text-color-alt;
+        padding-left: .875em;
+        font-size: .929em;
+        font-weight: bold;
+        text-transform: uppercase;
     }
     .small-article-date {
         color: $text-color-alt;
@@ -176,6 +199,30 @@ article {
         }
     }
 }
+    .articles-list .icon,
+    .small-articles-list .icon {
+        opacity: 0.4;
+        width:  ($icon-size * .769 + 4px) !important; // override `_icons.scss` + 4px
+        height: ($icon-size * .75 + 4px);
+        display: block;
+        padding: 2px; // add room for `stroke-width`
+        position: absolute;
+        top: 50%;
+        right: $default-margin;
+        z-index: -1;
+        @include transition;
+        @include translate3d(0, -50%, 0);
+        @include breakpoint("small") {
+            top: 1.5em;
+            @include translate3d;
+        }
+    }
+    @include breakpoint("large") {
+        .articles-list .icon {
+            width:  ($icon-size * 1.25 * 1.025 + 4px) !important; // override `_icons.scss` + 4px
+            height: ($icon-size * 1.25 + 4px);
+        }
+    }
 
 .pagination {
     width: 100%;

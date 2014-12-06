@@ -10,6 +10,9 @@
                             <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
                         {% endif %}
                         <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        {% if post.layout == "codepen" %}
+                            <span class="icon  codepen-icon"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                        {% endif %}
                     </a>
                 </li>
             {% endfor %}

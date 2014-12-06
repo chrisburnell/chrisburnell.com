@@ -1,0 +1,22 @@
+---
+title: Featured Pen Archive
+description: All of my featured pens listed on one page.
+layout: default
+page_class: pens-page
+---
+
+            <p>Alternatively, you can browse the <a href="/archive" title="Articles Archive">Articles Archive</a> or the <a href="/tags" title="Article Tags Archive">Article Tags Archive</a>.</p>
+
+            <ul class="small-articles-list" role="list">
+                {% for post in site.posts %}
+                {% unless post.draft or post.layout == "article" %}
+                    <li>
+                        <a href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">
+                            <h4 class="small-article-title">{{ post.title }}</h4>
+                            <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                            <span class="icon  codepen-icon"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                        </a>
+                    </li>
+                {% endunless %}
+                {% endfor %}
+            </ul>

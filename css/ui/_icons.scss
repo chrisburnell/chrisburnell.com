@@ -9,7 +9,7 @@
 
 /*a*/.icon {
     opacity: .7;
-    height: 40px;
+    height: $icon-size;
     display: block;
     overflow: hidden;
     text-indent: 100%;
@@ -17,7 +17,11 @@
     @include transition;
     &:hover,
     &:focus,
-    &:active {
+    &:active,
+    .articles-list li:hover &,
+    .small-articles-list a:hover &,
+    .small-articles-list a:focus &,
+    .small-articles-list a:active & {
         opacity: 1;
         text-decoration: none;
     }
@@ -26,17 +30,26 @@
     }
     @each $brand in $brands {
         $name:  nth($brand, 1);
-        $width: nth($brand, 3);
+        $ratio: nth($brand, 3);
+        &.#{$name}-icon,
         &.#{$name}-link {
-            width: #{$width};
+            width: ($ratio * $icon-size);
         }
-    }
-    &.rss-link {
-        width: 31px;
     }
     svg {
         width: 100%;
         height: 100%;
         display: block;
+        .articles-list &,
+        .small-articles-list & {
+            stroke: $codepen-color;
+            stroke-width: 1;
+        }
+    }
+    .articles-list li:hover & svg,
+    .articles-list a:hover & svg,
+    .articles-list a:focus & svg,
+    .articles-list a:active & svg {
+        stroke-width: 2;
     }
 }
