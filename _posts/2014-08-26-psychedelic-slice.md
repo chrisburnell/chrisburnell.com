@@ -1,7 +1,7 @@
 ---
 layout: codepen
-date: 2014-08-18 13:00:00
-title: Zoomy Anchor Thing
+date: 2014-08-18 12:00:00
+title: Psychedelic Slice
 tags:
 - CodePen
 codepen: true
