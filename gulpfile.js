@@ -3,18 +3,17 @@
  */
 
 // Define gulp objects
-var gulp            = require('gulp'),
-    autoprefixer    = require('gulp-autoprefixer'),
-    minifycss       = require('gulp-minify-css'),
-    plumber         = require('gulp-plumber'),
-    notify          = require('gulp-notify'),
-    rename          = require('gulp-rename'),
-    sass            = require('gulp-sass'),
-    watch           = require('gulp-watch');
+var gulp         = require('gulp'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss    = require('gulp-minify-css'),
+    plumber      = require('gulp-plumber'),
+    notify       = require('gulp-notify'),
+    rename       = require('gulp-rename'),
+    sass         = require('gulp-sass'),
+    watch        = require('gulp-watch');
 
 // Define the locations of our assets
-var cssPath = 'css/',
-    includesPath = '_includes';
+var cssPath = 'css/';
 
 // -----------------------------------------------------------------------------
 
