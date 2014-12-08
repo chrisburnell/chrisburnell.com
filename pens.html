@@ -18,7 +18,7 @@ page_class: pens-page
                         <a href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">
                             <h4 class="small-article-title">{{ post.title }}</h4>
                             <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                            <span class="icon  codepen-icon"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         </a>
                     </li>
                 {% endunless %}

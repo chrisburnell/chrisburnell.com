@@ -11,7 +11,7 @@
                         {% endif %}
                         <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         {% if post.layout == "codepen" %}
-                            <span class="icon  codepen-icon"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         {% endif %}
                     </a>
                 </li>

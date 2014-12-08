@@ -199,6 +199,8 @@ article {
 }
 .articles-list .icon,
 .small-articles-list .icon {
+    width:  6.25em !important; // override `_icons.scss` + 4px
+    height: 6.25em;
     display: block;
     position: absolute;
     top: 50%;
@@ -211,15 +213,21 @@ article {
     }
 }
 .articles-list .icon {
-    opacity: $opacity-medium;
-    width:  10em !important; // override `_icons.scss` + 4px
-    height: 10em;
     right: $default-margin;
+    @include breakpoint("large") {
+        width:  10em !important;
+        height: 10em;
+    }
+    @include breakpoint("small") {
+        top: 1.5em;
+        @include translate3d;
+    }
+    svg {
+        stroke: rgba($text-color, $opacity-medium);
+    }
 }
 .small-articles-list .icon {
     opacity: ($opacity-low / 2);
-    width:  6.25em !important; // override `_icons.scss` + 4px
-    height: 6.25em;
     right: .5em;
 }
     .small-articles-list a:hover .icon,

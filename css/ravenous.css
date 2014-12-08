@@ -694,6 +694,8 @@ article {
       margin-top: 1em; }
 
 .articles-list .icon, .small-articles-list .icon {
+  width: 6.25em !important;
+  height: 6.25em;
   display: block;
   position: absolute;
   top: 50%;
@@ -707,15 +709,21 @@ article {
     stroke-width: 1; }
 
 .articles-list .icon {
-  opacity: 0.25;
-  width: 10em !important;
-  height: 10em;
   right: 1.25rem; }
+  @media screen and (min-width: 768px) {
+    .articles-list .icon {
+      width: 10em !important;
+      height: 10em; } }
+  @media screen and (max-width: 500px) {
+    .articles-list .icon {
+      top: 1.5em;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); } }
+  .articles-list .icon svg {
+    stroke: rgba(79, 79, 79, 0.25); }
 
 .small-articles-list .icon {
   opacity: 0.05;
-  width: 6.25em !important;
-  height: 6.25em;
   right: 0.5em; }
 
 .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
