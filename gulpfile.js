@@ -44,7 +44,9 @@ gulp.task('default', function() {
 
 // -----------------------------------------------------------------------------
 
-// Watch {files} and perform the appropriate [tasks]
-gulp.task('watch', function() {
-    watch({glob: cssPath + '**/*.scss', emitOnGlob: false}, ['css']);
+// Watch files and perform the appropriate tasks
+gulp.task('watch', ['css'], function() {
+    watch('' + cssPath + '**/*.scss', function() {
+        gulp.start('css');
+    });
 });

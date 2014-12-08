@@ -161,7 +161,7 @@ a {
   color: #5F8AA6 !important; }
 
 .twitter-link {
-  color: #2798e9 !important; }
+  color: #2795e9 !important; }
 
 p {
   margin: 0; }
@@ -286,18 +286,18 @@ button, .button {
   white-space: nowrap;
   cursor: pointer;
   border-radius: 0.182em;
-  box-shadow: inset 0 -0.182em 0 0 #4b7087;
+  box-shadow: inset 0 -0.182em 0 0 #4b6f87;
   -webkit-transition: background-color 0.2s ease;
           transition: background-color 0.2s ease; }
   button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active {
-    background-color: #6f97af;
+    background-color: #6f96af;
     outline-style: auto;
     text-decoration: none; }
   button:active, .button:active {
     height: 2em;
     padding-bottom: 0;
     margin-bottom: 0.182em;
-    box-shadow: inset 0 -0.046em 0 0 #4b7087;
+    box-shadow: inset 0 -0.046em 0 0 #4b6f87;
     -webkit-transform: translate3d(0, 0.182em, 0);
             transform: translate3d(0, 0.182em, 0); }
   button:before, button:after, .button:before, .button:after {
@@ -542,9 +542,12 @@ article {
          * `aside` becomes full width and `aside.author-information` pushes to
          * the bottom of the page.
          */
+      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
@@ -641,12 +644,16 @@ article {
       margin-top: 1.25rem; } }
 
 .small-articles-list {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -875,6 +882,7 @@ aside {
   font-family: "proxima-nova", sans-serif; }
   @media screen and (max-width: 768px) {
     .author {
+      -webkit-box-ordinal-group: 1000;
       -webkit-order: 999;
           -ms-flex-order: 999;
               order: 999;
@@ -1142,10 +1150,12 @@ pre {
 @media print {
   nav, .related-articles, .pagination, .comments, footer .home-link, .copyright-spacer, footer .style-guide-link, .social-icon-list {
     display: none; }
+
   button, .button {
     color: #4F4F4F;
     border: 1px solid #4F4F4F;
-    box-shadow: none; } }
+    box-shadow: none; }
+ }
 
 /*------------------------------------*\
     $ SHAME
