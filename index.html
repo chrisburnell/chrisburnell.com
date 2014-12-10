@@ -9,9 +9,6 @@ page_class: home-page
                     <li>
                         <h2 class="article-title">
                             <a class="article-title-link" href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>
-                            {% if post.layout == "codepen" %}
-                                <a class="article-label" href="/pens" title="Featured Pens Archive">Featured Pen</a>
-                            {% endif %}
                         </h2>
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         {% if post.introduction %}

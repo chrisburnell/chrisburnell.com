@@ -16,7 +16,7 @@ aside {
         margin-left: 0;
         &:not(.author) {
             @extend %rounded;
-            background: $black-5;
+            background: $black-light;
             padding: 1em;
             margin-bottom: $default-margin;
         }
@@ -38,7 +38,7 @@ aside {
     @include breakpoint("medium") {
         order: 999;
         padding-top: $default-padding;
-        border-top: ($default-border / 2) solid $black-10;
+        border-top: ($default-border / 2) solid $black-low;
         .about-page & {
             margin-top: $default-margin;
         }

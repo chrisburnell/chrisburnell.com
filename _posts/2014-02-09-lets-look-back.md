@@ -363,7 +363,7 @@ Next, let’s turn this CSS into SCSS.
     font-size: 3.25em;
     line-height: 2em;
     text-transform: uppercase;
-    text-shadow: .058em .058em 0 $black-5;
+    text-shadow: .058em .058em 0 $black-light;
     z-index: 1;
     user-select: none;
     @include transition("none");

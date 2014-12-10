@@ -1,5 +1,5 @@
 ---
-title: Featured Pens Archive
+title: Featured Pens
 description: All of my featured pens listed on one page.
 layout: default
 page_class: pens-page
@@ -15,10 +15,10 @@ page_class: pens-page
                 {% for post in site.posts %}
                 {% unless post.draft or post.layout != "codepen" %}
                     <li>
-                        <a href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">
+                        <a href="{{ post.url }}" title="View ‘{{ post.title }}’">
+                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                             <h4 class="small-article-title">{{ post.title }}</h4>
                             <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         </a>
                     </li>
                 {% endunless %}

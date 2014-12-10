@@ -13,7 +13,7 @@ h1 {
     font-family: $heading-font-stack;
     font-size: 2.625em;
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 $black-5;
+    text-shadow: .0714em .0714em 0 $black-light;
 }
 h2 {
     font-family: $primary-font-stack;
@@ -208,7 +208,7 @@ blockquote {
 }
 
 hr {
-    background: $black-10;
+    background: $black-low;
     width: 100%;
     height: .125em;
     display: block;

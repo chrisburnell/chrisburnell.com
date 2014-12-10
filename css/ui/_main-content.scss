@@ -34,33 +34,20 @@ article {
     display: inline-block;
     clear: both;
     padding: 1.5em 1em;
-    border-top: ($default-border / 2) solid $black-10;
+    border-top: ($default-border / 2) solid $black-low;
     position: relative;
     &:nth-child(odd) {
-        background-color: $black-5;
+        background-color: $black-light;
     }
     @include breakpoint("medium") {
         padding-top: 1.875em;
         padding-bottom: 1.875em;
         text-align: center;
     }
-    .article-label {
-        display: inline-block;
-        padding-left: 1.143em;
-        font-size: .538em;
-        font-family: $secondary-font-stack;
-        font-weight: 600;
-        line-height: 2.086em;
-        text-transform: uppercase;
-        vertical-align: top;
-        @include breakpoint("small") {
-            display: none;
-        }
-        &:hover:after,
-        &:focus:after,
-        &:active:after {
-            content: "\00a0\2192";
-        }
+    .article-title,
+    .article-date,
+    .comments-link {
+        text-shadow: 0 1px 0 $white;
     }
 }
     .article-title,
@@ -100,7 +87,7 @@ article {
     }
     .article-title {
         width: 100%;
-        .article-title-link {
+        a {
             display: inline-block;
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
@@ -172,25 +159,35 @@ article {
         &:hover,
         &:focus,
         &:active {
-            background-color: $black-5;
+            background-color: $black-light;
             text-decoration: none;
         }
     }
-    .small-article-introduction {
-        color: $text-color;
-        margin: .25em 0;
+    .small-article-title,
+    .small-article-introduction,
+    .small-article-date {
+        text-shadow: 0 1px 0 $white;
+    }
+    .small-article-title {
+        margin-bottom: .3125em;
     }
     .small-article-date {
         color: $text-color-alt;
-        padding-left: 1em;
+        display: block;
         font-size: .8125em;
         font-weight: 600;
         &:before {
             content: "\2013\0020";
         }
     }
-    aside &
-    .small-articles-list li {
+        .codepen-icon ~ .small-article-date {
+            margin-top: .3125em;
+        }
+    .small-article-introduction {
+        color: $text-color;
+        margin-top: .3125em;
+    }
+    aside & li {
         width: 100%;
         & + li {
             margin-top: 1em;
@@ -210,6 +207,10 @@ article {
     z-index: -1;
     @include transition;
     @include translate3d(0, -50%, 0);
+    @include breakpoint("small") {
+        width:  4em !important;
+        height: 4em;
+    }
     svg {
         stroke-width: 1;
     }
@@ -248,7 +249,7 @@ article {
 .pagination {
     width: 100%;
     padding-top: $default-padding;
-    border-top: ($default-border / 2) solid $black-10;
+    border-top: ($default-border / 2) solid $black-low;
     text-align: center;
     @include breakpoint("medium") {
         margin-top: 0;
@@ -326,7 +327,7 @@ article {
         width: 6.5em;
         height: 6.5em;
         display: inline-block;
-        border: $default-border solid $black-25;
+        border: $default-border solid $black-medium;
         margin: 0 .25em .5em;
         font-family: $code-font-stack;
         font-weight: 700;

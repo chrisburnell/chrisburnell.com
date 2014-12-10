@@ -11,7 +11,7 @@ footer {
     font-family: $secondary-font-stack;
     font-weight: 600;
     text-transform: uppercase;
-    @include gradient(transparent, $black-10);
+    @include gradient(transparent, $black-low);
 }
     .copyright,
     .social-icon-list {

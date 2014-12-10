@@ -19,14 +19,14 @@ page_class: tags-page
                     {% for post in site.tags[tag] %}
                     {% unless post.draft %}
                         <li>
-                            <a href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">
-                                <h4 class="small-article-title">{{ post.title }}</h4>
-                                {% if post.introduction %}
-                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
-                                {% endif %}
-                                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                            <a href="{{ post.url }}" title="{% if post.layout == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
                                 {% if post.layout == "codepen" %}
                                     <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                                {% endif %}
+                                <h4 class="small-article-title">{{ post.title }}</h4>
+                                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                                {% if post.introduction %}
+                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
                                 {% endif %}
                             </a>
                         </li>

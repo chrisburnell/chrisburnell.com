@@ -27,7 +27,7 @@ pre {
     margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
     &:not(.codepen) {
         @extend %rounded;
-        background-color: $black-5;
+        background-color: $black-light;
         padding: 1.5em 1.5em 1em;
         overflow-x: auto;
         overflow-y: hidden;
