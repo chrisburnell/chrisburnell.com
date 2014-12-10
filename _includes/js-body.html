@@ -13,17 +13,21 @@
          * Comment toggling for article pages
          */
         var commentsSection = document.getElementById('comments'),
-            commentsHash    = '#comments';
+            commentsHash    = ['#comments', '#disqus_thread'];
         // And a hook to our button
         var commentsButton = document.getElementsByClassName('js-show-comments')[0];
         commentsButton.disabled = false;
-        if( window.location.hash === commentsHash ) {
-            showComments();
-        }
-        window.onhashchange = function() {
-            if( location.hash === commentsHash ) {
+        commentsHash.forEach( function(hash) {
+            if( window.location.hash === hash ) {
                 showComments();
             }
+        });
+        window.onhashchange = function() {
+            commentsHash.forEach( function(hash) {
+                if( location.hash === hash ) {
+                    showComments();
+                }
+            });
         }
         commentsButton.addEventListener('click', function() {
             showComments();

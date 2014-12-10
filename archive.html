@@ -23,7 +23,7 @@ redirect_from: /articles.html
                         {% endif %}
                         <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
                         {% if post.comments and post.comments == true %}
-                            <a class="comments-link" href="{{ site.url }}{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
+                            <a class="comments-link" href="{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
                         {% endif %}
                     </li>
                 {% endunless %}

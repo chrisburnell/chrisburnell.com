@@ -20,7 +20,7 @@ page_class: home-page
                             <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
                         {% endif %}
                         {% if post.comments and post.comments == true and post.layout == "article" %}
-                            <a class="comments-link" href="{{ site.url }}{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
+                            <a class="comments-link" href="{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
                         {% else if post.layout == "codepen" %}
                             <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         {% endif %}
