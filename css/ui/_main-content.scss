@@ -197,6 +197,9 @@ article {
         }
     }
 }
+/**
+ * For Featured Pens, `.icon` is a child of the `li`
+ */
 .articles-list .icon,
 .small-articles-list .icon {
     width:  6.25em !important; // override `_icons.scss` + 4px
@@ -208,15 +211,14 @@ article {
     @include transition;
     @include translate3d(0, -50%, 0);
     svg {
-        stroke: $text-color;
         stroke-width: 1;
     }
 }
 .articles-list .icon {
     right: $default-margin;
     @include breakpoint("large") {
-        width:  10em !important;
-        height: 10em;
+        width:  8em !important;
+        height: 8em;
     }
     @include breakpoint("small") {
         top: 1.5em;
@@ -229,6 +231,9 @@ article {
 .small-articles-list .icon {
     opacity: ($opacity-low / 2);
     right: .5em;
+    svg {
+        stroke: $text-color;
+    }
 }
     .small-articles-list a:hover .icon,
     .small-articles-list a:focus .icon,

@@ -45,7 +45,7 @@ gulp.task('default', function() {
 
 // Watch files and perform the appropriate tasks
 gulp.task('watch', ['css'], function() {
-    watch('' + cssPath + '**/*.scss', function() {
+    watch(cssPath + '**/*.scss', function() {
         gulp.start('css');
     });
 });

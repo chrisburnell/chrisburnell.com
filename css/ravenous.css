@@ -700,6 +700,9 @@ article {
     aside .small-articles-list .small-articles-list li + li {
       margin-top: 1em; }
 
+/**
+ * For Featured Pens, `.icon` is a child of the `li`
+ */
 .articles-list .icon, .small-articles-list .icon {
   width: 6.25em !important;
   height: 6.25em;
@@ -712,15 +715,14 @@ article {
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
   .articles-list .icon svg, .small-articles-list .icon svg {
-    stroke: #4F4F4F;
     stroke-width: 1; }
 
 .articles-list .icon {
   right: 1.25rem; }
   @media screen and (min-width: 768px) {
     .articles-list .icon {
-      width: 10em !important;
-      height: 10em; } }
+      width: 8em !important;
+      height: 8em; } }
   @media screen and (max-width: 500px) {
     .articles-list .icon {
       top: 1.5em;
@@ -732,6 +734,8 @@ article {
 .small-articles-list .icon {
   opacity: 0.05;
   right: 0.5em; }
+  .small-articles-list .icon svg {
+    stroke: #4F4F4F; }
 
 .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
   opacity: 0.25;
