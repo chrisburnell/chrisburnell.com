@@ -9,50 +9,50 @@ $opacity-medium:   0.25;
 $opacity-high:     0.70;
 
 // Colour Palette
-$blue:             #5F8AA6;
-$text-color:       #4F4F4F;
-$text-color-alt:   #737373;
-$text-color-light: #DDDDDD;
-$white:            #F9F9F9;
-$black:            #060606;
-$black-light:      rgba($black, ($opacity-low / 2));
-$black-low:        rgba($black, $opacity-low);
-$black-medium:     rgba($black, $opacity-medium);
+$blue:              #5F8AA6;
+$text-color:        #4F4F4F;
+$text-color-alt:    #737373;
+$text-color-light:  #DDDDDD;
+$white:             #F9F9F9;
+$black:             #060606;
+$black-light:       rgba($black, ($opacity-low / 2));
+$black-low:         rgba($black, $opacity-low);
+$black-medium:      rgba($black, $opacity-medium);
 
 // Brands
-$codepen-color: #212121;
-$github-color:  #333333;
-$lastfm-color:  #E31B23;
-$rss-color:     $blue;
-$twitter-color: darken(#55ACEE, 10%);
+$codepen-color:  #212121;
+$github-color:   #333333;
+$lastfm-color:   #E31B23;
+$rss-color:      $blue;
+$twitter-color:  darken(#55ACEE, 10%);
 // Create Brands Array (name, colour, icon width:height ratio)
-$brands: codepen $codepen-color 1.025,
-         github  $github-color  0.950,
-         lastfm  $lastfm-color  1.000,
-         rss     $rss-color     0.775,
-         twitter $twitter-color 0.925;
+$brands:  codepen  $codepen-color  1.025,
+          github   $github-color   0.950,
+          lastfm   $lastfm-color   1.000,
+          rss      $rss-color      0.775,
+          twitter  $twitter-color  0.925;
 
 // Coding Language Colours
-$css-color:        #016FBA;
-$html-color:       #E54D26;
-$haml-color:       $html-color;
-$javascript-color: #F1C54C;
-$sass-color:       #C6538C;
-$scss-color:       $sass-color;
+$css-color:         #016FBA;
+$html-color:        #E54D26;
+$haml-color:        $html-color;
+$javascript-color:  #F1C54C;
+$sass-color:        #C6538C;
+$scss-color:        $sass-color;
 // Create Languages Array (name, colour)
-$coding-languages: css        $css-color,
-                   haml       $haml-color,
-                   html       $html-color,
-                   javascript $javascript-color,
-                   sass       $sass-color,
-                   scss       $scss-color;
+$coding-languages:  css         $css-color,
+                    haml        $haml-color,
+                    html        $html-color,
+                    javascript  $javascript-color,
+                    sass        $sass-color,
+                    scss        $scss-color;
 
 // Font Stack
-$base-font-size:       16px;
-$primary-font-stack:   "ff-meta-serif-web-pro", Georgia, serif;
-$secondary-font-stack: "proxima-nova", sans-serif;
-$heading-font-stack:   "league-gothic", Impact, sans-serif;
-$code-font-stack:      Consolas, Monaco, "Courier New", monospace;
+$base-font-size:        16px;
+$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif;
+$secondary-font-stack:  "proxima-nova", sans-serif;
+$heading-font-stack:    "league-gothic", Impact, sans-serif;
+$code-font-stack:       Consolas, Monaco, "Courier New", monospace;
 
 // Wrapper Widths
 $max-wrapper-width:    1120px;

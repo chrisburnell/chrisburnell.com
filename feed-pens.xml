@@ -13,7 +13,7 @@ layout: null
             <email>{{ site.author_email }}</email>
         </author>
         <language>en</language>
-        <copyright>Copyright 2014 {{ site.author }} under a Creative Commons license.</copyright>
+        <copyright>Copyright 2015 {{ site.author }} under a Creative Commons license.</copyright>
 
         <image>
             <url>{{ site.url }}/favicon.png</url>
