@@ -7,7 +7,7 @@ page_class: home-page
                 {% assign articlesLimit = 5 %}
                 {% assign articlesCount = 0 %}
                 {% for post in site.posts %}
-                {% unless (articlesCount >= articlesLimit) or (post.draft) or (post.layout != "article") %}
+                {% unless (articlesCount >= articlesLimit) or (post.draft) or (post.category != "article") %}
                     {% assign articlesCount = articlesCount | plus:1 %}
                     <li>
                         <h2 class="article-title">
