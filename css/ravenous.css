@@ -377,7 +377,7 @@ body {
 /**
  * Add a bottom margin to a plethora of tasty elements
  */
-h3:not(:last-child), p:not(:last-child), figure:not(:last-child), pre, iframe {
+h3:not(:last-child), p:not(:last-child), dl:not(:last-child), figure:not(:last-child), pre, iframe {
   margin-bottom: 1.25rem; }
 
 /**
@@ -514,6 +514,31 @@ ul:not([class]) li:before, ul.default-list li:before {
   content: "\2022";
   font-size: 1.5em;
   line-height: 1em; }
+
+dl {
+  width: 100%;
+  display: table; }
+  dl dt {
+    width: auto;
+    min-width: 10em;
+    display: inline-block;
+    padding-right: 1.25rem;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 600; }
+    @media screen and (max-width: 500px) {
+      dl dt {
+        min-width: auto;
+        padding-right: 0; } }
+  dl dd {
+    width: 1120px;
+    display: table-cell;
+    margin: 0;
+    overflow: hidden; }
+    @media screen and (max-width: 500px) {
+      dl dd {
+        width: auto;
+        display: block;
+        margin-left: 1.25rem; } }
 
 img, a img {
   width: auto;
@@ -1461,3 +1486,5 @@ pre {
 /*------------------------------------*\
     $ SHAME
 \*------------------------------------*/
+.center-text {
+  text-align: center; }

@@ -6,11 +6,18 @@ title: Featured Pens
 description: All of my featured pens listed on one page.
 ---
 
-            <p><a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe!</a></p>
+            <p class="center-text"><a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe!</a></p>
+
+            <dl>
+                <dt>What’s a pen?</dt>
+                <dd><q>CodePen is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q> And these are my best ones.</dd>
+            </dl>
+
+            <hr>
 
             <p>Alternatively, you can browse the <em><a href="/archive" title="Articles Archive">Articles Archive</a></em> or the <em><a href="/tags" title="Article Tags Archive">Article Tags Archive</a></em>.</p>
 
-            <hr />
+            <hr>
 
             <ul class="small-articles-list" role="list">
                 {% for post in site.posts %}

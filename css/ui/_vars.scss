@@ -1,12 +1,18 @@
+// Wrapper Widths
+$max-wrapper-width:    1120px;
+$medium-wrapper-width:  768px;
+$small-wrapper-width:   500px;
+$wrapper-padding:      1.25rem;
+
 // SCSS Variables
-$default-margin:  1.25rem;
-$default-padding: 2.25rem;
-$default-border:  0.25rem;
-$icon-size:         40px;
-$transition-time:  0.2s;
-$opacity-low:      0.10;
-$opacity-medium:   0.25;
-$opacity-high:     0.70;
+$default-margin:   1.25rem;
+$default-padding:  2.25rem;
+$default-border:   0.25rem;
+$icon-size:          40px;
+$transition-time:   0.2s;
+$opacity-low:       0.10;
+$opacity-medium:    0.25;
+$opacity-high:      0.70;
 
 // Colour Palette
 $blue:              #5F8AA6;
@@ -53,12 +59,6 @@ $primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif;
 $secondary-font-stack:  "proxima-nova", sans-serif;
 $heading-font-stack:    "league-gothic", Impact, sans-serif;
 $code-font-stack:       Consolas, Monaco, "Courier New", monospace;
-
-// Wrapper Widths
-$max-wrapper-width:    1120px;
-$medium-wrapper-width:  768px;
-$small-wrapper-width:   500px;
-$wrapper-padding:      1.25rem;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {
