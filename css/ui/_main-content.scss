@@ -128,9 +128,12 @@ article {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 -0.5em;
+    margin: 0 -0.5em 1.5em;
     font-family: $secondary-font-stack;
     line-height: 1.25em;
+    @include breakpoint("medium") {
+        margin-bottom: 1.875em;
+    }
     li {
         width: 49.0125%;
         display: inline-block;
@@ -186,12 +189,6 @@ article {
     .small-article-introduction {
         color: $text-color;
         margin-top: .3125em;
-    }
-    aside & li {
-        width: 100%;
-        & + li {
-            margin-top: 1em;
-        }
     }
 }
 /**

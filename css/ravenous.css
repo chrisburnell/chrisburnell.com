@@ -985,9 +985,12 @@ article {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin: 0 -0.5em;
+  margin: 0 -0.5em 1.5em;
   font-family: "proxima-nova", sans-serif;
   line-height: 1.25em; }
+  @media screen and (max-width: 768px) {
+    .small-articles-list {
+      margin-bottom: 1.875em; } }
   .small-articles-list li {
     width: 49.0125%;
     display: inline-block; }
@@ -1026,10 +1029,6 @@ article {
   .small-articles-list .small-article-introduction {
     color: #4F4F4F;
     margin-top: .3125em; }
-  aside .small-articles-list li {
-    width: 100%; }
-    aside .small-articles-list li + li {
-      margin-top: 1em; }
 
 /**
  * For Featured Pens, `.icon` is a child of the `li`
