@@ -197,54 +197,37 @@ article {
 /**
  * For Featured Pens, `.icon` is a child of the `li`
  */
-.articles-list .icon,
-.small-articles-list .icon {
-    width:  6.25em !important; // override `_icons.scss` + 4px
-    height: 6.25em;
-    display: block;
-    position: absolute;
-    top: 50%;
-    z-index: -1;
-    @include transition;
-    @include translate3d(0, -50%, 0);
-    @include breakpoint("small") {
-        width:  4em !important;
-        height: 4em;
+.small-articles-list {
+    .icon {
+        opacity: ($opacity-low / 2);
+        width:  6.25em !important; // override `_icons.scss` + 4px
+        height: 6.25em;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: .5em;
+        z-index: -1;
+        @include transition;
+        @include translate3d(0, -50%, 0);
+        @include breakpoint("small") {
+            width:  4em !important;
+            height: 4em;
+        }
+        svg {
+            stroke: $text-color;
+            stroke-width: 1;
+        }
     }
-    svg {
-        stroke-width: 1;
-    }
-}
-.articles-list .icon {
-    right: $default-margin;
-    @include breakpoint("large") {
-        width:  8em !important;
-        height: 8em;
-    }
-    @include breakpoint("small") {
-        top: 1.5em;
-        @include translate3d;
-    }
-    svg {
-        stroke: rgba($text-color, $opacity-medium);
-    }
-}
-.small-articles-list .icon {
-    opacity: ($opacity-low / 2);
-    right: .5em;
-    svg {
-        stroke: $text-color;
-    }
-}
-    .small-articles-list a:hover .icon,
-    .small-articles-list a:focus .icon,
-    .small-articles-list a:active .icon {
+    a:hover .icon,
+    a:focus .icon,
+    a:active .icon {
         opacity: $opacity-medium;
         text-decoration: none;
         svg {
             stroke-width: 2;
         }
     }
+}
 
 .pagination {
     width: 100%;

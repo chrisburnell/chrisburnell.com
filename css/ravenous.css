@@ -1009,44 +1009,26 @@ article {
 /**
  * For Featured Pens, `.icon` is a child of the `li`
  */
-.articles-list .icon, .small-articles-list .icon {
+.small-articles-list .icon {
+  opacity: 0.05;
   width: 6.25em !important;
   height: 6.25em;
   display: block;
   position: absolute;
   top: 50%;
+  right: .5em;
   z-index: -1;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
   @media screen and (max-width: 500px) {
-    .articles-list .icon, .small-articles-list .icon {
+    .small-articles-list .icon {
       width: 4em !important;
       height: 4em; } }
-  .articles-list .icon svg, .small-articles-list .icon svg {
-    stroke-width: 1; }
-
-.articles-list .icon {
-  right: 1.25rem; }
-  @media screen and (min-width: 768px) {
-    .articles-list .icon {
-      width: 8em !important;
-      height: 8em; } }
-  @media screen and (max-width: 500px) {
-    .articles-list .icon {
-      top: 1.5em;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); } }
-  .articles-list .icon svg {
-    stroke: rgba(79, 79, 79, 0.25); }
-
-.small-articles-list .icon {
-  opacity: 0.05;
-  right: .5em; }
   .small-articles-list .icon svg {
-    stroke: #4F4F4F; }
-
+    stroke: #4F4F4F;
+    stroke-width: 1; }
 .small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
   opacity: 0.25;
   text-decoration: none; }
@@ -1224,13 +1206,13 @@ aside {
     .author-biography {
       margin-bottom: 0; } }
 
-.author-name, .author-age, .article-date, .author-information .article-label {
+.author-name, .author-age, .author-employer, .article-date, .article-label {
   box-sizing: content-box;
   display: block;
   margin-bottom: .5em;
   line-height: 1.429em; }
 
-.author-information .article-label a:after {
+.article-label a:after, .featured-pens-link:after {
   content: "\00a0\2192"; }
 
 .author-image {
@@ -1245,8 +1227,15 @@ aside {
   display: table-cell;
   line-height: 1.429em; }
 
-.related-articles-title {
+.featured-pens-title, .related-articles-title {
   margin-top: 1.25rem; }
+
+.featured-pens-link {
+  width: 100%;
+  display: block;
+  margin-top: 0.625rem;
+  font-weight: bold;
+  text-align: right; }
 
 /*------------------------------------*\
     $ FOOTER

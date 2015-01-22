@@ -4,8 +4,11 @@ page_class: home-page
 ---
 
             <ol id="articles" class="articles-list" role="list">
-                {% for post in paginator.posts %}
-                {% unless post.draft %}
+                {% assign articlesLimit = 5 %}
+                {% assign articlesCount = 0 %}
+                {% for post in site.posts %}
+                {% unless (articlesCount >= articlesLimit) or (post.draft) or (post.layout != "article") %}
+                    {% assign articlesCount = articlesCount | plus:1 %}
                     <li>
                         <h2 class="article-title">
                             <a class="article-title-link" href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>
@@ -14,22 +17,23 @@ page_class: home-page
                         {% if post.introduction %}
                             <p class="article-introduction">{{ post.introduction }}</p>
                         {% endif %}
-                        {% if post.layout == "codepen" %}
-                            <a class="button" href="{{ post.url }}" title="View ‘{{ post.title }}’">View the Pen</a>
-                        {% else %}
-                            <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
-                        {% endif %}
-                        {% if post.comments and post.comments == true and post.layout == "article" %}
+                        <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
+                        {% if (post.comments) and (post.comments == true) %}
                             <a class="comments-link" href="{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
-                        {% else if post.layout == "codepen" %}
-                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         {% endif %}
                     </li>
                 {% endunless %}
                 {% endfor %}
             </ol>
 
-            <ol class="pagination  clear">
+            <ol class="clear  pagination">
+                <li>
+                    <a class="button  pagination-next" href="/archive" title="Articles Archive">Articles Archive</a>
+                </li>
+            </ol>
+
+
+            <!--ol class="pagination  clear">
                 {% if paginator.previous_page %}<li>
                     {% if paginator.previous_page == 1 %}
                         <a rel="previous" class="button  pagination-previous" href="/#articles" title="First Page">First Page</a>
@@ -44,4 +48,4 @@ page_class: home-page
                         <a rel="next" class="button  pagination-next" href="/page{{paginator.next_page}}#articles" title="Next Page">Next Page</a>
                     {% endif %}
                 </li>{% endif %}
-            </ol>
+            </ol-->

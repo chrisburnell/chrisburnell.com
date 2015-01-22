@@ -5,8 +5,8 @@
              src="/images/avatar.png"
              srcset="/images/avatar.png 1x,
                      /images/avatar-200.png 2x">
+        <div class="author-name">{% if page.layout == "article" or page.layout == "codepen" %}by{% else %}about{% endif %} <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
         {% if page.layout == "article" or page.layout == "codepen" %}
-            <div class="author-name">by <strong>{{ site.author }}</strong></div>
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
             {% if page.layout == "codepen" %}
                 <div class="article-label"><a href="/pens" title="All Featured Pens">Featured Pens</a></div>
@@ -21,7 +21,6 @@
                 </div>
             {% endif %}
         {% else %}
-            <div class="author-name">about <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
             <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
             <div class="author-employer">I’m a <strong>{{ site.job_title }}</strong></div>
         {% endif %}
@@ -32,6 +31,10 @@
         <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {% if page.layout == "article" or page.layout == "codepen" %}this article is boring and makes you want to claw your eyeballs out{% else %}my whimsical articles don’t capture your child-like wonder{% endif %}.</p>
     </div>
 
-    {% include related-articles.html %}
+    {% if page.page_class == "home-page" %}
+        {% include aside-featured-pens.html %}
+    {% elsif page.layout == "article" or page.layout == "codepen" %}
+        {% include aside-related-articles.html %}
+    {% endif %}
 
 </aside>

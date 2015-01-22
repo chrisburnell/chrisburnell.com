@@ -67,14 +67,16 @@ aside {
     }
     .author-name,
     .author-age,
+    .author-employer,
     .article-date,
-    .author-information .article-label {
+    .article-label {
         box-sizing: content-box;
         display: block;
         margin-bottom: .5em;
         line-height: 1.429em;
     }
-    .author-information .article-label a:after {
+    .article-label a:after,
+    .featured-pens-link:after {
         content: "\00a0\2192";
     }
     .author-image {
@@ -91,6 +93,14 @@ aside {
         line-height: 1.429em;
     }
 
+.featured-pens-title,
 .related-articles-title {
     margin-top: $default-margin;
+}
+.featured-pens-link {
+    width: 100%;
+    display: block;
+    margin-top: ($default-margin / 2);
+    font-weight: bold;
+    text-align: right;
 }

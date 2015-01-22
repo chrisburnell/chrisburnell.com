@@ -26,7 +26,7 @@ layouts: ./_layouts
 exclude: ['node_modules']
 
 permalink: /articles/:title
-paginate: 5
+paginate: 9001
 paginate_path: 'page:num'
 
 markdown: rdiscount
