@@ -1,16 +1,20 @@
 ---
 layout: article
+category: article
+
 date: 2013-06-15 13:21:00
+
 title: First Article Ever
 introduction: Well, I’ve finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
+
 banner: first-article-ever.png
 banner_mobile: first-article-ever_mobile.png
+comments: true
 tags:
 - CSS
 - GitHub
 - Jekyll
 - Markdown
-comments: true
 ---
 
 Since my last design update, I started working at [Squiz](http://squiz.net/uk "Squiz UK") and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix "Squiz Matrix"), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.

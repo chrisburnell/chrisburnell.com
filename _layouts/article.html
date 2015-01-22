@@ -1,3 +1,7 @@
+---
+page_class: article-page
+---
+
 {% include header.html %}
 
 
@@ -20,14 +24,14 @@
 
 <ol class="pagination  clear">
     {% if page.previous.url %}<li>
-        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous Article: ‘{{ page.previous.title }}’">Previous Article</a>
+        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous {% if page.previous.category == "codepen" %}Pen{% else %}Article{% endif %}: ‘{{ page.previous.title }}’">Previous {% if page.previous.category == "codepen" %}Pen{% else %}Article{% endif %}</a>
     </li>{% endif %}
     {% if page.next.url %}<li>
-        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next Article: ‘{{ page.next.title }}’">Next Article</a>
+        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next {% if page.next.category == "codepen" %}Pen{% else %}Article{% endif %}: ‘{{ page.next.title }}’">Next {% if page.next.category == "codepen" %}Pen{% else %}Article{% endif %}</a>
     </li>{% endif %}
 </ol>
 
-{% if page.comments and page.comments == true %}
+{% if page.comments and (page.comments == true) %}
     <section id="comments" class="comments  clear">
         <button class="show-comments  js-show-comments" disabled>Show Comments</button>
         <div id="disqus_thread"></div>

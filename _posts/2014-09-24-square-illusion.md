@@ -1,11 +1,14 @@
 ---
-layout: codepen
+layout: article
+category: codepen
+
 date: 2014-09-24 12:00:00
+
 title: Square Illusion
+
+comments: true
 tags:
 - CodePen
-codepen: true
-comments: true
 ---
 
 {% include codepen-embed.html slug="IKHhC" height="50" %}

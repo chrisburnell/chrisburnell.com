@@ -1,11 +1,14 @@
 ---
-layout: codepen
+layout: article
+category: codepen
+
 date: 2013-12-04 12:00:00
+
 title: Cutaway Indicator
+
+comments: true
 tags:
 - CodePen
-codepen: true
-comments: true
 ---
 
 {% include codepen-embed.html slug="yIwzd" height="200" %}

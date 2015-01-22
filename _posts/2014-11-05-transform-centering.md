@@ -1,11 +1,14 @@
 ---
-layout: codepen
+layout: article
+category: codepen
+
 date: 2014-11-05 12:00:00
+
 title: Power of Transform Centering
+
+comments: true
 tags:
 - CodePen
-codepen: true
-comments: true
 ---
 
 {% include codepen-embed.html slug="CHEbf" height="500" theme="8863" %}

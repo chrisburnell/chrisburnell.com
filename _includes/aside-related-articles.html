@@ -4,8 +4,8 @@
         <ol class="small-articles-list" role="list">
             {% for post in site.related_posts limit:2 %}
                 <li>
-                    <a href="{{ post.url }}" title="{% if post.layout == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
-                        {% if post.layout == "codepen" %}
+                    <a href="{{ post.url }}" title="{% if post.category == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
+                        {% if post.category == "codepen" %}
                             <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                         {% endif %}
                         <h4 class="small-article-title">{{ post.title }}</h4>

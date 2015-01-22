@@ -1,15 +1,19 @@
 ---
 layout: article
+category: article
+
 date: 2014-02-09 02:19:00
+
 title: Let’s Look Back
 introduction: I haven’t published a new article in a while now, but I haven’t been twiddling my thumbs. Let’s look at what happened behind-the-scenes in the last eight months since my first article.
+
 banner: lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
+comments: true
 tags:
 - CSS
 - GitHub
 - Tutorials
-comments: true
 ---
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for simple maintenance and comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.

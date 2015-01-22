@@ -1,11 +1,14 @@
 ---
-layout: codepen
+layout: article
+category: codepen
+
 date: 2013-06-17 12:00:00
+
 title: Persistent Light Source Transform
+
+comments: true
 tags:
 - CodePen
-codepen: true
-comments: true
 ---
 
 {% include codepen-embed.html slug="mglHp" height="425" %}

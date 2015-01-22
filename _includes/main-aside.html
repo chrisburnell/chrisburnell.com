@@ -5,10 +5,10 @@
              src="/images/avatar.png"
              srcset="/images/avatar.png 1x,
                      /images/avatar-200.png 2x">
-        <div class="author-name">{% if page.layout == "article" or page.layout == "codepen" %}by{% else %}about{% endif %} <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
-        {% if page.layout == "article" or page.layout == "codepen" %}
+        <div class="author-name">{% if page.layout == "article" %}by{% else %}about{% endif %} <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
+        {% if page.layout == "article" %}
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
-            {% if page.layout == "codepen" %}
+            {% if page.category == "codepen" %}
                 <div class="article-label"><a href="/pens" title="All Featured Pens">Featured Pens</a></div>
             {% endif %}
             {% if page.tags %}
@@ -16,7 +16,7 @@
                     tagged under
                     {% assign sorted_tags = page.tags | sort:0 %}
                     {% for tag in sorted_tags %}
-                        {% if forloop.last and page.tags.size > 1 %} and {% endif %}<a href="/tags#{{ tag | handleize | downcase }}" title="All posts tagged '{{ tag }}'" rel="tag">{{ tag }}</a>{% if forloop.last == false and page.tags.size > 2 %}, {% endif %}
+                        {% if forloop.last and page.tags.size > 1 %} and {% endif %}<a href="/tags#{{ tag | handleize | downcase }}" title="All posts tagged '{{ tag }}'" rel="tag">{{ tag }}</a>{% if (forloop.last == false) and (page.tags.size > 2) %}, {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}
@@ -28,12 +28,12 @@
 
     <div class="author-biography">
         <p>I’m a Canadian {% if page.layout == "article" %}{{ site.job_title }} {% endif %}living in London, UK{% if site.employer %} and currently working at <a rel="external" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
-        <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {% if page.layout == "article" or page.layout == "codepen" %}this article is boring and makes you want to claw your eyeballs out{% else %}my whimsical articles don’t capture your child-like wonder{% endif %}.</p>
+        <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {% if page.layout == "article" %}this article is boring and makes you want to claw your eyeballs out{% else %}my whimsical articles don’t capture your child-like wonder{% endif %}.</p>
     </div>
 
     {% if page.page_class == "home-page" %}
         {% include aside-featured-pens.html %}
-    {% elsif page.layout == "article" or page.layout == "codepen" %}
+    {% elsif page.layout == "article" %}
         {% include aside-related-articles.html %}
     {% endif %}
 

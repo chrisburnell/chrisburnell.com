@@ -1,11 +1,14 @@
 ---
-layout: codepen
+layout: article
+category: codepen
+
 date: 2014-11-10 12:00:00
+
 title: Category Hover Demo
+
+comments: true
 tags:
 - CodePen
-codepen: true
-comments: true
 ---
 
 {% include codepen-embed.html slug="mybQEL" height="525" %}

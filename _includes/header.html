@@ -36,10 +36,10 @@ snippet of code on a project of your own. -->
     <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class == "home-page" or page.page_class == "archive-page" or page.layout == "article" %}
+    {% if (page.page_class == "home-page") or (page.page_class == "archive-page") or (page.comments == true) %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
     {% endif %}
-    {% if page.layout == "article" %}
+    {% if (page.comments == true) %}
         <link rel="dns-prefetch" href="//disqus.com">
         <link rel="dns-prefetch" href="//juggler.services.disqus.com">
         <link rel="dns-prefetch" href="//referrer.disqus.com">

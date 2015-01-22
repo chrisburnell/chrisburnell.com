@@ -1,16 +1,20 @@
 ---
 layout: article
+category: article
+
 date: 2013-06-18 02:45:00
+
 title: Persistent Shadows
 introduction: How easy is it to keep a shadow’s direction consistent whilst rotating an element?
+
 banner: persistent-shadows.png
 banner_mobile: persistent-shadows_mobile.png
+codepen: true
+comments: true
 tags:
 - CodePen
 - CSS
 - UX
-comments: true
-codepen: true
 ---
 
 Nearing the end of the work-day yesterday, I was struck with an idea. Having recently read through [Google’s Visual Assets Guidelines on Behance](http://www.behance.net/gallery/Google-Visual-Assets-Guidelines-Part-1/9028077 "Google’s Visual Assets Guidelines on Behance") and stumbling upon this awesome pen (actually a fork of [Lionel’s](http://codepen.io/elrumordelaluz "Lionel on Github"), from Italy: [http://codepen.io/elrumordelaluz/pen/dobAz](http://codepen.io/elrumordelaluz/pen/dobAz "CSS3 Flat Icons")):

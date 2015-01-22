@@ -1,14 +1,18 @@
 ---
 layout: article
+category: article
+
 date: 2013-10-28 23:22:00
+
 title: I’ll Scratch Your Back, And Mine Too
 introduction: I’ve been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
+
 banner: ill-scratch-your-back.png
 banner_mobile: ill-scratch-your-back_mobile.png
+comments: true
 tags:
 - CSS
 - Tutorials
-comments: true
 ---
 
 When building a site for a client who isn’t very tech-savvy, it’s important that they’re able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it’s then important that the CSS we write matches the output of the editor’s content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you’re used to.

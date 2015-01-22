@@ -1,18 +1,19 @@
 ---
-title: Articles Archive
-description: All of my articles listed on one page.
 layout: default
 page_class: archive-page
 redirect_from: /articles.html
+
+title: Articles Archive
+description: All of my articles listed on one page.
 ---
 
-            <p>Subscribe to the <a rel="me author" class="rss-link" href="/feed-articles.xml" title="Articles only RSS">Articles only RSS Feed</a>.</p>
+            <p><a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe!</a></p>
 
-            <p>Alternatively, you can browse the <a href="/tags" title="Article Tags Archive">Article Tags Archive</a> or the <a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>.</p>
+            <p>Alternatively, you can browse the <em><a href="/tags" title="Article Tags Archive">Article Tags Archive</a></em> or the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em>.</p>
 
             <ol id="articles" class="articles-list" role="list">
                 {% for post in site.posts %}
-                {% unless post.draft or post.layout != "article" %}
+                {% unless post.draft or (post.category != "article") %}
                     <li>
                         <h2 class="article-title">
                             <a href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>

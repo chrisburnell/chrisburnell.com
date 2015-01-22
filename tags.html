@@ -1,11 +1,12 @@
 ---
-title: Article Tags
-description: A list of tags and their prose counterparts.
 layout: default
 page_class: tags-page
+
+title: Article Tags
+description: A list of tags and their prose counterparts.
 ---
 
-            <p>Alternatively, you can browse the <a href="/archive" title="Articles Archive">Articles Archive</a> or the <a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>.</p>
+            <p>Alternatively, you can browse the <em><a href="/archive" title="Articles Archive">Articles Archive</a></em> or the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em>.</p>
 
             {% capture tags %}
                 {% for tag in site.tags %}
@@ -19,8 +20,8 @@ page_class: tags-page
                     {% for post in site.tags[tag] %}
                     {% unless post.draft %}
                         <li>
-                            <a href="{{ post.url }}" title="{% if post.layout == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
-                                {% if post.layout == "codepen" %}
+                            <a href="{{ post.url }}" title="{% if post.category == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
+                                {% if post.category == "codepen" %}
                                     <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                                 {% endif %}
                                 <h4 class="small-article-title">{{ post.title }}</h4>

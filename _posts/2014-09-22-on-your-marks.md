@@ -1,14 +1,18 @@
 ---
 layout: article
+category: article
+
 date: 2014-09-22 10:00:00
+
 title: On Your Marks, Get Set, Wait
 introduction: What’s really important when reading an article online? Content should always come first, and give users the option for more later.
+
 banner: on-your-marks.png
 banner_mobile: on-your-marks_mobile.png
+comments: true
 tags:
 - Javascript
 - Tutorials
-comments: true
 ---
 
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.

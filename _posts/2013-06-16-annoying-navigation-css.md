@@ -1,16 +1,20 @@
 ---
 layout: article
+category: article
+
 date: 2013-06-16 03:58:00
+
 title: Annoying Navigation CSS
 introduction: Navigation is crucial to a functional website. It is how your users find the information they're after; get it right, and your users are happy—get it wrong, and they go insane!
+
 banner: annoying-navigation-css.png
 banner_mobile: annoying-navigation-css_mobile.png
+codepen: true
+comments: true
 tags:
 - CodePen
 - CSS
 - UX
-comments: true
-codepen: true
 ---
 
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
