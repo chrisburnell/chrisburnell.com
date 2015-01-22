@@ -8,13 +8,16 @@ description: All of my articles listed on one page.
 ---
 
             <p class="center-text">
-                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
+                <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+                <a rel="me author" class="button" href="/tags" title="Article Tags Archive">Article Tags Archive</a>
             </p>
 
             <hr>
 
-            <p>Alternatively, you can browse the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em> or the <em><a href="/tags" title="Article Tags Archive">Article Tags Archive</a></em>.</p>
+            <p class="center-text">
+                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
+                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
+            </p>
 
             <ol id="articles" class="articles-list" role="list">
                 {% for post in site.posts %}
@@ -39,10 +42,13 @@ description: All of my articles listed on one page.
             <hr>
 
             <p class="center-text">
-                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
                 <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
+                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
             </p>
 
             <hr>
 
-            <p>Alternatively, you can browse the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em> or the <em><a href="/tags" title="Article Tags Archive">Article Tags Archive</a></em>.</p>
+            <p class="center-text">
+                <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+                <a rel="me author" class="button" href="/tags" title="Article Tags Archive">Article Tags Archive</a>
+            </p>

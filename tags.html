@@ -9,14 +9,17 @@ description: A list of tags and their prose counterparts.
             <hr>
 
             <p class="center-text">
-                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
-                <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
+                <a rel="me author" class="button" href="/archive" title="Articles Archive">Articles Archive</a>
+                <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
             </p>
 
             <hr>
 
-            <p>Alternatively, you can browse the <em><a href="/archive" title="Articles Archive">Articles Archive</a></em> or the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em>.</p>
+            <p class="center-text">
+                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
+                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
+                <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
+            </p>
 
             {% capture tags %}
                 {% for tag in site.tags %}
@@ -56,4 +59,7 @@ description: A list of tags and their prose counterparts.
 
             <hr>
 
-            <p>Alternatively, you can browse the <em><a href="/archive" title="Articles Archive">Articles Archive</a></em> or the <em><a href="/pens" title="Featured Pens Archive">Featured Pens Archive</a></em>.</p>
+            <p class="center-text">
+                <a rel="me author" class="button" href="/archive" title="Articles Archive">Articles Archive</a>
+                <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+            </p>
