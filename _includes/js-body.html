@@ -43,7 +43,7 @@
                 })();
             }
         }
-    {% elsif (page.page_class == "home-page") or (page.page_class == "archive-page") %}
+    {% elsif page.page_class == "home-page" or page.page_class == "archive-page" %}
         /**
          * Show comment counts on home and archive pages
          */
@@ -65,7 +65,7 @@
     ga('send', 'pageview');
 </script>
 
-{% if (page.codepen == true) or (page.category == "codepen") %}
+{% if page.codepen == true or page.category == "codepen" %}
     <script src="//codepen.io/assets/embed/ei.js" async></script>
 {% endif %}
 

@@ -231,21 +231,12 @@ article {
     width: 100%;
     padding-top: $default-padding;
     text-align: center;
-    @include breakpoint("medium") {
-        padding-bottom: $default-padding;
-    }
-    li,
-    & > a {
-        display: inline-block;
-        @include breakpoint("small") {
-            &:last-child {
-                margin-top: .6875em;
-            }
-        }
-    }
 }
 .pagination {
     border-top: ($default-border / 2) solid $black-low;
+    @include breakpoint("medium") {
+        padding-bottom: $default-padding;
+    }
     li {
         display: inline-block;
         @include breakpoint("small") {
@@ -263,6 +254,18 @@ article {
     }
 }
 .center-text {
+    .page-description + &,
+    hr + & {
+        padding-top: 0;
+    }
+    @include breakpoint("medium") {
+        margin-bottom: $default-margin;
+    }
+    @include breakpoint("small") {
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
     a {
         display: inline-block;
         @include breakpoint("small") {

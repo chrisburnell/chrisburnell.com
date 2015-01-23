@@ -6,8 +6,6 @@ title: Article Tags
 description: A list of tags and their prose counterparts.
 ---
 
-            <hr>
-
             <p class="center-text">
                 <a rel="me author" class="button" href="/archive" title="Articles Archive">Articles Archive &rarr;</a>
                 <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive &rarr;</a>
@@ -32,8 +30,13 @@ description: A list of tags and their prose counterparts.
                 <ul class="small-articles-list" role="list">
                     {% for post in site.tags[tag] %}
                     {% unless post.draft %}
+                        {% if post.category == "codepen" %}
+                            {% assign link_title = "View" %}
+                        {% else %}
+                            {% assign link_title = "Continue reading" %}
+                        {% endif %}
                         <li>
-                            <a href="{{ post.url }}" title="{% if post.category == "codepen" %}View{% else %}Continue reading{% endif %} ‘{{ post.title }}’">
+                            <a href="{{ post.url }}" title="{{ link_title }} ‘{{ post.title }}’">
                                 {% if post.category == "codepen" %}
                                     <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                                 {% endif %}

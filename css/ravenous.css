@@ -598,7 +598,7 @@ hr {
   height: .125em;
   display: block;
   border: 0;
-  margin: .5em 0 1.5em; }
+  margin: .5em 0 1.25rem; }
 
 ::-moz-selection{
   background: #5F8AA6;
@@ -1063,17 +1063,12 @@ article {
   width: 100%;
   padding-top: 2.25rem;
   text-align: center; }
-  @media screen and (max-width: 768px) {
-    .pagination, .center-text {
-      padding-bottom: 2.25rem; } }
-  .pagination li, .pagination > a, .center-text li, .center-text > a {
-    display: inline-block; }
-    @media screen and (max-width: 500px) {
-      .pagination li:last-child, .pagination > a:last-child, .center-text li:last-child, .center-text > a:last-child {
-        margin-top: .6875em; } }
 
 .pagination {
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
+  @media screen and (max-width: 768px) {
+    .pagination {
+      padding-bottom: 2.25rem; } }
   .pagination li {
     display: inline-block; }
     @media screen and (max-width: 500px) {
@@ -1087,6 +1082,14 @@ article {
         .pagination li + li {
           margin-left: 0; } }
 
+.page-description + .center-text, hr + .center-text {
+  padding-top: 0; }
+@media screen and (max-width: 768px) {
+  .center-text {
+    margin-bottom: 1.25rem; } }
+@media screen and (max-width: 500px) {
+  .center-text:not(:last-child) {
+    margin-bottom: 0; } }
 .center-text a {
   display: inline-block; }
   @media screen and (max-width: 500px) {

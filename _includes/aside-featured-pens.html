@@ -4,7 +4,7 @@
         {% assign featuredPensLimit = 4 %}
         {% assign featuredPensCounter = 0 %}
         {% for post in site.posts %}
-        {% unless (featuredPensCounter >= featuredPensLimit) or (post.draft) or (post.category != "codepen") %}
+        {% unless featuredPensCounter >= featuredPensLimit or post.draft or post.category != "codepen" %}
             {% assign featuredPensCounter = featuredPensCounter | plus:1 %}
             <li>
                 <a href="{{ post.url }}" title="View ‘{{ post.title }}’">

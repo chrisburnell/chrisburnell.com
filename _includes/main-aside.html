@@ -1,3 +1,21 @@
+{% if page.layout == "article" %}
+    {% assign author_name_prefix = "by" %}
+    {% if page.category == "codepen" %}
+        {% assign author_biography_closer = "this pen is uninspiring and makes you want to claw your eyeballs out" %}
+    {% else %}
+        {% assign author_biography_closer = "this article is boring and makes you want to claw your eyeballs out" %}
+    {% endif %}
+{% else %}
+    {% assign author_name_prefix = "about" %}
+    {% if page.page_class == "pens-page" %}
+        {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
+    {% elsif page.page_class == "tags-page" %}
+        {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
+    {% else %}
+        {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
+    {% endif %}
+{% endif %}
+
 <aside class="author" role="complementary">
 
     <div class="clear  author-information">
@@ -5,7 +23,7 @@
              src="/images/avatar.png"
              srcset="/images/avatar.png 1x,
                      /images/avatar-200.png 2x">
-        <div class="author-name">{% if page.layout == "article" %}by{% else %}about{% endif %} <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
+        <div class="author-name">{{ author_name_prefix}} <a rel="me" href="/about" title="About {{ site.author }}">{{ site.author }}</a></div>
         {% if page.layout == "article" %}
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
             {% if page.category == "codepen" %}
@@ -28,7 +46,7 @@
 
     <div class="author-biography">
         <p>I’m a Canadian {% if page.layout == "article" %}{{ site.job_title }} {% endif %}living in London, UK{% if site.employer %} and currently working at <a rel="external" href="{{ site.employer_url }}" title="{{ site.employer }}">{{ site.employer }}</a>{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="rss-link" href="/feed.xml" title="Subscribe via RSS">subscribe via RSS</a>.</p>
-        <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {% if page.layout == "article" %}this article is boring and makes you want to claw your eyeballs out{% else %}my whimsical articles don’t capture your child-like wonder{% endif %}.</p>
+        <p>I also <a rel="me publisher" class="twitter-link" href="{{ site.twitter_url }}" title="{{ site.author }} on Twitter">tweet</a>, <a rel="me publisher" class="codepen-link" href="{{ site.codepen_url }}" title="{{ site.author }} on CodePen">write code</a>, <a rel="me publisher" class="github-link" href="{{ site.github_url }}" title="{{ site.author }} on Github">commit code</a>, and <a rel="me publisher" class="lastfm-link" href="{{ site.lastfm_url }}" title="{{ site.author }} on Last.FM">listen to music</a> if {{ author_biography_closer }}.</p>
     </div>
 
     {% if page.page_class == "home-page" %}
