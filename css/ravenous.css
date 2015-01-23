@@ -1061,7 +1061,11 @@ article {
 
 .pagination, .center-text {
   width: 100%;
+  padding-top: 2.25rem;
   text-align: center; }
+  @media screen and (max-width: 768px) {
+    .pagination, .center-text {
+      padding-bottom: 2.25rem; } }
   .pagination li, .pagination > a, .center-text li, .center-text > a {
     display: inline-block; }
     @media screen and (max-width: 500px) {
@@ -1076,11 +1080,7 @@ article {
           margin-left: 0; } }
 
 .pagination {
-  padding-top: 2.25rem;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
-  @media screen and (max-width: 768px) {
-    .pagination {
-      padding-bottom: 2.25rem; } }
 
 .pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {
   position: relative;
@@ -1203,12 +1203,19 @@ aside {
   font-family: "proxima-nova", sans-serif; }
   @media screen and (max-width: 768px) {
     .author {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-ordinal-group: 1000;
       -webkit-order: 999;
           -ms-flex-order: 999;
-              order: 999;
-      padding-top: 2.25rem;
-      border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
+              order: 999; }
       .about-page .author {
         margin-top: 1.25rem; } }
 
@@ -1217,6 +1224,14 @@ aside {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: .875em;
   font-style: italic; }
+  @media screen and (max-width: 768px) {
+    .author-information {
+      -webkit-box-ordinal-group: 999;
+      -webkit-order: 998;
+          -ms-flex-order: 998;
+              order: 998;
+      padding-top: 2.25rem;
+      border-top: 0.125rem solid rgba(6, 6, 6, 0.1); } }
   .author-information a, .author-information strong {
     color: inherit;
     font-family: "proxima-nova", sans-serif;
@@ -1229,6 +1244,10 @@ aside {
   margin-bottom: 1.25rem; }
   @media screen and (max-width: 768px) {
     .author-biography {
+      -webkit-box-ordinal-group: 1000;
+      -webkit-order: 999;
+          -ms-flex-order: 999;
+              order: 999;
       margin-bottom: 0; } }
 
 .author-name, .author-age, .author-employer, .article-date, .article-label {
@@ -1252,8 +1271,14 @@ aside {
   display: table-cell;
   line-height: 1.429em; }
 
-.featured-pens-title, .related-articles-title {
+.featured-pens, .related-articles {
   margin-top: 1.25rem; }
+  @media screen and (max-width: 768px) {
+    .featured-pens, .related-articles {
+      margin-top: 0; } }
+
+.featured-pens-title, .related-articles-title {
+  margin-top: 0; }
 
 .featured-pens-link {
   width: 100%;
@@ -1261,6 +1286,10 @@ aside {
   margin-top: 0.625rem;
   font-weight: bold;
   text-align: right; }
+  @media screen and (max-width: 768px) {
+    .featured-pens-link {
+      margin-bottom: 1.25rem;
+      text-align: center; } }
 
 /*------------------------------------*\
     $ FOOTER
