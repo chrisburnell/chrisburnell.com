@@ -238,13 +238,23 @@ article {
     & > a {
         display: inline-block;
         @include breakpoint("small") {
+            &:last-child {
+                margin-top: .6875em;
+            }
+        }
+    }
+}
+.pagination {
+    border-top: ($default-border / 2) solid $black-low;
+    li {
+        display: inline-block;
+        @include breakpoint("small") {
             display: block;
             &:last-child {
                 margin-top: .6875em;
             }
         }
-        & + li,
-        & + a {
+        & + li {
             margin-left: 1.875em;
             @include breakpoint("small") {
                 margin-left: 0;
@@ -252,8 +262,21 @@ article {
         }
     }
 }
-.pagination {
-    border-top: ($default-border / 2) solid $black-low;
+.center-text {
+    a {
+        display: inline-block;
+        @include breakpoint("small") {
+            &:last-child {
+                margin-top: .6875em;
+            }
+        }
+        & + a {
+            margin-left: 1.875em;
+            @include breakpoint("small") {
+                margin-left: 0;
+            }
+        }
+    }
 }
     .pagination-previous:before,
     .pagination-previous:active:before,
