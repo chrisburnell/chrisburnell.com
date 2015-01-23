@@ -1059,27 +1059,28 @@ article {
   .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
     stroke-width: 2; }
 
-.pagination {
+.pagination, .center-text {
   width: 100%;
-  padding-top: 2.25rem;
-  border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   text-align: center; }
-  @media screen and (max-width: 768px) {
-    .pagination {
-      margin-top: 0;
-      padding-bottom: 2.25rem; } }
-  .pagination li {
+  .pagination li, .pagination > a, .center-text li, .center-text > a {
     display: inline-block; }
     @media screen and (max-width: 500px) {
-      .pagination li {
+      .pagination li, .pagination > a, .center-text li, .center-text > a {
         display: block; }
-        .pagination li:last-child {
+        .pagination li:last-child, .pagination > a:last-child, .center-text li:last-child, .center-text > a:last-child {
           margin-top: .6875em; } }
-    .pagination li + li {
+    .pagination li + li, .pagination li + a, .pagination > a + li, .pagination > a + a, .center-text li + li, .center-text li + a, .center-text > a + li, .center-text > a + a {
       margin-left: 1.875em; }
       @media screen and (max-width: 500px) {
-        .pagination li + li {
+        .pagination li + li, .pagination li + a, .pagination > a + li, .pagination > a + a, .center-text li + li, .center-text li + a, .center-text > a + li, .center-text > a + a {
           margin-left: 0; } }
+
+.pagination {
+  padding-top: 2.25rem;
+  border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
+  @media screen and (max-width: 768px) {
+    .pagination {
+      padding-bottom: 2.25rem; } }
 
 .pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {
   position: relative;
@@ -1485,5 +1486,3 @@ pre {
 /*------------------------------------*\
     $ SHAME
 \*------------------------------------*/
-.center-text {
-  text-align: center; }

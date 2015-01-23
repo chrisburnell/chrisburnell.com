@@ -226,16 +226,12 @@ article {
     }
 }
 
-.pagination {
+.pagination,
+.center-text {
     width: 100%;
-    padding-top: $default-padding;
-    border-top: ($default-border / 2) solid $black-low;
     text-align: center;
-    @include breakpoint("medium") {
-        margin-top: 0;
-        padding-bottom: $default-padding;
-    }
-    li {
+    li,
+    & > a {
         display: inline-block;
         @include breakpoint("small") {
             display: block;
@@ -243,12 +239,20 @@ article {
                 margin-top: .6875em;
             }
         }
-        & + li {
+        & + li,
+        & + a {
             margin-left: 1.875em;
             @include breakpoint("small") {
                 margin-left: 0;
             }
         }
+    }
+}
+.pagination {
+    padding-top: $default-padding;
+    border-top: ($default-border / 2) solid $black-low;
+    @include breakpoint("medium") {
+        padding-bottom: $default-padding;
     }
 }
     .pagination-previous:before,
