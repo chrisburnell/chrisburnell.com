@@ -79,6 +79,9 @@ $code-font-stack:       Consolas, Monaco, "Courier New", monospace;
     @if ( length($values) == 0 ) {
         $values: all $transition-time ease;
     }
+    @else if ( str-index(""+$values+"", " ") == null and $values != "none" ) {
+        $values: $values $transition-time ease;
+    }
     transition: $values;
 }
 @mixin translate3d($values...) {

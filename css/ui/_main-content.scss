@@ -92,7 +92,7 @@ article {
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
             margin-left: -0.27em;
-            @include transition(border-color $transition-time ease);
+            @include transition(border-color);
             &:hover,
             &:focus,
             &:active {
