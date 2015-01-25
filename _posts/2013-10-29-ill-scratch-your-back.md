@@ -19,7 +19,7 @@ When building a site for a client who isn’t very tech-savvy, it’s important 
 
 So, for example, if an editor creates an article with lists and pictures, it’s important that our code doesn’t mistake these basic elements for something else, and apply extra styles which we’re trying to apply to a smaller subset of the given element, which we usually denote with a <dfn title="A class is a label which is assigned to element(s) to distinguish it from like elements.">class</dfn>.
 
-{% include heading-anchor.html id="lets-look-at-some-code" title="Let’s look at some code" %}
+{% include heading.html id="lets-look-at-some-code" title="Let’s look at some code" %}
 
 Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css")). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
@@ -51,7 +51,7 @@ Due to the cascading nature of CSS, the styles we’ve given to our default orde
 
 In experimenting with CSS content and attribute selectors, I’ve discovered a neat trick to apply styles to elements **without** a class, with the caveat that you’re styling the rest of the elements **with** classes. In my opinion, this is best practice anyway as part of a movement towards a modular approach to CSS.
 
-{% include heading-anchor.html id="here-it-is" title="So here it is:" %}
+{% include heading.html id="here-it-is" title="So here it is:" %}
 
 {% highlight css %}
 ol:not([class]) {
@@ -60,7 +60,7 @@ ol:not([class]) {
 }
 {% endhighlight %}
 
-{% include heading-anchor.html id="whats-going-on-here" title="What’s going on here?" %}
+{% include heading.html id="whats-going-on-here" title="What’s going on here?" %}
 
 We’re basically saying that <q>for every ordered list that doesn’t have a class attribute, apply some styles.</q> Normally, the attribute selector, `[ ]`, is used to style external links or elements with a specific `rel` attribute, but in this case we’re using the barebones and **just** checking for the instance of a class attribute at all.
 
