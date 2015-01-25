@@ -34,7 +34,7 @@ article {
     display: inline-block;
     clear: both;
     padding: 1.5em 1em;
-    border-top: ($default-border / 2) solid $black-low;
+    border-top: ($default-border / 2) solid $black-medium;
     position: relative;
     &:nth-child(odd) {
         background-color: $black-light;
@@ -233,7 +233,7 @@ article {
     text-align: center;
 }
 .pagination {
-    border-top: ($default-border / 2) solid $black-low;
+    border-top: ($default-border / 2) solid $black-medium;
     @include breakpoint("medium") {
         padding-bottom: $default-padding;
     }
@@ -337,7 +337,7 @@ article {
         width: 6.5em;
         height: 6.5em;
         display: inline-block;
-        border: $default-border solid $black-medium;
+        border: $default-border solid $black-dark;
         margin: 0 .25em .5em;
         font-family: $code-font-stack;
         font-weight: 700;

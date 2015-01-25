@@ -1379,10 +1379,10 @@ footer {
   .style-guide-link {
     display: block; } }
 
-.copyright-spacer {
+.footer-spacer {
   color: #737373; }
   @media screen and (max-width: 500px) {
-    .copyright-spacer {
+    .footer-spacer {
       display: none; } }
 
 /*------------------------------------*\

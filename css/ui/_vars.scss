@@ -22,8 +22,8 @@ $text-color-light:  #DDDDDD;
 $white:             #F9F9F9;
 $black:             #060606;
 $black-light:       rgba($black, ($opacity-low / 2));
-$black-low:         rgba($black, $opacity-low);
-$black-medium:      rgba($black, $opacity-medium);
+$black-medium:      rgba($black, $opacity-low);
+$black-dark:        rgba($black, $opacity-medium);
 
 // Brands
 $codepen-color:  #212121;
