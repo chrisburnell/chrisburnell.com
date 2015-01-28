@@ -19,7 +19,7 @@ var cssPath = 'css/';
 
 // Compile SASS, autoprefix properties and values, and minify
 gulp.task('css', function() {
-    return gulp.src(cssPath + '*.scss')
+    return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
