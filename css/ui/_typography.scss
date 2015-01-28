@@ -36,21 +36,6 @@ h3 {
     border-bottom: .125em solid $text-color-light;
     position: relative;
 }
-    .heading-anchor {
-        color: $text-color-alt;
-        display: none;
-        padding-left: 1em;
-        font-family: $code-font-stack;
-        font-size: .723em;
-        line-height: 1.875em;
-        text-transform: lowercase;
-        vertical-align: middle;
-        h3:hover &,
-        h3:focus &,
-        h3:active & {
-            display: inline-block;
-        }
-    }
 h4 {
     margin-bottom: .5em;
 }
@@ -75,16 +60,31 @@ a {
         }
     }
 }
-/**
- * Brand Link Colours
- */
-@each $brand in $brands {
-    $name:  nth($brand, 1);
-    $color: nth($brand, 2);
-    .#{$name}-link {
-        color: #{$color} !important;
+    .heading-anchor {
+        color: $text-color-alt;
+        display: none;
+        padding-left: 1em;
+        font-family: $code-font-stack;
+        font-size: .723em;
+        line-height: 1.875em;
+        text-transform: lowercase;
+        vertical-align: middle;
+        :hover &,
+        :focus &,
+        :active & {
+            display: inline-block;
+        }
     }
-}
+    /**
+     * Brand Link Colours
+     */
+    @each $brand in $brands {
+        $name:  nth($brand, 1);
+        $color: nth($brand, 2);
+        .#{$name}-link {
+            color: #{$color} !important;
+        }
+    }
 
 p {
     margin: 0;

@@ -437,18 +437,6 @@ h3 {
   border-bottom: .125em solid #DDDDDD;
   position: relative; }
 
-.heading-anchor {
-  color: #737373;
-  display: none;
-  padding-left: 1em;
-  font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: .723em;
-  line-height: 1.875em;
-  text-transform: lowercase;
-  vertical-align: middle; }
-  h3:hover .heading-anchor, h3:focus .heading-anchor, h3:active .heading-anchor {
-    display: inline-block; }
-
 h4 {
   margin-bottom: .5em; }
 
@@ -464,9 +452,21 @@ a {
     h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5F8AA6; }
 
+.heading-anchor {
+  color: #737373;
+  display: none;
+  padding-left: 1em;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: .723em;
+  line-height: 1.875em;
+  text-transform: lowercase;
+  vertical-align: middle; }
+  :hover .heading-anchor, :focus .heading-anchor, :active .heading-anchor {
+    display: inline-block; }
+
 /**
- * Brand Link Colours
- */
+     * Brand Link Colours
+     */
 .codepen-link {
   color: #212121 !important; }
 
