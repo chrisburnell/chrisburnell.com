@@ -32,10 +32,10 @@
             showComments();
         });
         function showComments() {
-            // Only if the button still exists should we load Disqus
+            window.scrollTo(0, commentsSection.offsetTop);
+            // Only if the button still exists should we load Disqus and remove the button
             if( document.getElementsByClassName('js-show-comments')[0] ) {
                 commentsSection.removeChild(commentsButton);
-                window.scrollTo(0, commentsSection.offsetTop);
                 (function() {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
