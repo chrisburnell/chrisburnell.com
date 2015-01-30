@@ -13,18 +13,17 @@
          * Comment toggling for article pages
          */
         var commentsSection = document.getElementById('comments'),
+            commentsButton  = document.getElementsByClassName('js-show-comments')[0],
             commentsHash    = ['#comments', '#disqus_thread'];
-        // And a hook to our button
-        var commentsButton = document.getElementsByClassName('js-show-comments')[0];
         commentsButton.disabled = false;
         commentsHash.forEach( function(hash) {
-            if( window.location.hash === hash ) {
+            if( window.location.hash.indexOf(hash) == 0 ) {
                 showComments();
             }
         });
         window.onhashchange = function() {
             commentsHash.forEach( function(hash) {
-                if( location.hash === hash ) {
+                if( location.hash.indexOf(hash) == 0 ) {
                     showComments();
                 }
             });
@@ -33,9 +32,11 @@
             showComments();
         });
         function showComments() {
+            console.log("showComments()");
             // Only if the button still exists should we load Disqus
             if( document.getElementsByClassName('js-show-comments')[0] ) {
                 commentsSection.removeChild(commentsButton);
+                window.scrollTo(0, commentsSection.offsetTop);
                 (function() {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
