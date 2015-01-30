@@ -86,14 +86,16 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 And let’s create some associated Javascript to create and hook onto our `button` and perform two actions: remove the `button` and load Disqus.
 
 {% highlight javascript %}
-var commentsSection = document.getElementById('comments');
-commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
-var commentsButton = document.getElementsByClassName('js-show-comments')[0];
+var commentsSection = document.getElementById('comments'),
+    commentsButton  = document.getElementsByClassName('js-show-comments')[0],
+    commentsHash    = ['#comment', '#disqus_thread'];
 commentsButton.addEventListener('click', function() {
     showComments();
 });
+commentsButton.disabled = false;
 function showComments() {
     commentsSection.removeChild(commentsButton);
+    window.scrollTo(0, commentsSection.offsetTop);
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -110,19 +112,23 @@ What we’re doing here is:
 
 ---
 
-Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comments`) or catching it when the page is loaded.
+Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
 <aside><p>Check out the support for [onhashchange on CanIUse](http://caniuse.com/#search=onhashchange "Support for onhashchange") before jumping in too deep!</p></aside>
 
 {% highlight javascript %}
-var commentsHash = '#comments';
-if( window.location.hash === commentsHash ) {
-    showComments();
-}
-window.onhashchange = function() {
-    if( location.hash === commentsHash ) {
+var commentsHash = ['#comment', '#disqus_thread'];
+commentsHash.forEach( function(hash) {
+    if( window.location.hash.indexOf(hash) == 0 ) {
         showComments();
     }
+});
+window.onhashchange = function() {
+    commentsHash.forEach( function(hash) {
+        if( location.hash.indexOf(hash) == 0 ) {
+            showComments();
+        }
+    });
 }
 {% endhighlight %}
 
@@ -132,7 +138,7 @@ What we’re doing here is:
 0. If the URL already contains our desired hash on page load, run the `showComments()` command
 0. If the hash changes in the URL after the page has loaded, and it matches our desired value, run the `showComments()` command
 
-If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comments` is in the URL and we’re loading Disqus, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
+If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comment` is in the URL and we’re loading Disqus, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
 
 ---
 
@@ -144,6 +150,7 @@ Almost there! Let’s create a failsafe—if our `button` no longer exists when 
 function showComments() {
     if( document.getElementsByClassName('js-show-comments')[0] ) {
         commentsSection.removeChild(commentsButton);
+        window.scrollTo(0, commentsSection.offsetTop);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//chrisburnell.disqus.com/embed.js';
@@ -159,25 +166,28 @@ Here’s the entire snippet of code for my comments section:
 
 {% highlight html %}
 <section id="comments" class="comments  clear">
+    <button class="show-comments  js-show-comments" disabled>Show Comments</button>
     <div id="disqus_thread"></div>
     <noscript>Please enable Javascript to view comments.</noscript>
 </section>
 {% endhighlight %}
 
 {% highlight javascript %}
-var commentsSection    = document.getElementById('comments'),
-    commentsHash       = '#comments';
-// Create the show comments button
-commentsSection.innerHTML += '<button class="show-comments  js-show-comments">Show Comments</button>';
-// And a hook to our button
-var commentsButton = document.getElementsByClassName('js-show-comments')[0];
-if( window.location.hash === commentsHash ) {
-    showComments();
-}
-window.onhashchange = function() {
-    if( location.hash === commentsHash ) {
+var commentsSection = document.getElementById('comments'),
+    commentsButton  = document.getElementsByClassName('js-show-comments')[0],
+    commentsHash    = ['#comment', '#disqus_thread'];
+commentsButton.disabled = false;
+commentsHash.forEach( function(hash) {
+    if( window.location.hash.indexOf(hash) == 0 ) {
         showComments();
     }
+});
+window.onhashchange = function() {
+    commentsHash.forEach( function(hash) {
+        if( location.hash.indexOf(hash) == 0 ) {
+            showComments();
+        }
+    });
 }
 commentsButton.addEventListener('click', function() {
     showComments();
@@ -186,9 +196,10 @@ function showComments() {
     // Only if the button still exists should we load Disqus
     if( document.getElementsByClassName('js-show-comments')[0] ) {
         commentsSection.removeChild(commentsButton);
+        window.scrollTo(0, commentsSection.offsetTop);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//chrisburnell.disqus.com/embed.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     }
@@ -198,8 +209,8 @@ function showComments() {
 We’ve met all the conditions we set when we embarked upon this task:
 
 0. Create a button to load the comments
-0. Load the comments if the page was navigated to with the `#comments` hash
-0. Load the comments if the user clicks an anchor to jump to `#comments` section
+0. Load the comments if the page was navigated to with the `#comment` hash
+0. Load the comments if the user clicks an anchor to jump to `#comment` section
 
 As we saw in [the statistics](#the-weigh-in "The Weigh In") of Disqus’ impact, these aren’t massive savings, but they’ll certainly help out some of my users whom I know are browsing on slow connections and slow mobile phones.
 

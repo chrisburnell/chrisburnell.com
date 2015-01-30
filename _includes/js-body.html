@@ -15,7 +15,6 @@
         var commentsSection = document.getElementById('comments'),
             commentsButton  = document.getElementsByClassName('js-show-comments')[0],
             commentsHash    = ['#comment', '#disqus_thread'];
-        commentsButton.disabled = false;
         commentsHash.forEach( function(hash) {
             if( window.location.hash.indexOf(hash) == 0 ) {
                 showComments();
@@ -28,6 +27,7 @@
                 }
             });
         }
+        commentsButton.disabled = false;
         commentsButton.addEventListener('click', function() {
             showComments();
         });
