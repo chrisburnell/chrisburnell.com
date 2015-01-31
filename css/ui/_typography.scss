@@ -69,9 +69,9 @@ a {
         line-height: 1.875em;
         text-transform: lowercase;
         vertical-align: middle;
-        :hover &,
-        :focus &,
-        :active & {
+        :hover > &,
+        :focus > &,
+        :active > & {
             display: inline-block;
         }
     }

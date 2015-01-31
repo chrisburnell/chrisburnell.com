@@ -461,7 +461,7 @@ a {
   line-height: 1.875em;
   text-transform: lowercase;
   vertical-align: middle; }
-  :hover .heading-anchor, :focus .heading-anchor, :active .heading-anchor {
+  :hover > .heading-anchor, :focus > .heading-anchor, :active > .heading-anchor {
     display: inline-block; }
 
 /**
