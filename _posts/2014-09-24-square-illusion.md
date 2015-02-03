@@ -11,7 +11,7 @@ tags:
 - CodePen
 ---
 
-{% include codepen-embed.html slug="IKHhC" height="50" %}
+{% include codepen-embed.html slug="IKHhC" height="500" %}
 
 {% highlight html %}
 <div class="container">
