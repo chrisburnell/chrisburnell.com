@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $ MAIN CONTENT
+    $ CONTENT
 \*------------------------------------*/
 
 .content {
@@ -53,12 +53,12 @@ article {
     .article-title,
     .page-title,
     .site-tagline {
-        margin-bottom: .4em;
+        margin-bottom: .75em;
     }
     .site-description {
         max-width: 24em;
         margin-top: -0.2em; // make sure text cap-height aligns to the `aside`
-        margin-bottom: .8em;
+        margin-bottom: 1em;
         line-height: 1.4em;
         @include breakpoint("medium") {
             margin-bottom: 1.385em;
@@ -87,7 +87,7 @@ article {
     }
     .article-title {
         width: 100%;
-        a:not([class]) {
+        .article-title-link {
             display: inline-block;
             padding: 0 .27em;
             border-bottom: .077em solid transparent;

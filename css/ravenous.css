@@ -13,7 +13,7 @@
  * HEADER.................... Set the header styles.
  * LOGO...................... Set the logo styles.
  * NAVIGATION................ Set the navigation styles.
- * MAIN CONTENT.............. Set the main content styles.
+ * CONTENT................... Set the content styles.
  * ASIDES.................... Set the aside styles.
  * FOOTER.................... Set the footer styles.
  * CODE BLOCKS............... Set the code block styles.
@@ -862,7 +862,7 @@ button, .button {
           transform: translate3d(-50%, 0, 0); }
 
 /*------------------------------------*\
-    $ MAIN CONTENT
+    $ CONTENT
 \*------------------------------------*/
 .content {
   padding-bottom: 2.25rem; }
@@ -915,12 +915,12 @@ article {
     text-shadow: 0 1px 0 #F9F9F9; }
 
 .article-title, .page-title, .site-tagline {
-  margin-bottom: .4em; }
+  margin-bottom: .75em; }
 
 .site-description {
   max-width: 24em;
   margin-top: -0.2em;
-  margin-bottom: .8em;
+  margin-bottom: 1em;
   line-height: 1.4em; }
   @media screen and (max-width: 768px) {
     .site-description {
@@ -944,14 +944,14 @@ article {
 
 .article-title {
   width: 100%; }
-  .article-title a:not([class]) {
+  .article-title .article-title-link {
     display: inline-block;
     padding: 0 .27em;
     border-bottom: .077em solid transparent;
     margin-left: -0.27em;
     -webkit-transition: border-color 0.2s ease;
             transition: border-color 0.2s ease; }
-    .article-title a:not([class]):hover, .article-title a:not([class]):focus, .article-title a:not([class]):active {
+    .article-title .article-title-link:hover, .article-title .article-title-link:focus, .article-title .article-title-link:active {
       color: #4F4F4F;
       border-bottom-color: #5F8AA6;
       text-decoration: none; }

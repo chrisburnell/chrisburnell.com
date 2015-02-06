@@ -44,12 +44,12 @@ $brands:  codepen  $codepen-color  1.025,
           twitter  $twitter-color  0.925;
 
 // Coding Language Colours
-$css-color:         #016FBA $default;
-$html-color:        #E54D26 $default;
-$haml-color:        $html-color $default;
-$javascript-color:  #F1C54C $default;
-$sass-color:        #C6538C $default;
-$scss-color:        $sass-color $default;
+$css-color:         #016FBA !default;
+$html-color:        #E54D26 !default;
+$haml-color:        $html-color !default;
+$javascript-color:  #F1C54C !default;
+$sass-color:        #C6538C !default;
+$scss-color:        $sass-color !default;
 // Create Languages Array (name, colour)
 $coding-languages:  css         $css-color,
                     haml        $haml-color,
