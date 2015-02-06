@@ -95,7 +95,7 @@ commentsButton.addEventListener('click', function() {
 });
 commentsButton.disabled = false;
 function showComments() {
-    commentsSection.removeChild(commentsButton);
+    commentsButton.parentNode.removeChild(commentsButton);
     window.scrollTo(0, commentsSection.offsetTop);
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -150,7 +150,7 @@ Almost there! Let’s create a failsafe—if our `button` no longer exists when 
 {% highlight javascript %}
 function showComments() {
     if( document.getElementsByClassName('js-show-comments')[0] ) {
-        commentsSection.removeChild(commentsButton);
+        commentsButton.parentNode.removeChild(commentsButton);
         window.scrollTo(0, commentsSection.offsetTop);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -177,7 +177,6 @@ Here’s the entire snippet of code for my comments section:
 var commentsSection = document.getElementById('comments'),
     commentsButton  = document.getElementsByClassName('js-show-comments')[0],
     commentsHash    = ['#comment', '#disqus_thread'];
-commentsButton.disabled = false;
 commentsHash.forEach( function(hash) {
     if( window.location.hash.indexOf(hash) == 0 ) {
         showComments();
@@ -190,19 +189,21 @@ window.onhashchange = function() {
         }
     });
 }
+commentsButton.disabled = false;
 commentsButton.addEventListener('click', function() {
     showComments();
 });
 function showComments() {
-    // Only if the button still exists should we load Disqus
+    window.scrollTo(0, commentsSection.offsetTop);
+    // Only if the button still exists should we load Disqus and remove the button
     if( document.getElementsByClassName('js-show-comments')[0] ) {
-        commentsSection.removeChild(commentsButton);
-        window.scrollTo(0, commentsSection.offsetTop);
+        commentsButton.parentNode.removeChild(commentsButton);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
+        window.scrollTo(0, commentsSection.offsetTop);
     }
 }
 {% endhighlight %}
