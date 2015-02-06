@@ -87,7 +87,7 @@ article {
     }
     .article-title {
         width: 100%;
-        a {
+        a:not([class]) {
             display: inline-block;
             padding: 0 .27em;
             border-bottom: .077em solid transparent;
@@ -255,7 +255,9 @@ article {
 }
 .center-text {
     .page-description + &,
-    hr + & {
+    hr + &,
+    p + &,
+    div + & {
         padding-top: 0;
     }
     @include breakpoint("medium") {
@@ -266,14 +268,16 @@ article {
             margin-bottom: 0;
         }
     }
-    a {
+    button,
+    .button {
         display: inline-block;
         @include breakpoint("small") {
             &:last-child {
                 margin-top: .6875em;
             }
         }
-        & + a {
+        & + button,
+        & + .button {
             margin-left: 1.875em;
             @include breakpoint("small") {
                 margin-left: 0;

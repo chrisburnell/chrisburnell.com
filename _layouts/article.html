@@ -5,7 +5,7 @@ page_class: article-page
 {% include header.html %}
 
 
-<h1 id="article" class="article-title" role="heading">{{ page.title }}</h1>
+<h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url | replace: "http://", "" }}{{ page.url }}</a>{% endif %}</h1>
 
 {% include main-aside.html %}
 
@@ -22,18 +22,19 @@ page_class: article-page
 
 {{ content }}
 
-<ol class="pagination  clear">
-    {% if page.previous.url %}<li>
-        <a rel="previous" class="button  pagination-previous" href="{{ page.previous.url }}" title="Previous {% if page.previous.category == "codepen" %}Pen{% else %}Article{% endif %}: ‘{{ page.previous.title }}’">Previous {% if page.previous.category == "codepen" %}Pen{% else %}Article{% endif %}</a>
-    </li>{% endif %}
-    {% if page.next.url %}<li>
-        <a rel="next" class="button  pagination-next" href="{{ page.next.url }}" title="Next {% if page.next.category == "codepen" %}Pen{% else %}Article{% endif %}: ‘{{ page.next.title }}’">Next {% if page.next.category == "codepen" %}Pen{% else %}Article{% endif %}</a>
-    </li>{% endif %}
-</ol>
+<p class="center-text">
+    {% if page.comments == true %}
+        <button class="show-comments  js-show-comments" disabled>Show Comments</button>
+    {% endif %}
+    {% if page.category == "article" %}
+        <a rel="me author" class="button  pagination-next" href="/archive" title="Articles Archive">Articles Archive</a>
+    {% elsif page.category == "codepen" %}
+        <a rel="me author" class="button  pagination-next" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+    {% endif %}
+</p>
 
 {% if page.comments == true %}
     <section id="comments" class="comments  clear">
-        <button class="show-comments  js-show-comments" disabled>Show Comments</button>
         <div id="disqus_thread"></div>
         <noscript>Please enable Javascript to view comments.</noscript>
     </section>

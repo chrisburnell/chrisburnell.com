@@ -451,18 +451,25 @@ a {
     color: #4F4F4F; }
     h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active {
       color: #5F8AA6; }
+  a span:not([class]) {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden; }
 
 .heading-anchor {
   color: #737373;
   display: none;
   padding-left: 1em;
   font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: .723em;
+  font-size: .8125rem;
   line-height: 1.875em;
   text-transform: lowercase;
   vertical-align: middle; }
   :hover > .heading-anchor, :focus > .heading-anchor, :active > .heading-anchor {
     display: inline-block; }
+  h1 .heading-anchor {
+    text-shadow: none; }
 
 /**
      * Brand Link Colours
@@ -937,14 +944,14 @@ article {
 
 .article-title {
   width: 100%; }
-  .article-title a {
+  .article-title a:not([class]) {
     display: inline-block;
     padding: 0 .27em;
     border-bottom: .077em solid transparent;
     margin-left: -0.27em;
     -webkit-transition: border-color 0.2s ease;
             transition: border-color 0.2s ease; }
-    .article-title a:hover, .article-title a:focus, .article-title a:active {
+    .article-title a:not([class]):hover, .article-title a:not([class]):focus, .article-title a:not([class]):active {
       color: #4F4F4F;
       border-bottom-color: #5F8AA6;
       text-decoration: none; }
@@ -1082,7 +1089,7 @@ article {
         .pagination li + li {
           margin-left: 0; } }
 
-.page-description + .center-text, hr + .center-text {
+.page-description + .center-text, hr + .center-text, p + .center-text, div + .center-text {
   padding-top: 0; }
 @media screen and (max-width: 768px) {
   .center-text {
@@ -1090,15 +1097,15 @@ article {
 @media screen and (max-width: 500px) {
   .center-text:not(:last-child) {
     margin-bottom: 0; } }
-.center-text a {
+.center-text button, .center-text .button {
   display: inline-block; }
   @media screen and (max-width: 500px) {
-    .center-text a:last-child {
+    .center-text button:last-child, .center-text .button:last-child {
       margin-top: .6875em; } }
-  .center-text a + a {
+  .center-text button + button, .center-text button + .button, .center-text .button + button, .center-text .button + .button {
     margin-left: 1.875em; }
     @media screen and (max-width: 500px) {
-      .center-text a + a {
+      .center-text button + button, .center-text button + .button, .center-text .button + button, .center-text .button + .button {
         margin-left: 0; } }
 
 .pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {

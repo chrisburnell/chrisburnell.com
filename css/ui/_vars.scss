@@ -1,36 +1,41 @@
 // Wrapper Widths
-$max-wrapper-width:    1120px;
-$medium-wrapper-width:  768px;
-$small-wrapper-width:   500px;
-$wrapper-padding:      1.25rem;
+$max-wrapper-width:     1120px !default;
+$medium-wrapper-width:  768px !default;
+$small-wrapper-width:   500px !default;
+$breakpoints:  (
+    "large":   $max-wrapper-width,
+    "medium":  $medium-wrapper-width,
+    "small":   $small-wrapper-width
+) !default;
+$wrapper-padding:       1.25rem !default;
 
 // SCSS Variables
-$default-margin:   1.25rem;
-$default-padding:  2.25rem;
-$default-border:   0.25rem;
-$icon-size:          40px;
-$transition-time:   0.2s;
-$opacity-low:       0.10;
-$opacity-medium:    0.25;
-$opacity-high:      0.70;
+$default-margin:   1.25rem !default;
+$default-padding:  2.25rem !default;
+$default-border:   0.25rem !default;
+$icon-size:          40px !default;
+$transition-time:   0.2s !default;
+$opacity-low:       0.10 !default;
+$opacity-medium:    0.25 !default;
+$opacity-high:      0.70 !default;
 
 // Colour Palette
-$blue:              #5F8AA6;
-$text-color:        #4F4F4F;
-$text-color-alt:    #737373;
-$text-color-light:  #DDDDDD;
-$white:             #F9F9F9;
-$black:             #060606;
-$black-light:       rgba($black, ($opacity-low / 2));
-$black-medium:      rgba($black, $opacity-low);
-$black-dark:        rgba($black, $opacity-medium);
+$blue:              #5F8AA6 !default;
+$text-color:        #4F4F4F !default;
+$text-color-alt:    #737373 !default;
+$text-color-light:  #DDDDDD !default;
+$white:             #F9F9F9 !default;
+$black:             #060606 !default;
+$black-light:       rgba($black, ($opacity-low / 2)) !default;
+$black-medium:      rgba($black, $opacity-low) !default;
+$black-dark:        rgba($black, $opacity-medium) !default;
 
 // Brands
-$codepen-color:  #212121;
-$github-color:   #333333;
-$lastfm-color:   #E31B23;
-$rss-color:      $blue;
-$twitter-color:  darken(#55ACEE, 10%);
+$codepen-color:  #212121 !default;
+$github-color:   #333333 !default;
+$lastfm-color:   #E31B23 !default;
+$rss-color:      $blue !default;
+$twitter-color:  darken(#55ACEE, 10%) !default;
 // Create Brands Array (name, colour, icon width:height ratio)
 $brands:  codepen  $codepen-color  1.025,
           github   $github-color   0.950,
@@ -39,12 +44,12 @@ $brands:  codepen  $codepen-color  1.025,
           twitter  $twitter-color  0.925;
 
 // Coding Language Colours
-$css-color:         #016FBA;
-$html-color:        #E54D26;
-$haml-color:        $html-color;
-$javascript-color:  #F1C54C;
-$sass-color:        #C6538C;
-$scss-color:        $sass-color;
+$css-color:         #016FBA $default;
+$html-color:        #E54D26 $default;
+$haml-color:        $html-color $default;
+$javascript-color:  #F1C54C $default;
+$sass-color:        #C6538C $default;
+$scss-color:        $sass-color $default;
 // Create Languages Array (name, colour)
 $coding-languages:  css         $css-color,
                     haml        $haml-color,
@@ -54,11 +59,11 @@ $coding-languages:  css         $css-color,
                     scss        $scss-color;
 
 // Font Stack
-$base-font-size:        16px;
-$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif;
-$secondary-font-stack:  "proxima-nova", sans-serif;
-$heading-font-stack:    "league-gothic", Impact, sans-serif;
-$code-font-stack:       Consolas, Monaco, "Courier New", monospace;
+$base-font-size:        16px !default;
+$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif !default;
+$secondary-font-stack:  "proxima-nova", sans-serif !default;
+$heading-font-stack:    "league-gothic", Impact, sans-serif !default;
+$code-font-stack:       Consolas, Monaco, "Courier New", monospace !default;
 
 // SCSS Mixins
 @mixin breakpoint($breakpoint) {

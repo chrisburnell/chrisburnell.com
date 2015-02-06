@@ -59,13 +59,19 @@ a {
             color: $blue;
         }
     }
+    span:not([class]) {
+        width:  1px;
+        height: 1px;
+        position: absolute;
+        overflow: hidden;
+    }
 }
     .heading-anchor {
         color: $text-color-alt;
         display: none;
         padding-left: 1em;
         font-family: $code-font-stack;
-        font-size: .723em;
+        font-size: .8125rem;
         line-height: 1.875em;
         text-transform: lowercase;
         vertical-align: middle;
@@ -73,6 +79,9 @@ a {
         :focus > &,
         :active > & {
             display: inline-block;
+        }
+        h1 & {
+            text-shadow: none;
         }
     }
     /**

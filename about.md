@@ -52,7 +52,7 @@ In June of 2014, I moved on to a role as <em>Web Developer</em> at <a rel="exter
 
 If you talk to anyone who knows me well, they will tell you I’m absolutely obsessed with the web, and it’s <s>almost</s> unhealthy. It’s <s>almost</s> sad how excited I can get about semantic code, web standards and best practices, code architecture and organistion, sharing ideas, open source and collaboration, clean and accessible user interfaces, typography, user experience, oh, and <em>CSS</em>.
 
-I also play the piano from time to time.
+I also play the piano and bake bread from time to time.
 
 {% include heading.html id="get-in-touch" title="Want to get in touch?" %}
 

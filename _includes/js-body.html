@@ -35,12 +35,13 @@
             window.scrollTo(0, commentsSection.offsetTop);
             // Only if the button still exists should we load Disqus and remove the button
             if( document.getElementsByClassName('js-show-comments')[0] ) {
-                commentsSection.removeChild(commentsButton);
+                commentsButton.parentNode.removeChild(commentsButton);
                 (function() {
                     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
+                window.scrollTo(0, commentsSection.offsetTop);
             }
         }
     {% elsif page.page_class == "home-page" or page.page_class == "archive-page" %}
