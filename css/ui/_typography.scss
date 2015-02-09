@@ -165,7 +165,7 @@ dl {
         padding-right: $default-margin;
         font-family: $secondary-font-stack;
         font-weight: 600;
-        @include breakpoint(small, min) {
+        @include media("screen", ">small") {
             min-width: 10em;
             padding-right: $default-margin;
         }
@@ -175,7 +175,7 @@ dl {
         display: table-cell;
         margin: 0;
         overflow: hidden;
-        @include breakpoint(small, max) {
+        @include media("screen", "<=small") {
             width: auto;
             display: block;
             margin-left: $default-margin;
@@ -231,7 +231,7 @@ blockquote {
     padding: 1em;
     margin: 0 $default-padding 1em;
     quotes: "\201C" "\201D" "\2018" "\2019";
-    @include breakpoint(small, max) {
+    @include media("screen", "<=small") {
         margin-right: 1em;
         margin-left: 1em;
     }

@@ -22,10 +22,10 @@
     &:active {
         text-decoration: none;
     }
-    @include breakpoint(medium, min) {
+    @include media("screen", ">medium") {
         float: left;
     }
-    @include breakpoint(small, max) {
+    @include media("screen", "<=small") {
         font-size: 2.75em;
     }
     &:active {

@@ -7,6 +7,11 @@ $wrapper-padding:      1.25rem  !default;
 $max-wrapper-width:    1120px   !default;
 $medium-wrapper-width:  768px   !default;
 $small-wrapper-width:   500px   !default;
+$breakpoints:  (
+    "large":   $max-wrapper-width,
+    "medium":  $medium-wrapper-width,
+    "small":   $small-wrapper-width
+)  !default;
 
 /// Layout $variables
 $default-margin:   $wrapper-padding  !default;
@@ -82,20 +87,6 @@ $transition-function:  ease  !default;
 //
 // SCSS @mixins
 //
-
-/// Define Breakpoints
-@mixin breakpoint($breakpoint, $toggle: "max") {
-    @if $breakpoint == "medium" {
-        $breakpoint: $medium-wrapper-width;
-    }
-    @else if $breakpoint == "small" {
-        $breakpoint: $small-wrapper-width;
-    }
-    @if $toggle == "min" {
-        $breakpoint: $breakpoint + 1;
-    }
-    @media screen and (#{$toggle}-width: #{$breakpoint}) { @content ; }
-}
 
 /// Linear Gradient
 @mixin gradient($top, $bottom) {

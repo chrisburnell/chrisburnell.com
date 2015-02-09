@@ -2,7 +2,7 @@
     $HEADER
 \*------------------------------------*/
 
-@include breakpoint(medium, max) {
+@include media("screen", "<=medium") {
     header {
         text-align: center;
     }

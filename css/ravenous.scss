@@ -7,6 +7,7 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
+ * INCLUDE MEDIA............. Import Include Media for dynamic media queries.
  * LAYOUT.................... Set the general page layout.
  * TYPOGRAPHY................ Set the default content styles.
  * BUTTONS................... Set the default button styles.
@@ -22,7 +23,8 @@
  * SHAME..................... Shameful hacks, shims, and temporary fixes.
  */
 
-@import "normalize";
+@import "normalize",
+        "include-media";
 @import "ui/vars",
         "ui/layout",
         "ui/typography",

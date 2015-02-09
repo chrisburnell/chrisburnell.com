@@ -16,10 +16,10 @@ footer {
     .copyright,
     .social-icon-list {
         overflow: hidden;
-        @include breakpoint(medium, min) {
+        @include media("screen", ">medium") {
             float: left;
         }
-        @include breakpoint(medium, max) {
+        @include media("screen", "<=medium") {
             width: 100%;
             text-align: center;
         }
@@ -27,7 +27,7 @@ footer {
     .social-icon-list {
         float: right;
         margin-top: .3125em;
-        @include breakpoint(medium, max) {
+        @include media("screen", "<=medium") {
             margin-top: .625em;
         }
         li {
@@ -60,7 +60,7 @@ footer {
             &:active {
                 @include translate3d(0, .143em, 0);
             }
-            @include breakpoint(small, max) {
+            @include media("screen", "<=small") {
                 margin-right: .5em;
             }
             svg {
@@ -73,14 +73,14 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
-        @include breakpoint(small, max) {
+        @include media("screen", "<=small") {
             .style-guide-link {
                 display: block;
             }
         }
         .footer-spacer {
             color: $text-color-alt;
-            @include breakpoint(small, max) {
+            @include media("screen", "<=small") {
                 display: none;
             }
         }

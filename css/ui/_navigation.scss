@@ -5,25 +5,25 @@
 .primary-navigation {
     padding-bottom: 1.25em;
     white-space: nowrap;
-    @include breakpoint(medium, min) {
+    @include media("screen", ">medium") {
         float: right;
         padding-top: 1.5em;
     }
-    @include breakpoint(medium, max) {
+    @include media("screen", "<=medium") {
         width: 100%;
     }
 }
     .primary-navigation-list {
         height: 3.75em;
-        @include breakpoint(medium, min) {
+        @include media("screen", ">medium") {
             float: right;
         }
-        @include breakpoint(medium, max) {
+        @include media("screen", "<=medium") {
             text-align: center;
         }
         li {
             display: inline-block;
-            @include breakpoint(medium, min) {
+            @include media("screen", ">medium") {
                 float: left;
             }
             + li {
