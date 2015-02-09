@@ -238,15 +238,16 @@ article {
     }
 }
 
-.article-navigation {
+.pens-introduction {
+    padding-bottom: $default-margin;
+    border-bottom: ($default-border / 2) solid $black-medium;
+}
+
+.articles-navigation {
     width: 100%;
     padding: $default-padding 0;
     border-top: ($default-border / 2) solid $black-medium;
     text-align: center;
-    .page-description + & {
-        padding-top: 0;
-        border-top: 0;
-    }
     @include media("screen", "<=small") {
         &:not(:last-child) {
             padding-bottom: 0;
@@ -266,21 +267,13 @@ article {
                 margin-left: 1.875em;
             }
         }
+        svg {
+            width: 1em;
+            height: .775em; // follows the width:height ratio of the RSS icon
+            fill: $white;
+        }
     }
 }
-    .article-navigation-previous:before,
-    .article-navigation-previous:active:before,
-    .article-navigation-next:after,
-    .article-navigation-next:active:after {
-        position: relative;
-        top: 0;
-    }
-    .article-navigation-previous:before {
-        content: "\2190\00a0\00a0";
-    }
-    .article-navigation-next:after {
-        content: "\00a0\00a0\2192";
-    }
 
 .show-comments {
     &:before,

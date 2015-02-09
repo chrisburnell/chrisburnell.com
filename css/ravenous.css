@@ -1079,35 +1079,30 @@ article {
   .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
     stroke-width: 2; }
 
-.article-navigation {
+.pens-introduction {
+  padding-bottom: 1.25rem;
+  border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
+
+.articles-navigation {
   width: 100%;
   padding: 2.25rem 0;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   text-align: center; }
-  .page-description + .article-navigation {
-    padding-top: 0;
-    border-top: 0; }
   @media screen and (max-width: 500px) {
-    .article-navigation:not(:last-child) {
+    .articles-navigation:not(:last-child) {
       padding-bottom: 0; } }
-  .article-navigation button, .article-navigation .button {
+  .articles-navigation button, .articles-navigation .button {
     display: inline-block; }
     @media screen and (max-width: 500px) {
-      .article-navigation button:last-child, .article-navigation .button:last-child {
+      .articles-navigation button:last-child, .articles-navigation .button:last-child {
         margin-top: .6875em; } }
     @media screen and (min-width: 501px) {
-      .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
+      .articles-navigation button + button, .articles-navigation button + .button, .articles-navigation .button + button, .articles-navigation .button + .button {
         margin-left: 1.875em; } }
-
-.article-navigation-previous:before, .article-navigation-previous:active:before, .article-navigation-next:after, .article-navigation-next:active:after {
-  position: relative;
-  top: 0; }
-
-.article-navigation-previous:before {
-  content: "\2190\00a0\00a0"; }
-
-.article-navigation-next:after {
-  content: "\00a0\00a0\2192"; }
+    .articles-navigation button svg, .articles-navigation .button svg {
+      width: 1em;
+      height: .775em;
+      fill: #F9F9F9; }
 
 .show-comments:before, .show-comments:active:before {
   content: "\2711\00a0\00a0";

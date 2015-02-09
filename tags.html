@@ -2,15 +2,9 @@
 layout: default
 page_class: tags-page
 
-title: Article Tags
+title: Tags Archive
 description: A list of tags and their prose counterparts.
 ---
-
-            <div class="article-navigation">
-                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
-                <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
-            </div>
 
             {% capture tags %}
                 {% for tag in site.tags %}
@@ -45,13 +39,13 @@ description: A list of tags and their prose counterparts.
                 </ol>
             {% endfor %}
 
-            <div class="article-navigation">
-                <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-                <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
-                <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
+            <div class="articles-navigation">
+                <a rel="me author" class="button" href="/feed.xml"><svg><use xlink:href="#svg-rss" /></svg> Subscribe to all</a>
+                <a rel="me author" class="button" href="/feed-articles.xml"><svg><use xlink:href="#svg-rss" /></svg> Subscribe to articles</a>
+                <a rel="me author" class="button" href="/feed-pens.xml"><svg><use xlink:href="#svg-rss" /></svg> Subscribe to pens</a>
             </div>
 
-            <div class="article-navigation">
-                <a rel="me author" class="button  article-navigation-previous" href="/archive" title="Articles Archive">Articles Archive</a>
-                <a rel="me author" class="button  article-navigation-next" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+            <div class="articles-navigation">
+                <a rel="me author" class="button" href="/archive">Articles Archive</a>
+                <a rel="me author" class="button" href="/pens">Featured Pens Archive</a>
             </div>
