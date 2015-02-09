@@ -6,7 +6,6 @@
     @extend %non-selectable;
     color: $text-color;
     display: inline-block;
-    float: left;
     padding-top: .5em;
     padding-left: 1.923em;
     position: relative;
@@ -23,11 +22,10 @@
     &:active {
         text-decoration: none;
     }
-    @include breakpoint("medium") {
-        display: inline-block;
-        float: none;
+    @include breakpoint(medium, min) {
+        float: left;
     }
-    @include breakpoint("small") {
+    @include breakpoint(small, max) {
         font-size: 2.75em;
     }
     &:active {

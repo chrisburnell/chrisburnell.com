@@ -15,18 +15,19 @@ footer {
 }
     .copyright,
     .social-icon-list {
-        float: left;
         overflow: hidden;
-        @include breakpoint("medium") {
+        @include breakpoint(medium, min) {
+            float: left;
+        }
+        @include breakpoint(medium, max) {
             width: 100%;
-            float: none;
             text-align: center;
         }
     }
     .social-icon-list {
         float: right;
         margin-top: .3125em;
-        @include breakpoint("medium") {
+        @include breakpoint(medium, max) {
             margin-top: .625em;
         }
         li {
@@ -59,7 +60,7 @@ footer {
             &:active {
                 @include translate3d(0, .143em, 0);
             }
-            @include breakpoint("small") {
+            @include breakpoint(small, max) {
                 margin-right: .5em;
             }
             svg {
@@ -72,14 +73,14 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
-        .style-guide-link {
-            @include breakpoint("small") {
+        @include breakpoint(small, max) {
+            .style-guide-link {
                 display: block;
             }
         }
         .footer-spacer {
             color: $text-color-alt;
-            @include breakpoint("small") {
+            @include breakpoint(small, max) {
                 display: none;
             }
         }

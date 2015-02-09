@@ -56,7 +56,7 @@ button,
         opacity: .4;
     }
     .not-found-page & {
-        @include breakpoint("medium") {
+        @include breakpoint(medium, max) {
             display: block;
             margin: 0 auto $default-margin;
         }

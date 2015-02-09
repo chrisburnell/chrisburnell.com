@@ -3,28 +3,28 @@
 \*------------------------------------*/
 
 .primary-navigation {
-    float: right;
-    padding-top: 1.5em;
     padding-bottom: 1.25em;
     white-space: nowrap;
-    @include breakpoint("medium") {
+    @include breakpoint(medium, min) {
+        float: right;
+        padding-top: 1.5em;
+    }
+    @include breakpoint(medium, max) {
         width: 100%;
-        float: none;
-        padding-top: 0;
     }
 }
     .primary-navigation-list {
         height: 3.75em;
-        float: right;
-        @include breakpoint("medium") {
-            float: none;
+        @include breakpoint(medium, min) {
+            float: right;
+        }
+        @include breakpoint(medium, max) {
             text-align: center;
         }
         li {
             display: inline-block;
-            float: left;
-            @include breakpoint("medium") {
-                float: none;
+            @include breakpoint(medium, min) {
+                float: left;
             }
             + li {
                 margin-left: 1em;
@@ -41,10 +41,10 @@
             font-size: 1.25em;
             line-height: 1.25em;
             text-transform: uppercase;
-            @include transition(color               $transition-time ease,
-                                padding-bottom      $transition-time ease,
-                                border-bottom-width $transition-time ease,
-                                transform           $transition-time ease);
+            @include transition(color               $transition-time $transition-function,
+                                padding-bottom      $transition-time $transition-function,
+                                border-bottom-width $transition-time $transition-function,
+                                transform           $transition-time $transition-function);
             &:hover,
             &:focus,
             &:active {

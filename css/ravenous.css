@@ -533,10 +533,10 @@ dl {
     padding-right: 1.25rem;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600; }
-    @media screen and (max-width: 500px) {
+    @media screen and (min-width: 501px) {
       dl dt {
-        min-width: auto;
-        padding-right: 0; } }
+        min-width: 10em;
+        padding-right: 1.25rem; } }
   dl dd {
     width: 1120px;
     display: table-cell;
@@ -609,9 +609,6 @@ hr {
   display: block;
   border: 0;
   margin: .5em 0 1.25rem; }
-
-iframe {
-  margin-bottom: 1.25rem; }
 
 ::-moz-selection{
   background: #5F8AA6;
@@ -686,7 +683,6 @@ button, .button {
 .logo {
   color: #4F4F4F;
   display: inline-block;
-  float: left;
   padding-top: .5em;
   padding-left: 1.923em;
   position: relative;
@@ -701,10 +697,9 @@ button, .button {
           transition: all 0.2s ease; }
   .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 769px) {
     .logo {
-      display: inline-block;
-      float: none; } }
+      float: left; } }
   @media screen and (max-width: 500px) {
     .logo {
       font-size: 2.75em; } }
@@ -807,29 +802,29 @@ button, .button {
     $NAVIGATION
 \*------------------------------------*/
 .primary-navigation {
-  float: right;
-  padding-top: 1.5em;
   padding-bottom: 1.25em;
   white-space: nowrap; }
+  @media screen and (min-width: 769px) {
+    .primary-navigation {
+      float: right;
+      padding-top: 1.5em; } }
   @media screen and (max-width: 768px) {
     .primary-navigation {
-      width: 100%;
-      float: none;
-      padding-top: 0; } }
+      width: 100%; } }
 
 .primary-navigation-list {
-  height: 3.75em;
-  float: right; }
+  height: 3.75em; }
+  @media screen and (min-width: 769px) {
+    .primary-navigation-list {
+      float: right; } }
   @media screen and (max-width: 768px) {
     .primary-navigation-list {
-      float: none;
       text-align: center; } }
   .primary-navigation-list li {
-    display: inline-block;
-    float: left; }
-    @media screen and (max-width: 768px) {
+    display: inline-block; }
+    @media screen and (min-width: 769px) {
       .primary-navigation-list li {
-        float: none; } }
+        float: left; } }
     .primary-navigation-list li + li {
       margin-left: 1em; }
   .primary-navigation-list a {
@@ -883,8 +878,11 @@ button, .button {
  *   = 25% of 1080px = 270px  = 16.875em
  */
 article {
-  padding: 2.25rem 0 0 16.875em;
+  padding-top: 2.25rem;
   border-top: 0.25rem solid #5F8AA6; }
+  @media screen and (min-width: 769px) {
+    article {
+      padding-left: 16.875em; } }
   @media screen and (max-width: 768px) {
     article {
       /**
@@ -900,8 +898,7 @@ article {
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
-              flex-direction: column;
-      padding-left: 0; } }
+              flex-direction: column; } }
 
 .articles-list li {
   width: 100%;
@@ -976,17 +973,18 @@ article {
 
 .comments-link {
   display: inline-block;
-  float: right;
   margin-top: 1.625em;
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
   line-height: 1em; }
   .comments-link:after {
     content: "\00a0\2192"; }
+  @media screen and (min-width: 769px) {
+    .comments-link {
+      float: right; } }
   @media screen and (max-width: 768px) {
     .comments-link {
       display: block;
-      float: none;
       margin-top: 1.25rem; } }
 
 .small-articles-list {
@@ -1096,11 +1094,9 @@ article {
     @media screen and (max-width: 500px) {
       .article-navigation button:last-child, .article-navigation .button:last-child {
         margin-top: .6875em; } }
-    .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
-      margin-left: 1.875em; }
-      @media screen and (max-width: 500px) {
-        .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
-          margin-left: 0; } }
+    @media screen and (min-width: 501px) {
+      .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
+        margin-left: 1.875em; } }
 
 .article-navigation-previous:before, .article-navigation-previous:active:before, .article-navigation-next:after, .article-navigation-next:active:after {
   position: relative;
@@ -1112,20 +1108,15 @@ article {
 .article-navigation-next:after {
   content: "\00a0\00a0\2192"; }
 
-@media screen and (max-width: 768px) {
-  .show-comments {
-    margin-bottom: 2em; } }
 .show-comments:before, .show-comments:active:before {
   content: "\2711\00a0\00a0";
   position: relative; }
 
 .comments {
   text-align: center; }
-  .pagination + .comments {
-    padding-top: 2.25rem; }
-    @media screen and (max-width: 768px) {
-      .pagination + .comments {
-        padding-top: 0; } }
+  @media screen and (min-width: 769px) {
+    .pagination + .comments {
+      padding-top: 2.25rem; } }
   .comments .show-comments:before, .comments .show-comments:active:before {
     position: relative;
     top: 0; }
@@ -1174,7 +1165,7 @@ article {
   padding-bottom: 56.65%;
   position: relative;
   overflow: hidden; }
-  .media-container iframe, .media-container object, .media-container embed {
+  .media-container embed, .media-container iframe, .media-container object, .media-container video {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1182,10 +1173,11 @@ article {
     left: 0; }
 
 /**
- * Fix `iframe`
+ * Fix `iframe` and `video`
  */
-iframe {
+iframe, video {
   width: 100%;
+  margin-bottom: 1.25rem;
   border: none;
   overflow-x: hidden; }
 
@@ -1197,20 +1189,20 @@ iframe {
  * list of articles. The math is calculated as in the articles partial.
  */
 aside {
-  width: 15.1875em;
-  float: left;
-  margin-left: -16.875em; }
+  width: 15.1875em; }
+  @media screen and (min-width: 769px) {
+    aside {
+      float: left;
+      margin-left: -16.875em; } }
   @media screen and (max-width: 768px) {
     aside {
-      width: 100%;
-      float: none;
-      margin-left: 0; }
+      width: 100%; }
       aside:not(.author) {
         background: rgba(6, 6, 6, 0.05);
         padding: 1em;
         margin-bottom: 1.25rem; }
-      aside:not(.author):last-child {
-        margin-bottom: 0; } }
+        aside:not(.author):last-child {
+          margin-bottom: 0; } }
   aside p, aside figcaption {
     clear: both;
     font-size: .875em; }
@@ -1260,15 +1252,15 @@ aside {
     text-transform: uppercase;
     white-space: nowrap; }
 
-.author-biography {
-  margin-bottom: 1.25rem; }
-  @media screen and (max-width: 768px) {
-    .author-biography {
-      -webkit-box-ordinal-group: 1000;
-      -webkit-order: 999;
-          -ms-flex-order: 999;
-              order: 999;
-      margin-bottom: 0; } }
+@media screen and (min-width: 769px) {
+  .author-biography {
+    margin-bottom: 1.25rem; } }
+@media screen and (max-width: 768px) {
+  .author-biography {
+    -webkit-box-ordinal-group: 1000;
+    -webkit-order: 999;
+        -ms-flex-order: 999;
+            order: 999; } }
 
 .author-name, .author-age, .author-employer, .article-date, .article-label {
   box-sizing: content-box;
@@ -1291,11 +1283,9 @@ aside {
   display: table-cell;
   line-height: 1.429em; }
 
-.featured-pens, .related-articles {
-  margin-top: 1.25rem; }
-  @media screen and (max-width: 768px) {
-    .featured-pens, .related-articles {
-      margin-top: 0; } }
+@media screen and (min-width: 769px) {
+  .featured-pens, .related-articles {
+    margin-top: 1.25rem; } }
 
 .featured-pens-title, .related-articles-title {
   margin-top: 0; }
@@ -1327,12 +1317,13 @@ footer {
   background-image: linear-gradient(to bottom, transparent 0%, rgba(6, 6, 6, 0.1) 100%); }
 
 .copyright, .social-icon-list {
-  float: left;
   overflow: hidden; }
+  @media screen and (min-width: 769px) {
+    .copyright, .social-icon-list {
+      float: left; } }
   @media screen and (max-width: 768px) {
     .copyright, .social-icon-list {
       width: 100%;
-      float: none;
       text-align: center; } }
 
 .social-icon-list {

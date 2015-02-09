@@ -2,8 +2,8 @@
     $HEADER
 \*------------------------------------*/
 
-header {
-    @include breakpoint("medium") {
+@include breakpoint(medium, max) {
+    header {
         text-align: center;
     }
 }

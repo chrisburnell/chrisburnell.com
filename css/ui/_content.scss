@@ -16,9 +16,12 @@
  *   = 25% of 1080px = 270px  = 16.875em
  */
 article {
-    padding: $default-padding 0 0 16.875em;
+    padding-top: $default-padding;
     border-top: $default-border solid $blue;
-    @include breakpoint("medium") {
+    @include breakpoint(medium, min) {
+        padding-left: 16.875em;
+    }
+    @include breakpoint(medium, max) {
         /**
          * When you hit the `medium` media query, `article`, `article-list`, and
          * `aside` becomes full width and `aside.author-information` pushes to
@@ -26,7 +29,6 @@ article {
          */
         display: flex;
         flex-direction: column;
-        padding-left: 0;
     }
 }
 .articles-list li {
@@ -39,7 +41,7 @@ article {
     &:nth-child(odd) {
         background-color: $black-light;
     }
-    @include breakpoint("medium") {
+    @include breakpoint(medium, max) {
         padding-top: 1.875em;
         padding-bottom: 1.875em;
         text-align: center;
@@ -54,7 +56,7 @@ article {
         @extend %rounded;
         width: 810px;
         margin-bottom: 1em;
-        @include breakpoint("small") {
+        @include breakpoint(small, max) {
             width: 500px;
         }
     }
@@ -68,7 +70,7 @@ article {
         margin-top: -0.2em; // make sure text cap-height aligns to the `aside`
         margin-bottom: 1em;
         line-height: 1.4em;
-        @include breakpoint("medium") {
+        @include breakpoint(medium, max) {
             margin-bottom: 1.385em;
         }
     }
@@ -81,13 +83,13 @@ article {
     .article-title,
     .article-date,
     .article-introduction {
-        @include breakpoint("medium") {
+        @include breakpoint(medium, max) {
             text-align: left;
         }
     }
     .article-introduction {
         margin-top: -5px; // align text to author-image
-        @include breakpoint("medium") {
+        @include breakpoint(medium, max) {
             margin-top: 0;
         }
         .article-banner + & {
@@ -117,7 +119,6 @@ article {
     }
     .comments-link {
         display: inline-block;
-        float: right;
         margin-top: 1.625em;
         font-family: $secondary-font-stack;
         font-weight: 600;
@@ -125,9 +126,11 @@ article {
         &:after {
             content: "\00a0\2192";
         }
-        @include breakpoint("medium") {
+        @include breakpoint(medium, min) {
+            float: right;
+        }
+        @include breakpoint(medium, max) {
             display: block;
-            float: none;
             margin-top: $default-margin;
         }
     }
@@ -140,7 +143,7 @@ article {
     margin: 0 -0.5em 1.5em;
     font-family: $secondary-font-stack;
     line-height: 1.25em;
-    @include breakpoint("medium") {
+    @include breakpoint(medium, max) {
         margin-bottom: 1.875em;
     }
     li {
@@ -155,7 +158,7 @@ article {
                 margin-top: 1em;
             }
         }
-        @include breakpoint("small") {
+        @include breakpoint(small, max) {
             width: 100%;
             & + li {
                 margin-top: 1em;
@@ -215,7 +218,7 @@ article {
         z-index: -1;
         @include transition;
         @include translate3d(0, -50%, 0);
-        @include breakpoint("small") {
+        @include breakpoint(small, max) {
             width:  4em !important;
             height: 4em;
         }
@@ -244,7 +247,7 @@ article {
         padding-top: 0;
         border-top: 0;
     }
-    @include breakpoint("small") {
+    @include breakpoint(small, max) {
         &:not(:last-child) {
             padding-bottom: 0;
         }
@@ -252,16 +255,15 @@ article {
     button,
     .button {
         display: inline-block;
-        @include breakpoint("small") {
+        @include breakpoint(small, max) {
             &:last-child {
                 margin-top: .6875em;
             }
         }
-        & + button,
-        & + .button {
-            margin-left: 1.875em;
-            @include breakpoint("small") {
-                margin-left: 0;
+        @include breakpoint(small, min) {
+            & + button,
+            & + .button {
+                margin-left: 1.875em;
             }
         }
     }
@@ -281,9 +283,6 @@ article {
     }
 
 .show-comments {
-    @include breakpoint("medium") {
-        margin-bottom: 2em;
-    }
     &:before,
     &:active:before {
         content: "\2711\00a0\00a0";
@@ -292,10 +291,9 @@ article {
 }
 .comments {
     text-align: center;
-    .pagination + & {
-        padding-top: $default-padding;
-        @include breakpoint("medium") {
-            padding-top: 0;
+    @include breakpoint(medium, min) {
+        .pagination + & {
+            padding-top: $default-padding;
         }
     }
     .show-comments:before,
@@ -358,9 +356,10 @@ article {
     padding-bottom: 56.65%;
     position: relative;
     overflow: hidden;
+    embed,
     iframe,
     object,
-    embed {
+    video {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -369,10 +368,12 @@ article {
     }
 }
 /**
- * Fix `iframe`
+ * Fix `iframe` and `video`
  */
-iframe {
+iframe,
+video {
     width: 100%;
+    margin-bottom: $default-margin;
     border: none;
     overflow-x: hidden;
 }

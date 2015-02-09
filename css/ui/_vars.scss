@@ -1,10 +1,8 @@
 //
-//
 // SCSS $variables
 //
-//
 
-/// Wrapper $variables
+/// Wrapper and @media $variables
 $wrapper-padding:      1.25rem  !default;
 $max-wrapper-width:    1120px   !default;
 $medium-wrapper-width:  768px   !default;
@@ -71,64 +69,64 @@ $coding-languages:  css         $css-color,
 
 /// Font Stacks
 $base-font-size:        16px !default;
-$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif !default;
-$secondary-font-stack:  "proxima-nova", sans-serif !default;
-$heading-font-stack:    "league-gothic", Impact, sans-serif !default;
-$code-font-stack:       Consolas, Monaco, "Courier New", monospace !default;
+$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif     !default;
+$secondary-font-stack:  "proxima-nova", sans-serif                  !default;
+$heading-font-stack:    "league-gothic", Impact, sans-serif         !default;
+$code-font-stack:       Consolas, Monaco, "Courier New", monospace  !default;
 
 /// Transition $variables
-$transition-time:  0.2s  !default;
+$transition-time:      0.2s  !default;
+$transition-function:  ease  !default;
 
 
-//
 //
 // SCSS @mixins
 //
-//
 
 /// Define Breakpoints
-@mixin breakpoint($values) {
-    @if $values == "large" {
-        @media screen and (min-width: $medium-wrapper-width) { @content ; }
+@mixin breakpoint($breakpoint, $toggle: "max") {
+    @if $breakpoint == "medium" {
+        $breakpoint: $medium-wrapper-width;
     }
-    @else if $values == "medium" {
-        @media screen and (max-width: $medium-wrapper-width) { @content ; }
+    @else if $breakpoint == "small" {
+        $breakpoint: $small-wrapper-width;
     }
-    @else if $values == "small" {
-        @media screen and (max-width: $small-wrapper-width) { @content ; }
+    @if $toggle == "min" {
+        $breakpoint: $breakpoint + 1;
     }
+    @media screen and (#{$toggle}-width: #{$breakpoint}) { @content ; }
 }
 
 /// Linear Gradient
 @mixin gradient($top, $bottom) {
-    background-image: linear-gradient(to bottom, $top 0%, $bottom 100%);
+    background-image: linear-gradient(to bottom, #{$top} 0%, #{$bottom} 100%);
 }
 
 /// Transition
 @mixin transition($values...) {
     @if ( length($values) == 0 ) {
-        $values: all $transition-time ease;
+        $values: all #{$transition-time} #{$transition-function};
     }
     @else if ( str-index(""+$values+"", " ") == null and $values != "none" ) {
-        $values: $values $transition-time ease;
+        $values: #{$values} #{$transition-time} #{$transition-function};
     }
-    transition: $values;
+    transition: #{$values};
 }
 
 /// Translate3D
 @mixin translate3d($values...) {
-    @if ( length($values) == 0 ) {
+    @if ( length(#{$values}) == 0 ) {
         $values: 0, 0, 0;
     }
-    transform: translate3d($values);
+    transform: translate3d(#{$values});
 }
 
 /// Animation
 @mixin animation($values...) {
-    animation: $values;
+    animation: #{$values};
 }
 
 /// Animation Play State
 @mixin animation-play-state($values...) {
-    animation-play-state: $values;
+    animation-play-state: #{$values};
 }

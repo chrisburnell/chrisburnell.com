@@ -46,8 +46,8 @@ h4 {
 a {
     color: $blue;
     text-decoration: none;
-    @include transition(background $transition-time ease,
-                        color      $transition-time ease);
+    @include transition(background $transition-time $transition-function,
+                        color      $transition-time $transition-function);
     &:hover,
     &:focus,
     &:active {
@@ -165,9 +165,9 @@ dl {
         padding-right: $default-margin;
         font-family: $secondary-font-stack;
         font-weight: 600;
-        @include breakpoint("small") {
-            min-width: auto;
-            padding-right: 0;
+        @include breakpoint(small, min) {
+            min-width: 10em;
+            padding-right: $default-margin;
         }
     }
     dd {
@@ -175,7 +175,7 @@ dl {
         display: table-cell;
         margin: 0;
         overflow: hidden;
-        @include breakpoint("small") {
+        @include breakpoint(small, max) {
             width: auto;
             display: block;
             margin-left: $default-margin;
@@ -231,7 +231,7 @@ blockquote {
     padding: 1em;
     margin: 0 $default-padding 1em;
     quotes: "\201C" "\201D" "\2018" "\2019";
-    @include breakpoint("small") {
+    @include breakpoint(small, max) {
         margin-right: 1em;
         margin-left: 1em;
     }
@@ -263,10 +263,6 @@ hr {
     display: block;
     border: 0;
     margin: .5em 0 $default-margin;
-}
-
-iframe {
-    margin-bottom: $default-margin;
 }
 
 ::selection {
