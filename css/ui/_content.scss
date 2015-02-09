@@ -235,40 +235,12 @@ article {
     }
 }
 
-.pagination,
-.article-navigation {
-    width: 100%;
-    padding-top: $default-padding;
-    text-align: center;
-}
-.pagination {
-    border-top: ($default-border / 2) solid $black-medium;
-    @include breakpoint("medium") {
-        padding-bottom: $default-padding;
-    }
-    li {
-        display: inline-block;
-        @include breakpoint("small") {
-            display: block;
-            &:last-child {
-                margin-top: .6875em;
-            }
-        }
-        & + li {
-            margin-left: 1.875em;
-            @include breakpoint("small") {
-                margin-left: 0;
-            }
-        }
-    }
-}
 .article-navigation {
     width: 100%;
     padding: $default-padding 0;
     border-top: ($default-border / 2) solid $black-medium;
     text-align: center;
-    .page-description + &,
-     {
+    .page-description + & {
         padding-top: 0;
         border-top: 0;
     }
