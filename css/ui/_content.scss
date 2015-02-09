@@ -50,6 +50,14 @@ article {
         text-shadow: 0 1px 0 $white;
     }
 }
+    .article-banner {
+        @extend %rounded;
+        width: 810px;
+        margin-bottom: 1em;
+        @include breakpoint("small") {
+            width: 500px;
+        }
+    }
     .article-title,
     .page-title,
     .site-tagline {
@@ -70,19 +78,20 @@ article {
         font-size: 1.25em;
         line-height: 1.5em;
     }
-    .article-banner {
-        @extend %rounded;
-        width: 810px;
-        margin-bottom: 1em;
-        @include breakpoint("small") {
-            width: 500px;
-        }
-    }
     .article-title,
     .article-date,
     .article-introduction {
         @include breakpoint("medium") {
             text-align: left;
+        }
+    }
+    .article-introduction {
+        margin-top: -5px; // align text to author-image
+        @include breakpoint("medium") {
+            margin-top: 0;
+        }
+        .article-banner + & {
+            margin-top: 0;
         }
     }
     .article-title {
@@ -227,7 +236,7 @@ article {
 }
 
 .pagination,
-.center-text {
+.article-navigation {
     width: 100%;
     padding-top: $default-padding;
     text-align: center;
@@ -253,19 +262,19 @@ article {
         }
     }
 }
-.center-text {
+.article-navigation {
+    width: 100%;
+    padding: $default-padding 0;
+    border-top: ($default-border / 2) solid $black-medium;
+    text-align: center;
     .page-description + &,
-    hr + &,
-    p + &,
-    div + & {
+     {
         padding-top: 0;
-    }
-    @include breakpoint("medium") {
-        margin-bottom: $default-margin;
+        border-top: 0;
     }
     @include breakpoint("small") {
         &:not(:last-child) {
-            margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
     button,
@@ -285,17 +294,17 @@ article {
         }
     }
 }
-    .pagination-previous:before,
-    .pagination-previous:active:before,
-    .pagination-next:after,
-    .pagination-next:active:after {
+    .article-navigation-previous:before,
+    .article-navigation-previous:active:before,
+    .article-navigation-next:after,
+    .article-navigation-next:active:after {
         position: relative;
         top: 0;
     }
-    .pagination-previous:before {
+    .article-navigation-previous:before {
         content: "\2190\00a0\00a0";
     }
-    .pagination-next:after {
+    .article-navigation-next:after {
         content: "\00a0\00a0\2192";
     }
 

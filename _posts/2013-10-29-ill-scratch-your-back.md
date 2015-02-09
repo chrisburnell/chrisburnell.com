@@ -8,8 +8,8 @@ title: I’ll Scratch Your Back, And Mine Too
 introduction: I’ve been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
 
 shorturl: http://repc.co/1yHN3d9
-banner: ill-scratch-your-back.png
-banner_mobile: ill-scratch-your-back_mobile.png
+# banner: ill-scratch-your-back.png
+# banner_mobile: ill-scratch-your-back_mobile.png
 comments: true
 tags:
 - CSS

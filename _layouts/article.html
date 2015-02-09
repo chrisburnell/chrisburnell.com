@@ -22,7 +22,7 @@ page_class: article-page
 
 {{ content }}
 
-<p class="center-text">
+<div class="article-navigation">
     {% if page.comments == true %}
         <button class="show-comments  js-show-comments" disabled>Show Comments</button>
     {% endif %}
@@ -31,7 +31,7 @@ page_class: article-page
     {% elsif page.category == "codepen" %}
         <a rel="me author" class="button  pagination-next" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
     {% endif %}
-</p>
+</div>
 
 {% if page.comments == true %}
     <section id="comments" class="comments  clear">

@@ -341,7 +341,7 @@ td, th {
   padding: 0; }
 
 /*------------------------------------*\
-    $ LAYOUT
+    $LAYOUT
 \*------------------------------------*/
 html {
   box-sizing: border-box; }
@@ -375,12 +375,6 @@ body {
     clear: both; }
 
 /**
- * Add a bottom margin to a plethora of tasty elements
- */
-h3:not(:last-child), p:not(:last-child), dl:not(:last-child), figure:not(:last-child), pre, iframe {
-  margin-bottom: 1.25rem; }
-
-/**
  * Allow for fixed-width content
  */
 .fixed-width {
@@ -404,7 +398,7 @@ button, .button, .logo {
   -webkit-touch-callout: none; }
 
 /*------------------------------------*\
-    $ TYPOGRAPHY
+    $TYPOGRAPHY
 \*------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
@@ -436,6 +430,8 @@ h3 {
   margin-top: .5em;
   border-bottom: .125em solid #DDDDDD;
   position: relative; }
+  h3:not(:last-child) {
+    margin-bottom: 1.25rem; }
 
 h4 {
   margin-bottom: .5em; }
@@ -463,6 +459,7 @@ a {
   padding-left: 1em;
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: .8125rem;
+  font-weight: 600;
   line-height: 1.875em;
   text-transform: lowercase;
   vertical-align: middle; }
@@ -491,6 +488,8 @@ a {
 
 p {
   margin: 0; }
+  p:not(:last-child) {
+    margin-bottom: 1.25rem; }
 
 ol, ul {
   padding: 0;
@@ -525,6 +524,8 @@ ul:not([class]) li:before, ul.default-list li:before {
 dl {
   width: 100%;
   display: table; }
+  dl:not(:last-child) {
+    margin-bottom: 1.25rem; }
   dl dt {
     width: auto;
     min-width: 10em;
@@ -555,6 +556,8 @@ img, a img {
 figure {
   margin: 0 0 .5em;
   text-align: center; }
+  figure:not(:last-child) {
+    margin-bottom: 1.25rem; }
 
 figcaption {
   color: #737373;
@@ -607,6 +610,9 @@ hr {
   border: 0;
   margin: .5em 0 1.25rem; }
 
+iframe {
+  margin-bottom: 1.25rem; }
+
 ::-moz-selection{
   background: #5F8AA6;
   color: #F9F9F9; }
@@ -616,7 +622,7 @@ hr {
   color: #F9F9F9; }
 
 /*------------------------------------*\
-    $ BUTTONS
+    $BUTTONS
 \*------------------------------------*/
 button, .button {
   background-color: #5F8AA6;
@@ -668,14 +674,14 @@ button, .button {
       margin: 0 auto 1.25rem; } }
 
 /*------------------------------------*\
-    $ HEADER
+    $HEADER
 \*------------------------------------*/
 @media screen and (max-width: 768px) {
   header {
     text-align: center; } }
 
 /*------------------------------------*\
-    $ LOGO
+    $LOGO
 \*------------------------------------*/
 .logo {
   color: #4F4F4F;
@@ -798,7 +804,7 @@ button, .button {
             transform: translate3d(-0.0625em, -0.5625em, 0); } }
 
 /*------------------------------------*\
-    $ NAVIGATION
+    $NAVIGATION
 \*------------------------------------*/
 .primary-navigation {
   float: right;
@@ -862,7 +868,7 @@ button, .button {
           transform: translate3d(-50%, 0, 0); }
 
 /*------------------------------------*\
-    $ CONTENT
+    $CONTENT
 \*------------------------------------*/
 .content {
   padding-bottom: 2.25rem; }
@@ -914,6 +920,13 @@ article {
   .articles-list li .article-title, .articles-list li .article-date, .articles-list li .comments-link {
     text-shadow: 0 1px 0 #F9F9F9; }
 
+.article-banner {
+  width: 810px;
+  margin-bottom: 1em; }
+  @media screen and (max-width: 500px) {
+    .article-banner {
+      width: 500px; } }
+
 .article-title, .page-title, .site-tagline {
   margin-bottom: .75em; }
 
@@ -931,16 +944,17 @@ article {
   font-size: 1.25em;
   line-height: 1.5em; }
 
-.article-banner {
-  width: 810px;
-  margin-bottom: 1em; }
-  @media screen and (max-width: 500px) {
-    .article-banner {
-      width: 500px; } }
-
 @media screen and (max-width: 768px) {
   .article-title, .article-date, .article-introduction {
     text-align: left; } }
+
+.article-introduction {
+  margin-top: -5px; }
+  @media screen and (max-width: 768px) {
+    .article-introduction {
+      margin-top: 0; } }
+  .article-banner + .article-introduction {
+    margin-top: 0; }
 
 .article-title {
   width: 100%; }
@@ -1066,7 +1080,7 @@ article {
   .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
     stroke-width: 2; }
 
-.pagination, .center-text {
+.pagination, .article-navigation {
   width: 100%;
   padding-top: 2.25rem;
   text-align: center; }
@@ -1089,33 +1103,36 @@ article {
         .pagination li + li {
           margin-left: 0; } }
 
-.page-description + .center-text, hr + .center-text, p + .center-text, div + .center-text {
-  padding-top: 0; }
-@media screen and (max-width: 768px) {
-  .center-text {
-    margin-bottom: 1.25rem; } }
-@media screen and (max-width: 500px) {
-  .center-text:not(:last-child) {
-    margin-bottom: 0; } }
-.center-text button, .center-text .button {
-  display: inline-block; }
+.article-navigation {
+  width: 100%;
+  padding: 2.25rem 0;
+  border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
+  text-align: center; }
+  .page-description + .article-navigation {
+    padding-top: 0;
+    border-top: 0; }
   @media screen and (max-width: 500px) {
-    .center-text button:last-child, .center-text .button:last-child {
-      margin-top: .6875em; } }
-  .center-text button + button, .center-text button + .button, .center-text .button + button, .center-text .button + .button {
-    margin-left: 1.875em; }
+    .article-navigation:not(:last-child) {
+      padding-bottom: 0; } }
+  .article-navigation button, .article-navigation .button {
+    display: inline-block; }
     @media screen and (max-width: 500px) {
-      .center-text button + button, .center-text button + .button, .center-text .button + button, .center-text .button + .button {
-        margin-left: 0; } }
+      .article-navigation button:last-child, .article-navigation .button:last-child {
+        margin-top: .6875em; } }
+    .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
+      margin-left: 1.875em; }
+      @media screen and (max-width: 500px) {
+        .article-navigation button + button, .article-navigation button + .button, .article-navigation .button + button, .article-navigation .button + .button {
+          margin-left: 0; } }
 
-.pagination-previous:before, .pagination-previous:active:before, .pagination-next:after, .pagination-next:active:after {
+.article-navigation-previous:before, .article-navigation-previous:active:before, .article-navigation-next:after, .article-navigation-next:active:after {
   position: relative;
   top: 0; }
 
-.pagination-previous:before {
+.article-navigation-previous:before {
   content: "\2190\00a0\00a0"; }
 
-.pagination-next:after {
+.article-navigation-next:after {
   content: "\00a0\00a0\2192"; }
 
 @media screen and (max-width: 768px) {
@@ -1196,7 +1213,7 @@ iframe {
   overflow-x: hidden; }
 
 /*------------------------------------*\
-    $ ASIDES
+    $ASIDES
 \*------------------------------------*/
 /**
  * The width of the asides is static and and always floated within an article or
@@ -1318,7 +1335,7 @@ aside {
       text-align: center; } }
 
 /*------------------------------------*\
-    $ FOOTER
+    $FOOTER
 \*------------------------------------*/
 footer {
   background-color: #4F4F4F;
@@ -1393,7 +1410,7 @@ footer {
       display: none; } }
 
 /*------------------------------------*\
-    $ CODE AND CODE BLOCKS
+    $CODE AND CODE BLOCKS
 \*------------------------------------*/
 code, kbd, samp, var, .monospace {
   font-family: Consolas, Monaco, "Courier New", monospace;
@@ -1407,6 +1424,8 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
 
 pre {
   margin-top: 0; }
+  pre:not(:last-child) {
+    margin-bottom: 1.25rem; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.5em 1.5em 1em;
@@ -1491,7 +1510,7 @@ pre {
   color: rebeccapurple; }
 
 /*------------------------------------*\
-    $ ICONS
+    $ICONS
 \*------------------------------------*/
 .svg-master {
   display: none; }
@@ -1528,7 +1547,7 @@ pre {
     display: block; }
 
 /*------------------------------------*\
-    $ PRINT
+    $PRINT
 \*------------------------------------*/
 @media print {
   nav, .related-articles, .pagination, .comments, footer .home-link, .copyright-spacer, footer .style-guide-link, .social-icon-list {
@@ -1539,5 +1558,5 @@ pre {
     box-shadow: none; } }
 
 /*------------------------------------*\
-    $ SHAME
+    $SHAME
 \*------------------------------------*/

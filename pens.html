@@ -11,16 +11,14 @@ description: All of my featured pens listed on one page.
                 <dd><q><a href="http://codepen.io" title="CodePen">CodePen</a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q> And these are my best ones.</dd>
             </dl>
 
-            <hr>
-
-            <p class="center-text">
+            <div class="article-navigation">
                 <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
                 <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-            </p>
+            </div>
 
             <hr>
 
-            <ul class="small-articles-list" role="list">
+            <ol id="pens" class="small-articles-list" role="list">
                 {% for post in site.posts %}
                 {% unless post.draft or post.category != "codepen" %}
                     <li>
@@ -32,18 +30,14 @@ description: All of my featured pens listed on one page.
                     </li>
                 {% endunless %}
                 {% endfor %}
-            </ul>
+            </ol>
 
-            <hr>
-
-            <p class="center-text">
+            <div class="article-navigation">
                 <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
                 <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
-            </p>
+            </div>
 
-            <hr>
-
-            <p class="center-text">
-                <a rel="me author" class="button" href="/archive" title="Articles Archive">&larr; Articles Archive</a>
-                <a rel="me author" class="button" href="/tags" title="Article Tags Archive">Article Tags Archive &rarr;</a>
-            </p>
+            <div class="article-navigation">
+                <a rel="me author" class="button  article-navigation-previous" href="/archive" title="Articles Archive">Articles Archive</a>
+                <a rel="me author" class="button  article-navigation-next" href="/tags" title="Article Tags Archive">Article Tags Archive</a>
+            </div>

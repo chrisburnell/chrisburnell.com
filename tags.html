@@ -6,11 +6,11 @@ title: Article Tags
 description: A list of tags and their prose counterparts.
 ---
 
-            <p class="center-text">
+            <div class="article-navigation">
                 <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
                 <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
                 <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
-            </p>
+            </div>
 
             {% capture tags %}
                 {% for tag in site.tags %}
@@ -20,7 +20,7 @@ description: A list of tags and their prose counterparts.
             {% assign sorted_tags = tags | split:' ' | sort %}
             {% for tag in sorted_tags %}
                 <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" title="#{{ tag | downcase }}" aria-hidden="true">#{{ tag | downcase }}</a></h3>
-                <ul class="small-articles-list" role="list">
+                <ol class="small-articles-list" role="list">
                     {% for post in site.tags[tag] %}
                     {% unless post.draft %}
                         {% if post.category == "codepen" %}
@@ -42,20 +42,16 @@ description: A list of tags and their prose counterparts.
                         </li>
                     {% endunless %}
                     {% endfor %}
-                </ul>
+                </ol>
             {% endfor %}
 
-            <hr>
-
-            <p class="center-text">
+            <div class="article-navigation">
                 <a rel="me author" class="button" href="/feed.xml" title="RSS">Subscribe to all</a>
                 <a rel="me author" class="button" href="/feed-articles.xml" title="Articles only RSS">Subscribe to articles</a>
                 <a rel="me author" class="button" href="/feed-pens.xml" title="Pens only RSS">Subscribe to pens</a>
-            </p>
+            </div>
 
-            <hr>
-
-            <p class="center-text">
-                <a rel="me author" class="button" href="/archive" title="Articles Archive">&larr; Articles Archive</a>
-                <a rel="me author" class="button" href="/pens" title="Featured Pens Archive">Featured Pens Archive &rarr;</a>
-            </p>
+            <div class="article-navigation">
+                <a rel="me author" class="button  article-navigation-previous" href="/archive" title="Articles Archive">Articles Archive</a>
+                <a rel="me author" class="button  article-navigation-next" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+            </div>

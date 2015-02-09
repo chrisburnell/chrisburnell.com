@@ -8,7 +8,7 @@ page_class: home-page
                 {% assign articlesCount = 0 %}
                 {% for post in site.posts %}
                 {% unless articlesCount >= articlesLimit or post.draft or post.category != "article" %}
-                    {% assign articlesCount = articlesCount | plus:1 %}
+                    {% assign articlesCount = articlesCount | plus: 1 %}
                     <li>
                         <h2 class="article-title">
                             <a class="article-title-link" href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>
@@ -26,24 +26,6 @@ page_class: home-page
                 {% endfor %}
             </ol>
 
-            <p class="center-text">
+            <div class="article-navigation">
                 <a class="button  pagination-next" href="/archive" title="Articles Archive">Articles Archive</a>
-            </p>
-
-
-            <!--ol class="pagination  clear">
-                {% if paginator.previous_page %}<li>
-                    {% if paginator.previous_page == 1 %}
-                        <a rel="previous" class="button  pagination-previous" href="/#articles" title="First Page">First Page</a>
-                    {% else %}
-                        <a rel="previous" class="button  pagination-previous" href="/page{{paginator.previous_page}}#articles" title="Previous Page">Previous Page</a>
-                    {% endif %}
-                </li>{% endif %}
-                {% if paginator.next_page %}<li>
-                    {% if paginator.next_page == paginator.total_pages %}
-                        <a rel="next" class="button  pagination-next" href="/page{{paginator.next_page}}#articles" title="Last Page">Last Page</a>
-                    {% else %}
-                        <a rel="next" class="button  pagination-next" href="/page{{paginator.next_page}}#articles" title="Next Page">Next Page</a>
-                    {% endif %}
-                </li>{% endif %}
-            </ol-->
+            </div>
