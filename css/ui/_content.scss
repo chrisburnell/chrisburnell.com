@@ -215,7 +215,7 @@ article {
         position: absolute;
         top: 50%;
         right: .5em;
-        z-index: -1;
+        @include z-index("below");
         @include transition;
         @include translate3d(0, -50%, 0);
         @include media("screen", "<=small") {

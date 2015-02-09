@@ -11,7 +11,7 @@ $breakpoints:  (
     "large":   $max-wrapper-width,
     "medium":  $medium-wrapper-width,
     "small":   $small-wrapper-width
-)  !default;
+)  !default; // overwrite include-media.scss
 
 /// Layout $variables
 $default-margin:   $wrapper-padding  !default;
@@ -95,10 +95,10 @@ $transition-function:  ease  !default;
 
 /// Transition
 @mixin transition($values...) {
-    @if ( length($values) == 0 ) {
+    @if( length($values) == 0 ) {
         $values: all #{$transition-time} #{$transition-function};
     }
-    @else if ( str-index(""+$values+"", " ") == null and $values != "none" ) {
+    @else if( str-index(""+$values+"", " ") == null and $values != "none" ) {
         $values: #{$values} #{$transition-time} #{$transition-function};
     }
     transition: #{$values};
@@ -106,7 +106,7 @@ $transition-function:  ease  !default;
 
 /// Translate3D
 @mixin translate3d($values...) {
-    @if ( length(#{$values}) == 0 ) {
+    @if( length($values) == 0 ) {
         $values: 0, 0, 0;
     }
     transform: translate3d(#{$values});
@@ -120,4 +120,15 @@ $transition-function:  ease  !default;
 /// Animation Play State
 @mixin animation-play-state($values...) {
     animation-play-state: #{$values};
+}
+
+/// Z-index Management
+@mixin z-index($values...) {
+    @if( #{$values} == "below" ) {
+        $values: -1;
+    }
+    @else if( #{$values} == "above" ) {
+        $values: 1;
+    }
+    z-index: #{$values};
 }

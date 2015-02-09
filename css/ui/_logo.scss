@@ -15,7 +15,7 @@
     text-transform: uppercase;
     text-shadow: .058em .058em 0 $black-light;
     white-space: nowrap;
-    z-index: 1;
+    @include z-index("above");
     @include transition;
     &:hover,
     &:focus,
@@ -49,7 +49,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        @include z-index("below");
         @include animation(soaring 30s linear alternate infinite);
         @include animation-play-state(paused);
         @include transition;
