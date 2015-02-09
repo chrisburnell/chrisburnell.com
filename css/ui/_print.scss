@@ -2,7 +2,7 @@
     $PRINT
 \*------------------------------------*/
 
-@media print {
+@include media("print") {
     nav,
     .related-articles,
     .pagination,
