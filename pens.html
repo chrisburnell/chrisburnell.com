@@ -8,14 +8,14 @@ description: All of my featured pens listed on one page.
 
             <dl class="pens-introduction">
                 <dt>What’s a pen?</dt>
-                <dd><q><a href="http://codepen.io" title="CodePen">CodePen</a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q> And these are my best ones.</dd>
+                <dd><q><a href="http://codepen.io">CodePen</a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q> And these are my best ones.</dd>
             </dl>
 
             <ol id="pens" class="small-articles-list" role="list">
                 {% for post in site.posts %}
                 {% unless post.draft or post.category != "codepen" %}
                     <li>
-                        <a href="{{ post.url }}" title="View ‘{{ post.title }}’">
+                        <a href="{{ post.url }}">
                             <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
                             <h4 class="small-article-title">{{ post.title }}</h4>
                             <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>

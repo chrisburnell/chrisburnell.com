@@ -22,14 +22,14 @@ page_class: article-page
 
 {{ content }}
 
-<div class="article-navigation">
+<div class="articles-navigation">
     {% if page.comments == true %}
         <button class="show-comments  js-show-comments" disabled>Show Comments</button>
     {% endif %}
     {% if page.category == "article" %}
-        <a rel="me author" class="button  pagination-next" href="/archive" title="Articles Archive">Articles Archive</a>
+        <a rel="me author" class="button" href="/archive">Articles Archive</a>
     {% elsif page.category == "codepen" %}
-        <a rel="me author" class="button  pagination-next" href="/pens" title="Featured Pens Archive">Featured Pens Archive</a>
+        <a rel="me author" class="button" href="/pens">Pens Archive</a>
     {% endif %}
 </div>
 

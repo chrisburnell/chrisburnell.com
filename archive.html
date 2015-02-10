@@ -12,15 +12,15 @@ description: All of my articles listed on one page.
                 {% unless post.draft or post.category != "article" %}
                     <li>
                         <h2 class="article-title">
-                            <a href="{{ post.url }}" title="{{ post.title }}" tabindex="-1">{{ post.title }}</a>
+                            <a href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
                         </h2>
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
                         {% if post.introduction %}
                             <p class="article-introduction">{{ post.introduction }}</p>
                         {% endif %}
-                        <a class="button" href="{{ post.url }}" title="Continue reading ‘{{ post.title }}’">Read more</a>
+                        <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
                         {% if post.comments == true %}
-                            <a class="comments-link" href="{{ post.url }}/#disqus_thread" title="Join the discussion on ‘{{ post.title }}’">Leave a comment</a>
+                            <a class="comments-link" href="{{ post.url }}/#disqus_thread">Leave a comment</a>
                         {% endif %}
                     </li>
                 {% endunless %}

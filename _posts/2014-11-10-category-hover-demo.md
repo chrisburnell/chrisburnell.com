@@ -16,27 +16,27 @@ tags:
 {% highlight html %}
 <div class="modal">
   <div class="card  archipelago">
-    <a class="card-category" href="#" title="HTML & CSS">
+    <a class="card-category" href="#">
       <span>Archipelago</span>
     </a>
   </div>
   <div class="card  butte">
-    <a class="card-category" href="#" title="HTML & CSS">
+    <a class="card-category" href="#">
       <span>Butte</span>
     </a>
   </div>
   <div class="card  canyon">
-    <a class="card-category" href="#" title="HTML & CSS">
+    <a class="card-category" href="#">
       <span>Canyon</span>
     </a>
   </div>
   <div class="card  dune">
-    <a class="card-category" href="#" title="HTML & CSS">
+    <a class="card-category" href="#">
       <span>Dune</span>
     </a>
   </div>
   <div class="card  estuary">
-    <a class="card-category" href="#" title="HTML & CSS">
+    <a class="card-category" href="#">
       <span>Estuary</span>
     </a>
   </div>
