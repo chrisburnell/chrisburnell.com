@@ -253,6 +253,10 @@ article {
             padding-bottom: 0;
         }
     }
+    .about-page & {
+        border-top: 0;
+        padding: $default-margin 0;
+    }
     button,
     .button {
         display: inline-block;

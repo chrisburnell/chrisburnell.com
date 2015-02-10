@@ -1091,6 +1091,9 @@ article {
   @media screen and (max-width: 500px) {
     .articles-navigation:not(:last-child) {
       padding-bottom: 0; } }
+  .about-page .articles-navigation {
+    border-top: 0;
+    padding: 1.25rem 0; }
   .articles-navigation button, .articles-navigation .button {
     display: inline-block; }
     @media screen and (max-width: 500px) {
