@@ -1104,8 +1104,7 @@ article {
         margin-left: 1.875em; } }
     .articles-navigation button svg, .articles-navigation .button svg {
       width: 1em;
-      height: .775em;
-      fill: #F9F9F9; }
+      height: .775em; }
 
 .show-comments:before, .show-comments:active:before {
   content: "\2711\00a0\00a0";

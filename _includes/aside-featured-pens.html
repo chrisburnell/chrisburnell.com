@@ -5,7 +5,7 @@
         {% assign featuredPensCounter = 0 %}
         {% for post in site.posts %}
         {% unless featuredPensCounter >= featuredPensLimit or post.draft or post.category != "codepen" %}
-            {% assign featuredPensCounter = featuredPensCounter | plus:1 %}
+            {% assign featuredPensCounter = featuredPensCounter | plus: 1 %}
             <li>
                 <a href="{{ post.url }}">
                     <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
