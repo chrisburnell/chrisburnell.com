@@ -7,85 +7,229 @@ title: Style Guide
 description: The style guide for chrisburnell.com.
 ---
 
-<h3>Colours</h3>
+{% include heading.html title="Colours" %}
 
 <ul class="color-block-list">
     <li data-color="#5F8AA6">#5F8AA6</li>
-    <li data-color="#F9F9F9">#F9F9F9</li>
     <li data-color="#4F4F4F">#4F4F4F</li>
     <li data-color="#737373">#737373</li>
     <li data-color="#DDDDDD">#DDDDDD</li>
+    <li data-color="#F9F9F9">#F9F9F9</li>
 </ul>
 
 
-<h3>Typography</h3>
+{% include heading.html title="Fonts" %}
 
-<h1>H1 &ndash; League Gothic</h1>
+<p style="font-family: ff-meta-serif-web-pro, Georgia, serif;">Primary Font: "ff-meta-serif-web-pro", Georgia, serif;</p>
 
-<h2>H2 &ndash; FF Meta Serif Web Pro</h2>
+<p style="font-family: ff-meta-serif-web-pro, Georgia, serif; font-style: italic;">Primary Font italic: "ff-meta-serif-web-pro", Georgia, serif;</p>
 
-<h3>H3 &ndash; Proxima Nova</h3>
+<p style="font-family: ff-meta-serif-web-pro, Georgia, serif; font-weight: 600;">Primary Font bold: "ff-meta-serif-web-pro", Georgia, serif;</p>
 
-<h4>H4 &ndash; Proxima Nova</h4>
+<p style="font-family: proxima-nova, sans-serif;">Secondary Font: "proxima-nova", sans-serif;</p>
 
-<p>Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness&mdash;a laughter that was mirthless as the smile of the sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.</p>
+<p style="font-family: proxima-nova, sans-serif; font-weight: 600;">Secondary Font bold: "proxima-nova", sans-serif;</p>
+
+<p style="font-family: Consolas, Monaco, Courier New, monospace;">Monospace Font: Consolas, Monaco, "Courier New", monospace;</p>
+
+
+{% include heading.html title="Headings" %}
+
+<h1>Heading Level 1</h1>
+
+<h2>Heading Level 2</h2>
+
+<h3>Heading Level 3</h3>
+
+<h4>Heading Level 4</h4>
+
+
+{% include heading.html title="Paragraph" %}
+
+<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+
+
+{% include heading.html title="Aside" %}
 
 <aside>
-    <p>But there <strong>was</strong> life, abroad in the land and defiant.</p>
+    <p>An aside represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.</p>
 </aside>
 
-<p><em>Down the frozen waterway toiled a string of wolfish dogs.</em></p>
+<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
-<p><strong>Their bristly fur was rimed with frost.</strong></p>
 
-<p><u>Their breath froze in the air as it left their mouths, spouting forth in spumes of vapour that settled upon the hair of their bodies and formed into crystals of frost.</u></p>
+{% include heading.html title="Inline Elements" %}
 
-<p><s>Leather harness was on the dogs, and leather traces attached them to a sled which dragged along behind.</s></p>
+<p><a href="#">This is a text link</a></p>
 
-<p>The <dfn title="Wheee!!">sled</dfn> was without runners.</p>
+<p><strong>Strong is used to indicate strong importance</strong></p>
 
-<p>It was made of stout <abbr title="this isn’t a real definition">birch-bark</abbr>, and its full surface rested on the snow.</p>
+<p><em>This text has added emphasis</em></p>
 
-<p>The <code>front end</code> of the sled was turned up, like a scroll, in order to <code>force</code> down and under the bore of soft snow that surged like a wave before it.</p>
+<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
 
-<ul>
-    <li>Unordered list</li>
-    <li>Unordered list</li>
-    <li>Unordered list</li>
-</ul>
+<p>The <i>i element</i> is text that is set off from the normal text</p>
 
-<ol>
-    <li>Ordered list</li>
-    <li>Ordered list</li>
-    <li>Ordered list</li>
-</ol>
+<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>
+
+<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>
+
+<p><s>This text has a strikethrough</s></p>
+
+<p>Superscript<sup>®</sup></p>
+
+<p>Subscript for things like H<sub>2</sub>O</p>
+
+<p><small>This small text is small for for fine print, etc.</small></p>
+
+<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+
+<p>Keybord input: <kbd>Cmd</kbd></p>
+
+<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
+
+<p><cite>This is a citation</cite>
+
+</p><p>The <dfn>dfn element</dfn> indicates a definition</p>
+
+<p>The <mark>mark element</mark> indicates a highlight</p>
+
+<p><code>This is what inline code looks like</code></p>
+
+<p><samp>This is sample output from a computer program</samp></p>
+
+<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
+
+
+{% include heading.html title="Horizontal Rule" %}
+
+<hr>
+
+
+{% include heading.html title="Button" %}
+
+<button>Button</button>
+
+
+{% include heading.html title="Blockquote" %}
 
 <blockquote>
-    <p>On the sled, securely lashed, was a long and narrow oblong box.</p>
+    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
 </blockquote>
+
+
+{% include heading.html title="Blockquote with Citation" %}
 
 <blockquote>
-    <p>There were other things on the sled&mdash;blankets, an axe, and a coffee-pot and frying-pan; but prominent, occupying most of the space, was the long and narrow oblong box.</p>
-    <cite>Jack London</cite>
+    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+    <cite>Quote Source</cite>
 </blockquote>
 
-<figure>
-    <img alt=" " src="/images/content/white-wolf.png">
-    <figcaption>Wolf by <a href="https://www.flickr.com/photos/richard_lev/">RickyNJ</a></figcaption>
-</figure>
 
-<pre><code>@mixin breakpoint($width) {
-    @if $width == "tablet" {
-        @media (max-width: 768px) { @content ; }
+{% include heading.html title="Preformatted Text" %}
+
+<pre>P R E F O R M A T T E D T E X T
+! " # $ % & ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; < = > ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre>
+
+
+{% include heading.html title="Code Block" %}
+
+<pre><code>@mixin translate3d($values...) {
+    @if( length($values) == 0 ) {
+        $values: 0, 0, 0;
     }
-    @else if $width == "mobile" {
-        @media (max-width: 500px) { @content ; }
-    }
+    transform: translate3d(#{$values});
 }</code></pre>
 
 
-<h3>Article Banner Variants</h3>
+{% include heading.html title="Code Block with Language" %}
 
-<img alt="Banner" class="article-banner" src="/images/article-banners/lets-look-back.png" role="presentation">
-<img alt="Banner for mobile" class="article-banner mobile" src="/images/article-banners/lets-look-back_mobile.png" role="presentation">
+{% highlight scss %}
+@mixin translate3d($values...) {
+    @if( length($values) == 0 ) {
+        $values: 0, 0, 0;
+    }
+    transform: translate3d(#{$values});
+}
+{% endhighlight %}
 
+
+{% include heading.html title="Unordered List" %}
+
+<ul>
+    <li>This is a list item in an unordered list</li>
+    <li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
+    <li>
+        Lists can be nested inside of each other
+        <ul>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an unordered list</li>
+        </ul>
+    </li>
+    <li>This is the last list item</li>
+</ul>
+
+
+{% include heading.html title="Ordered List" %}
+
+<ol>
+    <li>This is a list item in an ordered list</li>
+    <li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+    <li>
+        Lists can be nested inside of each other
+        <ol>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an ordered list</li>
+        </ol>
+    </li>
+    <li>This is the last list item</li>
+</ol>
+
+
+{% include heading.html title="Definition List" %}
+
+<dl>
+    <dt>Definition List</dt>
+    <dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>
+</dl>
+<dl>
+    <dt>This is a term.</dt>
+    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>
+</dl>
+<dl>
+    <dt>Here is another term.</dt>
+    <dd>And it gets a definition too, which is this line.</dd>
+</dl>
+<dl>
+    <dt>Here is term that shares a definition with the term below.</dt>
+    <dd>And it gets a definition too, which is this line.</dd>
+</dl>
+
+
+{% include heading.html title="Figure" %}
+
+<figure>
+    <img src="/images/content/white-wolf.png" alt="">
+</figure>
+
+
+{% include heading.html title="Figure with Caption" %}
+
+<figure>
+    <img src="/images/content/white-wolf.png" alt="">
+    <figcaption>Wolf by <a href="https://www.flickr.com/photos/richard_lev/">RickyNJ</a></figcaption>
+</figure>
+
+
+{% include heading.html title="Icons" %}
+
+<ul>
+    <li><svg class="icon  twitter-icon"><use xlink:href="#svg-twitter" /></svg></li>
+    <li><svg class="icon  lastfm-icon"><use xlink:href="#svg-lastfm" /></svg></li>
+    <li><svg class="icon  rss-icon"><use xlink:href="#svg-rss" /></svg></li>
+</ul>

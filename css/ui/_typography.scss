@@ -175,6 +175,7 @@ dl {
         display: table-cell;
         margin: 0;
         overflow: hidden;
+        vertical-align: top;
         @include media("<=small") {
             width: auto;
             display: block;

@@ -554,7 +554,8 @@ dl {
     width: 1120px;
     display: table-cell;
     margin: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    vertical-align: top; }
     @media (max-width: 500px) {
       dl dd {
         width: auto;
@@ -623,7 +624,7 @@ hr {
   border: 0;
   margin: .5em 0 1.25rem; }
 
-::-moz-selection{
+::-moz-selection {
   background: #5F8AA6;
   color: #F9F9F9; }
 
@@ -761,29 +762,36 @@ button, .button {
     -webkit-animation-play-state: running;
             animation-play-state: running; }
 
-@-webkit-keyframes soaring{
-  0%, 100%{
+@-webkit-keyframes soaring {
+  0%, 100% {
     -webkit-transform: translate3d(0, -0.8125em, 0);
             transform: translate3d(0, -0.8125em, 0); }
-  12.5%{
+
+  12.5% {
     -webkit-transform: translate3d(-0.0625em, -0.6875em, 0);
             transform: translate3d(-0.0625em, -0.6875em, 0); }
-  25%{
+
+  25% {
     -webkit-transform: translate3d(.125em, -0.3125em, 0);
             transform: translate3d(.125em, -0.3125em, 0); }
-  37.5%{
+
+  37.5% {
     -webkit-transform: translate3d(.3125em, -0.375em, 0);
             transform: translate3d(.3125em, -0.375em, 0); }
-  50%{
+
+  50% {
     -webkit-transform: translate3d(.125em, -0.4375em, 0);
             transform: translate3d(.125em, -0.4375em, 0); }
-  62.5%{
+
+  62.5% {
     -webkit-transform: translate3d(.0625em, -0.25em, 0);
             transform: translate3d(.0625em, -0.25em, 0); }
-  75%{
+
+  75% {
     -webkit-transform: translate3d(.1875em, -0.4375em, 0);
             transform: translate3d(.1875em, -0.4375em, 0); }
-  87.5%{
+
+  87.5% {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
             transform: translate3d(-0.0625em, -0.5625em, 0); } }
 
@@ -1164,6 +1172,9 @@ article {
     .color-block-list li[data-color="#DDDDDD"] {
       background-color: #DDDDDD;
       color: #4F4F4F; }
+
+.style-guide-page :not(.page-description) + h3[id] {
+  margin-top: 3.375rem; }
 
 /**
  * Contains embedded media properly and allows them to be dynamically resized.

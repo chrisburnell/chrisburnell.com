@@ -326,6 +326,11 @@ article {
         }
     }
 }
+.style-guide-page {
+    :not(.page-description) + h3[id] {
+        margin-top: (1.5 * $default-padding);
+    }
+}
 
 /**
  * Contains embedded media properly and allows them to be dynamically resized.
