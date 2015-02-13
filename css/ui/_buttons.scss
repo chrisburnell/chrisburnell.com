@@ -62,11 +62,15 @@ button,
         }
     }
     svg {
-        width: .8em;
+        width:  .8em;
         height: .8em;
+        display: inline-block;
         margin-right: .25em;
     }
-    &[href*="/tags"] svg {
-        transform: rotateY(180deg);
+    .article-icon {
+        width: (.9 * .8em);
+    }
+    .feather-icon {
+        width: (.725 * .8em);
     }
 }

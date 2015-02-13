@@ -487,6 +487,18 @@ a {
 .twitter-link {
   color: #2795e9 !important; }
 
+.article-link {
+  color: #5F8AA6 !important; }
+
+.feather-link {
+  color: #5F8AA6 !important; }
+
+.heart-link {
+  color: #5F8AA6 !important; }
+
+.tag-link {
+  color: #5F8AA6 !important; }
+
 p {
   margin: 0; }
   p:not(:last-child) {
@@ -673,10 +685,12 @@ button, .button {
   button svg, .button svg {
     width: .8em;
     height: .8em;
+    display: inline-block;
     margin-right: .25em; }
-  button[href*="/tags"] svg, .button[href*="/tags"] svg {
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg); }
+  button .article-icon, .button .article-icon {
+    width: .72em; }
+  button .feather-icon, .button .feather-icon {
+    width: .58em; }
 
 /*------------------------------------*\
     $HEADER
@@ -1060,7 +1074,7 @@ article {
 /**
  * For Featured Pens, `.icon` is a child of the `li`
  */
-.small-articles-list .icon {
+.small-articles-list svg {
   opacity: 0.05;
   width: 6.25em !important;
   height: 6.25em;
@@ -1068,23 +1082,20 @@ article {
   position: absolute;
   top: 50%;
   right: .5em;
+  stroke: #4F4F4F;
+  stroke-width: 1;
   z-index: -1;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
   @media (max-width: 500px) {
-    .small-articles-list .icon {
+    .small-articles-list svg {
       width: 4em !important;
       height: 4em; } }
-  .small-articles-list .icon svg {
-    stroke: #4F4F4F;
-    stroke-width: 1; }
-.small-articles-list a:hover .icon, .small-articles-list a:focus .icon, .small-articles-list a:active .icon {
+.small-articles-list a:hover svg, .small-articles-list a:focus svg, .small-articles-list a:active svg {
   opacity: 0.25;
-  text-decoration: none; }
-  .small-articles-list a:hover .icon svg, .small-articles-list a:focus .icon svg, .small-articles-list a:active .icon svg {
-    stroke-width: 2; }
+  stroke-width: 2; }
 
 .pens-introduction {
   padding-bottom: 1.25rem;
@@ -1109,10 +1120,6 @@ article {
     @media (min-width: 501px) {
       .articles-navigation button + button, .articles-navigation button + .button, .articles-navigation .button + button, .articles-navigation .button + .button {
         margin-left: 1.875em; } }
-
-.show-comments:before, .show-comments:active:before {
-  content: "\2711\00a0\00a0";
-  position: relative; }
 
 .comments {
   text-align: center; }
@@ -1511,6 +1518,14 @@ pre {
     width: 31px; }
   .icon.twitter-icon, .icon.twitter-link {
     width: 37px; }
+  .icon.article-icon, .icon.article-link {
+    width: 36px; }
+  .icon.feather-icon, .icon.feather-link {
+    width: 29px; }
+  .icon.heart-icon, .icon.heart-link {
+    width: 40px; }
+  .icon.tag-icon, .icon.tag-link {
+    width: 40px; }
   .icon svg {
     width: 100%;
     height: 100%;

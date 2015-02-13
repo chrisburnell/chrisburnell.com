@@ -207,7 +207,7 @@ article {
  * For Featured Pens, `.icon` is a child of the `li`
  */
 .small-articles-list {
-    .icon {
+    svg {
         opacity: ($opacity-low / 2);
         width:  6.25em !important; // override `_icons.scss` + 4px
         height: 6.25em;
@@ -215,6 +215,8 @@ article {
         position: absolute;
         top: 50%;
         right: .5em;
+        stroke: $text-color;
+        stroke-width: 1;
         @include z-index("below");
         @include transition;
         @include translate3d(0, -50%, 0);
@@ -222,19 +224,12 @@ article {
             width:  4em !important;
             height: 4em;
         }
-        svg {
-            stroke: $text-color;
-            stroke-width: 1;
-        }
     }
-    a:hover .icon,
-    a:focus .icon,
-    a:active .icon {
+    a:hover svg,
+    a:focus svg,
+    a:active svg {
         opacity: $opacity-medium;
-        text-decoration: none;
-        svg {
-            stroke-width: 2;
-        }
+        stroke-width: 2;
     }
 }
 
@@ -274,13 +269,6 @@ article {
     }
 }
 
-.show-comments {
-    &:before,
-    &:active:before {
-        content: "\2711\00a0\00a0";
-        position: relative;
-    }
-}
 .comments {
     text-align: center;
     @include media(">medium") {

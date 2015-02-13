@@ -8,7 +8,7 @@
             {% assign featuredPensCounter = featuredPensCounter | plus: 1 %}
             <li>
                 <a href="{{ post.url }}">
-                    <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                    <svg class="codepen-icon"><use xlink:href="#svg-codepen" /></svg>
                     <h4 class="small-article-title">{{ post.title }}</h4>
                     {% if post.introduction %}
                         <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' |  replace: ',...', '...' }}</p>

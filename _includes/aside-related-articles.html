@@ -6,7 +6,7 @@
                 <li>
                     <a href="{{ post.url }}">
                         {% if post.category == "codepen" %}
-                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                            <svg class="codepen-icon"><use xlink:href="#svg-codepen" /></svg>
                         {% endif %}
                         <h4 class="small-article-title">{{ post.title }}</h4>
                         {% if post.introduction %}

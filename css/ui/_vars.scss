@@ -48,14 +48,17 @@ $icon-size:  40px  !default;
 $codepen-color:  #212121               !default;
 $github-color:   #333333               !default;
 $lastfm-color:   #E31B23               !default;
-$rss-color:      $blue                 !default;
 $twitter-color:  darken(#55ACEE, 10%)  !default;
 /// Create Brands Array (name,  colour,  icon width:height ratio)
 $brands:  codepen  $codepen-color  1.025,
           github   $github-color   0.950,
           lastfm   $lastfm-color   1.000,
-          rss      $rss-color      0.775,
-          twitter  $twitter-color  0.925;
+          rss      $blue           0.775,
+          twitter  $twitter-color  0.925,
+          article  $blue           0.900,
+          feather  $blue           0.725,
+          heart    $blue           1.000,
+          tag      $blue           1.000;
 
 /// Coding Language $variables
 $css-color:         #016FBA      !default;
