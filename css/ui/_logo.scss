@@ -22,10 +22,10 @@
     &:active {
         text-decoration: none;
     }
-    @include media("screen", ">medium") {
+    @include media(">medium") {
         float: left;
     }
-    @include media("screen", "<=small") {
+    @include media("<=small") {
         font-size: 2.75em;
     }
     &:active {

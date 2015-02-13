@@ -16,10 +16,10 @@ footer {
     .copyright,
     .social-icon-list {
         overflow: hidden;
-        @include media("screen", ">medium") {
+        @include media(">medium") {
             float: left;
         }
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             width: 100%;
             text-align: center;
         }
@@ -27,7 +27,7 @@ footer {
     .social-icon-list {
         float: right;
         margin-top: .3125em;
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             margin-top: .625em;
         }
         li {
@@ -60,7 +60,7 @@ footer {
             &:active {
                 @include translate3d(0, .143em, 0);
             }
-            @include media("screen", "<=small") {
+            @include media("<=small") {
                 margin-right: .5em;
             }
             svg {
@@ -73,14 +73,14 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
-        @include media("screen", "<=small") {
+        @include media("<=small") {
             .style-guide-link {
                 display: block;
             }
         }
         .footer-spacer {
             color: $text-color-alt;
-            @include media("screen", "<=small") {
+            @include media("<=small") {
                 display: none;
             }
         }

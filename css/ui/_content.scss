@@ -18,10 +18,10 @@
 article {
     padding-top: $default-padding;
     border-top: $default-border solid $blue;
-    @include media("screen", ">medium") {
+    @include media(">medium") {
         padding-left: 16.875em;
     }
-    @include media("screen", "<=medium") {
+    @include media("<=medium") {
         /**
          * When you hit the `medium` media query, `article`, `article-list`, and
          * `aside` becomes full width and `aside.author-information` pushes to
@@ -41,7 +41,7 @@ article {
     &:nth-child(odd) {
         background-color: $black-light;
     }
-    @include media("screen", "<=medium") {
+    @include media("<=medium") {
         padding-top: 1.875em;
         padding-bottom: 1.875em;
         text-align: center;
@@ -56,7 +56,7 @@ article {
         @extend %rounded;
         width: 810px;
         margin-bottom: 1em;
-        @include media("screen", "<=small") {
+        @include media("<=small") {
             width: 500px;
         }
     }
@@ -70,7 +70,7 @@ article {
         margin-top: -0.2em; // make sure text cap-height aligns to the `aside`
         margin-bottom: 1em;
         line-height: 1.4em;
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             margin-bottom: 1.385em;
         }
     }
@@ -83,13 +83,13 @@ article {
     .article-title,
     .article-date,
     .article-introduction {
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             text-align: left;
         }
     }
     .article-introduction {
         margin-top: -5px; // align text to author-image
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             margin-top: 0;
         }
         .article-banner + & {
@@ -126,10 +126,10 @@ article {
         &:after {
             content: "\00a0\2192";
         }
-        @include media("screen", ">medium") {
+        @include media(">medium") {
             float: right;
         }
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             display: block;
             margin-top: $default-margin;
         }
@@ -143,7 +143,7 @@ article {
     margin: 0 -0.5em 1.5em;
     font-family: $secondary-font-stack;
     line-height: 1.25em;
-    @include media("screen", "<=medium") {
+    @include media("<=medium") {
         margin-bottom: 1.875em;
     }
     li {
@@ -158,7 +158,7 @@ article {
                 margin-top: 1em;
             }
         }
-        @include media("screen", "<=small") {
+        @include media("<=small") {
             width: 100%;
             & + li {
                 margin-top: 1em;
@@ -218,7 +218,7 @@ article {
         @include z-index("below");
         @include transition;
         @include translate3d(0, -50%, 0);
-        @include media("screen", "<=small") {
+        @include media("<=small") {
             width:  4em !important;
             height: 4em;
         }
@@ -248,7 +248,7 @@ article {
     padding: $default-padding 0;
     border-top: ($default-border / 2) solid $black-medium;
     text-align: center;
-    @include media("screen", "<=small") {
+    @include media("<=small") {
         &:not(:last-child) {
             padding-bottom: 0;
         }
@@ -260,20 +260,16 @@ article {
     button,
     .button {
         display: inline-block;
-        @include media("screen", "<=small") {
+        @include media("<=small") {
             &:last-child {
                 margin-top: .6875em;
             }
         }
-        @include media("screen", ">small") {
+        @include media(">small") {
             & + button,
             & + .button {
                 margin-left: 1.875em;
             }
-        }
-        svg {
-            width: 1em;
-            height: .775em; // follows the width:height ratio of the RSS icon
         }
     }
 }
@@ -287,7 +283,7 @@ article {
 }
 .comments {
     text-align: center;
-    @include media("screen", ">medium") {
+    @include media(">medium") {
         .pagination + & {
             padding-top: $default-padding;
         }

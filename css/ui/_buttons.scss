@@ -56,9 +56,17 @@ button,
         opacity: .4;
     }
     .not-found-page & {
-        @include media("screen", "<=medium") {
+        @include media("<=medium") {
             display: block;
             margin: 0 auto $default-margin;
         }
+    }
+    svg {
+        width: .8em;
+        height: .8em;
+        margin-right: .25em;
+    }
+    &[href*="/tags"] svg {
+        transform: rotateY(180deg);
     }
 }

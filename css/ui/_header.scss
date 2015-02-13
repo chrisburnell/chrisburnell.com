@@ -2,7 +2,7 @@
     $HEADER
 \*------------------------------------*/
 
-@include media("screen", "<=medium") {
+@include media("<=medium") {
     header {
         text-align: center;
     }
