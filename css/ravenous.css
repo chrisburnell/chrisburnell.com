@@ -360,7 +360,7 @@ body {
 
 .wrap {
   width: auto;
-  max-width: 1120px;
+  max-width: 1140px;
   padding-right: 1.25rem;
   padding-left: 1.25rem;
   margin-right: auto;
@@ -379,7 +379,7 @@ body {
  * Allow for fixed-width content
  */
 .fixed-width {
-  width: 1120px; }
+  width: 1140px; }
 
 /**
  * Hide things... ’nuff said
@@ -551,7 +551,7 @@ dl {
         min-width: 10em;
         padding-right: 1.25rem; } }
   dl dd {
-    width: 1120px;
+    width: 1140px;
     display: table-cell;
     margin: 0;
     overflow: hidden;
@@ -912,7 +912,7 @@ article {
   border-top: 0.25rem solid #5F8AA6; }
   @media (min-width: 769px) {
     article {
-      padding-left: 16.875em; } }
+      padding-left: 18.125rem; } }
   @media (max-width: 768px) {
     article {
       /**
@@ -1209,11 +1209,11 @@ iframe, video {
  * list of articles. The math is calculated as in the articles partial.
  */
 aside {
-  width: 15.1875em; }
+  width: 15.875rem; }
   @media (min-width: 769px) {
     aside {
       float: left;
-      margin-left: -16.875em; } }
+      margin-left: -18.125rem; } }
   @media (max-width: 768px) {
     aside {
       width: 100%; }

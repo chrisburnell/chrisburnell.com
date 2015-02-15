@@ -4,7 +4,7 @@
 
 /// Wrapper and @media $variables
 $wrapper-padding:      1.25rem  !default;
-$max-wrapper-width:    1120px   !default;
+$max-wrapper-width:    1140px   !default;
 $medium-wrapper-width:  768px   !default;
 $small-wrapper-width:   500px   !default;
 $breakpoints:  (
@@ -17,6 +17,7 @@ $breakpoints:  (
 $default-margin:   $wrapper-padding  !default;
 $default-padding:  2.25rem           !default;
 $default-border:   0.25rem           !default;
+$aside-width:    15.875rem           !default;
 
 /// Font Stacks
 $base-font-size:        16px                                        !default;

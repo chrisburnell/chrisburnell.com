@@ -19,7 +19,7 @@ article {
     padding-top: $default-padding;
     border-top: $default-border solid $blue;
     @include media(">medium") {
-        padding-left: 16.875em;
+        padding-left: ($aside-width + $default-padding);
     }
     @include media("<=medium") {
         /**

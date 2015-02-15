@@ -7,10 +7,10 @@
  * list of articles. The math is calculated as in the articles partial.
  */
 aside {
-    width: 15.1875em;
+    width: $aside-width;
     @include media(">medium") {
         float: left;
-        margin-left: -16.875em;
+        margin-left: -($aside-width + $default-padding);
     }
     @include media("<=medium") {
         width: 100%;
