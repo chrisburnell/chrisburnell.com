@@ -16,7 +16,7 @@ description: All of my featured pens listed on one page.
                 {% unless post.draft or post.category != "codepen" %}
                     <li>
                         <a href="{{ post.url }}">
-                            <span class="icon  codepen-icon" aria-hidden="true"><svg><use xlink:href="#svg-codepen" /></svg></span>
+                            <svg><use xlink:href="#svg-codepen" /></svg>
                             <h4 class="small-article-title">{{ post.title }}</h4>
                             <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         </a>
