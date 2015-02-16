@@ -31,20 +31,22 @@ article {
         flex-direction: column;
     }
 }
-.articles-list li {
-    width: 100%;
-    display: inline-block;
-    clear: both;
-    padding: 1.5em 1em;
-    border-top: ($default-border / 2) solid $black-medium;
-    position: relative;
-    &:nth-child(odd) {
-        background-color: $black-light;
-    }
-    @include media("<=medium") {
-        padding-top: 1.875em;
-        padding-bottom: 1.875em;
-        text-align: center;
+.articles-list {
+    li {
+        width: 100%;
+        display: inline-block;
+        clear: both;
+        padding: 1.5em 1em;
+        border-top: ($default-border / 2) solid $black-medium;
+        position: relative;
+        &:nth-child(odd) {
+            background-color: $black-light;
+        }
+        @include media("<=medium") {
+            padding-top: 1.875em;
+            padding-bottom: 1.875em;
+            text-align: center;
+        }
     }
     .article-title,
     .article-date,

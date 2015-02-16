@@ -12,7 +12,7 @@ description: All of my articles listed on one page.
                 {% unless post.draft or post.category != "article" %}
                     <li>
                         <h2 class="article-title">
-                            <a href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+                            <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
                         </h2>
                         <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
                         {% if post.introduction %}
