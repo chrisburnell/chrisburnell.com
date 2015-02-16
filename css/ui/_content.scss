@@ -240,14 +240,9 @@ article {
 
 .articles-navigation {
     width: 100%;
-    padding: $default-padding 0;
+    padding: ($default-padding - .182) 0 $default-padding;
     border-top: ($default-border / 2) solid $black-medium;
     text-align: center;
-    @include media("<=small") {
-        &:not(:last-child) {
-            padding-bottom: 0;
-        }
-    }
     .about-page & {
         border-top: 0;
         padding: $default-margin 0;
@@ -255,11 +250,6 @@ article {
     button,
     .button {
         display: inline-block;
-        @include media("<=small") {
-            &:last-child {
-                margin-top: .6875em;
-            }
-        }
         @include media(">small") {
             & + button,
             & + .button {

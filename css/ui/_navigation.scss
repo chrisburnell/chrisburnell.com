@@ -62,8 +62,7 @@
         .home-page .primary-navigation-home a,
         .about-page .primary-navigation-about a,
         .archive-page .primary-navigation-archive a,
-        .pens-page .primary-navigation-archive a,
-        .tags-page .primary-navigation-archive a {
+        .pens-page .primary-navigation-pens a {
             color: $text-color;
             padding-bottom: .55em;
             border-bottom-width: .2em;
@@ -72,8 +71,7 @@
             .home-page .primary-navigation-home a:after,
             .about-page .primary-navigation-about a:after,
             .archive-page .primary-navigation-archive a:after,
-            .pens-page .primary-navigation-archive a:after,
-            .tags-page .primary-navigation-archive a:after {
+            .pens-page .primary-navigation-pens a:after {
                 content: "";
                 border-top:   .5em solid $blue;
                 border-right: .5em solid transparent;
