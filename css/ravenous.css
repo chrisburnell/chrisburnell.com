@@ -857,6 +857,12 @@ button, .button {
         float: left; } }
     .primary-navigation-list li + li {
       margin-left: 1em; }
+      @media (max-width: 768px) {
+        .primary-navigation-list li + li {
+          margin-left: .5em; } }
+      @media (max-width: 500px) {
+        .primary-navigation-list li + li {
+          margin-left: .25em; } }
   .primary-navigation-list a {
     color: #737373;
     display: block;

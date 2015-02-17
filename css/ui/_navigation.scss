@@ -28,6 +28,12 @@
             }
             + li {
                 margin-left: 1em;
+                @include media("<=medium") {
+                    margin-left: .5em;
+                }
+                @include media("<=small") {
+                    margin-left: .25em;
+                }
             }
         }
         a {
