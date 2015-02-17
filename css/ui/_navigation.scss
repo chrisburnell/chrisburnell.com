@@ -59,6 +59,10 @@
             &:active {
                 @include translate3d(0, .2em, 0);
             }
+            @include media("<=small") {
+                padding-left:  .5em;
+                padding-right: .5em;
+            }
         }
     }
         // Primary Navigation Hover Effect

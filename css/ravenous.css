@@ -881,6 +881,10 @@ button, .button {
     .primary-navigation-list a:active {
       -webkit-transform: translate3d(0, .2em, 0);
               transform: translate3d(0, .2em, 0); }
+    @media (max-width: 500px) {
+      .primary-navigation-list a {
+        padding-left: .5em;
+        padding-right: .5em; } }
 
 .primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a, .pens-page .primary-navigation-pens a {
   color: #4F4F4F;
