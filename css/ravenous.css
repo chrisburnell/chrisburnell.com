@@ -1090,7 +1090,7 @@ article {
     margin-top: .3125em; }
 
 /**
- * For Featured Pens, `.icon` is a child of the `li`
+ * For Featured Pens, `svg` is a child of the `li`
  */
 .small-articles-list svg {
   opacity: 0.05;
