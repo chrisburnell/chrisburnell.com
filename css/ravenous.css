@@ -1101,7 +1101,6 @@ article {
   top: 50%;
   right: .5em;
   stroke: #4F4F4F;
-  stroke-width: 1;
   z-index: -1;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -1112,8 +1111,7 @@ article {
       width: 4em !important;
       height: 4em; } }
 .small-articles-list a:hover svg, .small-articles-list a:focus svg, .small-articles-list a:active svg {
-  opacity: 0.25;
-  stroke-width: 2; }
+  opacity: 0.25; }
 
 .pens-introduction {
   padding-bottom: 1.25rem;

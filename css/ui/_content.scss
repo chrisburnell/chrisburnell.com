@@ -218,7 +218,6 @@ article {
         top: 50%;
         right: .5em;
         stroke: $text-color;
-        stroke-width: 1;
         @include z-index("below");
         @include transition;
         @include translate3d(0, -50%, 0);
@@ -231,7 +230,6 @@ article {
     a:focus svg,
     a:active svg {
         opacity: $opacity-medium;
-        stroke-width: 2;
     }
 }
 
