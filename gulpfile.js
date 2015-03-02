@@ -29,10 +29,10 @@ gulp.task('css', function() {
             style: 'expanded'
         }))
         .pipe(autoprefixer('last 2 versions', '> 1%'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(cssPath))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
-        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
         .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
 });
