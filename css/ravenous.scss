@@ -10,10 +10,9 @@
  * INCLUDE MEDIA............. Import Include Media for dynamic media queries.
  * LAYOUT.................... Set the general page layout.
  * TYPOGRAPHY................ Set the default content styles.
- * BUTTONS................... Set the default button styles.
- * HEADER.................... Set the header styles.
  * LOGO...................... Set the logo styles.
- * NAVIGATION................ Set the navigation styles.
+ * HEADER.................... Set the header styles.
+ * BUTTONS................... Set the default button styles.
  * CONTENT................... Set the content styles.
  * ASIDES.................... Set the aside styles.
  * FOOTER.................... Set the footer styles.
@@ -28,10 +27,9 @@
 @import "ui/vars",
         "ui/layout",
         "ui/typography",
-        "ui/buttons",
-        "ui/header",
         "ui/logo",
-        "ui/navigation",
+        "ui/header",
+        "ui/buttons",
         "ui/content",
         "ui/asides",
         "ui/footer",
