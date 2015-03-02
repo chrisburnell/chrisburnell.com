@@ -7,23 +7,23 @@ button,
     @extend %non-selectable;
     background-color: $blue;
     color: $white;
-    min-width: 8em;
-    height: 2.182em;
+    min-width: 11rem;
+    height: 3rem;
     display: inline-block;
-    padding: 0 .727em .182em;
+    padding: 0 1rem .25rem;
     border: 0;
-    margin-top: .182em;
+    margin-top: .25rem;
     outline-style: none;
     position: relative;
     font-family: $heading-font-stack;
-    font-size: 1.375em;
-    line-height: 2em;
+    font-size: 1.375rem;
+    line-height: 2.75rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    border-radius: .182em;
-    box-shadow: inset 0 -0.182em 0 0 darken($blue, 10%);
+    border-radius: .25rem;
+    box-shadow: inset 0 -0.25rem 0 0 darken($blue, 10%);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     &:hover,
@@ -36,15 +36,15 @@ button,
     &:active {
         height: 2em;
         padding-bottom: 0;
-        margin-bottom: .182em;
-        box-shadow: inset 0 -0.046em 0 0 darken($blue, 10%);
-        @include translate3d(0, .182em, 0);
+        margin-bottom: .25rem;
+        box-shadow: inset 0 -1px 0 0 darken($blue, 10%);
+        @include translate3d(0, .25rem, 0);
     }
     &:before,
     &:after {
         content: "";
         width: 100%;
-        height: .182em;
+        height: .25rem;
         position: absolute;
         top: 0;
         left: 0;
@@ -52,7 +52,7 @@ button,
     }
         &:active:before,
         &:active:after {
-            top: -0.182em;
+            top: -0.25rem;
         }
     &[disabled] {
         opacity: .4;
@@ -68,6 +68,7 @@ button,
         height: .8em;
         display: inline-block;
         margin-right: .25em;
+        pointer-events: none;
     }
     .article-icon {
         width: (.9 * .8em); // .9 is width:height ratio

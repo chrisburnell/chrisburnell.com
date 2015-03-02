@@ -9,18 +9,18 @@
 }
 
 .primary-navigation {
-    padding-bottom: 1.25em;
+    padding-bottom: $default-margin;
     white-space: nowrap;
     @include media(">medium") {
         float: right;
-        padding-top: 1.5em;
+        padding-top: 1.5rem;
     }
     @include media("<=medium") {
         width: 100%;
     }
 }
     .primary-navigation-list {
-        height: 3.75em;
+        height: 3.75rem;
         @include media(">medium") {
             float: right;
         }
@@ -45,13 +45,13 @@
         a {
             color: $text-color-alt;
             display: block;
-            padding: .75em;
+            padding: .75rem 1rem;
             border-bottom: 0 solid $blue;
-            margin-bottom: .3em;
+            margin-bottom: .25rem;
             position: relative;
             font-family: $heading-font-stack;
-            font-size: 1.25em;
-            line-height: 1.25em;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
             text-transform: uppercase;
             @include transition(color                $transition-time  $transition-function,
                                 padding-bottom       $transition-time  $transition-function,
@@ -64,11 +64,11 @@
                 text-decoration: none;
             }
             &:active {
-                @include translate3d(0, .2em, 0);
+                @include translate3d(0, .2rem, 0);
             }
             @include media("<=small") {
-                padding-left:  .5em;
-                padding-right: .5em;
+                padding-left:  .75rem;
+                padding-right: .75rem;
             }
         }
     }
@@ -81,8 +81,8 @@
         .archive-page .primary-navigation-archive a,
         .pens-page .primary-navigation-pens a {
             color: $text-color;
-            padding-bottom: .55em;
-            border-bottom-width: .2em;
+            padding-bottom: .5rem;
+            border-bottom-width: $default-border;
         }
             // Primary Navigation Active Page Arrow
             .home-page .primary-navigation-home a:after,

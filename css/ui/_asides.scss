@@ -27,9 +27,8 @@ aside {
     p,
     figcaption {
         clear: both;
-        font-size: .875em;
-        @include media("<=small") {
-            font-size: 1em;
+        @include media(">small") {
+            font-size: .875rem;
         }
     }
 }
@@ -45,9 +44,9 @@ aside {
     }
 }
     .author-information {
-        margin-bottom: .5em;
+        margin-bottom: .5rem;
         font-family: $primary-font-stack;
-        font-size: .875em;
+        font-size: .875rem;
         font-style: italic;
         @include media("<=medium") {
             order: 998;
@@ -79,8 +78,8 @@ aside {
     .article-label {
         box-sizing: content-box;
         display: block;
-        margin-bottom: .5em;
-        line-height: 1.429em;
+        margin-bottom: .5rem;
+        line-height: 1.25rem;
     }
     .article-label a:after,
     .featured-pens-link:after {
@@ -89,15 +88,15 @@ aside {
     .author-image {
         @extend %rounded;
         background-size: 100%;
-        width:  6.25em;
-        height: 6.25em;
+        width:  6.25rem;
+        height: 6.25rem;
         display: inline-block;
         float: left;
-        margin-right: .625em;
+        margin-right: .625rem;
     }
     .article-tags {
         display: table-cell; // don’t wrap around `.author-image`
-        line-height: 1.429em;
+        line-height: 1.25rem;
     }
 
 @include media(">medium") {

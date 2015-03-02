@@ -79,7 +79,7 @@ article {
     .article-introduction,
     .page-description {
         margin-bottom: 1em;
-        font-size: 1.25em;
+        font-size: 1.25rem;
         line-height: 1.5em;
     }
     .article-title,
@@ -193,7 +193,7 @@ article {
     .small-article-date {
         color: $text-color-alt;
         display: block;
-        font-size: .8125em;
+        font-size: .8125rem;
         font-weight: 600;
         &:before {
             content: "\2013\0020";
@@ -276,7 +276,7 @@ article {
     }
     noscript {
         font-family: $secondary-font-stack;
-        font-size: 1.25em;
+        font-size: 1.25rem;
         font-style: italic;
     }
 }

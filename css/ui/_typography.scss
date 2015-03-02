@@ -11,13 +11,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-family: $heading-font-stack;
-    font-size: 2.625em;
+    font-size: 2.625rem;
     text-transform: uppercase;
     text-shadow: .0714em .0714em 0 $black-light;
 }
 h2 {
     font-family: $primary-font-stack;
-    font-size: 1.625em;
+    font-size: 1.625rem;
 }
 h3,
 h4,
@@ -27,13 +27,13 @@ h4,
 }
 h3,
 .articles-list .article-date {
-    font-size: 1.125em;
-    line-height: 1.875em;
+    font-size: 1.125rem;
+    line-height: 2.1rem;
     text-transform: uppercase;
 }
 h3 {
-    margin-top: .5em;
-    border-bottom: .125em solid $text-color-light;
+    margin-top: .625rem;
+    border-bottom: ($default-border / 2) solid $text-color-light;
     position: relative;
     &:not(:last-child) {
         margin-bottom: $default-margin;
@@ -77,7 +77,7 @@ a {
         font-family: $code-font-stack;
         font-size: .8125rem;
         font-weight: 600;
-        line-height: 1.875em;
+        line-height: 1em;
         text-transform: lowercase;
         vertical-align: middle;
         :hover > &,

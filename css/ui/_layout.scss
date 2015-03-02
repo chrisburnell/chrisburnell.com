@@ -58,12 +58,11 @@ body {
 // We’re goin’ up around the bend
 %rounded {
     background-clip: padding-box;
-    border-radius: .375em;
+    border-radius: .375rem;
 }
 
 // Non-selectable stuff
 %non-selectable {
-    pointer-events: none;
     user-select: none;
     -webkit-touch-callout: none;
 }

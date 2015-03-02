@@ -8,7 +8,8 @@ samp,
 var,
 .monospace {
     font-family: $code-font-stack;
-    font-size: .875em;
+    font-size: .875rem;
+    line-height: 1rem;
 }
     p code,
     ol code,
@@ -19,7 +20,7 @@ var,
     samp,
     var {
         background-color: rgba($blue, $opacity-low);
-        padding: .215em;
+        padding: 0 .25em;
         word-wrap: break-word;
         border-radius: .25em;
     }
@@ -31,10 +32,10 @@ pre {
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-light;
-        padding: 1.5em 1.5em 1em;
+        padding: 1.5rem 1.5rem 1rem;
         overflow-x: auto;
         overflow-y: hidden;
-        line-height: 1.5em;
+        line-height: 1.5rem;
         code {
             min-width: 100%;
             display: block;
@@ -56,16 +57,16 @@ pre {
         color: $white;
         width: 100%;
         display: block;
-        padding: 0 1.5em;
+        padding: 0 1.5rem;
         position: absolute;
         top: 0;
         left: 0;
         font-family: $secondary-font-stack;
-        font-size: 1.25em;
+        font-size: 1.25rem;
         font-weight: 600;
-        line-height: 2.4em;
+        line-height: $default-padding;
         text-transform: uppercase;
-        border-radius: .3em .3em 0 0;
+        border-radius: .375rem .375rem 0 0;
         @include transition;
     }
     @each $language in $coding-languages {

@@ -388,10 +388,9 @@ body {
 
 figure img, figure svg, blockquote, .article-banner, .small-articles-list a, .color-block-list li, aside:not(.author), .author-image, pre:not(.codepen), [data-lang]:before {
   background-clip: padding-box;
-  border-radius: .375em; }
+  border-radius: .375rem; }
 
 .logo, button, .button {
-  pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -410,26 +409,26 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: "league-gothic", Impact, sans-serif;
-  font-size: 2.625em;
+  font-size: 2.625rem;
   text-transform: uppercase;
   text-shadow: .0714em .0714em 0 rgba(6, 6, 6, 0.05); }
 
 h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: 1.625em; }
+  font-size: 1.625rem; }
 
 h3, h4, .articles-list .article-date {
   font-family: "proxima-nova", sans-serif;
   font-weight: 600; }
 
 h3, .articles-list .article-date {
-  font-size: 1.125em;
-  line-height: 1.875em;
+  font-size: 1.125rem;
+  line-height: 2.1rem;
   text-transform: uppercase; }
 
 h3 {
-  margin-top: .5em;
-  border-bottom: .125em solid #DDDDDD;
+  margin-top: .625rem;
+  border-bottom: 0.125rem solid #DDDDDD;
   position: relative; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
@@ -462,7 +461,7 @@ a {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: .8125rem;
   font-weight: 600;
-  line-height: 1.875em;
+  line-height: 1em;
   text-transform: lowercase;
   vertical-align: middle; }
   :hover > .heading-anchor, :focus > .heading-anchor, :active > .heading-anchor {
@@ -643,14 +642,15 @@ hr {
   padding-left: 1.923em;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
-  font-size: 3.25em;
+  font-size: 3.25rem;
   line-height: 1em;
   text-transform: uppercase;
   text-shadow: .058em .058em 0 rgba(6, 6, 6, 0.05);
   white-space: nowrap;
   z-index: 1;
   -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease; }
+          transition: all 0.2s ease;
+  will-change: transform; }
   .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
   @media (min-width: 769px) {
@@ -660,8 +660,8 @@ hr {
     .logo {
       font-size: 2.75em; } }
   .logo:active {
-    -webkit-transform: translate3d(0, .039em, 0);
-            transform: translate3d(0, .039em, 0); }
+    -webkit-transform: translate3d(0, .125rem, 0);
+            transform: translate3d(0, .125rem, 0); }
     .logo:active svg {
       /**
              * In order to get `.logo svg` to travel up 2x the distance the
@@ -671,7 +671,7 @@ hr {
              * go up. We cannot use `translate` as it is used below for
              * further animating.
              */
-      top: -0.117em; }
+      top: -0.4rem; }
   .logo svg {
     width: 2.307em;
     height: 2.307em;
@@ -770,18 +770,18 @@ hr {
     text-align: center; } }
 
 .primary-navigation {
-  padding-bottom: 1.25em;
+  padding-bottom: 1.25rem;
   white-space: nowrap; }
   @media (min-width: 769px) {
     .primary-navigation {
       float: right;
-      padding-top: 1.5em; } }
+      padding-top: 1.5rem; } }
   @media (max-width: 768px) {
     .primary-navigation {
       width: 100%; } }
 
 .primary-navigation-list {
-  height: 3.75em; }
+  height: 3.75rem; }
   @media (min-width: 769px) {
     .primary-navigation-list {
       float: right; } }
@@ -804,13 +804,13 @@ hr {
   .primary-navigation-list a {
     color: #737373;
     display: block;
-    padding: .75em;
+    padding: .75rem 1rem;
     border-bottom: 0 solid #5F8AA6;
-    margin-bottom: .3em;
+    margin-bottom: .25rem;
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
-    font-size: 1.25em;
-    line-height: 1.25em;
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
     text-transform: uppercase;
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
             transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
@@ -818,17 +818,17 @@ hr {
     .primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active {
       text-decoration: none; }
     .primary-navigation-list a:active {
-      -webkit-transform: translate3d(0, .2em, 0);
-              transform: translate3d(0, .2em, 0); }
+      -webkit-transform: translate3d(0, .2rem, 0);
+              transform: translate3d(0, .2rem, 0); }
     @media (max-width: 500px) {
       .primary-navigation-list a {
-        padding-left: .5em;
-        padding-right: .5em; } }
+        padding-left: .75rem;
+        padding-right: .75rem; } }
 
 .primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active, .home-page .primary-navigation-home a, .about-page .primary-navigation-about a, .archive-page .primary-navigation-archive a, .pens-page .primary-navigation-pens a {
   color: #4F4F4F;
-  padding-bottom: .55em;
-  border-bottom-width: .2em; }
+  padding-bottom: .5rem;
+  border-bottom-width: 0.25rem; }
 
 .home-page .primary-navigation-home a:after, .about-page .primary-navigation-about a:after, .archive-page .primary-navigation-archive a:after, .pens-page .primary-navigation-pens a:after {
   content: "";
@@ -847,23 +847,23 @@ hr {
 button, .button {
   background-color: #5F8AA6;
   color: #F9F9F9;
-  min-width: 8em;
-  height: 2.182em;
+  min-width: 11rem;
+  height: 3rem;
   display: inline-block;
-  padding: 0 .727em .182em;
+  padding: 0 1rem .25rem;
   border: 0;
-  margin-top: .182em;
+  margin-top: .25rem;
   outline-style: none;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
-  font-size: 1.375em;
-  line-height: 2em;
+  font-size: 1.375rem;
+  line-height: 2.75rem;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  border-radius: .182em;
-  box-shadow: inset 0 -0.182em 0 0 #4b6f87;
+  border-radius: .25rem;
+  box-shadow: inset 0 -0.25rem 0 0 #4b6f87;
   -webkit-transition: background-color 0.2s ease;
           transition: background-color 0.2s ease;
   will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform; }
@@ -874,20 +874,20 @@ button, .button {
   button:active, .button:active {
     height: 2em;
     padding-bottom: 0;
-    margin-bottom: .182em;
-    box-shadow: inset 0 -0.046em 0 0 #4b6f87;
-    -webkit-transform: translate3d(0, .182em, 0);
-            transform: translate3d(0, .182em, 0); }
+    margin-bottom: .25rem;
+    box-shadow: inset 0 -1px 0 0 #4b6f87;
+    -webkit-transform: translate3d(0, .25rem, 0);
+            transform: translate3d(0, .25rem, 0); }
   button:before, button:after, .button:before, .button:after {
     content: "";
     width: 100%;
-    height: .182em;
+    height: .25rem;
     position: absolute;
     top: 0;
     left: 0;
     will-change: top; }
   button:active:before, button:active:after, .button:active:before, .button:active:after {
-    top: -0.182em; }
+    top: -0.25rem; }
   button[disabled], .button[disabled] {
     opacity: .4; }
   @media (max-width: 768px) {
@@ -898,7 +898,8 @@ button, .button {
     width: .8em;
     height: .8em;
     display: inline-block;
-    margin-right: .25em; }
+    margin-right: .25em;
+    pointer-events: none; }
   button .article-icon, .button .article-icon {
     width: .72em; }
   button .feather-icon, .button .feather-icon {
@@ -980,7 +981,7 @@ article {
 
 .article-introduction, .page-description {
   margin-bottom: 1em;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 1.5em; }
 
 @media (max-width: 768px) {
@@ -1083,7 +1084,7 @@ article {
   .small-articles-list .small-article-date {
     color: #737373;
     display: block;
-    font-size: .8125em;
+    font-size: .8125rem;
     font-weight: 600; }
     .small-articles-list .small-article-date:before {
       content: "\2013\0020"; }
@@ -1146,7 +1147,7 @@ article {
     top: 0; }
   .comments noscript {
     font-family: "proxima-nova", sans-serif;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-style: italic; }
 
 /**
@@ -1231,11 +1232,10 @@ aside {
         aside:not(.author):last-child {
           margin-bottom: 0; } }
   aside p, aside figcaption {
-    clear: both;
-    font-size: .875em; }
-    @media (max-width: 500px) {
+    clear: both; }
+    @media (min-width: 501px) {
       aside p, aside figcaption {
-        font-size: 1em; } }
+        font-size: .875rem; } }
 
 /*aside*/
 .author {
@@ -1259,9 +1259,9 @@ aside {
         margin-top: 1.25rem; } }
 
 .author-information {
-  margin-bottom: .5em;
+  margin-bottom: .5rem;
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: .875em;
+  font-size: .875rem;
   font-style: italic; }
   @media (max-width: 768px) {
     .author-information {
@@ -1292,23 +1292,23 @@ aside {
 .author-name, .author-age, .author-employer, .article-date, .article-label {
   box-sizing: content-box;
   display: block;
-  margin-bottom: .5em;
-  line-height: 1.429em; }
+  margin-bottom: .5rem;
+  line-height: 1.25rem; }
 
 .article-label a:after, .featured-pens-link:after {
   content: "\00a0\2192"; }
 
 .author-image {
   background-size: 100%;
-  width: 6.25em;
-  height: 6.25em;
+  width: 6.25rem;
+  height: 6.25rem;
   display: inline-block;
   float: left;
-  margin-right: .625em; }
+  margin-right: .625rem; }
 
 .article-tags {
   display: table-cell;
-  line-height: 1.429em; }
+  line-height: 1.25rem; }
 
 @media (min-width: 769px) {
   .featured-pens, .related-articles {
@@ -1336,7 +1336,7 @@ footer {
   color: #DDDDDD;
   width: 100%;
   padding: 2.25rem 0;
-  border-top: .286em solid #5F8AA6;
+  border-top: 0.25rem solid #5F8AA6;
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -1410,11 +1410,12 @@ footer {
 \*------------------------------------*/
 code, kbd, samp, var, .monospace {
   font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: .875em; }
+  font-size: .875rem;
+  line-height: 1rem; }
 
 p code, ol code, ul code, ins, kbd, mark, samp, var {
   background-color: rgba(95, 138, 166, 0.1);
-  padding: .215em;
+  padding: 0 .25em;
   word-wrap: break-word;
   border-radius: .25em; }
 
@@ -1424,10 +1425,10 @@ pre {
     margin-bottom: 1.25rem; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
-    padding: 1.5em 1.5em 1em;
+    padding: 1.5rem 1.5rem 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    line-height: 1.5em; }
+    line-height: 1.5rem; }
     pre:not(.codepen) code {
       min-width: 100%;
       display: block; }
@@ -1446,16 +1447,16 @@ pre {
     color: #F9F9F9;
     width: 100%;
     display: block;
-    padding: 0 1.5em;
+    padding: 0 1.5rem;
     position: absolute;
     top: 0;
     left: 0;
     font-family: "proxima-nova", sans-serif;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 2.4em;
+    line-height: 2.25rem;
     text-transform: uppercase;
-    border-radius: .3em .3em 0 0;
+    border-radius: .375rem .375rem 0 0;
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease; }
   [data-lang].language-css:before {
