@@ -108,6 +108,11 @@ $transition-function:  ease  !default;
     transition: #{$values};
 }
 
+/// Will-change
+@mixin will-change($values...) {
+    will-change: #{$values};
+}
+
 /// Translate3D
 @mixin translate3d($values...) {
     @if( length($values) == 0 ) {

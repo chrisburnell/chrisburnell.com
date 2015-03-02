@@ -54,6 +54,7 @@
         @include animation-play-state(paused);
         @include transition;
         @include translate3d(0, -0.8125em, 0);
+        @include will-change(top);
     }
     &:hover svg,
     &:focus svg,

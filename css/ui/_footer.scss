@@ -52,6 +52,7 @@ footer {
             text-indent: 100%;
             white-space: nowrap;
             @include transition;
+            @include will-change(transform);
             &:hover,
             &:focus,
             &:active {

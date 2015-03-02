@@ -46,8 +46,9 @@ h4 {
 a {
     color: $blue;
     text-decoration: none;
-    @include transition(background $transition-time $transition-function,
-                        color      $transition-time $transition-function);
+    @include transition(background  $transition-time  $transition-function,
+                        color       $transition-time  $transition-function);
+    @include will-change(background, color);
     &:hover,
     &:focus,
     &:active {

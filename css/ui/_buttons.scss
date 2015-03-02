@@ -25,6 +25,7 @@ button,
     border-radius: .182em;
     box-shadow: inset 0 -0.182em 0 0 darken($blue, 10%);
     @include transition(background-color);
+    @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     &:hover,
     &:focus,
     &:active {
@@ -47,6 +48,7 @@ button,
         position: absolute;
         top: 0;
         left: 0;
+        @include will-change(top);
     }
         &:active:before,
         &:active:after {
@@ -68,9 +70,9 @@ button,
         margin-right: .25em;
     }
     .article-icon {
-        width: (.9 * .8em);
+        width: (.9 * .8em); // .9 is width:height ratio
     }
     .feather-icon {
-        width: (.725 * .8em);
+        width: (.725 * .8em); // .725 is width:height ratio
     }
 }

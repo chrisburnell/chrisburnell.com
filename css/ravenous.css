@@ -391,6 +391,7 @@ figure img, figure svg, blockquote, .article-banner, .small-articles-list a, .co
   border-radius: .375em; }
 
 .logo, button, .button {
+  pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -440,7 +441,8 @@ a {
   color: #5F8AA6;
   text-decoration: none;
   -webkit-transition: background 0.2s ease, color 0.2s ease;
-          transition: background 0.2s ease, color 0.2s ease; }
+          transition: background 0.2s ease, color 0.2s ease;
+  will-change: background, color; }
   a:hover, a:focus, a:active {
     text-decoration: underline; }
   h2 a, h3 a {
@@ -685,7 +687,8 @@ hr {
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
     -webkit-transform: translate3d(0, -0.8125em, 0);
-            transform: translate3d(0, -0.8125em, 0); }
+            transform: translate3d(0, -0.8125em, 0);
+    will-change: top; }
   .logo:hover svg, .logo:focus svg, .logo:active svg {
     /**
          * Only animate the image when the user hovers `.logo`.
@@ -810,7 +813,8 @@ hr {
     line-height: 1.25em;
     text-transform: uppercase;
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-            transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease; }
+            transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
+    will-change: color, padding-bottom, border-bottom-width, transform; }
     .primary-navigation-list a:hover, .primary-navigation-list a:focus, .primary-navigation-list a:active {
       text-decoration: none; }
     .primary-navigation-list a:active {
@@ -861,7 +865,8 @@ button, .button {
   border-radius: .182em;
   box-shadow: inset 0 -0.182em 0 0 #4b6f87;
   -webkit-transition: background-color 0.2s ease;
-          transition: background-color 0.2s ease; }
+          transition: background-color 0.2s ease;
+  will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform; }
   button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active {
     background-color: #6f96af;
     outline-style: auto;
@@ -879,7 +884,8 @@ button, .button {
     height: .182em;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    will-change: top; }
   button:active:before, button:active:after, .button:active:before, .button:active:after {
     top: -0.182em; }
   button[disabled], .button[disabled] {
@@ -997,7 +1003,8 @@ article {
     border-bottom: .077em solid transparent;
     margin-left: -0.27em;
     -webkit-transition: border-color 0.2s ease;
-            transition: border-color 0.2s ease; }
+            transition: border-color 0.2s ease;
+    will-change: color, border-bottom-color; }
     .article-title .article-title-link:hover, .article-title .article-title-link:focus, .article-title .article-title-link:active {
       color: #4F4F4F;
       border-bottom-color: #5F8AA6;
@@ -1064,7 +1071,8 @@ article {
     display: block;
     padding: .5em;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    will-change: background-color; }
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(6, 6, 6, 0.05);
       text-decoration: none; }
@@ -1101,7 +1109,8 @@ article {
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
   -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0); }
+          transform: translate3d(0, -50%, 0);
+  will-change: opacity; }
   @media (max-width: 500px) {
     .small-articles-list svg {
       width: 4em !important;
@@ -1368,7 +1377,8 @@ footer {
   text-indent: 100%;
   white-space: nowrap;
   -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease; }
+          transition: all 0.2s ease;
+  will-change: transform; }
   .home-link:hover, .home-link:focus, .home-link:active {
     text-decoration: none; }
   .home-link:active {
@@ -1510,7 +1520,8 @@ pre {
   text-indent: 100%;
   white-space: nowrap;
   -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease; }
+          transition: all 0.2s ease;
+  will-change: opacity; }
   .icon:hover, .icon:focus, .icon:active {
     opacity: 1;
     text-decoration: none; }

@@ -15,6 +15,7 @@
     text-indent: 100%;
     white-space: nowrap;
     @include transition;
+    @include will-change(opacity);
     &:hover,
     &:focus,
     &:active {
