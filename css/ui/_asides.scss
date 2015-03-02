@@ -17,7 +17,7 @@ aside {
         &:not(.author) {
             @extend %rounded;
             background: $black-light;
-            padding: 1em;
+            padding: 1rem;
             margin-bottom: $default-margin;
             &:last-child {
                 margin-bottom: 0;

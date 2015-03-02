@@ -36,15 +36,15 @@ article {
         width: 100%;
         display: inline-block;
         clear: both;
-        padding: 1.5em 1em;
+        padding: 1.5rem 1rem;
         border-top: ($default-border / 2) solid $black-medium;
         position: relative;
         &:nth-child(odd) {
             background-color: $black-light;
         }
         @include media("<=medium") {
-            padding-top: 1.875em;
-            padding-bottom: 1.875em;
+            padding-top:    1.875rem;
+            padding-bottom: 1.875rem;
             text-align: center;
         }
     }
@@ -57,7 +57,7 @@ article {
     .article-banner {
         @extend %rounded;
         width: 810px;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         @include media("<=small") {
             width: 500px;
         }
@@ -65,22 +65,19 @@ article {
     .article-title,
     .page-title,
     .site-tagline {
-        margin-bottom: .75em;
+        margin-bottom: .75rem;
     }
     .site-description {
-        max-width: 24em;
-        margin-top: -0.2em; // make sure text cap-height aligns to the `aside`
-        margin-bottom: 1em;
-        line-height: 1.4em;
-        @include media("<=medium") {
-            margin-bottom: 1.385em;
-        }
+        max-width: 30rem;
+        margin-top: -0.25rem; // make sure text cap-height aligns to the `aside`
+        margin-bottom: 1rem;
+        line-height: 1.75rem;
     }
     .article-introduction,
     .page-description {
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         font-size: 1.25rem;
-        line-height: 1.5em;
+        line-height: 1.875rem;
     }
     .article-title,
     .article-date,
@@ -102,9 +99,9 @@ article {
         width: 100%;
         .article-title-link {
             display: inline-block;
-            padding: 0 .27em;
-            border-bottom: .077em solid transparent;
-            margin-left: -0.27em;
+            padding: 0 .5rem;
+            border-bottom: ($default-border / 2) solid transparent;
+            margin-left: -0.5rem;
             @include transition(border-color);
             @include will-change(color, border-bottom-color);
             &:hover,

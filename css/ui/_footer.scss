@@ -26,14 +26,14 @@ footer {
     }
     .social-icon-list {
         float: right;
-        margin-top: .3125em;
+        margin-top: .3125rem;
         @include media("<=medium") {
-            margin-top: .625em;
+            margin-top: .625rem;
         }
         li {
             display: inline-block;
             + li {
-                margin-left: 1em;
+                margin-left: 1rem;
             }
         }
     }
@@ -46,7 +46,7 @@ footer {
         .home-link {
             width: 50px;
             height: 50px;
-            margin-right: 1em;
+            margin-right: 1rem;
             overflow: hidden;
             vertical-align: middle;
             text-indent: 100%;
@@ -62,7 +62,7 @@ footer {
                 @include translate3d(0, .143em, 0);
             }
             @include media("<=small") {
-                margin-right: .5em;
+                margin-right: .5rem;
             }
             svg {
                 width: 100%;

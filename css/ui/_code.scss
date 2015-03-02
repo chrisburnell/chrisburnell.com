@@ -20,9 +20,9 @@ var,
     samp,
     var {
         background-color: rgba($blue, $opacity-low);
-        padding: 0 .25em;
+        padding: 0 .25rem;
         word-wrap: break-word;
-        border-radius: .25em;
+        border-radius: .25rem;
     }
 pre {
     margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
