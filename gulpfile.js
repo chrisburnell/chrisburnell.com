@@ -18,14 +18,13 @@ var cssPath = 'css/';
 
 // -----------------------------------------------------------------------------
 
-// Compile SASS, autoprefix properties and values, and minify
+// Compile SASS, autoprefix properties and values, generate sourcemaps, and minify
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
-            includePaths: [cssPath],
             style: 'expanded'
         }))
         .pipe(autoprefixer('last 2 versions', '> 1%'))
