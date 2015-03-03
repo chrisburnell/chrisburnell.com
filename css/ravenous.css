@@ -404,6 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 1.2em;
   padding: 0;
   margin: 0;
+  position: relative;
   font-weight: 400;
   line-height: 1.2em; }
 
@@ -423,13 +424,12 @@ h3, h4, .articles-list .article-date {
 
 h3, .articles-list .article-date {
   font-size: 1.125rem;
-  line-height: 1.867em;
+  line-height: 1.875em;
   text-transform: uppercase; }
 
 h3 {
   margin-top: .625rem;
-  border-bottom: 0.125rem solid #DDDDDD;
-  position: relative; }
+  border-bottom: 0.125rem solid #DDDDDD; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
 
@@ -970,12 +970,12 @@ article {
   max-width: 30rem;
   margin-top: -0.25rem;
   margin-bottom: 1rem;
-  line-height: 1.75rem; }
+  line-height: 1.5em; }
 
 .article-introduction, .page-description {
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  line-height: 1.875rem; }
+  line-height: 1.5em; }
 
 @media (max-width: 768px) {
   .article-title, .article-date, .article-introduction {
@@ -1004,9 +1004,11 @@ article {
       border-bottom-color: #5F8AA6;
       text-decoration: none; }
 
-.articles-list .article-date:before {
-  content: "\2013\0020";
-  color: #737373; }
+.articles-list .article-date {
+  margin-bottom: .75rem; }
+  .articles-list .article-date:before {
+    content: "\2013\0020";
+    color: #737373; }
 
 .comments-link {
   display: inline-block;

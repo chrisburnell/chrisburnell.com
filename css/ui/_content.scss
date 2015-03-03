@@ -71,13 +71,13 @@ article {
         max-width: 30rem;
         margin-top: -0.25rem; // make sure text cap-height aligns to the `aside`
         margin-bottom: 1rem;
-        line-height: 1.75rem;
+        line-height: 1.5em;
     }
     .article-introduction,
     .page-description {
         margin-bottom: 1rem;
         font-size: 1.25rem;
-        line-height: 1.875rem;
+        line-height: 1.5em;
     }
     .article-title,
     .article-date,
@@ -113,9 +113,12 @@ article {
             }
         }
     }
-    .articles-list .article-date:before {
-        content: "\2013\0020";
-        color: $text-color-alt;
+    .articles-list .article-date {
+        margin-bottom: .75rem;
+        &:before {
+            content: "\2013\0020";
+            color: $text-color-alt;
+        }
     }
     .comments-link {
         display: inline-block;
