@@ -5,6 +5,7 @@
 // Define gulp objects
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
+    csscomb      = require('gulp-csscomb'),
     minifycss    = require('gulp-minify-css'),
     plumber      = require('gulp-plumber'),
     notify       = require('gulp-notify'),
@@ -28,6 +29,7 @@ gulp.task('css', function() {
             style: 'expanded'
         }))
         .pipe(autoprefixer('last 2 versions', '> 1%'))
+        .pipe(csscomb())
         .pipe(gulp.dest(cssPath))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
