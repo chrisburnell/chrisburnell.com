@@ -963,8 +963,11 @@ article {
     .article-banner {
       width: 500px; } }
 
-.article-title, .page-title, .site-tagline {
+.article-title, .page-title {
   margin-bottom: .75rem; }
+
+.site-tagline {
+  margin-bottom: 2.25rem; }
 
 .site-description {
   max-width: 30rem;

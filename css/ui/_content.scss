@@ -63,9 +63,11 @@ article {
         }
     }
     .article-title,
-    .page-title,
-    .site-tagline {
+    .page-title {
         margin-bottom: .75rem;
+    }
+    .site-tagline {
+        margin-bottom: $default-padding;
     }
     .site-description {
         max-width: 30rem;
