@@ -6,6 +6,7 @@ date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
 
+shorturl: http://repc.co/058xp
 comments: true
 tags:
 - CodePen

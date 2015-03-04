@@ -6,6 +6,7 @@ date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
 
+shorturl: http://repc.co/e1r8k
 comments: true
 tags:
 - CodePen

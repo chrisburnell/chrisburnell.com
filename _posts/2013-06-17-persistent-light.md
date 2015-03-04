@@ -6,6 +6,7 @@ date: 2013-06-17 12:00:00
 
 title: Persistent Light Source Transform
 
+shorturl: http://repc.co/9sogz
 comments: true
 tags:
 - CodePen

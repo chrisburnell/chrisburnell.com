@@ -7,7 +7,7 @@ date: 2013-06-16 03:58:00
 title: Annoying Navigation CSS
 introduction: Navigation is crucial to a functional website. It is how your users find the information they're after; get it right, and your users are happy—get it wrong, and they go insane!
 
-shorturl: http://repc.co/1yHVkOa
+shorturl: http://repc.co/nmwge
 banner: annoying-navigation-css.png
 banner_mobile: annoying-navigation-css_mobile.png
 codepen: true

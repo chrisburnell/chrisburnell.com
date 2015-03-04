@@ -6,6 +6,7 @@ date: 2014-11-05 12:00:00
 
 title: Power of Transform Centering
 
+shorturl: http://repc.co/h8eek
 comments: true
 tags:
 - CodePen

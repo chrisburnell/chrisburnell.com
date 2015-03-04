@@ -6,6 +6,7 @@ date: 2013-12-04 12:00:00
 
 title: Cutaway Indicator
 
+shorturl: http://repc.co/b3sh4
 comments: true
 tags:
 - CodePen

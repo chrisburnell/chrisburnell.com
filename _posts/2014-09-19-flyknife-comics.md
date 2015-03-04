@@ -6,6 +6,7 @@ date: 2014-09-19 12:00:00
 
 title: Flyknife Comics
 
+shorturl: http://repc.co/6aorh
 comments: true
 tags:
 - CodePen

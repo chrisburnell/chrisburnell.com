@@ -6,6 +6,7 @@ date: 2014-11-19 12:00:00
 
 title: Interaction Jazz
 
+shorturl: http://repc.co/bhbt9
 comments: true
 tags:
 - CodePen
