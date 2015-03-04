@@ -1409,11 +1409,11 @@ footer {
 code, kbd, samp, var, .monospace {
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: .875rem;
-  line-height: 1rem; }
+  line-height: 1.5rem; }
 
 p code, ol code, ul code, ins, kbd, mark, samp, var {
   background-color: rgba(95, 138, 166, 0.1);
-  padding: 0 .25rem;
+  padding: .25rem;
   word-wrap: break-word;
   border-radius: .25rem; }
 
