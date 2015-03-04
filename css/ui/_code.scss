@@ -26,9 +26,7 @@ var,
     }
 pre {
     margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
-    &:not(:last-child) {
-        margin-bottom: $default-margin;
-    }
+    margin-bottom: $default-margin;
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-light;

@@ -1418,9 +1418,8 @@ p code, ol code, ul code, ins, kbd, mark, samp, var {
   border-radius: .25rem; }
 
 pre {
-  margin-top: 0; }
-  pre:not(:last-child) {
-    margin-bottom: 1.25rem; }
+  margin-top: 0;
+  margin-bottom: 1.25rem; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.5rem 1.5rem 1rem;
