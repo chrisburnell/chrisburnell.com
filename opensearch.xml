@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Chris Burnell</ShortName>
+    <Description>I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, web standards, innovation, and user experience.</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/x-icon">http://chrisburnell.com/favicon.ico</Image>
+    <Url type="text/html" method="get" template="https://www.google.com/#q=chris+burnell+{searchTerms}"/>
+</OpenSearchDescription>
