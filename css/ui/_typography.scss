@@ -31,6 +31,9 @@ h3,
     font-size: 1.125rem;
     line-height: 1.875em;
     text-transform: uppercase;
+    code {
+        text-transform: none;
+    }
 }
 h3 {
     margin-top: .625rem;
@@ -120,9 +123,12 @@ ol:not([class]),
 ul:not([class]),
 .default-list {
     li {
-        padding-left: 2rem;
-        margin-bottom: 1rem;
+        padding-left: $default-padding;
+        margin-bottom: ($default-margin / 2);
         position: relative;
+        &:last-child {
+            margin-bottom: $default-margin;
+        }
         &:before {
             position: absolute;
             top: 0;
@@ -151,7 +157,7 @@ ul:not([class]) li:before,
 ul.default-list li:before {
     content: "\2022";
     font-size: 1.5rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
 }
 dl {
     width: 100%;
@@ -201,6 +207,9 @@ figure {
     figcaption {
         color: $text-color-alt;
         font-style: italic;
+        a & {
+            color: $blue;
+        }
     }
 
 abbr[title],
@@ -227,11 +236,11 @@ blockquote {
     @extend %rounded;
     background-color: rgba($blue, $opacity-low);
     padding: 1rem;
-    margin: 0 $default-padding 1em;
+    margin: 0 $default-padding $default-margin;
     quotes: "\201C" "\201D" "\2018" "\2019";
     @include media("<=small") {
-        margin-right: 1rem;
-        margin-left:  1rem;
+        margin-right: $default-margin;
+        margin-left:  $default-margin;
     }
     p {
         margin-bottom: 0 !important;
@@ -252,6 +261,9 @@ blockquote {
             content: "\2013\00a0";
         }
     }
+}
+.twitter-tweet {
+    margin: 0 auto $default-margin !important;
 }
 
 hr {

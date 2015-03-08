@@ -6,21 +6,24 @@ date: 2014-09-22 10:00:00
 
 title: On Your Marks, Get Set, Wait
 introduction: What’s really important when reading an article online? Content should always come first, and give users the option for more later.
-
-shorturl: http://repc.co/sfn8k
-banner: on-your-marks.png
-banner_mobile: on-your-marks_mobile.png
-comments: true
 tags:
 - Javascript
 - Tutorials
+
+banner: on-your-marks.png
+banner_mobile: on-your-marks_mobile.png
+
+shorturl: sfn8k
+comments: true
 ---
 
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
 <figure>
-    ![Disqus Logo](/images/content/disqus-logo-white-blue.png)
-    <figcaption>The Disqus Logo — [disqus.com](https://disqus.com/ "Disqus")</figcaption>
+    <a href="https://disqus.com/">
+        ![Disqus Logo](/images/content/disqus-logo-white-blue.png)
+        <figcaption>Disqus &copy; {{ site.time | date: '%Y' }}.</figcaption>
+    </a>
 </figure>
 
 In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.

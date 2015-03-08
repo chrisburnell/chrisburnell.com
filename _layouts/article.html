@@ -5,7 +5,7 @@ page_class: article-page
 {% include header.html %}
 
 
-<h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url | replace: "http://", "" }}{{ page.url }}</a>{% endif %}</h1>
+<h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url | replace: "http://", "" }}{{ page.url }}</a>{% endif %}</h1>
 
 {% include main-aside.html %}
 

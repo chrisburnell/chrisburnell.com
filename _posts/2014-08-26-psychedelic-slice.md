@@ -5,11 +5,11 @@ category: codepen
 date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
-
-shorturl: http://repc.co/k9ouo
-comments: true
 tags:
 - CodePen
+
+shorturl: k9ouo
+comments: true
 ---
 
 {% include codepen-embed.html slug="apogK" height="350" %}

@@ -541,6 +541,10 @@ h3,
     line-height: 1.875em;
     text-transform: uppercase;
 }
+h3 code,
+.articles-list .article-date code {
+    text-transform: none;
+}
 
 h3 {
     margin-top: .625rem;
@@ -661,9 +665,14 @@ ul {
 ol:not([class]) li,
 ul:not([class]) li,
 .default-list li {
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+    padding-left: 2.25rem;
+    margin-bottom: .625rem;
     position: relative;
+}
+ol:not([class]) li:last-child,
+ul:not([class]) li:last-child,
+.default-list li:last-child {
+    margin-bottom: 1.25rem;
 }
 ol:not([class]) li:before,
 ul:not([class]) li:before,
@@ -703,7 +712,7 @@ ul:not([class]) li:before,
 ul.default-list li:before {
     content: "\2022";
     font-size: 1.5rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
 }
 
 dl {
@@ -755,6 +764,9 @@ figcaption {
     color: #737373;
     font-style: italic;
 }
+a figcaption {
+    color: #5f8aa6;
+}
 
 abbr[title],
 blockquote,
@@ -782,13 +794,13 @@ q {
 blockquote {
     background-color: rgba(95, 138, 166, .1);
     padding: 1rem;
-    margin: 0 2.25rem 1em;
+    margin: 0 2.25rem 1.25rem;
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
 @media (max-width: 500px) {
     blockquote {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        margin-right: 1.25rem;
+        margin-left: 1.25rem;
     }
 }
 blockquote p {
@@ -809,6 +821,10 @@ blockquote cite {
 }
 blockquote cite:before {
     content: "\2013\00a0";
+}
+
+.twitter-tweet {
+    margin: 0 auto 1.25rem !important;
 }
 
 hr {
@@ -1271,6 +1287,9 @@ article {
 .articles-list .comments-link {
     text-shadow: 0 1px 0 #f9f9f9;
 }
+.articles-list .article-title {
+    margin-bottom: .625rem;
+}
 
 .article-banner {
     width: 810px;
@@ -1283,26 +1302,27 @@ article {
 }
 
 .article-title,
-.page-title {
-    margin-bottom: .75rem;
-}
-
+.page-title,
 .site-tagline {
     margin-bottom: 2.25rem;
 }
 
 .site-description {
     max-width: 24em;
-    margin-top: -.5rem;
     margin-bottom: 1rem;
     line-height: 1.5em;
 }
 
 .article-introduction,
 .page-description {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.5em;
+}
+
+.page-description,
+.site-description {
+    margin-top: -.5rem;
 }
 
 @media (max-width: 768px) {

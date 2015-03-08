@@ -5,11 +5,11 @@ category: codepen
 date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
-
-shorturl: http://repc.co/e1r8k
-comments: true
 tags:
 - CodePen
+
+shorturl: e1r8k
+comments: true
 ---
 
 {% include codepen-embed.html slug="lcEvB" height="350" %}

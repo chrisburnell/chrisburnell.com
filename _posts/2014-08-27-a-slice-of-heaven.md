@@ -6,16 +6,17 @@ date: 2014-08-27 15:00:00
 
 title: A Slice of Heaven
 introduction: We know that webpages are composed of text and boxes. Lots and lots of boxes. But with the power and might of CSS3 we can do some fancy stuff that never used to be possible.
-
-shorturl: http://repc.co/ynt2q
-# banner: a-slice-of-heaven.png
-# banner_mobile: a-slice-of-heaven_mobile.png
-codepen: true
-comments: true
 tags:
 - CodePen
 - CSS
 - Tutorials
+
+# banner: a-slice-of-heaven.png
+# banner_mobile: a-slice-of-heaven_mobile.png
+
+shorturl: ynt2q
+codepen: true
+comments: true
 ---
 
 I’ve been making quite a few pens over on [Codepen](http://codepen.io "Codepen") lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to Javascript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.

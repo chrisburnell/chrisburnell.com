@@ -5,11 +5,11 @@ category: codepen
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
-
-shorturl: http://repc.co/f7utt
-comments: true
 tags:
 - CodePen
+
+shorturl: f7utt
+comments: true
 ---
 
 {% include codepen-embed.html slug="IKHhC" height="500" %}

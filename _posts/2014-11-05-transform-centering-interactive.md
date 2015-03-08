@@ -5,11 +5,11 @@ category: codepen
 date: 2014-11-05 13:00:00
 
 title: Power of Transform Centering - Interactive
-
-shorturl: http://repc.co/8x586
-comments: true
 tags:
 - CodePen
+
+shorturl: 8x586
+comments: true
 ---
 
 {% include codepen-embed.html slug="xutbs" height="500" %}

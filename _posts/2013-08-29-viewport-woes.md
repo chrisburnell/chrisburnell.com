@@ -6,14 +6,15 @@ date: 2013-08-29 12:02:00
 
 title: Viewport Woes
 introduction: I’ve been around the block and seen just about every combination of variables and syntax in viewport meta tags. What’s the correct way to go about it? And maybe I’ll comment on the state of browsers today as well.
-
-shorturl: http://repc.co/xoskc
-banner: viewport-woes.png
-banner_mobile: viewport-woes_mobile.png
-comments: true
 tags:
 - HTML
 - Tutorials
+
+banner: viewport-woes.png
+banner_mobile: viewport-woes_mobile.png
+
+shorturl: xoskc
+comments: true
 ---
 
 *Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.*

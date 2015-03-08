@@ -5,11 +5,11 @@ category: codepen
 date: 2014-08-18 12:00:00
 
 title: Simple CSS Checkbox
-
-shorturl: http://repc.co/g6pky
-comments: true
 tags:
 - CodePen
+
+shorturl: g6pky
+comments: true
 ---
 
 {% include codepen-embed.html slug="Cbiun" height="250" %}

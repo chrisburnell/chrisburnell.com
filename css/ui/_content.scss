@@ -53,6 +53,9 @@ article {
     .comments-link {
         text-shadow: 0 1px 0 $white;
     }
+    .article-title {
+        margin-bottom: ($default-margin / 2);
+    }
 }
     .article-banner {
         @extend %rounded;
@@ -63,23 +66,24 @@ article {
         }
     }
     .article-title,
-    .page-title {
-        margin-bottom: .75rem;
-    }
+    .page-title,
     .site-tagline {
         margin-bottom: $default-padding;
     }
     .site-description {
         max-width: 24em;
-        margin-top: -0.5rem; // make sure text cap-height aligns to the `aside`
         margin-bottom: 1rem;
         line-height: 1.5em;
     }
     .article-introduction,
     .page-description {
-        margin-bottom: 1rem;
+        margin-bottom: $default-margin;
         font-size: 1.25rem;
         line-height: 1.5em;
+    }
+    .page-description,
+    .site-description {
+        margin-top: -0.5rem; // make sure text cap-height aligns to the `aside`
     }
     .article-title,
     .article-date,
