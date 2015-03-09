@@ -80,13 +80,13 @@ snippet of code on a project of your own. -->
     <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-    <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
+    <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar@2x.png{% endif %}">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@{{ site.author_twitter }}">
     <meta name="twitter:title" content="{{ meta_title }}">
     <meta name="twitter:description" content="{{ meta_description }}">
-    <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar-200.png{% endif %}">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar@2x.png{% endif %}">
     <meta name="twitter:domain" content="chrisburnell.com">
     {% else %}
     <meta name="robots" content="noindex,nofollow">
