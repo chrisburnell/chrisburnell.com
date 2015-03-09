@@ -98,7 +98,7 @@ a {
     @each $brand in $brands {
         $name:  nth($brand, 1);
         $color: nth($brand, 2);
-        .#{$name}-link {
+        .link--#{$name} {
             color: #{$color} !important;
         }
     }

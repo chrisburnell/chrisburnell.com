@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 // Hide our SVGs injected just below `<body>`
-.svg-master {
+.svg--master {
     display: none;
 }
 
@@ -28,8 +28,8 @@
     @each $brand in $brands {
         $name:  nth($brand, 1);
         $ratio: nth($brand, 3);
-        &.#{$name}-icon,
-        &.#{$name}-link {
+        &.icon--#{$name},
+        &.link--#{$name} {
             width: ($ratio * $icon-size);
         }
     }
