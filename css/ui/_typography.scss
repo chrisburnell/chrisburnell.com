@@ -207,9 +207,6 @@ figure {
     figcaption {
         color: $text-color-alt;
         font-style: italic;
-        a & {
-            color: $blue;
-        }
     }
 
 abbr[title],
