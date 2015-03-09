@@ -142,6 +142,8 @@ html {
 - changing a handful of action buttons from textual links to icon links: star, edit, delete, mark as read
 - modified the colour palette to match [my styleguide]({{ site.url }}/style-guide)
 
+---
+
 *You can view the final stylesheet that I’m using [on Github Gist](https://gist.githubusercontent.com/chrisburnell/ef5367e7dd263356c48a/raw/0e4ebb2ef4fc9eead4b440cc479eb2616a24470c/Pinboard%20Stylish%20Stylesheet).*
 
 
