@@ -22,11 +22,11 @@ Inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy
 
 {% include tweet.html content='<blockquote class="twitter-tweet" lang="en" data-conversation="none" data-link-color="#5F8AA6"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>' %}
 
-Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. Nothing changed. I dug into my account settings looking for a flag to switch on for this newfangled layout, but couldn’t find one. **What’s going on?!**
+Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. Nothing changed. I dug into my account settings looking for a flag to switch on for this newfangled layout, but couldn’t find one. *What’s going on?!*
 
 {% include tweet.html content='<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>(hah, I mean Flipboard, not Pinboard)</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></blockquote>' %}
 
-**Okay then.**
+*Okay then.*
 
 Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-than-ideal design of *Pinboard*, which I use mostly to archive and bookmark pages on the web I don’t want to lose. You can read more about what *Pinboard* is useful for [here](https://pinboard.in/tour).
 
@@ -63,12 +63,12 @@ That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciate <s>t
     <img src="http://gifs.chrisburnell.com/idontbelievemyeyes.gif" alt="">
 </figure>
 
-Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe) and [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
+Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe), [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish), and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
 
 <figure>
     <a href="http://userstyles.org">
         <img src="/images/content/stylish-logo.png" alt="">
-        <figcaption>Stylish, open source, by contributors.</figcaption>
+        <figcaption>Stylish - Open Source, by contributors.</figcaption>
     </a>
 </figure>
 
