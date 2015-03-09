@@ -43,8 +43,10 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
-    <img src="/images/content/pinboard-before.png" srcset="/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x" alt="">
-    <figcaption>The “before shot.”</figcaption>
+    <a href="/images/content/pinboard-before@2x.png">
+        <img src="/images/content/pinboard-before.png" srcset="/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x" alt="">
+        <figcaption>The “before shot.”</figcaption>
+    </a>
 </figure>
 
 Let’s break down how bookmarks are categorised, at least as far as I use them on *Pinboard*:
@@ -75,13 +77,17 @@ Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for wh
 The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). I took a look at a few of the top plugins available under the [*Pinboard* category](https://userstyles.org/styles/browse/pinboard) to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc. After tinkering with my own file for a few days and experimenting through daily use, I came up with what I think is a pretty decent, clean design.
 
 <figure>
-    <img src="/images/content/pinboard-after.png" srcset="/images/content/pinboard-after.png 1x, /images/content/pinboard-after@2x.png 2x" alt="">
-    <figcaption>The final piece.</figcaption>
+    <a href="/images/content/pinboard-after@2x.png">
+        <img src="/images/content/pinboard-after.png" srcset="/images/content/pinboard-after.png 1x, /images/content/pinboard-after@2x.png 2x" alt="">
+        <figcaption>The final piece.</figcaption>
+    </a>
 </figure>
 
 <figure>
-    <img src="/images/content/pinboard-star-transition.gif" alt="">
-    <figcaption>The ‘star’ feature transition. An example of the new sitewide transitions.</figcaption>
+    <a href="/images/content/pinboard-star-transition.gif">
+        <img src="/images/content/pinboard-star-transition.gif" alt="">
+        <figcaption>The ‘star’ feature transition. An example of the new sitewide transitions.</figcaption>
+    </a>
 </figure>
 
 
