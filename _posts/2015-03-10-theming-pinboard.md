@@ -2,7 +2,7 @@
 layout: article
 category: article
 
-date: 2015-03-04 09:57:00
+date: 2015-03-10 09:57:00
 
 title: Theming Pinboard
 introduction: I recently decided I would embark on the task of theming Pinboard. Here’s how I did it.
@@ -18,7 +18,7 @@ comments: true
 twitter: true
 ---
 
-Inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy Keith’s website](https://adactio.com/?skin=zeldman) and a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
+Recently, I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy Keith’s website](https://adactio.com/?skin=zeldman) and a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
 {% include tweet.html content='<blockquote class="twitter-tweet" lang="en" data-conversation="none" data-link-color="#5F8AA6"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>' %}
 
@@ -149,7 +149,7 @@ html {
 
 {% include heading.html title="Conclusion" %}
 
-There’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. To educate our peers and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
+There’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. We need to educate our peers, colleagues, and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
 
 I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl) article in Smashing Magazine, [Design Last](http://www.smashingmagazine.com/2015/02/20/design-last), are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
 
