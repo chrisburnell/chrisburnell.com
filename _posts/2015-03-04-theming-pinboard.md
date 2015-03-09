@@ -81,7 +81,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 
 <figure>
     <img src="/images/content/pinboard-star-transition.gif" alt="">
-    <figcaption>The ‘star’ feature transition.</figcaption>
+    <figcaption>The ‘star’ feature transition. An example of the new sitewide transitions.</figcaption>
 </figure>
 
 

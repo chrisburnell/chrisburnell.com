@@ -1698,7 +1698,7 @@ aside figcaption {
 }
 
 .author-information {
-    margin-bottom: .5rem;
+    margin-bottom: 1.25rem;
     font-family: "ff-meta-serif-web-pro", Georgia, serif;
     font-size: .875rem;
     font-style: italic;
@@ -1711,6 +1711,7 @@ aside figcaption {
                 order: 998;
         padding-top: 2.25rem;
         border-top: .125rem solid rgba(6, 6, 6, .1);
+        margin-bottom: .625rem;
     }
 }
 .author-information a,
@@ -1735,6 +1736,9 @@ aside figcaption {
         -ms-flex-order: 999;
                 order: 999;
     }
+}
+.author-biography p:not(:last-child) {
+    margin-bottom: .625rem;
 }
 
 .author-name,
