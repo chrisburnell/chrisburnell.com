@@ -45,7 +45,7 @@ To begin with, I wanted to find the pain points of *Pinboard’s* default design
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
         <img src="/images/content/pinboard-before.png" srcset="/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x" alt="">
-        <figcaption>The “before shot.”</figcaption>
+        <figcaption>The <q>before shot.</q></figcaption>
     </a>
 </figure>
 
