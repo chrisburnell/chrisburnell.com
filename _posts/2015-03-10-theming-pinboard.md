@@ -201,7 +201,7 @@ html {
 
 {% include heading.html title="Conclusion" %}
 
-There’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. We need to educate our peers, colleagues, and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
+I’m not trying to point any fingers, but there’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. We need to educate our peers, colleagues, and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
 
 I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl) article in Smashing Magazine, [Design Last](http://www.smashingmagazine.com/2015/02/20/design-last), are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
 
