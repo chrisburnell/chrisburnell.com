@@ -759,6 +759,9 @@ figure {
 figure:not(:last-child) {
     margin-bottom: 1.25rem;
 }
+figure a {
+    color: inherit;
+}
 
 figcaption {
     color: #737373;
@@ -1513,27 +1516,41 @@ aside .small-articles-list li + li {
     border-bottom: .125rem solid rgba(6, 6, 6, .1);
 }
 
-.articles-navigation {
+.articles-navigation,
+.buttons-list {
     width: 100%;
-    padding: 2.068rem 0 2.25rem;
-    border-top: .125rem solid rgba(6, 6, 6, .1);
     text-align: center;
 }
-.about-page .articles-navigation {
-    border-top: 0;
-    padding: 1.25rem 0;
-}
 .articles-navigation button,
-.articles-navigation .button {
+.articles-navigation .button,
+.buttons-list button,
+.buttons-list .button {
     display: inline-block;
 }
 @media (min-width: 501px) {
     .articles-navigation button + button,
     .articles-navigation button + .button,
     .articles-navigation .button + button,
-    .articles-navigation .button + .button {
+    .articles-navigation .button + .button,
+    .buttons-list button + button,
+    .buttons-list button + .button,
+    .buttons-list .button + button,
+    .buttons-list .button + .button {
         margin-left: 1.875em;
     }
+}
+
+.articles-navigation {
+    padding: 2.068rem 0 2.25rem;
+    border-top: .125rem solid rgba(6, 6, 6, .1);
+}
+.about-page .articles-navigation {
+    border-top: 0;
+    padding: 1.25rem 0;
+}
+
+.buttons-list {
+    padding-bottom: 1.25rem;
 }
 
 .comments {

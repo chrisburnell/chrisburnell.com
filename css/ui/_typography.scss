@@ -203,6 +203,9 @@ figure {
     svg {
         @extend %rounded;
     }
+    a {
+        color: inherit;
+    }
 }
     figcaption {
         color: $text-color-alt;

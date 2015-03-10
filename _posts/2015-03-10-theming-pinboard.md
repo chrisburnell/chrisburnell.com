@@ -18,7 +18,7 @@ comments: true
 twitter: true
 ---
 
-Recently, I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy Keith’s website](https://adactio.com/?skin=zeldman) and a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
+I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
 {% include tweet.html content='<blockquote class="twitter-tweet" lang="en" data-conversation="none" data-link-color="#5F8AA6"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>' %}
 
@@ -140,11 +140,63 @@ html {
 
 - changing the base <samp>font-size</samp> to <samp>16px</samp> and changing many properties to be relative to the <samp>font-size</samp> with <samp>ems</samp> and <samp>rems</samp>
 - changing a handful of action buttons from textual links to icon links: star, edit, delete, mark as read
+    - for this I used a simple CSS trick to take the element’s text out of the flow and hide it, and instead display a base64-encoded <samp>background-image</samp> with an arbitary <samp>width</samp>, <samp>height</samp>, and <samp>background-size</samp>
+
+{% highlight css %}
+.edit_links a.edit,
+.edit_links a.edit:visited,
+.edit_links a.delete,
+.edit_links a.delete:visited,
+.edit_links a.mark_read,
+.edit_links a.mark_read:visited {
+    background-color: transparent;
+    background-position: center center;
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    opacity: .4;
+    width:  19px;
+    height: 19px;
+    display: inline-block;
+    padding: .25rem;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    text-indent: 100%;
+    white-space: nowrap;
+    -webkit-transition: opacity .1s ease;
+            transition: opacity .1s ease;
+}
+    .edit_links a.edit:hover,
+    .edit_links a.edit:focus,
+    .edit_links a.delete:hover,
+    .edit_links a.delete:focus,
+    .edit_links a.mark_read:hover,
+    .edit_links a.mark_read:focus {
+        opacity: 1;
+    }
+
+...
+
+/* dark colour green */
+.edit_links a.edit {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
+}
+    /* light colour green */
+    .edit_links a.edit:hover,
+    .edit_links a.edit:focus {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
+    }
+{% endhighlight %}
+
 - modified the colour palette to match [my styleguide]({{ site.url }}/style-guide)
 
 ---
 
-*You can view the final stylesheet that I’m using [on Github Gist](https://gist.githubusercontent.com/chrisburnell/ef5367e7dd263356c48a/raw/0e4ebb2ef4fc9eead4b440cc479eb2616a24470c/Pinboard%20Stylish%20Stylesheet).*
+**You can view the final stylesheet that I’m using on Github Gist:**
+
+<div class="buttons-list">
+    <a class="button" href="https://gist.github.com/chrisburnell/ef5367e7dd263356c48a">gist.github.com &rarr;</a>
+</div>
 
 
 {% include heading.html title="Conclusion" %}
