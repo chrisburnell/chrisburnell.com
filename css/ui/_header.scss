@@ -2,8 +2,8 @@
     $HEADER
 \*------------------------------------*/
 
-@include media("<=medium") {
-    header {
+header {
+    @include media("<=medium") {
         text-align: center;
     }
 }

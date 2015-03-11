@@ -26,7 +26,9 @@ footer {
     }
     .social-icon-list {
         float: right;
-        margin-top: .3125rem;
+        @include media(">medium") {
+            margin-top: .3125rem;
+        }
         @include media("<=medium") {
             margin-top: .625rem;
         }
@@ -74,8 +76,8 @@ footer {
         .style-guide-link {
             color: $text-color-light;
         }
-        @include media("<=small") {
-            .style-guide-link {
+        .style-guide-link {
+            @include media("<=small") {
                 display: block;
             }
         }

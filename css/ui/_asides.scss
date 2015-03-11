@@ -3,8 +3,9 @@
 \*------------------------------------*/
 
 /**
- * The width of the asides is static and and always floated within an article or
- * list of articles. The math is calculated as in the articles partial.
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_articles.scss`.
  */
 aside {
     width: $aside-width;
@@ -32,6 +33,10 @@ aside {
         }
     }
 }
+/**
+ * The `.author` aside is always pushed underneath the content below the medium
+ * breakpoint.
+ */
 /*aside*/.author {
     font-family: $secondary-font-stack;
     @include media("<=medium") {
@@ -68,9 +73,6 @@ aside {
         @include media(">medium") {
             margin-bottom: $default-margin;
         }
-        @include media("<=medium") {
-            order: 999;
-        }
         p:not(:last-child) {
             margin-bottom: ($default-margin / 2);
         }
@@ -103,9 +105,9 @@ aside {
         line-height: 1.25rem;
     }
 
-@include media(">medium") {
-    .featured-pens,
-    .related-articles {
+.featured-pens,
+.related-articles {
+    @include media(">medium") {
         margin-top: $default-margin;
     }
 }

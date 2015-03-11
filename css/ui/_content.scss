@@ -23,9 +23,8 @@ article {
     }
     @include media("<=medium") {
         /**
-         * When you hit the `medium` media query, `article`, `article-list`, and
-         * `aside` becomes full width and `aside.author-information` pushes to
-         * the bottom of the page.
+         * Below the medium breakpoint, `article`, `article-list`, and `aside`
+         * become full width.
          */
         display: flex;
         flex-direction: column;
@@ -51,7 +50,7 @@ article {
     .article-title,
     .article-date,
     .comments-link {
-        text-shadow: 0 1px 0 $white;
+        text-shadow: 0 1px 0 $white; // helps pop against the background
     }
     .article-title {
         margin-bottom: ($default-margin / 2);
@@ -82,23 +81,26 @@ article {
         line-height: 1.5em;
     }
     .page-description,
-    .site-description {
-        margin-top: -0.5rem; // make sure text cap-height aligns to the `aside`
+    .site-description,
+    .article-introduction {
+        @include media(">medium") {
+            margin-top: -0.5rem; // align text to the `aside`
+        }
+    }
+    .article-introduction {
+        .article-banner + & {
+            margin-top: 0;
+        }
+    }
+    .pens-introduction {
+        padding-bottom: $default-margin;
+        border-bottom: ($default-border / 2) solid $black-medium;
     }
     .article-title,
     .article-date,
     .article-introduction {
         @include media("<=medium") {
             text-align: left;
-        }
-    }
-    .article-introduction {
-        margin-top: -5px; // align text to author-image
-        @include media("<=medium") {
-            margin-top: 0;
-        }
-        .article-banner + & {
-            margin-top: 0;
         }
     }
     .article-title {
@@ -240,11 +242,6 @@ article {
     a:active svg {
         opacity: $opacity-medium;
     }
-}
-
-.pens-introduction {
-    padding-bottom: $default-margin;
-    border-bottom: ($default-border / 2) solid $black-medium;
 }
 
 .articles-navigation,

@@ -823,6 +823,7 @@ blockquote cite:before {
     content: "\2013\00a0";
 }
 
+/*blockquote*/
 .twitter-tweet {
     margin: 0 auto 1.25rem !important;
 }
@@ -1248,9 +1249,8 @@ article {
 @media (max-width: 768px) {
     article {
         /**
-         * When you hit the `medium` media query, `article`, `article-list`, and
-         * `aside` becomes full width and `aside.author-information` pushes to
-         * the bottom of the page.
+         * Below the medium breakpoint, `article`, `article-list`, and `aside`
+         * become full width.
          */
         display: -webkit-box;
         display: -webkit-flex;
@@ -1320,9 +1320,21 @@ article {
     line-height: 1.5em;
 }
 
-.page-description,
-.site-description {
-    margin-top: -.5rem;
+@media (min-width: 769px) {
+    .page-description,
+    .site-description,
+    .article-introduction {
+        margin-top: -.5rem;
+    }
+}
+
+.article-banner + .article-introduction {
+    margin-top: 0;
+}
+
+.pens-introduction {
+    padding-bottom: 1.25rem;
+    border-bottom: .125rem solid rgba(6, 6, 6, .1);
 }
 
 @media (max-width: 768px) {
@@ -1331,18 +1343,6 @@ article {
     .article-introduction {
         text-align: left;
     }
-}
-
-.article-introduction {
-    margin-top: -5px;
-}
-@media (max-width: 768px) {
-    .article-introduction {
-        margin-top: 0;
-    }
-}
-.article-banner + .article-introduction {
-    margin-top: 0;
 }
 
 .article-title {
@@ -1511,11 +1511,6 @@ aside .small-articles-list li + li {
     opacity: .25;
 }
 
-.pens-introduction {
-    padding-bottom: 1.25rem;
-    border-bottom: .125rem solid rgba(6, 6, 6, .1);
-}
-
 .articles-navigation,
 .buttons-list {
     width: 100%;
@@ -1650,8 +1645,9 @@ video {
     $ASIDES
 \*------------------------------------*/
 /**
- * The width of the asides is static and and always floated within an article or
- * list of articles. The math is calculated as in the articles partial.
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_articles.scss`.
  */
 aside {
     width: 15.875rem;
@@ -1686,6 +1682,10 @@ aside figcaption {
     }
 }
 
+/**
+ * The `.author` aside is always pushed underneath the content below the medium
+ * breakpoint.
+ */
 /*aside*/
 .author {
     font-family: "proxima-nova", sans-serif;
@@ -1741,14 +1741,6 @@ aside figcaption {
 @media (min-width: 769px) {
     .author-biography {
         margin-bottom: 1.25rem;
-    }
-}
-@media (max-width: 768px) {
-    .author-biography {
-        -webkit-box-ordinal-group: 1000;
-        -webkit-order: 999;
-        -ms-flex-order: 999;
-                order: 999;
     }
 }
 .author-biography p:not(:last-child) {
@@ -1847,7 +1839,11 @@ footer {
 
 .social-icon-list {
     float: right;
-    margin-top: .3125rem;
+}
+@media (min-width: 769px) {
+    .social-icon-list {
+        margin-top: .3125rem;
+    }
 }
 @media (max-width: 768px) {
     .social-icon-list {
