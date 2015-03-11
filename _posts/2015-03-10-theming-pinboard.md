@@ -82,11 +82,24 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
         <figcaption>The final piece.</figcaption>
     </a>
 </figure>
+<figure>
+    <a href="/images/content/pinboard-private@2x.png">
+        <img src="/images/content/pinboard-private.png" srcset="/images/content/pinboard-private.png 1x, /images/content/pinboard-private@2x.png 2x" alt="">
+        <figcaption>Private bookmarks.</figcaption>
+    </a>
+</figure>
+
+<figure>
+    <a href="/images/content/pinboard-icons-transition.gif">
+        <img src="/images/content/pinboard-icons-transition.gif" alt="">
+        <figcaption>The icons transition. An example of the new sitewide transitions.</figcaption>
+    </a>
+</figure>
 
 <figure>
     <a href="/images/content/pinboard-star-transition.gif">
         <img src="/images/content/pinboard-star-transition.gif" alt="">
-        <figcaption>The ‘star’ feature transition. An example of the new sitewide transitions.</figcaption>
+        <figcaption>The ‘star’ feature transition.</figcaption>
     </a>
 </figure>
 
