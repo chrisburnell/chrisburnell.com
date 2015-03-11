@@ -2,7 +2,7 @@
 layout: article
 category: article
 
-date: 2015-03-11 10:00:00
+date: 2015-03-12 10:00:00
 
 title: Theming Pinboard
 introduction: I recently decided I would embark on the task of theming Pinboard. Here’s how I did it.
