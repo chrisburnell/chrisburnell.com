@@ -57,6 +57,7 @@ Let’s break down how bookmarks are categorised, at least as far as I use them 
 
 So it was important for me to make these parts distinct in the new design, whilst maintaining a level of minimalism and a muted colour palette.
 
+
 {% include heading.html id="injection" title="<code>injection'); DROP TABLE Bookmarks;--</code>" %}
 
 That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciate <s>that moment of tear-filled laughter</s> that I tried.
@@ -74,7 +75,20 @@ Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for wh
     </a>
 </figure>
 
-The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). I took a look at a few of the top plugins available under the [*Pinboard* category](https://userstyles.org/styles/browse/pinboard) to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc. After tinkering with my own file for a few days and experimenting through daily use, I came up with what I think is a pretty decent, clean design.
+The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. The styles are injected with Javascript into a <samp>style</samp> tag in the <samp>head</samp>:
+
+{% highlight html %}
+<style id="stylish-3" class="stylish">
+...
+</style>
+{% endhighlight %}
+
+<aside>I actually wish that the way in which styles are saved and stored could be improved—after switching to [git](http://git-scm.com), I have a tendency to want to add versioning to all of my projects. If there was some sort of [Github Gist](https://gist.github.com) hook or something... [Let me know in the comments](#comments) if you know of anything like what I’m looking for!</aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+
+
+{% include heading.html id="brass-tacks" title="Good old Brass Tacks" %}
+
+You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([let me know if you do!](#comments)). I took a look at a few of the top plugins available under the [*Pinboard* category](https://userstyles.org/styles/browse/pinboard) to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc. After tinkering with my own file for a few days and experimenting through daily use, I came up with what I think is a pretty decent, clean design.
 
 <figure>
     <a href="/images/content/pinboard-after@2x.png">
