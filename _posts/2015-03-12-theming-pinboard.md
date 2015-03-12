@@ -141,7 +141,7 @@ One avenue I could have investigated, but never did, was a similar browser plugi
 
 {% include heading.html title="Changes" %}
 
-I made a couple of over-arching changes to the CSS of Pinboard, which affected the rest of the design, those being:
+I made a couple of over-arching changes to the CSS of *Pinboard*, which affected the rest of the design, those being:
 
 - responsified the layout with media queries
 - applying <samp>box-sizing: border-box;</samp> to the entire document:
