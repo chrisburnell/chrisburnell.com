@@ -60,7 +60,9 @@ So it was important for me to make these parts distinct in the new design, whils
 
 {% include heading.html id="injection" title="<code>injection'); DROP TABLE Bookmarks;--</code>" %}
 
-<aside><figure aria-hidden="true"><img src="http://gifs.chrisburnell.com/idontbelievemyeyes.gif" alt=""></figure></aside>That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
+<aside><figure aria-hidden="true"><img src="http://gifs.chrisburnell.com/idontbelievemyeyes.gif" alt=""></figure></aside>
+
+That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
 
 Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe), [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish), and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
 
