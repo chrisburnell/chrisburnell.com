@@ -1,21 +1,27 @@
 {% include header.html %}
 
 
-{% if page.title %}
-    <h1 class="page-title" role="heading">{{ page.title }}</h1>
-{% else %}
-    <h1 class="site-tagline" role="heading">{{ site.tagline }}.</h1>
-{% endif %}
+<main class="wrap  clear  content" role="main">
+    <section>
 
-{% include main-aside.html %}
+        {% if page.title %}
+            <h1 class="page-title" role="heading">{{ page.title }}</h1>
+        {% else %}
+            <h1 class="site-tagline" role="heading">{{ site.tagline }}.</h1>
+        {% endif %}
 
-{% if page.page_class == "home-page" %}
-    <h2 class="site-description">{{ site.description }}</h2>
-{% elsif page.description %}
-    <h2 class="page-description">{{ page.description }}</h2>
-{% endif %}
+        {% include main-aside.html %}
 
-{{ content }}
+        {% if page.page_class == "home-page" %}
+            <h2 class="site-description">{{ site.description }}</h2>
+        {% elsif page.description %}
+            <h2 class="page-description">{{ page.description }}</h2>
+        {% endif %}
+
+        {{ content }}
+
+    </section>
+</main>
 
 
 {% include footer.html %}
