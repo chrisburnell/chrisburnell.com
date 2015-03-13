@@ -18,7 +18,7 @@ comments: true
 twitter: true
 ---
 
-I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
+I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
 {% include tweet.html content='<blockquote class="twitter-tweet" lang="en" data-conversation="none" data-link-color="#5F8AA6"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>' %}
 
@@ -40,7 +40,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 {% include heading.html id="first-step" title="The First Step" %}
 
-To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
+<aside><p>What do I mean when I say *theming* or *skinning*? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on [CSS Zen Garden](http://www.csszengarden.com) or [Adactio](https://adactio.com/about/site/#skin).</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
