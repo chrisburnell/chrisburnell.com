@@ -1,13 +1,13 @@
 # Ravenous
-#### version 2.2.0
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chrisburnell/chrisburnell.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+#### version 2.2.0
 
 #### The source code for [chrisburnell.com](http://chrisburnell.com/).
 
 My website doubles as a blog and as a playground for me to perfect the code that comprises the site and to experiment with new methodologies and technologies. You may find that things change quite drastically or strangely over time; this is because I am always trying to learn new things and encorporate them into my site or this Github repository. If you have any questions or suggestions, please don’t hesitate to get in touch—via [twitter](https://twitter.com/iamchrisburnell) or email—or open a new issue to report bugs or suggestions.
 
 ## Development
+
 - [Github Pages](http://pages.github.com)
 - [Jekyll](http://jekyllrb.com)
 - [SCSS](http://sass-lang.com)
