@@ -14,31 +14,35 @@ footer {
     @include gradient(transparent, $black-medium);
 }
     .copyright,
-    .social-icon-list {
+    .tertiary-navigation {
         overflow: hidden;
-        @include media(">medium") {
-            float: left;
-        }
         @include media("<=medium") {
             width: 100%;
             text-align: center;
         }
     }
-    .social-icon-list {
-        float: right;
+    .copyright {
         @include media(">medium") {
+            float: left;
+        }
+    }
+    .tertiary-navigation {
+        @include media(">medium") {
+            float: right;
             margin-top: .3125rem;
         }
         @include media("<=medium") {
             margin-top: .625rem;
         }
-        li {
-            display: inline-block;
-            + li {
-                margin-left: 1rem;
+    }
+        .social-icons-list {
+            li {
+                display: inline-block;
+                + li {
+                    margin-left: 1rem;
+                }
             }
         }
-    }
         .home-link,
         .copyright-link,
         .style-guide-link {

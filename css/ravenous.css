@@ -1820,40 +1820,39 @@ footer {
 }
 
 .copyright,
-.social-icon-list {
+.tertiary-navigation {
     overflow: hidden;
-}
-@media (min-width: 769px) {
-    .copyright,
-    .social-icon-list {
-        float: left;
-    }
 }
 @media (max-width: 768px) {
     .copyright,
-    .social-icon-list {
+    .tertiary-navigation {
         width: 100%;
         text-align: center;
     }
 }
 
-.social-icon-list {
-    float: right;
-}
 @media (min-width: 769px) {
-    .social-icon-list {
+    .copyright {
+        float: left;
+    }
+}
+
+@media (min-width: 769px) {
+    .tertiary-navigation {
+        float: right;
         margin-top: .3125rem;
     }
 }
 @media (max-width: 768px) {
-    .social-icon-list {
+    .tertiary-navigation {
         margin-top: .625rem;
     }
 }
-.social-icon-list li {
+
+.social-icons-list li {
     display: inline-block;
 }
-.social-icon-list li + li {
+.social-icons-list li + li {
     margin-left: 1rem;
 }
 
