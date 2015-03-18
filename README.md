@@ -1,6 +1,6 @@
 # Ravenous
 
-#### version 2.2.0
+#### version 2.3.0
 
 #### The source code for [chrisburnell.com](http://chrisburnell.com/).
 

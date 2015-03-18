@@ -6,46 +6,46 @@ title: Tags Archive
 description: A list of tags and their prose counterparts.
 ---
 
-            {% capture tags %}
-                {% for tag in site.tags %}
-                    {{ tag[0] }}
-                {% endfor %}
-            {% endcapture %}
-            {% assign sorted_tags = tags | split:' ' | sort %}
-            {% for tag in sorted_tags %}
-                <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" aria-hidden="true">#{{ tag | downcase }}</a></h3>
-                <ol class="small-articles-list" role="list">
-                    {% for post in site.tags[tag] %}
-                    {% unless post.draft %}
-                        {% if post.category == "codepen" %}
-                            {% assign link_title = "View" %}
-                        {% else %}
-                            {% assign link_title = "Continue reading" %}
-                        {% endif %}
-                        <li>
-                            <a href="{{ post.url }}">
-                                {% if post.category == "codepen" %}
-                                    <svg><use xlink:href="#svg--codepen" /></svg>
-                                {% endif %}
-                                <h4 class="small-article-title">{{ post.title }}</h4>
-                                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                                {% if post.introduction %}
-                                    <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
-                                {% endif %}
-                            </a>
-                        </li>
-                    {% endunless %}
-                    {% endfor %}
-                </ol>
-            {% endfor %}
+{% capture tags %}
+    {% for tag in site.tags %}
+        {{ tag[0] }}
+    {% endfor %}
+{% endcapture %}
+{% assign sorted_tags = tags | split:' ' | sort %}
+{% for tag in sorted_tags %}
+    <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" aria-hidden="true">#{{ tag | downcase }}</a></h3>
+    <ol class="small-articles-list" role="list">
+        {% for post in site.tags[tag] %}
+        {% unless post.draft %}
+            {% if post.category == "codepen" %}
+                {% assign link_title = "View" %}
+            {% else %}
+                {% assign link_title = "Continue reading" %}
+            {% endif %}
+            <li>
+                <a href="{{ post.url }}">
+                    {% if post.category == "codepen" %}
+                        <svg><use xlink:href="#svg--codepen" /></svg>
+                    {% endif %}
+                    <h4 class="small-article-title">{{ post.title }}</h4>
+                    <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                    {% if post.introduction %}
+                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
+                    {% endif %}
+                </a>
+            </li>
+        {% endunless %}
+        {% endfor %}
+    </ol>
+{% endfor %}
 
-            <div class="articles-navigation">
-                <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a><!--
-             --><a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
-             --><a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a>
-            </div>
+<div class="articles-navigation">
+    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a><!--
+ --><a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
+ --><a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a>
+</div>
 
-            <div class="articles-navigation">
-                <a rel="me author" class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a><!--
-             --><a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
-            </div>
+<div class="articles-navigation">
+    <a rel="me author" class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a><!--
+ --><a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
+</div>

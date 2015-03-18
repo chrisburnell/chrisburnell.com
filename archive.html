@@ -7,32 +7,32 @@ title: Articles Archive
 description: All of my articles listed on one page.
 ---
 
-            <ol id="articles" class="articles-list" role="list">
-                {% for post in site.posts %}
-                {% unless post.draft or post.category != "article" %}
-                    <li>
-                        <h2 class="article-title">
-                            <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
-                        </h2>
-                        <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
-                        {% if post.introduction %}
-                            <p class="article-introduction">{{ post.introduction }}</p>
-                        {% endif %}
-                        <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
-                        {% if post.comments == true %}
-                            <a class="comments-link" href="{{ post.url }}/#disqus_thread">Leave a comment</a>
-                        {% endif %}
-                    </li>
-                {% endunless %}
-                {% endfor %}
-            </ol>
+<ol id="articles" class="articles-list" role="list">
+    {% for post in site.posts %}
+    {% unless post.draft or post.category != "article" %}
+        <li>
+            <h2 class="article-title">
+                <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+            </h2>
+            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            {% if post.introduction %}
+                <p class="article-introduction">{{ post.introduction }}</p>
+            {% endif %}
+            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
+            {% if post.comments == true %}
+                <a class="comments-link" href="{{ post.url }}/#disqus_thread">Leave a comment</a>
+            {% endif %}
+        </li>
+    {% endunless %}
+    {% endfor %}
+</ol>
 
-            <div class="articles-navigation">
-                <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
-             --><a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a>
-            </div>
+<div class="articles-navigation">
+    <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
+ --><a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a>
+</div>
 
-            <div class="articles-navigation">
-                <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a><!--
-             --><a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
-            </div>
+<div class="articles-navigation">
+    <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a><!--
+ --><a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
+</div>
