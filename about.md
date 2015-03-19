@@ -62,7 +62,7 @@ I also play the piano and bake bread from time to time.
 
 There are a number of RSS Feeds you can subscribe to:
 
-<nav class="articles-navigation">
+<nav class="buttons-list">
     <a rel="me author" class="button" href="/feed.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to all</a><!--
  --><a rel="me author" class="button" href="/feed-articles.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
  --><a rel="me author" class="button" href="/feed-pens.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a>
