@@ -281,9 +281,11 @@ hr {
 iframe,
 video {
     width: 100%;
-    margin-bottom: $default-margin;
     border: none;
     overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $default-margin;
 }
 
 ::selection {

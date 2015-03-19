@@ -113,6 +113,15 @@ description: The style guide for chrisburnell.com.
 <button>Button</button>
 
 
+{% include heading.html title="Buttons List" %}
+
+<div class="buttons-list">
+    <button>Button</button><!--
+ --><button>Button</button><!--
+ --><button>Button</button>
+</div>
+
+
 {% include heading.html title="Blockquote" %}
 
 <blockquote>
@@ -126,39 +135,6 @@ description: The style guide for chrisburnell.com.
     <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
     <cite>Quote Source</cite>
 </blockquote>
-
-
-{% include heading.html title="Preformatted Text" %}
-
-<pre>P R E F O R M A T T E D T E X T
-! " # $ % & ' ( ) * + , - . /
-0 1 2 3 4 5 6 7 8 9 : ; < = > ?
-@ A B C D E F G H I J K L M N O
-P Q R S T U V W X Y Z [ \ ] ^ _
-` a b c d e f g h i j k l m n o
-p q r s t u v w x y z { | } ~ </pre>
-
-
-{% include heading.html title="Code Block" %}
-
-<pre><code>@mixin translate3d($values...) {
-    @if( length($values) == 0 ) {
-        $values: 0, 0, 0;
-    }
-    transform: translate3d(#{$values});
-}</code></pre>
-
-
-{% include heading.html title="Code Block with Language" %}
-
-{% highlight scss %}
-@mixin translate3d($values...) {
-    @if( length($values) == 0 ) {
-        $values: 0, 0, 0;
-    }
-    transform: translate3d(#{$values});
-}
-{% endhighlight %}
 
 
 {% include heading.html title="Unordered List" %}
@@ -213,6 +189,39 @@ p q r s t u v w x y z { | } ~ </pre>
 </dl>
 
 
+{% include heading.html title="Preformatted Text" %}
+
+<pre>P R E F O R M A T T E D T E X T
+! " # $ % & ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; < = > ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre>
+
+
+{% include heading.html title="Code Block" %}
+
+<pre><code>@mixin translate3d($values...) {
+    @if( length($values) == 0 ) {
+        $values: 0, 0, 0;
+    }
+    transform: translate3d(#{$values});
+}</code></pre>
+
+
+{% include heading.html title="Code Block with Language" %}
+
+{% highlight scss %}
+@mixin translate3d($values...) {
+    @if( length($values) == 0 ) {
+        $values: 0, 0, 0;
+    }
+    transform: translate3d(#{$values});
+}
+{% endhighlight %}
+
+
 {% include heading.html title="Figure" %}
 
 <figure>
@@ -225,6 +234,18 @@ p q r s t u v w x y z { | } ~ </pre>
 <figure>
     <img src="/images/content/white-wolf.png" alt="">
     <figcaption>Wolf by <a href="https://www.flickr.com/photos/richard_lev/" rel="external">RickyNJ</a></figcaption>
+</figure>
+
+
+{% include heading.html title="Video" %}
+
+<figure>
+    <video controls>
+        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
+        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
+        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
+    </video>
+    <figcaption>via <a href="https://peach.blender.org/">Big Buck Bunny</a>, hosted by <a href="http://www.vorwaerts-gmbh.de/">Vorwärts GmbH</a></figcaption>
 </figure>
 
 

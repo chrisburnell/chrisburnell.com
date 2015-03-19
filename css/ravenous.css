@@ -846,9 +846,12 @@ hr {
 iframe,
 video {
     width: 100%;
-    margin-bottom: 1.25rem;
     border: none;
     overflow-x: hidden;
+}
+
+iframe {
+    margin-bottom: 1.25rem;
 }
 
 ::-moz-selection {
