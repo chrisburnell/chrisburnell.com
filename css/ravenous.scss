@@ -7,16 +7,16 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
- * INCLUDE MEDIA............. Import Include Media for dynamic media queries.
  * LAYOUT.................... Set the general page layout.
  * TYPOGRAPHY................ Set the default content styles.
- * LOGO...................... Set the logo styles.
+ * CODE BLOCKS............... Set the code block styles.
  * HEADER.................... Set the header styles.
- * BUTTONS................... Set the default button styles.
+ * LOGO...................... Set the logo styles.
  * CONTENT................... Set the content styles.
  * ASIDES.................... Set the aside styles.
+ * BUTTONS................... Set the default button styles.
+ * BUTTONS................... Set the article lists styles.
  * FOOTER.................... Set the footer styles.
- * CODE BLOCKS............... Set the code block styles.
  * ICONS..................... Set the icon styles.
  * PRINT..................... Set the print styles.
  * SHAME..................... Shameful hacks, shims, and temporary fixes.
@@ -26,14 +26,15 @@
         "include-media";
 @import "ui/vars",
         "ui/layout",
-        "ui/typography",
-        "ui/logo",
-        "ui/header",
-        "ui/buttons",
-        "ui/content",
-        "ui/asides",
-        "ui/footer",
-        "ui/code",
+        "ui/typography.base",
+        "ui/typography.code",
+        "ui/header.base",
+        "ui/header.logo",
+        "ui/content.base",
+        "ui/content.asides",
+        "ui/content.lists",
+        "ui/content.buttons",
+        "ui/footer.base",
         "ui/icons",
         "ui/print",
         "ui/shame";

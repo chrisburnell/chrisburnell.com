@@ -29,20 +29,6 @@
     @include media("<=small") {
         font-size: 2.75em;
     }
-    &:active {
-        @include translate3d(0, .125rem, 0);
-        svg {
-            /**
-             * In order to get `.logo svg` to travel up 2x the distance the
-             * `.logo` text does, first the `translate` applied on the parent
-             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
-             * is added, totalling 0.117em, made negative on the y-axis to
-             * go up. We cannot use `translate` as it is used below for
-             * further animating.
-             */
-            top: -0.4rem;
-        }
-    }
     svg {
         width: 2.307em;
         height: 2.307em;
@@ -64,6 +50,20 @@
          * Only animate the image when the user hovers `.logo`.
          */
         @include animation-play-state(running);
+    }
+    &:active {
+        @include translate3d(0, .125rem, 0);
+        svg {
+            /**
+             * In order to get `.logo svg` to travel up 2x the distance the
+             * `.logo` text does, first the `translate` applied on the parent
+             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
+             * is added, totalling 0.117em, made negative on the y-axis to
+             * go up. We cannot use `translate` as it is used below for
+             * further animating.
+             */
+            top: -0.4rem;
+        }
     }
 }
 @keyframes soaring {

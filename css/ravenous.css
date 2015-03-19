@@ -7,16 +7,16 @@
  * Table of Contents:
  *
  * NORMALIZE................. Import normalize as a reset.
- * INCLUDE MEDIA............. Import Include Media for dynamic media queries.
  * LAYOUT.................... Set the general page layout.
  * TYPOGRAPHY................ Set the default content styles.
- * LOGO...................... Set the logo styles.
+ * CODE BLOCKS............... Set the code block styles.
  * HEADER.................... Set the header styles.
- * BUTTONS................... Set the default button styles.
+ * LOGO...................... Set the logo styles.
  * CONTENT................... Set the content styles.
  * ASIDES.................... Set the aside styles.
+ * BUTTONS................... Set the default button styles.
+ * BUTTONS................... Set the article lists styles.
  * FOOTER.................... Set the footer styles.
- * CODE BLOCKS............... Set the code block styles.
  * ICONS..................... Set the icon styles.
  * PRINT..................... Set the print styles.
  * SHAME..................... Shameful hacks, shims, and temporary fixes.
@@ -421,21 +421,23 @@ th {
 \*------------------------------------*/
 html {
     box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #4f4f4f;
+    min-height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", Georgia, serif;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
-}
-
-body {
-    background-color: #f9f9f9;
-    color: #4f4f4f;
-    position: relative;
-    font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", Georgia, serif;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
@@ -478,13 +480,12 @@ p:empty {
 figure img,
 figure svg,
 blockquote,
-.article-banner,
-.small-articles-list a,
-.color-block-list li,
+pre:not(.codepen),
+[data-lang]:before,
 aside:not(.author),
 .author-image,
-pre:not(.codepen),
-[data-lang]:before {
+.article-banner,
+.small-articles-list a {
     background-clip: padding-box;
     border-radius: .375rem;
 }
@@ -837,6 +838,17 @@ hr {
     margin: .5rem 0 1.25rem;
 }
 
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border: none;
+    overflow-x: hidden;
+}
+
 ::-moz-selection {
     background: #5f8aa6;
     color: #f9f9f9;
@@ -848,167 +860,191 @@ hr {
 }
 
 /*------------------------------------*\
-    $LOGO
+    $CODE AND CODE BLOCKS
 \*------------------------------------*/
-.logo {
-    color: #4f4f4f;
-    display: inline-block;
-    padding-top: .5em;
-    padding-left: 1.923em;
-    position: relative;
-    font-family: "league-gothic", Impact, sans-serif;
-    font-size: 3.25rem;
-    line-height: 1em;
-    text-transform: uppercase;
-    text-shadow: .058em .058em 0 rgba(6, 6, 6, .05);
-    white-space: nowrap;
-    z-index: 1;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    will-change: transform;
+code,
+kbd,
+samp,
+var,
+.monospace {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: .875rem;
+    line-height: 1.5rem;
 }
-.logo:hover,
-.logo:focus,
-.logo:active {
-    text-decoration: none;
+
+p code,
+ol code,
+ul code,
+ins,
+kbd,
+mark,
+samp,
+var {
+    background-color: rgba(95, 138, 166, .1);
+    padding: .25rem;
+    word-wrap: break-word;
+    border-radius: .25rem;
 }
-@media (min-width: 769px) {
-    .logo {
-        float: left;
-    }
+
+pre {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
 }
-@media (max-width: 500px) {
-    .logo {
-        font-size: 2.75em;
-    }
+pre:not(.codepen) {
+    background-color: rgba(6, 6, 6, .05);
+    padding: 1.5rem 1.5rem 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    line-height: 1.5rem;
 }
-.logo:active {
-    -webkit-transform: translate3d(0, .125rem, 0);
-            transform: translate3d(0, .125rem, 0);
-}
-.logo:active svg {
-    /**
-             * In order to get `.logo svg` to travel up 2x the distance the
-             * `.logo` text does, first the `translate` applied on the parent
-             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
-             * is added, totalling 0.117em, made negative on the y-axis to
-             * go up. We cannot use `translate` as it is used below for
-             * further animating.
-             */
-    top: -.4rem;
-}
-.logo svg {
-    width: 2.307em;
-    height: 2.307em;
+pre:not(.codepen) code {
+    min-width: 100%;
     display: block;
+}
+
+.highlight {
+    position: relative;
+}
+
+/**
+ * `data-lang` is always an attribute on a code element inside `div.highlight`
+ */
+[data-lang] {
+    padding-top: 2.25rem;
+}
+[data-lang]:before {
+    content: attr(data-lang);
+    background-color: #737373;
+    color: #f9f9f9;
+    width: 100%;
+    display: block;
+    padding: 0 1.5rem;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    -webkit-animation: soaring 30s linear alternate infinite;
-            animation: soaring 30s linear alternate infinite;
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    border-radius: .375rem .375rem 0 0;
     -webkit-transition: all .2s ease;
             transition: all .2s ease;
-    -webkit-transform: translate3d(0, -.8125em, 0);
-            transform: translate3d(0, -.8125em, 0);
-    will-change: top;
 }
-.logo:hover svg,
-.logo:focus svg,
-.logo:active svg {
-    /**
-         * Only animate the image when the user hovers `.logo`.
-         */
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
+[data-lang].language-css:before {
+    background-color: #016fba;
 }
-
-@-webkit-keyframes soaring {
-    0%,
-    100% {
-        -webkit-transform: translate3d(0, -.8125em, 0);
-                transform: translate3d(0, -.8125em, 0);
-    }
-
-    12.5% {
-        -webkit-transform: translate3d(-.0625em, -.6875em, 0);
-                transform: translate3d(-.0625em, -.6875em, 0);
-    }
-
-    25% {
-        -webkit-transform: translate3d(.125em, -.3125em, 0);
-                transform: translate3d(.125em, -.3125em, 0);
-    }
-
-    37.5% {
-        -webkit-transform: translate3d(.3125em, -.375em, 0);
-                transform: translate3d(.3125em, -.375em, 0);
-    }
-
-    50% {
-        -webkit-transform: translate3d(.125em, -.4375em, 0);
-                transform: translate3d(.125em, -.4375em, 0);
-    }
-
-    62.5% {
-        -webkit-transform: translate3d(.0625em, -.25em, 0);
-                transform: translate3d(.0625em, -.25em, 0);
-    }
-
-    75% {
-        -webkit-transform: translate3d(.1875em, -.4375em, 0);
-                transform: translate3d(.1875em, -.4375em, 0);
-    }
-
-    87.5% {
-        -webkit-transform: translate3d(-.0625em, -.5625em, 0);
-                transform: translate3d(-.0625em, -.5625em, 0);
-    }
+[data-lang].language-haml:before {
+    background-color: #e54d26;
+}
+[data-lang].language-html:before {
+    background-color: #e54d26;
+}
+[data-lang].language-javascript:before {
+    background-color: #f1c54c;
+}
+[data-lang].language-sass:before {
+    background-color: #c6538c;
+}
+[data-lang].language-scss:before {
+    background-color: #c6538c;
 }
 
-@keyframes soaring {
-    0%,
-    100% {
-        -webkit-transform: translate3d(0, -.8125em, 0);
-                transform: translate3d(0, -.8125em, 0);
-    }
-
-    12.5% {
-        -webkit-transform: translate3d(-.0625em, -.6875em, 0);
-                transform: translate3d(-.0625em, -.6875em, 0);
-    }
-
-    25% {
-        -webkit-transform: translate3d(.125em, -.3125em, 0);
-                transform: translate3d(.125em, -.3125em, 0);
-    }
-
-    37.5% {
-        -webkit-transform: translate3d(.3125em, -.375em, 0);
-                transform: translate3d(.3125em, -.375em, 0);
-    }
-
-    50% {
-        -webkit-transform: translate3d(.125em, -.4375em, 0);
-                transform: translate3d(.125em, -.4375em, 0);
-    }
-
-    62.5% {
-        -webkit-transform: translate3d(.0625em, -.25em, 0);
-                transform: translate3d(.0625em, -.25em, 0);
-    }
-
-    75% {
-        -webkit-transform: translate3d(.1875em, -.4375em, 0);
-                transform: translate3d(.1875em, -.4375em, 0);
-    }
-
-    87.5% {
-        -webkit-transform: translate3d(-.0625em, -.5625em, 0);
-                transform: translate3d(-.0625em, -.5625em, 0);
-    }
+/**
+ * Github-style Code Highlighting
+ */
+.highlight .err {
+    background-color: lightcoral;
+    color: firebrick;
+    font-weight: 600;
+}
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+    color: #737373;
+    font-style: italic;
+}
+.highlight .gs,
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nc,
+.highlight .ne,
+.highlight .nf,
+.highlight .o,
+.highlight .ow {
+    font-weight: 600;
+}
+.highlight .gr,
+.highlight .gt,
+.highlight .ne,
+.highlight .nf,
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx {
+    color: firebrick;
+}
+.highlight .gi,
+.highlight .gi .x {
+    background-color: turquoise;
+}
+.highlight .gd,
+.highlight .gd .x {
+    background-color: lightcoral;
+}
+.highlight .ge {
+    font-style: italic;
+}
+.highlight .m,
+.highlight .il,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .nb,
+.highlight .no,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+    color: cadetblue;
+}
+.highlight .sr {
+    color: forestgreen;
+}
+.highlight .bp,
+.highlight .gh,
+.highlight .go,
+.highlight .gp,
+.highlight .nn {
+    color: #737373;
+}
+.highlight .gu,
+.highlight .w {
+    color: #dddddd;
+}
+.highlight .kt,
+.highlight .na,
+.highlight .nc,
+.highlight .nt {
+    color: #5f8aa6;
+}
+.highlight .ni,
+.highlight .ss {
+    color: slateblue;
+    color: rebeccapurple;
 }
 
 /*------------------------------------*\
@@ -1129,96 +1165,167 @@ hr {
 }
 
 /*------------------------------------*\
-    $BUTTONS
+    $LOGO
 \*------------------------------------*/
-button,
-.button {
-    background-color: #5f8aa6;
-    color: #f9f9f9;
-    min-width: 8em;
-    height: 2.182em;
+.logo {
+    color: #4f4f4f;
     display: inline-block;
-    padding: 0 .727em .182em;
-    border: 0;
-    margin-top: .25rem;
-    outline-style: none;
+    padding-top: .5em;
+    padding-left: 1.923em;
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
-    font-size: 1.375rem;
-    line-height: 2em;
-    text-align: center;
+    font-size: 3.25rem;
+    line-height: 1em;
     text-transform: uppercase;
+    text-shadow: .058em .058em 0 rgba(6, 6, 6, .05);
     white-space: nowrap;
-    cursor: pointer;
-    border-radius: .25rem;
-    box-shadow: inset 0 -.182em 0 0 #4b6f87;
-    -webkit-transition: background-color .2s ease;
-            transition: background-color .2s ease;
-    will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
+    z-index: 1;
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    will-change: transform;
 }
-button:hover,
-button:focus,
-button:active,
-.button:hover,
-.button:focus,
-.button:active {
-    background-color: #6f96af;
-    outline-style: auto;
+.logo:hover,
+.logo:focus,
+.logo:active {
     text-decoration: none;
 }
-button:active,
-.button:active {
-    height: 2em;
-    padding-bottom: 0;
-    margin-bottom: .25rem;
-    box-shadow: inset 0 -1px 0 0 #4b6f87;
-    -webkit-transform: translate3d(0, .25rem, 0);
-            transform: translate3d(0, .25rem, 0);
+@media (min-width: 769px) {
+    .logo {
+        float: left;
+    }
 }
-button:before,
-button:after,
-.button:before,
-.button:after {
-    content: "";
-    width: 100%;
-    height: .25rem;
+@media (max-width: 500px) {
+    .logo {
+        font-size: 2.75em;
+    }
+}
+.logo svg {
+    width: 2.307em;
+    height: 2.307em;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
+    -webkit-animation: soaring 30s linear alternate infinite;
+            animation: soaring 30s linear alternate infinite;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    -webkit-transform: translate3d(0, -.8125em, 0);
+            transform: translate3d(0, -.8125em, 0);
     will-change: top;
 }
-button:active:before,
-button:active:after,
-.button:active:before,
-.button:active:after {
-    top: -.25rem;
+.logo:hover svg,
+.logo:focus svg,
+.logo:active svg {
+    /**
+         * Only animate the image when the user hovers `.logo`.
+         */
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
 }
-button[disabled],
-.button[disabled] {
-    opacity: .4;
+.logo:active {
+    -webkit-transform: translate3d(0, .125rem, 0);
+            transform: translate3d(0, .125rem, 0);
 }
-@media (max-width: 768px) {
-    .not-found-page button,
-    .not-found-page .button {
-        display: block;
-        margin: 0 auto 1.25rem;
+.logo:active svg {
+    /**
+             * In order to get `.logo svg` to travel up 2x the distance the
+             * `.logo` text does, first the `translate` applied on the parent
+             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
+             * is added, totalling 0.117em, made negative on the y-axis to
+             * go up. We cannot use `translate` as it is used below for
+             * further animating.
+             */
+    top: -.4rem;
+}
+
+@-webkit-keyframes soaring {
+    0%,
+    100% {
+        -webkit-transform: translate3d(0, -.8125em, 0);
+                transform: translate3d(0, -.8125em, 0);
+    }
+
+    12.5% {
+        -webkit-transform: translate3d(-.0625em, -.6875em, 0);
+                transform: translate3d(-.0625em, -.6875em, 0);
+    }
+
+    25% {
+        -webkit-transform: translate3d(.125em, -.3125em, 0);
+                transform: translate3d(.125em, -.3125em, 0);
+    }
+
+    37.5% {
+        -webkit-transform: translate3d(.3125em, -.375em, 0);
+                transform: translate3d(.3125em, -.375em, 0);
+    }
+
+    50% {
+        -webkit-transform: translate3d(.125em, -.4375em, 0);
+                transform: translate3d(.125em, -.4375em, 0);
+    }
+
+    62.5% {
+        -webkit-transform: translate3d(.0625em, -.25em, 0);
+                transform: translate3d(.0625em, -.25em, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(.1875em, -.4375em, 0);
+                transform: translate3d(.1875em, -.4375em, 0);
+    }
+
+    87.5% {
+        -webkit-transform: translate3d(-.0625em, -.5625em, 0);
+                transform: translate3d(-.0625em, -.5625em, 0);
     }
 }
-button svg,
-.button svg {
-    width: .8em;
-    height: .8em;
-    display: inline-block;
-    margin-right: .25em;
-    pointer-events: none;
-}
-button .icon--archive,
-.button .icon--archive {
-    width: .72em;
-}
-button .icon--feather,
-.button .icon--feather {
-    width: .58em;
+
+@keyframes soaring {
+    0%,
+    100% {
+        -webkit-transform: translate3d(0, -.8125em, 0);
+                transform: translate3d(0, -.8125em, 0);
+    }
+
+    12.5% {
+        -webkit-transform: translate3d(-.0625em, -.6875em, 0);
+                transform: translate3d(-.0625em, -.6875em, 0);
+    }
+
+    25% {
+        -webkit-transform: translate3d(.125em, -.3125em, 0);
+                transform: translate3d(.125em, -.3125em, 0);
+    }
+
+    37.5% {
+        -webkit-transform: translate3d(.3125em, -.375em, 0);
+                transform: translate3d(.3125em, -.375em, 0);
+    }
+
+    50% {
+        -webkit-transform: translate3d(.125em, -.4375em, 0);
+                transform: translate3d(.125em, -.4375em, 0);
+    }
+
+    62.5% {
+        -webkit-transform: translate3d(.0625em, -.25em, 0);
+                transform: translate3d(.0625em, -.25em, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(.1875em, -.4375em, 0);
+                transform: translate3d(.1875em, -.4375em, 0);
+    }
+
+    87.5% {
+        -webkit-transform: translate3d(-.0625em, -.5625em, 0);
+                transform: translate3d(-.0625em, -.5625em, 0);
+    }
 }
 
 /*------------------------------------*\
@@ -1264,6 +1371,251 @@ article {
     }
 }
 
+/**
+ * Contains embedded media properly and allows them to be dynamically resized.
+ */
+.media-container {
+    height: 0;
+    padding-top: 30px;
+    padding-bottom: 56.65%;
+    position: relative;
+    overflow: hidden;
+}
+.media-container embed,
+.media-container iframe,
+.media-container object,
+.media-container video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/**
+ * Contains buttons and internal links.
+ */
+.articles-navigation,
+.buttons-list {
+    width: 100%;
+    text-align: center;
+}
+.articles-navigation button,
+.articles-navigation .button,
+.buttons-list button,
+.buttons-list .button {
+    display: inline-block;
+}
+@media (min-width: 501px) {
+    .articles-navigation button + button,
+    .articles-navigation button + .button,
+    .articles-navigation .button + button,
+    .articles-navigation .button + .button,
+    .buttons-list button + button,
+    .buttons-list button + .button,
+    .buttons-list .button + button,
+    .buttons-list .button + .button {
+        margin-left: 1.875em;
+    }
+}
+
+.articles-navigation {
+    padding: 2.068rem 0 2.25rem;
+    border-top: .125rem solid rgba(6, 6, 6, .1);
+}
+.about-page .articles-navigation {
+    border-top: 0;
+    padding: 1.25rem 0;
+}
+
+.buttons-list {
+    padding-bottom: 1.25rem;
+}
+
+.comments {
+    text-align: center;
+}
+@media (min-width: 769px) {
+    .pagination + .comments {
+        padding-top: 2.25rem;
+    }
+}
+.comments .show-comments:before,
+.comments .show-comments:active:before {
+    position: relative;
+    top: 0;
+}
+.comments noscript {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+/*------------------------------------*\
+    $ASIDES
+\*------------------------------------*/
+/**
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_content.scss`.
+ */
+aside {
+    width: 15.875rem;
+}
+@media (min-width: 769px) {
+    aside {
+        float: left;
+        margin-left: -18.125rem;
+    }
+}
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+    }
+    aside:not(.author) {
+        background: rgba(6, 6, 6, .05);
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    aside:not(.author):last-child {
+        margin-bottom: 0;
+    }
+}
+aside p,
+aside figcaption {
+    clear: both;
+}
+@media (min-width: 501px) {
+    aside p,
+    aside figcaption {
+        font-size: .875rem;
+    }
+}
+
+/**
+ * The `.author` aside is always pushed underneath the content below the medium
+ * breakpoint.
+ */
+/*aside*/
+.author {
+    font-family: "proxima-nova", sans-serif;
+}
+@media (max-width: 768px) {
+    .author {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-ordinal-group: 1000;
+        -webkit-order: 999;
+        -ms-flex-order: 999;
+                order: 999;
+    }
+    .about-page .author {
+        margin-top: 1.25rem;
+    }
+}
+
+.author-information {
+    margin-bottom: 1.25rem;
+    font-family: "ff-meta-serif-web-pro", Georgia, serif;
+    font-size: .875rem;
+    font-style: italic;
+}
+@media (max-width: 768px) {
+    .author-information {
+        -webkit-box-ordinal-group: 999;
+        -webkit-order: 998;
+        -ms-flex-order: 998;
+                order: 998;
+        padding-top: 2.25rem;
+        border-top: .125rem solid rgba(6, 6, 6, .1);
+        margin-bottom: .625rem;
+    }
+}
+.author-information a,
+.author-information strong {
+    color: inherit;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@media (min-width: 769px) {
+    .author-biography {
+        margin-bottom: 1.25rem;
+    }
+}
+.author-biography p:not(:last-child) {
+    margin-bottom: .625rem;
+}
+
+.author-name,
+.author-age,
+.author-employer,
+.article-date,
+.article-label {
+    box-sizing: content-box;
+    display: block;
+    margin-bottom: .5rem;
+    line-height: 1.25rem;
+}
+
+.article-label a:after,
+.featured-pens-link:after {
+    content: "\00a0\2192";
+}
+
+.author-image {
+    background-size: 100%;
+    width: 6.25rem;
+    height: 6.25rem;
+    display: inline-block;
+    float: left;
+    margin-right: .625rem;
+}
+
+.article-tags {
+    display: table-cell;
+    line-height: 1.25rem;
+}
+
+@media (min-width: 769px) {
+    .featured-pens,
+    .related-articles {
+        margin-top: 1.25rem;
+    }
+}
+
+.featured-pens-title,
+.related-articles-title {
+    margin-top: 0;
+}
+
+.featured-pens-link {
+    width: 100%;
+    display: block;
+    margin-top: .625rem;
+    font-weight: bold;
+    text-align: right;
+}
+@media (max-width: 768px) {
+    .featured-pens-link {
+        margin-bottom: 1.25rem;
+        text-align: center;
+    }
+}
+
+/*------------------------------------*\
+    $LISTS
+\*------------------------------------*/
 .articles-list li {
     width: 100%;
     display: inline-block;
@@ -1479,10 +1831,6 @@ aside .small-articles-list li + li {
     color: #4f4f4f;
     margin-top: .3125em;
 }
-
-/**
- * For Featured Pens, `svg` is a child of the `li`
- */
 .small-articles-list svg {
     opacity: .05;
     width: 6.25em !important;
@@ -1511,296 +1859,97 @@ aside .small-articles-list li + li {
     opacity: .25;
 }
 
-.articles-navigation,
-.buttons-list {
-    width: 100%;
-    text-align: center;
-}
-.articles-navigation button,
-.articles-navigation .button,
-.buttons-list button,
-.buttons-list .button {
-    display: inline-block;
-}
-@media (min-width: 501px) {
-    .articles-navigation button + button,
-    .articles-navigation button + .button,
-    .articles-navigation .button + button,
-    .articles-navigation .button + .button,
-    .buttons-list button + button,
-    .buttons-list button + .button,
-    .buttons-list .button + button,
-    .buttons-list .button + .button {
-        margin-left: 1.875em;
-    }
-}
-
-.articles-navigation {
-    padding: 2.068rem 0 2.25rem;
-    border-top: .125rem solid rgba(6, 6, 6, .1);
-}
-.about-page .articles-navigation {
-    border-top: 0;
-    padding: 1.25rem 0;
-}
-
-.buttons-list {
-    padding-bottom: 1.25rem;
-}
-
-.comments {
-    text-align: center;
-}
-@media (min-width: 769px) {
-    .pagination + .comments {
-        padding-top: 2.25rem;
-    }
-}
-.comments .show-comments:before,
-.comments .show-comments:active:before {
-    position: relative;
-    top: 0;
-}
-.comments noscript {
-    font-family: "proxima-nova", sans-serif;
-    font-size: 1.25rem;
-    font-style: italic;
-}
-
-/**
- * Style Guide
- */
-.color-block-list {
-    margin-bottom: .75em;
-    text-align: center;
-}
-.color-block-list li {
-    color: #f9f9f9;
-    width: 6.5em;
-    height: 6.5em;
-    display: inline-block;
-    border: .25rem solid rgba(6, 6, 6, .25);
-    margin: 0 .25em .5em;
-    font-family: Consolas, Monaco, "Courier New", monospace;
-    font-weight: 700;
-    line-height: 6em;
-    text-align: center;
-    white-space: nowrap;
-}
-.color-block-list li[data-color="#5F8AA6"] {
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+button,
+.button {
     background-color: #5f8aa6;
-}
-.color-block-list li[data-color="#F9F9F9"] {
-    background-color: #f9f9f9;
-    color: #4f4f4f;
-}
-.color-block-list li[data-color="#4F4F4F"] {
-    background-color: #4f4f4f;
-}
-.color-block-list li[data-color="#737373"] {
-    background-color: #737373;
-}
-.color-block-list li[data-color="#DDDDDD"] {
-    background-color: #dddddd;
-    color: #4f4f4f;
-}
-
-.style-guide-page :not(.page-description) + h3[id] {
-    margin-top: 3.375rem;
-}
-
-/**
- * Contains embedded media properly and allows them to be dynamically resized.
- */
-.media-container {
-    height: 0;
-    padding-top: 30px;
-    padding-bottom: 56.65%;
+    color: #f9f9f9;
+    min-width: 8em;
+    height: 2.182em;
+    display: inline-block;
+    padding: 0 .727em .182em;
+    border: 0;
+    margin-top: .25rem;
+    outline-style: none;
     position: relative;
-    overflow: hidden;
+    font-family: "league-gothic", Impact, sans-serif;
+    font-size: 1.375rem;
+    line-height: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: .25rem;
+    box-shadow: inset 0 -.182em 0 0 #4b6f87;
+    -webkit-transition: background-color .2s ease;
+            transition: background-color .2s ease;
+    will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
 }
-.media-container embed,
-.media-container iframe,
-.media-container object,
-.media-container video {
+button:hover,
+button:focus,
+button:active,
+.button:hover,
+.button:focus,
+.button:active {
+    background-color: #6f96af;
+    outline-style: auto;
+    text-decoration: none;
+}
+button:active,
+.button:active {
+    height: 2em;
+    padding-bottom: 0;
+    margin-bottom: .25rem;
+    box-shadow: inset 0 -1px 0 0 #4b6f87;
+    -webkit-transform: translate3d(0, .25rem, 0);
+            transform: translate3d(0, .25rem, 0);
+}
+button:before,
+button:after,
+.button:before,
+.button:after {
+    content: "";
     width: 100%;
-    height: 100%;
+    height: .25rem;
     position: absolute;
     top: 0;
     left: 0;
+    will-change: top;
 }
-
-/**
- * Fix `iframe` and `video`
- */
-iframe,
-video {
-    width: 100%;
-    margin-bottom: 1.25rem;
-    border: none;
-    overflow-x: hidden;
+button:active:before,
+button:active:after,
+.button:active:before,
+.button:active:after {
+    top: -.25rem;
 }
-
-/*------------------------------------*\
-    $ASIDES
-\*------------------------------------*/
-/**
- * The width of the asides is static above the medium breakpoint and always
- * floated within an article or list of articles. The math is calculated as in
- * `_content.scss`.
- */
-aside {
-    width: 15.875rem;
-}
-@media (min-width: 769px) {
-    aside {
-        float: left;
-        margin-left: -18.125rem;
-    }
+button[disabled],
+.button[disabled] {
+    opacity: .4;
 }
 @media (max-width: 768px) {
-    aside {
-        width: 100%;
-    }
-    aside:not(.author) {
-        background: rgba(6, 6, 6, .05);
-        padding: 1rem;
-        margin-bottom: 1.25rem;
-    }
-    aside:not(.author):last-child {
-        margin-bottom: 0;
+    .not-found-page button,
+    .not-found-page .button {
+        display: block;
+        margin: 0 auto 1.25rem;
     }
 }
-aside p,
-aside figcaption {
-    clear: both;
-}
-@media (min-width: 501px) {
-    aside p,
-    aside figcaption {
-        font-size: .875rem;
-    }
-}
-
-/**
- * The `.author` aside is always pushed underneath the content below the medium
- * breakpoint.
- */
-/*aside*/
-.author {
-    font-family: "proxima-nova", sans-serif;
-}
-@media (max-width: 768px) {
-    .author {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display:         flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-ordinal-group: 1000;
-        -webkit-order: 999;
-        -ms-flex-order: 999;
-                order: 999;
-    }
-    .about-page .author {
-        margin-top: 1.25rem;
-    }
-}
-
-.author-information {
-    margin-bottom: 1.25rem;
-    font-family: "ff-meta-serif-web-pro", Georgia, serif;
-    font-size: .875rem;
-    font-style: italic;
-}
-@media (max-width: 768px) {
-    .author-information {
-        -webkit-box-ordinal-group: 999;
-        -webkit-order: 998;
-        -ms-flex-order: 998;
-                order: 998;
-        padding-top: 2.25rem;
-        border-top: .125rem solid rgba(6, 6, 6, .1);
-        margin-bottom: .625rem;
-    }
-}
-.author-information a,
-.author-information strong {
-    color: inherit;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-@media (min-width: 769px) {
-    .author-biography {
-        margin-bottom: 1.25rem;
-    }
-}
-.author-biography p:not(:last-child) {
-    margin-bottom: .625rem;
-}
-
-.author-name,
-.author-age,
-.author-employer,
-.article-date,
-.article-label {
-    box-sizing: content-box;
-    display: block;
-    margin-bottom: .5rem;
-    line-height: 1.25rem;
-}
-
-.article-label a:after,
-.featured-pens-link:after {
-    content: "\00a0\2192";
-}
-
-.author-image {
-    background-size: 100%;
-    width: 6.25rem;
-    height: 6.25rem;
+button svg,
+.button svg {
+    width: .8em;
+    height: .8em;
     display: inline-block;
-    float: left;
-    margin-right: .625rem;
+    margin-right: .25em;
+    pointer-events: none;
 }
-
-.article-tags {
-    display: table-cell;
-    line-height: 1.25rem;
+button .icon--archive,
+.button .icon--archive {
+    width: .72em;
 }
-
-@media (min-width: 769px) {
-    .featured-pens,
-    .related-articles {
-        margin-top: 1.25rem;
-    }
-}
-
-.featured-pens-title,
-.related-articles-title {
-    margin-top: 0;
-}
-
-.featured-pens-link {
-    width: 100%;
-    display: block;
-    margin-top: .625rem;
-    font-weight: bold;
-    text-align: right;
-}
-@media (max-width: 768px) {
-    .featured-pens-link {
-        margin-bottom: 1.25rem;
-        text-align: center;
-    }
+button .icon--feather,
+.button .icon--feather {
+    width: .58em;
 }
 
 /*------------------------------------*\
@@ -1913,194 +2062,6 @@ footer {
     .footer-spacer {
         display: none;
     }
-}
-
-/*------------------------------------*\
-    $CODE AND CODE BLOCKS
-\*------------------------------------*/
-code,
-kbd,
-samp,
-var,
-.monospace {
-    font-family: Consolas, Monaco, "Courier New", monospace;
-    font-size: .875rem;
-    line-height: 1.5rem;
-}
-
-p code,
-ol code,
-ul code,
-ins,
-kbd,
-mark,
-samp,
-var {
-    background-color: rgba(95, 138, 166, .1);
-    padding: .25rem;
-    word-wrap: break-word;
-    border-radius: .25rem;
-}
-
-pre {
-    margin-top: 0;
-    margin-bottom: 1.25rem;
-}
-pre:not(.codepen) {
-    background-color: rgba(6, 6, 6, .05);
-    padding: 1.5rem 1.5rem 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    line-height: 1.5rem;
-}
-pre:not(.codepen) code {
-    min-width: 100%;
-    display: block;
-}
-
-.highlight {
-    position: relative;
-}
-
-/**
- * `data-lang` is always an attribute on a code element inside `div.highlight`
- */
-[data-lang] {
-    padding-top: 2.25rem;
-}
-[data-lang]:before {
-    content: attr(data-lang);
-    background-color: #737373;
-    color: #f9f9f9;
-    width: 100%;
-    display: block;
-    padding: 0 1.5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 2.25rem;
-    text-transform: uppercase;
-    border-radius: .375rem .375rem 0 0;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-}
-[data-lang].language-css:before {
-    background-color: #016fba;
-}
-[data-lang].language-haml:before {
-    background-color: #e54d26;
-}
-[data-lang].language-html:before {
-    background-color: #e54d26;
-}
-[data-lang].language-javascript:before {
-    background-color: #f1c54c;
-}
-[data-lang].language-sass:before {
-    background-color: #c6538c;
-}
-[data-lang].language-scss:before {
-    background-color: #c6538c;
-}
-
-/**
- * Github-style Code Highlighting
- */
-.highlight .err {
-    background-color: lightcoral;
-    color: firebrick;
-    font-weight: 600;
-}
-.highlight .c,
-.highlight .cm,
-.highlight .cp,
-.highlight .c1,
-.highlight .cs {
-    color: #737373;
-    font-style: italic;
-}
-.highlight .gs,
-.highlight .k,
-.highlight .kc,
-.highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt,
-.highlight .nc,
-.highlight .ne,
-.highlight .nf,
-.highlight .o,
-.highlight .ow {
-    font-weight: 600;
-}
-.highlight .gr,
-.highlight .gt,
-.highlight .ne,
-.highlight .nf,
-.highlight .s,
-.highlight .sb,
-.highlight .sc,
-.highlight .sd,
-.highlight .s1,
-.highlight .s2,
-.highlight .se,
-.highlight .sh,
-.highlight .si,
-.highlight .sx {
-    color: firebrick;
-}
-.highlight .gi,
-.highlight .gi .x {
-    background-color: turquoise;
-}
-.highlight .gd,
-.highlight .gd .x {
-    background-color: lightcoral;
-}
-.highlight .ge {
-    font-style: italic;
-}
-.highlight .m,
-.highlight .il,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo,
-.highlight .nb,
-.highlight .no,
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi {
-    color: cadetblue;
-}
-.highlight .sr {
-    color: forestgreen;
-}
-.highlight .bp,
-.highlight .gh,
-.highlight .go,
-.highlight .gp,
-.highlight .nn {
-    color: #737373;
-}
-.highlight .gu,
-.highlight .w {
-    color: #dddddd;
-}
-.highlight .kt,
-.highlight .na,
-.highlight .nc,
-.highlight .nt {
-    color: #5f8aa6;
-}
-.highlight .ni,
-.highlight .ss {
-    color: slateblue;
-    color: rebeccapurple;
 }
 
 /*------------------------------------*\

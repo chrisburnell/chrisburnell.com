@@ -275,6 +275,17 @@ hr {
     margin: .5rem 0 $default-margin;
 }
 
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    margin-bottom: $default-margin;
+    border: none;
+    overflow-x: hidden;
+}
+
 ::selection {
     background: $blue;
     color: $white;
