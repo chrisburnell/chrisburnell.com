@@ -14,8 +14,9 @@
  * LOGO...................... Set the logo styles.
  * CONTENT................... Set the content styles.
  * ASIDES.................... Set the aside styles.
+ * LISTS..................... Set the article lists styles.
  * BUTTONS................... Set the default button styles.
- * BUTTONS................... Set the article lists styles.
+ * STYLEGUIDE................ Set the style guide styles.
  * FOOTER.................... Set the footer styles.
  * ICONS..................... Set the icon styles.
  * PRINT..................... Set the print styles.
@@ -485,7 +486,8 @@ pre:not(.codepen),
 aside:not(.author),
 .author-image,
 .article-banner,
-.small-articles-list a {
+.small-articles-list a,
+.color-block-list li {
     background-clip: padding-box;
     border-radius: .375rem;
 }
@@ -1958,6 +1960,48 @@ button .icon--archive,
 button .icon--feather,
 .button .icon--feather {
     width: .58em;
+}
+
+/*------------------------------------*\
+    $STYLEGUIDE
+\*------------------------------------*/
+.color-block-list {
+    margin-bottom: .75em;
+    text-align: center;
+}
+.color-block-list li {
+    color: #f9f9f9;
+    width: 6.5em;
+    height: 6.5em;
+    display: inline-block;
+    border: .25rem solid rgba(6, 6, 6, .25);
+    margin: 0 .25em .5em;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-weight: 700;
+    line-height: 6em;
+    text-align: center;
+    white-space: nowrap;
+}
+.color-block-list li[data-color="#5F8AA6"] {
+    background-color: #5f8aa6;
+}
+.color-block-list li[data-color="#F9F9F9"] {
+    background-color: #f9f9f9;
+    color: #4f4f4f;
+}
+.color-block-list li[data-color="#4F4F4F"] {
+    background-color: #4f4f4f;
+}
+.color-block-list li[data-color="#737373"] {
+    background-color: #737373;
+}
+.color-block-list li[data-color="#DDDDDD"] {
+    background-color: #dddddd;
+    color: #4f4f4f;
+}
+
+.style-guide-page :not(.page-description) + h3[id] {
+    margin-top: 3.375rem;
 }
 
 /*------------------------------------*\
