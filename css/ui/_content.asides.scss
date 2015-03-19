@@ -54,6 +54,7 @@ aside {
         font-size: .875rem;
         font-style: italic;
         @include media("<=medium") {
+            order: 997;
             padding-top: $default-padding;
             border-top: ($default-border / 2) solid $black-medium;
             margin-bottom: ($default-margin / 2);
@@ -71,6 +72,9 @@ aside {
     .author-biography {
         @include media(">medium") {
             margin-bottom: $default-margin;
+        }
+        @include media("<=medium") {
+            order: 998;
         }
         p:not(:last-child) {
             margin-bottom: ($default-margin / 2);
@@ -106,7 +110,9 @@ aside {
 
 .featured-pens,
 .related-articles {
-    margin-top: $default-margin;
+    @include media(">medium") {
+        margin-top: $default-margin;
+    }
 }
 .featured-pens-title,
 .related-articles-title {

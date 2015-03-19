@@ -1529,6 +1529,10 @@ aside figcaption {
 }
 @media (max-width: 768px) {
     .author-information {
+        -webkit-box-ordinal-group: 998;
+        -webkit-order: 997;
+        -ms-flex-order: 997;
+                order: 997;
         padding-top: 2.25rem;
         border-top: .125rem solid rgba(6, 6, 6, .1);
         margin-bottom: .625rem;
@@ -1547,6 +1551,14 @@ aside figcaption {
 @media (min-width: 769px) {
     .author-biography {
         margin-bottom: 1.25rem;
+    }
+}
+@media (max-width: 768px) {
+    .author-biography {
+        -webkit-box-ordinal-group: 999;
+        -webkit-order: 998;
+        -ms-flex-order: 998;
+                order: 998;
     }
 }
 .author-biography p:not(:last-child) {
@@ -1583,9 +1595,11 @@ aside figcaption {
     line-height: 1.25rem;
 }
 
-.featured-pens,
-.related-articles {
-    margin-top: 1.25rem;
+@media (min-width: 769px) {
+    .featured-pens,
+    .related-articles {
+        margin-top: 1.25rem;
+    }
 }
 
 .featured-pens-title,
