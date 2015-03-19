@@ -1587,11 +1587,9 @@ aside figcaption {
     line-height: 1.25rem;
 }
 
-@media (min-width: 769px) {
-    .featured-pens,
-    .related-articles {
-        margin-top: 1.25rem;
-    }
+.featured-pens,
+.related-articles {
+    margin-top: 1.25rem;
 }
 
 .featured-pens-title,

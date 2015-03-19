@@ -107,9 +107,7 @@ aside {
 
 .featured-pens,
 .related-articles {
-    @include media(">medium") {
-        margin-top: $default-margin;
-    }
+    margin-top: $default-margin;
 }
 .featured-pens-title,
 .related-articles-title {
