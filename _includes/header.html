@@ -44,7 +44,8 @@ snippet of code on a project of your own. -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
-    <meta name="theme-color" content="#5F8AA6">
+
+    <title>{{ meta_title }}</title>
 
     <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
@@ -58,21 +59,19 @@ snippet of code on a project of your own. -->
         <link rel="dns-prefetch" href="//referrer.disqus.com">
     {% endif %}
 
-    <title>{{ meta_title }}</title>
-
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
+
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/favicon.png">
     <link rel="author" href="/humans.txt">
 
     <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
     <meta name="description" content="{{ meta_description }}">
+    <meta name="theme-color" content="#5F8AA6">
 
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    {% include js-head.html %}
 
     {% if page.page_class != "not-found-page" %}
     <!-- OpenGraph and Twitter Microdata -->
@@ -91,6 +90,8 @@ snippet of code on a project of your own. -->
     {% else %}
     <meta name="robots" content="noindex,nofollow">
     {% endif %}
+
+    {% include js-head.html %}
 
 </head>
 <body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
