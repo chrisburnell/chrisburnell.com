@@ -42,7 +42,7 @@ snippet of code on a project of your own. -->
         {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% endif %}
     {% if page.banner_mobile and page.page_class != "not-found-page" %}
-        {% capture meta_image %}{{ site.url }}/images/article-banners/{{ page.banner_mobile }}{% encapture %}
+        {% capture meta_image %}{{ site.url }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
     {% elsif page.page_class != "not-found-page" %}
         {% capture meta_image %}{{ site.url }}/images/avatar@2x.png{% endcapture %}
     {% endif %}
