@@ -41,6 +41,11 @@ snippet of code on a project of your own. -->
     {% else %}
         {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% endif %}
+    {% if page.banner_mobile and page.page_class != "not-found-page" %}
+        {% capture meta_image %}{{ site.url }}/images/article-banners/{{ page.banner_mobile }}{% encapture %}
+    {% elsif page.page_class != "not-found-page" %}
+        {% capture meta_image %}{{ site.url }}/images/avatar@2x.png{% endcapture %}
+    {% endif %}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
@@ -66,29 +71,29 @@ snippet of code on a project of your own. -->
     <link rel="apple-touch-icon-precomposed" href="/favicon.png">
     <link rel="author" href="/humans.txt">
 
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
     <meta name="description" content="{{ meta_description }}">
     <meta name="theme-color" content="#5F8AA6">
 
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     {% if page.page_class != "not-found-page" %}
-    <!-- OpenGraph and Twitter Microdata -->
-    <meta property="og:title" content="{{ meta_title }}">
-    <meta property="og:description" content="{{ meta_description }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-    <meta property="og:image" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar@2x.png{% endif %}">
+        <!-- Twitter Microdata and OpenGraph -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@{{ site.author_twitter }}">
+        <meta name="twitter:title" content="{{ meta_title }}">
+        <meta name="twitter:description" content="{{ meta_description }}">
+        <meta name="twitter:image:src" content="{{ meta_image }}">
+        <meta name="twitter:domain" content="chrisburnell.com">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@{{ site.author_twitter }}">
-    <meta name="twitter:title" content="{{ meta_title }}">
-    <meta name="twitter:description" content="{{ meta_description }}">
-    <meta name="twitter:image:src" content="{{ site.url }}/images/{% if page.banner_mobile %}article-banners/{{ page.banner_mobile }}{% else %}avatar@2x.png{% endif %}">
-    <meta name="twitter:domain" content="chrisburnell.com">
+        <meta property="og:title" content="{{ meta_title }}">
+        <meta property="og:description" content="{{ meta_description }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
+        <meta property="og:image" content="{{ meta_image }}">
     {% else %}
-    <meta name="robots" content="noindex,nofollow">
+        <meta name="robots" content="noindex,nofollow">
     {% endif %}
 
     {% include js-head.html %}
