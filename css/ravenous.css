@@ -2053,21 +2053,21 @@ footer {
     }
 }
 
-.social-icons-list li {
+.footer-icons-list li {
     display: inline-block;
 }
-.social-icons-list li + li {
+.footer-icons-list li + li {
     margin-left: 1rem;
 }
 
-.home-link,
-.copyright-link,
-.style-guide-link {
+.footer-home-link,
+.footer-copyright-link,
+.footer-style-guide-link {
     display: inline-block;
     white-space: nowrap;
 }
 
-.home-link {
+.footer-home-link {
     width: 50px;
     height: 50px;
     margin-right: 1rem;
@@ -2079,33 +2079,33 @@ footer {
             transition: all .2s ease;
     will-change: transform;
 }
-.home-link:hover,
-.home-link:focus,
-.home-link:active {
+.footer-home-link:hover,
+.footer-home-link:focus,
+.footer-home-link:active {
     text-decoration: none;
 }
-.home-link:active {
+.footer-home-link:active {
     -webkit-transform: translate3d(0, .143em, 0);
             transform: translate3d(0, .143em, 0);
 }
 @media (max-width: 500px) {
-    .home-link {
+    .footer-home-link {
         margin-right: .5rem;
     }
 }
-.home-link svg {
+.footer-home-link svg {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-.copyright-link,
-.style-guide-link {
+.footer-copyright-link,
+.footer-style-guide-link {
     color: #dddddd;
 }
 
 @media (max-width: 500px) {
-    .style-guide-link {
+    .footer-style-guide-link {
         display: block;
     }
 }
@@ -2195,13 +2195,14 @@ footer {
 \*------------------------------------*/
 @media print {
     nav,
+    .featured-pens,
     .related-articles,
     .pagination,
     .comments,
     footer .home-link,
-    .copyright-spacer,
+    footer .copyright-spacer,
     footer .style-guide-link,
-    .social-icon-list {
+    footer .icons-list {
         display: none;
     }
     button,

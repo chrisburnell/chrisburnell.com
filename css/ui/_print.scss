@@ -4,13 +4,14 @@
 
 @include media("print") {
     nav,
+    .featured-pens,
     .related-articles,
     .pagination,
     .comments,
     footer .home-link,
-    .copyright-spacer,
+    footer .copyright-spacer,
     footer .style-guide-link,
-    .social-icon-list {
+    footer .icons-list {
         display: none;
     }
     button,

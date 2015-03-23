@@ -35,7 +35,7 @@ footer {
             margin-top: .625rem;
         }
     }
-        .social-icons-list {
+        .footer-icons-list {
             li {
                 display: inline-block;
                 + li {
@@ -43,13 +43,13 @@ footer {
                 }
             }
         }
-        .home-link,
-        .copyright-link,
-        .style-guide-link {
+        .footer-home-link,
+        .footer-copyright-link,
+        .footer-style-guide-link {
             display: inline-block;
             white-space: nowrap;
         }
-        .home-link {
+        .footer-home-link {
             width: 50px;
             height: 50px;
             margin-right: 1rem;
@@ -76,11 +76,11 @@ footer {
                 display: block;
             }
         }
-        .copyright-link,
-        .style-guide-link {
+        .footer-copyright-link,
+        .footer-style-guide-link {
             color: $text-color-light;
         }
-        .style-guide-link {
+        .footer-style-guide-link {
             @include media("<=small") {
                 display: block;
             }
