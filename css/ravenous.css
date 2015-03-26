@@ -1445,8 +1445,8 @@ article {
         padding-top: 2.25rem;
     }
 }
-.comments .show-comments:before,
-.comments .show-comments:active:before {
+.comments .show-comments-button:before,
+.comments .show-comments-button:active:before {
     position: relative;
     top: 0;
 }
