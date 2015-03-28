@@ -20,7 +20,7 @@ var cssPath = 'css/';
 
 // -----------------------------------------------------------------------------
 
-// Compile SASS, autoprefix properties and values, generate sourcemaps, and minify
+// Compile SASS, autoprefix, generate sourcemaps, and minify
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
