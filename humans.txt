@@ -7,7 +7,7 @@
 
 /* SITE */
 
-    URL:            http://chrisburnell.com
+    URL:            https://chrisburnell.com
     Language:       English
     Doctype:        HTML5
     Fonts:          FF Meta Serif Web Pro, Proxima Nova, League Gothic

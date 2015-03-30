@@ -2,17 +2,16 @@ title:       Chris Burnell
 description: "I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, web standards, innovation, and user experience."
 tagline:     "I’m ravenous for CSS"
 
-# url:            http://chrisburnell.com
 author:         Chris Burnell
 author_age:     25
 author_email:   me@chrisburnell.com
 author_twitter: iamchrisburnell
 
-shorturl: http://repc.co/
-
 job_title:    UI developer
 employer:     City University
-employer_url: http://www.city.ac.uk
+employer_url: https://www.city.ac.uk
+
+shorturl:    http://repc.co/
 
 codepen_url: http://codepen.io/chrisburnell
 github_url:  https://github.com/chrisburnell
