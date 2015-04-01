@@ -24,7 +24,7 @@ codepen_tabfree: 8863
 timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
-exclude: ['node_modules']
+exclude: ['node_modules, .sass-cache']
 
 permalink: /articles/:title
 paginate: 9001
