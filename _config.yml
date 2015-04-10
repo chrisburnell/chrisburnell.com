@@ -24,11 +24,11 @@ codepen_tabfree: 8863
 timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
-permalink: /article/:title/
+permalink: /article/:title
 collections:
   pens:
     output: true
-    permalink: /pen/:title/
+    permalink: /pen/:title
 paginate: 9001
 paginate_path: 'page:num'
 exclude: ['node_modules, .sass-cache']
