@@ -19,10 +19,12 @@
 <aside class="author" role="complementary" itemscope itemtype="http://data-vocabulary.org/Person">
 
     <div class="clear  author-information">
-        <img alt="" class="author-image" role="presentation" itemprop="photo"
-             src="/images/avatar.png"
-             srcset="/images/avatar.png 1x,
-                     /images/avatar@2x.png 2x">
+        <a rel="me" href="/about">
+            <img alt="" class="author-image" role="presentation" itemprop="photo"
+                 src="/images/avatar.png"
+                 srcset="/images/avatar.png 1x,
+                         /images/avatar@2x.png 2x">
+        </a>
         <div class="author-name">{{ author_name_prefix }} <a rel="me" href="/about" itemprop="name">{{ site.author }}</a></div>
         {% if page.layout == "article" %}
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
