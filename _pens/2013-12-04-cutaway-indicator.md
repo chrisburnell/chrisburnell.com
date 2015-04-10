@@ -5,8 +5,6 @@ category: codepen
 date: 2013-12-04 12:00:00
 
 title: Cutaway Indicator
-tags:
-- CodePen
 
 shorturl: b3sh4
 comments: true

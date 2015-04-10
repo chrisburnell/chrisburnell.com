@@ -5,8 +5,6 @@ category: codepen
 date: 2014-11-05 13:00:00
 
 title: Power of Transform Centering - Interactive
-tags:
-- CodePen
 
 shorturl: 8x586
 comments: true
@@ -14,7 +12,7 @@ comments: true
 
 {% include codepen-embed.html slug="xutbs" height="500" %}
 
-Check out the [demo version]({{ site.url }}/articles/transform-centering "Demo Version of Transorm Centering").
+Check out the [demo version]({{ site.url }}/article/transform-centering "Demo Version of Transorm Centering").
 
 {% highlight html %}
 <textarea class="modal" disabled></textarea>

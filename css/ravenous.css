@@ -1147,7 +1147,7 @@ pre:not(.codepen) code {
 .primary-navigation-list a:active,
 .home-page .primary-navigation-home a,
 .about-page .primary-navigation-about a,
-.archive-page .primary-navigation-archive a,
+.articles-page .primary-navigation-articles a,
 .pens-page .primary-navigation-pens a {
     color: #4f4f4f;
     padding-bottom: .5rem;
@@ -1156,7 +1156,7 @@ pre:not(.codepen) code {
 
 .home-page .primary-navigation-home a:after,
 .about-page .primary-navigation-about a:after,
-.archive-page .primary-navigation-archive a:after,
+.articles-page .primary-navigation-articles a:after,
 .pens-page .primary-navigation-pens a:after {
     content: "";
     border-top: .5em solid #5f8aa6;
@@ -1843,6 +1843,7 @@ aside .small-articles-list li + li {
 .small-articles-list .small-article-introduction {
     color: #4f4f4f;
     margin-top: .3125em;
+    font-size: .875rem;
 }
 .small-articles-list svg {
     opacity: .05;
@@ -1956,8 +1957,8 @@ button svg,
     margin-right: .25em;
     pointer-events: none;
 }
-button .icon--archive,
-.button .icon--archive {
+button .icon--article,
+.button .icon--article {
     width: .72em;
 }
 button .icon--feather,

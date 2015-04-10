@@ -14,8 +14,8 @@ description: All of my featured pens listed on one page.
 <p>These are my best pens&mdash;five of which were <a href="http://codepen.io/collection/hfqlg" rel="external">featured on their homepage</a>.</p>
 
 <ol id="pens" class="small-articles-list" role="list">
-    {% for post in site.posts %}
-    {% unless post.draft or post.category != "codepen" %}
+    {% for post in site.pens reversed %}
+    {% unless post.draft %}
         <li>
             <a href="{{ post.url }}">
                 <svg><use xlink:href="#svg--codepen" /></svg>
@@ -28,11 +28,10 @@ description: All of my featured pens listed on one page.
 </ol>
 
 <nav class="articles-navigation">
-    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a><!--
- --><a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a>
+    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
 </nav>
 
 <nav class="articles-navigation">
-    <a rel="me author" class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a><!--
+    <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a><!--
  --><a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
 </nav>

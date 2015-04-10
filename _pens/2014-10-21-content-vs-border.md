@@ -5,8 +5,6 @@ category: codepen
 date: 2014-10-21 12:00:00
 
 title: content-box vs. border-box
-tags:
-- CodePen
 
 shorturl: 6xcr7
 comments: true

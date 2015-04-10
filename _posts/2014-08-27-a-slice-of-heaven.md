@@ -57,7 +57,7 @@ This was an effect I’ve seen used across the web before that I’d wanted to t
 
 {% include heading.html id="simple-css-checkbox-revisited" title="Simple CSS Checkbox Revisited" %}
 
-This is a pen which I overhauled a bit since I first wrote about it in [Persistent Shadows](/articles/persistent-shadows/ "Persistent Shadows"):
+This is a pen which I overhauled a bit since I first wrote about it in {% post_url 2013-06-18-persistent-shadows %}:
 
 {% include codepen-embed.html slug="arouk" height="250" %}
 

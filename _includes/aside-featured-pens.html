@@ -1,19 +1,16 @@
 <div class="featured-pens">
     <h3 class="featured-pens-title"><a href="/pens">Featured Pens</a></h3>
     <ol class="small-articles-list" role="list">
-        {% assign featuredPensLimit = 4 %}
-        {% assign featuredPensCounter = 0 %}
-        {% for post in site.posts %}
-        {% unless featuredPensCounter >= featuredPensLimit or post.draft or post.category != "codepen" %}
-            {% assign featuredPensCounter = featuredPensCounter | plus: 1 %}
+        {% for post in site.pens limit:4 %}
+        {% unless post.draft %}
             <li>
                 <a href="{{ post.url }}">
                     <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                     <h4 class="small-article-title">{{ post.title }}</h4>
-                    {% if post.introduction %}
-                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 10 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
-                    {% endif %}
                     <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                    {% if post.introduction %}
+                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                    {% endif %}
                 </a>
             </li>
         {% endunless %}

@@ -5,8 +5,6 @@ category: codepen
 date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
-tags:
-- CodePen
 
 shorturl: 058xp
 comments: true

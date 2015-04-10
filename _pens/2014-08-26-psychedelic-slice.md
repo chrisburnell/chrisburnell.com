@@ -5,8 +5,6 @@ category: codepen
 date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
-tags:
-- CodePen
 
 shorturl: k9ouo
 comments: true

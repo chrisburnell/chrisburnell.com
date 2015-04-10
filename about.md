@@ -63,9 +63,8 @@ I also play the piano and bake bread from time to time.
 There are a number of RSS Feeds you can subscribe to:
 
 <nav class="buttons-list">
-    <a rel="me author" class="button" href="/feed.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to all</a><!--
- --><a rel="me author" class="button" href="/feed-articles.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
- --><a rel="me author" class="button" href="/feed-pens.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a>
+    <a rel="me author" class="button" href="/feed.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a><!--
+ --><a rel="me author" class="button" href="/feed-pens.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
 </nav>
 
-I'm contactable through <a rel="me publisher" class="link--twitter" href="{{ site.twitter_url }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.
+I'm reachable through <a rel="me publisher" class="link--twitter" href="{{ site.twitter_url }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.

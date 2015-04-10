@@ -5,8 +5,6 @@ category: codepen
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
-tags:
-- CodePen
 
 shorturl: f7utt
 comments: true

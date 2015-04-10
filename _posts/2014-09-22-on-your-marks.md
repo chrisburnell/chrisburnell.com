@@ -51,7 +51,7 @@ In this article I’m going to run through how I manage my comments section from
 First, let’s look at some statistics for loading Disqus comments on page load:
 
 - **37%** of an article page’s load time comes from loading Disqus
-    - This was tested on my article, [Let’s Look Back](/articles/lets-look-back/ "Let’s Look Back"), which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to Disqus could get even higher on my more minimal articles.
+    - This was tested on my article, {% post_url 2014-02-09-lets-look-back %}, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to Disqus could get even higher on my more minimal articles.
 - **298kB** of data comes from Disqus’ three servers used to load comments, which isn’t a hell of a lot.
 - **40** requests are made from Disqus in order to display the comments section.
 
@@ -223,7 +223,7 @@ As we saw in [the statistics](#the-weigh-in "The Weigh In") of Disqus’ impact,
 
 We still have a small thorn when it comes to users without Javascript enabled. Of course, the `noscript` tag will display a message, <q>Please enable Javascript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, Disqus have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](http://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without Javascript enabled anyway.
 
-[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. `https://disqus.com/comments/?url=https://chrisburnell.com/articles/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope Disqus implements something like this soon.
+[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope Disqus implements something like this soon.
 
 ---
 

@@ -5,8 +5,6 @@ category: codepen
 date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
-tags:
-- CodePen
 
 shorturl: e1r8k
 comments: true

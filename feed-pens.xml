@@ -21,8 +21,8 @@ layout: null
             <link>{{ site.url }}</link>
         </image>
 
-        {% for post in site.posts %}
-        {% unless post.draft or post.category != "codepen" %}
+        {% for post in site.pens %}
+        {% unless post.draft %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ site.url }}{{ post.url }}</link>

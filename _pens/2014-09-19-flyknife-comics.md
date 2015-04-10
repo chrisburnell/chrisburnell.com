@@ -5,8 +5,6 @@ category: codepen
 date: 2014-09-19 12:00:00
 
 title: Flyknife Comics
-tags:
-- CodePen
 
 shorturl: 6aorh
 comments: true

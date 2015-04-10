@@ -55,7 +55,7 @@ snippet of code on a project of your own. -->
     <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class == "home-page" or page.page_class == "archive-page" or page.comments == true %}
+    {% if page.page_class == "home-page" or page.page_class == "articles-page" or page.comments == true %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
     {% endif %}
     {% if page.comments == true %}
@@ -112,7 +112,7 @@ snippet of code on a project of your own. -->
             <ol class="primary-navigation-list">
                 <li class="primary-navigation-home"><a rel="home" href="/" tabindex="1">Home</a></li><!--
              --><li class="primary-navigation-about"><a rel="me" href="/about" tabindex="2">About</a></li><!--
-             --><li class="primary-navigation-archive"><a href="/archive" tabindex="3">Articles</a></li><!--
+             --><li class="primary-navigation-articles"><a href="/articles" tabindex="3">Articles</a></li><!--
              --><li class="primary-navigation-pens"><a href="/pens" tabindex="4">Pens</a></li>
             </ol>
         </nav>

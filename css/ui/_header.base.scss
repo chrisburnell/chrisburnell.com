@@ -78,7 +78,7 @@ header {
         .primary-navigation-list a:active,
         .home-page .primary-navigation-home a,
         .about-page .primary-navigation-about a,
-        .archive-page .primary-navigation-archive a,
+        .articles-page .primary-navigation-articles a,
         .pens-page .primary-navigation-pens a {
             color: $text-color;
             padding-bottom: .5rem;
@@ -87,7 +87,7 @@ header {
             // Primary Navigation Active Page Arrow
             .home-page .primary-navigation-home a:after,
             .about-page .primary-navigation-about a:after,
-            .archive-page .primary-navigation-archive a:after,
+            .articles-page .primary-navigation-articles a:after,
             .pens-page .primary-navigation-pens a:after {
                 content: "";
                 border-top:   .5em solid $blue;

@@ -5,8 +5,6 @@ category: codepen
 date: 2014-09-17 12:00:00
 
 title: Infinite Square
-tags:
-- CodePen
 
 shorturl: 6dwvt
 comments: true
