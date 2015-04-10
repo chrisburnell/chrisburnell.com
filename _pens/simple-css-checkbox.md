@@ -6,6 +6,7 @@ date: 2014-08-18 12:00:00
 
 title: Simple CSS Checkbox
 
+slug: simple-css-checkbox
 shorturl: g6pky
 comments: true
 ---

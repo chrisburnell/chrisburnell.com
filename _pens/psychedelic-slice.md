@@ -6,6 +6,7 @@ date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
 
+slug: psychedelic-slice
 shorturl: k9ouo
 comments: true
 ---

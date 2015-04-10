@@ -6,6 +6,7 @@ date: 2014-11-19 12:00:00
 
 title: Interaction Jazz
 
+slug: interaction-jazz
 shorturl: bhbt9
 comments: true
 ---
