@@ -6,7 +6,6 @@ date: 2014-09-17 12:00:00
 
 title: Infinite Square
 
-slug: infinite-square
 shorturl: 6dwvt
 comments: true
 ---

@@ -6,7 +6,6 @@ date: 2014-09-24 12:00:00
 
 title: Square Illusion
 
-slug: square-illusion
 shorturl: f7utt
 comments: true
 ---
