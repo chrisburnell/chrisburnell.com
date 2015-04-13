@@ -22,7 +22,7 @@ description: A list of tags and their article counterparts.
                     <h4 class="small-article-title">{{ post.title }}</h4>
                     <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                     {% if post.introduction %}
-                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
+                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
                     {% endif %}
                 </a>
             </li>
