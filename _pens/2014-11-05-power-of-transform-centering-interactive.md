@@ -6,6 +6,7 @@ date: 2014-11-05 13:00:00
 
 title: Power of Transform Centering - Interactive
 
+slug: transform-centering-interactive
 shorturl: 8x586
 comments: true
 ---
