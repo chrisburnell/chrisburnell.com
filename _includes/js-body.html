@@ -1,4 +1,3 @@
-<!-- Picturefill, Disqus Comments Toggle, Disqus Comments Count, Google Analytics, Codepen, Twitter -->
 <script type="text/javascript">
     /**
      * Picture element HTML5 shim
@@ -44,7 +43,8 @@
                 window.scrollTo(0, commentsSection.offsetTop);
             }
         }
-    {% elsif page.page_class == "home-page" or page.page_class == "articles-page" %}
+    {% endif %}
+    {% if page.page_class == "home-page" or page.page_class == "articles-page" %}
         /**
          * Show comment counts on home and archive pages
          */
