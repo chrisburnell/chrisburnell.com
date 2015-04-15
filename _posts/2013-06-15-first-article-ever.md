@@ -12,7 +12,7 @@ tags:
 - Jekyll
 - Markdown
 
-banner: first-article-ever.png
+banner:        first-article-ever.png
 banner_mobile: first-article-ever_mobile.png
 
 shorturl: bqrm4

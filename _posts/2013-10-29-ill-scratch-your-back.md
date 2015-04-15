@@ -10,7 +10,7 @@ tags:
 - CSS
 - Tutorials
 
-# banner: ill-scratch-your-back.png
+# banner:        ill-scratch-your-back.png
 # banner_mobile: ill-scratch-your-back_mobile.png
 
 shorturl: 82n3v

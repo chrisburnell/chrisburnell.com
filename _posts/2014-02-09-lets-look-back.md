@@ -11,7 +11,7 @@ tags:
 - GitHub
 - Tutorials
 
-banner: lets-look-back.png
+banner:        lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
 
 shorturl: dxaon

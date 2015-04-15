@@ -10,7 +10,7 @@ tags:
 - Javascript
 - Tutorials
 
-banner: on-your-marks.png
+banner:        on-your-marks.png
 banner_mobile: on-your-marks_mobile.png
 
 shorturl: sfn8k

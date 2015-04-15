@@ -11,7 +11,7 @@ tags:
 - CSS
 - UX
 
-banner: persistent-shadows.png
+banner:        persistent-shadows.png
 banner_mobile: persistent-shadows_mobile.png
 
 shorturl: jmfy7

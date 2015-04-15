@@ -10,7 +10,7 @@ tags:
 - CSS
 - Tutorials
 
-banner: theming-pinboard.png
+banner:        theming-pinboard.png
 banner_mobile: theming-pinboard_mobile.png
 
 shorturl: 1faeu

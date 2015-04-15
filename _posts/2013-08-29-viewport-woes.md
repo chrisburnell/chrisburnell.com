@@ -10,7 +10,7 @@ tags:
 - HTML
 - Tutorials
 
-banner: viewport-woes.png
+banner:        viewport-woes.png
 banner_mobile: viewport-woes_mobile.png
 
 shorturl: xoskc
