@@ -1601,8 +1601,8 @@ aside figcaption {
     display: inline-block;
     float: left;
     margin-right: .625rem;
-    -webkit-filter: sepia(100%) hue-rotate(150deg);
-            filter: sepia(100%) hue-rotate(150deg);
+    -webkit-filter: contrast(75%) hue-rotate(150deg) sepia(100%);
+            filter: contrast(75%) hue-rotate(150deg) sepia(100%);
 }
 
 .article-tags {

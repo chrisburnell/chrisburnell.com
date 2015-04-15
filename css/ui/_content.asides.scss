@@ -102,7 +102,7 @@ aside {
         display: inline-block;
         float: left;
         margin-right: .625rem;
-        filter: sepia(100%) hue-rotate(150deg);
+        filter: contrast(75%) hue-rotate(150deg) sepia(100%);
     }
     .article-tags {
         display: table-cell; // don’t wrap around `.author-image`
