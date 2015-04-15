@@ -25,7 +25,7 @@
                  srcset="/images/avatar.png 1x,
                          /images/avatar@2x.png 2x">
         </a>
-        <div class="author-name">{{ author_name_prefix }} <a rel="me" href="/about" itemprop="name">{{ site.author }}</a></div>
+        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="canada" href="/about" itemprop="name">{{ site.author }}</a></div>
         {% if page.layout == "article" %}
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
             {% if page.category == "codepen" %}

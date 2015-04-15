@@ -864,6 +864,14 @@ iframe {
     color: #f9f9f9;
 }
 
+.canada::-moz-selection {
+    background-color: red;
+}
+
+.canada::selection {
+    background-color: red;
+}
+
 /*------------------------------------*\
     $CODE AND CODE BLOCKS
 \*------------------------------------*/
