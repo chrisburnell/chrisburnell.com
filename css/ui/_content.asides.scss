@@ -122,7 +122,7 @@ aside {
     width: 100%;
     display: block;
     margin-top: ($default-margin / 2);
-    font-weight: bold;
+    font-weight: 600;
     text-align: right;
     @include media("<=medium") {
         margin-bottom: $default-margin;

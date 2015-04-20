@@ -1625,7 +1625,7 @@ aside figcaption {
     width: 100%;
     display: block;
     margin-top: .625rem;
-    font-weight: bold;
+    font-weight: 600;
     text-align: right;
 }
 @media (max-width: 768px) {
@@ -1990,7 +1990,7 @@ button .icon--feather,
     border: .25rem solid rgba(6, 6, 6, .25);
     margin: 0 .25em .5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 6;
     text-align: center;
     white-space: nowrap;
