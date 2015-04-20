@@ -52,36 +52,6 @@ article {
     }
 }
 
-/**
- * Contains buttons and internal links.
- */
-.articles-navigation,
-.buttons-list {
-    width: 100%;
-    text-align: center;
-    button,
-    .button {
-        display: inline-block;
-        @include media(">small") {
-            & + button,
-            & + .button {
-                margin-left: 1.875em;
-            }
-        }
-    }
-}
-.articles-navigation {
-    padding: ($default-padding - .182) 0 $default-padding;
-    border-top: ($default-border / 2) solid $black-medium;
-    .about-page & {
-        border-top: 0;
-        padding: $default-margin 0;
-    }
-}
-.buttons-list {
-    padding-bottom: $default-margin;
-}
-
 // Appears only on article pages
 .comments {
     text-align: center;

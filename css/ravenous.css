@@ -1408,46 +1408,6 @@ article {
     left: 0;
 }
 
-/**
- * Contains buttons and internal links.
- */
-.articles-navigation,
-.buttons-list {
-    width: 100%;
-    text-align: center;
-}
-.articles-navigation button,
-.articles-navigation .button,
-.buttons-list button,
-.buttons-list .button {
-    display: inline-block;
-}
-@media (min-width: 501px) {
-    .articles-navigation button + button,
-    .articles-navigation button + .button,
-    .articles-navigation .button + button,
-    .articles-navigation .button + .button,
-    .buttons-list button + button,
-    .buttons-list button + .button,
-    .buttons-list .button + button,
-    .buttons-list .button + .button {
-        margin-left: 1.875em;
-    }
-}
-
-.articles-navigation {
-    padding: 2.068rem 0 2.25rem;
-    border-top: .125rem solid rgba(6, 6, 6, .1);
-}
-.about-page .articles-navigation {
-    border-top: 0;
-    padding: 1.25rem 0;
-}
-
-.buttons-list {
-    padding-bottom: 1.25rem;
-}
-
 .comments {
     text-align: center;
 }
@@ -1883,6 +1843,46 @@ aside .small-articles-list li + li {
 .small-articles-list a:focus svg,
 .small-articles-list a:active svg {
     opacity: .25;
+}
+
+/**
+ * Contains buttons and internal links.
+ */
+.articles-navigation,
+.buttons-list {
+    width: 100%;
+    text-align: center;
+}
+.articles-navigation button,
+.articles-navigation .button,
+.buttons-list button,
+.buttons-list .button {
+    display: inline-block;
+}
+@media (min-width: 501px) {
+    .articles-navigation button + button,
+    .articles-navigation button + .button,
+    .articles-navigation .button + button,
+    .articles-navigation .button + .button,
+    .buttons-list button + button,
+    .buttons-list button + .button,
+    .buttons-list .button + button,
+    .buttons-list .button + .button {
+        margin-left: 1.875em;
+    }
+}
+
+.articles-navigation {
+    padding: 2.068rem 0 2.25rem;
+    border-top: .125rem solid rgba(6, 6, 6, .1);
+}
+.about-page .articles-navigation {
+    border-top: 0;
+    padding: 1.25rem 0;
+}
+
+.buttons-list {
+    padding-bottom: 1.25rem;
 }
 
 /*------------------------------------*\

@@ -15,21 +15,14 @@ $breakpoints:  (
 
 /// Layout $variables
 $default-margin:   $wrapper-padding  !default;
-$default-padding:  2.25rem           !default;
-$default-border:   0.25rem           !default;
-$aside-width:    15.875rem           !default;
-
-/// Font Stack $variables
-$base-font-size:        16px                                        !default;
-$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif     !default;
-$secondary-font-stack:  "proxima-nova", sans-serif                  !default;
-$heading-font-stack:    "league-gothic", Impact, sans-serif         !default;
-$code-font-stack:       Consolas, Monaco, "Courier New", monospace  !default;
+$default-padding:  2.250rem          !default;
+$default-border:   0.250rem          !default;
+$aside-width:     15.875rem          !default;
 
 /// Opacity $variables
-$opacity-low:      0.10  !default;
-$opacity-medium:   0.25  !default;
-$opacity-high:     0.70  !default;
+$opacity-low:     0.10  !default;
+$opacity-medium:  0.25  !default;
+$opacity-high:    0.70  !default;
 
 /// Color $variables
 $brand:             #5f8aa6                           !default;
