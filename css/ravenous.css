@@ -516,7 +516,7 @@ h6 {
     margin: 0;
     position: relative;
     font-weight: 400;
-    line-height: 1.2em;
+    line-height: 1.2;
 }
 
 h1 {
@@ -541,7 +541,7 @@ h4,
 h3,
 .articles-list .article-date {
     font-size: 1.125rem;
-    line-height: 1.875em;
+    line-height: 1.875;
     text-transform: uppercase;
 }
 h3 code,
@@ -599,7 +599,7 @@ a span:not([class]) {
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-size: .8125rem;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1;
     text-transform: lowercase;
     vertical-align: middle;
 }
@@ -715,7 +715,7 @@ ul:not([class]) li:before,
 ul.default-list li:before {
     content: "\2022";
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 1;
 }
 
 dl {
@@ -882,7 +882,7 @@ var,
 .monospace {
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-size: .875rem;
-    line-height: 1.5rem;
+    line-height: 1.429;
 }
 
 p code,
@@ -908,7 +908,7 @@ pre:not(.codepen) {
     padding: 1.5rem 1.5rem 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    line-height: 1.5rem;
+    line-height: 1.5;
 }
 pre:not(.codepen) code {
     min-width: 100%;
@@ -1128,7 +1128,7 @@ pre:not(.codepen) code {
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
-    line-height: 1.5625rem;
+    line-height: 1.25;
     text-transform: uppercase;
     -webkit-transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, -webkit-transform .2s ease;
             transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, transform .2s ease;
@@ -1188,7 +1188,7 @@ pre:not(.codepen) code {
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 3.25rem;
-    line-height: 1em;
+    line-height: 1;
     text-transform: uppercase;
     text-shadow: .058em .058em 0 rgba(6, 6, 6, .05);
     white-space: nowrap;
@@ -1539,6 +1539,7 @@ aside figcaption {
     font-family: "ff-meta-serif-web-pro", Georgia, serif;
     font-size: .875rem;
     font-style: italic;
+    line-height: 1.429;
 }
 @media (max-width: 768px) {
     .author-information {
@@ -1586,7 +1587,6 @@ aside figcaption {
     box-sizing: content-box;
     display: block;
     margin-bottom: .5rem;
-    line-height: 1.25rem;
 }
 
 .article-label a:after,
@@ -1607,7 +1607,6 @@ aside figcaption {
 
 .article-tags {
     display: table-cell;
-    line-height: 1.25rem;
 }
 
 @media (min-width: 769px) {
@@ -1685,14 +1684,14 @@ aside figcaption {
 .site-description {
     max-width: 24em;
     margin-bottom: 1rem;
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 
 .article-introduction,
 .page-description {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 
 @media (min-width: 769px) {
@@ -1753,7 +1752,7 @@ aside figcaption {
     margin-top: 1.625em;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1;
 }
 .comments-link:after {
     content: "\00a0\2192";
@@ -1789,7 +1788,7 @@ aside figcaption {
             flex-wrap: wrap;
     margin: 0 -.5em 1.5em;
     font-family: "proxima-nova", sans-serif;
-    line-height: 1.25em;
+    line-height: 1.25;
 }
 @media (max-width: 768px) {
     .small-articles-list {
@@ -1900,7 +1899,7 @@ button,
     position: relative;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.375rem;
-    line-height: 2em;
+    line-height: 2;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -1992,7 +1991,7 @@ button .icon--feather,
     margin: 0 .25em .5em;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-weight: 700;
-    line-height: 6em;
+    line-height: 6;
     text-align: center;
     white-space: nowrap;
 }

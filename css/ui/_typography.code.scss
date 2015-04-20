@@ -9,7 +9,7 @@ var,
 .monospace {
     font-family: $code-font-stack;
     font-size: .875rem;
-    line-height: 1.5rem;
+    line-height: 1.429;
 }
     p code,
     ol code,
@@ -33,7 +33,7 @@ pre {
         padding: 1.5rem 1.5rem 1rem;
         overflow-x: auto;
         overflow-y: hidden;
-        line-height: 1.5rem;
+        line-height: 1.5;
         code {
             min-width: 100%;
             display: block;

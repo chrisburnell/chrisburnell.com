@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     position: relative;
     font-weight: 400;
-    line-height: 1.2em;
+    line-height: 1.2;
 }
 h1 {
     font-family: $heading-font-stack;
@@ -29,7 +29,7 @@ h4,
 h3,
 .articles-list .article-date {
     font-size: 1.125rem;
-    line-height: 1.875em;
+    line-height: 1.875;
     text-transform: uppercase;
     code {
         text-transform: none;
@@ -80,7 +80,7 @@ a {
         font-family: $code-font-stack;
         font-size: .8125rem;
         font-weight: 600;
-        line-height: 1em;
+        line-height: 1;
         text-transform: lowercase;
         vertical-align: middle;
         :hover > &,
@@ -157,7 +157,7 @@ ul:not([class]) li:before,
 ul.default-list li:before {
     content: "\2022";
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 1;
 }
 dl {
     width: 100%;

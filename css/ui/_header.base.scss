@@ -51,7 +51,7 @@ header {
             position: relative;
             font-family: $heading-font-stack;
             font-size: 1.25rem;
-            line-height: 1.5625rem;
+            line-height: 1.25;
             text-transform: uppercase;
             @include transition(color                $transition-time  $transition-function,
                                 padding-bottom       $transition-time  $transition-function,

@@ -44,13 +44,13 @@
     .site-description {
         max-width: 24em;
         margin-bottom: 1rem;
-        line-height: 1.5em;
+        line-height: 1.5;
     }
     .article-introduction,
     .page-description {
         margin-bottom: $default-margin;
         font-size: 1.25rem;
-        line-height: 1.5em;
+        line-height: 1.5;
     }
     .page-description,
     .site-description,
@@ -105,7 +105,7 @@
         margin-top: 1.625em;
         font-family: $secondary-font-stack;
         font-weight: 600;
-        line-height: 1em;
+        line-height: 1;
         &:after {
             content: "\00a0\2192";
         }
@@ -125,7 +125,7 @@
     flex-wrap: wrap;
     margin: 0 -0.5em 1.5em;
     font-family: $secondary-font-stack;
-    line-height: 1.25em;
+    line-height: 1.25;
     @include media("<=medium") {
         margin-bottom: 1.875em;
     }
