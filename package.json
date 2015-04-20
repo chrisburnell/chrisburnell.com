@@ -2,7 +2,7 @@
     "name": "Ravenous",
     "author": "Chris Burnell (@iamchrisburnell)",
     "version": "2.3.0",
-    "license": "MIT",
+    "license": "CC",
     "main": "gulpfile.js",
     "dependencies": {
         "gulp": "^3.8.11",
