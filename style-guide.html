@@ -1,7 +1,9 @@
 ---
 layout: default
 page_class: style-guide-page
-redirect_from: /styleguide.html
+redirect_from:
+  - /styleguide.html
+  - /guide.html
 
 title: Style Guide
 description: The style guide for chrisburnell.com.
@@ -10,11 +12,11 @@ description: The style guide for chrisburnell.com.
 {% include heading.html title="Colours" %}
 
 <ul class="color-block-list">
-    <li data-color="#5F8AA6">#5F8AA6</li>
-    <li data-color="#4F4F4F">#4F4F4F</li>
+    <li data-color="#5f8aa6">#5f8aa6</li>
+    <li data-color="#4f4f4f">#4f4f4f</li>
     <li data-color="#737373">#737373</li>
-    <li data-color="#DDDDDD">#DDDDDD</li>
-    <li data-color="#F9F9F9">#F9F9F9</li>
+    <li data-color="#dddddd">#dddddd</li>
+    <li data-color="#f9f9f9">#f9f9f9</li>
 </ul>
 
 
@@ -240,12 +242,9 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include heading.html title="Video" %}
 
 <figure>
-    <video controls>
-        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
-        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
-        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
-    </video>
-    <figcaption>via <a href="https://peach.blender.org/">Big Buck Bunny</a>, hosted by <a href="http://www.vorwaerts-gmbh.de/">Vorwärts GmbH</a></figcaption>
+    <div class="media-container">
+        <iframe src="https://player.vimeo.com/video/11933164?color=5f8aa6&title=0&byline=0&portrait=0" width="810" height="455" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
 </figure>
 
 

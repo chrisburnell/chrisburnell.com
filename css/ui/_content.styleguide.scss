@@ -3,36 +3,35 @@
 \*------------------------------------*/
 
 .color-block-list {
-    margin-bottom: .75em;
+    display: table;
+    margin: 0 auto .75em;
     text-align: center;
     li {
-        @extend %rounded;
         color: $white;
-        width: 6.5em;
-        height: 6.5em;
-        display: inline-block;
-        border: $default-border solid $black-dark;
-        margin: 0 .25em .5em;
+        width:  6.5rem;
+        height: 6.5rem;
+        display: table-cell;
         font-family: $code-font-stack;
+        font-size: .875em;
         font-weight: 600;
-        line-height: 6;
         text-align: center;
         white-space: nowrap;
-        &[data-color="#5F8AA6"] {
-            background-color: #5F8AA6;
+        vertical-align: middle;
+        &[data-color="#{$brand}"] {
+            background-color: $brand;
         }
-        &[data-color="#F9F9F9"] {
-            background-color: #F9F9F9;
+        &[data-color="#{$white}"] {
+            background-color: $white;
             color: $text-color;
         }
-        &[data-color="#4F4F4F"] {
-            background-color: #4F4F4F;
+        &[data-color="#{$text-color}"] {
+            background-color: $text-color;
         }
-        &[data-color="#737373"] {
-            background-color: #737373;
+        &[data-color="#{$text-color-alt}"] {
+            background-color: $text-color-alt;
         }
-        &[data-color="#DDDDDD"] {
-            background-color: #DDDDDD;
+        &[data-color="#{$text-color-light}"] {
+            background-color: $text-color-light;
             color: $text-color;
         }
     }

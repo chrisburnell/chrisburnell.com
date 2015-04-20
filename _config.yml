@@ -33,11 +33,6 @@ paginate: 9001
 paginate_path: 'page:num'
 exclude: ['node_modules, .sass-cache']
 
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
-markdown_ext: markdown,mkd,mkdn,md
-
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap

@@ -484,8 +484,7 @@ pre:not(.codepen),
 aside:not(.author),
 .author-image,
 .article-banner,
-.small-articles-list a,
-.color-block-list li {
+.small-articles-list a {
     background-clip: padding-box;
     border-radius: .375rem;
 }
@@ -1982,36 +1981,36 @@ button .icon--feather,
     $STYLEGUIDE
 \*------------------------------------*/
 .color-block-list {
-    margin-bottom: .75em;
+    display: table;
+    margin: 0 auto .75em;
     text-align: center;
 }
 .color-block-list li {
     color: #f9f9f9;
-    width: 6.5em;
-    height: 6.5em;
-    display: inline-block;
-    border: .25rem solid rgba(6, 6, 6, .25);
-    margin: 0 .25em .5em;
+    width: 6.5rem;
+    height: 6.5rem;
+    display: table-cell;
     font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: .875em;
     font-weight: 600;
-    line-height: 6;
     text-align: center;
     white-space: nowrap;
+    vertical-align: middle;
 }
-.color-block-list li[data-color="#5F8AA6"] {
+.color-block-list li[data-color="#5f8aa6"] {
     background-color: #5f8aa6;
 }
-.color-block-list li[data-color="#F9F9F9"] {
+.color-block-list li[data-color="#f9f9f9"] {
     background-color: #f9f9f9;
     color: #4f4f4f;
 }
-.color-block-list li[data-color="#4F4F4F"] {
+.color-block-list li[data-color="#4f4f4f"] {
     background-color: #4f4f4f;
 }
 .color-block-list li[data-color="#737373"] {
     background-color: #737373;
 }
-.color-block-list li[data-color="#DDDDDD"] {
+.color-block-list li[data-color="#dddddd"] {
     background-color: #dddddd;
     color: #4f4f4f;
 }
