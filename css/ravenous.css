@@ -423,11 +423,9 @@ th {
 html {
     box-sizing: border-box;
     background-color: #f9f9f9;
-    color: #4f4f4f;
     min-height: 100%;
     position: relative;
     overflow-y: scroll;
-    font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", Georgia, serif;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -505,6 +503,11 @@ button,
 /*------------------------------------*\
     $TYPOGRAPHY
 \*------------------------------------*/
+html {
+    color: #4f4f4f;
+    font: 400 normal 16px/1.875em "ff-meta-serif-web-pro", Georgia, serif;
+}
+
 h1,
 h2,
 h3,
