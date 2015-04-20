@@ -47,7 +47,7 @@ h4 {
 }
 
 a {
-    color: $blue;
+    color: $brand;
     text-decoration: none;
     @include transition(background  $transition-time  $transition-function,
                         color       $transition-time  $transition-function);
@@ -63,7 +63,7 @@ a {
         &:hover,
         &:focus,
         &:active {
-            color: $blue;
+            color: $brand;
         }
     }
     span:not([class]) {
@@ -234,7 +234,7 @@ q {
 }
 blockquote {
     @extend %rounded;
-    background-color: rgba($blue, $opacity-low);
+    background-color: rgba($brand, $opacity-low);
     padding: 1rem;
     margin: 0 $default-padding $default-margin;
     quotes: "\201C" "\201D" "\2018" "\2019";
@@ -289,7 +289,7 @@ iframe {
 }
 
 ::selection {
-    background: $blue;
+    background: $brand;
     color: $white;
 }
 .canada::selection {

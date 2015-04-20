@@ -19,7 +19,7 @@ $default-padding:  2.25rem           !default;
 $default-border:   0.25rem           !default;
 $aside-width:    15.875rem           !default;
 
-/// Font Stacks
+/// Font Stack $variables
 $base-font-size:        16px                                        !default;
 $primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif     !default;
 $secondary-font-stack:  "proxima-nova", sans-serif                  !default;
@@ -32,7 +32,7 @@ $opacity-medium:   0.25  !default;
 $opacity-high:     0.70  !default;
 
 /// Color $variables
-$blue:              #5F8AA6                           !default;
+$brand:             #5F8AA6                           !default;
 $text-color:        #4F4F4F                           !default;
 $text-color-alt:    #737373                           !default;
 $text-color-light:  #DDDDDD                           !default;
@@ -50,16 +50,16 @@ $codepen-color:  #212121               !default;
 $github-color:   #333333               !default;
 $lastfm-color:   #E31B23               !default;
 $twitter-color:  darken(#55ACEE, 10%)  !default;
-/// Create Brands Array (name,  colour,  icon width:height ratio)
+/// Create Brands Array (name, colour, icon width:height ratio)
 $brands:  codepen  $codepen-color  1.025,
           github   $github-color   0.950,
           lastfm   $lastfm-color   1.000,
-          rss      $blue           0.775,
+          rss      $brand          0.775,
           twitter  $twitter-color  0.925,
-          article  $blue           0.900,
-          feather  $blue           0.725,
-          heart    $blue           1.000,
-          tag      $blue           1.000;
+          article  $brand          0.900,
+          feather  $brand          0.725,
+          heart    $brand          1.000,
+          tag      $brand          1.000;
 
 /// Coding Language $variables
 $css-color:         #016FBA      !default;
@@ -68,7 +68,7 @@ $haml-color:        $html-color  !default;
 $javascript-color:  #F1C54C      !default;
 $sass-color:        #C6538C      !default;
 $scss-color:        $sass-color  !default;
-/// Create Coding Languages Array (name,  colour)
+/// Create Coding Languages Array (name, colour)
 $coding-languages:  css         $css-color,
                     haml        $haml-color,
                     html        $html-color,

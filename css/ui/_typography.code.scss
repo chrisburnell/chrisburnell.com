@@ -19,7 +19,7 @@ var,
     mark,
     samp,
     var {
-        background-color: rgba($blue, $opacity-low);
+        background-color: rgba($brand, $opacity-low);
         padding: .25rem;
         word-wrap: break-word;
         border-radius: .25rem;
@@ -166,7 +166,7 @@ pre {
     .na,                                // Name - Attribute
     .nc,                                // Name - Class
     .nt {                               // Name - Tag
-        color: $blue;
+        color: $brand;
     }
     .ni,                                // Name - Entity
     .ss {                               // Literal - String Symbol

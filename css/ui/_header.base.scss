@@ -46,7 +46,7 @@ header {
             color: $text-color-alt;
             display: block;
             padding: .75rem 1rem;
-            border-bottom: 0 solid $blue;
+            border-bottom: 0 solid $brand;
             margin-bottom: .25rem;
             position: relative;
             font-family: $heading-font-stack;
@@ -90,7 +90,7 @@ header {
             .articles-page .primary-navigation-articles a:after,
             .pens-page .primary-navigation-pens a:after {
                 content: "";
-                border-top:   .5em solid $blue;
+                border-top:   .5em solid $brand;
                 border-right: .5em solid transparent;
                 border-left:  .5em solid transparent;
                 position: absolute;
