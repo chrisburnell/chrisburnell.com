@@ -80,7 +80,7 @@ snippet of code on a project of your own. -->
 
     <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
     <meta name="description" content="{{ meta_description }}">
-    <meta name="theme-color" content="#5F8AA6">
+    <meta name="theme-color" content="#5f8aa6">
 
     {% if page.page_class != "not-found-page" %}
         <!-- Twitter Microdata and OpenGraph -->
@@ -105,7 +105,7 @@ snippet of code on a project of your own. -->
 </head>
 <body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
 
-{% include inline-svg.html %}
+    {% include inline-svg.html %}
 
     <header class="wrap  clear" role="banner">
         <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="-1">
