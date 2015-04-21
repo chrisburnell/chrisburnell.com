@@ -166,17 +166,20 @@ ul.default-list li:before {
 }
 dl {
     width: 100%;
-    display: table;
     &:not(:last-child) {
         margin-bottom: $default-margin;
     }
     dt {
         width: auto;
         min-width: 10rem;
-        display: inline-block;
+        float: left;
+        clear: left;
         padding-right: $default-margin;
         font-family: $secondary-font-stack;
         font-weight: 600;
+        @include media("<=small") {
+            float: none;
+        }
     }
     dd {
         width: $max-wrapper-width;
@@ -184,6 +187,9 @@ dl {
         margin: 0;
         overflow: hidden;
         vertical-align: top;
+        &:not(:last-child) {
+            padding-bottom: $default-margin;
+        }
         @include media("<=small") {
             width: auto;
             display: block;
