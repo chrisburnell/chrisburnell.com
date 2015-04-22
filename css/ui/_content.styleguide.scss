@@ -3,12 +3,12 @@
 \*------------------------------------*/
 
 .color-block-list {
+    width: 100%;
     display: table;
-    margin: 0 auto .75em;
+    margin: 0 auto;
     text-align: center;
     li {
         color: $white;
-        width:  6.5rem;
         height: 6.5rem;
         display: table-cell;
         font-family: $code-font-stack;
@@ -36,6 +36,7 @@
             color: $text-color;
         }
         @include media("<=small") {
+            width: 6.5rem;
             display: inline-block;
         }
     }

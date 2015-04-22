@@ -1989,13 +1989,13 @@ button .icon--feather,
     $STYLEGUIDE
 \*------------------------------------*/
 .color-block-list {
+    width: 100%;
     display: table;
-    margin: 0 auto .75em;
+    margin: 0 auto;
     text-align: center;
 }
 .color-block-list li {
     color: #f9f9f9;
-    width: 6.5rem;
     height: 6.5rem;
     display: table-cell;
     font-family: Consolas, Monaco, "Courier New", monospace;
@@ -2025,6 +2025,7 @@ button .icon--feather,
 }
 @media (max-width: 500px) {
     .color-block-list li {
+        width: 6.5rem;
         display: inline-block;
     }
 }
