@@ -2001,6 +2001,7 @@ button .icon--feather,
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-size: .875em;
     font-weight: 600;
+    line-height: 7.429;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -2021,6 +2022,11 @@ button .icon--feather,
 .color-block-list li[data-color="#dddddd"] {
     background-color: #dddddd;
     color: #4f4f4f;
+}
+@media (max-width: 500px) {
+    .color-block-list li {
+        display: inline-block;
+    }
 }
 
 .style-guide-page :not(.page-description) + h3[id] {

@@ -14,6 +14,7 @@
         font-family: $code-font-stack;
         font-size: .875em;
         font-weight: 600;
+        line-height: 7.429; // 6.5/0.875
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
@@ -33,6 +34,9 @@
         &[data-color="#{$text-color-light}"] {
             background-color: $text-color-light;
             color: $text-color;
+        }
+        @include media("<=small") {
+            display: inline-block;
         }
     }
 }
