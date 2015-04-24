@@ -34,9 +34,9 @@
             {% if page.tags %}
                 <div class="article-tags">
                     <span>tagged under</span>
-                    {% assign sorted_tags = page.tags | sort:0 %}
-                    {% for tag in sorted_tags %}
-                        {% if forloop.last and page.tags.size > 1 %} and {% endif %}<a href="/tags#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if (forloop.last == false) and (page.tags.size > 2) %}, {% endif %}
+                    {% assign tags_sorted = page.tags | sort: 0 %}
+                    {% for tag in tags_sorted %}
+                        {% if forloop.last and tags_sorted.size > 1 %} and {% endif %}<a href="/tags#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if (forloop.last == false) and (tags_sorted.size > 2) %}, {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

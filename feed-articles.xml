@@ -22,19 +22,12 @@ layout: null
             <link>{{ site.url }}</link>
         </image>
 
-        {% assign all_posts = "" | split: "" %}
         {% for post in site.posts %}
-            {% assign all_posts = all_posts | push: post %}
-        {% endfor %}
-        {% for post in site.pens %}
-            {% assign all_posts = all_posts | push: post %}
-        {% endfor %}
-        {% assign all_posts_sorted = all_posts | sort: "date" %}
-        {% for post in all_posts_sorted %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+                <id>{{ site.url }}{{ post.id }}</id>
                 {% if post.introduction %}
                     <description>{{ post.introduction }}</description>
                 {% endif %}

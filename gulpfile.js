@@ -5,7 +5,6 @@
 // Define gulp objects
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    cache        = require('gulp-cached'),
     csscomb      = require('gulp-csscomb'),
     minifycss    = require('gulp-minify-css'),
     plumber      = require('gulp-plumber'),
@@ -24,7 +23,6 @@ var cssPath = 'css/';
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
-        .pipe(cache('css'))
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,

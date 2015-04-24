@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 
@@ -13,7 +14,7 @@ layout: null
             <email>{{ site.author_email }}</email>
         </author>
         <language>en</language>
-        <copyright>Copyright 2015 {{ site.author }} under a Creative Commons license.</copyright>
+        <copyright>Copyright {{ site.time | date: "%Y" }} {{ site.author }} under a Creative Commons license.</copyright>
 
         <image>
             <url>{{ site.url }}/favicon.png</url>
@@ -22,17 +23,19 @@ layout: null
         </image>
 
         {% for post in site.pens %}
-        {% unless post.draft %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
                 <id>{{ site.url }}{{ post.id }}</id>
+                {% if post.introduction %}
+                    <description>{{ post.introduction }}</description>
+                {% endif %}
                 {% if post.tags %}
-                    <tags>{{ post.tags | array_to_sentence_string }}</tags>
+                    {% assign tags_sorted = post.tags | sort: 0 %}
+                    <tags>{% for tag in tags_sorted %}{{ tag }}{% if forloop.last == false %},{% endif %}{% endfor %}</tags>
                 {% endif %}
             </item>
-        {% endunless %}
         {% endfor %}
 
     </channel>

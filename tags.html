@@ -11,8 +11,8 @@ description: A list of tags and their article counterparts.
         {{ tag[0] }}
     {% endfor %}
 {% endcapture %}
-{% assign sorted_tags = tags | split:' ' | sort %}
-{% for tag in sorted_tags %}
+{% assign tags_sorted = tags | split:' ' | sort %}
+{% for tag in tags_sorted %}
     <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.tags[tag] %}
@@ -32,8 +32,9 @@ description: A list of tags and their article counterparts.
 {% endfor %}
 
 <nav class="articles-navigation">
-    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a><!--
- --><a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
+    <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a><!--
+ --><a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a><!--
+ --><a rel="me author" class="button" href="/feed.xml"><svg><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
 </nav>
 
 <nav class="articles-navigation">

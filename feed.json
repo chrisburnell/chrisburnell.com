@@ -1,0 +1,22 @@
+---
+layout: null
+---
+
+{% assign all_posts = "" | split: "" %}
+{% for post in site.posts %}
+    {% assign all_posts = all_posts | push: post %}
+{% endfor %}
+{% for post in site.pens %}
+    {% assign all_posts = all_posts | push: post %}
+{% endfor %}
+{% assign all_posts_sorted = all_posts | sort: "date" %}
+[
+{% for post in all_posts_sorted %}
+    {
+        "title":   "{{ post.title }}",
+        "url":     "{{ site.url }}{{ post.url }}",
+        "date":    "{{ post.date | date_to_xmlschema }}",
+        "content": "{{ post.content | strip_html }}";
+    }{% if forloop.last == false %},{% endif %}
+{% endfor %}
+]
