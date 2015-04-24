@@ -28,9 +28,7 @@ layout: null
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
                 <category>{{ post.category }}</category>
-                {% if post.introduction %}
-                    <description>{{ post.introduction }}</description>
-                {% endif %}
+                {% if post.introduction %}<description>{{ post.introduction }}</description>{% endif %}
                 {% if post.tags %}
                     {% assign tags_sorted = post.tags | sort: 0 %}
                     <tags>{% for tag in tags_sorted %}{{ tag }}{% if forloop.last == false %},{% endif %}{% endfor %}</tags>
