@@ -35,6 +35,7 @@ layout: null
                 <title>{{ post.title }}</title>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+                <category>{{ post.category }}</category>
                 {% if post.introduction %}
                     <description>{{ post.introduction }}</description>
                 {% endif %}
