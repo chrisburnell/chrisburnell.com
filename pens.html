@@ -15,7 +15,6 @@ description: All of my featured pens listed on one page.
 
 <ol id="pens" class="small-articles-list" role="list">
     {% for post in site.pens reversed %}
-    {% unless post.draft %}
         <li>
             <a href="{{ post.url }}">
                 <svg><use xlink:href="#svg--codepen" /></svg>
@@ -23,7 +22,6 @@ description: All of my featured pens listed on one page.
                 <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
             </a>
         </li>
-    {% endunless %}
     {% endfor %}
 </ol>
 

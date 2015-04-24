@@ -2,7 +2,6 @@
     <h3 class="featured-pens-title"><a href="/pens">Featured Pens</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.pens limit:4 %}
-        {% unless post.draft %}
             <li>
                 <a href="{{ post.url }}">
                     <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
@@ -13,7 +12,6 @@
                     {% endif %}
                 </a>
             </li>
-        {% endunless %}
         {% endfor %}
     </ol>
     <a class="featured-pens-link" href="/pens">All Featured Pens</a>
