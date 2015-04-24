@@ -722,6 +722,7 @@ ul.default-list li:before {
 
 dl {
     width: 100%;
+    display: table;
 }
 dl:not(:last-child) {
     margin-bottom: 1.25rem;

@@ -166,6 +166,7 @@ ul.default-list li:before {
 }
 dl {
     width: 100%;
+    display: table;
     &:not(:last-child) {
         margin-bottom: $default-margin;
     }
