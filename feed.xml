@@ -7,7 +7,7 @@ layout: null
 
     <channel>
 
-        <title>{{ site.author }} - Aricles Only</title>
+        <title>{{ site.author }}</title>
         <link href="{{ site.url }}"/>
         <author>
             <name>{{ site.author }}</name>
