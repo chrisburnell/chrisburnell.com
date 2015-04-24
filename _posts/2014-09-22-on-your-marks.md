@@ -21,7 +21,7 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 
 <figure>
     <a href="https://disqus.com/">
-        ![Disqus Logo](/images/content/disqus-logo-white-blue.png)
+        <img src="/images/content/disqus-logo-white-blue.png" alt="">
         <figcaption>Disqus &copy; {{ site.time | date: '%Y' }}.</figcaption>
     </a>
 </figure>

@@ -80,7 +80,7 @@
         .article-title-link {
             display: inline-block;
             padding: 0 .5rem;
-            border-bottom: ($default-border / 2) solid transparent;
+            border-bottom: .1825rem solid transparent;
             margin-left: -0.5rem;
             @include transition(border-color);
             @include will-change(color, border-bottom-color);

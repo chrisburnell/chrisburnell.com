@@ -1695,7 +1695,7 @@ aside figcaption {
 .article-title .article-title-link {
     display: inline-block;
     padding: 0 .5rem;
-    border-bottom: .125rem solid transparent;
+    border-bottom: .1825rem solid transparent;
     margin-left: -.5rem;
     -webkit-transition: border-color .2s ease;
             transition: border-color .2s ease;

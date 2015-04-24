@@ -32,7 +32,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 <figure>
     <a href="http://pinboard.in">
-        ![Pinboard Logo](/images/content/pinboard-logo.png)
+        <img src="/images/content/pinboard-logo.png" alt="">
         <figcaption>Pinboard © Nine Fives Software.</figcaption>
     </a>
 </figure>
