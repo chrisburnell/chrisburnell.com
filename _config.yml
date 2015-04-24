@@ -22,6 +22,8 @@ twitter_url: https://twitter.com/iamchrisburnell
 codepen_theme:   119
 codepen_tabfree: 8863
 
+brand_color: 5f8aa6
+
 timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
