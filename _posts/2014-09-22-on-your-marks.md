@@ -118,7 +118,7 @@ What we’re doing here is:
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
-<aside><p>Check out the support for [onhashchange on CanIUse](http://caniuse.com/#search=onhashchange "Support for onhashchange") before jumping in too deep!</p></aside>
+<aside><p>Check out the support for <a href="http://caniuse.com/#search=onhashchange">onhashchange on CanIUse</a> before jumping in too deep!</p></aside>
 
 {% highlight javascript %}
 var commentsHash = ['#comment', '#disqus_thread'];
@@ -148,7 +148,7 @@ If you remember, the `showComments()` function removes the `button` we created b
 
 Almost there! Let’s create a failsafe—if our `button` no longer exists when the `showComments()` function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
-<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our `button` until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the [comments](#comments "Jump to the comments").</p></aside>
+<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after Disqus has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to Disqus in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the <a href="#comments">comments</a>.</p></aside>
 
 {% highlight javascript %}
 function showComments() {

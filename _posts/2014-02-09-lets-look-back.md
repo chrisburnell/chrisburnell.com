@@ -26,7 +26,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 {% include heading.html id="i-dont-want-to-do-anything" title="I don’t want to do anything, anymore!" %}
 
-<aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in {% post_url 2013-06-15-first-article-ever %}.</p></aside>
+<aside><p>I also wrote about <a href="http://browser.londonwebstandards.org">State of the Browser 2013</a> in <a href="/article/first-article-ever">my first article</a>.</p></aside>
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
@@ -36,13 +36,13 @@ One fantastic utility that helps immensely in trimming the fat, I learned about 
 
 Say an old version of Chrome becomes stale and the global usage of that version dips below an arbitrary percentage (which I do not support) such that I no longer need a webkit prefix for a property anymore; I would need to physically check the support tables, manually find out that the prefix fell out, and then crawl and update my entire codebase to remove the unnecessary code. That just isn’t good enough if I want smooth sailing.
 
-<aside><p>`autoprefixer -i` to run *Autoprefixer* from command line</p></aside>
+<aside><p><code>autoprefixer -i</code> to run <em>Autoprefixer</em> from the command line.</p></aside>
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 --------
 
-<aside><p>`sass` to compile SASS or SCSS,  from command line</p></aside>
+<aside><p><code>sass</code> to compile SASS or SCSS from the command line.</p></aside>
 
 Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 

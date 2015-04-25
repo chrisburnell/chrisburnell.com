@@ -51,7 +51,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork [the GitHub repository]({{ site.github_url }}/chrisburnell.github.io "The Github Repository of this website") and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="{{ site.github_url }}">the GitHub repository</a> and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -67,7 +67,7 @@ The most important lesson of them all, of course, is to **keep it simple**. Whet
 
 I can’t take all the credit for this website, really. It’s the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I’m going to give a few shout-outs to some awesome people who helped me immensely.
 
-<aside><figure><img src="/images/content/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"><figcaption>Image courtesy of [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference").</figcaption></figure></aside>
+<aside><figure><img src="/images/content/sotb-2013.png" class="rounded" alt="Photo of SOTB 2013" role="presentation"><figcaption>Image courtesy of <a href="http://browser.londonwebstandards.org/">State of the Browser</a>.</figcaption></figure></aside>
 
 I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/ "London Web Standards"), [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference"), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m just going to reel off here in no particular order (other than alphabetical):
 

@@ -27,7 +27,7 @@ My idea was basically this: I wonder if I could create something similar to the 
 
 {% include heading.html id="hit-a-snag" title="We’ve hit a snag!" %}
 
-<aside><p>Here’s an example of this effect (which [Chris Coyier loved on CodePen](http://codepen.io/chrisburnell/details/mglHp#lovers "Who loved my pen"))!</p></aside>
+<aside><p>Here’s an example of this effect (which <a href="http://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on CodePen</a>)!</p></aside>
 
 {% include codepen-embed.html slug="mglHp" height="425" %}
 
@@ -35,7 +35,7 @@ My idea was basically this: I wonder if I could create something similar to the 
 
 Well, maybe if we’re `animate`ing an element *(or pseudo element)* and manipulating its `transform` attribute, we can also change the `box-shadow` property at the same rate. Using the same example as above, if we say that when the box has the rule `transform: rotate3d(0, 0, 1, 90deg);`, it should *also* have `box-shadow: 2em -2em 0 black;`, which puts a shadow on the top-right of the box, which appears to be the bottom-right, as desired. Now, by switching from a 0-degree rotation to a 90-degree rotation *at the same speed* as we change from a bottom-right to a top-right shadow (and continuing this pattern for the full 360-degree rotation), our effect is be complete!
 
-<aside><p>If you don’t know what I’m talking about in this paragraph, [read this](http://css-tricks.com/the-css-box-model "The CSS Box Model").</p></aside>
+<aside><p>If you don’t know what I’m talking about in this paragraph, <a href="http://css-tricks.com/the-css-box-model">read this</a>.</p></aside>
 
 It may be interesting to note that as the medium we’re working with is composed of boxes, we need to add a point in our animation for every corner in our rotation—since we are going a full 360-degrees, we need four defined points, not including the `0%` and `100%` duplicates.
 
@@ -47,7 +47,7 @@ What else do you think we could do with an effect like this? I think it could do
 
 Firstly, a CSS3 checkbox. Uses an invisible `<input type="checkbox">` field and an `:after` attribute to toggle the style of the checkbox.
 
-<aside><p>Add in a little bit of Javascript to toggle the text, but even that might not be necessary if you utilise the `:before` attribute.</p></aside>
+<aside><p>Add in a little bit of Javascript to toggle the text, but even that might not be necessary if you utilise the <code>:before</code> attribute.</p></aside>
 
 {% include codepen-embed.html slug="arouk" height="150" %}
 

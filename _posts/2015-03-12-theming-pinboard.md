@@ -40,7 +40,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 {% include heading.html id="first-step" title="The First Step" %}
 
-<aside><p>What do I mean when I say *theming* or *skinning*? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on [CSS Zen Garden](http://www.csszengarden.com) or [Adactio](https://adactio.com/about/site/#skin).</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
+<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a href="http://www.csszengarden.com">CSS Zen Garden</a> or <a href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
@@ -81,7 +81,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 {% endhighlight %}
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to [git](http://git-scm.com), I have a tendency to want to add versioning to all of my projects. If there was some sort of [Github Gist](https://gist.github.com) hook or something—Let me know [in the comments](#comments) if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="http://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
 
 
 {% include heading.html id="brass-tacks" title="Good old Brass Tacks" %}
