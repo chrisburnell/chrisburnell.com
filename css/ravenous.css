@@ -935,6 +935,7 @@ pre:not(.codepen) code {
  */
 [data-lang] {
     padding-top: 2.25rem;
+    line-height: 2;
 }
 [data-lang]:before {
     content: attr(data-lang);

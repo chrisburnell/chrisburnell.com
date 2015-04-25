@@ -48,6 +48,7 @@ pre {
  */
 [data-lang] {
     padding-top: $default-padding;
+    line-height: 2;
     &:before {
         @extend %rounded;
         content: attr(data-lang);
