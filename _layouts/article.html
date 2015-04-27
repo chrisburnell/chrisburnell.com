@@ -8,7 +8,7 @@ page_class: article-page
 <main class="wrap  clear  content" role="main">
     <article>
 
-        <h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url | replace: "http://", "" }}{{ page.url }}</a>{% endif %}</h1>
+        <h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url }}{{ site.baseurl }}{{ page.url }}</a>{% endif %}</h1>
 
         {% include main-aside.html %}
 

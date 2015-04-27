@@ -46,9 +46,9 @@ snippet of code on a project of your own. -->
     {% endif %}
 
     {% if page.banner_mobile and page.page_class != "not-found-page" %}
-        {% capture meta_image %}{{ site.url }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
+        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
     {% elsif page.page_class != "not-found-page" %}
-        {% capture meta_image %}{{ site.url }}/images/avatar@2x.png{% endcapture %}
+        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
     {% endif %}
 
     <meta charset="utf-8">
@@ -94,7 +94,7 @@ snippet of code on a project of your own. -->
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_description }}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
+        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
         <meta property="og:image" content="{{ meta_image }}">
     {% else %}
         <meta name="robots" content="noindex,nofollow">

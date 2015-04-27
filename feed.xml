@@ -1,5 +1,6 @@
 ---
 layout: null
+description: All of my articles and pens.
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -7,19 +8,15 @@ layout: null
 
     <channel>
 
-        <title>{{ site.author }}</title>
-        <link href="{{ site.url }}"/>
-        <author>
-            <name>{{ site.author }}</name>
-            <email>{{ site.author_email }}</email>
-        </author>
+        <title>{{ site.title | xml_escape }}</title>
+        <description>{{ page.description | xml_escape }}</description>
+        <link>{{ site.url }}{{ site.baseurl }}/</link>
         <language>en</language>
-        <copyright>Copyright {{ site.time | date: "%Y" }} {{ site.author }} under a Creative Commons license.</copyright>
 
         <image>
-            <url>{{ site.url }}/favicon.png</url>
+            <url>{{ site.url }}{{ site.baseurl }}/favicon.png</url>
             <title>{{ site.author }}</title>
-            <link>{{ site.url }}</link>
+            <link>{{ site.url }}{{ site.baseurl }}/</link>
         </image>
 
         {% assign all_posts = "" | split: "" %}
@@ -33,14 +30,10 @@ layout: null
         {% for post in all_posts_sorted %}
             <item>
                 <title>{{ post.title }}</title>
-                <link>{{ site.url }}{{ post.url }}</link>
+                <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
                 <category>{{ post.category }}</category>
                 {% if post.introduction %}<description>{{ post.introduction }}</description>{% endif %}
-                {% if post.tags %}
-                    {% assign tags_sorted = post.tags | sort: 0 %}
-                    <tags>{% for tag in tags_sorted %}{{ tag }}{% if forloop.last == false %},{% endif %}{% endfor %}</tags>
-                {% endif %}
             </item>
         {% endfor %}
 

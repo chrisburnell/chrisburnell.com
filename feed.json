@@ -13,8 +13,8 @@ layout: null
 [
 {% for post in all_posts_sorted %}
     {
-        "title":   "{{ post.title }}",
-        "url":     "{{ site.url }}{{ post.url }}",
+        "title":   "{{ post.title | xml_escape }}",
+        "url":     "{{ post.url | prepend: site.baseurl | prepend: site.url }}",
         "date":    "{{ post.date | date_to_xmlschema }}",
         "content": "{{ post.content | strip_html }}";
     }{% if forloop.last == false %},{% endif %}

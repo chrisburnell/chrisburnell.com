@@ -9,6 +9,7 @@ introduction: I recently decided I would embark on the task of theming Pinboard.
 tags:
 - CSS
 - Tutorials
+- UX
 
 banner:        theming-pinboard.png
 banner_mobile: theming-pinboard_mobile.png
@@ -217,7 +218,7 @@ html {
     }
 {% endhighlight %}
 
-- modified the colour palette to match [my styleguide]({{ site.url }}/style-guide)
+- modified the colour palette to match [my styleguide]({{ site.url }}{{ site.baseurl }}/style-guide)
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 ---

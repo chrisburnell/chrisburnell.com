@@ -14,7 +14,7 @@ description: A list of tags and their article counterparts.
 {% assign tags_sorted = tags | split:' ' | sort %}
 {% for tag in tags_sorted %}
     {% assign posts_by_tag = "" | split: "" %}
-    {% for post in site.tags[tag] %}
+    {% for post in site.tags.[tag] %}
         {% assign posts_by_tag = posts_by_tag | push: post %}
     {% endfor %}
     {% if tag == "CodePen" %}
