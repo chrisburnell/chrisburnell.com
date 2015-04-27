@@ -19,7 +19,7 @@ description: All of my articles.
             <link>{{ site.url }}{{ site.baseurl }}/</link>
         </image>
 
-        {% for post in site.posts %}
+        {% for post in site.categories.article %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>

@@ -31,7 +31,7 @@
             {% if page.category == "codepen" %}
                 <div class="article-label"><a href="/pens">Featured Pens</a></div>
             {% endif %}
-            {% if page.tags %}
+            {% if page.tags.size > 0 %}
                 <div class="article-tags">
                     <span>tagged under</span>
                     {% assign tags_sorted = page.tags | sort: 0 %}
@@ -53,7 +53,7 @@
 
     {% if page.page_class == "home-page" %}
         {% include aside-featured-pens.html %}
-    {% elsif page.layout == "article" %}
+    {% elsif page.category == "article" %}
         {% include aside-related-articles.html %}
     {% endif %}
 

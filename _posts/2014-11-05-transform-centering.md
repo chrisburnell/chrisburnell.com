@@ -8,10 +8,11 @@ title: Power of Transform Centering
 
 permalink: /pen/transform-centering/
 slug: transform-centering
+
 shorturl: h8eek
 comments: true
 ---
 
 {% include codepen-embed.html slug="CHEbf" height="500" theme="8863" %}
 
-This pen is mostly for visual effect. Check out the [interactive version]({{ site.url }}{{ site.baseurl }}/article/transform-centering-interactive "Interactive Version of Transorm Centering").
+This pen is mostly for visual effect. Check out the [interactive version]({{ site.url }}{{ site.baseurl }}/pen/transform-centering-interactive "Interactive Version of Transorm Centering").

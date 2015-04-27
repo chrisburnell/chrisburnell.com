@@ -6,6 +6,9 @@ date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
 
+permalink: /pen/psychedelic-slice/
+slug: psychedelic-slice
+
 shorturl: k9ouo
 comments: true
 ---

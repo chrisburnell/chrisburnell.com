@@ -19,7 +19,7 @@ description: All of my pens.
             <link>{{ site.url }}{{ site.baseurl }}/</link>
         </image>
 
-        {% for post in site.pens %}
+        {% for post in site.categories.codepen %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>

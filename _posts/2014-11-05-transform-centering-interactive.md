@@ -8,13 +8,14 @@ title: Power of Transform Centering - Interactive
 
 permalink: /pen/transform-centering-interactive/
 slug: transform-centering-interactive
+
 shorturl: 8x586
 comments: true
 ---
 
 {% include codepen-embed.html slug="xutbs" height="500" %}
 
-Check out the [demo version]({{ site.url }}{{ site.baseurl }}/article/transform-centering "Demo Version of Transorm Centering").
+Check out the [demo version]({{ site.url }}{{ site.baseurl }}/pen/transform-centering "Demo Version of Transorm Centering").
 
 {% highlight html %}
 <textarea class="modal" disabled></textarea>

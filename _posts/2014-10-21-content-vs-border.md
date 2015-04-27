@@ -8,6 +8,7 @@ title: content-box vs. border-box
 
 permalink: /pen/content-vs-border/
 slug: content-vs-border
+
 shorturl: 6xcr7
 comments: true
 ---

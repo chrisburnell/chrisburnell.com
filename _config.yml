@@ -27,10 +27,6 @@ timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
 permalink: /article/:title/
-collections:
-  pens:
-    output: true
-    permalink: /pen/:title/
 exclude:  ['node_modules, .sass-cache']
 
 paginate: 10

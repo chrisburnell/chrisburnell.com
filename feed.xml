@@ -19,15 +19,7 @@ description: All of my articles and pens.
             <link>{{ site.url }}{{ site.baseurl }}/</link>
         </image>
 
-        {% assign all_posts = "" | split: "" %}
         {% for post in site.posts %}
-            {% assign all_posts = all_posts | push: post %}
-        {% endfor %}
-        {% for post in site.pens %}
-            {% assign all_posts = all_posts | push: post %}
-        {% endfor %}
-        {% assign all_posts_sorted = all_posts | sort: "date" %}
-        {% for post in all_posts_sorted %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>

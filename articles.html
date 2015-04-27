@@ -10,7 +10,7 @@ description: All of my articles listed on one page.
 ---
 
 <ol id="articles" class="articles-list" role="list">
-    {% for post in site.posts %}
+    {% for post in site.categories.article %}
         <li>
             <h2 class="article-title">
                 <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>

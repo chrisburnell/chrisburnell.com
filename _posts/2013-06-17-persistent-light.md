@@ -8,6 +8,7 @@ title: Persistent Light Source Transform
 
 permalink: /pen/persistent-light/
 slug: persistent-light
+
 shorturl: 9sogz
 comments: true
 ---
