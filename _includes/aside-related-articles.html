@@ -5,6 +5,9 @@
             {% for post in site.related_posts limit:2 %}
                 <li>
                     <a href="{{ post.url }}">
+                        {% if post.category == "codepen" %}
+                            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                        {% endif %}
                         <h4 class="small-article-title">{{ post.title }}</h4>
                         <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                         {% if post.introduction %}
