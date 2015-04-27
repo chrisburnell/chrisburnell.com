@@ -36,7 +36,7 @@ description: A list of tags and their article counterparts.
                     {% if post.introduction %}
                         <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
                     {% elsif post.category == "codepen" %}
-                        <p class="small-article-introduction">Featured Pen</p>
+                        <p class="small-article-introduction"><em>Featured Pen</em></p>
                     {% endif %}
                 </a>
             </li>
