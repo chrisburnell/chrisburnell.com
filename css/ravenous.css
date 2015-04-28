@@ -485,11 +485,11 @@ figure img,
 figure svg,
 blockquote,
 pre:not(.codepen),
+[data-lang]:before,
 .article-banner,
 .small-articles-list a,
 aside:not(.author),
-.author-image,
-[data-lang]:before {
+.author-image {
     background-clip: padding-box;
     border-radius: .375rem;
 }
@@ -727,7 +727,7 @@ ul.default-list li:before {
 
 dl {
     width: 100%;
-    display: table;
+    overflow: hidden;
 }
 dl:not(:last-child) {
     margin-bottom: 1.25rem;
@@ -929,6 +929,154 @@ pre:not(.codepen) {
 pre:not(.codepen) code {
     min-width: 100%;
     display: block;
+}
+
+/*------------------------------------*\
+    $COMPONENTS - Code
+\*------------------------------------*/
+/**
+ * `data-lang` is always an attribute on a code element inside `div.highlight`
+ */
+[data-lang] {
+    padding-top: 2.25rem;
+    line-height: 2;
+}
+[data-lang]:before {
+    content: attr(data-lang);
+    background-color: #737373;
+    color: #f9f9f9;
+    width: 100%;
+    display: block;
+    padding: 0 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    border-radius: .375rem .375rem 0 0;
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+}
+[data-lang].language-css:before {
+    background-color: #016fba;
+}
+[data-lang].language-haml:before {
+    background-color: #e54d26;
+}
+[data-lang].language-html:before {
+    background-color: #e54d26;
+}
+[data-lang].language-javascript:before {
+    background-color: #f1c54c;
+}
+[data-lang].language-sass:before {
+    background-color: #c6538c;
+}
+[data-lang].language-scss:before {
+    background-color: #c6538c;
+}
+
+/**
+ * Github-style Code Highlighting
+ */
+.highlight {
+    position: relative;
+}
+.highlight .err {
+    background-color: lightcoral;
+    color: firebrick;
+    font-weight: 600;
+}
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+    color: #737373;
+    font-style: italic;
+}
+.highlight .gs,
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nc,
+.highlight .ne,
+.highlight .nf,
+.highlight .o,
+.highlight .ow {
+    font-weight: 600;
+}
+.highlight .gr,
+.highlight .gt,
+.highlight .ne,
+.highlight .nf,
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx {
+    color: firebrick;
+}
+.highlight .gi,
+.highlight .gi .x {
+    background-color: turquoise;
+}
+.highlight .gd,
+.highlight .gd .x {
+    background-color: lightcoral;
+}
+.highlight .ge {
+    font-style: italic;
+}
+.highlight .m,
+.highlight .il,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .nb,
+.highlight .no,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+    color: cadetblue;
+}
+.highlight .sr {
+    color: forestgreen;
+}
+.highlight .bp,
+.highlight .gh,
+.highlight .go,
+.highlight .gp,
+.highlight .nn {
+    color: #737373;
+}
+.highlight .gu,
+.highlight .w {
+    color: #dddddd;
+}
+.highlight .kt,
+.highlight .na,
+.highlight .nc,
+.highlight .nt {
+    color: #5f8aa6;
+}
+.highlight .ni,
+.highlight .ss {
+    color: slateblue;
+    color: rebeccapurple;
 }
 
 /*------------------------------------*\
@@ -1813,154 +1961,6 @@ button .icon--article,
 button .icon--feather,
 .button .icon--feather {
     width: .58em;
-}
-
-/*------------------------------------*\
-    $COMPONENTS - Code
-\*------------------------------------*/
-/**
- * `data-lang` is always an attribute on a code element inside `div.highlight`
- */
-[data-lang] {
-    padding-top: 2.25rem;
-    line-height: 2;
-}
-[data-lang]:before {
-    content: attr(data-lang);
-    background-color: #737373;
-    color: #f9f9f9;
-    width: 100%;
-    display: block;
-    padding: 0 1.5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 2.25rem;
-    text-transform: uppercase;
-    border-radius: .375rem .375rem 0 0;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-}
-[data-lang].language-css:before {
-    background-color: #016fba;
-}
-[data-lang].language-haml:before {
-    background-color: #e54d26;
-}
-[data-lang].language-html:before {
-    background-color: #e54d26;
-}
-[data-lang].language-javascript:before {
-    background-color: #f1c54c;
-}
-[data-lang].language-sass:before {
-    background-color: #c6538c;
-}
-[data-lang].language-scss:before {
-    background-color: #c6538c;
-}
-
-/**
- * Github-style Code Highlighting
- */
-.highlight {
-    position: relative;
-}
-.highlight .err {
-    background-color: lightcoral;
-    color: firebrick;
-    font-weight: 600;
-}
-.highlight .c,
-.highlight .cm,
-.highlight .cp,
-.highlight .c1,
-.highlight .cs {
-    color: #737373;
-    font-style: italic;
-}
-.highlight .gs,
-.highlight .k,
-.highlight .kc,
-.highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt,
-.highlight .nc,
-.highlight .ne,
-.highlight .nf,
-.highlight .o,
-.highlight .ow {
-    font-weight: 600;
-}
-.highlight .gr,
-.highlight .gt,
-.highlight .ne,
-.highlight .nf,
-.highlight .s,
-.highlight .sb,
-.highlight .sc,
-.highlight .sd,
-.highlight .s1,
-.highlight .s2,
-.highlight .se,
-.highlight .sh,
-.highlight .si,
-.highlight .sx {
-    color: firebrick;
-}
-.highlight .gi,
-.highlight .gi .x {
-    background-color: turquoise;
-}
-.highlight .gd,
-.highlight .gd .x {
-    background-color: lightcoral;
-}
-.highlight .ge {
-    font-style: italic;
-}
-.highlight .m,
-.highlight .il,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo,
-.highlight .nb,
-.highlight .no,
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi {
-    color: cadetblue;
-}
-.highlight .sr {
-    color: forestgreen;
-}
-.highlight .bp,
-.highlight .gh,
-.highlight .go,
-.highlight .gp,
-.highlight .nn {
-    color: #737373;
-}
-.highlight .gu,
-.highlight .w {
-    color: #dddddd;
-}
-.highlight .kt,
-.highlight .na,
-.highlight .nc,
-.highlight .nt {
-    color: #5f8aa6;
-}
-.highlight .ni,
-.highlight .ss {
-    color: slateblue;
-    color: rebeccapurple;
 }
 
 /*------------------------------------*\
