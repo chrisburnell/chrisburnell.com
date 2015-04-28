@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    $COMPONENTS - Comments
+\*------------------------------------*/
+
+// Appears only on article pages
+.comments {
+    text-align: center;
+    @include media(">medium") {
+        .pagination + & {
+            padding-top: $default-padding;
+        }
+    }
+    .show-comments-button:before,
+    .show-comments-button:active:before {
+        position: relative;
+        top: 0;
+    }
+    noscript {
+        font-family: $secondary-font-stack;
+        font-size: 1.25rem;
+        font-style: italic;
+    }
+}

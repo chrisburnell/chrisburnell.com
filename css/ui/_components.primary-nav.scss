@@ -1,12 +1,6 @@
 /*------------------------------------*\
-    $HEADER
+    $COMPONENTS - Primary Navigation
 \*------------------------------------*/
-
-header {
-    @include media("<=medium") {
-        text-align: center;
-    }
-}
 
 .primary-navigation {
     padding-bottom: $default-margin;

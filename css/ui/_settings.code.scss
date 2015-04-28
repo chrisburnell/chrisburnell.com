@@ -1,0 +1,18 @@
+//
+// SETTINGS - Code
+//
+
+/// Coding Language $variables
+$css-color:         #016fba      !default;
+$html-color:        #e54d26      !default;
+$haml-color:        $html-color  !default;
+$javascript-color:  #f1c54c      !default;
+$sass-color:        #c6538c      !default;
+$scss-color:        $sass-color  !default;
+/// Create Coding Languages Array (name, colour)
+$coding-languages:  css         $css-color,
+                    haml        $haml-color,
+                    html        $html-color,
+                    javascript  $javascript-color,
+                    sass        $sass-color,
+                    scss        $scss-color;

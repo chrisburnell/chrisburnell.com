@@ -1,43 +1,33 @@
 @charset "UTF-8";
 /*! Ravenous - version 2.3.0 */
-/* by Chris Burnell (@iamchrisburnell)
+/**
+ * by Chris Burnell (@iamchrisburnell)
+ *
  * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
- *
- * Table of Contents:
- *
- * NORMALIZE................. Import normalize as a reset.
- * LAYOUT.................... Set the general page layout.
- * TYPOGRAPHY................ Set the default content styles.
- * CODE BLOCKS............... Set the code block styles.
- * HEADER.................... Set the header styles.
- * LOGO...................... Set the logo styles.
- * CONTENT................... Set the content styles.
- * ASIDES.................... Set the aside styles.
- * LISTS..................... Set the article lists styles.
- * BUTTONS................... Set the default button styles.
- * STYLEGUIDE................ Set the style guide styles.
- * FOOTER.................... Set the footer styles.
- * ICONS..................... Set the icon styles.
- * PRINT..................... Set the print styles.
- * SHAME..................... Shameful hacks, shims, and temporary fixes.
  */
 
 @import "normalize",
         "include-media";
-@import "ui/vars",
-        "ui/mixins",
-        "ui/layout",
-        "ui/typography.base",
-        "ui/typography.code",
-        "ui/header.base",
-        "ui/header.logo",
-        "ui/content.base",
-        "ui/content.asides",
-        "ui/content.lists",
-        "ui/content.buttons",
-        "ui/content.styleguide",
-        "ui/footer.base",
-        "ui/icons",
-        "ui/print",
-        "ui/shame";
+@import "ui/settings.global",
+        "ui/settings.code",
+        "ui/settings.branding",
+        "ui/tools.mixins",
+        "ui/base.layout",
+        "ui/base.typography",
+        "ui/base.code",
+        "ui/components.code",
+        "ui/base.header",
+        "ui/components.logo",
+        "ui/components.primary-nav",
+        "ui/base.content",
+        "ui/components.content-lists",
+        "ui/base.aside",
+        "ui/components.author",
+        "ui/components.aside-lists",
+        "ui/components.buttons",
+        "ui/components.comments",
+        "ui/components.icons",
+        "ui/base.footer",
+        "ui/components.styleguide",
+        "ui/base.print";

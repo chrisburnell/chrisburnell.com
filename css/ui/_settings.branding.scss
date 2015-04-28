@@ -1,0 +1,22 @@
+//
+// SETTINGS - Branding
+//
+
+/// Icon $variables
+$icon-size:  40px  !default;
+
+/// Brands $variables
+$codepen-color:  #212121               !default;
+$github-color:   #333333               !default;
+$lastfm-color:   #e31b23               !default;
+$twitter-color:  darken(#55acee, 10%)  !default;
+/// Create Brands Array (name, colour, icon width:height ratio)
+$brands:  codepen  $codepen-color  1.025,
+          github   $github-color   0.950,
+          lastfm   $lastfm-color   1.000,
+          rss      $brand          0.775,
+          twitter  $twitter-color  0.925,
+          article  $brand          0.900,
+          feather  $brand          0.725,
+          heart    $brand          1.000,
+          tag      $brand          1.000;

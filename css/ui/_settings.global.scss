@@ -1,5 +1,5 @@
 //
-// SCSS $variables
+// SETTINGS - Global
 //
 
 /// Wrapper and @media $variables
@@ -34,40 +34,6 @@ $black:             #060606                           !default;
 $black-light:       rgba($black, ($opacity-low / 2))  !default;
 $black-medium:      rgba($black, $opacity-low)        !default;
 $black-dark:        rgba($black, $opacity-medium)     !default;
-
-/// Icon $variables
-$icon-size:  40px  !default;
-
-/// Brands $variables
-$codepen-color:  #212121               !default;
-$github-color:   #333333               !default;
-$lastfm-color:   #e31b23               !default;
-$twitter-color:  darken(#55acee, 10%)  !default;
-/// Create Brands Array (name, colour, icon width:height ratio)
-$brands:  codepen  $codepen-color  1.025,
-          github   $github-color   0.950,
-          lastfm   $lastfm-color   1.000,
-          rss      $brand          0.775,
-          twitter  $twitter-color  0.925,
-          article  $brand          0.900,
-          feather  $brand          0.725,
-          heart    $brand          1.000,
-          tag      $brand          1.000;
-
-/// Coding Language $variables
-$css-color:         #016fba      !default;
-$html-color:        #e54d26      !default;
-$haml-color:        $html-color  !default;
-$javascript-color:  #f1c54c      !default;
-$sass-color:        #c6538c      !default;
-$scss-color:        $sass-color  !default;
-/// Create Coding Languages Array (name, colour)
-$coding-languages:  css         $css-color,
-                    haml        $haml-color,
-                    html        $html-color,
-                    javascript  $javascript-color,
-                    sass        $sass-color,
-                    scss        $scss-color;
 
 /// Font Stacks
 $base-font-size:        16px !default;

@@ -1,0 +1,78 @@
+/*------------------------------------*\
+    $COMPONENTS - Author
+\*------------------------------------*/
+
+/**
+ * The `.author` aside is always pushed underneath the content below the medium
+ * breakpoint.
+ */
+/*aside*/.author {
+    font-family: $secondary-font-stack;
+    @include media("<=medium") {
+        display: flex;
+        flex-direction: column;
+        order: 999;
+        .about-page & {
+            margin-top: $default-margin;
+        }
+    }
+}
+    .author-information {
+        margin-bottom: $default-margin;
+        font-family: $primary-font-stack;
+        font-size: .875rem;
+        font-style: italic;
+        line-height: 1.429;
+        @include media("<=medium") {
+            order: 997;
+            padding-top: $default-padding;
+            border-top: ($default-border / 2) solid $black-medium;
+            margin-bottom: ($default-margin / 2);
+        }
+        a,
+        strong {
+            color: inherit;
+            font-family: $secondary-font-stack;
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    }
+    .author-biography {
+        @include media(">medium") {
+            margin-bottom: $default-margin;
+        }
+        @include media("<=medium") {
+            order: 998;
+        }
+        p:not(:last-child) {
+            margin-bottom: ($default-margin / 2);
+        }
+    }
+    .author-name,
+    .author-age,
+    .author-employer,
+    .article-date,
+    .article-label {
+        box-sizing: content-box;
+        display: block;
+        margin-bottom: .5rem;
+    }
+    .article-label a:after,
+    .featured-pens-link:after {
+        content: "\00a0\2192";
+    }
+    .author-image {
+        @extend %rounded;
+        background-size: 100%;
+        width:  6.25rem;
+        height: 6.25rem;
+        display: inline-block;
+        float: left;
+        margin-right: .625rem;
+        filter: contrast(75%) sepia(100%) hue-rotate(160deg);
+    }
+    .article-tags {
+        display: table-cell; // don’t wrap around `.author-image`
+    }

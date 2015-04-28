@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $CONTENT
+    $BASE - Content
 \*------------------------------------*/
 
 .content {
@@ -28,46 +28,5 @@ article {
          */
         display: flex;
         flex-direction: column;
-    }
-}
-
-/**
- * Contains embedded media properly and allows them to be dynamically resized.
- */
-.media-container {
-    height: 0;
-    padding-top: 30px;
-    padding-bottom: 56.65%;
-    position: relative;
-    overflow: hidden;
-    embed,
-    iframe,
-    object,
-    video {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-
-// Appears only on article pages
-.comments {
-    text-align: center;
-    @include media(">medium") {
-        .pagination + & {
-            padding-top: $default-padding;
-        }
-    }
-    .show-comments-button:before,
-    .show-comments-button:active:before {
-        position: relative;
-        top: 0;
-    }
-    noscript {
-        font-family: $secondary-font-stack;
-        font-size: 1.25rem;
-        font-style: italic;
     }
 }
