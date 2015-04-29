@@ -1,6 +1,7 @@
 ---
 layout: article
 category: article
+page_class: page-articles
 
 date: 2015-03-12 10:00:00
 

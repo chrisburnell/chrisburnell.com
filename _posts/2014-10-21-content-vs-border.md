@@ -1,6 +1,7 @@
 ---
 layout: article
 category: codepen
+page_class: page-pens
 
 date: 2014-10-21 12:00:00
 
