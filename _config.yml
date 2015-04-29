@@ -27,7 +27,7 @@ timezone: Europe/London
 destination: ./_site
 layouts: ./_layouts
 permalink: /article/:title/
-exclude:  ['node_modules, .sass-cache']
+exclude: ['node_modules, .sass-cache']
 
 paginate: 10
 paginate_path: 'page:num'
