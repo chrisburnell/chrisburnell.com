@@ -7,9 +7,9 @@
     {% endif %}
 {% else %}
     {% assign author_name_prefix = "about" %}
-    {% if page.page_class == "pens-page" %}
+    {% if page.page_class == "page-pens" %}
         {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
-    {% elsif page.page_class == "tags-page" %}
+    {% elsif page.page_class == "page-tags" %}
         {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
     {% else %}
         {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
@@ -47,11 +47,11 @@
     </div>
 
     <div class="author-biography">
-        <p>I’m a Canadian {% if page.page_class != "home-page" and page.page_class != "about-page" %}<span itemprop="title">{{ site.author_job_title }}</span> {% endif %}living in London, UK{% if site.employer %} and currently working at <a rel="external" href="{{ site.employer_url }}" itemprop="affiliation">{{ site.employer }}</a>{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe via RSS</a>.</p>
+        <p>I’m a Canadian {% if page.page_class != "page-home" and page.page_class != "page-about" %}<span itemprop="title">{{ site.author_job_title }}</span> {% endif %}living in London, UK{% if site.employer %} and currently working at <a rel="external" href="{{ site.employer_url }}" itemprop="affiliation">{{ site.employer }}</a>{% endif %}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe via RSS</a>.</p>
         <p>I also <a rel="me publisher external" class="link--twitter" href="{{ site.twitter_url }}">tweet</a>, <a rel="me publisher external" class="link--codepen" href="{{ site.codepen_url }}">write code</a>, <a rel="me publisher external" class="link--github" href="{{ site.github_url }}">commit code</a>, <a rel="me publisher external" class="link--lastfm" href="{{ site.lastfm_url }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
-    {% if page.page_class == "home-page" %}
+    {% if page.page_class == "page-home" %}
         {% include aside-featured-pens.html %}
     {% elsif page.category == "article" %}
         {% include aside-related-articles.html %}

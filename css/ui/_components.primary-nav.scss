@@ -70,19 +70,19 @@
         .primary-navigation-list a:hover,
         .primary-navigation-list a:focus,
         .primary-navigation-list a:active,
-        .home-page .primary-navigation-home a,
-        .about-page .primary-navigation-about a,
-        .articles-page .primary-navigation-articles a,
-        .pens-page .primary-navigation-pens a {
+        .page-home .primary-navigation-home a,
+        .page-about .primary-navigation-about a,
+        .page-articles .primary-navigation-articles a,
+        .page-pens .primary-navigation-pens a {
             color: $text-color;
             padding-bottom: .5rem;
             border-bottom-width: $default-border;
         }
             // Primary Navigation Active Page Arrow
-            .home-page .primary-navigation-home a:after,
-            .about-page .primary-navigation-about a:after,
-            .articles-page .primary-navigation-articles a:after,
-            .pens-page .primary-navigation-pens a:after {
+            .page-home .primary-navigation-home a:after,
+            .page-about .primary-navigation-about a:after,
+            .page-articles .primary-navigation-articles a:after,
+            .page-pens .primary-navigation-pens a:after {
                 content: "";
                 border-top:   .5em solid $brand;
                 border-right: .5em solid transparent;

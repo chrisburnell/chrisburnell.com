@@ -57,7 +57,7 @@ button,
     &[disabled] {
         opacity: .4;
     }
-    .not-found-page & {
+    .page-not-found & {
         @include media("<=medium") {
             display: block;
             margin: 0 auto $default-margin;

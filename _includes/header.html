@@ -29,7 +29,7 @@ snippet of code on a project of your own. -->
 <html lang="en">
 <head>
 
-    {% if page.page_class == "home-page" %}
+    {% if page.page_class == "page-home" %}
         {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% else %}
         {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
@@ -59,7 +59,7 @@ snippet of code on a project of your own. -->
     <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class == "home-page" or page.page_class == "articles-page" or page.comments == true %}
+    {% if page.page_class == "page-home" or page.page_class == "page-articles" or page.comments == true %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
     {% endif %}
     {% if page.comments == true %}
@@ -82,7 +82,7 @@ snippet of code on a project of your own. -->
     <meta name="description" content="{{ meta_description }}">
     <meta name="theme-color" content="#5f8aa6">
 
-    {% if page.page_class != "not-found-page" %}
+    {% if page.page_class != "page-not-found" %}
         <!-- Twitter Microdata and OpenGraph -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:creator" content="@{{ site.author_twitter }}">
@@ -94,7 +94,7 @@ snippet of code on a project of your own. -->
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_description }}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
+        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/{% if page.page_class != "page-home" %}{{ page.url }}{% endif %}">
         <meta property="og:image" content="{{ meta_image }}">
     {% else %}
         <meta name="robots" content="noindex,nofollow">
