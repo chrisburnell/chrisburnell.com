@@ -20,9 +20,11 @@ comments: true
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for simple maintenance and comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
 
+
 {% include heading.html id="in-comes-sass" title="In comes SASS" %}
 
 Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">SASS</dfn>](http://sass-lang.com "SASS: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in not just writing CSS but also in reading and understanding it. Because with SCSS we can nest selectors, children selectors simply sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
+
 
 {% include heading.html id="i-dont-want-to-do-anything" title="I don’t want to do anything, anymore!" %}
 
@@ -50,6 +52,7 @@ It’s only a small amount of time spent each time I wanted to compile my SCSS, 
 
 All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SCSS for the most part.
 
+
 {% include heading.html id="a-better-way" title="There must be a better way!" %}
 
 <figure>
@@ -58,6 +61,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 </figure>
 
 And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a “streaming build system” built on *[node.js](http://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
+
 
 {% include heading.html id="what-gulp-does-for-me" title="Let’s see what gulp does for me" %}
 
@@ -433,6 +437,7 @@ Next, let’s turn this CSS into SCSS.
     <figcaption>Success.</figcaption>
 </figure>
 
+
 {% include heading.html id="a-few-major-changes" title="You’ll notice a few major changes" %}
 
 - the `hover`, `focus`, and `active` states are nested, using an `&` prefix
@@ -516,6 +521,7 @@ Another thing, which I won’t bother to illustrate here, is the splitting of fi
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
+
 {% include heading.html id="useful-links" title="Useful Links" %}
 
 1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
@@ -529,6 +535,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
 
+
 {% include heading.html id="wrapping-it-up" title="Wrapping it up" %}
 
 I cannot stress how awesome SASS and SCSS are and how they can drastically speed up your workflow. If you’ve never written SASS or SCSS before, try it with variables first. When you’re building a big stylesheet, or group of stylesheets, it can be a pain to have to remember HEX colour values or font stacks. The advantage of SASS is that it allows you to set these values to variables and use them througout the rest of your CSS; furthermore, if you need to manipulate these colours (lighten, darken, opacity, etc.), SASS has the ability to do this for you, leaving you to only remember the variable names.
@@ -536,6 +543,7 @@ I cannot stress how awesome SASS and SCSS are and how they can drastically speed
 The power of *Autoprefixer* speaks for itself, really.
 
 And with *gulp* `watching`, the transition from the SCSS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
+
 
 {% include heading.html id="thats-whats-up" title="So that’s what’s up" %}
 

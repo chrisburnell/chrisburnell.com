@@ -21,19 +21,23 @@ comments: true
 
 Since my last design update, I started working at [Squiz](http://squiz.net/uk "Squiz UK") and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix "Squiz Matrix"), an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
+
 {% include heading.html id="more-than-meets-the-eye" title="More than meets the eye" %}
 
 Enforcing strict CSS standards goes beyond keeping an eye out for `!important`s or excessively long chained selectors—the simple pitfalls to avoid. It involved also overseeing our naming conventions and architecture of both markup and CSS. Being put in charge of this monumental task, I knew I had to step up to the plate and deliver not just as part of my job, but as a member of a closely-knit team (I’ll be writing on this soon!)
 
 Part of the challenge was realising that decisions I made at the beginning would have a profound impact on how certain aspects of the project would go further on: the naming convention, architecture of both CSS and the file structure on which Matrix (the Content Management System) was built, etc.
 
+
 {% include heading.html id="whats-new" title="What’s new in this iteration?" %}
 
 I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies—over the years, I’ve gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was basically poor planning on my part over and over again. Pretty stupid. That’s where Jekyll came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
 
+
 {% include heading.html id="what-is-jekyll" title="What is Jekyll?" %}
 
 > Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll &bull; Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
+
 
 {% include heading.html id="better-faster-stronger" title="Better, Faster, Stronger" %}
 
@@ -55,6 +59,7 @@ This is what it looks like when you’re writing it:
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
+
 {% include heading.html id="brass-tacks" title="Let’s get down to brass tacks" %}
 
 During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we developers can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a simple transition from desktop to mobile responsive layouts as well as making the process in Markdown simple as well. It’s been a flurry of knowledge into my *super-powerful* (read: tiny) brain, and these have only been a handful of the things I’ve learned.
@@ -62,6 +67,7 @@ During this learning phase, I adopted a number of intelligent and new technologi
 I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](http://codepen.io "Codepen") often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these simple steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
 
 The most important lesson of them all, of course, is to **keep it simple**. Whether it’s code or design, just stick to what you need and you’re sure to find success.
+
 
 {% include heading.html id="major-props" title="Major props" %}
 
@@ -88,6 +94,7 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 - [Smashing Magazine](http://www.smashingmagazine.com/ "Smashing Magazine")
 - [Responsive Design Newsletter](http://responsivedesignweekly.com/ "Responsive Design Newsletter") by [Justin Avery](http://surfthedream.com.au/ "Justin Avery")
 - [Visual Idiot](http://visualidiot.com/ "Visual Idiot")
+
 
 {% include heading.html id="thats-it" title="And that’s basically it!" %}
 

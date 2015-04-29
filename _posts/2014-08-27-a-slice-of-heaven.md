@@ -23,6 +23,7 @@ I’ve been making quite a few pens over on [Codepen](http://codepen.io "Codepen
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
+
 {% include heading.html id="psychedelic-slice" title="Psychedelic Slice" %}
 
 Hover the slice to see how this one works.
@@ -33,6 +34,7 @@ In this Pen, I’m taking advantage of `border-radius` and `overflow` on an elem
 
 *Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with `border-radius` and `overflow` not masking child elements property when modified with a `transform`. Hopefully this is fixed soon, but in the meantime, I’ve added a `border-radius` and an associated `transform` on the `:before` and `:after` elements.*
 
+
 {% include heading.html id="zoomy-anchor-thing" title="Zoomy Anchor Thing" %}
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals "Square").
@@ -40,6 +42,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 {% include codepen-embed.html slug="lcEvB" height="350" %}
 
 *Edit: This pen was featured on [Codepen’s front page](http://ss.chrisburnell.com/2014-08-28_1411.png "ego boost manifested in PNG format"), netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
+
 
 {% include heading.html id="modal-container-without-js" title="Modal Container without JS" %}
 
@@ -49,11 +52,13 @@ This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.
 
 One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
+
 {% include heading.html id="slip-n-slide-modal" title="Slip-n-slide Modal" %}
 
 This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but simply never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
 
 {% include codepen-embed.html slug="sDBJk" height="630" %}
+
 
 {% include heading.html id="simple-css-checkbox-revisited" title="Simple CSS Checkbox Revisited" %}
 
