@@ -7,9 +7,9 @@ date: 2014-08-27 15:00:00
 title: A Slice of Heaven
 introduction: We know that webpages are composed of text and boxes. Lots and lots of boxes. But with the power and might of CSS3 we can do some fancy stuff that never used to be possible.
 tags:
-- CodePen
-- CSS
-- Tutorials
+- codepen
+- css
+- tutorials
 
 # banner:        a-slice-of-heaven.png
 # banner_mobile: a-slice-of-heaven_mobile.png

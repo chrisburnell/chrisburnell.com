@@ -7,9 +7,9 @@ date: 2014-02-09 02:19:00
 title: Let’s Look Back
 introduction: I haven’t published a new article in a while now, but I haven’t been twiddling my thumbs. Let’s look at what happened behind-the-scenes in the last eight months since my first article.
 tags:
-- CSS
-- GitHub
-- Tutorials
+- css
+- github
+- tutorials
 
 banner:        lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
@@ -26,7 +26,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 {% include heading.html id="i-dont-want-to-do-anything" title="I don’t want to do anything, anymore!" %}
 
-<aside><p>I also wrote about <a href="http://browser.londonwebstandards.org">State of the Browser 2013</a> in <a href="/article/first-article-ever">my first article</a>.</p></aside>
+<aside><p>I also wrote about <a href="http://browser.londonwebstandards.org">State of the Browser 2013</a> in <a href="{% post_url 2013-06-15-first-article-ever %}">my first article</a>.</p></aside>
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 

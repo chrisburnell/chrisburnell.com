@@ -5,6 +5,8 @@ category: codepen
 date: 2014-10-21 12:00:00
 
 title: content-box vs. border-box
+tags:
+- codepen
 
 permalink: /pen/content-vs-border/
 slug: content-vs-border

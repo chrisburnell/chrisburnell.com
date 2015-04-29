@@ -5,6 +5,8 @@ category: codepen
 date: 2014-08-18 12:00:00
 
 title: Simple CSS Checkbox
+tags:
+- codepen
 
 permalink: /pen/simple-css-checkbox/
 slug: simple-css-checkbox

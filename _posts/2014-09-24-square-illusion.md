@@ -5,6 +5,8 @@ category: codepen
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
+tags:
+- codepen
 
 permalink: /pen/square-illusion/
 slug: square-illusion

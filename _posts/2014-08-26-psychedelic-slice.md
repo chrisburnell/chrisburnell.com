@@ -5,6 +5,8 @@ category: codepen
 date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
+tags:
+- codepen
 
 permalink: /pen/psychedelic-slice/
 slug: psychedelic-slice

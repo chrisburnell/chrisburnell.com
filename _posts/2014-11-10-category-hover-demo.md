@@ -5,6 +5,8 @@ category: codepen
 date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
+tags:
+- codepen
 
 permalink: /pen/category-hover-demo/
 slug: category-hover-demo

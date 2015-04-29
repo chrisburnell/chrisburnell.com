@@ -5,6 +5,8 @@ category: codepen
 date: 2013-06-17 12:00:00
 
 title: Persistent Light Source Transform
+tags:
+- codepen
 
 permalink: /pen/persistent-light/
 slug: persistent-light

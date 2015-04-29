@@ -5,6 +5,8 @@ category: codepen
 date: 2013-12-04 12:00:00
 
 title: Cutaway Indicator
+tags:
+- codepen
 
 permalink: /pen/cutaway-indicator/
 slug: cutaway-indicator

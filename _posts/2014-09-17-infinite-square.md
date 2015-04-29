@@ -5,6 +5,8 @@ category: codepen
 date: 2014-09-17 12:00:00
 
 title: Infinite Square
+tags:
+- codepen
 
 permalink: /pen/infinite-square/
 slug: infinite-square

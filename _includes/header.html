@@ -45,9 +45,9 @@ snippet of code on a project of your own. -->
         {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% endif %}
 
-    {% if page.banner_mobile and page.page_class != "not-found-page" %}
+    {% if page.banner_mobile %}
         {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
-    {% elsif page.page_class != "not-found-page" %}
+    {% else %}
         {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
     {% endif %}
 
@@ -89,7 +89,7 @@ snippet of code on a project of your own. -->
         <meta name="twitter:title" content="{{ meta_title }}">
         <meta name="twitter:description" content="{{ meta_description }}">
         <meta name="twitter:image:src" content="{{ meta_image }}">
-        <meta name="twitter:domain" content="chrisburnell.com">
+        <meta name="twitter:domain" content="{{ site.url | replace: 'https://', '' }}">
 
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_description }}">

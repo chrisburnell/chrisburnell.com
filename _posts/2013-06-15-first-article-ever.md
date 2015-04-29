@@ -7,10 +7,10 @@ date: 2013-06-15 13:21:00
 title: First Article Ever
 introduction: Well, I’ve finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
-- CSS
-- GitHub
-- Jekyll
-- Markdown
+- css
+- github
+- jekyll
+- markdown
 
 banner:        first-article-ever.png
 banner_mobile: first-article-ever_mobile.png

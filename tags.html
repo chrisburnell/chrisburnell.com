@@ -13,19 +13,9 @@ description: A list of tags and their article counterparts.
 {% endcapture %}
 {% assign tags_sorted = tags | split:' ' | sort %}
 {% for tag in tags_sorted %}
-    {% assign posts_by_tag = "" | split: "" %}
-    {% for post in site.tags.[tag] %}
-        {% assign posts_by_tag = posts_by_tag | push: post %}
-    {% endfor %}
-    {% if tag == "CodePen" %}
-        {% for post in site.categories.codepen %}
-            {% assign posts_by_tag = posts_by_tag | push: post %}
-        {% endfor %}
-    {% endif %}
-    {% assign posts_by_tag_sorted = posts_by_tag | sort: "date" %}
-    <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ posts_by_tag_sorted.size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
+    <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ site.tags.[tag].size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
-        {% for post in posts_by_tag_sorted %}
+        {% for post in site.tags.[tag] %}
             <li>
                 <a href="{{ post.url }}">
                     {% if post.category == "codepen" %}
