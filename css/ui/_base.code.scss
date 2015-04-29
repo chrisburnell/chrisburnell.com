@@ -22,7 +22,7 @@ var,
         background-color: rgba($brand, $opacity-low);
         padding: .25rem;
         word-wrap: break-word;
-        border-radius: .25rem;
+        border-radius: ($default-border-radius / 1.5);
     }
 pre {
     margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`

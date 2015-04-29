@@ -14,10 +14,11 @@ $breakpoints:  (
 )  !default; // overwrite include-media.scss
 
 /// Layout $variables
-$default-margin:   $wrapper-padding  !default;
-$default-padding:  2.250rem          !default;
-$default-border:   0.250rem          !default;
-$aside-width:     15.875rem          !default;
+$default-margin:         $wrapper-padding  !default;
+$default-padding:        2.250rem          !default;
+$default-border:         0.250rem          !default;
+$default-border-radius:  0.375rem          !default;
+$aside-width:           15.875rem          !default;
 
 /// Opacity $variables
 $opacity-low:     0.10  !default;
@@ -35,12 +36,11 @@ $black-light:       rgba($black, ($opacity-low / 2))  !default;
 $black-medium:      rgba($black, $opacity-low)        !default;
 $black-dark:        rgba($black, $opacity-medium)     !default;
 
-/// Font Stacks
+/// Font $variables
 $base-font-size:        16px !default;
 $primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif     !default;
 $secondary-font-stack:  "proxima-nova", sans-serif                  !default;
 $heading-font-stack:    "league-gothic", Impact, sans-serif         !default;
-$code-font-stack:       Consolas, Monaco, "Courier New", monospace  !default;
 
 /// Transition $variables
 $transition-time:      0.2s  !default;

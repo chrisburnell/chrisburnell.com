@@ -22,7 +22,7 @@ button,
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    border-radius: .25rem;
+    border-radius: ($default-border-radius / 1.5);
     box-shadow: inset 0 -0.182em 0 0 darken($brand, 10%);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);

@@ -24,7 +24,7 @@
         font-weight: 600;
         line-height: $default-padding;
         text-transform: uppercase;
-        border-radius: .375rem .375rem 0 0;
+        border-radius: $default-border-radius $default-border-radius 0 0;
         @include transition;
     }
     @each $language in $coding-languages {

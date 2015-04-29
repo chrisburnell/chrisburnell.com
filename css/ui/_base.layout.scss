@@ -79,7 +79,7 @@ html {
 // We’re goin’ up around the bend
 %rounded {
     background-clip: padding-box;
-    border-radius: .375rem;
+    border-radius: $default-border-radius;
 }
 
 // Non-selectable stuff
