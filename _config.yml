@@ -14,22 +14,15 @@ employer_url: https://www.city.ac.uk
 url:         https://chrisburnell.com
 shorturl:    http://repc.co/
 
-<<<<<<< HEAD
 url_codepen: http://codepen.io/chrisburnell
 url_github:  https://github.com/chrisburnell
 url_gist:    https://gist.github.com/chrisburnell
 url_lastfm:  http://last.fm/user/chrisburnell
 url_repo:    https://github.com/chrisburnell/chrisburnell.github.io
 url_twitter: https://twitter.com/iamchrisburnell
-=======
+
 copyright:     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
 url_copyright: http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
-
-codepen_url: http://codepen.io/chrisburnell
-github_url:  https://github.com/chrisburnell
-lastfm_url:  http://last.fm/user/chrisburnell
-twitter_url: https://twitter.com/iamchrisburnell
->>>>>>> origin/master
 
 codepen_theme:   119
 codepen_tabfree: 8863
