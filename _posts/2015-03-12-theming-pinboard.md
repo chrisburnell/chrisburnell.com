@@ -227,7 +227,7 @@ html {
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <div class="buttons-list">
-    <a class="button" href="https://gist.github.com/chrisburnell/ef5367e7dd263356c48a">gist.github.com &rarr;</a>
+    <a class="button" href="{{ site.url_gist }}/ef5367e7dd263356c48a">gist.github.com &rarr;</a>
 </div>
 
 

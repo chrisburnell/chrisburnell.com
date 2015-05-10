@@ -4,7 +4,7 @@ page_class: page-about
 redirect_from: /me.html
 
 title: About Me
-description: My name is <span class="canada"Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
+description: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
 ---
 
 <figure>
@@ -73,4 +73,4 @@ There are a number of RSS Feeds you can subscribe to:
  --><a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
 </nav>
 
-I'm reachable through <a rel="me publisher" class="link--twitter" href="{{ site.twitter_url }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.
+I'm reachable through <a rel="me publisher" class="link--twitter" href="{{ site.url_twitter }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.
