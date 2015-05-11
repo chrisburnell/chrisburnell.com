@@ -21,7 +21,7 @@
 
         {{ content }}
 
-        <nav class="articles-navigation">
+        <nav class="secondary-navigation">
             {% if page.comments == true %}
                 <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Show Comments</button>
             {% endif %}
@@ -32,12 +32,7 @@
             {% endif %}
         </nav>
 
-        {% if page.comments == true %}
-            <section id="comments" class="comments  clear">
-                <div id="disqus_thread"></div>
-                <noscript>Please enable Javascript to view comments.</noscript>
-            </section>
-        {% endif %}
+        {% include comments.html %}
 
     </article>
 </main>

@@ -1,0 +1,19 @@
+- title: Codepen
+  url: http://codepen.io/chrisburnell
+  rel: "me publisher external"
+
+- title: GitHub
+  url: https://github.com/chrisburnell
+  rel: "me publisher external"
+
+- title: Twitter
+  url: https://twitter.com/iamchrisburnell
+  rel: "me publisher external"
+
+- title: LastFM
+  url: http://last.fm/user/chrisburnell
+  rel: "me publisher external"
+
+- title: RSS
+  url: "/feed.xml"
+  rel: "me author"

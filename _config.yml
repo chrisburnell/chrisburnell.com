@@ -12,6 +12,7 @@ employer:     City University
 employer_url: https://www.city.ac.uk
 
 url:         https://chrisburnell.com
+baseurl:     ""
 shorturl:    http://repc.co/
 
 url_codepen: http://codepen.io/chrisburnell

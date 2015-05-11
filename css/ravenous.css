@@ -1658,22 +1658,22 @@ aside .small-articles-list li + li {
 /**
  * Contains buttons and internal links.
  */
-.articles-navigation,
+.secondary-navigation,
 .buttons-list {
     width: 100%;
     text-align: center;
 }
-.articles-navigation button,
-.articles-navigation .button,
+.secondary-navigation button,
+.secondary-navigation .button,
 .buttons-list button,
 .buttons-list .button {
     display: inline-block;
 }
 @media (min-width: 501px) {
-    .articles-navigation button + button,
-    .articles-navigation button + .button,
-    .articles-navigation .button + button,
-    .articles-navigation .button + .button,
+    .secondary-navigation button + button,
+    .secondary-navigation button + .button,
+    .secondary-navigation .button + button,
+    .secondary-navigation .button + .button,
     .buttons-list button + button,
     .buttons-list button + .button,
     .buttons-list .button + button,
@@ -1682,11 +1682,11 @@ aside .small-articles-list li + li {
     }
 }
 
-.articles-navigation {
+.secondary-navigation {
     padding: 2.068rem 0 2.25rem;
     border-top: .125rem solid rgba(6, 6, 6, .1);
 }
-.page-about .articles-navigation {
+.page-about .secondary-navigation {
     border-top: 0;
     padding: 1.25rem 0;
 }
@@ -2102,10 +2102,10 @@ footer {
     }
 }
 
-.footer-icons-list li {
+.tertiary-navigation-list li {
     display: inline-block;
 }
-.footer-icons-list li + li {
+.tertiary-navigation-list li + li {
     margin-left: 1rem;
 }
 

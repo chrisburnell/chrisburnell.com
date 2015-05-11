@@ -1,1 +1,11 @@
+{% comment %}
+*
+* This include lets you easily add a content heading with an anchor.
+* You can specify three parameters (* is mandatory):
+*   - title *
+*   - id
+* Example:
+*   - {% include heading.html id="lets-look-at-some-code" title="Let’s look at some code" %}
+*
+{% endcomment %}
 {% if include.id %}<h3 id="{{ include.id }}">{{ include.title }}<a href="#{{ include.id }}" class="heading-anchor" aria-hidden="true">#{{ include.id }}</a></h3>{% else %}<h3 id="{{ include.title | slugify }}">{{ include.title }}<a href="#{{ include.title | slugify }}" class="heading-anchor" aria-hidden="true">#{{ include.title | slugify }}</a></h3>{% endif %}

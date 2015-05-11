@@ -122,10 +122,9 @@ snippet of code on a project of your own. -->
         </a>
         <nav class="primary-navigation" role="navigation">
             <ol class="primary-navigation-list">
-                <li class="primary-navigation-home"><a rel="home" href="/" tabindex="1">Home</a></li><!--
-             --><li class="primary-navigation-about"><a rel="me" href="/about" tabindex="2">About</a></li><!--
-             --><li class="primary-navigation-articles"><a href="/articles" tabindex="3">Articles</a></li><!--
-             --><li class="primary-navigation-pens"><a href="/pens" tabindex="4">Pens</a></li>
+            {% for link in site.data.primary_navigation %}
+                {% if forloop.first == false %}-->{% endif %}<li class="primary-navigation-{{ link.title | slugify }}"><a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" tabindex="{{ forloop.index }}">{{ link.title }}</a></li>{% if forloop.last == false %}<!--{% endif %}
+            {% endfor %}
             </ol>
         </nav>
     </header>

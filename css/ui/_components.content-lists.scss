@@ -215,7 +215,7 @@
 /**
  * Contains buttons and internal links.
  */
-.articles-navigation,
+.secondary-navigation,
 .buttons-list {
     width: 100%;
     text-align: center;
@@ -230,7 +230,7 @@
         }
     }
 }
-.articles-navigation {
+.secondary-navigation {
     padding: ($default-padding - .182) 0 $default-padding;
     border-top: ($default-border / 2) solid $black-medium;
     .page-about & {

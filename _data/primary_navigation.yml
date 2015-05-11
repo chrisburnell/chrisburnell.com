@@ -1,0 +1,13 @@
+- title: Home
+  url: "/"
+  rel: "home"
+
+- title: About
+  url: "/about"
+  rel: "me"
+
+- title: Articles
+  url: "/articles"
+
+- title: Pens
+  url: "/pens"
