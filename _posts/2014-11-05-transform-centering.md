@@ -12,6 +12,6 @@ shorturl: h8eek
 comments: true
 ---
 
-{% include codepen-embed.html slug="CHEbf" height="500" theme="8863" %}
+{% include embed-codepen.html slug="CHEbf" height="500" theme="8863" %}
 
 This pen is mostly for visual effect. Check out the [interactive version]({% post_url 2014-11-05-transform-centering-interactive %}).

@@ -98,6 +98,11 @@ snippet of code on a project of your own. -->
         <meta name="twitter:description" content="{{ meta_description }}">
         <meta name="twitter:image:src" content="{{ meta_image }}">
         <meta name="twitter:domain" content="{{ site.url | replace: 'https://', '' }}">
+        {% if page.twitter == true %}
+            <meta name="twitter:widgets:theme" content="light">
+            <meta name="twitter:widgets:link-color" content="#5f8aa6">
+            <meta name="twitter:widgets:border-color" content="#5f8aa6">
+        {% endif %}
 
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_description }}">

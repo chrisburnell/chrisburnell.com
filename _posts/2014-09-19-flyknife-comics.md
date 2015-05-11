@@ -12,7 +12,7 @@ shorturl: 6aorh
 comments: true
 ---
 
-{% include codepen-embed.html slug="hIxaj" height="400" %}
+{% include embed-codepen.html slug="hIxaj" height="400" %}
 
 {% highlight html %}
 <div>

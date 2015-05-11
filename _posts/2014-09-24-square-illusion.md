@@ -12,7 +12,7 @@ shorturl: f7utt
 comments: true
 ---
 
-{% include codepen-embed.html slug="IKHhC" height="500" %}
+{% include embed-codepen.html slug="IKHhC" height="500" %}
 
 {% highlight html %}
 <div class="container">

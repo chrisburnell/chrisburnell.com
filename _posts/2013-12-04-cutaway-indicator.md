@@ -12,7 +12,7 @@ shorturl: b3sh4
 comments: true
 ---
 
-{% include codepen-embed.html slug="yIwzd" height="200" %}
+{% include embed-codepen.html slug="yIwzd" height="200" %}
 
 {% highlight html %}
 <button>Hover Me</button>

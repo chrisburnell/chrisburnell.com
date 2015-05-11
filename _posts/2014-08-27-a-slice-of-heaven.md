@@ -28,7 +28,7 @@ All of the examples are interactive, so make sure you hover or click where neces
 
 Hover the slice to see how this one works.
 
-{% include codepen-embed.html slug="apogK" height="350" %}
+{% include embed-codepen.html slug="apogK" height="350" %}
 
 In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
@@ -39,7 +39,7 @@ In this Pen, I’m taking advantage of `border-radius` and `overflow` on an elem
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals).
 
-{% include codepen-embed.html slug="lcEvB" height="350" %}
+{% include embed-codepen.html slug="lcEvB" height="350" %}
 
 *Edit: This pen was featured on [Codepen’s front page](http://ss.chrisburnell.com/2014-08-28_1411.png "ego boost manifested in PNG format"), netting me some [sweet internet points](http://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen")! Achievement Unlocked.*
 
@@ -48,7 +48,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off Javascript and won’t be able to use Codepen properly, as Codepen relies on Javascript to display Pens.
 
-{% include codepen-embed.html slug="scyKF" height="350" %}
+{% include embed-codepen.html slug="scyKF" height="350" %}
 
 One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
@@ -57,18 +57,18 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but simply never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
 
-{% include codepen-embed.html slug="sDBJk" height="630" %}
+{% include embed-codepen.html slug="sDBJk" height="630" %}
 
 
 {% include heading.html id="simple-css-checkbox-revisited" title="Simple CSS Checkbox Revisited" %}
 
 This is a pen which I overhauled a bit since I first wrote about it in {% post_url 2013-06-18-persistent-shadows %}:
 
-{% include codepen-embed.html slug="arouk" height="250" %}
+{% include embed-codepen.html slug="arouk" height="250" %}
 
 And the revisited version:
 
-{% include codepen-embed.html slug="Cbiun" height="250" %}
+{% include embed-codepen.html slug="Cbiun" height="250" %}
 
 Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 

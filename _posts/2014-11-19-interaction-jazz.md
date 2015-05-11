@@ -12,7 +12,7 @@ shorturl: bhbt9
 comments: true
 ---
 
-{% include codepen-embed.html slug="myyRqp" height="600" %}
+{% include embed-codepen.html slug="myyRqp" height="600" %}
 
 {% highlight haml %}
 - (1...51).each do |row|

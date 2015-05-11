@@ -12,7 +12,7 @@ shorturl: 8x586
 comments: true
 ---
 
-{% include codepen-embed.html slug="xutbs" height="500" %}
+{% include embed-codepen.html slug="xutbs" height="500" %}
 
 Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
 

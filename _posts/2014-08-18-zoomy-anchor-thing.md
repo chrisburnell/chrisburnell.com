@@ -12,7 +12,7 @@ shorturl: e1r8k
 comments: true
 ---
 
-{% include codepen-embed.html slug="lcEvB" height="350" %}
+{% include embed-codepen.html slug="lcEvB" height="350" %}
 
 {% highlight html %}
 <a href="#" class="article-link">

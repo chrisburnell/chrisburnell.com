@@ -12,7 +12,7 @@ shorturl: 6dwvt
 comments: true
 ---
 
-{% include codepen-embed.html slug="HlcAJ" height="350" %}
+{% include embed-codepen.html slug="HlcAJ" height="350" %}
 
 {% highlight html %}
 <div class="square">

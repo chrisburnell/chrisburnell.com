@@ -12,7 +12,7 @@ shorturl: 9sogz
 comments: true
 ---
 
-{% include codepen-embed.html slug="mglHp" height="425" %}
+{% include embed-codepen.html slug="mglHp" height="425" %}
 
 {% highlight html %}
 <div class="square">A</div>

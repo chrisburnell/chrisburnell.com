@@ -12,7 +12,7 @@ shorturl: 058xp
 comments: true
 ---
 
-{% include codepen-embed.html slug="mybQEL" height="525" %}
+{% include embed-codepen.html slug="mybQEL" height="525" %}
 
 {% highlight html %}
 <div class="modal">
