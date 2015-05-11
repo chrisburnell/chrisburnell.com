@@ -19,7 +19,7 @@ description: All of my featured pens listed on one page.
             <a href="{{ post.url }}">
                 <svg><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="small-article-title">{{ post.title }}</h4>
-                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
             </a>
         </li>
     {% endfor %}

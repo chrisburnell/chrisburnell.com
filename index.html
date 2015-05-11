@@ -9,7 +9,7 @@ page_class: page-home
             <h2 class="article-title">
                 <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
-            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
             {% if post.introduction %}
                 <p class="article-introduction">{{ post.introduction }}</p>
             {% endif %}
