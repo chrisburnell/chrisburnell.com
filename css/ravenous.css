@@ -487,11 +487,11 @@ figure img,
 figure svg,
 blockquote,
 pre:not(.codepen),
-[data-lang]:before,
+aside:not(.author),
 .article-banner,
 .small-articles-list a,
-aside:not(.author),
-.author-image {
+.author-image,
+[data-lang]:before {
     background-clip: padding-box;
     border-radius: .375rem;
 }
@@ -934,159 +934,205 @@ pre:not(.codepen) code {
 }
 
 /*------------------------------------*\
-    $COMPONENTS - Code
-\*------------------------------------*/
-/**
- * `data-lang` is always an attribute on a code element inside `div.highlight`
- */
-[data-lang] {
-    padding-top: 2.25rem;
-    line-height: 2;
-}
-[data-lang]:before {
-    content: attr(data-lang);
-    background-color: #737373;
-    color: #f9f9f9;
-    width: 100%;
-    display: block;
-    padding: 0 1.5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 2.25rem;
-    text-transform: uppercase;
-    border-radius: .375rem .375rem 0 0;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-}
-[data-lang].language-css:before {
-    background-color: #016fba;
-}
-[data-lang].language-haml:before {
-    background-color: #e54d26;
-}
-[data-lang].language-html:before {
-    background-color: #e54d26;
-}
-[data-lang].language-javascript:before {
-    background-color: #f1c54c;
-}
-[data-lang].language-sass:before {
-    background-color: #c6538c;
-}
-[data-lang].language-scss:before {
-    background-color: #c6538c;
-}
-
-/**
- * Github-style Code Highlighting
- */
-.highlight {
-    position: relative;
-}
-.highlight .err {
-    background-color: lightcoral;
-    color: firebrick;
-    font-weight: 600;
-}
-.highlight .c,
-.highlight .cm,
-.highlight .cp,
-.highlight .c1,
-.highlight .cs {
-    color: #737373;
-    font-style: italic;
-}
-.highlight .gs,
-.highlight .k,
-.highlight .kc,
-.highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt,
-.highlight .nc,
-.highlight .ne,
-.highlight .nf,
-.highlight .o,
-.highlight .ow {
-    font-weight: 600;
-}
-.highlight .gr,
-.highlight .gt,
-.highlight .ne,
-.highlight .nf,
-.highlight .s,
-.highlight .sb,
-.highlight .sc,
-.highlight .sd,
-.highlight .s1,
-.highlight .s2,
-.highlight .se,
-.highlight .sh,
-.highlight .si,
-.highlight .sx {
-    color: firebrick;
-}
-.highlight .gi,
-.highlight .gi .x {
-    background-color: turquoise;
-}
-.highlight .gd,
-.highlight .gd .x {
-    background-color: lightcoral;
-}
-.highlight .ge {
-    font-style: italic;
-}
-.highlight .m,
-.highlight .il,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo,
-.highlight .nb,
-.highlight .no,
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi {
-    color: cadetblue;
-}
-.highlight .sr {
-    color: forestgreen;
-}
-.highlight .bp,
-.highlight .gh,
-.highlight .go,
-.highlight .gp,
-.highlight .nn {
-    color: #737373;
-}
-.highlight .gu,
-.highlight .w {
-    color: #dddddd;
-}
-.highlight .kt,
-.highlight .na,
-.highlight .nc,
-.highlight .nt {
-    color: #5f8aa6;
-}
-.highlight .ni,
-.highlight .ss {
-    color: slateblue;
-    color: rebeccapurple;
-}
-
-/*------------------------------------*\
     $BASE - Header
 \*------------------------------------*/
 @media (max-width: 768px) {
     header {
         text-align: center;
+    }
+}
+
+/*------------------------------------*\
+    $BASE - Content
+\*------------------------------------*/
+.content {
+    padding-bottom: 2.25rem;
+}
+
+/**
+ * The width of the articles is fluid, and always has padding on the left-hand
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
+ * Maximum total width of container
+ *   = 1080px
+ * Left-hand padding
+ *   = 25% of 1080px = 270px  = 16.875em
+ */
+article {
+    padding-top: 2.25rem;
+    border-top: .25rem solid #5f8aa6;
+}
+@media (min-width: 769px) {
+    article {
+        padding-left: 18.125rem;
+    }
+}
+@media (max-width: 768px) {
+    article {
+        /**
+         * Below the medium breakpoint, `article`, `article-list`, and `aside`
+         * become full width.
+         */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
+/*------------------------------------*\
+    $BASE - Aside
+\*------------------------------------*/
+/**
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_content.scss`.
+ */
+aside {
+    width: 15.875rem;
+}
+@media (min-width: 769px) {
+    aside {
+        float: left;
+        margin-left: -18.125rem;
+    }
+}
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+    }
+    aside:not(.author) {
+        background: rgba(6, 6, 6, .05);
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    aside:not(.author):last-child {
+        margin-bottom: 0;
+    }
+}
+aside p,
+aside figcaption {
+    clear: both;
+}
+@media (min-width: 501px) {
+    aside p,
+    aside figcaption {
+        font-size: .875rem;
+    }
+}
+
+/*------------------------------------*\
+    $BASE - Footer
+\*------------------------------------*/
+footer {
+    background-color: #4f4f4f;
+    color: #dddddd;
+    width: 100%;
+    padding: 2.25rem 0;
+    border-top: .25rem solid #5f8aa6;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.copyright,
+.tertiary-navigation {
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .copyright,
+    .tertiary-navigation {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .copyright {
+        float: left;
+    }
+}
+
+@media (min-width: 769px) {
+    .tertiary-navigation {
+        float: right;
+        margin-top: .3125rem;
+    }
+}
+@media (max-width: 768px) {
+    .tertiary-navigation {
+        margin-top: .625rem;
+    }
+}
+
+.tertiary-navigation-list li {
+    display: inline-block;
+}
+.tertiary-navigation-list li + li {
+    margin-left: 1rem;
+}
+
+.footer-home-link,
+.footer-copyright-link,
+.footer-style-guide-link {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.footer-home-link {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    overflow: hidden;
+    vertical-align: middle;
+    text-indent: 100%;
+    white-space: nowrap;
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    will-change: transform;
+}
+.footer-home-link:hover,
+.footer-home-link:focus,
+.footer-home-link:active {
+    text-decoration: none;
+}
+.footer-home-link:active {
+    -webkit-transform: translate3d(0, .143em, 0);
+            transform: translate3d(0, .143em, 0);
+}
+@media (max-width: 500px) {
+    .footer-home-link {
+        margin-right: .5rem;
+    }
+}
+.footer-home-link svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.footer-copyright-link,
+.footer-style-guide-link {
+    color: #dddddd;
+}
+
+@media (max-width: 500px) {
+    .footer-style-guide-link {
+        display: block;
+    }
+}
+
+.footer-spacer {
+    color: #737373;
+}
+@media (max-width: 500px) {
+    .footer-spacer {
+        display: none;
     }
 }
 
@@ -1365,49 +1411,6 @@ pre:not(.codepen) code {
     left: 50%;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0);
-}
-
-/*------------------------------------*\
-    $BASE - Content
-\*------------------------------------*/
-.content {
-    padding-bottom: 2.25rem;
-}
-
-/**
- * The width of the articles is fluid, and always has padding on the left-hand
- * side to make room for any `aside`, which can appear anywhere inside
- * `article` or `.articles-list`.
- * Maximum total width of container
- *   = 1080px
- * Left-hand padding
- *   = 25% of 1080px = 270px  = 16.875em
- */
-article {
-    padding-top: 2.25rem;
-    border-top: .25rem solid #5f8aa6;
-}
-@media (min-width: 769px) {
-    article {
-        padding-left: 18.125rem;
-    }
-}
-@media (max-width: 768px) {
-    article {
-        /**
-         * Below the medium breakpoint, `article`, `article-list`, and `aside`
-         * become full width.
-         */
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display:         flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
 }
 
 /*------------------------------------*\
@@ -1699,47 +1702,6 @@ aside .small-articles-list li + li {
 }
 
 /*------------------------------------*\
-    $BASE - Aside
-\*------------------------------------*/
-/**
- * The width of the asides is static above the medium breakpoint and always
- * floated within an article or list of articles. The math is calculated as in
- * `_content.scss`.
- */
-aside {
-    width: 15.875rem;
-}
-@media (min-width: 769px) {
-    aside {
-        float: left;
-        margin-left: -18.125rem;
-    }
-}
-@media (max-width: 768px) {
-    aside {
-        width: 100%;
-    }
-    aside:not(.author) {
-        background: rgba(6, 6, 6, .05);
-        padding: 1rem;
-        margin-bottom: 1.25rem;
-    }
-    aside:not(.author):last-child {
-        margin-bottom: 0;
-    }
-}
-aside p,
-aside figcaption {
-    clear: both;
-}
-@media (min-width: 501px) {
-    aside p,
-    aside figcaption {
-        font-size: .875rem;
-    }
-}
-
-/*------------------------------------*\
     $COMPONENTS - Author
 \*------------------------------------*/
 /**
@@ -1991,6 +1953,154 @@ button .icon--feather,
 }
 
 /*------------------------------------*\
+    $COMPONENTS - Code
+\*------------------------------------*/
+/**
+ * `data-lang` is always an attribute on a code element inside `div.highlight`
+ */
+[data-lang] {
+    padding-top: 2.25rem;
+    line-height: 2;
+}
+[data-lang]:before {
+    content: attr(data-lang);
+    background-color: #737373;
+    color: #f9f9f9;
+    width: 100%;
+    display: block;
+    padding: 0 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    border-radius: .375rem .375rem 0 0;
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+}
+[data-lang].language-css:before {
+    background-color: #016fba;
+}
+[data-lang].language-haml:before {
+    background-color: #e54d26;
+}
+[data-lang].language-html:before {
+    background-color: #e54d26;
+}
+[data-lang].language-javascript:before {
+    background-color: #f1c54c;
+}
+[data-lang].language-sass:before {
+    background-color: #c6538c;
+}
+[data-lang].language-scss:before {
+    background-color: #c6538c;
+}
+
+/**
+ * Github-style Code Highlighting
+ */
+.highlight {
+    position: relative;
+}
+.highlight .err {
+    background-color: lightcoral;
+    color: firebrick;
+    font-weight: 600;
+}
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+    color: #737373;
+    font-style: italic;
+}
+.highlight .gs,
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nc,
+.highlight .ne,
+.highlight .nf,
+.highlight .o,
+.highlight .ow {
+    font-weight: 600;
+}
+.highlight .gr,
+.highlight .gt,
+.highlight .ne,
+.highlight .nf,
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx {
+    color: firebrick;
+}
+.highlight .gi,
+.highlight .gi .x {
+    background-color: turquoise;
+}
+.highlight .gd,
+.highlight .gd .x {
+    background-color: lightcoral;
+}
+.highlight .ge {
+    font-style: italic;
+}
+.highlight .m,
+.highlight .il,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .nb,
+.highlight .no,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+    color: cadetblue;
+}
+.highlight .sr {
+    color: forestgreen;
+}
+.highlight .bp,
+.highlight .gh,
+.highlight .go,
+.highlight .gp,
+.highlight .nn {
+    color: #737373;
+}
+.highlight .gu,
+.highlight .w {
+    color: #dddddd;
+}
+.highlight .kt,
+.highlight .na,
+.highlight .nc,
+.highlight .nt {
+    color: #5f8aa6;
+}
+.highlight .ni,
+.highlight .ss {
+    color: slateblue;
+    color: rebeccapurple;
+}
+
+/*------------------------------------*\
     $COMPONENTS - Icons
 \*------------------------------------*/
 .svg--master {
@@ -2059,116 +2169,6 @@ button .icon--feather,
     width: 100%;
     height: 100%;
     display: block;
-}
-
-/*------------------------------------*\
-    $BASE - Footer
-\*------------------------------------*/
-footer {
-    background-color: #4f4f4f;
-    color: #dddddd;
-    width: 100%;
-    padding: 2.25rem 0;
-    border-top: .25rem solid #5f8aa6;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.copyright,
-.tertiary-navigation {
-    overflow: hidden;
-}
-@media (max-width: 768px) {
-    .copyright,
-    .tertiary-navigation {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (min-width: 769px) {
-    .copyright {
-        float: left;
-    }
-}
-
-@media (min-width: 769px) {
-    .tertiary-navigation {
-        float: right;
-        margin-top: .3125rem;
-    }
-}
-@media (max-width: 768px) {
-    .tertiary-navigation {
-        margin-top: .625rem;
-    }
-}
-
-.tertiary-navigation-list li {
-    display: inline-block;
-}
-.tertiary-navigation-list li + li {
-    margin-left: 1rem;
-}
-
-.footer-home-link,
-.footer-copyright-link,
-.footer-style-guide-link {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.footer-home-link {
-    width: 50px;
-    height: 50px;
-    margin-right: 1rem;
-    overflow: hidden;
-    vertical-align: middle;
-    text-indent: 100%;
-    white-space: nowrap;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    will-change: transform;
-}
-.footer-home-link:hover,
-.footer-home-link:focus,
-.footer-home-link:active {
-    text-decoration: none;
-}
-.footer-home-link:active {
-    -webkit-transform: translate3d(0, .143em, 0);
-            transform: translate3d(0, .143em, 0);
-}
-@media (max-width: 500px) {
-    .footer-home-link {
-        margin-right: .5rem;
-    }
-}
-.footer-home-link svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.footer-copyright-link,
-.footer-style-guide-link {
-    color: #dddddd;
-}
-
-@media (max-width: 500px) {
-    .footer-style-guide-link {
-        display: block;
-    }
-}
-
-.footer-spacer {
-    color: #737373;
-}
-@media (max-width: 500px) {
-    .footer-spacer {
-        display: none;
-    }
 }
 
 /*------------------------------------*\
