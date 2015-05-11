@@ -12,6 +12,6 @@ shorturl: 6xcr7
 comments: true
 ---
 
-{% include embed-codepen.html slug="lBJnz" height="500" theme="8863" %}
+{% include embed-codepen.html slug="lBJnz" height="500" theme="tabfree" %}
 
 This pen is really more about the visual display.

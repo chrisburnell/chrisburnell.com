@@ -21,7 +21,7 @@ comments: true
 
 Nearing the end of the work-day yesterday, I was struck with an idea. Having recently read through [Google’s Visual Assets Guidelines on Behance](http://www.behance.net/gallery/Google-Visual-Assets-Guidelines-Part-1/9028077 "Google’s Visual Assets Guidelines on Behance") and stumbling upon this awesome pen (actually a fork of [Lionel’s](http://codepen.io/elrumordelaluz "Lionel on Github"), from Italy: [http://codepen.io/elrumordelaluz/pen/dobAz](http://codepen.io/elrumordelaluz/pen/dobAz "CSS3 Flat Icons")):
 
-{% include embed-codepen.html slug="kJcGE" theme="8863" height="220" %}
+{% include embed-codepen.html slug="kJcGE" theme="tabfree" height="220" %}
 
 My idea was basically this: I wonder if I could create something similar to the clock above using CSS3 *and maintain a persistent light source*. The trouble with the usual approach is that in using `transform` on an element, you are manipulating it’s `top`, `right`, `bottom`, and `left` attributes as you see them. If you `transform: rotate3d(0, 0, 1, 90deg);` a box, what you now see as the top of the box is in fact it’s `left` attribute. These shadow effects are typically done with `box-shadow`, and as the element rotates, the shadow will rotate with the element—`box-shadow: 2em 2em 0 black;` would produce a diagonal *bottom-right* shadow with no transform, but with `transform: rotate3d(0, 0, 1, 90deg);` it would become a diagonal *bottom-left* shadow...
 
