@@ -8,15 +8,9 @@
                 <span class="footer-spacer"> &ndash; </span>
                 <a class="footer-style-guide-link" href="/style-guide">Style Guide</a>
             </section>
-            <nav class="tertiary-navigation" role="navigation">
-                <ul class="tertiary-navigation-list">
-                {% for link in site.data.tertiary_navigation %}
-                    <li><a rel="{{ link.rel }}" class="icon  link--{{ link.title | slugify }}" href="{{ link.url }}" title="{{ link.title }}">
-                        <svg><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
-                    </a></li>
-                {% endfor %}
-                </ul>
-            </nav>
+
+            {% include tertiary-navigation.html %}
+
         </div>
     </footer>
 
