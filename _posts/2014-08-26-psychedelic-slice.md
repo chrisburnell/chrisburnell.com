@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
 tags:
 - codepen
-
-permalink: /pen/psychedelic-slice/
-slug: psychedelic-slice
 
 shorturl: k9ouo
 comments: true

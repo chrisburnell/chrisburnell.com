@@ -1,6 +1,6 @@
 {% if page.layout == "article" %}
     {% assign author_name_prefix = "by" %}
-    {% if page.category == "codepen" %}
+    {% if page.category == "pen" %}
         {% assign author_biography_closer = "this pen is uninspiring and makes you want to claw your eyeballs out" %}
     {% else %}
         {% assign author_biography_closer = "this article is boring and makes you want to claw your eyeballs out" %}
@@ -28,7 +28,7 @@
         <div class="author-name">{{ author_name_prefix }} <a rel="me" class="canada" href="/about" itemprop="name">{{ site.author }}</a></div>
         {% if page.layout == "article" %}
             <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong>{{ page.date | date: "%b %d, %Y" }}</strong></time>
-            {% if page.category == "codepen" %}
+            {% if page.category == "pen" %}
                 <div class="article-label"><a href="/pens">Featured Pens</a></div>
             {% endif %}
             {% if page.tags.size > 0 %}

@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
 tags:
 - codepen
-
-permalink: /pen/square-illusion/
-slug: square-illusion
 
 shorturl: f7utt
 comments: true

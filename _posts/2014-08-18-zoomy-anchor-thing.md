@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
 tags:
 - codepen
-
-permalink: /pen/zoomy-anchor-thing/
-slug: zoomy-anchor-thing
 
 shorturl: e1r8k
 comments: true

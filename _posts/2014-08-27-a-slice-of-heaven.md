@@ -1,7 +1,6 @@
 ---
 layout: article
 category: article
-page_class: page-articles
 
 date: 2014-08-27 15:00:00
 
@@ -20,7 +19,7 @@ codepen: true
 comments: true
 ---
 
-I’ve been making quite a few pens over on [Codepen](http://codepen.io "Codepen") lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to Javascript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
+I’ve been making quite a few pens over on [Codepen](http://codepen.io) lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to Javascript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
@@ -33,12 +32,12 @@ Hover the slice to see how this one works.
 
 In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
-*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218 "Chromium Issue: css transform and transition break hidden overflow on border-radius") with `border-radius` and `overflow` not masking child elements property when modified with a `transform`. Hopefully this is fixed soon, but in the meantime, I’ve added a `border-radius` and an associated `transform` on the `:before` and `:after` elements.*
+*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218) with `border-radius` and `overflow` not masking child elements property when modified with a `transform`. Hopefully this is fixed soon, but in the meantime, I’ve added a `border-radius` and an associated `transform` on the `:before` and `:after` elements.*
 
 
 {% include heading.html id="zoomy-anchor-thing" title="Zoomy Anchor Thing" %}
 
-This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals "Square").
+This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals).
 
 {% include codepen-embed.html slug="lcEvB" height="350" %}
 

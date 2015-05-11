@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
 tags:
 - codepen
-
-permalink: /pen/category-hover-demo/
-slug: category-hover-demo
 
 shorturl: 058xp
 comments: true

@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2013-06-17 12:00:00
 
 title: Persistent Light Source Transform
 tags:
 - codepen
-
-permalink: /pen/persistent-light/
-slug: persistent-light
 
 shorturl: 9sogz
 comments: true

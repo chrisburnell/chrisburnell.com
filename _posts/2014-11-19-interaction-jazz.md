@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-11-19 12:00:00
 
 title: Interaction Jazz
 tags:
 - codepen
-
-permalink: /pen/interaction-jazz/
-slug: interaction-jazz
 
 shorturl: bhbt9
 comments: true

@@ -39,7 +39,7 @@ snippet of code on a project of your own. -->
         {% capture meta_description %}{{ page.introduction | strip_html }}{% endcapture %}
     {% elsif page.description %}
         {% capture meta_description %}{{ page.description | strip_html }}{% endcapture %}
-    {% elsif page.category == "codepen" %}
+    {% elsif page.category == "pen" %}
         {% capture meta_description %}One of my CodePens, {{ page.title }}{% endcapture %}
     {% else %}
         {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
@@ -49,6 +49,14 @@ snippet of code on a project of your own. -->
         {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
     {% else %}
         {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
+    {% endif %}
+
+    {% if page.page_class %}
+        {% capture body_class %}{{ page.page_class }}{% endcapture %}
+    {% elsif page.category == "article" %}
+        {% capture body_class %}page-articles{% endcapture %}
+    {% elsif page.category == "pen" %}
+        {% capture body_class %}page-pens{% endcapture %}
     {% endif %}
 
     <meta charset="utf-8">
@@ -103,7 +111,7 @@ snippet of code on a project of your own. -->
     {% include js-head.html %}
 
 </head>
-<body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
+<body{% if body_class %} class="{{ body_class }}"{% endif %}>
 
     {% include inline-svg.html %}
 

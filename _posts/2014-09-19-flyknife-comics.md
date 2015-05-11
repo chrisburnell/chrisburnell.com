@@ -1,16 +1,12 @@
 ---
 layout: article
-category: codepen
-page_class: page-pens
+category: pen
 
 date: 2014-09-19 12:00:00
 
 title: Flyknife Comics
 tags:
 - codepen
-
-permalink: /pen/flyknife-comics/
-slug: flyknife-comics
 
 shorturl: 6aorh
 comments: true
