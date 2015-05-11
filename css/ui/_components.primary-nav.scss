@@ -15,6 +15,7 @@
 }
     .primary-navigation-list {
         height: 3.75rem;
+        font-size: 0;
         @include media(">medium") {
             float: right;
         }
@@ -23,6 +24,7 @@
         }
         li {
             display: inline-block;
+            font-size: 1rem;
             @include media(">medium") {
                 float: left;
             }

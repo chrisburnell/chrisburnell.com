@@ -13,9 +13,11 @@
         {% elsif title_slug == "lastfm" %}
             {% assign url = site.url_lastfm %}
         {% endif %}
-        <li><a{% if link.rel %} rel="{{ link.rel }}"{% endif %} class="icon  link--{{ link.title | slugify }}"{% if url %} href="{{ url }}"{% endif %} title="{{ link.title }}">
-            <svg><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
-        </a></li>
+        <li>
+            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} class="icon  link--{{ link.title | slugify }}"{% if url %} href="{{ url }}"{% endif %} title="{{ link.title }}">
+                <svg><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
+            </a>
+        </li>
     {% endfor %}
     </ul>
 </nav>

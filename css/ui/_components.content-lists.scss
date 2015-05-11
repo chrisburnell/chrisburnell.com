@@ -218,6 +218,7 @@
 .secondary-navigation,
 .buttons-list {
     width: 100%;
+    font-size: 0;
     text-align: center;
     button,
     .button {
@@ -225,7 +226,7 @@
         @include media(">small") {
             & + button,
             & + .button {
-                margin-left: 1.875em;
+                margin-left: 1.875rem;
             }
         }
     }

@@ -1275,6 +1275,7 @@ pre:not(.codepen) code {
 
 .primary-navigation-list {
     height: 3.75rem;
+    font-size: 0;
 }
 @media (min-width: 769px) {
     .primary-navigation-list {
@@ -1288,6 +1289,7 @@ pre:not(.codepen) code {
 }
 .primary-navigation-list li {
     display: inline-block;
+    font-size: 1rem;
 }
 @media (min-width: 769px) {
     .primary-navigation-list li {
@@ -1661,6 +1663,7 @@ aside .small-articles-list li + li {
 .secondary-navigation,
 .buttons-list {
     width: 100%;
+    font-size: 0;
     text-align: center;
 }
 .secondary-navigation button,
@@ -1678,7 +1681,7 @@ aside .small-articles-list li + li {
     .buttons-list button + .button,
     .buttons-list .button + button,
     .buttons-list .button + .button {
-        margin-left: 1.875em;
+        margin-left: 1.875rem;
     }
 }
 
