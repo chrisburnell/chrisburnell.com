@@ -5,25 +5,33 @@
  * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
  * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
  *
- * The sixth iteration design of chrisburnell.com.
  * Please contact me if you want to learn about anything you see here.
  */
 
+// #SETTINGS
 @import "settings.global",
         "settings.code",
-        "settings.branding",
-        "tools.include-media",
-        "tools.mixins",
-        "generic.normalize",
-        "generic.box-sizing",
-        "base.page",
+        "settings.branding";
+
+// #TOOLS
+@import "tools.include-media",
+        "tools.mixins";
+
+// #GENERIC
+@import "generic.normalize",
+        "generic.box-sizing";
+
+// #BASE
+@import "base.page",
         "base.typography",
         "base.code",
         "base.header",
         "base.article",
         "base.aside",
-        "base.footer",
-        "objects.layout",
+        "base.footer";
+
+// #OBJECTS
+@import "objects.layout",
         "objects.logo",
         "objects.primary-navigation",
         "objects.article",
@@ -41,3 +49,6 @@
         "objects.media",
         "objects.styleguide",
         "objects.print";
+
+// #TRUMPS
+@import "trumps.helpers";
