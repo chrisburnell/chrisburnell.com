@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    $OBJECTS - Footer
+\*------------------------------------*/
+
+.copyright,
+.tertiary-navigation {
+    overflow: hidden;
+    @include media("<=medium") {
+        width: 100%;
+        text-align: center;
+    }
+}
+.copyright {
+    @include media(">medium") {
+        float: left;
+    }
+}
+.tertiary-navigation {
+    @include media(">medium") {
+        float: right;
+        margin-top: .3125rem;
+    }
+    @include media("<=medium") {
+        margin-top: .625rem;
+    }
+}
+    .tertiary-navigation-list {
+        li {
+            display: inline-block;
+            + li {
+                margin-left: 1rem;
+            }
+        }
+    }
+    .footer-home-link,
+    .footer-copyright-link,
+    .footer-style-guide-link {
+        display: inline-block;
+        white-space: nowrap;
+    }
+    .footer-home-link {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        overflow: hidden;
+        vertical-align: middle;
+        text-indent: 100%;
+        white-space: nowrap;
+        @include transition;
+        @include will-change(transform);
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+        &:active {
+            @include translate3d(0, .143em, 0);
+        }
+        @include media("<=small") {
+            margin-right: .5rem;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+    .footer-copyright-link,
+    .footer-style-guide-link {
+        color: $text-color-light;
+    }
+    .footer-style-guide-link {
+        @include media("<=small") {
+            display: block;
+        }
+    }
+    .footer-spacer {
+        color: $text-color-alt;
+        @include media("<=small") {
+            display: none;
+        }
+    }

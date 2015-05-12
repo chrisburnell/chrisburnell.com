@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    $TRUMPS - Helpers
+\*------------------------------------*/
+
+/**
+ * Allow for fixed-width content
+ */
+.fixed-width {
+    width: $max-wrapper-width;
+}
+
+/**
+ * Hide things... ’nuff said
+ */
+.hidden {
+    display: none;
+}
+
+// We’re goin’ up around the bend
+%rounded {
+    background-clip: padding-box;
+    border-radius: $default-border-radius;
+}
+
+// Non-selectable stuff
+%non-selectable {
+    user-select: none;
+    -webkit-touch-callout: none;
+}

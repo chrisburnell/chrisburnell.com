@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    $OBJECTS - Secondary Navigation
+\*------------------------------------*/
+
+/**
+ * Contains buttons and internal links.
+ */
+.secondary-navigation,
+.buttons-list {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    button,
+    .button {
+        display: inline-block;
+        @include media(">small") {
+            & + button,
+            & + .button {
+                margin-left: 1.875rem;
+            }
+        }
+    }
+}
+.secondary-navigation {
+    padding: ($default-padding - .182) 0 $default-padding;
+    border-top: ($default-border / 2) solid $black-medium;
+    .page-about & {
+        border-top: 0;
+        padding: $default-margin 0;
+    }
+}
+.buttons-list {
+    padding-bottom: $default-margin;
+}

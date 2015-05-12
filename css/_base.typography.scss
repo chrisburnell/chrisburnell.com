@@ -2,11 +2,6 @@
     $BASE - Typography
 \*------------------------------------*/
 
-html {
-    color: $text-color;
-    font: 400 normal #{$base-font-size}/1.875 $primary-font-stack;
-}
-
 h1, h2, h3, h4, h5, h6 {
     min-height: 1.2em; // so that elements can be floated inside headings
     padding: 0;

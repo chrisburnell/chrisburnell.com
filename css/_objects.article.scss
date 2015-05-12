@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    $OBJECTS - Article
+\*------------------------------------*/
+
+.article-banner {
+    @extend %rounded;
+    width: 810px;
+    margin-bottom: 1rem;
+    @include media("<=small") {
+        width: 500px;
+    }
+}
+.article-title,
+.page-title,
+.site-tagline {
+    margin-bottom: $default-padding;
+}
+.site-description {
+    max-width: 24em;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.article-introduction,
+.page-description {
+    margin-bottom: $default-margin;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.page-description,
+.site-description,
+.article-introduction {
+    @include media(">medium") {
+        margin-top: -0.5rem; // align text to the `aside`
+    }
+}
+.article-introduction {
+    .article-banner + & {
+        margin-top: 0;
+    }
+}
+.pens-introduction {
+    padding-bottom: $default-margin;
+    border-bottom: ($default-border / 2) solid $black-medium;
+}
+.article-title,
+.article-date,
+.article-introduction {
+    @include media("<=medium") {
+        text-align: left;
+    }
+}
+.article-title {
+    width: 100%;
+    .article-title-link {
+        display: inline-block;
+        padding: 0 .5rem;
+        border-bottom: .1825rem solid transparent;
+        margin-left: -0.5rem;
+        @include transition(border-color);
+        @include will-change(color, border-bottom-color);
+        &:hover,
+        &:focus,
+        &:active {
+            color: $text-color;
+            border-bottom-color: $brand;
+            text-decoration: none;
+        }
+    }
+}
+.articles-list .article-date {
+    margin-bottom: .75rem;
+    &:before {
+        content: "\2013\0020";
+        color: $text-color-alt;
+    }
+}
+.comments-link {
+    display: inline-block;
+    margin-top: 1.625em;
+    font-family: $secondary-font-stack;
+    font-weight: 600;
+    line-height: 1;
+    &:after {
+        content: "\00a0\2192";
+    }
+    @include media(">medium") {
+        float: right;
+    }
+    @include media("<=medium") {
+        display: block;
+        margin-top: $default-margin;
+    }
+}
