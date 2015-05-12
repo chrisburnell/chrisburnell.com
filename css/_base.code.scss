@@ -24,6 +24,7 @@ var,
         word-wrap: break-word;
         border-radius: ($default-border-radius / 1.5);
     }
+
 pre {
     margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
     margin-bottom: $default-margin;
@@ -40,4 +41,3 @@ pre {
         }
     }
 }
-
