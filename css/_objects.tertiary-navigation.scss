@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    $OBJECTS - Tertiary Navigation
+\*------------------------------------*/
+
+.tertiary-navigation {
+    @include media(">medium") {
+        float: right;
+        margin-top: .3125rem;
+    }
+    @include media("<=medium") {
+        margin-top: .625rem;
+    }
+}
+    .tertiary-navigation-list {
+        li {
+            display: inline-block;
+            + li {
+                margin-left: 1rem;
+            }
+        }
+    }

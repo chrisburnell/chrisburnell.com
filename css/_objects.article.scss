@@ -74,20 +74,3 @@
         color: $text-color-alt;
     }
 }
-.comments-link {
-    display: inline-block;
-    margin-top: 1.625em;
-    font-family: $secondary-font-stack;
-    font-weight: 600;
-    line-height: 1;
-    &:after {
-        content: "\00a0\2192";
-    }
-    @include media(">medium") {
-        float: right;
-    }
-    @include media("<=medium") {
-        display: block;
-        margin-top: $default-margin;
-    }
-}
