@@ -1894,6 +1894,9 @@ button .icon--feather,
     }
 }
 
+/**
+ * Appears only on article pages
+ */
 .comments {
     text-align: center;
 }
