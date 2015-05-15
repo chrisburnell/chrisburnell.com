@@ -39,7 +39,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 </figure>
 
 
-{% include heading.html id="first-step" title="The First Step" %}
+{% include heading.html title="The First Step" %}
 
 <aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a href="http://www.csszengarden.com">CSS Zen Garden</a> or <a href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
@@ -59,7 +59,7 @@ Let’s break down how bookmarks are categorised, at least as far as I use them 
 So it was important for me to make these parts distinct in the new design, whilst maintaining a level of minimalism and a muted colour palette.
 
 
-{% include heading.html id="injection" title="<code>injection'); DROP TABLE Bookmarks;--</code>" %}
+{% include heading.html title="<code>injection'); DROP TABLE Bookmarks;--</code>" id="injection" %}
 
 <aside><figure aria-hidden="true"><img src="/images/content/idontbelievemyeyes.gif" alt=""></figure></aside>
 
