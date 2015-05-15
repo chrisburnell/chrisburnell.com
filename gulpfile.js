@@ -28,16 +28,24 @@ gulp.task('css', function() {
             errLogToConsole: true,
             style: 'expanded'
         }))
-        .pipe(autoprefixer({ browsers: ['last 2 versions', '> 1%'] }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', '> 1%']
+        }))
         .pipe(csscomb())
         .pipe(gulp.dest(cssPath))
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(minifycss({
             advanced: false
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
-        .pipe(notify({ title: 'gulp', message: 'CSS compiled.', onLast: true }));
+        .pipe(notify({
+            title: 'gulp',
+            message: 'CSS compiled.',
+            onLast: true
+        }));
 });
 
 // -----------------------------------------------------------------------------
