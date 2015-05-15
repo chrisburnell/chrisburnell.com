@@ -8,8 +8,8 @@
  * `_content.scss`.
  */
 aside {
-    width: $aside-width;
     @include media(">medium") {
+        width: $aside-width;
         float: left;
         margin-left: -($aside-width + $default-padding);
     }

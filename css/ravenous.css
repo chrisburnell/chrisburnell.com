@@ -904,15 +904,14 @@ article {
  * floated within an article or list of articles. The math is calculated as in
  * `_content.scss`.
  */
-aside {
-    width: 15.875rem;
-}
 @media (min-width: 769px) {
     aside {
+        width: 15.875rem;
         float: left;
         margin-left: -18.125rem;
     }
 }
+
 @media (max-width: 768px) {
     aside {
         width: 100%;
@@ -926,6 +925,7 @@ aside {
         margin-bottom: 0;
     }
 }
+
 aside p,
 aside figcaption {
     clear: both;
