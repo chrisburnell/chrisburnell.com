@@ -28,7 +28,7 @@ gulp.task('css', function() {
             errLogToConsole: true,
             style: 'expanded'
         }))
-        .pipe(autoprefixer('last 2 versions', '> 1%'))
+        .pipe(autoprefixer({ browsers: ['last 2 versions', '> 1%'] }))
         .pipe(csscomb())
         .pipe(gulp.dest(cssPath))
         .pipe(rename({ suffix: '.min' }))
