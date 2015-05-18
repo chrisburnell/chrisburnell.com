@@ -5,7 +5,7 @@
 /**
  * Contains buttons and internal links.
  */
-.secondary-navigation,
+.nav-secondary,
 .buttons-list {
     width: 100%;
     font-size: 0;
@@ -21,7 +21,7 @@
         }
     }
 }
-.secondary-navigation {
+.nav-secondary {
     padding: ($default-padding - .182) 0 $default-padding;
     border-top: ($default-border / 2) solid $black-medium;
     .page-about & {

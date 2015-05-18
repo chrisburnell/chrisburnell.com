@@ -1072,59 +1072,59 @@ button .icon--feather,
 
 /*------------------------------------*    #OBJECTS - Primary Navigation
 \*------------------------------------*/
-.primary-navigation {
+.nav-primary {
     padding-bottom: 1.25rem;
     white-space: nowrap;
 }
 @media (min-width: 769px) {
-    .primary-navigation {
+    .nav-primary {
         float: right;
         padding-top: 1.5rem;
     }
 }
 @media (max-width: 768px) {
-    .primary-navigation {
+    .nav-primary {
         width: 100%;
     }
 }
 
-.primary-navigation-list {
+.nav-primary-list {
     height: 3.75rem;
     font-size: 0;
 }
 @media (min-width: 769px) {
-    .primary-navigation-list {
+    .nav-primary-list {
         float: right;
     }
 }
 @media (max-width: 768px) {
-    .primary-navigation-list {
+    .nav-primary-list {
         text-align: center;
     }
 }
-.primary-navigation-list li {
+.nav-primary-list li {
     display: inline-block;
     font-size: 1rem;
 }
 @media (min-width: 769px) {
-    .primary-navigation-list li {
+    .nav-primary-list li {
         float: left;
     }
 }
-.primary-navigation-list li + li {
+.nav-primary-list li + li {
     margin-left: 1em;
 }
 @media (max-width: 768px) {
-    .primary-navigation-list li + li {
+    .nav-primary-list li + li {
         margin-left: .5em;
     }
 }
 @media (max-width: 500px) {
-    .primary-navigation-list li + li {
+    .nav-primary-list li + li {
         margin-left: .25em;
     }
 }
-.primary-navigation-list a {
+.nav-primary-list a {
     color: #737373;
     display: block;
     padding: .75rem 1rem;
@@ -1139,38 +1139,38 @@ button .icon--feather,
             transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, transform .2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
 }
-.primary-navigation-list a:hover,
-.primary-navigation-list a:focus,
-.primary-navigation-list a:active {
+.nav-primary-list a:hover,
+.nav-primary-list a:focus,
+.nav-primary-list a:active {
     text-decoration: none;
 }
-.primary-navigation-list a:active {
+.nav-primary-list a:active {
     -webkit-transform: translate3d(0, .2rem, 0);
             transform: translate3d(0, .2rem, 0);
 }
 @media (max-width: 500px) {
-    .primary-navigation-list a {
+    .nav-primary-list a {
         padding-left: .75rem;
         padding-right: .75rem;
     }
 }
 
-.primary-navigation-list a:hover,
-.primary-navigation-list a:focus,
-.primary-navigation-list a:active,
-.page-home .primary-navigation-home a,
-.page-about .primary-navigation-about a,
-.page-articles .primary-navigation-articles a,
-.page-pens .primary-navigation-pens a {
+.nav-primary-list a:hover,
+.nav-primary-list a:focus,
+.nav-primary-list a:active,
+.page-home .nav-primary-home a,
+.page-about .nav-primary-about a,
+.page-articles .nav-primary-articles a,
+.page-pens .nav-primary-pens a {
     color: #4f4f4f;
     padding-bottom: .5rem;
     border-bottom-width: .25rem;
 }
 
-.page-home .primary-navigation-home a:after,
-.page-about .primary-navigation-about a:after,
-.page-articles .primary-navigation-articles a:after,
-.page-pens .primary-navigation-pens a:after {
+.page-home .nav-primary-home a:after,
+.page-about .nav-primary-about a:after,
+.page-articles .nav-primary-articles a:after,
+.page-pens .nav-primary-pens a:after {
     content: "";
     border-top: .5em solid #5f8aa6;
     border-right: .5em solid transparent;
@@ -1417,23 +1417,23 @@ aside .small-articles-list li + li {
 /**
  * Contains buttons and internal links.
  */
-.secondary-navigation,
+.nav-secondary,
 .buttons-list {
     width: 100%;
     font-size: 0;
     text-align: center;
 }
-.secondary-navigation button,
-.secondary-navigation .button,
+.nav-secondary button,
+.nav-secondary .button,
 .buttons-list button,
 .buttons-list .button {
     display: inline-block;
 }
 @media (min-width: 501px) {
-    .secondary-navigation button + button,
-    .secondary-navigation button + .button,
-    .secondary-navigation .button + button,
-    .secondary-navigation .button + .button,
+    .nav-secondary button + button,
+    .nav-secondary button + .button,
+    .nav-secondary .button + button,
+    .nav-secondary .button + .button,
     .buttons-list button + button,
     .buttons-list button + .button,
     .buttons-list .button + button,
@@ -1442,11 +1442,11 @@ aside .small-articles-list li + li {
     }
 }
 
-.secondary-navigation {
+.nav-secondary {
     padding: 2.068rem 0 2.25rem;
     border-top: .125rem solid rgba(6, 6, 6, .1);
 }
-.page-about .secondary-navigation {
+.page-about .nav-secondary {
     border-top: 0;
     padding: 1.25rem 0;
 }
@@ -1594,12 +1594,12 @@ aside .small-articles-list li + li {
 /*------------------------------------*    #OBJECTS - Footer
 \*------------------------------------*/
 .copyright,
-.tertiary-navigation {
+.nav-tertiary {
     overflow: hidden;
 }
 @media (max-width: 768px) {
     .copyright,
-    .tertiary-navigation {
+    .nav-tertiary {
         width: 100%;
         text-align: center;
     }
@@ -1673,22 +1673,22 @@ aside .small-articles-list li + li {
 /*------------------------------------*    #OBJECTS - Tertiary Navigation
 \*------------------------------------*/
 @media (min-width: 769px) {
-    .tertiary-navigation {
+    .nav-tertiary {
         float: right;
         margin-top: .3125rem;
     }
 }
 
 @media (max-width: 768px) {
-    .tertiary-navigation {
+    .nav-tertiary {
         margin-top: .625rem;
     }
 }
 
-.tertiary-navigation-list li {
+.nav-tertiary-list li {
     display: inline-block;
 }
-.tertiary-navigation-list li + li {
+.nav-tertiary-list li + li {
     margin-left: 1rem;
 }
 

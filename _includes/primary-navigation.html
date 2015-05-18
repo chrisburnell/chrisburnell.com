@@ -1,9 +1,0 @@
-<nav class="primary-navigation" role="navigation">
-    <ol class="primary-navigation-list">
-    {% for link in site.data.primary_navigation %}
-        <li class="primary-navigation-{{ link.title | slugify }}">
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" tabindex="{{ forloop.index }}">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-    </ol>
-</nav>

@@ -2,7 +2,7 @@
     #OBJECTS - Primary Navigation
 \*------------------------------------*/
 
-.primary-navigation {
+.nav-primary {
     padding-bottom: $default-margin;
     white-space: nowrap;
     @include media(">medium") {
@@ -13,7 +13,7 @@
         width: 100%;
     }
 }
-    .primary-navigation-list {
+    .nav-primary-list {
         height: 3.75rem;
         font-size: 0;
         @include media(">medium") {
@@ -69,22 +69,22 @@
         }
     }
         // Primary Navigation Hover Effect
-        .primary-navigation-list a:hover,
-        .primary-navigation-list a:focus,
-        .primary-navigation-list a:active,
-        .page-home .primary-navigation-home a,
-        .page-about .primary-navigation-about a,
-        .page-articles .primary-navigation-articles a,
-        .page-pens .primary-navigation-pens a {
+        .nav-primary-list a:hover,
+        .nav-primary-list a:focus,
+        .nav-primary-list a:active,
+        .page-home .nav-primary-home a,
+        .page-about .nav-primary-about a,
+        .page-articles .nav-primary-articles a,
+        .page-pens .nav-primary-pens a {
             color: $text-color;
             padding-bottom: .5rem;
             border-bottom-width: $default-border;
         }
             // Primary Navigation Active Page Arrow
-            .page-home .primary-navigation-home a:after,
-            .page-about .primary-navigation-about a:after,
-            .page-articles .primary-navigation-articles a:after,
-            .page-pens .primary-navigation-pens a:after {
+            .page-home .nav-primary-home a:after,
+            .page-about .nav-primary-about a:after,
+            .page-articles .nav-primary-articles a:after,
+            .page-pens .nav-primary-pens a:after {
                 content: "";
                 border-top:   .5em solid $brand;
                 border-right: .5em solid transparent;

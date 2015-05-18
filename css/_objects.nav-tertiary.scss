@@ -2,7 +2,7 @@
     #OBJECTS - Tertiary Navigation
 \*------------------------------------*/
 
-.tertiary-navigation {
+.nav-tertiary {
     @include media(">medium") {
         float: right;
         margin-top: .3125rem;
@@ -11,7 +11,7 @@
         margin-top: .625rem;
     }
 }
-    .tertiary-navigation-list {
+    .nav-tertiary-list {
         li {
             display: inline-block;
             + li {
