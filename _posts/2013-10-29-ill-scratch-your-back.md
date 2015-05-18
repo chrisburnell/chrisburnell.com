@@ -1,6 +1,6 @@
 ---
 layout: article
-category: article
+categories: article
 
 date: 2013-10-28 23:22:00
 

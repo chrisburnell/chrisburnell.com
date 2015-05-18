@@ -1,6 +1,6 @@
 ---
 layout: article
-category: pen
+categories: pen
 
 date: 2013-06-17 12:00:00
 
