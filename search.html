@@ -1,0 +1,57 @@
+---
+layout: default
+page_class: page-search
+search_omit: true
+
+title: Search
+description: Search articles, pens, and pages.
+---
+
+<div class="search">
+    <form class="search-form" method="get" action="/search.html" role="search">
+        <input class="search-input" type="search" name="query" id="query" />
+        <label class="search-label" for="query">Search</label>
+        <input class="search-submit" type="submit" />
+    </form>
+</div>
+
+
+<div class="search-results">
+    <ul class="small-articles-list  search-results-list" role="list"></ul>
+</div>
+
+
+<script type="text/x-template" class="search-template-article">
+    <li>
+        <a href="@@url@@">
+            <h4 class="small-article-title">@@title@@</h4>
+            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+<script type="text/x-template" class="search-template-pen">
+    <li>
+        <a href="@@url@@">
+            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+            <h4 class="small-article-title">@@title@@</h4>
+            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+<script type="text/x-template" class="search-template-page">
+    <li>
+        <a href="@@url@@">
+            <h4 class="small-article-title">@@title@@</h4>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+
+
+<!-- jQuery - required but can be moved to the <head> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Search script - Must appear after template -->
+<script src="/js/search.js"></script>

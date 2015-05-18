@@ -2,12 +2,44 @@
     #OBJECTS - Aside Widgets
 \*------------------------------------*/
 
+.search,
+.aside-search {
+    position: relative;
+    overflow: hidden;
+}
+    .search {
+        max-width: $small-wrapper-width;
+        margin-bottom: $default-padding;
+    }
+.search-label,
+.search-submit {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.search-input {
+    box-sizing: inherit !important;
+    width: 100%;
+    padding: .5rem;
+    border: ($default-border / 2) solid $text-color-light;
+    outline: none;
+    @include transition(background-color $transition-time $transition-function,
+                        border-color     $transition-time $transition-function);
+    @include will-change(background-color, border-color);
+    &:focus {
+        background-color: transparent;
+        border-color: $brand;
+    }
+}
+
+.aside-search,
 .featured-pens,
 .related-articles {
     @include media(">medium") {
         margin-top: $default-margin;
     }
 }
+.aside-search-title,
 .featured-pens-title,
 .related-articles-title {
     margin-top: 0;

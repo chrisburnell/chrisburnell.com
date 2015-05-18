@@ -1565,13 +1565,48 @@ aside .small-articles-list li + li {
 
 /*------------------------------------*    #OBJECTS - Aside Widgets
 \*------------------------------------*/
+.search,
+.aside-search {
+    position: relative;
+    overflow: hidden;
+}
+
+.search {
+    max-width: 500px;
+    margin-bottom: 2.25rem;
+}
+
+.search-label,
+.search-submit {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.search-input {
+    box-sizing: inherit !important;
+    width: 100%;
+    padding: .5rem;
+    border: .125rem solid #dddddd;
+    outline: none;
+    -webkit-transition: background-color .2s ease, border-color .2s ease;
+            transition: background-color .2s ease, border-color .2s ease;
+    will-change: background-color, border-color;
+}
+.search-input:focus {
+    background-color: transparent;
+    border-color: #5f8aa6;
+}
+
 @media (min-width: 769px) {
+    .aside-search,
     .featured-pens,
     .related-articles {
         margin-top: 1.25rem;
     }
 }
 
+.aside-search-title,
 .featured-pens-title,
 .related-articles-title {
     margin-top: 0;

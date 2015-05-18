@@ -1,5 +1,6 @@
 ---
 layout: null
+search_omit: true
 description: All of my articles.
 ---
 

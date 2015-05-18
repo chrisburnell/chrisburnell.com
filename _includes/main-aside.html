@@ -61,6 +61,12 @@
         <p>I also <a rel="me publisher external" class="link--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="link--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="link--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="link--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
+
+    {% if page.page_class contains "page-search" %}
+    {% else %}
+        {% include aside-search.html %}
+    {% endif %}
+
     {% if page.page_class contains "page-home" %}
         {% include aside-featured-pens.html %}
     {% elsif page.layout == "article" %}

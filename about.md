@@ -1,6 +1,7 @@
 ---
 layout: default
 page_class: page-about
+
 redirect_from: /me.html
 
 title: About Me
