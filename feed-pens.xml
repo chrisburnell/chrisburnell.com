@@ -25,7 +25,7 @@ description: All of my pens.
                 <title>{{ post.title }}</title>
                 <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-                <category>{{ post.category }}</category>
+                <category>{{ post.categories }}</category>
                 {% if post.introduction %}<description>{{ post.introduction }}</description>{% endif %}
             </item>
         {% endfor %}

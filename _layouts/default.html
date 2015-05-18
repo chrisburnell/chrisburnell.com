@@ -12,7 +12,7 @@
 
         {% include main-aside.html %}
 
-        {% if page.page_class == "page-home" %}
+        {% if page.page_class contains "page-home" %}
             <h2 class="site-description">{{ site.description }}</h2>
         {% elsif page.description %}
             <h2 class="page-description">{{ page.description }}</h2>

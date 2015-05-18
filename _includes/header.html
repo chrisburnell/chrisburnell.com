@@ -29,7 +29,7 @@ snippet of code on a project of your own. -->
 <html lang="en">
 <head>
 
-    {% if page.page_class == "page-home" %}
+    {% if page.page_class contains "page-home" %}
         {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% else %}
         {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
@@ -39,7 +39,7 @@ snippet of code on a project of your own. -->
         {% capture meta_description %}{{ page.introduction | strip_html }}{% endcapture %}
     {% elsif page.description %}
         {% capture meta_description %}{{ page.description | strip_html }}{% endcapture %}
-    {% elsif page.category == "pen" %}
+    {% elsif page.categories contains "pen" %}
         {% capture meta_description %}One of my CodePens, {{ page.title }}{% endcapture %}
     {% else %}
         {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
@@ -51,13 +51,14 @@ snippet of code on a project of your own. -->
         {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
     {% endif %}
 
-    {% if page.page_class %}
-        {% capture body_class %}{{ page.page_class }}{% endcapture %}
-    {% elsif page.category == "article" %}
-        {% capture body_class %}page-articles{% endcapture %}
-    {% elsif page.category == "pen" %}
-        {% capture body_class %}page-pens{% endcapture %}
-    {% endif %}
+    {% capture body_class %}
+        {% for class in page.page_class %}
+            {{ class }}
+        {% endfor %}
+        {% if page.categories contains "article" %}page-articles{% endif %}
+        {% if page.categories contains "pen" %}page-pens{% endif %}
+    {% endcapture %}
+    {% assign body_class_array = body_class | split:" " %}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
@@ -67,7 +68,7 @@ snippet of code on a project of your own. -->
     <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class == "page-home" or page.page_class == "page-articles" or page.comments == true %}
+    {% if page.page_class contains "page-home" or page.page_class contains "page-articles" or page.comments == true %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
     {% endif %}
     {% if page.comments == true %}
@@ -90,7 +91,9 @@ snippet of code on a project of your own. -->
     <meta name="description" content="{{ meta_description }}">
     <meta name="theme-color" content="#5f8aa6">
 
-    {% if page.page_class != "page-not-found" %}
+    {% if page.page_class contains "page-not-found" %}
+        <meta name="robots" content="noindex,nofollow">
+    {% else %}
         <!-- Twitter Microdata and OpenGraph -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:creator" content="@{{ site.author_twitter }}">
@@ -109,14 +112,12 @@ snippet of code on a project of your own. -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/{% if page.page_class != "page-home" %}{{ page.url }}{% endif %}">
         <meta property="og:image" content="{{ meta_image }}">
-    {% else %}
-        <meta name="robots" content="noindex,nofollow">
     {% endif %}
 
     {% include js-head.html %}
 
 </head>
-<body{% if body_class %} class="{{ body_class }}"{% endif %}>
+<body{% if body_class != "" %} class="{{ body_class_array | join:"  " }}"{% endif %}>
 
     {% include inline-svg.html %}
 

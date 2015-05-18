@@ -44,9 +44,9 @@
             }
         }
     {% endif %}
-    {% if page.page_class == "page-home" or page.page_class == "page-articles" %}
+    {% if page.page_class contains "page-home" or page.page_class contains "page-articles" %}
         /**
-         * Show comment counts on home and archive pages
+         * Show comment counts on home and articles archive page
          */
         (function () {
             var dsqc = document.createElement('script'); dsqc.type = 'text/javascript'; dsqc.async = true;
@@ -66,7 +66,7 @@
     ga('send', 'pageview');
 </script>
 
-{% if page.codepen == true or page.category == "pen" %}
+{% if page.codepen == true or page.categories contains "pen" %}
     <script src="//codepen.io/assets/embed/ei.js" async></script>
 {% endif %}
 
