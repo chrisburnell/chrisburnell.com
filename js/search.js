@@ -1,4 +1,4 @@
-/**
+/*!
  * A simple JSON search
  *
  * @author   Chris Burnell

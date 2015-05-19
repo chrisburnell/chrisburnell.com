@@ -12,6 +12,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
+    uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
 // Define the locations of our assets
@@ -51,8 +52,14 @@ gulp.task('css', function() {
 
 // Minify JS
 gulp.task('js', function() {
-    return gulp.src([jsPath + '*.js', '!' + jsPath + '*.js'])
+    return gulp.src([jsPath + '*.js', '!' + jsPath + '*.min.js'])
         .pipe(plumber())
+        .pipe(uglify({
+            preserveComments: 'some'
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(jsPath))
         .pipe(notify({
             title: 'gulp',
