@@ -1444,6 +1444,7 @@ aside .small-articles-list li + li {
     padding: .5rem;
     border: .125rem solid #dddddd;
     outline: none;
+    font-family: "proxima-nova", sans-serif;
     -webkit-transition: background-color .2s ease, border-color .2s ease;
             transition: background-color .2s ease, border-color .2s ease;
     will-change: background-color, border-color;
