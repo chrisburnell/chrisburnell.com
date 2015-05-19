@@ -58,7 +58,7 @@
     /**
      * JSON-powered Search
      */
-    //function initSearch(){getParameterByName("q")&&(q=decodeURIComponent(getParameterByName("q")),$searchInput.val(q),execSearch(q)),$(document).on("submit",$searchForm,function(e){e.preventDefault(),q=$searchInput.val(),execSearch(q)})}function execSearch(e){(""!=e||allowEmpty)&&(showLoader&&toggleLoadingClass(),getSearchResults(processData()))}function toggleLoadingClass(){$resultsPlaceholder.toggleClass(loadingClass),$foundContainer.toggleClass(loadingClass)}function getSearchResults(e){$.get(jsonFeedUrl,e,"json")}function processData(){return $results=[],function(e){var t=0,n="";$.each(e,function(e,a){if(a.content.toLowerCase().indexOf(q.toLowerCase())>-1||a.title.toLowerCase().indexOf(q.toLowerCase())>-1){var o=populateResultContent($resultTemplate.html(),a);t++,n+=o}}),showLoader&&toggleLoadingClass(),populateResultsString(t),showSearchResults(n)}}function showSearchResults(e){$resultsPlaceholder.html(e)}function populateResultContent(e,t){return e=injectContent(e,t.title,"##Title##"),e=injectContent(e,t.link,"##Url##"),e=injectContent(e,t.excerpt,"##Excerpt##"),e=injectContent(e,t.date,"##Date##")}function populateResultsString(e){$foundTerm.text(q),$foundCount.text(e),$foundContainer.show()}function getParameterByName(e){var t=RegExp("[?&]"+e+"=([^&]*)").exec(window.location.search);return t&&decodeURIComponent(t[1].replace(/\+/g," "))}function injectContent(e,t,n){var a=new RegExp(n,"g");return e.replace(a,t)}var q,jsonFeedUrl="/feeds/feed.json",$searchForm=$("[data-search-form]"),$searchInput=$("[data-search-input]"),$resultTemplate=$("#search-result"),$resultsPlaceholder=$("[data-search-results]"),$foundContainer=$("[data-search-found]"),$foundTerm=$("[data-search-found-term]"),$foundCount=$("[data-search-found-count]"),allowEmpty=!0,showLoader=!0,loadingClass="is--loading";$(document).ready(function(){$foundContainer.hide(),initSearch()});
+    // TODO
 
     /**
      * Google Analytics
@@ -71,6 +71,14 @@
     ga('send', 'pageview');
 </script>
 
+<script type="text/x-template" class="search-template-page">
+    <li>
+        <a href="@@url@@">
+            <h4 class="small-article-title">@@title@@</h4>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
 <script type="text/x-template" class="search-template-article">
     <li>
         <a href="@@url@@">
@@ -90,16 +98,6 @@
         </a>
     </li>
 </script>
-<script type="text/x-template" class="search-template-page">
-    <li>
-        <a href="@@url@@">
-            <h4 class="small-article-title">@@title@@</h4>
-            <p class="small-article-introduction">@@introduction@@</p>
-        </a>
-    </li>
-</script>
-
-<!-- Search script - Must appear after template -->
 <script src="/js/search.js"></script>
 
 {% if page.codepen == true or page.categories contains "pen" %}

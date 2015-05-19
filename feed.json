@@ -11,7 +11,7 @@ search_omit: true
         {% unless first %},{% endunless %}{
             "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
             "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
-            "introduction": {{ page.description | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }},
+            "introduction": {{ page.description | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }},
             "categories": "",
             "tags": "",
             "content": {% if post.search_omit == "no-content" %}{{ page.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
