@@ -62,7 +62,7 @@
     </div>
 
 
-    {% if page.page_class contains "page-search" %}
+    {% if page.page_class contains "page-search" or page.page_class contains "page-not-found" %}
     {% else %}
         {% include aside-search.html %}
     {% endif %}

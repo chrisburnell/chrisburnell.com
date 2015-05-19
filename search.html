@@ -7,15 +7,7 @@ title: Search
 description: Search articles, pens, and pages.
 ---
 
-<div class="main-search">
-    <form class="search-form" method="get" action="/search.html" role="search">
-        <input class="search-input" id="search-input" type="search" name="query" maxlength="30" disabled />
-        <label class="search-label" for="query">Search</label>
-        <input class="search-submit" id="search-submit" type="submit" disabled />
-    </form>
-    <noscript>Please enable Javascript to search.</noscript>
-</div>
-
+{% include main-search.html %}
 
 <div class="search-results">
     <ul class="small-articles-list  search-results-list" role="list"></ul>

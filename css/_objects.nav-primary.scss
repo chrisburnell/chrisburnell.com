@@ -75,7 +75,8 @@
         .page-home .nav-primary-home a,
         .page-about .nav-primary-about a,
         .page-articles .nav-primary-articles a,
-        .page-pens .nav-primary-pens a {
+        .page-pens .nav-primary-pens a,
+        .page-search .nav-primary-search a {
             color: $text-color;
             padding-bottom: .5rem;
             border-bottom-width: $default-border;
@@ -84,7 +85,8 @@
             .page-home .nav-primary-home a:after,
             .page-about .nav-primary-about a:after,
             .page-articles .nav-primary-articles a:after,
-            .page-pens .nav-primary-pens a:after {
+            .page-pens .nav-primary-pens a:after,
+            .page-search .nav-primary-search a:after {
                 content: "";
                 border-top:   .5em solid $brand;
                 border-right: .5em solid transparent;

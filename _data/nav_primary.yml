@@ -1,7 +1,3 @@
-- title: Home
-  url: "/"
-  rel: "home"
-
 - title: About
   url: "/about"
   rel: "me"
@@ -11,3 +7,6 @@
 
 - title: Pens
   url: "/pens"
+
+- title: Search
+  url: "/search"

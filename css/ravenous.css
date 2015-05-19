@@ -1161,7 +1161,8 @@ button .icon--feather,
 .page-home .nav-primary-home a,
 .page-about .nav-primary-about a,
 .page-articles .nav-primary-articles a,
-.page-pens .nav-primary-pens a {
+.page-pens .nav-primary-pens a,
+.page-search .nav-primary-search a {
     color: #4f4f4f;
     padding-bottom: .5rem;
     border-bottom-width: .25rem;
@@ -1170,7 +1171,8 @@ button .icon--feather,
 .page-home .nav-primary-home a:after,
 .page-about .nav-primary-about a:after,
 .page-articles .nav-primary-articles a:after,
-.page-pens .nav-primary-pens a:after {
+.page-pens .nav-primary-pens a:after,
+.page-search .nav-primary-search a:after {
     content: "";
     border-top: .5em solid #5f8aa6;
     border-right: .5em solid transparent;
