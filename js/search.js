@@ -173,7 +173,7 @@ function populateResultContent(html, item) {
  * @return null
  */
 function populateResultsString(count) {
-    var resultSuffix = (count > 1) ? "s" : "";
+    var resultSuffix = (count == 1) ? "s" : "";
     var searchMeta = '<em>' + count + '</em> result' + resultSuffix + ' found for <q>' + query + '</q>';
     resultsMeta.innerHTML = searchMeta;
 }
