@@ -14,7 +14,7 @@ search_omit: true
             "introduction": {{ page.description | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }},
             "categories": "",
             "tags": "",
-            "content": {% if post.search_omit == "no-content" %}{{ page.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
+            "content": {% if page.search_omit != "no-content" %}{{ page.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
         }{% assign first = false %}
     {% endif %}
 {% endfor %}
@@ -29,7 +29,7 @@ search_omit: true
             "introduction": {% if post.introduction %}{{ post.introduction | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }}{% else %}"<em>Featured Pen</em>"{% endif %},
             "categories": {{ post.categories | join:', ' | jsonify }},
             "tags": {{ post.tags | join:', ' | jsonify }},
-            "content": {% if post.search_omit == "no-content" %}{{ post.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
+            "content": {% if post.search_omit != "no-content" %}{{ post.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
         }{% assign first = false %}
     {% endif %}
 {% endfor %}
