@@ -49,18 +49,34 @@ gulp.task('css', function() {
         }));
 });
 
+// Minify JS
+gulp.task('js', function() {
+    return gulp.src([jsPath + '*.js', '!' + jsPath + '*.js'])
+        .pipe(plumber())
+        .pipe(gulp.dest(jsPath))
+        .pipe(notify({
+            title: 'gulp',
+            message: 'CSS compiled.',
+            onLast: true
+        }));
+});
+
 // -----------------------------------------------------------------------------
 
 // Default task
 gulp.task('default', function() {
     gulp.start('css');
+    gulp.start('js');
 });
 
 // -----------------------------------------------------------------------------
 
 // Watch files and perform the appropriate tasks
-gulp.task('watch', ['css'], function() {
+gulp.task('watch', ['css', 'js'], function() {
     watch(cssPath + '**/*.scss', function() {
         gulp.start('css');
+    });
+    watch(jsPath + '**/*.js', function() {
+        gulp.start('js');
     });
 });
