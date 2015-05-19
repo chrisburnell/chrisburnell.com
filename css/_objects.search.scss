@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #OBJECTS - Aside Widgets
+    #OBJECTS - Search
 \*------------------------------------*/
 
 .search,
@@ -35,29 +35,5 @@
     }
     &[disabled] {
         background-color: darken($text-color-light, 5%);
-    }
-}
-
-.aside-search,
-.featured-pens,
-.related-articles {
-    @include media(">medium") {
-        margin-top: $default-margin;
-    }
-}
-.aside-search-title,
-.featured-pens-title,
-.related-articles-title {
-    margin-top: 0;
-}
-.featured-pens-link {
-    width: 100%;
-    display: block;
-    margin-top: ($default-margin / 2);
-    font-weight: 600;
-    text-align: right;
-    @include media("<=medium") {
-        margin-bottom: $default-margin;
-        text-align: center;
     }
 }

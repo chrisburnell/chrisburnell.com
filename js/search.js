@@ -12,15 +12,15 @@
     ========================================================================== */
 
 var query, jsonFeedUrl = "../search.json",
-    searchForm = document.getElementsByClassName('search-form')[0],
-    searchInput = document.getElementsByClassName('search-input')[0],
-    searchSubmit = document.getElementsByClassName('search-submit')[0],
+    searchContainer = document.getElementById('search'),
+    searchForm = document.getElementById('search-form'),
+    searchInput = document.getElementById('search-input'),
+    searchSubmit = document.getElementById('search-submit'),
+    resultsMeta = document.getElementById('search-meta'),
+    resultsList = document.getElementById('search-results-list'),
+    resultTemplatePage = document.getElementsByClassName('search-template-page')[0],
     resultTemplateArticle = document.getElementsByClassName('search-template-article')[0],
     resultTemplatePen = document.getElementsByClassName('search-template-pen')[0],
-    resultTemplatePage = document.getElementsByClassName('search-template-page')[0],
-    resultsContainer = document.getElementsByClassName('main-search')[0],
-    resultsMeta = document.getElementsByClassName('search-meta')[0],
-    resultsList = document.getElementsByClassName('search-results-list')[0],
     allowEmpty = false;
 
     // initiate search functionality
@@ -55,9 +55,9 @@ function initSearch() {
     query = searchInput.value;
 
     // Get search results on submission of form
-    if( resultsContainer && searchForm.addEventListener ) {
+    if( searchContainer && searchForm.addEventListener ) {
         searchForm.addEventListener('submit', submitCallback, false);
-    } else if( resultsContainer && searchForm.attachEvent ) {
+    } else if( searchContainer && searchForm.attachEvent ) {
         searchForm.attachEvent('onsubmit', submitCallback);
     }
 

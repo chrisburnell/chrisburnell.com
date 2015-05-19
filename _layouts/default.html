@@ -15,7 +15,7 @@
         {% if page.page_class contains "page-home" %}
             <h2 class="site-description">{{ site.description }}</h2>
         {% elsif page.page_class contains "page-search" %}
-            <h2 class="page-description  search-meta">Search for something!</h2>
+            <h2 class="page-description" id="search-meta">Search for something!</h2>
         {% elsif page.description %}
             <h2 class="page-description">{{ page.description }}</h2>
         {% endif %}
