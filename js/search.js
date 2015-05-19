@@ -11,7 +11,7 @@
     Initialisation
     ========================================================================== */
 
-var query, jsonFeedUrl = "../feed.json",
+var query, jsonFeedUrl = "../search.json",
     searchForm = document.getElementsByClassName('search-form')[0],
     searchInput = document.getElementsByClassName('search-input')[0],
     searchSubmit = document.getElementsByClassName('search-submit')[0],
