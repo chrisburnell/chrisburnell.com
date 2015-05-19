@@ -1,6 +1,7 @@
 ---
 layout: null
-search_omit: true
+searchable: false
+
 description: All of my pens.
 ---
 
