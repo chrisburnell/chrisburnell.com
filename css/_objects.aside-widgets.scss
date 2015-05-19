@@ -7,9 +7,12 @@
     position: relative;
     overflow: hidden;
 }
-    .search {
-        max-width: $small-wrapper-width;
-        margin-bottom: $default-padding;
+.main-search {
+    max-width: $small-wrapper-width;
+    margin-bottom: $default-margin;
+}
+    .search-form {
+        margin-bottom: $default-margin;
     }
 .search-label,
 .search-submit {
@@ -29,6 +32,9 @@
     &:focus {
         background-color: transparent;
         border-color: $brand;
+    }
+    &[disabled] {
+        background-color: darken($text-color-light, 5%);
     }
 }
 

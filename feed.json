@@ -5,6 +5,19 @@ search_omit: true
 
 {% assign first = true %}
 [
+{% for page in site.pages %}
+    {% if page.title == null or page.title == empty or page.search_omit == true or page.page_class contains "not-found-page" %}
+    {% else %}
+        {% unless first %},{% endunless %}{
+            "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
+            "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "introduction": {{ page.description | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }},
+            "categories": "",
+            "tags": "",
+            "content": {% if post.search_omit == "no-content" %}{{ page.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
+        }{% assign first = false %}
+    {% endif %}
+{% endfor %}
 {% for post in site.posts %}
     {% if post.title == null or post.title == empty or post.search_omit == true %}
     {% else %}
@@ -17,19 +30,6 @@ search_omit: true
             "categories": {{ post.categories | join:', ' | jsonify }},
             "tags": {{ post.tags | join:', ' | jsonify }},
             "content": {% if post.search_omit == "no-content" %}{{ post.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
-        }{% assign first = false %}
-    {% endif %}
-{% endfor %}
-{% for page in site.pages %}
-    {% if page.title == null or page.title == empty or page.search_omit == true or page.page_class contains "not-found-page" %}
-    {% else %}
-        {% unless first %},{% endunless %}{
-            "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
-            "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
-            "introduction": {{ page.description | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "—", "--" | jsonify }},
-            "categories": "",
-            "tags": "",
-            "content": {% if post.search_omit == "no-content" %}{{ page.content | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% else %}""{% endif %}
         }{% assign first = false %}
     {% endif %}
 {% endfor %}

@@ -12,28 +12,26 @@
     ========================================================================== */
 
 var query, jsonFeedUrl = "../feed.json",
-    $searchForm = $(".search-form"),
-    $searchInput = $(".search-input"),
-    $resultTemplateArticle = $(".search-template-article"),
-    $resultTemplatePen = $(".search-template-pen"),
-    $resultTemplatePage = $(".search-template-page"),
-    $resultsPlaceholder = $(".search-results-list"),
-    $foundContainer = $(".search-results"),
-    $foundTerm = $(".search-results-query"),
-    $foundCount = $(".search-results-count"),
-    allowEmpty = false,
-    showLoader = false,
-    loadingClass = "is--loading";
-
-
-$(document).ready( function() {
+    searchForm = document.getElementsByClassName('search-form')[0],
+    searchInput = document.getElementsByClassName('search-input')[0],
+    searchSubmit = document.getElementsByClassName('search-submit')[0],
+    resultTemplateArticle = document.getElementsByClassName('search-template-article')[0],
+    resultTemplatePen = document.getElementsByClassName('search-template-pen')[0],
+    resultTemplatePage = document.getElementsByClassName('search-template-page')[0],
+    resultsContainer = document.getElementsByClassName('search-results')[0],
+    resultsMeta = document.getElementsByClassName('search-meta')[0],
+    resultsList = document.getElementsByClassName('search-results-list')[0],
+    allowEmpty = false;
 
     // hide items found string
-    $foundContainer.hide();
+    resultsContainer.style.display = 'none';
 
     // initiate search functionality
     initSearch();
-});
+
+    // enable search input and submit
+    searchInput.disabled = false;
+    searchSubmit.disabled = false;
 
 
 
@@ -49,20 +47,30 @@ $(document).ready( function() {
  * Binds search function to form submission.
  */
 function initSearch() {
+    console.log("initSearch");
 
     // Get search results if query parameter is set in querystring
     if (getParameterByName('query')) {
         query = decodeURIComponent(getParameterByName('query'));
-        $searchInput.val(query);
+        searchInput.value = query;
         execSearch(query);
     }
 
+    query = searchInput.value;
+
     // Get search results on submission of form
-    $(document).on("submit", $searchForm, function(e) {
-        e.preventDefault();
-        query = $searchInput.val();
-        execSearch(query);
-    });
+    if( searchForm.addEventListener ){
+        searchForm.addEventListener("submit", submitCallback, false);
+    } else if(searchForm.attachEvent){
+        searchForm.attachEvent('onsubmit', submitCallback);
+    }
+}
+
+function submitCallback(event) {
+    console.log("submitCallback");
+    event.preventDefault();
+    query = searchInput.value;
+    execSearch(query);
 }
 
 
@@ -72,23 +80,11 @@ function initSearch() {
  * @return null
  */
 function execSearch(query) {
+    console.log("execSearch");
     if (query != '' || allowEmpty) {
-        if (showLoader) {
-            toggleLoadingClass();
-        }
 
-        getSearchResults(processData());
+        getSearchResults();
     }
-}
-
-
-/**
- * Toggles loading class on results and found string
- * @return null
- */
-function toggleLoadingClass() {
-    $resultsPlaceholder.toggleClass(loadingClass);
-    $foundContainer.toggleClass(loadingClass);
 }
 
 
@@ -97,8 +93,26 @@ function toggleLoadingClass() {
  * @param {Function} callbackFunction
  * @return null
  */
-function getSearchResults(callbackFunction) {
-    $.get(jsonFeedUrl, callbackFunction, 'json');
+function getSearchResults() {
+    console.log("getSearchResults");
+
+    var request = new XMLHttpRequest();
+    request.open('GET', jsonFeedUrl, true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            // Success!
+            // var data = JSON.parse(request.responseText);
+            console.log("Success");
+            var data = JSON.parse(request.responseText);
+            processData(data);
+        }
+    };
+    request.onerror = function() {
+        // There was a connection error of some sort
+    };
+    request.send();
+
 }
 
 
@@ -106,34 +120,32 @@ function getSearchResults(callbackFunction) {
  * Process search result data
  * @return null
  */
-function processData() {
-    $results = [];
+function processData(data) {
+    console.log("processData");
+    results = [];
 
     return function(data) {
 
         var resultsCount = 0,
             results = "";
 
-        $.each(data, function(index, item) {
+        // TODO
+        Array.prototype.forEach.call(data, function(index, item) {
             // check if search term is in title, content, or introduction
             if (item.title.toLowerCase().indexOf(query.toLowerCase()) > -1 || item.content.toLowerCase().indexOf(query.toLowerCase()) > -1 || item.introduction.toLowerCase().indexOf(query.toLowerCase()) > -1 || item.categories.toLowerCase().indexOf(query.toLowerCase()) > -1 || item.tags.toLowerCase().indexOf(query.toLowerCase()) > -1) {
                 if (item.categories) {
                     if (item.categories.toLowerCase().indexOf('article') > -1) {
-                        var result = populateResultContent($resultTemplateArticle.html(), item);
+                        var result = populateResultContent(resultTemplateArticle.html(), item);
                     } else {
-                        var result = populateResultContent($resultTemplatePen.html(), item);
+                        var result = populateResultContent(resultTemplatePen.html(), item);
                     }
                 } else {
-                    var result = populateResultContent($resultTemplatePage.html(), item);
+                    var result = populateResultContent(resultTemplatePage.html(), item);
                 }
                 resultsCount++;
                 results += result;
             }
         });
-
-        if (showLoader) {
-            toggleLoadingClass();
-        }
 
         populateResultsString(resultsCount);
         showSearchResults(results);
@@ -148,8 +160,9 @@ function processData() {
  * @return null
  */
 function showSearchResults(results) {
+    console.log("showSearchResults");
     // Add results HTML to placeholder
-    $resultsPlaceholder.html(results);
+    resultsList.html(results);
 }
 
 
@@ -160,6 +173,7 @@ function showSearchResults(results) {
  * @return {String} Populated HTML
  */
 function populateResultContent(html, item) {
+    console.log("populateResultContent");
     html = injectContent(html, item.link, '@@url@@');
     html = injectContent(html, item.title, '@@title@@');
     html = injectContent(html, item.date, '@@date@@');
@@ -175,9 +189,11 @@ function populateResultContent(html, item) {
  * @return null
  */
 function populateResultsString(count) {
-    $foundTerm.text(query);
-    $foundCount.text(count);
-    $foundContainer.show();
+    console.log("populateResultsString");
+    var resultSuffix = (count > 1) ? "s" : "";
+    var searchMeta = '<em>' + count + '</em> result' + resultSuffix + ' found for <q>' + query + '</q>';
+    resultsMeta.html(searchMeta);
+    resultsContainer.style.display = '';
 }
 
 
@@ -194,6 +210,7 @@ function populateResultsString(count) {
  * @return {String} parameter value
  */
 function getParameterByName(name) {
+    console.log("getParameterByName");
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
@@ -207,6 +224,7 @@ function getParameterByName(name) {
  * @return {String} injected content
  */
 function injectContent(originalContent, injection, placeholder) {
+    console.log("injectContent");
     var regex = new RegExp(placeholder, 'g');
     return originalContent.replace(regex, injection);
 }

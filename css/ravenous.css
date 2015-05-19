@@ -1571,9 +1571,13 @@ aside .small-articles-list li + li {
     overflow: hidden;
 }
 
-.search {
+.main-search {
     max-width: 500px;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.search-form {
+    margin-bottom: 1.25rem;
 }
 
 .search-label,
@@ -1596,6 +1600,9 @@ aside .small-articles-list li + li {
 .search-input:focus {
     background-color: transparent;
     border-color: #5f8aa6;
+}
+.search-input[disabled] {
+    background-color: #d0d0d0;
 }
 
 @media (min-width: 769px) {

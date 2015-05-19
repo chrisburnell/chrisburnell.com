@@ -71,6 +71,37 @@
     ga('send', 'pageview');
 </script>
 
+<script type="text/x-template" class="search-template-article">
+    <li>
+        <a href="@@url@@">
+            <h4 class="small-article-title">@@title@@</h4>
+            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+<script type="text/x-template" class="search-template-pen">
+    <li>
+        <a href="@@url@@">
+            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+            <h4 class="small-article-title">@@title@@</h4>
+            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+<script type="text/x-template" class="search-template-page">
+    <li>
+        <a href="@@url@@">
+            <h4 class="small-article-title">@@title@@</h4>
+            <p class="small-article-introduction">@@introduction@@</p>
+        </a>
+    </li>
+</script>
+
+<!-- Search script - Must appear after template -->
+<script src="/js/search.js"></script>
+
 {% if page.codepen == true or page.categories contains "pen" %}
     <script src="//codepen.io/assets/embed/ei.js" async></script>
 {% endif %}
