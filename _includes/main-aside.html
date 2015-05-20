@@ -18,8 +18,8 @@
 {% else %}
     {% assign author_name_prefix = "about" %}
     {% if page.page_class contains "page-about" %}
-        {% assign author_biography_closer = "my face annoys you. Sorry." %}
-    {% if page.page_class contains "page-articles" %}
+        {% assign author_biography_closer = "you don’t care about my life. Sorry." %}
+    {% elsif page.page_class contains "page-articles" %}
         {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
     {% elsif page.page_class contains "page-pens" %}
         {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
