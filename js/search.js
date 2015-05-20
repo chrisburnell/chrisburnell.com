@@ -68,7 +68,6 @@ function submitCallback(event) {
     }
 }
 
-
 /**
  * Executes search
  * @param {String} query
@@ -79,7 +78,6 @@ function execSearch(query) {
         getSearchResults();
     }
 }
-
 
 /**
  * Get Search results from JSON
@@ -108,7 +106,6 @@ function getSearchResults() {
 
 }
 
-
 /**
  * Process search result data
  * @return void
@@ -132,9 +129,9 @@ function processData(data) {
 
         titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
         introductionCheck = false;
-        contentCheck = false;
-        categoriesCheck = false;
-        tagsCheck = false;
+        contentCheck      = false;
+        categoriesCheck   = false;
+        tagsCheck         = false;
 
         if( item['introduction'] ) {
             introductionCheck = item['introduction'].toLowerCase().indexOf(queryFormatted) > -1;
@@ -153,7 +150,6 @@ function processData(data) {
         switch( item['type'] ) {
             case 'page':
                 if( titleCheck || introductionCheck || contentCheck ) {
-                    //console.log('page - ' + item['title'] + ' - ' + titleCheck + ' - ' + introductionCheck + ' - ' + contentCheck);
                     resultsCount++;
                     results += populateResultContent(resultTemplatePage.innerHTML, item);
                 }
@@ -179,7 +175,6 @@ function processData(data) {
 
 }
 
-
 /**
  * Add search results to placeholder
  * @param {String} results
@@ -189,7 +184,6 @@ function showSearchResults(results) {
     // Add results HTML to placeholder
     resultsList.innerHTML = results;
 }
-
 
 /**
  * Add results content to item template
@@ -209,7 +203,6 @@ function populateResultContent(html, item) {
     }
     return html;
 }
-
 
 /**
  * Populates results string
