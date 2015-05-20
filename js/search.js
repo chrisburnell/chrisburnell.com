@@ -1,26 +1,24 @@
 /*!
  * A simple JSON search
- *
- * @author   Chris Burnell
- * @author   Mat Hayward - Erskine Design
- * @version  0.2
+ * @author  Mat Hayward - Erskine Design (Original Author)
+ * @author  Chris Burnell <@iamchrisburnell>
  */
 
 
- /* ==========================================================================
-    Initialisation
-    ========================================================================== */
+/*------------------------------------*\
+    #INITIALISATION
+\*------------------------------------*/
 
-var query, jsonFeedUrl = "../search.json",
+var query, jsonFeedUrl = '../search.json',
     searchContainer = document.getElementById('search'),
-    searchForm = document.getElementById('search-form'),
-    searchInput = document.getElementById('search-input'),
-    searchSubmit = document.getElementById('search-submit'),
-    resultsMeta = document.getElementById('search-meta'),
-    resultsList = document.getElementById('search-results-list'),
-    resultTemplatePage = document.getElementsByClassName('search-template-page')[0],
+    searchForm      = document.getElementById('search-form'),
+    searchInput     = document.getElementById('search-input'),
+    searchSubmit    = document.getElementById('search-submit'),
+    resultsMeta     = document.getElementById('search-meta'),
+    resultsList     = document.getElementById('search-results-list'),
+    resultTemplatePage    = document.getElementsByClassName('search-template-page')[0],
     resultTemplateArticle = document.getElementsByClassName('search-template-article')[0],
-    resultTemplatePen = document.getElementsByClassName('search-template-pen')[0],
+    resultTemplatePen     = document.getElementsByClassName('search-template-pen')[0],
     allowEmpty = false;
 
     // initiate search functionality
@@ -31,12 +29,9 @@ var query, jsonFeedUrl = "../search.json",
     searchSubmit.disabled = false;
 
 
-
-
- /* ==========================================================================
-    Search functions
-    ========================================================================== */
-
+/*------------------------------------*\
+    #SEARCH FUNCTIONS
+\*------------------------------------*/
 
 /**
  * Initiate search functionality.
@@ -47,14 +42,14 @@ function initSearch() {
 
     // Get search results if query parameter is set in querystring
     if (getParameterByName('query')) {
-        query = decodeURIComponent(getParameterByName('query'));
+        query = decodeURIComponent(getParameterByName('query')).toLowerCase();
         searchInput.value = query;
         execSearch(query);
     }
 
     query = searchInput.value;
 
-    // Get search results on submission of form
+    // Catch the form submission and initiate search lookup
     if( searchContainer && searchForm.addEventListener ) {
         searchForm.addEventListener('submit', submitCallback, false);
     } else if( searchContainer && searchForm.attachEvent ) {
@@ -66,14 +61,18 @@ function initSearch() {
 function submitCallback(event) {
     event.preventDefault();
     query = searchInput.value;
-    execSearch(query);
+    if( query.length >= 2 && query.length <= 30 ) {
+        execSearch(query);
+    } else {
+        resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
+    }
 }
 
 
 /**
  * Executes search
  * @param {String} query
- * @return null
+ * @return void
  */
 function execSearch(query) {
     if (query != '' || allowEmpty) {
@@ -85,12 +84,14 @@ function execSearch(query) {
 /**
  * Get Search results from JSON
  * @param {Function} callbackFunction
- * @return null
+ * @return void
  */
 function getSearchResults() {
 
     var request = new XMLHttpRequest();
+
     request.open('GET', jsonFeedUrl, true);
+
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
             // Success!
@@ -98,9 +99,11 @@ function getSearchResults() {
             processData(data);
         }
     };
+
     request.onerror = function() {
         // There was a connection error of some sort
     };
+
     request.send();
 
 }
@@ -108,30 +111,67 @@ function getSearchResults() {
 
 /**
  * Process search result data
- * @return null
+ * @return void
  */
 function processData(data) {
-    results = [];
 
     var resultsCount = 0,
-        results = "";
+        results = '',
+        item,
+        queryFormatted,
+        titleCheck,
+        introductionCheck,
+        contentCheck,
+        categoriesCheck,
+        tagsCheck;
 
     for( var index = 0; index < data.length; index++ ) {
-        var item = data[index];
-        // check if search term is in title, content, or introduction, categories or tags
-        if (item['title'].toLowerCase().indexOf(query.toLowerCase()) > -1 || item['content'].toLowerCase().indexOf(query.toLowerCase()) > -1 || item['introduction'].toLowerCase().indexOf(query.toLowerCase()) > -1 || item['categories'].toLowerCase().indexOf(query.toLowerCase()) > -1 || item['tags'].toLowerCase().indexOf(query.toLowerCase()) > -1) {
-            if (item['categories']) {
-                if (item['categories'].toLowerCase().indexOf('article') > -1) {
-                    var result = populateResultContent(resultTemplateArticle.innerHTML, item);
-                } else {
-                    var result = populateResultContent(resultTemplatePen.innerHTML, item);
-                }
-            } else {
-                var result = populateResultContent(resultTemplatePage.innerHTML, item);
-            }
-            resultsCount++;
-            results += result;
+
+        item = data[index];
+        queryFormatted = query.toLowerCase();
+
+        titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
+        introductionCheck = false;
+        contentCheck = false;
+        categoriesCheck = false;
+        tagsCheck = false;
+
+        if( item['introduction'] ) {
+            introductionCheck = item['introduction'].toLowerCase().indexOf(queryFormatted) > -1;
         }
+        if( item['content'] ) {
+            contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
+        }
+        if( item['categories'] ) {
+            categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
+        }
+        if( item['tags'] ) {
+            tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+        }
+
+        // check if search term is in title, content, or introduction, categories or tags
+        switch( item['type'] ) {
+            case 'page':
+                if( titleCheck || introductionCheck || contentCheck ) {
+                    //console.log('page - ' + item['title'] + ' - ' + titleCheck + ' - ' + introductionCheck + ' - ' + contentCheck);
+                    resultsCount++;
+                    results += populateResultContent(resultTemplatePage.innerHTML, item);
+                }
+                break;
+            case 'article':
+                if( titleCheck || introductionCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                    resultsCount++;
+                    results += populateResultContent(resultTemplateArticle.innerHTML, item);
+                }
+                break;
+            case 'pen':
+                if( titleCheck || introductionCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                    resultsCount++;
+                    results += populateResultContent(resultTemplatePen.innerHTML, item);
+                }
+                break;
+        }
+
     }
 
     populateResultsString(resultsCount);
@@ -143,7 +183,7 @@ function processData(data) {
 /**
  * Add search results to placeholder
  * @param {String} results
- * @return null
+ * @return void
  */
 function showSearchResults(results) {
     // Add results HTML to placeholder
@@ -162,7 +202,11 @@ function populateResultContent(html, item) {
     html = injectContent(html, item['title'], '@@title@@');
     html = injectContent(html, item['date'], '@@date@@');
     html = injectContent(html, item['date_friendly'], '@@date_friendly@@');
-    html = injectContent(html, item['introduction'], '@@introduction@@');
+    if( item['introduction'] ) {
+        html = injectContent(html, item['introduction'], '@@introduction@@');
+    } else if( item['categories'].toLowerCase().indexOf('pen') > -1 ) {
+        html = injectContent(html, '<em>Featured Pen</em>', '@@introduction@@');
+    }
     return html;
 }
 
@@ -170,21 +214,18 @@ function populateResultContent(html, item) {
 /**
  * Populates results string
  * @param {String} count
- * @return null
+ * @return void
  */
 function populateResultsString(count) {
-    var resultSuffix = (count == 1) ? "s" : "";
-    var searchMeta = '<em>' + count + '</em> result' + resultSuffix + ' found for <q>' + query + '</q>';
+    var resultSuffix = (count == 1) ? 's' : '';
+    var searchMeta = '<em>' + count + '</em> result' + resultSuffix + ' found for <q>' + query.toLowerCase() + '</q>';
     resultsMeta.innerHTML = searchMeta;
 }
 
 
-
-
- /* ==========================================================================
-    Helper functions
-    ========================================================================== */
-
+/*------------------------------------*\
+    #HELPER FUNCTIONS
+\*------------------------------------*/
 
 /**
  * Gets query string parameter - taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
@@ -195,7 +236,6 @@ function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
-
 
 /**
  * Injects content into template using placeholder
