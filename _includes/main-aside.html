@@ -17,12 +17,20 @@
     {% endif %}
 {% else %}
     {% assign author_name_prefix = "about" %}
-    {% if page.page_class contains "page-pens" %}
+    {% if page.page_class contains "page-about" %}
+        {% assign author_biography_closer = "my face annoys you. Sorry." %}
+    {% if page.page_class contains "page-articles" %}
+        {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
+    {% elsif page.page_class contains "page-pens" %}
         {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
     {% elsif page.page_class contains "page-tags" %}
         {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
+    {% elsif page.page_class contains "page-search" %}
+        {% assign author_biography_closer = "everything you search for looks totally boring" %}
+    {% elsif page.page_class contains "page-not-found" %}
+        {% assign author_biography_closer = "you’re upset that you found a broken page. Sorry" %}
     {% else %}
-        {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
+        {% assign author_biography_closer = "this page makes you wish you were doing something else, like folding socks" %}
     {% endif %}
 {% endif %}
 
