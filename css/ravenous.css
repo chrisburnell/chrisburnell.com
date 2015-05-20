@@ -421,7 +421,6 @@ html {
     color: #4f4f4f;
     min-height: 100%;
     position: relative;
-    overflow-x: hidden;
     overflow-y: scroll;
     font: 400 normal 16px/1.875 "ff-meta-serif-web-pro", Georgia, serif;
     text-rendering: optimizeLegibility;
@@ -1417,7 +1416,7 @@ aside .small-articles-list li + li {
 
 /*------------------------------------*    #OBJECTS - Search
 \*------------------------------------*/
-.search,
+.main-search,
 .aside-search {
     position: relative;
     overflow: hidden;
