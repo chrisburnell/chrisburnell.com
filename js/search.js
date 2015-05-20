@@ -6,7 +6,7 @@
 
 
 /*------------------------------------*\
-    #INITIALISATION
+    INITIALISATION
 \*------------------------------------*/
 
 var query, jsonFeedUrl = '../search.json',
@@ -25,12 +25,12 @@ var query, jsonFeedUrl = '../search.json',
     initSearch();
 
     // enable search input and submit
-    searchInput.disabled = false;
+    searchInput.disabled  = false;
     searchSubmit.disabled = false;
 
 
 /*------------------------------------*\
-    #SEARCH FUNCTIONS
+    SEARCH FUNCTIONS
 \*------------------------------------*/
 
 /**
@@ -115,7 +115,6 @@ function processData(data) {
     var resultsCount = 0,
         results = '',
         item,
-        queryFormatted,
         titleCheck,
         introductionCheck,
         contentCheck,
@@ -125,25 +124,25 @@ function processData(data) {
     for( var index = 0; index < data.length; index++ ) {
 
         item = data[index];
-        queryFormatted = query.toLowerCase();
+        query = query.toLowerCase();
 
-        titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
+        titleCheck = item['title'].toLowerCase().indexOf(query) > -1;
         introductionCheck = false;
         contentCheck      = false;
         categoriesCheck   = false;
         tagsCheck         = false;
 
         if( item['introduction'] ) {
-            introductionCheck = item['introduction'].toLowerCase().indexOf(queryFormatted) > -1;
+            introductionCheck = item['introduction'].toLowerCase().indexOf(query) > -1;
         }
         if( item['content'] ) {
-            contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
+            contentCheck = item['content'].toLowerCase().indexOf(query) > -1;
         }
         if( item['categories'] ) {
-            categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
+            categoriesCheck = item['categories'].toLowerCase().indexOf(query) > -1;
         }
         if( item['tags'] ) {
-            tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+            tagsCheck = item['tags'].toLowerCase().indexOf(query) > -1;
         }
 
         // check if search term is in title, content, or introduction, categories or tags
@@ -198,7 +197,7 @@ function populateResultContent(html, item) {
     html = injectContent(html, item['date_friendly'], '@@date_friendly@@');
     if( item['introduction'] ) {
         html = injectContent(html, item['introduction'], '@@introduction@@');
-    } else if( item['categories'].toLowerCase().indexOf('pen') > -1 ) {
+    } else if( item['type'] == "pen" ) {
         html = injectContent(html, '<em>Featured Pen</em>', '@@introduction@@');
     }
     return html;
@@ -217,7 +216,7 @@ function populateResultsString(count) {
 
 
 /*------------------------------------*\
-    #HELPER FUNCTIONS
+    HELPER FUNCTIONS
 \*------------------------------------*/
 
 /**
