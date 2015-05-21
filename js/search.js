@@ -9,17 +9,17 @@
     INITIALISATION
 \*------------------------------------*/
 
-var query, jsonFeedUrl = '../search.json',
-    searchContainer = document.getElementById('search'),
-    searchForm      = document.getElementById('search-form'),
-    searchInput     = document.getElementById('search-input'),
-    searchSubmit    = document.getElementById('search-submit'),
-    resultsMeta     = document.getElementById('search-meta'),
-    resultsList     = document.getElementById('search-results-list'),
-    resultTemplatePage    = document.getElementsByClassName('search-template-page')[0],
-    resultTemplateArticle = document.getElementsByClassName('search-template-article')[0],
-    resultTemplatePen     = document.getElementsByClassName('search-template-pen')[0],
-    allowEmpty = false;
+var query, jsonFeedUrl    = '../search.json',
+    searchContainer       = document.getElementById('search'),
+    searchForm            = document.getElementById('search-form'),
+    searchInput           = document.getElementById('search-input'),
+    searchSubmit          = document.getElementById('search-submit'),
+    resultsMeta           = document.getElementById('search-meta'),
+    resultsList           = document.getElementById('search-results-list'),
+    resultTemplatePage    = document.getElementById('search-template-page'),
+    resultTemplateArticle = document.getElementById('search-template-article'),
+    resultTemplatePen     = document.getElementById('search-template-pen'),
+    allowEmpty            = false;
 
     // initiate search functionality
     initSearch();
