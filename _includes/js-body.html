@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 
     /**
      * Disqus Comments
@@ -64,7 +64,7 @@
 
 </script>
 
-<script type="text/x-template" class="search-template-page">
+<script type="text/template" id="search-template-page">
     <li>
         <a href="@@url@@">
             <h4 class="small-article-title">@@title@@</h4>
@@ -72,7 +72,7 @@
         </a>
     </li>
 </script>
-<script type="text/x-template" class="search-template-article">
+<script type="text/template" id="search-template-article">
     <li>
         <a href="@@url@@">
             <h4 class="small-article-title">@@title@@</h4>
@@ -81,7 +81,7 @@
         </a>
     </li>
 </script>
-<script type="text/x-template" class="search-template-pen">
+<script type="text/template" id="search-template-pen">
     <li>
         <a href="@@url@@">
             <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
@@ -94,9 +94,9 @@
 <script src="/js/search.min.js" async></script>
 
 {% if page.codepen == true or page.categories contains "pen" %}
-    <script src="//codepen.io/assets/embed/ei.js" async></script>
+    <script src="//codepen.io/assets/embed/ei.js" async defer></script>
 {% endif %}
 
 {% if page.twitter == true %}
-    <script src="//platform.twitter.com/widgets.js" async></script>
+    <script src="//platform.twitter.com/widgets.js" async defer></script>
 {% endif %}

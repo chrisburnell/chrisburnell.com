@@ -1428,7 +1428,7 @@ aside .small-articles-list li + li {
 
 /*------------------------------------*    #OBJECTS - Search
 \*------------------------------------*/
-.search,
+.main-search,
 .aside-search {
     position: relative;
     overflow: hidden;
