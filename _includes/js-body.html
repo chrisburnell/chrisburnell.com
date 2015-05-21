@@ -94,9 +94,9 @@
 <script src="/js/search.min.js" async></script>
 
 {% if page.codepen == true or page.categories contains "pen" %}
-    <script src="//codepen.io/assets/embed/ei.js" async></script>
+    <script src="//codepen.io/assets/embed/ei.js" async defer></script>
 {% endif %}
 
 {% if page.twitter == true %}
-    <script src="//platform.twitter.com/widgets.js" async></script>
+    <script src="//platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
