@@ -495,6 +495,9 @@ a {
             transition: background .2s ease, color .2s ease;
     will-change: background, color;
 }
+a:visited {
+    color: #4b6f87;
+}
 a:hover,
 a:focus,
 a:active {
@@ -503,6 +506,10 @@ a:active {
 h2 a,
 h3 a {
     color: #4f4f4f;
+}
+h2 a:visited,
+h3 a:visited {
+    color: dimgray;
 }
 h2 a:hover,
 h2 a:focus,
@@ -955,7 +962,6 @@ footer {
 button,
 .button {
     background-color: #5f8aa6;
-    color: #f9f9f9;
     min-width: 8em;
     height: 2.182em;
     display: inline-block;
@@ -976,6 +982,12 @@ button,
     -webkit-transition: background-color .2s ease;
             transition: background-color .2s ease;
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
+}
+button,
+button:visited,
+.button,
+.button:visited {
+    color: #f9f9f9;
 }
 button:hover,
 button:focus,
@@ -1698,7 +1710,9 @@ aside .small-articles-list li + li {
 }
 
 .footer-copyright-link,
-.footer-style-guide-link {
+.footer-copyright-link:visited,
+.footer-style-guide-link,
+.footer-style-guide-link:visited {
     color: #dddddd;
 }
 
@@ -2050,7 +2064,6 @@ aside .small-articles-list li + li {
 /*------------------------------------*    #COMPONENTS - Logo
 \*------------------------------------*/
 .logo {
-    color: #4f4f4f;
     display: inline-block;
     padding-top: .5em;
     padding-left: 1.923em;
@@ -2065,6 +2078,10 @@ aside .small-articles-list li + li {
     -webkit-transition: all .2s ease;
             transition: all .2s ease;
     will-change: transform;
+}
+.logo,
+.logo:visited {
+    color: #4f4f4f;
 }
 .logo:hover,
 .logo:focus,

@@ -50,7 +50,10 @@
 }
 .footer-copyright-link,
 .footer-style-guide-link {
-    color: $text-color-light;
+    &,
+    &:visited {
+        color: $text-color-light;
+    }
 }
 .footer-style-guide-link {
     @include media("<=small") {

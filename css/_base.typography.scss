@@ -52,6 +52,9 @@ a {
     @include transition(background  $transition-time  $transition-function,
                         color       $transition-time  $transition-function);
     @include will-change(background, color);
+    &:visited {
+        color: darken($brand, 10%);
+    }
     &:hover,
     &:focus,
     &:active {
@@ -60,6 +63,9 @@ a {
     h2 &,
     h3 & {
         color: $text-color;
+        &:visited {
+            color: lighten($text-color, 10%);
+        }
         &:hover,
         &:focus,
         &:active {
