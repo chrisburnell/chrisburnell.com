@@ -12,7 +12,7 @@ searchable: true
             "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
             "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
             "introduction": {{ page.description | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% unless page.searchable == "no-content" %},
-            "content": {{ page.content | markdownify | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
+            "content": {{ page.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}
@@ -27,7 +27,7 @@ searchable: true
             "introduction": {{ post.introduction | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }},{% endif %}
             "categories": {{ post.categories | join:', ' | jsonify }},
             "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == "no-content" %},
-            "content": {{ post.content | markdownify | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
+            "content": {{ post.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}
