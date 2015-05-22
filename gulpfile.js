@@ -73,7 +73,7 @@ gulp.task('critical', function() {
         }))
         .pipe(gulp.dest(cssPath))
         .pipe(rename({
-            basename: "css-critical",
+            basename: "head-css-critical",
             extname: ".html"
         }))
         .pipe(gulp.dest(includesPath))
