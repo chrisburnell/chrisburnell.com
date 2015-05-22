@@ -217,6 +217,7 @@ figure {
         @extend %rounded;
     }
     a,
+    a:visited,
     figcaption {
         color: $text-color-alt;
         font-style: italic;
