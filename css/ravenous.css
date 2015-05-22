@@ -706,11 +706,8 @@ figure {
 figure:not(:last-child) {
     margin-bottom: 1.25rem;
 }
-figure a {
-    color: inherit;
-}
-
-figcaption {
+figure a,
+figure figcaption {
     color: #737373;
     font-style: italic;
 }
@@ -1724,7 +1721,7 @@ aside .small-articles-list li + li {
 }
 .author-information a,
 .author-information strong {
-    color: inherit;
+    color: #4f4f4f;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;

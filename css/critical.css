@@ -302,11 +302,8 @@ figure {
 figure:not(:last-child) {
     margin-bottom: 1.25rem;
 }
-figure a {
-    color: inherit;
-}
-
-figcaption {
+figure a,
+figure figcaption {
     color: #737373;
     font-style: italic;
 }

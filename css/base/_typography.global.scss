@@ -216,14 +216,12 @@ figure {
     svg {
         @extend %rounded;
     }
-    a {
-        color: inherit;
-    }
-}
+    a,
     figcaption {
         color: $text-color-alt;
         font-style: italic;
     }
+}
 
 abbr[title],
 blockquote,
