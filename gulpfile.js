@@ -25,7 +25,7 @@ var cssPath = 'css/',
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
             style: 'expanded'
@@ -41,7 +41,7 @@ gulp.task('css', function() {
         .pipe(minifycss({
             advanced: false
         }))
-        .pipe(sourcemaps.write('.'))
+        //.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
         .pipe(notify({
             title: 'gulp',

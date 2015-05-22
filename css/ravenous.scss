@@ -8,50 +8,48 @@
  * Please contact me if you want to learn about anything you see here.
  */
 
-// #SETTINGS
-@import "settings.global",
-        "settings.code",
-        "settings.branding";
-
-// #TOOLS
-@import "tools.include-media",
-        "tools.mixins";
-
 // #GENERIC
-@import "generic.normalize",
-        "generic.box-sizing";
+@import "generic/normalize",
+        "generic/box-sizing";
+
+// #UTILITIES
+@import "utilities/variables.global",
+        "utilities/variables.code",
+        "utilities/variables.branding",
+        "utilities/include-media",
+        "utilities/mixins";
 
 // #BASE
-@import "base.page",
-        "base.typography",
-        "base.code",
-        "base.header",
-        "base.article",
-        "base.aside",
-        "base.footer",
-        "base.buttons";
-
-// #OBJECTS
-@import "objects.layout",
-        "objects.nav-primary",
-        "objects.article",
-        "objects.articles-list",
-        "objects.small-articles-list",
-        "objects.search",
-        "objects.nav-secondary",
-        "objects.author",
-        "objects.aside-widgets",
-        "objects.footer",
-        "objects.nav-tertiary",
-        "objects.comments",
-        "objects.code",
-        "objects.icons",
-        "objects.media",
-        "objects.print";
+@import "base/page",
+        "base/typography.global",
+        "base/typography.code",
+        "base/layout",
+        "base/header",
+        "base/article",
+        "base/aside",
+        "base/footer",
+        "base/buttons";
 
 // #COMPONENTS
-@import "components.logo",
-        "components.styleguide";
+@import "components/logo",
+        "components/nav-primary",
+        "components/article",
+        "components/articles-list",
+        "components/small-articles-list",
+        "components/search",
+        "components/nav-secondary",
+        "components/author",
+        "components/aside-widgets",
+        "components/footer",
+        "components/nav-tertiary",
+        "components/comments",
+        "components/code",
+        "components/icons",
+        "components/media",
+        "components/print";
 
-// #TRUMPS
-@import "trumps.helpers";
+// #PAGES
+@import "pages/styleguide";
+
+// #HELPERS
+@import "utilities/placeholders";

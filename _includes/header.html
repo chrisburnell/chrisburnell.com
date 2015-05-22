@@ -65,18 +65,6 @@ snippet of code on a project of your own. -->
 
     <title>{{ meta_title }}</title>
 
-    <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
-    <link rel="dns-prefetch" href="//use.typekit.net">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class contains "page-home" or page.page_class contains "page-articles" or page.comments == true %}
-        <link rel="dns-prefetch" href="//a.disquscdn.com">
-    {% endif %}
-    {% if page.comments == true %}
-        <link rel="dns-prefetch" href="//disqus.com">
-        <link rel="dns-prefetch" href="//juggler.services.disqus.com">
-        <link rel="dns-prefetch" href="//referrer.disqus.com">
-    {% endif %}
-
     <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from {{ site.url_repo }}/tree/master/css -->
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
@@ -100,13 +88,12 @@ snippet of code on a project of your own. -->
         <meta name="twitter:title" content="{{ meta_title }}">
         <meta name="twitter:description" content="{{ meta_description }}">
         <meta name="twitter:image:src" content="{{ meta_image }}">
-        <meta name="twitter:domain" content="{{ site.url | replace: 'https://', '' }}">
+        <meta name="twitter:domain" content="{{ site.url | replace: 'http://', '' | replace: 'https://', '' }}">
         {% if page.twitter == true %}
             <meta name="twitter:widgets:theme" content="light">
             <meta name="twitter:widgets:link-color" content="#5f8aa6">
             <meta name="twitter:widgets:border-color" content="#5f8aa6">
         {% endif %}
-
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_description }}">
         <meta property="og:type" content="website">
