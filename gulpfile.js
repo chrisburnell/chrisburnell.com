@@ -17,7 +17,8 @@ var gulp         = require('gulp'),
 
 // Define the locations of our assets
 var cssPath = 'css/',
-    jsPath =  'js/';
+    jsPath =  'js/',
+    includesPath = '_includes';
 
 // -----------------------------------------------------------------------------
 
@@ -25,7 +26,6 @@ var cssPath = 'css/',
 gulp.task('css', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
-        //.pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
             style: 'expanded'
@@ -39,13 +39,47 @@ gulp.task('css', function() {
             suffix: '.min'
         }))
         .pipe(minifycss({
-            advanced: false
+            advanced: false,
+            roundingPrecision: 3
         }))
-        //.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cssPath))
         .pipe(notify({
             title: 'gulp',
             message: 'CSS compiled.',
+            onLast: true
+        }));
+});
+
+// Compile SASS, autoprefix, generate sourcemaps, and minify
+gulp.task('critical', function() {
+    return gulp.src(cssPath + 'critical.scss')
+        .pipe(plumber())
+        .pipe(sass({
+            errLogToConsole: true,
+            style: 'expanded'
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', '> 1%']
+        }))
+        .pipe(csscomb())
+        .pipe(gulp.dest(cssPath))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(minifycss({
+            advanced: false,
+            keepSpecialComments: 0,
+            roundingPrecision: 3
+        }))
+        .pipe(gulp.dest(cssPath))
+        .pipe(rename({
+            basename: "css-critical",
+            extname: ".html"
+        }))
+        .pipe(gulp.dest(includesPath))
+        .pipe(notify({
+            title: 'gulp',
+            message: 'Critical CSS compiled.',
             onLast: true
         }));
 });
@@ -63,7 +97,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest(jsPath))
         .pipe(notify({
             title: 'gulp',
-            message: 'CSS compiled.',
+            message: 'JS compiled.',
             onLast: true
         }));
 });
@@ -73,6 +107,7 @@ gulp.task('js', function() {
 // Default task
 gulp.task('default', function() {
     gulp.start('css');
+    gulp.start('critical');
     gulp.start('js');
 });
 
@@ -85,5 +120,9 @@ gulp.task('watch', ['css', 'js'], function() {
     });
     watch(jsPath + '**/*.js', function() {
         gulp.start('js');
+    });
+    notify({
+        title: 'gulp',
+        message: 'CSS & JS compiled.'
     });
 });

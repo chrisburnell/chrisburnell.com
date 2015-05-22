@@ -7,6 +7,18 @@
  *
  * Please contact me if you want to learn about anything you see here.
  */
+/*------------------------------------*    #GENERIC - Box Sizing
+\*------------------------------------*/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -400,18 +412,6 @@ table {
 td,
 th {
     padding: 0;
-}
-
-/*------------------------------------*    #GENERIC - Box Sizing
-\*------------------------------------*/
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
 }
 
 /*------------------------------------*    #BASE - Page

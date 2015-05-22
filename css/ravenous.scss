@@ -9,8 +9,8 @@
  */
 
 // #GENERIC
-@import "generic/normalize",
-        "generic/box-sizing";
+@import "generic/box-sizing",
+        "generic/normalize";
 
 // #UTILITIES
 @import "utilities/variables.global",

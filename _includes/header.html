@@ -65,7 +65,8 @@ snippet of code on a project of your own. -->
 
     <title>{{ meta_title }}</title>
 
-    <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from {{ site.url_repo }}/tree/master/css -->
+    {% include head-css.html %}
+
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
     <link rel="shortcut icon" href="/favicon.png">
@@ -101,12 +102,12 @@ snippet of code on a project of your own. -->
         <meta property="og:image" content="{{ meta_image }}">
     {% endif %}
 
-    {% include js-head.html %}
+    {% include head-js.html %}
 
 </head>
 <body{% if body_class != "" %} class="{{ body_class_array | join:"  " }}"{% endif %}>
 
-    {% include inline-svg.html %}
+    {% include body-svg.html %}
 
     <header class="wrap  clear" role="banner">
         <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="1">
