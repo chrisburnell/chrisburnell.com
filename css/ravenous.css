@@ -2281,8 +2281,7 @@ pre:not(.codepen),
 aside:not(.author),
 .article-banner,
 .small-articles-list a,
-.author-image,
-[data-lang]:before {
+.author-image {
     background-clip: padding-box;
     border-radius: .375rem;
 }

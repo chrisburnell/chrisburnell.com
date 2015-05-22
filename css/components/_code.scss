@@ -9,7 +9,6 @@
     padding-top: $default-padding;
     line-height: 2;
     &:before {
-        @extend %rounded;
         content: attr(data-lang);
         background-color: $text-color-alt;
         color: $white;
