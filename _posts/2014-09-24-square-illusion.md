@@ -8,11 +8,12 @@ title: Square Illusion
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: IKHhC
 shorturl: f7utt
-comments: true
 ---
 
-{% include embed-codepen.html slug="IKHhC" height="500" %}
+{% include embed-codepen.html height="500" %}
 
 {% highlight html %}
 <div class="container">

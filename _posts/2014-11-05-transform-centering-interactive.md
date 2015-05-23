@@ -8,11 +8,12 @@ title: Power of Transform Centering - Interactive
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: xutbs
 shorturl: 8x586
-comments: true
 ---
 
-{% include embed-codepen.html slug="xutbs" height="500" %}
+{% include embed-codepen.html height="500" %}
 
 Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
 

@@ -8,11 +8,12 @@ title: Cutaway Indicator
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: yIwzd
 shorturl: b3sh4
-comments: true
 ---
 
-{% include embed-codepen.html slug="yIwzd" height="200" %}
+{% include embed-codepen.html height="200" %}
 
 {% highlight html %}
 <button>Hover Me</button>

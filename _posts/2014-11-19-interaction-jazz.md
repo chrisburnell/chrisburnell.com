@@ -8,11 +8,12 @@ title: Interaction Jazz
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: myyRqp
 shorturl: bhbt9
-comments: true
 ---
 
-{% include embed-codepen.html slug="myyRqp" height="600" %}
+{% include embed-codepen.html height="600" %}
 
 {% highlight haml %}
 - (1...51).each do |row|

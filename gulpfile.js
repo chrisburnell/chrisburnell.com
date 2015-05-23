@@ -22,8 +22,8 @@ var cssPath = 'css/',
 
 // -----------------------------------------------------------------------------
 
-// Compile SASS, autoprefix, generate sourcemaps, and minify
-gulp.task('css', function() {
+// Compile main SCSS file
+gulp.task('css-main', function() {
     return gulp.src(cssPath + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sass({
@@ -50,10 +50,9 @@ gulp.task('css', function() {
         }));
 });
 
-// Compile SASS, autoprefix, generate sourcemaps, and minify
-gulp.task('critical', function() {
+// Compile critical SCSS file
+gulp.task('css-critical', function() {
     return gulp.src(cssPath + 'critical.scss')
-        .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
             style: 'expanded'
@@ -85,10 +84,11 @@ gulp.task('critical', function() {
 });
 
 // Minify JS
-gulp.task('js', function() {
+gulp.task('js-main', function() {
     return gulp.src([jsPath + '*.js', '!' + jsPath + '*.min.js'])
         .pipe(plumber())
         .pipe(uglify({
+            mangle: false,
             preserveComments: 'some'
         }))
         .pipe(rename({
@@ -102,13 +102,48 @@ gulp.task('js', function() {
         }));
 });
 
+// Generate picturefill HTML include
+gulp.task('js-inline', function() {
+    return gulp.src([jsPath + 'disqus-article.js',
+                     jsPath + 'disqus-count.js',
+                     jsPath + 'google-analytics.js',
+                     jsPath + 'picturefill.js',
+                     jsPath + 'search.js'])
+        .pipe(uglify({
+            mangle: false
+        }))
+        .pipe(rename({
+            prefix: "body-js-",
+            extname: ".html"
+        }))
+        .pipe(gulp.dest(includesPath))
+        .pipe(notify({
+            title: 'gulp',
+            message: 'Inline JS compiled.',
+            onLast: true
+        }));
+});
+
 // -----------------------------------------------------------------------------
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('css');
-    gulp.start('critical');
-    gulp.start('js');
+    gulp.start('css-main');
+    gulp.start('css-critical');
+    gulp.start('js-main');
+    gulp.start('js-inline');
+});
+
+// CSS task
+gulp.task('css', function() {
+    gulp.start('css-main');
+    gulp.start('css-critical');
+});
+
+// JS task
+gulp.task('js', function() {
+    gulp.start('js-main');
+    gulp.start('js-inline');
 });
 
 // -----------------------------------------------------------------------------
@@ -120,9 +155,5 @@ gulp.task('watch', ['css', 'js'], function() {
     });
     watch(jsPath + '**/*.js', function() {
         gulp.start('js');
-    });
-    notify({
-        title: 'gulp',
-        message: 'CSS & JS compiled.'
     });
 });

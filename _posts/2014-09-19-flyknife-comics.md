@@ -8,11 +8,12 @@ title: Flyknife Comics
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: hIxaj
 shorturl: 6aorh
-comments: true
 ---
 
-{% include embed-codepen.html slug="hIxaj" height="400" %}
+{% include embed-codepen.html height="400" %}
 
 {% highlight html %}
 <div>

@@ -8,11 +8,12 @@ title: Infinite Square
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: HlcAJ
 shorturl: 6dwvt
-comments: true
 ---
 
-{% include embed-codepen.html slug="HlcAJ" height="350" %}
+{% include embed-codepen.html height="350" %}
 
 {% highlight html %}
 <div class="square">

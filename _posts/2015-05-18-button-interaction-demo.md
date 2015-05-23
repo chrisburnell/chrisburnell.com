@@ -8,11 +8,12 @@ title: Button Interaction Demo
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: RPRwoo
 shorturl: ax7qc
-comments: true
 ---
 
-{% include embed-codepen.html slug="RPRwoo" height="300" %}
+{% include embed-codepen.html height="300" %}
 
 {% highlight html %}
 <button>Hello!</button>

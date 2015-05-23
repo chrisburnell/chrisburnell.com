@@ -455,6 +455,84 @@ p:empty {
     }
 }
 
+/*------------------------------------*    #BASE - Article
+\*------------------------------------*/
+/**
+ * The width of the articles is fluid, and always has padding on the left-hand
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
+ * Maximum total width of container
+ *   = 1080px
+ * Left-hand padding
+ *   = 25% of 1080px = 270px  = 16.875em
+ */
+article {
+    padding-top: 2.25rem;
+    border-top: .25rem solid #5f8aa6;
+}
+@media (min-width: 769px) {
+    article {
+        padding-left: 18.125rem;
+    }
+}
+@media (max-width: 768px) {
+    article {
+        /**
+         * Below the medium breakpoint, `article`, `article-list`, and `aside`
+         * become full width.
+         */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
+/*------------------------------------*    #BASE - Aside
+\*------------------------------------*/
+/**
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_content.scss`.
+ */
+@media (min-width: 769px) {
+    aside {
+        width: 15.875rem;
+        float: left;
+        margin-left: -18.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+    }
+    aside:not(.author) {
+        background: rgba(6, 6, 6, .05);
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    aside:not(.author):last-child {
+        margin-bottom: 0;
+    }
+}
+
+aside p,
+aside figcaption {
+    clear: both;
+}
+@media (min-width: 501px) {
+    aside p,
+    aside figcaption {
+        font-size: .875rem;
+    }
+}
+
 /*------------------------------------*    #COMPONENTS - Logo
 \*------------------------------------*/
 .logo {

@@ -8,11 +8,12 @@ title: Simple CSS Checkbox
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: Cbiun
 shorturl: g6pky
-comments: true
 ---
 
-{% include embed-codepen.html slug="Cbiun" height="250" %}
+{% include embed-codepen.html height="250" %}
 
 {% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">

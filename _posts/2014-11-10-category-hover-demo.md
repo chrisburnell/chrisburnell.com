@@ -8,11 +8,12 @@ title: Category Hover Demo
 tags:
 - codepen
 
+comments: codepen
+codepen_slug: mybQEL
 shorturl: 058xp
-comments: true
 ---
 
-{% include embed-codepen.html slug="mybQEL" height="525" %}
+{% include embed-codepen.html height="525" %}
 
 {% highlight html %}
 <div class="modal">

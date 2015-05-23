@@ -1,102 +1,26 @@
-<script>
+<!-- Support <picture> and picturefill -->
+<script>document.createElement( "picture" );{% include body-js-picturefill.html %}</script>
 
-    /**
-     * Disqus Comments
-     */
-    var disqus_shortname = 'chrisburnell';
-    {% if page.comments == true %}
-        /**
-         * Comment toggling for article pages
-         */
-        var commentsSection = document.getElementById('comments');
-        var commentsButton  = document.getElementById('show-comments-button');
-        var commentsHash    = ['#comment', '#disqus_thread'];
-        commentsHash.forEach( function(hash) {
-            if( window.location.hash.indexOf(hash) == 0 ) {
-                showComments();
-            }
-        });
-        window.onhashchange = function() {
-            commentsHash.forEach( function(hash) {
-                if( location.hash.indexOf(hash) == 0 ) {
-                    showComments();
-                }
-            });
-        }
-        commentsButton.disabled = false;
-        commentsButton.addEventListener('click', function() {
-            showComments();
-        });
-        function showComments() {
-            window.scrollTo(0, commentsSection.offsetTop);
-            // Only if the button still exists should we load Disqus and remove the button
-            if( document.getElementById('show-comments-button') ) {
-                commentsButton.parentNode.removeChild(commentsButton);
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-                window.scrollTo(0, commentsSection.offsetTop);
-            }
-        }
-    {% endif %}
-    {% if page.page_class contains "page-home" or page.page_class contains "page-articles" %}
-        /**
-         * Show comment counts on home and articles archive page
-         */
-        (function () {
-            var dsqc = document.createElement('script'); dsqc.type = 'text/javascript'; dsqc.async = true;
-            dsqc.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsqc);
-        }());
-    {% endif %}
+{% if page.comments == true or page.page_class contains "page-home" or page.page_class contains "page-articles" %}
+<!-- Disqus Comments -->
+<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include body-js-disqus-article.html %}{% endif %}{% if page.page_class contains "page-home" or page.page_class contains "page-articles" %}{% include body-js-disqus-count.html %}{% endif %}</script>
+{% endif %}
 
-    /**
-     * Google Analytics
-     */
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-10353655-1', 'chrisburnell.com');
-    ga('send', 'pageview');
+<!-- Google Analytics -->
+<script>{% include body-js-google-analytics.html %}</script>
 
-</script>
+<!-- Search Templates -->
+{% include body-js-search-templates.html %}
 
-<script type="text/template" id="search-template-page">
-    <li>
-        <a href="@@url@@">
-            <h4 class="small-article-title">@@title@@</h4>
-            <p class="small-article-introduction">@@introduction@@</p>
-        </a>
-    </li>
-</script>
-<script type="text/template" id="search-template-article">
-    <li>
-        <a href="@@url@@">
-            <h4 class="small-article-title">@@title@@</h4>
-            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
-            <p class="small-article-introduction">@@introduction@@</p>
-        </a>
-    </li>
-</script>
-<script type="text/template" id="search-template-pen">
-    <li>
-        <a href="@@url@@">
-            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
-            <h4 class="small-article-title">@@title@@</h4>
-            <time class="small-article-date" datetime="@@date@@">@@date_friendly@@</time>
-            <p class="small-article-introduction">@@introduction@@</p>
-        </a>
-    </li>
-</script>
-<script src="/js/search.min.js" async defer></script>
+<!-- Search -->
+<script>{% include body-js-search.html %}</script>
 
 {% if page.codepen == true or page.categories contains "pen" %}
-    <script src="//codepen.io/assets/embed/ei.js" async defer></script>
+<!-- CodePen Embeds -->
+<script src="//codepen.io/assets/embed/ei.js" async defer></script>
 {% endif %}
 
 {% if page.twitter == true %}
-    <script src="//platform.twitter.com/widgets.js" async defer></script>
+<!-- Twitter Cards -->
+<script src="//platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
