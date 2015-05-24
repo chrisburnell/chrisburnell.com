@@ -54,7 +54,7 @@ In this article I’m going to run through how I manage my comments section from
 First, let’s look at some statistics for loading Disqus comments on page load:
 
 - **37%** of an article page’s load time comes from loading Disqus
-    - This was tested on my article, {% post_url 2014-02-09-lets-look-back %}, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to Disqus could get even higher on my more minimal articles.
+    - This was tested on my article, <a href="{% post_url 2014-02-09-lets-look-back %}">Let’s Look Back</a>, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to Disqus could get even higher on my more minimal articles.
 - **298kB** of data comes from Disqus’ three servers used to load comments, which isn’t a hell of a lot.
 - **40** requests are made from Disqus in order to display the comments section.
 
