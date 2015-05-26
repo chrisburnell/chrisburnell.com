@@ -182,6 +182,10 @@ function processData(data) {
 function showSearchResults(results) {
     // Add results HTML to placeholder
     resultsList.innerHTML = results;
+    // Remove focus from the search input by toggling focus on the resultsList
+    document.activeElement.blur();
+    // And scroll to the results
+    searchInput.scrollIntoView();
 }
 
 /**

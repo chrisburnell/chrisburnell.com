@@ -153,7 +153,7 @@ gulp.task('watch', ['css', 'js'], function() {
     watch(cssPath + '**/*.scss', function() {
         gulp.start('css');
     });
-    watch(jsPath + '**/*.js', function() {
+    watch([jsPath + '**/*.js', '!' + jsPath + '**/*.min.js'], function() {
         gulp.start('js');
     });
 });
