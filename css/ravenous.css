@@ -1597,8 +1597,8 @@ aside .small-articles-list li + li {
     margin-bottom: 1.25rem;
 }
 
-.search-form {
-    margin-bottom: 1.25rem;
+.search-results {
+    margin-top: 1.25rem;
 }
 
 .search-label,
