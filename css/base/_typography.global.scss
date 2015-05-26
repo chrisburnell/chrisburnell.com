@@ -47,11 +47,13 @@ h4 {
 }
 
 a {
-    color: $brand;
     text-decoration: none;
     @include transition(background  $transition-time  $transition-function,
                         color       $transition-time  $transition-function);
     @include will-change(background, color);
+    &:link {
+        color: $brand;
+    }
     &:visited {
         color: darken($brand, 10%);
     }
@@ -62,7 +64,9 @@ a {
     }
     h2 &,
     h3 & {
-        color: $text-color;
+        &:link {
+            color: $text-color;
+        }
         &:visited {
             color: lighten($text-color, 10%);
         }
@@ -216,7 +220,7 @@ figure {
     svg {
         @extend %rounded;
     }
-    a,
+    a:link,
     a:visited,
     figcaption {
         color: $text-color-alt;

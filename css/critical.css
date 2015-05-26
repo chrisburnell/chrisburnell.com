@@ -84,11 +84,13 @@ h4 {
 }
 
 a {
-    color: #5f8aa6;
     text-decoration: none;
     -webkit-transition: background .2s ease, color .2s ease;
             transition: background .2s ease, color .2s ease;
     will-change: background, color;
+}
+a:link {
+    color: #5f8aa6;
 }
 a:visited {
     color: #4b6f87;
@@ -98,8 +100,8 @@ a:focus,
 a:active {
     text-decoration: underline;
 }
-h2 a,
-h3 a {
+h2 a:link,
+h3 a:link {
     color: #4f4f4f;
 }
 h2 a:visited,
@@ -301,7 +303,7 @@ figure {
 figure:not(:last-child) {
     margin-bottom: 1.25rem;
 }
-figure a,
+figure a:link,
 figure a:visited,
 figure figcaption {
     color: #737373;
