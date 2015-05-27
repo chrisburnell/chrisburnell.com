@@ -956,7 +956,7 @@ button .icon--feather,
     width: .58em;
 }
 
-/*------------------------------------*    #BASE - Layout
+/*------------------------------------*    #LAYOUT - Layout
 \*------------------------------------*/
 .wrap {
     width: auto;
@@ -988,7 +988,7 @@ button .icon--feather,
     width: 1140px;
 }
 
-/*------------------------------------*    #BASE - Header
+/*------------------------------------*    #LAYOUT - Header
 \*------------------------------------*/
 @media (max-width: 768px) {
     header {
@@ -996,7 +996,7 @@ button .icon--feather,
     }
 }
 
-/*------------------------------------*    #BASE - Article
+/*------------------------------------*    #LAYOUT - Article
 \*------------------------------------*/
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
@@ -1034,7 +1034,7 @@ article {
     }
 }
 
-/*------------------------------------*    #BASE - Aside
+/*------------------------------------*    #LAYOUT - Aside
 \*------------------------------------*/
 /**
  * The width of the asides is static above the medium breakpoint and always
@@ -1074,7 +1074,7 @@ aside figcaption {
     }
 }
 
-/*------------------------------------*    #BASE - Footer
+/*------------------------------------*    #LAYOUT - Footer
 \*------------------------------------*/
 footer {
     background-color: #4f4f4f;

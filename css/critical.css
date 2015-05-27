@@ -411,7 +411,7 @@ iframe {
     background-color: red;
 }
 
-/*------------------------------------*    #BASE - Layout
+/*------------------------------------*    #LAYOUT - Layout
 \*------------------------------------*/
 .wrap {
     width: auto;
@@ -443,7 +443,7 @@ iframe {
     width: 1140px;
 }
 
-/*------------------------------------*    #BASE - Header
+/*------------------------------------*    #LAYOUT - Header
 \*------------------------------------*/
 @media (max-width: 768px) {
     header {
@@ -451,7 +451,7 @@ iframe {
     }
 }
 
-/*------------------------------------*    #BASE - Article
+/*------------------------------------*    #LAYOUT - Article
 \*------------------------------------*/
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
@@ -489,7 +489,7 @@ article {
     }
 }
 
-/*------------------------------------*    #BASE - Aside
+/*------------------------------------*    #LAYOUT - Aside
 \*------------------------------------*/
 /**
  * The width of the asides is static above the medium breakpoint and always
