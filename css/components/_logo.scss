@@ -4,6 +4,9 @@
 
 .logo {
     @extend %non-selectable;
+    @include transition;
+    @include will-change(transform);
+    @include z-index(above);
     display: inline-block;
     padding-top: .5em;
     padding-left: 1.923em;
@@ -14,9 +17,6 @@
     text-transform: uppercase;
     text-shadow: .058em .058em 0 $black-light;
     white-space: nowrap;
-    @include z-index(above);
-    @include transition;
-    @include will-change(transform);
     &:link,
     &:visited {
         color: $text-color;
@@ -33,18 +33,18 @@
         font-size: 2.75em;
     }
     svg {
+        @include animation(soaring 30s linear alternate infinite);
+        @include animation-play-state(paused);
+        @include transition;
+        @include translate3d(0, -0.8125em, 0);
+        @include will-change(top);
+        @include z-index("below");
         width: 2.307em;
         height: 2.307em;
         display: block;
         position: absolute;
         top: 0;
         left: 0;
-        @include z-index("below");
-        @include animation(soaring 30s linear alternate infinite);
-        @include animation-play-state(paused);
-        @include transition;
-        @include translate3d(0, -0.8125em, 0);
-        @include will-change(top);
     }
     &:hover svg,
     &:focus svg,
@@ -55,7 +55,7 @@
         @include animation-play-state(running);
     }
     &:active {
-        @include translate3d(0, .125rem, 0);
+        transform: translateY(.125rem);
         svg {
             /**
              * In order to get `.logo svg` to travel up 2x the distance the

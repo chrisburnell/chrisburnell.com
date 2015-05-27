@@ -21,15 +21,15 @@
     left: 100%;
 }
 .search-input {
+    @include transition(background-color $transition-time $transition-function,
+                        border-color     $transition-time $transition-function);
+    @include will-change(background-color, border-color);
     box-sizing: inherit !important;
     width: 100%;
     padding: .5rem;
     border: ($default-border / 2) solid $text-color-light;
     outline: none;
     font-family: $secondary-font-stack;
-    @include transition(background-color $transition-time $transition-function,
-                        border-color     $transition-time $transition-function);
-    @include will-change(background-color, border-color);
     &:focus {
         background-color: transparent;
         border-color: $brand;

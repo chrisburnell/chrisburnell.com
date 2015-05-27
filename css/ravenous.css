@@ -488,10 +488,10 @@ h4 {
 }
 
 a {
-    text-decoration: none;
     -webkit-transition: background .2s ease, color .2s ease;
             transition: background .2s ease, color .2s ease;
     will-change: background, color;
+    text-decoration: none;
 }
 a:link {
     color: #5f8aa6;
@@ -861,6 +861,9 @@ pre:not(.codepen) code {
 \*------------------------------------*/
 button,
 .button {
+    -webkit-transition: background-color .2s ease;
+            transition: background-color .2s ease;
+    will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
     background-color: #5f8aa6;
     min-width: 8em;
     height: 2.182em;
@@ -879,9 +882,6 @@ button,
     cursor: pointer;
     border-radius: .25rem;
     box-shadow: inset 0 -.182em 0 0 #4b6f87;
-    -webkit-transition: background-color .2s ease;
-            transition: background-color .2s ease;
-    will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
 }
 button,
 button:link,
@@ -903,24 +903,24 @@ button:active,
 }
 button:active,
 .button:active {
+    -webkit-transform: translate3d(0, .25rem, 0);
+            transform: translate3d(0, .25rem, 0);
     height: 2em;
     padding-bottom: 0;
     margin-bottom: .25rem;
     box-shadow: inset 0 -1px 0 0 #4b6f87;
-    -webkit-transform: translate3d(0, .25rem, 0);
-            transform: translate3d(0, .25rem, 0);
 }
 button:before,
 button:after,
 .button:before,
 .button:after {
+    will-change: top;
     content: "";
     width: 100%;
     height: .25rem;
     position: absolute;
     top: 0;
     left: 0;
-    will-change: top;
 }
 button:active:before,
 button:active:after,
@@ -1090,6 +1090,10 @@ footer {
 /*------------------------------------*    #COMPONENTS - Logo
 \*------------------------------------*/
 .logo {
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    will-change: transform;
+    z-index: 1;
     display: inline-block;
     padding-top: .5em;
     padding-left: 1.923em;
@@ -1100,10 +1104,6 @@ footer {
     text-transform: uppercase;
     text-shadow: .058em .058em 0 rgba(6, 6, 6, .05);
     white-space: nowrap;
-    z-index: 1;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    will-change: transform;
 }
 .logo:link,
 .logo:visited {
@@ -1125,13 +1125,6 @@ footer {
     }
 }
 .logo svg {
-    width: 2.307em;
-    height: 2.307em;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
     -webkit-animation: soaring 30s linear alternate infinite;
             animation: soaring 30s linear alternate infinite;
     -webkit-animation-play-state: paused;
@@ -1141,6 +1134,13 @@ footer {
     -webkit-transform: translate3d(0, -.8125em, 0);
             transform: translate3d(0, -.8125em, 0);
     will-change: top;
+    z-index: -1;
+    width: 2.307em;
+    height: 2.307em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .logo:hover svg,
 .logo:focus svg,
@@ -1152,8 +1152,9 @@ footer {
             animation-play-state: running;
 }
 .logo:active {
-    -webkit-transform: translate3d(0, .125rem, 0);
-            transform: translate3d(0, .125rem, 0);
+    -webkit-transform: translateY(.125rem);
+        -ms-transform: translateY(.125rem);
+            transform: translateY(.125rem);
 }
 .logo:active svg {
     /**
@@ -1294,6 +1295,9 @@ footer {
     }
 }
 .nav-primary-list a {
+    -webkit-transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, -webkit-transform .2s ease;
+            transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, transform .2s ease;
+    will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
     display: block;
     padding: .75rem 1rem;
@@ -1304,9 +1308,6 @@ footer {
     font-size: 1.25rem;
     line-height: 1.25;
     text-transform: uppercase;
-    -webkit-transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, -webkit-transform .2s ease;
-            transition: color .2s ease, padding-bottom .2s ease, border-bottom-width .2s ease, transform .2s ease;
-    will-change: color, padding-bottom, border-bottom-width, transform;
 }
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
@@ -1314,8 +1315,9 @@ footer {
     text-decoration: none;
 }
 .nav-primary-list a:active {
-    -webkit-transform: translate3d(0, .2rem, 0);
-            transform: translate3d(0, .2rem, 0);
+    -webkit-transform: translateY(.2rem);
+        -ms-transform: translateY(.2rem);
+            transform: translateY(.2rem);
 }
 @media (max-width: 500px) {
     .nav-primary-list a {
@@ -1349,8 +1351,9 @@ footer {
     position: absolute;
     top: 100%;
     left: 50%;
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 /*------------------------------------*    #COMPONENTS - Article
@@ -1413,13 +1416,13 @@ footer {
     width: 100%;
 }
 .article-title .article-title-link {
+    -webkit-transition: border-color .2s ease;
+            transition: border-color .2s ease;
+    will-change: color, border-bottom-color;
     display: inline-block;
     padding: 0 .5rem;
     border-bottom: .1825rem solid transparent;
     margin-left: -.5rem;
-    -webkit-transition: border-color .2s ease;
-            transition: border-color .2s ease;
-    will-change: color, border-bottom-color;
 }
 .article-title .article-title-link:hover,
 .article-title .article-title-link:focus,
@@ -1518,11 +1521,11 @@ aside .small-articles-list li + li {
     }
 }
 .small-articles-list a {
+    will-change: background-color;
     display: block;
     padding: .5em;
     position: relative;
     overflow: hidden;
-    will-change: background-color;
 }
 .small-articles-list a:hover,
 .small-articles-list a:focus,
@@ -1556,6 +1559,12 @@ aside .small-articles-list li + li {
     font-size: .875rem;
 }
 .small-articles-list svg {
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    will-change: opacity;
+    z-index: -1;
     opacity: .05;
     width: 6.25em !important;
     height: 6.25em;
@@ -1564,12 +1573,6 @@ aside .small-articles-list li + li {
     top: 50%;
     right: .5em;
     stroke: #4f4f4f;
-    z-index: -1;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0);
-    will-change: opacity;
 }
 @media (max-width: 500px) {
     .small-articles-list svg {
@@ -1608,15 +1611,15 @@ aside .small-articles-list li + li {
 }
 
 .search-input {
+    -webkit-transition: background-color .2s ease, border-color .2s ease;
+            transition: background-color .2s ease, border-color .2s ease;
+    will-change: background-color, border-color;
     box-sizing: inherit !important;
     width: 100%;
     padding: .5rem;
     border: .125rem solid #dddddd;
     outline: none;
     font-family: "proxima-nova", sans-serif;
-    -webkit-transition: background-color .2s ease, border-color .2s ease;
-            transition: background-color .2s ease, border-color .2s ease;
-    will-change: background-color, border-color;
 }
 .search-input:focus {
     background-color: transparent;
@@ -1836,6 +1839,9 @@ aside .small-articles-list li + li {
 }
 
 .footer-home-link {
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    will-change: transform;
     width: 50px;
     height: 50px;
     margin-right: 1rem;
@@ -1843,9 +1849,6 @@ aside .small-articles-list li + li {
     vertical-align: middle;
     text-indent: 100%;
     white-space: nowrap;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    will-change: transform;
 }
 .footer-home-link:hover,
 .footer-home-link:focus,
@@ -1967,6 +1970,8 @@ aside .small-articles-list li + li {
     line-height: 2;
 }
 [data-lang]:before {
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
     content: attr(data-lang);
     background-color: #737373;
     color: #f9f9f9;
@@ -1982,8 +1987,6 @@ aside .small-articles-list li + li {
     line-height: 2.25rem;
     text-transform: uppercase;
     border-radius: .375rem .375rem 0 0;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
 }
 [data-lang].language-css:before {
     background-color: #016fba;
@@ -2112,15 +2115,15 @@ aside .small-articles-list li + li {
 
 /*a*/
 .icon {
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    will-change: opacity, transform;
     opacity: .7;
     height: 40px;
     display: block;
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-    will-change: opacity, transform;
 }
 .icon:hover,
 .icon:focus,
@@ -2129,8 +2132,9 @@ aside .small-articles-list li + li {
     text-decoration: none;
 }
 .icon:active {
-    -webkit-transform: translate3d(0, .125rem, 0);
-            transform: translate3d(0, .125rem, 0);
+    -webkit-transform: translateY(.125rem);
+        -ms-transform: translateY(.125rem);
+            transform: translateY(.125rem);
 }
 .icon.icon--codepen,
 .icon.link--codepen {

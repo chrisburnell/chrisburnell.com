@@ -9,6 +9,7 @@
     padding-top: $default-padding;
     line-height: 2;
     &:before {
+        @include transition;
         content: attr(data-lang);
         background-color: $text-color-alt;
         color: $white;
@@ -24,7 +25,6 @@
         line-height: $default-padding;
         text-transform: uppercase;
         border-radius: $default-border-radius $default-border-radius 0 0;
-        @include transition;
     }
     @each $language in $coding-languages {
         $name:  nth($language, 1);

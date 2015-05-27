@@ -29,6 +29,7 @@
     "sort_order": [
         "$import",
         "$extend",
+        "$include",
         "$variable",
         "content",
         "-webkit-box-sizing",
@@ -314,7 +315,6 @@
         "-ms-animation-direction",
         "-o-animation-direction",
         "animation-direction",
-        "box-decoration-break",
-        "$include"
+        "box-decoration-break"
     ]
 }

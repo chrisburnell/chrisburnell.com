@@ -34,11 +34,11 @@
     }
     a {
         @extend %rounded;
+        @include will-change(background-color);
         display: block;
         padding: .5em;
         position: relative;
         overflow: hidden;
-        @include will-change(background-color);
         &:hover,
         &:focus,
         &:active {
@@ -72,6 +72,10 @@
         font-size: .875rem;
     }
     svg {
+        @include transition;
+        @include translate3d(0, -50%, 0);
+        @include will-change(opacity);
+        @include z-index(below);
         opacity: ($opacity-low / 2);
         width:  6.25em !important; // override `_icons.scss` + 4px
         height: 6.25em;
@@ -80,10 +84,6 @@
         top: 50%;
         right: .5em;
         stroke: $text-color;
-        @include z-index(below);
-        @include transition;
-        @include translate3d(0, -50%, 0);
-        @include will-change(opacity);
         @include media("<=small") {
             width:  4em !important;
             height: 4em;

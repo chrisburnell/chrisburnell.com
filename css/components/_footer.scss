@@ -22,6 +22,8 @@
     white-space: nowrap;
 }
 .footer-home-link {
+    @include transition;
+    @include will-change(transform);
     width: 50px;
     height: 50px;
     margin-right: 1rem;
@@ -29,8 +31,6 @@
     vertical-align: middle;
     text-indent: 100%;
     white-space: nowrap;
-    @include transition;
-    @include will-change(transform);
     &:hover,
     &:focus,
     &:active {

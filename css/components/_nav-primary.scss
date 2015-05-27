@@ -39,6 +39,11 @@
             }
         }
         a {
+            @include transition(color                $transition-time  $transition-function,
+                                padding-bottom       $transition-time  $transition-function,
+                                border-bottom-width  $transition-time  $transition-function,
+                                transform            $transition-time  $transition-function);
+            @include will-change(color, padding-bottom, border-bottom-width, transform);
             color: $text-color-alt;
             display: block;
             padding: .75rem 1rem;
@@ -49,18 +54,13 @@
             font-size: 1.25rem;
             line-height: 1.25;
             text-transform: uppercase;
-            @include transition(color                $transition-time  $transition-function,
-                                padding-bottom       $transition-time  $transition-function,
-                                border-bottom-width  $transition-time  $transition-function,
-                                transform            $transition-time  $transition-function);
-            @include will-change(color, padding-bottom, border-bottom-width, transform);
             &:hover,
             &:focus,
             &:active {
                 text-decoration: none;
             }
             &:active {
-                @include translate3d(0, .2rem, 0);
+                transform: translateY(.2rem);
             }
             @include media("<=small") {
                 padding-left:  .75rem;
@@ -94,5 +94,5 @@
                 position: absolute;
                 top: 100%;
                 left: 50%;
-                @include translate3d(-50%, 0, 0);
+                transform: translateX(-50%);
             }
