@@ -8,6 +8,10 @@
  * Please contact me if you want to learn about anything you see here.
  */
 
+// #GENERIC
+@import "generic/box-sizing",
+        "generic/normalize";
+
 // #UTILITIES
 @import "utils/variables.global",
         "utils/variables.code",
@@ -16,9 +20,7 @@
         "utils/mixins";
 
 // #BASE
-@import "base/box-sizing",
-        "base/normalize",
-        "base/page",
+@import "base/page",
         "base/typography.global",
         "base/typography.code",
         "base/buttons";

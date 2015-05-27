@@ -1,11 +1,12 @@
+@import "generic/box-sizing";
+
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
         "utils/include-media",
         "utils/mixins";
 
-@import "base/box-sizing",
-        "base/page",
+@import "base/page",
         "base/typography.global";
 
 @import "layout/wrap",
