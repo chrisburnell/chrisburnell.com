@@ -552,7 +552,7 @@ aside figcaption {
             transition: all .2s ease;
     will-change: transform;
 }
-.logo,
+.logo:link,
 .logo:visited {
     color: #4f4f4f;
 }

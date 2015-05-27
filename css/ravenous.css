@@ -1020,8 +1020,10 @@ button,
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
 }
 button,
+button:link,
 button:visited,
 .button,
+.button:link,
 .button:visited {
     color: #f9f9f9;
 }
@@ -1108,7 +1110,7 @@ button .icon--feather,
             transition: all .2s ease;
     will-change: transform;
 }
-.logo,
+.logo:link,
 .logo:visited {
     color: #4f4f4f;
 }
@@ -1721,7 +1723,8 @@ aside .small-articles-list li + li {
         margin-bottom: .625rem;
     }
 }
-.author-information a,
+.author-information a:link,
+.author-information a:visited,
 .author-information strong {
     color: inherit;
     font-family: "proxima-nova", sans-serif;
@@ -1783,20 +1786,20 @@ aside .small-articles-list li + li {
 /*------------------------------------*    #COMPONENTS - Aside Widgets
 \*------------------------------------*/
 @media (min-width: 769px) {
-    .aside-search,
-    .featured-pens,
-    .related-articles {
+    .widget-search,
+    .widget-featured-pens,
+    .widget-related-articles {
         margin-top: 1.25rem;
     }
 }
 
-.aside-search-title,
-.featured-pens-title,
-.related-articles-title {
+.widget-search-title,
+.widget-featured-pens-title,
+.widget-related-articles-title {
     margin-top: 0;
 }
 
-.featured-pens-link {
+.widget-featured-pens-link {
     width: 100%;
     display: block;
     margin-top: .625rem;
@@ -1804,7 +1807,7 @@ aside .small-articles-list li + li {
     text-align: right;
 }
 @media (max-width: 768px) {
-    .featured-pens-link {
+    .widget-featured-pens-link {
         margin-bottom: 1.25rem;
         text-align: center;
     }
@@ -1869,9 +1872,9 @@ aside .small-articles-list li + li {
     display: block;
 }
 
-.footer-copyright-link,
+.footer-copyright-link:link,
 .footer-copyright-link:visited,
-.footer-style-guide-link,
+.footer-style-guide-link:link,
 .footer-style-guide-link:visited {
     color: #dddddd;
 }

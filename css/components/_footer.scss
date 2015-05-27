@@ -50,7 +50,7 @@
 }
 .footer-copyright-link,
 .footer-style-guide-link {
-    &,
+    &:link,
     &:visited {
         color: $text-color-light;
     }

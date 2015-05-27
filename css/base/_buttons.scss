@@ -26,6 +26,7 @@ button,
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     &,
+    &:link,
     &:visited {
         color: $white;
     }

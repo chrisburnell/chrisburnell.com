@@ -29,7 +29,8 @@
             border-top: ($default-border / 2) solid $black-medium;
             margin-bottom: ($default-margin / 2);
         }
-        a,
+        a:link,
+        a:visited,
         strong {
             color: inherit;
             font-family: $secondary-font-stack;

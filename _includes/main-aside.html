@@ -72,13 +72,13 @@
 
     {% if page.page_class contains "page-search" %}
     {% else %}
-        {% include aside-search.html %}
+        {% include widget-search.html %}
     {% endif %}
 
     {% if page.page_class contains "page-home" %}
-        {% include aside-featured-pens.html %}
+        {% include widget-featured-pens.html %}
     {% elsif page.layout == "article" %}
-        {% include aside-related-articles.html %}
+        {% include widget-related-articles.html %}
     {% endif %}
 
 </aside>

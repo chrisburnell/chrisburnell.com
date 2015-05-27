@@ -17,7 +17,7 @@
     @include z-index(above);
     @include transition;
     @include will-change(transform);
-    &,
+    &:link,
     &:visited {
         color: $text-color;
     }

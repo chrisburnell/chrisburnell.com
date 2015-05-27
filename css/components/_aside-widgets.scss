@@ -2,19 +2,19 @@
     #COMPONENTS - Aside Widgets
 \*------------------------------------*/
 
-.aside-search,
-.featured-pens,
-.related-articles {
+.widget-search,
+.widget-featured-pens,
+.widget-related-articles {
     @include media(">medium") {
         margin-top: $default-margin;
     }
 }
-.aside-search-title,
-.featured-pens-title,
-.related-articles-title {
+.widget-search-title,
+.widget-featured-pens-title,
+.widget-related-articles-title {
     margin-top: 0;
 }
-.featured-pens-link {
+.widget-featured-pens-link {
     width: 100%;
     display: block;
     margin-top: ($default-margin / 2);

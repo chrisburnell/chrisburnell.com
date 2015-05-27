@@ -11,14 +11,13 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
-    sourcemaps   = require('gulp-sourcemaps'),
     uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
 // Define the locations of our assets
-var cssPath = 'css/',
-    jsPath =  'js/',
-    includesPath = '_includes';
+var cssPath      = 'css/',
+    jsPath       = 'js/',
+    includesPath = '_includes/';
 
 // -----------------------------------------------------------------------------
 
@@ -53,6 +52,7 @@ gulp.task('css-main', function() {
 // Compile critical SCSS file
 gulp.task('css-critical', function() {
     return gulp.src(cssPath + 'critical.scss')
+        .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
             style: 'expanded'
