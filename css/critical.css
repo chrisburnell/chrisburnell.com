@@ -443,11 +443,6 @@ iframe {
     width: 1140px;
 }
 
-.hidden,
-p:empty {
-    display: none;
-}
-
 /*------------------------------------*    #BASE - Header
 \*------------------------------------*/
 @media (max-width: 768px) {
