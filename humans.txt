@@ -18,7 +18,7 @@
 
     HTML
     CSS (SCSS)
-    Javascript
+    JavaScript
     Markdown
     XML
 

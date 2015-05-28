@@ -74,7 +74,7 @@ Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for wh
     </a>
 </figure>
 
-The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. The styles are injected with Javascript into a <samp>style</samp> tag in the <samp>head</samp>:
+The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. The styles are injected with JavaScript into a <samp>style</samp> tag in the <samp>head</samp>:
 
 {% highlight html %}
 <style id="stylish-3" class="stylish">

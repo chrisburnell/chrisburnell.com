@@ -19,7 +19,7 @@ codepen: true
 comments: true
 ---
 
-I’ve been making quite a few pens over on [Codepen](http://codepen.io) lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to Javascript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
+I’ve been making quite a few pens over on [Codepen](http://codepen.io) lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
@@ -46,11 +46,11 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 {% include heading.html title="Modal Container without JS" %}
 
-This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off Javascript and won’t be able to use Codepen properly, as Codepen relies on Javascript to display Pens.
+This pen was inspired by Chris Coyier’s [blog post on Codepen](http://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off JavaScript and won’t be able to use Codepen properly, as Codepen relies on JavaScript to display Pens.
 
 {% include embed-codepen.html slug="scyKF" height="350" %}
 
-One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a Javascript-free toggle, which you can use to show/hide elements, toggle styles, and more.
+One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a JavaScript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
 
 {% include heading.html title="Slip-n-slide Modal" %}

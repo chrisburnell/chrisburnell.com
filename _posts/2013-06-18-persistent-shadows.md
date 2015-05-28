@@ -51,7 +51,7 @@ What else do you think we could do with an effect like this? I think it could do
 
 Firstly, a CSS3 checkbox. Uses an invisible `<input type="checkbox">` field and an `:after` attribute to toggle the style of the checkbox.
 
-<aside><p>Add in a little bit of Javascript to toggle the text, but even that might not be necessary if you utilise the <code>:before</code> attribute.</p></aside>
+<aside><p>Add in a little bit of JavaScript to toggle the text, but even that might not be necessary if you utilise the <code>:before</code> attribute.</p></aside>
 
 {% include embed-codepen.html slug="arouk" height="150" %}
 
