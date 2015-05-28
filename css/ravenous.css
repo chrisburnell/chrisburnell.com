@@ -1589,7 +1589,7 @@ aside .small-articles-list li + li {
 /*------------------------------------*    #COMPONENTS - Search
 \*------------------------------------*/
 .main-search,
-.aside-search {
+.widget-search {
     position: relative;
     overflow: hidden;
 }
