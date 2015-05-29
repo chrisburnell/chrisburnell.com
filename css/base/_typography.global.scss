@@ -55,7 +55,7 @@ a {
         color: $brand;
     }
     &:visited {
-        color: darken($brand, 10%);
+        color: lighten($brand, 10%);
     }
     &:hover,
     &:focus,
