@@ -1732,23 +1732,13 @@ aside .small-articles-list li + li {
     white-space: nowrap;
 }
 
-@media (min-width: 769px) {
-    .author-biography {
-        margin-bottom: 1.25rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .author-biography {
-        -webkit-box-ordinal-group: 999;
-        -webkit-order: 998;
-        -ms-flex-order: 998;
-                order: 998;
-    }
-}
-
-.author-biography p:not(:last-child) {
-    margin-bottom: .625rem;
+.author-image {
+    background-size: 100%;
+    width: 6.25rem;
+    height: 6.25rem;
+    display: inline-block;
+    float: left;
+    margin-right: .625rem;
 }
 
 .author-name,
@@ -1766,19 +1756,27 @@ aside .small-articles-list li + li {
     content: "\00a0\2192";
 }
 
-.author-image {
-    background-size: 100%;
-    width: 6.25rem;
-    height: 6.25rem;
-    display: inline-block;
-    float: left;
-    margin-right: .625rem;
-    -webkit-filter: contrast(75%) sepia(100%) hue-rotate(160deg);
-            filter: contrast(75%) sepia(100%) hue-rotate(160deg);
-}
-
 .article-tags {
     display: table-cell;
+}
+
+@media (min-width: 769px) {
+    .author-biography {
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .author-biography {
+        -webkit-box-ordinal-group: 999;
+        -webkit-order: 998;
+        -ms-flex-order: 998;
+                order: 998;
+    }
+}
+
+.author-biography p:not(:last-child) {
+    margin-bottom: .625rem;
 }
 
 /*------------------------------------*    #COMPONENTS - Aside Widgets

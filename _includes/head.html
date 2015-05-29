@@ -1,0 +1,79 @@
+<head>
+
+    {% if page.page_class contains "page-home" %}
+        {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endcapture %}
+    {% else %}
+        {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
+    {% endif %}
+
+    {% if page.introduction %}
+        {% capture meta_description %}{{ page.introduction | strip_html }}{% endcapture %}
+    {% elsif page.description %}
+        {% capture meta_description %}{{ page.description | strip_html }}{% endcapture %}
+    {% elsif page.categories contains "pen" %}
+        {% capture meta_description %}One of my CodePens, {{ page.title }}{% endcapture %}
+    {% else %}
+        {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
+    {% endif %}
+
+    {% if page.banner_mobile %}
+        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
+    {% else %}
+        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
+    {% endif %}
+
+    {% capture body_class %}
+        {% for class in page.page_class %}
+            {{ class }}
+        {% endfor %}
+        {% if page.categories contains "article" %}page-articles{% endif %}
+        {% if page.categories contains "pen" %}page-pens{% endif %}
+    {% endcapture %}
+    {% assign body_class_array = body_class | split:" " %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
+
+    <title>{{ meta_title }}</title>
+
+    <!-- CSS compiled from {{ site.url_repo }}/tree/master/css -->
+    <link rel="stylesheet" href="/css/ravenous.min.css">
+
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
+
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <link rel="author" href="/humans.txt">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="theme-color" content="#{{ site.brand_color }}">
+
+    {% if page.page_class contains "page-not-found" %}
+        <meta name="robots" content="noindex,nofollow">
+    {% else %}
+        <!-- Twitter Microdata and OpenGraph -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@{{ site.author_twitter }}">
+        <meta name="twitter:title" content="{{ meta_title }}">
+        <meta name="twitter:description" content="{{ meta_description }}">
+        <meta name="twitter:image:src" content="{{ meta_image }}">
+        <meta name="twitter:domain" content="{{ site.url | replace: 'http://', '' | replace: 'https://', '' }}">
+        {% if page.twitter == true %}
+            <meta name="twitter:widgets:theme" content="light">
+            <meta name="twitter:widgets:link-color" content="#{{ site.brand_color }}">
+            <meta name="twitter:widgets:border-color" content="#{{ site.brand_color }}">
+        {% endif %}
+        <meta property="og:title" content="{{ meta_title }}">
+        <meta property="og:description" content="{{ meta_description }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/{% if page.page_class != "page-home" %}{{ page.url }}{% endif %}">
+        <meta property="og:image" content="{{ meta_image }}">
+    {% endif %}
+
+    {% include head-js.html %}
+
+</head>

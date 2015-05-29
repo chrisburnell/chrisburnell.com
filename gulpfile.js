@@ -129,7 +129,7 @@ gulp.task('js-inline', function() {
 // Default task
 gulp.task('default', function() {
     gulp.start('css-main');
-    gulp.start('css-critical');
+    // gulp.start('css-critical');
     gulp.start('js-main');
     gulp.start('js-inline');
 });
@@ -137,7 +137,7 @@ gulp.task('default', function() {
 // CSS task
 gulp.task('css', function() {
     gulp.start('css-main');
-    gulp.start('css-critical');
+    // gulp.start('css-critical');
 });
 
 // JS task

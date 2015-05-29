@@ -40,16 +40,15 @@
             white-space: nowrap;
         }
     }
-    .author-biography {
-        @include media(">medium") {
-            margin-bottom: $default-margin;
-        }
-        @include media("<=medium") {
-            order: 998;
-        }
-        p:not(:last-child) {
-            margin-bottom: ($default-margin / 2);
-        }
+    .author-image {
+        @extend %rounded;
+        background-size: 100%;
+        width:  6.25rem;
+        height: 6.25rem;
+        display: inline-block;
+        float: left;
+        margin-right: .625rem;
+        // filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
     }
     .author-name,
     .author-age,
@@ -64,16 +63,17 @@
     .featured-pens-link:after {
         content: "\00a0\2192";
     }
-    .author-image {
-        @extend %rounded;
-        background-size: 100%;
-        width:  6.25rem;
-        height: 6.25rem;
-        display: inline-block;
-        float: left;
-        margin-right: .625rem;
-        filter: contrast(75%) sepia(100%) hue-rotate(160deg);
-    }
     .article-tags {
         display: table-cell; // don’t wrap around `.author-image`
+    }
+    .author-biography {
+        @include media(">medium") {
+            margin-bottom: $default-margin;
+        }
+        @include media("<=medium") {
+            order: 998;
+        }
+        p:not(:last-child) {
+            margin-bottom: ($default-margin / 2);
+        }
     }
