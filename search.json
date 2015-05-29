@@ -1,6 +1,6 @@
 ---
 layout: null
-searchable: true
+searchable: false
 ---
 
 {% assign first = true %}
@@ -11,7 +11,7 @@ searchable: true
             "type": "page",
             "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
             "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
-            "introduction": {{ page.description | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% unless page.searchable == "no-content" %},
+            "lede": {{ page.lede | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% unless page.searchable == "no-content" %},
             "content": {{ page.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
@@ -23,8 +23,8 @@ searchable: true
             "title": {{ post.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
             "link": {{ post.url | prepend: site.baseurl | prepend: site.url | jsonify }},
             "date": {{ post.date | jsonify }},
-            "date_friendly": {{ post.date | date: "%d %b, %Y" | jsonify }},{% if post.introduction %}
-            "introduction": {{ post.introduction | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }},{% endif %}
+            "date_friendly": {{ post.date | date: "%d %b, %Y" | jsonify }},{% if post.lede %}
+            "lede": {{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }},{% endif %}
             "categories": {{ post.categories | join:', ' | jsonify }},
             "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == "no-content" %},
             "content": {{ post.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}

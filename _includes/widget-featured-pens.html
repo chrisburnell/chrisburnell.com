@@ -7,8 +7,8 @@
                     <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                     <h4 class="small-article-title">{{ post.title }}</h4>
                     <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
-                    {% if post.introduction %}
-                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                    {% if post.lede %}
+                        <p class="small-article-lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
                     {% endif %}
                 </a>
             </li>

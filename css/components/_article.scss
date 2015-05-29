@@ -15,36 +15,36 @@
 .site-tagline {
     margin-bottom: $default-padding;
 }
-.site-description {
+.site-lede {
     max-width: 24em;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
-.article-introduction,
-.page-description {
+.article-lede,
+.page-lede {
     margin-bottom: $default-margin;
     font-size: 1.25rem;
     line-height: 1.5;
 }
-.page-description,
-.site-description,
-.article-introduction {
+.page-lede,
+.site-lede,
+.article-lede {
     @include media(">medium") {
         margin-top: -0.5rem; // align text to the `aside`
     }
 }
-.article-introduction {
+.article-lede {
     .article-banner + & {
         margin-top: 0;
     }
 }
-.pens-introduction {
+.pens-lede {
     padding-bottom: $default-margin;
     border-bottom: ($default-border / 2) solid $black-medium;
 }
 .article-title,
 .article-date,
-.article-introduction {
+.article-lede {
     @include media("<=medium") {
         text-align: left;
     }

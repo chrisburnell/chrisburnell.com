@@ -11,8 +11,8 @@ searchable: no-content
                 <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
             <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
-            {% if post.introduction %}
-                <p class="article-introduction">{{ post.introduction }}</p>
+            {% if post.lede %}
+                <p class="article-lede">{{ post.lede }}</p>
             {% endif %}
             <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
             {% if post.comments == true %}

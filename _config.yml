@@ -1,6 +1,6 @@
 title:       Chris Burnell
-description: "I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, best practices and web standards, and innovations on the web."
-tagline:     I’m ravenous for CSS
+lede:        "I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, best practices and web standards, and innovations on the web."
+tagline:     "I’m ravenous for CSS"
 brand_color: 5f8aa6
 
 author:           Chris Burnell

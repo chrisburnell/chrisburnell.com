@@ -5,7 +5,7 @@ page_class: page-about
 redirect_from: /me.html
 
 title: About Me
-description: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
+lede: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
 ---
 
 <figure>

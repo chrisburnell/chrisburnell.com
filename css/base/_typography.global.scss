@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #BASE - Typography
+    #BASE - Typography (Global)
 \*------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
@@ -76,7 +76,7 @@ a {
             color: $brand;
         }
     }
-    span:not([class]) {
+    span:not([class]):not([itemprop]) {
         width:  1px;
         height: 1px;
         position: absolute;

@@ -2,10 +2,6 @@
 // #UTILS - Mixins
 //
 
-//
-// SCSS @mixins
-//
-
 /// Linear Gradient
 @mixin gradient($top, $bottom) {
     background-image: linear-gradient(to bottom, #{$top} 0%, #{$bottom} 100%);

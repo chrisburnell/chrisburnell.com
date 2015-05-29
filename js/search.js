@@ -116,24 +116,24 @@ function processData(data) {
         results = '',
         item,
         titleCheck,
-        introductionCheck,
+        ledeCheck,
         contentCheck,
         categoriesCheck,
         tagsCheck;
 
     for( var index = 0; index < data.length; index++ ) {
 
-        item = data[index];
+        item  = data[index];
         query = query.toLowerCase();
 
-        titleCheck = item['title'].toLowerCase().indexOf(query) > -1;
-        introductionCheck = false;
-        contentCheck      = false;
-        categoriesCheck   = false;
-        tagsCheck         = false;
+        titleCheck      = item['title'].toLowerCase().indexOf(query) > -1;
+        ledeCheck       = false;
+        contentCheck    = false;
+        categoriesCheck = false;
+        tagsCheck       = false;
 
-        if( item['introduction'] ) {
-            introductionCheck = item['introduction'].toLowerCase().indexOf(query) > -1;
+        if( item['lede'] ) {
+            ledeCheck = item['lede'].toLowerCase().indexOf(query) > -1;
         }
         if( item['content'] ) {
             contentCheck = item['content'].toLowerCase().indexOf(query) > -1;
@@ -145,22 +145,22 @@ function processData(data) {
             tagsCheck = item['tags'].toLowerCase().indexOf(query) > -1;
         }
 
-        // check if search term is in title, content, or introduction, categories or tags
+        // check if search term is in title, content, or lede, categories or tags
         switch( item['type'] ) {
             case 'page':
-                if( titleCheck || introductionCheck || contentCheck ) {
+                if( titleCheck || ledeCheck || contentCheck ) {
                     resultsCount++;
                     results += populateResultContent(resultTemplatePage.innerHTML, item);
                 }
                 break;
             case 'article':
-                if( titleCheck || introductionCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
                     resultsCount++;
                     results += populateResultContent(resultTemplateArticle.innerHTML, item);
                 }
                 break;
             case 'pen':
-                if( titleCheck || introductionCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
                     resultsCount++;
                     results += populateResultContent(resultTemplatePen.innerHTML, item);
                 }
@@ -199,10 +199,10 @@ function populateResultContent(html, item) {
     html = injectContent(html, item['title'], '@@title@@');
     html = injectContent(html, item['date'], '@@date@@');
     html = injectContent(html, item['date_friendly'], '@@date_friendly@@');
-    if( item['introduction'] ) {
-        html = injectContent(html, item['introduction'], '@@introduction@@');
+    if( item['lede'] ) {
+        html = injectContent(html, item['lede'], '@@lede@@');
     } else if( item['type'] == "pen" ) {
-        html = injectContent(html, '<em>Featured Pen</em>', '@@introduction@@');
+        html = injectContent(html, '<em>Featured Pen</em>', '@@lede@@');
     }
     return html;
 }

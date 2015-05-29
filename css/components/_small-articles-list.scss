@@ -47,7 +47,7 @@
         }
     }
     .small-article-title,
-    .small-article-introduction,
+    .small-article-lede,
     .small-article-date {
         text-shadow: 0 1px 0 $white;
     }
@@ -66,7 +66,7 @@
         svg ~ .small-article-date {
             margin-top: .3125em;
         }
-    .small-article-introduction {
+    .small-article-lede {
         color: $text-color;
         margin-top: .3125em;
         font-size: .875rem;

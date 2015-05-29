@@ -429,7 +429,7 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-/*------------------------------------*    #BASE - Typography
+/*------------------------------------*    #BASE - Typography (Global)
 \*------------------------------------*/
 h1,
 h2,
@@ -520,7 +520,7 @@ h3 a:focus,
 h3 a:active {
     color: #5f8aa6;
 }
-a span:not([class]) {
+a span:not([class]):not([itemprop]) {
     width: 1px;
     height: 1px;
     position: absolute;
@@ -815,7 +815,7 @@ iframe {
     background-color: red;
 }
 
-/*------------------------------------*    #BASE - Code
+/*------------------------------------*    #BASE - Typography (Code)
 \*------------------------------------*/
 code,
 kbd,
@@ -1374,32 +1374,32 @@ footer {
     margin-bottom: 2.25rem;
 }
 
-.site-description {
+.site-lede {
     max-width: 24em;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
 
-.article-introduction,
-.page-description {
+.article-lede,
+.page-lede {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.5;
 }
 
 @media (min-width: 769px) {
-    .page-description,
-    .site-description,
-    .article-introduction {
+    .page-lede,
+    .site-lede,
+    .article-lede {
         margin-top: -.5rem;
     }
 }
 
-.article-banner + .article-introduction {
+.article-banner + .article-lede {
     margin-top: 0;
 }
 
-.pens-introduction {
+.pens-lede {
     padding-bottom: 1.25rem;
     border-bottom: .125rem solid rgba(6, 6, 6, .1);
 }
@@ -1407,7 +1407,7 @@ footer {
 @media (max-width: 768px) {
     .article-title,
     .article-date,
-    .article-introduction {
+    .article-lede {
         text-align: left;
     }
 }
@@ -1534,7 +1534,7 @@ aside .small-articles-list li + li {
     text-decoration: none;
 }
 .small-articles-list .small-article-title,
-.small-articles-list .small-article-introduction,
+.small-articles-list .small-article-lede,
 .small-articles-list .small-article-date {
     text-shadow: 0 1px 0 #f9f9f9;
 }
@@ -1553,7 +1553,7 @@ aside .small-articles-list li + li {
 .small-articles-list svg ~ .small-article-date {
     margin-top: .3125em;
 }
-.small-articles-list .small-article-introduction {
+.small-articles-list .small-article-lede {
     color: #4f4f4f;
     margin-top: .3125em;
     font-size: .875rem;
@@ -2268,7 +2268,7 @@ aside .small-articles-list li + li {
     }
 }
 
-.page-style-guide :not(.page-description) + h3[id] {
+.page-style-guide :not(.page-lede) + h3[id] {
     margin-top: 3.375rem;
 }
 
