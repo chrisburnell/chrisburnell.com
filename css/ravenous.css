@@ -1783,15 +1783,15 @@ aside .small-articles-list li + li {
 \*------------------------------------*/
 @media (min-width: 769px) {
     .widget-search,
-    .widget-featured-pens,
-    .widget-related-articles {
+    .widget-related-articles,
+    .widget-featured-pens {
         margin-top: 1.25rem;
     }
 }
 
 .widget-search-title,
-.widget-featured-pens-title,
-.widget-related-articles-title {
+.widget-related-articles-title,
+.widget-featured-pens-title {
     margin-top: 0;
 }
 
@@ -1807,6 +1807,9 @@ aside .small-articles-list li + li {
         margin-bottom: 1.25rem;
         text-align: center;
     }
+}
+.widget-featured-pens-link:after {
+    content: "\00a0\2192";
 }
 
 /*------------------------------------*    #COMPONENTS - Footer
