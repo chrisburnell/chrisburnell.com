@@ -11,6 +11,7 @@
     }
     @include media("<=medium") {
         width: 100%;
+        padding-top: $default-margin;
     }
 }
     .nav-primary-list {
