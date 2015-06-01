@@ -1,7 +1,7 @@
 {
     "name": "Ravenous",
     "author": "Chris Burnell (@iamchrisburnell)",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "license": "CC",
     "main": "gulpfile.js",
     "dependencies": {

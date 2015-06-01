@@ -1,6 +1,7 @@
 @charset "UTF-8";
-/*! Ravenous - version 2.4.0 */
+/*! Ravenous */
 /**
+ * @version 2.5.0
  * @author  Chris Burnell (@iamchrisburnell)
  * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
  * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
@@ -12,7 +13,7 @@
 @import "generic/box-sizing",
         "generic/normalize";
 
-// #UTILITIES
+// #UTILS
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
@@ -53,6 +54,6 @@
 // #PAGES
 @import "pages/styleguide";
 
-// #HELPERS
+// #HELPERS/TRUMPS
 @import "utils/placeholders",
         "utils/helpers";

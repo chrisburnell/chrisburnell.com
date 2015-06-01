@@ -1,6 +1,7 @@
 @charset "UTF-8";
-/*! Ravenous - version 2.4.0 */
+/*! Ravenous */
 /**
+ * @version 2.5.0
  * @author  Chris Burnell (@iamchrisburnell)
  * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
  * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
@@ -427,6 +428,10 @@ html {
         -ms-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+}
+
+.svg--master {
+    display: none;
 }
 
 /*------------------------------------*    #BASE - Typography (Global)
@@ -1117,6 +1122,11 @@ footer {
 .logo:active {
     text-decoration: none;
 }
+.logo:active {
+    -webkit-transform: translateY(.125rem);
+        -ms-transform: translateY(.125rem);
+            transform: translateY(.125rem);
+}
 @media (min-width: 769px) {
     .logo {
         float: left;
@@ -1134,8 +1144,6 @@ footer {
             animation-play-state: paused;
     -webkit-transition: all .2s ease;
             transition: all .2s ease;
-    -webkit-transform: translate3d(0, -.8125em, 0);
-            transform: translate3d(0, -.8125em, 0);
     will-change: top;
     z-index: -1;
     width: 2.307em;
@@ -1144,30 +1152,28 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transform: translateY(-.8125em);
+        -ms-transform: translateY(-.8125em);
+            transform: translateY(-.8125em);
 }
 .logo:hover svg,
 .logo:focus svg,
 .logo:active svg {
     /**
-         * Only animate the image when the user hovers `.logo`.
+         * Only animate the image when the user interacts with `.logo`
          */
     -webkit-animation-play-state: running;
             animation-play-state: running;
 }
-.logo:active {
-    -webkit-transform: translateY(.125rem);
-        -ms-transform: translateY(.125rem);
-            transform: translateY(.125rem);
-}
 .logo:active svg {
     /**
-             * In order to get `.logo svg` to travel up 2x the distance the
-             * `.logo` text does, first the `translate` applied on the parent
-             * (of the `aside`) has to be counteracted, then (2 * 0.039em)
-             * is added, totalling 0.117em, made negative on the y-axis to
-             * go up. We cannot use `translate` as it is used below for
-             * further animating.
-             */
+         * In order to get `.logo svg` to travel up 2x the distance the
+         * `.logo` text does, first the `translate` applied on the parent
+         * (of the `aside`) has to be counteracted, then (2 * 0.039em)
+         * is added, totalling 0.117em, made negative on the y-axis to
+         * go up. We cannot use `translate` as it is used below for
+         * further animating.
+         */
     top: -.4rem;
 }
 
@@ -1565,8 +1571,6 @@ aside .small-articles-list li + li {
 .small-articles-list svg {
     -webkit-transition: all .2s ease;
             transition: all .2s ease;
-    -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0);
     will-change: opacity;
     z-index: -1;
     opacity: .05;
@@ -1576,6 +1580,9 @@ aside .small-articles-list li + li {
     position: absolute;
     top: 50%;
     right: .5em;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     stroke: #4f4f4f;
 }
 @media (max-width: 500px) {
@@ -2115,10 +2122,6 @@ aside .small-articles-list li + li {
 
 /*------------------------------------*    #COMPONENTS - Icons
 \*------------------------------------*/
-.svg--master {
-    display: none;
-}
-
 /*a*/
 .icon {
     -webkit-transition: all .2s ease;

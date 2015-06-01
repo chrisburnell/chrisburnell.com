@@ -2,11 +2,6 @@
     #COMPONENTS - Icons
 \*------------------------------------*/
 
-// Hide our SVGs injected just below `<body>`
-.svg--master {
-    display: none;
-}
-
 /*a*/.icon {
     @include transition;
     @include will-change(opacity, transform);
