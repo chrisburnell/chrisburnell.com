@@ -8,7 +8,7 @@
 }
 
 /*a*/.icon {
-    @include transition();
+    @include transition;
     @include will-change(opacity, transform);
     opacity: $opacity-high;
     height: $icon-size;

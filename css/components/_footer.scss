@@ -22,7 +22,7 @@
     white-space: nowrap;
 }
 .footer-home-link {
-    @include transition;
+    @include transition(transform);
     @include will-change(transform);
     width: 50px;
     height: 50px;
@@ -37,7 +37,7 @@
         text-decoration: none;
     }
     &:active {
-        @include translate3d(0, .143em, 0);
+        transform: translateY(.143rem);
     }
     @include media("<=small") {
         margin-right: .5rem;

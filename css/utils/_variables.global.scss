@@ -11,7 +11,7 @@ $breakpoints:  (
     "large":   $max-wrapper-width,
     "medium":  $medium-wrapper-width,
     "small":   $small-wrapper-width
-)  !default; // overwrite include-media.scss
+)  !default; // overwrite _include-media.scss
 
 /// Layout $variables
 $default-margin:         $wrapper-padding  !default;
@@ -37,10 +37,11 @@ $black-medium:      rgba($black, $opacity-low)        !default;
 $black-dark:        rgba($black, $opacity-medium)     !default;
 
 /// Font $variables
-$base-font-size:        16px !default;
-$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif     !default;
-$secondary-font-stack:  "proxima-nova", sans-serif                  !default;
-$heading-font-stack:    "league-gothic", Impact, sans-serif         !default;
+$base-font-size:        16px   !default;
+$base-line-height:      1.875  !default;
+$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif  !default;
+$secondary-font-stack:  "proxima-nova", sans-serif               !default;
+$heading-font-stack:    "league-gothic", Impact, sans-serif      !default;
 
 /// Transition $variables
 $transition-time:      0.2s  !default;

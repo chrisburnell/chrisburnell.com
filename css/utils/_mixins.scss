@@ -3,19 +3,33 @@
 //
 
 /// Linear Gradient
-@mixin gradient($top, $bottom) {
-    background-image: linear-gradient(to bottom, #{$top} 0%, #{$bottom} 100%);
+@mixin gradient($top, $bottom, $direction: "to bottom") {
+    background-image: linear-gradient(#{$direction}, #{$top} 0%, #{$bottom} 100%);
 }
 
 /// Transition
 @mixin transition($values...) {
+    $transition: ();
     @if( length($values) == 0 ) {
-        $values: all #{$transition-time} #{$transition-function};
+        $transition: all #{$transition-time} #{$transition-function};
     }
     @else if( str-index(""+$values+"", " ") == null and $values != "none" ) {
-        $values: #{$values} #{$transition-time} #{$transition-function};
+        $transition: #{$values} #{$transition-time} #{$transition-function};
     }
-    transition: #{$values};
+    @else if( str-index(""+$values+"", ",") > 0 ) {
+        @each $value in $values {
+            @if( str-index(""+$value+"", " ") == null ) {
+                $transition: append($transition, unquote("#{$value} #{$transition-time} #{$transition-function}"), comma);
+            }
+            @else {
+                $transition: append($transition, unquote("#{$value}"), comma);
+            }
+        }
+    }
+    @else {
+        $transition: #{$values};
+    }
+    transition: #{$transition};
 }
 
 /// Will-change
@@ -23,12 +37,12 @@
     will-change: #{$values};
 }
 
-/// Translate3D
-@mixin translate3d($values...) {
-    @if( length($values) == 0 ) {
-        $values: 0, 0, 0;
-    }
-    transform: translate3d(#{$values});
+/// Center
+@mixin center() {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 /// Animation

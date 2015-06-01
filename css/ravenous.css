@@ -505,12 +505,14 @@ a:active {
     text-decoration: underline;
 }
 h2 a:link,
-h3 a:link {
+h2 a:visited,
+h3 a:link,
+h3 a:visited {
     color: #4f4f4f;
 }
 h2 a:visited,
 h3 a:visited {
-    color: #363636;
+    color: dimgray;
 }
 h2 a:hover,
 h2 a:focus,
@@ -903,12 +905,13 @@ button:active,
 }
 button:active,
 .button:active {
-    -webkit-transform: translate3d(0, .25rem, 0);
-            transform: translate3d(0, .25rem, 0);
     height: 2em;
     padding-bottom: 0;
     margin-bottom: .25rem;
     box-shadow: inset 0 -1px 0 0 #4b6f87;
+    -webkit-transform: translateY(.25rem);
+        -ms-transform: translateY(.25rem);
+            transform: translateY(.25rem);
 }
 button:before,
 button:after,
@@ -1255,6 +1258,7 @@ footer {
 @media (max-width: 768px) {
     .nav-primary {
         width: 100%;
+        padding-top: 1.25rem;
     }
 }
 
@@ -1840,8 +1844,8 @@ aside .small-articles-list li + li {
 }
 
 .footer-home-link {
-    -webkit-transition: all .2s ease;
-            transition: all .2s ease;
+    -webkit-transition: -webkit-transform .2s ease;
+            transition:         transform .2s ease;
     will-change: transform;
     width: 50px;
     height: 50px;
@@ -1857,8 +1861,9 @@ aside .small-articles-list li + li {
     text-decoration: none;
 }
 .footer-home-link:active {
-    -webkit-transform: translate3d(0, .143em, 0);
-            transform: translate3d(0, .143em, 0);
+    -webkit-transform: translateY(.143rem);
+        -ms-transform: translateY(.143rem);
+            transform: translateY(.143rem);
 }
 @media (max-width: 500px) {
     .footer-home-link {
