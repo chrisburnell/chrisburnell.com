@@ -237,9 +237,9 @@ $unit-intervals: (
       $element: '(min-width: #{$result + $interval})';
     } @else if ($operator == '<') {
       $element: '(max-width: #{$result - $interval})';
-    } @else if ($operator == '>=') {
+    } @else if ($operator == '>=' or $operator == '≥') {
       $element: '(min-width: #{$result})';
-    } @else if ($operator == '<=') {
+    } @else if ($operator == '<=' or $operator == '≤') {
       $element: '(max-width: #{$result})';
     } @else {
       @warn '#{$expression} is missing an operator.';
