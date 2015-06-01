@@ -497,7 +497,7 @@ a:link {
     color: #5f8aa6;
 }
 a:visited {
-    color: #80a2b8;
+    color: #4b6f87;
 }
 a:hover,
 a:focus,
@@ -510,7 +510,7 @@ h3 a:link {
 }
 h2 a:visited,
 h3 a:visited {
-    color: dimgray;
+    color: #363636;
 }
 h2 a:hover,
 h2 a:focus,

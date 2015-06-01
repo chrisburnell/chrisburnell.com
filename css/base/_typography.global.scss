@@ -55,7 +55,7 @@ a {
         color: $brand;
     }
     &:visited {
-        color: lighten($brand, 10%);
+        color: darken($brand, 10%);
     }
     &:hover,
     &:focus,
@@ -68,7 +68,7 @@ a {
             color: $text-color;
         }
         &:visited {
-            color: lighten($text-color, 10%);
+            color: darken($text-color, 10%);
         }
         &:hover,
         &:focus,
