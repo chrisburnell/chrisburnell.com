@@ -119,7 +119,7 @@ p {
         margin-bottom: $default-margin;
     }
     &:empty {
-        @extend .hidden;
+        @extend .removed;
     }
 }
 

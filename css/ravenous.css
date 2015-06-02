@@ -1255,6 +1255,7 @@ footer {
 @media (max-width: 768px) {
     .nav-primary {
         width: 100%;
+        padding-top: 1.25rem;
     }
 }
 
@@ -2304,7 +2305,17 @@ button,
 
 /*------------------------------------*    #UTILS - Helpers
 \*------------------------------------*/
-.hidden,
+.hide,
+.hidden {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.remove,
+.removed,
 p:empty {
     display: none !important;
 }
