@@ -47,15 +47,14 @@ h4 {
 }
 
 a {
-    @include transition(background  $transition-time  $transition-function,
-                        color       $transition-time  $transition-function);
+    @include transition(background, color);
     @include will-change(background, color);
     text-decoration: none;
     &:link {
         color: $brand;
     }
     &:visited {
-        color: lighten($brand, 10%);
+        color: darken($brand, 10%);
     }
     &:hover,
     &:focus,
@@ -64,7 +63,8 @@ a {
     }
     h2 &,
     h3 & {
-        &:link {
+        &:link,
+        &:visited {
             color: $text-color;
         }
         &:visited {

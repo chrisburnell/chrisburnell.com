@@ -21,8 +21,7 @@
     left: 100%;
 }
 .search-input {
-    @include transition(background-color $transition-time $transition-function,
-                        border-color     $transition-time $transition-function);
+    @include transition(background-color, border-color);
     @include will-change(background-color, border-color);
     box-sizing: inherit !important;
     width: 100%;

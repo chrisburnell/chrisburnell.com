@@ -40,10 +40,7 @@
             }
         }
         a {
-            @include transition(color                $transition-time  $transition-function,
-                                padding-bottom       $transition-time  $transition-function,
-                                border-bottom-width  $transition-time  $transition-function,
-                                transform            $transition-time  $transition-function);
+            @include transition(color, padding-bottom, border-bottom-width, transform);
             @include will-change(color, padding-bottom, border-bottom-width, transform);
             color: $text-color-alt;
             display: block;

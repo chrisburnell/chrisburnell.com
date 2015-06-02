@@ -8,9 +8,14 @@ html {
     min-height: 100%;
     position: relative;
     overflow-y: scroll;
-    font: 400 normal #{$base-font-size}/1.875 $primary-font-stack;
+    font: 400 normal #{$base-font-size}/#{$base-line-height} $primary-font-stack;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
+}
+
+// Hide the SVG injected just below `<body>`
+.svg--master {
+    display: none;
 }

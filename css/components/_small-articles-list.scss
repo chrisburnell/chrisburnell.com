@@ -73,7 +73,6 @@
     }
     svg {
         @include transition;
-        @include translate3d(0, -50%, 0);
         @include will-change(opacity);
         @include z-index(below);
         opacity: ($opacity-low / 2);
@@ -83,6 +82,7 @@
         position: absolute;
         top: 50%;
         right: .5em;
+        transform: translateY(-50%);
         stroke: $text-color;
         @include media("<=small") {
             width:  4em !important;
