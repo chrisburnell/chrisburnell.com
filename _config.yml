@@ -12,9 +12,9 @@ author_job_title: UI developer
 employer:     City University
 employer_url: https://www.city.ac.uk
 
-url:         https://chrisburnell.com
-baseurl:     ""
-shorturl:    http://repc.co/
+url:      https://chrisburnell.com
+baseurl:  ""
+shorturl: http://repc.co/
 
 url_codepen: http://codepen.io/chrisburnell
 url_github:  https://github.com/chrisburnell
