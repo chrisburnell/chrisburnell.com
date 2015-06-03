@@ -2,13 +2,22 @@
     #BASE - Typography (Global)
 \*------------------------------------*/
 
+html {
+    color: $text-color;
+    font: 400 normal #{$base-font-size}/#{$base-line-height} $primary-font-stack;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.2em; // so that elements can be floated inside headings
+    min-height: 1.25em; // so that elements can be floated inside headings
     padding: 0;
     margin: 0;
     position: relative;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 h1 {
     font-family: $heading-font-stack;
@@ -46,6 +55,16 @@ h4 {
     margin-bottom: .5rem;
 }
 
+p {
+    margin: 0 0 $default-margin;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:empty {
+        @extend .removed;
+    }
+}
+
 a {
     @include transition(background, color);
     @include will-change(background, color);
@@ -77,10 +96,7 @@ a {
         }
     }
     span:not([class]):not([itemprop]) {
-        width:  1px;
-        height: 1px;
-        position: absolute;
-        overflow: hidden;
+        @extend .hidden;
     }
 }
     .heading-anchor {
@@ -112,16 +128,6 @@ a {
             color: #{$color} !important;
         }
     }
-
-p {
-    margin: 0;
-    &:not(:last-child) {
-        margin-bottom: $default-margin;
-    }
-    &:empty {
-        @extend .removed;
-    }
-}
 
 ol,
 ul {
