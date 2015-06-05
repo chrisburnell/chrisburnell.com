@@ -8,9 +8,9 @@ $max-wrapper-width:    1140px   !default;
 $medium-wrapper-width:  768px   !default;
 $small-wrapper-width:   500px   !default;
 $breakpoints:  (
-    "large":   $max-wrapper-width,
+    "small":   $small-wrapper-width,
     "medium":  $medium-wrapper-width,
-    "small":   $small-wrapper-width
+    "large":   $max-wrapper-width
 )  !default; // overwrite _include-media.scss
 
 /// Layout $variables
