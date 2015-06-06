@@ -1868,6 +1868,7 @@ button,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-touch-callout: default;
   -webkit-touch-callout: none; }
 
 /*------------------------------------*    #UTILS - Helpers
