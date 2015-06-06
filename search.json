@@ -6,7 +6,7 @@ searchable: false
 {% assign first = true %}
 [
 {% for page in site.pages %}
-    {% unless page.title == null or page.title == empty or page.searchable == false %}
+    {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "page",
             "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
@@ -17,7 +17,7 @@ searchable: false
     {% endunless %}
 {% endfor %}
 {% for post in site.posts %}
-    {% unless post.title == null or post.title == empty or post.searchable == false %}
+    {% unless post.title == null or post.title == empty or post.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "{% if post.categories contains "pen" %}pen{% else %}article{% endif %}",
             "title": {{ post.title | replace: "’", "'" | replace: "–", "-" | jsonify }},

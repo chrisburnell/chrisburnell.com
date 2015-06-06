@@ -23,6 +23,7 @@ lede: All of my articles.
         </image>
 
         {% for post in site.categories.article %}
+        {% unless post.draft %}
             <item>
                 <title>{{ post.title }}</title>
                 <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
@@ -30,6 +31,7 @@ lede: All of my articles.
                 <category>{{ post.categories }}</category>
                 {% if post.lede %}<description>{{ post.lede }}</description>{% endif %}
             </item>
+        {% endunless %}
         {% endfor %}
 
     </channel>

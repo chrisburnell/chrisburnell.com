@@ -13,6 +13,7 @@ lede: All of my articles listed on one page.
 
 <ol id="articles" class="articles-list" role="list">
     {% for post in site.categories.article %}
+    {% unless post.draft %}
         <li>
             <h2 class="article-title">
                 <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
@@ -26,6 +27,7 @@ lede: All of my articles listed on one page.
                 <a class="comments-link" href="{{ post.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
         </li>
+    {% endunless %}
     {% endfor %}
 </ol>
 
