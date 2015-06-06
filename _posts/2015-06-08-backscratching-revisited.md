@@ -12,7 +12,7 @@ tags:
 - css
 - tutorials
 
-shorturl: fv8cj
+shorturl: 07yew
 comments: true
 ---
 
