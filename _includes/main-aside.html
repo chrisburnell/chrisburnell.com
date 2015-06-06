@@ -5,7 +5,7 @@
     {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada">Canadian</span>{% endcapture %}
     {% assign author_microdata_job_title = site.author_job_title %}
-    {% assign author_microdata_home_location = "London, UK" %}
+    {% assign author_microdata_home_location = site.author_location %}
     {% capture author_microdata_works_for %}and currently working at <a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
         <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: "%d %b, %Y" }}</strong></time>
@@ -36,7 +36,7 @@
     {% capture author_microdata_name %}<span itemprop="name">{{ site.author }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada" itemprop="nationality">Canadian</span>{% endcapture %}
     {% capture author_microdata_job_title %}<span itemprop="jobTitle">{{ site.author_job_title }}</span>{% endcapture %}
-    {% capture author_microdata_home_location %}<span itemprop="homeLocation">London, UK</span>{% endcapture %}
+    {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author_location }}</span>{% endcapture %}
     {% capture author_microdata_works_for %}and currently working at <a rel="external" href="{{ site.employer_url }}"><span itemprop="worksFor">{{ site.employer }}</span></a>{% endcapture %}
     {% capture author_information_details %}
         <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>

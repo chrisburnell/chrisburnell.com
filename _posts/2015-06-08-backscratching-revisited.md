@@ -47,7 +47,7 @@ a span {
 
 The CSS technique above for hiding the span, itself, is a piece of code that seems more verbose than necessary—`display: none;` would work just as well to hide the element—but unlike `display: none;` it does not take your element out of the flow of the page, allowing it to be read as any other text by screen readers.
 
-In my actual SCSS I abstract the "hiding" CSS out and `@extend` it where I need it, like so:
+In my actual SCSS, I abstract the "hiding" CSS out and `@extend` it where I need it, like so:
 
 {% highlight scss %}
 .hide,
