@@ -19,7 +19,7 @@ shorturl: fv8cj
 comments: true
 ---
 
-In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I wrote a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development, and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
+In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I wrote a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
 
 
 --------
@@ -27,7 +27,7 @@ In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-y
 
 I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/) in the form of [ARIA](http://html5doctor.com/using-aria-in-html/) and [Microdata](http://schema.org/docs/documents.html).
 
-In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/) and how to properly present content for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `<span>` to designate visually-hidden text inside an anchor.
+In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/) and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `<span>` to designate visually-hidden text inside an anchor.
 
 {% highlight html %}
 <a href="/article/interesting-article">
@@ -125,4 +125,4 @@ Now we can be sure to only target `span`s without a `class` *or* `itemprop` attr
 
 You can extrapolate this idea to more than just `span`s for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
-I have to reiterate that this technique needs to be taken with a grain of salt. **Do not copy-pasta this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
+I have to reiterate that this technique needs to be taken with a grain of salt. **Do not <a href="https://gifs.chrisburnell.com/copypasta.gif" rel="nofollow">copy-pasta</a> this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
