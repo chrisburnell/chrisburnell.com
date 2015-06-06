@@ -114,7 +114,7 @@ What we’re doing here is:
 0. Add an click event listener to our `button` (which fortunately also works via keyboard commands)
 0. When the `button` *is* clicked, remove the `button` and load in our comments
 
----
+--------
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
@@ -144,7 +144,7 @@ What we’re doing here is:
 
 If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comment` is in the URL and we’re loading Disqus, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
 
----
+--------
 
 Almost there! Let’s create a failsafe—if our `button` no longer exists when the `showComments()` function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
@@ -219,13 +219,13 @@ We’ve met all the conditions we set when we embarked upon this task:
 
 As we saw in [the statistics](#the-weigh-in "The Weigh In") of Disqus’ impact, these aren’t massive savings, but they’ll certainly help out some of my users whom I know are browsing on slow connections and slow mobile phones.
 
----
+--------
 
 We still have a small thorn when it comes to users without Javascript enabled. Of course, the `noscript` tag will display a message, <q>Please enable Javascript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, Disqus have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](http://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without Javascript enabled anyway.
 
 [A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as Disqus, but it works without Javascript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if Disqus was able to give a similar URL back in the case where Javascript is disabled, but as it’s an external service, this doesn’t seem possible without Javascript. `https://disqus.com/comments/?url=http://chrisburnell.com/articles/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope Disqus implements something like this soon.
 
----
+--------
 
 Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a Javascript wizard and close friend of mine, for helping me achieve this solution.
 
