@@ -12,7 +12,7 @@ tags:
 - css
 - tutorials
 
-edit_date: 2015-06-06 20:20:00
+edit_date: 2015-06-08 15:00:01
 edit_text: "I originally documented this technique in <a href=\"/article/ill-scratch-your-back\">a previous article</a>, but have updated it here to reflect accessibility needs."
 
 shorturl: fv8cj
