@@ -12,11 +12,14 @@ tags:
 - css
 - tutorials
 
-shorturl: 07yew
+edit_date: 2015-06-06 20:20:00
+edit_text: "I originally documented this technique in <a href=\"/article/ill-scratch-your-back\">a previous article</a>, but have updated it here to reflect accessibility needs."
+
+shorturl: fv8cj
 comments: true
 ---
 
-You may recall in [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I documented a technique I came up with to style default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development, and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
+In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I wrote a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development, and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
 
 
 --------

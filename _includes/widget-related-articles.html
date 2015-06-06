@@ -3,7 +3,6 @@
         <h3 class="widget-related-articles-title">Related Articles</h3>
         <ol class="small-articles-list" role="list">
             {% for post in site.related_posts limit:2 %}
-            {% unless post.draft %}
                 <li>
                     <a href="{{ post.url }}">
                         {% if post.categories contains "pen" %}
@@ -18,7 +17,6 @@
                         {% endif %}
                     </a>
                 </li>
-            {% endunless %}
             {% endfor %}
         </ol>
     </div>

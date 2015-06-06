@@ -1123,8 +1123,8 @@ footer {
 .nav-primary-list a:active,
 .page-home .nav-primary-home a,
 .page-about .nav-primary-about a,
-.page-articles .nav-primary-articles a,
-.page-pens .nav-primary-pens a,
+[class*="page-article"] .nav-primary-articles a,
+[class*="page-pen"] .nav-primary-pens a,
 .page-search .nav-primary-search a {
   color: #4f4f4f;
   padding-bottom: .5rem;
@@ -1132,8 +1132,8 @@ footer {
 
 .page-home .nav-primary-home a:after,
 .page-about .nav-primary-about a:after,
-.page-articles .nav-primary-articles a:after,
-.page-pens .nav-primary-pens a:after,
+[class*="page-article"] .nav-primary-articles a:after,
+[class*="page-pen"] .nav-primary-pens a:after,
 .page-search .nav-primary-search a:after {
   content: "";
   border-top: 0.5em solid #5f8aa6;
@@ -1212,6 +1212,13 @@ footer {
   .articles-list .article-date:before {
     content: "\2013\0020";
     color: #737373; }
+
+.article-edit {
+  background-color: rgba(95, 138, 166, 0.1);
+  padding: 1rem;
+  margin: 0 2.25rem 1.25rem;
+  font-style: italic;
+  line-height: 1.5; }
 
 /*------------------------------------*    #COMPONENTS - Articles List
 \*------------------------------------*/
@@ -1848,7 +1855,7 @@ footer {
  * We’re goin’ up around the bend
  */
 figure img,
-figure svg, blockquote, pre:not(.codepen), aside:not(.author), .article-banner, .small-articles-list a, .author-image {
+figure svg, blockquote, pre:not(.codepen), aside:not(.author), .article-banner, .article-edit, .small-articles-list a, .author-image {
   background-clip: padding-box;
   border-radius: 0.375rem; }
 

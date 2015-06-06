@@ -74,3 +74,11 @@
         color: $text-color-alt;
     }
 }
+.article-edit {
+    @extend %rounded;
+    background-color: rgba($brand, $opacity-low);
+    padding: 1rem;
+    margin: 0 $default-padding $default-margin;
+    font-style: italic;
+    line-height: 1.5;
+}

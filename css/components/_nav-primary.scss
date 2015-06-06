@@ -72,8 +72,8 @@
         .nav-primary-list a:active,
         .page-home .nav-primary-home a,
         .page-about .nav-primary-about a,
-        .page-articles .nav-primary-articles a,
-        .page-pens .nav-primary-pens a,
+        [class*="page-article"] .nav-primary-articles a,
+        [class*="page-pen"] .nav-primary-pens a,
         .page-search .nav-primary-search a {
             color: $text-color;
             padding-bottom: .5rem;
@@ -82,8 +82,8 @@
             // Primary Navigation Active Page Arrow
             .page-home .nav-primary-home a:after,
             .page-about .nav-primary-about a:after,
-            .page-articles .nav-primary-articles a:after,
-            .page-pens .nav-primary-pens a:after,
+            [class*="page-article"] .nav-primary-articles a:after,
+            [class*="page-pen"] .nav-primary-pens a:after,
             .page-search .nav-primary-search a:after {
                 content: "";
                 border-top:   .5em solid $brand;

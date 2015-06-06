@@ -6,7 +6,6 @@ searchable: no-content
 
 <ol id="articles" class="articles-list" role="list">
     {% for post in site.categories.article limit:5 %}
-    {% unless post.draft %}
         <li>
             <h2 class="article-title">
                 <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
@@ -20,7 +19,6 @@ searchable: no-content
                 <a class="comments-link" href="{{ post.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
         </li>
-    {% endunless %}
     {% endfor %}
 </ol>
 

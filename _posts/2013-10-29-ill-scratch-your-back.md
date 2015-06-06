@@ -10,14 +10,15 @@ tags:
 - css
 - tutorials
 
+edit_date: 2015-06-06 20:20:00
+edit_text: "I have revised this technique since originally writing this article. You can <a href=\"/article/backscratching-revisited\">jump to the updated article</a> or continue reading."
+
 # banner:        ill-scratch-your-back.png
 # banner_mobile: ill-scratch-your-back_mobile.png
 
 shorturl: 82n3v
 comments: true
 ---
-
-*I have revised this technique since originally writing this article. You can [jump to the updated article]({% post_url 2015-06-08-backscratching-revisited %}) or continue reading.*
 
 When building a site for a client who isn’t very tech-savvy, it’s important that they’re able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it’s then important that the CSS we write matches the output of the editor’s content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you’re used to.
 
