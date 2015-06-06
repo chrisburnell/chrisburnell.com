@@ -221,7 +221,7 @@ html {
 - modified the colour palette to match [my styleguide]({{ site.url }}{{ site.baseurl }}/style-guide)
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
----
+--------
 
 **You can view the final stylesheet that I’m using on Github Gist:**
 
