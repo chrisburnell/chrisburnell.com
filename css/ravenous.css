@@ -816,10 +816,10 @@ button,
     pointer-events: none; }
   button .icon--article,
   .button .icon--article {
-    width: 0.72em; }
+    width: .72em; }
   button .icon--feather,
   .button .icon--feather {
-    width: 0.58em; }
+    width: .58em; }
 
 /*------------------------------------*    #LAYOUT - Layout
 \*------------------------------------*/
