@@ -24,11 +24,6 @@
             </div>
         {% endif %}
     {% endcapture %}
-    {% if page.categories contains "pen" %}
-        {% assign author_biography_closer = "this pen is uninspiring and makes you want to claw your eyeballs out" %}
-    {% else %}
-        {% assign author_biography_closer = "this article is boring and makes you want to claw your eyeballs out" %}
-    {% endif %}
 {% else %}
     {% assign author_name_prefix = "about" %}
     {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
@@ -42,21 +37,26 @@
         <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
         <div class="author-employer">I’m a <strong>{{ site.author_job_title }}</strong></div>
     {% endcapture %}
-    {% if page.page_class contains "page-about" %}
-        {% assign author_biography_closer = "you don’t care about my life. Sorry." %}
-    {% elsif page.page_class contains "page-articles" %}
-        {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
-    {% elsif page.page_class contains "page-pens" %}
-        {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
-    {% elsif page.page_class contains "page-tags" %}
-        {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
-    {% elsif page.page_class contains "page-search" %}
-        {% assign author_biography_closer = "everything you search for looks totally boring" %}
-    {% elsif page.page_class contains "page-not-found" %}
-        {% assign author_biography_closer = "you’re upset that you found a broken page. Sorry" %}
-    {% else %}
-        {% assign author_biography_closer = "this page makes you wish you were doing something else, like folding socks" %}
-    {% endif %}
+{% endif %}
+
+{% if page.page_class contains "page-about" %}
+    {% assign author_biography_closer = "you don’t care about my life. Sorry." %}
+{% elsif page.page_class contains "page-articles" %}
+    {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
+{% elsif page.page_class contains "page-pens" %}
+    {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
+{% elsif page.page_class contains "page-tags" %}
+    {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
+{% elsif page.page_class contains "page-search" %}
+    {% assign author_biography_closer = "everything you search for looks totally boring" %}
+{% elsif page.page_class contains "page-not-found" %}
+    {% assign author_biography_closer = "you’re upset that you found a broken page. Sorry" %}
+{% elsif page.categories contains "article" %}
+        {% assign author_biography_closer = "this article is boring and makes you want to claw your eyeballs out" %}
+{% elsif page.categories contains "pen" %}
+    {% assign author_biography_closer = "this pen is uninspiring and makes you want to claw your eyeballs out" %}
+{% else %}
+    {% assign author_biography_closer = "this page makes you wish you were doing something else, like folding socks" %}
 {% endif %}
 
 <aside class="author  vcard" role="complementary"{{ author_microdata_tags }}>
