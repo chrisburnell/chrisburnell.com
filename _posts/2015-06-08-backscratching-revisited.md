@@ -45,9 +45,17 @@ a span {
 }
 {% endhighlight %}
 
-The CSS technique above for hiding the span, itself, is a piece of code that seems more verbose than necessary—`display: none;` would work just as well to hide the element—but unlike `display: none;` it does not take your element out of the flow of the page, allowing it to be read as any other text by screen readers.
+<aside>This technique for hiding text comes from <a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility" rel="external">Hiding Content for Accessibility</a>. Credit to <a href="http://snook.ca/" rel="external">Jonathan Snook</a>.</aside>
 
-In my actual SCSS, I abstract the "hiding" CSS out and `@extend` it where I need it, like so:
+The CSS technique above for hiding the `span`, itself, is a piece of code that seems more verbose than necessary. `display: none;` would work just as well to hide the element, but `display: none;` does something we don’t want: it removes the element from the flow of the page, meaning it *won’t* be read by screen readers, text-to-speech software, etc.
+
+However, the code above *does* allow the element’s content to be read aloud, and is treated as any other text by text-to-speech software, despite it being completely visually hidden from the user.
+
+
+--------
+
+
+In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
 {% highlight scss %}
 .hide,
@@ -66,12 +74,10 @@ a {
 }
 {% endhighlight %}
 
-*The snippet for hiding text comes from [Hiding Content for Accessibility](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility). Credit to [Jonathan Snook](http://snook.ca/).
-
 
 {% include heading.html title="One Step Further" %}
 
-We can take this even further by slowing down a touch. What happens if we *want* a `span` inside an anchor?
+We can tighten this up by slowing down a touch. What happens if we *do want* a `span` inside an anchor to be displayed visually?
 
 {% highlight html %}
 <a href="/article/interesting-article">
