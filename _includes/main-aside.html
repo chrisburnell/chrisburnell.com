@@ -1,12 +1,12 @@
 {% if page.layout == "article" %}
     {% assign author_name_prefix = "by" %}
-    {% assign author_microdata = "" %}
+    {% assign author_microdata_tags = "" %}
     {% assign author_microdata_photo = "" %}
     {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada">Canadian</span>{% endcapture %}
     {% assign author_microdata_job_title = site.author_job_title %}
     {% assign author_microdata_home_location = site.author_location %}
-    {% capture author_microdata_works_for %}and currently working at <a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
+    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
         <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: "%d %b, %Y" }}</strong></time>
         {% if page.categories contains "pen" %}
@@ -31,13 +31,13 @@
     {% endif %}
 {% else %}
     {% assign author_name_prefix = "about" %}
-    {% capture author_microdata %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
+    {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
     {% capture author_microdata_photo %} itemprop="photo"{% endcapture %}
     {% capture author_microdata_name %}<span itemprop="name">{{ site.author }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada" itemprop="nationality">Canadian</span>{% endcapture %}
     {% capture author_microdata_job_title %}<span itemprop="jobTitle">{{ site.author_job_title }}</span>{% endcapture %}
     {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author_location }}</span>{% endcapture %}
-    {% capture author_microdata_works_for %}and currently working at <a rel="external" href="{{ site.employer_url }}"><span itemprop="worksFor">{{ site.employer }}</span></a>{% endcapture %}
+    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}"><span itemprop="worksFor">{{ site.employer }}</span></a>{% endcapture %}
     {% capture author_information_details %}
         <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
         <div class="author-employer">I’m a <strong>{{ site.author_job_title }}</strong></div>
@@ -59,7 +59,7 @@
     {% endif %}
 {% endif %}
 
-<aside class="author  vcard" role="complementary"{{ author_microdata }}>
+<aside class="author  vcard" role="complementary"{{ author_microdata_tags }}>
 
     <div class="clear  author-information">
         <a rel="me" href="/about" tabindex="-1">
@@ -76,15 +76,14 @@
     </div>
 
     <div class="author-biography">
-        <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe via RSS</a>.</p>
+        <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and currently working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe via RSS</a>.</p>
         <p>I also <a rel="me publisher external" class="link--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="link--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="link--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="link--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
 
-    {% if page.page_class contains "page-search" %}
-    {% else %}
+    {% unless page.page_class contains "page-search" %}
         {% include widget-search.html %}
-    {% endif %}
+    {% endunless %}
 
     {% if page.page_class contains "page-home" %}
         {% include widget-featured-pens.html %}
