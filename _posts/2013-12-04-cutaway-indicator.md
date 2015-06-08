@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2013-12-04 12:00:00
 
 title: Cutaway Indicator
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: yIwzd
 shorturl: b3sh4
-comments: true
 ---
 
-{% include codepen-embed.html slug="yIwzd" height="200" %}
+{% include embed-codepen.html height="200" %}
 
 {% highlight html %}
 <button>Hover Me</button>

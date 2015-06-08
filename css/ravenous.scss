@@ -1,42 +1,59 @@
 @charset "UTF-8";
-/*! Ravenous - version 2.3.0 */
-/* by Chris Burnell (@iamchrisburnell)
- * The sixth iteration design of chrisburnell.com.
+/*! Ravenous */
+/**
+ * @version 2.5.0
+ * @author  Chris Burnell (@iamchrisburnell)
+ * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
+ * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
+ *
  * Please contact me if you want to learn about anything you see here.
- *
- * Table of Contents:
- *
- * NORMALIZE................. Import normalize as a reset.
- * LAYOUT.................... Set the general page layout.
- * TYPOGRAPHY................ Set the default content styles.
- * CODE BLOCKS............... Set the code block styles.
- * HEADER.................... Set the header styles.
- * LOGO...................... Set the logo styles.
- * CONTENT................... Set the content styles.
- * ASIDES.................... Set the aside styles.
- * LISTS..................... Set the article lists styles.
- * BUTTONS................... Set the default button styles.
- * STYLEGUIDE................ Set the style guide styles.
- * FOOTER.................... Set the footer styles.
- * ICONS..................... Set the icon styles.
- * PRINT..................... Set the print styles.
- * SHAME..................... Shameful hacks, shims, and temporary fixes.
  */
 
-@import "normalize",
-        "include-media";
-@import "ui/vars",
-        "ui/layout",
-        "ui/typography.base",
-        "ui/typography.code",
-        "ui/header.base",
-        "ui/header.logo",
-        "ui/content.base",
-        "ui/content.asides",
-        "ui/content.lists",
-        "ui/content.buttons",
-        "ui/content.styleguide",
-        "ui/footer.base",
-        "ui/icons",
-        "ui/print",
-        "ui/shame";
+// #GENERIC
+@import "generic/box-sizing",
+        "generic/normalize";
+
+// #UTILS
+@import "utils/variables.global",
+        "utils/variables.code",
+        "utils/variables.branding",
+        "utils/include-media",
+        "utils/mixins";
+
+// #BASE
+@import "base/page",
+        "base/typography.global",
+        "base/typography.code",
+        "base/buttons";
+
+// #LAYOUT
+@import "layout/wrap",
+        "layout/header",
+        "layout/article",
+        "layout/aside",
+        "layout/footer";
+
+// #COMPONENTS
+@import "components/logo",
+        "components/nav-primary",
+        "components/article",
+        "components/articles-list",
+        "components/small-articles-list",
+        "components/search",
+        "components/nav-secondary",
+        "components/author",
+        "components/aside-widgets",
+        "components/footer",
+        "components/nav-tertiary",
+        "components/comments",
+        "components/code",
+        "components/icons",
+        "components/media",
+        "components/print";
+
+// #PAGES
+@import "pages/styleguide";
+
+// #HELPERS/TRUMPS
+@import "utils/placeholders",
+        "utils/helpers";

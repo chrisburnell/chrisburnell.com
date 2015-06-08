@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #COMPONENTS - Tertiary Navigation
+\*------------------------------------*/
+
+.nav-tertiary {
+    @include media(">medium") {
+        float: right;
+        margin-top: .3125rem;
+    }
+    @include media("<=medium") {
+        margin-top: .625rem;
+    }
+}
+    .nav-tertiary-list {
+        li {
+            display: inline-block;
+            + li {
+                margin-left: 1rem;
+            }
+        }
+    }

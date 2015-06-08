@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #COMPONENTS - Articles List
+\*------------------------------------*/
+
+.articles-list {
+    li {
+        width: 100%;
+        display: inline-block;
+        clear: both;
+        padding: 1.5rem 1rem;
+        border-top: ($default-border / 2) solid $black-medium;
+        position: relative;
+        &:nth-child(odd) {
+            background-color: $black-light;
+        }
+        @include media("<=medium") {
+            padding-top:    1.875rem;
+            padding-bottom: 1.875rem;
+            text-align: center;
+        }
+    }
+    .article-title,
+    .article-date,
+    .comments-link {
+        text-shadow: 0 1px 0 $white; // helps pop against the background
+    }
+    .article-title {
+        margin-bottom: ($default-margin / 2);
+    }
+}

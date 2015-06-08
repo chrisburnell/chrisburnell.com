@@ -12,10 +12,12 @@
 
         {% include main-aside.html %}
 
-        {% if page.page_class == "home-page" %}
-            <h2 class="site-description">{{ site.description }}</h2>
-        {% elsif page.description %}
-            <h2 class="page-description">{{ page.description }}</h2>
+        {% if page.page_class contains "page-home" %}
+            <h2 class="site-lede">{{ site.lede }}</h2>
+        {% elsif page.page_class contains "page-search" %}
+            <h2 class="page-lede" id="search-meta">Search for something!</h2>
+        {% elsif page.lede %}
+            <h2 class="page-lede">{{ page.lede }}</h2>
         {% endif %}
 
         {{ content }}

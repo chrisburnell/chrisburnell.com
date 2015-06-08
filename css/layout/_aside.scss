@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    #LAYOUT - Aside
+\*------------------------------------*/
+
+/**
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `_content.scss`.
+ */
+aside {
+    @include media(">medium") {
+        width: $aside-width;
+        float: left;
+        margin-left: -($aside-width + $default-padding);
+    }
+    @include media("<=medium") {
+        width: 100%;
+        &:not(.author) {
+            @extend %rounded;
+            background: $black-light;
+            padding: 1rem;
+            margin-bottom: $default-margin;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    p,
+    figcaption {
+        clear: both;
+        @include media(">small") {
+            font-size: .875rem;
+        }
+    }
+}

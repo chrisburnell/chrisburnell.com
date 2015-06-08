@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #COMPONENTS - Icons
+\*------------------------------------*/
+
+/*a*/.icon {
+    @include transition;
+    @include will-change(opacity, transform);
+    opacity: $opacity-high;
+    height: $icon-size;
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 1;
+        text-decoration: none;
+    }
+    &:active {
+        transform: translateY(.125rem);
+    }
+    @each $brand in $brands {
+        $name:  nth($brand, 1);
+        $ratio: nth($brand, 3);
+        &.icon--#{$name},
+        &.link--#{$name} {
+            width: ($ratio * $icon-size);
+        }
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

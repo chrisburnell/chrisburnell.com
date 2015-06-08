@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-11-19 12:00:00
 
 title: Interaction Jazz
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: myyRqp
 shorturl: bhbt9
-comments: true
 ---
 
-{% include codepen-embed.html slug="myyRqp" height="600" %}
+{% include embed-codepen.html height="600" %}
 
 {% highlight haml %}
 - (1...51).each do |row|

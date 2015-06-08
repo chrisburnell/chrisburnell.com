@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    #PAGES - Style Guide
+\*------------------------------------*/
+
+.color-block-list {
+    width: 100%;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    li {
+        color: $white;
+        height: 6.5rem;
+        display: table-cell;
+        font-family: $code-font-stack;
+        font-size: .875em;
+        font-weight: 600;
+        line-height: 7.429; // 6.5/0.875
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        &[data-color="#{$brand}"] {
+            background-color: $brand;
+        }
+        &[data-color="#{$white}"] {
+            background-color: $white;
+            color: $text-color;
+        }
+        &[data-color="#{$text-color}"] {
+            background-color: $text-color;
+        }
+        &[data-color="#{$text-color-alt}"] {
+            background-color: $text-color-alt;
+        }
+        &[data-color="#{$text-color-light}"] {
+            background-color: $text-color-light;
+            color: $text-color;
+        }
+        @include media("<=small") {
+            width: 6.5rem;
+            display: inline-block;
+        }
+    }
+}
+
+.page-style-guide {
+    :not(.page-lede) + h3[id] {
+        margin-top: (1.5 * $default-padding);
+    }
+}

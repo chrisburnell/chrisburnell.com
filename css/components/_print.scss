@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #COMPONENTS - Print
+\*------------------------------------*/
+
+@include media("print") {
+    nav,
+    .featured-pens,
+    .related-articles,
+    .pagination,
+    .comments,
+    footer .home-link,
+    footer .copyright-spacer,
+    footer .style-guide-link,
+    footer .icons-list {
+        display: none;
+    }
+    button,
+    .button {
+        color: $text-color;
+        border: 1px solid $text-color;
+        box-shadow: none;
+    }
+}

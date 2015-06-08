@@ -1,31 +1,27 @@
 ---
 layout: default
-page_class: home-page
+page_class: page-home
+searchable: no-content
 ---
 
 <ol id="articles" class="articles-list" role="list">
-    {% assign articlesLimit = 5 %}
-    {% assign articlesCount = 0 %}
-    {% for post in site.posts %}
-    {% unless articlesCount >= articlesLimit or post.draft or post.category != "article" %}
-        {% assign articlesCount = articlesCount | plus: 1 %}
+    {% for post in site.categories.article limit:5 %}
         <li>
             <h2 class="article-title">
                 <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
-            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            {% if post.introduction %}
-                <p class="article-introduction">{{ post.introduction }}</p>
+            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
+            {% if post.lede %}
+                <p class="article-lede">{{ post.lede }}</p>
             {% endif %}
             <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
             {% if post.comments == true %}
-                <a class="comments-link" href="{{ post.url }}/#disqus_thread">Leave a comment</a>
+                <a class="comments-link" href="{{ post.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
         </li>
-    {% endunless %}
     {% endfor %}
 </ol>
 
-<div class="articles-navigation">
-    <a class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
-</div>
+<nav class="nav-secondary" role="navigation">
+    <a class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+</nav>

@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: mybQEL
 shorturl: 058xp
-comments: true
 ---
 
-{% include codepen-embed.html slug="mybQEL" height="525" %}
+{% include embed-codepen.html height="525" %}
 
 {% highlight html %}
 <div class="modal">

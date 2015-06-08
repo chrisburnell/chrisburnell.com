@@ -22,98 +22,24 @@ VEN      OUSRAVENOUSRAVENOUSRAVENO
             US
 
 Checking out the source code, eh? Check out the git repository:
-https://github.com/chrisburnell/chrisburnell.github.io
+{{ site.url_repo }}
 Contact me if you want to know more about the code, or if you want to use a
 snippet of code on a project of your own. -->
 
 <html lang="en">
-<head>
 
-    {% if page.page_class == "home-page" %}
-        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endcapture %}
-    {% else %}
-        {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
-    {% endif %}
-    {% if page.introduction %}
-        {% capture meta_description %}{{ page.introduction }}{% endcapture %}
-    {% elsif page.description %}
-        {% capture meta_description %}{{ page.description }}{% endcapture %}
-    {% else %}
-        {% capture meta_description %}{{ site.description }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
-    {% endif %}
-    {% if page.banner_mobile and page.page_class != "not-found-page" %}
-        {% capture meta_image %}{{ site.url }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
-    {% elsif page.page_class != "not-found-page" %}
-        {% capture meta_image %}{{ site.url }}/images/avatar@2x.png{% endcapture %}
-    {% endif %}
+{% include head.html %}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, minimal-ui">
+<body{% if body_class != "" %} class="{{ body_class_array | join:"  " }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
-    <title>{{ meta_title }}</title>
-
-    <!-- Prefetch DNS for external assets (Adobe Typekit, Google Analytics, Disqus) -->
-    <link rel="dns-prefetch" href="//use.typekit.net">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    {% if page.page_class == "home-page" or page.page_class == "archive-page" or page.comments == true %}
-        <link rel="dns-prefetch" href="//a.disquscdn.com">
-    {% endif %}
-    {% if page.comments == true %}
-        <link rel="dns-prefetch" href="//disqus.com">
-        <link rel="dns-prefetch" href="//juggler.services.disqus.com">
-        <link rel="dns-prefetch" href="//referrer.disqus.com">
-    {% endif %}
-
-    <link rel="stylesheet" href="/css/ravenous.min.css"> <!-- CSS compiled from https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css -->
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
-
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
-    <link rel="author" href="/humans.txt">
-
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
-    <meta name="description" content="{{ meta_description }}">
-    <meta name="theme-color" content="#5F8AA6">
-
-    {% if page.page_class != "not-found-page" %}
-        <!-- Twitter Microdata and OpenGraph -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@{{ site.author_twitter }}">
-        <meta name="twitter:title" content="{{ meta_title }}">
-        <meta name="twitter:description" content="{{ meta_description }}">
-        <meta name="twitter:image:src" content="{{ meta_image }}">
-        <meta name="twitter:domain" content="chrisburnell.com">
-
-        <meta property="og:title" content="{{ meta_title }}">
-        <meta property="og:description" content="{{ meta_description }}">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ site.url }}{% if page.page_class != "home-page" %}{{ page.url }}{% endif %}">
-        <meta property="og:image" content="{{ meta_image }}">
-    {% else %}
-        <meta name="robots" content="noindex,nofollow">
-    {% endif %}
-
-    {% include js-head.html %}
-
-</head>
-<body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
-
-{% include inline-svg.html %}
+    {% include body-svg.html %}
 
     <header class="wrap  clear" role="banner">
-        <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="-1">
+        <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="1">
             <svg class="icon--raven"><use xlink:href="#svg--raven" /></svg>
             <span class="logo-text">{{ site.title }}</span>
         </a>
-        <nav class="primary-navigation" role="navigation">
-            <ol class="primary-navigation-list">
-                <li class="primary-navigation-home"><a rel="home" href="/" tabindex="1">Home</a></li><!--
-             --><li class="primary-navigation-about"><a rel="me" href="/about" tabindex="2">About</a></li><!--
-             --><li class="primary-navigation-archive"><a href="/archive" tabindex="3">Articles</a></li><!--
-             --><li class="primary-navigation-pens"><a href="/pens" tabindex="4">Pens</a></li>
-            </ol>
-        </nav>
+
+        {% include nav-primary.html %}
+
     </header>

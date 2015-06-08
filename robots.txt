@@ -10,4 +10,5 @@
 #  (oOoOo)_)_)
 
 User-agent: *
+Sitemap: https://chrisburnell.com/sitemap.xml
 Disallow: /images/

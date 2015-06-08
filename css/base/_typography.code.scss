@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    #BASE - Typography (Code)
+\*------------------------------------*/
+
+code,
+kbd,
+samp,
+var,
+.monospace {
+    font-family: $code-font-stack;
+    font-size: .875rem;
+    line-height: 1.429;
+}
+    p code,
+    ol code,
+    ul code,
+    ins,
+    kbd,
+    mark,
+    samp,
+    var {
+        background-color: rgba($brand, $opacity-low);
+        padding: .25rem;
+        word-wrap: break-word;
+        border-radius: ($default-border-radius / 1.5);
+    }
+
+pre {
+    margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
+    margin-bottom: $default-margin;
+    &:not(.codepen) {
+        @extend %rounded;
+        background-color: $black-light;
+        padding: 1.5rem 1.5rem 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        line-height: 1.5;
+        code {
+            min-width: 100%;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+/*------------------------------------*\
+    #LAYOUT - Header
+\*------------------------------------*/
+
+header {
+    @include media("<=medium") {
+        text-align: center;
+    }
+}

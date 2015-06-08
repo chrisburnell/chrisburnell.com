@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    #COMPONENTS - Search
+\*------------------------------------*/
+
+.main-search,
+.widget-search {
+    position: relative;
+    overflow: hidden;
+}
+.main-search {
+    max-width: $small-wrapper-width;
+    margin-bottom: $default-margin;
+}
+    .search-results {
+        margin-top: $default-margin;
+    }
+.search-label,
+.search-submit {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.search-input {
+    @include transition(background-color, border-color);
+    @include will-change(background-color, border-color);
+    box-sizing: inherit !important;
+    width: 100%;
+    padding: .5rem;
+    border: ($default-border / 2) solid $text-color-light;
+    outline: none;
+    font-family: $secondary-font-stack;
+    &:focus {
+        background-color: transparent;
+        border-color: $brand;
+    }
+    &[disabled] {
+        background-color: darken($text-color-light, 5%);
+    }
+}

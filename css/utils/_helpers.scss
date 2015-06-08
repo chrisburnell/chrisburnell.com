@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #UTILS - Helpers
+\*------------------------------------*/
+
+.hide,
+.hidden {
+    width:  1px !important;
+    height: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.remove,
+.removed {
+    display: none !important;
+}

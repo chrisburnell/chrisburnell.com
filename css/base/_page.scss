@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #BASE - Page
+\*------------------------------------*/
+
+html {
+    background-color: $white;
+    min-height: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+// Hide the SVG injected just below `<body>`
+.svg--master {
+    display: none;
+}

@@ -1,41 +1,35 @@
 ---
 layout: null
+searchable: false
+
+lede: All of my articles.
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
     <channel>
 
-        <title>{{ site.author }} - Articles Only</title>
-        <link href="{{ site.url }}"/>
-        <author>
-            <name>{{ site.author }}</name>
-            <email>{{ site.author_email }}</email>
-        </author>
+        <title>{{ site.title | xml_escape }} – Articles Only</title>
+        <description>{{ page.lede | xml_escape }}</description>
+        <link>{{ site.url }}{{ site.baseurl }}/articles</link>
+        <atom:link href="{{ site.url }}{{ site.baseurl }}/feed-articles.xml" rel="self" type="application/rss+xml"/>
         <language>en</language>
-        <copyright>Copyright 2015 {{ site.author }} under a Creative Commons license.</copyright>
 
         <image>
-            <url>{{ site.url }}/favicon.png</url>
+            <url>{{ site.url }}{{ site.baseurl }}/favicon.png</url>
             <title>{{ site.author }}</title>
-            <link>{{ site.url }}</link>
+            <link>{{ site.url }}{{ site.baseurl }}</link>
         </image>
 
-        {% for post in site.posts %}
-        {% unless post.draft or post.category != "article" %}
+        {% for post in site.categories.article %}
             <item>
                 <title>{{ post.title }}</title>
-                <link>{{ site.url }}{{ post.url }}</link>
+                <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-                <id>{{ site.url }}{{ post.id }}</id>
-                {% if post.introduction %}
-                    <description>{{ post.introduction }}</description>
-                {% endif %}
-                {% if post.tags %}
-                    <tags>{{ post.tags | array_to_sentence_string }}</tags>
-                {% endif %}
+                <category>{{ post.categories }}</category>
+                {% if post.lede %}<description>{{ post.lede }}</description>{% endif %}
             </item>
-        {% endunless %}
         {% endfor %}
 
     </channel>

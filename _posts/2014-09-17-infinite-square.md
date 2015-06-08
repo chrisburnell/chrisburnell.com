@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-09-17 12:00:00
 
 title: Infinite Square
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: HlcAJ
 shorturl: 6dwvt
-comments: true
 ---
 
-{% include codepen-embed.html slug="HlcAJ" height="350" %}
+{% include embed-codepen.html height="350" %}
 
 {% highlight html %}
 <div class="square">

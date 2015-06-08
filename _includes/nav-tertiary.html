@@ -1,0 +1,23 @@
+<nav class="nav-tertiary" role="navigation">
+    <ul class="nav-tertiary-list">
+    {% for link in site.data.nav_tertiary %}
+        {% capture title_slug %}{{ link.title | slugify }}{% endcapture %}
+        {% if link.url %}
+            {% assign url = link.url %}
+        {% elsif title_slug == "codepen" %}
+            {% assign url = site.url_codepen %}
+        {% elsif title_slug == "github" %}
+            {% assign url = site.url_github %}
+        {% elsif title_slug == "twitter" %}
+            {% assign url = site.url_twitter %}
+        {% elsif title_slug == "lastfm" %}
+            {% assign url = site.url_lastfm %}
+        {% endif %}
+        <li>
+            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} class="icon  link--{{ link.title | slugify }}"{% if url %} href="{{ url }}"{% endif %} title="{{ link.title }}">
+                <svg><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

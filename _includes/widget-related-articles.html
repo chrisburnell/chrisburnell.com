@@ -1,0 +1,23 @@
+{% if site.related_posts %}
+    <div class="widget-related-articles">
+        <h3 class="widget-related-articles-title">Related Articles</h3>
+        <ol class="small-articles-list" role="list">
+            {% for post in site.related_posts limit:2 %}
+                <li>
+                    <a href="{{ post.url }}">
+                        {% if post.categories contains "pen" %}
+                            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                        {% endif %}
+                        <h4 class="small-article-title">{{ post.title }}</h4>
+                        <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
+                        {% if post.lede %}
+                            <p class="small-article-lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                        {% elsif post.categories contains "pen" %}
+                            <p class="small-article-lede"><em>Featured Pen</em></p>
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endif %}

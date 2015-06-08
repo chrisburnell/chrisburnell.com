@@ -1,20 +1,21 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-11-05 13:00:00
 
 title: Power of Transform Centering - Interactive
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: xutbs
 shorturl: 8x586
-comments: true
 ---
 
-{% include codepen-embed.html slug="xutbs" height="500" %}
+{% include embed-codepen.html height="500" %}
 
-Check out the [demo version]({{ site.url }}/articles/transform-centering "Demo Version of Transorm Centering").
+Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
 
 {% highlight html %}
 <textarea class="modal" disabled></textarea>

@@ -1,0 +1,9 @@
+<nav class="nav-primary" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ol class="nav-primary-list">
+    {% for link in site.data.nav_primary %}
+        <li class="nav-primary-{{ link.title | slugify }}">
+            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" tabindex="{{ forloop.index | plus:1 }}">{{ link.title }}</a>
+        </li>
+    {% endfor %}
+    </ol>
+</nav>

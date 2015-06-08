@@ -1,47 +1,47 @@
----
-page_class: article-page
----
-
 {% include header.html %}
 
 
 <main class="wrap  clear  content" role="main">
-    <article>
+    <article itemscope itemtype="http://schema.org/BlogPosting">
 
-        <h1 id="article" class="article-title" role="heading">{{ page.title }}{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ site.url | replace: "http://", "" }}{{ page.url }}</a>{% endif %}</h1>
+        <h1 id="article" class="article-title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ page.url }}</a>{% endif %}</h1>
 
         {% include main-aside.html %}
 
         {% if page.banner and page.banner_mobile %}
-            <img alt="" class="article-banner" role="presentation" height="300"
+            <img alt="" class="article-banner" height="300" role="presentation" itemprop="image"
                  src="/images/article-banners/{{ page.banner_mobile }}"
                  sizes="(min-width: 541px) 810px, 100vw"
                  srcset="/images/article-banners/{{ page.banner_mobile }} 540w, /images/article-banners/{{ page.banner }} 810w">
         {% endif %}
 
-        {% if page.introduction %}
-            <h2 class="article-introduction">{{ page.introduction }}</h2>
+        {% if page.lede %}
+            <h2 class="article-lede" itemprop="description">{{ page.lede }}</h2>
+        {% endif %}
+
+        {% if page.edit_text %}
+            <div class="article-edit">
+                <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit{% if page.edit_date %} ({{ page.edit_date | date: "%d %b, %Y" }}){% endif %} &mdash;</time>
+                <p>{{ page.edit_text }}</p>
+            </div>
         {% endif %}
 
         {{ content }}
 
-        <nav class="articles-navigation">
+        <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
-                <button class="show-comments  js-show-comments" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Show Comments</button>
+                <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Show Comments</button>
+            {% elsif page.comments == "codepen" %}
+                <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment"><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> CodePen Comments</button>
             {% endif %}
-            {% if page.category == "article" %}
-                <a rel="me author" class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
-            {% elsif page.category == "codepen" %}
+            {% if page.categories contains "article" %}
+                <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+            {% elsif page.categories contains "pen" %}
                 <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
             {% endif %}
         </nav>
 
-        {% if page.comments == true %}
-            <section id="comments" class="comments  clear">
-                <div id="disqus_thread"></div>
-                <noscript>Please enable Javascript to view comments.</noscript>
-            </section>
-        {% endif %}
+        {% include comments.html %}
 
     </article>
 </main>

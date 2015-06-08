@@ -1,0 +1,15 @@
+- title: CodePen
+  rel: "me publisher external"
+
+- title: GitHub
+  rel: "me publisher external"
+
+- title: Twitter
+  rel: "me publisher external"
+
+- title: LastFM
+  rel: "me publisher external"
+
+- title: RSS
+  url: "/feed.xml"
+  rel: "me author"

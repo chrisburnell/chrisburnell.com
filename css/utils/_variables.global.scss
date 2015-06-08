@@ -1,0 +1,48 @@
+//
+// #UTILS - Variables (Global)
+//
+
+/// Wrapper and @media $variables
+$wrapper-padding:      1.25rem  !default;
+$max-wrapper-width:    1140px   !default;
+$medium-wrapper-width:  768px   !default;
+$small-wrapper-width:   500px   !default;
+$breakpoints:  (
+    "small":   $small-wrapper-width,
+    "medium":  $medium-wrapper-width,
+    "large":   $max-wrapper-width
+)  !default; // overwrite _include-media.scss
+
+/// Layout $variables
+$default-margin:         $wrapper-padding  !default;
+$default-padding:        2.250rem          !default;
+$default-border:         0.250rem          !default;
+$default-border-radius:  0.375rem          !default;
+$aside-width:           15.875rem          !default;
+
+/// Opacity $variables
+$opacity-low:     0.10  !default;
+$opacity-medium:  0.25  !default;
+$opacity-high:    0.70  !default;
+
+/// Color $variables
+$brand:             #5f8aa6                           !default;
+$text-color:        #4f4f4f                           !default;
+$text-color-alt:    #737373                           !default;
+$text-color-light:  #dddddd                           !default;
+$white:             #f9f9f9                           !default;
+$black:             #060606                           !default;
+$black-light:       rgba($black, ($opacity-low / 2))  !default;
+$black-medium:      rgba($black, $opacity-low)        !default;
+$black-dark:        rgba($black, $opacity-medium)     !default;
+
+/// Font $variables
+$base-font-size:        16px   !default;
+$base-line-height:      1.875  !default;
+$primary-font-stack:    "ff-meta-serif-web-pro", Georgia, serif  !default;
+$secondary-font-stack:  "proxima-nova", sans-serif               !default;
+$heading-font-stack:    "league-gothic", Impact, sans-serif      !default;
+
+/// Transition $variables
+$transition-time:      0.2s  !default;
+$transition-function:  ease  !default;

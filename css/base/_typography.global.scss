@@ -1,0 +1,319 @@
+/*------------------------------------*\
+    #BASE - Typography (Global)
+\*------------------------------------*/
+
+html {
+    color: $text-color;
+    font: 400 normal #{$base-font-size}/#{$base-line-height} $primary-font-stack;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    min-height: 1.25em; // so that elements can be floated inside headings
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    line-height: 1.25;
+}
+h1 {
+    font-family: $heading-font-stack;
+    font-size: 2.625rem;
+    text-transform: uppercase;
+    text-shadow: .0714em .0714em 0 $black-light;
+}
+h2 {
+    font-family: $primary-font-stack;
+    font-size: 1.625rem;
+}
+h3,
+h4,
+.articles-list .article-date {
+    font-family: $secondary-font-stack;
+    font-weight: 600;
+}
+h3,
+.articles-list .article-date {
+    font-size: 1.125rem;
+    line-height: 1.875;
+    text-transform: uppercase;
+    code {
+        text-transform: none;
+    }
+}
+h3 {
+    margin-top: .625rem;
+    border-bottom: ($default-border / 2) solid $text-color-light;
+    &:not(:last-child) {
+        margin-bottom: $default-margin;
+    }
+}
+h4 {
+    margin-bottom: .5rem;
+}
+
+p {
+    margin: 0 0 $default-margin;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:empty {
+        @extend .removed;
+    }
+}
+
+a {
+    @include transition(background, color);
+    @include will-change(background, color);
+    text-decoration: none;
+    &:link {
+        color: $brand;
+    }
+    &:visited {
+        color: darken($brand, 10%);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+    h2 &,
+    h3 & {
+        &:link,
+        &:visited {
+            color: $text-color;
+        }
+        &:visited {
+            color: lighten($text-color, 10%);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: $brand;
+        }
+    }
+    span:not([class]):not([itemprop]) {
+        @extend .hidden;
+    }
+}
+    .heading-anchor {
+        color: $text-color-alt;
+        display: none;
+        padding-left: 1em;
+        font-family: $code-font-stack;
+        font-size: .8125rem;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: lowercase;
+        vertical-align: middle;
+        :hover > &,
+        :focus > &,
+        :active > & {
+            display: inline-block;
+        }
+        h1 & {
+            text-shadow: none;
+        }
+    }
+    /**
+     * Brand Link Colours
+     */
+    @each $brand in $brands {
+        $name:  nth($brand, 1);
+        $color: nth($brand, 2);
+        .link--#{$name} {
+            color: #{$color} !important;
+        }
+    }
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ol:not([class]),
+ul:not([class]),
+.default-list {
+    li {
+        padding-left: $default-padding;
+        margin-bottom: ($default-margin / 2);
+        position: relative;
+        &:last-child {
+            margin-bottom: $default-margin;
+        }
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: $secondary-font-stack;
+            font-weight: 600;
+        }
+    }
+    ol:not([class]),
+    ul:not([class]),
+    .default-list {
+        margin-top: 1rem;
+    }
+}
+ol:not([class]),
+ol.default-list {
+    counter-reset: ordered-list;
+    li {
+        counter-increment: ordered-list;
+        &:before {
+            content: counter(ordered-list) ".";
+        }
+    }
+}
+ul:not([class]) li:before,
+ul.default-list li:before {
+    content: "\2022";
+    font-size: 1.5rem;
+    line-height: 1;
+}
+dl {
+    width: 100%;
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: $default-margin;
+    }
+    dt {
+        width: auto;
+        min-width: 10rem;
+        float: left;
+        clear: left;
+        padding-right: $default-margin;
+        font-family: $secondary-font-stack;
+        font-weight: 600;
+        @include media("<=small") {
+            float: none;
+        }
+    }
+    dd {
+        width: $max-wrapper-width;
+        display: table-cell;
+        margin: 0;
+        overflow: hidden;
+        vertical-align: top;
+        &:not(:last-child) {
+            padding-bottom: $default-margin;
+        }
+        @include media("<=small") {
+            width: auto;
+            display: block;
+            margin-left: $default-margin;
+        }
+    }
+}
+
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0 0 .5rem;
+    text-align: center;
+    &:not(:last-child) {
+        margin-bottom: $default-margin;
+    }
+    img,
+    svg {
+        @extend %rounded;
+    }
+    a:link,
+    a:visited,
+    figcaption {
+        color: $text-color-alt;
+        font-style: italic;
+    }
+}
+
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+    color: $text-color-alt;
+    font-style: italic;
+}
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $text-color-alt;
+    cursor: help;
+}
+ins {
+    text-decoration: none;
+}
+
+q {
+    font-style: italic;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote {
+    @extend %rounded;
+    background-color: rgba($brand, $opacity-low);
+    padding: 1rem;
+    margin: 0 $default-padding $default-margin;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    @include media("<=small") {
+        margin-right: $default-margin;
+        margin-left:  $default-margin;
+    }
+    p {
+        margin-bottom: 0 !important;
+        &:before {
+            content: open-quote;
+            padding-right: .1875rem;
+        }
+        &:after {
+            content: close-quote;
+            padding-left: .1875rem;
+        }
+    }
+    cite {
+        display: block;
+        margin-left: 2rem;
+        margin-top: 1rem;
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
+}
+/*blockquote*/.twitter-tweet {
+    margin: 0 auto $default-margin !important;
+}
+
+hr {
+    background: $black-medium;
+    width: 100%;
+    height: .125rem;
+    display: block;
+    border: 0;
+    margin: .5rem 0 $default-margin;
+}
+
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    border: none;
+    overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $default-margin;
+}
+
+::selection {
+    background: $brand;
+    color: $white;
+}
+.canada::selection {
+    background-color: red;
+}

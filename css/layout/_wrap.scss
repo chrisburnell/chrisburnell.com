@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #LAYOUT - Layout
+\*------------------------------------*/
+
+.wrap {
+    width: auto;
+    max-width: $max-wrapper-width;
+    padding-right: $wrapper-padding;
+    padding-left:  $wrapper-padding;
+    margin-right: auto;
+    margin-left:  auto;
+}
+.clear {
+    clear: both;
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.content {
+    padding-bottom: $default-padding;
+}
+
+.fixed-width {
+    width: $max-wrapper-width;
+}

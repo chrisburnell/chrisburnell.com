@@ -1,16 +1,17 @@
 ---
 layout: article
-category: article
+categories: article
 
 date: 2015-03-12 10:00:00
 
 title: Theming Pinboard
-introduction: I recently decided I would embark on the task of theming Pinboard. Here’s how I did it.
+lede: I recently decided I would embark on the task of theming Pinboard. Here’s how I did it.
 tags:
-- CSS
-- Tutorials
+- css
+- tutorials
+- ux
 
-banner: theming-pinboard.png
+banner:        theming-pinboard.png
 banner_mobile: theming-pinboard_mobile.png
 
 shorturl: 1faeu
@@ -20,11 +21,11 @@ twitter: true
 
 I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
-{% include tweet.html content='<blockquote class="twitter-tweet" lang="en" data-conversation="none" data-link-color="#5F8AA6"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>' %}
+<blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>
 
 Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. Nothing changed. I dug into my account settings looking for a flag to switch on for this newfangled layout, but couldn’t find one. *What’s going on?!*
 
-{% include tweet.html content='<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>(hah, I mean Flipboard, not Pinboard)</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></blockquote>' %}
+<blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>(hah, I mean Flipboard, not Pinboard)</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></blockquote>
 
 *Okay then.*
 
@@ -32,15 +33,15 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 <figure>
     <a href="http://pinboard.in">
-        ![Pinboard Logo](/images/content/pinboard-logo.png)
+        <img src="/images/content/pinboard-logo.png" alt="">
         <figcaption>Pinboard © Nine Fives Software.</figcaption>
     </a>
 </figure>
 
 
-{% include heading.html id="first-step" title="The First Step" %}
+{% include heading.html title="The First Step" %}
 
-<aside><p>What do I mean when I say *theming* or *skinning*? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on [CSS Zen Garden](http://www.csszengarden.com) or [Adactio](https://adactio.com/about/site/#skin).</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
+<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? This is basically the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a href="http://www.csszengarden.com">CSS Zen Garden</a> or <a href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
@@ -58,9 +59,9 @@ Let’s break down how bookmarks are categorised, at least as far as I use them 
 So it was important for me to make these parts distinct in the new design, whilst maintaining a level of minimalism and a muted colour palette.
 
 
-{% include heading.html id="injection" title="<code>injection'); DROP TABLE Bookmarks;--</code>" %}
+{% include heading.html title="<code>injection'); DROP TABLE Bookmarks;--</code>" id="injection" %}
 
-<aside><figure aria-hidden="true"><img src="http://gifs.chrisburnell.com/idontbelievemyeyes.gif" alt=""></figure></aside>
+<aside><figure aria-hidden="true"><img src="/images/content/idontbelievemyeyes.gif" alt=""></figure></aside>
 
 That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
 
@@ -73,7 +74,7 @@ Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for wh
     </a>
 </figure>
 
-The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. The styles are injected with Javascript into a <samp>style</samp> tag in the <samp>head</samp>:
+The gist of the plugin is that you can define CSS styles and apply them to pages you visit on the web, with the option to restrict collections of styles to URLs and/or URL patterns. The styles are injected with JavaScript into a <samp>style</samp> tag in the <samp>head</samp>:
 
 {% highlight html %}
 <style id="stylish-3" class="stylish">
@@ -81,7 +82,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 {% endhighlight %}
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to [git](http://git-scm.com), I have a tendency to want to add versioning to all of my projects. If there was some sort of [Github Gist](https://gist.github.com) hook or something—Let me know [in the comments](#comments) if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="http://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
 
 
 {% include heading.html id="brass-tacks" title="Good old Brass Tacks" %}
@@ -217,7 +218,7 @@ html {
     }
 {% endhighlight %}
 
-- modified the colour palette to match [my styleguide]({{ site.url }}/style-guide)
+- modified the colour palette to match [my styleguide]({{ site.url }}{{ site.baseurl }}/style-guide)
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 --------
@@ -225,7 +226,7 @@ html {
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <div class="buttons-list">
-    <a class="button" href="https://gist.github.com/chrisburnell/ef5367e7dd263356c48a">gist.github.com &rarr;</a>
+    <a class="button" href="{{ site.url_gist }}/ef5367e7dd263356c48a">gist.github.com &rarr;</a>
 </div>
 
 

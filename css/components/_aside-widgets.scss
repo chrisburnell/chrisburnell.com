@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #COMPONENTS - Aside Widgets
+\*------------------------------------*/
+
+.widget-search,
+.widget-related-articles,
+.widget-featured-pens {
+    @include media(">medium") {
+        margin-top: $default-margin;
+    }
+}
+.widget-search-title,
+.widget-related-articles-title,
+.widget-featured-pens-title {
+    margin-top: 0;
+}
+.widget-featured-pens-link {
+    width: 100%;
+    display: block;
+    margin-top: ($default-margin / 2);
+    font-weight: 600;
+    text-align: right;
+    @include media("<=medium") {
+        margin-bottom: $default-margin;
+        text-align: center;
+    }
+    &:after {
+        content: "\00a0\2192";
+    }
+}

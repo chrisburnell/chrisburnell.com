@@ -1,9 +1,10 @@
 ---
 layout: default
-page_class: tags-page
+page_class: page-tags
+searchable: no-content
 
 title: Tags Archive
-description: A list of tags and their prose counterparts.
+lede: A list of tags and their counterparts.
 ---
 
 {% capture tags %}
@@ -11,41 +12,36 @@ description: A list of tags and their prose counterparts.
         {{ tag[0] }}
     {% endfor %}
 {% endcapture %}
-{% assign sorted_tags = tags | split:' ' | sort %}
-{% for tag in sorted_tags %}
-    <h3 id="{{ tag | downcase }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | downcase }}" class="heading-anchor" aria-hidden="true">#{{ tag | downcase }}</a></h3>
+{% assign tags_sorted = tags | split:' ' | sort %}
+{% for tag in tags_sorted %}
+    <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ site.tags.[tag].size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
-        {% for post in site.tags[tag] %}
-        {% unless post.draft %}
-            {% if post.category == "codepen" %}
-                {% assign link_title = "View" %}
-            {% else %}
-                {% assign link_title = "Continue reading" %}
-            {% endif %}
+        {% for post in site.tags.[tag] %}
             <li>
                 <a href="{{ post.url }}">
-                    {% if post.category == "codepen" %}
-                        <svg><use xlink:href="#svg--codepen" /></svg>
+                    {% if post.categories contains "pen" %}
+                        <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                     {% endif %}
                     <h4 class="small-article-title">{{ post.title }}</h4>
-                    <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                    {% if post.introduction %}
-                        <p class="small-article-introduction">{{ post.introduction | truncatewords: 15 |  replace: '....', '...' | replace: ',...', '...' }}</p>
+                    <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
+                    {% if post.lede %}
+                        <p class="small-article-lede">{{ post.lede | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                    {% elsif post.categories contains "pen" %}
+                        <p class="small-article-lede"><em>Featured Pen</em></p>
                     {% endif %}
                 </a>
             </li>
-        {% endunless %}
         {% endfor %}
     </ol>
 {% endfor %}
 
-<nav class="articles-navigation">
-    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to all</a><!--
- --><a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to articles</a><!--
- --><a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to pens</a>
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a>
+    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
+    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
 </nav>
 
-<nav class="articles-navigation">
-    <a rel="me author" class="button" href="/archive"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a><!--
- --><a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+    <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
 </nav>

@@ -1,17 +1,17 @@
 ---
 layout: article
-category: article
+categories: article
 
 date: 2014-02-09 02:19:00
 
 title: Let’s Look Back
-introduction: I haven’t published a new article in a while now, but I haven’t been twiddling my thumbs. Let’s look at what happened behind-the-scenes in the last eight months since my first article.
+lede: I haven’t published a new article in a while now, but I haven’t been twiddling my thumbs. Let’s look at what happened behind-the-scenes in the last eight months since my first article.
 tags:
-- CSS
-- GitHub
-- Tutorials
+- css
+- github
+- tutorials
 
-banner: lets-look-back.png
+banner:        lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
 
 shorturl: dxaon
@@ -20,13 +20,15 @@ comments: true
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for simple maintenance and comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
 
-{% include heading.html id="in-comes-sass" title="In comes SASS" %}
+
+{% include heading.html title="In comes SASS" %}
 
 Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">SASS</dfn>](http://sass-lang.com "SASS: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in not just writing CSS but also in reading and understanding it. Because with SCSS we can nest selectors, children selectors simply sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
-{% include heading.html id="i-dont-want-to-do-anything" title="I don’t want to do anything, anymore!" %}
 
-<aside><p>I also wrote about [State of the Browser 2013](http://browser.londonwebstandards.org "State of the Browser 2013") in [First Ever Article](/articles/first-article-ever/ "First Ever Article").</p></aside>
+{% include heading.html title="I don’t want to do anything, anymore!" id="i-dont-want-to-do-anything" %}
+
+<aside><p>I also wrote about <a href="http://browser.londonwebstandards.org">State of the Browser 2013</a> in <a href="{% post_url 2013-06-15-first-article-ever %}">my first article</a>.</p></aside>
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
@@ -36,13 +38,13 @@ One fantastic utility that helps immensely in trimming the fat, I learned about 
 
 Say an old version of Chrome becomes stale and the global usage of that version dips below an arbitrary percentage (which I do not support) such that I no longer need a webkit prefix for a property anymore; I would need to physically check the support tables, manually find out that the prefix fell out, and then crawl and update my entire codebase to remove the unnecessary code. That just isn’t good enough if I want smooth sailing.
 
-<aside><p>`autoprefixer -i` to run *Autoprefixer* from command line</p></aside>
+<aside><p><code>autoprefixer -i</code> to run <em>Autoprefixer</em> from the command line.</p></aside>
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 --------
 
-<aside><p>`sass` to compile SASS or SCSS,  from command line</p></aside>
+<aside><p><code>sass</code> to compile SASS or SCSS from the command line.</p></aside>
 
 Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
@@ -50,7 +52,8 @@ It’s only a small amount of time spent each time I wanted to compile my SCSS, 
 
 All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SCSS for the most part.
 
-{% include heading.html id="a-better-way" title="There must be a better way!" %}
+
+{% include heading.html title="There must be a better way!" id="a-better-way" %}
 
 <figure>
     <img src="/images/content/good-news-everyone.jpg" alt="Good news everyone!" role="presentation">
@@ -59,7 +62,8 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 
 And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a “streaming build system” built on *[node.js](http://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
 
-{% include heading.html id="what-gulp-does-for-me" title="Let’s see what gulp does for me" %}
+
+{% include heading.html title="Let’s see what gulp does for me" id="what-gulp-does-for-me" %}
 
 How does *gulp* work?
 
@@ -107,7 +111,7 @@ gulp.task('default', ['scripts', 'images', 'watch']);
 
 What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
 
-{% include heading.html id="good-old-brass-tacks" title="Good old brass tacks" %}
+{% include heading.html title="Good old brass tacks" %}
 
 Here’s an example of what the CSS for my logo looked like prior to these changes:
 
@@ -433,7 +437,8 @@ Next, let’s turn this CSS into SCSS.
     <figcaption>Success.</figcaption>
 </figure>
 
-{% include heading.html id="a-few-major-changes" title="You’ll notice a few major changes" %}
+
+{% include heading.html title="You’ll notice a few major changes" id="a-few-major-changes" %}
 
 - the `hover`, `focus`, and `active` states are nested, using an `&` prefix
 - the `after` pseudo class is nested, using an `&` prefix
@@ -516,7 +521,8 @@ Another thing, which I won’t bother to illustrate here, is the splitting of fi
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 
-{% include heading.html id="useful-links" title="Useful Links" %}
+
+{% include heading.html title="Useful Links" %}
 
 1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
 2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
@@ -524,12 +530,13 @@ It’s also extremely useful if you build a core set of styles and then extend t
 4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
 5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
 6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
-7. [My SASS files](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SASS files for chrisburnell.com")
-8. [My gulpfile configuration](https://gist.github.com/chrisburnell/87346fa1e8e8538ee7ce "My gulpfile configuration")
+7. [My SASS files]({{ site.url_repo }}/tree/master/css "SASS files for chrisburnell.com")
+8. [My gulpfile configuration]({{ site.url_gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
 
-{% include heading.html id="wrapping-it-up" title="Wrapping it up" %}
+
+{% include heading.html title="Wrapping it up" %}
 
 I cannot stress how awesome SASS and SCSS are and how they can drastically speed up your workflow. If you’ve never written SASS or SCSS before, try it with variables first. When you’re building a big stylesheet, or group of stylesheets, it can be a pain to have to remember HEX colour values or font stacks. The advantage of SASS is that it allows you to set these values to variables and use them througout the rest of your CSS; furthermore, if you need to manipulate these colours (lighten, darken, opacity, etc.), SASS has the ability to do this for you, leaving you to only remember the variable names.
 
@@ -537,10 +544,11 @@ The power of *Autoprefixer* speaks for itself, really.
 
 And with *gulp* `watching`, the transition from the SCSS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
 
-{% include heading.html id="thats-whats-up" title="So that’s what’s up" %}
+
+{% include heading.html title="So that’s what’s up" id="thats-whats-up" %}
 
 To sum up, the site looks <s>pretty much</s> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to “vanilla” CSS for so long, but writing SCSS just feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
-You can see the raw, uncompiled SCSS files on GitHub [here](https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css "SCSS files for chrisburnell.com"), and the README file of the repository [here](https://github.com/chrisburnell/chrisburnell.github.io "chrisburnell.com GitHub README").
+You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.url_repo }}/tree/master/css "SCSS files for chrisburnell.com"), and the README file of the repository [here]({{ site.url_repo }}).
 
-As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github](https://github.com/chrisburnell/chrisburnell.github.io/issues "Create an Issue on Github")!
+As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github]({{ site.url_repo }}/issues)!

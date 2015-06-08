@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: IKHhC
 shorturl: f7utt
-comments: true
 ---
 
-{% include codepen-embed.html slug="IKHhC" height="500" %}
+{% include embed-codepen.html height="500" %}
 
 {% highlight html %}
 <div class="container">

@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2013-06-17 12:00:00
 
 title: Persistent Light Source Transform
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: mglHp
 shorturl: 9sogz
-comments: true
 ---
 
-{% include codepen-embed.html slug="mglHp" height="425" %}
+{% include embed-codepen.html height="425" %}
 
 {% highlight html %}
 <div class="square">A</div>

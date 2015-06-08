@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-09-19 12:00:00
 
 title: Flyknife Comics
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: hIxaj
 shorturl: 6aorh
-comments: true
 ---
 
-{% include codepen-embed.html slug="hIxaj" height="400" %}
+{% include embed-codepen.html height="400" %}
 
 {% highlight html %}
 <div>

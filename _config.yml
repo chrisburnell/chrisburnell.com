@@ -1,43 +1,46 @@
 title:       Chris Burnell
-description: "I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, web standards, innovation, and user experience."
+lede:        "I’m a Canadian UI Developer living in London, UK. This is where I write about and share my passions: CSS, front-end architecture, best practices and web standards, and innovations on the web."
 tagline:     "I’m ravenous for CSS"
+brand_color: 5f8aa6
 
-url:            http://chrisburnell.com
-author:         Chris Burnell
-author_age:     25
-author_email:   me@chrisburnell.com
-author_twitter: iamchrisburnell
+author:           Chris Burnell
+author_age:       25
+author_location:  London, U.K.
+author_email:     me@chrisburnell.com
+author_twitter:   iamchrisburnell
+author_job_title: UI developer
 
+employer:     City University
+employer_url: https://www.city.ac.uk
+
+url:      https://chrisburnell.com
+baseurl:  ""
 shorturl: http://repc.co/
 
-job_title:    UI developer
-employer:     City University
-employer_url: http://www.city.ac.uk
+url_codepen: http://codepen.io/chrisburnell
+url_github:  https://github.com/chrisburnell
+url_gist:    https://gist.github.com/chrisburnell
+url_lastfm:  http://last.fm/user/chrisburnell
+url_repo:    https://github.com/chrisburnell/chrisburnell.github.io
+url_twitter: https://twitter.com/iamchrisburnell
 
-codepen_url: http://codepen.io/chrisburnell
-github_url:  https://github.com/chrisburnell
-lastfm_url:  http://last.fm/user/chrisburnell
-twitter_url: https://twitter.com/iamchrisburnell
+copyright:     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
+url_copyright: http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 
 codepen_theme:   119
 codepen_tabfree: 8863
 
 timezone: Europe/London
+
 destination: ./_site
 layouts: ./_layouts
-exclude: ['node_modules']
+permalink: /:categories/:title/
+exclude: ['node_modules', '.sass-cache']
 
-permalink: /articles/:title
-paginate: 9001
+paginate: 10
 paginate_path: 'page:num'
 
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
-markdown_ext: markdown,mkd,mkdn,md
-highlighter: pygments
-
 gems:
-  - jekyll-redirect-from
-  - jekyll-sitemap
-  - jemoji
+- jekyll-redirect-from
+- jekyll-sitemap
+- jemoji

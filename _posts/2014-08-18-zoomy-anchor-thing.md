@@ -1,18 +1,19 @@
 ---
 layout: article
-category: codepen
+categories: pen
 
 date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
 tags:
-- CodePen
+- codepen
 
+comments: codepen
+codepen_slug: lcEvB
 shorturl: e1r8k
-comments: true
 ---
 
-{% include codepen-embed.html slug="lcEvB" height="350" %}
+{% include embed-codepen.html height="350" %}
 
 {% highlight html %}
 <a href="#" class="article-link">

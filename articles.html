@@ -1,0 +1,40 @@
+---
+layout: default
+page_class: page-articles
+searchable: no-content
+
+redirect_from:
+  - /archive.html
+  - /article.html
+
+title: Articles Archive
+lede: All of my articles listed on one page.
+---
+
+<ol id="articles" class="articles-list" role="list">
+    {% for post in site.categories.article %}
+        <li>
+            <h2 class="article-title">
+                <a class="article-title-link"  href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+            </h2>
+            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
+            {% if post.lede %}
+                <p class="article-lede">{{ post.lede }}</p>
+            {% endif %}
+            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
+            {% if post.comments == true %}
+                <a class="comments-link" href="{{ post.url }}#disqus_thread">Leave a comment</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ol>
+
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a>
+    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
+</nav>
+
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
+    <a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
+</nav>
