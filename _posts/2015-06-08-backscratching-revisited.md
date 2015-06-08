@@ -96,8 +96,7 @@ a {
 Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
 
---------
-
+{% include heading.html title="A Prickly Pear" %}
 
 But there’s a problem if we want to use [Microdata](http://schema.org/docs/documents.html). Let me demonstrate with a modified snippet of HTML from my site.
 
@@ -111,7 +110,11 @@ But there’s a problem if we want to use [Microdata](http://schema.org/docs/doc
 </aside>
 {% endhighlight %}
 
-I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person)), but let’s focus on the `span` with the `itemprop` attribute. This isn’t text I want to hide, so this would break the rule we established before. But we can solve this with a further modification to our SCSS snippet.
+I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person)), but to sum up: we can use different attributes ([boolean](https://html.spec.whatwg.org/#boolean-attributes) or [enumerated](https://html.spec.whatwg.org/#keywords-and-enumerated-attributes)) to give the browser context about our data.
+
+So instead of simply printing, for example, an author’s name, we’ll wrap it in a `span` and give it an `itemprop` attribute. When the value of the `itemprop` attribute is set to “author” within the scope of the *Person* schema, we’re essentially tagging the page with an author. There are numerous Schemas and Properties within each Schema to help you provide context to the content of your website.
+
+But let’s focus on the `span` with the `itemprop` attribute. This isn’t text I want to be hidden, so this breaks the rule we established before (all `spans` which are children of an anchor are hidden). But we can solve this with a further modification to our SCSS snippet.
 
 {% highlight scss %}
 a {
@@ -124,8 +127,7 @@ a {
 Now we can be sure to only target `spans` without a `class` *or* `itemprop` attribute!
 
 
---------
-
+{% include heading.html title="The Takeaway" %}
 
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
