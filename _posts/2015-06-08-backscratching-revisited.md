@@ -51,9 +51,7 @@ The CSS technique above for hiding the `span`, itself, is a piece of code that s
 
 However, the code above *does* allow the element’s content to be read aloud, and is treated as any other text by text-to-speech software, despite it being completely visually hidden from the user.
 
-
 --------
-
 
 In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
