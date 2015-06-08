@@ -71,7 +71,7 @@ a {
 
 {% include heading.html title="One Step Further" %}
 
-We can take this even further by slowing down a touch. What happens if we *want* a `span` inside out anchor?
+We can take this even further by slowing down a touch. What happens if we *want* a `span` inside an anchor?
 
 {% highlight html %}
 <a href="/article/interesting-article">
