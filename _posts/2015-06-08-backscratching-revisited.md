@@ -79,7 +79,7 @@ We can take this even further by slowing down a touch. What happens if we *want*
 </a>
 {% endhighlight %}
 
-Looks like we’ve been a bit heavy-handed in hiding *all* `span`s nested inside anchors because we can’t differentiate here between our two `span`s. Let’s revise a bit.
+Looks like we’ve been a bit heavy-handed in hiding *all* `spans` nested inside anchors because we can’t differentiate here between our two `spans`. Let’s revise a bit.
 
 {% highlight scss %}
 a {
@@ -89,7 +89,7 @@ a {
 }
 {% endhighlight %}
 
-Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `span`s I want to style for visual reasons, so using `class`-less `span`s will hide our textual accessibility cues.
+Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
 
 --------
@@ -117,12 +117,12 @@ a {
 }
 {% endhighlight %}
 
-Now we can be sure to only target `span`s without a `class` *or* `itemprop` attribute!
+Now we can be sure to only target `spans` without a `class` *or* `itemprop` attribute!
 
 
 --------
 
 
-You can extrapolate this idea to more than just `span`s for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
+You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
 I have to reiterate that this technique needs to be taken with a grain of salt. **Do not <a href="https://gifs.chrisburnell.com/copypasta.gif" rel="nofollow">copy-pasta</a> this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
