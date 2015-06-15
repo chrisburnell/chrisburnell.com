@@ -50,14 +50,14 @@
             @extend %rounded;
             // testing gradient replacement when loading the `src`/`srcset`
             // colours generated from `avatar.png`
-            background-image: linear-gradient(to top right, rgba(153, 192, 226, 0) 0%, rgb(153, 192, 226) 100%),
-                              linear-gradient(to bottom left, rgba(157, 133, 139, 0) 0%, rgb(157, 133, 139) 100%),
-                              linear-gradient(to bottom right, rgba(89, 144, 173, 0) 0%, rgb(89, 144, 173) 100%),
-                              linear-gradient(to top left, rgba(137, 99, 79, 0) 0%, rgb(137, 99, 79) 100%);
+            background-image: gradient(rgba(153, 192, 226, 0), rgb(153, 192, 226), to top right),
+                              gradient(rgba(157, 133, 139, 0), rgb(157, 133, 139), to bottom left),
+                              gradient(rgba(89, 144, 173, 0), rgb(89, 144, 173), to bottom right),
+                              gradient(rgba(137, 99, 79, 0), rgb(137, 99, 79), to top left);
             background-size: 100%;
             height: 100%;
             display: block;
-            // filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
+            //filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
         }
     }
     .author-name,

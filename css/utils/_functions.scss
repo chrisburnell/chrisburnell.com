@@ -1,0 +1,21 @@
+//
+// #UTILS - FUNCTIONS
+//
+
+/// Linear Gradient
+/// accepts two or three parameters
+@function gradient($top, $bottom, $direction: "to bottom") {
+    @if( length($top) == 0 or length($bottom) == 0 ) {
+        @error "gradient() expects two or more values.";
+    }
+    @return linear-gradient(#{$direction}, #{$top} 0%, #{$bottom} 100%);
+}
+
+/// Z-index Management
+@function z-index($layer) {
+    @if not map-has-key($z-indexes, $layer) {
+        @error 'There is no layer named `#{$layer}` in $z-indexes. '
+             + 'Layer should be one of #{map-keys($z-indexes)}.';
+    }
+    @return map-get($z-indexes, $layer);
+}

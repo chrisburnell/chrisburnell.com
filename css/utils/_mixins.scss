@@ -2,12 +2,6 @@
 // #UTILS - Mixins
 //
 
-/// Linear Gradient
-/// accepts two or three parameters
-@mixin gradient($top, $bottom, $direction: "to bottom") {
-    background-image: linear-gradient(#{$direction}, #{$top} 0%, #{$bottom} 100%);
-}
-
 /// Transition
 /// accepts zero, one, or three parameters, comma-separated
 @mixin transition($values...) {
@@ -37,28 +31,26 @@
 /// Will-Change
 /// couples with transition()
 @mixin will-change($values...) {
+    @if( length($values) == 0 ) {
+        @error "will-change() expects one or more values.";
+    }
     will-change: #{$values};
 }
 
 /// Animation
 @mixin animation($values...) {
+    @if( length($values) == 0 ) {
+        @error "animation() expects one or more values.";
+    }
     animation: #{$values};
 }
 
 /// Animation Play State
 @mixin animation-play-state($values...) {
+    @if( length($values) == 0 ) {
+        @error "animation-play-state() expects one or more values.";
+    }
     animation-play-state: #{$values};
-}
-
-/// Z-index Management
-@mixin z-index($values...) {
-    @if( #{$values} == "below" ) {
-        $values: -1;
-    }
-    @else if( #{$values} == "above" ) {
-        $values: 1;
-    }
-    z-index: #{$values};
 }
 
 /// Center

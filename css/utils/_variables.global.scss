@@ -46,3 +46,10 @@ $heading-font-stack:    "league-gothic", Impact, sans-serif      !default;
 /// Transition $variables
 $transition-time:      0.2s  !default;
 $transition-function:  ease  !default;
+
+/// Z-index $variables
+$z-indexes: (
+    'below': -1,
+    'default': 1,
+    'above': 2
+);

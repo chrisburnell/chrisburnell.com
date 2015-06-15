@@ -74,7 +74,6 @@
     svg {
         @include transition;
         @include will-change(opacity);
-        @include z-index(below);
         opacity: ($opacity-low / 2);
         width:  6.25em !important; // override `_icons.scss` + 4px
         height: 6.25em;
@@ -83,6 +82,7 @@
         top: 50%;
         right: .5em;
         transform: translateY(-50%);
+        z-index: z-index(below);
         stroke: $text-color;
         @include media("<=small") {
             width:  4em !important;

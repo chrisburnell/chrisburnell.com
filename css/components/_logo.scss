@@ -6,7 +6,6 @@
     @extend %non-selectable;
     @include transition;
     @include will-change(transform);
-    @include z-index(above);
     display: inline-block;
     padding-top: .5em;
     padding-left: 1.923em;
@@ -17,6 +16,7 @@
     text-transform: uppercase;
     text-shadow: .058em .058em 0 $black-light;
     white-space: nowrap;
+    z-index: z-index(above);
     &:link,
     &:visited {
         color: $text-color;
@@ -40,7 +40,6 @@
         @include animation-play-state(paused);
         @include transition;
         @include will-change(top);
-        @include z-index("below");
         width: 2.307em;
         height: 2.307em;
         display: block;
@@ -48,6 +47,7 @@
         top: 0;
         left: 0;
         transform: translateY(-0.8125em);
+        z-index: z-index(below);
     }
     &:hover svg,
     &:focus svg,
