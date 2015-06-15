@@ -2,8 +2,39 @@
 // #UTILS - Mixins
 //
 
-/// Transition
-/// accepts zero, one, or three parameters, comma-separated
+///
+/// Flexible Transitions
+///   generate transitions based on flexible input parameters
+///   pass zero or more properties and zero or more further parameters
+///
+/// @author Chris Burnell
+///
+/// @param {String} $values - Values
+///
+/// @example scss - No Values
+///   include transition()
+///   // transition: all .2s ease;
+///
+/// @example scss - One Property
+///   include transition(color)
+///   // transition: color .2s ease;
+///
+/// @example scss - Two Properties
+///   include transition(color, border)
+///   // transition: color .2s ease, border .2s ease;
+///
+/// @example scss - One Property, One Duration
+///   include transition(color .5s)
+///   // transition: color .5s ease;
+///
+/// @example scss - One Property, One Duration, One Timing Function
+///   include transition(color 1s linear)
+///   // transition: color 1s linear;
+///
+/// @example scss - Two Properties, Two Durations, Two Timing Functions
+///   include transition(color 2s ease-in-out, border 1s linear)
+///   // transition: color 2s ease-in-out, border 1s linear;
+///
 @mixin transition($values...) {
     $transition: ();
     @if( length($values) == 0 ) {
@@ -28,8 +59,14 @@
     transition: #{$transition};
 }
 
+///
 /// Will-Change
-/// couples with transition()
+///   to be coupled with any transitions
+///
+/// @param {String} $values - Values
+///
+/// @throw Error if no values are passed.
+///
 @mixin will-change($values...) {
     @if( length($values) == 0 ) {
         @error "will-change() expects one or more values.";
@@ -37,7 +74,13 @@
     will-change: #{$values};
 }
 
+///
 /// Animation
+///
+/// @param {String} $values - Values
+///
+/// @throw Error if no values are passed.
+///
 @mixin animation($values...) {
     @if( length($values) == 0 ) {
         @error "animation() expects one or more values.";
@@ -45,15 +88,24 @@
     animation: #{$values};
 }
 
+///
 /// Animation Play State
-@mixin animation-play-state($values...) {
-    @if( length($values) == 0 ) {
-        @error "animation-play-state() expects one or more values.";
+///
+/// @param {String} $state - State
+///
+/// @throw Error if no values are passed.
+///
+@mixin animation-play-state($state) {
+    @if( length($state) == 0 ) {
+        @error "animation-play-state() expects a value.";
     }
-    animation-play-state: #{$values};
+    animation-play-state: #{$state};
 }
 
+///
 /// Center
+///   centers an object horizontall and vertically
+///
 @mixin center() {
     position: absolute;
     top:  50%;

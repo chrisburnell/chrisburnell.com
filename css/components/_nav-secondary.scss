@@ -23,7 +23,7 @@
 }
 .nav-secondary {
     padding: ($default-padding - .182) 0 $default-padding;
-    border-top: ($default-border / 2) solid $black-medium;
+    border-top: $default-border-thin solid $black-medium;
     .page-about & {
         border-top: 0;
         padding: $default-margin 0;

@@ -46,7 +46,7 @@ h3,
 }
 h3 {
     margin-top: .625rem;
-    border-bottom: ($default-border / 2) solid $text-color-light;
+    border-bottom: $default-border-thin solid $text-color-light;
     &:not(:last-child) {
         margin-bottom: $default-margin;
     }
@@ -140,7 +140,7 @@ ul:not([class]),
 .default-list {
     li {
         padding-left: $default-padding;
-        margin-bottom: ($default-margin / 2);
+        margin-bottom: $default-margin-thin;
         position: relative;
         &:last-child {
             margin-bottom: $default-margin;
@@ -256,7 +256,7 @@ q {
 }
 blockquote {
     @extend %rounded;
-    background-color: rgba($brand, $opacity-low);
+    background-color: rgba($brand, map-get($opacities, 'medium'));
     padding: 1rem;
     margin: 0 $default-padding $default-margin;
     quotes: "\201C" "\201D" "\2018" "\2019";

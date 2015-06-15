@@ -14,27 +14,32 @@ $breakpoints:  (
 )  !default; // overwrite _include-media.scss
 
 /// Layout $variables
-$default-margin:         $wrapper-padding  !default;
-$default-padding:        2.250rem          !default;
-$default-border:         0.250rem          !default;
-$default-border-radius:  0.375rem          !default;
-$aside-width:           15.875rem          !default;
+$default-margin:         $wrapper-padding       !default;
+$default-margin-thin:    ($default-margin / 2)  !default;
+$default-padding:        2.250rem               !default;
+$default-border:         0.250rem               !default;
+$default-border-thin:    ($default-border / 2)  !default;
+$default-border-radius:  0.375rem               !default;
+$aside-width:           15.875rem               !default;
 
 /// Opacity $variables
-$opacity-low:     0.10  !default;
-$opacity-medium:  0.25  !default;
-$opacity-high:    0.70  !default;
+$opacities: (
+    'low':    0.05,
+    'medium': 0.10,
+    'high':   0.25,
+    'ultra':  0.70
+)  !default;
 
 /// Color $variables
-$brand:             #5f8aa6                           !default;
-$text-color:        #4f4f4f                           !default;
-$text-color-alt:    #737373                           !default;
-$text-color-light:  #dddddd                           !default;
-$white:             #f9f9f9                           !default;
-$black:             #060606                           !default;
-$black-light:       rgba($black, ($opacity-low / 2))  !default;
-$black-medium:      rgba($black, $opacity-low)        !default;
-$black-dark:        rgba($black, $opacity-medium)     !default;
+$brand:             #5f8aa6                                      !default;
+$text-color:        #4f4f4f                                      !default;
+$text-color-alt:    #737373                                      !default;
+$text-color-light:  #dddddd                                      !default;
+$white:             #f9f9f9                                      !default;
+$black:             #060606                                      !default;
+$black-light:       rgba($black, map_get($opacities, 'low'))     !default;
+$black-medium:      rgba($black, map_get($opacities, 'medium'))  !default;
+$black-dark:        rgba($black, map_get($opacities, 'high'))    !default;
 
 /// Font $variables
 $base-font-size:        16px   !default;
@@ -44,10 +49,12 @@ $secondary-font-stack:  "proxima-nova", sans-serif               !default;
 $heading-font-stack:    "league-gothic", Impact, sans-serif      !default;
 
 /// Transition $variables
+/// @see {mixin} transition
 $transition-time:      0.2s  !default;
 $transition-function:  ease  !default;
 
 /// Z-index $variables
+/// @see {function} z-index
 $z-indexes: (
     'below': -1,
     'default': 1,

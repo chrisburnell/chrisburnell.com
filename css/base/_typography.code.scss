@@ -19,7 +19,7 @@ var,
     mark,
     samp,
     var {
-        background-color: rgba($brand, $opacity-low);
+        background-color: rgba($brand, map-get($opacities, 'medium'));
         padding: .25rem;
         word-wrap: break-word;
         border-radius: ($default-border-radius / 1.5);

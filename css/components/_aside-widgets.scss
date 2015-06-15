@@ -17,7 +17,7 @@
 .widget-featured-pens-link {
     width: 100%;
     display: block;
-    margin-top: ($default-margin / 2);
+    margin-top: $default-margin-thin;
     font-weight: 600;
     text-align: right;
     @include media("<=medium") {

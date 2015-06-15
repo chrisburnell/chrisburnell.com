@@ -5,7 +5,7 @@
 /*a*/.icon {
     @include transition;
     @include will-change(opacity, transform);
-    opacity: $opacity-high;
+    opacity: map-get($opacities, 'ultra');
     height: $icon-size;
     display: block;
     overflow: hidden;

@@ -40,7 +40,7 @@
 }
 .pens-lede {
     padding-bottom: $default-margin;
-    border-bottom: ($default-border / 2) solid $black-medium;
+    border-bottom: $default-border-thin solid $black-medium;
 }
 .article-title,
 .article-date,
@@ -76,7 +76,7 @@
 }
 .article-edit {
     @extend %rounded;
-    background-color: rgba($brand, $opacity-low);
+    background-color: rgba($brand, map-get($opacities, 'medium'));
     padding: 1rem;
     margin: 0 $default-padding $default-margin;
     font-style: italic;

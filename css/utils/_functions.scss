@@ -2,16 +2,30 @@
 // #UTILS - FUNCTIONS
 //
 
+///
 /// Linear Gradient
-/// accepts two or three parameters
-@function gradient($top, $bottom, $direction: "to bottom") {
-    @if( length($top) == 0 or length($bottom) == 0 ) {
+///   accepts two or three parameters
+///
+/// @param {Color} $from - Start Color
+/// @param {Color} $to - End Color
+///
+/// @return {String} Linear Gradient snippet
+///
+@function gradient($from, $to, $direction: "to bottom") {
+    @if( length($from) == 0 or length($to) == 0 ) {
         @error "gradient() expects two or more values.";
     }
-    @return linear-gradient(#{$direction}, #{$top} 0%, #{$bottom} 100%);
+    @return linear-gradient(#{$direction}, #{$from} 0%, #{$to} 100%);
 }
 
+///
 /// Z-index Management
+///   simplify z-index
+///
+/// @param {String} $layer - Generic level
+///
+/// @return {Number}
+///
 @function z-index($layer) {
     @if not map-has-key($z-indexes, $layer) {
         @error 'There is no layer named `#{$layer}` in $z-indexes. '
