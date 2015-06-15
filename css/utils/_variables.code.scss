@@ -2,18 +2,35 @@
 // #UTILS - Variables (Code)
 //
 
-/// Code Font $variables
+/// Code font stack
+/// @type List
 $code-font-stack:  Monaco, Consolas, Courier, monospace  !default;
 
-/// Coding Language $variables
-$css-color:         #016fba      !default;
-$html-color:        #e54d26      !default;
-$haml-color:        $html-color  !default;
-$javascript-color:  #f1c54c      !default;
-$sass-color:        #c6538c      !default;
-$scss-color:        $sass-color  !default;
 
-/// Create Coding Languages Array (name, colour)
+/// CSS Color
+/// @type Color
+$css-color:  #016fba  !default;
+/// HTML Color
+/// @type Color
+$html-color:  #e54d26  !default;
+/// HAML Color
+/// @type Color
+$haml-color:  $html-color  !default;
+/// JavaScript Color
+/// @type Color
+$javascript-color:  #f1c54c  !default;
+/// Sass Color
+/// @type Color
+$sass-color:  #c6538c  !default;
+/// SCSS Color
+/// @type Color
+$scss-color:  $sass-color  !default;
+
+
+/// Coding Languages
+/// @type Array
+/// @prop {String} key - Language name
+/// @prop {Color} value - Language color
 $coding-languages:  css         $css-color,
                     haml        $haml-color,
                     html        $html-color,

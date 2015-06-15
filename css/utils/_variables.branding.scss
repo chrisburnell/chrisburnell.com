@@ -2,15 +2,30 @@
 // #UTILS - Variables (Branding)
 //
 
-/// Icon $variables
+/// Icon size
+/// @type Length
 $icon-size:  40px  !default;
 
-/// Brands $variables
-$codepen-color:  #212121               !default;
-$github-color:   #333333               !default;
-$lastfm-color:   #e31b23               !default;
+
+/// CodePen color
+/// @type Color
+$codepen-color:  #212121  !default;
+/// GitHub color
+/// @type Color
+$github-color:  #333333  !default;
+/// Last.FM color
+/// @type Color
+$lastfm-color:  #e31b23  !default;
+/// Twitter color
+/// @type Color
 $twitter-color:  darken(#55acee, 10%)  !default;
-/// Create Brands Array (name, colour, icon width:height ratio)
+
+
+/// Brands
+/// @type Array
+/// @prop {String} name - Brand name
+/// @prop {Color} color - Brand color
+/// @prop {Number} opacity - Brand icon opacity
 $brands:  codepen  $codepen-color  1.025,
           github   $github-color   0.950,
           lastfm   $lastfm-color   1.000,

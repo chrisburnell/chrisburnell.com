@@ -2,8 +2,7 @@
     #UTILS - Helpers
 \*------------------------------------*/
 
-.hide,
-.hidden {
+.hide, .hidden {
     width:  1px !important;
     height: 1px !important;
     position: absolute !important;
@@ -11,7 +10,6 @@
     clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
-.remove,
-.removed {
+.remove, .removed {
     display: none !important;
 }

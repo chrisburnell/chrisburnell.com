@@ -2,8 +2,7 @@
     #BASE - Buttons
 \*------------------------------------*/
 
-button,
-.button {
+button, .button {
     @extend %non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
