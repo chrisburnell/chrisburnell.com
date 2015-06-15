@@ -49,10 +49,11 @@
         img {
             @extend %rounded;
             // testing gradient replacement when loading the `src`/`srcset`
-            background-image: linear-gradient(left bottom, rgba(153, 192, 226, 0) 0%, rgb(153, 192, 226) 100%),
-                              linear-gradient(right top, rgba(97, 66, 44, 0) 0%, rgb(97, 66, 44) 100%),
-                              linear-gradient(left top, rgba(89, 144, 173, 0) 0%, rgb(89, 144, 173) 100%),
-                              linear-gradient(right bottom, rgba(137, 99, 79, 0) 0%, rgb(137, 99, 79) 100%);
+            // colours generated from `avatar.png`
+            background-image: linear-gradient(to top right, rgba(153, 192, 226, 0) 0%, rgb(153, 192, 226) 100%),
+                              linear-gradient(to bottom left, rgba(157, 133, 139, 0) 0%, rgb(157, 133, 139) 100%),
+                              linear-gradient(to bottom right, rgba(89, 144, 173, 0) 0%, rgb(89, 144, 173) 100%),
+                              linear-gradient(to top left, rgba(137, 99, 79, 0) 0%, rgb(137, 99, 79) 100%);
             background-size: 100%;
             height: 100%;
             display: block;

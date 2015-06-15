@@ -1470,8 +1470,8 @@ footer {
   float: left;
   margin-right: .625rem; }
   .author-image img {
-    background-image: -webkit-linear-gradient(left bottom, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), -webkit-linear-gradient(right top, rgba(97, 66, 44, 0) 0%, #61422c 100%), -webkit-linear-gradient(left top, rgba(89, 144, 173, 0) 0%, #5990ad 100%), -webkit-linear-gradient(right bottom, rgba(137, 99, 79, 0) 0%, #89634f 100%);
-    background-image: linear-gradient(left bottom, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), linear-gradient(right top, rgba(97, 66, 44, 0) 0%, #61422c 100%), linear-gradient(left top, rgba(89, 144, 173, 0) 0%, #5990ad 100%), linear-gradient(right bottom, rgba(137, 99, 79, 0) 0%, #89634f 100%);
+    background-image: -webkit-linear-gradient(bottom left, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), -webkit-linear-gradient(top right, rgba(157, 133, 139, 0) 0%, #9d858b 100%), -webkit-linear-gradient(top left, rgba(89, 144, 173, 0) 0%, #5990ad 100%), -webkit-linear-gradient(bottom right, rgba(137, 99, 79, 0) 0%, #89634f 100%);
+    background-image: linear-gradient(to top right, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), linear-gradient(to bottom left, rgba(157, 133, 139, 0) 0%, #9d858b 100%), linear-gradient(to bottom right, rgba(89, 144, 173, 0) 0%, #5990ad 100%), linear-gradient(to top left, rgba(137, 99, 79, 0) 0%, #89634f 100%);
     background-size: 100%;
     height: 100%;
     display: block; }
