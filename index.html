@@ -16,7 +16,7 @@ searchable: no-content
             {% endif %}
             <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
             {% if post.comments == true %}
-                <a class="comments-link" href="{{ site.url }}{{ site.baseurl }}{{ post.url }}#disqus_thread">Leave a comment</a>
+                <a class="comments-link" href="{{ post.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
         </li>
     {% endfor %}
