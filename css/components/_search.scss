@@ -26,7 +26,7 @@
     box-sizing: inherit !important;
     width: 100%;
     padding: .5rem;
-    border: $default-border-thin solid $text-color-light;
+    border: $thin-border solid $text-color-light;
     outline: none;
     font-family: $secondary-font-stack;
     &:focus {

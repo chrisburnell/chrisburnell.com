@@ -26,8 +26,8 @@
         @include media("<=medium") {
             order: 997;
             padding-top: $default-padding;
-            border-top: $default-border-thin solid $black-medium;
-            margin-bottom: $default-margin-thin;
+            border-top: $thin-border solid $black-medium;
+            margin-bottom: $thin-margin;
         }
         a:link,
         a:visited,
@@ -84,6 +84,6 @@
             order: 998;
         }
         p:not(:last-child) {
-            margin-bottom: $default-margin-thin;
+            margin-bottom: $thin-margin;
         }
     }

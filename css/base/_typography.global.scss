@@ -46,7 +46,7 @@ h3,
 }
 h3 {
     margin-top: .625rem;
-    border-bottom: $default-border-thin solid $text-color-light;
+    border-bottom: $thin-border solid $text-color-light;
     &:not(:last-child) {
         margin-bottom: $default-margin;
     }
@@ -140,7 +140,7 @@ ul:not([class]),
 .default-list {
     li {
         padding-left: $default-padding;
-        margin-bottom: $default-margin-thin;
+        margin-bottom: $thin-margin;
         position: relative;
         &:last-child {
             margin-bottom: $default-margin;

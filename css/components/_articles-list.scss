@@ -8,7 +8,7 @@
         display: inline-block;
         clear: both;
         padding: 1.5rem 1rem;
-        border-top: $default-border-thin solid $black-medium;
+        border-top: $thin-border solid $black-medium;
         position: relative;
         &:nth-child(odd) {
             background-color: $black-light;
@@ -25,6 +25,6 @@
         text-shadow: 0 1px 0 $white; // helps pop against the background
     }
     .article-title {
-        margin-bottom: $default-margin-thin;
+        margin-bottom: $thin-margin;
     }
 }
