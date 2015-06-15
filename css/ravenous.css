@@ -473,7 +473,7 @@ a {
   color: #737373;
   display: none;
   padding-left: 1em;
-  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-family: Monaco, Consolas, Courier, monospace;
   font-size: .8125rem;
   font-weight: 600;
   line-height: 1;
@@ -703,7 +703,7 @@ kbd,
 samp,
 var,
 .monospace {
-  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-family: Monaco, Consolas, Courier, monospace;
   font-size: .875rem;
   line-height: 1.429; }
 
@@ -816,10 +816,10 @@ button,
     pointer-events: none; }
   button .icon--article,
   .button .icon--article {
-    width: .72em; }
+    width: 0.72em; }
   button .icon--feather,
   .button .icon--feather {
-    width: .58em; }
+    width: 0.58em; }
 
 /*------------------------------------*    #LAYOUT - Layout
 \*------------------------------------*/
@@ -1822,7 +1822,7 @@ footer {
     color: #f9f9f9;
     height: 6.5rem;
     display: table-cell;
-    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-family: Monaco, Consolas, Courier, monospace;
     font-size: .875em;
     font-weight: 600;
     line-height: 7.429;

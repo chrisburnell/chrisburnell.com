@@ -1,5 +1,5 @@
 /**
- * Comment toggling for article pages
+ * Conditional comments for article pages
  */
 var commentsSection = document.getElementById('comments');
 var commentsButton  = document.getElementById('show-comments-button');
