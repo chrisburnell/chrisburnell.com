@@ -69,19 +69,19 @@
 ///
 /// @param {String} $values - Values
 ///
-/// @throw Error if no values are passed.
-///
-/// @example scss - One value
+/// @example scss - One parameter
 ///   @include will-change(color);
 ///   // will-change: color;
 ///
-/// @example scss - Multiple values
+/// @example scss - Multiple parameters
 ///   @include will-change(color, border);
 ///   // will-change: color, border;
 ///
+/// @throw Error if no parameters are passed.
+///
 @mixin will-change($values...) {
     @if( length($values) == 0 ) {
-        @error "will-change() expects one or more values.";
+        @error "will-change() expects one or more parameters.";
     }
     will-change: #{$values};
 }
@@ -91,11 +91,11 @@
 ///
 /// @param {String} $values - Values
 ///
-/// @throw Error if no values are passed.
+/// @throw Error if no parameters are passed.
 ///
 @mixin animation($values...) {
     @if( length($values) == 0 ) {
-        @error "animation() expects one or more values.";
+        @error "animation() expects one or more parameters.";
     }
     animation: #{$values};
 }
@@ -105,11 +105,11 @@
 ///
 /// @param {String} $state - State
 ///
-/// @throw Error if no values are passed.
+/// @throw Error if no parameter is passed.
 ///
 @mixin animation-play-state($state) {
     @if( length($state) == 0 ) {
-        @error "animation-play-state() expects a value.";
+        @error "animation-play-state() expects one parameter.";
     }
     animation-play-state: #{$state};
 }
