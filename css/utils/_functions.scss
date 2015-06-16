@@ -27,10 +27,13 @@
 ///
 /// @return {Number}
 ///
+/// @example scss
+///   z-index: z-index(above);
+///   // z-index: 2;
+///
 @function z-index($layer) {
     @if not map-has-key($z-indexes, $layer) {
-        @error "There is no layer named `#{$layer}` in $z-indexes. "
-             + "Layer should be one of #{map-keys($z-indexes)}.";
+        @error "There is no layer named `#{$layer}` in $z-indexes. Layer should be one of #{map-keys($z-indexes)}.";
     }
     @return map-get($z-indexes, $layer);
 }

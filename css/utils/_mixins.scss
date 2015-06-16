@@ -13,27 +13,27 @@
 /// @param {String} $values - Values
 ///
 /// @example scss - No Values
-///   include transition()
+///   @include transition();
 ///   // transition: all .2s ease;
 ///
 /// @example scss - One Property
-///   include transition(color)
+///   @include transition(color);
 ///   // transition: color .2s ease;
 ///
 /// @example scss - Two Properties
-///   include transition(color, border)
+///   @include transition(color, border);
 ///   // transition: color .2s ease, border .2s ease;
 ///
 /// @example scss - One Property, One Duration
-///   include transition(color .5s)
+///   @include transition(color .5s);
 ///   // transition: color .5s ease;
 ///
 /// @example scss - One Property, One Duration, One Timing Function
-///   include transition(color 1s linear)
+///   @include transition(color 1s linear);
 ///   // transition: color 1s linear;
 ///
 /// @example scss - Two Properties, Two Durations, Two Timing Functions
-///   include transition(color 2s ease-in-out, border 1s linear)
+///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
 @mixin transition($values...) {
@@ -70,6 +70,14 @@
 /// @param {String} $values - Values
 ///
 /// @throw Error if no values are passed.
+///
+/// @example scss - One value
+///   @include will-change(color);
+///   // will-change: color;
+///
+/// @example scss - Multiple values
+///   @include will-change(color, border);
+///   // will-change: color, border;
 ///
 @mixin will-change($values...) {
     @if( length($values) == 0 ) {
