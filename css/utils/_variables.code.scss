@@ -28,7 +28,7 @@ $scss-color:  $sass-color  !default;
 
 
 /// Coding Languages
-/// @type Array
+/// @type Map
 /// @prop {String} key - Language name
 /// @prop {Color} value - Language color
 $coding-languages:  css         $css-color,

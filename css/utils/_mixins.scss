@@ -4,8 +4,9 @@
 
 ///
 /// Flexible Transitions
-///   generate transitions based on flexible input parameters
-///   pass zero or more properties and zero or more further parameters
+/// Generate transitions based on flexible input parameters.
+/// Pass zero or more properties and zero to two further parameters.
+/// Relies on defaults `all`, $transition-time, and $transtion-function.
 ///
 /// @author Chris Burnell
 ///
@@ -48,6 +49,9 @@
             @if( str-index(""+$value+"", " ") == null ) {
                 $transition: append($transition, unquote("#{$value} #{$transition-time} #{$transition-function}"), comma);
             }
+            @else if( str-index(""+$value+"", " ") == 1 ) {
+                $transition: append($transition, unquote("#{$value} #{$transition-function}"), comma);
+            }
             @else {
                 $transition: append($transition, unquote("#{$value}"), comma);
             }
@@ -61,7 +65,7 @@
 
 ///
 /// Will-Change
-///   to be coupled with any transitions
+/// To be coupled with any transitions.
 ///
 /// @param {String} $values - Values
 ///
@@ -104,7 +108,7 @@
 
 ///
 /// Center
-///   centers an object horizontall and vertically
+/// Centers an object horizontally and vertically.
 ///
 @mixin center() {
     position: absolute;
