@@ -13,13 +13,13 @@ lede: All of my pens.
         <title>{{ site.title | xml_escape }} – Pens Only</title>
         <description>{{ page.lede | xml_escape }}</description>
         <link>{{ site.url }}{{ site.baseurl }}/pens</link>
-        <atom:link href="{{ site.url }}{{ site.baseurl }}/feed-pens.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="{{ "/feed-pens.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
         <language>en</language>
 
         <image>
-            <url>{{ site.url }}{{ site.baseurl }}/favicon.png</url>
+            <url>{{ "/favicon.png" | prepend: site.baseurl | prepend: site.url }}</url>
             <title>{{ site.author }}</title>
-            <link>{{ site.url }}{{ site.baseurl }}</link>
+            <link>{{ site.baseurl | prepend: site.url }}</link>
         </image>
 
         {% for post in site.categories.pen %}
