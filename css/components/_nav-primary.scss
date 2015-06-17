@@ -66,7 +66,7 @@
             }
         }
     }
-        // Primary Navigation Hover Effect
+        // effect for interactions and active paths
         .nav-primary-list a:hover,
         .nav-primary-list a:focus,
         .nav-primary-list a:active,
@@ -79,7 +79,7 @@
             padding-bottom: .5rem;
             border-bottom-width: $default-border;
         }
-            // Primary Navigation Active Page Arrow
+            // complementary to the effect for interactions and active paths
             .page-home .nav-primary-home a:after,
             .page-about .nav-primary-about a:after,
             [class*="page-article"] .nav-primary-articles a:after,

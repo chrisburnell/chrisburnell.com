@@ -52,20 +52,16 @@
     &:hover svg,
     &:focus svg,
     &:active svg {
-        /**
-         * Only animate the image when the user interacts with `.logo`
-         */
+        // Only animate the image when the user interacts with `.logo`
         @include animation-play-state(running);
     }
     &:active svg {
-        /**
-         * In order to get `.logo svg` to travel up 2x the distance the
-         * `.logo` text does, first the `translate` applied on the parent
-         * (of the `aside`) has to be counteracted, then (2 * 0.039em)
-         * is added, totalling 0.117em, made negative on the y-axis to
-         * go up. We cannot use `translate` as it is used below for
-         * further animating.
-         */
+        // In order to get `.logo svg` to travel up 2x the distance the
+        // `.logo` text does, first the `translate` applied on the parent
+        // (of the `aside`) has to be counteracted, then (2 * 0.039em)
+        // is added, totalling 0.117em, made negative on the y-axis to
+        // go up. We cannot use `translate` as it is used below for
+        // further animating.
         top: -0.4rem;
     }
 }

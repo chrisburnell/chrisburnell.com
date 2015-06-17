@@ -1,5 +1,4 @@
-@charset "UTF-8";
-/*! Ravenous */
+@charset "UTF-8";/*! Ravenous */
 /**
  * @version 2.5.0
  * @author  Chris Burnell (@iamchrisburnell)
@@ -840,15 +839,6 @@ button, .button {
 
 /*------------------------------------*    #LAYOUT - Article
 \*------------------------------------*/
-/**
- * The width of the articles is fluid, and always has padding on the left-hand
- * side to make room for any `aside`, which can appear anywhere inside
- * `article` or `.articles-list`.
- * Maximum total width of container
- *   = 1080px
- * Left-hand padding
- *   = 25% of 1080px = 270px  = 16.875em
- */
 article {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
@@ -857,10 +847,6 @@ article {
       padding-left: 18.125rem; } }
   @media (max-width: 768px) {
     article {
-      /**
-         * Below the medium breakpoint, `article`, `article-list`, and `aside`
-         * become full width.
-         */
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -873,11 +859,6 @@ article {
 
 /*------------------------------------*    #LAYOUT - Aside
 \*------------------------------------*/
-/**
- * The width of the asides is static above the medium breakpoint and always
- * floated within an article or list of articles. The math is calculated as in
- * `_content.scss`.
- */
 @media (min-width: 769px) {
   aside {
     width: 15.875rem;
@@ -969,20 +950,9 @@ footer {
   .logo:hover svg,
   .logo:focus svg,
   .logo:active svg {
-    /**
-         * Only animate the image when the user interacts with `.logo`
-         */
     -webkit-animation-play-state: running;
             animation-play-state: running; }
   .logo:active svg {
-    /**
-         * In order to get `.logo svg` to travel up 2x the distance the
-         * `.logo` text does, first the `translate` applied on the parent
-         * (of the `aside`) has to be counteracted, then (2 * 0.039em)
-         * is added, totalling 0.117em, made negative on the y-axis to
-         * go up. We cannot use `translate` as it is used below for
-         * further animating.
-         */
     top: -0.4rem; }
 
 @-webkit-keyframes soaring {
@@ -1615,9 +1585,6 @@ footer {
       display: block;
       margin-top: 1.25rem; } }
 
-/**
- * Appears only on article pages
- */
 .comments {
   text-align: center; }
   @media (min-width: 769px) {
@@ -1634,9 +1601,7 @@ footer {
 
 /*------------------------------------*    #COMPONENTS - Code
 \*------------------------------------*/
-/**
- * `data-lang` is always an attribute on a code element inside `div.highlight`
- */
+/*div.highlight*/
 [data-lang] {
   padding-top: 2.25rem;
   line-height: 2; }
@@ -1840,17 +1805,11 @@ footer {
 
 /*------------------------------------*    #UTILS - Placeholders
 \*------------------------------------*/
-/**
- * We’re goin’ up around the bend
- */
 figure img,
 figure svg, blockquote, pre:not(.codepen), aside:not(.author), .article-banner, .article-edit, .small-articles-list a, .author-image img {
   background-clip: padding-box;
   border-radius: 0.375rem; }
 
-/**
- * Non-selectable stuff
- */
 button, .button, .logo {
   -webkit-user-select: none;
      -moz-user-select: none;

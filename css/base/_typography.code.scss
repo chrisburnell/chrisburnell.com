@@ -21,17 +21,20 @@ var,
     var {
         background-color: rgba($brand, map-get($opacities, 'medium'));
         padding: .25rem;
+        // force text to wrap inside the container
         word-wrap: break-word;
         border-radius: $thin-border-radius;
     }
 
 pre {
-    margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
+    // override `normalize.css` and `margin-bottom` in `_layout.scss`
+    margin-top: 0;
     margin-bottom: $default-margin;
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-light;
         padding: 1.5rem 1.5rem 1rem;
+        // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
         line-height: 1.5;

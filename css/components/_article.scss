@@ -30,7 +30,8 @@
 .site-lede,
 .article-lede {
     @include media(">medium") {
-        margin-top: -0.5rem; // align text to the `aside`
+        // align text to the `aside`
+        margin-top: -0.5rem;
     }
 }
 .article-lede {

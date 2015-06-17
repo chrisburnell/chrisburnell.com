@@ -10,7 +10,8 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    min-height: 1.25em; // so that elements can be floated inside headings
+    // so that elements can be floated inside headings
+    min-height: 1.25em;
     padding: 0;
     margin: 0;
     position: relative;

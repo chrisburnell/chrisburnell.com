@@ -4,36 +4,36 @@
 
 /// Code font stack
 /// @type List
-$code-font-stack:  Monaco, Consolas, Courier, monospace  !default;
+$code-font-stack: Monaco, Consolas, Courier, monospace !default;
 
 
 /// CSS Color
 /// @type Color
-$css-color:  #016fba  !default;
+$css-color: #016fba !default;
 /// HTML Color
 /// @type Color
-$html-color:  #e54d26  !default;
+$html-color: #e54d26 !default;
 /// HAML Color
 /// @type Color
-$haml-color:  $html-color  !default;
+$haml-color: $html-color !default;
 /// JavaScript Color
 /// @type Color
-$javascript-color:  #f1c54c  !default;
+$javascript-color: #f1c54c !default;
 /// Sass Color
 /// @type Color
-$sass-color:  #c6538c  !default;
+$sass-color: #c6538c !default;
 /// SCSS Color
 /// @type Color
-$scss-color:  $sass-color  !default;
+$scss-color: $sass-color !default;
 
 
 /// Coding Languages
 /// @type Map
 /// @prop {String} key - Language name
 /// @prop {Color} value - Language color
-$coding-languages:  css         $css-color,
-                    haml        $haml-color,
-                    html        $html-color,
-                    javascript  $javascript-color,
-                    sass        $sass-color,
-                    scss        $scss-color;
+$coding-languages: css        $css-color,
+                   haml       $haml-color,
+                   html       $html-color,
+                   javascript $javascript-color,
+                   sass       $sass-color,
+                   scss       $scss-color;

@@ -22,7 +22,8 @@
     .article-title,
     .article-date,
     .comments-link {
-        text-shadow: 0 1px 0 $white; // helps pop against the background
+        // helps pop against the background
+        text-shadow: 0 1px 0 $white;
     }
     .article-title {
         margin-bottom: $thin-margin;

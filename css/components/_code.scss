@@ -2,10 +2,7 @@
     #COMPONENTS - Code
 \*------------------------------------*/
 
-/**
- * `data-lang` is always an attribute on a code element inside `div.highlight`
- */
-[data-lang] {
+/*div.highlight*/[data-lang] {
     padding-top: $default-padding;
     line-height: 2;
     &:before {

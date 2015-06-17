@@ -20,9 +20,7 @@
     }
 }
 
-/**
- * Appears only on article pages
- */
+// Appears only on article pages
 .comments {
     text-align: center;
     @include media(">medium") {

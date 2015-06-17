@@ -2,15 +2,13 @@
     #LAYOUT - Article
 \*------------------------------------*/
 
-/**
- * The width of the articles is fluid, and always has padding on the left-hand
- * side to make room for any `aside`, which can appear anywhere inside
- * `article` or `.articles-list`.
- * Maximum total width of container
- *   = 1080px
- * Left-hand padding
- *   = 25% of 1080px = 270px  = 16.875em
- */
+// The width of the articles is fluid, and always has padding on the left-hand
+// side to make room for any `aside`, which can appear anywhere inside
+// `article` or `.articles-list`.
+// Maximum total width of container
+//   = 1080px
+// Left-hand padding
+//   = 25% of 1080px = 270px = 16.875em
 article {
     padding-top: $default-padding;
     border-top: $default-border solid $brand;
@@ -18,10 +16,8 @@ article {
         padding-left: ($aside-width + $default-padding);
     }
     @include media("<=medium") {
-        /**
-         * Below the medium breakpoint, `article`, `article-list`, and `aside`
-         * become full width.
-         */
+        // Below the medium breakpoint, `article`, `article-list`, and `aside`
+        // become full width.
         display: flex;
         flex-direction: column;
     }
