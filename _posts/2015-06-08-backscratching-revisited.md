@@ -131,4 +131,4 @@ Now we can be sure to only target `spans` without a `class` *or* `itemprop` attr
 
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
-I have to reiterate that this technique needs to be taken with a grain of salt. **Do not <a href="https://gifs.chrisburnell.com/copypasta.gif" rel="nofollow">copy-pasta</a> this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
+I have to reiterate that this technique needs to be taken with a grain of salt. **Do not <a href="http://gifs.chrisburnell.com/copypasta.gif" rel="nofollow">copy-pasta</a> this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
