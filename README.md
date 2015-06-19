@@ -1,8 +1,14 @@
-# Ravenous
+## Ravenous
 
-## version 1.0.0
+#### version 1.0.0
 
-### The base CSS styles for [chrisburnell.com](https://chrisburnell.com/).
+--------
+
+The base CSS styles for [chrisburnell.com](https://chrisburnell.com/).
+
+If referencing as a *git submodule*, use the `bare` branch.
+
+--------
 
 ## Table of Contents
 
