@@ -102,20 +102,18 @@ a {
     .heading-anchor {
         color: $text-color-alt;
         display: none;
-        padding-left: 1em;
+        padding-left: $default-margin;
         font-family: $code-font-stack;
         font-size: .8125rem;
         font-weight: 600;
         line-height: 1;
         text-transform: lowercase;
+        text-shadow: none;
         vertical-align: middle;
         :hover > &,
         :focus > &,
         :active > & {
             display: inline-block;
-        }
-        h1 & {
-            text-shadow: none;
         }
     }
     /**
@@ -156,7 +154,7 @@ ul:not([class]),
     ol:not([class]),
     ul:not([class]),
     .default-list {
-        margin-top: 1rem;
+        margin-top: $default-margin;
     }
 }
 ol:not([class]),
@@ -217,7 +215,7 @@ a img {
     height: auto;
 }
 figure {
-    margin: 0 0 .5rem;
+    margin: 0 0 $thin-margin;
     text-align: center;
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
@@ -257,7 +255,7 @@ q {
 blockquote {
     @extend %rounded;
     background-color: rgba($brand, map-get($opacities, 'medium'));
-    padding: 1rem;
+    padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
     quotes: "\201C" "\201D" "\2018" "\2019";
     @include media("<=small") {
@@ -277,8 +275,8 @@ blockquote {
     }
     cite {
         display: block;
-        margin-left: 2rem;
-        margin-top: 1rem;
+        margin-left: $default-padding;
+        margin-top: $default-margin;
         &:before {
             content: "\2014\00a0";
         }
@@ -294,7 +292,7 @@ hr {
     height: .125rem;
     display: block;
     border: 0;
-    margin: .5rem 0 $spacing-medium;
+    margin: $spacing-small 0 $spacing-medium;
 }
 
 /**
