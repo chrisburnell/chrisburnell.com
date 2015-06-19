@@ -358,6 +358,7 @@ th {
   padding: 0; }
 
 html {
+  background-color: #f9f9f9;
   min-height: 100%;
   position: relative;
   overflow-y: scroll; }
@@ -366,7 +367,6 @@ html {
   display: none; }
 
 html {
-  background-color: #f9f9f9;
   color: #4f4f4f;
   font: 400 normal 16px/1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
@@ -621,14 +621,14 @@ blockquote {
     blockquote {
       margin-right: 1.25rem;
       margin-left: 1.25rem; } }
-  blockquote p:last-of-type {
+  blockquote p {
     margin-bottom: 0 !important; }
-    blockquote p:last-of-type:after {
-      content: "\201C";
+    blockquote p:before {
+      content: open-quote;
+      padding-right: .1875rem; }
+    blockquote p:after {
+      content: close-quote;
       padding-left: .1875rem; }
-  blockquote p:before {
-    content: "\201D";
-    padding-right: .1875rem; }
   blockquote cite {
     display: block;
     margin-left: 2.25rem;
@@ -753,8 +753,6 @@ button, .button {
     -webkit-transform: translateY(0.25rem);
         -ms-transform: translateY(0.25rem);
             transform: translateY(0.25rem); }
-  button[disabled], .button[disabled] {
-    opacity: .4; }
   button:before,
   button:after, .button:before,
   .button:after {
@@ -769,6 +767,8 @@ button, .button {
   button:active:after, .button:active:before,
   .button:active:after {
     top: -0.25rem; }
+  button[disabled], .button[disabled] {
+    opacity: .4; }
   @media (max-width: 768px) {
     .page-not-found button, .page-not-found .button {
       display: block;

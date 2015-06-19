@@ -4,7 +4,6 @@
 ////
 
 html {
-    background-color: $white;
     color: $color-text;
     font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
@@ -264,16 +263,14 @@ blockquote {
         margin-left:  $spacing-medium;
     }
     p {
-        &:last-of-type {
-            margin-bottom: 0 !important;
-            &:after {
-                content: "\201C";
-                padding-left: .1875rem;
-            }
-        }
+        margin-bottom: 0 !important;
         &:before {
-            content: "\201D";
+            content: open-quote;
             padding-right: .1875rem;
+        }
+        &:after {
+            content: close-quote;
+            padding-left: .1875rem;
         }
     }
     cite {
