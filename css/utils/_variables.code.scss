@@ -1,0 +1,40 @@
+////
+/// Variables (Code)
+/// @group utils
+////
+
+/// Code font stack
+/// @type List
+$font-stack-code: Monaco, Consolas, Courier, monospace !default;
+
+
+/// CSS Color
+/// @type Color
+$color-css: #016fba !default;
+/// HTML Color
+/// @type Color
+$color-html: #e54d26 !default;
+/// HAML Color
+/// @type Color
+$color-haml: $color-html !default;
+/// JavaScript Color
+/// @type Color
+$color-javascript: #f1c54c !default;
+/// Sass Color
+/// @type Color
+$color-sass: #c6538c !default;
+/// SCSS Color
+/// @type Color
+$color-scss: $color-sass !default;
+
+
+/// Coding Languages
+/// @type Map
+/// @prop {String} key - Language name
+/// @prop {Color} value - Language color
+$coding-languages: css        $color-css,
+                   haml       $color-haml,
+                   html       $color-html,
+                   javascript $color-javascript,
+                   sass       $color-sass,
+                   scss       $color-scss;
