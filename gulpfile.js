@@ -11,6 +11,7 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
+    sassdoc      = require('sassdoc'),
     uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
@@ -83,6 +84,17 @@ gulp.task('css-critical', function() {
         }));
 });
 
+gulp.task('css-sassdoc', function() {
+    return gulp.src(cssPath)
+        .pipe(plumber())
+        .pipe(sassdoc())
+        .pipe(notify({
+            title: 'gulp',
+            message: 'SassDoc compiled.',
+            onLast: true
+        }));
+});
+
 // Minify JS
 gulp.task('js-main', function() {
     return gulp.src([jsPath + '*.js', '!' + jsPath + '*.min.js'])
@@ -138,6 +150,7 @@ gulp.task('default', function() {
 gulp.task('css', function() {
     gulp.start('css-main');
     // gulp.start('css-critical');
+    gulp.start('css-sassdoc');
 });
 
 // JS task

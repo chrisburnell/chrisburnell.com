@@ -21,9 +21,9 @@
     &:active {
         transform: translateY(.125rem);
     }
-    @each $brand in $brands {
-        $name:  nth($brand, 1);
-        $ratio: nth($brand, 3);
+    @each $color-brand in $color-brands {
+        $name:  nth($color-brand, 1);
+        $ratio: nth($color-brand, 3);
         &.icon--#{$name},
         &.link--#{$name} {
             width: ($ratio * $icon-size);

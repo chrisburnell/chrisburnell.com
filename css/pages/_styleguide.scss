@@ -12,29 +12,29 @@
         color: $white;
         height: 6.5rem;
         display: table-cell;
-        font-family: $code-font-stack;
+        font-family: $font-stack-code;
         font-size: .875em;
         font-weight: 600;
         line-height: 7.429; // 6.5/0.875
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
-        &[data-color="#{$brand}"] {
-            background-color: $brand;
+        &[data-color="#{$color-brand}"] {
+            background-color: $color-brand;
         }
         &[data-color="#{$white}"] {
             background-color: $white;
-            color: $text-color;
+            color: $color-text;
         }
-        &[data-color="#{$text-color}"] {
-            background-color: $text-color;
+        &[data-color="#{$color-text}"] {
+            background-color: $color-text;
         }
-        &[data-color="#{$text-color-alt}"] {
-            background-color: $text-color-alt;
+        &[data-color="#{$color-text-alt}"] {
+            background-color: $color-text-alt;
         }
-        &[data-color="#{$text-color-light}"] {
-            background-color: $text-color-light;
-            color: $text-color;
+        &[data-color="#{$color-text-light}"] {
+            background-color: $color-text-light;
+            color: $color-text;
         }
         @include media("<=small") {
             width: 6.5rem;

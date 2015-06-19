@@ -53,7 +53,7 @@
 .footer-style-guide-link {
     &:link,
     &:visited {
-        color: $text-color-light;
+        color: $color-text-light;
     }
 }
 .footer-style-guide-link {
@@ -62,7 +62,7 @@
     }
 }
 .footer-spacer {
-    color: $text-color-alt;
+    color: $color-text-alt;
     @include media("<=small") {
         display: none;
     }

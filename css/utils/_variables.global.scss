@@ -6,15 +6,15 @@
 /// Wrapper padding
 /// @type Length
 $wrapper-padding: 1.25rem !default;
-/// Wrapper max width
-/// @type Length
-$max-wrapper-width: 1140px !default;
-/// Wrapper medium width
-/// @type Length
-$medium-wrapper-width: 768px !default;
 /// Wrapper small width
 /// @type Length
-$small-wrapper-width: 500px !default;
+$wrapper-width-small: 500px !default;
+/// Wrapper medium width
+/// @type Length
+$wrapper-width-medium: 768px !default;
+/// Wrapper max width
+/// @type Length
+$wrapper-width-large: 1140px !default;
 
 /// Breakpoints
 /// overwrite `_include-media.scss`
@@ -22,36 +22,38 @@ $small-wrapper-width: 500px !default;
 /// @prop {String} key - Breakpoint name
 /// @prop {Length} value - Breakpoint value
 $breakpoints: (
-    "small":  $small-wrapper-width,
-    "medium": $medium-wrapper-width,
-    "large":  $max-wrapper-width
+    "small":  $wrapper-width-small,
+    "medium": $wrapper-width-medium,
+    "large":  $wrapper-width-large
 ) !default;
 
 
-/// Large spacing
-/// nearly double $wrapper-padding
-/// @type Length
-$spacing-large: 2.250rem !default;
-/// Medium spacing
-/// equal to $wrapper-padding
-/// @type Length
-$spacing-medium: $wrapper-padding !default;
 /// Small spacing
 /// half of $wrapper-padding
 /// @type Length
 $spacing-small: ($wrapper-padding / 2) !default;
+/// Medium spacing
+/// equal to $wrapper-padding
+/// @type Length
+$spacing-medium: $wrapper-padding !default;
+/// Large spacing
+/// nearly double $wrapper-padding
+/// @type Length
+$spacing-large: 2.250rem !default;
 /// Default border
 /// @type Length
 $default-border: 0.250rem !default;
 /// Thin border
+/// half of $default-border
 /// @type Length
 $thin-border: ($default-border / 2) !default;
 /// Default border-radius
 /// @type Length
 $default-border-radius: 0.375rem !default;
 /// Thin border-radius
+/// same length as $default-border
 /// @type Length
-$thin-border-radius: ($default-border-radius / 1.5) !default;
+$thin-border-radius: $default-border !default;
 /// Aside width
 /// @type Length
 $aside-width: 15.875rem !default;
@@ -71,16 +73,16 @@ $opacities: (
 
 /// Brand color
 /// @type Color
-$brand:  #5f8aa6 !default;
+$color-brand:  #5f8aa6 !default;
 /// Text color
 /// @type Color
-$text-color: #4f4f4f !default;
+$color-text: #4f4f4f !default;
 /// Alternate text color
 /// @type Color
-$text-color-alt: #737373 !default;
+$color-text-alt: #737373 !default;
 /// Light text color
 /// @type Color
-$text-color-light: #dddddd !default;
+$color-text-light: #dddddd !default;
 /// White
 /// @type Color
 $white: #f9f9f9 !default;
@@ -89,13 +91,10 @@ $white: #f9f9f9 !default;
 $black: #060606 !default;
 /// Black, low opacity
 /// @type Color
-$black-light: rgba($black, map_get($opacities, 'low')) !default;
+$black-low: rgba($black, map_get($opacities, 'low')) !default;
 /// Black, medium opacity
 /// @type Color
 $black-medium: rgba($black, map_get($opacities, 'medium')) !default;
-/// Black, high opacity
-/// @type Color
-$black-dark: rgba($black, map_get($opacities, 'high')) !default;
 
 
 /// Base font size
@@ -106,13 +105,13 @@ $base-font-size: 16px !default;
 $base-line-height: 1.875 !default;
 /// Primary font stack
 /// @type List
-$primary-font-stack: "ff-meta-serif-web-pro", Georgia, serif !default;
+$font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// Secondary font stack
 /// @type List
-$secondary-font-stack: "proxima-nova", sans-serif !default;
+$font-stack-secondary: "proxima-nova", sans-serif !default;
 /// Heading font stack
 /// @type List
-$heading-font-stack: "league-gothic", Impact, sans-serif !default;
+$font-stack-heading: "league-gothic", Impact, sans-serif !default;
 
 
 /// Transition time

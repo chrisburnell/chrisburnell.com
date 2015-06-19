@@ -5,7 +5,7 @@
 
 .wrap {
     width: auto;
-    max-width: $max-wrapper-width;
+    max-width: $wrapper-width-large;
     padding-right: $wrapper-padding;
     padding-left:  $wrapper-padding;
     margin-right: auto;
@@ -29,5 +29,5 @@
 }
 
 .fixed-width {
-    width: $max-wrapper-width;
+    width: $wrapper-width-large;
 }

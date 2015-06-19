@@ -9,7 +9,7 @@
     &:before {
         @include transition;
         content: attr(data-lang);
-        background-color: $text-color-alt;
+        background-color: $color-text-alt;
         color: $white;
         width: 100%;
         display: block;
@@ -17,7 +17,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        font-family: $secondary-font-stack;
+        font-family: $font-stack-secondary;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: $spacing-large;
@@ -48,7 +48,7 @@
     .cp,                                // Comment - Preproc
     .c1,                                // Comment - Single
     .cs {                               // Comment - Special
-        color: $text-color-alt;
+        color: $color-text-alt;
         font-style: italic;
     }
     .gs,                                // Generic - Strong
@@ -114,17 +114,17 @@
     .go,                                // Generic - Output
     .gp,                                // Generic - Prompt
     .nn {                               // Name - Namespace
-        color: $text-color-alt;
+        color: $color-text-alt;
     }
     .gu,                                // Generic - Subheading
     .w {                                // Text - Whitespace
-        color: $text-color-light;
+        color: $color-text-light;
     }
     .kt,                                // Keyword - Type
     .na,                                // Name - Attribute
     .nc,                                // Name - Class
     .nt {                               // Name - Tag
-        color: $brand;
+        color: $color-brand;
     }
     .ni,                                // Name - Entity
     .ss {                               // Literal - String Symbol

@@ -6,7 +6,7 @@
 .comments-link {
     display: inline-block;
     margin-top: 1.625em;
-    font-family: $secondary-font-stack;
+    font-family: $font-stack-secondary;
     font-weight: 600;
     line-height: 1;
     &:after {
@@ -35,7 +35,7 @@
         top: 0;
     }
     noscript {
-        font-family: $secondary-font-stack;
+        font-family: $font-stack-secondary;
         font-size: 1.25rem;
         font-style: italic;
     }

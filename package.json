@@ -16,6 +16,9 @@
         "gulp-uglify": "^1.2.0",
         "gulp-watch": "^4.2.4"
     },
+    "devDependencies": {
+        "sassdoc": "^2.1.15"
+    },
     "repository": {
         "type": "git",
         "url": "git@github.com:chrisburnell/chrisburnell.github.io.git"

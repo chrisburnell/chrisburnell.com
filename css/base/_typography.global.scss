@@ -4,8 +4,8 @@
 ////
 
 html {
-    color: $text-color;
-    font: 400 normal #{$base-font-size}/#{$base-line-height} $primary-font-stack;
+    color: $color-text;
+    font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
 }
@@ -20,19 +20,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.25;
 }
 h1 {
-    font-family: $heading-font-stack;
+    font-family: $font-stack-heading;
     font-size: 2.625rem;
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 $black-light;
+    text-shadow: .0714em .0714em 0 $black-low;
 }
 h2 {
-    font-family: $primary-font-stack;
+    font-family: $font-stack-primary;
     font-size: 1.625rem;
 }
 h3,
 h4,
 .articles-list .article-date {
-    font-family: $secondary-font-stack;
+    font-family: $font-stack-secondary;
     font-weight: 600;
 }
 h3,
@@ -46,7 +46,7 @@ h3,
 }
 h3 {
     margin-top: .625rem;
-    border-bottom: $thin-border solid $text-color-light;
+    border-bottom: $thin-border solid $color-text-light;
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
@@ -70,10 +70,10 @@ a {
     @include will-change(background, color);
     text-decoration: none;
     &:link {
-        color: $brand;
+        color: $color-brand;
     }
     &:visited {
-        color: darken($brand, 10%);
+        color: darken($color-brand, 10%);
     }
     &:hover,
     &:focus,
@@ -84,15 +84,15 @@ a {
     h3 & {
         &:link,
         &:visited {
-            color: $text-color;
+            color: $color-text;
         }
         &:visited {
-            color: lighten($text-color, 10%);
+            color: lighten($color-text, 10%);
         }
         &:hover,
         &:focus,
         &:active {
-            color: $brand;
+            color: $color-brand;
         }
     }
     span:not([class]):not([itemprop]) {
@@ -100,10 +100,10 @@ a {
     }
 }
     .heading-anchor {
-        color: $text-color-alt;
+        color: $color-text-alt;
         display: none;
-        padding-left: $default-margin;
-        font-family: $code-font-stack;
+        padding-left: $spacing-medium;
+        font-family: $font-stack-code;
         font-size: .8125rem;
         font-weight: 600;
         line-height: 1;
@@ -119,9 +119,9 @@ a {
     /**
      * Brand Link Colours
      */
-    @each $brand in $brands {
-        $name:  nth($brand, 1);
-        $color: nth($brand, 2);
+    @each $color-brand in $color-brands {
+        $name:  nth($color-brand, 1);
+        $color: nth($color-brand, 2);
         .link--#{$name} {
             color: #{$color} !important;
         }
@@ -147,14 +147,14 @@ ul:not([class]),
             position: absolute;
             top: 0;
             left: 0;
-            font-family: $secondary-font-stack;
+            font-family: $font-stack-secondary;
             font-weight: 600;
         }
     }
     ol:not([class]),
     ul:not([class]),
     .default-list {
-        margin-top: $default-margin;
+        margin-top: $spacing-medium;
     }
 }
 ol:not([class]),
@@ -185,14 +185,14 @@ dl {
         float: left;
         clear: left;
         padding-right: $spacing-medium;
-        font-family: $secondary-font-stack;
+        font-family: $font-stack-secondary;
         font-weight: 600;
         @include media("<=small") {
             float: none;
         }
     }
     dd {
-        width: $max-wrapper-width;
+        width: $wrapper-width-large;
         display: table-cell;
         margin: 0;
         overflow: hidden;
@@ -215,7 +215,7 @@ a img {
     height: auto;
 }
 figure {
-    margin: 0 0 $thin-margin;
+    margin: 0 0 $spacing-small;
     text-align: center;
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
@@ -227,7 +227,7 @@ figure {
     a:link,
     a:visited,
     figcaption {
-        color: $text-color-alt;
+        color: $color-text-alt;
         font-style: italic;
     }
 }
@@ -236,12 +236,12 @@ abbr[title],
 blockquote,
 cite,
 dfn[title] {
-    color: $text-color-alt;
+    color: $color-text-alt;
     font-style: italic;
 }
 abbr[title],
 dfn[title] {
-    border-bottom: 1px dotted $text-color-alt;
+    border-bottom: 1px dotted $color-text-alt;
     cursor: help;
 }
 ins {
@@ -254,7 +254,7 @@ q {
 }
 blockquote {
     @extend %rounded;
-    background-color: rgba($brand, map-get($opacities, 'medium'));
+    background-color: rgba($color-brand, map-get($opacities, 'medium'));
     padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
     quotes: "\201C" "\201D" "\2018" "\2019";
@@ -275,8 +275,8 @@ blockquote {
     }
     cite {
         display: block;
-        margin-left: $default-padding;
-        margin-top: $default-margin;
+        margin-left: $spacing-large;
+        margin-top: $spacing-medium;
         &:before {
             content: "\2014\00a0";
         }
@@ -309,7 +309,7 @@ iframe {
 }
 
 ::selection {
-    background: $brand;
+    background: $color-brand;
     color: $white;
 }
 .canada::selection {

@@ -63,8 +63,8 @@
         &:hover,
         &:focus,
         &:active {
-            color: $text-color;
-            border-bottom-color: $brand;
+            color: $color-text;
+            border-bottom-color: $color-brand;
             text-decoration: none;
         }
     }
@@ -73,12 +73,12 @@
     margin-bottom: .75rem;
     &:before {
         content: "\2013\0020";
-        color: $text-color-alt;
+        color: $color-text-alt;
     }
 }
 .article-edit {
     @extend %rounded;
-    background-color: rgba($brand, map-get($opacities, 'medium'));
+    background-color: rgba($color-brand, map-get($opacities, 'medium'));
     padding: 1rem;
     margin: 0 $spacing-large $spacing-medium;
     font-style: italic;

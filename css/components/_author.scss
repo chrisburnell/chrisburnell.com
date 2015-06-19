@@ -8,7 +8,7 @@
  * breakpoint.
  */
 /*aside*/.author {
-    font-family: $secondary-font-stack;
+    font-family: $font-stack-secondary;
     @include media("<=medium") {
         display: flex;
         flex-direction: column;
@@ -20,7 +20,7 @@
 }
     .author-information {
         margin-bottom: $spacing-medium;
-        font-family: $primary-font-stack;
+        font-family: $font-stack-primary;
         font-size: .875rem;
         font-style: italic;
         line-height: 1.429;
@@ -34,7 +34,7 @@
         a:visited,
         strong {
             color: inherit;
-            font-family: $secondary-font-stack;
+            font-family: $font-stack-secondary;
             font-weight: 600;
             font-style: normal;
             text-transform: uppercase;
@@ -58,7 +58,7 @@
             background-size: 100%;
             height: 100%;
             display: block;
-            // Alter image to match `$brand`
+            // Alter image to match `$color-brand`
             // filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
         }
     }

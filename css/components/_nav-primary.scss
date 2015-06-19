@@ -43,13 +43,13 @@
         a {
             @include transition(color, padding-bottom, border-bottom-width, transform);
             @include will-change(color, padding-bottom, border-bottom-width, transform);
-            color: $text-color-alt;
+            color: $color-text-alt;
             display: block;
             padding: .75rem 1rem;
-            border-bottom: 0 solid $brand;
+            border-bottom: 0 solid $color-brand;
             margin-bottom: .25rem;
             position: relative;
-            font-family: $heading-font-stack;
+            font-family: $font-stack-heading;
             font-size: 1.25rem;
             line-height: 1.25;
             text-transform: uppercase;
@@ -76,7 +76,7 @@
         [class*="page-article"] .nav-primary-articles a,
         [class*="page-pen"] .nav-primary-pens a,
         .page-search .nav-primary-search a {
-            color: $text-color;
+            color: $color-text;
             padding-bottom: .5rem;
             border-bottom-width: $default-border;
         }
@@ -87,7 +87,7 @@
             [class*="page-pen"] .nav-primary-pens a:after,
             .page-search .nav-primary-search a:after {
                 content: "";
-                border-top:   .5em solid $brand;
+                border-top:   .5em solid $color-brand;
                 border-right: .5em solid transparent;
                 border-left:  .5em solid transparent;
                 position: absolute;

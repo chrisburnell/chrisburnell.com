@@ -11,16 +11,16 @@
     padding-top: .5em;
     padding-left: 1.923em;
     position: relative;
-    font-family: $heading-font-stack;
+    font-family: $font-stack-heading;
     font-size: 3.25rem;
     line-height: 1;
     text-transform: uppercase;
-    text-shadow: .058em .058em 0 $black-light;
+    text-shadow: .058em .058em 0 $black-low;
     white-space: nowrap;
     z-index: z-index(above);
     &:link,
     &:visited {
-        color: $text-color;
+        color: $color-text;
     }
     &:hover,
     &:focus,

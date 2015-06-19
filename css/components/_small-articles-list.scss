@@ -9,7 +9,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 -0.5em 1.5em;
-    font-family: $secondary-font-stack;
+    font-family: $font-stack-secondary;
     line-height: 1.25;
     @include media("<=medium") {
         margin-bottom: 1.875em;
@@ -43,7 +43,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $black-light;
+            background-color: $black-low;
             text-decoration: none;
         }
     }
@@ -56,7 +56,7 @@
         margin-bottom: .3125em;
     }
     .small-article-date {
-        color: $text-color-alt;
+        color: $color-text-alt;
         display: block;
         font-size: .8125rem;
         font-weight: 600;
@@ -68,7 +68,7 @@
             margin-top: .3125em;
         }
     .small-article-lede {
-        color: $text-color;
+        color: $color-text;
         margin-top: .3125em;
         font-size: .875rem;
     }
@@ -85,7 +85,7 @@
         right: .5em;
         transform: translateY(-50%);
         z-index: z-index(below);
-        stroke: $text-color;
+        stroke: $color-text;
         @include media("<=small") {
             width:  4em !important;
             height: 4em;

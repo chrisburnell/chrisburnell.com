@@ -4,12 +4,12 @@
 ////
 
 footer {
-    background-color: $text-color;
-    color: $text-color-light;
+    background-color: $color-text;
+    color: $color-text-light;
     width: 100%;
     padding: $spacing-large 0;
-    border-top: $default-border solid $brand;
-    font-family: $secondary-font-stack;
+    border-top: $default-border solid $color-brand;
+    font-family: $font-stack-secondary;
     font-weight: 600;
     text-transform: uppercase;
 }

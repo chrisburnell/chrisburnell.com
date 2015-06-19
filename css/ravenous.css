@@ -1,21 +1,9 @@
-@charset "UTF-8";/*! Ravenous */
-/**
- * @version 2.5.0
- * @author  Chris Burnell (@iamchrisburnell)
- * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
- * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
- *
- * Please contact me if you want to learn about anything you see here.
- */
-/*------------------------------------*    #GENERIC - Box Sizing
-\*------------------------------------*/
 html {
   box-sizing: border-box; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -369,8 +357,6 @@ td,
 th {
   padding: 0; }
 
-/*------------------------------------*    #BASE - Page
-\*------------------------------------*/
 html {
   background-color: #f9f9f9;
   min-height: 100%;
@@ -380,8 +366,6 @@ html {
 .svg--master {
   display: none; }
 
-/*------------------------------------*    #BASE - Typography (Global)
-\*------------------------------------*/
 html {
   color: #4f4f4f;
   font: 400 normal 16px/1.875 "ff-meta-serif-web-pro", Georgia, serif;
@@ -467,19 +451,18 @@ a {
 .heading-anchor {
   color: #737373;
   display: none;
-  padding-left: 1em;
+  padding-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
   font-size: .8125rem;
   font-weight: 600;
   line-height: 1;
   text-transform: lowercase;
+  text-shadow: none;
   vertical-align: middle; }
   :hover > .heading-anchor,
   :focus > .heading-anchor,
   :active > .heading-anchor {
     display: inline-block; }
-  h1 .heading-anchor {
-    text-shadow: none; }
 
 /**
      * Brand Link Colours
@@ -545,7 +528,7 @@ ul:not([class]) .default-list,
 .default-list ol:not([class]),
 .default-list ul:not([class]),
 .default-list .default-list {
-  margin-top: 1rem; }
+  margin-top: 1.25rem; }
 
 ol:not([class]),
 ol.default-list {
@@ -600,7 +583,7 @@ a img {
   height: auto; }
 
 figure {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.625rem;
   text-align: center; }
   figure:not(:last-child) {
     margin-bottom: 1.25rem; }
@@ -631,7 +614,7 @@ q {
 
 blockquote {
   background-color: rgba(95, 138, 166, 0.1);
-  padding: 1rem;
+  padding: 1.25rem;
   margin: 0 2.25rem 1.25rem;
   quotes: "\201C" "\201D" "\2018" "\2019"; }
   @media (max-width: 500px) {
@@ -648,8 +631,8 @@ blockquote {
       padding-left: .1875rem; }
   blockquote cite {
     display: block;
-    margin-left: 2rem;
-    margin-top: 1rem; }
+    margin-left: 2.25rem;
+    margin-top: 1.25rem; }
     blockquote cite:before {
       content: "\2014\00a0"; }
 
@@ -663,7 +646,7 @@ hr {
   height: .125rem;
   display: block;
   border: 0;
-  margin: 0.5rem 0 1.25rem; }
+  margin: 0.625rem 0 1.25rem; }
 
 /**
  * Fix `iframe` and `video`
@@ -691,8 +674,6 @@ iframe {
 .canada::selection {
   background-color: red; }
 
-/*------------------------------------*    #BASE - Typography (Code)
-\*------------------------------------*/
 code,
 kbd,
 samp,
@@ -728,8 +709,6 @@ pre {
       min-width: 100%;
       display: block; }
 
-/*------------------------------------*    #BASE - Buttons
-\*------------------------------------*/
 button, .button {
   -webkit-transition: background-color 0.2s ease;
           transition: background-color 0.2s ease;
@@ -805,8 +784,6 @@ button, .button {
   button .icon--feather, .button .icon--feather {
     width: 0.58em; }
 
-/*------------------------------------*    #LAYOUT - Layout
-\*------------------------------------*/
 .wrap {
   width: auto;
   max-width: 1140px;
@@ -831,14 +808,10 @@ button, .button {
 .fixed-width {
   width: 1140px; }
 
-/*------------------------------------*    #LAYOUT - Header
-\*------------------------------------*/
 @media (max-width: 768px) {
   header {
     text-align: center; } }
 
-/*------------------------------------*    #LAYOUT - Article
-\*------------------------------------*/
 article {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
@@ -857,8 +830,6 @@ article {
           -ms-flex-direction: column;
               flex-direction: column; } }
 
-/*------------------------------------*    #LAYOUT - Aside
-\*------------------------------------*/
 @media (min-width: 769px) {
   aside {
     width: 15.875rem;
@@ -883,8 +854,6 @@ aside figcaption {
     aside figcaption {
       font-size: .875rem; } }
 
-/*------------------------------------*    #LAYOUT - Footer
-\*------------------------------------*/
 footer {
   background-color: #4f4f4f;
   color: #dddddd;
@@ -895,8 +864,6 @@ footer {
   font-weight: 600;
   text-transform: uppercase; }
 
-/*------------------------------------*    #COMPONENTS - Logo
-\*------------------------------------*/
 .logo {
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
@@ -1009,8 +976,6 @@ footer {
     -webkit-transform: translate3d(-0.0625em, -0.5625em, 0);
             transform: translate3d(-0.0625em, -0.5625em, 0); } }
 
-/*------------------------------------*    #COMPONENTS - Primary Navigation
-\*------------------------------------*/
 .nav-primary {
   padding-bottom: 1.25rem;
   white-space: nowrap; }
@@ -1101,8 +1066,6 @@ footer {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
 
-/*------------------------------------*    #COMPONENTS - Article
-\*------------------------------------*/
 .article-banner {
   width: 810px;
   margin-bottom: 1rem; }
@@ -1175,8 +1138,6 @@ footer {
   font-style: italic;
   line-height: 1.5; }
 
-/*------------------------------------*    #COMPONENTS - Articles List
-\*------------------------------------*/
 .articles-list li {
   width: 100%;
   display: inline-block;
@@ -1200,8 +1161,6 @@ footer {
 .articles-list .article-title {
   margin-bottom: 0.625rem; }
 
-/*------------------------------------*    #COMPONENTS - Small Articles List
-\*------------------------------------*/
 .small-articles-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1294,8 +1253,6 @@ footer {
   .small-articles-list a:active svg {
     opacity: 0.25; }
 
-/*------------------------------------*    #COMPONENTS - Search
-\*------------------------------------*/
 .main-search,
 .widget-search {
   position: relative;
@@ -1330,8 +1287,6 @@ footer {
   .search-input[disabled] {
     background-color: #d0d0d0; }
 
-/*------------------------------------*    #COMPONENTS - Secondary Navigation
-\*------------------------------------*/
 /**
  * Contains buttons and internal links.
  */
@@ -1366,8 +1321,6 @@ footer {
 .buttons-list {
   padding-bottom: 1.25rem; }
 
-/*------------------------------------*    #COMPONENTS - Author
-\*------------------------------------*/
 /**
  * The `.author` aside is always pushed underneath the content below the medium
  * breakpoint.
@@ -1461,8 +1414,6 @@ footer {
 .author-biography p:not(:last-child) {
   margin-bottom: 0.625rem; }
 
-/*------------------------------------*    #COMPONENTS - Aside Widgets
-\*------------------------------------*/
 @media (min-width: 769px) {
   .widget-search,
   .widget-related-articles,
@@ -1487,8 +1438,6 @@ footer {
   .widget-featured-pens-link:after {
     content: "\00a0\2192"; }
 
-/*------------------------------------*    #COMPONENTS - Footer
-\*------------------------------------*/
 .copyright,
 .nav-tertiary {
   overflow: hidden; }
@@ -1551,8 +1500,6 @@ footer {
     .footer-spacer {
       display: none; } }
 
-/*------------------------------------*    #COMPONENTS - Tertiary Navigation
-\*------------------------------------*/
 @media (min-width: 769px) {
   .nav-tertiary {
     float: right;
@@ -1567,8 +1514,6 @@ footer {
   .nav-tertiary-list li + li {
     margin-left: 1rem; }
 
-/*------------------------------------*    #COMPONENTS - Comments
-\*------------------------------------*/
 .comments-link {
   display: inline-block;
   margin-top: 1.625em;
@@ -1599,8 +1544,6 @@ footer {
     font-size: 1.25rem;
     font-style: italic; }
 
-/*------------------------------------*    #COMPONENTS - Code
-\*------------------------------------*/
 /*div.highlight*/
 [data-lang] {
   padding-top: 2.25rem;
@@ -1672,8 +1615,6 @@ footer {
     color: slateblue;
     color: rebeccapurple; }
 
-/*------------------------------------*    #COMPONENTS - Icons
-\*------------------------------------*/
 /*a*/
 .icon {
   -webkit-transition: all 0.2s ease;
@@ -1726,8 +1667,6 @@ footer {
     height: 100%;
     display: block; }
 
-/*------------------------------------*    #COMPONENTS - Media
-\*------------------------------------*/
 /**
  * Contains embedded media properly and allows them to be dynamically resized.
  */
@@ -1747,8 +1686,6 @@ footer {
     top: 0;
     left: 0; }
 
-/*------------------------------------*    #COMPONENTS - Print
-\*------------------------------------*/
 @media print {
   nav,
   .featured-pens,
@@ -1765,8 +1702,6 @@ footer {
     border: 1px solid #4f4f4f;
     box-shadow: none; } }
 
-/*------------------------------------*    #PAGES - Style Guide
-\*------------------------------------*/
 .color-block-list {
   width: 100%;
   display: table;
@@ -1803,8 +1738,6 @@ footer {
 .page-style-guide :not(.page-lede) + h3[id] {
   margin-top: 3.375rem; }
 
-/*------------------------------------*    #UTILS - Placeholders
-\*------------------------------------*/
 figure img,
 figure svg, blockquote, pre:not(.codepen), aside:not(.author), .article-banner, .article-edit, .small-articles-list a, .author-image img {
   background-clip: padding-box;
@@ -1818,8 +1751,6 @@ button, .button, .logo {
   -webkit-touch-callout: default;
   -webkit-touch-callout: none; }
 
-/*------------------------------------*    #UTILS - Helpers
-\*------------------------------------*/
 .hide, .hidden, a span:not([class]):not([itemprop]) {
   width: 1px !important;
   height: 1px !important;
