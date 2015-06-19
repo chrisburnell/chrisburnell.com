@@ -6,9 +6,9 @@
 /// Please contact me if you want to learn about anything you see here.
 ///
 /// @author  Chris Burnell (@iamchrisburnell)
-// @version 1.0.0
-// @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
-/// @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
+/// @link    https://github.com/chrisburnell/ravenous/tree/master/css
+// @license  http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
+// @version  1.0.0
 ////
 
 /// GENERIC
@@ -18,7 +18,6 @@
 /// UTILS
 @import "utils/variables.global",
         "utils/variables.code",
-        "utils/variables.branding",
         "utils/include-media",
         "utils/functions",
         "utils/mixins";
@@ -30,32 +29,13 @@
         "base/buttons";
 
 /// LAYOUT
-@import "layout/wrap",
-        "layout/header",
-        "layout/article",
-        "layout/aside",
-        "layout/footer";
+@import "layout/wrap";
 
 /// COMPONENTS
-@import "components/logo",
-        "components/nav-primary",
-        "components/article",
-        "components/articles-list",
-        "components/small-articles-list",
-        "components/search",
-        "components/nav-secondary",
-        "components/author",
-        "components/aside-widgets",
-        "components/footer",
-        "components/nav-tertiary",
-        "components/comments",
-        "components/code",
-        "components/icons",
-        "components/media",
+@import "components/media",
         "components/print";
 
 /// PAGES
-@import "pages/styleguide";
 
 /// HELPERS/TRUMPS
 @import "utils/placeholders",

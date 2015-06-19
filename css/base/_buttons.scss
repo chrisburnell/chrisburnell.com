@@ -5,79 +5,20 @@
 
 button, .button {
     @extend %non-selectable;
-    @include transition(background-color);
-    @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
-    background-color: $color-brand;
-    min-width: 8em;
-    height: 2.182em;
-    display: inline-block;
-    padding: 0 .727em .182em;
-    border: 0;
-    margin-top: .25rem;
-    outline-style: none;
-    position: relative;
-    font-family: $font-stack-heading;
-    font-size: 1.375rem;
-    line-height: 2;
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    border-radius: $thin-border-radius;
-    box-shadow: inset 0 -0.182em 0 0 darken($color-brand, 10%);
     &,
     &:link,
     &:visited {
-        color: $white;
+
     }
     &:hover,
     &:focus,
     &:active {
-        background-color: lighten($color-brand, 5%);
-        outline-style: auto;
-        text-decoration: none;
+
     }
     &:active {
-        height: 2em;
-        padding-bottom: 0;
-        margin-bottom: .25rem;
-        box-shadow: inset 0 -1px 0 0 darken($color-brand, 10%);
-        transform: translateY(.25rem);
+
     }
-    &:before,
-    &:after {
-        @include will-change(top);
-        content: "";
-        width: 100%;
-        height: .25rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-        &:active:before,
-        &:active:after {
-            top: -0.25rem;
-        }
     &[disabled] {
-        opacity: .4;
-    }
-    .page-not-found & {
-        @include media("<=medium") {
-            display: block;
-            margin: 0 auto $spacing-medium;
-        }
-    }
-    svg {
-        width:  .8em;
-        height: .8em;
-        display: inline-block;
-        margin-right: .25em;
-        pointer-events: none;
-    }
-    .icon--article {
-        width: (.9 * .8em); // .9 is width:height ratio
-    }
-    .icon--feather {
-        width: (.725 * .8em); // .725 is width:height ratio
+
     }
 }
