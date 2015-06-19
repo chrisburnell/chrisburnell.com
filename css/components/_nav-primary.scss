@@ -1,0 +1,97 @@
+////
+/// Primary Navigation
+/// @group components
+////
+
+.nav-primary {
+    padding-bottom: $spacing-medium;
+    white-space: nowrap;
+    @include media(">medium") {
+        float: right;
+        padding-top: 1.5rem;
+    }
+    @include media("<=medium") {
+        width: 100%;
+        padding-top: $spacing-medium;
+    }
+}
+    .nav-primary-list {
+        height: 3.75rem;
+        font-size: 0;
+        @include media(">medium") {
+            float: right;
+        }
+        @include media("<=medium") {
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            font-size: 1rem;
+            @include media(">medium") {
+                float: left;
+            }
+            + li {
+                margin-left: 1em;
+                @include media("<=medium") {
+                    margin-left: .5em;
+                }
+                @include media("<=small") {
+                    margin-left: .25em;
+                }
+            }
+        }
+        a {
+            @include transition(color, padding-bottom, border-bottom-width, transform);
+            @include will-change(color, padding-bottom, border-bottom-width, transform);
+            color: $color-text-alt;
+            display: block;
+            padding: .75rem 1rem;
+            border-bottom: 0 solid $color-brand;
+            margin-bottom: .25rem;
+            position: relative;
+            font-family: $font-stack-heading;
+            font-size: 1.25rem;
+            line-height: 1.25;
+            text-transform: uppercase;
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+            }
+            &:active {
+                transform: translateY(.2rem);
+            }
+            @include media("<=small") {
+                padding-left:  .75rem;
+                padding-right: .75rem;
+            }
+        }
+    }
+        // effect for interactions and active paths
+        .nav-primary-list a:hover,
+        .nav-primary-list a:focus,
+        .nav-primary-list a:active,
+        .page-home .nav-primary-home a,
+        .page-about .nav-primary-about a,
+        [class*="page-article"] .nav-primary-articles a,
+        [class*="page-pen"] .nav-primary-pens a,
+        .page-search .nav-primary-search a {
+            color: $color-text;
+            padding-bottom: .5rem;
+            border-bottom-width: $default-border;
+        }
+            // complementary to the effect for interactions and active paths
+            .page-home .nav-primary-home a:after,
+            .page-about .nav-primary-about a:after,
+            [class*="page-article"] .nav-primary-articles a:after,
+            [class*="page-pen"] .nav-primary-pens a:after,
+            .page-search .nav-primary-search a:after {
+                content: "";
+                border-top:   .5em solid $color-brand;
+                border-right: .5em solid transparent;
+                border-left:  .5em solid transparent;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }

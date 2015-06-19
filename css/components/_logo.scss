@@ -1,0 +1,79 @@
+////
+/// Logo
+/// @group components
+////
+
+.logo {
+    @extend %non-selectable;
+    @include transition;
+    @include will-change(transform);
+    display: inline-block;
+    padding-top: .5em;
+    padding-left: 1.923em;
+    position: relative;
+    font-family: $font-stack-heading;
+    font-size: 3.25rem;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: .058em .058em 0 $black-low;
+    white-space: nowrap;
+    z-index: z-index(above);
+    &:link,
+    &:visited {
+        color: $color-text;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    &:active {
+        transform: translateY(.125rem);
+    }
+    @include media(">medium") {
+        float: left;
+    }
+    @include media("<=small") {
+        font-size: 2.75em;
+    }
+    svg {
+        @include animation(soaring 30s linear alternate infinite);
+        @include animation-play-state(paused);
+        @include transition;
+        @include will-change(top);
+        width: 2.307em;
+        height: 2.307em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-0.8125em);
+        z-index: z-index(below);
+    }
+    &:hover svg,
+    &:focus svg,
+    &:active svg {
+        // Only animate the image when the user interacts with `.logo`
+        @include animation-play-state(running);
+    }
+    &:active svg {
+        // In order to get `.logo svg` to travel up 2x the distance the
+        // `.logo` text does, first the `translate` applied on the parent
+        // (of the `aside`) has to be counteracted, then (2 * 0.039em)
+        // is added, totalling 0.117em, made negative on the y-axis to
+        // go up. We cannot use `translate` as it is used below for
+        // further animating.
+        top: -0.4rem;
+    }
+}
+@keyframes soaring {
+    0%,
+    100%  { transform: translate3d(  0,        -0.8125em, 0 ); }
+    12.5% { transform: translate3d( -0.0625em, -0.6875em, 0 ); }
+    25%   { transform: translate3d(  0.1250em, -0.3125em, 0 ); }
+    37.5% { transform: translate3d(  0.3125em, -0.3750em, 0 ); }
+    50%   { transform: translate3d(  0.1250em, -0.4375em, 0 ); }
+    62.5% { transform: translate3d(  0.0625em, -0.2500em, 0 ); }
+    75%   { transform: translate3d(  0.1875em, -0.4375em, 0 ); }
+    87.5% { transform: translate3d( -0.0625em, -0.5625em, 0 ); }
+}

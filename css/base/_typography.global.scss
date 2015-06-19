@@ -1,0 +1,317 @@
+////
+/// Typography (Global)
+/// @group base
+////
+
+html {
+    color: $color-text;
+    font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    // so that elements can be floated inside headings
+    min-height: 1.25em;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    line-height: 1.25;
+}
+h1 {
+    font-family: $font-stack-heading;
+    font-size: 2.625rem;
+    text-transform: uppercase;
+    text-shadow: .0714em .0714em 0 $black-low;
+}
+h2 {
+    font-family: $font-stack-primary;
+    font-size: 1.625rem;
+}
+h3,
+h4,
+.articles-list .article-date {
+    font-family: $font-stack-secondary;
+    font-weight: 600;
+}
+h3,
+.articles-list .article-date {
+    font-size: 1.125rem;
+    line-height: 1.875;
+    text-transform: uppercase;
+    code {
+        text-transform: none;
+    }
+}
+h3 {
+    margin-top: .625rem;
+    border-bottom: $thin-border solid $color-text-light;
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+}
+h4 {
+    margin-bottom: .5rem;
+}
+
+p {
+    margin: 0 0 $spacing-medium;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:empty {
+        @extend .removed;
+    }
+}
+
+a {
+    @include transition(background, color);
+    @include will-change(background, color);
+    text-decoration: none;
+    &:link {
+        color: $color-brand;
+    }
+    &:visited {
+        color: darken($color-brand, 10%);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+    h2 &,
+    h3 & {
+        &:link,
+        &:visited {
+            color: $color-text;
+        }
+        &:visited {
+            color: lighten($color-text, 10%);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-brand;
+        }
+    }
+    span:not([class]):not([itemprop]) {
+        @extend .hidden;
+    }
+}
+    .heading-anchor {
+        color: $color-text-alt;
+        display: none;
+        padding-left: $spacing-medium;
+        font-family: $font-stack-code;
+        font-size: .8125rem;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: lowercase;
+        text-shadow: none;
+        vertical-align: middle;
+        :hover > &,
+        :focus > &,
+        :active > & {
+            display: inline-block;
+        }
+    }
+    /**
+     * Brand Link Colours
+     */
+    @each $color-brand in $color-brands {
+        $name:  nth($color-brand, 1);
+        $color: nth($color-brand, 2);
+        .link--#{$name} {
+            color: #{$color} !important;
+        }
+    }
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ol:not([class]),
+ul:not([class]),
+.default-list {
+    li {
+        padding-left: $spacing-large;
+        margin-bottom: $spacing-small;
+        position: relative;
+        &:last-child {
+            margin-bottom: $spacing-medium;
+        }
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: $font-stack-secondary;
+            font-weight: 600;
+        }
+    }
+    ol:not([class]),
+    ul:not([class]),
+    .default-list {
+        margin-top: $spacing-medium;
+    }
+}
+ol:not([class]),
+ol.default-list {
+    counter-reset: ordered-list;
+    li {
+        counter-increment: ordered-list;
+        &:before {
+            content: counter(ordered-list) ".";
+        }
+    }
+}
+ul:not([class]) li:before,
+ul.default-list li:before {
+    content: "\2022";
+    font-size: 1.5rem;
+    line-height: 1;
+}
+dl {
+    width: 100%;
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+    dt {
+        width: auto;
+        min-width: 10rem;
+        float: left;
+        clear: left;
+        padding-right: $spacing-medium;
+        font-family: $font-stack-secondary;
+        font-weight: 600;
+        @include media("<=small") {
+            float: none;
+        }
+    }
+    dd {
+        width: $wrapper-width-large;
+        display: table-cell;
+        margin: 0;
+        overflow: hidden;
+        vertical-align: top;
+        &:not(:last-child) {
+            padding-bottom: $spacing-medium;
+        }
+        @include media("<=small") {
+            width: auto;
+            display: block;
+            margin-left: $spacing-medium;
+        }
+    }
+}
+
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0 0 $spacing-small;
+    text-align: center;
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+    img,
+    svg {
+        @extend %rounded;
+    }
+    a:link,
+    a:visited,
+    figcaption {
+        color: $color-text-alt;
+        font-style: italic;
+    }
+}
+
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+    color: $color-text-alt;
+    font-style: italic;
+}
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $color-text-alt;
+    cursor: help;
+}
+ins {
+    text-decoration: none;
+}
+
+q {
+    font-style: italic;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote {
+    @extend %rounded;
+    background-color: rgba($color-brand, map-get($opacities, 'medium'));
+    padding: $spacing-medium;
+    margin: 0 $spacing-large $spacing-medium;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    @include media("<=small") {
+        margin-right: $spacing-medium;
+        margin-left:  $spacing-medium;
+    }
+    p {
+        margin-bottom: 0 !important;
+        &:before {
+            content: open-quote;
+            padding-right: .1875rem;
+        }
+        &:after {
+            content: close-quote;
+            padding-left: .1875rem;
+        }
+    }
+    cite {
+        display: block;
+        margin-left: $spacing-large;
+        margin-top: $spacing-medium;
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
+}
+/*blockquote*/.twitter-tweet {
+    margin: 0 auto $spacing-medium !important;
+}
+
+hr {
+    background: $black-medium;
+    width: 100%;
+    height: .125rem;
+    display: block;
+    border: 0;
+    margin: $spacing-small 0 $spacing-medium;
+}
+
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    border: none;
+    overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $spacing-medium;
+}
+
+::selection {
+    background: $color-brand;
+    color: $white;
+}
+.canada::selection {
+    background-color: red;
+}

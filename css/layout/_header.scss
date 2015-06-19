@@ -1,0 +1,10 @@
+////
+/// Header
+/// @group layout
+////
+
+header {
+    @include media("<=medium") {
+        text-align: center;
+    }
+}

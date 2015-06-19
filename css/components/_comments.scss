@@ -1,0 +1,42 @@
+////
+/// Comments
+/// @group components
+////
+
+.comments-link {
+    display: inline-block;
+    margin-top: 1.625em;
+    font-family: $font-stack-secondary;
+    font-weight: 600;
+    line-height: 1;
+    &:after {
+        content: "\00a0\2192";
+    }
+    @include media(">medium") {
+        float: right;
+    }
+    @include media("<=medium") {
+        display: block;
+        margin-top: $spacing-medium;
+    }
+}
+
+// Appears only on article pages
+.comments {
+    text-align: center;
+    @include media(">medium") {
+        .pagination + & {
+            padding-top: $spacing-large;
+        }
+    }
+    .show-comments-button:before,
+    .show-comments-button:active:before {
+        position: relative;
+        top: 0;
+    }
+    noscript {
+        font-family: $font-stack-secondary;
+        font-size: 1.25rem;
+        font-style: italic;
+    }
+}

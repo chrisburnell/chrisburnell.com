@@ -1,0 +1,92 @@
+////
+/// Author
+/// @group components
+////
+
+/**
+ * The `.author` aside is always pushed underneath the content below the medium
+ * breakpoint.
+ */
+/*aside*/.author {
+    font-family: $font-stack-secondary;
+    @include media("<=medium") {
+        display: flex;
+        flex-direction: column;
+        order: 999;
+        .page-about & {
+            margin-top: $spacing-medium;
+        }
+    }
+}
+    .author-information {
+        margin-bottom: $spacing-medium;
+        font-family: $font-stack-primary;
+        font-size: .875rem;
+        font-style: italic;
+        line-height: 1.429;
+        @include media("<=medium") {
+            order: 997;
+            padding-top: $spacing-large;
+            border-top: $thin-border solid $black-medium;
+            margin-bottom: $spacing-small;
+        }
+        a:link,
+        a:visited,
+        strong {
+            color: inherit;
+            font-family: $font-stack-secondary;
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    }
+    .author-image {
+        width:  6.25rem;
+        height: 6.25rem;
+        display: inline-block;
+        float: left;
+        margin-right: .625rem;
+        img {
+            @extend %rounded;
+            // testing gradient replacement when loading the `src`/`srcset`,
+            // colours generated from `avatar.png`
+            background-image: gradient(rgba(153, 192, 226, 0), rgb(153, 192, 226), to top right),
+                              gradient(rgba(157, 133, 139, 0), rgb(157, 133, 139), to bottom left),
+                              gradient(rgba(89, 144, 173, 0), rgb(89, 144, 173), to bottom right),
+                              gradient(rgba(137, 99, 79, 0), rgb(137, 99, 79), to top left);
+            background-size: 100%;
+            height: 100%;
+            display: block;
+            // Alter image to match `$color-brand`
+            // filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
+        }
+    }
+    .author-name,
+    .author-age,
+    .author-employer,
+    .article-date,
+    .article-label {
+        box-sizing: content-box;
+        display: block;
+        margin-bottom: .5rem;
+    }
+    .article-label a:after,
+    .featured-pens-link:after {
+        content: "\00a0\2192";
+    }
+    .article-tags {
+        // don't wrap around `.author-image`
+        display: table-cell;
+    }
+    .author-biography {
+        @include media(">medium") {
+            margin-bottom: $spacing-medium;
+        }
+        @include media("<=medium") {
+            order: 998;
+        }
+        p:not(:last-child) {
+            margin-bottom: $spacing-small;
+        }
+    }

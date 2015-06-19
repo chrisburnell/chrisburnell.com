@@ -1,0 +1,99 @@
+////
+/// Small Articles List
+/// @group components
+////
+
+.small-articles-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -0.5em 1.5em;
+    font-family: $font-stack-secondary;
+    line-height: 1.25;
+    @include media("<=medium") {
+        margin-bottom: 1.875em;
+    }
+    li {
+        width: 49.0125%;
+        display: inline-block;
+        &:nth-child(n+3) {
+            margin-top: 1em;
+        }
+        aside & {
+            width: 100%;
+            & + li {
+                margin-top: 1em;
+            }
+        }
+        @include media("<=small") {
+            width: 100%;
+            & + li {
+                margin-top: 1em;
+            }
+        }
+    }
+    a {
+        @extend %rounded;
+        @include will-change(background-color);
+        display: block;
+        padding: .5em;
+        position: relative;
+        overflow: hidden;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $black-low;
+            text-decoration: none;
+        }
+    }
+    .small-article-title,
+    .small-article-lede,
+    .small-article-date {
+        text-shadow: 0 1px 0 $white;
+    }
+    .small-article-title {
+        margin-bottom: .3125em;
+    }
+    .small-article-date {
+        color: $color-text-alt;
+        display: block;
+        font-size: .8125rem;
+        font-weight: 600;
+        &:before {
+            content: "\2013\0020";
+        }
+    }
+        svg ~ .small-article-date {
+            margin-top: .3125em;
+        }
+    .small-article-lede {
+        color: $color-text;
+        margin-top: .3125em;
+        font-size: .875rem;
+    }
+    svg {
+        @include transition;
+        @include will-change(opacity);
+        opacity: map-get($opacities, 'low');
+        // override `_icons.scss` + 4px
+        width:  6.25em !important;
+        height: 6.25em;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: .5em;
+        transform: translateY(-50%);
+        z-index: z-index(below);
+        stroke: $color-text;
+        @include media("<=small") {
+            width:  4em !important;
+            height: 4em;
+        }
+    }
+    a:hover svg,
+    a:focus svg,
+    a:active svg {
+        opacity: map-get($opacities, 'high');
+    }
+}

@@ -1,0 +1,19 @@
+////
+/// Helpers
+/// @group utils
+////
+
+// Hide elements visually
+// Still treated as normal content by text-to-speech software
+.hide, .hidden {
+    width:  1px !important;
+    height: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+// Remove elements from the flow of the document
+.remove, .removed {
+    display: none !important;
+}
