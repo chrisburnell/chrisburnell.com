@@ -44,6 +44,9 @@ button, .button {
         box-shadow: inset 0 -1px 0 0 darken($color-brand, 10%);
         transform: translateY(.25rem);
     }
+    &[disabled] {
+        opacity: .4;
+    }
     &:before,
     &:after {
         @include will-change(top);
@@ -58,9 +61,6 @@ button, .button {
         &:active:after {
             top: -0.25rem;
         }
-    &[disabled] {
-        opacity: .4;
-    }
     .page-not-found & {
         @include media("<=medium") {
             display: block;

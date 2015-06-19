@@ -621,14 +621,14 @@ blockquote {
     blockquote {
       margin-right: 1.25rem;
       margin-left: 1.25rem; } }
-  blockquote p {
+  blockquote p:last-of-type {
     margin-bottom: 0 !important; }
-    blockquote p:before {
-      content: open-quote;
-      padding-right: .1875rem; }
-    blockquote p:after {
-      content: close-quote;
+    blockquote p:last-of-type:after {
+      content: "\201C";
       padding-left: .1875rem; }
+  blockquote p:before {
+    content: "\201D";
+    padding-right: .1875rem; }
   blockquote cite {
     display: block;
     margin-left: 2.25rem;
@@ -753,6 +753,8 @@ button, .button {
     -webkit-transform: translateY(0.25rem);
         -ms-transform: translateY(0.25rem);
             transform: translateY(0.25rem); }
+  button[disabled], .button[disabled] {
+    opacity: .4; }
   button:before,
   button:after, .button:before,
   .button:after {
@@ -767,8 +769,6 @@ button, .button {
   button:active:after, .button:active:before,
   .button:active:after {
     top: -0.25rem; }
-  button[disabled], .button[disabled] {
-    opacity: .4; }
   @media (max-width: 768px) {
     .page-not-found button, .page-not-found .button {
       display: block;

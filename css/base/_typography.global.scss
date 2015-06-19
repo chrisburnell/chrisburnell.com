@@ -263,14 +263,16 @@ blockquote {
         margin-left:  $spacing-medium;
     }
     p {
-        margin-bottom: 0 !important;
-        &:before {
-            content: open-quote;
-            padding-right: .1875rem;
+        &:last-of-type {
+            margin-bottom: 0 !important;
+            &:after {
+                content: "\201C";
+                padding-left: .1875rem;
+            }
         }
-        &:after {
-            content: close-quote;
-            padding-left: .1875rem;
+        &:before {
+            content: "\201D";
+            padding-right: .1875rem;
         }
     }
     cite {
