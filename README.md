@@ -6,7 +6,7 @@
 
 The base CSS styles for [chrisburnell.com](https://chrisburnell.com/).
 
-If referencing as a *git submodule*, use the `bare` branch.
+If referencing as a *git submodule*, use the `bare` branch..
 
 --------
 
