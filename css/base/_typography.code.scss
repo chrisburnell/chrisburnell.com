@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #BASE - Typography (Code)
-\*------------------------------------*/
+////
+/// Typography (Code)
+/// @group base
+////
 
 code,
 kbd,
@@ -29,7 +30,7 @@ var,
 pre {
     // override `normalize.css` and `margin-bottom` in `_layout.scss`
     margin-top: 0;
-    margin-bottom: $default-margin;
+    margin-bottom: $spacing-medium;
     &:not(.codepen) {
         @extend %rounded;
         background-color: $black-light;

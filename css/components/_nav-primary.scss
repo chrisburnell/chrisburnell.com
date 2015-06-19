@@ -1,9 +1,10 @@
-/*------------------------------------*\
-    #COMPONENTS - Primary Navigation
-\*------------------------------------*/
+////
+/// Primary Navigation
+/// @group components
+////
 
 .nav-primary {
-    padding-bottom: $default-margin;
+    padding-bottom: $spacing-medium;
     white-space: nowrap;
     @include media(">medium") {
         float: right;
@@ -11,7 +12,7 @@
     }
     @include media("<=medium") {
         width: 100%;
-        padding-top: $default-margin;
+        padding-top: $spacing-medium;
     }
 }
     .nav-primary-list {

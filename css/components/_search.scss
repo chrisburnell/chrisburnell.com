@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Search
-\*------------------------------------*/
+////
+/// Search
+/// @group components
+////
 
 .main-search,
 .widget-search {
@@ -9,10 +10,10 @@
 }
 .main-search {
     max-width: $small-wrapper-width;
-    margin-bottom: $default-margin;
+    margin-bottom: $spacing-medium;
 }
     .search-results {
-        margin-top: $default-margin;
+        margin-top: $spacing-medium;
     }
 .search-label,
 .search-submit {

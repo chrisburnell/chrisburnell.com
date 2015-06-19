@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Article
-\*------------------------------------*/
+////
+/// Article
+/// @group components
+////
 
 .article-banner {
     @extend %rounded;
@@ -13,7 +14,7 @@
 .article-title,
 .page-title,
 .site-tagline {
-    margin-bottom: $default-padding;
+    margin-bottom: $spacing-large;
 }
 .site-lede {
     max-width: 24em;
@@ -22,7 +23,7 @@
 }
 .article-lede,
 .page-lede {
-    margin-bottom: $default-margin;
+    margin-bottom: $spacing-medium;
     font-size: 1.25rem;
     line-height: 1.5;
 }
@@ -40,7 +41,7 @@
     }
 }
 .pens-lede {
-    padding-bottom: $default-margin;
+    padding-bottom: $spacing-medium;
     border-bottom: $thin-border solid $black-medium;
 }
 .article-title,
@@ -79,7 +80,7 @@
     @extend %rounded;
     background-color: rgba($brand, map-get($opacities, 'medium'));
     padding: 1rem;
-    margin: 0 $default-padding $default-margin;
+    margin: 0 $spacing-large $spacing-medium;
     font-style: italic;
     line-height: 1.5;
 }

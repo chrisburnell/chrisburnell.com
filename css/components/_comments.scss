@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Comments
-\*------------------------------------*/
+////
+/// Comments
+/// @group components
+////
 
 .comments-link {
     display: inline-block;
@@ -16,7 +17,7 @@
     }
     @include media("<=medium") {
         display: block;
-        margin-top: $default-margin;
+        margin-top: $spacing-medium;
     }
 }
 
@@ -25,7 +26,7 @@
     text-align: center;
     @include media(">medium") {
         .pagination + & {
-            padding-top: $default-padding;
+            padding-top: $spacing-large;
         }
     }
     .show-comments-button:before,

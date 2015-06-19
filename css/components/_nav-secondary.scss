@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Secondary Navigation
-\*------------------------------------*/
+////
+/// Secondary Navigation
+/// @group components
+////
 
 /**
  * Contains buttons and internal links.
@@ -22,13 +23,13 @@
     }
 }
 .nav-secondary {
-    padding: ($default-padding - .182) 0 $default-padding;
+    padding: ($spacing-large - .182) 0 $spacing-large;
     border-top: $thin-border solid $black-medium;
     .page-about & {
         border-top: 0;
-        padding: $default-margin 0;
+        padding: $spacing-medium 0;
     }
 }
 .buttons-list {
-    padding-bottom: $default-margin;
+    padding-bottom: $spacing-medium;
 }

@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Author
-\*------------------------------------*/
+////
+/// Author
+/// @group components
+////
 
 /**
  * The `.author` aside is always pushed underneath the content below the medium
@@ -13,21 +14,21 @@
         flex-direction: column;
         order: 999;
         .page-about & {
-            margin-top: $default-margin;
+            margin-top: $spacing-medium;
         }
     }
 }
     .author-information {
-        margin-bottom: $default-margin;
+        margin-bottom: $spacing-medium;
         font-family: $primary-font-stack;
         font-size: .875rem;
         font-style: italic;
         line-height: 1.429;
         @include media("<=medium") {
             order: 997;
-            padding-top: $default-padding;
+            padding-top: $spacing-large;
             border-top: $thin-border solid $black-medium;
-            margin-bottom: $thin-margin;
+            margin-bottom: $spacing-small;
         }
         a:link,
         a:visited,
@@ -80,12 +81,12 @@
     }
     .author-biography {
         @include media(">medium") {
-            margin-bottom: $default-margin;
+            margin-bottom: $spacing-medium;
         }
         @include media("<=medium") {
             order: 998;
         }
         p:not(:last-child) {
-            margin-bottom: $thin-margin;
+            margin-bottom: $spacing-small;
         }
     }

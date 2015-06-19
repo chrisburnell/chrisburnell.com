@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #LAYOUT - Aside
-\*------------------------------------*/
+////
+/// Aside
+/// @group layout
+////
 
 // The width of the asides is static above the medium breakpoint and always
 // floated within an article or list of articles. The math is calculated as in
@@ -9,7 +10,7 @@ aside {
     @include media(">medium") {
         width: $aside-width;
         float: left;
-        margin-left: -($aside-width + $default-padding);
+        margin-left: -($aside-width + $spacing-large);
     }
     @include media("<=medium") {
         width: 100%;
@@ -17,7 +18,7 @@ aside {
             @extend %rounded;
             background: $black-light;
             padding: 1rem;
-            margin-bottom: $default-margin;
+            margin-bottom: $spacing-medium;
             &:last-child {
                 margin-bottom: 0;
             }

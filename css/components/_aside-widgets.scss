@@ -1,12 +1,13 @@
-/*------------------------------------*\
-    #COMPONENTS - Aside Widgets
-\*------------------------------------*/
+////
+/// Aside Widgets
+/// @group components
+////
 
 .widget-search,
 .widget-related-articles,
 .widget-featured-pens {
     @include media(">medium") {
-        margin-top: $default-margin;
+        margin-top: $spacing-medium;
     }
 }
 .widget-search-title,
@@ -17,11 +18,11 @@
 .widget-featured-pens-link {
     width: 100%;
     display: block;
-    margin-top: $thin-margin;
+    margin-top: $spacing-small;
     font-weight: 600;
     text-align: right;
     @include media("<=medium") {
-        margin-bottom: $default-margin;
+        margin-bottom: $spacing-medium;
         text-align: center;
     }
     &:after {

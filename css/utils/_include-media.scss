@@ -16,9 +16,11 @@
 
 
 ////
-/// include-media library public configuration
+/// include-media library
 /// @author Eduardo Boucas
+/// @author Hugo Giraudel
 /// @access public
+/// @group utils
 ////
 
 
@@ -93,11 +95,11 @@ $unit-intervals: (
   'rem': 0.1
 ) !default;
 
-////
-/// Cross-engine logging engine
-/// @author Hugo Giraudel
-/// @access private
-////
+//
+// Cross-engine logging engine
+// @author Hugo Giraudel
+// @access private
+//
 
 
 ///
@@ -138,11 +140,11 @@ $unit-intervals: (
 ///
 @function noop() {}
 
-////
-/// Parsing engine
-/// @author Hugo Giraudel
-/// @access private
-////
+//
+// Parsing engine
+// @author Hugo Giraudel
+// @access private
+//
 
 
 ///
@@ -287,11 +289,11 @@ $unit-intervals: (
   @return $result;
 }
 
-////
-/// String to number converter
-/// @author Hugo Giraudel
-/// @access private
-////
+//
+// String to number converter
+// @author Hugo Giraudel
+// @access private
+//
 
 
 ///
@@ -406,11 +408,11 @@ $unit-intervals: (
   $media-expressions: $tweak-media-expressions !global;
 }
 
-////
-/// include-media public exposed API
-/// @author Eduardo Boucas
-/// @access public
-////
+//
+// include-media public exposed API
+// @author Eduardo Boucas
+// @access public
+//
 
 
 ///

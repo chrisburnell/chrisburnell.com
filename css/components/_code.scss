@@ -1,9 +1,10 @@
-/*------------------------------------*\
-    #COMPONENTS - Code
-\*------------------------------------*/
+////
+/// Code
+/// @group components
+////
 
 /*div.highlight*/[data-lang] {
-    padding-top: $default-padding;
+    padding-top: $spacing-large;
     line-height: 2;
     &:before {
         @include transition;
@@ -19,7 +20,7 @@
         font-family: $secondary-font-stack;
         font-size: 1.25rem;
         font-weight: 600;
-        line-height: $default-padding;
+        line-height: $spacing-large;
         text-transform: uppercase;
         border-radius: $default-border-radius $default-border-radius 0 0;
     }

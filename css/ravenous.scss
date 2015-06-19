@@ -1,19 +1,21 @@
 @charset "UTF-8";
-/*! Ravenous */
-/**
- * @version 2.5.0
- * @author  Chris Burnell (@iamchrisburnell)
- * @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
- * @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
- *
- * Please contact me if you want to learn about anything you see here.
- */
 
-// #GENERIC
+////
+/// Ravenous
+///
+/// Please contact me if you want to learn about anything you see here.
+///
+/// @author  Chris Burnell (@iamchrisburnell)
+// @version 2.5.0
+// @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
+/// @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
+////
+
+/// GENERIC
 @import "generic/box-sizing",
         "generic/normalize";
 
-// #UTILS
+/// UTILS
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
@@ -21,20 +23,20 @@
         "utils/functions",
         "utils/mixins";
 
-// #BASE
+/// BASE
 @import "base/page",
         "base/typography.global",
         "base/typography.code",
         "base/buttons";
 
-// #LAYOUT
+/// LAYOUT
 @import "layout/wrap",
         "layout/header",
         "layout/article",
         "layout/aside",
         "layout/footer";
 
-// #COMPONENTS
+/// COMPONENTS
 @import "components/logo",
         "components/nav-primary",
         "components/article",
@@ -52,9 +54,9 @@
         "components/media",
         "components/print";
 
-// #PAGES
+/// PAGES
 @import "pages/styleguide";
 
-// #HELPERS/TRUMPS
+/// HELPERS/TRUMPS
 @import "utils/placeholders",
         "utils/helpers";

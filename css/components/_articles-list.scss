@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #COMPONENTS - Articles List
-\*------------------------------------*/
+////
+/// Articles List
+/// @group components
+////
 
 .articles-list {
     li {
@@ -26,6 +27,6 @@
         text-shadow: 0 1px 0 $white;
     }
     .article-title {
-        margin-bottom: $thin-margin;
+        margin-bottom: $spacing-small;
     }
 }

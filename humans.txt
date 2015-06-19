@@ -1,30 +1,36 @@
+---
+layout: null
+---
+
 # humanstxt.org
 
 /* OWNER & DEVELOPER */
 
-    Name:     Chris Burnell
-    Twitter:  @iamchrisburnell
+    Name:    {{ site.author }}
+    Twitter: @{{ site.author_twitter }}
 
 /* SITE */
 
-    URL:            https://chrisburnell.com
-    Language:       English
-    Doctype:        HTML5
-    Fonts:          FF Meta Serif Web Pro, Proxima Nova, League Gothic
-    Compiled with:  Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
-    Running on:     Jekyll on Github Pages
+    URL:           {{ site.url }}
+    Language:      English
+    Doctype:       HTML5
+    Fonts:         FF Meta Serif Web Pro, Proxima Nova, League Gothic
+    Compiled with: Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
+    Running on:    Jekyll on Github Pages
 
 /* LANGUAGES */
 
     HTML
     CSS (SCSS)
     JavaScript
+    JSON
     Markdown
     XML
 
 /* SERVICES */
 
-    Google Analytics:  http://google.com/analytics
-    Disqus:            http://disqus.com
-    Typekit:           http://typekit.com
-    Twitter:           http://dev.twitter.com
+    CodePen:          https://codepen.io/
+    Disqus:           https://disqus.com
+    Google Analytics: https://google.com/analytics
+    Twitter:          https://dev.twitter.com
+    Typekit:          https://typekit.com

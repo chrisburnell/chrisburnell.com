@@ -1,6 +1,7 @@
-//
-// #UTILS - Variables (Global)
-//
+////
+/// Variables (Global)
+/// @group utils
+////
 
 /// Wrapper padding
 /// @type Length
@@ -27,18 +28,18 @@ $breakpoints: (
 ) !default;
 
 
-/// Default margin
+/// Large spacing
+/// nearly double $wrapper-padding
 /// @type Length
-$default-margin: $wrapper-padding !default;
-/// Thin margin
+$spacing-large: 2.250rem !default;
+/// Medium spacing
+/// equal to $wrapper-padding
 /// @type Length
-$thin-margin: ($default-margin / 2) !default;
-/// Default padding
+$spacing-medium: $wrapper-padding !default;
+/// Small spacing
+/// half of $wrapper-padding
 /// @type Length
-$default-padding: 2.250rem !default;
-/// Thin padding
-/// @type Length
-$thin-padding: ($default-padding / 2) !default;
+$spacing-small: ($wrapper-padding / 2) !default;
 /// Default border
 /// @type Length
 $default-border: 0.250rem !default;

@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #LAYOUT - Article
-\*------------------------------------*/
+////
+/// Article
+/// @group layout
+////
 
 // The width of the articles is fluid, and always has padding on the left-hand
 // side to make room for any `aside`, which can appear anywhere inside
@@ -10,10 +11,10 @@
 // Left-hand padding
 //   = 25% of 1080px = 270px = 16.875em
 article {
-    padding-top: $default-padding;
+    padding-top: $spacing-large;
     border-top: $default-border solid $brand;
     @include media(">medium") {
-        padding-left: ($aside-width + $default-padding);
+        padding-left: ($aside-width + $spacing-large);
     }
     @include media("<=medium") {
         // Below the medium breakpoint, `article`, `article-list`, and `aside`

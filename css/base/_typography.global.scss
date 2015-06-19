@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #BASE - Typography (Global)
-\*------------------------------------*/
+////
+/// Typography (Global)
+/// @group base
+////
 
 html {
     color: $text-color;
@@ -47,7 +48,7 @@ h3 {
     margin-top: .625rem;
     border-bottom: $thin-border solid $text-color-light;
     &:not(:last-child) {
-        margin-bottom: $default-margin;
+        margin-bottom: $spacing-medium;
     }
 }
 h4 {
@@ -55,7 +56,7 @@ h4 {
 }
 
 p {
-    margin: 0 0 $default-margin;
+    margin: 0 0 $spacing-medium;
     &:last-child {
         margin-bottom: 0;
     }
@@ -138,11 +139,11 @@ ol:not([class]),
 ul:not([class]),
 .default-list {
     li {
-        padding-left: $default-padding;
-        margin-bottom: $thin-margin;
+        padding-left: $spacing-large;
+        margin-bottom: $spacing-small;
         position: relative;
         &:last-child {
-            margin-bottom: $default-margin;
+            margin-bottom: $spacing-medium;
         }
         &:before {
             position: absolute;
@@ -178,14 +179,14 @@ dl {
     width: 100%;
     overflow: hidden;
     &:not(:last-child) {
-        margin-bottom: $default-margin;
+        margin-bottom: $spacing-medium;
     }
     dt {
         width: auto;
         min-width: 10rem;
         float: left;
         clear: left;
-        padding-right: $default-margin;
+        padding-right: $spacing-medium;
         font-family: $secondary-font-stack;
         font-weight: 600;
         @include media("<=small") {
@@ -199,12 +200,12 @@ dl {
         overflow: hidden;
         vertical-align: top;
         &:not(:last-child) {
-            padding-bottom: $default-margin;
+            padding-bottom: $spacing-medium;
         }
         @include media("<=small") {
             width: auto;
             display: block;
-            margin-left: $default-margin;
+            margin-left: $spacing-medium;
         }
     }
 }
@@ -219,7 +220,7 @@ figure {
     margin: 0 0 .5rem;
     text-align: center;
     &:not(:last-child) {
-        margin-bottom: $default-margin;
+        margin-bottom: $spacing-medium;
     }
     img,
     svg {
@@ -257,11 +258,11 @@ blockquote {
     @extend %rounded;
     background-color: rgba($brand, map-get($opacities, 'medium'));
     padding: 1rem;
-    margin: 0 $default-padding $default-margin;
+    margin: 0 $spacing-large $spacing-medium;
     quotes: "\201C" "\201D" "\2018" "\2019";
     @include media("<=small") {
-        margin-right: $default-margin;
-        margin-left:  $default-margin;
+        margin-right: $spacing-medium;
+        margin-left:  $spacing-medium;
     }
     p {
         margin-bottom: 0 !important;
@@ -284,7 +285,7 @@ blockquote {
     }
 }
 /*blockquote*/.twitter-tweet {
-    margin: 0 auto $default-margin !important;
+    margin: 0 auto $spacing-medium !important;
 }
 
 hr {
@@ -293,7 +294,7 @@ hr {
     height: .125rem;
     display: block;
     border: 0;
-    margin: .5rem 0 $default-margin;
+    margin: .5rem 0 $spacing-medium;
 }
 
 /**
@@ -306,7 +307,7 @@ video {
     overflow-x: hidden;
 }
 iframe {
-    margin-bottom: $default-margin;
+    margin-bottom: $spacing-medium;
 }
 
 ::selection {

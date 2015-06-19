@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    #LAYOUT - Layout
-\*------------------------------------*/
+////
+/// Wrap
+/// @group layout
+////
 
 .wrap {
     width: auto;
@@ -24,7 +25,7 @@
 }
 
 .content {
-    padding-bottom: $default-padding;
+    padding-bottom: $spacing-large;
 }
 
 .fixed-width {
