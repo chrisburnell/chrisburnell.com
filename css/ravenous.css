@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -358,7 +359,6 @@ th {
   padding: 0; }
 
 html {
-  background-color: #f9f9f9;
   min-height: 100%;
   position: relative;
   overflow-y: scroll; }
@@ -367,6 +367,7 @@ html {
   display: none; }
 
 html {
+  background-color: #f9f9f9;
   color: #4f4f4f;
   font: 400 normal 16px/1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;

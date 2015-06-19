@@ -4,6 +4,7 @@
 ////
 
 html {
+    background-color: $white;
     color: $color-text;
     font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
