@@ -11,17 +11,17 @@
 /// @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
 ////
 
-/// GENERIC
-@import "generic/box-sizing",
-        "generic/normalize",
-        "generic/include-media";
-
 /// UTILS
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
         "utils/functions",
         "utils/mixins";
+
+/// GENERIC
+@import "generic/include-media",
+        "generic/box-sizing",
+        "generic/normalize";
 
 /// BASE
 @import "base/page",
