@@ -13,13 +13,13 @@
 
 /// GENERIC
 @import "generic/box-sizing",
-        "generic/normalize";
+        "generic/normalize",
+        "generic/include-media";
 
 /// UTILS
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
-        "utils/include-media",
         "utils/functions",
         "utils/mixins";
 
