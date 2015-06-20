@@ -1,0 +1,16 @@
+////
+/// Page
+/// @group base
+////
+
+html {
+    min-height: 100%;
+    position: relative;
+    // prevent horizontal when jumping short page <--> tall page
+    overflow-y: scroll;
+}
+
+// Hide the master SVG injected just below `<body>`
+.svg--master {
+    display: none;
+}
