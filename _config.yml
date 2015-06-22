@@ -37,9 +37,6 @@ layouts: ./_layouts
 permalink: /:categories/:title/
 exclude: ['node_modules', '.sass-cache']
 
-paginate: 10
-paginate_path: 'page:num'
-
 gems:
 - jekyll-redirect-from
 - jekyll-sitemap
