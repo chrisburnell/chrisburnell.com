@@ -3,8 +3,8 @@
 /// @group utils
 ////
 
+
 ///
-/// Linear Gradient
 /// Accepts two or three parameters.
 ///
 /// @param {Color} $from - Start Color
@@ -30,8 +30,8 @@
     @return linear-gradient(#{$direction}, #{$from} 0%, #{$to} 100%);
 }
 
+
 ///
-/// Z-index Management
 /// Simplify z-index.
 ///
 /// @param {String} $layer - Generic level

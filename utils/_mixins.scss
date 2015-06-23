@@ -3,11 +3,11 @@
 /// @group utils
 ////
 
+
 ///
-/// Flexible Transitions
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
-/// Relies on defaults `all`, $transition-time, and $transtion-function.
+/// Relies on defaults `all`, `$transition-time`, and `$transtion-function`.
 ///
 /// @author Chris Burnell
 ///
@@ -37,6 +37,9 @@
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
+/// @require {variable} $transition-time
+/// @require {variable} $transition-function
+///
 @mixin transition($values...) {
     $transition: ();
     @if( length($values) == 0 ) {
@@ -64,9 +67,9 @@
     transition: #{$transition};
 }
 
+
 ///
-/// Will-Change
-/// To be coupled with any transitions.
+/// Describes CSS changes to the browser; to be coupled with any transitions.
 ///
 /// @param {String} $values - Values
 ///
@@ -87,36 +90,8 @@
     will-change: #{$values};
 }
 
-///
-/// Animation
-///
-/// @param {String} $values - Values
-///
-/// @throw Error if no parameters are passed.
-///
-@mixin animation($values...) {
-    @if( length($values) == 0 ) {
-        @error "animation() expects one or more parameters.";
-    }
-    animation: #{$values};
-}
 
 ///
-/// Animation Play State
-///
-/// @param {String} $state - State
-///
-/// @throw Error if no parameter is passed.
-///
-@mixin animation-play-state($state) {
-    @if( length($state) == 0 ) {
-        @error "animation-play-state() expects one parameter.";
-    }
-    animation-play-state: #{$state};
-}
-
-///
-/// Center
 /// Centers an object horizontally and vertically.
 ///
 @mixin center() {
