@@ -37,8 +37,6 @@
         font-size: 2.75em;
     }
     svg {
-        @include animation(soaring 30s linear alternate infinite);
-        @include animation-play-state(paused);
         @include transition;
         @include will-change(top);
         width: 2.307em;
@@ -47,6 +45,8 @@
         position: absolute;
         top: 0;
         left: 0;
+        animation: soaring 30s linear alternate infinite;
+        animation-play-state: paused;
         transform: translateY(-0.8125em);
         z-index: z-index(below);
     }
@@ -54,7 +54,7 @@
     &:focus svg,
     &:active svg {
         // Only animate the image when the user interacts with `.logo`
-        @include animation-play-state(running);
+        animation-play-state: running;
     }
     &:active svg {
         // In order to get `.logo svg` to travel up 2x the distance the

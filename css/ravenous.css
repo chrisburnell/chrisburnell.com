@@ -897,10 +897,6 @@ footer {
     .logo {
       font-size: 2.75em; } }
   .logo svg {
-    -webkit-animation: soaring 30s linear alternate infinite;
-            animation: soaring 30s linear alternate infinite;
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
     will-change: top;
@@ -910,6 +906,10 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-animation: soaring 30s linear alternate infinite;
+            animation: soaring 30s linear alternate infinite;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
     -webkit-transform: translateY(-0.8125em);
         -ms-transform: translateY(-0.8125em);
             transform: translateY(-0.8125em);

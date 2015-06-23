@@ -3,24 +3,21 @@
 /// @group utils
 ////
 
-/// Icon size
+
 /// @type Length
 $icon-size: 40px !default;
 
-/// CodePen color
+
 /// @type Color
 $color-codepen: #212121 !default;
-/// GitHub color
 /// @type Color
 $color-github: #333333 !default;
-/// Last.FM color
 /// @type Color
 $color-lastfm: #e31b23 !default;
-/// Twitter color
 /// @type Color
 $color-twitter: darken(#55acee, 10%) !default;
 
-/// Brands
+
 /// @type Map
 /// @prop {String} name - Brand name
 /// @prop {Color} color - Brand color

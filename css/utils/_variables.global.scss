@@ -3,21 +3,15 @@
 /// @group utils
 ////
 
-/// Wrapper padding
+
 /// @type Length
 $wrapper-padding: 1.25rem !default;
-/// Wrapper small width
 /// @type Length
 $wrapper-width-small: 500px !default;
-/// Wrapper medium width
 /// @type Length
 $wrapper-width-medium: 768px !default;
-/// Wrapper max width
 /// @type Length
 $wrapper-width-large: 1140px !default;
-
-/// Breakpoints
-/// overwrite `_include-media.scss`
 /// @type Map
 /// @prop {String} key - Breakpoint name
 /// @prop {Length} value - Breakpoint value
@@ -28,38 +22,26 @@ $breakpoints: (
 ) !default;
 
 
-/// Small spacing
-/// half of $wrapper-padding
 /// @type Length
 $spacing-small: ($wrapper-padding / 2) !default;
-/// Medium spacing
-/// equal to $wrapper-padding
 /// @type Length
 $spacing-medium: $wrapper-padding !default;
-/// Large spacing
-/// nearly double $wrapper-padding
 /// @type Length
 $spacing-large: 2.250rem !default;
-/// Default border
 /// @type Length
 $border-default: 0.250rem !default;
-/// Thin border
 /// half of $border-default
 /// @type Length
 $border-thin: ($border-default / 2) !default;
-/// Default border-radius
 /// @type Length
 $border-radius-default: 0.375rem !default;
-/// Thin border-radius
 /// same length as $border-default
 /// @type Length
 $border-radius-thin: $border-default !default;
-/// Aside width
 /// @type Length
 $aside-width: 15.875rem !default;
 
 
-/// Opacities
 /// @type Map
 /// @prop {String} key - Opacity name
 /// @prop {Number} value - Opacity value
@@ -71,59 +53,44 @@ $opacities: (
 ) !default;
 
 
-/// Brand color
 /// @type Color
 $color-brand:  #5f8aa6 !default;
-/// Text color
 /// @type Color
 $color-text: #4f4f4f !default;
-/// Alternate text color
 /// @type Color
 $color-text-alt: #737373 !default;
-/// Light text color
 /// @type Color
 $color-text-light: #dddddd !default;
-/// White
 /// @type Color
 $color-white: #f9f9f9 !default;
-/// Black
 /// @type Color
 $color-black: #060606 !default;
-/// Black, low opacity
 /// @type Color
 $color-black-low: rgba($color-black, map_get($opacities, 'low')) !default;
-/// Black, medium opacity
 /// @type Color
 $color-black-medium: rgba($color-black, map_get($opacities, 'medium')) !default;
 
 
-/// Base font size
 /// @type Length
 $base-font-size: 16px !default;
-/// Base line height
 /// @type Number
 $base-line-height: 1.875 !default;
-/// Primary font stack
 /// @type List
 $font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
-/// Secondary font stack
 /// @type List
 $font-stack-secondary: "proxima-nova", sans-serif !default;
-/// Heading font stack
 /// @type List
 $font-stack-heading: "league-gothic", Impact, sans-serif !default;
 
 
-/// Transition time
 /// @type Length
 /// @see {mixin} transition
 $transition-time: 0.2s !default;
-/// Transition function
 /// @type String
 /// @see {mixin} transition
 $transition-function: ease !default;
 
-/// z-indexes
+
 /// @type Map
 /// @prop {String} key - z-index name
 /// @prop {Number} value - z-index value
