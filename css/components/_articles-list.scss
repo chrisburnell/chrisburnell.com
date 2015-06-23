@@ -9,10 +9,10 @@
         display: inline-block;
         clear: both;
         padding: 1.5rem 1rem;
-        border-top: $thin-border solid $black-medium;
+        border-top: $border-thin solid $color-black-medium;
         position: relative;
         &:nth-child(odd) {
-            background-color: $black-low;
+            background-color: $color-black-low;
         }
         @include media("<=medium") {
             padding-top:    1.875rem;
@@ -24,7 +24,7 @@
     .article-date,
     .comments-link {
         // helps pop against the background
-        text-shadow: 0 1px 0 $white;
+        text-shadow: 0 1px 0 $color-white;
     }
     .article-title {
         margin-bottom: $spacing-small;

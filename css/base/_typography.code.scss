@@ -24,7 +24,7 @@ var,
         padding: .25rem;
         // force text to wrap inside the container
         word-wrap: break-word;
-        border-radius: $thin-border-radius;
+        border-radius: $border-radius-thin;
     }
 
 pre {
@@ -33,7 +33,7 @@ pre {
     margin-bottom: $spacing-medium;
     &:not(.codepen) {
         @extend %rounded;
-        background-color: $black-low;
+        background-color: $color-black-low;
         padding: 1.5rem 1.5rem 1rem;
         // disallow text from wrapping inside the container
         overflow-x: auto;

@@ -43,14 +43,14 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $black-low;
+            background-color: $color-black-low;
             text-decoration: none;
         }
     }
     .small-article-title,
     .small-article-lede,
     .small-article-date {
-        text-shadow: 0 1px 0 $white;
+        text-shadow: 0 1px 0 $color-white;
     }
     .small-article-title {
         margin-bottom: .3125em;

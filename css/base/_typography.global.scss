@@ -4,7 +4,7 @@
 ////
 
 html {
-    background-color: $white;
+    background-color: $color-white;
     color: $color-text;
     font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
@@ -24,7 +24,7 @@ h1 {
     font-family: $font-stack-heading;
     font-size: 2.625rem;
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 $black-low;
+    text-shadow: .0714em .0714em 0 $color-black-low;
 }
 h2 {
     font-family: $font-stack-primary;
@@ -47,7 +47,7 @@ h3,
 }
 h3 {
     margin-top: .625rem;
-    border-bottom: $thin-border solid $color-text-light;
+    border-bottom: $border-thin solid $color-text-light;
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
@@ -288,7 +288,7 @@ blockquote {
 }
 
 hr {
-    background: $black-medium;
+    background: $color-black-medium;
     width: 100%;
     height: .125rem;
     display: block;
@@ -311,7 +311,7 @@ iframe {
 
 ::selection {
     background: $color-brand;
-    color: $white;
+    color: $color-white;
 }
 .canada::selection {
     background-color: red;

@@ -12,7 +12,7 @@
 //   = 25% of 1080px = 270px = 16.875em
 article {
     padding-top: $spacing-large;
-    border-top: $default-border solid $color-brand;
+    border-top: $border-default solid $color-brand;
     @include media(">medium") {
         padding-left: ($aside-width + $spacing-large);
     }

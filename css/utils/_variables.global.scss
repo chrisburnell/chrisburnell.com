@@ -42,18 +42,18 @@ $spacing-medium: $wrapper-padding !default;
 $spacing-large: 2.250rem !default;
 /// Default border
 /// @type Length
-$default-border: 0.250rem !default;
+$border-default: 0.250rem !default;
 /// Thin border
-/// half of $default-border
+/// half of $border-default
 /// @type Length
-$thin-border: ($default-border / 2) !default;
+$border-thin: ($border-default / 2) !default;
 /// Default border-radius
 /// @type Length
-$default-border-radius: 0.375rem !default;
+$border-radius-default: 0.375rem !default;
 /// Thin border-radius
-/// same length as $default-border
+/// same length as $border-default
 /// @type Length
-$thin-border-radius: $default-border !default;
+$border-radius-thin: $border-default !default;
 /// Aside width
 /// @type Length
 $aside-width: 15.875rem !default;
@@ -85,16 +85,16 @@ $color-text-alt: #737373 !default;
 $color-text-light: #dddddd !default;
 /// White
 /// @type Color
-$white: #f9f9f9 !default;
+$color-white: #f9f9f9 !default;
 /// Black
 /// @type Color
-$black: #060606 !default;
+$color-black: #060606 !default;
 /// Black, low opacity
 /// @type Color
-$black-low: rgba($black, map_get($opacities, 'low')) !default;
+$color-black-low: rgba($color-black, map_get($opacities, 'low')) !default;
 /// Black, medium opacity
 /// @type Color
-$black-medium: rgba($black, map_get($opacities, 'medium')) !default;
+$color-black-medium: rgba($color-black, map_get($opacities, 'medium')) !default;
 
 
 /// Base font size

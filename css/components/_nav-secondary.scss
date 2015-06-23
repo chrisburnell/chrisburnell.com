@@ -24,7 +24,7 @@
 }
 .nav-secondary {
     padding: ($spacing-large - .182) 0 $spacing-large;
-    border-top: $thin-border solid $black-medium;
+    border-top: $border-thin solid $color-black-medium;
     .page-about & {
         border-top: 0;
         padding: $spacing-medium 0;

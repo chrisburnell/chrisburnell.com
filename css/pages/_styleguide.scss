@@ -9,7 +9,7 @@
     margin: 0 auto;
     text-align: center;
     li {
-        color: $white;
+        color: $color-white;
         height: 6.5rem;
         display: table-cell;
         font-family: $font-stack-code;
@@ -22,8 +22,8 @@
         &[data-color="#{$color-brand}"] {
             background-color: $color-brand;
         }
-        &[data-color="#{$white}"] {
-            background-color: $white;
+        &[data-color="#{$color-white}"] {
+            background-color: $color-white;
             color: $color-text;
         }
         &[data-color="#{$color-text}"] {

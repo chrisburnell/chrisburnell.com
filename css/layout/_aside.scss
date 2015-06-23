@@ -16,7 +16,7 @@ aside {
         width: 100%;
         &:not(.author) {
             @extend %rounded;
-            background: $black-low;
+            background: $color-black-low;
             padding: 1rem;
             margin-bottom: $spacing-medium;
             &:last-child {

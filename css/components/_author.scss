@@ -27,7 +27,7 @@
         @include media("<=medium") {
             order: 997;
             padding-top: $spacing-large;
-            border-top: $thin-border solid $black-medium;
+            border-top: $border-thin solid $color-black-medium;
             margin-bottom: $spacing-small;
         }
         a:link,

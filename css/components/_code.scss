@@ -10,7 +10,7 @@
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
-        color: $white;
+        color: $color-white;
         width: 100%;
         display: block;
         padding: 0 1.5rem;
@@ -22,7 +22,7 @@
         font-weight: 600;
         line-height: $spacing-large;
         text-transform: uppercase;
-        border-radius: $default-border-radius $default-border-radius 0 0;
+        border-radius: $border-radius-default $border-radius-default 0 0;
     }
     @each $language in $coding-languages {
         $name:  nth($language, 1);

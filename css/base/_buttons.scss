@@ -23,12 +23,12 @@ button, .button {
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    border-radius: $thin-border-radius;
+    border-radius: $border-radius-thin;
     box-shadow: inset 0 -0.182em 0 0 darken($color-brand, 10%);
     &,
     &:link,
     &:visited {
-        color: $white;
+        color: $color-white;
     }
     &:hover,
     &:focus,
