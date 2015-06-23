@@ -11,20 +11,25 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
-    sassdoc      = require('sassdoc'),
     uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
-// Define the locations of our assets
-var cssPath      = 'css/',
-    jsPath       = 'js/',
-    includesPath = '_includes/';
+// Define external objects
+var sassdoc = require('sassdoc');
+
+// Define paths
+var paths = {
+        css: 'css/',
+        js: 'js/',
+        includes: '_includes/',
+        docs: 'docs/'
+    };
 
 // -----------------------------------------------------------------------------
 
 // Compile main SCSS file
 gulp.task('css-main', function() {
-    return gulp.src(cssPath + 'ravenous.scss')
+    return gulp.src(paths.css + 'ravenous.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -34,7 +39,7 @@ gulp.task('css-main', function() {
             browsers: ['last 2 versions', '> 1%']
         }))
         .pipe(csscomb())
-        .pipe(gulp.dest(cssPath))
+        .pipe(gulp.dest(paths.css))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -42,7 +47,7 @@ gulp.task('css-main', function() {
             advanced: false,
             roundingPrecision: 3
         }))
-        .pipe(gulp.dest(cssPath))
+        .pipe(gulp.dest(paths.css))
         .pipe(notify({
             title: 'gulp',
             message: 'CSS compiled.',
@@ -52,7 +57,7 @@ gulp.task('css-main', function() {
 
 // Compile critical SCSS file
 gulp.task('css-critical', function() {
-    return gulp.src(cssPath + 'critical.scss')
+    return gulp.src(paths.css + 'critical.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -62,7 +67,7 @@ gulp.task('css-critical', function() {
             browsers: ['last 2 versions', '> 1%']
         }))
         .pipe(csscomb())
-        .pipe(gulp.dest(cssPath))
+        .pipe(gulp.dest(paths.css))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -71,12 +76,12 @@ gulp.task('css-critical', function() {
             keepSpecialComments: 0,
             roundingPrecision: 3
         }))
-        .pipe(gulp.dest(cssPath))
+        .pipe(gulp.dest(paths.css))
         .pipe(rename({
             basename: "head-css-critical",
             extname: ".html"
         }))
-        .pipe(gulp.dest(includesPath))
+        .pipe(gulp.dest(paths.includes))
         .pipe(notify({
             title: 'gulp',
             message: 'Critical CSS compiled.',
@@ -85,9 +90,11 @@ gulp.task('css-critical', function() {
 });
 
 gulp.task('css-sassdoc', function() {
-    return gulp.src(cssPath)
+    return gulp.src(paths.css + '**/*.scss')
         .pipe(plumber())
-        .pipe(sassdoc())
+        .pipe(sassdoc({
+            dest: paths.docs
+        }))
         .pipe(notify({
             title: 'gulp',
             message: 'SassDoc compiled.',
@@ -97,7 +104,7 @@ gulp.task('css-sassdoc', function() {
 
 // Minify JS
 gulp.task('js-main', function() {
-    return gulp.src([jsPath + '*.js', '!' + jsPath + '*.min.js'])
+    return gulp.src([paths.js + '*.js', '!' + paths.js + '*.min.js'])
         .pipe(plumber())
         .pipe(uglify({
             mangle: false,
@@ -106,7 +113,7 @@ gulp.task('js-main', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(jsPath))
+        .pipe(gulp.dest(paths.js))
         .pipe(notify({
             title: 'gulp',
             message: 'JS compiled.',
@@ -116,11 +123,11 @@ gulp.task('js-main', function() {
 
 // Generate picturefill HTML include
 gulp.task('js-inline', function() {
-    return gulp.src([jsPath + 'disqus-article.js',
-                     jsPath + 'disqus-count.js',
-                     jsPath + 'google-analytics.js',
-                     jsPath + 'picturefill.js',
-                     jsPath + 'search.js'])
+    return gulp.src([paths.js + 'disqus-article.js',
+                     paths.js + 'disqus-count.js',
+                     paths.js + 'google-analytics.js',
+                     paths.js + 'picturefill.js',
+                     paths.js + 'search.js'])
         .pipe(uglify({
             mangle: false
         }))
@@ -128,7 +135,7 @@ gulp.task('js-inline', function() {
             prefix: "body-js-",
             extname: ".html"
         }))
-        .pipe(gulp.dest(includesPath))
+        .pipe(gulp.dest(paths.includes))
         .pipe(notify({
             title: 'gulp',
             message: 'Inline JS compiled.',
@@ -140,10 +147,8 @@ gulp.task('js-inline', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('css-main');
-    // gulp.start('css-critical');
-    gulp.start('js-main');
-    gulp.start('js-inline');
+    gulp.start('css');
+    gulp.start('js');
 });
 
 // CSS task
@@ -163,10 +168,10 @@ gulp.task('js', function() {
 
 // Watch files and perform the appropriate tasks
 gulp.task('watch', ['css', 'js'], function() {
-    watch(cssPath + '**/*.scss', function() {
+    watch(paths.css + '**/*.scss', function() {
         gulp.start('css');
     });
-    watch([jsPath + '**/*.js', '!' + jsPath + '**/*.min.js'], function() {
+    watch([paths.js + '**/*.js', '!' + paths.js + '**/*.min.js'], function() {
         gulp.start('js');
     });
 });
