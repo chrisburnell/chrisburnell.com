@@ -1,0 +1,33 @@
+////
+/// Variables (Branding)
+/// @group utils
+////
+
+
+/// @type Length
+$icon-size: 40px !default;
+
+
+/// @type Color
+$color-codepen: #212121 !default;
+/// @type Color
+$color-github: #333333 !default;
+/// @type Color
+$color-lastfm: #e31b23 !default;
+/// @type Color
+$color-twitter: darken(#55acee, 10%) !default;
+
+
+/// @type Map
+/// @prop {String} name - Brand name
+/// @prop {Color} color - Brand color
+/// @prop {Number} opacity - Brand icon opacity
+$color-brands: codepen $color-codepen 1.025,
+               github  $color-github  0.950,
+               lastfm  $color-lastfm  1.000,
+               rss     $color-brand   0.775,
+               twitter $color-twitter 0.925,
+               article $color-brand   0.900,
+               feather $color-brand   0.725,
+               heart   $color-brand   1.000,
+               tag     $color-brand   1.000;
