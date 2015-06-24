@@ -1,6 +1,6 @@
-/**
- * Show comment counts on home and articles archive page
- */
+///
+/// Show comment counts on home and articles archive page
+///
 (function () {
     var dsqc = document.createElement('script'); dsqc.type = 'text/javascript'; dsqc.async = true;
     dsqc.src = '//' + disqus_shortname + '.disqus.com/count.js';

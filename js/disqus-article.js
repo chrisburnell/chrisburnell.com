@@ -1,25 +1,30 @@
-/**
- * Conditional comments for article pages
- */
+///
+/// Conditional comments for article pages
+///
+
 var commentsSection = document.getElementById('comments');
 var commentsButton  = document.getElementById('show-comments-button');
 var commentsHash    = ['#comment', '#disqus_thread'];
-commentsHash.forEach( function(hash) {
-    if( window.location.hash.indexOf(hash) == 0 ) {
-        showComments();
-    }
-});
-window.onhashchange = function() {
+
+commentsButton.disabled = false;
+
+function updateHash() {
     commentsHash.forEach( function(hash) {
-        if( location.hash.indexOf(hash) == 0 ) {
+        if( window.location.hash.indexOf(hash) == 0 ) {
             showComments();
         }
     });
 }
-commentsButton.disabled = false;
+
+updateHash();
+window.onhashchange = function() {
+    updateHash();
+}
+
 commentsButton.addEventListener('click', function() {
     showComments();
 });
+
 function showComments() {
     window.scrollTo(0, commentsSection.offsetTop);
     // Only if the button still exists should we load Disqus and remove the button

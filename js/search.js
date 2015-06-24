@@ -1,8 +1,8 @@
-/*!
- * A simple JSON search
- * @author  Mat Hayward - Erskine Design (Original Author)
- * @author  Chris Burnell <@iamchrisburnell>
- */
+///
+/// A simple JSON search
+/// @author  Mat Hayward - Erskine Design (Original Author)
+/// @author  Chris Burnell <@iamchrisburnell>
+///
 
 
 /*------------------------------------*\
