@@ -1,0 +1,56 @@
+////
+/// Functions
+/// @group utils
+////
+
+
+///
+/// Accepts two or three parameters.
+///
+/// @param {Color} $from - Start Color
+/// @param {Color} $to - End Color
+/// @param {String} $direction [to bottom] - Gradient direction
+///
+/// @example scss - Two parameters
+///   background-image: gradient(white, black);
+///   // background-image: linear-gradient(to bottom, white 0%, black 100%);
+///
+/// @example scss - Three parameters
+///   background-image: gradient(black, white, to top);
+///   // background-image: linear-gradient(to top, black 0%, white 100%);
+///
+/// @return {String} Linear Gradient snippet
+///
+/// @throw Error if no parameters are passed.
+///
+@function gradient($from, $to, $direction: "to bottom") {
+    @if( length($from) == 0 or length($to) == 0 ) {
+        @error "gradient() expects two or more parameters.";
+    }
+    @return linear-gradient(#{$direction}, #{$from} 0%, #{$to} 100%);
+}
+
+
+///
+/// Simplify z-index.
+///
+/// @param {String} $layer - Generic level
+///
+/// @example scss
+///   z-index: z-index(above);
+///   // z-index: 2;
+///
+/// @return {Number}
+///
+/// @throw Error if no parameters are passed.
+/// @throw Error if parameter passed does not match a key in $z-indexes.
+///
+@function z-index($layer) {
+    @if( length($layer) == 0 ) {
+        @error "z-index() expects one parameter."
+    }
+    @if not map-has-key($z-indexes, $layer) {
+        @error "There is no layer named `#{$layer}` in $z-indexes. Layer should be one of #{map-keys($z-indexes)}.";
+    }
+    @return map-get($z-indexes, $layer);
+}

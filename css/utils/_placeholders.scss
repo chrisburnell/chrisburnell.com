@@ -1,0 +1,17 @@
+////
+/// Placeholders
+/// @group utils
+////
+
+// We're goin' up around the bend
+%rounded {
+    background-clip: padding-box;
+    border-radius: $border-radius-default;
+}
+
+// Non-selectable stuff
+%non-selectable {
+    user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+}
