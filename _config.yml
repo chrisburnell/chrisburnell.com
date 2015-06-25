@@ -17,11 +17,13 @@ url:      https://chrisburnell.com
 baseurl:  ""
 shorturl: http://repc.co/
 
+url_repo:     https://github.com/chrisburnell/chrisburnell.github.io
+url_ravenous: https://ravenous.chrisburnell.com
+
 url_codepen: http://codepen.io/chrisburnell
 url_github:  https://github.com/chrisburnell
 url_gist:    https://gist.github.com/chrisburnell
 url_lastfm:  http://last.fm/user/chrisburnell
-url_repo:    https://github.com/chrisburnell/chrisburnell.github.io
 url_twitter: https://twitter.com/iamchrisburnell
 
 copyright:     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
