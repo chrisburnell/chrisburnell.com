@@ -3,6 +3,10 @@
 /// @group layout
 ////
 
+main {
+    padding-bottom: $spacing-large;
+}
+
 .wrap {
     width: auto;
     max-width: $wrapper-width-large;
@@ -11,6 +15,11 @@
     margin-right: auto;
     margin-left:  auto;
 }
+.wrap--full-width {
+    @extend .wrap;
+    width: 100%;
+}
+
 .clear {
     clear: both;
     zoom: 1;
@@ -22,12 +31,4 @@
     &:after {
         clear: both;
     }
-}
-
-.content {
-    padding-bottom: $spacing-large;
-}
-
-.fixed-width {
-    width: $wrapper-width-large;
 }
