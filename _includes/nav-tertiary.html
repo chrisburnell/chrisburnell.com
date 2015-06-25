@@ -4,13 +4,13 @@
         {% capture title_slug %}{{ link.title | slugify }}{% endcapture %}
         {% if link.url %}
             {% assign url = link.url %}
-        {% elsif title_slug == "codepen" %}
+        {% elsif title_slug == 'codepen' %}
             {% assign url = site.url_codepen %}
-        {% elsif title_slug == "github" %}
+        {% elsif title_slug == 'github' %}
             {% assign url = site.url_github %}
-        {% elsif title_slug == "twitter" %}
+        {% elsif title_slug == 'twitter' %}
             {% assign url = site.url_twitter %}
-        {% elsif title_slug == "lastfm" %}
+        {% elsif title_slug == 'lastfm' %}
             {% assign url = site.url_lastfm %}
         {% endif %}
         <li>

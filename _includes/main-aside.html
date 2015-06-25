@@ -1,15 +1,15 @@
-{% if page.layout == "article" %}
-    {% assign author_name_prefix = "by" %}
-    {% assign author_microdata_tags = "" %}
-    {% assign author_microdata_photo = "" %}
+{% if page.layout == 'article' %}
+    {% assign author_name_prefix = 'by' %}
+    {% assign author_microdata_tags = '' %}
+    {% assign author_microdata_photo = '' %}
     {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada">Canadian</span>{% endcapture %}
     {% assign author_microdata_job_title = site.author_job_title %}
     {% assign author_microdata_home_location = site.author_location %}
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
-        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: "%d %b, %Y" }}</strong></time>
-        {% if page.categories contains "pen" %}
+        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: '%d %b, %Y' }}</strong></time>
+        {% if page.categories contains 'pen' %}
             <div class="article-label"><a href="/pens">Featured Pens</a></div>
         {% endif %}
         {% if page.tags.size > 0 %}
@@ -25,7 +25,7 @@
         {% endif %}
     {% endcapture %}
 {% else %}
-    {% assign author_name_prefix = "about" %}
+    {% assign author_name_prefix = 'about' %}
     {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
     {% capture author_microdata_photo %} itemprop="photo"{% endcapture %}
     {% capture author_microdata_name %}<span itemprop="name">{{ site.author }}</span>{% endcapture %}
@@ -39,24 +39,24 @@
     {% endcapture %}
 {% endif %}
 
-{% if page.page_class contains "page-about" %}
-    {% assign author_biography_closer = "you don’t care about my life. Sorry." %}
-{% elsif page.page_class contains "page-articles" %}
-    {% assign author_biography_closer = "my whimsical articles don’t capture your child-like wonder" %}
-{% elsif page.page_class contains "page-pens" %}
-    {% assign author_biography_closer = "my whimsical pens don’t capture your child-like wonder" %}
-{% elsif page.page_class contains "page-tags" %}
-    {% assign author_biography_closer = "my whimsical articles and pens don’t capture your child-like wonder" %}
-{% elsif page.page_class contains "page-search" %}
-    {% assign author_biography_closer = "everything you search for looks totally boring" %}
-{% elsif page.page_class contains "page-not-found" %}
-    {% assign author_biography_closer = "you’re upset that you found a broken page. Sorry" %}
-{% elsif page.categories contains "article" %}
-        {% assign author_biography_closer = "this article is boring and makes you want to claw your eyeballs out" %}
-{% elsif page.categories contains "pen" %}
-    {% assign author_biography_closer = "this pen is uninspiring and makes you want to claw your eyeballs out" %}
+{% if page.page_class contains 'page-about' %}
+    {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
+{% elsif page.page_class contains 'page-articles' %}
+    {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'page-pens' %}
+    {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'page-tags' %}
+    {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'page-search' %}
+    {% assign author_biography_closer = 'everything you search for looks totally boring' %}
+{% elsif page.page_class contains 'page-not-found' %}
+    {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
+{% elsif page.categories contains 'article' %}
+        {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
+{% elsif page.categories contains 'pen' %}
+    {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
 {% else %}
-    {% assign author_biography_closer = "this page makes you wish you were doing something else, like folding socks" %}
+    {% assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' %}
 {% endif %}
 
 <aside class="author  vcard" role="complementary"{{ author_microdata_tags }}>
@@ -81,13 +81,13 @@
     </div>
 
 
-    {% unless page.page_class contains "page-search" %}
+    {% unless page.page_class contains 'page-search' %}
         {% include widget-search.html %}
     {% endunless %}
 
-    {% if page.page_class contains "page-home" %}
+    {% if page.page_class contains 'page-home' %}
         {% include widget-featured-pens.html %}
-    {% elsif page.layout == "article" %}
+    {% elsif page.layout == 'article' %}
         {% include widget-related-articles.html %}
     {% endif %}
 

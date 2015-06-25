@@ -1,12 +1,12 @@
 - title: About
-  url: "/about"
-  rel: "me"
+  url: '/about'
+  rel: 'me'
 
 - title: Articles
-  url: "/articles"
+  url: '/articles'
 
 - title: Pens
-  url: "/pens"
+  url: '/pens'
 
 - title: Search
-  url: "/search"
+  url: '/search'

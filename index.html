@@ -10,7 +10,7 @@ searchable: no-content
             <h2 class="article-title">
                 <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
-            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B, %Y" }}</time>
+            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
                 <p class="article-lede">{{ post.lede }}</p>
             {% endif %}

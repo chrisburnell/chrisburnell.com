@@ -1,9 +1,9 @@
 <!-- Support <picture> and picturefill -->
-<script>document.createElement( "picture" );{% include body-js-picturefill.html %}</script>
+<script>document.createElement('picture');{% include body-js-picturefill.html %}</script>
 
-{% if page.comments == true or page.page_class contains "page-home" or page.page_class contains "page-articles" %}
+{% if page.comments == true or page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}
 <!-- Disqus Comments -->
-<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include body-js-disqus-article.html %}{% endif %}{% if page.page_class contains "page-home" or page.page_class contains "page-articles" %}{% include body-js-disqus-count.html %}{% endif %}</script>
+<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include body-js-disqus-article.html %}{% endif %}{% if page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}{% include body-js-disqus-count.html %}{% endif %}</script>
 {% endif %}
 
 <!-- Google Analytics -->
@@ -15,7 +15,7 @@
 <!-- Search -->
 <script>{% include body-js-search.html %}</script>
 
-{% if page.codepen == true or page.categories contains "pen" %}
+{% if page.codepen == true or page.categories contains 'pen' %}
 <!-- CodePen Embeds -->
 <script src="//codepen.io/assets/embed/ei.js" async defer></script>
 {% endif %}
