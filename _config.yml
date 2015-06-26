@@ -17,8 +17,8 @@ url:      https://chrisburnell.com
 baseurl:  ""
 shorturl: http://repc.co/
 
-url_repo:     https://github.com/chrisburnell/chrisburnell.github.io
-url_ravenous: https://ravenous.chrisburnell.com
+url_repository: https://github.com/chrisburnell/chrisburnell.github.io
+url_ravenous:   https://ravenous.chrisburnell.com
 
 url_codepen: http://codepen.io/chrisburnell
 url_github:  https://github.com/chrisburnell

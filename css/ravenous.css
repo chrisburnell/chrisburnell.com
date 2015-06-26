@@ -583,10 +583,8 @@ a img {
   height: auto; }
 
 figure {
-  margin: 0 0 0.625rem;
+  margin: 0 0 1.25rem;
   text-align: center; }
-  figure:not(:last-child) {
-    margin-bottom: 1.25rem; }
   figure a:link,
   figure a:visited,
   figure figcaption {
@@ -699,6 +697,9 @@ var {
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
+  [data-lang] pre {
+    margin-bottom: 0;
+    text-align: left; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.5rem 1.5rem 1rem;
@@ -784,13 +785,19 @@ button, .button {
   button .icon--feather, .button .icon--feather {
     width: 0.58em; }
 
-.wrap {
+main {
+  padding-bottom: 2.25rem; }
+
+.wrap, .wrap--full-width {
   width: auto;
   max-width: 1140px;
   padding-right: 1.25rem;
   padding-left: 1.25rem;
   margin-right: auto;
   margin-left: auto; }
+
+.wrap--full-width {
+  width: 100%; }
 
 .clear {
   clear: both;
@@ -801,12 +808,6 @@ button, .button {
     display: table; }
   .clear:after {
     clear: both; }
-
-.content {
-  padding-bottom: 2.25rem; }
-
-.fixed-width {
-  width: 1140px; }
 
 @media (max-width: 768px) {
   header {

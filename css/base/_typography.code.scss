@@ -28,9 +28,13 @@ var,
     }
 
 pre {
-    // override `normalize.css` and `margin-bottom` in `_layout.scss`
+    // override `normalize.css`
     margin-top: 0;
     margin-bottom: $spacing-medium;
+    [data-lang] & {
+        margin-bottom: 0;
+        text-align: left;
+    }
     &:not(.codepen) {
         @extend %rounded;
         background-color: $color-black-low;

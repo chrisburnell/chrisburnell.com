@@ -216,11 +216,8 @@ a img {
     height: auto;
 }
 figure {
-    margin: 0 0 $spacing-small;
+    margin: 0 0 $spacing-medium;
     text-align: center;
-    &:not(:last-child) {
-        margin-bottom: $spacing-medium;
-    }
     img,
     svg {
         @extend %rounded;

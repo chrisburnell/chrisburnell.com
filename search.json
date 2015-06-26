@@ -9,25 +9,25 @@ searchable: false
     {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "page",
-            "title": {{ page.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
-            "link": {{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url | jsonify }},
-            "lede": {{ page.lede | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% unless page.searchable == "no-content" %},
-            "content": {{ page.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
+            "link": {{ page.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "title": {{ page.title | jsonify }},
+            "lede": {{ page.lede | jsonify }}{% unless page.searchable == 'no-content' %},
+            "content": {{ page.content | strip_html | strip_newlines | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}
 {% for post in site.posts %}
     {% unless post.title == null or post.title == empty or post.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
-            "type": "{% if post.categories contains "pen" %}pen{% else %}article{% endif %}",
-            "title": {{ post.title | replace: "’", "'" | replace: "–", "-" | jsonify }},
-            "link": {{ post.url | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "type": "{% if post.categories contains 'pen' %}pen{% else %}article{% endif %}",
+            "link": {{ post.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "title": {{ post.title | jsonify }},
             "date": {{ post.date | jsonify }},
-            "date_friendly": {{ post.date | date: "%d %b, %Y" | jsonify }},{% if post.lede %}
-            "lede": {{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | strip_html | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }},{% endif %}
+            "date_friendly": {{ post.date | date: '%d %b, %Y' | jsonify }},{% if post.lede %}
+            "lede": {{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
             "categories": {{ post.categories | join:', ' | jsonify }},
-            "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == "no-content" %},
-            "content": {{ post.content | strip_html | strip_newlines | replace: "’", "'" | replace: "–", "-" | replace: "—", "--" | jsonify }}{% endunless %}
+            "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == 'no-content' %},
+            "content": {{ post.content | strip_html | strip_newlines | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}
