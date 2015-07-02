@@ -1036,8 +1036,8 @@ footer {
               transform: translateY(0.2rem); }
     @media (max-width: 500px) {
       .nav-primary-list a {
-        padding-left: .75rem;
-        padding-right: .75rem; } }
+        padding-left: .5rem;
+        padding-right: .5rem; } }
 
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,

@@ -9,7 +9,7 @@ searchable: false
     {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "page",
-            "link": {{ page.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "link": {{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
             "title": {{ page.title | jsonify }},
             "lede": {{ page.lede | jsonify }}{% unless page.searchable == 'no-content' %},
             "content": {{ page.content | strip_html | strip_newlines | jsonify }}{% endunless %}
@@ -20,7 +20,7 @@ searchable: false
     {% unless post.title == null or post.title == empty or post.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "{% if post.categories contains 'pen' %}pen{% else %}article{% endif %}",
-            "link": {{ post.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "link": {{ post.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url | jsonify }},
             "title": {{ post.title | jsonify }},
             "date": {{ post.date | jsonify }},
             "date_friendly": {{ post.date | date: '%d %b, %Y' | jsonify }},{% if post.lede %}

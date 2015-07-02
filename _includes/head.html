@@ -7,11 +7,11 @@
     {% endif %}
 
     {% if page.lede %}
-        {% capture meta_lede %}{{ page.lede }}{% endcapture %}
+        {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
     {% elsif page.categories contains 'pen' %}
         {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
     {% else %}
-        {% capture meta_lede %}{{ site.lede }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
+        {% capture meta_lede %}{{ site.lede | strip_html }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% endif %}
 
     {% if page.banner_mobile %}
@@ -69,10 +69,10 @@
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_lede }}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ page.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url }}">
+        <meta property="og:url" content="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
         <meta property="og:image" content="{{ meta_image }}">
 
-        <link rel="canonical" href="{{ page.url | remove: 'index.html' | prepend: site.baseurl | prepend: site.url }}">
+        <link rel="canonical" href="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
 
     {% include head-js.html %}

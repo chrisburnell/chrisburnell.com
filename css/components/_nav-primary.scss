@@ -62,8 +62,8 @@
                 transform: translateY(.2rem);
             }
             @include media("<=small") {
-                padding-left:  .75rem;
-                padding-right: .75rem;
+                padding-left:  .5rem;
+                padding-right: .5rem;
             }
         }
     }
