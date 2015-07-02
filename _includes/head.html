@@ -15,9 +15,9 @@
     {% endif %}
 
     {% if page.banner_mobile %}
-        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/article-banners/{{ page.banner_mobile }}{% endcapture %}
+        {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/article-banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% else %}
-        {% capture meta_image %}{{ site.url }}{{ site.baseurl }}/images/avatar@2x.png{% endcapture %}
+        {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% endif %}
 
     {% capture body_class %}

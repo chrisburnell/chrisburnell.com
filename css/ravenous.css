@@ -1755,6 +1755,8 @@ button, .button, .logo {
 .hide, .hidden, a span:not([class]):not([itemprop]) {
   width: 1px !important;
   height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
   position: absolute !important;
   overflow: hidden !important;
   clip: rect(1px, 1px, 1px, 1px) !important; }
