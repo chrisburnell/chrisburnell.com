@@ -185,7 +185,7 @@ function showSearchResults(results) {
     // Remove focus from the search input by toggling focus on the resultsList
     document.activeElement.blur();
     // And scroll to the results
-    searchInput.scrollIntoView();
+    resultsMeta.scrollIntoView();
 }
 
 /**

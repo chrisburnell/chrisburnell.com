@@ -49,7 +49,7 @@
         margin-right: .625rem;
         img {
             @extend %rounded;
-            // testing gradient replacement when loading the `src`/`srcset`,
+            // testing gradient replacement while loading the `src` / `srcset`,
             // colours generated from `avatar.png`
             background-image: gradient(rgba(153, 192, 226, 0), rgb(153, 192, 226), to top right),
                               gradient(rgba(157, 133, 139, 0), rgb(157, 133, 139), to bottom left),
@@ -58,8 +58,6 @@
             background-size: 100%;
             height: 100%;
             display: block;
-            // Alter image to match `$color-brand`
-            // filter: contrast(75%) sepia(100%) hue-rotate(165deg) brightness(85%);
         }
     }
     .author-name,
