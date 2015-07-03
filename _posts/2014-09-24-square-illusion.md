@@ -13,7 +13,7 @@ codepen_slug: IKHhC
 shorturl: f7utt
 ---
 
-{% include embed-codepen.html height="500" %}
+{% include codepen.html height="500" %}
 
 {% highlight html %}
 <div class="container">

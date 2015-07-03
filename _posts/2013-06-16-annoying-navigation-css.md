@@ -21,7 +21,7 @@ comments: true
 
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
-{% include embed-codepen.html slug="LHqFy" theme="tabfree" height="740" %}
+{% include codepen.html slug="LHqFy" theme="tabfree" height="740" %}
 
 
 {% include heading.html title='What’s going on here?' id='whats-going-on' %}

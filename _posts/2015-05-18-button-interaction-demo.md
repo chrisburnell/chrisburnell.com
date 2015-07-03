@@ -13,7 +13,7 @@ codepen_slug: RPRwoo
 shorturl: ax7qc
 ---
 
-{% include embed-codepen.html height="300" %}
+{% include codepen.html height="300" %}
 
 {% highlight html %}
 <button>Hello!</button>

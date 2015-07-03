@@ -89,6 +89,7 @@ gulp.task('css-critical', function() {
         }));
 });
 
+// Generate Sass documentation
 gulp.task('css-sassdoc', function() {
     return gulp.src(paths.css + '**/*.scss')
         .pipe(plumber())
@@ -121,21 +122,16 @@ gulp.task('js-main', function() {
         }));
 });
 
-// Generate picturefill HTML include
+// Generate inline JS includes
 gulp.task('js-inline', function() {
-    return gulp.src([paths.js + 'disqus-article.js',
-                     paths.js + 'disqus-count.js',
-                     paths.js + 'google-analytics.js',
-                     paths.js + 'picturefill.js',
-                     paths.js + 'search.js'])
+    return gulp.src([paths.js + '*.js', '!' + paths.js + '*.min.js'])
         .pipe(uglify({
             mangle: false
         }))
         .pipe(rename({
-            prefix: "body-js-",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes))
+        .pipe(gulp.dest(paths.includes + 'js-body/'))
         .pipe(notify({
             title: 'gulp',
             message: 'Inline JS compiled.',

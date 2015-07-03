@@ -1,19 +1,19 @@
 <!-- Support <picture> and picturefill -->
-<script>document.createElement('picture');{% include body-js-picturefill.html %}</script>
+<script>document.createElement('picture');{% include js-body/picturefill.html %}</script>
 
 {% if page.comments == true or page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}
 <!-- Disqus Comments -->
-<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include body-js-disqus-article.html %}{% endif %}{% if page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}{% include body-js-disqus-count.html %}{% endif %}</script>
+<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include js-body/disqus-comments.html %}{% endif %}{% if page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}{% include js-body/disqus-count.html %}{% endif %}</script>
 {% endif %}
 
 <!-- Google Analytics -->
-<script>{% include body-js-google-analytics.html %}</script>
+<script>{% include js-body/google-analytics.html %}</script>
 
 <!-- Search Templates -->
-{% include body-js-search-templates.html %}
+{% include js-body/search-templates.html %}
 
 <!-- Search -->
-<script>{% include body-js-search.html %}</script>
+<script>{% include js-body/search.html %}</script>
 
 {% if page.codepen == true or page.categories contains 'pen' %}
 <!-- CodePen Embeds -->

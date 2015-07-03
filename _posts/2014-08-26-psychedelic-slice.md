@@ -13,7 +13,7 @@ codepen_slug: apogK
 shorturl: k9ouo
 ---
 
-{% include embed-codepen.html height="350" %}
+{% include codepen.html height="350" %}
 
 {% highlight html %}
 <div class="curvy-arrow"></div>

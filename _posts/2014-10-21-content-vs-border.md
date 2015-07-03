@@ -13,6 +13,6 @@ codepen_slug: lBJnz
 shorturl: 6xcr7
 ---
 
-{% include embed-codepen.html height="500" theme="tabfree" %}
+{% include codepen.html height="500" theme="tabfree" %}
 
 This pen is really more about the visual display.

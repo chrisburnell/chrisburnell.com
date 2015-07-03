@@ -30,6 +30,7 @@ function showComments() {
     // Only if the button still exists should we load Disqus and remove the button
     if( document.getElementById('show-comments-button') ) {
         commentsButton.parentNode.removeChild(commentsButton);
+        commentsButton.removeEventListener('click', function(){});
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

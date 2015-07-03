@@ -13,7 +13,7 @@ codepen_slug: lcEvB
 shorturl: e1r8k
 ---
 
-{% include embed-codepen.html height="350" %}
+{% include codepen.html height="350" %}
 
 {% highlight html %}
 <a href="#" class="article-link">

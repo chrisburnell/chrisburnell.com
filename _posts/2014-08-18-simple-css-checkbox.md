@@ -13,7 +13,7 @@ codepen_slug: Cbiun
 shorturl: g6pky
 ---
 
-{% include embed-codepen.html height="250" %}
+{% include codepen.html height="250" %}
 
 {% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">

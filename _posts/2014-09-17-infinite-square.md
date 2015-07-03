@@ -13,7 +13,7 @@ codepen_slug: HlcAJ
 shorturl: 6dwvt
 ---
 
-{% include embed-codepen.html height="350" %}
+{% include codepen.html height="350" %}
 
 {% highlight html %}
 <div class="square">

@@ -13,7 +13,7 @@ codepen_slug: hIxaj
 shorturl: 6aorh
 ---
 
-{% include embed-codepen.html height="400" %}
+{% include codepen.html height="400" %}
 
 {% highlight html %}
 <div>

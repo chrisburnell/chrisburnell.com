@@ -13,7 +13,7 @@ codepen_slug: mglHp
 shorturl: 9sogz
 ---
 
-{% include embed-codepen.html height="425" %}
+{% include codepen.html height="425" %}
 
 {% highlight html %}
 <div class="square">A</div>

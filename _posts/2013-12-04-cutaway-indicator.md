@@ -13,7 +13,7 @@ codepen_slug: yIwzd
 shorturl: b3sh4
 ---
 
-{% include embed-codepen.html height="200" %}
+{% include codepen.html height="200" %}
 
 {% highlight html %}
 <button>Hover Me</button>

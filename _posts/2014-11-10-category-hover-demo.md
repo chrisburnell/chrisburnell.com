@@ -13,7 +13,7 @@ codepen_slug: mybQEL
 shorturl: 058xp
 ---
 
-{% include embed-codepen.html height="525" %}
+{% include codepen.html height="525" %}
 
 {% highlight html %}
 <div class="modal">

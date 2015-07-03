@@ -362,9 +362,6 @@ html {
   position: relative;
   overflow-y: scroll; }
 
-.svg--master {
-  display: none; }
-
 html {
   background-color: #f9f9f9;
   color: #4f4f4f;
@@ -1752,7 +1749,7 @@ button, .button, .logo {
   -webkit-touch-callout: default;
   -webkit-touch-callout: none; }
 
-.hide, .hidden, a span:not([class]):not([itemprop]) {
+.hide, .hidden, .svg--master, a span:not([class]):not([itemprop]) {
   width: 1px !important;
   height: 1px !important;
   padding: 0 !important;
