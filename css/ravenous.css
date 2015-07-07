@@ -1387,11 +1387,12 @@ footer {
   display: block;
   margin-bottom: .5rem; }
 
-.featured-link:after {
-  content: "\00a0\2192"; }
-
 .tags {
   display: table-cell; }
+
+.featured-link:after {
+  content: "\00a0\2192";
+  font-style: normal; }
 
 @media (min-width: 769px) {
   .author-biography {
