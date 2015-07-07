@@ -33,7 +33,8 @@
         @extend %delta;
         margin-bottom: $spacing-small;
         &:before {
-            content: "\2013\0020";
+            // EN DASH, NO-BREAK SPACE
+            content: "\2013\00a0";
             color: $color-text-alt;
         }
     }

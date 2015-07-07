@@ -630,7 +630,7 @@ blockquote {
     margin-left: 2.25rem;
     margin-top: 1.25rem; }
     blockquote cite:before {
-      content: "\2014\00a0"; }
+      content: "\2010\00a0"; }
 
 /*blockquote*/
 .twitter-tweet {
@@ -1152,7 +1152,7 @@ footer {
 .articles-list .date {
   margin-bottom: 0.625rem; }
   .articles-list .date:before {
-    content: "\2013\0020";
+    content: "\2013\00a0";
     color: #737373; }
 
 .small-articles-list {
@@ -1215,7 +1215,7 @@ footer {
     font-size: .8125rem;
     font-weight: 600; }
     .small-articles-list .date:before {
-      content: "\2013\0020"; }
+      content: "\2013\00a0"; }
   .small-articles-list svg ~ .date {
     margin-top: 0.3125rem; }
   .small-articles-list .lede {

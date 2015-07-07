@@ -10,6 +10,7 @@
     font-weight: 600;
     line-height: 1;
     &:after {
+        // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: "\00a0\2192";
     }
     @include media(">medium") {

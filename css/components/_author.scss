@@ -74,6 +74,7 @@
         display: table-cell;
     }
     .featured-link:after {
+        // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: "\00a0\2192";
         font-style: normal;
     }

@@ -61,7 +61,8 @@
         font-size: .8125rem;
         font-weight: 600;
         &:before {
-            content: "\2013\0020";
+            // EN DASH, NO-BREAK SPACE
+            content: "\2013\00a0";
         }
     }
         svg ~ .date {
