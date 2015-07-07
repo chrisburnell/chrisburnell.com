@@ -7,12 +7,12 @@ searchable: no-content
 <ol id="articles" class="articles-list" role="list">
     {% for post in site.categories.article limit:5 %}
         <li>
-            <h2 class="article-title">
-                <a class="article-title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+            <h2 class="title">
+                <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
-            <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+            <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
-                <p class="article-lede">{{ post.lede }}</p>
+                <p class="lede">{{ post.lede }}</p>
             {% endif %}
             <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
             {% if post.comments == true %}

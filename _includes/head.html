@@ -15,7 +15,7 @@
     {% endif %}
 
     {% if page.banner_mobile %}
-        {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/article-banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+        {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% else %}
         {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% endif %}

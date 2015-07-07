@@ -63,17 +63,16 @@
     .author-name,
     .author-age,
     .author-employer,
-    .article-date,
-    .article-label {
+    .author-information .date,
+    .featured-link {
         box-sizing: content-box;
         display: block;
         margin-bottom: .5rem;
     }
-    .article-label a:after,
-    .featured-pens-link:after {
+    .featured-link:after {
         content: "\00a0\2192";
     }
-    .article-tags {
+    .tags {
         // don't wrap around `.author-image`
         display: table-cell;
     }

@@ -20,40 +20,51 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.25;
 }
-h1 {
+
+%alpha {
     font-family: $font-stack-heading;
     font-size: 2.625rem;
     text-transform: uppercase;
     text-shadow: .0714em .0714em 0 $color-black-low;
 }
-h2 {
+h1 {
+    @extend %alpha;
+}
+
+%beta {
     font-family: $font-stack-primary;
     font-size: 1.625rem;
 }
-h3,
-h4,
-.articles-list .article-date {
+h2 {
+    @extend %beta;
+}
+
+%delta {
     font-family: $font-stack-secondary;
     font-weight: 600;
-}
-h3,
-.articles-list .article-date {
     font-size: 1.125rem;
     line-height: 1.875;
     text-transform: uppercase;
-    code {
-        text-transform: none;
-    }
 }
 h3 {
-    margin-top: .625rem;
+    @extend %delta;
+    margin-top: $spacing-small;
     border-bottom: $border-thin solid $color-text-light;
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
+    code {
+        text-transform: none;
+    }
+}
+
+%gamma {
+    font-family: $font-stack-secondary;
+    font-weight: 600;
 }
 h4 {
-    margin-bottom: .5rem;
+    @extend %gamma;
+    margin-bottom: $spacing-small;
 }
 
 p {
@@ -244,6 +255,10 @@ dfn[title] {
 }
 ins {
     text-decoration: none;
+}
+
+time {
+    display: block;
 }
 
 q {

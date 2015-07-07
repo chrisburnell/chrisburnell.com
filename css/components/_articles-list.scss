@@ -20,13 +20,21 @@
             text-align: center;
         }
     }
-    .article-title,
-    .article-date,
+    .title,
+    .date,
     .comments-link {
-        // helps pop against the background
+        // helps pop against the odd item background
         text-shadow: 0 1px 0 $color-white;
     }
-    .article-title {
+    .title {
         margin-bottom: $spacing-small;
+    }
+    .date {
+        @extend %delta;
+        margin-bottom: $spacing-small;
+        &:before {
+            content: "\2013\0020";
+            color: $color-text-alt;
+        }
     }
 }

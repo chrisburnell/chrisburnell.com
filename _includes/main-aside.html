@@ -8,12 +8,12 @@
     {% assign author_microdata_home_location = site.author_location %}
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
-        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: '%d %b, %Y' }}</strong></time>
+        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: '%d %b, %Y' }}</strong></time>
         {% if page.categories contains 'pen' %}
-            <div class="article-label"><a href="/pens">Featured Pens</a></div>
+            <div class="featured-link"><a href="/pens">Featured Pens</a></div>
         {% endif %}
         {% if page.tags.size > 0 %}
-            <div class="article-tags">
+            <div class="tags">
                 <span>tagged under</span>
                 <span itemprop="keywords">
                     {% assign tags_sorted = page.tags | sort: 0 %}

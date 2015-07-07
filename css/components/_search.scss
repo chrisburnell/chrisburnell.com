@@ -3,12 +3,12 @@
 /// @group components
 ////
 
-.main-search,
-.widget-search {
+.search-main,
+.widget--search {
     position: relative;
     overflow: hidden;
 }
-.main-search {
+.search-main {
     max-width: $wrapper-width-small;
     margin-bottom: $spacing-medium;
 }

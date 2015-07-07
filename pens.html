@@ -7,7 +7,7 @@ title: Featured Pens
 lede: All of my featured pens listed on one page.
 ---
 
-<dl class="pens-lede">
+<dl class="lede--pens">
     <dt>What’s a pen?</dt>
     <dd><q><a href="http://codepen.io">CodePen</a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q></dd>
 </dl>
@@ -19,8 +19,8 @@ lede: All of my featured pens listed on one page.
         <li>
             <a href="{{ post.url }}">
                 <svg><use xlink:href="#svg--codepen" /></svg>
-                <h4 class="small-article-title">{{ post.title }}</h4>
-                <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+                <h4 class="title">{{ post.title }}</h4>
+                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>
         </li>
     {% endfor %}

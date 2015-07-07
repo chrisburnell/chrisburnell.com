@@ -22,12 +22,12 @@ lede: A list of tags and their counterparts.
                     {% if post.categories contains 'pen' %}
                         <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                     {% endif %}
-                    <h4 class="small-article-title">{{ post.title }}</h4>
-                    <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+                    <h4 class="title">{{ post.title }}</h4>
+                    <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
                     {% if post.lede %}
-                        <p class="small-article-lede">{{ post.lede | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                        <p class="lede">{{ post.lede | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
                     {% elsif post.categories contains 'pen' %}
-                        <p class="small-article-lede"><em>Featured Pen</em></p>
+                        <p class="lede"><em>Featured Pen</em></p>
                     {% endif %}
                 </a>
             </li>

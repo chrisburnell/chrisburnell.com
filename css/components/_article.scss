@@ -3,57 +3,14 @@
 /// @group components
 ////
 
-.article-banner {
-    @extend %rounded;
-    width: 810px;
-    margin-bottom: 1rem;
-    @include media("<=small") {
-        width: 500px;
-    }
-}
-.article-title,
-.page-title,
-.site-tagline {
+.title,
+.tagline {
+    width: 100%;
     margin-bottom: $spacing-large;
-}
-.site-lede {
-    max-width: 24em;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-.article-lede,
-.page-lede {
-    margin-bottom: $spacing-medium;
-    font-size: 1.25rem;
-    line-height: 1.5;
-}
-.page-lede,
-.site-lede,
-.article-lede {
-    @include media(">medium") {
-        // align text to the `aside`
-        margin-top: -0.5rem;
-    }
-}
-.article-lede {
-    .article-banner + & {
-        margin-top: 0;
-    }
-}
-.pens-lede {
-    padding-bottom: $spacing-medium;
-    border-bottom: $border-thin solid $color-black-medium;
-}
-.article-title,
-.article-date,
-.article-lede {
     @include media("<=medium") {
         text-align: left;
     }
-}
-.article-title {
-    width: 100%;
-    .article-title-link {
+    .title-link {
         @include transition(border-color);
         @include will-change(color, border-bottom-color);
         display: inline-block;
@@ -69,18 +26,47 @@
         }
     }
 }
-.articles-list .article-date {
-    margin-bottom: .75rem;
-    &:before {
-        content: "\2013\0020";
-        color: $color-text-alt;
+
+.banner {
+    @extend %rounded;
+    width: 810px;
+    margin-bottom: $spacing-medium;
+    @include media("<=small") {
+        width: 500px;
     }
 }
-.article-edit {
+
+.lede {
+    margin-bottom: $spacing-medium;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    @include media("<=medium") {
+        text-align: left;
+    }
+    @include media(">medium") {
+        // align text to the `aside`
+        margin-top: -0.5rem;
+        // except where a banner occurs first
+        .banner + & {
+            margin-top: 0;
+        }
+    }
+    &.lede--home {
+        max-width: 24em;
+        font-size: 1.625rem;
+    }
+}
+
+.edit {
     @extend %rounded;
     background-color: rgba($color-brand, map-get($opacities, 'medium'));
     padding: 1rem;
     margin: 0 $spacing-large $spacing-medium;
     font-style: italic;
     line-height: 1.5;
+}
+
+.lede--pens {
+    padding-bottom: $spacing-medium;
+    border-bottom: $border-thin solid $color-black-medium;
 }

@@ -4,20 +4,27 @@
 <main class="wrap  clear" role="main">
     <article>
 
-        {% if page.title %}
-            <h1 class="page-title" role="heading">{{ page.title }}</h1>
+        {% if page.page_class contains 'page-home' %}
+            <h1 class="tagline" role="heading">{{ site.tagline }}.</h1>
         {% else %}
-            <h1 class="site-tagline" role="heading">{{ site.tagline }}.</h1>
+            <h1 class="title" role="heading">{{ page.title }}</h1>
         {% endif %}
 
         {% include main-aside.html %}
 
+        {% if page.banner and page.banner_mobile %}
+            <img alt="" class="banner" height="300" role="presentation" itemprop="image"
+                 src="/images/banners/{{ page.banner_mobile }}"
+                 sizes="(min-width: 541px) 810px, 100vw"
+                 srcset="/images/banners/{{ page.banner_mobile }} 540w, /images/banners/{{ page.banner }} 810w">
+        {% endif %}
+
         {% if page.page_class contains 'page-home' %}
-            <h2 class="site-lede">{{ site.lede }}</h2>
+            <h2 class="lede  lede--home">{{ site.lede }}</h2>
         {% elsif page.page_class contains 'page-search' %}
-            <h2 class="page-lede" id="search-meta">Search for something!</h2>
+            <h2 class="lede" id="search-meta">Search for something!</h2>
         {% elsif page.lede %}
-            <h2 class="page-lede">{{ page.lede }}</h2>
+            <h2 class="lede">{{ page.lede }}</h2>
         {% endif %}
 
         {{ content }}

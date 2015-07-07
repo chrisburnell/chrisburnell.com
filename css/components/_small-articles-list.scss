@@ -47,15 +47,15 @@
             text-decoration: none;
         }
     }
-    .small-article-title,
-    .small-article-lede,
-    .small-article-date {
+    .title,
+    .lede,
+    .date {
         text-shadow: 0 1px 0 $color-white;
     }
-    .small-article-title {
-        margin-bottom: .3125em;
+    .title {
+        margin-bottom: ($spacing-small / 2);
     }
-    .small-article-date {
+    .date {
         color: $color-text-alt;
         display: block;
         font-size: .8125rem;
@@ -64,12 +64,12 @@
             content: "\2013\0020";
         }
     }
-        svg ~ .small-article-date {
-            margin-top: .3125em;
+        svg ~ .date {
+            margin-top: ($spacing-small / 2);
         }
-    .small-article-lede {
+    .lede {
         color: $color-text;
-        margin-top: .3125em;
+        margin-top: ($spacing-small / 2);
         font-size: .875rem;
     }
     svg {
@@ -90,10 +90,10 @@
             width:  4em !important;
             height: 4em;
         }
-    }
-    a:hover svg,
-    a:focus svg,
-    a:active svg {
-        opacity: map-get($opacities, 'high');
+        a:hover &,
+        a:focus &,
+        a:active & {
+            opacity: map-get($opacities, 'high');
+        }
     }
 }

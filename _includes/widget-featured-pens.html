@@ -1,18 +1,18 @@
-<div class="widget-featured-pens">
-    <h3 class="widget-featured-pens-title"><a href="/pens">Featured Pens</a></h3>
+<div class="widget">
+    <h3 class="widget-title"><a href="/pens">Featured Pens</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.categories.pen limit:4 %}
             <li>
                 <a href="{{ post.url }}">
                     <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
-                    <h4 class="small-article-title">{{ post.title }}</h4>
-                    <time class="small-article-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+                    <h4 class="title">{{ post.title }}</h4>
+                    <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
                     {% if post.lede %}
-                        <p class="small-article-lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                        <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
                     {% endif %}
                 </a>
             </li>
         {% endfor %}
     </ol>
-    <a class="widget-featured-pens-link" href="/pens">All Featured Pens</a>
+    <a class="widget-featured-link" href="/pens">All Featured Pens</a>
 </div>

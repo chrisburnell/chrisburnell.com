@@ -4,23 +4,23 @@
 <main class="wrap  clear" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
 
-        <h1 id="article" class="article-title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ page.url }}</a>{% endif %}</h1>
+        <h1 id="article" class="title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ page.url }}</a>{% endif %}</h1>
 
         {% include main-aside.html %}
 
         {% if page.banner and page.banner_mobile %}
-            <img alt="" class="article-banner" height="300" role="presentation" itemprop="image"
-                 src="/images/article-banners/{{ page.banner_mobile }}"
+            <img alt="" class="banner" height="300" role="presentation" itemprop="image"
+                 src="/images/banners/{{ page.banner_mobile }}"
                  sizes="(min-width: 541px) 810px, 100vw"
-                 srcset="/images/article-banners/{{ page.banner_mobile }} 540w, /images/article-banners/{{ page.banner }} 810w">
+                 srcset="/images/banners/{{ page.banner_mobile }} 540w, /images/banners/{{ page.banner }} 810w">
         {% endif %}
 
         {% if page.lede %}
-            <h2 class="article-lede" itemprop="description">{{ page.lede }}</h2>
+            <h2 class="lede" itemprop="description">{{ page.lede }}</h2>
         {% endif %}
 
         {% if page.edit_text %}
-            <div class="article-edit">
+            <div class="edit">
                 <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit{% if page.edit_date %} ({{ page.edit_date | date: '%d %b, %Y' }}){% endif %} &mdash;</time>
                 <p>{{ page.edit_text }}</p>
             </div>
@@ -31,7 +31,7 @@
         <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
                 <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Show Comments</button>
-            {% elsif page.comments == 'codepen' %}
+            {% elsif page.comments == 'codepen' and page.codepen_slug %}
                 <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment"><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> CodePen Comments</button>
             {% endif %}
             {% if page.categories contains 'article' %}
