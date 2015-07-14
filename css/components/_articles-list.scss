@@ -37,5 +37,8 @@
             content: "\2013\00a0";
             color: $color-text-alt;
         }
+        @include media("<=medium") {
+            text-align: left;
+        }
     }
 }

@@ -4,8 +4,12 @@
 ////
 
 .widget {
-    @include media(">medium") {
+    &,
+    & + & {
         margin-top: $spacing-medium;
+    }
+    @include media("<=medium") {
+        margin-top: 0;
     }
 }
 .widget-title {

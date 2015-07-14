@@ -1154,6 +1154,9 @@ footer {
   .articles-list .date:before {
     content: "\2013\00a0";
     color: #737373; }
+  @media (max-width: 768px) {
+    .articles-list .date {
+      text-align: left; } }
 
 .small-articles-list {
   display: -webkit-box;
@@ -1408,9 +1411,13 @@ footer {
 .author-biography p:not(:last-child) {
   margin-bottom: 0.625rem; }
 
-@media (min-width: 769px) {
+.widget,
+.widget + .widget {
+  margin-top: 1.25rem; }
+
+@media (max-width: 768px) {
   .widget {
-    margin-top: 1.25rem; } }
+    margin-top: 0; } }
 
 .widget-title {
   margin-top: 0; }
