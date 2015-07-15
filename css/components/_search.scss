@@ -44,20 +44,15 @@
     position: absolute;
     top: 0;
     right: 0;
-    &:before {
-        content: "\2192";
-        height: 1.637em;
-        display: block;
-        top: 0;
-        left: 0;
-        font-family: $font-stack-secondary;
-        text-align: center;
-        transform: translateY(-0.125em);
-    }
     &:active {
         height: 1.637em;
-        &:before {
-            top: 0;
-        }
+    }
+    .icon--search {
+        display: block;
+        margin-right: 0;
+        position: absolute;
+        top: .4em;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

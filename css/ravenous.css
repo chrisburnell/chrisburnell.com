@@ -1283,21 +1283,17 @@ footer {
   position: absolute;
   top: 0;
   right: 0; }
-  .search-submit:before {
-    content: "\2192";
-    height: 1.637em;
-    display: block;
-    top: 0;
-    left: 0;
-    font-family: "proxima-nova", sans-serif;
-    text-align: center;
-    -webkit-transform: translateY(-0.125em);
-        -ms-transform: translateY(-0.125em);
-            transform: translateY(-0.125em); }
   .search-submit:active {
     height: 1.637em; }
-    .search-submit:active:before {
-      top: 0; }
+  .search-submit .icon--search {
+    display: block;
+    margin-right: 0;
+    position: absolute;
+    top: .4em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
 
 /**
  * Contains buttons and internal links.
