@@ -807,10 +807,6 @@ main {
   .clear:after {
     clear: both; }
 
-@media (max-width: 768px) {
-  header {
-    text-align: center; } }
-
 article {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
@@ -876,7 +872,6 @@ footer {
   line-height: 1;
   text-transform: uppercase;
   text-shadow: 0.058em 0.058em 0 rgba(6, 6, 6, 0.05);
-  white-space: nowrap;
   z-index: 2; }
   .logo:link,
   .logo:visited {
@@ -985,7 +980,8 @@ footer {
   @media (max-width: 768px) {
     .nav-primary {
       width: 100%;
-      padding-top: 1.25rem; } }
+      padding-top: 1.25rem;
+      text-align: center; } }
 
 .nav-primary-list {
   height: 3.75rem;
@@ -1250,11 +1246,6 @@ footer {
     a:active .small-articles-list svg {
       opacity: 0.25; }
 
-.search-main,
-.widget--search {
-  position: relative;
-  overflow: hidden; }
-
 .search-main {
   max-width: 500px;
   margin-bottom: 1.25rem; }
@@ -1262,11 +1253,9 @@ footer {
 .search-results {
   margin-top: 1.25rem; }
 
-.search-label,
-.search-submit {
-  position: absolute;
-  top: 0;
-  left: 100%; }
+.search-form {
+  position: relative;
+  padding-right: 3.375rem; }
 
 .search-input {
   -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -1277,12 +1266,38 @@ footer {
   padding: .5rem;
   border: 0.125rem solid #dddddd;
   outline: none;
-  font-family: "proxima-nova", sans-serif; }
+  font-family: "proxima-nova", sans-serif;
+  border-radius: 0.25rem; }
   .search-input:focus {
     background-color: transparent;
     border-color: #5f8aa6; }
   .search-input[disabled] {
     background-color: #d0d0d0; }
+
+.search-submit {
+  width: 2em;
+  min-width: 1px;
+  height: 1.819em;
+  display: block;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .search-submit:before {
+    content: "\2192";
+    height: 1.637em;
+    display: block;
+    top: 0;
+    left: 0;
+    font-family: "proxima-nova", sans-serif;
+    text-align: center;
+    -webkit-transform: translateY(-0.125em);
+        -ms-transform: translateY(-0.125em);
+            transform: translateY(-0.125em); }
+  .search-submit:active {
+    height: 1.637em; }
+    .search-submit:active:before {
+      top: 0; }
 
 /**
  * Contains buttons and internal links.

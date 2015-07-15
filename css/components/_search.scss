@@ -3,11 +3,6 @@
 /// @group components
 ////
 
-.search-main,
-.widget--search {
-    position: relative;
-    overflow: hidden;
-}
 .search-main {
     max-width: $wrapper-width-small;
     margin-bottom: $spacing-medium;
@@ -15,12 +10,13 @@
     .search-results {
         margin-top: $spacing-medium;
     }
-.search-label,
-.search-submit {
-    position: absolute;
-    top: 0;
-    left: 100%;
+
+.search-form {
+    position: relative;
+    // width of button + spacing
+    padding-right: (2.75rem + $spacing-small);
 }
+
 .search-input {
     @include transition(background-color, border-color);
     @include will-change(background-color, border-color);
@@ -30,11 +26,38 @@
     border: $border-thin solid $color-text-light;
     outline: none;
     font-family: $font-stack-secondary;
+    border-radius: $border-radius-thin;
     &:focus {
         background-color: transparent;
         border-color: $color-brand;
     }
     &[disabled] {
         background-color: darken($color-text-light, 5%);
+    }
+}
+.search-submit {
+    width: 2em;
+    min-width: 1px;
+    height: 1.819em;
+    display: block;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:before {
+        content: "\2192";
+        height: 1.637em;
+        display: block;
+        top: 0;
+        left: 0;
+        font-family: $font-stack-secondary;
+        text-align: center;
+        transform: translateY(-0.125em);
+    }
+    &:active {
+        height: 1.637em;
+        &:before {
+            top: 0;
+        }
     }
 }
