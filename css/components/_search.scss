@@ -13,8 +13,14 @@
 
 .search-form {
     position: relative;
-    // width of button + spacing
-    padding-right: (2.75rem + $spacing-small);
+    .search-main & {
+        // width of button + text + spacing
+        padding-right: (5rem + $spacing-small);
+    }
+    .widget--search & {
+        // width of button + SVG + spacing
+        padding-right: (2.5rem + $spacing-small);
+    }
 }
 
 .search-input {
@@ -36,16 +42,15 @@
     }
 }
 .search-submit {
-    width: 2em;
-    min-width: 1px;
-    height: 1.819em;
     display: block;
-    margin-top: 0;
     position: absolute;
     top: 0;
     right: 0;
-    &:active {
-        height: 1.637em;
+    .search-main & {
+        min-width: 5rem;
+    }
+    .widget--search & {
+        min-width: 2.5rem;
     }
     .icon--search {
         display: block;

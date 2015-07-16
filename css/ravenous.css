@@ -747,27 +747,34 @@ button, .button {
   button:active, .button:active {
     height: 2em;
     padding-bottom: 0;
-    margin-bottom: .25rem;
+    margin-bottom: .182em;
     box-shadow: inset 0 -1px 0 0 #4b6f87;
-    -webkit-transform: translateY(0.25rem);
-        -ms-transform: translateY(0.25rem);
-            transform: translateY(0.25rem); }
+    -webkit-transform: translateY(0.182em);
+        -ms-transform: translateY(0.182em);
+            transform: translateY(0.182em); }
   button:before,
   button:after, .button:before,
   .button:after {
     will-change: top;
     content: "";
     width: 100%;
-    height: .25rem;
+    height: .182em;
     position: absolute;
     top: 0;
     left: 0; }
   button:active:before,
   button:active:after, .button:active:before,
   .button:active:after {
-    top: -0.25rem; }
+    top: -0.182em; }
   button[disabled], .button[disabled] {
     opacity: .4; }
+  button.button--small, .button.button--small {
+    font-size: 1.25rem;
+    height: 2em;
+    margin-top: 0;
+    line-height: 1.818; }
+    button.button--small:active, .button.button--small:active {
+      height: 1.818em; }
   @media (max-width: 768px) {
     .page-not-found button, .page-not-found .button {
       display: block;
@@ -1254,8 +1261,11 @@ footer {
   margin-top: 1.25rem; }
 
 .search-form {
-  position: relative;
-  padding-right: 3.375rem; }
+  position: relative; }
+  .search-main .search-form {
+    padding-right: 5.625rem; }
+  .widget--search .search-form {
+    padding-right: 3.125rem; }
 
 .search-input {
   -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -1275,16 +1285,14 @@ footer {
     background-color: #d0d0d0; }
 
 .search-submit {
-  width: 2em;
-  min-width: 1px;
-  height: 1.819em;
   display: block;
-  margin-top: 0;
   position: absolute;
   top: 0;
   right: 0; }
-  .search-submit:active {
-    height: 1.637em; }
+  .search-main .search-submit {
+    min-width: 5rem; }
+  .widget--search .search-submit {
+    min-width: 2.5rem; }
   .search-submit .icon--search {
     display: block;
     margin-right: 0;
