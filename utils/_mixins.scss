@@ -100,3 +100,20 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+
+///
+/// Define characters for quotes
+///
+@mixin quotes() {
+    &,
+    :lang(en) & {
+        quotes: "\201C" "\201D" "\2018" "\2019";
+    }
+    :lang(de) & {
+        quotes: '»' '«' '\2039' '\203A';
+    }
+    :lang(fr) & {
+        quotes: '« ' ' »';
+    }
+}
