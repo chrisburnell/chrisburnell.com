@@ -6,7 +6,7 @@
 html {
     background-color: $color-white;
     color: $color-text;
-    font: 400 normal #{$base-font-size}/#{$base-line-height} $font-stack-primary;
+    font: $base-font-weight $base-font-style #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
 }
@@ -23,9 +23,11 @@ h1, h2, h3, h4, h5, h6 {
 
 %alpha {
     font-family: $font-stack-heading;
+    // 2.625rem = 42px
     font-size: 2.625rem;
     text-transform: uppercase;
-    text-shadow: .0714em .0714em 0 $color-black-low;
+    // .0715em = 3px
+    text-shadow: .0715em .0715em 0 $color-black-low;
 }
 h1 {
     @extend %alpha;
@@ -33,6 +35,7 @@ h1 {
 
 %beta {
     font-family: $font-stack-primary;
+    // 1.625rem = 26px
     font-size: 1.625rem;
 }
 h2 {
@@ -41,8 +44,9 @@ h2 {
 
 %delta {
     font-family: $font-stack-secondary;
-    font-weight: 600;
+    // 1.125rem = 18px
     font-size: 1.125rem;
+    font-weight: 600;
     line-height: 1.875;
     text-transform: uppercase;
 }
@@ -263,15 +267,15 @@ time {
 }
 
 q {
+    @include quotes;
     font-style: italic;
-    quotes: "\201C" "\201D" "\2018" "\2019";
 }
 blockquote {
     @extend %rounded;
+    @include quotes;
     background-color: rgba($color-brand, map-get($opacities, 'medium'));
     padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
-    quotes: "\201C" "\201D" "\2018" "\2019";
     @include media("<=small") {
         margin-right: $spacing-medium;
         margin-left:  $spacing-medium;
