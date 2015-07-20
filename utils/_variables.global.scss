@@ -72,9 +72,13 @@ $color-black-medium: rgba($color-black, map_get($opacities, 'medium')) !default;
 
 
 /// @type Length
-$base-font-size: 16px !default;
+$base-font-size: 100% !default;
 /// @type Number
 $base-line-height: 1.875 !default;
+/// @type String
+$base-font-style: normal !default;
+/// @type String
+$base-font-weight: 400 !default;
 /// @type List
 $font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// @type List
