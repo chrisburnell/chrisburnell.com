@@ -2,7 +2,7 @@
 
 #### version 2.5.0
 
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 
 #### The source code for [chrisburnell.com](https://chrisburnell.com/).
 
