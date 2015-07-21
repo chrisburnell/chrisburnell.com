@@ -1,5 +1,5 @@
 /**
- * Ravenous gulp Configuration
+ * Chris Burnell gulp Configuration
  */
 
 // Define gulp objects
@@ -19,17 +19,17 @@ var sassdoc = require('sassdoc');
 
 // Define paths
 var paths = {
-        css: 'css/',
-        js: 'js/',
-        includes: '_includes/',
-        docs: 'sassdoc/'
-    };
+    css: 'css/',
+    js: 'js/',
+    includes: '_includes/',
+    docs: 'sassdoc/'
+};
 
 // -----------------------------------------------------------------------------
 
 // Compile main SCSS file
 gulp.task('css-main', function() {
-    return gulp.src(paths.css + 'ravenous.scss')
+    return gulp.src(paths.css + 'chrisburnell.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,

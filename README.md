@@ -1,6 +1,8 @@
-# Ravenous
+# Chris Burnell
 
 #### version 2.5.0
+
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 #### The source code for [chrisburnell.com](https://chrisburnell.com/).
 
