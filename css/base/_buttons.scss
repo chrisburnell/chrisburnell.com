@@ -54,14 +54,17 @@ button, .button {
         top: 0;
         left: 0;
     }
-        &:active:before,
-        &:active:after {
-            top: -0.182em;
+        &:active {
+            &:before,
+            &:after {
+                top: -0.182em;
+            }
         }
     &[disabled] {
         opacity: .4;
     }
     &.button--small {
+        min-width: 5em;
         font-size: 1.25rem;
         height: 2em;
         margin-top: 0;
@@ -88,5 +91,8 @@ button, .button {
     }
     .icon--feather {
         width: (.725 * .8em); // .725 is width:height ratio
+    }
+    .icon--search {
+        margin-right: 0;
     }
 }

@@ -782,6 +782,7 @@ button, .button {
   button[disabled], .button[disabled] {
     opacity: .4; }
   button.button--small, .button.button--small {
+    min-width: 5em;
     font-size: 1.25rem;
     height: 2em;
     margin-top: 0;
@@ -802,6 +803,8 @@ button, .button {
     width: 0.72em; }
   button .icon--feather, .button .icon--feather {
     width: 0.58em; }
+  button .icon--search, .button .icon--search {
+    margin-right: 0; }
 
 main {
   padding-bottom: 2.25rem; }
@@ -1274,20 +1277,24 @@ footer {
   margin-top: 1.25rem; }
 
 .search-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative; }
-  .search-main .search-form {
-    padding-right: 5.625rem; }
-  .widget--search .search-form {
-    padding-right: 3.125rem; }
 
 .search-input {
   -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
           transition: background-color 0.2s ease, border-color 0.2s ease;
   will-change: background-color, border-color;
   box-sizing: inherit !important;
-  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: .5rem;
   border: 0.125rem solid #dddddd;
+  margin-right: 0.625rem;
   outline: none;
   font-family: "proxima-nova", sans-serif;
   border-radius: 0.25rem; }
@@ -1297,24 +1304,8 @@ footer {
   .search-input[disabled] {
     background-color: #d0d0d0; }
 
-.search-submit {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0; }
-  .search-main .search-submit {
-    min-width: 5rem; }
-  .widget--search .search-submit {
-    min-width: 2.5rem; }
-  .search-submit .icon--search {
-    display: block;
-    margin-right: 0;
-    position: absolute;
-    top: .4em;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
+.widget--search .search-submit {
+  min-width: 2.5em; }
 
 /**
  * Contains buttons and internal links.
