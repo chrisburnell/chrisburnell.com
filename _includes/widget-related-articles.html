@@ -5,7 +5,9 @@
             {% for post in site.related_posts limit:2 %}
                 <li>
                     <a href="{{ post.url }}">
-                        {% if post.categories contains "pen" %}
+                        {% if post.categories contains 'article' %}
+                            <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
+                        {% elsif post.categories contains 'pen' %}
                             <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                         {% endif %}
                         <h4 class="title">{{ post.title }}</h4>

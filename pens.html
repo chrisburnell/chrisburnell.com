@@ -18,7 +18,7 @@ lede: All of my featured pens listed on one page.
     {% for post in site.categories.pen %}
         <li>
             <a href="{{ post.url }}">
-                <svg><use xlink:href="#svg--codepen" /></svg>
+                <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>

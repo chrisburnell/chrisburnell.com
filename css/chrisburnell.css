@@ -1233,6 +1233,10 @@ footer {
     text-shadow: 0 1px 0 #f9f9f9; }
   .small-articles-list .title {
     margin-bottom: 0.3125rem; }
+  .small-articles-list a:hover .title,
+  .small-articles-list a:focus .title,
+  .small-articles-list a:active .title {
+    text-decoration: underline; }
   .small-articles-list .date {
     color: #737373;
     display: block;
@@ -1266,10 +1270,10 @@ footer {
       .small-articles-list svg {
         width: 4em !important;
         height: 4em; } }
-    a:hover .small-articles-list svg,
-    a:focus .small-articles-list svg,
-    a:active .small-articles-list svg {
-      opacity: 0.25; }
+  .small-articles-list a:hover svg,
+  .small-articles-list a:focus svg,
+  .small-articles-list a:active svg {
+    opacity: 0.25; }
 
 .search-main {
   max-width: 500px;

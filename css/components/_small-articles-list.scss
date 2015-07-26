@@ -58,6 +58,11 @@
     .title {
         margin-bottom: ($spacing-small / 2);
     }
+    a:hover .title,
+    a:focus .title,
+    a:active .title {
+        text-decoration: underline;
+    }
     .date {
         color: $color-text-alt;
         display: block;
@@ -94,10 +99,10 @@
             width:  4em !important;
             height: 4em;
         }
-        a:hover &,
-        a:focus &,
-        a:active & {
-            opacity: map-get($opacities, 'high');
-        }
+    }
+    a:hover svg,
+    a:focus svg,
+    a:active svg {
+        opacity: map-get($opacities, 'high');
     }
 }
