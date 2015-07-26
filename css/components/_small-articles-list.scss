@@ -14,6 +14,9 @@
     @include media("<=medium") {
         margin-bottom: 1.875em;
     }
+    aside & {
+        margin-bottom: 0;
+    }
     li {
         width: 49.0125%;
         display: inline-block;

@@ -14,6 +14,9 @@
     button,
     .button {
         display: inline-block;
+        @include media("<=small") {
+            margin: .25rem auto 0;
+        }
         @include media(">small") {
             & + button,
             & + .button {
