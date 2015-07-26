@@ -9,7 +9,7 @@
     INITIALISATION
 \*------------------------------------*/
 
-var query, jsonFeedUrl    = '../search.json',
+var query, queryFormatted, jsonFeedUrl = '../search.json',
     searchContainer       = document.getElementById('search'),
     searchForm            = document.getElementById('search-form'),
     searchInput           = document.getElementById('search-input'),
@@ -42,7 +42,7 @@ function initSearch() {
 
     // Get search results if query parameter is set in querystring
     if (getParameterByName('query')) {
-        query = decodeURIComponent(getParameterByName('query')).toLowerCase();
+        query = decodeURIComponent(getParameterByName('query'));
         searchInput.value = query;
         execSearch(query);
     }
@@ -124,25 +124,25 @@ function processData(data) {
     for( var index = 0; index < data.length; index++ ) {
 
         item  = data[index];
-        query = query.toLowerCase();
+        queryFormatted = query.toLowerCase();
 
-        titleCheck      = item['title'].toLowerCase().indexOf(query) > -1;
+        titleCheck      = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
         ledeCheck       = false;
         contentCheck    = false;
         categoriesCheck = false;
         tagsCheck       = false;
 
         if( item['lede'] ) {
-            ledeCheck = item['lede'].toLowerCase().indexOf(query) > -1;
+            ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
         }
         if( item['content'] ) {
-            contentCheck = item['content'].toLowerCase().indexOf(query) > -1;
+            contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
         }
         if( item['categories'] ) {
-            categoriesCheck = item['categories'].toLowerCase().indexOf(query) > -1;
+            categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
         }
         if( item['tags'] ) {
-            tagsCheck = item['tags'].toLowerCase().indexOf(query) > -1;
+            tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
         }
 
         // check if search term is in title, content, or lede, categories or tags
