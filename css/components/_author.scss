@@ -49,12 +49,12 @@
         margin-right: .625rem;
         img {
             @extend %rounded;
-            // testing gradient replacement while loading the `src` / `srcset`,
+            // gradient replacement while loading the `src` / `srcset`,
             // colours generated from `avatar.png`
-            background-image: gradient(rgba(153, 192, 226, 0), rgb(153, 192, 226), to top right),
-                              gradient(rgba(157, 133, 139, 0), rgb(157, 133, 139), to bottom left),
-                              gradient(rgba(89, 144, 173, 0), rgb(89, 144, 173), to bottom right),
-                              gradient(rgba(137, 99, 79, 0), rgb(137, 99, 79), to top left);
+            background-image: gradient(transparent, rgb(153, 192, 226), to top right),
+                              gradient(transparent, rgb(157, 133, 139), to bottom left),
+                              gradient(transparent, rgb(89, 144, 173), to bottom right),
+                              gradient(transparent, rgb(137, 99, 79), to top left);
             background-size: 100%;
             height: 100%;
             display: block;
@@ -65,18 +65,17 @@
     .author-employer,
     .author-information .date,
     .featured-link {
-        box-sizing: content-box;
         display: block;
         margin-bottom: .5rem;
-    }
-    .tags {
-        // don't wrap around `.author-image`
-        display: table-cell;
     }
     .featured-link:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: "\00a0\2192";
         font-style: normal;
+    }
+    .tags {
+        // don't wrap around `.author-image`
+        display: table-cell;
     }
     .author-biography {
         @include media(">medium") {

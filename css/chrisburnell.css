@@ -1410,8 +1410,8 @@ footer {
   float: left;
   margin-right: .625rem; }
   .author-image img {
-    background-image: -webkit-linear-gradient(bottom left, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), -webkit-linear-gradient(top right, rgba(157, 133, 139, 0) 0%, #9d858b 100%), -webkit-linear-gradient(top left, rgba(89, 144, 173, 0) 0%, #5990ad 100%), -webkit-linear-gradient(bottom right, rgba(137, 99, 79, 0) 0%, #89634f 100%);
-    background-image: linear-gradient(to top right, rgba(153, 192, 226, 0) 0%, #99c0e2 100%), linear-gradient(to bottom left, rgba(157, 133, 139, 0) 0%, #9d858b 100%), linear-gradient(to bottom right, rgba(89, 144, 173, 0) 0%, #5990ad 100%), linear-gradient(to top left, rgba(137, 99, 79, 0) 0%, #89634f 100%);
+    background-image: -webkit-linear-gradient(bottom left, transparent 0%, #99c0e2 100%), -webkit-linear-gradient(top right, transparent 0%, #9d858b 100%), -webkit-linear-gradient(top left, transparent 0%, #5990ad 100%), -webkit-linear-gradient(bottom right, transparent 0%, #89634f 100%);
+    background-image: linear-gradient(to top right, transparent 0%, #99c0e2 100%), linear-gradient(to bottom left, transparent 0%, #9d858b 100%), linear-gradient(to bottom right, transparent 0%, #5990ad 100%), linear-gradient(to top left, transparent 0%, #89634f 100%);
     background-size: 100%;
     height: 100%;
     display: block; }
@@ -1421,16 +1421,15 @@ footer {
 .author-employer,
 .author-information .date,
 .featured-link {
-  box-sizing: content-box;
   display: block;
   margin-bottom: .5rem; }
-
-.tags {
-  display: table-cell; }
 
 .featured-link:after {
   content: "\00a0\2192";
   font-style: normal; }
+
+.tags {
+  display: table-cell; }
 
 @media (min-width: 769px) {
   .author-biography {
