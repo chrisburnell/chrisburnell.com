@@ -19,6 +19,7 @@ codepen: true
 comments: true
 ---
 
+
 Nearing the end of the work-day yesterday, I was struck with an idea. Having recently read through [Google’s Visual Assets Guidelines on Behance](http://www.behance.net/gallery/Google-Visual-Assets-Guidelines-Part-1/9028077 "Google’s Visual Assets Guidelines on Behance") and stumbling upon this awesome pen (actually a fork of [Lionel’s](http://codepen.io/elrumordelaluz "Lionel on Github"), from Italy: [http://codepen.io/elrumordelaluz/pen/dobAz](http://codepen.io/elrumordelaluz/pen/dobAz "CSS3 Flat Icons")):
 
 {% include codepen.html slug="kJcGE" theme="tabfree" height="220" %}

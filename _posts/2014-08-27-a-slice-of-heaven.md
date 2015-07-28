@@ -19,6 +19,7 @@ codepen: true
 comments: true
 ---
 
+
 I’ve been making quite a few pens over on [Codepen](http://codepen.io) lately, mostly exploring what can be achieved with just CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.

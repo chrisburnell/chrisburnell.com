@@ -8,6 +8,7 @@ title: About Me
 lede: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
 ---
 
+
 <figure>
     <img src="/images/content/about-photo.png" alt=" " width="360" height="270">
     <figcaption>My girlfriend, Rachel, and I (2014)</figcaption>

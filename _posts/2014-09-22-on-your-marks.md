@@ -17,6 +17,7 @@ shorturl: sfn8k
 comments: true
 ---
 
+
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
 <figure>

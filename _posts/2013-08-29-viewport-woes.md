@@ -17,11 +17,14 @@ shorturl: xoskc
 comments: true
 ---
 
+
 *Oh, and if this article looks too long for a simple little tutorial, that’s because it is—this article is full of my views and opinions on the state of responsive design for browsers in this day and age.*
 
 *So [click here](#plain-and-simple) if you want to jump to the main bit.*
 
+
 --------
+
 
 Browsers today can be pretty forgiving to us developers. Even HTML5, which is not at all new anymore, is very lenient about the syntax and formatting of markup. For example, it used to be that a long and unnecessarily complicated doctype would need to be supplied for browsers to properly interpret the page, like `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`; today it’s as simple as `<!doctype html>`. This leaves developers with a lot of control over their code and allows for more natural coding, as developers are able to write their code how they choose and still remain confident it will work across all relevant devices and browsers.
 

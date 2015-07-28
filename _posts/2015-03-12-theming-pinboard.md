@@ -19,6 +19,7 @@ comments: true
 twitter: true
 ---
 
+
 I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>Pinboard implemented their own simpler layout model &amp; used canvas for the drawing which is GPU-backed.</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>

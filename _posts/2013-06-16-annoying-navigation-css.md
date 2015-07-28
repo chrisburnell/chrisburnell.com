@@ -19,6 +19,7 @@ codepen: true
 comments: true
 ---
 
+
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
 {% include codepen.html slug="LHqFy" theme="tabfree" height="740" %}
