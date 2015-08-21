@@ -449,7 +449,7 @@ a {
   display: none;
   padding-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
-  font-size: .8125rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: 1;
   text-transform: lowercase;
@@ -689,7 +689,7 @@ samp,
 var,
 .monospace {
   font-family: Monaco, Consolas, Courier, monospace;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.429; }
 
 p code,
@@ -830,6 +830,10 @@ main {
   .clear:after {
     clear: both; }
 
+@media (max-width: 768px) {
+  header {
+    text-align: center; } }
+
 article {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
@@ -870,7 +874,7 @@ aside figcaption {
   @media (min-width: 501px) {
     aside p,
     aside figcaption {
-      font-size: .875rem; } }
+      font-size: 0.875rem; } }
 
 footer {
   background-color: #4f4f4f;
@@ -912,7 +916,7 @@ footer {
       float: left; } }
   @media (max-width: 500px) {
     .logo {
-      font-size: 2.75em; } }
+      font-size: 2.75rem; } }
   .logo svg {
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
@@ -1240,7 +1244,7 @@ footer {
   .small-articles-list .date {
     color: #737373;
     display: block;
-    font-size: .8125rem;
+    font-size: 0.8125rem;
     font-weight: 600; }
     .small-articles-list .date:before {
       content: "\2013\00a0"; }
@@ -1249,7 +1253,7 @@ footer {
   .small-articles-list .lede {
     color: #4f4f4f;
     margin-top: 0.3125rem;
-    font-size: .875rem; }
+    font-size: 0.875rem; }
   .small-articles-list svg {
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
@@ -1331,7 +1335,9 @@ footer {
       .nav-secondary .button,
       .buttons-list button,
       .buttons-list .button {
-        margin: .25rem auto 0; } }
+        margin-top: .25rem;
+        margin-left: auto;
+        margin-right: auto; } }
     @media (min-width: 501px) {
       .nav-secondary button + button,
       .nav-secondary button + .button,
@@ -1381,7 +1387,7 @@ footer {
 .author-information {
   margin-bottom: 1.25rem;
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-style: italic;
   line-height: 1.429; }
   @media (max-width: 768px) {
@@ -1746,7 +1752,7 @@ footer {
     height: 6.5rem;
     display: table-cell;
     font-family: Monaco, Consolas, Courier, monospace;
-    font-size: .875em;
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: 7.429;
     text-align: center;

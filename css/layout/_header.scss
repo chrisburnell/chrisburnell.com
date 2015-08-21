@@ -1,0 +1,11 @@
+////
+/// Header
+/// @group layout
+////
+
+header {
+    @include media("<=medium") {
+        // center .logo below the `medium` breakpoint
+        text-align: center;
+    }
+}

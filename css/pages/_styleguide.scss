@@ -13,9 +13,9 @@
         height: 6.5rem;
         display: table-cell;
         font-family: $font-stack-code;
-        font-size: .875em;
+        font-size: $font-size-small;
         font-weight: 600;
-        line-height: 7.429; // 6.5/0.875
+        line-height: 7.429; // 6.5 / $font-size-small
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;

@@ -21,7 +21,7 @@
     .author-information {
         margin-bottom: $spacing-medium;
         font-family: $font-stack-primary;
-        font-size: .875rem;
+        font-size: $font-size-small;
         font-style: italic;
         line-height: 1.429;
         @include media("<=medium") {

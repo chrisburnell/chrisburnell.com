@@ -216,7 +216,7 @@ function populateResultContent(html, item) {
  */
 function populateResultsString(count) {
     var resultSuffix = (count == 1) ? '' : 's';
-    var searchMeta = '<em>' + count + '</em> result' + resultSuffix + ' found for <q>' + query + '</q>';
+    var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
     resultsMeta.innerHTML = searchMeta;
 }
 

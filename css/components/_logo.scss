@@ -12,6 +12,7 @@
     padding-left: 1.923em;
     position: relative;
     font-family: $font-stack-heading;
+    // 52px
     font-size: 3.25rem;
     line-height: 1;
     text-transform: uppercase;
@@ -33,7 +34,8 @@
         float: left;
     }
     @include media("<=small") {
-        font-size: 2.75em;
+        // 44px
+        font-size: 2.75rem;
     }
     svg {
         @include transition;

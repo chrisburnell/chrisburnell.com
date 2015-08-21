@@ -38,7 +38,7 @@
 
 .lede {
     margin-bottom: $spacing-medium;
-    font-size: 1.25rem;
+    font-size: $font-size-large;
     line-height: 1.5;
     @include media("<=medium") {
         text-align: left;
@@ -53,6 +53,7 @@
     }
     &.lede--home {
         max-width: 24em;
+        // 26px
         font-size: 1.625rem;
     }
 }

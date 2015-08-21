@@ -44,6 +44,10 @@
 
     <link rel="author" href="/humans.txt">
 
+    {% unless page.page_class contains 'page-not-found' %}
+        <link rel="canonical" href="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
+    {% endunless %}
+
     <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
     <meta name="description" content="{{ meta_lede }}">
     <meta name="theme-color" content="#{{ site.brand_color }}">
@@ -71,8 +75,6 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
         <meta property="og:image" content="{{ meta_image }}">
-
-        <link rel="canonical" href="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
 
     {% include js-head.html %}

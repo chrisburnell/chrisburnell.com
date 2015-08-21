@@ -23,10 +23,10 @@ h1, h2, h3, h4, h5, h6 {
 
 %alpha {
     font-family: $font-stack-heading;
-    // 2.625rem = 42px
+    // 42px
     font-size: 2.625rem;
     text-transform: uppercase;
-    // .0715em = 3px
+    // 3px 3px
     text-shadow: .0715em .0715em 0 $color-black-low;
 }
 h1 {
@@ -35,7 +35,7 @@ h1 {
 
 %beta {
     font-family: $font-stack-primary;
-    // 1.625rem = 26px
+    // 26px
     font-size: 1.625rem;
 }
 h2 {
@@ -44,7 +44,7 @@ h2 {
 
 %delta {
     font-family: $font-stack-secondary;
-    // 1.125rem = 18px
+    // 18px
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.875;
@@ -120,7 +120,7 @@ a {
         display: none;
         padding-left: $spacing-medium;
         font-family: $font-stack-code;
-        font-size: .8125rem;
+        font-size: $font-size-smaller;
         font-weight: 600;
         line-height: 1;
         text-transform: lowercase;
@@ -187,6 +187,7 @@ ul:not([class]) li:before,
 ul.default-list li:before {
     // BULLET
     content: "\2022";
+    // 24px
     font-size: 1.5rem;
     line-height: 1;
 }

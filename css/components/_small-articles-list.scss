@@ -66,7 +66,7 @@
     .date {
         color: $color-text-alt;
         display: block;
-        font-size: .8125rem;
+        font-size: $font-size-smaller;
         font-weight: 600;
         &:before {
             // EN DASH, NO-BREAK SPACE
@@ -79,7 +79,7 @@
     .lede {
         color: $color-text;
         margin-top: ($spacing-small / 2);
-        font-size: .875rem;
+        font-size: $font-size-small;
     }
     svg {
         @include transition;
