@@ -85,6 +85,23 @@ $font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
 $font-stack-secondary: "proxima-nova", sans-serif !default;
 /// @type List
 $font-stack-heading: "league-gothic", Impact, sans-serif !default;
+/// @type Length
+$font-size-smaller: .8125rem !default;
+/// @type Length
+$font-size-small: .875rem !default;
+/// @type Length
+$font-size-large: 1.25rem !default;
+/// @type Length
+$font-size-larger: 1.375rem !default;
+/// @type Map
+/// @prop {String} key - Font Size name
+/// @prop {Number} value - Font Size value
+$font-sizes: (
+    'smaller': $font-size-smaller,
+    'small':   $font-size-small,
+    'large':   $font-size-large,
+    'larger':  $font-size-larger
+) !default;
 
 
 /// @type Length
