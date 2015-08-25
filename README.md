@@ -18,4 +18,4 @@ My website doubles as a blog and as a playground for me to perfect the code that
 
 [![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 
-The contents of this repository are licensed under a [BY-NC-SA Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en "BY-NC-SA Creative Commons License").
+The contents of this repository are licensed under a [BY-NC-SA 4.0 Creative Commons License](LICENSE).
