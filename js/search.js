@@ -1,7 +1,7 @@
 ///
 /// A simple JSON search
 /// @author  Mat Hayward - Erskine Design (Original Author)
-/// @author  Chris Burnell <@iamchrisburnell>
+/// @author  Chris Burnell (Slight, poor modifications) <@iamchrisburnell>
 ///
 
 
@@ -10,15 +10,15 @@
 \*------------------------------------*/
 
 var query, queryFormatted, jsonFeedUrl = '../search.json',
-    searchContainer       = document.getElementById('search'),
-    searchForm            = document.getElementById('search-form'),
-    searchInput           = document.getElementById('search-input'),
-    searchSubmit          = document.getElementById('search-submit'),
-    resultsMeta           = document.getElementById('search-meta'),
-    resultsList           = document.getElementById('search-results-list'),
-    resultTemplatePage    = document.getElementById('search-template-page'),
-    resultTemplateArticle = document.getElementById('search-template-article'),
-    resultTemplatePen     = document.getElementById('search-template-pen'),
+    searchContainer       = document.querySelector('#search'),
+    searchForm            = document.querySelector('#search-form'),
+    searchInput           = document.querySelector('#search-input'),
+    searchSubmit          = document.querySelector('#search-submit'),
+    resultsMeta           = document.querySelector('#search-meta'),
+    resultsList           = document.querySelector('#search-results-list'),
+    resultTemplatePage    = document.querySelector('#search-template-page'),
+    resultTemplateArticle = document.querySelector('#search-template-article'),
+    resultTemplatePen     = document.querySelector('#search-template-pen'),
     allowEmpty            = false;
 
     // initiate search functionality

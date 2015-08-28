@@ -18,7 +18,7 @@ lede: A list of tags and their counterparts.
     <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.tags[tag] %}
-            <li>
+            <li role="listitem">
                 <a href="{{ post.url }}">
                     {% if post.categories contains 'article' %}
                         <svg class="icon--article"><use xlink:href="#svg--article" /></svg>

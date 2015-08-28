@@ -2,8 +2,8 @@
 /// Conditional comments for article pages
 ///
 
-var commentsSection = document.getElementById('comments');
-var commentsButton  = document.getElementById('show-comments-button');
+var commentsSection = document.querySelector('#comments');
+var commentsButton  = document.querySelector('#show-comments-button');
 var commentsHash    = ['#comment', '#disqus_thread'];
 
 commentsButton.disabled = false;
@@ -28,7 +28,7 @@ commentsButton.addEventListener('click', function() {
 function showComments() {
     window.scrollTo(0, commentsSection.offsetTop);
     // Only if the button still exists should we load Disqus and remove the button
-    if( document.getElementById('show-comments-button') ) {
+    if( document.querySelector('#show-comments-button') ) {
         commentsButton.parentNode.removeChild(commentsButton);
         commentsButton.removeEventListener('click', function(){});
         (function() {

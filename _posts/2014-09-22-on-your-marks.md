@@ -95,8 +95,8 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 And let’s create some associated JavaScript to create and hook onto our `button` and perform two actions: remove the `button` and load Disqus.
 
 {% highlight javascript %}
-var commentsSection = document.getElementById('comments'),
-    commentsButton  = document.getElementsByClassName('js-show-comments')[0],
+var commentsSection = document.querySelector('#comments'),
+    commentsButton  = document.querySelector('.js-show-comments'),
     commentsHash    = ['#comment', '#disqus_thread'];
 commentsButton.addEventListener('click', function() {
     showComments();
@@ -157,7 +157,7 @@ Almost there! Let’s create a failsafe—if our `button` no longer exists when 
 
 {% highlight javascript %}
 function showComments() {
-    if( document.getElementsByClassName('js-show-comments')[0] ) {
+    if( document.querySelector('.js-show-comments') ) {
         commentsButton.parentNode.removeChild(commentsButton);
         window.scrollTo(0, commentsSection.offsetTop);
         (function() {
@@ -183,8 +183,8 @@ Here’s the entire snippet of code for my comments section:
 {% endhighlight %}
 
 {% highlight javascript %}
-var commentsSection = document.getElementById('comments'),
-    commentsButton  = document.getElementsByClassName('js-show-comments')[0],
+var commentsSection = document.querySelector('#comments'),
+    commentsButton  = document.querySelector('.js-show-comments'),
     commentsHash    = ['#comment', '#disqus_thread'];
 commentsHash.forEach( function(hash) {
     if( window.location.hash.indexOf(hash) == 0 ) {
@@ -205,7 +205,7 @@ commentsButton.addEventListener('click', function() {
 function showComments() {
     window.scrollTo(0, commentsSection.offsetTop);
     // Only if the button still exists should we load Disqus and remove the button
-    if( document.getElementsByClassName('js-show-comments')[0] ) {
+    if( document.querySelector('.js-show-comments') ) {
         commentsButton.parentNode.removeChild(commentsButton);
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
