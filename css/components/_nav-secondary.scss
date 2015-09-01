@@ -10,7 +10,7 @@
 .buttons-list {
     width: 100%;
     display: flex;
-    align-content: space-between;
+    flex-wrap: wrap;
     @include media("<=small") {
         flex-direction: column;
     }
