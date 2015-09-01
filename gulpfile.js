@@ -6,6 +6,7 @@
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     csscomb      = require('gulp-csscomb'),
+    csslint      = require('gulp-csslint'),
     minifycss    = require('gulp-minify-css'),
     plumber      = require('gulp-plumber'),
     notify       = require('gulp-notify'),
@@ -39,6 +40,24 @@ gulp.task('css-main', function() {
             browsers: ['last 2 versions', '> 1%']
         }))
         .pipe(csscomb())
+        .pipe(csslint({
+            'box-model': false,
+            'box-sizing': false,
+            'compatible-vendor-prefixes': false,
+            'display-property-grouping': false,
+            'fallback-colors': false,
+            'floats': false,
+            'font-sizes': false,
+            'gradients': false,
+            'important': false,
+            'known-properties': false,
+            'outline-none': false,
+            'regex-selectors': false,
+            'unique-headings': false,
+            'universal-selector': false,
+            'unqualified-attributes': false
+        }))
+        .pipe(csslint.reporter())
         .pipe(gulp.dest(paths.css))
         .pipe(rename({
             suffix: '.min'

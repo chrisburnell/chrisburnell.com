@@ -51,7 +51,8 @@
             margin-top: 0;
         }
     }
-    &.lede--home {
+    &--featured {
+        @extend .lede;
         max-width: 24em;
         // 26px
         font-size: 1.625rem;

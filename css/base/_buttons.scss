@@ -3,7 +3,7 @@
 /// @group base
 ////
 
-button, .button {
+%button {
     @extend %non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
@@ -60,19 +60,6 @@ button, .button {
                 top: -0.182em;
             }
         }
-    &[disabled] {
-        opacity: .4;
-    }
-    &.button--small {
-        min-width: 5em;
-        font-size: $font-size-large;
-        height: 2em;
-        margin-top: 0;
-        line-height: 1.818;
-        &:active {
-            height: 1.818em;
-        }
-    }
     .page-not-found & {
         @include media("<=medium") {
             display: block;
@@ -94,5 +81,27 @@ button, .button {
     }
     .icon--search {
         margin-right: 0;
+    }
+}
+
+button, .button,
+.button--small {
+    @extend %button;
+}
+
+button {
+    &[disabled] {
+        opacity: .4;
+    }
+}
+
+.button--small {
+    min-width: 5em;
+    font-size: $font-size-large;
+    height: 2em;
+    margin-top: 0;
+    line-height: 1.818;
+    &:active {
+        height: 1.818em;
     }
 }

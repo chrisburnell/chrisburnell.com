@@ -115,33 +115,33 @@ a {
         @extend .hidden;
     }
 }
-    .heading-anchor {
-        color: $color-text-alt;
-        display: none;
-        padding-left: $spacing-medium;
-        font-family: $font-stack-code;
-        font-size: $font-size-smaller;
-        font-weight: 600;
-        line-height: 1;
-        text-transform: lowercase;
-        text-shadow: none;
-        vertical-align: middle;
-        :hover > &,
-        :focus > &,
-        :active > & {
-            display: inline-block;
-        }
+.heading-anchor {
+    color: $color-text-alt;
+    display: none;
+    padding-left: $spacing-medium;
+    font-family: $font-stack-code;
+    font-size: $font-size-smaller;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: lowercase;
+    text-shadow: none;
+    vertical-align: middle;
+    :hover > &,
+    :focus > &,
+    :active > & {
+        display: inline-block;
     }
-    /**
-     * Brand Link Colours
-     */
-    @each $color-brand in $color-brands {
-        $name:  nth($color-brand, 1);
-        $color: nth($color-brand, 2);
-        .link--#{$name} {
-            color: #{$color} !important;
-        }
+}
+/**
+ * Brand Link Colours
+ */
+@each $color-brand in $color-brands {
+    $name:  nth($color-brand, 1);
+    $color: nth($color-brand, 2);
+    .link--#{$name} {
+        color: #{$color} !important;
     }
+}
 
 ol,
 ul {
@@ -200,13 +200,12 @@ dl {
     dt {
         width: auto;
         min-width: 10rem;
-        float: left;
         clear: left;
         padding-right: $spacing-medium;
         font-family: $font-stack-secondary;
         font-weight: 600;
-        @include media("<=small") {
-            float: none;
+        @include media(">small") {
+            float: left;
         }
     }
     dd {
@@ -215,13 +214,13 @@ dl {
         margin: 0;
         overflow: hidden;
         vertical-align: top;
-        &:not(:last-child) {
-            padding-bottom: $spacing-medium;
-        }
         @include media("<=small") {
             width: auto;
             display: block;
             margin-left: $spacing-medium;
+        }
+        &:not(:last-child) {
+            padding-bottom: $spacing-medium;
         }
     }
 }

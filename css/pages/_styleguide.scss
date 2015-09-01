@@ -44,7 +44,7 @@
 }
 
 .page-style-guide {
-    :not(.lede) + h3[id] {
+    :not(.lede) + [id] {
         margin-top: (1.5 * $spacing-large);
     }
 }

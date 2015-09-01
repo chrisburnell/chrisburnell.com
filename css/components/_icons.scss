@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-/*a*/.icon {
+.icon {
     @include transition;
     @include will-change(opacity, transform);
     opacity: map-get($opacities, 'ultra');
@@ -21,17 +21,18 @@
     &:active {
         transform: translateY(.125rem);
     }
-    @each $color-brand in $color-brands {
-        $name:  nth($color-brand, 1);
-        $ratio: nth($color-brand, 3);
-        &.icon--#{$name},
-        &.link--#{$name} {
-            width: ($ratio * $icon-size);
-        }
-    }
     svg {
         width: 100%;
         height: 100%;
         display: block;
+    }
+}
+
+@each $color-brand in $color-brands {
+    $name:  nth($color-brand, 1);
+    $ratio: nth($color-brand, 3);
+    &.icon--#{$name},
+    &.link--#{$name} {
+        width: ($ratio * $icon-size);
     }
 }
