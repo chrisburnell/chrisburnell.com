@@ -6,10 +6,6 @@
 // The width of the articles is fluid, and always has padding on the left-hand
 // side to make room for any `aside`, which can appear anywhere inside
 // `article` or `.articles-list`.
-// Maximum total width of container
-//   = 1080px
-// Left-hand padding
-//   = 25% of 1080px = 270px = 16.875em
 article {
     padding-top: $spacing-large;
     border-top: $border-default solid $color-brand;

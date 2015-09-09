@@ -10,11 +10,11 @@ tags:
 - css
 - tutorials
 
-edit_date: 2015-06-06 20:20:00
-edit_text: "I have revised this technique since originally writing this article. You can <a href=\"/article/backscratching-revisited\">jump to the updated article</a> or continue reading."
+banner:        ill-scratch-your-back.png
+banner_mobile: ill-scratch-your-back_mobile.png
 
-# banner:        ill-scratch-your-back.png
-# banner_mobile: ill-scratch-your-back_mobile.png
+edit_date: 2015-06-06 20:20:00
+edit_text: "I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href=\"/article/backscratching-revisited\">Backscratching Revisited</a>, or continue reading."
 
 shorturl: 82n3v
 comments: true
