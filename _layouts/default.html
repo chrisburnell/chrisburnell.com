@@ -15,8 +15,12 @@
         {% if page.banner and page.banner_mobile %}
             <img alt="" class="banner" height="300" role="presentation" itemprop="image"
                  src="/images/banners/{{ page.banner_mobile }}"
-                 sizes="(min-width: 541px) 810px, 100vw"
-                 srcset="/images/banners/{{ page.banner_mobile }} 540w, /images/banners/{{ page.banner }} 810w">
+                 sizes="(min-width: 846px) 810px,
+                        (min-width: 769px) 540px,
+                        (min-width: 541px) 810px,
+                        100vw"
+                 srcset="/images/banners/{{ page.banner_mobile }} 540w,
+                         /images/banners/{{ page.banner }} 810w">
         {% endif %}
 
         {% if page.page_class contains 'page-home' %}
