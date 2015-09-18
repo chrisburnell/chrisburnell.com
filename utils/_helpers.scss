@@ -19,3 +19,10 @@
 .remove, .removed {
     display: none !important;
 }
+
+// Hyphenate any looong text
+.hyphen, .hyphenate {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
