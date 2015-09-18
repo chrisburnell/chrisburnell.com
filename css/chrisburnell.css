@@ -1860,3 +1860,11 @@ button, .button,
 
 .remove, .removed, p:empty {
   display: none !important; }
+
+.hyphen, .hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
