@@ -1,0 +1,58 @@
+---
+layout: null
+searchable: false
+sitemap:
+  exclude: true
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in site.pages %}
+        {% unless page.title == null or page.title == empty or page.sitemap.exclude == true or page.draft %}
+            <url>
+                <loc>{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}</loc>
+                {% if page.sitemap.lastmod %}
+                    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+                {% elsif page.date %}
+                    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+                {% endif %}
+                {% if page.sitemap.changefreq %}
+                    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+                {% else %}
+                    <changefreq>{{ site.sitemap_changefreq }}</changefreq>
+                {% endif %}
+                {% if page.sitemap.priority %}
+                    <priority>{{ page.sitemap.priority }}</priority>
+                {% else %}
+                    <priority>{{ site.sitemap_priority }}</priority>
+                {% endif %}
+            </url>
+        {% endunless %}
+    {% endfor %}
+    {% for post in site.posts %}
+        {% unless post.title == null or post.title == empty or post.sitemap.exclude == true or post.draft %}
+            <url>
+                <loc>{{ post.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}</loc>
+                {% if post.sitemap.lastmod %}
+                    <lastmod>{{ post.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+                {% elsif post.edit_date %}
+                    <lastmod>{{ post.edit_date | date_to_xmlschema }}</lastmod>
+                {% elsif post.date %}
+                    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+                {% else %}
+                    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+                {% endif %}
+                {% if post.sitemap.changefreq %}
+                    <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+                {% else %}
+                    <changefreq>{{ site.sitemap_changefreq }}</changefreq>
+                {% endif %}
+                {% if post.sitemap.priority %}
+                    <priority>{{ post.sitemap.priority }}</priority>
+                {% else %}
+                    <priority>{{ site.sitemap_priority }}</priority>
+                {% endif %}
+            </url>
+        {% endunless %}
+    {% endfor %}
+</urlset>

@@ -1,5 +1,6 @@
 ---
 layout: null
+searchable: false
 ---
 
 # humanstxt.org

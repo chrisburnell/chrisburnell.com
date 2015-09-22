@@ -1,6 +1,8 @@
 ---
 layout: default
 page_class: page-about
+sitemap:
+  priority: 1.0
 
 redirect_from: /me.html
 
