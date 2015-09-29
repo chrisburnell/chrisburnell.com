@@ -29,6 +29,9 @@
     {% endcapture %}
     {% assign body_class_array = body_class | split: ' ' %}
 
+    {% assign code_toggle_count = 0 %}
+    {% assign code_toggle_button_count = 0 %}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -77,6 +80,6 @@
         <meta property="og:image" content="{{ meta_image }}">
     {% endif %}
 
-    {% include js-head.html %}
+    {% include js/head.html %}
 
 </head>

@@ -17,12 +17,12 @@ lede: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian
 </figure>
 
 
-{% include heading.html title='Freelance' %}
+{% include inline/heading.html title='Freelance' %}
 
 I have been doing freelance work, off and on, since about 2008, ranging from web design to web development to full website solutions (albeit small). This ramped up slightly as I pursued web development as less of a hobby after high-school and more as a career. While I learned a lot early on, I was never really challenged by the projects, nor was I in a position where I was out of my depth (yet)—and that position is one where I learn and grow my skills most effectively.
 
 
-{% include heading.html title='London' %}
+{% include inline/heading.html title='London' %}
 
 In December of 2011, I made the decision to move to London to be with my girlfriend, Rachel, who moved from Singapore to work on her Fine Arts degree from *Camberwell* (which she received in June 2014!).
 
@@ -35,7 +35,7 @@ After a bit of searching, I found a job at a small startup company that did cab 
 *Unfortunately, sometime in early 2014, Cabfix’s website seems to have gone offline, so I can only assume the company’s goals didn’t pan out as hoped.*
 
 
-{% include heading.html title='Squiz' %}
+{% include inline/heading.html title='Squiz' %}
 
 <figure>
     <a rel="external" href="http://squiz.net/uk">
@@ -50,7 +50,7 @@ Further on down the road, after tackling many amazing projects with the team, wi
 For a long time I was also the organiser of a weekly meeting, Imp Scrum, when the Production team and a few other developers who sat outside that team would come together to join heads and discuss future technologies, best practices, and sharing cool stuff on the web. While it was always a fun, team-building event, it also helped to promote standards and forward-thinking in our work, and opened our eyes to new ideas and smarter solutions to our problems.
 
 
-{% include heading.html title='City University' %}
+{% include inline/heading.html title='City University' %}
 
 <figure>
     <a rel="external" href="http://www.city.ac.uk">
@@ -61,14 +61,14 @@ For a long time I was also the organiser of a weekly meeting, Imp Scrum, when th
 In June of 2014, I moved on to a role as <em>Web Developer</em> at <a rel="external" href="http://www.city.ac.uk">*City University London*</a>, where I’m looking forward to carrying the torch forward, and devoting my time and efforts towards perfecting and streamlining the codebase, promoting the ideologies and thirst for perfection I instilled as a UI Developer at *Squiz* and at Imp Scrum, and building a damn good website with a solid, new team.
 
 
-{% include heading.html title='The Web is Awesome' %}
+{% include inline/heading.html title='The Web is Awesome' %}
 
 If you talk to anyone who knows me well, they will tell you I’m absolutely obsessed with the web, and it’s <s>almost</s> unhealthy. It’s <s>almost</s> sad how excited I can get about semantic code, web standards and best practices, code architecture and organistion, sharing ideas, open source and collaboration, clean and accessible user interfaces, typography, user experience, oh, and <em>CSS</em>.
 
 I also play the piano and bake bread from time to time.
 
 
-{% include heading.html title='Want to get in touch?' id='get-in-touch' %}
+{% include inline/heading.html title='Want to get in touch?' id='get-in-touch' %}
 
 There are a number of RSS Feeds you can subscribe to:
 

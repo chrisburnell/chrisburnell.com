@@ -837,15 +837,14 @@ main {
 .wrap--full-width {
   width: 100%; }
 
-.clear, pre {
+.clear {
   clear: both;
   zoom: 1; }
   .clear:before,
-  pre:before,
-  .clear:after, pre:after {
+  .clear:after {
     content: "";
     display: table; }
-  .clear:after, pre:after {
+  .clear:after {
     clear: both; }
 
 @media (max-width: 768px) {
@@ -1633,7 +1632,7 @@ footer {
     font-size: 1.25rem;
     font-style: italic; }
 
-/*div.highlight*/
+/*code*/
 [data-lang] {
   padding-top: 2.25rem;
   line-height: 2; }
@@ -1703,6 +1702,43 @@ footer {
   .highlight .ni, .highlight .ss {
     color: slateblue;
     color: rebeccapurple; }
+
+/**
+ * Code Block Visibility Toggling
+ */
+.code-toggle {
+  position: relative; }
+
+.code-toggle-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+  .code-toggle-button:active {
+    -webkit-transform: translateX(-50%) translateY(0.182em);
+        -ms-transform: translateX(-50%) translateY(0.182em);
+            transform: translateX(-50%) translateY(0.182em); }
+  .code-toggle-input:checked ~ .code-toggle-button {
+    display: none; }
+
+.code-toggle-input:not(:checked) + .highlight pre {
+  max-height: 12.5rem;
+  overflow-x: hidden; }
+  .code-toggle-input:not(:checked) + .highlight pre:after {
+    content: "";
+    background-image: -webkit-linear-gradient(top, transparent 0%, #f9f9f9 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #f9f9f9 100%);
+    height: 5.25rem;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.code-toggle-input:checked ~ .code-toggle-button {
+  display: none; }
 
 .icon {
   -webkit-transition: all 0.2s ease;

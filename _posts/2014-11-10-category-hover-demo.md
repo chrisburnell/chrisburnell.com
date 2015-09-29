@@ -14,38 +14,44 @@ shorturl: 058xp
 ---
 
 
-{% include codepen.html height="525" %}
+{% include inline/codepen.html height="525" %}
 
+<div class="code-toggle">
+{% include inline/code-toggle-input.html %}
 {% highlight html %}
 <div class="modal">
-  <div class="card  archipelago">
-    <a class="card-category" href="#">
-      <span>Archipelago</span>
-    </a>
-  </div>
-  <div class="card  butte">
-    <a class="card-category" href="#">
-      <span>Butte</span>
-    </a>
-  </div>
-  <div class="card  canyon">
-    <a class="card-category" href="#">
-      <span>Canyon</span>
-    </a>
-  </div>
-  <div class="card  dune">
-    <a class="card-category" href="#">
-      <span>Dune</span>
-    </a>
-  </div>
-  <div class="card  estuary">
-    <a class="card-category" href="#">
-      <span>Estuary</span>
-    </a>
-  </div>
+    <div class="card  archipelago">
+        <a class="card-category" href="#">
+            <span>Archipelago</span>
+        </a>
+    </div>
+    <div class="card  butte">
+        <a class="card-category" href="#">
+            <span>Butte</span>
+        </a>
+    </div>
+    <div class="card  canyon">
+        <a class="card-category" href="#">
+            <span>Canyon</span>
+        </a>
+    </div>
+    <div class="card  dune">
+        <a class="card-category" href="#">
+            <span>Dune</span>
+        </a>
+    </div>
+    <div class="card  estuary">
+        <a class="card-category" href="#">
+            <span>Estuary</span>
+        </a>
+    </div>
 </div>
 {% endhighlight %}
+{% include inline/code-toggle-button.html %}
+</div>
 
+<div class="code-toggle">
+{% include inline/code-toggle-input.html %}
 {% highlight scss %}
 // Website Colour Palette
 $white:        #FFFFFF;
@@ -57,110 +63,112 @@ $red:          #B02A1A;
 
 // Category Colour Palette
 .card-category {
-  .archipelago & {
-      background-color: mediumseagreen;
-      color: mediumseagreen;
-  }
-  .butte & {
-      background-color: brown;
-      color: brown;
-  }
-  .canyon & {
-      background-color: burlywood;
-      color: burlywood;
-  }
-  .dune & {
-      background-color: lightcoral;
-      color: lightcoral;
-  }
-  .estuary & {
-      background-color: darkslateblue;
-      color: darkslateblue;
-  }
+    .archipelago & {
+        background-color: mediumseagreen;
+        color: mediumseagreen;
+    }
+    .butte & {
+        background-color: brown;
+        color: brown;
+    }
+    .canyon & {
+        background-color: burlywood;
+        color: burlywood;
+    }
+    .dune & {
+        background-color: lightcoral;
+        color: lightcoral;
+    }
+    .estuary & {
+        background-color: darkslateblue;
+        color: darkslateblue;
+    }
 }
 
 // Go Go border-box!!
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
 }
 
 // Imagine this is part of an article
 // card, as part of a gallery-style list
 .card {
-  width: 20em;
-  max-width: 90%;
-  padding: 1.5em 0;
-  border-left:  1px solid $gray-lighter;
-  border-right: 1px solid $gray-lighter;
+    width: 20em;
+    max-width: 90%;
+    padding: 1.5em 0;
+    border-left:  1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
 }
 
 .card-category {
-  background-image: linear-gradient(transparent 0, transparent .5em, $white .5em, $white 100%);
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 2.875em;
-  display: block;
-  border-bottom: 0 !important;
-  position: relative;
-  text-decoration: none;
-  transition: background .15s, color .15s;
-  transform: translate3d(0, 0, 0);
-  &:hover,
-  &:focus,
-  &:active {
-    background-position: top 3em left;
-    color: $white !important;
-  }
-  span {
+    background-image: linear-gradient(transparent 0, transparent .5em, $white .5em, $white 100%);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2.875em;
     display: block;
-    margin-top: -0.35em;
-    padding-bottom: .35em;
-    border-bottom: 1px solid $gray-light;
-    position: absolute;
-    top: 50%;
-    left: 1em;
-    right: 1em;
-    overflow: hidden;
-    font-family: "Open Sans";
-    text-transform: uppercase;
-    transition: border-bottom-color 0 linear .15s, margin .15s ease;
-    &:after {
-      content: "\F0DA";
-      opacity: 0;
-      color: $white;
-      display: block;
-      margin-top: -0.75em;
-      position: absolute;
-      top: 50%;
-      right: 100%;
-      font-family: "FontAwesome";
-      font-weight: bold;
-      transition: opacity .1s ease, right 0 linear .15s;
+    border-bottom: 0 !important;
+    position: relative;
+    text-decoration: none;
+    transition: background .15s, color .15s;
+    transform: translate3d(0, 0, 0);
+    &:hover,
+    &:focus,
+    &:active {
+        background-position: top 3em left;
+        color: $white !important;
     }
-  }
-  &:hover span,
-  &:focus span,
-  &:active span {
-    border-bottom-color: transparent;
-    margin-top: -0.714em;
-    text-shadow: 0 1px 1px rgba($black, .2);
-    transition: margin .15s ease;
-    &:after {
-      opacity: 1;
-      right: 0;
-      text-shadow: 0 1px 1px rgba($black, .2);
-      transition: opacity .1s ease .05s, right .15s;
+    span {
+        display: block;
+        margin-top: -0.35em;
+        padding-bottom: .35em;
+        border-bottom: 1px solid $gray-light;
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        right: 1em;
+        overflow: hidden;
+        font-family: "Open Sans";
+        text-transform: uppercase;
+        transition: border-bottom-color 0 linear .15s, margin .15s ease;
+        &:after {
+            content: "\F0DA";
+            opacity: 0;
+            color: $white;
+            display: block;
+            margin-top: -0.75em;
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            font-family: "FontAwesome";
+            font-weight: bold;
+            transition: opacity .1s ease, right 0 linear .15s;
+        }
     }
-  }
+    &:hover span,
+    &:focus span,
+    &:active span {
+        border-bottom-color: transparent;
+        margin-top: -0.714em;
+        text-shadow: 0 1px 1px rgba($black, .2);
+        transition: margin .15s ease;
+        &:after {
+            opacity: 1;
+            right: 0;
+            text-shadow: 0 1px 1px rgba($black, .2);
+            transition: opacity .1s ease .05s, right .15s;
+        }
+    }
 }
 {% endhighlight %}
+{% include inline/code-toggle-button.html %}
+</div>

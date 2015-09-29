@@ -1,4 +1,4 @@
-{% include header.html %}
+{% include layouts/header.html %}
 
 
 <main class="wrap  clear" role="main">
@@ -10,7 +10,7 @@
             <h1 class="title" role="heading">{{ page.title }}</h1>
         {% endif %}
 
-        {% include main-aside.html %}
+        {% include layouts/main-aside.html %}
 
         {% if page.banner and page.banner_mobile %}
             <img alt="" class="banner" height="300" role="presentation" itemprop="image"
@@ -37,4 +37,4 @@
 </main>
 
 
-{% include footer.html %}
+{% include layouts/footer.html %}

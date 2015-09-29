@@ -75,7 +75,7 @@ a {
 {% endhighlight %}
 
 
-{% include heading.html title='One Step Further' %}
+{% include inline/heading.html title='One Step Further' %}
 
 We can tighten this up by slowing down a touch. What happens if we *do want* a `span` inside an anchor to be displayed visually?
 
@@ -98,7 +98,7 @@ a {
 Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
 
-{% include heading.html title='A Prickly Pear' %}
+{% include inline/heading.html title='A Prickly Pear' %}
 
 But there’s a problem if we want to use [Microdata](http://schema.org/docs/documents.html). Let me demonstrate with a modified snippet of HTML from my site.
 
@@ -129,7 +129,7 @@ a {
 Now we can be sure to only target `spans` without a `class` *or* `itemprop` attribute!
 
 
-{% include heading.html title='The Takeaway' %}
+{% include inline/heading.html title='The Takeaway' %}
 
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 

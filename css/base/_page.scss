@@ -10,7 +10,7 @@ html {
     overflow-y: scroll;
 }
 
-// Hide the master SVG injected just below `<body>`
+// Hide the master SVG injected immediately below `<body>`
 .svg--master {
     @extend .hidden;
 }

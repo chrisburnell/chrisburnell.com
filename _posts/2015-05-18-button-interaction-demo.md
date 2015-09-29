@@ -14,12 +14,14 @@ shorturl: ax7qc
 ---
 
 
-{% include codepen.html height="300" %}
+{% include inline/codepen.html height="300" %}
 
 {% highlight html %}
 <button>Hello!</button>
 {% endhighlight %}
 
+<div class="code-toggle">
+{% include inline/code-toggle-input.html %}
 {% highlight scss %}
 $black:     #0d0d0d;
 $gray:      #1d1d1d;
@@ -65,3 +67,5 @@ button {
     }
 }
 {% endhighlight %}
+{% include inline/code-toggle-button.html %}
+</div>

@@ -97,10 +97,10 @@ gulp.task('css-critical', function() {
         }))
         .pipe(gulp.dest(paths.css))
         .pipe(rename({
-            basename: "head-css-critical",
+            basename: "critical-css",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes))
+        .pipe(gulp.dest(paths.includes + 'css/'))
         .pipe(notify({
             title: 'gulp',
             message: 'Critical CSS compiled.',

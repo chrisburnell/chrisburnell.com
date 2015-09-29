@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-/*div.highlight*/[data-lang] {
+/*code*/[data-lang] {
     padding-top: $spacing-large;
     line-height: 2;
     &:before {
@@ -130,5 +130,43 @@
     .ss {                               // Literal - String Symbol
         color: slateblue;
         color: rebeccapurple;
+    }
+}
+
+/**
+ * Code Block Visibility Toggling
+ */
+.code-toggle {
+    position: relative;
+}
+.code-toggle-button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    &:active {
+        transform: translateX(-50%) translateY(.182em);
+    }
+    .code-toggle-input:checked ~ & {
+        display: none;
+    }
+}
+.code-toggle-input {
+    &:not(:checked) + .highlight pre {
+        max-height: ($spacing-medium * 10); // limit to five lines of code
+        overflow-x: hidden;
+        &:after {
+            content: "";
+            background-image: gradient(transparent, $color-white);
+            height: ($spacing-medium * 4.2); // fade out over the last three lines
+            display: block;
+            position: absolute;
+            left:   0;
+            right:  0;
+            bottom: 0;
+        }
+    }
+    &:checked ~ .code-toggle-button {
+        display: none;
     }
 }
