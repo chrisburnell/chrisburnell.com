@@ -141,7 +141,7 @@
 }
 .code-toggle-button {
     position: absolute;
-    bottom: 0;
+    top: ($spacing-medium * 5); // center in the code block
     left: 50%;
     transform: translateX(-50%);
     &:active {
@@ -157,13 +157,14 @@
         overflow-x: hidden;
         &:after {
             content: "";
-            background-image: gradient(transparent, $color-white);
+            background-image: gradient(transparent, $color-gray);
             height: ($spacing-medium * 4.2); // fade out over the last three lines
             display: block;
             position: absolute;
             left:   0;
             right:  0;
             bottom: 0;
+            border-radius: 0 0 $border-radius-default $border-radius-default;
         }
     }
     &:checked ~ .code-toggle-button {
