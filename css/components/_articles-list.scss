@@ -34,7 +34,7 @@
         margin-bottom: $spacing-small;
         &:before {
             // EN DASH, NO-BREAK SPACE
-            content: "\2013\00a0";
+            content: "– ";
             color: $color-text-alt;
         }
         @include media("<=medium") {

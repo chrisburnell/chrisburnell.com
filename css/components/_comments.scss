@@ -11,7 +11,7 @@
     line-height: 1;
     &:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
-        content: "\00a0\2192";
+        content: " →";
     }
     @include media(">medium") {
         float: right;

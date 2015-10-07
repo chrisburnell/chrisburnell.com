@@ -186,7 +186,7 @@ ol.default-list {
 ul:not([class]) li:before,
 ul.default-list li:before {
     // BULLET
-    content: "\2022";
+    content: "•";
     // 24px
     font-size: 1.5rem;
     line-height: 1;
@@ -297,7 +297,7 @@ blockquote {
         margin-top: $spacing-medium;
         &:before {
             // HYPHEN, NO-BREAK SPACE
-            content: "\2010\00a0";
+            content: "‐ ";
         }
     }
 }

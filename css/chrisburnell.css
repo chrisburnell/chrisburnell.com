@@ -538,7 +538,7 @@ ol.default-list {
 
 ul:not([class]) li:before,
 ul.default-list li:before {
-  content: "\2022";
+  content: "•";
   font-size: 1.5rem;
   line-height: 1; }
 
@@ -608,11 +608,11 @@ q {
   font-style: italic; }
   q,
   :lang(en) q {
-    quotes: "\201C" "\201D" "\2018" "\2019"; }
+    quotes: "“" "”" "‘" "’"; }
   :lang(de) q {
-    quotes: '»' '«' '\2039' '\203A'; }
+    quotes: "„" "“" "‚" "‘"; }
   :lang(fr) q {
-    quotes: '« ' ' »'; }
+    quotes: "« " " »" "‹ " " ›"; }
 
 blockquote {
   background-color: rgba(95, 138, 166, 0.1);
@@ -620,11 +620,11 @@ blockquote {
   margin: 0 2.25rem 1.25rem; }
   blockquote,
   :lang(en) blockquote {
-    quotes: "\201C" "\201D" "\2018" "\2019"; }
+    quotes: "“" "”" "‘" "’"; }
   :lang(de) blockquote {
-    quotes: '»' '«' '\2039' '\203A'; }
+    quotes: "„" "“" "‚" "‘"; }
   :lang(fr) blockquote {
-    quotes: '« ' ' »'; }
+    quotes: "« " " »" "‹ " " ›"; }
   @media (max-width: 500px) {
     blockquote {
       margin-right: 1.25rem;
@@ -642,7 +642,7 @@ blockquote {
     margin-left: 2.25rem;
     margin-top: 1.25rem; }
     blockquote cite:before {
-      content: "\2010\00a0"; }
+      content: "‐ "; }
 
 /*blockquote*/
 .twitter-tweet {
@@ -1192,7 +1192,7 @@ footer {
 .articles-list .date {
   margin-bottom: 0.625rem; }
   .articles-list .date:before {
-    content: "\2013\00a0";
+    content: "– ";
     color: #737373; }
   @media (max-width: 768px) {
     .articles-list .date {
@@ -1265,7 +1265,7 @@ footer {
     font-size: 0.8125rem;
     font-weight: 600; }
     .small-articles-list .date:before {
-      content: "\2013\00a0"; }
+      content: "– "; }
   .small-articles-list svg ~ .date {
     margin-top: 0.3125rem; }
   .small-articles-list .lede, .small-articles-list .lede--featured {
@@ -1479,7 +1479,7 @@ footer {
   margin-bottom: .5rem; }
 
 .featured-link:after {
-  content: "\00a0\2192";
+  content: " →";
   font-style: normal; }
 
 .tags {
@@ -1524,7 +1524,7 @@ footer {
     .widget-featured-link {
       text-align: center; } }
   .widget-featured-link:after {
-    content: "\00a0\2192"; }
+    content: " →"; }
 
 .copyright,
 .nav-tertiary {
@@ -1609,7 +1609,7 @@ footer {
   font-weight: 600;
   line-height: 1; }
   .comments-link:after {
-    content: "\00a0\2192"; }
+    content: " →"; }
   @media (min-width: 769px) {
     .comments-link {
       float: right; } }
