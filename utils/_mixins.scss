@@ -108,12 +108,12 @@
 @mixin quotes() {
     &,
     :lang(en) & {
-        quotes: "\201C" "\201D" "\2018" "\2019";
+        quotes: "“" "”" "‘" "’";
     }
     :lang(de) & {
-        quotes: '»' '«' '\2039' '\203A';
+        quotes: "„" "“" "‚" "‘";
     }
     :lang(fr) & {
-        quotes: '« ' ' »';
+        quotes: "« " " »" "‹ " " ›";
     }
 }
