@@ -19,9 +19,9 @@
         "utils/mixins";
 
 /// GENERIC
-@import "generic/include-media",
-        "generic/box-sizing",
-        "generic/normalize";
+@import "vendor/include-media",
+        "vendor/box-sizing",
+        "vendor/normalize";
 
 /// BASE
 @import "base/page",
