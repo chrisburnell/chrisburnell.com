@@ -169,7 +169,7 @@ gulp.task('default', function() {
 // CSS task
 gulp.task('css', function() {
     gulp.start('css-main');
-    // gulp.start('css-critical');
+    gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });
 

@@ -1,18 +1,30 @@
-@import "vendor/box-sizing";
-
+/// UTILS
 @import "utils/variables.global",
         "utils/variables.code",
         "utils/variables.branding",
-        "utils/include-media",
+        "utils/functions",
         "utils/mixins";
 
+/// VENDOR
+@import "vendor/include-media",
+        "vendor/box-sizing",
+        "vendor/normalize";
+
+/// BASE
 @import "base/page",
         "base/typography.global";
 
+/// LAYOUT
 @import "layout/wrap",
         "layout/header",
         "layout/article",
         "layout/aside";
 
+/// COMPONENTS
 @import "components/logo",
-        "components/nav-primary";
+        "components/nav-primary",
+        "components/article";
+
+/// HELPERS/TRUMPS
+@import "utils/placeholders",
+        "utils/helpers";
