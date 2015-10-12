@@ -19,6 +19,10 @@
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
+        @include media("<=small") {
+            width: 6.5rem;
+            display: inline-block;
+        }
         &[data-color="#{$color-brand}"] {
             background-color: $color-brand;
         }
@@ -36,15 +40,11 @@
             background-color: $color-text-light;
             color: $color-text;
         }
-        @include media("<=small") {
-            width: 6.5rem;
-            display: inline-block;
-        }
     }
 }
 
 .page-style-guide {
-    :not(.lede) + [id] {
+    :not(.lede) + a[id] {
         margin-top: (1.5 * $spacing-large);
     }
 }

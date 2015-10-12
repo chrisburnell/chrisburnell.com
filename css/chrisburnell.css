@@ -1852,6 +1852,10 @@ footer {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle; }
+    @media (max-width: 500px) {
+      .color-block-list li {
+        width: 6.5rem;
+        display: inline-block; } }
     .color-block-list li[data-color="#5f8aa6"] {
       background-color: #5f8aa6; }
     .color-block-list li[data-color="#f9f9f9"] {
@@ -1864,12 +1868,8 @@ footer {
     .color-block-list li[data-color="#dddddd"] {
       background-color: #dddddd;
       color: #4f4f4f; }
-    @media (max-width: 500px) {
-      .color-block-list li {
-        width: 6.5rem;
-        display: inline-block; } }
 
-.page-style-guide :not(.lede) + [id] {
+.page-style-guide :not(.lede) + a[id] {
   margin-top: 3.375rem; }
 
 figure img,
