@@ -1,11 +1,13 @@
 <!-- Inject Non-Critical CSS -->
-<script>{% include js-body/loadcss.html %}loadCSS('/css/chrisburnell.min.css');</script>
+<script>{% include js-body/loadcss.html %}
+loadCSS('/css/chrisburnell.min.css');</script>
 <noscript>
     <link rel="stylesheet" href="/css/chrisburnell.min.css">
 </noscript>
 
 <!-- Support <picture> and picturefill -->
-<script>document.createElement('picture');{% include js-body/picturefill.html %}</script>
+<script>document.createElement('picture');
+{% include js-body/picturefill.html %}</script>
 
 {% if page.comments == true or page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}
 <!-- Disqus Comments -->
