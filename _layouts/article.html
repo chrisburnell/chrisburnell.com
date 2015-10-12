@@ -34,14 +34,14 @@
 
         <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
-                <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather"></svg> Show Comments</button>
+                <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Show Comments</button>
             {% elsif page.comments == 'codepen' and page.codepen_slug %}
-                <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment"><svg class="icon--feather"><use xlink:href="#svg--feather"></svg> CodePen Comments</button>
+                <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment"><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> CodePen Comments</button>
             {% endif %}
             {% if page.categories contains 'article' %}
-                <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article"></svg> Articles Archive</a>
+                <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
             {% elsif page.categories contains 'pen' %}
-                <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart"></svg> Pens Archive</a>
+                <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
             {% endif %}
         </nav>
 
