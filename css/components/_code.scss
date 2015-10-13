@@ -7,6 +7,7 @@
     padding-top: $spacing-large;
     line-height: 2;
     &:before {
+        @include absolute;
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
@@ -14,9 +15,6 @@
         width: 100%;
         display: block;
         padding: 0 1.5rem;
-        position: absolute;
-        top: 0;
-        left: 0;
         font-family: $font-stack-secondary;
         font-size: $font-size-large;
         font-weight: 600;
@@ -156,14 +154,11 @@
         max-height: ($spacing-medium * 10); // limit to five lines of code
         overflow-x: hidden;
         &:after {
+            @include absolute(bottom);
             content: "";
             background-image: gradient(transparent, $color-gray);
             height: ($spacing-medium * 4.2); // fade out over the last three lines
             display: block;
-            position: absolute;
-            left:   0;
-            right:  0;
-            bottom: 0;
             border-radius: 0 0 $border-radius-default $border-radius-default;
         }
     }

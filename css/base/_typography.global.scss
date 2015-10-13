@@ -160,9 +160,7 @@ ul:not([class]),
             margin-bottom: $spacing-medium;
         }
         &:before {
-            position: absolute;
-            top: 0;
-            left: 0;
+            @include absolute;
             font-family: $font-stack-secondary;
             font-weight: 600;
         }
