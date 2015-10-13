@@ -1,7 +1,7 @@
 <head>
 
     {% if page.page_class contains 'page-home' %}
-        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% if paginator.page > 1 %} &ndash; Page {{ paginator.page }}{% endif %}{% endcapture %}
+        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% else %}
         {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
     {% endif %}
@@ -36,8 +36,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
     <title>{{ meta_title }}</title>
-
-    {% include css/head.html %}
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
@@ -78,6 +76,8 @@
         <meta property="og:url" content="{{ page.url | remove: 'index.html' | remove: '.html' | prepend: site.baseurl | prepend: site.url }}">
         <meta property="og:image" content="{{ meta_image }}">
     {% endif %}
+
+    {% include css/head.html %}
 
     {% include js/head.html %}
 
