@@ -13,27 +13,27 @@
 ///
 /// @param {String} $values - Values
 ///
-/// @example scss - No Values
+/// @example scss - Zero parameters
 ///   @include transition();
 ///   // transition: all .2s ease;
 ///
-/// @example scss - One Property
+/// @example scss - One property
 ///   @include transition(color);
 ///   // transition: color .2s ease;
 ///
-/// @example scss - Two Properties
+/// @example scss - Two properties
 ///   @include transition(color, border);
 ///   // transition: color .2s ease, border .2s ease;
 ///
-/// @example scss - One Property, One Duration
+/// @example scss - One property, one duration
 ///   @include transition(color .5s);
 ///   // transition: color .5s ease;
 ///
-/// @example scss - One Property, One Duration, One Timing Function
+/// @example scss - One property, one duration, one timing function
 ///   @include transition(color 1s linear);
 ///   // transition: color 1s linear;
 ///
-/// @example scss - Two Properties, Two Durations, Two Timing Functions
+/// @example scss - Two properties, two durations, two timing functions
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
@@ -92,13 +92,33 @@
 
 
 ///
-/// Centers an object horizontally and vertically.
+/// Absolutely position an element.
 ///
-@mixin absolute($position: "default") {
+/// @param {String} $position - Position of the element
+///
+/// @example scss - Zero parameters
+///   @include absolute;
+///   // position: absolute;
+///   // top:  0;
+///   // left: 0;
+///
+/// @example scss - One parameter
+///   @include absolute(bottom);
+///   // position: absolute;
+///   // bottom: 0;
+///   // left:   0;
+///   // right:  0;
+///
+@mixin absolute($position: "topleft") {
     position: absolute;
-    @if( $position == "default" ) {
+    @if( $position == "topleft" ) {
         top:  0;
         left: 0;
+    }
+    @if( $position == "bottom" ) {
+        bottom: 0;
+        left:   0;
+        right:  0;
     }
     @if( $position == "center") {
         top:  50%;
@@ -110,6 +130,10 @@
 
 ///
 /// Define characters for quotes
+///
+/// @example scss
+///   @include quotes;
+///   // quotes: "“" "”" "‘" "’";
 ///
 @mixin quotes() {
     &,
