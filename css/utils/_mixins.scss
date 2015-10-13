@@ -94,11 +94,17 @@
 ///
 /// Centers an object horizontally and vertically.
 ///
-@mixin center() {
+@mixin absolute($position: "default") {
     position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    @if( $position == "default" ) {
+        top:  0;
+        left: 0;
+    }
+    @if( $position == "center") {
+        top:  50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 
 
