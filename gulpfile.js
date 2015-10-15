@@ -8,6 +8,7 @@ var gulp         = require('gulp'),
     csscomb      = require('gulp-csscomb'),
     csslint      = require('gulp-csslint'),
     minifycss    = require('gulp-minify-css'),
+    cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
     notify       = require('gulp-notify'),
     rename       = require('gulp-rename'),
@@ -62,10 +63,7 @@ gulp.task('css-main', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(minifycss({
-            advanced: false,
-            roundingPrecision: 3
-        }))
+        .pipe(cssnano())
         .pipe(gulp.dest(paths.css))
         .pipe(notify({
             title: 'gulp',
@@ -90,11 +88,7 @@ gulp.task('css-critical', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(minifycss({
-            advanced: false,
-            keepSpecialComments: 0,
-            roundingPrecision: 3
-        }))
+        .pipe(cssnano())
         .pipe(gulp.dest(paths.css))
         .pipe(rename({
             basename: "critical",

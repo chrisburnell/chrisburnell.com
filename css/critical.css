@@ -784,15 +784,15 @@ aside figcaption {
     .logo {
       font-size: 2.75rem; } }
   .logo svg {
+    position: absolute;
+    top: 0;
+    left: 0;
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
     will-change: top;
     width: 2.307em;
     height: 2.307em;
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     -webkit-animation: soaring 30s linear alternate infinite;
             animation: soaring 30s linear alternate infinite;
     -webkit-animation-play-state: paused;
