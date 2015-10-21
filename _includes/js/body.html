@@ -1,27 +1,24 @@
 <!-- Inject Non-Critical CSS -->
-<script>{% include js-body/loadcss.html %}
-loadCSS('/css/chrisburnell.min.css');</script>
+<script>{% include js-body/loadcss.html %}</script>
+<!-- CSS compiled from {{ site.url_repository }}/tree/master/css -->
+<script>loadCSS('/css/main.min.css');</script>
 <noscript>
-    <link rel="stylesheet" href="/css/chrisburnell.min.css">
+    <link rel="stylesheet" href="/css/main.min.css">
 </noscript>
 
-<!-- Support <picture> and picturefill -->
-<script>document.createElement('picture');
-{% include js-body/picturefill.html %}</script>
-
-{% if page.comments == true or page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}
-<!-- Disqus Comments -->
-<script>var disqus_shortname = 'chrisburnell';{% if page.comments == true %}{% include js-body/disqus-comments.html %}{% endif %}{% if page.page_class contains 'page-home' or page.page_class contains 'page-articles' %}{% include js-body/disqus-count.html %}{% endif %}</script>
-{% endif %}
-
-<!-- Google Analytics -->
-<script>{% include js-body/google-analytics.html %}</script>
+<!-- Support Main Scripts -->
+<script>
+    // Support Disqus comments
+    var disqus_shortname = 'chrisburnell';
+    // Support <picture> and picturefill
+    document.createElement('picture');
+</script>
 
 <!-- Search Templates -->
 {% include js-body/search-templates.html %}
 
-<!-- Search -->
-<script>{% include js-body/search.html %}</script>
+<!-- Main Scripts -->
+<script src="/js/main.min.js"></script>
 
 {% if page.codepen == true or page.categories contains 'pen' %}
 <!-- CodePen Embeds -->

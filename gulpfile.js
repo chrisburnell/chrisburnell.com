@@ -5,9 +5,9 @@
 // Define gulp objects
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
+    concat       = require('gulp-concat'),
     csscomb      = require('gulp-csscomb'),
     csslint      = require('gulp-csslint'),
-    minifycss    = require('gulp-minify-css'),
     cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
     notify       = require('gulp-notify'),
@@ -31,7 +31,7 @@ var paths = {
 
 // Compile main SCSS file
 gulp.task('css-main', function() {
-    return gulp.src(paths.css + 'chrisburnell.scss')
+    return gulp.src(paths.css + 'main.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -118,7 +118,7 @@ gulp.task('css-sassdoc', function() {
 
 // Minify JS
 gulp.task('js-main', function() {
-    return gulp.src([paths.js + '*.js', '!' + paths.js + '*.min.js'])
+    return gulp.src(['!' + paths.js + '*.min.js', paths.js + '*.js'])
         .pipe(plumber())
         .pipe(uglify({
             mangle: false,
@@ -135,9 +135,22 @@ gulp.task('js-main', function() {
         }));
 });
 
+// Concat JS
+gulp.task('js-concat', function() {
+    return gulp.src(['!' + paths.js + 'main.min.js', '!' + paths.js + 'loadcss.min.js', paths.js + '*.min.js'])
+        .pipe(plumber())
+        .pipe(concat('main.min.js'))
+        .pipe(gulp.dest(paths.js))
+        .pipe(notify({
+            title: 'gulp',
+            message: 'JS concatenated.',
+            onLast: true
+        }));
+});
+
 // Generate inline JS includes
 gulp.task('js-inline', function() {
-    return gulp.src([paths.js + '*.js', '!' + paths.js + '*.min.js'])
+    return gulp.src(['!' + paths.js + '*.min.js', paths.js + '*.js'])
         .pipe(uglify({
             mangle: false
         }))
@@ -170,6 +183,7 @@ gulp.task('css', function() {
 // JS task
 gulp.task('js', function() {
     gulp.start('js-main');
+    gulp.start('js-concat');
     gulp.start('js-inline');
 });
 
