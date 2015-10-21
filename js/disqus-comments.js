@@ -1,5 +1,6 @@
 ///
 /// Conditional comments for article pages
+/// @author Chris Burnell <@iamchrisburnell>
 ///
 
 var commentsSection = document.querySelector('#comments');

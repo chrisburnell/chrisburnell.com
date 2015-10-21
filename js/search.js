@@ -1,7 +1,7 @@
 ///
 /// A simple JSON search
-/// @author  Mat Hayward - Erskine Design (Original Author)
-/// @author  Chris Burnell (Slight, poor modifications) <@iamchrisburnell>
+/// @author Mat Hayward - Erskine Design (Original Author)
+/// @author Chris Burnell (Slight, poor modifications) <@iamchrisburnell>
 ///
 
 
@@ -226,7 +226,8 @@ function populateResultsString(count) {
 \*------------------------------------*/
 
 /**
- * Gets query string parameter - taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+ * Gets query string parameter
+ * Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
  * @param {String} name
  * @return {String} parameter value
  */
