@@ -5,10 +5,10 @@
 ///
 /// Please contact me if you want to learn about anything you see here.
 ///
-/// @author Chris Burnell (@iamchrisburnell)
-// @version 2.5.0
-// @license http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
-/// @link   https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
+/// @author   Chris Burnell (@iamchrisburnell)
+//  @version  2.5.0
+//  @license  http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en  CC BY-NC-SA 4.0
+/// @link     https://github.com/chrisburnell/chrisburnell.github.io/tree/master/css
 ////
 
 /// UTILS
@@ -27,7 +27,8 @@
 @import "base/page",
         "base/typography.global",
         "base/typography.code",
-        "base/buttons";
+        "base/buttons",
+        "base/inputs";
 
 /// LAYOUT
 @import "layout/wrap",

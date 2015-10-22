@@ -827,6 +827,37 @@ button[disabled] {
   .button--small:active {
     height: 1.818em; }
 
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+textarea {
+  -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+  will-change: background-color, border-color;
+  box-sizing: inherit !important;
+  padding: .5rem;
+  border: 0.125rem solid #dddddd;
+  outline: none;
+  font-family: "proxima-nova", sans-serif;
+  border-radius: 0.25rem; }
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  textarea:focus {
+    background-color: transparent;
+    border-color: #5f8aa6; }
+  input[type="email"][disabled],
+  input[type="password"][disabled],
+  input[type="search"][disabled],
+  input[type="tel"][disabled],
+  input[type="text"][disabled],
+  textarea[disabled] {
+    background-color: #d0d0d0; }
+
 main {
   padding-bottom: 2.25rem; }
 
@@ -1313,25 +1344,11 @@ footer {
   position: relative; }
 
 .search-input {
-  -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
-          transition: background-color 0.2s ease, border-color 0.2s ease;
-  will-change: background-color, border-color;
-  box-sizing: inherit !important;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: .5rem;
-  border: 0.125rem solid #dddddd;
-  margin-right: 0.625rem;
-  outline: none;
-  font-family: "proxima-nova", sans-serif;
-  border-radius: 0.25rem; }
-  .search-input:focus {
-    background-color: transparent;
-    border-color: #5f8aa6; }
-  .search-input[disabled] {
-    background-color: #d0d0d0; }
+  margin-right: 0.625rem; }
 
 .widget--search .search-submit {
   min-width: 2.5em; }

@@ -17,23 +17,8 @@
 }
 
 .search-input {
-    @include transition(background-color, border-color);
-    @include will-change(background-color, border-color);
-    box-sizing: inherit !important;
     flex: 1;
-    padding: .5rem;
-    border: $border-thin solid $color-text-light;
     margin-right: $spacing-small;
-    outline: none;
-    font-family: $font-stack-secondary;
-    border-radius: $border-radius-thin;
-    &:focus {
-        background-color: transparent;
-        border-color: $color-brand;
-    }
-    &[disabled] {
-        background-color: darken($color-text-light, 5%);
-    }
 }
 
 .search-submit {

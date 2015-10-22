@@ -1,0 +1,27 @@
+////
+/// Inputs
+/// @group base
+////
+
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+textarea {
+    @include transition(background-color, border-color);
+    @include will-change(background-color, border-color);
+    box-sizing: inherit !important;
+    padding: .5rem;
+    border: $border-thin solid $color-text-light;
+    outline: none;
+    font-family: $font-stack-secondary;
+    border-radius: $border-radius-thin;
+    &:focus {
+        background-color: transparent;
+        border-color: $color-brand;
+    }
+    &[disabled] {
+        background-color: darken($color-text-light, 5%);
+    }
+}
