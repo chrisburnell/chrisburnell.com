@@ -6,7 +6,7 @@
 .icon {
     @include transition;
     @include will-change(opacity, transform);
-    opacity: map-get($opacities, 'ultra');
+    opacity: opacity(ultra);
     height: $icon-size;
     display: block;
     overflow: hidden;
@@ -15,7 +15,7 @@
     &:hover,
     &:focus,
     &:active {
-        opacity: 1;
+        opacity: opacity(1);
         text-decoration: none;
     }
     &:active {

@@ -83,7 +83,7 @@ button, .button,
 
 button {
     &[disabled] {
-        opacity: map-get($opacities, 'ultra');
+        opacity: opacity(ultra);
     }
 }
 

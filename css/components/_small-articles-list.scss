@@ -82,7 +82,7 @@
     svg {
         @include transition;
         @include will-change(opacity);
-        opacity: map-get($opacities, 'low');
+        opacity: opacity(low);
         // override `_icons.scss` + 4px
         width:  6.25em !important;
         height: 6.25em;
@@ -101,6 +101,6 @@
     a:hover svg,
     a:focus svg,
     a:active svg {
-        opacity: map-get($opacities, 'high');
+        opacity: opacity(high);
     }
 }

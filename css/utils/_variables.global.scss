@@ -68,9 +68,9 @@ $color-black: #060606 !default;
 /// @type Color
 $color-gray: #ededed !default;
 /// @type Color
-$color-black-low: rgba($color-black, map_get($opacities, 'low')) !default;
+$color-black-low: rgba($color-black, map-get($opacities, "low")) !default;
 /// @type Color
-$color-black-medium: rgba($color-black, map_get($opacities, 'medium')) !default;
+$color-black-medium: rgba($color-black, map-get($opacities, "medium")) !default;
 
 
 /// @type Length

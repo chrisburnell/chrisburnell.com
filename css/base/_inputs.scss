@@ -27,6 +27,6 @@ textarea {
         border-color: $color-brand;
     }
     &[disabled] {
-        opacity: map-get($opacities, 'ultra');
+        opacity: opacity(ultra);
     }
 }

@@ -258,7 +258,7 @@ figure {
 blockquote {
     @extend %rounded;
     @include quotes;
-    background-color: rgba($color-brand, map-get($opacities, 'medium'));
+    background-color: rgba($color-brand, opacity(medium));
     padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
     @include media("<=small") {
