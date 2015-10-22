@@ -12,9 +12,7 @@ var,
     font-size: $font-size-small;
     line-height: 1.429;
 }
-    p code,
-    ol code,
-    ul code,
+    %content-elements code,
     ins,
     kbd,
     mark,

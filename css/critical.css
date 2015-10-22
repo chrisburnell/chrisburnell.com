@@ -410,11 +410,6 @@ h4 {
 h4 {
   margin-bottom: 0.625rem; }
 
-p {
-  margin: 0 0 1.25rem; }
-  p:last-child {
-    margin-bottom: 0; }
-
 a {
   -webkit-transition: background 0.2s ease, color 0.2s ease;
           transition: background 0.2s ease, color 0.2s ease;
@@ -493,6 +488,11 @@ h3 a:active {
 
 .link--tag {
   color: #5f8aa6 !important; }
+
+p {
+  margin: 0 0 1.25rem; }
+  p:last-child {
+    margin-bottom: 0; }
 
 ol,
 ul {
@@ -590,34 +590,6 @@ figure {
     color: #737373;
     font-style: italic; }
 
-abbr[title],
-blockquote,
-cite,
-dfn[title] {
-  color: #737373;
-  font-style: italic; }
-
-abbr[title],
-dfn[title] {
-  border-bottom: 1px dotted #737373;
-  cursor: help; }
-
-ins {
-  text-decoration: none; }
-
-time {
-  display: block; }
-
-q {
-  font-style: italic; }
-  q,
-  :lang(en) q {
-    quotes: "“" "”" "‘" "’"; }
-  :lang(de) q {
-    quotes: "„" "“" "‚" "‘"; }
-  :lang(fr) q {
-    quotes: "« " " »" "‹ " " ›"; }
-
 blockquote {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1.25rem;
@@ -651,6 +623,34 @@ blockquote {
 /*blockquote*/
 .twitter-tweet {
   margin: 0 auto 1.25rem !important; }
+
+q {
+  font-style: italic; }
+  q,
+  :lang(en) q {
+    quotes: "“" "”" "‘" "’"; }
+  :lang(de) q {
+    quotes: "„" "“" "‚" "‘"; }
+  :lang(fr) q {
+    quotes: "« " " »" "‹ " " ›"; }
+
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+  color: #737373;
+  font-style: italic; }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #737373;
+  cursor: help; }
+
+ins {
+  text-decoration: none; }
+
+time {
+  display: block; }
 
 hr {
   background: rgba(6, 6, 6, 0.1);

@@ -74,16 +74,6 @@ h4 {
     margin-bottom: $spacing-small;
 }
 
-p {
-    margin: 0 0 $spacing-medium;
-    &:last-child {
-        margin-bottom: 0;
-    }
-    &:empty {
-        @extend .removed;
-    }
-}
-
 %anchor {
     @include transition(background, color);
     @include will-change(background, color);
@@ -147,6 +137,20 @@ a {
     $color: nth($color-brand, 2);
     .link--#{$name} {
         color: #{$color} !important;
+    }
+}
+
+p, ol, ul, dl, figure, blockquote {
+    @extend %content-elements;
+}
+
+p {
+    margin: 0 0 $spacing-medium;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:empty {
+        @extend .removed;
     }
 }
 
@@ -251,30 +255,6 @@ figure {
     }
 }
 
-abbr[title],
-blockquote,
-cite,
-dfn[title] {
-    color: $color-text-alt;
-    font-style: italic;
-}
-abbr[title],
-dfn[title] {
-    border-bottom: 1px dotted $color-text-alt;
-    cursor: help;
-}
-ins {
-    text-decoration: none;
-}
-
-time {
-    display: block;
-}
-
-q {
-    @include quotes;
-    font-style: italic;
-}
 blockquote {
     @extend %rounded;
     @include quotes;
@@ -308,6 +288,31 @@ blockquote {
 }
 /*blockquote*/.twitter-tweet {
     margin: 0 auto $spacing-medium !important;
+}
+
+q {
+    @include quotes;
+    font-style: italic;
+}
+
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+    color: $color-text-alt;
+    font-style: italic;
+}
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $color-text-alt;
+    cursor: help;
+}
+ins {
+    text-decoration: none;
+}
+
+time {
+    display: block;
 }
 
 hr {
