@@ -1007,16 +1007,16 @@ aside figcaption {
     max-width: 24em;
     font-size: 1.625rem; }
 
+.lede-terminology {
+  padding-bottom: 1.25rem;
+  border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
+
 .edit {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1rem;
   margin: 0 2.25rem 1.25rem;
   font-style: italic;
   line-height: 1.5; }
-
-.lede--pens {
-  padding-bottom: 1.25rem;
-  border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
 figure img,
 figure svg, blockquote, aside:not(.author), .banner, .edit {

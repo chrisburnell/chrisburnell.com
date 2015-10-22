@@ -59,6 +59,11 @@
     }
 }
 
+.lede-terminology {
+    padding-bottom: $spacing-medium;
+    border-bottom: $border-thin solid $color-black-medium;
+}
+
 .edit {
     @extend %rounded;
     background-color: rgba($color-brand, map-get($opacities, 'medium'));
@@ -66,9 +71,4 @@
     margin: 0 $spacing-large $spacing-medium;
     font-style: italic;
     line-height: 1.5;
-}
-
-.lede--pens {
-    padding-bottom: $spacing-medium;
-    border-bottom: $border-thin solid $color-black-medium;
 }
