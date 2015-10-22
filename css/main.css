@@ -867,7 +867,7 @@ textarea {
   input[type="text"][disabled],
   input[type="week"][disabled],
   textarea[disabled] {
-    background-color: #d0d0d0; }
+    opacity: 0.7; }
 
 main {
   padding-bottom: 2.25rem; }
