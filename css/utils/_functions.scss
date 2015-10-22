@@ -32,6 +32,34 @@
 
 
 ///
+/// Define Opacity
+///
+/// @param {String} $value - Value of the opacity (0-1) or respective label
+///
+/// @example scss
+///   @include opacity(1);
+///   // opacity: 1;
+///
+/// @example scss
+///   @include opacity("medium");
+///   // opacity: .10;
+///
+/// @return {Number} Opacity value
+///
+/// @throw Error if no parameters are passed.
+///
+@function opacity($value) {
+    @if( length($value) == 0 ) {
+        @error "opacity() expects one parameter."
+    }
+    @if map-has-key($opacities, $value) {
+        @return map-get($opacities, $value);
+    }
+    @return $value;
+}
+
+
+///
 /// Simplify z-index.
 ///
 /// @param {String} $layer - Generic level
