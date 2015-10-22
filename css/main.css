@@ -794,10 +794,6 @@ button, .button,
   button:active:after, .button:active:after,
   .button--small:active:after {
     top: -0.182em; }
-  @media (max-width: 768px) {
-    .page-not-found button, .page-not-found .button, .page-not-found .button--small {
-      display: block;
-      margin: 0 auto 1.25rem; } }
   button svg, .button svg,
   .button--small svg {
     width: .8em;
@@ -827,11 +823,16 @@ button[disabled] {
   .button--small:active {
     height: 1.818em; }
 
+input[type="date"],
+input[type="datetime"],
 input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"],
+input[type="week"],
 textarea {
   -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
           transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -842,19 +843,29 @@ textarea {
   outline: none;
   font-family: "proxima-nova", sans-serif;
   border-radius: 0.25rem; }
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
   input[type="email"]:focus,
+  input[type="month"]:focus,
+  input[type="number"]:focus,
   input[type="password"]:focus,
   input[type="search"]:focus,
   input[type="tel"]:focus,
   input[type="text"]:focus,
+  input[type="week"]:focus,
   textarea:focus {
     background-color: transparent;
     border-color: #5f8aa6; }
+  input[type="date"][disabled],
+  input[type="datetime"][disabled],
   input[type="email"][disabled],
+  input[type="month"][disabled],
+  input[type="number"][disabled],
   input[type="password"][disabled],
   input[type="search"][disabled],
   input[type="tel"][disabled],
   input[type="text"][disabled],
+  input[type="week"][disabled],
   textarea[disabled] {
     background-color: #d0d0d0; }
 
@@ -1889,6 +1900,11 @@ footer {
 
 .page-style-guide article > [id] {
   margin-top: 3.375rem; }
+
+@media (max-width: 768px) {
+  .page-not-found button, .page-not-found .button, .page-not-found .button--small {
+    display: block;
+    margin: 0 auto 1.25rem; } }
 
 figure img,
 figure svg, blockquote, pre:not(.codepen), aside:not(.author), .banner, .edit, .small-articles-list a, .author-image img {

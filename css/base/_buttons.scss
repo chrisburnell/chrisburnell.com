@@ -52,16 +52,10 @@
         width: 100%;
         height: .182em;
     }
-        &:active {
-            &:before,
-            &:after {
-                top: -0.182em;
-            }
-        }
-    .page-not-found & {
-        @include media("<=medium") {
-            display: block;
-            margin: 0 auto $spacing-medium;
+    &:active {
+        &:before,
+        &:after {
+            top: -0.182em;
         }
     }
     svg {

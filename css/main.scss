@@ -56,7 +56,8 @@
         "components/print";
 
 /// PAGES
-@import "pages/styleguide";
+@import "pages/styleguide",
+        "pages/notfound";
 
 /// HELPERS/TRUMPS
 @import "utils/placeholders",

@@ -3,11 +3,16 @@
 /// @group base
 ////
 
+input[type="date"],
+input[type="datetime"],
 input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"],
+input[type="week"],
 textarea {
     @include transition(background-color, border-color);
     @include will-change(background-color, border-color);
