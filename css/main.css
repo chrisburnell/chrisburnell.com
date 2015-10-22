@@ -419,6 +419,7 @@ a {
   -webkit-transition: background 0.2s ease, color 0.2s ease;
           transition: background 0.2s ease, color 0.2s ease;
   will-change: background, color;
+  position: relative;
   text-decoration: none; }
   a:link {
     color: #5f8aa6; }
@@ -428,21 +429,24 @@ a {
   a:focus,
   a:active {
     text-decoration: underline; }
-  h2 a:link,
-  h2 a:visited,
-  h3 a:link,
-  h3 a:visited {
-    color: #4f4f4f; }
-  h2 a:visited,
-  h3 a:visited {
-    color: dimgray; }
-  h2 a:hover,
-  h2 a:focus,
-  h2 a:active,
-  h3 a:hover,
-  h3 a:focus,
-  h3 a:active {
-    color: #5f8aa6; }
+
+h2 a:link,
+h2 a:visited,
+h3 a:link,
+h3 a:visited {
+  color: #4f4f4f; }
+
+h2 a:visited,
+h3 a:visited {
+  color: dimgray; }
+
+h2 a:hover,
+h2 a:focus,
+h2 a:active,
+h3 a:hover,
+h3 a:focus,
+h3 a:active {
+  color: #5f8aa6; }
 
 .heading-anchor {
   color: #737373;
@@ -1059,7 +1063,6 @@ footer {
     padding: 0.75rem 1rem;
     border-bottom: 0 solid #5f8aa6;
     margin-bottom: .25rem;
-    position: relative;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25;
@@ -1238,10 +1241,8 @@ footer {
         .small-articles-list li + li {
           margin-top: 1em; } }
   .small-articles-list a {
-    will-change: background-color;
     display: block;
     padding: .5em;
-    position: relative;
     overflow: hidden; }
     .small-articles-list a:hover,
     .small-articles-list a:focus,

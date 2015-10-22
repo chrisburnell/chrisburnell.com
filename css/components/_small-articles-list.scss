@@ -38,10 +38,8 @@
     }
     a {
         @extend %rounded;
-        @include will-change(background-color);
         display: block;
         padding: .5em;
-        position: relative;
         overflow: hidden;
         &:hover,
         &:focus,

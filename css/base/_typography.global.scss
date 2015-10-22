@@ -84,9 +84,10 @@ p {
     }
 }
 
-a {
+%anchor {
     @include transition(background, color);
     @include will-change(background, color);
+    position: relative;
     text-decoration: none;
     &:link {
         color: $color-brand;
@@ -99,6 +100,12 @@ a {
     &:active {
         text-decoration: underline;
     }
+    span:not([class]):not([itemprop]) {
+        @extend .hidden;
+    }
+}
+a {
+    @extend %anchor;
     h2 &,
     h3 & {
         &:link,
@@ -113,9 +120,6 @@ a {
         &:active {
             color: $color-brand;
         }
-    }
-    span:not([class]):not([itemprop]) {
-        @extend .hidden;
     }
 }
 .heading-anchor {
