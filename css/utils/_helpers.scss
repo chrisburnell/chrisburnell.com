@@ -20,9 +20,22 @@
     display: none !important;
 }
 
+// Non-selectable stuff
+.non-selectable {
+    user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+}
+
 // Hyphenate any looong text
 .hyphen, .hyphenate {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+}
+
+// We're goin' up around the bend
+.rounded {
+    background-clip: padding-box;
+    border-radius: $border-radius-default;
 }

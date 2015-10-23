@@ -4,7 +4,7 @@
 ////
 
 .logo {
-    @extend %non-selectable;
+    @extend .non-selectable;
     @include transition;
     @include will-change(transform);
     display: inline-block;

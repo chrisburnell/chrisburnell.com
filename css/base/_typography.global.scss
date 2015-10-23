@@ -245,7 +245,7 @@ figure {
     text-align: center;
     img,
     svg {
-        @extend %rounded;
+        @extend .rounded;
     }
     a:link,
     a:visited,
@@ -256,7 +256,7 @@ figure {
 }
 
 blockquote {
-    @extend %rounded;
+    @extend .rounded;
     @include quotes;
     background-color: rgba($color-brand, opacity(medium));
     padding: $spacing-medium;

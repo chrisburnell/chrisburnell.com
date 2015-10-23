@@ -28,7 +28,7 @@
 }
 
 .banner {
-    @extend %rounded;
+    @extend .rounded;
     width: 810px;
     margin-bottom: $spacing-medium;
     @include media("<=small") {
@@ -65,7 +65,7 @@
 }
 
 .edit {
-    @extend %rounded;
+    @extend .rounded;
     background-color: rgba($color-brand, opacity(medium));
     padding: 1rem;
     margin: 0 $spacing-large $spacing-medium;

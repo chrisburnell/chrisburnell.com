@@ -34,7 +34,7 @@ pre {
         text-align: left;
     }
     &:not(.codepen) {
-        @extend %rounded;
+        @extend .rounded;
         background-color: $color-black-low;
         padding: 1.5rem 1.5rem 1rem;
         // disallow text from wrapping inside the container

@@ -48,7 +48,7 @@
         float: left;
         margin-right: .625rem;
         img {
-            @extend %rounded;
+            @extend .rounded;
             // gradient replacement while loading the `src` / `srcset`,
             // colours generated from `avatar.png`
             background-image: gradient(transparent, rgb(153, 192, 226), to top right),

@@ -15,7 +15,7 @@ aside {
     @include media("<=medium") {
         width: 100%;
         &:not(.author) {
-            @extend %rounded;
+            @extend .rounded;
             background: $color-black-low;
             padding: 1rem;
             margin-bottom: $spacing-medium;
