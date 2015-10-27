@@ -42,6 +42,6 @@ layouts_dir: ./_layouts
 permalink: /:categories/:title/
 exclude: ['node_modules', '.sass-cache']
 
-gems:
-- jekyll-redirect-from
-- jemoji
+# gems:
+# - jekyll-redirect-from
+# - jemoji
