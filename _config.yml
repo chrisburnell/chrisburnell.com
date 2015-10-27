@@ -38,7 +38,7 @@ codepen_tabfree: 8863
 timezone: Europe/London
 
 destination: ./_site
-layouts: ./_layouts
+layouts_dir: ./_layouts
 permalink: /:categories/:title/
 exclude: ['node_modules', '.sass-cache']
 

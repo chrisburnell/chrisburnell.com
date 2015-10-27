@@ -82,3 +82,47 @@
     }
     @return map-get($z-indexes, $layer);
 }
+
+
+///
+/// Contrasting Text Color
+///
+/// @param {Color} $background-color - Background Color to contrast
+/// @param {Color} $text-color-light [$color-white] - Color to use for dark backgrounds
+/// @param {Color} $text-color-dark [$color-black] - Color to use for light backgrounds
+///
+/// @example scss
+///   background-color: #111111;
+///   color: contrasting-color(#111111);
+///   // background-color: #111111;
+///   // color: white;
+///
+/// @return {Color}
+///
+/// @throw Error if no parameters are passed.
+///
+@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-black) {
+
+    $magic-number-red:     241;
+    $magic-number-green:   691;
+    $magic-number-blue:    68;
+    $magic-number-divisor: $magic-number-red + $magic-number-green + $magic-number-blue;
+
+    @if( length($background-color) == 0 ) {
+        @error "contrasting-color() expects at least one parameter.";
+    }
+
+    $component-red:   red($background-color);
+    $component-green: green($background-color);
+    $component-blue:  blue($background-color);
+
+    $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green)+ ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
+    $number: 100% * $number / 255;
+
+    @if( $number < 65% ) {
+        @return $text-color-light;
+    } @else {
+        @return $text-color-dark;
+    }
+
+}
