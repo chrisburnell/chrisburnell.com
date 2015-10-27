@@ -9,10 +9,15 @@ samp,
 var,
 .monospace {
     font-family: $font-stack-code;
-    font-size: $font-size-small;
+    // TODO: I don’t know why `rem` isn't working here!
+    font-size: ($font-size-small / 1rem * 1em);
     line-height: 1.429;
 }
-    %content-elements code,
+    p code,
+    ol code,
+    ul code,
+    dl code,
+    blockquote code,
     ins,
     kbd,
     mark,

@@ -41,6 +41,7 @@ destination: ./_site
 layouts_dir: ./_layouts
 permalink: /:categories/:title/
 exclude: ['node_modules', '.sass-cache']
+incremental: true
 
 # gems:
 # - jekyll-redirect-from

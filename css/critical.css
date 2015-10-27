@@ -582,8 +582,9 @@ a img {
   height: auto; }
 
 figure {
-  margin: 0 0 1.25rem;
-  text-align: center; }
+  margin: 0 0 1.25rem; }
+  figure:not(.highlight) {
+    text-align: center; }
   figure a:link,
   figure a:visited,
   figure figcaption {
@@ -692,14 +693,13 @@ samp,
 var,
 .monospace {
   font-family: Monaco, Consolas, Courier, monospace;
-  font-size: 0.875rem;
+  font-size: 0.875em;
   line-height: 1.429; }
 
 p code,
 ol code,
 ul code,
 dl code,
-figure code,
 blockquote code,
 ins,
 kbd,

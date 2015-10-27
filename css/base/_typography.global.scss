@@ -140,10 +140,6 @@ a {
     }
 }
 
-p, ol, ul, dl, figure, blockquote {
-    @extend %content-elements;
-}
-
 p {
     margin: 0 0 $spacing-medium;
     &:last-child {
@@ -242,7 +238,9 @@ a img {
 }
 figure {
     margin: 0 0 $spacing-medium;
-    text-align: center;
+    &:not(.highlight) {
+        text-align: center;
+    }
     img,
     svg {
         @extend .rounded;
