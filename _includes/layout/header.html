@@ -28,11 +28,11 @@ snippet of code on a project of your own. -->
 
 <html lang="en">
 
-{% include layouts/head.html %}
+{% include head/head.html %}
 
 <body{% if body_class != "" %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
-    {% include layouts/svg.html %}
+    {% include components/svg.html %}
 
     <header class="wrap  clear" role="banner">
         <a rel="home" class="logo" href="/" title="Quoth the raven, Nevermore." tabindex="1">
@@ -40,6 +40,6 @@ snippet of code on a project of your own. -->
             <span class="logo-text">{{ site.title }}</span>
         </a>
 
-        {% include layouts/nav-primary.html %}
+        {% include components/nav-primary.html %}
 
     </header>

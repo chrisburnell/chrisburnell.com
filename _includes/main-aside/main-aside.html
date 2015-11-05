@@ -83,13 +83,13 @@
 
 
     {% unless page.page_class contains 'page-search' %}
-        {% include widgets/search.html %}
+        {% include main-aside/widgets/search.html %}
     {% endunless %}
 
     {% if page.page_class contains 'page-home' %}
-        {% include widgets/featured-pens.html %}
+        {% include main-aside/widgets/featured-pens.html %}
     {% elsif page.layout == 'article' %}
-        {% include widgets/related-articles.html %}
+        {% include main-aside/widgets/related-articles.html %}
     {% endif %}
 
 </aside>

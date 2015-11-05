@@ -14,7 +14,7 @@ shorturl: f7utt
 ---
 
 
-{% include inline/codepen.html height="500" %}
+{% include content/codepen.html height="500" %}
 
 {% highlight html %}
 <div class="container">
@@ -28,7 +28,7 @@ shorturl: f7utt
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html {
     box-sizing: border-box;
@@ -180,5 +180,5 @@ body {
     opacity: .5;
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

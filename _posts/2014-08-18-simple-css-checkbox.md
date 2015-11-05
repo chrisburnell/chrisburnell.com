@@ -14,7 +14,7 @@ shorturl: g6pky
 ---
 
 
-{% include inline/codepen.html height="250" %}
+{% include content/codepen.html height="250" %}
 
 {% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">
@@ -22,7 +22,7 @@ shorturl: g6pky
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
 body {
@@ -78,5 +78,5 @@ input[type="checkbox"] {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

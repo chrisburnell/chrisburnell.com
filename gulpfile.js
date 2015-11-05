@@ -1,6 +1,7 @@
-/**
+/*!
  * Chris Burnell gulp Configuration
  */
+
 
 // Define gulp objects
 var gulp         = require('gulp'),
@@ -31,7 +32,7 @@ var paths = {
 
 // Compile main SCSS file
 gulp.task('css-main', function() {
-    return gulp.src(paths.css + 'main.scss')
+    return gulp.src([paths.css + 'main.scss'])
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -74,7 +75,7 @@ gulp.task('css-main', function() {
 
 // Compile critical SCSS file
 gulp.task('css-critical', function() {
-    return gulp.src(paths.css + 'critical.scss')
+    return gulp.src([paths.css + 'critical.scss'])
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -91,10 +92,10 @@ gulp.task('css-critical', function() {
         .pipe(cssnano())
         .pipe(gulp.dest(paths.css))
         .pipe(rename({
-            basename: "critical",
+            basename: "output",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'css/'))
+        .pipe(gulp.dest(paths.includes + 'head/critical/'))
         .pipe(notify({
             title: 'gulp',
             message: 'Critical CSS compiled.',
@@ -104,7 +105,7 @@ gulp.task('css-critical', function() {
 
 // Generate Sass documentation
 gulp.task('css-sassdoc', function() {
-    return gulp.src(paths.css + '**/*.scss')
+    return gulp.src([paths.css + '**/*.scss'])
         .pipe(plumber())
         .pipe(sassdoc({
             dest: paths.docs
@@ -118,7 +119,8 @@ gulp.task('css-sassdoc', function() {
 
 // Minify JS
 gulp.task('js-main', function() {
-    return gulp.src(['!' + paths.js + '*.min.js', paths.js + '*.js'])
+    return gulp.src(['!' + paths.js + '*.min.js',
+                     paths.js + '*.js'])
         .pipe(plumber())
         .pipe(uglify({
             mangle: false,
@@ -137,7 +139,10 @@ gulp.task('js-main', function() {
 
 // Concat JS
 gulp.task('js-concat', function() {
-    return gulp.src(['!' + paths.js + 'main.min.js', '!' + paths.js + 'loadcss.min.js', paths.js + '*.min.js'])
+    return gulp.src(['!' + paths.js + 'main.min.js',
+                     '!' + paths.js + 'loadcss.min.js',
+                     '!' + paths.js + 'serviceworker.min.js',
+                     paths.js + '*.min.js'])
         .pipe(plumber())
         .pipe(concat('main.min.js'))
         .pipe(gulp.dest(paths.js))
@@ -148,21 +153,25 @@ gulp.task('js-concat', function() {
         }));
 });
 
-// Generate inline JS includes
-gulp.task('js-inline', function() {
-    return gulp.src(['!' + paths.js + '*.min.js', paths.js + '*.js'])
-        .pipe(uglify({
-            mangle: false
-        }))
+// Generate inline LoadCSS include
+gulp.task('js-loadcss', function() {
+    return gulp.src([paths.js + 'loadcss.min.js'])
         .pipe(rename({
+            basename: "output",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'js-body/'))
+        .pipe(gulp.dest(paths.includes + 'body/loadcss/'))
         .pipe(notify({
             title: 'gulp',
             message: 'Inline JS compiled.',
             onLast: true
         }));
+});
+
+// Place the Service Worker at the root
+gulp.task('js-serviceworker', function() {
+    return gulp.src([paths.js + 'serviceworker.min.js'])
+        .pipe(gulp.dest('.'));
 });
 
 // -----------------------------------------------------------------------------
@@ -184,7 +193,8 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     gulp.start('js-main');
     gulp.start('js-concat');
-    gulp.start('js-inline');
+    gulp.start('js-loadcss');
+    gulp.start('js-serviceworker');
 });
 
 // -----------------------------------------------------------------------------

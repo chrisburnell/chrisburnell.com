@@ -14,14 +14,14 @@ shorturl: 9sogz
 ---
 
 
-{% include inline/codepen.html height="425" %}
+{% include content/codepen.html height="425" %}
 
 {% highlight html %}
 <div class="square">A</div>
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html, body {
     height: 100%;
@@ -120,5 +120,5 @@ body {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

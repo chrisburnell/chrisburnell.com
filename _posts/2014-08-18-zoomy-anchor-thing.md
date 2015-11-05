@@ -14,7 +14,7 @@ shorturl: e1r8k
 ---
 
 
-{% include inline/codepen.html height="350" %}
+{% include content/codepen.html height="350" %}
 
 {% highlight html %}
 <a href="#" class="article-link">
@@ -25,7 +25,7 @@ shorturl: e1r8k
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
 body {
@@ -89,5 +89,5 @@ body {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

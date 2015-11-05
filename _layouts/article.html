@@ -1,4 +1,4 @@
-{% include layouts/header.html %}
+{% include layout/header.html %}
 
 
 <main class="wrap  clear" role="main">
@@ -6,7 +6,7 @@
 
         <h1 id="article" class="title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" aria-hidden="true">{{ page.url }}</a>{% endif %}</h1>
 
-        {% include layouts/main-aside.html %}
+        {% include main-aside/main-aside.html %}
 
         {% if page.banner and page.banner_mobile %}
             <img alt="" class="banner" height="300" role="presentation" itemprop="image"
@@ -45,10 +45,10 @@
             {% endif %}
         </nav>
 
-        {% include layouts/comments.html %}
+        {% include components/comments.html %}
 
     </article>
 </main>
 
 
-{% include layouts/footer.html %}
+{% include layout/footer.html %}

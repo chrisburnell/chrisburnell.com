@@ -14,14 +14,14 @@ shorturl: b3sh4
 ---
 
 
-{% include inline/codepen.html height="200" %}
+{% include content/codepen.html height="200" %}
 
 {% highlight html %}
 <button>Hover Me</button>
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
 body {
@@ -74,5 +74,5 @@ button {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

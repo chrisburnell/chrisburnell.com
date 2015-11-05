@@ -14,7 +14,7 @@ shorturl: 6aorh
 ---
 
 
-{% include inline/codepen.html height="400" %}
+{% include content/codepen.html height="400" %}
 
 {% highlight html %}
 <div>
@@ -24,7 +24,7 @@ shorturl: 6aorh
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 @import url(http://fonts.googleapis.com/css?family=Yellowtail);
 @import url(http://fonts.googleapis.com/css?family=Archivo+Black);
@@ -102,5 +102,5 @@ h1 {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

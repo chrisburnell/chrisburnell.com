@@ -14,7 +14,7 @@ shorturl: bhbt9
 ---
 
 
-{% include inline/codepen.html height="600" %}
+{% include content/codepen.html height="600" %}
 
 {% highlight haml %}
 - (1...51).each do |row|
@@ -24,7 +24,7 @@ shorturl: bhbt9
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
 body {
@@ -68,5 +68,5 @@ body {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>

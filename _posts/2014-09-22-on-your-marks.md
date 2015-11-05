@@ -30,7 +30,7 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.
 
 
-{% include inline/heading.html title='The Cons of Disqus' id='cons' %}
+{% include content/heading.html title='The Cons of Disqus' id='cons' %}
 
 - The greatest disadvantage of using Disqus may or may not be obvious, but it means you’re locked into using Disqus for your comments. Disqus do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options") and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with Disqus in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
@@ -38,7 +38,7 @@ In this article I’m going to run through how I manage my comments section from
 - It’s beyond my knowledge how caching is affected by Disqus—whether or not it is cached, or available to be cached offline—but as the *movement* to bring offline support to the web ramps up, this could present an issue.
 
 
-{% include inline/heading.html title='The Pros of Disqus' id='pros' %}
+{% include content/heading.html title='The Pros of Disqus' id='pros' %}
 
 - Once you’ve signed up for a Disqus account, you’ll be able to comment on *every* site that has implemented Disqus for their commenting system and allows comments from the public.
 - Disqus has nearly all the bells and whistles you could want for making comments:
@@ -50,7 +50,7 @@ In this article I’m going to run through how I manage my comments section from
 - Option to add targeted ads and monetise upon clickthroughs
 
 
-{% include inline/heading.html title='The Weigh In' %}
+{% include content/heading.html title='The Weigh In' %}
 
 First, let’s look at some statistics for loading Disqus comments on page load:
 
@@ -66,7 +66,7 @@ By and large, this isn’t a massive hit. But we can *almost* always make things
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 
 
-{% include inline/heading.html title='At My Signal, Unleash Hell' id='at-my-signal' %}
+{% include content/heading.html title='At My Signal, Unleash Hell' id='at-my-signal' %}
 
 Let’s decide what the conditions are for loading the comments:
 
@@ -170,7 +170,7 @@ function showComments() {
 {% endhighlight %}
 
 
-{% include inline/heading.html title='The Whole Nine Yards' %}
+{% include content/heading.html title='The Whole Nine Yards' %}
 
 Here’s the entire snippet of code for my comments section:
 
@@ -183,7 +183,7 @@ Here’s the entire snippet of code for my comments section:
 {% endhighlight %}
 
 <div class="code-toggle">
-{% include inline/code-toggle-input.html %}
+{% include content/code-toggle-input.html %}
 {% highlight javascript %}
 var commentsSection = document.querySelector('#comments'),
     commentsButton  = document.querySelector('.js-show-comments'),
@@ -218,7 +218,7 @@ function showComments() {
     }
 }
 {% endhighlight %}
-{% include inline/code-toggle-button.html %}
+{% include content/code-toggle-button.html %}
 </div>
 
 We’ve met all the conditions we set when we embarked upon this task:
