@@ -37,6 +37,17 @@
 
     <title>{{ meta_title }}</title>
 
+    <link rel="dns-prefetch" href="//use.typekit.net">
+    <link rel="dns-prefetch" href="//a.disquscdn.com">
+    <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
+    <link rel="dns-prefetch" href="//codepen.io">
+    <link rel="dns-prefetch" href="//assets.codepen.io">
+    <link rel="dns-prefetch" href="//s.codepen.io">
+    <link rel="dns-prefetch" href="//platform.twitter.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <link rel="prerender" href="{% for post in site.categories.article limit:1 %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% endfor %}">
+
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
     <link rel="shortcut icon" href="/favicon.png">
