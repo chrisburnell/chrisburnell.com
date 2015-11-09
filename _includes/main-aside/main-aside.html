@@ -8,7 +8,7 @@
     {% assign author_microdata_home_location = site.author_location %}
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
-        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on <strong itemprop="datePublished">{{ page.date | date: '%d %b, %Y' }}</strong></time>
+        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on {% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" itemprop="datePublished" aria-hidden="true">{% else %}<strong itemprop="datePublished">{% endif %}{{ page.date | date: '%d %b, %Y' }}{% if page.shorturl %}</a>{% else %}</strong>{% endif %}</time>
         {% if page.categories contains 'pen' %}
             <div class="featured-link"><a href="/pens">Featured Pens</a></div>
         {% endif %}

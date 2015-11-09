@@ -17,7 +17,7 @@
         float: left;
     }
     @include media(">medium") {
-        width: 10.5rem;
+        width: $aside-width;
     }
     @include media("<=medium") {
         width: 7rem;
@@ -33,7 +33,7 @@
         @include media(">medium") {
             width:  10rem;
             height: 10rem;
-            transform: translateY(-4rem);
+            transform: translateX(2.9375rem) translateY(-4rem);
         }
         @include media("<=medium") {
             width:  7rem;
@@ -44,7 +44,7 @@
     &:hover svg,
     &:focus svg {
         @include media(">medium") {
-            transform: translateX(.5rem) translateY(-3.875rem);
+            transform: translateX(3.4375rem) translateY(-3.875rem);
         }
         @include media("<=medium") {
             transform: translateX(.5rem) translateY(-1.375rem);
@@ -53,7 +53,7 @@
     &:active svg {
         @include transition;
         @include media(">medium") {
-            transform: translateX(.5rem) translateY(-3.5rem);
+            transform: translateX(3.4375rem) translateY(-3.5rem);
         }
         @include media("<=medium") {
             transform: translateX(.5rem) translateY(-1rem);

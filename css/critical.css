@@ -812,7 +812,7 @@ aside figcaption {
       float: left; } }
   @media (min-width: 769px) {
     .logo {
-      width: 10.5rem; } }
+      width: 15.875rem; } }
   @media (max-width: 768px) {
     .logo {
       width: 7rem; } }
@@ -831,9 +831,9 @@ aside figcaption {
       .logo svg {
         width: 10rem;
         height: 10rem;
-        -webkit-transform: translateY(-4rem);
-            -ms-transform: translateY(-4rem);
-                transform: translateY(-4rem); } }
+        -webkit-transform: translateX(2.9375rem) translateY(-4rem);
+            -ms-transform: translateX(2.9375rem) translateY(-4rem);
+                transform: translateX(2.9375rem) translateY(-4rem); } }
     @media (max-width: 768px) {
       .logo svg {
         width: 7rem;
@@ -844,9 +844,9 @@ aside figcaption {
   @media (min-width: 769px) {
     .logo:hover svg,
     .logo:focus svg {
-      -webkit-transform: translateX(0.5rem) translateY(-3.875rem);
-          -ms-transform: translateX(0.5rem) translateY(-3.875rem);
-              transform: translateX(0.5rem) translateY(-3.875rem); } }
+      -webkit-transform: translateX(3.4375rem) translateY(-3.875rem);
+          -ms-transform: translateX(3.4375rem) translateY(-3.875rem);
+              transform: translateX(3.4375rem) translateY(-3.875rem); } }
   @media (max-width: 768px) {
     .logo:hover svg,
     .logo:focus svg {
@@ -858,9 +858,9 @@ aside figcaption {
             transition: all 0.2s ease; }
     @media (min-width: 769px) {
       .logo:active svg {
-        -webkit-transform: translateX(0.5rem) translateY(-3.5rem);
-            -ms-transform: translateX(0.5rem) translateY(-3.5rem);
-                transform: translateX(0.5rem) translateY(-3.5rem); } }
+        -webkit-transform: translateX(3.4375rem) translateY(-3.5rem);
+            -ms-transform: translateX(3.4375rem) translateY(-3.5rem);
+                transform: translateX(3.4375rem) translateY(-3.5rem); } }
     @media (max-width: 768px) {
       .logo:active svg {
         -webkit-transform: translateX(0.5rem) translateY(-1rem);
