@@ -4,6 +4,7 @@
 ////
 
 header {
+    overflow-y: hidden;
     @include media("<=medium") {
         // center .logo below the `medium` breakpoint
         text-align: center;

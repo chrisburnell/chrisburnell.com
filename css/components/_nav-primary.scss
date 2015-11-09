@@ -4,15 +4,13 @@
 ////
 
 .nav-primary {
+    float: right;
+    padding-top: $spacing-medium;
     padding-bottom: $spacing-medium;
     white-space: nowrap;
-    @include media(">medium") {
-        float: right;
-        padding-top: 1.5rem;
-    }
-    @include media("<=medium") {
+    @include media("<=small") {
         width: 100%;
-        padding-top: $spacing-medium;
+        padding-top: $spacing-small;
         text-align: center;
     }
 }
@@ -69,31 +67,31 @@
             }
         }
     }
-        // effect for interactions and active paths
-        .nav-primary-list a:hover,
-        .nav-primary-list a:focus,
-        .nav-primary-list a:active,
-        .page-home .nav-primary-home a,
-        .page-about .nav-primary-about a,
-        [class*="page-article"] .nav-primary-articles a,
-        [class*="page-pen"] .nav-primary-pens a,
-        .page-search .nav-primary-search a {
-            color: $color-text;
-            padding-bottom: .5rem;
-            border-bottom-width: $border-default;
-        }
-            // complementary to the effect for interactions and active paths
-            .page-home .nav-primary-home a:after,
-            .page-about .nav-primary-about a:after,
-            [class*="page-article"] .nav-primary-articles a:after,
-            [class*="page-pen"] .nav-primary-pens a:after,
-            .page-search .nav-primary-search a:after {
-                content: "";
-                border-top:   .5em solid $color-brand;
-                border-right: .5em solid transparent;
-                border-left:  .5em solid transparent;
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+    // effect for interactions and active paths
+    .nav-primary-list a:hover,
+    .nav-primary-list a:focus,
+    .nav-primary-list a:active,
+    .page-home .nav-primary-home a,
+    .page-about .nav-primary-about a,
+    [class*="page-article"] .nav-primary-articles a,
+    [class*="page-pen"] .nav-primary-pens a,
+    .page-search .nav-primary-search a {
+        color: $color-text;
+        padding-bottom: .5rem;
+        border-bottom-width: $border-default;
+    }
+    // complementary to the effect for interactions and active paths
+    .page-home .nav-primary-home a:after,
+    .page-about .nav-primary-about a:after,
+    [class*="page-article"] .nav-primary-articles a:after,
+    [class*="page-pen"] .nav-primary-pens a:after,
+    .page-search .nav-primary-search a:after {
+        content: "";
+        border-top:   .5em solid $color-brand;
+        border-right: .5em solid transparent;
+        border-left:  .5em solid transparent;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
