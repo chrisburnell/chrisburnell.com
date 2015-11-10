@@ -24,7 +24,9 @@
 /// COMPONENTS
 @import "components/logo",
         "components/nav-primary",
-        "components/article";
+        "components/article",
+        "components/articles-list",
+        "components/author";
 
 /// HELPERS/TRUMPS
 @import "utils/helpers";
