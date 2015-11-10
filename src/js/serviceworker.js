@@ -9,7 +9,7 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = 'v2::';
+    var VERSION = 'v3::';
 
     var CACHE_NAME = 'chrisburnell';
 
@@ -19,7 +19,10 @@
         '/about',
         '/articles',
         '/pens',
+        '/tags',
         '/search',
+        '/search.json',
+        '/styleguide',
         '/css/main.min.css',
         '/js/main.min.js',
         '/images/avatar.png'
