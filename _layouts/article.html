@@ -4,7 +4,7 @@
 <main class="wrap  clear" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
 
-        <h1 id="article" class="title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" aria-hidden="true">{{ site.shorturl }}{{ page.shorturl }}</a>{% endif %}</h1>
+        <h1 id="article" class="title" role="heading"><span itemprop="name">{{ page.title }}</span>{% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" aria-hidden="true">{{ page.url }}</a>{% endif %}</h1>
 
         {% include main-aside/main-aside.html %}
 
