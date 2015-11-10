@@ -212,10 +212,10 @@ gulp.task('js', function() {
 
 // Watch files and perform the appropriate tasks
 gulp.task('watch', ['css', 'js'], function() {
-    watch(paths.css + '**/*.scss', function() {
+    watch(paths.src.css + '**/*.scss', function() {
         gulp.start('css');
     });
-    watch([paths.js + '**/*.js', '!' + paths.js + '**/*.min.js'], function() {
+    watch([paths.src.js + '**/*.js'], function() {
         gulp.start('js');
     });
 });

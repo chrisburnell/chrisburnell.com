@@ -168,11 +168,11 @@ $im-no-media-breakpoint: 'desktop' !default;
 ///
 $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
-////
+///
 /// Cross-engine logging engine
 /// @author Hugo Giraudel
 /// @access private
-////
+///
 
 
 ///
@@ -245,11 +245,11 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   @return true;
 }
 
-////
+///
 /// Parsing engine
 /// @author Hugo Giraudel
 /// @access private
-////
+///
 
 
 ///
@@ -394,11 +394,11 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   @return $result;
 }
 
-////
+///
 /// String to number converter
 /// @author Hugo Giraudel
 /// @access private
-////
+///
 
 
 ///
@@ -513,11 +513,11 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   $media-expressions: $tweak-media-expressions !global;
 }
 
-////
+///
 /// include-media public exposed API
 /// @author Eduardo Boucas
 /// @access public
-////
+///
 
 
 ///
