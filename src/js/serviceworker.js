@@ -9,7 +9,7 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = 'v3::';
+    var VERSION    = '03';
 
     var CACHE_NAME = 'chrisburnell';
 
@@ -34,24 +34,24 @@
         navigator.serviceWorker.register('/serviceworker.min.js')
             .then( function(registration) {
                 // Registration was successful
-                console.log('SW ' + VERSION + CACHE_NAME + ' - registration successful with scope:', registration.scope);
+                console.log('ServiceWorker - registration successful with scope:', registration.scope);
             })
             .catch( function(err) {
                 // Registration has failed :(
-                console.log('SW ' + VERSION + CACHE_NAME + ' - registration failed:', err);
+                console.log('ServiceWorker - registration failed:', err);
             });
     }
 
 
     // Set the callback for the install step
     self.addEventListener('install', function(event) {
-        console.log('SW ' + VERSION + CACHE_NAME + ' - install event in progress.');
+        console.log('ServiceWorker - install event in progress.');
         // Perform install steps
         event.waitUntil(
             caches
-                .open(VERSION + CACHE_NAME)
+                .open('v' + VERSION + '::' + CACHE_NAME)
                 .then( function(cache) {
-                    console.log('SW ' + VERSION + CACHE_NAME + ' - opened cache.', event.request.url);
+                    console.log('ServiceWorker - opened cache.', event.request.url);
                     return cache.addAll(urlsToCache);
                 })
         );
@@ -60,10 +60,10 @@
 
     // Handle fetching content from cache
     self.addEventListener('fetch', function(event) {
-        console.log('SW ' + VERSION + CACHE_NAME + ' - fetch event in progress.');
+        console.log('ServiceWorker - fetch event in progress.');
         // Only cache GET requests
         if ( event.request.method !== 'GET' ) {
-            console.log('SW ' + VERSION + CACHE_NAME + ' - fetch event ignored.', event.request.method, event.request.url);
+            console.log('ServiceWorker - fetch event ignored.', event.request.method, event.request.url);
             return;
         }
         event.respondWith(
@@ -75,26 +75,26 @@
                         .then(fetchedFromNetwork, unableToResolve)
                         .catch(unableToResolve);
 
-                    console.log('SW ' + VERSION + CACHE_NAME + ' - fetch event', cached ? '(cached)' : '(network)', event.request.url);
+                    console.log('ServiceWorker - fetch event', cached ? '(cached)' : '(network)', event.request.url);
 
                     return cached || networked;
 
                     function fetchedFromNetwork(response) {
                         var cacheCopy = response.clone();
-                        console.log('SW ' + VERSION + CACHE_NAME + ' - fetch response from network.', event.request.url);
+                        console.log('ServiceWorker - fetch response from network.', event.request.url);
                         caches
-                            .open(VERSION + CACHE_NAME)
+                            .open('v' + VERSION + '::' + CACHE_NAME)
                             .then( function add(cache) {
                                 cache.put(event.request, cacheCopy);
                             })
                             .then( function() {
-                                console.log('SW ' + VERSION + CACHE_NAME + ' - fetch response stored in cache.', event.request.url);
+                                console.log('ServiceWorker - fetch response stored in cache.', event.request.url);
                             })
                         return response;
                     }
 
                     function unableToResolve() {
-                        console.log('SW ' + VERSION + CACHE_NAME + ' - fetch request failed in both cache and network')
+                        console.log('ServiceWorker - fetch request failed in both cache and network')
                         return new Response('<h1>Service Unavailable</h1>', {
                             status: 503,
                             statusText: 'Service Unavailable',
@@ -110,7 +110,7 @@
 
     // Remove deprecated Workers
     self.addEventListener('activate', function(event) {
-        console.log('SW ' + VERSION + CACHE_NAME + ' - activate event in progress.');
+        console.log('ServiceWorker - activate event in progress.');
         event.waitUntil(
             caches
                 .keys()
@@ -126,7 +126,7 @@
                     );
                 })
                 .then(function() {
-                    console.log('SW ' + VERSION + CACHE_NAME + ' - activate event completed.');
+                    console.log('ServiceWorker - activate event completed.');
                 })
         );
     });
