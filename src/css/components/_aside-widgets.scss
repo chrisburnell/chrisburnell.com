@@ -1,0 +1,39 @@
+////
+/// Aside Widgets
+/// @group components
+////
+
+.widget {
+    &,
+    & + & {
+        margin-top: $spacing-medium;
+    }
+    &:last-child {
+        @include media("<=medium") {
+            margin-bottom: $spacing-medium;
+        }
+    }
+    @include media("<=medium") {
+        margin-top: 0;
+    }
+}
+
+.widget-title {
+    margin-top: 0;
+}
+
+.widget-featured-link {
+    width: 100%;
+    display: block;
+    margin-top: $spacing-small;
+    font-weight: 600;
+    text-align: right;
+    @include media("<=medium") {
+        text-align: center;
+    }
+
+    &:after {
+        // NO-BREAK SPACE, RIGHTWARDS ARROW
+        content: " →";
+    }
+}

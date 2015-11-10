@@ -1,0 +1,47 @@
+////
+/// Articles List
+/// @group components
+////
+
+.articles-list {
+    li {
+        width: 100%;
+        display: inline-block;
+        clear: both;
+        padding: 1.5rem 1rem;
+        border-top: $border-thin solid $color-black-medium;
+        position: relative;
+        &:nth-child(odd) {
+            background-color: $color-black-low;
+        }
+        @include media("<=medium") {
+            padding-top:    1.875rem;
+            padding-bottom: 1.875rem;
+            text-align: center;
+        }
+    }
+
+    .title,
+    .date,
+    .comments-link {
+        // helps pop against the odd item background
+        text-shadow: 0 1px 0 $color-white;
+    }
+
+    .title {
+        margin-bottom: $spacing-small;
+    }
+
+    .date {
+        @extend %delta;
+        margin-bottom: $spacing-small;
+        &:before {
+            // EN DASH, NO-BREAK SPACE
+            content: "– ";
+            color: $color-text-alt;
+        }
+        @include media("<=medium") {
+            text-align: left;
+        }
+    }
+}

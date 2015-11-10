@@ -1,0 +1,24 @@
+////
+/// Print
+/// @group components
+////
+
+@include media("print") {
+    nav,
+    .featured-pens,
+    .related-articles,
+    .pagination,
+    .comments,
+    footer .home-link,
+    footer .copyright-spacer,
+    footer .style-guide-link,
+    footer .icons-list {
+        display: none;
+    }
+
+    button, .button {
+        color: $color-text;
+        border: 1px solid $color-text;
+        box-shadow: none;
+    }
+}

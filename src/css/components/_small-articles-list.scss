@@ -1,0 +1,115 @@
+////
+/// Small Articles List
+/// @group components
+////
+
+.small-articles-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -0.5em 1.5em;
+    font-family: $font-stack-secondary;
+    line-height: 1.25;
+    @include media("<=medium") {
+        margin-bottom: 1.875em;
+    }
+    aside & {
+        margin-bottom: 0;
+    }
+
+    li {
+        width: 49.0125%;
+        display: inline-block;
+        &:nth-child(n+3) {
+            margin-top: 1em;
+        }
+        aside & {
+            width: 100%;
+
+            & + li {
+                margin-top: 1em;
+            }
+        }
+        @include media("<=small") {
+            width: 100%;
+
+            & + li {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    a {
+        @extend .rounded;
+        display: block;
+        padding: .5em;
+        overflow: hidden;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-black-low;
+            text-decoration: none;
+        }
+    }
+
+    .title,
+    .lede,
+    .date {
+        text-shadow: 0 1px 0 $color-white;
+    }
+
+    .title {
+        margin-bottom: ($spacing-small / 2);
+    }
+    a:hover .title,
+    a:focus .title,
+    a:active .title {
+        text-decoration: underline;
+    }
+
+    .date {
+        color: $color-text-alt;
+        display: block;
+        font-size: $font-size-smaller;
+        font-weight: 600;
+        &:before {
+            // EN DASH, NO-BREAK SPACE
+            content: "– ";
+        }
+    }
+    svg ~ .date {
+        margin-top: ($spacing-small / 2);
+    }
+
+    .lede {
+        color: $color-text;
+        margin-top: ($spacing-small / 2);
+        font-size: $font-size-small;
+    }
+
+    svg {
+        @include transition;
+        @include will-change(opacity);
+        opacity: opacity(low);
+        // override `_icons.scss` + 4px
+        width:  6.25em !important;
+        height: 6.25em;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: .5em;
+        transform: translateY(-50%);
+        z-index: z-index(below);
+        stroke: $color-text;
+        @include media("<=small") {
+            width:  4em !important;
+            height: 4em;
+        }
+    }
+    a:hover svg,
+    a:focus svg,
+    a:active svg {
+        opacity: opacity(high);
+    }
+}

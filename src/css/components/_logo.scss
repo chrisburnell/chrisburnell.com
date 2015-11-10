@@ -1,0 +1,63 @@
+////
+/// Logo
+/// @group components
+////
+
+.logo {
+    @extend .non-selectable;
+    display: inline-block;
+    position: relative;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    @include media(">small") {
+        height: 6.25rem;
+        float: left;
+    }
+    @include media(">medium") {
+        width: $aside-width;
+    }
+    @include media("<=medium") {
+        width: 7rem;
+    }
+    @include media("<=small") {
+        height: 5.625rem;
+    }
+
+    svg {
+        @include absolute;
+        @include transition(all 1s);
+        @include will-change(transform);
+        display: block;
+        @include media(">medium") {
+            width:  10rem;
+            height: 10rem;
+            transform: translateX(2.9375rem) translateY(-4rem);
+        }
+        @include media("<=medium") {
+            width:  7rem;
+            height: 7rem;
+            transform: translateY(-1.5rem);
+        }
+    }
+    &:hover svg,
+    &:focus svg {
+        @include media(">medium") {
+            transform: translateX(3.4375rem) translateY(-3.875rem);
+        }
+        @include media("<=medium") {
+            transform: translateX(.5rem) translateY(-1.375rem);
+        }
+    }
+    &:active svg {
+        @include transition;
+        @include media(">medium") {
+            transform: translateX(3.4375rem) translateY(-3.5rem);
+        }
+        @include media("<=medium") {
+            transform: translateX(.5rem) translateY(-1rem);
+        }
+    }
+}

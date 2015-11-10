@@ -1,0 +1,352 @@
+////
+/// Typography (Global)
+/// @group base
+////
+
+html {
+    background-color: $color-white;
+    color: $color-text;
+    font: $base-font-weight $base-font-style #{$base-font-size}/#{$base-line-height} $font-stack-primary;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
+%heading {
+    // so that elements can be floated inside headings
+    min-height: 1.25em;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    line-height: 1.25;
+}
+h1, h2, h3, h4, h5, h6 {
+    @extend %heading;
+}
+
+%alpha {
+    font-family: $font-stack-heading;
+    // 42px
+    font-size: 2.625rem;
+    text-transform: uppercase;
+    // 3px 3px
+    text-shadow: .0715em .0715em 0 $color-black-low;
+}
+h1 {
+    @extend %alpha;
+}
+
+%beta {
+    font-family: $font-stack-primary;
+    // 26px
+    font-size: 1.625rem;
+}
+h2 {
+    @extend %beta;
+}
+
+%delta {
+    font-family: $font-stack-secondary;
+    // 18px
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.875;
+    text-transform: uppercase;
+}
+h3 {
+    @extend %delta;
+    margin-top: $spacing-small;
+    border-bottom: $border-thin solid $color-text-light;
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+    code {
+        text-transform: none;
+    }
+}
+
+%gamma {
+    font-family: $font-stack-secondary;
+    font-weight: 600;
+}
+h4 {
+    @extend %gamma;
+    margin-bottom: $spacing-small;
+}
+
+%anchor {
+    @include transition(background, color);
+    @include will-change(background, color);
+    position: relative;
+    text-decoration: none;
+    &:link {
+        color: $color-brand;
+    }
+    &:visited {
+        color: darken($color-brand, 10%);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+    span:not([class]):not([itemprop]) {
+        @extend .hidden;
+    }
+}
+a {
+    @extend %anchor;
+    h2 &,
+    h3 & {
+        &:link,
+        &:visited {
+            color: $color-text;
+        }
+        &:visited {
+            color: lighten($color-text, 10%);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-brand;
+        }
+    }
+}
+.heading-anchor {
+    color: $color-text-alt;
+    display: none;
+    padding-left: $spacing-medium;
+    font-family: $font-stack-code;
+    font-size: $font-size-smaller;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: lowercase;
+    text-shadow: none;
+    vertical-align: middle;
+    :hover > &,
+    :focus > &,
+    :active > & {
+        display: inline-block;
+    }
+}
+/**
+ * Brand Link Colours
+ */
+@each $color-brand in $color-brands {
+    $name:  nth($color-brand, 1);
+    $color: nth($color-brand, 2);
+    .link--#{$name} {
+        color: #{$color} !important;
+    }
+}
+
+p {
+    margin: 0 0 $spacing-medium;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:empty {
+        @extend .removed;
+    }
+}
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ol:not([class]),
+ul:not([class]),
+.default-list {
+    li {
+        padding-left: $spacing-large;
+        margin-bottom: $spacing-small;
+        position: relative;
+        &:last-child {
+            margin-bottom: $spacing-medium;
+        }
+        &:before {
+            @include absolute;
+            font-family: $font-stack-secondary;
+            font-weight: 600;
+        }
+    }
+
+    ol:not([class]),
+    ul:not([class]),
+    .default-list {
+        margin-top: $spacing-medium;
+    }
+}
+ol:not([class]),
+ol.default-list {
+    counter-reset: ordered-list;
+
+    li {
+        counter-increment: ordered-list;
+        &:before {
+            content: counter(ordered-list) ".";
+        }
+    }
+}
+ul:not([class]) li:before,
+ul.default-list li:before {
+    // BULLET
+    content: "•";
+    // 24px
+    font-size: 1.5rem;
+    line-height: 1;
+}
+dl {
+    width: 100%;
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+
+    dt {
+        width: auto;
+        min-width: 10rem;
+        clear: left;
+        padding-right: $spacing-medium;
+        font-family: $font-stack-secondary;
+        font-weight: 600;
+        @include media(">small") {
+            float: left;
+        }
+    }
+
+    dd {
+        width: $wrapper-width-large;
+        display: table-cell;
+        margin: 0;
+        overflow: hidden;
+        vertical-align: top;
+        @include media("<=small") {
+            width: auto;
+            display: block;
+            margin-left: $spacing-medium;
+        }
+        &:not(:last-child) {
+            padding-bottom: $spacing-medium;
+        }
+    }
+}
+
+img,
+a img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0 0 $spacing-medium;
+    &:not(.highlight) {
+        text-align: center;
+    }
+
+    img,
+    svg {
+        @extend .rounded;
+    }
+
+    a:link,
+    a:visited,
+    figcaption {
+        color: $color-text-alt;
+        font-style: italic;
+    }
+}
+
+blockquote {
+    @extend .rounded;
+    @include quotes;
+    background-color: rgba($color-brand, opacity(medium));
+    padding: $spacing-medium;
+    margin: 0 $spacing-large $spacing-medium;
+    @include media("<=small") {
+        margin-right: $spacing-medium;
+        margin-left:  $spacing-medium;
+    }
+
+    p {
+        margin-bottom: 0 !important;
+        &:before {
+            content: open-quote;
+            padding-right: .1875rem;
+        }
+        &:after {
+            content: close-quote;
+            padding-left: .1875rem;
+        }
+    }
+
+    cite {
+        display: block;
+        margin-left: $spacing-large;
+        margin-top: $spacing-medium;
+        &:before {
+            // HYPHEN, NO-BREAK SPACE
+            content: "‐ ";
+        }
+    }
+}
+/*blockquote*/.twitter-tweet {
+    margin: 0 auto $spacing-medium !important;
+}
+
+q {
+    @include quotes;
+    font-style: italic;
+}
+
+abbr[title],
+blockquote,
+cite,
+dfn[title] {
+    color: $color-text-alt;
+    font-style: italic;
+}
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted $color-text-alt;
+    cursor: help;
+}
+ins {
+    text-decoration: none;
+}
+
+time {
+    display: block;
+}
+
+hr {
+    background: $color-black-medium;
+    width: 100%;
+    height: .125rem;
+    display: block;
+    border: 0;
+    margin: $spacing-small 0 $spacing-medium;
+}
+
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    border: none;
+    overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $spacing-medium;
+}
+
+::selection {
+    background: $color-brand;
+    color: $color-white;
+}
+.canada::selection {
+    background-color: red;
+}

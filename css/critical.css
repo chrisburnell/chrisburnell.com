@@ -242,7 +242,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -420,13 +421,10 @@ a {
     color: #5f8aa6; }
   a:visited {
     color: #4b6f87; }
-  a:hover,
-  a:focus,
-  a:active {
+  a:hover, a:focus, a:active {
     text-decoration: underline; }
 
-h2 a:link,
-h2 a:visited,
+h2 a:link, h2 a:visited,
 h3 a:link,
 h3 a:visited {
   color: #4f4f4f; }
@@ -435,9 +433,7 @@ h2 a:visited,
 h3 a:visited {
   color: dimgray; }
 
-h2 a:hover,
-h2 a:focus,
-h2 a:active,
+h2 a:hover, h2 a:focus, h2 a:active,
 h3 a:hover,
 h3 a:focus,
 h3 a:active {
@@ -744,8 +740,7 @@ main {
 .clear {
   clear: both;
   zoom: 1; }
-  .clear:before,
-  .clear:after {
+  .clear:before, .clear:after {
     content: "";
     display: table; }
   .clear:after {
@@ -802,9 +797,7 @@ aside figcaption {
 .logo {
   display: inline-block;
   position: relative; }
-  .logo:hover,
-  .logo:focus,
-  .logo:active {
+  .logo:hover, .logo:focus, .logo:active {
     text-decoration: none; }
   @media (min-width: 501px) {
     .logo {
@@ -907,16 +900,14 @@ aside figcaption {
     will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
     display: block;
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
     border-bottom: 0 solid #5f8aa6;
     margin-bottom: .25rem;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25;
     text-transform: uppercase; }
-    .nav-primary-list a:hover,
-    .nav-primary-list a:focus,
-    .nav-primary-list a:active {
+    .nav-primary-list a:hover, .nav-primary-list a:focus, .nav-primary-list a:active {
       text-decoration: none; }
     .nav-primary-list a:active {
       -webkit-transform: translateY(0.2rem);
@@ -969,12 +960,10 @@ aside figcaption {
             transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
     border-bottom: .1825rem solid transparent;
     margin-left: -0.5rem; }
-    .title .title-link:hover,
-    .title .title-link:focus,
-    .title .title-link:active,
+    .title .title-link:hover, .title .title-link:focus, .title .title-link:active,
     .tagline .title-link:hover,
     .tagline .title-link:focus,
     .tagline .title-link:active {
