@@ -9,13 +9,13 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = '08';
+    var VERSION = '09';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
 
     // Name of the respective file (should be at root of project)
-    var FILE_NAME  = 'serviceworker.min.js';
+    var FILE_NAME = 'serviceworker.min.js';
 
     // The files we want to cache
     var urlsToCache = [
@@ -29,13 +29,11 @@
         '/styleguide',
         '/css/main.min.css',
         '/js/main.min.js',
-        '/images/avatar.png',
-        '/offline.html',
-        '/' + location.pathname + location.search
+        '/images/avatar.png'
     ];
 
     // Console Feedback
-    var CONSOLE_FEEDBACK = false;
+    var CONSOLE_FEEDBACK = true;
     var WORKER_LABEL = 'v' + VERSION + ' WORKER: ';
     var CLIENT_LABEL = 'v' + VERSION + ' CLIENT: ';
 
@@ -43,7 +41,7 @@
     // Instantiate the Service Worker
     if ( 'serviceWorker' in navigator ) {
         if( CONSOLE_FEEDBACK ) {
-            console.log(CLIENT_LABEL, 'Registration in progress.')
+            console.log(CLIENT_LABEL, 'Registration in progress.');
         }
         navigator.serviceWorker.register('/' + FILE_NAME)
             .then( function(registration) {
@@ -131,9 +129,9 @@
                         if( CONSOLE_FEEDBACK ) {
                             console.log(WORKER_LABEL, '`fetch` request failed in both cache and network')
                         }
-                        return new Response('<h1>Service Unavailable!</h1>', {
+                        return new Response('<h1>Service Unavailable</h1>', {
                             status: 503,
-                            statusText: 'Service Unavailable!',
+                            statusText: 'Service Unavailable',
                             headers: new Headers({
                                 'Content-Type': 'text/html'
                             })
