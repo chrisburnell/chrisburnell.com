@@ -11,7 +11,10 @@
     // Increment this when updating the Service Worker
     var VERSION = '04';
 
+    // Name the cache
     var CACHE_NAME = 'chrisburnell';
+
+    // Name of the respective file (should be at root of project)
     var FILE_NAME  = 'serviceworker.min.js';
 
     // The files we want to cache
