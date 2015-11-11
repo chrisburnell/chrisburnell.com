@@ -9,7 +9,7 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = '04';
+    var VERSION = '05';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
@@ -33,23 +33,27 @@
     ];
 
     // Console Feedback
-    var CONSOLE_FEEDBACK = true,
-        SW_TITLE = 'ServiceWorker v' + VERSION + ' ';
+    var CONSOLE_FEEDBACK = true;
+    var WORKER_LABEL = 'v' + VERSION + ' WORKER: ';
+    var CLIENT_LABEL = 'v' + VERSION + ' CLIENT: ';
 
 
     // Instantiate the Service Worker
     if ( 'serviceWorker' in navigator ) {
+        if( CONSOLE_FEEDBACK ) {
+            console.log(CLIENT_LABEL, 'Registration in progress.')
+        }
         navigator.serviceWorker.register('/' + FILE_NAME)
             .then( function(registration) {
-                // Registration was successful
+                // Registration has completed :)
                 if( CONSOLE_FEEDBACK ) {
-                    console.log(SW_TITLE, 'Registration successful with scope:', registration.scope);
+                    console.log(CLIENT_LABEL, 'Registration completed, with scope:', registration.scope);
                 }
             })
             .catch( function(err) {
                 // Registration has failed :(
                 if( CONSOLE_FEEDBACK ) {
-                    console.log(SW_TITLE, 'Registration failed:', err);
+                    console.log(CLIENT_LABEL, 'Registration failed, with error:', err);
                 }
             });
     }
@@ -58,7 +62,7 @@
     // Set the callback for the install step
     self.addEventListener('install', function(event) {
         if( CONSOLE_FEEDBACK ) {
-            console.log(SW_TITLE, 'install event in progress.');
+            console.log(WORKER_LABEL, '`install` event in progress.');
         }
         // Perform install steps
         event.waitUntil(
@@ -69,7 +73,7 @@
                 })
                 .then( function() {
                     if( CONSOLE_FEEDBACK ) {
-                        console.log(SW_TITLE, 'install event completed.');
+                        console.log(WORKER_LABEL, '`install` event completed.');
                     }
                 })
         );
@@ -79,12 +83,12 @@
     // Handle fetching content from cache
     self.addEventListener('fetch', function(event) {
         if( CONSOLE_FEEDBACK ) {
-            console.log(SW_TITLE, 'fetch event in progress.');
+            console.log(WORKER_LABEL, '`fetch` event in progress.');
         }
         // Only cache GET requests
         if ( event.request.method !== 'GET' ) {
             if( CONSOLE_FEEDBACK ) {
-                console.log(SW_TITLE, 'fetch event ignored.', event.request.method, event.request.url);
+                console.log(WORKER_LABEL, '`fetch` event ignored.', event.request.method, event.request.url);
             }
             return;
         }
@@ -98,7 +102,7 @@
                         .catch(unableToResolve);
 
                     if( CONSOLE_FEEDBACK ) {
-                        console.log(SW_TITLE, 'fetch event', cached ? '(cached)' : '(network)', event.request.url);
+                        console.log(WORKER_LABEL, '`fetch` event', cached ? '(cached)' : '(network)', event.request.url);
                     }
 
                     return cached || networked;
@@ -106,7 +110,7 @@
                     function fetchedFromNetwork(response) {
                         var cacheCopy = response.clone();
                         if( CONSOLE_FEEDBACK ) {
-                            console.log(SW_TITLE, 'fetch response from network.', event.request.url);
+                            console.log(WORKER_LABEL, '`fetch` response from network.', event.request.url);
                         }
                         caches
                             .open('v' + VERSION + '::' + CACHE_NAME)
@@ -115,7 +119,7 @@
                             })
                             .then( function() {
                                 if( CONSOLE_FEEDBACK ) {
-                                    console.log(SW_TITLE, 'fetch response stored in cache.', event.request.url);
+                                    console.log(WORKER_LABEL, '`fetch` response stored in cache.', event.request.url);
                                 }
                             })
                         return response;
@@ -123,7 +127,7 @@
 
                     function unableToResolve() {
                         if( CONSOLE_FEEDBACK ) {
-                            console.log(SW_TITLE, 'fetch request failed in both cache and network')
+                            console.log(WORKER_LABEL, '`fetch` request failed in both cache and network')
                         }
                         return new Response('<h1>Service Unavailable</h1>', {
                             status: 503,
@@ -141,7 +145,7 @@
     // Remove deprecated Workers
     self.addEventListener('activate', function(event) {
         if( CONSOLE_FEEDBACK ) {
-            console.log(SW_TITLE, 'activate event in progress.');
+            console.log(WORKER_LABEL, '`activate` event in progress.');
         }
         event.waitUntil(
             caches
@@ -150,7 +154,7 @@
                     return Promise.all(
                         keys
                         .filter( function (key) {
-                            return !key.startsWith(VERSION);
+                            return !key.startsWith('v' + VERSION);
                         })
                         .map( function(key) {
                             return caches.delete(key);
@@ -159,7 +163,7 @@
                 })
                 .then(function() {
                     if( CONSOLE_FEEDBACK ) {
-                        console.log(SW_TITLE, 'activate event completed.');
+                        console.log(WORKER_LABEL, '`activate` event completed.');
                     }
                 })
         );
