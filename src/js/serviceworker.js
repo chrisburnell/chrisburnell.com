@@ -9,9 +9,10 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION    = '03';
+    var VERSION = '04';
 
     var CACHE_NAME = 'chrisburnell';
+    var FILE_NAME  = 'serviceworker.min.js';
 
     // The files we want to cache
     var urlsToCache = [
@@ -31,7 +32,7 @@
 
     // Instantiate the Service Worker
     if ( 'serviceWorker' in navigator ) {
-        navigator.serviceWorker.register('/serviceworker.min.js')
+        navigator.serviceWorker.register('/' + FILE_NAME)
             .then( function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker - registration successful with scope:', registration.scope);
@@ -51,8 +52,10 @@
             caches
                 .open('v' + VERSION + '::' + CACHE_NAME)
                 .then( function(cache) {
-                    console.log('ServiceWorker - opened cache.', event.request.url);
                     return cache.addAll(urlsToCache);
+                })
+                .then( function() {
+                    console.log('ServiceWorker - install completed.');
                 })
         );
     });
