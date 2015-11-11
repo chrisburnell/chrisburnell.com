@@ -9,7 +9,7 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = '05';
+    var VERSION = '08';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
@@ -29,7 +29,9 @@
         '/styleguide',
         '/css/main.min.css',
         '/js/main.min.js',
-        '/images/avatar.png'
+        '/images/avatar.png',
+        '/offline.html',
+        '/' + location.pathname + location.search
     ];
 
     // Console Feedback
@@ -129,9 +131,9 @@
                         if( CONSOLE_FEEDBACK ) {
                             console.log(WORKER_LABEL, '`fetch` request failed in both cache and network')
                         }
-                        return new Response('<h1>Service Unavailable</h1>', {
+                        return new Response('<h1>Service Unavailable!</h1>', {
                             status: 503,
-                            statusText: 'Service Unavailable',
+                            statusText: 'Service Unavailable!',
                             headers: new Headers({
                                 'Content-Type': 'text/html'
                             })
