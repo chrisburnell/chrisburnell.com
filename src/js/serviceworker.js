@@ -33,7 +33,7 @@
     ];
 
     // Console Feedback
-    var CONSOLE_FEEDBACK = true;
+    var CONSOLE_FEEDBACK = false;
     var WORKER_LABEL = 'v' + VERSION + ' WORKER: ';
     var CLIENT_LABEL = 'v' + VERSION + ' CLIENT: ';
 
