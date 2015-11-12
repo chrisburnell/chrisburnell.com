@@ -37,10 +37,11 @@
 
 
             &:nth-child(4n+2) a,
-            &:nth-child(4n+3) a {
+            &:nth-child(4n+3) a,
+            &:nth-child(2n+1) a {
                 background-color: transparent;
             }
-            &:nth-child(2n+1) a {
+            &:nth-child(2n+2) a {
                 background-color: $color-black-low;
             }
         }

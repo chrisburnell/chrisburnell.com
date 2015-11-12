@@ -1215,9 +1215,10 @@ footer {
       aside .small-articles-list li + li {
         margin-top: 1em; }
       aside .small-articles-list li:nth-child(4n+2) a,
-      aside .small-articles-list li:nth-child(4n+3) a {
-        background-color: transparent; }
+      aside .small-articles-list li:nth-child(4n+3) a,
       aside .small-articles-list li:nth-child(2n+1) a {
+        background-color: transparent; }
+      aside .small-articles-list li:nth-child(2n+2) a {
         background-color: rgba(6, 6, 6, 0.05); }
     @media (min-width: 501px) {
       .small-articles-list li:nth-child(4n+2) a,
