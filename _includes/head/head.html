@@ -16,6 +16,8 @@
 
     {% if page.banner_mobile %}
         {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    {% else if page.banner %}
+        {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% else %}
         {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% endif %}
@@ -68,7 +70,7 @@
     {% if page.page_class contains 'page-not-found' %}
         <meta name="robots" content="noindex,nofollow">
     {% else %}
-        <!-- Twitter Microdata and OpenGraph -->
+        <!-- Twitter Microdata -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:creator" content="@{{ site.author_twitter }}">
         <meta name="twitter:title" content="{{ meta_title }}">
@@ -80,6 +82,7 @@
             <meta name="twitter:widgets:link-color" content="#{{ site.color_brand }}">
             <meta name="twitter:widgets:border-color" content="#{{ site.color_brand }}">
         {% endif %}
+        <!-- OpenGraph Microdata -->
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_lede }}">
         <meta property="og:type" content="website">
