@@ -68,7 +68,7 @@
     a {
         @extend .rounded;
         display: block;
-        padding: .5em;
+        padding: 1rem;
         overflow: hidden;
         &:hover,
         &:focus,
@@ -84,9 +84,6 @@
         text-shadow: 0 1px 0 $color-white;
     }
 
-    .title {
-        margin-bottom: ($spacing-small / 2);
-    }
     a:hover .title,
     a:focus .title,
     a:active .title {
@@ -96,20 +93,21 @@
     .date {
         color: $color-text-alt;
         display: block;
+        margin-top: $spacing-small;
         font-size: $font-size-smaller;
         font-weight: 600;
+        @include media(">medium") {
+            text-align: right;
+        }
         &:before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
         }
     }
-    svg ~ .date {
-        margin-top: ($spacing-small / 2);
-    }
 
     .lede {
         color: $color-text;
-        margin-top: ($spacing-small / 2);
+        margin-top: $spacing-small;
         font-size: $font-size-small;
     }
 
