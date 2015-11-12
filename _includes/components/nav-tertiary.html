@@ -1,6 +1,6 @@
 <nav class="nav-tertiary" role="navigation">
     <ul class="nav-tertiary-list">
-    {% for link in site.data.nav_tertiary %}
+    {% for link in site.data.nav-tertiary %}
         {% capture title_slug %}{{ link.title | slugify }}{% endcapture %}
         {% if link.url %}
             {% assign url = link.url %}

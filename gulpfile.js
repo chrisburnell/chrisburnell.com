@@ -99,10 +99,10 @@ gulp.task('css-critical', function() {
         .pipe(cssnano())
         .pipe(gulp.dest(paths.dist.css))
         .pipe(rename({
-            basename: "output",
+            basename: "critical-css",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'head/critical/'))
+        .pipe(gulp.dest(paths.includes + 'generated/'))
         .pipe(notify({
             title: 'gulp',
             message: 'Critical CSS compiled.',
@@ -156,10 +156,10 @@ gulp.task('js-loadcss', function() {
             preserveComments: 'some'
         }))
         .pipe(rename({
-            basename: "output",
+            basename: "loadcss",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'body/loadcss/'))
+        .pipe(gulp.dest(paths.includes + 'generated/'))
         .pipe(notify({
             title: 'gulp',
             message: 'LoadCSS JS compiled.',

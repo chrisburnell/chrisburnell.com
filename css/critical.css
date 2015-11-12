@@ -710,7 +710,7 @@ var {
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
-  [data-lang] pre {
+  code[data-lang] pre {
     margin-bottom: 0;
     text-align: left; }
   pre:not(.codepen) {
@@ -923,8 +923,10 @@ aside figcaption {
 .nav-primary-list a:active,
 .page-home .nav-primary-home a,
 .page-about .nav-primary-about a,
-[class*="page-article"] .nav-primary-articles a,
-[class*="page-pen"] .nav-primary-pens a,
+.page-article .nav-primary-articles a,
+.page-articles .nav-primary-articles a,
+.page-pen .nav-primary-pens a,
+.page-pens .nav-primary-pens a,
 .page-search .nav-primary-search a {
   color: #4f4f4f;
   padding-bottom: .5rem;
@@ -932,8 +934,10 @@ aside figcaption {
 
 .page-home .nav-primary-home a:after,
 .page-about .nav-primary-about a:after,
-[class*="page-article"] .nav-primary-articles a:after,
-[class*="page-pen"] .nav-primary-pens a:after,
+.page-article .nav-primary-articles a:after,
+.page-articles .nav-primary-articles a:after,
+.page-pen .nav-primary-pens a:after,
+.page-pens .nav-primary-pens a:after,
 .page-search .nav-primary-search a:after {
   content: "";
   border-top: 0.5em solid #5f8aa6;

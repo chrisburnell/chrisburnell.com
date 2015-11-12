@@ -50,7 +50,7 @@
 }
 
 .page-style-guide {
-    article > [id] {
+    article > h3[id] {
         margin-top: ($spacing-large * 1.5);
     }
 }

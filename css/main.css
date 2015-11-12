@@ -710,7 +710,7 @@ var {
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
-  [data-lang] pre {
+  code[data-lang] pre {
     margin-bottom: 0;
     text-align: left; }
   pre:not(.codepen) {
@@ -1066,8 +1066,10 @@ footer {
 .nav-primary-list a:active,
 .page-home .nav-primary-home a,
 .page-about .nav-primary-about a,
-[class*="page-article"] .nav-primary-articles a,
-[class*="page-pen"] .nav-primary-pens a,
+.page-article .nav-primary-articles a,
+.page-articles .nav-primary-articles a,
+.page-pen .nav-primary-pens a,
+.page-pens .nav-primary-pens a,
 .page-search .nav-primary-search a {
   color: #4f4f4f;
   padding-bottom: .5rem;
@@ -1075,8 +1077,10 @@ footer {
 
 .page-home .nav-primary-home a:after,
 .page-about .nav-primary-about a:after,
-[class*="page-article"] .nav-primary-articles a:after,
-[class*="page-pen"] .nav-primary-pens a:after,
+.page-article .nav-primary-articles a:after,
+.page-articles .nav-primary-articles a:after,
+.page-pen .nav-primary-pens a:after,
+.page-pens .nav-primary-pens a:after,
 .page-search .nav-primary-search a:after {
   content: "";
   border-top: 0.5em solid #5f8aa6;
@@ -1605,11 +1609,10 @@ footer {
     font-size: 1.25rem;
     font-style: italic; }
 
-/*code*/
-[data-lang] {
+code[data-lang] {
   padding-top: 2.25rem;
   line-height: 2; }
-  [data-lang]:before {
+  code[data-lang]:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -1627,17 +1630,17 @@ footer {
     line-height: 2.25rem;
     text-transform: uppercase;
     border-radius: 0.375rem 0.375rem 0 0; }
-  [data-lang].language-css:before {
+  code[data-lang].language-css:before {
     background-color: #016fba; }
-  [data-lang].language-haml:before {
+  code[data-lang].language-haml:before {
     background-color: #e54d26; }
-  [data-lang].language-html:before {
+  code[data-lang].language-html:before {
     background-color: #e54d26; }
-  [data-lang].language-javascript:before {
+  code[data-lang].language-javascript:before {
     background-color: #f1c54c; }
-  [data-lang].language-sass:before {
+  code[data-lang].language-sass:before {
     background-color: #c6538c; }
-  [data-lang].language-scss:before {
+  code[data-lang].language-scss:before {
     background-color: #c6538c; }
 
 /**
@@ -1890,7 +1893,7 @@ footer {
       background-color: #dddddd;
       color: #4f4f4f; }
 
-.page-style-guide article > [id] {
+.page-style-guide article > h3[id] {
   margin-top: 3.375rem; }
 
 @media (max-width: 768px) {

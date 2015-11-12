@@ -1,6 +1,6 @@
 # Chris Burnell
 
-#### version 2.5.0
+#### version 2.6.0
 
 #### The source code for [chrisburnell.com](https://chrisburnell.com/).
 
@@ -12,6 +12,53 @@ site or this Github repository. If you have any questions or suggestions, please
 don’t hesitate to get in touch—via
 [twitter](https://twitter.com/iamchrisburnell) or email—or open a new issue to
 report bugs or suggestions.
+
+## Generated
+
+- _includes/generated/critical-css.html
+- _includes/generated/loadcss.html
+- serviceworker.min.js
+
+## Workflow
+
+Building this website requires both `jekyll` and `gulp`.
+
+### Layouts
+
+- default
+- article
+
+### Includes
+
+- body
+  - body-css-js.html
+  - body-search-templates.html
+- components
+  - comments.html
+  - nav-primary.html
+  - nav-tertiary.html
+  - svg.html
+- content
+  - code-toggle-button.html
+  - code-toggle-input.html
+  - codepen.html
+  - heading.html
+- generated *
+  - critical-css.html
+  - loadcss.html
+- head
+  - head-css.html
+  - head-js.html
+  - head.html
+- layout
+  - header.html
+  - footer.html
+- main-aside
+  - main-aside.html
+  - widgets
+    - featured-pens.html
+    - related-articles.html
+    - search.html
 
 ## Development
 
