@@ -43,6 +43,6 @@ permalink: /:categories/:title/
 exclude: ['node_modules', '.sass-cache', 'src']
 incremental: true
 
-# gems:
-# - jekyll-redirect-from
-# - jemoji
+gems:
+- jekyll-redirect-from
+- jemoji

@@ -4,7 +4,7 @@ page_class: page-about
 sitemap:
   priority: 1.0
 
-# redirect_from: /me.html
+redirect_from: /me.html
 
 title: About Me
 lede: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
