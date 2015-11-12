@@ -5,10 +5,10 @@
         "utils/functions",
         "utils/mixins";
 
-/// VENDOR
-@import "vendor/include-media",
-        "vendor/box-sizing",
-        "vendor/normalize";
+/// VENDORS
+@import "vendors/include-media",
+        "vendors/box-sizing",
+        "vendors/normalize";
 
 /// BASE
 @import "base/page",
