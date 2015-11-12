@@ -1,7 +1,8 @@
 <!-- Inject Non-Critical CSS -->
 <script>{% include body/loadcss/output.html %}</script>
-<!-- CSS compiled from {{ site.url_repository }}/tree/master/css -->
+<!-- and lazyload the main styles -->
 <script>loadCSS('/css/main.min.css');</script>
+<!-- or just serve it, late, if they haven’t got JS -->
 <noscript>
     <link rel="stylesheet" href="/css/main.min.css">
 </noscript>
@@ -19,7 +20,8 @@
 
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
-<script src="/serviceworker.min.js"></script>
+<!-- ServiceWorker -->
+<script src="/serviceworker.min.js" async defer></script>
 
 
 {% if page.codepen == true or page.categories contains 'pen' %}

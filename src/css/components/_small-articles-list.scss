@@ -21,21 +21,46 @@
     li {
         width: 49.0125%;
         display: inline-block;
+        // Push all list items down (after the first two, in the
+        // two-column format)
         &:nth-child(n+3) {
             margin-top: 1em;
         }
         aside & {
             width: 100%;
 
+            // Push all list items down (after the first one, in the <aside>
+            // one-column format)
             & + li {
                 margin-top: 1em;
+            }
+
+
+            &:nth-child(4n+2) a,
+            &:nth-child(4n+3) a {
+                background-color: transparent;
+            }
+            &:nth-child(2n+1) a {
+                background-color: $color-black-low;
+            }
+        }
+        @include media(">small") {
+            &:nth-child(4n+2) a,
+            &:nth-child(4n+3) a {
+                background-color: $color-black-low;
             }
         }
         @include media("<=small") {
             width: 100%;
 
+            // Push all list items down (after the first one, in the default
+            // one-column format)
             & + li {
                 margin-top: 1em;
+            }
+
+            &:nth-child(2n+1) a {
+                background-color: $color-black-low;
             }
         }
     }
@@ -48,7 +73,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-black-low;
+            background-color: rgba($color-brand, opacity(medium)) !important;
             text-decoration: none;
         }
     }
