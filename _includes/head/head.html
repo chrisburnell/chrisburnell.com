@@ -59,9 +59,9 @@
 
     <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
     <meta name="description" content="{{ meta_lede }}">
-    <meta name="theme-color" content="#{{ site.brand_color }}">
-    <meta name="msapplication-navbutton-color" content="#{{ site.brand_color }}">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#{{ site.brand_color }}">
+    <meta name="theme-color" content="#{{ site.color_brand }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color_brand }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#{{ site.color_brand }}">
 
     <meta http-equiv="cleartype" content="on">
 
@@ -77,8 +77,8 @@
         <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
         {% if page.twitter == true %}
             <meta name="twitter:widgets:theme" content="light">
-            <meta name="twitter:widgets:link-color" content="#{{ site.brand_color }}">
-            <meta name="twitter:widgets:border-color" content="#{{ site.brand_color }}">
+            <meta name="twitter:widgets:link-color" content="#{{ site.color_brand }}">
+            <meta name="twitter:widgets:border-color" content="#{{ site.color_brand }}">
         {% endif %}
         <meta property="og:title" content="{{ meta_title }}">
         <meta property="og:description" content="{{ meta_lede }}">
