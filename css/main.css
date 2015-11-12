@@ -1630,18 +1630,24 @@ code[data-lang] {
     line-height: 2.25rem;
     text-transform: uppercase;
     border-radius: 0.375rem 0.375rem 0 0; }
-  code[data-lang].language-css:before {
-    background-color: #016fba; }
-  code[data-lang].language-haml:before {
-    background-color: #e54d26; }
-  code[data-lang].language-html:before {
-    background-color: #e54d26; }
-  code[data-lang].language-javascript:before {
-    background-color: #f1c54c; }
-  code[data-lang].language-sass:before {
-    background-color: #c6538c; }
-  code[data-lang].language-scss:before {
-    background-color: #c6538c; }
+
+.language-css:before {
+  background-color: #016fba; }
+
+.language-haml:before {
+  background-color: #e54d26; }
+
+.language-html:before {
+  background-color: #e54d26; }
+
+.language-javascript:before {
+  background-color: #f1c54c; }
+
+.language-sass:before {
+  background-color: #c6538c; }
+
+.language-scss:before {
+  background-color: #c6538c; }
 
 /**
  * Github-style Code Highlighting

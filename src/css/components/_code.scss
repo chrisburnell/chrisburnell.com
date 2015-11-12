@@ -22,13 +22,13 @@ code[data-lang] {
         text-transform: uppercase;
         border-radius: $border-radius-default $border-radius-default 0 0;
     }
+}
 
-    @each $language in $coding-languages {
-        $name:  nth($language, 1);
-        $color: nth($language, 2);
-        &.language-#{$name}:before {
-            background-color: #{$color};
-        }
+@each $language in $coding-languages {
+    $name:  nth($language, 1);
+    $color: nth($language, 2);
+    &.language-#{$name}:before {
+        background-color: #{$color};
     }
 }
 

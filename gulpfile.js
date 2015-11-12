@@ -7,7 +7,6 @@
 var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat       = require('gulp-concat'),
-    csscomb      = require('gulp-csscomb'),
     csslint      = require('gulp-csslint'),
     cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
@@ -18,6 +17,8 @@ var gulp         = require('gulp'),
     watch        = require('gulp-watch');
 
 // Define external objects
+var csscomb = require('csscomb');
+var comb = new csscomb();
 var sassdoc = require('sassdoc');
 
 // Define paths
@@ -39,7 +40,7 @@ var paths = {
 
 // Compile main SCSS file
 gulp.task('css-main', function() {
-    return gulp.src([paths.src.css + 'main.scss'])
+    return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -48,7 +49,6 @@ gulp.task('css-main', function() {
         .pipe(autoprefixer({
             browsers: ['last 2 versions', '> 1%']
         }))
-        .pipe(csscomb())
         .pipe(csslint({
             'box-model': false,
             'box-sizing': false,
@@ -61,6 +61,7 @@ gulp.task('css-main', function() {
             'important': false,
             'known-properties': false,
             'outline-none': false,
+            'qualified-headings': false,
             'regex-selectors': false,
             'unique-headings': false,
             'universal-selector': false,
@@ -82,22 +83,8 @@ gulp.task('css-main', function() {
 
 // Compile critical SCSS file
 gulp.task('css-critical', function() {
-    return gulp.src([paths.src.css + 'critical.scss'])
+    return gulp.src([paths.dist.css + 'critical.min.css'])
         .pipe(plumber())
-        .pipe(sass({
-            errLogToConsole: true,
-            style: 'expanded'
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', '> 1%']
-        }))
-        .pipe(csscomb())
-        .pipe(gulp.dest(paths.dist.css))
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(cssnano())
-        .pipe(gulp.dest(paths.dist.css))
         .pipe(rename({
             basename: "critical-css",
             extname: ".html"
