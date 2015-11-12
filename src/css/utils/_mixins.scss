@@ -41,30 +41,41 @@
 /// @require {variable} $transition-function
 ///
 @mixin transition($values...) {
+
     $transition: ();
+
     @if( length($values) == 0 ) {
         $transition: all #{$transition-time} #{$transition-function};
     }
+
     @else if( str-index(""+$values+"", " ") == null and str-index(""+$values+"", ",") == null and $values != "none" ) {
         $transition: #{$values} #{$transition-time} #{$transition-function};
     }
+
     @else if( str-index(""+$values+"", ",") != null ) {
         @each $value in $values {
+
             @if( str-index(""+$value+"", " ") == null ) {
                 $transition: append($transition, unquote("#{$value} #{$transition-time} #{$transition-function}"), comma);
             }
+
             @else if( str-index(""+$value+"", " ") == 1 ) {
                 $transition: append($transition, unquote("#{$value} #{$transition-function}"), comma);
             }
+
             @else {
                 $transition: append($transition, unquote("#{$value}"), comma);
             }
+
         }
     }
+
     @else {
         $transition: #{$values};
     }
+
     transition: #{$transition};
+
 }
 
 
@@ -84,10 +95,13 @@
 /// @throw Error if no parameters are passed.
 ///
 @mixin will-change($values...) {
+
     @if( length($values) == 0 ) {
         @error "will-change() expects one or more parameters.";
     }
+
     will-change: #{$values};
+
 }
 
 
@@ -110,21 +124,26 @@
 ///   // right:  0;
 ///
 @mixin absolute($position: "topleft") {
+
     position: absolute;
+
     @if( $position == "topleft" ) {
         top:  0;
         left: 0;
     }
-    @if( $position == "bottom" ) {
+
+    @else if( $position == "bottom" ) {
         bottom: 0;
         left:   0;
         right:  0;
     }
-    @if( $position == "center") {
+
+    @else if( $position == "center") {
         top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
+
 }
 
 
@@ -136,14 +155,18 @@
 ///   // quotes: "“" "”" "‘" "’";
 ///
 @mixin quotes() {
+
     &,
     :lang(en) & {
         quotes: "“" "”" "‘" "’";
     }
+
     :lang(de) & {
         quotes: "„" "“" "‚" "‘";
     }
+
     :lang(fr) & {
         quotes: "« " " »" "‹ " " ›";
     }
+
 }
