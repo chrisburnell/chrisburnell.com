@@ -1,11 +1,26 @@
 {% comment %}
 *
-* This include lets you easily add a content heading with an anchor.
-* You can specify three parameters (* is mandatory):
-*   - title *
-*   - id
-* Example:
-*   - {% include content/heading.html title='Let’s look at some code' id='lets-look-at-some-code' %}
+* This include lets you easily add a heading element with an ID anchor.
+*
+* @param {String} title *
+* @param {String} id [title | slugify]
+* @param {Element} type [h3]
+*
+* @example
+*   {% include content/heading.html title='Let’s look at some code' %}
+*   // <h3 id="lets-look-at-some-code">
+*   //     Let’s look at some code
+*   //     <a href="#lets-look-at-some-code" class="heading-anchor" aria-hidden="true">#lets-look-at-some-code</a>
+*   // </h3>
 *
 {% endcomment %}
-{% if include.id %}<h3 id="{{ include.id }}">{{ include.title }}<a href="#{{ include.id }}" class="heading-anchor" aria-hidden="true">#{{ include.id }}</a></h3>{% else %}<h3 id="{{ include.title | slugify }}">{{ include.title }}<a href="#{{ include.title | slugify }}" class="heading-anchor" aria-hidden="true">#{{ include.title | slugify }}</a></h3>{% endif %}
+{% capture heading_type %}
+    {% if include.type %}{{ include.type }}{% else %}h3{% endif %}
+{% endcapture %}
+{% capture heading_id %}
+    {% if include.id %}{{ include.id }}{% else %}{{ include.title | slugify }}{% endif %}
+{% endcapture %}
+<{{ heading_type }} id="{{ heading_id }}">
+    {{ include.title }}
+    <a href="#{{ heading_id }}" class="heading-anchor" aria-hidden="true">#{{ heading_id }}</a>
+</{{ heading_type }}>

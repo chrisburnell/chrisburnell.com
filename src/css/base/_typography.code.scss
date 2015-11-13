@@ -23,11 +23,11 @@ var,
     mark,
     samp,
     var {
+        @extend .rounded-thin;
         background-color: rgba($color-brand, opacity(medium));
         padding: .25rem;
         // force text to wrap inside the container
         word-wrap: break-word;
-        border-radius: $border-radius-thin;
     }
 
 pre {

@@ -417,7 +417,7 @@ a {
   will-change: background, color;
   position: relative;
   text-decoration: none; }
-  a:link {
+  a, a:link {
     color: #5f8aa6; }
   a:visited {
     color: #4b6f87; }
@@ -704,8 +704,7 @@ samp,
 var {
   background-color: rgba(95, 138, 166, 0.1);
   padding: .25rem;
-  word-wrap: break-word;
-  border-radius: 0.25rem; }
+  word-wrap: break-word; }
 
 pre {
   margin-top: 0;
@@ -1161,7 +1160,20 @@ aside figcaption {
       -ms-hyphens: auto;
           hyphens: auto; }
 
-.rounded, figure img,
+.border-radius, .round, .rounded, figure img,
 figure svg, blockquote, pre:not(.codepen), aside:not(.author), .banner, .edit, .author-image img {
   background-clip: padding-box;
   border-radius: 0.375rem; }
+
+.border-radius-thin, .round-thin, .rounded-thin, p code,
+ol code,
+ul code,
+dl code,
+blockquote code,
+ins,
+kbd,
+mark,
+samp,
+var {
+  background-clip: padding-box;
+  border-radius: thin; }

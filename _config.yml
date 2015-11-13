@@ -7,6 +7,7 @@ author:           Chris Burnell
 author_age:       25
 author_location:  London, UK
 author_email:     me@chrisburnell.com
+author_codepen:   chrisburnell
 author_twitter:   iamchrisburnell
 author_job_title: UI developer
 
@@ -45,4 +46,4 @@ incremental: true
 
 gems:
 - jekyll-redirect-from
-- jemoji
+# - jemoji

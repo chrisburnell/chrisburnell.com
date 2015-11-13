@@ -106,6 +106,32 @@
 
 
 ///
+/// Add a border-radius.
+///
+/// @param {String} $values - Values
+///
+/// @example scss - One parameter
+///   @include radius(color);
+///   // border-radius: color;
+///
+/// @throw Error if no parameters are passed.
+///
+@mixin border-radius($values...) {
+
+    @if( length($values) == 0 ) {
+        $values: #{$border-radius-default};
+    }
+    @else if( $values == "thin" ) {
+        $values: #{$border-radius-thin};
+    }
+
+    background-clip: padding-box;
+    border-radius: #{$values};
+
+}
+
+
+///
 /// Absolutely position an element.
 ///
 /// @param {String} $position - Position of the element

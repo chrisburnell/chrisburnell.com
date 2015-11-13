@@ -29,11 +29,11 @@ $spacing-small: ($wrapper-padding / 2) !default;
 /// @type Length
 $spacing-medium: $wrapper-padding !default;
 /// @type Length
-$spacing-large: 2.250rem !default;
+$spacing-large: 2.25rem !default;
 
 
 /// @type Length
-$border-default: 0.250rem !default;
+$border-default: 0.25rem !default;
 /// half of $border-default
 /// @type Length
 $border-thin: ($border-default / 2) !default;
@@ -94,9 +94,9 @@ $font-stack-heading: "league-gothic", Impact, sans-serif !default;
 /// @type Length
 $font-size-smaller: .8125rem !default;
 /// @type Length
-$font-size-small:   .875rem !default;
+$font-size-small: .875rem !default;
 /// @type Length
-$font-size-large:  1.25rem !default;
+$font-size-large: 1.25rem !default;
 /// @type Length
 $font-size-larger: 1.375rem !default;
 /// @type Map

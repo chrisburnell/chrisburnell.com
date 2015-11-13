@@ -79,6 +79,7 @@ h4 {
     @include will-change(background, color);
     position: relative;
     text-decoration: none;
+    &,
     &:link {
         color: $color-brand;
     }
