@@ -8,6 +8,7 @@ code[data-lang] {
     line-height: 2;
     &:before {
         @include absolute;
+        @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
@@ -20,7 +21,6 @@ code[data-lang] {
         font-weight: 600;
         line-height: $spacing-large;
         text-transform: uppercase;
-        border-radius: $border-radius-default $border-radius-default 0 0;
     }
 }
 
@@ -172,11 +172,11 @@ code[data-lang] {
         overflow-x: hidden;
         &:after {
             @include absolute(bottom);
+            @include border-radius(0 0 $border-radius-default $border-radius-default);
             content: "";
             background-image: gradient(transparent, $color-gray);
             height: ($spacing-medium * 4.2); // fade out over the last three lines
             display: block;
-            border-radius: 0 0 $border-radius-default $border-radius-default;
         }
     }
 

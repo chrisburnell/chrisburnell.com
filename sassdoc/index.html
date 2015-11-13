@@ -117,10 +117,10 @@ color: contrasting-color(#111111);
 // will-change: color, border;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>will-change() expects one or more parameters.</p></li></ul></section><section class="main__item container item" id="mixin-border-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-border-radius">border-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin border-radius($values) { 
 
     @if( length($values) == 0 ) {
-        $values: #{$border-radius-default};
+        $values: $border-radius-default;
     }
-    @else if( $values == &quot;thin&quot; ) {
-        $values: #{$border-radius-thin};
+    @else if( #{$values} == &quot;thin&quot; ) {
+        $values: $border-radius-thin;
     }
 
     background-clip: padding-box;

@@ -119,10 +119,10 @@
 @mixin border-radius($values...) {
 
     @if( length($values) == 0 ) {
-        $values: #{$border-radius-default};
+        $values: $border-radius-default;
     }
-    @else if( $values == "thin" ) {
-        $values: #{$border-radius-thin};
+    @else if( #{$values} == "thin" ) {
+        $values: $border-radius-thin;
     }
 
     background-clip: padding-box;

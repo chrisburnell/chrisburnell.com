@@ -1176,4 +1176,4 @@ mark,
 samp,
 var {
   background-clip: padding-box;
-  border-radius: thin; }
+  border-radius: 0.25rem; }
