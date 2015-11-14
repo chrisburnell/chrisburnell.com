@@ -2,6 +2,7 @@
     "name": "ChrisBurnell",
     "author": "Chris Burnell (@iamchrisburnell)",
     "version": "2.6.0",
+    "description": "Some real sweet codestuffs.",
     "license": "Creative Commons BY-NC-SA 4.0",
     "main": "gulpfile.js",
     "devDependencies": {

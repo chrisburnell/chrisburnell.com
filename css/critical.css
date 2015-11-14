@@ -367,7 +367,7 @@ html {
 html {
   background-color: #f9f9f9;
   color: #4f4f4f;
-  font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
+  font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -413,7 +413,7 @@ h4 {
 
 a {
   -webkit-transition: background 0.2s ease, color 0.2s ease;
-          transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   will-change: background, color;
   position: relative;
   text-decoration: none; }
@@ -816,7 +816,7 @@ aside figcaption {
     top: 0;
     left: 0;
     -webkit-transition: all 1s;
-            transition: all 1s;
+    transition: all 1s;
     will-change: transform;
     display: block; }
     @media (min-width: 769px) {
@@ -847,7 +847,7 @@ aside figcaption {
               transform: translateX(1.35rem) translateY(-1.35rem); } }
   .logo:active svg {
     -webkit-transition: all 0.2s ease;
-            transition: all 0.2s ease; }
+    transition: all 0.2s ease; }
     @media (min-width: 769px) {
       .logo:active svg {
         -webkit-transform: translateX(4rem) translateY(-2.5rem);
@@ -895,7 +895,9 @@ aside figcaption {
           margin-left: .25em; } }
   .nav-primary-list a {
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-            transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
     display: block;
@@ -960,7 +962,7 @@ aside figcaption {
   .title .title-link,
   .tagline .title-link {
     -webkit-transition: border-color 0.2s ease;
-            transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
     padding: 0 .5rem;

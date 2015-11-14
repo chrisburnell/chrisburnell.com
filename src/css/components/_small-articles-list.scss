@@ -85,6 +85,9 @@
         text-shadow: 0 1px 0 $color-white;
     }
 
+    .title {
+        margin-bottom: 0;
+    }
     a:hover .title,
     a:focus .title,
     a:active .title {
