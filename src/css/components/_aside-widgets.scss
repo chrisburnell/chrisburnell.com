@@ -8,11 +8,13 @@
     & + & {
         margin-top: $spacing-medium;
     }
+
     &:last-child {
         @include media("<=medium") {
             margin-bottom: $spacing-medium;
         }
     }
+
     @include media("<=medium") {
         margin-top: 0;
     }
@@ -28,6 +30,7 @@
     margin-top: $spacing-small;
     font-weight: 600;
     text-align: right;
+
     @include media("<=medium") {
         text-align: center;
     }

@@ -20,6 +20,7 @@
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
+
         @include media("<=small") {
             width: 6.5rem;
             display: inline-block;

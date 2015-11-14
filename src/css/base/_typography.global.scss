@@ -215,6 +215,7 @@ dl {
         padding-right: $spacing-medium;
         font-family: $font-stack-secondary;
         font-weight: 600;
+
         @include media(">small") {
             float: left;
         }
@@ -226,11 +227,13 @@ dl {
         margin: 0;
         overflow: hidden;
         vertical-align: top;
+
         @include media("<=small") {
             width: auto;
             display: block;
             margin-left: $spacing-medium;
         }
+
         &:not(:last-child) {
             padding-bottom: $spacing-medium;
         }

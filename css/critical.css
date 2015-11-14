@@ -1017,13 +1017,13 @@ aside figcaption {
   padding: 1.5rem 1rem;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   position: relative; }
-  .articles-list li:nth-child(odd) {
-    background-color: rgba(6, 6, 6, 0.05); }
   @media (max-width: 768px) {
     .articles-list li {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem;
       text-align: center; } }
+  .articles-list li:nth-child(odd) {
+    background-color: rgba(6, 6, 6, 0.05); }
 
 .articles-list .title,
 .articles-list .date,

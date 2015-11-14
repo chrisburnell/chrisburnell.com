@@ -12,13 +12,16 @@ aside {
         float: left;
         margin-left: -($aside-width + $spacing-large);
     }
+
     @include media("<=medium") {
         width: 100%;
+
         &:not(.author) {
             @extend .rounded;
             background: $color-black-low;
             padding: 1rem;
             margin-bottom: $spacing-medium;
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -28,6 +31,7 @@ aside {
     p,
     figcaption {
         clear: both;
+
         @include media(">small") {
             font-size: $font-size-small;
         }

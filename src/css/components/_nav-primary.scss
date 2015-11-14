@@ -8,6 +8,7 @@
     padding-top: $spacing-medium;
     padding-bottom: $spacing-medium;
     white-space: nowrap;
+
     @include media("<=small") {
         width: 100%;
         padding-top: $spacing-small;
@@ -18,9 +19,11 @@
         height: 3.75rem;
         // remove space between list items
         font-size: 0;
+
         @include media(">medium") {
             float: right;
         }
+
         @include media("<=medium") {
             text-align: center;
         }
@@ -29,15 +32,18 @@
             display: inline-block;
             // reset font-size
             font-size: 1rem;
+
             @include media(">medium") {
                 float: left;
             }
 
             & + li {
                 margin-left: 1em;
+
                 @include media("<=medium") {
                     margin-left: .5em;
                 }
+
                 @include media("<=small") {
                     margin-left: .25em;
                 }
@@ -64,6 +70,7 @@
             &:active {
                 transform: translateY(.2rem);
             }
+
             @include media("<=small") {
                 padding-left:  .5rem;
                 padding-right: .5rem;

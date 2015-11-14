@@ -11,9 +11,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+
     @include media("<=small") {
         flex-direction: column;
     }
+
     @include media(">small") {
         flex-direction: row;
         justify-content: center;
@@ -22,6 +24,7 @@
     button,
     .button {
         display: inline-block;
+
         @include media("<=small") {
             margin-left:  auto;
             margin-right: auto;
@@ -31,6 +34,7 @@
                 margin-top: 1rem;
             }
         }
+
         @include media(">small") {
             margin-left:  1rem;
             margin-right: 1rem;

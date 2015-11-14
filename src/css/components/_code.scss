@@ -9,6 +9,7 @@
 code[data-lang] {
     padding-top: $spacing-large;
     line-height: 2;
+
     &:before {
         @include absolute;
         @include border-radius($border-radius-default $border-radius-default 0 0);
@@ -63,6 +64,7 @@ code[data-lang] {
     &:not(:checked) + .highlight pre {
         max-height: ($spacing-medium * 10); // limit to five lines of code
         overflow-x: hidden;
+
         &:after {
             @include absolute(bottom);
             @include border-radius(0 0 $border-radius-default $border-radius-default);

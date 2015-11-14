@@ -12,16 +12,20 @@
     &:active {
         text-decoration: none;
     }
+
     @include media(">small") {
         height: 6.25rem;
         float: left;
     }
+
     @include media(">medium") {
         width: $aside-width;
     }
+
     @include media("<=medium") {
         width: 7rem;
     }
+
     @include media("<=small") {
         height: 5.625rem;
     }
@@ -31,11 +35,13 @@
         @include transition(all 1s);
         @include will-change(transform);
         display: block;
+
         @include media(">medium") {
             width:  8.5rem;
             height: 8.5rem;
             transform: translateX(3.75rem) translateY(-3.25rem);
         }
+
         @include media("<=medium") {
             width:  7rem;
             height: 7rem;
@@ -47,15 +53,18 @@
         @include media(">medium") {
             transform: translateX(4rem) translateY(-3rem);
         }
+
         @include media("<=medium") {
             transform: translateX(1.35rem) translateY(-1.35rem);
         }
     }
     &:active svg {
         @include transition;
+
         @include media(">medium") {
             transform: translateX(4rem) translateY(-2.5rem);
         }
+
         @include media("<=medium") {
             transform: translateX(1.5rem) translateY(-1rem);
         }

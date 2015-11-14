@@ -9,13 +9,16 @@
     font-family: $font-stack-secondary;
     font-weight: 600;
     line-height: 1;
+
     @include media(">medium") {
         float: right;
     }
+
     @include media("<=medium") {
         display: block;
         margin-top: $spacing-medium;
     }
+
     &:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";
@@ -25,6 +28,7 @@
 // Appears only on article pages
 .comments {
     text-align: center;
+
     @include media(">medium") {
         .pagination + & {
             padding-top: $spacing-large;

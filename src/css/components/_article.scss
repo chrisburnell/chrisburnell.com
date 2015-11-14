@@ -7,6 +7,7 @@
 .tagline {
     width: 100%;
     margin-bottom: $spacing-large;
+
     @include media("<=medium") {
         text-align: left;
     }
@@ -32,6 +33,7 @@
     @extend .rounded;
     width: 810px;
     margin-bottom: $spacing-medium;
+
     @include media("<=small") {
         width: 500px;
     }
@@ -41,9 +43,11 @@
     margin-bottom: $spacing-medium;
     font-size: $font-size-large;
     line-height: 1.5;
+
     @include media("<=medium") {
         text-align: left;
     }
+
     @include media(">medium") {
         // align text to the `aside`
         margin-top: -0.5rem;
@@ -52,6 +56,7 @@
             margin-top: 0;
         }
     }
+
     &--featured {
         @extend .lede;
         max-width: 24em;

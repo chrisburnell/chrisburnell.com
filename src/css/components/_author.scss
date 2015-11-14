@@ -9,6 +9,7 @@
  */
 /*aside*/.author {
     font-family: $font-stack-secondary;
+
     @include media("<=medium") {
         display: flex;
         flex-direction: column;
@@ -24,6 +25,7 @@
         font-size: $font-size-small;
         font-style: italic;
         line-height: 1.429;
+
         @include media("<=medium") {
             order: 997;
             padding-top: $spacing-large;
@@ -88,6 +90,7 @@
         @include media(">medium") {
             margin-bottom: $spacing-medium;
         }
+
         @include media("<=medium") {
             order: 998;
         }

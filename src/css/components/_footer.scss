@@ -6,6 +6,7 @@
 .copyright,
 .nav-tertiary {
     overflow: hidden;
+
     @include media("<=medium") {
         width: 100%;
         text-align: center;
@@ -43,6 +44,7 @@
     &:active {
         transform: translateY(.143rem);
     }
+
     @include media("<=small") {
         margin-right: .5rem;
     }
@@ -69,6 +71,7 @@
 
 .footer-spacer {
     color: $color-text-alt;
+
     @include media("<=small") {
         display: none;
     }

@@ -11,13 +11,15 @@
         padding: 1.5rem 1rem;
         border-top: $border-thin solid $color-black-medium;
         position: relative;
-        &:nth-child(odd) {
-            background-color: $color-black-low;
-        }
+
         @include media("<=medium") {
             padding-top:    1.875rem;
             padding-bottom: 1.875rem;
             text-align: center;
+        }
+
+        &:nth-child(odd) {
+            background-color: $color-black-low;
         }
     }
 
@@ -35,11 +37,13 @@
     .date {
         @extend %delta;
         margin-bottom: $spacing-small;
+
         &:before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
             color: $color-text-alt;
         }
+
         @include media("<=medium") {
             text-align: left;
         }

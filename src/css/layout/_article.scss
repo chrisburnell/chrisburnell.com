@@ -9,9 +9,11 @@
 article {
     padding-top: $spacing-large;
     border-top: $border-default solid $color-brand;
+
     @include media(">medium") {
         padding-left: ($aside-width + $spacing-large);
     }
+
     @include media("<=medium") {
         // Below the medium breakpoint, `article`, `articles-list`, and `aside`
         // become full width.

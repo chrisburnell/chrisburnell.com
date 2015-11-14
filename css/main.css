@@ -1158,13 +1158,13 @@ footer {
   padding: 1.5rem 1rem;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   position: relative; }
-  .articles-list li:nth-child(odd) {
-    background-color: rgba(6, 6, 6, 0.05); }
   @media (max-width: 768px) {
     .articles-list li {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem;
       text-align: center; } }
+  .articles-list li:nth-child(odd) {
+    background-color: rgba(6, 6, 6, 0.05); }
 
 .articles-list .title,
 .articles-list .date,
@@ -1612,6 +1612,9 @@ footer {
     font-size: 1.25rem;
     font-style: italic; }
 
+/**
+ * Highlighted Code Blocks
+ */
 code[data-lang] {
   padding-top: 2.25rem;
   line-height: 2; }
@@ -1635,6 +1638,9 @@ code[data-lang] {
     line-height: 2.25rem;
     text-transform: uppercase; }
 
+/**
+ * Highlighted Code Block Labels
+ */
 .language-css:before {
   background-color: #016fba; }
 
@@ -1652,6 +1658,45 @@ code[data-lang] {
 
 .language-scss:before {
   background-color: #c6538c; }
+
+/**
+ * Code Block Visibility Toggling
+ */
+.code-toggle {
+  position: relative; }
+
+.code-toggle-button {
+  position: absolute;
+  top: 6.25rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+  .code-toggle-button:active {
+    -webkit-transform: translateX(-50%) translateY(0.182em);
+        -ms-transform: translateX(-50%) translateY(0.182em);
+            transform: translateX(-50%) translateY(0.182em); }
+  .code-toggle-input:checked ~ .code-toggle-button {
+    display: none; }
+
+.code-toggle-input:not(:checked) + .highlight pre {
+  max-height: 12.5rem;
+  overflow-x: hidden; }
+  .code-toggle-input:not(:checked) + .highlight pre:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-clip: padding-box;
+    border-radius: 0 0 0.375rem 0.375rem;
+    content: "";
+    background-image: -webkit-linear-gradient(top, transparent 0%, #ededed 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #ededed 100%);
+    height: 5.25rem;
+    display: block; }
+
+.code-toggle-input:checked ~ .code-toggle-button {
+  display: none; }
 
 /**
  * Github-style Code Highlighting
@@ -1738,45 +1783,6 @@ code[data-lang] {
   .highlight .ss {
     color: slateblue;
     color: rebeccapurple; }
-
-/**
- * Code Block Visibility Toggling
- */
-.code-toggle {
-  position: relative; }
-
-.code-toggle-button {
-  position: absolute;
-  top: 6.25rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
-  .code-toggle-button:active {
-    -webkit-transform: translateX(-50%) translateY(0.182em);
-        -ms-transform: translateX(-50%) translateY(0.182em);
-            transform: translateX(-50%) translateY(0.182em); }
-  .code-toggle-input:checked ~ .code-toggle-button {
-    display: none; }
-
-.code-toggle-input:not(:checked) + .highlight pre {
-  max-height: 12.5rem;
-  overflow-x: hidden; }
-  .code-toggle-input:not(:checked) + .highlight pre:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-clip: padding-box;
-    border-radius: 0 0 0.375rem 0.375rem;
-    content: "";
-    background-image: -webkit-linear-gradient(top, transparent 0%, #ededed 100%);
-    background-image: linear-gradient(to bottom, transparent 0%, #ededed 100%);
-    height: 5.25rem;
-    display: block; }
-
-.code-toggle-input:checked ~ .code-toggle-button {
-  display: none; }
 
 .icon {
   -webkit-transition: all 0.2s ease;
