@@ -3,6 +3,9 @@
 /// @group components
 ////
 
+/**
+ * Highlighted Code Blocks
+ */
 code[data-lang] {
     padding-top: $spacing-large;
     line-height: 2;
@@ -24,11 +27,54 @@ code[data-lang] {
     }
 }
 
+/**
+ * Highlighted Code Block Labels
+ */
 @each $language in $coding-languages {
     $name:  nth($language, 1);
     $color: nth($language, 2);
     &.language-#{$name}:before {
         background-color: #{$color};
+    }
+}
+
+/**
+ * Code Block Visibility Toggling
+ */
+.code-toggle {
+    position: relative;
+}
+
+.code-toggle-button {
+    position: absolute;
+    top: ($spacing-medium * 5); // center in the code block
+    left: 50%;
+    transform: translateX(-50%);
+    &:active {
+        transform: translateX(-50%) translateY(.182em);
+    }
+
+    .code-toggle-input:checked ~ & {
+        display: none;
+    }
+}
+
+.code-toggle-input {
+    &:not(:checked) + .highlight pre {
+        max-height: ($spacing-medium * 10); // limit to five lines of code
+        overflow-x: hidden;
+        &:after {
+            @include absolute(bottom);
+            @include border-radius(0 0 $border-radius-default $border-radius-default);
+            content: "";
+            background-image: gradient(transparent, $color-gray);
+            height: ($spacing-medium * 4.2); // fade out over the last three lines
+            display: block;
+        }
+    }
+
+    &:checked ~ .code-toggle-button {
+        display: none;
     }
 }
 
@@ -142,45 +188,5 @@ code[data-lang] {
     .ss {                               // Literal - String Symbol
         color: slateblue;
         color: rebeccapurple;
-    }
-}
-
-/**
- * Code Block Visibility Toggling
- */
-.code-toggle {
-    position: relative;
-}
-
-.code-toggle-button {
-    position: absolute;
-    top: ($spacing-medium * 5); // center in the code block
-    left: 50%;
-    transform: translateX(-50%);
-    &:active {
-        transform: translateX(-50%) translateY(.182em);
-    }
-
-    .code-toggle-input:checked ~ & {
-        display: none;
-    }
-}
-
-.code-toggle-input {
-    &:not(:checked) + .highlight pre {
-        max-height: ($spacing-medium * 10); // limit to five lines of code
-        overflow-x: hidden;
-        &:after {
-            @include absolute(bottom);
-            @include border-radius(0 0 $border-radius-default $border-radius-default);
-            content: "";
-            background-image: gradient(transparent, $color-gray);
-            height: ($spacing-medium * 4.2); // fade out over the last three lines
-            display: block;
-        }
-    }
-
-    &:checked ~ .code-toggle-button {
-        display: none;
     }
 }

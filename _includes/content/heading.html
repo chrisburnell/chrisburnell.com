@@ -14,12 +14,8 @@
 *   // </h3>
 *
 {% endcomment %}
-{% capture heading_type %}
-    {% if include.type %}{{ include.type }}{% else %}h3{% endif %}
-{% endcapture %}
-{% capture heading_id %}
-    {% if include.id %}{{ include.id }}{% else %}{{ include.title | slugify }}{% endif %}
-{% endcapture %}
+{% capture heading_type %}{% if include.type %}{{ include.type }}{% else %}h3{% endif %}{% endcapture %}
+{% capture heading_id %}{% if include.id %}{{ include.id }}{% else %}{{ include.title | slugify }}{% endif %}{% endcapture %}
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
     <a href="#{{ heading_id }}" class="heading-anchor" aria-hidden="true">#{{ heading_id }}</a>
