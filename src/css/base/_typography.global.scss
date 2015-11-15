@@ -115,7 +115,13 @@ a {
 }
 
 .heading-anchor {
-    color: $color-text-alt;
+    &,
+    &:link {
+        color: $color-text-alt;
+    }
+    &:visited {
+        color: darken($color-text-alt, 10%);
+    }
     display: none;
     padding-left: $spacing-medium;
     font-family: $font-stack-code;

@@ -440,7 +440,6 @@ h3 a:active {
   color: #5f8aa6; }
 
 .heading-anchor {
-  color: #737373;
   display: none;
   padding-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
@@ -450,6 +449,10 @@ h3 a:active {
   text-transform: lowercase;
   text-shadow: none;
   vertical-align: middle; }
+  .heading-anchor, .heading-anchor:link {
+    color: #737373; }
+  .heading-anchor:visited {
+    color: #5a5a5a; }
   :hover > .heading-anchor,
   :focus > .heading-anchor,
   :active > .heading-anchor {
