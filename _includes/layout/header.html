@@ -30,6 +30,15 @@ snippet of code on a project of your own. -->
 
 {% include head/head.html %}
 
+{% capture body_class %}
+    {% for class in page.page_class %}
+        {{ class }}
+    {% endfor %}
+    {% if page.categories contains 'article' %}page-article{% endif %}
+    {% if page.categories contains 'pen' %}page-pen{% endif %}
+{% endcapture %}
+{% assign body_class_array = body_class | split: ' ' %}
+
 <body{% if body_class != "" %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
     {% include components/svg.html %}
