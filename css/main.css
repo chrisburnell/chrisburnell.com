@@ -1641,22 +1641,22 @@ code[data-lang] {
  * Highlighted Code Block Labels
  */
 .language-css:before {
-  background-color: #016fba; }
+  background-color: #016fba !important; }
 
 .language-haml:before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-html:before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-javascript:before {
-  background-color: #f1c54c; }
+  background-color: #f1c54c !important; }
 
 .language-sass:before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 .language-scss:before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 /**
  * Code Block Visibility Toggling
