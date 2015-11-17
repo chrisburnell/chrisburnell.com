@@ -1,15 +1,19 @@
 - title: CodePen
   rel: 'me publisher external'
+  url: '{{ site.url_codepen }}'
 
 - title: GitHub
   rel: 'me publisher external'
+  url: '{{ site.url_github }}'
 
 - title: Twitter
   rel: 'me publisher external'
+  url: '{{ site.url_twitter }}'
 
 - title: LastFM
   rel: 'me publisher external'
+  url: '{{ site.url_lastfm }}'
 
 - title: RSS
-  url: '/feed.xml'
   rel: 'me author'
+  url: '/feed.xml'
