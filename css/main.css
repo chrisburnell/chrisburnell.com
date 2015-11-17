@@ -367,7 +367,7 @@ html {
 html {
   background-color: #f9f9f9;
   color: #4f4f4f;
-  font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
+  font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -413,7 +413,7 @@ h4 {
 
 a {
   -webkit-transition: background 0.2s ease, color 0.2s ease;
-  transition: background 0.2s ease, color 0.2s ease;
+          transition: background 0.2s ease, color 0.2s ease;
   will-change: background, color;
   position: relative;
   text-decoration: none; }
@@ -728,7 +728,7 @@ pre {
 button, .button,
 .button--small {
   -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
+          transition: background-color 0.2s ease;
   will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
   background-color: #5f8aa6;
   min-width: 8em;
@@ -823,7 +823,7 @@ input[type="text"],
 input[type="week"],
 textarea {
   -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
   will-change: background-color, border-color;
   box-sizing: inherit !important;
   padding: .5rem;
@@ -960,7 +960,7 @@ footer {
     top: 0;
     left: 0;
     -webkit-transition: all 1s;
-    transition: all 1s;
+            transition: all 1s;
     will-change: transform;
     display: block; }
     @media (min-width: 769px) {
@@ -991,7 +991,7 @@ footer {
               transform: translateX(1.35rem) translateY(-1.35rem); } }
   .logo:active svg {
     -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease; }
+            transition: all 0.2s ease; }
     @media (min-width: 769px) {
       .logo:active svg {
         -webkit-transform: translateX(4rem) translateY(-2.5rem);
@@ -1039,9 +1039,7 @@ footer {
           margin-left: .25em; } }
   .nav-primary-list a {
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+            transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
     display: block;
@@ -1106,7 +1104,7 @@ footer {
   .title .title-link,
   .tagline .title-link {
     -webkit-transition: border-color 0.2s ease;
-    transition: border-color 0.2s ease;
+            transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
     padding: 0 .5rem;
@@ -1272,7 +1270,7 @@ footer {
     font-size: 0.875rem; }
   .small-articles-list svg {
     -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+            transition: all 0.2s ease;
     will-change: opacity;
     opacity: 0.05;
     width: 6.25em !important;
@@ -1531,9 +1529,7 @@ footer {
 
 .footer-home-link {
   -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+          transition: transform 0.2s ease;
   will-change: transform;
   width: 50px;
   height: 50px;
@@ -1628,7 +1624,7 @@ code[data-lang] {
     background-clip: padding-box;
     border-radius: 0.375rem 0.375rem 0 0;
     -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+            transition: all 0.2s ease;
     content: attr(data-lang);
     background-color: #737373;
     color: #f9f9f9;
@@ -1789,7 +1785,7 @@ code[data-lang] {
 
 .icon {
   -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+          transition: all 0.2s ease;
   will-change: opacity, transform;
   opacity: 0.7;
   height: 40px;

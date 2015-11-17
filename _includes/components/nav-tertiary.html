@@ -8,7 +8,7 @@
             {% assign url = site.link_slug %}
         {% endif %}
         <li>
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} class="icon  link--{{ link.title | slugify }}"{% if url %} href="{{ url }}"{% endif %} title="{{ link.title }}">
+            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} class="icon  link--{{ link.title | slugify }}"{% if url %} href="{{ url | liquify }}"{% endif %} title="{{ link.title }}">
                 <svg><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
             </a>
         </li>

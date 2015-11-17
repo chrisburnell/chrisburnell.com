@@ -115,13 +115,6 @@ a {
 }
 
 .heading-anchor {
-    &,
-    &:link {
-        color: $color-text-alt;
-    }
-    &:visited {
-        color: darken($color-text-alt, 10%);
-    }
     display: none;
     padding-left: $spacing-medium;
     font-family: $font-stack-code;
@@ -131,6 +124,13 @@ a {
     text-transform: lowercase;
     text-shadow: none;
     vertical-align: middle;
+    &,
+    &:link {
+        color: $color-text-alt;
+    }
+    &:visited {
+        color: darken($color-text-alt, 10%);
+    }
     :hover > &,
     :focus > &,
     :active > & {

@@ -88,7 +88,8 @@
 
     {% if page.page_class contains 'page-home' %}
         {% include main-aside/widgets/featured-pens.html %}
-    {% elsif page.layout == 'article' %}
+    {% endif %}
+    {% if page.layout == 'article' %}
         {% include main-aside/widgets/related-articles.html %}
     {% endif %}
 

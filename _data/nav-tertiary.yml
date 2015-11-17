@@ -1,18 +1,18 @@
 - title: CodePen
   rel: 'me publisher external'
-  url: '{{ site.url_codepen }}'
+  url: 'http://codepen.io/chrisburnell'
 
 - title: GitHub
   rel: 'me publisher external'
-  url: '{{ site.url_github }}'
+  url: 'https://github.com/chrisburnell'
 
 - title: Twitter
   rel: 'me publisher external'
-  url: '{{ site.url_twitter }}'
+  url: 'https://twitter.com/iamchrisburnell'
 
 - title: LastFM
   rel: 'me publisher external'
-  url: '{{ site.url_lastfm }}'
+  url: 'http://last.fm/user/chrisburnell'
 
 - title: RSS
   rel: 'me author'

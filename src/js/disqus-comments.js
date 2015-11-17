@@ -6,6 +6,8 @@
 
 (function () {
 
+    "use strict";
+
     var commentsSection = document.querySelector('#comments');
     var commentsButton  = document.querySelector('#show-comments-button');
     var commentsHash    = ['#comment', '#disqus_thread'];
