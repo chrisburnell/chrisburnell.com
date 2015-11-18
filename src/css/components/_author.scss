@@ -14,6 +14,7 @@
         display: flex;
         flex-direction: column;
         order: 999;
+
         .page-about & {
             margin-top: $spacing-medium;
         }
@@ -46,11 +47,13 @@
     }
 
     .author-image {
+        // 100px
         width:  6.25rem;
+        // 100px
         height: 6.25rem;
         display: inline-block;
         float: left;
-        margin-right: .625rem;
+        margin-right: $spacing-small;
 
         img {
             @extend .rounded;

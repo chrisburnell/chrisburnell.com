@@ -9,14 +9,14 @@
         margin-top: $spacing-medium;
     }
 
+    @include media("<=medium") {
+        margin-top: 0;
+    }
+
     &:last-child {
         @include media("<=medium") {
             margin-bottom: $spacing-medium;
         }
-    }
-
-    @include media("<=medium") {
-        margin-top: 0;
     }
 }
 
