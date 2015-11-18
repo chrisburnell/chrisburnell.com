@@ -16,9 +16,9 @@
         @include transition(border-color);
         @include will-change(color, border-bottom-color);
         display: inline-block;
-        padding: 0 .5rem;
-        border-bottom: .1825rem solid transparent;
-        margin-left: -0.5rem;
+        padding: 0 $spacing-medium;
+        border-bottom: $border-thin solid transparent;
+        margin-left: -$spacing-medium;
         &:hover,
         &:focus,
         &:active {
@@ -35,7 +35,7 @@
     margin-bottom: $spacing-medium;
 
     @include media("<=small") {
-        width: 500px;
+        width: $wrapper-width-small;
     }
 }
 
@@ -50,19 +50,19 @@
 
     @include media(">medium") {
         // align text to the `aside`
-        margin-top: -0.5rem;
+        margin-top: -$spacing-medium;
+
         // except where a banner occurs first
         .banner + & {
             margin-top: 0;
         }
     }
-
-    &--featured {
-        @extend .lede;
-        max-width: 24em;
-        // 26px
-        font-size: 1.625rem;
-    }
+}
+.lede--featured {
+    @extend .lede;
+    max-width: 24em;
+    // 26px
+    font-size: 1.625rem;
 }
 
 .lede-terminology {
