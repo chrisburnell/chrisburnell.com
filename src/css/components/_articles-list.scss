@@ -38,14 +38,14 @@
         @extend %delta;
         margin-bottom: $spacing-small;
 
-        @include media("<=medium") {
-            text-align: left;
-        }
-
         &:before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
             color: $color-text-alt;
+        }
+
+        @include media("<=medium") {
+            text-align: left;
         }
     }
 }

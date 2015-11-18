@@ -75,18 +75,16 @@ $color-gray: #ededed !default;
 $color-black-low: rgba($color-black, map-get($opacities, "low")) !default;
 /// @type Color
 $color-black-medium: rgba($color-black, map-get($opacities, "medium")) !default;
-/// @type Color
-$color-canada: #fd1b00 !default;
 
 
 /// @type Length
-$font-size-default: 100% !default;
+$base-font-size: 100% !default;
 /// @type Number
-$line-height-default: 1.875 !default;
+$base-line-height: 1.875 !default;
 /// @type String
-$font-style-default: normal !default;
+$base-font-style: normal !default;
 /// @type String
-$font-weight-default: 400 !default;
+$base-font-weight: 400 !default;
 /// @type List
 $font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// @type List

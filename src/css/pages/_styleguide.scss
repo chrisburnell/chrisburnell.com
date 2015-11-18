@@ -16,8 +16,7 @@
         font-family: $font-stack-code;
         font-size: $font-size-small;
         font-weight: 600;
-        // 6.5 / $font-size-small
-        line-height: 7.429;
+        line-height: 7.429; // 6.5 / $font-size-small
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;

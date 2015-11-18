@@ -6,7 +6,7 @@
 html {
     background-color: $color-white;
     color: $color-text;
-    font: $font-weight-default $font-style-default #{$font-size-default}/#{$line-height-default} $font-stack-primary;
+    font: $base-font-weight $base-font-style #{$base-font-size}/#{$base-line-height} $font-stack-primary;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
 }
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.625rem;
     text-transform: uppercase;
     // 3px 3px
-    text-shadow: .0715em .0715em 0 $color-black-low; // 3px 3px
+    text-shadow: .0715em .0715em 0 $color-black-low;
 }
 h1 {
     @extend %alpha;
@@ -60,7 +60,6 @@ h3 {
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
-
     code {
         text-transform: none;
     }
@@ -92,14 +91,12 @@ h4 {
     &:active {
         text-decoration: underline;
     }
-
     span:not([class]):not([itemprop]) {
         @extend .hidden;
     }
 }
 a {
     @extend %anchor;
-
     h2 &,
     h3 & {
         &:link,
@@ -134,7 +131,6 @@ a {
     &:visited {
         color: darken($color-text-alt, 10%);
     }
-
     :hover > &,
     :focus > &,
     :active > & {
@@ -155,11 +151,9 @@ a {
 
 p {
     margin: 0 0 $spacing-medium;
-
     &:last-child {
         margin-bottom: 0;
     }
-
     &:empty {
         @extend .removed;
     }
@@ -178,11 +172,9 @@ ul:not([class]),
         padding-left: $spacing-large;
         margin-bottom: $spacing-small;
         position: relative;
-
         &:last-child {
             margin-bottom: $spacing-medium;
         }
-
         &:before {
             @include absolute;
             font-family: $font-stack-secondary;
@@ -202,7 +194,6 @@ ol.default-list {
 
     li {
         counter-increment: ordered-list;
-
         &:before {
             content: counter(ordered-list) ".";
         }
@@ -219,7 +210,6 @@ ul.default-list li:before {
 dl {
     width: 100%;
     overflow: hidden;
-
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
@@ -264,7 +254,6 @@ a img {
 }
 figure {
     margin: 0 0 $spacing-medium;
-
     &:not(.highlight) {
         text-align: center;
     }
@@ -288,7 +277,6 @@ blockquote {
     background-color: rgba($color-brand, opacity(medium));
     padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
-
     @include media("<=small") {
         margin-right: $spacing-medium;
         margin-left:  $spacing-medium;
@@ -296,12 +284,10 @@ blockquote {
 
     p {
         margin-bottom: 0 !important;
-
         &:before {
             content: open-quote;
             padding-right: .1875rem;
         }
-
         &:after {
             content: close-quote;
             padding-left: .1875rem;
@@ -312,7 +298,6 @@ blockquote {
         display: block;
         margin-left: $spacing-large;
         margin-top: $spacing-medium;
-
         &:before {
             // HYPHEN, NO-BREAK SPACE
             content: "‐ ";
@@ -375,5 +360,5 @@ iframe {
     color: $color-white;
 }
 .canada::selection {
-    background-color: $color-canada;
+    background-color: red;
 }

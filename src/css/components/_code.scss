@@ -19,7 +19,7 @@ code[data-lang] {
         color: $color-white;
         width: 100%;
         display: block;
-        padding: 0 $spacing-medium;
+        padding: 0 1.5rem;
         font-family: $font-stack-secondary;
         font-size: $font-size-large;
         font-weight: 600;
@@ -48,8 +48,7 @@ code[data-lang] {
 
 .code-toggle-button {
     position: absolute;
-    // center in the code block
-    top: ($spacing-medium * 5);
+    top: ($spacing-medium * 5); // center in the code block
     left: 50%;
     transform: translateX(-50%);
     &:active {
@@ -63,8 +62,7 @@ code[data-lang] {
 
 .code-toggle-input {
     &:not(:checked) + .highlight pre {
-        // limit to five lines of code
-        max-height: ($spacing-medium * 10);
+        max-height: ($spacing-medium * 10); // limit to five lines of code
         overflow-x: hidden;
 
         &:after {
@@ -72,8 +70,7 @@ code[data-lang] {
             @include border-radius(0 0 $border-radius-default $border-radius-default);
             content: "";
             background-image: gradient(transparent, $color-gray);
-            // fade out over the last three lines
-            height: ($spacing-medium * 4.2);
+            height: ($spacing-medium * 4.2); // fade out over the last three lines
             display: block;
         }
     }
