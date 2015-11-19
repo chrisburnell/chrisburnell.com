@@ -7,11 +7,13 @@
 ///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
-/// Relies on defaults `all`, `$transition-time`, and `$transtion-function`.
 ///
 /// @author Chris Burnell
 ///
 /// @param {String} $values - Values
+///
+/// @require {Variable} $transition-time
+/// @require {Variable} $transition-function
 ///
 /// @example scss - Zero parameters
 ///   @include transition();
@@ -109,6 +111,9 @@
 /// Add a border-radius.
 ///
 /// @param {String} $values - Values
+///
+/// @require {Variable} $border-radius-default
+/// @require {Variable} $border-radius-thin
 ///
 /// @example scss - One parameter
 ///   @include radius(color);
