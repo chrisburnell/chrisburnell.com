@@ -113,15 +113,15 @@ gulp.task('css-sassdoc', function() {
 
 // Minify JS
 gulp.task('js-main', function() {
-    return gulp.src(['!' + paths.src.js + 'loadcss.js',
-                     '!' + paths.src.js + 'serviceworker.js',
-                     paths.src.js + '*.js'])
+    return gulp.src(['!' + paths.src.js + '**/loadcss.js',
+                     '!' + paths.src.js + '**/serviceworker.js',
+                     '!' + paths.src.js + '**/typekit.js',
+                     paths.src.js + '**/*.js'])
         .pipe(plumber())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(paths.dist.js))
         .pipe(uglify({
-            mangle: false,
-            preserveComments: 'some'
+            mangle: false
         }))
         .pipe(rename({
             suffix: '.min'
@@ -136,11 +136,10 @@ gulp.task('js-main', function() {
 
 // Generate inline LoadCSS include
 gulp.task('js-loadcss', function() {
-    return gulp.src([paths.src.js + 'loadcss.js'])
+    return gulp.src([paths.src.js + 'vendors/loadcss.js'])
         .pipe(plumber())
         .pipe(uglify({
-            mangle: false,
-            preserveComments: 'some'
+            mangle: false
         }))
         .pipe(rename({
             basename: "loadcss",
@@ -159,8 +158,7 @@ gulp.task('js-serviceworker', function() {
     return gulp.src([paths.src.js + 'serviceworker.js'])
         .pipe(plumber())
         .pipe(uglify({
-            mangle: false,
-            preserveComments: 'some'
+            mangle: false
         }))
         .pipe(rename({
             suffix: '.min'
@@ -169,6 +167,25 @@ gulp.task('js-serviceworker', function() {
         .pipe(notify({
             title: 'gulp',
             message: 'Service Worker JS compiled.',
+            onLast: true
+        }));
+});
+
+// Generate inline LoadCSS include
+gulp.task('js-typekit', function() {
+    return gulp.src([paths.src.js + 'vendors/typekit.js'])
+        .pipe(plumber())
+        .pipe(uglify({
+            mangle: false
+        }))
+        .pipe(rename({
+            basename: "typekit",
+            extname: ".html"
+        }))
+        .pipe(gulp.dest(paths.includes + 'generated/'))
+        .pipe(notify({
+            title: 'gulp',
+            message: 'Typekit JS compiled.',
             onLast: true
         }));
 });
@@ -193,6 +210,7 @@ gulp.task('js', function() {
     gulp.start('js-main');
     gulp.start('js-loadcss');
     gulp.start('js-serviceworker');
+    gulp.start('js-typekit');
 });
 
 // -----------------------------------------------------------------------------

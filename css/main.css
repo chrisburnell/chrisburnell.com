@@ -681,10 +681,10 @@ iframe {
   color: #f9f9f9; }
 
 .canada::-moz-selection {
-  background-color: red; }
+  background-color: #fd1b00; }
 
 .canada::selection {
-  background-color: red; }
+  background-color: #fd1b00; }
 
 code,
 kbd,
@@ -717,7 +717,7 @@ pre {
     text-align: left; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
-    padding: 1.5rem 1.5rem 1rem;
+    padding: 1.25rem 1.25rem 1rem;
     overflow-x: auto;
     overflow-y: hidden;
     line-height: 1.5; }
@@ -1109,9 +1109,9 @@ footer {
     transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
-    padding: 0 .5rem;
-    border-bottom: .1825rem solid transparent;
-    margin-left: -0.5rem; }
+    padding: 0 1.25rem;
+    border-bottom: 0.125rem solid transparent;
+    margin-left: -1.25rem; }
     .title .title-link:hover, .title .title-link:focus, .title .title-link:active,
     .tagline .title-link:hover,
     .tagline .title-link:focus,
@@ -1134,9 +1134,10 @@ footer {
   @media (max-width: 768px) {
     .lede, .lede--featured {
       text-align: left; } }
-  .lede--featured {
-    max-width: 24em;
-    font-size: 1.625rem; }
+
+.lede--featured {
+  max-width: 24em;
+  font-size: 1.625rem; }
 
 .lede-terminology {
   padding-bottom: 1.25rem;
@@ -1174,12 +1175,12 @@ footer {
 
 .articles-list .date {
   margin-bottom: 0.625rem; }
-  .articles-list .date:before {
-    content: "– ";
-    color: #737373; }
   @media (max-width: 768px) {
     .articles-list .date {
       text-align: left; } }
+  .articles-list .date:before {
+    content: "– ";
+    color: #737373; }
 
 .small-articles-list {
   display: -webkit-box;
@@ -1441,7 +1442,7 @@ footer {
   height: 6.25rem;
   display: inline-block;
   float: left;
-  margin-right: .625rem; }
+  margin-right: 0.625rem; }
   .author-image img {
     background-image: -webkit-linear-gradient(bottom left, transparent 0%, #99c0e2 100%), -webkit-linear-gradient(top right, transparent 0%, #9d858b 100%), -webkit-linear-gradient(top left, transparent 0%, #5990ad 100%), -webkit-linear-gradient(bottom right, transparent 0%, #89634f 100%);
     background-image: linear-gradient(to top right, transparent 0%, #99c0e2 100%), linear-gradient(to bottom left, transparent 0%, #9d858b 100%), linear-gradient(to bottom right, transparent 0%, #5990ad 100%), linear-gradient(to top left, transparent 0%, #89634f 100%);
@@ -1483,12 +1484,12 @@ footer {
   margin-top: 1.25rem; }
 
 @media (max-width: 768px) {
-  .widget:last-child {
-    margin-bottom: 1.25rem; } }
-
-@media (max-width: 768px) {
   .widget {
     margin-top: 0; } }
+
+@media (max-width: 768px) {
+  .widget:last-child {
+    margin-bottom: 1.25rem; } }
 
 .widget-title {
   margin-top: 0; }
@@ -1532,7 +1533,7 @@ footer {
   will-change: transform;
   width: 50px;
   height: 50px;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
   overflow: hidden;
   vertical-align: middle;
   text-indent: 100%;
@@ -1540,12 +1541,12 @@ footer {
   .footer-home-link:hover, .footer-home-link:focus, .footer-home-link:active {
     text-decoration: none; }
   .footer-home-link:active {
-    -webkit-transform: translateY(0.143rem);
-        -ms-transform: translateY(0.143rem);
-            transform: translateY(0.143rem); }
+    -webkit-transform: translateY(0.2rem);
+        -ms-transform: translateY(0.2rem);
+            transform: translateY(0.2rem); }
   @media (max-width: 500px) {
     .footer-home-link {
-      margin-right: .5rem; } }
+      margin-right: 1.25rem; } }
   .footer-home-link svg {
     width: 100%;
     height: 100%;
@@ -1573,7 +1574,7 @@ footer {
 
 @media (max-width: 768px) {
   .nav-tertiary {
-    margin-top: .625rem; } }
+    margin-top: 1.25rem; } }
 
 .nav-tertiary-list li {
   display: inline-block; }
@@ -1629,7 +1630,7 @@ code[data-lang] {
     color: #f9f9f9;
     width: 100%;
     display: block;
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
     font-family: "proxima-nova", sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
@@ -1640,22 +1641,22 @@ code[data-lang] {
  * Highlighted Code Block Labels
  */
 .language-css:before {
-  background-color: #016fba; }
+  background-color: #016fba !important; }
 
 .language-haml:before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-html:before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-javascript:before {
-  background-color: #f1c54c; }
+  background-color: #f1c54c !important; }
 
 .language-sass:before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 .language-scss:before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 /**
  * Code Block Visibility Toggling

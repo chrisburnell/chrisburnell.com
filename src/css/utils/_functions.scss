@@ -39,6 +39,8 @@
 ///
 /// @param {String} $value - Value of the opacity (0-1) or respective label
 ///
+/// @require {Variable} $opacities
+///
 /// @example scss
 ///   @include opacity(1);
 ///   // opacity: 1;
@@ -70,6 +72,8 @@
 /// Simplify z-index.
 ///
 /// @param {String} $layer - Generic level
+///
+/// @require {Variable} $z-indexes
 ///
 /// @example scss
 ///   z-index: z-index(above);

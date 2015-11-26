@@ -9,7 +9,7 @@
     "use strict";
 
     // Increment this when updating the Service Worker
-    var VERSION = '10';
+    var VERSION = '11';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
@@ -29,9 +29,7 @@
         '/styleguide',
         '/css/main.min.css',
         '/js/main.min.js',
-        '/images/avatar.png',
-        '/images/avatar@2x.png',
-        '/images/avatar@4x.png'
+        '/images/avatar.png'
     ];
 
     // Console Feedback

@@ -34,18 +34,21 @@ pre {
     // override `normalize.css`
     margin-top: 0;
     margin-bottom: $spacing-medium;
+
     code[data-lang] & {
         margin-bottom: 0;
         text-align: left;
     }
+
     &:not(.codepen) {
         @extend .rounded;
         background-color: $color-black-low;
-        padding: 1.5rem 1.5rem 1rem;
+        padding: $spacing-medium $spacing-medium 1rem;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
         line-height: 1.5;
+
         code {
             min-width: 100%;
             display: block;

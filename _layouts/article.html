@@ -30,7 +30,7 @@
 
         <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
-                <button class="show-comments-button" id="show-comments-button" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span></button>
+                <button class="show-comments-button" id="show-comments-button" role="button" aria-pressed="false" disabled><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span></button>
             {% elsif page.comments == 'codepen' and page.codepen_slug %}
                 <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment"><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> CodePen Comments</button>
             {% endif %}

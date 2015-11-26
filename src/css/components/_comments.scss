@@ -29,8 +29,8 @@
 .comments {
     text-align: center;
 
-    @include media(">medium") {
-        .pagination + & {
+    .pagination + & {
+        @include media(">medium") {
             padding-top: $spacing-large;
         }
     }
