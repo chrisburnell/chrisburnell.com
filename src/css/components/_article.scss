@@ -48,15 +48,6 @@
         text-align: left;
     }
 
-    @include media(">medium") {
-        // align text to the `aside`
-        margin-top: -0.5rem;
-        // except where a banner occurs first
-        .banner + & {
-            margin-top: 0;
-        }
-    }
-
     &--featured {
         @extend .lede;
         max-width: 24em;
