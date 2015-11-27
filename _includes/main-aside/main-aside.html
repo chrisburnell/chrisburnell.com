@@ -9,9 +9,6 @@
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
     {% capture author_information_details %}
         <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on {% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" itemprop="datePublished" aria-hidden="true">{% else %}<strong itemprop="datePublished">{% endif %}{{ page.date | date: '%d %b, %Y' }}{% if page.shorturl %}</a>{% else %}</strong>{% endif %}</time>
-        {% if page.categories contains 'pen' %}
-            <div class="featured-link"><a href="/pens">Featured Pens</a></div>
-        {% endif %}
         {% if page.tags.size > 0 %}
             <div class="tags">
                 <span>tagged under</span>
@@ -22,6 +19,9 @@
                     {% endfor %}
                 </span>
             </div>
+        {% endif %}
+        {% if page.categories contains 'pen' %}
+            <div class="featured-link"><a href="/pens">Featured Pens</a></div>
         {% endif %}
     {% endcapture %}
 {% else %}
@@ -38,6 +38,7 @@
         <div class="author-employer">I’m a <strong>{{ site.author_job_title }}</strong></div>
     {% endcapture %}
 {% endif %}
+
 
 {% if page.page_class contains 'page-about' %}
     {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
@@ -73,14 +74,12 @@
         <div class="author-name">{{ author_name_prefix }} <a rel="me" class="canada  url" href="/about" tabindex="-1">{{ author_microdata_name }}</a></div>
 
         {{ author_information_details }}
-
     </div>
 
     <div class="author-biography">
         <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and currently working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe if you like</a>.</p>
         <p>I also <a rel="me publisher external" class="link--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="link--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="link--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="link--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
-
 
     {% unless page.page_class contains 'page-search' %}
         {% include main-aside/widgets/search.html %}

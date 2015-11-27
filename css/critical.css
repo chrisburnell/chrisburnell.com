@@ -1107,7 +1107,8 @@ aside figcaption {
   height: 6.25rem;
   display: inline-block;
   float: left;
-  margin-right: 0.625rem; }
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem; }
   .author-image img {
     height: 100%;
     display: block; }
@@ -1116,16 +1117,20 @@ aside figcaption {
 .author-age,
 .author-employer,
 .author-information .date,
+.tags,
 .featured-link {
-  display: block;
-  margin-bottom: .5rem; }
+  display: block; }
+
+.author-age,
+.author-employer,
+.author-information .date,
+.tags,
+.featured-link {
+  margin-top: .5rem; }
 
 .featured-link:after {
   content: " →";
   font-style: normal; }
-
-.tags {
-  display: table-cell; }
 
 @media (min-width: 769px) {
   .author-biography {
@@ -1137,9 +1142,6 @@ aside figcaption {
     -webkit-order: 998;
         -ms-flex-order: 998;
             order: 998; } }
-
-.author-biography p:not(:last-child) {
-  margin-bottom: 0.625rem; }
 
 .hide,
 .hidden,

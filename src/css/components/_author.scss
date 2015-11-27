@@ -61,7 +61,8 @@
         height: 6.25rem;
         display: inline-block;
         float: left;
-        margin-right: $spacing-small;
+        margin-right:  $spacing-small;
+        margin-bottom: $spacing-small;
 
         img {
             @extend .rounded;
@@ -74,20 +75,23 @@
     .author-age,
     .author-employer,
     .author-information .date,
+    .tags,
     .featured-link {
         display: block;
-        margin-bottom: .5rem;
+    }
+
+    .author-age,
+    .author-employer,
+    .author-information .date,
+    .tags,
+    .featured-link {
+        margin-top: .5rem;
     }
 
     .featured-link:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";
         font-style: normal;
-    }
-
-    .tags {
-        // don't wrap around `.author-image`
-        display: table-cell;
     }
 
     .author-biography {
@@ -97,9 +101,5 @@
 
         @include media("<=medium") {
             order: 998;
-        }
-
-        p:not(:last-child) {
-            margin-bottom: $spacing-small;
         }
     }
