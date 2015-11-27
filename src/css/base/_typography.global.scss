@@ -230,10 +230,11 @@ ul.default-list li:before {
 
 dl {
     width: 100%;
+    margin-top: 0;
     overflow: hidden;
 
     &:not(:last-child) {
-        margin-bottom: $spacing-medium;
+        margin-bottom: $spacing-large;
     }
 
     dt {

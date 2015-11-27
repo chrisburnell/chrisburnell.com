@@ -550,9 +550,10 @@ ul.default-list li:before {
 
 dl {
   width: 100%;
+  margin-top: 0;
   overflow: hidden; }
   dl:not(:last-child) {
-    margin-bottom: 1.25rem; }
+    margin-bottom: 2.25rem; }
   dl dt {
     width: auto;
     min-width: 10rem;
@@ -1145,7 +1146,7 @@ footer {
   font-size: 1.625rem; }
 
 .lede-terminology {
-  padding-bottom: 1.25rem;
+  padding-bottom: 2.25rem;
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
 .edit {
