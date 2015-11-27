@@ -1036,6 +1036,9 @@ aside figcaption {
 .articles-list .title {
   margin-bottom: 0.625rem; }
 
+.articles-list .lede, .articles-list .lede--featured {
+  margin-bottom: 1.25rem; }
+
 .articles-list .date {
   margin-bottom: 0.625rem; }
   @media (max-width: 768px) {

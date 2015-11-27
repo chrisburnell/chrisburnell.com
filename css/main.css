@@ -1178,6 +1178,9 @@ footer {
 .articles-list .title {
   margin-bottom: 0.625rem; }
 
+.articles-list .lede, .articles-list .lede--featured {
+  margin-bottom: 1.25rem; }
+
 .articles-list .date {
   margin-bottom: 0.625rem; }
   @media (max-width: 768px) {
@@ -1409,7 +1412,7 @@ footer {
   padding-top: 2.068rem; }
   .page-about .nav-secondary {
     border-top: 0;
-    padding: 1.25rem 0; }
+    padding: 0 0 1.25rem; }
   p + .nav-secondary, ol + .nav-secondary, ul + .nav-secondary, dl + .nav-secondary, figure + .nav-secondary, blockquote + .nav-secondary {
     margin-top: 1.25rem; }
 
