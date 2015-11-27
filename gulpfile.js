@@ -17,8 +17,6 @@ var gulp         = require('gulp'),
     watch        = require('gulp-watch');
 
 // Define external objects
-var csscomb = require('csscomb');
-var comb = new csscomb();
 var sassdoc = require('sassdoc');
 
 // Define paths
@@ -76,7 +74,7 @@ gulp.task('css-main', function() {
         .pipe(gulp.dest(paths.dist.css))
         .pipe(notify({
             title: 'gulp',
-            message: 'CSS compiled.',
+            message: 'Main CSS compiled.',
             onLast: true
         }));
 });
@@ -166,7 +164,7 @@ gulp.task('js-serviceworker', function() {
         .pipe(gulp.dest(paths.root))
         .pipe(notify({
             title: 'gulp',
-            message: 'Service Worker JS compiled.',
+            message: 'ServiceWorker JS compiled.',
             onLast: true
         }));
 });

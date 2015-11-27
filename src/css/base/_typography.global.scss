@@ -11,6 +11,10 @@ html {
      -webkit-font-smoothing: antialiased;
 }
 
+p, ol, ul, dl, figure, blockquote {
+    @extend %content-elements;
+}
+
 %heading {
     // so that elements can be floated inside headings
     min-height: 1.25em;
@@ -30,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.625rem;
     text-transform: uppercase;
     // 3px 3px
-    text-shadow: .0715em .0715em 0 $color-black-low; // 3px 3px
+    text-shadow: .0715em .0715em 0 $color-black-low;
 }
 h1 {
     @extend %alpha;
@@ -55,10 +59,17 @@ h2 {
 }
 h3 {
     @extend %delta;
-    margin-top: $spacing-small;
+    margin-top: $spacing-large;
     border-bottom: $border-thin solid $color-text-light;
+
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
+    }
+
+    %content-elements + & {
+        @include media("<=medium") {
+            margin-top: $spacing-medium;
+        }
     }
 
     code {
@@ -216,6 +227,7 @@ ul.default-list li:before {
     font-size: 1.5rem;
     line-height: 1;
 }
+
 dl {
     width: 100%;
     overflow: hidden;
@@ -262,6 +274,7 @@ a img {
     max-width: 100%;
     height: auto;
 }
+
 figure {
     margin: 0 0 $spacing-medium;
 
@@ -290,8 +303,8 @@ blockquote {
     margin: 0 $spacing-large $spacing-medium;
 
     @include media("<=small") {
-        margin-right: $spacing-medium;
         margin-left:  $spacing-medium;
+        margin-right: $spacing-medium;
     }
 
     p {
@@ -299,12 +312,10 @@ blockquote {
 
         &:before {
             content: open-quote;
-            padding-right: .1875rem;
         }
 
         &:after {
             content: close-quote;
-            padding-left: .1875rem;
         }
     }
 
@@ -354,7 +365,13 @@ hr {
     height: .125rem;
     display: block;
     border: 0;
-    margin: $spacing-small 0 $spacing-medium;
+    margin: $spacing-large 0;
+
+    %content-elements + & {
+        @include media("<=medium") {
+            margin-top: $spacing-medium;
+        }
+    }
 }
 
 /**

@@ -21,37 +21,36 @@
         justify-content: center;
     }
 
-    button,
-    .button {
+    %button {
         display: inline-block;
 
         @include media("<=small") {
             margin-left:  auto;
             margin-right: auto;
 
-            & + button,
-            & + .button {
-                margin-top: 1rem;
+            %button {
+                margin-top: $spacing-small;
             }
         }
 
         @include media(">small") {
-            margin-left:  1rem;
-            margin-right: 1rem;
+            margin-left:  $spacing-small;
+            margin-right: $spacing-small;
         }
     }
 }
 
 .nav-secondary {
-    padding: ($spacing-large - .182) 0 $spacing-large;
+    margin-top: $spacing-large;
     border-top: $border-thin solid $color-black-medium;
+    padding-top: ($spacing-large - .182rem);
 
     .page-about & {
         border-top: 0;
         padding: $spacing-medium 0;
     }
-}
 
-.buttons-list {
-    padding-bottom: $spacing-medium;
+    %content-elements + & {
+        margin-top: $spacing-medium;
+    }
 }

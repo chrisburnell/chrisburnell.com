@@ -19,7 +19,7 @@ aside {
         &:not(.author) {
             @extend .rounded;
             background: $color-black-low;
-            padding: 1rem;
+            padding: $spacing-small;
             margin-bottom: $spacing-medium;
 
             &:last-child {

@@ -397,10 +397,13 @@ h3, .articles-list .date {
   text-transform: uppercase; }
 
 h3 {
-  margin-top: 0.625rem;
+  margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
+  @media (max-width: 768px) {
+    p + h3, ol + h3, ul + h3, dl + h3, figure + h3, blockquote + h3 {
+      margin-top: 1.25rem; } }
   h3 code {
     text-transform: none; }
 
@@ -603,16 +606,14 @@ blockquote {
     quotes: "« " " »" "‹ " " ›"; }
   @media (max-width: 500px) {
     blockquote {
-      margin-right: 1.25rem;
-      margin-left: 1.25rem; } }
+      margin-left: 1.25rem;
+      margin-right: 1.25rem; } }
   blockquote p {
     margin-bottom: 0 !important; }
     blockquote p:before {
-      content: open-quote;
-      padding-right: .1875rem; }
+      content: open-quote; }
     blockquote p:after {
-      content: close-quote;
-      padding-left: .1875rem; }
+      content: close-quote; }
   blockquote cite {
     display: block;
     margin-left: 2.25rem;
@@ -658,7 +659,10 @@ hr {
   height: .125rem;
   display: block;
   border: 0;
-  margin: 0.625rem 0 1.25rem; }
+  margin: 2.25rem 0; }
+  @media (max-width: 768px) {
+    p + hr, ol + hr, ul + hr, dl + hr, figure + hr, blockquote + hr {
+      margin-top: 1.25rem; } }
 
 /**
  * Fix `iframe` and `video`
@@ -712,7 +716,7 @@ var {
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
-  code[data-lang] pre {
+  .highlight pre {
     margin-bottom: 0;
     text-align: left; }
   pre:not(.codepen) {
@@ -783,7 +787,7 @@ article {
     width: 100%; }
     aside:not(.author) {
       background: rgba(6, 6, 6, 0.05);
-      padding: 1rem;
+      padding: 0.625rem;
       margin-bottom: 1.25rem; }
       aside:not(.author):last-child {
         margin-bottom: 0; } }
@@ -985,12 +989,14 @@ aside figcaption {
       width: 500px; } }
 
 .lede, .lede--featured {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
     .lede, .lede--featured {
       text-align: left; } }
+  aside + .lede, aside + .lede--featured {
+    margin-top: -0.5rem; }
 
 .lede--featured {
   max-width: 24em;
@@ -1003,7 +1009,7 @@ aside figcaption {
 .edit {
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1rem;
-  margin: 0 2.25rem 1.25rem;
+  margin: 0 2.25rem 2.25rem;
   font-style: italic;
   line-height: 1.5; }
 
@@ -1131,7 +1137,10 @@ aside figcaption {
 .author-biography p:not(:last-child) {
   margin-bottom: 0.625rem; }
 
-.hide, .hidden, .svg--master, a span:not([class]):not([itemprop]) {
+.hide,
+.hidden,
+.svg--master,
+a span:not([class]):not([itemprop]) {
   width: 1px !important;
   height: 1px !important;
   padding: 0 !important;
@@ -1140,7 +1149,9 @@ aside figcaption {
   overflow: hidden !important;
   clip: rect(1px, 1px, 1px, 1px) !important; }
 
-.remove, .removed, p:empty {
+.remove,
+.removed,
+p:empty {
   display: none !important; }
 
 .non-selectable, .logo {
@@ -1151,7 +1162,8 @@ aside figcaption {
   -webkit-touch-callout: default;
   -webkit-touch-callout: none; }
 
-.hyphen, .hyphenate {
+.hyphen,
+.hyphenate {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -1159,12 +1171,25 @@ aside figcaption {
       -ms-hyphens: auto;
           hyphens: auto; }
 
-.border-radius, .round, .rounded, figure img,
-figure svg, blockquote, pre:not(.codepen), aside:not(.author), .banner, .edit, .author-image, .author-image img {
+.border-radius,
+.round,
+.rounded,
+figure img,
+figure svg,
+blockquote,
+pre:not(.codepen),
+aside:not(.author),
+.banner,
+.edit,
+.author-image,
+.author-image img {
   background-clip: padding-box;
   border-radius: 0.375rem; }
 
-.border-radius-thin, .round-thin, .rounded-thin, p code,
+.border-radius-thin,
+.round-thin,
+.rounded-thin,
+p code,
 ol code,
 ul code,
 dl code,

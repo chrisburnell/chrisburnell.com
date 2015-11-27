@@ -40,12 +40,17 @@
 }
 
 .lede {
-    margin-bottom: $spacing-medium;
+    margin-bottom: $spacing-large;
     font-size: $font-size-large;
     line-height: 1.5;
 
     @include media("<=medium") {
         text-align: left;
+    }
+
+    aside + & {
+        // pull up to align with `.author`
+        margin-top: -0.5rem;
     }
 }
 .lede--featured {
@@ -64,7 +69,7 @@
     @extend .rounded;
     background-color: rgba($color-brand, opacity(medium));
     padding: 1rem;
-    margin: 0 $spacing-large $spacing-medium;
+    margin: 0 $spacing-large $spacing-large;
     font-style: italic;
     line-height: 1.5;
 }

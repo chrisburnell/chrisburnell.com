@@ -91,6 +91,7 @@ button, .button,
 button {
     &[disabled] {
         opacity: opacity(ultra);
+        pointer-events: none;
     }
 }
 

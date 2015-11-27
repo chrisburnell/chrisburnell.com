@@ -29,12 +29,12 @@
 .comments {
     text-align: center;
 
-    .pagination + & {
-        @include media(">medium") {
-            padding-top: $spacing-large;
-        }
+    // apply margin only if comments are shown
+    iframe {
+        margin-top: $spacing-large;
     }
 
+    // override default `.button`
     .show-comments-button:before,
     .show-comments-button:active:before {
         position: relative;

@@ -4,30 +4,17 @@
 ////
 
 .widget {
-    &,
-    & + & {
-        margin-top: $spacing-medium;
-    }
-
-    @include media("<=medium") {
-        margin-top: 0;
-    }
-
     &:last-child {
         @include media("<=medium") {
-            margin-bottom: $spacing-medium;
+            margin-bottom: $spacing-large;
         }
     }
-}
-
-.widget-title {
-    margin-top: 0;
 }
 
 .widget-featured-link {
     width: 100%;
     display: block;
-    margin-top: $spacing-small;
+    margin-top: $spacing-medium;
     font-weight: 600;
     text-align: right;
 

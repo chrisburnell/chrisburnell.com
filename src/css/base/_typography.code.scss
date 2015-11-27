@@ -35,7 +35,7 @@ pre {
     margin-top: 0;
     margin-bottom: $spacing-medium;
 
-    code[data-lang] & {
+    .highlight & {
         margin-bottom: 0;
         text-align: left;
     }
