@@ -1,11 +1,21 @@
-# Chris Burnell
+# chrisburnell.com
+
+The source code for [chrisburnell.com](https://chrisburnell.com/).
 
 
-#### version 2.6.0
+### Table of Contents
+
+- [Title](#chrisburnellcom)
+- [Version](#version-260)
+- [Description](#description)
+- [Build Process](#build-process)
+- [Workflow](#workflow)
 
 
-#### The source code for [chrisburnell.com](https://chrisburnell.com/).
+### version 2.6.0
 
+
+### Description
 
 My website doubles as a blog and as a playground for me to perfect the code that
 comprises the site and to experiment with new methodologies and technologies.
@@ -17,16 +27,25 @@ don’t hesitate to get in touch—via
 report bugs or suggestions.
 
 
-## Generated
+### Build Process
+
+- [Github Pages](http://pages.github.com)
+- [Jekyll](http://jekyllrb.com)
+- [SCSS](http://sass-lang.com)
+- [Autoprefixer](https://github.com/ai/autoprefixer)
+- [Gulp](http://gulpjs.com)
+
+
+### Workflow
+
+Building this website requires both `jekyll` and `gulp`.
+
+
+### Generated
 
 - _includes/generated/critical-css.html
 - _includes/generated/loadcss.html
 - serviceworker.min.js
-
-
-## Workflow
-
-Building this website requires both `jekyll` and `gulp`.
 
 ### Layouts
 
@@ -66,16 +85,7 @@ Building this website requires both `jekyll` and `gulp`.
     - search.html
 
 
-## Development
-
-- [Github Pages](http://pages.github.com)
-- [Jekyll](http://jekyllrb.com)
-- [SCSS](http://sass-lang.com)
-- [Autoprefixer](https://github.com/ai/autoprefixer)
-- [Gulp](http://gulpjs.com)
-
-
-## License
+### License
 
 [![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 

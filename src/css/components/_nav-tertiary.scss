@@ -6,11 +6,12 @@
 .nav-tertiary {
     @include media(">medium") {
         float: right;
+        // 5px
         margin-top: .3125rem;
     }
 
     @include media("<=medium") {
-        margin-top: .625rem;
+        margin-top: $spacing-medium;
     }
 }
 
