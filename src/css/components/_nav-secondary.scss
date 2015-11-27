@@ -45,12 +45,16 @@
     border-top: $border-thin solid $color-black-medium;
     padding-top: ($spacing-large - .182rem);
 
+    %content-elements + & {
+        margin-top: $spacing-medium;
+    }
+
+    .articles-list + & {
+        margin-top: 0;
+    }
+
     .page-about & {
         border-top: 0;
         padding: 0 0 $spacing-medium;
-    }
-
-    %content-elements + & {
-        margin-top: $spacing-medium;
     }
 }
