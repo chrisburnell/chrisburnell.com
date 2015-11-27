@@ -1249,11 +1249,15 @@ footer {
   .small-articles-list a:focus .title,
   .small-articles-list a:active .title {
     text-decoration: underline; }
+  .small-articles-list .lede, .small-articles-list .lede--featured {
+    color: #4f4f4f;
+    margin-top: 0.625rem;
+    margin-bottom: 0;
+    font-size: 0.875rem; }
   .small-articles-list .date {
     color: #737373;
     display: block;
     margin-top: 0.625rem;
-    margin-bottom: 0;
     font-size: 0.8125rem;
     font-weight: 600; }
     @media (min-width: 769px) {
@@ -1261,10 +1265,6 @@ footer {
         text-align: right; } }
     .small-articles-list .date:before {
       content: "– "; }
-  .small-articles-list .lede, .small-articles-list .lede--featured {
-    color: #4f4f4f;
-    margin-top: 0.625rem;
-    font-size: 0.875rem; }
   .small-articles-list svg {
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;

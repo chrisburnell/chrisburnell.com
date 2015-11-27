@@ -101,11 +101,17 @@
         text-decoration: underline;
     }
 
+    .lede {
+        color: $color-text;
+        margin-top: $spacing-small;
+        margin-bottom: 0;
+        font-size: $font-size-small;
+    }
+
     .date {
         color: $color-text-alt;
         display: block;
         margin-top: $spacing-small;
-        margin-bottom: 0;
         font-size: $font-size-smaller;
         font-weight: 600;
 
@@ -117,12 +123,6 @@
             // EN DASH, NO-BREAK SPACE
             content: "– ";
         }
-    }
-
-    .lede {
-        color: $color-text;
-        margin-top: $spacing-small;
-        font-size: $font-size-small;
     }
 
     svg {
