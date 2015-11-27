@@ -966,9 +966,9 @@ aside figcaption {
             transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
-    padding: 0 1.25rem;
+    padding: 0 .5rem;
     border-bottom: 0.125rem solid transparent;
-    margin-left: -1.25rem; }
+    margin-left: -0.5rem; }
     .title .title-link:hover, .title .title-link:focus, .title .title-link:active,
     .tagline .title-link:hover,
     .tagline .title-link:focus,
@@ -991,11 +991,6 @@ aside figcaption {
   @media (max-width: 768px) {
     .lede, .lede--featured {
       text-align: left; } }
-  @media (min-width: 769px) {
-    .lede, .lede--featured {
-      margin-top: -1.25rem; }
-      .banner + .lede, .banner + .lede--featured {
-        margin-top: 0; } }
 
 .lede--featured {
   max-width: 24em;

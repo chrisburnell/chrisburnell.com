@@ -16,9 +16,9 @@
         @include transition(border-color);
         @include will-change(color, border-bottom-color);
         display: inline-block;
-        padding: 0 $spacing-medium;
+        padding: 0 .5rem;
         border-bottom: $border-thin solid transparent;
-        margin-left: -$spacing-medium;
+        margin-left: -0.5rem;
         &:hover,
         &:focus,
         &:active {
@@ -46,16 +46,6 @@
 
     @include media("<=medium") {
         text-align: left;
-    }
-
-    @include media(">medium") {
-        // align text to the `aside`
-        margin-top: -$spacing-medium;
-
-        // except where a banner occurs first
-        .banner + & {
-            margin-top: 0;
-        }
     }
 }
 .lede--featured {
