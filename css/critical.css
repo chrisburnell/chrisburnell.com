@@ -724,8 +724,10 @@ pre {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.25rem 1.25rem 1rem;
     overflow-x: auto;
-    overflow-y: hidden;
-    line-height: 1.5; }
+    overflow-y: hidden; }
+    pre:not(.codepen),
+    pre:not(.codepen) code {
+      line-height: 2; }
     pre:not(.codepen) code {
       min-width: 100%;
       display: block; }

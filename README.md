@@ -9,7 +9,10 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [Version](#version-260)
 - [Description](#description)
 - [Build Process](#build-process)
-- [Workflow](#workflow)
+- [Generated](#generated)
+- [Layouts](#layouts)
+- [Includes](#includes)
+- [License](#license)
 
 
 ### version 2.6.0

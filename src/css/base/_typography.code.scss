@@ -47,7 +47,11 @@ pre {
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
-        line-height: 1.5;
+
+        &,
+        code {
+            line-height: 2;
+        }
 
         code {
             min-width: 100%;

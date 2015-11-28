@@ -8,7 +8,6 @@
  */
 code[data-lang] {
     padding-top: $spacing-large;
-    line-height: 2;
 
     &:before {
         @include absolute;
