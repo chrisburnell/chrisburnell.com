@@ -399,6 +399,11 @@ h3, .articles-list .date {
 h3 {
   margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd; }
+  article > h3 {
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+    padding-right: 2.25rem; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
   @media (max-width: 768px) {
@@ -746,13 +751,13 @@ main {
 .wrap--full-width {
   width: 100%; }
 
-.clear {
+.clear, article > h3 {
   clear: both;
   zoom: 1; }
-  .clear:before, .clear:after {
+  .clear:before, article > h3:before, .clear:after, article > h3:after {
     content: "";
     display: table; }
-  .clear:after {
+  .clear:after, article > h3:after {
     clear: both; }
 
 header {
@@ -969,22 +974,6 @@ aside figcaption {
     .title,
     .tagline {
       text-align: left; } }
-  .title .title-link,
-  .tagline .title-link {
-    -webkit-transition: border-color 0.2s ease;
-    transition: border-color 0.2s ease;
-    will-change: color, border-bottom-color;
-    display: inline-block;
-    padding: 0 .5rem;
-    border-bottom: 0.125rem solid transparent;
-    margin-left: -0.5rem; }
-    .title .title-link:hover, .title .title-link:focus, .title .title-link:active,
-    .tagline .title-link:hover,
-    .tagline .title-link:focus,
-    .tagline .title-link:active {
-      color: #4f4f4f;
-      border-bottom-color: #5f8aa6;
-      text-decoration: none; }
 
 .banner {
   width: 810px;
@@ -1040,6 +1029,18 @@ aside figcaption {
 
 .articles-list .title {
   margin-bottom: 0.625rem; }
+  .articles-list .title .title-link {
+    -webkit-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+    will-change: color, border-bottom-color;
+    display: inline-block;
+    padding: 0 .5rem;
+    border-bottom: 0.125rem solid transparent;
+    margin-left: -0.5rem; }
+    .articles-list .title .title-link:hover, .articles-list .title .title-link:focus, .articles-list .title .title-link:active {
+      color: #4f4f4f;
+      border-bottom-color: #5f8aa6;
+      text-decoration: none; }
 
 .articles-list .lede, .articles-list .lede--featured {
   margin-bottom: 1.25rem; }

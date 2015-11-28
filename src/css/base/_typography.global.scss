@@ -62,10 +62,19 @@ h3 {
     margin-top: $spacing-large;
     border-bottom: $border-thin solid $color-text-light;
 
+    article > & {
+        @extend .clear;
+        width: auto;
+        max-width: 100%;
+        display: inline-block;
+        padding-right: $spacing-large;
+    }
+
     &:not(:last-child) {
         margin-bottom: $spacing-medium;
     }
 
+    // fix spacing when these appear after our normal content elements
     %content-elements + & {
         @include media("<=medium") {
             margin-top: $spacing-medium;
