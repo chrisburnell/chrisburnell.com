@@ -76,9 +76,7 @@ h3 {
 
     // fix spacing when these appear after our normal content elements
     %content-elements + & {
-        @include media("<=medium") {
-            margin-top: $spacing-medium;
-        }
+        margin-top: $spacing-medium;
     }
 
     code {

@@ -406,9 +406,8 @@ h3 {
     padding-right: 2.25rem; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
-  @media (max-width: 768px) {
-    p + h3, ol + h3, ul + h3, dl + h3, figure + h3, blockquote + h3 {
-      margin-top: 1.25rem; } }
+  p + h3, ol + h3, ul + h3, dl + h3, figure + h3, blockquote + h3 {
+    margin-top: 1.25rem; }
   h3 code {
     text-transform: none; }
 
@@ -723,7 +722,6 @@ pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
   .highlight pre {
-    margin-bottom: 0;
     text-align: left; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
