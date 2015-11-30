@@ -94,3 +94,8 @@ Building this website requires both `jekyll` and `gulp`.
 
 The contents of this repository are licensed under a [BY-NC-SA 4.0 Creative Commons License](LICENSE).
 
+
+### ...
+
+![Codeship Status](https://codeship.com/projects/118727/status?branch=master)
+
