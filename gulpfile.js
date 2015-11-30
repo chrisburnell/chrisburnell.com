@@ -10,7 +10,6 @@ var gulp         = require('gulp'),
     csslint      = require('gulp-csslint'),
     cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
-    notify       = require('gulp-notify'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
     uglify       = require('gulp-uglify'),
@@ -71,12 +70,7 @@ gulp.task('css-main', function() {
             suffix: '.min'
         }))
         .pipe(cssnano())
-        .pipe(gulp.dest(paths.dist.css))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'Main CSS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.dist.css));
 });
 
 // Compile critical SCSS file
@@ -87,12 +81,7 @@ gulp.task('css-critical', function() {
             basename: "critical-css",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'generated/'))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'Critical CSS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.includes + 'generated/'));
 });
 
 // Generate Sass documentation
@@ -101,11 +90,6 @@ gulp.task('css-sassdoc', function() {
         .pipe(plumber())
         .pipe(sassdoc({
             dest: paths.docs
-        }))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'SassDoc compiled.',
-            onLast: true
         }));
 });
 
@@ -124,12 +108,7 @@ gulp.task('js-main', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(paths.dist.js))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'JS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.dist.js));
 });
 
 // Generate inline LoadCSS include
@@ -143,12 +122,7 @@ gulp.task('js-loadcss', function() {
             basename: "loadcss",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'generated/'))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'LoadCSS JS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.includes + 'generated/'));
 });
 
 // Place the Service Worker at the root
@@ -161,12 +135,7 @@ gulp.task('js-serviceworker', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(paths.root))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'ServiceWorker JS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.root));
 });
 
 // Generate inline LoadCSS include
@@ -180,12 +149,7 @@ gulp.task('js-typekit', function() {
             basename: "typekit",
             extname: ".html"
         }))
-        .pipe(gulp.dest(paths.includes + 'generated/'))
-        .pipe(notify({
-            title: 'gulp',
-            message: 'Typekit JS compiled.',
-            onLast: true
-        }));
+        .pipe(gulp.dest(paths.includes + 'generated/'));
 });
 
 // -----------------------------------------------------------------------------
