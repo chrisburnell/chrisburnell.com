@@ -93,6 +93,17 @@ $font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
 $font-stack-secondary: "proxima-nova", sans-serif !default;
 /// @type List
 $font-stack-heading: "league-gothic", Impact, sans-serif !default;
+/// @type List
+$font-stack-monospace: Monaco, Consolas, Courier, monospace !default;
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family value
+$font-families: (
+    "primary":   $font-stack-primary,
+    "secondary": $font-stack-secondary,
+    "heading":   $font-stack-heading,
+    "monospace": $font-stack-monospace
+) !default;
 /// @type Length
 $font-size-smaller: .8125rem !default;
 /// @type Length

@@ -8,7 +8,7 @@ kbd,
 samp,
 var,
 .monospace {
-    font-family: $font-stack-code;
+    font-family: $font-stack-monospace;
     // TODO: I don’t know why `rem` isn't working here!
     font-size: ($font-size-small / 1rem * 1em);
     line-height: 1.429;

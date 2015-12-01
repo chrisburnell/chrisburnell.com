@@ -92,7 +92,7 @@ Building this website requires both `jekyll` and `gulp`.
 
 [![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 
-The contents of this repository are licensed under a [BY-NC-SA 4.0 Creative Commons License](LICENSE).
+The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creatice Commons License](LICENSE).
 
 
 ### ...

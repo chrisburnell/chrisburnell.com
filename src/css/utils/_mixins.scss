@@ -5,6 +5,108 @@
 
 
 ///
+/// Absolutely position an element.
+///
+/// @param {String} $position - Position of the element
+///
+/// @example scss - Zero parameters
+///   @include absolute;
+///   // position: absolute;
+///   // top:  0;
+///   // left: 0;
+///
+/// @example scss - One parameter
+///   @include absolute(bottom);
+///   // position: absolute;
+///   // bottom: 0;
+///   // left:   0;
+///   // right:  0;
+///
+@mixin absolute($position: "topleft") {
+
+    position: absolute;
+
+    @if( $position == "topleft" ) {
+        top:  0;
+        left: 0;
+    }
+
+    @else if( $position == "bottom" ) {
+        bottom: 0;
+        left:   0;
+        right:  0;
+    }
+
+    @else if( $position == "center") {
+        top:  50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+}
+
+
+///
+/// Add a border-radius.
+///
+/// @param {String} $values - Values
+///
+/// @require {Variable} $border-radius-default
+/// @require {Variable} $border-radius-thin
+///
+/// @example scss - One parameter
+///   @include radius(color);
+///   // border-radius: color;
+///
+/// @throw Error if no parameters are passed.
+///
+@mixin border-radius($values...) {
+
+    @if( length($values) == 0 ) {
+        $values: $border-radius-default;
+    }
+    @else if( #{$values} == "thin" ) {
+        $values: $border-radius-thin;
+    }
+
+    background-clip: padding-box;
+    border-radius: #{$values};
+
+}
+
+
+///
+/// Specify font-family and associated font-display
+///
+/// @example scss
+///   @include font-family(primary);
+///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
+///
+/// @example scss
+///   @include font-family(secondary, swap);
+///   // font-family: "proxima-nova", sans-serif;
+///   // font-display: swap;
+///
+@mixin font-family($family, $display) {
+
+    @if( length($family) == 0 ) {
+        @error "font-family() expects at least one parameter."
+    }
+
+    @if not map-has-key($font-families, $family) {
+        @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
+    }
+
+    font-family: map-get($font-families, $family);
+
+    @if( length($display) != 0 ) {
+        font-display: $display;
+    }
+
+}
+
+
+///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
 ///
@@ -82,6 +184,31 @@
 
 
 ///
+/// Define characters for quotes
+///
+/// @example scss
+///   @include quotes;
+///   // quotes: "“" "”" "‘" "’";
+///
+@mixin quotes() {
+
+    &,
+    :lang(en) & {
+        quotes: "“" "”" "‘" "’";
+    }
+
+    :lang(de) & {
+        quotes: "„" "“" "‚" "‘";
+    }
+
+    :lang(fr) & {
+        quotes: "« " " »" "‹ " " ›";
+    }
+
+}
+
+
+///
 /// Describes CSS changes to the browser; to be coupled with any transitions.
 ///
 /// @param {String} $values - Values
@@ -103,101 +230,5 @@
     }
 
     will-change: #{$values};
-
-}
-
-
-///
-/// Add a border-radius.
-///
-/// @param {String} $values - Values
-///
-/// @require {Variable} $border-radius-default
-/// @require {Variable} $border-radius-thin
-///
-/// @example scss - One parameter
-///   @include radius(color);
-///   // border-radius: color;
-///
-/// @throw Error if no parameters are passed.
-///
-@mixin border-radius($values...) {
-
-    @if( length($values) == 0 ) {
-        $values: $border-radius-default;
-    }
-    @else if( #{$values} == "thin" ) {
-        $values: $border-radius-thin;
-    }
-
-    background-clip: padding-box;
-    border-radius: #{$values};
-
-}
-
-
-///
-/// Absolutely position an element.
-///
-/// @param {String} $position - Position of the element
-///
-/// @example scss - Zero parameters
-///   @include absolute;
-///   // position: absolute;
-///   // top:  0;
-///   // left: 0;
-///
-/// @example scss - One parameter
-///   @include absolute(bottom);
-///   // position: absolute;
-///   // bottom: 0;
-///   // left:   0;
-///   // right:  0;
-///
-@mixin absolute($position: "topleft") {
-
-    position: absolute;
-
-    @if( $position == "topleft" ) {
-        top:  0;
-        left: 0;
-    }
-
-    @else if( $position == "bottom" ) {
-        bottom: 0;
-        left:   0;
-        right:  0;
-    }
-
-    @else if( $position == "center") {
-        top:  50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-
-}
-
-
-///
-/// Define characters for quotes
-///
-/// @example scss
-///   @include quotes;
-///   // quotes: "“" "”" "‘" "’";
-///
-@mixin quotes() {
-
-    &,
-    :lang(en) & {
-        quotes: "“" "”" "‘" "’";
-    }
-
-    :lang(de) & {
-        quotes: "„" "“" "‚" "‘";
-    }
-
-    :lang(fr) & {
-        quotes: "« " " »" "‹ " " ›";
-    }
 
 }
