@@ -78,6 +78,11 @@
 ///
 /// Specify font-family and associated font-display
 ///
+/// @param {String} $family - Font Family Value
+/// @param {String} $display - Font Display Value
+///
+/// @require {Variable} $font-families
+///
 /// @example scss
 ///   @include font-family(primary);
 ///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
@@ -86,6 +91,8 @@
 ///   @include font-family(secondary, swap);
 ///   // font-family: "proxima-nova", sans-serif;
 ///   // font-display: swap;
+///
+/// @throw Error if no parameters are passed.
 ///
 @mixin font-family($family, $display) {
 
@@ -140,9 +147,6 @@
 /// @example scss - Two properties, two durations, two timing functions
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
-///
-/// @require {variable} $transition-time
-/// @require {variable} $transition-function
 ///
 @mixin transition($values...) {
 

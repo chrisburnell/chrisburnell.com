@@ -79,7 +79,7 @@
 ///   z-index: z-index(above);
 ///   // z-index: 2;
 ///
-/// @return {Number}
+/// @return {Number} Z Index
 ///
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $z-indexes.
@@ -112,7 +112,7 @@
 ///   // background-color: #111111;
 ///   // color: white;
 ///
-/// @return {Color}
+/// @return {Color} Contrasting Color
 ///
 /// @throw Error if no parameters are passed.
 ///
