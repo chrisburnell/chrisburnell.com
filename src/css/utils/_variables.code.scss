@@ -21,6 +21,12 @@ $color-scss: $color-sass !default;
 /// @type Map
 /// @prop {String} key - Language name
 /// @prop {Color} value - Language color
+/// @require {Variable} $color-css
+/// @require {Variable} $color-haml
+/// @require {Variable} $color-html
+/// @require {Variable} $color-javascript
+/// @require {Variable} $color-sass
+/// @require {Variable} $color-scss
 $coding-languages: css        $color-css,
                    haml       $color-haml,
                    html       $color-html,

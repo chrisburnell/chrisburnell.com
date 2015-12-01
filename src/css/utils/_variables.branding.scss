@@ -22,6 +22,11 @@ $color-twitter: darken(#55acee, 10%) !default;
 /// @prop {String} name - Brand name
 /// @prop {Color} color - Brand color
 /// @prop {Number} opacity - Brand icon opacity
+/// @require {Variable} $color-codepen
+/// @require {Variable} $color-github
+/// @require {Variable} $color-lastfm
+/// @require {Variable} $color-twitter
+/// @require {Variable} $color-brand
 $color-brands: codepen $color-codepen 1.025,
                github  $color-github  0.950,
                lastfm  $color-lastfm  1.000,
