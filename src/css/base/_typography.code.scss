@@ -43,9 +43,16 @@ pre {
         @extend .rounded;
         background-color: $color-black-low;
         padding: $spacing-medium $spacing-medium 1rem;
+        margin-top:    $spacing-large;
+        margin-bottom: $spacing-large;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
+
+        %delta + &,
+        %delta + .highlight & {
+            margin-top: 0;
+        }
 
         &,
         code {

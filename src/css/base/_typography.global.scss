@@ -74,11 +74,6 @@ h3 {
         margin-bottom: $spacing-medium;
     }
 
-    // fix spacing when these appear after our normal content elements
-    %content-elements + & {
-        margin-top: $spacing-medium;
-    }
-
     code {
         text-transform: none;
     }
@@ -192,13 +187,14 @@ ul {
 ol:not([class]),
 ul:not([class]),
 .default-list {
+    margin-bottom: $spacing-medium;
+
     li {
         padding-left: $spacing-large;
-        margin-bottom: $spacing-small;
         position: relative;
 
-        &:last-child {
-            margin-bottom: $spacing-medium;
+        &:not(:last-child) {
+            margin-bottom: $spacing-small;
         }
 
         &:before {

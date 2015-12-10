@@ -28,6 +28,10 @@ aside {
         }
     }
 
+    %delta + & {
+        margin-top: $spacing-large;
+    }
+
     p,
     figcaption {
         clear: both;

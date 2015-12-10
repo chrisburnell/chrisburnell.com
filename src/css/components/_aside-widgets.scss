@@ -3,14 +3,6 @@
 /// @group components
 ////
 
-.widget {
-    &:last-child {
-        @include media("<=medium") {
-            margin-bottom: $spacing-large;
-        }
-    }
-}
-
 .widget-featured-link {
     width: 100%;
     display: block;

@@ -406,8 +406,6 @@ h3 {
     padding-right: 2.25rem; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
-  p + h3, ol + h3, ul + h3, dl + h3, figure + h3, blockquote + h3 {
-    margin-top: 1.25rem; }
   h3 code {
     text-transform: none; }
 
@@ -506,35 +504,37 @@ ul {
   margin: 0;
   list-style: none; }
 
-ol:not([class]) li,
-ul:not([class]) li,
-.default-list li {
-  padding-left: 2.25rem;
-  margin-bottom: 0.625rem;
-  position: relative; }
-  ol:not([class]) li:last-child,
-  ul:not([class]) li:last-child,
-  .default-list li:last-child {
-    margin-bottom: 1.25rem; }
-  ol:not([class]) li:before,
-  ul:not([class]) li:before,
-  .default-list li:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 600; }
-
-ol:not([class]) ol:not([class]),
-ol:not([class]) ul:not([class]),
-ol:not([class]) .default-list,
-ul:not([class]) ol:not([class]),
-ul:not([class]) ul:not([class]),
-ul:not([class]) .default-list,
-.default-list ol:not([class]),
-.default-list ul:not([class]),
-.default-list .default-list {
-  margin-top: 1.25rem; }
+ol:not([class]),
+ul:not([class]),
+.default-list {
+  margin-bottom: 1.25rem; }
+  ol:not([class]) li,
+  ul:not([class]) li,
+  .default-list li {
+    padding-left: 2.25rem;
+    position: relative; }
+    ol:not([class]) li:not(:last-child),
+    ul:not([class]) li:not(:last-child),
+    .default-list li:not(:last-child) {
+      margin-bottom: 0.625rem; }
+    ol:not([class]) li:before,
+    ul:not([class]) li:before,
+    .default-list li:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: "proxima-nova", sans-serif;
+      font-weight: 600; }
+  ol:not([class]) ol:not([class]),
+  ol:not([class]) ul:not([class]),
+  ol:not([class]) .default-list,
+  ul:not([class]) ol:not([class]),
+  ul:not([class]) ul:not([class]),
+  ul:not([class]) .default-list,
+  .default-list ol:not([class]),
+  .default-list ul:not([class]),
+  .default-list .default-list {
+    margin-top: 1.25rem; }
 
 ol:not([class]),
 ol.default-list {
@@ -726,8 +726,12 @@ pre {
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.25rem 1.25rem 1rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
     overflow-x: auto;
     overflow-y: hidden; }
+    h3 + pre:not(.codepen), .articles-list .date + pre:not(.codepen), h3 + .highlight pre:not(.codepen), .articles-list .date + .highlight pre:not(.codepen) {
+      margin-top: 0; }
     pre:not(.codepen),
     pre:not(.codepen) code {
       line-height: 2; }
@@ -797,6 +801,9 @@ article {
       margin-bottom: 1.25rem; }
       aside:not(.author):last-child {
         margin-bottom: 0; } }
+
+h3 + aside, .articles-list .date + aside {
+  margin-top: 2.25rem; }
 
 aside p,
 aside figcaption {
@@ -1073,9 +1080,8 @@ aside figcaption {
       -webkit-box-ordinal-group: 1000;
       -webkit-order: 999;
           -ms-flex-order: 999;
-              order: 999; }
-      .page-about .author {
-        margin-top: 1.25rem; } }
+              order: 999;
+      margin-top: 2.25rem; } }
 
 .author-information {
   margin-bottom: 1.25rem;
@@ -1085,10 +1091,6 @@ aside figcaption {
   line-height: 1.429; }
   @media (max-width: 768px) {
     .author-information {
-      -webkit-box-ordinal-group: 998;
-      -webkit-order: 997;
-          -ms-flex-order: 997;
-              order: 997;
       padding-top: 2.25rem;
       border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
       margin-bottom: 0.625rem; } }
@@ -1138,13 +1140,6 @@ aside figcaption {
 @media (min-width: 769px) {
   .author-biography {
     margin-bottom: 1.25rem; } }
-
-@media (max-width: 768px) {
-  .author-biography {
-    -webkit-box-ordinal-group: 999;
-    -webkit-order: 998;
-        -ms-flex-order: 998;
-            order: 998; } }
 
 .hide,
 .hidden,

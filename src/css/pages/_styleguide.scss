@@ -3,6 +3,12 @@
 /// @group pages
 ////
 
+.page-style-guide {
+    .lede + %delta {
+        margin-top: 0;
+    }
+}
+
 .color-block-list {
     width: 100%;
     display: table;

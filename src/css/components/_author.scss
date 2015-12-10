@@ -14,10 +14,7 @@
         display: flex;
         flex-direction: column;
         order: 999;
-
-        .page-about & {
-            margin-top: $spacing-medium;
-        }
+        margin-top: $spacing-large;
     }
 }
     .author-information {
@@ -28,7 +25,6 @@
         line-height: 1.429;
 
         @include media("<=medium") {
-            order: 997;
             padding-top: $spacing-large;
             border-top: $border-thin solid $color-black-medium;
             margin-bottom: $spacing-small;
@@ -97,9 +93,5 @@
     .author-biography {
         @include media(">medium") {
             margin-bottom: $spacing-medium;
-        }
-
-        @include media("<=medium") {
-            order: 998;
         }
     }
