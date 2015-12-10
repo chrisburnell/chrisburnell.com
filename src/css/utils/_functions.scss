@@ -131,7 +131,7 @@
     $component-green: green($background-color);
     $component-blue:  blue($background-color);
 
-    $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green)+ ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
+    $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green) + ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
     $number: 100% * $number / 255;
 
     @if( $number < 65% ) {

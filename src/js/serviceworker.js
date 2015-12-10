@@ -6,7 +6,7 @@
 
 (function () {
 
-    "use strict";
+    'use strict';
 
     // Increment this when updating the Service Worker
     var VERSION = '11';

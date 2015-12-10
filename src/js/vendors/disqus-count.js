@@ -4,7 +4,7 @@
 
 (function () {
 
-    "use strict";
+    'use strict';
 
     var dsqc = document.createElement('script');
         dsqc.type = 'text/javascript';

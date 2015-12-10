@@ -6,12 +6,21 @@
 
 (function () {
 
-    "use strict";
+    'use strict';
+
+    ////
+    /// Initialisation
+    ////
 
     var commentsSection = document.querySelector('#comments');
     var commentsButton  = document.querySelector('#show-comments-button');
     var commentsHash    = ['#comment', '#disqus_thread'];
 
+    ////
+    /// Conditions to initiate `showComments()`
+    ////
+
+    // if Comments Button exists, enable it and attach Event Listener
     if( commentsButton !== null ) {
         commentsButton.disabled = false;
         commentsButton.addEventListener('click', function() {
@@ -19,23 +28,30 @@
         });
     }
 
-    function updateHash() {
+    // if URL contains a hash from `commentsHash`, initiate `showComments()`
+    function updateFromHash() {
         commentsHash.forEach( function(hash) {
-            if( window.location.hash.indexOf(hash) == 0 ) {
+            if( window.location.hash.indexOf(hash) === 0 ) {
                 showComments();
             }
         });
     }
-
-    updateHash();
+    // run `updateFromHash()` onload
+    window.onload = function() {
+        updateFromHash();
+    }
+    // run `updateFromHash()` onhashchange
     window.onhashchange = function() {
-        updateHash();
+        updateFromHash();
     }
 
+    ////
+    /// Load in Disqus comments and remove the comments button
+    ////
     function showComments() {
         if( commentsSection !== null ) {
             window.scrollTo(0, commentsSection.offsetTop);
-            // Only if the button still exists should we load Disqus and remove the button
+            // only if the button still exists should we load Disqus and remove the button
             if( commentsButton !== null ) {
                 commentsButton.parentNode.removeChild(commentsButton);
                 commentsButton.removeEventListener('click', function(){});
@@ -46,6 +62,7 @@
                         dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
+                // make sure we are indeed scrolled to the right part of the page
                 window.scrollTo(0, commentsSection.offsetTop);
             }
         }
@@ -61,6 +78,8 @@
 
 
 (function () {
+
+    'use strict';
 
     /*------------------------------------*\
         INITIALISATION
@@ -121,7 +140,7 @@
         if( query.length >= 2 && query.length <= 30 ) {
             execSearch(query);
         } else {
-            resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
+            resultsMeta.innerHTML = 'Your search query must be 2–30 characters in length.';
         }
     }
 
@@ -254,14 +273,16 @@
      * @return {String} Populated HTML
      */
     function populateResultContent(html, item) {
-        html = injectContent(html, item['link'], '@@url@@');
-        html = injectContent(html, item['title'], '@@title@@');
-        html = injectContent(html, item['date'], '@@date@@');
-        html = injectContent(html, item['date_friendly'], '@@date_friendly@@');
+        html = injectContent(html, item['link'], '@@URL@@');
+        html = injectContent(html, item['title'], '@@TITLE@@');
+        if( item['date'] ) {
+            html = injectContent(html, item['date'], '@@DATE@@');
+            html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
+        }
         if( item['lede'] ) {
-            html = injectContent(html, item['lede'], '@@lede@@');
-        } else if( item['type'] == "pen" ) {
-            html = injectContent(html, '<em>Featured Pen</em>', '@@lede@@');
+            html = injectContent(html, item['lede'], '@@LEDE@@');
+        } else if( item['type'] == 'pen' ) {
+            html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         }
         return html;
     }
@@ -313,7 +334,7 @@
 
 (function () {
 
-    "use strict";
+    'use strict';
 
     var dsqc = document.createElement('script');
         dsqc.type = 'text/javascript';

@@ -16,7 +16,7 @@
         "gulp-sass": "^2.1.0",
         "gulp-uglify": "^1.5.1",
         "gulp-watch": "^4.3.5",
-        "sassdoc": "^2.1.15"
+        "sassdoc": "^2.1.18"
     },
     "repository": {
         "type": "git",

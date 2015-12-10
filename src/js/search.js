@@ -7,6 +7,8 @@
 
 (function () {
 
+    'use strict';
+
     /*------------------------------------*\
         INITIALISATION
     \*------------------------------------*/
@@ -66,7 +68,7 @@
         if( query.length >= 2 && query.length <= 30 ) {
             execSearch(query);
         } else {
-            resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
+            resultsMeta.innerHTML = 'Your search query must be 2–30 characters in length.';
         }
     }
 
@@ -199,14 +201,16 @@
      * @return {String} Populated HTML
      */
     function populateResultContent(html, item) {
-        html = injectContent(html, item['link'], '@@url@@');
-        html = injectContent(html, item['title'], '@@title@@');
-        html = injectContent(html, item['date'], '@@date@@');
-        html = injectContent(html, item['date_friendly'], '@@date_friendly@@');
+        html = injectContent(html, item['link'], '@@URL@@');
+        html = injectContent(html, item['title'], '@@TITLE@@');
+        if( item['date'] ) {
+            html = injectContent(html, item['date'], '@@DATE@@');
+            html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
+        }
         if( item['lede'] ) {
-            html = injectContent(html, item['lede'], '@@lede@@');
-        } else if( item['type'] == "pen" ) {
-            html = injectContent(html, '<em>Featured Pen</em>', '@@lede@@');
+            html = injectContent(html, item['lede'], '@@LEDE@@');
+        } else if( item['type'] == 'pen' ) {
+            html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         }
         return html;
     }
