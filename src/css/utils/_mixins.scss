@@ -22,11 +22,11 @@
 ///   // left:   0;
 ///   // right:  0;
 ///
-@mixin absolute($position: "topleft") {
+@mixin absolute($position: "top-left") {
 
     position: absolute;
 
-    @if( $position == "topleft" ) {
+    @if( $position == "top-left" ) {
         top:  0;
         left: 0;
     }
