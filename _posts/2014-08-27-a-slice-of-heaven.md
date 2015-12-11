@@ -11,8 +11,8 @@ tags:
 - css
 - tutorials
 
-# banner:        a-slice-of-heaven.png
-# banner_mobile: a-slice-of-heaven_mobile.png
+# banner:           a-slice-of-heaven.png
+# banner_thumbnail: a-slice-of-heaven_thumbnail.jpg
 
 shorturl: ynt2q
 codepen: true
