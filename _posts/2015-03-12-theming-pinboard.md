@@ -11,8 +11,8 @@ tags:
 - tutorials
 - ux
 
-banner:           theming-pinboard.png
-banner_thumbnail: theming-pinboard_thumbnail.jpg
+banner:        theming-pinboard.png
+banner_mobile: theming-pinboard_mobile.png
 
 shorturl: 1faeu
 comments: true

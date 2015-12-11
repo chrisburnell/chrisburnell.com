@@ -14,7 +14,9 @@
         {% capture meta_lede %}{{ site.lede | strip_html }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
     {% endif %}
 
-    {% if page.banner %}
+    {% if page.banner_mobile %}
+        {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    {% else if page.banner %}
         {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
     {% else %}
         {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}

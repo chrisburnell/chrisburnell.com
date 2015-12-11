@@ -36,14 +36,14 @@
             }
         });
     }
-    // run `updateFromHash()` on load
-    window.addEventListener('load', function() {
+    // run `updateFromHash()` onload
+    window.onload = function() {
         updateFromHash();
-    });
-    // run `updateFromHash()` on hashchange
-    window.addEventListener('hashchange', function() {
+    }
+    // run `updateFromHash()` onhashchange
+    window.onhashchange = function() {
         updateFromHash();
-    });
+    }
 
     ////
     /// Load in Disqus comments and remove the comments button

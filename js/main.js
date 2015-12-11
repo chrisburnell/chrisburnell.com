@@ -1,28 +1,4 @@
 /*!
- * "Blur Up" Banners
- * @author Chris Burnell <@iamchrisburnell>
- */
-
-
-(function () {
-
-    'use strict';
-
-    ////
-    /// Initialisation
-    ////
-
-    var banner      = document.querySelector('#banner');
-    var loadedClass = 'banner--loaded';
-
-    // add a `banner--loaded` class to the banner onload
-    window.addEventListener('load', function() {
-        banner.className = loadedClass;
-    });
-
-}());
-
-/*!
  * Conditional comments for article pages
  * @author Chris Burnell <@iamchrisburnell>
  */
@@ -60,14 +36,14 @@
             }
         });
     }
-    // run `updateFromHash()` on load
-    window.addEventListener('load', function() {
+    // run `updateFromHash()` onload
+    window.onload = function() {
         updateFromHash();
-    });
-    // run `updateFromHash()` on hashchange
-    window.addEventListener('hashchange', function() {
+    }
+    // run `updateFromHash()` onhashchange
+    window.onhashchange = function() {
         updateFromHash();
-    });
+    }
 
     ////
     /// Load in Disqus comments and remove the comments button

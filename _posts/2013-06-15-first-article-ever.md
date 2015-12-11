@@ -12,8 +12,8 @@ tags:
 - jekyll
 - markdown
 
-banner:           first-article-ever.png
-banner_thumbnail: first-article-ever_thumbnail.jpg
+banner:        first-article-ever.png
+banner_mobile: first-article-ever_mobile.png
 
 shorturl: bqrm4
 comments: true

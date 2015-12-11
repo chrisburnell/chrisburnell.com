@@ -10,8 +10,8 @@ tags:
 - html
 - tutorials
 
-banner:           viewport-woes.png
-banner_thumbnail: viewport-woes_thumbnail.jpg
+banner:        viewport-woes.png
+banner_mobile: viewport-woes_mobile.png
 
 shorturl: xoskc
 comments: true

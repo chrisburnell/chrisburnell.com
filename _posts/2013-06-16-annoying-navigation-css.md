@@ -11,8 +11,8 @@ tags:
 - css
 - ux
 
-banner:           annoying-navigation-css.png
-banner_thumbnail: annoying-navigation-css_thumbnail.jpg
+banner:        annoying-navigation-css.png
+banner_mobile: annoying-navigation-css_mobile.png
 
 shorturl: nmwge
 codepen: true

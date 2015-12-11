@@ -11,8 +11,8 @@ tags:
 - css
 - ux
 
-banner:           persistent-shadows.png
-banner_thumbnail: persistent-shadows_thumbnail.jpg
+banner:        persistent-shadows.png
+banner_mobile: persistent-shadows_mobile.png
 
 shorturl: jmfy7
 codepen: true
