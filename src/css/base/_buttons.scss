@@ -17,7 +17,7 @@
     margin-top: .25rem;
     outline-style: none;
     position: relative;
-    font-family: $font-stack-heading;
+    font-family: $font-family-alpha;
     font-size: $font-size-larger;
     line-height: 2;
     text-align: center;
@@ -90,7 +90,7 @@ button, .button,
 
 button {
     &[disabled] {
-        opacity: opacity(ultra);
+        opacity: opacity("70-percent");
         pointer-events: none;
     }
 }

@@ -8,7 +8,7 @@ kbd,
 samp,
 var,
 .monospace {
-    font-family: $font-stack-monospace;
+    font-family: $font-family-monospace;
     // TODO: I don’t know why `rem` isn't working here!
     font-size: ($font-size-small / 1rem * 1em);
     line-height: 1.429;
@@ -24,7 +24,7 @@ var,
     samp,
     var {
         @extend .rounded-thin;
-        background-color: rgba($color-brand, opacity(medium));
+        background-color: $color-brand-10-percent;
         padding: .25rem;
         // force text to wrap inside the container
         word-wrap: break-word;
@@ -41,7 +41,7 @@ pre {
 
     &:not(.codepen) {
         @extend .rounded;
-        background-color: $color-black-low;
+        background-color: $color-black-5-percent;
         padding: $spacing-medium $spacing-medium 1rem;
         margin-top:    $spacing-large;
         margin-bottom: $spacing-large;
@@ -49,8 +49,8 @@ pre {
         overflow-x: auto;
         overflow-y: hidden;
 
-        %delta + &,
-        %delta + .highlight & {
+        %gamma + &,
+        %gamma + .highlight & {
             margin-top: 0;
         }
 

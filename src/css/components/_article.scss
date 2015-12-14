@@ -46,12 +46,12 @@
 
 .lede-terminology {
     padding-bottom: $spacing-large;
-    border-bottom: $border-thin solid $color-black-medium;
+    border-bottom: $border-thin solid $color-black-10-percent;
 }
 
 .edit {
     @extend .rounded;
-    background-color: rgba($color-brand, opacity(medium));
+    background-color: $color-brand-10-percent;
     padding: 1rem;
     margin: 0 $spacing-large $spacing-large;
     font-style: italic;

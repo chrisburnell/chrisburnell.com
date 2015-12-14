@@ -46,7 +46,7 @@
 ///   // opacity: 1;
 ///
 /// @example scss
-///   @include opacity(medium);
+///   @include opacity(10-percent);
 ///   // opacity: .10;
 ///
 /// @return {Number} Opacity value

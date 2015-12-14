@@ -6,8 +6,8 @@
 .comments-link {
     display: inline-block;
     margin-top: 1.625em;
-    font-family: $font-stack-secondary;
-    font-weight: 600;
+    font-family: $font-family-beta;
+    font-weight: $font-weight-bold;
     line-height: 1;
 
     @include media(">medium") {
@@ -42,7 +42,7 @@
     }
 
     noscript {
-        font-family: $font-stack-secondary;
+        font-family: $font-family-beta;
         font-size: $font-size-large;
         font-style: italic;
     }

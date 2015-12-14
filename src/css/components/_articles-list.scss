@@ -9,7 +9,7 @@
         display: inline-block;
         clear: both;
         padding: 1.5rem 1rem;
-        border-top: $border-thin solid $color-black-medium;
+        border-top: $border-thin solid $color-black-10-percent;
         position: relative;
 
         @include media("<=medium") {
@@ -19,7 +19,7 @@
         }
 
         &:nth-child(odd) {
-            background-color: $color-black-low;
+            background-color: $color-black-5-percent;
         }
     }
 
@@ -55,7 +55,7 @@
     }
 
     .date {
-        @extend %delta;
+        @extend %gamma;
         margin-bottom: $spacing-small;
 
         @include media("<=medium") {

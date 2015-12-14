@@ -84,11 +84,11 @@
 /// @require {Variable} $font-families
 ///
 /// @example scss
-///   @include font-family(primary);
+///   @include font-family(default);
 ///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
 ///
 /// @example scss
-///   @include font-family(secondary, swap);
+///   @include font-family(beta, swap);
 ///   // font-family: "proxima-nova", sans-serif;
 ///   // font-display: swap;
 ///
@@ -116,6 +116,7 @@
 ///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
+/// If passing two or more properties, quotation marks must be used.
 ///
 /// @author Chris Burnell
 ///

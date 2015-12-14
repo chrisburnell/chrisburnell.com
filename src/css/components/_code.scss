@@ -19,9 +19,9 @@ code[data-lang] {
         width: 100%;
         display: block;
         padding: 0 $spacing-medium;
-        font-family: $font-stack-secondary;
+        font-family: $font-family-beta;
         font-size: $font-size-large;
-        font-weight: 600;
+        font-weight: $font-weight-bold;
         line-height: $spacing-large;
         text-transform: uppercase;
     }
@@ -91,7 +91,7 @@ code[data-lang] {
     .err {                              // Error
         background-color: lightcoral;
         color: firebrick;
-        font-weight: 600;
+        font-weight: $font-weight-bold;
     }
 
     .c,                                 // Comment
@@ -115,7 +115,7 @@ code[data-lang] {
     .nf,                                // Name - Function
     .o,                                 // Operator
     .ow {                               // Operator - Word
-        font-weight: 600;
+        font-weight: $font-weight-bold;
     }
 
     .gr,                                // Generic - Error

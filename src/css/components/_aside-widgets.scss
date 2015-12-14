@@ -7,7 +7,7 @@
     width: 100%;
     display: block;
     margin-top: $spacing-medium;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     text-align: right;
 
     @include media("<=medium") {

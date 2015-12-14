@@ -1929,12 +1929,6 @@ code[data-lang] {
       background-color: #dddddd;
       color: #4f4f4f; }
 
-@media (max-width: 768px) {
-  .page-not-found button, .page-not-found .button, .page-not-found
-  .button--small {
-    display: block;
-    margin: 0 auto 1.25rem; } }
-
 .hide,
 .hidden,
 .svg--master,

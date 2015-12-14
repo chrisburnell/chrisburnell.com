@@ -9,7 +9,7 @@ footer {
     width: 100%;
     padding: $spacing-large 0;
     border-top: $border-default solid $color-brand;
-    font-family: $font-stack-secondary;
-    font-weight: 600;
+    font-family: $font-family-beta;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
 }

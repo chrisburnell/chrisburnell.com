@@ -9,9 +9,9 @@
 
     'use strict';
 
-    /*------------------------------------*\
-        INITIALISATION
-    \*------------------------------------*/
+    ////
+    /// Initialisation
+    ////
 
     var query, queryFormatted, jsonFeedUrl = '../search.json',
         searchContainer       = document.querySelector('#search'),
@@ -25,23 +25,23 @@
         resultTemplatePen     = document.querySelector('#search-template-pen'),
         allowEmpty            = false;
 
-        // initiate search functionality
-        initSearch();
+    // initiate search functionality
+    initSearch();
 
-        // enable search input and submit
-        searchInput.disabled  = false;
-        searchSubmit.disabled = false;
+    // enable search input and submit
+    searchInput.disabled  = false;
+    searchSubmit.disabled = false;
 
 
-    /*------------------------------------*\
-        SEARCH FUNCTIONS
-    \*------------------------------------*/
+    ////
+    /// Search Functions
+    ////
 
-    /**
-     * Initiate search functionality.
-     * Shows results based on querystring if present.
-     * Binds search function to form submission.
-     */
+    ////
+    /// Initiate search functionality.
+    /// Shows results based on querystring if present.
+    /// Binds search function to form submission.
+    ////
     function initSearch() {
 
         // Get search results if query parameter is set in querystring
@@ -65,6 +65,7 @@
     function submitCallback(event) {
         event.preventDefault();
         query = searchInput.value;
+
         if( query.length >= 2 && query.length <= 30 ) {
             execSearch(query);
         } else {
@@ -72,22 +73,22 @@
         }
     }
 
-    /**
-     * Executes search
-     * @param {String} query
-     * @return void
-     */
+    ////
+    /// Executes search
+    /// @param {String} query
+    /// @return void
+    ////
     function execSearch(query) {
         if (query != '' || allowEmpty) {
             getSearchResults();
         }
     }
 
-    /**
-     * Get Search results from JSON
-     * @param {Function} callbackFunction
-     * @return void
-     */
+    ////
+    /// Get Search results from JSON
+    /// @param {Function} callbackFunction
+    /// @return void
+    ////
     function getSearchResults() {
 
         var request = new XMLHttpRequest();
@@ -110,10 +111,10 @@
 
     }
 
-    /**
-     * Process search result data
-     * @return void
-     */
+    ////
+    /// Process search result data
+    /// @return void
+    ////
     function processData(data) {
 
         var resultsCount = 0,
@@ -154,8 +155,7 @@
                 case 'page':
                     if( titleCheck || ledeCheck || contentCheck ) {
                         resultsCount++;
-                        results += populateResultContent(resultTemplatePage.innerHTML, item);
-                    }
+                        results += populateResultContent(resultTemplatePage.innerHTML, item); }
                     break;
                 case 'article':
                     if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
@@ -180,11 +180,11 @@
 
     }
 
-    /**
-     * Add search results to placeholder
-     * @param {String} results
-     * @return void
-     */
+    ////
+    /// Add search results to placeholder
+    /// @param {String} results
+    /// @return void
+    ////
     function showSearchResults(results) {
         // Add results HTML to placeholder
         resultsList.innerHTML = results;
@@ -194,15 +194,16 @@
         resultsMeta.scrollIntoView();
     }
 
-    /**
-     * Add results content to item template
-     * @param {String} html
-     * @param {object} item
-     * @return {String} Populated HTML
-     */
+    ////
+    /// Add results content to item template
+    /// @param {String} html
+    /// @param {object} item
+    /// @return {String} Populated HTML
+    ////
     function populateResultContent(html, item) {
         html = injectContent(html, item['link'], '@@URL@@');
         html = injectContent(html, item['title'], '@@TITLE@@');
+
         if( item['date'] ) {
             html = injectContent(html, item['date'], '@@DATE@@');
             html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
@@ -212,14 +213,15 @@
         } else if( item['type'] == 'pen' ) {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         }
+
         return html;
     }
 
-    /**
-     * Populates results string
-     * @param {String} count
-     * @return void
-     */
+    ////
+    /// Populates results string
+    /// @param {String} count
+    /// @return void
+    ////
     function populateResultsString(count) {
         var resultSuffix = (count == 1) ? '' : 's';
         var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
@@ -227,28 +229,28 @@
     }
 
 
-    /*------------------------------------*\
-        HELPER FUNCTIONS
-    \*------------------------------------*/
+    ////
+    /// Helper Functions
+    ////
 
-    /**
-     * Gets query string parameter
-     * Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
-     * @param {String} name
-     * @return {String} parameter value
-     */
+    ////
+    /// Gets query string parameter
+    /// Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
+    /// @param {String} name
+    /// @return {String} parameter value
+    ////
     function getParameterByName(name) {
         var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
         return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
     }
 
-    /**
-     * Injects content into template using placeholder
-     * @param {String} originalContent
-     * @param {String} injection
-     * @param {String} placeholder
-     * @return {String} injected content
-     */
+    ////
+    /// Injects content into template using placeholder
+    /// @param {String} originalContent
+    /// @param {String} injection
+    /// @param {String} placeholder
+    /// @return {String} injected content
+    ////
     function injectContent(originalContent, injection, placeholder) {
         var regex = new RegExp(placeholder, 'g');
         return originalContent.replace(regex, injection);

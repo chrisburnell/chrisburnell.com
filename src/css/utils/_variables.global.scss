@@ -55,15 +55,17 @@ $border-radius-thin: 0.25rem !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    'low':    0.05,
-    'medium': 0.10,
-    'high':   0.25,
-    'ultra':  0.70
+    '5-percent':  0.05,
+    '10-percent': 0.10,
+    '25-percent': 0.25,
+    '70-percent': 0.70
 ) !default;
 
 
 /// @type Color
 $color-brand: #5f8aa6 !default;
+/// @type Color
+$color-brand-10-percent: rgba($color-brand, map-get($opacities, "10-percent")) !default;
 /// @type Color
 $color-text: #4f4f4f !default;
 /// @type Color
@@ -73,47 +75,29 @@ $color-text-light: #dddddd !default;
 /// @type Color
 $color-white: #f9f9f9 !default;
 /// @type Color
-$color-black: #060606 !default;
-/// @type Color
 $color-gray: #ededed !default;
 /// @type Color
-$color-black-low: rgba($color-black, map-get($opacities, "low")) !default;
+$color-black: #060606 !default;
 /// @type Color
-$color-black-medium: rgba($color-black, map-get($opacities, "medium")) !default;
+$color-black-5-percent: rgba($color-black, map-get($opacities, "5-percent")) !default;
+/// @type Color
+$color-black-10-percent: rgba($color-black, map-get($opacities, "10-percent")) !default;
 /// @type Color
 $color-canada: #fd1b00 !default;
 
 
-/// @type Length
-$font-size-default: 100% !default;
-/// @type Number
-$line-height-default: 1.875 !default;
-/// @type String
-$font-style-default: normal !default;
 /// @type String
 $font-weight-default: 400 !default;
-/// @type List
-$font-stack-primary: "ff-meta-serif-web-pro", Georgia, serif !default;
-/// @type List
-$font-stack-secondary: "proxima-nova", sans-serif !default;
-/// @type List
-$font-stack-heading: "league-gothic", Impact, sans-serif !default;
-/// @type List
-$font-stack-monospace: Monaco, Consolas, Courier, monospace !default;
-/// @type Map
-/// @prop {String} key - Font Family name
-/// @prop {Number} value - Font Family value
-/// @require {Variable} $font-stack-primary
-/// @require {Variable} $font-stack-secondary
-/// @require {Variable} $font-stack-heading
-/// @require {Variable} $font-stack-monospace
-/// @see {Mixin} font-family
-$font-families: (
-    "primary":   $font-stack-primary,
-    "secondary": $font-stack-secondary,
-    "heading":   $font-stack-heading,
-    "monospace": $font-stack-monospace
-) !default;
+/// @type String
+$font-weight-bold: 600 !default;
+
+
+/// @type String
+$font-style-default: normal !default;
+
+
+/// @type Length
+$font-size-default: 100% !default;
 /// @type Length
 $font-size-smaller: .8125rem !default;
 /// @type Length
@@ -135,6 +119,34 @@ $font-sizes: (
     "large":   $font-size-large,
     "larger":  $font-size-larger
 ) !default;
+
+
+/// @type List
+$font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
+/// @type List
+$font-family-alpha: "league-gothic", Impact, sans-serif !default;
+/// @type List
+$font-family-beta: "proxima-nova", sans-serif !default;
+/// @type List
+$font-family-monospace: Monaco, Consolas, Courier, monospace !default;
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family value
+/// @require {Variable} $font-family-default
+/// @require {Variable} $font-family-alpha
+/// @require {Variable} $font-family-beta
+/// @require {Variable} $font-family-monospace
+/// @see {Mixin} font-family
+$font-families: (
+    "default":   $font-family-default,
+    "alpha":     $font-family-alpha,
+    "beta":      $font-family-beta,
+    "monospace": $font-family-monospace
+) !default;
+
+
+/// @type Number
+$line-height-default: 1.875 !default;
 
 
 /// @type Length

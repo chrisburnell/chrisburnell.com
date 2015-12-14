@@ -8,7 +8,7 @@
  * breakpoint.
  */
 /*aside*/.author {
-    font-family: $font-stack-secondary;
+    font-family: $font-family-beta;
 
     @include media("<=medium") {
         display: flex;
@@ -19,14 +19,14 @@
 }
     .author-information {
         margin-bottom: $spacing-medium;
-        font-family: $font-stack-primary;
+        font-family: $font-family-default;
         font-size: $font-size-small;
         font-style: italic;
         line-height: 1.429;
 
         @include media("<=medium") {
             padding-top: $spacing-large;
-            border-top: $border-thin solid $color-black-medium;
+            border-top: $border-thin solid $color-black-10-percent;
             margin-bottom: $spacing-small;
         }
 
@@ -34,8 +34,8 @@
         a:visited,
         strong {
             color: inherit;
-            font-family: $font-stack-secondary;
-            font-weight: 600;
+            font-family: $font-family-beta;
+            font-weight: $font-weight-bold;
             font-style: normal;
             text-transform: uppercase;
             white-space: nowrap;

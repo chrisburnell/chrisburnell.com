@@ -42,7 +42,7 @@
 
 .nav-secondary {
     margin-top: $spacing-large;
-    border-top: $border-thin solid $color-black-medium;
+    border-top: $border-thin solid $color-black-10-percent;
     padding-top: ($spacing-large - .182rem);
 
     %content-elements + & {

@@ -9,7 +9,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 ($spacing-medium * -1) $spacing-large;
-    font-family: $font-stack-secondary;
+    font-family: $font-family-beta;
     line-height: 1.25;
 
     aside & {
@@ -43,14 +43,14 @@
             }
 
             &:nth-child(2n+2) a {
-                background-color: $color-black-low;
+                background-color: $color-black-5-percent;
             }
         }
 
         @include media(">small") {
             &:nth-child(4n+2) a,
             &:nth-child(4n+3) a {
-                background-color: $color-black-low;
+                background-color: $color-black-5-percent;
             }
         }
 
@@ -64,7 +64,7 @@
             }
 
             &:nth-child(2n+1) a {
-                background-color: $color-black-low;
+                background-color: $color-black-5-percent;
             }
         }
     }
@@ -77,7 +77,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: rgba($color-brand, opacity(medium)) !important;
+            background-color: $color-brand-10-percent !important;
             text-decoration: none;
         }
 
@@ -113,7 +113,7 @@
         display: block;
         margin-top: $spacing-small;
         font-size: $font-size-smaller;
-        font-weight: 600;
+        font-weight: $font-weight-bold;
 
         @include media(">medium") {
             text-align: right;
@@ -128,7 +128,7 @@
     svg {
         @include transition;
         @include will-change(opacity);
-        opacity: opacity(low);
+        opacity: opacity("5-percent");
         // override `_icons.scss` + 4px
         width:  6.25em !important;
         height: 6.25em;
@@ -148,6 +148,6 @@
     a:hover svg,
     a:focus svg,
     a:active svg {
-        opacity: opacity(high);
+        opacity: opacity("25-percent");
     }
 }
