@@ -46,9 +46,9 @@ Building this website requires both `jekyll` and `gulp`.
 
 ### Generated
 
-- _includes/generated/critical-css.html
-- _includes/generated/loadcss.html
-- serviceworker.min.js
+- /_includes/generated/critical-css.html
+- /_includes/generated/loadcss.html
+- /serviceworker.min.js
 
 ### Layouts
 
@@ -57,32 +57,34 @@ Building this website requires both `jekyll` and `gulp`.
 
 ### Includes
 
-- body
+- /body
   - body-css-js.html
   - body-search-templates.html
-- components
+- /components
+  - banner.html
   - comments.html
   - nav-primary.html
   - nav-tertiary.html
   - svg.html
-- content
+- /content
   - code-toggle-button.html
   - code-toggle-input.html
   - codepen.html
   - heading.html
-- generated *
+- /generated *
   - critical-css.html
   - loadcss.html
-- head
+  - typekit.html
+- /head
   - head-css.html
   - head-js.html
   - head.html
-- layout
+- /layout
   - header.html
   - footer.html
-- main-aside
+- /main-aside
   - main-aside.html
-  - widgets
+  - /widgets
     - featured-pens.html
     - related-articles.html
     - search.html
@@ -95,7 +97,7 @@ Building this website requires both `jekyll` and `gulp`.
 The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creatice Commons License](LICENSE).
 
 
-### ...
+### Continuous Integration
 
 ![Codeship Status](https://codeship.com/projects/118727/status?branch=master)
 
