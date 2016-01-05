@@ -1,0 +1,16 @@
+<div class="widget  widget--shared-links">
+    <h3 class="widget-title"><a href="/links" title="">Shared Links</a></h3>
+    <ol class="small-articles-list" role="list">
+        {% for post in site.categories.link limit:2 %}
+            <li role="listitem">
+                <a href="{{ post.link_url }}">
+                    <h4 class="title">{{ post.title }} &rarr;</h4>
+                    {% if post.lede %}
+                        <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ol>
+    <a class="widget-featured-link" href="/links">All Shared Links</a>
+</div>

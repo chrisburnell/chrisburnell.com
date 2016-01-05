@@ -6,16 +6,30 @@ searchable: no-content
 
 
 <ol id="articles" class="articles-list" role="list">
-    {% for post in site.categories.article limit:5 %}
+    {% for post in site.posts limit:5 %}
         <li role="listitem">
             <h2 class="title">
-                <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+                {% if post.categories contains 'link' %}
+                    <a class="title-link" href="{{ post.link_url }}" tabindex="-1">{{ post.title }}</a>
+                {% else %}
+                    <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+                {% endif %}
             </h2>
             <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
-                <p class="lede">{{ post.lede }}</p>
+                <p class="lede">{{ post.lede | truncatewords: 25 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+            {% elsif post.categories contains 'link' %}
+                <p class="lede"><em>Shared Link</em></p>
+            {% elsif post.categories contains 'pen' %}
+                <p class="lede"><em>Featured Pen</em></p>
             {% endif %}
-            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
+            {% if post.categories contains 'link' %}
+                <a class="button" href="{{ post.link_url }}">View link &rarr;</a>
+            {% elsif post.categories contains 'pen' %}
+                <a class="button" href="{{ post.url }}">View pen</a>
+            {% else %}
+                <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
+            {% endif %}
             {% if post.comments == true %}
                 <a class="comments-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
@@ -24,5 +38,8 @@ searchable: no-content
 </ol>
 
 <nav class="nav-secondary" role="navigation">
-    <a class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+    <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+    <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
+    <a rel="me author" class="button" href="/links"><svg class="icon--feather"><use xlink:href="#svg--feather" /></svg> Shared Links</a>
+    <a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
 </nav>

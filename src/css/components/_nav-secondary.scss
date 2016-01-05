@@ -24,18 +24,18 @@
     %button {
         display: inline-block;
 
-        @include media("<=small") {
-            margin-left:  auto;
-            margin-right: auto;
-
-            %button {
-                margin-top: $spacing-small;
-            }
-        }
-
         @include media(">small") {
             margin-left:  $spacing-small;
             margin-right: $spacing-small;
+        }
+
+        @include media("<=small") {
+            margin-left:  auto;
+            margin-right: auto;
+        }
+
+        & + %button {
+            margin-top: $spacing-small;
         }
     }
 }

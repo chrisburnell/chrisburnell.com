@@ -1214,7 +1214,7 @@ footer {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin: 0 -1.25rem 2.25rem;
+  margin-bottom: 2.25rem;
   font-family: "proxima-nova", sans-serif;
   line-height: 1.25; }
   aside .small-articles-list {
@@ -1370,38 +1370,6 @@ footer {
   .buttons-list
   .button--small {
     display: inline-block; }
-    @media (max-width: 500px) {
-      .nav-secondary button, .nav-secondary .button, .nav-secondary
-      .button--small,
-      .buttons-list button,
-      .buttons-list .button,
-      .buttons-list
-      .button--small {
-        margin-left: auto;
-        margin-right: auto; }
-        .nav-secondary button button, .nav-secondary .button button, .nav-secondary
-        .button--small button, .nav-secondary button .button, .nav-secondary .button .button, .nav-secondary
-        .button--small .button, .nav-secondary button
-        .button--small, .nav-secondary .button
-        .button--small, .nav-secondary
-        .button--small
-        .button--small,
-        .buttons-list button button,
-        .buttons-list .button button,
-        .buttons-list
-        .button--small button,
-        .buttons-list button .button,
-        .buttons-list .button .button,
-        .buttons-list
-        .button--small .button,
-        .buttons-list button
-        .button--small,
-        .buttons-list .button
-        .button--small,
-        .buttons-list
-        .button--small
-        .button--small {
-          margin-top: 0.625rem; } }
     @media (min-width: 501px) {
       .nav-secondary button, .nav-secondary .button, .nav-secondary
       .button--small,
@@ -1411,6 +1379,38 @@ footer {
       .button--small {
         margin-left: 0.625rem;
         margin-right: 0.625rem; } }
+    @media (max-width: 500px) {
+      .nav-secondary button, .nav-secondary .button, .nav-secondary
+      .button--small,
+      .buttons-list button,
+      .buttons-list .button,
+      .buttons-list
+      .button--small {
+        margin-left: auto;
+        margin-right: auto; } }
+    .nav-secondary button + button, .nav-secondary .button + button, .nav-secondary
+    .button--small + button, .nav-secondary button + .button, .nav-secondary .button + .button, .nav-secondary
+    .button--small + .button, .nav-secondary button +
+    .button--small, .nav-secondary .button +
+    .button--small, .nav-secondary
+    .button--small +
+    .button--small,
+    .buttons-list button + button,
+    .buttons-list .button + button,
+    .buttons-list
+    .button--small + button,
+    .buttons-list button + .button,
+    .buttons-list .button + .button,
+    .buttons-list
+    .button--small + .button,
+    .buttons-list button +
+    .button--small,
+    .buttons-list .button +
+    .button--small,
+    .buttons-list
+    .button--small +
+    .button--small {
+      margin-top: 0.625rem; }
 
 .nav-secondary {
   margin-top: 2.25rem;

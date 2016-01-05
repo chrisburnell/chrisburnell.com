@@ -35,6 +35,7 @@ snippet of code on a project of your own. -->
         {{ class }}
     {% endfor %}
     {% if page.categories contains 'article' %}page-article{% endif %}
+    {% if page.categories contains 'link' %}page-link{% endif %}
     {% if page.categories contains 'pen' %}page-pen{% endif %}
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' %}

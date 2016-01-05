@@ -8,6 +8,8 @@
 
     {% if page.lede %}
         {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
+    {% elsif page.categories contains 'link' %}
+        {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
     {% elsif page.categories contains 'pen' %}
         {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
     {% else %}

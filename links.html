@@ -1,0 +1,34 @@
+---
+layout: default
+page_class: page-links
+searchable: no-content
+
+title: Shared Links
+lede: All of my shared links listed on one page.
+---
+
+
+<ol id="links" class="small-articles-list" role="list">
+    {% for post in site.categories.link %}
+        <li role="listitem">
+            <a href="{{ post.url }}">
+                <h4 class="title">{{ post.title }}</h4>
+                {% if post.lede %}
+                    <p class="lede">{{ post.lede | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                {% endif %}
+                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+            </a>
+        </li>
+    {% endfor %}
+</ol>
+
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/feed-links.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Links</a>
+    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
+</nav>
+
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+    <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
+    <a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
+</nav>
