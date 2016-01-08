@@ -42,8 +42,7 @@ h1 {
 
 %beta {
     font-family: $font-family-default;
-    // 26px
-    font-size: 1.625rem;
+    font-size: $font-size-larger;
 }
 h2 {
     @extend %beta;
@@ -62,6 +61,10 @@ h3 {
     margin-top: $spacing-large;
     border-bottom: $border-thin solid $color-text-light;
 
+    &:not(:last-child) {
+        margin-bottom: $spacing-medium;
+    }
+
     article > & {
         @extend .clear;
         width: auto;
@@ -70,8 +73,8 @@ h3 {
         padding-right: $spacing-large;
     }
 
-    &:not(:last-child) {
-        margin-bottom: $spacing-medium;
+    .lede--featured + & {
+        margin-top: 0;
     }
 
     code {

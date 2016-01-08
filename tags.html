@@ -19,7 +19,11 @@ lede: A list of tags and their counterparts.
     <ol class="small-articles-list" role="list">
         {% for post in site.tags[tag] %}
             <li role="listitem">
-                <a href="{{ post.url }}">
+                {% if post.categories contains 'link' %}
+                    <a href="{{ post.link_url }}">
+                {% else %}
+                    <a href="{{ post.url }}">
+                {% endif %}
                     {% if post.categories contains 'article' %}
                         <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
                     {% elsif post.categories contains 'link' %}
@@ -42,14 +46,9 @@ lede: A list of tags and their counterparts.
     </ol>
 {% endfor %}
 
-<nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a>
-    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
-    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
-</nav>
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
     <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
-    <a rel="me author" class="button" href="/links"><svg class="icon--link"><use xlink:href="#svg--link" /></svg> Shared Links</a>
+    <a rel="me author" class="button" href="/links"><svg class="icon--link"><use xlink:href="#svg--link" /></svg> Links Archive</a>
 </nav>

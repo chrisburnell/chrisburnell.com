@@ -16,6 +16,10 @@
         margin: 0 ($spacing-small * -1);
     }
 
+    .page-home & {
+        margin-bottom: 0;
+    }
+
     li {
         width: 49.0125%;
         display: inline-block;

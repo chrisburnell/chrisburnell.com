@@ -387,7 +387,7 @@ h1 {
 
 h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: 1.625rem; }
+  font-size: 1.375rem; }
 
 h3, .articles-list .date {
   font-family: "proxima-nova", sans-serif;
@@ -399,13 +399,15 @@ h3, .articles-list .date {
 h3 {
   margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd; }
+  h3:not(:last-child) {
+    margin-bottom: 1.25rem; }
   article > h3 {
     width: auto;
     max-width: 100%;
     display: inline-block;
     padding-right: 2.25rem; }
-  h3:not(:last-child) {
-    margin-bottom: 1.25rem; }
+  .lede--featured + h3 {
+    margin-top: 0; }
   h3 code {
     text-transform: none; }
 
@@ -986,24 +988,21 @@ aside figcaption {
     .banner {
       width: 500px; } }
 
-.lede, .lede--featured, .lede--small {
+.lede, .lede--featured {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede, .lede--featured, .lede--small {
+    .lede, .lede--featured {
       text-align: left; } }
-  aside + .lede, aside + .lede--featured, aside + .lede--small {
+  aside + .lede, aside + .lede--featured {
     margin-top: -0.5rem; }
 
 .lede--featured {
   max-width: 24em;
   font-size: 1.625rem; }
 
-.lede--small {
-  font-size: 100%; }
-
-.lede--terminology {
+.terminology {
   padding-bottom: 2.25rem;
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
@@ -1014,52 +1013,52 @@ aside figcaption {
   font-style: italic;
   line-height: 1.5; }
 
-.articles-list li {
-  width: 100%;
-  display: inline-block;
-  clear: both;
-  padding: 1.5rem 1rem;
-  border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
-  position: relative; }
-  @media (max-width: 768px) {
-    .articles-list li {
-      padding-top: 1.875rem;
-      padding-bottom: 1.875rem;
-      text-align: center; } }
-  .articles-list li:nth-child(odd) {
-    background-color: rgba(6, 6, 6, 0.05); }
-
-.articles-list .title,
-.articles-list .date,
-.articles-list .comments-link {
-  text-shadow: 0 1px 0 #f9f9f9; }
-
-.articles-list .title {
-  margin-bottom: 0.625rem; }
-  .articles-list .title .title-link {
-    -webkit-transition: border-color 0.2s ease;
-    transition: border-color 0.2s ease;
-    will-change: color, border-bottom-color;
+.articles-list {
+  margin-bottom: 2.25rem; }
+  .page-home .articles-list {
+    margin-bottom: 0; }
+  .articles-list li {
+    width: 100%;
     display: inline-block;
-    padding: 0 .5rem;
-    border-bottom: 0.125rem solid transparent;
-    margin-left: -0.5rem; }
-    .articles-list .title .title-link:hover, .articles-list .title .title-link:focus, .articles-list .title .title-link:active {
-      color: #4f4f4f;
-      border-bottom-color: #5f8aa6;
-      text-decoration: none; }
-
-.articles-list .lede, .articles-list .lede--featured, .articles-list .lede--small {
-  margin-bottom: 1.25rem; }
-
-.articles-list .date {
-  margin-bottom: 0.625rem; }
-  @media (max-width: 768px) {
-    .articles-list .date {
-      text-align: left; } }
-  .articles-list .date:before {
-    content: "– ";
-    color: #737373; }
+    clear: both;
+    padding: 1.5rem 1rem;
+    border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
+    position: relative; }
+    @media (max-width: 768px) {
+      .articles-list li {
+        padding-top: 1.875rem;
+        padding-bottom: 1.875rem;
+        text-align: center; } }
+    .articles-list li:nth-child(odd) {
+      background-color: rgba(6, 6, 6, 0.05); }
+  .articles-list .title,
+  .articles-list .date,
+  .articles-list .comments-link {
+    text-shadow: 0 1px 0 #f9f9f9; }
+  .articles-list .title {
+    margin-bottom: 0.625rem; }
+    .articles-list .title .title-link {
+      -webkit-transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease;
+      will-change: color, border-bottom-color;
+      display: inline-block;
+      padding: 0 .5rem;
+      border-bottom: 0.125rem solid transparent;
+      margin-left: -0.5rem; }
+      .articles-list .title .title-link:hover, .articles-list .title .title-link:focus, .articles-list .title .title-link:active {
+        color: #4f4f4f;
+        border-bottom-color: #5f8aa6;
+        text-decoration: none; }
+  .articles-list .lede, .articles-list .lede--featured {
+    margin-bottom: 1.25rem; }
+  .articles-list .date {
+    margin-bottom: 0.625rem; }
+    @media (max-width: 768px) {
+      .articles-list .date {
+        text-align: left; } }
+    .articles-list .date:before {
+      content: "– ";
+      color: #737373; }
 
 /**
  * The `.author` aside is always pushed underneath the content below the medium

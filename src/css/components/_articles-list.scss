@@ -4,6 +4,12 @@
 ////
 
 .articles-list {
+    margin-bottom: $spacing-large;
+
+    .page-home & {
+        margin-bottom: 0;
+    }
+
     li {
         width: 100%;
         display: inline-block;

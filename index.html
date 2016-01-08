@@ -5,31 +5,21 @@ searchable: no-content
 ---
 
 
+<h3>
+    <a href="/articles">Latest Articles</a>
+</h3>
+
 <ol id="articles" class="articles-list" role="list">
-    {% for post in site.posts limit: 5 %}
+    {% for post in site.categories.article limit: 3 %}
         <li role="listitem">
             <h2 class="title">
-                {% if post.categories contains 'link' %}
-                    <a class="title-link" href="{{ post.link_url }}" tabindex="-1">{{ post.title }}</a>
-                {% else %}
-                    <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
-                {% endif %}
+                <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
             <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
-                {% if post.categories contains 'link' %}
-                    <p class="lede--small">{{ post.lede }}</p>
-                {% else %}
-                    <p class="lede">{{ post.lede | truncatewords: 25 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
-                {% endif %}
+                <p class="lede">{{ post.lede }}</p>
             {% endif %}
-            {% if post.categories contains 'link' %}
-                <a class="button" rel="external" href="{{ post.link_url }}">View Link</a>
-            {% elsif post.categories contains 'pen' %}
-                <a class="button" href="{{ post.url }}">View Pen</a>
-            {% else %}
-                <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read Full Article</a>
-            {% endif %}
+            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read Full Article</a>
             {% if post.comments == true %}
                 <a class="comments-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
@@ -39,7 +29,56 @@ searchable: no-content
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+</nav>
+
+
+<h3>
+    <a href="/pens">Featured Pens</a>
+</h3>
+
+<ol id="pens" class="small-articles-list" role="list">
+    {% for post in site.categories.pen limit: 4 %}
+        <li role="listitem">
+            <a href="{{ post.url }}">
+                <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                <h4 class="title">{{ post.title }}</h4>
+                {% if post.lede %}
+                    <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                {% else %}
+                    <p class="lede"><em>Featured Pen</em></p>
+                {% endif %}
+                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+            </a>
+        </li>
+    {% endfor %}
+</ol>
+
+<nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/pens"><svg class="icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>
-    <a rel="me author" class="button" href="/links"><svg class="icon--link"><use xlink:href="#svg--link" /></svg> Shared Links</a>
-    <a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
+</nav>
+
+
+<h3>
+    <a href="/links">Shared Links</a>
+</h3>
+
+<ol id="links" class="small-articles-list" role="list">
+    {% for post in site.categories.link limit: 4 %}
+        <li role="listitem">
+            <a href="{{ post.link_url }}">
+                <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
+                <h4 class="title">{{ post.title }}</h4>
+                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+                {% if post.lede %}
+                    <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                {% else %}
+                    <p class="lede"><em>Shared Link</em></p>
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ol>
+
+<nav class="nav-secondary" role="navigation">
+    <a rel="me author" class="button" href="/links"><svg class="icon--link"><use xlink:href="#svg--link" /></svg> Links Archive</a>
 </nav>

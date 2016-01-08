@@ -49,8 +49,9 @@
         margin-top: $spacing-medium;
     }
 
-    .articles-list + & {
+    .page-home & {
         margin-top: 0;
+        border-top: 0;
     }
 
     .page-about & {
