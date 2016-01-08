@@ -10,7 +10,7 @@ searchable: no-content
 </h3>
 
 <ol id="articles" class="articles-list" role="list">
-    {% for post in site.categories.article limit: 3 %}
+    {% for post in site.categories.article limit: 2 %}
         <li role="listitem">
             <h2 class="title">
                 <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
