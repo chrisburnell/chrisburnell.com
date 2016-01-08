@@ -85,11 +85,9 @@
         {% include main-aside/widgets/search.html %}
     {% endunless %}
 
-    {% if page.page_class contains 'page-home' %}
-        {% include main-aside/widgets/featured-pens.html %}
-    {% endif %}
     {% if page.layout == 'article' %}
         {% include main-aside/widgets/related-articles.html %}
+        {% include main-aside/widgets/featured-pens.html %}
         {% include main-aside/widgets/shared-links.html %}
     {% endif %}
 
