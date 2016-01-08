@@ -31,7 +31,7 @@
     }
 
     svg {
-        @include absolute;
+        @include position(top-left);
         @include transition(all 1s);
         @include will-change(transform);
         display: block;

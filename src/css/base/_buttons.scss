@@ -47,7 +47,7 @@
 
     &:before,
     &:after {
-        @include absolute;
+        @include position(top-left);
         @include will-change(top);
         content: "";
         width: 100%;
@@ -57,6 +57,18 @@
         &:before,
         &:after {
             top: -0.182em;
+        }
+    }
+
+    &[rel="external"] {
+        &:after {
+            @include position(reset);
+            @include will-change(initial);
+            // NO-BREAK SPACE, RIGHTWARDS ARROW
+            content: " →";
+            width:  auto;
+            height: auto;
+            font-family: $font-family-monospace;
         }
     }
 

@@ -490,6 +490,9 @@ h3 a:active {
 .link--heart {
   color: #5f8aa6 !important; }
 
+.link--link {
+  color: #5f8aa6 !important; }
+
 .link--tag {
   color: #5f8aa6 !important; }
 
@@ -983,21 +986,24 @@ aside figcaption {
     .banner {
       width: 500px; } }
 
-.lede, .lede--featured {
+.lede, .lede--featured, .lede--small {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede, .lede--featured {
+    .lede, .lede--featured, .lede--small {
       text-align: left; } }
-  aside + .lede, aside + .lede--featured {
+  aside + .lede, aside + .lede--featured, aside + .lede--small {
     margin-top: -0.5rem; }
 
 .lede--featured {
   max-width: 24em;
   font-size: 1.625rem; }
 
-.lede-terminology {
+.lede--small {
+  font-size: 100%; }
+
+.lede--terminology {
   padding-bottom: 2.25rem;
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
@@ -1043,7 +1049,7 @@ aside figcaption {
       border-bottom-color: #5f8aa6;
       text-decoration: none; }
 
-.articles-list .lede, .articles-list .lede--featured {
+.articles-list .lede, .articles-list .lede--featured, .articles-list .lede--small {
   margin-bottom: 1.25rem; }
 
 .articles-list .date {

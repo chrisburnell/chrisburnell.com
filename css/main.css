@@ -490,6 +490,9 @@ h3 a:active {
 .link--heart {
   color: #5f8aa6 !important; }
 
+.link--link {
+  color: #5f8aa6 !important; }
+
 .link--tag {
   color: #5f8aa6 !important; }
 
@@ -796,6 +799,16 @@ button, .button,
   .button--small:active:before, button:active:after, .button:active:after,
   .button--small:active:after {
     top: -0.182em; }
+  button[rel="external"]:after, [rel="external"].button:after,
+  [rel="external"].button--small:after {
+    position: relative;
+    top: 0;
+    left: 0;
+    will-change: initial;
+    content: " →";
+    width: auto;
+    height: auto;
+    font-family: Monaco, Consolas, Courier, monospace; }
   button svg, .button svg,
   .button--small svg {
     width: .8em;
@@ -1125,21 +1138,24 @@ footer {
     .banner {
       width: 500px; } }
 
-.lede, .lede--featured {
+.lede, .lede--featured, .lede--small {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede, .lede--featured {
+    .lede, .lede--featured, .lede--small {
       text-align: left; } }
-  aside + .lede, aside + .lede--featured {
+  aside + .lede, aside + .lede--featured, aside + .lede--small {
     margin-top: -0.5rem; }
 
 .lede--featured {
   max-width: 24em;
   font-size: 1.625rem; }
 
-.lede-terminology {
+.lede--small {
+  font-size: 100%; }
+
+.lede--terminology {
   padding-bottom: 2.25rem;
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
@@ -1185,7 +1201,7 @@ footer {
       border-bottom-color: #5f8aa6;
       text-decoration: none; }
 
-.articles-list .lede, .articles-list .lede--featured {
+.articles-list .lede, .articles-list .lede--featured, .articles-list .lede--small {
   margin-bottom: 1.25rem; }
 
 .articles-list .date {
@@ -1257,6 +1273,7 @@ footer {
   .small-articles-list .title,
   .small-articles-list .lede,
   .small-articles-list .lede--featured,
+  .small-articles-list .lede--small,
   .small-articles-list .date {
     text-shadow: 0 1px 0 #f9f9f9; }
   .small-articles-list .title {
@@ -1265,7 +1282,7 @@ footer {
   .small-articles-list a:focus .title,
   .small-articles-list a:active .title {
     text-decoration: underline; }
-  .small-articles-list .lede, .small-articles-list .lede--featured {
+  .small-articles-list .lede, .small-articles-list .lede--featured, .small-articles-list .lede--small {
     color: #4f4f4f;
     margin-top: 0.625rem;
     margin-bottom: 0;
@@ -1387,30 +1404,30 @@ footer {
       .buttons-list
       .button--small {
         margin-left: auto;
-        margin-right: auto; } }
-    .nav-secondary button + button, .nav-secondary .button + button, .nav-secondary
-    .button--small + button, .nav-secondary button + .button, .nav-secondary .button + .button, .nav-secondary
-    .button--small + .button, .nav-secondary button +
-    .button--small, .nav-secondary .button +
-    .button--small, .nav-secondary
-    .button--small +
-    .button--small,
-    .buttons-list button + button,
-    .buttons-list .button + button,
-    .buttons-list
-    .button--small + button,
-    .buttons-list button + .button,
-    .buttons-list .button + .button,
-    .buttons-list
-    .button--small + .button,
-    .buttons-list button +
-    .button--small,
-    .buttons-list .button +
-    .button--small,
-    .buttons-list
-    .button--small +
-    .button--small {
-      margin-top: 0.625rem; }
+        margin-right: auto; }
+        .nav-secondary button + button, .nav-secondary .button + button, .nav-secondary
+        .button--small + button, .nav-secondary button + .button, .nav-secondary .button + .button, .nav-secondary
+        .button--small + .button, .nav-secondary button +
+        .button--small, .nav-secondary .button +
+        .button--small, .nav-secondary
+        .button--small +
+        .button--small,
+        .buttons-list button + button,
+        .buttons-list .button + button,
+        .buttons-list
+        .button--small + button,
+        .buttons-list button + .button,
+        .buttons-list .button + .button,
+        .buttons-list
+        .button--small + .button,
+        .buttons-list button +
+        .button--small,
+        .buttons-list .button +
+        .button--small,
+        .buttons-list
+        .button--small +
+        .button--small {
+          margin-top: 0.625rem; } }
 
 .nav-secondary {
   margin-top: 2.25rem;
@@ -1850,6 +1867,10 @@ code[data-lang] {
 .link--heart {
   width: 40px; }
 
+.icon--link,
+.link--link {
+  width: 40px; }
+
 .icon--tag,
 .link--tag {
   width: 40px; }
@@ -1889,7 +1910,7 @@ code[data-lang] {
     border: 1px solid #4f4f4f;
     box-shadow: none; } }
 
-.page-style-guide .lede + h3, .page-style-guide .lede--featured + h3, .page-style-guide .articles-list .lede + .date, .articles-list .page-style-guide .lede + .date, .page-style-guide .articles-list .lede--featured + .date, .articles-list .page-style-guide .lede--featured + .date {
+.page-style-guide .lede + h3, .page-style-guide .lede--featured + h3, .page-style-guide .lede--small + h3, .page-style-guide .articles-list .lede + .date, .articles-list .page-style-guide .lede + .date, .page-style-guide .articles-list .lede--featured + .date, .articles-list .page-style-guide .lede--featured + .date, .page-style-guide .articles-list .lede--small + .date, .articles-list .page-style-guide .lede--small + .date {
   margin-top: 0; }
 
 .color-block-list {

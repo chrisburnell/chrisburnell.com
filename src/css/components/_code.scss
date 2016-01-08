@@ -10,7 +10,7 @@ code[data-lang] {
     padding-top: $spacing-large;
 
     &:before {
-        @include absolute;
+        @include position(top-left);
         @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
         content: attr(data-lang);
@@ -67,7 +67,7 @@ code[data-lang] {
         overflow-x: hidden;
 
         &:after {
-            @include absolute(bottom);
+            @include position(bottom);
             @include border-radius(0 0 $border-radius-default $border-radius-default);
             content: "";
             background-image: gradient(transparent, $color-gray);

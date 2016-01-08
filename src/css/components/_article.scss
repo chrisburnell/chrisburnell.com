@@ -40,11 +40,14 @@
 .lede--featured {
     @extend .lede;
     max-width: 24em;
-    // 26px
-    font-size: 1.625rem;
+    font-size: $font-size-gigantic;
+}
+.lede--small {
+    @extend .lede;
+    font-size: $font-size-default;
 }
 
-.lede-terminology {
+.lede--terminology {
     padding-bottom: $spacing-large;
     border-bottom: $border-thin solid $color-black-10-percent;
 }

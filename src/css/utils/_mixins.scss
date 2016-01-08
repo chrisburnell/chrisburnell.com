@@ -7,40 +7,41 @@
 ///
 /// Absolutely position an element.
 ///
-/// @param {String} $position - Position of the element
-///
-/// @example scss - Zero parameters
-///   @include absolute;
-///   // position: absolute;
-///   // top:  0;
-///   // left: 0;
+/// @param {String} $value - Position of the element
 ///
 /// @example scss - One parameter
-///   @include absolute(bottom);
+///   @include position(bottom);
 ///   // position: absolute;
 ///   // bottom: 0;
 ///   // left:   0;
 ///   // right:  0;
 ///
-@mixin absolute($position: "top-left") {
+@mixin position( $value ) {
 
-    position: absolute;
-
-    @if( $position == "top-left" ) {
+    @if( $value == "top-left" ) {
+        position: absolute;
         top:  0;
         left: 0;
     }
 
-    @else if( $position == "bottom" ) {
+    @else if( $value == "bottom" ) {
+        position: absolute;
         bottom: 0;
         left:   0;
         right:  0;
     }
 
-    @else if( $position == "center") {
+    @else if( $value == "center" ) {
+        position: absolute;
         top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
+    }
+
+    @else if( $value == "none" or $value == "reset" ) {
+        position: relative;
+        top:  0;
+        left: 0;
     }
 
 }
@@ -60,7 +61,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin border-radius($values...) {
+@mixin border-radius( $values... ) {
 
     @if( length($values) == 0 ) {
         $values: $border-radius-default;
@@ -94,7 +95,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin font-family($family, $display) {
+@mixin font-family( $family, $display ) {
 
     @if( length($family) == 0 ) {
         @error "font-family() expects at least one parameter."
@@ -126,7 +127,7 @@
 /// @require {Variable} $transition-function
 ///
 /// @example scss - Zero parameters
-///   @include transition();
+///   @include transition;
 ///   // transition: all .2s ease;
 ///
 /// @example scss - One property
@@ -149,7 +150,7 @@
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
-@mixin transition($values...) {
+@mixin transition( $values... ) {
 
     $transition: ();
 
@@ -228,7 +229,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin will-change($values...) {
+@mixin will-change( $values... ) {
 
     @if( length($values) == 0 ) {
         @error "will-change() expects one or more parameters.";

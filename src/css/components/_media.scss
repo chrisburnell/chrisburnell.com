@@ -17,7 +17,7 @@
     iframe,
     object,
     video {
-        @include absolute;
+        @include position(top-left);
         width: 100%;
         height: 100%;
     }

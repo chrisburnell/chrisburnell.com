@@ -198,7 +198,7 @@ ul:not([class]),
         }
 
         &:before {
-            @include absolute;
+            @include position(top-left);
             font-family: $font-family-beta;
             font-weight: $font-weight-bold;
         }

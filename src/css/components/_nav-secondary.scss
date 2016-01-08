@@ -32,10 +32,10 @@
         @include media("<=small") {
             margin-left:  auto;
             margin-right: auto;
-        }
 
-        & + %button {
-            margin-top: $spacing-small;
+            & + %button {
+                margin-top: $spacing-small;
+            }
         }
     }
 }
