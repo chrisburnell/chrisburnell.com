@@ -75,6 +75,8 @@
 ///
 /// @require {Variable} $z-indexes
 ///
+/// @require {Variable} $z-indexes
+///
 /// @example scss
 ///   z-index: z-index(above);
 ///   // z-index: 2;
@@ -100,7 +102,7 @@
 
 
 ///
-/// Contrasting Text Color
+/// Contrasting Text Color (Unused)
 ///
 /// @param {Color} $background-color - Background Color to contrast
 /// @param {Color} $text-color-light [$color-white] - Color to use for dark backgrounds
@@ -139,5 +141,29 @@
     } @else {
         @return $text-color-dark;
     }
+
+}
+
+
+///
+/// Strip Units from a Number (Unused)
+///
+/// @param {Number} $value - Number with units
+///
+/// @example scss
+///   line-height: strip-units(2em);
+///   // line-height: 2;
+///
+/// @return {Number} Number without units
+///
+/// @throw Error if no parameters are passed.
+///
+@function strip-units( $value ) {
+
+    @if( length($value) == 0 ) {
+        @error "strip-units() expects at least one parameter."
+    }
+
+    @return $value / ($value * 0 + 1);
 
 }
