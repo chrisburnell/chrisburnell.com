@@ -1877,7 +1877,8 @@ code[data-lang] {
   width: 40px; }
 
 /**
- * Contains embedded media properly and allows them to be dynamically resized.
+ * Contains embedded media properly and allows them to be dynamically resized
+ * inside a 16:9 aspect ratio container.
  */
 .media {
   height: 0;
