@@ -56,17 +56,17 @@
             color: $color-text-alt;
             display: block;
             padding: .75rem 1rem;
-            border-bottom: 0 solid $color-brand;
             margin-bottom: .25rem;
             font-family: $font-family-alpha;
             font-size: $font-size-large;
-            line-height: 1.25;
+            line-height: $line-height-small;
             text-transform: uppercase;
-            &:hover,
-            &:focus,
-            &:active {
-                text-decoration: none;
+
+            &:link,
+            &:visited {
+                border-bottom-color: $color-brand;
             }
+
             &:active {
                 transform: translateY(.2rem);
             }

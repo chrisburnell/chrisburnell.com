@@ -32,15 +32,12 @@
     width: 50px;
     height: 50px;
     margin-right: $spacing-medium;
+    border-bottom-width: 0;
     overflow: hidden;
     vertical-align: middle;
     text-indent: 100%;
     white-space: nowrap;
-    &:hover,
-    &:focus,
-    &:active {
-        text-decoration: none;
-    }
+
     &:active {
         transform: translateY(.2rem);
     }
@@ -61,6 +58,13 @@
     &:link,
     &:visited {
         color: $color-text-light;
+        border-bottom-color: $color-text-alt;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom-color: $color-text-light;
+        }
     }
 }
 .footer-style-guide-link {

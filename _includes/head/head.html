@@ -1,7 +1,7 @@
 <head>
 
     {% if page.page_class contains 'page-home' %}
-        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
+        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
     {% else %}
         {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
     {% endif %}
@@ -13,7 +13,7 @@
     {% elsif page.categories contains 'pen' %}
         {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
     {% else %}
-        {% capture meta_lede %}{{ site.lede | strip_html }}{% if paginator.page > 1 %} – Page {{ paginator.page }}{% endif %}{% endcapture %}
+        {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
     {% endif %}
 
     {% if page.banner_mobile %}

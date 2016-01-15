@@ -30,15 +30,23 @@
             margin-bottom: $spacing-small;
         }
 
-        a:link,
-        a:visited,
+        a,
         strong {
             color: inherit;
+            border-bottom-width: 0;
             font-family: $font-family-beta;
             font-weight: $font-weight-bold;
             font-style: normal;
             text-transform: uppercase;
             white-space: nowrap;
+        }
+
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: underline;
+            }
         }
     }
 

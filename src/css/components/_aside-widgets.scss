@@ -3,16 +3,15 @@
 /// @group components
 ////
 
+.widget {
+    @extend .clear;
+}
+
 .widget-featured-link {
-    width: 100%;
-    display: block;
+    display: inline-block;
+    float: right;
     margin-top: $spacing-medium;
     font-weight: $font-weight-bold;
-    text-align: right;
-
-    @include media("<=medium") {
-        text-align: center;
-    }
 
     &:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW

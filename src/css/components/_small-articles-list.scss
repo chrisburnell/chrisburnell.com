@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     margin-bottom: $spacing-large;
     font-family: $font-family-beta;
-    line-height: 1.25;
+    line-height: $line-height-small;
 
     aside & {
         margin: 0 ($spacing-small * -1);
@@ -78,6 +78,12 @@
         display: block;
         padding: $spacing-medium;
         overflow: hidden;
+
+        &:link,
+        &:visited {
+            border-bottom-width: 0;
+        }
+
         &:hover,
         &:focus,
         &:active {
@@ -97,12 +103,22 @@
     }
 
     .title {
+        @include transition(border-color);
+        @include will-change(border-color);
+        width: auto;
+        display: inline-block;
+        border-bottom: 1px solid $color-text-light;
         margin-bottom: 0;
     }
     a:hover .title,
     a:focus .title,
     a:active .title {
-        text-decoration: underline;
+        border-bottom-color: $color-brand;
+    }
+    a:visited:hover .title,
+    a:visited:focus .title,
+    a:visited:active .title {
+        border-bottom-color: darken($color-brand, 10%);
     }
 
     .lede {
