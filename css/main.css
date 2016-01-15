@@ -436,20 +436,21 @@ a {
   a:visited:hover, a:visited:focus, a:visited:active {
     border-bottom-color: #4b6f87; }
 
-h2 a:link,
-h3 a:link {
-  color: #4f4f4f;
+h2 a,
+h3 a {
   border-bottom-width: 0; }
-
-h2 a:visited,
-h3 a:visited {
-  color: dimgray; }
-
-h2 a:hover, h2 a:focus, h2 a:active,
-h3 a:hover,
-h3 a:focus,
-h3 a:active {
-  color: #5f8aa6; }
+  h2 a:link,
+  h3 a:link {
+    color: #4f4f4f; }
+  h2 a:visited,
+  h3 a:visited {
+    color: dimgray; }
+  h2 a:hover, h2 a:focus, h2 a:active,
+  h3 a:hover,
+  h3 a:focus,
+  h3 a:active {
+    color: #5f8aa6;
+    text-decoration: underline; }
 
 .heading-anchor {
   display: none;
@@ -467,7 +468,8 @@ h3 a:active {
   .heading-anchor:visited {
     color: #5a5a5a; }
   .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active {
-    border-bottom-color: #737373; }
+    border-bottom-color: #737373;
+    text-decoration: none; }
   .heading-anchor:visited:hover, .heading-anchor:visited:focus, .heading-anchor:visited:active {
     border-bottom-color: #5a5a5a; }
   :hover > .heading-anchor,
@@ -1127,6 +1129,7 @@ footer {
     color: #737373;
     display: block;
     padding: .75rem 1rem;
+    border-bottom-width: 0;
     margin-bottom: .25rem;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;

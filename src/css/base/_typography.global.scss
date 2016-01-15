@@ -132,9 +132,10 @@ a {
 
     h2 &,
     h3 & {
+        border-bottom-width: 0;
+
         &:link {
             color: $color-text;
-            border-bottom-width: 0;
         }
 
         &:visited {
@@ -145,6 +146,7 @@ a {
         &:focus,
         &:active {
             color: $color-brand;
+            text-decoration: underline;
         }
     }
 }
@@ -174,6 +176,7 @@ a {
     &:focus,
     &:active {
         border-bottom-color: $color-text-alt;
+        text-decoration: none;
     }
 
     &:visited {
