@@ -27,13 +27,32 @@
         height: 100%;
         display: block;
     }
+
+    %button & {
+        fill: $color-white;
+    }
+
+    .icons-list & {
+        fill: $color-black !important;
+    }
 }
 
 @each $color-brand in $color-brands {
     $name:  nth($color-brand, 1);
-    $ratio: nth($color-brand, 3);
-    &.icon--#{$name},
-    &.link--#{$name} {
+    $text-color: nth($color-brand, 2);
+    $icon-color: nth($color-brand, 3);
+    $ratio: nth($color-brand, 4);
+
+    .icon--#{$name} {
         width: ($ratio * $icon-size);
+        @if $name == "rss" {
+            fill: $icon-color !important;
+        } @else {
+            fill: $icon-color;
+        }
+    }
+
+    .link--#{$name} {
+        color: $text-color;
     }
 }

@@ -543,6 +543,13 @@ h3 a {
     .link--link:link:hover, .link--link:link:focus, .link--link:link:active, .link--link:visited:hover, .link--link:visited:focus, .link--link:visited:active {
       border-bottom-color: #5f8aa6; }
 
+.link--search {
+  color: #5f8aa6 !important; }
+  .link--search:link, .link--search:visited {
+    border-bottom-color: #a1baca; }
+    .link--search:link:hover, .link--search:link:focus, .link--search:link:active, .link--search:visited:hover, .link--search:visited:focus, .link--search:visited:active {
+      border-bottom-color: #5f8aa6; }
+
 .link--tag {
   color: #5f8aa6 !important; }
   .link--tag:link, .link--tag:visited {
@@ -899,7 +906,8 @@ aside figcaption {
     will-change: transform;
     display: block;
     -webkit-transform: translateZ(0);
-            transform: translateZ(0); }
+            transform: translateZ(0);
+    fill: #5f8aa6; }
     @media (min-width: 769px) {
       .logo svg {
         width: 8.5rem;
@@ -987,7 +995,6 @@ aside figcaption {
       border-bottom-color: #5f8aa6; }
     .nav-primary-list a:active {
       -webkit-transform: translateY(0.2rem);
-          -ms-transform: translateY(0.2rem);
               transform: translateY(0.2rem); }
     @media (max-width: 500px) {
       .nav-primary-list a {
@@ -1023,7 +1030,6 @@ aside figcaption {
   top: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
 
 .title,

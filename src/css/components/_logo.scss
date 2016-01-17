@@ -43,6 +43,7 @@
         @include will-change(transform);
         display: block;
         transform: translateZ(0);
+        fill: $color-brand;
 
         @include media(">medium") {
             width:  8.5rem;
