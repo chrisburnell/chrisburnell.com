@@ -8,11 +8,11 @@
                 <li role="listitem">
                     <a href="{{ post.url }}">
                         {% if post.categories contains 'article' %}
-                            <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
+                            <svg class="icon  icon--article"><use xlink:href="#svg--article" /></svg>
                         {% elsif post.categories contains 'link' %}
-                            <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
+                            <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
                         {% elsif post.categories contains 'pen' %}
-                            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                            <svg class="icon  icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                         {% endif %}
                         <h4 class="title">{{ post.title }}</h4>
                         {% if post.lede %}

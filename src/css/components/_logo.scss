@@ -14,12 +14,6 @@
         border-bottom-width: 0;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-        text-decoration: none;
-    }
-
     @include media(">small") {
         height: 6.25rem;
         float: left;
@@ -68,7 +62,7 @@
         }
     }
     &:active svg {
-        @include transition;
+        transition-time: $transition-time;
 
         @include media(">medium") {
             transform: translateX(4rem) translateY(-2.5rem) translateZ(0);

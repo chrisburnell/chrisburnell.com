@@ -22,10 +22,12 @@ textarea {
     border: $border-thin solid $color-text-light;
     outline-style: none;
     font-family: $font-family-beta;
+
     &:focus {
         background-color: transparent;
         border-color: $color-brand;
     }
+
     &[disabled] {
         opacity: opacity("70-percent");
     }

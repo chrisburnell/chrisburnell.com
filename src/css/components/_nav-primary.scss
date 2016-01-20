@@ -4,15 +4,17 @@
 ////
 
 .nav-primary {
-    float: right;
     padding-top: $spacing-medium;
     padding-bottom: $spacing-medium;
     white-space: nowrap;
 
+    @include media(">small") {
+        float: right;
+    }
+
     @include media("<=small") {
         width: 100%;
         padding-top: $spacing-small;
-        text-align: center;
     }
 }
     .nav-primary-list {
@@ -38,7 +40,9 @@
             }
 
             & + li {
-                margin-left: 1em;
+                @include media(">medium") {
+                    margin-left: 1em;
+                }
 
                 @include media("<=medium") {
                     margin-left: .5em;
@@ -56,17 +60,13 @@
             color: $color-text-alt;
             display: block;
             padding: .75rem 1rem;
+            border-bottom-color: $color-brand;
             border-bottom-width: 0;
             margin-bottom: .25rem;
             font-family: $font-family-alpha;
             font-size: $font-size-large;
             line-height: $line-height-small;
             text-transform: uppercase;
-
-            &:link,
-            &:visited {
-                border-bottom-color: $color-brand;
-            }
 
             &:active {
                 transform: translateY(.2rem);
@@ -78,7 +78,7 @@
             }
         }
     }
-    // effect for interactions and active paths
+    // Effect for interactions and active paths
     .nav-primary-list a:hover,
     .nav-primary-list a:focus,
     .nav-primary-list a:active,
@@ -94,7 +94,7 @@
         border-bottom-width: $border-default;
     }
 
-    // complementary to the effect for interactions and active paths
+    // Complementary to the Effect for interactions and active paths
     .page-home .nav-primary-home a:after,
     .page-about .nav-primary-about a:after,
     .page-article .nav-primary-articles a:after,

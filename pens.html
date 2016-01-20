@@ -19,7 +19,7 @@ lede: All of my featured pens listed on one page.
     {% for post in site.categories.pen %}
         <li role="listitem">
             <a href="{{ post.url }}">
-                <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                <svg class="icon  icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>
@@ -29,13 +29,13 @@ lede: All of my featured pens listed on one page.
 
 
 <nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
-    <a rel="me author" class="button" href="/feed.xml"><svg class="icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
+    <a rel="me author" class="button" href="/feed-pens.xml"><svg class="icon  icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Pens</a>
+    <a rel="me author" class="button" href="/feed.xml"><svg class="icon  icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
 </nav>
 
 
 <nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/articles"><svg class="icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
-    <a rel="me author" class="button" href="/links"><svg class="icon--link"><use xlink:href="#svg--link" /></svg> Link Archive</a>
-    <a rel="me author" class="button" href="/tags"><svg class="icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
+    <a rel="me author" class="button" href="/articles"><svg class="icon  icon--article"><use xlink:href="#svg--article" /></svg> Articles Archive</a>
+    <a rel="me author" class="button" href="/links"><svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg> Link Archive</a>
+    <a rel="me author" class="button" href="/tags"><svg class="icon  icon--tag"><use xlink:href="#svg--tag" /></svg> Tags Archive</a>
 </nav>

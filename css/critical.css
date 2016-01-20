@@ -371,7 +371,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   min-height: 1.25em;
   padding: 0;
   margin: 0;
@@ -408,7 +413,11 @@ h3 {
     padding-right: 2.25rem; }
   .lede--featured + h3 {
     margin-top: 0; }
-  h3 code {
+  h3 code, h3
+  kbd, h3
+  samp, h3
+  var, h3
+  .monospace {
     text-transform: none; }
 
 h4 {
@@ -468,13 +477,25 @@ h3 a {
   .heading-anchor:visited {
     color: #5a5a5a; }
   .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active {
-    border-bottom-color: #737373;
-    text-decoration: none; }
+    border-bottom-color: #737373; }
   .heading-anchor:visited:hover, .heading-anchor:visited:focus, .heading-anchor:visited:active {
     border-bottom-color: #5a5a5a; }
-  :hover > .heading-anchor,
-  :focus > .heading-anchor,
-  :active > .heading-anchor {
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor, h1:focus .heading-anchor,
+  h2:focus .heading-anchor,
+  h3:focus .heading-anchor,
+  h4:focus .heading-anchor,
+  h5:focus .heading-anchor,
+  h6:focus .heading-anchor, h1:active .heading-anchor,
+  h2:active .heading-anchor,
+  h3:active .heading-anchor,
+  h4:active .heading-anchor,
+  h5:active .heading-anchor,
+  h6:active .heading-anchor {
     display: inline-block; }
 
 /**
@@ -590,14 +611,18 @@ ul:not([class]),
       font-family: "proxima-nova", sans-serif;
       font-weight: 600; }
   ol:not([class]) ol:not([class]),
-  ol:not([class]) ul:not([class]),
-  ol:not([class]) .default-list,
   ul:not([class]) ol:not([class]),
-  ul:not([class]) ul:not([class]),
-  ul:not([class]) .default-list,
-  .default-list ol:not([class]),
-  .default-list ul:not([class]),
-  .default-list .default-list {
+  .default-list ol:not([class]), ol:not([class])
+  ul:not([class]),
+  ul:not([class])
+  ul:not([class]),
+  .default-list
+  ul:not([class]), ol:not([class])
+  .default-list,
+  ul:not([class])
+  .default-list,
+  .default-list
+  .default-list {
     margin-top: 1.25rem; }
 
 ol:not([class]),
@@ -730,7 +755,12 @@ hr {
   border: 0;
   margin: 2.25rem 0; }
   @media (max-width: 768px) {
-    p + hr, ol + hr, ul + hr, dl + hr, figure + hr, blockquote + hr {
+    p + hr,
+    ol + hr,
+    ul + hr,
+    dl + hr,
+    figure + hr,
+    blockquote + hr {
       margin-top: 1.25rem; } }
 
 /**
@@ -882,8 +912,6 @@ aside figcaption {
   position: relative; }
   .logo, .logo:link, .logo:visited {
     border-bottom-width: 0; }
-  .logo:hover, .logo:focus, .logo:active {
-    text-decoration: none; }
   @media (min-width: 501px) {
     .logo {
       height: 6.25rem;
@@ -931,8 +959,7 @@ aside figcaption {
       -webkit-transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
               transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0); } }
   .logo:active svg {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease; }
+    transition-time: 0.2s; }
     @media (min-width: 769px) {
       .logo:active svg {
         -webkit-transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
@@ -943,15 +970,16 @@ aside figcaption {
                 transform: translateX(1.5rem) translateY(-1rem) translateZ(0); } }
 
 .nav-primary {
-  float: right;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   white-space: nowrap; }
+  @media (min-width: 501px) {
+    .nav-primary {
+      float: right; } }
   @media (max-width: 500px) {
     .nav-primary {
       width: 100%;
-      padding-top: 0.625rem;
-      text-align: center; } }
+      padding-top: 0.625rem; } }
 
 .nav-primary-list {
   height: 3.75rem;
@@ -968,14 +996,15 @@ aside figcaption {
     @media (min-width: 769px) {
       .nav-primary-list li {
         float: left; } }
-    .nav-primary-list li + li {
-      margin-left: 1em; }
-      @media (max-width: 768px) {
-        .nav-primary-list li + li {
-          margin-left: .5em; } }
-      @media (max-width: 500px) {
-        .nav-primary-list li + li {
-          margin-left: .25em; } }
+    @media (min-width: 769px) {
+      .nav-primary-list li + li {
+        margin-left: 1em; } }
+    @media (max-width: 768px) {
+      .nav-primary-list li + li {
+        margin-left: .5em; } }
+    @media (max-width: 500px) {
+      .nav-primary-list li + li {
+        margin-left: .25em; } }
   .nav-primary-list a {
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
@@ -985,14 +1014,13 @@ aside figcaption {
     color: #737373;
     display: block;
     padding: .75rem 1rem;
+    border-bottom-color: #5f8aa6;
     border-bottom-width: 0;
     margin-bottom: .25rem;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25;
     text-transform: uppercase; }
-    .nav-primary-list a:link, .nav-primary-list a:visited {
-      border-bottom-color: #5f8aa6; }
     .nav-primary-list a:active {
       -webkit-transform: translateY(0.2rem);
               transform: translateY(0.2rem); }
@@ -1107,8 +1135,7 @@ aside figcaption {
       margin-left: -0.5rem; }
       .articles-list .title .title-link:hover, .articles-list .title .title-link:focus, .articles-list .title .title-link:active {
         color: #4f4f4f;
-        border-bottom-color: #5f8aa6;
-        text-decoration: none; }
+        border-bottom-color: #5f8aa6; }
   .articles-list .lede, .articles-list .lede--featured {
     margin-bottom: 1.25rem; }
   .articles-list .date {
@@ -1217,17 +1244,12 @@ aside figcaption {
   text-indent: 100%;
   white-space: nowrap; }
   .icon:hover, .icon:focus, .icon:active {
-    opacity: 1;
-    text-decoration: none; }
+    opacity: 1; }
   .icon:active {
     -webkit-transform: translateY(0.125rem);
             transform: translateY(0.125rem); }
-  .icon svg {
-    width: 100%;
-    height: 100%;
-    display: block; }
   .icons-list .icon {
-    fill: #060606 !important; }
+    fill: #060606; }
 
 .icon--codepen {
   width: 41px;

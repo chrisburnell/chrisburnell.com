@@ -11,7 +11,12 @@ html {
      -webkit-font-smoothing: antialiased;
 }
 
-p, ol, ul, dl, figure, blockquote {
+p,
+ol,
+ul,
+dl,
+figure,
+blockquote {
     @extend %content-elements;
 }
 
@@ -24,7 +29,12 @@ p, ol, ul, dl, figure, blockquote {
     font-weight: $font-weight-default;
     line-height: $line-height-small;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     @extend %heading;
 }
 
@@ -77,7 +87,8 @@ h3 {
         margin-top: 0;
     }
 
-    code {
+    // For special Monospace titles
+    %monospace-elements {
         text-transform: none;
     }
 }
@@ -176,7 +187,6 @@ a {
     &:focus,
     &:active {
         border-bottom-color: $color-text-alt;
-        text-decoration: none;
     }
 
     &:visited {
@@ -187,9 +197,9 @@ a {
         }
     }
 
-    :hover > &,
-    :focus > &,
-    :active > & {
+    %heading:hover &,
+    %heading:focus &,
+    %heading:active & {
         display: inline-block;
     }
 }
@@ -255,9 +265,7 @@ ul:not([class]),
         }
     }
 
-    ol:not([class]),
-    ul:not([class]),
-    .default-list {
+    & & {
         margin-top: $spacing-medium;
     }
 }

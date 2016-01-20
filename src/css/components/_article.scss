@@ -15,7 +15,7 @@
 
 .banner {
     @extend .rounded;
-    width: 810px;
+    width: $article-width;
     margin-bottom: $spacing-large;
 
     @include media("<=small") {

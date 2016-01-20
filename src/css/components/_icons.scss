@@ -12,20 +12,15 @@
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
+
     &:hover,
     &:focus,
     &:active {
         opacity: opacity(1);
-        text-decoration: none;
-    }
-    &:active {
-        transform: translateY(.125rem);
     }
 
-    svg {
-        width: 100%;
-        height: 100%;
-        display: block;
+    &:active {
+        transform: translateY(.125rem);
     }
 
     %button & {
@@ -33,7 +28,7 @@
     }
 
     .icons-list & {
-        fill: $color-black !important;
+        fill: $color-black;
     }
 }
 

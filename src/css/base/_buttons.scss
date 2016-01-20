@@ -24,19 +24,21 @@
     white-space: nowrap;
     cursor: pointer;
     box-shadow: inset 0 -0.182em 0 0 darken($color-brand, 10%);
+
     &,
     &:link,
     &:visited {
         color: $color-white;
         border-width: 0;
     }
+
     &:hover,
     &:focus,
     &:active {
         background-color: lighten($color-brand, 5%);
         outline-style: auto;
-        text-decoration: none;
     }
+
     &:active {
         height: 2em;
         padding-bottom: 0;
@@ -72,24 +74,13 @@
         }
     }
 
-    svg {
+    .icon {
         width:  .8em;
         height: .8em;
         display: inline-block;
         margin-right: .25em;
         pointer-events: none;
     }
-
-    .icon--article {
-        // .9 is width:height ratio
-        width: (.9 * .8em);
-    }
-
-    .icon--feather {
-        // .725 is width:height ratio
-        width: (.725 * .8em);
-    }
-
     .icon--search {
         margin-right: 0;
     }
@@ -113,6 +104,7 @@ button {
     height: 2em;
     margin-top: 0;
     line-height: 1.818;
+
     &:active {
         height: 1.818em;
     }
