@@ -55,7 +55,7 @@
 
         // Catch the form submission and initiate search lookup
         if( searchContainer && searchForm.addEventListener ) {
-            searchForm.addEventListener('submit', submitCallback, false);
+            searchForm.addEventListener('submit', submitCallback);
         } else if( searchContainer && searchForm.attachEvent ) {
             searchForm.attachEvent('onsubmit', submitCallback);
         }
