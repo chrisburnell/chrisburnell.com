@@ -3,6 +3,7 @@
 /// @group base
 ////
 
+
 html {
     background-color: $color-white;
     color: $color-text;
@@ -11,6 +12,7 @@ html {
      -webkit-font-smoothing: antialiased;
 }
 
+// Content Elements
 p,
 ol,
 ul,
@@ -20,6 +22,9 @@ blockquote {
     @extend %content-elements;
 }
 
+/**
+ * Headings
+ */
 %heading {
     // so that elements can be floated inside headings
     min-height: #{$line-height-small}em;
@@ -38,6 +43,9 @@ h6 {
     @extend %heading;
 }
 
+/**
+ * Heading - Alpha
+ */
 %alpha {
     font-family: $font-family-alpha;
     // 42px
@@ -50,6 +58,9 @@ h1 {
     @extend %alpha;
 }
 
+/**
+ * Heading - Beta
+ */
 %beta {
     font-family: $font-family-default;
     font-size: $font-size-larger;
@@ -58,6 +69,9 @@ h2 {
     @extend %beta;
 }
 
+/**
+ * Heading - Gamma
+ */
 %gamma {
     font-family: $font-family-beta;
     // 18px
@@ -83,8 +97,38 @@ h3 {
         padding-right: $spacing-large;
     }
 
+    // Collapse margin-top when following a Featured Lede
+    // This happens on the Homepage
     .lede--featured + & {
         margin-top: 0;
+    }
+
+    // Show an indicator when using an Anchor to jump to an ID
+    &[id] {
+        position: relative;
+
+        &:before {
+            // RIGHTWARDS ARROW
+            content: "→";
+            opacity: opacity(0);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -1em;
+        }
+        &:target:before {
+            animation: heading-target 2s linear;
+        }
+        @at-root {
+            @keyframes heading-target {
+                0%, 50% {
+                    opacity: opacity(1);
+                }
+                100% {
+                    opacity: opacity(0);
+                }
+            }
+        }
     }
 
     // For special Monospace titles
@@ -93,6 +137,9 @@ h3 {
     }
 }
 
+/**
+ * Heading - Delta
+ */
 %delta {
     font-family: $font-family-beta;
     font-weight: $font-weight-bold;
@@ -102,6 +149,9 @@ h4 {
     margin-bottom: $spacing-small;
 }
 
+/**
+ * Anchors
+ */
 %anchor {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
@@ -239,6 +289,9 @@ p {
     }
 }
 
+/**
+ * Lists
+ */
 ol,
 ul {
     padding: 0;
@@ -450,6 +503,9 @@ iframe {
     margin-bottom: $spacing-medium;
 }
 
+/**
+ * Mouse Selection
+ */
 ::selection {
     background: $color-brand;
     color: $color-white;

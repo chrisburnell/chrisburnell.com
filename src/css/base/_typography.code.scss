@@ -3,6 +3,7 @@
 /// @group base
 ////
 
+
 // Monospace Elements
 code,
 kbd,
@@ -18,7 +19,9 @@ var,
     line-height: 1.429;
 }
 
-// Inline Code Examples
+/**
+ * Inline Code Examples
+ */
 p code,
 ol code,
 ul code,
@@ -36,7 +39,9 @@ var {
     word-wrap: break-word;
 }
 
-// Code Blocks
+/**
+ * Code Blocks
+ */
 pre {
     // override `normalize.css`
     margin-top: 0;

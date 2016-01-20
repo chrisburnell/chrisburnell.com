@@ -371,6 +371,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
+/**
+ * Headings
+ */
 h1,
 h2,
 h3,
@@ -384,16 +387,25 @@ h6 {
   font-weight: 400;
   line-height: 1.25; }
 
+/**
+ * Heading - Alpha
+ */
 h1 {
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
   text-transform: uppercase;
   text-shadow: 0.0715em 0.0715em 0 rgba(6, 6, 6, 0.05); }
 
+/**
+ * Heading - Beta
+ */
 h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
   font-size: 1.375rem; }
 
+/**
+ * Heading - Gamma
+ */
 h3, .articles-list .date {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125rem;
@@ -413,6 +425,30 @@ h3 {
     padding-right: 2.25rem; }
   .lede--featured + h3 {
     margin-top: 0; }
+  h3[id] {
+    position: relative; }
+    h3[id]:before {
+      content: "→";
+      opacity: 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -1em; }
+    h3[id]:target:before {
+      -webkit-animation: heading-target 2s linear;
+              animation: heading-target 2s linear; }
+
+@-webkit-keyframes heading-target {
+  0%, 50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes heading-target {
+  0%, 50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
   h3 code, h3
   kbd, h3
   samp, h3
@@ -420,6 +456,9 @@ h3 {
   .monospace {
     text-transform: none; }
 
+/**
+ * Heading - Delta
+ */
 h4 {
   font-family: "proxima-nova", sans-serif;
   font-weight: 600; }
@@ -427,6 +466,9 @@ h4 {
 h4 {
   margin-bottom: 0.625rem; }
 
+/**
+ * Anchors
+ */
 a {
   -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -583,6 +625,9 @@ p {
   p:last-child {
     margin-bottom: 0; }
 
+/**
+ * Lists
+ */
 ol,
 ul {
   padding: 0;
@@ -775,10 +820,12 @@ video {
 iframe {
   margin-bottom: 1.25rem; }
 
+/**
+ * Mouse Selection
+ */
 ::-moz-selection {
   background: #5f8aa6;
   color: #f9f9f9; }
-
 ::selection {
   background: #5f8aa6;
   color: #f9f9f9; }
@@ -798,6 +845,9 @@ var,
   font-size: 0.875em;
   line-height: 1.429; }
 
+/**
+ * Inline Code Examples
+ */
 p code,
 ol code,
 ul code,
@@ -812,6 +862,9 @@ var {
   padding: .25rem;
   word-wrap: break-word; }
 
+/**
+ * Code Blocks
+ */
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
@@ -862,6 +915,11 @@ header {
     header {
       text-align: center; } }
 
+/**
+ * The width of the articles is fluid, and always has padding on the left-hand
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
+ */
 article {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
@@ -880,6 +938,11 @@ article {
           -ms-flex-direction: column;
               flex-direction: column; } }
 
+/**
+ * The width of the asides is static above the medium breakpoint and always
+ * floated within an article or list of articles. The math is calculated as in
+ * `layout/_article.scss`.
+ */
 @media (min-width: 769px) {
   aside {
     width: 15.875rem;

@@ -3,6 +3,7 @@
 /// @group components
 ////
 
+
 .icon {
     @include transition;
     @include will-change(opacity, transform);

@@ -3,13 +3,14 @@
 /// @group components
 ////
 
+
 .search-main {
     max-width: $wrapper-width-small;
     margin-bottom: $spacing-medium;
 }
-    .search-results {
-        margin-top: $spacing-medium;
-    }
+.search-results {
+    margin-top: $spacing-medium;
+}
 
 .search-form {
     display: flex;

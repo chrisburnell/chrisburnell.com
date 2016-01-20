@@ -3,9 +3,12 @@
 /// @group layout
 ////
 
-// The width of the articles is fluid, and always has padding on the left-hand
-// side to make room for any `aside`, which can appear anywhere inside
-// `article` or `.articles-list`.
+
+/**
+ * The width of the articles is fluid, and always has padding on the left-hand
+ * side to make room for any `aside`, which can appear anywhere inside
+ * `article` or `.articles-list`.
+ */
 article {
     padding-top: $spacing-large;
     border-top: $border-default solid $color-brand;
