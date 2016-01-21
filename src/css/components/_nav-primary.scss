@@ -61,7 +61,8 @@
             color: $color-text-alt;
             display: block;
             padding: .75rem 1rem;
-            border-bottom-color: $color-brand;
+            // prevent `:visited` from overriding
+            border-bottom-color: $color-brand !important;
             border-bottom-width: 0;
             margin-bottom: .25rem;
             font-family: $font-family-alpha;

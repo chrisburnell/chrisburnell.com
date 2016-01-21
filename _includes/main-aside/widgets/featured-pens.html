@@ -3,7 +3,7 @@
         <a href="/pens">Featured Pens</a>
     </h3>
     <ol class="small-articles-list" role="list">
-        {% for post in site.categories.pen limit:2 %}
+        {% for post in site.categories.pen limit: 2 %}
             <li role="listitem">
                 <a href="{{ post.url }}">
                     <svg class="icon  icon--codepen"><use xlink:href="#svg--codepen" /></svg>

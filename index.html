@@ -65,7 +65,7 @@ searchable: no-content
 <ol id="links" class="small-articles-list" role="list">
     {% for post in site.categories.link limit: 4 %}
         <li role="listitem">
-            <a href="{{ post.link_url }}">
+            <a href="{{ post.link_urls | first }}">
                 <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>

@@ -4,7 +4,7 @@
             <a href="/articles">Related Articles</a>
         </h3>
         <ol class="small-articles-list" role="list">
-            {% for post in site.related_posts limit:2 %}
+            {% for post in site.related_posts limit: 2 %}
                 <li role="listitem">
                     <a href="{{ post.url }}">
                         {% if post.categories contains 'article' %}

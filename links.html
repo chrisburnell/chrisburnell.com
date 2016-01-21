@@ -15,7 +15,7 @@ lede: All of my shared links listed on one page.
                 <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 {% if post.lede %}
-                    <p class="lede">{{ post.lede | truncatewords: 15 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                    <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
                 {% endif %}
                 <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>

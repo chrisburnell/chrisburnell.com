@@ -191,11 +191,12 @@ a {
         &:visited {
             color: lighten($color-text, 10%);
         }
-
+    }
+    h3 & {
         &:hover,
         &:focus,
         &:active {
-            color: $color-brand;
+            text-decoration: underline;
         }
     }
 }
@@ -225,6 +226,8 @@ a {
     &:focus,
     &:active {
         border-bottom-color: $color-text-alt;
+        // when appearing inside an `h3`, disable underline
+        text-decoration: none;
     }
 
     &:visited {

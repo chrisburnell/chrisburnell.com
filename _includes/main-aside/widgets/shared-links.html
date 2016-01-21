@@ -3,9 +3,9 @@
         <a href="/links">Shared Links</a>
     </h3>
     <ol class="small-articles-list" role="list">
-        {% for post in site.categories.link limit:2 %}
+        {% for post in site.categories.link limit: 2 %}
             <li role="listitem">
-                <a href="{{ post.link_url }}">
+                <a href="{{ post.link_urls | first }}">
                     <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
                     <h4 class="title">{{ post.title }} &rarr;</h4>
                     {% if post.lede %}
