@@ -1,6 +1,5 @@
 .DS_Store
 .jekyll-metadata
 .sass-cache
-_drafts/
 _site/
 node_modules/
