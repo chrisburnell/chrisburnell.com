@@ -20,9 +20,9 @@ lede: All of my articles listed on one page.
             </h2>
             <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
-                <p class="lede">{{ post.lede | truncatewords: 25 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                <p class="lede">{{ post.lede }}</p>
             {% endif %}
-            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read more</a>
+            <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read Full Article</a>
             {% if post.comments == true %}
                 <a class="comments-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
@@ -30,12 +30,10 @@ lede: All of my articles listed on one page.
     {% endfor %}
 </ol>
 
-
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/feed-articles.xml"><svg class="icon  icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to Articles</a>
     <a rel="me author" class="button" href="/feed.xml"><svg class="icon  icon--rss"><use xlink:href="#svg--rss" /></svg> Subscribe to All</a>
 </nav>
-
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/pens"><svg class="icon  icon--heart"><use xlink:href="#svg--heart" /></svg> Pens Archive</a>

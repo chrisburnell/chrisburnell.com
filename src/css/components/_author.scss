@@ -54,7 +54,7 @@
     .author-image {
         @extend .rounded;
         // gradient replacement while loading the `src` / `srcset`,
-        // colours generated from `avatar.png`
+        // colors generated from `avatar.png`
         background-image: gradient(transparent, rgb(153, 192, 226), to top right),
                           gradient(transparent, rgb(157, 133, 139), to bottom left),
                           gradient(transparent, rgb(89, 144, 173), to bottom right),

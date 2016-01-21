@@ -27,5 +27,22 @@
 
     a {
         border-bottom-width: 0;
+
+        .icon {
+            @include transition;
+            @include will-change(opacity, transform);
+            opacity: opacity("70-percent");
+            height: $icon-size;
+
+            &:hover,
+            &:focus,
+            &:active {
+                opacity: opacity(1);
+            }
+
+            &:active {
+                transform: translateY(.125rem);
+            }
+        }
     }
 }

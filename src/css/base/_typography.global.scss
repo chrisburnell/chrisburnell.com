@@ -105,27 +105,16 @@ h3 {
 
     // Show an indicator when using an Anchor to jump to an ID
     &[id] {
-        position: relative;
-
-        &:before {
-            // RIGHTWARDS ARROW
-            content: "→";
-            opacity: opacity(0);
-            display: block;
-            position: absolute;
-            top: 0;
-            left: -1em;
-        }
-        &:target:before {
+        &:target {
             animation: heading-target 2s linear;
         }
         @at-root {
             @keyframes heading-target {
                 0%, 50% {
-                    opacity: opacity(1);
+                    background-color: $color-highlight;
                 }
                 100% {
-                    opacity: opacity(0);
+                    background-color: transparent;
                 }
             }
         }
@@ -207,7 +196,6 @@ a {
         &:focus,
         &:active {
             color: $color-brand;
-            text-decoration: underline;
         }
     }
 }
@@ -255,22 +243,23 @@ a {
 }
 
 /**
- * Brand Link Colours
+ * Brand Link Colors
  */
 @each $color-brand in $color-brands {
-    $name:  nth($color-brand, 1);
-    $color: nth($color-brand, 2);
+    $name:       nth($color-brand, 1);
+    $text-color: nth($color-brand, 2);
+
     .link--#{$name} {
-        color: #{$color} !important;
+        color: $text-color !important;
 
         &:link,
         &:visited {
-            border-bottom-color: lighten($color, 20%);
+            border-bottom-color: lighten($text-color, 20%);
 
             &:hover,
             &:focus,
             &:active {
-                border-bottom-color: #{$color};
+                border-bottom-color: $text-color;
             }
         }
 

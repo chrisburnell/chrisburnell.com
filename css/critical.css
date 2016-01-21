@@ -425,30 +425,21 @@ h3 {
     padding-right: 2.25rem; }
   .lede--featured + h3 {
     margin-top: 0; }
-  h3[id] {
-    position: relative; }
-    h3[id]:before {
-      content: "→";
-      opacity: 0;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -1em; }
-    h3[id]:target:before {
-      -webkit-animation: heading-target 2s linear;
-              animation: heading-target 2s linear; }
+  h3[id]:target {
+    -webkit-animation: heading-target 2s linear;
+            animation: heading-target 2s linear; }
 
 @-webkit-keyframes heading-target {
   0%, 50% {
-    opacity: 1; }
+    background-color: gold; }
   100% {
-    opacity: 0; } }
+    background-color: transparent; } }
 
 @keyframes heading-target {
   0%, 50% {
-    opacity: 1; }
+    background-color: gold; }
   100% {
-    opacity: 0; } }
+    background-color: transparent; } }
   h3 code, h3
   kbd, h3
   samp, h3
@@ -500,8 +491,7 @@ h3 a {
   h3 a:hover,
   h3 a:focus,
   h3 a:active {
-    color: #5f8aa6;
-    text-decoration: underline; }
+    color: #5f8aa6; }
 
 .heading-anchor {
   display: none;
@@ -541,7 +531,7 @@ h3 a {
     display: inline-block; }
 
 /**
- * Brand Link Colours
+ * Brand Link Colors
  */
 .link--codepen {
   color: #212121 !important; }
@@ -1297,99 +1287,57 @@ aside figcaption {
     margin-bottom: 1.25rem; } }
 
 .icon {
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  will-change: opacity, transform;
-  opacity: 0.7;
-  height: 40px;
   display: block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap; }
-  .icon:hover, .icon:focus, .icon:active {
-    opacity: 1; }
-  .icon:active {
-    -webkit-transform: translateY(0.125rem);
-            transform: translateY(0.125rem); }
+  overflow: hidden; }
   .icons-list .icon {
     fill: #060606; }
 
+/**
+ * Brand Icon Widths and Colors
+ */
 .icon--codepen {
   width: 41px;
   fill: #f9f9f9; }
-
-.link--codepen {
-  color: #212121; }
 
 .icon--github {
   width: 38px;
   fill: #f9f9f9; }
 
-.link--github {
-  color: #333333; }
-
 .icon--lastfm {
   width: 40px;
   fill: #e31b23; }
-
-.link--lastfm {
-  color: #e31b23; }
 
 .icon--rss {
   width: 31px;
   fill: #ff9770 !important; }
 
-.link--rss {
-  color: #5f8aa6; }
-
 .icon--twitter {
   width: 37px;
   fill: #2795e9; }
-
-.link--twitter {
-  color: #2795e9; }
 
 .icon--article {
   width: 36px;
   fill: #f9f9f9; }
 
-.link--article {
-  color: #5f8aa6; }
-
 .icon--feather {
   width: 29px;
   fill: #f9f9f9; }
-
-.link--feather {
-  color: #5f8aa6; }
 
 .icon--heart {
   width: 40px;
   fill: #f9f9f9; }
 
-.link--heart {
-  color: #5f8aa6; }
-
 .icon--link {
   width: 40px;
   fill: #f9f9f9; }
-
-.link--link {
-  color: #5f8aa6; }
 
 .icon--search {
   width: 40px;
   fill: #f9f9f9; }
 
-.link--search {
-  color: #5f8aa6; }
-
 .icon--tag {
   width: 40px;
   fill: #f9f9f9; }
-
-.link--tag {
-  color: #5f8aa6; }
 
 .hide,
 .hidden,

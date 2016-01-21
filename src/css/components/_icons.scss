@@ -5,50 +5,35 @@
 
 
 .icon {
-    @include transition;
-    @include will-change(opacity, transform);
-    opacity: opacity("70-percent");
-    height: $icon-size;
     display: block;
     overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-
-    &:hover,
-    &:focus,
-    &:active {
-        opacity: opacity(1);
-    }
-
-    &:active {
-        transform: translateY(.125rem);
-    }
 
     %button & {
-        fill: $color-white;
+        fill: currentColor;
     }
 
+    // Used on the Style Guide page
     .icons-list & {
         fill: $color-black;
     }
 }
 
+/**
+ * Brand Icon Widths and Colors
+ */
 @each $color-brand in $color-brands {
-    $name:  nth($color-brand, 1);
-    $text-color: nth($color-brand, 2);
+    $name:       nth($color-brand, 1);
     $icon-color: nth($color-brand, 3);
-    $ratio: nth($color-brand, 4);
+    $ratio:      nth($color-brand, 4);
 
     .icon--#{$name} {
         width: ($ratio * $icon-size);
+
         @if $name == "rss" {
+            // the RSS icon should remain orange when nested in a button
             fill: $icon-color !important;
         } @else {
             fill: $icon-color;
         }
-    }
-
-    .link--#{$name} {
-        color: $text-color;
     }
 }
