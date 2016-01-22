@@ -34,6 +34,7 @@ code[data-lang] {
 @each $language in $coding-languages {
     $name:  nth($language, 1);
     $color: nth($language, 2);
+
     &.language-#{$name}:before {
         background-color: #{$color} !important;
     }
@@ -52,6 +53,7 @@ code[data-lang] {
     top: ($spacing-medium * 5);
     left: 50%;
     transform: translateX(-50%);
+
     &:active {
         transform: translateX(-50%) translateY(.182em);
     }

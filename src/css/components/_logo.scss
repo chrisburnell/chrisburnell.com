@@ -8,12 +8,7 @@
     @extend .non-selectable;
     display: inline-block;
     position: relative;
-
-    &,
-    &:link,
-    &:visited {
-        border-bottom-width: 0;
-    }
+    border-bottom-width: 0;
 
     @include media(">small") {
         height: 6.25rem;

@@ -27,7 +27,7 @@ blockquote {
  */
 %heading {
     // so that elements can be floated inside headings
-    min-height: #{$line-height-small}em;
+    min-height: ($line-height-small * 1em);
     padding: 0;
     margin: 0;
     position: relative;
@@ -89,20 +89,6 @@ h3 {
         margin-bottom: $spacing-medium;
     }
 
-    article > & {
-        @extend .clear;
-        width: auto;
-        max-width: 100%;
-        display: inline-block;
-        padding-right: $spacing-large;
-    }
-
-    // Collapse margin-top when following a Featured Lede
-    // This happens on the Homepage
-    .lede--featured + & {
-        margin-top: 0;
-    }
-
     // Show an indicator when using an Anchor to jump to an ID
     &[id] {
         &:target {
@@ -118,6 +104,20 @@ h3 {
                 }
             }
         }
+    }
+
+    article > & {
+        @extend .clear;
+        width: auto;
+        max-width: 100%;
+        display: inline-block;
+        padding-right: $spacing-large;
+    }
+
+    // Collapse margin-top when following a Featured Lede
+    // This happens on the Homepage
+    .lede--featured + & {
+        margin-top: 0;
     }
 
     // For special Monospace titles
@@ -310,6 +310,7 @@ ul:not([class]),
         }
     }
 
+    // List nested in a list
     & & {
         margin-top: $spacing-medium;
     }
@@ -364,14 +365,14 @@ dl {
         overflow: hidden;
         vertical-align: top;
 
+        &:not(:last-child) {
+            padding-bottom: $spacing-medium;
+        }
+
         @include media("<=small") {
             width: auto;
             display: block;
             margin-left: $spacing-medium;
-        }
-
-        &:not(:last-child) {
-            padding-bottom: $spacing-medium;
         }
     }
 }
@@ -386,6 +387,7 @@ a img {
 figure {
     margin: 0 0 $spacing-medium;
 
+    // Center `figure`s not used for code blocks
     &:not(.highlight) {
         text-align: center;
     }

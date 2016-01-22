@@ -47,10 +47,6 @@ pre {
     margin-top: 0;
     margin-bottom: $spacing-medium;
 
-    .highlight & {
-        text-align: left;
-    }
-
     &:not(.codepen) {
         @extend .rounded;
         background-color: $color-black-5-percent;
@@ -70,10 +66,13 @@ pre {
         code {
             line-height: 2;
         }
-
         code {
             min-width: 100%;
             display: block;
         }
+    }
+
+    .highlight & {
+        text-align: left;
     }
 }

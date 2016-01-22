@@ -418,13 +418,6 @@ h3 {
   border-bottom: 0.125rem solid #dddddd; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
-  article > h3 {
-    width: auto;
-    max-width: 100%;
-    display: inline-block;
-    padding-right: 2.25rem; }
-  .lede--featured + h3 {
-    margin-top: 0; }
   h3[id]:target {
     -webkit-animation: heading-target 2s linear;
             animation: heading-target 2s linear; }
@@ -440,6 +433,13 @@ h3 {
     background-color: gold; }
   100% {
     background-color: transparent; } }
+  article > h3 {
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+    padding-right: 2.25rem; }
+  .lede--featured + h3 {
+    margin-top: 0; }
   h3 code, h3
   kbd, h3
   samp, h3
@@ -697,13 +697,13 @@ dl {
     margin: 0;
     overflow: hidden;
     vertical-align: top; }
+    dl dd:not(:last-child) {
+      padding-bottom: 1.25rem; }
     @media (max-width: 500px) {
       dl dd {
         width: auto;
         display: block;
         margin-left: 1.25rem; } }
-    dl dd:not(:last-child) {
-      padding-bottom: 1.25rem; }
 
 img,
 a img {
@@ -857,8 +857,6 @@ var {
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
-  .highlight pre {
-    text-align: left; }
   pre:not(.codepen) {
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.25rem 1.25rem 1rem;
@@ -874,6 +872,8 @@ pre {
     pre:not(.codepen) code {
       min-width: 100%;
       display: block; }
+  .highlight pre {
+    text-align: left; }
 
 button, .button,
 .button--small {
@@ -1105,9 +1105,8 @@ footer {
 
 .logo {
   display: inline-block;
-  position: relative; }
-  .logo, .logo:link, .logo:visited {
-    border-bottom-width: 0; }
+  position: relative;
+  border-bottom-width: 0; }
   @media (min-width: 501px) {
     .logo {
       height: 6.25rem;
@@ -1210,13 +1209,14 @@ footer {
     color: #737373;
     display: block;
     padding: .75rem 1rem;
-    border-bottom-color: #5f8aa6 !important;
     border-bottom-width: 0;
     margin-bottom: .25rem;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25;
     text-transform: uppercase; }
+    .nav-primary-list a:link, .nav-primary-list a:visited {
+      border-bottom-color: #5f8aa6; }
     .nav-primary-list a:active {
       -webkit-transform: translateY(0.2rem);
               transform: translateY(0.2rem); }
@@ -1308,13 +1308,13 @@ footer {
     padding: 1.5rem 1rem;
     border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
     position: relative; }
+    .articles-list li:nth-child(odd) {
+      background-color: rgba(6, 6, 6, 0.05); }
     @media (max-width: 768px) {
       .articles-list li {
         padding-top: 1.875rem;
         padding-bottom: 1.875rem;
         text-align: center; } }
-    .articles-list li:nth-child(odd) {
-      background-color: rgba(6, 6, 6, 0.05); }
   .articles-list .title,
   .articles-list .date,
   .articles-list .comments-link {
@@ -1398,9 +1398,8 @@ footer {
   .small-articles-list a {
     display: block;
     padding: 1.25rem;
+    border-bottom-width: 0;
     overflow: hidden; }
-    .small-articles-list a:link, .small-articles-list a:visited {
-      border-bottom-width: 0; }
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(95, 138, 166, 0.1) !important; }
     aside .small-articles-list a {
@@ -1576,6 +1575,12 @@ footer {
   margin-top: 2.25rem;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
   padding-top: 2.068rem; }
+  .page-home .nav-secondary {
+    margin-top: 0;
+    border-top: 0; }
+  .page-about .nav-secondary {
+    border-top: 0;
+    padding: 0 0 1.25rem; }
   p + .nav-secondary,
   ol + .nav-secondary,
   ul + .nav-secondary,
@@ -1583,12 +1588,6 @@ footer {
   figure + .nav-secondary,
   blockquote + .nav-secondary {
     margin-top: 1.25rem; }
-  .page-home .nav-secondary {
-    margin-top: 0;
-    border-top: 0; }
-  .page-about .nav-secondary {
-    border-top: 0;
-    padding: 0 0 1.25rem; }
 
 .buttons-list {
   margin: 0 0 1.25rem; }

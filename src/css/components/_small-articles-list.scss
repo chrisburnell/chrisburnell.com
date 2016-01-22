@@ -78,12 +78,8 @@
         @extend .rounded;
         display: block;
         padding: $spacing-medium;
+        border-bottom-width: 0;
         overflow: hidden;
-
-        &:link,
-        &:visited {
-            border-bottom-width: 0;
-        }
 
         &:hover,
         &:focus,
