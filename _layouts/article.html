@@ -29,7 +29,7 @@
         {% if page.link_urls %}
             <div class="buttons-list">
                 {% for link in page.link_urls %}
-                    <a class="button" rel="external" href="{{ link }}" title="{{ link }}">{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}</a>
+                    <a rel="external" class="button" href="{{ link }}" title="{{ link }}">{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}</a>
                 {% endfor %}
             </div>
         {% endif %}

@@ -39,7 +39,7 @@ searchable: no-content
 <ol id="pens" class="small-articles-list" role="list">
     {% for post in site.categories.pen limit: 4 %}
         <li role="listitem">
-            <a href="{{ post.url }}">
+            <a rel="external" href="{{ post.url }}">
                 <svg class="icon  icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 {% if post.lede %}
