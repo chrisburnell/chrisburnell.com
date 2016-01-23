@@ -1128,14 +1128,14 @@ aside figcaption {
     .banner {
       width: 500px; } }
 
-.lede, .lede--featured {
+.lede {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede, .lede--featured {
+    .lede {
       text-align: left; } }
-  aside + .lede, aside + .lede--featured {
+  aside + .lede {
     margin-top: -0.5rem; }
 
 .lede--featured {
@@ -1188,7 +1188,7 @@ aside figcaption {
       .articles-list .title .title-link:hover, .articles-list .title .title-link:focus, .articles-list .title .title-link:active {
         color: #4f4f4f;
         border-bottom-color: #5f8aa6; }
-  .articles-list .lede, .articles-list .lede--featured {
+  .articles-list .lede {
     margin-bottom: 1.25rem; }
   .articles-list .date {
     margin-bottom: 0.625rem; }
@@ -1320,7 +1320,7 @@ aside figcaption {
 
 .icon--twitter {
   width: 37px;
-  fill: #2795e9; }
+  fill: #126db2; }
 
 .icon--article {
   width: 36px;

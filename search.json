@@ -9,7 +9,7 @@ searchable: false
     {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
             "type": "page",
-            "link": {{ page.url | jsonify }},
+            "url": {{ page.url | jsonify }},
             "title": {{ page.title | jsonify }},
             "lede": {{ page.lede | jsonify }}{% unless page.searchable == 'no-content' %},
             "content": {{ page.content | strip_html | strip_newlines | jsonify }}{% endunless %}
@@ -20,11 +20,11 @@ searchable: false
     {% unless post.title == null or post.title == empty or post.searchable == false or post.draft %}
         {% unless first %},{% endunless %}{
             "type": "{{ post.categories }}",
-            "link": {{ post.url | jsonify }},
+            "url": {{ post.url | jsonify }},
             "title": {{ post.title | jsonify }},
             "date": {{ post.date | jsonify }},
             "date_friendly": {{ post.date | date: '%d %b, %Y' | jsonify }},{% if post.lede %}
-            "lede": {{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
+            "lede": {{ post.lede | truncatewords: 20 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
             "categories": {{ post.categories | join:', ' | jsonify }},
             "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == 'no-content' %},
             "content": {{ post.content | strip_html | strip_newlines | jsonify }}{% endunless %}

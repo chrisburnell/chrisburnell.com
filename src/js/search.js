@@ -23,6 +23,7 @@
         resultTemplatePage    = document.querySelector('#search-template-page'),
         resultTemplateArticle = document.querySelector('#search-template-article'),
         resultTemplatePen     = document.querySelector('#search-template-pen'),
+        resultTemplateLink    = document.querySelector('#search-template-link'),
         allowEmpty            = false;
 
     // initiate search functionality
@@ -163,12 +164,20 @@
                         results += populateResultContent(resultTemplateArticle.innerHTML, item);
                     }
                     break;
+                case 'link':
+                    if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                        resultsCount++;
+                        results += populateResultContent(resultTemplateLink.innerHTML, item);
+                    }
+                    break;
                 case 'pen':
                     if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
                         resultsCount++;
                         results += populateResultContent(resultTemplatePen.innerHTML, item);
                     }
                     break;
+                default:
+                    console.log("Unable to match category type to template.");
             }
 
         }
@@ -201,7 +210,7 @@
     /// @return {String} Populated HTML
     ////
     function populateResultContent(html, item) {
-        html = injectContent(html, item['link'], '@@URL@@');
+        html = injectContent(html, item['url'], '@@URL@@');
         html = injectContent(html, item['title'], '@@TITLE@@');
 
         if( item['date'] ) {
@@ -210,6 +219,8 @@
         }
         if( item['lede'] ) {
             html = injectContent(html, item['lede'], '@@LEDE@@');
+        } else if( item['type'] == 'link' ) {
+            html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
         } else if( item['type'] == 'pen' ) {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         }

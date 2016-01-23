@@ -10,6 +10,10 @@
 }
 .search-results {
     margin-top: $spacing-medium;
+
+    .small-articles-list {
+        margin-bottom: 0;
+    }
 }
 
 .search-form {

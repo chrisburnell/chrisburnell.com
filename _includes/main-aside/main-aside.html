@@ -87,10 +87,10 @@
 
     {% if page.categories contains 'article' %}
         {% include main-aside/widgets/related-articles.html %}
-    {% elsif page.categories contains 'pen' %}
-        {% include main-aside/widgets/featured-pens.html %}
     {% elsif page.categories contains 'link' %}
         {% include main-aside/widgets/shared-links.html %}
+    {% elsif page.categories contains 'pen' %}
+        {% include main-aside/widgets/featured-pens.html %}
     {% endif %}
 
 </aside>

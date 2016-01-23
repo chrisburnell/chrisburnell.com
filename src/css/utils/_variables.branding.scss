@@ -17,7 +17,9 @@ $color-lastfm: #e31b23 !default;
 /// @type Color
 $color-rss: #ff9770 !default;
 /// @type Color
-$color-twitter: darken(#55acee, 10%) !default;
+$color-twitter-text: darken(#55acee, 10%) !default;
+/// @type Color
+$color-twitter-icon: darken(#55acee, 25%) !default;
 
 
 /// @type Map
@@ -25,19 +27,20 @@ $color-twitter: darken(#55acee, 10%) !default;
 /// @prop {Color} color - Text color
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity
+/// @require {Variable} $color-brand
 /// @require {Variable} $color-codepen
 /// @require {Variable} $color-github
 /// @require {Variable} $color-lastfm
-/// @require {Variable} $color-twitter
-/// @require {Variable} $color-brand
-$color-brands: codepen $color-codepen $color-white   1.025,
-               github  $color-github  $color-white   0.950,
-               lastfm  $color-lastfm  $color-lastfm  1.000,
-               rss     $color-brand   $color-rss     0.775,
-               twitter $color-twitter $color-twitter 0.925,
-               article $color-brand   $color-white   0.900,
-               feather $color-brand   $color-white   0.725,
-               heart   $color-brand   $color-white   1.000,
-               link    $color-brand   $color-white   1.000,
-               search  $color-brand   $color-white   1.000,
-               tag     $color-brand   $color-white   1.000;
+/// @require {Variable} $color-twitter-text
+/// @require {Variable} $color-twitter-icon
+$color-brands: codepen $color-codepen      $color-white        1.025,
+               github  $color-github       $color-white        0.950,
+               lastfm  $color-lastfm       $color-lastfm       1.000,
+               rss     $color-brand        $color-rss          0.775,
+               twitter $color-twitter-text $color-twitter-icon 0.925,
+               article $color-brand        $color-white        0.900,
+               feather $color-brand        $color-white        0.725,
+               heart   $color-brand        $color-white        1.000,
+               link    $color-brand        $color-white        1.000,
+               search  $color-brand        $color-white        1.000,
+               tag     $color-brand        $color-white        1.000;

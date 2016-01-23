@@ -39,7 +39,7 @@ searchable: no-content
 <ol id="pens" class="small-articles-list" role="list">
     {% for post in site.categories.pen limit: 4 %}
         <li role="listitem">
-            <a rel="external" href="{{ post.url }}">
+            <a href="{{ post.url }}">
                 <svg class="icon  icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 {% if post.lede %}
@@ -65,15 +65,15 @@ searchable: no-content
 <ol id="links" class="small-articles-list" role="list">
     {% for post in site.categories.link limit: 4 %}
         <li role="listitem">
-            <a href="{{ post.link_urls | first }}">
+            <a href="{{ post.url }}">
                 <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
-                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
                 {% if post.lede %}
                     <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
                 {% else %}
                     <p class="lede"><em>Shared Link</em></p>
                 {% endif %}
+                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>
         </li>
     {% endfor %}

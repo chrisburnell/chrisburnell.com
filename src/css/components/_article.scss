@@ -39,7 +39,6 @@
     }
 }
 .lede--featured {
-    @extend .lede;
     max-width: 24em;
     font-size: $font-size-gigantic;
 }

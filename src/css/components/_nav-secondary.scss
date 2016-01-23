@@ -1,5 +1,5 @@
 ////
-/// Secondary Navigation
+/// Secondary Navigation / Buttons List
 /// @group components
 ////
 
@@ -63,4 +63,8 @@
 
 .buttons-list {
     margin: 0 0 $spacing-medium;
+
+    .lede + & {
+        margin-bottom: $spacing-large;
+    }
 }
