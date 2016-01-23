@@ -1096,7 +1096,7 @@ aside figcaption {
 footer {
   width: 100%;
   padding: 2.25rem 0;
-  border-top: 0.25rem solid #547d97; }
+  border-top: 0.25rem solid #5f8aa6; }
 
 .logo {
   display: inline-block;
@@ -1692,7 +1692,7 @@ footer {
     content: " →"; }
 
 footer {
-  background-color: #5f8aa6;
+  background-color: #4f4f4f;
   color: #dddddd;
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
@@ -1741,7 +1741,7 @@ footer {
     width: 100%;
     height: 100%;
     display: block;
-    fill: #f9f9f9; }
+    fill: #5f8aa6; }
   .footer-home-link:hover .icon, .footer-home-link:focus .icon, .footer-home-link:active .icon {
     opacity: 1; }
 
@@ -2019,7 +2019,7 @@ code[data-lang] {
 
 .icon--twitter {
   width: 37px;
-  fill: #126db2; }
+  fill: #2795e9; }
 
 .icon--article {
   width: 36px;

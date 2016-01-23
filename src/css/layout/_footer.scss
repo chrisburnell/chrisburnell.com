@@ -7,5 +7,5 @@
 footer {
     width: 100%;
     padding: $spacing-large 0;
-    border-top: $border-default solid darken($color-brand, 5%);
+    border-top: $border-default solid $color-brand;
 }
