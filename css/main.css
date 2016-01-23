@@ -1342,8 +1342,17 @@ footer {
     .articles-list .date:before {
       content: "– ";
       color: #737373; }
+  @media (max-width: 768px) {
+    .articles-list button, .articles-list .button, .articles-list
+    .button--small,
+    .articles-list .comments-list {
+      margin-left: 0.625rem;
+      margin-right: 0.625rem; } }
   .articles-list .comments-link {
     line-height: 2; }
+    @media (max-width: 768px) {
+      .articles-list .comments-link {
+        display: inline-block; } }
 
 .small-articles-list {
   display: -webkit-box;

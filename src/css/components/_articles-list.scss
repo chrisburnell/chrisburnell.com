@@ -76,7 +76,19 @@
         }
     }
 
+    %button,
+    .comments-list {
+        @include media("<=medium") {
+            margin-left:  $spacing-small;
+            margin-right: $spacing-small;
+        }
+    }
+
     .comments-link {
         line-height: 2;
+
+        @include media("<=medium") {
+            display: inline-block;
+        }
     }
 }
