@@ -23,12 +23,36 @@
 
     li {
         width: 49.0125%;
-        display: inline-block;
 
         // Push all list items down (after the first two, in the
         // two-column format)
         &:nth-child(n+3) {
             margin-top: $spacing-medium;
+        }
+
+        @include media(">small") {
+            display: flex;
+            flex-direction: column;
+
+            &:nth-child(4n+2) a,
+            &:nth-child(4n+3) a {
+                background-color: $color-black-5-percent;
+            }
+        }
+
+        @include media("<=small") {
+            width: 100%;
+            display: inline-block;
+
+            // Push all list items down (after the first one, in the default
+            // one-column format)
+            & + li {
+                margin-top: $spacing-medium;
+            }
+
+            &:nth-child(2n+1) a {
+                background-color: $color-black-5-percent;
+            }
         }
 
         aside & {
@@ -51,27 +75,6 @@
                 background-color: $color-black-5-percent;
             }
         }
-
-        @include media(">small") {
-            &:nth-child(4n+2) a,
-            &:nth-child(4n+3) a {
-                background-color: $color-black-5-percent;
-            }
-        }
-
-        @include media("<=small") {
-            width: 100%;
-
-            // Push all list items down (after the first one, in the default
-            // one-column format)
-            & + li {
-                margin-top: $spacing-medium;
-            }
-
-            &:nth-child(2n+1) a {
-                background-color: $color-black-5-percent;
-            }
-        }
     }
 
     a {
@@ -85,6 +88,10 @@
         &:focus,
         &:active {
             background-color: $color-brand-10-percent !important;
+        }
+
+        @include media("<small") {
+            flex: 1 0 auto;
         }
 
         aside & {

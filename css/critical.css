@@ -1200,7 +1200,7 @@ aside figcaption {
       color: #737373; }
   @media (max-width: 768px) {
     
-    .articles-list .comments-list {
+    .articles-list .comments-link {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
   .articles-list .comments-link {

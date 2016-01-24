@@ -77,7 +77,7 @@
     }
 
     %button,
-    .comments-list {
+    .comments-link {
         @include media("<=medium") {
             margin-left:  $spacing-small;
             margin-right: $spacing-small;
