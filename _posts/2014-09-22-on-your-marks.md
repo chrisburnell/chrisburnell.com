@@ -119,7 +119,7 @@ commentsButton.addEventListener('click', function() {
 
 function showComments() {
     commentsButton.parentNode.removeChild(commentsButton);
-    commentsButton.removeEventListening('click', function(){});
+    commentsButton.removeEventListener('click', function(){});
 
     (function() {
         var dsq = document.createElement('script');
