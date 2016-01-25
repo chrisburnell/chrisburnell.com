@@ -45,7 +45,7 @@
 
     {% if page.categories contains 'link' and page.link_urls %}
         {% for link in page.link_urls %}
-            <link rel="preload" href="//{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
+            <link rel="prefetch" href="//{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
         {% endfor %}
     {% endif %}
 
