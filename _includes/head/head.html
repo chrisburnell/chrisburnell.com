@@ -32,6 +32,8 @@
 
     <title>{{ meta_title }}</title>
 
+    <link rel="preload" href="/css/main.min.css" as="style">
+
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//a.disquscdn.com">
     <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
@@ -40,6 +42,7 @@
     <link rel="dns-prefetch" href="//s.codepen.io">
     <link rel="dns-prefetch" href="//platform.twitter.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+
     {% if page.categories contains 'link' and page.link_urls %}
         {% for link in page.link_urls %}
             <link rel="preload" href="//{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
