@@ -831,7 +831,7 @@ samp,
 var,
 .monospace {
   font-family: Monaco, Consolas, Courier, monospace;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   line-height: 1.429; }
 
 /**

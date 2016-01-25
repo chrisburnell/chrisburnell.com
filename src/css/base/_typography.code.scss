@@ -14,8 +14,7 @@ var,
 }
 %monospace-elements {
     font-family: $font-family-monospace;
-    // TODO: I don’t know why `rem` isn't working here!
-    font-size: ($font-size-small / 1rem * 1em);
+    font-size: $font-size-small;
     line-height: 1.429;
 }
 
