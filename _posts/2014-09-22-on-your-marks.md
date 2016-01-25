@@ -100,7 +100,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 <aside><p>Remember, don’t mix classes for styling and javascript hooks. You’ll save yourself potential pains later on at no cost right now!</p></aside>
 
 {% highlight html %}
-<button class="show-comments-button" id="show-comments-button" role="button" aria-pressed="false" disabled>
+<button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
     <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
@@ -109,7 +109,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 And let’s create some associated JavaScript to create and hook onto our `button` and perform two actions: remove the `button` and load *Disqus*.
 
 {% highlight javascript %}
-var commentsButton  = document.querySelector('#show-comments-button');
+var commentsButton  = document.querySelector('#js-show-comments');
 
 commentsButton.disabled = false;
 
@@ -200,7 +200,7 @@ function showComments() {
 Here’s the entire snippet of code for my comments section:
 
 {% highlight html %}
-<button class="show-comments-button" id="show-comments-button" role="button" aria-pressed="false" disabled>
+<button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
     <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
@@ -229,7 +229,7 @@ var DISQUS_SHORTNAME = 'chrisburnell';
     ////
 
     var commentsSection = document.querySelector('#comments');
-    var commentsButton  = document.querySelector('#show-comments-button');
+    var commentsButton  = document.querySelector('#js-show-comments');
     var commentsHash    = ['#comment', '#disqus_thread'];
 
     ////

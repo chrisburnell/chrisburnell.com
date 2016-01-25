@@ -36,10 +36,12 @@
     }
 
     // override default `.button`
-    .show-comments-button:before,
-    .show-comments-button:active:before {
-        position: relative;
-        top: 0;
+    .button--show-comments,
+    .button--show-comments:active {
+        &:before {
+            position: relative;
+            top: 0;
+        }
     }
 
     noscript {

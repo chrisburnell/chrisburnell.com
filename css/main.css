@@ -1826,8 +1826,8 @@ footer {
   text-align: center; }
   .comments iframe {
     margin-top: 2.25rem; }
-  .comments .show-comments-button:before,
-  .comments .show-comments-button:active:before {
+  .comments .button--show-comments:before,
+  .comments .button--show-comments:active:before {
     position: relative;
     top: 0; }
   .comments noscript {

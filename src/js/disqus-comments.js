@@ -13,7 +13,7 @@
     ////
 
     var commentsSection = document.querySelector('#comments');
-    var commentsButton  = document.querySelector('#show-comments-button');
+    var commentsButton  = document.querySelector('#js-show-comments');
     var commentsHash    = ['#comment', '#disqus_thread'];
 
     ////

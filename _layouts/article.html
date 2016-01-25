@@ -38,7 +38,7 @@
 
         <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
-                <button class="show-comments-button" id="show-comments-button" role="button" aria-pressed="false" disabled>
+                <button class="button--show-comments" id="js-show-comments" role="button" disabled>
                     <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
                     <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
                 </button>
