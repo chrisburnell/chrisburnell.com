@@ -28,7 +28,17 @@
         });
     }
 
-    // if URL contains a hash from `commentsHash`, initiate `showComments()`
+    // run `updateFromHash()` on window load
+    window.addEventListener('load', function() {
+        updateFromHash();
+    });
+    // run `updateFromHash()` on window hashchange
+    window.addEventListener('hashchange', function() {
+        updateFromHash();
+    });
+    ////
+    /// If URL contains a hash from `commentsHash`, initiate `showComments()`
+    ////
     function updateFromHash() {
         commentsHash.forEach( function(hash) {
             if( window.location.hash.indexOf(hash) === 0 ) {
@@ -36,14 +46,6 @@
             }
         });
     }
-    // run `updateFromHash()` on load
-    window.addEventListener('load', function() {
-        updateFromHash();
-    });
-    // run `updateFromHash()` on hashchange
-    window.addEventListener('hashchange', function() {
-        updateFromHash();
-    });
 
     ////
     /// Load in Disqus comments and remove the comments button
