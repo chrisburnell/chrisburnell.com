@@ -44,9 +44,8 @@
             @include transition(border-color);
             @include will-change(color, border-bottom-color);
             display: inline-block;
-            padding: 0 .5rem;
-            border-bottom: $border-thin solid transparent;
-            margin-left: -0.5rem;
+            border-bottom-width: $border-thin;
+            border-bottom-color: transparent;
 
             &:hover,
             &:focus,

@@ -15,7 +15,7 @@ lede: A list of tags and their counterparts.
 {% endcapture %}
 {% assign tags_sorted = tags | split: ' ' | sort %}
 {% for tag in tags_sorted %}
-    <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
+    <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">( {{ site.tags[tag].size }} )</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.tags[tag] %}
             <li role="listitem">

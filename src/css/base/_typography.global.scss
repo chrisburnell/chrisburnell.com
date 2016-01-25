@@ -89,7 +89,7 @@ h3 {
         margin-bottom: $spacing-medium;
     }
 
-    // Show an indicator when using an Anchor to jump to an ID
+    // Show an indicator when using an Anchor to jump to an `h3` with an `id`
     &[id] {
         &:target {
             animation: heading-target 2s linear;
