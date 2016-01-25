@@ -144,16 +144,12 @@ h4 {
 %anchor {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
+    color: $color-brand;
+    border-bottom-color: $color-text-light;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     position: relative;
     text-decoration: none;
-
-    &,
-    &:link {
-        color: $color-brand;
-        border-bottom-color: $color-text-light;
-    }
 
     &:visited {
         color: darken($color-brand, 10%);
@@ -182,11 +178,8 @@ a {
 
     h2 &,
     h3 & {
+        color: $color-text;
         border-bottom-width: 0;
-
-        &:link {
-            color: $color-text;
-        }
 
         &:visited {
             color: lighten($color-text, 10%);
@@ -202,7 +195,9 @@ a {
 }
 
 .heading-anchor {
+    color: $color-text-alt;
     display: none;
+    border-bottom-width: 1px;
     margin-left: $spacing-medium;
     font-family: $font-family-monospace;
     font-size: $font-size-smaller;
@@ -211,12 +206,6 @@ a {
     text-transform: lowercase;
     text-shadow: none;
     vertical-align: middle;
-
-    &,
-    &:link {
-        color: $color-text-alt;
-        border-bottom-width: 1px;
-    }
 
     &:visited {
         color: darken($color-text-alt, 10%);
@@ -255,7 +244,7 @@ a {
     .link--#{$name} {
         color: $text-color !important;
 
-        &:link,
+        &,
         &:visited {
             border-bottom-color: lighten($text-color, 20%);
 
@@ -397,7 +386,7 @@ figure {
         @extend .rounded;
     }
 
-    a:link,
+    a,
     a:visited,
     figcaption {
         color: $color-text-alt;
