@@ -69,7 +69,7 @@
         line-height: $line-height-small;
         text-transform: uppercase;
 
-        &,
+        &:link,
         &:visited {
             border-bottom-color: $color-brand
         }

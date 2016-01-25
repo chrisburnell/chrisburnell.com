@@ -27,6 +27,7 @@
     box-shadow: inset 0 -0.182em 0 0 darken($color-brand, 10%);
 
     &,
+    &:link,
     &:visited {
         color: $color-white;
         border-width: 0;
