@@ -14,7 +14,7 @@ shorturl: 6dwvt
 ---
 
 
-{% include content/codepen.html height="350" %}
+{% include content/codepen.html height='350' %}
 
 {% highlight html %}
 <div class="square">

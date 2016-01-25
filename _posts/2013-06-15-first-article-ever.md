@@ -37,12 +37,12 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 {% include content/heading.html title='What is Jekyll?' %}
 
-> Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll &bull; Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
+> Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
 
 
 {% include content/heading.html title='Better, Faster, Stronger' %}
 
-I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing—<span class="gray">(Edit: and editing)</span>— actual content.
+I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing and editing actual content.
 
 That’s something else I’m quite new to but thoroughly enjoying picking up: writing content in Markdown.
 

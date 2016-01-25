@@ -14,7 +14,7 @@ shorturl: g6pky
 ---
 
 
-{% include content/codepen.html height="250" %}
+{% include content/codepen.html height='250' %}
 
 {% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">

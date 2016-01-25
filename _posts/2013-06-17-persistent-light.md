@@ -14,7 +14,7 @@ shorturl: 9sogz
 ---
 
 
-{% include content/codepen.html height="425" %}
+{% include content/codepen.html height='425' %}
 
 {% highlight html %}
 <div class="square">A</div>

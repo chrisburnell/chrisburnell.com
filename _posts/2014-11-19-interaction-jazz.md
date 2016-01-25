@@ -14,7 +14,7 @@ shorturl: bhbt9
 ---
 
 
-{% include content/codepen.html height="600" %}
+{% include content/codepen.html height='600' %}
 
 {% highlight haml %}
 - (1...51).each do |row|

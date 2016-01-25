@@ -14,7 +14,7 @@ shorturl: f7utt
 ---
 
 
-{% include content/codepen.html height="500" %}
+{% include content/codepen.html height='500' %}
 
 {% highlight html %}
 <div class="container">

@@ -14,7 +14,7 @@ shorturl: b3sh4
 ---
 
 
-{% include content/codepen.html height="200" %}
+{% include content/codepen.html height='200' %}
 
 {% highlight html %}
 <button>Hover Me</button>

@@ -14,7 +14,7 @@ shorturl: 058xp
 ---
 
 
-{% include content/codepen.html height="525" %}
+{% include content/codepen.html height='525' %}
 
 <div class="code-toggle">
 {% include content/code-toggle-input.html %}

@@ -40,7 +40,7 @@ snippet of code on a project of your own. -->
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' %}
 
-<body{% if body_class != "" %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
+<body{% if body_class != '' %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
     {% include components/svg.html %}
 

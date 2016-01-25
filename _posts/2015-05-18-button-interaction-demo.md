@@ -14,7 +14,7 @@ shorturl: ax7qc
 ---
 
 
-{% include content/codepen.html height="300" %}
+{% include content/codepen.html height='300' %}
 
 {% highlight html %}
 <button>Hello!</button>

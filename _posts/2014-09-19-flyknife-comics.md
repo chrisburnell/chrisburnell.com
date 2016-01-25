@@ -14,7 +14,7 @@ shorturl: 6aorh
 ---
 
 
-{% include content/codepen.html height="400" %}
+{% include content/codepen.html height='400' %}
 
 {% highlight html %}
 <div>
