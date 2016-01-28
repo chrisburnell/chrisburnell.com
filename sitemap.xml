@@ -15,6 +15,8 @@ sitemap:
                 <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
                 {% if page.sitemap.lastmod %}
                     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+                {% elsif page.edit_date %}
+                    <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
                 {% elsif page.date %}
                     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
                 {% endif %}
