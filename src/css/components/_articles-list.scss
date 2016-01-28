@@ -16,11 +16,11 @@
         display: inline-block;
         clear: both;
         padding: 1.5rem 1rem;
-        border-top: $border-thin solid $color-black-10-percent;
+        border-top: $border-thin solid $color-black--10-percent;
         position: relative;
 
         &:nth-child(odd) {
-            background-color: $color-black-5-percent;
+            background-color: $color-black--5-percent;
         }
 
         @include media("<=medium") {
@@ -32,28 +32,13 @@
 
     .title,
     .date,
-    .comments-link {
+    .comments-anchor {
         // helps pop against the odd item background
-        text-shadow: 0 1px 0 $color-white;
+        text-shadow: 0 $border-hairline 0 $color-white;
     }
 
     .title {
         margin-bottom: $spacing-small;
-
-        .title-link {
-            @include transition(border-color);
-            @include will-change(color, border-bottom-color);
-            display: inline-block;
-            border-bottom-width: $border-thin;
-            border-bottom-color: transparent;
-
-            &:hover,
-            &:focus,
-            &:active {
-                color: $color-text;
-                border-bottom-color: $color-brand;
-            }
-        }
     }
 
     .lede {
@@ -76,14 +61,14 @@
     }
 
     %button,
-    .comments-link {
+    .comments-anchor {
         @include media("<=medium") {
             margin-left:  $spacing-small;
             margin-right: $spacing-small;
         }
     }
 
-    .comments-link {
+    .comments-anchor {
         line-height: 2;
 
         @include media("<=medium") {

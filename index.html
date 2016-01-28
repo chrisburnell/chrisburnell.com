@@ -13,7 +13,7 @@ searchable: no-content
     {% for post in site.categories.article limit: 2 %}
         <li role="listitem">
             <h2 class="title">
-                <a class="title-link" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
+                <a class="title-anchor" href="{{ post.url }}" tabindex="-1">{{ post.title }}</a>
             </h2>
             <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             {% if post.lede %}
@@ -21,7 +21,7 @@ searchable: no-content
             {% endif %}
             <a class="button" href="{{ post.url }}"><span>Continue reading ‘{{ post.title }}’ – </span>Read Full Article</a>
             {% if post.comments == true %}
-                <a class="comments-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
+                <a class="comments-anchor" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
             {% endif %}
         </li>
     {% endfor %}

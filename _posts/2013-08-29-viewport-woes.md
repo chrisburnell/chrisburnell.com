@@ -68,7 +68,7 @@ For reasons like having a consistent user experience for all users, this is a pi
 Fine. I’ve rambled enough.
 
 - Separate your variables with commas, *not semicolons*.
-- Don’t set an arbitrary width to your page&ellip; just don’t do it if you value your time and sanity later on. Responsive design is done best when the page is fluid, so in 99.9% of cases, set this to `device-width`. But this is not a blanket statement, you must assess this on a per-project basis.
+- Don’t set an arbitrary width to your page… just don’t do it if you value your time and sanity later on. Responsive design is done best when the page is fluid, so in 99.9% of cases, set this to `device-width`. But this is not a blanket statement, you must assess this on a per-project basis.
 - Use `maximum-scale` and `minimum-scale`, other variations don’t cut it.
 - Scalable only has one *E*, at the end.
 

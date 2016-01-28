@@ -52,7 +52,7 @@ h6 {
     font-size: 2.625rem;
     text-transform: uppercase;
     // 3px 3px
-    text-shadow: .0715em .0715em 0 $color-black-5-percent;
+    text-shadow: .0715em .0715em 0 $color-black--5-percent;
 }
 h1 {
     @extend %alpha;
@@ -138,137 +138,6 @@ h4 {
     margin-bottom: $spacing-small;
 }
 
-/**
- * Anchors
- */
-%anchor {
-    @include transition(background, color, border-color);
-    @include will-change(background, color, border-color);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    position: relative;
-    text-decoration: none;
-
-    &,
-    &:link {
-        color: $color-brand;
-        border-bottom-color: $color-text-light;
-    }
-
-    &:visited {
-        color: darken($color-brand, 10%);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-        border-bottom-color: $color-brand;
-    }
-
-    &:visited {
-        &:hover,
-        &:focus,
-        &:active {
-            border-bottom-color: darken($color-brand, 10%);
-        }
-    }
-
-    span:not([class]):not([itemprop]) {
-        @extend .hidden;
-    }
-}
-a {
-    @extend %anchor;
-
-    h2 &,
-    h3 & {
-        border-bottom-width: 0;
-
-        &:link {
-            color: $color-text;
-        }
-
-        &:visited {
-            color: lighten($color-text, 10%);
-        }
-    }
-    h3 & {
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: underline;
-        }
-    }
-}
-
-.heading-anchor {
-    display: none;
-    margin-left: $spacing-medium;
-    font-family: $font-family-monospace;
-    font-size: $font-size-smaller;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-small;
-    text-transform: lowercase;
-    text-shadow: none;
-    vertical-align: middle;
-
-    &,
-    &:link {
-        color: $color-text-alt;
-        border-bottom-width: 1px;
-    }
-
-    &:visited {
-        color: darken($color-text-alt, 10%);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-        border-bottom-color: $color-text-alt;
-        // when appearing inside an `h3`, disable underline
-        text-decoration: none;
-    }
-
-    &:visited {
-        &:hover,
-        &:focus,
-        &:active {
-            border-bottom-color: darken($color-text-alt, 10%);
-        }
-    }
-
-    %heading:hover &,
-    %heading:focus &,
-    %heading:active & {
-        display: inline-block;
-    }
-}
-
-/**
- * Brand Link Colors
- */
-@each $color-brand in $color-brands {
-    $name:       nth($color-brand, 1);
-    $text-color: nth($color-brand, 2);
-
-    .link--#{$name} {
-        color: $text-color !important;
-
-        &:link,
-        &:visited {
-            border-bottom-color: lighten($text-color, 20%);
-
-            &:hover,
-            &:focus,
-            &:active {
-                border-bottom-color: $text-color;
-            }
-        }
-
-    }
-}
-
 p {
     margin: 0 0 $spacing-medium;
 
@@ -335,7 +204,6 @@ ul.default-list li:before {
     font-size: 1.5rem;
     line-height: 1;
 }
-
 dl {
     width: 100%;
     margin-top: 0;
@@ -408,7 +276,7 @@ figure {
 blockquote {
     @extend .rounded;
     @include quotes;
-    background-color: $color-brand-10-percent;
+    background-color: $color-brand--10-percent;
     padding: $spacing-medium;
     margin: 0 $spacing-large $spacing-medium;
 
@@ -458,7 +326,7 @@ dfn[title] {
 }
 abbr[title],
 dfn[title] {
-    border-bottom: 1px dotted $color-text-alt;
+    border-bottom: $border-hairline dotted $color-text-alt;
     cursor: help;
 }
 ins {
@@ -470,7 +338,7 @@ time {
 }
 
 hr {
-    background: $color-black-10-percent;
+    background: $color-black--10-percent;
     width: 100%;
     height: .125rem;
     display: block;

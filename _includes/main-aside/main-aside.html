@@ -21,7 +21,7 @@
             </div>
         {% endif %}
         {% if page.categories contains 'pen' %}
-            <div class="featured-link"><a href="/pens">Featured Pens</a></div>
+            <div class="featured-anchor"><a href="/pens">Featured Pens</a></div>
         {% endif %}
     {% endcapture %}
 {% else %}
@@ -77,8 +77,8 @@
     </div>
 
     <div class="author-biography">
-        <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and currently working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here&mdash;<a rel="me author" class="link--rss" href="/feed.xml">subscribe if you like</a>.</p>
-        <p>I also <a rel="me publisher external" class="link--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="link--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="link--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="link--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
+        <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and currently working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about here—<a rel="me author" class="anchor--rss" href="/feed.xml">subscribe if you like</a>.</p>
+        <p>I also <a rel="me publisher external" class="anchor--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="anchor--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="anchor--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="anchor--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
     {% unless page.page_class contains 'page-search' %}

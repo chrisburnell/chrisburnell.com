@@ -91,4 +91,4 @@ There are a number of RSS Feeds you can subscribe to:
     </a>
 </nav>
 
-I'm reachable through <a rel="me publisher" class="link--twitter" href="{{ site.url_twitter }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.
+I'm reachable through <a rel="me publisher" class="anchor--twitter" href="{{ site.url_twitter }}">Twitter</a> or email <a href="mailto:{{ site.author_email }}">{{ site.author_email }}</a>.

@@ -32,7 +32,7 @@ mark,
 samp,
 var {
     @extend .rounded-thin;
-    background-color: $color-brand-10-percent;
+    background-color: $color-brand--10-percent;
     padding: .25rem;
     // force text to wrap inside the container
     word-wrap: break-word;
@@ -48,7 +48,7 @@ pre {
 
     &:not(.codepen) {
         @extend .rounded;
-        background-color: $color-black-5-percent;
+        background-color: $color-black--5-percent;
         padding: $spacing-medium $spacing-medium 1rem;
         margin-top:    $spacing-large;
         margin-bottom: $spacing-large;

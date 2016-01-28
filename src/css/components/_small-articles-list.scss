@@ -36,7 +36,7 @@
 
             &:nth-child(4n+2) a,
             &:nth-child(4n+3) a {
-                background-color: $color-black-5-percent;
+                background-color: $color-black--5-percent;
             }
         }
 
@@ -51,7 +51,7 @@
             }
 
             &:nth-child(2n+1) a {
-                background-color: $color-black-5-percent;
+                background-color: $color-black--5-percent;
             }
         }
 
@@ -72,7 +72,7 @@
             }
 
             &:nth-child(2n+2) a {
-                background-color: $color-black-5-percent;
+                background-color: $color-black--5-percent;
             }
         }
     }
@@ -87,7 +87,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-brand-10-percent !important;
+            background-color: $color-brand--10-percent !important;
         }
 
         @include media("<small") {
@@ -102,7 +102,7 @@
     .title,
     .lede,
     .date {
-        text-shadow: 0 1px 0 $color-white;
+        text-shadow: 0 $border-hairline 0 $color-white;
     }
 
     .title {
@@ -110,7 +110,7 @@
         @include will-change(border-color);
         width: auto;
         display: inline-block;
-        border-bottom: 1px solid $color-text-light;
+        border-bottom: $border-hairline solid $color-text-light;
         margin-bottom: 0;
     }
     a:hover .title,

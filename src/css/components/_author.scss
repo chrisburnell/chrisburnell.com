@@ -27,7 +27,7 @@
 
         @include media("<=medium") {
             padding-top: $spacing-large;
-            border-top: $border-thin solid $color-black-10-percent;
+            border-top: $border-thin solid $color-black--10-percent;
             margin-bottom: $spacing-small;
         }
 
@@ -81,7 +81,7 @@
     .author-employer,
     .author-information .date,
     .tags,
-    .featured-link {
+    .featured-anchor {
         display: block;
     }
 
@@ -89,11 +89,11 @@
     .author-employer,
     .author-information .date,
     .tags,
-    .featured-link {
+    .featured-anchor {
         margin-top: .5rem;
     }
 
-    .featured-link:after {
+    .featured-anchor:after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";
         font-style: normal;

@@ -9,16 +9,15 @@
     .featured-pens,
     .related-articles,
     .comments,
-    footer .home-link,
-    footer .copyright-spacer,
-    footer .style-guide-link,
-    footer .icons-list {
+    footer .home-anchor,
+    footer .style-guide-anchor,
+    .nav-tertiary {
         display: none;
     }
 
     button, .button {
         color: $color-text;
-        border: 1px solid $color-text;
+        border: $border-hairline solid $color-text;
         box-shadow: none;
     }
 }

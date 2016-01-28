@@ -7,7 +7,7 @@
             <li role="listitem">
                 <a href="{{ post.link_urls | first }}">
                     <svg class="icon  icon--link"><use xlink:href="#svg--link" /></svg>
-                    <h4 class="title">{{ post.title }} &rarr;</h4>
+                    <h4 class="title">{{ post.title }} →</h4>
                     {% if post.lede %}
                         <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
                     {% endif %}
@@ -16,5 +16,5 @@
             </li>
         {% endfor %}
     </ol>
-    <a class="widget-featured-link" href="/links">All Shared Links</a>
+    <a class="widget-featured-anchor" href="/links">All Shared Links</a>
 </div>
