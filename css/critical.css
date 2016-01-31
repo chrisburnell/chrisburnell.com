@@ -754,6 +754,18 @@ h3 a {
 h3 a:hover, h3 a:focus, h3 a:active {
   text-decoration: underline; }
 
+.title-anchor {
+  -webkit-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+  will-change: color, border-bottom-color;
+  display: inline-block;
+  border-bottom-width: 0.125rem; }
+  .title-anchor, .title-anchor:link {
+    border-bottom-color: transparent; }
+  .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
+    color: #4f4f4f;
+    border-bottom-color: #5f8aa6; }
+
 .heading-anchor {
   display: none;
   margin-left: 1.25rem;
@@ -791,17 +803,6 @@ h3 a:hover, h3 a:focus, h3 a:active {
   h5:active .heading-anchor,
   h6:active .heading-anchor {
     display: inline-block; }
-
-.title-anchor {
-  -webkit-transition: border-color 0.2s ease;
-  transition: border-color 0.2s ease;
-  will-change: color, border-bottom-color;
-  display: inline-block;
-  border-bottom-width: 0.125rem;
-  border-bottom-color: transparent; }
-  .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
-    color: #4f4f4f;
-    border-bottom-color: #5f8aa6; }
 
 /**
  * Brand Link Colors
