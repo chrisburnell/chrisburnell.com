@@ -9,7 +9,7 @@
     'use strict';
 
     // Increment this when updating the Service Worker
-    var VERSION = '13';
+    var VERSION = '14';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
@@ -19,18 +19,18 @@
 
     // The files we want to cache
     var urlsToCache = [
-        '/',
-        '/about',
-        '/articles',
-        '/pens',
-        '/tags',
-        '/search',
-        '/search.json',
-        '/styleguide',
-        '/css/main.min.css',
-        '/js/main.min.js',
-        '/images/avatar.png'
-    ];
+            '/',
+            '/about',
+            '/articles',
+            '/pens',
+            '/links',
+            '/tags',
+            '/search',
+            '/search.json',
+            '/styleguide',
+            '/css/main.min.css',
+            '/js/main.min.js'
+        ];
 
     // Console Feedback
     var CONSOLE_FEEDBACK = true;
