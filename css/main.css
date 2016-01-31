@@ -1414,7 +1414,7 @@ footer {
     overflow: hidden; }
     .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
       background-color: rgba(95, 138, 166, 0.1) !important; }
-    @media (max-width: 499px) {
+    @media (min-width: 501px) {
       .small-articles-list a {
         -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;

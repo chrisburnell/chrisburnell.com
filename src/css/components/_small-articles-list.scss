@@ -90,7 +90,7 @@
             background-color: $color-brand--10-percent !important;
         }
 
-        @include media("<small") {
+        @include media(">small") {
             flex: 1 0 auto;
         }
 
