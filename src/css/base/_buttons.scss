@@ -82,12 +82,10 @@
         margin-right: .25em;
         pointer-events: none;
     }
-    .icon--search {
-        margin-right: 0;
-    }
 }
 
-button, .button,
+button,
+.button,
 .button--small {
     @extend %button;
 }

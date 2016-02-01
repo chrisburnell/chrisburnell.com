@@ -12,8 +12,9 @@
     /// Initialisation
     ////
 
-    var commentsSection = document.querySelector('#comments');
-    var commentsButton  = document.querySelector('#js-show-comments');
+    var commentsSection = document.querySelector('.js-comments');
+    var commentsButton  = document.querySelector('.js-show-comments');
+    // `#comment` will match both `#comment` and `#comments`
     var commentsHash    = ['#comment', '#disqus_thread'];
 
     ////

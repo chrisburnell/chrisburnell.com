@@ -1137,14 +1137,14 @@ aside figcaption {
     .banner {
       width: 500px; } }
 
-.lede {
+.lede, .lede--featured {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede {
+    .lede, .lede--featured {
       text-align: left; } }
-  aside + .lede {
+  aside + .lede, aside + .lede--featured {
     margin-top: -0.5rem; }
 
 .lede--featured {
@@ -1186,7 +1186,7 @@ aside figcaption {
     text-shadow: 0 1px 0 #f9f9f9; }
   .articles-list .title {
     margin-bottom: 0.625rem; }
-  .articles-list .lede {
+  .articles-list .lede, .articles-list .lede--featured {
     margin-bottom: 1.25rem; }
   .articles-list .date {
     margin-bottom: 0.625rem; }
@@ -1291,10 +1291,10 @@ aside figcaption {
   .author-biography {
     margin-bottom: 1.25rem; } }
 
-.icon {
+.icon, .icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
   display: block;
   overflow: hidden; }
-  .icons-list .icon {
+  .icons-list .icon, .icons-list .icon--codepen, .icons-list .icon--github, .icons-list .icon--lastfm, .icons-list .icon--rss, .icons-list .icon--twitter, .icons-list .icon--article, .icons-list .icon--feather, .icons-list .icon--heart, .icons-list .icon--link, .icons-list .icon--search, .icons-list .icon--tag {
     fill: #060606; }
 
 /**

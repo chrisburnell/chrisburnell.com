@@ -884,7 +884,8 @@ h3 a:hover, h3 a:focus, h3 a:active {
     .anchor--tag:link:hover, .anchor--tag:link:focus, .anchor--tag:link:active, .anchor--tag:visited:hover, .anchor--tag:visited:focus, .anchor--tag:visited:active {
       border-bottom-color: #5f8aa6; }
 
-button, .button,
+button,
+.button,
 .button--small {
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
@@ -905,19 +906,26 @@ button, .button,
   white-space: nowrap;
   cursor: pointer;
   box-shadow: inset 0 -0.182em 0 0 #4b6f87; }
-  button, .button,
-  .button--small, button:link, .button:link,
-  .button--small:link, button:visited, .button:visited,
+  button,
+  .button,
+  .button--small, button:link,
+  .button:link,
+  .button--small:link, button:visited,
+  .button:visited,
   .button--small:visited {
     color: #f9f9f9;
     border-width: 0; }
-  button:hover, .button:hover,
-  .button--small:hover, button:focus, .button:focus,
-  .button--small:focus, button:active, .button:active,
+  button:hover,
+  .button:hover,
+  .button--small:hover, button:focus,
+  .button:focus,
+  .button--small:focus, button:active,
+  .button:active,
   .button--small:active {
     background-color: #6f96af;
     outline-style: auto; }
-  button:active, .button:active,
+  button:active,
+  .button:active,
   .button--small:active {
     height: 2em;
     padding-bottom: 0;
@@ -925,8 +933,10 @@ button, .button,
     box-shadow: inset -1px 0 0 #4b6f87;
     -webkit-transform: translateY(0.182em);
             transform: translateY(0.182em); }
-  button:before, .button:before,
-  .button--small:before, button:after, .button:after,
+  button:before,
+  .button:before,
+  .button--small:before, button:after,
+  .button:after,
   .button--small:after {
     position: absolute;
     top: 0;
@@ -935,11 +945,14 @@ button, .button,
     content: "";
     width: 100%;
     height: .182em; }
-  button:active:before, .button:active:before,
-  .button--small:active:before, button:active:after, .button:active:after,
+  button:active:before,
+  .button:active:before,
+  .button--small:active:before, button:active:after,
+  .button:active:after,
   .button--small:active:after {
     top: -0.182em; }
-  button[rel="external"]:after, [rel="external"].button:after,
+  button[rel="external"]:after,
+  [rel="external"].button:after,
   [rel="external"].button--small:after {
     position: relative;
     top: 0;
@@ -949,16 +962,36 @@ button, .button,
     width: auto;
     height: auto;
     font-family: Monaco, Consolas, Courier, monospace; }
-  button .icon, .button .icon,
-  .button--small .icon {
+  button .icon,
+  .button .icon,
+  .button--small .icon, button .icon--codepen,
+  .button .icon--codepen,
+  .button--small .icon--codepen, button .icon--github,
+  .button .icon--github,
+  .button--small .icon--github, button .icon--lastfm,
+  .button .icon--lastfm,
+  .button--small .icon--lastfm, button .icon--rss,
+  .button .icon--rss,
+  .button--small .icon--rss, button .icon--twitter,
+  .button .icon--twitter,
+  .button--small .icon--twitter, button .icon--article,
+  .button .icon--article,
+  .button--small .icon--article, button .icon--feather,
+  .button .icon--feather,
+  .button--small .icon--feather, button .icon--heart,
+  .button .icon--heart,
+  .button--small .icon--heart, button .icon--link,
+  .button .icon--link,
+  .button--small .icon--link, button .icon--search,
+  .button .icon--search,
+  .button--small .icon--search, button .icon--tag,
+  .button .icon--tag,
+  .button--small .icon--tag {
     width: .8em;
     height: .8em;
     display: inline-block;
     margin-right: .25em;
     pointer-events: none; }
-  button .icon--search, .button .icon--search,
-  .button--small .icon--search {
-    margin-right: 0; }
 
 button[disabled] {
   opacity: 0.7;
@@ -1032,13 +1065,25 @@ main {
 .wrap--full-width {
   width: 100%; }
 
-.clear, article > h3, .widget {
+.clear, article > h3, .widget, .widget--related-articles,
+.widget--featured-pens,
+.widget--shared-links,
+.widget--search {
   clear: both;
   zoom: 1; }
-  .clear:before, article > h3:before, .widget:before, .clear:after, article > h3:after, .widget:after {
+  .clear:before, article > h3:before, .widget:before, .widget--related-articles:before,
+  .widget--featured-pens:before,
+  .widget--shared-links:before,
+  .widget--search:before, .clear:after, article > h3:after, .widget:after, .widget--related-articles:after,
+  .widget--featured-pens:after,
+  .widget--shared-links:after,
+  .widget--search:after {
     content: "";
     display: table; }
-  .clear:after, article > h3:after, .widget:after {
+  .clear:after, article > h3:after, .widget:after, .widget--related-articles:after,
+  .widget--featured-pens:after,
+  .widget--shared-links:after,
+  .widget--search:after {
     clear: both; }
 
 header {
@@ -1276,14 +1321,14 @@ footer {
     .banner {
       width: 500px; } }
 
-.lede {
+.lede, .lede--featured {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede {
+    .lede, .lede--featured {
       text-align: left; } }
-  aside + .lede {
+  aside + .lede, aside + .lede--featured {
     margin-top: -0.5rem; }
 
 .lede--featured {
@@ -1325,7 +1370,7 @@ footer {
     text-shadow: 0 1px 0 #f9f9f9; }
   .articles-list .title {
     margin-bottom: 0.625rem; }
-  .articles-list .lede {
+  .articles-list .lede, .articles-list .lede--featured {
     margin-bottom: 1.25rem; }
   .articles-list .date {
     margin-bottom: 0.625rem; }
@@ -1336,7 +1381,8 @@ footer {
       content: "– ";
       color: #737373; }
   @media (max-width: 768px) {
-    .articles-list button, .articles-list .button, .articles-list
+    .articles-list button, .articles-list
+    .button, .articles-list
     .button--small,
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
@@ -1424,6 +1470,7 @@ footer {
       padding: 0.625rem; }
   .small-articles-list .title,
   .small-articles-list .lede,
+  .small-articles-list .lede--featured,
   .small-articles-list .date {
     text-shadow: 0 1px 0 #f9f9f9; }
   .small-articles-list .title {
@@ -1442,7 +1489,7 @@ footer {
   .small-articles-list a:visited:focus .title,
   .small-articles-list a:visited:active .title {
     border-bottom-color: #4b6f87; }
-  .small-articles-list .lede {
+  .small-articles-list .lede, .small-articles-list .lede--featured {
     color: #4f4f4f;
     margin-top: 0.625rem;
     margin-bottom: 0;
@@ -1508,6 +1555,9 @@ footer {
 .widget--search .search-submit {
   min-width: 2.5em; }
 
+.search-submit .icon--search {
+  margin-right: 0; }
+
 /**
  * Contains buttons and internal links.
  */
@@ -1541,49 +1591,67 @@ footer {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; } }
-  .nav-secondary button, .nav-secondary .button, .nav-secondary
+  .nav-secondary button, .nav-secondary
+  .button, .nav-secondary
   .button--small,
   .buttons-list button,
-  .buttons-list .button,
+  .buttons-list
+  .button,
   .buttons-list
   .button--small {
     display: inline-block; }
     @media (min-width: 501px) {
-      .nav-secondary button, .nav-secondary .button, .nav-secondary
+      .nav-secondary button, .nav-secondary
+      .button, .nav-secondary
       .button--small,
       .buttons-list button,
-      .buttons-list .button,
+      .buttons-list
+      .button,
       .buttons-list
       .button--small {
         margin-left: 0.625rem;
         margin-right: 0.625rem; } }
     @media (max-width: 500px) {
-      .nav-secondary button, .nav-secondary .button, .nav-secondary
+      .nav-secondary button, .nav-secondary
+      .button, .nav-secondary
       .button--small,
       .buttons-list button,
-      .buttons-list .button,
+      .buttons-list
+      .button,
       .buttons-list
       .button--small {
         margin-left: auto;
         margin-right: auto; }
-        .nav-secondary button + button, .nav-secondary .button + button, .nav-secondary
-        .button--small + button, .nav-secondary button + .button, .nav-secondary .button + .button, .nav-secondary
-        .button--small + .button, .nav-secondary button +
-        .button--small, .nav-secondary .button +
+        .nav-secondary button + button, .nav-secondary
+        .button + button, .nav-secondary
+        .button--small + button, .nav-secondary button +
+        .button, .nav-secondary
+        .button +
+        .button, .nav-secondary
+        .button--small +
+        .button, .nav-secondary button +
+        .button--small, .nav-secondary
+        .button +
         .button--small, .nav-secondary
         .button--small +
         .button--small,
         .buttons-list button + button,
-        .buttons-list .button + button,
+        .buttons-list
+        .button + button,
         .buttons-list
         .button--small + button,
-        .buttons-list button + .button,
-        .buttons-list .button + .button,
+        .buttons-list button +
+        .button,
         .buttons-list
-        .button--small + .button,
+        .button +
+        .button,
+        .buttons-list
+        .button--small +
+        .button,
         .buttons-list button +
         .button--small,
-        .buttons-list .button +
+        .buttons-list
+        .button +
         .button--small,
         .buttons-list
         .button--small +
@@ -1610,7 +1678,7 @@ footer {
 
 .buttons-list {
   margin: 0 0 1.25rem; }
-  .lede + .buttons-list {
+  .lede + .buttons-list, .lede--featured + .buttons-list {
     margin-bottom: 2.25rem; }
 
 /**
@@ -1747,7 +1815,7 @@ footer {
   .footer-home-anchor:active {
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem); }
-  .footer-home-anchor .icon {
+  .footer-home-anchor .icon, .footer-home-anchor .icon--codepen, .footer-home-anchor .icon--github, .footer-home-anchor .icon--lastfm, .footer-home-anchor .icon--rss, .footer-home-anchor .icon--twitter, .footer-home-anchor .icon--article, .footer-home-anchor .icon--feather, .footer-home-anchor .icon--heart, .footer-home-anchor .icon--link, .footer-home-anchor .icon--search, .footer-home-anchor .icon--tag {
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
@@ -1756,7 +1824,7 @@ footer {
     height: 100%;
     display: block;
     fill: #5f8aa6; }
-  .footer-home-anchor:hover .icon, .footer-home-anchor:focus .icon, .footer-home-anchor:active .icon {
+  .footer-home-anchor:hover .icon, .footer-home-anchor:hover .icon--codepen, .footer-home-anchor:hover .icon--github, .footer-home-anchor:hover .icon--lastfm, .footer-home-anchor:hover .icon--rss, .footer-home-anchor:hover .icon--twitter, .footer-home-anchor:hover .icon--article, .footer-home-anchor:hover .icon--feather, .footer-home-anchor:hover .icon--heart, .footer-home-anchor:hover .icon--link, .footer-home-anchor:hover .icon--search, .footer-home-anchor:hover .icon--tag, .footer-home-anchor:focus .icon, .footer-home-anchor:focus .icon--codepen, .footer-home-anchor:focus .icon--github, .footer-home-anchor:focus .icon--lastfm, .footer-home-anchor:focus .icon--rss, .footer-home-anchor:focus .icon--twitter, .footer-home-anchor:focus .icon--article, .footer-home-anchor:focus .icon--feather, .footer-home-anchor:focus .icon--heart, .footer-home-anchor:focus .icon--link, .footer-home-anchor:focus .icon--search, .footer-home-anchor:focus .icon--tag, .footer-home-anchor:active .icon, .footer-home-anchor:active .icon--codepen, .footer-home-anchor:active .icon--github, .footer-home-anchor:active .icon--lastfm, .footer-home-anchor:active .icon--rss, .footer-home-anchor:active .icon--twitter, .footer-home-anchor:active .icon--article, .footer-home-anchor:active .icon--feather, .footer-home-anchor:active .icon--heart, .footer-home-anchor:active .icon--link, .footer-home-anchor:active .icon--search, .footer-home-anchor:active .icon--tag {
     opacity: 1; }
 
 .footer-copyright-anchor,
@@ -1793,15 +1861,15 @@ footer {
 
 .nav-tertiary-list a {
   border-bottom-width: 0; }
-  .nav-tertiary-list a .icon {
+  .nav-tertiary-list a .icon, .nav-tertiary-list a .icon--codepen, .nav-tertiary-list a .icon--github, .nav-tertiary-list a .icon--lastfm, .nav-tertiary-list a .icon--rss, .nav-tertiary-list a .icon--twitter, .nav-tertiary-list a .icon--article, .nav-tertiary-list a .icon--feather, .nav-tertiary-list a .icon--heart, .nav-tertiary-list a .icon--link, .nav-tertiary-list a .icon--search, .nav-tertiary-list a .icon--tag {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     will-change: opacity, transform;
     opacity: 0.7;
     height: 40px; }
-    .nav-tertiary-list a .icon:hover, .nav-tertiary-list a .icon:focus, .nav-tertiary-list a .icon:active {
+    .nav-tertiary-list a .icon:hover, .nav-tertiary-list a .icon--codepen:hover, .nav-tertiary-list a .icon--github:hover, .nav-tertiary-list a .icon--lastfm:hover, .nav-tertiary-list a .icon--rss:hover, .nav-tertiary-list a .icon--twitter:hover, .nav-tertiary-list a .icon--article:hover, .nav-tertiary-list a .icon--feather:hover, .nav-tertiary-list a .icon--heart:hover, .nav-tertiary-list a .icon--link:hover, .nav-tertiary-list a .icon--search:hover, .nav-tertiary-list a .icon--tag:hover, .nav-tertiary-list a .icon:focus, .nav-tertiary-list a .icon--codepen:focus, .nav-tertiary-list a .icon--github:focus, .nav-tertiary-list a .icon--lastfm:focus, .nav-tertiary-list a .icon--rss:focus, .nav-tertiary-list a .icon--twitter:focus, .nav-tertiary-list a .icon--article:focus, .nav-tertiary-list a .icon--feather:focus, .nav-tertiary-list a .icon--heart:focus, .nav-tertiary-list a .icon--link:focus, .nav-tertiary-list a .icon--search:focus, .nav-tertiary-list a .icon--tag:focus, .nav-tertiary-list a .icon:active, .nav-tertiary-list a .icon--codepen:active, .nav-tertiary-list a .icon--github:active, .nav-tertiary-list a .icon--lastfm:active, .nav-tertiary-list a .icon--rss:active, .nav-tertiary-list a .icon--twitter:active, .nav-tertiary-list a .icon--article:active, .nav-tertiary-list a .icon--feather:active, .nav-tertiary-list a .icon--heart:active, .nav-tertiary-list a .icon--link:active, .nav-tertiary-list a .icon--search:active, .nav-tertiary-list a .icon--tag:active {
       opacity: 1; }
-    .nav-tertiary-list a .icon:active {
+    .nav-tertiary-list a .icon:active, .nav-tertiary-list a .icon--codepen:active, .nav-tertiary-list a .icon--github:active, .nav-tertiary-list a .icon--lastfm:active, .nav-tertiary-list a .icon--rss:active, .nav-tertiary-list a .icon--twitter:active, .nav-tertiary-list a .icon--article:active, .nav-tertiary-list a .icon--feather:active, .nav-tertiary-list a .icon--heart:active, .nav-tertiary-list a .icon--link:active, .nav-tertiary-list a .icon--search:active, .nav-tertiary-list a .icon--tag:active {
       -webkit-transform: translateY(0.125rem);
               transform: translateY(0.125rem); }
 
@@ -2003,13 +2071,36 @@ code[data-lang] {
     color: slateblue;
     color: rebeccapurple; }
 
-.icon {
+.icon, .icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
   display: block;
   overflow: hidden; }
-  button .icon, .button .icon,
-  .button--small .icon {
+  button .icon,
+  .button .icon,
+  .button--small .icon, button .icon--codepen,
+  .button .icon--codepen,
+  .button--small .icon--codepen, button .icon--github,
+  .button .icon--github,
+  .button--small .icon--github, button .icon--lastfm,
+  .button .icon--lastfm,
+  .button--small .icon--lastfm, button .icon--rss,
+  .button .icon--rss,
+  .button--small .icon--rss, button .icon--twitter,
+  .button .icon--twitter,
+  .button--small .icon--twitter, button .icon--article,
+  .button .icon--article,
+  .button--small .icon--article, button .icon--feather,
+  .button .icon--feather,
+  .button--small .icon--feather, button .icon--heart,
+  .button .icon--heart,
+  .button--small .icon--heart, button .icon--link,
+  .button .icon--link,
+  .button--small .icon--link, button .icon--search,
+  .button .icon--search,
+  .button--small .icon--search, button .icon--tag,
+  .button .icon--tag,
+  .button--small .icon--tag {
     fill: currentColor; }
-  .icons-list .icon {
+  .icons-list .icon, .icons-list .icon--codepen, .icons-list .icon--github, .icons-list .icon--lastfm, .icons-list .icon--rss, .icons-list .icon--twitter, .icons-list .icon--article, .icons-list .icon--feather, .icons-list .icon--heart, .icons-list .icon--link, .icons-list .icon--search, .icons-list .icon--tag {
     fill: #060606; }
 
 /**
@@ -2093,7 +2184,7 @@ code[data-lang] {
     border: 1px solid #4f4f4f;
     box-shadow: none; } }
 
-.page-style-guide .lede + h3, .page-style-guide .articles-list .lede + .date, .articles-list .page-style-guide .lede + .date {
+.page-style-guide .lede + h3, .page-style-guide .lede--featured + h3, .page-style-guide .articles-list .lede + .date, .articles-list .page-style-guide .lede + .date, .page-style-guide .articles-list .lede--featured + .date, .articles-list .page-style-guide .lede--featured + .date {
   margin-top: 0; }
 
 .color-block-list {
@@ -2146,7 +2237,8 @@ a span:not([class]):not([itemprop]) {
 p:empty {
   display: none !important; }
 
-.non-selectable, button, .button,
+.non-selectable, button,
+.button,
 .button--small, .logo {
   -webkit-user-select: none;
      -moz-user-select: none;

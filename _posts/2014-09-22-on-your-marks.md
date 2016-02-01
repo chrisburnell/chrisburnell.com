@@ -101,7 +101,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 
 {% highlight html %}
 <button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
+    <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 {% endhighlight %}
@@ -201,7 +201,7 @@ Here’s the entire snippet of code for my comments section:
 
 {% highlight html %}
 <button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
+    <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 {% endhighlight %}

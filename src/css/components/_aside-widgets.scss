@@ -8,6 +8,13 @@
     @extend .clear;
 }
 
+.widget--related-articles,
+.widget--featured-pens,
+.widget--shared-links,
+.widget--search {
+    @extend .widget;
+}
+
 .widget-featured-anchor {
     display: inline-block;
     float: right;

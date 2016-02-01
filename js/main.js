@@ -12,8 +12,9 @@
     /// Initialisation
     ////
 
-    var commentsSection = document.querySelector('#comments');
-    var commentsButton  = document.querySelector('#js-show-comments');
+    var commentsSection = document.querySelector('.js-comments');
+    var commentsButton  = document.querySelector('.js-show-comments');
+    // `#comment` will match both `#comment` and `#comments`
     var commentsHash    = ['#comment', '#disqus_thread'];
 
     ////
@@ -88,16 +89,16 @@
     ////
 
     var query, queryFormatted, jsonFeedUrl = '../search.json',
-        searchContainer       = document.querySelector('#search'),
-        searchForm            = document.querySelector('#search-form'),
-        searchInput           = document.querySelector('#search-input'),
-        searchSubmit          = document.querySelector('#search-submit'),
-        resultsMeta           = document.querySelector('#search-meta'),
-        resultsList           = document.querySelector('#search-results-list'),
-        resultTemplatePage    = document.querySelector('#search-template-page'),
-        resultTemplateArticle = document.querySelector('#search-template-article'),
-        resultTemplatePen     = document.querySelector('#search-template-pen'),
-        resultTemplateLink    = document.querySelector('#search-template-link'),
+        searchContainer       = document.querySelector('.js-search'),
+        searchForm            = document.querySelector('.js-search-form'),
+        searchInput           = document.querySelector('.js-search-input'),
+        searchSubmit          = document.querySelector('.js-search-submit'),
+        resultsMeta           = document.querySelector('.js-search-meta'),
+        resultsList           = document.querySelector('.js-search-results-list'),
+        resultTemplatePage    = document.querySelector('.js-search-template-page'),
+        resultTemplateArticle = document.querySelector('.js-search-template-article'),
+        resultTemplatePen     = document.querySelector('.js-search-template-pen'),
+        resultTemplateLink    = document.querySelector('.js-search-template-link'),
         allowEmpty            = false;
 
     // initiate search functionality

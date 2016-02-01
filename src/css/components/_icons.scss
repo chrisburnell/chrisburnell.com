@@ -7,15 +7,15 @@
 .icon {
     display: block;
     overflow: hidden;
+}
 
-    %button & {
-        fill: currentColor;
-    }
+%button [class*="icon"] {
+    fill: currentColor;
+}
 
-    // Used on the Style Guide page
-    .icons-list & {
-        fill: $color-black;
-    }
+// Used on the Style Guide page
+.icons-list [class*="icon"] {
+    fill: $color-black;
 }
 
 /**
@@ -27,6 +27,7 @@
     $ratio:      nth($color-brand, 4);
 
     .icon--#{$name} {
+        @extend .icon;
         width: ($ratio * $icon-size);
 
         @if $name == "rss" {

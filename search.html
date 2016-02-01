@@ -8,15 +8,15 @@ lede: Search articles, pens, and pages.
 ---
 
 
-<div class="search-main" id="search">
-    <form class="search-form" id="search-form" method="get" action="/search" role="search">
-        <label class="search-label  hidden" for="query">Search for pages, articles, and pens</label>
-        <input class="search-input" id="search-input" type="search" name="query" maxlength="30" placeholder="Search for pages, articles, and pens" disabled required>
-        <button class="button--small  search-submit" id="search-submit" type="submit" aria-label="Submit" disabled>Submit</button>
+<div class="search-main  js-search" id="search">
+    <form class="search-form  js-search-form" method="get" action="/search" role="search">
+        <label class="search-label  hidden  js-search-label" for="query">Search for pages, articles, and pens</label>
+        <input class="search-input  js-search-input" type="search" name="query" maxlength="30" placeholder="Search for pages, articles, and pens" disabled required>
+        <button class="button--small  search-submit  js-search-submit" type="submit" aria-label="Submit" disabled>Submit</button>
     </form>
     <noscript>Please enable JavaScript to search.</noscript>
 </div>
 
-<div class="search-results" id="search-results">
-    <ul class="small-articles-list" id="search-results-list" role="list"></ul>
+<div class="search-results  js-search-results">
+    <ul class="small-articles-list  js-search-results-list" role="list"></ul>
 </div>
