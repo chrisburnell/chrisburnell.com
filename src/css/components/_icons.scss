@@ -4,7 +4,7 @@
 ////
 
 
-.icon {
+%icon {
     display: block;
     overflow: hidden;
 }
@@ -27,7 +27,7 @@
     $ratio:      nth($color-brand, 4);
 
     .icon--#{$name} {
-        @extend .icon;
+        @extend %icon;
         width: ($ratio * $icon-size);
 
         @if $name == "rss" {

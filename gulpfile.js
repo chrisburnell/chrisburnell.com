@@ -5,18 +5,21 @@
 
 // Define gulp objects
 var gulp         = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
+    gutil        = require('gulp-util'),
     concat       = require('gulp-concat'),
-    csslint      = require('gulp-csslint'),
     cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
+    postcss      = require('gulp-postcss'),
     rename       = require('gulp-rename'),
     sass         = require('gulp-sass'),
     uglify       = require('gulp-uglify'),
     watch        = require('gulp-watch');
 
 // Define external objects
-var sassdoc = require('sassdoc');
+var autoprefixer = require('autoprefixer'),
+    reporter     = require('postcss-reporter'),
+    sassdoc      = require('sassdoc'),
+    stylelint    = require('stylelint');
 
 // Define paths
 var paths = {
@@ -35,6 +38,23 @@ var paths = {
 
 // -----------------------------------------------------------------------------
 
+// Lint SCSS
+gulp.task('css-lint', function() {
+    return gulp.src([paths.src.css + '*.scss'])
+        .pipe(plumber())
+        .pipe(postcss([
+            stylelint({
+                'rules': {
+                    'selector-no-id': 2,
+                    'string-quotes': [2, 'double']
+                }
+            }),
+            reporter({
+                clearMessages: true
+            })
+        ]));
+});
+
 // Compile main SCSS file
 gulp.task('css-main', function() {
     return gulp.src([paths.src.css + '*.scss'])
@@ -43,28 +63,11 @@ gulp.task('css-main', function() {
             errLogToConsole: true,
             style: 'expanded'
         }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', '> 1%']
-        }))
-        .pipe(csslint({
-            'box-model': false,
-            'box-sizing': false,
-            'compatible-vendor-prefixes': false,
-            'display-property-grouping': false,
-            'fallback-colors': false,
-            'floats': false,
-            'font-sizes': false,
-            'gradients': false,
-            'important': false,
-            'known-properties': false,
-            'outline-none': false,
-            'qualified-headings': false,
-            'regex-selectors': false,
-            'unique-headings': false,
-            'universal-selector': false,
-            'unqualified-attributes': false
-        }))
-        .pipe(csslint.reporter())
+        .pipe(postcss([
+            autoprefixer({
+                browsers: ['last 2 versions', '> 1%']
+            })
+        ]))
         .pipe(gulp.dest(paths.dist.css))
         .pipe(rename({
             suffix: '.min'
@@ -78,8 +81,8 @@ gulp.task('css-critical', function() {
     return gulp.src([paths.dist.css + 'critical.min.css'])
         .pipe(plumber())
         .pipe(rename({
-            basename: "critical-css",
-            extname: ".html"
+            basename: 'critical-css',
+            extname: '.html'
         }))
         .pipe(gulp.dest(paths.includes + 'generated/'));
 });
@@ -119,8 +122,8 @@ gulp.task('js-loadcss', function() {
             mangle: false
         }))
         .pipe(rename({
-            basename: "loadcss",
-            extname: ".html"
+            basename: 'loadcss',
+            extname: '.html'
         }))
         .pipe(gulp.dest(paths.includes + 'generated/'));
 });
@@ -146,8 +149,8 @@ gulp.task('js-typekit', function() {
             mangle: false
         }))
         .pipe(rename({
-            basename: "typekit",
-            extname: ".html"
+            basename: 'typekit',
+            extname: '.html'
         }))
         .pipe(gulp.dest(paths.includes + 'generated/'));
 });
@@ -162,6 +165,7 @@ gulp.task('default', function() {
 
 // CSS task
 gulp.task('css', function() {
+    //gulp.start('css-lint');
     gulp.start('css-main');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');

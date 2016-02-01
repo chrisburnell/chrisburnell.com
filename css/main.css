@@ -964,29 +964,7 @@ button,
     font-family: Monaco, Consolas, Courier, monospace; }
   button .icon,
   .button .icon,
-  .button--small .icon, button .icon--codepen,
-  .button .icon--codepen,
-  .button--small .icon--codepen, button .icon--github,
-  .button .icon--github,
-  .button--small .icon--github, button .icon--lastfm,
-  .button .icon--lastfm,
-  .button--small .icon--lastfm, button .icon--rss,
-  .button .icon--rss,
-  .button--small .icon--rss, button .icon--twitter,
-  .button .icon--twitter,
-  .button--small .icon--twitter, button .icon--article,
-  .button .icon--article,
-  .button--small .icon--article, button .icon--feather,
-  .button .icon--feather,
-  .button--small .icon--feather, button .icon--heart,
-  .button .icon--heart,
-  .button--small .icon--heart, button .icon--link,
-  .button .icon--link,
-  .button--small .icon--link, button .icon--search,
-  .button .icon--search,
-  .button--small .icon--search, button .icon--tag,
-  .button .icon--tag,
-  .button--small .icon--tag {
+  .button--small .icon {
     width: .8em;
     height: .8em;
     display: inline-block;
@@ -1815,7 +1793,7 @@ footer {
   .footer-home-anchor:active {
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem); }
-  .footer-home-anchor .icon, .footer-home-anchor .icon--codepen, .footer-home-anchor .icon--github, .footer-home-anchor .icon--lastfm, .footer-home-anchor .icon--rss, .footer-home-anchor .icon--twitter, .footer-home-anchor .icon--article, .footer-home-anchor .icon--feather, .footer-home-anchor .icon--heart, .footer-home-anchor .icon--link, .footer-home-anchor .icon--search, .footer-home-anchor .icon--tag {
+  .footer-home-anchor .icon {
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
@@ -1824,7 +1802,7 @@ footer {
     height: 100%;
     display: block;
     fill: #5f8aa6; }
-  .footer-home-anchor:hover .icon, .footer-home-anchor:hover .icon--codepen, .footer-home-anchor:hover .icon--github, .footer-home-anchor:hover .icon--lastfm, .footer-home-anchor:hover .icon--rss, .footer-home-anchor:hover .icon--twitter, .footer-home-anchor:hover .icon--article, .footer-home-anchor:hover .icon--feather, .footer-home-anchor:hover .icon--heart, .footer-home-anchor:hover .icon--link, .footer-home-anchor:hover .icon--search, .footer-home-anchor:hover .icon--tag, .footer-home-anchor:focus .icon, .footer-home-anchor:focus .icon--codepen, .footer-home-anchor:focus .icon--github, .footer-home-anchor:focus .icon--lastfm, .footer-home-anchor:focus .icon--rss, .footer-home-anchor:focus .icon--twitter, .footer-home-anchor:focus .icon--article, .footer-home-anchor:focus .icon--feather, .footer-home-anchor:focus .icon--heart, .footer-home-anchor:focus .icon--link, .footer-home-anchor:focus .icon--search, .footer-home-anchor:focus .icon--tag, .footer-home-anchor:active .icon, .footer-home-anchor:active .icon--codepen, .footer-home-anchor:active .icon--github, .footer-home-anchor:active .icon--lastfm, .footer-home-anchor:active .icon--rss, .footer-home-anchor:active .icon--twitter, .footer-home-anchor:active .icon--article, .footer-home-anchor:active .icon--feather, .footer-home-anchor:active .icon--heart, .footer-home-anchor:active .icon--link, .footer-home-anchor:active .icon--search, .footer-home-anchor:active .icon--tag {
+  .footer-home-anchor:hover .icon, .footer-home-anchor:focus .icon, .footer-home-anchor:active .icon {
     opacity: 1; }
 
 .footer-copyright-anchor,
@@ -1861,15 +1839,15 @@ footer {
 
 .nav-tertiary-list a {
   border-bottom-width: 0; }
-  .nav-tertiary-list a .icon, .nav-tertiary-list a .icon--codepen, .nav-tertiary-list a .icon--github, .nav-tertiary-list a .icon--lastfm, .nav-tertiary-list a .icon--rss, .nav-tertiary-list a .icon--twitter, .nav-tertiary-list a .icon--article, .nav-tertiary-list a .icon--feather, .nav-tertiary-list a .icon--heart, .nav-tertiary-list a .icon--link, .nav-tertiary-list a .icon--search, .nav-tertiary-list a .icon--tag {
+  .nav-tertiary-list a [class*="icon"] {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     will-change: opacity, transform;
     opacity: 0.7;
     height: 40px; }
-    .nav-tertiary-list a .icon:hover, .nav-tertiary-list a .icon--codepen:hover, .nav-tertiary-list a .icon--github:hover, .nav-tertiary-list a .icon--lastfm:hover, .nav-tertiary-list a .icon--rss:hover, .nav-tertiary-list a .icon--twitter:hover, .nav-tertiary-list a .icon--article:hover, .nav-tertiary-list a .icon--feather:hover, .nav-tertiary-list a .icon--heart:hover, .nav-tertiary-list a .icon--link:hover, .nav-tertiary-list a .icon--search:hover, .nav-tertiary-list a .icon--tag:hover, .nav-tertiary-list a .icon:focus, .nav-tertiary-list a .icon--codepen:focus, .nav-tertiary-list a .icon--github:focus, .nav-tertiary-list a .icon--lastfm:focus, .nav-tertiary-list a .icon--rss:focus, .nav-tertiary-list a .icon--twitter:focus, .nav-tertiary-list a .icon--article:focus, .nav-tertiary-list a .icon--feather:focus, .nav-tertiary-list a .icon--heart:focus, .nav-tertiary-list a .icon--link:focus, .nav-tertiary-list a .icon--search:focus, .nav-tertiary-list a .icon--tag:focus, .nav-tertiary-list a .icon:active, .nav-tertiary-list a .icon--codepen:active, .nav-tertiary-list a .icon--github:active, .nav-tertiary-list a .icon--lastfm:active, .nav-tertiary-list a .icon--rss:active, .nav-tertiary-list a .icon--twitter:active, .nav-tertiary-list a .icon--article:active, .nav-tertiary-list a .icon--feather:active, .nav-tertiary-list a .icon--heart:active, .nav-tertiary-list a .icon--link:active, .nav-tertiary-list a .icon--search:active, .nav-tertiary-list a .icon--tag:active {
+    .nav-tertiary-list a [class*="icon"]:hover, .nav-tertiary-list a [class*="icon"]:focus, .nav-tertiary-list a [class*="icon"]:active {
       opacity: 1; }
-    .nav-tertiary-list a .icon:active, .nav-tertiary-list a .icon--codepen:active, .nav-tertiary-list a .icon--github:active, .nav-tertiary-list a .icon--lastfm:active, .nav-tertiary-list a .icon--rss:active, .nav-tertiary-list a .icon--twitter:active, .nav-tertiary-list a .icon--article:active, .nav-tertiary-list a .icon--feather:active, .nav-tertiary-list a .icon--heart:active, .nav-tertiary-list a .icon--link:active, .nav-tertiary-list a .icon--search:active, .nav-tertiary-list a .icon--tag:active {
+    .nav-tertiary-list a [class*="icon"]:active {
       -webkit-transform: translateY(0.125rem);
               transform: translateY(0.125rem); }
 
@@ -2071,37 +2049,17 @@ code[data-lang] {
     color: slateblue;
     color: rebeccapurple; }
 
-.icon, .icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
+.icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
   display: block;
   overflow: hidden; }
-  button .icon,
-  .button .icon,
-  .button--small .icon, button .icon--codepen,
-  .button .icon--codepen,
-  .button--small .icon--codepen, button .icon--github,
-  .button .icon--github,
-  .button--small .icon--github, button .icon--lastfm,
-  .button .icon--lastfm,
-  .button--small .icon--lastfm, button .icon--rss,
-  .button .icon--rss,
-  .button--small .icon--rss, button .icon--twitter,
-  .button .icon--twitter,
-  .button--small .icon--twitter, button .icon--article,
-  .button .icon--article,
-  .button--small .icon--article, button .icon--feather,
-  .button .icon--feather,
-  .button--small .icon--feather, button .icon--heart,
-  .button .icon--heart,
-  .button--small .icon--heart, button .icon--link,
-  .button .icon--link,
-  .button--small .icon--link, button .icon--search,
-  .button .icon--search,
-  .button--small .icon--search, button .icon--tag,
-  .button .icon--tag,
-  .button--small .icon--tag {
-    fill: currentColor; }
-  .icons-list .icon, .icons-list .icon--codepen, .icons-list .icon--github, .icons-list .icon--lastfm, .icons-list .icon--rss, .icons-list .icon--twitter, .icons-list .icon--article, .icons-list .icon--feather, .icons-list .icon--heart, .icons-list .icon--link, .icons-list .icon--search, .icons-list .icon--tag {
-    fill: #060606; }
+
+button [class*="icon"],
+.button [class*="icon"],
+.button--small [class*="icon"] {
+  fill: currentColor; }
+
+.icons-list [class*="icon"] {
+  fill: #060606; }
 
 /**
  * Brand Icon Widths and Colors

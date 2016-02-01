@@ -1291,11 +1291,12 @@ aside figcaption {
   .author-biography {
     margin-bottom: 1.25rem; } }
 
-.icon, .icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
+.icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
   display: block;
   overflow: hidden; }
-  .icons-list .icon, .icons-list .icon--codepen, .icons-list .icon--github, .icons-list .icon--lastfm, .icons-list .icon--rss, .icons-list .icon--twitter, .icons-list .icon--article, .icons-list .icon--feather, .icons-list .icon--heart, .icons-list .icon--link, .icons-list .icon--search, .icons-list .icon--tag {
-    fill: #060606; }
+
+.icons-list [class*="icon"] {
+  fill: #060606; }
 
 /**
  * Brand Icon Widths and Colors
