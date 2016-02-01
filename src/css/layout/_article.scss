@@ -10,11 +10,11 @@
  * `article` or `.articles-list`.
  */
 article {
-    padding-top: $spacing-large;
+    padding-top: $measure-large;
     border-top: $border-default solid $color-brand;
 
     @include media(">medium") {
-        padding-left: ($aside-width + $spacing-large);
+        padding-left: ($aside-width + $measure-large);
     }
 
     @include media("<=medium") {

@@ -17,7 +17,7 @@
 
     @include media("<=medium") {
         display: block;
-        margin-top: $spacing-medium;
+        margin-top: $measure-medium;
     }
 
     &:after {
@@ -32,7 +32,7 @@
 
     // apply margin only if comments are shown
     iframe {
-        margin-top: $spacing-large;
+        margin-top: $measure-large;
     }
 
     // override default `.button`

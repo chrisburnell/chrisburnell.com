@@ -13,7 +13,7 @@ aside {
     @include media(">medium") {
         width: $aside-width;
         float: left;
-        margin-left: -($aside-width + $spacing-large);
+        margin-left: -($aside-width + $measure-large);
     }
 
     @include media("<=medium") {
@@ -22,8 +22,8 @@ aside {
         &:not(.author) {
             @extend .rounded;
             background: $color-black--5-percent;
-            padding: $spacing-small;
-            margin-bottom: $spacing-medium;
+            padding: $measure-small;
+            margin-bottom: $measure-medium;
 
             &:last-child {
                 margin-bottom: 0;
@@ -32,7 +32,7 @@ aside {
     }
 
     %gamma + & {
-        margin-top: $spacing-large;
+        margin-top: $measure-large;
     }
 
     p,

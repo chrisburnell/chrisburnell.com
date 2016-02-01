@@ -44,14 +44,14 @@ var {
 pre {
     // override `normalize.css`
     margin-top: 0;
-    margin-bottom: $spacing-medium;
+    margin-bottom: $measure-medium;
 
     &:not(.codepen) {
         @extend .rounded;
         background-color: $color-black--5-percent;
-        padding: $spacing-medium $spacing-medium 1rem;
-        margin-top:    $spacing-large;
-        margin-bottom: $spacing-large;
+        padding: $measure-medium $measure-medium 1rem;
+        margin-top:    $measure-large;
+        margin-bottom: $measure-large;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;

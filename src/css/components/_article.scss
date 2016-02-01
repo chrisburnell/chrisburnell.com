@@ -7,7 +7,7 @@
 .title,
 .tagline {
     width: 100%;
-    margin-bottom: $spacing-large;
+    margin-bottom: $measure-large;
 
     @include media("<=medium") {
         text-align: left;
@@ -17,7 +17,7 @@
 .banner {
     @extend .rounded;
     width: $article-width;
-    margin-bottom: $spacing-large;
+    margin-bottom: $measure-large;
 
     @include media("<=small") {
         width: $wrapper-width-small;
@@ -25,7 +25,7 @@
 }
 
 .lede {
-    margin-bottom: $spacing-large;
+    margin-bottom: $measure-large;
     font-size: $font-size-large;
     line-height: 1.5;
 
@@ -45,7 +45,7 @@
 }
 
 .terminology {
-    padding-bottom: $spacing-large;
+    padding-bottom: $measure-large;
     border-bottom: $border-thin solid $color-black--10-percent;
 }
 
@@ -53,7 +53,7 @@
     @extend .rounded;
     background-color: $color-brand--10-percent;
     padding: 1rem;
-    margin: 0 $spacing-large $spacing-large;
+    margin: 0 $measure-large $measure-large;
     font-style: italic;
     line-height: 1.5;
 }

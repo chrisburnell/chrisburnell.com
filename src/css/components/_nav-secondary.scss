@@ -26,8 +26,8 @@
         display: inline-block;
 
         @include media(">small") {
-            margin-left:  $spacing-small;
-            margin-right: $spacing-small;
+            margin-left:  $measure-small;
+            margin-right: $measure-small;
         }
 
         @include media("<=small") {
@@ -35,16 +35,16 @@
             margin-right: auto;
 
             & + %button {
-                margin-top: $spacing-small;
+                margin-top: $measure-small;
             }
         }
     }
 }
 
 .nav-secondary {
-    margin-top: $spacing-large;
+    margin-top: $measure-large;
     border-top: $border-thin solid $color-black--10-percent;
-    padding-top: ($spacing-large - .182rem);
+    padding-top: ($measure-large - .182rem);
 
     .page-home & {
         margin-top: 0;
@@ -53,18 +53,18 @@
 
     .page-about & {
         border-top: 0;
-        padding: 0 0 $spacing-medium;
+        padding: 0 0 $measure-medium;
     }
 
     %content-elements + & {
-        margin-top: $spacing-medium;
+        margin-top: $measure-medium;
     }
 }
 
 .buttons-list {
-    margin: 0 0 $spacing-medium;
+    margin: 0 0 $measure-medium;
 
     .lede + & {
-        margin-bottom: $spacing-large;
+        margin-bottom: $measure-large;
     }
 }

@@ -5,7 +5,7 @@
 
 
 .articles-list {
-    margin-bottom: $spacing-large;
+    margin-bottom: $measure-large;
 
     .page-home & {
         margin-bottom: 0;
@@ -38,16 +38,16 @@
     }
 
     .title {
-        margin-bottom: $spacing-small;
+        margin-bottom: $measure-small;
     }
 
     .lede {
-        margin-bottom: $spacing-medium;
+        margin-bottom: $measure-medium;
     }
 
     .date {
         @extend %gamma;
-        margin-bottom: $spacing-small;
+        margin-bottom: $measure-small;
 
         @include media("<=medium") {
             text-align: left;
@@ -63,8 +63,8 @@
     %button,
     .comments-anchor {
         @include media("<=medium") {
-            margin-left:  $spacing-small;
-            margin-right: $spacing-small;
+            margin-left:  $measure-small;
+            margin-right: $measure-small;
         }
     }
 

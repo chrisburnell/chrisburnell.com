@@ -5,8 +5,8 @@
 
 
 .nav-primary {
-    padding-top: $spacing-medium;
-    padding-bottom: $spacing-medium;
+    padding-top: $measure-medium;
+    padding-bottom: $measure-medium;
     white-space: nowrap;
 
     @include media(">small") {
@@ -15,7 +15,7 @@
 
     @include media("<=small") {
         width: 100%;
-        padding-top: $spacing-small;
+        padding-top: $measure-small;
     }
 }
 

@@ -15,20 +15,20 @@
         display: flex;
         flex-direction: column;
         order: 999;
-        margin-top: $spacing-large;
+        margin-top: $measure-large;
     }
 }
     .author-information {
-        margin-bottom: $spacing-medium;
+        margin-bottom: $measure-medium;
         font-family: $font-family-default;
         font-size: $font-size-small;
         font-style: italic;
         line-height: 1.429;
 
         @include media("<=medium") {
-            padding-top: $spacing-large;
+            padding-top: $measure-large;
             border-top: $border-thin solid $color-black--10-percent;
-            margin-bottom: $spacing-small;
+            margin-bottom: $measure-small;
         }
 
         a,
@@ -66,8 +66,8 @@
         height: 6.25rem;
         display: inline-block;
         float: left;
-        margin-right:  $spacing-small;
-        margin-bottom: $spacing-small;
+        margin-right:  $measure-small;
+        margin-bottom: $measure-small;
 
         img {
             @extend .rounded;
@@ -101,6 +101,6 @@
 
     .author-biography {
         @include media(">medium") {
-            margin-bottom: $spacing-medium;
+            margin-bottom: $measure-medium;
         }
     }

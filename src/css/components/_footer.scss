@@ -40,7 +40,7 @@ footer {
     @include will-change(transform);
     width: 50px;
     height: 50px;
-    margin-right: $spacing-small;
+    margin-right: $measure-small;
     border-bottom-width: 0;
     vertical-align: middle;
     text-indent: 100%;
@@ -70,8 +70,8 @@ footer {
 
 .footer-copyright-anchor,
 .footer-style-guide-anchor {
-    margin-left:  $spacing-small;
-    margin-right: $spacing-small;
+    margin-left:  $measure-small;
+    margin-right: $measure-small;
 
     &:link,
     &:visited {

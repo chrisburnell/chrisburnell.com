@@ -12,7 +12,7 @@
     }
 
     @include media("<=medium") {
-        margin-top: $spacing-medium;
+        margin-top: $measure-medium;
     }
 }
 

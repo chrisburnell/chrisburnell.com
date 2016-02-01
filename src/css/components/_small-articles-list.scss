@@ -9,12 +9,12 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: $spacing-large;
+    margin-bottom: $measure-large;
     font-family: $font-family-beta;
     line-height: $line-height-small;
 
     aside & {
-        margin: 0 ($spacing-small * -1);
+        margin: 0 ($measure-small * -1);
     }
 
     .page-home & {
@@ -27,7 +27,7 @@
         // Push all list items down (after the first two, in the
         // two-column format)
         &:nth-child(n+3) {
-            margin-top: $spacing-medium;
+            margin-top: $measure-medium;
         }
 
         @include media(">small") {
@@ -47,7 +47,7 @@
             // Push all list items down (after the first one, in the default
             // one-column format)
             & + li {
-                margin-top: $spacing-medium;
+                margin-top: $measure-medium;
             }
 
             &:nth-child(2n+1) a {
@@ -61,7 +61,7 @@
             // Push all list items down (after the first one, in the <aside>
             // one-column format)
             & + li {
-                margin-top: $spacing-small;
+                margin-top: $measure-small;
             }
 
 
@@ -80,7 +80,7 @@
     a {
         @extend .rounded;
         display: block;
-        padding: $spacing-medium;
+        padding: $measure-medium;
         border-bottom-width: 0;
         overflow: hidden;
 
@@ -95,7 +95,7 @@
         }
 
         aside & {
-            padding: $spacing-small;
+            padding: $measure-small;
         }
     }
 
@@ -126,7 +126,7 @@
 
     .lede {
         color: $color-text;
-        margin-top: $spacing-small;
+        margin-top: $measure-small;
         margin-bottom: 0;
         font-size: $font-size-small;
     }
@@ -134,7 +134,7 @@
     .date {
         color: $color-text-alt;
         display: block;
-        margin-top: $spacing-small;
+        margin-top: $measure-small;
         font-size: $font-size-smaller;
         font-weight: $font-weight-bold;
 
@@ -158,7 +158,7 @@
         display: block;
         position: absolute;
         top: 50%;
-        right: $spacing-small;
+        right: $measure-small;
         transform: translateY(-50%);
         z-index: z-index(below);
         stroke: $color-text;

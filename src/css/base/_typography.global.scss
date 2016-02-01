@@ -82,11 +82,11 @@ h2 {
 }
 h3 {
     @extend %gamma;
-    margin-top: $spacing-large;
+    margin-top: $measure-large;
     border-bottom: $border-thin solid $color-text-light;
 
     &:not(:last-child) {
-        margin-bottom: $spacing-medium;
+        margin-bottom: $measure-medium;
     }
 
     // Show an indicator when using an Anchor to jump to an `h3` with an `id`
@@ -111,7 +111,7 @@ h3 {
         width: auto;
         max-width: 100%;
         display: inline-block;
-        padding-right: $spacing-large;
+        padding-right: $measure-large;
     }
 
     // Collapse margin-top when following a Featured Lede
@@ -135,11 +135,11 @@ h3 {
 }
 h4 {
     @extend %delta;
-    margin-bottom: $spacing-small;
+    margin-bottom: $measure-small;
 }
 
 p {
-    margin: 0 0 $spacing-medium;
+    margin: 0 0 $measure-medium;
 
     &:last-child {
         margin-bottom: 0;
@@ -162,14 +162,14 @@ ul {
 ol:not([class]),
 ul:not([class]),
 .default-list {
-    margin-bottom: $spacing-medium;
+    margin-bottom: $measure-medium;
 
     li {
-        padding-left: $spacing-large;
+        padding-left: $measure-large;
         position: relative;
 
         &:not(:last-child) {
-            margin-bottom: $spacing-small;
+            margin-bottom: $measure-small;
         }
 
         &:before {
@@ -181,7 +181,7 @@ ul:not([class]),
 
     // List nested in a list
     & & {
-        margin-top: $spacing-medium;
+        margin-top: $measure-medium;
     }
 }
 ol:not([class]),
@@ -210,14 +210,14 @@ dl {
     overflow: hidden;
 
     &:not(:last-child) {
-        margin-bottom: $spacing-large;
+        margin-bottom: $measure-large;
     }
 
     dt {
         width: auto;
         min-width: 10rem;
         clear: left;
-        padding-right: $spacing-medium;
+        padding-right: $measure-medium;
         font-family: $font-family-beta;
         font-weight: $font-weight-bold;
 
@@ -234,13 +234,13 @@ dl {
         vertical-align: top;
 
         &:not(:last-child) {
-            padding-bottom: $spacing-medium;
+            padding-bottom: $measure-medium;
         }
 
         @include media("<=small") {
             width: auto;
             display: block;
-            margin-left: $spacing-medium;
+            margin-left: $measure-medium;
         }
     }
 }
@@ -253,7 +253,7 @@ a img {
 }
 
 figure {
-    margin: 0 0 $spacing-medium;
+    margin: 0 0 $measure-medium;
 
     // Center `figure`s not used for code blocks
     &:not(.highlight) {
@@ -277,12 +277,12 @@ blockquote {
     @extend .rounded;
     @include quotes;
     background-color: $color-brand--10-percent;
-    padding: $spacing-medium;
-    margin: 0 $spacing-large $spacing-medium;
+    padding: $measure-medium;
+    margin: 0 $measure-large $measure-medium;
 
     @include media("<=small") {
-        margin-left:  $spacing-medium;
-        margin-right: $spacing-medium;
+        margin-left:  $measure-medium;
+        margin-right: $measure-medium;
     }
 
     p {
@@ -299,8 +299,8 @@ blockquote {
 
     cite {
         display: block;
-        margin-left: $spacing-large;
-        margin-top: $spacing-medium;
+        margin-left: $measure-large;
+        margin-top: $measure-medium;
 
         &:before {
             // HYPHEN, NO-BREAK SPACE
@@ -309,7 +309,7 @@ blockquote {
     }
 }
 /*blockquote*/.twitter-tweet {
-    margin: 0 auto $spacing-medium !important;
+    margin: 0 auto $measure-medium !important;
 }
 
 q {
@@ -343,11 +343,11 @@ hr {
     height: .125rem;
     display: block;
     border: 0;
-    margin: $spacing-large 0;
+    margin: $measure-large 0;
 
     %content-elements + & {
         @include media("<=medium") {
-            margin-top: $spacing-medium;
+            margin-top: $measure-medium;
         }
     }
 }
@@ -362,7 +362,7 @@ video {
     overflow-x: hidden;
 }
 iframe {
-    margin-bottom: $spacing-medium;
+    margin-bottom: $measure-medium;
 }
 
 /**
