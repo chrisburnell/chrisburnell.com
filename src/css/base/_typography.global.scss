@@ -5,11 +5,15 @@
 
 
 html {
-    background-color: $color-white;
-    color: $color-text;
+    background-color: $color-text;
     font: $font-weight-default $font-style-default #{$font-size-default}/#{$line-height-default} $font-family-default;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: $color-white;
+    color: $color-text;
 }
 
 // Content Elements
