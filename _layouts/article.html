@@ -38,15 +38,15 @@
 
         <nav class="nav-secondary" role="navigation">
             {% if page.comments == true %}
-                <button class="button--show-comments" id="js-show-comments" role="button" disabled>
+                <button class="button--show-comments" id="js-show-comments" role="button" type="button" disabled>
                     <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
                     <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
                 </button>
             {% elsif page.comments == 'codepen' and page.codepen_slug %}
-                <a class="button" href="{{ site.url_codepen }}/details/{{ page.codepen_slug }}/#leave-comment">
+                <a class="button" href="{{ site.url_codepen }}/{{ site.codepen_page }}/{{ page.codepen_slug }}/#leave-comment">
                     <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
                     CodePen Comments
-                </button>
+                </a>
             {% endif %}
             {% if page.categories contains 'article' %}
                 <a rel="me author" class="button" href="/articles">

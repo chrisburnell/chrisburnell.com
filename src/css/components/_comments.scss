@@ -4,12 +4,13 @@
 ////
 
 
+// Appears only in `.articles-list`
 .comments-anchor {
     display: inline-block;
     margin-top: 1.625em;
     font-family: $font-family-beta;
     font-weight: $font-weight-bold;
-    line-height: 1;
+    line-height: 2;
 
     @include media(">medium") {
         float: right;

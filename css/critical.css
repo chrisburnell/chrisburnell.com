@@ -996,8 +996,6 @@ aside figcaption {
     transition: all 1s;
     will-change: transform;
     display: block;
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
     fill: #5f8aa6; }
     @media (min-width: 769px) {
       .logo svg {
@@ -1009,8 +1007,8 @@ aside figcaption {
       .logo svg {
         width: 7rem;
         height: 7rem;
-        -webkit-transform: translateX(1rem) translateY(-1.5rem) translateZ(0);
-                transform: translateX(1rem) translateY(-1.5rem) translateZ(0); } }
+        -webkit-transform: translateX(0) translateY(-1.5rem) translateZ(0);
+                transform: translateX(0) translateY(-1.5rem) translateZ(0); } }
   @media (min-width: 769px) {
     .logo:hover svg,
     .logo:focus svg {
@@ -1204,11 +1202,6 @@ aside figcaption {
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
-  .articles-list .comments-anchor {
-    line-height: 2; }
-    @media (max-width: 768px) {
-      .articles-list .comments-anchor {
-        display: inline-block; } }
 
 /**
  * The `.author` aside is always pushed underneath the content below the medium
@@ -1263,7 +1256,6 @@ aside figcaption {
   background-size: 100%;
   width: 6.25rem;
   height: 6.25rem;
-  display: inline-block;
   float: left;
   margin-right: 0.625rem;
   margin-bottom: 0.625rem; }
@@ -1317,8 +1309,9 @@ aside figcaption {
   fill: #e31b23; }
 
 .icon--rss {
-  width: 31px;
-  fill: #ff9770 !important; }
+  width: 31px; }
+  .icon--rss {
+    fill: #ff9770; }
 
 .icon--twitter {
   width: 37px;

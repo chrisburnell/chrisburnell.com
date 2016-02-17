@@ -67,12 +67,4 @@
             margin-right: $measure-small;
         }
     }
-
-    .comments-anchor {
-        line-height: 2;
-
-        @include media("<=medium") {
-            display: inline-block;
-        }
-    }
 }

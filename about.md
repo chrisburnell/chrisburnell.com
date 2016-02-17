@@ -82,7 +82,7 @@ There are a number of RSS Feeds you can subscribe to:
         Subscribe to Pens
     </a>
     <a rel="me author" class="button" href="/feed-links.xml">
-        <svg class="icon--rss"><use xlink:href="#svg--link" /></svg>
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to Links
     </a>
     <a rel="me author" class="button" href="/feed.xml">

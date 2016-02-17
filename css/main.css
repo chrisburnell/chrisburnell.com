@@ -1158,8 +1158,6 @@ footer {
     transition: all 1s;
     will-change: transform;
     display: block;
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
     fill: #5f8aa6; }
     @media (min-width: 769px) {
       .logo svg {
@@ -1171,8 +1169,8 @@ footer {
       .logo svg {
         width: 7rem;
         height: 7rem;
-        -webkit-transform: translateX(1rem) translateY(-1.5rem) translateZ(0);
-                transform: translateX(1rem) translateY(-1.5rem) translateZ(0); } }
+        -webkit-transform: translateX(0) translateY(-1.5rem) translateZ(0);
+                transform: translateX(0) translateY(-1.5rem) translateZ(0); } }
   @media (min-width: 769px) {
     .logo:hover svg,
     .logo:focus svg {
@@ -1368,11 +1366,6 @@ footer {
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
-  .articles-list .comments-anchor {
-    line-height: 2; }
-    @media (max-width: 768px) {
-      .articles-list .comments-anchor {
-        display: inline-block; } }
 
 .small-articles-list {
   display: -webkit-box;
@@ -1715,7 +1708,6 @@ footer {
   background-size: 100%;
   width: 6.25rem;
   height: 6.25rem;
-  display: inline-block;
   float: left;
   margin-right: 0.625rem;
   margin-bottom: 0.625rem; }
@@ -1747,7 +1739,6 @@ footer {
     margin-bottom: 1.25rem; } }
 
 .widget-featured-anchor {
-  display: inline-block;
   float: right;
   margin-top: 1.25rem;
   font-weight: 600; }
@@ -1859,7 +1850,7 @@ footer {
   margin-top: 1.625em;
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
-  line-height: 1; }
+  line-height: 2; }
   @media (min-width: 769px) {
     .comments-anchor {
       float: right; } }
@@ -2080,8 +2071,11 @@ button [class*="icon"],
   fill: #e31b23; }
 
 .icon--rss {
-  width: 31px;
-  fill: #ff9770 !important; }
+  width: 31px; }
+  .icon--rss, button .icon--rss,
+  .button .icon--rss,
+  .button--small .icon--rss {
+    fill: #ff9770; }
 
 .icon--twitter {
   width: 37px;

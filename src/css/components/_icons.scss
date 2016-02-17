@@ -32,7 +32,10 @@
 
         @if $name == "rss" {
             // the RSS icon should remain orange when nested in a button
-            fill: $icon-color !important;
+            &,
+            %button & {
+                fill: $icon-color;
+            }
         } @else {
             fill: $icon-color;
         }

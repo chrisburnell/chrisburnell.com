@@ -32,7 +32,6 @@
         @include transition(all 1s);
         @include will-change(transform);
         display: block;
-        transform: translateZ(0);
         fill: $color-brand;
 
         @include media(">medium") {
@@ -44,7 +43,7 @@
         @include media("<=medium") {
             width:  7rem;
             height: 7rem;
-            transform: translateX(1rem) translateY(-1.5rem) translateZ(0);
+            transform: translateX(0) translateY(-1.5rem) translateZ(0);
         }
     }
     &:hover svg,
