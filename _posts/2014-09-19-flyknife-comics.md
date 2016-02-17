@@ -23,7 +23,6 @@ shorturl: 6aorh
 </div>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 @import url(http://fonts.googleapis.com/css?family=Yellowtail);
@@ -103,4 +102,3 @@ h1 {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

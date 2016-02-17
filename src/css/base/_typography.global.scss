@@ -5,24 +5,21 @@
 
 
 html {
-    background-color: $color-text;
+    background-color: $color-white;
+    color: $color-text;
     font: $font-weight-default $font-style-default #{$font-size-default}/#{$line-height-default} $font-family-default;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
 }
 
-body {
-    background-color: $color-white;
-    color: $color-text;
-}
-
 // Content Elements
-p,
+blockquote,
+figure:not([class]),
+dl,
 ol,
 ul,
-dl,
-figure,
-blockquote {
+table,
+p {
     @extend %content-elements;
 }
 
@@ -87,7 +84,7 @@ h2 {
 h3 {
     @extend %gamma;
     margin-top: $measure-large;
-    border-bottom: $border-thin solid $color-text-light;
+    border-bottom: $border-width-thin solid $color-text-light;
 
     &:not(:last-child) {
         margin-bottom: $measure-medium;
@@ -208,6 +205,7 @@ ul.default-list li:before {
     font-size: 1.5rem;
     line-height: 1;
 }
+
 dl {
     width: 100%;
     margin-top: 0;
@@ -249,6 +247,40 @@ dl {
     }
 }
 
+table {
+    width: 100%;
+    margin-bottom: $measure-medium;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-family: $font-family-beta;
+    border-collapse: separate;
+
+    th,
+    td {
+        padding: $measure-small;
+        text-align: left;
+    }
+
+    th {
+        font-weight: $font-weight-bold;
+    }
+
+    thead th {
+        white-space: nowrap;
+    }
+
+    td,
+    tfoot th {
+        border-top: $border-width-thin solid $color-gray;
+    }
+
+    th + th,
+    td + td {
+        border-left: $border-width-thin solid $color-gray;
+    }
+}
+
 img,
 a img {
     width: auto;
@@ -259,8 +291,11 @@ a img {
 figure {
     margin: 0 0 $measure-medium;
 
-    // Center `figure`s not used for code blocks
+    // Center text in `figure`s not used for code blocks and allow for content
+    // to overflow without breaking the page
     &:not(.highlight) {
+        overflow-x: auto;
+        overflow-y: hidden;
         text-align: center;
     }
 
@@ -330,7 +365,7 @@ dfn[title] {
 }
 abbr[title],
 dfn[title] {
-    border-bottom: $border-hairline dotted $color-text-alt;
+    border-bottom: $border-width-hairline dotted $color-text-alt;
     cursor: help;
 }
 ins {

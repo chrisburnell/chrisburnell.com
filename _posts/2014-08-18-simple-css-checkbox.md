@@ -21,7 +21,6 @@ shorturl: g6pky
 <label for="jazzycheckbox" class="check">Check me!</label>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
@@ -79,4 +78,3 @@ input[type="checkbox"] {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

@@ -11,7 +11,7 @@ code[data-lang] {
     padding-top: $measure-large;
 
     &:before {
-        @include position(top-left);
+        @include position(top);
         @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
         content: attr(data-lang);
@@ -65,7 +65,7 @@ code[data-lang] {
 
 .code-toggle-input {
     &:not(:checked) + .highlight pre {
-        // limit to five lines of code
+        // limit number of lines of code
         max-height: ($measure-medium * 10);
         overflow-x: hidden;
 

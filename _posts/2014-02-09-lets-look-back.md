@@ -35,7 +35,9 @@ Ever since I was fortunate enough to attend [State of the Browser in 2013](http:
 
 One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com "Can I Use")*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
+
 --------
+
 
 Say an old version of Chrome becomes stale and the global usage of that version dips below an arbitrary percentage (which I do not support) such that I no longer need a webkit prefix for a property anymore; I would need to physically check the support tables, manually find out that the prefix fell out, and then crawl and update my entire codebase to remove the unnecessary code. That isn’t good enough if I want smooth sailing.
 
@@ -43,7 +45,9 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
+
 --------
+
 
 <aside><p><code>sass</code> to compile Sass or SCSS from the command line.</p></aside>
 
@@ -70,7 +74,6 @@ How does *gulp* work?
 
 Here’s a sample `gulpfile.js` that shows the workflow at play. It should give you a fairly good idea of what’s going on.
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight javascript %}
 var gulp = require('gulp');
@@ -112,7 +115,6 @@ gulp.task('watch', function () {
 gulp.task('default', ['scripts', 'images', 'watch']);
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
 What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a “tweak a value, compile, refresh browser” workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, “tweak a value... tweak a value... tweak a value” as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
 
@@ -120,7 +122,6 @@ What *gulp* does is runs a series of commands and even listens for and responds 
 
 Here’s an example of what the CSS for my logo looked like prior to these changes:
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight css %}
 .logo {
@@ -282,15 +283,15 @@ Here’s an example of what the CSS for my logo looked like prior to these chang
     }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
 Let’s face it, that’s a monumental amount of code to read, let alone scroll through. Although I spent a monumental amount of time organising it well and ensuring it was super-maintainable, there are a lot of repetitions and property values that could be assigned to variables and used elsewhere in the CSS. The advantage of this becomes obvious when you find yourself having to remember bespoke colour values, but we also have a lot of repetitions due to the requirement of vendor prefixes. Although we will need the vendor prefixes again when we deliver CSS to the user on the front-end, because we’re compiling our CSS beforehand, we can get rid of them in our uncompiled stylesheet.
 
+
 --------
+
 
 Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I Use*.
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight css %}
 .logo {
@@ -366,15 +367,15 @@ Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* 
     }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
 Already looking much better! You’ll notice I was even able to exclude the entire repeated `-webkit-keyframes` declarations as *Autoprefixer* will include these for me when *gulp* runs.
 
+
 --------
+
 
 Next, let’s turn this CSS into SCSS.
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 .logo {
@@ -447,7 +448,6 @@ Next, let’s turn this CSS into SCSS.
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
 <figure>
     <img src="/images/content/welldone.gif" alt="Just look at it... :')" role="presentation">
@@ -532,7 +532,9 @@ $heading-font-stack: "league-gothic", sans-serif;
 
 The CSS here a lot more concise now, and the advantages are tremendous as you get over the learning curve, however short it may be for you. If you extrapolate this methodology of components you can imagine how it simplifies development across a codebase and between contributing developers. Because we’ve defined variables and mixins, it’s now a lot easier to change code across the entire site’s codebase at once, for example: breakpoints, colours, transition timings, typefaces, to name a few.
 
+
 --------
+
 
 Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <dfn title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</dfn>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 

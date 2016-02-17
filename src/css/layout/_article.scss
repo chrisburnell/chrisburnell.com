@@ -11,7 +11,7 @@
  */
 article {
     padding-top: $measure-large;
-    border-top: $border-default solid $color-brand;
+    border-top: $border-width-default solid $color-brand;
 
     @include media(">medium") {
         padding-left: ($aside-width + $measure-large);

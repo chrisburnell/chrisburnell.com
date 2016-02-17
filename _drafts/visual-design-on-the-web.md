@@ -18,7 +18,9 @@ I was reading an insightful [post by Remy Sharp](https://remysharp.com/2016/01/2
 
 It’s an interesting concept, and it feels a bit like trying to locate an electron—by trying to quantify things I ended up changing the thing I was trying to quantify. Or like putting yourself in someone else’s shoes—it can be done, to an extent, but a complete understanding is impossible.
 
+
 --------
+
 
 There are many reasons to love what we do. Too much time on your hands? *Try web development.* Becoming confident in your abilities and yourself as a person? *Try web development.* Do you like to obsessively clean and organise your house every single day? *Try web development.*
 

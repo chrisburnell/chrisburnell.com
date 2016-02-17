@@ -20,7 +20,7 @@ textarea {
     @include will-change(background-color, border-color);
     box-sizing: inherit !important;
     padding: .5rem;
-    border: $border-thin solid $color-text-light;
+    border: $border-width-thin solid $color-text-light;
     outline-style: none;
     font-family: $font-family-beta;
 
@@ -31,5 +31,10 @@ textarea {
 
     &[disabled] {
         opacity: opacity("70-percent");
+    }
+
+    &::-moz-focus-inner {
+        padding: 0;
+        margin: 0;
     }
 }

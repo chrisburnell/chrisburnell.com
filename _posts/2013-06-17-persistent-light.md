@@ -20,7 +20,6 @@ shorturl: 9sogz
 <div class="square">A</div>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 html, body {
@@ -121,4 +120,3 @@ body {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

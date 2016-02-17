@@ -137,7 +137,9 @@ What we’re doing here is:
 0. Add an click event listener to our `button` (which fortunately also works via keyboard commands)
 0. When the `button` *is* clicked, remove the `button` and load in our comments
 
+
 --------
+
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
@@ -171,7 +173,9 @@ What we’re doing here is:
 
 If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comment` is in the URL and we’re loading *Disqus*, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
 
+
 --------
+
 
 Almost there! Let’s create a failsafe—if our `button` no longer exists when the `showComments()` function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
@@ -217,7 +221,6 @@ Here’s the entire snippet of code for my comments section:
 var DISQUS_SHORTNAME = 'chrisburnell';
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight javascript %}
 (function () {
@@ -289,7 +292,6 @@ var DISQUS_SHORTNAME = 'chrisburnell';
 }());
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
 We’ve met all the conditions we set when we embarked upon this task:
 
@@ -307,7 +309,9 @@ We still have a small thorn when it comes to users without JavaScript enabled. O
 
 [A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as *Disqus*, but it works without JavaScript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if *Disqus* was able to give a similar URL back in the case where JavaScript is disabled, but as it’s an external service, this doesn’t seem possible without JavaScript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope *Disqus* implements something like this soon.
 
+
 --------
+
 
 Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a JavaScript wizard and close friend of mine, for helping me achieve this solution.
 

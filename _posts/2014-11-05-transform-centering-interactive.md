@@ -22,7 +22,6 @@ Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
 <textarea class="modal" disabled></textarea>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 html {
@@ -55,4 +54,3 @@ body {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

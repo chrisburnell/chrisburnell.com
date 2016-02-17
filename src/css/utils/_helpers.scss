@@ -5,8 +5,8 @@
 
 // Hide elements visually
 // Still treated as normal content by text-to-speech software
-.hide,
-.hidden {
+.hidden,
+.hide {
     width:  1px !important;
     height: 1px !important;
     padding: 0 !important;

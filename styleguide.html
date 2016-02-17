@@ -92,7 +92,7 @@ twitter: true
 
 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-<p>Keybord input: <kbd>Cmd</kbd></p>
+<p>Keyboard input: <kbd>Cmd</kbd></p>
 
 <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
 
@@ -173,6 +173,50 @@ twitter: true
     <dt>And another term.</dt>
     <dd>And it gets a definition too, which is this line.</dd>
 </dl>
+
+
+{% include content/heading.html title='Table' %}
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th>Heading #1</th>
+                <th>Heading #2</th>
+                <th>Heading #3</th>
+                <th>Heading #4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+            </tr>
+            <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+            </tr>
+            <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Foot #1</th>
+                <th>Foot #2</th>
+                <th>Foot #3</th>
+                <th>Foot #4</th>
+            </tr>
+        </tfoot>
+    </table>
+</figure>
 
 
 {% include content/heading.html title='Preformatted Text' %}

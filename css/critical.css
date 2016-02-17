@@ -365,14 +365,11 @@ html {
   overflow-y: scroll; }
 
 html {
-  background-color: #4f4f4f;
+  background-color: #f9f9f9;
+  color: #4f4f4f;
   font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
-
-body {
-  background-color: #f9f9f9;
-  color: #4f4f4f; }
 
 /**
  * Headings
@@ -556,6 +553,29 @@ dl {
         display: block;
         margin-left: 1.25rem; } }
 
+table {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  font-family: "proxima-nova", sans-serif;
+  border-collapse: separate; }
+  table th,
+  table td {
+    padding: 0.625rem;
+    text-align: left; }
+  table th {
+    font-weight: 600; }
+  table thead th {
+    white-space: nowrap; }
+  table td,
+  table tfoot th {
+    border-top: 0.125rem solid #ededed; }
+  table th + th,
+  table td + td {
+    border-left: 0.125rem solid #ededed; }
+
 img,
 a img {
   width: auto;
@@ -565,6 +585,8 @@ a img {
 figure {
   margin: 0 0 1.25rem; }
   figure:not(.highlight) {
+    overflow-x: auto;
+    overflow-y: hidden;
     text-align: center; }
   figure a:link,
   figure a:visited,
@@ -640,12 +662,13 @@ hr {
   border: 0;
   margin: 2.25rem 0; }
   @media (max-width: 768px) {
-    p + hr,
+    blockquote + hr,
+    figure:not([class]) + hr,
+    dl + hr,
     ol + hr,
     ul + hr,
-    dl + hr,
-    figure + hr,
-    blockquote + hr {
+    table + hr,
+    p + hr {
       margin-top: 1.25rem; } }
 
 /**
@@ -688,11 +711,13 @@ var,
 /**
  * Inline Code Examples
  */
-p code,
+blockquote code,
+figure:not([class]) code,
+dl code,
 ol code,
 ul code,
-dl code,
-blockquote code,
+table code,
+p code,
 ins,
 kbd,
 mark,
@@ -963,12 +988,12 @@ article {
 h3 + aside, .articles-list .date + aside {
   margin-top: 2.25rem; }
 
-aside p,
-aside figcaption {
+aside figcaption,
+aside p {
   clear: both; }
   @media (min-width: 501px) {
-    aside p,
-    aside figcaption {
+    aside figcaption,
+    aside p {
       font-size: 0.875rem; } }
 
 .logo {
@@ -1341,10 +1366,8 @@ aside figcaption {
   width: 40px;
   fill: #f9f9f9; }
 
-.hide,
-.hidden,
-.svg--master,
-a span:not([class]):not([itemprop]) {
+.hidden, .svg--master, a span:not([class]):not([itemprop]),
+.hide {
   width: 1px !important;
   height: 1px !important;
   padding: 0 !important;
@@ -1371,6 +1394,7 @@ p:empty {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+     -moz-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto; }
 
@@ -1392,11 +1416,13 @@ aside:not(.author),
 .border-radius-thin,
 .round-thin,
 .rounded-thin,
-p code,
+blockquote code,
+figure:not([class]) code,
+dl code,
 ol code,
 ul code,
-dl code,
-blockquote code,
+table code,
+p code,
 ins,
 kbd,
 mark,

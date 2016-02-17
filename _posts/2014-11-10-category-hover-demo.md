@@ -16,7 +16,6 @@ shorturl: 058xp
 
 {% include content/codepen.html height='525' %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight html %}
 <div class="modal">
@@ -48,9 +47,7 @@ shorturl: 058xp
 </div>
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 // Website Colour Palette
@@ -171,4 +168,3 @@ html {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

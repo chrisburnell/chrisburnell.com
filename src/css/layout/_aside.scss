@@ -35,8 +35,8 @@ aside {
         margin-top: $measure-large;
     }
 
-    p,
-    figcaption {
+    figcaption,
+    p {
         clear: both;
 
         @include media(">small") {

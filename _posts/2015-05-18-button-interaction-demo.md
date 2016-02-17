@@ -20,7 +20,6 @@ shorturl: ax7qc
 <button>Hello!</button>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 $black:     #0d0d0d;
@@ -68,4 +67,3 @@ button {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

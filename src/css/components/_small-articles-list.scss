@@ -102,7 +102,7 @@
     .title,
     .lede,
     .date {
-        text-shadow: 0 $border-hairline 0 $color-white;
+        text-shadow: 0 $border-width-hairline 0 $color-white;
     }
 
     .title {
@@ -110,7 +110,7 @@
         @include will-change(border-color);
         width: auto;
         display: inline-block;
-        border-bottom: $border-hairline solid $color-text-light;
+        border-bottom: $border-width-hairline solid $color-text-light;
         margin-bottom: 0;
     }
     a:hover .title,

@@ -18,88 +18,90 @@
         margin-top: $measure-large;
     }
 }
-    .author-information {
-        margin-bottom: $measure-medium;
-        font-family: $font-family-default;
-        font-size: $font-size-small;
-        font-style: italic;
-        line-height: 1.429;
 
-        @include media("<=medium") {
-            padding-top: $measure-large;
-            border-top: $border-thin solid $color-black--10-percent;
-            margin-bottom: $measure-small;
-        }
+.author-information {
+    margin-bottom: $measure-medium;
+    font-family: $font-family-default;
+    font-size: $font-size-small;
+    font-style: italic;
+    line-height: 1.429;
 
-        a,
-        strong {
-            color: inherit;
-            border-bottom-width: 0;
-            font-family: $font-family-beta;
-            font-weight: $font-weight-bold;
-            font-style: normal;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .author-image {
-        @extend .rounded;
-        // gradient replacement while loading the `src` / `srcset`,
-        // colors generated from `avatar.png`
-        background-image: gradient(transparent, rgb(153, 192, 226), to top right),
-                          gradient(transparent, rgb(157, 133, 139), to bottom left),
-                          gradient(transparent, rgb(89, 144, 173), to bottom right),
-                          gradient(transparent, rgb(137, 99, 79), to top left);
-        background-size: 100%;
-        // 100px
-        width:  6.25rem;
-        // 100px
-        height: 6.25rem;
-        float: left;
-        margin-right:  $measure-small;
+    @include media("<=medium") {
+        padding-top: $measure-large;
+        border-top: $border-width-thin solid $color-black--10-percent;
         margin-bottom: $measure-small;
-
-        img {
-            @extend .rounded;
-            height: 100%;
-            display: block;
-        }
     }
 
-    .author-name,
-    .author-age,
-    .author-employer,
-    .author-information .date,
-    .tags,
-    .featured-anchor {
+    a,
+    strong {
+        color: inherit;
+        border-bottom-width: 0;
+        font-family: $font-family-beta;
+        font-weight: $font-weight-bold;
+        font-style: normal;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    a {
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.author-image {
+    @extend .rounded;
+    // gradient replacement while loading the `src` / `srcset`,
+    // colors generated from `avatar.png`
+    background-image: gradient(transparent, rgb(153, 192, 226), to top right),
+                      gradient(transparent, rgb(157, 133, 139), to bottom left),
+                      gradient(transparent, rgb(89, 144, 173), to bottom right),
+                      gradient(transparent, rgb(137, 99, 79), to top left);
+    background-size: 100%;
+    // 100px
+    width:  6.25rem;
+    // 100px
+    height: 6.25rem;
+    float: left;
+    margin-right:  $measure-small;
+    margin-bottom: $measure-small;
+
+    img {
+        @extend .rounded;
+        height: 100%;
         display: block;
     }
+}
 
-    .author-age,
-    .author-employer,
-    .author-information .date,
-    .tags,
-    .featured-anchor {
-        margin-top: .5rem;
-    }
+.author-name,
+.author-age,
+.author-employer,
+.author-information .date,
+.tags,
+.featured-anchor {
+    display: block;
+}
 
-    .featured-anchor:after {
-        // NO-BREAK SPACE, RIGHTWARDS ARROW
-        content: " →";
-        font-style: normal;
-    }
+// same as previous, without `.author-name`
+.author-age,
+.author-employer,
+.author-information .date,
+.tags,
+.featured-anchor {
+    margin-top: .5rem;
+}
 
-    .author-biography {
-        @include media(">medium") {
-            margin-bottom: $measure-medium;
-        }
+.featured-anchor:after {
+    // NO-BREAK SPACE, RIGHTWARDS ARROW
+    content: " →";
+    font-style: normal;
+}
+
+.author-biography {
+    @include media(">medium") {
+        margin-bottom: $measure-medium;
     }
+}

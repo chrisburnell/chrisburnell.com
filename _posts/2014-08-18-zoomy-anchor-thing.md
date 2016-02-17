@@ -24,7 +24,6 @@ shorturl: e1r8k
 </a>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 html,
@@ -90,4 +89,3 @@ body {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>

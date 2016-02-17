@@ -16,7 +16,7 @@
         display: inline-block;
         clear: both;
         padding: 1.5rem 1rem;
-        border-top: $border-thin solid $color-black--10-percent;
+        border-top: $border-width-thin solid $color-black--10-percent;
         position: relative;
 
         &:nth-child(odd) {
@@ -34,7 +34,7 @@
     .date,
     .comments-anchor {
         // helps pop against the odd item background
-        text-shadow: 0 $border-hairline 0 $color-white;
+        text-shadow: 0 $border-width-hairline 0 $color-white;
     }
 
     .title {

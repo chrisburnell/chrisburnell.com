@@ -27,7 +27,6 @@ shorturl: f7utt
 </div>
 {% endhighlight %}
 
-<div class="code-toggle">
 {% include content/code-toggle-input.html %}
 {% highlight scss %}
 html {
@@ -181,4 +180,3 @@ body {
 }
 {% endhighlight %}
 {% include content/code-toggle-button.html %}
-</div>
