@@ -19,7 +19,7 @@ textarea {
     @include transition(background-color, border-color);
     @include will-change(background-color, border-color);
     box-sizing: inherit !important;
-    padding: .5rem;
+    padding: 0.5rem;
     border: $border-width-thin solid $color-text-light;
     outline-style: none;
     font-family: $font-family-beta;

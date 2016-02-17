@@ -11,6 +11,6 @@ html {
 
 // Box model set to `inherit` by default so children of `content-box` elements
 // inherit from the parent properly
-*, *:before, *:after {
+*, *::before, *::after {
     box-sizing: inherit;
 }

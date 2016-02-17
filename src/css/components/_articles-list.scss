@@ -53,7 +53,7 @@
             text-align: left;
         }
 
-        &:before {
+        &::before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
             color: $color-text-alt;

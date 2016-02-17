@@ -53,7 +53,7 @@ h6 {
     font-size: 2.625rem;
     text-transform: uppercase;
     // 3px 3px
-    text-shadow: .0715em .0715em 0 $color-black--5-percent;
+    text-shadow: 0.0715em 0.0715em 0 $color-black--5-percent;
 }
 h1 {
     @extend %alpha;
@@ -173,7 +173,7 @@ ul:not([class]),
             margin-bottom: $measure-small;
         }
 
-        &:before {
+        &::before {
             @include position(top-left);
             font-family: $font-family-beta;
             font-weight: $font-weight-bold;
@@ -192,13 +192,13 @@ ol.default-list {
     li {
         counter-increment: ordered-list;
 
-        &:before {
+        &::before {
             content: counter(ordered-list) ".";
         }
     }
 }
-ul:not([class]) li:before,
-ul.default-list li:before {
+ul:not([class]) li::before,
+ul.default-list li::before {
     // BULLET
     content: "•";
     // 24px
@@ -327,11 +327,11 @@ blockquote {
     p {
         margin-bottom: 0 !important;
 
-        &:before {
+        &::before {
             content: open-quote;
         }
 
-        &:after {
+        &::after {
             content: close-quote;
         }
     }
@@ -341,7 +341,7 @@ blockquote {
         margin-left: $measure-large;
         margin-top: $measure-medium;
 
-        &:before {
+        &::before {
             // HYPHEN, NO-BREAK SPACE
             content: "‐ ";
         }
@@ -379,7 +379,7 @@ time {
 hr {
     background: $color-black--10-percent;
     width: 100%;
-    height: .125rem;
+    height: 0.125rem;
     display: block;
     border: 0;
     margin: $measure-large 0;
@@ -397,7 +397,7 @@ hr {
 iframe,
 video {
     width: 100%;
-    border: none;
+    border: 0;
     overflow-x: hidden;
 }
 iframe {

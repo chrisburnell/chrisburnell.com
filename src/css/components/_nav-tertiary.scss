@@ -8,7 +8,7 @@
     @include media(">medium") {
         float: right;
         // 5px
-        margin-top: .3125rem;
+        margin-top: 0.3125rem;
     }
 
     @include media("<=medium") {

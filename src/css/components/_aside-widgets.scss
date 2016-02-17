@@ -20,7 +20,7 @@
     margin-top: $measure-medium;
     font-weight: $font-weight-bold;
 
-    &:after {
+    &::after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";
     }

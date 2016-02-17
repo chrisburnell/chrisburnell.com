@@ -126,6 +126,7 @@ $font-size-gigantic: 1.625rem !default;
 /// @require {Variable} $font-size-small
 /// @require {Variable} $font-size-large
 /// @require {Variable} $font-size-larger
+/// @require {Variable} $font-size-gigantic
 $font-sizes: (
     "smaller":  $font-size-smaller,
     "small":    $font-size-small,

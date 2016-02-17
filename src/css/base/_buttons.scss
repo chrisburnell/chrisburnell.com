@@ -13,8 +13,8 @@
     min-width: 8em;
     height: 2.182em;
     display: inline-block;
-    padding: 0 .727em .182em;
-    margin-top: .25rem;
+    padding: 0 0.727em 0.182em;
+    margin-top: 0.25rem;
     outline-style: none;
     position: relative;
     font-family: $font-family-alpha;
@@ -43,28 +43,28 @@
     &:active {
         height: 2em;
         padding-bottom: 0;
-        margin-bottom: .182em;
+        margin-bottom: 0.182em;
         box-shadow: inset 0 -$border-width-hairline 0 0 darken($color-brand, 10%);
         transform: translateY(.182em);
     }
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         @include position(top);
         @include will-change(top);
         content: "";
         width: 100%;
-        height: .182em;
+        height: 0.182em;
     }
     &:active {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             top: -0.182em;
         }
     }
 
     &[rel="external"] {
-        &:after {
+        &::after {
             @include position(reset);
             @include will-change(initial);
             // NO-BREAK SPACE, RIGHTWARDS ARROW
@@ -76,10 +76,10 @@
     }
 
     [class*="icon"] {
-        width:  .8em;
-        height: .8em;
+        width:  0.8em;
+        height: 0.8em;
         display: inline-block;
-        margin-right: .25em;
+        margin-right: 0.25em;
         pointer-events: none;
     }
 }

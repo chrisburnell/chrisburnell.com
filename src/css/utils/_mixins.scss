@@ -16,36 +16,36 @@
 ///   // left:   0;
 ///   // right:  0;
 ///
-@mixin position( $value ) {
+@mixin position($value) {
 
-    @if( $value == "top" ) {
+    @if($value == "top") {
         position: absolute;
         top:   0;
         left:  0;
         right: 0;
     }
 
-    @if( $value == "top-left" ) {
+    @if($value == "top-left") {
         position: absolute;
         top:  0;
         left: 0;
     }
 
-    @else if( $value == "bottom" ) {
+    @else if($value == "bottom") {
         position: absolute;
         bottom: 0;
         left:   0;
         right:  0;
     }
 
-    @else if( $value == "center" ) {
+    @else if($value == "center") {
         position: absolute;
         top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
 
-    @else if( $value == "none" or $value == "reset" ) {
+    @else if($value == "none" or $value == "reset") {
         position: relative;
         top:    auto;
         left:   auto;
@@ -70,12 +70,12 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin border-radius( $values... ) {
+@mixin border-radius($values...) {
 
     @if( length($values) == 0 ) {
         $values: $border-radius-default;
     }
-    @else if( #{$values} == "thin" ) {
+    @else if(#{$values} == "thin") {
         $values: $border-radius-thin;
     }
 
@@ -104,7 +104,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin font-family( $family, $display ) {
+@mixin font-family($family, $display) {
 
     @if( length($family) == 0 ) {
         @error "font-family() expects at least one parameter."
@@ -137,19 +137,19 @@
 ///
 /// @example scss - Zero parameters
 ///   @include transition;
-///   // transition: all .2s ease;
+///   // transition: all 0.2s ease;
 ///
 /// @example scss - One property
 ///   @include transition(color);
-///   // transition: color .2s ease;
+///   // transition: color 0.2s ease;
 ///
 /// @example scss - Two properties
 ///   @include transition(color, border);
-///   // transition: color .2s ease, border .2s ease;
+///   // transition: color 0.2s ease, border 0.2s ease;
 ///
 /// @example scss - One property, one duration
-///   @include transition(color .5s);
-///   // transition: color .5s ease;
+///   @include transition(color 0.5s);
+///   // transition: color 0.5s ease;
 ///
 /// @example scss - One property, one duration, one timing function
 ///   @include transition(color 1s linear);
@@ -159,7 +159,7 @@
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
-@mixin transition( $values... ) {
+@mixin transition($values...) {
 
     $transition: ();
 
@@ -238,7 +238,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin will-change( $values... ) {
+@mixin will-change($values...) {
 
     @if( length($values) == 0 ) {
         @error "will-change() expects one or more parameters.";

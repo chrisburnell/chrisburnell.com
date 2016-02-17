@@ -10,7 +10,7 @@
 code[data-lang] {
     padding-top: $measure-large;
 
-    &:before {
+    &::before {
         @include position(top);
         @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
@@ -35,7 +35,7 @@ code[data-lang] {
     $name:  nth($language, 1);
     $color: nth($language, 2);
 
-    &.language-#{$name}:before {
+    &.language-#{$name}::before {
         background-color: #{$color} !important;
     }
 }
@@ -69,7 +69,7 @@ code[data-lang] {
         max-height: ($measure-medium * 10);
         overflow-x: hidden;
 
-        &:after {
+        &::after {
             @include position(bottom);
             @include border-radius(0 0 $border-radius-default $border-radius-default);
             content: "";

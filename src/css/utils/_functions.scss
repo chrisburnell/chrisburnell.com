@@ -23,7 +23,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function gradient( $from, $to, $direction: "to bottom" ) {
+@function gradient($from, $to, $direction: "to bottom") {
 
     @if( length($from) == 0 or length($to) == 0 ) {
         @error "gradient() expects two or three parameters.";
@@ -47,13 +47,13 @@
 ///
 /// @example scss
 ///   opacity: opacity("10-percent");
-///   // opacity: .10;
+///   // opacity: 0.10;
 ///
 /// @return {Number} Opacity value
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function opacity( $value ) {
+@function opacity($value) {
 
     @if( length($value) == 0 ) {
         @error "opacity() expects one parameter."
@@ -86,7 +86,7 @@
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $z-indexes.
 ///
-@function z-index( $value ) {
+@function z-index($value) {
 
     @if( length($value) == 0 ) {
         @error "z-index() expects at least one parameter."
@@ -118,7 +118,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function contrasting-color( $background-color, $text-color-light: $color-white, $text-color-dark: $color-black ) {
+@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-black) {
 
     $magic-number-red:     241;
     $magic-number-green:   691;
@@ -136,7 +136,7 @@
     $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green) + ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
     $number: 100% * $number / 255;
 
-    @if( $number < 65% ) {
+    @if($number < 65%) {
         @return $text-color-light;
     } @else {
         @return $text-color-dark;
@@ -158,7 +158,7 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function strip-units( $value ) {
+@function strip-units($value) {
 
     @if( length($value) == 0 ) {
         @error "strip-units() expects at least one parameter."

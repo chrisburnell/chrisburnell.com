@@ -91,10 +91,10 @@
 .author-information .date,
 .tags,
 .featured-anchor {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
-.featured-anchor:after {
+.featured-anchor::after {
     // NO-BREAK SPACE, RIGHTWARDS ARROW
     content: " →";
     font-style: normal;
