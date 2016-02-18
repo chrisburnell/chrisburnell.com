@@ -34,26 +34,11 @@
             display: inline-block;
         }
 
-        &[data-color="#{$color-brand}"] {
-            background-color: $color-brand;
-        }
-
-        &[data-color="#{$color-white}"] {
-            background-color: $color-white;
-            color: $color-text;
-        }
-
-        &[data-color="#{$color-text}"] {
-            background-color: $color-text;
-        }
-
-        &[data-color="#{$color-text-alt}"] {
-            background-color: $color-text-alt;
-        }
-
-        &[data-color="#{$color-text-light}"] {
-            background-color: $color-text-light;
-            color: $color-text;
+        @each $main-color in $main-colors {
+            &[data-color="#{$main-color}"] {
+                background-color: $main-color;
+                //color: contrasting-color($main-color);
+            }
         }
     }
 }

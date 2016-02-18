@@ -102,7 +102,7 @@
 
 
 ///
-/// Contrasting Text Color (Unused)
+/// Contrasting Text Color
 ///
 /// @param {Color} $background-color - Background Color to contrast
 /// @param {Color} $text-color-light [$color-white] - Color to use for dark backgrounds
@@ -114,29 +114,29 @@
 ///   // background-color: #111111;
 ///   // color: white;
 ///
-/// @return {Color} Contrasting Color
+/// @return {Color} Contrasting Text Color
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-black) {
+@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-text) {
+
+    @if( length($background-color) == 0 ) {
+        @error "contrasting-color() expects at least one parameter.";
+    }
 
     $magic-number-red:     241;
     $magic-number-green:   691;
     $magic-number-blue:    68;
     $magic-number-divisor: $magic-number-red + $magic-number-green + $magic-number-blue;
 
-    @if( length($background-color) == 0 ) {
-        @error "contrasting-color() expects at least one parameter.";
-    }
-
     $component-red:   red($background-color);
     $component-green: green($background-color);
     $component-blue:  blue($background-color);
 
     $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green) + ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
-    $number: 100% * $number / 255;
+    $number: 100 * $number / 255;
 
-    @if($number < 65%) {
+    @if($number < 65) {
         @return $text-color-light;
     } @else {
         @return $text-color-dark;
@@ -146,7 +146,7 @@
 
 
 ///
-/// Strip Units from a Number (Unused)
+/// Strip Units from a Number
 ///
 /// @param {Number} $value - Number with units
 ///
@@ -156,7 +156,7 @@
 ///
 /// @return {Number} Number without units
 ///
-/// @throw Error if no parameters are passed.
+/// @throw Error if no parameter is passed.
 ///
 @function strip-units($value) {
 

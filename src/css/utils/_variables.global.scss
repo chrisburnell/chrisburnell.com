@@ -79,6 +79,20 @@ $color-black--10-percent: rgba($color-black, map-get($opacities, "10-percent")) 
 $color-canada: #fd1b00 !default;
 /// @type Color
 $color-highlight: gold !default;
+/// @type Map
+/// @prop {Color} Color
+/// @require {Variable} $color-brand
+/// @require {Variable} $color-text
+/// @require {Variable} $color-text-alt
+/// @require {Variable} $color-text-light
+/// @require {Variable} $color-white
+$main-colors: (
+    $color-brand,
+    $color-text,
+    $color-text-alt,
+    $color-text-light,
+    $color-white
+) !default;
 
 
 /// @type Length
