@@ -219,6 +219,17 @@ twitter: true
 </figure>
 
 
+{% include content/heading.html title='Details' %}
+
+<figure>
+    <details>
+        <summary>Summary</summary>
+        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+    </details>
+</figure>
+
+
 {% include content/heading.html title='Preformatted Text' %}
 
 <pre>P R E F O R M A T T E D T E X T
@@ -243,13 +254,34 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block with Language' %}
 
 {% highlight scss %}
-@mixin translate3d($values...) {
+@mixin will-change($values...) {
     @if( length($values) == 0 ) {
-        $values: 0, 0, 0;
+        @error "will-change() expects one or more parameters.";
     }
-    transform: translate3d(#{$values});
+    will-change: #{$values};
 }
 {% endhighlight %}
+
+
+{% include content/heading.html title='Extended Code Block with Language' %}
+
+{% include content/code-toggle-input.html %}
+{% highlight javascript %}
+(function(d) {
+    var typekitTimeout = 5000;
+    if( window.sessionStorage ) {
+        if( sessionStorage.getItem('useTypekit') === 'false' ) {
+            typekitTimeout = 0;
+        }
+    }
+    var config = {
+        kitId: 'bbn1puz',
+        scriptTimeout: typekitTimeout
+    },
+    h = d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
+{% endhighlight %}
+{% include content/code-toggle-button.html %}
 
 
 {% include content/heading.html title='Figure' %}

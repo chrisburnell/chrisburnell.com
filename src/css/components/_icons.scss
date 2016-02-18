@@ -11,11 +11,17 @@
 
 %button [class*="icon"] {
     fill: currentColor;
+    width:  0.8em;
+    height: 0.8em;
+    display: inline-block;
+    margin-right: 0.25em;
+    pointer-events: none;
 }
 
 // Used on the Style Guide page
 .icons-list [class*="icon"] {
-    fill: $color-black;
+    fill: $color-text;
+    height: ($measure-large * 2);
 }
 
 /**

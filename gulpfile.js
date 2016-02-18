@@ -164,16 +164,14 @@ gulp.task('default', function() {
 });
 
 // CSS task
-gulp.task('css', function() {
+gulp.task('css', ['css-main'], function() {
     //gulp.start('css-lint');
-    gulp.start('css-main');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });
 
 // JS task
-gulp.task('js', function() {
-    gulp.start('js-main');
+gulp.task('js', ['js-main'], function() {
     gulp.start('js-loadcss');
     gulp.start('js-serviceworker');
     gulp.start('js-typekit');

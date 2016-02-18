@@ -551,7 +551,7 @@ dl {
       dl dd {
         width: auto;
         display: block;
-        margin-left: 1.25rem; } }
+        padding-left: 1.25rem; } }
 
 table {
   width: 100%;
@@ -576,6 +576,34 @@ table {
   table td + td {
     border-left: 0.125rem solid #ededed; }
 
+details {
+  background-color: #4f4f4f;
+  color: #f9f9f9;
+  padding: 0.625rem;
+  font-family: "proxima-nova", sans-serif; }
+  details summary {
+    font-weight: 600;
+    outline: 0;
+    cursor: pointer; }
+  details summary + blockquote, details summary +
+  figure:not([class]), details summary +
+  dl, details summary +
+  ol, details summary +
+  ul, details summary +
+  table, details summary +
+  p {
+    margin-top: 0.625rem;
+    border-top: 0.125rem solid #5f8aa6;
+    padding-top: 1.25rem; }
+  details blockquote, details
+  figure:not([class]), details
+  dl, details
+  ol, details
+  ul, details
+  table, details
+  p {
+    padding: 0 0.625rem 0.625rem; }
+
 img,
 a img {
   width: auto;
@@ -586,13 +614,23 @@ figure {
   margin: 0 0 1.25rem; }
   figure:not(.highlight) {
     overflow-x: auto;
-    overflow-y: hidden;
-    text-align: center; }
+    overflow-y: hidden; }
+  figure img,
+  figure svg,
+  figure > a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  figure > a {
+    border-bottom-width: 0; }
   figure a:link,
   figure a:visited,
   figure figcaption {
     color: #737373;
     font-style: italic; }
+  figure figcaption {
+    margin-top: 0.625rem;
+    text-align: center; }
 
 blockquote {
   background-color: rgba(95, 138, 166, 0.1);
@@ -1316,7 +1354,8 @@ aside p {
   overflow: hidden; }
 
 .icons-list [class*="icon"] {
-  fill: #060606; }
+  fill: #4f4f4f;
+  height: 4.5rem; }
 
 /**
  * Brand Icon Widths and Colors
@@ -1394,7 +1433,6 @@ p:empty {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-     -moz-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto; }
 
@@ -1403,6 +1441,7 @@ p:empty {
 .rounded,
 figure img,
 figure svg,
+figure > a,
 blockquote,
 pre:not(.codepen),
 aside:not(.author),

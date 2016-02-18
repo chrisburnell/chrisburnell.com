@@ -74,14 +74,6 @@
             font-family: $font-family-monospace;
         }
     }
-
-    [class*="icon"] {
-        width:  0.8em;
-        height: 0.8em;
-        display: inline-block;
-        margin-right: 0.25em;
-        pointer-events: none;
-    }
 }
 
 button,
