@@ -9,7 +9,7 @@
     'use strict';
 
     // Increment this when updating the Service Worker
-    var VERSION = '14';
+    var VERSION = '15';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
