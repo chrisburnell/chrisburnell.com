@@ -118,16 +118,16 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-text) {
+@function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
 
     @if( length($background-color) == 0 ) {
         @error "contrasting-color() expects at least one parameter.";
     }
 
-    @if (lightness($background-color) < 50) {
-        @return $text-color-light;
-    } @else {
+    @if (lightness($background-color) > 65) {
         @return $text-color-dark;
+    } @else {
+        @return $text-color-light;
     }
 
 }

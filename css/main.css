@@ -2246,7 +2246,7 @@ button [class*="icon"],
         display: inline-block; } }
     .color-block-list li[data-color="#5f8aa6"] {
       background-color: #5f8aa6;
-      color: #4f4f4f; }
+      color: #f9f9f9; }
     .color-block-list li[data-color="#4f4f4f"] {
       background-color: #4f4f4f;
       color: #f9f9f9; }

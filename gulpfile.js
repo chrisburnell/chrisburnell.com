@@ -56,7 +56,7 @@ gulp.task('css-lint', function() {
 });
 
 // Compile main SCSS file
-gulp.task('css-main', function() {
+gulp.task('css-compile', function() {
     return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
         .pipe(sass({
@@ -97,7 +97,7 @@ gulp.task('css-sassdoc', function() {
 });
 
 // Minify JS
-gulp.task('js-main', function() {
+gulp.task('js-compile', function() {
     return gulp.src(['!' + paths.src.js + '**/loadcss.js',
                      '!' + paths.src.js + '**/serviceworker.js',
                      '!' + paths.src.js + '**/typekit.js',
@@ -164,14 +164,14 @@ gulp.task('default', function() {
 });
 
 // CSS task
-gulp.task('css', ['css-main'], function() {
+gulp.task('css', ['css-compile'], function() {
     //gulp.start('css-lint');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });
 
 // JS task
-gulp.task('js', ['js-main'], function() {
+gulp.task('js', ['js-compile'], function() {
     gulp.start('js-loadcss');
     gulp.start('js-serviceworker');
     gulp.start('js-typekit');
