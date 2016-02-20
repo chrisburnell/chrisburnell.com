@@ -23,10 +23,12 @@ twitter: true
 I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>Pinboard implemented their own simpler layout model & used canvas for the drawing which is GPU-backed.</p>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>
+<noscript>Please enable JavaScript to to see Twitter-specific components.</noscript>
 
 Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. Nothing changed. I dug into my account settings looking for a flag to switch on for this newfangled layout, but couldn’t find one. *What’s going on?!*
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>(hah, I mean Flipboard, not Pinboard)</p>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></blockquote>
+<noscript>Please enable JavaScript to to see Twitter-specific components.</noscript>
 
 *Okay then.*
 
