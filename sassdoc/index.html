@@ -70,19 +70,7 @@
         @error &quot;contrasting-color() expects at least one parameter.&quot;;
     }
 
-    $magic-number-red:     241;
-    $magic-number-green:   691;
-    $magic-number-blue:    68;
-    $magic-number-divisor: $magic-number-red + $magic-number-green + $magic-number-blue;
-
-    $component-red:   red($background-color);
-    $component-green: green($background-color);
-    $component-blue:  blue($background-color);
-
-    $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green) + ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
-    $number: 100 * $number / 255;
-
-    @if($number &lt; 65) {
+    @if (lightness($background-color) &lt; 50) {
         @return $text-color-light;
     } @else {
         @return $text-color-dark;
@@ -91,7 +79,7 @@
  }" data-collapsed="@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-black) { ... }"><code>@function contrasting-color($background-color, $text-color-light: $color-white, $text-color-dark: $color-black) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Contrasting Text Color</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$background-color</code></th><td data-label="desc"><p>Background Color to contrast</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$text-color-light</code></th><td data-label="desc"><p>Color to use for dark backgrounds</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#f9f9f9; color: #000">$color-white</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$text-color-dark</code></th><td data-label="desc"><p>Color to use for light backgrounds</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#060606; color: #fff">$color-black</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code> &mdash;<p>Contrasting Text Color</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>background-color: #111111;
 color: contrasting-color(#111111);
 // background-color: #111111;
-// color: white;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>contrasting-color() expects at least one parameter.</p></li></ul></section><section class="main__item container item" id="utils-function-strip-units"><h3 class="item__heading"><a class="item__name" href="#function-strip-units">strip-units</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-units($value) { 
+// color: #f9f9f9;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>contrasting-color() expects at least one parameter.</p></li></ul></section><section class="main__item container item" id="utils-function-strip-units"><h3 class="item__heading"><a class="item__name" href="#function-strip-units">strip-units</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-units($value) { 
 
     @if( length($value) == 0 ) {
         @error &quot;strip-units() expects at least one parameter.&quot;

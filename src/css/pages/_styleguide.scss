@@ -17,7 +17,6 @@
     text-align: center;
 
     li {
-        color: $color-white;
         height: 6.5rem;
         display: table-cell;
         font-family: $font-family-monospace;
@@ -37,7 +36,7 @@
         @each $main-color in $main-colors {
             &[data-color="#{$main-color}"] {
                 background-color: $main-color;
-                //color: contrasting-color($main-color);
+                color: contrasting-color($main-color);
             }
         }
     }

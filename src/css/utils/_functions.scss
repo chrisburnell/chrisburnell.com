@@ -112,7 +112,7 @@
 ///   background-color: #111111;
 ///   color: contrasting-color(#111111);
 ///   // background-color: #111111;
-///   // color: white;
+///   // color: #f9f9f9;
 ///
 /// @return {Color} Contrasting Text Color
 ///
@@ -124,19 +124,7 @@
         @error "contrasting-color() expects at least one parameter.";
     }
 
-    $magic-number-red:     241;
-    $magic-number-green:   691;
-    $magic-number-blue:    68;
-    $magic-number-divisor: $magic-number-red + $magic-number-green + $magic-number-blue;
-
-    $component-red:   red($background-color);
-    $component-green: green($background-color);
-    $component-blue:  blue($background-color);
-
-    $number: sqrt((($component-red * $component-red * $magic-number-red) + ($component-green * $component-green * $magic-number-green) + ($component-blue * $component-blue * $magic-number-blue)) / $magic-number-divisor);
-    $number: 100 * $number / 255;
-
-    @if($number < 65) {
+    @if (lightness($background-color) < 50) {
         @return $text-color-light;
     } @else {
         @return $text-color-dark;

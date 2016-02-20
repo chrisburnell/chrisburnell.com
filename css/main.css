@@ -2231,7 +2231,6 @@ button [class*="icon"],
   margin: 0 auto;
   text-align: center; }
   .color-block-list li {
-    color: #f9f9f9;
     height: 6.5rem;
     display: table-cell;
     font-family: Monaco, Consolas, Courier, monospace;
@@ -2246,16 +2245,19 @@ button [class*="icon"],
         width: 6.5rem;
         display: inline-block; } }
     .color-block-list li[data-color="#5f8aa6"] {
-      background-color: #5f8aa6; }
-    .color-block-list li[data-color="#f9f9f9"] {
-      background-color: #f9f9f9;
+      background-color: #5f8aa6;
       color: #4f4f4f; }
     .color-block-list li[data-color="#4f4f4f"] {
-      background-color: #4f4f4f; }
+      background-color: #4f4f4f;
+      color: #f9f9f9; }
     .color-block-list li[data-color="#737373"] {
-      background-color: #737373; }
+      background-color: #737373;
+      color: #f9f9f9; }
     .color-block-list li[data-color="#dddddd"] {
       background-color: #dddddd;
+      color: #4f4f4f; }
+    .color-block-list li[data-color="#f9f9f9"] {
+      background-color: #f9f9f9;
       color: #4f4f4f; }
 
 .hidden, .svg--master, a span:not([class]):not([itemprop]),
