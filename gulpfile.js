@@ -7,7 +7,6 @@
 var gulp         = require('gulp'),
     gutil        = require('gulp-util'),
     concat       = require('gulp-concat'),
-    cssnano      = require('gulp-cssnano'),
     plumber      = require('gulp-plumber'),
     postcss      = require('gulp-postcss'),
     rename       = require('gulp-rename'),
@@ -17,6 +16,7 @@ var gulp         = require('gulp'),
 
 // Define external objects
 var autoprefixer = require('autoprefixer'),
+    cssnano      = require('cssnano'),
     reporter     = require('postcss-reporter'),
     sassdoc      = require('sassdoc'),
     stylelint    = require('stylelint');
@@ -72,7 +72,9 @@ gulp.task('css-compile', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(cssnano())
+        .pipe(postcss([
+            cssnano()
+        ]))
         .pipe(gulp.dest(paths.dist.css));
 });
 
