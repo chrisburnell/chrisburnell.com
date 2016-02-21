@@ -14,11 +14,11 @@ html {
 
 // Content Elements
 blockquote,
-figure:not([class]),
+details,
 dl,
 ol,
 ul,
-table,
+figure:not([class]),
 p {
     @extend %content-elements;
 }

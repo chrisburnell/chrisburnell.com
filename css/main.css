@@ -586,21 +586,21 @@ details {
     outline: 0;
     cursor: pointer; }
   details summary + blockquote, details summary +
-  figure:not([class]), details summary +
+  details, details summary +
   dl, details summary +
   ol, details summary +
   ul, details summary +
-  table, details summary +
+  figure:not([class]), details summary +
   p {
     margin-top: 0.625rem;
     border-top: 0.125rem solid #5f8aa6;
     padding-top: 1.25rem; }
   details blockquote, details
-  figure:not([class]), details
+  details, details
   dl, details
   ol, details
   ul, details
-  table, details
+  figure:not([class]), details
   p {
     padding: 0 0.625rem 0.625rem; }
 
@@ -701,11 +701,11 @@ hr {
   margin: 2.25rem 0; }
   @media (max-width: 768px) {
     blockquote + hr,
-    figure:not([class]) + hr,
+    details + hr,
     dl + hr,
     ol + hr,
     ul + hr,
-    table + hr,
+    figure:not([class]) + hr,
     p + hr {
       margin-top: 1.25rem; } }
 
@@ -750,11 +750,11 @@ var,
  * Inline Code Examples
  */
 blockquote code,
-figure:not([class]) code,
+details code,
 dl code,
 ol code,
 ul code,
-table code,
+figure:not([class]) code,
 p code,
 ins,
 kbd,
@@ -1718,11 +1718,11 @@ footer {
     border-top: 0;
     padding: 0 0 1.25rem; }
   blockquote + .nav-secondary,
-  figure:not([class]) + .nav-secondary,
+  details + .nav-secondary,
   dl + .nav-secondary,
   ol + .nav-secondary,
   ul + .nav-secondary,
-  table + .nav-secondary,
+  figure:not([class]) + .nav-secondary,
   p + .nav-secondary {
     margin-top: 1.25rem; }
 
@@ -2314,11 +2314,11 @@ aside:not(.author),
 .round-thin,
 .rounded-thin,
 blockquote code,
-figure:not([class]) code,
+details code,
 dl code,
 ol code,
 ul code,
-table code,
+figure:not([class]) code,
 p code,
 ins,
 kbd,
