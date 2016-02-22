@@ -1545,7 +1545,6 @@ footer {
     font-size: 0.875rem; }
   .small-articles-list .date {
     color: #737373;
-    display: block;
     margin-top: 0.625rem;
     font-size: 0.8125rem;
     font-weight: 600; }
@@ -1794,7 +1793,6 @@ footer {
 .author-name,
 .author-age,
 .author-employer,
-.author-information .date,
 .tags,
 .featured-anchor {
   display: block; }
