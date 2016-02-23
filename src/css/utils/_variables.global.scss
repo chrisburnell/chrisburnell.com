@@ -44,11 +44,11 @@ $measure-large:  2.250rem !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    '5-percent':  0.05,
-    '10-percent': 0.10,
-    '25-percent': 0.25,
-    '70-percent': 0.70,
-    '90-percent': 0.90
+    "5-percent":  0.05,
+    "10-percent": 0.10,
+    "25-percent": 0.25,
+    "70-percent": 0.70,
+    "90-percent": 0.90
 ) !default;
 
 
@@ -79,7 +79,7 @@ $color-black--10-percent: rgba($color-black, map-get($opacities, "10-percent")) 
 $color-canada: #fd1b00 !default;
 /// @type Color
 $color-highlight: gold !default;
-/// @type Map
+/// @type List
 /// @prop {Color} Color
 /// @require {Variable} $color-brand
 /// @require {Variable} $color-text
