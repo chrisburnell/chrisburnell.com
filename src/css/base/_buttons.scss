@@ -80,6 +80,10 @@ button,
 .button,
 .button--small {
     @extend %button;
+
+    &[aria-hidden="true"] {
+        display: none;
+    }
 }
 
 button {

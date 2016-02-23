@@ -55,8 +55,10 @@
         if( commentsSection !== null ) {
             window.scrollTo(0, commentsSection.offsetTop);
             // only if the button still exists should we load Disqus and remove the button
-            if( commentsButton !== null ) {
-                commentsButton.parentNode.removeChild(commentsButton);
+            if( commentsButton !== null && commentsButton['aria-hidden'] === "false" ) {
+                console.log('asdasd');
+                commentsButton['aria-hidden'] = "true";
+                commentsButton['aria-pressed'] = "true";
                 commentsButton.removeEventListener('click', function(){});
                 (function() {
                     var dsq = document.createElement('script');

@@ -47,19 +47,19 @@ code[data-lang] {
     position: relative;
 }
 
-.code-toggle-button {
-    position: absolute;
-    // center in the code block
-    top: ($measure-medium * 5);
-    left: 50%;
-    transform: translateX(-50%);
-
-    &:active {
-        transform: translateX(-50%) translateY(.182em);
-    }
+.code-toggle-label {
+    @include position("top-left");
+    width:  100%;
+    height: 100%;
+    display: block;
 
     .code-toggle-input:checked ~ & {
         display: none;
+    }
+
+    button {
+        @include position("center");
+        pointer-events: none;
     }
 }
 
@@ -78,10 +78,6 @@ code[data-lang] {
             height: ($measure-medium * 4.2);
             display: block;
         }
-    }
-
-    &:checked ~ .code-toggle-button {
-        display: none;
     }
 }
 

@@ -18,8 +18,7 @@ var gulp         = require('gulp'),
 var autoprefixer = require('autoprefixer'),
     cssnano      = require('cssnano'),
     reporter     = require('postcss-reporter'),
-    sassdoc      = require('sassdoc'),
-    stylelint    = require('stylelint');
+    sassdoc      = require('sassdoc');
 
 // Define paths
 var paths = {
@@ -37,23 +36,6 @@ var paths = {
 };
 
 // -----------------------------------------------------------------------------
-
-// Lint SCSS
-gulp.task('css-lint', function() {
-    return gulp.src([paths.src.css + '*.scss'])
-        .pipe(plumber())
-        .pipe(postcss([
-            stylelint({
-                'rules': {
-                    'selector-no-id': 2,
-                    'string-quotes': [2, 'double']
-                }
-            }),
-            reporter({
-                clearMessages: true
-            })
-        ]));
-});
 
 // Compile main SCSS file
 gulp.task('css-compile', function() {
@@ -167,7 +149,6 @@ gulp.task('default', function() {
 
 // CSS task
 gulp.task('css', ['css-compile'], function() {
-    //gulp.start('css-lint');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });

@@ -7,5 +7,7 @@
 *
 {% endcomment %}
 {% assign code_toggle_button_count = code_toggle_button_count | plus: 1 %}
-    <label class="button--small  code-toggle-button" for="highlight--{{ code_toggle_button_count }}" aria-hidden="true">See All</label>
+    <label class="code-toggle-label" for="highlight--{{ code_toggle_button_count }}" aria-hidden="true">
+        <button class="button--small">See All</button>
+    </label>
 </div>

@@ -1032,6 +1032,11 @@ button,
     height: auto;
     font-family: Monaco, Consolas, Courier, monospace; }
 
+button[aria-hidden="true"],
+.button[aria-hidden="true"],
+.button--small[aria-hidden="true"] {
+  display: none; }
+
 button[disabled] {
   opacity: 0.7;
   pointer-events: none; }
@@ -2001,17 +2006,22 @@ code[data-lang] {
 .code-toggle {
   position: relative; }
 
-.code-toggle-button {
+.code-toggle-label {
   position: absolute;
-  top: 6.25rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
-  .code-toggle-button:active {
-    -webkit-transform: translateX(-50%) translateY(0.182em);
-            transform: translateX(-50%) translateY(0.182em); }
-  .code-toggle-input:checked ~ .code-toggle-button {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block; }
+  .code-toggle-input:checked ~ .code-toggle-label {
     display: none; }
+  .code-toggle-label button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    pointer-events: none; }
 
 .code-toggle-input:not(:checked) + .highlight pre {
   max-height: 12.5rem;
@@ -2028,9 +2038,6 @@ code[data-lang] {
     background-image: linear-gradient(to bottom, transparent 0%, #ededed 100%);
     height: 5.25rem;
     display: block; }
-
-.code-toggle-input:checked ~ .code-toggle-button {
-  display: none; }
 
 /**
  * Github-style Code Highlighting
