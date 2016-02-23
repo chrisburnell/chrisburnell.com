@@ -1,10 +1,10 @@
 {% comment %}
-*
-* This include lets you easily add a button for a code toggle.
-*
-* @example
-*   {% include content/code-toggle-button.html %}
-*
+
+  This include lets you easily add a button for a code toggle.
+
+  @example
+    {% include content/code-toggle-button.html %}
+
 {% endcomment %}
 {% assign code_toggle_button_count = code_toggle_button_count | plus: 1 %}
     <label class="code-toggle-label" for="highlight--{{ code_toggle_button_count }}" aria-hidden="true">
