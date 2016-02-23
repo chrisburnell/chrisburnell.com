@@ -74,16 +74,16 @@
             font-family: $font-family-monospace;
         }
     }
+
+    &[aria-hidden="true"] {
+        @extend .removed;
+    }
 }
 
 button,
 .button,
 .button--small {
     @extend %button;
-
-    &[aria-hidden="true"] {
-        display: none;
-    }
 }
 
 button {

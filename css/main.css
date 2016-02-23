@@ -1032,11 +1032,6 @@ button,
     height: auto;
     font-family: Monaco, Consolas, Courier, monospace; }
 
-button[aria-hidden="true"],
-.button[aria-hidden="true"],
-.button--small[aria-hidden="true"] {
-  display: none; }
-
 button[disabled] {
   opacity: 0.7;
   pointer-events: none; }
@@ -2277,7 +2272,10 @@ button [class*="icon"],
 
 .remove,
 .removed,
-p:empty {
+p:empty,
+button[aria-hidden="true"],
+[aria-hidden="true"].button,
+[aria-hidden="true"].button--small {
   display: none !important; }
 
 .non-selectable, button,
