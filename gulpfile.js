@@ -18,7 +18,9 @@ var gulp         = require('gulp'),
 var autoprefixer = require('autoprefixer'),
     cssnano      = require('cssnano'),
     reporter     = require('postcss-reporter'),
-    sassdoc      = require('sassdoc');
+    scss         = require('postcss-scss'),
+    sassdoc      = require('sassdoc'),
+    stylelint    = require('stylelint');
 
 // Define paths
 var paths = {
@@ -35,7 +37,38 @@ var paths = {
     docs: 'sassdoc/'
 };
 
+// Define SCSS Lint Rules
+var stylelintRules = {
+    'rules': {
+        'color-hex-case': 'lower',
+        'font-weight-notation': 'numeric',
+        'function-url-quotes': 'double',
+        'number-leading-zero': 'always',
+        'number-max-precision': 3,
+        'number-zero-length-no-unit': true,
+        'time-no-imperceptible': true,
+        'declaration-block-no-single-line': true,
+        'comment-whitespace-inside': 'always',
+        'indentation': 4,
+        'selector-no-id': true,
+        'string-quotes': 'double'
+    }
+};
+
 // -----------------------------------------------------------------------------
+
+// Lint SCSS
+gulp.task('css-lint', function() {
+    return gulp.src([paths.src.css + '*.scss'])
+        .pipe(plumber())
+        .pipe(postcss([
+            stylelint(stylelintRules),
+            reporter({
+                clearMessages: true,
+                throwError: true
+            })
+        ], { syntax: scss }));
+});
 
 // Compile main SCSS file
 gulp.task('css-compile', function() {
@@ -48,6 +81,10 @@ gulp.task('css-compile', function() {
         .pipe(postcss([
             autoprefixer({
                 browsers: ['last 2 versions', '> 1%']
+            }),
+            reporter({
+                clearMessages: true,
+                throwError: true
             })
         ]))
         .pipe(gulp.dest(paths.dist.css))
@@ -55,7 +92,11 @@ gulp.task('css-compile', function() {
             suffix: '.min'
         }))
         .pipe(postcss([
-            cssnano()
+            cssnano(),
+            reporter({
+                clearMessages: true,
+                throwError: true
+            })
         ]))
         .pipe(gulp.dest(paths.dist.css));
 });
@@ -148,7 +189,7 @@ gulp.task('default', function() {
 });
 
 // CSS task
-gulp.task('css', ['css-compile'], function() {
+gulp.task('css', ['css-lint', 'css-compile'], function() {
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });

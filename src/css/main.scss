@@ -12,49 +12,49 @@
 ////
 
 /// UTILS
-@import "utils/variables.global",
-        "utils/variables.code",
-        "utils/variables.branding",
-        "utils/functions",
-        "utils/mixins";
+@import "utils/variables.global";
+@import "utils/variables.code";
+@import "utils/variables.branding";
+@import "utils/functions";
+@import "utils/mixins";
 
 /// VENDORS
-@import "vendors/include-media",
-        "vendors/box-sizing",
-        "vendors/normalize";
+@import "vendors/include-media";
+@import "vendors/box-sizing";
+@import "vendors/normalize";
 
 /// BASE
-@import "base/page",
-        "base/typography.global",
-        "base/typography.code",
-        "base/anchors",
-        "base/buttons",
-        "base/inputs";
+@import "base/page";
+@import "base/typography.global";
+@import "base/typography.code";
+@import "base/anchors";
+@import "base/buttons";
+@import "base/inputs";
 
 /// LAYOUT
-@import "layout/wrap",
-        "layout/header",
-        "layout/article",
-        "layout/aside",
-        "layout/footer";
+@import "layout/wrap";
+@import "layout/header";
+@import "layout/article";
+@import "layout/aside";
+@import "layout/footer";
 
 /// COMPONENTS
-@import "components/logo",
-        "components/nav-primary",
-        "components/article",
-        "components/articles-list",
-        "components/small-articles-list",
-        "components/search",
-        "components/nav-secondary",
-        "components/author",
-        "components/aside-widgets",
-        "components/footer",
-        "components/nav-tertiary",
-        "components/comments",
-        "components/code",
-        "components/icons",
-        "components/media",
-        "components/print";
+@import "components/logo";
+@import "components/nav-primary";
+@import "components/article";
+@import "components/articles-list";
+@import "components/small-articles-list";
+@import "components/search";
+@import "components/nav-secondary";
+@import "components/author";
+@import "components/aside-widgets";
+@import "components/footer";
+@import "components/nav-tertiary";
+@import "components/comments";
+@import "components/code";
+@import "components/icons";
+@import "components/media";
+@import "components/print";
 
 /// PAGES
 @import "pages/styleguide";
