@@ -2125,7 +2125,7 @@ code[data-lang] {
     color: slateblue;
     color: rebeccapurple; }
 
-.icon--codepen, .icon--github, .icon--lastfm, .icon--rss, .icon--twitter, .icon--article, .icon--feather, .icon--heart, .icon--link, .icon--search, .icon--tag {
+[class*="icon"] {
   display: block;
   overflow: hidden; }
 

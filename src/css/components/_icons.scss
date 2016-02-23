@@ -9,19 +9,23 @@
     overflow: hidden;
 }
 
-%button [class*="icon"] {
-    fill: currentColor;
-    width:  0.8em;
-    height: 0.8em;
-    display: inline-block;
-    margin-right: 0.25em;
-    pointer-events: none;
-}
+[class*="icon"] {
+    @extend %icon;
 
-// Used on the Style Guide page
-.icons-list [class*="icon"] {
-    fill: $color-text;
-    height: ($measure-large * 2);
+    %button & {
+        fill: currentColor;
+        width:  0.8em;
+        height: 0.8em;
+        display: inline-block;
+        margin-right: 0.25em;
+        pointer-events: none;
+    }
+
+    // Used on the Style Guide page
+    .icons-list & {
+        fill: $color-text;
+        height: ($measure-large * 2);
+    }
 }
 
 /**
@@ -33,7 +37,6 @@
     $ratio:      nth($color-brand, 4);
 
     .icon--#{$name} {
-        @extend %icon;
         width: ($ratio * $icon-size);
 
         @if $name == "rss" {
