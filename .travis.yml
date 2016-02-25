@@ -29,7 +29,5 @@ env:
 after_success:
   - export SSHPASS=$DEPLOY_PASSWORD
   - tar -czvf site.tgz _site/*
-  - sshpass -e sftp -oPort=$DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST:/$DEPLOY_REMOTEDIR/
-  - put site.tgz
-  - tar --strip-components 1 -xzvf site.tgz
-  - rm site.tgz
+  - sshpass -e scp -p $DEPLOY_PORT site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_REMOTEDIR/site.tgz
+  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_REMOTEDIR/deploy.sh
