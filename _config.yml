@@ -42,7 +42,7 @@ timezone: Europe/London
 destination: ./_site
 layouts_dir: ./_layouts
 permalink: /:categories/:title/
-exclude: ['node_modules', '.sass-cache', 'src', 'vendor']
+exclude: ['.DS_Store', '.sass-cache', 'node_modules', 'src', 'vendor']
 incremental: true
 
 gems:
