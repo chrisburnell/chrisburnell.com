@@ -27,6 +27,7 @@ after_success:
   - export SSHPASS=$DEPLOY_PASSWORD
   - curl --ftp-create-dirs -T site.tgz -u $DEPLOY_USERNAME:$DEPLOY_PASSWORD ftp://$DEPLOY_HOST/$DEPLOY_REMOTEDIR/site.tgz
   - ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST
+  - yes
   - $DEPLOY_PASSWORD
   - ls -a
   - cd sites
