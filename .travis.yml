@@ -23,9 +23,4 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 after_success:
-  - tar -czvf site.tgz _site/*
-  - export SSHPASS=$DEPLOY_PASSWORD
-  - sshpass -e scp site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
-  - sshpass -e ssh $DEPLOY_USERNAME@$DEPLOY_HOST
-  - tar --strip-components 1 -xzvf site.tgz
-  - rm site.tgz
+  - bundle exec travis-custom-deploy sftp service:jekyll
