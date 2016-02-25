@@ -26,7 +26,8 @@ after_success:
   - tar -czvf site.tgz _site/*
   - export SSHPASS=$DEPLOY_PASSWORD
   - curl --ftp-create-dirs -T site.tgz -u $DEPLOY_USERNAME:$DEPLOY_PASSWORD ftp://$DEPLOY_HOST/$DEPLOY_REMOTEDIR/site.tgz
-  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST
+  - ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST
+  - $DEPLOY_PASSWORD
   - ls -a
   - cd sites
   - cd sitetestamazing
