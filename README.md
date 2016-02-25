@@ -3,6 +3,8 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/).
 
+[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
+
 
 ## Table of Contents
 
@@ -17,7 +19,6 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [Sass Structure](#sass-structure)
 - [Generated](#generated)
 - [License](#license)
-- [Continuous Integration](#continuous-integration)
 
 
 ## version 2.7.0
@@ -167,8 +168,3 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 [![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 
 The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creative Commons License](LICENSE).
-
-
-## Continuous Integration
-
-[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)

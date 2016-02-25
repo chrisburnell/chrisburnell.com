@@ -16,4 +16,9 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 after_success:
-  "curl --ftp-create-dirs -T /_site/* -u $FTP_USERNAME:$FTP_PASSWORD ftp://ftp.chrisburnell.com"
+  - tar -czf site.tgz _site/*
+  - export SSHPASS=$DEPLOY_PASSWORD
+  - sshpass -e scp site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST
+  - sshpass -e scp ssh $DEPLOY_USERNAME@$DEPLOY_HOST
+  - tar -xzf site.tgz
+  - rm site.tgz
