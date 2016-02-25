@@ -12,15 +12,6 @@
     font-weight: $font-weight-bold;
     line-height: 2;
 
-    @include media(">medium") {
-        float: right;
-    }
-
-    @include media("<=medium") {
-        display: block;
-        margin-top: $measure-medium;
-    }
-
     &::after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";

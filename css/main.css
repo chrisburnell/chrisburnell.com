@@ -1444,6 +1444,12 @@ footer {
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
+  @media (min-width: 769px) {
+    .articles-list .comments-anchor {
+      float: right; } }
+  @media (max-width: 768px) {
+    .articles-list .comments-anchor {
+      margin-top: 1.25rem; } }
 
 .small-articles-list {
   display: -webkit-box;
@@ -1928,13 +1934,6 @@ footer {
   font-family: "proxima-nova", sans-serif;
   font-weight: 600;
   line-height: 2; }
-  @media (min-width: 769px) {
-    .comments-anchor {
-      float: right; } }
-  @media (max-width: 768px) {
-    .comments-anchor {
-      display: block;
-      margin-top: 1.25rem; } }
   .comments-anchor::after {
     content: " →"; }
 

@@ -1268,6 +1268,12 @@ aside p {
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
+  @media (min-width: 769px) {
+    .articles-list .comments-anchor {
+      float: right; } }
+  @media (max-width: 768px) {
+    .articles-list .comments-anchor {
+      margin-top: 1.25rem; } }
 
 /**
  * The `.author` aside is always pushed underneath the content below the medium

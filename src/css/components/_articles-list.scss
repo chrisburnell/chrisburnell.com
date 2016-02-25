@@ -67,4 +67,14 @@
             margin-right: $measure-small;
         }
     }
+
+    .comments-anchor {
+        @include media(">medium") {
+            float: right;
+        }
+
+        @include media("<=medium") {
+            margin-top: $measure-medium;
+        }
+    }
 }
