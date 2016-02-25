@@ -4,8 +4,8 @@ rvm:
 
 install:
   - bundle install
-  - gem install jekyll html-proofer
-script: jekyll build && htmlproof ./_site
+  - gem install jekyll
+script: jekyll build
 
 branches:
   only:
