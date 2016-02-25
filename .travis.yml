@@ -11,6 +11,10 @@ addons:
 install:
   - bundle install
   - gem install jekyll
+
+before_script:
+  - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
 script:
   - jekyll build
 
