@@ -171,5 +171,4 @@ The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creative
 
 ## Continuous Integration
 
-[ ![Codeship Status for chrisburnell/chrisburnell.github.io](https://codeship.com/projects/58777db0-797b-0133-2e51-7addd7fed507/status?branch=master)](https://codeship.com/projects/118727)
-
+[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
