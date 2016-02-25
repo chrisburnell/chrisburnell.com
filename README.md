@@ -1,24 +1,28 @@
 # chrisburnell.com
 
+
 The source code for [chrisburnell.com](https://chrisburnell.com/).
 
 
-### Table of Contents
+## Table of Contents
 
 - [Title](#chrisburnellcom)
-- [Version](#version-260)
+- [Version](#version-270)
 - [Description](#description)
 - [Build Process](#build-process)
-- [Generated](#generated)
+- [Workflow](#workflow)
 - [Layouts](#layouts)
 - [Includes](#includes)
+- [Sass Structure](#sass-structure)
+- [Generated](#generated)
 - [License](#license)
+- [Continuous Integration](#continuous-integration)
 
 
-### version 2.7.0
+## version 2.7.0
 
 
-### Description
+## Description
 
 My website doubles as a blog and as a playground for me to perfect the code that
 comprises the site and to experiment with new methodologies and technologies.
@@ -30,74 +34,136 @@ don’t hesitate to get in touch—via
 report bugs or suggestions.
 
 
-### Build Process
+## Build Process
 
 - [Github Pages](http://pages.github.com)
 - [Jekyll](http://jekyllrb.com)
 - [SCSS](http://sass-lang.com)
 - [Autoprefixer](https://github.com/ai/autoprefixer)
 - [Gulp](http://gulpjs.com)
+- [PostCSS](http://postcss.org/)
 
 
-### Workflow
+## Workflow
 
-Building this website requires both `jekyll` and `gulp`.
-
-
-### Generated
-
-- /_includes/generated/critical-css.html
-- /_includes/generated/loadcss.html
-- /serviceworker.min.js
-
-### Layouts
-
-- default
-- article
-
-### Includes
-
-- /body
-  - body-css-js.html
-  - body-search-templates.html
-- /components
-  - banner.html
-  - comments.html
-  - nav-primary.html
-  - nav-tertiary.html
-  - svg.html
-- /content
-  - code-toggle-button.html
-  - code-toggle-input.html
-  - codepen.html
-  - heading.html
-- /generated *
-  - critical-css.html
-  - loadcss.html
-  - typekit.html
-- /head
-  - head-css.html
-  - head-js.html
-  - head.html
-- /layout
-  - header.html
-  - footer.html
-- /main-aside
-  - main-aside.html
-  - /widgets
-    - featured-pens.html
-    - related-articles.html
-    - search.html
+Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 
 
-### License
+## Layouts
+
+```text
+├── article.html
+└── default.html
+```
+
+
+## Includes
+
+```text
+├── components
+│   ├── amp-boilerplate.html
+│   ├── assets-body.html
+│   ├── assets-head.html
+│   ├── banner.html
+│   ├── comments.html
+│   ├── head.html
+│   ├── nav-primary.html
+│   ├── nav-secondary.html
+│   ├── nav-tertiary.html
+│   ├── search-templates.html
+│   └── svg.html
+├── content
+│   ├── code-toggle-button.html
+│   ├── code-toggle-input.html
+│   ├── codepen.html
+│   └── heading.html
+├── generated
+│   ├── critical-css.html
+│   ├── loadcss.html
+│   └── typekit.html
+├── layouts
+│   ├── footer.html
+│   └── header.html
+└── main-aside
+    ├── main-aside.html
+    └── widgets
+        ├── featured-pens.html
+        ├── related-articles.html
+        ├── search.html
+        └── shared-links.html
+```
+
+
+## Sass Structure
+
+```text
+├── critical.scss
+├── main.scss
+├── base
+│   ├── _anchors.scss
+│   ├── _buttons.scss
+│   ├── _inputs.scss
+│   ├── _page.scss
+│   ├── _typography.code.scss
+│   └── _typography.global.scss
+├── components
+│   ├── _article.scss
+│   ├── _articles-list.scss
+│   ├── _aside-widgets.scss
+│   ├── _author.scss
+│   ├── _code.scss
+│   ├── _comments.scss
+│   ├── _footer.scss
+│   ├── _icons.scss
+│   ├── _logo.scss
+│   ├── _media.scss
+│   ├── _nav-primary.scss
+│   ├── _nav-secondary.scss
+│   ├── _nav-tertiary.scss
+│   ├── _print.scss
+│   ├── _search.scss
+│   └── _small-articles-list.scss
+├── layout
+│   ├── _article.scss
+│   ├── _aside.scss
+│   ├── _footer.scss
+│   ├── _header.scss
+│   └── _wrap.scss
+├── pages
+│   └── _styleguide.scss
+├── utils
+│   ├── _functions.scss
+│   ├── _helpers.scss
+│   ├── _mixins.scss
+│   ├── _variables.branding.scss
+│   ├── _variables.code.scss
+│   └── _variables.global.scss
+└── vendors
+    ├── _box-sizing.scss
+    ├── _include-media.scss
+    └── _normalize.scss
+```
+
+
+## Generated
+
+```text
+├── serviceworker.min.js
+└── _includes
+    └── generated
+        ├── critical-css.html
+        └── loadcss.html
+```
+
+
+## License
 
 [![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
 
-The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creatice Commons License](LICENSE).
+The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creative Commons License](LICENSE).
 
 
-### Continuous Integration
+## Continuous Integration
 
-![Codeship Status](https://codeship.com/projects/118727/status?branch=master)
+[ ![Codeship Status for chrisburnell/chrisburnell.github.io](https://codeship.com/projects/58777db0-797b-0133-2e51-7addd7fed507/status?branch=master)](https://codeship.com/projects/118727)
 
