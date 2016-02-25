@@ -3,11 +3,6 @@ language: ruby
 rvm:
 - 2.1
 
-addons:
-  apt:
-    packages:
-      - sshpass
-
 install:
   - bundle install
   - gem install jekyll
@@ -23,4 +18,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 after_success:
-  - bundle exec travis-custom-deploy sftp service:jekyll
+  - sftp -oPort=$DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST
+  - cd sites
+  - cd sitetestamazing
+  - put _site/*
