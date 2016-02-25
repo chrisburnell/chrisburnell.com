@@ -9,6 +9,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [Title](#chrisburnellcom)
 - [Version](#version-270)
 - [Description](#description)
+- [Contributing](#contributing)
 - [Build Process](#build-process)
 - [Workflow](#workflow)
 - [Layouts](#layouts)
@@ -32,6 +33,11 @@ site or this Github repository. If you have any questions or suggestions, please
 don’t hesitate to get in touch—via
 [twitter](https://twitter.com/iamchrisburnell) or email—or open a new issue to
 report bugs or suggestions.
+
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md).
 
 
 ## Build Process
