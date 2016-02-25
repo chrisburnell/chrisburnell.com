@@ -1,11 +1,18 @@
 language: ruby
+
 rvm:
 - 2.1
+
+addons:
+  apt:
+    packages:
+      - sshpass
 
 install:
   - bundle install
   - gem install jekyll
-script: jekyll build
+script:
+  - jekyll build
 
 branches:
   only:
