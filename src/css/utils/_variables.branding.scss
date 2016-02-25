@@ -17,7 +17,7 @@ $color-lastfm: #e31b23 !default;
 /// @type Color
 $color-rss: #ff9770 !default;
 /// @type Color
-$color-twitter: darken(#55acee, 10%) !default;
+$color-twitter: mix($color-black, #55acee, 10%) !default;
 
 
 /// @type List

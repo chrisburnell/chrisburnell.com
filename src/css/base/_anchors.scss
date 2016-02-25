@@ -19,7 +19,7 @@
     }
 
     &:visited {
-        color: darken($color-brand, 10%);
+        color: mix($color-black, $color-brand, 10%);
     }
 
     &:hover,
@@ -32,7 +32,7 @@
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: darken($color-brand, 10%);
+            border-bottom-color: mix($color-black, $color-brand, 10%);
         }
     }
 }
@@ -49,7 +49,7 @@ a {
         }
 
         &:visited {
-            color: lighten($color-text, 10%);
+            color: mix($color-white, $color-text, 10%);
         }
     }
     h3 & {
@@ -102,7 +102,7 @@ a {
     }
 
     &:visited {
-        color: darken($color-text-alt, 10%);
+        color: mix($color-black, $color-text-alt, 10%);
     }
 
     &:hover,
@@ -117,7 +117,7 @@ a {
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: darken($color-text-alt, 10%);
+            border-bottom-color: mix($color-black, $color-text-alt, 10%);
         }
     }
 
@@ -140,7 +140,7 @@ a {
 
         &:link,
         &:visited {
-            border-bottom-color: lighten($text-color, 20%);
+            border-bottom-color: mix($color-white, $text-color, 20%);
 
             &:hover,
             &:focus,

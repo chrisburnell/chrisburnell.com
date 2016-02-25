@@ -121,7 +121,7 @@
     a:visited:hover .title,
     a:visited:focus .title,
     a:visited:active .title {
-        border-bottom-color: darken($color-brand, 10%);
+        border-bottom-color: mix($color-black, $color-brand, 10%);
     }
 
     .lede {
