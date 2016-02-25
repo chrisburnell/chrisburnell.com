@@ -1,6 +1,6 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "jekyll"
-gem "jekyll-redirect-from"
+gem 'jekyll', '~> 3.1', '>= 3.1.2'
+gem 'jekyll-redirect-from', '~> 0.9.1'
 # gem "jemoji"
 gem "html-proofer"
