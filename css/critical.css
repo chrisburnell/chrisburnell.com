@@ -1354,10 +1354,9 @@ aside p {
 [class*="icon"] {
   display: block;
   overflow: hidden; }
-
-.icons-list [class*="icon"] {
-  fill: #4f4f4f;
-  height: 4.5rem; }
+  .icons-list [class*="icon"] {
+    fill: #4f4f4f;
+    height: 4.5rem; }
 
 /**
  * Brand Icon Widths and Colors
@@ -1454,9 +1453,9 @@ aside:not(.author),
   background-clip: padding-box;
   border-radius: 0.375rem; }
 
-.border-radius-thin,
-.round-thin,
-.rounded-thin,
+.border-radius--thin,
+.round--thin,
+.rounded--thin,
 blockquote code,
 details code,
 dl code,

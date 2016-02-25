@@ -4,13 +4,9 @@
 ////
 
 
-%icon {
+[class*="icon"] {
     display: block;
     overflow: hidden;
-}
-
-[class*="icon"] {
-    @extend %icon;
 
     %button & {
         fill: currentColor;

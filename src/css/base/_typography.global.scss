@@ -30,7 +30,7 @@ p {
 /**
  * Headings
  */
-%heading {
+%heading-elements {
     // so that elements can be floated inside headings
     min-height: ($line-height-small * 1em);
     padding: 0;
@@ -45,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %heading;
+    @extend %heading-elements;
 }
 
 /**

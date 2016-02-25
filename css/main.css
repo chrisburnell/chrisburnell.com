@@ -2126,20 +2126,18 @@ code[data-lang] {
 [class*="icon"] {
   display: block;
   overflow: hidden; }
-
-button [class*="icon"],
-.button [class*="icon"],
-.button--small [class*="icon"] {
-  fill: currentColor;
-  width: 0.8em;
-  height: 0.8em;
-  display: inline-block;
-  margin-right: 0.25em;
-  pointer-events: none; }
-
-.icons-list [class*="icon"] {
-  fill: #4f4f4f;
-  height: 4.5rem; }
+  button [class*="icon"],
+  .button [class*="icon"],
+  .button--small [class*="icon"] {
+    fill: currentColor;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    margin-right: 0.25em;
+    pointer-events: none; }
+  .icons-list [class*="icon"] {
+    fill: #4f4f4f;
+    height: 4.5rem; }
 
 /**
  * Brand Icon Widths and Colors
@@ -2316,9 +2314,9 @@ aside:not(.author),
   background-clip: padding-box;
   border-radius: 0.375rem; }
 
-.border-radius-thin,
-.round-thin,
-.rounded-thin,
+.border-radius--thin,
+.round--thin,
+.rounded--thin,
 blockquote code,
 details code,
 dl code,

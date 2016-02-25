@@ -35,10 +35,6 @@
             border-bottom-color: darken($color-brand, 10%);
         }
     }
-
-    span:not([class]):not([itemprop]) {
-        @extend .hidden;
-    }
 }
 
 a {
@@ -62,6 +58,10 @@ a {
         &:active {
             text-decoration: underline;
         }
+    }
+
+    span:not([class]):not([itemprop]) {
+        @extend .hidden;
     }
 }
 
@@ -121,9 +121,9 @@ a {
         }
     }
 
-    %heading:hover &,
-    %heading:focus &,
-    %heading:active & {
+    %heading-elements:hover &,
+    %heading-elements:focus &,
+    %heading-elements:active & {
         display: inline-block;
     }
 }

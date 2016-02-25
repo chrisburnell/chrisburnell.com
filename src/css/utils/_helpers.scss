@@ -30,7 +30,8 @@
     -webkit-touch-callout: none;
 }
 
-// Hyphenate any looong text
+// Hyphenate any looooooooooooooooooooo-
+// oooooong text
 .hyphen,
 .hyphenate {
     overflow-wrap: break-word;
@@ -44,8 +45,8 @@
 .rounded {
     @include border-radius;
 }
-.border-radius-thin,
-.round-thin,
-.rounded-thin {
+.border-radius--thin,
+.round--thin,
+.rounded--thin {
     @include border-radius(thin);
 }

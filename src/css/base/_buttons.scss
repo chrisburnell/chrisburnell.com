@@ -6,7 +6,7 @@
 
 %button {
     @extend .non-selectable;
-    @extend .rounded-thin;
+    @extend .rounded--thin;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     background-color: $color-brand;
