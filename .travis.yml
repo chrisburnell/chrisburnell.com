@@ -25,7 +25,7 @@ env:
 after_success:
   - tar -czf site.tgz _site/*
   - export SSHPASS=$DEPLOY_PASSWORD
-  - sshpass -e scp site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST
+  - sshpass -e scp site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
   - sshpass -e ssh $DEPLOY_USERNAME@$DEPLOY_HOST
   - tar -xzf site.tgz
   - rm site.tgz
