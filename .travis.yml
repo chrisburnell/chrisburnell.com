@@ -16,4 +16,4 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 after_success:
-  "curl --ftp-create-dirs -T index.html -u $FTP_USERNAME:$FTP_PASSWORD ftp://ftp.chrisburnell.com/home/chjspi/sites/sitetestamazing/index.html"
+  "curl --ftp-create-dirs -T _site/index.html -u $FTP_USERNAME:$FTP_PASSWORD ftp://ftp.chrisburnell.com"
