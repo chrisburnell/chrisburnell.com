@@ -29,5 +29,5 @@ env:
 after_success:
   - tar -czvf chrisburnell.tgz
   - export SSHPASS=$DEPLOY_PASSWORD
-  - sshpass -e scp -P $DEPLOY_PORT chrisburnell.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
+  - sshpass -e scp -P $DEPLOY_PORT chrisburnell.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH/chrisburnell.tgz
   - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh
