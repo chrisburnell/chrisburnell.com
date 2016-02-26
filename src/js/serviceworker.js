@@ -9,7 +9,7 @@
     'use strict';
 
     // Increment this when updating the Service Worker
-    var VERSION = '17';
+    var VERSION = '18';
 
     // Name the cache
     var CACHE_NAME = 'chrisburnell';
@@ -17,19 +17,22 @@
     // Name of the respective file (should be at root of project)
     var FILE_NAME = 'serviceworker.min.js';
 
+    // Force HTTPS caching
+    var SITE_NAME = 'https://chrisburnell.com';
+
     // The files we want to cache
     var urlsToCache = [
-            '/',
-            '/about',
-            '/articles',
-            '/pens',
-            '/links',
-            '/tags',
-            '/search',
-            '/search.json',
-            '/styleguide',
-            '/css/main.min.css',
-            '/js/main.min.js'
+            SITE_NAME + '/',
+            SITE_NAME + '/about',
+            SITE_NAME + '/articles',
+            SITE_NAME + '/pens',
+            SITE_NAME + '/links',
+            SITE_NAME + '/tags',
+            SITE_NAME + '/search',
+            SITE_NAME + '/search.json',
+            SITE_NAME + '/styleguide',
+            SITE_NAME + '/css/main.min.css',
+            SITE_NAME + '/js/main.min.js'
         ];
 
     // Console Feedback
@@ -153,12 +156,12 @@
                 .then( function(keys) {
                     return Promise.all(
                         keys
-                        .filter( function (key) {
-                            return !key.startsWith('v' + VERSION);
-                        })
-                        .map( function(key) {
-                            return caches.delete(key);
-                        })
+                            .filter( function (key) {
+                                return !key.startsWith('v' + VERSION);
+                            })
+                            .map( function(key) {
+                                return caches.delete(key);
+                            })
                     );
                 })
                 .then(function() {
