@@ -2,7 +2,7 @@
         <div class="wrap  clear">
             <section class="copyright">
                 <a rel="home" class="footer-home-anchor" href="/" title="Home">
-                    <svg class="icon--raven"><use xlink:href="#svg--raven" /></svg>
+                    {% include content/svg.html type='raven' %}
                 </a>
                 <a rel="license" class="footer-copyright-anchor" href="{{ site.url_copyright }}">© {{ site.time | date: '%Y' }} <span class="canada">{{ site.author }}</span></a>
                 <a class="footer-style-guide-anchor" href="/styleguide">Style Guide</a>

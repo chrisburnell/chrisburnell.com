@@ -6,7 +6,7 @@
         {% for post in site.categories.pen limit: 2 %}
             <li role="listitem">
                 <a href="{{ post.url }}">
-                    <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                    {% include content/svg.html type='codepen' %}
                     <h4 class="title">{{ post.title }}</h4>
                     {% if post.lede %}
                         <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
