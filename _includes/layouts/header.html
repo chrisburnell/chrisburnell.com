@@ -32,12 +32,12 @@ snippet of code on a project of your own. -->
 
 <body{% if body_class != '' %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
-    {% include components/svg.html %}
+    {% include components/svg-master.html %}
 
     <header class="wrap  clear" role="banner">
 
         <a rel="home" class="logo" href="/" title="{{ site.title }}" tabindex="1">
-            <svg class="icon--raven"><use xlink:href="#svg--raven" /></svg>
+            {% include content/svg.html type='raven' %}
         </a>
 
         {% include components/nav-primary.html %}

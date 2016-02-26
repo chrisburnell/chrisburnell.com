@@ -31,26 +31,26 @@ lede: All of my articles listed on one page.
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/feed-articles.xml">
-        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
+        {% include content/svg.html type='rss' %}
         Subscribe to Articles
     </a>
     <a rel="me author" class="button" href="/feed.xml">
-        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
+        {% include content/svg.html type='rss' %}
         Subscribe to All
     </a>
 </nav>
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/pens">
-        <svg class="icon--heart"><use xlink:href="#svg--heart" /></svg>
+        {% include content/svg.html type='heart' %}
         Pens Archive
     </a>
     <a rel="me author" class="button" href="/links">
-        <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
+        {% include content/svg.html type='link' %}
         Links Archive
     </a>
     <a rel="me author" class="button" href="/tags">
-        <svg class="icon--tag"><use xlink:href="#svg--tag" /></svg>
+        {% include content/svg.html type='tag' %}
         Tags Archive
     </a>
 </nav>

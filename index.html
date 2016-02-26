@@ -29,7 +29,7 @@ searchable: no-content
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/articles">
-        <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
+        {% include content/svg.html type='article' %}
         Articles Archive
     </a>
 </nav>
@@ -43,7 +43,7 @@ searchable: no-content
     {% for post in site.categories.pen limit: 4 %}
         <li role="listitem">
             <a href="{{ post.url }}">
-                <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
+                {% include content/svg.html type='codepen' %}
                 <h4 class="title">{{ post.title }}</h4>
                 {% if post.lede %}
                     <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
@@ -58,7 +58,7 @@ searchable: no-content
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/pens">
-        <svg class="icon--heart"><use xlink:href="#svg--heart" /></svg>
+        {% include content/svg.html type='heart' %}
         Pens Archive
     </a>
 </nav>
@@ -72,7 +72,7 @@ searchable: no-content
     {% for post in site.categories.link limit: 4 %}
         <li role="listitem">
             <a href="{{ post.url }}">
-                <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
+                {% include content/svg.html type='link' %}
                 <h4 class="title">{{ post.title }}</h4>
                 {% if post.lede %}
                     <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
@@ -87,7 +87,7 @@ searchable: no-content
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/links">
-        <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
+        {% include content/svg.html type='link' %}
         Links Archive
     </a>
 </nav>
