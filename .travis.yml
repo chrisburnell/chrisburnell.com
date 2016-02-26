@@ -27,7 +27,9 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 after_success:
+  - mkdir build
+  - mv * build
+  - tar -czvf chrisburnell.tgz _site/*
   - export SSHPASS=$DEPLOY_PASSWORD
-  - tar -czvf site.tgz _site/*
-  - sshpass -e scp -P $DEPLOY_PORT site.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:/$DEPLOY_REMOTEPARENT/$DEPLOY_REMOTEDIR/site.tgz
-  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_REMOTEDIR/deploy.sh
+  - sshpass -e scp -P $DEPLOY_PORT chrisburnell.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
+  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh
