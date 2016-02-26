@@ -15,7 +15,7 @@ input[type="tel"],
 input[type="text"],
 input[type="week"],
 textarea {
-    @extend .rounded--thin;
+    @include border-radius(thin);
     @include transition(background-color, border-color);
     @include will-change(background-color, border-color);
     box-sizing: inherit !important;

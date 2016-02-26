@@ -20,7 +20,7 @@ aside {
         width: 100%;
 
         &:not(.author) {
-            @extend .rounded;
+            @include border-radius;
             background: $color-black--5-percent;
             padding: $measure-small;
             margin-bottom: $measure-medium;

@@ -4,9 +4,12 @@
 ////
 
 
-%button {
-    @extend .non-selectable;
-    @extend .rounded--thin;
+button,
+.button,
+.button--small {
+    @extend %button-elements;
+    @include non-selectable;
+    @include border-radius(thin);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     background-color: $color-brand;
@@ -76,14 +79,8 @@
     }
 
     &[aria-hidden="true"] {
-        @extend .removed;
+        display: none;
     }
-}
-
-button,
-.button,
-.button--small {
-    @extend %button;
 }
 
 button {

@@ -4,11 +4,11 @@
 ////
 
 
-[class*="icon"] {
+.icon {
     display: block;
     overflow: hidden;
 
-    %button & {
+    %button-elements & {
         fill: currentColor;
         width:  0.8em;
         height: 0.8em;
@@ -38,7 +38,7 @@
         @if $name == "rss" {
             // the RSS icon should remain orange when nested in a button
             &,
-            %button & {
+            %button-elements & {
                 fill: $icon-color;
             }
         } @else {

@@ -5,7 +5,7 @@
 
 
 .logo {
-    @extend .non-selectable;
+    @include non-selectable;
     display: inline-block;
     position: relative;
     border-bottom-width: 0;

@@ -22,7 +22,7 @@
         justify-content: center;
     }
 
-    %button {
+    %button-elements {
         display: inline-block;
 
         @include media(">small") {
@@ -34,7 +34,7 @@
             margin-left:  auto;
             margin-right: auto;
 
-            & + %button {
+            & + %button-elements {
                 margin-top: $measure-small;
             }
         }

@@ -50,7 +50,7 @@ footer {
         transform: translateY(.2rem);
     }
 
-    [class*="icon"] {
+    .icon {
         @include transition(opacity);
         @include will-change(opacity);
         opacity: opacity("90-percent");
@@ -62,7 +62,7 @@ footer {
     &:hover,
     &:focus,
     &:active {
-        [class*="icon"] {
+        .icon {
             opacity: opacity(1);
         }
     }

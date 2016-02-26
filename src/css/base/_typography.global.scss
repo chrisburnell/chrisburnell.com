@@ -112,7 +112,7 @@ h3 {
     }
 
     article > & {
-        @extend .clear;
+        @include clear;
         width: auto;
         max-width: 100%;
         display: inline-block;
@@ -151,7 +151,7 @@ p {
     }
 
     &:empty {
-        @extend .removed;
+        display: none;
     }
 }
 
@@ -327,7 +327,7 @@ figure {
     img,
     svg,
     & > a {
-        @extend .rounded;
+        @include border-radius;
         display: block;
         margin-left:  auto;
         margin-right: auto;
@@ -351,7 +351,7 @@ figure {
 }
 
 blockquote {
-    @extend .rounded;
+    @include border-radius;
     @include quotes;
     background-color: $color-brand--10-percent;
     padding: $measure-medium;

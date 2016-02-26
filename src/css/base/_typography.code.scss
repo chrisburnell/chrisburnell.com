@@ -27,7 +27,7 @@ kbd,
 mark,
 samp,
 var {
-    @extend .rounded--thin;
+    @include border-radius(thin);
     background-color: $color-brand--10-percent;
     padding: 0.25rem;
     // force text to wrap inside the container
@@ -43,7 +43,7 @@ pre {
     margin-bottom: $measure-medium;
 
     &:not(.codepen) {
-        @extend .rounded;
+        @include border-radius;
         background-color: $color-black--5-percent;
         padding: $measure-medium $measure-medium 1rem;
         margin-top:    $measure-large;

@@ -7,9 +7,10 @@
         {% else if site.link_slug != null or site.link_slug != empty or site.link_slug != false %}
             {% assign url = site.link_slug %}
         {% endif %}
+        {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
         <li>
             <a{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if url %} href="{{ url | liquify }}"{% endif %} title="{{ link.title }}">
-                <svg class="icon--{{ link.title | slugify }}"><use xlink:href="#svg--{{ link.title | slugify }}" /></svg>
+                {% include content/svg.html type=svg_type %}
             </a>
         </li>
     {% endfor %}

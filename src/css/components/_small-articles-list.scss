@@ -78,7 +78,7 @@
     }
 
     a {
-        @extend .rounded;
+        @include border-radius;
         display: block;
         padding: $measure-medium;
         border-bottom-width: 0;

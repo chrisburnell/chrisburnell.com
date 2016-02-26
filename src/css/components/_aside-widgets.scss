@@ -5,14 +5,7 @@
 
 
 .widget {
-    @extend .clear;
-}
-
-.widget--related-articles,
-.widget--featured-pens,
-.widget--shared-links,
-.widget--search {
-    @extend .widget;
+    @include clear;
 }
 
 .widget-featured-anchor {

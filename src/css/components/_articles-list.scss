@@ -60,7 +60,7 @@
         }
     }
 
-    %button,
+    %button-elements,
     .comments-anchor {
         @include media("<=medium") {
             margin-left:  $measure-small;

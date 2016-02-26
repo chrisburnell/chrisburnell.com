@@ -364,6 +364,15 @@ html {
   position: relative;
   overflow-y: scroll; }
 
+.svg--master {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; }
+
 html {
   background-color: #4f4f4f;
   font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
@@ -437,10 +446,17 @@ h3 {
   100% {
     background-color: transparent; } }
   article > h3 {
+    clear: both;
+    zoom: 1;
     width: auto;
     max-width: 100%;
     display: inline-block;
     padding-right: 2.25rem; }
+    article > h3::before, article > h3::after {
+      content: "";
+      display: table; }
+    article > h3::after {
+      clear: both; }
   .lede--featured + h3 {
     margin-top: 0; }
   h3 code, h3
@@ -464,6 +480,8 @@ p {
   margin: 0 0 1.25rem; }
   p:last-child {
     margin-bottom: 0; }
+  p:empty {
+    display: none; }
 
 /**
  * Lists
@@ -621,6 +639,8 @@ figure {
   figure img,
   figure svg,
   figure > a {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
     display: block;
     margin-left: auto;
     margin-right: auto; }
@@ -636,6 +656,8 @@ figure {
     text-align: center; }
 
 blockquote {
+  background-clip: padding-box;
+  border-radius: 0.375rem;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1.25rem;
   margin: 0 2.25rem 1.25rem; }
@@ -764,6 +786,8 @@ kbd,
 mark,
 samp,
 var {
+  background-clip: padding-box;
+  border-radius: 0.25rem;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0.25rem;
   word-wrap: break-word; }
@@ -775,6 +799,8 @@ pre {
   margin-top: 0;
   margin-bottom: 1.25rem; }
   pre:not(.codepen) {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
     background-color: rgba(6, 6, 6, 0.05);
     padding: 1.25rem 1.25rem 1rem;
     margin-top: 2.25rem;
@@ -809,19 +835,25 @@ a {
     border-bottom-color: #5f8aa6; }
   a:visited:hover, a:visited:focus, a:visited:active {
     border-bottom-color: #567d96; }
-
-h2 a,
-h3 a {
-  border-bottom-width: 0; }
-  h2 a:link,
-  h3 a:link {
-    color: #4f4f4f; }
-  h2 a:visited,
-  h3 a:visited {
-    color: #606060; }
-
-h3 a:hover, h3 a:focus, h3 a:active {
-  text-decoration: underline; }
+  h2 a,
+  h3 a {
+    border-bottom-width: 0; }
+    h2 a:link,
+    h3 a:link {
+      color: #4f4f4f; }
+    h2 a:visited,
+    h3 a:visited {
+      color: #606060; }
+  h3 a:hover, h3 a:focus, h3 a:active {
+    text-decoration: underline; }
+  a span:not([class]):not([itemprop]) {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; }
 
 .title-anchor {
   -webkit-transition: border-color 0.2s ease;
@@ -956,7 +988,7 @@ h3 a:hover, h3 a:focus, h3 a:active {
 main {
   padding-bottom: 2.25rem; }
 
-.wrap, .wrap--full-width {
+.wrap {
   width: auto;
   max-width: 1140px;
   padding-right: 1.25rem;
@@ -965,15 +997,15 @@ main {
   margin-left: auto; }
 
 .wrap--full-width {
-  width: 100%; }
+  max-width: 100%; }
 
-.clear, article > h3 {
+.clear {
   clear: both;
   zoom: 1; }
-  .clear::before, article > h3::before, .clear::after, article > h3::after {
+  .clear::before, .clear::after {
     content: "";
     display: table; }
-  .clear::after, article > h3::after {
+  .clear::after {
     clear: both; }
 
 header {
@@ -1020,6 +1052,8 @@ article {
   aside {
     width: 100%; }
     aside:not(.author) {
+      background-clip: padding-box;
+      border-radius: 0.375rem;
       background: rgba(6, 6, 6, 0.05);
       padding: 0.625rem;
       margin-bottom: 1.25rem; }
@@ -1038,6 +1072,12 @@ aside p {
       font-size: 0.875rem; } }
 
 .logo {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: default;
+  -webkit-touch-callout: none;
   display: inline-block;
   position: relative;
   border-bottom-width: 0; }
@@ -1198,20 +1238,22 @@ aside p {
       text-align: left; } }
 
 .banner {
+  background-clip: padding-box;
+  border-radius: 0.375rem;
   width: 810px;
   margin-bottom: 2.25rem; }
   @media (max-width: 500px) {
     .banner {
       width: 500px; } }
 
-.lede, .lede--featured {
+.lede {
   margin-bottom: 2.25rem;
   font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
-    .lede, .lede--featured {
+    .lede {
       text-align: left; } }
-  aside + .lede, aside + .lede--featured {
+  aside + .lede {
     margin-top: -0.5rem; }
 
 .lede--featured {
@@ -1223,6 +1265,8 @@ aside p {
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
 .edit {
+  background-clip: padding-box;
+  border-radius: 0.375rem;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1rem;
   margin: 0 2.25rem 2.25rem;
@@ -1253,7 +1297,7 @@ aside p {
     text-shadow: 0 1px 0 #f9f9f9; }
   .articles-list .title {
     margin-bottom: 0.625rem; }
-  .articles-list .lede, .articles-list .lede--featured {
+  .articles-list .lede {
     margin-bottom: 1.25rem; }
   .articles-list .date {
     margin-bottom: 0.625rem; }
@@ -1323,6 +1367,8 @@ aside p {
     text-decoration: underline; }
 
 .author-image {
+  background-clip: padding-box;
+  border-radius: 0.375rem;
   background-image: -webkit-linear-gradient(bottom left, transparent 0%, #99c0e2 100%), -webkit-linear-gradient(top right, transparent 0%, #9d858b 100%), -webkit-linear-gradient(top left, transparent 0%, #5990ad 100%), -webkit-linear-gradient(bottom right, transparent 0%, #89634f 100%);
   background-image: linear-gradient(to top right, transparent 0%, #99c0e2 100%), linear-gradient(to bottom left, transparent 0%, #9d858b 100%), linear-gradient(to bottom right, transparent 0%, #5990ad 100%), linear-gradient(to top left, transparent 0%, #89634f 100%);
   background-size: 100%;
@@ -1332,6 +1378,8 @@ aside p {
   margin-right: 0.625rem;
   margin-bottom: 0.625rem; }
   .author-image img {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
     height: 100%;
     display: block; }
 
@@ -1357,10 +1405,10 @@ aside p {
   .author-biography {
     margin-bottom: 1.25rem; } }
 
-[class*="icon"] {
+.icon {
   display: block;
   overflow: hidden; }
-  .icons-list [class*="icon"] {
+  .icons-list .icon {
     fill: #4f4f4f;
     height: 4.5rem; }
 
@@ -1412,7 +1460,7 @@ aside p {
   width: 40px;
   fill: #f9f9f9; }
 
-.hidden, .svg--master, a span:not([class]):not([itemprop]),
+.hidden,
 .hide {
   width: 1px !important;
   height: 1px !important;
@@ -1422,12 +1470,7 @@ aside p {
   overflow: hidden !important;
   clip: rect(1px, 1px, 1px, 1px) !important; }
 
-.remove,
-.removed,
-p:empty {
-  display: none !important; }
-
-.non-selectable, .logo {
+.non-selectable {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1445,34 +1488,12 @@ p:empty {
 
 .border-radius,
 .round,
-.rounded,
-figure img,
-figure svg,
-figure > a,
-blockquote,
-pre:not(.codepen),
-aside:not(.author),
-.banner,
-.edit,
-.author-image,
-.author-image img {
+.rounded {
   background-clip: padding-box;
   border-radius: 0.375rem; }
 
 .border-radius--thin,
 .round--thin,
-.rounded--thin,
-blockquote code,
-details code,
-dl code,
-ol code,
-ul code,
-figure:not([class]) code,
-p code,
-ins,
-kbd,
-mark,
-samp,
-var {
+.rounded--thin {
   background-clip: padding-box;
   border-radius: 0.25rem; }

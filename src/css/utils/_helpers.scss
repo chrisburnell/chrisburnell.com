@@ -8,35 +8,19 @@
 // Still treated as normal content by text-to-speech software
 .hidden,
 .hide {
-    width:  1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    border:  0 !important;
-    position: absolute !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-// Remove elements from the flow of the document
-.remove,
-.removed {
-    display: none !important;
+    @include hide;
 }
 
 // Non-selectable stuff
 .non-selectable {
-    user-select: none;
-    -webkit-touch-callout: default;
-    -webkit-touch-callout: none;
+    @include non-selectable;
 }
 
 // Hyphenate any looooooooooooooooooooo-
 // oooooong text
 .hyphen,
 .hyphenate {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+    @include hyphenate;
 }
 
 // We're goin' up around the bend

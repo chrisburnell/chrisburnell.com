@@ -5,7 +5,150 @@
 
 
 ///
+/// Add a border-radius.
+///
+/// @author Chris Burnell
+///
+/// @param {String} $values - Values
+///
+/// @require {Variable} $border-radius-default
+/// @require {Variable} $border-radius-thin
+///
+/// @example scss - One parameter
+///   @include radius(color);
+///   // border-radius: color;
+///
+/// @throw Error if no parameters are passed.
+///
+@mixin border-radius($values...) {
+
+    @if( length($values) == 0 ) {
+        $values: $border-radius-default;
+    }
+    @else if(#{$values} == "thin") {
+        $values: $border-radius-thin;
+    }
+
+    background-clip: padding-box;
+    border-radius: #{$values};
+
+}
+
+
+///
+/// Clear an element of floats.
+///
+/// @example scss
+///   @include clear;
+///   // clear: both;
+///   // zoom: 1;
+///   // &::before,
+///   // &::after {
+///   //     content: "";
+///   //     display: table;
+///   // }
+///   // &::after {
+///   //     clear: both;
+///   // }
+///
+@mixin clear() {
+
+    clear: both;
+    zoom: 1;
+
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+
+}
+
+
+///
+/// Specify font-family and associated font-display.
+///
+/// @author Chris Burnell
+///
+/// @param {String} $family - Font Family value
+/// @param {String} $display - Font Display value
+///
+/// @require {Variable} $font-families
+///
+/// @example scss
+///   @include font-family(default);
+///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
+///
+/// @example scss
+///   @include font-family(beta, swap);
+///   // font-family: "proxima-nova", sans-serif;
+///   // font-display: swap;
+///
+/// @throw Error if no parameters are passed.
+///
+@mixin font-family($family, $display) {
+
+    @if( length($family) == 0 ) {
+        @error "font-family() expects at least one parameter."
+    }
+
+    @if not map-has-key($font-families, $family) {
+        @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
+    }
+
+    font-family: map-get($font-families, $family);
+
+    @if( length($display) != 0 ) {
+        font-display: $display;
+    }
+
+}
+
+
+///
+/// Hyphenate text.
+///
+/// @example scss
+///   @include hyphenate;
+///   // overflow-wrap: break-word;
+///   // word-wrap: break-word;
+///   // hyphens: auto;
+///
+@mixin hyphenate() {
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+
+}
+
+
+///
+/// Make text non-selectable;
+///
+/// @example scss
+///   @include non-selectable;
+///   // user-select: none;
+///   // -webkit-touch-callout: default;
+///   // -webkit-touch-callout: none;
+///
+@mixin non-selectable() {
+
+    user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+
+}
+
+
+///
 /// Absolutely position an element.
+///
+/// @author Chris Burnell
 ///
 /// @param {String} $value - Position of the element
 ///
@@ -57,68 +200,27 @@
 
 
 ///
-/// Add a border-radius.
-///
-/// @param {String} $values - Values
-///
-/// @require {Variable} $border-radius-default
-/// @require {Variable} $border-radius-thin
-///
-/// @example scss - One parameter
-///   @include radius(color);
-///   // border-radius: color;
-///
-/// @throw Error if no parameters are passed.
-///
-@mixin border-radius($values...) {
-
-    @if( length($values) == 0 ) {
-        $values: $border-radius-default;
-    }
-    @else if(#{$values} == "thin") {
-        $values: $border-radius-thin;
-    }
-
-    background-clip: padding-box;
-    border-radius: #{$values};
-
-}
-
-
-///
-/// Specify font-family and associated font-display
-///
-/// @param {String} $family - Font Family value
-/// @param {String} $display - Font Display value
-///
-/// @require {Variable} $font-families
+/// Hide an element properly.
 ///
 /// @example scss
-///   @include font-family(default);
-///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
+///   @include hide;
+///   // width:  1px !important;
+///   // height: 1px !important;
+///   // padding: 0 !important;
+///   // border:  0 !important;
+///   // position: absolute !important;
+///   // overflow: hidden !important;
+///   // clip: rect(1px, 1px, 1px, 1px) !important;
 ///
-/// @example scss
-///   @include font-family(beta, swap);
-///   // font-family: "proxima-nova", sans-serif;
-///   // font-display: swap;
-///
-/// @throw Error if no parameters are passed.
-///
-@mixin font-family($family, $display) {
+@mixin hide() {
 
-    @if( length($family) == 0 ) {
-        @error "font-family() expects at least one parameter."
-    }
-
-    @if not map-has-key($font-families, $family) {
-        @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
-    }
-
-    font-family: map-get($font-families, $family);
-
-    @if( length($display) != 0 ) {
-        font-display: $display;
-    }
+    width:  1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border:  0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
 
 }
 
@@ -225,6 +327,8 @@
 
 ///
 /// Describes CSS changes to the browser; to be coupled with any transitions.
+///
+/// @author Chris Burnell
 ///
 /// @param {String} $values - Values
 ///

@@ -28,11 +28,13 @@
     }
 
     // override default `.button`
-    .button--show-comments,
-    .button--show-comments:active {
-        &::before {
-            position: relative;
-            top: 0;
+    .button--show-comments {
+        &,
+        &:active {
+            &::before {
+                position: relative;
+                top: 0;
+            }
         }
     }
 

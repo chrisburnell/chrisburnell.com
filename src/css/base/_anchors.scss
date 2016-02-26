@@ -4,7 +4,7 @@
 ////
 
 
-%anchor {
+a {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     border-bottom-width: $border-width-hairline;
@@ -35,10 +35,6 @@
             border-bottom-color: mix($color-black, $color-brand, 10%);
         }
     }
-}
-
-a {
-    @extend %anchor;
 
     h2 &,
     h3 & {
@@ -61,7 +57,7 @@ a {
     }
 
     span:not([class]):not([itemprop]) {
-        @extend .hidden;
+        @include hide;
     }
 }
 

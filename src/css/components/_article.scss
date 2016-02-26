@@ -15,7 +15,7 @@
 }
 
 .banner {
-    @extend .rounded;
+    @include border-radius;
     width: $article-width;
     margin-bottom: $measure-large;
 
@@ -39,7 +39,6 @@
     }
 }
 .lede--featured {
-    @extend .lede;
     max-width: 24em;
     font-size: $font-size-gigantic;
 }
@@ -50,7 +49,7 @@
 }
 
 .edit {
-    @extend .rounded;
+    @include border-radius;
     background-color: $color-brand--10-percent;
     padding: 1rem;
     margin: 0 $measure-large $measure-large;
