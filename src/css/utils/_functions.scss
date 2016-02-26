@@ -23,7 +23,7 @@
 ///
 @function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
 
-    @if( length($background-color) == 0 ) {
+    @if (length($background-color) == 0) {
         @error "contrasting-color() expects at least one parameter.";
     }
 
@@ -57,7 +57,7 @@
 ///
 @function gradient($from, $to, $direction: "to bottom") {
 
-    @if( length($from) == 0 or length($to) == 0 ) {
+    @if (length($from) == 0 or length($to) == 0) {
         @error "gradient() expects two or three parameters.";
     }
 
@@ -87,7 +87,7 @@
 ///
 @function opacity($value) {
 
-    @if( length($value) == 0 ) {
+    @if (length($value) == 0) {
         @error "opacity() expects one parameter."
     }
 
@@ -115,7 +115,7 @@
 ///
 @function strip-units($value) {
 
-    @if( length($value) == 0 ) {
+    @if (length($value) == 0) {
         @error "strip-units() expects at least one parameter."
     }
 
@@ -144,7 +144,7 @@
 ///
 @function z-index($value) {
 
-    @if( length($value) == 0 ) {
+    @if (length($value) == 0) {
         @error "z-index() expects at least one parameter."
     }
 

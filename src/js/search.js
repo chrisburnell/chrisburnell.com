@@ -5,7 +5,7 @@
  */
 
 
-(function () {
+(function() {
 
     'use strict';
 
@@ -24,7 +24,7 @@
         resultTemplateArticle = document.querySelector('.js-search-template-article'),
         resultTemplatePen     = document.querySelector('.js-search-template-pen'),
         resultTemplateLink    = document.querySelector('.js-search-template-link'),
-        allowEmpty            = false;
+        allowEmpty = false;
 
     // initiate search functionality
     initSearch();
@@ -55,9 +55,9 @@
         query = searchInput.value;
 
         // Catch the form submission and initiate search lookup
-        if( searchContainer && searchForm.addEventListener ) {
+        if (searchContainer && searchForm.addEventListener) {
             searchForm.addEventListener('submit', submitCallback);
-        } else if( searchContainer && searchForm.attachEvent ) {
+        } else if (searchContainer && searchForm.attachEvent) {
             searchForm.attachEvent('onsubmit', submitCallback);
         }
 
@@ -67,7 +67,7 @@
         event.preventDefault();
         query = searchInput.value;
 
-        if( query.length >= 2 && query.length <= 30 ) {
+        if (query.length >= 2 && query.length <= 30) {
             execSearch(query);
         } else {
             resultsMeta.innerHTML = 'Your search query must be 2–30 characters in length.';
@@ -127,57 +127,58 @@
             categoriesCheck,
             tagsCheck;
 
-        for( var index = 0; index < data.length; index++ ) {
+        for (var index = 0; index < data.length; index++) {
 
-            item  = data[index];
+            item = data[index];
             queryFormatted = query.toLowerCase();
 
-            titleCheck      = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
+            titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
             ledeCheck       = false;
             contentCheck    = false;
             categoriesCheck = false;
             tagsCheck       = false;
 
-            if( item['lede'] ) {
+            if (item['lede']) {
                 ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if( item['content'] ) {
+            if (item['content']) {
                 contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if( item['categories'] ) {
+            if (item['categories']) {
                 categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if( item['tags'] ) {
+            if (item['tags']) {
                 tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
             }
 
             // check if search term is in title, content, or lede, categories or tags
-            switch( item['type'] ) {
+            switch (item['type']) {
                 case 'page':
-                    if( titleCheck || ledeCheck || contentCheck ) {
+                    if (titleCheck || ledeCheck || contentCheck) {
                         resultsCount++;
-                        results += populateResultContent(resultTemplatePage.innerHTML, item); }
+                        results += populateResultContent(resultTemplatePage.innerHTML, item);
+                    }
                     break;
                 case 'article':
-                    if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                    if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck) {
                         resultsCount++;
                         results += populateResultContent(resultTemplateArticle.innerHTML, item);
                     }
                     break;
                 case 'link':
-                    if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                    if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck) {
                         resultsCount++;
                         results += populateResultContent(resultTemplateLink.innerHTML, item);
                     }
                     break;
                 case 'pen':
-                    if( titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck ) {
+                    if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck) {
                         resultsCount++;
                         results += populateResultContent(resultTemplatePen.innerHTML, item);
                     }
                     break;
                 default:
-                    console.log("Unable to match category type to template.");
+                    console.log('Unable to match category type to template.');
             }
 
         }
@@ -213,15 +214,15 @@
         html = injectContent(html, item['url'], '@@URL@@');
         html = injectContent(html, item['title'], '@@TITLE@@');
 
-        if( item['date'] ) {
+        if (item['date']) {
             html = injectContent(html, item['date'], '@@DATE@@');
             html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
         }
-        if( item['lede'] ) {
+        if (item['lede']) {
             html = injectContent(html, item['lede'], '@@LEDE@@');
-        } else if( item['type'] == 'link' ) {
+        } else if (item['type'] == 'link') {
             html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
-        } else if( item['type'] == 'pen' ) {
+        } else if (item['type'] == 'pen') {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         }
 

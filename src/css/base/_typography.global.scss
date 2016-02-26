@@ -111,6 +111,7 @@ h3 {
         }
     }
 
+    // Match normal `h3`s without targetting `aside`-nested `h3`s
     article > & {
         @include clear;
         width: auto;

@@ -986,8 +986,7 @@ a {
       border-bottom-color: #5f8aa6; }
 
 button,
-.button,
-.button--small {
+.button {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1018,24 +1017,17 @@ button,
   button, button:link, button:visited,
   .button,
   .button:link,
-  .button:visited,
-  .button--small,
-  .button--small:link,
-  .button--small:visited {
+  .button:visited {
     color: #f9f9f9;
     border-width: 0; }
   button:hover, button:focus, button:active,
   .button:hover,
   .button:focus,
-  .button:active,
-  .button--small:hover,
-  .button--small:focus,
-  .button--small:active {
+  .button:active {
     background-color: #6790aa;
     outline-style: auto; }
   button:active,
-  .button:active,
-  .button--small:active {
+  .button:active {
     height: 2em;
     padding-bottom: 0;
     margin-bottom: 0.182em;
@@ -1044,9 +1036,7 @@ button,
             transform: translateY(0.182em); }
   button::before, button::after,
   .button::before,
-  .button::after,
-  .button--small::before,
-  .button--small::after {
+  .button::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -1057,13 +1047,10 @@ button,
     height: 0.182em; }
   button:active::before, button:active::after,
   .button:active::before,
-  .button:active::after,
-  .button--small:active::before,
-  .button--small:active::after {
+  .button:active::after {
     top: -0.182em; }
   button[rel="external"]::after,
-  .button[rel="external"]::after,
-  .button--small[rel="external"]::after {
+  .button[rel="external"]::after {
     position: relative;
     top: auto;
     left: auto;
@@ -1075,8 +1062,7 @@ button,
     height: auto;
     font-family: Monaco, Consolas, Courier, monospace; }
   button[aria-hidden="true"],
-  .button[aria-hidden="true"],
-  .button--small[aria-hidden="true"] {
+  .button[aria-hidden="true"] {
     display: none; }
 
 button[disabled] {
@@ -1485,8 +1471,7 @@ footer {
       color: #737373; }
   @media (max-width: 768px) {
     .articles-list button, .articles-list
-    .button, .articles-list
-    .button--small,
+    .button,
     .articles-list .comments-anchor {
       margin-left: 0.625rem;
       margin-right: 0.625rem; } }
@@ -1696,70 +1681,40 @@ footer {
           -ms-flex-pack: center;
               justify-content: center; } }
   .nav-secondary button, .nav-secondary
-  .button, .nav-secondary
-  .button--small,
+  .button,
   .buttons-list button,
   .buttons-list
-  .button,
-  .buttons-list
-  .button--small {
+  .button {
     display: inline-block; }
     @media (min-width: 501px) {
       .nav-secondary button, .nav-secondary
-      .button, .nav-secondary
-      .button--small,
+      .button,
       .buttons-list button,
       .buttons-list
-      .button,
-      .buttons-list
-      .button--small {
+      .button {
         margin-left: 0.625rem;
         margin-right: 0.625rem; } }
     @media (max-width: 500px) {
       .nav-secondary button, .nav-secondary
-      .button, .nav-secondary
-      .button--small,
+      .button,
       .buttons-list button,
       .buttons-list
-      .button,
-      .buttons-list
-      .button--small {
+      .button {
         margin-left: auto;
         margin-right: auto; }
         .nav-secondary button + button, .nav-secondary
-        .button + button, .nav-secondary
-        .button--small + button, .nav-secondary button +
+        .button + button, .nav-secondary button +
         .button, .nav-secondary
         .button +
-        .button, .nav-secondary
-        .button--small +
-        .button, .nav-secondary button +
-        .button--small, .nav-secondary
-        .button +
-        .button--small, .nav-secondary
-        .button--small +
-        .button--small,
+        .button,
         .buttons-list button + button,
         .buttons-list
         .button + button,
-        .buttons-list
-        .button--small + button,
         .buttons-list button +
         .button,
         .buttons-list
         .button +
-        .button,
-        .buttons-list
-        .button--small +
-        .button,
-        .buttons-list button +
-        .button--small,
-        .buttons-list
-        .button +
-        .button--small,
-        .buttons-list
-        .button--small +
-        .button--small {
+        .button {
           margin-top: 0.625rem; } }
 
 .nav-secondary {
@@ -2185,8 +2140,7 @@ code[data-lang] {
   display: block;
   overflow: hidden; }
   button .icon,
-  .button .icon,
-  .button--small .icon {
+  .button .icon {
     fill: currentColor;
     width: 0.8em;
     height: 0.8em;
@@ -2215,8 +2169,7 @@ code[data-lang] {
 .icon--rss {
   width: 31px; }
   .icon--rss, button .icon--rss,
-  .button .icon--rss,
-  .button--small .icon--rss {
+  .button .icon--rss {
     fill: #ff9770; }
 
 .icon--twitter {

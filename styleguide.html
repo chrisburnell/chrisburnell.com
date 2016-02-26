@@ -261,7 +261,7 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block' %}
 
 <pre><code>@mixin translate3d($values...) {
-    @if( length($values) == 0 ) {
+    @if (length($values) == 0) {
         $values: 0, 0, 0;
     }
     transform: translate3d(#{$values});
@@ -272,7 +272,7 @@ p q r s t u v w x y z { | } ~ </pre>
 
 {% highlight scss %}
 @mixin will-change($values...) {
-    @if( length($values) == 0 ) {
+    @if (length($values) == 0) {
         @error "will-change() expects one or more parameters.";
     }
     will-change: #{$values};

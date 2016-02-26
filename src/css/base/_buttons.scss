@@ -5,8 +5,7 @@
 
 
 button,
-.button,
-.button--small {
+.button {
     @extend %button-elements;
     @include non-selectable;
     @include border-radius(thin);
