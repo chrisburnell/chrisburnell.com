@@ -39,11 +39,19 @@ codepen_tabfree: 8863
 
 timezone: Europe/London
 
+incremental: true
 destination: ./_site
 layouts_dir: ./_layouts
 permalink: /:categories/:title/
-exclude: ['.DS_Store', '.sass-cache', '.travis.yml', 'deploy.sh', 'Gemfile', 'node_modules', 'src', 'vendor']
-incremental: true
+exclude:
+- .DS_Store
+- .sass-cache
+- .travis.yml
+- deploy.sh
+- Gemfile
+- node_modules
+- src
+- vendor
 
 gems:
 - jekyll-redirect-from
