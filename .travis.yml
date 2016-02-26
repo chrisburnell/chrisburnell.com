@@ -13,7 +13,7 @@ install:
   - gem install jekyll
 
 script:
-  - buncle exec jekyll build
+  - bundle exec jekyll build
 
 branches:
   only:
