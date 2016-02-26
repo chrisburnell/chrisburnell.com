@@ -28,8 +28,8 @@ env:
 
 after_success:
   - mkdir build
-  - mv * build
-  - tar -czvf chrisburnell.tgz _site/*
+  - mv _site build
+  - tar -czvf chrisburnell.tgz build
   - export SSHPASS=$DEPLOY_PASSWORD
   - sshpass -e scp -P $DEPLOY_PORT chrisburnell.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
   - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh
