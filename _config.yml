@@ -47,11 +47,15 @@ exclude:
 - .DS_Store
 - .sass-cache
 - .travis.yml
+- CNAME
+- CONTRIBUTING.md
 - deploy.sh
 - Gemfile
+- gulpfile.js
+- package.json
 - node_modules
+- README.md
 - src
-- vendor
 
 gems:
 - jekyll-redirect-from
