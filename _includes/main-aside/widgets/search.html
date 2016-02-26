@@ -4,7 +4,7 @@
         <label class="search-label  hidden" for="search-input">Search for pages, articles, and pens</label>
         <input class="search-input  js-search-input" type="search" name="query" maxlength="30" placeholder="Search the website" disabled required>
         <button class="button--small  search-submit  js-search-submit" type="submit" title="Submit" aria-label="Submit" disabled>
-            {% include content/svg.html type='search' %}
+            <svg class="icon--search"><use xlink:href="#svg--search" /></svg>
         </button>
     </form>
     <noscript>Please enable JavaScript to search.</noscript>

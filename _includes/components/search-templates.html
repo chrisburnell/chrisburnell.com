@@ -9,7 +9,7 @@
 <script type="text/template" class="js-search-template-article">
     <li role="listitem">
         <a href="@@URL@@">
-            {% include content/svg.html type='article' %}
+            <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
             <h4 class="title">@@TITLE@@</h4>
             <p class="lede">@@LEDE@@</p>
             <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>
@@ -19,7 +19,7 @@
 <script type="text/template" class="js-search-template-link">
     <li role="listitem">
         <a href="@@URL@@">
-            {% include content/svg.html type='link' %}
+            <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
             <h4 class="title">@@TITLE@@</h4>
             <p class="lede">@@LEDE@@</p>
             <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>
@@ -29,7 +29,7 @@
 <script type="text/template" class="js-search-template-pen">
     <li role="listitem">
         <a href="@@URL@@">
-            {% include content/svg.html type='codepen' %}
+            <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
             <h4 class="title">@@TITLE@@</h4>
             <p class="lede">@@LEDE@@</p>
             <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>

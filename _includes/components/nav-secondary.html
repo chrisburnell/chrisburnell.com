@@ -1,28 +1,28 @@
 <nav class="nav-secondary" role="navigation">
     {% if page.comments == true %}
         <button class="button--show-comments  js-show-comments" role="button" type="button" aria-label="Leave a comment" aria-hidden="false" aria-pressed="false" disabled>
-            {% include content/svg.html type='feather' %}
+            <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
             <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
         </button>
     {% elsif page.comments == 'codepen' and page.codepen_slug %}
         <a rel="external" class="button" href="{{ site.url_codepen }}/{{ site.codepen_page }}/{{ page.codepen_slug }}/#leave-comment">
-            {% include content/svg.html type='feather' %}
+            <svg class="icon--feather"><use xlink:href="#svg--feather" /></svg>
             CodePen Comments
         </a>
     {% endif %}
     {% if page.categories contains 'article' %}
         <a rel="me author" class="button" href="/articles">
-            {% include content/svg.html type='article' %}
+            <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
             Articles Archive
         </a>
     {% elsif page.categories contains 'link' %}
         <a rel="me author" class="button" href="/links">
-            {% include content/svg.html type='link' %}
+            <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
             Shared Links
         </a>
     {% elsif page.categories contains 'pen' %}
         <a rel="me author" class="button" href="/pens">
-            {% include content/svg.html type='heart' %}
+            <svg class="icon--heart"><use xlink:href="#svg--heart" /></svg>
             Pens Archive
         </a>
     {% endif %}

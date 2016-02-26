@@ -6,7 +6,7 @@
         {% for post in site.categories.link limit: 2 %}
             <li role="listitem">
                 <a href="{{ post.link_urls | first }}">
-                    {% include content/svg.html type='link' %}
+                    <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
                     <h4 class="title">{{ post.title }} →</h4>
                     {% if post.lede %}
                         <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>

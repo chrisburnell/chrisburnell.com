@@ -19,7 +19,7 @@ lede: All of my featured pens listed on one page.
     {% for post in site.categories.pen %}
         <li role="listitem">
             <a href="{{ post.url }}">
-                {% include content/svg.html type='codepen' %}
+                <svg class="icon--codepen"><use xlink:href="#svg--codepen" /></svg>
                 <h4 class="title">{{ post.title }}</h4>
                 <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
             </a>
@@ -29,26 +29,26 @@ lede: All of my featured pens listed on one page.
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/feed-pens.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to Pens
     </a>
     <a rel="me author" class="button" href="/feed.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to All
     </a>
 </nav>
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/articles">
-        {% include content/svg.html type='article' %}
+        <svg class="icon--article"><use xlink:href="#svg--article" /></svg>
         Articles Archive
     </a>
     <a rel="me author" class="button" href="/links">
-        {% include content/svg.html type='link' %}
+        <svg class="icon--link"><use xlink:href="#svg--link" /></svg>
         Links Archive
     </a>
     <a rel="me author" class="button" href="/tags">
-        {% include content/svg.html type='tag' %}
+        <svg class="icon--tag"><use xlink:href="#svg--tag" /></svg>
         Tags Archive
     </a>
 </nav>

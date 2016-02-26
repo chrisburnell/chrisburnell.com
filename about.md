@@ -74,19 +74,19 @@ There are a number of RSS Feeds you can subscribe to:
 
 <nav class="nav-secondary" role="navigation">
     <a rel="me author" class="button" href="/feed-articles.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to Articles
     </a>
     <a rel="me author" class="button" href="/feed-pens.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to Pens
     </a>
     <a rel="me author" class="button" href="/feed-links.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to Links
     </a>
     <a rel="me author" class="button" href="/feed.xml">
-        {% include content/svg.html type='rss' %}
+        <svg class="icon--rss"><use xlink:href="#svg--rss" /></svg>
         Subscribe to All
     </a>
 </nav>
