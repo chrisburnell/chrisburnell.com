@@ -1460,32 +1460,6 @@ aside p {
   width: 40px;
   fill: #f9f9f9; }
 
-.hidden,
-.hide {
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  position: absolute !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important; }
-
-.non-selectable {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-touch-callout: default;
-  -webkit-touch-callout: none; }
-
-.hyphen,
-.hyphenate {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto; }
-
 .border-radius,
 .round,
 .rounded {
@@ -1497,3 +1471,29 @@ aside p {
 .rounded--thin {
   background-clip: padding-box;
   border-radius: 0.25rem; }
+
+.hidden,
+.hide {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; }
+
+.hyphen,
+.hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
+
+.non-selectable {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: default;
+  -webkit-touch-callout: none; }

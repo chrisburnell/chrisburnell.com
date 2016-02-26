@@ -4,25 +4,6 @@
 ////
 
 
-// Hide elements visually
-// Still treated as normal content by text-to-speech software
-.hidden,
-.hide {
-    @include hide;
-}
-
-// Non-selectable stuff
-.non-selectable {
-    @include non-selectable;
-}
-
-// Hyphenate any looooooooooooooooooooo-
-// oooooong text
-.hyphen,
-.hyphenate {
-    @include hyphenate;
-}
-
 // We're goin' up around the bend
 .border-radius,
 .round,
@@ -33,4 +14,23 @@
 .round--thin,
 .rounded--thin {
     @include border-radius(thin);
+}
+
+// Hide elements visually
+// Still treated as normal content by text-to-speech software
+.hidden,
+.hide {
+    @include hide;
+}
+
+// Hyphenate any looooooooooooooooooooo-
+// oooooong text
+.hyphen,
+.hyphenate {
+    @include hyphenate;
+}
+
+// Make things non-selectable
+.non-selectable {
+    @include non-selectable;
 }

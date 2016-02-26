@@ -5,6 +5,38 @@
 
 
 ///
+/// Contrasting Text Color
+///
+/// @param {Color} $background-color - Background Color to contrast
+/// @param {Color} $text-color-light [$color-white] - Color to use for dark backgrounds
+/// @param {Color} $text-color-dark [$color-black] - Color to use for light backgrounds
+///
+/// @example scss
+///   background-color: #111111;
+///   color: contrasting-color(#111111);
+///   // background-color: #111111;
+///   // color: #f9f9f9;
+///
+/// @return {Color} Contrasting Text Color
+///
+/// @throw Error if no parameters are passed.
+///
+@function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
+
+    @if( length($background-color) == 0 ) {
+        @error "contrasting-color() expects at least one parameter.";
+    }
+
+    @if (lightness($background-color) > 65) {
+        @return $text-color-dark;
+    } @else {
+        @return $text-color-light;
+    }
+
+}
+
+
+///
 /// Accepts two or three parameters.
 ///
 /// @param {Color} $from - Start Color
@@ -69,6 +101,30 @@
 
 
 ///
+/// Strip Units from a Number
+///
+/// @param {Number} $value - Number with units
+///
+/// @example scss
+///   line-height: strip-units(2em);
+///   // line-height: 2;
+///
+/// @return {Number} Number without units
+///
+/// @throw Error if no parameter is passed.
+///
+@function strip-units($value) {
+
+    @if( length($value) == 0 ) {
+        @error "strip-units() expects at least one parameter."
+    }
+
+    @return $value / ($value * 0 + 1);
+
+}
+
+
+///
 /// Simplify z-index.
 ///
 /// @param {String} $value - Generic level
@@ -97,61 +153,5 @@
     }
 
     @return map-get($z-indexes, $value);
-
-}
-
-
-///
-/// Contrasting Text Color
-///
-/// @param {Color} $background-color - Background Color to contrast
-/// @param {Color} $text-color-light [$color-white] - Color to use for dark backgrounds
-/// @param {Color} $text-color-dark [$color-black] - Color to use for light backgrounds
-///
-/// @example scss
-///   background-color: #111111;
-///   color: contrasting-color(#111111);
-///   // background-color: #111111;
-///   // color: #f9f9f9;
-///
-/// @return {Color} Contrasting Text Color
-///
-/// @throw Error if no parameters are passed.
-///
-@function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
-
-    @if( length($background-color) == 0 ) {
-        @error "contrasting-color() expects at least one parameter.";
-    }
-
-    @if (lightness($background-color) > 65) {
-        @return $text-color-dark;
-    } @else {
-        @return $text-color-light;
-    }
-
-}
-
-
-///
-/// Strip Units from a Number
-///
-/// @param {Number} $value - Number with units
-///
-/// @example scss
-///   line-height: strip-units(2em);
-///   // line-height: 2;
-///
-/// @return {Number} Number without units
-///
-/// @throw Error if no parameter is passed.
-///
-@function strip-units($value) {
-
-    @if( length($value) == 0 ) {
-        @error "strip-units() expects at least one parameter."
-    }
-
-    @return $value / ($value * 0 + 1);
 
 }
