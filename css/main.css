@@ -1025,7 +1025,6 @@ button,
   display: inline-block;
   padding: 0 0.727em 0.182em;
   margin-top: 0.25rem;
-  outline-style: none;
   position: relative;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375rem;
@@ -1052,6 +1051,7 @@ button,
     height: 2em;
     padding-bottom: 0;
     margin-bottom: 0.182em;
+    outline-style: none;
     box-shadow: inset -1px 0 0 #567d96;
     -webkit-transform: translateY(0.182em);
             transform: translateY(0.182em); }
@@ -2044,7 +2044,8 @@ code[data-lang] {
   left: 0;
   width: 100%;
   height: 100%;
-  display: block; }
+  display: block;
+  cursor: pointer; }
   .code-toggle-input:checked ~ .code-toggle-label {
     display: none; }
   .code-toggle-label button {
@@ -2054,6 +2055,11 @@ code[data-lang] {
     -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
     pointer-events: none; }
+
+.code-toggle-input + .highlight pre {
+  -webkit-transition: max-height 0.2s ease;
+  transition: max-height 0.2s ease;
+  max-height: 200vh; }
 
 .code-toggle-input:not(:checked) + .highlight pre {
   max-height: 12.5rem;

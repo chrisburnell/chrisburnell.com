@@ -236,6 +236,31 @@
 
 
 ///
+/// Define characters for quotes
+///
+/// @example scss
+///   @include quotes;
+///   // quotes: "“" "”" "‘" "’";
+///
+@mixin quotes() {
+
+    &,
+    :lang(en) & {
+        quotes: "“" "”" "‘" "’";
+    }
+
+    :lang(de) & {
+        quotes: "„" "“" "‚" "‘";
+    }
+
+    :lang(fr) & {
+        quotes: "« " " »" "‹ " " ›";
+    }
+
+}
+
+
+///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
 /// If passing two or more properties, quotation marks must be used.
@@ -306,31 +331,6 @@
     }
 
     transition: #{$transition};
-
-}
-
-
-///
-/// Define characters for quotes
-///
-/// @example scss
-///   @include quotes;
-///   // quotes: "“" "”" "‘" "’";
-///
-@mixin quotes() {
-
-    &,
-    :lang(en) & {
-        quotes: "“" "”" "‘" "’";
-    }
-
-    :lang(de) & {
-        quotes: "„" "“" "‚" "‘";
-    }
-
-    :lang(fr) & {
-        quotes: "« " " »" "‹ " " ›";
-    }
 
 }
 

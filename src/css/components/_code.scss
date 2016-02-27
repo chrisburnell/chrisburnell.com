@@ -52,6 +52,7 @@ code[data-lang] {
     width:  100%;
     height: 100%;
     display: block;
+    cursor: pointer;
 
     .code-toggle-input:checked ~ & {
         display: none;
@@ -64,6 +65,11 @@ code[data-lang] {
 }
 
 .code-toggle-input {
+    & + .highlight pre {
+        @include transition(max-height);
+        max-height: 200vh;
+    }
+
     &:not(:checked) + .highlight pre {
         // limit number of lines of code
         max-height: ($measure-medium * 10);
