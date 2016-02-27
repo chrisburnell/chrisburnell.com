@@ -261,28 +261,60 @@ table {
     font-family: $font-family-beta;
     border-collapse: separate;
 
+    &.zebra {
+        tr:nth-child(even) {
+            background-color: $color-gray;
+        }
+    }
+
+    thead,
+    tfoot {
+        background-color: $color-gray;
+    }
+
     th,
     td {
+        @include transition(border-left-color);
         padding: $measure-small;
+        position: relative;
         text-align: left;
     }
 
     th {
         font-weight: $font-weight-bold;
     }
-
     thead th {
         white-space: nowrap;
     }
-
-    td,
     tfoot th {
-        border-top: $border-width-thin solid $color-gray;
+        border-top: $border-width-thin solid $color-text-light;
+    }
+    th + th {
+        border-left: $border-width-thin solid $color-text-light;
     }
 
-    th + th,
+    td {
+        border-top: $border-width-thin solid $color-gray;
+    }
+    tr:first-child td {
+        border-top-color: $color-text-light;
+    }
     td + td {
         border-left: $border-width-thin solid $color-gray;
+    }
+
+    tr {
+        @include transition(background-color, color);
+
+        &:hover {
+            background-color: $color-text;
+            color: $color-white;
+
+            th,
+            td {
+                border-left-color: $color-text-alt;
+            }
+        }
     }
 }
 

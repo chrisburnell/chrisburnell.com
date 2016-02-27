@@ -582,20 +582,41 @@ table {
   overflow-y: hidden;
   font-family: "proxima-nova", sans-serif;
   border-collapse: separate; }
+  table.zebra tr:nth-child(even) {
+    background-color: #ededed; }
+  table thead,
+  table tfoot {
+    background-color: #ededed; }
   table th,
   table td {
+    -webkit-transition: border-left-color 0.2s ease;
+    transition: border-left-color 0.2s ease;
     padding: 0.625rem;
+    position: relative;
     text-align: left; }
   table th {
     font-weight: 600; }
   table thead th {
     white-space: nowrap; }
-  table td,
   table tfoot th {
+    border-top: 0.125rem solid #dddddd; }
+  table th + th {
+    border-left: 0.125rem solid #dddddd; }
+  table td {
     border-top: 0.125rem solid #ededed; }
-  table th + th,
+  table tr:first-child td {
+    border-top-color: #dddddd; }
   table td + td {
     border-left: 0.125rem solid #ededed; }
+  table tr {
+    -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease; }
+    table tr:hover {
+      background-color: #4f4f4f;
+      color: #f9f9f9; }
+      table tr:hover th,
+      table tr:hover td {
+        border-left-color: #737373; }
 
 details {
   background-color: #4f4f4f;
