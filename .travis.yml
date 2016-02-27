@@ -10,7 +10,7 @@ addons:
 
 install:
   - bundle install
-  - npm install -g gulp
+  - npm install
   - gem install jekyll
 
 script:
