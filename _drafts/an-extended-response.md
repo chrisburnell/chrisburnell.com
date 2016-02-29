@@ -26,4 +26,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac elit enim, et t
 - [When to use @extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
 - [Extending silent classes in Sass](http://csswizardry.com/2014/01/extending-silent-classes-in-sass/)
 - [Why You Should Avoid Sass @extend](http://www.sitepoint.com/avoid-sass-extend/)
+- [Don’t Over-@extend Yourself in Sass](http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/)
 - [Sass Mixins vs Extends: The Data](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/)
