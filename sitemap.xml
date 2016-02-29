@@ -23,12 +23,12 @@ sitemap:
                 {% if page.sitemap.changefreq %}
                     <changefreq>{{ page.sitemap.changefreq }}</changefreq>
                 {% else %}
-                    <changefreq>{{ site.sitemap_changefreq }}</changefreq>
+                    <changefreq>{{ site.sitemap.changefreq }}</changefreq>
                 {% endif %}
                 {% if page.sitemap.priority %}
                     <priority>{{ page.sitemap.priority }}</priority>
                 {% else %}
-                    <priority>{{ site.sitemap_priority }}</priority>
+                    <priority>{{ site.sitemap.priority }}</priority>
                 {% endif %}
             </url>
         {% endunless %}
@@ -49,12 +49,12 @@ sitemap:
                 {% if post.sitemap.changefreq %}
                     <changefreq>{{ post.sitemap.changefreq }}</changefreq>
                 {% else %}
-                    <changefreq>{{ site.sitemap_changefreq }}</changefreq>
+                    <changefreq>{{ site.sitemap.changefreq }}</changefreq>
                 {% endif %}
                 {% if post.sitemap.priority %}
                     <priority>{{ post.sitemap.priority }}</priority>
                 {% else %}
-                    <priority>{{ site.sitemap_priority }}</priority>
+                    <priority>{{ site.sitemap.priority }}</priority>
                 {% endif %}
             </url>
         {% endunless %}

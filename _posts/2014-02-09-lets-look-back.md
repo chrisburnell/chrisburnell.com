@@ -550,8 +550,8 @@ It’s also extremely useful if you build a core set of styles and then extend t
 4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
 5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
 6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
-7. [My Sass files]({{ site.url_repository }}/tree/master/css "Sass files for chrisburnell.com")
-8. [My gulpfile configuration]({{ site.url_gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
+7. [My Sass files]({{ site.urls.repository }}/tree/master/css "Sass files for chrisburnell.com")
+8. [My gulpfile configuration]({{ site.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
 
@@ -569,6 +569,6 @@ And with *gulp* `watching`, the transition from the SCSS above to the minified C
 
 To sum up, the site looks <s>pretty much</s> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to “vanilla” CSS for so long, but writing SCSS feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
-You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.url_repository }}/tree/master/css "SCSS files for chrisburnell.com"), and the README file of the repository [here]({{ site.url_repository }}).
+You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.urls.repository }}/tree/master/css "SCSS files for chrisburnell.com"), and the README file of the repository [here]({{ site.urls.repository }}).
 
-As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github]({{ site.url_repository }}/issues)!
+As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github]({{ site.urls.repository }}/issues)!

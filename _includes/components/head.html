@@ -1,41 +1,41 @@
+{% if page.page_class contains 'page-home' %}
+    {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
+{% else %}
+    {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
+{% endif %}
+
+{% if page.lede %}
+    {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
+{% elsif page.categories contains 'link' %}
+    {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
+{% elsif page.categories contains 'pen' %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
+{% else %}
+    {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
+{% endif %}
+
+{% if page.banner_mobile %}
+    {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% else if page.banner %}
+    {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% else %}
+    {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% endif %}
+
+{% capture body_class %}
+    {% for class in page.page_class %}
+        {{ class }}
+    {% endfor %}
+    {% if page.categories contains 'article' %}page-article{% endif %}
+    {% if page.categories contains 'link' %}page-link{% endif %}
+    {% if page.categories contains 'pen' %}page-pen{% endif %}
+{% endcapture %}
+{% assign body_class_array = body_class | split: ' ' %}
+
+{% assign code_toggle_count = 0 %}
+{% assign code_toggle_button_count = 0 %}
+
 <head>
-
-    {% if page.page_class contains 'page-home' %}
-        {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
-    {% else %}
-        {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
-    {% endif %}
-
-    {% if page.lede %}
-        {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
-    {% elsif page.categories contains 'link' %}
-        {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
-    {% elsif page.categories contains 'pen' %}
-        {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
-    {% else %}
-        {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
-    {% endif %}
-
-    {% if page.banner_mobile %}
-        {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-    {% else if page.banner %}
-        {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-    {% else %}
-        {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-    {% endif %}
-
-    {% capture body_class %}
-        {% for class in page.page_class %}
-            {{ class }}
-        {% endfor %}
-        {% if page.categories contains 'article' %}page-article{% endif %}
-        {% if page.categories contains 'link' %}page-link{% endif %}
-        {% if page.categories contains 'pen' %}page-pen{% endif %}
-    {% endcapture %}
-    {% assign body_class_array = body_class | split: ' ' %}
-
-    {% assign code_toggle_count = 0 %}
-    {% assign code_toggle_button_count = 0 %}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
@@ -83,7 +83,7 @@
     {% else %}
         <!-- Twitter Microdata -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@{{ site.author_twitter }}">
+        <meta name="twitter:creator" content="@{{ site.author.twitter }}">
         <meta name="twitter:title" content="{{ meta_title }}">
         <meta name="twitter:description" content="{{ meta_lede }}">
         <meta name="twitter:image:src" content="{{ meta_image }}">

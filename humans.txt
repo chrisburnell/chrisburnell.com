@@ -7,8 +7,8 @@ searchable: false
 
 /* OWNER & DEVELOPER */
 
-    Name:    {{ site.author }}
-    Twitter: @{{ site.author_twitter }}
+    Name:    {{ site.author.name }}
+    Twitter: @{{ site.author.twitter }}
 
 /* SITE */
 

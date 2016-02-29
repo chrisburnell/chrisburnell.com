@@ -4,8 +4,8 @@
                 <a rel="home" class="footer-home-anchor" href="/" title="Home">
                     {% include content/svg.html type='raven' %}
                 </a>
-                <a rel="license" class="footer-copyright-anchor" href="{{ site.url_copyright }}">© {{ site.time | date: '%Y' }} <span class="canada">{{ site.author }}</span></a>
-                <a class="footer-style-guide-anchor" href="/styleguide">Style Guide</a>
+                <a rel="license" class="footer-copyright-anchor" href="{{ site.copyright.url }}">© {{ site.time | date: '%Y' }} <span class="canada">{{ site.author.name }}</span></a>
+                <a rel="me" class="footer-style-guide-anchor" href="/styleguide">Style Guide</a>
             </section>
 
             {% include components/nav-tertiary.html %}

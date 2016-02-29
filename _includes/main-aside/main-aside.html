@@ -2,11 +2,11 @@
     {% assign author_name_prefix = 'by' %}
     {% assign author_microdata_tags = '' %}
     {% assign author_microdata_photo = '' %}
-    {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author }}</span>{% endcapture %}
+    {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author.name }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada">Canadian</span>{% endcapture %}
-    {% assign author_microdata_job_title = site.author_job_title %}
-    {% assign author_microdata_home_location = site.author_location %}
-    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}">{{ site.employer }}</a>{% endcapture %}
+    {% assign author_microdata_job_title = site.author.job_title %}
+    {% assign author_microdata_home_location = site.author.location %}
+    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.author.employer.url }}">{{ site.author.employer.name }}</a>{% endcapture %}
     {% capture author_information_details %}
         <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on {% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" itemprop="datePublished" aria-hidden="true">{% else %}<strong itemprop="datePublished">{% endif %}{{ page.date | date: '%d %b, %Y' }}{% if page.shorturl %}</a>{% else %}</strong>{% endif %}</time>
         {% if page.tags.size > 0 %}
@@ -28,14 +28,14 @@
     {% assign author_name_prefix = 'about' %}
     {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
     {% capture author_microdata_photo %} itemprop="photo"{% endcapture %}
-    {% capture author_microdata_name %}<span itemprop="name">{{ site.author }}</span>{% endcapture %}
+    {% capture author_microdata_name %}<span itemprop="name">{{ site.author.name }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada" itemprop="nationality">Canadian</span>{% endcapture %}
-    {% capture author_microdata_job_title %}<span itemprop="jobTitle">{{ site.author_job_title }}</span>{% endcapture %}
-    {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author_location }}</span>{% endcapture %}
-    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.employer_url }}"><span itemprop="worksFor">{{ site.employer }}</span></a>{% endcapture %}
+    {% capture author_microdata_job_title %}<span itemprop="jobTitle">{{ site.author.job_title }}</span>{% endcapture %}
+    {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author.location }}</span>{% endcapture %}
+    {% capture author_microdata_works_for %}<a rel="external" href="{{ site.author.employer.url }}"><span itemprop="worksFor">{{ site.author.employer.name }}</span></a>{% endcapture %}
     {% capture author_information_details %}
-        <div class="author-age">I’m <strong>{{ site.author_age }}</strong> years old</div>
-        <div class="author-employer">I’m a <strong>{{ site.author_job_title }}</strong></div>
+        <div class="author-age">I’m <strong>{{ site.author.age }}</strong> years old</div>
+        <div class="author-employer">I’m a <strong>{{ site.author.job_title }}</strong></div>
     {% endcapture %}
 {% endif %}
 
@@ -78,7 +78,7 @@
 
     <div class="author-biography">
         <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and currently working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about on this website—<a rel="me author" class="anchor--rss" href="/feed.xml">subscribe if you’d like</a>.</p>
-        <p>I also <a rel="me publisher external" class="anchor--twitter" href="{{ site.url_twitter }}">tweet</a>, <a rel="me publisher external" class="anchor--codepen" href="{{ site.url_codepen }}">write code</a>, <a rel="me publisher external" class="anchor--github" href="{{ site.url_github }}">commit code</a>, <a rel="me publisher external" class="anchor--lastfm" href="{{ site.url_lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
+        <p>I also <a rel="me publisher external" class="anchor--twitter" href="{{ site.urls.twitter }}">tweet</a>, <a rel="me publisher external" class="anchor--codepen" href="{{ site.urls.codepen }}">write code</a>, <a rel="me publisher external" class="anchor--github" href="{{ site.urls.github }}">commit code</a>, <a rel="me publisher external" class="anchor--lastfm" href="{{ site.urls.lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
     {% unless page.page_class contains 'page-search' %}

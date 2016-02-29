@@ -3,39 +3,44 @@ tagline:     "I’m ravenous for CSS."
 lede:        "I’m a Canadian UI developer living in London, UK. This is where I write about and share my passions: CSS, best practices and web standards, performance, front-end architecture, and innovations on the web."
 color_brand: 5f8aa6
 
-author:           Chris Burnell
-author_age:       25
-author_location:  London, UK
-author_email:     me@chrisburnell.com
-author_codepen:   chrisburnell
-author_twitter:   iamchrisburnell
-author_job_title: UI developer
-
-employer:     City University
-employer_url: https://www.city.ac.uk
+author:
+  name:      Chris Burnell
+  age:       25
+  location:  London, UK
+  email:     me@chrisburnell.com
+  codepen:   chrisburnell
+  twitter:   iamchrisburnell
+  job_title: UI developer
+  employer:
+    name: City University
+    url:  https://www.city.ac.uk
 
 url:      https://chrisburnell.com
 baseurl:  ""
 shorturl: http://repc.co/
 
-url_repository: https://github.com/chrisburnell/chrisburnell.github.io
-url_ravenous:   https://ravenous.chrisburnell.com
+urls:
+  repository: https://github.com/chrisburnell/chrisburnell.github.io
+  ravenous:   https://ravenous.chrisburnell.com
+  codepen:    http://codepen.io/chrisburnell
+  github:     https://github.com/chrisburnell
+  gist:       https://gist.github.com/chrisburnell
+  lastfm:     http://last.fm/user/chrisburnell
+  twitter:    https://twitter.com/iamchrisburnell
 
-url_codepen: http://codepen.io/chrisburnell
-url_github:  https://github.com/chrisburnell
-url_gist:    https://gist.github.com/chrisburnell
-url_lastfm:  http://last.fm/user/chrisburnell
-url_twitter: https://twitter.com/iamchrisburnell
+copyright:
+  name: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
+  url:  http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 
-copyright:     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
-url_copyright: http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+sitemap:
+  changefreq: monthly
+  priority:   0.5
 
-sitemap_changefreq: monthly
-sitemap_priority:   0.5
-
-codepen_page:    details
-codepen_theme:   119
-codepen_tabfree: 8863
+codepen:
+  page: details
+  themes:
+    default: 119
+    tabfree: 8863
 
 timezone: Europe/London
 
@@ -43,6 +48,7 @@ incremental: true
 destination: ./_site
 layouts_dir: ./_layouts
 permalink: /:categories/:title/
+
 exclude:
 - .DS_Store
 - .sass-cache
