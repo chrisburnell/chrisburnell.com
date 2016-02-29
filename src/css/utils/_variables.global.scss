@@ -121,32 +121,40 @@ $font-weight-bold:    600 !default;
 $font-style-default: normal !default;
 
 
+// 16px
 /// @type Length
-$font-size-default:  100% !default;
+$font-size-default:    100% !default;
+// 42px
 /// @type Length
-$font-size-smaller:  0.8125rem !default;
+$font-size-alpha:      2.625rem !default;
+// 22 px
 /// @type Length
-$font-size-small:    0.875rem !default;
+$font-size-beta:       1.375rem !default;
+// 18px
 /// @type Length
-$font-size-large:    1.250rem !default;
+$font-size-gamma:      1.125rem !default;
+// 20px
 /// @type Length
-$font-size-larger:   1.375rem !default;
+$font-size-large:      1.250rem !default;
+// 14px
 /// @type Length
-$font-size-gigantic: 1.625rem !default;
+$font-size-small:      0.875rem !default;
 /// @type Map
 /// @prop {String} key - Font Size name
 /// @prop {Number} value - Font Size value
-/// @require {Variable} $font-size-smaller
-/// @require {Variable} $font-size-small
+/// @require {Variable} $font-size-default
+/// @require {Variable} $font-size-alpha
+/// @require {Variable} $font-size-beta
+/// @require {Variable} $font-size-gamma
 /// @require {Variable} $font-size-large
-/// @require {Variable} $font-size-larger
-/// @require {Variable} $font-size-gigantic
+/// @require {Variable} $font-size-small
 $font-sizes: (
-    "smaller":  $font-size-smaller,
-    "small":    $font-size-small,
-    "large":    $font-size-large,
-    "larger":   $font-size-larger,
-    "gigantic": $font-size-gigantic
+    "default": $font-size-default,
+    "alpha":   $font-size-alpha,
+    "beta":    $font-size-beta,
+    "gamma":   $font-size-gamma,
+    "large":   $font-size-large,
+    "small":   $font-size-small
 ) !default;
 
 
@@ -155,7 +163,9 @@ $font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// @type List
 $font-family-alpha: "league-gothic", Impact, sans-serif !default;
 /// @type List
-$font-family-beta: "proxima-nova", sans-serif !default;
+$font-family-beta: $font-family-default !default;
+/// @type List
+$font-family-gamma: "proxima-nova", sans-serif !default;
 /// @type List
 $font-family-monospace: Monaco, Consolas, Courier, monospace !default;
 /// @type Map
@@ -163,13 +173,13 @@ $font-family-monospace: Monaco, Consolas, Courier, monospace !default;
 /// @prop {Number} value - Font Family value
 /// @require {Variable} $font-family-default
 /// @require {Variable} $font-family-alpha
-/// @require {Variable} $font-family-beta
+/// @require {Variable} $font-family-gamma
 /// @require {Variable} $font-family-monospace
 /// @see {Mixin} font-family
 $font-families: (
     "default":   $font-family-default,
     "alpha":     $font-family-alpha,
-    "beta":      $font-family-beta,
+    "beta":      $font-family-gamma,
     "monospace": $font-family-monospace
 ) !default;
 

@@ -10,7 +10,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: $measure-large;
-    font-family: $font-family-beta;
+    font-family: $font-family-gamma;
     line-height: $line-height-small;
 
     aside & {
@@ -134,7 +134,7 @@
     .date {
         color: $color-text-alt;
         margin-top: $measure-small;
-        font-size: $font-size-smaller;
+        font-size: $font-size-small;
         font-weight: $font-weight-bold;
 
         @include media(">medium") {

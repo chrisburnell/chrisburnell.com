@@ -52,8 +52,8 @@ pre {
         overflow-x: auto;
         overflow-y: hidden;
 
-        %gamma + &,
-        %gamma + .highlight & {
+        h3 + &,
+        h3 + .highlight & {
             margin-top: 0;
         }
 

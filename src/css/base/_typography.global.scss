@@ -30,15 +30,6 @@ p {
 /**
  * Headings
  */
-%heading-elements {
-    // so that elements can be floated inside headings
-    min-height: ($line-height-small * 1em);
-    padding: 0;
-    margin: 0;
-    position: relative;
-    font-weight: $font-weight-default;
-    line-height: $line-height-small;
-}
 h1,
 h2,
 h3,
@@ -46,47 +37,49 @@ h4,
 h5,
 h6 {
     @extend %heading-elements;
+    // so that elements can be floated inside headings
+    min-height: ($line-height-small * 1em);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-weight: $font-weight-default;
 }
 
 /**
  * Heading - Alpha
  */
+h1,
 %alpha {
     font-family: $font-family-alpha;
-    // 42px
-    font-size: 2.625rem;
+    font-size: $font-size-alpha;
+    line-height: 1;
     text-transform: uppercase;
     // 3px 3px
     text-shadow: 0.0715em 0.0715em 0 $color-black--5-percent;
-}
-h1 {
-    @extend %alpha;
 }
 
 /**
  * Heading - Beta
  */
+h2,
 %beta {
-    font-family: $font-family-default;
-    font-size: $font-size-larger;
-}
-h2 {
-    @extend %beta;
+    font-family: $font-family-beta;
+    font-size: $font-size-beta;
+    line-height: $line-height-small;
 }
 
 /**
  * Heading - Gamma
  */
+h3,
 %gamma {
-    font-family: $font-family-beta;
-    // 18px
-    font-size: 1.125rem;
+    font-family: $font-family-gamma;
+    font-size: $font-size-gamma;
     font-weight: $font-weight-bold;
     line-height: 1.875;
     text-transform: uppercase;
 }
 h3 {
-    @extend %gamma;
     margin-top: $measure-large;
     border-bottom: $border-width-thin solid $color-text-light;
 
@@ -135,13 +128,31 @@ h3 {
 /**
  * Heading - Delta
  */
+h4,
 %delta {
-    font-family: $font-family-beta;
+    font-family: $font-family-gamma;
+    font-size: $font-size-default;
     font-weight: $font-weight-bold;
+    line-height: $line-height-small;
 }
 h4 {
-    @extend %delta;
     margin-bottom: $measure-small;
+}
+
+/**
+ * Heading - Epsilon
+ */
+h5,
+%epsilon {
+    font-size: $font-size-default;
+}
+
+/**
+ * Heading - Zeta
+ */
+h6,
+%zeta {
+    font-size: $font-size-default;
 }
 
 p {
@@ -180,7 +191,7 @@ ul:not([class]),
 
         &::before {
             @include position(top-left);
-            font-family: $font-family-beta;
+            font-family: $font-family-gamma;
             font-weight: $font-weight-bold;
         }
     }
@@ -225,7 +236,7 @@ dl {
         min-width: 10rem;
         clear: left;
         padding-right: $measure-medium;
-        font-family: $font-family-beta;
+        font-family: $font-family-gamma;
         font-weight: $font-weight-bold;
 
         @include media(">small") {
@@ -258,7 +269,7 @@ table {
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
-    font-family: $font-family-beta;
+    font-family: $font-family-gamma;
     border-collapse: separate;
 
     &.zebra {
@@ -322,7 +333,7 @@ details {
     background-color: $color-text;
     color: $color-white;
     padding: $measure-small;
-    font-family: $font-family-beta;
+    font-family: $font-family-gamma;
 
     summary {
         font-weight: $font-weight-bold;

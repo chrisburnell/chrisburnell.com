@@ -9,7 +9,7 @@
  * breakpoint.
  */
 /*aside*/.author {
-    font-family: $font-family-beta;
+    font-family: $font-family-gamma;
 
     @include media("<=medium") {
         display: flex;
@@ -36,7 +36,7 @@
     strong {
         color: inherit;
         border-bottom-width: 0;
-        font-family: $font-family-beta;
+        font-family: $font-family-gamma;
         font-weight: $font-weight-bold;
         font-style: normal;
         text-transform: uppercase;

@@ -396,8 +396,7 @@ h6 {
   padding: 0;
   margin: 0;
   position: relative;
-  font-weight: 400;
-  line-height: 1.25; }
+  font-weight: 400; }
 
 /**
  * Heading - Alpha
@@ -405,6 +404,7 @@ h6 {
 h1 {
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
+  line-height: 1;
   text-transform: uppercase;
   text-shadow: 0.0715em 0.0715em 0 rgba(6, 6, 6, 0.05); }
 
@@ -413,12 +413,14 @@ h1 {
  */
 h2 {
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-  font-size: 1.375rem; }
+  font-size: 1.375rem;
+  line-height: 1.25; }
 
 /**
  * Heading - Gamma
  */
-h3, .articles-list .date {
+h3,
+.articles-list .date {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
@@ -471,10 +473,24 @@ h3 {
  */
 h4 {
   font-family: "proxima-nova", sans-serif;
-  font-weight: 600; }
+  font-size: 100%;
+  font-weight: 600;
+  line-height: 1.25; }
 
 h4 {
   margin-bottom: 0.625rem; }
+
+/**
+ * Heading - Epsilon
+ */
+h5 {
+  font-size: 100%; }
+
+/**
+ * Heading - Zeta
+ */
+h6 {
+  font-size: 100%; }
 
 p {
   margin: 0 0 1.25rem; }
@@ -828,7 +844,8 @@ pre {
     margin-bottom: 2.25rem;
     overflow-x: auto;
     overflow-y: hidden; }
-    h3 + pre:not(.codepen), .articles-list .date + pre:not(.codepen), h3 + .highlight pre:not(.codepen), .articles-list .date + .highlight pre:not(.codepen) {
+    h3 + pre:not(.codepen),
+    h3 + .highlight pre:not(.codepen) {
       margin-top: 0; }
     pre:not(.codepen),
     pre:not(.codepen) code {
@@ -892,7 +909,7 @@ a {
   display: none;
   margin-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25;
   text-transform: lowercase;
@@ -1081,7 +1098,7 @@ article {
       aside:not(.author):last-child {
         margin-bottom: 0; } }
 
-h3 + aside, .articles-list .date + aside {
+h3 + aside {
   margin-top: 2.25rem; }
 
 aside figcaption,
@@ -1269,7 +1286,7 @@ aside p {
 
 .lede {
   margin-bottom: 2.25rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
     .lede {
@@ -1279,7 +1296,7 @@ aside p {
 
 .lede--featured {
   max-width: 24em;
-  font-size: 1.625rem; }
+  font-size: 1.25rem; }
 
 .terminology {
   padding-bottom: 2.25rem;
