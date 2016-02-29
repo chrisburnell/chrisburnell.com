@@ -72,7 +72,7 @@ I also play the piano and bake bread from time to time.
 
 There are a number of RSS Feeds you can subscribe to:
 
-<nav class="nav-secondary" role="navigation">
+<div class="buttons-list" role="navigation">
     <a rel="me author" class="button" href="/feed-articles.xml">
         {% include content/svg.html type='rss' %}
         Subscribe to Articles

@@ -27,7 +27,7 @@
         {% endif %}
 
         {% if page.link_urls %}
-            <div class="buttons-list">
+            <div class="buttons-list" role="navigation">
                 {% for link in page.link_urls %}
                     <a rel="external" class="button" href="{{ link }}" title="{{ link }}">{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}</a>
                 {% endfor %}
