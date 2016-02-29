@@ -20,13 +20,12 @@ baseurl:  ""
 shorturl: http://repc.co/
 
 urls:
-  repository: https://github.com/chrisburnell/chrisburnell.github.io
-  ravenous:   https://ravenous.chrisburnell.com
-  codepen:    http://codepen.io/chrisburnell
-  github:     https://github.com/chrisburnell
-  gist:       https://gist.github.com/chrisburnell
-  lastfm:     http://last.fm/user/chrisburnell
-  twitter:    https://twitter.com/iamchrisburnell
+  ravenous: https://ravenous.chrisburnell.com
+  codepen:  http://codepen.io/chrisburnell
+  github:   https://github.com/chrisburnell
+  gist:     https://gist.github.com/chrisburnell
+  lastfm:   http://last.fm/user/chrisburnell
+  twitter:  https://twitter.com/iamchrisburnell
 
 copyright:
   name: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported
