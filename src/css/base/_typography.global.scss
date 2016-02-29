@@ -37,8 +37,6 @@ h4,
 h5,
 h6 {
     @extend %heading-elements;
-    // so that elements can be floated inside headings
-    min-height: ($line-height-small * 1em);
     padding: 0;
     margin: 0;
     position: relative;
