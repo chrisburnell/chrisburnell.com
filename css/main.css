@@ -483,13 +483,15 @@ h4 {
  * Heading - Epsilon
  */
 h5 {
-  font-size: 100%; }
+  font-size: 100%;
+  line-height: 1.25; }
 
 /**
  * Heading - Zeta
  */
 h6 {
-  font-size: 100%; }
+  font-size: 100%;
+  line-height: 1.25; }
 
 p {
   margin: 0 0 1.25rem; }
