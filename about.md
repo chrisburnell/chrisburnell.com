@@ -89,6 +89,6 @@ There are a number of RSS Feeds you can subscribe to:
         {% include content/svg.html type='rss' %}
         Subscribe to All
     </a>
-</nav>
+</div>
 
 I'm reachable through <a rel="me publisher" class="anchor--twitter" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
