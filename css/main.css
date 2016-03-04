@@ -726,7 +726,7 @@ blockquote {
 
 /*blockquote*/
 .twitter-tweet {
-  margin: 0 auto 1.25rem; }
+  margin: 0 auto 1.25rem !important; }
 
 q {
   hanging-punctuation: first;
@@ -950,77 +950,77 @@ a {
  * Brand Link Colors
  */
 .anchor--codepen {
-  color: #212121; }
+  color: #212121 !important; }
   .anchor--codepen:link, .anchor--codepen:visited {
     border-bottom-color: #4c4c4c; }
     .anchor--codepen:link:hover, .anchor--codepen:link:focus, .anchor--codepen:link:active, .anchor--codepen:visited:hover, .anchor--codepen:visited:focus, .anchor--codepen:visited:active {
       border-bottom-color: #212121; }
 
 .anchor--github {
-  color: #333333; }
+  color: #333333 !important; }
   .anchor--github:link, .anchor--github:visited {
     border-bottom-color: #5b5b5b; }
     .anchor--github:link:hover, .anchor--github:link:focus, .anchor--github:link:active, .anchor--github:visited:hover, .anchor--github:visited:focus, .anchor--github:visited:active {
       border-bottom-color: #333333; }
 
 .anchor--lastfm {
-  color: #e31b23; }
+  color: #e31b23 !important; }
   .anchor--lastfm:link, .anchor--lastfm:visited {
     border-bottom-color: #e7474e; }
     .anchor--lastfm:link:hover, .anchor--lastfm:link:focus, .anchor--lastfm:link:active, .anchor--lastfm:visited:hover, .anchor--lastfm:visited:focus, .anchor--lastfm:visited:active {
       border-bottom-color: #e31b23; }
 
 .anchor--rss {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--rss:link, .anchor--rss:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--rss:link:hover, .anchor--rss:link:focus, .anchor--rss:link:active, .anchor--rss:visited:hover, .anchor--rss:visited:focus, .anchor--rss:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--twitter {
-  color: #4d9bd7; }
+  color: #4d9bd7 !important; }
   .anchor--twitter:link, .anchor--twitter:visited {
     border-bottom-color: #6faede; }
     .anchor--twitter:link:hover, .anchor--twitter:link:focus, .anchor--twitter:link:active, .anchor--twitter:visited:hover, .anchor--twitter:visited:focus, .anchor--twitter:visited:active {
       border-bottom-color: #4d9bd7; }
 
 .anchor--article {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--article:link, .anchor--article:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--article:link:hover, .anchor--article:link:focus, .anchor--article:link:active, .anchor--article:visited:hover, .anchor--article:visited:focus, .anchor--article:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--feather {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--feather:link, .anchor--feather:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--feather:link:hover, .anchor--feather:link:focus, .anchor--feather:link:active, .anchor--feather:visited:hover, .anchor--feather:visited:focus, .anchor--feather:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--heart {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--heart:link, .anchor--heart:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--heart:link:hover, .anchor--heart:link:focus, .anchor--heart:link:active, .anchor--heart:visited:hover, .anchor--heart:visited:focus, .anchor--heart:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--link {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--link:link, .anchor--link:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--link:link:hover, .anchor--link:link:focus, .anchor--link:link:active, .anchor--link:visited:hover, .anchor--link:visited:focus, .anchor--link:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--search {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--search:link, .anchor--search:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--search:link:hover, .anchor--search:link:focus, .anchor--search:link:active, .anchor--search:visited:hover, .anchor--search:visited:focus, .anchor--search:visited:active {
       border-bottom-color: #5f8aa6; }
 
 .anchor--tag {
-  color: #5f8aa6; }
+  color: #5f8aa6 !important; }
   .anchor--tag:link, .anchor--tag:visited {
     border-bottom-color: #7ea0b7; }
     .anchor--tag:link:hover, .anchor--tag:link:focus, .anchor--tag:link:active, .anchor--tag:visited:hover, .anchor--tag:visited:focus, .anchor--tag:visited:active {
@@ -2022,22 +2022,22 @@ code[data-lang] {
  * Highlighted Code Block Labels
  */
 .language-css::before {
-  background-color: #016fba; }
+  background-color: #016fba !important; }
 
 .language-haml::before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-html::before {
-  background-color: #e54d26; }
+  background-color: #e54d26 !important; }
 
 .language-javascript::before {
-  background-color: #f1c54c; }
+  background-color: #f1c54c !important; }
 
 .language-sass::before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 .language-scss::before {
-  background-color: #c6538c; }
+  background-color: #c6538c !important; }
 
 /**
  * Code Block Visibility Toggling
