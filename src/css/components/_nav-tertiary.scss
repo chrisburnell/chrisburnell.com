@@ -33,15 +33,19 @@
             @include will-change(opacity, transform);
             opacity: opacity("70-percent");
             height: $icon-size;
+        }
 
-            &:hover,
-            &:focus,
-            &:active {
+        &:hover,
+        &:focus,
+        &:active {
+            .icon {
                 opacity: opacity(1);
             }
+        }
 
-            &:active {
-                transform: translateY(.125rem);
+        &:active {
+            .icon {
+                transform: translateY(0.125rem);
             }
         }
     }

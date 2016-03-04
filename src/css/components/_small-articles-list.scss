@@ -34,9 +34,11 @@
             display: flex;
             flex-direction: column;
 
-            &:nth-child(4n+2) a,
-            &:nth-child(4n+3) a {
-                background-color: $color-black--5-percent;
+            &:nth-child(4n+2),
+            &:nth-child(4n+3) {
+                a {
+                    background-color: $color-black--5-percent;
+                }
             }
         }
 
@@ -65,10 +67,12 @@
             }
 
 
-            &:nth-child(4n+2) a,
-            &:nth-child(4n+3) a,
-            &:nth-child(2n+1) a {
-                background-color: transparent;
+            &:nth-child(4n+2),
+            &:nth-child(4n+3),
+            &:nth-child(2n+1) {
+                a {
+                    background-color: transparent;
+                }
             }
 
             &:nth-child(2n+2) a {
@@ -87,7 +91,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-brand--10-percent !important;
+            background-color: $color-brand--10-percent;
         }
 
         @include media(">small") {
@@ -113,15 +117,19 @@
         border-bottom: $border-width-hairline solid $color-text-light;
         margin-bottom: 0;
     }
-    a:hover .title,
-    a:focus .title,
-    a:active .title {
-        border-bottom-color: $color-brand;
+    a:hover,
+    a:focus,
+    a:active {
+        .title {
+            border-bottom-color: $color-brand;
+        }
     }
-    a:visited:hover .title,
-    a:visited:focus .title,
-    a:visited:active .title {
-        border-bottom-color: mix($color-black, $color-brand, 10%);
+    a:visited:hover,
+    a:visited:focus,
+    a:visited:active {
+        .title {
+            border-bottom-color: mix($color-black, $color-brand, 10%);
+        }
     }
 
     .lede {
@@ -167,9 +175,11 @@
             height: 4em;
         }
     }
-    a:hover svg,
-    a:focus svg,
-    a:active svg {
-        opacity: opacity("25-percent");
+    a:hover,
+    a:focus,
+    a:active {
+        svg {
+            opacity: opacity("25-percent");
+        }
     }
 }

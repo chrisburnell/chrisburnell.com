@@ -46,25 +46,27 @@
             transform: translateX(0) translateY(-1.5rem) translateZ(0);
         }
     }
-    &:hover svg,
-    &:focus svg {
-        @include media(">medium") {
-            transform: translateX(4rem) translateY(-3rem) translateZ(0);
-        }
+    &:hover,
+    &:focus {
+        svg {
+            @include media(">medium") {
+                transform: translateX(4rem) translateY(-3rem) translateZ(0);
+            }
 
-        @include media("<=medium") {
-            transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
+            @include media("<=medium") {
+                transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
+            }
         }
     }
-    &:active svg {
-        transition-time: $transition-time;
+    &:active {
+        svg {
+            @include media(">medium") {
+                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
+            }
 
-        @include media(">medium") {
-            transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
-        }
-
-        @include media("<=medium") {
-            transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
+            @include media("<=medium") {
+                transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
+            }
         }
     }
 }

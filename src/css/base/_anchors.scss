@@ -132,7 +132,7 @@ a {
     $text-color: nth($color-brand, 2);
 
     .anchor--#{$name} {
-        color: $text-color !important;
+        color: $text-color;
 
         &:link,
         &:visited {

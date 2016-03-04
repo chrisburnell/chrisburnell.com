@@ -89,26 +89,19 @@
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
-.page-home .nav-primary-home a,
-.page-about .nav-primary-about a,
-.page-article .nav-primary-articles a,
-.page-articles .nav-primary-articles a,
-.page-pen .nav-primary-pens a,
-.page-pens .nav-primary-pens a,
-.page-search .nav-primary-search a {
+%nav-primary-anchor {
     color: $color-text;
     padding-bottom: 0.5rem;
     border-bottom-width: $border-width-default;
 }
+@each $body-class, $navigation-class in $navigation-links {
+    .page-#{$body-class} .nav-primary-#{$navigation-class} a {
+        @extend %nav-primary-anchor;
+    }
+}
 
 // Complementary to the Effect for interactions and active paths
-.page-home .nav-primary-home a::after,
-.page-about .nav-primary-about a::after,
-.page-article .nav-primary-articles a::after,
-.page-articles .nav-primary-articles a::after,
-.page-pen .nav-primary-pens a::after,
-.page-pens .nav-primary-pens a::after,
-.page-search .nav-primary-search a::after {
+%nav-primary-anchor-arrow {
     content: "";
     border-top: 0.5em solid $color-brand;
     border-right: 0.5em solid transparent;
@@ -117,4 +110,9 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
+}
+@each $body-class, $navigation-class in $navigation-links {
+    .page-#{$body-class} .nav-primary-#{$navigation-class} a::after {
+        @extend %nav-primary-anchor-arrow;
+    }
 }

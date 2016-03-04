@@ -407,7 +407,7 @@ blockquote {
     }
 
     p {
-        margin-bottom: 0 !important;
+        margin-bottom: 0;
 
         &::before {
             content: open-quote;
@@ -430,7 +430,7 @@ blockquote {
     }
 }
 /*blockquote*/.twitter-tweet {
-    margin: 0 auto $measure-medium !important;
+    margin: 0 auto $measure-medium;
 }
 
 q {

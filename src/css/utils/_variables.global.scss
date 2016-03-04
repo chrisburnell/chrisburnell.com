@@ -207,3 +207,17 @@ $z-indexes: (
     "default": 1,
     "above":   2
 ) !default;
+
+
+/// @type Map
+/// @prop {String} Body Class
+/// @prop {String} Primary Navigation Class
+$navigation-links: (
+    "home": "home",
+    "about": "about",
+    "article": "articles",
+    "articles": "articles",
+    "pen": "pens",
+    "pens": "pens",
+    "search": "search"
+) !default;
