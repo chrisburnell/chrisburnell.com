@@ -23,7 +23,6 @@
 ///   // border-radius: 1em;
 ///
 @mixin border-radius($values...) {
-
     @if length($values) == 0 or #{$values} == "default" {
         $values: $border-radius-default;
     }
@@ -33,7 +32,6 @@
 
     background-clip: padding-box;
     border-radius: #{$values};
-
 }
 
 
@@ -54,7 +52,6 @@
 ///   // }
 ///
 @mixin clear() {
-
     clear: both;
     zoom: 1;
 
@@ -67,7 +64,6 @@
     &::after {
         clear: both;
     }
-
 }
 
 
@@ -93,45 +89,16 @@
 /// @throw Error if no parameters are passed.
 ///
 @mixin font-family($family, $display: swap) {
-
     @if not $family {
         @error "font-family() expects at least one parameter."
     }
-    @else if not map-has-key($font-families, $family) {
+
+    @if not map-has-key($font-families, $family) {
         @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
-    } @else {
-        font-family: map-get($font-families, $family);
-        font-display: $display;
     }
 
-
-
-}
-
-
-///
-/// Visually hide an element properly.
-///
-/// @example scss
-///   @include visually-hidden;
-///   // width:  1px !important;
-///   // height: 1px !important;
-///   // padding: 0 !important;
-///   // border:  0 !important;
-///   // position: absolute !important;
-///   // overflow: hidden !important;
-///   // clip: rect(1px, 1px, 1px, 1px) !important;
-///
-@mixin visually-hidden() {
-
-    width:  1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    border:  0 !important;
-    position: absolute !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-
+    font-family: map-get($font-families, $family);
+    font-display: $display;
 }
 
 
@@ -145,11 +112,9 @@
 ///   // hyphens: auto;
 ///
 @mixin hyphenate() {
-
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-
 }
 
 
@@ -163,11 +128,9 @@
 ///   // -webkit-touch-callout: none;
 ///
 @mixin non-selectable() {
-
     user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
-
 }
 
 
@@ -188,11 +151,11 @@
 /// @throw Error if no parameters are passed.
 ///
 @mixin position($value) {
-
     @if not $value {
         @error "position() expects one parameter."
     }
-    @else if $value == "top" {
+
+    @if $value == "top" {
         position: absolute;
         top:   0;
         left:  0;
@@ -222,7 +185,6 @@
         right:  auto;
         bottom: auto;
     }
-
 }
 
 
@@ -234,7 +196,6 @@
 ///   // quotes: "“" "”" "‘" "’";
 ///
 @mixin quotes() {
-
     &,
     :lang(en) & {
         quotes: "“" "”" "‘" "’";
@@ -247,7 +208,6 @@
     :lang(fr) & {
         quotes: "« " " »" "‹ " " ›";
     }
-
 }
 
 
@@ -297,22 +257,39 @@
     } @else if #{$values} == "none" {
         $transition: none;
     // if the parameter contains a comma then operating on multiple properties
-    } @else if list-separator($values) == comma {
+    } @else if str-index(#{$values}, ",") {
         @each $value in $values {
-            $property: nth($value, 1);
-            $time: if(length($value) > 1, nth($value, 2), $transition-time);
-            $function: if(length($value) > 2, nth($value, 3), $transition-function);
-            $transition: append($transition, $property $time $function, comma);
-            content: "#{$property} #{$time} #{$function}";
+            $transition: append($transition, unpack-transition($value), comma);
         }
     } @else {
-        $property: nth($values, 1);
-        $time: if(length($values) > 1, nth($values, 2), $transition-time);
-        $function: if(length($values) > 2, nth($values, 3), $transition-function);
-        $transition: $property $time $function;
+        $transition: unpack-transition($values...);
     }
 
     transition: #{$transition};
+}
+
+
+///
+/// Visually hide an element properly.
+///
+/// @example scss
+///   @include visually-hidden;
+///   // width:  1px !important;
+///   // height: 1px !important;
+///   // padding: 0 !important;
+///   // border:  0 !important;
+///   // position: absolute !important;
+///   // overflow: hidden !important;
+///   // clip: rect(1px, 1px, 1px, 1px) !important;
+///
+@mixin visually-hidden() {
+    width:  1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border:  0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 
@@ -357,11 +334,11 @@
 /// @throw Error if parameter passed does not match a key in $z-indexes.
 ///
 @mixin z-index($z-index) {
-    $value: map-get($z-indexes, $z-index);
-
     @if not $value {
         @error "No value found for `#{$z-index}`. Please make sure it is defined in `$z-indexes` map.";
     }
+
+    $value: map-get($z-indexes, $z-index);
 
     z-index: $value;
 }

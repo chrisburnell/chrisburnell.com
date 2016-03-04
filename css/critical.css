@@ -606,7 +606,6 @@ table {
     background-color: #ededed; }
   table th,
   table td {
-    content: "border-left-color 0.2s ease";
     -webkit-transition: border-left-color 0.2s ease;
     transition: border-left-color 0.2s ease;
     padding: 0.625rem;
@@ -627,8 +626,6 @@ table {
   table td + td {
     border-left: 0.125rem solid #ededed; }
   table tr {
-    content: "background-color 0.2s ease";
-    content: "color 0.2s ease";
     -webkit-transition: background-color 0.2s ease, color 0.2s ease;
     transition: background-color 0.2s ease, color 0.2s ease; }
     table tr:hover {
@@ -861,9 +858,6 @@ pre {
     text-align: left; }
 
 a {
-  content: "background 0.2s ease";
-  content: "color 0.2s ease";
-  content: "border-color 0.2s ease";
   -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   will-change: background, color, border-color;
@@ -901,7 +895,6 @@ a {
     clip: rect(1px, 1px, 1px, 1px) !important; }
 
 .title-anchor {
-  content: "border-color 0.2s ease";
   -webkit-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease;
   will-change: color, border-bottom-color;
@@ -1144,9 +1137,8 @@ aside p {
     position: absolute;
     top: 0;
     left: 0;
-    content: "all 0.2s ease";
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
     will-change: transform;
     display: block;
     fill: #5f8aa6; }
@@ -1220,10 +1212,6 @@ aside p {
       .nav-primary-list li + li {
         margin-left: 0.25em; } }
   .nav-primary-list a {
-    content: "color 0.2s ease";
-    content: "padding-bottom 0.2s ease";
-    content: "border-bottom-width 0.2s ease";
-    content: "transform 0.2s ease";
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
