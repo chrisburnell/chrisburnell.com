@@ -87,6 +87,7 @@
 ///   // font-display: swap;
 ///
 /// @throw Error if no parameters are passed.
+/// @throw Error if parameter passed does not match a key in $font-families.
 ///
 @mixin font-family($family, $display: swap) {
     @if not $family {
@@ -94,7 +95,7 @@
     }
 
     @if not map-has-key($font-families, $family) {
-        @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
+        @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
     }
 
     font-family: map-get($font-families, $family);
@@ -196,6 +197,8 @@
 ///   // quotes: "“" "”" "‘" "’";
 ///
 @mixin quotes() {
+    hanging-punctuation: first;
+
     &,
     :lang(en) & {
         quotes: "“" "”" "‘" "’";
@@ -334,8 +337,12 @@
 /// @throw Error if parameter passed does not match a key in $z-indexes.
 ///
 @mixin z-index($z-index) {
-    @if not $value {
-        @error "No value found for `#{$z-index}`. Please make sure it is defined in `$z-indexes` map.";
+    @if not $z-index {
+        @error "z-index() expects at least one parameter.";
+    }
+
+    @if not map-has-key($z-indexes, $z-index) {
+        @error "There is no `z-index` named `#{$z-index}` in `$z-indexes`. `z-index` should be one of `#{map-keys($z-index)}`.";
     }
 
     $value: map-get($z-indexes, $z-index);

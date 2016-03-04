@@ -148,7 +148,7 @@
     }
 
     svg {
-        @include transition;
+        @include transition(opacity);
         @include will-change(opacity);
         @include z-index(below);
         opacity: opacity("5-percent");

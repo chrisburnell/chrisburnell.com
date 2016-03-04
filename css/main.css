@@ -696,6 +696,7 @@ figure {
 blockquote {
   background-clip: padding-box;
   border-radius: 0.375rem;
+  hanging-punctuation: first;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1.25rem;
   margin: 0 2.25rem 1.25rem; }
@@ -728,6 +729,7 @@ blockquote {
   margin: 0 auto 1.25rem !important; }
 
 q {
+  hanging-punctuation: first;
   font-style: italic; }
   q,
   :lang(en) q {
@@ -1634,8 +1636,8 @@ footer {
     .small-articles-list .date::before {
       content: "– "; }
   .small-articles-list svg {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
     will-change: opacity;
     z-index: -1;
     opacity: 0.05;

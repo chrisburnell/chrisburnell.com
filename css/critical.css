@@ -696,6 +696,7 @@ figure {
 blockquote {
   background-clip: padding-box;
   border-radius: 0.375rem;
+  hanging-punctuation: first;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1.25rem;
   margin: 0 2.25rem 1.25rem; }
@@ -728,6 +729,7 @@ blockquote {
   margin: 0 auto 1.25rem !important; }
 
 q {
+  hanging-punctuation: first;
   font-style: italic; }
   q,
   :lang(en) q {
