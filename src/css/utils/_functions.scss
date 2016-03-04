@@ -19,19 +19,18 @@
 ///
 /// @return {Color} Contrasting Text Color
 ///
-/// @throw Error if no parameters are passed.
-///
 @function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
 
-    @if (length($background-color) == 0) {
-        @error "contrasting-color() expects at least one parameter.";
+    @if not $background-color {
+        @warn "contrasting-color() expects at least one parameter.";
+        @return false;
     }
 
-    @if (lightness($background-color) > 65) {
+    @if lightness($background-color) > 65 {
         @return $text-color-dark;
-    } @else {
-        @return $text-color-light;
     }
+
+    @return $text-color-light;
 
 }
 
@@ -53,12 +52,11 @@
 ///
 /// @return {String} Linear Gradient snippet
 ///
-/// @throw Error if no parameters are passed.
-///
 @function gradient($from, $to, $direction: "to bottom") {
 
-    @if (length($from) == 0 or length($to) == 0) {
-        @error "gradient() expects two or three parameters.";
+    @if not $from or not $to {
+        @warn "gradient() expects two or three parameters.";
+        @return false;
     }
 
     @return linear-gradient(#{$direction}, #{$from} 0%, #{$to} 100%);
@@ -83,12 +81,11 @@
 ///
 /// @return {Number} Opacity value
 ///
-/// @throw Error if no parameters are passed.
-///
 @function opacity($value) {
 
-    @if (length($value) == 0) {
-        @error "opacity() expects one parameter."
+    @if not $value {
+        @warn "opacity() expects one parameter.";
+        @return false;
     }
 
     @if map-has-key($opacities, $value) {
@@ -111,14 +108,40 @@
 ///
 /// @return {Number} Number without units
 ///
-/// @throw Error if no parameter is passed.
-///
 @function strip-units($value) {
 
-    @if (length($value) == 0) {
-        @error "strip-units() expects at least one parameter."
+    @if not $value {
+        @warn "strip-units() expects at least one parameter.";
+        @return false;
     }
 
     @return $value / ($value * 0 + 1);
 
+}
+
+
+///
+/// Walk through a List with a Function
+///
+/// @param {list} $list - List to walk through
+/// @param {string} $function - Function to apply to all members
+/// @param {argList} $args - Extra arguments to pass to the function
+///
+/// @example scss
+///   content: "#{walk(one two three, to-upper-case)}";
+///   // content: "ONE TWO THREE";
+///
+/// @return {list} $list - Updated list
+///
+@function walk($list, $function, $args...) {
+    @if not function-exists($function) {
+        @warn "There is no `#{$function}` function.";
+        @return false;
+    }
+
+    @for $i from 1 through length($list) {
+        $list: set-nth($list, $i, call($function, nth($list, $i), $args...));
+    }
+
+    @return $list;
 }

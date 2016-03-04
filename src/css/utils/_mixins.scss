@@ -22,14 +22,12 @@
 ///   @include radius(1em);
 ///   // border-radius: 1em;
 ///
-/// @throw Error if no parameters are passed.
-///
 @mixin border-radius($values...) {
 
-    @if (length($values) == 0 or #{$values} == "default") {
+    @if length($values) == 0 or #{$values} == "default" {
         $values: $border-radius-default;
     }
-    @else if(#{$values} == "thin") {
+    @else if #{$values} == "thin" {
         $values: $border-radius-thin;
     }
 
@@ -94,30 +92,28 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin font-family($family, $display) {
+@mixin font-family($family, $display: swap) {
 
-    @if (length($family) == 0) {
+    @if not $family {
         @error "font-family() expects at least one parameter."
     }
-
-    @if not map-has-key($font-families, $family) {
+    @else if not map-has-key($font-families, $family) {
         @error "There is no font-family named `#{$family}` in $font-families. Font Family should be one of #{map-keys($font-families)}.";
-    }
-
-    font-family: map-get($font-families, $family);
-
-    @if (length($display) != 0) {
+    } @else {
+        font-family: map-get($font-families, $family);
         font-display: $display;
     }
+
+
 
 }
 
 
 ///
-/// Hide an element properly.
+/// Visually hide an element properly.
 ///
 /// @example scss
-///   @include hide;
+///   @include visually-hidden;
 ///   // width:  1px !important;
 ///   // height: 1px !important;
 ///   // padding: 0 !important;
@@ -126,7 +122,7 @@
 ///   // overflow: hidden !important;
 ///   // clip: rect(1px, 1px, 1px, 1px) !important;
 ///
-@mixin hide() {
+@mixin visually-hidden() {
 
     width:  1px !important;
     height: 1px !important;
@@ -193,38 +189,33 @@
 ///
 @mixin position($value) {
 
-    @if (length($value) == 0) {
+    @if not $value {
         @error "position() expects one parameter."
     }
-
-    @if ($value == "top") {
+    @else if $value == "top" {
         position: absolute;
         top:   0;
         left:  0;
         right: 0;
     }
-
-    @if ($value == "top-left") {
+    @else if $value == "top-left" {
         position: absolute;
         top:  0;
         left: 0;
     }
-
-    @else if($value == "bottom") {
+    @else if $value == "bottom" {
         position: absolute;
         bottom: 0;
         left:   0;
         right:  0;
     }
-
-    @else if($value == "center") {
+    @else if $value == "center" {
         position: absolute;
         top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
-
-    @else if($value == "none" or $value == "reset") {
+    @else if $value == "none" or $value == "reset" {
         position: relative;
         top:    auto;
         left:   auto;
@@ -297,41 +288,31 @@
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
 @mixin transition($values...) {
-
     $transition: ();
 
-    @if (length($values) == 0 or $values == "default") {
+    // if no parameter, transition all with default time and function
+    @if length($values) == 0 {
         $transition: all #{$transition-time} #{$transition-function};
-    }
-
-    @else if(str-index(""+$values+"", " ") == null and str-index(""+$values+"", ",") == null and $values != "none") {
-        $transition: #{$values} #{$transition-time} #{$transition-function};
-    }
-
-    @else if(str-index(""+$values+"", ",") != null) {
+    // if parameter just set to "none" then just transition nothing (none)
+    } @else if #{$values} == "none" {
+        $transition: none;
+    // if the parameter contains a comma then operating on multiple properties
+    } @else if list-separator($values) == comma {
         @each $value in $values {
-
-            @if (str-index(""+$value+"", " ") == null) {
-                $transition: append($transition, unquote("#{$value} #{$transition-time} #{$transition-function}"), comma);
-            }
-
-            @else if(str-index(""+$value+"", " ") == 1) {
-                $transition: append($transition, unquote("#{$value} #{$transition-function}"), comma);
-            }
-
-            @else {
-                $transition: append($transition, unquote("#{$value}"), comma);
-            }
-
+            $property: nth($value, 1);
+            $time: if(length($value) > 1, nth($value, 2), $transition-time);
+            $function: if(length($value) > 2, nth($value, 3), $transition-function);
+            $transition: append($transition, $property $time $function, comma);
+            content: "#{$property} #{$time} #{$function}";
         }
-    }
-
-    @else {
-        $transition: #{$values};
+    } @else {
+        $property: nth($values, 1);
+        $time: if(length($values) > 1, nth($values, 2), $transition-time);
+        $function: if(length($values) > 2, nth($values, 3), $transition-function);
+        $transition: $property $time $function;
     }
 
     transition: #{$transition};
-
 }
 
 
@@ -353,13 +334,11 @@
 /// @throw Error if no parameters are passed.
 ///
 @mixin will-change($values...) {
-
-    @if (length($values) == 0) {
+    @if length($values) == 0 {
         @error "will-change() expects at least one parameter.";
     }
 
     will-change: #{$values};
-
 }
 
 
@@ -377,16 +356,12 @@
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $z-indexes.
 ///
-@mixin z-index($value) {
+@mixin z-index($z-index) {
+    $value: map-get($z-indexes, $z-index);
 
-    @if (length($value) == 0) {
-        @error "z-index() expects at least one parameter."
+    @if not $value {
+        @error "No value found for `#{$z-index}`. Please make sure it is defined in `$z-indexes` map.";
     }
 
-    @if not map-has-key($z-indexes, $value) {
-        @error "There is no layer named `#{$value}` in $z-indexes. Layer should be one of #{map-keys($z-indexes)}.";
-    }
-
-    z-index: map-get($z-indexes, $value);
-
+    z-index: $value;
 }

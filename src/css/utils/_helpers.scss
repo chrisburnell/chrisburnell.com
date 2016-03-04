@@ -20,7 +20,7 @@
 // Still treated as normal content by text-to-speech software
 .hidden,
 .hide {
-    @include hide;
+    @include visually-hidden;
 }
 
 // Hyphenate any looooooooooooooooooooo-

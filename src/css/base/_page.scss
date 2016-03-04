@@ -13,5 +13,5 @@ html {
 
 // Hide the master SVG injected immediately below `<body>`
 .svg--master {
-    @include hide;
+    @include visually-hidden;
 }
