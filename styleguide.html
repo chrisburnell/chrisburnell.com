@@ -169,13 +169,6 @@ twitter: true
 <ol reversed>
     <li>This is a list item in an ordered list</li>
     <li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
-    <li>
-        Lists can be nested inside of each other
-        <ol>
-            <li>This is a nested list item</li>
-            <li>This is another nested list item in an ordered list</li>
-        </ol>
-    </li>
     <li>This is the last list item</li>
 </ol>
 
@@ -198,38 +191,125 @@ twitter: true
     <table>
         <thead>
             <tr>
-                <th>Heading #1</th>
-                <th>Heading #2</th>
-                <th>Heading #3</th>
-                <th>Heading #4</th>
+                <th>Heading A</th>
+                <th>Heading B</th>
+                <th>Heading C</th>
+                <th>Heading D</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
+                <td>Cell A-1</td>
+                <td>Cell B-1</td>
+                <td>Cell C-1</td>
+                <td>Cell D-1</td>
             </tr>
             <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
+                <td>Cell A-2</td>
+                <td>Cell B-2</td>
+                <td>Cell C-2</td>
+                <td>Cell D-2</td>
             </tr>
             <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
+                <td>Cell A-3</td>
+                <td>Cell B-3</td>
+                <td>Cell C-3</td>
+                <td>Cell D-3</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>Foot #1</th>
-                <th>Foot #2</th>
-                <th>Foot #3</th>
-                <th>Foot #4</th>
+                <th>Foot A</th>
+                <th>Foot B</th>
+                <th>Foot C</th>
+                <th>Foot D</th>
+            </tr>
+        </tfoot>
+    </table>
+</figure>
+
+
+{% include content/heading.html title='Table with Alternating Rows' %}
+
+<figure>
+    <table class="zebra">
+        <thead>
+            <tr>
+                <th>Heading A</th>
+                <th>Heading B</th>
+                <th>Heading C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cell A-1</td>
+                <td>Cell B-1</td>
+                <td>Cell C-1</td>
+            </tr>
+            <tr>
+                <td>Cell A-2</td>
+                <td>Cell B-2</td>
+                <td>Cell C-2</td>
+            </tr>
+            <tr>
+                <td>Cell A-3</td>
+                <td>Cell B-3</td>
+                <td>Cell C-3</td>
+            </tr>
+            <tr>
+                <td>Cell A-4</td>
+                <td>Cell B-4</td>
+                <td>Cell C-4</td>
+            </tr>
+            <tr>
+                <td>Cell A-5</td>
+                <td>Cell B-5</td>
+                <td>Cell C-5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Foot A</th>
+                <th>Foot B</th>
+                <th>Foot C</th>
+            </tr>
+        </tfoot>
+    </table>
+</figure>
+
+
+{% include content/heading.html title='Table with Subheadings' %}
+
+<figure>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Heading A</th>
+                <th>Heading B</th>
+                <th>Heading C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Subheading i</td>
+                <td>Cell A-i</td>
+                <td>Cell B-i</td>
+                <td>Cell C-i</td>
+            </tr>
+            <tr>
+                <th>Subheading ii</td>
+                <td>Cell A-ii</td>
+                <td>Cell B-ii</td>
+                <td>Cell C-ii</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>Foot A</th>
+                <th>Foot B</th>
+                <th>Foot C</th>
             </tr>
         </tfoot>
     </table>
@@ -237,6 +317,14 @@ twitter: true
 
 
 {% include content/heading.html title='Details &amp; Summary' id='details-and-summary' %}
+
+<figure>
+    <details>
+        <summary>Summary</summary>
+        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+        <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+    </details>
+</figure>
 
 <figure>
     <details>

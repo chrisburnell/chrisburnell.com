@@ -117,10 +117,6 @@ $font-weight-default: 400 !default;
 $font-weight-bold:    600 !default;
 
 
-/// @type String
-$font-style-default: normal !default;
-
-
 // 16px
 /// @type Length
 $font-size-default:    100% !default;
@@ -204,6 +200,7 @@ $transition-function: ease !default;
 /// @see {Function} z-index
 $z-indexes: (
     "below":  -1,
+    "root": 0,
     "default": 1,
     "above":   2
 ) !default;

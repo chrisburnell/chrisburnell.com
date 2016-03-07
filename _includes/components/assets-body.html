@@ -1,11 +1,11 @@
-<!-- Load in the main styles -->
+<!-- Load in the main styles... -->
 <script>loadCSS('/css/main.min.css');</script>
-<!-- or just serve it, late, if they haven’t got JS -->
+<!-- Or serve the main styles (late) if you haven't got JavaScript -->
 <noscript>
     <link rel="stylesheet" href="/css/main.min.css">
 </noscript>
 
-<!-- Support Main Scripts -->
+<!-- Support Main Script -->
 <script>
     // Support Disqus comments
     var DISQUS_SHORTNAME = 'chrisburnell';
@@ -16,8 +16,8 @@
 <!-- Search Templates -->
 {% include components/search-templates.html %}
 
-<!-- ServiceWorker -->
-<script src="/serviceworker.min.js" async defer></script>
+<!-- ServiceWorker (disabled until I figure out proper caching) -->
+<!--script src="/serviceworker.min.js" async defer></script-->
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
 

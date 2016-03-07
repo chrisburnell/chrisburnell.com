@@ -6,7 +6,7 @@
 
 html {
     background-color: $color-text;
-    font: $font-weight-default $font-style-default #{$font-size-default}/#{$line-height-default} $font-family-default;
+    font: $font-weight-default normal #{$font-size-default}/#{$line-height-default} $font-family-default;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
 }
@@ -212,6 +212,12 @@ ol.default-list {
             content: counter(ordered-list) ".";
         }
     }
+
+    &[reversed] {
+        li {
+            counter-increment: ordered-list -1;
+        }
+    }
 }
 ul:not([class]) li::before,
 ul.default-list li::before {
@@ -221,7 +227,6 @@ ul.default-list li::before {
     font-size: 1.5rem;
     line-height: 1;
 }
-
 dl {
     width: 100%;
     margin-top: 0;
@@ -230,135 +235,195 @@ dl {
     &:not(:last-child) {
         margin-bottom: $measure-large;
     }
+}
+dt {
+    width: auto;
+    min-width: 10rem;
+    clear: left;
+    padding-right: $measure-medium;
+    font-family: $font-family-gamma;
+    font-weight: $font-weight-bold;
 
-    dt {
-        width: auto;
-        min-width: 10rem;
-        clear: left;
-        padding-right: $measure-medium;
-        font-family: $font-family-gamma;
-        font-weight: $font-weight-bold;
+    @include media(">small") {
+        float: left;
+    }
+}
+dd {
+    width: $wrapper-width-large;
+    display: table-cell;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: top;
 
-        @include media(">small") {
-            float: left;
-        }
+    &:not(:last-child) {
+        padding-bottom: $measure-medium;
     }
 
-    dd {
-        width: $wrapper-width-large;
-        display: table-cell;
-        margin: 0;
-        overflow: hidden;
-        vertical-align: top;
-
-        &:not(:last-child) {
-            padding-bottom: $measure-medium;
-        }
-
-        @include media("<=small") {
-            width: auto;
-            display: block;
-            padding-left: $measure-medium;
-        }
+    @include media("<=small") {
+        width: auto;
+        display: block;
+        padding-left: $measure-medium;
     }
 }
 
+/**
+ * Tables
+ */
 table {
     width: 100%;
-    margin-bottom: $measure-medium;
-    position: relative;
     overflow-x: auto;
     overflow-y: hidden;
     font-family: $font-family-gamma;
     border-collapse: separate;
 
     &.zebra {
-        tr:nth-child(even) {
-            background-color: $color-gray;
-        }
-    }
-
-    thead,
-    tfoot {
-        background-color: $color-gray;
-    }
-
-    th,
-    td {
-        @include transition(border-left-color);
-        padding: $measure-small;
-        position: relative;
-        text-align: left;
-    }
-
-    th {
-        font-weight: $font-weight-bold;
-    }
-    thead th {
-        white-space: nowrap;
-    }
-    tfoot th {
-        border-top: $border-width-thin solid $color-text-light;
-    }
-    th + th {
-        border-left: $border-width-thin solid $color-text-light;
-    }
-
-    td {
-        border-top: $border-width-thin solid $color-gray;
-    }
-    tr:first-child td {
-        border-top-color: $color-text-light;
-    }
-    td + td {
-        border-left: $border-width-thin solid $color-gray;
-    }
-
-    tr {
-        @include transition(background-color, color);
-
-        &:hover {
-            background-color: $color-text;
-            color: $color-white;
-
-            th,
-            td {
-                border-left-color: $color-text-alt;
-            }
+        tbody tr:nth-child(even) td {
+            background-color: $color-black--5-percent;
+            border-left-color: $color-text-light;
         }
     }
 }
+th,
+td {
+    @include transition(background-color, border-left-color);
+    @include will-change(background-color, border-left-color);
+    padding: $measure-small;
+    text-align: left;
+}
+// Row Highlighting
+tbody tr:hover {
+    td {
+        border-left-color: $color-text-light;
+    }
+    th,
+    td:not(:hover) {
+        background-color: $color-brand--10-percent !important;
+    }
+}
+// Column Highlighting
+thead th:not(:empty),
+td,
+tfoot th:not(:empty) {
+    position: relative;
 
+    &::after {
+        @include position(left);
+        @include transition(opacity);
+        @include z-index(above);
+        content: "";
+        opacity: opacity(0);
+        background-color: $color-brand--10-percent;
+        width: 100%;
+        height: 200vw;
+        pointer-events: none;
+    }
+
+    &:hover {
+        &::after {
+            opacity: opacity(1);
+        }
+    }
+}
+// Head and Foot Cells
+th {
+    &:not(:empty) {
+        background-color: $color-gray;
+    }
+
+    thead &,
+    tfoot & {
+        font-weight: $font-weight-bold;
+        white-space: nowrap;
+    }
+
+    tfoot & {
+        border-top: $border-width-thin solid $color-text-light;
+    }
+    /*tfoot*/.totals & {
+        @include media(">medium") {
+            text-align: right;
+        }
+
+        &::before {
+            content: "Total:";
+            padding-right: 0.5em;
+            font-style: italic;
+
+            @include media(">small") {
+                float: left;
+            }
+        }
+    }
+
+    tbody & {
+        font-style: italic;
+        font-weight: $font-weight-default;
+    }
+
+    & + th {
+        border-left: $border-width-thin solid $color-text-light;
+    }
+}
+// Body Cells
+tbody th,
+td {
+    border-top: $border-width-thin solid $color-gray;
+
+    & + td {
+        border-left: $border-width-thin solid $color-gray;
+    }
+}
+tbody th,
+tbody tr:first-child td,
+tbody tr:hover td,
+tbody tr:hover + tr td {
+    border-top-color: $color-text-light;
+}
+tbody th {
+    width: 1px;
+    padding-right: $measure-medium;
+    text-align: right;
+    white-space: nowrap;
+
+    & + td {
+        border-left-color: $color-text-light;
+    }
+}
+
+/**
+ * Details and Summary
+ */
 details {
     background-color: $color-text;
     color: $color-white;
     padding: $measure-small;
     font-family: $font-family-gamma;
 
-    summary {
-        font-weight: $font-weight-bold;
-        outline: 0;
-        cursor: pointer;
-    }
-
-    summary + %content-elements {
-        margin-top: $measure-small;
-        border-top: $border-width-thin solid $color-brand;
-        padding-top: $measure-medium;
-    }
-
     %content-elements {
         padding: 0 $measure-small $measure-small;
     }
 }
+summary {
+    font-weight: $font-weight-bold;
+    outline: 0;
+    cursor: pointer;
 
+    & + %content-elements {
+        margin-top: $measure-small;
+        border-top: $border-width-thin solid $color-brand;
+        padding-top: $measure-medium;
+    }
+}
+
+/**
+ * Images and Figures
+ */
 img,
 a img {
     width: auto;
     max-width: 100%;
     height: auto;
 }
-
 figure {
     margin: 0 0 $measure-medium;
 
@@ -394,6 +459,9 @@ figure {
     }
 }
 
+/**
+ * Quotes
+ */
 blockquote {
     @include border-radius;
     @include quotes;
@@ -432,12 +500,14 @@ blockquote {
 /*blockquote*/.twitter-tweet {
     margin: 0 auto $measure-medium !important;
 }
-
 q {
     @include quotes;
     font-style: italic;
 }
 
+/**
+ * Inline Content Elements
+ */
 abbr[title],
 blockquote,
 cite,
