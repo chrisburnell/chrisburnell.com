@@ -75,7 +75,7 @@
 }());
 
 /*!
- * General Scripts
+ * Reverse Lists
  * @author Chris Burnell <@iamchrisburnell>
  */
 
@@ -84,9 +84,6 @@
 
     'use strict';
 
-    ////
-    /// Fix Reversed Lists
-    ////
     var reversedLists = document.querySelectorAll('ol[reversed]'),
         counterResetValue;
     if (reversedLists !== null) {

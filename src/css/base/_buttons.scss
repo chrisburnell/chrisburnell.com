@@ -78,7 +78,7 @@ button,
     }
 
     &[aria-hidden="true"] {
-        display: none;
+        display: none !important;
     }
 }
 

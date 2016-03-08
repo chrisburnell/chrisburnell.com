@@ -1179,7 +1179,7 @@ button,
     font-family: Monaco, Consolas, Courier, monospace; }
   button[aria-hidden="true"],
   .button[aria-hidden="true"] {
-    display: none; }
+    display: none !important; }
 
 button[disabled] {
   opacity: 0.7;
