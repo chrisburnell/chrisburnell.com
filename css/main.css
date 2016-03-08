@@ -617,20 +617,35 @@ td {
   padding: 0.625rem;
   text-align: left; }
 
-tbody tr:hover td {
+.highlight tbody tr:hover td,
+.highlight--row tbody tr:hover td {
   border-left-color: #dddddd; }
 
-tbody tr:hover th,
-tbody tr:hover td:not(:hover) {
+.highlight tbody tr:hover td,
+.highlight tbody tr:hover + tr td,
+.highlight--row tbody tr:hover td,
+.highlight--row tbody tr:hover + tr td {
+  border-top-color: #dddddd; }
+
+.highlight tbody tr:hover th,
+.highlight tbody tr:hover td:not(:hover),
+.highlight--row tbody tr:hover th,
+.highlight--row tbody tr:hover td:not(:hover) {
   background-color: rgba(95, 138, 166, 0.1) !important; }
 
-thead th:not(:empty),
-td,
-tfoot th:not(:empty) {
+.highlight thead th:not(:empty),
+.highlight td,
+.highlight tfoot th:not(:empty),
+.highlight--columns thead th:not(:empty),
+.highlight--columns td,
+.highlight--columns tfoot th:not(:empty) {
   position: relative; }
-  thead th:not(:empty)::after,
-  td::after,
-  tfoot th:not(:empty)::after {
+  .highlight thead th:not(:empty)::after,
+  .highlight td::after,
+  .highlight tfoot th:not(:empty)::after,
+  .highlight--columns thead th:not(:empty)::after,
+  .highlight--columns td::after,
+  .highlight--columns tfoot th:not(:empty)::after {
     position: absolute;
     top: 50%;
     left: 0;
@@ -645,9 +660,12 @@ tfoot th:not(:empty) {
     width: 100%;
     height: 200vw;
     pointer-events: none; }
-  thead th:not(:empty):hover::after,
-  td:hover::after,
-  tfoot th:not(:empty):hover::after {
+  .highlight thead th:not(:empty):hover::after,
+  .highlight td:hover::after,
+  .highlight tfoot th:not(:empty):hover::after,
+  .highlight--columns thead th:not(:empty):hover::after,
+  .highlight--columns td:hover::after,
+  .highlight--columns tfoot th:not(:empty):hover::after {
     opacity: 1; }
 
 th {
@@ -684,9 +702,7 @@ td {
     border-left: 0.125rem solid #ededed; }
 
 tbody th,
-tbody tr:first-child td,
-tbody tr:hover td,
-tbody tr:hover + tr td {
+tbody tr:first-child td {
   border-top-color: #dddddd; }
 
 tbody th {

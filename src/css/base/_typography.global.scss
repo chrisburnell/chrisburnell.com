@@ -291,9 +291,14 @@ td {
     text-align: left;
 }
 // Row Highlighting
-tbody tr:hover {
+.highlight tbody tr:hover,
+.highlight--row tbody tr:hover {
     td {
         border-left-color: $color-text-light;
+    }
+    td,
+    & + tr td {
+        border-top-color: $color-text-light;
     }
     th,
     td:not(:hover) {
@@ -301,9 +306,12 @@ tbody tr:hover {
     }
 }
 // Column Highlighting
-thead th:not(:empty),
-td,
-tfoot th:not(:empty) {
+.highlight thead th:not(:empty),
+.highlight td,
+.highlight tfoot th:not(:empty),
+.highlight--columns thead th:not(:empty),
+.highlight--columns td,
+.highlight--columns tfoot th:not(:empty) {
     position: relative;
 
     &::after {
@@ -374,9 +382,7 @@ td {
     }
 }
 tbody th,
-tbody tr:first-child td,
-tbody tr:hover td,
-tbody tr:hover + tr td {
+tbody tr:first-child td {
     border-top-color: $color-text-light;
 }
 tbody th {
