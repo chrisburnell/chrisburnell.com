@@ -18,7 +18,7 @@ var gulp         = require('gulp'),
 var autoprefixer = require('autoprefixer'),
     cssnano      = require('cssnano'),
     reporter     = require('postcss-reporter'),
-    scss         = require('postcss-scss'),
+    scss_syntax  = require('postcss-scss'),
     sassdoc      = require('sassdoc'),
     stylelint    = require('stylelint');
 
@@ -47,7 +47,7 @@ var stylelintRules = {
         'number-max-precision': 3,
         'number-zero-length-no-unit': true,
         'time-no-imperceptible': true,
-        'declaration-block-no-single-line': true,
+        'block-no-single-line': true,
         'comment-whitespace-inside': 'always',
         'indentation': 4,
         'selector-no-id': true,
@@ -67,7 +67,7 @@ gulp.task('css-lint', function() {
                 clearMessages: true,
                 throwError: true
             })
-        ], { syntax: scss }));
+        ], { syntax: scss_syntax }));
 });
 
 // Compile main SCSS file
