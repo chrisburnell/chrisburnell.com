@@ -743,8 +743,8 @@ figure {
   figure:not(.highlight) {
     overflow-x: auto;
     overflow-y: hidden; }
-  figure img,
-  figure svg,
+  figure > img,
+  figure > svg,
   figure > a {
     background-clip: padding-box;
     border-radius: 0.375rem;

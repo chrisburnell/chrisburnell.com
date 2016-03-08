@@ -433,8 +433,8 @@ figure {
         overflow-y: hidden;
     }
 
-    img,
-    svg,
+    & > img,
+    & > svg,
     & > a {
         @include border-radius;
         display: block;
