@@ -433,9 +433,11 @@ figure {
         overflow-y: hidden;
     }
 
+    & > a,
     & > img,
+    & > a img,
     & > svg,
-    & > a {
+    & > a svg {
         @include border-radius;
         display: block;
         margin-left:  auto;
@@ -446,8 +448,8 @@ figure {
         border-bottom-width: 0;
     }
 
-    a:link,
-    a:visited,
+    & > a:link,
+    & > a:visited,
     figcaption {
         color: $color-text-alt;
         font-style: italic;

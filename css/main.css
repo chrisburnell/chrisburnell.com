@@ -743,9 +743,11 @@ figure {
   figure:not(.highlight) {
     overflow-x: auto;
     overflow-y: hidden; }
+  figure > a,
   figure > img,
+  figure > a img,
   figure > svg,
-  figure > a {
+  figure > a svg {
     background-clip: padding-box;
     border-radius: 0.375rem;
     display: block;
@@ -753,8 +755,8 @@ figure {
     margin-right: auto; }
   figure > a {
     border-bottom-width: 0; }
-  figure a:link,
-  figure a:visited,
+  figure > a:link,
+  figure > a:visited,
   figure figcaption {
     color: #737373;
     font-style: italic; }
