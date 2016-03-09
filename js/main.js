@@ -1,4 +1,33 @@
 /*!
+ * Code ARIA Toggling
+ * @author Chris Burnell <@iamchrisburnell>
+ */
+
+
+(function() {
+
+    'use strict';
+
+    ////
+    /// Initialisation
+    ////
+
+    var codeToggleLabels = document.querySelectorAll('.code-toggle-label');
+    for (var i = 0; i < codeToggleLabels.length; i++) {
+        codeToggleLabels[i].addEventListener('click', function(event) {
+            toggleCode(event);
+        });
+    }
+
+    function toggleCode(node) {
+        node.target.setAttribute('aria-hidden', 'true');
+        node.target.removeEventListener('click', function() {});
+        node.target.querySelector('button').setAttribute('aria-pressed', 'true');
+    }
+
+}());
+
+/*!
  * Conditional comments for article pages
  * @author Chris Burnell <@iamchrisburnell>
  */
@@ -24,19 +53,14 @@
     // if Comments Button exists, enable it and attach Event Listener
     if (commentsButton !== null) {
         commentsButton.disabled = false;
-        commentsButton.addEventListener('click', function() {
-            showComments();
-        });
+        commentsButton.setAttribute('aria-disabled', 'false');
+        commentsButton.addEventListener('click', showComments);
     }
 
     // run `updateFromHash()` on window load
-    window.addEventListener('load', function() {
-        updateFromHash();
-    });
+    window.addEventListener('load', updateFromHash);
     // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', function() {
-        updateFromHash();
-    });
+    window.addEventListener('hashchange', updateFromHash);
     ////
     /// If URL contains a hash from `commentsHash`, initiate `showComments()`
     ////
@@ -53,7 +77,6 @@
     ////
     function showComments() {
         if (commentsSection !== null) {
-            window.scrollTo(0, commentsSection.offsetTop);
             // only if the button still exists should we load Disqus and remove the button
             if (commentsButton !== null && commentsButton.getAttribute('aria-hidden') === 'false') {
                 commentsButton.setAttribute('aria-pressed', 'true');
@@ -67,9 +90,59 @@
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
                 // make sure we are indeed scrolled to the right part of the page
-                window.scrollTo(0, commentsSection.offsetTop);
+                commentsSection.setAttribute('aria-hidden', 'false');
+                commentsSection.setAttribute('aria-expanded', 'true');
             }
         }
+    }
+
+}());
+
+/*!
+ * Heading Anchor ARIA Toggling
+ * @author Chris Burnell <@iamchrisburnell>
+ */
+
+
+(function() {
+
+    'use strict';
+
+    ////
+    /// Initialisation
+    ////
+
+    var headingAnchors = document.querySelectorAll('.heading-anchor');
+
+    ////
+    /// Handle Events on Headings (and their children)
+    ////
+
+    for (var i = 0; i < headingAnchors.length; i++) {
+        headingAnchors[i].parentNode.addEventListener('mouseenter', function(event) {
+            showHeadingAnchor(event);
+        });
+        headingAnchors[i].parentNode.addEventListener('mouseleave', function(event) {
+            hideHeadingAnchor(event);
+        });
+        headingAnchors[i].parentNode.addEventListener('focus', function(event) {
+            showHeadingAnchor(event);
+        });
+        headingAnchors[i].parentNode.addEventListener('blur', function(event) {
+            hideHeadingAnchor(event);
+        });
+    }
+
+    ////
+    /// Toggle `aria-hidden`
+    ////
+
+    function showHeadingAnchor(node) {
+        node.target.querySelector('.heading-anchor').setAttribute('aria-hidden', 'false');
+    }
+
+    function hideHeadingAnchor(node) {
+        node.target.querySelector('.heading-anchor').setAttribute('aria-hidden', 'true');
     }
 
 }());
@@ -128,7 +201,9 @@
 
     // enable search input and submit
     searchInput.disabled  = false;
+    searchInput.setAttribute('aria-disabled', 'false');
     searchSubmit.disabled = false;
+    searchSubmit.setAttribute('aria-disabled', 'false');
 
 
     ////

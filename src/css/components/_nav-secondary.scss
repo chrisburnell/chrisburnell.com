@@ -23,8 +23,6 @@
     }
 
     %button-elements {
-        display: inline-block;
-
         @include media(">small") {
             margin-left:  $measure-small;
             margin-right: $measure-small;

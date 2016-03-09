@@ -880,6 +880,12 @@ iframe {
   margin-bottom: 1.25rem; }
 
 /**
+ * Hide ARIA-hidden elements
+ */
+[aria-hidden="true"] {
+  display: none; }
+
+/**
  * Mouse Selection
  */
 ::-moz-selection {
@@ -1002,7 +1008,6 @@ a {
     border-bottom-color: #5f8aa6; }
 
 .heading-anchor {
-  display: none;
   margin-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
   font-size: 0.875rem;
@@ -1195,9 +1200,6 @@ button,
     width: auto;
     height: auto;
     font-family: Monaco, Consolas, Courier, monospace; }
-  button[aria-hidden="true"],
-  .button[aria-hidden="true"] {
-    display: none !important; }
 
 button[disabled] {
   opacity: 0.7;
@@ -1801,42 +1803,36 @@ footer {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; } }
-  .nav-secondary button, .nav-secondary
-  .button,
-  .buttons-list button,
-  .buttons-list
-  .button {
-    display: inline-block; }
-    @media (min-width: 501px) {
-      .nav-secondary button, .nav-secondary
+  @media (min-width: 501px) {
+    .nav-secondary button, .nav-secondary
+    .button,
+    .buttons-list button,
+    .buttons-list
+    .button {
+      margin-left: 0.625rem;
+      margin-right: 0.625rem; } }
+  @media (max-width: 500px) {
+    .nav-secondary button, .nav-secondary
+    .button,
+    .buttons-list button,
+    .buttons-list
+    .button {
+      margin-left: auto;
+      margin-right: auto; }
+      .nav-secondary button + button, .nav-secondary
+      .button + button, .nav-secondary button +
+      .button, .nav-secondary
+      .button +
       .button,
-      .buttons-list button,
+      .buttons-list button + button,
       .buttons-list
-      .button {
-        margin-left: 0.625rem;
-        margin-right: 0.625rem; } }
-    @media (max-width: 500px) {
-      .nav-secondary button, .nav-secondary
+      .button + button,
+      .buttons-list button +
       .button,
-      .buttons-list button,
       .buttons-list
+      .button +
       .button {
-        margin-left: auto;
-        margin-right: auto; }
-        .nav-secondary button + button, .nav-secondary
-        .button + button, .nav-secondary button +
-        .button, .nav-secondary
-        .button +
-        .button,
-        .buttons-list button + button,
-        .buttons-list
-        .button + button,
-        .buttons-list button +
-        .button,
-        .buttons-list
-        .button +
-        .button {
-          margin-top: 0.625rem; } }
+        margin-top: 0.625rem; } }
 
 .nav-secondary {
   margin-top: 2.25rem;

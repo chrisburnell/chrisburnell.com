@@ -76,10 +76,6 @@ button,
             font-family: $font-family-monospace;
         }
     }
-
-    &[aria-hidden="true"] {
-        display: none !important;
-    }
 }
 
 button {

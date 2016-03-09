@@ -1,6 +1,6 @@
 <nav class="nav-secondary" role="navigation">
     {% if page.comments == true %}
-        <button class="button--show-comments  js-show-comments" role="button" type="button" aria-label="Leave a comment" aria-hidden="false" aria-pressed="false" disabled>
+        <button class="button--show-comments  js-show-comments" role="button" type="button" aria-controls="disqus_thread" aria-label="Leave a comment" aria-hidden="false" aria-pressed="false" aria-disabled="true" disabled>
             {% include content/svg.html type='feather' %}
             <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
         </button>

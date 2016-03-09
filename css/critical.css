@@ -880,6 +880,12 @@ iframe {
   margin-bottom: 1.25rem; }
 
 /**
+ * Hide ARIA-hidden elements
+ */
+[aria-hidden="true"] {
+  display: none; }
+
+/**
  * Mouse Selection
  */
 ::-moz-selection {
@@ -1002,7 +1008,6 @@ a {
     border-bottom-color: #5f8aa6; }
 
 .heading-anchor {
-  display: none;
   margin-left: 1.25rem;
   font-family: Monaco, Consolas, Courier, monospace;
   font-size: 0.875rem;

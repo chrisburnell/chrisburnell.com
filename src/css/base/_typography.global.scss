@@ -565,6 +565,13 @@ iframe {
 }
 
 /**
+ * Hide ARIA-hidden elements
+ */
+[aria-hidden="true"] {
+    display: none;
+}
+
+/**
  * Mouse Selection
  */
 ::selection {

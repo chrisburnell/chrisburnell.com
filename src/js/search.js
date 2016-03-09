@@ -31,7 +31,9 @@
 
     // enable search input and submit
     searchInput.disabled  = false;
+    searchInput.setAttribute('aria-disabled', 'false');
     searchSubmit.disabled = false;
+    searchSubmit.setAttribute('aria-disabled', 'false');
 
 
     ////

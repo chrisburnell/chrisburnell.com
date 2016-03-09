@@ -64,7 +64,7 @@ So it was important for me to make these parts distinct in the new design, whils
 
 {% include content/heading.html title='<code>injection"); DROP TABLE Bookmarks;--</code>' id='injection' %}
 
-<aside><figure aria-hidden="true"><img src="/images/content/idontbelievemyeyes.gif" alt=""></figure></aside>
+<aside><figure><img src="/images/content/idontbelievemyeyes.gif" alt=""></figure></aside>
 
 That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
 

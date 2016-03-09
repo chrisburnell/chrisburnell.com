@@ -6,7 +6,7 @@
 
   @example
     {% include content/svg.html type='raven' %}
-    // <svg aria-hidden="true" class="icon  icon--raven" role="img"><use xlink:href="#svg--raven" /></svg>
+    // <svg class="icon  icon--raven" role="img"><use xlink:href="#svg--raven" /></svg>
 
 {% endcomment %}
-<svg aria-hidden="true" class="icon  icon--{{ include.type }}" role="img"><use xlink:href="#svg--{{ include.type }}" /></svg>
+<svg class="icon  icon--{{ include.type }}" role="img"><use xlink:href="#svg--{{ include.type }}" /></svg>
