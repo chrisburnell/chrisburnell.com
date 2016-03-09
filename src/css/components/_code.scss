@@ -17,8 +17,6 @@ code[data-lang] {
         content: attr(data-lang);
         background-color: $color-text-alt;
         color: $color-white;
-        width: 100%;
-        display: block;
         padding: 0 $measure-medium;
         font-family: $font-family-gamma;
         font-size: $font-size-large;
@@ -44,14 +42,11 @@ code[data-lang] {
  * Code Block Visibility Toggling
  */
 .code-toggle {
-    position: relative;
+    @include position(relative);
 }
 
 .code-toggle-label {
-    @include position("top-left");
-    width:  100%;
-    height: 100%;
-    display: block;
+    @include position(full);
     cursor: pointer;
 
     .code-toggle-input:checked ~ & {
@@ -59,7 +54,7 @@ code[data-lang] {
     }
 
     button {
-        @include position("center");
+        @include position(center);
         pointer-events: none;
     }
 }
@@ -82,7 +77,6 @@ code[data-lang] {
             background-image: gradient(transparent, $color-gray);
             // fade out over the last three lines
             height: ($measure-medium * 4.2);
-            display: block;
         }
     }
 }
@@ -91,7 +85,7 @@ code[data-lang] {
  * Github-style Code Highlighting
  */
 .highlight {
-    position: relative;
+    @include position(relative);
 
     .err {                              // Error
         background-color: lightcoral;

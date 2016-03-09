@@ -27,12 +27,12 @@
         margin-top: $measure-large;
     }
 
-    // override default `.button`
     .button--show-comments {
         &,
         &:active {
             &::before {
-                position: relative;
+                // override default `.button:active::before` behaviour
+                @include position(relative);
                 top: 0;
             }
         }

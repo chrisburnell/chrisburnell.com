@@ -5,8 +5,8 @@
 
 
 html {
+    @include position(relative);
     min-height: 100%;
-    position: relative;
     // prevent horizontal when jumping short page <--> tall page
     overflow-y: scroll;
 }

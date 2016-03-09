@@ -158,17 +158,16 @@
     svg {
         @include transition(opacity);
         @include will-change(opacity);
-        @include z-index(below);
         opacity: opacity("5-percent");
         // override `_icons.scss` + 4px
         width:  6.25em !important;
         height: 6.25em;
-        display: block;
         position: absolute;
         top: 50%;
         right: $measure-small;
         transform: translateY(-50%);
         stroke: $color-text;
+        z-index: z-index(below);
 
         @include media("<=small") {
             width:  4em !important;

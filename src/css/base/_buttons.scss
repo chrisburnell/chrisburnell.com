@@ -9,6 +9,7 @@ button,
     @extend %button-elements;
     @include non-selectable;
     @include border-radius(thin);
+    @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     background-color: $color-brand;
@@ -17,7 +18,6 @@ button,
     display: inline-block;
     padding: 0 0.727em 0.182em;
     margin-top: 0.25rem;
-    position: relative;
     font-family: $font-family-alpha;
     font-size: $font-size-beta;
     line-height: 2;
@@ -55,7 +55,6 @@ button,
         @include position(top);
         @include will-change(top);
         content: "";
-        width: 100%;
         height: 0.182em;
     }
     &:active {

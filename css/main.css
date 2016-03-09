@@ -360,8 +360,8 @@ th {
   padding: 0; }
 
 html {
-  min-height: 100%;
   position: relative;
+  min-height: 100%;
   overflow-y: scroll; }
 
 .svg--master {
@@ -392,9 +392,9 @@ h3,
 h4,
 h5,
 h6 {
+  position: relative;
   padding: 0;
   margin: 0;
-  position: relative;
   font-weight: 400; }
 
 /**
@@ -516,8 +516,8 @@ ul:not([class]),
   ol:not([class]) li,
   ul:not([class]) li,
   .default-list li {
-    padding-left: 2.25rem;
-    position: relative; }
+    position: relative;
+    padding-left: 2.25rem; }
     ol:not([class]) li:not(:last-child),
     ul:not([class]) li:not(:last-child),
     .default-list li:not(:last-child) {
@@ -617,6 +617,7 @@ td {
   padding: 0.625rem;
   text-align: left; }
 
+/*table*/
 .highlight tbody tr:hover td,
 .highlight--row tbody tr:hover td {
   border-left-color: #dddddd; }
@@ -633,6 +634,7 @@ td {
 .highlight--row tbody tr:hover td:not(:hover) {
   background-color: rgba(95, 138, 166, 0.1) !important; }
 
+/*table*/
 .highlight thead th:not(:empty),
 .highlight td,
 .highlight tfoot th:not(:empty),
@@ -653,13 +655,13 @@ td {
             transform: translateY(-50%);
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
-    z-index: 2;
     content: "";
     opacity: 0;
     background-color: rgba(95, 138, 166, 0.1);
     width: 100%;
     height: 200vw;
-    pointer-events: none; }
+    pointer-events: none;
+    z-index: 2; }
   .highlight thead th:not(:empty):hover::after,
   .highlight td:hover::after,
   .highlight tfoot th:not(:empty):hover::after,
@@ -750,9 +752,29 @@ summary {
  */
 img,
 a img {
+  color: #e31b23;
   width: auto;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  font-style: italic; }
+  img::before,
+  a img::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: #dddddd;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+  img::after,
+  a img::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    content: "Broken Image of " attr(alt); }
 
 figure {
   margin: 0 0 1.25rem; }
@@ -959,12 +981,12 @@ pre {
     text-align: left; }
 
 a {
+  position: relative;
   -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   will-change: background, color, border-color;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  position: relative;
   text-decoration: none; }
   a, a:link {
     color: #5f8aa6;
@@ -1134,6 +1156,7 @@ button,
   -webkit-touch-callout: none;
   background-clip: padding-box;
   border-radius: 0.25rem;
+  position: relative;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
   will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
@@ -1143,7 +1166,6 @@ button,
   display: inline-block;
   padding: 0 0.727em 0.182em;
   margin-top: 0.25rem;
-  position: relative;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 1.375rem;
   line-height: 2;
@@ -1182,7 +1204,6 @@ button,
     right: 0;
     will-change: top;
     content: "";
-    width: 100%;
     height: 0.182em; }
   button:active::before, button:active::after,
   .button:active::before,
@@ -1191,10 +1212,6 @@ button,
   button[rel="external"]::after,
   .button[rel="external"]::after {
     position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
     will-change: initial;
     content: " →";
     width: auto;
@@ -1399,7 +1416,6 @@ footer {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     will-change: transform;
-    display: block;
     fill: #5f8aa6; }
     @media (min-width: 769px) {
       .logo svg {
@@ -1566,12 +1582,12 @@ footer {
   .page-home .articles-list {
     margin-bottom: 0; }
   .articles-list li {
+    position: relative;
     width: 100%;
     display: inline-block;
     clear: both;
     padding: 1.5rem 1rem;
-    border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
-    position: relative; }
+    border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
     .articles-list li:nth-child(odd) {
       background-color: rgba(6, 6, 6, 0.05); }
     @media (max-width: 768px) {
@@ -1721,17 +1737,16 @@ footer {
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
-    z-index: -1;
     opacity: 0.05;
     width: 6.25em !important;
     height: 6.25em;
-    display: block;
     position: absolute;
     top: 50%;
     right: 0.625rem;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    stroke: #4f4f4f; }
+    stroke: #4f4f4f;
+    z-index: -1; }
     @media (max-width: 500px) {
       .small-articles-list svg {
         width: 4em !important;
@@ -1751,11 +1766,11 @@ footer {
     margin-bottom: 0; }
 
 .search-form {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  position: relative; }
+  display: flex; }
 
 .search-input {
   -webkit-box-flex: 1;
@@ -2098,8 +2113,6 @@ code[data-lang] {
     content: attr(data-lang);
     background-color: #737373;
     color: #f9f9f9;
-    width: 100%;
-    display: block;
     padding: 0 1.25rem;
     font-family: "proxima-nova", sans-serif;
     font-size: 1.25rem;
@@ -2137,10 +2150,9 @@ code[data-lang] {
 .code-toggle-label {
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+  right: 0;
   cursor: pointer; }
   .code-toggle-input:checked ~ .code-toggle-label {
     display: none; }
@@ -2170,8 +2182,7 @@ code[data-lang] {
     content: "";
     background-image: -webkit-linear-gradient(top, transparent 0%, #ededed 100%);
     background-image: linear-gradient(to bottom, transparent 0%, #ededed 100%);
-    height: 5.25rem;
-    display: block; }
+    height: 5.25rem; }
 
 /**
  * Github-style Code Highlighting
@@ -2328,10 +2339,10 @@ code[data-lang] {
  * inside a 16:9 aspect ratio container.
  */
 .media {
+  position: relative;
   height: 0;
   padding-top: 30px;
   padding-bottom: 56.65%;
-  position: relative;
   overflow: hidden; }
   .media embed,
   .media iframe,
@@ -2339,9 +2350,9 @@ code[data-lang] {
   .media video {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
+    right: 0; }
 
 @media print {
   nav,

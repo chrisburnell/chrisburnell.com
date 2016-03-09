@@ -37,9 +37,9 @@ h4,
 h5,
 h6 {
     @extend %heading-elements;
+    @include position(relative);
     padding: 0;
     margin: 0;
-    position: relative;
     font-weight: $font-weight-default;
 }
 
@@ -182,8 +182,8 @@ ul:not([class]),
     margin-bottom: $measure-medium;
 
     li {
+        @include position(relative);
         padding-left: $measure-large;
-        position: relative;
 
         &:not(:last-child) {
             margin-bottom: $measure-small;
@@ -291,39 +291,43 @@ td {
     text-align: left;
 }
 // Row Highlighting
-.highlight tbody tr:hover,
-.highlight--row tbody tr:hover {
-    td {
-        border-left-color: $color-text-light;
-    }
-    td,
-    & + tr td {
-        border-top-color: $color-text-light;
-    }
-    th,
-    td:not(:hover) {
-        background-color: $color-brand--10-percent !important;
+/*table*/.highlight,
+/*table*/.highlight--row {
+    tbody tr:hover {
+        td {
+            border-left-color: $color-text-light;
+        }
+
+        td,
+        & + tr td {
+            border-top-color: $color-text-light;
+        }
+
+        th,
+        td:not(:hover) {
+            background-color: $color-brand--10-percent !important;
+        }
     }
 }
 // Column Highlighting
-.highlight thead th:not(:empty),
-.highlight td,
-.highlight tfoot th:not(:empty),
-.highlight--columns thead th:not(:empty),
-.highlight--columns td,
-.highlight--columns tfoot th:not(:empty) {
-    position: relative;
+/*table*/.highlight thead th:not(:empty),
+/*table*/.highlight td,
+/*table*/.highlight tfoot th:not(:empty),
+/*table*/.highlight--columns thead th:not(:empty),
+/*table*/.highlight--columns td,
+/*table*/.highlight--columns tfoot th:not(:empty) {
+    @include position(relative);
 
     &::after {
         @include position(left);
         @include transition(opacity);
-        @include z-index(above);
         content: "";
         opacity: opacity(0);
         background-color: $color-brand--10-percent;
         width: 100%;
         height: 200vw;
         pointer-events: none;
+        z-index: z-index(above);
     }
 
     &:hover {
@@ -426,9 +430,25 @@ summary {
  */
 img,
 a img {
+    color: $color-lastfm;
     width: auto;
     max-width: 100%;
     height: auto;
+    font-style: italic;
+
+    &::before {
+        @include position(top-left);
+        content: "";
+        background-color: $color-text-light;
+        width:  100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    &::after {
+        @include position(center);
+        content: "Broken Image of " attr(alt);
+    }
 }
 figure {
     margin: 0 0 $measure-medium;

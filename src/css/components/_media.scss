@@ -9,18 +9,16 @@
  * inside a 16:9 aspect ratio container.
  */
 .media {
+    @include position(relative);
     height: 0;
     padding-top: 30px;
     padding-bottom: 56.65%;
-    position: relative;
     overflow: hidden;
 
     embed,
     iframe,
     object,
     video {
-        @include position(top-left);
-        width:  100%;
-        height: 100%;
+        @include position(full);
     }
 }

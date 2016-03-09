@@ -5,11 +5,11 @@
 
 
 a {
+    @include position(relative);
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     border-bottom-width: $border-width-hairline;
     border-bottom-style: solid;
-    position: relative;
     text-decoration: none;
 
     &,

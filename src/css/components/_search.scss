@@ -17,8 +17,8 @@
 }
 
 .search-form {
+    @include position(relative);
     display: flex;
-    position: relative;
 }
 
 .search-input {
