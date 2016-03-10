@@ -11,7 +11,7 @@ tags:
 - sass
 - tutorials
 
-shorturl:
+shorturl: fqojr
 comments: true
 ---
 

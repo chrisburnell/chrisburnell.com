@@ -6,8 +6,7 @@
     {% include content/code-toggle-button.html %}
 
 {% endcomment %}
-{% assign code_toggle_button_count = code_toggle_button_count | plus: 1 %}
-    <label class="code-toggle-label" for="highlight--{{ code_toggle_button_count }}" aria-hidden="false">
-        <button class="button--small" aria-pressed="false">See All</button>
+    <label class="code-toggle-label" for="highlight--{{ code_toggle_count }}" aria-hidden="false">
+        <button id="show-code-{{ code_toggle_count }}" class="button--small" aria-pressed="false" aria-controls="code-toggle-{{ code_toggle_count}}">See All</button>
     </label>
 </div>

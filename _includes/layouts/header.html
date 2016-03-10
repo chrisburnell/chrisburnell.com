@@ -30,7 +30,7 @@ snippet of code on a project of your own. -->
 
 {% include components/head.html %}
 
-<body{% if body_class != '' %} class="{{ body_class_array | join:'  ' }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
+<body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %} itemscope itemtype="http://data-vocabulary.org/WebPage">
 
     {% include components/svg-master.html %}
 

@@ -30,10 +30,9 @@
     {% if page.categories contains 'link' %}page-link{% endif %}
     {% if page.categories contains 'pen' %}page-pen{% endif %}
 {% endcapture %}
-{% assign body_class_array = body_class | split: ' ' %}
+{% assign body_class_array = body_class | split: ' ' | join: '  ' %}
 
 {% assign code_toggle_count = 0 %}
-{% assign code_toggle_button_count = 0 %}
 
 <head>
 
