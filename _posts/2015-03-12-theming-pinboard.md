@@ -176,7 +176,7 @@ html {
 - changing a handful of action buttons from textual links to icon links: star, edit, delete, mark as read
     - for this I used a simple CSS trick to take the element’s text out of the flow and hide it, and instead display a base64-encoded <samp>background-image</samp> with an arbitary <samp>width</samp>, <samp>height</samp>, and <samp>background-size</samp>
 
-{% include content/code-toggle-input.html %}
+{% include content/code-toggle-top.html %}
 {% highlight css %}
 .edit_links a.edit,
 .edit_links a.edit:visited,
@@ -222,7 +222,7 @@ html {
         background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
     }
 {% endhighlight %}
-{% include content/code-toggle-button.html %}
+{% include content/code-toggle-bottom.html %}
 
 - modified the colour palette to match [my styleguide]({{ site.url }}{{ site.baseurl }}/style-guide)
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.

@@ -23,7 +23,7 @@ shorturl: 6aorh
 </div>
 {% endhighlight %}
 
-{% include content/code-toggle-input.html %}
+{% include content/code-toggle-top.html %}
 {% highlight scss %}
 @import url(http://fonts.googleapis.com/css?family=Yellowtail);
 @import url(http://fonts.googleapis.com/css?family=Archivo+Black);
@@ -101,4 +101,4 @@ h1 {
     }
 }
 {% endhighlight %}
-{% include content/code-toggle-button.html %}
+{% include content/code-toggle-bottom.html %}

@@ -20,7 +20,7 @@ shorturl: b3sh4
 <button>Hover Me</button>
 {% endhighlight %}
 
-{% include content/code-toggle-input.html %}
+{% include content/code-toggle-top.html %}
 {% highlight scss %}
 html,
 body {
@@ -73,4 +73,4 @@ button {
     }
 }
 {% endhighlight %}
-{% include content/code-toggle-button.html %}
+{% include content/code-toggle-bottom.html %}

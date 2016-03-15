@@ -25,7 +25,7 @@ shorturl: 6dwvt
 </div>
 {% endhighlight %}
 
-{% include content/code-toggle-input.html %}
+{% include content/code-toggle-top.html %}
 {% highlight scss %}
 html,
 body {
@@ -142,4 +142,4 @@ body {
   }
 }
 {% endhighlight %}
-{% include content/code-toggle-button.html %}
+{% include content/code-toggle-bottom.html %}

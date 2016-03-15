@@ -2,11 +2,11 @@
 
   This include lets you easily embed a CodePen.
 
-  @param {XYZ} slug *
-  @param {XYZ} height *
-  @param {XYZ} theme
-  @param {XYZ} type
-  @param {XYZ} user
+  @param {String} slug *
+  @param {Number} height *
+  @param {String} theme [119]
+  @param {String} type [result]
+  @param {String} user [chrisburnell]
 
   @example
     {% include content/codepen.html slug='lBJnz' height='500' theme='tabfree' %}
@@ -18,10 +18,10 @@
 
 {% endcomment %}
 {% capture codepen_slug %}{% if include.slug %}{{ include.slug }}{% else %}{{ page.codepen_slug }}{% endif %}{% endcapture %}
+{% capture codepen_height %} {% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
 {% capture codepen_theme %}{% if include.theme == 'tabfree' %}{{ site.codepen.themes.tabfree }}{% else %}{{ site.codepen.themes.default }}{% endif %}{% endcapture %}
 {% capture codepen_type %}{% if include.type %}{{ include.type }}{% else %}result{% endif %}{% endcapture %}
 {% capture codepen_user %}{% if include.user %}{{ include.user }}{% else %}{{ site.author.codepen }}{% endif %}{% endcapture %}
-{% capture codepen_height %} {% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
 <pre class="codepen" data-slug-hash="{{ codepen_slug }}" data-type="{{ codepen_type }}" data-theme-id="{{ codepen_theme }}" data-user="{{ codepen_user }}" data-safe="true"{{ codepen_height}}>
     <code></code>
     <a href="//codepen.io/{{ codepen_user }}/pen/{{ codepen_slug }}">Check out this Pen!</a>
