@@ -11,14 +11,7 @@ tags:
 - sass
 - tutorials
 
-<<<<<<< Updated upstream
 shorturl: fqojr
-=======
-banner:        persistent-shadows.png
-banner_mobile: persistent-shadows_mobile.png
-
-shorturl:
->>>>>>> Stashed changes
 comments: true
 ---
 
