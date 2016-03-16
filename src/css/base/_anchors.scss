@@ -128,20 +128,20 @@ a {
  * Brand Link Colors
  */
 @each $color-brand in $color-brands {
-    $name:       nth($color-brand, 1);
-    $text-color: nth($color-brand, 2);
+    $brand-name:  nth($color-brand, 1);
+    $brand-color: nth($color-brand, 2);
 
-    .anchor--#{$name} {
-        color: $text-color !important;
+    .anchor--#{$brand-name} {
+        color: $brand-color !important;
 
         &:link,
         &:visited {
-            border-bottom-color: mix($color-white, $text-color, 20%);
+            border-bottom-color: mix($color-white, $brand-color, 20%);
 
             &:hover,
             &:focus,
             &:active {
-                border-bottom-color: $text-color;
+                border-bottom-color: $brand-color;
             }
         }
     }
