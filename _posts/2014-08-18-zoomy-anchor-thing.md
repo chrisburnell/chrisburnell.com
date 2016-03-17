@@ -18,7 +18,7 @@ shorturl: e1r8k
 
 {% highlight html %}
 <a href="#" class="article-link">
-    <img src="http://chrisburnell.com/images/banners/lets-look-back_mobile.png" alt="">
+    <img src="//chrisburnell.com/images/banners/lets-look-back_mobile.png" alt="">
     <span class="article-title">Let’s Look Back</span>
     <time class="article-date" datetime="2014-02-09T02:19:00+00:00">Feb 09, 2014</time>
 </a>
