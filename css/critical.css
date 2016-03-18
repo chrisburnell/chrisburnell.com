@@ -384,7 +384,10 @@ body {
   color: #4f4f4f; }
 
 /**
- * Headings
+ * Content Elements
+ */
+/**
+ * Heading Elements
  */
 h1,
 h2,
@@ -923,6 +926,9 @@ iframe {
 .canada::selection {
   background-color: #fd1b00; }
 
+/**
+ * Monospace Elements
+ */
 code,
 kbd,
 samp,
@@ -941,7 +947,12 @@ dl code,
 ol code,
 ul code,
 figure:not([class]) code,
-p code,
+p code, h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
 ins,
 kbd,
 mark,
@@ -962,7 +973,8 @@ pre {
   pre:not(.codepen) {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    background-color: rgba(6, 6, 6, 0.05);
+    background-color: #2b2b2b;
+    color: #f9f9f9;
     padding: 1.25rem 1.25rem 1rem;
     margin-top: 2.25rem;
     margin-bottom: 2.25rem;
@@ -976,9 +988,104 @@ pre {
       line-height: 2; }
     pre:not(.codepen) code {
       min-width: 100%;
-      display: block; }
-  .highlight pre {
-    text-align: left; }
+      display: block;
+      font-size: initial; }
+
+/**
+ * Github-style Code Highlighting
+ */
+.highlight .err {
+  background-color: lightcoral;
+  color: firebrick;
+  font-weight: 600; }
+
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+  color: #737373;
+  font-style: italic; }
+
+.highlight .gs,
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nc,
+.highlight .ne,
+.highlight .nf,
+.highlight .o,
+.highlight .ow {
+  font-weight: 600; }
+
+.highlight .gr,
+.highlight .gt,
+.highlight .ne,
+.highlight .nf,
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx {
+  color: firebrick; }
+
+.highlight .gi,
+.highlight .gi .x {
+  background-color: turquoise; }
+
+.highlight .gd,
+.highlight .gd .x {
+  background-color: lightcoral; }
+
+.highlight .ge {
+  font-style: italic; }
+
+.highlight .m,
+.highlight .il,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .nb,
+.highlight .no,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: cadetblue; }
+
+.highlight .sr {
+  color: forestgreen; }
+
+.highlight .bp,
+.highlight .gh,
+.highlight .go,
+.highlight .gp,
+.highlight .nn {
+  color: #737373; }
+
+.highlight .gu,
+.highlight .w {
+  color: #dddddd; }
+
+.highlight .kt,
+.highlight .na,
+.highlight .nc,
+.highlight .nt {
+  color: #6b92ac; }
+
+.highlight .ni,
+.highlight .ss {
+  color: slateblue;
+  color: rebeccapurple; }
 
 a {
   position: relative;
@@ -1398,7 +1505,7 @@ aside p {
 
 .lede {
   margin-bottom: 2.25rem;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.5; }
   @media (max-width: 768px) {
     .lede {

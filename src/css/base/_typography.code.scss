@@ -4,7 +4,9 @@
 ////
 
 
-// Monospace Elements
+/**
+ * Monospace Elements
+ */
 code,
 kbd,
 samp,
@@ -20,6 +22,7 @@ var,
  * Inline Code Examples
  */
 %content-elements code,
+%heading-elements code,
 ins,
 kbd,
 mark,
@@ -40,9 +43,11 @@ pre {
     margin-top: 0;
     margin-bottom: $measure-medium;
 
+    // Main Code Blocks
     &:not(.codepen) {
         @include border-radius;
-        background-color: $color-black--5-percent;
+        background-color: $color-dark-gray;
+        color: $color-white;
         padding: $measure-medium $measure-medium 1rem;
         margin-top:    $measure-large;
         margin-bottom: $measure-large;
@@ -62,10 +67,118 @@ pre {
         code {
             min-width: 100%;
             display: block;
+            font-size: initial;
         }
     }
+}
 
-    .highlight & {
-        text-align: left;
+/**
+ * Github-style Code Highlighting
+ */
+.highlight {
+    .err {                              // Error
+        background-color: lightcoral;
+        color: firebrick;
+        font-weight: $font-weight-bold;
+    }
+
+    .c,                                 // Comment
+    .cm,                                // Comment - Multiline
+    .cp,                                // Comment - Preproc
+    .c1,                                // Comment - Single
+    .cs {                               // Comment - Special
+        color: $color-text-alt;
+        font-style: italic;
+    }
+
+    .gs,                                // Generic - Strong
+    .k,                                 // Keyword
+    .kc,                                // Keyword - Constant
+    .kd,                                // Keyword - Declaration
+    .kp,                                // Keyword - Pseudo
+    .kr,                                // Keyword - Reserved
+    .kt,                                // Keyword - Type
+    .nc,                                // Name - Class
+    .ne,                                // Name - Exception
+    .nf,                                // Name - Function
+    .o,                                 // Operator
+    .ow {                               // Operator - Word
+        font-weight: $font-weight-bold;
+    }
+
+    .gr,                                // Generic - Error
+    .gt,                                // Generic - Traceback
+    .ne,                                // Name - Exception
+    .nf,                                // Name - Function
+    .s,                                 // Literal - String
+    .sb,                                // Literal - String Backtick
+    .sc,                                // Literal - String Char
+    .sd,                                // Literal - String Doc
+    .s1,                                // Literal - String Single
+    .s2,                                // Literal - String Double
+    .se,                                // Literal - String Escape
+    .sh,                                // Literal - String Heredoc
+    .si,                                // Literal - String Interpol
+    .sx {                               // Literal - String Other
+        color: firebrick;
+    }
+
+    .gi,                                // Generic - Inserted
+    .gi .x {                            // Generic - Inserted Specific
+        background-color: turquoise;
+    }
+
+    .gd,                                // Generic - Deleted
+    .gd .x {                            // Generic - Deleted Specific
+        background-color: lightcoral;
+    }
+
+    .ge {                               // Generic - Emph
+        font-style: italic;
+    }
+
+    .m,                                 // Literal - Number
+    .il,                                // Literal - Number Integer Long
+    .mf,                                // Literal - Number Float
+    .mh,                                // Literal - Number Hex
+    .mi,                                // Literal - Number Integer
+    .mo,                                // Literal - Number Oct
+    .nb,                                // Name - Builtin
+    .no,                                // Name - Constant
+    .nv,                                // Name - Variable
+    .vc,                                // Name - Variable Class
+    .vg,                                // Name - Variable Global
+    .vi {                               // Name - Variable Instance
+        color: cadetblue;
+    }
+
+    .sr {                               // Literal - String Regex
+        color: forestgreen;
+    }
+
+    .bp,                                // Name - Builtin Pseudo
+    .gh,                                // Generic - Heading
+    .go,                                // Generic - Output
+    .gp,                                // Generic - Prompt
+    .nn {                               // Name - Namespace
+        color: $color-text-alt;
+    }
+
+    .gu,                                // Generic - Subheading
+    .w {                                // Text - Whitespace
+        color: $color-text-light;
+    }
+
+    .kt,                                // Keyword - Type
+    .na,                                // Name - Attribute
+    .nc,                                // Name - Class
+    .nt {                               // Name - Tag
+        color: mix($color-white, $color-brand, 7.5%);
+    }
+
+    .ni,                                // Name - Entity
+    .ss {                               // Literal - String Symbol
+        color: slateblue;
+        color: rebeccapurple;
     }
 }

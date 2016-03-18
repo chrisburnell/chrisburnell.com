@@ -16,7 +16,9 @@ body {
     color: $color-text;
 }
 
-// Content Elements
+/**
+ * Content Elements
+ */
 blockquote,
 details,
 dl,
@@ -28,7 +30,7 @@ p {
 }
 
 /**
- * Headings
+ * Heading Elements
  */
 h1,
 h2,
@@ -339,7 +341,7 @@ td {
 // Head and Foot Cells
 th {
     &:not(:empty) {
-        background-color: $color-gray;
+        background-color: $color-light-gray;
     }
 
     thead &,
@@ -379,10 +381,10 @@ th {
 // Body Cells
 tbody th,
 td {
-    border-top: $border-width-thin solid $color-gray;
+    border-top: $border-width-thin solid $color-light-gray;
 
     & + td {
-        border-left: $border-width-thin solid $color-gray;
+        border-left: $border-width-thin solid $color-light-gray;
     }
 }
 tbody th,

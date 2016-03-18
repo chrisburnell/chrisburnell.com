@@ -91,7 +91,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-brand--10-percent;
+            background-color: $color-brand--10-percent !important;
         }
 
         @include media(">small") {
