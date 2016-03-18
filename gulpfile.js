@@ -37,7 +37,7 @@ var paths = {
     docs: 'sassdoc/'
 };
 
-// Define SCSS Lint Rules
+// Define Stylelint Rules
 var stylelintRules = {
     'rules': {
         'color-hex-case': 'lower',
@@ -57,7 +57,7 @@ var stylelintRules = {
 
 // -----------------------------------------------------------------------------
 
-// Lint SCSS
+// Lint Sass
 gulp.task('css-lint', function() {
     return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
@@ -70,7 +70,7 @@ gulp.task('css-lint', function() {
         ], { syntax: scss_syntax }));
 });
 
-// Compile main SCSS file
+// Compile Sass
 gulp.task('css-compile', function() {
     return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
@@ -101,7 +101,7 @@ gulp.task('css-compile', function() {
         .pipe(gulp.dest(paths.dist.css));
 });
 
-// Compile critical SCSS file
+// Generate inline Critical CSS include
 gulp.task('css-critical', function() {
     return gulp.src([paths.dist.css + 'critical.min.css'])
         .pipe(plumber())
@@ -121,7 +121,7 @@ gulp.task('css-sassdoc', function() {
         }));
 });
 
-// Minify JS
+// Compile JavaScript
 gulp.task('js-compile', function() {
     return gulp.src(['!' + paths.src.js + '**/loadcss.js',
                      '!' + paths.src.js + '**/serviceworker.js',
@@ -166,7 +166,7 @@ gulp.task('js-serviceworker', function() {
         .pipe(gulp.dest(paths.root));
 });
 
-// Generate inline LoadCSS include
+// Generate inline Typekit include
 gulp.task('js-typekit', function() {
     return gulp.src([paths.src.js + 'vendors/typekit.js'])
         .pipe(plumber())
