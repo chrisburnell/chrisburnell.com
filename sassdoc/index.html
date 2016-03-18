@@ -140,7 +140,7 @@ color: contrasting-color(#111111);
 //     clear: both;
 // }</code></pre></div></section><section class="main__item container item" id="utils-mixin-font-family"><h3 class="item__heading"><a class="item__name" href="#mixin-font-family">font-family</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-family($family, $display) { 
     @if not $family {
-        @error &quot;font-family() expects at least one parameter.&quot;
+        @error &quot;font-family() expects at least one parameter.&quot;;
     }
 
     @if not map-has-key($font-families, $family) {
@@ -168,7 +168,7 @@ color: contrasting-color(#111111);
 // -webkit-touch-callout: default;
 // -webkit-touch-callout: none;</code></pre></div></section><section class="main__item container item" id="utils-mixin-position"><h3 class="item__heading"><a class="item__name" href="#mixin-position">position</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin position($value) { 
     @if not $value {
-        @error &quot;position() expects one parameter.&quot;
+        @error &quot;position() expects one parameter.&quot;;
     }
 
     @if $value == &quot;top&quot; {

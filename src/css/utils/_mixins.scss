@@ -91,7 +91,7 @@
 ///
 @mixin font-family($family, $display: swap) {
     @if not $family {
-        @error "font-family() expects at least one parameter."
+        @error "font-family() expects at least one parameter.";
     }
 
     @if not map-has-key($font-families, $family) {
@@ -153,7 +153,7 @@
 ///
 @mixin position($value) {
     @if not $value {
-        @error "position() expects one parameter."
+        @error "position() expects one parameter.";
     }
 
     @if $value == "top" {
