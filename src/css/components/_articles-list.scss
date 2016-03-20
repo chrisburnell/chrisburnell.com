@@ -70,7 +70,7 @@
 
     %button-elements {
         @include media("<=medium") {
-            @extend .button-small;
+            @extend .button--small;
         }
     }
 

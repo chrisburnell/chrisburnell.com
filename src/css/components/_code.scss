@@ -8,11 +8,10 @@
  * Highlighted Code Blocks
  */
 code[data-lang] {
-    @include position(relative);
     padding-top: $measure-large;
 
     &::before {
-        @include position(top);
+        @include position(code-highlight);
         @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
         content: attr(data-lang);

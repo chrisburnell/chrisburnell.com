@@ -192,6 +192,12 @@
         left:   0;
         right:  0;
     }
+    @else if $value == "code-highlight" {
+        position: absolute;
+        top: $measure-large;
+        left:   0;
+        right:  0;
+    }
     @if $value == "relative" or $value == "none" or $value == "reset" {
         position: relative;
     }

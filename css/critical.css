@@ -994,98 +994,88 @@ pre {
 /**
  * Github-style Code Highlighting
  */
-.highlight .err {
-  background-color: lightcoral;
-  color: firebrick;
-  font-weight: 600; }
-
-.highlight .c,
-.highlight .cm,
-.highlight .cp,
-.highlight .c1,
-.highlight .cs {
-  color: #737373;
-  font-style: italic; }
-
-.highlight .gs,
-.highlight .k,
-.highlight .kc,
-.highlight .kd,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt,
-.highlight .nc,
-.highlight .ne,
-.highlight .nf,
-.highlight .o,
-.highlight .ow {
-  font-weight: 600; }
-
-.highlight .gr,
-.highlight .gt,
-.highlight .ne,
-.highlight .nf,
-.highlight .s,
-.highlight .sb,
-.highlight .sc,
-.highlight .sd,
-.highlight .s1,
-.highlight .s2,
-.highlight .se,
-.highlight .sh,
-.highlight .si,
-.highlight .sx {
-  color: firebrick; }
-
-.highlight .gi,
-.highlight .gi .x {
-  background-color: turquoise; }
-
-.highlight .gd,
-.highlight .gd .x {
-  background-color: lightcoral; }
-
-.highlight .ge {
-  font-style: italic; }
-
-.highlight .m,
-.highlight .il,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo,
-.highlight .nb,
-.highlight .no,
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi {
-  color: cadetblue; }
-
-.highlight .sr {
-  color: forestgreen; }
-
-.highlight .bp,
-.highlight .gh,
-.highlight .go,
-.highlight .gp,
-.highlight .nn {
-  color: #737373; }
-
-.highlight .gu,
-.highlight .w {
-  color: #dddddd; }
-
-.highlight .kt,
-.highlight .na,
-.highlight .nc,
-.highlight .nt {
-  color: #6b92ac; }
-
-.highlight .ni,
-.highlight .ss {
-  color: slateblue;
-  color: rebeccapurple; }
+.highlight {
+  position: relative; }
+  .highlight .err {
+    background-color: lightcoral;
+    color: firebrick;
+    font-weight: 600; }
+  .highlight .c,
+  .highlight .cm,
+  .highlight .cp,
+  .highlight .c1,
+  .highlight .cs {
+    color: #737373;
+    font-style: italic; }
+  .highlight .gs,
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt,
+  .highlight .nc,
+  .highlight .ne,
+  .highlight .nf,
+  .highlight .o,
+  .highlight .ow {
+    font-weight: 600; }
+  .highlight .gr,
+  .highlight .gt,
+  .highlight .ne,
+  .highlight .nf,
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .s1,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sx {
+    color: firebrick; }
+  .highlight .gi,
+  .highlight .gi .x {
+    background-color: turquoise; }
+  .highlight .gd,
+  .highlight .gd .x {
+    background-color: lightcoral; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .m,
+  .highlight .il,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo,
+  .highlight .nb,
+  .highlight .no,
+  .highlight .nv,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vi {
+    color: cadetblue; }
+  .highlight .sr {
+    color: forestgreen; }
+  .highlight .bp,
+  .highlight .gh,
+  .highlight .go,
+  .highlight .gp,
+  .highlight .nn {
+    color: #737373; }
+  .highlight .gu,
+  .highlight .w {
+    color: #dddddd; }
+  .highlight .kt,
+  .highlight .na,
+  .highlight .nc,
+  .highlight .nt {
+    color: #6b92ac; }
+  .highlight .ni,
+  .highlight .ss {
+    color: slateblue;
+    color: rebeccapurple; }
 
 a {
   position: relative;

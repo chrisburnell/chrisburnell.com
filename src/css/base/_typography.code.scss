@@ -76,6 +76,8 @@ pre {
  * Github-style Code Highlighting
  */
 .highlight {
+    @include position(relative);
+
     .err {                              // Error
         background-color: lightcoral;
         color: firebrick;
