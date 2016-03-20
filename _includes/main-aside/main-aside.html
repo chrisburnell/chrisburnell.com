@@ -2,7 +2,7 @@
     {% assign author_name_prefix = 'by' %}
     {% assign author_microdata_tags = '' %}
     {% assign author_microdata_photo = '' %}
-    {% capture author_microdata_name %}<span class="fn" rel="author" itemprop="author">{{ site.author.name }}</span>{% endcapture %}
+    {% capture author_microdata_name %}<span class="canada  fn" rel="author" itemprop="author">{{ site.author.name }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada">Canadian</span>{% endcapture %}
     {% assign author_microdata_job_title = site.author.job_title %}
     {% assign author_microdata_home_location = site.author.location %}
@@ -28,7 +28,7 @@
     {% assign author_name_prefix = 'about' %}
     {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
     {% capture author_microdata_photo %} itemprop="photo"{% endcapture %}
-    {% capture author_microdata_name %}<span itemprop="name">{{ site.author.name }}</span>{% endcapture %}
+    {% capture author_microdata_name %}<span class="canada" itemprop="name">{{ site.author.name }}</span>{% endcapture %}
     {% capture author_microdata_nationality %}<span class="canada" itemprop="nationality">Canadian</span>{% endcapture %}
     {% capture author_microdata_job_title %}<span itemprop="jobTitle">{{ site.author.job_title }}</span>{% endcapture %}
     {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author.location }}</span>{% endcapture %}
@@ -71,7 +71,7 @@
                          /images/avatar@2x.png 2x,
                          /images/avatar@4x.png 4x">
         </a>
-        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="canada  url" href="/about" tabindex="-1">{{ author_microdata_name }}</a></div>
+        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="url" href="/about" tabindex="-1">{{ author_microdata_name }}</a></div>
 
         {{ author_information_details }}
     </div>
