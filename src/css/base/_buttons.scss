@@ -90,13 +90,14 @@ button {
 }
 
 .button--small {
-    min-width: 5em;
-    font-size: $font-size-large;
-    height: 2em;
-    margin-top: 0;
-    line-height: 1.818;
-
-    &:active {
-        height: 1.818em;
-    }
+    // min-width: 5em;
+    // font-size: $font-size-large;
+    // height: 2em;
+    // margin-top: 0;
+    // line-height: 1.818;
+    //
+    // &:active {
+    //     height: 1.818em;
+    // }
+    @include button--small;
 }

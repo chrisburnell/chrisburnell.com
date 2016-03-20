@@ -36,6 +36,26 @@
 
 
 ///
+/// Small Buttons (SSOT)
+///
+/// @author Chris Burnell
+///
+/// @require {Variable} $font-size-large
+///
+@mixin button--small() {
+    min-width: 5em;
+    font-size: $font-size-large;
+    height: 2em;
+    margin-top: 0;
+    line-height: 1.818;
+
+    &:active {
+        height: 1.818em;
+    }
+}
+
+
+///
 /// Clear an element of floats.
 ///
 /// @example scss
@@ -189,12 +209,6 @@
         position: absolute;
         top:    0;
         bottom: 0;
-        left:   0;
-        right:  0;
-    }
-    @else if $value == "code-highlight" {
-        position: absolute;
-        top: $measure-large;
         left:   0;
         right:  0;
     }
