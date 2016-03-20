@@ -68,6 +68,12 @@
         }
     }
 
+    %button-elements {
+        @include media("<=medium") {
+            @extend .button-small;
+        }
+    }
+
     .comments-anchor {
         @include media(">medium") {
             float: right;

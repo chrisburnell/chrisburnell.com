@@ -4,14 +4,11 @@
 ////
 
 
-.highlight pre {
-    @include position(relative);
-}
-
 /**
  * Highlighted Code Blocks
  */
 code[data-lang] {
+    @include position(relative);
     padding-top: $measure-large;
 
     &::before {
@@ -78,7 +75,7 @@ code[data-lang] {
             @include position(bottom);
             @include border-radius(0 0 $border-radius-default $border-radius-default);
             content: "";
-            background-image: gradient(transparent, $color-light-gray);
+            background-image: gradient(transparent, $color-dark-gray);
             // fade out over the last three lines
             height: ($measure-medium * 4.2);
         }
