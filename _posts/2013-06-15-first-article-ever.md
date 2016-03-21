@@ -37,7 +37,7 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 {% include content/heading.html title='What is Jekyll?' %}
 
-> Jekyll ([http://jekyllrb.com/](http://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
+> Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites")) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"), which you can use to host your project’s page or blog \[on\] GitHub.
 
 
 {% include content/heading.html title='Better, Faster, Stronger' %}

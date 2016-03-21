@@ -71,7 +71,7 @@ gulp.task('css-lint', function() {
 });
 
 // Compile Sass
-gulp.task('css-compile', function() {
+gulp.task('css-compile', ['css-lint'], function() {
     return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
         .pipe(sass({
@@ -189,7 +189,7 @@ gulp.task('default', function() {
 });
 
 // CSS task
-gulp.task('css', ['css-lint', 'css-compile'], function() {
+gulp.task('css', ['css-compile'], function() {
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });
@@ -204,7 +204,7 @@ gulp.task('js', ['js-compile'], function() {
 // -----------------------------------------------------------------------------
 
 // Watch files and perform the appropriate tasks
-gulp.task('watch', ['css', 'js'], function() {
+gulp.task('watch', function() {
     watch(paths.src.css + '**/*.scss', function() {
         gulp.start('css');
     });

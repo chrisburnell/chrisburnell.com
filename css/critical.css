@@ -997,8 +997,7 @@ pre {
 .highlight {
   position: relative; }
   .highlight .err {
-    background-color: lightcoral;
-    color: firebrick;
+    background-color: indianred;
     font-weight: 600; }
   .highlight .c,
   .highlight .cm,
@@ -1034,7 +1033,7 @@ pre {
   .highlight .sh,
   .highlight .si,
   .highlight .sx {
-    color: firebrick; }
+    color: indianred; }
   .highlight .gi,
   .highlight .gi .x {
     background-color: turquoise; }
@@ -1071,7 +1070,7 @@ pre {
   .highlight .na,
   .highlight .nc,
   .highlight .nt {
-    color: #6b92ac; }
+    color: #6e95ae; }
   .highlight .ni,
   .highlight .ss {
     color: slateblue;

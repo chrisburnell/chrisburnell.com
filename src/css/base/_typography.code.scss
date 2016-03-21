@@ -79,8 +79,7 @@ pre {
     @include position(relative);
 
     .err {                              // Error
-        background-color: lightcoral;
-        color: firebrick;
+        background-color: indianred;
         font-weight: $font-weight-bold;
     }
 
@@ -122,7 +121,7 @@ pre {
     .sh,                                // Literal - String Heredoc
     .si,                                // Literal - String Interpol
     .sx {                               // Literal - String Other
-        color: firebrick;
+        color: indianred;
     }
 
     .gi,                                // Generic - Inserted
@@ -175,7 +174,7 @@ pre {
     .na,                                // Name - Attribute
     .nc,                                // Name - Class
     .nt {                               // Name - Tag
-        color: mix($color-white, $color-brand, 7.5%);
+        color: mix($color-white, $color-brand, 10%);
     }
 
     .ni,                                // Name - Entity

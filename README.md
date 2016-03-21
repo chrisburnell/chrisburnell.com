@@ -43,7 +43,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Build Process
 
-- [Jekyll](http://jekyllrb.com)
+- [Jekyll](https://jekyllrb.com)
 - [SCSS](http://sass-lang.com)
 - [Autoprefixer](https://github.com/ai/autoprefixer)
 - [Gulp](http://gulpjs.com)

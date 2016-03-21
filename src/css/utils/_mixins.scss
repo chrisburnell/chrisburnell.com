@@ -162,6 +162,8 @@
 ///
 /// @param {String} $value - Position of the element
 ///
+/// @require {Variable} $measure-large
+///
 /// @example scss
 ///   @include position(bottom);
 ///   // position: absolute;

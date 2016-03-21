@@ -997,8 +997,7 @@ pre {
 .highlight {
   position: relative; }
   .highlight .err {
-    background-color: lightcoral;
-    color: firebrick;
+    background-color: indianred;
     font-weight: 600; }
   .highlight .c,
   .highlight .cm,
@@ -1034,7 +1033,7 @@ pre {
   .highlight .sh,
   .highlight .si,
   .highlight .sx {
-    color: firebrick; }
+    color: indianred; }
   .highlight .gi,
   .highlight .gi .x {
     background-color: turquoise; }
@@ -1071,7 +1070,7 @@ pre {
   .highlight .na,
   .highlight .nc,
   .highlight .nt {
-    color: #6b92ac; }
+    color: #6e95ae; }
   .highlight .ni,
   .highlight .ss {
     color: slateblue;
@@ -1779,7 +1778,7 @@ footer {
         display: inline-block; }
         .small-articles-list li + li {
           margin-top: 1.25rem; }
-        .small-articles-list li:nth-child(2n+1) a {
+        .small-articles-list li:nth-child(2n+2) a {
           background-color: rgba(6, 6, 6, 0.05); } }
     aside .small-articles-list li {
       width: 100%; }
@@ -2210,10 +2209,6 @@ footer {
 code[data-lang] {
   padding-top: 2.25rem; }
   code[data-lang]::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     background-clip: padding-box;
     border-radius: 0.375rem 0.375rem 0 0;
     -webkit-transition: all 0.2s ease;
@@ -2222,11 +2217,20 @@ code[data-lang] {
     background-color: #737373;
     color: #f9f9f9;
     padding: 0 1.25rem;
+    position: absolute;
+    left: 0;
+    right: 0;
     font-family: "proxima-nova", sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 2.25rem;
     text-transform: uppercase; }
+    @media (min-width: 769px) {
+      code[data-lang]::before {
+        top: 0; } }
+    @media (max-width: 768px) {
+      code[data-lang]::before {
+        top: 2.25rem; } }
 
 /**
  * Highlighted Code Block Labels
