@@ -406,7 +406,8 @@ tbody th {
  * Details and Summary
  */
 details {
-    background-color: $color-text;
+    @include border-radius(thin);
+    background-color: $color-dark-gray;
     color: $color-white;
     padding: $measure-small;
     font-family: $font-family-gamma;
