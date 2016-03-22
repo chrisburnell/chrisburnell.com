@@ -1,0 +1,19 @@
+- title: Subscribe to Articles
+  rel: 'me author'
+  url: '/feed-articles.xml'
+  icon: 'rss'
+
+- title: Subscribe to Pens
+  rel: 'me author'
+  url: '/feed-pens.xml'
+  icon: 'rss'
+
+- title: Subscribe to Links
+  rel: 'me author'
+  url: '/feed-links.xml'
+  icon: 'rss'
+
+- title: Subscribe to All
+  rel: 'me author'
+  url: '/feed.xml'
+  icon: 'rss'

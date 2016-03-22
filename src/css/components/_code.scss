@@ -11,28 +11,18 @@ code[data-lang] {
     padding-top: $measure-large;
 
     &::before {
+        @include position(top);
         @include border-radius($border-radius-default $border-radius-default 0 0);
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
         color: $color-white;
         padding: 0 $measure-medium;
-        position: absolute;
-        left:  0;
-        right: 0;
         font-family: $font-family-gamma;
         font-size: $font-size-large;
         font-weight: $font-weight-bold;
         line-height: $measure-large;
         text-transform: uppercase;
-
-        @include media(">medium") {
-            top: 0;
-        }
-
-        @include media("<=medium") {
-            top: $measure-large;
-        }
     }
 }
 
@@ -43,8 +33,10 @@ code[data-lang] {
     $name:  nth($language, 1);
     $color: nth($language, 2);
 
-    &.language-#{$name}::before {
-        background-color: #{$color} !important;
+    &.language-#{$name} {
+        &::before {
+            background-color: #{$color} !important;
+        }
     }
 }
 

@@ -27,12 +27,7 @@ searchable: no-content
     {% endfor %}
 </ol>
 
-<nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/articles">
-        {% include content/svg.html type='article' %}
-        Articles Archive
-    </a>
-</nav>
+{% include components/nav-secondary.html type='archives' include='articles' %}
 
 
 <h3>
@@ -56,12 +51,7 @@ searchable: no-content
     {% endfor %}
 </ol>
 
-<nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/pens">
-        {% include content/svg.html type='heart' %}
-        Pens Archive
-    </a>
-</nav>
+{% include components/nav-secondary.html type='archives' include='pens' %}
 
 
 <h3>
@@ -85,9 +75,4 @@ searchable: no-content
     {% endfor %}
 </ol>
 
-<nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/links">
-        {% include content/svg.html type='link' %}
-        Links Archive
-    </a>
-</nav>
+{% include components/nav-secondary.html type='archives' include='links' %}

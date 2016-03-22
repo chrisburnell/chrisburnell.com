@@ -72,23 +72,6 @@ I also play the piano and bake bread from time to time.
 
 There are a number of RSS Feeds you can subscribe to:
 
-<div class="buttons-list" role="navigation">
-    <a rel="me author" class="button" href="/feed-articles.xml">
-        {% include content/svg.html type='rss' %}
-        Subscribe to Articles
-    </a>
-    <a rel="me author" class="button" href="/feed-pens.xml">
-        {% include content/svg.html type='rss' %}
-        Subscribe to Pens
-    </a>
-    <a rel="me author" class="button" href="/feed-links.xml">
-        {% include content/svg.html type='rss' %}
-        Subscribe to Links
-    </a>
-    <a rel="me author" class="button" href="/feed.xml">
-        {% include content/svg.html type='rss' %}
-        Subscribe to All
-    </a>
-</div>
+{% include components/nav-secondary.html type='feeds' %}
 
 I'm reachable through <a rel="me publisher" class="anchor--twitter" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.

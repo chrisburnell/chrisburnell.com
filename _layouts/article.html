@@ -36,7 +36,7 @@
 
         {{ content }}
 
-        {% include components/nav-secondary.html %}
+        {% include components/nav-secondary.html type='archives' include=page.categories.first %}
 
         {% include components/comments.html %}
 

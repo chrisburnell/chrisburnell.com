@@ -46,17 +46,4 @@ lede: A list of tags and their counterparts.
     </ol>
 {% endfor %}
 
-<nav class="nav-secondary" role="navigation">
-    <a rel="me author" class="button" href="/articles">
-        {% include content/svg.html type='article' %}
-        Articles Archive
-    </a>
-    <a rel="me author" class="button" href="/pens">
-        {% include content/svg.html type='heart' %}
-        Pens Archive
-    </a>
-    <a rel="me author" class="button" href="/links">
-        {% include content/svg.html type='link' %}
-        Links Archive
-    </a>
-</nav>
+{% include components/nav-secondary.html type='archives' exclude='tags' %}

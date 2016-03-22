@@ -1,0 +1,19 @@
+- title: Articles Archive
+  rel: 'me author'
+  url: '/articles'
+  icon: 'article'
+
+- title: Pens Archive
+  rel: 'me author'
+  url: '/pens'
+  icon: 'heart'
+
+- title: Links Archive
+  rel: 'me author'
+  url: '/links'
+  icon: 'link'
+
+- title: Tags Archive
+  rel: 'me author'
+  url: '/tags'
+  icon: 'tag'
