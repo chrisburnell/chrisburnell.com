@@ -83,7 +83,7 @@ Let’s look at an example where we’re setting a *percentage*-based value that
 
 - `.parent` `width` is set to `1337px`
 - `.child` `width` is set to `60.029%`, as our target `width` is `803px`
-- `1337 ÷ 100 × 60.029 = 802.58773`
+- `1337px ÷ 100 × 60.029 = 802.58773px`
 
 Modern browsers will utilise *sub-pixel rendering* to render a *pixel* value containing decimals; however, older browsers, like *IE8*, will **truncate** the *percentage*-based value to only **two** decimal places! This spells trouble in our particular case:
 
@@ -115,7 +115,7 @@ So let’s use the running example, and modify it to match these conditions and 
 
 - `.parent` `width` is set to `1337px`
 - `.child` `width` is set to `60.06%`
-- `1337 ÷ 100 × 60.06 = 803.0022`
+- `1337px ÷ 100 × 60.06 = 803.0022px`
 
 Because the worst truncation that will occur is to `2` decimal places, our value of `60.06%` will satisfy each rounding method, and our target value of `803px` will be achieved cross-browser.
 
