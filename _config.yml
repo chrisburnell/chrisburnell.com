@@ -49,12 +49,14 @@ permalink: /:categories/:title/
 
 exclude:
 - .DS_Store
+- .jekyll-metadata
 - .sass-cache
 - .travis.yml
 - CNAME
 - CONTRIBUTING.md
 - deploy.sh
 - Gemfile
+- Gemfile.lock
 - gulpfile.js
 - package.json
 - node_modules
