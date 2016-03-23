@@ -936,7 +936,7 @@ kbd,
 samp,
 var,
 .monospace {
-  font-family: Monaco, Consolas, Courier, monospace;
+  font-family: Consolas, Courier, monospace;
   font-size: 0.875rem;
   line-height: 1.429; }
 
@@ -1129,7 +1129,7 @@ a {
 
 .heading-anchor {
   margin-left: 1.25rem;
-  font-family: Monaco, Consolas, Courier, monospace;
+  font-family: Consolas, Courier, monospace;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25;
