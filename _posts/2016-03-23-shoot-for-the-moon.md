@@ -119,7 +119,7 @@ So let’s use the running example, and modify it to match these conditions and 
 
 Because the worst truncation that will occur is to `2` decimal places, our value of `60.06%` will satisfy each rounding method, and our target value of `803px` will be achieved cross-browser.
 
-It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-slightly *less* than `60.06%`, will result in a computed value of `802.9888px`. This satisfies *almost* every method of rounding, but it fails when rounding “down.” By making sure our computed value **overshoots** the target value, we satisfy the conditions to round “down” to our target value.
+It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-slightly *less* than `60.06%`, will result in a computed value of `802.9888px`. This satisfies *almost* every method of rounding, but it still fails when rounding “down.” By making sure our computed value **overshoots** the target value, that is to say that the decimal value is *slightly* greater than the integer value, we satisfy the conditions to round “down” to our target value.
 
 
 {% include content/heading.html title='The Takeaway' id='tldr' %}
