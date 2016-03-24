@@ -98,9 +98,3 @@
     content: " →";
     font-style: normal;
 }
-
-.author-biography {
-    @include media(">medium") {
-        margin-bottom: $measure-medium;
-    }
-}

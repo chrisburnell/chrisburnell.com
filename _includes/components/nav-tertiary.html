@@ -1,15 +1,9 @@
 <nav class="nav-tertiary" role="navigation">
     <ul class="nav-tertiary-list">
-    {% for link in site.data.nav-tertiary %}
-        {% capture link_slug %}{{ link.title | slugify | prepend: 'url_' }}{% endcapture %}
-        {% if link.url %}
-            {% assign url = link.url %}
-        {% else if site.link_slug != null or site.link_slug != empty or site.link_slug != false %}
-            {% assign url = site.link_slug %}
-        {% endif %}
+    {% for link in site.data.social-media-accounts %}
         {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
         <li>
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if url %} href="{{ url | liquify }}"{% endif %} title="{{ link.title }}">
+            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
                 {% include content/svg.html type=svg_type %}
             </a>
         </li>

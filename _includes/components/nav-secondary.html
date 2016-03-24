@@ -1,45 +1,37 @@
 {% comment %}
 
+  Generates a Secondary Nav pattern from the `archives` or `feeds` datasets.
+
   @param {String} type *
   @param {String} include
   @param {String} exclude
 
 {% endcomment %}
 {% if include.type == 'feeds' %}
-    {% assign data = site.data.nav-secondary-feeds %}
-{% else %}
-    {% assign data = site.data.nav-secondary-archives %}
+    {% assign data = site.data.feeds %}
+{% elsif include.type == 'archives' %}
+    {% assign data = site.data.archives %}
 {% endif %}
 <nav class="nav-secondary" role="navigation">
-    {% if page.comments == true %}
-        <button id="show-comments" class="button--show-comments  js-show-comments" role="button" type="button" aria-controls="comments" aria-label="Leave a comment" aria-hidden="false" aria-pressed="false" aria-disabled="true" disabled>
-            {% include content/svg.html type='feather' %}
-            <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
-        </button>
-    {% elsif page.comments == 'codepen' and page.codepen_slug %}
-        <a class="button" rel="external" href="{{ site.urls.codepen }}/{{ site.codepen.page }}/{{ page.codepen_slug }}/#leave-comment">
-            {% include content/svg.html type='feather' %}
-            CodePen Comments
-        </a>
-    {% endif %}
+    {% include components/comments-button.html %}
     {% for link in data %}
         {% assign title = link.title | downcase %}
         {% if include.include %}
             {% if title contains include.include or title contains 'all' %}
-                <a class="button" rel="{{ link.rel }}" href="{{ link.url }}">
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endif %}
-        {% else if include.exclude %}
+        {% elsif include.exclude %}
             {% unless title contains include.exclude %}
-                <a class="button" rel="{{ link.rel }}" href="{{ link.url }}">
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endunless %}
         {% else %}
-            <a class="button" rel="{{ link.rel }}" href="{{ link.url }}">
+            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
                 {% include content/svg.html type=link.icon %}
                 {{ link.title }}
             </a>

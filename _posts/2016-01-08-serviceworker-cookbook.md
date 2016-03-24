@@ -10,5 +10,5 @@ tags:
 - serviceworker
 
 link_urls:
-- https://serviceworke.rs
+- url: "https://serviceworke.rs"
 ---

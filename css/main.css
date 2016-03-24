@@ -439,13 +439,15 @@ h3 {
             animation: heading-target 2s linear; }
 
 @-webkit-keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold; }
   100% {
     background-color: transparent; } }
 
 @keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold; }
   100% {
     background-color: transparent; } }
@@ -1677,7 +1679,8 @@ footer {
 
 .articles-list {
   margin-bottom: 2.25rem; }
-  .page-home .articles-list {
+  .page-home .articles-list,
+  .widget .articles-list {
     margin-bottom: 0; }
   .articles-list li {
     position: relative;
@@ -1753,9 +1756,8 @@ footer {
   margin-bottom: 2.25rem;
   font-family: "proxima-nova", sans-serif;
   line-height: 1.25; }
-  aside .small-articles-list {
-    margin: 0 -0.625rem; }
-  .page-home .small-articles-list {
+  .page-home .small-articles-list,
+  .widget .small-articles-list {
     margin-bottom: 0; }
   .small-articles-list li {
     width: 49.0125%; }
@@ -2064,22 +2066,19 @@ footer {
   content: " →";
   font-style: normal; }
 
-@media (min-width: 769px) {
-  .author-biography {
-    margin-bottom: 1.25rem; } }
-
-.widget {
+aside .widget {
   clear: both;
   zoom: 1; }
-  .widget::before, .widget::after {
+  aside .widget::before, aside .widget::after {
     content: "";
     display: table; }
-  .widget::after {
+  aside .widget::after {
     clear: both; }
 
 .widget-featured-anchor {
   float: right;
   margin-top: 1.25rem;
+  font-family: "proxima-nova", sans-serif;
   font-weight: 600; }
   .widget-featured-anchor::after {
     content: " →"; }
@@ -2276,7 +2275,7 @@ code[data-lang] {
 .code-toggle-input + .highlight pre {
   -webkit-transition: max-height 0.2s ease;
   transition: max-height 0.2s ease;
-  max-height: 200vh; }
+  max-height: 1000vh; }
 
 .code-toggle-input:not(:checked) + .highlight pre {
   max-height: 12.5rem;

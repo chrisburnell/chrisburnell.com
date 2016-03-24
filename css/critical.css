@@ -439,13 +439,15 @@ h3 {
             animation: heading-target 2s linear; }
 
 @-webkit-keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold; }
   100% {
     background-color: transparent; } }
 
 @keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold; }
   100% {
     background-color: transparent; } }
@@ -1523,7 +1525,8 @@ aside p {
 
 .articles-list {
   margin-bottom: 2.25rem; }
-  .page-home .articles-list {
+  .page-home .articles-list,
+  .widget .articles-list {
     margin-bottom: 0; }
   .articles-list li {
     position: relative;
@@ -1648,10 +1651,6 @@ aside p {
 .featured-anchor::after {
   content: " →";
   font-style: normal; }
-
-@media (min-width: 769px) {
-  .author-biography {
-    margin-bottom: 1.25rem; } }
 
 .icon {
   display: block;

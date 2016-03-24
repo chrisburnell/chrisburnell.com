@@ -9,7 +9,9 @@
                     {% include content/svg.html type='link' %}
                     <h4 class="title">{{ post.title }} →</h4>
                     {% if post.lede %}
-                        <p class="lede">{{ post.lede | truncatewords: 15 |  replace: '....', '...' |  replace: ',...', '...' }}</p>
+                        <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
+                    {% else %}
+                        <p class="lede"><em>Shared Link</em></p>
                     {% endif %}
                     <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
                 </a>

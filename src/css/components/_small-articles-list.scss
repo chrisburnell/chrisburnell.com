@@ -13,11 +13,8 @@
     font-family: $font-family-gamma;
     line-height: $line-height-small;
 
-    aside & {
-        margin: 0 ($measure-small * -1);
-    }
-
-    .page-home & {
+    .page-home &,
+    .widget & {
         margin-bottom: 0;
     }
 

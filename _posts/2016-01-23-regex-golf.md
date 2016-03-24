@@ -8,7 +8,7 @@ title: Regex Golf
 lede: Test your regex skills. So much fun. Brainmelting, but fun.
 
 link_urls:
-- http://regex.alf.nu
+- url: "http://regex.alf.nu"
 ---
 
 

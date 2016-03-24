@@ -94,7 +94,8 @@ h3 {
         }
         @at-root {
             @keyframes heading-target {
-                0%, 50% {
+                0%,
+                50% {
                     background-color: $color-highlight;
                 }
                 100% {

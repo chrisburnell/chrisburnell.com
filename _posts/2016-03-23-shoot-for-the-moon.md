@@ -13,6 +13,16 @@ tags:
 banner:        shoot-for-the-moon.png
 banner_mobile: shoot-for-the-moon_mobile.png
 
+link_urls:
+- url: "http://cruft.io/posts/percentage-calculations-in-ie/"
+  title: "Browser Rounding and Fractional Pixels"
+- url: "http://ejohn.org/blog/sub-pixel-problems-in-css/"
+  title: "Sub-Pixel Problems in CSS"
+- url: "http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass/"
+  title: "Reduce sub-pixel rendering issues with Sass functions"
+- url: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/"
+  title: "A Closer Look At Font Rendering"
+
 shorturl: uanoe
 codepen: true
 comments: true
@@ -125,11 +135,3 @@ It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-s
 {% include content/heading.html title='The Takeaway' id='tldr' %}
 
 > When creating fractions resulting in decimals in CSS, make sure that your computed value **overshoots** your target value if you have to support legacy browsers.
-
-
-{% include content/heading.html title='Further Reading' %}
-
-- [Browser Rounding and Fractional Pixels](http://cruft.io/posts/percentage-calculations-in-ie/)
-- [Sub-Pixel Problems in CSS](http://ejohn.org/blog/sub-pixel-problems-in-css/)
-- [Reduce sub-pixel rendering issues with Sass functions](http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass/)
-- [A Closer Look At Font Rendering](https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/)

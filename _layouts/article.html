@@ -11,7 +11,7 @@
             {% endif %}
         </h1>
 
-        {% include main-aside/main-aside.html %}
+        {% include components/main-aside.html %}
 
         {% include components/banner.html %}
 
@@ -26,19 +26,50 @@
             </div>
         {% endif %}
 
-        {% if page.link_urls %}
+        {% if page.link_urls and page.categories contains 'link' %}
             <div class="buttons-list" role="navigation">
                 {% for link in page.link_urls %}
-                    <a rel="external" class="button" href="{{ link }}" title="{{ link }}">{{ link | remove: 'http://' | remove: 'https://' | split: '/' | first }}</a>
+                    {% assign url = link.url %}
+                    {% if link.title == null or link.title == empty %}
+                        {% assign title = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
+                    {% else %}
+                        {% assign title = link.title %}
+                    {% endif %}
+                    <a rel="external" class="button" href="{{ url }}">{{ title }}</a>
                 {% endfor %}
             </div>
         {% endif %}
 
         {{ content }}
 
+        {% if page.link_urls %}
+            {% unless page.categories contains 'link' %}
+                {% include content/heading.html title='Further Reading' %}
+                <ul>
+                    {% for link in page.link_urls %}
+                        {% assign url = link.url %}
+                        {% if link.title == null or link.title == empty %}
+                            {% assign title = url %}
+                        {% else %}
+                            {% assign title = link.title %}
+                        {% endif %}
+                        <li>
+                            <a rel="external" href="{{ url }}">{{ title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endunless %}
+        {% endif %}
+
         {% include components/nav-secondary.html type='archives' include=page.categories.first %}
 
         {% include components/comments.html %}
+
+        {% if page.categories contains 'article' %}
+            {% include components/widget-related-articles.html %}
+        {% elsif page.categories contains 'pen' %}
+            {% include components/widget-featured-pens.html %}
+        {% endif %}
 
     </article>
 </main>

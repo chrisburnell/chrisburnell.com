@@ -11,6 +11,20 @@ tags:
 - sass
 - tutorials
 
+link_urls:
+- url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
+  title: "Mixins Better for Performance"
+- url: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"
+  title: "When to use @extend; when to use a mixin"
+- url: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass/"
+  title: "Extending silent classes in Sass"
+- url: "http://www.sitepoint.com/avoid-sass-extend/"
+  title: "Why You Should Avoid Sass @extend"
+- url: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/"
+  title: "Don’t Over-@extend Yourself in Sass"
+- url: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
+  title: "Sass Mixins vs Extends: The Data"
+
 shorturl: fqojr
 comments: true
 ---
@@ -117,13 +131,3 @@ I wholeheartedly believe in a very simplistic approach to Sass. Simplicity is ki
 
 
 **tl;dr** If you find yourself referring to the same group of selectors over and over, try `@extending` them to a *placeholder selector* and refer to the *placeholder selector* outside of the scope of the selectors themselves.
-
-
-{% include content/heading.html title='Further Reading' %}
-
-- [Mixins Better for Performance](http://csswizardry.com/2016/02/mixins-better-for-performance/)
-- [When to use @extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
-- [Extending silent classes in Sass](http://csswizardry.com/2014/01/extending-silent-classes-in-sass/)
-- [Why You Should Avoid Sass @extend](http://www.sitepoint.com/avoid-sass-extend/)
-- [Don’t Over-@extend Yourself in Sass](http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/)
-- [Sass Mixins vs Extends: The Data](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/)

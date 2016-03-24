@@ -64,7 +64,7 @@ code[data-lang] {
 .code-toggle-input {
     & + .highlight pre {
         @include transition(max-height);
-        max-height: 200vh;
+        max-height: 1000vh;
     }
 
     &:not(:checked) + .highlight pre {

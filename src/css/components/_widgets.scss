@@ -1,16 +1,19 @@
 ////
-/// Aside Widgets
+/// Widgets
 /// @group components
 ////
 
 
 .widget {
-    @include clear;
+    aside & {
+        @include clear;
+    }
 }
 
 .widget-featured-anchor {
     float: right;
     margin-top: $measure-medium;
+    font-family: $font-family-gamma;
     font-weight: $font-weight-bold;
 
     &::after {

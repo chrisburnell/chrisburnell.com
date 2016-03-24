@@ -7,7 +7,8 @@
 .articles-list {
     margin-bottom: $measure-large;
 
-    .page-home & {
+    .page-home &,
+    .widget & {
         margin-bottom: 0;
     }
 

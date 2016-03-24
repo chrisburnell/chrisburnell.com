@@ -10,5 +10,5 @@ tags:
 - svg
 
 link_urls:
-- http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css
+- url: "http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css"
 ---

@@ -1,0 +1,10 @@
+{% if page.comments == true %}
+    <button id="show-comments" class="button--show-comments  js-show-comments" role="button" type="button" aria-controls="comments" aria-label="Leave a comment" aria-hidden="false" aria-pressed="false" aria-disabled="true" disabled>
+        {% include content/svg.html type='feather' %}
+        <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
+    </button>
+{% elsif page.comments == 'codepen' and page.codepen_slug %}
+    <a class="button" rel="external" href="{{ site.urls.codepen }}/{{ site.codepen.page }}/{{ page.codepen_slug }}/#leave-comment">
+        CodePen Comments
+    </a>
+{% endif %}
