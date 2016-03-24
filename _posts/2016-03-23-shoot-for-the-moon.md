@@ -59,7 +59,7 @@ It’s probably worth refreshing yourself on the various rounding methods used i
     </dd>
 </dl>
 
-{% include content/codepen.html slug='ONmxEB' height='250' theme='tabfree' %}
+{% include content/codepen.html slug='ONmxEB' height='250' %}
 
 While the `width` of each box in the above demo is technically `133.3333px`, *sub-pixel rendering* comes into play, and its behaviour might be surprising. You might expect that the `width` of each box would be rounded individually, creating three `133px`-wide boxes, leaving *one* extra pixel of the full `400px`-wide `.parent` unaccounted for.
 
