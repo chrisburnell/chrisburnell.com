@@ -134,4 +134,4 @@ It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-s
 
 {% include content/heading.html title='The Takeaway' id='tldr' %}
 
-> When creating fractions resulting in decimals in CSS, make sure that your computed value **overshoots** your target value if you have to support legacy browsers.
+> When creating fractions resulting in decimals in CSS, make sure that your computed value overshoots your target value if you have to support legacy browsers.

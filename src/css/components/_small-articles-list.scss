@@ -164,7 +164,7 @@
         right: $measure-small;
         transform: translateY(-50%);
         stroke: $color-text;
-        z-index: z-index(below);
+        z-index: z-index(root);
 
         @include media("<=small") {
             width:  4em !important;
@@ -175,7 +175,7 @@
     a:focus,
     a:active {
         svg {
-            opacity: opacity("25-percent");
+            opacity: opacity("10-percent");
         }
     }
 }

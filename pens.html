@@ -17,18 +17,7 @@ lede: All of my featured pens listed on one page.
 
 <ol id="pens" class="small-articles-list" role="list">
     {% for post in site.categories.pen %}
-        <li role="listitem">
-            <a href="{{ post.url }}">
-                {% include content/svg.html type='codepen' %}
-                <h4 class="title">{{ post.title }}</h4>
-                {% if post.lede %}
-                    <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
-                {% else %}
-                    <p class="lede"><em>Featured Pen</em></p>
-                {% endif %}
-                <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
-            </a>
-        </li>
+        {% include components/small-articles-list-item.html %}
     {% endfor %}
 </ol>
 

@@ -1857,7 +1857,7 @@ footer {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     stroke: #4f4f4f;
-    z-index: -1; }
+    z-index: 0; }
     @media (max-width: 500px) {
       .small-articles-list svg {
         width: 4em !important;
@@ -1865,7 +1865,7 @@ footer {
   .small-articles-list a:hover svg,
   .small-articles-list a:focus svg,
   .small-articles-list a:active svg {
-    opacity: 0.25; }
+    opacity: 0.1; }
 
 .search-main {
   max-width: 500px;

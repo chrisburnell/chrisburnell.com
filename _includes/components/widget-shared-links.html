@@ -4,18 +4,7 @@
     </h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.categories.link limit: 2 %}
-            <li role="listitem">
-                <a href="{{ post.link_urls | first }}">
-                    {% include content/svg.html type='link' %}
-                    <h4 class="title">{{ post.title }} →</h4>
-                    {% if post.lede %}
-                        <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
-                    {% else %}
-                        <p class="lede"><em>Shared Link</em></p>
-                    {% endif %}
-                    <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
-                </a>
-            </li>
+            {% include components/small-articles-list-item.html %}
         {% endfor %}
     </ol>
     <a class="widget-featured-anchor" href="/links">All Shared Links</a>

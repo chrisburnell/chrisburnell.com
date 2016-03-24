@@ -18,30 +18,7 @@ lede: A list of tags and their counterparts.
     <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">( {{ site.tags[tag].size }} )</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.tags[tag] %}
-            <li role="listitem">
-                {% if post.categories contains 'link' %}
-                    <a href="{{ post.link_urls | first }}">
-                {% else %}
-                    <a href="{{ post.url }}">
-                {% endif %}
-                    {% if post.categories contains 'article' %}
-                        {% include content/svg.html type='article' %}
-                    {% elsif post.categories contains 'link' %}
-                        {% include content/svg.html type='link' %}
-                    {% elsif post.categories contains 'pen' %}
-                        {% include content/svg.html type='codepen' %}
-                    {% endif %}
-                    <h4 class="title">{{ post.title }}</h4>
-                    {% if post.lede %}
-                        <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
-                    {% elsif post.categories contains 'link' %}
-                        <p class="lede"><em>Shared Link</em></p>
-                    {% elsif post.categories contains 'pen' %}
-                        <p class="lede"><em>Featured Pen</em></p>
-                    {% endif %}
-                    <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
-                </a>
-            </li>
+            {% include components/small-articles-list-item.html %}
         {% endfor %}
     </ol>
 {% endfor %}

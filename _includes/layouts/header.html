@@ -83,9 +83,8 @@ snippet of code on a project of your own. -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 
     {% if page.categories contains 'link' and page.link_urls %}
-        {% for link in page.link_urls %}
-            <link rel="prefetch" href="//{{ link.url | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
-        {% endfor %}
+        {% assign link = page.link_urls | first %}
+        <link rel="prefetch" href="//{{ link.url | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
     {% endif %}
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
