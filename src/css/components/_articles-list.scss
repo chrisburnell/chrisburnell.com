@@ -5,12 +5,6 @@
 
 
 .articles-list {
-    margin-bottom: $measure-large;
-
-    .page-home &,
-    .widget & {
-        margin-bottom: 0;
-    }
 
     li {
         @include position(relative);
@@ -20,14 +14,14 @@
         padding: 1.5rem 1rem;
         border-top: $border-width-thin solid $color-black--10-percent;
 
-        &:nth-child(odd) {
-            background-color: $color-black--5-percent;
-        }
-
         @include media("<=medium") {
             padding-top:    1.875rem;
             padding-bottom: 1.875rem;
             text-align: center;
+        }
+
+        &:nth-child(odd) {
+            background-color: $color-black--5-percent;
         }
     }
 
