@@ -980,13 +980,8 @@ pre {
     background-color: #2b2b2b;
     color: #f9f9f9;
     padding: 1.25rem 1.25rem 1rem;
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
     overflow-x: auto;
     overflow-y: hidden; }
-    h3 + pre:not(.codepen),
-    h3 + .highlight pre:not(.codepen) {
-      margin-top: 0; }
     pre:not(.codepen),
     pre:not(.codepen) code {
       line-height: 2; }

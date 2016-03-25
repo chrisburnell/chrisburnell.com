@@ -49,16 +49,9 @@ pre {
         background-color: $color-dark-gray;
         color: $color-white;
         padding: $measure-medium $measure-medium 1rem;
-        margin-top:    $measure-large;
-        margin-bottom: $measure-large;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
-
-        h3 + &,
-        h3 + .highlight & {
-            margin-top: 0;
-        }
 
         &,
         code {

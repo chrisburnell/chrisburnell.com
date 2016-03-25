@@ -38,7 +38,7 @@ twitter: true
 
 <p style="font-family: proxima-nova, sans-serif; font-weight: 600;">Secondary Font bold: "proxima-nova", sans-serif;</p>
 
-<p style="font-family: Consolas, Monaco, Courier New, monospace;">Monospace Font: Consolas, Monaco, "Courier New", monospace;</p>
+<p style="font-family: Consolas, Courier New, monospace;">Monospace Font: Consolas, "Courier New", monospace;</p>
 
 
 {% include content/heading.html title='Headings' %}
@@ -337,23 +337,27 @@ twitter: true
 
 {% include content/heading.html title='Preformatted Text' %}
 
-<pre>P R E F O R M A T T E D T E X T
+<figure>
+    <pre>P R E F O R M A T T E D T E X T
 ! " # $ % & ' ( ) * + , - . /
 0 1 2 3 4 5 6 7 8 9 : ; < = > ?
 @ A B C D E F G H I J K L M N O
 P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
 p q r s t u v w x y z { | } ~ </pre>
+</figure>
 
 
 {% include content/heading.html title='Code Block' %}
 
-<pre><code>@mixin translate3d($values...) {
+<figure class="nohighlight">
+    <pre><code>@mixin translate3d($values...) {
     @if length($values) == 0 {
         $values: 0, 0, 0;
     }
     transform: translate3d(#{$values});
 }</code></pre>
+</figure>
 
 
 {% include content/heading.html title='Code Block with Language' %}
