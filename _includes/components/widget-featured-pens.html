@@ -1,6 +1,7 @@
 <div class="widget  widget--featured-pens">
-    <h3 class="widget-title">
+    <h3 id="featured-pens" class="widget-title">
         <a href="/pens">Featured Pens</a>
+        {% include content/heading-anchor.html id='featured-pens' %}
     </h3>
     <ol class="small-articles-list" role="list">
         {% for post in site.categories.pen limit: 2 %}

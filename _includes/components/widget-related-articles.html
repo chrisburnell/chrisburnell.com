@@ -1,7 +1,8 @@
 {% if site.related_posts %}
     <div class="widget  widget--related-articles">
-        <h3 class="widget-title">
+        <h3 id="related-articles" class="widget-title">
             <a href="/articles">Related Articles</a>
+            {% include content/heading-anchor.html id='related-articles' %}
         </h3>
         <ol class="small-articles-list" role="list">
             {% for post in site.related_posts limit: 2 %}
