@@ -7,7 +7,10 @@
         <h1 id="article" class="title" role="heading">
             <span itemprop="name">{{ page.title }}</span>
             {% if page.shorturl %}
-                <a href="{{ site.shorturl }}{{ page.shorturl }}" class="heading-anchor" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" aria-hidden="true">{{ page.url }}</a>
+                {% capture h1_url %}{{ site.shorturl }}{{ page.shorturl }}{% endcapture %}
+                {% capture h1_title %}Permalink: {{ site.shorturl }}{{ page.shorturl }}{% endcapture %}
+                {% assign h1_rel = 'me' %}
+                {% include content/heading-anchor.html url=h1_url title=h1_title rel=h1_rel %}
             {% endif %}
         </h1>
 

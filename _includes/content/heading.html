@@ -18,5 +18,5 @@
 {% capture heading_id %}{% if include.id %}{{ include.id }}{% else %}{{ include.title | slugify }}{% endif %}{% endcapture %}
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
-    <a href="#{{ heading_id }}" class="heading-anchor" aria-hidden="true">#{{ heading_id }}</a>
+    {% include content/heading-anchor.html id=heading_id %}
 </{{ heading_type }}>
