@@ -451,19 +451,19 @@ h3 {
     background-color: gold; }
   100% {
     background-color: transparent; } }
-  article > h3 {
+  article > h3, h3.widget-title {
     clear: both;
     zoom: 1;
     width: auto;
     max-width: 100%;
     display: inline-block;
     padding-right: 2.25rem; }
-    article > h3::before, article > h3::after {
+    article > h3::before, article > h3::after, h3.widget-title::before, h3.widget-title::after {
       content: "";
       display: table; }
-    article > h3::after {
+    article > h3::after, h3.widget-title::after {
       clear: both; }
-  .lede--featured + h3 {
+  .lede + h3 {
     margin-top: 0; }
   h3 code, h3
   kbd, h3

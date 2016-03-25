@@ -106,7 +106,8 @@ h3 {
     }
 
     // Match normal `h3`s without targetting `aside`-nested `h3`s
-    article > & {
+    article > &,
+    &.widget-title {
         @include clear;
         width: auto;
         max-width: 100%;
@@ -116,7 +117,7 @@ h3 {
 
     // Collapse margin-top when following a Featured Lede
     // This happens on the Homepage
-    .lede--featured + & {
+    .lede + & {
         margin-top: 0;
     }
 
