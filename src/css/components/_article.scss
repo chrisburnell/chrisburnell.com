@@ -25,9 +25,8 @@
 }
 
 .lede {
+    @extend %gamma;
     margin-bottom: $measure-large;
-    font-size: $font-size-large;
-    line-height: 1.5;
 
     @include media("<=medium") {
         text-align: left;
@@ -35,7 +34,7 @@
 
     aside + & {
         // pull up to align with `.author`
-        margin-top: -0.5rem;
+        margin-top: -$measure-small;
     }
 }
 .lede--featured {

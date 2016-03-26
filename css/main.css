@@ -421,17 +421,16 @@ h2 {
 /**
  * Heading - Gamma
  */
-h3,
-.articles-list .date {
+h3, .lede, .articles-list .date {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.875;
-  text-transform: uppercase; }
+  line-height: 1.875; }
 
 h3 {
   margin-top: 2.25rem;
-  border-bottom: 0.125rem solid #dddddd; }
+  border-bottom: 0.125rem solid #dddddd;
+  font-weight: 600;
+  text-transform: uppercase; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
   h3[id]:target {
@@ -1646,14 +1645,12 @@ footer {
       width: 500px; } }
 
 .lede {
-  margin-bottom: 2.25rem;
-  font-size: 1.25rem;
-  line-height: 1.5; }
+  margin-bottom: 2.25rem; }
   @media (max-width: 768px) {
     .lede {
       text-align: left; } }
   aside + .lede {
-    margin-top: -0.5rem; }
+    margin-top: -0.625rem; }
 
 .lede--featured {
   max-width: 24em;
@@ -1892,6 +1889,8 @@ footer {
   min-width: 2.5em; }
 
 .search-submit .icon--search {
+  width: 1em;
+  height: 1em;
   margin-right: 0; }
 
 /**
@@ -2300,7 +2299,8 @@ code[data-lang] {
     height: 0.8em;
     display: inline-block;
     margin-right: 0.25em;
-    pointer-events: none; }
+    pointer-events: none;
+    vertical-align: middle; }
   .icons-list .icon {
     fill: #4f4f4f;
     height: 4.5rem; }
