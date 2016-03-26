@@ -43,6 +43,8 @@
     .date {
         @extend %gamma;
         margin-bottom: $measure-small;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
 
         @include media("<=medium") {
             text-align: left;

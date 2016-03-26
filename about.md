@@ -7,7 +7,7 @@ sitemap:
 redirect_from: /me.html
 
 title: About Me
-lede: My name is <span class="canada">Chris Burnell</span>, and I’m a Canadian User Interface Developer living in London, UK.
+lede: My name is <span class="canada">Chris Burnell</span>, and I’m a <span class="canada">Canadian</span> User Interface Developer living in London, UK.
 ---
 
 
@@ -74,4 +74,4 @@ There are a number of RSS Feeds you can subscribe to:
 
 {% include components/nav-secondary.html type='feeds' %}
 
-I'm reachable through <a rel="me publisher" class="anchor--twitter" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
+I'm reachable through <a rel="me publisher" class="anchor--twitter" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}"><span class="canada">{{ site.author.email }}</span></a>.

@@ -1696,7 +1696,9 @@ footer {
   margin-bottom: 1.25rem; }
 
 .articles-list .date {
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase; }
   @media (max-width: 768px) {
     .articles-list .date {
       text-align: left; } }
