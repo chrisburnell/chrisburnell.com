@@ -1,6 +1,6 @@
 ---
 layout: default
-page_class: page-about
+page_class: page--about
 sitemap:
   priority: 1.0
 

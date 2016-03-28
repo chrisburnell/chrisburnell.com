@@ -518,8 +518,10 @@ blockquote {
             content: open-quote;
         }
 
-        &::after {
-            content: close-quote;
+        &:first-of-type {
+            &::after {
+                content: close-quote;
+            }
         }
     }
 

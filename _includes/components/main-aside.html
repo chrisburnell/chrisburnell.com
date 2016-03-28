@@ -40,17 +40,17 @@
 {% endif %}
 
 
-{% if page.page_class contains 'page-about' %}
+{% if page.page_class contains 'page--about' %}
     {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
-{% elsif page.page_class contains 'page-articles' %}
+{% elsif page.page_class contains 'page--articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page-pens' %}
+{% elsif page.page_class contains 'page--pens' %}
     {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page-tags' %}
+{% elsif page.page_class contains 'page--tags' %}
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page-search' %}
+{% elsif page.page_class contains 'page--search' %}
     {% assign author_biography_closer = 'everything you search for looks totally boring' %}
-{% elsif page.page_class contains 'page-not-found' %}
+{% elsif page.page_class contains 'page--not-found' %}
     {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
 {% elsif page.categories contains 'article' %}
         {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
@@ -81,7 +81,7 @@
         <p>I also <a rel="me publisher external" class="anchor--twitter" href="{{ site.urls.twitter }}">tweet</a>, <a rel="me publisher external" class="anchor--codepen" href="{{ site.urls.codepen }}">write code</a>, <a rel="me publisher external" class="anchor--github" href="{{ site.github.owner_url }}">commit code</a>, <a rel="me publisher external" class="anchor--lastfm" href="{{ site.urls.lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
-    {% unless page.page_class contains 'page-search' %}
+    {% unless page.page_class contains 'page--search' %}
         {% include components/widget-search.html %}
     {% endunless %}
 

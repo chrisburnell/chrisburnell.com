@@ -13,6 +13,10 @@ $color-haml: $color-html !default;
 /// @type Color
 $color-javascript: #f1c54c !default;
 /// @type Color
+$color-liquid: #7ab55c !default;
+/// @type Color
+$color-markdown: #515151 !default;
+/// @type Color
 $color-sass: #c6538c !default;
 /// @type Color
 $color-scss: $color-sass !default;
@@ -25,11 +29,15 @@ $color-scss: $color-sass !default;
 /// @require {Variable} $color-haml
 /// @require {Variable} $color-html
 /// @require {Variable} $color-javascript
+/// @require {Variable} $color-liquid
+/// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
 /// @require {Variable} $color-scss
 $coding-languages: css        $color-css,
                    haml       $color-haml,
                    html       $color-html,
                    javascript $color-javascript,
+                   liquid     $color-liquid,
+                   markdown   $color-markdown,
                    sass       $color-sass,
                    scss       $color-scss;

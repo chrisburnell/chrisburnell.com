@@ -4,7 +4,7 @@
 <main class="wrap  clear" role="main">
     <article role="article">
 
-        {% if page.page_class contains 'page-home' %}
+        {% if page.page_class contains 'page--home' %}
             <h1 class="tagline" role="heading">{{ site.tagline }}</h1>
         {% else %}
             <h1 class="title" role="heading">{{ page.title }}</h1>
@@ -14,12 +14,12 @@
 
         {% include components/banner.html %}
 
-        {% if page.page_class contains 'page-home' %}
+        {% if page.page_class contains 'page--home' %}
             <h2 class="lede  lede--featured">{{ site.lede }}</h2>
-        {% elsif page.page_class contains 'page-search' %}
-            <h2 class="lede  js-search-meta">Search for something!</h2>
+        {% elsif page.page_class contains 'page--search' %}
+            <h2 class="lede  lede--featured  js-search-meta">Search for something!</h2>
         {% elsif page.lede %}
-            <h2 class="lede">{{ page.lede }}</h2>
+            <h2 class="lede  lede--featured">{{ page.lede }}</h2>
         {% endif %}
 
         {{ content }}

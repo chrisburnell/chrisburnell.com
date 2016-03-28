@@ -44,12 +44,12 @@
     border-top: $border-width-thin solid $color-black--10-percent;
     padding-top: ($measure-large - 0.182rem);
 
-    .page-home & {
+    .page--home & {
         margin-top: 0;
         border-top: 0;
     }
 
-    .page-about & {
+    .page--about & {
         border-top: 0;
         padding: 0 0 $measure-medium;
     }

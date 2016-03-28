@@ -14,8 +14,14 @@
     // </h3>
 
 {% endcomment %}
-{% capture heading_type %}{% if include.type %}{{ include.type }}{% else %}h3{% endif %}{% endcapture %}
-{% capture heading_id %}{% if include.id %}{{ include.id }}{% else %}{{ include.title | slugify }}{% endif %}{% endcapture %}
+{% assign heading_type = 'h3' %}
+{% if include.type %}
+    {% assign heading_type = include.type %}
+{% endif %}
+{% assign heading_id = include.title | slugify %}
+{% if include.id %}
+    {% assign heading_id = include.id %}
+{% endif %}
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
     {% include content/heading-anchor.html id=heading_id %}

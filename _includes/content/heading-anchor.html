@@ -12,16 +12,14 @@
 
 {% endcomment %}
 {% if include.id %}
-    {% capture url %}#{{ include.id }}{% endcapture %}
+    {% capture href %}#{{ include.id }}{% endcapture %}
 {% elsif include.url %}
-    {% assign url = include.url %}
+    {% assign href = include.url %}
 {% endif %}
-{% assign title = '' %}
 {% if include.title %}
     {% capture title %} title="{{ include.title }}"{% endcapture %}
 {% endif %}
-{% assign rel = '' %}
 {% if include.rel %}
     {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
 {% endif %}
-<a href="{{ url }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ url }}</a>
+<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>

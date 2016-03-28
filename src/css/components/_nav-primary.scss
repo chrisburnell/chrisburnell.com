@@ -95,7 +95,7 @@
     border-bottom-width: $border-width-default;
 }
 @each $body-class, $navigation-class in $navigation-links {
-    .page-#{$body-class} .nav-primary-#{$navigation-class} a {
+    .page--#{$body-class} .nav-primary--#{$navigation-class} a {
         @extend %nav-primary-anchor;
     }
 }
@@ -112,7 +112,7 @@
     transform: translateX(-50%);
 }
 @each $body-class, $navigation-class in $navigation-links {
-    .page-#{$body-class} .nav-primary-#{$navigation-class} a::after {
+    .page--#{$body-class} .nav-primary--#{$navigation-class} a::after {
         @extend %nav-primary-anchor-arrow;
     }
 }
