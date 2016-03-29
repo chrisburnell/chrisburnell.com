@@ -980,7 +980,9 @@ pre {
     color: #f9f9f9;
     padding: 1.25rem 1.25rem 1rem;
     overflow-x: auto;
-    overflow-y: hidden; }
+    overflow-y: hidden;
+    font-family: Consolas, Courier, monospace;
+    font-size: 0.875rem; }
     pre:not(.codepen),
     pre:not(.codepen) code {
       line-height: 2; }
