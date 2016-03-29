@@ -24,7 +24,11 @@
 
         {% if page.edit_text %}
             <div class="edit">
-                <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit{% if page.edit_date %} ({{ page.edit_date | date: '%d %b, %Y' }}){% endif %} —</time>
+                {% if page.edit_date %}
+                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit ({{ page.edit_date | date: '%d %b, %Y' }}) —</time>
+                {% else %}
+                    <div>Edit —</div>
+                {% endif %}
                 <p>{{ page.edit_text }}</p>
             </div>
         {% endif %}
