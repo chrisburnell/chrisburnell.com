@@ -159,15 +159,20 @@ $font-sizes: (
 
 
 /// @type List
-$font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
+$font-family-default: "ComicNeue", "Comic Sans MS", "Chalkboard", serif !default;
+//$font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// @type List
-$font-family-alpha: "league-gothic", Impact, sans-serif !default;
+$font-family-alpha: $font-family-default !default;
+//$font-family-alpha: "league-gothic", Impact, sans-serif !default;
 /// @type List
+/// @require {Variable} $font-family-default
 $font-family-beta: $font-family-default !default;
 /// @type List
-$font-family-gamma: "proxima-nova", sans-serif !default;
+$font-family-gamma: $font-family-default !default;
+//$font-family-gamma: "proxima-nova", sans-serif !default;
 /// @type List
-$font-family-monospace: Consolas, Courier, monospace !default;
+$font-family-monospace: $font-family-default !default;
+//$font-family-monospace: Consolas, Courier, monospace !default;
 /// @type Map
 /// @prop {String} key - Font Family name
 /// @prop {Number} value - Font Family value
