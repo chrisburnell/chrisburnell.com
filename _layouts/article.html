@@ -34,7 +34,7 @@
         {% endif %}
 
         {% if page.link_urls and page.categories contains 'link' %}
-            <div class="buttons-list" role="navigation">
+            <nav class="buttons-list" role="navigation">
                 {% assign link = page.link_urls | first %}
                 {% assign url = link.url %}
                 {% if link.title == null or link.title == empty %}
@@ -43,7 +43,7 @@
                     {% assign title = link.title %}
                 {% endif %}
                 <a rel="external" class="button" href="{{ url }}">{{ title }}</a>
-            </div>
+            </nav>
         {% endif %}
 
         {{ content }}

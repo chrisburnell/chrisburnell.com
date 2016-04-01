@@ -233,9 +233,9 @@ html {
 
 **You can view the final stylesheet that I’m using on Github Gist:**
 
-<div class="buttons-list" role="navigation">
+<nav class="buttons-list" role="navigation">
     <a class="button" href="{{ site.urls.gist }}/ef5367e7dd263356c48a">gist.github.com →</a>
-</div>
+</nav>
 
 
 {% include content/heading.html title='Conclusion' %}
