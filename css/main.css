@@ -375,7 +375,7 @@ html {
 
 html {
   background-color: #4f4f4f;
-  font: 400 normal 100% / 1.875 "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font: 400 normal 100% / 1.875 "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -404,7 +404,7 @@ h6 {
  * Heading - Alpha
  */
 h1 {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 2.625rem;
   line-height: 1;
   text-transform: uppercase;
@@ -414,7 +414,7 @@ h1 {
  * Heading - Beta
  */
 h2 {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 1.375rem;
   line-height: 1.25; }
 
@@ -422,7 +422,7 @@ h2 {
  * Heading - Gamma
  */
 h3, .lede, .articles-list .date {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 1.125rem;
   line-height: 1.875; }
 
@@ -475,7 +475,7 @@ h3 {
  * Heading - Delta
  */
 h4 {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 100%;
   font-weight: 600;
   line-height: 1.25; }
@@ -532,7 +532,7 @@ ul:not([class]),
       position: absolute;
       top: 0;
       left: 0;
-      font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+      font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
       font-weight: 600; }
   ol:not([class]) ol:not([class]),
   ul:not([class]) ol:not([class]),
@@ -580,7 +580,7 @@ dt {
   min-width: 10rem;
   clear: left;
   padding-right: 1.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-weight: 600; }
   @media (min-width: 501px) {
     dt {
@@ -607,7 +607,7 @@ table {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   border-collapse: separate; }
   table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
@@ -728,7 +728,7 @@ details {
   background-color: #2b2b2b;
   color: #f9f9f9;
   padding: 0.625rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif; }
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive; }
   details blockquote, details
   details, details
   dl, details
@@ -937,7 +937,7 @@ kbd,
 samp,
 var,
 .monospace {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 0.875rem;
   line-height: 1.429; }
 
@@ -981,7 +981,7 @@ pre {
     padding: 1.25rem 1.25rem 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-size: 0.875rem; }
     pre:not(.codepen),
     pre:not(.codepen) code {
@@ -1127,7 +1127,7 @@ a {
 
 .heading-anchor {
   margin-left: 1.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25;
@@ -1262,7 +1262,7 @@ button,
   display: inline-block;
   padding: 0 0.727em 0.182em;
   margin-top: 0.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 1.375rem;
   line-height: 2;
   text-align: center;
@@ -1312,7 +1312,7 @@ button,
     content: " →";
     width: auto;
     height: auto;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif; }
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive; }
 
 button[disabled] {
   opacity: 0.7;
@@ -1351,7 +1351,7 @@ textarea {
   padding: 0.5rem;
   border: 0.125rem solid #dddddd;
   outline-style: none;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif; }
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive; }
   input[type="date"]:focus,
   input[type="datetime"]:focus,
   input[type="email"]:focus,
@@ -1589,7 +1589,7 @@ footer {
     padding: 0.75rem 1rem;
     border-bottom-width: 0;
     margin-bottom: 0.25rem;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-size: 1.25rem;
     line-height: 1.25;
     text-transform: uppercase; }
@@ -1755,7 +1755,7 @@ footer {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   margin-bottom: 2.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   line-height: 1.25; }
   .page--home .small-articles-list,
   .widget .small-articles-list {
@@ -1993,7 +1993,7 @@ footer {
  */
 /*aside*/
 .author {
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif; }
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive; }
   @media (max-width: 768px) {
     .author {
       display: -webkit-box;
@@ -2013,7 +2013,7 @@ footer {
 
 .author-information {
   margin-bottom: 1.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-size: 0.875rem;
   font-style: italic;
   line-height: 1.429; }
@@ -2026,7 +2026,7 @@ footer {
   .author-information strong {
     color: inherit;
     border-bottom-width: 0;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-weight: 600;
     font-style: normal;
     text-transform: uppercase;
@@ -2081,7 +2081,7 @@ aside .widget {
 .widget-featured-anchor {
   float: right;
   margin-top: 1.25rem;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-weight: 600; }
   .widget-featured-anchor::after {
     content: " →"; }
@@ -2089,7 +2089,7 @@ aside .widget {
 footer {
   background-color: #4f4f4f;
   color: #dddddd;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-weight: 600;
   text-transform: uppercase; }
 
@@ -2189,7 +2189,7 @@ footer {
 .comments-anchor {
   display: inline-block;
   margin-top: 1.625em;
-  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+  font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
   font-weight: 600;
   line-height: 2; }
   .comments-anchor::after {
@@ -2203,7 +2203,7 @@ footer {
     position: relative;
     top: 0; }
   .comments noscript {
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-size: 1.25rem;
     font-style: italic; }
 
@@ -2225,7 +2225,7 @@ code[data-lang] {
     background-color: #737373;
     color: #f9f9f9;
     padding: 0 1.25rem;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 2.25rem;
@@ -2411,7 +2411,7 @@ code[data-lang] {
   .color-block-list li {
     height: 6.5rem;
     display: table-cell;
-    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", serif;
+    font-family: "ComicNeue", "Comic Sans MS", "Chalkboard", "TSCu_Comic", cursive;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 7.429;
