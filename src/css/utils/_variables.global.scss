@@ -163,10 +163,10 @@ $font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
 /// @type List
 $font-family-alpha: "league-gothic", Impact, sans-serif !default;
 /// @type List
-/// @require {Variable} $font-family-default
-$font-family-beta: $font-family-default !default;
+$font-family-beta: "proxima-nova", sans-serif !default;
 /// @type List
-$font-family-gamma: "proxima-nova", sans-serif !default;
+/// @require {Variable} $font-family-beta
+$font-family-gamma: $font-family-beta !default;
 /// @type List
 $font-family-monospace: Consolas, Courier, monospace !default;
 /// @type Map
