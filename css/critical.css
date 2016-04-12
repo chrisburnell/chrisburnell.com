@@ -558,9 +558,17 @@ ol.default-list {
     ol:not([class]) li::before,
     ol.default-list li::before {
       content: counter(ordered-list) "."; }
-  ol:not([class])[reversed] li,
-  ol.default-list[reversed] li {
-    counter-increment: ordered-list -1; }
+  ol:not([class])[reversed],
+  ol.default-list[reversed] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
 
 ul:not([class]) li::before,
 ul.default-list li::before {
