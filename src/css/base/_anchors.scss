@@ -136,8 +136,6 @@ a {
 
         &:link,
         &:visited {
-            border-bottom-color: mix($color-white, $brand-color, 20%);
-
             &:hover,
             &:focus,
             &:active {
