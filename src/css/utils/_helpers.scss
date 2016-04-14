@@ -19,7 +19,9 @@
 // Hide elements visually
 // Still treated as normal content by text-to-speech software
 .hidden,
-.hide {
+.hide,
+.sr-only,
+.visually-hidden {
     @include visually-hidden;
 }
 
