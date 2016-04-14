@@ -916,10 +916,10 @@ iframe {
   margin-bottom: 1.25rem; }
 
 /**
- * Hide ARIA-hidden elements
+ * Hide visually and from screen readers, but maintain layout
  */
 [aria-hidden="true"] {
-  display: none; }
+  visibility: hidden; }
 
 /**
  * Mouse Selection
