@@ -1,10 +1,5 @@
 <!-- Load in the main styles -->
 <script>loadCSS('/css/main.min.css');</script>
-<!-- Or serve the main styles (late) if you haven't got JavaScript -->
-<link rel="preload" href="/css/main.min.css" as="style" onload="this.rel='stylesheet'">
-<noscript>
-    <link rel="stylesheet" href="/css/main.min.css">
-</noscript>
 
 <!-- Support Main Script -->
 <script>
@@ -19,9 +14,9 @@
 
 <!-- ServiceWorker (disabled until I figure out proper caching) -->
 <!--script src="/serviceworker.min.js" async defer></script-->
+
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
-
 
 {% if page.codepen == true or page.categories contains 'pen' %}
     <!-- CodePen Embeds -->

@@ -1,8 +1,12 @@
-<!-- CSS compiled from {{ site.github.repository_url }}/tree/master/src/css -->
+<!-- Critical CSS -->
 <style>{% include generated/critical-css.html %}</style>
-
-<!-- Pull fonts from Typekit -->
-<script>{% include generated/typekit.html %}</script>
 
 <!-- LoadCSS -->
 <script>{% include generated/loadcss.html %}</script>
+
+<!-- Serve the main styles straight up if you haven't got JavaScript -->
+<link rel="preload" href="/css/main.min.css" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
+
+<!-- Pull fonts from Typekit -->
+<script>{% include generated/typekit.html %}</script>

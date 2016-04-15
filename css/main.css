@@ -813,8 +813,20 @@ figure {
     color: #737373;
     font-style: italic; }
   figure figcaption {
-    margin-top: 0.625rem;
-    text-align: center; }
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.625rem; }
 
 /**
  * Quotes
@@ -929,6 +941,13 @@ iframe {
   color: #f9f9f9; }
 ::selection {
   background: #5f8aa6;
+  color: #f9f9f9; }
+
+/**
+ * CANADA
+ */
+.canada:not(:link):hover, .canada:not(:link):focus, .canada:not(:link):active {
+  background-color: #fd1b00;
   color: #f9f9f9; }
 
 .canada::-moz-selection {
@@ -1633,7 +1652,8 @@ footer {
       width: 500px; } }
 
 .lede {
-  margin-bottom: 2.25rem; }
+  margin-bottom: 2.25rem;
+  font-weight: 600; }
   @media (max-width: 768px) {
     .lede {
       text-align: left; } }
@@ -1641,8 +1661,7 @@ footer {
     margin-top: -0.625rem; }
 
 .lede--featured {
-  font-size: 1.25rem;
-  font-weight: 600; }
+  font-size: 1.25rem; }
   .page--home .lede--featured {
     max-width: 24em; }
 
@@ -1680,7 +1699,8 @@ footer {
   text-shadow: 0 1px 0 #f9f9f9; }
 
 .articles-list .title {
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.625rem;
+  font-weight: 600; }
 
 .articles-list .lede {
   margin-bottom: 1.25rem; }
@@ -2038,13 +2058,13 @@ footer {
     display: block; }
 
 .author-name,
-.author-age,
+.author-nationality,
 .author-employer,
 .tags,
 .featured-anchor {
   display: block; }
 
-.author-age,
+.author-nationality,
 .author-employer,
 .author-information .date,
 .tags,

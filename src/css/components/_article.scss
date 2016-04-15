@@ -27,6 +27,7 @@
 .lede {
     @extend %gamma;
     margin-bottom: $measure-large;
+    font-weight: $font-weight-bold;
 
     @include media("<=medium") {
         text-align: left;
@@ -39,7 +40,6 @@
 }
 .lede--featured {
     font-size: $font-size-large;
-    font-weight: $font-weight-bold;
 
     .page--home & {
         max-width: 24em;

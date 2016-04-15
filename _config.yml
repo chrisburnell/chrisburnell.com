@@ -4,13 +4,13 @@ lede:        "I’m a Canadian UI developer living in London, UK. This is where 
 color_brand: 5f8aa6
 
 author:
-  name:      Chris Burnell
-  age:       25
-  location:  London, UK
-  email:     me@chrisburnell.com
-  codepen:   chrisburnell
-  twitter:   iamchrisburnell
-  job_title: UI developer
+  name:        Chris Burnell
+  nationality: Canadian
+  location:    London, UK
+  email:       me@chrisburnell.com
+  codepen:     chrisburnell
+  twitter:     iamchrisburnell
+  job_title:   UI developer
   employer:
     name: City University
     url:  https://www.city.ac.uk

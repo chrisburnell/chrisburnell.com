@@ -34,7 +34,7 @@
     {% capture author_microdata_home_location %}<span itemprop="homeLocation">{{ site.author.location }}</span>{% endcapture %}
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.author.employer.url }}"><span itemprop="worksFor">{{ site.author.employer.name }}</span></a>{% endcapture %}
     {% capture author_information_details %}
-        <div class="author-age">I’m <strong>{{ site.author.age }}</strong> years old</div>
+        <div class="author-nationality">I’m <strong class="canada">{{ site.author.nationality }}</strong></div>
         <div class="author-employer">I’m a <strong>{{ site.author.job_title }}</strong></div>
     {% endcapture %}
 {% endif %}

@@ -490,8 +490,10 @@ figure {
     }
 
     figcaption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: $measure-small;
-        text-align: center;
     }
 }
 
@@ -608,6 +610,21 @@ iframe {
     background: $color-brand;
     color: $color-white;
 }
-.canada::selection {
-    background-color: $color-canada;
+
+/**
+ * CANADA
+ */
+.canada {
+    &:not(:link) {
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-canada;
+            color: $color-white;
+        }
+    }
+
+    &::selection {
+        background-color: $color-canada;
+    }
 }
