@@ -13,7 +13,7 @@ tags:
 banner:        shoot-for-the-moon.png
 banner_mobile: shoot-for-the-moon_mobile.png
 
-link_urls:
+external_links:
 - url: "http://cruft.io/posts/percentage-calculations-in-ie/"
   title: "Browser Rounding and Fractional Pixels"
 - url: "http://ejohn.org/blog/sub-pixel-problems-in-css/"

@@ -404,10 +404,11 @@ h6 {
  * Heading - Alpha
  */
 h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
   line-height: 1;
-  text-transform: uppercase;
   text-shadow: 0.0715em 0.0715em 0 rgba(6, 6, 6, 0.05); }
 
 /**
@@ -427,10 +428,11 @@ h3, .lede, .articles-list .date {
   line-height: 1.875; }
 
 h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd;
-  font-weight: 600;
-  text-transform: uppercase; }
+  font-weight: 600; }
   h3:not(:last-child) {
     margin-bottom: 1.25rem; }
   h3[id]:target {
@@ -1153,12 +1155,13 @@ a {
     border-bottom-color: #5f8aa6; }
 
 .heading-anchor {
+  text-transform: lowercase;
+  letter-spacing: 0;
   margin-left: 1.25rem;
   font-family: Consolas, Courier, monospace;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25;
-  text-transform: lowercase;
   text-shadow: none;
   vertical-align: middle; }
   .heading-anchor, .heading-anchor:link {
@@ -1435,6 +1438,8 @@ aside p {
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: #737373;
     display: block;
     padding: 0.75rem 1rem;
@@ -1442,8 +1447,7 @@ aside p {
     margin-bottom: 0.25rem;
     font-family: "league-gothic", Impact, sans-serif;
     font-size: 1.25rem;
-    line-height: 1.25;
-    text-transform: uppercase; }
+    line-height: 1.25; }
     .nav-primary-list a:link, .nav-primary-list a:visited {
       border-bottom-color: #5f8aa6; }
     .nav-primary-list a:active {
@@ -1552,9 +1556,10 @@ aside p {
   margin-bottom: 1.25rem; }
 
 .articles-list .date {
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase; }
+  font-weight: 600; }
   @media (max-width: 768px) {
     .articles-list .date {
       text-align: left; } }
@@ -1613,12 +1618,13 @@ aside p {
       margin-bottom: 0.625rem; } }
   .author-information a,
   .author-information strong {
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: inherit;
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
     font-style: normal;
-    text-transform: uppercase;
     white-space: nowrap; }
   .author-information a:hover, .author-information a:focus, .author-information a:active {
     text-decoration: underline; }

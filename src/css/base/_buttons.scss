@@ -9,6 +9,7 @@ button,
     @extend %button-elements;
     @include non-selectable;
     @include border-radius(thin);
+    @include case(uppercase, 1px);
     @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
@@ -22,7 +23,6 @@ button,
     font-size: $font-size-beta;
     line-height: 2;
     text-align: center;
-    text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
     box-shadow: inset 0 -0.182em 0 0 mix($color-black, $color-brand, 10%);

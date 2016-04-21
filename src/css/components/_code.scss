@@ -13,6 +13,7 @@ code[data-lang] {
     &::before {
         @include position(top);
         @include border-radius($border-radius-default $border-radius-default 0 0);
+        @include case(uppercase);
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
@@ -22,7 +23,6 @@ code[data-lang] {
         font-size: $font-size-large;
         font-weight: $font-weight-bold;
         line-height: $measure-large;
-        text-transform: uppercase;
     }
 }
 

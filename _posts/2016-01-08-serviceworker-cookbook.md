@@ -9,6 +9,6 @@ lede: “The Service Worker Cookbook is a collection of working, practical examp
 tags:
 - serviceworker
 
-link_urls:
+external_links:
 - url: "https://serviceworke.rs"
 ---

@@ -33,9 +33,9 @@
             </div>
         {% endif %}
 
-        {% if page.link_urls and page.categories contains 'link' %}
+        {% if page.external_links and page.categories contains 'link' %}
             <nav class="buttons-list" role="navigation">
-                {% assign link = page.link_urls | first %}
+                {% assign link = page.external_links | first %}
                 {% assign url = link.url %}
                 {% if link.title == null or link.title == empty %}
                     {% assign title = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
@@ -48,11 +48,11 @@
 
         {{ content }}
 
-        {% if page.link_urls %}
+        {% if page.external_links %}
             {% unless page.categories contains 'link' %}
                 {% include content/heading.html title='Further Reading' %}
                 <ul>
-                    {% for link in page.link_urls %}
+                    {% for link in page.external_links %}
                         {% assign url = link.url %}
                         {% if link.title == null or link.title == empty %}
                             {% assign title = url %}

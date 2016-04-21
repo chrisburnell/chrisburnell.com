@@ -11,7 +11,7 @@ tags:
 - sass
 - tutorials
 
-link_urls:
+external_links:
 - url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
   title: "Mixins Better for Performance"
 - url: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"

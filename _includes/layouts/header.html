@@ -82,8 +82,8 @@ snippet of code on a project of your own. -->
     <link rel="dns-prefetch" href="//platform.twitter.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 
-    {% if page.categories contains 'link' and page.link_urls %}
-        {% assign link = page.link_urls | first %}
+    {% if page.categories contains 'link' and page.external_links %}
+        {% assign link = page.external_links | first %}
         <link rel="prefetch" href="//{{ link.url | remove: 'http://' | remove: 'https://' | split: '/' | first }}">
     {% endif %}
 

@@ -5,6 +5,7 @@
 
 
 footer {
+    @include case(uppercase, 0);
     background-color: $color-text;
     color: $color-text-light;
     font-family: $font-family-gamma;

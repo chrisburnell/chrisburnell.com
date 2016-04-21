@@ -34,12 +34,12 @@
 
     a,
     strong {
+        @include case(uppercase);
         color: inherit;
         border-bottom-width: 0;
         font-family: $font-family-gamma;
         font-weight: $font-weight-bold;
         font-style: normal;
-        text-transform: uppercase;
         white-space: nowrap;
     }
 

@@ -9,6 +9,6 @@ lede: Little late on this one, but gold dust nonetheless. SVG Wizard, Sara Souei
 tags:
 - svg
 
-link_urls:
+external_links:
 - url: "http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css"
 ---

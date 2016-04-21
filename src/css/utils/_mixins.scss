@@ -36,7 +36,7 @@
 
 
 ///
-/// Small Buttons (SSOT)
+/// Small Buttons (Single Source of Truth)
 ///
 /// @author Chris Burnell
 ///
@@ -51,6 +51,31 @@
 
     &:active {
         height: 1.818em;
+    }
+}
+
+
+///
+/// Change the case of text and apply appropriate letter-spacing.
+///
+/// @example scss
+///   @include case(uppercase);
+///   // text-transform: uppercase;
+///   // letter-spacing: 1px;
+///
+@mixin case($case, $letter-spacing: null) {
+    @if length($case) == 0 {
+        @error "case() expects at least one parameter.";
+    }
+
+    text-transform: #{$case};
+
+    @if $letter-spacing != null {
+        letter-spacing: #{$letter-spacing};
+    } @else {
+        @if $case == "uppercase" {
+            letter-spacing: $letter-spacing-uppercase;
+        }
     }
 }
 

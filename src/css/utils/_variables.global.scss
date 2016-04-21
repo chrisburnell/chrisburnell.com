@@ -192,6 +192,12 @@ $line-height-small:   1.250 !default;
 
 
 /// @type Length
+$letter-spacing-default: 0 !default;
+/// @type Length
+$letter-spacing-uppercase: 1px !default;
+
+
+/// @type Length
 /// @see {Mixin} transition
 $transition-time: 0.2s !default;
 /// @type String
