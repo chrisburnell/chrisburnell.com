@@ -4,22 +4,22 @@
 
 {% endcomment %}
 <li role="listitem">
-    <a href="{{ post.url }}">
-        {% if post.categories contains 'article' %}
+    <a href="{{ page.url }}">
+        {% if page.categories contains 'article' %}
             {% include content/svg.html type='article' %}
-        {% elsif post.categories contains 'link' %}
+        {% elsif page.categories contains 'link' %}
             {% include content/svg.html type='link' %}
-        {% elsif post.categories contains 'pen' %}
+        {% elsif page.categories contains 'pen' %}
             {% include content/svg.html type='codepen' %}
         {% endif %}
-        <h4 class="title">{{ post.title }}</h4>
-        {% if post.lede %}
-            <p class="lede">{{ post.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
-        {% elsif post.categories contains 'link' %}
+        <h4 class="title">{{ page.title }}</h4>
+        {% if page.lede %}
+            <p class="lede">{{ page.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
+        {% elsif page.categories contains 'link' %}
             <p class="lede"><em>Shared Link</em></p>
-        {% elsif post.categories contains 'pen' %}
+        {% elsif page.categories contains 'pen' %}
             <p class="lede"><em>Featured Pen</em></p>
         {% endif %}
-        <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %B, %Y' }}</time>
+        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
     </a>
 </li>

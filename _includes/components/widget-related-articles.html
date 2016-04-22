@@ -5,7 +5,7 @@
             {% include content/heading-anchor.html id='related-articles' %}
         </h3>
         <ol class="small-articles-list" role="list">
-            {% for post in site.related_posts limit: 2 %}
+            {% for page in site.related_posts limit: 2 %}
                 {% include components/small-articles-list-item.html %}
             {% endfor %}
         </ol>

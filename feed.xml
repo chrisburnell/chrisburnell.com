@@ -22,14 +22,8 @@ lede: All of my articles and pens.
             <link>{{ site.baseurl | prepend: site.url }}</link>
         </image>
 
-        {% for post in site.posts %}
-            <item>
-                <title>{{ post.title }}</title>
-                <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-                <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-                <category>{{ post.categories }}</category>
-                {% if post.lede %}<description>{{ post.lede }}</description>{% endif %}
-            </item>
+        {% for page in site.posts %}
+            {% include components/feed-item.html %}
         {% endfor %}
 
     </channel>

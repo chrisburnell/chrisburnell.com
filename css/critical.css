@@ -405,7 +405,6 @@ h6 {
  */
 h1 {
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
   line-height: 1;
@@ -429,7 +428,6 @@ h3, .lede, .articles-list .date {
 
 h3 {
   text-transform: uppercase;
-  letter-spacing: 1px;
   margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd;
   font-weight: 600; }
@@ -1439,7 +1437,6 @@ aside p {
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #737373;
     display: block;
     padding: 0.75rem 1rem;
@@ -1557,7 +1554,6 @@ aside p {
 
 .articles-list .date {
   text-transform: uppercase;
-  letter-spacing: 1px;
   margin-bottom: 0.625rem;
   font-weight: 600; }
   @media (max-width: 768px) {
@@ -1619,7 +1615,6 @@ aside p {
   .author-information a,
   .author-information strong {
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: inherit;
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;

@@ -129,17 +129,18 @@
         }
     }
 
-    .lede {
-        color: $color-text;
-        margin-top: $measure-small;
-        margin-bottom: 0;
-        font-size: $font-size-small;
-    }
-
+    .lede,
     .date {
         color: $color-text-alt;
         margin-top: $measure-small;
         font-size: $font-size-small;
+    }
+
+    .lede {
+        margin-bottom: 0;
+    }
+
+    .date {
         font-weight: $font-weight-bold;
 
         @include media(">medium") {
@@ -158,7 +159,7 @@
         opacity: opacity("5-percent");
         // override `_icons.scss` + 4px
         width:  6.25em !important;
-        height: 6.25em;
+        height: 6.25em !important;
         position: absolute;
         top: 50%;
         right: $measure-small;
@@ -168,7 +169,7 @@
 
         @include media("<=small") {
             width:  4em !important;
-            height: 4em;
+            height: 4em !important;
         }
     }
     a:hover,

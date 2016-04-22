@@ -33,26 +33,26 @@ sitemap:
             </url>
         {% endunless %}
     {% endfor %}
-    {% for post in site.posts %}
-        {% unless post.title == null or post.title == empty or post.sitemap.exclude == true or post.draft %}
+    {% for page in site.posts %}
+        {% unless page.title == null or page.title == empty or page.sitemap.exclude == true or page.draft %}
             <url>
-                <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
-                {% if post.sitemap.lastmod %}
-                    <lastmod>{{ post.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-                {% elsif post.edit_date %}
-                    <lastmod>{{ post.edit_date | date_to_xmlschema }}</lastmod>
-                {% elsif post.date %}
-                    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+                <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+                {% if page.sitemap.lastmod %}
+                    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+                {% elsif page.edit_date %}
+                    <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
+                {% elsif page.date %}
+                    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
                 {% else %}
                     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
                 {% endif %}
-                {% if post.sitemap.changefreq %}
-                    <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+                {% if page.sitemap.changefreq %}
+                    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
                 {% else %}
                     <changefreq>{{ site.sitemap.changefreq }}</changefreq>
                 {% endif %}
-                {% if post.sitemap.priority %}
-                    <priority>{{ post.sitemap.priority }}</priority>
+                {% if page.sitemap.priority %}
+                    <priority>{{ page.sitemap.priority }}</priority>
                 {% else %}
                     <priority>{{ site.sitemap.priority }}</priority>
                 {% endif %}

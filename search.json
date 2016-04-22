@@ -16,18 +16,18 @@ searchable: false
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}
-{% for post in site.posts %}
-    {% unless post.title == null or post.title == empty or post.searchable == false or post.draft %}
+{% for page in site.posts %}
+    {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
         {% unless first %},{% endunless %}{
-            "type": "{{ post.categories }}",
-            "url": {{ post.url | jsonify }},
-            "title": {{ post.title | jsonify }},
-            "date": {{ post.date | jsonify }},
-            "date_friendly": {{ post.date | date: '%d %b, %Y' | jsonify }},{% if post.lede %}
-            "lede": {{ post.lede | truncatewords: 20 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
-            "categories": {{ post.categories | join:', ' | jsonify }},
-            "tags": {{ post.tags | join:', ' | jsonify }}{% unless post.searchable == 'no-content' %},
-            "content": {{ post.content | strip_html | strip_newlines | jsonify }}{% endunless %}
+            "type": "{{ page.categories }}",
+            "url": {{ page.url | jsonify }},
+            "title": {{ page.title | jsonify }},
+            "date": {{ page.date | jsonify }},
+            "date_friendly": {{ page.date | date: '%d %b, %Y' | jsonify }},{% if page.lede %}
+            "lede": {{ page.lede | truncatewords: 20 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
+            "categories": {{ page.categories | join:', ' | jsonify }},
+            "tags": {{ page.tags | join:', ' | jsonify }}{% unless page.searchable == 'no-content' %},
+            "content": {{ page.content | strip_html | strip_newlines | jsonify }}{% endunless %}
         }{% assign first = false %}
     {% endunless %}
 {% endfor %}

@@ -4,7 +4,7 @@
         {% include content/heading-anchor.html id='shared-links' %}
     </h3>
     <ol class="small-articles-list" role="list">
-        {% for post in site.categories.link limit: 2 %}
+        {% for page in site.categories.link limit: 2 %}
             {% include components/small-articles-list-item.html %}
         {% endfor %}
     </ol>

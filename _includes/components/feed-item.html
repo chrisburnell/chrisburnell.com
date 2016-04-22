@@ -1,0 +1,12 @@
+{% comment %}
+
+  Consolidate markup for Feed Items.
+
+{% endcomment %}
+<item>
+    <title>{{ page.title }}</title>
+    <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
+    <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
+    <category>{{ page.categories }}</category>
+    {% if page.lede %}<description>{{ page.lede }}</description>{% endif %}
+</item>
