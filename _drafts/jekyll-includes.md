@@ -1,0 +1,113 @@
+---
+layout: article
+categories: article
+
+date: 2016-03-27 01:00:00
+
+title: Jekyll And Sass, Sitting in a Tree
+lede: I’ve been using Jekyll for over 2.5 years, and built some useful includes... TODO
+tags:
+- jekyll
+- tutorials
+
+# shorturl: uanoe
+comments: true
+---
+
+<blockquote>
+    <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.</p>
+    <cite><a rel="external" href="http://jekyllrb.com/">Jekyll</a></cite>
+</blockquote>
+
+
+{% include content/heading.html title='Headings' %}
+
+When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in an article’s content.
+
+Instead of doing this manually, or by limiting the functionality to JavaScript, I decided to use Jekyll’s *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes")* to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) methodology in my codebase *wherever possible*.
+
+So how do I generate a *heading* and *associated anchor* in my content?
+
+{% highlight markdown %}{% raw %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+...
+{% include content/heading.html title='Headings' %}
+...
+Cras ac elit enim, et tempus nulla.
+{% endraw %}{% endhighlight %}
+
+Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
+
+{% highlight liquid %}{% raw %}
+{% assign heading_type = 'h3' %}                             /* 1 */
+{% if include.type %}
+    {% assign heading_type = include.type %}
+{% endif %}
+
+{% assign heading_id = include.title | slugify %}            /* 2 + 3 */
+{% if include.id %}
+    {% assign heading_id = include.id %}
+{% endif %}
+
+<{{ heading_type }} id="{{ heading_id }}">
+    {{ include.title }}
+    {% include content/heading-anchor.html id=heading_id %}  /* 4 */
+</{{ heading_type }}>
+{% endraw %}{% endhighlight %}
+
+1. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
+2. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the heading anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
+3. The *include* also accepts a **required** `title` parameter, which becomes the textual contents of the heading. It may also be used to generate the `id` parameter, if it is not passed.
+4. A second *include* is called from inside the `heading` *include*, to which we’re passing the `id` of the `heading` *include*.
+
+Let’s see what the `heading-anchor` *include* looks like.
+
+{% highlight liquid %}{% raw %}
+{% if include.id %}                                                  /* 1 */
+    {% capture href %}#{{ include.id }}{% endcapture %}
+{% elsif include.url %}
+    {% assign href = include.url %}
+{% endif %}
+
+{% assign title = '' %}
+{% if include.title %}                                               /* 2 */
+    {% capture title %} title="{{ include.title }}"{% endcapture %}
+{% endif %}
+
+{% assign rel = '' %}
+{% if include.rel %}                                                 /* 3 */
+    {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
+{% endif %}
+
+<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
+{% endraw %}{% endhighlight %}
+
+1. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
+2. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
+3. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
+4. For accessibility reasons and a coherent reading experience for screen readers, heading anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
+
+{% highlight html %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+...
+<h3 id="headings">
+    Headings
+    <a href="#headings" class="heading-anchor" aria-hidden="true">#headings</a>
+</h3>
+...
+Cras ac elit enim, et tempus nulla.
+{% endhighlight %}
+
+This is the fully-generated output of the original *include* in the *Markdown* file.
+
+
+
+
+
+
+
+
+
+
+
+
