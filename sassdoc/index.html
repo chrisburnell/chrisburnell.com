@@ -132,7 +132,7 @@ color: contrasting-color(#111111);
 
     text-transform: #{$case};
 
-    @if length($letter-spacing) &gt; 0 {
+    @if $letter-spacing != null {
         letter-spacing: #{$letter-spacing};
     } @else {
         @if $case == &quot;uppercase&quot; {

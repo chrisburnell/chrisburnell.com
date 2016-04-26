@@ -405,6 +405,7 @@ h6 {
  */
 h1 {
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
   line-height: 1;
@@ -428,6 +429,7 @@ h3, .lede, .articles-list .date {
 
 h3 {
   text-transform: uppercase;
+  letter-spacing: 1px;
   margin-top: 2.25rem;
   border-bottom: 0.125rem solid #dddddd;
   font-weight: 600; }
@@ -1592,6 +1594,7 @@ footer {
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
     text-transform: uppercase;
+    letter-spacing: 1px;
     color: #737373;
     display: block;
     padding: 0.75rem 1rem;
@@ -1709,6 +1712,7 @@ footer {
 
 .articles-list .date {
   text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 0.625rem;
   font-weight: 600; }
   @media (max-width: 768px) {
@@ -2032,6 +2036,7 @@ footer {
   .author-information a,
   .author-information strong {
     text-transform: uppercase;
+    letter-spacing: 1px;
     color: inherit;
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;
@@ -2094,8 +2099,6 @@ aside .widget {
     content: " →"; }
 
 footer {
-  text-transform: uppercase;
-  letter-spacing: 0;
   background-color: #4f4f4f;
   color: #dddddd;
   font-family: "proxima-nova", sans-serif;
@@ -2151,6 +2154,8 @@ footer {
 
 .footer-copyright-anchor,
 .footer-style-guide-anchor {
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-left: 0.625rem;
   margin-right: 0.625rem; }
   .footer-copyright-anchor:link, .footer-copyright-anchor:visited,
@@ -2229,6 +2234,7 @@ code[data-lang] {
     background-clip: padding-box;
     border-radius: 0.375rem 0.375rem 0 0;
     text-transform: uppercase;
+    letter-spacing: 1px;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     content: attr(data-lang);

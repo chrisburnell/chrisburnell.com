@@ -70,7 +70,7 @@
 
     text-transform: #{$case};
 
-    @if length($letter-spacing) > 0 {
+    @if $letter-spacing != null {
         letter-spacing: #{$letter-spacing};
     } @else {
         @if $case == "uppercase" {

@@ -9,7 +9,7 @@ button,
     @extend %button-elements;
     @include non-selectable;
     @include border-radius(thin);
-    @include case(uppercase, 1px);
+    @include case(uppercase);
     @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
