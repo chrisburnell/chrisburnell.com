@@ -7,8 +7,8 @@
         <h1 id="article" class="title" role="heading">
             <span itemprop="name">{{ page.title }}</span>
             {% if page.shorturl %}
-                {% capture h1_url %}{{ site.shorturl }}{{ page.shorturl }}{% endcapture %}
-                {% capture h1_title %}Permalink: {{ site.shorturl }}{{ page.shorturl }}{% endcapture %}
+                {% capture h1_url %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
+                {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% assign h1_rel = 'me' %}
                 {% include content/heading-anchor.html url=h1_url title=h1_title rel=h1_rel %}
             {% endif %}
@@ -26,8 +26,6 @@
             <div class="edit">
                 {% if page.edit_date %}
                     <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit ({{ page.edit_date | date: '%d %b, %Y' }}) —</time>
-                {% else %}
-                    <div>Edit —</div>
                 {% endif %}
                 <p>{{ page.edit_text }}</p>
             </div>
@@ -54,13 +52,18 @@
                 <ul>
                     {% for link in page.external_links %}
                         {% assign url = link.url %}
+                        {% if url contains site.url %}
+                            {% assign rel = '' %}
+                        {% else %}
+                            {% assign rel = ' rel="external"' %}
+                        {% endif %}
                         {% if link.title == null or link.title == empty %}
                             {% assign title = url %}
                         {% else %}
                             {% assign title = link.title %}
                         {% endif %}
                         <li>
-                            <a rel="external" href="{{ url }}">{{ title }}</a>
+                            <a{{ rel }} href="{{ url }}">{{ title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -75,6 +78,8 @@
             {% include components/widget-related-articles.html %}
         {% elsif page.categories contains 'pen' %}
             {% include components/widget-featured-pens.html %}
+        {% elsif page.categories contains 'talk' %}
+            {% include components/widget-latest-talks.html %}
         {% endif %}
 
     </article>

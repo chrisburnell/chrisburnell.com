@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 # date: 2016-01-21 15:00:00
@@ -24,11 +24,11 @@ It’s an interesting concept, and it feels a bit like trying to locate an elect
 
 There are many reasons to love what we do. Too much time on your hands? *Try web development.* Becoming confident in your abilities and yourself as a person? *Try web development.* Do you like to obsessively clean and organise your house every single day? *Try web development.*
 
-Okay, so it’s not *that* difficult,.
+Okay, so it’s not *that* difficult...
 
 It just kind of sucks that because we work on the web, designs and trends become stale to us so much more quickly. Like, when was the last time you were reading a book and the design of the book was so off-putting that you had no interest in the contents of the book? I bet it happens very rarely, if even at all.
 
-I’m not saying, “don’t judge a book by its cover,” but the way we view the design of the web bleeds heavily into the way we perceive the content.
+I’m not saying, <q>don’t judge a book by its cover,</q> but the way we view the design of the web bleeds heavily into the way we perceive the content.
 
 Let’s say you’re reading a decent book on a Sunday afternoon. Maybe the pages are too stiff. Maybe they’re too thin. Maybe the typeface choice wasn’t the greatest, or the line height could use some work. These are all things that we take notice of once or twice
 

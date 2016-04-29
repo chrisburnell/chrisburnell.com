@@ -6,13 +6,12 @@
 
 /**
  * Contains embedded media properly and allows them to be dynamically resized
- * inside a 16:9 aspect ratio container.
+ * inside a set aspect ratio container.
  */
 .media {
     @include position(relative);
-    height: 0;
-    padding-top: 30px;
-    padding-bottom: 56.65%;
+    width: 100%;
+    height: auto;
     overflow: hidden;
 
     embed,
@@ -20,5 +19,24 @@
     object,
     video {
         @include position(full);
+        // necessary for `iframe`
+        height: 100%;
+        margin-bottom: 0;
     }
+}
+
+// Sets the aspect ratio to Vimeo / 16:9
+.media--16-9,
+.media--vimeo {
+    padding-top: 56.25%;
+}
+
+// Sets the aspect ratio to 4:3
+.media--4-3 {
+    padding-top: 75%;
+}
+
+// Sets the aspect ratio to SlideShare (595:485)
+.media--slideshare {
+    padding-top: 81.51%;
 }

@@ -1,4 +1,4 @@
-{% if page.layout == 'article' %}
+{% if page.layout == 'post' %}
     {% assign author_name_prefix = 'by' %}
     {% assign author_microdata_tags = '' %}
     {% assign author_microdata_photo = '' %}
@@ -8,7 +8,7 @@
     {% assign author_microdata_home_location = site.author.location %}
     {% capture author_microdata_works_for %}<a rel="external" href="{{ site.author.employer.url }}">{{ site.author.employer.name }}</a>{% endcapture %}
     {% capture author_information_details %}
-        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on {% if page.shorturl %}<a href="{{ site.shorturl }}{{ page.shorturl }}" title="Permalink: {{ site.shorturl }}{{ page.shorturl }}" rel="me" itemprop="datePublished">{% else %}<strong itemprop="datePublished">{% endif %}{{ page.date | date: '%d %b, %Y' }}{% if page.shorturl %}</a>{% else %}</strong>{% endif %}</time>
+        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">on {% if page.shorturl %}<a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="me" itemprop="datePublished">{% else %}<strong itemprop="datePublished">{% endif %}{{ page.date | date: '%d %b, %Y' }}{% if page.shorturl %}</a>{% else %}</strong>{% endif %}</time>
         {% if page.tags.size > 0 %}
             <div class="tags">
                 <span>tagged under</span>
@@ -20,11 +20,15 @@
                 </span>
             </div>
         {% endif %}
-        {% if page.categories contains 'pen' %}
+        {% if page.categories contains 'link' %}
+            <div class="featured-anchor"><a href="/links">Featured Links</a></div>
+        {% elsif page.categories contains 'pen' %}
             <div class="featured-anchor"><a href="/pens">Featured Pens</a></div>
+        {% elsif page.categories contains 'talk' %}
+            <div class="featured-anchor"><a href="/talks">Latest Talks</a></div>
         {% endif %}
     {% endcapture %}
-{% else %}
+{% elsif page.layout == 'page' %}
     {% assign author_name_prefix = 'about' %}
     {% capture author_microdata_tags %} itemscope itemtype="http://data-vocabulary.org/Person"{% endcapture %}
     {% capture author_microdata_photo %} itemprop="photo"{% endcapture %}
@@ -44,8 +48,12 @@
     {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
 {% elsif page.page_class contains 'page--articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'page--links' %}
+    {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
 {% elsif page.page_class contains 'page--pens' %}
     {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'page--talks' %}
+    {% assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' %}
 {% elsif page.page_class contains 'page--tags' %}
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
 {% elsif page.page_class contains 'page--search' %}
@@ -56,6 +64,8 @@
         {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
 {% elsif page.categories contains 'pen' %}
     {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
+{% elsif page.categories contains 'talk' %}
+    {% assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' %}
 {% else %}
     {% assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' %}
 {% endif %}

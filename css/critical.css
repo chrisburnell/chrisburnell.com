@@ -375,7 +375,7 @@ html {
 
 html {
   background-color: #4f4f4f;
-  font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
+  font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -554,11 +554,11 @@ ul:not([class]),
 ol:not([class]),
 ol.default-list {
   counter-reset: ordered-list; }
-  ol:not([class]) li,
-  ol.default-list li {
+  ol:not([class]) > li,
+  ol.default-list > li {
     counter-increment: ordered-list; }
-    ol:not([class]) li::before,
-    ol.default-list li::before {
+    ol:not([class]) > li::before,
+    ol.default-list > li::before {
       content: counter(ordered-list) "."; }
   ol:not([class])[reversed],
   ol.default-list[reversed] {
@@ -625,8 +625,8 @@ table {
 
 th,
 td {
-  -webkit-transition: background-color 0.2s ease, border-left-color 0.2s ease;
-  transition: background-color 0.2s ease, border-left-color 0.2s ease;
+  -webkit-transition: none;
+  transition: none;
   will-change: background-color, border-left-color;
   padding: 0.625rem;
   text-align: left; }
@@ -667,8 +667,8 @@ td {
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    -webkit-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease;
+    -webkit-transition: none;
+    transition: none;
     content: "";
     opacity: 0;
     background-color: rgba(95, 138, 166, 0.1);
@@ -869,8 +869,7 @@ blockquote {
   margin: 0 auto 1.25rem !important; }
 
 q {
-  hanging-punctuation: first;
-  font-style: italic; }
+  hanging-punctuation: first; }
   q,
   :lang(en) q {
     quotes: "“" "”" "‘" "’"; }
@@ -928,12 +927,6 @@ video {
 
 iframe {
   margin-bottom: 1.25rem; }
-
-/**
- * Hide visually and from screen readers, but maintain layout
- */
-[aria-hidden="true"] {
-  visibility: hidden; }
 
 /**
  * Mouse Selection
@@ -1107,8 +1100,8 @@ pre {
 
 a {
   position: relative;
-  -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  -webkit-transition: none;
+  transition: none;
   will-change: background, color, border-color;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -1143,8 +1136,8 @@ a {
     clip: rect(1px, 1px, 1px, 1px) !important; }
 
 .title-anchor {
-  -webkit-transition: border-color 0.2s ease;
-  transition: border-color 0.2s ease;
+  -webkit-transition: none;
+  transition: none;
   will-change: color, border-bottom-color;
   display: inline-block;
   border-bottom-width: 0.125rem; }
@@ -1256,10 +1249,10 @@ main {
 .wrap {
   width: auto;
   max-width: 1140px;
-  padding-right: 1.25rem;
   padding-left: 1.25rem;
-  margin-right: auto;
-  margin-left: auto; }
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto; }
 
 .wrap--full-width {
   max-width: 100%; }
@@ -1363,8 +1356,8 @@ aside p {
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: none;
+    transition: none;
     will-change: transform;
     fill: #5f8aa6; }
     @media (min-width: 769px) {
@@ -1433,10 +1426,8 @@ aside p {
       .nav-primary-list li + li {
         margin-left: 0.25em; } }
   .nav-primary-list a {
-    -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transition: none;
+    transition: none;
     will-change: color, padding-bottom, border-bottom-width, transform;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1502,8 +1493,7 @@ aside p {
       width: 500px; } }
 
 .lede {
-  margin-bottom: 2.25rem;
-  font-weight: 600; }
+  margin-bottom: 2.25rem; }
   @media (max-width: 768px) {
     .lede {
       text-align: left; } }
@@ -1511,7 +1501,8 @@ aside p {
     margin-top: -0.625rem; }
 
 .lede--featured {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  font-weight: 600; }
   .page--home .lede--featured {
     max-width: 24em; }
 
@@ -1619,7 +1610,7 @@ aside p {
   .author-information a,
   .author-information strong {
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     color: inherit;
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;
@@ -1731,6 +1722,7 @@ aside p {
   background-clip: padding-box;
   border-radius: 0.25rem; }
 
+[aria-hidden="true"],
 .hidden,
 .hide,
 .sr-only,

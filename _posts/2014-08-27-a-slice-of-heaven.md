@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2014-08-27 15:00:00
@@ -78,6 +78,6 @@ Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Tw
 
 {% include content/heading.html title='Over to you' %}
 
-Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what's possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
+Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
 
 Let me know in the [comments](#comments) if you have any examples or cool pens of your own!

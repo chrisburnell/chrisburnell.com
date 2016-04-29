@@ -13,6 +13,11 @@
   url: '/links'
   icon: 'link'
 
+- title: Talks Archive
+  rel: 'me author'
+  url: '/talks'
+  icon: 'bullhorn'
+
 - title: Tags Archive
   rel: 'me author'
   url: '/tags'

@@ -13,6 +13,11 @@
   url: '/feed-links.xml'
   icon: 'rss'
 
+- title: Subscribe to Talks
+  rel: 'me author'
+  url: '/feed-talks.xml'
+  icon: 'rss'
+
 - title: Subscribe to All
   rel: 'me author'
   url: '/feed.xml'

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2016-03-23 18:22:00
@@ -75,7 +75,7 @@ While the `width` of each box in the above demo is technically `133.3333px`, *su
 
 However, what is happening, as far as I can tell, is that the browser creates a tally of the leftover `0.3333px` from each of the three boxes and adds that *one* extra pixel of `width` to *one* of the three boxes. The exact mechanics of how this happens are a bit of a mystery to me *(why does the middle box receive the extra pixel?)*, but the outcome makes some rhyme and reason.
 
-But let’s not concern ourselves with the mechanics of *sub-pixel rendering* for now, and just focus on legacy browsers that employ the less accurate methods of CSS rounding, such as “down” or “nearest integer.”
+But let’s not concern ourselves with the mechanics of *sub-pixel rendering* for now, and just focus on legacy browsers that employ the less accurate methods of CSS rounding, such as <q>down</q> or <q>nearest integer.</q>
 
 
 {% include content/heading.html title='An Example' %}
@@ -107,7 +107,7 @@ Due to [discrepancies between browsers](http://cruft.io/posts/percentage-calcula
     <p>Let’s not get into viewport units (<em>vw</em>, <em>vh</em>, <em>vmin</em>, <em>vmax</em>, etc.). That’s a whole other beast.</p>
 </aside>
 
-As a result, more often than not, I recommend **overshooting** your target value with your fraction, whether it be a *percentage*, *em*, or *rem* “fraction”. The reason for overshooting is such that any browser’s method of rounding decimals will achieve your target value.
+As a result, more often than not, I recommend **overshooting** your target value with your fraction, whether it be a *percentage*, *em*, or *rem* <q>fraction</q>. The reason for overshooting is such that any browser’s method of rounding decimals will achieve your target value.
 
 
 {% include content/heading.html title='Brass Tacks' %}
@@ -129,7 +129,7 @@ So let’s use the running example, and modify it to match these conditions and 
 
 Because the worst truncation that will occur is to `2` decimal places, our value of `60.06%` will satisfy each rounding method, and our target value of `803px` will be achieved cross-browser.
 
-It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-slightly *less* than `60.06%`, will result in a computed value of `802.9888px`. This satisfies *almost* every method of rounding, but it still fails when rounding “down.” By making sure our computed value **overshoots** the target value, that is to say that the decimal value is *slightly* greater than the integer value, we satisfy the conditions to round “down” to our target value.
+It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-slightly *less* than `60.06%`, will result in a computed value of `802.9888px`. This satisfies *almost* every method of rounding, but it still fails when rounding <q>down.</q> By making sure our computed value **overshoots** the target value, that is to say that the decimal value is *slightly* greater than the integer value, we satisfy the conditions to round <q>down</q> to our target value.
 
 
 {% include content/heading.html title='The Takeaway' id='tldr' %}

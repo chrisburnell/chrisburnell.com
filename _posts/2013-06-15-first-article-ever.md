@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2013-06-15 13:21:00
@@ -99,4 +99,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 {% include content/heading.html title='And that’s it!' id='thats-it' %}
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe ({{ site.url }}{{ site.baseurl }}/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.urls.twitter }} "My Twitter") or [send me an email](mailto:{{ site.author.email }})!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe ({{ site.baseurl | prepend: site.url }}/feed.xml)](/feed.xml "My RSS Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [twitter]({{ site.urls.twitter }} "My Twitter") or [send me an email](mailto:{{ site.author.email }})!

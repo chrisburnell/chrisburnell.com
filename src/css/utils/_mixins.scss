@@ -22,16 +22,21 @@
 ///   @include radius(1em);
 ///   // border-radius: 1em;
 ///
-@mixin border-radius($values...) {
-    @if length($values) == 0 or #{$values} == "default" {
-        $values: $border-radius-default;
+@mixin border-radius($type: "default") {
+    $value: $border-radius-default;
+
+    @if $type == "top" {
+        $value: $border-radius-default $border-radius-default 0 0;
     }
-    @else if #{$values} == "thin" {
-        $values: $border-radius-thin;
+    @else if $type == "bottom" {
+        $value: 0 0 $border-radius-default $border-radius-default;
+    }
+    @else if $type == "thin" {
+        $value: $border-radius-thin;
     }
 
     background-clip: padding-box;
-    border-radius: #{$values};
+    border-radius: #{$value};
 }
 
 

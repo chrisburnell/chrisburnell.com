@@ -213,7 +213,7 @@ ol:not([class]),
 ol.default-list {
     counter-reset: ordered-list;
 
-    li {
+    & > li {
         counter-increment: ordered-list;
 
         &::before {
@@ -542,7 +542,6 @@ blockquote {
 }
 q {
     @include quotes;
-    font-style: italic;
 }
 
 /**
@@ -594,13 +593,6 @@ video {
 }
 iframe {
     margin-bottom: $measure-medium;
-}
-
-/**
- * Hide visually and from screen readers, but maintain layout
- */
-[aria-hidden="true"] {
-    visibility: hidden;
 }
 
 /**

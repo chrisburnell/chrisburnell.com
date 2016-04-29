@@ -2,30 +2,11 @@
 layout: null
 searchable: false
 
+title: Links Feed
 lede: All of my shared links.
+category_path: '/links'
 ---
 
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-
-    <channel>
-
-        <title>{{ site.title | xml_escape }} – Links Only</title>
-        <description>{{ page.lede | xml_escape }}</description>
-        <link>{{ '/links' | prepend: site.baseurl | prepend: site.url }}</link>
-        <atom:link href="{{ '/feed-links.xml' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-        <language>en</language>
-
-        <image>
-            <url>{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}</url>
-            <title>{{ site.author.name }}</title>
-            <link>{{ site.baseurl | prepend: site.url }}</link>
-        </image>
-
-        {% for page in site.categories.link %}
-            {% include components/feed-item.html %}
-        {% endfor %}
-
-    </channel>
-
-</rss>
+{% for page in site.categories.link %}
+    {% include components/feed-item.html %}
+{% endfor %}

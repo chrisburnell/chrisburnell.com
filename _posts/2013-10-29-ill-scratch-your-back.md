@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2013-10-29 00:10:00
@@ -14,7 +14,7 @@ banner:        ill-scratch-your-back.png
 banner_mobile: ill-scratch-your-back_mobile.png
 
 edit_date: 2015-06-06 20:20:00
-edit_text: “I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="/article/backscratching-revisited">Backscratching Revisited</a>, or continue reading.”
+edit_text: <q>I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="{% post_url 2015-06-08-backscratching-revisited %}">Backscratching Revisited</a>, or continue reading.</q>
 
 shorturl: 82n3v
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: pen
 
 date: 2014-11-05 13:00:00

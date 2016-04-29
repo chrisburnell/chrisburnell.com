@@ -1,0 +1,23 @@
+---
+layout: page
+page_class: page--talks
+searchable: no-content
+
+redirect_from:
+  - /slides.html
+  - /presentations.html
+
+title: Talks
+lede: All of my talks.
+---
+
+
+<ol id="talks" class="small-articles-list" role="list">
+    {% for page in site.categories.talk %}
+        {% include components/small-articles-list-item.html %}
+    {% endfor %}
+</ol>
+
+{% include components/nav-secondary.html type='feeds' include='talks' %}
+
+{% include components/nav-secondary.html type='archives' exclude='talks' %}

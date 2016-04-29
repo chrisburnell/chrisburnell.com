@@ -4,9 +4,17 @@
 
 {% endcomment %}
 <item>
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | xml_escape }}</title>
     <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
     <category>{{ page.categories }}</category>
-    {% if page.lede %}<description>{{ page.lede }}</description>{% endif %}
+    {% if page.lede %}
+        <description>{{ page.lede | xml_escape }}</description>
+    {% elsif page.categories contains 'link' %}
+        <description>Shared Link</description>
+    {% elsif page.categories contains 'pen' %}
+        <description>Featured Pen</description>
+    {% elsif page.categories contains 'talk' and page.location %}
+        <description>Given at {{ page.location | xml_escape }}</description>
+    {% endif %}
 </item>

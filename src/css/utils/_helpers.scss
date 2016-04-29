@@ -17,7 +17,7 @@
 }
 
 // Hide elements visually
-// Still treated as normal content by text-to-speech software
+[aria-hidden="true"],
 .hidden,
 .hide,
 .sr-only,

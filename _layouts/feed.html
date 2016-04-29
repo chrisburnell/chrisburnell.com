@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+
+        <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
+        <description>{{ page.lede | xml_escape }}</description>
+        <link>{{ page.category_path | prepend: site.baseurl | prepend: site.url }}</link>
+        <atom:link href="{{ page.path | prepend: '/' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+        <generator>Jekyll v{{ jekyll.version }}</generator>
+        <language>en</language>
+
+        <image>
+            <url>{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}</url>
+            <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
+            <link>{{ page.category_path | prepend: site.baseurl | prepend: site.url }}</link>
+        </image>
+
+        {{ content }}
+
+    </channel>
+
+</rss>

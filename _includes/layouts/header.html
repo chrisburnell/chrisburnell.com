@@ -38,6 +38,8 @@ snippet of code on a project of your own. -->
     {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
 {% elsif page.categories contains 'pen' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
+{% elsif page.categories contains 'talk' %}
+    {% capture meta_lede %}One of my talks, {{ page.title }}{% endcapture %}
 {% elsif page.lede %}
     {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
 {% else %}
@@ -56,9 +58,9 @@ snippet of code on a project of your own. -->
     {% for class in page.page_class %}
         {{ class }}
     {% endfor %}
-    {% if page.categories contains 'article' %}page--article{% endif %}
-    {% if page.categories contains 'link' %}page--link{% endif %}
-    {% if page.categories contains 'pen' %}page--pen{% endif %}
+    {% if page.categories %}
+        page--{{ page.categories | first }}
+    {% endif %}
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' | join: '  ' %}
 

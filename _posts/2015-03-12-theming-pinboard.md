@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2015-03-12 10:00:00
@@ -224,7 +224,7 @@ html {
 {% endhighlight %}
 {% include content/code-toggle-bottom.html %}
 
-- modified the colour palette to match [my styleguide]({{ site.url }}{{ site.baseurl }}/style-guide)
+- modified the colour palette to match [my styleguide]({{ site.baseurl | prepend: site.url }}/style-guide)
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 

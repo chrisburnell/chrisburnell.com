@@ -11,6 +11,8 @@
             {% include content/svg.html type='link' %}
         {% elsif page.categories contains 'pen' %}
             {% include content/svg.html type='codepen' %}
+        {% elsif page.categories contains 'talk' %}
+            {% include content/svg.html type='bullhorn' %}
         {% endif %}
         <h4 class="title">{{ page.title }}</h4>
         {% if page.lede %}
@@ -19,6 +21,8 @@
             <p class="lede"><em>Shared Link</em></p>
         {% elsif page.categories contains 'pen' %}
             <p class="lede"><em>Featured Pen</em></p>
+        {% elsif page.categories contains 'talk' and page.location %}
+            <p class="lede"><em>Given at {{ page.location }}</em></p>
         {% endif %}
         <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
     </a>

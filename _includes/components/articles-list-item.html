@@ -10,6 +10,8 @@
     <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
     {% if page.lede %}
         <p class="lede">{{ page.lede }}</p>
+    {% elsif page.categories contains 'talk' and page.location %}
+        <p class="lede">Given at {{ page.location }}.</p>
     {% endif %}
     <a class="button" href="{{ page.url }}"><span>Continue reading ‘{{ page.title }}’ – </span>Read Full Article</a>
     {% if page.comments == true %}

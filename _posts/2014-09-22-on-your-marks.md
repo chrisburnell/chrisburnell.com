@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: article
 
 date: 2014-09-22 10:00:00
@@ -14,7 +14,7 @@ banner:        on-your-marks.png
 banner_mobile: on-your-marks_mobile.png
 
 edit_date: 2016-01-25 12:45:00
-edit_text: “I’ve modified the JavaScript for this section of my site over time, but have reflected the changes in the code snippets below.”
+edit_text: <q>I’ve modified the JavaScript for this section of my site over time, but have reflected the changes in the code snippets below.</q>
 
 shorturl: sfn8k
 comments: true

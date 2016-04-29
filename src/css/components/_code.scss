@@ -11,9 +11,9 @@ code[data-lang] {
     padding-top: $measure-large;
 
     &::before {
-        @include position(top);
-        @include border-radius($border-radius-default $border-radius-default 0 0);
+        @include border-radius(1em);
         @include case(uppercase);
+        @include position(top);
         @include transition;
         content: attr(data-lang);
         background-color: $color-text-alt;
@@ -74,7 +74,7 @@ code[data-lang] {
 
         &::after {
             @include position(bottom);
-            @include border-radius(0 0 $border-radius-default $border-radius-default);
+            @include border-radius(bottom);
             content: "";
             background-image: linear-gradient(to bottom,
                                               rgba($color-black, .2) 0,

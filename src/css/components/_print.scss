@@ -5,19 +5,26 @@
 
 
 @include media("print") {
+    // Hide non-content markup
     nav,
-    .featured-pens,
-    .related-articles,
+    .widget,
     .comments,
     footer .home-anchor,
-    footer .style-guide-anchor,
-    .nav-tertiary {
+    footer .style-guide-anchor {
         display: none;
     }
 
-    button, .button {
+    // Fix buttons for B&W scenario
+    %button-elements {
         color: $color-text;
         border: $border-width-hairline solid $color-text;
         box-shadow: none;
+    }
+
+    // Fix trailing text when breaking page
+    %heading-elements,
+    p {
+        orphans: 3;
+        widows: 3;
     }
 }

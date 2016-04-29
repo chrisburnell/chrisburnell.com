@@ -171,8 +171,9 @@
         resultsList           = document.querySelector('.js-search-results-list'),
         resultTemplatePage    = document.querySelector('.js-search-template-page'),
         resultTemplateArticle = document.querySelector('.js-search-template-article'),
-        resultTemplatePen     = document.querySelector('.js-search-template-pen'),
         resultTemplateLink    = document.querySelector('.js-search-template-link'),
+        resultTemplatePen     = document.querySelector('.js-search-template-pen'),
+        resultTemplateTalk    = document.querySelector('.js-search-template-talk'),
         allowEmpty = false;
 
     // initiate search functionality
@@ -328,6 +329,12 @@
                         results += populateResultContent(resultTemplatePen.innerHTML, item);
                     }
                     break;
+                case 'talk':
+                    if (titleCheck || contentCheck || categoriesCheck || tagsCheck) {
+                        resultsCount++;
+                        results += populateResultContent(resultTemplateTalk.innerHTML, item);
+                    }
+                    break;
                 default:
                     console.log('Unable to match category type to template.');
             }
@@ -375,6 +382,8 @@
             html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
         } else if (item['type'] == 'pen') {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
+        } else if (item['type'] == 'talk') {
+            html = injectContent(html, '<em>Talk</em>', '@@LEDE@@');
         }
 
         return html;

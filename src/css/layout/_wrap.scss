@@ -11,10 +11,10 @@ main {
 .wrap {
     width: auto;
     max-width: $wrapper-width-large;
-    padding-right: $wrapper-padding;
     padding-left:  $wrapper-padding;
-    margin-right: auto;
+    padding-right: $wrapper-padding;
     margin-left:  auto;
+    margin-right: auto;
 }
 .wrap--full-width {
     max-width: 100%;

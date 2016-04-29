@@ -1,0 +1,12 @@
+<div class="widget  widget--latest-talks">
+    <h3 id="latest-talks" class="widget-title">
+        <a href="/talks">Latest Talks</a>
+        {% include content/heading-anchor.html id='latest-talk' %}
+    </h3>
+    <ol class="small-articles-list" role="list">
+        {% for page in site.categories.talk limit: 2 %}
+            {% include components/small-articles-list-item.html %}
+        {% endfor %}
+    </ol>
+    <a class="widget-featured-anchor" href="/talks">All Talks</a>
+</div>

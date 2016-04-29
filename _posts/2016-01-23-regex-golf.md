@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 categories: link
 
 date: 2016-01-23 16:04:00

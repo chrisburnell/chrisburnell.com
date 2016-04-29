@@ -19,8 +19,6 @@
     }
 
     li {
-        width: 49.0125%;
-
         // Push all list items down (after the first two, in the
         // two-column format)
         &:nth-child(n+3) {
@@ -28,6 +26,7 @@
         }
 
         @include media(">small") {
+            width: 49.0125%;
             display: flex;
             flex-direction: column;
 
@@ -49,8 +48,10 @@
                 margin-top: $measure-medium;
             }
 
-            &:nth-child(2n+2) a {
-                background-color: $color-black--5-percent;
+            &:nth-child(2n+2) {
+                a {
+                    background-color: $color-black--5-percent;
+                }
             }
         }
 
@@ -72,8 +73,10 @@
                 }
             }
 
-            &:nth-child(2n+2) a {
-                background-color: $color-black--5-percent;
+            &:nth-child(2n+2) {
+                a {
+                    background-color: $color-black--5-percent;
+                }
             }
         }
     }
@@ -134,6 +137,7 @@
         color: $color-text-alt;
         margin-top: $measure-small;
         font-size: $font-size-small;
+        font-weight: $font-weight-bold;
     }
 
     .lede {
@@ -141,8 +145,6 @@
     }
 
     .date {
-        font-weight: $font-weight-bold;
-
         @include media(">medium") {
             text-align: right;
         }
