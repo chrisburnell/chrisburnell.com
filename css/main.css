@@ -375,7 +375,7 @@ html {
 
 html {
   background-color: #4f4f4f;
-  font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
+  font: 400 normal 100% / 1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -625,8 +625,8 @@ table {
 
 th,
 td {
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: background-color 0.2s ease, border-left-color 0.2s ease;
+  transition: background-color 0.2s ease, border-left-color 0.2s ease;
   will-change: background-color, border-left-color;
   padding: 0.625rem;
   text-align: left; }
@@ -667,8 +667,8 @@ td {
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
     content: "";
     opacity: 0;
     background-color: rgba(95, 138, 166, 0.1);
@@ -1100,8 +1100,8 @@ pre {
 
 a {
   position: relative;
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   will-change: background, color, border-color;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -1136,8 +1136,8 @@ a {
     clip: rect(1px, 1px, 1px, 1px) !important; }
 
 .title-anchor {
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
   will-change: color, border-bottom-color;
   display: inline-block;
   border-bottom-width: 0.125rem; }
@@ -1182,7 +1182,7 @@ a {
   h3:active .heading-anchor,
   h4:active .heading-anchor,
   h5:active .heading-anchor,
-  h6:active .heading-anchor {
+  h6:active .heading-anchor, .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active {
     display: inline-block; }
 
 /**
@@ -1256,8 +1256,8 @@ button,
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
   will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
   background-color: #5f8aa6;
   min-width: 8em;
@@ -1346,8 +1346,8 @@ input[type="week"],
 textarea {
   background-clip: padding-box;
   border-radius: 0.25rem;
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   will-change: background-color, border-color;
   box-sizing: inherit !important;
   padding: 0.5rem;
@@ -1511,8 +1511,8 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
     will-change: transform;
     fill: #5f8aa6; }
     @media (min-width: 769px) {
@@ -1581,8 +1581,10 @@ footer {
       .nav-primary-list li + li {
         margin-left: 0.25em; } }
   .nav-primary-list a {
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1817,8 +1819,8 @@ footer {
   .small-articles-list .date {
     text-shadow: 0 1px 0 #f9f9f9; }
   .small-articles-list .title {
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
     will-change: border-color;
     width: auto;
     display: inline-block;
@@ -1846,8 +1848,8 @@ footer {
   .small-articles-list .date::before {
     content: "– "; }
   .small-articles-list svg {
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
     will-change: opacity;
     opacity: 0.05;
     width: 6.25em !important;
@@ -2114,8 +2116,10 @@ footer {
   white-space: nowrap; }
 
 .footer-home-anchor {
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
   width: 3.125rem;
   height: 3.125rem;
@@ -2128,8 +2132,8 @@ footer {
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem); }
   .footer-home-anchor .icon {
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
     will-change: opacity;
     opacity: 0.9;
     width: 100%;
@@ -2284,8 +2288,8 @@ code[data-lang] {
     pointer-events: none; }
 
 .code-toggle-input + .highlight pre {
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: max-height 0.2s ease;
+  transition: max-height 0.2s ease;
   max-height: 1000vh; }
 
 .code-toggle-input:not(:checked) + .highlight pre {
