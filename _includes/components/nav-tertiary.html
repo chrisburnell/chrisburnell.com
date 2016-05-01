@@ -1,6 +1,6 @@
 <nav class="nav-tertiary" role="navigation">
     <ul class="nav-tertiary-list">
-    {% for link in site.data.social-media-accounts %}
+    {% for link in site.data.nav-tertiary %}
         {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
         <li>
             <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">

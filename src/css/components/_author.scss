@@ -40,7 +40,6 @@
         font-family: $font-family-gamma;
         font-weight: $font-weight-bold;
         font-style: normal;
-        white-space: nowrap;
     }
 
     a {
@@ -80,6 +79,7 @@
 .author-nationality,
 .author-employer,
 .tags,
+.location,
 .featured-anchor {
     display: block;
 }
@@ -89,6 +89,7 @@
 .author-employer,
 .author-information .date,
 .tags,
+.location,
 .featured-anchor {
     margin-top: 0.5rem;
 }

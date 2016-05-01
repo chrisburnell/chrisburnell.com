@@ -17,7 +17,7 @@ comments: true
 
 Last week, <a rel="external" href="http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/">I spoke</a> at <a rel="external" href="http://londonwebstandards.org/">London Web Standards</a>, a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a freefront-end development course](http://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html), I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
 
-Check out the *Talk* in question, <a rel="me" href="{% post_url 2016-04-29-middle-out %}">Supporting Middle-Out in CSS</a>.
+Check out the *Talk* in question, <a rel="me" href="{% post_url 2016-04-18-middle-out %}">Supporting Middle-Out in CSS</a>.
 
 
 {% include content/heading.html title='Nerves from Hell' %}
@@ -132,7 +132,7 @@ If we were to categorise this understandability of CSS into three general catego
   - <a rel="external" href="https://en.wikipedia.org/wiki/Spaghetti_code" title="Spaghetti Code on Wikipedia">Has no focus or purpose. Don’t do it.</a>
 
 
-{% include content/heading.html title='The Next One' %}
+{% include content/heading.html title='The Next Talk' %}
 
 This certainly isn’t the last talk I’ll give; in fact, I certainly hope it isn’t! Thanks for reading this far, coming out to the talk, or both!
 

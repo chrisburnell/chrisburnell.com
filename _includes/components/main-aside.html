@@ -21,11 +21,24 @@
             </div>
         {% endif %}
         {% if page.categories contains 'link' %}
-            <div class="featured-anchor"><a href="/links">Featured Links</a></div>
+            <a class="featured-anchor" href="/links">Featured Links</a>
         {% elsif page.categories contains 'pen' %}
-            <div class="featured-anchor"><a href="/pens">Featured Pens</a></div>
+            <a class="featured-anchor" href="/pens">Featured Pens</a>
         {% elsif page.categories contains 'talk' %}
-            <div class="featured-anchor"><a href="/talks">Latest Talks</a></div>
+            {% if page.location %}
+                {% if page.location_url %}
+                    <div class="location">
+                        <span>given at</span>
+                        <a rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
+                    </div>
+                {% else %}
+                    <div class="location">
+                        <span>given at</span>
+                        <strong>{{ page.location }}</strong>
+                    </div>
+                {% endif %}
+            {% endif %}
+            <a class="featured-anchor" href="/talks">Latest Talks</a>
         {% endif %}
     {% endcapture %}
 {% elsif page.layout == 'page' %}

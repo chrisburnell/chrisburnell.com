@@ -5,6 +5,7 @@
   @param {String} url *
   @param {String} title
   @param {String} rel
+  @param {String} tabindex
 
   @example
     {% include content/heading-anchor.html id='12345' %}
@@ -22,4 +23,7 @@
 {% if include.rel %}
     {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
 {% endif %}
-<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>
+{% if include.tabindex %}
+    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}
+{% endif %}
+<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }}{{ tabindex }} aria-hidden="true">{{ href }}</a>

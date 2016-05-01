@@ -11,7 +11,7 @@ code[data-lang] {
     padding-top: $measure-large;
 
     &::before {
-        @include border-radius(1em);
+        @include border-radius(top);
         @include case(uppercase);
         @include position(top);
         @include transition;

@@ -1182,7 +1182,7 @@ a {
   h3:active .heading-anchor,
   h4:active .heading-anchor,
   h5:active .heading-anchor,
-  h6:active .heading-anchor, .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active {
+  h6:active .heading-anchor, .heading-anchor:target {
     display: inline-block; }
 
 /**
@@ -1615,12 +1615,13 @@ footer {
 .page--articles .nav-primary--articles a,
 .page--pen .nav-primary--pens a,
 .page--pens .nav-primary--pens a,
-.page--search .nav-primary--search a {
+.page--talk .nav-primary--talks a,
+.page--talks .nav-primary--talks a {
   color: #4f4f4f;
   padding-bottom: 0.5rem;
   border-bottom-width: 0.25rem; }
 
-.page--home .nav-primary--home a::after, .page--about .nav-primary--about a::after, .page--article .nav-primary--articles a::after, .page--articles .nav-primary--articles a::after, .page--pen .nav-primary--pens a::after, .page--pens .nav-primary--pens a::after, .page--search .nav-primary--search a::after {
+.page--home .nav-primary--home a::after, .page--about .nav-primary--about a::after, .page--article .nav-primary--articles a::after, .page--articles .nav-primary--articles a::after, .page--pen .nav-primary--pens a::after, .page--pens .nav-primary--pens a::after, .page--talk .nav-primary--talks a::after, .page--talks .nav-primary--talks a::after {
   content: "";
   border-top: 0.5em solid #5f8aa6;
   border-right: 0.5em solid transparent;
@@ -2032,8 +2033,7 @@ footer {
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;
     font-weight: 600;
-    font-style: normal;
-    white-space: nowrap; }
+    font-style: normal; }
   .author-information a:hover, .author-information a:focus, .author-information a:active {
     text-decoration: underline; }
 
@@ -2058,6 +2058,7 @@ footer {
 .author-nationality,
 .author-employer,
 .tags,
+.location,
 .featured-anchor {
   display: block; }
 
@@ -2065,6 +2066,7 @@ footer {
 .author-employer,
 .author-information .date,
 .tags,
+.location,
 .featured-anchor {
   margin-top: 0.5rem; }
 
@@ -2219,7 +2221,7 @@ code[data-lang] {
   padding-top: 2.25rem; }
   code[data-lang]::before {
     background-clip: padding-box;
-    border-radius: 0.375rem;
+    border-radius: 0.375rem 0.375rem 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: absolute;

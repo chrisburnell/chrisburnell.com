@@ -120,9 +120,7 @@ a {
     %heading-elements:hover &,
     %heading-elements:focus &,
     %heading-elements:active &,
-    &:hover,
-    &:focus,
-    &:active {
+    &:target {
         display: inline-block;
     }
 }
