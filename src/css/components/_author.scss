@@ -34,7 +34,7 @@
 
     a,
     strong {
-        @include case(uppercase, $letter-spacing-default);
+        @include case(uppercase);
         color: inherit;
         border-bottom-width: 0;
         font-family: $font-family-gamma;

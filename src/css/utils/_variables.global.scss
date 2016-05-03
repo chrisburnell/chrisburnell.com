@@ -77,6 +77,9 @@ $color-black--5-percent: rgba($color-black, map-get($opacities, "5-percent")) !d
 $color-black--10-percent: rgba($color-black, map-get($opacities, "10-percent")) !default;
 /// @type Color
 /// @require {Variable} $color-black
+$color-black--25-percent: rgba($color-black, map-get($opacities, "25-percent")) !default;
+/// @type Color
+/// @require {Variable} $color-black
 /// @require {Variable} $color-text
 $color-dark-gray: mix($color-black, $color-text) !default;
 /// @type Color
@@ -195,6 +198,8 @@ $line-height-small:   1.250 !default;
 $letter-spacing-default: 0 !default;
 /// @type Length
 $letter-spacing-uppercase: 1px !default;
+/// @type Length
+$letter-spacing-primary: 2px !default;
 
 
 /// @type Length

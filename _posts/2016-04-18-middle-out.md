@@ -22,7 +22,9 @@ I wrote about this talk in another article, <a rel="me" href="{% post_url 2016-0
     <div class="media  media--slideshare">
         <iframe src="//www.slideshare.net/slideshow/embed_code/key/hixmTNkYy3AfKn" allowfullscreen></iframe>
     </div>
-    <figcaption><a rel="external" href="http://www.slideshare.net/ChrisBurnell1/supporting-middleout-in-css-61086081/1" title="Supporting Middle-Out in CSS on SlideShare">View this Talk on <em>SlideShare</em></a></figcaption>
+    <figcaption>
+        <a rel="external" href="http://www.slideshare.net/ChrisBurnell1/supporting-middleout-in-css-61086081/1" title="Supporting Middle-Out in CSS on SlideShare">View this Talk on <em>SlideShare</em></a>
+    </figcaption>
 </figure>
 
 
@@ -32,5 +34,7 @@ I wrote about this talk in another article, <a rel="me" href="{% post_url 2016-0
     <div class="media  media--vimeo">
         <iframe src="https://player.vimeo.com/video/164122074" allowfullscreen></iframe>
     </div>
-    <figcaption><a rel="external" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a></figcaption>
+    <figcaption>
+        <a rel="external" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
+    </figcaption>
 </figure>

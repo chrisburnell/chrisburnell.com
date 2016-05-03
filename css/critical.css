@@ -405,7 +405,7 @@ h6 {
  */
 h1 {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-family: "league-gothic", Impact, sans-serif;
   font-size: 2.625rem;
   line-height: 1;
@@ -828,7 +828,8 @@ figure {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 0.625rem; }
+    padding-top: 1.25rem;
+    line-height: 1.25; }
 
 /**
  * Quotes
@@ -937,19 +938,10 @@ iframe {
 ::selection {
   background: #5f8aa6;
   color: #f9f9f9; }
-
-/**
- * CANADA
- */
-.canada:not(:link):hover, .canada:not(:link):focus, .canada:not(:link):active {
-  background-color: #fd1b00;
-  color: #f9f9f9; }
-
-.canada::-moz-selection {
-  background-color: #fd1b00; }
-
-.canada::selection {
-  background-color: #fd1b00; }
+  ::-moz-selection .canada {
+    background-color: #fd1b00; }
+  ::selection .canada {
+    background-color: #fd1b00; }
 
 /**
  * Monospace Elements
@@ -1011,7 +1003,8 @@ pre {
     pre:not(.codepen) code {
       min-width: 100%;
       display: block;
-      font-size: initial; }
+      font-size: initial;
+      text-shadow: 0 1px 1px rgba(6, 6, 6, 0.25); }
 
 /**
  * Github-style Code Highlighting
@@ -1613,7 +1606,7 @@ aside p {
   .author-information a,
   .author-information strong {
     text-transform: uppercase;
-    letter-spacing: 0;
+    letter-spacing: 1px;
     color: inherit;
     border-bottom-width: 0;
     font-family: "proxima-nova", sans-serif;

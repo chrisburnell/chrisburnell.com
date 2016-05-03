@@ -23,6 +23,7 @@
         node.target.setAttribute('aria-hidden', 'true');
         node.target.removeEventListener('click', function() {});
         node.target.querySelector('button').setAttribute('aria-pressed', 'true');
+        window.location.hash = '#' + node.target.getAttribute('data-parent');
     }
 
 }());
