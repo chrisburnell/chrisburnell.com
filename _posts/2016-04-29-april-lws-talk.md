@@ -8,7 +8,6 @@ title: April LWS Talk
 lede: I gave a talk at London Web Standards and asked the question, <q>So how can we write media queries that are both consistent and succinct?</q>
 tags:
 - css
-- presentations
 
 shorturl: ndwg7
 comments: true
