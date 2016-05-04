@@ -16,9 +16,9 @@ lede: A list of tags and their counterparts.
 {% assign tags_sorted = tags | split: ' ' | sort %}
 {% for tag in tags_sorted %}
     <h3 id="{{ tag | slugify }}">{{ tag }} <span class="tags-count">( {{ site.tags[tag].size }} )</span><a href="#{{ tag | slugify }}" class="heading-anchor" aria-hidden="true">#{{ tag | slugify }}</a></h3>
-    <ol class="small-articles-list" role="list">
+    <ol class="small-content-list" role="list">
         {% for page in site.tags[tag] %}
-            {% include components/small-articles-list-item.html %}
+            {% include components/small-content-list-item.html %}
         {% endfor %}
     </ol>
 {% endfor %}

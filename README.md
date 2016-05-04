@@ -58,8 +58,8 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 ## Layouts
 
 ```text
-├── article.html
-└── default.html
+├── page.html
+└── post.html
 ```
 
 
@@ -70,33 +70,38 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 │   ├── amp-boilerplate.html
 │   ├── assets-body.html
 │   ├── assets-head.html
+│   └── svg-master.html
+├── components
 │   ├── banner.html
+│   ├── comments-button.html
 │   ├── comments.html
-│   ├── head.html
+│   ├── content-list-item.html
+│   ├── feed-item.html
+│   ├── main-aside.html
 │   ├── nav-primary.html
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
 │   ├── search-templates.html
-│   └── svg.html
+│   ├── small-content-list-item.html
+│   ├── widget-featured-pens.html
+│   ├── widget-latest-talk.html
+│   ├── widget-related-articles.html
+│   ├── widget-search.html
+│   └── widget-shared-links.html
 ├── content
 │   ├── code-toggle-button.html
-│   ├── code-toggle-input.html
+│   ├── code-toggle-top.html
 │   ├── codepen.html
-│   └── heading.html
+│   ├── heading-anchor.html
+│   ├── heading.html
+│   └── svg.html
 ├── generated
 │   ├── critical-css.html
 │   ├── loadcss.html
 │   └── typekit.html
-├── layouts
-│   ├── footer.html
-│   └── header.html
-└── main-aside
-    ├── main-aside.html
-    └── widgets
-        ├── featured-pens.html
-        ├── related-articles.html
-        ├── search.html
-        └── shared-links.html
+└── layouts
+    ├── footer.html
+    └── header.html
 ```
 
 
@@ -114,11 +119,10 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 │   └── _typography.global.scss
 ├── components
 │   ├── _article.scss
-│   ├── _articles-list.scss
-│   ├── _aside-widgets.scss
 │   ├── _author.scss
 │   ├── _code.scss
 │   ├── _comments.scss
+│   ├── _content-list.scss
 │   ├── _footer.scss
 │   ├── _icons.scss
 │   ├── _logo.scss
@@ -128,7 +132,8 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 │   ├── _nav-tertiary.scss
 │   ├── _print.scss
 │   ├── _search.scss
-│   └── _small-articles-list.scss
+│   ├── _small-content-list.scss
+│   └── _widgets.scss
 ├── layout
 │   ├── _article.scss
 │   ├── _aside.scss

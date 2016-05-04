@@ -422,7 +422,7 @@ h2 {
 /**
  * Heading - Gamma
  */
-h3, .lede, .articles-list .date {
+h3, .lede, .content-list .date {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.125rem;
   line-height: 1.875; }
@@ -1420,7 +1420,7 @@ header {
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
  * side to make room for any `aside`, which can appear anywhere inside
- * `article` or `.articles-list`.
+ * `article`.
  */
 article {
   padding-top: 2.25rem;
@@ -1672,7 +1672,7 @@ footer {
   font-style: italic;
   line-height: 1.5; }
 
-.articles-list li {
+.content-list li {
   position: relative;
   width: 100%;
   display: inline-block;
@@ -1680,65 +1680,65 @@ footer {
   padding: 1.5rem 1rem;
   border-top: 0.125rem solid rgba(6, 6, 6, 0.1); }
   @media (max-width: 768px) {
-    .articles-list li {
+    .content-list li {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem;
       text-align: center; } }
-  .articles-list li:nth-child(odd) {
+  .content-list li:nth-child(odd) {
     background-color: rgba(6, 6, 6, 0.05); }
 
-.articles-list .title,
-.articles-list .date,
-.articles-list .comments-anchor {
+.content-list .title,
+.content-list .date,
+.content-list .comments-anchor {
   text-shadow: 0 1px 0 #f9f9f9; }
 
-.articles-list .title {
+.content-list .title {
   margin-bottom: 0.625rem;
   font-weight: 600; }
 
-.articles-list .lede {
+.content-list .lede {
   margin-bottom: 1.25rem; }
 
-.articles-list .date {
+.content-list .date {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.625rem;
   font-weight: 600; }
   @media (max-width: 768px) {
-    .articles-list .date {
+    .content-list .date {
       text-align: left; } }
-  .articles-list .date::before {
+  .content-list .date::before {
     content: "– ";
     color: #737373; }
 
 @media (max-width: 768px) {
-  .articles-list button, .articles-list
+  .content-list button, .content-list
   .button,
-  .articles-list .comments-anchor {
+  .content-list .comments-anchor {
     margin-left: 0.625rem;
     margin-right: 0.625rem; } }
 
 @media (max-width: 768px) {
-  .articles-list button, .articles-list
+  .content-list button, .content-list
   .button {
     min-width: 5em;
     font-size: 1.25rem;
     height: 2em;
     margin-top: 0;
     line-height: 1.818; }
-    .articles-list button:active, .articles-list
+    .content-list button:active, .content-list
     .button:active {
       height: 1.818em; } }
 
 @media (min-width: 769px) {
-  .articles-list .comments-anchor {
+  .content-list .comments-anchor {
     float: right; } }
 
 @media (max-width: 768px) {
-  .articles-list .comments-anchor {
+  .content-list .comments-anchor {
     margin-top: 1.25rem; } }
 
-.small-articles-list {
+.small-content-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1758,13 +1758,13 @@ footer {
   margin-bottom: 2.25rem;
   font-family: "proxima-nova", sans-serif;
   line-height: 1.25; }
-  .page--home .small-articles-list,
-  .widget .small-articles-list {
+  .page--home .small-content-list,
+  .widget .small-content-list {
     margin-bottom: 0; }
-  .small-articles-list li:nth-child(n+3) {
+  .small-content-list li:nth-child(n+3) {
     margin-top: 1.25rem; }
   @media (min-width: 501px) {
-    .small-articles-list li {
+    .small-content-list li {
       width: 49.0125%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -1775,46 +1775,46 @@ footer {
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
-      .small-articles-list li:nth-child(4n+2) a, .small-articles-list li:nth-child(4n+3) a {
+      .small-content-list li:nth-child(4n+2) a, .small-content-list li:nth-child(4n+3) a {
         background-color: rgba(6, 6, 6, 0.05); } }
   @media (max-width: 500px) {
-    .small-articles-list li {
+    .small-content-list li {
       width: 100%;
       display: inline-block; }
-      .small-articles-list li + li {
+      .small-content-list li + li {
         margin-top: 1.25rem; }
-      .small-articles-list li:nth-child(2n+2) a {
+      .small-content-list li:nth-child(2n+2) a {
         background-color: rgba(6, 6, 6, 0.05); } }
-  aside .small-articles-list li {
+  aside .small-content-list li {
     width: 100%; }
-    aside .small-articles-list li + li {
+    aside .small-content-list li + li {
       margin-top: 0.625rem; }
-    aside .small-articles-list li:nth-child(4n+2) a, aside .small-articles-list li:nth-child(4n+3) a, aside .small-articles-list li:nth-child(2n+1) a {
+    aside .small-content-list li:nth-child(4n+2) a, aside .small-content-list li:nth-child(4n+3) a, aside .small-content-list li:nth-child(2n+1) a {
       background-color: transparent; }
-    aside .small-articles-list li:nth-child(2n+2) a {
+    aside .small-content-list li:nth-child(2n+2) a {
       background-color: rgba(6, 6, 6, 0.05); }
-  .small-articles-list a {
+  .small-content-list a {
     background-clip: padding-box;
     border-radius: 0.375rem;
     display: block;
     padding: 1.25rem;
     border-bottom-width: 0;
     overflow: hidden; }
-    .small-articles-list a:hover, .small-articles-list a:focus, .small-articles-list a:active {
+    .small-content-list a:hover, .small-content-list a:focus, .small-content-list a:active {
       background-color: rgba(95, 138, 166, 0.1) !important; }
     @media (min-width: 501px) {
-      .small-articles-list a {
+      .small-content-list a {
         -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
                 flex: 1 0 auto; } }
-    aside .small-articles-list a {
+    aside .small-content-list a {
       padding: 0.625rem; }
-  .small-articles-list .title,
-  .small-articles-list .lede,
-  .small-articles-list .date {
+  .small-content-list .title,
+  .small-content-list .lede,
+  .small-content-list .date {
     text-shadow: 0 1px 0 #f9f9f9; }
-  .small-articles-list .title {
+  .small-content-list .title {
     -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: border-color;
@@ -1822,28 +1822,28 @@ footer {
     display: inline-block;
     border-bottom: 1px solid #dddddd;
     margin-bottom: 0; }
-  .small-articles-list a:hover .title,
-  .small-articles-list a:focus .title,
-  .small-articles-list a:active .title {
+  .small-content-list a:hover .title,
+  .small-content-list a:focus .title,
+  .small-content-list a:active .title {
     border-bottom-color: #5f8aa6; }
-  .small-articles-list a:visited:hover .title,
-  .small-articles-list a:visited:focus .title,
-  .small-articles-list a:visited:active .title {
+  .small-content-list a:visited:hover .title,
+  .small-content-list a:visited:focus .title,
+  .small-content-list a:visited:active .title {
     border-bottom-color: #567d96; }
-  .small-articles-list .lede,
-  .small-articles-list .date {
+  .small-content-list .lede,
+  .small-content-list .date {
     color: #737373;
     margin-top: 0.625rem;
     font-size: 0.875rem;
     font-weight: 600; }
-  .small-articles-list .lede {
+  .small-content-list .lede {
     margin-bottom: 0; }
   @media (min-width: 769px) {
-    .small-articles-list .date {
+    .small-content-list .date {
       text-align: right; } }
-  .small-articles-list .date::before {
+  .small-content-list .date::before {
     content: "– "; }
-  .small-articles-list svg {
+  .small-content-list svg {
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
@@ -1858,12 +1858,12 @@ footer {
     stroke: #4f4f4f;
     z-index: 0; }
     @media (max-width: 500px) {
-      .small-articles-list svg {
+      .small-content-list svg {
         width: 4em !important;
         height: 4em !important; } }
-  .small-articles-list a:hover svg,
-  .small-articles-list a:focus svg,
-  .small-articles-list a:active svg {
+  .small-content-list a:hover svg,
+  .small-content-list a:focus svg,
+  .small-content-list a:active svg {
     opacity: 0.1; }
 
 .search-main {
@@ -1872,7 +1872,7 @@ footer {
 
 .search-results {
   margin-top: 1.25rem; }
-  .search-results .small-articles-list {
+  .search-results .small-content-list {
     margin-bottom: 0; }
 
 .search-form {

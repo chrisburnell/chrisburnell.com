@@ -7,7 +7,7 @@
 /**
  * The width of the articles is fluid, and always has padding on the left-hand
  * side to make room for any `aside`, which can appear anywhere inside
- * `article` or `.articles-list`.
+ * `article`.
  */
 article {
     padding-top: $measure-large;
@@ -18,8 +18,7 @@ article {
     }
 
     @include media("<=medium") {
-        // Below the medium breakpoint, `article`, `articles-list`, and `aside`
-        // become full width.
+        // Below the medium breakpoint, `article` and `aside` become full width.
         display: flex;
         flex-direction: column;
     }

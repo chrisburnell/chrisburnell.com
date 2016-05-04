@@ -11,9 +11,9 @@ lede: All of my articles listed on one page.
 ---
 
 
-<ol id="articles" class="articles-list" role="list">
+<ol id="articles" class="content-list" role="list">
     {% for page in site.categories.article %}
-        {% include components/articles-list-item.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 

@@ -3,9 +3,9 @@
         <a href="/talks">Latest Talks</a>
         {% include content/heading-anchor.html id='latest-talk' tabindex='-1' %}
     </h3>
-    <ol class="small-articles-list" role="list">
+    <ol class="small-content-list" role="list">
         {% for page in site.categories.talk limit: 2 %}
-            {% include components/small-articles-list-item.html %}
+            {% include components/small-content-list-item.html %}
         {% endfor %}
     </ol>
     <a class="widget-featured-anchor" href="/talks">All Talks</a>
