@@ -324,7 +324,7 @@
     @if length($values) == 0 {
         $transition: all #{$transition-time} #{$transition-function};
     // if parameter just set to "none" then just transition nothing (none)
-    } @else if #{$values} == "none" {
+    } @else if $values == "none" {
         $transition: none;
     // if the parameter contains a comma then operating on multiple properties
     } @else if str-index(#{$values}, ",") {
