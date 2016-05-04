@@ -1570,6 +1570,134 @@ aside p {
   .content-list .comments-anchor {
     margin-top: 1.25rem; } }
 
+.small-content-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 2.25rem;
+  font-family: "proxima-nova", sans-serif;
+  line-height: 1.25; }
+  .page--home .small-content-list,
+  .widget .small-content-list {
+    margin-bottom: 0; }
+  .small-content-list li:nth-child(n+3) {
+    margin-top: 1.25rem; }
+  @media (min-width: 501px) {
+    .small-content-list li {
+      width: 49.0125%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .small-content-list li:nth-child(4n+2) a, .small-content-list li:nth-child(4n+3) a {
+        background-color: rgba(6, 6, 6, 0.05); } }
+  @media (max-width: 500px) {
+    .small-content-list li {
+      width: 100%;
+      display: inline-block; }
+      .small-content-list li + li {
+        margin-top: 1.25rem; }
+      .small-content-list li:nth-child(2n+2) a {
+        background-color: rgba(6, 6, 6, 0.05); } }
+  aside .small-content-list li {
+    width: 100%; }
+    aside .small-content-list li + li {
+      margin-top: 0.625rem; }
+    aside .small-content-list li:nth-child(4n+2) a, aside .small-content-list li:nth-child(4n+3) a, aside .small-content-list li:nth-child(2n+1) a {
+      background-color: transparent; }
+    aside .small-content-list li:nth-child(2n+2) a {
+      background-color: rgba(6, 6, 6, 0.05); }
+  .small-content-list a {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
+    display: block;
+    padding: 1.25rem;
+    border-bottom-width: 0;
+    overflow: hidden; }
+    .small-content-list a:hover, .small-content-list a:focus, .small-content-list a:active {
+      background-color: rgba(95, 138, 166, 0.1) !important; }
+    @media (min-width: 501px) {
+      .small-content-list a {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto; } }
+    aside .small-content-list a {
+      padding: 0.625rem; }
+  .small-content-list .title,
+  .small-content-list .lede,
+  .small-content-list .date {
+    text-shadow: 0 1px 0 #f9f9f9; }
+  .small-content-list .title {
+    -webkit-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+    will-change: border-color;
+    width: auto;
+    display: inline-block;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 0; }
+  .small-content-list a:hover .title,
+  .small-content-list a:focus .title,
+  .small-content-list a:active .title {
+    border-bottom-color: #5f8aa6; }
+  .small-content-list a:visited:hover .title,
+  .small-content-list a:visited:focus .title,
+  .small-content-list a:visited:active .title {
+    border-bottom-color: #567d96; }
+  .small-content-list .lede,
+  .small-content-list .date {
+    color: #737373;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600; }
+  .small-content-list .lede {
+    margin-bottom: 0; }
+  @media (min-width: 769px) {
+    .small-content-list .date {
+      text-align: right; } }
+  .small-content-list .date::before {
+    content: "– "; }
+  .small-content-list svg {
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+    will-change: opacity;
+    opacity: 0.05;
+    width: 6.25em !important;
+    height: 6.25em !important;
+    position: absolute;
+    top: 50%;
+    right: 0.625rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    stroke: #4f4f4f;
+    z-index: 0; }
+    @media (max-width: 500px) {
+      .small-content-list svg {
+        width: 4em !important;
+        height: 4em !important; } }
+  .small-content-list a:hover svg,
+  .small-content-list a:focus svg,
+  .small-content-list a:active svg {
+    opacity: 0.1; }
+
 /**
  * The `.author` aside is always pushed underneath the content below the medium
  * breakpoint.
