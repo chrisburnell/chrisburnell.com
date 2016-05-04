@@ -2,7 +2,7 @@
 layout: post
 categories: article
 
-date: 2016-03-27 01:00:00
+date: 2016-05-04 01:00:00
 
 title: Jekyll And Sass, Sitting in a Tree
 lede: I’ve been using Jekyll for over 2.5 years, and built some useful includes... TODO
@@ -55,10 +55,10 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
 </{{ heading_type }}>
 {% endraw %}{% endhighlight %}
 
-1. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
-2. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the heading anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
-3. The *include* also accepts a **required** `title` parameter, which becomes the textual contents of the heading. It may also be used to generate the `id` parameter, if it is not passed.
-4. A second *include* is called from inside the `heading` *include*, to which we’re passing the `id` of the `heading` *include*.
+0. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
+0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the heading anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
+0. The *include* also accepts a **required** `title` parameter, which becomes the textual contents of the heading. It may also be used to generate the `id` parameter, if it is not passed.
+0. A second *include* is called from inside the `heading` *include*, to which we’re passing the `id` of the `heading` *include*.
 
 Let’s see what the `heading-anchor` *include* looks like.
 
@@ -82,10 +82,10 @@ Let’s see what the `heading-anchor` *include* looks like.
 <a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
 {% endraw %}{% endhighlight %}
 
-1. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
-2. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
-3. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
-4. For accessibility reasons and a coherent reading experience for screen readers, heading anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
+0. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
+0. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
+0. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
+0. For accessibility reasons and a coherent reading experience for screen readers, heading anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
 
 {% highlight html %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

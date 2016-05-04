@@ -34,7 +34,7 @@
 
     a,
     strong {
-        @include case(uppercase);
+        @include case(uppercase, 0);
         color: inherit;
         border-bottom-width: 0;
         font-family: $font-family-gamma;

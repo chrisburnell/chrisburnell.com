@@ -1,0 +1,18 @@
+<script type="text/template" class="js-search-template-page">
+    <li role="listitem">
+        <a href="@@URL@@">
+            <h4 class="title">@@TITLE@@</h4>
+            <p class="lede">@@LEDE@@</p>
+        </a>
+    </li>
+</script>
+<script type="text/template" class="js-search-template-post">
+    <li role="listitem">
+        <a href="@@URL@@">
+            {% include content/svg.html type='@@ICON@@' %}
+            <h4 class="title">@@TITLE@@</h4>
+            <p class="lede">@@LEDE@@</p>
+            <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>
+        </a>
+    </li>
+</script>

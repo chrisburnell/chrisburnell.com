@@ -22,7 +22,7 @@
         {% elsif page.categories contains 'pen' %}
             <p class="lede"><em>Featured Pen</em></p>
         {% elsif page.categories contains 'talk' and page.location %}
-            <p class="lede"><em>Given at {{ page.location }}.</em></p>
+            <p class="lede"><em>Talk – Given at {{ page.location }}.</em></p>
         {% endif %}
         <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
     </a>

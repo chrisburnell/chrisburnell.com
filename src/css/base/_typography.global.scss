@@ -602,8 +602,9 @@ iframe {
 ::selection {
     background: $color-brand;
     color: $color-white;
-
-    .canada {
-        background-color: $color-canada;
+}
+.canada {
+    &::selection {
+        background: $color-canada;
     }
 }
