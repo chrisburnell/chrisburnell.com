@@ -30,7 +30,7 @@ Stage fright is far-too-real for me. The last time I spoke in this kind of capac
 
 {% include content/heading.html title='Performance?' id='performance' %}
 
-When you compare the performance impact of *media queries* versus the impact of a Javascript framework or a couple of images, it shows us that writing intelligent *media queries* is for the benefit of *us*, *developers*. Writing intelligent CSS relates to how we read it; CSS that is carefully laid-out and follows patterns paints a clearer picture of what the CSS is doing than if the CSS were written without much care, and properties and values are slapped together until the end-result is achieved.
+When you compare the performance impact of *media queries* versus the impact of a JavaScript framework or a couple of images, it shows us that writing intelligent *media queries* is for the benefit of *us*, *developers*. Writing intelligent CSS relates to how we read it; CSS that is carefully laid-out and follows patterns paints a clearer picture of what the CSS is doing than if the CSS were written without much care, and properties and values are slapped together until the end-result is achieved.
 
 It’s one thing to achieve your end-result styles with your CSS, but to do so in a way that makes sense to you, your teammates, fresh eyes, yourself in a month’s time, and is pared down to the lowest common denominator of CSS is another story.
 

@@ -97,7 +97,7 @@ Let’s dive into some code. Here’s how I was loading *Disqus* *non-conditiona
 
 I didn’t want to reinvent the wheel, so I followed in the footsteps of others who have done the same thing. First I wanted to create an action for the user to perform if they reached the bottom of an article and want to dip into the comments, and did so with a simple `button`.
 
-<aside><p>Remember, don’t mix classes for styling and javascript hooks. You’ll save yourself potential pains later on at no cost right now!</p></aside>
+<aside><p>Remember, don’t mix classes for styling and JavaScript hooks. You’ll save yourself potential pains later on at no cost right now!</p></aside>
 
 {% highlight html %}
 <button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>

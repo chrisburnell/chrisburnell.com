@@ -10,3 +10,12 @@
 
 <!-- Pull fonts from Typekit -->
 <script>{% include generated/typekit.html %}</script>
+
+<!-- Preload some assets -->
+<link rel="preload" href="/js/main.min.js">
+{% if page.codepen == true or page.categories contains 'pen' %}
+    <link rel="preload" src="//codepen.io/assets/embed/ei.js">
+{% endif %}
+{% if page.twitter == true %}
+    <link rel="preload" src="//platform.twitter.com/widgets.js">
+{% endif %}

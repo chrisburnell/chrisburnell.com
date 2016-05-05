@@ -2,15 +2,15 @@
 layout: post
 categories: article
 
-date: 2016-05-04 01:00:00
+date: 2016-05-05 01:00:00
 
 title: Jekyll And Sass, Sitting in a Tree
-lede: I’ve been using Jekyll for over 2.5 years, and built some useful includes... TODO
+lede: I’ve been using Jekyll for over 2.5 years, and built a series of useful include components to help simplify and streamline my templating and authoring processes.
 tags:
 - jekyll
 - tutorials
 
-# shorturl: uanoe
+shorturl: 58xlz
 comments: true
 ---
 
@@ -18,6 +18,14 @@ comments: true
     <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.</p>
     <cite><a rel="external" href="http://jekyllrb.com/">Jekyll</a></cite>
 </blockquote>
+
+I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (Jekyll) to me at the time of conception. They also serve as equivalents to functionality usually relegated for JavaScript. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, remove mental overhead, or to follow a *Single source of truth* methodology.
+
+And unfortunately, we’re in the midst of a front-end development trend where JavaScript frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant number of them, is to <a rel="external" href="https://noscript.net/">completely block JavaScript from running</a> unless explicitly specified otherwise by the user.
+
+Furthermore, the use of *Ad-Blockers* on the web has only <a rel="external" href="https://blog.pagefair.com/2015/ad-blocking-report/">increased over the last years</a> as the amount of <a rel="external" href="http://deathtobullshit.com/">bullshit</a> continues to rise. Another set of users without JavaScript.
+
+Maybe you can better understand why I am adverse to blind overuse of JavaScript. But regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes.
 
 
 {% include content/heading.html title='Headings' %}

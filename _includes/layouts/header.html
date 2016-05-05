@@ -73,16 +73,20 @@ snippet of code on a project of your own. -->
 
     <title>{{ meta_title }}</title>
 
-    <link rel="preload" href="/css/main.min.css" as="style">
-
     <link rel="dns-prefetch" href="//use.typekit.net">
-    <link rel="dns-prefetch" href="//a.disquscdn.com">
-    <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
-    <link rel="dns-prefetch" href="//codepen.io">
-    <link rel="dns-prefetch" href="//assets.codepen.io">
-    <link rel="dns-prefetch" href="//s.codepen.io">
-    <link rel="dns-prefetch" href="//platform.twitter.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+    {% if page.comments == true %}
+        <link rel="dns-prefetch" href="//a.disquscdn.com">
+        <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
+    {% endif %}
+    {% if page.codepen == true or page.categories contains 'pen' %}
+        <link rel="dns-prefetch" href="//codepen.io">
+        <link rel="dns-prefetch" href="//assets.codepen.io">
+        <link rel="dns-prefetch" href="//s.codepen.io">
+    {% endif %}
+    {% if page.twitter == true %}
+        <link rel="dns-prefetch" href="//platform.twitter.com">
+    {% endif %}
 
     {% if page.categories contains 'link' and page.external_links %}
         {% assign link = page.external_links | first %}
