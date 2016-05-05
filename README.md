@@ -58,6 +58,7 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 ## Layouts
 
 ```text
+_layouts/
 ├── page.html
 └── post.html
 ```
@@ -66,12 +67,13 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 ## Includes
 
 ```text
-├── components
+_includes/
+├── components/
 │   ├── amp-boilerplate.html
 │   ├── assets-body.html
 │   ├── assets-head.html
 │   └── svg-master.html
-├── components
+├── components/
 │   ├── banner.html
 │   ├── comments-button.html
 │   ├── comments.html
@@ -88,18 +90,18 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 │   ├── widget-related-articles.html
 │   ├── widget-search.html
 │   └── widget-shared-links.html
-├── content
+├── content/
 │   ├── code-toggle-button.html
 │   ├── code-toggle-top.html
 │   ├── codepen.html
 │   ├── heading-anchor.html
 │   ├── heading.html
 │   └── svg.html
-├── generated
+├── generated/
 │   ├── critical-css.html
 │   ├── loadcss.html
 │   └── typekit.html
-└── layouts
+└── layouts/
     ├── footer.html
     └── header.html
 ```
@@ -108,62 +110,65 @@ Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 ## Sass Structure
 
 ```text
-├── critical.scss
-├── main.scss
-├── base
-│   ├── _anchors.scss
-│   ├── _buttons.scss
-│   ├── _inputs.scss
-│   ├── _page.scss
-│   ├── _typography.code.scss
-│   └── _typography.global.scss
-├── components
-│   ├── _article.scss
-│   ├── _author.scss
-│   ├── _code.scss
-│   ├── _comments.scss
-│   ├── _content-list.scss
-│   ├── _footer.scss
-│   ├── _icons.scss
-│   ├── _logo.scss
-│   ├── _media.scss
-│   ├── _nav-primary.scss
-│   ├── _nav-secondary.scss
-│   ├── _nav-tertiary.scss
-│   ├── _print.scss
-│   ├── _search.scss
-│   ├── _small-content-list.scss
-│   └── _widgets.scss
-├── layout
-│   ├── _article.scss
-│   ├── _aside.scss
-│   ├── _footer.scss
-│   ├── _header.scss
-│   └── _wrap.scss
-├── pages
-│   └── _styleguide.scss
-├── utils
-│   ├── _functions.scss
-│   ├── _helpers.scss
-│   ├── _mixins.scss
-│   ├── _variables.branding.scss
-│   ├── _variables.code.scss
-│   └── _variables.global.scss
-└── vendors
-    ├── _box-sizing.scss
-    ├── _include-media.scss
-    └── _normalize.scss
+src/
+└── css/
+    ├── critical.scss
+    ├── main.scss
+    ├── base/
+    │   ├── _anchors.scss
+    │   ├── _buttons.scss
+    │   ├── _inputs.scss
+    │   ├── _page.scss
+    │   ├── _typography.code.scss
+    │   └── _typography.global.scss
+    ├── components/
+    │   ├── _article.scss
+    │   ├── _author.scss
+    │   ├── _code.scss
+    │   ├── _comments.scss
+    │   ├── _content-list.scss
+    │   ├── _footer.scss
+    │   ├── _icons.scss
+    │   ├── _logo.scss
+    │   ├── _media.scss
+    │   ├── _nav-primary.scss
+    │   ├── _nav-secondary.scss
+    │   ├── _nav-tertiary.scss
+    │   ├── _print.scss
+    │   ├── _search.scss
+    │   ├── _small-content-list.scss
+    │   └── _widgets.scss
+    ├── layout/
+    │   ├── _article.scss
+    │   ├── _aside.scss
+    │   ├── _footer.scss
+    │   ├── _header.scss
+    │   └── _wrap.scss
+    ├── pages/
+    │   └── _styleguide.scss
+    ├── utils/
+    │   ├── _functions.scss
+    │   ├── _helpers.scss
+    │   ├── _mixins.scss
+    │   ├── _variables.branding.scss
+    │   ├── _variables.code.scss
+    │   └── _variables.global.scss
+    └── vendors/
+        ├── _box-sizing.scss
+        ├── _include-media.scss
+        └── _normalize.scss
 ```
 
 
 ## Generated
 
 ```text
-├── serviceworker.min.js
-└── _includes
-    └── generated
-        ├── critical-css.html
-        └── loadcss.html
+├── _includes
+│   └── generated
+│       ├── critical-css.html
+│       ├── loadcss.html
+│       └── typekit.html
+└── serviceworker.min.js
 ```
 
 
