@@ -21,7 +21,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [License](#license)
 
 
-## version 2.7.0
+## version 2.8.0
 
 
 ## Description
