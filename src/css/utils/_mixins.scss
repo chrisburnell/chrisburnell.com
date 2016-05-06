@@ -9,7 +9,7 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $values - Values
+/// @param {String} $type ["default"] - Type of Border Radius
 ///
 /// @require {Variable} $border-radius-default
 /// @require {Variable} $border-radius-thin
@@ -62,6 +62,11 @@
 
 ///
 /// Change the case of text and apply appropriate letter-spacing.
+///
+/// @param {String} $case - Case of Text
+/// @param {String} $letter-spacing [null] - Letter-spacing of Text
+///
+/// @require {Variable} $letter-spacing-uppercase
 ///
 /// @example scss
 ///   @include case(uppercase);
@@ -125,7 +130,7 @@
 /// @param {String} $family - Font Family value
 /// @param {String} $display - Font Display value
 ///
-/// @require {Variable} $font-families
+/// @require {Map} $font-families
 ///
 /// @example scss - One family
 ///   @include font-family(default);
