@@ -30,11 +30,21 @@ Maybe you can better understand why I am adverse to blind overuse of JavaScript.
 
 {% include content/heading.html title='Headings' %}
 
-When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in an article’s content.
+When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in an post’s content.
 
-Instead of doing this manually, or by limiting the functionality to JavaScript, I decided to use Jekyll’s *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes")* to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) methodology in my codebase *wherever possible*.
+There are roughly three ways to go about this:
 
-So how do I generate a *heading* and *associated anchor* in my content?
+0. Maintain the heading anchor’s HTML inside my content
+0. Use JavaScript to parse all untouched headings in my content and generate the necessary heading anchors
+0. Use Jekyll to generate the necessary heading anchors with a slight modification to writing headings inside content
+
+I opted for the *third* option in an effort to provide the same functionality for as many users as I can. Further, seeing as the demographic of people visiting my website are more likely to use some sort of JavaScript-blocking, so this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is, *sorrynotsorry*).
+
+I did so by leveraging Jekyll’s <a rel="external" href="https://jekyllrb.com/docs/templates/#includes" title="Jekyll Templating Includes">*includes*</a> to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a <a rel="external" href="https://en.wikipedia.org/wiki/Single_source_of_truth">Single Source of Truth</a> methodology in my codebase *wherever possible*.
+
+So how do I actually get Jekyll to build a *heading* and an *associated anchor* in my content?
+
+As I mentioned above, it involves a slight change to the way that I write headings in my Markdown content. Instead of writing headings in the traditional Markdown method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes.
 
 {% highlight markdown %}{% raw %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -77,14 +87,16 @@ Let’s see what the `heading-anchor` *include* looks like.
     {% assign href = include.url %}
 {% endif %}
 
-{% assign title = '' %}
 {% if include.title %}                                               /* 2 */
     {% capture title %} title="{{ include.title }}"{% endcapture %}
 {% endif %}
 
-{% assign rel = '' %}
 {% if include.rel %}                                                 /* 3 */
     {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
+{% endif %}
+
+{% if include.tabindex %}
+    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}  /* 4 */
 {% endif %}
 
 <a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
@@ -93,6 +105,7 @@ Let’s see what the `heading-anchor` *include* looks like.
 0. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
 0. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
 0. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
+0. The *include* also accepts an optional `tabindex` parameter, which equates to a `tabindex` attribute on the anchor tag. If the `tabindex` parameter is not passed, no `tabindex` attribute is printed on the anchor tag.
 0. For accessibility reasons and a coherent reading experience for screen readers, heading anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
 
 {% highlight html %}
