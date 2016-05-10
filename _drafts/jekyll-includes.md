@@ -34,9 +34,9 @@ When writing articles, I like to provide a way for users to share or link to a c
 
 There are roughly three ways to go about this:
 
-0. Maintain the heading anchor’s HTML inside my content
-0. Use JavaScript to parse all untouched headings in my content and generate the necessary heading anchors
-0. Use Jekyll to generate the necessary heading anchors with a slight modification to writing headings inside content
+0. Maintain the fragment anchor’s HTML inside my content
+0. Use JavaScript to parse all untouched headings in my content and generate the necessary fragment anchors
+0. Use Jekyll to generate the necessary fragment anchors with a slight modification to writing headings inside content
 
 I opted for the *third* option in an effort to provide the same functionality for as many users as I can. Further, seeing as the demographic of people visiting my website are more likely to use some sort of JavaScript-blocking, so this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is, *sorrynotsorry*).
 
@@ -69,16 +69,16 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
 
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
-    {% include content/heading-anchor.html id=heading_id %}  /* 4 */
+    {% include content/fragment-anchor.html id=heading_id %}  /* 4 */
 </{{ heading_type }}>
 {% endraw %}{% endhighlight %}
 
 0. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
-0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the heading anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
+0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the fragment anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
 0. The *include* also accepts a **required** `title` parameter, which becomes the textual contents of the heading. It may also be used to generate the `id` parameter, if it is not passed.
 0. A second *include* is called from inside the `heading` *include*, to which we’re passing the `id` of the `heading` *include*.
 
-Let’s see what the `heading-anchor` *include* looks like.
+Let’s see what the `fragment-anchor` *include* looks like.
 
 {% highlight liquid %}{% raw %}
 {% if include.id %}                                                  /* 1 */
@@ -99,21 +99,21 @@ Let’s see what the `heading-anchor` *include* looks like.
     {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}  /* 4 */
 {% endif %}
 
-<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
+<a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
 {% endraw %}{% endhighlight %}
 
 0. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
 0. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
 0. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
 0. The *include* also accepts an optional `tabindex` parameter, which equates to a `tabindex` attribute on the anchor tag. If the `tabindex` parameter is not passed, no `tabindex` attribute is printed on the anchor tag.
-0. For accessibility reasons and a coherent reading experience for screen readers, heading anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
+0. For accessibility reasons and a coherent reading experience for screen readers, fragment anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
 
 {% highlight html %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ...
 <h3 id="headings">
     Headings
-    <a href="#headings" class="heading-anchor" aria-hidden="true">#headings</a>
+    <a href="#headings" class="fragment-anchor" aria-hidden="true">#headings</a>
 </h3>
 ...
 Cras ac elit enim, et tempus nulla.

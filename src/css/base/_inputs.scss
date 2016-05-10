@@ -31,6 +31,7 @@ textarea {
 
     &[disabled] {
         opacity: opacity("70-percent");
+        pointer-events: none;
     }
 
     &::-moz-focus-inner {

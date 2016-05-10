@@ -25,8 +25,8 @@ external_links:
 - url: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
   title: "Sass Mixins vs Extends: The Data"
 
-shorturl: fqojr
 comments: true
+shorturl: fqojr
 ---
 
 
@@ -84,10 +84,10 @@ h6 {
 
 If you recall how *placeholder selectors* and `@extend` work, you can understand that what we’re doing here is telling our Sass to do a simple replacement during compilation: Wherever `%heading-elements` appears in the Sass, replace it with `h1, h2, h3, h4, h5, h6`. This comes in handy when you want to target heading elements outside the scope of where your heading’s styles are defined.
 
-For example, so that users can easily link to a specific part of the content, attached to most headings is a jump anchor, `.heading-anchor`. These anchors are direct children of heading elements, and should only appear when the user interacts with the heading element (by hovering with the mouse or tapping on a touch-device):
+For example, so that users can easily link to a specific part of the content, attached to most headings is a fragment anchor, `.fragment-anchor`. These anchors are direct children of heading elements, and should only appear when the user interacts with the heading element (by hovering with the mouse or tapping on a touch-device):
 
 {% highlight scss %}
-.heading-anchor {
+.fragment-anchor {
     display: none;
 
     h1:hover &,
@@ -110,7 +110,7 @@ For example, so that users can easily link to a specific part of the content, at
 This makes sense, but is just too *long-winded*. We can simplify this declaration by referring to our *placeholder selector*, `%heading-elements`, like so:
 
 {% highlight scss %}
-.heading-anchor {
+.fragment-anchor {
     display: none;
 
     %heading-elements:hover &,

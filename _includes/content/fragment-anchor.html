@@ -1,5 +1,5 @@
 {% comment %}
-  Create a heading anchor for linking to a specific part of the page
+  Create a Fragment Anchor for linking to a specific part of the page
 
   @param {String} id *
   @param {String} url *
@@ -8,8 +8,8 @@
   @param {String} tabindex
 
   @example
-    {% include content/heading-anchor.html id='12345' %}
-    // <a href="#12345" class="heading-anchor" aria-hidden="true">#12345</a>
+    {% include content/fragment-anchor.html id='12345' %}
+    // <a href="#12345" class="fragment-anchor" aria-hidden="true">#12345</a>
 
 {% endcomment %}
 {% if include.id %}
@@ -26,4 +26,4 @@
 {% if include.tabindex %}
     {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}
 {% endif %}
-<a href="{{ href }}" class="heading-anchor"{{ title }}{{ rel }}{{ tabindex }} aria-hidden="true">{{ href }}</a>
+<a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }}{{ tabindex }} aria-hidden="true">{{ href }}</a>

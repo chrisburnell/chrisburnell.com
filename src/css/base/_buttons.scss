@@ -75,20 +75,26 @@ button,
             font-family: $font-family-monospace;
         }
     }
-}
 
-button {
     &[disabled] {
         opacity: opacity("70-percent");
         pointer-events: none;
     }
+}
 
+/**
+ * Apply moz fixes to `button` element only
+ */
+button {
     &::-moz-focus-inner {
         padding: 0;
         margin: 0;
     }
 }
 
+/**
+ * Pull in Small Button styles from SSOT @mixin
+ */
 .button--small {
     @include button--small;
 }

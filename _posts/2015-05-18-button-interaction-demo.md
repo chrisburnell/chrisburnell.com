@@ -9,6 +9,7 @@ tags:
 - codepen
 
 comments: codepen
+comments: true
 codepen_slug: RPRwoo
 shorturl: ax7qc
 ---

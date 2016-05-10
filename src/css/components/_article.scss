@@ -14,6 +14,10 @@
     }
 }
 
+/**
+ * Banner / Hero Image
+ * Can take two images, which are displayed with `srcset`
+ */
 .banner {
     @include border-radius;
     width: $article-width;
@@ -24,6 +28,9 @@
     }
 }
 
+/**
+ * Page Introduction / Description
+ */
 .lede {
     @extend %gamma;
     margin-bottom: $measure-large;
@@ -46,11 +53,17 @@
     }
 }
 
-.terminology {
+/**
+ * Explain required terminology for the content
+ */
+/*dl*/.terminology {
     padding-bottom: $measure-large;
     border-bottom: $border-width-thin solid $color-black--10-percent;
 }
 
+/**
+ * Page Edit Notes
+ */
 .edit {
     @include border-radius;
     background-color: $color-brand--10-percent;

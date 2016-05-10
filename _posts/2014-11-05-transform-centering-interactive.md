@@ -9,6 +9,7 @@ tags:
 - codepen
 
 comments: codepen
+codepen: true
 codepen_slug: xutbs
 shorturl: 8x586
 ---

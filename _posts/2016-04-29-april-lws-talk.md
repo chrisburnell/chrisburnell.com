@@ -9,8 +9,8 @@ lede: I gave a talk at London Web Standards and asked the question, <q>So how ca
 tags:
 - css
 
-shorturl: ndwg7
 comments: true
+shorturl: ndwg7
 ---
 
 

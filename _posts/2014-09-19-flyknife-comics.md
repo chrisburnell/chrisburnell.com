@@ -9,6 +9,7 @@ tags:
 - codepen
 
 comments: codepen
+codepen: true
 codepen_slug: hIxaj
 shorturl: 6aorh
 ---

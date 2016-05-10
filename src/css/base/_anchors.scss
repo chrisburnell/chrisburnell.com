@@ -61,6 +61,9 @@ a {
     }
 }
 
+/**
+ * Title Anchors inside Headings
+ */
 .title-anchor {
     @include transition(border-color);
     @include will-change(color, border-bottom-color);
@@ -80,8 +83,10 @@ a {
     }
 }
 
-// `aria-hidden="true"` by default
-.heading-anchor {
+/**
+ * Fragment Anchors inside Headings
+ */
+.fragment-anchor {
     @include case(lowercase, $letter-spacing-default);
     margin-left: $measure-medium;
     font-family: $font-family-monospace;
@@ -105,7 +110,7 @@ a {
     &:focus,
     &:active {
         border-bottom-color: $color-text-alt;
-        // when appearing inside an `h3`, disable underline
+        // when appearing inside a heading, disable underline
         text-decoration: none;
     }
 
@@ -126,7 +131,7 @@ a {
 }
 
 /**
- * Brand Link Colors
+ * Brand Anchor Colors
  */
 @each $color-brand in $color-brands {
     $brand-name:  nth($color-brand, 1);

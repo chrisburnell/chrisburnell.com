@@ -94,7 +94,7 @@ _includes/
 │   ├── code-toggle-button.html
 │   ├── code-toggle-top.html
 │   ├── codepen.html
-│   ├── heading-anchor.html
+│   ├── fragment-anchor.html
 │   ├── heading.html
 │   └── svg.html
 ├── generated/

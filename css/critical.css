@@ -1130,6 +1130,9 @@ a {
     overflow: hidden !important;
     clip: rect(1px, 1px, 1px, 1px) !important; }
 
+/**
+ * Title Anchors inside Headings
+ */
 .title-anchor {
   -webkit-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease;
@@ -1142,7 +1145,10 @@ a {
     color: #4f4f4f;
     border-bottom-color: #5f8aa6; }
 
-.heading-anchor {
+/**
+ * Fragment Anchors inside Headings
+ */
+.fragment-anchor {
   text-transform: lowercase;
   letter-spacing: 0;
   margin-left: 1.25rem;
@@ -1152,36 +1158,36 @@ a {
   line-height: 1.25;
   text-shadow: none;
   vertical-align: middle; }
-  .heading-anchor, .heading-anchor:link {
+  .fragment-anchor, .fragment-anchor:link {
     color: #737373;
     border-bottom-width: 1px; }
-  .heading-anchor:visited {
+  .fragment-anchor:visited {
     color: #686868; }
-  .heading-anchor:hover, .heading-anchor:focus, .heading-anchor:active {
+  .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
     border-bottom-color: #737373;
     text-decoration: none; }
-  .heading-anchor:visited:hover, .heading-anchor:visited:focus, .heading-anchor:visited:active {
+  .fragment-anchor:visited:hover, .fragment-anchor:visited:focus, .fragment-anchor:visited:active {
     border-bottom-color: #686868; }
-  h1:hover .heading-anchor,
-  h2:hover .heading-anchor,
-  h3:hover .heading-anchor,
-  h4:hover .heading-anchor,
-  h5:hover .heading-anchor,
-  h6:hover .heading-anchor, h1:focus .heading-anchor,
-  h2:focus .heading-anchor,
-  h3:focus .heading-anchor,
-  h4:focus .heading-anchor,
-  h5:focus .heading-anchor,
-  h6:focus .heading-anchor, h1:active .heading-anchor,
-  h2:active .heading-anchor,
-  h3:active .heading-anchor,
-  h4:active .heading-anchor,
-  h5:active .heading-anchor,
-  h6:active .heading-anchor, .heading-anchor:target {
+  h1:hover .fragment-anchor,
+  h2:hover .fragment-anchor,
+  h3:hover .fragment-anchor,
+  h4:hover .fragment-anchor,
+  h5:hover .fragment-anchor,
+  h6:hover .fragment-anchor, h1:focus .fragment-anchor,
+  h2:focus .fragment-anchor,
+  h3:focus .fragment-anchor,
+  h4:focus .fragment-anchor,
+  h5:focus .fragment-anchor,
+  h6:focus .fragment-anchor, h1:active .fragment-anchor,
+  h2:active .fragment-anchor,
+  h3:active .fragment-anchor,
+  h4:active .fragment-anchor,
+  h5:active .fragment-anchor,
+  h6:active .fragment-anchor, .fragment-anchor:target {
     display: inline-block; }
 
 /**
- * Brand Link Colors
+ * Brand Anchor Colors
  */
 .anchor--codepen {
   color: #212121 !important; }
@@ -1481,6 +1487,10 @@ aside p {
     .tagline {
       text-align: left; } }
 
+/**
+ * Banner / Hero Image
+ * Can take two images, which are displayed with `srcset`
+ */
 .banner {
   background-clip: padding-box;
   border-radius: 0.375rem;
@@ -1490,6 +1500,9 @@ aside p {
     .banner {
       width: 500px; } }
 
+/**
+ * Page Introduction / Description
+ */
 .lede {
   margin-bottom: 2.25rem; }
   @media (max-width: 768px) {
@@ -1504,10 +1517,17 @@ aside p {
   .page--home .lede--featured {
     max-width: 24em; }
 
+/**
+ * Explain required terminology for the content
+ */
+/*dl*/
 .terminology {
   padding-bottom: 2.25rem;
   border-bottom: 0.125rem solid rgba(6, 6, 6, 0.1); }
 
+/**
+ * Page Edit Notes
+ */
 .edit {
   background-clip: padding-box;
   border-radius: 0.375rem;
@@ -1722,6 +1742,9 @@ aside p {
               order: 999;
       margin-top: 2.25rem; } }
 
+/**
+ * More information about the Author, the Page, or the Post
+ */
 .author-information {
   margin-bottom: 1.25rem;
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
@@ -1745,6 +1768,9 @@ aside p {
   .author-information a:hover, .author-information a:focus, .author-information a:active {
     text-decoration: underline; }
 
+/**
+ * Photograph of my FACE
+ */
 .author-image {
   background-clip: padding-box;
   border-radius: 0.375rem;
@@ -1770,9 +1796,9 @@ aside p {
 .featured-anchor {
   display: block; }
 
+.author-information .date,
 .author-nationality,
 .author-employer,
-.author-information .date,
 .tags,
 .location,
 .featured-anchor {

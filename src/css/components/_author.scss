@@ -19,6 +19,9 @@
     }
 }
 
+/**
+ * More information about the Author, the Page, or the Post
+ */
 .author-information {
     margin-bottom: $measure-medium;
     font-family: $font-family-default;
@@ -51,6 +54,9 @@
     }
 }
 
+/**
+ * Photograph of my FACE
+ */
 .author-image {
     @include border-radius;
     // gradient replacement while loading the `src` / `srcset`,
@@ -85,9 +91,10 @@
 }
 
 // same as previous, without `.author-name`
+// `.author-information .date` subbed in
+.author-information .date,
 .author-nationality,
 .author-employer,
-.author-information .date,
 .tags,
 .location,
 .featured-anchor {

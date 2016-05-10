@@ -14,9 +14,9 @@ tags:
 banner:        annoying-navigation-css.png
 banner_mobile: annoying-navigation-css_mobile.png
 
-shorturl: nmwge
-codepen: true
 comments: true
+codepen: true
+shorturl: nmwge
 ---
 
 

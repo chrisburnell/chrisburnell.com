@@ -1,7 +1,7 @@
 <div class="widget  widget--shared-links">
     <h3 id="shared-links" class="widget-title">
         <a href="/links">Shared Links</a>
-        {% include content/heading-anchor.html id='shared-links' tabindex='-1' %}
+        {% include content/fragment-anchor.html id='shared-links' tabindex='-1' %}
     </h3>
     <ol class="small-content-list" role="list">
         {% for page in site.categories.link limit: 2 %}

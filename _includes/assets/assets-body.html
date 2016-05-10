@@ -18,9 +18,14 @@
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
 
-{% if page.codepen == true or page.categories contains 'pen' %}
+{% if page.codepen == true or (page.categories contains 'pen' and page.codepen_slug) %}
     <!-- CodePen Embeds -->
     <script src="//codepen.io/assets/embed/ei.js" async defer></script>
+{% endif %}
+
+{% if page.speakerdeck == true %}
+    <!-- Speaker Deck Embeds -->
+    <script src="//speakerdeck.com/assets/embed.js" async defer></script>
 {% endif %}
 
 {% if page.twitter == true %}

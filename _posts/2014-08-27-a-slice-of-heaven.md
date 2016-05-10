@@ -14,9 +14,9 @@ tags:
 # banner:        a-slice-of-heaven.png
 # banner_mobile: a-slice-of-heaven_mobile.png
 
-shorturl: ynt2q
-codepen: true
 comments: true
+codepen: true
+shorturl: ynt2q
 ---
 
 

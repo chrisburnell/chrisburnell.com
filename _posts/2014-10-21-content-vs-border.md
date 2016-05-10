@@ -9,6 +9,7 @@ tags:
 - codepen
 
 comments: codepen
+codepen: true
 codepen_slug: lBJnz
 shorturl: 6xcr7
 ---

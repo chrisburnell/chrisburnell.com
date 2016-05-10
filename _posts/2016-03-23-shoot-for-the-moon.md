@@ -23,9 +23,9 @@ external_links:
 - url: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/"
   title: "A Closer Look At Font Rendering"
 
-shorturl: uanoe
-codepen: true
 comments: true
+codepen: true
+shorturl: uanoe
 ---
 
 

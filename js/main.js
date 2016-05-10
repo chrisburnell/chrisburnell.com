@@ -100,7 +100,7 @@
 }());
 
 /*!
- * Heading Anchor ARIA Toggling
+ * Fragment Anchor ARIA Toggling
  * @author Chris Burnell <@iamchrisburnell>
  */
 
@@ -113,24 +113,25 @@
     /// Initialisation
     ////
 
-    var headingAnchors = document.querySelectorAll('.heading-anchor');
+    var fragmentAnchorClass = '.fragment-anchor';
+    var fragmentAnchors = document.querySelectorAll(fragmentAnchorClass);
 
     ////
     /// Handle Events on Headings (and their children)
     ////
 
-    for (var i = 0; i < headingAnchors.length; i++) {
-        headingAnchors[i].parentNode.addEventListener('mouseenter', function(event) {
-            showHeadingAnchor(event);
+    for (var i = 0; i < fragmentAnchors.length; i++) {
+        fragmentAnchors[i].parentNode.addEventListener('mouseenter', function(event) {
+            toggleFragmentAnchor(event, 'false');
         });
-        headingAnchors[i].parentNode.addEventListener('mouseleave', function(event) {
-            hideHeadingAnchor(event);
+        fragmentAnchors[i].parentNode.addEventListener('mouseleave', function(event) {
+            toggleFragmentAnchor(event, 'true');
         });
-        headingAnchors[i].parentNode.addEventListener('focus', function(event) {
-            showHeadingAnchor(event);
+        fragmentAnchors[i].parentNode.addEventListener('focus', function(event) {
+            toggleFragmentAnchor(event, 'false');
         });
-        headingAnchors[i].parentNode.addEventListener('blur', function(event) {
-            hideHeadingAnchor(event);
+        fragmentAnchors[i].parentNode.addEventListener('blur', function(event) {
+            toggleFragmentAnchor(event, 'true');
         });
     }
 
@@ -138,12 +139,8 @@
     /// Toggle `aria-hidden`
     ////
 
-    function showHeadingAnchor(node) {
-        node.target.querySelector('.heading-anchor').setAttribute('aria-hidden', 'false');
-    }
-
-    function hideHeadingAnchor(node) {
-        node.target.querySelector('.heading-anchor').setAttribute('aria-hidden', 'true');
+    function toggleFragmentAnchor(node, state) {
+        node.target.querySelector(fragmentAnchorClass).setAttribute('aria-hidden', state);
     }
 
 }());
