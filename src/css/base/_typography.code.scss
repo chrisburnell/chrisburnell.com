@@ -63,7 +63,7 @@ pre {
             min-width: 100%;
             display: block;
             font-size: initial;
-            text-shadow: 0 1px 1px $color-black--25-percent;
+            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--5-percent;
         }
     }
 }

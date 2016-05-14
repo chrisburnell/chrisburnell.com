@@ -3,13 +3,14 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/).
 
+*Version 2.8.0*
+
 [![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
 
 
 ## Table of Contents
 
 - [Title](#chrisburnellcom)
-- [Version](#version-270)
 - [Description](#description)
 - [Contributing](#contributing)
 - [Build Process](#build-process)
@@ -19,9 +20,6 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [Sass Structure](#sass-structure)
 - [Generated](#generated)
 - [License](#license)
-
-
-## version 2.8.0
 
 
 ## Description
@@ -87,7 +85,7 @@ _includes/
 │   ├── small-content-list-item.html
 │   ├── widget-featured-pens.html
 │   ├── widget-latest-talk.html
-│   ├── widget-related-articles.html
+│   ├── widget-latest-articles.html
 │   ├── widget-search.html
 │   └── widget-shared-links.html
 ├── content/
@@ -163,12 +161,12 @@ src/
 ## Generated
 
 ```text
-├── _includes
-│   └── generated
-│       ├── critical-css.html
-│       ├── loadcss.html
-│       └── typekit.html
-└── serviceworker.min.js
+_includes/
+└── generated/
+    ├── critical-css.html
+    ├── loadcss.html
+    └── typekit.html
+serviceworker.min.js
 ```
 
 

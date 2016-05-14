@@ -26,4 +26,4 @@ after_success:
   - tar -czvf chrisburnell.tgz _site/*
   - export SSHPASS=$DEPLOY_PASSWORD
   - sshpass -e scp -P $DEPLOY_PORT -o stricthostkeychecking=no chrisburnell.tgz $DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_PATH
-  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh
+  - sshpass -e ssh -p $DEPLOY_PORT $DEPLOY_USERNAME@$DEPLOY_HOST $DEPLOY_PATH/$DEPLOY_FILE

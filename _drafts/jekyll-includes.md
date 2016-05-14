@@ -8,6 +8,7 @@ title: Jekyll And Sass, Sitting in a Tree
 lede: I’ve been using Jekyll for over 2.5 years, and built a series of useful include components to help simplify and streamline my templating and authoring processes.
 tags:
 - jekyll
+- liquid
 - tutorials
 
 shorturl: 58xlz
@@ -19,37 +20,37 @@ comments: true
     <cite><a rel="external" href="http://jekyllrb.com/">Jekyll</a></cite>
 </blockquote>
 
-I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (Jekyll) to me at the time of conception. They also serve as equivalents to functionality usually relegated for JavaScript. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, remove mental overhead, or to follow a *Single source of truth* methodology.
+I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. They also serve as equivalents to functionality usually relegated for *JavaScript*. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to follow a <a rel="external" href="https://en.wikipedia.org/wiki/Single_source_of_truth">Single Source of Truth</a> methodology.
 
-And unfortunately, we’re in the midst of a front-end development trend where JavaScript frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant number of them, is to <a rel="external" href="https://noscript.net/">completely block JavaScript from running</a> unless explicitly specified otherwise by the user.
+And unfortunately, we’re in the midst of a front-end development trend where *JavaScript* frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant number of them, is to <a rel="external" href="https://noscript.net/">completely block JavaScript from running</a> unless explicitly specified otherwise by the user.
 
-Furthermore, the use of *Ad-Blockers* on the web has only <a rel="external" href="https://blog.pagefair.com/2015/ad-blocking-report/">increased over the last years</a> as the amount of <a rel="external" href="http://deathtobullshit.com/">bullshit</a> continues to rise. Another set of users without JavaScript.
+Furthermore, the use of *Ad-Blockers* on the web has only <a rel="external" href="https://blog.pagefair.com/2015/ad-blocking-report/">increased over the last years</a> as the amount of <a rel="external" href="http://deathtobullshit.com/">bullshit</a> on the web continues to rise. Another set of users without *JavaScript*.
 
-Maybe you can better understand why I am adverse to blind overuse of JavaScript. But regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes.
+Maybe you can better understand why I am adverse to blind overuse of *JavaScript*. But regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes.
 
 
 {% include content/heading.html title='Headings' %}
 
 When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in an post’s content.
 
-There are roughly three ways to go about this:
+I considered *three* approaches to this:
 
-0. Maintain the fragment anchor’s HTML inside my content
-0. Use JavaScript to parse all untouched headings in my content and generate the necessary fragment anchors
-0. Use Jekyll to generate the necessary fragment anchors with a slight modification to writing headings inside content
+0. Maintain the heading anchor’s *HTML* inside my content
+0. Use *JavaScript* to parse all untouched headings in my content and generate the necessary heading anchors
+0. Use *Jekyll* to generate the necessary heading anchors with a slight modification to writing headings inside content
 
-I opted for the *third* option in an effort to provide the same functionality for as many users as I can. Further, seeing as the demographic of people visiting my website are more likely to use some sort of JavaScript-blocking, so this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is, *sorrynotsorry*).
+I opted for the *3<sup>rd</sup>* option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to block *JavaScript*, this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is <sup>*sorrynotsorry*</sup>).
 
-I did so by leveraging Jekyll’s <a rel="external" href="https://jekyllrb.com/docs/templates/#includes" title="Jekyll Templating Includes">*includes*</a> to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a <a rel="external" href="https://en.wikipedia.org/wiki/Single_source_of_truth">Single Source of Truth</a> methodology in my codebase *wherever possible*.
+I did so by leveraging *Jekyll’s* <a rel="external" href="https://jekyllrb.com/docs/templates/#includes" title="Jekyll Templating Includes">*includes*</a> to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
 
-So how do I actually get Jekyll to build a *heading* and an *associated anchor* in my content?
+So how do I actually get *Jekyll* to build a *heading* and an *associated anchor* in my content?
 
-As I mentioned above, it involves a slight change to the way that I write headings in my Markdown content. Instead of writing headings in the traditional Markdown method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes.
+As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown* content. Instead of writing headings in the traditional Markdown method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes.
 
 {% highlight markdown %}{% raw %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ...
-{% include content/heading.html title='Headings' %}
+{% include content/heading.html title='Brass Tacks' %}
 ...
 Cras ac elit enim, et tempus nulla.
 {% endraw %}{% endhighlight %}
@@ -57,19 +58,22 @@ Cras ac elit enim, et tempus nulla.
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
 
 {% highlight liquid %}{% raw %}
-{% assign heading_type = 'h3' %}                             /* 1 */
+<!-- 1 -->
+{% assign heading_type = 'h3' %}
 {% if include.type %}
     {% assign heading_type = include.type %}
 {% endif %}
 
-{% assign heading_id = include.title | slugify %}            /* 2 + 3 */
+<!-- 2 + 3 -->
+{% assign heading_id = include.title | slugify %}
 {% if include.id %}
     {% assign heading_id = include.id %}
 {% endif %}
 
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
-    {% include content/fragment-anchor.html id=heading_id %}  /* 4 */
+    <!-- 4 -->
+    {% include content/fragment-anchor.html id=heading_id %}
 </{{ heading_type }}>
 {% endraw %}{% endhighlight %}
 
@@ -81,39 +85,52 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
 Let’s see what the `fragment-anchor` *include* looks like.
 
 {% highlight liquid %}{% raw %}
-{% if include.id %}                                                  /* 1 */
+<!-- 1 -->
+{% if include.id %}
     {% capture href %}#{{ include.id }}{% endcapture %}
 {% elsif include.url %}
     {% assign href = include.url %}
 {% endif %}
 
-{% if include.title %}                                               /* 2 */
+<!-- 2 -->
+{% if include.title %}
     {% capture title %} title="{{ include.title }}"{% endcapture %}
 {% endif %}
 
-{% if include.rel %}                                                 /* 3 */
+<!-- 3 -->
+{% if include.rel %}
     {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
 {% endif %}
 
+<!-- 4 -->
 {% if include.tabindex %}
-    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}  /* 4 */
+    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}
 {% endif %}
 
-<a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }} aria-hidden="true">{{ href }}</a>  /* 4 */
+<!-- 5 -->
+<a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }}{{ tabindex }}>{{ href }}</a>
 {% endraw %}{% endhighlight %}
+
+{% highlight css %}
+.fragment-anchor {
+    ...
+    display: none;
+    ...
+}
+{% endhighlight %}
 
 0. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
 0. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
 0. The *include* also accepts an optional `rel` parameter, which equates to a `rel` attribute on the anchor tag. If the `rel` parameter is not passed, no `rel` attribute is printed on the anchor tag.
 0. The *include* also accepts an optional `tabindex` parameter, which equates to a `tabindex` attribute on the anchor tag. If the `tabindex` parameter is not passed, no `tabindex` attribute is printed on the anchor tag.
-0. For accessibility reasons and a coherent reading experience for screen readers, fragment anchors are always set to `aria-hidden="true"` to exclude them from being read aloud or included in navigation searches. *(`aria-hidden="true"` actually triggers `display: none;` on any element with it included, which is part of the removal process for screen readers and accessibility tools)*
+0. For accessibility reasons and a coherent reading experience for screen readers, fragment anchors are always set to `display: none;` to exclude them from being read aloud or included in navigation searches.
 
 {% highlight html %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ...
-<h3 id="headings">
-    Headings
-    <a href="#headings" class="fragment-anchor" aria-hidden="true">#headings</a>
+<h3 id="brass-tacks">
+    Brass Tacks
+    <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h3>
 ...
 Cras ac elit enim, et tempus nulla.

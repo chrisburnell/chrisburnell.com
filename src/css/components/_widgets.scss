@@ -5,6 +5,12 @@
 
 
 .widget {
+    @include media("<=medium") {
+        display: flex;
+        flex-direction: column;
+        order: 999;
+    }
+
     aside & {
         @include clear;
     }
@@ -19,5 +25,9 @@
     &::after {
         // NO-BREAK SPACE, RIGHTWARDS ARROW
         content: " →";
+    }
+
+    @include media("<=medium") {
+        align-self: flex-end;
     }
 }

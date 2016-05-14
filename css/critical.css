@@ -464,6 +464,11 @@ h3 {
       display: table; }
     article > h3::after, h3.widget-title::after {
       clear: both; }
+    @media (max-width: 768px) {
+      article > h3, h3.widget-title {
+        -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+                align-self: flex-start; } }
   .lede + h3 {
     margin-top: 0; }
   h3 code, h3
@@ -1006,7 +1011,7 @@ pre {
       min-width: 100%;
       display: block;
       font-size: initial;
-      text-shadow: 0 1px 1px rgba(6, 6, 6, 0.25); }
+      text-shadow: 0 1px 1px rgba(6, 6, 6, 0.05); }
 
 /**
  * Github-style Code Highlighting
@@ -1151,6 +1156,7 @@ a {
 .fragment-anchor {
   text-transform: lowercase;
   letter-spacing: 0;
+  display: none;
   margin-left: 1.25rem;
   font-family: "Menlo for Powerline", "Menlo", Consolas, Courier, monospace;
   font-size: 0.875rem;
@@ -1613,8 +1619,6 @@ aside p {
   .page--home .small-content-list,
   .widget .small-content-list {
     margin-bottom: 0; }
-  .small-content-list li:nth-child(n+3) {
-    margin-top: 1.25rem; }
   @media (min-width: 501px) {
     .small-content-list li {
       width: 49.0125%;
@@ -1627,7 +1631,9 @@ aside p {
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
-      .small-content-list li:nth-child(4n+2) a, .small-content-list li:nth-child(4n+3) a {
+      .small-content-list li:nth-child(n+3) {
+        margin-top: 1.25rem; }
+      .small-content-list li:nth-child(4n+1) a, .small-content-list li:nth-child(4n+4) a {
         background-color: rgba(6, 6, 6, 0.05); } }
   @media (max-width: 500px) {
     .small-content-list li {
@@ -1635,15 +1641,15 @@ aside p {
       display: inline-block; }
       .small-content-list li + li {
         margin-top: 1.25rem; }
-      .small-content-list li:nth-child(2n+2) a {
+      .small-content-list li:nth-child(2n+1) a {
         background-color: rgba(6, 6, 6, 0.05); } }
   aside .small-content-list li {
     width: 100%; }
     aside .small-content-list li + li {
       margin-top: 0.625rem; }
-    aside .small-content-list li:nth-child(4n+2) a, aside .small-content-list li:nth-child(4n+3) a, aside .small-content-list li:nth-child(2n+1) a {
+    aside .small-content-list li:nth-child(4n+1) a, aside .small-content-list li:nth-child(4n+4) a {
       background-color: transparent; }
-    aside .small-content-list li:nth-child(2n+2) a {
+    aside .small-content-list li:nth-child(2n+1) a {
       background-color: rgba(6, 6, 6, 0.05); }
   .small-content-list a {
     background-clip: padding-box;
@@ -1736,10 +1742,10 @@ aside p {
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
-      -webkit-box-ordinal-group: 1000;
-      -webkit-order: 999;
-          -ms-flex-order: 999;
-              order: 999;
+      -webkit-box-ordinal-group: 999;
+      -webkit-order: 998;
+          -ms-flex-order: 998;
+              order: 998;
       margin-top: 2.25rem; } }
 
 /**

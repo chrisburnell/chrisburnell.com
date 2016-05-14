@@ -75,9 +75,9 @@
         {% include components/comments.html %}
 
         {% if page.categories contains 'article' %}
-            {% include components/widget-related-articles.html %}
+            {% include components/widget-latest-articles.html %}
         {% elsif page.categories contains 'pen' %}
-            {% include components/widget-featured-pens.html %}
+            {% include components/widget-latest-pens.html %}
         {% elsif page.categories contains 'talk' %}
             {% include components/widget-latest-talks.html %}
         {% endif %}

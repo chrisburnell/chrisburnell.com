@@ -1,13 +1,13 @@
-<div class="widget  widget--latest-talks">
-    <h3 id="latest-talks" class="widget-title">
-        <a href="/talks">Latest Talks</a>
-        {% include content/fragment-anchor.html id='latest-talk' tabindex='-1' %}
+<div class="widget  widget--latest-pens">
+    <h3 id="latest-pens" class="widget-title">
+        <a href="/pens">Latest Pens</a>
+        {% include content/fragment-anchor.html id='latest-pens' tabindex='-1' %}
     </h3>
     <ol class="small-content-list" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
         {% assign current_path = page.path %}
-        {% for page in site.categories.talk %}
+        {% for page in site.categories.pen %}
             {% unless current_list_count == max_list_count %}
                 {% unless page.path == current_path %}
                     {% assign current_list_count = current_list_count | plus: 1 %}
@@ -16,5 +16,5 @@
             {% endunless %}
         {% endfor %}
     </ol>
-    <a class="widget-featured-anchor" href="/talks">All Talks</a>
+    <a class="widget-featured-anchor" href="/pens">All Featured Pens</a>
 </div>

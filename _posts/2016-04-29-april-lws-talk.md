@@ -39,7 +39,7 @@ It’s one thing to achieve your end-result styles with your CSS, but to do so i
 
 Describing *media query* context in CSS can be difficult to do in a spoken language. Therefore it’s important to establish some rules to organise your CSS.
 
-An oft-used method for organising *media queries* comes in the form of some sort of *media query* <q>strategy</q>—you’ve probably heard of one of the more popular strategies, <q>Mobile First</q>, which we’ll use as an example to help us think about how we read CSS and what kind of *mental overheard* is introduced by contexts.
+An oft-used method for organising *media queries* comes in the form of some sort of *media query* <q>strategy</q>—you’ve probably heard of one of the more popular strategies, <a rel="external" href="http://zurb.com/word/mobile-first" title="Mobile First on ZURB Word Library">*Mobile First*</a>, which we’ll use as an example to help us think about how we read CSS and what kind of *mental overheard* is introduced by contexts.
 
 {% highlight html %}
 <button class="navigation-toggle-button">
@@ -114,7 +114,7 @@ Let’s refactor the CSS to describe the exact same styles but with some readabi
 
 To me, it does. To you, maybe it makes less.
 
-We’ve deviated from our established <q>Mobile First</q> approach to writing *media queries*, and we’ve lost some organisation in the process! But in trade, we’ve broken our component into multiple explicit contexts which follows a distinct flow of extending the default component.
+We’ve deviated from our established *Mobile First* approach to writing *media queries*, and we’ve lost some organisation in the process! But in trade, we’ve broken our component into multiple explicit contexts which follows a distinct flow of extending the default component.
 
 
 {% include content/heading.html title='The Bottom Line' %}
@@ -124,11 +124,11 @@ We’ve deviated from our established <q>Mobile First</q> approach to writing *m
 If we were to categorise this understandability of CSS into three general categories, in order of most desirable to least desirable, we might end up with something this:
 
 0. Common Sense
-  - Focusses on the specific context of the component and how to best express its styles. This promotes strong human understanding of the code but can demote organisation and expectation when viewing the codebase holistically.
+  Focusses on the specific context of the component and how to best express its styles. This promotes strong human understanding of the code but can demote organisation and expectation when viewing the codebase holistically.
 0. Strict Adherence
-  - Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
+  Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
 0. Spaghetti
-  - <a rel="external" href="https://en.wikipedia.org/wiki/Spaghetti_code" title="Spaghetti Code on Wikipedia">Has no focus or purpose. Don’t do it.</a>
+  <a rel="external" href="https://en.wikipedia.org/wiki/Spaghetti_code" title="Spaghetti Code on Wikipedia">Has no focus or purpose. Don’t do it.</a>
 
 
 {% include content/heading.html title='The Next Talk' %}

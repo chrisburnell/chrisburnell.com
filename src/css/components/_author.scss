@@ -14,7 +14,7 @@
     @include media("<=medium") {
         display: flex;
         flex-direction: column;
-        order: 999;
+        order: 998;
         margin-top: $measure-large;
     }
 }
