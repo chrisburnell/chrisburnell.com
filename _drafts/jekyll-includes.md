@@ -20,24 +20,24 @@ comments: true
     <cite><a rel="external" href="http://jekyllrb.com/">Jekyll</a></cite>
 </blockquote>
 
-I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. They also serve as equivalents to functionality usually relegated for *JavaScript*. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to follow a <a rel="external" href="https://en.wikipedia.org/wiki/Single_source_of_truth">Single Source of Truth</a> methodology.
+I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. They also serve as equivalents to functionality usually relegated for *JavaScript*. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to enforce a <a rel="external" href="https://en.wikipedia.org/wiki/Single_source_of_truth">Single Source of Truth</a> methodology.
 
-And unfortunately, we’re in the midst of a front-end development trend where *JavaScript* frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant number of them, is to <a rel="external" href="https://noscript.net/">completely block JavaScript from running</a> unless explicitly specified otherwise by the user.
+And unfortunately, we’re in the midst of a front-end development trend where *JavaScript* frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant minority, is to <a rel="external" href="https://noscript.net/">completely block JavaScript from running</a> unless explicitly specified otherwise by the user.
 
-Furthermore, the use of *Ad-Blockers* on the web has only <a rel="external" href="https://blog.pagefair.com/2015/ad-blocking-report/">increased over the last years</a> as the amount of <a rel="external" href="http://deathtobullshit.com/">bullshit</a> on the web continues to rise. Another set of users without *JavaScript*.
+Furthermore, the use of *Ad-Blockers* on the web has only <a rel="external" href="https://blog.pagefair.com/2015/ad-blocking-report/">increased over the last years</a> as the amount of <a rel="external" href="http://deathtobullshit.com/">bullshit on the web</a> continues to rise. Another reason to avoid leaning heavily upon *JavaScript*.
 
-Maybe you can better understand why I am adverse to blind overuse of *JavaScript*. But regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes.
+Maybe you can better understand why I am adverse to blind overuse of *JavaScript*. But regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes using a combination of *Jekyll*-powered *Liquid* alongside some *Sass*.
 
 
 {% include content/heading.html title='Headings' %}
 
-When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in an post’s content.
+When writing articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in a post’s content.
 
 I considered *three* approaches to this:
 
-0. Maintain the heading anchor’s *HTML* inside my content
-0. Use *JavaScript* to parse all untouched headings in my content and generate the necessary heading anchors
-0. Use *Jekyll* to generate the necessary heading anchors with a slight modification to writing headings inside content
+0. Maintain the heading anchor’s *HTML* inside my content each and every place I want to display a heading (and associated anchor)
+0. Use *JavaScript* to parse childless headings in my content and generate the necessary heading anchors
+0. Use *Jekyll* to generate the necessary heading anchors with a slight modification to the way I write headings inside content, deviating from the standard *Markdown* syntax
 
 I opted for the *3<sup>rd</sup>* option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to block *JavaScript*, this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is <sup>*sorrynotsorry*</sup>).
 
@@ -49,9 +49,9 @@ As I mentioned above, it involves a slight change to the way that I write headin
 
 {% highlight markdown %}{% raw %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-...
+. . .
 {% include content/heading.html title='Brass Tacks' %}
-...
+. . .
 Cras ac elit enim, et tempus nulla.
 {% endraw %}{% endhighlight %}
 
@@ -113,9 +113,9 @@ Let’s see what the `fragment-anchor` *include* looks like.
 
 {% highlight css %}
 .fragment-anchor {
-    ...
+    /* ... */
     display: none;
-    ...
+    /* ... */
 }
 {% endhighlight %}
 
@@ -127,12 +127,12 @@ Let’s see what the `fragment-anchor` *include* looks like.
 
 {% highlight html %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-...
+. . .
 <h3 id="brass-tacks">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h3>
-...
+. . .
 Cras ac elit enim, et tempus nulla.
 {% endhighlight %}
 
