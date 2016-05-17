@@ -78,9 +78,10 @@
     ////
     function showComments() {
         if (commentsSection !== null) {
-            // only if the button still exists should we load Disqus and remove the button
+            // only if the button still exists should we load Disqus and hide the button
             if (commentsButton !== null && commentsButton.getAttribute('aria-hidden') === 'false') {
                 commentsButton.setAttribute('aria-pressed', 'true');
+                commentsButton.setAttribute('aria-expanded', 'true');
                 commentsButton.setAttribute('aria-hidden', 'true');
                 commentsButton.removeEventListener('click', function() {});
                 (function() {
@@ -90,9 +91,7 @@
                     dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
-                // make sure we are indeed scrolled to the right part of the page
                 commentsSection.setAttribute('aria-hidden', 'false');
-                commentsSection.setAttribute('aria-expanded', 'true');
             }
         }
     }
