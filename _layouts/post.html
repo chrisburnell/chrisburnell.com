@@ -23,12 +23,12 @@
         {% endif %}
 
         {% if page.edit_text %}
-            <div class="edit">
+            <section class="edit">
                 {% if page.edit_date %}
                     <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit ({{ page.edit_date | date: '%d %b, %Y' }}) —</time>
                 {% endif %}
                 <p>{{ page.edit_text }}</p>
-            </div>
+            </section>
         {% endif %}
 
         {% if page.external_links and page.categories contains 'link' %}
