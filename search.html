@@ -10,13 +10,13 @@ lede: Search articles, pens, and pages.
 
 <section class="search-main  js-search" id="search">
     <form class="search-form  js-search-form" method="get" action="/search" role="search">
-        <label id="search-label" class="search-label  visually-hidden" for="search-input">Search for pages and posts</label>
-        <input id="search-input" class="search-input  js-search-input" type="search" name="query" maxlength="30" value="" placeholder="Search for pages and posts" aria-labelledby="search-label" aria-required="true" aria-disabled="true" disabled required>
-        <button class="button--small  search-submit  js-search-submit" role="button" type="submit" aria-disabled="true" disabled>Submit</button>
+        <label class="search-label  visually-hidden" id="search-label" for="search-input">Search for pages and posts</label>
+        <input type="search" class="search-input  js-search-input" id="search-input" name="query" value="" placeholder="Search for pages and posts" maxlength="30" aria-labelledby="search-label" aria-required="true" required aria-disabled="true" disabled>
+        <button type="submit" class="button--small  search-submit  js-search-submit" id="search-button" role="button" aria-controls="search-results" aria-disabled="true" disabled>Submit</button>
     </form>
     <noscript>Please enable JavaScript to search.</noscript>
 </section>
 
 <section class="search-results  js-search-results">
-    <ul id="search-results" class="small-content-list  js-search-results-list" role="list" aria-live="polite"></ul>
+    <ul id="search-results" class="small-content-list  js-search-results-list" role="list" aria-controlledby="search-button" aria-expanded="false" aria-live="polite"></ul>
 </section>

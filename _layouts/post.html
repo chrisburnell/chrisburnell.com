@@ -4,7 +4,7 @@
 <main class="wrap  clear" role="main">
     <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-        <h1 id="article" class="title" role="heading">
+        <h1 class="title" id="article" role="heading">
             <span itemprop="name">{{ page.title }}</span>
             {% if page.shorturl %}
                 {% capture h1_url %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
@@ -19,7 +19,7 @@
         {% include components/banner.html %}
 
         {% if page.lede %}
-            <h2 id="lede" class="lede  lede--featured" itemprop="description">{{ page.lede }}</h2>
+            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
         {% endif %}
 
         {% if page.edit_text %}
@@ -40,7 +40,7 @@
                 {% else %}
                     {% assign title = link.title %}
                 {% endif %}
-                <a rel="external" class="button" href="{{ url }}">{{ title }}</a>
+                <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 
@@ -63,7 +63,7 @@
                             {% assign title = link.title %}
                         {% endif %}
                         <li>
-                            <a{{ rel }} href="{{ url }}">{{ title }}</a>
+                            <a href="{{ url }}"{{ rel }}>{{ title }}</a>
                         </li>
                     {% endfor %}
                 </ul>

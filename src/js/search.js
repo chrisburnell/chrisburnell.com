@@ -190,6 +190,8 @@
         document.activeElement.blur();
         // And scroll to the results
         resultsMeta.scrollIntoView();
+        // And mark the resultsList as `aria-expanded="true"`
+        resultsList.setAttribute('aria-expanded', 'true');
     }
 
     ////
