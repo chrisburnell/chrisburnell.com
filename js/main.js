@@ -86,11 +86,11 @@
                 commentsButton.setAttribute('aria-hidden', 'true');
                 commentsButton.removeEventListener('click', function() {});
                 (function() {
-                    var dsq = document.createElement('script');
-                    dsq.type = 'text/javascript';
-                    dsq.async = true;
-                    dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    var disqusScript = document.createElement('script');
+                    disqusScript.type = 'text/javascript';
+                    disqusScript.async = true;
+                    disqusScript.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqusScript);
                 })();
                 commentsSection.setAttribute('aria-hidden', 'false');
             }
