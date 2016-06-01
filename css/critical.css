@@ -866,7 +866,8 @@ blockquote {
 
 /*blockquote*/
 .twitter-tweet {
-  margin: 0 auto 1.25rem !important; }
+  margin: 0 auto 1.25rem !important;
+  contain: strict; }
 
 q {
   hanging-punctuation: first; }
@@ -926,7 +927,8 @@ video {
   overflow-x: hidden; }
 
 iframe {
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  contain: strict; }
 
 /**
  * Mouse Selection
