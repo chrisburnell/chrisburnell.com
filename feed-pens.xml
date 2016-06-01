@@ -1,6 +1,8 @@
 ---
 layout: null
 searchable: false
+sitemap:
+  exclude: true
 
 title: Pens Feed
 lede: All of my pens.

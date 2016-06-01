@@ -5,17 +5,17 @@
 <script>{% include generated/loadcss.html %}</script>
 
 <!-- Serve the main styles straight up if you haven't got JavaScript -->
-<link rel="preload" href="/css/main.min.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" as="style" href="/css/main.min.css" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
 
 <!-- Pull fonts from Typekit -->
 <script>{% include generated/typekit.html %}</script>
 
 <!-- Preload some assets -->
-<link rel="preload" href="/js/main.min.js">
+<link rel="preload" as="script" href="/js/main.min.js">
 {% if page.codepen == true or page.categories contains 'pen' %}
-    <link rel="preload" href="//codepen.io/assets/embed/ei.js">
+    <link rel="preload" as="script" href="//codepen.io/assets/embed/ei.js">
 {% endif %}
 {% if page.twitter == true %}
-    <link rel="preload" href="//platform.twitter.com/widgets.js">
+    <link rel="preload" as="script" href="//platform.twitter.com/widgets.js">
 {% endif %}

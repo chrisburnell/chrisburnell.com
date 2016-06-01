@@ -1,6 +1,8 @@
 ---
 layout: feed
 searchable: false
+sitemap:
+  exclude: true
 
 title: Full Feed
 lede: All of my articles, pens, link, and talks.
