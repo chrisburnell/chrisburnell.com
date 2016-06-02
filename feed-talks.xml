@@ -1,6 +1,8 @@
 ---
 layout: feed
 searchable: false
+sitemap:
+  exclude: true
 
 title: Talks Feed
 lede: All of my talks.

@@ -1,14 +1,14 @@
-<div class="widget  widget--search">
-    <h3 id="search" class="widget-title">
+<section class="widget  widget--search">
+    <h3 class="widget-title" id="search">
         <a href="/search">Search</a>
         {% include content/fragment-anchor.html id='search' tabindex='-1' %}
     </h3>
     <form class="search-form  js-search-form" method="get" action="/search" role="search">
-        <label class="search-label  visually-hidden" for="search-input">Search for pages and posts</label>
-        <input class="search-input  js-search-input" type="search" id="search-input" name="query" maxlength="30" value="" placeholder="Search the website" aria-required="true" aria-disabled="true" disabled required>
-        <button class="button--small  search-submit  js-search-submit" type="submit" title="Submit" aria-label="Submit" aria-disabled="true" disabled>
+        <label class="search-label  visually-hidden" id="search-label" for="search-input">Search for pages and posts</label>
+        <input type="search" class="search-input  js-search-input" id="search-input" name="query" value="" placeholder="Search the website" maxlength="30" aria-labelledby="search-label" aria-required="true" required aria-disabled="true" disabled>
+        <button type="submit" class="button--small  search-submit  js-search-submit" id="search-button" role="button" aria-controls="search-results" title="Submit" aria-label="Submit" aria-disabled="true" disabled>
             {% include content/svg.html type='search' %}
         </button>
     </form>
     <noscript>Please enable JavaScript to search.</noscript>
-</div>
+</section>

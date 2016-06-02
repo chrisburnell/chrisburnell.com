@@ -66,6 +66,10 @@ pre {
             text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--5-percent;
         }
     }
+
+    &.codepen {
+        contain: strict;
+    }
 }
 
 /**
