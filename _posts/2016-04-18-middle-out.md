@@ -14,7 +14,7 @@ shorturl: 8fanl
 ---
 
 
-I wrote about this talk in another article, <a rel="me" href="{% post_url 2016-04-29-april-lws-talk %}">April LWS Talk</a>, if you’re interested in more detail or want to read about what I learned from giving my first public talk.
+I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04-29-april-lws-talk %}), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
 
 {% include content/heading.html title='Slides' %}

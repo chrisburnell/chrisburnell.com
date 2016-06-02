@@ -14,9 +14,9 @@ shorturl: ndwg7
 ---
 
 
-Last week, <a rel="external" href="http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/">I spoke</a> at <a rel="external" href="http://londonwebstandards.org/">London Web Standards</a>, a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a freefront-end development course](http://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html), I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
+Last week, [I spoke](http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/){:rel="external"} at [London Web Standards](http://londonwebstandards.org/){:rel="external"}, a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a freefront-end development course](http://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html){:rel="external"}, I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
 
-Check out the *Talk* in question, <a rel="me" href="{% post_url 2016-04-18-middle-out %}">Supporting Middle-Out in CSS</a>.
+Check out the *Talk* in question, [Supporting Middle-Out in CSS]({% post_url 2016-04-18-middle-out %}).
 
 
 {% include content/heading.html title='Nerves from Hell' %}
@@ -39,7 +39,7 @@ It’s one thing to achieve your end-result styles with your CSS, but to do so i
 
 Describing *media query* context in CSS can be difficult to do in a spoken language. Therefore it’s important to establish some rules to organise your CSS.
 
-An oft-used method for organising *media queries* comes in the form of some sort of *media query* <q>strategy</q>—you’ve probably heard of one of the more popular strategies, <a rel="external" href="http://zurb.com/word/mobile-first" title="Mobile First on ZURB Word Library">*Mobile First*</a>, which we’ll use as an example to help us think about how we read CSS and what kind of *mental overheard* is introduced by contexts.
+An oft-used method for organising *media queries* comes in the form of some sort of *media query* <q>strategy</q>—you’ve probably heard of one of the more popular strategies, [Mobile First](http://zurb.com/word/mobile-first "Mobile First on ZURB Word Library"){:rel="external"}, which we’ll use as an example to help us think about how we read CSS and what kind of *mental overheard* is introduced by contexts.
 
 {% highlight html %}
 <button class="navigation-toggle-button">
@@ -128,7 +128,7 @@ If we were to categorise this understandability of CSS into three general catego
 0. Strict Adherence
   Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
 0. Spaghetti
-  <a rel="external" href="https://en.wikipedia.org/wiki/Spaghetti_code" title="Spaghetti Code on Wikipedia">Has no focus or purpose. Don’t do it.</a>
+  [Has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia"){:rel="external"}
 
 
 {% include content/heading.html title='The Next Talk' %}

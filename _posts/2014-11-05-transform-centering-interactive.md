@@ -17,7 +17,7 @@ shorturl: 8x586
 
 {% include content/codepen.html height='500' %}
 
-Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
+Check out the [demo version]({% post_url 2014-11-05-transform-centering %}){:rel="external"}.
 
 {% highlight html %}
 <textarea class="modal" disabled></textarea>

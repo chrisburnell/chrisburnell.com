@@ -25,16 +25,16 @@ One of the most important aspects to any codebase, besides the obvious fact that
 
 {% include content/heading.html title='In comes Sass' %}
 
-Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">Sass</dfn>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors simply sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
+Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">Sass</dfn>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"){:rel="external"}, a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors simply sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
 
 {% include content/heading.html title='I don’t want to do anything, anymore!' id='i-dont-want-to-do-anything' %}
 
-<aside><p>I also wrote about <a href="http://browser.londonwebstandards.org">State of the Browser 2013</a> in <a href="{% post_url 2013-06-15-first-article-ever %}">my first article</a>.</p></aside>
+<aside><p>I also wrote about <a rel="external" href="http://browser.londonwebstandards.org" title="State of the Browser 2013">State of the Browser 2013</a> in <a rel="me" href="{% post_url 2013-06-15-first-article-ever %}" title="First Ever Article">my first article</a>.</p></aside>
 
-Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
+Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013"){:rel="external"} and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan"){:rel="external"} and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"){:rel="external"}, I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
-One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com "Can I Use")*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
+One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: *[Can I Use](http://caniuse.com "Can I Use"){:rel="external"}*, a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
 
 --------
@@ -44,7 +44,7 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 <aside><p><code>autoprefixer -i</code> to run <em>Autoprefixer</em> from the command line.</p></aside>
 
-Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer")*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
+Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer"){:rel="external"}*. In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient... but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 
 --------
@@ -52,11 +52,11 @@ Fortunately there’s a great tool that plugs into *Can I Use*’s API: *[Autopr
 
 <aside><p><code>sass</code> to compile Sass or SCSS from the command line.</p></aside>
 
-Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
+Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify"){:rel="external"}). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
 It’s only a small amount of time spent each time I wanted to compile my SCSS, but as anyone who writes CSS knows, an awful lot of time is spent tweaking a value, refreshing the browser, tweaking a value, refreshing the browser, and so on. The time spent compiling the SCSS *myself* added up to one big frustration.
 
-All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SCSS for the most part.
+All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"){:rel="external"}, and compiling my SCSS for the most part.
 
 
 {% include content/heading.html title='There must be a better way!' id='a-better-way' %}
@@ -66,7 +66,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
     <figcaption>There is!</figcaption>
 </figure>
 
-And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a <q>streaming build system<q> built on *[node.js](http://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
+And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system"){:rel="external"}*. *gulp* is a <q>streaming build system<q> built on *[node.js](http://nodejs.org "node.js"){:rel="external"}* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner"){:rel="external"}* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp"){:rel="external"}!
 
 
 {% include content/heading.html title='Let’s see what gulp does for me' id='what-gulp-does-for-me' %}
@@ -117,7 +117,7 @@ gulp.task('default', ['scripts', 'images', 'watch']);
 {% endhighlight %}
 {% include content/code-toggle-bottom.html %}
 
-What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"), *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a <q>tweak a value, compile, refresh browser</q> workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload")* to automatically refresh the browser—the workflow then becomes, essentially, <q>tweak a value... tweak a value... tweak a value</q> as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
+What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"){:rel="external"}, *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a <q>tweak a value, compile, refresh browser</q> workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload"){:rel="external"}* to automatically refresh the browser—the workflow then becomes, essentially, <q>tweak a value... tweak a value... tweak a value</q> as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
 
 {% include content/heading.html title='Good old brass tacks' %}
 
@@ -544,16 +544,16 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 {% include content/heading.html title='Useful Links' %}
 
-1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
-2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
-3. [Sass Guide - Nesting](http://sass-lang.com/guide#3 "Sass: Sass Nesting")
-4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
-5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
-6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
-7. [My Sass files]({{ site.github.repository_url }}/tree/master/src/css "Sass files for chrisburnell.com")
-8. [My gulpfile configuration]({{ site.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
+1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics"){:rel="external"}
+2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables"){:rel="external"}
+3. [Sass Guide - Nesting](http://sass-lang.com/guide#3 "Sass: Sass Nesting"){:rel="external"}
+4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials"){:rel="external"}
+5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import"){:rel="external"}
+6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins"){:rel="external"}
+7. [My Sass files]({{ site.github.repository_url }}/tree/master/src/css "Sass files for chrisburnell.com"){:rel="external"}
+8. [My gulpfile configuration]({{ site.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration"){:rel="external"}
 
-And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
+And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp"){:rel="external"}</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer"){:rel="external"}.
 
 
 {% include content/heading.html title='Wrapping it up' %}
@@ -569,6 +569,6 @@ And with *gulp* `watching`, the transition from the SCSS above to the minified C
 
 To sum up, the site looks <s>pretty much</s> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to <q>vanilla</q> CSS for so long, but writing SCSS feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
-You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.github.repository_url }}/tree/master/css "SCSS files for chrisburnell.com"), and the README file of the repository [here]({{ site.github.repository_url }}).
+You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.github.repository_url }}/tree/master/css "SCSS files for chrisburnell.com"){:rel="external"}, and the README file of the repository [here]({{ site.github.repository_url }}){:rel="external"}.
 
-As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github]({{ site.github.repository_url }}/issues)!
+As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github]({{ site.github.repository_url }}/issues){:rel="external"}!

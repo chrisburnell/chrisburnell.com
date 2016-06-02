@@ -30,7 +30,7 @@ shorturl: fqojr
 ---
 
 
-A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/) some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
+A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/){:rel="external"} some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
 
 <section class="edit">
     <p>N.B. This assumes that you are gzipping your assets on the front-end.</p>
@@ -44,10 +44,10 @@ I’ve been using both `@extend` and `@mixin` in my Sass for a number of years, 
 
 The gist of Harry’s article is that using `@extend` to repeat styles is not worth the fragile nature of how `@extend` works—declaring the styles once and pulling the selectors into a single declaration (somewhere in the compiled CSS output) can spell disaster for the cascade you work so hard to make performant and succinct. **You should always feel in complete control of your Sass’ compiled output.**
 
-While using `@mixin` means repeated code in the compiled CSS output (remember: **D**on’t **R**epeat **Y**ourself), *gzipping* our CSS will actually make the impact of this repeated code almost negligable; however, it’s important to ensure that any and all static output from a `@mixin` is in the same order in each instance it is used. This is because *gzip* casts repeated strings to a variable and substitutes in the variable (instead of the full string) wherever the string is repeated in the CSS. By ensuring the same (or as close to the same) order of selectors, properties, values, etc. in the output of a `@mixin`, you set the maximum-possible-length-string of characters to a variable and thereby reduce the size of your *gzipped output CSS*.
+While using `@mixin` means repeated code in the compiled CSS output (remember: **D**on’t **R**epeat **Y**ourself), *gzipping* our CSS will actually make the impact of this repeated code almost negligible; however, it’s important to ensure that any and all static output from a `@mixin` is in the same order in each instance it is used. This is because *gzip* casts repeated strings to a variable and substitutes in the variable (instead of the full string) wherever the string is repeated in the CSS. By ensuring the same (or as close to the same) order of selectors, properties, values, etc. in the output of a `@mixin`, you set the maximum-possible-length-string of characters to a variable and thereby reduce the size of your *gzipped output CSS*.
 
 <section class="edit">
-    <p>If you want a clearer explanation or more information on the above, check out <a href="http://csswizardry.com/2016/02/mixins-better-for-performance/" rel="external">Harry Roberts’ article</a>.</p>
+    <p>If you want a clearer explanation or more information on the above, check out <a rel="external" href="http://csswizardry.com/2016/02/mixins-better-for-performance/">Harry Roberts’ article</a>.</p>
 </section>
 
 Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined that `@mixin` were as performant as, if not more than, `@extend`. This spurred me on to refactor my Sass and make sure I was using `@extend` properly...
@@ -58,7 +58,7 @@ Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined
 
 While this may be a contentious topic, I believe there are some predictable use-cases for Sass’ `@extend`, and the key in these use-cases is *what exactly* is being `@extended`. Typically, developers use `@extend` to apply one or more *properties* to *multiple selectors*, but as we know, this can cause unpredictable CSS output as it’s difficult to remember every selector for which you’ve extended the properties.
 
-The method which is far more predictable in its use of `@extend` does something different. Instead of `@extending` *properties* to *multiple selectors*, `@extend` *multiple selectors* to a *[placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)* (also called a *silent class*) and reference the *placeholder selector* wherever applying styles to those *multiple selectors*.
+The method which is far more predictable in its use of `@extend` does something different. Instead of `@extending` *properties* to *multiple selectors*, `@extend` *multiple selectors* to a *[placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_){:rel="external"}* (also called a *silent class*) and reference the *placeholder selector* wherever applying styles to those *multiple selectors*.
 
 
 --------

@@ -21,7 +21,7 @@ shorturl: sfn8k
 ---
 
 
-Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
+Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus"){:rel="external"} for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
 <figure>
     <a href="https://disqus.com/">
@@ -35,7 +35,7 @@ In this article I’m going to run through how I manage my comments section from
 
 {% include content/heading.html title='The Cons of Disqus' id='cons' %}
 
-- The greatest disadvantage of using *Disqus* may or may not be obvious, but it means you’re locked into using *Disqus* for your comments. *Disqus* do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options") and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
+- The greatest disadvantage of using *Disqus* may or may not be obvious, but it means you’re locked into using *Disqus* for your comments. *Disqus* do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options"){:rel="external"} and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"){:rel="external"}, but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with *Disqus* in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
 - Another issue with *Disqus* that isn’t terribly relevant anymore today, outside the context of a few edge case users, is that *Disqus* relies on JavaScript to inject your comments and commenting form onto your page—users with JavaScript turned off won’t be able to comment. I imagine there are also some aggressive ad-block browser plugins which would disallow *Disqus* from loading, but they’re probably also an edge case. In the case that the user doesn’t have JavaScript turned on, a message is displayed using a `noscript` tag.
 - It’s beyond my knowledge how caching is affected by *Disqus*—whether or not it is cached, or available to be cached offline—but as the movement to bring offline support to the web ramps up, this could present an issue.
@@ -64,7 +64,7 @@ First, let’s look at some statistics for loading *Disqus* comments on page loa
 
 By and large, this isn’t a massive hit. But we can *almost* always make things faster. I think it comes down what content is important—most people don’t comment on my articles, which begs the question: do most people care about the comments? That’s a difficult question to answer, but I think the point to drive home is that most people seem not to need the comments section—they’re here to read the articles. Maybe that will change over time, but with a mobile first approach, it’s important to consider what constraints mobile users could be under; namely, poor Internet connection speed and low processing power. The number of users browsing on mobile phones and tablets has only escalated in recent years, and we should be able to cater to their needs in ways other than just building responsively.
 
-<blockquote><p>You shouldn’t impede your users access to your content by requiring them to download things that do not support it. Related articles, comments etc, these are secondary to the content itself, so if the user wants to see that they’ll be happy to exchange a single click over more DB queries at run time, or additional HTTP requests and JS interpretation. Essentially, build it progressively enhanced.</p><cite><a href="http://surfthedream.com.au/" rel="external">Justin Avery</a> of <a href="http://responsivedesign.is/" rel="external">Responsive Web Design</a></cite></blockquote>
+<blockquote><p>You shouldn’t impede your users access to your content by requiring them to download things that do not support it. Related articles, comments etc, these are secondary to the content itself, so if the user wants to see that they’ll be happy to exchange a single click over more DB queries at run time, or additional HTTP requests and JS interpretation. Essentially, build it progressively enhanced.</p><cite><a rel="external" href="http://surfthedream.com.au/">Justin Avery</a> of <a rel="external" href="http://responsivedesign.is/">Responsive Web Design</a></cite></blockquote>
 
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 
@@ -143,7 +143,7 @@ What we’re doing here is:
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
-<aside><p>Check out the support for <a href="http://caniuse.com/#search=onhashchange">onhashchange on CanIUse</a> before jumping in too deep!</p></aside>
+<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#search=onhashchange">onhashchange on CanIUse</a> before jumping in too deep!</p></aside>
 
 {% highlight javascript %}
 var commentsHash = ['#comment', '#disqus_thread'];
@@ -305,14 +305,14 @@ As we saw in [the statistics](#the-weigh-in "The Weigh In") of *Disqus’* impac
 --------
 
 
-We still have a small thorn when it comes to users without JavaScript enabled. Of course, the `noscript` tag will display a message, <q>Please enable JavaScript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, *Disqus* have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](https://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without JavaScript enabled anyway.
+We still have a small thorn when it comes to users without JavaScript enabled. Of course, the `noscript` tag will display a message, <q>Please enable JavaScript to view comments,</q> but there’s no way for those users to view the comments. On the other hand, *Disqus* have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven"){:rel="external"} for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](https://jekyllrb.com/ "Jekyll"){:rel="external"}) dynamically; furthermore, these pages don’t work without JavaScript enabled anyway.
 
-[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as *Disqus*, but it works without JavaScript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if *Disqus* was able to give a similar URL back in the case where JavaScript is disabled, but as it’s an external service, this doesn’t seem possible without JavaScript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope *Disqus* implements something like this soon.
+[A List Apart](http://alistapart.com "A List Apart"){:rel="external"} has a pretty nice solution to this in the same vein as *Disqus*, but it works without JavaScript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"){:rel="external"}. Maybe if *Disqus* was able to give a similar URL back in the case where JavaScript is disabled, but as it’s an external service, this doesn’t seem possible without JavaScript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope *Disqus* implements something like this soon.
 
 
 --------
 
 
-Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a JavaScript wizard and close friend of mine, for helping me achieve this solution.
+Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"){:rel="external"}, a JavaScript wizard and close friend of mine, for helping me achieve this solution.
 
 Let me know, as always, [down below](#comments "Jump to the comments") *(treat that link as a proof of concept)* if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!

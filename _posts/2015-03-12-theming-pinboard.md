@@ -20,7 +20,7 @@ shorturl: 1faeu
 ---
 
 
-I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com):
+I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com){:rel="external"} and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman){:rel="external"} to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com){:rel="external"}:
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>Pinboard implemented their own simpler layout model & used canvas for the drawing which is GPU-backed.</p>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>
 <noscript>Please enable JavaScript to to see Twitter-specific components.</noscript>
@@ -32,7 +32,7 @@ Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. 
 
 *Okay then.*
 
-Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-than-ideal design of *Pinboard*, which I use mostly to archive and bookmark pages on the web I don’t want to lose. You can read more about what *Pinboard* is useful for [here](https://pinboard.in/tour).
+Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-than-ideal design of *Pinboard*, which I use mostly to archive and bookmark pages on the web I don’t want to lose. You can read more about what *Pinboard* is useful for [here](https://pinboard.in/tour){:rel="external"}.
 
 <figure>
     <a href="http://pinboard.in">
@@ -44,7 +44,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 {% include content/heading.html title='The First Step' %}
 
-<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a href="http://www.csszengarden.com">CSS Zen Garden</a> or <a href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
+<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a rel="external" href="http://www.csszengarden.com">CSS Zen Garden</a> or <a rel="external" href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
@@ -68,7 +68,7 @@ So it was important for me to make these parts distinct in the new design, whils
 
 That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
 
-Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe), [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish), and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
+Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org){:rel="external"}, a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe){:rel="external"}, [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish){:rel="external"}, and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/){:rel="external"}) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
 
 <figure>
     <a href="http://userstyles.org">
@@ -85,14 +85,14 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 {% endhighlight %}
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="http://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a rel="external" href="http://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a rel="external" href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com){:rel="external"}, so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net){:rel="external"}.
 
 
 {% include content/heading.html title='Good old Brass Tacks' id='brass-tacks' %}
 
-You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([please comment if you do](#comments)).
+You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories){:rel="external"}. If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([please comment if you do](#comments)).
 
-I took a look at a few of the top plugins available under the [*Pinboard* category](https://userstyles.org/styles/browse/pinboard) to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc.
+I took a look at a few of the top plugins available under the [*Pinboard* category](https://userstyles.org/styles/browse/pinboard){:rel="external"} to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc.
 
 After tinkering with my own file for a few days and experimenting through daily use, I came up with what I think is a pretty decent, clean design:
 
@@ -166,7 +166,7 @@ html {
 @import url("//chrisburnell.com/css/normalize.min.css");
 {% endhighlight %}
 
-- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](http://www.google.com/fonts) with <samp>@import</samp>:
+- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](http://www.google.com/fonts){:rel="external"} with <samp>@import</samp>:
 
 {% highlight css %}
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600");
@@ -242,6 +242,6 @@ html {
 
 I’m not trying to point any fingers, but there’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. We need to educate our peers, colleagues, and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
 
-I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl) article in Smashing Magazine, [Design Last](http://www.smashingmagazine.com/2015/02/20/design-last), are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
+I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl){:rel="external"} article in Smashing Magazine, [Design Last](http://www.smashingmagazine.com/2015/02/20/design-last){:rel="external"}, are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
 
 If all we’re doing is changing a few colours, fonts, and sizes of elements on websites we use everyday, and finding it to be a cumbersome task, imagine the difficulty the developers of these websites face when updating their own websites. This isn’t the foundation for the web I want to use and build for in the future. We can do better.
