@@ -212,7 +212,7 @@ $transition-function: ease !default;
 /// @see {Function} z-index
 $z-indexes: (
     "below":  -1,
-    "root": 0,
+    "root":    0,
     "default": 1,
     "above":   2
 ) !default;

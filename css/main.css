@@ -846,7 +846,7 @@ blockquote {
   :lang(de) blockquote {
     quotes: "„" "“" "‚" "‘"; }
   :lang(fr) blockquote {
-    quotes: "« " " »" "‹ " " ›"; }
+    quotes: "« " " »" "‹ " " ›"; }
   @media (max-width: 500px) {
     blockquote {
       margin-left: 1.25rem;
@@ -877,7 +877,7 @@ q {
   :lang(de) q {
     quotes: "„" "“" "‚" "‘"; }
   :lang(fr) q {
-    quotes: "« " " »" "‹ " " ›"; }
+    quotes: "« " " »" "‹ " " ›"; }
 
 /**
  * Inline Content Elements
