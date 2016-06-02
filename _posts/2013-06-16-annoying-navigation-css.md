@@ -32,4 +32,4 @@ This is a User Experience or Accessibility issue. Anything we can do to make our
 
 {% include content/heading.html title='Don’t throw away your visitors!' id='dont-throw-away-visitors' %}
 
-Check me out [on CodePen](http://codepen.io/chrisburnell "Chris Burnell on Codepen"), if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](http://blog.codepen.io/rodeo/ "The Pattern Rodeo") if your motivation needs a kick up the rear!
+Check me out [on CodePen](http://codepen.io/chrisburnell "Chris Burnell on Codepen"){:rel="external"}, if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](http://blog.codepen.io/rodeo/ "The Pattern Rodeo"){:rel="external"} if your motivation needs a kick up the rear!

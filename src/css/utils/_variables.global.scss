@@ -167,7 +167,7 @@ $font-family-beta: "proxima-nova", sans-serif !default;
 /// @require {Variable} $font-family-beta
 $font-family-gamma: $font-family-beta !default;
 /// @type List
-$font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Courier, monospace !default;
+$font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace !default;
 /// @type Map
 /// @prop {String} key - Font Family name
 /// @prop {Number} value - Font Family value

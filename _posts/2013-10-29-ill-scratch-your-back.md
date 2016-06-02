@@ -28,7 +28,7 @@ So, for example, if an editor creates an article with lists and pictures, it’s
 
 {% include content/heading.html title='Let’s look at some code' id='lets-look-at-some-code' %}
 
-Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css")). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
+Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css"){:rel="external"}). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
 {% highlight html %}
 <ol class="table-of-contents">
@@ -81,7 +81,7 @@ Normally in CSS, we would use `.` to target an element by *class name*, but we c
 --------
 
 
-In this simple way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector") for the specifics.
+In this simple way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector"){:rel="external"} for the specifics.
 
 
 --------

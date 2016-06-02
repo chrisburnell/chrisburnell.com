@@ -14,7 +14,7 @@ comments: true
 ---
 
 
-I was reading an insightful [post by Remy Sharp](https://remysharp.com/2016/01/20/why-i-love-working-with-the-web) earlier today, and it got me thinking about what I do; the web and my role in it all; and what about me separates me from the way the *average user* might view the web?
+I was reading an insightful [post by Remy Sharp](https://remysharp.com/2016/01/20/why-i-love-working-with-the-web){:rel="external"} earlier today, and it got me thinking about what I do; the web and my role in it all; and what about me separates me from the way the *average user* might view the web?
 
 It’s an interesting concept, and it feels a bit like trying to locate an electron—by trying to quantify things I ended up changing the thing I was trying to quantify. Or like putting yourself in someone else’s shoes—it can be done, to an extent, but a complete understanding is impossible.
 
