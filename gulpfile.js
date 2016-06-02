@@ -42,7 +42,7 @@ var stylelintRules = {
     'rules': {
         'color-hex-case': 'lower',
         'font-weight-notation': 'numeric',
-        'function-url-quotes': 'double',
+        'function-url-quotes': 'always',
         'number-leading-zero': 'always',
         'number-max-precision': 3,
         'number-zero-length-no-unit': true,
