@@ -106,6 +106,12 @@ _includes
 
 ```text
 src/css
+├── abstracts
+│   ├── _functions.scss
+│   ├── _mixins.scss
+│   ├── _variables.branding.scss
+│   ├── _variables.code.scss
+│   └── _variables.global.scss
 ├── base
 │   ├── _anchors.scss
 │   ├── _buttons.scss
@@ -120,6 +126,7 @@ src/css
 │   ├── _comments.scss
 │   ├── _content-list.scss
 │   ├── _footer.scss
+│   ├── _helpers.scss
 │   ├── _icons.scss
 │   ├── _logo.scss
 │   ├── _media.scss
@@ -138,13 +145,6 @@ src/css
 │   └── _wrap.scss
 ├── pages
 │   └── _styleguide.scss
-├── utils
-│   ├── _functions.scss
-│   ├── _helpers.scss
-│   ├── _mixins.scss
-│   ├── _variables.branding.scss
-│   ├── _variables.code.scss
-│   └── _variables.global.scss
 ├── vendors
 │   ├── _box-sizing.scss
 │   ├── _include-media.scss
