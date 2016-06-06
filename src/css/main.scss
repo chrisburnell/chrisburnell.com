@@ -39,6 +39,7 @@
 @import "layout/footer";
 
 /// COMPONENTS
+@import "components/helpers";
 @import "components/logo";
 @import "components/nav-primary";
 @import "components/article";
@@ -58,6 +59,3 @@
 
 /// PAGES
 @import "pages/styleguide";
-
-/// HELPERS/TRUMPS
-@import "components/helpers";

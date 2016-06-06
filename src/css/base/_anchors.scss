@@ -18,10 +18,6 @@ a {
         border-bottom-color: $color-text-light;
     }
 
-    &:visited {
-        color: mix($color-black, $color-brand, 10%);
-    }
-
     &:hover,
     &:focus,
     &:active {
@@ -29,6 +25,8 @@ a {
     }
 
     &:visited {
+        color: mix($color-black, $color-brand, 10%);
+
         &:hover,
         &:focus,
         &:active {

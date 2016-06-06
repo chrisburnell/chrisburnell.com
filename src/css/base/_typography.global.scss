@@ -152,19 +152,23 @@ h4 {
 /**
  * Heading - Epsilon
  */
-h5,
 %epsilon {
     font-size: $font-size-default;
     line-height: $line-height-small;
+}
+h5 {
+    @extend %epsilon;
 }
 
 /**
  * Heading - Zeta
  */
-h6,
 %zeta {
     font-size: $font-size-default;
     line-height: $line-height-small;
+}
+h6 {
+    @extend %zeta;
 }
 
 p {
@@ -576,7 +580,7 @@ time {
 hr {
     background: $color-black--10-percent;
     width: 100%;
-    height: 0.125rem;
+    height: $border-width-thin;
     display: block;
     border: 0;
     margin: $measure-large 0;

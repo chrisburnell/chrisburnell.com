@@ -200,7 +200,7 @@ $letter-spacing-primary: 2px !default;
 
 /// @type Length
 /// @see {Mixin} transition
-$transition-time: 0.2s !default;
+$transition-time: 0.200s !default;
 /// @type String
 /// @see {Mixin} transition
 $transition-function: ease !default;
@@ -211,10 +211,13 @@ $transition-function: ease !default;
 /// @prop {Number} value - z-index value
 /// @see {Function} z-index
 $z-indexes: (
-    "below":  -1,
-    "root":    0,
-    "default": 1,
-    "above":   2
+    "below":       -1,
+    "root":         0,
+    "default":      1,
+    "above":        2,
+    "modal":        3,
+    "dialog":       4,
+    "notification": 5
 ) !default;
 
 

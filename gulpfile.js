@@ -204,7 +204,7 @@ gulp.task('js', ['js-compile'], function() {
 // -----------------------------------------------------------------------------
 
 // Watch files and perform the appropriate tasks
-gulp.task('watch', function() {
+gulp.task('watch', ['css', 'js'], function() {
     watch(paths.src.css + '**/*.scss', function() {
         gulp.start('css');
     });
