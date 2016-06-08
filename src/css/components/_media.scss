@@ -5,6 +5,20 @@
 
 
 /**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+    width: 100%;
+    border: 0;
+    overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $measure-medium;
+    contain: strict;
+}
+
+/**
  * Contains embedded media properly and allows them to be dynamically resized
  * inside a set aspect ratio container.
  */

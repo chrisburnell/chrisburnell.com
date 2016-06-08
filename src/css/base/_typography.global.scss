@@ -11,11 +11,6 @@ html {
      -webkit-font-smoothing: antialiased;
 }
 
-body {
-    background-color: $color-white;
-    color: $color-text;
-}
-
 /**
  * Content Elements
  */
@@ -590,20 +585,6 @@ hr {
             margin-top: $measure-medium;
         }
     }
-}
-
-/**
- * Fix `iframe` and `video`
- */
-iframe,
-video {
-    width: 100%;
-    border: 0;
-    overflow-x: hidden;
-}
-iframe {
-    margin-bottom: $measure-medium;
-    contain: strict;
 }
 
 /**

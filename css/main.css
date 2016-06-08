@@ -364,6 +364,10 @@ html {
   min-height: 100%;
   overflow-y: scroll; }
 
+body {
+  background-color: #f9f9f9;
+  color: #4f4f4f; }
+
 .svg--master {
   width: 1px !important;
   height: 1px !important;
@@ -378,10 +382,6 @@ html {
   font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
-
-body {
-  background-color: #f9f9f9;
-  color: #4f4f4f; }
 
 /**
  * Content Elements
@@ -916,19 +916,6 @@ hr {
     figure:not([class]) + hr,
     p + hr {
       margin-top: 1.25rem; } }
-
-/**
- * Fix `iframe` and `video`
- */
-iframe,
-video {
-  width: 100%;
-  border: 0;
-  overflow-x: hidden; }
-
-iframe {
-  margin-bottom: 1.25rem;
-  contain: strict; }
 
 /**
  * Mouse Selection
@@ -2507,6 +2494,19 @@ code[data-lang] {
 .icon--tag {
   width: 40px;
   fill: #f9f9f9; }
+
+/**
+ * Fix `iframe` and `video`
+ */
+iframe,
+video {
+  width: 100%;
+  border: 0;
+  overflow-x: hidden; }
+
+iframe {
+  margin-bottom: 1.25rem;
+  contain: strict; }
 
 /**
  * Contains embedded media properly and allows them to be dynamically resized

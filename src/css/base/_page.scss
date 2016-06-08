@@ -11,6 +11,11 @@ html {
     overflow-y: scroll;
 }
 
+body {
+    background-color: $color-white;
+    color: $color-text;
+}
+
 // Hide the master SVG injected immediately below `<body>`
 .svg--master {
     @include visually-hidden;
