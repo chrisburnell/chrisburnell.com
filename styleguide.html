@@ -188,41 +188,41 @@ twitter: true
 {% include content/heading.html title='Table' %}
 
 <figure>
-    <table class="highlight">
+    <table class="highlight" role="grid" aria-readonly="true">
         <thead>
-            <tr>
-                <th>Heading A</th>
-                <th>Heading B</th>
-                <th>Heading C</th>
-                <th>Heading D</th>
+            <tr role="row">
+                <th role="columnheader">Heading A</th>
+                <th role="columnheader">Heading B</th>
+                <th role="columnheader">Heading C</th>
+                <th role="columnheader">Heading D</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Cell A-1</td>
-                <td>Cell B-1</td>
-                <td>Cell C-1</td>
-                <td>Cell D-1</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-1</td>
+                <td role="gridcell">Cell B-1</td>
+                <td role="gridcell">Cell C-1</td>
+                <td role="gridcell">Cell D-1</td>
             </tr>
-            <tr>
-                <td>Cell A-2</td>
-                <td>Cell B-2</td>
-                <td>Cell C-2</td>
-                <td>Cell D-2</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-2</td>
+                <td role="gridcell">Cell B-2</td>
+                <td role="gridcell">Cell C-2</td>
+                <td role="gridcell">Cell D-2</td>
             </tr>
-            <tr>
-                <td>Cell A-3</td>
-                <td>Cell B-3</td>
-                <td>Cell C-3</td>
-                <td>Cell D-3</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-3</td>
+                <td role="gridcell">Cell B-3</td>
+                <td role="gridcell">Cell C-3</td>
+                <td role="gridcell">Cell D-3</td>
             </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <th>Foot A</th>
-                <th>Foot B</th>
-                <th>Foot C</th>
-                <th>Foot D</th>
+            <tr role="row">
+                <th role="gridcell">Foot A</th>
+                <th role="gridcell">Foot B</th>
+                <th role="gridcell">Foot C</th>
+                <th role="gridcell">Foot D</th>
             </tr>
         </tfoot>
     </table>
@@ -232,46 +232,46 @@ twitter: true
 {% include content/heading.html title='Table with Alternating Rows' %}
 
 <figure>
-    <table class="zebra  highlight">
+    <table class="zebra  highlight" role="grid" aria-readonly="true">
         <thead>
-            <tr>
-                <th>Heading A</th>
-                <th>Heading B</th>
-                <th>Heading C</th>
+            <tr role="row">
+                <th role="columnheader">Heading A</th>
+                <th role="columnheader">Heading B</th>
+                <th role="columnheader">Heading C</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Cell A-1</td>
-                <td>Cell B-1</td>
-                <td>Cell C-1</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-1</td>
+                <td role="gridcell">Cell B-1</td>
+                <td role="gridcell">Cell C-1</td>
             </tr>
-            <tr>
-                <td>Cell A-2</td>
-                <td>Cell B-2</td>
-                <td>Cell C-2</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-2</td>
+                <td role="gridcell">Cell B-2</td>
+                <td role="gridcell">Cell C-2</td>
             </tr>
-            <tr>
-                <td>Cell A-3</td>
-                <td>Cell B-3</td>
-                <td>Cell C-3</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-3</td>
+                <td role="gridcell">Cell B-3</td>
+                <td role="gridcell">Cell C-3</td>
             </tr>
-            <tr>
-                <td>Cell A-4</td>
-                <td>Cell B-4</td>
-                <td>Cell C-4</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-4</td>
+                <td role="gridcell">Cell B-4</td>
+                <td role="gridcell">Cell C-4</td>
             </tr>
-            <tr>
-                <td>Cell A-5</td>
-                <td>Cell B-5</td>
-                <td>Cell C-5</td>
+            <tr role="row">
+                <td role="gridcell">Cell A-5</td>
+                <td role="gridcell">Cell B-5</td>
+                <td role="gridcell">Cell C-5</td>
             </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <th>Foot A</th>
-                <th>Foot B</th>
-                <th>Foot C</th>
+            <tr role="row">
+                <th role="gridcell">Foot A</th>
+                <th role="gridcell">Foot B</th>
+                <th role="gridcell">Foot C</th>
             </tr>
         </tfoot>
     </table>
@@ -281,35 +281,35 @@ twitter: true
 {% include content/heading.html title='Table with Subheadings' %}
 
 <figure>
-    <table class="highlight">
+    <table class="highlight" role="grid" aria-readonly="true">
         <thead>
-            <tr>
+            <tr role="row">
                 <th></th>
-                <th>Heading A</th>
-                <th>Heading B</th>
-                <th>Heading C</th>
+                <th role="columnheader">Heading A</th>
+                <th role="columnheader">Heading B</th>
+                <th role="columnheader">Heading C</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th>Subheading i</td>
-                <td>Cell A-i</td>
-                <td>Cell B-i</td>
-                <td>Cell C-i</td>
+            <tr role="row">
+                <th role="rowheader">Subheading i</td>
+                <td role="gridcell">Cell A-i</td>
+                <td role="gridcell">Cell B-i</td>
+                <td role="gridcell">Cell C-i</td>
             </tr>
-            <tr>
-                <th>Subheading ii</td>
-                <td>Cell A-ii</td>
-                <td>Cell B-ii</td>
-                <td>Cell C-ii</td>
+            <tr role="row">
+                <th role="rowheader">Subheading ii</td>
+                <td role="gridcell">Cell A-ii</td>
+                <td role="gridcell">Cell B-ii</td>
+                <td role="gridcell">Cell C-ii</td>
             </tr>
         </tbody>
         <tfoot>
-            <tr>
+            <tr role="row">
                 <th></th>
-                <th>Foot A</th>
-                <th>Foot B</th>
-                <th>Foot C</th>
+                <th role="gridcell">Foot A</th>
+                <th role="gridcell">Foot B</th>
+                <th role="gridcell">Foot C</th>
             </tr>
         </tfoot>
     </table>
@@ -420,22 +420,22 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Buttons' %}
 
 <figure>
-    <button type="button">Button</button>
-    <button type="button" disabled>Button</button>
+    <button type="button" role="button">Button</button>
+    <button type="button" role="button" disabled>Button</button>
 </figure>
 
 <figure>
-    <button type="button" class="button--small">Button</button>
-    <button type="button" class="button--small" disabled>Button</button>
+    <button type="button" class="button--small" role="button">Button</button>
+    <button type="button" class="button--small" role="button" disabled>Button</button>
 </figure>
 
 
 {% include content/heading.html title='Buttons List' %}
 
 <nav class="buttons-list" role="navigation">
-    <button type="button">Button</button>
-    <button type="button">Button</button>
-    <button type="button">Button</button>
+    <button type="button" role="button">Button</button>
+    <button type="button" role="button">Button</button>
+    <button type="button" role="button">Button</button>
 </nav>
 
 

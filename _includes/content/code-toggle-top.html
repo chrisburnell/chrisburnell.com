@@ -10,4 +10,4 @@
 {% endcomment %}
 {% assign code_toggle_count = code_toggle_count | plus: 1 %}
 <div class="code-toggle" id="code-toggle--{{ code_toggle_count }}" aria-expanded="false" aria-live="polite" aria-labelledby="show-code-{{ code_toggle_count }}">
-    <input type="checkbox" class="code-toggle-input" id="highlight--{{ code_toggle_count }}" name="highlight--{{ code_toggle_count }}" aria-hidden="true">
+    <input type="checkbox" class="code-toggle-input" id="highlight--{{ code_toggle_count }}" name="highlight--{{ code_toggle_count }}" role="checkbox" aria-hidden="true">
