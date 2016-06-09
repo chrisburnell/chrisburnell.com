@@ -96,7 +96,7 @@
 }
 @each $body-class, $navigation-class in $navigation-links {
     .page--#{$body-class} .nav-primary--#{$navigation-class} a {
-        @extend %nav-primary-anchor;
+        @extend %nav-primary-anchor !optional;
     }
 }
 
@@ -113,6 +113,6 @@
 }
 @each $body-class, $navigation-class in $navigation-links {
     .page--#{$body-class} .nav-primary--#{$navigation-class} a::after {
-        @extend %nav-primary-anchor-arrow;
+        @extend %nav-primary-anchor-arrow !optional;
     }
 }

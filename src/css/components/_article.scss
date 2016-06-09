@@ -32,7 +32,7 @@
  * Page Introduction / Description
  */
 .lede {
-    @extend %gamma;
+    @extend %gamma !optional;
     margin-bottom: $measure-large;
 
     @include media("<=medium") {

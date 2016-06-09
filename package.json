@@ -7,7 +7,7 @@
     "main": "gulpfile.js",
     "devDependencies": {
         "autoprefixer": "6.3.6",
-        "cssnano": "3.6.2",
+        "cssnano": "3.7.0",
         "gulp": "3.9.1",
         "gulp-concat": "2.6.0",
         "gulp-util": "3.0.7",

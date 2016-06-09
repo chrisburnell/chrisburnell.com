@@ -6,7 +6,7 @@
 
 button,
 .button {
-    @extend %button-elements;
+    @extend %button-elements !optional;
     @include non-selectable;
     @include border-radius(thin);
     @include case(uppercase);

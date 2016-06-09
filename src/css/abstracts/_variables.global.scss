@@ -37,6 +37,12 @@ $measure-small:  0.625rem !default;
 $measure-medium: 1.250rem !default;
 /// @type Length
 $measure-large:  2.250rem !default;
+/// @type Length
+$measure-small-relative:  0.625em !default;
+/// @type Length
+$measure-medium-relative: 1.250em !default;
+/// @type Length
+$measure-large-relative:  2.250em !default;
 
 
 /// @type Map
@@ -44,10 +50,10 @@ $measure-large:  2.250rem !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    "5-percent":  0.05,
-    "10-percent": 0.10,
-    "70-percent": 0.70,
-    "90-percent": 0.90
+    "5-percent":  0.050,
+    "10-percent": 0.100,
+    "70-percent": 0.700,
+    "90-percent": 0.900
 ) !default;
 
 
