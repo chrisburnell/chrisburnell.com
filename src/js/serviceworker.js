@@ -1,6 +1,6 @@
 /*!
  * Service Worker
- * @author Chris Burnell <@iamchrisburnell>
+ * @author Chris Burnell <me@chrisburnell.com>
  */
 
 

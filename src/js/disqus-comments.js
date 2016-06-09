@@ -1,6 +1,6 @@
 /*!
  * Conditional comments for article pages
- * @author Chris Burnell <@iamchrisburnell>
+ * @author Chris Burnell <me@chrisburnell.com>
  */
 
 

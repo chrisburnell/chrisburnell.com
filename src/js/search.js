@@ -1,7 +1,7 @@
 /*!
  * A simple JSON search
  * @author Mat Hayward - Erskine Design (Original Author)
- * @author Chris Burnell (Slight, poor modifications) <@iamchrisburnell>
+ * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications) 
  */
 
 

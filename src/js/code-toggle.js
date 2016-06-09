@@ -1,6 +1,6 @@
 /*!
  * Code ARIA Toggling
- * @author Chris Burnell <@iamchrisburnell>
+ * @author Chris Burnell <me@chrisburnell.com>
  */
 
 
