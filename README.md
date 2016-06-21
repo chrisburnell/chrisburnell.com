@@ -3,9 +3,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/).
 
-*Version 2.8.0*
-
-[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
+![Version](https://img.shields.io/badge/version-2.8.0-blue.svg?style=flat-square)[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
 
 
 ## Table of Contents
