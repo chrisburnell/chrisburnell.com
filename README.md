@@ -167,6 +167,6 @@ serviceworker.min.js
 
 ## License
 
-[![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg)](LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg?style=flat-square)](LICENSE)
 
 The contents of this repository are licensed under the [CC-BY-NC-SA-4.0 Creative Commons License](LICENSE).
