@@ -3,6 +3,7 @@ layout: null
 searchable: false
 ---
 
+
 {% assign first = true %}
 [
 {% for page in site.pages %}

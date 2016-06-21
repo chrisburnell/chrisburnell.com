@@ -64,7 +64,7 @@ snippet of code on a project of your own. -->
 
 {% assign code_toggle_count = 0 %}
 
-<html lang="en"{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %}>
+<html lang="{{ site.language }}"{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %}>
 
 <head>
 
@@ -98,8 +98,8 @@ snippet of code on a project of your own. -->
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <link rel="shortcut icon" href="{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}">
 
     <link rel="author" href="/humans.txt">
 

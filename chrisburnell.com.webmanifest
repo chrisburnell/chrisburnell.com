@@ -1,0 +1,33 @@
+---
+layout: null
+searchable: false
+---
+
+
+{
+    "dir": "ltr",
+    "lang": "{{ site.language }}",
+    "name": "{{ site.title }} – {{ site.tagline }}",
+    "short_name": "{{ site.title }}",
+    "description": "{{ site.lede }}",
+    "scope": "/",
+    "display": true,
+    "orientation": "any",
+    "start_url": "/",
+    "theme_color": "{{ site.color_brand }}",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "background_color": "transparent",
+    "icons": [
+        {
+            "src": "{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}",
+            "type": "image/png",
+            "sizes": "256x256"
+        }
+    ]
+}

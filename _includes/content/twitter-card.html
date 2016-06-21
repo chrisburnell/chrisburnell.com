@@ -2,22 +2,16 @@
 
   This include lets you easily embed a Twitter Card.
 
-  @param {String} slug *
-  @param {Number} height *
-  @param {String} theme [119]
-  @param {String} type [result]
-  @param {String} user [chrisburnell]
+  @param {String} content *
 
   @example
-    {% include content/codepen.html slug='lBJnz' height='500' theme='tabfree' %}
-    // <pre class="codepen" data-slug-hash="lBJnz" data-type="result" data-theme-id="8863" data-user="chrisburnell" data-height="500" data-safe="true">
-    //     <code></code>
-    //     <a href="//codepen.io/chrisburnell/pen/lBJnz">Check out this Pen!</a>
-    // </pre>
-    // <noscript>Please enable JavaScript to view this Pen.</noscript>
+    {% include content/twitter-card.html content='<p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a>' %}
+    // <blockquote class="twitter-tweet" lang="en" data-conversation="none">
+    //     <p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a>
+    // </blockquote>
 
 {% endcomment %}
-<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<blockquote class="twitter-tweet" lang="{{ site.language }}" data-conversation="none">
     {{ include.content }}
 </blockquote>
 <noscript>Please enable JavaScript to to see this Twitter Card.</noscript>

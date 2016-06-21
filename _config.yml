@@ -41,6 +41,7 @@ codepen:
     tabfree: 8863
 
 timezone: Europe/London
+language: en
 
 incremental: true
 destination: ./_site
