@@ -45,12 +45,9 @@
     }
 }
 .lede--featured {
+    max-width: 24em;
     font-size: $font-size-large;
     font-weight: $font-weight-bold;
-
-    .page--home & {
-        max-width: 24em;
-    }
 }
 
 /**

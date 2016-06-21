@@ -45,7 +45,7 @@ var stylelintRules = {
         'function-url-quotes': 'always',
         'number-leading-zero': 'always',
         'number-max-precision': 3,
-        'number-zero-length-no-unit': true,
+        'length-zero-no-unit': true,
         'time-no-imperceptible': true,
         'block-no-single-line': true,
         'comment-whitespace-inside': 'always',
