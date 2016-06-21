@@ -5,7 +5,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 
 *Version 2.8.0*
 
-[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
+[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.github.io.svg?branch=master?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
 
 
 ## Table of Contents
