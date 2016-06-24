@@ -19,19 +19,6 @@ searchable: no-content
 
 
 <h3>
-    <a href="/talks">Latest Talks</a>
-</h3>
-
-<ol id="talks" class="small-content-list" role="list">
-    {% for page in site.categories.talk limit: 2 %}
-        {% include components/small-content-list-item.html %}
-    {% endfor %}
-</ol>
-
-{% include components/nav-secondary.html type='archives' include='talks' %}
-
-
-<h3>
     <a href="/pens">Featured Pens</a>
 </h3>
 
@@ -42,6 +29,19 @@ searchable: no-content
 </ol>
 
 {% include components/nav-secondary.html type='archives' include='pens' %}
+
+
+<h3>
+    <a href="/talks">Latest Talks</a>
+</h3>
+
+<ol id="talks" class="small-content-list" role="list">
+    {% for page in site.categories.talk limit: 2 %}
+        {% include components/small-content-list-item.html %}
+    {% endfor %}
+</ol>
+
+{% include components/nav-secondary.html type='archives' include='talks' %}
 
 
 <h3>

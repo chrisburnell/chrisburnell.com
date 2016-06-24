@@ -16,7 +16,7 @@
         {% endif %}
         <h4 class="title">{{ page.title }}</h4>
         {% if page.lede %}
-            <p class="lede">{{ page.lede | truncatewords: 20 | replace: '....', '...' | replace: ',...', '...' }}</p>
+            <p class="lede">{{ page.lede | truncatewords: 20 }}</p>
         {% elsif page.categories contains 'link' %}
             <p class="lede"><em>Shared Link</em></p>
         {% elsif page.categories contains 'pen' %}

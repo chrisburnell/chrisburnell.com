@@ -27,7 +27,7 @@ searchable: false
             "title": {{ page.title | jsonify }},
             "date": {{ page.date | jsonify }},
             "date_friendly": {{ page.date | date: '%d %b, %Y' | jsonify }},{% if page.lede %}
-            "lede": {{ page.lede | truncatewords: 20 |  replace: '....', '...' |  replace: ',...', '...' | jsonify }},{% endif %}
+            "lede": {{ page.lede | truncatewords: 20 | jsonify }},{% endif %}
             "categories": {{ page.categories | join:', ' | jsonify }},
             "tags": {{ page.tags | join:', ' | jsonify }}
             {% if page.location %},
