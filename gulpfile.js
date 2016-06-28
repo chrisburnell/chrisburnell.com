@@ -197,7 +197,6 @@ gulp.task('css', ['css-compile'], function() {
 // JS task
 gulp.task('js', ['js-compile'], function() {
     gulp.start('js-loadcss');
-    gulp.start('js-serviceworker');
     gulp.start('js-typekit');
 });
 

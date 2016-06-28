@@ -12,8 +12,8 @@ lede: My name is <span class="canada">Chris Burnell</span>, and I’m a <span cl
 
 
 <figure>
-    <img src="/images/content/about-photo.png" alt=" " width="360" height="270">
-    <figcaption>My girlfriend, Rachel, and I (2014)</figcaption>
+    <img src="/images/rachel-and-i.png" alt=" ">
+    <figcaption>My girlfriend, Rachel, and I (July 2015)</figcaption>
 </figure>
 
 
