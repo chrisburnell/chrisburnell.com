@@ -9,9 +9,9 @@ searchable: no-content
     <a href="/articles">Latest Articles</a>
 </h3>
 
-<ol id="articles" class="content-list" role="list">
+<ol class="content-list" id="articles" role="list">
     {% for page in site.categories.article limit: 2 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -22,9 +22,9 @@ searchable: no-content
     <a href="/pens">Featured Pens</a>
 </h3>
 
-<ol id="pens" class="small-content-list" role="list">
+<ol class="small-content-list" id="pens" role="list">
     {% for page in site.categories.pen limit: 4 %}
-        {% include components/small-content-list-item.html %}
+        {% include components/item-small-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -35,9 +35,9 @@ searchable: no-content
     <a href="/talks">Latest Talks</a>
 </h3>
 
-<ol id="talks" class="small-content-list" role="list">
+<ol class="small-content-list" id="talks" role="list">
     {% for page in site.categories.talk limit: 2 %}
-        {% include components/small-content-list-item.html %}
+        {% include components/item-small-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -48,9 +48,9 @@ searchable: no-content
     <a href="/links">Shared Links</a>
 </h3>
 
-<ol id="links" class="small-content-list" role="list">
+<ol class="small-content-list" id="links" role="list">
     {% for page in site.categories.link limit: 4 %}
-        {% include components/small-content-list-item.html %}
+        {% include components/item-small-content-list.html %}
     {% endfor %}
 </ol>
 

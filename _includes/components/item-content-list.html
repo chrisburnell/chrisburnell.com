@@ -1,0 +1,27 @@
+{% comment %}
+
+  Consolidate markup for Content List Items.
+
+{% endcomment %}
+{% if page.layout == 'post' %}
+    {% assign itemtype = "TechArticle" %}
+{% elsif page.layout == "page" %}
+    {% assign itemtype = "Article" %}
+{% endif %}
+<li role="listitem">
+    <article role="article" itemscope itemtype="http://schema.org/{{ itemtype }}">
+        <h2 class="title">
+            <a class="title-anchor" href="{{ page.url }}" tabindex="-1">{{ page.title }}</a>
+        </h2>
+        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
+        {% if page.lede %}
+            <p class="lede">{{ page.lede }}</p>
+        {% elsif page.categories contains 'talk' and page.location %}
+            <p class="lede">Given at {{ page.location }}.</p>
+        {% endif %}
+        <a class="button" href="{{ page.url }}"><span>Continue reading ‘{{ page.title }}’ – </span>Read Full Article</a>
+        {% if page.comments == true %}
+            <a class="comments-anchor" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">Leave a comment</a>
+        {% endif %}
+    </article>
+</li>

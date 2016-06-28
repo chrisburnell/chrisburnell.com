@@ -73,14 +73,14 @@ _includes
 │   ├── banner.html
 │   ├── comments-button.html
 │   ├── comments.html
-│   ├── content-list-item.html
-│   ├── feed-item.html
+│   ├── item-content-list.html
+│   ├── item-feed.html
 │   ├── main-aside.html
 │   ├── nav-primary.html
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
 │   ├── search-templates.html
-│   ├── small-content-list-item.html
+│   ├── item-small-content-list.html
 │   ├── widget-latest-articles.html
 │   ├── widget-latest-links.html
 │   ├── widget-latest-pens.html
@@ -118,7 +118,7 @@ src/css
 │   ├── _typography.code.scss
 │   └── _typography.global.scss
 ├── components
-│   ├── _article.scss
+│   ├── _content.scss
 │   ├── _author.scss
 │   ├── _code.scss
 │   ├── _comments.scss
@@ -136,7 +136,7 @@ src/css
 │   ├── _small-content-list.scss
 │   └── _widgets.scss
 ├── layout
-│   ├── _article.scss
+│   ├── _content.scss
 │   ├── _aside.scss
 │   ├── _footer.scss
 │   ├── _header.scss

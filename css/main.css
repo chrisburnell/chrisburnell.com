@@ -1484,18 +1484,18 @@ header {
       text-align: center; } }
 
 /**
- * The width of the articles is fluid, and always has padding on the left-hand
+ * The width of the content is fluid, and always has padding on the left-hand
  * side to make room for any `aside`, which can appear anywhere inside
- * `article`.
+ * `.content`.
  */
-article {
+.content {
   padding-top: 2.25rem;
   border-top: 0.25rem solid #5f8aa6; }
   @media (min-width: 769px) {
-    article {
+    .content {
       padding-left: 18.125rem; } }
   @media (max-width: 768px) {
-    article {
+    .content {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1507,7 +1507,7 @@ article {
 /**
  * The width of the asides is static above the medium breakpoint and always
  * floated within an article or list of articles. The math is calculated as in
- * `layout/_article.scss`.
+ * `layout/_content.scss`.
  */
 @media (min-width: 769px) {
   aside {

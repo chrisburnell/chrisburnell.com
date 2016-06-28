@@ -11,7 +11,7 @@
             {% unless current_list_count == max_list_count %}
                 {% unless page.path == current_path %}
                     {% assign current_list_count = current_list_count | plus: 1 %}
-                    {% include components/small-content-list-item.html %}
+                    {% include components/item-small-content-list.html %}
                 {% endunless %}
             {% endunless %}
         {% endfor %}

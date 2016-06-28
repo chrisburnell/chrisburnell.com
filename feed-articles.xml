@@ -11,5 +11,5 @@ category_path: '/articles'
 
 
 {% for page in site.categories.article %}
-    {% include components/feed-item.html %}
+    {% include components/item-feed.html %}
 {% endfor %}

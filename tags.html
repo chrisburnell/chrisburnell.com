@@ -19,7 +19,7 @@ lede: A list of tags and their counterparts.
     {% include content/heading.html title=tag_name id=tag %}
     <ol class="small-content-list" role="list">
         {% for page in site.tags[tag] %}
-            {% include components/small-content-list-item.html %}
+            {% include components/item-small-content-list.html %}
         {% endfor %}
     </ol>
 {% endfor %}
