@@ -44,7 +44,7 @@ h6 {
  * Heading - Alpha
  */
 %alpha {
-    @include case(uppercase, $letter-spacing-primary);
+    @include case(uppercase, $letter-spacing-uppercase);
     font-family: $font-family-alpha;
     font-size: $font-size-alpha;
     line-height: 1;
