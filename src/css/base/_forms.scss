@@ -4,7 +4,6 @@
 ////
 
 
-input[type="color"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -22,16 +21,19 @@ input[type="url"],
 textarea {
     @extend %form-elements !optional;
     @include border-radius(thin);
-    @include transition(background-color, border-color);
-    @include will-change(background-color, border-color);
+    @include transition(border-color);
+    @include will-change(border-color);
     box-sizing: inherit !important;
     padding: 0.5rem;
     border: $border-width-thin solid $color-text-light;
     outline-style: none;
     font-family: $font-family-gamma;
 
+    &:hover {
+        border-color: $color-brand--light;
+    }
+
     &:focus {
-        background-color: transparent;
         border-color: $color-brand;
     }
 

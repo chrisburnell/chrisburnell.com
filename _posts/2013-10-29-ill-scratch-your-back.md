@@ -21,7 +21,7 @@ shorturl: 82n3v
 ---
 
 
-When building a site for a client who isn’t very tech-savvy, it’s important that they’re able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it’s then important that the CSS we write matches the output of the editor’s content. Fortunately, most of the time the editor will spit out plain and simple HTML with all the normal tags you’re used to.
+When building a site for a client who isn’t very tech-savvy, it’s important that they’re able to publish their content with the variety of options to style and format their text that are available on the web, usually in the form of a <abbr title="What You See Is What You Get">WYSIWYG editor</abbr>, which saves them the trouble of learning how to write HTML (and retain that knowledge). As a web developer, it’s then important that the CSS we write matches the output of the editor’s content. Fortunately, most of the time the editor will spit out plain old HTML with all the normal tags you’re used to.
 
 So, for example, if an editor creates an article with lists and pictures, it’s important that our code doesn’t mistake these basic elements for something else, and apply extra styles which we’re trying to apply to a smaller subset of the given element, which we usually denote with a <dfn title="A class is a label which is assigned to element(s) to distinguish it from like elements.">class</dfn>.
 
@@ -81,7 +81,7 @@ Normally in CSS, we would use `.` to target an element by *class name*, but we c
 --------
 
 
-In this simple way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector"){:rel="external"} for the specifics.
+In this way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector"){:rel="external"} for the specifics.
 
 
 --------

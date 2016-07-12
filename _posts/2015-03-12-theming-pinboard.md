@@ -174,7 +174,7 @@ html {
 
 - changing the base <samp>font-size</samp> to <samp>16px</samp> and changing many properties to be relative to the <samp>font-size</samp> with <samp>ems</samp> and <samp>rems</samp>
 - changing a handful of action buttons from textual links to icon links: star, edit, delete, mark as read
-    - for this I used a simple CSS trick to take the element’s text out of the flow and hide it, and instead display a base64-encoded <samp>background-image</samp> with an arbitary <samp>width</samp>, <samp>height</samp>, and <samp>background-size</samp>
+    - for this I used a CSS trick to take the element’s text out of the flow and hide it, and instead display a base64-encoded <samp>background-image</samp> with an arbitary <samp>width</samp>, <samp>height</samp>, and <samp>background-size</samp>
 
 {% include content/code-toggle-top.html %}
 {% highlight css %}

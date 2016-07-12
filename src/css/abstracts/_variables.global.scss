@@ -58,11 +58,6 @@ $opacities: (
 
 
 /// @type Color
-$color-brand: #5f8aa6 !default;
-/// @type Color
-/// @require {Variable} $color-brand
-$color-brand--10-percent: rgba($color-brand, map-get($opacities, "10-percent")) !default;
-/// @type Color
 $color-text: #4f4f4f !default;
 /// @type Color
 $color-text-alt: #737373 !default;
@@ -76,14 +71,30 @@ $color-light-gray: #ededed !default;
 $color-black: #060606 !default;
 /// @type Color
 /// @require {Variable} $color-black
+/// @require {Variable} $opacities
 $color-black--5-percent: rgba($color-black, map-get($opacities, "5-percent")) !default;
 /// @type Color
 /// @require {Variable} $color-black
+/// @require {Variable} $opacities
 $color-black--10-percent: rgba($color-black, map-get($opacities, "10-percent")) !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $color-text
 $color-dark-gray: mix($color-black, $color-text) !default;
+/// @type Color
+$color-brand: #5f8aa6 !default;
+/// @type Color
+/// @require {Variable} $color-white
+/// @require {Variable} $color-brand
+$color-brand--light: mix($color-white, $color-brand, 7.5%);
+/// @type Color
+/// @require {Variable} $color-black
+/// @require {Variable} $color-brand
+$color-brand--dark: mix($color-black, $color-brand, 10%);
+/// @type Color
+/// @require {Variable} $color-brand
+/// @require {Variable} $opacities
+$color-brand--10-percent: rgba($color-brand, map-get($opacities, "10-percent")) !default;
 /// @type Color
 $color-highlight: gold !default;
 /// @type Color

@@ -56,12 +56,12 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 {% include content/heading.html title='Slip-n-slide Modal' %}
 
-This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but simply never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
+This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
 
 {% include content/codepen.html slug='sDBJk' height='630' %}
 
 
-{% include content/heading.html title='Simple CSS Checkbox Revisited' %}
+{% include content/heading.html title='Jazzy CSS Checkbox Revisited' %}
 
 This is a pen which I overhauled a bit since I first wrote about it in <a href="{% post_url 2013-06-18-persistent-shadows %}">Persistent Shadows</a>:
 

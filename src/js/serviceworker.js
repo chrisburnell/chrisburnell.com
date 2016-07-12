@@ -12,7 +12,7 @@
     var VERSION = '18';
 
     // Name the cache
-    var CACHE_NAME = 'chrisburnell';
+    var CACHE_NAME = 'chrisburnell.com';
 
     // Name of the respective file (should be at root of project)
     var FILE_NAME = 'serviceworker.min.js';

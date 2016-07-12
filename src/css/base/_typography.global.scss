@@ -105,7 +105,7 @@ h3 {
     }
 
     // Match normal `h3`s without targetting `aside`-nested `h3`s
-    article > &,
+    .content > &,
     &.widget-title {
         @include clear;
         width: auto;
@@ -440,7 +440,12 @@ summary {
  * Images and Figures
  */
 img,
-a img {
+picture {
+    @extend %image-elements !optional;
+}
+
+%image-elements,
+a %image-elements {
     color: $color-lastfm;
     width: auto;
     max-width: 100%;
@@ -471,8 +476,8 @@ figure {
     }
 
     & > a,
-    & > img,
-    & > a img,
+    & > %image-elements,
+    & > a %image-elements,
     & > svg,
     & > a svg {
         @include border-radius;

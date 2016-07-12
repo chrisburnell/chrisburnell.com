@@ -452,20 +452,20 @@ h3 {
     background-color: gold; }
   100% {
     background-color: transparent; } }
-  article > h3, h3.widget-title {
+  .content > h3, h3.widget-title {
     clear: both;
     zoom: 1;
     width: auto;
     max-width: 100%;
     display: inline-block;
     padding-right: 2.25rem; }
-    article > h3::before, article > h3::after, h3.widget-title::before, h3.widget-title::after {
+    .content > h3::before, .content > h3::after, h3.widget-title::before, h3.widget-title::after {
       content: "";
       display: table; }
-    article > h3::after, h3.widget-title::after {
+    .content > h3::after, h3.widget-title::after {
       clear: both; }
     @media (max-width: 768px) {
-      article > h3, h3.widget-title {
+      .content > h3, h3.widget-title {
         -ms-flex-item-align: start;
             align-self: flex-start; } }
   .lede + h3 {
@@ -769,14 +769,20 @@ summary {
  * Images and Figures
  */
 img,
-a img {
+picture,
+a img,
+a
+picture {
   color: #e31b23;
   width: auto;
   max-width: 100%;
   height: auto;
   font-style: italic; }
   img::before,
-  a img::before {
+  picture::before,
+  a img::before,
+  a
+  picture::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -786,7 +792,10 @@ a img {
     height: 100%;
     text-align: center; }
   img::after,
-  a img::after {
+  picture::after,
+  a img::after,
+  a
+  picture::after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -801,7 +810,11 @@ figure {
     overflow-y: hidden; }
   figure > a,
   figure > img,
+  figure >
+  picture,
   figure > a img,
+  figure > a
+  picture,
   figure > svg,
   figure > a svg {
     background-clip: padding-box;
@@ -1344,7 +1357,7 @@ button,
     padding-bottom: 0;
     margin-bottom: 0.182em;
     outline-style: none;
-    box-shadow: inset -1px 0 0 #567d96;
+    box-shadow: inset 0 -1px 0 0 #567d96;
     -webkit-transform: translateY(0.182em);
             transform: translateY(0.182em); }
   button::before, button::after,
@@ -1393,7 +1406,6 @@ button::-moz-focus-inner {
   .button--small:active {
     height: 1.818em; }
 
-input[type="color"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -1411,15 +1423,30 @@ input[type="url"],
 textarea {
   background-clip: padding-box;
   border-radius: 0.25rem;
-  -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  will-change: background-color, border-color;
+  -webkit-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+  will-change: border-color;
   box-sizing: inherit !important;
   padding: 0.5rem;
   border: 0.125rem solid #dddddd;
   outline-style: none;
   font-family: "proxima-nova", sans-serif; }
-  input[type="color"]:focus,
+  input[type="date"]:hover,
+  input[type="datetime"]:hover,
+  input[type="datetime-local"]:hover,
+  input[type="email"]:hover,
+  input[type="month"]:hover,
+  input[type="number"]:hover,
+  input[type="password"]:hover,
+  input[type="range"]:hover,
+  input[type="search"]:hover,
+  input[type="tel"]:hover,
+  input[type="text"]:hover,
+  input[type="time"]:hover,
+  input[type="week"]:hover,
+  input[type="url"]:hover,
+  textarea:hover {
+    border-color: #6b92ac; }
   input[type="date"]:focus,
   input[type="datetime"]:focus,
   input[type="datetime-local"]:focus,
@@ -1435,9 +1462,7 @@ textarea {
   input[type="week"]:focus,
   input[type="url"]:focus,
   textarea:focus {
-    background-color: transparent;
     border-color: #5f8aa6; }
-  input[type="color"][disabled],
   input[type="date"][disabled],
   input[type="datetime"][disabled],
   input[type="datetime-local"][disabled],
@@ -1455,7 +1480,6 @@ textarea {
   textarea[disabled] {
     opacity: 0.7;
     pointer-events: none; }
-  input[type="color"]::-moz-focus-inner,
   input[type="date"]::-moz-focus-inner,
   input[type="datetime"]::-moz-focus-inner,
   input[type="datetime-local"]::-moz-focus-inner,
@@ -1979,6 +2003,7 @@ footer {
     transition: opacity 0.2s ease;
     will-change: opacity;
     opacity: 0.05;
+    stroke: #4f4f4f;
     width: 6.25em !important;
     height: 6.25em !important;
     position: absolute;
@@ -1986,7 +2011,6 @@ footer {
     right: 0.625rem;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    stroke: #4f4f4f;
     z-index: 0; }
     @media (max-width: 500px) {
       .small-content-list svg {
@@ -2013,18 +2037,14 @@ footer {
   display: flex; }
 
 .search-input {
+  min-width: 1px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1;
-  margin-right: 0.625rem; }
+          flex: 1; }
 
 .widget--search .search-submit {
-  min-width: 2.5em; }
-
-.search-submit .icon--search {
-  width: 1em;
-  height: 1em;
-  margin-right: 0; }
+  min-width: auto;
+  margin-left: 0.625rem; }
 
 /**
  * Contains buttons and internal links.
@@ -2170,7 +2190,8 @@ footer {
   float: left;
   margin-right: 0.625rem;
   margin-bottom: 0.625rem; }
-  .author-image img {
+  .author-image img, .author-image
+  picture {
     background-clip: padding-box;
     border-radius: 0.375rem;
     height: 100%;

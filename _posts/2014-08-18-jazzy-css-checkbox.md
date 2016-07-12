@@ -4,7 +4,7 @@ categories: pen
 
 date: 2014-08-18 12:00:00
 
-title: Simple CSS Checkbox
+title: Jazzy CSS Checkbox
 tags:
 - codepen
 

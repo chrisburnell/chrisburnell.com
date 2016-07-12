@@ -69,7 +69,7 @@ The method which is far more predictable in its use of `@extend` does something 
 - `%monospace-elements`
 - `%button-elements`
 
-I have created the above *placeholder selectors* to represent different groups of *multiple selectors*, and the simple naming makes it easy to understand what they represent (at least I think so). How these are used is best explained with an example, so let’s look at how I target all *heading elements* (`h1`, `h2`, `h3`, `h4`, `h5`, `h6`) throughout my Sass:
+I have created the above *placeholder selectors* to represent different groups of *multiple selectors*, and the terse naming makes it easy to understand what they represent (at least I think so). How these are used is best explained with an example, so let’s look at how I target all *heading elements* (`h1`, `h2`, `h3`, `h4`, `h5`, `h6`) throughout my Sass:
 
 {% highlight scss %}
 h1,
@@ -120,7 +120,7 @@ This makes sense, but is just too *long-winded*. We can simplify this declaratio
 }
 {% endhighlight %}
 
-The CSS output of the two techniques is exactly the same, but the Sass source files are now much simpler to understand. The advantages here are that we aren’t making any negative impact on the cascade of the compiled CSS because we’re not using `@extend` in such a way that the source order of declarations doesn’t matter—we’re simply using `@extend` to represent *multiple selectors*. This technique also makes the Sass *much* easier to scan through, and saves us from having to remember *multiple selectors* whilst traversing our Sass partials.
+The CSS output of the two techniques is exactly the same, but the Sass source files are now much easier to understand. The advantages here are that we aren’t making any negative impact on the cascade of the compiled CSS because we’re not using `@extend` in such a way that the source order of declarations doesn’t matter—we’re using `@extend` to represent *multiple selectors*. This technique also makes the Sass *much* easier to scan through, and saves us from having to remember *multiple selectors* whilst traversing our Sass partials.
 
 I wholeheartedly believe in a very simplistic approach to Sass. Simplicity is king when it comes to writing CSS, and going overboard on Sass features may give you a false sense of power.
 

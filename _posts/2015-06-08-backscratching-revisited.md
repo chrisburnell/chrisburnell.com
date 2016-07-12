@@ -116,7 +116,7 @@ But there’s a problem if we want to use [Microdata](http://schema.org/docs/doc
 
 I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person){:rel="external"}), but to sum up: we can use different attributes ([boolean](https://html.spec.whatwg.org/#boolean-attributes){:rel="external"} or [enumerated](https://html.spec.whatwg.org/#keywords-and-enumerated-attributes){:rel="external"}) to give the browser context about our data.
 
-So instead of simply printing, for example, an author’s name, we’ll wrap it in a `span` and give it an `itemprop` attribute. When the value of the `itemprop` attribute is set to <q>author</q> within the scope of the *Person* schema, we’re essentially tagging the page with an author. There are numerous Schemas and Properties within each Schema to help you provide context to the content of your website.
+So instead of printing, for example, an author’s name, we’ll wrap it in a `span` and give it an `itemprop` attribute. When the value of the `itemprop` attribute is set to <q>author</q> within the scope of the *Person* schema, we’re essentially tagging the page with an author. There are numerous Schemas and Properties within each Schema to help you provide context to the content of your website.
 
 But let’s focus on the `span` with the `itemprop` attribute. This isn’t text I want to be hidden, so this breaks the rule we established before (all `spans` which are children of an anchor are hidden). But we can solve this with a further modification to our SCSS snippet.
 

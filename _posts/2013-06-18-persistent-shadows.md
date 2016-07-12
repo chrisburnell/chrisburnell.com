@@ -45,7 +45,7 @@ It may be interesting to note that as the medium we’re working with is compose
 
 {% include content/heading.html title='What else is there?' id='what-else' %}
 
-What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution simpler than this. If you know, let me know in the [comments](#comments), or [send me a pen](http://codepen.io "Codepen"){:rel="external"}!
+What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#comments), or [send me a pen](http://codepen.io "Codepen"){:rel="external"}!
 
 
 {% include content/heading.html title='A little something-something extra, just for you' id='something-extra' %}

@@ -22,19 +22,13 @@
 }
 
 .search-input {
+    min-width: 1px;
     flex: 1;
-    margin-right: $measure-small;
 }
 
 .search-submit {
     .widget--search & {
-        min-width: 2.5em;
-    }
-
-    .icon--search {
-        // default: 0.8em x 0.8em
-        width:  1em;
-        height: 1em;
-        margin-right: 0;
+        min-width: auto;
+        margin-left: $measure-small;
     }
 }

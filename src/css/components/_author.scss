@@ -74,7 +74,7 @@
     margin-right:  $measure-small;
     margin-bottom: $measure-small;
 
-    img {
+    %image-elements {
         @include border-radius;
         height: 100%;
         display: block;
