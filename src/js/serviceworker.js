@@ -9,27 +9,28 @@
     'use strict';
 
     const version = '20160714';
-    const staticCacheName = version + 'static';
+    const baseurl = 'https://chrisburnell.com';
+    const staticCacheName = 'static' + version;
 
     function updateStaticCache() {
         return caches.open(staticCacheName)
             .then(cache => {
                 // These items must be cached for the Service Worker to complete installation
                 return cache.addAll([
-                    '/',
-                    '/about',
-                    '/articles',
-                    '/links',
-                    '/pens',
-                    '/search',
-                    '/styleguide',
-                    '/tags',
-                    '/css/main.min.css',
-                    '/js/main.min.js',
-                    '/images/avatar.png',
-                    '/favicon.png',
-                    '/search.json',
-                    '/offline'
+                    baseurl + '/',
+                    baseurl + '/about',
+                    baseurl + '/articles',
+                    baseurl + '/links',
+                    baseurl + '/pens',
+                    baseurl + '/search',
+                    baseurl + '/styleguide',
+                    baseurl + '/tags',
+                    baseurl + '/css/main.min.css',
+                    baseurl + '/js/main.min.js',
+                    baseurl + '/images/avatar.png',
+                    baseurl + '/favicon.png',
+                    baseurl + '/search.json',
+                    baseurl + '/offline'
                 ]);
             });
     }
@@ -75,7 +76,7 @@
             event.respondWith(
                 fetch(request)
                     .catch( () => {
-                        return caches.match('/offline');
+                        return caches.match(baseurl + '/offline');
                     })
             );
             return;
