@@ -158,9 +158,6 @@ gulp.task('js-loadcss', function() {
 gulp.task('js-serviceworker', function() {
     return gulp.src([paths.src.js + 'serviceworker.js'])
         .pipe(plumber())
-        .pipe(uglify({
-            mangle: false
-        }, uglifyjs))
         .pipe(gulp.dest(paths.root));
 });
 
