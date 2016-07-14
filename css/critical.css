@@ -905,7 +905,7 @@ ins {
   text-decoration: none; }
 
 time {
-  display: block; }
+  display: inline-block; }
 
 hr {
   background: rgba(6, 6, 6, 0.1);

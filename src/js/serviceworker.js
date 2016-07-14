@@ -8,7 +8,7 @@
 
     'use strict';
 
-    const version = '20160714';
+    const version = '201607142';
     const baseurl = 'https://chrisburnell.com';
     const staticCacheName = 'static' + version;
 
@@ -18,19 +18,19 @@
                 // These items must be cached for the Service Worker to complete installation
                 return cache.addAll([
                     baseurl + '/',
-                    baseurl + '/about',
-                    baseurl + '/articles',
-                    baseurl + '/links',
-                    baseurl + '/pens',
-                    baseurl + '/search',
-                    baseurl + '/styleguide',
-                    baseurl + '/tags',
+                    baseurl + '/about.html',
+                    baseurl + '/articles.html',
+                    baseurl + '/links.html',
+                    baseurl + '/pens.html',
+                    baseurl + '/search.html',
+                    baseurl + '/styleguide.html',
+                    baseurl + '/tags.html',
+                    baseurl + '/offline.html',
                     baseurl + '/css/main.min.css',
                     baseurl + '/js/main.min.js',
                     baseurl + '/images/avatar.png',
                     baseurl + '/favicon.png',
-                    baseurl + '/search.json',
-                    baseurl + '/offline'
+                    baseurl + '/search.json'
                 ]);
             });
     }
