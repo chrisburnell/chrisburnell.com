@@ -8,7 +8,7 @@
 
     'use strict';
 
-    const version = '201607142';
+    const version = '20160714-3';
     const staticCacheName = 'static' + version;
 
     function updateStaticCache() {
