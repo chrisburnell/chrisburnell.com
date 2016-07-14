@@ -12,6 +12,21 @@
 <!-- Search Templates -->
 {% include components/search-templates.html %}
 
+<!-- ServiceWorker -->
+<script>
+    // ServiceWorker is a progressive technology. Ignore unsupported browsers
+    if ('serviceWorker' in navigator) {
+        console.log('CLIENT: service worker registration in progress.');
+        navigator.serviceWorker.register('/serviceworker.js').then(function() {
+            console.log('CLIENT: service worker registration complete.');
+        }, function() {
+            console.log('CLIENT: service worker registration failure.');
+        });
+    } else {
+        console.log('CLIENT: service worker is not supported.');
+    }
+</script>
+
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
 
@@ -29,4 +44,3 @@
     <!-- Twitter Cards -->
     <script src="//platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
-

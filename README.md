@@ -159,7 +159,7 @@ _includes/generated
 ├── critical-css.html
 ├── loadcss.html
 └── typekit.html
-serviceworker.min.js
+serviceworker.js
 ```
 
 

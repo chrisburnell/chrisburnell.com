@@ -10,22 +10,14 @@ searchable: false
     "name": "{{ site.title }} – {{ site.tagline }}",
     "short_name": "{{ site.title }}",
     "description": "{{ site.lede }}",
-    "scope": "/",
-    "display": true,
+    "display": "standalone",
     "orientation": "any",
     "start_url": "/",
     "theme_color": "#{{ site.color_brand }}",
-    "related_applications": [],
-    "prefer_related_applications": false,
-    "background_color": "transparent",
+    "background_color": "#f9f9f9",
     "icons": [
         {
-            "src": "{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}",
-            "type": "image/png",
-            "sizes": "256x256"
-        },
-        {
-            "src": "{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}",
+            "src": "/favicon.png",
             "type": "image/png",
             "sizes": "256x256"
         }

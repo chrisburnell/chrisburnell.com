@@ -11,7 +11,7 @@ var gulp    = require('gulp'),
     postcss = require('gulp-postcss'),
     rename  = require('gulp-rename'),
     sass    = require('gulp-sass'),
-    uglify  = require('gulp-uglify'),
+    uglify  = require('gulp-uglify/minifier'),
     watch   = require('gulp-watch');
 
 // Define external objects
@@ -20,7 +20,8 @@ var autoprefixer = require('autoprefixer'),
     reporter     = require('postcss-reporter'),
     scss_syntax  = require('postcss-scss'),
     sassdoc      = require('sassdoc'),
-    stylelint    = require('stylelint');
+    stylelint    = require('stylelint'),
+    uglifyjs     = require('uglify-js-harmony');
 
 // Define paths
 var paths = {
@@ -132,7 +133,7 @@ gulp.task('js-compile', function() {
         .pipe(gulp.dest(paths.dist.js))
         .pipe(uglify({
             mangle: false
-        }))
+        }, uglifyjs))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -145,7 +146,7 @@ gulp.task('js-loadcss', function() {
         .pipe(plumber())
         .pipe(uglify({
             mangle: false
-        }))
+        }, uglifyjs))
         .pipe(rename({
             basename: 'loadcss',
             extname: '.html'
@@ -159,10 +160,7 @@ gulp.task('js-serviceworker', function() {
         .pipe(plumber())
         .pipe(uglify({
             mangle: false
-        }))
-        .pipe(rename({
-            suffix: '.min'
-        }))
+        }, uglifyjs))
         .pipe(gulp.dest(paths.root));
 });
 
@@ -172,7 +170,7 @@ gulp.task('js-typekit', function() {
         .pipe(plumber())
         .pipe(uglify({
             mangle: false
-        }))
+        }, uglifyjs))
         .pipe(rename({
             basename: 'typekit',
             extname: '.html'
@@ -197,6 +195,7 @@ gulp.task('css', ['css-compile'], function() {
 // JS task
 gulp.task('js', ['js-compile'], function() {
     gulp.start('js-loadcss');
+    gulp.start('js-serviceworker');
     gulp.start('js-typekit');
 });
 

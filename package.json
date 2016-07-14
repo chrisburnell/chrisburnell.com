@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "autoprefixer": "6.3.7",
-        "cssnano": "3.7.1",
+        "cssnano": "3.7.3",
         "gulp": "3.9.1",
         "gulp-concat": "2.6.0",
         "gulp-util": "3.0.7",
@@ -29,7 +29,8 @@
         "postcss-reporter": "1.4.1",
         "postcss-scss": "0.1.8",
         "sassdoc": "2.1.20",
-        "stylelint": "6.9.0"
+        "stylelint": "7.0.1",
+        "uglify-js-harmony": "2.6.2"
     },
     "repository": {
         "type": "git",

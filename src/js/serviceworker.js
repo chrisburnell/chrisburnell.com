@@ -8,167 +8,110 @@
 
     'use strict';
 
-    // Increment this when updating the Service Worker
-    var VERSION = '18';
+    const version = '20160714';
+    const staticCacheName = version + 'static';
 
-    // Name the cache
-    var CACHE_NAME = 'chrisburnell.com';
-
-    // Name of the respective file (should be at root of project)
-    var FILE_NAME = 'serviceworker.min.js';
-
-    // Force HTTPS caching
-    var SITE_NAME = 'https://chrisburnell.com';
-
-    // The files we want to cache
-    var urlsToCache = [
-        SITE_NAME + '/',
-        SITE_NAME + '/about',
-        SITE_NAME + '/articles',
-        SITE_NAME + '/pens',
-        SITE_NAME + '/links',
-        SITE_NAME + '/tags',
-        SITE_NAME + '/search',
-        SITE_NAME + '/search.json',
-        SITE_NAME + '/styleguide',
-        SITE_NAME + '/css/main.min.css',
-        SITE_NAME + '/js/main.min.js'
-    ];
-
-    // Console Feedback
-    var CONSOLE_FEEDBACK = true;
-    var WORKER_LABEL = 'v' + VERSION + ' WORKER: ';
-    var CLIENT_LABEL = 'v' + VERSION + ' CLIENT: ';
-
-
-    // Instantiate the Service Worker
-    if ('serviceWorker' in navigator) {
-        if (CONSOLE_FEEDBACK) {
-            console.log(CLIENT_LABEL, 'Registration in progress.');
-        }
-        navigator.serviceWorker.register('/' + FILE_NAME)
-            .then(function(registration) {
-                // Registration has completed :)
-                if (CONSOLE_FEEDBACK) {
-                    console.log(CLIENT_LABEL, 'Registration completed, with scope:', registration.scope);
-                }
-            })
-            .catch(function(err) {
-                // Registration has failed :(
-                if (CONSOLE_FEEDBACK) {
-                    console.log(CLIENT_LABEL, 'Registration failed, with error:', err);
-                }
+    function updateStaticCache() {
+        return caches.open(staticCacheName)
+            .then(cache => {
+                // These items must be cached for the Service Worker to complete installation
+                return cache.addAll([
+                    '/',
+                    '/about',
+                    '/articles',
+                    '/links',
+                    '/pens',
+                    '/search',
+                    '/styleguide',
+                    '/tags',
+                    '/css/main.min.css',
+                    '/js/main.min.js',
+                    '/images/avatar.png',
+                    '/favicon.png',
+                    '/search.json',
+                    '/offline'
+                ]);
             });
     }
 
-
-    // Set the callback for the install step
-    self.addEventListener('install', function(event) {
-        if (CONSOLE_FEEDBACK) {
-            console.log(WORKER_LABEL, '`install` event in progress.');
-        }
-        // Perform install steps
-        event.waitUntil(
-            caches
-            .open('v' + VERSION + '::' + CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(urlsToCache);
-            })
-            .then(function() {
-                if (CONSOLE_FEEDBACK) {
-                    console.log(WORKER_LABEL, '`install` event completed.');
-                }
-            })
-        );
-    });
-
-
-    // Handle fetching content from cache
-    self.addEventListener('fetch', function(event) {
-        if (CONSOLE_FEEDBACK) {
-            console.log(WORKER_LABEL, '`fetch` event in progress.');
-        }
-        // Only cache GET requests
-        if (event.request.method !== 'GET') {
-            if (CONSOLE_FEEDBACK) {
-                console.log(WORKER_LABEL, '`fetch` event ignored.', event.request.method, event.request.url);
-            }
-            return;
-        }
-        event.respondWith(
-            caches
-            .match(event.request)
-            .then(function(cached) {
-
-                var networked = fetch(event.request)
-                    .then(fetchedFromNetwork, unableToResolve)
-                    .catch(unableToResolve);
-
-                if (CONSOLE_FEEDBACK) {
-                    console.log(WORKER_LABEL, '`fetch` event', cached ? '(cached)' : '(network)', event.request.url);
-                }
-
-                return cached || networked;
-
-                function fetchedFromNetwork(response) {
-                    var cacheCopy = response.clone();
-                    if (CONSOLE_FEEDBACK) {
-                        console.log(WORKER_LABEL, '`fetch` response from network.', event.request.url);
-                    }
-                    caches
-                        .open('v' + VERSION + '::' + CACHE_NAME)
-                        .then(function add(cache) {
-                            cache.put(event.request, cacheCopy);
-                        })
-                        .then(function() {
-                            if (CONSOLE_FEEDBACK) {
-                                console.log(WORKER_LABEL, '`fetch` response stored in cache.', event.request.url);
-                            }
-                        })
-                    return response;
-                }
-
-                function unableToResolve() {
-                    if (CONSOLE_FEEDBACK) {
-                        console.log(WORKER_LABEL, '`fetch` request failed in both cache and network')
-                    }
-                    return new Response('<h1>Service Unavailable</h1>', {
-                        status: 503,
-                        statusText: 'Service Unavailable',
-                        headers: new Headers({
-                            'Content-Type': 'text/html'
-                        })
-                    });
-                }
-            })
-        );
-    });
-
-
-    // Remove deprecated Workers
-    self.addEventListener('activate', function(event) {
-        if (CONSOLE_FEEDBACK) {
-            console.log(WORKER_LABEL, '`activate` event in progress.');
-        }
-        event.waitUntil(
-            caches
-            .keys()
-            .then(function(keys) {
-                return Promise.all(
-                    keys
-                    .filter(function(key) {
-                        return !key.startsWith('v' + VERSION);
+    function clearOldCaches() {
+        return caches.keys()
+            .then(keys => {
+                // Remove caches whose name is no longer valid
+                return Promise.all(keys
+                    .filter(key => {
+                        return key.indexOf(version) !== 0;
                     })
-                    .map(function(key) {
+                    .map(key => {
                         return caches.delete(key);
                     })
                 );
-            })
-            .then(function() {
-                if (CONSOLE_FEEDBACK) {
-                    console.log(WORKER_LABEL, '`activate` event completed.');
-                }
-            })
+            });
+    }
+
+    self.addEventListener('install', event => {
+        event.waitUntil(updateStaticCache()
+            .then( () => self.skipWaiting() )
+        );
+    });
+
+    self.addEventListener('activate', event => {
+        event.waitUntil(clearOldCaches()
+            .then( () => self.clients.claim() )
+        );
+    });
+
+    self.addEventListener('fetch', event => {
+        let request = event.request;
+        let url = new URL(request.url);
+
+        // Only deal with requests to my own server
+        if (url.origin !== location.origin) {
+            return;
+        }
+
+        // For non-GET requests, try the network first, fall back to the offline page
+        if (request.method !== 'GET') {
+            event.respondWith(
+                fetch(request)
+                    .catch( () => {
+                        return caches.match('/offline');
+                    })
+            );
+            return;
+        }
+
+        // For HTML requests, try the network first, fall back to the cache, finally the offline page
+        if (request.headers.get('Accept').indexOf('text/html') !== -1) {
+            request = new Request(request.url, {
+                method: 'GET',
+                headers: request.headers,
+                mode: request.mode == 'navigate' ? 'cors' : request.mode,
+                credentials: request.credentials,
+                redirect: request.redirect
+            });
+            event.respondWith(
+                fetch(request)
+                    .then (response => {
+                        return response;
+                    })
+                    .catch(function () {
+                        // CACHE or FALLBACK
+                        return caches.match(request)
+                            .then(response => {
+                                return response || caches.match('/offline');
+                            });
+                    })
+            );
+            return;
+        }
+
+        // For non-HTML requests, look in the cache first, fall back to the network
+        event.respondWith(
+            caches.match(request)
+                .then(response => {
+                    return response || fetch(request)
+                })
         );
     });
 
