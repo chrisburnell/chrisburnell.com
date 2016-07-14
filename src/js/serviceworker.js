@@ -16,20 +16,20 @@
             .then(cache => {
                 // These items must be cached for the Service Worker to complete installation
                 return cache.addAll([
-                    '/',
-                    '/about',
-                    '/articles',
-                    '/links',
-                    '/pens',
-                    '/search',
-                    '/styleguide',
-                    '/tags',
-                    '/offline',
-                    '/css/main.min.css',
-                    '/js/main.min.js',
-                    '/images/avatar.png',
-                    '/favicon.png',
-                    '/search.json'
+                    'https://chrisburnell.com/',
+                    'https://chrisburnell.com/about',
+                    'https://chrisburnell.com/articles',
+                    'https://chrisburnell.com/links',
+                    'https://chrisburnell.com/pens',
+                    'https://chrisburnell.com/search',
+                    'https://chrisburnell.com/styleguide',
+                    'https://chrisburnell.com/tags',
+                    'https://chrisburnell.com/offline',
+                    'https://chrisburnell.com/css/main.min.css',
+                    'https://chrisburnell.com/js/main.min.js',
+                    'https://chrisburnell.com/images/avatar.png',
+                    'https://chrisburnell.com/favicon.png',
+                    'https://chrisburnell.com/search.json'
                 ]);
             });
     }
