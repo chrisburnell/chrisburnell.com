@@ -4,45 +4,103 @@
  */
 
 
-'use strict';
+(function () {
+
+  'use strict';
 
 
-// we'll version our cache (and learn how to delete caches in
-// some other post)
-const version = '20160714-10';
-const cacheName = 'static::' + version;
+  // Version
+  var version = '20160714-13';
 
 
-self.addEventListener('install', e => {
-    // once the SW is installed, go ahead and fetch the resources
-    // to make this work offline
-    e.waitUntil(
-        caches.open(cacheName).then(cache => {
-            return cache.addAll([
-                '/',
-                '/about/',
-                '/articles/',
-                '/links/',
-                '/pens/',
-                '/search/',
-                '/styleguide/',
-                '/tags/',
-                '/offline/',
-                '/css/main.min.css',
-                '/js/main.min.js',
-                '/images/avatar.png',
-                '/favicon.png',
-                '/search.json'
-            ]).then(() => self.skipWaiting());
+  // Cache name definitions
+  var cacheNameStatic = 'static';
+  var currentCacheNames = [
+    cacheNameStatic
+  ];
+
+
+  // A new ServiceWorker has been registered
+  self.addEventListener('install', function (event) {
+    event.waitUntil(
+      caches.open(cacheNameStatic)
+        .then(function (cache) {
+          return cache.addAll([
+            '/',
+            '/about',
+            '/articles',
+            '/links',
+            '/pens',
+            '/search',
+            '/styleguide',
+            '/tags',
+            '/offline',
+            '/css/main.min.css',
+            '/js/main.min.js',
+            'images/avatar.png',
+            'favicon.png',
+            'search.json'
+          ]);
         })
     );
-});
+  });
 
 
-// when the browser fetches a url, either response with
-// the cached object or go ahead and fetch the actual url
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(res => res || fetch(event.request))
+  // A new ServiceWorker is now active
+  self.addEventListener('activate', function (event) {
+    event.waitUntil(
+      caches.keys()
+        .then(function (cacheNames) {
+          return Promise.all(
+            cacheNames.map(function (cacheName) {
+              if (currentCacheNames.indexOf(cacheName) === -1) {
+                return caches.delete(cacheName);
+              }
+            })
+          );
+        })
     );
-});
+  });
+
+
+  // The page has made a request
+  self.addEventListener('fetch', function (event) {
+    var requestURL = new URL(event.request.url);
+
+    event.respondWith(
+      caches.match(event.request)
+        .then(function (response) {
+
+          if (response) {
+            return response;
+          }
+
+          var fetchRequest = event.request.clone();
+
+          return fetch(fetchRequest).then(
+            function (response) {
+
+              var shouldCache = false;
+
+              if (response.type === 'basic' && response.status === 200) {
+                shouldCache = cacheNameStatic;
+              }
+
+              if (shouldCache) {
+                var responseToCache = response.clone();
+
+                caches.open(shouldCache)
+                  .then(function (cache) {
+                    var cacheRequest = event.request.clone();
+                    cache.put(cacheRequest, responseToCache);
+                  });
+              }
+
+              return response;
+            }
+          );
+        })
+    );
+  });
+
+})();
