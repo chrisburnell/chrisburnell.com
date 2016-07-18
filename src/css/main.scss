@@ -12,9 +12,7 @@
 ////
 
 /// ABSTRACTS
-@import "abstracts/variables.global";
-@import "abstracts/variables.code";
-@import "abstracts/variables.branding";
+@import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
 
@@ -25,8 +23,8 @@
 
 /// BASE
 @import "base/page";
-@import "base/typography.global";
-@import "base/typography.code";
+@import "base/typography";
+@import "base/code";
 @import "base/anchors";
 @import "base/buttons";
 @import "base/forms";

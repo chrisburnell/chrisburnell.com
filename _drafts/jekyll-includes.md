@@ -2,10 +2,10 @@
 layout: post
 categories: article
 
-date: 2016-05-05 01:00:00
+# date: 2016-05-05 01:00:00
 
 title: Jekyll And Sass, Sitting in a Tree
-lede: I’ve been using Jekyll for over 2.5 years, and built a series of useful include components to help simplify and streamline my templating and authoring processes.
+lede: I’ve been using Jekyll for over three years, and built a series of useful include components to help simplify and streamline my templating and authoring processes.
 tags:
 - jekyll
 - liquid
@@ -15,6 +15,7 @@ shorturl: 58xlz
 comments: true
 ---
 
+
 <blockquote>
     <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.</p>
     <cite><a href="http://jekyllrb.com/" rel="external">Jekyll</a></cite>
@@ -22,7 +23,7 @@ comments: true
 
 I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. They also serve as equivalents to functionality usually relegated for *JavaScript*. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to enforce a [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth){:rel="external"} methodology.
 
-And unfortunately, we’re in the midst of a front-end development trend where *JavaScript* frameworks are being used with increasing popularity, and in many cases, for uses that would require a far simpler codebase. Naturally, the response of a minority of Internet users, though still a significant minority, is to [completely block JavaScript from running](https://noscript.net/){:rel="external"} unless explicitly specified otherwise by the user.
+And unfortunately, we’re in the midst of a front-end development trend where *JavaScript* frameworks are being used with increasing popularity, and in many cases, for uses that would only require a far simpler solution. Naturally, the response of a minority of Internet users, though still a significant minority, is to [completely block JavaScript from running](https://noscript.net/){:rel="external"} unless explicitly specified otherwise by the user.
 
 Furthermore, the use of *Ad-Blockers* on the web has only [increased over the last years](https://blog.pagefair.com/2015/ad-blocking-report/){:rel="external"} as the amount of [bullshit on the web](http://deathtobullshit.com/){:rel="external"} continues to rise. Another reason to avoid leaning heavily upon *JavaScript*.
 
@@ -39,21 +40,21 @@ I considered *three* approaches to this:
 0. Use *JavaScript* to parse childless headings in my content and generate the necessary heading anchors
 0. Use *Jekyll* to generate the necessary heading anchors with a slight modification to the way I write headings inside content, deviating from the standard *Markdown* syntax
 
-I opted for the *3<sup>rd</sup>* option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to block *JavaScript*, this concern is a real one of mine, unlike, for example, anyone visiting my website on *Internet Explorer 7* (I don’t care how unusable it is <sup>*sorrynotsorry*</sup>).
+I opted for the *3<sup>rd</sup>* option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to be informed about the possible dangers of blindly running *JavScript* and block *JavaScript*, this concern is a real one of mine.
 
-I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes"){:rel="external"}* to provide the functionality and take the pain away of crafting and maintaining the markup. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
+I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes"){:rel="external"}* to provide the functionality and take the pain away of crafting and maintaining the markup. In fact, I make liberal use of *includes* throughout the templating of my site; anything that is used at least twice is likely to be assigned to an *include*. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
 
 So how do I actually get *Jekyll* to build a *heading* and an *associated anchor* in my content?
 
 As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown* content. Instead of writing headings in the traditional Markdown method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes.
 
-{% highlight markdown %}{% raw %}
+{% highlight markdown %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 . . .
 {% include content/heading.html title='Brass Tacks' %}
 . . .
 Cras ac elit enim, et tempus nulla.
-{% endraw %}{% endhighlight %}
+{% endhighlight %}
 
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
 
@@ -137,14 +138,3 @@ Cras ac elit enim, et tempus nulla.
 {% endhighlight %}
 
 This is the fully-generated output of the original *include* in the *Markdown* file.
-
-
-
-
-
-
-
-
-
-
-
