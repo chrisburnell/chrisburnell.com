@@ -23,7 +23,7 @@ Check out the *Talk* in question, [Supporting Middle-Out in CSS]({% post_url 201
 
 If you know me personally, using only one word, you might accurately describe me as <q>quiet,</q> so for me to speak publicly was really stepping outside of my comfort zone. Of course, teaching front-end development and sharing my passion for it is important to me, so, like writing articles on my website, giving a talk to strangers was an important step in enabling me to do what I *think* I want to do and be good at—teach about and share my passion for the web!
 
-Stage fright is far-too-real for me. The last time I spoke in this kind of capacity was in 2008, when I was still in high school in Canada. I barely remember being conscious while I gave this talk (was I conscious?)… Next time I give a talk of this magnitude, I think I’ll be more mentally prepared for what I’m going to do. More practice can’t hurt, too.
+Stage fright is far-too-real for me. The last time I spoke in this kind of capacity was in 2008, when I was still in High School in <span class="canada">Canada</span>. I barely remember being conscious while I gave this talk (was I conscious?)… Next time I give a talk of this magnitude, I think I’ll be more mentally prepared for what I’m going to do. More practice can’t hurt, too.
 
 *Enough about me, though. Let’s jump into the talk.*
 

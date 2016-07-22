@@ -4,7 +4,7 @@
 <main class="wrap  clear" role="main">
     <section class="content" role="document" itemscope itemtype="http://schema.org/Article">
 
-        {% if page.page_class contains 'page--home' %}
+        {% if page.page_class contains 'home' %}
             <h1 class="tagline" role="heading">{{ site.tagline }}</h1>
         {% else %}
             <h1 class="title" role="heading">{{ page.title }}</h1>
@@ -14,9 +14,9 @@
 
         {% include components/banner.html %}
 
-        {% if page.page_class contains 'page--home' %}
+        {% if page.page_class contains 'home' %}
             <h2 class="lede  lede--featured" id="lede">{{ site.lede }}</h2>
-        {% elsif page.page_class contains 'page--search' %}
+        {% elsif page.page_class contains 'search' %}
             <h2 class="lede  lede--featured  js-search-meta" id="lede">Search for something!</h2>
         {% elsif page.lede %}
             <h2 class="lede  lede--featured" id="lede">{{ page.lede }}</h2>

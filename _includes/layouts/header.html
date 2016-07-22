@@ -26,7 +26,7 @@ Checking out the source code, eh? Check out the git repository:
 Contact me if you want to know more about the code, or if you want to use a
 snippet of code on a project of your own. -->
 
-{% if page.page_class contains 'page--home' %}
+{% if page.page_class contains 'home' %}
     {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
 {% else %}
     {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
@@ -104,7 +104,7 @@ snippet of code on a project of your own. -->
     <link rel="author" href="/humans.txt">
     <link rel="manifest" href="/manifest.json">
 
-    {% unless page.page_class contains 'page--not-found' %}
+    {% unless page.page_class contains 'not-found' or page.page_class contains 'offline' %}
         <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
     {% endunless %}
 
@@ -116,7 +116,7 @@ snippet of code on a project of your own. -->
 
     <meta http-equiv="cleartype" content="on">
 
-    {% if page.page_class contains 'page--not-found' %}
+    {% if page.page_class contains 'not-found' or page.page_class contains 'offline' %}
         <meta name="robots" content="noindex,nofollow">
     {% else %}
         <!-- Twitter Microdata -->

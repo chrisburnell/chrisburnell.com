@@ -70,24 +70,26 @@
 {% endif %}
 
 
-{% if page.page_class contains 'page--about' %}
+{% if page.page_class contains 'about' %}
     {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
-{% elsif page.page_class contains 'page--articles' %}
+{% elsif page.page_class contains 'articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page--links' %}
+{% elsif page.page_class contains 'links' %}
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
-{% elsif page.page_class contains 'page--pens' %}
+{% elsif page.page_class contains 'pens' %}
     {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page--talks' %}
+{% elsif page.page_class contains 'talks' %}
     {% assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' %}
-{% elsif page.page_class contains 'page--tags' %}
+{% elsif page.page_class contains 'tags' %}
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
-{% elsif page.page_class contains 'page--search' %}
+{% elsif page.page_class contains 'search' %}
     {% assign author_biography_closer = 'everything you search for looks totally boring' %}
-{% elsif page.page_class contains 'page--not-found' %}
+{% elsif page.page_class contains 'not-found' or page.page_class contains 'offline' %}
     {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
 {% elsif page.categories contains 'article' %}
-        {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
+    {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
+{% elsif page.categories contains 'link' %}
+    {% assign author_biography_closer = 'you’d really rather just be click that link' %}
 {% elsif page.categories contains 'pen' %}
     {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
 {% elsif page.categories contains 'talk' %}
@@ -117,7 +119,7 @@
         <p>I also <a rel="me publisher external" class="anchor--twitter" href="{{ site.urls.twitter }}">tweet</a>, <a rel="me publisher external" class="anchor--codepen" href="{{ site.urls.codepen }}">write code</a>, <a rel="me publisher external" class="anchor--github" href="{{ site.github.owner_url }}">commit code</a>, <a rel="me publisher external" class="anchor--lastfm" href="{{ site.urls.lastfm }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
-    {% unless page.page_class contains 'page--search' %}
+    {% unless page.page_class contains 'search' %}
         {% include components/widget-search.html %}
     {% endunless %}
 

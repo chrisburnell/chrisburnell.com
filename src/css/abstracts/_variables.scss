@@ -32,17 +32,17 @@ $article-width:     810px !default;
 
 
 /// @type Length
-$measure-small:  0.625rem !default;
+$measure-small: 0.625rem !default;
+/// @type Length
+$measure-small-relative: 0.625em !default;
 /// @type Length
 $measure-medium: 1.250rem !default;
 /// @type Length
-$measure-large:  2.250rem !default;
-/// @type Length
-$measure-small-relative:  0.625em !default;
-/// @type Length
 $measure-medium-relative: 1.250em !default;
 /// @type Length
-$measure-large-relative:  2.250em !default;
+$measure-large: 2.250rem !default;
+/// @type Length
+$measure-large-relative: 2.250em !default;
 
 
 /// @type Map

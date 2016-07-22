@@ -8,8 +8,8 @@
 
 
 // Set a name for the current cache
-const version = '20160718';
-const cacheName = 'cb-' + version;
+const version = '2016-07-22';
+const cacheName = 'cb_' + version;
 
 // Default files to always cache
 const cacheFiles = [
@@ -65,7 +65,7 @@ self.addEventListener('fetch', function(event) {
         event.respondWith(
             fetch(request)
                 .catch( () => {
-                    return caches.match('/offline/');
+                    return caches.match('offline');
                 })
         );
         return;
@@ -89,7 +89,7 @@ self.addEventListener('fetch', function(event) {
                     // CACHE or FALLBACK
                     return caches.match(request)
                         .then(response => {
-                            return response || caches.match('/offline/');
+                            return response || caches.match('offline');
                         });
                 })
         );
