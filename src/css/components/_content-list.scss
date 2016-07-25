@@ -43,6 +43,7 @@
     .date {
         @extend %gamma !optional;
         @include case(uppercase);
+        display: inline-block;
         margin-bottom: $measure-small;
         font-weight: $font-weight-bold;
 
