@@ -10,8 +10,8 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="articles" role="list">
-    {% for page in site.categories.article limit: 2 %}
-        {% include components/item-content-list.html %}
+    {% for page in site.categories.article limit: 4 %}
+        {% include components/item-small-content-list.html %}
     {% endfor %}
 </ol>
 
