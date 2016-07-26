@@ -15,9 +15,9 @@ lede: All of my featured pens listed on one page.
 
 <p>These are my best pens—five of which were <a rel="external" href="http://codepen.io/collection/hfqlg" rel="external">featured on their homepage</a>.</p>
 
-<ol class="small-content-list" id="pens" role="list">
+<ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 

@@ -444,26 +444,30 @@ picture {
     @extend %image-elements !optional;
 }
 
-%image-elements,
-a %image-elements {
-    color: $color-lastfm;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    font-style: italic;
+%image-elements {
+    position: relative;
 
-    &::before {
-        @include position(top-left);
-        content: "";
-        background-color: $color-text-light;
-        width:  100%;
-        height: 100%;
-        text-align: center;
-    }
+    &,
+    a & {
+        color: $color-lastfm;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        font-style: italic;
 
-    &::after {
-        @include position(center);
-        content: "Broken Image of " attr(alt);
+        &::before {
+            @include position(top-left);
+            content: "";
+            background-color: $color-text-light;
+            width:  100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        &::after {
+            @include position(center);
+            content: "Broken Image of " attr(alt);
+        }
     }
 }
 figure {

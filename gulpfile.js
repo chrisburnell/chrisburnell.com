@@ -27,7 +27,7 @@ var autoprefixer = require('autoprefixer'),
 var paths = {
     root: './',
     src: {
-        css: 'src/css/',
+        css: 'src/sass/',
         js: 'src/js/'
     },
     dist: {
@@ -35,7 +35,7 @@ var paths = {
         js: 'js/'
     },
     includes: '_includes/',
-    docs: 'sassdoc/'
+    sassdoc: 'sassdoc/'
 };
 
 // Define Stylelint Rules
@@ -118,7 +118,7 @@ gulp.task('css-sassdoc', function() {
     return gulp.src([paths.src.css + '**/*.scss'])
         .pipe(plumber())
         .pipe(sassdoc({
-            dest: paths.docs
+            dest: paths.sassdoc
         }));
 });
 

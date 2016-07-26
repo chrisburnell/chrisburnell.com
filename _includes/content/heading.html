@@ -14,14 +14,8 @@
     // </h3>
 
 {% endcomment %}
-{% assign heading_type = 'h3' %}
-{% if include.type %}
-    {% assign heading_type = include.type %}
-{% endif %}
-{% assign heading_id = include.title | slugify %}
-{% if include.id %}
-    {% assign heading_id = include.id %}
-{% endif %}
+{% assign heading_type = include.type | default: 'h3' %}
+{% assign heading_id = include.id | default: include.title | slugify %}
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
     {% include content/fragment-anchor.html id=heading_id %}

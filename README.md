@@ -73,14 +73,13 @@ _includes
 │   ├── banner.html
 │   ├── comments-button.html
 │   ├── comments.html
-│   ├── item-content-list.html
+│   ├── content-list-item.html
 │   ├── item-feed.html
 │   ├── main-aside.html
 │   ├── nav-primary.html
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
 │   ├── search-templates.html
-│   ├── item-small-content-list.html
 │   ├── widget-latest-articles.html
 │   ├── widget-latest-links.html
 │   ├── widget-latest-pens.html
@@ -133,7 +132,6 @@ src/css
 │   ├── _nav-tertiary.scss
 │   ├── _print.scss
 │   ├── _search.scss
-│   ├── _small-content-list.scss
 │   └── _widgets.scss
 ├── layout
 │   ├── _content.scss

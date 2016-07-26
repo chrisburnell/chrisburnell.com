@@ -8,9 +8,9 @@ lede: All of my shared links listed on one page.
 ---
 
 
-<ol class="small-content-list" id="links" role="list">
+<ol class="content-list" id="links" role="list">
     {% for page in site.categories.link %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 

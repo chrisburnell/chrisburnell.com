@@ -8,19 +8,22 @@
 
 
 // Set a name for the current cache
-const version = '2016-07-22';
+const version = '2016-07-26';
 const cacheName = 'cb_' + version;
 
 // Default files to always cache
 const cacheFiles = [
-    './',
-    './about/',
-    './offline/',
-    './search/',
-    './css/main.min.css',
-    './js/main.min.js',
-    './images/avatar.png',
-    './search.json'
+    '/',
+    '/about',
+    '/articles',
+    '/pens',
+    '/offline',
+    '/search',
+    '/css/main.min.css',
+    '/js/main.min.js',
+    '/images/avatar.png',
+    '/search.json',
+    '/manifest.json'
 ];
 
 
@@ -30,7 +33,6 @@ self.addEventListener('install', event => {
             .then(cache => {
                 return cache.addAll(cacheFiles);
             })
-            .then( () => self.skipWaiting() )
     );
 });
 
@@ -41,7 +43,7 @@ self.addEventListener('activate', event => {
             .then(keys => {
                 return Promise.all(keys
                     .filter(key => {
-                        return key.indexOf(version) !== 0;
+                        return key.indexOf(cacheName) !== 0;
                     }).map(key => {
                         return caches.delete(key);
                     })
@@ -51,7 +53,7 @@ self.addEventListener('activate', event => {
 });
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
     let request = event.request;
     let url = new URL(request.url);
 
@@ -65,7 +67,7 @@ self.addEventListener('fetch', function(event) {
         event.respondWith(
             fetch(request)
                 .catch( () => {
-                    return caches.match('offline');
+                    return caches.match('/offline');
                 })
         );
         return;
@@ -89,7 +91,7 @@ self.addEventListener('fetch', function(event) {
                     // CACHE or FALLBACK
                     return caches.match(request)
                         .then(response => {
-                            return response || caches.match('offline');
+                            return response || caches.match('/offline');
                         });
                 })
         );

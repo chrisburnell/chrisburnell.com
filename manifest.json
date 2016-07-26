@@ -10,7 +10,7 @@ searchable: false
     "name": "{{ site.title }} – {{ site.tagline }}",
     "short_name": "{{ site.title }}",
     "description": "{{ site.lede }}",
-    "display": "standalone",
+    "display": "browser",
     "orientation": "any",
     "start_url": "/",
     "theme_color": "#{{ site.color_brand }}",

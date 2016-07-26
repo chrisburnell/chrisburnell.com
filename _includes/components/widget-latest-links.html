@@ -3,7 +3,7 @@
         <a href="/links">Latest Links</a>
         {% include content/fragment-anchor.html id='latest-links' tabindex='-1' %}
     </h3>
-    <ol class="small-content-list" role="list">
+    <ol class="content-list" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
         {% assign current_path = page.path %}
@@ -11,7 +11,7 @@
             {% unless current_list_count == max_list_count %}
                 {% unless page.path == current_path %}
                     {% assign current_list_count = current_list_count | plus: 1 %}
-                    {% include components/item-small-content-list.html %}
+                    {% include components/content-list-item.html %}
                 {% endunless %}
             {% endunless %}
         {% endfor %}

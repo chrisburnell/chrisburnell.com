@@ -11,7 +11,7 @@ searchable: no-content
 
 <ol class="content-list" id="articles" role="list">
     {% for page in site.categories.article limit: 4 %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 
@@ -22,9 +22,9 @@ searchable: no-content
     <a href="/pens">Featured Pens</a>
 </h3>
 
-<ol class="small-content-list" id="pens" role="list">
+<ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen limit: 4 %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 
@@ -35,9 +35,9 @@ searchable: no-content
     <a href="/links">Shared Links</a>
 </h3>
 
-<ol class="small-content-list" id="links" role="list">
+<ol class="content-list" id="links" role="list">
     {% for page in site.categories.link limit: 4 %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 
@@ -48,9 +48,9 @@ searchable: no-content
     <a href="/talks">Latest Talks</a>
 </h3>
 
-<ol class="small-content-list" id="talks" role="list">
+<ol class="content-list" id="talks" role="list">
     {% for page in site.categories.talk limit: 2 %}
-        {% include components/item-small-content-list.html %}
+        {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
 

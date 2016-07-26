@@ -17,11 +17,11 @@
     // <noscript>Please enable JavaScript to view this Pen.</noscript>
 
 {% endcomment %}
-{% capture codepen_slug %}{% if include.slug %}{{ include.slug }}{% else %}{{ page.codepen_slug }}{% endif %}{% endcapture %}
-{% capture codepen_height %} {% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
+{% assign codepen_slug = include.slug | default: page.codepen_slug %}
+{% capture codepen_height %}{% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
 {% capture codepen_theme %}{% if include.theme == 'tabfree' %}{{ site.codepen.themes.tabfree }}{% else %}{{ site.codepen.themes.default }}{% endif %}{% endcapture %}
-{% capture codepen_type %}{% if include.type %}{{ include.type }}{% else %}result{% endif %}{% endcapture %}
-{% capture codepen_user %}{% if include.user %}{{ include.user }}{% else %}{{ site.author.codepen }}{% endif %}{% endcapture %}
+{% assign codepen_type = include.type | default: 'result' %}
+{% assign codepen_user = include.user | default: site.author.codepen %}
 <pre class="codepen" data-slug-hash="{{ codepen_slug }}" data-type="{{ codepen_type }}" data-theme-id="{{ codepen_theme }}" data-user="{{ codepen_user }}" data-safe="true"{{ codepen_height}}>
     <code></code>
     <a href="//codepen.io/{{ codepen_user }}/pen/{{ codepen_slug }}">Check out this Pen!</a>

@@ -17,9 +17,9 @@ lede: A list of tags and their counterparts.
 {% for tag in tags_sorted %}
     {% capture tag_name %}{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span>{% endcapture %}
     {% include content/heading.html title=tag_name id=tag %}
-    <ol class="small-content-list" role="list">
+    <ol class="content-list" role="list">
         {% for page in site.tags[tag] %}
-            {% include components/item-small-content-list.html %}
+            {% include components/content-list-item.html %}
         {% endfor %}
     </ol>
 {% endfor %}

@@ -763,39 +763,42 @@ summary {
  * Images and Figures
  */
 img,
-picture,
-a img,
-a
 picture {
-  color: #e31b23;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  font-style: italic; }
-  img::before,
-  picture::before,
-  a img::before,
+  position: relative; }
+  img,
+  picture,
+  a img,
   a
-  picture::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    background-color: #dddddd;
-    width: 100%;
-    height: 100%;
-    text-align: center; }
-  img::after,
-  picture::after,
-  a img::after,
-  a
-  picture::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-    content: "Broken Image of " attr(alt); }
+  picture {
+    color: #e31b23;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    font-style: italic; }
+    img::before,
+    picture::before,
+    a img::before,
+    a
+    picture::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background-color: #dddddd;
+      width: 100%;
+      height: 100%;
+      text-align: center; }
+    img::after,
+    picture::after,
+    a img::after,
+    a
+    picture::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      content: "Broken Image of " attr(alt); }
 
 figure {
   margin: 0 0 1.25rem; }
