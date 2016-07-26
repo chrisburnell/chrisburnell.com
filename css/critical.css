@@ -452,20 +452,25 @@ h3 {
     background-color: gold; }
   100% {
     background-color: transparent; } }
-  .content > h3, h3.widget-title {
+  .content > h3,
+  .widget h3 {
     clear: both;
     zoom: 1;
     width: auto;
     max-width: 100%;
     display: inline-block;
     padding-right: 2.25rem; }
-    .content > h3::before, .content > h3::after, h3.widget-title::before, h3.widget-title::after {
+    .content > h3::before, .content > h3::after,
+    .widget h3::before,
+    .widget h3::after {
       content: "";
       display: table; }
-    .content > h3::after, h3.widget-title::after {
+    .content > h3::after,
+    .widget h3::after {
       clear: both; }
     @media (max-width: 768px) {
-      .content > h3, h3.widget-title {
+      .content > h3,
+      .widget h3 {
         -ms-flex-item-align: start;
             align-self: flex-start; } }
   .lede + h3 {

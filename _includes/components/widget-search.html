@@ -1,12 +1,4 @@
 <section class="widget  widget--search">
-    <h3 class="widget-title" id="search">
-        <a href="/search">Search</a>
-        {% include content/fragment-anchor.html id='search' tabindex='-1' %}
-    </h3>
-    <form class="search-form  js-search-form" method="get" action="/search" role="search">
-        <label class="search-label  visually-hidden" id="search-label" for="search-input">Search for pages and posts</label>
-        <input type="search" class="search-input  js-search-input" id="search-input" name="query" value="" placeholder="Search the website" maxlength="30" aria-labelledby="search-label" aria-required="true" required aria-disabled="true" disabled>
-        <button type="submit" class="button--small  search-submit  js-search-submit" id="search-button" role="button" aria-controls="search-results" title="Submit" aria-disabled="true" disabled>Search</button>
-    </form>
-    <noscript>Please enable JavaScript to search.</noscript>
+    {% include content/heading.html title='Search' %}
+    {% include components/search-form.html %}
 </section>

@@ -27,8 +27,16 @@
 }
 
 .search-submit {
+    min-width: auto;
+    margin-left: $measure-small;
+
     .widget--search & {
-        min-width: auto;
-        margin-left: $measure-small;
+        @include media(">small") {
+            @include .button--small;
+        }
+    }
+
+    .search-main & {
+        margin-top: 0;
     }
 }

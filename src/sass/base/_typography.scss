@@ -106,7 +106,7 @@ h3 {
 
     // Match normal `h3`s without targetting `aside`-nested `h3`s
     .content > &,
-    &.widget-title {
+    .widget & {
         @include clear;
         width: auto;
         max-width: 100%;

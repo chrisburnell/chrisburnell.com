@@ -1,8 +1,5 @@
 <section class="widget  widget--latest-pens">
-    <h3 class="widget-title" id="latest-pens">
-        <a href="/pens">Latest Pens</a>
-        {% include content/fragment-anchor.html id='latest-pens' tabindex='-1' %}
-    </h3>
+    {% include content/heading.html title='Latest Pens' %}
     <ol class="content-list" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}

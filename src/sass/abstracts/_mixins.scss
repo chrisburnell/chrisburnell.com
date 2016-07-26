@@ -41,26 +41,6 @@
 
 
 ///
-/// Small Buttons (Single Source of Truth)
-///
-/// @author Chris Burnell
-///
-/// @require {Variable} $font-size-large
-///
-@mixin button--small() {
-    min-width: 5em;
-    font-size: $font-size-large;
-    height: 2em;
-    margin-top: 0;
-    line-height: 1.818;
-
-    &:active {
-        height: 1.818em;
-    }
-}
-
-
-///
 /// Change the case of text and apply appropriate letter-spacing.
 ///
 /// @param {String} $case - Case of Text

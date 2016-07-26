@@ -101,6 +101,17 @@ button {
 /**
  * Pull in Small Button styles from SSOT @mixin
  */
-.button--small {
-    @include button--small;
+%button--small {
+    min-width: 4em;
+    font-size: $font-size-large;
+    height: 2em;
+    margin-top: 0;
+    line-height: 1.818;
+
+    &:active {
+        height: 1.818em;
+    }
+}
+.button-small {
+    @extend %button--small !optional;
 }
