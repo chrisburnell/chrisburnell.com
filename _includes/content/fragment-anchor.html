@@ -13,17 +13,17 @@
 
 {% endcomment %}
 {% if include.id %}
-    {% capture href %}#{{ include.id }}{% endcapture %}
+    {% capture href %}{{ include.id | prepend: '#' }}{% endcapture %}
 {% elsif include.url %}
     {% assign href = include.url %}
 {% endif %}
 {% if include.title %}
-    {% capture title %} title="{{ include.title }}"{% endcapture %}
+    {% capture title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
 {% endif %}
 {% if include.rel %}
-    {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
+    {% capture rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
 {% if include.tabindex %}
-    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}
+    {% capture tabindex %}{{ include.tabindex | prepend: 'tabindex="' | append: '"' }}{% endcapture %}
 {% endif %}
-<a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }}{{ tabindex }}>{{ href }}</a>
+<a href="{{ href }}" class="fragment-anchor" {{ title }} {{ rel }} {{ tabindex }}>{{ href }}</a>

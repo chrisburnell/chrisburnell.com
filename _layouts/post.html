@@ -55,7 +55,7 @@
                         {% if url contains site.url %}
                             {% assign rel = '' %}
                         {% else %}
-                            {% assign rel = ' rel="external"' %}
+                            {% assign rel = 'rel="external"' %}
                         {% endif %}
                         {% if link.title == null or link.title == empty %}
                             {% assign title = url %}
@@ -63,7 +63,7 @@
                             {% assign title = link.title %}
                         {% endif %}
                         <li>
-                            <a href="{{ url }}"{{ rel }}>{{ title }}</a>
+                            <a href="{{ url }}" {{ rel }}>{{ title }}</a>
                         </li>
                     {% endfor %}
                 </ul>

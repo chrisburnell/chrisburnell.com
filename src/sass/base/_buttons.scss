@@ -98,11 +98,14 @@ button {
     }
 }
 
-/**
- * Pull in Small Button styles from SSOT @mixin
- */
-%button--small {
-    min-width: 4em;
+/// Small Buttons (Single Source of Truth) Mixin
+/// Required to pull this into the widget search submit button, as this change
+/// happens beneath the `small` breakpoint and `@extend` will not work across
+/// this context shift.
+/// @author Chris Burnell
+/// @require {Variable} $font-size-large
+@mixin button--small() {
+    min-width: 5em;
     font-size: $font-size-large;
     height: 2em;
     margin-top: 0;
@@ -113,5 +116,5 @@ button {
     }
 }
 .button-small {
-    @extend %button--small !optional;
+    @include button--small;
 }

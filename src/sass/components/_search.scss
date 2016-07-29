@@ -31,8 +31,8 @@
     margin-left: $measure-small;
 
     .widget--search & {
-        @include media(">small") {
-            @include .button--small;
+        @include media("<=small") {
+            @include button--small;
         }
     }
 

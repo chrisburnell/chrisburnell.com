@@ -175,6 +175,7 @@ p {
 
     &:empty {
         display: none;
+        visibility: hidden;
     }
 }
 

@@ -54,6 +54,7 @@ code[data-lang] {
 
     .code-toggle-input:checked ~ & {
         display: none;
+        visibility: hidden;
     }
 
     button {
