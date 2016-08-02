@@ -6,7 +6,7 @@
 - title: Pens Archive
   rel: 'me author'
   url: '/pens'
-  icon: 'heart'
+  icon: 'codepen'
 
 - title: Links Archive
   rel: 'me author'
