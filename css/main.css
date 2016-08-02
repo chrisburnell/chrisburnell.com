@@ -1416,13 +1416,13 @@ button::-moz-focus-inner {
   padding: 0;
   margin: 0; }
 
-.button-small {
+.button--small {
   min-width: 5em;
   font-size: 1.25rem;
   height: 2em;
   margin-top: 0;
   line-height: 1.818; }
-  .button-small:active {
+  .button--small:active {
     height: 1.818em; }
 
 input[type="date"],
