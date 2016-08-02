@@ -29,14 +29,5 @@
 .search-submit {
     min-width: auto;
     margin-left: $measure-small;
-
-    .widget--search & {
-        @include media("<=small") {
-            @include button--small;
-        }
-    }
-
-    .search-main & {
-        margin-top: 0;
-    }
+    margin-top: 0;
 }

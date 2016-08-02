@@ -1446,7 +1446,7 @@ textarea {
   transition: border-color 0.2s ease;
   will-change: border-color;
   box-sizing: inherit !important;
-  padding: 0.5rem;
+  padding: 0.4em;
   border: 0.125rem solid #dddddd;
   outline-style: none;
   font-family: "proxima-nova", sans-serif; }
@@ -1997,18 +1997,8 @@ footer {
 
 .search-submit {
   min-width: auto;
-  margin-left: 0.625rem; }
-  @media (max-width: 500px) {
-    .widget--search .search-submit {
-      min-width: 5em;
-      font-size: 1.25rem;
-      height: 2em;
-      margin-top: 0;
-      line-height: 1.818; }
-      .widget--search .search-submit:active {
-        height: 1.818em; } }
-  .search-main .search-submit {
-    margin-top: 0; }
+  margin-left: 0.625rem;
+  margin-top: 0; }
 
 /**
  * Contains buttons and internal links.

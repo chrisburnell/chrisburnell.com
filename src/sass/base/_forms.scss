@@ -24,7 +24,7 @@ textarea {
     @include transition(border-color);
     @include will-change(border-color);
     box-sizing: inherit !important;
-    padding: 0.5rem;
+    padding: 0.4em;
     border: $border-width-thin solid $color-text-light;
     outline-style: none;
     font-family: $font-family-gamma;

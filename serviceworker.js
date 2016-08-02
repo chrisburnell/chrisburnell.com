@@ -8,18 +8,18 @@
 
 
 // Set a name for the current cache
-const version = '2016-07-29';
+const version = '2016-08-01';
 const cacheName = 'cb_' + version;
 
 // Default files to always cache
 const cacheFiles = [
     '/',
-    '/about',
-    '/articles',
-    '/pens',
-    '/offline',
-    '/search',
-    '/styleguide',
+    '/about/',
+    '/articles/',
+    '/pens/',
+    '/offline/',
+    '/search/',
+    '/styleguide/',
     '/css/main.min.css',
     '/js/main.min.js',
     '/images/avatar.png',
