@@ -127,6 +127,7 @@ gulp.task('js-compile', function() {
     return gulp.src(['!' + paths.src.js + '**/loadcss.js',
                      '!' + paths.src.js + '**/serviceworker.js',
                      '!' + paths.src.js + '**/typekit.js',
+                     '!' + paths.src.js + '**/*-es6.js',
                      paths.src.js + '**/*.js'])
         .pipe(plumber())
         .pipe(concat('main.js'))

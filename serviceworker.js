@@ -9,7 +9,7 @@
 
 // Set a name for the current cache
 const version = '2016-08-01';
-const cacheName = 'cb_' + version;
+const cacheName = `cb_${version}`;
 
 // Default files to always cache
 const cacheFiles = [
@@ -45,7 +45,8 @@ self.addEventListener('activate', event => {
                 return Promise.all(keys
                     .filter(key => {
                         return key.indexOf(cacheName) !== 0;
-                    }).map(key => {
+                    })
+                    .map(key => {
                         return caches.delete(key);
                     })
                 );
@@ -67,8 +68,8 @@ self.addEventListener('fetch', event => {
     if (request.method !== 'GET') {
         event.respondWith(
             fetch(request)
-                .catch( () => {
-                    return caches.match('/offline');
+                .catch(() => {
+                    return caches.match('/offline/');
                 })
         );
         return;
@@ -85,15 +86,15 @@ self.addEventListener('fetch', event => {
         });
         event.respondWith(
             fetch(request)
-                .then (response => {
+                .then(response => {
                     return response;
                 })
-                .catch(function () {
-                    // CACHE or FALLBACK
+                .catch(() => {
+                    // CACHE or FALLBACK TO OFFLINE PAGE
                     return caches.match(request)
                         .then(response => {
-                            return response || caches.match('/offline');
-                        });
+                            return response || caches.match('/offline/');
+                        })
                 })
         );
         return;
