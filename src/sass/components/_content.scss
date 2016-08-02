@@ -1,5 +1,5 @@
 ////
-/// Article
+/// Content
 /// @group components
 ////
 
@@ -8,10 +8,6 @@
 .tagline {
     width: 100%;
     margin-bottom: $measure-large;
-
-    @include media("<=medium") {
-        text-align: left;
-    }
 }
 
 /**

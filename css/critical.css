@@ -418,9 +418,9 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: "league-gothic", Impact, sans-serif;
-  font-size: 2.625rem;
+  font-size: 4.5rem;
   line-height: 1;
-  text-shadow: 0.0715em 0.0715em 0 rgba(6, 6, 6, 0.05); }
+  text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05); }
 
 /**
  * Heading - Beta
@@ -1391,10 +1391,6 @@ aside p {
 .tagline {
   width: 100%;
   margin-bottom: 2.25rem; }
-  @media (max-width: 768px) {
-    .title,
-    .tagline {
-      text-align: left; } }
 
 /**
  * Banner / Hero Image

@@ -139,22 +139,22 @@ $font-weight-bold:    600 !default;
 
 // 16px
 /// @type Length
-$font-size-default:    100% !default;
-// 42px
+$font-size-default: 100% !default;
+// 72px
 /// @type Length
-$font-size-alpha:      2.625rem !default;
+$font-size-alpha: 4.500rem !default;
 // 22 px
 /// @type Length
-$font-size-beta:       1.375rem !default;
+$font-size-beta: 1.375rem !default;
 // 18px
 /// @type Length
-$font-size-gamma:      1.125rem !default;
+$font-size-gamma: 1.125rem !default;
 // 20px
 /// @type Length
-$font-size-large:      1.250rem !default;
+$font-size-large: 1.250rem !default;
 // 14px
 /// @type Length
-$font-size-small:      0.875rem !default;
+$font-size-small: 0.875rem !default;
 /// @type Map
 /// @prop {String} key - Font Size name
 /// @prop {Number} value - Font Size value

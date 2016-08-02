@@ -48,8 +48,8 @@ h6 {
     font-family: $font-family-alpha;
     font-size: $font-size-alpha;
     line-height: 1;
-    // 3px 3px
-    text-shadow: 0.0715em 0.0715em 0 $color-black--5-percent;
+    // 4px 4px
+    text-shadow: 0.250rem 0.250rem 0 $color-black--5-percent;
 }
 h1 {
     @extend %alpha !optional;
