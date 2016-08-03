@@ -143,7 +143,7 @@ $font-size-default: 100% !default;
 // 72px
 /// @type Length
 $font-size-alpha: 4.500rem !default;
-// 22 px
+// 22px
 /// @type Length
 $font-size-beta: 1.375rem !default;
 // 18px
@@ -165,12 +165,12 @@ $font-size-small: 0.875rem !default;
 /// @require {Variable} $font-size-large
 /// @require {Variable} $font-size-small
 $font-sizes: (
-    "default": $font-size-default,
-    "alpha":   $font-size-alpha,
-    "beta":    $font-size-beta,
-    "gamma":   $font-size-gamma,
-    "large":   $font-size-large,
-    "small":   $font-size-small
+    "default":      $font-size-default,
+    "alpha":        $font-size-alpha,
+    "beta":         $font-size-beta,
+    "gamma":        $font-size-gamma,
+    "large":        $font-size-large,
+    "small":        $font-size-small
 ) !default;
 
 

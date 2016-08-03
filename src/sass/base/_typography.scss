@@ -50,6 +50,10 @@ h6 {
     line-height: 1;
     // 4px 4px
     text-shadow: 0.250rem 0.250rem 0 $color-black--5-percent;
+
+    @include media("<=small") {
+        font-size: ($font-size-alpha / 1.285); // 56px
+    }
 }
 h1 {
     @extend %alpha !optional;

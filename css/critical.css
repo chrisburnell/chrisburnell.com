@@ -421,6 +421,9 @@ h1 {
   font-size: 4.5rem;
   line-height: 1;
   text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05); }
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 3.50195rem; } }
 
 /**
  * Heading - Beta
