@@ -10,6 +10,6 @@ category_path: '/talks'
 ---
 
 
-{% for page in site.categories.talk %}
+{% for page in site.categories.talk limit: 10 %}
     {% include components/item-feed.html %}
 {% endfor %}

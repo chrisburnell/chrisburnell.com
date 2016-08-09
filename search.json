@@ -18,7 +18,6 @@ searchable: false
             }{% unless forloop.last %},{% endunless %}
         {% endunless %}
     {% endfor %}
-    ,
     {% for page in site.posts %}
         {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
             {

@@ -4,6 +4,7 @@
 
   @param {String} title *
   @param {String} id [title | slugify]
+  @param {String} href
   @param {Element} type [h3]
 
   @example
@@ -17,6 +18,10 @@
 {% assign heading_type = include.type | default: 'h3' %}
 {% assign heading_id = include.id | default: include.title | slugify %}
 <{{ heading_type }} id="{{ heading_id }}">
-    {{ include.title }}
+    {% if include.href %}
+        <a href="{{ include.href }}">{{ include.title }}</a>
+    {% else %}
+        {{ include.title }}
+    {% endif %}
     {% include content/fragment-anchor.html id=heading_id %}
 </{{ heading_type }}>

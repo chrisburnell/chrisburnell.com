@@ -49,7 +49,7 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="talks" role="list">
-    {% for page in site.categories.talk limit: 2 %}
+    {% for page in site.categories.talk limit: 4 %}
         {% include components/content-list-item.html %}
     {% endfor %}
 </ol>
