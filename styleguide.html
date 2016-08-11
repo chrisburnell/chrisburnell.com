@@ -444,6 +444,15 @@ p q r s t u v w x y z { | } ~ </pre>
 <hr>
 
 
+{% include content/heading.html title='Content List' %}
+
+<ol class="content-list" role="list">
+    {% for page in site.posts limit: 4 %}
+        {% include components/content-list-item.html %}
+    {% endfor %}
+</ol>
+
+
 {% include content/heading.html title='Icons' %}
 
 <ul class="icons-list">

@@ -172,6 +172,10 @@
             width:  4em !important;
             height: 4em !important;
         }
+
+        .page--home & {
+            display: none;
+        }
     }
     a:hover,
     a:focus,

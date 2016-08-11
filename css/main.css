@@ -1968,6 +1968,8 @@ footer {
       .content-list svg {
         width: 4em !important;
         height: 4em !important; } }
+    .page--home .content-list svg {
+      display: none; }
   .content-list a:hover svg,
   .content-list a:focus svg,
   .content-list a:active svg {
