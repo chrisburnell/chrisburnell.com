@@ -4,27 +4,24 @@
  */
 
 
-(function() {
+(() => {
 
     'use strict';
 
-    ////
-    /// Initialisation
-    ////
 
-    var codeToggleLabels = document.querySelectorAll('.code-toggle-label');
-    for (var i = 0; i < codeToggleLabels.length; i++) {
-        codeToggleLabels[i].addEventListener('click', function(event) {
+    const codeToggleLabels = document.querySelectorAll('.code-toggle-label');
+    for (var index of codeToggleLabels) {
+        codeToggleLabels[index].addEventListener('click', event => {
             toggleCode(event);
         });
     }
 
     function toggleCode(node) {
         node.target.setAttribute('aria-hidden', 'true');
-        node.target.removeEventListener('click', function() {});
+        node.target.removeEventListener('click', () => {});
         node.target.querySelector('button').setAttribute('aria-pressed', 'true');
         node.target.parentNode.setAttribute('aria-expanded', 'true');
-        window.location.hash = '#' + node.target.querySelector('button').getAttribute('aria-controls');
+        window.location.hash = `#${node.target.querySelector('button').getAttribute('aria-controls')}`;
     }
 
-}());
+})();

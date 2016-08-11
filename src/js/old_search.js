@@ -1,27 +1,28 @@
 /*!
  * A simple JSON search
  * @author Mat Hayward - Erskine Design (Original Author)
- * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications)
+ * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications) 
  */
 
 
-(() => {
+(function() {
 
     'use strict';
 
+    ////
+    /// Initialisation
+    ////
 
-    let query;
-    let queryFormatted;
-    const jsonFeedUrl = '../search.json';
-    const searchContainer    = document.querySelector('.js-search');
-    const searchForm         = document.querySelector('.js-search-form');
-    const searchInput        = document.querySelector('.js-search-input');
-    const searchSubmit       = document.querySelector('.js-search-submit');
-    const resultsMeta        = document.querySelector('.js-search-meta');
-    const resultsList        = document.querySelector('.js-search-results-list');
-    const resultTemplatePage = document.querySelector('.js-search-template-page');
-    const resultTemplatePost = document.querySelector('.js-search-template-post');
-    const allowEmpty = false;
+    var query, queryFormatted, jsonFeedUrl = '../search.json',
+        searchContainer    = document.querySelector('.js-search'),
+        searchForm         = document.querySelector('.js-search-form'),
+        searchInput        = document.querySelector('.js-search-input'),
+        searchSubmit       = document.querySelector('.js-search-submit'),
+        resultsMeta        = document.querySelector('.js-search-meta'),
+        resultsList        = document.querySelector('.js-search-results-list'),
+        resultTemplatePage = document.querySelector('.js-search-template-page'),
+        resultTemplatePost = document.querySelector('.js-search-template-post'),
+        allowEmpty = false;
 
     // initiate search functionality
     initSearch();
@@ -91,19 +92,19 @@
     ////
     function getSearchResults() {
 
-        const request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
 
         request.open('GET', jsonFeedUrl, true);
 
-        request.onload = () => {
+        request.onload = function() {
             if (request.status >= 200 && request.status < 400) {
                 // Success!
-                const data = JSON.parse(request.responseText);
+                var data = JSON.parse(request.responseText);
                 processData(data);
             }
         };
 
-        request.onerror = () => {
+        request.onerror = function() {
             // There was a connection error of some sort
         };
 
@@ -117,17 +118,17 @@
     ////
     function processData(data) {
 
-        let resultsCount = 0,
-        let results = '';
-        let item;
-        let titleCheck;
-        let ledeCheck;
-        let contentCheck;
-        let categoriesCheck;
-        let tagsCheck;
-        let locationCheck;
+        var resultsCount = 0,
+            results = '',
+            item,
+            titleCheck,
+            ledeCheck,
+            contentCheck,
+            categoriesCheck,
+            tagsCheck,
+            locationCheck;
 
-        for (var index of data) {
+        for (var index = 0; index < data.length; index++) {
 
             item = data[index];
             queryFormatted = query.toLowerCase();
@@ -225,7 +226,7 @@
         } else if (item['type'] == 'pen') {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
         } else if (item['location']) {
-            html = injectContent(html, `<em>Talk – Given at ${item['location']}.</em>`, '@@LEDE@@');
+            html = injectContent(html, '<em>Talk – Given at ' + item['location'] + '.</em>', '@@LEDE@@');
         }
 
         // DATE
@@ -243,8 +244,8 @@
     /// @return void
     ////
     function populateResultsString(count) {
-        const resultSuffix = (count == 1) ? '' : 's';
-        const searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
+        var resultSuffix = (count == 1) ? '' : 's';
+        var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
         resultsMeta.innerHTML = searchMeta;
     }
 
@@ -260,7 +261,7 @@
     /// @return {String} parameter value
     ////
     function getParameterByName(name) {
-        const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
         return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
     }
 
@@ -272,8 +273,8 @@
     /// @return {String} injected content
     ////
     function injectContent(originalContent, injection, placeholder) {
-        const regex = new RegExp(placeholder, 'g');
+        var regex = new RegExp(placeholder, 'g');
         return originalContent.replace(regex, injection);
     }
 
-})();
+}());

@@ -6,12 +6,13 @@
 // Define gulp objects
 var gulp    = require('gulp'),
     gutil   = require('gulp-util'),
+    babel   = require('gulp-babel'),
     concat  = require('gulp-concat'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
     rename  = require('gulp-rename'),
     sass    = require('gulp-sass'),
-    uglify  = require('gulp-uglify/minifier'),
+    uglify  = require('gulp-uglify'),
     watch   = require('gulp-watch');
 
 // Define external objects
@@ -20,8 +21,7 @@ var autoprefixer = require('autoprefixer'),
     reporter     = require('postcss-reporter'),
     scss_syntax  = require('postcss-scss'),
     sassdoc      = require('sassdoc'),
-    stylelint    = require('stylelint'),
-    uglifyjs     = require('uglify-js-harmony');
+    stylelint    = require('stylelint');
 
 // Define paths
 var paths = {
@@ -66,7 +66,8 @@ gulp.task('css-lint', function() {
             stylelint(stylelintRules),
             reporter({
                 clearMessages: true,
-                throwError: true
+                throwError: true,
+                plugins: ['!postcss-discard-empty']
             })
         ], { syntax: scss_syntax }));
 });
@@ -122,19 +123,22 @@ gulp.task('css-sassdoc', function() {
         }));
 });
 
+// -----------------------------------------------------------------------------
+
 // Compile JavaScript
 gulp.task('js-compile', function() {
     return gulp.src(['!' + paths.src.js + '**/loadcss.js',
                      '!' + paths.src.js + '**/serviceworker.js',
                      '!' + paths.src.js + '**/typekit.js',
-                     '!' + paths.src.js + '**/*-es6.js',
+                     '!' + paths.src.js + '**/old_.js',
                      paths.src.js + '**/*.js'])
         .pipe(plumber())
+        .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(paths.dist.js))
         .pipe(uglify({
             mangle: false
-        }, uglifyjs))
+        }))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -147,7 +151,7 @@ gulp.task('js-loadcss', function() {
         .pipe(plumber())
         .pipe(uglify({
             mangle: false
-        }, uglifyjs))
+        }))
         .pipe(rename({
             basename: 'loadcss',
             extname: '.html'
@@ -168,7 +172,7 @@ gulp.task('js-typekit', function() {
         .pipe(plumber())
         .pipe(uglify({
             mangle: false
-        }, uglifyjs))
+        }))
         .pipe(rename({
             basename: 'typekit',
             extname: '.html'

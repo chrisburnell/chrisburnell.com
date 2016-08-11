@@ -8,7 +8,7 @@
 
 
 // Set a name for the current cache
-const version = '2016-08-01';
+const version = '2016-08-11';
 const cacheName = `cb_${version}`;
 
 // Default files to always cache
@@ -90,7 +90,6 @@ self.addEventListener('fetch', event => {
                     return response;
                 })
                 .catch(() => {
-                    // CACHE or FALLBACK TO OFFLINE PAGE
                     return caches.match(request)
                         .then(response => {
                             return response || caches.match('/offline/');
