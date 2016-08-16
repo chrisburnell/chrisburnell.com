@@ -3,7 +3,9 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/).
 
-![Version](https://img.shields.io/badge/version-2.8.0-blue.svg?style=flat-square)[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)[![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg?style=flat-square)](LICENSE)
+![Version](https://img.shields.io/badge/version-2.8.0-blue.svg?style=flat-square)[![GitHub license](https://img.shields.io/badge/license-CC_BY--NC--SA_4.0-blue.svg?style=flat-square)](LICENSE)
+
+[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)
 
 
 ## Table of Contents
