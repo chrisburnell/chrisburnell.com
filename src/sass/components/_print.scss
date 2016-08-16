@@ -18,7 +18,7 @@
     // Fix buttons for B&W scenario
     %button-elements {
         color: $color-text;
-        border: $border-width-hairline solid $color-text;
+        border: $border-width-hairline $border-style-default $color-text;
         box-shadow: none;
     }
 

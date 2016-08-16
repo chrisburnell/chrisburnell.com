@@ -31,7 +31,7 @@
 
     @include media("<=medium") {
         padding-top: $measure-large;
-        border-top: $border-width-thin solid $color-black--10-percent;
+        border-top: $border-width-thin $border-style-default $color-black--10-percent;
         margin-bottom: $measure-small;
     }
 

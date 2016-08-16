@@ -83,7 +83,7 @@ h3 {
     @extend %gamma !optional;
     @include case(uppercase);
     margin-top: $measure-large;
-    border-bottom: $border-width-thin solid $color-text-light;
+    border-bottom: $border-width-thin $border-style-default $color-text-light;
     font-weight: $font-weight-bold;
 
     &:not(:last-child) {
@@ -364,7 +364,7 @@ th {
     }
 
     tfoot & {
-        border-top: $border-width-thin solid $color-text-light;
+        border-top: $border-width-thin $border-style-default $color-text-light;
     }
     /*tfoot*/.totals & {
         @include media(">medium") {
@@ -388,16 +388,16 @@ th {
     }
 
     & + th {
-        border-left: $border-width-thin solid $color-text-light;
+        border-left: $border-width-thin $border-style-default $color-text-light;
     }
 }
 // Body Cells
 tbody th,
 td {
-    border-top: $border-width-thin solid $color-light-gray;
+    border-top: $border-width-thin $border-style-default $color-light-gray;
 
     & + td {
-        border-left: $border-width-thin solid $color-light-gray;
+        border-left: $border-width-thin $border-style-default $color-light-gray;
     }
 }
 tbody th,
@@ -436,7 +436,7 @@ summary {
 
     & + %content-elements {
         margin-top: $measure-small;
-        border-top: $border-width-thin solid $color-brand;
+        border-top: $border-width-thin $border-style-default $color-brand;
         padding-top: $measure-medium;
     }
 }

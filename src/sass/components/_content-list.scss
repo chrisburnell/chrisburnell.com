@@ -113,7 +113,7 @@
         @include will-change(border-color);
         width: auto;
         display: inline-block;
-        border-bottom: $border-width-hairline solid $color-text-light;
+        border-bottom: $border-width-hairline $border-style-default $color-text-light;
         margin-bottom: 0;
     }
     a:hover,

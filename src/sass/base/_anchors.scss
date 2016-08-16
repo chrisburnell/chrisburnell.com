@@ -9,7 +9,7 @@ a {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     border-bottom-width: $border-width-hairline;
-    border-bottom-style: solid;
+    border-bottom-style: $border-style-default;
     text-decoration: none;
 
     &,

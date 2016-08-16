@@ -124,6 +124,10 @@ $border-width-hairline:     1px !default;
 
 
 /// @type Length
+$border-style-default: solid !default;
+
+
+/// @type Length
 /// @see {Mixin} border-radius
 $border-radius-default: 0.375rem !default;
 /// @type Length

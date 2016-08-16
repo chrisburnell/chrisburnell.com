@@ -11,7 +11,7 @@
  */
 .content {
     padding-top: $measure-large;
-    border-top: $border-width-default solid $color-brand;
+    border-top: $border-width-default $border-style-default $color-brand;
 
     @include media(">medium") {
         padding-left: ($aside-width + $measure-large);
