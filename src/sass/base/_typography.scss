@@ -16,6 +16,7 @@ html {
  */
 blockquote,
 details,
+table,
 dl,
 ol,
 ul,
@@ -244,7 +245,6 @@ ul.default-list li::before {
 }
 dl {
     width: 100%;
-    margin-top: 0;
     overflow: hidden;
 
     &:not(:last-child) {

@@ -602,7 +602,6 @@ ul.default-list li::before {
 
 dl {
   width: 100%;
-  margin-top: 0;
   overflow: hidden; }
   dl:not(:last-child) {
     margin-bottom: 2.25rem; }
@@ -763,6 +762,7 @@ details {
   font-family: "proxima-nova", sans-serif; }
   details blockquote, details
   details, details
+  table, details
   dl, details
   ol, details
   ul, details
@@ -776,6 +776,7 @@ summary {
   cursor: pointer; }
   summary + blockquote, summary +
   details, summary +
+  table, summary +
   dl, summary +
   ol, summary +
   ul, summary +
@@ -946,6 +947,7 @@ hr {
   @media (max-width: 768px) {
     blockquote + hr,
     details + hr,
+    table + hr,
     dl + hr,
     ol + hr,
     ul + hr,
@@ -986,6 +988,7 @@ var,
  */
 blockquote code,
 details code,
+table code,
 dl code,
 ol code,
 ul code,
@@ -2072,6 +2075,7 @@ footer {
     padding: 0 0 1.25rem; }
   blockquote + .nav-secondary,
   details + .nav-secondary,
+  table + .nav-secondary,
   dl + .nav-secondary,
   ol + .nav-secondary,
   ul + .nav-secondary,
