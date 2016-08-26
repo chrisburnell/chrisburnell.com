@@ -73,6 +73,8 @@ snippet of code on a project of your own. -->
 
     <title>{{ meta_title }}</title>
 
+    <link rel="dns-prefetch" href="//fonts.typekit.net">
+    <link rel="dns-prefetch" href="//p.typekit.net">
     <link rel="dns-prefetch" href="//use.typekit.net">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     {% if page.comments == true %}
@@ -114,6 +116,7 @@ snippet of code on a project of your own. -->
     <meta name="msapplication-navbutton-color" content="#{{ site.color_brand }}">
     <meta name="apple-mobile-web-app-status-bar-style" content="#{{ site.color_brand }}">
 
+    <meta http-equiv="Content-Security-Policy" content="default-src https:; frame-ancestors 'self'">
     <meta http-equiv="cleartype" content="on">
 
     {% if page.page_class contains 'not-found' or page.page_class contains 'offline' %}
