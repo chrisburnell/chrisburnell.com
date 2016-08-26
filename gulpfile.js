@@ -72,7 +72,7 @@ gulp.task('css-lint', function() {
         ], { syntax: scss_syntax }));
 });
 
-// Compile Sass
+// Compile CSS from Sass
 gulp.task('css-compile', ['css-lint'], function() {
     return gulp.src([paths.src.css + '*.scss'])
         .pipe(plumber())
