@@ -2,10 +2,10 @@
 layout: post
 categories: article
 
-# date: 2016-05-05 01:00:00
+# date: 2016-08-16 12:00:00
 
 title: Jekyll And Sass, Sitting in a Tree
-lede: I’ve been using Jekyll for over three years, and built a series of useful include components to help simplify and streamline my templating and authoring processes.
+lede: I’ve been using Jekyll for over three years, and built a series of useful reusable components to streamline my templating and authoring processes.
 tags:
 - jekyll
 - liquid
@@ -49,11 +49,10 @@ So how do I actually get *Jekyll* to build a *heading* and an *associated anchor
 As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown* content. Instead of writing headings in the traditional Markdown method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes.
 
 {% highlight markdown %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-. . .
-{% include content/heading.html title='Brass Tacks' %}
-. . .
-Cras ac elit enim, et tempus nulla.
+<h3 id="brass-tacks">
+    Brass Tacks
+    <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
+</h3>
 {% endhighlight %}
 
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
@@ -114,7 +113,6 @@ Let’s see what the `fragment-anchor` *include* looks like.
 
 {% highlight css %}
 .fragment-anchor {
-    /* ... */
     display: none;
     /* ... */
 }
@@ -127,14 +125,10 @@ Let’s see what the `fragment-anchor` *include* looks like.
 0. For accessibility reasons and a coherent reading experience for screen readers, fragment anchors are always set to `display: none;` to exclude them from being read aloud or included in navigation searches.
 
 {% highlight html %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-. . .
 <h3 id="brass-tacks">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h3>
-. . .
-Cras ac elit enim, et tempus nulla.
 {% endhighlight %}
 
 This is the fully-generated output of the original *include* in the *Markdown* file.

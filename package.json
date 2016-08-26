@@ -28,6 +28,8 @@
         "gulp-sass": "2.3.2",
         "gulp-uglify": "2.0.0",
         "gulp-watch": "4.3.9",
+        "imagemin": "5.2.2",
+        "imagemin-webp": "4.0.0",
         "postcss-reporter": "1.4.1",
         "postcss-scss": "0.1.9",
         "sassdoc": "2.1.20",

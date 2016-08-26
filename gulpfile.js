@@ -18,6 +18,8 @@ var gulp    = require('gulp'),
 // Define external objects
 var autoprefixer = require('autoprefixer'),
     cssnano      = require('cssnano'),
+    imagemin     = require('imagemin'),
+    webp         = require('imagemin-webp'),
     reporter     = require('postcss-reporter'),
     scss_syntax  = require('postcss-scss'),
     sassdoc      = require('sassdoc'),
@@ -28,11 +30,13 @@ var paths = {
     root: './',
     src: {
         css: 'src/sass/',
-        js: 'src/js/'
+        js: 'src/js/',
+        images: 'images/'
     },
     dist: {
         css: 'css/',
-        js: 'js/'
+        js: 'js/',
+        images: 'images/webp'
     },
     includes: '_includes/',
     sassdoc: 'sassdoc/'
@@ -60,7 +64,7 @@ var stylelintRules = {
 
 // Lint Sass
 gulp.task('css-lint', function() {
-    return gulp.src([paths.src.css + '*.scss'])
+    return gulp.src(paths.src.css + '*.scss')
         .pipe(plumber())
         .pipe(postcss([
             stylelint(stylelintRules),
@@ -74,7 +78,7 @@ gulp.task('css-lint', function() {
 
 // Compile CSS from Sass
 gulp.task('css-compile', ['css-lint'], function() {
-    return gulp.src([paths.src.css + '*.scss'])
+    return gulp.src(paths.src.css + '*.scss')
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -105,7 +109,7 @@ gulp.task('css-compile', ['css-lint'], function() {
 
 // Generate inline Critical CSS include
 gulp.task('css-critical', function() {
-    return gulp.src([paths.dist.css + 'critical.min.css'])
+    return gulp.src(paths.dist.css + 'critical.min.css')
         .pipe(plumber())
         .pipe(rename({
             basename: 'critical-css',
@@ -116,7 +120,7 @@ gulp.task('css-critical', function() {
 
 // Generate Sass documentation
 gulp.task('css-sassdoc', function() {
-    return gulp.src([paths.src.css + '**/*.scss'])
+    return gulp.src(paths.src.css + '**/*.scss')
         .pipe(plumber())
         .pipe(sassdoc({
             dest: paths.sassdoc
@@ -130,7 +134,7 @@ gulp.task('js-compile', function() {
     return gulp.src(['!' + paths.src.js + '**/loadcss.js',
                      '!' + paths.src.js + '**/serviceworker.js',
                      '!' + paths.src.js + '**/typekit.js',
-                     '!' + paths.src.js + '**/old_.js',
+                     '!' + paths.src.js + '**/old_*.js',
                      paths.src.js + '**/*.js'])
         .pipe(plumber())
         .pipe(babel())
@@ -182,10 +186,36 @@ gulp.task('js-typekit', function() {
 
 // -----------------------------------------------------------------------------
 
+// Generate WebP-format counterparts for all JPG images
+gulp.task('jpg-to-webp', function() {
+    return imagemin([paths.src.images + '**/*.{jpg|jpeg}'], paths.dist.images, {
+        plugins : [
+            webp({ quality: '90' })
+        ]
+    }).then(files => {
+        console.log(files);
+    });
+});
+
+// Generate WebP-format counterparts for all PNG images
+gulp.task('png-to-webp', function() {
+    return imagemin([paths.src.images + '**/*.png'], paths.dist.images, {
+        plugins : [
+            webp({ lossless: true })
+        ]
+    }).then(files => {
+        console.log(files);
+    });
+});
+
+// -----------------------------------------------------------------------------
+
 // Default task
 gulp.task('default', function() {
     gulp.start('css');
     gulp.start('js');
+    gulp.start('jpg-to-webp');
+    gulp.start('png-to-webp');
 });
 
 // CSS task
@@ -201,14 +231,26 @@ gulp.task('js', ['js-compile'], function() {
     gulp.start('js-typekit');
 });
 
+// Images task
+gulp.task('images', function() {
+    gulp.start('jpg-to-webp');
+    gulp.start('png-to-webp');
+});
+
 // -----------------------------------------------------------------------------
 
 // Watch files and perform the appropriate tasks
-gulp.task('watch', ['css', 'js'], function() {
+gulp.task('watch', ['css', 'js', 'images'], function() {
     watch(paths.src.css + '**/*.scss', function() {
         gulp.start('css');
     });
     watch([paths.src.js + '**/*.js'], function() {
         gulp.start('js');
+    });
+    watch([paths.src.images + '**/*.{jpg|jpeg}'], function() {
+        gulp.start('jpg-to-webp');
+    });
+    watch([paths.src.images + '**/*.png'], function() {
+        gulp.start('png-to-webp');
     });
 });
