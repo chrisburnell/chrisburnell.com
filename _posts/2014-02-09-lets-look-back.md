@@ -62,7 +62,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 {% include content/heading.html title='There must be a better way!' id='a-better-way' %}
 
 <figure>
-    <img src="/images/content/good-news-everyone.jpg" alt="Good news everyone!" role="presentation">
+    {% include content/img.html src='/images/content/good-news-everyone.jpg' alt='Good news everyone!' %}
     <figcaption>There is!</figcaption>
 </figure>
 
@@ -418,9 +418,7 @@ Next, let’s turn this CSS into SCSS.
         @include animation-play-state("paused");
         @include translate3d("0, -0.808em, 0");
     }
-    /**
-     * Only animate when the user hovers the logo.
-     */
+    // Only animate when the user hovers the logo.
     &:hover:after,
     &:focus:after,
     &:active:after {
@@ -451,7 +449,7 @@ Next, let’s turn this CSS into SCSS.
 {% include content/code-toggle-bottom.html %}
 
 <figure>
-    <img src="/images/content/welldone.gif" alt="Just look at it... :')" role="presentation">
+    {% include content/img.html src='/images/content/welldone.gif' alt='Just look at it... Beautiful.' %}
     <figcaption>Success.</figcaption>
 </figure>
 

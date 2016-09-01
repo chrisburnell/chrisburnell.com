@@ -20,6 +20,10 @@ input[type="week"],
 input[type="url"],
 textarea {
     @extend %form-elements !optional;
+}
+
+input,
+textarea {
     @include border-radius(thin);
     @include transition(border-color);
     @include will-change(border-color);

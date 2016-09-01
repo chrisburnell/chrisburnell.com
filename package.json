@@ -1,11 +1,13 @@
 {
     "name": "ChrisBurnell",
     "author": "Chris Burnell <me@chrisburnell.com>",
-    "contributors": [{
-        "name": "Chris Burnell",
-        "email": "me@chrisburnell.com",
-        "twitter": "@iamchrisburnell"
-    }],
+    "contributors": [
+        {
+            "name": "Chris Burnell",
+            "email": "me@chrisburnell.com",
+            "twitter": "@iamchrisburnell"
+        }
+    ],
     "version": "2.8.0",
     "description": "Some real sweet codestuffs.",
     "license": "CC-BY-NC-SA-4.0",
@@ -14,26 +16,26 @@
     "engines": {
         "node": ">= 5.10.0"
     },
-    "dependencies": {
+    "devDependencies": {
         "autoprefixer": "6.4.0",
+        "babel-core": "6.14.0",
         "babel-preset-es2015": "6.14.0",
         "cssnano": "3.7.4",
         "gulp": "3.9.1",
         "gulp-babel": "6.1.2",
         "gulp-concat": "2.6.0",
-        "gulp-util": "3.0.7",
+        "gulp-imagemin": "3.0.3",
         "gulp-plumber": "1.1.0",
         "gulp-postcss": "6.1.1",
         "gulp-rename": "1.2.2",
         "gulp-sass": "2.3.2",
         "gulp-uglify": "2.0.0",
         "gulp-watch": "4.3.9",
-        "imagemin": "5.2.2",
         "imagemin-webp": "4.0.0",
         "postcss-reporter": "1.4.1",
-        "postcss-scss": "0.1.9",
+        "postcss-scss": "0.2.1",
         "sassdoc": "2.1.20",
-        "stylelint": "7.1.0"
+        "stylelint": "7.2.0"
     },
     "repository": {
         "type": "git",

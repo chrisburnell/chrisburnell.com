@@ -66,16 +66,15 @@
                       gradient(transparent, rgb(89, 144, 173), to bottom right),
                       gradient(transparent, rgb(137, 99, 79), to top left);
     background-size: 100%;
-    // 100px
-    width:  6.25rem;
-    // 100px
-    height: 6.25rem;
+    width:  6.25rem; // 100px
+    height: 6.25rem; // 100px
     float: left;
     margin-right:  $measure-small;
     margin-bottom: $measure-small;
 
     %image-elements {
         @include border-radius;
+        width:  100%;
         height: 100%;
         display: block;
     }

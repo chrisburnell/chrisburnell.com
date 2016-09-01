@@ -36,7 +36,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 <figure>
     <a href="http://pinboard.in">
-        <img src="/images/content/pinboard-logo.png" alt="">
+        {% include content/img.html src='/images/content/pinboard-logo.png' alt='' %}
         <figcaption>Pinboard © Nine Fives Software.</figcaption>
     </a>
 </figure>
@@ -48,7 +48,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
-        <img src="/images/content/pinboard-before.png" srcset="/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x" alt="">
+        {% include content/img.html src='/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x' alt='' %}
         <figcaption>The <q>before shot.</q></figcaption>
     </a>
 </figure>
@@ -64,7 +64,7 @@ So it was important for me to make these parts distinct in the new design, whils
 
 {% include content/heading.html title='<code>injection"); DROP TABLE Bookmarks;--</code>' id='injection' %}
 
-<aside><figure><img src="/images/content/idontbelievemyeyes.gif" alt=""></figure></aside>
+<aside><figure>{% include content/img.html src='/images/content/idontbelievemyeyes.gif' alt='' %}</figure></aside>
 
 That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>that moment of tear-filled laughter</s> that I tried.
 
@@ -72,7 +72,7 @@ Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for wh
 
 <figure>
     <a href="http://userstyles.org">
-        <img src="/images/content/stylish-logo.png" alt="">
+        {% include content/img.html src='/images/content/stylish-logo.png' alt='' %}
         <figcaption>Stylish - Open Source, by contributors.</figcaption>
     </a>
 </figure>
@@ -98,28 +98,28 @@ After tinkering with my own file for a few days and experimenting through daily 
 
 <figure>
     <a href="/images/content/pinboard-after@2x.png">
-        <img src="/images/content/pinboard-after.png" srcset="/images/content/pinboard-after.png 1x, /images/content/pinboard-after@2x.png 2x" alt="">
+        {% include content/img.html src='/images/content/pinboard-after.png 1x, /images/content/pinboard-after@2x.png 2x' alt='' %}
         <figcaption>The final piece.</figcaption>
     </a>
 </figure>
 
 <figure>
     <a href="/images/content/pinboard-private@2x.png">
-        <img src="/images/content/pinboard-private.png" srcset="/images/content/pinboard-private.png 1x, /images/content/pinboard-private@2x.png 2x" alt="">
+        {% include content/img.html src='/images/content/pinboard-private.png 1x, /images/content/pinboard-private@2x.png 2x' alt='' %}
         <figcaption>Private bookmarks.</figcaption>
     </a>
 </figure>
 
 <figure>
     <a href="/images/content/pinboard-icons-transition.gif">
-        <img src="/images/content/pinboard-icons-transition.gif" alt="">
+        {% include content/img.html src='/images/content/pinboard-icons-transition.gif' alt='' %}
         <figcaption>The icons transition. An example of the new sitewide transitions.</figcaption>
     </a>
 </figure>
 
 <figure>
     <a href="/images/content/pinboard-star-transition.gif">
-        <img src="/images/content/pinboard-star-transition.gif" alt="">
+        {% include content/img.html src='/images/content/pinboard-star-transition.gif' alt='' %}
         <figcaption>The ‘star’ feature transition.</figcaption>
     </a>
 </figure>

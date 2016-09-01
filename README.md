@@ -93,6 +93,7 @@ _includes
 │   ├── codepen.html
 │   ├── fragment-anchor.html
 │   ├── heading.html
+│   ├── img.html
 │   ├── svg.html
 │   └── twitter-card.html
 └── layouts

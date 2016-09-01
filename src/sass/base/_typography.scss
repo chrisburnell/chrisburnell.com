@@ -448,7 +448,6 @@ img,
 picture {
     @extend %image-elements !optional;
 }
-
 %image-elements {
     position: relative;
 
@@ -459,20 +458,28 @@ picture {
         max-width: 100%;
         height: auto;
         font-style: italic;
+    }
+}
+picture {
+    &,
+    & img {
+        display: block;        
+    }
+}
+img {
+    &::before {
+        @include position(top-left);
+        content: "";
+        background-color: $color-text-light;
+        width:  100%;
+        height: 100%;
+        text-align: center;
+    }
 
-        &::before {
-            @include position(top-left);
-            content: "";
-            background-color: $color-text-light;
-            width:  100%;
-            height: 100%;
-            text-align: center;
-        }
-
-        &::after {
-            @include position(center);
-            content: "Broken Image of " attr(alt);
-        }
+    &::after {
+        @include position(center);
+        // Only visible when the Image fails to load
+        content: "Broken Image: " attr(src);
     }
 }
 figure {

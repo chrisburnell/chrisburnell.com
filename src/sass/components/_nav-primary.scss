@@ -75,7 +75,7 @@
         }
 
         &:active {
-            transform: translateY(.2rem);
+            transform: translateY(0.2rem);
         }
 
         @include media("<=small") {

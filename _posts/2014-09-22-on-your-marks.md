@@ -25,7 +25,7 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 
 <figure>
     <a href="https://disqus.com/">
-        <img src="/images/content/disqus-logo-white-blue.png" alt="">
+        {% include content/img.html src='/images/content/disqus-logo-white-blue.png' alt='' %}
         <figcaption>Disqus © 2012.</figcaption>
     </a>
 </figure>

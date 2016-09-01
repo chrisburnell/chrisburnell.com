@@ -19,3 +19,6 @@ _site/
 
 # NPM
 node_modules/
+
+# Original Images
+src/images
