@@ -21,4 +21,4 @@ _site/
 node_modules/
 
 # Original Images
-src/images
+src/images/*
