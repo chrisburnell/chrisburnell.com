@@ -2467,11 +2467,9 @@ iframe {
 .media--vimeo {
   padding-top: 56.25%; }
 
-.media--4-3 {
+.media--4-3,
+.media--speackerdeck {
   padding-top: 75%; }
-
-.media--speakerdeck {
-  padding-top: 80.62%; }
 
 @media print {
   nav,

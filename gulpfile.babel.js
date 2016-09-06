@@ -1,5 +1,7 @@
-/*!
- * Chris Burnell gulp Configuration
+/**
+ * Gulp Configuration
+ * @author Chris Burnell
+ * @version 2.8.0
  */
 
 

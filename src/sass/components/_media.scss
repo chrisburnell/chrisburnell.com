@@ -39,18 +39,14 @@ iframe {
     }
 }
 
-// Sets the aspect ratio to Vimeo / 16:9
+// Sets the aspect ratio to 16:9
 .media--16-9,
 .media--vimeo {
     padding-top: 56.25%;
 }
 
 // Sets the aspect ratio to 4:3
-.media--4-3 {
+.media--4-3,
+.media--speackerdeck {
     padding-top: 75%;
-}
-
-// Sets the aspect ratio to Speaker Deck (810:653)
-.media--speakerdeck {
-    padding-top: 80.62%;
 }
