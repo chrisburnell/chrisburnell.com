@@ -242,7 +242,6 @@
 
         var resultsCount = 0;
         var results = '';
-        var item = void 0;
         var titleCheck = void 0;
         var ledeCheck = void 0;
         var contentCheck = void 0;
@@ -256,10 +255,9 @@
 
         try {
             for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var index = _step.value;
+                var item = _step.value;
 
 
-                item = data[index];
                 queryFormatted = query.toLowerCase();
 
                 titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;

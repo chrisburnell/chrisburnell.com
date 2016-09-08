@@ -119,7 +119,6 @@
 
         let resultsCount = 0;
         let results = '';
-        let item;
         let titleCheck;
         let ledeCheck;
         let contentCheck;
@@ -127,9 +126,8 @@
         let tagsCheck;
         let locationCheck;
 
-        for (var index of data) {
+        for (var item of data) {
 
-            item = data[index];
             queryFormatted = query.toLowerCase();
 
             titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
@@ -174,7 +172,6 @@
         showSearchResults(results);
 
         ga('send', 'event', 'search', resultsCount, query);
-
     }
 
     ////
