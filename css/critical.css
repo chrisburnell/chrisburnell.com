@@ -390,7 +390,11 @@ body {
 
 html {
   background-color: #4f4f4f;
-  font: 400 normal 100%/1.875 "ff-meta-serif-web-pro", Georgia, serif;
+  font-size: 100%;
+  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 

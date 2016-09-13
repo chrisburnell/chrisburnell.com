@@ -66,6 +66,7 @@ code[data-lang] {
 .code-toggle-input {
     & + .highlight pre {
         @include transition(max-height);
+        // conservative super-tall buffer for code blocks
         max-height: 1000vh;
     }
 
@@ -79,14 +80,14 @@ code[data-lang] {
             @include border-radius(bottom);
             content: "";
             background-image: linear-gradient(to bottom,
-                                              rgba($color-black, .2) 0,
-                                              rgba($color-black, .2) 2rem,
-                                              rgba($color-black, .4) 2rem,
-                                              rgba($color-black, .4) 4rem,
-                                              rgba($color-black, .6) 4rem,
-                                              rgba($color-black, .6) 6rem,
-                                              rgba($color-black, .8) 6rem,
-                                              rgba($color-black, .8) 8rem);
+                                              rgba($color-black, 0.2) 0,
+                                              rgba($color-black, 0.2) 2rem,
+                                              rgba($color-black, 0.4) 2rem,
+                                              rgba($color-black, 0.4) 4rem,
+                                              rgba($color-black, 0.6) 4rem,
+                                              rgba($color-black, 0.6) 6rem,
+                                              rgba($color-black, 0.8) 6rem,
+                                              rgba($color-black, 0.8) 8rem);
             // fade out over the last four lines
             height: ($measure-medium * 5.6);
         }
