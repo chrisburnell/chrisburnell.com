@@ -1,0 +1,36 @@
+version: v1.5.2
+ignore:
+  'npm:cli:20160615':
+    - sassdoc > sassdoc-theme-default > html-minifier > cli:
+        reason: None given
+        expires: '2016-10-20T15:18:08.627Z'
+patch:
+  'npm:minimatch:20160620':
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > sassdoc-theme-default > html-minifier > cli > glob > minimatch:
+        patched: '2016-09-20T15:15:26.534Z'
+  'npm:tough-cookie:20160722':
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-09-20T15:15:26.534Z'
+  'npm:uglify-js:20151024':
+    - sassdoc > sassdoc-theme-default > html-minifier > uglify-js:
+        patched: '2016-09-20T15:15:26.534Z'
+    - sassdoc > sassdoc-theme-default > swig > uglify-js:
+        patched: '2016-09-20T15:15:26.534Z'
