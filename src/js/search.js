@@ -13,15 +13,28 @@
     let query;
     let queryFormatted;
     const jsonFeedUrl = '../search.json';
-    const searchContainer    = document.querySelector('.js-search');
-    const searchForm         = document.querySelector('.js-search-form');
-    const searchInput        = document.querySelector('.js-search-input');
-    const searchSubmit       = document.querySelector('.js-search-submit');
-    const resultsMeta        = document.querySelector('.js-search-meta');
-    const resultsList        = document.querySelector('.js-search-results-list');
-    const resultTemplatePage = document.querySelector('.js-search-template-page');
-    const resultTemplatePost = document.querySelector('.js-search-template-post');
     const allowEmpty = false;
+    const searchContainer = document.querySelector('.js-search');
+    const searchForm      = document.querySelector('.js-search-form');
+    const searchInput     = document.querySelector('.js-search-input');
+    const searchSubmit    = document.querySelector('.js-search-submit');
+    const resultsMeta     = document.querySelector('.js-search-meta');
+    const resultsList     = document.querySelector('.js-search-results-list');
+    const resultTemplatePage = `<li role="listitem">
+        <a href="@@URL@@">
+            <h4 class="title">@@TITLE@@</h4>
+            <p class="lede">@@LEDE@@</p>
+        </a>
+    </li>`;
+    const resultTemplatePost = `<li role="listitem">
+        <a href="@@URL@@">
+            <svg class="icon  icon--@@ICON@@" role="img"><use xlink:href="#svg--@@ICON@@" /></svg>
+            <h4 class="title">@@TITLE@@</h4>
+            <p class="lede">@@LEDE@@</p>
+            <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>
+        </a>
+    </li>`;
+
 
     // initiate search functionality
     initSearch();
@@ -157,12 +170,12 @@
             if (item['type'] == 'page') {
                 if (titleCheck || ledeCheck || contentCheck) {
                     resultsCount++;
-                    results += populateResultContent(resultTemplatePage.innerHTML, item);
+                    results += populateResultContent(resultTemplatePage, item);
                 }
             } else {
                 if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
                     resultsCount++;
-                    results += populateResultContent(resultTemplatePost.innerHTML, item);
+                    results += populateResultContent(resultTemplatePost, item);
                 }
             }
 
@@ -217,12 +230,12 @@
         // LEDE
         if (item['lede']) {
             html = injectContent(html, item['lede'], '@@LEDE@@');
-        } else if (item['type'] == 'link') {
+        } else if (item['categories'] == 'link') {
             html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
-        } else if (item['type'] == 'pen') {
+        } else if (item['categories'] == 'pen') {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
-        } else if (item['location']) {
-            html = injectContent(html, `<em>Talk – Given at ${item['location']}.</em>`, '@@LEDE@@');
+        } else if (item['categories'] == 'talk' && item['location']) {
+            html = injectContent(html, `<em>A talk that I gave at ${item['location']}.</em>`, '@@LEDE@@');
         }
 
         // DATE

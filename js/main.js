@@ -139,15 +139,15 @@
     var query = void 0;
     var queryFormatted = void 0;
     var jsonFeedUrl = '../search.json';
+    var allowEmpty = false;
     var searchContainer = document.querySelector('.js-search');
     var searchForm = document.querySelector('.js-search-form');
     var searchInput = document.querySelector('.js-search-input');
     var searchSubmit = document.querySelector('.js-search-submit');
     var resultsMeta = document.querySelector('.js-search-meta');
     var resultsList = document.querySelector('.js-search-results-list');
-    var resultTemplatePage = document.querySelector('.js-search-template-page');
-    var resultTemplatePost = document.querySelector('.js-search-template-post');
-    var allowEmpty = false;
+    var resultTemplatePage = '<li role="listitem">\n        <a href="@@URL@@">\n            <h4 class="title">@@TITLE@@</h4>\n            <p class="lede">@@LEDE@@</p>\n        </a>\n    </li>';
+    var resultTemplatePost = '<li role="listitem">\n        <a href="@@URL@@">\n            <svg class="icon  icon--@@ICON@@" role="img"><use xlink:href="#svg--@@ICON@@" /></svg>\n            <h4 class="title">@@TITLE@@</h4>\n            <p class="lede">@@LEDE@@</p>\n            <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>\n        </a>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -287,12 +287,12 @@
                 if (item['type'] == 'page') {
                     if (titleCheck || ledeCheck || contentCheck) {
                         resultsCount++;
-                        results += populateResultContent(resultTemplatePage.innerHTML, item);
+                        results += populateResultContent(resultTemplatePage, item);
                     }
                 } else {
                     if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
                         resultsCount++;
-                        results += populateResultContent(resultTemplatePost.innerHTML, item);
+                        results += populateResultContent(resultTemplatePost, item);
                     }
                 }
             }
@@ -360,12 +360,12 @@
         // LEDE
         if (item['lede']) {
             html = injectContent(html, item['lede'], '@@LEDE@@');
-        } else if (item['type'] == 'link') {
+        } else if (item['categories'] == 'link') {
             html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
-        } else if (item['type'] == 'pen') {
+        } else if (item['categories'] == 'pen') {
             html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
-        } else if (item['location']) {
-            html = injectContent(html, '<em>Talk – Given at ' + item['location'] + '.</em>', '@@LEDE@@');
+        } else if (item['categories'] == 'talk' && item['location']) {
+            html = injectContent(html, '<em>A talk that I gave at ' + item['location'] + '.</em>', '@@LEDE@@');
         }
 
         // DATE

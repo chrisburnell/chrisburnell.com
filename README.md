@@ -81,7 +81,7 @@ _includes
 │   ├── nav-primary.html
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
-│   ├── search-templates.html
+│   ├── search-form.html
 │   ├── widget-latest-articles.html
 │   ├── widget-latest-links.html
 │   ├── widget-latest-pens.html
