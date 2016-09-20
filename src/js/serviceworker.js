@@ -14,12 +14,12 @@ const cacheName = `cb_${version}`;
 // Default files to always cache
 const cacheFiles = [
     '/',
-    '/about',
-    '/articles',
-    '/pens',
-    '/offline',
-    '/search',
-    '/styleguide',
+    '/about/',
+    '/articles/',
+    '/pens/',
+    '/offline/',
+    '/search/',
+    '/styleguide/',
     '/css/main.min.css',
     '/js/main.min.js',
     '/images/avatar.png',
