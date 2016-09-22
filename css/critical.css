@@ -1086,6 +1086,11 @@ a {
   .anchor--rss:link:hover, .anchor--rss:link:focus, .anchor--rss:link:active, .anchor--rss:visited:hover, .anchor--rss:visited:focus, .anchor--rss:visited:active {
     border-bottom-color: #5f8aa6; }
 
+.anchor--spotify {
+  color: #1db954 !important; }
+  .anchor--spotify:link:hover, .anchor--spotify:link:focus, .anchor--spotify:link:active, .anchor--spotify:visited:hover, .anchor--spotify:visited:focus, .anchor--spotify:visited:active {
+    border-bottom-color: #1db954; }
+
 .anchor--twitter {
   color: #4d9bd7 !important; }
   .anchor--twitter:link:hover, .anchor--twitter:link:focus, .anchor--twitter:link:active, .anchor--twitter:visited:hover, .anchor--twitter:visited:focus, .anchor--twitter:visited:active {

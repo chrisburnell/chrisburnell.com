@@ -307,6 +307,8 @@ $color-lastfm: #e31b23 !default;
 /// @type Color
 $color-rss: #ff9770 !default;
 /// @type Color
+$color-spotify: #1db954 !default;
+/// @type Color
 $color-twitter: mix($color-black, #55acee, 10%) !default;
 
 
@@ -316,15 +318,17 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity
 /// @require {Variable} $color-brand
+/// @require {Variable} $color-white
 /// @require {Variable} $color-codepen
 /// @require {Variable} $color-github
 /// @require {Variable} $color-lastfm
+/// @require {Variable} $color-spotify
 /// @require {Variable} $color-twitter
-/// @require {Variable} $color-white
 $color-brands: codepen $color-codepen $color-white   1.025,
                github  $color-github  $color-white   0.950,
                lastfm  $color-lastfm  $color-lastfm  1.000,
                rss     $color-brand   $color-rss     0.775,
+               spotify $color-spotify $color-spotify 0.925,
                twitter $color-twitter $color-twitter 0.925,
                article $color-brand   $color-white   0.900,
                feather $color-brand   $color-white   0.725,

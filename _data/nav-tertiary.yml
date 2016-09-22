@@ -1,7 +1,3 @@
-- title: CodePen
-  rel: 'me publisher external'
-  url: 'http://codepen.io/chrisburnell'
-
 - title: GitHub
   rel: 'me publisher external'
   url: 'https://github.com/chrisburnell'
@@ -10,9 +6,13 @@
   rel: 'me publisher external'
   url: 'https://twitter.com/iamchrisburnell'
 
-- title: LastFM
+- title: CodePen
   rel: 'me publisher external'
-  url: 'http://last.fm/user/chrisburnell'
+  url: 'http://codepen.io/chrisburnell'
+
+- title: Spotify
+  rel: 'me publisher external'
+  url: 'https://open.spotify.com/user/1128245857'
 
 - title: RSS
   rel: 'me author'
