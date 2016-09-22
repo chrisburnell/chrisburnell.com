@@ -293,7 +293,7 @@ table {
     overflow-x: auto;
     overflow-y: hidden;
     font-family: $font-family-gamma;
-    border-collapse: separate;
+    border-collapse: collapse;
 
     &.zebra {
         tbody tr:nth-child(even) td {

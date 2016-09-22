@@ -643,7 +643,7 @@ table {
   overflow-x: auto;
   overflow-y: hidden;
   font-family: "proxima-nova", sans-serif;
-  border-collapse: separate; }
+  border-collapse: collapse; }
   table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
     border-left-color: #dddddd; }
@@ -983,6 +983,8 @@ var,
 .monospace {
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   font-size: 0.875rem;
+  -webkit-font-variant-ligatures: none;
+          font-variant-ligatures: none;
   line-height: 1.429; }
 
 /**
@@ -1027,7 +1029,9 @@ pre {
     overflow-x: auto;
     overflow-y: hidden;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
-    font-size: 0.875rem; }
+    font-size: 0.875rem;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none; }
     pre:not(.codepen),
     pre:not(.codepen) code {
       line-height: 2; }
@@ -1247,6 +1251,8 @@ a {
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   font-size: 0.875rem;
   font-weight: 600;
+  -webkit-font-variant-ligatures: none;
+          font-variant-ligatures: none;
   line-height: 1.25;
   text-shadow: none;
   vertical-align: middle; }
@@ -1416,7 +1422,9 @@ button,
     content: " →";
     width: auto;
     height: auto;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace; }
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none; }
   button[disabled],
   .button[disabled] {
     opacity: 0.7;
@@ -2521,6 +2529,8 @@ iframe {
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
     font-size: 0.875rem;
     font-weight: 600;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
     line-height: 7.429;
     text-align: center;
     white-space: nowrap;

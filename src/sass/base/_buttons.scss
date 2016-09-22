@@ -74,11 +74,10 @@ button,
             @include will-change(initial);
             // NO-BREAK SPACE, RIGHTWARDS ARROW
             content: " →";
-            // Unset `width` from above
-            width:  auto;
-            // Unset `height` from above
-            height: auto;
+            width:  auto; // unset `width` from above
+            height: auto; // unset `height` from above
             font-family: $font-family-monospace;
+            font-variant-ligatures: none;
         }
     }
 

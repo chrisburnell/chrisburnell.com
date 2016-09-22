@@ -637,7 +637,7 @@ table {
   overflow-x: auto;
   overflow-y: hidden;
   font-family: "proxima-nova", sans-serif;
-  border-collapse: separate; }
+  border-collapse: collapse; }
   table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
     border-left-color: #dddddd; }
@@ -1031,6 +1031,8 @@ a {
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   font-size: 0.875rem;
   font-weight: 600;
+  -webkit-font-variant-ligatures: none;
+          font-variant-ligatures: none;
   line-height: 1.25;
   text-shadow: none;
   vertical-align: middle; }
