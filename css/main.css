@@ -2322,6 +2322,9 @@ code[data-lang] {
 .language-html::before {
   background-color: #e54d26 !important; }
 
+.language-jade::before {
+  background-color: #e54d26 !important; }
+
 .language-javascript::before {
   background-color: #f1c54c !important; }
 
