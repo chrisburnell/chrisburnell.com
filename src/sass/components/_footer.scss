@@ -73,16 +73,4 @@ footer {
     @include case(uppercase);
     margin-left:  $measure-small;
     margin-right: $measure-small;
-
-    &:link,
-    &:visited {
-        color: $color-white;
-        border-bottom-color: $color-text-alt;
-
-        &:hover,
-        &:focus,
-        &:active {
-            border-bottom-color: $color-white;
-        }
-    }
 }

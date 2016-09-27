@@ -995,6 +995,11 @@ a {
       color: #606060; }
   h3 a:hover, h3 a:focus, h3 a:active {
     text-decoration: underline; }
+  .dark-background a:link, .dark-background a:visited {
+    color: #f9f9f9;
+    border-bottom-color: #737373; }
+    .dark-background a:link:hover, .dark-background a:link:focus, .dark-background a:link:active, .dark-background a:visited:hover, .dark-background a:visited:focus, .dark-background a:visited:active {
+      border-bottom-color: #f9f9f9; }
   a span:not([class]):not([itemprop]) {
     width: 1px !important;
     height: 1px !important;
