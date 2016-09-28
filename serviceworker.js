@@ -8,7 +8,7 @@
 
 
 // Set a name for the current cache
-const version = '2016-09-20';
+const version = '2016-09-28';
 const cacheName = `cb_${version}`;
 
 // Default files to always cache

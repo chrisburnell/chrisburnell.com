@@ -1094,9 +1094,9 @@ a {
     border-bottom-color: #5f8aa6; }
 
 .anchor--spotify {
-  color: #1db954 !important; }
+  color: #5f8aa6 !important; }
   .anchor--spotify:link:hover, .anchor--spotify:link:focus, .anchor--spotify:link:active, .anchor--spotify:visited:hover, .anchor--spotify:visited:focus, .anchor--spotify:visited:active {
-    border-bottom-color: #1db954; }
+    border-bottom-color: #5f8aa6; }
 
 .anchor--twitter {
   color: #4d9bd7 !important; }

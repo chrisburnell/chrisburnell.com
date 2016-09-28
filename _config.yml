@@ -22,9 +22,11 @@ shorturl: https://repc.co/
 
 urls:
   ravenous: https://ravenous.chrisburnell.com
-  codepen:  http://codepen.io/chrisburnell
+  codepen:  https://codepen.io/chrisburnell
   gist:     https://gist.github.com/chrisburnell
+  github:   https://github.com/chrisburnell
   lastfm:   http://last.fm/user/chrisburnell
+  spotify:  https://open.spotify.com/user/1128245857
   twitter:  https://twitter.com/iamchrisburnell
 
 copyright:
