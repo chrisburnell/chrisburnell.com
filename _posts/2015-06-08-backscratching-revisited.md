@@ -47,7 +47,7 @@ a span {
 }
 {% endhighlight %}
 
-<aside><p>This technique for hiding text comes from <a rel="external" href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding Content for Accessibility</a>. Credit to <a rel="external" href="http://snook.ca/">Jonathan Snook</a>.</p></aside>
+<aside><p>This technique for hiding text comes from <a rel="external" href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding Content for Accessibility</a>. Credit to <a rel="external" href="https://snook.ca/">Jonathan Snook</a>.</p></aside>
 
 The CSS technique above for hiding the `span`, itself, is a piece of code that seems more verbose than necessary. `display: none;` would work just as well to hide the element, but `display: none;` does something we don’t want: it removes the element from the flow of the page, meaning it *won’t* be read by screen readers, text-to-speech software, etc.
 

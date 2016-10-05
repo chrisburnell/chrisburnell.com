@@ -26,8 +26,8 @@ shorturl: 6aorh
 
 {% include content/code-toggle-top.html %}
 {% highlight scss %}
-@import url(http://fonts.googleapis.com/css?family=Yellowtail);
-@import url(http://fonts.googleapis.com/css?family=Archivo+Black);
+@import url(https://fonts.googleapis.com/css?family=Yellowtail);
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
 
 html,
 body {

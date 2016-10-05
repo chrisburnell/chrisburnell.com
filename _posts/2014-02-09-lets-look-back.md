@@ -66,7 +66,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
     <figcaption>There is!</figcaption>
 </figure>
 
-And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system"){:rel="external"}*. *gulp* is a <q>streaming build system<q> built on *[node.js](http://nodejs.org "node.js"){:rel="external"}* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner"){:rel="external"}* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp"){:rel="external"}!
+And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system"){:rel="external"}*. *gulp* is a <q>streaming build system<q> built on *[node.js](https://nodejs.org "node.js"){:rel="external"}* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner"){:rel="external"}* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp"){:rel="external"}!
 
 
 {% include content/heading.html title='Let’s see what gulp does for me' id='what-gulp-does-for-me' %}
@@ -551,7 +551,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 7. [My Sass files]({{ site.github.repository_url }}/tree/master/src/css "Sass files for chrisburnell.com"){:rel="external"}
 8. [My gulpfile configuration]({{ site.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration"){:rel="external"}
 
-And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp"){:rel="external"}</q>, by [Mark Goodyear](http://markgoodyear.com "Mark Goodyear — Front-end designer and developer"){:rel="external"}.
+And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp"){:rel="external"}</q>, by [Mark Goodyear](https://markgoodyear.com "Mark Goodyear — Front-end designer and developer"){:rel="external"}.
 
 
 {% include content/heading.html title='Wrapping it up' %}

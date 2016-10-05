@@ -20,7 +20,7 @@ shorturl: bqrm4
 ---
 
 
-Since my last design update, I started working at [Squiz](http://squiz.net/uk "Squiz UK"){:rel="external"} and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](http://www.squiz.net/uk/suite/matrix "Squiz Matrix"){:rel="external"}, an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
+Since my last design update, I started working at [Squiz](https://squiz.net/uk "Squiz UK"){:rel="external"} and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](https://www.squiz.net/uk/suite/matrix "Squiz Matrix"){:rel="external"}, an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
 
 {% include content/heading.html title='More than meets the eye' %}
@@ -37,7 +37,7 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 {% include content/heading.html title='What is Jekyll?' %}
 
-> Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites"){:rel="external"}) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](http://pages.github.com "Github Pages"){:rel="external"}, which you can use to host your project’s page or blog \[on\] GitHub.
+> Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites"){:rel="external"}) is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind [GitHub Pages](https://pages.github.com "Github Pages"){:rel="external"}, which you can use to host your project’s page or blog \[on\] GitHub.
 
 
 {% include content/heading.html title='Better, Faster, Stronger' %}
@@ -65,7 +65,7 @@ The CSS for this latest iteration of chrisburnell.com was also a labour of love.
 
 During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we developers can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a smooth transition from desktop to mobile responsive layouts as well as making the process in Markdown terse as well. It’s been a flurry of knowledge into my *super-powerful* (read: tiny) brain, and these have only been a handful of the things I’ve learned.
 
-I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](http://codepen.io "Codepen"){:rel="external"} often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
+I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](https://codepen.io "Codepen"){:rel="external"} often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
 
 The most important lesson of them all, of course, is to **keep it simple**. Whether it’s code or design, stick to what you need and you’re sure to find success.
 
@@ -78,12 +78,12 @@ I can’t take all the credit for this website, really. It’s the culmination o
 
 I was lucky enough to be able to attend the annual web conference held by [London Web Standards](http://londonwebstandards.org/ "London Web Standards"), [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference"), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m going to reel off here in no particular order (other than alphabetical):
 
-- [Jake Archibald (Google)](http://www.jakearchibald.com/ "Jake Archibald (Google)"){:rel="external"}
-- [Martin Beeby (Microsoft)](http://blogs.msdn.com/b/thebeebs/ "Martin Beeby (Microsoft)"){:rel="external"}
-- [Andreas Bovens (Opera)](http://dev.opera.com/ "Andreas Bovens (Opera)"){:rel="external"}
-- [Christian Heilmann (Mozilla)](http://christianheilmann.com/ "Christian Heilmann (Mozilla)"){:rel="external"}
-- [Laura Kalbag](http://laurakalbag.com/ "Laura Kalbag"){:rel="external"}
-- [Paul Kinlan (Google)](http://paul.kinlan.me/ "Paul Kinlan (Google)"){:rel="external"}
+- [Jake Archibald (Google)](https://www.jakearchibald.com/ "Jake Archibald (Google)"){:rel="external"}
+- [Martin Beeby (Microsoft)](https://blogs.msdn.com/b/thebeebs/ "Martin Beeby (Microsoft)"){:rel="external"}
+- [Andreas Bovens (Opera)](https://dev.opera.com/ "Andreas Bovens (Opera)"){:rel="external"}
+- [Christian Heilmann (Mozilla)](https://www.christianheilmann.com/ "Christian Heilmann (Mozilla)"){:rel="external"}
+- [Laura Kalbag](https://laurakalbag.com/ "Laura Kalbag"){:rel="external"}
+- [Paul Kinlan (Google)](https://paul.kinlan.me/ "Paul Kinlan (Google)"){:rel="external"}
 - [Seb Lee-Delisle](http://seb.ly/ "Seb Lee-Delisle"){:rel="external"}
 - [Alp Toker (Nuanti Browser Labs)](http://www.atoker.com/ "Alp Toker (Nuanti Browser Labs)"){:rel="external"}
 
@@ -91,9 +91,9 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 - [A List Apart](http://alistapart.com/ "A List Apart"){:rel="external"}
 - [CSS Wizardry](http://csswizardry.com/ "CSS Wizardry") by [Harry Roberts](https://twitter.com/csswizardry "Harry Roberts"){:rel="external"}
-- [CSS-Tricks](http://css-tricks.com/ "CSS-Tricks") by [Chris Coyier](https://twitter.com/chriscoyier "Chris Coyier"){:rel="external"}
-- [Smashing Magazine](http://www.smashingmagazine.com/ "Smashing Magazine"){:rel="external"}
-- [Responsive Design Newsletter](http://responsivedesignweekly.com/ "Responsive Design Newsletter") by [Justin Avery](http://surfthedream.com.au/ "Justin Avery"){:rel="external"}
+- [CSS-Tricks](https://css-tricks.com/ "CSS-Tricks") by [Chris Coyier](https://twitter.com/chriscoyier "Chris Coyier"){:rel="external"}
+- [Smashing Magazine](https://www.smashingmagazine.com/ "Smashing Magazine"){:rel="external"}
+- [Responsive Design Newsletter](http://responsivedesignweekly.com/ "Responsive Design Newsletter") by [Justin Avery](https://surfthedream.com.au/ "Justin Avery"){:rel="external"}
 - [Visual Idiot](http://visualidiot.com/ "Visual Idiot"){:rel="external"}
 
 

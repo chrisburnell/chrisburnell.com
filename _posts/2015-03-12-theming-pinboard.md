@@ -20,7 +20,7 @@ shorturl: 1faeu
 ---
 
 
-I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com){:rel="external"} and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman){:rel="external"} to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](http://jakearchibald.com){:rel="external"}:
+I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com){:rel="external"} and [Adactio: Jeremy Keith’s website](https://adactio.com/?skin=zeldman){:rel="external"} to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](https://jakearchibald.com){:rel="external"}:
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>Pinboard implemented their own simpler layout model & used canvas for the drawing which is GPU-backed.</p>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>
 <noscript>Please enable JavaScript to to see Twitter-specific components.</noscript>
@@ -35,7 +35,7 @@ Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. 
 Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-than-ideal design of *Pinboard*, which I use mostly to archive and bookmark pages on the web I don’t want to lose. You can read more about what *Pinboard* is useful for [here](https://pinboard.in/tour){:rel="external"}.
 
 <figure>
-    <a href="http://pinboard.in">
+    <a href="https://pinboard.in">
         {% include content/img.html src='/images/content/pinboard-logo.png' alt='' %}
         <figcaption>Pinboard © Nine Fives Software.</figcaption>
     </a>
@@ -71,7 +71,7 @@ That was a <s>hilarious</s> decent joke, right? And I'm sure you appreciated <s>
 Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org){:rel="external"}, a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe){:rel="external"}, [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish){:rel="external"}, and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/){:rel="external"}) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
 
 <figure>
-    <a href="http://userstyles.org">
+    <a href="https://userstyles.org">
         {% include content/img.html src='/images/content/stylish-logo.png' alt='' %}
         <figcaption>Stylish - Open Source, by contributors.</figcaption>
     </a>
@@ -85,7 +85,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 {% endhighlight %}
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a rel="external" href="http://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a rel="external" href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com){:rel="external"}, so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net){:rel="external"}.
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a rel="external" href="https://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a rel="external" href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com){:rel="external"}, so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net){:rel="external"}.
 
 
 {% include content/heading.html title='Good old Brass Tacks' id='brass-tacks' %}
@@ -166,7 +166,7 @@ html {
 @import url("//chrisburnell.com/css/normalize.min.css");
 {% endhighlight %}
 
-- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](http://www.google.com/fonts){:rel="external"} with <samp>@import</samp>:
+- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](https://www.google.com/fonts){:rel="external"} with <samp>@import</samp>:
 
 {% highlight css %}
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600");

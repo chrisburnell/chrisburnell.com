@@ -28,7 +28,7 @@ So, for example, if an editor creates an article with lists and pictures, it’s
 
 {% include content/heading.html title='Let’s look at some code' id='lets-look-at-some-code' %}
 
-Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](http://necolas.github.io/normalize.css/ "Normalize.css"){:rel="external"}). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
+Say we want the default ordered list to appear with `padding-left` and `list-style` that differ from the user agent stylesheet ([a whole other ballgame](https://necolas.github.io/normalize.css/ "Normalize.css"){:rel="external"}). We also have a table of contents for our template, which we’ll also use an ordered list to mark up in HTML.
 
 {% highlight html %}
 <ol class="table-of-contents">
@@ -87,4 +87,4 @@ In this way, we’re able to style some default elements that a content editor w
 --------
 
 
-If you have any comments or performance notes about this, please let me know in the [comments below](#comments) or [on twitter](http://twitter.com/iamchrisburnell).
+If you have any comments or performance notes about this, please let me know in the [comments below](#comments) or [on twitter](https://twitter.com/iamchrisburnell).
