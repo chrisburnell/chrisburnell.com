@@ -8,7 +8,7 @@
 'use strict';
 
 
-// Define gulp objects
+// Define gulp-centric objects
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
@@ -20,7 +20,7 @@ import sass from 'gulp-sass';
 import uglify from 'gulp-uglify';
 import watch from 'gulp-watch';
 
-// Define external objects
+// Define other objects
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import reporter from 'postcss-reporter';
@@ -75,9 +75,9 @@ gulp.task('css-lint', () => {
         .pipe(postcss([
             stylelint(stylelintRules),
             reporter({
+                plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
-                throwError: false,
-                plugins: ['!postcss-discard-empty']
+                throwError: false
             })
         ], { syntax: scss_syntax }));
 });
@@ -95,6 +95,7 @@ gulp.task('css-compile', ['css-lint'], () => {
                 browsers: ['last 2 versions', '> 1%']
             }),
             reporter({
+                plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
                 throwError: true
             })
@@ -106,6 +107,7 @@ gulp.task('css-compile', ['css-lint'], () => {
         .pipe(postcss([
             cssnano(),
             reporter({
+                plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
                 throwError: true
             })

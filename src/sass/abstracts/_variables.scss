@@ -24,6 +24,10 @@ $breakpoints: (
 
 
 /// @type Length
+$base-font-size: 16px !default;
+
+
+/// @type Length
 $wrapper-padding: 1.250rem !default;
 /// @type Length
 $aside-width:    15.875rem !default;
@@ -143,7 +147,8 @@ $font-weight-bold:    600 !default;
 
 // 16px
 /// @type Length
-$font-size-default: 100% !default;
+/// @require {Variable} $base-font-size
+$font-size-default: $base-font-size !default;
 // 72px
 /// @type Length
 $font-size-alpha: 4.500rem !default;
@@ -169,12 +174,12 @@ $font-size-small: 0.875rem !default;
 /// @require {Variable} $font-size-large
 /// @require {Variable} $font-size-small
 $font-sizes: (
-    "default":      $font-size-default,
-    "alpha":        $font-size-alpha,
-    "beta":         $font-size-beta,
-    "gamma":        $font-size-gamma,
-    "large":        $font-size-large,
-    "small":        $font-size-small
+    "default": $font-size-default,
+    "alpha":   $font-size-alpha,
+    "beta":    $font-size-beta,
+    "gamma":   $font-size-gamma,
+    "large":   $font-size-large,
+    "small":   $font-size-small
 ) !default;
 
 
