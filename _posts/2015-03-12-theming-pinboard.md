@@ -185,7 +185,7 @@ html {
 .edit_links a.mark_read,
 .edit_links a.mark_read:visited {
     background-color: transparent;
-    background-position: center center;
+    background-position: center;
     background-size: 19px 19px;
     background-repeat: no-repeat;
     opacity: .4;

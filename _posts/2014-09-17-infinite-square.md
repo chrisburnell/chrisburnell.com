@@ -52,7 +52,7 @@ body {
     top: 50%;
     left: 50%;
     animation-name: square-master;
-    transform-origin: center center;
+    transform-origin: center;
     transform: translate3d(-50%, -50%, 0);
 }
 
@@ -66,7 +66,7 @@ body {
     border-top:   7.5em solid coral;
     border-left:  7.5em solid transparent;
     border-right: 7.5em solid transparent;
-    transform-origin: top center;
+    transform-origin: center top;
     animation-name: square-triangle-vertical;
     .square:hover &,
     .square:focus & {
@@ -79,7 +79,7 @@ body {
     border-bottom: 7.5em solid coral;
     border-left:   7.5em solid transparent;
     border-right:  7.5em solid transparent;
-    transform-origin: bottom center;
+    transform-origin: center bottom;
     animation-name: square-triangle-vertical;
     .square:hover &,
     .square:focus & {
@@ -92,7 +92,7 @@ body {
     border-left:   7.5em solid coral;
     border-bottom: 7.5em solid transparent;
     border-top:    7.5em solid transparent;
-    transform-origin: center left;
+    transform-origin: left center;
     animation-name: square-triangle-horizontal;
     .square:hover &,
     .square:focus & {
@@ -105,7 +105,7 @@ body {
     border-right:  7.5em solid coral;
     border-bottom: 7.5em solid transparent;
     border-top:    7.5em solid transparent;
-    transform-origin: center right;
+    transform-origin: right center;
     animation-name: square-triangle-horizontal;
     .square:hover &,
     .square:focus & {

@@ -159,7 +159,6 @@ src/css
 _includes/generated
 ├── critical-css.html
 ├── loadcss.html
-└── typekit.html
 serviceworker.js
 ```
 

@@ -370,6 +370,27 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+@font-face {
+  font-family: "League Gothic";
+  font-style: normal;
+  font-weight: 400;
+  src: local("League Gothic"), url("../fonts/league-gothic-regular.woff2") format("woff2"), url("../fonts/league-gothic-regular.woff2") format("woff"), url("../fonts/league-gothic-regular.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Proxima Nova Regular"), url("../fonts/proxima-nova-regular.woff2") format("woff2"), url("../fonts/proxima-nova-regular.woff2") format("woff"), url("../fonts/proxima-nova-regular.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Proxima Nova Semibold"), url("../fonts/proxima-nova-semibold.woff2") format("woff2"), url("../fonts/proxima-nova-semibold.woff2") format("woff"), url("../fonts/proxima-nova-semibold.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 html {
   position: relative;
   min-height: 100%;
@@ -391,7 +412,7 @@ body {
 html {
   background-color: #4f4f4f;
   font-size: 16px;
-  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-family: Georgia, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.875;
@@ -421,7 +442,7 @@ h6 {
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: "league-gothic", Impact, sans-serif;
+  font-family: "League Gothic", Impact, sans-serif;
   font-size: 4.5rem;
   line-height: 1;
   text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05); }
@@ -433,7 +454,7 @@ h1 {
  * Heading - Beta
  */
 h2 {
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-size: 1.375rem;
   line-height: 1.25; }
 
@@ -441,7 +462,7 @@ h2 {
  * Heading - Gamma
  */
 h3, .lede {
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-size: 1.125rem;
   line-height: 1.875; }
 
@@ -498,7 +519,7 @@ h3 {
  * Heading - Delta
  */
 h4 {
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.25; }
@@ -556,7 +577,7 @@ ul:not([class]),
       position: absolute;
       top: 0;
       left: 0;
-      font-family: "proxima-nova", sans-serif;
+      font-family: "Proxima Nova", sans-serif;
       font-weight: 600; }
   ol:not([class]) ol:not([class]),
   ul:not([class]) ol:not([class]),
@@ -609,7 +630,7 @@ dt {
   min-width: 10rem;
   clear: left;
   padding-right: 1.25rem;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-weight: 600; }
   @media (min-width: 501px) {
     dt {
@@ -636,7 +657,7 @@ table {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   border-collapse: collapse; }
   table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
@@ -757,7 +778,7 @@ details {
   background-color: #2b2b2b;
   color: #f9f9f9;
   padding: 0.625rem;
-  font-family: "proxima-nova", sans-serif; }
+  font-family: "Proxima Nova", sans-serif; }
   details blockquote, details
   details, details
   table, details
@@ -1367,7 +1388,7 @@ aside p {
     padding: 0.75rem 1rem;
     border-bottom-width: 0;
     margin-bottom: 0.25rem;
-    font-family: "league-gothic", Impact, sans-serif;
+    font-family: "League Gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25; }
     .nav-primary-list a:link, .nav-primary-list a:visited {
@@ -1466,7 +1487,7 @@ aside p {
  */
 /*aside*/
 .author {
-  font-family: "proxima-nova", sans-serif; }
+  font-family: "Proxima Nova", sans-serif; }
   @media (max-width: 768px) {
     .author {
       display: -webkit-box;
@@ -1486,7 +1507,7 @@ aside p {
  */
 .author-information {
   margin-bottom: 1.25rem;
-  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 0.875rem;
   font-style: italic;
   line-height: 1.429; }
@@ -1501,7 +1522,7 @@ aside p {
     letter-spacing: 0;
     color: inherit;
     border-bottom-width: 0;
-    font-family: "proxima-nova", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
     font-weight: 600;
     font-style: normal; }
   .author-information a:hover, .author-information a:focus, .author-information a:active {

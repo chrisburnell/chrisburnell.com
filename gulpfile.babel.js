@@ -141,7 +141,6 @@ gulp.task('css-sassdoc', () => {
 gulp.task('js-compile', () => {
     return gulp.src([`!${paths.js.src}/vendors/loadcss.js`,
                      `!${paths.js.src}/vendors/loadcss-preload-polyfill.js`,
-                     `!${paths.js.src}/vendors/typekit.js`,
                      `!${paths.js.src}/outdated/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `${paths.js.src}/**/*.js`])
@@ -175,20 +174,6 @@ gulp.task('js-serviceworker', () => {
     return gulp.src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
         .pipe(gulp.dest(`${paths.root}/`));
-});
-
-// Generate inline Typekit include
-gulp.task('js-typekit', () => {
-    return gulp.src(`${paths.js.src}/vendors/typekit.js`)
-        .pipe(plumber())
-        .pipe(uglify({
-            mangle: false
-        }))
-        .pipe(rename({
-            basename: 'typekit',
-            extname: '.html'
-        }))
-        .pipe(gulp.dest(`${paths.includes}/generated/`));
 });
 
 // -----------------------------------------------------------------------------
@@ -243,7 +228,6 @@ gulp.task('css', ['css-compile'], () => {
 gulp.task('js', ['js-compile'], () => {
     gulp.start('js-loadcss');
     gulp.start('js-serviceworker');
-    gulp.start('js-typekit');
 });
 
 // Images task

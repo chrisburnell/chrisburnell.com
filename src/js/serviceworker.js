@@ -8,7 +8,7 @@
 
 
 // Set a name for the current cache
-const version = '2016-09-28';
+const version = '2016-10-11';
 const cacheName = `cb_${version}`;
 
 // Default files to always cache
@@ -24,6 +24,12 @@ const cacheFiles = [
     '/js/main.min.js',
     '/images/avatar.png',
     '/images/avatar.webp',
+    '/fonts/league-gothic-regular.woff2',
+    '/fonts/league-gothic-regular.woff',
+    '/fonts/proxima-nova-regular.woff2',
+    '/fonts/proxima-nova-regular.woff',
+    '/fonts/proxima-nova-semibold.woff2',
+    '/fonts/proxima-nova-semibold.woff',
     '/search.json',
     '/manifest.json'
 ];

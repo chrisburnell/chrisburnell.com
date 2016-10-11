@@ -1,5 +1,5 @@
 ////
-/// Variables (Global)
+/// Variables
 /// @group abstracts
 ////
 
@@ -110,13 +110,12 @@ $color-canada: #fd1b00 !default;
 /// @require {Variable} $color-text-alt
 /// @require {Variable} $color-text-light
 /// @require {Variable} $color-white
-$main-colors: (
+$main-colors:
     $color-brand,
     $color-text,
     $color-text-alt,
     $color-text-light,
-    $color-white
-) !default;
+    $color-white !default;
 
 
 /// @type Length
@@ -139,9 +138,9 @@ $border-radius-default: 0.375rem !default;
 $border-radius-thin:    0.250rem !default;
 
 
-/// @type String
+/// @type Number
 $font-weight-default: 400 !default;
-/// @type String
+/// @type Number
 $font-weight-bold:    600 !default;
 
 
@@ -184,11 +183,11 @@ $font-sizes: (
 
 
 /// @type List
-$font-family-default: "ff-meta-serif-web-pro", Georgia, serif !default;
+$font-family-default: Georgia, serif !default;
 /// @type List
-$font-family-alpha: "league-gothic", Impact, sans-serif !default;
+$font-family-alpha: "League Gothic", Impact, sans-serif !default;
 /// @type List
-$font-family-beta: "proxima-nova", sans-serif !default;
+$font-family-beta: "Proxima Nova", sans-serif !default;
 /// @type List
 /// @require {Variable} $font-family-beta
 $font-family-gamma: $font-family-beta !default;
@@ -223,6 +222,10 @@ $letter-spacing-uppercase: 1px !default;
 
 
 /// @type Length
+$rotation-default: 0.0625turn !default;
+
+
+/// @type Length
 /// @see {Mixin} transition
 $transition-time: 0.200s !default;
 /// @type String
@@ -249,14 +252,14 @@ $z-indexes: (
 /// @prop {String} Body Class
 /// @prop {String} Primary Navigation Class
 $navigation-links: (
-    "home": "home",
-    "about": "about",
-    "article": "articles",
+    "home":     "home",
+    "about":    "about",
+    "article":  "articles",
     "articles": "articles",
-    "pen": "pens",
-    "pens": "pens",
-    "talk": "talks",
-    "talks": "talks"
+    "pen":      "pens",
+    "pens":     "pens",
+    "talk":     "talks",
+    "talks":    "talks"
 ) !default;
 
 
@@ -283,15 +286,16 @@ $color-sass: #c6538c !default;
 /// @require {Variable} $color-liquid
 /// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
-$coding-languages: css        $color-css,
-                   haml       $color-html,
-                   html       $color-html,
-                   jade       $color-html,
-                   javascript $color-javascript,
-                   liquid     $color-liquid,
-                   markdown   $color-markdown,
-                   sass       $color-sass,
-                   scss       $color-sass;
+$coding-languages:
+    css        $color-css,
+    haml       $color-html,
+    html       $color-html,
+    jade       $color-html,
+    javascript $color-javascript,
+    liquid     $color-liquid,
+    markdown   $color-markdown,
+    sass       $color-sass,
+    scss       $color-sass;
 
 
 /// @type Length
@@ -324,15 +328,16 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @require {Variable} $color-lastfm
 /// @require {Variable} $color-spotify
 /// @require {Variable} $color-twitter
-$color-brands: codepen $color-codepen $color-white   1.025,
-               github  $color-github  $color-white   0.950,
-               lastfm  $color-lastfm  $color-lastfm  1.000,
-               rss     $color-brand   $color-rss     0.775,
-               spotify $color-brand   $color-spotify 0.925,
-               twitter $color-twitter $color-twitter 0.925,
-               article $color-brand   $color-white   0.900,
-               feather $color-brand   $color-white   0.725,
-               heart   $color-brand   $color-white   1.000,
-               link    $color-brand   $color-white   1.000,
-               search  $color-brand   $color-white   1.000,
-               tag     $color-brand   $color-white   1.000;
+$color-brands:
+    codepen $color-codepen $color-white   1.025,
+    github  $color-github  $color-white   0.950,
+    lastfm  $color-lastfm  $color-lastfm  1.000,
+    rss     $color-brand   $color-rss     0.775,
+    spotify $color-brand   $color-spotify 0.925,
+    twitter $color-twitter $color-twitter 0.925,
+    article $color-brand   $color-white   0.900,
+    feather $color-brand   $color-white   0.725,
+    heart   $color-brand   $color-white   1.000,
+    link    $color-brand   $color-white   1.000,
+    search  $color-brand   $color-white   1.000,
+    tag     $color-brand   $color-white   1.000;

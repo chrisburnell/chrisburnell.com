@@ -9,6 +9,7 @@
     'use strict';
 
 
+    const DISQUS_SHORTNAME = 'chrisburnell';
     const commentsSection = document.querySelector('.js-comments');
     const commentsButton  = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`

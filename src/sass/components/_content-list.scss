@@ -155,8 +155,8 @@
     }
 
     svg {
-        @include transition(opacity);
-        @include will-change(opacity);
+        @include transition(opacity, transform);
+        @include will-change(opacity, transform);
         opacity: opacity("5-percent");
         stroke: $color-text;
         // override `_icons.scss` + 4px
@@ -165,6 +165,7 @@
         position: absolute;
         top: 50%;
         right: $measure-small;
+        transform-origin: right center;
         transform: translateY(-50%);
         z-index: z-index(root);
 
@@ -172,16 +173,13 @@
             width:  4em !important;
             height: 4em !important;
         }
-
-        .page--home & {
-            display: none;
-        }
     }
     a:hover,
     a:focus,
     a:active {
         svg {
             opacity: opacity("10-percent");
+            transform: rotateZ(-$rotation-default) translateX(-$measure-medium) translateY(-50%) scale(1.2);
         }
     }
 }

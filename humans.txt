@@ -34,4 +34,3 @@ searchable: false
     Disqus:           https://disqus.com
     Google Analytics: https://google.com/analytics
     Twitter:          https://dev.twitter.com
-    Typekit:          https://typekit.com
