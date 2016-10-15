@@ -10,6 +10,8 @@
  * `layout/_content.scss`.
  */
 aside {
+    font-family: $font-family-serif;
+
     @include media(">medium") {
         width: $aside-width;
         float: left;

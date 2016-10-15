@@ -9,7 +9,7 @@
  * breakpoint.
  */
 /*aside*/.author {
-    font-family: $font-family-gamma;
+    font-family: $font-family-default;
 
     @include media("<=medium") {
         display: flex;
@@ -24,7 +24,7 @@
  */
 .author-information {
     margin-bottom: $measure-medium;
-    font-family: $font-family-default;
+    font-family: $font-family-serif;
     font-size: $font-size-small;
     font-style: italic;
     line-height: 1.429;
@@ -40,7 +40,7 @@
         @include case(uppercase, 0);
         color: inherit;
         border-bottom-width: 0;
-        font-family: $font-family-gamma;
+        font-family: $font-family-default;
         font-weight: $font-weight-bold;
         font-style: normal;
     }

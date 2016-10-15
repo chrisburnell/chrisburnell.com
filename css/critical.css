@@ -386,6 +386,13 @@ textarea {
 
 @font-face {
   font-family: "Proxima Nova";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Proxima Nova Italic"), url("../fonts/proxima-nova-italic.woff2") format("woff2"), url("../fonts/proxima-nova-italic.woff2") format("woff"), url("../fonts/proxima-nova-italic.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+@font-face {
+  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 600;
   src: local("Proxima Nova Semibold"), url("../fonts/proxima-nova-semibold.woff2") format("woff2"), url("../fonts/proxima-nova-semibold.woff2") format("woff"), url("../fonts/proxima-nova-semibold.ttf") format("truetype");
@@ -412,7 +419,7 @@ body {
 html {
   background-color: #4f4f4f;
   font-size: 16px;
-  font-family: Georgia, serif;
+  font-family: "Proxima Nova", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.875;
@@ -454,7 +461,6 @@ h1 {
  * Heading - Beta
  */
 h2 {
-  font-family: "Proxima Nova", sans-serif;
   font-size: 1.375rem;
   line-height: 1.25; }
 
@@ -462,7 +468,6 @@ h2 {
  * Heading - Gamma
  */
 h3, .lede {
-  font-family: "Proxima Nova", sans-serif;
   font-size: 1.125rem;
   line-height: 1.875; }
 
@@ -519,7 +524,6 @@ h3 {
  * Heading - Delta
  */
 h4 {
-  font-family: "Proxima Nova", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.25; }
@@ -577,7 +581,6 @@ ul:not([class]),
       position: absolute;
       top: 0;
       left: 0;
-      font-family: "Proxima Nova", sans-serif;
       font-weight: 600; }
   ol:not([class]) ol:not([class]),
   ul:not([class]) ol:not([class]),
@@ -630,7 +633,6 @@ dt {
   min-width: 10rem;
   clear: left;
   padding-right: 1.25rem;
-  font-family: "Proxima Nova", sans-serif;
   font-weight: 600; }
   @media (min-width: 501px) {
     dt {
@@ -657,7 +659,6 @@ table {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  font-family: "Proxima Nova", sans-serif;
   border-collapse: collapse; }
   table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
@@ -777,8 +778,7 @@ details {
   border-radius: 0.25rem;
   background-color: #2b2b2b;
   color: #f9f9f9;
-  padding: 0.625rem;
-  font-family: "Proxima Nova", sans-serif; }
+  padding: 0.625rem; }
   details blockquote, details
   details, details
   table, details
@@ -882,6 +882,7 @@ figure {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 1.25rem;
+    font-family: Georgia, serif;
     line-height: 1.25; }
 
 /**
@@ -893,7 +894,8 @@ blockquote {
   hanging-punctuation: first;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 1.25rem;
-  margin: 0 2.25rem 1.25rem; }
+  margin: 0 2.25rem 1.25rem;
+  font-family: Georgia, serif; }
   blockquote,
   :lang(en) blockquote {
     quotes: "“" "”" "‘" "’"; }
@@ -1209,34 +1211,33 @@ header {
  * floated within an article or list of articles. The math is calculated as in
  * `layout/_content.scss`.
  */
-@media (min-width: 769px) {
-  aside {
-    width: 15.875rem;
-    float: left;
-    margin-left: -18.125rem; } }
-
-@media (max-width: 768px) {
-  aside {
-    width: 100%; }
-    aside:not(.author) {
-      background-clip: padding-box;
-      border-radius: 0.375rem;
-      background: rgba(6, 6, 6, 0.05);
-      padding: 0.625rem;
-      margin-bottom: 1.25rem; }
-      aside:not(.author):last-child {
-        margin-bottom: 0; } }
-
-h3 + aside {
-  margin-top: 2.25rem; }
-
-aside figcaption,
-aside p {
-  clear: both; }
-  @media (min-width: 501px) {
-    aside figcaption,
-    aside p {
-      font-size: 0.875rem; } }
+aside {
+  font-family: Georgia, serif; }
+  @media (min-width: 769px) {
+    aside {
+      width: 15.875rem;
+      float: left;
+      margin-left: -18.125rem; } }
+  @media (max-width: 768px) {
+    aside {
+      width: 100%; }
+      aside:not(.author) {
+        background-clip: padding-box;
+        border-radius: 0.375rem;
+        background: rgba(6, 6, 6, 0.05);
+        padding: 0.625rem;
+        margin-bottom: 1.25rem; }
+        aside:not(.author):last-child {
+          margin-bottom: 0; } }
+  h3 + aside {
+    margin-top: 2.25rem; }
+  aside figcaption,
+  aside p {
+    clear: both; }
+    @media (min-width: 501px) {
+      aside figcaption,
+      aside p {
+        font-size: 0.875rem; } }
 
 .border-radius,
 .round,

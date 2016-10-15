@@ -68,7 +68,6 @@ h1 {
  * Heading - Beta
  */
 %beta {
-    font-family: $font-family-beta;
     font-size: $font-size-beta;
     line-height: $line-height-small;
 }
@@ -80,7 +79,6 @@ h2 {
  * Heading - Gamma
  */
 %gamma {
-    font-family: $font-family-gamma;
     font-size: $font-size-gamma;
     line-height: 1.875;
 }
@@ -143,7 +141,6 @@ h3 {
  * Heading - Delta
  */
 %delta {
-    font-family: $font-family-gamma;
     font-size: $font-size-default;
     font-weight: $font-weight-bold;
     line-height: $line-height-small;
@@ -212,7 +209,6 @@ ul:not([class]),
 
         &::before {
             @include position(top-left);
-            font-family: $font-family-gamma;
             font-weight: $font-weight-bold;
         }
     }
@@ -260,7 +256,6 @@ dt {
     min-width: 10rem;
     clear: left;
     padding-right: $measure-medium;
-    font-family: $font-family-gamma;
     font-weight: $font-weight-bold;
 
     @include media(">small") {
@@ -292,7 +287,6 @@ table {
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    font-family: $font-family-gamma;
     border-collapse: collapse;
 
     &.zebra {
@@ -427,7 +421,6 @@ details {
     background-color: $color-dark-gray;
     color: $color-white;
     padding: $measure-small;
-    font-family: $font-family-gamma;
 
     %content-elements {
         padding: 0 $measure-small $measure-small;
@@ -522,6 +515,7 @@ figure {
         flex-direction: column;
         align-items: center;
         padding-top: $measure-medium;
+        font-family: $font-family-serif;
         line-height: $line-height-small;
     }
 }
@@ -535,6 +529,7 @@ blockquote {
     background-color: $color-brand--10-percent;
     padding: $measure-medium;
     margin: 0 $measure-large $measure-medium;
+    font-family: $font-family-serif;
 
     @include media("<=small") {
         margin-left:  $measure-medium;

@@ -2,7 +2,7 @@
   Create a Fragment Anchor for linking to a specific part of the page
 
   @param {String} id *
-  @param {String} url *
+  @param {String} href *
   @param {String} title
   @param {String} rel
   @param {String} tabindex
@@ -14,8 +14,8 @@
 {% endcomment %}
 {% if include.id %}
     {% capture href %}{{ include.id | prepend: '#' }}{% endcapture %}
-{% elsif include.url %}
-    {% assign href = include.url %}
+{% elsif include.href %}
+    {% assign href = include.href %}
 {% endif %}
 {% if include.title %}
     {% capture title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}

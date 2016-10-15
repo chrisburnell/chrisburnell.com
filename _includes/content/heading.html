@@ -17,11 +17,14 @@
 {% endcomment %}
 {% assign heading_type = include.type | default: 'h3' %}
 {% assign heading_id = include.id | default: include.title | slugify %}
+{% assign heading_href = include.href | default: '' %}
 <{{ heading_type }} id="{{ heading_id }}">
-    {% if include.href %}
-        <a href="{{ include.href }}">{{ include.title }}</a>
-    {% else %}
+    {% unless heading_href == '' %}
+        <a href="{{ heading_href }}">
+    {% endunless %}
         {{ include.title }}
-    {% endif %}
-    {% include content/fragment-anchor.html id=heading_id %}
+        {% include content/fragment-anchor.html id=heading_id %}
+    {% unless heading_href == '' %}
+        </a>
+    {% endunless %}
 </{{ heading_type }}>

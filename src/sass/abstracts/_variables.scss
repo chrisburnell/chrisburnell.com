@@ -183,14 +183,11 @@ $font-sizes: (
 
 
 /// @type List
-$font-family-default: Georgia, serif !default;
+$font-family-default: "Proxima Nova", sans-serif !default;
 /// @type List
 $font-family-alpha: "League Gothic", Impact, sans-serif !default;
 /// @type List
-$font-family-beta: "Proxima Nova", sans-serif !default;
-/// @type List
-/// @require {Variable} $font-family-beta
-$font-family-gamma: $font-family-beta !default;
+$font-family-serif: Georgia, serif !default;
 /// @type List
 $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace !default;
 /// @type Map
@@ -198,13 +195,13 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courie
 /// @prop {Number} value - Font Family value
 /// @require {Variable} $font-family-default
 /// @require {Variable} $font-family-alpha
-/// @require {Variable} $font-family-gamma
+/// @require {Variable} $font-family-serif
 /// @require {Variable} $font-family-monospace
 /// @see {Mixin} font-family
 $font-families: (
     "default":   $font-family-default,
     "alpha":     $font-family-alpha,
-    "beta":      $font-family-gamma,
+    "serif":     $font-family-serif,
     "monospace": $font-family-monospace
 ) !default;
 
