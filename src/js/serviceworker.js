@@ -8,7 +8,7 @@
 
 
 // Set a name for the current cache
-const version = '2016-10-11';
+const version = '2016-10-16';
 const cacheName = `cb_${version}`;
 
 // Default files to always cache
@@ -28,6 +28,8 @@ const cacheFiles = [
     '/fonts/league-gothic-regular.woff',
     '/fonts/proxima-nova-regular.woff2',
     '/fonts/proxima-nova-regular.woff',
+    '/fonts/proxima-nova-italic.woff2',
+    '/fonts/proxima-nova-italic.woff',
     '/fonts/proxima-nova-semibold.woff2',
     '/fonts/proxima-nova-semibold.woff',
     '/search.json',
