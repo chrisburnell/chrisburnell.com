@@ -21,20 +21,17 @@ aside {
     @include media("<=medium") {
         width: 100%;
 
-        &:not(.author) {
-            @include border-radius;
-            background: $color-black--5-percent;
-            padding: $measure-small;
+        &:not(.author):not(:last-child) {
             margin-bottom: $measure-medium;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
     }
 
     h3 + & {
         margin-top: $measure-large;
+    }
+
+    figure {
+        margin-bottom: 0;
     }
 
     figcaption,

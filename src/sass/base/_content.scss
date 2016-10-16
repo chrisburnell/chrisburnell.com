@@ -584,6 +584,8 @@ dfn[title] {
     border-bottom: $border-width-hairline dotted $color-text-alt;
     cursor: help;
 }
+abbr[title],
+dfn[title],
 ins {
     text-decoration: none;
 }
