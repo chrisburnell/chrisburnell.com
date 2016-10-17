@@ -9,11 +9,10 @@ searchable: false
         {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
             {
                 "type": "page",
-                "url": {{ page.url | jsonify }},
-                "title": {{ page.title | jsonify }},
-                "lede": {{ page.lede | jsonify }}
-                {% unless page.searchable == 'no-content' %},
-                    "content": {{ page.content | strip_html | strip_newlines | jsonify }}
+                "url": "{{ page.url }}",
+                "title": "{{ page.title | xml_escape }}",
+                "lede": "{{ page.lede | strip_newlines | normalize_whitespace | strip_html | xml_escape | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
+                    "content": "{{ page.content | strip_newlines | normalize_whitespace | strip_html | xml_escape }}"
                 {% endunless %}
             }{% unless forloop.last %},{% endunless %}
         {% endunless %}
@@ -22,18 +21,18 @@ searchable: false
         {% unless page.title == null or page.title == empty or page.searchable == false or page.draft %}
             {
                 "type": "post",
-                "url": {{ page.url | jsonify }},
-                "title": {{ page.title | jsonify }},
-                "date": {{ page.date | jsonify }},
-                "date_friendly": {{ page.date | date: '%d %b, %Y' | jsonify }},{% if page.lede %}
-                "lede": {{ page.lede | truncatewords: 20 | jsonify }},{% endif %}
-                "categories": {{ page.categories | join:', ' | jsonify }},
-                "tags": {{ page.tags | join:', ' | jsonify }}
-                {% if page.location %},
-                    "location": {{ page.location | strip_html | strip_newlines | jsonify }}
+                "url": "{{ page.url }}",
+                "title": "{{ page.title | xml_escape }}",
+                "date": "{{ page.date }}",
+                "date_friendly": "{{ page.date | date: '%d %b, %Y' }}",
+                {% if page.lede %}
+                    "lede": "{{ page.lede | strip_newlines | normalize_whitespace | strip_html | xml_escape | truncatewords: 20 }}",
                 {% endif %}
-                {% unless page.searchable == 'no-content' %},
-                    "content": {{ page.content | strip_html | strip_newlines | jsonify }}
+                "categories": "{{ page.categories | join: ', ' }}",
+                "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
+                    "location": "{{ page.location | strip_newlines | normalize_whitespace | strip_html | xml_escape }}"
+                {% endif %}{% unless page.searchable == 'no-content' %},
+                    "content": "{{ page.content | strip_newlines | normalize_whitespace | strip_html | xml_escape }}"
                 {% endunless %}
             }{% unless forloop.last %},{% endunless %}
         {% endunless %}

@@ -8,11 +8,11 @@
 
 
 // Set a name for the current cache
-const version = '2016-10-16';
-const cacheName = `cb_${version}`;
+const VERSION = '2016-10-17';
+const CACHE_NAME = `cb_${VERSION}`;
 
 // Default files to always cache
-const cacheFiles = [
+const CACHE_FILES = [
     '/',
     '/about/',
     '/articles/',
@@ -39,10 +39,11 @@ const cacheFiles = [
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(cacheName)
+        caches.open(CACHE_NAME)
             .then(cache => {
-                return cache.addAll(cacheFiles);
+                return cache.addAll(CACHE_FILES);
             })
+            .then(self.skipWaiting())
     );
 });
 
@@ -53,7 +54,7 @@ self.addEventListener('activate', event => {
             .then(keys => {
                 return Promise.all(keys
                     .filter(key => {
-                        return key.indexOf(cacheName) !== 0;
+                        return key.indexOf(CACHE_NAME) !== 0;
                     })
                     .map(key => {
                         return caches.delete(key);

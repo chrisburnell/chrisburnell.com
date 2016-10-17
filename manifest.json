@@ -7,9 +7,9 @@ searchable: false
 {
     "dir": "ltr",
     "lang": "{{ site.language }}",
-    "name": "{{ site.title }} – {{ site.tagline }}",
-    "short_name": "{{ site.title }}",
-    "description": "{{ site.lede }}",
+    "name": "{{ site.tagline | prepend: ' – ' | prepend: site.title | xml_escape }}",
+    "short_name": "{{ site.title | xml_escape }}",
+    "description": "{{ site.lede | xml_escape }}",
     "display": "browser",
     "orientation": "any",
     "start_url": "/",
@@ -17,8 +17,53 @@ searchable: false
     "background_color": "#f9f9f9",
     "icons": [
         {
+            "src": "/favicon-32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "/favicon-32.webp",
+            "type": "image/webp",
+            "sizes": "32x32"
+        },
+        {
+            "src": "/favicon-72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/favicon-72.webp",
+            "type": "image/webp",
+            "sizes": "72x72"
+        },
+        {
             "src": "/favicon.png",
             "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/favicon.webp",
+            "type": "image/webp",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/favicon-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/favicon-144.webp",
+            "type": "image/webp",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/favicon-256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/favicon-256.webp",
+            "type": "image/webp",
             "sizes": "256x256"
         }
     ]
