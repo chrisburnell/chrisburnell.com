@@ -114,12 +114,13 @@
 ///
 /// @example scss - One family
 ///   @include font-family(default);
-///   // font-family: "ff-meta-serif-web-pro", Georgia, serif;
+///   // font-family: "Proxima Nova", sans-serif;
+///   // font-display: swap;
 ///
 /// @example scss - One family, one display
-///   @include font-family(beta, swap);
-///   // font-family: "proxima-nova", sans-serif;
-///   // font-display: swap;
+///   @include font-family(serif, auto);
+///   // font-family: Georgia, serif;
+///   // font-display: auto;
 ///
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $font-families.

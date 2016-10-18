@@ -199,10 +199,10 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courie
 /// @require {Variable} $font-family-monospace
 /// @see {Mixin} font-family
 $font-families: (
-    "default":   $font-family-default,
-    "alpha":     $font-family-alpha,
-    "serif":     $font-family-serif,
-    "monospace": $font-family-monospace
+    default:   $font-family-default,
+    alpha:     $font-family-alpha,
+    serif:     $font-family-serif,
+    monospace: $font-family-monospace
 ) !default;
 
 
@@ -235,13 +235,13 @@ $transition-function: ease !default;
 /// @prop {Number} value - z-index value
 /// @see {Function} z-index
 $z-indexes: (
-    "below":       -1,
-    "root":         0,
-    "default":      1,
-    "above":        2,
-    "modal":        3,
-    "dialog":       4,
-    "notification": 5
+    below:       -1,
+    root:         0,
+    default:      1,
+    above:        2,
+    modal:        3,
+    dialog:       4,
+    notification: 5
 ) !default;
 
 
@@ -249,14 +249,14 @@ $z-indexes: (
 /// @prop {String} Body Class
 /// @prop {String} Primary Navigation Class
 $navigation-links: (
-    "home":     "home",
-    "about":    "about",
-    "article":  "articles",
-    "articles": "articles",
-    "pen":      "pens",
-    "pens":     "pens",
-    "talk":     "talks",
-    "talks":    "talks"
+    home:      home,
+    about:     about,
+    article:   articles,
+    articles:  articles,
+    pen:       pens,
+    pens:      pens,
+    talk:      talks,
+    talks:     talks
 ) !default;
 
 
@@ -283,16 +283,17 @@ $color-sass: #c6538c !default;
 /// @require {Variable} $color-liquid
 /// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
-$coding-languages:
-    css        $color-css,
-    haml       $color-html,
-    html       $color-html,
-    jade       $color-html,
-    javascript $color-javascript,
-    liquid     $color-liquid,
-    markdown   $color-markdown,
-    sass       $color-sass,
-    scss       $color-sass;
+$coding-languages: (
+    css:         $color-css,
+    haml:        $color-html,
+    html:        $color-html,
+    jade:        $color-html,
+    javascript:  $color-javascript,
+    liquid:      $color-liquid,
+    markdown:    $color-markdown,
+    sass:        $color-sass,
+    scss:        $color-sass
+) !default;
 
 
 /// @type Length
@@ -310,6 +311,8 @@ $color-rss: #ff9770 !default;
 /// @type Color
 $color-spotify: #1db954 !default;
 /// @type Color
+$color-spotify-alt: #191414 !default;
+/// @type Color
 $color-twitter: mix($color-black, #55acee, 10%) !default;
 
 
@@ -324,17 +327,18 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @require {Variable} $color-github
 /// @require {Variable} $color-lastfm
 /// @require {Variable} $color-spotify
+/// @require {Variable} $color-spotify-alt
 /// @require {Variable} $color-twitter
 $color-brands:
-    codepen $color-codepen $color-white   1.025,
-    github  $color-github  $color-white   0.950,
-    lastfm  $color-lastfm  $color-lastfm  1.000,
-    rss     $color-brand   $color-rss     0.775,
-    spotify $color-brand   $color-spotify 0.925,
-    twitter $color-twitter $color-twitter 0.925,
-    article $color-brand   $color-white   0.900,
-    feather $color-brand   $color-white   0.725,
-    heart   $color-brand   $color-white   1.000,
-    link    $color-brand   $color-white   1.000,
-    search  $color-brand   $color-white   1.000,
-    tag     $color-brand   $color-white   1.000;
+    codepen  $color-codepen      $color-white    1.025,
+    github   $color-github       $color-white    0.950,
+    lastfm   $color-lastfm       $color-lastfm   1.000,
+    rss      $color-brand        $color-rss      0.775,
+    spotify  $color-spotify-alt  $color-spotify  0.925,
+    twitter  $color-twitter      $color-twitter  0.925,
+    article  $color-brand        $color-white    0.900,
+    feather  $color-brand        $color-white    0.725,
+    heart    $color-brand        $color-white    1.000,
+    link     $color-brand        $color-white    1.000,
+    search   $color-brand        $color-white    1.000,
+    tag      $color-brand        $color-white    1.000  !default;

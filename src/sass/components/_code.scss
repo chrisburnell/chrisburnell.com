@@ -29,11 +29,8 @@ code[data-lang] {
 /**
  * Highlighted Code Block Labels
  */
-@each $language in $coding-languages {
-    $name:  nth($language, 1);
-    $color: nth($language, 2);
-
-    &.language-#{$name} {
+@each $language, $color in $coding-languages {
+    &.language-#{$language} {
         &::before {
             background-color: #{$color} !important;
         }
