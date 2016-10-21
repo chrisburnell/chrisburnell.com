@@ -45,8 +45,8 @@
 ///   // background-image: linear-gradient(to bottom, white 0%, black 100%);
 ///
 /// @example scss - Three parameters
-///   background-image: gradient(black, white, to top);
-///   // background-image: linear-gradient(to top, black 0%, white 100%);
+///   background-image: gradient(black, white, to top right);
+///   // background-image: linear-gradient(to top right, black 0%, white 100%);
 ///
 /// @return {String} Linear Gradient snippet
 ///
