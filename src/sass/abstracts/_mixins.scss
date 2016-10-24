@@ -9,7 +9,7 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $type ["default"] - Type of Border Radius
+/// @param {String} $value [$border-radius-default] - Type of Border Radius
 ///
 /// @require {Variable} $border-radius-default
 /// @require {Variable} $border-radius-thin
@@ -22,16 +22,14 @@
 ///   @include radius(1em);
 ///   // border-radius: 1em;
 ///
-@mixin border-radius($type: "default") {
-    $value: $border-radius-default;
-
-    @if $type == "top" {
+@mixin border-radius($value: $border-radius-default) {
+    @if $value == "top" {
         $value: $border-radius-default $border-radius-default 0 0;
     }
-    @else if $type == "bottom" {
+    @else if $value == "bottom" {
         $value: 0 0 $border-radius-default $border-radius-default;
     }
-    @else if $type == "thin" {
+    @else if $value == "thin" {
         $value: $border-radius-thin;
     }
 

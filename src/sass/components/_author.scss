@@ -72,11 +72,20 @@
     margin-right:  $measure-small;
     margin-bottom: $measure-small;
 
+    @supports (shape-outside: circle(50%)) {
+        background-image: none;
+        shape-outside: circle(50%);
+    }
+
     %image-elements {
         @include border-radius;
         width:  100%;
         height: 100%;
         display: block;
+
+        @supports (shape-outside: circle(50%)) {
+            @include border-radius(50%);
+        }
     }
 }
 

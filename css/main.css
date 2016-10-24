@@ -2126,6 +2126,11 @@ footer {
   float: left;
   margin-right: 0.625rem;
   margin-bottom: 0.625rem; }
+  @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
+    .author-image {
+      background-image: none;
+      -webkit-shape-outside: circle(50%);
+              shape-outside: circle(50%); } }
   .author-image img, .author-image
   picture {
     background-clip: padding-box;
@@ -2133,6 +2138,11 @@ footer {
     width: 100%;
     height: 100%;
     display: block; }
+    @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
+      .author-image img, .author-image
+      picture {
+        background-clip: padding-box;
+        border-radius: 50%; } }
 
 .author-name,
 .author-nationality,
