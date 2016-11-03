@@ -59,7 +59,6 @@ const stylelintRules = {
         'length-zero-no-unit': true,
         'time-no-imperceptible': true,
         'block-no-single-line': true,
-        // 'indentation': 4,
         'selector-no-id': true,
         'string-quotes': 'double'
     }
@@ -88,7 +87,8 @@ gulp.task('css-compile', ['css-lint'], () => {
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
-            style: 'expanded'
+            outputStyle: 'expanded',
+            includePaths: 'neat'
         }))
         .pipe(postcss([
             autoprefixer({
@@ -189,7 +189,9 @@ gulp.task('compress-images', () => {
 gulp.task('jpg-to-webp', () => {
     return gulp.src(`${paths.images.src}/**/*.{jpg|jpeg}`, { base: paths.images.src })
         .pipe(imagemin([
-            webp({ quality: '90' })
+            webp({
+                quality: '90'
+            })
         ]))
         .pipe(rename({
             extname: '.webp'
@@ -201,7 +203,9 @@ gulp.task('jpg-to-webp', () => {
 gulp.task('png-to-webp', () => {
     return gulp.src(`${paths.images.src}/**/*.png`, { base: paths.images.src })
         .pipe(imagemin([
-            webp({ lossless: true })
+            webp({
+                lossless: true
+            })
         ]))
         .pipe(rename({
             extname: '.webp'
