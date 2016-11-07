@@ -21,17 +21,17 @@
     const resultsMeta     = document.querySelector('.js-search-meta');
     const resultsList     = document.querySelector('.js-search-results-list');
     const resultTemplatePage = `<li role="listitem">
-        <a href="@@URL@@">
-            <h4 class="title">@@TITLE@@</h4>
-            <p class="lede">@@LEDE@@</p>
+        <a href="{{url}}">
+            <h4 class="title">{{title}}</h4>
+            <p class="lede">{{lede}}</p>
         </a>
     </li>`;
     const resultTemplatePost = `<li role="listitem">
-        <a href="@@URL@@">
-            <svg class="icon  icon--@@ICON@@" role="img"><use xlink:href="#svg--@@ICON@@" /></svg>
-            <h4 class="title">@@TITLE@@</h4>
-            <p class="lede">@@LEDE@@</p>
-            <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>
+        <a href="{{url}}">
+            <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="#svg--{{icon}}" /></svg>
+            <h4 class="title">{{title}}</h4>
+            <p class="lede">{{lede}}</p>
+            <time class="date" datetime="{{date}}">{{date_friendly}}</time>
         </a>
     </li>`;
 
@@ -211,37 +211,37 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = injectContent(html, item['url'], '@@URL@@');
+        html = injectContent(html, item['url'], '{{url}}');
 
         // ICON
         if (item['categories'] == 'article') {
-            html = injectContent(html, 'article', '@@ICON@@');
+            html = injectContent(html, 'article', '{{icon}}');
         } else if (item['categories'] == 'link') {
-            html = injectContent(html, 'link', '@@ICON@@');
+            html = injectContent(html, 'link', '{{icon}}');
         } else if (item['categories'] == 'pen') {
-            html = injectContent(html, 'codepen', '@@ICON@@');
+            html = injectContent(html, 'codepen', '{{icon}}');
         } else if (item['categories'] == 'talk') {
-            html = injectContent(html, 'bullhorn', '@@ICON@@');
+            html = injectContent(html, 'bullhorn', '{{icon}}');
         }
 
         // TITLE
-        html = injectContent(html, item['title'], '@@TITLE@@');
+        html = injectContent(html, item['title'], '{{title}}');
 
         // LEDE
         if (item['lede']) {
-            html = injectContent(html, item['lede'], '@@LEDE@@');
+            html = injectContent(html, item['lede'], '{{lede}}');
         } else if (item['categories'] == 'link') {
-            html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
+            html = injectContent(html, '<em>Shared Link</em>', '{{lede}}');
         } else if (item['categories'] == 'pen') {
-            html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
+            html = injectContent(html, '<em>Featured Pen</em>', '{{lede}}');
         } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, `<em>A talk that I gave at ${item['location']}.</em>`, '@@LEDE@@');
+            html = injectContent(html, `<em>A talk that I gave at ${item['location']}.</em>`, '{{lede}}');
         }
 
         // DATE
         if (item['type'] == 'post') {
-            html = injectContent(html, item['date'], '@@DATE@@');
-            html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
+            html = injectContent(html, item['date'], '{{date}}');
+            html = injectContent(html, item['date_friendly'], '{{date_friendly}}');
         }
 
         return html;

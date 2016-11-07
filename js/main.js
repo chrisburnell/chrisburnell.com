@@ -147,8 +147,8 @@
     var searchSubmit = document.querySelector('.js-search-submit');
     var resultsMeta = document.querySelector('.js-search-meta');
     var resultsList = document.querySelector('.js-search-results-list');
-    var resultTemplatePage = '<li role="listitem">\n        <a href="@@URL@@">\n            <h4 class="title">@@TITLE@@</h4>\n            <p class="lede">@@LEDE@@</p>\n        </a>\n    </li>';
-    var resultTemplatePost = '<li role="listitem">\n        <a href="@@URL@@">\n            <svg class="icon  icon--@@ICON@@" role="img"><use xlink:href="#svg--@@ICON@@" /></svg>\n            <h4 class="title">@@TITLE@@</h4>\n            <p class="lede">@@LEDE@@</p>\n            <time class="date" datetime="@@DATE@@">@@DATE_FRIENDLY@@</time>\n        </a>\n    </li>';
+    var resultTemplatePage = '<li role="listitem">\n        <a href="{{url}}">\n            <h4 class="title">{{title}}</h4>\n            <p class="lede">{{lede}}</p>\n        </a>\n    </li>';
+    var resultTemplatePost = '<li role="listitem">\n        <a href="{{url}}">\n            <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="#svg--{{icon}}" /></svg>\n            <h4 class="title">{{title}}</h4>\n            <p class="lede">{{lede}}</p>\n            <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n        </a>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -342,37 +342,37 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = injectContent(html, item['url'], '@@URL@@');
+        html = injectContent(html, item['url'], '{{url}}');
 
         // ICON
         if (item['categories'] == 'article') {
-            html = injectContent(html, 'article', '@@ICON@@');
+            html = injectContent(html, 'article', '{{icon}}');
         } else if (item['categories'] == 'link') {
-            html = injectContent(html, 'link', '@@ICON@@');
+            html = injectContent(html, 'link', '{{icon}}');
         } else if (item['categories'] == 'pen') {
-            html = injectContent(html, 'codepen', '@@ICON@@');
+            html = injectContent(html, 'codepen', '{{icon}}');
         } else if (item['categories'] == 'talk') {
-            html = injectContent(html, 'bullhorn', '@@ICON@@');
+            html = injectContent(html, 'bullhorn', '{{icon}}');
         }
 
         // TITLE
-        html = injectContent(html, item['title'], '@@TITLE@@');
+        html = injectContent(html, item['title'], '{{title}}');
 
         // LEDE
         if (item['lede']) {
-            html = injectContent(html, item['lede'], '@@LEDE@@');
+            html = injectContent(html, item['lede'], '{{lede}}');
         } else if (item['categories'] == 'link') {
-            html = injectContent(html, '<em>Shared Link</em>', '@@LEDE@@');
+            html = injectContent(html, '<em>Shared Link</em>', '{{lede}}');
         } else if (item['categories'] == 'pen') {
-            html = injectContent(html, '<em>Featured Pen</em>', '@@LEDE@@');
+            html = injectContent(html, '<em>Featured Pen</em>', '{{lede}}');
         } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, '<em>A talk that I gave at ' + item['location'] + '.</em>', '@@LEDE@@');
+            html = injectContent(html, '<em>A talk that I gave at ' + item['location'] + '.</em>', '{{lede}}');
         }
 
         // DATE
         if (item['type'] == 'post') {
-            html = injectContent(html, item['date'], '@@DATE@@');
-            html = injectContent(html, item['date_friendly'], '@@DATE_FRIENDLY@@');
+            html = injectContent(html, item['date'], '{{date}}');
+            html = injectContent(html, item['date_friendly'], '{{date_friendly}}');
         }
 
         return html;
