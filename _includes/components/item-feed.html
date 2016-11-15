@@ -9,7 +9,7 @@
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
     <category>{{ page.categories }}</category>
     {% if page.lede %}
-        <description>{{ page.lede | xml_escape }}</description>
+        <description>{{ page.lede | strip_html | xml_escape }}</description>
     {% elsif page.categories contains 'link' %}
         <description>Shared Link</description>
     {% elsif page.categories contains 'pen' %}
