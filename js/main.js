@@ -426,6 +426,8 @@
 
     'use strict';
 
+    var DISQUS_SHORTNAME = 'chrisburnell';
+
     var dsqc = document.createElement('script');
     dsqc.type = 'text/javascript';
     dsqc.id = 'dsq-count-scr';
