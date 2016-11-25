@@ -11,7 +11,7 @@ footer {
     text-transform: uppercase;
 }
 
-.copyright,
+.license,
 .nav-tertiary {
     overflow: hidden;
 
@@ -21,14 +21,14 @@ footer {
     }
 }
 
-.copyright {
+.license {
     @include media(">medium") {
         float: left;
     }
 }
 
 .footer-home-anchor,
-.footer-copyright-anchor,
+.footer-license-anchor,
 .footer-style-guide-anchor {
     display: inline-block;
     white-space: nowrap;
@@ -67,7 +67,7 @@ footer {
     }
 }
 
-.footer-copyright-anchor,
+.footer-license-anchor,
 .footer-style-guide-anchor {
     @include case(uppercase);
     margin-left:  $measure-small;

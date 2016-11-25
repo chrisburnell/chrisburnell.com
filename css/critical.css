@@ -1485,6 +1485,12 @@ main {
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   overflow-y: hidden;
 }
 
@@ -1715,13 +1721,19 @@ aside p {
 
 @media (min-width: 501px) {
   .nav-primary {
-    float: right;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
 @media (max-width: 500px) {
   .nav-primary {
-    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
     padding-top: 0.625rem;
   }
 }
