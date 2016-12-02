@@ -145,24 +145,3 @@ a {
         visibility: visible;
     }
 }
-
-/**
- * Brand Anchor Colors
- */
-@each $color-brand in $color-brands {
-    $brand-name:  nth($color-brand, 1);
-    $brand-color: nth($color-brand, 2);
-
-    .anchor--#{$brand-name} {
-        color: $brand-color !important;
-
-        &:link,
-        &:visited {
-            &:hover,
-            &:focus,
-            &:active {
-                border-bottom-color: $brand-color;
-            }
-        }
-    }
-}

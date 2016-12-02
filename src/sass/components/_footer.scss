@@ -9,6 +9,15 @@ footer {
     color: $color-text-light;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        @include media("<=medium") {
+            flex-direction: column;
+        }
+    }
 }
 
 .license,
@@ -16,14 +25,8 @@ footer {
     overflow: hidden;
 
     @include media("<=medium") {
-        width: 100%;
+        flex: 1 0 100%;
         text-align: center;
-    }
-}
-
-.license {
-    @include media(">medium") {
-        float: left;
     }
 }
 

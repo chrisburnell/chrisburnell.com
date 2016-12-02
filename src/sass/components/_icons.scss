@@ -30,14 +30,13 @@
  */
 @each $color-brand in $color-brands {
     $name:       nth($color-brand, 1);
-    $icon-color: nth($color-brand, 3);
-    $ratio:      nth($color-brand, 4);
+    $icon-color: nth($color-brand, 2);
+    $ratio:      nth($color-brand, 3);
 
     .icon--#{$name} {
         width: ($ratio * $icon-size);
 
         @if $name == "rss" {
-            // the RSS icon should remain orange when nested in a button
             &,
             %button-elements & {
                 fill: $icon-color;

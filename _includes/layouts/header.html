@@ -120,7 +120,7 @@ snippet of code on a project of your own. -->
     {% else %}
         <!-- Twitter Microdata -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@{{ site.author.twitter }}">
+        <meta name="twitter:creator" content="{{ site.author.twitter }}">
         <meta name="twitter:title" content="{{ meta_title }}">
         <meta name="twitter:description" content="{{ meta_lede }}">
         <meta name="twitter:image:src" content="{{ meta_image }}">
@@ -146,7 +146,7 @@ snippet of code on a project of your own. -->
 
     {% include assets/svg-master.html %}
 
-    <header class="wrap  clear" role="banner">
+    <header class="wrap" role="banner">
 
         <a rel="home" class="logo" href="/" title="{{ site.title }}" tabindex="1">
             {% include content/svg.html type='raven' %}

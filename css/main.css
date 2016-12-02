@@ -416,7 +416,7 @@ textarea {
   font-family: "League Gothic";
   font-style: normal;
   font-weight: 400;
-  src: local("League Gothic"), url("../fonts/league-gothic-regular.woff2") format("woff2"), url("../fonts/league-gothic-regular.woff2") format("woff"), url("../fonts/league-gothic-regular.ttf") format("truetype");
+  src: local("League Gothic"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff"), url("https://chrisburnell.com/fonts/league-gothic-regular.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -424,7 +424,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
-  src: local("Proxima Nova Regular"), url("../fonts/proxima-nova-regular.woff2") format("woff2"), url("../fonts/proxima-nova-regular.woff2") format("woff"), url("../fonts/proxima-nova-regular.ttf") format("truetype");
+  src: local("Proxima Nova Regular"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-regular.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -432,7 +432,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: italic;
   font-weight: 400;
-  src: local("Proxima Nova Italic"), url("../fonts/proxima-nova-italic.woff2") format("woff2"), url("../fonts/proxima-nova-italic.woff2") format("woff"), url("../fonts/proxima-nova-italic.ttf") format("truetype");
+  src: local("Proxima Nova Italic"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-italic.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -440,7 +440,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 600;
-  src: local("Proxima Nova Semibold"), url("../fonts/proxima-nova-semibold.woff2") format("woff2"), url("../fonts/proxima-nova-semibold.woff2") format("woff"), url("../fonts/proxima-nova-semibold.ttf") format("truetype");
+  src: local("Proxima Nova Semibold"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -1724,105 +1724,6 @@ h6:active .fragment-anchor, .fragment-anchor:target {
   visibility: visible;
 }
 
-/**
- * Brand Anchor Colors
- */
-.anchor--codepen {
-  color: #212121 !important;
-}
-
-.anchor--codepen:link:hover, .anchor--codepen:link:focus, .anchor--codepen:link:active, .anchor--codepen:visited:hover, .anchor--codepen:visited:focus, .anchor--codepen:visited:active {
-  border-bottom-color: #212121;
-}
-
-.anchor--github {
-  color: #333333 !important;
-}
-
-.anchor--github:link:hover, .anchor--github:link:focus, .anchor--github:link:active, .anchor--github:visited:hover, .anchor--github:visited:focus, .anchor--github:visited:active {
-  border-bottom-color: #333333;
-}
-
-.anchor--lastfm {
-  color: #e31b23 !important;
-}
-
-.anchor--lastfm:link:hover, .anchor--lastfm:link:focus, .anchor--lastfm:link:active, .anchor--lastfm:visited:hover, .anchor--lastfm:visited:focus, .anchor--lastfm:visited:active {
-  border-bottom-color: #e31b23;
-}
-
-.anchor--rss {
-  color: #5f8aa6 !important;
-}
-
-.anchor--rss:link:hover, .anchor--rss:link:focus, .anchor--rss:link:active, .anchor--rss:visited:hover, .anchor--rss:visited:focus, .anchor--rss:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--spotify {
-  color: #191414 !important;
-}
-
-.anchor--spotify:link:hover, .anchor--spotify:link:focus, .anchor--spotify:link:active, .anchor--spotify:visited:hover, .anchor--spotify:visited:focus, .anchor--spotify:visited:active {
-  border-bottom-color: #191414;
-}
-
-.anchor--twitter {
-  color: #4d9bd7 !important;
-}
-
-.anchor--twitter:link:hover, .anchor--twitter:link:focus, .anchor--twitter:link:active, .anchor--twitter:visited:hover, .anchor--twitter:visited:focus, .anchor--twitter:visited:active {
-  border-bottom-color: #4d9bd7;
-}
-
-.anchor--article {
-  color: #5f8aa6 !important;
-}
-
-.anchor--article:link:hover, .anchor--article:link:focus, .anchor--article:link:active, .anchor--article:visited:hover, .anchor--article:visited:focus, .anchor--article:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--feather {
-  color: #5f8aa6 !important;
-}
-
-.anchor--feather:link:hover, .anchor--feather:link:focus, .anchor--feather:link:active, .anchor--feather:visited:hover, .anchor--feather:visited:focus, .anchor--feather:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--heart {
-  color: #5f8aa6 !important;
-}
-
-.anchor--heart:link:hover, .anchor--heart:link:focus, .anchor--heart:link:active, .anchor--heart:visited:hover, .anchor--heart:visited:focus, .anchor--heart:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--link {
-  color: #5f8aa6 !important;
-}
-
-.anchor--link:link:hover, .anchor--link:link:focus, .anchor--link:link:active, .anchor--link:visited:hover, .anchor--link:visited:focus, .anchor--link:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--search {
-  color: #5f8aa6 !important;
-}
-
-.anchor--search:link:hover, .anchor--search:link:focus, .anchor--search:link:active, .anchor--search:visited:hover, .anchor--search:visited:focus, .anchor--search:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
-.anchor--tag {
-  color: #5f8aa6 !important;
-}
-
-.anchor--tag:link:hover, .anchor--tag:link:focus, .anchor--tag:link:active, .anchor--tag:visited:hover, .anchor--tag:visited:focus, .anchor--tag:visited:active {
-  border-bottom-color: #5f8aa6;
-}
-
 button,
 .button {
   -webkit-user-select: none;
@@ -2024,6 +1925,15 @@ header {
   }
 }
 
+@media (max-width: 500px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 /**
  * The width of the content is fluid, and always has padding on the left-hand
  * side to make room for any `aside`, which can appear anywhere inside
@@ -2165,7 +2075,6 @@ footer {
 @media (min-width: 501px) {
   .logo {
     height: 6.25rem;
-    float: left;
   }
 }
 
@@ -2184,6 +2093,8 @@ footer {
 @media (max-width: 500px) {
   .logo {
     height: 5.625rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -2249,16 +2160,6 @@ footer {
   white-space: nowrap;
 }
 
-@media (min-width: 501px) {
-  .nav-primary {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-  }
-}
-
 @media (max-width: 500px) {
   .nav-primary {
     -webkit-box-flex: 1;
@@ -2273,12 +2174,6 @@ footer {
   font-size: 0;
 }
 
-@media (min-width: 769px) {
-  .nav-primary-list {
-    float: right;
-  }
-}
-
 @media (max-width: 768px) {
   .nav-primary-list {
     text-align: center;
@@ -2288,12 +2183,6 @@ footer {
 .nav-primary-list li {
   display: inline-block;
   font-size: 1rem;
-}
-
-@media (min-width: 769px) {
-  .nav-primary-list li {
-    float: left;
-  }
 }
 
 @media (min-width: 769px) {
@@ -2888,19 +2777,17 @@ picture {
   font-style: normal;
 }
 
-@media (max-width: 768px) {
-  .widget {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-ordinal-group: 1000;
-        -ms-flex-order: 999;
-            order: 999;
-  }
+.widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-ordinal-group: 1000;
+      -ms-flex-order: 999;
+          order: 999;
 }
 
 aside .widget {
@@ -2918,7 +2805,8 @@ aside .widget::after {
 }
 
 .widget-featured-anchor {
-  float: right;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-top: 1.25rem;
   font-weight: 600;
 }
@@ -2927,18 +2815,29 @@ aside .widget::after {
   content: " →";
 }
 
-@media (max-width: 768px) {
-  .widget-featured-anchor {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-  }
-}
-
 footer {
   background-color: #4f4f4f;
   color: #dddddd;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  footer div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .license,
@@ -2949,14 +2848,10 @@ footer {
 @media (max-width: 768px) {
   .license,
   .nav-tertiary {
-    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
     text-align: center;
-  }
-}
-
-@media (min-width: 769px) {
-  .license {
-    float: left;
   }
 }
 
@@ -3012,7 +2907,6 @@ footer {
 
 @media (min-width: 769px) {
   .nav-tertiary {
-    float: right;
     margin-top: 0.3125rem;
   }
 }

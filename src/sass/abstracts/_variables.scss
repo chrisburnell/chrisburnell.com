@@ -318,27 +318,23 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 
 /// @type List
 /// @prop {String} name - Brand name
-/// @prop {Color} color - Text color
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity
-/// @require {Variable} $color-brand
 /// @require {Variable} $color-white
-/// @require {Variable} $color-codepen
-/// @require {Variable} $color-github
 /// @require {Variable} $color-lastfm
+/// @require {Variable} $color-rss
 /// @require {Variable} $color-spotify
-/// @require {Variable} $color-spotify-alt
 /// @require {Variable} $color-twitter
 $color-brands:
-    codepen  $color-codepen      $color-white    1.025,
-    github   $color-github       $color-white    0.950,
-    lastfm   $color-lastfm       $color-lastfm   1.000,
-    rss      $color-brand        $color-rss      0.775,
-    spotify  $color-spotify-alt  $color-spotify  0.925,
-    twitter  $color-twitter      $color-twitter  0.925,
-    article  $color-brand        $color-white    0.900,
-    feather  $color-brand        $color-white    0.725,
-    heart    $color-brand        $color-white    1.000,
-    link     $color-brand        $color-white    1.000,
-    search   $color-brand        $color-white    1.000,
-    tag      $color-brand        $color-white    1.000  !default;
+    codepen  $color-white    1.025,
+    github   $color-white    0.950,
+    lastfm   $color-lastfm   1.000,
+    rss      $color-rss      0.775,
+    spotify  $color-spotify  0.925,
+    twitter  $color-twitter  0.925,
+    article  $color-white    0.900,
+    feather  $color-white    0.725,
+    heart    $color-white    1.000,
+    link     $color-white    1.000,
+    search   $color-white    1.000,
+    tag      $color-white    1.000  !default;

@@ -9,12 +9,8 @@
     padding-bottom: $measure-medium;
     white-space: nowrap;
 
-    @include media(">small") {
-        float: right;
-    }
-
     @include media("<=small") {
-        width: 100%;
+        flex: 1 0 100%;
         padding-top: $measure-small;
     }
 }
@@ -24,10 +20,6 @@
     // remove space between list items
     font-size: 0;
 
-    @include media(">medium") {
-        float: right;
-    }
-
     @include media("<=medium") {
         text-align: center;
     }
@@ -36,10 +28,6 @@
         display: inline-block;
         // reset font-size
         font-size: 1rem;
-
-        @include media(">medium") {
-            float: left;
-        }
 
         & + li {
             @include media(">medium") {

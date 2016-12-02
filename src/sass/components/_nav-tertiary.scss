@@ -6,7 +6,6 @@
 
 .nav-tertiary {
     @include media(">medium") {
-        float: right;
         // 5px
         margin-top: 0.3125rem;
     }

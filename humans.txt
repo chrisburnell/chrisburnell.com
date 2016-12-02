@@ -9,7 +9,7 @@ searchable: false
 
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
-    Twitter: @{{ site.author.twitter }}
+    Twitter: {{ site.author.twitter }}
 
 /* SITE */
 

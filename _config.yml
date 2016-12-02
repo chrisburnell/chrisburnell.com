@@ -10,7 +10,7 @@ author:
   email:       me@chrisburnell.com
   job_title:   UI developer
   codepen:     chrisburnell
-  twitter:     iamchrisburnell
+  twitter:     "@iamchrisburnell"
   employer:
     name: City University
     url:  https://www.city.ac.uk
@@ -56,8 +56,8 @@ exclude:
 - Gemfile.lock
 - gulpfile.babel.js
 - LICENSE
-- package.json
 - node_modules
+- package.json
 - README.md
 - src
 
