@@ -2246,14 +2246,13 @@ footer {
 .page--articles .nav-primary--articles a,
 .page--pen .nav-primary--pens a,
 .page--pens .nav-primary--pens a,
-.page--talk .nav-primary--talks a,
-.page--talks .nav-primary--talks a {
+.page--search .nav-primary--search a {
   color: #4f4f4f;
   padding-bottom: 0.5rem;
   border-bottom-width: 0.25rem;
 }
 
-.page--home .nav-primary--home a::after, .page--about .nav-primary--about a::after, .page--article .nav-primary--articles a::after, .page--articles .nav-primary--articles a::after, .page--pen .nav-primary--pens a::after, .page--pens .nav-primary--pens a::after, .page--talk .nav-primary--talks a::after, .page--talks .nav-primary--talks a::after {
+.page--home .nav-primary--home a::after, .page--about .nav-primary--about a::after, .page--article .nav-primary--articles a::after, .page--articles .nav-primary--articles a::after, .page--pen .nav-primary--pens a::after, .page--pens .nav-primary--pens a::after, .page--search .nav-primary--search a::after {
   content: "";
   border-top: 0.5em solid #5f8aa6;
   border-right: 0.5em solid transparent;
