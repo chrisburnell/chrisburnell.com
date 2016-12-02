@@ -2758,7 +2758,8 @@ picture {
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
   display: block;
 }
 
@@ -2767,11 +2768,12 @@ picture {
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
   margin-top: 0.5rem;
 }
 
-.featured-anchor::after {
+.related-anchor::after {
   content: " ↩︎";
   font-style: normal;
 }
@@ -2803,14 +2805,14 @@ aside .widget::after {
   clear: both;
 }
 
-.widget-featured-anchor {
+.widget-related-anchor {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-top: 1.25rem;
   font-weight: 600;
 }
 
-.widget-featured-anchor::after {
+.widget-related-anchor::after {
   content: " ↩︎";
 }
 

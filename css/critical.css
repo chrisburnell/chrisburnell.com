@@ -1907,7 +1907,8 @@ picture {
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
   display: block;
 }
 
@@ -1916,11 +1917,12 @@ picture {
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
   margin-top: 0.5rem;
 }
 
-.featured-anchor::after {
+.related-anchor::after {
   content: " ↩︎";
   font-style: normal;
 }

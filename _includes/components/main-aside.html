@@ -33,10 +33,20 @@
                 </span>
             </div>
         {% endif %}
-        {% if page.categories contains 'link' %}
-            <a class="featured-anchor" href="/links">Featured Links</a>
+        {% if page.categories contains 'article' %}
+            <div class="reading-time">
+                {% assign words = content | number_of_words %}
+                {% if words < 360 %}
+                    <strong>1 min</strong>
+                {% else %}
+                    <strong>{{ words | divided_by: 180 }} mins</strong>
+                {% endif %}
+                <span>reading time</span>
+            </div>
+        {% elsif page.categories contains 'link' %}
+            <a class="related-anchor" href="/links">All Featured Links</a>
         {% elsif page.categories contains 'pen' %}
-            <a class="featured-anchor" href="/pens">Featured Pens</a>
+            <a class="related-anchor" href="/pens">All Featured Pens</a>
         {% elsif page.categories contains 'talk' %}
             {% if page.location %}
                 {% if page.location_url %}
@@ -51,7 +61,7 @@
                     </div>
                 {% endif %}
             {% endif %}
-            <a class="featured-anchor" href="/talks">Latest Talks</a>
+            <a class="related-anchor" href="/talks">Latest Talks</a>
         {% endif %}
     {% endcapture %}
 {% elsif page.layout == 'page' %}
@@ -74,26 +84,26 @@
     {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
 {% elsif page.page_class contains 'articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
+{% elsif page.categories contains 'article' %}
+    {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
 {% elsif page.page_class contains 'links' %}
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
+{% elsif page.categories contains 'link' %}
+    {% assign author_biography_closer = 'you’d really rather just be click that link' %}
 {% elsif page.page_class contains 'pens' %}
     {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
+{% elsif page.categories contains 'pen' %}
+    {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
 {% elsif page.page_class contains 'talks' %}
     {% assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' %}
+{% elsif page.categories contains 'talk' %}
+    {% assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' %}
 {% elsif page.page_class contains 'tags' %}
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
 {% elsif page.page_class contains 'search' %}
     {% assign author_biography_closer = 'everything you search for looks totally boring' %}
 {% elsif page.page_class contains 'not-found' or page.page_class contains 'offline' %}
     {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
-{% elsif page.categories contains 'article' %}
-    {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
-{% elsif page.categories contains 'link' %}
-    {% assign author_biography_closer = 'you’d really rather just be click that link' %}
-{% elsif page.categories contains 'pen' %}
-    {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
-{% elsif page.categories contains 'talk' %}
-    {% assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' %}
 {% else %}
     {% assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' %}
 {% endif %}

@@ -94,7 +94,8 @@
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
     display: block;
 }
 
@@ -105,11 +106,12 @@
 .author-employer,
 .tags,
 .location,
-.featured-anchor {
+.reading-time,
+.related-anchor {
     margin-top: 0.5rem;
 }
 
-.featured-anchor::after {
+.related-anchor::after {
     // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
     content: " ↩︎";
     font-style: normal;
