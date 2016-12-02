@@ -110,9 +110,3 @@
 .related-anchor {
     margin-top: 0.5rem;
 }
-
-.related-anchor::after {
-    // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
-    content: " ↩︎";
-    font-style: normal;
-}
