@@ -145,3 +145,8 @@ a {
         visibility: visible;
     }
 }
+
+.related-anchor::after {
+    // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
+    content: " ↩︎";
+}
