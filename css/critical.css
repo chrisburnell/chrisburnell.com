@@ -1922,6 +1922,6 @@ picture {
 }
 
 .featured-anchor::after {
-  content: " →";
+  content: " ↩︎";
   font-style: normal;
 }

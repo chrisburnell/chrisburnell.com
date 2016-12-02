@@ -20,7 +20,7 @@
     font-weight: $font-weight-bold;
 
     &::after {
-        // NO-BREAK SPACE, RIGHTWARDS ARROW
-        content: " →";
+        // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
+        content: " ↩︎";
     }
 }

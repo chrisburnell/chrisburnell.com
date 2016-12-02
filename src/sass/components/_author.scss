@@ -110,7 +110,7 @@
 }
 
 .featured-anchor::after {
-    // NO-BREAK SPACE, RIGHTWARDS ARROW
-    content: " →";
+    // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
+    content: " ↩︎";
     font-style: normal;
 }

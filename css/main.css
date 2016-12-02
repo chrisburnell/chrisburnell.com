@@ -2773,7 +2773,7 @@ picture {
 }
 
 .featured-anchor::after {
-  content: " →";
+  content: " ↩︎";
   font-style: normal;
 }
 
@@ -2812,7 +2812,7 @@ aside .widget::after {
 }
 
 .widget-featured-anchor::after {
-  content: " →";
+  content: " ↩︎";
 }
 
 footer {
