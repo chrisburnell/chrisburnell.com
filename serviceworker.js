@@ -1,3 +1,5 @@
+---
+---
 /*!
  * Service Worker
  * @author Chris Burnell <me@chrisburnell.com>
@@ -8,8 +10,8 @@
 
 
 // Set a name for the current cache
-const VERSION = '2016-12-02';
-const CACHE_NAME = `cb_${VERSION}`;
+const VERSION = '{{ site.time | date: '%Y-%m-%d_%H%M' }}';
+const CACHE_NAME = `${VERSION}::cb`;
 
 // Default files to always cache
 const CACHE_FILES = [
