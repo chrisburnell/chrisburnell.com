@@ -5,9 +5,13 @@
 
 
 /// @type Length
+$base-font-size: 16px !default;
+
+
+/// @type Length
 $wrapper-width-small:  500px !default;
 /// @type Length
-$wrapper-width-medium: 768px !default;
+$wrapper-width-medium: 800px !default;
 /// @type Length
 $wrapper-width-large: 1140px !default;
 /// @type Map
@@ -24,10 +28,6 @@ $breakpoints: (
 
 
 /// @type Length
-$base-font-size: 16px !default;
-
-
-/// @type Length
 $wrapper-padding: 1.250rem !default;
 /// @type Length
 $aside-width:    15.875rem !default;
@@ -36,17 +36,17 @@ $article-width:     810px !default;
 
 
 /// @type Length
-$measure-small: 0.625rem !default;
+$measure-small:           0.625rem !default;
 /// @type Length
-$measure-small-relative: 0.625em !default;
+$measure-small-relative:  0.625em !default;
 /// @type Length
-$measure-medium: 1.250rem !default;
+$measure-medium:          1.250rem !default;
 /// @type Length
 $measure-medium-relative: 1.250em !default;
 /// @type Length
-$measure-large: 2.250rem !default;
+$measure-large:           2.250rem !default;
 /// @type Length
-$measure-large-relative: 2.250em !default;
+$measure-large-relative:  2.250em !default;
 
 
 /// @type Map
