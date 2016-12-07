@@ -16,12 +16,12 @@ const CACHE_NAME = `${VERSION}::cb`;
 // Default files to always cache
 const CACHE_FILES = [
     '/',
-    '/about',
-    '/articles',
-    '/pens',
-    '/offline',
-    '/search',
-    '/styleguide',
+    '/about/',
+    '/articles/',
+    '/pens/',
+    '/offline/',
+    '/search/',
+    '/styleguide/',
     '/css/main.min.css',
     '/js/main.min.js',
     '/images/avatar.png',
