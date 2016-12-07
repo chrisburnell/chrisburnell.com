@@ -41,7 +41,7 @@ textarea {
     }
 
     &[disabled] {
-        opacity: opacity("70-percent");
+        opacity: opacity(0.7);
         pointer-events: none;
     }
 

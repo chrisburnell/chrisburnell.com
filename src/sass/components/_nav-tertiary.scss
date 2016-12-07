@@ -7,7 +7,7 @@
 .nav-tertiary {
     @include media(">medium") {
         // 5px
-        margin-top: 0.3125rem;
+        margin-top: ($measure-small / 2);
     }
 
     @include media("<=medium") {
@@ -30,7 +30,7 @@
         .icon {
             @include transition;
             @include will-change(opacity, transform);
-            opacity: opacity("70-percent");
+            opacity: opacity(0.7);
             height: $icon-size;
         }
 

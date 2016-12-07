@@ -255,12 +255,17 @@
         quotes: "“" "”" "‘" "’";
     }
 
-    :lang(de) & {
+    :lang(de) &,
+    :lang(pl) & {
         quotes: "„" "“" "‚" "‘";
     }
 
     :lang(fr) & {
         quotes: "« " " »" "‹ " " ›";
+    }
+
+    :lang(es) & {
+        quotes: "«" "»" "“" "“";
     }
 }
 

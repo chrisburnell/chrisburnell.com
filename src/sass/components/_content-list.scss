@@ -67,7 +67,7 @@
             &:nth-child(4n+1),
             &:nth-child(4n+4) {
                 a {
-                    background-color: transparent;
+                    background-color: $transparent;
                 }
             }
 
@@ -156,7 +156,7 @@
     svg {
         @include transition(opacity, transform);
         @include will-change(opacity, transform);
-        opacity: opacity("5-percent");
+        opacity: opacity(0.05);
         stroke: $color-text;
         // override `_icons.scss` + 4px
         width:  6.25em !important;
@@ -177,7 +177,7 @@
     a:focus,
     a:active {
         svg {
-            opacity: opacity("10-percent");
+            opacity: opacity(0.1);
             transform: rotateZ(-$rotation-default) translateX(-$measure-medium) translateY(-50%) scale(1.2);
         }
     }

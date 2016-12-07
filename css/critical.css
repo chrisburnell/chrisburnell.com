@@ -1,12 +1,4 @@
 @charset "UTF-8";
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
@@ -416,7 +408,7 @@ textarea {
   font-family: "League Gothic";
   font-style: normal;
   font-weight: 400;
-  src: local("League Gothic"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff"), url("https://chrisburnell.com/fonts/league-gothic-regular.ttf") format("truetype");
+  src: local("League Gothic"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/league-gothic-regular.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -424,7 +416,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
-  src: local("Proxima Nova Regular"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-regular.ttf") format("truetype");
+  src: local("Proxima Nova Regular"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-regular.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -432,7 +424,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: italic;
   font-weight: 400;
-  src: local("Proxima Nova Italic"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-italic.ttf") format("truetype");
+  src: local("Proxima Nova Italic"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-italic.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -440,7 +432,7 @@ textarea {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 600;
-  src: local("Proxima Nova Semibold"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.ttf") format("truetype");
+  src: local("Proxima Nova Semibold"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.ttf") format("truetype");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -448,6 +440,13 @@ html {
   position: relative;
   min-height: 100%;
   overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -1083,12 +1082,17 @@ blockquote,
   quotes: "“" "”" "‘" "’";
 }
 
-:lang(de) blockquote {
+:lang(de) blockquote,
+:lang(pl) blockquote {
   quotes: "„" "“" "‚" "‘";
 }
 
 :lang(fr) blockquote {
   quotes: "« " " »" "‹ " " ›";
+}
+
+:lang(es) blockquote {
+  quotes: "«" "»" "“" "“";
 }
 
 @media (max-width: 500px) {
@@ -1135,12 +1139,17 @@ q,
   quotes: "“" "”" "‘" "’";
 }
 
-:lang(de) q {
+:lang(de) q,
+:lang(pl) q {
   quotes: "„" "“" "‚" "‘";
 }
 
 :lang(fr) q {
   quotes: "« " " »" "‹ " " ›";
+}
+
+:lang(es) q {
+  quotes: "«" "»" "“" "“";
 }
 
 /**
@@ -1747,7 +1756,7 @@ aside p {
 .banner {
   background-clip: padding-box;
   border-radius: 0.375rem;
-  width: 810px;
+  width: 50.625rem;
   margin-bottom: 2.25rem;
 }
 

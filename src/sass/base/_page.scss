@@ -9,6 +9,16 @@ html {
     min-height: 100%;
     // prevent horizontal when jumping short page <--> tall page
     overflow-y: scroll;
+    // set the box model for the entire document
+    box-sizing: border-box;
+}
+
+// Box model set to `inherit` by default so children of `content-box` elements
+// inherit from the parent properly
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {

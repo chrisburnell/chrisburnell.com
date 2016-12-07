@@ -4,6 +4,7 @@
 ////
 
 
+// 16px
 /// @type Length
 $base-font-size: 16px !default;
 
@@ -32,7 +33,7 @@ $wrapper-padding: 1.250rem !default;
 /// @type Length
 $aside-width:    15.875rem !default;
 /// @type Length
-$article-width:     810px !default;
+$article-width:  50.625rem !default;
 
 
 /// @type Length
@@ -54,10 +55,10 @@ $measure-large-relative:  2.250em !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    "5-percent":  0.050,
-    "10-percent": 0.100,
-    "70-percent": 0.700,
-    "90-percent": 0.900
+    "0.05": 0.050,
+    "0.1":  0.100,
+    "0.7":  0.700,
+    "0.9":  0.900
 ) !default;
 
 
@@ -76,11 +77,11 @@ $color-black: #060606 !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
-$color-black--5-percent: rgba($color-black, map-get($opacities, "5-percent")) !default;
+$color-black--5-percent: rgba($color-black, map-get($opacities, "0.05")) !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
-$color-black--10-percent: rgba($color-black, map-get($opacities, "10-percent")) !default;
+$color-black--10-percent: rgba($color-black, map-get($opacities, "0.1")) !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $color-text
@@ -98,11 +99,13 @@ $color-brand--dark: mix($color-black, $color-brand, 10%);
 /// @type Color
 /// @require {Variable} $color-brand
 /// @require {Variable} $opacities
-$color-brand--10-percent: rgba($color-brand, map-get($opacities, "10-percent")) !default;
+$color-brand--10-percent: rgba($color-brand, map-get($opacities, "0.1")) !default;
 /// @type Color
 $color-highlight: gold !default;
 /// @type Color
 $color-canada: #fd1b00 !default;
+/// @type Color
+$transparent: rgba(0, 0, 0, 0);
 /// @type List
 /// @prop {Color} Color
 /// @require {Variable} $color-brand
@@ -144,7 +147,6 @@ $font-weight-default: 400 !default;
 $font-weight-bold:    600 !default;
 
 
-// 16px
 /// @type Length
 /// @require {Variable} $base-font-size
 $font-size-default: $base-font-size !default;
