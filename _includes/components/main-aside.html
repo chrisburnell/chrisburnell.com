@@ -28,7 +28,7 @@
                 <span itemprop="keywords">
                     {% assign tags_sorted = page.tags | sort: 0 %}
                     {% for tag in tags_sorted %}
-                        {% if forloop.last and tags_sorted.size > 1 %} and {% endif %}<a href="/tags#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false and tags_sorted.size > 2 %}, {% endif %}
+                        {% if forloop.last and tags_sorted.size > 1 %} and {% endif %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false and tags_sorted.size > 2 %}, {% endif %}
                     {% endfor %}
                 </span>
             </div>
@@ -44,9 +44,9 @@
                 <span>reading time</span>
             </div>
         {% elsif page.categories contains 'link' %}
-            <a class="related-anchor" href="/links">All Featured Links</a>
+            <a class="related-anchor" href="/links/">All Featured Links</a>
         {% elsif page.categories contains 'pen' %}
-            <a class="related-anchor" href="/pens">All Featured Pens</a>
+            <a class="related-anchor" href="/pens/">All Featured Pens</a>
         {% elsif page.categories contains 'talk' %}
             {% if page.location %}
                 {% if page.location_url %}
@@ -61,7 +61,7 @@
                     </div>
                 {% endif %}
             {% endif %}
-            <a class="related-anchor" href="/talks">Latest Talks</a>
+            <a class="related-anchor" href="/talks/">Latest Talks</a>
         {% endif %}
     {% endcapture %}
 {% elsif page.layout == 'page' %}
@@ -112,7 +112,7 @@
 <aside class="author  vcard" role="complementary"{{ author_microdata_tags }}>
 
     <div class="clear  author-information">
-        <a rel="me" class="author-image  canada" href="/about" title="About me" tabindex="-1">
+        <a rel="me" class="author-image  canada" href="/about/" title="About me" tabindex="-1">
             <picture>
                 <source srcset="/images/avatar.webp 1x,
                                 /images/avatar@2x.webp 2x,
@@ -125,7 +125,7 @@
                      role="presentation"{{ author_microdata_photo }}>
             </picture>
         </a>
-        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="url" href="/about" tabindex="-1">{{ author_microdata_name }}</a></div>
+        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="url" href="/about/" tabindex="-1">{{ author_microdata_name }}</a></div>
 
         {{ author_information_details }}
     </div>

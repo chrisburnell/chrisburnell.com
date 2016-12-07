@@ -107,7 +107,7 @@ But there’s a problem if we want to use [Microdata](http://schema.org/docs/doc
 {% highlight html %}
 <aside class="author" itemscope itemtype="http://schema.org/Person">
     <div class="author-name">
-        by <a href="/about">
+        by <a href="/about/">
                <span itemprop="author">Chris Burnell</span>
            </a>
     </div>

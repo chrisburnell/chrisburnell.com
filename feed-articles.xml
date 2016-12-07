@@ -6,7 +6,7 @@ sitemap:
 
 title: Articles Feed
 lede: All of my articles.
-category_path: '/articles'
+category_path: '/articles/'
 ---
 
 

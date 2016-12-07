@@ -1,5 +1,5 @@
 <section class="widget  widget--latest-articles">
-    {% include content/heading.html title='Latest Articles' href='/articles' %}
+    {% include content/heading.html title='Latest Articles' href='/articles/' %}
     <ol class="content-list" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
@@ -13,5 +13,5 @@
             {% endunless %}
         {% endfor %}
     </ol>
-    <a class="widget-related-anchor" href="/articles">All Articles</a>
+    <a class="widget-related-anchor" href="/articles/">All Articles</a>
 </section>
