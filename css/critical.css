@@ -1363,6 +1363,13 @@ h6:active .fragment-anchor, .fragment-anchor:target {
   visibility: visible;
 }
 
+/**
+ * Related Anchors
+ */
+.related-anchor::after {
+  content: " ↩︎";
+}
+
 main {
   padding-bottom: 2.25rem;
 }
@@ -1461,6 +1468,7 @@ aside {
     width: 15.875rem;
     float: left;
     margin-left: -18.125rem;
+    margin-bottom: 2.25rem;
   }
 }
 
@@ -1929,9 +1937,4 @@ picture {
 .reading-time,
 .related-anchor {
   margin-top: 0.5rem;
-}
-
-.related-anchor::after {
-  content: " ↩︎";
-  font-style: normal;
 }

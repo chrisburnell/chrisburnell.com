@@ -1733,6 +1733,13 @@ h6:active .fragment-anchor, .fragment-anchor:target {
   visibility: visible;
 }
 
+/**
+ * Related Anchors
+ */
+.related-anchor::after {
+  content: " ↩︎";
+}
+
 button,
 .button {
   -webkit-user-select: none;
@@ -1985,6 +1992,7 @@ aside {
     width: 15.875rem;
     float: left;
     margin-left: -18.125rem;
+    margin-bottom: 2.25rem;
   }
 }
 
@@ -2499,8 +2507,6 @@ aside .content-list a {
   position: absolute;
   top: 50%;
   right: 0.625rem;
-  -webkit-transform-origin: right center;
-          transform-origin: right center;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 0;
@@ -2517,8 +2523,8 @@ aside .content-list a {
 .content-list a:focus svg,
 .content-list a:active svg {
   opacity: 0.1;
-  -webkit-transform: rotateZ(-0.0625turn) translateX(-1.25rem) translateY(-50%) scale(1.2);
-          transform: rotateZ(-0.0625turn) translateX(-1.25rem) translateY(-50%) scale(1.2);
+  -webkit-transform: translateX(-2.25rem) translateY(-50%) scale(1.2);
+          transform: translateX(-2.25rem) translateY(-50%) scale(1.2);
 }
 
 .search-main {
@@ -2780,11 +2786,6 @@ picture {
 .reading-time,
 .related-anchor {
   margin-top: 0.5rem;
-}
-
-.related-anchor::after {
-  content: " ↩︎";
-  font-style: normal;
 }
 
 .widget {

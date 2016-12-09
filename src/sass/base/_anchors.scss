@@ -25,12 +25,12 @@ a {
     }
 
     &:visited {
-        color: $color-brand--dark;
+        color: $color-brand--hard;
 
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-brand--dark;
+            border-bottom-color: $color-brand--hard;
         }
     }
 

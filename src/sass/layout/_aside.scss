@@ -16,6 +16,7 @@ aside {
         width: $aside-width;
         float: left;
         margin-left: -($aside-width + $measure-large);
+        margin-bottom: $measure-large;
     }
 
     @include media("<=medium") {

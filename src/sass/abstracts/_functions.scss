@@ -7,7 +7,7 @@
 ///
 /// Contrasting Text Color
 ///
-/// @param {Color} $background-color - Background Color to contrast
+/// @param {Color} $background-color - Background-color to contrast against
 /// @param {Color} $text-color-light [$color-white] - Color for dark backgrounds
 /// @param {Color} $text-color-dark [$color-black] - Color for light backgrounds
 ///
@@ -16,6 +16,8 @@
 ///   color: contrasting-color(#111111);
 ///   // background-color: #111111;
 ///   // color: #f9f9f9;
+///
+/// @throw Error if no parameters are passed.
 ///
 /// @return {Color} Contrasting Text Color
 ///
@@ -48,6 +50,8 @@
 ///   background-image: gradient(black, white, to top right);
 ///   // background-image: linear-gradient(to top right, black 0%, white 100%);
 ///
+/// @throw Error if two or three parameters are not passed.
+///
 /// @return {String} Linear Gradient snippet
 ///
 @function gradient($from, $to, $direction: "to bottom") {
@@ -63,17 +67,16 @@
 ///
 /// Define Opacity
 ///
-/// @param {String} $value - Value of the opacity (0-1) or respective label
+/// @param {String} $value - Label for the target opacity
 ///
 /// @require {Variable} $opacities
 ///
 /// @example scss
-///   opacity: opacity(1);
-///   // opacity: 1;
+///   opacity: opacity("shade--hard");
+///   // opacity: 0.900;
 ///
-/// @example scss
-///   opacity: opacity(0.1);
-///   // opacity: 0.10;
+/// @throw Error if no parameters are passed.
+/// @throw Error if parameter passed does not match a key in $opacities.
 ///
 /// @return {Number} Opacity value
 ///
@@ -83,11 +86,12 @@
         @return false;
     }
 
-    @if map-has-key($opacities, $value) {
-        @return map-get($opacities, $value);
+    @if not map-has-key($opacities, $value) {
+        @warn "There is no value named `#{$value}` in `$opacities`. Value should be one of `#{map-keys($opacities)}`.";
+        @return false;
     }
 
-    @return $value;
+    @return map-get($opacities, $value);
 }
 
 

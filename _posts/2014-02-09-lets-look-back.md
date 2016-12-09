@@ -62,7 +62,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 {% include content/heading.html title='There must be a better way!' id='a-better-way' %}
 
 <figure>
-    {% include content/img.html src='/images/content/good-news-everyone.jpg' alt='Good news everyone!' %}
+    {% include content/img.html src='/images/content/good-news-everyone.png' alt='Good news everyone!' %}
     <figcaption>There is!</figcaption>
 </figure>
 

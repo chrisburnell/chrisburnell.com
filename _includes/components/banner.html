@@ -3,8 +3,8 @@
         <picture>
             <source sizes="(min-width: 801px) calc(100vw - 18.375em),
                            calc(100vw - 2.5em)"
-                    srcset="/images/banners/{{ page.banner_mobile | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} 540w,
-                            /images/banners/{{ page.banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} 810w"
+                    srcset="/images/banners/{{ page.banner_mobile | replace: '.png', '.webp' }} 540w,
+                            /images/banners/{{ page.banner | replace: '.png', '.webp' }} 810w"
                     type="image/webp">
             <img alt="" class="banner" role="presentation" itemprop="image"
                  src="/images/banners/{{ page.banner_mobile }}"
@@ -15,7 +15,7 @@
         </picture>
     {% else %}
         <picture>
-            <source srcset="/images/banners/{{ page.banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}"
+            <source srcset="/images/banners/{{ page.banner | replace: '.png', '.webp' }}"
                     type="image/webp">
             <img alt="" class="banner" role="presentation" itemprop="image"
                  src="/images/banners/{{ page.banner }}">

@@ -33,7 +33,7 @@ textarea {
     outline-style: none;
 
     &:hover {
-        border-color: $color-brand--light;
+        border-color: $color-brand--soft;
     }
 
     &:focus {
@@ -41,7 +41,7 @@ textarea {
     }
 
     &[disabled] {
-        opacity: opacity(0.7);
+        opacity: opacity("shade--soft");
         pointer-events: none;
     }
 

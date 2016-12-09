@@ -30,7 +30,7 @@ mark,
 samp,
 var {
     @include border-radius(thin);
-    background-color: $color-brand--10-percent;
+    background-color: $color-brand--light;
     padding: 0.25rem;
     // force text to wrap inside the container
     word-wrap: break-word;
@@ -65,7 +65,7 @@ pre {
             min-width: 100%;
             display: block;
             font-size: initial;
-            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--5-percent;
+            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--subtle;
         }
     }
 

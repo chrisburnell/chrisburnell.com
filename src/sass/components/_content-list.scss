@@ -32,7 +32,7 @@
             &:nth-child(4n+1),
             &:nth-child(4n+4) {
                 a {
-                    background-color: $color-black--5-percent;
+                    background-color: $color-black--subtle;
                 }
             }
         }
@@ -49,7 +49,7 @@
 
             &:nth-child(2n+1) {
                 a {
-                    background-color: $color-black--5-percent;
+                    background-color: $color-black--subtle;
                 }
             }
         }
@@ -73,7 +73,7 @@
 
             &:nth-child(2n+1) {
                 a {
-                    background-color: $color-black--5-percent;
+                    background-color: $color-black--subtle;
                 }
             }
         }
@@ -89,7 +89,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-brand--10-percent !important;
+            background-color: $color-brand--light !important;
         }
 
         @include media(">small") {
@@ -126,7 +126,7 @@
     a:visited:focus,
     a:visited:active {
         .title {
-            border-bottom-color: $color-brand--dark;
+            border-bottom-color: $color-brand--hard;
         }
     }
 
@@ -156,7 +156,7 @@
     svg {
         @include transition(opacity, transform);
         @include will-change(opacity, transform);
-        opacity: opacity(0.05);
+        opacity: opacity("tint--hard");
         stroke: $color-text;
         // override `_icons.scss` + 4px
         width:  6.25em !important;
@@ -164,7 +164,6 @@
         position: absolute;
         top: 50%;
         right: $measure-small;
-        transform-origin: right center;
         transform: translateY(-50%);
         z-index: z-index(root);
 
@@ -177,8 +176,8 @@
     a:focus,
     a:active {
         svg {
-            opacity: opacity(0.1);
-            transform: rotateZ(-$rotation-default) translateX(-$measure-medium) translateY(-50%) scale(1.2);
+            opacity: opacity("tint--soft");
+            transform: translateX(-$measure-large) translateY(-50%) scale(1.2);
         }
     }
 }
