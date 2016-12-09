@@ -107,7 +107,7 @@ $color-canada: #fd1b00 !default;
 /// @type Color
 $color-transparent: rgba(0, 0, 0, 0) !default;
 /// @type Color
-/// @alias $color-transparent
+/// @require {Variable} $color-transparent
 $transparent: $color-transparent !default;
 /// @type List
 /// @prop {Color} Color
