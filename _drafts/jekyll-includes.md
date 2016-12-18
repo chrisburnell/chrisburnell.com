@@ -40,7 +40,7 @@ I considered *three* approaches to this:
 0. Use *JavaScript* to parse childless headings in my content and generate the necessary heading anchors
 0. Use *Jekyll* to generate the necessary heading anchors with a slight modification to the way I write headings inside content, deviating from the standard *Markdown* syntax
 
-I opted for the *3<sup>rd</sup>* option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to be informed about the possible dangers of blindly running *JavScript* and block *JavaScript*, this concern is a real one of mine.
+I opted for the third option in an effort to provide the same functionality for as many users as I can. Further, as the demographic of people visiting my website are more likely to be informed about the possible dangers of blindly running *JavScript* and block *JavaScript*, this concern is a real one of mine.
 
 I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes"){:rel="external"}* to provide the functionality and take the pain away of crafting and maintaining the markup. In fact, I make liberal use of *includes* throughout the templating of my site; anything that is used at least twice is likely to be assigned to an *include*. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
 
