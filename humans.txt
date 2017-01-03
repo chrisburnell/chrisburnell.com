@@ -13,11 +13,12 @@ searchable: false
 
 /* SITE */
 
+    Last updated:  {{ site.time | date: '%Y/%m/%d' }}
     URL:           {{ site.url }}
-    Language:      English
+    Language:      {{ site.language }}
     Doctype:       HTML5
-    Fonts:         FF Meta Serif Web Pro, Proxima Nova, League Gothic
-    Compiled with: Jekyll, Gulp, gulp-autoprefixer (Autoprefixer), gulp-minify-css (clean-css), gulp-sass (libsass)
+    Fonts:         League Gothic, Proxima Nova
+    Compiled with: Jekyll, Gulp
 
 /* LANGUAGES */
 
