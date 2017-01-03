@@ -2,12 +2,13 @@
 layout: page
 page_class: page--about
 sitemap:
-  priority: 1.0
-
+  priority: 1
 redirect_from: /me.html
-
 title: About Me
-lede: My name is <span class="canada">Chris Burnell</span>, and I’m a <span class="canada">Canadian</span> User Interface Developer living in London, UK.
+lede: >-
+  My name is <span class="canada">Chris Burnell</span>, and I’m a <span
+  class="canada">Canadian</span> User Interface Developer living in London, UK.
+published: true
 ---
 
 
@@ -74,4 +75,4 @@ lede: My name is <span class="canada">Chris Burnell</span>, and I’m a <span cl
 
 {% include components/nav-secondary.html type='feeds' %}
 
-<p>I’m reachable through <a rel="me publisher" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}"><span class="canada">{{ site.author.email }}</span></a>.</p>
+<p>If you want to get in touch, I’m reachable through <a rel="me publisher" href="{{ site.urls.twitter }}">Twitter</a> or email <a href="mailto:{{ site.author.email }}"><span class="canada">{{ site.author.email }}</span></a>.</p>
