@@ -71,6 +71,8 @@ html {
   line-height: 1.875;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: "lnum" 1;
+          font-feature-settings: "lnum" 1;
 }
 
 /**
@@ -242,6 +244,17 @@ p:last-child {
 p:empty {
   display: none;
   visibility: hidden;
+}
+
+@media (min-width: 1141px) {
+  p.columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+  }
 }
 
 /**

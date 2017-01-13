@@ -13,6 +13,7 @@ html {
     line-height: $line-height-default;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-feature-settings: "lnum" 1;
 }
 
 /**
@@ -182,6 +183,13 @@ p {
     &:empty {
         display: none;
         visibility: hidden;
+    }
+
+    &.columns {
+        @include media(">large") {
+            column-count: 2;
+            column-gap: $measure-medium;
+        }
     }
 }
 
