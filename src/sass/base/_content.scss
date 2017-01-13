@@ -190,6 +190,11 @@ p {
             column-count: 2;
             column-gap: $measure-medium;
         }
+
+        @include media("<=medium", ">small") {
+            column-count: 2;
+            column-gap: $measure-medium;
+        }
     }
 }
 
@@ -310,6 +315,7 @@ td {
     @include will-change(background-color, border-left-color);
     padding: $measure-small;
     text-align: left;
+    user-select: text;
 }
 // Row Highlighting
 /*table*/.highlight,

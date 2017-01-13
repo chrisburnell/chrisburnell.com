@@ -249,6 +249,17 @@ p:empty {
   }
 }
 
+@media (max-width: 800px) and (min-width: 501px) {
+  p.columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+  }
+}
+
 /**
  * Lists
  */
@@ -401,6 +412,10 @@ td {
   will-change: background-color, border-left-color;
   padding: 0.625rem;
   text-align: left;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
 }
 
 /*table*/
