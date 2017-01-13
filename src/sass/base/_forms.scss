@@ -23,6 +23,13 @@ textarea {
 }
 
 input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+}
+
+input,
 textarea {
     @include border-radius(thin);
     @include transition(border-color);
@@ -49,4 +56,34 @@ textarea {
         padding: 0;
         margin: 0;
     }
+}
+
+input {
+    overflow: visible;
+
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+        height: auto;
+    }
+
+    &[type="search"] {
+        // correct odd appearance in Chrome and Safari
+        -webkit-appearance: textfield;
+        // correct the outline style in Safari
+        outline-offset: -2px;
+
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+    }
+
+    &::-webkit-file-upload-button {
+        // correct inability to style clickable types in iOS and Safari
+        -webkit-appearance: button;
+    }
+}
+
+textarea {
+    overflow: auto;
 }

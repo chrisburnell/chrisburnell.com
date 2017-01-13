@@ -204,11 +204,23 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courie
 /// @require {Variable} $font-family-monospace
 /// @see {Mixin} font-family
 $font-families: (
-    default:   $font-family-default,
-    alpha:     $font-family-alpha,
-    serif:     $font-family-serif,
-    monospace: $font-family-monospace
+    "default":   $font-family-default,
+    "alpha":     $font-family-alpha,
+    "serif":     $font-family-serif,
+    "monospace": $font-family-monospace
 ) !default;
+/// @type List
+/// @prop {String} family - Font Family
+/// @prop {String} style - Font Style
+/// @prop {Number} weight - Font Weight
+/// @prop {String} name - Font Name
+/// @prop {String} filename - Font Filename
+$font-families-styles: (
+    ("League Gothic", normal, 400, "League Gothic", "league-gothic-regular"),
+    ("Proxima Nova", normal, 400, "Proxima Nova Regular", "proxima-nova-regular"),
+    ("Proxima Nova", italic, 400, "Proxima Nova Italic", "proxima-nova-italic"),
+    ("Proxima Nova", normal, 600, "Proxima Nova Semibold", "proxima-nova-semibold")
+);
 
 
 /// @type Number
@@ -240,13 +252,13 @@ $transition-function: ease !default;
 /// @prop {Number} value - z-index value
 /// @see {Function} z-index
 $z-indexes: (
-    below:       -1,
-    root:         0,
-    default:      1,
-    above:        2,
-    modal:        3,
-    dialog:       4,
-    notification: 5
+    "below":       -1,
+    "root":         0,
+    "default":      1,
+    "above":        2,
+    "modal":        3,
+    "dialog":       4,
+    "notification": 5
 ) !default;
 
 
@@ -254,13 +266,13 @@ $z-indexes: (
 /// @prop {String} Body Class
 /// @prop {String} Primary Navigation Class
 $navigation-links: (
-    home:      home,
-    about:     about,
-    article:   articles,
-    articles:  articles,
-    pen:       pens,
-    pens:      pens,
-    search:    search
+    "home":      home,
+    "about":     about,
+    "article":   articles,
+    "articles":  articles,
+    "pen":       pens,
+    "pens":      pens,
+    "search":    search
 ) !default;
 
 
@@ -288,15 +300,15 @@ $color-sass: #c6538c !default;
 /// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
 $coding-languages: (
-    css:         $color-css,
-    haml:        $color-html,
-    html:        $color-html,
-    jade:        $color-html,
-    javascript:  $color-javascript,
-    liquid:      $color-liquid,
-    markdown:    $color-markdown,
-    sass:        $color-sass,
-    scss:        $color-sass
+    "css":         $color-css,
+    "haml":        $color-html,
+    "html":        $color-html,
+    "jade":        $color-html,
+    "javascript":  $color-javascript,
+    "liquid":      $color-liquid,
+    "markdown":    $color-markdown,
+    "sass":        $color-sass,
+    "scss":        $color-sass
 ) !default;
 
 

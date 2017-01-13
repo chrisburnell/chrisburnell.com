@@ -52,7 +52,6 @@ const paths = {
 const stylelintRules = {
     'rules': {
         'color-hex-case': 'lower',
-        'font-weight-notation': 'numeric',
         'function-url-quotes': 'always',
         'number-leading-zero': 'always',
         'number-max-precision': 4,
@@ -92,7 +91,10 @@ gulp.task('css-compile', ['css-lint'], () => {
         }))
         .pipe(postcss([
             autoprefixer({
-                browsers: ['last 2 versions', '> 1%']
+                browsers: [
+                    'last 2 versions',
+                    '> 1%'
+                ]
             }),
             reporter({
                 plugins: ['!postcss-discard-empty'],

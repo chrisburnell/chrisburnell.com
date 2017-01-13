@@ -12,7 +12,7 @@ html {
     font-weight: $font-weight-default;
     line-height: $line-height-default;
     -moz-osx-font-smoothing: grayscale;
-     -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -427,6 +427,7 @@ details {
     }
 }
 summary {
+    display: list-item;
     font-weight: $font-weight-bold;
     outline: 0;
     cursor: pointer;
@@ -464,6 +465,8 @@ picture {
     }
 }
 img {
+    border-style: none;
+
     &::before {
         @include position(top-left);
         content: "";
@@ -518,6 +521,9 @@ figure {
         font-family: $font-family-serif;
         line-height: $line-height-small;
     }
+}
+svg:not(:root) {
+    overflow: hidden;
 }
 
 /**
@@ -590,6 +596,33 @@ ins {
     text-decoration: none;
 }
 
+mark {
+    background-color: $color-highlight;
+    color: inherit;
+}
+
+small {
+    font-size: $font-size-small;
+}
+
+strong {
+   font-weight: $font-weight-bold;
+}
+
+sub,
+sup {
+    font-size: $font-size-small;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -0.25em;
+}
+sup {
+    top: -0.5em;
+}
+
 time {
     display: inline-block;
 }
@@ -601,12 +634,23 @@ hr {
     display: block;
     border: 0;
     margin: $measure-large 0;
+    // show the overflow in Edge and IE
+    overflow: visible;
 
     %content-elements + & {
         @include media("<=medium") {
             margin-top: $measure-medium;
         }
     }
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
 }
 
 /**

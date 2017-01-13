@@ -19,6 +19,7 @@ button,
     display: inline-block;
     padding: 0 0.727em 0.182em;
     margin-top: 0.25rem;
+    overflow: visible;
     font-family: $font-family-alpha;
     font-size: $font-size-beta;
     line-height: 2;
@@ -26,6 +27,7 @@ button,
     white-space: nowrap;
     cursor: pointer;
     box-shadow: inset 0 -0.182em 0 0 $color-brand--hard;
+    -webkit-appearance: button;
 
     &,
     &:link,
@@ -91,9 +93,15 @@ button,
  * Apply moz fixes to `button` element only
  */
 button {
+    -webkit-font-smoothing: inherit;
+
     &::-moz-focus-inner {
         padding: 0;
         margin: 0;
+    }
+
+    &::-moz-focusring {
+        outline: 1px dotted ButtonText;
     }
 }
 

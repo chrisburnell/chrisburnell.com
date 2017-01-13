@@ -8,9 +8,12 @@ a {
     @include position(relative);
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
+    background-color: transparent;
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
     text-decoration: none;
+    // remove gaps in links underline in iOS 8+ and Safari 8+.
+    -webkit-text-decoration-skip: objects;
 
     &,
     &:link {
@@ -22,6 +25,7 @@ a {
     &:focus,
     &:active {
         border-bottom-color: $color-brand;
+        outline-width: 0;
     }
 
     &:visited {
