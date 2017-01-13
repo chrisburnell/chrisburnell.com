@@ -107,11 +107,15 @@ snippet of code on a project of your own!  -->
         <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
     {% endunless %}
 
-    <meta name="apple-mobile-web-app-title" content="{{ meta_title }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="msapplication-starturl" content="{{ site.url }}">
     <meta name="description" content="{{ meta_lede }}">
     <meta name="theme-color" content="#{{ site.color_brand }}">
     <meta name="msapplication-navbutton-color" content="#{{ site.color_brand }}">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#{{ site.color_brand }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta http-equiv="cleartype" content="on">
 
