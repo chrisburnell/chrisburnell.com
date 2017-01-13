@@ -27,13 +27,9 @@ const CACHE_FILES = [
     '/images/avatar.png',
     '/images/avatar.webp',
     '/fonts/league-gothic-regular.woff2',
-    '/fonts/league-gothic-regular.woff',
     '/fonts/proxima-nova-regular.woff2',
-    '/fonts/proxima-nova-regular.woff',
     '/fonts/proxima-nova-italic.woff2',
-    '/fonts/proxima-nova-italic.woff',
     '/fonts/proxima-nova-semibold.woff2',
-    '/fonts/proxima-nova-semibold.woff',
     '/search.json',
     '/manifest.json'
 ];
