@@ -27,11 +27,17 @@ var,
 ins,
 kbd,
 mark,
-samp,
-var {
+samp {
     @include border-radius(thin);
     background-color: $color-brand--light;
     padding: 0.25rem;
+    // force text to wrap inside the container
+    word-wrap: break-word;
+}
+
+var {
+    color: $color-brand;
+    font-weight: $font-weight-bold;
     // force text to wrap inside the container
     word-wrap: break-word;
 }
@@ -70,6 +76,7 @@ pre {
     }
 
     &.codepen {
+        // Limit re-paint and re-layout calculations for Pens to the container
         contain: strict;
     }
 }

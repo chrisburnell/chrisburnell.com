@@ -658,9 +658,15 @@ hr {
     }
 }
 
-audio:not([controls]) {
-    display: none;
-    height: 0;
+audio {
+    width: 100%;
+    max-width: $wrapper-width-small;
+    display: block;
+
+    &:not([controls]) {
+        display: none;
+        height: 0;
+    }
 }
 
 [hidden] {

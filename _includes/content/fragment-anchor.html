@@ -5,7 +5,6 @@
   @param {String} href *
   @param {String} title
   @param {String} rel
-  @param {String} tabindex
 
   @example
     {% include content/fragment-anchor.html id='12345' %}
@@ -23,7 +22,4 @@
 {% if include.rel %}
     {% capture rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
-{% if include.tabindex %}
-    {% capture tabindex %}{{ include.tabindex | prepend: 'tabindex="' | append: '"' }}{% endcapture %}
-{% endif %}
-<a href="{{ href }}" class="fragment-anchor" {{ title }} {{ rel }} {{ tabindex }}>{{ href }}</a>
+<a href="{{ href }}" class="fragment-anchor" {{ title }} {{ rel }}>{{ href }}</a>

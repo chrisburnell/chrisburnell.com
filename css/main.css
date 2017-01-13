@@ -872,6 +872,12 @@ hr {
   }
 }
 
+audio {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+}
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -935,12 +941,17 @@ h6 code,
 ins,
 kbd,
 mark,
-samp,
-var {
+samp {
   background-clip: padding-box;
   border-radius: 0.25rem;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0.25rem;
+  word-wrap: break-word;
+}
+
+var {
+  color: #5f8aa6;
+  font-weight: 600;
   word-wrap: break-word;
 }
 

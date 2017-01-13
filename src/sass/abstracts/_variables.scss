@@ -31,9 +31,17 @@ $breakpoints: (
 /// @type Length
 $wrapper-padding: 1.250rem !default;
 /// @type Length
-$aside-width:    15.875rem !default;
+$aside-width: 15.875rem !default;
 /// @type Length
-$article-width:  50.625rem !default;
+$article-width: 50.625rem !default;
+// 21em
+/// @type Length
+$line-length-minimum: 336px !default;
+// 30em
+/// @type Length
+$line-length-maximum: 480px !default;
+/// @type Length
+$line-length-responsive: calc(#{$line-length-minimum} + (#{strip-units($line-length-maximum)} - #{strip-units($line-length-minimum)}) * ((100vw - #{$wrapper-width-small}) / (#{strip-units($wrapper-width-large)} - #{strip-units($wrapper-width-small)})));
 
 
 /// @type Length

@@ -864,6 +864,12 @@ hr {
   }
 }
 
+audio {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+}
+
 audio:not([controls]) {
   display: none;
   height: 0;
