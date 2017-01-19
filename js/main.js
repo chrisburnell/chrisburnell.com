@@ -138,7 +138,6 @@
     'use strict';
 
     var query = void 0;
-    var queryFormatted = void 0;
     var jsonFeedUrl = '../search.json';
     var allowEmpty = false;
     var searchContainer = document.querySelector('.js-search');
@@ -243,12 +242,6 @@
 
         var resultsCount = 0;
         var results = '';
-        var titleCheck = void 0;
-        var ledeCheck = void 0;
-        var contentCheck = void 0;
-        var categoriesCheck = void 0;
-        var tagsCheck = void 0;
-        var locationCheck = void 0;
 
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -259,17 +252,31 @@
                 var item = _step.value;
 
 
-                queryFormatted = query.toLowerCase();
+                var queryFormatted = query.toLowerCase();
 
-                titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
-                ledeCheck = false;
-                contentCheck = false;
-                categoriesCheck = false;
-                tagsCheck = false;
-                locationCheck = false;
+                var titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
+                var ledeCheck = false;
+                var dateCheck = false;
+                var contentCheck = false;
+                var categoriesCheck = false;
+                var tagsCheck = false;
+                var locationCheck = false;
 
                 if (item['lede']) {
                     ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
+                }
+                if (item['date'] || item['date_friendly']) {
+                    if (queryFormatted.substring(0, 5) == 'date:') {
+                        dateCheck = item['date'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                        if (!dateCheck) {
+                            dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                        }
+                    } else {
+                        dateCheck = item['date'].toLowerCase().indexOf(queryFormatted) > -1;
+                        if (!dateCheck) {
+                            dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted) > -1;
+                        }
+                    }
                 }
                 if (item['content']) {
                     contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
@@ -278,24 +285,40 @@
                     categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
                 }
                 if (item['tags']) {
-                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                    if (queryFormatted.substring(0, 4) == 'tag:') {
+                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
+                    } else if (queryFormatted.substring(0, 5) == 'tags:') {
+                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    } else {
+                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                    }
                 }
                 if (item['location']) {
                     locationCheck = item['location'].toLowerCase().indexOf(queryFormatted) > -1;
                 }
 
-                // check if search term is in title, content, or lede, categories, tags, or talk location
-                if (item['type'] == 'page') {
-                    if (titleCheck || ledeCheck || contentCheck) {
-                        resultsCount++;
-                        results += populateResultContent(resultTemplatePage, item);
-                    }
-                } else {
-                    if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
+                // if performing a date check
+                if (queryFormatted.substring(0, 5) == 'date:' && dateCheck) {
+                    resultsCount++;
+                    results += populateResultContent(resultTemplatePost, item);
+                }
+                // if performing a tags check
+                else if ((queryFormatted.substring(0, 4) == 'tag:' || queryFormatted.substring(0, 5) == 'tags:') && tagsCheck) {
                         resultsCount++;
                         results += populateResultContent(resultTemplatePost, item);
                     }
-                }
+                    // or item type is a page, check if search term is in title,
+                    // content, or lede, categories, tags, or talk location
+                    else if (item['type'] == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+                            resultsCount++;
+                            results += populateResultContent(resultTemplatePage, item);
+                        }
+                        // check if search term is in title, lede, content, categories,
+                        // tags, or talk location
+                        else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
+                                resultsCount++;
+                                results += populateResultContent(resultTemplatePost, item);
+                            }
             }
         } catch (err) {
             _didIteratorError = true;
@@ -362,11 +385,11 @@
         if (item['lede']) {
             html = injectContent(html, item['lede'], '{{lede}}');
         } else if (item['categories'] == 'link') {
-            html = injectContent(html, '<em>Shared Link</em>', '{{lede}}');
+            html = injectContent(html, 'Shared Link', '{{lede}}');
         } else if (item['categories'] == 'pen') {
-            html = injectContent(html, '<em>Featured Pen</em>', '{{lede}}');
+            html = injectContent(html, 'Featured Pen', '{{lede}}');
         } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, '<em>A talk that I gave at ' + item['location'] + '.</em>', '{{lede}}');
+            html = injectContent(html, 'A talk that I gave at ' + item['location'] + '.', '{{lede}}');
         }
 
         // DATE

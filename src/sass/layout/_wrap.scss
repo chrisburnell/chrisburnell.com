@@ -12,8 +12,8 @@ main {
 .wrap {
     width: auto;
     max-width: $wrapper-width-large;
-    padding-left:  $wrapper-padding;
-    padding-right: $wrapper-padding;
+    padding-left:  $gutter-width;
+    padding-right: $gutter-width;
     margin-left:  auto;
     margin-right: auto;
 }

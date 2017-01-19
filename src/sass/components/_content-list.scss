@@ -67,7 +67,7 @@
             &:nth-child(4n+1),
             &:nth-child(4n+4) {
                 a {
-                    background-color: $transparent;
+                    background-color: transparent;
                 }
             }
 
@@ -135,7 +135,6 @@
         color: $color-text-alt;
         margin-top: $measure-small;
         font-size: $font-size-small;
-        font-weight: $font-weight-bold;
     }
 
     .lede {
@@ -143,6 +142,8 @@
     }
 
     .date {
+        font-weight: $font-weight-bold;
+        
         @include media(">medium") {
             text-align: right;
         }

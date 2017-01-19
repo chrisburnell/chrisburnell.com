@@ -106,7 +106,7 @@ h3 {
                     background-color: $color-highlight;
                 }
                 100% {
-                    background-color: $transparent;
+                    background-color: transparent;
                 }
             }
         }
@@ -589,6 +589,38 @@ q {
     @include quotes;
 }
 
+time {
+    display: inline-block;
+}
+
+audio {
+    width: 100%;
+    max-width: $wrapper-width-small;
+    display: block;
+
+    &:not([controls]) {
+        display: none;
+        height: 0;
+    }
+}
+
+hr {
+    background: $color-black--light;
+    width: 100%;
+    height: $border-width-thin;
+    display: block;
+    border: 0;
+    margin: $measure-large 0;
+    // show the overflow in Edge and IE
+    overflow: visible;
+
+    %content-elements + & {
+        @include media("<=medium") {
+            margin-top: $measure-medium;
+        }
+    }
+}
+
 /**
  * Inline Content Elements
  */
@@ -635,38 +667,6 @@ sub {
 }
 sup {
     top: -0.5em;
-}
-
-time {
-    display: inline-block;
-}
-
-hr {
-    background: $color-black--light;
-    width: 100%;
-    height: $border-width-thin;
-    display: block;
-    border: 0;
-    margin: $measure-large 0;
-    // show the overflow in Edge and IE
-    overflow: visible;
-
-    %content-elements + & {
-        @include media("<=medium") {
-            margin-top: $measure-medium;
-        }
-    }
-}
-
-audio {
-    width: 100%;
-    max-width: $wrapper-width-small;
-    display: block;
-
-    &:not([controls]) {
-        display: none;
-        height: 0;
-    }
 }
 
 [hidden] {

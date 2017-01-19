@@ -60,8 +60,12 @@
 .edit {
     @include border-radius;
     background-color: $color-brand--light;
-    padding: 1rem;
+    padding: $measure-medium;
     margin: 0 $measure-large $measure-large;
     font-style: italic;
     line-height: 1.5;
+
+    time {
+        margin-bottom: $measure-small;
+    }
 }

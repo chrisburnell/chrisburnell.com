@@ -25,7 +25,7 @@
         {% if page.edit_text %}
             <section class="edit">
                 {% if page.edit_date %}
-                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edit ({{ page.edit_date | date: '%d %b, %Y' }}) —</time>
+                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date: '%d %B, %Y' }} —</time>
                 {% endif %}
                 <p>{{ page.edit_text }}</p>
             </section>

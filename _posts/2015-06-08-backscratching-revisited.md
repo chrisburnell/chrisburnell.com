@@ -60,10 +60,11 @@ However, the code above *does* allow the element’s content to be read aloud, a
 In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
 {% highlight scss %}
-.hide,
-.hidden {
+@mixin visually-hidden() {
     width:  1px !important;
     height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -71,7 +72,7 @@ In my actual SCSS, I abstract this snippet out and `@extend` it where I need it,
 
 a {
     span {
-        @extend .hidden;
+        @include visually-hidden;
     }
 }
 {% endhighlight %}
@@ -92,7 +93,7 @@ Looks like we’ve been a bit heavy-handed in hiding *all* `spans` nested inside
 {% highlight scss %}
 a {
     span:not([class]) {
-        @extend .hidden;
+        @include visually-hidden;
     }
 }
 {% endhighlight %}
@@ -123,7 +124,7 @@ But let’s focus on the `span` with the `itemprop` attribute. This isn’t text
 {% highlight scss %}
 a {
     span:not([class]):not([itemprop]) {
-        @extend .hidden;
+        @include visually-hidden;
     }
 }
 {% endhighlight %}

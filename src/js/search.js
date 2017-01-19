@@ -11,7 +11,6 @@
 
 
     let query;
-    let queryFormatted;
     const jsonFeedUrl = '../search.json';
     const allowEmpty = false;
     const searchContainer = document.querySelector('.js-search');
@@ -132,26 +131,35 @@
 
         let resultsCount = 0;
         let results = '';
-        let titleCheck;
-        let ledeCheck;
-        let contentCheck;
-        let categoriesCheck;
-        let tagsCheck;
-        let locationCheck;
 
         for (var item of data) {
 
-            queryFormatted = query.toLowerCase();
+            let queryFormatted = query.toLowerCase();
 
-            titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
-            ledeCheck       = false;
-            contentCheck    = false;
-            categoriesCheck = false;
-            tagsCheck       = false;
-            locationCheck   = false;
+            let titleCheck      = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
+            let ledeCheck       = false;
+            let dateCheck       = false;
+            let contentCheck    = false;
+            let categoriesCheck = false;
+            let tagsCheck       = false;
+            let locationCheck   = false;
 
             if (item['lede']) {
                 ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
+            }
+            if (item['date'] || item['date_friendly']) {
+                if (queryFormatted.substring(0, 5) == 'date:') {
+                    dateCheck = item['date'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    if (!dateCheck) {
+                        dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    }
+                }
+                else {
+                    dateCheck = item['date'].toLowerCase().indexOf(queryFormatted) > -1;
+                    if (!dateCheck) {
+                        dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted) > -1;
+                    }
+                }
             }
             if (item['content']) {
                 contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
@@ -160,23 +168,41 @@
                 categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
             }
             if (item['tags']) {
-                tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                if (queryFormatted.substring(0, 4) == 'tag:') {
+                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
+                }
+                else if (queryFormatted.substring(0, 5) == 'tags:') {
+                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                }
+                else {
+                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                }
             }
             if (item['location']) {
                 locationCheck = item['location'].toLowerCase().indexOf(queryFormatted) > -1;
             }
 
-            // check if search term is in title, content, or lede, categories, tags, or talk location
-            if (item['type'] == 'page') {
-                if (titleCheck || ledeCheck || contentCheck) {
-                    resultsCount++;
-                    results += populateResultContent(resultTemplatePage, item);
-                }
-            } else {
-                if (titleCheck || ledeCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
-                    resultsCount++;
-                    results += populateResultContent(resultTemplatePost, item);
-                }
+            // if performing a date check
+            if ((queryFormatted.substring(0, 5) == 'date:') && dateCheck) {
+                resultsCount++;
+                results += populateResultContent(resultTemplatePost, item);
+            }
+            // if performing a tags check
+            else if (((queryFormatted.substring(0, 4) == 'tag:') || (queryFormatted.substring(0, 5) == 'tags:')) && tagsCheck) {
+                resultsCount++;
+                results += populateResultContent(resultTemplatePost, item);
+            }
+            // or item type is a page, check if search term is in title,
+            // content, or lede, categories, tags, or talk location
+            else if (item['type'] == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+                resultsCount++;
+                results += populateResultContent(resultTemplatePage, item);
+            }
+            // check if search term is in title, lede, content, categories,
+            // tags, or talk location
+            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
+                resultsCount++;
+                results += populateResultContent(resultTemplatePost, item);
             }
 
         }
@@ -216,11 +242,14 @@
         // ICON
         if (item['categories'] == 'article') {
             html = injectContent(html, 'article', '{{icon}}');
-        } else if (item['categories'] == 'link') {
+        }
+        else if (item['categories'] == 'link') {
             html = injectContent(html, 'link', '{{icon}}');
-        } else if (item['categories'] == 'pen') {
+        }
+        else if (item['categories'] == 'pen') {
             html = injectContent(html, 'codepen', '{{icon}}');
-        } else if (item['categories'] == 'talk') {
+        }
+        else if (item['categories'] == 'talk') {
             html = injectContent(html, 'bullhorn', '{{icon}}');
         }
 
@@ -230,12 +259,15 @@
         // LEDE
         if (item['lede']) {
             html = injectContent(html, item['lede'], '{{lede}}');
-        } else if (item['categories'] == 'link') {
-            html = injectContent(html, '<em>Shared Link</em>', '{{lede}}');
-        } else if (item['categories'] == 'pen') {
-            html = injectContent(html, '<em>Featured Pen</em>', '{{lede}}');
-        } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, `<em>A talk that I gave at ${item['location']}.</em>`, '{{lede}}');
+        }
+        else if (item['categories'] == 'link') {
+            html = injectContent(html, 'Shared Link', '{{lede}}');
+        }
+        else if (item['categories'] == 'pen') {
+            html = injectContent(html, 'Featured Pen', '{{lede}}');
+        }
+        else if (item['categories'] == 'talk' && item['location']) {
+            html = injectContent(html, `A talk that I gave at ${item['location']}.`, '{{lede}}');
         }
 
         // DATE
