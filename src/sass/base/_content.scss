@@ -221,7 +221,7 @@ ul:not([class]),
         }
 
         &::before {
-            @include position(top-left);
+            @include position(left);
             font-weight: $font-weight-bold;
         }
     }

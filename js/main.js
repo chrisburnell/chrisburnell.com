@@ -383,13 +383,16 @@
 
         // LEDE
         if (item['lede']) {
-            html = injectContent(html, item['lede'], '{{lede}}');
+            var ledeFormatted = item['lede'].replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
+            html = injectContent(html, ledeFormatted, '{{lede}}');
         } else if (item['categories'] == 'link') {
             html = injectContent(html, 'Shared Link', '{{lede}}');
         } else if (item['categories'] == 'pen') {
             html = injectContent(html, 'Featured Pen', '{{lede}}');
         } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, 'A talk that I gave at ' + item['location'] + '.', '{{lede}}');
+            html = injectContent(html, 'Talk \u2013 Given at ' + item['location'] + '.', '{{lede}}');
+        } else if (item['categories'] == 'talk') {
+            html = injectContent(html, 'Talk', '{{lede}}');
         }
 
         // DATE

@@ -5,12 +5,12 @@
   @param {String} slug *
   @param {Number} height *
   @param {String} theme [119]
-  @param {String} type [result]
+  @param {String} tab [result]
   @param {String} user [chrisburnell]
 
   @example
     {% include content/codepen.html slug='lBJnz' height='500' theme='tabfree' %}
-    // <pre class="codepen" data-slug-hash="lBJnz" data-type="result" data-theme-id="8863" data-user="chrisburnell" data-height="500" data-safe="true">
+    // <pre class="codepen" data-slug-hash="lBJnz" data-default-tab="result" data-theme-id="8863" data-user="chrisburnell" data-height="500" data-safe="true">
     //     <code></code>
     //     <a href="//codepen.io/chrisburnell/pen/lBJnz">Check out this Pen!</a>
     // </pre>
@@ -20,9 +20,9 @@
 {% assign codepen_slug = include.slug | default: page.codepen_slug %}
 {% capture codepen_height %}{% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
 {% capture codepen_theme %}{% if include.theme == 'tabfree' %}{{ site.codepen.themes.tabfree }}{% else %}{{ site.codepen.themes.default }}{% endif %}{% endcapture %}
-{% assign codepen_type = include.type | default: 'result' %}
+{% assign codepen_tab = include.tab | default: 'result' %}
 {% assign codepen_user = include.user | default: site.author.codepen %}
-<pre class="codepen" data-slug-hash="{{ codepen_slug }}" data-type="{{ codepen_type }}" data-theme-id="{{ codepen_theme }}" data-user="{{ codepen_user }}" data-safe="true"{{ codepen_height}}>
+<pre class="codepen" data-slug-hash="{{ codepen_slug }}" data-default-tab="{{ codepen_tab }}" data-theme-id="{{ codepen_theme }}" data-user="{{ codepen_user }}" data-safe="true"{{ codepen_height}}>
     <code></code>
     <a href="//codepen.io/{{ codepen_user }}/pen/{{ codepen_slug }}">Check out this Pen!</a>
 </pre>

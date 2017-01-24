@@ -14,7 +14,7 @@ const VERSION = '{{ site.time | date: '%Y-%m-%d_%H%M' }}';
 const CACHE_NAME = `${VERSION}::cb`;
 
 // Default files to always cache
-const CACHE_FILES = [
+const CACHE_FILES_PRIMARY = [
     '/',
     '/about/',
     '/articles/',
@@ -24,14 +24,18 @@ const CACHE_FILES = [
     '/styleguide/',
     '/css/main.min.css',
     '/js/main.min.js',
-    '/images/avatar.png',
-    '/images/avatar.webp',
+    '/search.json',
+    '/manifest.json',
     '/fonts/league-gothic-regular.woff2',
     '/fonts/proxima-nova-regular.woff2',
     '/fonts/proxima-nova-italic.woff2',
-    '/fonts/proxima-nova-semibold.woff2',
-    '/search.json',
-    '/manifest.json'
+    '/fonts/proxima-nova-semibold.woff2'
+];
+
+// Default files to always cache without blocking installation
+const CACHE_FILES_SECONDARY = [
+    '/images/avatar.png',
+    '/images/avatar.webp'
 ];
 
 
@@ -39,9 +43,10 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                return cache.addAll(CACHE_FILES);
+                cache.addAll(CACHE_FILES_SECONDARY);
+                return cache.addAll(CACHE_FILES_PRIMARY);
             })
-            .then(self.skipWaiting())
+            .then(() => self.skipWaiting())
     );
 });
 
@@ -51,14 +56,11 @@ self.addEventListener('activate', event => {
         caches.keys()
             .then(keys => {
                 return Promise.all(keys
-                    .filter(key => {
-                        return key.indexOf(CACHE_NAME) !== 0;
-                    })
-                    .map(key => {
-                        return caches.delete(key);
-                    })
+                    .filter(key => key.indexOf(CACHE_NAME) !== 0)
+                    .map(key => caches.delete(key))
                 );
             })
+            .then(() => self.clients.claim())
     );
 });
 

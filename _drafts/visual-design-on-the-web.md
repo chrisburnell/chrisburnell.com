@@ -9,8 +9,8 @@ lede: Description description description description description.
 tags:
 - design
 
-shorturl: abhzs
 comments: true
+shorturl: abhzs
 ---
 
 
@@ -31,8 +31,3 @@ It just kind of sucks that because we work on the web, designs and trends become
 I’m not saying, <q>don’t judge a book by its cover,</q> but the way we view the design of the web bleeds heavily into the way we perceive the content.
 
 Let’s say you’re reading a decent book on a Sunday afternoon. Maybe the pages are too stiff. Maybe they’re too thin. Maybe the typeface choice wasn’t the greatest, or the line height could use some work. These are all things that we take notice of once or twice
-
-
-
-
-

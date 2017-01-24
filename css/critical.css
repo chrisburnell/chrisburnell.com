@@ -293,8 +293,10 @@ ol:not([class]) li::before,
 ul:not([class]) li::before,
 .default-list li::before {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-weight: 600;
 }
 

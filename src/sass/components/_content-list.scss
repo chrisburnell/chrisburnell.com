@@ -135,6 +135,7 @@
         color: $color-text-alt;
         margin-top: $measure-small;
         font-size: $font-size-small;
+        font-weight: $font-weight-bold;
     }
 
     .lede {
@@ -142,8 +143,6 @@
     }
 
     .date {
-        font-weight: $font-weight-bold;
-        
         @include media(">medium") {
             text-align: right;
         }

@@ -1,7 +1,7 @@
 # chrisburnell.com
 
 
-The source code for [chrisburnell.com](https://chrisburnell.com/).
+The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
 ![Version](https://img.shields.io/badge/version-2.8.0-blue.svg?style=flat-square)[![GitHub license](https://img.shields.io/badge/license-GNU GPLv3-blue.svg?style=flat-square)](LICENSE)
 
@@ -14,11 +14,11 @@ The source code for [chrisburnell.com](https://chrisburnell.com/).
 - [Description](#description)
 - [Contributing](#contributing)
 - [Build Process](#build-process)
-- [Workflow](#workflow)
 - [Layouts](#layouts)
 - [Includes](#includes)
 - [Sass Structure](#sass-structure)
 - [Generated](#generated)
+- [Network](#network)
 - [License](#license)
 
 
@@ -46,11 +46,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md).
 - [Autoprefixer](https://github.com/ai/autoprefixer)
 - [Gulp](http://gulpjs.com)
 - [PostCSS](http://postcss.org/)
-
-
-## Workflow
-
-Building this website requires `Jekyll`, `Gulp`, and `PostCSS`.
 
 
 ## Layouts
@@ -109,22 +104,21 @@ src/css
 ├── abstracts
 │   ├── _functions.scss
 │   ├── _mixins.scss
-│   ├── _variables.branding.scss
-│   ├── _variables.code.scss
-│   └── _variables.global.scss
+│   ├── _variables.scss
 ├── base
 │   ├── _anchors.scss
 │   ├── _buttons.scss
-│   ├── _inputs.scss
-│   ├── _page.scss
-│   ├── _typography.code.scss
-│   └── _typography.global.scss
-├── components
+│   ├── _code.scss
 │   ├── _content.scss
+│   ├── _fonts.scss
+│   ├── _forms.scss
+│   ├── _page.scss
+├── components
 │   ├── _author.scss
 │   ├── _code.scss
 │   ├── _comments.scss
 │   ├── _content-list.scss
+│   ├── _content.scss
 │   ├── _footer.scss
 │   ├── _helpers.scss
 │   ├── _icons.scss
@@ -137,17 +131,15 @@ src/css
 │   ├── _search.scss
 │   └── _widgets.scss
 ├── layout
-│   ├── _content.scss
 │   ├── _aside.scss
+│   ├── _content.scss
 │   ├── _footer.scss
 │   ├── _header.scss
 │   └── _wrap.scss
 ├── pages
 │   └── _styleguide.scss
 ├── vendors
-│   ├── _box-sizing.scss
 │   ├── _include-media.scss
-│   └── _normalize.scss
 ├── critical.scss
 └── main.scss
 ```
@@ -161,6 +153,11 @@ _includes/generated
 ├── loadcss.html
 serviceworker.js
 ```
+
+
+## Network
+
+SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/){:rel="external"} 🙏
 
 
 ## License

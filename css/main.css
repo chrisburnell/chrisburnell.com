@@ -301,8 +301,10 @@ ol:not([class]) li::before,
 ul:not([class]) li::before,
 .default-list li::before {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-weight: 600;
 }
 
@@ -916,10 +918,8 @@ samp,
 var,
 .monospace {
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
-  font-size: 0.875rem;
   -webkit-font-variant-ligatures: none;
           font-variant-ligatures: none;
-  line-height: 1.429;
 }
 
 /**
@@ -945,12 +945,16 @@ samp {
   background-clip: padding-box;
   border-radius: 0.25rem;
   background-color: rgba(95, 138, 166, 0.1);
-  padding: 0.25rem;
+  padding: 0.25em;
+  font-size: 0.875rem;
+  line-height: 1.429;
   word-wrap: break-word;
 }
 
 var {
   color: #5f8aa6;
+  padding: 0 0.1em;
+  font-style: normal;
   font-weight: 600;
   word-wrap: break-word;
 }
@@ -973,8 +977,6 @@ pre:not(.codepen) {
   overflow-y: hidden;
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   font-size: 0.875rem;
-  -webkit-font-variant-ligatures: none;
-          font-variant-ligatures: none;
 }
 
 pre:not(.codepen),
@@ -985,7 +987,6 @@ pre:not(.codepen) code {
 pre:not(.codepen) code {
   min-width: 100%;
   display: block;
-  font-size: initial;
   text-shadow: 0 1px 1px rgba(6, 6, 6, 0.05);
 }
 
@@ -2226,14 +2227,11 @@ aside .content-list a {
   color: #737373;
   margin-top: 0.625rem;
   font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .content-list .lede {
   margin-bottom: 0;
-}
-
-.content-list .date {
-  font-weight: 600;
 }
 
 @media (min-width: 801px) {

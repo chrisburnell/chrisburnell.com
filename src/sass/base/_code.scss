@@ -14,9 +14,7 @@ var,
 .monospace {
     @extend %monospace-elements !optional;
     font-family: $font-family-monospace;
-    font-size: $font-size-small;
     font-variant-ligatures: none;
-    line-height: 1.429;
 }
 
 /**
@@ -30,15 +28,19 @@ mark,
 samp {
     @include border-radius(thin);
     background-color: $color-brand--light;
-    padding: 0.25rem;
-    // force text to wrap inside the container
+    padding: 0.25em;
+    font-size: $font-size-small;
+    line-height: 1.429;
+    // force text to wrap
     word-wrap: break-word;
 }
 
 var {
     color: $color-brand;
+    padding: 0 0.1em;
+    font-style: normal;
     font-weight: $font-weight-bold;
-    // force text to wrap inside the container
+    // force text to wrap
     word-wrap: break-word;
 }
 
@@ -61,7 +63,6 @@ pre {
         overflow-y: hidden;
         font-family: $font-family-monospace;
         font-size: $font-size-small;
-        font-variant-ligatures: none;
 
         &,
         code {
@@ -70,7 +71,6 @@ pre {
         code {
             min-width: 100%;
             display: block;
-            font-size: initial;
             text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--subtle;
         }
     }

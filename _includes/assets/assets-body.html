@@ -15,7 +15,7 @@
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
 
-{% if page.codepen == true or (page.categories contains 'pen' and page.codepen_slug) %}
+{% if page.codepen == true or page.codepen_slug %}
     <!-- CodePen Embeds -->
     <script src="//codepen.io/assets/embed/ei.js" async defer></script>
 {% endif %}
