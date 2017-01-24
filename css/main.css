@@ -145,7 +145,8 @@ h3[id]:target {
 }
 
 @-webkit-keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold;
   }
   100% {
@@ -154,7 +155,8 @@ h3[id]:target {
 }
 
 @keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold;
   }
   100% {
@@ -746,6 +748,7 @@ blockquote,
 }
 
 blockquote p {
+  max-width: 480px;
   margin-bottom: 0;
 }
 
@@ -954,6 +957,7 @@ samp {
 var {
   color: #5f8aa6;
   padding: 0 0.1em;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   word-wrap: break-word;

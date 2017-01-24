@@ -557,6 +557,7 @@ blockquote {
     }
 
     p {
+        max-width: $line-length-maximum;
         margin-bottom: 0;
 
         &::before {
