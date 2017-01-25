@@ -862,6 +862,7 @@ ins {
 mark {
   background-color: gold;
   color: inherit;
+  font-size: 1rem;
 }
 
 small {
@@ -920,6 +921,7 @@ kbd,
 samp,
 var,
 .monospace {
+  font-size: 0.875rem;
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   -webkit-font-variant-ligatures: none;
           font-variant-ligatures: none;
@@ -949,7 +951,6 @@ samp {
   border-radius: 0.25rem;
   background-color: rgba(95, 138, 166, 0.1);
   padding: 0.25em;
-  font-size: 0.875rem;
   line-height: 1.429;
   word-wrap: break-word;
 }
@@ -957,7 +958,6 @@ samp {
 var {
   color: #5f8aa6;
   padding: 0 0.1em;
-  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   word-wrap: break-word;
@@ -2846,21 +2846,24 @@ code[data-lang]::before {
 }
 
 .code-toggle-input:not(:checked) + .highlight pre {
-  max-height: 12.5rem;
+  max-height: 12.25rem;
   overflow-x: hidden;
 }
 
 .code-toggle-input:not(:checked) + .highlight pre::after {
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-clip: padding-box;
   border-radius: 0 0 0.375rem 0.375rem;
   content: "";
-  background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 2rem, rgba(6, 6, 6, 0.4) 2rem, rgba(6, 6, 6, 0.4) 4rem, rgba(6, 6, 6, 0.6) 4rem, rgba(6, 6, 6, 0.6) 6rem, rgba(6, 6, 6, 0.8) 6rem, rgba(6, 6, 6, 0.8) 8rem);
-  background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 2rem, rgba(6, 6, 6, 0.4) 2rem, rgba(6, 6, 6, 0.4) 4rem, rgba(6, 6, 6, 0.6) 4rem, rgba(6, 6, 6, 0.6) 6rem, rgba(6, 6, 6, 0.8) 6rem, rgba(6, 6, 6, 0.8) 8rem);
-  height: 7rem;
+  background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
+  background-size: 100% 7rem;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .icon {

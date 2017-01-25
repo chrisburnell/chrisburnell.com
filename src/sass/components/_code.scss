@@ -69,24 +69,26 @@ code[data-lang] {
 
     &:not(:checked) + .highlight pre {
         // limit number of lines of code
-        max-height: ($measure-medium * 10);
+        max-height: #{$font-size-small * 2 * 5 + $measure-medium * 2 + 1};
         overflow-x: hidden;
 
         &::after {
-            @include position(bottom);
+            @include position(full);
             @include border-radius(bottom);
             content: "";
             background-image: linear-gradient(to bottom,
                                               rgba($color-black, 0.2) 0,
-                                              rgba($color-black, 0.2) 2rem,
-                                              rgba($color-black, 0.4) 2rem,
-                                              rgba($color-black, 0.4) 4rem,
-                                              rgba($color-black, 0.6) 4rem,
-                                              rgba($color-black, 0.6) 6rem,
-                                              rgba($color-black, 0.8) 6rem,
-                                              rgba($color-black, 0.8) 8rem);
+                                              rgba($color-black, 0.2) 25%,
+                                              rgba($color-black, 0.4) 25%,
+                                              rgba($color-black, 0.4) 50%,
+                                              rgba($color-black, 0.6) 50%,
+                                              rgba($color-black, 0.6) 75%,
+                                              rgba($color-black, 0.8) 75%,
+                                              rgba($color-black, 0.8) 100%);
             // fade out over the last four lines
-            height: ($measure-medium * 5.6);
+            background-size: 100% #{$font-size-small * 2 * 4};
+            background-position: bottom;
+            background-repeat: no-repeat;
         }
     }
 }

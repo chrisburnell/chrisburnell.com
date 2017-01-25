@@ -13,6 +13,7 @@ samp,
 var,
 .monospace {
     @extend %monospace-elements !optional;
+    font-size: $font-size-small;
     font-family: $font-family-monospace;
     font-variant-ligatures: none;
 }
@@ -29,7 +30,6 @@ samp {
     @include border-radius(thin);
     background-color: $color-brand--light;
     padding: 0.25em;
-    font-size: $font-size-small;
     line-height: 1.429;
     // force text to wrap
     word-wrap: break-word;
@@ -38,7 +38,6 @@ samp {
 var {
     color: $color-brand;
     padding: 0 0.1em;
-    font-size: 1rem;
     font-style: normal;
     font-weight: $font-weight-bold;
     // force text to wrap
