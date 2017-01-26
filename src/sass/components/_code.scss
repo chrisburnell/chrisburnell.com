@@ -89,6 +89,11 @@ code[data-lang] {
             background-size: 100% #{$font-size-small * 2 * 4};
             background-position: bottom;
             background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            bottom: $measure-medium;
+            left:  0;
+            right: 0;
         }
     }
 }

@@ -13,9 +13,13 @@ samp,
 var,
 .monospace {
     @extend %monospace-elements !optional;
-    font-size: $font-size-small;
     font-family: $font-family-monospace;
     font-variant-ligatures: none;
+}
+code,
+kbd,
+samp {
+    font-size: $font-size-small;
 }
 
 /**
@@ -26,31 +30,46 @@ var,
 ins,
 kbd,
 mark,
-samp {
-    @include border-radius(thin);
-    background-color: $color-brand--light;
-    padding: 0.25em;
-    line-height: 1.429;
+samp,
+var {
     // force text to wrap
     word-wrap: break-word;
 }
-
+%content-elements code,
+%heading-elements code,
+ins,
+kbd,
+mark,
+samp {
+    @include border-radius(thin);
+    padding: 0.25em;
+    line-height: 1.429;
+}
+%content-elements code,
+%heading-elements code,
+ins,
+kbd,
+samp {
+    background-color: $color-brand--light;
+}
+mark {
+    background-color: $color-highlight;
+    font-size: 1rem;
+}
 var {
     color: $color-brand;
-    padding: 0 0.1em;
     font-style: normal;
     font-weight: $font-weight-bold;
-    // force text to wrap
-    word-wrap: break-word;
 }
 
 /**
  * Code Blocks
  */
 pre {
-    // override `normalize.css`
+    width: 100%;
     margin-top: 0;
     margin-bottom: $measure-medium;
+    tab-size: 4;
 
     // Main Code Blocks
     &:not(.codepen) {
@@ -68,6 +87,7 @@ pre {
         code {
             line-height: 2;
         }
+
         code {
             min-width: 100%;
             display: block;

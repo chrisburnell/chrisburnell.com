@@ -7,7 +7,7 @@
 .nav-tertiary {
     @include media(">medium") {
         // 5px
-        margin-top: ($measure-small / 2);
+        margin-top: #{$measure-small / 2};
     }
 
     @include media("<=medium") {

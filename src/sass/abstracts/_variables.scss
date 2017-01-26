@@ -168,9 +168,13 @@ $font-size-gamma: 1.125rem !default;
 // 20px
 /// @type Length
 $font-size-large: 1.250rem !default;
+/// @type Length
+$font-size-large-relative: 1.250em !default;
 // 14px
 /// @type Length
 $font-size-small: 0.875rem !default;
+/// @type Length
+$font-size-small-relative: 0.875em !default;
 /// @type Map
 /// @prop {String} key - Font Size name
 /// @prop {Number} value - Font Size value

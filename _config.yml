@@ -21,6 +21,7 @@ baseurl:  ""
 shorturl: https://repc.co/
 
 urls:
+  sassdoc:  /sassdoc
   ravenous: https://ravenous.chrisburnell.com
   codepen:  https://codepen.io/chrisburnell
   gist:     https://gist.github.com/chrisburnell

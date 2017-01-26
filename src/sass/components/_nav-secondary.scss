@@ -42,7 +42,7 @@
 .nav-secondary {
     margin-top: $measure-large;
     border-top: $border-width-thin $border-style-default $color-black--light;
-    padding-top: ($measure-large - 0.182rem);
+    padding-top: #{$measure-large - 0.182rem};
 
     .page--home & {
         margin-top: 0;

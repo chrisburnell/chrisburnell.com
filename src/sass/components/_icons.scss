@@ -21,7 +21,7 @@
     // Used on the Style Guide page
     .icons-list & {
         fill: $color-text;
-        height: ($measure-large * 2);
+        height: #{$measure-large * 2};
     }
 }
 
@@ -34,7 +34,7 @@
     $ratio:      nth($color-brand, 3);
 
     .icon--#{$name} {
-        width: ($ratio * $icon-size);
+        width: #{$ratio * $icon-size};
 
         @if $name == "rss" {
             &,

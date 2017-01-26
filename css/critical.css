@@ -96,6 +96,7 @@ h6 {
 /**
  * Heading - Alpha
  */
+.alpha,
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -106,6 +107,7 @@ h1 {
 }
 
 @media (max-width: 500px) {
+  .alpha,
   h1 {
     font-size: 3.50195rem;
   }
@@ -114,6 +116,7 @@ h1 {
 /**
  * Heading - Beta
  */
+.beta,
 h2 {
   font-size: 1.375rem;
   line-height: 1.25;
@@ -122,7 +125,9 @@ h2 {
 /**
  * Heading - Gamma
  */
-h3, .lede {
+.gamma,
+h3,
+.lede {
   font-size: 1.125rem;
   line-height: 1.875;
 }
@@ -145,8 +150,7 @@ h3[id]:target {
 }
 
 @-webkit-keyframes heading-target {
-  0%,
-  50% {
+  0%, 50% {
     background-color: gold;
   }
   100% {
@@ -155,8 +159,7 @@ h3[id]:target {
 }
 
 @keyframes heading-target {
-  0%,
-  50% {
+  0%, 50% {
     background-color: gold;
   }
   100% {
@@ -201,6 +204,7 @@ h3[id]:target {
 /**
  * Heading - Delta
  */
+.delta,
 h4 {
   font-size: 16px;
   font-weight: 600;
@@ -214,6 +218,7 @@ h4 {
 /**
  * Heading - Epsilon
  */
+.epsilon,
 h5 {
   font-size: 16px;
   line-height: 1.25;
@@ -222,6 +227,7 @@ h5 {
 /**
  * Heading - Zeta
  */
+.zeta,
 h6 {
   font-size: 16px;
   line-height: 1.25;
@@ -295,10 +301,8 @@ ol:not([class]) li::before,
 ul:not([class]) li::before,
 .default-list li::before {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   font-weight: 600;
 }
 
@@ -562,6 +566,7 @@ details {
   border-radius: 0.25rem;
   background-color: #2b2b2b;
   color: #f9f9f9;
+  width: 100%;
   padding: 0.625rem;
 }
 
@@ -600,24 +605,27 @@ p {
  * Images and Figures
  */
 img,
+svg,
 picture {
   position: relative;
 }
 
 img,
+svg,
 picture,
 a img,
 a
+svg,
+a
 picture {
-  color: #e31b23;
   width: auto;
   max-width: 100%;
   height: auto;
-  font-style: italic;
 }
 
 picture,
-picture img {
+picture img,
+picture svg {
   display: block;
 }
 
@@ -643,9 +651,28 @@ img::after {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   content: "Broken Image: " attr(src);
+  color: #e31b23;
+  font-style: italic;
+}
+
+svg:not(:root) {
+  overflow: hidden;
 }
 
 figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 0 1.25rem;
 }
 
@@ -655,19 +682,19 @@ figure:not(.highlight) {
 }
 
 figure > a,
-figure > img,
-figure >
+figure img,
+figure
+svg,
+figure
 picture,
 figure > a img,
 figure > a
-picture,
-figure > svg,
-figure > a svg {
+svg,
+figure > a
+picture {
   background-clip: padding-box;
   border-radius: 0.375rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 figure > a {
@@ -695,10 +722,6 @@ figure figcaption {
   padding-top: 1.25rem;
   font-family: Georgia, serif;
   line-height: 1.25;
-}
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 /**
@@ -849,12 +872,6 @@ abbr[title],
 dfn[title],
 ins {
   text-decoration: none;
-}
-
-mark {
-  background-color: gold;
-  color: inherit;
-  font-size: 1rem;
 }
 
 small {
@@ -1226,6 +1243,10 @@ aside p {
           hyphens: auto;
 }
 
+.center {
+  text-align: center;
+}
+
 .non-selectable {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1595,6 +1616,7 @@ aside + .lede {
 }
 
 .author-image img, .author-image
+svg, .author-image
 picture {
   background-clip: padding-box;
   border-radius: 0.375rem;
@@ -1605,6 +1627,7 @@ picture {
 
 @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
   .author-image img, .author-image
+  svg, .author-image
   picture {
     background-clip: padding-box;
     border-radius: 50%;

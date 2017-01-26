@@ -117,6 +117,82 @@
 
 
 ///
+/// Unique Pairs
+///
+/// @param {List|Map} $pairs - List/Map of pairs
+///
+/// @example scss
+///   $list:
+///     alpha,
+///     beta,
+///     gamma;
+///   @each $list-item in unique-pairs($list) {
+///     @each $list-item-key, $list-item-value in $list-item {
+///       .from-#{$list-item-key}-to-#{$list-item-value} {
+///         color: initial;
+///       }
+///     }
+///   }
+///   // .from-alpha-to-beta {
+///   //   color: initial;
+///   // }
+///   // .from-alpha-to-gamma {
+///   //   color: initial;
+///   // }
+///   // .from-beta-to-gamma {
+///   //   color: initial;
+///   // }
+///
+/// @throw Error if no parameter is passed.
+/// @throw Error if parameter passed is neither a List nor a Map.
+///
+/// @return {Map} Unique pairs
+///
+@function unique-pairs($pairs) {
+    @if not $pairs or not (type-of($pairs) == list or type-of($pairs) == map) {
+        @warn "unique-pairs() expects either a single List or single Map of data.";
+        @return false;
+    }
+
+    $unique-pairs: ();
+    $seen: ();
+
+    @if type-of($pairs) == list {
+        @each $first in $pairs {
+            $seen: append($seen, $first);
+            @each $second in $pairs {
+                @if $first != $second and not index($seen, $second) {
+                    $unique-pair: ($first: $second);
+                    $unique-pairs: append($unique-pairs, $unique-pair);
+                }
+            }
+        }
+    }
+
+    @else if type-of($pairs) == map {
+        @each $first-key, $first-value in $pairs {
+            $seen: append($seen, $first-key);
+            @each $second-key, $second-value in $pairs {
+                @if $first-key != $second-key and not index($seen, $second-key) {
+                    $unique-pair: (
+                        ($first-key: $first-value): ($second-key: $second-value)
+                    );
+                    $unique-pairs: append($unique-pairs, $unique-pair);
+                }
+            }
+        }
+    }
+
+    @else {
+        @warn "unique-pairs() expects either a List or Map.";
+        @return false;
+    }
+
+    @return $unique-pairs;
+}
+
+
+///
 /// Unpack Transition List
 ///
 /// @param {list} $list - Transition list to unpack

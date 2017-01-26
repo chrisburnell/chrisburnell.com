@@ -96,6 +96,7 @@ h6 {
 /**
  * Heading - Alpha
  */
+.alpha,
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -106,6 +107,7 @@ h1 {
 }
 
 @media (max-width: 500px) {
+  .alpha,
   h1 {
     font-size: 3.50195rem;
   }
@@ -114,6 +116,7 @@ h1 {
 /**
  * Heading - Beta
  */
+.beta,
 h2 {
   font-size: 1.375rem;
   line-height: 1.25;
@@ -122,7 +125,9 @@ h2 {
 /**
  * Heading - Gamma
  */
-h3, .lede {
+.gamma,
+h3,
+.lede {
   font-size: 1.125rem;
   line-height: 1.875;
 }
@@ -145,8 +150,7 @@ h3[id]:target {
 }
 
 @-webkit-keyframes heading-target {
-  0%,
-  50% {
+  0%, 50% {
     background-color: gold;
   }
   100% {
@@ -155,8 +159,7 @@ h3[id]:target {
 }
 
 @keyframes heading-target {
-  0%,
-  50% {
+  0%, 50% {
     background-color: gold;
   }
   100% {
@@ -209,6 +212,7 @@ var, h3
 /**
  * Heading - Delta
  */
+.delta,
 h4 {
   font-size: 16px;
   font-weight: 600;
@@ -222,6 +226,7 @@ h4 {
 /**
  * Heading - Epsilon
  */
+.epsilon,
 h5 {
   font-size: 16px;
   line-height: 1.25;
@@ -230,6 +235,7 @@ h5 {
 /**
  * Heading - Zeta
  */
+.zeta,
 h6 {
   font-size: 16px;
   line-height: 1.25;
@@ -303,10 +309,8 @@ ol:not([class]) li::before,
 ul:not([class]) li::before,
 .default-list li::before {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   font-weight: 600;
 }
 
@@ -570,6 +574,7 @@ details {
   border-radius: 0.25rem;
   background-color: #2b2b2b;
   color: #f9f9f9;
+  width: 100%;
   padding: 0.625rem;
 }
 
@@ -608,24 +613,27 @@ p {
  * Images and Figures
  */
 img,
+svg,
 picture {
   position: relative;
 }
 
 img,
+svg,
 picture,
 a img,
 a
+svg,
+a
 picture {
-  color: #e31b23;
   width: auto;
   max-width: 100%;
   height: auto;
-  font-style: italic;
 }
 
 picture,
-picture img {
+picture img,
+picture svg {
   display: block;
 }
 
@@ -651,9 +659,28 @@ img::after {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   content: "Broken Image: " attr(src);
+  color: #e31b23;
+  font-style: italic;
+}
+
+svg:not(:root) {
+  overflow: hidden;
 }
 
 figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 0 1.25rem;
 }
 
@@ -663,19 +690,19 @@ figure:not(.highlight) {
 }
 
 figure > a,
-figure > img,
-figure >
+figure img,
+figure
+svg,
+figure
 picture,
 figure > a img,
 figure > a
-picture,
-figure > svg,
-figure > a svg {
+svg,
+figure > a
+picture {
   background-clip: padding-box;
   border-radius: 0.375rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 figure > a {
@@ -703,10 +730,6 @@ figure figcaption {
   padding-top: 1.25rem;
   font-family: Georgia, serif;
   line-height: 1.25;
-}
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 /**
@@ -859,12 +882,6 @@ ins {
   text-decoration: none;
 }
 
-mark {
-  background-color: gold;
-  color: inherit;
-  font-size: 1rem;
-}
-
 small {
   font-size: 0.875rem;
 }
@@ -921,10 +938,15 @@ kbd,
 samp,
 var,
 .monospace {
-  font-size: 0.875rem;
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   -webkit-font-variant-ligatures: none;
           font-variant-ligatures: none;
+}
+
+code,
+kbd,
+samp {
+  font-size: 0.875rem;
 }
 
 /**
@@ -946,29 +968,74 @@ h6 code,
 ins,
 kbd,
 mark,
+samp,
+var {
+  word-wrap: break-word;
+}
+
+blockquote code,
+details code,
+table code,
+dl code,
+ol code,
+ul code,
+figure:not([class]) code,
+p code, h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+ins,
+kbd,
+mark,
 samp {
   background-clip: padding-box;
   border-radius: 0.25rem;
-  background-color: rgba(95, 138, 166, 0.1);
   padding: 0.25em;
   line-height: 1.429;
-  word-wrap: break-word;
+}
+
+blockquote code,
+details code,
+table code,
+dl code,
+ol code,
+ul code,
+figure:not([class]) code,
+p code, h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+ins,
+kbd,
+samp {
+  background-color: rgba(95, 138, 166, 0.1);
+}
+
+mark {
+  background-color: gold;
+  font-size: 1rem;
 }
 
 var {
   color: #5f8aa6;
-  padding: 0 0.1em;
   font-style: normal;
   font-weight: 600;
-  word-wrap: break-word;
 }
 
 /**
  * Code Blocks
  */
 pre {
+  width: 100%;
   margin-top: 0;
   margin-bottom: 1.25rem;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
 }
 
 pre:not(.codepen) {
@@ -1818,6 +1885,10 @@ footer {
           hyphens: auto;
 }
 
+.center {
+  text-align: center;
+}
+
 .non-selectable {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2507,6 +2578,7 @@ p + .nav-secondary {
 }
 
 .author-image img, .author-image
+svg, .author-image
 picture {
   background-clip: padding-box;
   border-radius: 0.375rem;
@@ -2517,6 +2589,7 @@ picture {
 
 @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
   .author-image img, .author-image
+  svg, .author-image
   picture {
     background-clip: padding-box;
     border-radius: 50%;
@@ -2864,6 +2937,11 @@ code[data-lang]::before {
   background-size: 100% 7rem;
   background-position: bottom;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 1.25rem;
+  left: 0;
+  right: 0;
 }
 
 .icon {
@@ -3036,20 +3114,26 @@ iframe {
 
 .color-block-list {
   width: 100%;
-  display: table;
-  margin: 0 auto;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 500px) {
+  .color-block-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .color-block-list li {
-  height: 6.5rem;
-  display: table-cell;
   font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
   font-size: 0.875rem;
   font-weight: 600;
   -webkit-font-variant-ligatures: none;
           font-variant-ligatures: none;
-  line-height: 7.429;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -3057,8 +3141,19 @@ iframe {
 
 @media (max-width: 500px) {
   .color-block-list li {
-    width: 6.5rem;
-    display: inline-block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    padding: 1.25rem 0;
+  }
+}
+
+@media (min-width: 501px) {
+  .color-block-list li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 20%;
+            flex: 0 1 20%;
+    padding: 2.25rem 0;
   }
 }
 
