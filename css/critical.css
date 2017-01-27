@@ -1181,6 +1181,9 @@ aside {
   aside {
     width: 100%;
   }
+}
+
+@media (max-width: 800px) {
   aside:not(.author):not(:last-child) {
     margin-bottom: 1.25rem;
   }
@@ -1241,10 +1244,6 @@ aside p {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-}
-
-.center {
-  text-align: center;
 }
 
 .non-selectable {

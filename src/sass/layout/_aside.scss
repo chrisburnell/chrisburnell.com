@@ -21,8 +21,10 @@ aside {
 
     @include media("<=medium") {
         width: 100%;
+    }
 
-        &:not(.author):not(:last-child) {
+    &:not(.author):not(:last-child) {
+        @include media("<=medium") {
             margin-bottom: $measure-medium;
         }
     }

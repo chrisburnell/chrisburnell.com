@@ -157,7 +157,7 @@ serviceworker.js
 
 ## Network
 
-SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/){:rel="external"} 🙏
+SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/) 🙏
 
 
 ## License

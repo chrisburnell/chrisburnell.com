@@ -32,10 +32,6 @@
     @include hyphenate;
 }
 
-.center {
-    text-align: center;
-}
-
 // Make things non-selectable
 .non-selectable {
     @include non-selectable;
