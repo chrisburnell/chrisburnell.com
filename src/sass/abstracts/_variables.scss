@@ -350,7 +350,7 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @require {Variable} $color-twitter
 $color-brands:
     codepen  $color-white    1.025,
-    github   $color-white    0.950,
+    github   $color-white    1.000,
     lastfm   $color-lastfm   1.000,
     rss      $color-rss      0.775,
     spotify  $color-spotify  0.925,
