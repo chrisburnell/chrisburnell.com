@@ -64,4 +64,4 @@ exclude:
 
 gems:
 - jekyll-redirect-from
-# - jemoji
+- jemoji
