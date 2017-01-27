@@ -10,3 +10,6 @@ lede: "Seems there’s a bug in <em>Internet Explorer 9</em> wherein pseudo cont
 external_links:
 - url: "https://codepen.io/chrisburnell/pen/vtHwG"
 ---
+
+
+From what I’ve read, this bug can be avoided by using <var>px</var> instead of <var>em</var> units.

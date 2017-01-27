@@ -17,13 +17,13 @@
     // <noscript>Please enable JavaScript to view this Pen.</noscript>
 
 {% endcomment %}
-{% assign codepen_slug = include.slug | default: page.codepen_slug %}
-{% capture codepen_height %}{% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
-{% capture codepen_theme %}{% if include.theme == 'tabfree' %}{{ site.codepen.themes.tabfree }}{% else %}{{ site.codepen.themes.default }}{% endif %}{% endcapture %}
-{% assign codepen_tab = include.tab | default: 'result' %}
-{% assign codepen_user = include.user | default: site.author.codepen %}
-<pre class="codepen" data-slug-hash="{{ codepen_slug }}" data-default-tab="{{ codepen_tab }}" data-theme-id="{{ codepen_theme }}" data-user="{{ codepen_user }}" data-safe="true"{{ codepen_height}}>
+{% assign slug = include.slug | default: page.codepen_slug %}
+{% capture height %}{% if include.height %} data-height="{{ include.height }}"{% endif %}{% endcapture %}
+{% capture theme %}{% if include.theme == 'tabfree' %}{{ site.codepen.themes.tabfree }}{% else %}{{ site.codepen.themes.default }}{% endif %}{% endcapture %}
+{% assign tab = include.tab | default: 'result' %}
+{% assign user = include.user | default: site.author.codepen %}
+<pre class="codepen" data-slug-hash="{{ slug }}" data-default-tab="{{ tab }}" data-theme-id="{{ theme }}" data-user="{{ user }}" data-safe="true"{{ height}}>
     <code></code>
-    <a href="//codepen.io/{{ codepen_user }}/pen/{{ codepen_slug }}">Check out this Pen!</a>
+    <a href="//codepen.io/{{ user }}/pen/{{ slug }}">Check out this Pen!</a>
 </pre>
 <noscript>Please enable JavaScript to view this Pen.</noscript>

@@ -133,8 +133,8 @@ function showComments() {
 
 What we’re doing here is:
 
-0. Assign our `button` to a variable
-0. Add an click event listener to our `button` (which fortunately also works via keyboard commands)
+0. Assigning our `button` to a variable
+0. Adding an click event listener to our `button` (which fortunately also works via keyboard commands)
 0. When the `button` *is* clicked, remove the `button` and load in our comments
 
 
@@ -143,7 +143,7 @@ What we’re doing here is:
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
-<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#search=onhashchange">onhashchange on CanIUse</a> before jumping in too deep!</p></aside>
+<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#search=onhashchange">onhashchange on Can I Use</a> before jumping in too deep!</p></aside>
 
 {% highlight javascript %}
 var commentsHash = ['#comment', '#disqus_thread'];

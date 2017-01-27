@@ -21,10 +21,10 @@
 
 {% endcomment %}
 {% assign srcs = include.src | split: ',' %}
-{% assign img_src = srcs.first | trim | split: ' ' | first %}
-{% assign img_srcset = '' %}
+{% assign src = srcs.first | trim | split: ' ' | first %}
+{% assign srcset = '' %}
 {% if srcs.size > 1 %}
-    {% capture img_srcset %}srcset="{% for src in srcs %}
+    {% capture srcset %}srcset="{% for src in srcs %}
         {% unless forloop.first %}
             {% unless forloop.last %}, {% endunless %}
             {{ src }}
@@ -38,6 +38,6 @@
     {% endif %}
     <img alt="{{ include.alt }}" role="presentation"
          class="{{ include.class }}" width="{{ include.width }}" height="{{ include.height }}"
-         src="{{ img_src }}"
-         {{ img_srcset }}>
+         src="{{ src }}"
+         {{ srcset }}>
 </picture>

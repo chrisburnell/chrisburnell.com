@@ -78,6 +78,9 @@ snippet of code on a project of your own!  -->
         <link rel="dns-prefetch" href="//a.disquscdn.com">
         <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
     {% endif %}
+    {% if page.caniuse == true %}
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    {% endif %}
     {% if page.codepen == true or (page.categories contains 'pen' and page.codepen_slug) %}
         <link rel="dns-prefetch" href="//codepen.io">
         <link rel="dns-prefetch" href="//assets.codepen.io">

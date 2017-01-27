@@ -10,8 +10,14 @@
 
 <!-- Preload some assets -->
 <link rel="preload" as="script" href="/js/main.min.js">
+{% if page.caniuse == true %}
+    <link rel="preload" as="script" href="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js">
+{% endif %}
 {% if page.codepen == true or page.categories contains 'pen' %}
     <link rel="preload" as="script" href="//codepen.io/assets/embed/ei.js">
+{% endif %}
+{% if page.speakerdeck == true %}
+    <link rel="preload" as="script" href="//speakerdeck.com/assets/embed.js">
 {% endif %}
 {% if page.twitter == true %}
     <link rel="preload" as="script" href="//platform.twitter.com/widgets.js">

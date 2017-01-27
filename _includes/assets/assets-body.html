@@ -15,6 +15,11 @@
 <!-- Main Scripts -->
 <script src="/js/main.min.js" async defer></script>
 
+{% if page.caniuse %}
+    <!-- Can I Use Embeds -->
+    <script src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js"></script>
+{% endif %}
+
 {% if page.codepen == true or page.codepen_slug %}
     <!-- CodePen Embeds -->
     <script src="//codepen.io/assets/embed/ei.js" async defer></script>

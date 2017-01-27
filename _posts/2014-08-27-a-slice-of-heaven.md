@@ -71,7 +71,9 @@ And the revisited version:
 
 {% include content/codepen.html slug='Cbiun' height='250' %}
 
-Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=sibling "Sibling Selectors"){:rel="external"}) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
+Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors"){:rel="external"}) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
+
+{% include content/caniuse.html feature='css-sel2' %}
 
 Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter"){:rel="external"} for helping me improve this even further by adding keyboard support for the hidden `input` field.
 

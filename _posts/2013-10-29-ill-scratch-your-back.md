@@ -17,6 +17,7 @@ edit_date: 2015-06-06 20:20:00
 edit_text: I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="{% post_url 2015-06-08-backscratching-revisited %}">Backscratching Revisited</a>, or continue reading.
 
 comments: true
+caniuse: true
 shorturl: 82n3v
 ---
 
@@ -81,7 +82,9 @@ Normally in CSS, we would use `.` to target an element by *class name*, but we c
 --------
 
 
-In this way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=not "Can I Use - :not selector"){:rel="external"} for the specifics.
+In this way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=css-sel3 "Can I Use - CSS3 selectors"){:rel="external"} for the specifics.
+
+{% include content/caniuse.html feature='css-sel3' %}
 
 
 --------
