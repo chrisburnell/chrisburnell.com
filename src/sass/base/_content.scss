@@ -182,7 +182,8 @@ h6 {
 p {
     margin: 0 0 $measure-medium;
 
-    &:last-child {
+    &:last-child,
+    &.ciu_embed {
         margin-bottom: 0;
     }
 
@@ -191,6 +192,7 @@ p {
         visibility: hidden;
     }
 
+    // Columnal Paragraphs
     &.columns {
         @include media(">large") {
             column-count: 2;

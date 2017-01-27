@@ -245,7 +245,7 @@ p {
   margin: 0 0 1.25rem;
 }
 
-p:last-child {
+p:last-child, p.ciu_embed {
   margin-bottom: 0;
 }
 
@@ -3029,6 +3029,11 @@ button .icon,
 .icon--tag {
   width: 40px;
   fill: #f9f9f9;
+}
+
+.emoji {
+  height: 1.5em;
+  vertical-align: middle;
 }
 
 /**

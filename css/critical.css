@@ -237,7 +237,7 @@ p {
   margin: 0 0 1.25rem;
 }
 
-p:last-child {
+p:last-child, p.ciu_embed {
   margin-bottom: 0;
 }
 
