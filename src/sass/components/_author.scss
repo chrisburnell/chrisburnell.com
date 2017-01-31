@@ -99,8 +99,7 @@
     display: block;
 }
 
-// same as previous, without `.author-name`
-// `.author-information .date` subbed in
+// same as previous, minus `.author-name` plus `.author-information .date`
 .author-information .date,
 .author-nationality,
 .author-employer,
