@@ -12,14 +12,14 @@
 
 {% endcomment %}
 {% if include.id %}
-    {% capture href %}{{ include.id | prepend: '#' }}{% endcapture %}
+    {% capture anchor_href %}{{ include.id | prepend: '#' }}{% endcapture %}
 {% elsif include.href %}
-    {% assign href = include.href %}
+    {% assign anchor_href = include.href %}
 {% endif %}
 {% if include.title %}
-    {% capture title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
+    {% capture anchor_title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
 {% endif %}
 {% if include.rel %}
-    {% capture rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
+    {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
-<a href="{{ href }}" class="fragment-anchor" {{ title }} {{ rel }}>{{ href }}</a>
+<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_title }} {{ anchor_rel }}>{{ anchor_href }}</a>

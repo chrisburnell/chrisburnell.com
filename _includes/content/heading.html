@@ -15,16 +15,16 @@
     // </h3>
 
 {% endcomment %}
-{% assign type = include.type | default: 'h3' %}
-{% assign id = include.id | default: include.title | slugify %}
-{% assign href = include.href | default: '' %}
-<{{ type }} id="{{ id }}">
-    {% unless href == '' %}
+{% assign heading_type = include.type | default: 'h3' %}
+{% assign heading_id = include.id | default: include.title | slugify %}
+{% assign heading_href = include.href | default: '' %}
+<{{ heading_type }} id="{{ heading_id }}">
+    {% unless heading_href == '' %}
         <a href="{{ href }}">
     {% endunless %}
         {{ include.title }}
-        {% include content/fragment-anchor.html id=id %}
-    {% unless href == '' %}
+        {% include content/fragment-anchor.html id=heading_id %}
+    {% unless heading_href == '' %}
         </a>
     {% endunless %}
-</{{ type }}>
+</{{ heading_type }}>
