@@ -4,9 +4,11 @@ page_class: page--links
 searchable: no-content
 
 title: Shared Links
-lede: All of my shared links listed on one page.
+lede: All of my shared Links.
 ---
 
+
+<p><em>There are {{ site.categories.link | size }} published Links.</em></p>
 
 <ol class="content-list" id="links" role="list">
     {% for page in site.categories.link %}

@@ -15,6 +15,7 @@ tags:
 # banner_mobile: a-slice-of-heaven_mobile.png
 
 comments: true
+caniuse: true
 codepen: true
 shorturl: ynt2q
 ---
@@ -33,7 +34,9 @@ Hover the slice to see how this one works.
 
 In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
-*Edit: There is a [Chrome bug](https://code.google.com/p/chromium/issues/detail?id=157218){:rel="external"} with `border-radius` and `overflow` not masking child elements property when modified with a `transform`. Hopefully this is fixed soon, but in the meantime, I’ve added a `border-radius` and an associated `transform` on the `:before` and `:after` elements.*
+<div class="edit">
+    Edit: There is a <a href="https://code.google.com/p/chromium/issues/detail?id=157218" rel="external">Chrome bug</a> with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.
+</div>
 
 
 {% include content/heading.html title='Zoomy Anchor Thing' %}
@@ -42,7 +45,9 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 {% include content/codepen.html slug='lcEvB' height='350' %}
 
-*Edit: This pen was featured on [Codepen’s front page](https://ss.chrisburnell.com/2014-08-28_1411.png "ego boost manifested in PNG format"){:rel="external"}, netting me some [sweet internet points](https://codepen.io/chrisburnell/details/lcEvB/#stats "Stats for this pen"){:rel="external"}! Achievement Unlocked.*
+<div class="edit">
+    Edit: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me external">Codepen’s front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
+</div>
 
 
 {% include content/heading.html title='Modal Container without JS' %}

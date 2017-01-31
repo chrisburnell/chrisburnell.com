@@ -4,7 +4,7 @@ page_class: page--pens
 searchable: no-content
 
 title: Featured Pens
-lede: All of my featured pens listed on one page.
+lede: All of my featured Pens.
 ---
 
 
@@ -14,6 +14,8 @@ lede: All of my featured pens listed on one page.
 </dl>
 
 <p>These are my best pens—seven of which were <a rel="external" href="https://codepen.io/collection/hfqlg" rel="external">featured on their homepage</a>.</p>
+
+<p><em>There are {{ site.categories.pen | size }} published Pens.</em></p>
 
 <ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen %}

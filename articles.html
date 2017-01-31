@@ -7,9 +7,11 @@ redirect_from:
   - /archive.html
 
 title: Articles Archive
-lede: All of my articles listed on one page.
+lede: All of my self-authored Articles.
 ---
 
+
+<p><em>There are {{ site.categories.article | size }} published Articles.</em></p>
 
 <ol class="content-list" id="articles" role="list">
     {% for page in site.categories.article %}
