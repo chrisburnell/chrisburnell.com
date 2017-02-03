@@ -150,7 +150,8 @@ h3[id]:target {
 }
 
 @-webkit-keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold;
   }
   100% {
@@ -159,7 +160,8 @@ h3[id]:target {
 }
 
 @keyframes heading-target {
-  0%, 50% {
+  0%,
+  50% {
     background-color: gold;
   }
   100% {
@@ -403,6 +405,7 @@ dd:not(:last-child) {
  */
 table {
   width: 100%;
+  display: block;
   overflow-x: auto;
   overflow-y: hidden;
   border-collapse: collapse;
