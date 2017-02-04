@@ -307,6 +307,7 @@ dd {
 table {
     width: 100%;
     display: block;
+    flex: 1 0 100%;
     overflow-x: auto;
     overflow-y: hidden;
     border-collapse: collapse;
