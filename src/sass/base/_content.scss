@@ -302,11 +302,102 @@ dd {
 }
 
 /**
+ * Images and Figures
+ */
+img,
+svg,
+picture {
+    @extend %image-elements !optional;
+}
+%image-elements {
+    position: relative;
+
+    &,
+    a & {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+}
+picture {
+    &,
+    & img,
+    & svg {
+        display: block;
+    }
+}
+img {
+    border-style: none;
+
+    &::before {
+        @include position(top-left);
+        content: "";
+        background-color: $color-text-light;
+        width:  100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    &::after {
+        @include position(center);
+        // Only visible when the Image fails to load
+        content: "Broken Image: " attr(src);
+        color: $color-lastfm;
+        font-style: italic;
+    }
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+figure {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 $measure-medium;
+
+    // Allow for content to overflow without breaking the page with scrollbar
+    &:not(.highlight) {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    & > a,
+    & %image-elements,
+    & > a %image-elements {
+        @include border-radius;
+        display: block;
+    }
+
+    & > a {
+        border-bottom-width: 0;
+    }
+
+    & > a:link,
+    & > a:visited,
+    figcaption {
+        color: $color-text-alt;
+        font-style: italic;
+    }
+
+    figcaption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: $measure-medium;
+        font-family: $font-family-serif;
+        line-height: $line-height-small;
+    }
+}
+
+/**
  * Tables
  */
 table {
     width: 100%;
-    display: block;
     flex: 1 0 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -461,97 +552,6 @@ summary {
         margin-top: $measure-small;
         border-top: $border-width-thin $border-style-default $color-brand;
         padding-top: $measure-medium;
-    }
-}
-
-/**
- * Images and Figures
- */
-img,
-svg,
-picture {
-    @extend %image-elements !optional;
-}
-%image-elements {
-    position: relative;
-
-    &,
-    a & {
-        width: auto;
-        max-width: 100%;
-        height: auto;
-    }
-
-
-}
-picture {
-    &,
-    & img,
-    & svg {
-        display: block;
-    }
-}
-img {
-    border-style: none;
-
-    &::before {
-        @include position(top-left);
-        content: "";
-        background-color: $color-text-light;
-        width:  100%;
-        height: 100%;
-        text-align: center;
-    }
-
-    &::after {
-        @include position(center);
-        // Only visible when the Image fails to load
-        content: "Broken Image: " attr(src);
-        color: $color-lastfm;
-        font-style: italic;
-    }
-}
-svg:not(:root) {
-    overflow: hidden;
-}
-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 $measure-medium;
-
-    // Allow for content to overflow without breaking the page with scrollbar
-    &:not(.highlight) {
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    & > a,
-    & %image-elements,
-    & > a %image-elements {
-        @include border-radius;
-        display: block;
-    }
-
-    & > a {
-        border-bottom-width: 0;
-    }
-
-    & > a:link,
-    & > a:visited,
-    figcaption {
-        color: $color-text-alt;
-        font-style: italic;
-    }
-
-    figcaption {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: $measure-medium;
-        font-family: $font-family-serif;
-        line-height: $line-height-small;
     }
 }
 
