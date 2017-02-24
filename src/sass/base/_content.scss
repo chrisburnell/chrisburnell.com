@@ -688,11 +688,11 @@ sup {
  * Mouse Selection
  */
 ::selection {
-    background: $color-brand;
+    background-color: $color-brand;
     color: $color-white;
 }
 .canada {
     &::selection {
-        background: $color-canada;
+        background-color: $color-canada;
     }
 }

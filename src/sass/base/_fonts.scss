@@ -7,9 +7,9 @@
 @each $style in $font-families-styles {
     @font-face {
         font-family: "#{nth($style, 1)}";
-        font-style: nth($style, 2);
-        font-weight: nth($style, 3);
-        src: local("#{nth($style, 1)} #{nth($style, 4)}"),
+        font-style: nth($style, 3);
+        font-weight: nth($style, 4);
+        src: local("#{nth($style, 1)} #{nth($style, 2)}"),
              url("https://chrisburnell.com/fonts/#{nth($style, 5)}.woff2") format("woff2"),
              url("https://chrisburnell.com/fonts/#{nth($style, 5)}.woff") format("woff"),
              url("https://chrisburnell.com/fonts/#{nth($style, 5)}.ttf") format("truetype");

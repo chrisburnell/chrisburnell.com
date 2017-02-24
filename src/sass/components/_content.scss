@@ -69,3 +69,34 @@
         margin-bottom: $measure-small;
     }
 }
+
+// Stylised em-dash, with hair spaces on either side
+.em-dash,
+.m-dash {
+    display: inline-block;
+
+    &::before {
+        //
+        content: " — ";
+    }
+}
+
+// Stylised en-dash, can replace an em-dash
+.en-dash,
+.n-dash {
+    display: inline-block;
+
+    &::before {
+        //
+        content: " – ";
+    }
+}
+
+// Minus sign
+.minus {
+    display: inline;
+
+    &::before {
+        content: "−";
+    }
+}

@@ -223,10 +223,10 @@ $font-families: (
 /// @prop {String} name - Font Name
 /// @prop {String} filename - Font Filename
 $font-families-styles: (
-    ("League Gothic", normal, 400, "Regular",  "league-gothic-regular"),
-    ("Proxima Nova",  normal, 400, "Regular",  "proxima-nova-regular"),
-    ("Proxima Nova",  italic, 400, "Italic",   "proxima-nova-italic"),
-    ("Proxima Nova",  normal, 600, "Semibold", "proxima-nova-semibold")
+    ("League Gothic", "Regular",  normal, 400, "league-gothic-regular"),
+    ("Proxima Nova",  "Regular",  normal, 400, "proxima-nova-regular"),
+    ("Proxima Nova",  "Italic",   italic, 400, "proxima-nova-italic"),
+    ("Proxima Nova",  "Semibold", normal, 600, "proxima-nova-semibold")
 );
 
 

@@ -911,20 +911,20 @@ sup {
  * Mouse Selection
  */
 ::-moz-selection {
-  background: #5f8aa6;
+  background-color: #5f8aa6;
   color: #f9f9f9;
 }
 ::selection {
-  background: #5f8aa6;
+  background-color: #5f8aa6;
   color: #f9f9f9;
 }
 
 .canada::-moz-selection {
-  background: #fd1b00;
+  background-color: #fd1b00;
 }
 
 .canada::selection {
-  background: #fd1b00;
+  background-color: #fd1b00;
 }
 
 a {
@@ -1534,6 +1534,34 @@ aside + .lede {
 
 .edit time {
   margin-bottom: 0.625rem;
+}
+
+.em-dash,
+.m-dash {
+  display: inline-block;
+}
+
+.em-dash::before,
+.m-dash::before {
+  content: " — ";
+}
+
+.en-dash,
+.n-dash {
+  display: inline-block;
+}
+
+.en-dash::before,
+.n-dash::before {
+  content: " – ";
+}
+
+.minus {
+  display: inline;
+}
+
+.minus::before {
+  content: "−";
 }
 
 /**
