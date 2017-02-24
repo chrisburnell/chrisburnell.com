@@ -1,0 +1,3 @@
+--ignore-directory=is:node_modules
+--type-set=sass:ext:scss,sass
+--type-set=markdown:ext:md,markdown
