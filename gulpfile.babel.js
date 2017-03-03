@@ -56,8 +56,8 @@ const stylelintRules = {
         'number-leading-zero': 'always',
         'number-max-precision': 4,
         'length-zero-no-unit': true,
-        'time-no-imperceptible': true,
-        'block-no-single-line': true,
+        'time-min-milliseconds': 100,
+        'block-opening-brace-newline-after': 'always',
         'selector-no-id': true,
         'string-quotes': 'double'
     }

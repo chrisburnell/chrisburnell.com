@@ -397,8 +397,9 @@ figure {
  * Tables
  */
 table {
-    width: 100%;
-    flex: 1 0 100%;
+    min-width: 100%;
+    flex: 1 0 auto;
+    align-self: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     border-collapse: collapse;

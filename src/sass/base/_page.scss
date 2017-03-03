@@ -7,7 +7,8 @@
 html {
     @include position(relative);
     min-height: 100%;
-    // prevent horizontal when jumping short page <--> tall page
+    overflow-x: hidden;
+    // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
     // set the box model for the entire document
     box-sizing: border-box;
