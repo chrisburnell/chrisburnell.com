@@ -86,8 +86,8 @@ gulp.task('css-compile', ['css-lint'], () => {
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
-            outputStyle: 'expanded',
-            includePaths: 'neat'
+            indentWidth: 4,
+            outputStyle: 'expanded'
         }))
         .pipe(postcss([
             autoprefixer({
