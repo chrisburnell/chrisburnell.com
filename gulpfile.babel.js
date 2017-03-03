@@ -1,7 +1,7 @@
 /**
  * Gulp Configuration
  * @author Chris Burnell
- * @version 2.8.0
+ * @version 2.8.2
  */
 
 
@@ -17,6 +17,7 @@ import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import watch from 'gulp-watch';
 
@@ -81,8 +82,48 @@ gulp.task('css-lint', () => {
 });
 
 // Compile CSS from Sass
-gulp.task('css-compile', ['css-lint'], () => {
-    return gulp.src(`${paths.css.src}/**/*.scss`)
+gulp.task('css-main', ['css-lint'], () => {
+    return gulp.src(`${paths.css.src}/main.scss`)
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            errLogToConsole: true,
+            indentWidth: 4,
+            outputStyle: 'expanded',
+            sourceMap: paths.css.src
+        }))
+        .pipe(postcss([
+            autoprefixer({
+                browsers: [
+                    'last 2 versions',
+                    '> 1%'
+                ]
+            }),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(gulp.dest(`${paths.css.dest}/`))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(postcss([
+            cssnano(),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(`${paths.css.dest}/`));
+});
+
+// Generate inline Critical CSS include
+gulp.task('css-critical', () => {
+    return gulp.src(`${paths.css.src}/critical.scss`)
         .pipe(plumber())
         .pipe(sass({
             errLogToConsole: true,
@@ -114,13 +155,7 @@ gulp.task('css-compile', ['css-lint'], () => {
                 throwError: true
             })
         ]))
-        .pipe(gulp.dest(`${paths.css.dest}/`));
-});
-
-// Generate inline Critical CSS include
-gulp.task('css-critical', () => {
-    return gulp.src(`${paths.css.dest}/critical.min.css`)
-        .pipe(plumber())
+        .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(rename({
             basename: 'critical-css',
             extname: '.html'
@@ -147,6 +182,7 @@ gulp.task('js-compile', () => {
                      `!${paths.js.src}/serviceworker.js`,
                      `${paths.js.src}/**/*.js`])
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(`${paths.js.dest}/`))
@@ -156,6 +192,7 @@ gulp.task('js-compile', () => {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 
@@ -211,7 +248,8 @@ gulp.task('default', () => {
 });
 
 // CSS task
-gulp.task('css', ['css-compile'], () => {
+gulp.task('css', () => {
+    gulp.start('css-main');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });

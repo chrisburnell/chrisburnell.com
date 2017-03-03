@@ -41,7 +41,7 @@ $line-length-minimum: 336px !default;
 /// @type Length
 $line-length-maximum: 480px !default;
 /// @type Length
-$line-length-responsive: calc(#{$line-length-minimum} + (#{strip-units($line-length-maximum)} - #{strip-units($line-length-minimum)}) * ((100vw - #{$wrapper-width-small}) / (#{strip-units($wrapper-width-large)} - #{strip-units($wrapper-width-small)})));
+$line-length-responsive: calc(#{$line-length-minimum} + (#{$line-length-maximum / ($line-length-maximum * 0 + 1)} - #{$line-length-minimum / ($line-length-minimum * 0 + 1)}) * ((100vw - #{$wrapper-width-small}) / (#{$wrapper-width-large / ($wrapper-width-large * 0 + 1)} - #{$wrapper-width-small / ($wrapper-width-small * 0 + 1)})));
 
 
 /// @type Length
