@@ -54,7 +54,12 @@ $media-expressions: (
   'landscape': '(orientation: landscape)',
   'portrait': '(orientation: portrait)',
   'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)'
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
+  'script': 'script',
+  'half-hover': '(any-hover: on-demand)',
+  'hover': '(any-hover: hover)',
+  'coarse': '(any-pointer: coarse)',
+  'fine': '(any-pointer: fine)'
 ) !default;
 
 

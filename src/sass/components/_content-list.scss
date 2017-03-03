@@ -23,8 +23,8 @@
             display: flex;
             flex-direction: column;
 
-            // Push all list items down (after the first two, in the
-            // two-column format)
+            // Push all list items down (after the first two, in the two-column
+            // format)
             &:nth-child(n+3) {
                 margin-top: $measure-medium;
             }

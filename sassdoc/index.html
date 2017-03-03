@@ -30,7 +30,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -69,7 +74,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -77,7 +87,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
@@ -518,7 +528,12 @@ color: contrasting-color(#111111);
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates a list of static expressions or media types</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Creates a single media type (screen)</p></div><pre class="example__code language-scss"><code>$media-expressions: (&#39;screen&#39;: &#39;screen&#39;);</code></pre></div><div class="item__example example"><div class="example__description"><p>Creates a static expression with logical disjunction (OR operator)</p></div><pre class="example__code language-scss"><code>$media-expressions: (
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39;
 );</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-im-intercepts-static-breakpoint"><code>im-intercepts-static-breakpoint</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-unit-intervals"><h3 class="item__heading"><a class="item__name" href="#variable-unit-intervals">unit-intervals</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$unit-intervals: (
@@ -616,7 +631,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -655,7 +675,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -663,7 +688,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -694,7 +719,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -733,7 +763,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
@@ -772,7 +807,12 @@ $media-expressions: (
   &#39;landscape&#39;: &#39;(orientation: landscape)&#39;,
   &#39;portrait&#39;: &#39;(orientation: portrait)&#39;,
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;,
-  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;
+  &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;,
+  &#39;script&#39;: &#39;script&#39;,
+  &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
+  &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
+  &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
 ) !default;
 
 
