@@ -53,14 +53,25 @@ const paths = {
 const stylelintRules = {
     'rules': {
         'color-hex-case': 'lower',
+        'color-hex-length': 'long',
+        'color-no-invalid-hex': true,
+        // 'font-weight-notation': 'numeric',
         'function-url-quotes': 'always',
+        // 'max-nesting-depth': 3,
         'number-leading-zero': 'always',
         'number-max-precision': 4,
+        'property-case': 'lower',
+        'property-no-unknown': true,
+        'keyframe-declaration-no-important': true,
         'length-zero-no-unit': true,
         'time-min-milliseconds': 100,
         'block-opening-brace-newline-after': 'always',
         'selector-no-id': true,
-        'string-quotes': 'double'
+        'shorthand-property-no-redundant-values': true,
+        'string-quotes': 'double',
+        'unit-blacklist': ['pc', 'pt', 'ex', 'mm', 'cm', 'in'],
+        'unit-case': 'lower',
+        'unit-no-unknown': true
     }
 };
 
