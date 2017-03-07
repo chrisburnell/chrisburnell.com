@@ -310,6 +310,7 @@ picture {
     @extend %image-elements !optional;
 }
 %image-elements {
+    display: block;
     position: relative;
 
     &,
@@ -317,15 +318,6 @@ picture {
         width: auto;
         max-width: 100%;
         height: auto;
-    }
-
-
-}
-picture {
-    &,
-    & img,
-    & svg {
-        display: block;
     }
 }
 img {
@@ -369,10 +361,10 @@ figure {
     & %image-elements,
     & > a %image-elements {
         @include border-radius;
-        display: block;
     }
 
     & > a {
+        display: block;
         border-bottom-width: 0;
     }
 

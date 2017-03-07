@@ -406,6 +406,7 @@ dd:not(:last-child) {
 img,
 svg,
 picture {
+    display: block;
     position: relative;
 }
 
@@ -420,12 +421,6 @@ picture {
     width: auto;
     max-width: 100%;
     height: auto;
-}
-
-picture,
-picture img,
-picture svg {
-    display: block;
 }
 
 img {
@@ -494,10 +489,10 @@ figure > a
 picture {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    display: block;
 }
 
 figure > a {
+    display: block;
     border-bottom-width: 0;
 }
 
