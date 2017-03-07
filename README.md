@@ -7,6 +7,9 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
 [![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)
 
+[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://github.com/chrisburnell/chrisburnell.github.io/blob/master/css/main.min.css)
+[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://github.com/chrisburnell/chrisburnell.github.io/blob/master/js/main.min.js)
+
 
 ## Table of Contents
 
