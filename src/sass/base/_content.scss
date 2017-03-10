@@ -5,9 +5,9 @@
 
 
 html {
+    @include font-family(default);
     background-color: $color-text;
     font-size: $font-size-default;
-    font-family: $font-family-default;
     font-style: normal;
     font-weight: $font-weight-default;
     line-height: $line-height-default;
@@ -52,7 +52,7 @@ h6 {
 .alpha,
 %alpha {
     @include case(uppercase, $letter-spacing-uppercase);
-    font-family: $font-family-alpha;
+    @include font-family(alpha);
     font-size: $font-size-alpha;
     line-height: 1;
     // 4px 4px
@@ -358,8 +358,7 @@ figure {
     }
 
     & > a,
-    & %image-elements,
-    & > a %image-elements {
+    & %image-elements {
         @include border-radius;
     }
 
@@ -376,11 +375,11 @@ figure {
     }
 
     figcaption {
+        @include font-family(serif);
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: $measure-medium;
-        font-family: $font-family-serif;
         line-height: $line-height-small;
     }
 }
@@ -553,11 +552,11 @@ summary {
  */
 blockquote {
     @include border-radius;
+    @include font-family(serif);
     @include quotes;
     background-color: $color-brand--light;
     padding: $measure-medium;
     margin: 0 $measure-large $measure-medium;
-    font-family: $font-family-serif;
 
     @include media("<=small") {
         margin-left:  $measure-medium;

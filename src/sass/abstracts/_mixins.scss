@@ -133,7 +133,14 @@
     }
 
     font-family: map-get($font-families, $family);
-    font-display: $display;
+
+    @if $family == 'default' or $family == 'alpha' {
+        font-display: $display;
+    }
+
+    @if $family == "monospace" {
+        font-variant-ligatures: none;
+    }
 }
 
 

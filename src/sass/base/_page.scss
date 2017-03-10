@@ -33,7 +33,7 @@ body {
     margin: 0;
 }
 
-// Hide the master SVG injected immediately below `<body>`
-.svg--master {
+// Hide the sprites SVG injected immediately below `<body>`
+.svg--sprites {
     @include visually-hidden;
 }

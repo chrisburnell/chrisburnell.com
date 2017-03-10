@@ -49,13 +49,19 @@ $measure-small:           0.625rem !default;
 /// @type Length
 $measure-small-relative:  0.625em !default;
 /// @type Length
+$measure-small-proportional:  2vmin !default;
+/// @type Length
 $measure-medium:          1.250rem !default;
 /// @type Length
 $measure-medium-relative: 1.250em !default;
 /// @type Length
+$measure-medium-proportional: 4vmin !default;
+/// @type Length
 $measure-large:           2.250rem !default;
 /// @type Length
 $measure-large-relative:  2.250em !default;
+/// @type Length
+$measure-large-proportional:  8vmin !default;
 
 
 /// @type Map
@@ -270,6 +276,15 @@ $z-indexes: (
 
 
 /// @type Map
+/// @prop {Array} key - Aspect Ratio
+/// @prop {Length} value - Percentage for sizing
+$aspect-ratios: (
+    (16, 9): 56.25%,
+    (4, 3):  75.00%
+);
+
+
+/// @type Map
 /// @prop {String} Body Class
 /// @prop {String} Primary Navigation Class
 $navigation-links: (
@@ -319,10 +334,6 @@ $coding-languages: (
 ) !default;
 
 
-/// @type Length
-$icon-size: 40px !default;
-
-
 /// @type Color
 $color-codepen: #212121 !default;
 /// @type Color
@@ -361,3 +372,7 @@ $color-brands:
     link     $color-white    1.000,
     search   $color-white    1.000,
     tag      $color-white    1.000  !default;
+
+
+/// @type Length
+$icon-size: 40px !default;

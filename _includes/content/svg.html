@@ -3,10 +3,19 @@
   This include lets you easily add an SVG.
 
   @param {String} type *
+  @param {String} title
 
   @example
-    {% include content/svg.html type='raven' %}
-    // <svg class="icon  icon--raven" role="img"><use xlink:href="#svg--raven" /></svg>
+    {% include content/svg.html type='raven' title='The Raven' %}
+    // <svg class="icon  icon--raven" title="The Raven" role="img"><use xlink:href="/images/sprites.svg#svg--raven" /></svg>
 
 {% endcomment %}
-<svg class="icon  icon--{{ include.type }}" role="img"><use xlink:href="#svg--{{ include.type }}" /></svg>
+{% if include.title %}
+    {% assign svg_title_count = svg_title_count | plus: 1 %}
+    <svg class="icon  icon--{{ include.type }}" role="img" title="{{ include.title }}" aria-labelledby="svg-title--{{ svg_title_count }}">
+        <title id="svg-title--{{ svg_title_count }}">{{ include.title }}</title>
+{% else %}
+    <svg class="icon  icon--{{ include.type }}" role="presentation">
+{% endif %}
+    <use xlink:href="/images/sprites.svg#svg--{{ include.type }}" />
+</svg>

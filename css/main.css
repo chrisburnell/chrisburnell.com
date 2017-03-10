@@ -54,7 +54,7 @@ body {
     margin: 0;
 }
 
-.svg--master {
+.svg--sprites {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
@@ -65,9 +65,10 @@ body {
 }
 
 html {
+    font-family: "Proxima Nova", sans-serif;
+    font-display: swap;
     background-color: #4f4f4f;
     font-size: 16px;
-    font-family: "Proxima Nova", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.875;
@@ -103,6 +104,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
+    font-display: swap;
     font-size: 4.5rem;
     line-height: 1;
     text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05);
@@ -489,11 +491,6 @@ figure img,
 figure
 svg,
 figure
-picture,
-figure > a img,
-figure > a
-svg,
-figure > a
 picture {
     background-clip: padding-box;
     border-radius: 0.375rem;
@@ -512,6 +509,7 @@ figure figcaption {
 }
 
 figure figcaption {
+    font-family: Georgia, serif;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -523,7 +521,6 @@ figure figcaption {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 1.25rem;
-    font-family: Georgia, serif;
     line-height: 1.25;
 }
 
@@ -741,11 +738,11 @@ p {
 blockquote {
     background-clip: padding-box;
     border-radius: 0.375rem;
+    font-family: Georgia, serif;
     hanging-punctuation: first;
     background-color: rgba(95, 138, 166, 0.1);
     padding: 1.25rem;
     margin: 0 2.25rem 1.25rem;
-    font-family: Georgia, serif;
 }
 
 blockquote,
@@ -1044,12 +1041,14 @@ pre {
 pre:not(.codepen) {
     background-clip: padding-box;
     border-radius: 0.375rem;
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
     background-color: #2b2b2b;
     color: #f9f9f9;
     padding: 1.25rem 1.25rem 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
     font-size: 0.875rem;
 }
 
@@ -1443,14 +1442,14 @@ a span:not([class]):not([itemprop]) {
 .fragment-anchor {
     text-transform: lowercase;
     letter-spacing: 0;
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
     display: none;
     visibility: hidden;
     margin-left: 1.25rem;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
     font-size: 0.875rem;
     font-weight: 600;
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
     line-height: 1.25;
     text-shadow: none;
     vertical-align: middle;
@@ -1513,6 +1512,8 @@ button,
     border-radius: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: "League Gothic", Impact, sans-serif;
+    font-display: swap;
     position: relative;
     -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease;
@@ -1524,7 +1525,6 @@ button,
     padding: 0 0.727em 0.182em;
     margin-top: 0.25rem;
     overflow: visible;
-    font-family: "League Gothic", Impact, sans-serif;
     font-size: 1.375rem;
     line-height: 2;
     text-align: center;
@@ -1588,14 +1588,14 @@ button:active::before, button:active::after,
 
 button[rel="external"]::after,
 .button[rel="external"]::after {
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
     position: relative;
     will-change: initial;
     content: " →";
     width: auto;
     height: auto;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
 }
 
 button[disabled],
@@ -2044,19 +2044,20 @@ footer {
 }
 
 .nav-primary-list a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "League Gothic", Impact, sans-serif;
+    font-display: swap;
     -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
     will-change: color, padding-bottom, border-bottom-width, transform;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     color: #737373;
     display: block;
     padding: 0.75rem 1rem;
     border-bottom-width: 0;
     margin-bottom: 0.25rem;
-    font-family: "League Gothic", Impact, sans-serif;
     font-size: 1.25rem;
     line-height: 1.25;
 }
@@ -2531,6 +2532,7 @@ p + .nav-secondary {
 /*aside*/
 .author {
     font-family: "Proxima Nova", sans-serif;
+    font-display: swap;
 }
 
 @media (max-width: 800px) {
@@ -2553,8 +2555,8 @@ p + .nav-secondary {
  * More information about the Author, the Page, or the Post
  */
 .author-information {
-    margin-bottom: 1.25rem;
     font-family: Georgia, serif;
+    margin-bottom: 1.25rem;
     font-size: 0.875rem;
     font-style: italic;
     line-height: 1.429;
@@ -2572,9 +2574,10 @@ p + .nav-secondary {
 .author-information strong {
     text-transform: uppercase;
     letter-spacing: 0;
+    font-family: "Proxima Nova", sans-serif;
+    font-display: swap;
     color: inherit;
     border-bottom-width: 0;
-    font-family: "Proxima Nova", sans-serif;
     font-weight: 600;
     font-style: normal;
 }
@@ -2856,6 +2859,8 @@ code[data-lang]::before {
     border-radius: 0.375rem 0.375rem 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: "Proxima Nova", sans-serif;
+    font-display: swap;
     position: absolute;
     top: 0;
     left: 0;
@@ -2867,7 +2872,6 @@ code[data-lang]::before {
     color: #f9f9f9;
     padding: 0 1.25rem;
     font-size: 1.25rem;
-    font-family: "Proxima Nova", sans-serif;
     font-weight: 600;
     line-height: 2.25rem;
     text-shadow: none;
@@ -3106,13 +3110,12 @@ iframe {
     margin-bottom: 0;
 }
 
-.media--16-9,
-.media--vimeo {
+.media--16-by-9, .media--vimeo,
+.media--youtube {
     padding-top: 56.25%;
 }
 
-.media--4-3,
-.media--speackerdeck {
+.media--4-by-3, .media--speackerdeck {
     padding-top: 75%;
 }
 
@@ -3165,10 +3168,10 @@ iframe {
 
 .color-block-list li {
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
-    font-size: 0.875rem;
-    font-weight: 600;
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
+    font-size: 0.875rem;
+    font-weight: 600;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;

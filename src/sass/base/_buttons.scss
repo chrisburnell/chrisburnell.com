@@ -10,6 +10,7 @@ button,
     @include non-selectable;
     @include border-radius(thin);
     @include case(uppercase);
+    @include font-family(alpha);
     @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
@@ -20,7 +21,6 @@ button,
     padding: 0 0.727em 0.182em;
     margin-top: 0.25rem;
     overflow: visible;
-    font-family: $font-family-alpha;
     font-size: $font-size-beta;
     line-height: 2;
     text-align: center;
@@ -72,14 +72,13 @@ button,
 
     &[rel="external"] {
         &::after {
+            @include font-family(monospace);
             @include position(reset);
             @include will-change(initial);
             // NO-BREAK SPACE, RIGHTWARDS ARROW
             content: " →";
             width:  auto; // unset `width` from above
             height: auto; // unset `height` from above
-            font-family: $font-family-monospace;
-            font-variant-ligatures: none;
         }
     }
 

@@ -62,6 +62,7 @@ snippet of code on a project of your own!  -->
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' | join: '  ' %}
 
+{% assign svg_title_count = 0 %}
 {% assign code_toggle_count = 0 %}
 
 <html lang="{{ site.language }}">
@@ -151,14 +152,12 @@ snippet of code on a project of your own!  -->
 
 <body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
 
-    {% include assets/svg-master.html %}
-
     <a class="visually-hidden" href="#content">Skip to main content</a>
 
     <header class="wrap" role="banner">
 
         <a rel="home" class="logo" href="/" title="{{ site.title }}">
-            {% include content/svg.html type='raven' %}
+            {% include content/svg.html type='raven' title=site.title %}
         </a>
 
         {% include components/nav-primary.html %}
