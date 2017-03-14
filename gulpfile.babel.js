@@ -13,6 +13,7 @@ import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import imagemin from 'gulp-imagemin';
+import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
@@ -96,6 +97,7 @@ gulp.task('css-lint', () => {
 gulp.task('css-main', ['css-lint'], () => {
     return gulp.src(`${paths.css.src}/main.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.css.dest}`))
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
@@ -136,6 +138,7 @@ gulp.task('css-main', ['css-lint'], () => {
 gulp.task('css-critical', () => {
     return gulp.src(`${paths.css.src}/critical.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.includes}/generated/`))
         .pipe(sass({
             errLogToConsole: true,
             indentWidth: 4,
@@ -178,6 +181,7 @@ gulp.task('css-critical', () => {
 gulp.task('css-sassdoc', () => {
     return gulp.src(`${paths.css.src}/**/*.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.sassdoc}`))
         .pipe(sassdoc({
             dest: `${paths.sassdoc}/`
         }));
@@ -193,6 +197,7 @@ gulp.task('js-compile', () => {
                      `!${paths.js.src}/serviceworker.js`,
                      `${paths.js.src}/**/*.js`])
         .pipe(plumber())
+        .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('main.js'))
@@ -212,6 +217,7 @@ gulp.task('js-loadcss', () => {
     return gulp.src([`${paths.js.src}/vendors/loadcss.js`,
                      `${paths.js.src}/vendors/loadcss-preload-polyfill.js`])
         .pipe(plumber())
+        .pipe(newer(`${paths.includes}/generated/`))
         .pipe(uglify({
             mangle: false
         }))
@@ -223,6 +229,7 @@ gulp.task('js-loadcss', () => {
 gulp.task('js-serviceworker', () => {
     return gulp.src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
+        .pipe(newer(`${paths.root}/`))
         .pipe(gulp.dest(`${paths.root}/`));
 });
 
@@ -231,6 +238,8 @@ gulp.task('js-serviceworker', () => {
 // Compress src images
 gulp.task('compress-images', () => {
     return gulp.src(`${paths.images.src}/**/*`, { base: paths.images.src })
+        .pipe(plumber())
+        .pipe(newer(`${paths.images.dest}/`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
@@ -238,6 +247,8 @@ gulp.task('compress-images', () => {
 // Generate WebP-format counterparts for all PNG images
 gulp.task('png-to-webp', () => {
     return gulp.src(`${paths.images.src}/**/*.png`, { base: paths.images.src })
+        .pipe(plumber())
+        .pipe(newer(`${paths.images.dest}/`))
         .pipe(imagemin([
             webp({
                 lossless: true
