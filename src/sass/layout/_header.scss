@@ -9,12 +9,12 @@ header {
     justify-content: space-between;
     overflow-y: hidden;
 
+    @include media("<=small") {
+        flex-direction: column;
+    }
+
     @include media("<=medium") {
         // center .logo below the `medium` breakpoint
         text-align: center;
-    }
-
-    @include media("<=small") {
-        flex-direction: column;
     }
 }

@@ -258,7 +258,7 @@ p:empty {
     visibility: hidden;
 }
 
-@media (min-width: 1141px) {
+@media (min-width: 501px) and (max-width: 800px) {
     p.columns {
         -webkit-column-count: 2;
            -moz-column-count: 2;
@@ -269,7 +269,7 @@ p:empty {
     }
 }
 
-@media (max-width: 800px) and (min-width: 501px) {
+@media (min-width: 1141px) {
     p.columns {
         -webkit-column-count: 2;
            -moz-column-count: 2;
@@ -1755,18 +1755,18 @@ header {
     overflow-y: hidden;
 }
 
-@media (max-width: 800px) {
-    header {
-        text-align: center;
-    }
-}
-
 @media (max-width: 500px) {
     header {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        text-align: center;
     }
 }
 
@@ -1778,12 +1778,6 @@ header {
 .content {
     padding-top: 2.25rem;
     border-top: 0.25rem solid #5f8aa6;
-}
-
-@media (min-width: 801px) {
-    .content {
-        padding-left: 18.125rem;
-    }
 }
 
 @media (max-width: 800px) {
@@ -1798,6 +1792,12 @@ header {
     }
 }
 
+@media (min-width: 801px) {
+    .content {
+        padding-left: 18.125rem;
+    }
+}
+
 /**
  * The width of the asides is static above the medium breakpoint and always
  * floated within an article or list of articles. The math is calculated as in
@@ -1807,18 +1807,18 @@ aside {
     font-family: Georgia, serif;
 }
 
+@media (max-width: 800px) {
+    aside {
+        width: 100%;
+    }
+}
+
 @media (min-width: 801px) {
     aside {
         width: 15.875rem;
         float: left;
         margin-left: -18.125rem;
         margin-bottom: 2.25rem;
-    }
-}
-
-@media (max-width: 800px) {
-    aside {
-        width: 100%;
     }
 }
 
@@ -1912,15 +1912,17 @@ footer {
     border-bottom-width: 0;
 }
 
-@media (min-width: 501px) {
+@media (max-width: 500px) {
     .logo {
-        height: 6.25rem;
+        height: 5.625rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 501px) {
     .logo {
-        width: 15.875rem;
+        height: 6.25rem;
     }
 }
 
@@ -1930,11 +1932,9 @@ footer {
     }
 }
 
-@media (max-width: 500px) {
+@media (min-width: 801px) {
     .logo {
-        height: 5.625rem;
-        margin-left: auto;
-        margin-right: auto;
+        width: 15.875rem;
     }
 }
 
@@ -1948,15 +1948,6 @@ footer {
     fill: #5f8aa6;
 }
 
-@media (min-width: 801px) {
-    .logo svg {
-        width: 8.5rem;
-        height: 8.5rem;
-        -webkit-transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
-                transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
-    }
-}
-
 @media (max-width: 800px) {
     .logo svg {
         width: 7rem;
@@ -1967,9 +1958,11 @@ footer {
 }
 
 @media (min-width: 801px) {
-    .logo:hover svg, .logo:focus svg {
-        -webkit-transform: translateX(4rem) translateY(-3rem) translateZ(0);
-                transform: translateX(4rem) translateY(-3rem) translateZ(0);
+    .logo svg {
+        width: 8.5rem;
+        height: 8.5rem;
+        -webkit-transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
+                transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
     }
 }
 
@@ -1981,9 +1974,9 @@ footer {
 }
 
 @media (min-width: 801px) {
-    .logo:active svg {
-        -webkit-transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
-                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
+    .logo:hover svg, .logo:focus svg {
+        -webkit-transform: translateX(4rem) translateY(-3rem) translateZ(0);
+                transform: translateX(4rem) translateY(-3rem) translateZ(0);
     }
 }
 
@@ -1991,6 +1984,13 @@ footer {
     .logo:active svg {
         -webkit-transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
                 transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
+    }
+}
+
+@media (min-width: 801px) {
+    .logo:active svg {
+        -webkit-transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
+                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
     }
 }
 
@@ -2025,21 +2025,21 @@ footer {
     font-size: 1rem;
 }
 
-@media (min-width: 801px) {
+@media (max-width: 500px) {
     .nav-primary-list li + li {
-        margin-left: 1em;
+        margin-left: 0.25em;
     }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 501px) and (max-width: 800px) {
     .nav-primary-list li + li {
         margin-left: 0.5em;
     }
 }
 
-@media (max-width: 500px) {
+@media (min-width: 801px) {
     .nav-primary-list li + li {
-        margin-left: 0.25em;
+        margin-left: 1em;
     }
 }
 
@@ -2227,6 +2227,19 @@ aside + .lede {
     margin-bottom: 0;
 }
 
+@media (max-width: 500px) {
+    .content-list li {
+        width: 100%;
+        display: inline-block;
+    }
+    .content-list li + li {
+        margin-top: 1.25rem;
+    }
+    .content-list li:nth-child(2n+1) a {
+        background-color: rgba(6, 6, 6, 0.05);
+    }
+}
+
 @media (min-width: 501px) {
     .content-list li {
         width: 49.0125%;
@@ -2242,19 +2255,6 @@ aside + .lede {
         margin-top: 1.25rem;
     }
     .content-list li:nth-child(4n+1) a, .content-list li:nth-child(4n+4) a {
-        background-color: rgba(6, 6, 6, 0.05);
-    }
-}
-
-@media (max-width: 500px) {
-    .content-list li {
-        width: 100%;
-        display: inline-block;
-    }
-    .content-list li + li {
-        margin-top: 1.25rem;
-    }
-    .content-list li:nth-child(2n+1) a {
         background-color: rgba(6, 6, 6, 0.05);
     }
 }
@@ -2453,17 +2453,6 @@ aside .content-list a {
     }
 }
 
-@media (min-width: 501px) {
-    .nav-secondary button, .nav-secondary
-    .button,
-    .buttons-list button,
-    .buttons-list
-    .button {
-        margin-left: 0.625rem;
-        margin-right: 0.625rem;
-    }
-}
-
 @media (max-width: 500px) {
     .nav-secondary button, .nav-secondary
     .button,
@@ -2487,6 +2476,17 @@ aside .content-list a {
     .button +
     .button {
         margin-top: 0.625rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .nav-secondary button, .nav-secondary
+    .button,
+    .buttons-list button,
+    .buttons-list
+    .button {
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
     }
 }
 
@@ -2777,15 +2777,15 @@ footer div {
     margin-right: 0.625rem;
 }
 
-@media (min-width: 801px) {
-    .nav-tertiary {
-        margin-top: 0.3125rem;
-    }
-}
-
 @media (max-width: 800px) {
     .nav-tertiary {
         margin-top: 1.25rem;
+    }
+}
+
+@media (min-width: 801px) {
+    .nav-tertiary {
+        margin-top: 0.3125rem;
     }
 }
 

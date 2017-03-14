@@ -30,16 +30,17 @@
         font-size: 1rem;
 
         & + li {
-            @include media(">medium") {
-                margin-left: 1em;
-            }
-
-            @include media("<=medium") {
-                margin-left: 0.5em;
-            }
 
             @include media("<=small") {
                 margin-left: 0.25em;
+            }
+
+            @include media(">small", "<=medium") {
+                margin-left: 0.5em;
+            }
+
+            @include media(">medium") {
+                margin-left: 1em;
             }
         }
     }
@@ -67,7 +68,7 @@
         }
 
         @include media("<=small") {
-            padding-left: 0.5rem;
+            padding-left:  0.5rem;
             padding-right: 0.5rem;
         }
     }
@@ -91,9 +92,9 @@
 // Complementary to the Effect for interactions and active paths
 %nav-primary-anchor-arrow {
     content: "";
-    border-top: 0.5em $border-style-default $color-brand;
+    border-top:   0.5em $border-style-default $color-brand;
     border-right: 0.5em $border-style-default transparent;
-    border-left: 0.5em $border-style-default transparent;
+    border-left:  0.5em $border-style-default transparent;
     position: absolute;
     top: 100%;
     left: 50%;

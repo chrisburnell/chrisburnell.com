@@ -18,6 +18,23 @@
     }
 
     li {
+        @include media("<=small") {
+            width: 100%;
+            display: inline-block;
+
+            // Push all list items down (after the first one, in the default
+            // one-column format)
+            & + li {
+                margin-top: $measure-medium;
+            }
+
+            &:nth-child(2n+1) {
+                a {
+                    background-color: $color-black--subtle;
+                }
+            }
+        }
+
         @include media(">small") {
             width: 49.0125%;
             display: flex;
@@ -31,23 +48,6 @@
 
             &:nth-child(4n+1),
             &:nth-child(4n+4) {
-                a {
-                    background-color: $color-black--subtle;
-                }
-            }
-        }
-
-        @include media("<=small") {
-            width: 100%;
-            display: inline-block;
-
-            // Push all list items down (after the first one, in the default
-            // one-column format)
-            & + li {
-                margin-top: $measure-medium;
-            }
-
-            &:nth-child(2n+1) {
                 a {
                     background-color: $color-black--subtle;
                 }

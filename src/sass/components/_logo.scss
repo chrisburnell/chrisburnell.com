@@ -10,22 +10,22 @@
     position: relative;
     border-bottom-width: 0;
 
-    @include media(">small") {
-        height: 6.25rem;
+    @include media("<=small") {
+        height: 5.625rem;
+        margin-left:  auto;
+        margin-right: auto;
     }
 
-    @include media(">medium") {
-        width: $aside-width;
+    @include media(">small") {
+        height: 6.25rem;
     }
 
     @include media("<=medium") {
         width: 7rem;
     }
 
-    @include media("<=small") {
-        height: 5.625rem;
-        margin-left:  auto;
-        margin-right: auto;
+    @include media(">medium") {
+        width: $aside-width;
     }
 
     svg {
@@ -34,38 +34,38 @@
         @include will-change(transform);
         fill: $color-brand;
 
-        @include media(">medium") {
-            width:  8.5rem;
-            height: 8.5rem;
-            transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
-        }
-
         @include media("<=medium") {
             width:  7rem;
             height: 7rem;
             transform: translateX(0) translateY(-1.5rem) translateZ(0);
         }
+
+        @include media(">medium") {
+            width:  8.5rem;
+            height: 8.5rem;
+            transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
+        }
     }
     &:hover,
     &:focus {
         svg {
-            @include media(">medium") {
-                transform: translateX(4rem) translateY(-3rem) translateZ(0);
-            }
-
             @include media("<=medium") {
                 transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
+            }
+            
+            @include media(">medium") {
+                transform: translateX(4rem) translateY(-3rem) translateZ(0);
             }
         }
     }
     &:active {
         svg {
-            @include media(">medium") {
-                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
-            }
-
             @include media("<=medium") {
                 transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
+            }
+
+            @include media(">medium") {
+                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
             }
         }
     }
