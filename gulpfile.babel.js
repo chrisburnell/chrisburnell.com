@@ -56,7 +56,7 @@ const stylelintRules = {
         'color-hex-case': 'lower',
         'color-hex-length': 'long',
         'color-no-invalid-hex': true,
-        // 'font-weight-notation': 'numeric',
+        'font-weight-notation': 'numeric',
         'function-url-quotes': 'always',
         // 'max-nesting-depth': 3,
         'number-leading-zero': 'always',
