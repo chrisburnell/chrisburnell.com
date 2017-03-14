@@ -4,7 +4,7 @@
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
 ![Version](https://img.shields.io/badge/version-2.8.2-blue.svg?style=flat-square)
-[![GitHub license](https://img.shields.io/badge/license-GNU GPLv3-blue.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
 
 [![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
 [![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/package.json)
