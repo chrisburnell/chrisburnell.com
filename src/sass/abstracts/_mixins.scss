@@ -34,7 +34,7 @@
     }
 
     background-clip: padding-box;
-    border-radius: #{$value};
+    border-radius: $value;
 }
 
 
@@ -56,10 +56,10 @@
         @error "case() expects at least one parameter.";
     }
 
-    text-transform: #{$case};
+    text-transform: $case;
 
     @if $letter-spacing != null {
-        letter-spacing: #{$letter-spacing};
+        letter-spacing: $letter-spacing;
     } @else {
         @if $case == "uppercase" {
             letter-spacing: $letter-spacing-uppercase;
@@ -331,7 +331,7 @@
         $transition: unpack-transition($values...);
     }
 
-    transition: #{$transition};
+    transition: $transition;
 }
 
 
@@ -371,5 +371,5 @@
         @error "will-change() expects at least one parameter.";
     }
 
-    will-change: #{$values};
+    will-change: $values;
 }
