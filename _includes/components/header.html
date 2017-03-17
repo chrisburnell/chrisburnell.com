@@ -101,7 +101,7 @@ snippet of code on a project of your own!  -->
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
-    <link rel="shortcut icon" href="{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url }}" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}">
 
     <link rel="author" href="/humans.txt">
@@ -150,7 +150,7 @@ snippet of code on a project of your own!  -->
 
 </head>
 
-<body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
+<body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %} itemscope itemtype="https://schema.org/WebPage">
 
     <a class="visually-hidden" href="#content">Skip to main content</a>
 

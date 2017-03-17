@@ -20,18 +20,22 @@
     const jsonFeedUrl = '../search.json';
     const allowEmpty = false;
     const resultTemplatePage = `<li role="listitem">
-        <a href="{{url}}">
-            <h4 class="title">{{title}}</h4>
-            <p class="lede">{{lede}}</p>
-        </a>
+        <article role="article" itemscope itemtype="https://schema.org/Article">
+            <a href="{{url}}">
+                <h4 class="title" itemprop="name">{{title}}</h4>
+                <p class="lede" itemprop="description">{{lede}}</p>
+            </a>
+        </article>
     </li>`;
     const resultTemplatePost = `<li role="listitem">
-        <a href="{{url}}">
-            <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="#svg--{{icon}}" /></svg>
-            <h4 class="title">{{title}}</h4>
-            <p class="lede">{{lede}}</p>
-            <time class="date" datetime="{{date}}">{{date_friendly}}</time>
-        </a>
+        <article role="article" itemscope itemtype="https://schema.org/TechArticle">
+            <a href="{{url}}">
+                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>
+                <h4 class="title" itemprop="name">{{title}}</h4>
+                <p class="lede" itemprop="description">{{lede}}</p>
+                <time class="date" datetime="{{date}}">{{date_friendly}}</time>
+            </a>
+        </article>
     </li>`;
 
 

@@ -76,6 +76,8 @@ _includes
 │   ├── comments-button.html
 │   ├── comments.html
 │   ├── content-list-item.html
+│   ├── footer.html
+│   ├── header.html
 │   ├── item-feed.html
 │   ├── main-aside.html
 │   ├── nav-primary.html
@@ -96,9 +98,9 @@ _includes
 │   ├── img.html
 │   ├── svg.html
 │   └── twitter-card.html
-└── layouts
-    ├── footer.html
-    └── header.html
+└── generated
+    ├── critical-css.html
+    └── loadcss.html
 ```
 
 

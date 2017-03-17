@@ -1,8 +1,8 @@
-{% include layouts/header.html %}
+{% include components/header.html %}
 
 
 <main class="wrap" role="main">
-    <article class="content" id="content" role="article" itemscope itemtype="http://schema.org/TechArticle">
+    <article class="content" id="content" role="article" itemscope itemtype="https://schema.org/TechArticle">
 
         <h1 class="title" id="article" role="heading">
             <span itemprop="name">{{ page.title }}</span>
@@ -55,7 +55,7 @@
                         {% if url contains site.url %}
                             {% assign rel = '' %}
                         {% else %}
-                            {% assign rel = 'rel="external"' %}
+                            {% assign rel = ' rel="external"' %}
                         {% endif %}
                         {% if link.title == null or link.title == empty %}
                             {% assign title = url %}
@@ -63,7 +63,7 @@
                             {% assign title = link.title %}
                         {% endif %}
                         <li>
-                            <a href="{{ url }}" {{ rel }}>{{ title }}</a>
+                            <a href="{{ url }}"{{ rel }}>{{ title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -86,4 +86,4 @@
 </main>
 
 
-{% include layouts/footer.html %}
+{% include components/footer.html %}
