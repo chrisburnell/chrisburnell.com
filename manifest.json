@@ -17,6 +17,11 @@ searchable: false
     "background_color": "#{{ site.color_brand }}",
     "icons": [
         {
+            "src": "/favicon.ico",
+            "type": "image/ico",
+            "sizes": "16x16 32x32 48x48 64x64"
+        },
+        {
             "src": "/favicon-32.png",
             "type": "image/png",
             "sizes": "32x32"
@@ -25,6 +30,26 @@ searchable: false
             "src": "/favicon-32.webp",
             "type": "image/webp",
             "sizes": "32x32"
+        },
+        {
+            "src": "/favicon-48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "/favicon-48.webp",
+            "type": "image/webp",
+            "sizes": "48x48"
+        },
+        {
+            "src": "/favicon-64.png",
+            "type": "image/png",
+            "sizes": "64x64"
+        },
+        {
+            "src": "/favicon-64.webp",
+            "type": "image/webp",
+            "sizes": "64x64"
         },
         {
             "src": "/favicon-72.png",
