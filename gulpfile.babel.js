@@ -56,6 +56,9 @@ const stylelintRules = {
         'color-hex-case': 'lower',
         'color-hex-length': 'long',
         'color-no-invalid-hex': true,
+        'declaration-block-no-duplicate-properties': [true, {
+            ignore: ["consecutive-duplicates-with-different-values"]
+        }],
         'font-weight-notation': 'numeric',
         'function-url-quotes': 'always',
         // 'max-nesting-depth': 3,
@@ -70,7 +73,7 @@ const stylelintRules = {
         'selector-no-id': true,
         'shorthand-property-no-redundant-values': true,
         'string-quotes': 'double',
-        'unit-blacklist': ['pc', 'pt', 'ex', 'mm', 'cm', 'in'],
+        'unit-blacklist': ['pc', 'pt', 'ex', 'ch', 'mm', 'cm', 'in'],
         'unit-case': 'lower',
         'unit-no-unknown': true
     }
