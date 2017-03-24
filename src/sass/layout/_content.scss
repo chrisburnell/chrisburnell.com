@@ -21,11 +21,5 @@
 
     @include media(">medium") {
         padding-left: #{$aside-width + $measure-large};
-
-        @supports (display: flex) {
-            display: subgrid;
-            grid-area: content;
-            padding-left: 0;
-        }
     }
 }

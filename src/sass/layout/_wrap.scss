@@ -7,12 +7,6 @@
 main {
     display: block;
     padding-bottom: $measure-large;
-
-    @supports (display: grid) {
-        display: grid;
-        grid-template-columns: unquote("[aside] #{$aside-width} [content] 1fr");
-        grid-column-gap: $gutter-width;
-    }
 }
 
 .wrap {

@@ -14,13 +14,7 @@ header {
     }
 
     @include media("<=medium") {
-        justify-content: center;
-    }
-
-    @include media(">medium") {
-        @supports (display: grid) {
-            display: grid;
-            grid-template-columns: unquote("[left] #{$aside-width} [middle] min-content [right]");
-        }
+        // center .logo below the `medium` breakpoint
+        text-align: center;
     }
 }

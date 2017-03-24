@@ -13,12 +13,6 @@
         flex: 1 0 100%;
         padding-top: $measure-small;
     }
-
-    @include media(">medium") {
-        @supports (display: grid) {
-            grid-area: right;
-        }
-    }
 }
 
 .nav-primary-list {
