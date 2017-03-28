@@ -338,7 +338,10 @@ ol.default-list > li {
 
 ol:not([class]) > li::before,
 ol.default-list > li::before {
-    content: counter(ordered-list) ".";
+    content: counter(ordered-list, decimal-leading-zero) ".";
+    font-variant-numeric: tabular-nums;
+    -webkit-font-feature-settings: "tnum";
+            font-feature-settings: "tnum";
 }
 
 ol:not([class])[reversed],
@@ -1110,24 +1113,45 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     overflow-y: hidden;
 }
 
-@media (max-width: 500px) {
+@supports (display: flex) {
     header {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        display: -ms-grid;
+        display: grid;
     }
 }
 
 @media (max-width: 800px) {
     header {
-        text-align: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    @supports ((display: -ms-grid) or (display: grid)) {
+        header {
+            -ms-grid-rows: (min-content)[2];
+                grid-template-rows: repeat(2, min-content);
+        }
+    }
+}
+
+@media (min-width: 801px) {
+    header {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    @supports ((display: -ms-grid) or (display: grid)) {
+        header {
+            -ms-grid-columns: 15.875rem min-content;
+                grid-template-columns: 15.875rem min-content;
+        }
     }
 }
 
@@ -1267,29 +1291,21 @@ aside p {
     border-bottom-width: 0;
 }
 
-@media (max-width: 500px) {
-    .logo {
-        height: 5.625rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 501px) {
-    .logo {
-        height: 6.25rem;
-    }
-}
-
 @media (max-width: 800px) {
     .logo {
-        width: 7rem;
+        height: 5.5rem;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 7rem;
+                flex: 1 0 7rem;
     }
 }
 
 @media (min-width: 801px) {
     .logo {
-        width: 15.875rem;
+        height: 6.25rem;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 15.875rem;
+                flex: 1 0 15.875rem;
     }
 }
 
@@ -1300,6 +1316,8 @@ aside p {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     will-change: transform;
+    position: absolute;
+    top: 0;
     fill: #5f8aa6;
 }
 
@@ -1307,8 +1325,9 @@ aside p {
     .logo svg {
         width: 7rem;
         height: 7rem;
-        -webkit-transform: translateX(0) translateY(-1.5rem) translateZ(0);
-                transform: translateX(0) translateY(-1.5rem) translateZ(0);
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
+                transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
     }
 }
 
@@ -1316,6 +1335,7 @@ aside p {
     .logo svg {
         width: 8.5rem;
         height: 8.5rem;
+        left: 0;
         -webkit-transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
                 transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
     }
@@ -1355,7 +1375,7 @@ aside p {
     white-space: nowrap;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .nav-primary {
         -webkit-box-flex: 1;
             -ms-flex: 1 0 100%;

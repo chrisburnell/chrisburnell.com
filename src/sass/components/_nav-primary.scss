@@ -9,7 +9,7 @@
     padding-bottom: $measure-medium;
     white-space: nowrap;
 
-    @include media("<=small") {
+    @include media("<=medium") {
         flex: 1 0 100%;
         padding-top: $measure-small;
     }

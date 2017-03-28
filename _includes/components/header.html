@@ -49,7 +49,7 @@ snippet of code on a project of your own!  -->
 {% elsif page.banner_mobile %}
     {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
 {% else %}
-    {% capture meta_image %}{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    {% capture meta_image %}{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
 {% endif %}
 
 {% capture body_class %}
@@ -101,8 +101,7 @@ snippet of code on a project of your own!  -->
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
-    <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url }}" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="{{ '/favicon.png' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="mask-icon" href="{{ '/favicon.svg' | prepend: site.baseurl | prepend: site.url }}" color="#{{ site.color_brand }}">
 
     <link rel="author" href="/humans.txt">
     <link rel="manifest" href="/manifest.json">

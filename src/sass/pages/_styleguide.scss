@@ -25,6 +25,8 @@
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
+         font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum";
 
         @include media("<=small") {
             flex: 0 1 100%;

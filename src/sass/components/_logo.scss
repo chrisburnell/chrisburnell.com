@@ -10,39 +10,35 @@
     position: relative;
     border-bottom-width: 0;
 
-    @include media("<=small") {
-        height: 5.625rem;
-        margin-left:  auto;
-        margin-right: auto;
-    }
-
-    @include media(">small") {
-        height: 6.25rem;
-    }
-
     @include media("<=medium") {
-        width: 7rem;
+        height: 5.5rem;
+        flex: 1 0 7rem;
     }
 
     @include media(">medium") {
-        width: $aside-width;
+        height: 6.25rem;
+        flex: 1 0 $aside-width;
     }
 
     svg {
         @include position(top-left);
         @include transition(all 1s);
         @include will-change(transform);
+        position: absolute;
+        top:  0;
         fill: $color-brand;
 
         @include media("<=medium") {
             width:  7rem;
             height: 7rem;
-            transform: translateX(0) translateY(-1.5rem) translateZ(0);
+            left: 50%;
+            transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
         }
 
         @include media(">medium") {
             width:  8.5rem;
             height: 8.5rem;
+            left: 0;
             transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
         }
     }
@@ -52,7 +48,7 @@
             @include media("<=medium") {
                 transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
             }
-            
+
             @include media(">medium") {
                 transform: translateX(4rem) translateY(-3rem) translateZ(0);
             }

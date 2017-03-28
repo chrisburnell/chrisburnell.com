@@ -1,6 +1,16 @@
 ---
 layout: null
 searchable: false
+
+icon_sizes:
+- 16
+- 32
+- 48
+- 64
+- 128
+- 180
+- 196
+- 256
 ---
 
 
@@ -21,75 +31,17 @@ searchable: false
             "type": "image/ico",
             "sizes": "16x16 32x32 48x48 64x64"
         },
+        {% for size in page.icon_sizes %}
         {
-            "src": "/favicon-32.png",
+            "src": "/favicon-{{ size }}.png",
             "type": "image/png",
-            "sizes": "32x32"
+            "sizes": "{{ size }}x{{ size }}"
         },
         {
-            "src": "/favicon-32.webp",
+            "src": "/favicon-{{ size }}.webp",
             "type": "image/webp",
-            "sizes": "32x32"
+            "sizes": "{{ size }}x{{ size }}"
         },
-        {
-            "src": "/favicon-48.png",
-            "type": "image/png",
-            "sizes": "48x48"
-        },
-        {
-            "src": "/favicon-48.webp",
-            "type": "image/webp",
-            "sizes": "48x48"
-        },
-        {
-            "src": "/favicon-64.png",
-            "type": "image/png",
-            "sizes": "64x64"
-        },
-        {
-            "src": "/favicon-64.webp",
-            "type": "image/webp",
-            "sizes": "64x64"
-        },
-        {
-            "src": "/favicon-72.png",
-            "type": "image/png",
-            "sizes": "72x72"
-        },
-        {
-            "src": "/favicon-72.webp",
-            "type": "image/webp",
-            "sizes": "72x72"
-        },
-        {
-            "src": "/favicon.png",
-            "type": "image/png",
-            "sizes": "128x128"
-        },
-        {
-            "src": "/favicon.webp",
-            "type": "image/webp",
-            "sizes": "128x128"
-        },
-        {
-            "src": "/favicon-144.png",
-            "type": "image/png",
-            "sizes": "144x144"
-        },
-        {
-            "src": "/favicon-144.webp",
-            "type": "image/webp",
-            "sizes": "144x144"
-        },
-        {
-            "src": "/favicon-256.png",
-            "type": "image/png",
-            "sizes": "256x256"
-        },
-        {
-            "src": "/favicon-256.webp",
-            "type": "image/webp",
-            "sizes": "256x256"
-        }
+        {% endfor %}
     ]
 }

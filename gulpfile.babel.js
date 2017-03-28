@@ -196,6 +196,7 @@ gulp.task('css-sassdoc', () => {
 gulp.task('js-compile', () => {
     return gulp.src([`!${paths.js.src}/vendors/loadcss.js`,
                      `!${paths.js.src}/vendors/loadcss-preload-polyfill.js`,
+                     `!${paths.js.src}/vendors/svg4everybody.js`,
                      `!${paths.js.src}/outdated/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `${paths.js.src}/**/*.js`])

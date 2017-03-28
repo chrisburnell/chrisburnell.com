@@ -6,7 +6,7 @@ layout: null
 <?xml version="1.0" encoding="utf-8"?>
 <svg class="svg--sprites" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 {% for symbol in site.data.svg %}
-    <symbol id="svg--{{ symbol.title | downcase }}" viewBox="0 0 {{ symbol.viewbox }}">
+    <symbol id="svg--{{ symbol.title | downcase }}" viewBox="0 0 {{ symbol.viewBox }}">
         <title>{{ symbol.title }}</title>
         <path d="{{ symbol.path }}" />
     </symbol>

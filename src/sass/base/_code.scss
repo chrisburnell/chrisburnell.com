@@ -185,6 +185,7 @@ pre {
     }
     // Generic.Prompt
     .gp {
+        @include non-selectable;
         color: #93a1a1;
     }
     // Generic.Strong
