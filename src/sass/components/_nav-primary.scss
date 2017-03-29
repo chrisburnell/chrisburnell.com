@@ -9,9 +9,10 @@
     padding-bottom: $measure-medium;
     white-space: nowrap;
 
-    @include media("<=small") {
+    @include media("<=medium") {
         flex: 1 0 100%;
         padding-top: $measure-small;
+        text-align: center;
     }
 }
 
@@ -20,40 +21,37 @@
     // remove space between list items
     font-size: 0;
 
-    @include media("<=medium") {
-        text-align: center;
-    }
-
     li {
         display: inline-block;
         // reset font-size
         font-size: 1rem;
 
         & + li {
-            @include media(">medium") {
-                margin-left: 1em;
-            }
-
-            @include media("<=medium") {
-                margin-left: 0.5em;
-            }
 
             @include media("<=small") {
                 margin-left: 0.25em;
+            }
+
+            @include media(">small", "<=medium") {
+                margin-left: 0.5em;
+            }
+
+            @include media(">medium") {
+                margin-left: 1em;
             }
         }
     }
 
     a {
+        @include case(uppercase);
+        @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);
-        @include case(uppercase);
         color: $color-text-alt;
         display: block;
         padding: 0.75rem 1rem;
         border-bottom-width: 0;
         margin-bottom: 0.25rem;
-        font-family: $font-family-alpha;
         font-size: $font-size-large;
         line-height: $line-height-small;
 
@@ -67,7 +65,7 @@
         }
 
         @include media("<=small") {
-            padding-left: 0.5rem;
+            padding-left:  0.5rem;
             padding-right: 0.5rem;
         }
     }
@@ -91,9 +89,9 @@
 // Complementary to the Effect for interactions and active paths
 %nav-primary-anchor-arrow {
     content: "";
-    border-top: 0.5em $border-style-default $color-brand;
+    border-top:   0.5em $border-style-default $color-brand;
     border-right: 0.5em $border-style-default transparent;
-    border-left: 0.5em $border-style-default transparent;
+    border-left:  0.5em $border-style-default transparent;
     position: absolute;
     top: 100%;
     left: 50%;

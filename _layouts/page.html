@@ -1,13 +1,13 @@
-{% include layouts/header.html %}
+{% include components/header.html %}
 
 
 <main class="wrap" role="main">
-    <section class="content" id="content" role="document" itemscope itemtype="http://schema.org/Article">
+    <section class="content" id="content" role="document" itemscope itemtype="https://schema.org/Article">
 
         {% if page.page_class contains 'home' %}
-            <h1 class="tagline" role="heading">{{ site.tagline }}</h1>
+            <h1 class="tagline" role="heading" itemprop="name">{{ site.tagline }}</h1>
         {% else %}
-            <h1 class="title" role="heading">{{ page.title }}</h1>
+            <h1 class="title" role="heading" itemprop="name">{{ page.title }}</h1>
         {% endif %}
 
         {% include components/main-aside.html %}
@@ -15,11 +15,11 @@
         {% include components/banner.html %}
 
         {% if page.page_class contains 'home' %}
-            <h2 class="lede  lede--featured" id="lede">{{ site.lede }}</h2>
+            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ site.lede }}</h2>
         {% elsif page.page_class contains 'search' %}
-            <h2 class="lede  lede--featured  js-search-meta" id="lede">Search for something!</h2>
+            <h2 class="lede  lede--featured  js-search-meta" id="lede" itemprop="description">Search for something!</h2>
         {% elsif page.lede %}
-            <h2 class="lede  lede--featured" id="lede">{{ page.lede }}</h2>
+            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
         {% endif %}
 
         {{ content }}
@@ -28,4 +28,4 @@
 </main>
 
 
-{% include layouts/footer.html %}
+{% include components/footer.html %}

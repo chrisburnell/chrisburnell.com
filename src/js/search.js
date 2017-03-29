@@ -11,27 +11,31 @@
 
 
     let query;
+    let searchContainer = document.querySelector('.js-search');
+    let searchForm      = document.querySelector('.js-search-form');
+    let searchInput     = document.querySelector('.js-search-input');
+    let searchSubmit    = document.querySelector('.js-search-submit');
+    let resultsMeta     = document.querySelector('.js-search-meta');
+    let resultsList     = document.querySelector('.js-search-results-list');
     const jsonFeedUrl = '../search.json';
     const allowEmpty = false;
-    const searchContainer = document.querySelector('.js-search');
-    const searchForm      = document.querySelector('.js-search-form');
-    const searchInput     = document.querySelector('.js-search-input');
-    const searchSubmit    = document.querySelector('.js-search-submit');
-    const resultsMeta     = document.querySelector('.js-search-meta');
-    const resultsList     = document.querySelector('.js-search-results-list');
     const resultTemplatePage = `<li role="listitem">
-        <a href="{{url}}">
-            <h4 class="title">{{title}}</h4>
-            <p class="lede">{{lede}}</p>
-        </a>
+        <article role="article" itemscope itemtype="https://schema.org/Article">
+            <a href="{{url}}">
+                <h4 class="title" itemprop="name">{{title}}</h4>
+                <p class="lede" itemprop="description">{{lede}}</p>
+            </a>
+        </article>
     </li>`;
     const resultTemplatePost = `<li role="listitem">
-        <a href="{{url}}">
-            <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="#svg--{{icon}}" /></svg>
-            <h4 class="title">{{title}}</h4>
-            <p class="lede">{{lede}}</p>
-            <time class="date" datetime="{{date}}">{{date_friendly}}</time>
-        </a>
+        <article role="article" itemscope itemtype="https://schema.org/TechArticle">
+            <a href="{{url}}">
+                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>
+                <h4 class="title" itemprop="name">{{title}}</h4>
+                <p class="lede" itemprop="description">{{lede}}</p>
+                <time class="date" datetime="{{date}}">{{date_friendly}}</time>
+            </a>
+        </article>
     </li>`;
 
 
@@ -44,10 +48,6 @@
     searchSubmit.disabled = false;
     searchSubmit.setAttribute('aria-disabled', 'false');
 
-
-    ////
-    /// Search Functions
-    ////
 
     ////
     /// Initiate search functionality.
@@ -294,10 +294,6 @@
         resultsMeta.innerHTML = searchMeta;
     }
 
-
-    ////
-    /// Helper Functions
-    ////
 
     ////
     /// Gets query string parameter

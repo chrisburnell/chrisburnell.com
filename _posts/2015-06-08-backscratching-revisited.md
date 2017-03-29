@@ -27,7 +27,7 @@ In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-y
 --------
 
 
-I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/){:rel="external"} in the form of [ARIA](http://html5doctor.com/using-aria-in-html/){:rel="external"} and [Microdata](http://schema.org/docs/documents.html){:rel="external"}.
+I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/){:rel="external"} in the form of [ARIA](http://html5doctor.com/using-aria-in-html/){:rel="external"} and [Microdata](https://schema.org/docs/documents.html){:rel="external"}.
 
 In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/){:rel="external"} and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate visually-hidden text inside an anchor.
 
@@ -103,10 +103,10 @@ Since I know that if I have the need for a `span` to change some visual style, I
 
 {% include content/heading.html title='A Prickly Pear' %}
 
-But there’s a problem if we want to use [Microdata](http://schema.org/docs/documents.html){:rel="external"}. Let me demonstrate with a modified snippet of HTML from my site.
+But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html){:rel="external"}. Let me demonstrate with a modified snippet of HTML from my site.
 
 {% highlight html %}
-<aside class="author" itemscope itemtype="http://schema.org/Person">
+<aside class="author" itemscope itemtype="https://schema.org/Person">
     <div class="author-name">
         by <a href="/about/">
                <span itemprop="author">Chris Burnell</span>

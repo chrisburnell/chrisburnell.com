@@ -10,17 +10,22 @@
  * `layout/_content.scss`.
  */
 aside {
-    font-family: $font-family-serif;
+    @include font-family(serif);
+
+    @include media("<=medium") {
+        width: 100%;
+    }
 
     @include media(">medium") {
         width: $aside-width;
         float: left;
-        margin-left: -($aside-width + $measure-large);
+        margin-left: #{($aside-width + $measure-large) * -1};
         margin-bottom: $measure-large;
-    }
 
-    @include media("<=medium") {
-        width: 100%;
+        // @supports (display: grid) {
+        //     grid-area: aside;
+        //     margin-left: 0;
+        // }
     }
 
     &:not(.author):not(:last-child) {

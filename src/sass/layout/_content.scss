@@ -13,13 +13,19 @@
     padding-top: $measure-large;
     border-top: $border-width-default $border-style-default $color-brand;
 
-    @include media(">medium") {
-        padding-left: ($aside-width + $measure-large);
-    }
-
     @include media("<=medium") {
         // Below the medium breakpoint, `.content` and `aside` become full width.
         display: flex;
         flex-direction: column;
+    }
+
+    @include media(">medium") {
+        padding-left: #{$aside-width + $measure-large};
+
+        // @supports (display: grid) {
+        //     display: grid;
+        //     grid-area: content;
+        //     padding-left: 0;
+        // }
     }
 }

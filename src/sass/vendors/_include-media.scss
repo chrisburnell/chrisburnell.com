@@ -6,7 +6,7 @@
 //    |_|_| |_|\___|_|\__,_|\__,_|\___| |_| |_| |_|\___|\__,_|_|\__,_|
 //
 //      Simple, elegant and maintainable media queries in Sass
-//                        v1.4.1
+//                        v1.4.9
 //
 //                http://include-media.com
 //
@@ -16,12 +16,11 @@
 //      This project is licensed under the terms of the MIT license
 
 
-////
+///
 /// include-media library public configuration
 /// @author Eduardo Boucas
 /// @access public
-/// @group vendors
-////
+///
 
 
 ///
@@ -54,8 +53,13 @@ $media-expressions: (
   'handheld': 'handheld',
   'landscape': '(orientation: landscape)',
   'portrait': '(orientation: portrait)',
-  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
+  'script': 'script',
+  'half-hover': '(any-hover: on-demand)',
+  'hover': '(any-hover: hover)',
+  'coarse': '(any-pointer: coarse)',
+  'fine': '(any-pointer: fine)'
 ) !default;
 
 
@@ -83,7 +87,8 @@ $media-expressions: (
 $unit-intervals: (
   'px': 1,
   'em': 0.01,
-  'rem': 0.1
+  'rem': 0.1,
+  '': 0
 ) !default;
 
 ///
@@ -183,7 +188,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 ///
 /// @param {String} $message - Message to log
 ///
-@function log($message) {
+@function im-log($message) {
   @if feature-exists('at-error') {
     @error $message;
   } @else {
@@ -197,14 +202,14 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
 ///
 /// Wrapper mixin for the log function so it can be used with a more friendly
-/// API than `@if log('..') {}` or `$_: log('..')`. Basically, use the function
+/// API than `@if im-log('..') {}` or `$_: im-log('..')`. Basically, use the function
 /// within functions because it is not possible to include a mixin in a function
 /// and use the mixin everywhere else because it's much more elegant.
 ///
 /// @param {String} $message - Message to log
 ///
 @mixin log($message) {
-  @if log($message) {}
+  @if im-log($message) {}
 }
 
 
@@ -225,7 +230,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   $no-media-breakpoint-value: map-get($breakpoints, $im-no-media-breakpoint);
 
   @if not $no-media-breakpoint-value {
-    @if log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {}
+    @if im-log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {}
   }
 
   @each $condition in $conditions {
@@ -268,11 +273,11 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   }
 
   // It is not possible to include a mixin inside a function, so we have to
-  // rely on the `log(..)` function rather than the `log(..)` mixin. Because
+  // rely on the `im-log(..)` function rather than the `log(..)` mixin. Because
   // functions cannot be called anywhere in Sass, we need to hack the call in
   // a dummy variable, such as `$_`. If anybody ever raise a scoping issue with
-  // Sass 3.3, change this line in `@if log(..) {}` instead.
-  $_: log('No operator found in `#{$expression}`.');
+  // Sass 3.3, change this line in `@if im-log(..) {}` instead.
+  $_: im-log('No operator found in `#{$expression}`.');
 }
 
 
@@ -331,11 +336,11 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
   @if not $interval {
     // It is not possible to include a mixin inside a function, so we have to
-    // rely on the `log(..)` function rather than the `log(..)` mixin. Because
+    // rely on the `im-log(..)` function rather than the `log(..)` mixin. Because
     // functions cannot be called anywhere in Sass, we need to hack the call in
     // a dummy variable, such as `$_`. If anybody ever raise a scoping issue with
-    // Sass 3.3, change this line in `@if log(..) {}` instead.
-    $_: log('Unknown unit `#{unit($value)}`.');
+    // Sass 3.3, change this line in `@if im-log(..) {}` instead.
+    $_: im-log('Unknown unit `#{unit($value)}`.');
   }
 
   @if $operator == '>' {
@@ -413,15 +418,21 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   @if type-of($value) == 'number' {
     @return $value;
   } @else if type-of($value) != 'string' {
-    $_: log('Value for `to-number` should be a number or a string.');
+    $_: im-log('Value for `to-number` should be a number or a string.');
   }
 
+  $first-character: str-slice($value, 1, 1);
   $result: 0;
   $digits: 0;
-  $minus: str-slice($value, 1, 1) == '-';
+  $minus: ($first-character == '-');
   $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
 
-  @for $i from if($minus, 2, 1) through str-length($value) {
+  // Remove +/- sign if present at first character
+  @if ($first-character == '+' or $first-character == '-') {
+    $value: str-slice($value, 2);
+  }
+
+  @for $i from 1 through str-length($value) {
     $character: str-slice($value, $i, $i);
 
     @if not (index(map-keys($numbers), $character) or $character == '.') {
@@ -438,7 +449,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     }
   }
 
-  @return if($minus, -$result, $result);;
+  @return if($minus, -$result, $result);
 }
 
 
@@ -454,7 +465,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   $units: ('px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'pc': 1pc, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax);
 
   @if not index(map-keys($units), $unit) {
-    $_: log('Invalid unit `#{$unit}`.');
+    $_: im-log('Invalid unit `#{$unit}`.');
   }
 
   @return $value * map-get($units, $unit);
@@ -511,7 +522,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
   // Restore global configuration
   $breakpoints: $global-breakpoints !global;
-  $media-expressions: $tweak-media-expressions !global;
+  $media-expressions: $global-media-expressions !global;
 }
 
 ///

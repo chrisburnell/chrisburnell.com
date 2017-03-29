@@ -5,13 +5,13 @@
 
 
 .nav-tertiary {
+    @include media("<=medium") {
+        margin-top: $measure-medium;
+    }
+
     @include media(">medium") {
         // 5px
         margin-top: #{$measure-small / 2};
-    }
-
-    @include media("<=medium") {
-        margin-top: $measure-medium;
     }
 }
 

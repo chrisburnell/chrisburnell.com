@@ -6,15 +6,26 @@
 
 header {
     display: flex;
-    justify-content: space-between;
     overflow-y: hidden;
 
-    @include media("<=medium") {
-        // center .logo below the `medium` breakpoint
-        text-align: center;
+    @supports (display: grid) {
+        display: grid;
     }
 
-    @include media("<=small") {
+    @include media("<=medium") {
         flex-direction: column;
+        justify-content: center;
+
+        @supports (display: grid) {
+            grid-template-rows: repeat(2, min-content);
+        }
+    }
+
+    @include media(">medium") {
+        justify-content: space-between;
+
+        @supports (display: grid) {
+            grid-template-columns: $aside-width min-content;
+        }
     }
 }

@@ -39,14 +39,18 @@ iframe {
     }
 }
 
-// Sets the aspect ratio to 16:9
-.media--16-9,
-.media--vimeo {
-    padding-top: 56.25%;
+
+@each $aspect-ratio, $percentage in $aspect-ratios {
+    .media--#{nth($aspect-ratio, 1)}-by-#{nth($aspect-ratio, 2)} {
+        padding-top: $percentage;
+    }
 }
 
-// Sets the aspect ratio to 4:3
-.media--4-3,
+.media--vimeo,
+.media--youtube {
+    @extend .media--16-by-9;
+}
+
 .media--speackerdeck {
-    padding-top: 75%;
+    @extend .media--4-by-3;
 }

@@ -13,6 +13,7 @@ code[data-lang] {
     &::before {
         @include border-radius(top);
         @include case(uppercase);
+        @include font-family(default);
         @include position(top);
         @include transition;
         content: attr(data-lang);
@@ -20,7 +21,6 @@ code[data-lang] {
         color: $color-white;
         padding: 0 $measure-medium;
         font-size: $font-size-large;
-        font-family: $font-family-default;
         font-weight: $font-weight-bold;
         line-height: $measure-large;
         text-shadow: none;

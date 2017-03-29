@@ -7,7 +7,8 @@
 html {
     @include position(relative);
     min-height: 100%;
-    // prevent horizontal when jumping short page <--> tall page
+    overflow-x: hidden;
+    // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
     // set the box model for the entire document
     box-sizing: border-box;
@@ -28,10 +29,11 @@ html {
 body {
     background-color: $color-white;
     color: $color-text;
+    width: 100vw;
     margin: 0;
 }
 
-// Hide the master SVG injected immediately below `<body>`
-.svg--master {
+// Hide the sprites SVG injected immediately below `<body>`
+.svg--sprites {
     @include visually-hidden;
 }

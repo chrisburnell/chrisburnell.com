@@ -3,9 +3,14 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-![Version](https://img.shields.io/badge/version-2.8.0-blue.svg?style=flat-square)[![GitHub license](https://img.shields.io/badge/license-GNU GPLv3-blue.svg?style=flat-square)](LICENSE)
+![Version](https://img.shields.io/badge/version-2.8.2-blue.svg?style=flat-square)
+[![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
 
-[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)
+[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
+[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/package.json)
+
+[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/css/main.min.css)
+[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/js/main.min.js)
 
 
 ## Table of Contents
@@ -71,6 +76,8 @@ _includes
 │   ├── comments-button.html
 │   ├── comments.html
 │   ├── content-list-item.html
+│   ├── footer.html
+│   ├── header.html
 │   ├── item-feed.html
 │   ├── main-aside.html
 │   ├── nav-primary.html
@@ -91,9 +98,9 @@ _includes
 │   ├── img.html
 │   ├── svg.html
 │   └── twitter-card.html
-└── layouts
-    ├── footer.html
-    └── header.html
+└── generated
+    ├── critical-css.html
+    └── loadcss.html
 ```
 
 

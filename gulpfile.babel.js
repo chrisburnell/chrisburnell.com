@@ -1,7 +1,7 @@
 /**
  * Gulp Configuration
  * @author Chris Burnell
- * @version 2.8.0
+ * @version 2.8.2
  */
 
 
@@ -13,10 +13,12 @@ import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import imagemin from 'gulp-imagemin';
+import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import watch from 'gulp-watch';
 
@@ -52,14 +54,28 @@ const paths = {
 const stylelintRules = {
     'rules': {
         'color-hex-case': 'lower',
+        'color-hex-length': 'long',
+        'color-no-invalid-hex': true,
+        'declaration-block-no-duplicate-properties': [true, {
+            ignore: ["consecutive-duplicates-with-different-values"]
+        }],
+        'font-weight-notation': 'numeric',
         'function-url-quotes': 'always',
+        // 'max-nesting-depth': 3,
         'number-leading-zero': 'always',
         'number-max-precision': 4,
+        'property-case': 'lower',
+        'property-no-unknown': true,
+        'keyframe-declaration-no-important': true,
         'length-zero-no-unit': true,
-        'time-no-imperceptible': true,
-        'block-no-single-line': true,
+        'time-min-milliseconds': 100,
+        'block-opening-brace-newline-after': 'always',
         'selector-no-id': true,
-        'string-quotes': 'double'
+        'shorthand-property-no-redundant-values': true,
+        'string-quotes': 'double',
+        'unit-blacklist': ['pc', 'pt', 'ex', 'ch', 'mm', 'cm', 'in'],
+        'unit-case': 'lower',
+        'unit-no-unknown': true
     }
 };
 
@@ -81,13 +97,16 @@ gulp.task('css-lint', () => {
 });
 
 // Compile CSS from Sass
-gulp.task('css-compile', ['css-lint'], () => {
-    return gulp.src(`${paths.css.src}/**/*.scss`)
+gulp.task('css-main', ['css-lint'], () => {
+    return gulp.src(`${paths.css.src}/main.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.css.dest}`))
+        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
+            indentWidth: 4,
             outputStyle: 'expanded',
-            includePaths: 'neat'
+            sourceMap: paths.css.src
         }))
         .pipe(postcss([
             autoprefixer({
@@ -114,13 +133,46 @@ gulp.task('css-compile', ['css-lint'], () => {
                 throwError: true
             })
         ]))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(`${paths.css.dest}/`));
 });
 
 // Generate inline Critical CSS include
 gulp.task('css-critical', () => {
-    return gulp.src(`${paths.css.dest}/critical.min.css`)
+    return gulp.src(`${paths.css.src}/critical.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.includes}/generated/`))
+        .pipe(sass({
+            errLogToConsole: true,
+            indentWidth: 4,
+            outputStyle: 'expanded'
+        }))
+        .pipe(postcss([
+            autoprefixer({
+                browsers: [
+                    'last 2 versions',
+                    '> 1%'
+                ]
+            }),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(gulp.dest(`${paths.css.dest}/`))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(postcss([
+            cssnano(),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(rename({
             basename: 'critical-css',
             extname: '.html'
@@ -132,6 +184,7 @@ gulp.task('css-critical', () => {
 gulp.task('css-sassdoc', () => {
     return gulp.src(`${paths.css.src}/**/*.scss`)
         .pipe(plumber())
+        .pipe(newer(`${paths.sassdoc}`))
         .pipe(sassdoc({
             dest: `${paths.sassdoc}/`
         }));
@@ -143,10 +196,13 @@ gulp.task('css-sassdoc', () => {
 gulp.task('js-compile', () => {
     return gulp.src([`!${paths.js.src}/vendors/loadcss.js`,
                      `!${paths.js.src}/vendors/loadcss-preload-polyfill.js`,
+                     `!${paths.js.src}/vendors/svg4everybody.js`,
                      `!${paths.js.src}/outdated/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `${paths.js.src}/**/*.js`])
         .pipe(plumber())
+        .pipe(newer(`${paths.js.dest}/`))
+        .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(`${paths.js.dest}/`))
@@ -156,6 +212,7 @@ gulp.task('js-compile', () => {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 
@@ -164,6 +221,7 @@ gulp.task('js-loadcss', () => {
     return gulp.src([`${paths.js.src}/vendors/loadcss.js`,
                      `${paths.js.src}/vendors/loadcss-preload-polyfill.js`])
         .pipe(plumber())
+        .pipe(newer(`${paths.includes}/generated/`))
         .pipe(uglify({
             mangle: false
         }))
@@ -175,6 +233,7 @@ gulp.task('js-loadcss', () => {
 gulp.task('js-serviceworker', () => {
     return gulp.src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
+        .pipe(newer(`${paths.root}/`))
         .pipe(gulp.dest(`${paths.root}/`));
 });
 
@@ -183,6 +242,8 @@ gulp.task('js-serviceworker', () => {
 // Compress src images
 gulp.task('compress-images', () => {
     return gulp.src(`${paths.images.src}/**/*`, { base: paths.images.src })
+        .pipe(plumber())
+        .pipe(newer(`${paths.images.dest}/`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
@@ -190,6 +251,8 @@ gulp.task('compress-images', () => {
 // Generate WebP-format counterparts for all PNG images
 gulp.task('png-to-webp', () => {
     return gulp.src(`${paths.images.src}/**/*.png`, { base: paths.images.src })
+        .pipe(plumber())
+        .pipe(newer(`${paths.images.dest}/`))
         .pipe(imagemin([
             webp({
                 lossless: true
@@ -211,7 +274,8 @@ gulp.task('default', () => {
 });
 
 // CSS task
-gulp.task('css', ['css-compile'], () => {
+gulp.task('css', () => {
+    gulp.start('css-main');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });

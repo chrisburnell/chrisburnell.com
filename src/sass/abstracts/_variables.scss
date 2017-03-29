@@ -41,7 +41,7 @@ $line-length-minimum: 336px !default;
 /// @type Length
 $line-length-maximum: 480px !default;
 /// @type Length
-$line-length-responsive: calc(#{$line-length-minimum} + (#{strip-units($line-length-maximum)} - #{strip-units($line-length-minimum)}) * ((100vw - #{$wrapper-width-small}) / (#{strip-units($wrapper-width-large)} - #{strip-units($wrapper-width-small)})));
+$line-length-responsive: calc(#{$line-length-minimum} + (#{$line-length-maximum / ($line-length-maximum * 0 + 1)} - #{$line-length-minimum / ($line-length-minimum * 0 + 1)}) * ((100vw - #{$wrapper-width-small}) / (#{$wrapper-width-large / ($wrapper-width-large * 0 + 1)} - #{$wrapper-width-small / ($wrapper-width-small * 0 + 1)})));
 
 
 /// @type Length
@@ -49,13 +49,19 @@ $measure-small:           0.625rem !default;
 /// @type Length
 $measure-small-relative:  0.625em !default;
 /// @type Length
+$measure-small-proportional:  2vmin !default;
+/// @type Length
 $measure-medium:          1.250rem !default;
 /// @type Length
 $measure-medium-relative: 1.250em !default;
 /// @type Length
+$measure-medium-proportional: 4vmin !default;
+/// @type Length
 $measure-large:           2.250rem !default;
 /// @type Length
 $measure-large-relative:  2.250em !default;
+/// @type Length
+$measure-large-proportional:  8vmin !default;
 
 
 /// @type Map
@@ -223,10 +229,10 @@ $font-families: (
 /// @prop {String} name - Font Name
 /// @prop {String} filename - Font Filename
 $font-families-styles: (
-    ("League Gothic", normal, 400, "League Gothic", "league-gothic-regular"),
-    ("Proxima Nova", normal, 400, "Proxima Nova Regular", "proxima-nova-regular"),
-    ("Proxima Nova", italic, 400, "Proxima Nova Italic", "proxima-nova-italic"),
-    ("Proxima Nova", normal, 600, "Proxima Nova Semibold", "proxima-nova-semibold")
+    ("League Gothic", "Regular",  normal, 400, "league-gothic-regular"),
+    ("Proxima Nova",  "Regular",  normal, 400, "proxima-nova-regular"),
+    ("Proxima Nova",  "Italic",   italic, 400, "proxima-nova-italic"),
+    ("Proxima Nova",  "Semibold", normal, 600, "proxima-nova-semibold")
 );
 
 
@@ -267,6 +273,15 @@ $z-indexes: (
     "dialog":       4,
     "notification": 5
 ) !default;
+
+
+/// @type Map
+/// @prop {Array} key - Aspect Ratio
+/// @prop {Length} value - Percentage for sizing
+$aspect-ratios: (
+    (16, 9): 56.25%,
+    (4, 3):  75.00%
+);
 
 
 /// @type Map
@@ -319,10 +334,6 @@ $coding-languages: (
 ) !default;
 
 
-/// @type Length
-$icon-size: 40px !default;
-
-
 /// @type Color
 $color-codepen: #212121 !default;
 /// @type Color
@@ -361,3 +372,7 @@ $color-brands:
     link     $color-white    1.000,
     search   $color-white    1.000,
     tag      $color-white    1.000  !default;
+
+
+/// @type Length
+$icon-size: 40px !default;

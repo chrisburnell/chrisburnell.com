@@ -13,8 +13,7 @@ samp,
 var,
 .monospace {
     @extend %monospace-elements !optional;
-    font-family: $font-family-monospace;
-    font-variant-ligatures: none;
+    @include font-family(monospace);
 }
 code,
 kbd,
@@ -74,13 +73,13 @@ pre {
     // Main Code Blocks
     &:not(.codepen) {
         @include border-radius;
+        @include font-family(monospace);
         background-color: $color-dark-gray;
         color: $color-white;
         padding: $measure-medium $measure-medium 1rem;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
-        font-family: $font-family-monospace;
         font-size: $font-size-small;
 
         &,
@@ -186,6 +185,7 @@ pre {
     }
     // Generic.Prompt
     .gp {
+        @include non-selectable;
         color: #93a1a1;
     }
     // Generic.Strong

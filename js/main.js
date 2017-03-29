@@ -138,16 +138,16 @@
     'use strict';
 
     var query = void 0;
-    var jsonFeedUrl = '../search.json';
-    var allowEmpty = false;
     var searchContainer = document.querySelector('.js-search');
     var searchForm = document.querySelector('.js-search-form');
     var searchInput = document.querySelector('.js-search-input');
     var searchSubmit = document.querySelector('.js-search-submit');
     var resultsMeta = document.querySelector('.js-search-meta');
     var resultsList = document.querySelector('.js-search-results-list');
-    var resultTemplatePage = '<li role="listitem">\n        <a href="{{url}}">\n            <h4 class="title">{{title}}</h4>\n            <p class="lede">{{lede}}</p>\n        </a>\n    </li>';
-    var resultTemplatePost = '<li role="listitem">\n        <a href="{{url}}">\n            <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="#svg--{{icon}}" /></svg>\n            <h4 class="title">{{title}}</h4>\n            <p class="lede">{{lede}}</p>\n            <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n        </a>\n    </li>';
+    var jsonFeedUrl = '../search.json';
+    var allowEmpty = false;
+    var resultTemplatePage = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{url}}">\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n            </a>\n        </article>\n    </li>';
+    var resultTemplatePost = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{url}}">\n                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n                <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n            </a>\n        </article>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -157,10 +157,6 @@
     searchInput.setAttribute('aria-disabled', 'false');
     searchSubmit.disabled = false;
     searchSubmit.setAttribute('aria-disabled', 'false');
-
-    ////
-    /// Search Functions
-    ////
 
     ////
     /// Initiate search functionality.
@@ -414,10 +410,6 @@
         var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
         resultsMeta.innerHTML = searchMeta;
     }
-
-    ////
-    /// Helper Functions
-    ////
 
     ////
     /// Gets query string parameter
