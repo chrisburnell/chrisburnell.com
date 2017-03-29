@@ -93,6 +93,87 @@ h6 {
   font-weight: 400;
 }
 
+h1[id]:target,
+h2[id]:target,
+h3[id]:target,
+h4[id]:target,
+h5[id]:target,
+h6[id]:target {
+  -webkit-animation: heading-target 2s linear;
+          animation: heading-target 2s linear;
+}
+
+@-webkit-keyframes heading-target {
+  0%, 50% {
+    background-color: gold;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes heading-target {
+  0%, 50% {
+    background-color: gold;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+h1 code, h1
+kbd, h1
+samp, h1
+var, h1
+.monospace,
+h2 code,
+h2
+kbd,
+h2
+samp,
+h2
+var,
+h2
+.monospace,
+h3 code,
+h3
+kbd,
+h3
+samp,
+h3
+var,
+h3
+.monospace,
+h4 code,
+h4
+kbd,
+h4
+samp,
+h4
+var,
+h4
+.monospace,
+h5 code,
+h5
+kbd,
+h5
+samp,
+h5
+var,
+h5
+.monospace,
+h6 code,
+h6
+kbd,
+h6
+samp,
+h6
+var,
+h6
+.monospace {
+  text-transform: none;
+}
+
 /**
  * Heading - Alpha
  */
@@ -144,31 +225,6 @@ h3:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 
-h3[id]:target {
-  -webkit-animation: heading-target 2s linear;
-          animation: heading-target 2s linear;
-}
-
-@-webkit-keyframes heading-target {
-  0%,
-  50% {
-    background-color: gold;
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-@keyframes heading-target {
-  0%,
-  50% {
-    background-color: gold;
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
 .content > h3,
 .widget h3 {
   clear: both;
@@ -201,14 +257,6 @@ h3[id]:target {
 
 .lede + h3 {
   margin-top: 0;
-}
-
-h3 code, h3
-kbd, h3
-samp, h3
-var, h3
-.monospace {
-  text-transform: none;
 }
 
 /**
@@ -1394,7 +1442,10 @@ h3 a:visited {
   color: #606060;
 }
 
-h3 a:hover, h3 a:focus, h3 a:active {
+h3 a:hover, h3 a:focus, h3 a:active,
+.delta a:hover,
+.delta a:focus,
+.delta a:active {
   text-decoration: underline;
 }
 

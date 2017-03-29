@@ -50,7 +50,8 @@ a {
             color: mix($color-white, $color-text, 10%);
         }
     }
-    h3 & {
+    h3 &,
+    .delta & {
         &:hover,
         &:focus,
         &:active {

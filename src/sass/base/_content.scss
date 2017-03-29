@@ -44,6 +44,29 @@ h6 {
     padding: 0;
     margin: 0;
     font-weight: $font-weight-default;
+
+    // Show an indicator when using an Anchor to jump to a heading with an `id`
+    &[id] {
+        &:target {
+            animation: heading-target 2s linear;
+        }
+        @at-root {
+            @keyframes heading-target {
+                0%,
+                50% {
+                    background-color: $color-highlight;
+                }
+                100% {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    // For special Monospace titles
+    %monospace-elements {
+        @include case(none);
+    }
 }
 
 /**
@@ -97,24 +120,6 @@ h3 {
         margin-bottom: $measure-medium;
     }
 
-    // Show an indicator when using an Anchor to jump to an `h3` with an `id`
-    &[id] {
-        &:target {
-            animation: heading-target 2s linear;
-        }
-        @at-root {
-            @keyframes heading-target {
-                0%,
-                50% {
-                    background-color: $color-highlight;
-                }
-                100% {
-                    background-color: transparent;
-                }
-            }
-        }
-    }
-
     // Match normal `h3`s without targetting `aside`-nested `h3`s
     .content > &,
     .widget & {
@@ -133,11 +138,6 @@ h3 {
     // This happens on the Homepage
     .lede + & {
         margin-top: 0;
-    }
-
-    // For special Monospace titles
-    %monospace-elements {
-        @include case(none);
     }
 }
 
@@ -480,8 +480,6 @@ picture {
         max-width: 100%;
         height: auto;
     }
-
-
 }
 picture {
     &,
