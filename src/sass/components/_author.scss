@@ -11,11 +11,12 @@
 /*aside*/.author {
     @include font-family(default);
 
-    @include media("<=medium") {
-        display: flex;
-        flex-direction: column;
-        order: 998;
-        margin-top: $measure-large;
+    @supports (display: grid) {
+        grid-area: unquote("main-aside");
+    }
+
+    @include media(">medium") {
+        margin-left: 0;
     }
 }
 
