@@ -41,7 +41,7 @@ icon_sizes:
             "src": "/favicon-{{ size }}.webp",
             "type": "image/webp",
             "sizes": "{{ size }}x{{ size }}"
-        },
+        }{% if forloop.last == false %},{% endif %}
         {% endfor %}
     ]
 }
