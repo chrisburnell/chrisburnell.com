@@ -10,6 +10,8 @@
             <h1 class="title" role="heading" itemprop="name">{{ page.title }}</h1>
         {% endif %}
 
+        {% include components/main-aside.html %}
+
         {% include components/banner.html %}
 
         {% if page.page_class contains 'home' %}
@@ -23,8 +25,6 @@
         {{ content }}
 
     </section>
-
-    {% include components/main-aside.html %}
 </main>
 
 

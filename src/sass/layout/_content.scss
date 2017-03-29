@@ -10,21 +10,22 @@
  * `.content`.
  */
 .content {
+    padding-top: $measure-large;
     border-top: $border-width-default $border-style-default $color-brand;
 
-    @supports (display: grid) {
-        grid-area: unquote("content");
-    }
-
     @include media("<=medium") {
-        flex: 1 0 100%;
+        // Below the medium breakpoint, `.content` and `aside` become full width.
+        display: flex;
+        flex-direction: column;
     }
 
     @include media(">medium") {
         padding-left: #{$aside-width + $measure-large};
 
-        @supports (display: grid) {
-            padding-left: 0;
-        }
+        // @supports (display: grid) {
+        //     display: grid;
+        //     grid-area: content;
+        //     padding-left: 0;
+        // }
     }
 }

@@ -17,10 +17,15 @@ aside {
     }
 
     @include media(">medium") {
-        flex: 0 0 $aside-width;
+        width: $aside-width;
         float: left;
         margin-left: #{($aside-width + $measure-large) * -1};
         margin-bottom: $measure-large;
+
+        // @supports (display: grid) {
+        //     grid-area: aside;
+        //     margin-left: 0;
+        // }
     }
 
     &:not(.author):not(:last-child) {

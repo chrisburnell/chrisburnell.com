@@ -5,31 +5,14 @@
 
 
 main {
-    display: flex;
-    padding-top:    $measure-large;
+    display: block;
     padding-bottom: $measure-large;
 
-    @supports (display: grid) {
-        display: grid;
-    }
-
-    @include media("<=medium") {
-        flex-direction: column;
-
-        @supports (display: grid) {
-            grid-template-rows: unquote("[content] max-content [main-aside] max-content");
-            grid-column-gap: $measure-large;
-        }
-    }
-
-    @include media(">medium") {
-        flex-direction: row-reverse;
-
-        @supports (display: grid) {
-            grid-template-columns: unquote("[main-aside] #{$aside-width} [content] 1fr");
-            grid-column-gap: $gutter-width;
-        }
-    }
+    // @supports (display: grid) {
+    //     display: grid;
+    //     grid-template-columns: unquote("[aside] #{$aside-width} [content] 1fr");
+    //     grid-column-gap: $gutter-width;
+    // }
 }
 
 .wrap {
