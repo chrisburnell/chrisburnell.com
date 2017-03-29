@@ -1956,8 +1956,8 @@ header {
     }
     @supports ((display: -ms-grid) or (display: grid)) {
         header {
-            -ms-grid-rows: (min-content)[2];
-                grid-template-rows: repeat(2, min-content);
+            -ms-grid-rows: 7rem min-content;
+                grid-template-rows: 7rem min-content;
         }
     }
 }
@@ -2145,8 +2145,6 @@ footer {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     will-change: transform;
-    position: absolute;
-    top: 0;
     fill: #5f8aa6;
 }
 
@@ -2154,9 +2152,8 @@ footer {
     .logo svg {
         width: 7rem;
         height: 7rem;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
-                transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
+        -webkit-transform: translateX(0) translateY(-1.5rem) translateZ(0);
+                transform: translateX(0) translateY(-1.5rem) translateZ(0);
     }
 }
 
@@ -2164,7 +2161,6 @@ footer {
     .logo svg {
         width: 8.5rem;
         height: 8.5rem;
-        left: 0;
         -webkit-transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
                 transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
     }

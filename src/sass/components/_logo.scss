@@ -24,21 +24,17 @@
         @include position(top-left);
         @include transition(all 1s);
         @include will-change(transform);
-        position: absolute;
-        top:  0;
         fill: $color-brand;
 
         @include media("<=medium") {
             width:  7rem;
             height: 7rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(-1.5rem) translateZ(0);
+            transform: translateX(0) translateY(-1.5rem) translateZ(0);
         }
 
         @include media(">medium") {
             width:  8.5rem;
             height: 8.5rem;
-            left: 0;
             transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
         }
     }
