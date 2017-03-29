@@ -1,5 +1,5 @@
 <section class="widget  widget--latest-pens">
-    {% include content/heading.html title='Latest Pens' href='/pens' %}
+    {% include content/heading.html title='Latest Pens' href='/pens/' %}
     <ol class="content-list" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
@@ -13,5 +13,5 @@
             {% endunless %}
         {% endfor %}
     </ol>
-    <a class="widget-related-anchor" href="/pens">All Featured Pens</a>
+    <a class="widget-related-anchor" href="/pens/">All Featured Pens</a>
 </section>
