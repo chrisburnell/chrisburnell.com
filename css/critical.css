@@ -1325,7 +1325,9 @@ aside {
 
 @media (max-width: 800px) {
     aside {
-        width: 100%;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 100%;
+                flex: 1 0 100%;
     }
 }
 
@@ -1378,11 +1380,11 @@ aside p {
     border-radius: 0.25rem;
 }
 
-[aria-hidden="true"],
-.hidden,
-.hide,
-.sr-only,
-.visually-hidden {
+[aria-hidden="true"]:not(:target),
+.hidden:not(:target),
+.hide:not(:target),
+.sr-only:not(:target),
+.visually-hidden:not(:target) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;

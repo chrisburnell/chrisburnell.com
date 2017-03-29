@@ -22,7 +22,9 @@
 .hide,
 .sr-only,
 .visually-hidden {
-    @include visually-hidden;
+    &:not(:target) {
+        @include visually-hidden;
+    }
 }
 
 // Hyphenate any looooooooooooooooooooo-
