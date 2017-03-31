@@ -142,6 +142,7 @@ src/css
 │   ├── _content.scss
 │   ├── _footer.scss
 │   ├── _header.scss
+│   ├── _main.scss
 │   └── _wrap.scss
 ├── pages
 │   └── _styleguide.scss
