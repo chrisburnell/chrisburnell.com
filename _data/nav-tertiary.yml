@@ -10,9 +10,9 @@
   rel: 'me publisher external'
   url: 'https://codepen.io/chrisburnell'
 
-- title: Spotify
+- title: LastFM
   rel: 'me publisher external'
-  url: 'https://open.spotify.com/user/1128245857'
+  url: 'https://last.fm/user/chrisburnell'
 
 - title: RSS
   rel: 'me author'
