@@ -111,7 +111,7 @@ src/css
 ├── abstracts
 │   ├── _functions.scss
 │   ├── _mixins.scss
-│   ├── _variables.scss
+│   └── _variables.scss
 ├── base
 │   ├── _anchors.scss
 │   ├── _buttons.scss
@@ -119,7 +119,7 @@ src/css
 │   ├── _content.scss
 │   ├── _fonts.scss
 │   ├── _forms.scss
-│   ├── _page.scss
+│   └── _page.scss
 ├── components
 │   ├── _author.scss
 │   ├── _code.scss
@@ -147,7 +147,7 @@ src/css
 ├── pages
 │   └── _styleguide.scss
 ├── vendors
-│   ├── _include-media.scss
+│   └── _include-media.scss
 ├── critical.scss
 └── main.scss
 ```
