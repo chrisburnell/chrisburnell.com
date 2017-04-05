@@ -17,7 +17,7 @@ code[data-lang] {
         @include position(top);
         @include transition;
         content: attr(data-lang);
-        background-color: $color-text-alt;
+        background-color: $color-dove;
         color: $color-white;
         padding: 0 $measure-medium;
         font-size: $font-size-large;

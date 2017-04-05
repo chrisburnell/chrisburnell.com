@@ -5,8 +5,8 @@
 
 
 footer {
-    background-color: $color-text;
-    color: $color-text-light;
+    background-color: $color-kaiser;
+    color: $color-alto;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
 
@@ -59,7 +59,7 @@ footer {
         width: 100%;
         height: 100%;
         display: block;
-        fill: $color-brand;
+        fill: $color-raven;
     }
     &:hover,
     &:focus,

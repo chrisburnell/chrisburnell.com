@@ -49,14 +49,14 @@ samp {
 ins,
 kbd,
 samp {
-    background-color: $color-brand--light;
+    background-color: $color-raven--light;
 }
 mark {
     background-color: $color-highlight;
     font-size: 1rem;
 }
 var {
-    color: $color-brand;
+    color: $color-raven;
     font-style: normal;
     font-weight: $font-weight-bold;
 }
@@ -74,7 +74,7 @@ pre {
     &:not(.codepen) {
         @include border-radius;
         @include font-family(monospace);
-        background-color: $color-dark-gray;
+        background-color: $color-mineshaft;
         color: $color-white;
         padding: $measure-medium $measure-medium 1rem;
         // disallow text from wrapping inside the container

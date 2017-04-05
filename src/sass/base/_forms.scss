@@ -33,15 +33,15 @@ textarea {
     @include will-change(border-color);
     box-sizing: inherit !important;
     padding: 0.4em;
-    border: $border-width-thin $border-style-default $color-text-light;
+    border: $border-width-thin $border-style-default $color-alto;
     outline-style: none;
 
     &:hover {
-        border-color: $color-brand--soft;
+        border-color: $color-raven--soft;
     }
 
     &:focus {
-        border-color: $color-brand;
+        border-color: $color-raven;
     }
 
     &[disabled] {

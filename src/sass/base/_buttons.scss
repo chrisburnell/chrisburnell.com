@@ -14,7 +14,7 @@ button,
     @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
-    background-color: $color-brand;
+    background-color: $color-raven;
     min-width: 8em;
     height: 2.182em;
     display: inline-block;
@@ -26,7 +26,7 @@ button,
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    box-shadow: inset 0 -0.182em 0 0 $color-brand--hard;
+    box-shadow: inset 0 -0.182em 0 0 $color-raven--hard;
     appearance: none;
 
     &,
@@ -39,7 +39,7 @@ button,
     &:hover,
     &:focus,
     &:active {
-        background-color: $color-brand--soft;
+        background-color: $color-raven--soft;
     }
 
     &:hover,
@@ -52,7 +52,7 @@ button,
         padding-bottom: 0;
         margin-bottom: 0.182em;
         outline-style: none;
-        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-brand--hard;
+        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-raven--hard;
         transform: translateY(0.182em);
     }
 

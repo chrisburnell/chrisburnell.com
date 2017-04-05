@@ -24,7 +24,7 @@
         @include position(top-left);
         @include transition(all 1s);
         @include will-change(transform);
-        fill: $color-brand;
+        fill: $color-raven;
 
         @include media("<=medium") {
             width:  7rem;

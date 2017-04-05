@@ -11,7 +11,7 @@
  */
 .content {
     padding-top: $measure-large;
-    border-top: $border-width-default $border-style-default $color-brand;
+    border-top: $border-width-default $border-style-default $color-raven;
 
     @include media("<=medium") {
         // Below the medium breakpoint, `.content` and `aside` become full width.

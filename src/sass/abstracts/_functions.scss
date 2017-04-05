@@ -21,7 +21,7 @@
 ///
 /// @return {Color} Contrasting Text Color
 ///
-@function contrasting-color($background-color, $text-color-dark: $color-text, $text-color-light: $color-white) {
+@function contrasting-color($background-color, $text-color-dark: $color-kaiser, $text-color-light: $color-white) {
     @if not $background-color {
         @warn "contrasting-color() expects at least one parameter.";
         @return false;

@@ -80,15 +80,15 @@ $opacities: (
 /// @type Color
 $transparent: rgba(0, 0, 0, 0) !default;
 /// @type Color
-$color-text: #4f4f4f !default;
+$color-kaiser: #4f4f4f !default;
 /// @type Color
-$color-text-alt: #737373 !default;
+$color-dove: #737373 !default;
 /// @type Color
-$color-text-light: #dddddd !default;
+$color-alto: #dddddd !default;
 /// @type Color
 $color-white: #f9f9f9 !default;
 /// @type Color
-$color-light-gray: #ededed !default;
+$color-gallery: #ededed !default;
 /// @type Color
 $color-black: #060606 !default;
 /// @type Color
@@ -101,38 +101,38 @@ $color-black--subtle: rgba($color-black, map-get($opacities, "tint--hard")) !def
 $color-black--light: rgba($color-black, map-get($opacities, "tint--soft")) !default;
 /// @type Color
 /// @require {Variable} $color-black
-/// @require {Variable} $color-text
-$color-dark-gray: mix($color-black, $color-text) !default;
+/// @require {Variable} $color-kaiser
+$color-mineshaft: mix($color-black, $color-kaiser) !default;
 /// @type Color
-$color-brand: #5f8aa6 !default;
+$color-raven: #5f8aa6 !default;
 /// @type Color
 /// @require {Variable} $color-white
-/// @require {Variable} $color-brand
-$color-brand--soft: mix($color-white, $color-brand, 7.5%) !default;
+/// @require {Variable} $color-raven
+$color-raven--soft: mix($color-white, $color-raven, 7.5%) !default;
 /// @type Color
 /// @require {Variable} $color-black
-/// @require {Variable} $color-brand
-$color-brand--hard: mix($color-black, $color-brand, 10%) !default;
+/// @require {Variable} $color-raven
+$color-raven--hard: mix($color-black, $color-raven, 10%) !default;
 /// @type Color
-/// @require {Variable} $color-brand
+/// @require {Variable} $color-raven
 /// @require {Variable} $opacities
-$color-brand--light: rgba($color-brand, map-get($opacities, "tint--soft")) !default;
+$color-raven--light: rgba($color-raven, map-get($opacities, "tint--soft")) !default;
 /// @type Color
 $color-highlight: gold !default;
 /// @type Color
 $color-canada: #fd1b00 !default;
 /// @type List
 /// @prop {Color} Color
-/// @require {Variable} $color-brand
-/// @require {Variable} $color-text
-/// @require {Variable} $color-text-alt
-/// @require {Variable} $color-text-light
+/// @require {Variable} $color-raven
+/// @require {Variable} $color-kaiser
+/// @require {Variable} $color-dove
+/// @require {Variable} $color-alto
 /// @require {Variable} $color-white
 $main-colors:
-    $color-brand,
-    $color-text,
-    $color-text-alt,
-    $color-text-light,
+    $color-raven,
+    $color-kaiser,
+    $color-dove,
+    $color-alto,
     $color-white !default;
 
 
@@ -362,7 +362,7 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @require {Variable} $color-rss
 /// @require {Variable} $color-spotify
 /// @require {Variable} $color-twitter
-$color-brands:
+$color-ravens:
     codepen  $color-white    1.025,
     github   $color-white    1.000,
     lastfm   $color-lastfm   1.000,

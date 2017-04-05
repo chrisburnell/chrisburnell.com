@@ -47,7 +47,7 @@
         @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);
-        color: $color-text-alt;
+        color: $color-dove;
         display: block;
         padding: 0.75rem 1rem;
         border-bottom-width: 0;
@@ -57,7 +57,7 @@
 
         &:link,
         &:visited {
-            border-bottom-color: $color-brand
+            border-bottom-color: $color-raven
         }
 
         &:active {
@@ -76,7 +76,7 @@
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
 %nav-primary-anchor {
-    color: $color-text;
+    color: $color-kaiser;
     padding-bottom: 0.5rem;
     border-bottom-width: $border-width-default;
 }
@@ -89,7 +89,7 @@
 // Complementary to the Effect for interactions and active paths
 %nav-primary-anchor-arrow {
     content: "";
-    border-top:   0.5em $border-style-default $color-brand;
+    border-top:   0.5em $border-style-default $color-raven;
     border-right: 0.5em $border-style-default $transparent;
     border-left:  0.5em $border-style-default $transparent;
     position: absolute;

@@ -6,7 +6,7 @@
 
 html {
     @include font-family(default);
-    background-color: $color-text;
+    background-color: $color-kaiser;
     font-size: $font-size-default;
     font-style: normal;
     font-weight: $font-weight-default;
@@ -113,7 +113,7 @@ h3 {
     @extend %gamma !optional;
     @include case(uppercase);
     margin-top: $measure-large;
-    border-bottom: $border-width-thin $border-style-default $color-text-light;
+    border-bottom: $border-width-thin $border-style-default $color-alto;
     font-weight: $font-weight-bold;
 
     &:not(:last-child) {
@@ -328,7 +328,7 @@ img {
     &::before {
         @include position(top-left);
         content: "";
-        background-color: $color-text-light;
+        background-color: $color-alto;
         width:  100%;
         height: 100%;
         text-align: center;
@@ -372,7 +372,7 @@ figure {
     & > a:link,
     & > a:visited,
     figcaption {
-        color: $color-text-alt;
+        color: $color-dove;
         font-style: italic;
     }
 
@@ -400,7 +400,7 @@ table {
     &.zebra {
         tbody tr:nth-child(even) td {
             background-color: $color-black--subtle;
-            border-left-color: $color-text-light;
+            border-left-color: $color-alto;
         }
     }
 }
@@ -417,17 +417,17 @@ td {
 /*table*/.highlight--row {
     tbody tr:hover {
         td {
-            border-left-color: $color-text-light;
+            border-left-color: $color-alto;
         }
 
         td,
         & + tr td {
-            border-top-color: $color-text-light;
+            border-top-color: $color-alto;
         }
 
         th,
         td:not(:hover) {
-            background-color: $color-brand--light !important;
+            background-color: $color-raven--light !important;
         }
     }
 }
@@ -445,7 +445,7 @@ td {
         @include transition(opacity);
         content: "";
         opacity: 0;
-        background-color: $color-brand--light;
+        background-color: $color-raven--light;
         width: 100%;
         height: 200vw;
         pointer-events: none;
@@ -461,7 +461,7 @@ td {
 // Head and Foot Cells
 th {
     &:not(:empty) {
-        background-color: $color-light-gray;
+        background-color: $color-gallery;
     }
 
     thead &,
@@ -471,7 +471,7 @@ th {
     }
 
     tfoot & {
-        border-top: $border-width-thin $border-style-default $color-text-light;
+        border-top: $border-width-thin $border-style-default $color-alto;
     }
     /*tfoot*/.totals & {
         @include media(">medium") {
@@ -495,21 +495,21 @@ th {
     }
 
     & + th {
-        border-left: $border-width-thin $border-style-default $color-text-light;
+        border-left: $border-width-thin $border-style-default $color-alto;
     }
 }
 // Body Cells
 tbody th,
 td {
-    border-top: $border-width-thin $border-style-default $color-light-gray;
+    border-top: $border-width-thin $border-style-default $color-gallery;
 
     & + td {
-        border-left: $border-width-thin $border-style-default $color-light-gray;
+        border-left: $border-width-thin $border-style-default $color-gallery;
     }
 }
 tbody th,
 tbody tr:first-child td {
-    border-top-color: $color-text-light;
+    border-top-color: $color-alto;
 }
 tbody th {
     width: 1px;
@@ -518,7 +518,7 @@ tbody th {
     white-space: nowrap;
 
     & + td {
-        border-left-color: $color-text-light;
+        border-left-color: $color-alto;
     }
 }
 
@@ -527,7 +527,7 @@ tbody th {
  */
 details {
     @include border-radius(thin);
-    background-color: $color-dark-gray;
+    background-color: $color-mineshaft;
     color: $color-white;
     width: 100%;
     padding: $measure-small;
@@ -544,7 +544,7 @@ summary {
 
     & + %content-elements {
         margin-top: $measure-small;
-        border-top: $border-width-thin $border-style-default $color-brand;
+        border-top: $border-width-thin $border-style-default $color-raven;
         padding-top: $measure-medium;
     }
 }
@@ -580,7 +580,7 @@ img {
     &::before {
         @include position(top-left);
         content: "";
-        background-color: $color-text-light;
+        background-color: $color-alto;
         width:  100%;
         height: 100%;
         text-align: center;
@@ -624,7 +624,7 @@ figure {
     & > a:link,
     & > a:visited,
     figcaption {
-        color: $color-text-alt;
+        color: $color-dove;
         font-style: italic;
     }
 
@@ -645,7 +645,7 @@ blockquote {
     @include border-radius;
     @include font-family(serif);
     @include quotes;
-    background-color: $color-brand--light;
+    background-color: $color-raven--light;
     padding: $measure-medium;
     margin: 0 $measure-large $measure-medium;
 
@@ -727,12 +727,12 @@ abbr[title],
 blockquote,
 cite,
 dfn[title] {
-    color: $color-text-alt;
+    color: $color-dove;
     font-style: italic;
 }
 abbr[title],
 dfn[title] {
-    border-bottom: $border-width-hairline dotted $color-text-alt;
+    border-bottom: $border-width-hairline dotted $color-dove;
     cursor: help;
 }
 abbr[title],
@@ -771,7 +771,7 @@ sup {
  * Mouse Selection
  */
 ::selection {
-    background-color: $color-brand;
+    background-color: $color-raven;
     color: $color-white;
 }
 .canada {

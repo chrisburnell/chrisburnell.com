@@ -89,7 +89,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-brand--light !important;
+            background-color: $color-raven--light !important;
         }
 
         @include media(">small") {
@@ -112,27 +112,27 @@
         @include will-change(border-color);
         width: auto;
         display: inline-block;
-        border-bottom: $border-width-hairline $border-style-default $color-text-light;
+        border-bottom: $border-width-hairline $border-style-default $color-alto;
         margin-bottom: 0;
     }
     a:hover,
     a:focus,
     a:active {
         .title {
-            border-bottom-color: $color-brand;
+            border-bottom-color: $color-raven;
         }
     }
     a:visited:hover,
     a:visited:focus,
     a:visited:active {
         .title {
-            border-bottom-color: $color-brand--hard;
+            border-bottom-color: $color-raven--hard;
         }
     }
 
     .lede,
     .date {
-        color: $color-text-alt;
+        color: $color-dove;
         margin-top: $measure-small;
         font-size: $font-size-small;
         font-weight: $font-weight-bold;
@@ -157,7 +157,7 @@
         @include transition(opacity, transform);
         @include will-change(opacity, transform);
         opacity: opacity("tint--hard");
-        stroke: $color-text;
+        stroke: $color-kaiser;
         // override `_icons.scss` + 4px
         width:  6.25em !important;
         height: 6.25em !important;

@@ -17,24 +17,24 @@ a {
 
     &,
     &:link {
-        color: $color-brand;
-        border-bottom-color: $color-text-light;
+        color: $color-raven;
+        border-bottom-color: $color-alto;
     }
 
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-brand;
+        border-bottom-color: $color-raven;
         outline-width: 0;
     }
 
     &:visited {
-        color: $color-brand--hard;
+        color: $color-raven--hard;
 
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-brand--hard;
+            border-bottom-color: $color-raven--hard;
         }
     }
 
@@ -43,11 +43,11 @@ a {
         border-bottom-width: 0;
 
         &:link {
-            color: $color-text;
+            color: $color-kaiser;
         }
 
         &:visited {
-            color: mix($color-white, $color-text, 10%);
+            color: mix($color-white, $color-kaiser, 10%);
         }
     }
     h3 &,
@@ -63,7 +63,7 @@ a {
         &:link,
         &:visited {
             color: $color-white;
-            border-bottom-color: $color-text-alt;
+            border-bottom-color: $color-dove;
 
             &:hover,
             &:focus,
@@ -96,8 +96,8 @@ a {
     &:hover,
     &:focus,
     &:active {
-        color: $color-text;
-        border-bottom-color: $color-brand;
+        color: $color-kaiser;
+        border-bottom-color: $color-raven;
     }
 }
 
@@ -118,18 +118,18 @@ a {
 
     &,
     &:link {
-        color: $color-text-alt;
+        color: $color-dove;
         border-bottom-width: $border-width-hairline;
     }
 
     &:visited {
-        color: mix($color-black, $color-text-alt, 10%);
+        color: mix($color-black, $color-dove, 10%);
     }
 
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-text-alt;
+        border-bottom-color: $color-dove;
         // when appearing inside a heading, disable underline
         text-decoration: none;
     }
@@ -138,7 +138,7 @@ a {
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: mix($color-black, $color-text-alt, 10%);
+            border-bottom-color: mix($color-black, $color-dove, 10%);
         }
     }
 
