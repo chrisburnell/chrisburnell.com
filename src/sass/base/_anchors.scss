@@ -8,7 +8,7 @@ a {
     @include position(relative);
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
-    background-color: transparent;
+    background-color: $transparent;
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
     text-decoration: none;
@@ -90,7 +90,7 @@ a {
 
     &,
     &:link {
-        border-bottom-color: transparent;
+        border-bottom-color: $transparent;
     }
 
     &:hover,

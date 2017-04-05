@@ -4,6 +4,13 @@
 ////
 
 
+embed,
+iframe,
+object,
+video {
+    @extend %media-elements !optional;
+}
+
 /**
  * Fix `iframe` and `video`
  */
@@ -28,10 +35,7 @@ iframe {
     height: auto;
     overflow: hidden;
 
-    embed,
-    iframe,
-    object,
-    video {
+    %media-elements {
         @include position(full);
         // necessary for `iframe`
         height: 100%;

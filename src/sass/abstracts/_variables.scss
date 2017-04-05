@@ -76,6 +76,9 @@ $opacities: (
 ) !default;
 
 
+// this allows transparency to be transitioned to a different color
+/// @type Color
+$transparent: rgba(0, 0, 0, 0) !default;
 /// @type Color
 $color-text: #4f4f4f !default;
 /// @type Color

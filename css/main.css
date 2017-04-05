@@ -1898,11 +1898,6 @@ textarea {
     overflow: auto;
 }
 
-main {
-    display: block;
-    padding-bottom: 2.25rem;
-}
-
 .wrap {
     width: auto;
     max-width: 1140px;
@@ -1928,6 +1923,11 @@ main {
 
 .clear::after {
     clear: both;
+}
+
+main {
+    display: block;
+    padding-bottom: 2.25rem;
 }
 
 header {
@@ -3292,10 +3292,10 @@ iframe {
     overflow: hidden;
 }
 
-.media embed,
-.media iframe,
-.media object,
-.media video {
+.media embed, .media
+iframe, .media
+object, .media
+video {
     position: absolute;
     top: 0;
     bottom: 0;
