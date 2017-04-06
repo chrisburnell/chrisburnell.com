@@ -22,6 +22,10 @@
 .hide,
 .sr-only,
 .visually-hidden {
+    &:focus {
+        background-color: $color-highlight;
+    }
+
     &:not(:focus) {
         @include visually-hidden;
     }

@@ -2066,6 +2066,14 @@ footer {
     border-radius: 0.25rem;
 }
 
+[aria-hidden="true"]:focus,
+.hidden:focus,
+.hide:focus,
+.sr-only:focus,
+.visually-hidden:focus {
+    background-color: gold;
+}
+
 [aria-hidden="true"]:not(:focus),
 .hidden:not(:focus),
 .hide:not(:focus),
