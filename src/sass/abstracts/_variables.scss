@@ -80,17 +80,23 @@ $opacities: (
 /// @type Color
 $transparent: rgba(0, 0, 0, 0) !default;
 /// @type Color
+$color-black: #060606 !default;
+/// @type Color
 $color-kaiser: #4f4f4f !default;
 /// @type Color
 $color-dove: #737373 !default;
 /// @type Color
 $color-alto: #dddddd !default;
 /// @type Color
-$color-white: #f9f9f9 !default;
-/// @type Color
 $color-gallery: #ededed !default;
 /// @type Color
-$color-black: #060606 !default;
+$color-white: #f9f9f9 !default;
+/// @type Color
+$color-raven: #5f8aa6 !default;
+/// @type Color
+$color-highlight: gold !default;
+/// @type Color
+$color-canada: #fd1b00 !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
@@ -104,8 +110,6 @@ $color-black--light: rgba($color-black, map-get($opacities, "tint--soft")) !defa
 /// @require {Variable} $color-kaiser
 $color-mineshaft: mix($color-black, $color-kaiser) !default;
 /// @type Color
-$color-raven: #5f8aa6 !default;
-/// @type Color
 /// @require {Variable} $color-white
 /// @require {Variable} $color-raven
 $color-raven--soft: mix($color-white, $color-raven, 7.5%) !default;
@@ -117,10 +121,6 @@ $color-raven--hard: mix($color-black, $color-raven, 10%) !default;
 /// @require {Variable} $color-raven
 /// @require {Variable} $opacities
 $color-raven--light: rgba($color-raven, map-get($opacities, "tint--soft")) !default;
-/// @type Color
-$color-highlight: gold !default;
-/// @type Color
-$color-canada: #fd1b00 !default;
 /// @type List
 /// @prop {Color} Color
 /// @require {Variable} $color-raven

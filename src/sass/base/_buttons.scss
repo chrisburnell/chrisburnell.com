@@ -70,6 +70,7 @@ button,
         }
     }
 
+    // external anchors
     &[rel="external"] {
         &::after {
             @include font-family(monospace);

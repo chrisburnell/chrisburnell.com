@@ -134,7 +134,7 @@
 
     font-family: map-get($font-families, $family);
 
-    @if $family == 'default' or $family == 'alpha' {
+    @if $family == "default" or $family == "alpha" {
         font-display: $display;
     }
 
