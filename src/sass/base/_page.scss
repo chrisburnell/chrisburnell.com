@@ -32,8 +32,3 @@ body {
     width: 100vw;
     margin: 0;
 }
-
-// Hide the sprites SVG injected immediately below `<body>`
-.svg--sprites {
-    @include visually-hidden;
-}

@@ -22,7 +22,7 @@
 .hide,
 .sr-only,
 .visually-hidden {
-    &:not(:target) {
+    &:not(:focus) {
         @include visually-hidden;
     }
 }

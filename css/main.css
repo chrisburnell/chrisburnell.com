@@ -54,16 +54,6 @@ body {
     margin: 0;
 }
 
-.svg--sprites {
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    position: absolute !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
 html {
     font-family: "Proxima Nova", sans-serif;
     font-display: swap;
@@ -2076,11 +2066,11 @@ footer {
     border-radius: 0.25rem;
 }
 
-[aria-hidden="true"]:not(:target),
-.hidden:not(:target),
-.hide:not(:target),
-.sr-only:not(:target),
-.visually-hidden:not(:target) {
+[aria-hidden="true"]:not(:focus),
+.hidden:not(:focus),
+.hide:not(:focus),
+.sr-only:not(:focus),
+.visually-hidden:not(:focus) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
