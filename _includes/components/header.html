@@ -101,7 +101,7 @@ snippet of code on a project of your own!  -->
 
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
-    <link rel="mask-icon" href="{{ '/favicon.svg' | prepend: site.baseurl | prepend: site.url }}" color="#{{ site.color_brand }}">
+    <link rel="mask-icon" href="{{ '/favicon.svg' | prepend: site.baseurl | prepend: site.url }}" color="#{{ site.color }}">
 
     <link rel="author" href="/humans.txt">
     <link rel="manifest" href="/manifest.json">
@@ -116,8 +116,8 @@ snippet of code on a project of your own!  -->
     <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
     <meta name="msapplication-starturl" content="{{ site.url }}">
     <meta name="description" content="{{ meta_lede }}">
-    <meta name="theme-color" content="#{{ site.color_brand }}">
-    <meta name="msapplication-navbutton-color" content="#{{ site.color_brand }}">
+    <meta name="theme-color" content="#{{ site.color }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta http-equiv="cleartype" content="on">
@@ -134,8 +134,8 @@ snippet of code on a project of your own!  -->
         <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
         {% if page.twitter == true %}
             <meta name="twitter:widgets:theme" content="light">
-            <meta name="twitter:widgets:link-color" content="#{{ site.color_brand }}">
-            <meta name="twitter:widgets:border-color" content="#{{ site.color_brand }}">
+            <meta name="twitter:widgets:link-color" content="#{{ site.color }}">
+            <meta name="twitter:widgets:border-color" content="#{{ site.color }}">
         {% endif %}
         <!-- OpenGraph Microdata -->
         <meta property="og:title" content="{{ meta_title }}">

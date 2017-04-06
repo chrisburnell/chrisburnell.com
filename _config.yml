@@ -1,7 +1,8 @@
 title:       Chris Burnell
+short_title: cb
 tagline:     "I’m Ravenous for CSS."
 lede:        "I’m a Canadian UI developer living in London, UK. This is where I write about and share my passions: CSS, best practices and web standards, performance, front-end architecture, and innovations on the web."
-color_brand: 5f8aa6
+color:       5f8aa6
 
 author:
   name:        Chris Burnell

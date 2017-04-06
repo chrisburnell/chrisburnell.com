@@ -10,8 +10,8 @@
 
 
 // Set a name for the current cache
-const VERSION = '{{ site.time | date: '%Y-%m-%d_%H%M' }}';
-const CACHE_NAME = `${VERSION}::cb`;
+// YYYY-MM-DD_hhmm::short_title
+const CACHE_NAME = `{{ site.time | date: '%Y-%m-%d_%H%M' }}::{{ site.short_title }}`;
 
 // Default files to always cache
 const CACHE_FILES_PRIMARY = [
