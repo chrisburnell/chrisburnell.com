@@ -16,7 +16,10 @@
 
 {% endcomment %}
 {% assign heading_type = include.type | default: 'h3' %}
-{% assign heading_id = include.id | default: include.title | slugify %}
+{% assign heading_id = include.id %}
+{% unless heading_id %}
+    {% assign heading_id = include.title | slugify %}
+{% endunless %}
 {% assign heading_href = include.href | default: '' %}
 {% if heading_id == '' %}
     <{{ heading_type }}>
@@ -26,8 +29,10 @@
     {% unless heading_href == '' %}
         <a href="{{ heading_href }}">
     {% endunless %}
-        {{ include.title }}
+    {{ include.title }}
+    {% unless heading_id == '' %}
         {% include content/fragment-anchor.html id=heading_id %}
+    {% endunless %}
     {% unless heading_href == '' %}
         </a>
     {% endunless %}
