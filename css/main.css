@@ -3416,4 +3416,74 @@ video {
 .color-block-list li[data-color="#f9f9f9"] {
     background-color: #f9f9f9;
     color: #4f4f4f;
+    box-shadow: inset 0 0 0 0.125rem #dddddd;
+}
+
+.transition-example--slide,
+.transition-example--fade {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    width: 100%;
+    height: 3.375rem;
+    display: block;
+    border: 0.125rem solid #dddddd;
+    position: relative;
+    line-height: 3.125;
+    text-align: center;
+}
+
+.transition-example--slide + .transition-example--slide,
+.transition-example--fade + .transition-example--slide, .transition-example--slide +
+.transition-example--fade,
+.transition-example--fade +
+.transition-example--fade {
+    margin-top: 1.25rem;
+}
+
+.transition-example--slide::before,
+.transition-example--fade::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    content: "";
+    background-color: #ededed;
+}
+
+.transition-example--slide code,
+.transition-example--fade code {
+    position: relative;
+    z-index: 2;
+}
+
+.transition-example--slide {
+    overflow-x: hidden;
+    cursor: e-resize;
+}
+
+.transition-example--slide::before {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+}
+
+.transition-example--slide:hover::before, .transition-example--slide:focus::before {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.transition-example--fade {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: cell;
+}
+
+.transition-example--fade::before {
+    opacity: 0;
+}
+
+.transition-example--fade:hover::before, .transition-example--fade:focus::before {
+    opacity: 1;
 }

@@ -42,7 +42,73 @@
             &[data-color="#{$main-color}"] {
                 background-color: $main-color;
                 color: contrasting-color($main-color);
+
+                // make white more noticeable
+                @if $main-color == $color-white {
+                    box-shadow: inset 0 0 0 $border-width-thin $color-alto;
+                }
             }
+        }
+    }
+}
+
+
+.transition-example--slide,
+.transition-example--fade {
+    @include transition;
+    width: 100%;
+    height: #{$measure-large * 1.5};
+    display: block;
+    border: $border-width-thin $border-style-default $color-alto;
+    position: relative;
+    line-height: strip-units($measure-large * 1.5 - $border-width-thin * 2);
+    text-align: center;
+
+    & + & {
+        margin-top: $measure-medium;
+    }
+
+    &::before {
+        @include position(full);
+        @include transition;
+        content: "";
+        background-color: $color-gallery;
+    }
+
+    code {
+        position: relative;
+        z-index: z-index(above);
+    }
+}
+
+.transition-example--slide {
+    overflow-x: hidden;
+    cursor: e-resize;
+
+    &::before {
+        transform: translateX(-100%);
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            transform: translateX(0);
+        }
+    }
+}
+
+.transition-example--fade {
+    @include transition;
+    cursor: cell;
+
+    &::before {
+        opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            opacity: 1;
         }
     }
 }
