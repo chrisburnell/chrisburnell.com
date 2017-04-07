@@ -1,0 +1,28 @@
+////
+/// Media
+/// @group base
+////
+
+
+audio,
+embed,
+iframe,
+object,
+video {
+    @extend %media-elements !optional;
+}
+
+/**
+ * Fix `audio`, `iframe`, and `video`
+ */
+audio,
+iframe,
+video {
+    width: 100%;
+    border: 0;
+    overflow-x: hidden;
+}
+iframe {
+    margin-bottom: $measure-medium;
+    contain: strict;
+}

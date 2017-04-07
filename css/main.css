@@ -1888,6 +1888,22 @@ textarea {
     overflow: auto;
 }
 
+/**
+ * Fix `audio`, `iframe`, and `video`
+ */
+audio,
+iframe,
+video {
+    width: 100%;
+    border: 0;
+    overflow-x: hidden;
+}
+
+iframe {
+    margin-bottom: 1.25rem;
+    contain: strict;
+}
+
 .wrap {
     width: auto;
     max-width: 1140px;
@@ -3265,21 +3281,6 @@ button .icon,
 }
 
 /**
- * Fix `iframe` and `video`
- */
-iframe,
-video {
-    width: 100%;
-    border: 0;
-    overflow-x: hidden;
-}
-
-iframe {
-    margin-bottom: 1.25rem;
-    contain: strict;
-}
-
-/**
  * Contains embedded media properly and allows them to be dynamically resized
  * inside a set aspect ratio container.
  */
@@ -3290,7 +3291,8 @@ iframe {
     overflow: hidden;
 }
 
-.media embed, .media
+.media audio, .media
+embed, .media
 iframe, .media
 object, .media
 video {
