@@ -258,6 +258,12 @@ color: contrasting-color(#111111);
     @else if $value == &quot;bottom&quot; {
         $value: 0 0 $border-radius-default $border-radius-default;
     }
+    @else if $value == &quot;left&quot; {
+        $value: $border-radius-default 0 0 $border-radius-default;
+    }
+    @else if $value == &quot;right&quot; {
+        $value: 0 $border-radius-default $border-radius-default 0;
+    }
     @else if $value == &quot;thin&quot; {
         $value: $border-radius-thin;
     }

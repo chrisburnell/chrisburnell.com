@@ -29,6 +29,12 @@
     @else if $value == "bottom" {
         $value: 0 0 $border-radius-default $border-radius-default;
     }
+    @else if $value == "left" {
+        $value: $border-radius-default 0 0 $border-radius-default;
+    }
+    @else if $value == "right" {
+        $value: 0 $border-radius-default $border-radius-default 0;
+    }
     @else if $value == "thin" {
         $value: $border-radius-thin;
     }

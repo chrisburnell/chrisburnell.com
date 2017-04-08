@@ -38,6 +38,26 @@
             padding: $measure-large 0;
         }
 
+        &:first-child {
+            @include media("<=small") {
+                @include border-radius(top);
+            }
+
+            @include media(">small") {
+                @include border-radius(left);
+            }
+        }
+
+        &:last-child {
+            @include media("<=small") {
+                @include border-radius(bottom);
+            }
+
+            @include media(">small") {
+                @include border-radius(right);
+            }
+        }
+
         @each $main-color in $main-colors {
             &[data-color="#{$main-color}"] {
                 background-color: $main-color;
@@ -55,6 +75,7 @@
 
 .transition-example--slide,
 .transition-example--fade {
+    @include border-radius;
     @include transition;
     width: 100%;
     height: #{$measure-large * 1.5};
