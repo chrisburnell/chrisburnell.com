@@ -74,11 +74,14 @@
 .transition-example--slide,
 .transition-example--fade {
     @include border-radius;
-    @include transition;
+    @include transition(color);
     width: 100%;
+    max-width: $line-length-responsive;
     height: #{$measure-large * 1.5};
     display: block;
     border: $border-width-thin $border-style-default $color-alto;
+    margin-left:  auto;
+    margin-right: auto;
     position: relative;
     line-height: strip-units($measure-large * 1.5 - $border-width-thin * 2);
     text-align: center;
@@ -87,10 +90,16 @@
         margin-top: $measure-medium;
     }
 
+    &:hover,
+    &:focus {
+        color: $color-white;
+    }
+
     &::before {
+        @include border-radius(thin);
         @include position(full);
         content: "";
-        background-color: $color-gallery;
+        background-color: $color-kaiser;
     }
 
     .monospace {
@@ -105,7 +114,8 @@
 
     &::before {
         @include transition(transform);
-        transform: translateX(-100%);
+        // ugly, but a single pixel peeks out at certain zoom levels
+        transform: translateX(-101%);
     }
 
     &:hover,

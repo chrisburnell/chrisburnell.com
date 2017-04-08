@@ -777,7 +777,10 @@ details {
     background-color: #2b2b2b;
     color: #f9f9f9;
     width: 100%;
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 0.625rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 details blockquote, details
@@ -1662,7 +1665,7 @@ a span:not([class]):not([itemprop]) {
 }
 
 .fragment-anchor:visited {
-    color: #686868;
+    color: #2b2b2b;
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
@@ -1671,7 +1674,7 @@ a span:not([class]):not([itemprop]) {
 }
 
 .fragment-anchor:visited:hover, .fragment-anchor:visited:focus, .fragment-anchor:visited:active {
-    border-bottom-color: #686868;
+    border-bottom-color: #2b2b2b;
 }
 
 h1:hover .fragment-anchor,
@@ -3469,12 +3472,15 @@ video {
 .transition-example--fade {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
     width: 100%;
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     height: 3.375rem;
     display: block;
     border: 0.125rem solid #dddddd;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     line-height: 3.125;
     text-align: center;
@@ -3488,15 +3494,23 @@ video {
     margin-top: 1.25rem;
 }
 
+.transition-example--slide:hover, .transition-example--slide:focus,
+.transition-example--fade:hover,
+.transition-example--fade:focus {
+    color: #f9f9f9;
+}
+
 .transition-example--slide::before,
 .transition-example--fade::before {
+    background-clip: padding-box;
+    border-radius: 0.25rem;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     content: "";
-    background-color: #ededed;
+    background-color: #4f4f4f;
 }
 
 .transition-example--slide .monospace,
@@ -3515,8 +3529,8 @@ video {
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-101%);
+            transform: translateX(-101%);
 }
 
 .transition-example--slide:hover::before, .transition-example--slide:focus::before {

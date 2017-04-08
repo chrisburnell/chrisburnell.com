@@ -530,7 +530,10 @@ details {
     background-color: $color-mineshaft;
     color: $color-white;
     width: 100%;
+    max-width: $line-length-responsive;
     padding: $measure-small;
+    margin-left:  auto;
+    margin-right: auto;
 
     %content-elements {
         padding: 0 $measure-small $measure-small;

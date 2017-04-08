@@ -123,7 +123,7 @@ a {
     }
 
     &:visited {
-        color: mix($color-black, $color-dove, 10%);
+        color: $color-mineshaft;
     }
 
     &:hover,
@@ -138,7 +138,7 @@ a {
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: mix($color-black, $color-dove, 10%);
+            border-bottom-color: $color-mineshaft;
         }
     }
 
