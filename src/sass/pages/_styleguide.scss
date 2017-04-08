@@ -19,9 +19,7 @@
     }
 
     li {
-        @include font-family(monospace);
         font-size: $font-size-small;
-        font-weight: $font-weight-bold;
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
@@ -91,12 +89,11 @@
 
     &::before {
         @include position(full);
-        @include transition;
         content: "";
         background-color: $color-gallery;
     }
 
-    code {
+    .monospace {
         position: relative;
         z-index: z-index(above);
     }
@@ -107,6 +104,7 @@
     cursor: e-resize;
 
     &::before {
+        @include transition(transform);
         transform: translateX(-100%);
     }
 
@@ -119,10 +117,10 @@
 }
 
 .transition-example--fade {
-    @include transition;
     cursor: cell;
 
     &::before {
+        @include transition(opacity);
         opacity: 0;
     }
 

@@ -67,7 +67,7 @@ code[data-lang] {
         max-height: 1000vh;
     }
 
-    &:not(:checked) + .highlight pre {
+    &:not(:checked) ~ .highlight pre {
         // limit number of lines of code
         max-height: #{$font-size-small * 2 * 5 + $measure-medium * 2 + 1};
         overflow-x: hidden;

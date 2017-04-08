@@ -217,9 +217,19 @@ ul {
 }
 ol:not([class]),
 ul:not([class]),
+dl:not([class]),
 .default-list {
     margin-bottom: $measure-medium;
 
+    // List nested in a list, or list followed by a list
+    & &,
+    & + & {
+        margin-top: $measure-medium;
+    }
+}
+ol:not([class]),
+ul:not([class]),
+.default-list {
     li {
         @include position(relative);
         padding-left: $measure-large;
@@ -232,11 +242,6 @@ ul:not([class]),
             @include position(top-left);
             font-weight: $font-weight-bold;
         }
-    }
-
-    // List nested in a list
-    & & {
-        margin-top: $measure-medium;
     }
 }
 ol:not([class]),
@@ -267,12 +272,7 @@ ul.default-list li::before {
     line-height: 1;
 }
 dl {
-    width: 100%;
     overflow: hidden;
-
-    &:not(:last-child) {
-        margin-bottom: $measure-large;
-    }
 }
 dt {
     width: auto;
@@ -646,18 +646,12 @@ blockquote {
     @include font-family(serif);
     @include quotes;
     background-color: $color-raven--light;
+    width: 100%;
+    max-width: $line-length-responsive;
     padding: $measure-medium;
-    margin: 0 $measure-large $measure-medium;
-
-    @include media("<=small") {
-        margin-left:  $measure-medium;
-        margin-right: $measure-medium;
-    }
+    margin: 0 auto $measure-medium;
 
     p {
-        max-width: $line-length-maximum;
-        margin-bottom: 0;
-
         &::before {
             content: open-quote;
         }

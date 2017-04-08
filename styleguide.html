@@ -20,23 +20,23 @@ twitter: true
 <ul class="color-block-list">
     <li data-color="#5f8aa6">
         <h4>Raven</h4>
-        <code>#5f8aa6</code>
+        <div class="monospace">#5f8aa6</div>
     </li>
     <li data-color="#4f4f4f">
         <h4>Kaiser</h4>
-        <code>#4f4f4f</code>
+        <div class="monospace">#4f4f4f</div>
     </li>
     <li data-color="#737373">
         <h4>Dove</h4>
-        <code>#737373</code>
+        <div class="monospace">#737373</div>
     </li>
     <li data-color="#dddddd">
         <h4>Alto</h4>
-        <code>#dddddd</code>
+        <div class="monospace">#dddddd</div>
     </li>
     <li data-color="#f9f9f9">
         <h4>White</h4>
-        <code>#f9f9f9</code>
+        <div class="monospace">#f9f9f9</div>
     </li>
 </ul>
 
@@ -44,11 +44,11 @@ twitter: true
 {% include content/heading.html title='Transitions' %}
 
 <div class="transition-example  transition-example--slide">
-    <code>transition: all 0.200 ease;</code>
+    <div class="monospace">transition: all 0.200 ease;</div>
 </div>
 
 <div class="transition-example  transition-example--fade">
-    <code>transition: all 0.200 ease;</code>
+    <div class="monospace">transition: all 0.200 ease;</div>
 </div>
 
 
@@ -199,7 +199,28 @@ twitter: true
 <ol reversed>
     <li>This is a list item in an ordered list</li>
     <li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
-    <li>This is the last list item</li>
+    <li>
+        This is the last list item
+        <ol>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an ordered list</li>
+        </ol>
+    </li>
+</ol>
+
+
+{% include content/heading.html title='Ordered List Reversed, Twice' %}
+
+<ol reversed>
+    <li>This is a list item in an ordered list</li>
+    <li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+    <li>
+        This is the last list item
+        <ol reversed>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an ordered list</li>
+        </ol>
+    </li>
 </ol>
 
 

@@ -332,8 +332,65 @@ ul {
 
 ol:not([class]),
 ul:not([class]),
+dl:not([class]),
 .default-list {
     margin-bottom: 1.25rem;
+}
+
+ol:not([class]) ol:not([class]),
+ol:not([class]) + ol:not([class]),
+ul:not([class]) ol:not([class]),
+ul:not([class]) + ol:not([class]),
+dl:not([class]) ol:not([class]),
+dl:not([class]) + ol:not([class]),
+.default-list ol:not([class]),
+.default-list + ol:not([class]), ol:not([class])
+ul:not([class]),
+ol:not([class]) +
+ul:not([class]),
+ul:not([class])
+ul:not([class]),
+ul:not([class]) +
+ul:not([class]),
+dl:not([class])
+ul:not([class]),
+dl:not([class]) +
+ul:not([class]),
+.default-list
+ul:not([class]),
+.default-list +
+ul:not([class]), ol:not([class])
+dl:not([class]),
+ol:not([class]) +
+dl:not([class]),
+ul:not([class])
+dl:not([class]),
+ul:not([class]) +
+dl:not([class]),
+dl:not([class])
+dl:not([class]),
+dl:not([class]) +
+dl:not([class]),
+.default-list
+dl:not([class]),
+.default-list +
+dl:not([class]), ol:not([class])
+.default-list,
+ol:not([class]) +
+.default-list,
+ul:not([class])
+.default-list,
+ul:not([class]) +
+.default-list,
+dl:not([class])
+.default-list,
+dl:not([class]) +
+.default-list,
+.default-list
+.default-list,
+.default-list +
+.default-list {
+    margin-top: 1.25rem;
 }
 
 ol:not([class]) li,
@@ -356,22 +413,6 @@ ul:not([class]) li::before,
     top: 0;
     left: 0;
     font-weight: 600;
-}
-
-ol:not([class]) ol:not([class]),
-ul:not([class]) ol:not([class]),
-.default-list ol:not([class]), ol:not([class])
-ul:not([class]),
-ul:not([class])
-ul:not([class]),
-.default-list
-ul:not([class]), ol:not([class])
-.default-list,
-ul:not([class])
-.default-list,
-.default-list
-.default-list {
-    margin-top: 1.25rem;
 }
 
 ol:not([class]),
@@ -411,12 +452,7 @@ ul.default-list li::before {
 }
 
 dl {
-    width: 100%;
     overflow: hidden;
-}
-
-dl:not(:last-child) {
-    margin-bottom: 2.25rem;
 }
 
 dt {
@@ -907,8 +943,10 @@ blockquote {
     font-family: Georgia, serif;
     hanging-punctuation: first;
     background-color: rgba(95, 138, 166, 0.1);
+    width: 100%;
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
-    margin: 0 2.25rem 1.25rem;
+    margin: 0 auto 1.25rem;
 }
 
 blockquote,
@@ -927,18 +965,6 @@ blockquote,
 
 :lang(es) blockquote {
     quotes: "«" "»" "“" "“";
-}
-
-@media (max-width: 500px) {
-    blockquote {
-        margin-left: 1.25rem;
-        margin-right: 1.25rem;
-    }
-}
-
-blockquote p {
-    max-width: 480px;
-    margin-bottom: 0;
 }
 
 blockquote p::before {
@@ -1118,19 +1144,19 @@ samp {
 /**
  * Inline Code Examples
  */
-blockquote code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code, blockquote code,
 details code,
 table code,
 dl code,
 ol code,
 ul code,
 figure:not([class]) code,
-p code, h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code,
+p code,
 ins,
 kbd,
 mark,
@@ -1139,19 +1165,19 @@ var {
     word-wrap: break-word;
 }
 
-blockquote code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code, blockquote code,
 details code,
 table code,
 dl code,
 ol code,
 ul code,
 figure:not([class]) code,
-p code, h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code,
+p code,
 ins,
 kbd,
 mark,
@@ -1162,19 +1188,19 @@ samp {
     line-height: 1.429;
 }
 
-blockquote code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code, blockquote code,
 details code,
 table code,
 dl code,
 ol code,
 ul code,
 figure:not([class]) code,
-p code, h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code,
+p code,
 ins,
 kbd,
 samp {
@@ -2082,19 +2108,15 @@ footer {
     border-radius: 0.25rem;
 }
 
-[aria-hidden="true"]:focus,
-.hidden:focus,
-.hide:focus,
-.sr-only:focus,
-.visually-hidden:focus {
-    background-color: gold;
-}
-
-[aria-hidden="true"]:not(:focus),
-.hidden:not(:focus),
-.hide:not(:focus),
-.sr-only:not(:focus),
-.visually-hidden:not(:focus) {
+[aria-hidden="true"]:not([href="#content"]), [aria-hidden="true"][href="#content"]:not(:focus),
+.hidden:not([href="#content"]),
+.hidden[href="#content"]:not(:focus),
+.hide:not([href="#content"]),
+.hide[href="#content"]:not(:focus),
+.sr-only:not([href="#content"]),
+.sr-only[href="#content"]:not(:focus),
+.visually-hidden:not([href="#content"]),
+.visually-hidden[href="#content"]:not(:focus) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
@@ -3161,12 +3183,12 @@ code[data-lang]::before {
     max-height: 1000vh;
 }
 
-.code-toggle-input:not(:checked) + .highlight pre {
+.code-toggle-input:not(:checked) ~ .highlight pre {
     max-height: 12.25rem;
     overflow-x: hidden;
 }
 
-.code-toggle-input:not(:checked) + .highlight pre::after {
+.code-toggle-input:not(:checked) ~ .highlight pre::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -3362,11 +3384,7 @@ video {
 }
 
 .color-block-list li {
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
     font-size: 0.875rem;
-    font-weight: 600;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -3477,14 +3495,12 @@ video {
     bottom: 0;
     left: 0;
     right: 0;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
     content: "";
     background-color: #ededed;
 }
 
-.transition-example--slide code,
-.transition-example--fade code {
+.transition-example--slide .monospace,
+.transition-example--fade .monospace {
     position: relative;
     z-index: 2;
 }
@@ -3495,6 +3511,10 @@ video {
 }
 
 .transition-example--slide::before {
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
 }
@@ -3505,12 +3525,12 @@ video {
 }
 
 .transition-example--fade {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
     cursor: cell;
 }
 
 .transition-example--fade::before {
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
     opacity: 0;
 }
 
