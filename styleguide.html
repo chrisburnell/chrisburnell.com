@@ -520,18 +520,14 @@ function toggleCode(node) {
 </ul>
 
 
-{% include content/heading.html title='HTML Attributes' %}
+{% include content/heading.html title='HTML Classes' %}
+
+<p><em>Classes</em> should be double-space delimited.</p>
 
 {% highlight html %}
-<section type class id name for value role aria-label aria-labelledby aria-live aria-required aria-expanded aria-controls aria-controlledby>
-</section>
-{% endhighlight %}
-
-<p>Element attributes (more often than not, <em>classes</em>) should be double-space-delimited.</p>
-
-{% highlight html %}
-<section class="comments  js-comments" id="comments" aria-expanded="false" aria-labelledby="show-comments">
-</section>
+<button class="button  button--small  js-trigger"
+        rel="me author">
+</button>
 {% endhighlight %}
 
 <p>
@@ -544,3 +540,16 @@ function toggleCode(node) {
 <p><a href="http://sassdoc.com/" rel="external">SassDoc</a> is used to build the <a href="{{ site.urls.sassdoc }}" title="Sass Documentation for {{ site.url }}">Sass</a>.</p>
 
 <p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://pages.github.com" rel="external">GitHub Pages</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <dfn title="storing data so future requests for that data can be served faster">caching</dfn>, <dfn title="Secure Sockets Layer">SSL</dfn>, and a <dfn title="Content Delivery Network">CDN</dfn>.
+
+
+{% include content/heading.html title='Tone and Voice' %}
+
+<p>Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:</p>
+
+<ul>
+    <li><a href="http://styleguide.mailchimp.com/voice-and-tone/">MailChimp Content Style Guide</a></li>
+    <li><a href="https://www.gov.uk/topic/government-digital-guidance/content-publishing">GOV.UK Content and Publishing</a></li>
+    <li><a href="https://pages.18f.gov/content-guide/voice-and-tone/">18F Content Guide</a></li>
+    <li><a href="https://buffer.com/tone-guide">Buffer Tone Guide</a></li>
+    <li><a href="http://www.economist.com/styleguide/introduction">The Economist Style Guide</a></li>
+</ul>
