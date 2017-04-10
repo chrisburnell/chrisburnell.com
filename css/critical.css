@@ -742,10 +742,31 @@ p {
 }
 
 summary {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
     display: list-item;
     font-weight: 600;
     outline: 0;
     cursor: pointer;
+}
+
+summary:hover, summary:focus {
+    text-decoration: underline;
+    -webkit-text-decoration-skip: objects;
+}
+
+details:not([open]) summary:hover,
+details:not([open]) summary:focus {
+    -webkit-transform: translateX(0.625rem);
+            transform: translateX(0.625rem);
 }
 
 summary + blockquote, summary +
@@ -1479,8 +1500,8 @@ aside p {
     .logo svg {
         width: 7rem;
         height: 7rem;
-        -webkit-transform: translateX(0) translateY(-1.5rem) translateZ(0);
-                transform: translateX(0) translateY(-1.5rem) translateZ(0);
+        -webkit-transform: translateX(50%) translateY(-1.5rem) translateZ(0);
+                transform: translateX(50%) translateY(-1.5rem) translateZ(0);
     }
 }
 
@@ -1495,8 +1516,8 @@ aside p {
 
 @media (max-width: 800px) {
     .logo:hover svg, .logo:focus svg {
-        -webkit-transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
-                transform: translateX(1.35rem) translateY(-1.35rem) translateZ(0);
+        -webkit-transform: translateX(65%) translateY(-1.35rem) translateZ(0);
+                transform: translateX(65%) translateY(-1.35rem) translateZ(0);
     }
 }
 
@@ -1509,8 +1530,8 @@ aside p {
 
 @media (max-width: 800px) {
     .logo:active svg {
-        -webkit-transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
-                transform: translateX(1.5rem) translateY(-1rem) translateZ(0);
+        -webkit-transform: translateX(70%) translateY(-1rem) translateZ(0);
+                transform: translateX(70%) translateY(-1rem) translateZ(0);
     }
 }
 

@@ -130,10 +130,11 @@ $color-raven--light: rgba($color-raven, map-get($opacities, "tint--soft")) !defa
 /// @require {Variable} $color-white
 $main-colors:
     $color-raven,
+    $color-black,
+    $color-white,
     $color-kaiser,
     $color-dove,
-    $color-alto,
-    $color-white !default;
+    $color-alto !default;
 
 
 /// @type Length
@@ -150,10 +151,13 @@ $border-style-default: solid !default;
 
 /// @type Length
 /// @see {Mixin} border-radius
-$border-radius-default: 0.375rem !default;
+$border-radius-default:  0.375rem !default;
 /// @type Length
 /// @see {Mixin} border-radius
-$border-radius-thin:    0.250rem !default;
+$border-radius-thin:     0.250rem !default;
+/// @type Length
+/// @see {Mixin} border-radius
+$border-radius-hairline: 0.125rem !default;
 
 
 /// @type Number

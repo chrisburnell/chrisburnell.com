@@ -35,6 +35,18 @@
     @else if $value == "right" {
         $value: 0 $border-radius-default $border-radius-default 0;
     }
+    @else if $value == "top-left" {
+        $value: $border-radius-default 0 0 0;
+    }
+    @else if $value == "top-right" {
+        $value: 0 $border-radius-default 0 0;
+    }
+    @else if $value == "bottom-left" {
+        $value: 0 0 0 $border-radius-default;
+    }
+    @else if $value == "bottom-right" {
+        $value: 0 0 $border-radius-default 0;
+    }
     @else if $value == "thin" {
         $value: $border-radius-thin;
     }
@@ -326,7 +338,7 @@
     @if length($values) == 0 {
         $transition: all #{$transition-time} #{$transition-function};
     // if parameter just set to "none" then just transition nothing (none)
-    } @else if $values == "none" {
+    } @else if $values == none {
         $transition: none;
     // if the parameter contains a comma then operating on multiple properties
     } @else if str-index(#{$values}, ",") {

@@ -540,10 +540,23 @@ details {
     }
 }
 summary {
+    @include non-selectable;
+    @include transition(transform);
     display: list-item;
     font-weight: $font-weight-bold;
     outline: 0;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    details:not([open]) &:hover,
+    details:not([open]) &:focus {
+        transform: translateX($measure-small);
+    }
 
     & + %content-elements {
         margin-top: $measure-small;

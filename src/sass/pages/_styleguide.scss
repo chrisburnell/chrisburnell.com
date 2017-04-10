@@ -13,59 +13,43 @@
 .color-block-list {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 
     @include media("<=small") {
         flex-direction: column;
     }
 
     li {
+        padding: $measure-medium 0;
         font-size: $font-size-small;
         text-align: center;
         white-space: nowrap;
         vertical-align: middle;
-         font-variant-numeric: tabular-nums;
+        font-variant-numeric: tabular-nums;
         font-feature-settings: "tnum";
 
         @include media("<=small") {
-            flex: 0 1 100%;
-            padding: $measure-medium 0;
+            flex: 1 0 100%;
         }
 
-        @include media(">small") {
-            flex: 0 1 20%;
-            padding: $measure-large 0;
+        @include media(">small", "<=large") {
+            flex: 1 0 50%;
         }
 
-        &:first-child {
-            @include media("<=small") {
-                @include border-radius(top);
-            }
-
-            @include media(">small") {
-                @include border-radius(left);
-            }
-        }
-
-        &:last-child {
-            @include media("<=small") {
-                @include border-radius(bottom);
-            }
-
-            @include media(">small") {
-                @include border-radius(right);
-            }
+        @include media(">large") {
+            flex: 1 0 33.333%;
         }
 
         @each $main-color in $main-colors {
             &[data-color="#{$main-color}"] {
                 background-color: $main-color;
                 color: contrasting-color($main-color);
-
-                // make white more noticeable
-                @if $main-color == $color-white {
-                    box-shadow: inset 0 0 0 $border-width-thin $color-alto;
-                }
             }
+        }
+
+        h4 {
+            margin-bottom: 0;
+            line-height: $line-height-default;
         }
     }
 }
@@ -73,7 +57,7 @@
 
 .transition-example--slide,
 .transition-example--fade {
-    @include border-radius;
+    @include border-radius(thin);
     @include transition(color);
     width: 100%;
     max-width: $line-length-responsive;
@@ -96,7 +80,7 @@
     }
 
     &::before {
-        @include border-radius(thin);
+        @include border-radius($border-radius-hairline);
         @include position(full);
         content: "";
         background-color: $color-kaiser;
