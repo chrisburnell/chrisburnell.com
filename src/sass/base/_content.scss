@@ -671,9 +671,13 @@ blockquote {
             content: open-quote;
         }
 
-        &:first-of-type {
+        &::after {
+            content: close-quote;
+        }
+
+        &:last-of-type {
             &::after {
-                content: close-quote;
+                @include visually-hidden;
             }
         }
     }
