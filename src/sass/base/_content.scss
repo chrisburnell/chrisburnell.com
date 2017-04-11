@@ -675,7 +675,7 @@ blockquote {
             content: close-quote;
         }
 
-        &:last-of-type {
+        &:not(:last-of-type) {
             &::after {
                 @include visually-hidden;
             }

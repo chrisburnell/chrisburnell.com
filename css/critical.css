@@ -943,7 +943,7 @@ blockquote p::after {
     content: close-quote;
 }
 
-blockquote p:last-of-type::after {
+blockquote p:not(:last-of-type)::after {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
