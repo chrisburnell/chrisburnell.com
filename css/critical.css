@@ -862,12 +862,10 @@ figure:not(.highlight) {
     overflow-y: hidden;
 }
 
-figure > a,
-figure img,
-figure
-svg,
-figure
+figure img, figure
+svg, figure
 picture,
+figure > a,
 figure > a img,
 figure > a
 svg,
@@ -878,15 +876,13 @@ picture {
     display: block;
 }
 
-figure > a {
-    border-bottom-width: 0;
-}
-
-figure > a:link,
-figure > a:visited,
+figure > a,
 figure figcaption {
     color: #737373;
-    font-style: italic;
+}
+
+figure > a {
+    border-bottom-width: 0;
 }
 
 figure figcaption {
@@ -902,6 +898,7 @@ figure figcaption {
             align-items: center;
     padding-top: 1.25rem;
     font-family: Georgia, serif;
+    font-style: italic;
     line-height: 1.25;
 }
 

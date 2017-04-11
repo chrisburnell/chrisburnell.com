@@ -24,9 +24,9 @@
 @import "base/page";
 @import "base/content";
 @import "base/code";
-@import "base/anchors";
-@import "base/buttons";
-@import "base/forms";
+@import "base/anchor";
+@import "base/button";
+@import "base/form";
 @import "base/media";
 
 /// LAYOUT
@@ -46,12 +46,12 @@
 @import "components/search";
 @import "components/nav-secondary";
 @import "components/author";
-@import "components/widgets";
+@import "components/widget";
 @import "components/footer";
 @import "components/nav-tertiary";
 @import "components/comments";
 @import "components/code";
-@import "components/icons";
+@import "components/icon";
 @import "components/media";
 @import "components/print";
 

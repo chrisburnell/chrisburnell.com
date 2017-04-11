@@ -113,12 +113,12 @@ src/css
 │   ├── _mixins.scss
 │   └── _variables.scss
 ├── base
-│   ├── _anchors.scss
-│   ├── _buttons.scss
+│   ├── _anchor.scss
+│   ├── _button.scss
 │   ├── _code.scss
 │   ├── _content.scss
 │   ├── _fonts.scss
-│   ├── _forms.scss
+│   ├── _form.scss
 │   └── _page.scss
 ├── components
 │   ├── _author.scss
@@ -128,7 +128,7 @@ src/css
 │   ├── _content.scss
 │   ├── _footer.scss
 │   ├── _helpers.scss
-│   ├── _icons.scss
+│   ├── _icon.scss
 │   ├── _logo.scss
 │   ├── _media.scss
 │   ├── _nav-primary.scss
@@ -136,7 +136,7 @@ src/css
 │   ├── _nav-tertiary.scss
 │   ├── _print.scss
 │   ├── _search.scss
-│   └── _widgets.scss
+│   └── _widget.scss
 ├── layout
 │   ├── _aside.scss
 │   ├── _content.scss

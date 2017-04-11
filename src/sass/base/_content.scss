@@ -626,22 +626,20 @@ figure {
         overflow-y: hidden;
     }
 
-    & > a,
     & %image-elements,
+    & > a,
     & > a %image-elements {
         @include border-radius;
         display: block;
     }
 
-    & > a {
-        border-bottom-width: 0;
-    }
-
-    & > a:link,
-    & > a:visited,
+    & > a,
     figcaption {
         color: $color-dove;
-        font-style: italic;
+    }
+
+    & > a {
+        border-bottom-width: 0;
     }
 
     figcaption {
@@ -650,6 +648,7 @@ figure {
         align-items: center;
         padding-top: $measure-medium;
         font-family: $font-family-serif;
+        font-style: italic;
         line-height: $line-height-small;
     }
 }
