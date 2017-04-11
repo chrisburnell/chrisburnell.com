@@ -931,10 +931,6 @@ blockquote,
     quotes: "« " " »" "‹ " " ›";
 }
 
-:lang(es) blockquote {
-    quotes: "«" "»" "“" "“";
-}
-
 blockquote p::before {
     content: open-quote;
 }
@@ -985,10 +981,6 @@ q,
 
 :lang(fr) q {
     quotes: "« " " »" "‹ " " ›";
-}
-
-:lang(es) q {
-    quotes: "«" "»" "“" "“";
 }
 
 time {
