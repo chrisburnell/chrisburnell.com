@@ -251,7 +251,7 @@ ol.default-list {
 
         &::before {
             content: counter(ordered-list, decimal-leading-zero) ".";
-             font-variant-numeric: tabular-nums;
+            font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum";
         }
     }
@@ -757,7 +757,7 @@ small {
 }
 
 strong {
-   font-weight: $font-weight-bold;
+    font-weight: $font-weight-bold;
 }
 
 sub,

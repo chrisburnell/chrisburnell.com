@@ -436,11 +436,11 @@ color: contrasting-color(#111111);
     // if no parameter, transition all with default time and function
     @if length($values) == 0 {
         $transition: all #{$transition-time} #{$transition-function};
-    // if parameter just set to &quot;none&quot; then just transition nothing (none)
     } @else if $values == none {
+        // if parameter just set to &quot;none&quot; then just transition nothing (none)
         $transition: none;
-    // if the parameter contains a comma then operating on multiple properties
     } @else if str-index(#{$values}, &quot;,&quot;) {
+        // if the parameter contains a comma then operating on multiple properties
         @each $value in $values {
             $transition: append($transition, unpack-transition($value), comma);
         }
