@@ -256,6 +256,12 @@ $letter-spacing-uppercase: 1px !default;
 
 
 /// @type Length
+$animation-time: 2s !default;
+/// @type String
+$animation-function: linear !default;
+
+
+/// @type Length
 $rotation-default: 15deg !default;
 
 

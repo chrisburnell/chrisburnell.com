@@ -12,6 +12,7 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
+import eslint from 'gulp-eslint';
 import imagemin from 'gulp-imagemin';
 import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
@@ -50,35 +51,6 @@ const paths = {
     sassdoc: 'sassdoc'
 };
 
-// Define Stylelint Rules
-const stylelintRules = {
-    'rules': {
-        'color-hex-case': 'lower',
-        'color-hex-length': 'long',
-        'color-no-invalid-hex': true,
-        'declaration-block-no-duplicate-properties': [true, {
-            ignore: ["consecutive-duplicates-with-different-values"]
-        }],
-        'font-weight-notation': 'numeric',
-        'function-url-quotes': 'always',
-        // 'max-nesting-depth': 3,
-        'number-leading-zero': 'always',
-        'number-max-precision': 4,
-        'property-case': 'lower',
-        'property-no-unknown': true,
-        'keyframe-declaration-no-important': true,
-        'length-zero-no-unit': true,
-        'time-min-milliseconds': 100,
-        'block-opening-brace-newline-after': 'always',
-        'selector-no-id': true,
-        'shorthand-property-no-redundant-values': true,
-        'string-quotes': 'double',
-        'unit-blacklist': ['pc', 'pt', 'ex', 'ch', 'mm', 'cm', 'in'],
-        'unit-case': 'lower',
-        'unit-no-unknown': true
-    }
-};
-
 // -----------------------------------------------------------------------------
 
 // Lint Sass
@@ -87,7 +59,7 @@ gulp.task('css-lint', () => {
                      `${paths.css.src}/**/*.scss`])
         .pipe(plumber())
         .pipe(postcss([
-            stylelint(stylelintRules),
+            stylelint(),
             reporter({
                 plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
@@ -192,14 +164,21 @@ gulp.task('css-sassdoc', () => {
 
 // -----------------------------------------------------------------------------
 
-// Compile JavaScript
-gulp.task('js-compile', () => {
-    return gulp.src([`!${paths.js.src}/vendors/loadcss.js`,
-                     `!${paths.js.src}/vendors/loadcss-preload-polyfill.js`,
-                     `!${paths.js.src}/vendors/svg4everybody.js`,
-                     `!${paths.js.src}/outdated/*.js`,
+// Lint JavaScript
+gulp.task('js-lint', () => {
+    return gulp.src([`${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
-                     `${paths.js.src}/**/*.js`])
+                     `!${paths.js.src}/vendors/**/*.js`])
+        .pipe(plumber())
+        .pipe(eslint())
+        .pipe(eslint.format());
+});
+
+// Compile JavaScript
+gulp.task('js-compile', ['js-lint'], () => {
+    return gulp.src([`${paths.js.src}/**/*.js`,
+                     `!${paths.js.src}/serviceworker.js`,
+                     `!${paths.js.src}/vendors/**/{loadcss.js,loadcss-preload-polyfill.js,svg4everybody.js}`])
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())

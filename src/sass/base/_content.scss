@@ -48,24 +48,22 @@ h6 {
     // Show an indicator when using an Anchor to jump to a heading with an `id`
     &[id] {
         &:target {
-            animation: heading-target 2s linear;
-        }
-        @at-root {
-            @keyframes heading-target {
-                0%,
-                50% {
-                    background-color: $color-highlight;
-                }
-                100% {
-                    background-color: $transparent;
-                }
-            }
+            animation: heading-target $animation-time $animation-function;
         }
     }
 
     // For special Monospace titles
     %monospace-elements {
         @include case(none);
+    }
+}
+@keyframes heading-target {
+    0%,
+    50% {
+        background-color: $color-highlight;
+    }
+    100% {
+        background-color: $transparent;
     }
 }
 

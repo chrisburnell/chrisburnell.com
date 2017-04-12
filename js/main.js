@@ -1,5 +1,3 @@
-'use strict';
-
 /*!
  * Code ARIA Toggling
  * @author Chris Burnell <me@chrisburnell.com>
@@ -11,43 +9,23 @@
 
     var codeToggleLabels = document.querySelectorAll('.code-toggle-label');
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    codeToggleLabels.addEventListener('click', function (event) {
+        toggleCode(event.target);
+    });
 
-    try {
-        for (var _iterator = codeToggleLabels[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var index = _step.value;
+    function toggleCode(codeToggleLabel) {
+        var codeToggle = codeToggleLabel.parentNode;
+        var codeToggleButton = codeToggleLabel.querySelector('button');
+        var codeToggleHash = '#' + codeToggleLabel.querySelector('button').getAttribute('aria-controls');
 
-            index.addEventListener('click', function (event) {
-                toggleCode(event);
-            });
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
+        codeToggle.setAttribute('aria-expanded', 'true');
+        codeToggleLabel.setAttribute('aria-hidden', 'true');
+        codeToggleLabel.removeEventListener('click', function () {});
+        codeToggleButton.setAttribute('aria-pressed', 'true');
 
-    function toggleCode(node) {
-        node.target.setAttribute('aria-hidden', 'true');
-        node.target.removeEventListener('click', function () {});
-        node.target.querySelector('button').setAttribute('aria-pressed', 'true');
-        node.target.parentNode.setAttribute('aria-expanded', 'true');
-        window.location.hash = '#' + node.target.querySelector('button').getAttribute('aria-controls');
+        window.location.hash = codeToggleHash;
     }
 })();
-'use strict';
-
 /*!
  * Conditional comments for article pages
  * @author Chris Burnell <me@chrisburnell.com>
@@ -125,8 +103,6 @@
         }
     }
 })();
-'use strict';
-
 /*!
  * A simple JSON search
  * @author Mat Hayward - Erskine Design (Original Author)
@@ -137,15 +113,15 @@
 
     'use strict';
 
-    var query = void 0;
-    var searchContainer = document.querySelector('.js-search');
-    var searchForm = document.querySelector('.js-search-form');
-    var searchInput = document.querySelector('.js-search-input');
-    var searchSubmit = document.querySelector('.js-search-submit');
-    var resultsMeta = document.querySelector('.js-search-meta');
-    var resultsList = document.querySelector('.js-search-results-list');
-    var jsonFeedUrl = '../search.json';
+    var query = void 0,
+        searchContainer = document.querySelector('.js-search'),
+        searchForm = document.querySelector('.js-search-form'),
+        searchInput = document.querySelector('.js-search-input'),
+        searchSubmit = document.querySelector('.js-search-submit'),
+        resultsMeta = document.querySelector('.js-search-meta'),
+        resultsList = document.querySelector('.js-search-results-list');
     var allowEmpty = false;
+    var jsonFeedUrl = '../search.json';
     var resultTemplatePage = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{url}}">\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n            </a>\n        </article>\n    </li>';
     var resultTemplatePost = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{url}}">\n                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n                <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n            </a>\n        </article>\n    </li>';
 
@@ -164,7 +140,6 @@
     /// Binds search function to form submission.
     ////
     function initSearch() {
-
         // Get search results if query parameter is set in querystring
         if (getParameterByName('query')) {
             query = decodeURIComponent(getParameterByName('query'));
@@ -199,7 +174,7 @@
     /// @return void
     ////
     function execSearch(query) {
-        if (query != '' || allowEmpty) {
+        if (query !== '' || allowEmpty) {
             getSearchResults();
         }
     }
@@ -210,7 +185,6 @@
     /// @return void
     ////
     function getSearchResults() {
-
         var request = new XMLHttpRequest();
 
         request.open('GET', jsonFeedUrl, true);
@@ -235,9 +209,8 @@
     /// @return void
     ////
     function processData(data) {
-
-        var resultsCount = 0;
-        var results = '';
+        var resultsCount = 0,
+            results = '';
 
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -248,49 +221,52 @@
                 var item = _step.value;
 
 
-                var queryFormatted = query.toLowerCase();
+                var queryFormatted = query.toLowerCase(),
+                    titleCheck = false,
+                    ledeCheck = false,
+                    dateCheck = false,
+                    contentCheck = false,
+                    categoriesCheck = false,
+                    tagsCheck = false,
+                    locationCheck = false;
 
-                var titleCheck = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
-                var ledeCheck = false;
-                var dateCheck = false;
-                var contentCheck = false;
-                var categoriesCheck = false;
-                var tagsCheck = false;
-                var locationCheck = false;
-
-                if (item['lede']) {
-                    ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
+                if (item.title) {
+                    titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
                 }
-                if (item['date'] || item['date_friendly']) {
+
+                if (item.lede) {
+                    ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
+                }
+                if (item.date || item.date_friendly) {
                     if (queryFormatted.substring(0, 5) == 'date:') {
-                        dateCheck = item['date'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                        dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                         if (!dateCheck) {
-                            dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                            dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                         }
                     } else {
-                        dateCheck = item['date'].toLowerCase().indexOf(queryFormatted) > -1;
+                        dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
                         if (!dateCheck) {
-                            dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted) > -1;
+                            dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
                         }
                     }
                 }
-                if (item['content']) {
-                    contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
+                if (item.content) {
+                    contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
                 }
-                if (item['categories']) {
-                    categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
+                if (item.categories) {
+                    categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
                 }
-                if (item['tags']) {
+                if (item.tags) {
                     if (queryFormatted.substring(0, 4) == 'tag:') {
-                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
+                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
                     } else if (queryFormatted.substring(0, 5) == 'tags:') {
-                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     } else {
-                        tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                     }
                 }
-                if (item['location']) {
-                    locationCheck = item['location'].toLowerCase().indexOf(queryFormatted) > -1;
+                if (item.location) {
+                    locationCheck = item.location.toLowerCase().indexOf(queryFormatted) > -1;
                 }
 
                 // if performing a date check
@@ -305,7 +281,7 @@
                     }
                     // or item type is a page, check if search term is in title,
                     // content, or lede, categories, tags, or talk location
-                    else if (item['type'] == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+                    else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
                             resultsCount++;
                             results += populateResultContent(resultTemplatePage, item);
                         }
@@ -361,40 +337,40 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = injectContent(html, item['url'], '{{url}}');
+        html = injectContent(html, item.url, '{{url}}');
 
         // ICON
-        if (item['categories'] == 'article') {
+        if (item.categories == 'article') {
             html = injectContent(html, 'article', '{{icon}}');
-        } else if (item['categories'] == 'link') {
+        } else if (item.categories == 'link') {
             html = injectContent(html, 'link', '{{icon}}');
-        } else if (item['categories'] == 'pen') {
+        } else if (item.categories == 'pen') {
             html = injectContent(html, 'codepen', '{{icon}}');
-        } else if (item['categories'] == 'talk') {
+        } else if (item.categories == 'talk') {
             html = injectContent(html, 'bullhorn', '{{icon}}');
         }
 
         // TITLE
-        html = injectContent(html, item['title'], '{{title}}');
+        html = injectContent(html, item.title, '{{title}}');
 
         // LEDE
-        if (item['lede']) {
-            var ledeFormatted = item['lede'].replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
+        if (item.lede) {
+            var ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
             html = injectContent(html, ledeFormatted, '{{lede}}');
-        } else if (item['categories'] == 'link') {
+        } else if (item.categories == 'link') {
             html = injectContent(html, 'Shared Link', '{{lede}}');
-        } else if (item['categories'] == 'pen') {
+        } else if (item.categories == 'pen') {
             html = injectContent(html, 'Featured Pen', '{{lede}}');
-        } else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, 'Talk \u2013 Given at ' + item['location'] + '.', '{{lede}}');
-        } else if (item['categories'] == 'talk') {
+        } else if (item.categories == 'talk' && item.location) {
+            html = injectContent(html, 'Talk \u2013 Given at ' + item.location + '.', '{{lede}}');
+        } else if (item.categories == 'talk') {
             html = injectContent(html, 'Talk', '{{lede}}');
         }
 
         // DATE
-        if (item['type'] == 'post') {
-            html = injectContent(html, item['date'], '{{date}}');
-            html = injectContent(html, item['date_friendly'], '{{date_friendly}}');
+        if (item.type == 'post') {
+            html = injectContent(html, item.date, '{{date}}');
+            html = injectContent(html, item.date_friendly, '{{date_friendly}}');
         }
 
         return html;
@@ -434,8 +410,6 @@
         return originalContent.replace(regex, injection);
     }
 })();
-'use strict';
-
 /*!
  * Show comment counts on home and articles archive page
  */
@@ -454,8 +428,6 @@
 
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsqc);
 })();
-'use strict';
-
 /*!
  * Google Analytics
  */
@@ -468,8 +440,6 @@
 
 ga('create', 'UA-10353655-1', 'auto');
 ga('send', 'pageview');
-"use strict";
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! picturefill - v3.0.2 - 2016-02-12

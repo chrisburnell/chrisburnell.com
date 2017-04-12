@@ -96,24 +96,6 @@ h6[id]:target {
             animation: heading-target 2s linear;
 }
 
-@-webkit-keyframes heading-target {
-    0%, 50% {
-        background-color: gold;
-    }
-    100% {
-        background-color: transparent;
-    }
-}
-
-@keyframes heading-target {
-    0%, 50% {
-        background-color: gold;
-    }
-    100% {
-        background-color: transparent;
-    }
-}
-
 h1 code, h1
 kbd, h1
 samp, h1
@@ -165,6 +147,26 @@ var,
 h6
 .monospace {
     text-transform: none;
+}
+
+@-webkit-keyframes heading-target {
+    0%,
+    50% {
+        background-color: gold;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes heading-target {
+    0%,
+    50% {
+        background-color: gold;
+    }
+    100% {
+        background-color: transparent;
+    }
 }
 
 /**

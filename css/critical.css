@@ -97,7 +97,8 @@ h6[id]:target {
 }
 
 @-webkit-keyframes heading-target {
-    0%, 50% {
+    0%,
+    50% {
         background-color: gold;
     }
     100% {
@@ -106,7 +107,8 @@ h6[id]:target {
 }
 
 @keyframes heading-target {
-    0%, 50% {
+    0%,
+    50% {
         background-color: gold;
     }
     100% {

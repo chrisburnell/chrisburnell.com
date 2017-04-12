@@ -10,15 +10,15 @@
     'use strict';
 
 
-    let query;
-    let searchContainer = document.querySelector('.js-search');
-    let searchForm      = document.querySelector('.js-search-form');
-    let searchInput     = document.querySelector('.js-search-input');
-    let searchSubmit    = document.querySelector('.js-search-submit');
-    let resultsMeta     = document.querySelector('.js-search-meta');
-    let resultsList     = document.querySelector('.js-search-results-list');
-    const jsonFeedUrl = '../search.json';
+    let query,
+        searchContainer = document.querySelector('.js-search'),
+        searchForm      = document.querySelector('.js-search-form'),
+        searchInput     = document.querySelector('.js-search-input'),
+        searchSubmit    = document.querySelector('.js-search-submit'),
+        resultsMeta     = document.querySelector('.js-search-meta'),
+        resultsList     = document.querySelector('.js-search-results-list');
     const allowEmpty = false;
+    const jsonFeedUrl = '../search.json';
     const resultTemplatePage = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
             <a href="{{url}}">
@@ -55,7 +55,6 @@
     /// Binds search function to form submission.
     ////
     function initSearch() {
-
         // Get search results if query parameter is set in querystring
         if (getParameterByName('query')) {
             query = decodeURIComponent(getParameterByName('query'));
@@ -71,7 +70,6 @@
         } else if (searchContainer && searchForm.attachEvent) {
             searchForm.attachEvent('onsubmit', submitCallback);
         }
-
     }
 
     function submitCallback(event) {
@@ -91,7 +89,7 @@
     /// @return void
     ////
     function execSearch(query) {
-        if (query != '' || allowEmpty) {
+        if (query !== '' || allowEmpty) {
             getSearchResults();
         }
     }
@@ -102,7 +100,6 @@
     /// @return void
     ////
     function getSearchResults() {
-
         const request = new XMLHttpRequest();
 
         request.open('GET', jsonFeedUrl, true);
@@ -120,7 +117,6 @@
         };
 
         request.send();
-
     }
 
     ////
@@ -128,58 +124,60 @@
     /// @return void
     ////
     function processData(data) {
-
-        let resultsCount = 0;
-        let results = '';
+        let resultsCount = 0,
+            results = '';
 
         for (var item of data) {
 
-            let queryFormatted = query.toLowerCase();
+            let queryFormatted  = query.toLowerCase(),
+                titleCheck      = false,
+                ledeCheck       = false,
+                dateCheck       = false,
+                contentCheck    = false,
+                categoriesCheck = false,
+                tagsCheck       = false,
+                locationCheck   = false;
 
-            let titleCheck      = item['title'].toLowerCase().indexOf(queryFormatted) > -1;
-            let ledeCheck       = false;
-            let dateCheck       = false;
-            let contentCheck    = false;
-            let categoriesCheck = false;
-            let tagsCheck       = false;
-            let locationCheck   = false;
-
-            if (item['lede']) {
-                ledeCheck = item['lede'].toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.title) {
+                titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if (item['date'] || item['date_friendly']) {
+
+            if (item.lede) {
+                ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
+            }
+            if (item.date || item.date_friendly) {
                 if (queryFormatted.substring(0, 5) == 'date:') {
-                    dateCheck = item['date'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     if (!dateCheck) {
-                        dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                        dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     }
                 }
                 else {
-                    dateCheck = item['date'].toLowerCase().indexOf(queryFormatted) > -1;
+                    dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
                     if (!dateCheck) {
-                        dateCheck = item['date_friendly'].toLowerCase().indexOf(queryFormatted) > -1;
+                        dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
                     }
                 }
             }
-            if (item['content']) {
-                contentCheck = item['content'].toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.content) {
+                contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if (item['categories']) {
-                categoriesCheck = item['categories'].toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.categories) {
+                categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if (item['tags']) {
+            if (item.tags) {
                 if (queryFormatted.substring(0, 4) == 'tag:') {
-                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
                 }
                 else if (queryFormatted.substring(0, 5) == 'tags:') {
-                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                 }
                 else {
-                    tagsCheck = item['tags'].toLowerCase().indexOf(queryFormatted) > -1;
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }
-            if (item['location']) {
-                locationCheck = item['location'].toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.location) {
+                locationCheck = item.location.toLowerCase().indexOf(queryFormatted) > -1;
             }
 
             // if performing a date check
@@ -194,7 +192,7 @@
             }
             // or item type is a page, check if search term is in title,
             // content, or lede, categories, tags, or talk location
-            else if (item['type'] == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+            else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
                 results += populateResultContent(resultTemplatePage, item);
             }
@@ -204,7 +202,6 @@
                 resultsCount++;
                 results += populateResultContent(resultTemplatePost, item);
             }
-
         }
 
         populateResultsString(resultsCount);
@@ -237,47 +234,47 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = injectContent(html, item['url'], '{{url}}');
+        html = injectContent(html, item.url, '{{url}}');
 
         // ICON
-        if (item['categories'] == 'article') {
+        if (item.categories == 'article') {
             html = injectContent(html, 'article', '{{icon}}');
         }
-        else if (item['categories'] == 'link') {
+        else if (item.categories == 'link') {
             html = injectContent(html, 'link', '{{icon}}');
         }
-        else if (item['categories'] == 'pen') {
+        else if (item.categories == 'pen') {
             html = injectContent(html, 'codepen', '{{icon}}');
         }
-        else if (item['categories'] == 'talk') {
+        else if (item.categories == 'talk') {
             html = injectContent(html, 'bullhorn', '{{icon}}');
         }
 
         // TITLE
-        html = injectContent(html, item['title'], '{{title}}');
+        html = injectContent(html, item.title, '{{title}}');
 
         // LEDE
-        if (item['lede']) {
-            let ledeFormatted = item['lede'].replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
+        if (item.lede) {
+            let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
             html = injectContent(html, ledeFormatted, '{{lede}}');
         }
-        else if (item['categories'] == 'link') {
+        else if (item.categories == 'link') {
             html = injectContent(html, 'Shared Link', '{{lede}}');
         }
-        else if (item['categories'] == 'pen') {
+        else if (item.categories == 'pen') {
             html = injectContent(html, 'Featured Pen', '{{lede}}');
         }
-        else if (item['categories'] == 'talk' && item['location']) {
-            html = injectContent(html, `Talk – Given at ${item['location']}.`, '{{lede}}');
+        else if (item.categories == 'talk' && item.location) {
+            html = injectContent(html, `Talk – Given at ${item.location}.`, '{{lede}}');
         }
-        else if (item['categories'] == 'talk') {
+        else if (item.categories == 'talk') {
             html = injectContent(html, `Talk`, '{{lede}}');
         }
 
         // DATE
-        if (item['type'] == 'post') {
-            html = injectContent(html, item['date'], '{{date}}');
-            html = injectContent(html, item['date_friendly'], '{{date_friendly}}');
+        if (item.type == 'post') {
+            html = injectContent(html, item.date, '{{date}}');
+            html = injectContent(html, item.date_friendly, '{{date_friendly}}');
         }
 
         return html;
