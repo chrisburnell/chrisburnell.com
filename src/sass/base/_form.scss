@@ -37,7 +37,7 @@ textarea {
     outline-style: none;
 
     &:hover {
-        border-color: $color-raven--soft;
+        border-color: $color-raven--tint;
     }
 
     &:focus {
@@ -45,7 +45,7 @@ textarea {
     }
 
     &[disabled] {
-        opacity: opacity("shade--soft");
+        opacity: opacity("beta");
         pointer-events: none;
     }
 

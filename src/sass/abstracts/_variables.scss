@@ -69,10 +69,10 @@ $measure-large-proportional:  8vmin !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    "tint--hard":  0.050,
-    "tint--soft":  0.100,
-    "shade--soft": 0.700,
-    "shade--hard": 0.900
+    "alpha": 0.900,
+    "beta":  0.700,
+    "gamma": 0.100,
+    "delta": 0.050,
 ) !default;
 
 
@@ -99,28 +99,28 @@ $color-highlight: gold !default;
 $color-canada: #fd1b00 !default;
 /// @type Color
 /// @require {Variable} $color-black
-/// @require {Variable} $opacities
-$color-black--subtle: rgba($color-black, map-get($opacities, "tint--hard")) !default;
-/// @type Color
-/// @require {Variable} $color-black
-/// @require {Variable} $opacities
-$color-black--light: rgba($color-black, map-get($opacities, "tint--soft")) !default;
-/// @type Color
-/// @require {Variable} $color-black
 /// @require {Variable} $color-kaiser
 $color-mineshaft: mix($color-black, $color-kaiser) !default;
 /// @type Color
-/// @require {Variable} $color-white
-/// @require {Variable} $color-raven
-$color-raven--soft: mix($color-white, $color-raven, 7.5%) !default;
+/// @require {Variable} $color-black
+/// @require {Variable} $opacities
+$color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
 /// @type Color
 /// @require {Variable} $color-black
-/// @require {Variable} $color-raven
-$color-raven--hard: mix($color-black, $color-raven, 10%) !default;
+/// @require {Variable} $opacities
+$color-black--gamma: rgba($color-black, map-get($opacities, "gamma")) !default;
 /// @type Color
 /// @require {Variable} $color-raven
 /// @require {Variable} $opacities
-$color-raven--light: rgba($color-raven, map-get($opacities, "tint--soft")) !default;
+$color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
+/// @type Color
+/// @require {Variable} $color-white
+/// @require {Variable} $color-raven
+$color-raven--tint: mix($color-white, $color-raven, 7.5%) !default;
+/// @type Color
+/// @require {Variable} $color-black
+/// @require {Variable} $color-raven
+$color-raven--shade: mix($color-black, $color-raven, 15%) !default;
 /// @type List
 /// @prop {Color} Color
 /// @require {Variable} $color-raven

@@ -72,7 +72,7 @@
 /// @require {Variable} $opacities
 ///
 /// @example scss
-///   opacity: opacity("shade--hard");
+///   opacity: opacity("alpha");
 ///   // opacity: 0.900;
 ///
 /// @throw Error if no parameters are passed.

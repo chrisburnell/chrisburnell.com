@@ -16,26 +16,17 @@ a {
     -webkit-text-decoration-skip: objects;
 
     &,
-    &:link {
-        color: $color-raven;
+    &:link,
+    &:visited {
+        color: $color-raven--shade;
         border-bottom-color: $color-alto;
     }
 
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-raven;
+        border-bottom-color: $color-raven--shade;
         outline-width: 0;
-    }
-
-    &:visited {
-        color: $color-raven--hard;
-
-        &:hover,
-        &:focus,
-        &:active {
-            border-bottom-color: $color-raven--hard;
-        }
     }
 
     h2 &,

@@ -49,7 +49,7 @@ samp {
 ins,
 kbd,
 samp {
-    background-color: $color-raven--light;
+    background-color: $color-raven--gamma;
 }
 mark {
     background-color: $color-highlight;
@@ -90,7 +90,7 @@ pre {
         code {
             min-width: 100%;
             display: block;
-            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--subtle;
+            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--delta;
         }
     }
 

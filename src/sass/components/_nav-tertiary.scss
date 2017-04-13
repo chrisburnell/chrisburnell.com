@@ -30,7 +30,7 @@
         .icon {
             @include transition;
             @include will-change(opacity, transform);
-            opacity: opacity("shade--soft");
+            opacity: opacity("beta");
             height: $icon-size;
         }
 

@@ -17,23 +17,19 @@
 {% endcomment %}
 {% assign heading_type = include.type | default: 'h3' %}
 {% assign heading_id = include.id %}
-{% unless heading_id %}
+{% unless include.id %}
     {% assign heading_id = include.title | slugify %}
 {% endunless %}
 {% assign heading_href = include.href | default: '' %}
-{% if heading_id == '' %}
-    <{{ heading_type }}>
-{% else %}
-    <{{ heading_type }} id="{{ heading_id }}">
-{% endif %}
+<{{ heading_type }}{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
     {% unless heading_href == '' %}
         <a href="{{ heading_href }}">
     {% endunless %}
     {{ include.title }}
-    {% unless heading_id == '' %}
-        {% include content/fragment-anchor.html id=heading_id %}
-    {% endunless %}
     {% unless heading_href == '' %}
         </a>
+    {% endunless %}
+    {% unless heading_id == '' %}
+        {% include content/fragment-anchor.html id=heading_id %}
     {% endunless %}
 </{{ heading_type }}>

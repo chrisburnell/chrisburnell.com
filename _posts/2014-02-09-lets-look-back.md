@@ -23,7 +23,7 @@ shorturl: dxaon
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for maintenance and stronger comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
 
 
-{% include content/heading.html title='In comes Sass' %}
+{% include content/heading.html title='In Comes Sass' %}
 
 Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">Sass</dfn>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"){:rel="external"}, a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
@@ -66,7 +66,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
     <figcaption>There is!</figcaption>
 </figure>
 
-And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system"){:rel="external"}*. *gulp* is a <q>streaming build system<q> built on *[node.js](https://nodejs.org "node.js"){:rel="external"}* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner"){:rel="external"}* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp"){:rel="external"}!
+And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system"){:rel="external"}*. *gulp* is a <q>streaming build system</q> built on *[node.js](https://nodejs.org "node.js"){:rel="external"}* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner"){:rel="external"}* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp"){:rel="external"}!
 
 
 {% include content/heading.html title='Let’s see what gulp does for me' id='what-gulp-does-for-me' %}

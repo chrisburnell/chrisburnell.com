@@ -1106,22 +1106,14 @@ a {
     -webkit-text-decoration-skip: objects;
 }
 
-a, a:link {
-    color: #5f8aa6;
+a, a:link, a:visited {
+    color: #52768e;
     border-bottom-color: #dddddd;
 }
 
 a:hover, a:focus, a:active {
-    border-bottom-color: #5f8aa6;
+    border-bottom-color: #52768e;
     outline-width: 0;
-}
-
-a:visited {
-    color: #567d96;
-}
-
-a:visited:hover, a:visited:focus, a:visited:active {
-    border-bottom-color: #567d96;
 }
 
 h2 a,
@@ -1711,8 +1703,10 @@ aside + .lede {
     background-clip: padding-box;
     border-radius: 0.375rem;
     background-color: rgba(95, 138, 166, 0.1);
+    width: 100%;
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
-    margin: 0 2.25rem 2.25rem;
+    margin: 0 auto 2.25rem;
     font-style: italic;
     line-height: 1.5;
 }

@@ -51,7 +51,7 @@
  */
 /*dl*/.terminology {
     padding-bottom: $measure-large;
-    border-bottom: $border-width-thin $border-style-default $color-black--light;
+    border-bottom: $border-width-thin $border-style-default $color-black--gamma;
 }
 
 /**
@@ -59,9 +59,11 @@
  */
 .edit {
     @include border-radius;
-    background-color: $color-raven--light;
+    background-color: $color-raven--gamma;
+    width: 100%;
+    max-width: $line-length-responsive;
     padding: $measure-medium;
-    margin: 0 $measure-large $measure-large;
+    margin: 0 auto $measure-large;
     font-style: italic;
     line-height: 1.5;
 
