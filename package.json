@@ -39,7 +39,8 @@
     "postcss-reporter": "3.0.0",
     "postcss-scss": "0.4.1",
     "sassdoc": "2.2.2",
-    "stylelint": "7.10.1"
+    "stylelint": "7.10.1",
+    "snyk": "^1.29.0"
   },
   "browserslist": [
     "> 1%",
@@ -51,5 +52,10 @@
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/chrisburnell.github.io/issues"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
