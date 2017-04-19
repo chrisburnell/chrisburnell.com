@@ -127,7 +127,7 @@
         let resultsCount = 0,
             results = '';
 
-        for (var item of data) {
+        for (let item of data) {
 
             let queryFormatted  = query.toLowerCase(),
                 titleCheck      = false,

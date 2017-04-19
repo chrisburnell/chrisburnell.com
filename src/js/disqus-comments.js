@@ -28,7 +28,7 @@
     window.addEventListener('hashchange', updateFromHash);
     // if URL contains a hash from `commentsHash`, initiate `showComments()`
     function updateFromHash() {
-        for (var hash of commentsHash) {
+        for (let hash of commentsHash) {
             if (window.location.hash.indexOf(hash) === 0) {
                 showComments();
             }

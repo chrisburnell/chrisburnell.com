@@ -11,7 +11,7 @@
 
     const codeToggleLabels = document.querySelectorAll('.code-toggle-label');
 
-    for (var codeToggleLabel of codeToggleLabels) {
+    for (let codeToggleLabel of codeToggleLabels) {
         codeToggleLabel.addEventListener('click', event => {
             toggleCode(event.target);
         });
