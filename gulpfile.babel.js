@@ -81,12 +81,7 @@ gulp.task('css-main', ['css-lint'], () => {
             sourceMap: paths.css.src
         }))
         .pipe(postcss([
-            autoprefixer({
-                browsers: [
-                    'last 2 versions',
-                    '> 1%'
-                ]
-            }),
+            autoprefixer(),
             reporter({
                 plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
@@ -120,12 +115,7 @@ gulp.task('css-critical', () => {
             outputStyle: 'expanded'
         }))
         .pipe(postcss([
-            autoprefixer({
-                browsers: [
-                    'last 2 versions',
-                    '> 1%'
-                ]
-            }),
+            autoprefixer(),
             reporter({
                 plugins: ['!postcss-discard-empty'],
                 clearMessages: true,
