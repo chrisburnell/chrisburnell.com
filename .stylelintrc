@@ -3,19 +3,51 @@
         "color-hex-case": "lower",
         "color-hex-length": "long",
         "color-no-invalid-hex": true,
-        "comment-no-empty": true,
-        "declaration-bang-space-before": "always",
-        "declaration-bang-space-after": "never",
-        "declaration-colon-space-before": "never",
-        "declaration-block-no-duplicate-properties": [true, {
-            ignore: ["consecutive-duplicates-with-different-values"]
-        }],
+
         "font-weight-notation": "numeric",
+
         "function-calc-no-unspaced-operator": true,
         "function-max-empty-lines": 0,
         "function-name-case": "lower",
         "function-url-quotes": "always",
         "function-whitespace-after": "always",
+
+        "number-leading-zero": "always",
+        "number-max-precision": 4,
+
+        "string-quotes": "double",
+
+        "length-zero-no-unit": true,
+
+        "time-min-milliseconds": 100,
+
+        "unit-blacklist": ["pc", "pt", "ex", "ch", "mm", "cm", "in"],
+        "unit-case": "lower",
+        "unit-no-unknown": true,
+
+        "custom-property-empty-line-before": "always",
+
+        "shorthand-property-no-redundant-values": true,
+
+        "property-case": "lower",
+        "property-no-unknown": true,
+
+        "keyframe-declaration-no-important": true,
+
+        "declaration-bang-space-before": "always",
+        "declaration-bang-space-after": "never",
+        "declaration-colon-space-before": "never",
+
+        "declaration-block-no-duplicate-properties": [true, {
+            ignore: ["consecutive-duplicates-with-different-values"]
+        }],
+
+        "block-opening-brace-newline-after": "always",
+
+        "selector-no-id": true,
+
+        "comment-no-empty": true,
+        
         "indentation": [4, {
             ignore: ["inside-parens", "param", "value"]
         }],
@@ -26,19 +58,5 @@
         "no-extra-semicolons": true,
         "no-missing-end-of-source-newline": true,
         "no-unknown-animations": true,
-        "number-leading-zero": "always",
-        "number-max-precision": 4,
-        "property-case": "lower",
-        "property-no-unknown": true,
-        "keyframe-declaration-no-important": true,
-        "length-zero-no-unit": true,
-        "time-min-milliseconds": 100,
-        "block-opening-brace-newline-after": "always",
-        "selector-no-id": true,
-        "shorthand-property-no-redundant-values": true,
-        "string-quotes": "double",
-        "unit-blacklist": ["pc", "pt", "ex", "ch", "mm", "cm", "in"],
-        "unit-case": "lower",
-        "unit-no-unknown": true
     }
 }

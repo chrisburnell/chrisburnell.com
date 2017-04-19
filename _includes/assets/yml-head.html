@@ -1,0 +1,39 @@
+{% if page.page_class contains 'home' %}
+    {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
+{% else %}
+    {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
+{% endif %}
+
+{% if page.categories contains 'link' %}
+    {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
+{% elsif page.categories contains 'pen' %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
+{% elsif page.categories contains 'talk' %}
+    {% capture meta_lede %}One of my talks, {{ page.title }}{% endcapture %}
+{% elsif page.lede %}
+    {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
+{% else %}
+    {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
+{% endif %}
+
+{% if page.banner %}
+    {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% elsif page.banner_mobile %}
+    {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% else %}
+    {% capture meta_image %}{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% endif %}
+
+{% capture body_class %}
+    {% for class in page.page_class %}
+        {{ class }}
+    {% endfor %}
+    {% if page.categories %}
+        page--{{ page.categories | first }}
+    {% endif %}
+{% endcapture %}
+{% assign body_class_array = body_class | split: ' ' | join: '  ' %}
+
+{% assign svg_title_count = 0 %}
+{% assign code_toggle_count = 0 %}
+{% assign endnote_count = 0 %}

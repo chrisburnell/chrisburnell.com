@@ -13,7 +13,11 @@ tags:
 banner:        shoot-for-the-moon.png
 banner_mobile: shoot-for-the-moon_mobile.png
 
-external_links:
+comments: true
+codepen: true
+shorturl: uanoe
+
+further_reading:
 - url: "http://cruft.io/posts/percentage-calculations-in-ie/"
   title: "Browser Rounding and Fractional Pixels"
 - url: "http://ejohn.org/blog/sub-pixel-problems-in-css/"
@@ -22,10 +26,6 @@ external_links:
   title: "Reduce sub-pixel rendering issues with Sass functions"
 - url: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/"
   title: "A Closer Look At Font Rendering"
-
-comments: true
-codepen: true
-shorturl: uanoe
 ---
 
 

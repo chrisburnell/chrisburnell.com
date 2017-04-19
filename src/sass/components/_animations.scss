@@ -1,0 +1,28 @@
+////
+/// Animations
+/// @group components
+////
+
+
+@keyframes anchor-target {
+    0%,
+    50% {
+        background-color: $color-highlight;
+    }
+    100% {
+        background-color: $transparent;
+    }
+}
+
+/**
+ * Anchor Target Animation
+ */
+%heading-elements,
+.endnote,
+.endnote-anchor {
+    &[id] {
+        &:target {
+            animation: anchor-target $animation-time $animation-function;
+        }
+    }
+}

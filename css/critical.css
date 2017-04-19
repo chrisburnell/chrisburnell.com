@@ -86,36 +86,6 @@ h6 {
     font-weight: 400;
 }
 
-h1[id]:target,
-h2[id]:target,
-h3[id]:target,
-h4[id]:target,
-h5[id]:target,
-h6[id]:target {
-    -webkit-animation: heading-target 2s linear;
-            animation: heading-target 2s linear;
-}
-
-@-webkit-keyframes heading-target {
-    0%,
-    50% {
-        background-color: gold;
-    }
-    100% {
-        background-color: transparent;
-    }
-}
-
-@keyframes heading-target {
-    0%,
-    50% {
-        background-color: gold;
-    }
-    100% {
-        background-color: transparent;
-    }
-}
-
 /**
  * Heading - Alpha
  */
@@ -1121,14 +1091,10 @@ h3 a {
     border-bottom-width: 0;
 }
 
-h2 a:link,
-h3 a:link {
-    color: #4f4f4f;
-}
-
-h2 a:visited,
+h2 a:link, h2 a:visited,
+h3 a:link,
 h3 a:visited {
-    color: #606060;
+    color: #4f4f4f;
 }
 
 h3 a:hover, h3 a:focus, h3 a:active,
@@ -1196,22 +1162,14 @@ a span:not([class]):not([itemprop]) {
     vertical-align: middle;
 }
 
-.fragment-anchor, .fragment-anchor:link {
+.fragment-anchor, .fragment-anchor:link, .fragment-anchor:visited {
     color: #737373;
     border-bottom-width: 1px;
-}
-
-.fragment-anchor:visited {
-    color: #2b2b2b;
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
     border-bottom-color: #737373;
     text-decoration: none;
-}
-
-.fragment-anchor:visited:hover, .fragment-anchor:visited:focus, .fragment-anchor:visited:active {
-    border-bottom-color: #2b2b2b;
 }
 
 h1:hover .fragment-anchor,
@@ -1235,10 +1193,18 @@ h6:active .fragment-anchor, .fragment-anchor:target {
 }
 
 /**
+ * Endnote Anchors
+ */
+.endnote-anchor {
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+}
+
+/**
  * Related Anchors
  */
 .related-anchor::after {
-    content: " ↩︎";
+    content: " →";
 }
 
 .wrap {
@@ -1397,6 +1363,41 @@ aside p {
     aside p {
         font-size: 0.875rem;
     }
+}
+
+@-webkit-keyframes anchor-target {
+    0%,
+    50% {
+        background-color: gold;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes anchor-target {
+    0%,
+    50% {
+        background-color: gold;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/**
+ * Anchor Target Animation
+ */
+h1[id]:target,
+h2[id]:target,
+h3[id]:target,
+h4[id]:target,
+h5[id]:target,
+h6[id]:target,
+.endnote[id]:target,
+.endnote-anchor[id]:target {
+    -webkit-animation: anchor-target 2s linear;
+            animation: anchor-target 2s linear;
 }
 
 .border-radius,

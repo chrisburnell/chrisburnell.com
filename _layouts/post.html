@@ -31,43 +31,49 @@
             </section>
         {% endif %}
 
-        {% if page.external_links and page.categories contains 'link' %}
+        {% if page.external_url %}
             <nav class="buttons-list" role="navigation">
-                {% assign link = page.external_links | first %}
-                {% assign url = link.url %}
-                {% if link.title == null or link.title == empty %}
-                    {% assign title = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% else %}
-                    {% assign title = link.title %}
-                {% endif %}
+                {% assign url = page.external_url.url | default: page.external_url %}
+                {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
+                {% assign title = page.external_url.title | default: url_root %}
                 <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 
         {{ content }}
 
-        {% if page.external_links %}
-            {% unless page.categories contains 'link' %}
-                {% include content/heading.html title='Further Reading' %}
-                <ul>
-                    {% for link in page.external_links %}
-                        {% assign url = link.url %}
-                        {% if url contains site.url %}
-                            {% assign rel = '' %}
-                        {% else %}
-                            {% assign rel = ' rel="external"' %}
-                        {% endif %}
-                        {% if link.title == null or link.title == empty %}
-                            {% assign title = url %}
-                        {% else %}
-                            {% assign title = link.title %}
-                        {% endif %}
-                        <li>
-                            <a href="{{ url }}"{{ rel }}>{{ title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endunless %}
+        {% if page.endnotes %}
+            {% include content/heading.html title='Endnotes' %}
+            <ol>
+                {% for note in page.endnotes %}
+                    <li class="endnote" id="endnote-{{ forloop.index }}">
+                        {{ note }}
+                        <a href="#note-{{ forloop.index }}" class="endnote-anchor" title="">↩︎</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        {% if page.further_reading %}
+            {% include content/heading.html title='Further Reading' %}
+            <ul>
+                {% for link in page.further_reading %}
+                    {% assign url = link.url %}
+                    {% if url contains site.url %}
+                        {% assign rel = '' %}
+                    {% else %}
+                        {% assign rel = ' rel="external"' %}
+                    {% endif %}
+                    {% if link.title == null or link.title == empty %}
+                        {% assign title = url %}
+                    {% else %}
+                        {% assign title = link.title %}
+                    {% endif %}
+                    <li>
+                        <a href="{{ url }}"{{ rel }}>{{ title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         {% endif %}
 
         {% include components/nav-secondary.html type='archives' include=page.categories.first %}

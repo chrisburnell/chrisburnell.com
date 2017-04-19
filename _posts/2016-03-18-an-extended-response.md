@@ -11,7 +11,10 @@ tags:
 - sass
 - tutorials
 
-external_links:
+comments: true
+shorturl: fqojr
+
+further_reading:
 - url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
   title: "Mixins Better for Performance"
 - url: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"
@@ -24,9 +27,6 @@ external_links:
   title: "Don’t Over-@extend Yourself in Sass"
 - url: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
   title: "Sass Mixins vs Extends: The Data"
-
-comments: true
-shorturl: fqojr
 ---
 
 

@@ -45,25 +45,9 @@ h6 {
     margin: 0;
     font-weight: $font-weight-default;
 
-    // Show an indicator when using an Anchor to jump to a heading with an `id`
-    &[id] {
-        &:target {
-            animation: heading-target $animation-time $animation-function;
-        }
-    }
-
     // For special Monospace titles
     %monospace-elements {
         @include case(none);
-    }
-}
-@keyframes heading-target {
-    0%,
-    50% {
-        background-color: $color-highlight;
-    }
-    100% {
-        background-color: $transparent;
     }
 }
 

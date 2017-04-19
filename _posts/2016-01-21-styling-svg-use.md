@@ -8,7 +8,5 @@ title: Styling SVG use Content with CSS
 lede: Little late on this one, but gold dust nonetheless. SVG Wizard, Sara Soueidan, discusses in-depth how to style SVG’s <use> element and how to overcome the challenges in doing so.
 tags:
 - svg
-
-external_links:
-- url: "http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css"
+external_url: http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css
 ---

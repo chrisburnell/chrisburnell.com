@@ -33,12 +33,9 @@ a {
     h3 & {
         border-bottom-width: 0;
 
-        &:link {
-            color: $color-kaiser;
-        }
-
+        &:link,
         &:visited {
-            color: mix($color-white, $color-kaiser, 10%);
+            color: $color-kaiser;
         }
     }
     h3 &,
@@ -108,13 +105,10 @@ a {
     vertical-align: middle;
 
     &,
-    &:link {
+    &:link,
+    &:visited {
         color: $color-dove;
         border-bottom-width: $border-width-hairline;
-    }
-
-    &:visited {
-        color: $color-mineshaft;
     }
 
     &:hover,
@@ -125,14 +119,6 @@ a {
         text-decoration: none;
     }
 
-    &:visited {
-        &:hover,
-        &:focus,
-        &:active {
-            border-bottom-color: $color-mineshaft;
-        }
-    }
-
     %heading-elements:hover &,
     %heading-elements:focus &,
     %heading-elements:active &,
@@ -141,10 +127,19 @@ a {
         visibility: visible;
     }
 }
+
+/**
+ * Endnote Anchors
+ */
+.endnote-anchor {
+    padding-left:  $measure-small-relative;
+    padding-right: $measure-small-relative;
+}
+
 /**
  * Related Anchors
  */
 .related-anchor::after {
-    // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
-    content: " ↩︎";
+    // NO-BREAK SPACE, RIGHTWARDS ARROW
+    content: " →";
 }
