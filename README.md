@@ -1,4 +1,4 @@
-# chrisburnell.com
+## chrisburnell.com
 
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
@@ -13,7 +13,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 [![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/js/main.min.js)
 
 
-## Table of Contents
+### Table of Contents
 
 - [Title](#chrisburnellcom)
 - [Description](#description)
@@ -27,7 +27,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 - [License](#license)
 
 
-## Description
+### Description
 
 My website doubles as a blog and as a playground for me to perfect the code that
 comprises the site and to experiment with new methodologies and technologies.
@@ -39,12 +39,12 @@ don’t hesitate to get in touch—via
 report bugs or suggestions.
 
 
-## Contributing
+### Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md).
 
 
-## Build Process
+### Build Process
 
 - [Jekyll](https://jekyllrb.com)
 - [SCSS](http://sass-lang.com)
@@ -53,7 +53,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md).
 - [PostCSS](http://postcss.org/)
 
 
-## Layouts
+### Layouts
 
 ```text
 _layouts
@@ -63,7 +63,7 @@ _layouts
 ```
 
 
-## Includes
+### Includes
 
 ```text
 _includes
@@ -104,7 +104,7 @@ _includes
 ```
 
 
-## Sass Structure
+### Sass Structure
 
 ```text
 src/css
@@ -153,7 +153,7 @@ src/css
 ```
 
 
-## Generated
+### Generated
 
 ```text
 _includes/generated
@@ -163,11 +163,11 @@ serviceworker.js
 ```
 
 
-## Network
+### Network
 
 SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/) 🙏
 
 
-## License
+### License
 
 The contents of this repository are licensed under the [GNU General Public License v3.0](LICENSE).

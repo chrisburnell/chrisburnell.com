@@ -15,10 +15,12 @@ button,
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     background-color: $color-raven;
+    color: $color-white;
     min-width: 8em;
     height: 2.182em;
     display: inline-block;
     padding: 0 0.727em 0.182em;
+    border-width: 0;
     margin-top: 0.25rem;
     overflow: visible;
     font-size: $font-size-beta;
@@ -29,12 +31,6 @@ button,
     box-shadow: inset 0 -0.182em 0 0 $color-raven--shade;
     appearance: none;
 
-    &,
-    &:link,
-    &:visited {
-        color: $color-white;
-        border-width: 0;
-    }
 
     &:hover,
     &:focus,

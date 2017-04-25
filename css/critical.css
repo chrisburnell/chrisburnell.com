@@ -499,9 +499,7 @@ figure > a {
     border-bottom-width: 0;
 }
 
-figure > a:link,
-figure > a:visited,
-figure figcaption {
+figure > a figcaption {
     color: #737373;
     font-style: italic;
 }
@@ -1070,15 +1068,12 @@ a {
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     will-change: background, color, border-color;
     background-color: transparent;
+    color: #52768e;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    border-bottom-color: #dddddd;
     text-decoration: none;
     -webkit-text-decoration-skip: objects;
-}
-
-a, a:link, a:visited {
-    color: #52768e;
-    border-bottom-color: #dddddd;
 }
 
 a:hover, a:focus, a:active {
@@ -1088,13 +1083,8 @@ a:hover, a:focus, a:active {
 
 h2 a,
 h3 a {
-    border-bottom-width: 0;
-}
-
-h2 a:link, h2 a:visited,
-h3 a:link,
-h3 a:visited {
     color: #4f4f4f;
+    border-bottom-width: 0;
 }
 
 h3 a:hover, h3 a:focus, h3 a:active,
@@ -1104,12 +1094,12 @@ h3 a:hover, h3 a:focus, h3 a:active,
     text-decoration: underline;
 }
 
-.dark-background a:link, .dark-background a:visited {
+.dark-background a {
     color: #f9f9f9;
     border-bottom-color: #737373;
 }
 
-.dark-background a:link:hover, .dark-background a:link:focus, .dark-background a:link:active, .dark-background a:visited:hover, .dark-background a:visited:focus, .dark-background a:visited:active {
+.dark-background a:hover, .dark-background a:focus, .dark-background a:active {
     border-bottom-color: #f9f9f9;
 }
 
@@ -1152,6 +1142,7 @@ a span:not([class]):not([itemprop]) {
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
+    color: #737373;
     display: none;
     visibility: hidden;
     margin-left: 1.25rem;
@@ -1160,11 +1151,6 @@ a span:not([class]):not([itemprop]) {
     line-height: 1.25;
     text-shadow: none;
     vertical-align: middle;
-}
-
-.fragment-anchor, .fragment-anchor:link, .fragment-anchor:visited {
-    color: #737373;
-    border-bottom-width: 1px;
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
@@ -1594,13 +1580,10 @@ h6[id]:target,
     display: block;
     padding: 0.75rem 1rem;
     border-bottom-width: 0;
+    border-bottom-color: #5f8aa6;
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     line-height: 1.25;
-}
-
-.nav-primary-list a:link, .nav-primary-list a:visited {
-    border-bottom-color: #5f8aa6;
 }
 
 .nav-primary-list a:active {

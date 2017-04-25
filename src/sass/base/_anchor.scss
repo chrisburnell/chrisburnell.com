@@ -9,18 +9,13 @@ a {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     background-color: $transparent;
+    color: $color-raven--shade;
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
+    border-bottom-color: $color-alto;
     text-decoration: none;
     // remove gaps in links underline in iOS 8+ and Safari 8+.
     -webkit-text-decoration-skip: objects;
-
-    &,
-    &:link,
-    &:visited {
-        color: $color-raven--shade;
-        border-bottom-color: $color-alto;
-    }
 
     &:hover,
     &:focus,
@@ -31,12 +26,8 @@ a {
 
     h2 &,
     h3 & {
+        color: $color-kaiser;
         border-bottom-width: 0;
-
-        &:link,
-        &:visited {
-            color: $color-kaiser;
-        }
     }
     h3 &,
     .delta & {
@@ -48,16 +39,13 @@ a {
     }
 
     .dark-background & {
-        &:link,
-        &:visited {
-            color: $color-white;
-            border-bottom-color: $color-dove;
+        color: $color-white;
+        border-bottom-color: $color-dove;
 
-            &:hover,
-            &:focus,
-            &:active {
-                border-bottom-color: $color-white;
-            }
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom-color: $color-white;
         }
     }
 
@@ -95,6 +83,7 @@ a {
 .fragment-anchor {
     @include case(lowercase, $letter-spacing-default);
     @include font-family(monospace);
+    color: $color-dove;
     display: none;
     visibility: hidden;
     margin-left: $measure-medium;
@@ -103,13 +92,6 @@ a {
     line-height: $line-height-small;
     text-shadow: none;
     vertical-align: middle;
-
-    &,
-    &:link,
-    &:visited {
-        color: $color-dove;
-        border-bottom-width: $border-width-hairline;
-    }
 
     &:hover,
     &:focus,

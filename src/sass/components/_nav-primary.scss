@@ -51,14 +51,10 @@
         display: block;
         padding: 0.75rem 1rem;
         border-bottom-width: 0;
+        border-bottom-color: $color-raven;
         margin-bottom: 0.25rem;
         font-size: $font-size-large;
         line-height: $line-height-small;
-
-        &:link,
-        &:visited {
-            border-bottom-color: $color-raven;
-        }
 
         &:active {
             transform: translateY(0.2rem);

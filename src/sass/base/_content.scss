@@ -351,8 +351,7 @@ figure {
         border-bottom-width: 0;
     }
 
-    & > a:link,
-    & > a:visited,
+    & > a
     figcaption {
         color: $color-dove;
         font-style: italic;
