@@ -42,10 +42,6 @@
     "stylelint": "7.10.1",
     "snyk": "^1.29.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:chrisburnell/chrisburnell.github.io.git"
