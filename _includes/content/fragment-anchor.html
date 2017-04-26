@@ -12,7 +12,7 @@
 
 {% endcomment %}
 {% if include.id %}
-    {% capture anchor_href %}{{ include.id | prepend: '#' }}{% endcapture %}
+    {% assign anchor_href = '#' %}
 {% elsif include.href %}
     {% assign anchor_href = include.href %}
 {% endif %}
