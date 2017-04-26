@@ -36,7 +36,7 @@
         }
 
         @include media(">small") {
-            width: 49.0125%;
+            width: #{($article-width - ($columns - 1)) / $columns / $article-width * 100%};
             display: flex;
             flex-direction: column;
 

@@ -2470,7 +2470,7 @@ aside + .lede {
 
 @media (min-width: 501px) {
     .content-list li {
-        width: 49.0125%;
+        width: 49.01235%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;

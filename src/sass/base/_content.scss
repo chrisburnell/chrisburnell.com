@@ -177,12 +177,12 @@ p {
     // Columnal Paragraphs
     &.columns {
         @include media(">small", "<=medium") {
-            column-count: 2;
+            column-count: $columns;
             column-gap: $measure-medium;
         }
 
         @include media(">large") {
-            column-count: 2;
+            column-count: $columns;
             column-gap: $measure-medium;
         }
     }

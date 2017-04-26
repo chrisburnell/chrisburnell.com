@@ -4,7 +4,6 @@
 ////
 
 
-// 16px
 /// @type Length
 $base-font-size: 16px !default;
 
@@ -49,17 +48,17 @@ $measure-small:           0.625rem !default;
 /// @type Length
 $measure-small-relative:  0.625em !default;
 /// @type Length
-$measure-small-proportional:  2vmin !default;
-/// @type Length
 $measure-medium:          1.250rem !default;
 /// @type Length
 $measure-medium-relative: 1.250em !default;
 /// @type Length
-$measure-medium-proportional: 4vmin !default;
-/// @type Length
 $measure-large:           2.250rem !default;
 /// @type Length
 $measure-large-relative:  2.250em !default;
+/// @type Length
+$measure-small-proportional:  2vmin !default;
+/// @type Length
+$measure-medium-proportional: 4vmin !default;
 /// @type Length
 $measure-large-proportional:  8vmin !default;
 
@@ -389,3 +388,7 @@ $color-ravens:
 
 /// @type Length
 $icon-size: 40px !default;
+
+
+/// @type Number
+$columns: 2 !default;

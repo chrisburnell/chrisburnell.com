@@ -76,15 +76,17 @@ code[data-lang] {
             @include position(full);
             @include border-radius(bottom);
             content: "";
-            background-image: linear-gradient(to bottom,
-                                              rgba($color-black, 0.2) 0,
-                                              rgba($color-black, 0.2) 25%,
-                                              rgba($color-black, 0.4) 25%,
-                                              rgba($color-black, 0.4) 50%,
-                                              rgba($color-black, 0.6) 50%,
-                                              rgba($color-black, 0.6) 75%,
-                                              rgba($color-black, 0.8) 75%,
-                                              rgba($color-black, 0.8) 100%);
+            background-image: linear-gradient(
+                to bottom,
+                rgba($color-black, 0.2) 0,
+                rgba($color-black, 0.2) 25%,
+                rgba($color-black, 0.4) 25%,
+                rgba($color-black, 0.4) 50%,
+                rgba($color-black, 0.6) 50%,
+                rgba($color-black, 0.6) 75%,
+                rgba($color-black, 0.8) 75%,
+                rgba($color-black, 0.8) 100%
+            );
             // fade out over the last four lines
             background-size: 100% #{$font-size-small * 2 * 4};
             background-position: bottom;
