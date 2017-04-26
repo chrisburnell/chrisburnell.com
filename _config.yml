@@ -27,10 +27,10 @@ urls:
   codepen:  https://codepen.io/chrisburnell
   gist:     https://gist.github.com/chrisburnell
   github:   https://github.com/chrisburnell
-  lastfm:   http://last.fm/user/chrisburnell
+  lastfm:   https://last.fm/user/chrisburnell
   spotify:  https://open.spotify.com/user/1128245857
   twitter:  https://twitter.com/iamchrisburnell
-  license:  http://www.gnu.org/licenses/gpl-3.0.txt
+  license:  https://www.gnu.org/licenses/gpl-3.0.txt
 
 sitemap:
   changefreq: monthly
