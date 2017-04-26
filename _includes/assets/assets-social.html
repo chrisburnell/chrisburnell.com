@@ -39,9 +39,10 @@
                 "name": "{{ site.author.name }}"
             },
             {% if page.layout == 'post' %}
-                "datePublished": "{{ page.date | date: '%d %b, %Y' }}",
+                "keywords": "{{ page.tags | join: ' ' }}",
+                "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
                 {% if page.edit_date %}
-                    "dateModified": "{{ page.edit_date | date: '%d %B, %Y' }}",
+                    "dateModified": "{{ page.edit_date | date: '%Y-%m-%d' }}",
                 {% endif %}
                 "wordcount": "{{ content | number_of_words }}",
             {% endif %}
