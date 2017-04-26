@@ -69,10 +69,6 @@ snippet of code on a project of your own!  -->
     <link rel="author" href="/humans.txt">
     <link rel="manifest" href="/manifest.json">
 
-    {% unless page.page_class contains 'not-found' or page.page_class contains 'offline' %}
-        <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-    {% endunless %}
-
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="{{ site.title }}">
@@ -85,28 +81,7 @@ snippet of code on a project of your own!  -->
 
     <meta http-equiv="cleartype" content="on">
 
-    {% if page.page_class contains 'not-found' or page.page_class contains 'offline' %}
-        <meta name="robots" content="noindex,nofollow">
-    {% else %}
-        <!-- Twitter Microdata -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="{{ site.author.twitter }}">
-        <meta name="twitter:title" content="{{ meta_title }}">
-        <meta name="twitter:description" content="{{ meta_lede }}">
-        <meta name="twitter:image" content="{{ meta_image }}">
-        <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
-        {% if page.twitter == true %}
-            <meta name="twitter:widgets:theme" content="light">
-            <meta name="twitter:widgets:link-color" content="#{{ site.color }}">
-            <meta name="twitter:widgets:border-color" content="#{{ site.color }}">
-        {% endif %}
-        <!-- OpenGraph Microdata -->
-        <meta property="og:title" content="{{ meta_title }}">
-        <meta property="og:description" content="{{ meta_lede }}">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-        <meta property="og:image" content="{{ meta_image }}">
-    {% endif %}
+    {% include assets/assets-social.html %}
 
     {% include assets/assets-head.html %}
 
