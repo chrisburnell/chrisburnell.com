@@ -294,7 +294,6 @@ picture {
     @extend %image-elements !optional;
 }
 %image-elements {
-    display: block;
     position: relative;
 
     &,
@@ -302,6 +301,13 @@ picture {
         width: auto;
         max-width: 100%;
         height: auto;
+    }
+}
+picture {
+    &,
+    img,
+    svg {
+        display: block;
     }
 }
 img {
@@ -341,8 +347,9 @@ figure {
         overflow-y: hidden;
     }
 
+    & %image-elements,
     & > a,
-    & %image-elements {
+    & > a %image-elements {
         @include border-radius;
     }
 
@@ -543,94 +550,6 @@ summary {
         margin-top: $measure-small;
         border-top: $border-width-thin $border-style-default $color-raven;
         padding-top: $measure-medium;
-    }
-}
-
-/**
- * Images and Figures
- */
-img,
-svg,
-picture {
-    @extend %image-elements !optional;
-}
-%image-elements {
-    position: relative;
-
-    &,
-    a & {
-        width: auto;
-        max-width: 100%;
-        height: auto;
-    }
-}
-picture {
-    &,
-    & img,
-    & svg {
-        display: block;
-    }
-}
-img {
-    border-style: none;
-
-    &::before {
-        @include position(top-left);
-        content: "";
-        background-color: $color-alto;
-        width:  100%;
-        height: 100%;
-        text-align: center;
-    }
-
-    &::after {
-        @include position(center);
-        // Only visible when the Image fails to load
-        content: "Broken Image: " attr(src);
-        color: $color-lastfm;
-        font-style: italic;
-    }
-}
-svg:not(:root) {
-    overflow: hidden;
-}
-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 $measure-medium;
-
-    // Allow for content to overflow without breaking the page with scrollbar
-    &:not(.highlight) {
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    & %image-elements,
-    & > a,
-    & > a %image-elements {
-        @include border-radius;
-        display: block;
-    }
-
-    & > a,
-    figcaption {
-        color: $color-dove;
-    }
-
-    & > a {
-        border-bottom-width: 0;
-    }
-
-    figcaption {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: $measure-medium;
-        font-family: $font-family-serif;
-        font-style: italic;
-        line-height: $line-height-small;
     }
 }
 
