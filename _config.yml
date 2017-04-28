@@ -57,6 +57,7 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - gulpfile.babel.js
+- LICENSE
 - node_modules
 - package.json
 - README.md
