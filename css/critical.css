@@ -1675,7 +1675,7 @@ aside + .lede {
 .author-image {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    background-image: linear-gradient(to top right, transparent 0%, #99c0e2 100%), linear-gradient(to bottom left, transparent 0%, #9d858b 100%), linear-gradient(to bottom right, transparent 0%, #5990ad 100%), linear-gradient(to top left, transparent 0%, #89634f 100%);
+    background-image: linear-gradient(to top right, transparent, #99c0e2), linear-gradient(to bottom left, transparent, #9d858b), linear-gradient(to bottom right, transparent, #5990ad), linear-gradient(to top left, transparent, #89634f);
     background-size: 100%;
     width: 6.25rem;
     height: 6.25rem;

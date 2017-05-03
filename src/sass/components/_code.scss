@@ -76,8 +76,7 @@ code[data-lang] {
             @include position(full);
             @include border-radius(bottom);
             content: "";
-            background-image: linear-gradient(
-                to bottom,
+            background-image: gradient(
                 rgba($color-black, 0.2) 0,
                 rgba($color-black, 0.2) 25%,
                 rgba($color-black, 0.4) 25%,

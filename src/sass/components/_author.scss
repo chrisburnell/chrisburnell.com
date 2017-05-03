@@ -61,10 +61,10 @@
     @include border-radius;
     // gradient replacement while loading the `src` / `srcset`,
     // colors generated from `avatar.png`
-    background-image: gradient($transparent, rgb(153, 192, 226), to top right),
-                      gradient($transparent, rgb(157, 133, 139), to bottom left),
-                      gradient($transparent, rgb(89, 144, 173), to bottom right),
-                      gradient($transparent, rgb(137, 99, 79), to top left);
+    background-image: gradient(to top right,    $transparent, rgb(153, 192, 226)),
+                      gradient(to bottom left,  $transparent, rgb(157, 133, 139)),
+                      gradient(to bottom right, $transparent, rgb(89,  144, 173)),
+                      gradient(to top left,     $transparent, rgb(137, 99,  79));
     background-size: 100%;
     width:  6.25rem; // 100px
     height: 6.25rem; // 100px

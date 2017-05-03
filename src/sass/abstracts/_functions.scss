@@ -44,23 +44,43 @@
 ///
 /// @example scss - Two parameters
 ///   background-image: gradient(white, black);
-///   // background-image: linear-gradient(to bottom, white 0%, black 100%);
+///   // background-image: linear-gradient(to bottom, white, black);
 ///
 /// @example scss - Three parameters
-///   background-image: gradient(black, white, to top right);
-///   // background-image: linear-gradient(to top right, black 0%, white 100%);
+///   background-image: gradient(to top right, red, green, blue);
+///   // background-image: linear-gradient(to top right, red, green, blue);
 ///
-/// @throw Error if two or three parameters are not passed.
+/// @throw Error if two or more parameters are not passed.
 ///
 /// @return {String} Linear Gradient snippet
 ///
-@function gradient($from, $to, $direction: "to bottom") {
-    @if not $from or not $to {
-        @warn "gradient() expects two or three parameters.";
+@function gradient($direction, $color-stops...) {
+    @if not $direction and not $color-stops {
+        @warn "gradient() expects a direction and two or more colors to gradient between.";
         @return false;
     }
 
-    @return linear-gradient(#{$direction}, #{$from} 0%, #{$to} 100%);
+    @if is-direction($direction) == false {
+        $color-stops: $direction, $color-stops;
+        $direction: "to bottom"; // equivalent to "to bottom"
+    }
+
+    @return linear-gradient(#{$direction}, $color-stops);
+}
+
+
+///
+/// Test if `$value` is a valid direction
+///
+/// @param {*} $value - Value to test
+///
+/// @return {Bool}
+///
+@function is-direction($value) {
+    $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+    @return $is-keyword or $is-angle;
 }
 
 
