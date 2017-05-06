@@ -13,16 +13,16 @@
 </script>
 
 <!-- Main Scripts -->
-<script src="/js/main.min.js" async defer></script>
+<script src="/js/main.min.js" defer></script>
 
 {% if page.caniuse %}
     <!-- Can I Use Embeds -->
-    <script src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js"></script>
+    <script src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js" defer></script>
 {% endif %}
 
 {% if page.codepen == true or page.codepen_slug %}
     <!-- CodePen Embeds -->
-    <script src="//codepen.io/assets/embed/ei.js" async defer></script>
+    <script src="//codepen.io/assets/embed/ei.js" defer></script>
 {% endif %}
 
 {% if page.speakerdeck == true %}
