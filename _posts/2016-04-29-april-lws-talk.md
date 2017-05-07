@@ -128,7 +128,7 @@ If we were to categorise this understandability of CSS into three general catego
 0. Strict Adherence
   Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
 0. Spaghetti
-  [Has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia"){:rel="external"}
+  [has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia"){:rel="external"}
 
 
 {% include content/heading.html title='The Next Talk' %}
