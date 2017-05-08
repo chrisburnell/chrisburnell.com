@@ -70,7 +70,6 @@
     height: 6.25rem; // 100px
     float: left;
     margin-right:  $measure-small;
-    margin-bottom: $measure-small;
 
     @supports (shape-outside: circle(50%)) {
         background-image: none;
@@ -108,4 +107,12 @@
 .reading-time,
 .related-anchor {
     margin-top: 0.5rem;
+}
+
+
+/**
+ * Biographical information about the Author
+ */
+.author-biography {
+    margin-top: $measure-small;
 }
