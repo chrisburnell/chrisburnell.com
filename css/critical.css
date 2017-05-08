@@ -1681,7 +1681,6 @@ aside + .lede {
     height: 6.25rem;
     float: left;
     margin-right: 0.625rem;
-    margin-bottom: 0.625rem;
 }
 
 @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
@@ -1729,4 +1728,11 @@ picture {
 .reading-time,
 .related-anchor {
     margin-top: 0.5rem;
+}
+
+/**
+ * Biographical information about the Author
+ */
+.author-biography {
+    margin-top: 0.625rem;
 }
