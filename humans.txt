@@ -13,7 +13,7 @@ searchable: false
 
 /* SITE */
 
-    Last updated:  {{ site.time | date: '%Y/%m/%d' }}
+    Last updated:  {{ site.time | date: '%F' }}
     URL:           {{ site.url }}
     Language:      {{ site.language }}
     Doctype:       HTML5
