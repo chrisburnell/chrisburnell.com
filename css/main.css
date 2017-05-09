@@ -36,7 +36,8 @@ html {
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -44,7 +45,8 @@ html {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
 }
 
 body {
@@ -273,10 +275,8 @@ p:empty {
 @media (min-width: 501px) and (max-width: 800px) {
     p.columns {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
                 column-count: 2;
         -webkit-column-gap: 1.25rem;
-           -moz-column-gap: 1.25rem;
                 column-gap: 1.25rem;
     }
 }
@@ -284,10 +284,8 @@ p:empty {
 @media (min-width: 1141px) {
     p.columns {
         -webkit-column-count: 2;
-           -moz-column-count: 2;
                 column-count: 2;
         -webkit-column-gap: 1.25rem;
-           -moz-column-gap: 1.25rem;
                 column-gap: 1.25rem;
     }
 }
@@ -603,6 +601,7 @@ table.zebra tbody tr:nth-child(even) td {
 
 th,
 td {
+    -webkit-transition: background-color 0.2s ease, border-left-color 0.2s ease;
     transition: background-color 0.2s ease, border-left-color 0.2s ease;
     will-change: background-color, border-left-color;
     padding: 0.625rem;
@@ -654,6 +653,7 @@ td {
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     content: "";
     opacity: 0;
@@ -777,6 +777,7 @@ summary {
             user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -1426,6 +1427,7 @@ pre.codepen {
 
 a {
     position: relative;
+    -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     will-change: background, color, border-color;
     background-color: transparent;
@@ -1478,6 +1480,7 @@ a span:not([class]):not([itemprop]) {
  * Title Anchors inside Headings
  */
 .title-anchor {
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
@@ -1568,6 +1571,7 @@ button,
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
     position: relative;
+    -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease;
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
     background-color: #5f8aa6;
@@ -1584,7 +1588,8 @@ button,
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    box-shadow: inset 0 -0.182em 0 0 #52768e;
+    -webkit-box-shadow: inset 0 -0.182em 0 0 #52768e;
+            box-shadow: inset 0 -0.182em 0 0 #52768e;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -1609,7 +1614,8 @@ button:active,
     padding-bottom: 0;
     margin-bottom: 0.182em;
     outline-style: none;
-    box-shadow: inset 0 -1px 0 0 #52768e;
+    -webkit-box-shadow: inset 0 -1px 0 0 #52768e;
+            box-shadow: inset 0 -1px 0 0 #52768e;
     -webkit-transform: translateY(0.182em);
             transform: translateY(0.182em);
 }
@@ -1703,9 +1709,11 @@ input,
 textarea {
     background-clip: padding-box;
     border-radius: 0.25rem;
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: border-color;
-    box-sizing: inherit !important;
+    -webkit-box-sizing: inherit !important;
+            box-sizing: inherit !important;
     padding: 0.4em;
     border: 0.125rem solid #dddddd;
     outline-style: none;
@@ -1813,9 +1821,8 @@ header {
     overflow-y: hidden;
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (display: grid) {
     header {
-        display: -ms-grid;
         display: grid;
     }
 }
@@ -1830,10 +1837,9 @@ header {
             -ms-flex-pack: center;
                 justify-content: center;
     }
-    @supports ((display: -ms-grid) or (display: grid)) {
+    @supports (display: grid) {
         header {
-            -ms-grid-rows: 7rem min-content;
-                grid-template-rows: 7rem min-content;
+            grid-template-rows: 7rem min-content;
         }
     }
 }
@@ -1844,10 +1850,9 @@ header {
             -ms-flex-pack: justify;
                 justify-content: space-between;
     }
-    @supports ((display: -ms-grid) or (display: grid)) {
+    @supports (display: grid) {
         header {
-            -ms-grid-columns: 15.875rem min-content;
-                grid-template-columns: 15.875rem min-content;
+            grid-template-columns: 15.875rem min-content;
         }
     }
 }
@@ -2057,6 +2062,7 @@ h6[id]:target,
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: all 1s ease;
     transition: all 1s ease;
     will-change: transform;
     fill: #5f8aa6;
@@ -2157,6 +2163,7 @@ h6[id]:target,
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
+    -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2342,9 +2349,6 @@ aside + .lede {
     .content-list li + li {
         margin-top: 1.25rem;
     }
-    .content-list li:nth-child(2n+1) a {
-        background-color: rgba(6, 6, 6, 0.05);
-    }
 }
 
 @media (min-width: 501px) {
@@ -2361,9 +2365,6 @@ aside + .lede {
     .content-list li:nth-child(n+3) {
         margin-top: 1.25rem;
     }
-    .content-list li:nth-child(4n+1) a, .content-list li:nth-child(4n+4) a {
-        background-color: rgba(6, 6, 6, 0.05);
-    }
 }
 
 aside .content-list li {
@@ -2372,14 +2373,6 @@ aside .content-list li {
 
 aside .content-list li + li {
     margin-top: 0.625rem;
-}
-
-aside .content-list li:nth-child(4n+1) a, aside .content-list li:nth-child(4n+4) a {
-    background-color: transparent;
-}
-
-aside .content-list li:nth-child(2n+1) a {
-    background-color: rgba(6, 6, 6, 0.05);
 }
 
 .content-list a {
@@ -2414,6 +2407,7 @@ aside .content-list a {
 }
 
 .content-list .title {
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: border-color;
     width: auto;
@@ -2451,6 +2445,7 @@ aside .content-list a {
 }
 
 .content-list svg {
+    -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
     transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
     transition: opacity 0.2s ease, transform 0.2s ease;
     transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2691,6 +2686,7 @@ p + .nav-secondary {
 .author-image {
     background-clip: padding-box;
     border-radius: 0.375rem;
+    background-image: -webkit-gradient(linear, left bottom, right top, from(transparent), to(#99c0e2)), -webkit-gradient(linear, right top, left bottom, from(transparent), to(#9d858b)), -webkit-gradient(linear, left top, right bottom, from(transparent), to(#5990ad)), -webkit-gradient(linear, right bottom, left top, from(transparent), to(#89634f));
     background-image: linear-gradient(to top right, transparent, #99c0e2), linear-gradient(to bottom left, transparent, #9d858b), linear-gradient(to bottom right, transparent, #5990ad), linear-gradient(to top left, transparent, #89634f);
     background-size: 100%;
     width: 6.25rem;
@@ -2839,6 +2835,7 @@ footer div {
 }
 
 .footer-home-anchor {
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2858,6 +2855,7 @@ footer div {
 }
 
 .footer-home-anchor .icon {
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
     opacity: 0.9;
@@ -2904,6 +2902,7 @@ footer div {
 }
 
 .nav-tertiary-list a .icon {
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     will-change: opacity, transform;
     opacity: 0.7;
@@ -2966,6 +2965,7 @@ code[data-lang]::before {
     top: 0;
     left: 0;
     right: 0;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     content: attr(data-lang);
     background-color: #737373;
@@ -3047,6 +3047,7 @@ code[data-lang]::before {
 }
 
 .code-toggle-input + .highlight pre {
+    -webkit-transition: max-height 0.2s ease;
     transition: max-height 0.2s ease;
     max-height: 1000vh;
 }
@@ -3065,6 +3066,7 @@ code[data-lang]::before {
     background-clip: padding-box;
     border-radius: 0 0 0.375rem 0.375rem;
     content: "";
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(6, 6, 6, 0.2)), color-stop(25%, rgba(6, 6, 6, 0.2)), color-stop(25%, rgba(6, 6, 6, 0.4)), color-stop(50%, rgba(6, 6, 6, 0.4)), color-stop(50%, rgba(6, 6, 6, 0.6)), color-stop(75%, rgba(6, 6, 6, 0.6)), color-stop(75%, rgba(6, 6, 6, 0.8)), to(rgba(6, 6, 6, 0.8)));
     background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
     background-size: 100% 7rem;
     background-position: bottom;
@@ -3216,7 +3218,8 @@ video {
     .button {
         color: #4f4f4f;
         border: 1px solid #4f4f4f;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
     h1,
     h2,
@@ -3326,6 +3329,7 @@ video {
 .transition-example--fade {
     background-clip: padding-box;
     border-radius: 0.25rem;
+    -webkit-transition: color 0.2s ease;
     transition: color 0.2s ease;
     width: 100%;
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
@@ -3378,6 +3382,7 @@ video {
 }
 
 .transition-example--slide::before {
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -3395,6 +3400,7 @@ video {
 }
 
 .transition-example--fade::before {
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     opacity: 0;
 }

@@ -27,12 +27,6 @@
             & + li {
                 margin-top: $measure-medium;
             }
-
-            &:nth-child(2n+1) {
-                a {
-                    background-color: $color-black--delta;
-                }
-            }
         }
 
         @include media(">small") {
@@ -45,13 +39,6 @@
             &:nth-child(n+3) {
                 margin-top: $measure-medium;
             }
-
-            &:nth-child(4n+1),
-            &:nth-child(4n+4) {
-                a {
-                    background-color: $color-black--delta;
-                }
-            }
         }
 
         aside & {
@@ -61,20 +48,6 @@
             // one-column format)
             & + li {
                 margin-top: $measure-small;
-            }
-
-            // Reset from above :(
-            &:nth-child(4n+1),
-            &:nth-child(4n+4) {
-                a {
-                    background-color: $transparent;
-                }
-            }
-
-            &:nth-child(2n+1) {
-                a {
-                    background-color: $color-black--delta;
-                }
             }
         }
     }
