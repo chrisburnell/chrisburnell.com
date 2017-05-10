@@ -168,6 +168,44 @@
 
 
 ///
+/// Re-map a number from one range to another
+///
+/// @param {Number} $value - Initial Value
+/// @param {Number} $ranges - Values representing max and/or min of the ranges
+///
+/// @example scss
+///   $variable: range-map(2, 4, 100);
+///   // $variable: 50;
+///
+/// @example scss
+///   $variable: range-map(68, 30, 160, 0, 100);
+///   // $variable: 42.5;
+///
+/// @return {Number} Number re-mapped in new range
+///
+@function range-map($value, $ranges...) {
+    @if not $value or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
+        @warn "`range-map()` requires three or five parameters: initial value, (old minimum), old maximum, (new minimum), and new maximum.";
+        @return false;
+    }
+
+    $old-min: 0;
+    $old-max: nth($ranges, 1);
+    $new-min: 0;
+    $new-max: nth($ranges, 2);
+
+    @if length($ranges) == 4 {
+        $old-min: nth($ranges, 1);
+        $old-max: nth($ranges, 2);
+        $new-min: nth($ranges, 3);
+        $new-max: nth($ranges, 4);
+    }
+
+    @return ($value - $old-min) / ($old-max - $old-min) * ($new-max - $new-min) + $new-min;
+}
+
+
+///
 /// Strip Units from a Number
 ///
 /// @param {Number} $value - Number with units
