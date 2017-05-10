@@ -1032,6 +1032,7 @@ a span:not([class]):not([itemprop]) {
     display: none;
     visibility: hidden;
     margin-left: 1.25rem;
+    border-bottom-width: 1px;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.25;
