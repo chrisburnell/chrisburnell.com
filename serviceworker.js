@@ -25,17 +25,18 @@ const CACHE_FILES_PRIMARY = [
     '/css/main.min.css',
     '/js/main.min.js',
     '/search.json',
-    '/manifest.json',
-    '/fonts/league-gothic-regular.woff2',
-    '/fonts/proxima-nova-regular.woff2',
-    '/fonts/proxima-nova-italic.woff2',
-    '/fonts/proxima-nova-semibold.woff2'
+    '/manifest.json'
 ];
 
 // Default files to always cache without blocking installation
 const CACHE_FILES_SECONDARY = [
+    '/images/sprites.svg',
     '/images/avatar.png',
-    '/images/avatar.webp'
+    '/images/avatar.webp',
+    '/fonts/league-gothic-regular.woff2',
+    '/fonts/proxima-nova-regular.woff2',
+    '/fonts/proxima-nova-italic.woff2',
+    '/fonts/proxima-nova-semibold.woff2'
 ];
 
 
