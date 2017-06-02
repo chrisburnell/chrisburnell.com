@@ -548,8 +548,8 @@ table.zebra tbody tr:nth-child(even) td {
 
 th,
 td {
-    -webkit-transition: background-color 0.2s ease, border-left-color 0.2s ease;
-    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+    -webkit-transition: background-color 0.2s ease 0s, border-left-color 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s, border-left-color 0.2s ease 0s;
     will-change: background-color, border-left-color;
     padding: 0.625rem;
     text-align: left;
@@ -600,8 +600,8 @@ td {
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    -webkit-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s;
     content: "";
     opacity: 0;
     background-color: rgba(95, 138, 166, 0.1);
@@ -724,10 +724,10 @@ summary {
             user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
-    -webkit-transition: -webkit-transform 0.2s ease;
-    transition: -webkit-transform 0.2s ease;
-    transition: transform 0.2s ease;
-    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transition: -webkit-transform 0.2s ease 0s;
+    transition: -webkit-transform 0.2s ease 0s;
+    transition: transform 0.2s ease 0s;
+    transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     display: list-item;
     font-weight: 600;
     outline: 0;
@@ -950,8 +950,8 @@ sup {
 
 a {
     position: relative;
-    -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    -webkit-transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
+    transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     will-change: background, color, border-color;
     background-color: transparent;
     color: #52768e;
@@ -1003,8 +1003,8 @@ a span:not([class]):not([itemprop]) {
  * Title Anchors inside Headings
  */
 .title-anchor {
-    -webkit-transition: border-color 0.2s ease;
-    transition: border-color 0.2s ease;
+    -webkit-transition: border-color 0.2s ease 0s;
+    transition: border-color 0.2s ease 0s;
     will-change: color, border-bottom-color;
     display: inline-block;
     border-bottom-width: 0.125rem;
@@ -1354,8 +1354,8 @@ h6[id]:target,
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
     will-change: transform;
     fill: #5f8aa6;
 }
@@ -1455,10 +1455,10 @@ h6[id]:target,
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
-    -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
-    transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s;
+    transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
     display: block;
