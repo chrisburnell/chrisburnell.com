@@ -171,7 +171,7 @@
 /// Re-map a number from one range to another
 ///
 /// @param {Number} $value - Initial Value
-/// @param {Number} $ranges - Values representing max and/or min of the ranges
+/// @param {Number} $ranges - 2-4 minimum/maximum values representing the ranges
 ///
 /// @example scss
 ///   $variable: range-map(2, 4, 100);
@@ -189,19 +189,19 @@
         @return false;
     }
 
-    $old-min: 0;
-    $old-max: nth($ranges, 1);
-    $new-min: 0;
-    $new-max: nth($ranges, 2);
+    $old-minimum: 0;
+    $old-maximum: nth($ranges, 1);
+    $new-minimum: 0;
+    $new-maximum: nth($ranges, 2);
 
     @if length($ranges) == 4 {
-        $old-min: nth($ranges, 1);
-        $old-max: nth($ranges, 2);
-        $new-min: nth($ranges, 3);
-        $new-max: nth($ranges, 4);
+        $old-minimum: nth($ranges, 1);
+        $old-maximum: nth($ranges, 2);
+        $new-minimum: nth($ranges, 3);
+        $new-maximum: nth($ranges, 4);
     }
 
-    @return ($value - $old-min) / ($old-max - $old-min) * ($new-max - $new-min) + $new-min;
+    @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 
 
