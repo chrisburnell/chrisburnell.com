@@ -1116,7 +1116,8 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    overflow-y: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 @supports (display: grid) {
@@ -1155,6 +1156,18 @@ header {
     }
 }
 
+header::before {
+    content: "";
+    background-color: #5f8aa6;
+    width: calc(100% - (2 * 1.25rem));
+    height: 0.25rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
 /**
  * The width of the content is fluid, and always has padding on the left-hand
  * side to make room for any `aside`, which can appear anywhere inside
@@ -1162,7 +1175,6 @@ header {
  */
 .content {
     padding-top: 2.25rem;
-    border-top: 0.25rem solid #5f8aa6;
 }
 
 @media (max-width: 800px) {
@@ -1327,83 +1339,41 @@ h6[id]:target,
             user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
+    height: 6.25rem;
     display: inline-block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 15.875rem;
+            flex: 1 0 15.875rem;
     position: relative;
     border-bottom-width: 0;
-}
-
-@media (max-width: 800px) {
-    .logo {
-        height: 5.5rem;
-        -webkit-box-flex: 1;
-            -ms-flex: 1 0 7rem;
-                flex: 1 0 7rem;
-    }
-}
-
-@media (min-width: 801px) {
-    .logo {
-        height: 6.25rem;
-        -webkit-box-flex: 1;
-            -ms-flex: 1 0 15.875rem;
-                flex: 1 0 15.875rem;
-    }
 }
 
 .logo svg {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     -webkit-transition: all 1s ease 0s;
     transition: all 1s ease 0s;
     will-change: transform;
+    width: 8.5rem;
+    height: 8.5rem;
     fill: #5f8aa6;
+    -webkit-transform: translateX(-65%) translateY(-40%) rotateZ(5deg);
+            transform: translateX(-65%) translateY(-40%) rotateZ(5deg);
 }
 
-@media (max-width: 800px) {
-    .logo svg {
-        width: 7rem;
-        height: 7rem;
-        -webkit-transform: translateX(50%) translateY(-1.5rem) translateZ(0);
-                transform: translateX(50%) translateY(-1.5rem) translateZ(0);
-    }
+.logo:hover svg, .logo:focus svg {
+    -webkit-transform: translateX(-40%) translateY(-30%);
+            transform: translateX(-40%) translateY(-30%);
 }
 
-@media (min-width: 801px) {
-    .logo svg {
-        width: 8.5rem;
-        height: 8.5rem;
-        -webkit-transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
-                transform: translateX(3.75rem) translateY(-3.25rem) translateZ(0);
-    }
-}
-
-@media (max-width: 800px) {
-    .logo:hover svg, .logo:focus svg {
-        -webkit-transform: translateX(65%) translateY(-1.35rem) translateZ(0);
-                transform: translateX(65%) translateY(-1.35rem) translateZ(0);
-    }
-}
-
-@media (min-width: 801px) {
-    .logo:hover svg, .logo:focus svg {
-        -webkit-transform: translateX(4rem) translateY(-3rem) translateZ(0);
-                transform: translateX(4rem) translateY(-3rem) translateZ(0);
-    }
-}
-
-@media (max-width: 800px) {
-    .logo:active svg {
-        -webkit-transform: translateX(70%) translateY(-1rem) translateZ(0);
-                transform: translateX(70%) translateY(-1rem) translateZ(0);
-    }
-}
-
-@media (min-width: 801px) {
-    .logo:active svg {
-        -webkit-transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
-                transform: translateX(4rem) translateY(-2.5rem) translateZ(0);
-    }
+.logo:active svg {
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    -webkit-transform: translateX(-30%) translateY(-25%);
+            transform: translateX(-30%) translateY(-25%);
 }
 
 .nav-primary {

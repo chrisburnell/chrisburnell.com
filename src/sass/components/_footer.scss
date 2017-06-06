@@ -72,7 +72,7 @@ footer {
 
 .footer-license-anchor,
 .footer-style-guide-anchor {
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     margin-left:  $measure-small;
     margin-right: $measure-small;
 }

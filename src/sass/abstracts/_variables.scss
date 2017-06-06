@@ -246,6 +246,8 @@ $font-families-styles: (
 $line-height-default: 1.875 !default;
 /// @type Number
 $line-height-small:   1.250 !default;
+/// @type Number
+$line-height-medium:  1.429 !default;
 
 
 /// @type Length
@@ -261,7 +263,7 @@ $animation-function: linear !default;
 
 
 /// @type Length
-$rotation-default: 15deg !default;
+$rotation-default: 5deg !default;
 
 
 /// @type Length

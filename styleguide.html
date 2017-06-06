@@ -128,11 +128,11 @@ twitter: true
 
 <p>Subscript for things like H<sub>2</sub>O</p>
 
-<p><small>This small text is small for for fine print, etc.</small></p>
+<p><small>This small text for fine print, etc.</small></p>
 
 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-<p>Keyboard input: <kbd>Cmd</kbd></p>
+<p>Keyboard input: <kbd>Tab</kbd></p>
 
 <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
 
@@ -530,13 +530,14 @@ function toggleCode(node) {
 </ul>
 
 
-{% include content/heading.html title='HTML Classes' %}
+{% include content/heading.html title='HTML Attributes' %}
 
 <p><em>Classes</em> should be double-space delimited.</p>
 
 {% highlight html %}
 <button class="button  button--small  js-trigger"
-        rel="me author">
+        rel="me  author"
+        role="button">
 </button>
 {% endhighlight %}
 

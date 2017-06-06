@@ -93,7 +93,7 @@ h2 {
 }
 h3 {
     @extend %gamma !optional;
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     margin-top: $measure-large;
     border-bottom: $border-width-thin $border-style-default $color-alto;
     font-weight: $font-weight-bold;

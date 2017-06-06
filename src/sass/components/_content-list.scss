@@ -33,6 +33,7 @@
             width: #{($article-width - ($columns - 1)) / $columns / $article-width * 100%};
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
 
             // Push all list items down (after the first two, in the two-column
             // format)
@@ -52,9 +53,16 @@
         }
     }
 
+    article {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 100%;
+    }
+
     a {
         @include border-radius;
         display: block;
+        flex: 1 0 100%;
         padding: $measure-medium;
         border-bottom-width: 0;
         overflow: hidden;
@@ -63,10 +71,6 @@
         &:focus,
         &:active {
             background-color: $color-raven--gamma !important;
-        }
-
-        @include media(">small") {
-            flex: 1 0 auto;
         }
 
         aside & {

@@ -9,7 +9,7 @@ button,
     @extend %button-elements !optional;
     @include non-selectable;
     @include border-radius(thin);
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     @include font-family(alpha);
     @include position(relative);
     @include transition(background-color);

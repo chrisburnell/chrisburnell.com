@@ -27,7 +27,7 @@
     margin-bottom: $measure-medium;
     font-size: $font-size-small;
     font-style: italic;
-    line-height: 1.429;
+    line-height: $line-height-medium;
 
     @include media("<=medium") {
         padding-top: $measure-large;
