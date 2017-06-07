@@ -344,7 +344,7 @@ ol.default-list > li {
 
 ol:not([class]) > li::before,
 ol.default-list > li::before {
-    content: counter(ordered-list, decimal-leading-zero) ".";
+    content: counter(ordered-list, decimal) ".";
     font-variant-numeric: tabular-nums;
     -webkit-font-feature-settings: "tnum";
             font-feature-settings: "tnum";

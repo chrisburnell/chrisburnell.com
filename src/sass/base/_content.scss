@@ -234,7 +234,7 @@ ol.default-list {
         counter-increment: ordered-list;
 
         &::before {
-            content: counter(ordered-list, decimal-leading-zero) ".";
+            content: counter(ordered-list, decimal) ".";
             font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum";
         }
