@@ -11,7 +11,7 @@
 
 // Set a name for the current cache
 // YYYY-MM-DD_hhmm::short_title
-const CACHE_NAME = `{{ site.time | date: '%Y-%m-%d_%H%M' }}::{{ site.short_title }}`;
+const CACHE_NAME = `{{ site.time | date: '%F_%H%M' }}::{{ site.short_title }}`;
 
 // Default files to always cache
 const CACHE_FILES_PRIMARY = [
