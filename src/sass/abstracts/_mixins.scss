@@ -168,12 +168,10 @@
 /// @example scss
 ///   @include hyphenate;
 ///   // overflow-wrap: break-word;
-///   // word-wrap: break-word;
 ///   // hyphens: auto;
 ///
 @mixin hyphenate() {
     overflow-wrap: break-word;
-    word-wrap: break-word;
     hyphens: auto;
 }
 

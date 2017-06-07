@@ -1037,11 +1037,10 @@ ul code,
 figure:not([class]) code,
 p code,
 ins,
-kbd,
 mark,
 samp,
 var {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 h1 code,
@@ -1847,6 +1846,7 @@ header {
     }
     @supports (display: grid) {
         header {
+            grid-template-rows: 7rem -webkit-min-content;
             grid-template-rows: 7rem min-content;
         }
     }
@@ -1860,6 +1860,7 @@ header {
     }
     @supports (display: grid) {
         header {
+            grid-template-columns: 15.875rem -webkit-min-content;
             grid-template-columns: 15.875rem min-content;
         }
     }
@@ -2032,7 +2033,6 @@ h6[id]:target,
 .hyphen,
 .hyphenate {
     overflow-wrap: break-word;
-    word-wrap: break-word;
     -webkit-hyphens: auto;
         -ms-hyphens: auto;
             hyphens: auto;
@@ -2069,12 +2069,14 @@ h6[id]:target,
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    -webkit-transition: all 1s ease 0s;
-    transition: all 1s ease 0s;
+    -webkit-transition: -webkit-transform 1s ease 0s;
+    transition: -webkit-transform 1s ease 0s;
+    transition: transform 1s ease 0s;
+    transition: transform 1s ease 0s, -webkit-transform 1s ease 0s;
     will-change: transform;
+    fill: #5f8aa6;
     width: 8.5rem;
     height: 8.5rem;
-    fill: #5f8aa6;
     -webkit-transform: translateX(-65%) translateY(-40%) rotateZ(5deg);
             transform: translateX(-65%) translateY(-40%) rotateZ(5deg);
 }
@@ -2341,6 +2343,9 @@ aside + .lede {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     }
+}
+
+@media (min-width: 501px) {
     .content-list li:nth-child(n+3) {
         margin-top: 1.25rem;
     }
@@ -2668,7 +2673,7 @@ p + .nav-secondary {
 }
 
 /**
- * Photograph of my FACE
+ * Photograph of MY FACE
  */
 .author-image {
     background-clip: padding-box;

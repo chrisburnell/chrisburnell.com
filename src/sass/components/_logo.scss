@@ -6,7 +6,7 @@
 
 .logo {
     @include non-selectable;
-    height: 6.25rem;
+    height: $avatar-size;
     display: inline-block;
     flex: 1 0 $aside-width;
     position: relative;
@@ -14,19 +14,21 @@
 
     svg {
         @include position(top-center);
-        @include transition(all 1s);
+        @include transition(transform $transition-time-long);
         @include will-change(transform);
-        width:  8.5rem;
-        height: 8.5rem;
         fill: $color-raven;
+        width:  $logo-size;
+        height: $logo-size;
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
     }
+
     &:hover,
     &:focus {
         svg {
             transform: translateX(-40%) translateY(-30%);
         }
     }
+
     &:active {
         svg {
             transition-duration: $transition-time;

@@ -269,6 +269,9 @@ $rotation-default: 5deg !default;
 /// @type Length
 /// @see {Mixin} transition
 $transition-time: 0.200s !default;
+/// @type Length
+/// @see {Mixin} transition
+$transition-time-long: 1.000s !default;
 /// @type String
 /// @see {Mixin} transition
 $transition-function: ease !default;
@@ -390,7 +393,11 @@ $color-ravens:
 
 /// @type Length
 $icon-size: 40px !default;
+/// @type Length
+$logo-size: 8.5rem !default; // 136px
+/// @type Length
+$avatar-size: 6.25rem !default; // 100px
 
 
 /// @type Number
-$columns: 2 !default;
+$max-columns: 2 !default;

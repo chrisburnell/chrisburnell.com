@@ -9,6 +9,7 @@
  * breakpoint.
  */
 /*aside*/.author {
+    // override the default <aside> font-family
     @include font-family(default);
 
     @include media("<=medium") {
@@ -55,7 +56,7 @@
 }
 
 /**
- * Photograph of my FACE
+ * Photograph of MY FACE
  */
 .author-image {
     @include border-radius;
@@ -66,8 +67,8 @@
                       gradient(to bottom right, $transparent, rgb(89,  144, 173)),
                       gradient(to top left,     $transparent, rgb(137, 99,  79));
     background-size: 100%;
-    width:  6.25rem; // 100px
-    height: 6.25rem; // 100px
+    width:  $avatar-size;
+    height: $avatar-size;
     float: left;
     margin-right:  $measure-small;
 

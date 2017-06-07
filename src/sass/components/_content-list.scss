@@ -30,14 +30,16 @@
         }
 
         @include media(">small") {
-            width: #{($article-width - ($columns - 1)) / $columns / $article-width * 100%};
+            width: #{($article-width - ($max-columns - 1)) / $max-columns / $article-width * 100%};
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+        }
 
-            // Push all list items down (after the first two, in the two-column
-            // format)
-            &:nth-child(n+3) {
+        // Push all list items down (after the first two, in the two-column
+        // format)
+        &:nth-child(n+3) {
+            @include media(">small") {
                 margin-top: $measure-medium;
             }
         }
@@ -45,7 +47,7 @@
         aside & {
             width: 100%;
 
-            // Push all list items down (after the first one, in the <aside>
+            // Push all list items down (after the first one, in the <aside>'s
             // one-column format)
             & + li {
                 margin-top: $measure-small;

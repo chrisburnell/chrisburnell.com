@@ -27,12 +27,11 @@ samp {
 %heading-elements code,
 %content-elements code,
 ins,
-kbd,
 mark,
 samp,
 var {
     // force text to wrap
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 %heading-elements code,
 %content-elements code,
