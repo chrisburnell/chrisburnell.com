@@ -954,7 +954,7 @@ a {
     transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     will-change: background, color, border-color;
     background-color: transparent;
-    color: #52768e;
+    color: #4d7086;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #dddddd;
@@ -963,7 +963,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    border-bottom-color: #52768e;
+    border-bottom-color: #4d7086;
     outline-width: 0;
 }
 

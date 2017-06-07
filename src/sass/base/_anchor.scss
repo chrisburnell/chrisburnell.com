@@ -9,7 +9,7 @@ a {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     background-color: $transparent;
-    color: $color-raven--shade;
+    color: $color-bismark;
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
     border-bottom-color: $color-alto;
@@ -20,7 +20,7 @@ a {
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-raven--shade;
+        border-bottom-color: $color-bismark;
         outline-width: 0;
     }
 

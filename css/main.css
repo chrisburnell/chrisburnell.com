@@ -1436,7 +1436,7 @@ a {
     transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     will-change: background, color, border-color;
     background-color: transparent;
-    color: #52768e;
+    color: #4d7086;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #dddddd;
@@ -1445,7 +1445,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    border-bottom-color: #52768e;
+    border-bottom-color: #4d7086;
     outline-width: 0;
 }
 
@@ -1594,8 +1594,8 @@ button,
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    -webkit-box-shadow: inset 0 -0.182em 0 0 #52768e;
-            box-shadow: inset 0 -0.182em 0 0 #52768e;
+    -webkit-box-shadow: inset 0 -0.182em 0 0 #4d7086;
+            box-shadow: inset 0 -0.182em 0 0 #4d7086;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -1605,7 +1605,7 @@ button:hover, button:focus, button:active,
 .button:hover,
 .button:focus,
 .button:active {
-    background-color: #6b92ac;
+    background-color: #6e95ae;
 }
 
 button:hover, button:focus,
@@ -1620,8 +1620,8 @@ button:active,
     padding-bottom: 0;
     margin-bottom: 0.182em;
     outline-style: none;
-    -webkit-box-shadow: inset 0 -1px 0 0 #52768e;
-            box-shadow: inset 0 -1px 0 0 #52768e;
+    -webkit-box-shadow: inset 0 -1px 0 0 #4d7086;
+            box-shadow: inset 0 -1px 0 0 #4d7086;
     -webkit-transform: translateY(0.182em);
             transform: translateY(0.182em);
 }
@@ -1727,7 +1727,7 @@ textarea {
 
 input:hover,
 textarea:hover {
-    border-color: #6b92ac;
+    border-color: #6e95ae;
 }
 
 input:focus,
@@ -3229,7 +3229,7 @@ video {
     margin-top: 0;
 }
 
-.color-block-list {
+.palette-list {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3239,7 +3239,7 @@ video {
 }
 
 @media (max-width: 500px) {
-    .color-block-list {
+    .palette-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -3247,7 +3247,7 @@ video {
     }
 }
 
-.color-block-list li {
+.palette-list li {
     padding: 1.25rem 0;
     font-size: 0.875rem;
     text-align: center;
@@ -3259,7 +3259,7 @@ video {
 }
 
 @media (max-width: 500px) {
-    .color-block-list li {
+    .palette-list li {
         -webkit-box-flex: 1;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
@@ -3267,7 +3267,7 @@ video {
 }
 
 @media (min-width: 501px) and (max-width: 1140px) {
-    .color-block-list li {
+    .palette-list li {
         -webkit-box-flex: 1;
             -ms-flex: 1 0 50%;
                 flex: 1 0 50%;
@@ -3275,44 +3275,59 @@ video {
 }
 
 @media (min-width: 1141px) {
-    .color-block-list li {
+    .palette-list li {
         -webkit-box-flex: 1;
             -ms-flex: 1 0 33.333%;
                 flex: 1 0 33.333%;
     }
 }
 
-.color-block-list li[data-color="#5f8aa6"] {
+.palette-list li[data-color="#4d7086"] {
+    background-color: #4d7086;
+    color: #f9f9f9;
+}
+
+.palette-list li[data-color="#5f8aa6"] {
     background-color: #5f8aa6;
     color: #f9f9f9;
 }
 
-.color-block-list li[data-color="#060606"] {
+.palette-list li[data-color="#6e95ae"] {
+    background-color: #6e95ae;
+    color: #f9f9f9;
+}
+
+.palette-list li[data-color="#060606"] {
     background-color: #060606;
     color: #f9f9f9;
 }
 
-.color-block-list li[data-color="#f9f9f9"] {
-    background-color: #f9f9f9;
-    color: #4f4f4f;
+.palette-list li[data-color="#2b2b2b"] {
+    background-color: #2b2b2b;
+    color: #f9f9f9;
 }
 
-.color-block-list li[data-color="#4f4f4f"] {
+.palette-list li[data-color="#4f4f4f"] {
     background-color: #4f4f4f;
     color: #f9f9f9;
 }
 
-.color-block-list li[data-color="#737373"] {
+.palette-list li[data-color="#737373"] {
     background-color: #737373;
     color: #f9f9f9;
 }
 
-.color-block-list li[data-color="#dddddd"] {
+.palette-list li[data-color="#dddddd"] {
     background-color: #dddddd;
     color: #4f4f4f;
 }
 
-.color-block-list li h4 {
+.palette-list li[data-color="#f9f9f9"] {
+    background-color: #f9f9f9;
+    color: #4f4f4f;
+}
+
+.palette-list li h4 {
     margin-bottom: 0;
     line-height: 1.875;
 }
