@@ -189,17 +189,10 @@
         @return false;
     }
 
-    $old-minimum: 0;
-    $old-maximum: nth($ranges, 1);
-    $new-minimum: 0;
-    $new-maximum: nth($ranges, 2);
-
-    @if length($ranges) == 4 {
-        $old-minimum: nth($ranges, 1);
-        $old-maximum: nth($ranges, 2);
-        $new-minimum: nth($ranges, 3);
-        $new-maximum: nth($ranges, 4);
-    }
+    $old-minimum: if(length($ranges) == 2, 0,               nth($ranges, 1));
+    $old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
+    $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
+    $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
     @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
@@ -328,7 +321,7 @@
 ///
 /// @param {List} $list - List to walk through
 /// @param {String} $function - Function to apply to all members
-/// @param {ArgList} $args - Extra arguments to pass to the function
+/// @param {ArgList} $args - Extra parameters to pass to the function
 ///
 /// @example scss
 ///   content: "#{walk(one two three, to-upper-case)}";
