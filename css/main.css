@@ -3300,6 +3300,11 @@ video {
     color: #f9f9f9;
 }
 
+.palette-list li[data-color="#fd1b00"] {
+    background-color: #fd1b00;
+    color: #f9f9f9;
+}
+
 .palette-list li[data-color="#060606"] {
     background-color: #060606;
     color: #f9f9f9;
@@ -3328,11 +3333,6 @@ video {
 .palette-list li[data-color="#f9f9f9"] {
     background-color: #f9f9f9;
     color: #4f4f4f;
-}
-
-.palette-list li[data-color="#fd1b00"] {
-    background-color: #fd1b00;
-    color: #f9f9f9;
 }
 
 .palette-list li h4 {
