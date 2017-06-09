@@ -53,7 +53,19 @@ Our `@function` takes a variable number of parameters, three or five, specifical
 
 To be frank, I’m having a hard time finding a great deal of use out of this operation in CSS, but perhaps you’ll find a reason to use it.
 
-Simply to serve as an example (*not* as an example of best practice), one way to use this function
+Simply to serve as an example (*not* as an example of best practice), one way to use this function might be to map a test score to a percentage. Let’s say that we have a score of <span class="monospace">5/7</span> that we want as a percentage:
+
+{% highlight html %}
+<span class="score" data-score="5" data-max="7">5/7</span>
+{% endhighlight %}
+
+{% highlight scss %}
+.score {
+    &::after {
+        content: " (" #{range-map(attr(data-score), attr(data-max), 100)} ")"
+    }
+}
+{% endhighlight %}
 
 <figure>
     <div class="media  media--youtube">
