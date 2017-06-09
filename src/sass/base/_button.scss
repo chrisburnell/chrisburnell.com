@@ -9,7 +9,7 @@ button,
     @extend %button-elements !optional;
     @include non-selectable;
     @include border-radius(thin);
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     @include font-family(alpha);
     @include position(relative);
     @include transition(background-color);
@@ -28,14 +28,14 @@ button,
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    box-shadow: inset 0 -0.182em 0 0 $color-raven--shade;
+    box-shadow: inset 0 -0.182em 0 0 $color-bismark;
     appearance: none;
 
 
     &:hover,
     &:focus,
     &:active {
-        background-color: $color-raven--tint;
+        background-color: $color-bermuda;
     }
 
     &:hover,
@@ -48,7 +48,7 @@ button,
         padding-bottom: 0;
         margin-bottom: 0.182em;
         outline-style: none;
-        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-raven--shade;
+        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bismark;
         transform: translateY(0.182em);
     }
 

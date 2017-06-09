@@ -11,31 +11,37 @@
 
 // Set a name for the current cache
 // YYYY-MM-DD_hhmm::short_title
-const CACHE_NAME = `{{ site.time | date: '%Y-%m-%d_%H%M' }}::{{ site.short_title }}`;
+const CACHE_NAME = `{{ site.time | date: '%F_%H%M' }}::{{ site.short_title }}`;
 
 // Default files to always cache
 const CACHE_FILES_PRIMARY = [
     '/',
     '/about/',
     '/articles/',
-    '/pens/',
+    '/contact/',
+    '/license/',
+    '/links/',
     '/offline/',
+    '/pens/',
     '/search/',
     '/styleguide/',
+    '/tags/',
+    '/talks/',
     '/css/main.min.css',
     '/js/main.min.js',
     '/search.json',
-    '/manifest.json',
-    '/fonts/league-gothic-regular.woff2',
-    '/fonts/proxima-nova-regular.woff2',
-    '/fonts/proxima-nova-italic.woff2',
-    '/fonts/proxima-nova-semibold.woff2'
+    '/manifest.json'
 ];
 
 // Default files to always cache without blocking installation
 const CACHE_FILES_SECONDARY = [
+    '/images/sprites.svg',
     '/images/avatar.png',
-    '/images/avatar.webp'
+    '/images/avatar.webp',
+    '/fonts/league-gothic-regular.woff2',
+    '/fonts/proxima-nova-regular.woff2',
+    '/fonts/proxima-nova-italic.woff2',
+    '/fonts/proxima-nova-semibold.woff2'
 ];
 
 

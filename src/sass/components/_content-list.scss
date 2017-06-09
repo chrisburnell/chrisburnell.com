@@ -27,61 +27,44 @@
             & + li {
                 margin-top: $measure-medium;
             }
-
-            &:nth-child(2n+1) {
-                a {
-                    background-color: $color-black--delta;
-                }
-            }
         }
 
         @include media(">small") {
-            width: #{($article-width - ($columns - 1)) / $columns / $article-width * 100%};
+            width: #{($article-width - ($max-columns - 1)) / $max-columns / $article-width * 100%};
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
+        }
 
-            // Push all list items down (after the first two, in the two-column
-            // format)
-            &:nth-child(n+3) {
+        // Push all list items down (after the first two, in the two-column
+        // format)
+        &:nth-child(n+3) {
+            @include media(">small") {
                 margin-top: $measure-medium;
-            }
-
-            &:nth-child(4n+1),
-            &:nth-child(4n+4) {
-                a {
-                    background-color: $color-black--delta;
-                }
             }
         }
 
         aside & {
             width: 100%;
 
-            // Push all list items down (after the first one, in the <aside>
+            // Push all list items down (after the first one, in the <aside>'s
             // one-column format)
             & + li {
                 margin-top: $measure-small;
             }
-
-            // Reset from above :(
-            &:nth-child(4n+1),
-            &:nth-child(4n+4) {
-                a {
-                    background-color: $transparent;
-                }
-            }
-
-            &:nth-child(2n+1) {
-                a {
-                    background-color: $color-black--delta;
-                }
-            }
         }
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 100%;
     }
 
     a {
         @include border-radius;
         display: block;
+        flex: 1 0 100%;
         padding: $measure-medium;
         border-bottom-width: 0;
         overflow: hidden;
@@ -90,10 +73,6 @@
         &:focus,
         &:active {
             background-color: $color-raven--gamma !important;
-        }
-
-        @include media(">small") {
-            flex: 1 0 auto;
         }
 
         aside & {

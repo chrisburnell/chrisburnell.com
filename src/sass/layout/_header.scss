@@ -6,7 +6,8 @@
 
 header {
     display: flex;
-    overflow-y: hidden;
+    position: relative;
+    overflow: hidden;
 
     @supports (display: grid) {
         display: grid;
@@ -27,5 +28,16 @@ header {
         @supports (display: grid) {
             grid-template-columns: $aside-width min-content;
         }
+    }
+
+    &::before {
+        content: "";
+        background-color: $color-raven;
+        width: calc(100% - (2 * #{$gutter-width}));
+        height: $border-width-default;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

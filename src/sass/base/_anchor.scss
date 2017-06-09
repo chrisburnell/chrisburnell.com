@@ -9,7 +9,7 @@ a {
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     background-color: $transparent;
-    color: $color-raven--shade;
+    color: $color-bismark;
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
     border-bottom-color: $color-alto;
@@ -83,6 +83,7 @@ a {
     display: none;
     visibility: hidden;
     margin-left: $measure-medium;
+    border-bottom-width: $border-width-hairline;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     line-height: $line-height-small;

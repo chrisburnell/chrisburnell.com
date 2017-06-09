@@ -65,7 +65,7 @@
 /// @require {Variable} $letter-spacing-uppercase
 ///
 /// @example scss
-///   @include case(uppercase);
+///   @include case(uppercase, $letter-spacing-uppercase);
 ///   // text-transform: uppercase;
 ///   // letter-spacing: 1px;
 ///
@@ -168,12 +168,10 @@
 /// @example scss
 ///   @include hyphenate;
 ///   // overflow-wrap: break-word;
-///   // word-wrap: break-word;
 ///   // hyphens: auto;
 ///
 @mixin hyphenate() {
     overflow-wrap: break-word;
-    word-wrap: break-word;
     hyphens: auto;
 }
 
@@ -245,6 +243,12 @@
         top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
+    }
+    @else if $value == "top-center" {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
     @else if $value == "full" {
         position: absolute;

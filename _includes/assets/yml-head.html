@@ -16,14 +16,6 @@
     {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
 {% endif %}
 
-{% if page.banner %}
-    {% capture meta_image %}{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-{% elsif page.banner_mobile %}
-    {% capture meta_image %}{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-{% else %}
-    {% capture meta_image %}{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
-{% endif %}
-
 {% capture body_class %}
     {% for class in page.page_class %}
         {{ class }}
@@ -33,6 +25,10 @@
     {% endif %}
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' | join: '  ' %}
+
+{% assign meta_name = site.author.name | split: ' ' %}
+{% assign meta_first_name = meta_name[0] %}
+{% assign meta_last_name = meta_name[1] %}
 
 {% assign svg_title_count = 0 %}
 {% assign code_toggle_count = 0 %}

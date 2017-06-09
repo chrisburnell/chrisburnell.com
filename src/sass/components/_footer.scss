@@ -49,6 +49,7 @@ footer {
     white-space: nowrap;
 
     &:active {
+        background-color: $transparent;
         transform: translateY(0.2rem);
     }
 
@@ -72,7 +73,7 @@ footer {
 
 .footer-license-anchor,
 .footer-style-guide-anchor {
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     margin-left:  $measure-small;
     margin-right: $measure-small;
 }

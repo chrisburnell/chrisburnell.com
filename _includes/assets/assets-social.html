@@ -16,11 +16,39 @@
         <meta name="twitter:widgets:border-color" content="#{{ site.color }}">
     {% endif %}
     <!-- OpenGraph Microdata -->
+    {% if page.layout == 'post' %}
+        <meta property="og:type" content="article">
+    {% elsif page.page_class contains 'about' %}
+        <meta property="og:type" content="profile">
+    {% else %}
+        <meta property="og:type" content="website">
+    {% endif %}
     <meta property="og:title" content="{{ meta_title }}">
     <meta property="og:description" content="{{ meta_lede }}">
-    <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-    <meta property="og:image" content="{{ meta_image }}">
+    {% if page.banner %}
+        <meta property="og:image" content="{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
+    {% elsif page.banner_mobile %}
+        <meta property="og:image" content="{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+    {% if page.page_class contains 'about' %}
+        <meta property="og:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+    <meta property="og:image" content="{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}">
+    {% if page.layout == 'post' %}
+        <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">
+        {% if page.edit_date %}
+            <meta property="article:modified_time" content="{{ page.edit_date | date: '%F_%H%M' }}">
+        {% endif %}
+        <meta property="article:author" content="{{ site.author.name }}">
+        {% for tag in page.tags %}
+            <meta property="article:tag" content="{{ tag }}">
+        {% endfor %}
+    {% elsif page.page_class contains 'about' %}
+        <meta property="profile:first_name" content="{{ meta_first_name }}">
+        <meta property="profile:last_name" content="{{ meta_last_name }}">
+        <meta property="profile:username" content="{{ site.author.codepen }}">
+    {% endif %}
     <!-- Google Sitelinks Searchbox -->
     <script type="application/ld+json">
         {
@@ -40,9 +68,9 @@
             },
             {% if page.layout == 'post' %}
                 "keywords": "{{ page.tags | join: ' ' }}",
-                "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+                "datePublished": "{{ page.date | date: '%F_%H%M' }}",
                 {% if page.edit_date %}
-                    "dateModified": "{{ page.edit_date | date: '%Y-%m-%d' }}",
+                    "dateModified": "{{ page.edit_date | date: '%F_%H%M' }}",
                 {% endif %}
                 "wordcount": "{{ content | number_of_words }}",
             {% endif %}

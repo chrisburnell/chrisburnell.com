@@ -93,7 +93,7 @@ h2 {
 }
 h3 {
     @extend %gamma !optional;
-    @include case(uppercase);
+    @include case(uppercase, $letter-spacing-uppercase);
     margin-top: $measure-large;
     border-bottom: $border-width-thin $border-style-default $color-alto;
     font-weight: $font-weight-bold;
@@ -177,12 +177,12 @@ p {
     // Columnal Paragraphs
     &.columns {
         @include media(">small", "<=medium") {
-            column-count: $columns;
+            column-count: $max-columns;
             column-gap: $measure-medium;
         }
 
         @include media(">large") {
-            column-count: $columns;
+            column-count: $max-columns;
             column-gap: $measure-medium;
         }
     }
@@ -234,7 +234,7 @@ ol.default-list {
         counter-increment: ordered-list;
 
         &::before {
-            content: counter(ordered-list, decimal-leading-zero) ".";
+            content: counter(ordered-list, decimal) ".";
             font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum";
         }
@@ -531,8 +531,8 @@ summary {
     @include non-selectable;
     @include transition(transform);
     display: list-item;
-    font-weight: $font-weight-bold;
     outline: 0;
+    font-weight: $font-weight-bold;
     cursor: pointer;
 
     &:hover,

@@ -27,12 +27,11 @@ samp {
 %heading-elements code,
 %content-elements code,
 ins,
-kbd,
 mark,
 samp,
 var {
     // force text to wrap
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 %heading-elements code,
 %content-elements code,
@@ -42,14 +41,17 @@ mark,
 samp {
     @include border-radius(thin);
     padding: 0.25em;
-    line-height: 1.429;
+    line-height: $line-height-medium;
 }
 %heading-elements code,
 %content-elements code,
 ins,
-kbd,
 samp {
     background-color: $color-raven--gamma;
+}
+kbd {
+    @include case(uppercase, $letter-spacing-uppercase);
+    box-shadow: inset 0 0 0 $border-width-hairline $color-kaiser;
 }
 mark {
     background-color: $color-highlight;

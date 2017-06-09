@@ -99,7 +99,15 @@ $color-canada: #fd1b00 !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $color-kaiser
-$color-mineshaft: mix($color-black, $color-kaiser) !default;
+$color-mineshaft: mix($color-black, $color-kaiser) !default; // #2b2b2b
+/// @type Color
+/// @require {Variable} $color-black
+/// @require {Variable} $color-raven
+$color-bismark: mix($color-black, $color-raven, 20%) !default; // #4d7086
+/// @type Color
+/// @require {Variable} $color-white
+/// @require {Variable} $color-raven
+$color-bermuda: mix($color-white, $color-raven, 10%) !default; // #6e95ae
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
@@ -112,28 +120,27 @@ $color-black--gamma: rgba($color-black, map-get($opacities, "gamma")) !default;
 /// @require {Variable} $color-raven
 /// @require {Variable} $opacities
 $color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
-/// @type Color
-/// @require {Variable} $color-white
-/// @require {Variable} $color-raven
-$color-raven--tint: mix($color-white, $color-raven, 7.5%) !default;
-/// @type Color
-/// @require {Variable} $color-black
-/// @require {Variable} $color-raven
-$color-raven--shade: mix($color-black, $color-raven, 15%) !default;
 /// @type List
 /// @prop {Color} Color
+/// @require {Variable} $color-bismark
 /// @require {Variable} $color-raven
+/// @require {Variable} $color-bermuda
+/// @require {Variable} $color-black
+/// @require {Variable} $color-mineshaft
 /// @require {Variable} $color-kaiser
 /// @require {Variable} $color-dove
 /// @require {Variable} $color-alto
 /// @require {Variable} $color-white
 $main-colors:
+    $color-bismark,
     $color-raven,
+    $color-bermuda,
     $color-black,
-    $color-white,
+    $color-mineshaft,
     $color-kaiser,
     $color-dove,
-    $color-alto !default;
+    $color-alto,
+    $color-white !default;
 
 
 /// @type Length
@@ -246,6 +253,8 @@ $font-families-styles: (
 $line-height-default: 1.875 !default;
 /// @type Number
 $line-height-small:   1.250 !default;
+/// @type Number
+$line-height-medium:  1.429 !default;
 
 
 /// @type Length
@@ -261,12 +270,15 @@ $animation-function: linear !default;
 
 
 /// @type Length
-$rotation-default: 15deg !default;
+$rotation-default: 5deg !default;
 
 
 /// @type Length
 /// @see {Mixin} transition
 $transition-time: 0.200s !default;
+/// @type Length
+/// @see {Mixin} transition
+$transition-time-long: 1.000s !default;
 /// @type String
 /// @see {Mixin} transition
 $transition-function: ease !default;
@@ -388,7 +400,11 @@ $color-ravens:
 
 /// @type Length
 $icon-size: 40px !default;
+/// @type Length
+$logo-size: 8.5rem !default; // 136px
+/// @type Length
+$avatar-size: 6.25rem !default; // 100px
 
 
 /// @type Number
-$columns: 2 !default;
+$max-columns: 2 !default;

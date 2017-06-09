@@ -43,7 +43,7 @@
     }
 
     a {
-        @include case(uppercase);
+        @include case(uppercase, $letter-spacing-uppercase);
         @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);

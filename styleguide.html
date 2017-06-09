@@ -17,21 +17,31 @@ twitter: true
 
 {% include content/heading.html title='Colours' %}
 
-<ul class="color-block-list">
+<ul class="palette-list">
+    <li data-color="#4d7086">
+        <h4>Bismark</h4>
+        <div class="monospace">#4d7086</div>
+        <div class="monospace">rgb(77, 112, 134)</div>
+    </li>
     <li data-color="#5f8aa6">
         <h4>Raven</h4>
         <div class="monospace">#5f8aa6</div>
         <div class="monospace">rgb(95, 138, 166)</div>
     </li>
-    <li data-color="#f9f9f9">
-        <h4>White</h4>
-        <div class="monospace">#f9f9f9</div>
-        <div class="monospace">rgb(249, 249, 249)</div>
+    <li data-color="#6e95ae">
+        <h4>Bermuda</h4>
+        <div class="monospace">#6e95ae</div>
+        <div class="monospace">rgb(110, 149, 174)</div>
     </li>
     <li data-color="#060606">
         <h4>Black</h4>
         <div class="monospace">#060606</div>
         <div class="monospace">rgb(6, 6, 6)</div>
+    </li>
+    <li data-color="#2b2b2b">
+        <h4>Mineshaft</h4>
+        <div class="monospace">#2b2b2b</div>
+        <div class="monospace">rgb(43, 43, 43)</div>
     </li>
     <li data-color="#4f4f4f">
         <h4>Kaiser</h4>
@@ -47,6 +57,11 @@ twitter: true
         <h4>Alto</h4>
         <div class="monospace">#dddddd</div>
         <div class="monospace">rgb(221, 221, 221)</div>
+    </li>
+    <li data-color="#f9f9f9">
+        <h4>White</h4>
+        <div class="monospace">#f9f9f9</div>
+        <div class="monospace">rgb(249, 249, 249)</div>
     </li>
 </ul>
 
@@ -128,11 +143,11 @@ twitter: true
 
 <p>Subscript for things like H<sub>2</sub>O</p>
 
-<p><small>This small text is small for for fine print, etc.</small></p>
+<p><small>This small text for fine print, etc.</small></p>
 
 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-<p>Keyboard input: <kbd>Cmd</kbd></p>
+<p>Keyboard input: <kbd>Tab</kbd></p>
 
 <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
 
@@ -169,7 +184,7 @@ twitter: true
 {% include content/heading.html title='Twitter Embedded Quote' %}
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a></blockquote>
-<noscript>Please enable JavaScript to to see Twitter-specific components.</noscript>
+<noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
 
 
 {% include content/heading.html title='Unordered List' %}
@@ -472,7 +487,7 @@ function toggleCode(node) {
 {% include content/heading.html title='Video' %}
 
 <figure>
-    <div class="media">
+    <div class="media  media--vimeo">
         <iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" width="810" height="455" title="Cloud Lapse on Vimeo" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 </figure>
@@ -530,17 +545,27 @@ function toggleCode(node) {
 </ul>
 
 
-{% include content/heading.html title='HTML Classes' %}
+{% include content/heading.html title='HTML Attributes' %}
 
 <p><em>Classes</em> should be double-space delimited.</p>
 
 {% highlight html %}
 <button class="button  button--small  js-trigger"
-        rel="me author">
+        rel="me  author">
 </button>
 {% endhighlight %}
 
-<p>
+
+{% include content/heading.html title='Vocabulary' %}
+
+<p>I’m a huge proponent for establishing a small dictionary of common vocabulary as it pertains to a project. This ensures that everyone understands what others say, and that they can be understood by everyone else. It also reduces the “awkwardness” for people who might not be familiar with particular nomenclature or naming conventions and could be shy to ask for clarification—rather it makes these words available and known right off the bat, and serves as a reference for the future.</p>
+
+<dl>
+    <dt>measure</dt>
+    <dd>A unit of length, designated for specific values for one dimension of measurement, e.g. <code>margin</code>, <code>padding</code>, etc.</dd>
+    <dt>size</dt>
+    <dd>Also a unit of length, but denoted for specific values for two dimensions of measurement, e.g. avatars, icons, etc.</dd>
+</dl>
 
 
 {% include content/heading.html title='Technology' %}

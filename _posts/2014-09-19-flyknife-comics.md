@@ -53,7 +53,7 @@ h1 {
     font-size: 25vw;
     margin: 0 0 -0.1em;
     line-height: 1em;
-    word-wrap: nowrap;
+    overflow-wrap: nowrap;
 }
 
 .miami-vice {

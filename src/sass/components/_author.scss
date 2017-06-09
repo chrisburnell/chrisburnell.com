@@ -9,6 +9,7 @@
  * breakpoint.
  */
 /*aside*/.author {
+    // override the default <aside> font-family
     @include font-family(default);
 
     @include media("<=medium") {
@@ -27,7 +28,7 @@
     margin-bottom: $measure-medium;
     font-size: $font-size-small;
     font-style: italic;
-    line-height: 1.429;
+    line-height: $line-height-medium;
 
     @include media("<=medium") {
         padding-top: $measure-large;
@@ -56,7 +57,7 @@
 }
 
 /**
- * Photograph of my FACE
+ * Photograph of MY FACE
  */
 .author-image {
     @include border-radius;
@@ -67,8 +68,8 @@
                       gradient(to bottom right, $transparent, rgb(89,  144, 173)),
                       gradient(to top left,     $transparent, rgb(137, 99,  79));
     background-size: 100%;
-    width:  6.25rem; // 100px
-    height: 6.25rem; // 100px
+    width:  $avatar-size;
+    height: $avatar-size;
     float: left;
     margin-right:  $measure-small;
     margin-bottom: $measure-small;
@@ -110,4 +111,12 @@
 .reading-time,
 .related-anchor {
     margin-top: 0.5rem;
+}
+
+
+/**
+ * Biographical information about the Author
+ */
+.author-biography {
+    margin-top: $measure-small;
 }

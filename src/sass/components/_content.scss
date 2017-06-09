@@ -78,18 +78,16 @@
     display: inline-block;
 
     &::before {
-        //
         content: " — ";
     }
 }
 
-// Stylised en-dash, can replace an em-dash
+// Stylised en-dash, with hair spaces on either side
 .en-dash,
 .n-dash {
     display: inline-block;
 
     &::before {
-        //
         content: " – ";
     }
 }
