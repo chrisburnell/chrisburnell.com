@@ -1440,6 +1440,7 @@ h6[id]:target,
 }
 
 .nav-primary-list a:active {
+    background-color: #f9f9f9;
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem);
 }
@@ -1607,48 +1608,6 @@ aside + .lede {
 }
 
 /**
- * More information about the Author, the Page, or the Post
- */
-.author-information {
-    font-family: Georgia, serif;
-    margin-bottom: 1.25rem;
-    font-size: 0.875rem;
-    font-style: italic;
-    line-height: 1.429;
-}
-
-@media (max-width: 800px) {
-    .author-information {
-        padding-top: 2.25rem;
-        border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
-        margin-bottom: 0.625rem;
-    }
-}
-
-.author-information a,
-.author-information strong {
-    text-transform: uppercase;
-    letter-spacing: 0;
-    font-family: "Proxima Nova", sans-serif;
-    font-display: swap;
-    color: inherit;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.author-information a {
-    border-bottom-color: transparent;
-}
-
-.author-information a:hover, .author-information a:focus, .author-information a:active {
-    border-bottom-color: #fd1b00;
-}
-
-.author-information a:active {
-    color: #f9f9f9;
-}
-
-/**
  * Photograph of MY FACE
  */
 .author-image {
@@ -1690,6 +1649,48 @@ picture {
         background-clip: padding-box;
         border-radius: 50%;
     }
+}
+
+/**
+ * More information about the Author, the Page, or the Post
+ */
+.author-information {
+    font-family: Georgia, serif;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.429;
+}
+
+@media (max-width: 800px) {
+    .author-information {
+        padding-top: 2.25rem;
+        border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
+        margin-bottom: 0.625rem;
+    }
+}
+
+.author-information a,
+.author-information strong {
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-family: "Proxima Nova", sans-serif;
+    font-display: swap;
+    color: inherit;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.author-information a {
+    border-bottom-color: transparent;
+}
+
+.author-information a:hover, .author-information a:focus, .author-information a:active {
+    border-bottom-color: #fd1b00;
+}
+
+.author-information a:active {
+    color: #f9f9f9;
 }
 
 .author-name,

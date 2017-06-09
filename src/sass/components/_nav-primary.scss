@@ -57,6 +57,7 @@
         line-height: $line-height-small;
 
         &:active {
+            background-color: $color-white;
             transform: translateY(0.2rem);
         }
 
