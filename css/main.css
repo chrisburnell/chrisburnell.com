@@ -603,6 +603,7 @@ table.zebra tbody tr:nth-child(even) td {
 
 th,
 td {
+    -webkit-transition: background-color 0.2s ease, border-left-color 0.2s ease;
     transition: background-color 0.2s ease, border-left-color 0.2s ease;
     will-change: background-color, border-left-color;
     padding: 0.625rem;
@@ -654,6 +655,7 @@ td {
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     content: "";
     opacity: 0;
@@ -777,6 +779,7 @@ summary {
             user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -1426,6 +1429,7 @@ pre.codepen {
 
 a {
     position: relative;
+    -webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     will-change: background, color, border-color;
     background-color: transparent;
@@ -1438,21 +1442,19 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    border-bottom-color: #52768e;
+    border-bottom-color: #fd1b00;
     outline-width: 0;
+}
+
+a:active {
+    background-color: #fd1b00;
+    color: #f9f9f9;
 }
 
 h2 a,
 h3 a {
     color: #4f4f4f;
-    border-bottom-width: 0;
-}
-
-h3 a:hover, h3 a:focus, h3 a:active,
-.delta a:hover,
-.delta a:focus,
-.delta a:active {
-    text-decoration: underline;
+    border-bottom-color: transparent;
 }
 
 .dark-background a {
@@ -1461,7 +1463,7 @@ h3 a:hover, h3 a:focus, h3 a:active,
 }
 
 .dark-background a:hover, .dark-background a:focus, .dark-background a:active {
-    border-bottom-color: #f9f9f9;
+    border-bottom-color: #fd1b00;
 }
 
 a span:not([class]):not([itemprop]) {
@@ -1478,6 +1480,7 @@ a span:not([class]):not([itemprop]) {
  * Title Anchors inside Headings
  */
 .title-anchor {
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: color, border-bottom-color;
     display: inline-block;
@@ -1490,7 +1493,6 @@ a span:not([class]):not([itemprop]) {
 
 .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
     color: #4f4f4f;
-    border-bottom-color: #5f8aa6;
 }
 
 /**
@@ -1514,7 +1516,6 @@ a span:not([class]):not([itemprop]) {
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
-    border-bottom-color: #737373;
     text-decoration: none;
 }
 
@@ -1568,6 +1569,7 @@ button,
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
     position: relative;
+    -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease;
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
     background-color: #5f8aa6;
@@ -1632,8 +1634,8 @@ button:active::before, button:active::after,
     top: -0.182em;
 }
 
-button[rel="external"]::after,
-.button[rel="external"]::after {
+button[rel*="external"]::after,
+.button[rel*="external"]::after {
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -1703,6 +1705,7 @@ input,
 textarea {
     background-clip: padding-box;
     border-radius: 0.25rem;
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: border-color;
     box-sizing: inherit !important;
@@ -2057,6 +2060,7 @@ h6[id]:target,
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: all 1s ease;
     transition: all 1s ease;
     will-change: transform;
     fill: #5f8aa6;
@@ -2157,6 +2161,7 @@ h6[id]:target,
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
+    -webkit-transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, -webkit-transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease;
     transition: color 0.2s ease, padding-bottom 0.2s ease, border-bottom-width 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2414,6 +2419,7 @@ aside .content-list a {
 }
 
 .content-list .title {
+    -webkit-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
     will-change: border-color;
     width: auto;
@@ -2425,7 +2431,8 @@ aside .content-list a {
 .content-list a:hover .title,
 .content-list a:focus .title,
 .content-list a:active .title {
-    border-bottom-color: #5f8aa6;
+    color: #5f8aa6;
+    border-bottom-color: #fd1b00;
 }
 
 .content-list .lede,
@@ -2451,6 +2458,7 @@ aside .content-list a {
 }
 
 .content-list svg {
+    -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
     transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
     transition: opacity 0.2s ease, transform 0.2s ease;
     transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2676,13 +2684,16 @@ p + .nav-secondary {
     font-family: "Proxima Nova", sans-serif;
     font-display: swap;
     color: inherit;
-    border-bottom-width: 0;
     font-weight: 600;
     font-style: normal;
 }
 
+.author-information a {
+    border-bottom-color: transparent;
+}
+
 .author-information a:hover, .author-information a:focus, .author-information a:active {
-    text-decoration: underline;
+    border-bottom-color: #fd1b00;
 }
 
 /**
@@ -2691,6 +2702,7 @@ p + .nav-secondary {
 .author-image {
     background-clip: padding-box;
     border-radius: 0.375rem;
+    background-image: -webkit-linear-gradient(bottom left, transparent, #99c0e2), -webkit-linear-gradient(top right, transparent, #9d858b), -webkit-linear-gradient(top left, transparent, #5990ad), -webkit-linear-gradient(bottom right, transparent, #89634f);
     background-image: linear-gradient(to top right, transparent, #99c0e2), linear-gradient(to bottom left, transparent, #9d858b), linear-gradient(to bottom right, transparent, #5990ad), linear-gradient(to top left, transparent, #89634f);
     background-size: 100%;
     width: 6.25rem;
@@ -2698,6 +2710,7 @@ p + .nav-secondary {
     float: left;
     margin-right: 0.625rem;
     margin-bottom: 0.625rem;
+    border-bottom-width: 0;
 }
 
 @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
@@ -2833,6 +2846,7 @@ footer div {
 }
 
 .footer-home-anchor {
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -2852,6 +2866,7 @@ footer div {
 }
 
 .footer-home-anchor .icon {
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     will-change: opacity;
     opacity: 0.9;
@@ -2898,6 +2913,7 @@ footer div {
 }
 
 .nav-tertiary-list a .icon {
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     will-change: opacity, transform;
     opacity: 0.7;
@@ -2960,6 +2976,7 @@ code[data-lang]::before {
     top: 0;
     left: 0;
     right: 0;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     content: attr(data-lang);
     background-color: #737373;
@@ -3041,6 +3058,7 @@ code[data-lang]::before {
 }
 
 .code-toggle-input + .highlight pre {
+    -webkit-transition: max-height 0.2s ease;
     transition: max-height 0.2s ease;
     max-height: 1000vh;
 }
@@ -3059,6 +3077,7 @@ code[data-lang]::before {
     background-clip: padding-box;
     border-radius: 0 0 0.375rem 0.375rem;
     content: "";
+    background-image: -webkit-linear-gradient(top, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
     background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
     background-size: 100% 7rem;
     background-position: bottom;
@@ -3320,6 +3339,7 @@ video {
 .transition-example--fade {
     background-clip: padding-box;
     border-radius: 0.25rem;
+    -webkit-transition: color 0.2s ease;
     transition: color 0.2s ease;
     width: 100%;
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
@@ -3372,6 +3392,7 @@ video {
 }
 
 .transition-example--slide::before {
+    -webkit-transition: -webkit-transform 0.2s ease;
     transition: -webkit-transform 0.2s ease;
     transition: transform 0.2s ease;
     transition: transform 0.2s ease, -webkit-transform 0.2s ease;
@@ -3389,6 +3410,7 @@ video {
 }
 
 .transition-example--fade::before {
+    -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     opacity: 0;
 }

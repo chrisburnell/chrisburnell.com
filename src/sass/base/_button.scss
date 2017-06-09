@@ -67,7 +67,7 @@ button,
     }
 
     // external anchors
-    &[rel="external"] {
+    &[rel*="external"] {
         &::after {
             @include font-family(monospace);
             @include position(reset);

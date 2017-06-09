@@ -21,7 +21,7 @@
 
 {% endcomment %}
 {% assign srcs = include.src | split: ',' %}
-{% assign src = srcs.first | trim | split: ' ' | first %}
+{% assign src = srcs.first | strip | split: ' ' | first %}
 {% assign srcset = '' %}
 {% if srcs.size > 1 %}
     {% capture srcset %}srcset="{% for src in srcs %}

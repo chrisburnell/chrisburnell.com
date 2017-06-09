@@ -119,7 +119,8 @@
     a:focus,
     a:active {
         .title {
-            border-bottom-color: $color-raven;
+            color: $color-raven;
+            border-bottom-color: $color-canada;
         }
     }
 

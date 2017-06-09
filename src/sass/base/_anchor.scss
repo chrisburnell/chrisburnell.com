@@ -20,22 +20,19 @@ a {
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-raven--shade;
+        border-bottom-color: $color-canada;
         outline-width: 0;
+    }
+
+    &:active {
+        background-color: $color-canada;
+        color: $color-white;
     }
 
     h2 &,
     h3 & {
         color: $color-kaiser;
-        border-bottom-width: 0;
-    }
-    h3 &,
-    .delta & {
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: underline;
-        }
+        border-bottom-color: $transparent;
     }
 
     .dark-background & {
@@ -45,7 +42,7 @@ a {
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-white;
+            border-bottom-color: $color-canada;
         }
     }
 
@@ -73,7 +70,6 @@ a {
     &:focus,
     &:active {
         color: $color-kaiser;
-        border-bottom-color: $color-raven;
     }
 }
 
@@ -96,7 +92,6 @@ a {
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-dove;
         // when appearing inside a heading, disable underline
         text-decoration: none;
     }

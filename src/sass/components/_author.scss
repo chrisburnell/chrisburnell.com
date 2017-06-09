@@ -40,16 +40,17 @@
         @include case(uppercase, 0);
         @include font-family(default);
         color: inherit;
-        border-bottom-width: 0;
         font-weight: $font-weight-bold;
         font-style: normal;
     }
 
     a {
+        border-bottom-color: $transparent;
+
         &:hover,
         &:focus,
         &:active {
-            text-decoration: underline;
+            border-bottom-color: $color-canada;
         }
     }
 }
@@ -71,6 +72,7 @@
     float: left;
     margin-right:  $measure-small;
     margin-bottom: $measure-small;
+    border-bottom-width: 0;
 
     @supports (shape-outside: circle(50%)) {
         background-image: none;
