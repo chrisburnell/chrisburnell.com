@@ -2672,6 +2672,10 @@ p + .nav-secondary {
     border-bottom-color: #fd1b00;
 }
 
+.author-information a:active {
+    color: #f9f9f9;
+}
+
 /**
  * Photograph of MY FACE
  */

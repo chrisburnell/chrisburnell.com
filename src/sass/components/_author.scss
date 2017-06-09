@@ -21,6 +21,42 @@
 }
 
 /**
+ * Photograph of MY FACE
+ */
+.author-image {
+    @include border-radius;
+    // gradient replacement while loading the `src` / `srcset`,
+    // colors generated from `avatar.png`
+    background-image: gradient(to top right,    $transparent, rgb(153, 192, 226)),
+                      gradient(to bottom left,  $transparent, rgb(157, 133, 139)),
+                      gradient(to bottom right, $transparent, rgb(89,  144, 173)),
+                      gradient(to top left,     $transparent, rgb(137, 99,  79));
+    background-size: 100%;
+    width:  $avatar-size;
+    height: $avatar-size;
+    float: left;
+    margin-right:  $measure-small;
+    margin-bottom: $measure-small;
+    border-bottom-width: 0;
+
+    @supports (shape-outside: circle(50%)) {
+        background-image: none;
+        shape-outside: circle(50%);
+    }
+
+    %image-elements {
+        @include border-radius;
+        width:  100%;
+        height: 100%;
+        display: block;
+
+        @supports (shape-outside: circle(50%)) {
+            @include border-radius(50%);
+        }
+    }
+}
+
+/**
  * More information about the Author, the Page, or the Post
  */
 .author-information {
@@ -53,41 +89,9 @@
         &:active {
             border-bottom-color: $color-canada;
         }
-    }
-}
 
-/**
- * Photograph of MY FACE
- */
-.author-image {
-    @include border-radius;
-    // gradient replacement while loading the `src` / `srcset`,
-    // colors generated from `avatar.png`
-    background-image: gradient(to top right,    $transparent, rgb(153, 192, 226)),
-                      gradient(to bottom left,  $transparent, rgb(157, 133, 139)),
-                      gradient(to bottom right, $transparent, rgb(89,  144, 173)),
-                      gradient(to top left,     $transparent, rgb(137, 99,  79));
-    background-size: 100%;
-    width:  $avatar-size;
-    height: $avatar-size;
-    float: left;
-    margin-right:  $measure-small;
-    margin-bottom: $measure-small;
-    border-bottom-width: 0;
-
-    @supports (shape-outside: circle(50%)) {
-        background-image: none;
-        shape-outside: circle(50%);
-    }
-
-    %image-elements {
-        @include border-radius;
-        width:  100%;
-        height: 100%;
-        display: block;
-
-        @supports (shape-outside: circle(50%)) {
-            @include border-radius(50%);
+        &:active {
+            color: $color-white;
         }
     }
 }
