@@ -131,6 +131,7 @@ $color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
 /// @require {Variable} $color-dove
 /// @require {Variable} $color-alto
 /// @require {Variable} $color-white
+/// @require {Variable} $color-canada
 $main-colors:
     $color-bismark,
     $color-raven,
@@ -140,7 +141,8 @@ $main-colors:
     $color-kaiser,
     $color-dove,
     $color-alto,
-    $color-white !default;
+    $color-white,
+    $color-canada !default;
 
 
 /// @type Length
