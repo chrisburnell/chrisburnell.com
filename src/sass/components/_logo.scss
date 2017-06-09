@@ -30,6 +30,8 @@
     }
 
     &:active {
+        background-color: $transparent;
+
         svg {
             transition-duration: $transition-time;
             transform: translateX(-30%) translateY(-25%);

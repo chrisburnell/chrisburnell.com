@@ -1368,6 +1368,10 @@ h6[id]:target,
             transform: translateX(-40%) translateY(-30%);
 }
 
+.logo:active {
+    background-color: transparent;
+}
+
 .logo:active svg {
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
@@ -1440,7 +1444,7 @@ h6[id]:target,
 }
 
 .nav-primary-list a:active {
-    background-color: #f9f9f9;
+    background-color: transparent;
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem);
 }
