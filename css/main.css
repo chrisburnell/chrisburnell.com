@@ -2854,7 +2854,8 @@ footer div {
 
 .footer-home-anchor:active {
     background-color: transparent;
-    fill: #fd1b00;
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
 }
 
 .footer-home-anchor .icon {
@@ -2917,7 +2918,8 @@ footer div {
 }
 
 .nav-tertiary-list a:active .icon {
-    fill: #fd1b00;
+    -webkit-transform: translateY(0.125rem);
+            transform: translateY(0.125rem);
 }
 
 .comments-anchor {

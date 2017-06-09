@@ -44,8 +44,7 @@
 
         &:active {
             .icon {
-                fill: $color-canada;
-                // transform: translateY(0.125rem);
+                transform: translateY(0.125rem);
             }
         }
     }

@@ -50,8 +50,7 @@ footer {
 
     &:active {
         background-color: $transparent;
-        fill: $color-canada;
-        // transform: translateY(0.2rem);
+        transform: translateY(0.2rem);
     }
 
     .icon {
