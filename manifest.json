@@ -17,9 +17,9 @@ icon_sizes:
 {
     "dir": "ltr",
     "lang": "{{ site.language }}",
-    "name": "{{ site.tagline | prepend: ' – ' | prepend: site.title | xml_escape }}",
+    "name": "{{ site.tagline | strip_html | prepend: ' – ' | prepend: site.title | xml_escape }}",
     "short_name": "{{ site.title | replace: ' ', '' | xml_escape }}",
-    "description": "{{ site.lede | xml_escape }}",
+    "description": "{{ site.lede | strip_html | xml_escape }}",
     "display": "browser",
     "orientation": "any",
     "start_url": "/",

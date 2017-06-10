@@ -1,5 +1,5 @@
 {% if page.page_class contains 'home' %}
-    {% capture meta_title %}{{ site.title }} – {{ site.tagline }}{% endcapture %}
+    {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% endcapture %}
 {% else %}
     {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
 {% endif %}

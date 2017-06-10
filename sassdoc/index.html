@@ -780,7 +780,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -824,9 +824,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;) {
-  
-}</code>" data-collapsed="///
+///  @include media(&#39;&gt;128px&#39;)() {  }" data-collapsed="@css ///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -870,7 +868,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;) { ... }"><code>///
+///  @include media(&#39;&gt;128px&#39;)() { ... }"><code>@css ///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -914,7 +912,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>include-media library public configuration</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eduardo Boucas</p></li></ul></section><section class="main__item container item" id="undefined-css-///
+///  @include media(&#39;&gt;128px&#39;)() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
@@ -924,75 +922,67 @@ $media-expressions: (
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param">/// /// Log a message either with `@error` if supported /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)` /// to detect support. /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+/// @param">/// /// Log a message either with `@error` if supported /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)` /// to detect support. /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param {
-  String
-}</code>" data-collapsed="///
+/// @param() {  }" data-collapsed="@css ///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param { ... }"><code>///
+/// @param() { ... }"><code>@css ///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Cross-engine logging engine</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
+/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
 /// Get operator of an expression
 ///
 /// @param"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#css-///
 /// Get operator of an expression
 ///
-/// @param">/// /// Get operator of an expression /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+/// @param">/// /// Get operator of an expression /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Get operator of an expression
 ///
-/// @param {
-  String
-}</code>" data-collapsed="///
+/// @param() {  }" data-collapsed="@css ///
 /// Get operator of an expression
 ///
-/// @param { ... }"><code>///
+/// @param() { ... }"><code>@css ///
 /// Get operator of an expression
 ///
-/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Parsing engine</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
+/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
 /// Casts a string into a number
 ///
 /// @param"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#css-///
 /// Casts a string into a number
 ///
-/// @param">/// /// Casts a string into a number /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+/// @param">/// /// Casts a string into a number /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Casts a string into a number
 ///
-/// @param {
-  String | Number
-}</code>" data-collapsed="///
+/// @param() {  }" data-collapsed="@css ///
 /// Casts a string into a number
 ///
-/// @param { ... }"><code>///
+/// @param() { ... }"><code>@css ///
 /// Casts a string into a number
 ///
-/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>String to number converter</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
+/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
 /// Generates a media query based on a list of conditions
 ///
 /// @param"><h3 class="item__heading"><a class="item__name" href="#css-///
 /// Generates a media query based on a list of conditions
 ///
-/// @param">/// /// Generates a media query based on a list of conditions /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+/// @param">/// /// Generates a media query based on a list of conditions /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
 /// Generates a media query based on a list of conditions
 ///
-/// @param {
-  Arglist
-}</code>" data-collapsed="///
+/// @param() {  }" data-collapsed="@css ///
 /// Generates a media query based on a list of conditions
 ///
-/// @param { ... }"><code>///
+/// @param() { ... }"><code>@css ///
 /// Generates a media query based on a list of conditions
 ///
-/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>include-media public exposed API</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eduardo Boucas</p></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-im-log"><h3 class="item__heading"><a class="item__name" href="#function-im-log">im-log</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function im-log($message) { 
+/// @param() { ... }</code></pre></div></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-im-log"><h3 class="item__heading"><a class="item__name" href="#function-im-log">im-log</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function im-log($message) { 
   @if feature-exists(&#39;at-error&#39;) {
     @error $message;
   } @else {

@@ -5,7 +5,7 @@ categories: link
 date: 2016-07-22 16:12:00
 
 title: Atom Multiline Select
-lede: "An Atom Editor package to support multiline selection which I forked and modified to mimic Sublime Text’s multiline selection technique."
+lede: 'An Atom Editor package to support multiline selection which I forked and modified to mimic Sublime Text’s multiline selection technique.'
 external_url: https://atom.io/packages/multiline-select
 ---
 
