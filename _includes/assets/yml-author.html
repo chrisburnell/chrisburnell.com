@@ -26,12 +26,7 @@
             <div class="tags">
                 <span>tagged under</span>
                 <span itemprop="keywords">
-                    {% capture tags %}
-                        {% for tag in site.tags %}
-                            {{ tag[0] }}
-                        {% endfor %}
-                    {% endcapture %}
-                    {% assign tags_sorted = tags | split: ' ' | sort %}
+                    {% assign tags_sorted = page.tags | sort %}
                     {% for tag in tags_sorted %}
                         {% if forloop.last and tags_sorted.size > 1 %} and {% endif %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false and tags_sorted.size > 2 %}, {% endif %}
                     {% endfor %}
