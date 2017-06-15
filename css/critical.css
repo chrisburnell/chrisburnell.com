@@ -807,8 +807,13 @@ blockquote p:not(:last-of-type)::after {
 
 blockquote cite {
     display: block;
-    margin-left: 2.25rem;
     margin-top: 1.25rem;
+}
+
+@media (min-width: 501px) {
+    blockquote cite {
+        margin-left: 2.25rem;
+    }
 }
 
 blockquote cite::before {

@@ -585,7 +585,7 @@ blockquote {
     cite {
         display: block;
         margin-top: $measure-medium;
-        
+
         @include media(">small") {
             margin-left: $measure-large;
         }

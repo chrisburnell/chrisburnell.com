@@ -72,6 +72,7 @@ _includes
 │   ├── assets-head.html
 │   └── svg-master.html
 ├── components
+│   ├── author.html
 │   ├── banner.html
 │   ├── comments-button.html
 │   ├── comments.html
@@ -79,7 +80,6 @@ _includes
 │   ├── footer.html
 │   ├── header.html
 │   ├── item-feed.html
-│   ├── main-aside.html
 │   ├── nav-primary.html
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
