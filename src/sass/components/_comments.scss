@@ -26,19 +26,20 @@
         margin-top: $measure-large;
     }
 
-    .button--show-comments {
-        &,
-        &:active {
-            &::before {
-                // override default `.button:active::before` behaviour
-                @include position(relative);
-                top: 0;
-            }
-        }
-    }
-
     noscript {
         font-size: $font-size-large;
         font-style: italic;
+    }
+}
+
+// Also appears only on article pages
+.button--show-comments {
+    &,
+    &:active {
+        &::before {
+            // override default `.button:active::before` behaviour
+            @include position(relative);
+            top: 0;
+        }
     }
 }

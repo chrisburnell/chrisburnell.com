@@ -50,7 +50,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 </div>
 
 
-{% include content/heading.html title='Modal Container without JS' %}
+{% include content/heading.html title='Modal Container without JavaScript' %}
 
 This pen was inspired by Chris Coyier’s [blog post on Codepen](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal"){:rel="external"} explaining how they handle users who have turned off JavaScript and won’t be able to use Codepen properly, as Codepen relies on JavaScript to display Pens.
 
@@ -61,7 +61,7 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 {% include content/heading.html title='Slip-n-slide Modal' %}
 
-This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JS* to show and hide the modal content.
+This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
 
 {% include content/codepen.html slug='sDBJk' height='630' %}
 

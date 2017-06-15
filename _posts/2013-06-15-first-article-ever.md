@@ -11,6 +11,7 @@ tags:
 - github
 - jekyll
 - markdown
+- collaboration
 
 banner:        first-article-ever.png
 banner_mobile: first-article-ever_mobile.png
@@ -20,7 +21,7 @@ shorturl: bqrm4
 ---
 
 
-Since my last design update, I started working at [Squiz](https://squiz.net/uk "Squiz UK"){:rel="external"} and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at Squiz working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [Matrix](https://www.squiz.net/uk/suite/matrix "Squiz Matrix"){:rel="external"}, an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
+Since my last design update, I started working at [*Squiz*](https://squiz.net/uk "Squiz UK"){:rel="external"} and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at *Squiz* working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [*Matrix*](https://www.squiz.net/uk/suite/matrix "Squiz Matrix"){:rel="external"}, an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
 
 {% include content/heading.html title='More than meets the eye' %}
@@ -32,7 +33,7 @@ Part of the challenge was realising that decisions I made at the beginning would
 
 {% include content/heading.html title='What’s new in this iteration?' id='whats-new' %}
 
-I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies—over the years, I’ve gone from static to WordPress to static, back to WordPress, back again to static for a long time, then I dabbled with Anchor CMS and finally settled most happily with Jekyll hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was poor planning on my part over and over again. Pretty stupid. That’s where Jekyll came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
+I can tell you it wasn’t a completely smooth process. And it’s not even like I’m new to migrating things or trying out new technologies—over the years, I’ve gone from static to *WordPress* to static, back to *WordPress*, back again to static for a long time, then I dabbled with *Anchor CMS* and finally settled most happily with *Jekyll* hosted not on my server. The problem with each of these migrations was that it wasn’t easy to port the content because of how specifically I wanted each to be set up. It was poor planning on my part over and over again. Pretty stupid. That’s where *Jekyll* came in; I needed a platform to host my site/blog on that wasn’t going to restrict my design ideas, and it needed to be pretty future-proof if I wanted to migrate at a later time.
 
 
 {% include content/heading.html title='What is Jekyll?' %}
@@ -42,7 +43,7 @@ I can tell you it wasn’t a completely smooth process. And it’s not even like
 
 {% include content/heading.html title='Better, Faster, Stronger' %}
 
-I’m not going to give you what I *think* Jekyll does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on GitHub, it makes for a frictionless workflow while developing the site, and even moreso when writing and editing actual content.
+I’m not going to give you what I *think* *Jekyll* does because I honestly don’t know more than a few commands in Ruby, and I couldn’t do it justice; I’m still quite new to using its different file structure and keywords in markup, but learning quickly. What I enjoy the most about it is the flexibility and freedom I feel as a developer working with it. Coupled with versioning on *GitHub*, it makes for a frictionless workflow while developing the site, and even moreso when writing and editing actual content.
 
 That’s something else I’m quite new to but thoroughly enjoying picking up: writing content in Markdown.
 
@@ -56,7 +57,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="{{ site.github.repository_url }}" rel="external">the GitHub repository</a> and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="{{ site.github.repository_url }}" rel="external">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -65,7 +66,7 @@ The CSS for this latest iteration of chrisburnell.com was also a labour of love.
 
 During this learning phase, I adopted a number of intelligent and new technologies to take advantage of what we developers can do with CSS. This included switching from pixels to ems for font-sizes, but I took it even further and made many attributes (padding, margins, line-height, to name a few) directly related to the font-size of the particular element. I also adopted a fun technique to arrange my asides with my main content using floats and negative margin that allows me a smooth transition from desktop to mobile responsive layouts as well as making the process in Markdown terse as well. It’s been a flurry of knowledge into my *super-powerful* (read: tiny) brain, and these have only been a handful of the things I’ve learned.
 
-I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment](https://codepen.io "Codepen"){:rel="external"} often whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JS as well as other new areas for me, including typography and some new design skills due to following these steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
+I encourage everyone to approach their passions with the same aggression and vigour that I can say that I have in the past two years; the results are well and truly worth the efforts. Make time for yourself to think about difficult ideas and [experiment often](https://codepen.io "Codepen"){:rel="external"} whenever anything intriguing crosses your mind. I’m really enjoying having more control over my HTML, CSS, JavaScript as well as other new areas for me, including typography and some new design skills due to following these steps. Over the next few months I hope to be able to share a majority of these concepts and fundamental ideas that I learned, in hopes of creating a healthy discussion about modern technologies in front-end web development.
 
 The most important lesson of them all, of course, is to **keep it simple**. Whether it’s code or design, stick to what you need and you’re sure to find success.
 

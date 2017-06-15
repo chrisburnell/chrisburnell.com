@@ -625,7 +625,7 @@ th {
 }
 
 th:not(:empty) {
-    background-color: #ededed;
+    background-color: #dddddd;
 }
 
 thead th,
@@ -667,12 +667,12 @@ th + th {
 
 tbody th,
 td {
-    border-top: 0.125rem solid #ededed;
+    border-top: 0.125rem solid #dddddd;
 }
 
 tbody th + td,
 td + td {
-    border-left: 0.125rem solid #ededed;
+    border-left: 0.125rem solid #dddddd;
 }
 
 tbody th,

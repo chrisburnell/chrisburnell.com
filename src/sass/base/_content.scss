@@ -449,7 +449,7 @@ td {
 // Head and Foot Cells
 th {
     &:not(:empty) {
-        background-color: $color-gallery;
+        background-color: $color-alto;
     }
 
     thead &,
@@ -489,10 +489,10 @@ th {
 // Body Cells
 tbody th,
 td {
-    border-top: $border-width-thin $border-style-default $color-gallery;
+    border-top: $border-width-thin $border-style-default $color-alto;
 
     & + td {
-        border-left: $border-width-thin $border-style-default $color-gallery;
+        border-left: $border-width-thin $border-style-default $color-alto;
     }
 }
 tbody th,

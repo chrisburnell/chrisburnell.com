@@ -678,7 +678,7 @@ th {
 }
 
 th:not(:empty) {
-    background-color: #ededed;
+    background-color: #dddddd;
 }
 
 thead th,
@@ -720,12 +720,12 @@ th + th {
 
 tbody th,
 td {
-    border-top: 0.125rem solid #ededed;
+    border-top: 0.125rem solid #dddddd;
 }
 
 tbody th + td,
 td + td {
-    border-left: 0.125rem solid #ededed;
+    border-left: 0.125rem solid #dddddd;
 }
 
 tbody th,
@@ -2941,14 +2941,14 @@ footer div {
     margin-top: 2.25rem;
 }
 
-.comments .button--show-comments::before, .comments .button--show-comments:active::before {
-    position: relative;
-    top: 0;
-}
-
 .comments noscript {
     font-size: 1.25rem;
     font-style: italic;
+}
+
+.button--show-comments::before, .button--show-comments:active::before {
+    position: relative;
+    top: 0;
 }
 
 /**

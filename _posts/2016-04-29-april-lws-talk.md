@@ -8,6 +8,7 @@ title: April LWS Talk
 lede: I gave a talk at London Web Standards and asked the question, <q>So how can we write media queries that are both consistent and succinct?</q>
 tags:
 - css
+- collaboration
 
 edit_text: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
 
@@ -128,7 +129,7 @@ If we were to categorise this understandability of CSS into three general catego
 0. Strict Adherence
   Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
 0. Spaghetti
-  [has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia"){:rel="external"}
+  [Has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia"){:rel="external"}
 
 
 {% include content/heading.html title='The Next Talk' %}

@@ -22,7 +22,7 @@ shorturl: nmwge
 
 Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
-{% include content/codepen.html slug='LHqFy' theme='tabfree' height='740' %}
+{% include content/codepen.html slug='LHqFy' height='740' theme='tabfree' %}
 
 
 {% include content/heading.html title='What’s going on here?' id='whats-going-on' %}
