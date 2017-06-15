@@ -39,7 +39,7 @@ I’ve found a great deal of enjoyment in watching and participating in these li
 
 {% include content/heading.html title='Inspiration Strikes' %}
 
-It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman){:rel="external"} streams on his [*YouTube* channel, The Coding Train](https://www.youtube.com/user/shiffman/live){:rel="external"}, that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
+It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman){:rel="external"} streams on his *YouTube* channel, [The Coding Train](https://www.youtube.com/user/shiffman/live){:rel="external"}, that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
 
 Daniel Shiffman explains the concept of “mapping” a value from one range to another in this thoroughly informative video:
 
@@ -54,7 +54,7 @@ Although CSS is meant for expressing presentation, and operations like this are 
 
 {% include content/heading.html title='In Theory' %}
 
-Like most of my endeavours, this technique is neither revolutionary, nor is it particularly useful. But not everything need be born out of necessity and steeped in unit-testing for it to be fun. I find a lot of enjoyment in experimenting at the limits of CSS and finding unexplored avenues to solve challenges in a different way.
+Like most of my endeavours, this Sass technique is neither revolutionary, nor is it particularly useful. But not everything need be born out of necessity and steeped in unit-testing for it to be fun. I find a lot of enjoyment in experimenting at the limits of CSS and finding unexplored avenues to solve challenges in a different way.
 
 {% highlight scss %}
 @function range-map($value, $ranges...) {
@@ -72,7 +72,7 @@ Like most of my endeavours, this technique is neither revolutionary, nor is it p
 }
 {% endhighlight %}
 
-Our `@function` takes a variable number of parameters, 3 or 5, and we use Sass’ built-in `if()` as a <dfn title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</dfn> to utilise the parameters appropriately in determining the value remapped in the new range.
+Our `@function` takes a variable number of parameters, *three* or *five*, and we use Sass’ built-in `if()` as a <dfn title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</dfn> to utilise the parameters appropriately in determining the value remapped in the new range.
 
 There really isn’t any magic going on here (as usual). Everything before the `@return` statement is just checking to make sure we’ve correctly passed in the right parameters, and that we’ve given the correct number of parameters. The `@return` statement performs a small calculation based on the 3–5 parameters and gives us back the remapped initial value.
 
