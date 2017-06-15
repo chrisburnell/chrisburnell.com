@@ -5,7 +5,7 @@ categories: article
 date: 2017-06-15 17:55:00
 
 title: Remapping Ranges in Sass
-lede: Great inspiration can sometimes be found in exploring available opportunities and embracing new ideas. In this article, I’ll try to replicate a foreign concept in a familiar way, and explain why I decided to do even do it.
+lede: Great inspiration can sometimes be found in exploring available opportunities and embracing new ideas. In this article, I’ll try to replicate a foreign concept in a familiar way, and explain why I decided to even do it.
 tags:
 - collaboration
 - css
