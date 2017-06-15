@@ -584,8 +584,11 @@ blockquote {
 
     cite {
         display: block;
-        margin-left: $measure-large;
         margin-top: $measure-medium;
+        
+        @include media(">small") {
+            margin-left: $measure-large;
+        }
 
         &::before {
             // HYPHEN, NO-BREAK SPACE
