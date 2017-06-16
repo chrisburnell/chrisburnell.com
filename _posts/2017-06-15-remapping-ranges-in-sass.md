@@ -41,7 +41,7 @@ I’ve found a great deal of enjoyment in watching and participating in these li
 
 It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman){:rel="external"} streams on his *YouTube* channel, [The Coding Train](https://www.youtube.com/user/shiffman/live){:rel="external"}, that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
 
-Daniel Shiffman explains the concept of “mapping” a value from one range to another in this thoroughly informative video:
+Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to another in this thoroughly informative video:
 
 <figure>
     <div class="media  media--youtube">
@@ -49,7 +49,7 @@ Daniel Shiffman explains the concept of “mapping” a value from one range to 
     </div>
 </figure>
 
-Although CSS is meant for expressing presentation, and operations like this are best-suited for a “real programming language”, I wondered if this concept of “remapping” values from one range to another is possible with Sass.
+Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
 
 
 {% include content/heading.html title='In Theory' %}
@@ -79,7 +79,7 @@ There really isn’t any magic going on here (as usual). Everything before the `
 
 {% include content/heading.html title='In Practice' %}
 
-To be frank, I’m having a hard time finding a great deal of use out of this operation in CSS, but perhaps you’ll find a really persuasive reason to use it.
+To be frank, I’m having a hard time finding a great deal of use out of this operation in CSS, but perhaps you’ll find a really persuasive reason to use it. 😉
 
 Simply to serve as an example (*not* as an example of best practice), one way to use this function might be to map mouse position to something on the screen. Let’s say we want to display a globe of the Earth that rotates left and right based on whether the mouse is on the left or right of the window, and we want to try to do so without JavaScript. To do so, we’ll break the screen down into 5 equal-width, invisible columns. Hovering over each invisible column affects the rotation of the globe.
 
@@ -121,9 +121,9 @@ Before we apply our different rotations to the globe, we can even use our `@func
 }
 {% endhighlight %}
 
-The last parameter being passed to the `@function` looks a little unusual, but you have to remember that we’re setting a value for the `left` property, so the maximum value we should be setting is `100% - the width of a column`. This means that we’re remapping the index of each column to a value between `0%` and `100% - $number-of-columns`.
+The last parameter being passed to the `@function` looks a little unusual, but you have to remember that we’re setting a value for the `left` property, so the maximum value we should be setting is `100% - the width of a column`. This means that we’re remapping the index of each column to a value between `0%` and `100% - `<var>$number-of-columns</var>.
 
-Lastly, we’ll perform a similar operation as before, by remapping the index of the column to a parameter for the `rotateY` value of the `transform` property. In this case, we’re transitioning between `$rotation-minumum` (`-45deg`) and `$rotation-maximum` (`45deg`).
+Lastly, we’ll perform a similar operation as before, by remapping the index of the column to a parameter for the `rotateY` value of the `transform` property. In this case, we’re transitioning between <var>$rotation-minumum</var> (`-45deg`) and <var>$rotation-maximum</var> (`45deg`).
 
 {% highlight scss %}
 @for $i from 1 through $number-of-columns {

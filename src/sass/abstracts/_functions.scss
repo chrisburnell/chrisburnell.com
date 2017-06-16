@@ -222,7 +222,7 @@
 ///
 /// Unique Pairs
 ///
-/// @param {List|Map} $pairs - List/Map of pairs
+/// @param {List|Map} $data - Data in List/Map format
 ///
 /// @example scss
 ///   $list:
@@ -251,8 +251,8 @@
 ///
 /// @return {Map} Unique pairs
 ///
-@function unique-pairs($pairs) {
-    @if not $pairs or not (type-of($pairs) == list or type-of($pairs) == map) {
+@function unique-pairs($data) {
+    @if not $data or not (type-of($data) == list or type-of($data) == map) {
         @warn "unique-pairs() expects either a single List or single Map of data.";
         @return false;
     }
@@ -260,10 +260,10 @@
     $unique-pairs: ();
     $seen: ();
 
-    @if type-of($pairs) == list {
-        @each $first in $pairs {
+    @if type-of($data) == list {
+        @each $first in $data {
             $seen: append($seen, $first);
-            @each $second in $pairs {
+            @each $second in $data {
                 @if $first != $second and not index($seen, $second) {
                     $unique-pair: ($first: $second);
                     $unique-pairs: append($unique-pairs, $unique-pair);
@@ -272,10 +272,10 @@
         }
     }
 
-    @else if type-of($pairs) == map {
-        @each $first-key, $first-value in $pairs {
+    @else if type-of($data) == map {
+        @each $first-key, $first-value in $data {
             $seen: append($seen, $first-key);
-            @each $second-key, $second-value in $pairs {
+            @each $second-key, $second-value in $data {
                 @if $first-key != $second-key and not index($seen, $second-key) {
                     $unique-pair: (
                         ($first-key: $first-value): ($second-key: $second-value)

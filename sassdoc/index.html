@@ -217,8 +217,8 @@ color: contrasting-color(#111111);
 
     @return $value / ($value * 0 + 1);
  }" data-collapsed="@function strip-units($value) { ... }"><code>@function strip-units($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Strip Units from a Number</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Number with units</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Number without units</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>line-height: strip-units(2em);
-// line-height: 2;</code></pre></div></section><section class="main__item container item" id="abstracts-function-unique-pairs"><h3 class="item__heading"><a class="item__name" href="#function-unique-pairs">unique-pairs</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function unique-pairs($pairs) { 
-    @if not $pairs or not (type-of($pairs) == list or type-of($pairs) == map) {
+// line-height: 2;</code></pre></div></section><section class="main__item container item" id="abstracts-function-unique-pairs"><h3 class="item__heading"><a class="item__name" href="#function-unique-pairs">unique-pairs</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function unique-pairs($data) { 
+    @if not $data or not (type-of($data) == list or type-of($data) == map) {
         @warn &quot;unique-pairs() expects either a single List or single Map of data.&quot;;
         @return false;
     }
@@ -226,10 +226,10 @@ color: contrasting-color(#111111);
     $unique-pairs: ();
     $seen: ();
 
-    @if type-of($pairs) == list {
-        @each $first in $pairs {
+    @if type-of($data) == list {
+        @each $first in $data {
             $seen: append($seen, $first);
-            @each $second in $pairs {
+            @each $second in $data {
                 @if $first != $second and not index($seen, $second) {
                     $unique-pair: ($first: $second);
                     $unique-pairs: append($unique-pairs, $unique-pair);
@@ -238,10 +238,10 @@ color: contrasting-color(#111111);
         }
     }
 
-    @else if type-of($pairs) == map {
-        @each $first-key, $first-value in $pairs {
+    @else if type-of($data) == map {
+        @each $first-key, $first-value in $data {
             $seen: append($seen, $first-key);
-            @each $second-key, $second-value in $pairs {
+            @each $second-key, $second-value in $data {
                 @if $first-key != $second-key and not index($seen, $second-key) {
                     $unique-pair: (
                         ($first-key: $first-value): ($second-key: $second-value)
@@ -258,7 +258,7 @@ color: contrasting-color(#111111);
     }
 
     @return $unique-pairs;
- }" data-collapsed="@function unique-pairs($pairs) { ... }"><code>@function unique-pairs($pairs) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Unique Pairs</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$pairs</code></th><td data-label="desc"><p>List/Map of pairs</p></td><td data-label="type"><code>List</code> or <code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code> &mdash;<p>Unique pairs</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list:
+ }" data-collapsed="@function unique-pairs($data) { ... }"><code>@function unique-pairs($data) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Unique Pairs</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$data</code></th><td data-label="desc"><p>Data in List/Map format</p></td><td data-label="type"><code>List</code> or <code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code> &mdash;<p>Unique pairs</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$list:
   alpha,
   beta,
   gamma;
@@ -780,7 +780,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -824,7 +824,9 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)() {  }" data-collapsed="@css ///
+///  @include media(&#39;&gt;128px&#39;) {
+  
+}</code>" data-collapsed="///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -868,7 +870,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)() { ... }"><code>@css ///
+///  @include media(&#39;&gt;128px&#39;) { ... }"><code>///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -912,7 +914,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
+///  @include media(&#39;&gt;128px&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>include-media library public configuration</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eduardo Boucas</p></li></ul></section><section class="main__item container item" id="undefined-css-///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
@@ -922,67 +924,75 @@ $media-expressions: (
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param">/// /// Log a message either with `@error` if supported /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)` /// to detect support. /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+/// @param">/// /// Log a message either with `@error` if supported /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)` /// to detect support. /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param() {  }" data-collapsed="@css ///
+/// @param {
+  String
+}</code>" data-collapsed="///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param() { ... }"><code>@css ///
+/// @param { ... }"><code>///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
 ///
-/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
+/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Cross-engine logging engine</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
 /// Get operator of an expression
 ///
 /// @param"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#css-///
 /// Get operator of an expression
 ///
-/// @param">/// /// Get operator of an expression /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+/// @param">/// /// Get operator of an expression /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Get operator of an expression
 ///
-/// @param() {  }" data-collapsed="@css ///
+/// @param {
+  String
+}</code>" data-collapsed="///
 /// Get operator of an expression
 ///
-/// @param() { ... }"><code>@css ///
+/// @param { ... }"><code>///
 /// Get operator of an expression
 ///
-/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
+/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Parsing engine</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
 /// Casts a string into a number
 ///
 /// @param"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#css-///
 /// Casts a string into a number
 ///
-/// @param">/// /// Casts a string into a number /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+/// @param">/// /// Casts a string into a number /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Casts a string into a number
 ///
-/// @param() {  }" data-collapsed="@css ///
+/// @param {
+  String | Number
+}</code>" data-collapsed="///
 /// Casts a string into a number
 ///
-/// @param() { ... }"><code>@css ///
+/// @param { ... }"><code>///
 /// Casts a string into a number
 ///
-/// @param() { ... }</code></pre></div></section><section class="main__item container item" id="undefined-css-///
+/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>String to number converter</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-css-///
 /// Generates a media query based on a list of conditions
 ///
 /// @param"><h3 class="item__heading"><a class="item__name" href="#css-///
 /// Generates a media query based on a list of conditions
 ///
-/// @param">/// /// Generates a media query based on a list of conditions /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@css ///
+/// @param">/// /// Generates a media query based on a list of conditions /// /// @param</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Generates a media query based on a list of conditions
 ///
-/// @param() {  }" data-collapsed="@css ///
+/// @param {
+  Arglist
+}</code>" data-collapsed="///
 /// Generates a media query based on a list of conditions
 ///
-/// @param() { ... }"><code>@css ///
+/// @param { ... }"><code>///
 /// Generates a media query based on a list of conditions
 ///
-/// @param() { ... }</code></pre></div></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-im-log"><h3 class="item__heading"><a class="item__name" href="#function-im-log">im-log</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function im-log($message) { 
+/// @param { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>include-media public exposed API</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eduardo Boucas</p></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-im-log"><h3 class="item__heading"><a class="item__name" href="#function-im-log">im-log</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function im-log($message) { 
   @if feature-exists(&#39;at-error&#39;) {
     @error $message;
   } @else {
