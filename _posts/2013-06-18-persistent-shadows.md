@@ -29,7 +29,7 @@ My idea was as such: I wonder if I could create something similar to the clock a
 
 {% include content/heading.html title='We’ve hit a snag!' id='hit-a-snag' %}
 
-<aside><p>Here’s an example of this effect (which <a href="https://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on CodePen</a>)!</p></aside>
+<aside><p>Here’s an example of this effect (which <a href="https://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on <em>CodePen</em></a>)!</p></aside>
 
 {% include content/codepen.html slug='mglHp' height='425' %}
 
@@ -45,7 +45,7 @@ It may be interesting to note that as the medium we’re working with is compose
 
 {% include content/heading.html title='What else is there?' id='what-else' %}
 
-What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#comments), or [send me a pen](https://codepen.io "Codepen"){:rel="external"}!
+What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#comments), or [send me a pen](https://codepen.io "CodePen"){:rel="external"}!
 
 
 {% include content/heading.html title='A little something-something extra, just for you' id='something-extra' %}

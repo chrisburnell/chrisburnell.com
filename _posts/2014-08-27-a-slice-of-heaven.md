@@ -21,7 +21,7 @@ shorturl: ynt2q
 ---
 
 
-I’ve been making quite a few pens over on [Codepen](https://codepen.io){:rel="external"} lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element"){:rel="external"} nowadays.
+I’ve been making quite a few pens over on [*CodePen*](https://codepen.io){:rel="external"} lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element"){:rel="external"} nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
@@ -46,13 +46,13 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 {% include content/codepen.html slug='lcEvB' height='350' %}
 
 <div class="edit">
-    Edit: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me external">Codepen’s front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
+    Edit: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me external"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
 </div>
 
 
 {% include content/heading.html title='Modal Container without JavaScript' %}
 
-This pen was inspired by Chris Coyier’s [blog post on Codepen](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal"){:rel="external"} explaining how they handle users who have turned off JavaScript and won’t be able to use Codepen properly, as Codepen relies on JavaScript to display Pens.
+This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal"){:rel="external"} explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
 
 {% include content/codepen.html slug='scyKF' height='350' %}
 

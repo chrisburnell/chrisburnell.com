@@ -3075,8 +3075,8 @@ code[data-lang]::before {
     background-clip: padding-box;
     border-radius: 0 0 0.375rem 0.375rem;
     content: "";
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(6, 6, 6, 0.2)), color-stop(25%, rgba(6, 6, 6, 0.2)), color-stop(25%, rgba(6, 6, 6, 0.4)), color-stop(50%, rgba(6, 6, 6, 0.4)), color-stop(50%, rgba(6, 6, 6, 0.6)), color-stop(75%, rgba(6, 6, 6, 0.6)), color-stop(75%, rgba(6, 6, 6, 0.8)), to(rgba(6, 6, 6, 0.8)));
-    background-image: linear-gradient(to bottom, rgba(6, 6, 6, 0.2) 0, rgba(6, 6, 6, 0.2) 25%, rgba(6, 6, 6, 0.4) 25%, rgba(6, 6, 6, 0.4) 50%, rgba(6, 6, 6, 0.6) 50%, rgba(6, 6, 6, 0.6) 75%, rgba(6, 6, 6, 0.8) 75%, rgba(6, 6, 6, 0.8) 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(19%, rgba(5, 5, 5, 0.2096)), color-stop(34%, rgba(5, 5, 5, 0.3672)), color-stop(47%, rgba(6, 6, 6, 0.4944)), color-stop(56.5%, rgba(6, 6, 6, 0.5776)), color-stop(65%, rgba(6, 6, 6, 0.6448)), color-stop(73%, rgba(6, 6, 6, 0.6992)), color-stop(80.2%, rgba(6, 6, 6, 0.74)), color-stop(86.1%, rgba(6, 6, 6, 0.7664)), color-stop(91%, rgba(6, 6, 6, 0.7832)), color-stop(95.2%, rgba(6, 6, 6, 0.7936)), color-stop(98.2%, rgba(6, 6, 6, 0.7984)), to(rgba(6, 6, 6, 0.8)));
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(5, 5, 5, 0.2096) 19%, rgba(5, 5, 5, 0.3672) 34%, rgba(6, 6, 6, 0.4944) 47%, rgba(6, 6, 6, 0.5776) 56.5%, rgba(6, 6, 6, 0.6448) 65%, rgba(6, 6, 6, 0.6992) 73%, rgba(6, 6, 6, 0.74) 80.2%, rgba(6, 6, 6, 0.7664) 86.1%, rgba(6, 6, 6, 0.7832) 91%, rgba(6, 6, 6, 0.7936) 95.2%, rgba(6, 6, 6, 0.7984) 98.2%, rgba(6, 6, 6, 0.8) 100%);
     background-size: 100% 7rem;
     background-position: bottom;
     background-repeat: no-repeat;

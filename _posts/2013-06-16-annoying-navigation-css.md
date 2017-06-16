@@ -20,7 +20,7 @@ shorturl: nmwge
 ---
 
 
-Here’s a quick, little CodePen showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
+Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
 {% include content/codepen.html slug='LHqFy' height='740' theme='tabfree' %}
 
@@ -32,4 +32,4 @@ This is a User Experience or Accessibility issue. Anything we can do to make our
 
 {% include content/heading.html title='Don’t throw away your visitors!' id='dont-throw-away-visitors' %}
 
-Check me out [on CodePen](https://codepen.io/chrisburnell "Chris Burnell on Codepen"){:rel="external"}, if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](https://blog.codepen.io/rodeo/ "The Pattern Rodeo"){:rel="external"} if your motivation needs a kick up the rear!
+Check me out [on *CodePen*](https://codepen.io/chrisburnell "Chris Burnell on CodePen"){:rel="external"}, if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](https://blog.codepen.io/rodeo/ "The Pattern Rodeo"){:rel="external"} if your motivation needs a kick up the rear!

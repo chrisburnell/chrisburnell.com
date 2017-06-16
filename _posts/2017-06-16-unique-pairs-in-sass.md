@@ -206,10 +206,10 @@ Next, we’ll do the same, but for a *Map* of data:
 
 The code in this block is nearly identical to the one for *Lists*, with some small changes to how the *Map’s* <var>keys</var> and <var>values</var> are paired and passed into <var>$unique-pairs</var>.
 
+Now let’s look at how the `@function` is actually used.
 
-{% include content/heading.html title='The Original Challenge' %}
 
-{% include content/codepen.html slug='OWWYdj' height='400' %}
+{% include content/heading.html title='From a List' %}
 
 {% highlight scss %}
 $list:
@@ -241,6 +241,9 @@ $list:
 }
 {% endhighlight %}
 {% include content/code-toggle-bottom.html %}
+
+
+{% include content/heading.html title='From a Map' %}
 
 {% highlight scss %}
 $map: (
@@ -305,6 +308,13 @@ $map: (
 {% endhighlight %}
 {% include content/code-toggle-bottom.html %}
 
+
+{% include content/heading.html title='Conclusion and Demo' %}
+
 While the `@function` that powers all this jazz is lengthy and intimidating, I think it’s pretty clear that we’re saving ourselves some typing and mental overhead. Because the `@function` is doing the brunt of the heavy-lifting here, we’ve afforded ourselves the luxury of only having to touch the *List*/*Map* of breakpoints (and respective pixel values) in order to build out CSS for the entire grid, including complex class and media query combinations.
+
+Here’s a small demo of the `@function` on *CodePen*, which I recommend opening in a new tab/window so you can resize properly:
+
+{% include content/codepen.html slug='OWWYdj' height='400' %}
 
 This is a pretty extreme example of how smart utilisation of Sass’ features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, measures, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/){:rel="external"} has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/){:rel="external"} [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/){:rel="external"}.
