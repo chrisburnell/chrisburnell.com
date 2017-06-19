@@ -69,6 +69,7 @@ code[data-lang] {
 
     &:not(:checked) ~ .highlight pre {
         // limit number of lines of code
+        // font size * line height * 5 lines + padding + code block header
         max-height: #{$font-size-small * 2 * 5 + $measure-medium * 2 + 1};
         overflow-x: hidden;
 
@@ -78,6 +79,7 @@ code[data-lang] {
             content: "";
             background-image: scrim-gradient(to bottom, $transparent, rgba($color-black, 0.8));
             // fade out over the last four lines
+            // font size * line height * 4 lines
             background-size: 100% #{$font-size-small * 2 * 4};
             background-position: bottom;
             background-repeat: no-repeat;

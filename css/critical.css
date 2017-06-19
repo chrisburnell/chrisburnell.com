@@ -57,7 +57,7 @@ body {
 }
 
 html {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-display: swap;
     background-color: #4f4f4f;
     font-size: 16px;
@@ -1027,7 +1027,7 @@ a span:not([class]):not([itemprop]) {
 .fragment-anchor {
     text-transform: lowercase;
     letter-spacing: 0;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace;
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
     color: #737373;
@@ -1596,7 +1596,7 @@ aside + .lede {
  */
 /*aside*/
 .author {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-display: swap;
 }
 
@@ -1683,7 +1683,7 @@ picture {
 .author-information strong {
     text-transform: uppercase;
     letter-spacing: 0;
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-display: swap;
     color: inherit;
     font-weight: 600;

@@ -214,13 +214,31 @@ $font-sizes: (
 
 
 /// @type List
-$font-family-default: "Proxima Nova", sans-serif !default;
+$font-family-default: "Proxima Nova",
+                      -apple-system,
+                      BlinkMacSystemFont,
+                      "Segoe UI",
+                      Roboto,
+                      Oxygen-Sans,
+                      Ubuntu,
+                      Cantarell,
+                      "Helvetica Neue",
+                      sans-serif !default;
 /// @type List
-$font-family-alpha: "League Gothic", Impact, sans-serif !default;
+$font-family-alpha: "League Gothic",
+                    Impact,
+                    sans-serif !default;
 /// @type List
-$font-family-serif: Georgia, serif !default;
+$font-family-serif: Georgia,
+                    serif !default;
 /// @type List
-$font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, Courier, monospace !default;
+$font-family-monospace: "Menlo for Powerline",
+                        "Menlo",
+                        Consolas,
+                        Monaco,
+                        "Andale Mono",
+                        "Ubuntu Mono",
+                        monospace !default;
 /// @type Map
 /// @prop {String} key - Font Family name
 /// @prop {Number} value - Font Family value
