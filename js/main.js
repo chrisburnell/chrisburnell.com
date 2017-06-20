@@ -50,83 +50,6 @@
     }
 })();
 /*!
- * Conditional comments for article pages
- * @author Chris Burnell <me@chrisburnell.com>
- */
-
-(function () {
-
-    'use strict';
-
-    var DISQUS_SHORTNAME = 'chrisburnell';
-    var commentsSection = document.querySelector('.js-comments');
-    var commentsButton = document.querySelector('.js-show-comments');
-    // `#comment` will match both `#comment` and `#comments`
-    var commentsHash = ['#comment', '#disqus_thread'];
-
-    // if Comments Button exists, enable it and attach Event Listener
-    if (commentsButton !== null) {
-        commentsButton.disabled = false;
-        commentsButton.setAttribute('aria-disabled', 'false');
-        commentsButton.addEventListener('click', showComments);
-    }
-
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', updateFromHash);
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', updateFromHash);
-    // if URL contains a hash from `commentsHash`, initiate `showComments()`
-    function updateFromHash() {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = commentsHash[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var hash = _step.value;
-
-                if (window.location.hash.indexOf(hash) === 0) {
-                    showComments();
-                }
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-    }
-
-    // Load in Disqus comments and remove the comments button
-    function showComments() {
-        if (commentsSection !== null) {
-            // only if the button still exists should we load Disqus and hide the button
-            if (commentsButton !== null && commentsButton.getAttribute('aria-hidden') === 'false') {
-                commentsButton.setAttribute('aria-pressed', 'true');
-                commentsButton.setAttribute('aria-expanded', 'true');
-                commentsButton.setAttribute('aria-hidden', 'true');
-                commentsButton.removeEventListener('click', function () {});
-                (function () {
-                    var disqusScript = document.createElement('script');
-                    disqusScript.type = 'text/javascript';
-                    disqusScript.async = true;
-                    disqusScript.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqusScript);
-                })();
-                commentsSection.setAttribute('aria-hidden', 'false');
-            }
-        }
-    }
-})();
-/*!
  * A simple JSON search
  * @author Mat Hayward - Erskine Design (Original Author)
  * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications)
@@ -431,6 +354,83 @@
     function injectContent(originalContent, injection, placeholder) {
         var regex = new RegExp(placeholder, 'g');
         return originalContent.replace(regex, injection);
+    }
+})();
+/*!
+ * Conditional comments for article pages
+ * @author Chris Burnell <me@chrisburnell.com>
+ */
+
+(function () {
+
+    'use strict';
+
+    var DISQUS_SHORTNAME = 'chrisburnell';
+    var commentsSection = document.querySelector('.js-comments');
+    var commentsButton = document.querySelector('.js-show-comments');
+    // `#comment` will match both `#comment` and `#comments`
+    var commentsHash = ['#comment', '#disqus_thread'];
+
+    // if Comments Button exists, enable it and attach Event Listener
+    if (commentsButton !== null) {
+        commentsButton.disabled = false;
+        commentsButton.setAttribute('aria-disabled', 'false');
+        commentsButton.addEventListener('click', showComments);
+    }
+
+    // run `updateFromHash()` on window load
+    window.addEventListener('load', updateFromHash);
+    // run `updateFromHash()` on window hashchange
+    window.addEventListener('hashchange', updateFromHash);
+    // if URL contains a hash from `commentsHash`, initiate `showComments()`
+    function updateFromHash() {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = commentsHash[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var hash = _step.value;
+
+                if (window.location.hash.indexOf(hash) === 0) {
+                    showComments();
+                }
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+    }
+
+    // Load in Disqus comments and remove the comments button
+    function showComments() {
+        if (commentsSection !== null) {
+            // only if the button still exists should we load Disqus and hide the button
+            if (commentsButton !== null && commentsButton.getAttribute('aria-hidden') === 'false') {
+                commentsButton.setAttribute('aria-pressed', 'true');
+                commentsButton.setAttribute('aria-expanded', 'true');
+                commentsButton.setAttribute('aria-hidden', 'true');
+                commentsButton.removeEventListener('click', function () {});
+                (function () {
+                    var disqusScript = document.createElement('script');
+                    disqusScript.type = 'text/javascript';
+                    disqusScript.async = true;
+                    disqusScript.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqusScript);
+                })();
+                commentsSection.setAttribute('aria-hidden', 'false');
+            }
+        }
     }
 })();
 /*!
