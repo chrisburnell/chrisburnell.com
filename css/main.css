@@ -2333,34 +2333,6 @@ aside + .lede {
     font-weight: 600;
 }
 
-.em-dash,
-.m-dash {
-    display: inline-block;
-}
-
-.em-dash::before,
-.m-dash::before {
-    content: " — ";
-}
-
-.en-dash,
-.n-dash {
-    display: inline-block;
-}
-
-.en-dash::before,
-.n-dash::before {
-    content: " – ";
-}
-
-.minus {
-    display: inline;
-}
-
-.minus::before {
-    content: "−";
-}
-
 .content-list {
     display: -webkit-box;
     display: -ms-flexbox;
