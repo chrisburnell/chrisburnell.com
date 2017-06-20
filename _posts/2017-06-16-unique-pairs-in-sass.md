@@ -81,13 +81,13 @@ But the <q>between <var>A</var> and <var>B</var></q> variations are a bit more i
 We can actually determine how many unique pairs there will be with a simple mathematical formula, letting <var>n</var> represent the length of the dataset:
 
 <figure>
-    <samp class="beta"><var>n</var>(<var>n</var>-1)/2</samp>
+    <samp class="beta"><var>n</var>(<var>n</var>&minus;1)&frasl;2</samp>
 </figure>
 
 So in our case, in which we have <var>4</var> breakpoints:
 
 <figure>
-    <samp class="beta"><var>4</var>(<var>4</var>-1)/2 = 6</samp>
+    <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;2 = 6</samp>
 </figure>
 
 

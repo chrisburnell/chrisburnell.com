@@ -93,18 +93,18 @@ Let’s look at an example where we’re setting a *percentage*-based value that
 
 - `.parent` `width` is set to `1337px`
 - `.child` `width` is set to `60.029%`, as our target `width` is `803px`
-- `1337px ÷ 100 × 60.029 = 802.58773px`
+- `1337px &divide; 100 &times; 60.029 = 802.58773px`
 
 Modern browsers will utilise *sub-pixel rendering* to render a *pixel* value containing decimals; however, older browsers, like *IE8*, will **truncate** the *percentage*-based value to only **two** decimal places! This spells trouble in our particular case:
 
-`1337px ÷ 100 × 60.02 = 802.4674px`
+`1337px &divide; 100 &times; 60.02 = 802.4674px`
 
 Even the above value is rounded to the wrong target value by a modern browser.
 
 Due to [discrepancies between browsers](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table){:rel="external"}, we can’t be sure whether a value will receive *sub-pixel rendering*, be truncated, be rounded to the nearest integer, or even be rounded *down* (floored) to the nearest integer!
 
 <aside>
-    <p>Let’s not get into viewport units (<em>vw</em>, <em>vh</em>, <em>vmin</em>, <em>vmax</em>, etc.). That’s a whole other beast.</p>
+    <p>Let’s not get into viewport units (<code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>, etc.). That’s a whole other beast.</p>
 </aside>
 
 As a result, more often than not, I recommend **overshooting** your target value with your fraction, whether it be a *percentage*, *em*, or *rem* <q>fraction</q>. The reason for overshooting is such that any browser’s method of rounding decimals will achieve your target value.
@@ -125,7 +125,7 @@ So let’s use the running example, and modify it to match these conditions and 
 
 - `.parent` `width` is set to `1337px`
 - `.child` `width` is set to `60.06%`
-- `1337px ÷ 100 × 60.06 = 803.0022px`
+- `1337px &divide; 100 &times; 60.06 = 803.0022px`
 
 Because the worst truncation that will occur is to `2` decimal places, our value of `60.06%` will satisfy each rounding method, and our target value of `803px` will be achieved cross-browser.
 
