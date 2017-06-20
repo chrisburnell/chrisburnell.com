@@ -43,22 +43,19 @@
             {% if page.categories contains 'article' %}
                 {% assign words = content | number_of_words %}
                 <div class="reading-time">
+                    <span>reading time</span>
                     <strong>{{ words | divided_by: 180 }} min</strong>
-                    <span>read</span>
                 </div>
             {% elsif page.categories contains 'talk' %}
                 {% if page.location %}
-                    {% if page.location_url %}
-                        <div class="location">
-                            <span>given at</span>
+                    <div class="location">
+                        <span>given at</span>
+                        {% if page.location_url %}
                             <a rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
-                        </div>
-                    {% else %}
-                        <div class="location">
-                            <span>given at</span>
+                        {% else %}
                             <strong>{{ page.location }}</strong>
-                        </div>
-                    {% endif %}
+                        {% endif %}
+                    </div>
                 {% endif %}
             {% endif %}
         </div>
