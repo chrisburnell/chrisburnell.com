@@ -32,23 +32,19 @@
                 {% endif %}
             </time>
             {% if page.tags.size > 0 %}
+                {% assign tags_sorted = page.tags | sort %}
                 <div class="tags">
                     <span>tagged under</span>
                     <span itemprop="keywords">
-                        {% assign tags_sorted = page.tags | sort %}
                         {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
                     </span>
                 </div>
             {% endif %}
             {% if page.categories contains 'article' %}
+                {% assign words = content | number_of_words %}
                 <div class="reading-time">
-                    {% assign words = content | number_of_words %}
-                    {% if words < 360 %}
-                        <strong>1 min</strong>
-                    {% else %}
-                        <strong>{{ words | divided_by: 180 }} mins</strong>
-                    {% endif %}
-                    <span>reading time</span>
+                    <strong>{{ words | divided_by: 180 }} min</strong>
+                    <span>read</span>
                 </div>
             {% elsif page.categories contains 'talk' %}
                 {% if page.location %}
