@@ -1,6 +1,6 @@
 {% include assets/yml-author.html %}
 
-<aside class="author  vcard" role="complementary"{{ author_microdata_tags }}>
+<aside class="author  vcard" role="complementary" itemscope itemtype="https://schema.org/Person">
 
     <div class="author-information">
         <a rel="me" class="author-image  canada" href="/about/" title="About me" tabindex="-1">
@@ -13,16 +13,21 @@
                      src="/images/avatar.png"
                      srcset="/images/avatar@2x.png 2x,
                              /images/avatar@4x.png 4x"
-                     role="presentation"{{ author_microdata_photo }}>
+                     role="presentation" itemprop="photo">
             </picture>
         </a>
-        <div class="author-name">{{ author_name_prefix }} <a rel="me" class="url" href="/about/" tabindex="-1">{{ author_microdata_name }}</a></div>
-
-        {{ author_information_details }}
+        <div class="author-name">
+            <span>about</span>
+            <a rel="me" class="url" href="/about/" tabindex="-1">
+                <span class="canada  fn" rel="author" itemprop="author">{{ site.author.name }}</span>
+            </a>
+        </div>
+        <div class="author-nationality">I’m <strong class="canada">{{ site.author.nationality }}</strong></div>
+        <div class="author-employer">I’m a <strong>{{ site.author.job_title }}</strong></div>
     </div>
 
     <div class="author-biography">
-        <p>I’m a {{ author_microdata_nationality }} {{ author_microdata_job_title }} living in {{ author_microdata_home_location }} and working at {{ author_microdata_works_for }}. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about on this website—<a rel="me author" href="/feed.xml">subscribe if you’d like</a>.</p>
+        <p>I’m a <span class="canada" itemprop="nationality">Canadian</span> <span itemprop="jobTitle">{{ site.author.job_title }}</span> living in <span itemprop="homeLocation">{{ site.author.location }}</span> and working at <a rel="external" href="{{ site.author.employer.url }}"><span itemprop="worksFor">{{ site.author.employer.name }}</span></a>. Driven by a passion for lean CSS and a semantic web, I love to create rich and engaging user experiences, which I write about on this website—<a rel="me author" href="/feed.xml">subscribe if you’d like</a>.</p>
         <p>I also <a rel="me publisher external" href="{{ site.urls.twitter }}">tweet</a>, <a rel="me publisher external" href="{{ site.urls.codepen }}">write code</a>, <a rel="me publisher external" href="{{ site.github.owner_url }}">commit code</a>, <a rel="me publisher external" href="{{ site.urls.spotify }}">listen to music</a>, and <a rel="me publisher external" href="//recipes.chrisburnell.com">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 

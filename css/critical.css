@@ -1162,13 +1162,11 @@ header {
 header::before {
     content: "";
     background-color: #5f8aa6;
-    width: calc(100% - (2 * 1.25rem));
     height: 0.25rem;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    left: 1.25rem;
+    right: 1.25rem;
 }
 
 /**
@@ -1512,6 +1510,59 @@ h6[id]:target,
 }
 
 /**
+ * Post Meta
+ */
+.meta {
+    padding-bottom: 1.25rem;
+    font-style: italic;
+    overflow: hidden;
+}
+
+aside + .meta {
+    margin-top: -0.625rem;
+}
+
+.meta time,
+.meta div {
+    display: inline-block;
+    margin-right: 2.25rem;
+}
+
+.meta time + div,
+.meta div + div {
+    position: relative;
+}
+
+.meta time + div::before,
+.meta div + div::before {
+    content: "—";
+    color: #737373;
+    position: absolute;
+    left: -1.25rem;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.meta a,
+.meta strong {
+    color: inherit;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.meta a {
+    border-bottom-color: transparent;
+}
+
+.meta a:hover, .meta a:focus, .meta a:active {
+    border-bottom-color: #fd1b00;
+}
+
+.meta a:active {
+    color: #f9f9f9;
+}
+
+/**
  * Page Introduction / Description
  */
 .lede {
@@ -1526,6 +1577,11 @@ h6[id]:target,
 
 aside + .lede {
     margin-top: -0.625rem;
+}
+
+.meta + .lede {
+    border-top: 0.125rem solid #dddddd;
+    padding-top: 1.25rem;
 }
 
 .lede--featured {
@@ -1554,12 +1610,13 @@ aside + .lede {
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
     margin: 0 auto 2.25rem;
-    font-style: italic;
-    line-height: 1.5;
+    font-size: 1.125rem;
+    line-height: 1.429;
 }
 
 .edit time {
     margin-bottom: 0.625rem;
+    font-weight: 600;
 }
 
 .em-dash,
@@ -1704,21 +1761,13 @@ picture {
 
 .author-name,
 .author-nationality,
-.author-employer,
-.tags,
-.location,
-.reading-time,
-.related-anchor {
+.author-employer {
     display: block;
 }
 
 .author-information .date,
 .author-nationality,
-.author-employer,
-.tags,
-.location,
-.reading-time,
-.related-anchor {
+.author-employer {
     margin-top: 0.5rem;
 }
 

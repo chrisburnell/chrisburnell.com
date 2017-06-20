@@ -98,22 +98,14 @@
 
 .author-name,
 .author-nationality,
-.author-employer,
-.tags,
-.location,
-.reading-time,
-.related-anchor {
+.author-employer, {
     display: block;
 }
 
 // same as previous, minus `.author-name` plus `.author-information .date`
 .author-information .date,
 .author-nationality,
-.author-employer,
-.tags,
-.location,
-.reading-time,
-.related-anchor {
+.author-employer, {
     margin-top: 0.5rem;
 }
 

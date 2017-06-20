@@ -16,6 +16,57 @@
 
         {% include components/author.html %}
 
+        <div class="meta">
+            <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
+                <span>published on</span>
+                {% if page.shorturl %}
+                    <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="me" itemprop="datePublished">
+                {% else %}
+                    <strong itemprop="datePublished">
+                {% endif %}
+                {{ page.date | date: '%d %B, %Y' }}
+                {% if page.shorturl %}
+                    </a>
+                {% else %}
+                    </strong>
+                {% endif %}
+            </time>
+            {% if page.tags.size > 0 %}
+                <div class="tags">
+                    <span>tagged under</span>
+                    <span itemprop="keywords">
+                        {% assign tags_sorted = page.tags | sort %}
+                        {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
+                    </span>
+                </div>
+            {% endif %}
+            {% if page.categories contains 'article' %}
+                <div class="reading-time">
+                    {% assign words = content | number_of_words %}
+                    {% if words < 360 %}
+                        <strong>1 min</strong>
+                    {% else %}
+                        <strong>{{ words | divided_by: 180 }} mins</strong>
+                    {% endif %}
+                    <span>reading time</span>
+                </div>
+            {% elsif page.categories contains 'talk' %}
+                {% if page.location %}
+                    {% if page.location_url %}
+                        <div class="location">
+                            <span>given at</span>
+                            <a rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
+                        </div>
+                    {% else %}
+                        <div class="location">
+                            <span>given at</span>
+                            <strong>{{ page.location }}</strong>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+
         {% include components/banner.html %}
 
         {% if page.lede %}
@@ -23,12 +74,12 @@
         {% endif %}
 
         {% if page.edit_text %}
-            <section class="edit">
+            <div class="edit">
                 {% if page.edit_date %}
-                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date: '%d %B, %Y' }} —</time>
+                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date: '%d %B, %Y' }}:</time>
                 {% endif %}
                 <p>{{ page.edit_text }}</p>
-            </section>
+            </div>
         {% endif %}
 
         {% if page.external_url %}
