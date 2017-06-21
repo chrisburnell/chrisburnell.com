@@ -14,7 +14,7 @@
         <description>Shared Link</description>
     {% elsif page.categories contains 'pen' %}
         <description>Featured Pen</description>
-    {% elsif page.categories contains 'talk' and page.location %}
-        <description>Given at {{ page.location | xml_escape }}</description>
+    {% elsif page.categories contains 'talk' %}
+        <description>Talk{% if page.location %} – Given at {{ page.location }}{% endif %}</description>
     {% endif %}
 </item>

@@ -24,7 +24,7 @@
                 {% else %}
                     <strong itemprop="datePublished">
                 {% endif %}
-                {{ page.date | date: '%d %B, %Y' }}
+                {{ page.date | date_to_long_string }}
                 {% if page.shorturl %}
                     </a>
                 {% else %}
@@ -76,7 +76,7 @@
         {% if page.edit_text %}
             <div class="edit">
                 {% if page.edit_date %}
-                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date: '%d %B, %Y' }}:</time>
+                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date_to_long_string }}:</time>
                 {% endif %}
                 <p>{{ page.edit_text }}</p>
             </div>

@@ -8,7 +8,15 @@
     <meta name="twitter:creator" content="{{ site.author.twitter }}">
     <meta name="twitter:title" content="{{ meta_title }}">
     <meta name="twitter:description" content="{{ meta_lede }}">
-    <meta name="twitter:image" content="{{ meta_image }}">
+    {% if page.banner %}
+        <meta property="twitter:image" content="{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
+    {% elsif page.banner_mobile %}
+        <meta property="twitter:image" content="{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
+    {% elsif page.page_class contains 'about' %}
+        <meta property="twitter:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
+    {% else %}
+        <meta property="twitter:image" content="{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
     <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
     {% if page.twitter == true %}
         <meta name="twitter:widgets:theme" content="light">
@@ -61,18 +69,30 @@
             "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
             "headline": "{{ meta_title }}",
             "description": "{{ meta_lede }}",
-            "image": "{{ meta_image }}",
+            {% if page.banner %}
+                "image": "{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}",
+            {% elsif page.banner_mobile %}
+                "image": "{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}",
+            {% elsif page.page_class contains 'about' %}
+                "image": "{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}",
+            {% else %}
+                "image": "{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}",
+            {% endif %}
             "author": {
                 "@type": "Person",
                 "name": "{{ site.author.name }}"
             },
             {% if page.layout == 'post' %}
-                "keywords": "{{ page.tags | join: ' ' }}",
+                {% if page.tags %}
+                    "keywords": "{{ page.tags | join: ' ' }}",
+                {% endif %}
                 "datePublished": "{{ page.date | date: '%F_%H%M' }}",
                 {% if page.edit_date %}
                     "dateModified": "{{ page.edit_date | date: '%F_%H%M' }}",
                 {% endif %}
-                "wordcount": "{{ content | number_of_words }}",
+                {% if page.categories contains 'article' %}
+                    "wordcount": "{{ content | number_of_words }}",
+                {% endif %}
             {% endif %}
             "sameAs": [
                 "{{ site.urls.codepen }}",

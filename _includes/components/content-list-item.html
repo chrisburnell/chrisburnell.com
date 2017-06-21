@@ -11,26 +11,28 @@
 <li role="listitem">
     <article role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
         <a href="{{ page.url }}">
-            {% if page.categories contains 'article' %}
-                {% include content/svg.html type='article' %}
-            {% elsif page.categories contains 'link' %}
-                {% include content/svg.html type='link' %}
-            {% elsif page.categories contains 'pen' %}
-                {% include content/svg.html type='codepen' %}
-            {% elsif page.categories contains 'talk' %}
-                {% include content/svg.html type='bullhorn' %}
-            {% endif %}
+                {% if page.categories contains 'article' %}
+                    {% include content/svg.html type='article' %}
+                {% elsif page.categories contains 'link' %}
+                    {% include content/svg.html type='link' %}
+                {% elsif page.categories contains 'pen' %}
+                    {% include content/svg.html type='codepen' %}
+                {% elsif page.categories contains 'talk' %}
+                    {% include content/svg.html type='bullhorn' %}
+                {% endif %}
             <h4 class="title" itemprop="name">{{ page.title }}</h4>
-            {% if page.lede %}
-                <p class="lede" itemprop="description">{{ page.lede | strip_html | truncatewords: 20 }}</p>
-            {% elsif page.categories contains 'link' %}
-                <p class="lede" itemprop="description">Shared Link</p>
-            {% elsif page.categories contains 'pen' %}
-                <p class="lede" itemprop="description">Featured Pen</p>
-            {% elsif page.categories contains 'talk' and page.location %}
-                <p class="lede" itemprop="description">Talk – Given at {{ page.location }}.</p>
-            {% endif %}
-            <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B, %Y' }}</time>
+            <p class="lede" itemprop="description">
+                {% if page.lede %}
+                    {{ page.lede | strip_html | truncatewords: 20 }}
+                {% elsif page.categories contains 'link' %}
+                    Shared Link
+                {% elsif page.categories contains 'pen' %}
+                    Featured Pen
+                {% elsif page.categories contains 'talk' %}
+                    Talk{% if page.location %}, given at <em>{{ page.location }}</em>{% endif %}
+                {% endif %}
+            </p>
+            <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
     </article>
 </li>

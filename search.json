@@ -23,8 +23,8 @@ searchable: false
                 "type": "post",
                 "url": "{{ page.url }}",
                 "title": "{{ page.title | xml_escape }}",
-                "date": "{{ page.date }}",
-                "date_friendly": "{{ page.date | date: '%d %B, %Y' }}",
+                "date": "{{ page.date | date_to_xml_schema }}",
+                "date_friendly": "{{ page.date | date_to_long_string }}",
                 {% if page.lede %}
                     "lede": "{{ page.lede | strip_newlines | normalize_whitespace | strip_html | xml_escape | truncatewords: 20 }}",
                 {% endif %}

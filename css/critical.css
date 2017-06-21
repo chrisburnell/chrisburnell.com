@@ -1638,11 +1638,53 @@ aside + .lede {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        -webkit-box-ordinal-group: 999;
-            -ms-flex-order: 998;
-                order: 998;
+        -webkit-box-ordinal-group: 1000;
+            -ms-flex-order: 999;
+                order: 999;
         margin-top: 2.25rem;
     }
+}
+
+/**
+ * More information about the Author
+ */
+.author-information {
+    font-family: Georgia, serif;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.429;
+}
+
+@media (max-width: 800px) {
+    .author-information {
+        padding-top: 2.25rem;
+        border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
+        margin-bottom: 0.625rem;
+    }
+}
+
+.author-information a,
+.author-information strong {
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-display: swap;
+    color: inherit;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.author-information a {
+    border-bottom-color: transparent;
+}
+
+.author-information a:hover, .author-information a:focus, .author-information a:active {
+    border-bottom-color: #fd1b00;
+}
+
+.author-information a:active {
+    color: #f9f9f9;
 }
 
 /**
@@ -1687,48 +1729,6 @@ picture {
         background-clip: padding-box;
         border-radius: 50%;
     }
-}
-
-/**
- * More information about the Author, the Page, or the Post
- */
-.author-information {
-    font-family: Georgia, serif;
-    margin-bottom: 1.25rem;
-    font-size: 0.875rem;
-    font-style: italic;
-    line-height: 1.429;
-}
-
-@media (max-width: 800px) {
-    .author-information {
-        padding-top: 2.25rem;
-        border-top: 0.125rem solid rgba(6, 6, 6, 0.1);
-        margin-bottom: 0.625rem;
-    }
-}
-
-.author-information a,
-.author-information strong {
-    text-transform: uppercase;
-    letter-spacing: 0;
-    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-display: swap;
-    color: inherit;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.author-information a {
-    border-bottom-color: transparent;
-}
-
-.author-information a:hover, .author-information a:focus, .author-information a:active {
-    border-bottom-color: #fd1b00;
-}
-
-.author-information a:active {
-    color: #f9f9f9;
 }
 
 .author-name,

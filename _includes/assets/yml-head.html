@@ -4,16 +4,16 @@
     {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
 {% endif %}
 
-{% if page.categories contains 'link' %}
-    {% capture meta_lede %}One of my shared links, {{ page.title }}{% endcapture %}
+{% if page.lede %}
+    {% assign meta_lede = page.lede | strip_html %}
+{% elsif page.categories contains 'link' %}
+    {% capture meta_lede %}One of my shared links, {{ page.title }}.{% endcapture %}
 {% elsif page.categories contains 'pen' %}
-    {% capture meta_lede %}One of my CodePens, {{ page.title }}{% endcapture %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title }}.{% endcapture %}
 {% elsif page.categories contains 'talk' %}
-    {% capture meta_lede %}One of my talks, {{ page.title }}{% endcapture %}
-{% elsif page.lede %}
-    {% capture meta_lede %}{{ page.lede | strip_html }}{% endcapture %}
+    {% capture meta_lede %}One of my talks, {{ page.title }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}
-    {% capture meta_lede %}{{ site.lede | strip_html }}{% endcapture %}
+    {% assign meta_lede = site.lede | strip_html %}
 {% endif %}
 
 {% capture body_class %}

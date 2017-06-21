@@ -7,7 +7,6 @@
 .widget {
     display: flex;
     flex-direction: column;
-    order: 999;
 
     aside & {
         @include clear;
