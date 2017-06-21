@@ -26,44 +26,50 @@ shorturl: bhbt9
 
 {% include content/code-toggle-top.html %}
 {% highlight scss %}
-html,
-body {
-    height: 100%;
+@function range-map($value, $ranges...) {
+    $old-minimum: if(length($ranges) == 2, 0, nth($ranges, 1));
+    $old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
+    $new-minimum: if(length($ranges) == 2, 0, nth($ranges, 3));
+    $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
+  
+    @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
-body {
-    position: relative;
-    overflow: hidden;
-}
+
+$hue-rotation: -75;
+
 .jazz {
-    background-color: rgb(255, 64, 0);
-    width:  400px;
-    width:   40vw;
+    background-color: purple;
+    background-color: rebeccapurple;
+    width: 400px;
+    width: 60vmin;
     height: 400px;
-    height:  40vw;
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    height: 60vmin;
     z-index: 1;
 }
+
 .slice {
-    width:  2%;
+    width: 2%;
     height: 2%;
     position: absolute;
     z-index: 2;
 }
+
 @for $i from 1 through 50 {
     .row-#{$i} {
-        top: ($i * 2%) - 2%;
+        top: range-map($i, 1, 50, 0%, 98%);
+
         &:hover ~ .jazz {
-            background-color: rgb((255 - (($i - 1) * 5.204081633)), 64, (($i - 1) * 5.204081633));
+            background-color: adjust-hue(purple, range-map($i, 1, 50, -180, 180));
+            background-color: adjust-hue(rebeccapurple, range-map($i, 1, 50, -180, 180));
         }
     }
+
     .column-#{$i} {
-        left: ($i * 2) - 2%;
+        left: range-map($i, 1, 50, 0%, 98%);
+
         &:hover ~ .jazz {
-            border-radius: ($i * 1.020408163%) - 1%;
-            transform: translate3d(-50%, -50%, 0) rotate(($i - 1) * 7.346938776deg);
+            border-radius: range-map($i, 1, 50, 0%, 50%);
+            transform: rotateZ(range-map($i, 1, 50, 0deg, 360deg));
         }
     }
 }
