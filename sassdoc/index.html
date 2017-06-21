@@ -520,7 +520,9 @@ color: contrasting-color(#111111);
     border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
+    white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
  }" data-collapsed="@mixin visually-hidden() { ... }"><code>@mixin visually-hidden() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Visually hide an element properly.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="abstracts-mixin-will-change"><h3 class="item__heading"><a class="item__name" href="#mixin-will-change">will-change</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin will-change($values) { 
     @if length($values) == 0 {
         @error &quot;will-change() expects at least one parameter.&quot;;

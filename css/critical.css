@@ -802,7 +802,10 @@ blockquote p:not(:last-of-type)::after {
     border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
+    white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
 }
 
 blockquote cite {
@@ -999,7 +1002,10 @@ a span:not([class]):not([itemprop]) {
     border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
+    white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
 }
 
 /**
@@ -1312,7 +1318,10 @@ h6[id]:target,
     border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
+    white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
 }
 
 .hyphen,

@@ -365,7 +365,9 @@
     border: 0 !important;
     position: absolute !important;
     overflow: hidden !important;
+    white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
 }
 
 
