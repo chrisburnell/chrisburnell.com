@@ -1795,6 +1795,19 @@ iframe {
     contain: strict;
 }
 
+/**
+ * CodePen Embeds
+ */
+.cp_embed_wrapper {
+    margin-bottom: 1.25rem;
+    resize: both;
+    overflow: auto;
+}
+
+.cp_embed_wrapper iframe {
+    margin-bottom: 0;
+}
+
 .wrap {
     width: auto;
     max-width: 1140px;
