@@ -26,3 +26,16 @@ iframe {
     margin-bottom: $measure-medium;
     contain: strict;
 }
+
+/**
+ * CodePen Embeds
+ */
+.cp_embed_wrapper {
+    margin-bottom: $measure-medium;
+    resize: both;
+    overflow: auto;
+
+    iframe {
+        margin-bottom: 0;
+    }
+}
