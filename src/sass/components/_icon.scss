@@ -28,10 +28,10 @@
 /**
  * Brand Icon Widths and Colors
  */
-@each $color-raven in $color-ravens {
-    $name:       nth($color-raven, 1);
-    $icon-color: nth($color-raven, 2);
-    $ratio:      nth($color-raven, 3);
+@each $color-brand in $color-brands {
+    $name:       nth($color-brand, 1);
+    $icon-color: nth($color-brand, 2);
+    $ratio:      nth($color-brand, 3);
 
     .icon--#{$name} {
         width: #{$ratio * $icon-size};

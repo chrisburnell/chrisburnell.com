@@ -3326,52 +3326,52 @@ video {
     }
 }
 
-.palette-list li[data-color="#4d7086"] {
+.palette-list li[data-color="bowhead"] {
     background-color: #4d7086;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#5f8aa6"] {
+.palette-list li[data-color="raven"] {
     background-color: #5f8aa6;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#6e95ae"] {
+.palette-list li[data-color="coyote"] {
     background-color: #6e95ae;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#fd1b00"] {
+.palette-list li[data-color="canada"] {
     background-color: #fd1b00;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#060606"] {
+.palette-list li[data-color="black"] {
     background-color: #060606;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#2b2b2b"] {
+.palette-list li[data-color="mineshaft"] {
     background-color: #2b2b2b;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#4f4f4f"] {
+.palette-list li[data-color="kaiser"] {
     background-color: #4f4f4f;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#737373"] {
+.palette-list li[data-color="dove"] {
     background-color: #737373;
     color: #f9f9f9;
 }
 
-.palette-list li[data-color="#dddddd"] {
+.palette-list li[data-color="alto"] {
     background-color: #dddddd;
     color: #4f4f4f;
 }
 
-.palette-list li[data-color="#f9f9f9"] {
+.palette-list li[data-color="white"] {
     background-color: #f9f9f9;
     color: #4f4f4f;
 }

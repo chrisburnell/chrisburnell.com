@@ -40,10 +40,10 @@
             flex: 1 0 33.333%;
         }
 
-        @each $main-color in $main-colors {
-            &[data-color="#{$main-color}"] {
-                background-color: $main-color;
-                color: contrasting-color($main-color);
+        @each $color-name, $color-value in $site-colors {
+            &[data-color="#{$color-name}"] {
+                background-color: $color-value;
+                color: contrasting-color($color-value);
             }
         }
 

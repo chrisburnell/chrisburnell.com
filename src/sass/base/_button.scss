@@ -28,14 +28,14 @@ button,
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    box-shadow: inset 0 -0.182em 0 0 $color-bismark;
+    box-shadow: inset 0 -0.182em 0 0 $color-bowhead;
     appearance: none;
 
 
     &:hover,
     &:focus,
     &:active {
-        background-color: $color-bermuda;
+        background-color: $color-coyote;
     }
 
     &:hover,
@@ -48,7 +48,7 @@ button,
         padding-bottom: 0;
         margin-bottom: 0.182em;
         outline-style: none;
-        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bismark;
+        box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bowhead;
         transform: translateY(0.182em);
     }
 
