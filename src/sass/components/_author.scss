@@ -25,6 +25,8 @@
  */
 .author-information {
     @include font-family(serif);
+    display: flex;
+    flex-direction: row;
     margin-bottom: $measure-medium;
     font-size: $font-size-small;
     font-style: italic;
@@ -64,7 +66,7 @@
  * Photograph of MY FACE
  */
 .author-image {
-    @include border-radius;
+    @include border-radius(50%);
     // gradient replacement while loading the `src` / `srcset`,
     // colors generated from `avatar.png`
     background-image: gradient(to top right,    $transparent, rgb(153, 192, 226)),
@@ -75,13 +77,19 @@
     width:  $avatar-size;
     height: $avatar-size;
     float: left;
-    margin-right:  $measure-small;
-    margin-bottom: $measure-small;
     border-bottom-width: 0;
 
     @supports (shape-outside: circle(50%)) {
         background-image: none;
         shape-outside: circle(50%);
+    }
+
+    @include media("<=medium") {
+        margin-right: $measure-medium;
+    }
+
+    @include media(">medium") {
+        margin-right: $measure-small;
     }
 
     %image-elements {
@@ -96,23 +104,8 @@
     }
 }
 
-.author-name,
-.author-nationality,
-.author-employer, {
-    display: block;
-}
-
-// same as previous, minus `.author-name` plus `.author-information .date`
-.author-information .date,
-.author-nationality,
-.author-employer, {
-    margin-top: 0.5rem;
-}
-
-
-/**
- * Biographical information about the Author
- */
-.author-biography {
-    margin-top: $measure-small;
+.author-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -31,13 +31,16 @@
         {% endunless %}
     {% endfor %}"{% endcapture %}
 {% endif %}
+{% capture class %}{% if include.class %}class="{{ include.class }}"{% endif %}{% endcapture %}
+{% capture width %}{% if include.width %}width="{{ include.width }}"{% endif %}{% endcapture %}
+{% capture height %}{% if include.height %}height="{{ include.height }}"{% endif %}{% endcapture %}
 <picture>
     {% if include.src contains 'jpg' or include.src contains 'jpeg' or include.src contains 'png' %}
         <source srcset="{{ include.src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}"
                 type="image/webp">
     {% endif %}
     <img alt="{{ include.alt }}" role="presentation"
-         class="{{ include.class }}" width="{{ include.width }}" height="{{ include.height }}"
+         {{ class }} {{ width }} {{ height }}
          src="{{ src }}"
          {{ srcset }}>
 </picture>

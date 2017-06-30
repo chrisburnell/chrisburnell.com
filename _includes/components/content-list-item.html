@@ -29,7 +29,7 @@
                 {% elsif page.categories contains 'pen' %}
                     Featured Pen
                 {% elsif page.categories contains 'talk' %}
-                    Talk{% if page.location %}, given at <em>{{ page.location }}</em>{% endif %}
+                    Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}
             </p>
             <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
