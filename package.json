@@ -40,7 +40,7 @@
     "postcss-scss": "1.0.1",
     "sassdoc": "2.3.0",
     "stylelint": "7.11.1",
-    "snyk": "^1.29.0"
+    "snyk": "^1.36.2"
   },
   "repository": {
     "type": "git",
