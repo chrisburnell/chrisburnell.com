@@ -5,7 +5,6 @@
 
 
 a {
-    @include position(relative);
     @include transition(background, color, border-color);
     @include will-change(background, color, border-color);
     background-color: $transparent;
@@ -13,6 +12,7 @@ a {
     border-bottom-width: $border-width-hairline;
     border-bottom-style: $border-style-default;
     border-bottom-color: $color-alto;
+    position: relative;
     text-decoration: none;
     // remove gaps in links underline in iOS 8+ and Safari 8+.
     -webkit-text-decoration-skip: objects;
@@ -84,11 +84,11 @@ a {
     visibility: hidden;
     margin-left: $measure-medium;
     border-bottom-width: $border-width-hairline;
+    vertical-align: middle;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     line-height: $line-height-small;
     text-shadow: none;
-    vertical-align: middle;
 
     &:hover,
     &:focus,

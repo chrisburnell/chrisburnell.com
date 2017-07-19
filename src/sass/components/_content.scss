@@ -29,8 +29,8 @@
  */
 .meta {
     padding-bottom: $measure-medium;
-    font-style: italic;
     overflow: hidden;
+    font-style: italic;
 
     aside + & {
         // pull up to align with `.author`

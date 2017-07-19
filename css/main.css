@@ -32,14 +32,14 @@
 }
 
 html {
-    position: relative;
     min-height: 100%;
+    position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 *,
@@ -82,9 +82,9 @@ h3,
 h4,
 h5,
 h6 {
-    position: relative;
     padding: 0;
     margin: 0;
+    position: relative;
     font-weight: 400;
 }
 
@@ -366,8 +366,8 @@ dl:not([class]) +
 ol:not([class]) li,
 ul:not([class]) li,
 .default-list li {
-    position: relative;
     padding-left: 2.25rem;
+    position: relative;
 }
 
 ol:not([class]) li:not(:last-child),
@@ -649,8 +649,8 @@ td {
 .highlight--columns td::after,
 .highlight--columns tfoot th:not(:empty)::after {
     position: absolute;
-    top: 50%;
     left: 0;
+    top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     -webkit-transition: opacity 0.2s ease 0s;
@@ -853,8 +853,8 @@ blockquote p:not(:last-of-type)::after {
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -1439,7 +1439,6 @@ pre.codepen {
 }
 
 a {
-    position: relative;
     -webkit-transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     will-change: background, color, border-color;
@@ -1448,6 +1447,7 @@ a {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #dddddd;
+    position: relative;
     text-decoration: none;
     -webkit-text-decoration-skip: objects;
 }
@@ -1482,8 +1482,8 @@ a span:not([class]):not([itemprop]) {
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -1523,11 +1523,11 @@ a span:not([class]):not([itemprop]) {
     visibility: hidden;
     margin-left: 1.25rem;
     border-bottom-width: 1px;
+    vertical-align: middle;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.25;
     text-shadow: none;
-    vertical-align: middle;
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
@@ -1583,7 +1583,6 @@ button,
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
-    position: relative;
     -webkit-transition: background-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s;
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
@@ -1595,14 +1594,15 @@ button,
     padding: 0 0.727em 0.182em;
     border-width: 0;
     margin-top: 0.25rem;
+    -webkit-box-shadow: inset 0 -0.182em 0 0 #4d7086;
+            box-shadow: inset 0 -0.182em 0 0 #4d7086;
     overflow: visible;
+    position: relative;
     font-size: 1.375rem;
     line-height: 2;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    -webkit-box-shadow: inset 0 -0.182em 0 0 #4d7086;
-            box-shadow: inset 0 -0.182em 0 0 #4d7086;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -1638,9 +1638,8 @@ button::before, button::after,
 .button::after {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    will-change: top;
+    left: 0;
     content: "";
     height: 0.182em;
 }
@@ -1657,6 +1656,10 @@ button[rel*="external"]::after,
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
     position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     will-change: initial;
     content: " →";
     width: auto;
@@ -1844,8 +1847,8 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 @supports (display: grid) {
@@ -2043,8 +2046,8 @@ h6[id]:target,
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -2076,10 +2079,10 @@ h6[id]:target,
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     height: 6.25rem;
-    display: inline-block;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 15.875rem;
             flex: 1 0 15.875rem;
+    display: inline-block;
     position: relative;
     border-bottom-width: 0;
 }
@@ -2250,8 +2253,8 @@ h6[id]:target,
  */
 .meta {
     padding-bottom: 1.25rem;
-    font-style: italic;
     overflow: hidden;
+    font-style: italic;
 }
 
 aside + .meta {
@@ -2417,6 +2420,9 @@ aside .content-list li + li {
 }
 
 .content-list article {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2424,18 +2430,15 @@ aside .content-list li + li {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 100%;
-            flex: 1 0 100%;
 }
 
 .content-list a {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    display: block;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
+    display: block;
     padding: 1.25rem;
     border-bottom-width: 0;
     overflow: hidden;
@@ -2550,8 +2553,8 @@ aside .content-list a {
 .search-input {
     min-width: 1px;
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
     font-size: 0.875rem;
 }
 
@@ -3004,7 +3007,10 @@ footer div {
 
 .button--show-comments::before, .button--show-comments:active::before {
     position: relative;
-    top: 0;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
 }
 
 /**
@@ -3015,16 +3021,16 @@ code[data-lang] {
 }
 
 code[data-lang]::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     background-clip: padding-box;
     border-radius: 0.375rem 0.375rem 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-display: swap;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     content: attr(data-lang);
@@ -3086,9 +3092,9 @@ code[data-lang]::before {
 .code-toggle-label {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     cursor: pointer;
 }
 
@@ -3120,9 +3126,9 @@ code[data-lang]::before {
 .code-toggle-input:not(:checked) ~ .highlight pre::after {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     background-clip: padding-box;
     border-radius: 0 0 0.375rem 0.375rem;
     content: "";
@@ -3150,8 +3156,8 @@ button .icon,
     height: 0.8em;
     display: inline-block;
     margin-right: 0.25em;
-    pointer-events: none;
     vertical-align: middle;
+    pointer-events: none;
 }
 
 .icons-list .icon {
@@ -3236,10 +3242,10 @@ button .icon,
  * inside a set aspect ratio container.
  */
 .media {
-    position: relative;
     width: 100%;
     height: auto;
     overflow: hidden;
+    position: relative;
 }
 
 .media audio, .media
@@ -3249,9 +3255,9 @@ object, .media
 video {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     height: 100%;
     margin-bottom: 0;
 }
@@ -3291,6 +3297,10 @@ video {
         orphans: 3;
         widows: 3;
     }
+    kbd {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
 }
 
 .page--style-guide .lede + h3 {
@@ -3317,13 +3327,13 @@ video {
 
 .palette-list li {
     padding: 1.25rem 0;
-    font-size: 0.875rem;
-    text-align: center;
-    white-space: nowrap;
     vertical-align: middle;
+    font-size: 0.875rem;
     font-variant-numeric: tabular-nums;
     -webkit-font-feature-settings: "tnum";
             font-feature-settings: "tnum";
+    text-align: center;
+    white-space: nowrap;
 }
 
 @media (max-width: 500px) {
@@ -3357,12 +3367,12 @@ video {
 
 .palette-list li[data-color="raven"] {
     background-color: #5f8aa6;
-    color: #f9f9f9;
+    color: #4f4f4f;
 }
 
 .palette-list li[data-color="coyote"] {
     background-color: #6e95ae;
-    color: #f9f9f9;
+    color: #4f4f4f;
 }
 
 .palette-list li[data-color="canada"] {
@@ -3443,9 +3453,9 @@ video {
     border-radius: 0.125rem;
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     content: "";
     background-color: #4f4f4f;
 }

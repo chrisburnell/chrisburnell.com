@@ -56,15 +56,15 @@
     }
 
     article {
+        flex: 1 0 100%;
         display: flex;
         flex-direction: column;
-        flex: 1 0 100%;
     }
 
     a {
         @include border-radius;
-        display: block;
         flex: 1 0 100%;
+        display: block;
         padding: $measure-medium;
         border-bottom-width: 0;
         overflow: hidden;

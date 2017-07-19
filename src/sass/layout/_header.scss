@@ -6,8 +6,8 @@
 
 header {
     display: flex;
-    position: relative;
     overflow: hidden;
+    position: relative;
 
     @supports (display: grid) {
         display: grid;

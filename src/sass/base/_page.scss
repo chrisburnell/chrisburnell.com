@@ -5,8 +5,8 @@
 
 
 html {
-    @include position(relative);
     min-height: 100%;
+    position: relative;
     overflow-x: hidden;
     // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
@@ -14,8 +14,8 @@ html {
     box-sizing: border-box;
     // prevent adjustments of font-size after orientation changes in IE on
     // Windows Phone and in iOS
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 // Box model set to `inherit` by default so children of `content-box` elements

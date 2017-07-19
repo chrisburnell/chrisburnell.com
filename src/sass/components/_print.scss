@@ -28,4 +28,9 @@
         orphans: 3;
         widows: 3;
     }
+
+    // Remove box-shadow
+    kbd {
+        box-shadow: none;
+    }
 }

@@ -106,7 +106,7 @@ pre {
  * Solarized Dark Code Highlighting
  */
 .highlight {
-    @include position(relative);
+    position: relative;
 
     // Comment
     .c {

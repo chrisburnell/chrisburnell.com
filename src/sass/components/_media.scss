@@ -9,13 +9,13 @@
  * inside a set aspect ratio container.
  */
 .media {
-    @include position(relative);
     width: 100%;
     height: auto;
     overflow: hidden;
+    position: relative;
 
     %media-elements {
-        @include position(full);
+        @include absolute(full);
         // necessary for `iframe`
         height: 100%;
         margin-bottom: 0;

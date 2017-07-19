@@ -159,6 +159,12 @@ $border-radius-thin:     0.250rem !default;
 /// @type Length
 /// @see {Mixin} border-radius
 $border-radius-hairline: 0.125rem !default;
+/// @type Map
+$border-radii: (
+    "default":  $border-radius-default,
+    "thin":     $border-radius-thin,
+    "hairline": $border-radius-hairline
+) !default;
 
 
 /// @type Number
@@ -277,7 +283,7 @@ $letter-spacing-uppercase: 1px !default;
 
 
 /// @type Length
-$animation-time: 2s !default;
+$animation-duration: 2s !default;
 /// @type String
 $animation-function: linear !default;
 
@@ -288,10 +294,10 @@ $rotation-default: 5deg !default;
 
 /// @type Length
 /// @see {Mixin} transition
-$transition-time: 0.200s !default;
+$transition-duration: 0.200s !default;
 /// @type Length
 /// @see {Mixin} transition
-$transition-time-long: 1.000s !default;
+$transition-duration-long: 1.000s !default;
 /// @type String
 /// @see {Mixin} transition
 $transition-function: ease !default;
@@ -318,7 +324,7 @@ $z-indexes: (
 $aspect-ratios: (
     (16, 9): 56.25%,
     (4, 3):  75.00%
-);
+) !default;
 
 
 /// @type Map

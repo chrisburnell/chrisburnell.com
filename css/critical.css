@@ -32,14 +32,14 @@
 }
 
 html {
-    position: relative;
     min-height: 100%;
+    position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 *,
@@ -82,9 +82,9 @@ h3,
 h4,
 h5,
 h6 {
-    position: relative;
     padding: 0;
     margin: 0;
+    position: relative;
     font-weight: 400;
 }
 
@@ -313,8 +313,8 @@ dl:not([class]) +
 ol:not([class]) li,
 ul:not([class]) li,
 .default-list li {
-    position: relative;
     padding-left: 2.25rem;
+    position: relative;
 }
 
 ol:not([class]) li:not(:last-child),
@@ -596,8 +596,8 @@ td {
 .highlight--columns td::after,
 .highlight--columns tfoot th:not(:empty)::after {
     position: absolute;
-    top: 50%;
     left: 0;
+    top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     -webkit-transition: opacity 0.2s ease 0s;
@@ -800,8 +800,8 @@ blockquote p:not(:last-of-type)::after {
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -957,7 +957,6 @@ sup {
 }
 
 a {
-    position: relative;
     -webkit-transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
     will-change: background, color, border-color;
@@ -966,6 +965,7 @@ a {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #dddddd;
+    position: relative;
     text-decoration: none;
     -webkit-text-decoration-skip: objects;
 }
@@ -1000,8 +1000,8 @@ a span:not([class]):not([itemprop]) {
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -1041,11 +1041,11 @@ a span:not([class]):not([itemprop]) {
     visibility: hidden;
     margin-left: 1.25rem;
     border-bottom-width: 1px;
+    vertical-align: middle;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.25;
     text-shadow: none;
-    vertical-align: middle;
 }
 
 .fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
@@ -1123,8 +1123,8 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 @supports (display: grid) {
@@ -1316,8 +1316,8 @@ h6[id]:target,
     height: 1px !important;
     padding: 0 !important;
     border: 0 !important;
-    position: absolute !important;
     overflow: hidden !important;
+    position: absolute !important;
     white-space: nowrap !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
@@ -1349,10 +1349,10 @@ h6[id]:target,
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     height: 6.25rem;
-    display: inline-block;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 15.875rem;
             flex: 1 0 15.875rem;
+    display: inline-block;
     position: relative;
     border-bottom-width: 0;
 }
@@ -1523,8 +1523,8 @@ h6[id]:target,
  */
 .meta {
     padding-bottom: 1.25rem;
-    font-style: italic;
     overflow: hidden;
+    font-style: italic;
 }
 
 aside + .meta {

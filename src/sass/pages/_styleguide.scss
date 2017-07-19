@@ -21,12 +21,12 @@
 
     li {
         padding: $measure-medium 0;
-        font-size: $font-size-small;
-        text-align: center;
-        white-space: nowrap;
         vertical-align: middle;
+        font-size: $font-size-small;
         font-variant-numeric: tabular-nums;
         font-feature-settings: "tnum";
+        text-align: center;
+        white-space: nowrap;
 
         @include media("<=small") {
             flex: 1 0 100%;
@@ -80,8 +80,8 @@
     }
 
     &::before {
-        @include border-radius($border-radius-hairline);
-        @include position(full);
+        @include border-radius(hairline);
+        @include absolute(full);
         content: "";
         background-color: $color-kaiser;
     }

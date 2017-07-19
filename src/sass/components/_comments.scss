@@ -38,8 +38,7 @@
     &:active {
         &::before {
             // override default `.button:active::before` behaviour
-            @include position(relative);
-            top: 0;
+            @include absolute(none);
         }
     }
 }

@@ -11,10 +11,10 @@ code[data-lang] {
     padding-top: $measure-large;
 
     &::before {
+        @include absolute(top-full);
         @include border-radius(top);
         @include case(uppercase, $letter-spacing-uppercase);
         @include font-family(default);
-        @include position(top);
         @include transition;
         content: attr(data-lang);
         background-color: $color-dove;
@@ -42,11 +42,11 @@ code[data-lang] {
  * Code Block Visibility Toggling
  */
 .code-toggle {
-    @include position(relative);
+    position: relative;
 }
 
 .code-toggle-label {
-    @include position(full);
+    @include absolute(full);
     cursor: pointer;
 
     .code-toggle-input:checked ~ & {
@@ -55,7 +55,7 @@ code[data-lang] {
     }
 
     button {
-        @include position(center);
+        @include absolute(center);
         pointer-events: none;
     }
 }
@@ -74,7 +74,7 @@ code[data-lang] {
         overflow-x: hidden;
 
         &::after {
-            @include position(full);
+            @include absolute(full);
             @include border-radius(bottom);
             content: "";
             background-image: scrim-gradient(to bottom, $transparent, rgba($color-black, 0.8));

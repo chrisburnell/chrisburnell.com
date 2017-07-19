@@ -7,14 +7,14 @@
 .logo {
     @include non-selectable;
     height: $avatar-size;
-    display: inline-block;
     flex: 1 0 $aside-width;
+    display: inline-block;
     position: relative;
     border-bottom-width: 0;
 
     svg {
-        @include position(top-center);
-        @include transition(transform $transition-time-long);
+        @include absolute(top);
+        @include transition(transform $transition-duration-long);
         @include will-change(transform);
         fill: $color-raven;
         width:  $logo-size;
@@ -33,7 +33,7 @@
         background-color: $transparent;
 
         svg {
-            transition-duration: $transition-time;
+            transition-duration: $transition-duration;
             transform: translateX(-30%) translateY(-25%);
         }
     }

@@ -20,6 +20,35 @@
 
 
 ///
+/// Test if `$value` is a valid corner or side
+///
+/// @param {*} $value - Value to test
+///
+/// @return {Bool}
+///
+@function is-edge($value) {
+    $is-side: index((top, right, bottom, left), $value);
+    $is-corner: index((top-left, top-right, bottom-right, bottom-left), $value);
+
+    @return $is-side or $is-corner;
+}
+
+
+///
+/// Test if `$value` is a valid length
+///
+/// @param {*} $value - Value to test
+///
+/// @return {Bool}
+///
+@function is-length($value) {
+    $is-length: type-of($value) == 'number' and index('px' 'em' 'rem' '%' 'vw' 'vh' 'vmin' 'vmax', unit($value));
+
+    @return $is-length;
+}
+
+
+///
 /// Contrasting Text Color
 ///
 /// @param {Color} $background-color - Background-color to contrast against
@@ -42,7 +71,7 @@
         @return false;
     }
 
-    @if lightness($background-color) > 65 {
+    @if lightness($background-color) > 50 {
         @return $text-color-dark;
     }
 
@@ -74,7 +103,7 @@
         @return false;
     }
 
-    @if is-direction($direction) == false {
+    @if not is-direction($direction) {
         $color-stops: $direction, $color-stops;
         $direction: "to bottom";
     }
@@ -100,7 +129,7 @@
         @return false;
     }
 
-    @if is-direction($direction) == false {
+    @if not is-direction($direction) {
         $color-stops: $direction, $color-stops;
         $direction: "to bottom";
     }
@@ -128,7 +157,7 @@
 ///
 /// Define Opacity
 ///
-/// @param {String} $value - Label for the target opacity
+/// @param {String} $opacity - Label for the target opacity
 ///
 /// @require {Variable} $opacities
 ///
@@ -139,28 +168,28 @@
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $opacities.
 ///
-/// @return {Number} Opacity value
+/// @return {Number} Opacity
 ///
-@function opacity($value) {
-    @if not $value {
+@function opacity($opacity) {
+    @if not $opacity {
         @warn "opacity() expects one parameter.";
         @return false;
     }
 
-    @if not map-has-key($opacities, $value) {
-        @warn "There is no value named `#{$value}` in `$opacities`. Value should be one of `#{map-keys($opacities)}`.";
+    @if not map-has-key($opacities, $opacity) {
+        @warn "There is no value named `#{$opacity}` in `$opacities`. Value should be one of `#{map-keys($opacities)}`.";
         @return false;
     }
 
-    @return map-get($opacities, $value);
+    @return map-get($opacities, $opacity);
 }
 
 
 ///
-/// Re-map a number from one range to another
+/// Remap a number from one range to another
 ///
-/// @param {Number} $value - Initial Value
-/// @param {Number} $ranges - 2-4 minimum/maximum values representing the ranges
+/// @param {Number} $number - Initial Value
+/// @param {Number} $ranges - 2/4 minimum/maximum values representing the ranges
 ///
 /// @example scss
 ///   $variable: range-map(2, 4, 100);
@@ -172,9 +201,9 @@
 ///
 /// @return {Number} Number re-mapped in new range
 ///
-@function range-map($value, $ranges...) {
-    @if not $value or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
-        @warn "`range-map()` requires three or five parameters: initial value, (old minimum), old maximum, (new minimum), and new maximum.";
+@function range-map($number, $ranges...) {
+    @if not $number or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
+        @warn "`range-map()` requires three or five parameters: initial number, (old minimum), old maximum, (new minimum), and new maximum.";
         @return false;
     }
 
@@ -183,14 +212,14 @@
     $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
     $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
-    @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
+    @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 
 
 ///
 /// Strip Units from a Number
 ///
-/// @param {Number} $value - Number with units
+/// @param {Number} $number - Number with units
 ///
 /// @example scss
 ///   line-height: strip-units(2em);
@@ -198,18 +227,18 @@
 ///
 /// @return {Number} Number without units
 ///
-@function strip-units($value) {
-    @if not $value {
+@function strip-units($number) {
+    @if not $number {
         @warn "strip-units() expects at least one parameter.";
         @return false;
     }
 
-    @return $value / ($value * 0 + 1);
+    @return $number / ($number * 0 + 1);
 }
 
 
 ///
-/// Unique Pairs
+/// Unique Groups
 ///
 /// @param {List|Map} $data - Data in List/Map format
 ///
@@ -218,9 +247,9 @@
 ///     alpha,
 ///     beta,
 ///     gamma;
-///   @each $list-item in unique-pairs($list) {
-///     @each $list-item-key, $list-item-value in $list-item {
-///       .from-#{$list-item-key}-to-#{$list-item-value} {
+///   @each $unique-group in unique-groups($list) {
+///     @each $item in $unique-group {
+///       .from-#{nth($item, 1)}-to-#{nth($item, 2)} {
 ///         color: initial;
 ///       }
 ///     }
@@ -238,49 +267,85 @@
 /// @throw Error if no parameter is passed.
 /// @throw Error if parameter passed is neither a List nor a Map.
 ///
-/// @return {Map} Unique pairs
+/// @return {Map} Unique groups
 ///
-@function unique-pairs($data) {
+@function unique-groups($data, $size: 2) {
     @if not $data or not (type-of($data) == list or type-of($data) == map) {
-        @warn "unique-pairs() expects either a single List or single Map of data.";
+        @warn "unique-groups() expects either a single List or single Map of data.";
         @return false;
     }
 
-    $unique-pairs: ();
-    $seen: ();
+    $unique-groups: ();
 
     @if type-of($data) == list {
+        $seen-first: ();
         @each $first in $data {
-            $seen: append($seen, $first);
+            $seen-first: append($seen-first, $first);
+            $seen-second: ();
             @each $second in $data {
-                @if $first != $second and not index($seen, $second) {
-                    $unique-pair: ($first: $second);
-                    $unique-pairs: append($unique-pairs, $unique-pair);
+                $seen-second: append($seen-second, $second);
+                @if $first != $second and not index($seen-first, $second) {
+                    @if $size >= 3 {
+                        @each $third in $data {
+                            @if $second != $third and not index($seen-second, $third) {
+                                $unique-group: (
+                                    $first,
+                                    $second,
+                                    $third
+                                );
+                                $unique-groups: append($unique-groups, $unique-group);
+                            }
+                        }
+                    }
+                    @else {
+                        $unique-group: (
+                            $first,
+                            $second
+                        );
+                        $unique-groups: append($unique-groups, $unique-group);
+                    }
                 }
             }
         }
     }
-
     @else if type-of($data) == map {
+        $seen-first: ();
         @each $first-key, $first-value in $data {
-            $seen: append($seen, $first-key);
+            $seen-first: append($seen-first, $first-key);
+            $seen-second: ();
             @each $second-key, $second-value in $data {
+                $seen-second: append($seen-second, $second-key);
                 @if $first-key != $second-key and not index($seen, $second-key) {
-                    $unique-pair: (
-                        ($first-key: $first-value): ($second-key: $second-value)
-                    );
-                    $unique-pairs: append($unique-pairs, $unique-pair);
+                    @if $size >= 3 {
+                        @each $third-key, $third-value in $data {
+                            @if $second-key != $third-key and not index($seen-second, $third-key) {
+                                $unique-group: (
+                                    ($first-key: $first-value),
+                                    ($second-key: $second-value),
+                                    ($third-key: $third-value)
+                                );
+                                $unique-groups: append($unique-groups, $unique-group);
+                            }
+                        }
+                    }
+                    @else {
+                        $unique-group: (
+                            ($first-key: $first-value),
+                            ($second-key: $second-value)
+                        );
+                        $unique-groups: append($unique-groups, $unique-group);
+                    }
                 }
             }
         }
     }
 
     @else {
-        @warn "unique-pairs() expects either a List or Map.";
+        @warn "unique-groups() expects either a List or Map.";
         @return false;
     }
 
-    @return $unique-pairs;
+    @return $unique-groups;
 }
 
 
@@ -297,7 +362,7 @@
 ///
 @function unpack-transition($list) {
     $property: nth($list, 1);
-    $time: if(length($list) > 1, nth($list, 2), $transition-time);
+    $time: if(length($list) > 1, nth($list, 2), $transition-duration);
     $function: if(length($list) > 2, nth($list, 3), $transition-function);
     $delay: if(length($list) > 3, nth($list, 4), 0s);
 
@@ -320,7 +385,7 @@
 ///
 @function walk($list, $function, $args...) {
     @if not function-exists($function) {
-        @warn "There is no `#{$function}` function.";
+        @warn "There is no function named `#{$function}`.";
         @return false;
     }
 
@@ -335,7 +400,7 @@
 ///
 /// Simplify z-index.
 ///
-/// @param {String} $value - Generic level
+/// @param {String} $z-index - Generic level
 ///
 /// @require {Variable} $z-indexes
 ///

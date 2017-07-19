@@ -14,8 +14,8 @@
         height: 0.8em;
         display: inline-block;
         margin-right: 0.25em;
-        pointer-events: none;
         vertical-align: middle;
+        pointer-events: none;
     }
 
     // Used on the Style Guide page
@@ -41,7 +41,8 @@
             %button-elements & {
                 fill: $icon-color;
             }
-        } @else {
+        }
+        @else {
             fill: $icon-color;
         }
     }

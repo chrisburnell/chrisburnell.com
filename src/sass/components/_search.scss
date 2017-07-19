@@ -17,13 +17,13 @@
 }
 
 .search-form {
-    @include position(relative);
+    position: relative;
     display: flex;
 }
 
 .search-input {
     min-width: 1px;
-    flex: 1;
+    flex: 1 1 0;
     font-size: $font-size-small;
 }
 

@@ -9,10 +9,13 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $value [$border-radius-default] - Type of Border Radius
+/// @param {String} $thickness - Thickness of Border Radius
+/// @param {String} $border-radius - Type of Border Radius
 ///
 /// @require {Variable} $border-radius-default
 /// @require {Variable} $border-radius-thin
+/// @require {Variable} $border-radius-hairline
+/// @require {Map} $border-radii
 ///
 /// @example scss - Zero parameters
 ///   @include radius;
@@ -22,37 +25,32 @@
 ///   @include radius(1em);
 ///   // border-radius: 1em;
 ///
-@mixin border-radius($value: $border-radius-default) {
-    @if $value == "top" {
-        $value: $border-radius-default $border-radius-default 0 0;
+@mixin border-radius($thickness: default, $border-radius: null) {
+    @if not is-length($thickness) {
+        @if map-has-key($border-radii, $thickness) {
+            $thickness: map-get($border-radii, $thickness);
+        }
+        @else {
+            $border-radius: $thickness;
+            $thickness: $border-radius-default;
+            // @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
+        }
     }
-    @else if $value == "bottom" {
-        $value: 0 0 $border-radius-default $border-radius-default;
+
+    @if is-edge($border-radius) {
+        $top-left: if($border-radius == "top" or $border-radius == "left" or $border-radius == "top-left", $thickness, 0);
+        $top-right: if($border-radius == "top" or $border-radius == "right" or $border-radius == "top-right", $thickness, 0);
+        $bottom-right: if($border-radius == "bottom" or $border-radius == "right" or $border-radius == "bottom-right", $thickness, 0);
+        $bottom-left: if($border-radius == "bottom" or $border-radius == "left" or $border-radius == "bottom-left", $thickness, 0);
+
+        $border-radius: $top-left $top-right $bottom-right $bottom-left;
     }
-    @else if $value == "left" {
-        $value: $border-radius-default 0 0 $border-radius-default;
-    }
-    @else if $value == "right" {
-        $value: 0 $border-radius-default $border-radius-default 0;
-    }
-    @else if $value == "top-left" {
-        $value: $border-radius-default 0 0 0;
-    }
-    @else if $value == "top-right" {
-        $value: 0 $border-radius-default 0 0;
-    }
-    @else if $value == "bottom-left" {
-        $value: 0 0 0 $border-radius-default;
-    }
-    @else if $value == "bottom-right" {
-        $value: 0 0 $border-radius-default 0;
-    }
-    @else if $value == "thin" {
-        $value: $border-radius-thin;
+    @else {
+        $border-radius: $thickness;
     }
 
     background-clip: padding-box;
-    border-radius: $value;
+    border-radius: $border-radius;
 }
 
 
@@ -70,7 +68,7 @@
 ///   // letter-spacing: 1px;
 ///
 @mixin case($case, $letter-spacing: null) {
-    @if length($case) == 0 {
+    @if not $case {
         @error "case() expects at least one parameter.";
     }
 
@@ -78,10 +76,9 @@
 
     @if $letter-spacing != null {
         letter-spacing: $letter-spacing;
-    } @else {
-        @if $case == "uppercase" {
-            letter-spacing: $letter-spacing-uppercase;
-        }
+    }
+    @else if $case == "uppercase" {
+        letter-spacing: $letter-spacing-uppercase;
     }
 }
 
@@ -197,74 +194,152 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $value - Position of the element
-///
-/// @require {Variable} $measure-large
+/// @param {String} $position - Position of the element
+/// @param {String} $offset [0] - How much to offset from the position
 ///
 /// @example scss
-///   @include position(bottom);
+///   @include absolute(bottom-left);
 ///   // position: absolute;
 ///   // bottom: 0;
-///   // left:   0;
-///   // right:  0;
+///   // left: 0;
+///
+/// @example scss
+///   @include absolute(right, 1em);
+///   // position: absolute;
+///   // right: 1em;
+///   // top: 50%;
+///   // transform: translateY(-50%);
+///
+/// @example scss
+///   @include absolute(top-full);
+///   // position: absolute;
+///   // top: 0;
+///   // right: 0;
+///   // left: 0;
+///
+/// @example scss
+///   @include absolute(top-full, 1em);
+///   // position: absolute;
+///   // top: 1em;
+///   // right: 0;
+///   // left: 0;
+///
+/// @example scss
+///   @include absolute(top-full-offset, 1em);
+///   // position: absolute;
+///   // top: 1em;
+///   // right: 1em;
+///   // left: 1em;
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin position($value) {
-    @if not $value {
-        @error "position() expects one parameter.";
-    }
+@mixin absolute($position, $offset: 0) {
 
-    @if $value == "top" {
-        position: absolute;
-        top:   0;
-        left:  0;
-        right: 0;
+    @if not $position {
+        @error "absolute() expects one parameter.";
     }
-    @else if $value == "top-left" {
-        position: absolute;
-        top:  0;
-        left: 0;
+    @else if $position == none {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
     }
-    @else if $value == "bottom" {
-        position: absolute;
-        bottom: 0;
-        left:   0;
-        right:  0;
-    }
-    @else if $value == "left" {
+    @else if $position == center {
         position: absolute;
         top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-    }
-    @else if $value == "center" {
-        position: absolute;
-        top:  50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
-    @else if $value == "top-center" {
+    @else if str-index(#{$position}, "full") {
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+
+        @if str-index(#{$position}, "top") {
+            top: $offset;
+
+            @if str-index(#{$position}, "offset") {
+                right: $offset;
+                left: $offset;
+            }
+            @else {
+                right: 0;
+                left: 0;
+            }
+        }
+        @else if str-index(#{$position}, "right") {
+            right: $offset;
+
+            @if str-index(#{$position}, "offset") {
+                top: $offset;
+                bottom: $offset;
+            }
+            @else {
+                top: 0;
+                bottom: 0;
+            }
+        }
+        @else if str-index(#{$position}, "bottom") {
+            bottom: $offset;
+
+            @if str-index(#{$position}, "offset") {
+                right: $offset;
+                left: $offset;
+            }
+            @else {
+                right: 0;
+                left: 0;
+            }
+        }
+        @else if str-index(#{$position}, "left") {
+            left: $offset;
+
+            @if str-index(#{$position}, "offset") {
+                top: $offset;
+                bottom: $offset;
+            }
+            @else {
+                top: 0;
+                bottom: 0;
+            }
+        }
+        @else {
+            top: $offset;
+            right: $offset;
+            bottom: $offset;
+            left: $offset;
+        }
     }
-    @else if $value == "full" {
+    @else if is-edge($position) {
         position: absolute;
-        top:    0;
-        bottom: 0;
-        left:   0;
-        right:  0;
-    }
-    @if $value == "relative" or $value == "none" or $value == "reset" {
-        position: relative;
-    }
-    @else if $value == "none" or $value == "reset" {
-        top:    auto;
-        left:   auto;
-        right:  auto;
-        bottom: auto;
+
+        @if str-index(#{$position}, "top") {
+            top: $offset;
+            @if not str-index(#{$position}, "-") {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @if str-index(#{$position}, "right") {
+            right: $offset;
+            @if not str-index(#{$position}, "-") {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        @if str-index(#{$position}, "bottom") {
+            bottom: $offset;
+            @if not str-index(#{$position}, "-") {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @if str-index(#{$position}, "left") {
+            left: $offset;
+            @if not str-index(#{$position}, "-") {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
 
@@ -306,7 +381,7 @@
 ///
 /// @param {String} $values - Values
 ///
-/// @require {Variable} $transition-time
+/// @require {Variable} $transition-duration
 /// @require {Variable} $transition-function
 ///
 /// @example scss - Zero parameters
@@ -333,41 +408,28 @@
 ///   @include transition(color 2s ease-in-out, border 1s linear);
 ///   // transition: color 2s ease-in-out, border 1s linear;
 ///
-@mixin transition($values...) {
+@mixin transition($transitions...) {
     $transition: ();
 
-    // if no parameter, transition all with default time and function
-    @if length($values) == 0 {
-        $transition: all #{$transition-time} #{$transition-function};
-    } @else if $values == none {
-        // if parameter just set to "none" then just transition nothing (none)
+    // if no parameter, transition all with default duration and function
+    @if length($transitions) == 0 {
+        $transition: all #{$transition-duration} #{$transition-function};
+    }
+    // if parameter just set to `none` then just transition nothing
+    @else if $transitions == none {
         $transition: none;
-    } @else if str-index(#{$values}, ",") {
-        // if the parameter contains a comma then operating on multiple properties
-        @each $value in $values {
-            $transition: append($transition, unpack-transition($value), comma);
+    }
+    // if the parameter contains a comma then operating on multiple properties
+    @else if str-index(#{$transitions}, ",") {
+        @each $transition-segment in $transitions {
+            $transition: append($transition, unpack-transition($transition-segment), comma);
         }
-    } @else {
-        $transition: unpack-transition($values...);
+    }
+    @else {
+        $transition: unpack-transition($transitions...);
     }
 
     transition: $transition;
-}
-
-
-///
-/// Visually hide an element properly.
-///
-@mixin visually-hidden() {
-    width:  1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    position: absolute !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    clip-path: inset(50%) !important;
 }
 
 
@@ -388,10 +450,26 @@
 ///
 /// @throw Error if no parameters are passed.
 ///
-@mixin will-change($values...) {
-    @if length($values) == 0 {
+@mixin will-change($changes...) {
+    @if length($changes) == 0 {
         @error "will-change() expects at least one parameter.";
     }
 
-    will-change: $values;
+    will-change: $changes;
+}
+
+
+///
+/// Visually hide an element properly.
+///
+@mixin visually-hidden() {
+    width:  1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
 }

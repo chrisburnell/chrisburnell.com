@@ -22,7 +22,7 @@
 .endnote-anchor {
     &[id] {
         &:target {
-            animation: anchor-target $animation-time $animation-function;
+            animation: anchor-target $animation-duration $animation-function;
         }
     }
 }

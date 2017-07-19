@@ -11,7 +11,6 @@ button,
     @include border-radius(thin);
     @include case(uppercase, $letter-spacing-uppercase);
     @include font-family(alpha);
-    @include position(relative);
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     background-color: $color-raven;
@@ -22,13 +21,14 @@ button,
     padding: 0 0.727em 0.182em;
     border-width: 0;
     margin-top: 0.25rem;
+    box-shadow: inset 0 -0.182em 0 0 $color-bowhead;
     overflow: visible;
+    position: relative;
     font-size: $font-size-beta;
     line-height: 2;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    box-shadow: inset 0 -0.182em 0 0 $color-bowhead;
     appearance: none;
 
 
@@ -54,8 +54,7 @@ button,
 
     &::before,
     &::after {
-        @include position(top);
-        @include will-change(top);
+        @include absolute(top-full);
         content: "";
         height: 0.182em;
     }
@@ -70,7 +69,7 @@ button,
     &[rel*="external"] {
         &::after {
             @include font-family(monospace);
-            @include position(reset);
+            @include absolute(none);
             @include will-change(initial);
             // NO-BREAK SPACE, RIGHTWARDS ARROW
             content: " →";
@@ -97,7 +96,7 @@ button {
     }
 
     &::-moz-focusring {
-        outline: 1px dotted ButtonText;
+        outline: $border-width-hairline dotted ButtonText;
     }
 }
 

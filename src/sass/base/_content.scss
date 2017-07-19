@@ -40,9 +40,9 @@ h4,
 h5,
 h6 {
     @extend %heading-elements !optional;
-    @include position(relative);
     padding: 0;
     margin: 0;
+    position: relative;
     font-weight: $font-weight-default;
 
     // For special Monospace titles
@@ -213,15 +213,15 @@ ol:not([class]),
 ul:not([class]),
 .default-list {
     li {
-        @include position(relative);
         padding-left: $measure-large;
+        position: relative;
 
         &:not(:last-child) {
             margin-bottom: $measure-small;
         }
 
         &::before {
-            @include position(top-left);
+            @include absolute(top-left);
             font-weight: $font-weight-bold;
         }
     }
@@ -314,7 +314,7 @@ img {
     border-style: none;
 
     &::before {
-        @include position(top-left);
+        @include absolute(top-left);
         content: "";
         background-color: $color-alto;
         width:  100%;
@@ -323,7 +323,7 @@ img {
     }
 
     &::after {
-        @include position(center);
+        @include absolute(center);
         // Only visible when the Image fails to load
         content: "Broken Image: " attr(src);
         color: $color-lastfm;
@@ -426,10 +426,10 @@ td {
 /*table*/.highlight--columns thead th:not(:empty),
 /*table*/.highlight--columns td,
 /*table*/.highlight--columns tfoot th:not(:empty) {
-    @include position(relative);
+    position: relative;
 
     &::after {
-        @include position(left);
+        @include absolute(left);
         @include transition(opacity);
         content: "";
         opacity: 0;
