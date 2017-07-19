@@ -18,7 +18,9 @@
             var codeToggleLabel = _step.value;
 
             codeToggleLabel.addEventListener('click', function (event) {
-                toggleCode(event.target);
+                event.preventDefault();
+                var codeToggleIDArray = event.target.getAttribute('id').split('--');
+                toggleCode(codeToggleIDArray[1]);
             });
         }
     } catch (err) {
@@ -36,17 +38,19 @@
         }
     }
 
-    function toggleCode(codeToggleLabel) {
-        var codeToggle = codeToggleLabel.parentNode;
-        var codeToggleButton = codeToggleLabel.querySelector('button');
-        var codeToggleHash = '#' + codeToggleLabel.querySelector('button').getAttribute('aria-controls');
+    function toggleCode(codeToggleID) {
+        var codeToggle = document.querySelector('#code-toggle--' + codeToggleID);
+        var codeToggleInput = codeToggle.querySelector('#code-toggle-input--' + codeToggleID);
+        var codeToggleLabel = codeToggle.querySelector('#code-toggle-label--' + codeToggleID);
+        var codeToggleButton = codeToggleLabel.querySelector('#code-toggle-button--' + codeToggleID);
 
+        codeToggleInput.checked = true;
         codeToggle.setAttribute('aria-expanded', 'true');
         codeToggleLabel.setAttribute('aria-hidden', 'true');
         codeToggleLabel.removeEventListener('click', function () {});
         codeToggleButton.setAttribute('aria-pressed', 'true');
 
-        window.location.hash = codeToggleHash;
+        window.location.hash = '#code-toggle--' + codeToggleID;
     }
 })();
 /*!
