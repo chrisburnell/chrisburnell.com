@@ -316,7 +316,7 @@
             $seen-second: ();
             @each $second-key, $second-value in $data {
                 $seen-second: append($seen-second, $second-key);
-                @if $first-key != $second-key and not index($seen, $second-key) {
+                @if $first-key != $second-key and not index($seen-first, $second-key) {
                     @if $size >= 3 {
                         @each $third-key, $third-value in $data {
                             @if $second-key != $third-key and not index($seen-second, $third-key) {
