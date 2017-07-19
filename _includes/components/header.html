@@ -62,13 +62,20 @@ snippet of code on a project of your own!  -->
         <link rel="prefetch" href="{{ url }}">
     {% endif %}
 
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="All Posts RSS" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Articles RSS" href="/feed-articles.xml">
+    <link rel="alternate" type="application/rss+xml" title="Links RSS" href="/feed-links.xml">
+    <link rel="alternate" type="application/rss+xml" title="Pens RSS" href="/feed-pens.xml">
+    <link rel="alternate" type="application/rss+xml" title="Talks RSS" href="/feed-talks.xml">
+    <link rel="pingback" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
+    <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
 
     <link rel="mask-icon" href="{{ '/favicon.svg' | prepend: site.baseurl | prepend: site.url }}" color="#{{ site.color }}">
 
     <link rel="author" href="/humans.txt">
     <link rel="manifest" href="/manifest.json">
 
+    <meta name="author" content="{{ site.author.name }}">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="{{ site.title }}">
