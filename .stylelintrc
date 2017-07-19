@@ -42,7 +42,7 @@
 
         "block-opening-brace-newline-after": "always",
 
-        "selector-no-id": true,
+        "selector-max-id": 0,
 
         "comment-no-empty": true,
 
