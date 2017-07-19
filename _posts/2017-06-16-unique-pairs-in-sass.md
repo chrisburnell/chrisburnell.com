@@ -87,8 +87,10 @@ We can actually determine how many unique pairs there will be with a simple math
 So in our case, in which we have <var>4</var> breakpoints:
 
 <figure>
-    <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;2 = 6</samp>
+    <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;2 = <var>6</var></samp>
 </figure>
+
+We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
 
 
 {% include content/heading.html title='Here’s the function!' %}
@@ -110,7 +112,7 @@ Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits 
             $seen: append($seen, $first);
             @each $second in $data {
                 @if $first != $second and not index($seen, $second) {
-                    $unique-pair: ($first: $second);
+                    $unique-pair: ($first, $second);
                     $unique-pairs: append($unique-pairs, $unique-pair);
                 }
             }
@@ -123,7 +125,7 @@ Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits 
             @each $second-key, $second-value in $data {
                 @if $first-key != $second-key and not index($seen, $second-key) {
                     $unique-pair: (
-                        ($first-key: $first-value): ($second-key: $second-value)
+                        ($first-key: $first-value), ($second-key: $second-value)
                     );
                     $unique-pairs: append($unique-pairs, $unique-pair);
                 }
@@ -176,7 +178,7 @@ Next, we’ll perform some operations in the case where the dataset is a *List*:
         $seen: append($seen, $first);
         @each $second in $data {
             @if $first != $second and not index($seen, $second) {
-                $unique-pair: ($first: $second);
+                $unique-pair: ($first, $second);
                 $unique-pairs: append($unique-pairs, $unique-pair);
             }
         }
@@ -195,7 +197,7 @@ Next, we’ll do the same, but for a *Map* of data:
         @each $second-key, $second-value in $data {
             @if $first-key != $second-key and not index($seen, $second-key) {
                 $unique-pair: (
-                    ($first-key: $first-value): ($second-key: $second-value)
+                    ($first-key: $first-value), ($second-key: $second-value)
                 );
                 $unique-pairs: append($unique-pairs, $unique-pair);
             }
@@ -217,11 +219,11 @@ $list:
     "medium",
     "large";
 
-@each $list-item in unique-pairs($list) {
-    @each $list-item-key, $list-item-value in $list-item {
-        .from-#{$list-item-key}-to-#{$list-item-value} {
-            display: none;
-        }
+@each $unique-pair in unique-pairs($list) {
+    $unique-pair-first:  nth($unique-pair, 1);
+    $unique-pair-second: nth($unique-pair, 2);
+    .from-#{$unique-pair-first}-to-#{$unique-pair-second} {
+        display: none;
     }
 }
 {% endhighlight %}
@@ -253,14 +255,14 @@ $map: (
     "gigantic": 1250px
 );
 
-@each $map-item in unique-pairs($map) {
-    @each $map-first, $map-second in $map-item {
-        @each $map-first-key, $map-first-value in $map-first {
-            @each $map-second-key, $map-second-value in $map-second {
-                .from-#{$map-first-key}-to-#{$map-second-key} {
-                    @media (min-width: #{$map-first-value}) and (max-width: #{$map-second-value}) {
-                        display: none;
-                    }
+@each $unique-pair in unique-pairs($map) {
+    $map-first:  nth($unique-pair, 1);
+    $map-second: nth($unique-pair, 2);
+    @each $map-first-key, $map-first-value in $map-first {
+        @each $map-second-key, $map-second-value in $map-second {
+            .from-#{$map-first-key}-to-#{$map-second-key} {
+                @media (min-width: #{$map-first-value}) and (max-width: #{$map-second-value}) {
+                    display: none;
                 }
             }
         }
