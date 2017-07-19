@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* stylelint-disable max-nesting-depth */
-/* stylelint-enable */
+/* stylelint-enable max-nesting-depth */
 @font-face {
     font-family: "League Gothic";
     font-style: normal;
