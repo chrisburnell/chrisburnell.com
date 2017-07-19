@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.7.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -18,3 +18,6 @@ patch:
   'npm:uglify-js:20151024':
     - sassdoc > sassdoc-theme-default > swig > uglify-js:
         patched: '2017-04-19T13:05:45.614Z'
+  'npm:ms:20170412':
+    - gulp-sourcemaps > debug-fabulous > debug > ms:
+        patched: '2017-07-18T22:44:14.438Z'
