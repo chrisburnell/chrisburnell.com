@@ -237,6 +237,7 @@
 }
 
 
+/* stylelint-disable max-nesting-depth */
 ///
 /// Unique Groups
 ///
@@ -347,6 +348,7 @@
 
     @return $unique-groups;
 }
+/* stylelint-enable */
 
 
 ///

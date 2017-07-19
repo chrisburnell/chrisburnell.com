@@ -21,9 +21,9 @@
 
 
     function toggleCode(codeToggleID) {
-        let codeToggle = document.querySelector(`#code-toggle--${codeToggleID}`);
-        let codeToggleInput = codeToggle.querySelector(`#code-toggle-input--${codeToggleID}`);
-        let codeToggleLabel = codeToggle.querySelector(`#code-toggle-label--${codeToggleID}`);
+        let codeToggle       = document.querySelector(`#code-toggle--${codeToggleID}`);
+        let codeToggleInput  = codeToggle.querySelector(`#code-toggle-input--${codeToggleID}`);
+        let codeToggleLabel  = codeToggle.querySelector(`#code-toggle-label--${codeToggleID}`);
         let codeToggleButton = codeToggleLabel.querySelector(`#code-toggle-button--${codeToggleID}`);
 
         codeToggleInput.checked = true;
