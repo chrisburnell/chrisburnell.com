@@ -80,8 +80,8 @@
     }
 
     &::before {
-        @include border-radius(hairline);
         @include absolute(full);
+        @include border-radius(hairline);
         content: "";
         background-color: $color-kaiser;
     }

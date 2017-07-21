@@ -680,7 +680,7 @@ th {
 }
 
 th:not(:empty) {
-    background-color: #dddddd;
+    background-color: rgba(6, 6, 6, 0.05);
 }
 
 thead th,
@@ -1573,18 +1573,18 @@ h6:active .fragment-anchor, .fragment-anchor:target {
 
 button,
 .button {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    -webkit-touch-callout: default;
-    -webkit-touch-callout: none;
     background-clip: padding-box;
     border-radius: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
     font-display: swap;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
     -webkit-transition: background-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s;
     will-change: background-color, height, padding-bottom, margin-bottom, box-shadow, transform;
@@ -1654,14 +1654,14 @@ button:active::before, button:active::after,
 
 button[rel*="external"]::after,
 .button[rel*="external"]::after {
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
     position: relative;
     top: auto;
     right: auto;
     bottom: auto;
     left: auto;
+    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
     will-change: initial;
     content: " →";
     width: auto;
@@ -2906,11 +2906,6 @@ footer div {
 }
 
 .footer-home-anchor {
-    -webkit-transition: -webkit-transform 0.2s ease 0s;
-    transition: -webkit-transform 0.2s ease 0s;
-    transition: transform 0.2s ease 0s;
-    transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
-    will-change: transform;
     width: 3.125rem;
     height: 3.125rem;
     margin-right: 0.625rem;
@@ -2922,14 +2917,14 @@ footer div {
 
 .footer-home-anchor:active {
     background-color: transparent;
-    -webkit-transform: translateY(0.2rem);
-            transform: translateY(0.2rem);
 }
 
 .footer-home-anchor .icon {
-    -webkit-transition: opacity 0.2s ease 0s;
-    transition: opacity 0.2s ease 0s;
-    will-change: opacity;
+    -webkit-transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    will-change: opacity, transform;
     opacity: 0.9;
     width: 100%;
     height: 100%;
@@ -2937,8 +2932,20 @@ footer div {
     fill: #5f8aa6;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+    .footer-home-anchor .icon {
+        -webkit-transition: none 0.2s ease 0s;
+        transition: none 0.2s ease 0s;
+    }
+}
+
 .footer-home-anchor:hover .icon, .footer-home-anchor:focus .icon, .footer-home-anchor:active .icon {
     opacity: 1;
+}
+
+.footer-home-anchor:active .icon {
+    -webkit-transform: translateY(0.125rem);
+            transform: translateY(0.125rem);
 }
 
 .footer-license-anchor,
@@ -2974,11 +2981,20 @@ footer div {
 }
 
 .nav-tertiary-list a .icon {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     will-change: opacity, transform;
     opacity: 0.7;
     height: 40px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .nav-tertiary-list a .icon {
+        -webkit-transition: none 0.2s ease 0s;
+        transition: none 0.2s ease 0s;
+    }
 }
 
 .nav-tertiary-list a:hover .icon, .nav-tertiary-list a:focus .icon, .nav-tertiary-list a:active .icon {
@@ -3458,13 +3474,13 @@ video {
 
 .transition-example--slide::before,
 .transition-example--fade::before {
-    background-clip: padding-box;
-    border-radius: 0.125rem;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    background-clip: padding-box;
+    border-radius: 0.125rem;
     content: "";
     background-color: #4f4f4f;
 }

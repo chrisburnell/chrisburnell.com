@@ -627,7 +627,7 @@ th {
 }
 
 th:not(:empty) {
-    background-color: #dddddd;
+    background-color: rgba(6, 6, 6, 0.05);
 }
 
 thead th,

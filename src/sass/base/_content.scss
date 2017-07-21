@@ -449,7 +449,7 @@ td {
 // Head and Foot Cells
 th {
     &:not(:empty) {
-        background-color: $color-alto;
+        background-color: $color-black--delta;
     }
 
     thead &,
