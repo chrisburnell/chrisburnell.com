@@ -19,7 +19,7 @@
     width: $article-width;
     margin-bottom: $measure-large;
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         width: $wrapper-width-small;
     }
 }
@@ -86,7 +86,7 @@
     @extend %gamma !optional;
     margin-bottom: $measure-large;
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         text-align: left;
     }
 

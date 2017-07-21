@@ -59,7 +59,8 @@ $media-expressions: (
   'half-hover': '(any-hover: on-demand)',
   'hover': '(any-hover: hover)',
   'coarse': '(any-pointer: coarse)',
-  'fine': '(any-pointer: fine)'
+  'fine': '(any-pointer: fine)',
+  'prefers-reduced-motion': '(prefers-reduced-motion: reduce)'
 ) !default;
 
 

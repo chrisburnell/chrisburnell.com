@@ -15,7 +15,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         flex-direction: column;
     }
 
@@ -28,15 +28,15 @@
         text-align: center;
         white-space: nowrap;
 
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             flex: 1 0 100%;
         }
 
-        @include media(">small", "<=large") {
+        @include media("screen", ">small", "<=large") {
             flex: 1 0 50%;
         }
 
-        @include media(">large") {
+        @include media("screen", ">large") {
             flex: 1 0 33.333%;
         }
 

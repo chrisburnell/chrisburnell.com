@@ -20,6 +20,10 @@
         width:  $logo-size;
         height: $logo-size;
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
+
+        @include media("screen", "prefers-reduced-motion") {
+            @include transition(none);
+        }
     }
 
     &:hover,

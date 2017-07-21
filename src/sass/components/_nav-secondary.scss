@@ -13,17 +13,17 @@
     display: flex;
     flex-wrap: wrap;
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         flex-direction: column;
     }
 
-    @include media(">small") {
+    @include media("screen", ">small") {
         flex-direction: row;
         justify-content: center;
     }
 
     %button-elements {
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             margin-left:  auto;
             margin-right: auto;
 
@@ -32,7 +32,7 @@
             }
         }
 
-        @include media(">small") {
+        @include media("screen", ">small") {
             margin-left:  $measure-small;
             margin-right: $measure-small;
         }

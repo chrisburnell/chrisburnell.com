@@ -18,7 +18,7 @@
     }
 
     li {
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             width: 100%;
             display: inline-block;
 
@@ -29,7 +29,7 @@
             }
         }
 
-        @include media(">small") {
+        @include media("screen", ">small") {
             width: #{($article-width - ($max-columns - 1)) / $max-columns / $article-width * 100%};
             display: flex;
             flex-direction: column;
@@ -39,7 +39,7 @@
         // Push all list items down (after the first two, in the two-column
         // format)
         &:nth-child(n+3) {
-            @include media(">small") {
+            @include media("screen", ">small") {
                 margin-top: $measure-medium;
             }
         }
@@ -116,7 +116,7 @@
     }
 
     .date {
-        @include media(">medium") {
+        @include media("screen", ">medium") {
             text-align: right;
         }
 
@@ -140,7 +140,7 @@
         transform: translateY(-50%);
         z-index: z-index(root);
 
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             width:  4em !important;
             height: 4em !important;
         }

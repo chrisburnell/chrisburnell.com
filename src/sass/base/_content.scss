@@ -63,7 +63,7 @@ h6 {
     // 4px 4px
     text-shadow: 0.250rem 0.250rem 0 $color-black--delta;
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         font-size: #{$font-size-alpha / 1.285}; // 56px
     }
 }
@@ -111,7 +111,7 @@ h3 {
         display: inline-block;
         padding-right: $measure-large;
 
-        @include media("<=medium") {
+        @include media("screen", "<=medium") {
             align-self: flex-start;
         }
     }
@@ -176,12 +176,12 @@ p {
 
     // Columnal Paragraphs
     &.columns {
-        @include media(">small", "<=medium") {
+        @include media("screen", ">small", "<=medium") {
             column-count: $max-columns;
             column-gap: $measure-medium;
         }
 
-        @include media(">large") {
+        @include media("screen", ">large") {
             column-count: $max-columns;
             column-gap: $measure-medium;
         }
@@ -263,7 +263,7 @@ dt {
     padding-right: $measure-medium;
     font-weight: $font-weight-bold;
 
-    @include media(">small") {
+    @include media("screen", ">small") {
         float: left;
     }
 }
@@ -278,7 +278,7 @@ dd {
         padding-bottom: $measure-medium;
     }
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         width: auto;
         display: block;
         padding-left: $measure-medium;
@@ -462,7 +462,7 @@ th {
         border-top: $border-width-thin $border-style-default $color-alto;
     }
     /*tfoot*/.totals & {
-        @include media(">medium") {
+        @include media("screen", ">medium") {
             text-align: right;
         }
 
@@ -471,7 +471,7 @@ th {
             padding-right: 0.5em;
             font-style: italic;
 
-            @include media(">small") {
+            @include media("screen", ">small") {
                 float: left;
             }
         }
@@ -586,7 +586,7 @@ blockquote {
         display: block;
         margin-top: $measure-medium;
 
-        @include media(">small") {
+        @include media("screen", ">small") {
             margin-left: $measure-large;
         }
 
@@ -630,7 +630,7 @@ hr {
     overflow: visible;
 
     %content-elements + & {
-        @include media("<=medium") {
+        @include media("screen", "<=medium") {
             margin-top: $measure-medium;
         }
     }

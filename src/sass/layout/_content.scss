@@ -12,13 +12,13 @@
 .content {
     padding-top: $measure-large;
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         // Below the medium breakpoint, `.content` and `aside` become full width.
         display: flex;
         flex-direction: column;
     }
 
-    @include media(">medium") {
+    @include media("screen", ">medium") {
         padding-left: #{$aside-width + $measure-large};
 
         // @supports (display: grid) {

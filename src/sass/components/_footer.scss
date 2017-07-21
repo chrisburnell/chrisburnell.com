@@ -14,7 +14,7 @@ footer {
         display: flex;
         justify-content: space-between;
 
-        @include media("<=medium") {
+        @include media("screen", "<=medium") {
             flex-direction: column;
         }
     }
@@ -24,7 +24,7 @@ footer {
 .nav-tertiary {
     overflow: hidden;
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         flex: 1 0 100%;
         text-align: center;
     }
@@ -38,8 +38,6 @@ footer {
 }
 
 .footer-home-anchor {
-    @include transition(transform);
-    @include will-change(transform);
     width:  3.125rem;
     height: 3.125rem;
     margin-right: $measure-small;
@@ -50,23 +48,33 @@ footer {
 
     &:active {
         background-color: $transparent;
-        transform: translateY(0.2rem);
     }
 
     .icon {
-        @include transition(opacity);
-        @include will-change(opacity);
+        @include transition(opacity, transform);
+        @include will-change(opacity, transform);
         opacity: opacity("alpha");
         width: 100%;
         height: 100%;
         display: block;
         fill: $color-raven;
+
+        @include media("screen", "prefers-reduced-motion") {
+            @include transition(none);
+        }
     }
+
     &:hover,
     &:focus,
     &:active {
         .icon {
             opacity: 1;
+        }
+    }
+
+    &:active {
+        .icon {
+            transform: translateY($border-width-thin);
         }
     }
 }

@@ -9,7 +9,7 @@
     padding-bottom: $measure-medium;
     white-space: nowrap;
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         flex: 1 0 100%;
         padding-top: $measure-small;
         text-align: center;
@@ -28,15 +28,15 @@
 
         & + li {
 
-            @include media("<=small") {
+            @include media("screen", "<=small") {
                 margin-left: 0.25em;
             }
 
-            @include media(">small", "<=medium") {
+            @include media("screen", ">small", "<=medium") {
                 margin-left: 0.5em;
             }
 
-            @include media(">medium") {
+            @include media("screen", ">medium") {
                 margin-left: 1em;
             }
         }
@@ -61,7 +61,7 @@
             transform: translateY(0.2rem);
         }
 
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             padding-left:  0.5rem;
             padding-right: 0.5rem;
         }

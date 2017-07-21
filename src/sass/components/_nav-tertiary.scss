@@ -5,11 +5,11 @@
 
 
 .nav-tertiary {
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         margin-top: $measure-medium;
     }
 
-    @include media(">medium") {
+    @include media("screen", ">medium") {
         // 5px
         margin-top: #{$measure-small / 2};
     }
@@ -28,10 +28,14 @@
         border-bottom-width: 0;
 
         .icon {
-            @include transition;
+            @include transition(opacity, transform);
             @include will-change(opacity, transform);
             opacity: opacity("beta");
             height: $icon-size;
+
+            @include media("screen", "prefers-reduced-motion") {
+                @include transition(none);
+            }
         }
 
         &:hover,
@@ -44,7 +48,7 @@
 
         &:active {
             .icon {
-                transform: translateY(0.125rem);
+                transform: translateY($border-width-thin);
             }
         }
     }

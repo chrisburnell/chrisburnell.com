@@ -12,7 +12,7 @@
     // override the default <aside> font-family
     @include font-family(default);
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         display: flex;
         flex-direction: column;
         order: 999;
@@ -32,7 +32,7 @@
     font-style: italic;
     line-height: $line-height-medium;
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         padding-top: $measure-large;
         border-top: $border-width-thin $border-style-default $color-black--gamma;
         margin-bottom: $measure-small;
@@ -84,11 +84,11 @@
         shape-outside: circle(50%);
     }
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         margin-right: $measure-medium;
     }
 
-    @include media(">medium") {
+    @include media("screen", ">medium") {
         margin-right: $measure-small;
     }
 

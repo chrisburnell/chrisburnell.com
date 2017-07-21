@@ -12,11 +12,11 @@
 aside {
     @include font-family(serif);
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         flex: 1 0 100%;
     }
 
-    @include media(">medium") {
+    @include media("screen", ">medium") {
         width: $aside-width;
         float: left;
         margin-left: #{($aside-width + $measure-large) * -1};
@@ -29,7 +29,7 @@ aside {
     }
 
     &:not(.author):not(:last-child) {
-        @include media("<=medium") {
+        @include media("screen", "<=medium") {
             margin-bottom: $measure-medium;
         }
     }
@@ -46,7 +46,7 @@ aside {
     p {
         clear: both;
 
-        @include media(">small") {
+        @include media("screen", ">small") {
             font-size: $font-size-small;
         }
     }

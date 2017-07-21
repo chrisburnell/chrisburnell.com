@@ -13,7 +13,7 @@ header {
         display: grid;
     }
 
-    @include media("<=medium") {
+    @include media("screen", "<=medium") {
         flex-direction: column;
         justify-content: center;
 
@@ -22,7 +22,7 @@ header {
         }
     }
 
-    @include media(">medium") {
+    @include media("screen", ">medium") {
         justify-content: space-between;
 
         @supports (display: grid) {

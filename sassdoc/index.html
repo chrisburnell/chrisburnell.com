@@ -35,7 +35,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -79,7 +80,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -87,7 +89,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39;, &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists(&#39;at-error&#39;)`
 /// to detect support.
@@ -125,7 +127,7 @@ $media-expressions: (
     $is-corner: index((top-left, top-right, bottom-right, bottom-left), $value);
 
     @return $is-side or $is-corner;
- }" data-collapsed="@function is-edge($value) { ... }"><code>@function is-edge($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Test if <code>$value</code> is a valid corner or side</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Value to test</p></td><td data-label="type"><code>Any</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Bool</code></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#abstracts-mixin-border-radius"><code>border-radius</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#abstracts-mixin-absolute"><code>absolute</code></a></li></ul></section><section class="main__item container item" id="abstracts-function-is-length"><h3 class="item__heading"><a class="item__name" href="#function-is-length">is-length</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-length($value) { 
+ }" data-collapsed="@function is-edge($value) { ... }"><code>@function is-edge($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Test if <code>$value</code> is a valid corner or side</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Value to test</p></td><td data-label="type"><code>Any</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Bool</code></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#abstracts-mixin-border-radius"><code>border-radius</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#abstracts-mixin-border-radius"><code>border-radius</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#abstracts-mixin-absolute"><code>absolute</code></a></li></ul></section><section class="main__item container item" id="abstracts-function-is-length"><h3 class="item__heading"><a class="item__name" href="#function-is-length">is-length</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-length($value) { 
     $is-length: type-of($value) == &#39;number&#39; and index(&#39;px&#39; &#39;em&#39; &#39;rem&#39; &#39;%&#39; &#39;vw&#39; &#39;vh&#39; &#39;vmin&#39; &#39;vmax&#39;, unit($value));
 
     @return $is-length;
@@ -355,10 +357,12 @@ color: contrasting-color(#111111);
         @if map-has-key($border-radii, $thickness) {
             $thickness: map-get($border-radii, $thickness);
         }
-        @else {
+        @else if is-edge($thickness) {
             $border-radius: $thickness;
             $thickness: $border-radius-default;
-            // @error &quot;There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.&quot;;
+        }
+        @else {
+            @error &quot;There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.&quot;;
         }
     }
 
@@ -378,7 +382,7 @@ color: contrasting-color(#111111);
     border-radius: $border-radius;
  }" data-collapsed="@mixin border-radius($thickness, $border-radius) { ... }"><code>@mixin border-radius($thickness, $border-radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Add a border-radius.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$thickness</code></th><td data-label="desc"><p>Thickness of Border Radius</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border-radius</code></th><td data-label="desc"><p>Type of Border Radius</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Zero parameters</p></div><pre class="example__code language-scss"><code>@include radius;
 // border-radius: 0.375rem;</code></pre></div><div class="item__example example"><div class="example__description"><p>One parameter</p></div><pre class="example__code language-scss"><code>@include radius(1em);
-// border-radius: 1em;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>There is no <code>thickness</code> named <code>#{$thickness}</code> in <code>$border-radii</code>. <code>thickness</code> should be one of <code>#{map-keys($border-radii)}</code>.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#abstracts-function-is-length"><code>is-length</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#abstracts-function-is-edge"><code>is-edge</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-default"><code>border-radius-default</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-thin"><code>border-radius-thin</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-hairline"><code>border-radius-hairline</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radii"><code>border-radii</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Chris Burnell</p></li></ul></section><section class="main__item container item" id="abstracts-mixin-case"><h3 class="item__heading"><a class="item__name" href="#mixin-case">case</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin case($case, $letter-spacing: null) { 
+// border-radius: 1em;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>There is no <code>thickness</code> named <code>#{$thickness}</code> in <code>$border-radii</code>. <code>thickness</code> should be one of <code>#{map-keys($border-radii)}</code>.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#abstracts-function-is-length"><code>is-length</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#abstracts-function-is-edge"><code>is-edge</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#abstracts-function-is-edge"><code>is-edge</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-default"><code>border-radius-default</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-thin"><code>border-radius-thin</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radius-hairline"><code>border-radius-hairline</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#abstracts-variable-border-radii"><code>border-radii</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Chris Burnell</p></li></ul></section><section class="main__item container item" id="abstracts-mixin-case"><h3 class="item__heading"><a class="item__name" href="#mixin-case">case</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin case($case, $letter-spacing: null) { 
     @if not $case {
         @error &quot;case() expects at least one parameter.&quot;;
     }
@@ -755,7 +759,8 @@ color: contrasting-color(#111111);
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates a list of static expressions or media types</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Creates a single media type (screen)</p></div><pre class="example__code language-scss"><code>$media-expressions: (&#39;screen&#39;: &#39;screen&#39;);</code></pre></div><div class="item__example example"><div class="example__description"><p>Creates a static expression with logical disjunction (OR operator)</p></div><pre class="example__code language-scss"><code>$media-expressions: (
   &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39;
 );</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-im-intercepts-static-breakpoint"><code>im-intercepts-static-breakpoint</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-parse-expression"><code>parse-expression</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-media-context"><code>media-context</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-unit-intervals"><h3 class="item__heading"><a class="item__name" href="#variable-unit-intervals">unit-intervals</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$unit-intervals: (
@@ -858,7 +863,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -902,7 +908,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -910,7 +917,7 @@ $media-expressions: (
 /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
 ///
 /// @example scss - Interval for pixels is defined as `1` by default
-///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
+///  @include media(&#39;&gt;128px&#39;)">/// /// Creates a list of global breakpoints /// /// @example scss - Creates a single breakpoint with the label `phone` /// $breakpoints: (&#39;phone&#39;: 320px); /// $breakpoints: ( &#39;phone&#39;: 320px, &#39;tablet&#39;: 768px, &#39;desktop&#39;: 1024px ) !default; /// /// Creates a list of static expressions or media types /// /// @example scss - Creates a single media type (screen) /// $media-expressions: (&#39;screen&#39;: &#39;screen&#39;); /// /// @example scss - Creates a static expression with logical disjunction (OR operator) /// $media-expressions: ( /// &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#39; /// ); /// $media-expressions: ( &#39;screen&#39;: &#39;screen&#39;, &#39;print&#39;: &#39;print&#39;, &#39;handheld&#39;: &#39;handheld&#39;, &#39;landscape&#39;: &#39;(orientation: landscape)&#39;, &#39;portrait&#39;: &#39;(orientation: portrait)&#39;, &#39;retina2x&#39;: &#39;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#39;, &#39;retina3x&#39;: &#39;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#39;, &#39;script&#39;: &#39;script&#39;, &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;, &#39;hover&#39;: &#39;(any-hover: hover)&#39;, &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;, &#39;fine&#39;: &#39;(any-pointer: fine)&#39;, &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39; ) !default; /// /// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals /// /// @example scss - Interval for pixels is defined as `1` by default /// @include media(&#39;&gt;128px&#39;)</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>///
 /// Creates a list of global breakpoints
 ///
 /// @example scss - Creates a single breakpoint with the label `phone`
@@ -946,7 +953,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -992,7 +1000,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 
@@ -1036,7 +1045,8 @@ $media-expressions: (
   &#39;half-hover&#39;: &#39;(any-hover: on-demand)&#39;,
   &#39;hover&#39;: &#39;(any-hover: hover)&#39;,
   &#39;coarse&#39;: &#39;(any-pointer: coarse)&#39;,
-  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;
+  &#39;fine&#39;: &#39;(any-pointer: fine)&#39;,
+  &#39;prefers-reduced-motion&#39;: &#39;(prefers-reduced-motion: reduce)&#39;
 ) !default;
 
 

@@ -30,10 +30,12 @@
         @if map-has-key($border-radii, $thickness) {
             $thickness: map-get($border-radii, $thickness);
         }
-        @else {
+        @else if is-edge($thickness) {
             $border-radius: $thickness;
             $thickness: $border-radius-default;
-            // @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
+        }
+        @else {
+            @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
         }
     }
 
