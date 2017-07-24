@@ -100,8 +100,8 @@ Now let’s define some variables to plug into our remapping `@function`:
 {% highlight scss %}
 $number-of-columns: 5;
 
-$rotation-minimum: -45deg;
-$rotation-maximum:  45deg;
+$rotation-start: 0deg;
+$rotation-offset: 45deg;
 {% endhighlight %}
 
 Before we apply our different rotations to the globe, we can even use our `@function` to layout our equal-width columns by remapping the index of each column to a value for the `left` property:
@@ -123,12 +123,12 @@ Before we apply our different rotations to the globe, we can even use our `@func
 
 The last parameter being passed to the `@function` looks a little unusual, but you have to remember that we’re setting a value for the `left` property, so the maximum value we should be setting is `100% - the width of a column`. This means that we’re remapping the index of each column to a value between `0%` and `100% - $number-of-columns`.
 
-Lastly, we’ll perform a similar operation as before, by remapping the index of the column to a parameter for the `rotateY` value of the `transform` property. In this case, we’re transitioning between <var>$rotation-minumum</var> (`-45deg`) and <var>$rotation-maximum</var> (`45deg`).
+Lastly, we’ll perform a similar operation as before, by remapping the index of the column to a parameter for the `rotateY` value of the `transform` property. In this case, we’re transitioning between <var>($rotation-start - $rotation-offset)</var> (`-45deg`) and <var>($rotation-start + $rotation-offset)</var> (`45deg`).
 
 {% highlight scss %}
 @for $i from 1 through $number-of-columns {
     .interact--#{$i}:hover ~ .globe {
-        transform: rotateY(range-map($i, 1, $number-of-columns, $rotation-minimum, $rotation-maximum));
+        transform: rotateZ(range-map($i, 1, $number-of-columns, ($rotation-start - $rotation-offset), ($rotation-start + $rotation-offset)));
     }
 }
 {% endhighlight %}
