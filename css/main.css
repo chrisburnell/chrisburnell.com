@@ -3164,9 +3164,9 @@ code[data-lang]::before {
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 1.25rem;
     left: 0;
-    right: 0;
 }
 
 .icon {
@@ -3392,12 +3392,12 @@ video {
 
 .palette-list li[data-color="raven"] {
     background-color: #5f8aa6;
-    color: #4f4f4f;
+    color: #f9f9f9;
 }
 
 .palette-list li[data-color="coyote"] {
     background-color: #6e95ae;
-    color: #4f4f4f;
+    color: #f9f9f9;
 }
 
 .palette-list li[data-color="canada"] {
