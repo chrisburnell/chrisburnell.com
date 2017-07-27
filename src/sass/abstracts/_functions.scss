@@ -42,7 +42,7 @@
 /// @return {Bool}
 ///
 @function is-length($value) {
-    $is-length: type-of($value) == 'number' and index('px' 'em' 'rem' '%' 'vw' 'vh' 'vmin' 'vmax', unit($value));
+    $is-length: type-of($value) == "number" and index("%" "ch" "cm" "em" "ex" "in" "mm" "pc" "pt" "px" "rem" "vmax" "vmin" "vh" "vw", unit($value));
 
     @return $is-length;
 }
