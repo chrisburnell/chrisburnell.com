@@ -13,7 +13,7 @@ code[data-lang] {
     &::before {
         @include absolute(top-full);
         @include border-radius(top);
-        @include case(uppercase, $letter-spacing-uppercase);
+        @include case(uppercase);
         @include font-family(default);
         @include transition;
         content: attr(data-lang);

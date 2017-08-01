@@ -43,7 +43,7 @@
     }
 
     a {
-        @include case(uppercase, $letter-spacing-uppercase);
+        @include case(uppercase);
         @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);
@@ -55,6 +55,7 @@
         margin-bottom: 0.25rem;
         font-size: $font-size-large;
         line-height: $line-height-small;
+        text-decoration: none;
 
         &:active {
             background-color: $transparent;

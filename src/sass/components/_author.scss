@@ -48,12 +48,12 @@
     }
 
     a {
-        border-bottom-color: $transparent;
+        text-decoration-color: $transparent;
 
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-canada;
+            text-decoration-color: $color-canada;
         }
 
         &:active {
@@ -77,7 +77,7 @@
     width:  $avatar-size;
     height: $avatar-size;
     float: left;
-    border-bottom-width: 0;
+    text-decoration: none;
 
     @supports (shape-outside: circle(50%)) {
         background-image: none;

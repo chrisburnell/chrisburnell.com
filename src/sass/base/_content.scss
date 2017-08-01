@@ -56,7 +56,7 @@ h6 {
  */
 .alpha,
 %alpha {
-    @include case(uppercase, $letter-spacing-uppercase);
+    @include case(uppercase);
     @include font-family(alpha);
     font-size: $font-size-alpha;
     line-height: 1;
@@ -93,7 +93,7 @@ h2 {
 }
 h3 {
     @extend %gamma !optional;
-    @include case(uppercase, $letter-spacing-uppercase);
+    @include case(uppercase);
     margin-top: $measure-large;
     border-bottom: $border-width-thin $border-style-default $color-alto;
     font-weight: $font-weight-bold;
@@ -355,7 +355,7 @@ figure {
 
     & > a {
         display: block;
-        border-bottom-width: 0;
+        text-decoration: none;
     }
 
     & > a
@@ -681,6 +681,19 @@ sup {
 
 [hidden] {
     display: none;
+}
+
+/**
+ * Touch Action
+ */
+a,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
 }
 
 /**

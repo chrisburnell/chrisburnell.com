@@ -65,12 +65,12 @@
     }
 
     a {
-        border-bottom-color: $transparent;
+        text-decoration-color: $transparent;
 
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-canada;
+            text-decoration-color: $color-canada;
         }
 
         &:active {

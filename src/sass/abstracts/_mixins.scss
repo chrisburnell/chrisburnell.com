@@ -65,7 +65,7 @@
 /// @require {Variable} $letter-spacing-uppercase
 ///
 /// @example scss
-///   @include case(uppercase, $letter-spacing-uppercase);
+///   @include case(uppercase);
 ///   // text-transform: uppercase;
 ///   // letter-spacing: 1px;
 ///

@@ -5,23 +5,18 @@
 
 
 a {
-    @include transition(background, color, border-color);
-    @include will-change(background, color, border-color);
+    @include transition(background-color, color, text-decoration-color);
+    @include will-change(background-color, color, text-decoration-color);
     background-color: $transparent;
     color: $color-bowhead;
-    border-bottom-width: $border-width-hairline;
-    border-bottom-style: $border-style-default;
-    border-bottom-color: $color-alto;
     position: relative;
-    text-decoration: none;
-    // remove gaps in links underline in iOS 8+ and Safari 8+.
-    -webkit-text-decoration-skip: objects;
+    text-decoration-color: $color-alto;
+    text-decoration-skip: ink;
 
     &:hover,
     &:focus,
     &:active {
-        border-bottom-color: $color-canada;
-        outline-width: 0;
+        text-decoration-color: $color-canada;
     }
 
     &:active {
@@ -29,20 +24,22 @@ a {
         color: $color-white;
     }
 
-    h2 &,
-    h3 & {
+    %heading-elements & {
         color: $color-kaiser;
-        border-bottom-color: $transparent;
+        text-decoration-color: $transparent;
+        // coming soon!
+        // text-decoration-width: $border-width-thin;
+        text-underline-position: under;
     }
 
     .dark-background & {
         color: $color-white;
-        border-bottom-color: $color-dove;
+        text-decoration-color: $color-dove;
 
         &:hover,
         &:focus,
         &:active {
-            border-bottom-color: $color-canada;
+            text-decoration-color: $color-canada;
         }
     }
 
@@ -56,14 +53,12 @@ a {
  * Title Anchors inside Headings
  */
 .title-anchor {
-    @include transition(border-color);
-    @include will-change(color, border-bottom-color);
+    @include transition(text-decoration-color);
     display: inline-block;
-    border-bottom-width: $border-width-thin;
 
     &,
     &:link {
-        border-bottom-color: $transparent;
+        text-decoration-color: $transparent;
     }
 
     &:hover,
@@ -77,25 +72,17 @@ a {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
-    @include case(lowercase, $letter-spacing-default);
+    @include case(lowercase);
     @include font-family(monospace);
     color: $color-dove;
     display: none;
     visibility: hidden;
     margin-left: $measure-medium;
-    border-bottom-width: $border-width-hairline;
     vertical-align: middle;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     line-height: $line-height-small;
     text-shadow: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-        // when appearing inside a heading, disable underline
-        text-decoration: none;
-    }
 
     %heading-elements:hover &,
     %heading-elements:focus &,

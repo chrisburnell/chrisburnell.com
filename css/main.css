@@ -557,7 +557,7 @@ picture {
 
 figure > a {
     display: block;
-    border-bottom-width: 0;
+    text-decoration: none;
 }
 
 figure > a figcaption {
@@ -989,6 +989,20 @@ sup {
 
 [hidden] {
     display: none;
+}
+
+/**
+ * Touch Action
+ */
+a,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
 }
 
 /**
@@ -1441,22 +1455,23 @@ pre.codepen {
 }
 
 a {
-    -webkit-transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
-    transition: background 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
-    will-change: background, color, border-color;
+    -webkit-transition: background-color 0.2s ease 0s, color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
+    will-change: background-color, color, text-decoration-color;
     background-color: transparent;
     color: #4d7086;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #dddddd;
     position: relative;
-    text-decoration: none;
-    -webkit-text-decoration-skip: objects;
+    -webkit-text-decoration-color: #dddddd;
+            text-decoration-color: #dddddd;
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip: ink;
 }
 
 a:hover, a:focus, a:active {
-    border-bottom-color: #fd1b00;
-    outline-width: 0;
+    -webkit-text-decoration-color: #fd1b00;
+            text-decoration-color: #fd1b00;
 }
 
 a:active {
@@ -1464,19 +1479,27 @@ a:active {
     color: #f9f9f9;
 }
 
+h1 a,
 h2 a,
-h3 a {
+h3 a,
+h4 a,
+h5 a,
+h6 a {
     color: #4f4f4f;
-    border-bottom-color: transparent;
+    -webkit-text-decoration-color: transparent;
+            text-decoration-color: transparent;
+    text-underline-position: under;
 }
 
 .dark-background a {
     color: #f9f9f9;
-    border-bottom-color: #737373;
+    -webkit-text-decoration-color: #737373;
+            text-decoration-color: #737373;
 }
 
 .dark-background a:hover, .dark-background a:focus, .dark-background a:active {
-    border-bottom-color: #fd1b00;
+    -webkit-text-decoration-color: #fd1b00;
+            text-decoration-color: #fd1b00;
 }
 
 a span:not([class]):not([itemprop]) {
@@ -1496,15 +1519,16 @@ a span:not([class]):not([itemprop]) {
  * Title Anchors inside Headings
  */
 .title-anchor {
-    -webkit-transition: border-color 0.2s ease 0s;
-    transition: border-color 0.2s ease 0s;
-    will-change: color, border-bottom-color;
+    -webkit-transition: -webkit-text-decoration-color 0.2s ease 0s;
+    transition: -webkit-text-decoration-color 0.2s ease 0s;
+    transition: text-decoration-color 0.2s ease 0s;
+    transition: text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     display: inline-block;
-    border-bottom-width: 0.125rem;
 }
 
 .title-anchor, .title-anchor:link {
-    border-bottom-color: transparent;
+    -webkit-text-decoration-color: transparent;
+            text-decoration-color: transparent;
 }
 
 .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
@@ -1516,7 +1540,6 @@ a span:not([class]):not([itemprop]) {
  */
 .fragment-anchor {
     text-transform: lowercase;
-    letter-spacing: 0;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -1524,16 +1547,11 @@ a span:not([class]):not([itemprop]) {
     display: none;
     visibility: hidden;
     margin-left: 1.25rem;
-    border-bottom-width: 1px;
     vertical-align: middle;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.25;
     text-shadow: none;
-}
-
-.fragment-anchor:hover, .fragment-anchor:focus, .fragment-anchor:active {
-    text-decoration: none;
 }
 
 h1:hover .fragment-anchor,
@@ -1603,6 +1621,7 @@ button,
     font-size: 1.375rem;
     line-height: 2;
     text-align: center;
+    text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
     -webkit-appearance: none;
@@ -1617,18 +1636,11 @@ button:hover, button:focus, button:active,
     background-color: #6e95ae;
 }
 
-button:hover, button:focus,
-.button:hover,
-.button:focus {
-    outline-style: auto;
-}
-
 button:active,
 .button:active {
     height: 2em;
     padding-bottom: 0;
     margin-bottom: 0.182em;
-    outline-style: none;
     -webkit-box-shadow: inset 0 -1px 0 0 #4d7086;
             box-shadow: inset 0 -1px 0 0 #4d7086;
     -webkit-transform: translateY(0.182em);
@@ -2086,7 +2098,7 @@ h6[id]:target,
             flex: 1 0 15.875rem;
     display: inline-block;
     position: relative;
-    border-bottom-width: 0;
+    text-decoration: none;
 }
 
 .logo svg {
@@ -2192,6 +2204,7 @@ h6[id]:target,
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     line-height: 1.25;
+    text-decoration: none;
 }
 
 .nav-primary-list a:active {
@@ -2299,11 +2312,13 @@ aside + .meta {
 }
 
 .meta a {
-    border-bottom-color: transparent;
+    -webkit-text-decoration-color: transparent;
+            text-decoration-color: transparent;
 }
 
 .meta a:hover, .meta a:focus, .meta a:active {
-    border-bottom-color: #fd1b00;
+    -webkit-text-decoration-color: #fd1b00;
+            text-decoration-color: #fd1b00;
 }
 
 .meta a:active {
@@ -2451,6 +2466,7 @@ aside .content-list li + li {
     padding: 1.25rem;
     border-bottom-width: 0;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .content-list a:hover, .content-list a:focus, .content-list a:active {
@@ -2473,15 +2489,19 @@ aside .content-list a {
     will-change: border-color;
     width: auto;
     display: inline-block;
-    border-bottom: 1px solid #dddddd;
     margin-bottom: 0;
+    text-decoration: underline;
+    -webkit-text-decoration-color: #dddddd;
+            text-decoration-color: #dddddd;
+    text-underline-position: under;
 }
 
 .content-list a:hover .title,
 .content-list a:focus .title,
 .content-list a:active .title {
     color: #5f8aa6;
-    border-bottom-color: #fd1b00;
+    -webkit-text-decoration-color: #fd1b00;
+            text-decoration-color: #fd1b00;
 }
 
 .content-list .lede,
@@ -2745,11 +2765,13 @@ p + .nav-secondary {
 }
 
 .author-information a {
-    border-bottom-color: transparent;
+    -webkit-text-decoration-color: transparent;
+            text-decoration-color: transparent;
 }
 
 .author-information a:hover, .author-information a:focus, .author-information a:active {
-    border-bottom-color: #fd1b00;
+    -webkit-text-decoration-color: #fd1b00;
+            text-decoration-color: #fd1b00;
 }
 
 .author-information a:active {
@@ -2768,7 +2790,7 @@ p + .nav-secondary {
     width: 6.25rem;
     height: 6.25rem;
     float: left;
-    border-bottom-width: 0;
+    text-decoration: none;
 }
 
 @supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
@@ -2909,9 +2931,9 @@ footer div {
     width: 3.125rem;
     height: 3.125rem;
     margin-right: 0.625rem;
-    border-bottom-width: 0;
     vertical-align: middle;
     text-indent: 100%;
+    text-decoration: none;
     white-space: nowrap;
 }
 
@@ -2954,6 +2976,7 @@ footer div {
     letter-spacing: 1px;
     margin-left: 0.625rem;
     margin-right: 0.625rem;
+    text-underline-position: under;
 }
 
 @media screen and (max-width: 800px) {
@@ -2977,7 +3000,7 @@ footer div {
 }
 
 .nav-tertiary-list a {
-    border-bottom-width: 0;
+    text-decoration: none;
 }
 
 .nav-tertiary-list a .icon {

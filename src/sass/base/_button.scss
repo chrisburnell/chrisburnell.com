@@ -8,7 +8,7 @@ button,
 .button {
     @extend %button-elements !optional;
     @include border-radius(thin);
-    @include case(uppercase, $letter-spacing-uppercase);
+    @include case(uppercase);
     @include font-family(alpha);
     @include non-selectable;
     @include transition(background-color);
@@ -27,6 +27,7 @@ button,
     font-size: $font-size-beta;
     line-height: 2;
     text-align: center;
+    text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
     appearance: none;
@@ -38,16 +39,10 @@ button,
         background-color: $color-coyote;
     }
 
-    &:hover,
-    &:focus {
-        outline-style: auto;
-    }
-
     &:active {
         height: 2em;
         padding-bottom: 0;
         margin-bottom: 0.182em;
-        outline-style: none;
         box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bowhead;
         transform: translateY(0.182em);
     }

@@ -68,6 +68,7 @@
         padding: $measure-medium;
         border-bottom-width: 0;
         overflow: hidden;
+        text-decoration: none;
 
         &:hover,
         &:focus,
@@ -91,15 +92,19 @@
         @include will-change(border-color);
         width: auto;
         display: inline-block;
-        border-bottom: $border-width-hairline $border-style-default $color-alto;
         margin-bottom: 0;
+        text-decoration: underline;
+        text-decoration-color: $color-alto;
+        // coming soon!
+        // text-decoration-width: $border-width-thin;
+        text-underline-position: under;
     }
     a:hover,
     a:focus,
     a:active {
         .title {
             color: $color-raven;
-            border-bottom-color: $color-canada;
+            text-decoration-color: $color-canada;
         }
     }
 

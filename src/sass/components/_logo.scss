@@ -10,7 +10,7 @@
     flex: 1 0 $aside-width;
     display: inline-block;
     position: relative;
-    border-bottom-width: 0;
+    text-decoration: none;
 
     svg {
         @include absolute(top);
