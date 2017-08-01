@@ -16,16 +16,16 @@ button,
     background-color: $color-raven;
     color: $color-white;
     min-width: 8em;
-    height: 2.182em;
+    height: #{$line-height-code + strip-units($button-border-width)}em;
     display: inline-block;
-    padding: 0 0.727em 0.182em;
+    padding: 0 #{$button-border-width * 4} $button-border-width;
     border-width: 0;
-    margin-top: 0.25rem;
-    box-shadow: inset 0 -0.182em 0 0 $color-bowhead;
+    margin-top: $border-width-default;
+    box-shadow: inset 0 (-$button-border-width) 0 0 $color-bowhead;
     overflow: visible;
     position: relative;
     font-size: $font-size-beta;
-    line-height: 2;
+    line-height: $line-height-code;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
@@ -40,23 +40,23 @@ button,
     }
 
     &:active {
-        height: 2em;
+        height: #{$line-height-code}em;
         padding-bottom: 0;
-        margin-bottom: 0.182em;
+        margin-bottom: $button-border-width;
         box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bowhead;
-        transform: translateY(0.182em);
+        transform: translateY($button-border-width);
     }
 
     &::before,
     &::after {
         @include absolute(top-full);
         content: "";
-        height: 0.182em;
+        height: $button-border-width;
     }
     &:active {
         &::before,
         &::after {
-            top: -0.182em;
+            top: (-$button-border-width);
         }
     }
 
@@ -98,11 +98,11 @@ button {
 .button--small {
     min-width: 5em;
     font-size: $font-size-large;
-    height: 2em;
+    height: #{$line-height-code}em;
     margin-top: 0;
-    line-height: 1.818;
+    line-height: #{$line-height-code - strip-units($button-border-width)};
 
     &:active {
-        height: 1.818em;
+        height: #{$line-height-code - strip-units($button-border-width)}em;
     }
 }

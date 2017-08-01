@@ -1475,8 +1475,7 @@ h6[id]:target,
     color: #737373;
     display: block;
     padding: 0.75rem 1rem;
-    border-bottom-width: 0;
-    border-bottom-color: #5f8aa6;
+    border: 0 solid #5f8aa6;
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     line-height: 1.25;
