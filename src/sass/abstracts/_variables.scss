@@ -171,6 +171,10 @@ $border-radii: (
 $button-border-width: 0.182em;
 
 
+/// @type String
+$font-display: swap !default;
+
+
 /// @type Number
 $font-weight-default: 400 !default;
 /// @type Number
@@ -260,9 +264,9 @@ $font-families: (
 ) !default;
 /// @type List
 /// @prop {String} family - Font Family
+/// @prop {String} variant - Font Family Variant
 /// @prop {String} style - Font Style
 /// @prop {Number} weight - Font Weight
-/// @prop {String} name - Font Name
 /// @prop {String} filename - Font Filename
 $font-families-styles: (
     ("League Gothic", "Regular",  normal, 400, "league-gothic-regular"),

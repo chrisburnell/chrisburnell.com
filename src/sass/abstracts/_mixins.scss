@@ -118,29 +118,26 @@
 
 
 ///
-/// Specify font-family and associated font-display.
+/// Specify a font-family.
 ///
 /// @author Chris Burnell
 ///
 /// @param {String} $family - Font-family value
-/// @param {String} $display - Font-display value
 ///
 /// @require {Map} $font-families
 ///
 /// @example scss - One family
 ///   @include font-family(default);
 ///   // font-family: "Proxima Nova", sans-serif;
-///   // font-display: swap;
 ///
 /// @example scss - One family, one display
 ///   @include font-family(serif, auto);
 ///   // font-family: Georgia, serif;
-///   // font-display: auto;
 ///
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $font-families.
 ///
-@mixin font-family($family, $display: swap) {
+@mixin font-family($family) {
     @if not $family {
         @error "font-family() expects at least one parameter.";
     }
@@ -150,10 +147,6 @@
     }
 
     font-family: map-get($font-families, $family);
-
-    @if $family == "default" or $family == "alpha" {
-        font-display: $display;
-    }
 
     @if $family == "monospace" {
         font-variant-ligatures: none;

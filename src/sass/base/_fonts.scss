@@ -9,6 +9,7 @@
         font-family: "#{nth($style, 1)}";
         font-style: #{nth($style, 3)};
         font-weight: #{nth($style, 4)};
+        font-display: $font-display;
         src: local("#{nth($style, 1)} #{nth($style, 2)}"),
              url("https://chrisburnell.com/fonts/#{nth($style, 5)}.woff2") format("woff2"),
              url("https://chrisburnell.com/fonts/#{nth($style, 5)}.woff") format("woff"),
