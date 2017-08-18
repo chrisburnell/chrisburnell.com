@@ -1,6 +1,7 @@
 {% if page.comments == true %}
     <section class="comments  js-comments" id="comments" aria-label="Comments">
+        <div id="webmentions" aria-live="polite"></div>
         <div id="disqus_thread" aria-live="polite"></div>
-        <noscript>Please enable JavaScript to view comments.</noscript>
+        <noscript>Please enable JavaScript to view comments and webmentions.</noscript>
     </section>
 {% endif %}
