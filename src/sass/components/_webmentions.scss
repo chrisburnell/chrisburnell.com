@@ -1,0 +1,68 @@
+////
+/// WebMentions
+/// @group components
+////
+
+
+// Appears only on article pages
+.webmentions {
+    margin-top: $measure-large;
+}
+
+.webmention__form,
+.webmentions__thread {
+    margin-top: $measure-medium;
+}
+
+.webmentions__form {
+    display: flex;
+
+    @include media("<=small") {
+        flex-wrap: wrap;
+    }
+
+    h4 {
+        margin-bottom: 0;
+        align-self: center;
+        padding-right: $measure-medium;
+
+        @include media("<=small") {
+            flex: 1 0 100%;
+            margin-bottom: $measure-medium;
+        }
+
+        @include media(">small") {
+            flex: 1 0 auto;
+        }
+    }
+
+    .webmentions-submit {
+        margin-left: $measure-small;
+    }
+}
+
+.webmentions__thread {
+    time {
+        font-weight: $font-weight-bold;
+    }
+}
+
+.webmentions__link {
+
+}
+
+.webmentions__link__type {
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+// Also appears only on article pages
+.button--show-webmentions {
+    &,
+    &:active {
+        &::before {
+            // override default `.button:active::before` behaviour
+            @include absolute(none);
+        }
+    }
+}

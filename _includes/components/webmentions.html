@@ -1,0 +1,12 @@
+{% if page.webmentions == true %}
+    <section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" aria-hidden="true">
+        <form id="webmentions-form" class="webmentions__form" method="post" action="https://webmention.io/chrisburnell.com/webmention">
+            <h4><label for="webmention-source">Have you mentioned this elsewhere on the web?<br>Let me know the <abbr title="Uniform Resource Locator">URL</abbr></label>:</h4>
+            <input type="url" name="source" id="webmention-source" placeholder="www.example.com">
+            <input type="hidden" name="target" value="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+            <input type="submit" class="button  button--small  webmentions-submit  js-webmentions-submit" value="Ping!">
+        </form>
+        <ul id="webmentions-thread" class="webmentions__thread" aria-live="polite"></ul>
+        <noscript>Please enable JavaScript to view WebMentions.</noscript>
+    </section>
+{% endif %}
