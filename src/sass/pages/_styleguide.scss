@@ -55,8 +55,25 @@
 }
 
 
-.transition-example--slide,
-.transition-example--fade {
+.transition-example {
+    position: relative;
+    margin-bottom: #{$measure-large + $measure-medium};
+
+    &::before {
+        @include absolute(top, 100%);
+        content: "Hover to interact.";
+        color: $color-kaiser;
+        margin-top: $measure-small;
+    }
+
+    @media ("pointer: coarse") {
+        &::before {
+            content: "Tap to interact."
+        }
+    }
+}
+
+.transition-example__demo {
     @include border-radius(thin);
     @include transition(color);
     width: 100%;
@@ -66,13 +83,11 @@
     border: $border-width-thin $border-style-default $color-alto;
     margin-left:  auto;
     margin-right: auto;
+    overflow-x: hidden;
     position: relative;
     line-height: strip-units($measure-large * 1.5 - $border-width-thin * 2);
     text-align: center;
-
-    & + & {
-        margin-top: $measure-medium;
-    }
+    z-index: z-index(above);
 
     &:hover,
     &:focus {
@@ -84,44 +99,39 @@
         @include border-radius(hairline);
         content: "";
         background-color: $color-kaiser;
+        z-index: z-index(below);
     }
 
-    .monospace {
-        position: relative;
-        z-index: z-index(above);
-    }
-}
+    .transition-example--slide & {
+        cursor: e-resize;
 
-.transition-example--slide {
-    overflow-x: hidden;
-    cursor: e-resize;
-
-    &::before {
-        @include transition(transform);
-        // ugly, but a single pixel peeks out at certain zoom levels
-        transform: translateX(-101%);
-    }
-
-    &:hover,
-    &:focus {
         &::before {
-            transform: translateX(0);
+            @include transition(transform);
+            // ugly, but a single pixel peeks out at certain zoom levels
+            transform: translateX(-101%);
+        }
+
+        &:hover,
+        &:focus {
+            &::before {
+                transform: translateX(0);
+            }
         }
     }
-}
 
-.transition-example--fade {
-    cursor: cell;
+    .transition-example--fade & {
+        cursor: cell;
 
-    &::before {
-        @include transition(opacity);
-        opacity: 0;
-    }
-
-    &:hover,
-    &:focus {
         &::before {
-            opacity: 1;
+            @include transition(opacity);
+            opacity: 0;
+        }
+
+        &:hover,
+        &:focus {
+            &::before {
+                opacity: 1;
+            }
         }
     }
 }

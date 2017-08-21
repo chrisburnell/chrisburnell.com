@@ -442,28 +442,6 @@ img {
     border-style: none;
 }
 
-img::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    background-color: #dddddd;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-img::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-    content: "Broken Image: " attr(src);
-    color: #e31b23;
-    font-style: italic;
-}
-
 svg:not(:root) {
     overflow: hidden;
 }

@@ -312,23 +312,6 @@ picture {
 }
 img {
     border-style: none;
-
-    &::before {
-        @include absolute(top-left);
-        content: "";
-        background-color: $color-alto;
-        width:  100%;
-        height: 100%;
-        text-align: center;
-    }
-
-    &::after {
-        @include absolute(center);
-        // Only visible when the Image fails to load
-        content: "Broken Image: " attr(src);
-        color: $color-lastfm;
-        font-style: italic;
-    }
 }
 svg:not(:root) {
     overflow: hidden;

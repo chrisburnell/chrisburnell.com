@@ -103,6 +103,10 @@ $color-highlight: gold !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
+$color-black--alpha: rgba($color-black, map-get($opacities, "alpha")) !default;
+/// @type Color
+/// @require {Variable} $color-black
+/// @require {Variable} $opacities
 $color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
 /// @type Color
 /// @require {Variable} $color-black
