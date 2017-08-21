@@ -10,7 +10,7 @@
 }
 
 .webmention__form,
-.webmentions__thread {
+.webmentions-thread {
     margin-top: $measure-medium;
 }
 
@@ -41,14 +41,10 @@
     }
 }
 
-.webmentions__thread {
+.webmentions-thread {
     time {
         font-weight: $font-weight-bold;
     }
-}
-
-.webmentions__link {
-
 }
 
 .webmentions__link__type {

@@ -3056,7 +3056,7 @@ footer div {
 }
 
 .webmention__form,
-.webmentions__thread {
+.webmentions-thread {
     margin-top: 1.25rem;
 }
 
@@ -3101,7 +3101,7 @@ footer div {
     margin-left: 0.625rem;
 }
 
-.webmentions__thread time {
+.webmentions-thread time {
     font-weight: 600;
 }
 

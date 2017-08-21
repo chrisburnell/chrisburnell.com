@@ -12,7 +12,8 @@
     const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     const webmentionsSection = document.querySelector('.js-webmentions');
     const webmentionsButton = document.querySelector('.js-show-webmentions');
-    const webmentionsThread = document.querySelector('.webmentions__thread');
+    const webmentionsInput = document.querySelector('.js-webmentions-input');
+    const webmentionsThread = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     const webmentionsHash = ['#webmention'];
 
@@ -98,6 +99,7 @@
                 webmentionsButton.removeEventListener('click', () => {});
                 webmentionsSection.setAttribute('aria-hidden', 'false');
                 webmentionsSection.scrollIntoView();
+                webmentionsInput.focus();
             }
         }
     }

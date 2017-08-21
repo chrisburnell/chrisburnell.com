@@ -450,7 +450,8 @@
     var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     var webmentionsSection = document.querySelector('.js-webmentions');
     var webmentionsButton = document.querySelector('.js-show-webmentions');
-    var webmentionsThread = document.querySelector('.webmentions__thread');
+    var webmentionsInput = document.querySelector('.js-webmentions-input');
+    var webmentionsThread = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var webmentionsHash = ['#webmention'];
 
@@ -571,6 +572,7 @@
                 webmentionsButton.removeEventListener('click', function () {});
                 webmentionsSection.setAttribute('aria-hidden', 'false');
                 webmentionsSection.scrollIntoView();
+                webmentionsInput.focus();
             }
         }
     }
