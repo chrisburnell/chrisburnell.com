@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     const webmentionsSection = document.querySelector('.js-webmentions');
     const webmentionsButton = document.querySelector('.js-show-webmentions');
     const webmentionsInput = document.querySelector('.js-webmentions-input');
@@ -59,7 +59,7 @@
         let webmentionsRequest = new XMLHttpRequest();
         webmentionsRequest.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
         webmentionsRequest.onload = function() {
-            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400) {
+            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400 && webmentionsRequest.responseText.length > 0) {
                 let webmentionsData = JSON.parse(webmentionsRequest.responseText);
                 let webmentionsCount = 0;
                 let webmentionsThreadHtml = webmentionsThread.innerHTML;

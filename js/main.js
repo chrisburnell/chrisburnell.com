@@ -447,7 +447,7 @@
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     var webmentionsSection = document.querySelector('.js-webmentions');
     var webmentionsButton = document.querySelector('.js-show-webmentions');
     var webmentionsInput = document.querySelector('.js-webmentions-input');
@@ -513,7 +513,7 @@
         var webmentionsRequest = new XMLHttpRequest();
         webmentionsRequest.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
         webmentionsRequest.onload = function () {
-            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400) {
+            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400 && webmentionsRequest.responseText.length > 0) {
                 var webmentionsData = JSON.parse(webmentionsRequest.responseText);
                 var webmentionsCount = 0;
                 var webmentionsThreadHtml = webmentionsThread.innerHTML;
