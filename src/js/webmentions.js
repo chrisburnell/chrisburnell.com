@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     const webmentionsSection = document.querySelector('.js-webmentions');
     const webmentionsButton = document.querySelector('.js-show-webmentions');
     const webmentionsInput = document.querySelector('.js-webmentions-input');
