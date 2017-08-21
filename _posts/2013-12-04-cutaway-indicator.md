@@ -8,11 +8,10 @@ title: Cutaway Indicator
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: yIwzd
+comments: codepen
 shorturl: b3sh4
+webmentions: true
 ---
 
 

@@ -13,9 +13,9 @@ tags:
 banner:        viewport-woes.png
 banner_mobile: viewport-woes_mobile.png
 
-webmentions: true
 comments: true
 shorturl: xoskc
+webmentions: true
 ---
 
 

@@ -11,9 +11,9 @@ tags:
 - sass
 - tutorials
 
-webmentions: true
 comments: true
 shorturl: fqojr
+webmentions: true
 
 further_reading:
 - url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"

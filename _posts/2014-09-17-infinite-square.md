@@ -8,12 +8,11 @@ title: Infinite Square
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: HlcAJ
 codepen_featured: true
+comments: codepen
 shorturl: 6dwvt
+webmentions: true
 ---
 
 

@@ -14,10 +14,10 @@ tags:
 banner:        annoying-navigation-css.png
 banner_mobile: annoying-navigation-css_mobile.png
 
-webmentions: true
-comments: true
 codepen: true
+comments: true
 shorturl: nmwge
+webmentions: true
 ---
 
 

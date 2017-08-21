@@ -8,11 +8,10 @@ title: Interaction Jazz
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: myyRqp
+comments: codepen
 shorturl: bhbt9
+webmentions: true
 ---
 
 

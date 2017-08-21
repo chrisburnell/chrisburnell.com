@@ -12,9 +12,9 @@ tags:
 
 edit_text: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
 
-webmentions: true
 comments: true
 shorturl: ndwg7
+webmentions: true
 ---
 
 

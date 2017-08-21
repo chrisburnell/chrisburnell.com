@@ -12,9 +12,9 @@ tags:
 - sass
 
 codepen: true
-webmentions: true
 comments: true
 shorturl: 0aby8
+webmentions: true
 
 further_reading:
 - url: "http://thecodingtrain.com/"

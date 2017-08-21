@@ -8,11 +8,10 @@ title: Persistent Light Source Transform
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: mglHp
+comments: codepen
 shorturl: 9sogz
+webmentions: true
 ---
 
 

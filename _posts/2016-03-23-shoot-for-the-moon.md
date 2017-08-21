@@ -13,10 +13,10 @@ tags:
 banner:        shoot-for-the-moon.png
 banner_mobile: shoot-for-the-moon_mobile.png
 
-webmentions: true
-comments: true
 codepen: true
+comments: true
 shorturl: uanoe
+webmentions: true
 
 further_reading:
 - url: "http://cruft.io/posts/percentage-calculations-in-ie/"

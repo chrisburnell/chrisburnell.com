@@ -14,10 +14,10 @@ tags:
 banner:        persistent-shadows.png
 banner_mobile: persistent-shadows_mobile.png
 
-webmentions: true
-comments: true
 codepen: true
+comments: true
 shorturl: jmfy7
+webmentions: true
 ---
 
 

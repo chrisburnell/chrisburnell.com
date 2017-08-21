@@ -8,11 +8,10 @@ title: Power of Transform Centering - Interactive
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: xutbs
+comments: codepen
 shorturl: 8x586
+webmentions: true
 ---
 
 

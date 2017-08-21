@@ -15,9 +15,9 @@ tags:
 banner:        lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
 
-webmentions: true
 comments: true
 shorturl: dxaon
+webmentions: true
 ---
 
 

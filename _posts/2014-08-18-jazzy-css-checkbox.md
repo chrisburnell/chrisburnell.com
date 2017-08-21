@@ -8,11 +8,10 @@ title: Jazzy CSS Checkbox
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: Cbiun
+comments: codepen
 shorturl: g6pky
+webmentions: true
 ---
 
 

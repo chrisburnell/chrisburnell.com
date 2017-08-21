@@ -8,11 +8,10 @@ title: content-box vs. border-box
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: lBJnz
+comments: codepen
 shorturl: 6xcr7
+webmentions: true
 ---
 
 

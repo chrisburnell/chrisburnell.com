@@ -8,12 +8,11 @@ title: Message Types
 tags:
 - codepen
 
-webmentions: true
-comments: codepen
-codepen: true
 codepen_slug: rLxjBz
 codepen_featured: true
+comments: codepen
 shorturl: h5f19
+webmentions: true
 ---
 
 
