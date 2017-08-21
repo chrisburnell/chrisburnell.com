@@ -1,8 +1,9 @@
 {% if page.page_class contains 'not-found' or page.page_class contains 'offline' %}
     <meta name="robots" content="noindex,nofollow">
 {% else %}
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+    <!-- The URL -->
+    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{% if page.shorturl %}
+    <link rel="shortlink" href="{{ page.shorturl | prepend: site.shorturl }}">{% endif %}
     <!-- Twitter Microdata -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="{{ site.author.twitter }}">
