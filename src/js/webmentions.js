@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     const webmentionsSection = document.querySelector('.js-webmentions');
     const webmentionsButton = document.querySelector('.js-show-webmentions');
     const webmentionsInput = document.querySelector('.js-webmentions-input');
@@ -76,7 +76,7 @@
                     }
                 }
                 if (webmentionsButton !== null && webmentionsCount > 0) {
-                    webmentionsButton.innerHTML = `${webmentionsCount} WebMention${webmentionsCount > 1 ? 's' : ''}`;
+                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? 's' : ''}`;
                 }
             } else {
                 console.log(`WebMention request status error: ${webmentionsRequest.status}`);
