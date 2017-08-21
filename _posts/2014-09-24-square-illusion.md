@@ -8,6 +8,7 @@ title: Square Illusion
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: IKHhC

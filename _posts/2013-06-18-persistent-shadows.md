@@ -14,6 +14,7 @@ tags:
 banner:        persistent-shadows.png
 banner_mobile: persistent-shadows_mobile.png
 
+webmentions: true
 comments: true
 codepen: true
 shorturl: jmfy7

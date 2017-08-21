@@ -11,6 +11,7 @@ tags:
 - liquid
 - tutorials
 
+webmentions: true
 comments: true
 shorturl: 58xlz
 ---

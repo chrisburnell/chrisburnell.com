@@ -8,8 +8,8 @@ title: Button Interaction Demo
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
-comments: true
 codepen_slug: RPRwoo
 shorturl: ax7qc
 ---

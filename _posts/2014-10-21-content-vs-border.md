@@ -8,6 +8,7 @@ title: content-box vs. border-box
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: lBJnz

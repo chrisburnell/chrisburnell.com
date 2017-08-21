@@ -834,6 +834,7 @@ blockquote p:not(:last-of-type)::after {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
+    margin: 0 !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
@@ -1499,6 +1500,7 @@ a span:not([class]):not([itemprop]) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
+    margin: 0 !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
@@ -2051,6 +2053,7 @@ h6[id]:target,
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
+    margin: 0 !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
@@ -2363,12 +2366,12 @@ aside + .lede {
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
     margin: 0 auto 2.25rem;
-    font-size: 1.125rem;
     line-height: 1.429;
 }
 
 .edit time {
     margin-bottom: 0.625rem;
+    font-size: 1.125rem;
     font-weight: 600;
 }
 
@@ -3041,6 +3044,73 @@ footer div {
 }
 
 .button--show-comments::before, .button--show-comments:active::before {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}
+
+.webmentions {
+    margin-top: 2.25rem;
+}
+
+.webmention__form,
+.webmentions__thread {
+    margin-top: 1.25rem;
+}
+
+.webmentions__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media (max-width: 500px) {
+    .webmentions__form {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+}
+
+.webmentions__form h4 {
+    margin-bottom: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding-right: 1.25rem;
+}
+
+@media (max-width: 500px) {
+    .webmentions__form h4 {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 100%;
+                flex: 1 0 100%;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .webmentions__form h4 {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+    }
+}
+
+.webmentions__form .webmentions-submit {
+    margin-left: 0.625rem;
+}
+
+.webmentions__thread time {
+    font-weight: 600;
+}
+
+.webmentions__link__type {
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.button--show-webmentions::before, .button--show-webmentions:active::before {
     position: relative;
     top: auto;
     right: auto;

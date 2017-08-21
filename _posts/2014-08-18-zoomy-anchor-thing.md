@@ -8,6 +8,7 @@ title: Zoomy Anchor Thing
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: lcEvB

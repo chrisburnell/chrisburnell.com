@@ -8,6 +8,7 @@ title: Power of Transform Centering
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: CHEbf

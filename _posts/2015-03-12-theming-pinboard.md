@@ -14,6 +14,7 @@ tags:
 banner:        theming-pinboard.png
 banner_mobile: theming-pinboard_mobile.png
 
+webmentions: true
 comments: true
 twitter: true
 shorturl: 1faeu

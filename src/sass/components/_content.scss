@@ -124,11 +124,11 @@
     max-width: $line-length-responsive;
     padding: $measure-medium;
     margin: 0 auto $measure-large;
-    font-size: $font-size-gamma;
     line-height: $line-height-medium;
 
     time {
         margin-bottom: $measure-small;
+        font-size: $font-size-gamma;
         font-weight: $font-weight-bold;
     }
 }

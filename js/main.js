@@ -54,7 +54,7 @@
     }
 })();
 /*!
- * Conditional comments and webmentions for article pages
+ * Conditional comments for article pages
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
@@ -63,12 +63,10 @@
     'use strict';
 
     var DISQUS_SHORTNAME = 'chrisburnell';
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     var commentsSection = document.querySelector('.js-comments');
     var commentsButton = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
-    // `#webmention` will match both `#webmention` and `#webmentions`
-    var commentsHash = ['#comment', '#disqus_thread', '#webmention'];
+    var commentsHash = ['#comment', '#disqus_thread'];
 
     // if Comments Button exists, enable it and attach Event Listener
     if (commentsButton !== null) {
@@ -111,7 +109,7 @@
         }
     }
 
-    // Load in Disqus comments, Webmentions, and remove the comments button
+    // Load in Disqus comments and remove the comments button
     function showComments() {
         if (commentsSection !== null) {
             // only if the button still exists should we load and hide the button
@@ -121,29 +119,14 @@
                 commentsButton.setAttribute('aria-hidden', 'true');
                 commentsButton.removeEventListener('click', function () {});
                 (function () {
-                    // Disqus Comments
                     var DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
                     DISQUS_SCRIPT.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
-                    // WebMentions
-                    var webmentionRequest = new XMLHttpRequest();
-                    webmentionRequest.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
-                    webmentionRequest.onload = function () {
-                        if (webmentionRequest.status >= 200 && webmentionRequest.status < 400) {
-                            var webmentionData = JSON.parse(webmentionRequest.responseText);
-                            console.log(webmentionData.links);
-                        } else {
-                            console.log('WebMention request status error: ' + webmentionRequest.status);
-                        }
-                    };
-                    webmentionRequest.onerror = function () {
-                        console.log('WebMention request error');
-                    };
-                    webmentionRequest.send();
                 })();
                 commentsSection.setAttribute('aria-hidden', 'false');
+                commentsSection.scrollIntoView();
             }
         }
     }
@@ -453,6 +436,143 @@
     function injectContent(originalContent, injection, placeholder) {
         var regex = new RegExp(placeholder, 'g');
         return originalContent.replace(regex, injection);
+    }
+})();
+/*!
+ * Conditional webmentions for article pages
+ * @author Chris Burnell <me@chrisburnell.com>
+ */
+
+(function () {
+
+    'use strict';
+
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    var webmentionsSection = document.querySelector('.js-webmentions');
+    var webmentionsButton = document.querySelector('.js-show-webmentions');
+    var webmentionsThread = document.querySelector('.webmentions__thread');
+    // `#webmention` will match both `#webmention` and `#webmentions`
+    var webmentionsHash = ['#webmention'];
+
+    // if WebMentions Button exists, enable it and attach Event Listener
+    if (webmentionsButton !== null) {
+        webmentionsButton.disabled = false;
+        webmentionsButton.setAttribute('aria-disabled', 'false');
+        webmentionsButton.addEventListener('click', showWebmentions);
+    }
+
+    // run `updateFromHash()` on window load
+    window.addEventListener('load', updateFromHash);
+    // run `updateFromHash()` on window hashchange
+    window.addEventListener('hashchange', updateFromHash);
+    // if URL contains a hash from `webmentionsHash`, initiate `showWebmentions()`
+    function updateFromHash() {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = webmentionsHash[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var hash = _step.value;
+
+                if (window.location.hash.indexOf(hash) === 0) {
+                    showWebmentions();
+                }
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+    }
+
+    function formatDate(date) {
+        var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var day = date.getDate();
+        if (day <= 9) {
+            day = '0' + day;
+        }
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+    if (webmentionsSection !== null) {
+        var webmentionsRequest = new XMLHttpRequest();
+        webmentionsRequest.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
+        webmentionsRequest.onload = function () {
+            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400) {
+                var webmentionsData = JSON.parse(webmentionsRequest.responseText);
+                var webmentionsCount = 0;
+                var webmentionsThreadHtml = webmentionsThread.innerHTML;
+                var _iteratorNormalCompletion2 = true;
+                var _didIteratorError2 = false;
+                var _iteratorError2 = undefined;
+
+                try {
+                    for (var _iterator2 = webmentionsData.links[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                        var link = _step2.value;
+
+                        var sourceSplit = link.source.split('/')[2];
+                        var sourceTrimmed = link.source.split('//')[1];
+                        var dateClean = formatDate(new Date(link.verified_date));
+                        if (link.verified === true && link.private === false) {
+                            webmentionsCount++;
+                            webmentionsThread.innerHTML = webmentionsThreadHtml + '\n                                                        <li id="webmention-' + link.id + '" class="webmentions__link" data-type="' + link.activity.type + '">\n                                                            <a href="#webmention-' + link.id + '" rel="me">#</a> <time datetime="' + link.verified_date + '">' + dateClean + '</time> &ndash; <a href="' + link.source + '" rel="external  noopener">' + sourceTrimmed + '</a>\n                                                        </li>';
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError2 = true;
+                    _iteratorError2 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                            _iterator2.return();
+                        }
+                    } finally {
+                        if (_didIteratorError2) {
+                            throw _iteratorError2;
+                        }
+                    }
+                }
+
+                if (webmentionsButton !== null && webmentionsCount > 0) {
+                    webmentionsButton.innerHTML = webmentionsCount + ' WebMention' + (webmentionsCount > 1 ? 's' : '');
+                }
+            } else {
+                console.log('WebMention request status error: ' + webmentionsRequest.status);
+            }
+        };
+        webmentionsRequest.onerror = function () {
+            console.log('WebMention request error');
+        };
+        webmentionsRequest.send();
+    }
+
+    // Load in WebMentions and remove the WebMentions button
+    function showWebmentions() {
+        if (webmentionsSection !== null) {
+            // only if the button still exists should we load and hide the button
+            if (webmentionsButton !== null && webmentionsButton.getAttribute('aria-hidden') === 'false') {
+                webmentionsButton.setAttribute('aria-pressed', 'true');
+                webmentionsButton.setAttribute('aria-expanded', 'true');
+                webmentionsButton.setAttribute('aria-hidden', 'true');
+                webmentionsButton.removeEventListener('click', function () {});
+                webmentionsSection.setAttribute('aria-hidden', 'false');
+                webmentionsSection.scrollIntoView();
+            }
+        }
     }
 })();
 /*!

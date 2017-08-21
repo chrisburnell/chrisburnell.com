@@ -1,5 +1,5 @@
 /*!
- * Conditional comments and webmentions for article pages
+ * Conditional comments for article pages
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
@@ -10,12 +10,10 @@
 
 
     const DISQUS_SHORTNAME = 'chrisburnell';
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     const commentsSection = document.querySelector('.js-comments');
-    const commentsButton  = document.querySelector('.js-show-comments');
+    const commentsButton = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
-    // `#webmention` will match both `#webmention` and `#webmentions`
-    const commentsHash = ['#comment', '#disqus_thread', '#webmention'];
+    const commentsHash = ['#comment', '#disqus_thread'];
 
     // if Comments Button exists, enable it and attach Event Listener
     if (commentsButton !== null) {
@@ -37,7 +35,7 @@
         }
     }
 
-    // Load in Disqus comments, Webmentions, and remove the comments button
+    // Load in Disqus comments and remove the comments button
     function showComments() {
         if (commentsSection !== null) {
             // only if the button still exists should we load and hide the button
@@ -47,29 +45,14 @@
                 commentsButton.setAttribute('aria-hidden', 'true');
                 commentsButton.removeEventListener('click', () => {});
                 (() => {
-                    // Disqus Comments
                     const DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
                     DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
-                    // WebMentions
-                    let webmentionRequest = new XMLHttpRequest();
-                    webmentionRequest.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-                    webmentionRequest.onload = function() {
-                        if (webmentionRequest.status >= 200 && webmentionRequest.status < 400) {
-                            var webmentionData = JSON.parse(webmentionRequest.responseText);
-                            console.log(webmentionData.links);
-                        } else {
-                            console.log(`WebMention request status error: ${webmentionRequest.status}`);
-                        }
-                    };
-                    webmentionRequest.onerror = function() {
-                        console.log('WebMention request error');
-                    };
-                    webmentionRequest.send();
                 })();
                 commentsSection.setAttribute('aria-hidden', 'false');
+                commentsSection.scrollIntoView();
             }
         }
     }

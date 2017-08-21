@@ -129,6 +129,7 @@
 
         {% include components/nav-secondary.html type='archives' include=page.categories.first %}
 
+        {% include components/webmentions.html %}
         {% include components/comments.html %}
 
         {% if page.categories contains 'article' %}

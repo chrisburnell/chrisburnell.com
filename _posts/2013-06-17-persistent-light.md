@@ -8,6 +8,7 @@ title: Persistent Light Source Transform
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: mglHp

@@ -14,6 +14,7 @@ tags:
 # banner:        a-slice-of-heaven.png
 # banner_mobile: a-slice-of-heaven_mobile.png
 
+webmentions: true
 comments: true
 caniuse: true
 codepen: true

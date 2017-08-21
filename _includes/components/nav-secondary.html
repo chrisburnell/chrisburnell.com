@@ -13,6 +13,7 @@
     {% assign data = site.data.archives %}
 {% endif %}
 <nav class="nav-secondary" role="navigation">
+    {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}
     {% for link in data %}
         {% assign title = link.title | downcase %}

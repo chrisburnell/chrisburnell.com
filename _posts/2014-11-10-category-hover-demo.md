@@ -8,6 +8,7 @@ title: Category Hover Demo
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: mybQEL

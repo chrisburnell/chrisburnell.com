@@ -8,6 +8,7 @@ title: Flyknife Comics
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: hIxaj

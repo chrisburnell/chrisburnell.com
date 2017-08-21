@@ -11,6 +11,7 @@ tags:
 - sass
 - tutorials
 
+webmentions: true
 comments: true
 shorturl: fqojr
 

@@ -8,6 +8,7 @@ title: Message Types
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: rLxjBz

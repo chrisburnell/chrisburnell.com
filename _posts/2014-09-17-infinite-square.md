@@ -8,6 +8,7 @@ title: Infinite Square
 tags:
 - codepen
 
+webmentions: true
 comments: codepen
 codepen: true
 codepen_slug: HlcAJ

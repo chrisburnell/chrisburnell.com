@@ -16,6 +16,7 @@ tags:
 banner:        first-article-ever.png
 banner_mobile: first-article-ever_mobile.png
 
+webmentions: true
 comments: true
 shorturl: bqrm4
 ---
