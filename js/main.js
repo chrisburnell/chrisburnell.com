@@ -447,7 +447,7 @@
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     var webmentionsSection = document.querySelector('.js-webmentions');
     var webmentionsButton = document.querySelector('.js-show-webmentions');
     var webmentionsThread = document.querySelector('.webmentions__thread');
