@@ -525,12 +525,12 @@
                     for (var _iterator2 = webmentionsData.links[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                         var link = _step2.value;
 
-                        var sourceSplit = link.source.split('/')[2];
-                        var sourceTrimmed = link.source.split('//')[1];
+                        var urlSplit = link.data.url.split('/')[2];
+                        var urlTrimmed = link.data.url.split('//')[1];
                         var dateClean = formatDate(new Date(link.verified_date));
                         if (link.verified === true && link.private === false) {
                             webmentionsCount++;
-                            webmentionsThread.innerHTML = webmentionsThreadHtml + '\n                                                        <li id="webmention-' + link.id + '" class="webmentions__link" data-type="' + link.activity.type + '">\n                                                            <a href="#webmention-' + link.id + '" rel="me">#</a> <time datetime="' + link.verified_date + '">' + dateClean + '</time> &ndash; <a href="' + link.source + '" rel="external  noopener">' + sourceTrimmed + '</a>\n                                                        </li>';
+                            webmentionsThread.innerHTML = webmentionsThreadHtml + '\n                                                        <li id="webmention-' + link.id + '" class="webmentions__link" data-type="' + link.activity.type + '">\n                                                            <a href="#webmention-' + link.id + '" rel="me">#</a> <time datetime="' + link.verified_date + '">' + dateClean + '</time> &ndash; <a href="' + link.data.url + '" rel="external  noopener">' + urlTrimmed + '</a>\n                                                        </li>';
                         }
                     }
                 } catch (err) {

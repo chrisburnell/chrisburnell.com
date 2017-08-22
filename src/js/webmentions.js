@@ -64,14 +64,14 @@
                 let webmentionsCount = 0;
                 let webmentionsThreadHtml = webmentionsThread.innerHTML;
                 for (let link of webmentionsData.links) {
-                    let sourceSplit = link.source.split('/')[2];
-                    let sourceTrimmed = link.source.split('//')[1];
+                    let urlSplit = link.data.url.split('/')[2];
+                    let urlTrimmed = link.data.url.split('//')[1];
                     let dateClean = formatDate(new Date(link.verified_date));
                     if (link.verified === true && link.private === false) {
                         webmentionsCount++;
                         webmentionsThread.innerHTML  = `${webmentionsThreadHtml}
                                                         <li id="webmention-${link.id}" class="webmentions__link" data-type="${link.activity.type}">
-                                                            <a href="#webmention-${link.id}" rel="me">#</a> <time datetime="${link.verified_date}">${dateClean}</time> &ndash; <a href="${link.source}" rel="external  noopener">${sourceTrimmed}</a>
+                                                            <a href="#webmention-${link.id}" rel="me">#</a> <time datetime="${link.verified_date}">${dateClean}</time> &ndash; <a href="${link.data.url}" rel="external  noopener">${urlTrimmed}</a>
                                                         </li>`;
                     }
                 }
