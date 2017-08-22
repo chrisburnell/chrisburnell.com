@@ -3206,6 +3206,11 @@ footer div {
     font-weight: 600;
 }
 
+.webmentions-thread time::after {
+    content: " – ";
+    font-weight: 400;
+}
+
 .webmentions__link__type {
     font-style: italic;
     text-transform: capitalize;

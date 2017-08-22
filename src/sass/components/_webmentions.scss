@@ -44,6 +44,11 @@
 .webmentions-thread {
     time {
         font-weight: $font-weight-bold;
+
+        &::after {
+            content: " – ";
+            font-weight: $font-weight-default;
+        }
     }
 }
 

@@ -16,6 +16,11 @@
     const webmentionsThread = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     const webmentionsHash = ['#webmention'];
+    const webmentionsTemplate = `<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">
+                                     <a href="#webmention-{{id}}" rel="me">#</a>
+                                     <time datetime="{{date}}">{{dateClean}}</time>
+                                     <a href="{{url}}" rel="external  noopener">{{urlTrimmed}}</a>
+                                 </li>`;
 
     // if WebMentions Button exists, enable it and attach Event Listener
     if (webmentionsButton !== null) {
@@ -62,17 +67,10 @@
             if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400 && webmentionsRequest.responseText.length > 0) {
                 let webmentionsData = JSON.parse(webmentionsRequest.responseText);
                 let webmentionsCount = 0;
-                let webmentionsThreadHtml = webmentionsThread.innerHTML;
                 for (let link of webmentionsData.links) {
-                    let urlSplit = link.data.url.split('/')[2];
-                    let urlTrimmed = link.data.url.split('//')[1];
-                    let dateClean = formatDate(new Date(link.verified_date));
                     if (link.verified === true && link.private === false) {
                         webmentionsCount++;
-                        webmentionsThread.innerHTML  = `${webmentionsThreadHtml}
-                                                        <li id="webmention-${link.id}" class="webmentions__link" data-type="${link.activity.type}">
-                                                            <a href="#webmention-${link.id}" rel="me">#</a> <time datetime="${link.verified_date}">${dateClean}</time> &ndash; <a href="${link.data.url}" rel="external  noopener">${urlTrimmed}</a>
-                                                        </li>`;
+                        webmentionsThread.innerHTML += populateResultContent(webmentionsTemplate, link);
                     }
                 }
                 if (webmentionsButton !== null && webmentionsCount > 0) {
@@ -102,6 +100,46 @@
                 webmentionsInput.focus();
             }
         }
+    }
+
+    ////
+    /// Add results content to item template
+    /// @param {String} html
+    /// @param {object} item
+    /// @return {String} Populated HTML
+    ////
+    function populateResultContent(html, item) {
+        // ID
+        html = injectContent(html, item.id, '{{id}}');
+
+        // TYPE
+        html = injectContent(html, item.activity.type, '{{type}}');
+
+        // DATE
+        html = injectContent(html, item.verified_date, '{{date}}');
+
+        // DATE, CLEAN
+        html = injectContent(html, formatDate(new Date(item.verified_date)), '{{dateClean}}');
+
+        // URL
+        html = injectContent(html, item.data.url, '{{url}}');
+
+        // URL, TRIMMED
+        html = injectContent(html, item.data.url.split('//')[1], '{{urlTrimmed}}');
+
+        return html;
+    }
+
+    ////
+    /// Injects content into template using placeholder
+    /// @param {String} originalContent
+    /// @param {String} injection
+    /// @param {String} placeholder
+    /// @return {String} injected content
+    ////
+    function injectContent(originalContent, injection, placeholder) {
+        const regex = new RegExp(placeholder, 'g');
+        return originalContent.replace(regex, injection);
     }
 
 })();
