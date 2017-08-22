@@ -107,11 +107,11 @@ $color-black--alpha: rgba($color-black, map-get($opacities, "alpha")) !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
-$color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
+$color-black--gamma: rgba($color-black, map-get($opacities, "gamma")) !default;
 /// @type Color
 /// @require {Variable} $color-black
 /// @require {Variable} $opacities
-$color-black--gamma: rgba($color-black, map-get($opacities, "gamma")) !default;
+$color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
 /// @type Color
 /// @require {Variable} $color-raven
 /// @require {Variable} $opacities
