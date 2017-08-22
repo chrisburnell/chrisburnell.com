@@ -1,6 +1,6 @@
 {% if page.webmentions == true %}
     <button type="button" class="button--show-webmentions  js-show-webmentions" id="show-webmentions" role="button" aria-label="Ping a WebMention" aria-controls="webmentions-form" aria-expanded="false" aria-pressed="false" aria-hidden="false" aria-disabled="true" disabled>
         {% include content/svg.html type='link' %}
-        <span class="webmention-comment-count  js-webmention-comment-count" data-webmentions-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Mention this</span>
+        <span class="webmention-comment-count  js-webmention-comment-count" data-webmentions-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Mentioned this?</span>
     </button>
 {% endif %}
