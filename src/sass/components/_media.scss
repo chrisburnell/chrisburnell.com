@@ -24,16 +24,16 @@
 
 
 @each $aspect-ratio, $percentage in $aspect-ratios {
-    %media--#{nth($aspect-ratio, 1)}-by-#{nth($aspect-ratio, 2)} {
+    .media--#{nth($aspect-ratio, 1)}-by-#{nth($aspect-ratio, 2)} {
         padding-top: $percentage;
     }
 }
 
 .media--vimeo,
 .media--youtube {
-    @extend %media--16-by-9;
+    @extend .media--16-by-9;
 }
 
 .media--speackerdeck {
-    @extend %media--4-by-3;
+    @extend .media--4-by-3;
 }

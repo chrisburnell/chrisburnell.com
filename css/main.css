@@ -3472,12 +3472,12 @@ video {
     margin-bottom: 0;
 }
 
-.media--vimeo,
+.media--16-by-9, .media--vimeo,
 .media--youtube {
     padding-top: 56.25%;
 }
 
-.media--speackerdeck {
+.media--4-by-3, .media--speackerdeck {
     padding-top: 75%;
 }
 
