@@ -19,7 +19,7 @@
     const webmentionsTemplate = `<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">
                                      <a href="#webmention-{{id}}" rel="me">#</a>
                                      <time datetime="{{date}}">{{dateClean}}</time>
-                                     <a href="{{url}}" rel="external  noopener">{{urlTrimmed}}</a>
+                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>
                                  </li>`;
 
     // if WebMentions Button exists, enable it and attach Event Listener
@@ -87,7 +87,7 @@
     }
 
     // Load in WebMentions and remove the WebMentions button
-    function showWebmentions() {
+    function showWebmentions(numberOfWebmentions) {
         if (webmentionsSection !== null) {
             // only if the button still exists should we load and hide the button
             if (webmentionsButton !== null && webmentionsButton.getAttribute('aria-hidden') === 'false') {
@@ -97,7 +97,11 @@
                 webmentionsButton.removeEventListener('click', () => {});
                 webmentionsSection.setAttribute('aria-hidden', 'false');
                 webmentionsSection.scrollIntoView();
-                webmentionsInput.focus();
+                if (numberOfWebmentions > 1) {
+                    webmentionsThread.focus();
+                } else {
+                    webmentionsInput.focus();
+                }
             }
         }
     }
@@ -110,36 +114,24 @@
     ////
     function populateResultContent(html, item) {
         // ID
-        html = injectContent(html, item.id, '{{id}}');
+        html = helpers.injectContent(html, item.id, '{{id}}');
 
         // TYPE
-        html = injectContent(html, item.activity.type, '{{type}}');
+        html = helpers.injectContent(html, item.activity.type, '{{type}}');
 
         // DATE
-        html = injectContent(html, item.verified_date, '{{date}}');
+        html = helpers.injectContent(html, item.verified_date, '{{date}}');
 
         // DATE, CLEAN
-        html = injectContent(html, formatDate(new Date(item.verified_date)), '{{dateClean}}');
+        html = helpers.injectContent(html, formatDate(new Date(item.verified_date)), '{{dateClean}}');
 
         // URL
-        html = injectContent(html, item.data.url, '{{url}}');
+        html = helpers.injectContent(html, item.data.url, '{{url}}');
 
         // URL, TRIMMED
-        html = injectContent(html, item.data.url.split('//')[1], '{{urlTrimmed}}');
+        html = helpers.injectContent(html, item.data.url.split('//')[1], '{{urlTrimmed}}');
 
         return html;
-    }
-
-    ////
-    /// Injects content into template using placeholder
-    /// @param {String} originalContent
-    /// @param {String} injection
-    /// @param {String} placeholder
-    /// @return {String} injected content
-    ////
-    function injectContent(originalContent, injection, placeholder) {
-        const regex = new RegExp(placeholder, 'g');
-        return originalContent.replace(regex, injection);
     }
 
 })();

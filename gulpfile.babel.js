@@ -166,7 +166,8 @@ gulp.task('js-lint', () => {
 
 // Compile JavaScript
 gulp.task('js-compile', ['js-lint'], () => {
-    return gulp.src([`${paths.js.src}/**/*.js`,
+    return gulp.src([`${paths.js.src}/helpers.js`,
+                     `${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `!${paths.js.src}/vendors/**/{loadcss.js,loadcss-preload-polyfill.js,svg4everybody.js}`])
         .pipe(plumber())

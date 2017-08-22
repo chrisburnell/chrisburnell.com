@@ -3636,14 +3636,14 @@ video {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    content: "Hover to interact.";
+    content: "(Hover to interact.)";
     color: #4f4f4f;
     margin-top: 0.625rem;
 }
 
 @media (pointer: coarse) {
     .transition-example::before {
-        content: "Tap to interact.";
+        content: "(Tap to interact.)";
     }
 }
 

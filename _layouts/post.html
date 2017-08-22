@@ -45,9 +45,9 @@
                 <div class="reading-time">
                     <span>reading time</span>
                     {% if words < 250 %}
-                        <strong>1 min</strong>
+                        <strong><sub>~</sub>1 min</strong>
                     {% else %}
-                        <strong>{{ words | divided_by: 250 }} mins</strong>
+                        <strong><sub>~</sub>{{ words | divided_by: 250 }} mins</strong>
                     {% endif %}
                 </div>
             {% elsif page.categories contains 'pen' and page.codepen_featured and page.codepen_featured == true %}

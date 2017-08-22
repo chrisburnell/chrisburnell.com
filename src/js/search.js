@@ -56,8 +56,8 @@
     ////
     function initSearch() {
         // Get search results if query parameter is set in querystring
-        if (getParameterByName('query')) {
-            query = decodeURIComponent(getParameterByName('query'));
+        if (helpers.getParameterByName('query')) {
+            query = decodeURIComponent(helpers.getParameterByName('query'));
             searchInput.value = query;
             execSearch(query);
         }
@@ -234,47 +234,47 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = injectContent(html, item.url, '{{url}}');
+        html = helpers.injectContent(html, item.url, '{{url}}');
 
         // ICON
         if (item.categories == 'article') {
-            html = injectContent(html, 'article', '{{icon}}');
+            html = helpers.injectContent(html, 'article', '{{icon}}');
         }
         else if (item.categories == 'link') {
-            html = injectContent(html, 'link', '{{icon}}');
+            html = helpers.injectContent(html, 'link', '{{icon}}');
         }
         else if (item.categories == 'pen') {
-            html = injectContent(html, 'codepen', '{{icon}}');
+            html = helpers.injectContent(html, 'codepen', '{{icon}}');
         }
         else if (item.categories == 'talk') {
-            html = injectContent(html, 'bullhorn', '{{icon}}');
+            html = helpers.injectContent(html, 'bullhorn', '{{icon}}');
         }
 
         // TITLE
-        html = injectContent(html, item.title, '{{title}}');
+        html = helpers.injectContent(html, item.title, '{{title}}');
 
         // LEDE
         if (item.lede) {
             let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
-            html = injectContent(html, ledeFormatted, '{{lede}}');
+            html = helpers.injectContent(html, ledeFormatted, '{{lede}}');
         }
         else if (item.categories == 'link') {
-            html = injectContent(html, 'Shared Link', '{{lede}}');
+            html = helpers.injectContent(html, 'Shared Link', '{{lede}}');
         }
         else if (item.categories == 'pen') {
-            html = injectContent(html, 'Featured Pen', '{{lede}}');
+            html = helpers.injectContent(html, 'Featured Pen', '{{lede}}');
         }
         else if (item.categories == 'talk' && item.location) {
-            html = injectContent(html, `Talk – Given at ${item.location}.`, '{{lede}}');
+            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{lede}}');
         }
         else if (item.categories == 'talk') {
-            html = injectContent(html, `Talk`, '{{lede}}');
+            html = helpers.injectContent(html, `Talk`, '{{lede}}');
         }
 
         // DATE
         if (item.type == 'post') {
-            html = injectContent(html, item.date, '{{date}}');
-            html = injectContent(html, item.date_friendly, '{{date_friendly}}');
+            html = helpers.injectContent(html, item.date, '{{date}}');
+            html = helpers.injectContent(html, item.date_friendly, '{{date_friendly}}');
         }
 
         return html;
@@ -289,30 +289,6 @@
         const resultSuffix = (count == 1) ? '' : 's';
         const searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
         resultsMeta.innerHTML = searchMeta;
-    }
-
-
-    ////
-    /// Gets query string parameter
-    /// Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
-    /// @param {String} name
-    /// @return {String} parameter value
-    ////
-    function getParameterByName(name) {
-        const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
-        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-    }
-
-    ////
-    /// Injects content into template using placeholder
-    /// @param {String} originalContent
-    /// @param {String} injection
-    /// @param {String} placeholder
-    /// @return {String} injected content
-    ////
-    function injectContent(originalContent, injection, placeholder) {
-        const regex = new RegExp(placeholder, 'g');
-        return originalContent.replace(regex, injection);
     }
 
 })();

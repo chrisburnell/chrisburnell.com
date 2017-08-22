@@ -61,14 +61,14 @@
 
     &::before {
         @include absolute(top, 100%);
-        content: "Hover to interact.";
+        content: "(Hover to interact.)";
         color: $color-kaiser;
         margin-top: $measure-small;
     }
 
     @media ("pointer: coarse") {
         &::before {
-            content: "Tap to interact."
+            content: "(Tap to interact.)";
         }
     }
 }
