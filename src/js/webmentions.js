@@ -15,7 +15,7 @@
     const WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
     const WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
-    const WEBMENTIONS_HASH = ['#webmention'];
+    const WEBMENTIONS_HASH = ['#webmention', '#mention'];
     const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">
                                      <a href="#webmention-{{id}}" rel="me">#</a>
                                      <time datetime="{{date}}">{{dateClean}}</time>

@@ -501,7 +501,7 @@ helpers = {
     var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
-    var WEBMENTIONS_HASH = ['#webmention'];
+    var WEBMENTIONS_HASH = ['#webmention', '#mention'];
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
     var webmentionsCount = 0;
 
