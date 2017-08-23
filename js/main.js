@@ -12,9 +12,9 @@ helpers = {
     /// @return {String} injected content
     ////
     injectContent: function injectContent(originalContent, injection, placeholder) {
-        var REGEX = new RegExp(placeholder, 'g');
+        var regex = new RegExp(placeholder, 'g');
 
-        return originalContent.replace(REGEX, injection);
+        return originalContent.replace(regex, injection);
     },
 
     ////
@@ -24,9 +24,9 @@ helpers = {
     /// @return {String} parameter value
     ////
     getParameterByName: function getParameterByName(name) {
-        var REGEX = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        var regex = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
 
-        return REGEX && decodeURIComponent(REGEX[1].replace(/\+/g, ' '));
+        return regex && decodeURIComponent(regex[1].replace(/\+/g, ' '));
     },
 
     ////
@@ -51,7 +51,7 @@ helpers = {
     /// @return {String} formattedDate
     ////
     formatDate: function formatDate(date) {
-        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
         var day = date.getDate();
         if (day < 10) {
@@ -60,11 +60,14 @@ helpers = {
         var monthIndex = date.getMonth();
         var year = date.getFullYear();
 
-        return day + ' ' + MONTHS[monthIndex] + ' ' + year;
+        return day + ' ' + months[monthIndex] + ' ' + year;
     },
 
     ////
-    ///
+    /// Action from Hash
+    /// @param {Array} hashes
+    /// @param {Function} action
+    /// @return false
     ////
     actionFromHash: function actionFromHash(hashes, action) {
         var _iteratorNormalCompletion = true;
@@ -93,6 +96,8 @@ helpers = {
                 }
             }
         }
+
+        return false;
     }
 
 };
@@ -160,7 +165,7 @@ helpers = {
 
     'use strict';
 
-    var DISQUS_SHORTNAME = 'chrisburnell';
+    var disqusShortname = 'chrisburnell';
     var commentsSection = document.querySelector('.js-comments');
     var commentsButton = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
@@ -187,7 +192,7 @@ helpers = {
                     var DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
-                    DISQUS_SCRIPT.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                    DISQUS_SCRIPT.src = '//' + disqusShortname + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
                 })();
                 commentsSection.setAttribute('aria-hidden', 'false');
@@ -423,7 +428,7 @@ helpers = {
     }
 
     ////
-    /// Add results content to item template
+    /// Add results content to item templates
     /// @param {String} html
     /// @param {object} item
     /// @return {String} Populated HTML
@@ -489,7 +494,7 @@ helpers = {
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    var canonicalUrl = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     var webmentionsSection = document.querySelector('.js-webmentions');
     var webmentionsButton = document.querySelector('.js-show-webmentions');
     var webmentionsInput = document.querySelector('.js-webmentions-input');
@@ -508,7 +513,7 @@ helpers = {
 
     if (webmentionsSection !== null) {
         var request = new XMLHttpRequest();
-        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
+        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + canonicalUrl, true);
         webmentionsRequest.onload = function () {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
@@ -576,7 +581,7 @@ helpers = {
     }
 
     ////
-    /// Add results content to item template
+    /// Add results content to WebMention template
     /// @param {String} html
     /// @param {object} item
     /// @return {String} Populated HTML
@@ -611,13 +616,13 @@ helpers = {
 
     'use strict';
 
-    var DISQUS_SHORTNAME = 'chrisburnell';
+    var disqusShortname = 'chrisburnell';
 
     var dsqc = document.createElement('script');
     dsqc.type = 'text/javascript';
     dsqc.id = 'dsq-count-scr';
     dsqc.async = true;
-    dsqc.src = '//' + DISQUS_SHORTNAME + '.disqus.com/count.js';
+    dsqc.src = '//' + disqusShortname + '.disqus.com/count.js';
 
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsqc);
 })();

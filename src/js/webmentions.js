@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    const canonicalUrl = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     const webmentionsSection = document.querySelector('.js-webmentions');
     const webmentionsButton = document.querySelector('.js-show-webmentions');
     const webmentionsInput = document.querySelector('.js-webmentions-input');
@@ -32,7 +32,7 @@
 
     if (webmentionsSection !== null) {
         let request = new XMLHttpRequest();
-        request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
+        request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${canonicalUrl}`, true);
         webmentionsRequest.onload = function() {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
@@ -78,7 +78,7 @@
     }
 
     ////
-    /// Add results content to item template
+    /// Add results content to WebMention template
     /// @param {String} html
     /// @param {object} item
     /// @return {String} Populated HTML

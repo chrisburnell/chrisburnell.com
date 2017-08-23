@@ -13,9 +13,9 @@ helpers = {
     /// @return {String} injected content
     ////
     injectContent: function(originalContent, injection, placeholder) {
-        const REGEX = new RegExp(placeholder, 'g');
+        const regex = new RegExp(placeholder, 'g');
 
-        return originalContent.replace(REGEX, injection);
+        return originalContent.replace(regex, injection);
     },
 
     ////
@@ -25,9 +25,9 @@ helpers = {
     /// @return {String} parameter value
     ////
     getParameterByName: function(name) {
-        const REGEX = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
+        const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
-        return REGEX && decodeURIComponent(REGEX[1].replace(/\+/g, ' '));
+        return regex && decodeURIComponent(regex[1].replace(/\+/g, ' '));
     },
 
     ////
@@ -52,7 +52,7 @@ helpers = {
     /// @return {String} formattedDate
     ////
     formatDate: function(date) {
-        const MONTHS = [
+        const months = [
             'January',
             'February',
             'March',
@@ -74,11 +74,14 @@ helpers = {
         let monthIndex = date.getMonth();
         let year = date.getFullYear();
 
-        return `${day} ${MONTHS[monthIndex]} ${year}`;
+        return `${day} ${months[monthIndex]} ${year}`;
     },
 
     ////
-    ///
+    /// Action from Hash
+    /// @param {Array} hashes
+    /// @param {Function} action
+    /// @return false
     ////
     actionFromHash: function(hashes, action) {
         for (let hash of hashes) {
@@ -86,6 +89,8 @@ helpers = {
                 action();
             }
         }
+
+        return false;
     },
 
 };

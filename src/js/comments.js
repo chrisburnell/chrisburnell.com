@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const DISQUS_SHORTNAME = 'chrisburnell';
+    const disqusShortname = 'chrisburnell';
     const commentsSection = document.querySelector('.js-comments');
     const commentsButton = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
@@ -36,7 +36,7 @@
                     const DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
-                    DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
+                    DISQUS_SCRIPT.src = `//${disqusShortname}.disqus.com/embed.js`;
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
                 })();
                 commentsSection.setAttribute('aria-hidden', 'false');

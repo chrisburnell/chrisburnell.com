@@ -227,7 +227,7 @@
     }
 
     ////
-    /// Add results content to item template
+    /// Add results content to item templates
     /// @param {String} html
     /// @param {object} item
     /// @return {String} Populated HTML

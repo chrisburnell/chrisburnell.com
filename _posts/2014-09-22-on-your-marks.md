@@ -126,7 +126,7 @@ function showComments() {
         var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
             dsq.async = true;
-            dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+            dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 }
@@ -192,7 +192,7 @@ function showComments() {
             var dsq = document.createElement('script');
                 dsq.type = 'text/javascript';
                 dsq.async = true;
-                dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.  getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     }
@@ -219,7 +219,7 @@ Here’s the entire snippet of code for my comments section:
 {% endhighlight %}
 
 {% highlight javascript %}
-var DISQUS_SHORTNAME = 'chrisburnell';
+var disqusShortname = 'chrisburnell';
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
@@ -281,7 +281,7 @@ var DISQUS_SHORTNAME = 'chrisburnell';
                     var dsq = document.createElement('script');
                         dsq.type = 'text/javascript';
                         dsq.async = true;
-                        dsq.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                        dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
                 // make sure we are indeed scrolled to the right part of the page
