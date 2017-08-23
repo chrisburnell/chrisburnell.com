@@ -9,9 +9,9 @@
     'use strict';
 
 
-    const codeToggleLabels = document.querySelectorAll('.code-toggle-label');
+    const CODE_TOGGLE_LABELS = document.querySelectorAll('.code-toggle-label');
 
-    for (let codeToggleLabel of codeToggleLabels) {
+    for (let codeToggleLabel of CODE_TOGGLE_LABELS) {
         codeToggleLabel.addEventListener('click', event => {
             event.preventDefault();
             let codeToggleIDArray = event.target.getAttribute('id').split('--');

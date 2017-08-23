@@ -17,9 +17,9 @@
         searchSubmit    = document.querySelector('.js-search-submit'),
         resultsMeta     = document.querySelector('.js-search-meta'),
         resultsList     = document.querySelector('.js-search-results-list');
-    const allowEmpty = false;
-    const jsonFeedUrl = '../search.json';
-    const resultTemplatePage = `<li role="listitem">
+    const ALLOW_EMPTY = false;
+    const JSON_FEED_URL = '../search.json';
+    const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
             <a href="{{url}}">
                 <h4 class="title" itemprop="name">{{title}}</h4>
@@ -27,7 +27,7 @@
             </a>
         </article>
     </li>`;
-    const resultTemplatePost = `<li role="listitem">
+    const SEARCH_POST_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/TechArticle">
             <a href="{{url}}">
                 <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>
@@ -89,7 +89,7 @@
     /// @return void
     ////
     function execSearch(query) {
-        if (query !== '' || allowEmpty) {
+        if (query !== '' || ALLOW_EMPTY) {
             getSearchResults();
         }
     }
@@ -102,7 +102,7 @@
     function getSearchResults() {
         let request = new XMLHttpRequest();
 
-        request.open('GET', jsonFeedUrl, true);
+        request.open('GET', JSON_FEED_URL, true);
 
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
@@ -183,24 +183,24 @@
             // if performing a date check
             if ((queryFormatted.substring(0, 5) == 'date:') && dateCheck) {
                 resultsCount++;
-                results += populateResultContent(resultTemplatePost, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // if performing a tags check
             else if (((queryFormatted.substring(0, 4) == 'tag:') || (queryFormatted.substring(0, 5) == 'tags:')) && tagsCheck) {
                 resultsCount++;
-                results += populateResultContent(resultTemplatePost, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // or item type is a page, check if search term is in title,
             // content, or lede, categories, tags, or talk location
             else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
-                results += populateResultContent(resultTemplatePage, item);
+                results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
             }
             // check if search term is in title, lede, content, categories,
             // tags, or talk location
             else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
                 resultsCount++;
-                results += populateResultContent(resultTemplatePost, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
         }
 
@@ -286,8 +286,9 @@
     /// @return void
     ////
     function populateResultsString(count) {
-        const resultSuffix = (count == 1) ? '' : 's';
-        const searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
+        let resultSuffix = (count == 1) ? '' : 's';
+        let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
+
         resultsMeta.innerHTML = searchMeta;
     }
 

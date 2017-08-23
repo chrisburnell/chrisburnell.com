@@ -110,14 +110,14 @@ helpers = {
 
     'use strict';
 
-    var codeToggleLabels = document.querySelectorAll('.code-toggle-label');
+    var CODE_TOGGLE_LABELS = document.querySelectorAll('.code-toggle-label');
 
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
 
     try {
-        for (var _iterator = codeToggleLabels[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = CODE_TOGGLE_LABELS[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var codeToggleLabel = _step.value;
 
             codeToggleLabel.addEventListener('click', function (event) {
@@ -165,38 +165,38 @@ helpers = {
 
     'use strict';
 
-    var disqusShortname = 'chrisburnell';
-    var commentsSection = document.querySelector('.js-comments');
-    var commentsButton = document.querySelector('.js-show-comments');
+    var DISQUS_SHORTNAME = 'chrisburnell';
+    var COMMENTS_SECTION = document.querySelector('.js-comments');
+    var COMMENTS_BUTTON = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
-    var commentsHash = ['#comment', '#disqus_thread'];
+    var COMMENTS_HASH = ['#comment', '#disqus_thread'];
 
-    // if Comments Button exists, enable it and attach Event Listener
-    helpers.enableButton(commentsButton, showComments);
+    // Enable the Comments button
+    helpers.enableButton(COMMENTS_BUTTON, showComments);
 
-    // run `actionFromHash()` on window load
-    window.addEventListener('load', helpers.actionFromHash(commentsHash, showComments));
-    // run `actionFromHash()` on window hashchange
-    window.addEventListener('hashchange', helpers.actionFromHash(commentsHash, showComments));
+    // initiate Comments if hash present on load
+    window.addEventListener('load', helpers.actionFromHash(COMMENTS_HASH, showComments));
+    // initiate Comments if hash present on hash change
+    window.addEventListener('hashchange', helpers.actionFromHash(COMMENTS_HASH, showComments));
 
     // Load in Disqus comments and remove the comments button
     function showComments() {
-        if (commentsSection !== null) {
+        if (COMMENTS_SECTION !== null) {
             // only if the button still exists should we load and hide the button
-            if (commentsButton !== null && commentsButton.getAttribute('aria-hidden') === 'false') {
-                commentsButton.setAttribute('aria-pressed', 'true');
-                commentsButton.setAttribute('aria-expanded', 'true');
-                commentsButton.setAttribute('aria-hidden', 'true');
-                commentsButton.removeEventListener('click', function () {});
+            if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute('aria-hidden') === 'false') {
+                COMMENTS_BUTTON.setAttribute('aria-pressed', 'true');
+                COMMENTS_BUTTON.setAttribute('aria-expanded', 'true');
+                COMMENTS_BUTTON.setAttribute('aria-hidden', 'true');
+                COMMENTS_BUTTON.removeEventListener('click', function () {});
                 (function () {
                     var DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
-                    DISQUS_SCRIPT.src = '//' + disqusShortname + '.disqus.com/embed.js';
+                    DISQUS_SCRIPT.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
                 })();
-                commentsSection.setAttribute('aria-hidden', 'false');
-                commentsSection.scrollIntoView();
+                COMMENTS_SECTION.setAttribute('aria-hidden', 'false');
+                COMMENTS_SECTION.scrollIntoView();
             }
         }
     }
@@ -218,10 +218,10 @@ helpers = {
         searchSubmit = document.querySelector('.js-search-submit'),
         resultsMeta = document.querySelector('.js-search-meta'),
         resultsList = document.querySelector('.js-search-results-list');
-    var allowEmpty = false;
-    var jsonFeedUrl = '../search.json';
-    var resultTemplatePage = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{url}}">\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n            </a>\n        </article>\n    </li>';
-    var resultTemplatePost = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{url}}">\n                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n                <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n            </a>\n        </article>\n    </li>';
+    var ALLOW_EMPTY = false;
+    var JSON_FEED_URL = '../search.json';
+    var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{url}}">\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n            </a>\n        </article>\n    </li>';
+    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{url}}">\n                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n                <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n            </a>\n        </article>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -272,7 +272,7 @@ helpers = {
     /// @return void
     ////
     function execSearch(query) {
-        if (query !== '' || allowEmpty) {
+        if (query !== '' || ALLOW_EMPTY) {
             getSearchResults();
         }
     }
@@ -285,7 +285,7 @@ helpers = {
     function getSearchResults() {
         var request = new XMLHttpRequest();
 
-        request.open('GET', jsonFeedUrl, true);
+        request.open('GET', JSON_FEED_URL, true);
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
@@ -370,24 +370,24 @@ helpers = {
                 // if performing a date check
                 if (queryFormatted.substring(0, 5) == 'date:' && dateCheck) {
                     resultsCount++;
-                    results += populateResultContent(resultTemplatePost, item);
+                    results += populateResultContent(SEARCH_POST_TEMPLATE, item);
                 }
                 // if performing a tags check
                 else if ((queryFormatted.substring(0, 4) == 'tag:' || queryFormatted.substring(0, 5) == 'tags:') && tagsCheck) {
                         resultsCount++;
-                        results += populateResultContent(resultTemplatePost, item);
+                        results += populateResultContent(SEARCH_POST_TEMPLATE, item);
                     }
                     // or item type is a page, check if search term is in title,
                     // content, or lede, categories, tags, or talk location
                     else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
                             resultsCount++;
-                            results += populateResultContent(resultTemplatePage, item);
+                            results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
                         }
                         // check if search term is in title, lede, content, categories,
                         // tags, or talk location
                         else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
                                 resultsCount++;
-                                results += populateResultContent(resultTemplatePost, item);
+                                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
                             }
             }
         } catch (err) {
@@ -482,6 +482,7 @@ helpers = {
     function populateResultsString(count) {
         var resultSuffix = count == 1 ? '' : 's';
         var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
+
         resultsMeta.innerHTML = searchMeta;
     }
 })();
@@ -494,31 +495,31 @@ helpers = {
 
     'use strict';
 
-    var canonicalUrl = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
-    var webmentionsSection = document.querySelector('.js-webmentions');
-    var webmentionsButton = document.querySelector('.js-show-webmentions');
-    var webmentionsInput = document.querySelector('.js-webmentions-input');
-    var webmentionsThread = document.querySelector('.js-webmentions-thread');
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    var WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
+    var WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
+    var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
+    var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
-    var webmentionsHash = ['#webmention'];
-    var webmentionsTemplate = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
+    var WEBMENTIONS_HASH = ['#webmention'];
+    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
+    var webmentionsCount = 0;
 
-    // if WebMentions Button exists, enable it and attach Event Listener
-    helpers.enableButton(webmentionsButton, showWebmentions);
+    // Enable the WebMentions button
+    helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
 
-    // run `actionFromHash()` on window load
-    window.addEventListener('load', helpers.actionFromHash(webmentionsHash, showWebmentions));
-    // run `actionFromHash()` on window hashchange
-    window.addEventListener('hashchange', helpers.actionFromHash(webmentionsHash, showWebmentions));
+    // initiate WebMentions if hash present on load
+    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+    // initiate WebMentions if hash present on hash change
+    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
 
-    if (webmentionsSection !== null) {
+    if (WEBMENTIONS_SECTION !== null) {
         var request = new XMLHttpRequest();
-        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + canonicalUrl, true);
-        webmentionsRequest.onload = function () {
+        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
+        request.onload = function () {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 var data = JSON.parse(request.responseText);
-                var count = 0;
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;
                 var _iteratorError = undefined;
@@ -528,8 +529,8 @@ helpers = {
                         var link = _step.value;
 
                         if (link.verified === true && link.private === false) {
-                            count++;
-                            webmentionsThread.innerHTML += populateWebmentionContent(webmentionsTemplate, link);
+                            webmentionsCount++;
+                            WEBMENTIONS_THREAD.innerHTML += populateWebmentionContent(WEBMENTIONS_TEMPLATE, link);
                         }
                     }
                 } catch (err) {
@@ -547,8 +548,8 @@ helpers = {
                     }
                 }
 
-                if (webmentionsButton !== null && count > 0) {
-                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = count + ' mention' + (count > 1 ? 's' : '');
+                if (WEBMENTIONS_BUTTON !== null && webmentionsCount > 0) {
+                    WEBMENTIONS_BUTTON.querySelector('.js-webmention-comment-count').innerHTML = webmentionsCount + ' mention' + (webmentionsCount > 1 ? 's' : '');
                 }
             } else {
                 console.log('WebMention request status error: ' + request.status);
@@ -561,20 +562,20 @@ helpers = {
     }
 
     // Load in WebMentions and remove the WebMentions button
-    function showWebmentions(numberOfWebmentions) {
-        if (webmentionsSection !== null) {
+    function showWebmentions() {
+        if (WEBMENTIONS_SECTION !== null) {
             // only if the button still exists should we load and hide the button
-            if (webmentionsButton !== null && webmentionsButton.getAttribute('aria-hidden') === 'false') {
-                webmentionsButton.setAttribute('aria-pressed', 'true');
-                webmentionsButton.setAttribute('aria-expanded', 'true');
-                webmentionsButton.setAttribute('aria-hidden', 'true');
-                webmentionsButton.removeEventListener('click', function () {});
-                webmentionsSection.setAttribute('aria-hidden', 'false');
-                webmentionsSection.scrollIntoView();
-                if (numberOfWebmentions > 1) {
-                    webmentionsThread.focus();
+            if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute('aria-hidden') === 'false') {
+                WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
+                WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
+                WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
+                WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
+                WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+                WEBMENTIONS_SECTION.scrollIntoView();
+                if (webmentionsCount > 1) {
+                    WEBMENTIONS_THREAD.focus();
                 } else {
-                    webmentionsInput.focus();
+                    WEBMENTIONS_INPUT.focus();
                 }
             }
         }
