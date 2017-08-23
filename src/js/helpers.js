@@ -69,7 +69,7 @@ helpers = {
 
         let day = date.getDate();
         if (day < 10) {
-            day = '0' + day;
+            day = `0${day}`;
         }
         let monthIndex = date.getMonth();
         let year = date.getFullYear();
