@@ -22,8 +22,8 @@
 .hide,
 .sr-only,
 .visually-hidden {
-    &:not([href="#content"]),
-    &[href="#content"]:not(:focus) {
+    &:not([href]),
+    &[href]:not(:focus):not(:active) {
         @include visually-hidden;
     }
 }

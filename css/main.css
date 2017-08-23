@@ -936,14 +936,14 @@ blockquote p:not(:last-of-type)::after {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: -1px !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
     white-space: nowrap !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-            clip-path: inset(50%) !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(100%) !important;
+            clip-path: inset(100%) !important;
 }
 
 blockquote cite {
@@ -1601,14 +1601,14 @@ a span:not([class]):not([itemprop]) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: -1px !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
     white-space: nowrap !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-            clip-path: inset(50%) !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(100%) !important;
+            clip-path: inset(100%) !important;
 }
 
 /**
@@ -2142,26 +2142,26 @@ h6[id]:target,
     border-radius: 0.25rem;
 }
 
-[aria-hidden="true"]:not([href="#content"]), [aria-hidden="true"][href="#content"]:not(:focus),
-.hidden:not([href="#content"]),
-.hidden[href="#content"]:not(:focus),
-.hide:not([href="#content"]),
-.hide[href="#content"]:not(:focus),
-.sr-only:not([href="#content"]),
-.sr-only[href="#content"]:not(:focus),
-.visually-hidden:not([href="#content"]),
-.visually-hidden[href="#content"]:not(:focus) {
+[aria-hidden="true"]:not([href]), [aria-hidden="true"][href]:not(:focus):not(:active),
+.hidden:not([href]),
+.hidden[href]:not(:focus):not(:active),
+.hide:not([href]),
+.hide[href]:not(:focus):not(:active),
+.sr-only:not([href]),
+.sr-only[href]:not(:focus):not(:active),
+.visually-hidden:not([href]),
+.visually-hidden[href]:not(:focus):not(:active) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: -1px !important;
     border: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
     white-space: nowrap !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-            clip-path: inset(50%) !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(100%) !important;
+            clip-path: inset(100%) !important;
 }
 
 .hyphen,
