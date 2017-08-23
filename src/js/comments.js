@@ -16,24 +16,12 @@
     const commentsHash = ['#comment', '#disqus_thread'];
 
     // if Comments Button exists, enable it and attach Event Listener
-    if (commentsButton !== null) {
-        commentsButton.disabled = false;
-        commentsButton.setAttribute('aria-disabled', 'false');
-        commentsButton.addEventListener('click', showComments);
-    }
+    helpers.enableButton(commentsButton, showComments);
 
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', updateFromHash);
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', updateFromHash);
-    // if URL contains a hash from `commentsHash`, initiate `showComments()`
-    function updateFromHash() {
-        for (let hash of commentsHash) {
-            if (window.location.hash.indexOf(hash) === 0) {
-                showComments();
-            }
-        }
-    }
+    // run `actionFromHash()` on window load
+    window.addEventListener('load', helpers.actionFromHash(commentsHash, showComments));
+    // run `actionFromHash()` on window hashchange
+    window.addEventListener('hashchange', helpers.actionFromHash(commentsHash, showComments));
 
     // Load in Disqus comments and remove the comments button
     function showComments() {

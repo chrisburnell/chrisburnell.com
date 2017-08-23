@@ -100,14 +100,14 @@
     /// @return void
     ////
     function getSearchResults() {
-        const request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
 
         request.open('GET', jsonFeedUrl, true);
 
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
                 // Success!
-                const data = JSON.parse(request.responseText);
+                let data = JSON.parse(request.responseText);
                 processData(data);
             }
         };

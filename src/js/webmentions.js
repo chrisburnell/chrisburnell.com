@@ -23,67 +23,38 @@
                                  </li>`;
 
     // if WebMentions Button exists, enable it and attach Event Listener
-    if (webmentionsButton !== null) {
-        webmentionsButton.disabled = false;
-        webmentionsButton.setAttribute('aria-disabled', 'false');
-        webmentionsButton.addEventListener('click', showWebmentions);
-    }
+    helpers.enableButton(webmentionsButton, showWebmentions);
 
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', updateFromHash);
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', updateFromHash);
-    // if URL contains a hash from `webmentionsHash`, initiate `showWebmentions()`
-    function updateFromHash() {
-        for (let hash of webmentionsHash) {
-            if (window.location.hash.indexOf(hash) === 0) {
-                showWebmentions();
-            }
-        }
-    }
-
-    function formatDate(date) {
-        let monthNames = [
-            'January', 'February', 'March',
-            'April', 'May', 'June', 'July',
-            'August', 'September', 'October',
-            'November', 'December'
-        ];
-
-        let day = date.getDate();
-        if (day <= 9) {
-            day = `0${day}`;
-        }
-        let monthIndex = date.getMonth();
-        let year = date.getFullYear();
-
-        return day + ' ' + monthNames[monthIndex] + ' ' + year;
-    }
+    // run `actionFromHash()` on window load
+    window.addEventListener('load', helpers.actionFromHash(webmentionsHash, showWebmentions));
+    // run `actionFromHash()` on window hashchange
+    window.addEventListener('hashchange', helpers.actionFromHash(webmentionsHash, showWebmentions));
 
     if (webmentionsSection !== null) {
-        let webmentionsRequest = new XMLHttpRequest();
-        webmentionsRequest.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
+        let request = new XMLHttpRequest();
+        request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
         webmentionsRequest.onload = function() {
-            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400 && webmentionsRequest.responseText.length > 0) {
-                let webmentionsData = JSON.parse(webmentionsRequest.responseText);
-                let webmentionsCount = 0;
-                for (let link of webmentionsData.links) {
+            if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+                // Success!
+                let data = JSON.parse(request.responseText);
+                let count = 0;
+                for (let link of data.links) {
                     if (link.verified === true && link.private === false) {
-                        webmentionsCount++;
-                        webmentionsThread.innerHTML += populateResultContent(webmentionsTemplate, link);
+                        count++;
+                        webmentionsThread.innerHTML += populateWebmentionContent(webmentionsTemplate, link);
                     }
                 }
-                if (webmentionsButton !== null && webmentionsCount > 0) {
-                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? 's' : ''}`;
+                if (webmentionsButton !== null && count > 0) {
+                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = `${count} mention${count > 1 ? 's' : ''}`;
                 }
             } else {
-                console.log(`WebMention request status error: ${webmentionsRequest.status}`);
+                console.log(`WebMention request status error: ${request.status}`);
             }
         };
-        webmentionsRequest.onerror = function() {
+        request.onerror = function() {
             console.log('WebMention request error');
         };
-        webmentionsRequest.send();
+        request.send();
     }
 
     // Load in WebMentions and remove the WebMentions button
@@ -112,7 +83,7 @@
     /// @param {object} item
     /// @return {String} Populated HTML
     ////
-    function populateResultContent(html, item) {
+    function populateWebmentionContent(html, item) {
         // ID
         html = helpers.injectContent(html, item.id, '{{id}}');
 
@@ -123,7 +94,7 @@
         html = helpers.injectContent(html, item.verified_date, '{{date}}');
 
         // DATE, CLEAN
-        html = helpers.injectContent(html, formatDate(new Date(item.verified_date)), '{{dateClean}}');
+        html = helpers.injectContent(html, helpers.formatDate(new Date(item.verified_date)), '{{dateClean}}');
 
         // URL
         html = helpers.injectContent(html, item.data.url, '{{url}}');

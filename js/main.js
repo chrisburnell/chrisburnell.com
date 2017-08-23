@@ -12,8 +12,9 @@ helpers = {
     /// @return {String} injected content
     ////
     injectContent: function injectContent(originalContent, injection, placeholder) {
-        var regex = new RegExp(placeholder, 'g');
-        return originalContent.replace(regex, injection);
+        var REGEX = new RegExp(placeholder, 'g');
+
+        return originalContent.replace(REGEX, injection);
     },
 
     ////
@@ -23,9 +24,77 @@ helpers = {
     /// @return {String} parameter value
     ////
     getParameterByName: function getParameterByName(name) {
-        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        var REGEX = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+
+        return REGEX && decodeURIComponent(REGEX[1].replace(/\+/g, ' '));
+    },
+
+    ////
+    /// Enable a button
+    /// @param {Element} element
+    /// @param {Function} action
+    /// @return false
+    ////
+    enableButton: function enableButton(element, action) {
+        if (element !== null) {
+            element.disabled = false;
+            element.setAttribute('aria-disabled', 'false');
+            element.addEventListener('click', action);
+        }
+
+        return false;
+    },
+
+    ////
+    /// Format a Date
+    /// @param {String} date
+    /// @return {String} formattedDate
+    ////
+    formatDate: function formatDate(date) {
+        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var day = date.getDate();
+        if (day < 10) {
+            day = '0' + day;
+        }
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return day + ' ' + MONTHS[monthIndex] + ' ' + year;
+    },
+
+    ////
+    ///
+    ////
+    actionFromHash: function actionFromHash(hashes, action) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = hashes[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var hash = _step.value;
+
+                if (window.location.hash.indexOf(hash) === 0) {
+                    action();
+                }
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
     }
+
 };
 /*!
  * Code ARIA Toggling
@@ -98,45 +167,12 @@ helpers = {
     var commentsHash = ['#comment', '#disqus_thread'];
 
     // if Comments Button exists, enable it and attach Event Listener
-    if (commentsButton !== null) {
-        commentsButton.disabled = false;
-        commentsButton.setAttribute('aria-disabled', 'false');
-        commentsButton.addEventListener('click', showComments);
-    }
+    helpers.enableButton(commentsButton, showComments);
 
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', updateFromHash);
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', updateFromHash);
-    // if URL contains a hash from `commentsHash`, initiate `showComments()`
-    function updateFromHash() {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = commentsHash[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var hash = _step.value;
-
-                if (window.location.hash.indexOf(hash) === 0) {
-                    showComments();
-                }
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-    }
+    // run `actionFromHash()` on window load
+    window.addEventListener('load', helpers.actionFromHash(commentsHash, showComments));
+    // run `actionFromHash()` on window hashchange
+    window.addEventListener('hashchange', helpers.actionFromHash(commentsHash, showComments));
 
     // Load in Disqus comments and remove the comments button
     function showComments() {
@@ -463,105 +499,60 @@ helpers = {
     var webmentionsTemplate = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
 
     // if WebMentions Button exists, enable it and attach Event Listener
-    if (webmentionsButton !== null) {
-        webmentionsButton.disabled = false;
-        webmentionsButton.setAttribute('aria-disabled', 'false');
-        webmentionsButton.addEventListener('click', showWebmentions);
-    }
+    helpers.enableButton(webmentionsButton, showWebmentions);
 
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', updateFromHash);
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', updateFromHash);
-    // if URL contains a hash from `webmentionsHash`, initiate `showWebmentions()`
-    function updateFromHash() {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = webmentionsHash[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var hash = _step.value;
-
-                if (window.location.hash.indexOf(hash) === 0) {
-                    showWebmentions();
-                }
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-    }
-
-    function formatDate(date) {
-        var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        var day = date.getDate();
-        if (day <= 9) {
-            day = '0' + day;
-        }
-        var monthIndex = date.getMonth();
-        var year = date.getFullYear();
-
-        return day + ' ' + monthNames[monthIndex] + ' ' + year;
-    }
+    // run `actionFromHash()` on window load
+    window.addEventListener('load', helpers.actionFromHash(webmentionsHash, showWebmentions));
+    // run `actionFromHash()` on window hashchange
+    window.addEventListener('hashchange', helpers.actionFromHash(webmentionsHash, showWebmentions));
 
     if (webmentionsSection !== null) {
-        var webmentionsRequest = new XMLHttpRequest();
-        webmentionsRequest.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
         webmentionsRequest.onload = function () {
-            if (webmentionsRequest.status >= 200 && webmentionsRequest.status < 400 && webmentionsRequest.responseText.length > 0) {
-                var webmentionsData = JSON.parse(webmentionsRequest.responseText);
-                var webmentionsCount = 0;
-                var _iteratorNormalCompletion2 = true;
-                var _didIteratorError2 = false;
-                var _iteratorError2 = undefined;
+            if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+                // Success!
+                var data = JSON.parse(request.responseText);
+                var count = 0;
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
 
                 try {
-                    for (var _iterator2 = webmentionsData.links[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                        var link = _step2.value;
+                    for (var _iterator = data.links[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var link = _step.value;
 
                         if (link.verified === true && link.private === false) {
-                            webmentionsCount++;
-                            webmentionsThread.innerHTML += populateResultContent(webmentionsTemplate, link);
+                            count++;
+                            webmentionsThread.innerHTML += populateWebmentionContent(webmentionsTemplate, link);
                         }
                     }
                 } catch (err) {
-                    _didIteratorError2 = true;
-                    _iteratorError2 = err;
+                    _didIteratorError = true;
+                    _iteratorError = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                            _iterator2.return();
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
                         }
                     } finally {
-                        if (_didIteratorError2) {
-                            throw _iteratorError2;
+                        if (_didIteratorError) {
+                            throw _iteratorError;
                         }
                     }
                 }
 
-                if (webmentionsButton !== null && webmentionsCount > 0) {
-                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = webmentionsCount + ' mention' + (webmentionsCount > 1 ? 's' : '');
+                if (webmentionsButton !== null && count > 0) {
+                    webmentionsButton.querySelector('.js-webmention-comment-count').innerHTML = count + ' mention' + (count > 1 ? 's' : '');
                 }
             } else {
-                console.log('WebMention request status error: ' + webmentionsRequest.status);
+                console.log('WebMention request status error: ' + request.status);
             }
         };
-        webmentionsRequest.onerror = function () {
+        request.onerror = function () {
             console.log('WebMention request error');
         };
-        webmentionsRequest.send();
+        request.send();
     }
 
     // Load in WebMentions and remove the WebMentions button
@@ -590,7 +581,7 @@ helpers = {
     /// @param {object} item
     /// @return {String} Populated HTML
     ////
-    function populateResultContent(html, item) {
+    function populateWebmentionContent(html, item) {
         // ID
         html = helpers.injectContent(html, item.id, '{{id}}');
 
@@ -601,7 +592,7 @@ helpers = {
         html = helpers.injectContent(html, item.verified_date, '{{date}}');
 
         // DATE, CLEAN
-        html = helpers.injectContent(html, formatDate(new Date(item.verified_date)), '{{dateClean}}');
+        html = helpers.injectContent(html, helpers.formatDate(new Date(item.verified_date)), '{{dateClean}}');
 
         // URL
         html = helpers.injectContent(html, item.data.url, '{{url}}');
