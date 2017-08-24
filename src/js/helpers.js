@@ -85,7 +85,7 @@ helpers = {
     ////
     actionFromHash: function(hashes, action) {
         for (let hash of hashes) {
-            if (window.location.hash.indexOf(hash) === 0) {
+            if (window.location.hash.indexOf(hash) !== -1) {
                 action();
             }
         }

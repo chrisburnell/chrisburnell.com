@@ -78,7 +78,7 @@ helpers = {
             for (var _iterator = hashes[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                 var hash = _step.value;
 
-                if (window.location.hash.indexOf(hash) === 0) {
+                if (window.location.hash.indexOf(hash) !== -1) {
                     action();
                 }
             }

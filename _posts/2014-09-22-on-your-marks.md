@@ -159,7 +159,7 @@ window.addEventListener('hashchange', function() {
 
 function updateFromHash() {
     commentsHash.forEach( function(hash) {
-        if( window.location.hash.indexOf(hash) === 0 ) {
+        if( window.location.hash.indexOf(hash) !== -1 ) {
             showComments();
         }
     });
@@ -261,7 +261,7 @@ var disqusShortname = 'chrisburnell';
     ////
     function updateFromHash() {
         commentsHash.forEach( function(hash) {
-            if( window.location.hash.indexOf(hash) === 0 ) {
+            if( window.location.hash.indexOf(hash) !== -1 ) {
                 showComments();
             }
         });
