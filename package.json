@@ -35,7 +35,7 @@
     "gulp-sourcemaps": "2.6.1",
     "gulp-uglify": "3.0.0",
     "gulp-watch": "4.3.11",
-    "imagemin-webp": "4.0.0",
+    "gulp-webp": "2.3.0",
     "postcss-reporter": "5.0.0",
     "postcss-scss": "1.0.2",
     "sassdoc": "2.3.0",
