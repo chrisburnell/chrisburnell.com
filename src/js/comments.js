@@ -16,7 +16,7 @@
     const COMMENTS_HASH = ['#comment', '#disqus_thread'];
 
     // Enable the Comments button
-    helpers.enableButton(COMMENTS_BUTTON, showComments);
+    helpers.enableElement(COMMENTS_BUTTON, showComments);
 
     // initiate Comments if hash present on load
     window.addEventListener('load', helpers.actionFromHash(COMMENTS_HASH, showComments));

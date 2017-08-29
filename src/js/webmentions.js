@@ -24,7 +24,7 @@
     let webmentionsCount = 0;
 
     // Enable the WebMentions button
-    helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
+    helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));

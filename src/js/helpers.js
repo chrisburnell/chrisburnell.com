@@ -36,14 +36,12 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableButton: function(element, action) {
+    enableElement: function(element, action) {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute('aria-disabled', 'false');
             element.addEventListener('click', action);
         }
-
-        return false;
     },
 
     ////
@@ -89,8 +87,6 @@ helpers = {
                 action();
             }
         }
-
-        return false;
     },
 
 };
