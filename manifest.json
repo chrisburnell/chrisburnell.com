@@ -15,16 +15,23 @@ icon_sizes:
 
 
 {
+    "manifest_version": 2,
+    "version": "3.0.0",
     "dir": "ltr",
     "lang": "{{ site.language }}",
+    "default_locale": "{{ site.language }}",
     "name": "{{ site.tagline | strip_html | prepend: ' – ' | prepend: site.title | xml_escape }}",
     "short_name": "{{ site.title | replace: ' ', '' | xml_escape }}",
     "description": "{{ site.lede | strip_html | xml_escape }}",
     "display": "browser",
     "orientation": "any",
     "start_url": "/",
+    "homepage_url": "{{ site.baseurl | prepend: site.url }}",
     "theme_color": "#{{ site.color }}",
     "background_color": "#{{ site.color }}",
+    "background": {
+        "persistent": false
+    },
     "icons": [
         {
             "src": "/favicon.ico",

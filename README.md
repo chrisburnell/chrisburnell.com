@@ -3,7 +3,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-![Version](https://img.shields.io/badge/version-2.8.2-blue.svg?style=flat-square)
+![Version](https://img.shields.io/badge/version-3.0.0-blue.svg?style=flat-square)
 [![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
 
 [![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)

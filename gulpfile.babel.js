@@ -1,7 +1,7 @@
 /**
  * Gulp Configuration
  * @author Chris Burnell
- * @version 2.8.2
+ * @version 3.0.0
  */
 
 

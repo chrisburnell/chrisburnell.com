@@ -8,7 +8,7 @@
       "twitter": "@iamchrisburnell"
     }
   ],
-  "version": "2.8.2",
+  "version": "3.0.0",
   "description": "Some real sweet codestuffs.",
   "license": "GPL-3.0",
   "main": "gulpfile.babel.js",
