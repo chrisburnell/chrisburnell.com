@@ -37,3 +37,17 @@
 .media--speakerdeck {
     @extend .media--4-by-3;
 }
+
+
+/**
+ * CodePen Embeds
+ */
+.cp_embed_wrapper {
+    margin-bottom: $measure-medium;
+    resize: both;
+    overflow: auto;
+
+    iframe {
+        margin-bottom: 0;
+    }
+}
