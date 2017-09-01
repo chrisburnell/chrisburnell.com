@@ -39,7 +39,9 @@ helpers = {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute('aria-disabled', 'false');
-            element.addEventListener('click', action);
+            if (action) {
+                element.addEventListener('click', action);
+            }
         }
     },
 
@@ -495,14 +497,17 @@ helpers = {
     var WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     var WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
     var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
+    var WEBMENTIONS_SUBMIT = document.querySelector('.js-webmentions-submit');
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
     var webmentionsCount = 0;
 
-    // Enable the WebMentions button
-    helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
+    // enable the WebMentions button, input, and submit
+    helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
+    helpers.enableButton(WEBMENTIONS_INPUT);
+    helpers.enableButton(WEBMENTIONS_SUBMIT);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
