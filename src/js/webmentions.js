@@ -25,9 +25,9 @@
     let webmentionsCount = 0;
 
     // enable the WebMentions button, input, and submit
-    helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
-    helpers.enableButton(WEBMENTIONS_INPUT);
-    helpers.enableButton(WEBMENTIONS_SUBMIT);
+    helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
+    helpers.enableElement(WEBMENTIONS_INPUT);
+    helpers.enableElement(WEBMENTIONS_SUBMIT);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
