@@ -7,10 +7,10 @@
 @keyframes anchor-target {
     0%,
     50% {
-        background-color: $color-highlight;
+        @include v(background-color, highlight);
     }
     100% {
-        background-color: $transparent;
+        @include v(background-color, transparent);
     }
 }
 

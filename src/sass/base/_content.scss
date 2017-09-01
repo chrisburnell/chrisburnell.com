@@ -6,10 +6,10 @@
 
 html {
     @include font-family(default);
-    background-color: $color-kaiser;
-    font-size: $font-size-default;
+    @include v(background-color, kaiser);
+    @include v(font-size, default);
     font-style: normal;
-    font-weight: $font-weight-default;
+    @include v(font-weight, default);
     line-height: $line-height-default;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@ h6 {
     padding: 0;
     margin: 0;
     position: relative;
-    font-weight: $font-weight-default;
+    @include v(font-weight, default);
 
     // For special Monospace titles
     %monospace-elements {
@@ -58,7 +58,7 @@ h6 {
 %alpha {
     @include case(uppercase);
     @include font-family(alpha);
-    font-size: $font-size-alpha;
+    @include v(font-size, alpha);
     line-height: 1;
     // 4px 4px
     text-shadow: 0.250rem 0.250rem 0 $color-black--delta;
@@ -76,7 +76,7 @@ h1 {
  */
 .beta,
 %beta {
-    font-size: $font-size-beta;
+    @include v(font-size, beta);
     line-height: $line-height-small;
 }
 h2 {
@@ -88,7 +88,7 @@ h2 {
  */
 .gamma,
 %gamma {
-    font-size: $font-size-gamma;
+    @include v(font-size, gamma);
     line-height: 1.875;
 }
 h3 {
@@ -96,7 +96,7 @@ h3 {
     @include case(uppercase);
     margin-top: $measure-large;
     border-bottom: $border-width-thin $border-style-default $color-alto;
-    font-weight: $font-weight-bold;
+    @include v(font-weight, bold);
 
     &:not(:last-child) {
         margin-bottom: $measure-medium;
@@ -128,8 +128,8 @@ h3 {
  */
 .delta,
 %delta {
-    font-size: $font-size-default;
-    font-weight: $font-weight-bold;
+    @include v(font-size, default);
+    @include v(font-weight, bold);
     line-height: $line-height-small;
 }
 h4 {
@@ -142,7 +142,7 @@ h4 {
  */
 .epsilon,
 %epsilon {
-    font-size: $font-size-default;
+    @include v(font-size, default);
     line-height: $line-height-small;
 }
 h5 {
@@ -154,7 +154,7 @@ h5 {
  */
 .zeta,
 %zeta {
-    font-size: $font-size-default;
+    @include v(font-size, default);
     line-height: $line-height-small;
 }
 h6 {
@@ -222,7 +222,7 @@ ul:not([class]),
 
         &::before {
             @include absolute(top-left);
-            font-weight: $font-weight-bold;
+            @include v(font-weight, bold);
         }
     }
 }
@@ -261,7 +261,7 @@ dt {
     min-width: 10rem;
     clear: left;
     padding-right: $measure-medium;
-    font-weight: $font-weight-bold;
+    @include v(font-weight, bold);
 
     @include media("screen", ">small") {
         float: left;
@@ -343,7 +343,7 @@ figure {
 
     & > a
     figcaption {
-        color: $color-dove;
+        @include v(color, dove);
         font-style: italic;
     }
 
@@ -370,8 +370,8 @@ table {
 
     &.zebra {
         tbody tr:nth-child(even) td {
-            background-color: $color-black--delta;
-            border-left-color: $color-alto;
+            @include v(background-color, black--delta);
+            @include v(border-left-color, alto);
         }
     }
 }
@@ -388,17 +388,17 @@ td {
 /*table*/.highlight--row {
     tbody tr:hover {
         td {
-            border-left-color: $color-alto;
+            @include v(border-left-color, alto);
         }
 
         td,
         & + tr td {
-            border-top-color: $color-alto;
+            @include v(border-top-color, alto);
         }
 
         th,
         td:not(:hover) {
-            background-color: $color-raven--gamma !important;
+            @include v(background-color, raven--gamma, true);
         }
     }
 }
@@ -416,11 +416,11 @@ td {
         @include transition(opacity);
         content: "";
         opacity: 0;
-        background-color: $color-raven--gamma;
+        @include v(background-color, raven--gamma);
         width: 100%;
         height: 200vw;
         pointer-events: none;
-        z-index: z-index(above);
+        @include v(z-index, above);
     }
 
     &:hover {
@@ -432,12 +432,12 @@ td {
 // Head and Foot Cells
 th {
     &:not(:empty) {
-        background-color: $color-black--delta;
+        @include v(background-color, black--delta);
     }
 
     thead &,
     tfoot & {
-        font-weight: $font-weight-bold;
+        @include v(font-weight, bold);
         white-space: nowrap;
     }
 
@@ -462,7 +462,7 @@ th {
 
     tbody & {
         font-style: italic;
-        font-weight: $font-weight-default;
+        @include v(font-weight, default);
     }
 
     & + th {
@@ -480,7 +480,7 @@ td {
 }
 tbody th,
 tbody tr:first-child td {
-    border-top-color: $color-alto;
+    @include v(border-top-color, alto);
 }
 tbody th {
     width: 1px;
@@ -489,7 +489,7 @@ tbody th {
     white-space: nowrap;
 
     & + td {
-        border-left-color: $color-alto;
+        @include v(border-left-color, alto);
     }
 }
 
@@ -498,8 +498,8 @@ tbody th {
  */
 details {
     @include border-radius(thin);
-    background-color: $color-mineshaft;
-    color: $color-white;
+    @include v(background-color, mineshaft);
+    @include v(color, white);
     width: 100%;
     max-width: $line-length-responsive;
     padding: $measure-small;
@@ -515,7 +515,7 @@ summary {
     @include transition(transform);
     display: list-item;
     outline: 0;
-    font-weight: $font-weight-bold;
+    @include v(font-weight, bold);
     cursor: pointer;
 
     &:hover,
@@ -543,7 +543,7 @@ blockquote {
     @include border-radius;
     @include font-family(serif);
     @include quotes;
-    background-color: $color-raven--gamma;
+    @include v(background-color, raven--gamma);
     width: 100%;
     max-width: $line-length-responsive;
     padding: $measure-medium;
@@ -603,7 +603,7 @@ audio {
 }
 
 hr {
-    background: $color-black--gamma;
+    @include v(background-color, black--gamma);
     width: 100%;
     height: $border-width-thin;
     display: block;
@@ -626,7 +626,7 @@ abbr[title],
 blockquote,
 cite,
 dfn[title] {
-    color: $color-dove;
+    @include v(color, dove);
     font-style: italic;
 }
 abbr[title],
@@ -641,16 +641,16 @@ ins {
 }
 
 small {
-    font-size: $font-size-small;
+    @include v(font-size, small);
 }
 
 strong {
-    font-weight: $font-weight-bold;
+    @include v(font-weight, bold);
 }
 
 sub,
 sup {
-    font-size: $font-size-small;
+    @include v(font-size, small);
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -683,11 +683,11 @@ textarea {
  * Mouse Selection
  */
 ::selection {
-    background-color: $color-raven;
-    color: $color-white;
+    @include v(background-color, raven);
+    @include v(color, white);
 }
 .canada {
     &::selection {
-        background-color: $color-canada;
+        @include v(background-color, canada);
     }
 }

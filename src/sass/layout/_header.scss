@@ -32,7 +32,7 @@ header {
 
     &::before {
         content: "";
-        background-color: $color-raven;
+        @include v(background-color, raven);
         height: $border-width-default;
         position: absolute;
         bottom: 0;

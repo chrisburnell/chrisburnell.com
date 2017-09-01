@@ -1,7 +1,7 @@
 /**
  * Gulp Configuration
  * @author Chris Burnell
- * @version 2.8.2
+ * @version 3.0.0
  */
 
 
@@ -22,6 +22,7 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import watch from 'gulp-watch';
+import webp from 'gulp-webp';
 
 // Define other objects
 import autoprefixer from 'autoprefixer';
@@ -30,7 +31,6 @@ import reporter from 'postcss-reporter';
 import sassdoc from 'sassdoc';
 import scss_syntax from 'postcss-scss';
 import stylelint from 'stylelint';
-import webp from 'imagemin-webp';
 
 // Define paths
 const paths = {
@@ -223,14 +223,7 @@ gulp.task('png-to-webp', () => {
     return gulp.src(`${paths.images.src}/**/*.png`, { base: paths.images.src })
         .pipe(plumber())
         .pipe(newer(`${paths.images.dest}/`))
-        .pipe(imagemin([
-            webp({
-                lossless: true
-            })
-        ]))
-        .pipe(rename({
-            extname: '.webp'
-        }))
+        .pipe(webp())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
 

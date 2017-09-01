@@ -6,16 +6,16 @@
 /// Please contact me if you want to learn about anything you see here.
 ///
 /// @author  Chris Burnell <me@chrisburnell.com>
-//  @version 2.8.2
+//  @version 3.0.0
 //  @license GNU GPLv3
 /// @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
 ////
 
 /// ABSTRACTS
-@import "abstracts/custom-variables";
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
+@import "abstracts/custom-variables";
 
 /// VENDORS
 @import "vendors/include-media";

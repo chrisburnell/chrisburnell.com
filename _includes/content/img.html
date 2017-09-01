@@ -7,6 +7,7 @@
   @param {String} class
   @param {String} width
   @param {String} height
+  @param {String} role
 
   @example
     {% include content/img.html src='/hero.png 1x, /hero@2x.png 2x' %}
@@ -31,16 +32,24 @@
         {% endunless %}
     {% endfor %}"{% endcapture %}
 {% endif %}
-{% capture class %}{% if include.class %}class="{{ include.class }}"{% endif %}{% endcapture %}
+{% assign alt = include.alt | default: '' %}
 {% capture width %}{% if include.width %}width="{{ include.width }}"{% endif %}{% endcapture %}
 {% capture height %}{% if include.height %}height="{{ include.height }}"{% endif %}{% endcapture %}
+{% capture style_width %}{% if include.width %}width: {{ include.width | append: 'px' | replace: 'pxpx', 'px' }};{% endif %}{% endcapture %}
+{% capture style_height %}{% if include.height %}height: {{ include.height | append: 'px' | replace: 'pxpx', 'px' }};{% endif %}{% endcapture %}
+{% assign style = '' %}
+{% if include.width or include.height %}
+    {% capture style %}style="{{ style_width }} {{ style_height }}"{% endcapture %}
+{% endif %}
+{% capture class %}{% if include.class %}class="{{ include.class }}"{% endif %}{% endcapture %}
+{% assign role = include.role | default: 'presentation' %}
 <picture>
     {% if include.src contains 'jpg' or include.src contains 'jpeg' or include.src contains 'png' %}
         <source srcset="{{ include.src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}"
                 type="image/webp">
     {% endif %}
-    <img alt="{{ include.alt }}" role="presentation"
-         {{ class }} {{ width }} {{ height }}
+    <img alt="{{ alt }}" role="{{ role }}"
+         {{ class }} {{ style }} {{ width }} {{ height }}
          src="{{ src }}"
          {{ srcset }}>
 </picture>

@@ -13,8 +13,8 @@ button,
     @include non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
-    background-color: $color-raven;
-    color: $color-white;
+    @include v(background-color, raven);
+    @include v(color, white);
     min-width: 8em;
     height: #{$line-height-code + strip-units($button-border-width)}em;
     display: inline-block;
@@ -22,9 +22,10 @@ button,
     border-width: 0;
     margin-top: $border-width-default;
     box-shadow: inset 0 (-$button-border-width) 0 0 $color-bowhead;
+    box-shadow: inset 0 (-$button-border-width) 0 0 var(--color-bowhead);
     overflow: visible;
     position: relative;
-    font-size: $font-size-beta;
+    @include v(font-size, beta);
     line-height: $line-height-code;
     text-align: center;
     text-decoration: none;
@@ -36,7 +37,7 @@ button,
     &:hover,
     &:focus,
     &:active {
-        background-color: $color-coyote;
+        @include v(background-color, coyote);
     }
 
     &:active {
@@ -44,6 +45,7 @@ button,
         padding-bottom: 0;
         margin-bottom: $button-border-width;
         box-shadow: inset 0 (-$border-width-hairline) 0 0 $color-bowhead;
+        box-shadow: inset 0 (-$border-width-hairline) 0 0 var(--color-bowhead);
         transform: translateY($button-border-width);
     }
 
@@ -74,7 +76,7 @@ button,
     }
 
     &[disabled] {
-        opacity: opacity("beta");
+        @include v(opacity, beta);
         pointer-events: none;
     }
 }
@@ -97,7 +99,7 @@ button {
 
 .button--small {
     min-width: 5em;
-    font-size: $font-size-large;
+    @include v(font-size, large);
     height: #{$line-height-code}em;
     margin-top: 0;
     line-height: #{$line-height-code - strip-units($button-border-width)};

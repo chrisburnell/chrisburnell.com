@@ -47,7 +47,7 @@
         aside & {
             width: 100%;
 
-            // Push all list items down (after the first one, in the <aside>'s
+            // Push all list items down (after the first one, in the <aside>’s
             // one-column format)
             & + li {
                 margin-top: $measure-small;
@@ -72,7 +72,7 @@
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-raven--gamma !important;
+            @include v(background-color, raven--gamma, true);
         }
 
         aside & {
@@ -93,7 +93,7 @@
         display: inline-block;
         margin-bottom: 0;
         text-decoration: underline;
-        text-decoration-color: $color-alto;
+        @include v(text-decoration-color, alto);
         // coming soon!
         // text-decoration-width: $border-width-thin;
         text-underline-position: under;
@@ -102,17 +102,17 @@
     a:focus,
     a:active {
         .title {
-            color: $color-raven;
-            text-decoration-color: $color-canada;
+            @include v(color, raven);
+            @include v(text-decoration-color, canada);
         }
     }
 
     .lede,
     .date {
-        color: $color-dove;
+        @include v(color, dove);
         margin-top: $measure-small;
-        font-size: $font-size-small;
-        font-weight: $font-weight-bold;
+        @include v(font-size, small);
+        @include v(font-weight, bold);
     }
 
     .lede {
@@ -133,8 +133,8 @@
     svg {
         @include transition(opacity, transform);
         @include will-change(opacity, transform);
-        opacity: opacity("delta");
-        stroke: $color-kaiser;
+        @include v(opacity, delta);
+        @include v(stroke, kaiser);
         // override `_icons.scss` + 4px
         width:  6.25em !important;
         height: 6.25em !important;
@@ -142,7 +142,7 @@
         top: 50%;
         right: $measure-small;
         transform: translateY(-50%);
-        z-index: z-index(root);
+        @include v(z-index, root);
 
         @include media("screen", "<=small") {
             width:  4em !important;
@@ -153,7 +153,7 @@
     a:focus,
     a:active {
         svg {
-            opacity: opacity("gamma");
+            @include v(opacity, gamma);
             transform: translateX(-$measure-large) translateY(-50%) scale(1.2);
         }
     }

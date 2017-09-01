@@ -50,7 +50,7 @@
         &::before {
             // EM-DASH
             content: "—";
-            color: $color-dove;
+            @include v(color, dove);
             position: absolute;
             left: -$measure-medium;
             transform: translateX(-50%);
@@ -60,21 +60,21 @@
     a,
     strong {
         color: inherit;
-        font-weight: $font-weight-bold;
+        @include v(font-weight, bold);
         font-style: normal;
     }
 
     a {
-        text-decoration-color: $transparent;
+        @include v(text-decoration-color, transparent);
 
         &:hover,
         &:focus,
         &:active {
-            text-decoration-color: $color-canada;
+            @include v(text-decoration-color, canada);
         }
 
         &:active {
-            color: $color-white;
+            @include v(color, white);
         }
     }
 }
@@ -102,8 +102,8 @@
 }
 .lede--featured {
     max-width: 24em;
-    font-size: $font-size-large;
-    font-weight: $font-weight-bold;
+    @include v(font-size, large);
+    @include v(font-weight, bold);
 }
 
 /**
@@ -119,7 +119,7 @@
  */
 .edit {
     @include border-radius;
-    background-color: $color-raven--gamma;
+    @include v(background-color, raven--gamma);
     width: 100%;
     max-width: $line-length-responsive;
     padding: $measure-medium;
@@ -128,7 +128,7 @@
 
     time {
         margin-bottom: $measure-small;
-        font-size: $font-size-gamma;
-        font-weight: $font-weight-bold;
+        @include v(font-size, gamma);
+        @include v(font-weight, bold);
     }
 }

@@ -35,14 +35,12 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableButton: function enableButton(element, action) {
+    enableElement: function enableElement(element, action) {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute('aria-disabled', 'false');
             element.addEventListener('click', action);
         }
-
-        return false;
     },
 
     ////
@@ -96,8 +94,6 @@ helpers = {
                 }
             }
         }
-
-        return false;
     }
 
 };
@@ -172,7 +168,7 @@ helpers = {
     var COMMENTS_HASH = ['#comment', '#disqus_thread'];
 
     // Enable the Comments button
-    helpers.enableButton(COMMENTS_BUTTON, showComments);
+    helpers.enableElement(COMMENTS_BUTTON, showComments);
 
     // initiate Comments if hash present on load
     window.addEventListener('load', helpers.actionFromHash(COMMENTS_HASH, showComments));
@@ -506,7 +502,7 @@ helpers = {
     var webmentionsCount = 0;
 
     // Enable the WebMentions button
-    helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
+    helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));

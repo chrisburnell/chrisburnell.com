@@ -16,7 +16,7 @@
         @include absolute(top);
         @include transition(transform $transition-duration-long);
         @include will-change(transform);
-        fill: $color-raven;
+        @include v(fill, raven);
         width:  $logo-size;
         height: $logo-size;
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
@@ -34,7 +34,7 @@
     }
 
     &:active {
-        background-color: $transparent;
+        @include v(background-color, transparent);
 
         svg {
             transition-duration: $transition-duration;

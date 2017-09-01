@@ -7,22 +7,22 @@
 a {
     @include transition(background-color, color, text-decoration-color);
     @include will-change(background-color, color, text-decoration-color);
-    background-color: $transparent;
-    color: $color-bowhead;
+    @include v(background-color, transparent);
+    @include v(color, bowhead);
     position: relative;
     text-decoration: underline;
-    text-decoration-color: $color-alto;
+    @include v(text-decoration-color, alto);
     text-decoration-skip: ink;
 
     &:hover,
     &:focus,
     &:active {
-        text-decoration-color: $color-canada;
+        @include v(text-decoration-color, canada);
     }
 
     &:active {
-        background-color: $color-canada;
-        color: $color-white;
+        @include v(background-color, canada);
+        @include v(color, white);
     }
 
     // Fallback for text-decoration-skip
@@ -37,23 +37,27 @@ a {
                       1px -1px 0 $color-white,
                      -1px  1px 0 $color-white,
                       1px  1px 0 $color-white;
+        text-shadow: -1px -1px 0 var(--color-white),
+                      1px -1px 0 var(--color-white),
+                     -1px  1px 0 var(--color-white),
+                      1px  1px 0 var(--color-white);
     }
 
     %heading-elements & {
-        color: $color-kaiser;
-        text-decoration-color: $transparent;
+        @include v(color, kaiser);
+        @include v(text-decoration-color, transparent);
         // coming soon!
         // text-decoration-width: $border-width-thin;
     }
 
     .dark-background & {
-        color: $color-white;
-        text-decoration-color: $color-dove;
+        @include v(color, white);
+        @include v(text-decoration-color, dove);
 
         &:hover,
         &:focus,
         &:active {
-            text-decoration-color: $color-canada;
+            @include v(text-decoration-color, canada);
         }
     }
 
@@ -72,13 +76,13 @@ a {
 
     &,
     &:link {
-        text-decoration-color: $transparent;
+        @include v(text-decoration-color, transparent);
     }
 
     &:hover,
     &:focus,
     &:active {
-        color: $color-kaiser;
+        @include v(color, kaiser);
     }
 }
 
@@ -88,13 +92,13 @@ a {
 .fragment-anchor {
     @include case(lowercase);
     @include font-family(monospace);
-    color: $color-dove;
+    @include v(color, dove);
     display: none;
     visibility: hidden;
     margin-left: $measure-medium;
     vertical-align: middle;
-    font-size: $font-size-small;
-    font-weight: $font-weight-bold;
+    @include v(font-size, small);
+    @include v(font-weight, bold);
     line-height: $line-height-small;
     text-shadow: none;
 

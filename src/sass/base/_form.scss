@@ -23,7 +23,7 @@ select,
 textarea {
     @extend %form-elements !optional;
     margin: 0;
-    font-size: $font-size-default;
+    @include v(font-size, default);
 }
 
 input,
@@ -37,15 +37,15 @@ textarea {
     outline-style: none;
 
     &:hover {
-        border-color: $color-coyote;
+        @include v(border-color, coyote);
     }
 
     &:focus {
-        border-color: $color-raven;
+        @include v(border-color, raven);
     }
 
     &[disabled] {
-        opacity: opacity("beta");
+        @include v(opacity, beta);
         pointer-events: none;
     }
 

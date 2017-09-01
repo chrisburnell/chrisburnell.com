@@ -4,24 +4,25 @@
     --wrapper-width-small: 500px;
     --wrapper-width-medium: 800px;
     --wrapper-width-large: 1140px;
-    --gutter-width: 1.250rem;
+    --gutter-width: 1.25rem;
     --aside-width: 15.875rem;
     --article-width: 50.625rem;
     --line-length-minimum: 336px;
     --line-length-maximum: 480px;
+    --line-length-responsive: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     --measure-small: 0.625rem;
     --measure-small-relative: 0.625em;
     --measure-small-proportional: 2vmin;
-    --measure-medium: 1.250rem;
-    --measure-medium-relative: 1.250em;
+    --measure-medium: 1.25rem;
+    --measure-medium-relative: 1.25em;
     --measure-medium-proportional: 4vmin;
-    --measure-large: 2.250rem;
-    --measure-large-relative: 2.250em;
+    --measure-large: 2.25rem;
+    --measure-large-relative: 2.25em;
     --measure-large-proportional: 8vmin;
-    --opacity-alpha: 0.900;
-    --opacity-beta: 0.700;
-    --opacity-gamma: 0.100;
-    --opacity-delta: 0.050;
+    --opacity-alpha: 0.9;
+    --opacity-beta: 0.7;
+    --opacity-gamma: 0.1;
+    --opacity-delta: 0.05;
     --transparent: transparent;
     --color-black: #060606;
     --color-mineshaft: #2b2b2b;
@@ -38,23 +39,23 @@
     --color-black--gamma: rgba(6, 6, 6, 0.1);
     --color-black--delta: rgba(6, 6, 6, 0.05);
     --color-raven--gamma: rgba(95, 138, 166, 0.1);
-    --border-width-default: 0.250rem;
+    --border-width-default: 0.25rem;
     --border-width-thin: 0.125rem;
     --border-width-hairline: 1px;
     --border-style-default: solid;
     --border-radius-default: 0.375rem;
-    --border-radius-thin: 0.250rem;
+    --border-radius-thin: 0.25rem;
     --border-radius-hairline: 0.125rem;
     --button-border-width: 0.182em;
     --font-display: swap;
     --font-weight-default: 400;
     --font-weight-bold: 600;
     --font-size-default: var(--base-font-size);
-    --font-size-alpha: 4.500rem;
+    --font-size-alpha: 4.5rem;
     --font-size-beta: 1.375rem;
     --font-size-gamma: 1.125rem;
-    --font-size-large: 1.250rem;
-    --font-size-large-relative: 1.250em;
+    --font-size-large: 1.25rem;
+    --font-size-large-relative: 1.25em;
     --font-size-small: 0.875rem;
     --font-size-small-relative: 0.875em;
     --font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -62,16 +63,16 @@
     --font-family-serif: Georgia, serif;
     --font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     --line-height-default: 1.875;
-    --line-height-small: 1.250;
+    --line-height-small: 1.25;
     --line-height-medium: 1.429;
-    --line-height-code: 2.000;
+    --line-height-code: 2;
     --letter-spacing-default: 0;
     --letter-spacing-uppercase: 1px;
     --animation-duration: 2s;
     --animation-function: linear;
     --rotation-default: 5deg;
-    --transition-duration: 0.200s;
-    --transition-duration-long: 1.000s;
+    --transition-duration: 0.2s;
+    --transition-duration-long: 1s;
     --transition-function: ease;
     --z-index-below: -1;
     --z-index-root: 0;
@@ -80,8 +81,6 @@
     --z-index-modal: 3;
     --z-index-dialog: 4;
     --z-index-notification: 5;
-    --aspect-ratio-16-by-9: 56.25%;
-    --aspect-ratio-4-by-3: 75.00%;
     --color-css: #016fba;
     --color-html: #e54d26;
     --color-javascript: #f1c54c;
@@ -101,8 +100,6 @@
     --max-columns: 2;
 }
 
-/* stylelint-disable max-nesting-depth */
-/* stylelint-enable max-nesting-depth */
 @font-face {
     font-family: "League Gothic";
     font-style: normal;
@@ -159,17 +156,23 @@ html {
 
 body {
     background-color: #f9f9f9;
+    background-color: var(--color-white);
     color: #4f4f4f;
+    color: var(--color-kaiser);
     width: 100%;
     margin: 0;
 }
 
 html {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-default);
     background-color: #4f4f4f;
+    background-color: var(--color-kaiser);
     font-size: 16px;
+    font-size: var(--font-size-default);
     font-style: normal;
     font-weight: 400;
+    font-weight: var(--font-weight-default);
     line-height: 1.875;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -193,6 +196,7 @@ h6 {
     margin: 0;
     position: relative;
     font-weight: 400;
+    font-weight: var(--font-weight-default);
 }
 
 /**
@@ -203,7 +207,9 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
+    font-family: var(--font-family-alpha);
     font-size: 4.5rem;
+    font-size: var(--font-size-alpha);
     line-height: 1;
     text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05);
 }
@@ -221,6 +227,7 @@ h1 {
 .beta,
 h2 {
     font-size: 1.375rem;
+    font-size: var(--font-size-beta);
     line-height: 1.25;
 }
 
@@ -231,6 +238,7 @@ h2 {
 h3,
 .lede {
     font-size: 1.125rem;
+    font-size: var(--font-size-gamma);
     line-height: 1.875;
 }
 
@@ -240,6 +248,7 @@ h3 {
     margin-top: 2.25rem;
     border-bottom: 0.125rem solid #dddddd;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 h3:not(:last-child) {
@@ -286,7 +295,9 @@ h3:not(:last-child) {
 .delta,
 h4 {
     font-size: 16px;
+    font-size: var(--font-size-default);
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     line-height: 1.25;
 }
 
@@ -300,6 +311,7 @@ h4 {
 .epsilon,
 h5 {
     font-size: 16px;
+    font-size: var(--font-size-default);
     line-height: 1.25;
 }
 
@@ -309,6 +321,7 @@ h5 {
 .zeta,
 h6 {
     font-size: 16px;
+    font-size: var(--font-size-default);
     line-height: 1.25;
 }
 
@@ -436,6 +449,7 @@ ul:not([class]) li::before,
     top: 0;
     left: 0;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 ol:not([class]),
@@ -484,6 +498,7 @@ dt {
     clear: left;
     padding-right: 1.25rem;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 @media screen and (min-width: 501px) {
@@ -591,11 +606,13 @@ figure > a {
 
 figure > a figcaption {
     color: #737373;
+    color: var(--color-dove);
     font-style: italic;
 }
 
 figure figcaption {
     font-family: Georgia, serif;
+    font-family: var(--font-family-serif);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -627,7 +644,9 @@ table {
 
 table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
+    background-color: var(--color-black--delta);
     border-left-color: #dddddd;
+    border-left-color: var(--color-alto);
 }
 
 th,
@@ -647,6 +666,7 @@ td {
 .highlight tbody tr:hover td,
 .highlight--row tbody tr:hover td {
     border-left-color: #dddddd;
+    border-left-color: var(--color-alto);
 }
 
 .highlight tbody tr:hover td,
@@ -654,6 +674,7 @@ td {
 .highlight--row tbody tr:hover td,
 .highlight--row tbody tr:hover + tr td {
     border-top-color: #dddddd;
+    border-top-color: var(--color-alto);
 }
 
 .highlight tbody tr:hover th,
@@ -661,6 +682,7 @@ td {
 .highlight--row tbody tr:hover th,
 .highlight--row tbody tr:hover td:not(:hover) {
     background-color: rgba(95, 138, 166, 0.1) !important;
+    background-color: var(--color-raven--gamma) !important;
 }
 
 /*table*/
@@ -689,10 +711,12 @@ td {
     content: "";
     opacity: 0;
     background-color: rgba(95, 138, 166, 0.1);
+    background-color: var(--color-raven--gamma);
     width: 100%;
     height: 200vw;
     pointer-events: none;
     z-index: 2;
+    z-index: var(--z-index-above);
 }
 
 .highlight thead th:not(:empty):hover::after,
@@ -710,11 +734,13 @@ th {
 
 th:not(:empty) {
     background-color: rgba(6, 6, 6, 0.05);
+    background-color: var(--color-black--delta);
 }
 
 thead th,
 tfoot th {
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     white-space: nowrap;
 }
 
@@ -743,6 +769,7 @@ tfoot th {
 tbody th {
     font-style: italic;
     font-weight: 400;
+    font-weight: var(--font-weight-default);
 }
 
 th + th {
@@ -762,6 +789,7 @@ td + td {
 tbody th,
 tbody tr:first-child td {
     border-top-color: #dddddd;
+    border-top-color: var(--color-alto);
 }
 
 tbody th {
@@ -773,6 +801,7 @@ tbody th {
 
 tbody th + td {
     border-left-color: #dddddd;
+    border-left-color: var(--color-alto);
 }
 
 /**
@@ -782,7 +811,9 @@ details {
     background-clip: padding-box;
     border-radius: 0.25rem;
     background-color: #2b2b2b;
+    background-color: var(--color-mineshaft);
     color: #f9f9f9;
+    color: var(--color-white);
     width: 100%;
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 0.625rem;
@@ -815,6 +846,7 @@ summary {
     display: list-item;
     outline: 0;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
 }
 
@@ -849,8 +881,10 @@ blockquote {
     background-clip: padding-box;
     border-radius: 0.375rem;
     font-family: Georgia, serif;
+    font-family: var(--font-family-serif);
     hanging-punctuation: first;
     background-color: rgba(95, 138, 166, 0.1);
+    background-color: var(--color-raven--gamma);
     width: 100%;
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
@@ -948,7 +982,8 @@ audio:not([controls]) {
 }
 
 hr {
-    background: rgba(6, 6, 6, 0.1);
+    background-color: rgba(6, 6, 6, 0.1);
+    background-color: var(--color-black--gamma);
     width: 100%;
     height: 0.125rem;
     display: block;
@@ -978,6 +1013,7 @@ blockquote,
 cite,
 dfn[title] {
     color: #737373;
+    color: var(--color-dove);
     font-style: italic;
 }
 
@@ -995,15 +1031,18 @@ ins {
 
 small {
     font-size: 0.875rem;
+    font-size: var(--font-size-small);
 }
 
 strong {
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 sub,
 sup {
     font-size: 0.875rem;
+    font-size: var(--font-size-small);
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -1040,19 +1079,25 @@ textarea {
  */
 ::-moz-selection {
     background-color: #5f8aa6;
+    background-color: var(--color-raven);
     color: #f9f9f9;
+    color: var(--color-white);
 }
 ::selection {
     background-color: #5f8aa6;
+    background-color: var(--color-raven);
     color: #f9f9f9;
+    color: var(--color-white);
 }
 
 .canada::-moz-selection {
     background-color: #fd1b00;
+    background-color: var(--color-canada);
 }
 
 .canada::selection {
     background-color: #fd1b00;
+    background-color: var(--color-canada);
 }
 
 a {
@@ -1062,11 +1107,15 @@ a {
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     will-change: background-color, color, text-decoration-color;
     background-color: transparent;
+    background-color: var(--color-transparent);
     color: #4d7086;
+    color: var(--color-bowhead);
     position: relative;
     text-decoration: underline;
     -webkit-text-decoration-color: #dddddd;
             text-decoration-color: #dddddd;
+    -webkit-text-decoration-color: var(--color-alto);
+            text-decoration-color: var(--color-alto);
     -webkit-text-decoration-skip: ink;
             text-decoration-skip: ink;
 }
@@ -1074,11 +1123,15 @@ a {
 a:hover, a:focus, a:active {
     -webkit-text-decoration-color: #fd1b00;
             text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: var(--color-canada);
+            text-decoration-color: var(--color-canada);
 }
 
 a:active {
     background-color: #fd1b00;
+    background-color: var(--color-canada);
     color: #f9f9f9;
+    color: var(--color-white);
 }
 
 @supports not ((-webkit-text-decoration-skip: ink) or (text-decoration-skip: ink)) {
@@ -1090,6 +1143,7 @@ a:active {
         background-position: 0 90%;
         text-decoration: none;
         text-shadow: -1px -1px 0 #f9f9f9, 1px -1px 0 #f9f9f9, -1px 1px 0 #f9f9f9, 1px 1px 0 #f9f9f9;
+        text-shadow: -1px -1px 0 var(--color-white), 1px -1px 0 var(--color-white), -1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white);
     }
 }
 
@@ -1100,19 +1154,27 @@ h4 a,
 h5 a,
 h6 a {
     color: #4f4f4f;
+    color: var(--color-kaiser);
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
+    -webkit-text-decoration-color: var(--color-transparent);
+            text-decoration-color: var(--color-transparent);
 }
 
 .dark-background a {
     color: #f9f9f9;
+    color: var(--color-white);
     -webkit-text-decoration-color: #737373;
             text-decoration-color: #737373;
+    -webkit-text-decoration-color: var(--color-dove);
+            text-decoration-color: var(--color-dove);
 }
 
 .dark-background a:hover, .dark-background a:focus, .dark-background a:active {
     -webkit-text-decoration-color: #fd1b00;
             text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: var(--color-canada);
+            text-decoration-color: var(--color-canada);
 }
 
 a span:not([class]):not([itemprop]) {
@@ -1143,10 +1205,13 @@ a span:not([class]):not([itemprop]) {
 .title-anchor, .title-anchor:link {
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
+    -webkit-text-decoration-color: var(--color-transparent);
+            text-decoration-color: var(--color-transparent);
 }
 
 .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
     color: #4f4f4f;
+    color: var(--color-kaiser);
 }
 
 /**
@@ -1155,15 +1220,19 @@ a span:not([class]):not([itemprop]) {
 .fragment-anchor {
     text-transform: lowercase;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
     color: #737373;
+    color: var(--color-dove);
     display: none;
     visibility: hidden;
     margin-left: 1.25rem;
     vertical-align: middle;
     font-size: 0.875rem;
+    font-size: var(--font-size-small);
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     line-height: 1.25;
     text-shadow: none;
 }
@@ -1284,6 +1353,7 @@ header {
 header::before {
     content: "";
     background-color: #5f8aa6;
+    background-color: var(--color-raven);
     height: 0.25rem;
     position: absolute;
     bottom: 0;
@@ -1325,6 +1395,7 @@ header::before {
  */
 aside {
     font-family: Georgia, serif;
+    font-family: var(--font-family-serif);
 }
 
 @media screen and (max-width: 800px) {
@@ -1367,26 +1438,29 @@ aside p {
     aside figcaption,
     aside p {
         font-size: 0.875rem;
+        font-size: var(--font-size-small);
     }
 }
 
 @-webkit-keyframes anchor-target {
     0%,
     50% {
-        background-color: gold;
+        background-color: var(--color-highlight);
     }
     100% {
         background-color: transparent;
+        background-color: var(--color-transparent);
     }
 }
 
 @keyframes anchor-target {
     0%,
     50% {
-        background-color: gold;
+        background-color: var(--color-highlight);
     }
     100% {
         background-color: transparent;
+        background-color: var(--color-transparent);
     }
 }
 
@@ -1486,6 +1560,7 @@ h6[id]:target,
     transition: transform 1s ease 0s, -webkit-transform 1s ease 0s;
     will-change: transform;
     fill: #5f8aa6;
+    fill: var(--color-raven);
     width: 8.5rem;
     height: 8.5rem;
     -webkit-transform: translateX(-65%) translateY(-40%) rotateZ(5deg);
@@ -1506,6 +1581,7 @@ h6[id]:target,
 
 .logo:active {
     background-color: transparent;
+    background-color: var(--color-transparent);
 }
 
 .logo:active svg {
@@ -1563,23 +1639,27 @@ h6[id]:target,
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "League Gothic", Impact, sans-serif;
+    font-family: var(--font-family-alpha);
     -webkit-transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     will-change: color, padding-bottom, border-bottom-width, transform;
     color: #737373;
+    color: var(--color-dove);
     display: block;
     padding: 0.75rem 1rem;
     border: 0 solid #5f8aa6;
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
+    font-size: var(--font-size-large);
     line-height: 1.25;
     text-decoration: none;
 }
 
 .nav-primary-list a:active {
     background-color: transparent;
+    background-color: var(--color-transparent);
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem);
 }
@@ -1602,6 +1682,7 @@ h6[id]:target,
 .page--pens .nav-primary--pens a,
 .page--search .nav-primary--search a {
     color: #4f4f4f;
+    color: var(--color-kaiser);
     padding-bottom: 0.5rem;
     border-bottom-width: 0.25rem;
 }
@@ -1669,6 +1750,7 @@ aside + .meta {
 .meta div + div::before {
     content: "—";
     color: #737373;
+    color: var(--color-dove);
     position: absolute;
     left: -1.25rem;
     -webkit-transform: translateX(-50%);
@@ -1679,21 +1761,27 @@ aside + .meta {
 .meta strong {
     color: inherit;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     font-style: normal;
 }
 
 .meta a {
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
+    -webkit-text-decoration-color: var(--color-transparent);
+            text-decoration-color: var(--color-transparent);
 }
 
 .meta a:hover, .meta a:focus, .meta a:active {
     -webkit-text-decoration-color: #fd1b00;
             text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: var(--color-canada);
+            text-decoration-color: var(--color-canada);
 }
 
 .meta a:active {
     color: #f9f9f9;
+    color: var(--color-white);
 }
 
 /**
@@ -1721,7 +1809,9 @@ aside + .lede {
 .lede--featured {
     max-width: 24em;
     font-size: 1.25rem;
+    font-size: var(--font-size-large);
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 /**
@@ -1740,6 +1830,7 @@ aside + .lede {
     background-clip: padding-box;
     border-radius: 0.375rem;
     background-color: rgba(95, 138, 166, 0.1);
+    background-color: var(--color-raven--gamma);
     width: 100%;
     max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     padding: 1.25rem;
@@ -1750,7 +1841,9 @@ aside + .lede {
 .edit time {
     margin-bottom: 0.625rem;
     font-size: 1.125rem;
+    font-size: var(--font-size-gamma);
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 /**
@@ -1760,6 +1853,7 @@ aside + .lede {
 /*aside*/
 .author {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-default);
 }
 
 @media screen and (max-width: 800px) {
@@ -1783,6 +1877,7 @@ aside + .lede {
  */
 .author-information {
     font-family: Georgia, serif;
+    font-family: var(--font-family-serif);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1792,6 +1887,7 @@ aside + .lede {
             flex-direction: row;
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
+    font-size: var(--font-size-small);
     font-style: italic;
     line-height: 1.429;
 }
@@ -1809,23 +1905,30 @@ aside + .lede {
     text-transform: uppercase;
     letter-spacing: 0;
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-family-default);
     color: inherit;
     font-weight: 600;
+    font-weight: var(--font-weight-bold);
     font-style: normal;
 }
 
 .author-information a {
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
+    -webkit-text-decoration-color: var(--color-transparent);
+            text-decoration-color: var(--color-transparent);
 }
 
 .author-information a:hover, .author-information a:focus, .author-information a:active {
     -webkit-text-decoration-color: #fd1b00;
             text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: var(--color-canada);
+            text-decoration-color: var(--color-canada);
 }
 
 .author-information a:active {
     color: #f9f9f9;
+    color: var(--color-white);
 }
 
 /**
