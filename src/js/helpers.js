@@ -40,7 +40,9 @@ helpers = {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute('aria-disabled', 'false');
-            element.addEventListener('click', action);
+            if (action) {
+                element.addEventListener('click', action);
+            }
         }
 
         return false;

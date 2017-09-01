@@ -13,6 +13,7 @@
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
+    const WEBMENTIONS_SUBMIT = document.querySelector('.js-webmentions-submit');
     const WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ['#webmention', '#mention'];
@@ -23,8 +24,10 @@
                                  </li>`;
     let webmentionsCount = 0;
 
-    // Enable the WebMentions button
+    // enable the WebMentions button, input, and submit
     helpers.enableButton(WEBMENTIONS_BUTTON, showWebmentions);
+    helpers.enableButton(WEBMENTIONS_INPUT);
+    helpers.enableButton(WEBMENTIONS_SUBMIT);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
