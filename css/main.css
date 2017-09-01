@@ -333,9 +333,8 @@ h3:not(:last-child) {
 @media screen and (max-width: 800px) {
     .content > h3,
     .widget h3 {
-        -webkit-align-self: flex-start;
-            -ms-flex-item-align: start;
-                align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     }
 }
 
@@ -527,12 +526,10 @@ ol.default-list > li::before {
 ol:not([class])[reversed],
 ol.default-list[reversed] {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
 }
@@ -622,20 +619,16 @@ svg:not(:root) {
 figure {
     max-width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 0 1.25rem;
@@ -674,16 +667,13 @@ figure figcaption {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     padding-top: 1.25rem;
@@ -696,12 +686,10 @@ figure figcaption {
 table {
     min-width: 100%;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     border-collapse: collapse;
@@ -2048,7 +2036,6 @@ main {
 
 header {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
@@ -2065,11 +2052,9 @@ header {
     header {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
             -ms-flex-pack: center;
                 justify-content: center;
     }
@@ -2084,7 +2069,6 @@ header {
 @media screen and (min-width: 801px) {
     header {
         -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
             -ms-flex-pack: justify;
                 justify-content: space-between;
     }
@@ -2119,12 +2103,10 @@ header::before {
 @media screen and (max-width: 800px) {
     .content {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
     }
@@ -2149,7 +2131,6 @@ aside {
 @media screen and (max-width: 800px) {
     aside {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
     }
@@ -2296,7 +2277,6 @@ h6[id]:target,
     -webkit-touch-callout: none;
     height: 6.25rem;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 15.875rem;
         -ms-flex: 1 0 15.875rem;
             flex: 1 0 15.875rem;
     display: inline-block;
@@ -2356,7 +2336,6 @@ h6[id]:target,
 @media screen and (max-width: 800px) {
     .nav-primary {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
         padding-top: 0.625rem;
@@ -2605,21 +2584,17 @@ aside + .lede {
 
 .content-list {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: 2.25rem;
     line-height: 1.25;
 }
@@ -2643,17 +2618,14 @@ aside + .lede {
     .content-list li {
         width: 49.01235%;
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 }
 
@@ -2673,16 +2645,13 @@ aside .content-list li + li {
 
 .content-list article {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 100%;
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
 }
@@ -2691,7 +2660,6 @@ aside .content-list li + li {
     background-clip: padding-box;
     border-radius: 0.375rem;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 100%;
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
     display: block;
@@ -2819,7 +2787,6 @@ aside .content-list a {
 .search-form {
     position: relative;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
@@ -2827,7 +2794,6 @@ aside .content-list a {
 .search-input {
     min-width: 1px;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 1 0;
         -ms-flex: 1 1 0px;
             flex: 1 1 0;
     font-size: 0.875rem;
@@ -2847,12 +2813,10 @@ aside .content-list a {
 .buttons-list {
     width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 @media screen and (max-width: 500px) {
@@ -2860,7 +2824,6 @@ aside .content-list a {
     .buttons-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
     }
@@ -2871,11 +2834,9 @@ aside .content-list a {
     .buttons-list {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
             -ms-flex-direction: row;
                 flex-direction: row;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
             -ms-flex-pack: center;
                 justify-content: center;
     }
@@ -2966,16 +2927,13 @@ p + .nav-secondary {
 @media screen and (max-width: 800px) {
     .author {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         -webkit-box-ordinal-group: 1000;
-        -webkit-order: 999;
             -ms-flex-order: 999;
                 order: 999;
         margin-top: 2.25rem;
@@ -2989,12 +2947,10 @@ p + .nav-secondary {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     margin-bottom: 1.25rem;
@@ -3099,28 +3055,23 @@ picture {
 
 .author-name {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
 }
 
 .widget {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
 }
@@ -3140,9 +3091,8 @@ aside .widget::after {
 }
 
 .widget-related-anchor {
-    -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     margin-top: 1.25rem;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -3164,11 +3114,9 @@ footer {
 
 footer div {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
@@ -3177,7 +3125,6 @@ footer div {
     footer div {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
     }
@@ -3192,7 +3139,6 @@ footer div {
     .license,
     .nav-tertiary {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
         text-align: center;
@@ -3357,31 +3303,27 @@ footer div {
 
 .webmentions__form {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
 
 @media (max-width: 500px) {
     .webmentions__form {
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 }
 
 .webmentions__form h4 {
     margin-bottom: 0;
-    -webkit-align-self: center;
-        -ms-flex-item-align: center;
-            align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     padding-right: 1.25rem;
 }
 
 @media (max-width: 500px) {
     .webmentions__form h4 {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
         margin-bottom: 1.25rem;
@@ -3391,7 +3333,6 @@ footer div {
 @media (min-width: 501px) {
     .webmentions__form h4 {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
                 flex: 1 0 auto;
     }
@@ -3741,19 +3682,16 @@ video {
 .palette-list {
     width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 @media screen and (max-width: 500px) {
     .palette-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
     }
@@ -3774,7 +3712,6 @@ video {
 @media screen and (max-width: 500px) {
     .palette-list li {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
     }
@@ -3783,7 +3720,6 @@ video {
 @media screen and (min-width: 501px) and (max-width: 1140px) {
     .palette-list li {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 50%;
             -ms-flex: 1 0 50%;
                 flex: 1 0 50%;
     }
@@ -3792,7 +3728,6 @@ video {
 @media screen and (min-width: 1141px) {
     .palette-list li {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 33.333%;
             -ms-flex: 1 0 33.333%;
                 flex: 1 0 33.333%;
     }

@@ -280,9 +280,8 @@ h3:not(:last-child) {
 @media screen and (max-width: 800px) {
     .content > h3,
     .widget h3 {
-        -webkit-align-self: flex-start;
-            -ms-flex-item-align: start;
-                align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     }
 }
 
@@ -474,12 +473,10 @@ ol.default-list > li::before {
 ol:not([class])[reversed],
 ol.default-list[reversed] {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
 }
@@ -569,20 +566,16 @@ svg:not(:root) {
 figure {
     max-width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 0 1.25rem;
@@ -621,16 +614,13 @@ figure figcaption {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     padding-top: 1.25rem;
@@ -643,12 +633,10 @@ figure figcaption {
 table {
     min-width: 100%;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     border-collapse: collapse;
@@ -1318,7 +1306,6 @@ main {
 
 header {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
@@ -1335,11 +1322,9 @@ header {
     header {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
             -ms-flex-pack: center;
                 justify-content: center;
     }
@@ -1354,7 +1339,6 @@ header {
 @media screen and (min-width: 801px) {
     header {
         -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
             -ms-flex-pack: justify;
                 justify-content: space-between;
     }
@@ -1389,12 +1373,10 @@ header::before {
 @media screen and (max-width: 800px) {
     .content {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
     }
@@ -1419,7 +1401,6 @@ aside {
 @media screen and (max-width: 800px) {
     aside {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
     }
@@ -1560,7 +1541,6 @@ h6[id]:target,
     -webkit-touch-callout: none;
     height: 6.25rem;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 15.875rem;
         -ms-flex: 1 0 15.875rem;
             flex: 1 0 15.875rem;
     display: inline-block;
@@ -1620,7 +1600,6 @@ h6[id]:target,
 @media screen and (max-width: 800px) {
     .nav-primary {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 0 100%;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
         padding-top: 0.625rem;
@@ -1880,16 +1859,13 @@ aside + .lede {
 @media screen and (max-width: 800px) {
     .author {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         -webkit-box-ordinal-group: 1000;
-        -webkit-order: 999;
             -ms-flex-order: 999;
                 order: 999;
         margin-top: 2.25rem;
@@ -1903,12 +1879,10 @@ aside + .lede {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     margin-bottom: 1.25rem;
@@ -2013,16 +1987,13 @@ picture {
 
 .author-name {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
 }
