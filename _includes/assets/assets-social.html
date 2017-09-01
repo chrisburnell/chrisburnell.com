@@ -34,6 +34,7 @@
     {% endif %}
     <meta property="og:title" content="{{ meta_title }}">
     <meta property="og:description" content="{{ meta_lede }}">
+    <meta property="og:locale" content="{{ site.language }}">
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
     {% if page.banner %}
         <meta property="og:image" content="{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
