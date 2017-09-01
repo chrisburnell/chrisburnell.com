@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: $measure-medium;
-    font-size: $font-size-small;
+    @include v(font-size, small);
     font-style: italic;
     line-height: $line-height-medium;
 
@@ -43,21 +43,21 @@
         @include case(uppercase, 0);
         @include font-family(default);
         color: inherit;
-        font-weight: $font-weight-bold;
+        @include v(font-weight, bold);
         font-style: normal;
     }
 
     a {
-        text-decoration-color: $transparent;
+        @include v(text-decoration-color, transparent);
 
         &:hover,
         &:focus,
         &:active {
-            text-decoration-color: $color-canada;
+            @include v(text-decoration-color, canada);
         }
 
         &:active {
-            color: $color-white;
+            @include v(color, white);
         }
     }
 }

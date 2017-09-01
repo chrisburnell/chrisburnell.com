@@ -146,7 +146,7 @@
         @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
     }
 
-    font-family: map-get($font-families, $family);
+    @include v(font-family, $family);
 
     @if $family == "monospace" {
         font-variant-ligatures: none;
@@ -451,6 +451,63 @@
     }
 
     will-change: $changes;
+}
+
+
+///
+/// Select a CSS variable and provide a fallback
+///
+@mixin v($property, $variable, $important: false, $show-fallback: true) {
+    $map-name: map-get($property-maps, $property);
+    $nest-name: null;
+    $nest-map-name: null;
+    $map: null;
+    $variable-fallback: null;
+    $variable-output: null;
+
+    // if a Nested List, we need to go deeper
+    @if type-of($map-name) == "list" {
+        $nest-name: nth($map-name, 1);
+        $nest-map-name: nth($map-name, 2);
+    }
+
+    // if it is a Nested List
+    @if $nest-name {
+        // get the map from nested map-name
+        $map: map-get($variable-maps, $nest-name);
+        // get the nested map
+        $nest-map: map-get($map, $nest-map-name);
+        // fallback value, get the var value from the nested map
+        $variable-fall: map-get($nest-map, "#{$variable}");
+        // our css4 variable output
+        $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$variable});
+    }
+    @else {
+        // get the map from map name
+        $map: map-get($variable-maps, $map-name);
+        // fallback value, grab the variable's value from the map
+        $variable-fallback: map-get($map, "#{$variable}");
+        // our css4 variable output
+        $variable-output: var(--#{$map-name}-#{$variable});
+    }
+
+    // if show fallback is not overridden to be null
+    @if $show-fallback {
+        @if $important {
+            #{$property}: $variable-fallback !important;
+        }
+        @else {
+            #{$property}: $variable-fallback;
+        }
+    }
+
+    // CSS Variable
+    @if $important {
+        #{$property}: $variable-output !important;
+    }
+    @else {
+        #{$property}: $variable-output;
+    }
 }
 
 

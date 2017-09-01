@@ -12,10 +12,10 @@
 ////
 
 /// ABSTRACTS
-@import "abstracts/custom-variables";
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
+@import "abstracts/custom-variables";
 
 /// VENDORS
 @import "vendors/include-media";

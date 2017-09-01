@@ -22,7 +22,7 @@
     li {
         padding: $measure-medium 0;
         vertical-align: middle;
-        font-size: $font-size-small;
+        @include v(font-size, small);
         font-variant-numeric: tabular-nums;
         font-feature-settings: "tnum";
         text-align: center;
@@ -40,7 +40,7 @@
             flex: 1 0 33.333%;
         }
 
-        @each $color-name, $color-value in $site-colors {
+        @each $color-name, $color-value in $palette-colors {
             &[data-color="#{$color-name}"] {
                 background-color: $color-value;
                 color: contrasting-color($color-value);
@@ -62,7 +62,7 @@
     &::before {
         @include absolute(top, 100%);
         content: "(Hover to interact.)";
-        color: $color-kaiser;
+        @include v(color, kaiser);
         margin-top: $measure-small;
     }
 
@@ -87,19 +87,19 @@
     position: relative;
     line-height: strip-units($measure-large * 1.5 - $border-width-thin * 2);
     text-align: center;
-    z-index: z-index(above);
+    @include v(z-index, above);
 
     &:hover,
     &:focus {
-        color: $color-white;
+        @include v(color, white);
     }
 
     &::before {
         @include absolute(full);
         @include border-radius(hairline);
         content: "";
-        background-color: $color-kaiser;
-        z-index: z-index(below);
+        @include v(background-color, kaiser);
+        @include v(z-index, below);
     }
 
     .transition-example--slide & {

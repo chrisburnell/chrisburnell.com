@@ -30,7 +30,7 @@
         .icon {
             @include transition(opacity, transform);
             @include will-change(opacity, transform);
-            opacity: opacity("beta");
+            @include v(opacity, beta);
             height: $icon-size;
 
             @include media("screen", "prefers-reduced-motion") {

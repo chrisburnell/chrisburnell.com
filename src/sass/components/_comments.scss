@@ -8,7 +8,7 @@
 .comments-anchor {
     display: inline-block;
     margin-top: 1.625em;
-    font-weight: $font-weight-bold;
+    @include v(font-weight, bold);
     line-height: 2;
 
     &::after {
@@ -27,7 +27,7 @@
     }
 
     noscript {
-        font-size: $font-size-large;
+        @include v(font-size, large);
         font-style: italic;
     }
 }

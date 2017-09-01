@@ -20,7 +20,7 @@
 
     // Used on the Style Guide page
     .icons-list & {
-        fill: $color-kaiser;
+        @include v(fill, kaiser);
         height: #{$measure-large * 2};
     }
 }
@@ -28,7 +28,7 @@
 /**
  * Brand Icon Widths and Colors
  */
-@each $color-brand in $color-brands {
+@each $color-brand in $brand-colors {
     $name:       nth($color-brand, 1);
     $icon-color: nth($color-brand, 2);
     $ratio:      nth($color-brand, 3);

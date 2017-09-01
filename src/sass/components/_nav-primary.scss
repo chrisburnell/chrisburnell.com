@@ -47,17 +47,17 @@
         @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);
-        color: $color-dove;
+        @include v(color, dove);
         display: block;
         padding: 0.75rem 1rem;
         border: 0 $border-style-default $color-raven;
         margin-bottom: 0.25rem;
-        font-size: $font-size-large;
+        @include v(font-size, large);
         line-height: $line-height-small;
         text-decoration: none;
 
         &:active {
-            background-color: $transparent;
+            @include v(background-color, transparent);
             transform: translateY(0.2rem);
         }
 
@@ -73,7 +73,7 @@
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
 %nav-primary-anchor {
-    color: $color-kaiser;
+    @include v(color, kaiser);
     padding-bottom: 0.5rem;
     border-bottom-width: $border-width-default;
 }

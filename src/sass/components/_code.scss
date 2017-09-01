@@ -17,11 +17,11 @@ code[data-lang] {
         @include font-family(default);
         @include transition;
         content: attr(data-lang);
-        background-color: $color-dove;
-        color: $color-white;
+        @include v(background-color, dove);
+        @include v(color, white);
         padding: 0 $measure-medium;
-        font-size: $font-size-large;
-        font-weight: $font-weight-bold;
+        @include v(font-size, large);
+        @include v(font-weight, bold);
         line-height: $measure-large;
         text-shadow: none;
     }
@@ -30,7 +30,7 @@ code[data-lang] {
 /**
  * Highlighted Code Block Labels
  */
-@each $language, $color in $coding-languages {
+@each $language, $color in $language-colors {
     &.language-#{$language} {
         &::before {
             background-color: #{$color} !important;

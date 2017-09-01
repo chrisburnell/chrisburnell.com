@@ -5,9 +5,9 @@
 
 
 footer {
-    background-color: $color-kaiser;
-    color: $color-alto;
-    font-weight: $font-weight-bold;
+    @include v(background-color, kaiser);
+    @include v(color, alto);
+    @include v(font-weight, bold);
     text-transform: uppercase;
 
     div {
@@ -47,17 +47,18 @@ footer {
     white-space: nowrap;
 
     &:active {
-        background-color: $transparent;
+        @include v(background-color, transparent);
+
     }
 
     .icon {
         @include transition(opacity, transform);
         @include will-change(opacity, transform);
-        opacity: opacity("alpha");
+        @include v(opacity, alpha);
+        @include v(fill, raven);
         width: 100%;
         height: 100%;
         display: block;
-        fill: $color-raven;
 
         @include media("screen", "prefers-reduced-motion") {
             @include transition(none);

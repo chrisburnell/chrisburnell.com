@@ -63,15 +63,24 @@ $measure-large-relative:  2.250em !default;
 $measure-large-proportional:  8vmin !default;
 
 
+/// @type Number
+$opacity-alpha: 0.900 !default;
+/// @type Number
+$opacity-beta:  0.700 !default;
+/// @type Number
+$opacity-gamma: 0.100 !default;
+/// @type Number
+$opacity-delta: 0.050 !default;
+
 /// @type Map
 /// @prop {String} key - Opacity name
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    "alpha": 0.900,
-    "beta":  0.700,
-    "gamma": 0.100,
-    "delta": 0.050,
+    "alpha": $opacity-alpha,
+    "beta":  $opacity-beta,
+    "gamma": $opacity-gamma,
+    "delta": $opacity-delta
 ) !default;
 
 
@@ -118,28 +127,37 @@ $color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
 $color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
 /// @type Map
 /// @prop {Color} Color
-/// @require {Variable} $color-bowhead
-/// @require {Variable} $color-raven
-/// @require {Variable} $color-coyote
-/// @require {Variable} $color-canada
-/// @require {Variable} $color-black
-/// @require {Variable} $color-mineshaft
-/// @require {Variable} $color-kaiser
-/// @require {Variable} $color-dove
-/// @require {Variable} $color-alto
-/// @require {Variable} $color-white
 $site-colors: (
-    "bowhead":   $color-bowhead,
-    "raven":     $color-raven,
-    "coyote":    $color-coyote,
-    "canada":    $color-canada,
-    "black":     $color-black,
-    "mineshaft": $color-mineshaft,
-    "kaiser":    $color-kaiser,
-    "dove":      $color-dove,
-    "alto":      $color-alto,
-    "white":     $color-white
+    "transparent":  $transparent,
+    "bowhead":      $color-bowhead,
+    "raven":        $color-raven,
+    "coyote":       $color-coyote,
+    "canada":       $color-canada,
+    "black":        $color-black,
+    "mineshaft":    $color-mineshaft,
+    "kaiser":       $color-kaiser,
+    "dove":         $color-dove,
+    "alto":         $color-alto,
+    "white":        $color-white,
+    "black--alpha": $color-black--alpha,
+    "black--gamma": $color-black--gamma,
+    "black--delta": $color-black--delta,
+    "raven--gamma": $color-raven--gamma
 ) !default;
+/// @type Map
+/// @prop {Color} Color
+$palette-colors: (
+    "bowhead":      $color-bowhead,
+    "raven":        $color-raven,
+    "coyote":       $color-coyote,
+    "canada":       $color-canada,
+    "black":        $color-black,
+    "mineshaft":    $color-mineshaft,
+    "kaiser":       $color-kaiser,
+    "dove":         $color-dove,
+    "alto":         $color-alto,
+    "white":        $color-white
+);
 
 
 /// @type Length
@@ -183,6 +201,11 @@ $font-display: swap !default;
 $font-weight-default: 400 !default;
 /// @type Number
 $font-weight-bold:    600 !default;
+/// @type Map
+$font-weights: (
+    "default": $font-weight-default,
+    "bold":    $font-weight-bold
+);
 
 
 /// @type Length
@@ -317,18 +340,33 @@ $transition-duration-long: 1.000s !default;
 $transition-function: ease !default;
 
 
+/// @type Number
+$z-index-below: -1;
+/// @type Number
+$z-index-root: 0;
+/// @type Number
+$z-index-default: 1;
+/// @type Number
+$z-index-above: 2;
+/// @type Number
+$z-index-modal: 3;
+/// @type Number
+$z-index-dialog: 4;
+/// @type Number
+$z-index-notification: 5;
+
 /// @type Map
 /// @prop {String} key - z-index name
 /// @prop {Number} value - z-index value
 /// @see {Function} z-index
 $z-indexes: (
-    "below":       -1,
-    "root":         0,
-    "default":      1,
-    "above":        2,
-    "modal":        3,
-    "dialog":       4,
-    "notification": 5
+    "below":        $z-index-below,
+    "root":         $z-index-root,
+    "default":      $z-index-default,
+    "above":        $z-index-above,
+    "modal":        $z-index-modal,
+    "dialog":       $z-index-dialog,
+    "notification": $z-index-notification
 ) !default;
 
 
@@ -378,7 +416,7 @@ $color-sass: #c6538c !default;
 /// @require {Variable} $color-liquid
 /// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
-$coding-languages: (
+$language-colors: (
     "css":         $color-css,
     "haml":        $color-html,
     "html":        $color-html,
@@ -416,7 +454,7 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @require {Variable} $color-rss
 /// @require {Variable} $color-spotify
 /// @require {Variable} $color-twitter
-$color-brands:
+$brand-colors:
     codepen  $color-white    1.025,
     github   $color-white    1.000,
     lastfm   $color-lastfm   1.000,
