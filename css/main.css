@@ -3334,9 +3334,15 @@ footer div {
 @media (min-width: 501px) {
     .webmentions__form h4 {
         -webkit-box-flex: 1;
-            -ms-flex: 1 0 auto;
-                flex: 1 0 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
     }
+}
+
+.webmentions__form .webmentions-input,
+.webmentions__form .webmentions-submit {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
 
 .webmentions__form .webmentions-submit {

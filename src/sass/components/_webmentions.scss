@@ -32,8 +32,13 @@
         }
 
         @include media(">small") {
-            flex: 1 0 auto;
+            flex: 1 1 auto;
         }
+    }
+
+    .webmentions-input,
+    .webmentions-submit {
+        align-self: flex-end;
     }
 
     .webmentions-submit {
