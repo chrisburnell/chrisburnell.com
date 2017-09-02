@@ -294,6 +294,7 @@ picture {
     @extend %image-elements !optional;
 }
 %image-elements {
+    margin: 0 auto;
     position: relative;
 
     &,

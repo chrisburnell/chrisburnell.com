@@ -50,7 +50,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 <figure>
     <a href="/images/content/pinboard-before@2x.png">
         {% include content/img.html src='/images/content/pinboard-before.png 1x, /images/content/pinboard-before@2x.png 2x' alt='' %}
-        <figcaption>The <q>before shot.</q></figcaption>
+        <figcaption><p>The <q>before shot.</q></p></figcaption>
     </a>
 </figure>
 

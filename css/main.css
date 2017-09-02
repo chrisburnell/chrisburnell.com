@@ -586,6 +586,7 @@ dd:not(:last-child) {
 img,
 svg,
 picture {
+    margin: 0 auto;
     position: relative;
 }
 
