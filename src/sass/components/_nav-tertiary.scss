@@ -10,7 +10,6 @@
     }
 
     @include media("screen", ">medium") {
-        // 5px
         margin-top: #{$measure-small / 2};
     }
 }
@@ -20,7 +19,7 @@
         display: inline-block;
 
         & + li {
-            margin-left: 1rem;
+            margin-left: $measure-one;
         }
     }
 

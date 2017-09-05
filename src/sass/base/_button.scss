@@ -13,7 +13,7 @@ button,
     @include non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
-    @include v(background-color, raven);
+    @include v(background-color, bowhead);
     @include v(color, white);
     min-width: 8em;
     height: #{$line-height-code + strip-units($button-border-width)}em;
@@ -33,11 +33,10 @@ button,
     cursor: pointer;
     appearance: none;
 
-
     &:hover,
     &:focus,
     &:active {
-        @include v(background-color, coyote);
+        @include v(background-color, raven);
     }
 
     &:active {

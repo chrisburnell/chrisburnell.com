@@ -60,8 +60,7 @@ h6 {
     @include font-family(alpha);
     @include v(font-size, alpha);
     line-height: 1;
-    // 4px 4px
-    text-shadow: 0.250rem 0.250rem 0 $color-black--delta;
+    text-shadow: $border-width-default $border-width-default 0 $color-black--delta;
 
     @include media("screen", "<=small") {
         font-size: #{$font-size-alpha / 1.285}; // 56px
@@ -89,7 +88,7 @@ h2 {
 .gamma,
 %gamma {
     @include v(font-size, gamma);
-    line-height: 1.875;
+    line-height: $line-height-default;
 }
 h3 {
     @extend %gamma !optional;

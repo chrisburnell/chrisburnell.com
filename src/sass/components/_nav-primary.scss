@@ -24,7 +24,7 @@
     li {
         display: inline-block;
         // reset font-size
-        font-size: 1rem;
+        font-size: $measure-one;
 
         & + li {
 
@@ -49,9 +49,9 @@
         @include will-change(color, padding-bottom, border-bottom-width, transform);
         @include v(color, dove);
         display: block;
-        padding: 0.75rem 1rem;
+        padding: #{$measure-one - $border-width-default} $measure-one;
         border: 0 $border-style-default $color-raven;
-        margin-bottom: 0.25rem;
+        margin-bottom: $border-width-default;
         @include v(font-size, large);
         line-height: $line-height-small;
         text-decoration: none;

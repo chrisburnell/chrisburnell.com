@@ -61,6 +61,10 @@ $measure-large:           2.250rem !default;
 $measure-large-relative:  2.250em !default;
 /// @type Length
 $measure-large-proportional:  8vmin !default;
+/// @type Length
+$measure-one:                 1rem !default;
+/// @type Length
+$measure-one-relative:        1em !default;
 
 
 /// @type Number
@@ -102,11 +106,11 @@ $color-white: #f9f9f9 !default;
 /// @type Color
 $color-raven: #5f8aa6 !default;
 /// @type Color
-$color-bowhead: #4d7086 !default;
+$color-bowhead: #507791 !default;
 /// @type Color
-$color-coyote: #6e95ae !default;
+$color-coyote: #759ab3 !default;
 /// @type Color
-$color-canada: #fd1b00 !default;
+$color-canada: #ff0000 !default;
 /// @type Color
 $color-highlight: gold !default;
 /// @type Color

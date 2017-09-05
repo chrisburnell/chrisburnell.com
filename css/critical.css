@@ -19,6 +19,8 @@
     --measure-large: 2.25rem;
     --measure-large-relative: 2.25em;
     --measure-large-proportional: 8vmin;
+    --measure-one: 1rem;
+    --measure-one-relative: 1em;
     --opacity-alpha: 0.9;
     --opacity-beta: 0.7;
     --opacity-gamma: 0.1;
@@ -31,9 +33,9 @@
     --color-alto: #dddddd;
     --color-white: #f9f9f9;
     --color-raven: #5f8aa6;
-    --color-bowhead: #4d7086;
-    --color-coyote: #6e95ae;
-    --color-canada: #fd1b00;
+    --color-bowhead: #507791;
+    --color-coyote: #759ab3;
+    --color-canada: #ff0000;
     --color-highlight: gold;
     --color-black--alpha: rgba(6, 6, 6, 0.9);
     --color-black--gamma: rgba(6, 6, 6, 0.1);
@@ -1092,12 +1094,12 @@ textarea {
 }
 
 .canada::-moz-selection {
-    background-color: #fd1b00;
+    background-color: #ff0000;
     background-color: var(--color-canada);
 }
 
 .canada::selection {
-    background-color: #fd1b00;
+    background-color: #ff0000;
     background-color: var(--color-canada);
 }
 
@@ -1109,7 +1111,7 @@ a {
     will-change: background-color, color, text-decoration-color;
     background-color: transparent;
     background-color: var(--color-transparent);
-    color: #4d7086;
+    color: #507791;
     color: var(--color-bowhead);
     position: relative;
     text-decoration: underline;
@@ -1122,14 +1124,14 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    -webkit-text-decoration-color: #fd1b00;
-            text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: #ff0000;
+            text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }
 
 a:active {
-    background-color: #fd1b00;
+    background-color: #ff0000;
     background-color: var(--color-canada);
     color: #f9f9f9;
     color: var(--color-white);
@@ -1172,8 +1174,8 @@ h6 a {
 }
 
 .dark-background a:hover, .dark-background a:focus, .dark-background a:active {
-    -webkit-text-decoration-color: #fd1b00;
-            text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: #ff0000;
+            text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }
@@ -1774,8 +1776,8 @@ aside + .meta {
 }
 
 .meta a:hover, .meta a:focus, .meta a:active {
-    -webkit-text-decoration-color: #fd1b00;
-            text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: #ff0000;
+            text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }
@@ -1921,8 +1923,8 @@ aside + .lede {
 }
 
 .author-information a:hover, .author-information a:focus, .author-information a:active {
-    -webkit-text-decoration-color: #fd1b00;
-            text-decoration-color: #fd1b00;
+    -webkit-text-decoration-color: #ff0000;
+            text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }

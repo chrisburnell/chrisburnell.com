@@ -55,7 +55,7 @@ kbd {
 }
 mark {
     @include v(background-color, highlight);
-    font-size: 1rem;
+    font-size: $measure-one;
 }
 var {
     @include v(color, raven);
@@ -78,7 +78,7 @@ pre {
         @include font-family(monospace);
         @include v(background-color, mineshaft);
         @include v(color, white);
-        padding: $measure-medium $measure-medium 1rem;
+        padding: $measure-medium $measure-medium $measure-one;
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;

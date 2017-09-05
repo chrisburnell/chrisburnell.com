@@ -5,6 +5,7 @@
   @param {String} title *
   @param {String} id [title | slugify]
   @param {String} href
+  @param {String} class
   @param {Element} type [h3]
 
   @example
@@ -20,8 +21,9 @@
 {% unless include.id %}
     {% assign heading_id = include.title | slugify %}
 {% endunless %}
+{% assign heading_class = include.class | default: '' %}
 {% assign heading_href = include.href | default: '' %}
-<{{ heading_type }}{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
+<{{ heading_type }}{% unless heading_class == '' %} class="{{ heading_class }}"{% endunless %}{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
     {% unless heading_href == '' %}
         <a href="{{ heading_href }}">
     {% endunless %}
