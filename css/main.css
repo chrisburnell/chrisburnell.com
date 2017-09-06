@@ -2045,7 +2045,6 @@ button::-moz-focusring {
     font-size: 1.25rem;
     font-size: var(--font-size-large);
     height: 2em;
-    margin-top: 0;
     line-height: 1.818;
 }
 

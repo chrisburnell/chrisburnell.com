@@ -528,11 +528,16 @@ function toggleCode(node) {
 
 {% include content/heading.html title='Forms' %}
 
-<figure>
-    <form class="search-form  js-search-form" name="search-styleguide" method="get" action="/search/" role="search">
+<figure role="group">
+    <form class="search-form" name="search-styleguide" method="get" action="/search/" role="search">
         <label class="search-label  visually-hidden" id="search-label-styleguide" for="search-input-styleguide">Search for pages and posts</label>
-        <input type="search" class="search-input  js-search-input" id="search-input-styleguide" name="query" value="" placeholder="Search the website" maxlength="30" aria-labelledby="search-label-styleguide" aria-required="true" required aria-disabled="true" disabled>
-        <input type="submit" class="button  search-submit  js-search-submit" id="search-button-styleguide" value="Search" role="button" aria-disabled="true" disabled>
+        <input type="search" class="search-input" id="search-input-styleguide" name="query" value="" placeholder="Search the website" maxlength="30" aria-labelledby="search-label-styleguide" aria-required="true" required>
+        <input type="submit" class="button  search-submit" id="search-button-styleguide" value="Search" role="button">
+    </form>
+    <form class="search-form" name="search-styleguide-disabled" method="get" action="/search/" role="search">
+        <label class="search-label  visually-hidden" id="search-label-styleguide-disabled" for="search-input-styleguide">Search for pages and posts</label>
+        <input type="search" class="search-input" id="search-input-styleguide-disabled" name="query" value="" placeholder="Search the website" maxlength="30" aria-labelledby="search-label-styleguide" aria-required="true" required aria-disabled="true" disabled>
+        <input type="submit" class="button  search-submit" id="search-button-styleguide-disabled" value="Search" role="button" aria-disabled="true" disabled>
     </form>
 </figure>
 

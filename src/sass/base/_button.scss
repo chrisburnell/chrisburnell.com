@@ -107,7 +107,6 @@ button {
     min-width: 5em;
     @include v(font-size, large);
     height: #{$line-height-code}em;
-    margin-top: 0;
     line-height: #{$line-height-code - strip-units($border-width-button)};
 
     &:active {
