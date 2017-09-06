@@ -78,7 +78,7 @@ code[data-lang] {
             @include border-radius(bottom);
             content: "";
             background-image: linear-gradient(to bottom,
-                                              $transparent,
+                                              $color-transparent,
                                               $color-black--alpha);
             // fade out over the last four lines
             // font size * line height * 4 lines

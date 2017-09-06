@@ -87,8 +87,8 @@
     }
 
     .title {
-        @include transition(border-color);
-        @include will-change(border-color);
+        @include transition(text-decoration-color);
+        @include will-change(text-decoration-color);
         width: auto;
         display: inline-block;
         margin-bottom: 0;

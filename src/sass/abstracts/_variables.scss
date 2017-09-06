@@ -90,7 +90,7 @@ $opacities: (
 
 // this allows transparency to be transitioned to a different color
 /// @type Color
-$transparent: rgba(0, 0, 0, 0) !default;
+$color-transparent: rgba(0, 0, 0, 0) !default;
 /// @type Color
 $color-black: #060606 !default;
 /// @type Color
@@ -132,7 +132,7 @@ $color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
 /// @type Map
 /// @prop {Color} Color
 $site-colors: (
-    "transparent":  $transparent,
+    "transparent":  $color-transparent,
     "bowhead":      $color-bowhead,
     "raven":        $color-raven,
     "coyote":       $color-coyote,

@@ -25,7 +25,7 @@
     --opacity-beta: 0.7;
     --opacity-gamma: 0.1;
     --opacity-delta: 0.05;
-    --transparent: transparent;
+    --color-transparent: transparent;
     --color-black: #060606;
     --color-mineshaft: #2b2b2b;
     --color-kaiser: #4f4f4f;
@@ -1198,10 +1198,6 @@ a span:not([class]):not([itemprop]) {
  * Title Anchors inside Headings
  */
 .title-anchor {
-    -webkit-transition: -webkit-text-decoration-color 0.2s ease 0s;
-    transition: -webkit-text-decoration-color 0.2s ease 0s;
-    transition: text-decoration-color 0.2s ease 0s;
-    transition: text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     display: inline-block;
 }
 
@@ -1210,6 +1206,7 @@ a span:not([class]):not([itemprop]) {
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
+    text-underline-position: under;
 }
 
 .title-anchor:hover, .title-anchor:focus, .title-anchor:active {

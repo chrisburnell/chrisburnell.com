@@ -71,12 +71,12 @@ a {
  * Title Anchors inside Headings
  */
 .title-anchor {
-    @include transition(text-decoration-color);
     display: inline-block;
 
     &,
     &:link {
         @include v(text-decoration-color, transparent);
+        text-underline-position: under;
     }
 
     &:hover,

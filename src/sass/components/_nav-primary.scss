@@ -87,8 +87,8 @@
 %nav-primary-anchor-arrow {
     content: "";
     border-top:   0.5em $border-style-default $color-raven;
-    border-right: 0.5em $border-style-default $transparent;
-    border-left:  0.5em $border-style-default $transparent;
+    border-right: 0.5em $border-style-default $color-transparent;
+    border-left:  0.5em $border-style-default $color-transparent;
     position: absolute;
     top: 100%;
     left: 50%;

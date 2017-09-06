@@ -478,8 +478,8 @@
         // get the nested map
         $nest-map: map-get($map, $nest-map-name);
         // fallback value, get the var value from the nested map
-        $variable-fall: map-get($nest-map, "#{$variable}");
-        // our css4 variable output
+        $variable-fallback: map-get($nest-map, "#{$variable}");
+        // our CSS Variable output
         $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$variable});
     }
     @else {
@@ -487,7 +487,7 @@
         $map: map-get($variable-maps, $map-name);
         // fallback value, grab the variable's value from the map
         $variable-fallback: map-get($map, "#{$variable}");
-        // our css4 variable output
+        // our CSS Variable output
         $variable-output: var(--#{$map-name}-#{$variable});
     }
 
