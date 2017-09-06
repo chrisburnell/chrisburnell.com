@@ -18,7 +18,9 @@
     // Fix buttons for B&W scenario
     %button-elements {
         @include v(color, kaiser);
-        border: $border-width-hairline $border-style-default $color-kaiser;
+        @include v(border-width, hairline);
+        @include v(border-style, default);
+        @include v(border-color, kaiser);
         box-shadow: none;
     }
 

@@ -65,6 +65,20 @@ $measure-large-proportional:  8vmin !default;
 $measure-one:                 1rem !default;
 /// @type Length
 $measure-one-relative:        1em !default;
+/// @type Map
+$measures: (
+    "small":               $measure-small,
+    "small-relative":      $measure-small-relative,
+    "small-proportional":  $measure-small-proportional,
+    "medium":              $measure-medium,
+    "medium-relative":     $measure-medium-relative,
+    "medium-proportional": $measure-medium-proportional,
+    "large":               $measure-large,
+    "large-relative":      $measure-large-relative,
+    "large-proportional":  $measure-large-proportional,
+    "one":                 $measure-one,
+    "one-relative":        $measure-one-relative
+) !default;
 
 
 /// @type Number
@@ -161,7 +175,7 @@ $palette-colors: (
     "dove":         $color-dove,
     "alto":         $color-alto,
     "white":        $color-white
-);
+) !default;
 
 
 /// @type Length
@@ -170,10 +184,26 @@ $border-width-default:  0.250rem !default;
 $border-width-thin:     0.125rem !default;
 /// @type Length
 $border-width-hairline:     1px !default;
+/// @type Length
+$border-width-button:   0.182em !default;
+/// @type Map
+$border-widths: (
+    "default":  $border-width-default,
+    "thin":     $border-width-thin,
+    "hairline": $border-width-hairline,
+    "button":   $border-width-button
+) !default;
 
 
 /// @type String
 $border-style-default: solid !default;
+/// @type String
+$border-style-alternate: dotted !default;
+/// @type Map
+$border-styles: (
+    "default":   $border-style-default,
+    "alternate": $border-style-alternate
+) !default;
 
 
 /// @type Length
@@ -193,10 +223,6 @@ $border-radii: (
 ) !default;
 
 
-/// @type Length
-$button-border-width: 0.182em;
-
-
 /// @type String
 $font-display: swap !default;
 
@@ -209,7 +235,7 @@ $font-weight-bold:    600 !default;
 $font-weights: (
     "default": $font-weight-default,
     "bold":    $font-weight-bold
-);
+) !default;
 
 
 /// @type Length
@@ -304,7 +330,7 @@ $font-families-styles: (
     ("Proxima Nova",  "Regular",  normal, 400, "proxima-nova-regular"),
     ("Proxima Nova",  "Italic",   italic, 400, "proxima-nova-italic"),
     ("Proxima Nova",  "Semibold", normal, 600, "proxima-nova-semibold")
-);
+) !default;
 
 
 /// @type Number
@@ -315,6 +341,13 @@ $line-height-small:   1.250 !default;
 $line-height-medium:  1.429 !default;
 /// @type Number
 $line-height-code:    2.000 !default;
+/// @type Map
+$line-heights: (
+    "default": $line-height-default,
+    "small":   $line-height-small,
+    "medium":  $line-height-medium,
+    "code":    $line-height-code
+) !default;
 
 
 /// @type Length
@@ -335,7 +368,7 @@ $rotation-default: 5deg !default;
 
 /// @type Length
 /// @see {Mixin} transition
-$transition-duration: 0.200s !default;
+$transition-duration-default: 0.200s !default;
 /// @type Length
 /// @see {Mixin} transition
 $transition-duration-long: 1.000s !default;
@@ -345,20 +378,19 @@ $transition-function: ease !default;
 
 
 /// @type Number
-$z-index-below: -1;
+$z-index-below: -1 !default;
 /// @type Number
-$z-index-root: 0;
+$z-index-root: 0 !default;
 /// @type Number
-$z-index-default: 1;
+$z-index-default: 1 !default;
 /// @type Number
-$z-index-above: 2;
+$z-index-above: 2 !default;
 /// @type Number
-$z-index-modal: 3;
+$z-index-modal: 3 !default;
 /// @type Number
-$z-index-dialog: 4;
+$z-index-dialog: 4 !default;
 /// @type Number
-$z-index-notification: 5;
-
+$z-index-notification: 5 !default;
 /// @type Map
 /// @prop {String} key - z-index name
 /// @prop {Number} value - z-index value

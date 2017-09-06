@@ -1,6 +1,7 @@
 ////
 /// Secondary Navigation / Buttons List
 /// @group components
+/// @link https://chrisburnell.com/styleguide/#buttons-list
 ////
 
 
@@ -28,20 +29,22 @@
             margin-right: auto;
 
             & + %button-elements {
-                margin-top: $measure-small;
+                @include v(margin-top, small);
             }
         }
 
         @include media("screen", ">small") {
-            margin-left:  $measure-small;
-            margin-right: $measure-small;
+            @include v(margin-left, small);
+            @include v(margin-right, small);
         }
     }
 }
 
 .nav-secondary {
-    margin-top: $measure-large;
-    border-top: $border-width-thin $border-style-default $color-black--gamma;
+    @include v(margin-top, large);
+    @include v(border-top-width, thin);
+    @include v(border-top-style, default);
+    @include v(border-top-color, black--gamma);
     padding-top: #{$measure-large - 0.182rem};
 
     .page--home & {
@@ -52,17 +55,19 @@
     .page--about & {
         border-top: 0;
         padding: 0 0 $measure-medium;
+        padding: 0 0 var(--measure-medium);
     }
 
     %content-elements + & {
-        margin-top: $measure-medium;
+        @include v(margin-top, medium);
     }
 }
 
 .buttons-list {
     margin: 0 0 $measure-medium;
+    margin: 0 0 var(--measure-medium);
 
     .lede + & {
-        margin-bottom: $measure-large;
+        @include v(margin-bottom, large);
     }
 }

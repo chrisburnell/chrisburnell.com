@@ -1,6 +1,7 @@
 ////
 /// Media
 /// @group components
+/// @link https://chrisburnell.com/styleguide/#figure
 ////
 
 
@@ -43,7 +44,7 @@
  * CodePen Embeds
  */
 .cp_embed_wrapper {
-    margin-bottom: $measure-medium;
+    @include v(margin-bottom, medium);
     resize: both;
     overflow: auto;
 

@@ -1,6 +1,7 @@
 ////
 /// Form
 /// @group base
+/// @link https://chrisburnell.com/styleguide/#forms
 ////
 
 
@@ -33,7 +34,9 @@ textarea {
     @include will-change(border-color);
     box-sizing: inherit !important;
     padding: 0.4em;
-    border: $border-width-thin $border-style-default $color-alto;
+    border-width: $border-width-thin;
+    border-style: $border-style-default;
+    @include v(border-color, alto);
     outline-style: none;
 
     &:hover {

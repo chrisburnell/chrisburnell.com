@@ -1,6 +1,7 @@
 ////
 /// Anchor
 /// @group base
+/// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
 
@@ -47,7 +48,7 @@ a {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
         // coming soon!
-        // text-decoration-width: $border-width-thin;
+        // @include v(text-decoration-width, thin);
     }
 
     .dark-background & {
@@ -95,11 +96,11 @@ a {
     @include v(color, dove);
     display: none;
     visibility: hidden;
-    margin-left: $measure-medium;
+    @include v(margin-left, medium);
     vertical-align: middle;
     @include v(font-size, small);
     @include v(font-weight, bold);
-    line-height: $line-height-small;
+    @include v(line-height, small);
     text-shadow: none;
 
     %heading-elements:hover &,
@@ -115,8 +116,8 @@ a {
  * Endnote Anchors
  */
 .endnote-anchor {
-    padding-left:  $measure-small-relative;
-    padding-right: $measure-small-relative;
+    @include v(padding-left, small-relative);
+    @include v(padding-right, small-relative);
 }
 
 /**

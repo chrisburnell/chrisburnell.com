@@ -7,5 +7,8 @@
 footer {
     width: 100%;
     padding: $measure-large 0;
-    border-top: $border-width-default $border-style-default $color-raven;
+    padding: var(--measure-large) 0;
+    @include v(border-top-width, default);
+    @include v(border-top-style, default);
+    @include v(border-top-color, raven);
 }

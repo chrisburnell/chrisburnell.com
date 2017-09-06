@@ -1,6 +1,7 @@
 ////
 /// Aside
 /// @group layout
+/// @link https://chrisburnell.com/styleguide/#aside
 ////
 
 
@@ -18,9 +19,10 @@ aside {
 
     @include media("screen", ">medium") {
         width: $aside-width;
+        width: var(--aside-width);
         float: left;
         margin-left: #{($aside-width + $measure-large) * -1};
-        margin-bottom: $measure-large;
+        @include v(margin-bottom, large);
 
         // @supports (display: grid) {
         //     grid-area: aside;
@@ -30,12 +32,12 @@ aside {
 
     &:not(.author):not(:last-child) {
         @include media("screen", "<=medium") {
-            margin-bottom: $measure-medium;
+            @include v(margin-bottom, medium);
         }
     }
 
     h3 + & {
-        margin-top: $measure-large;
+        @include v(margin-top, large);
     }
 
     figure {

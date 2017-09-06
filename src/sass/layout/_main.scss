@@ -6,7 +6,7 @@
 
 main {
     display: block;
-    padding-bottom: $measure-large;
+    @include v(padding-bottom, large);
 
     // @supports (display: grid) {
     //     display: grid;

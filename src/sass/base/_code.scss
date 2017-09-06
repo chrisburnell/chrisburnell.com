@@ -1,6 +1,7 @@
 ////
-/// Typography (Code)
+/// Code
 /// @group base
+/// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
 
@@ -41,7 +42,7 @@ mark,
 samp {
     @include border-radius(thin);
     padding: 0.25em;
-    line-height: $line-height-medium;
+    @include v(line-height, medium)
 }
 %heading-elements code,
 %content-elements code,
@@ -52,10 +53,12 @@ samp {
 kbd {
     @include case(uppercase);
     box-shadow: inset 0 0 0 $border-width-hairline $color-kaiser;
+    box-shadow: inset 0 0 0 var(--border-width-hairline) var(--color-kaiser);
 }
 mark {
     @include v(background-color, highlight);
     font-size: $measure-one;
+    font-size: var(--measure-one);
 }
 var {
     @include v(color, raven);
@@ -69,7 +72,7 @@ var {
 pre {
     width: 100%;
     margin-top: 0;
-    margin-bottom: $measure-medium;
+    @include v(margin-bottom, medium);
     tab-size: 4;
 
     // Main Code Blocks
@@ -79,6 +82,7 @@ pre {
         @include v(background-color, mineshaft);
         @include v(color, white);
         padding: $measure-medium $measure-medium $measure-one;
+        padding: var(--measure-medium) var(--measure-medium) var(--measure-one);
         // disallow text from wrapping inside the container
         overflow-x: auto;
         overflow-y: hidden;
@@ -86,13 +90,14 @@ pre {
 
         &,
         code {
-            line-height: $line-height-code;
+            @include v(line-height, code);
         }
 
         code {
             min-width: 100%;
             display: block;
             text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--delta;
+            text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
         }
     }
 

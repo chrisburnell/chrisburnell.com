@@ -10,7 +10,7 @@
  * `.content`.
  */
 .content {
-    padding-top: $measure-large;
+    @include v(padding-top, large);
 
     @include media("screen", "<=medium") {
         // Below the medium breakpoint, `.content` and `aside` become full width.

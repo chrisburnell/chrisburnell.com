@@ -1,6 +1,7 @@
 ////
 /// Media
 /// @group base
+/// @link https://chrisburnell.com/styleguide/#figure
 ////
 
 
@@ -23,6 +24,6 @@ video {
     overflow-x: hidden;
 }
 iframe {
-    margin-bottom: $measure-medium;
+    @include v(margin-bottom, medium);
     contain: strict;
 }

@@ -10,7 +10,7 @@ html {
     @include v(font-size, default);
     font-style: normal;
     @include v(font-weight, default);
-    line-height: $line-height-default;
+    @include v(line-height, default);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "lnum" 1;
@@ -61,6 +61,7 @@ h6 {
     @include v(font-size, alpha);
     line-height: 1;
     text-shadow: $border-width-default $border-width-default 0 $color-black--delta;
+    text-shadow: var(--border-width-default) var(--border-width-default) 0 var(--color-black--delta);
 
     @include media("screen", "<=small") {
         font-size: #{$font-size-alpha / 1.285}; // 56px
@@ -76,7 +77,7 @@ h1 {
 .beta,
 %beta {
     @include v(font-size, beta);
-    line-height: $line-height-small;
+    @include v(line-height, small);
 }
 h2 {
     @extend %beta !optional;
@@ -88,17 +89,19 @@ h2 {
 .gamma,
 %gamma {
     @include v(font-size, gamma);
-    line-height: $line-height-default;
+    @include v(line-height, default);
 }
 h3 {
     @extend %gamma !optional;
     @include case(uppercase);
-    margin-top: $measure-large;
-    border-bottom: $border-width-thin $border-style-default $color-alto;
+    @include v(margin-top, large);
+    @include v(border-bottom-width, thin);
+    @include v(border-bottom-style, default);
+    @include v(border-bottom-color, alto);
     @include v(font-weight, bold);
 
     &:not(:last-child) {
-        margin-bottom: $measure-medium;
+        @include v(margin-bottom, medium);
     }
 
     // Match normal `h3`s without targetting `aside`-nested `h3`s
@@ -108,7 +111,7 @@ h3 {
         width: auto;
         max-width: 100%;
         display: inline-block;
-        padding-right: $measure-large;
+        @include v(padding-right, large);
 
         @include media("screen", "<=medium") {
             align-self: flex-start;
@@ -129,11 +132,11 @@ h3 {
 %delta {
     @include v(font-size, default);
     @include v(font-weight, bold);
-    line-height: $line-height-small;
+    @include v(line-height, small);
 }
 h4 {
     @extend %delta !optional;
-    margin-bottom: $measure-small;
+    @include v(margin-bottom, small);
 }
 
 /**
@@ -142,7 +145,7 @@ h4 {
 .epsilon,
 %epsilon {
     @include v(font-size, default);
-    line-height: $line-height-small;
+    @include v(line-height, small);
 }
 h5 {
     @extend %epsilon !optional;
@@ -154,14 +157,15 @@ h5 {
 .zeta,
 %zeta {
     @include v(font-size, default);
-    line-height: $line-height-small;
+    @include v(line-height, small);
 }
 h6 {
     @extend %zeta !optional;
 }
 
 p {
-    margin: 0 0 $measure-medium;
+    margin-top: 0;
+    @include v(margin-bottom, medium);
 
     &:last-child,
     &.ciu_embed {
@@ -200,23 +204,23 @@ ol:not([class]),
 ul:not([class]),
 dl:not([class]),
 .default-list {
-    margin-bottom: $measure-medium;
+    @include v(margin-bottom, medium);
 
     // List nested in a list, or list followed by a list
     & &,
     & + & {
-        margin-top: $measure-medium;
+        @include v(margin-top, medium);
     }
 }
 ol:not([class]),
 ul:not([class]),
 .default-list {
     li {
-        padding-left: $measure-large;
+        @include v(padding-left, large);
         position: relative;
 
         &:not(:last-child) {
-            margin-bottom: $measure-small;
+            @include v(margin-bottom, small);
         }
 
         &::before {
@@ -259,7 +263,7 @@ dt {
     width: auto;
     min-width: 10rem;
     clear: left;
-    padding-right: $measure-medium;
+    @include v(padding-right, medium);
     @include v(font-weight, bold);
 
     @include media("screen", ">small") {
@@ -268,19 +272,20 @@ dt {
 }
 dd {
     width: $wrapper-width-large;
+    width: var(--wrapper-width-large);
     display: table-cell;
     margin: 0;
     overflow: hidden;
     vertical-align: top;
 
     &:not(:last-child) {
-        padding-bottom: $measure-medium;
+        @include v(padding-bottom, medium);
     }
 
     @include media("screen", "<=small") {
         width: auto;
         display: block;
-        padding-left: $measure-medium;
+        @include v(padding-left, medium);
     }
 }
 
@@ -323,6 +328,7 @@ figure {
     align-items: center;
     justify-content: center;
     margin: 0 0 $measure-medium;
+    margin: 0 0 var(--measure-medium);
 
     // Allow for content to overflow without breaking the page with scrollbar
     &:not(.highlight) {
@@ -352,8 +358,8 @@ figure {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: $measure-medium;
-        line-height: $line-height-small;
+        @include v(padding-top, medium);
+        @include v(line-height, small);
     }
 }
 
@@ -364,9 +370,12 @@ table {
     min-width: 100%;
     flex: 1 0 auto;
     align-self: flex-start;
+    @include v(border-width, thin);
+    @include v(border-style, default);
+    @include v(border-color, alto);
+    border-collapse: collapse;
     overflow-x: auto;
     overflow-y: hidden;
-    border-collapse: collapse;
 
     &.zebra {
         tbody tr:nth-child(even) td {
@@ -379,7 +388,7 @@ th,
 td {
     @include transition(background-color, border-left-color);
     @include will-change(background-color, border-left-color);
-    padding: $measure-small;
+    @include v(padding, small);
     text-align: left;
     user-select: text;
 }
@@ -442,7 +451,9 @@ th {
     }
 
     tfoot & {
-        border-top: $border-width-thin $border-style-default $color-alto;
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, alto);
     }
     /*tfoot*/.totals & {
         @include media("screen", ">medium") {
@@ -466,16 +477,22 @@ th {
     }
 
     & + th {
-        border-left: $border-width-thin $border-style-default $color-alto;
+        @include v(border-left-width, thin);
+        @include v(border-left-style, default);
+        @include v(border-left-color, alto);
     }
 }
 // Body Cells
 tbody th,
 td {
-    border-top: $border-width-thin $border-style-default $color-alto;
+    @include v(border-top-width, thin);
+    @include v(border-top-style, default);
+    @include v(border-top-color, alto);
 
     & + td {
-        border-left: $border-width-thin $border-style-default $color-alto;
+        @include v(border-left-width, thin);
+        @include v(border-left-style, default);
+        @include v(border-left-color, alto);
     }
 }
 tbody th,
@@ -484,12 +501,67 @@ tbody tr:first-child td {
 }
 tbody th {
     width: 1px;
-    padding-right: $measure-medium;
+    @include v(padding-right, medium);
     text-align: right;
     white-space: nowrap;
 
     & + td {
         @include v(border-left-color, alto);
+    }
+}
+// Empty Corners
+thead th:first-of-type,
+tbody:first-child tr:first-of-type td:first-of-type,
+thead th:last-of-type,
+tbody:first-child tr:first-of-type td:last-of-type,
+tfoot th:first-of-type,
+tbody:last-child tr:last-of-type td:first-of-type,
+tfoot th:last-of-type,
+tbody:last-child tr:last-of-type td:last-of-type {
+    &:empty {
+        position: relative;
+    }
+
+    &:empty::before {
+        content: "";
+        @include v(background-color, white);
+        position: absolute;
+    }
+}
+thead th:first-of-type,
+tbody:first-child tr:first-of-type td:first-of-type {
+    &:empty::before {
+        top: -($border-width-default);
+        right: 0;
+        bottom: 0;
+        left: -($border-width-default);
+    }
+}
+thead th:last-of-type,
+tbody:first-child tr:first-of-type td:last-of-type {
+    &:empty::before {
+        top: -($border-width-default);
+        right: -($border-width-default);
+        bottom: 0;
+        left: 0;
+    }
+}
+tfoot th:first-of-type,
+tbody:last-child tr:last-of-type td:first-of-type {
+    &:empty::before {
+        top: 0;
+        right: 0;
+        bottom: -($border-width-default);
+        left: -($border-width-default);
+    }
+}
+tfoot th:last-of-type,
+tbody:last-child tr:last-of-type td:last-of-type {
+    &:empty::before {
+        top: 0;
+        right: -($border-width-default);
+        bottom: -($border-width-default);
+        left: 0;
     }
 }
 
@@ -502,7 +574,7 @@ details {
     @include v(color, white);
     width: 100%;
     max-width: $line-length-responsive;
-    padding: $measure-small;
+    @include v(padding, small);
     margin-left:  auto;
     margin-right: auto;
 
@@ -530,9 +602,11 @@ summary {
     }
 
     & + %content-elements {
-        margin-top: $measure-small;
-        border-top: $border-width-thin $border-style-default $color-raven;
-        padding-top: $measure-medium;
+        @include v(margin-top, small);
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, raven);
+        @include v(padding-top, medium);
     }
 }
 
@@ -546,7 +620,7 @@ blockquote {
     @include v(background-color, raven--gamma);
     width: 100%;
     max-width: $line-length-responsive;
-    padding: $measure-medium;
+    @include v(padding, medium);
     margin: 0 auto $measure-medium;
 
     p {
@@ -567,10 +641,10 @@ blockquote {
 
     cite {
         display: block;
-        margin-top: $measure-medium;
+        @include v(margin-top, medium);
 
         @include media("screen", ">small") {
-            margin-left: $measure-large;
+            @include v(margin-left, large);
         }
 
         &::before {
@@ -614,7 +688,7 @@ hr {
 
     %content-elements + & {
         @include media("screen", "<=medium") {
-            margin-top: $measure-medium;
+            @include v(margin-top, medium);
         }
     }
 }
@@ -631,7 +705,9 @@ dfn[title] {
 }
 abbr[title],
 dfn[title] {
-    border-bottom: $border-width-hairline dotted $color-dove;
+    @include v(border-bottom-width, hairline);
+    @include v(border-bottom-style, alternate);
+    @include v(border-bottom-color, dove);
     cursor: help;
 }
 abbr[title],

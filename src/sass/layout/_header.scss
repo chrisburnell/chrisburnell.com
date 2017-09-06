@@ -34,9 +34,12 @@ header {
         content: "";
         @include v(background-color, raven);
         height: $border-width-default;
+        height: var(--border-width-default);
         position: absolute;
         bottom: 0;
         left: $gutter-width;
+        left: var(--gutter-width);
         right: $gutter-width;
+        right: var(--gutter-width);
     }
 }

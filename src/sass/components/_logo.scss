@@ -8,6 +8,7 @@
     @include non-selectable;
     height: $avatar-size;
     flex: 1 0 $aside-width;
+    flex: 1 0 var(--aside-width);
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -15,11 +16,15 @@
     svg {
         @include absolute(top);
         @include transition(transform $transition-duration-long);
+        @include transition(transform var(--transition-duration-long));
         @include will-change(transform);
         @include v(fill, raven);
         width:  $logo-size;
+        width:  var(--logo-size);
         height: $logo-size;
+        height: var(--logo-size);
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
+        transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
 
         @include media("screen", "prefers-reduced-motion") {
             @include transition(none);
@@ -37,7 +42,8 @@
         @include v(background-color, transparent);
 
         svg {
-            transition-duration: $transition-duration;
+            transition-duration: $transition-duration-default;
+            transition-duration: var(--transition-duration-default);
             transform: translateX(-30%) translateY(-25%);
         }
     }

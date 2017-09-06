@@ -5,13 +5,13 @@
 
 
 .nav-primary {
-    padding-top: $measure-medium;
-    padding-bottom: $measure-medium;
+    @include v(padding-top, medium);
+    @include v(padding-bottom, medium);
     white-space: nowrap;
 
     @include media("screen", "<=medium") {
         flex: 1 0 100%;
-        padding-top: $measure-small;
+        @include v(padding-top, small);
         text-align: center;
     }
 }
@@ -25,6 +25,7 @@
         display: inline-block;
         // reset font-size
         font-size: $measure-one;
+        font-size: var(--measure-one);
 
         & + li {
 
@@ -37,7 +38,8 @@
             }
 
             @include media("screen", ">medium") {
-                margin-left: 1em;
+                margin-left: $measure-one-relative;
+                margin-left: var(--measure-one-relative);
             }
         }
     }
@@ -50,10 +52,13 @@
         @include v(color, dove);
         display: block;
         padding: #{$measure-one - $border-width-default} $measure-one;
-        border: 0 $border-style-default $color-raven;
+        border-width: 0;
+        @include v(border-style, default);
+        @include v(border-color, raven);
         margin-bottom: $border-width-default;
+        margin-bottom: var(--border-width-default);
         @include v(font-size, large);
-        line-height: $line-height-small;
+        @include v(line-height, small);
         text-decoration: none;
 
         &:active {
@@ -75,7 +80,7 @@
 %nav-primary-anchor {
     @include v(color, kaiser);
     padding-bottom: 0.5rem;
-    border-bottom-width: $border-width-default;
+    @include v(border-bottom-width, default);
 }
 @each $body-class, $navigation-class in $navigation-links {
     .page--#{$body-class} .nav-primary--#{$navigation-class} a {
@@ -86,9 +91,10 @@
 // Complementary to the Effect for interactions and active paths
 %nav-primary-anchor-arrow {
     content: "";
-    border-top:   0.5em $border-style-default $color-raven;
-    border-right: 0.5em $border-style-default $color-transparent;
-    border-left:  0.5em $border-style-default $color-transparent;
+    border-width: 0.5em 0.5em 0;
+    @include v(border-style, default);
+    @include v(border-color, transparent);
+    @include v(border-top-color, raven);
     position: absolute;
     top: 100%;
     left: 50%;

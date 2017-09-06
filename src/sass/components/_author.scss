@@ -16,7 +16,7 @@
         display: flex;
         flex-direction: column;
         order: 999;
-        margin-top: $measure-large;
+        @include v(margin-top, large);
     }
 }
 
@@ -27,15 +27,17 @@
     @include font-family(serif);
     display: flex;
     flex-direction: row;
-    margin-bottom: $measure-medium;
+    @include v(margin-bottom, medium);
     @include v(font-size, small);
     font-style: italic;
-    line-height: $line-height-medium;
+    @include v(line-height, medium);
 
     @include media("screen", "<=medium") {
-        padding-top: $measure-large;
-        border-top: $border-width-thin $border-style-default $color-black--gamma;
-        margin-bottom: $measure-small;
+        @include v(padding-top, large);
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, black--gamma);
+        @include v(margin-bottom, small);
     }
 
     a,
@@ -85,11 +87,11 @@
     }
 
     @include media("screen", "<=medium") {
-        margin-right: $measure-medium;
+        @include v(margin-right, medium);
     }
 
     @include media("screen", ">medium") {
-        margin-right: $measure-small;
+        @include v(margin-right, small);
     }
 
     %image-elements {

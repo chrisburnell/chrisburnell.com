@@ -40,7 +40,7 @@ footer {
 .footer-home-anchor {
     width:  3.125rem;
     height: 3.125rem;
-    margin-right: $measure-small;
+    @include v(margin-right, small);
     vertical-align: middle;
     text-indent: 100%;
     text-decoration: none;
@@ -48,7 +48,6 @@ footer {
 
     &:active {
         @include v(background-color, transparent);
-
     }
 
     .icon {
@@ -83,9 +82,9 @@ footer {
 .footer-license-anchor,
 .footer-style-guide-anchor {
     @include case(uppercase);
-    margin-left:  $measure-small;
-    margin-right: $measure-small;
+    @include v(margin-left, small);
+    @include v(margin-right, small);
     // coming soon!
-    // text-decoration-width: $border-width-thin;
+    // @include v(text-decoration-width, thin);
     text-underline-position: under;
 }

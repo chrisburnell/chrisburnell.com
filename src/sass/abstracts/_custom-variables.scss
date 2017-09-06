@@ -5,30 +5,56 @@
 
 
 $variable-maps: (
-    color:       $site-colors,
-    font-family: $font-families,
-    font-size:   $font-sizes,
-    font-weight: $font-weights,
-    opacity:     $opacities,
-    z-index:     $z-indexes
+    border-width:   $border-widths,
+    border-style:   $border-styles,
+    color:          $site-colors,
+    font-family:    $font-families,
+    font-size:      $font-sizes,
+    font-weight:    $font-weights,
+    line-height:    $line-heights,
+    measure:        $measures,
+    opacity:        $opacities,
+    z-index:        $z-indexes
 );
 
 $property-maps: (
-    opacity:               opacity,
-    background-color:      color,
-    color:                 color,
-    border-color:          color,
-    border-top-color:      color,
-    border-right-color:    color,
-    border-bottom-color:   color,
-    border-left-color:     color,
-    fill:                  color,
-    font-family:           font-family,
-    font-size:             font-size,
-    font-weight:           font-weight,
-    stroke:                color,
-    text-decoration-color: color,
-    z-index:               z-index
+    opacity:                opacity,
+    background-color:       color,
+    color:                  color,
+    border-color:           color,
+    border-top-color:       color,
+    border-right-color:     color,
+    border-bottom-color:    color,
+    border-left-color:      color,
+    border-style:           border-style,
+    border-top-style:       border-style,
+    border-right-style:     border-style,
+    border-bottom-style:    border-style,
+    border-left-style:      border-style,
+    border-width:           border-width,
+    border-top-width:       border-width,
+    border-right-width:     border-width,
+    border-bottom-width:    border-width,
+    border-left-width:      border-width,
+    fill:                   color,
+    font-family:            font-family,
+    font-size:              font-size,
+    font-weight:            font-weight,
+    line-height:            line-height,
+    margin:                 measure,
+    margin-top:             measure,
+    margin-right:           measure,
+    margin-bottom:          measure,
+    margin-left:            measure,
+    padding:                measure,
+    padding-top:            measure,
+    padding-right:          measure,
+    padding-bottom:         measure,
+    padding-left:           measure,
+    stroke:                 color,
+    text-decoration-color:  color,
+    text-decoration-width:  border-width,
+    z-index:                z-index
 );
 
 
@@ -83,14 +109,16 @@ $property-maps: (
     --border-width-default: $border-width-default;
     --border-width-thin: $border-width-thin;
     --border-width-hairline: $border-width-hairline;
+    --border-width-button: $border-width-button;
 
     --border-style-default: $border-style-default;
+    --border-style-alternate: $border-style-alternate;
 
     --border-radius-default: $border-radius-default;
     --border-radius-thin: $border-radius-thin;
     --border-radius-hairline: $border-radius-hairline;
 
-    --button-border-width: $button-border-width;
+    --button-border-width: $border-width-button;
 
     --font-display: $font-display;
 
@@ -124,7 +152,7 @@ $property-maps: (
 
     --rotation-default: $rotation-default;
 
-    --transition-duration: $transition-duration;
+    --transition-duration-default: $transition-duration-default;
     --transition-duration-long: $transition-duration-long;
     --transition-function: $transition-function;
 

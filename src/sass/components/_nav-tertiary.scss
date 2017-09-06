@@ -6,7 +6,7 @@
 
 .nav-tertiary {
     @include media("screen", "<=medium") {
-        margin-top: $measure-medium;
+        @include v(margin-top, medium);
     }
 
     @include media("screen", ">medium") {
@@ -19,7 +19,7 @@
         display: inline-block;
 
         & + li {
-            margin-left: $measure-one;
+            @include v(margin-left, one);
         }
     }
 
@@ -31,6 +31,7 @@
             @include will-change(opacity, transform);
             @include v(opacity, beta);
             height: $icon-size;
+            height: var(--icon-size);
 
             @include media("screen", "prefers-reduced-motion") {
                 @include transition(none);

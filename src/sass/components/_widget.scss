@@ -15,7 +15,7 @@
 
 .widget-related-anchor {
     align-self: flex-end;
-    margin-top: $measure-medium;
+    @include v(margin-top, medium);
     @include v(font-weight, bold);
 
     &::after {

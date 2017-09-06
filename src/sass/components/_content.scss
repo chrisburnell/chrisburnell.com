@@ -7,7 +7,7 @@
 .title,
 .tagline {
     width: 100%;
-    margin-bottom: $measure-large;
+    @include v(margin-bottom, large);
 }
 
 /**
@@ -17,10 +17,12 @@
 .banner {
     @include border-radius;
     width: $article-width;
-    margin-bottom: $measure-large;
+    width: var(--article-width);
+    @include v(margin-bottom, large);
 
     @include media("screen", "<=small") {
         width: $wrapper-width-small;
+        width: var(--wrapper-width-small);
     }
 }
 
@@ -28,19 +30,20 @@
  * Post Meta
  */
 .meta {
-    padding-bottom: $measure-medium;
+    @include v(padding-bottom, medium);
     overflow: hidden;
     font-style: italic;
 
     aside + & {
         // pull up to align with `.author`
-        margin-top: -$measure-small;
+        margin-top: -($measure-small);
+        margin-top: -(var(--measure-small));
     }
 
     time,
     div {
         display: inline-block;
-        margin-right: $measure-large;
+        @include v(margin-right, large);
     }
 
     time + div,
@@ -52,7 +55,8 @@
             content: "—";
             @include v(color, dove);
             position: absolute;
-            left: -$measure-medium;
+            left: -($measure-medium);
+            left: -(var(--measure-medium));
             transform: translateX(-50%);
         }
     }
@@ -84,7 +88,7 @@
  */
 .lede {
     @extend %gamma !optional;
-    margin-bottom: $measure-large;
+    @include v(margin-bottom, large);
 
     @include media("screen", "<=medium") {
         text-align: left;
@@ -92,12 +96,15 @@
 
     aside + & {
         // pull up to align with `.author`
-        margin-top: -$measure-small;
+        margin-top: -($measure-small);
+        margin-top: -(var(--measure-small));
     }
 
     .meta + & {
-        border-top: $border-width-thin $border-style-default $color-alto;
-        padding-top: $measure-medium;
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, alto);
+        @include v(padding-top, medium);
     }
 }
 .lede--featured {
@@ -110,8 +117,10 @@
  * Explain required terminology for the content
  */
 /*dl*/.terminology {
-    padding-bottom: $measure-large;
-    border-bottom: $border-width-thin $border-style-default $color-black--gamma;
+    @include v(padding-bottom, large);
+    @include v(border-bottom-width, thin);
+    @include v(border-bottom-style, default);
+    @include v(border-bottom-color, black--gamma);
 }
 
 /**
@@ -122,12 +131,14 @@
     @include v(background-color, raven--gamma);
     width: 100%;
     max-width: $line-length-responsive;
-    padding: $measure-medium;
+    max-width: var(--line-length-responsive);
+    @include v(padding, medium);
     margin: 0 auto $measure-large;
-    line-height: $line-height-medium;
+    margin: 0 auto var(--measure-large);
+    @include v(line-height, medium);
 
     time {
-        margin-bottom: $measure-small;
+        @include v(margin-bottom, small);
         @include v(font-size, gamma);
         @include v(font-weight, bold);
     }

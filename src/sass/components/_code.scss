@@ -1,6 +1,7 @@
 ////
 /// Code
 /// @group components
+/// @link https://chrisburnell.com/styleguide/#code-block-with-language
 ////
 
 
@@ -8,7 +9,7 @@
  * Highlighted Code Blocks
  */
 code[data-lang] {
-    padding-top: $measure-large;
+    @include v(padding-top, large);
 
     &::before {
         @include absolute(top-full);

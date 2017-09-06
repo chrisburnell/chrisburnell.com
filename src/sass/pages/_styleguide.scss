@@ -1,6 +1,7 @@
 ////
 /// Style Guide
 /// @group pages
+/// @see https://chrisburnell.com/styleguide/
 ////
 
 
@@ -21,6 +22,7 @@
 
     li {
         padding: $measure-medium 0;
+        padding: var(--measure-medium) 0;
         vertical-align: middle;
         @include v(font-size, small);
         font-variant-numeric: tabular-nums;
@@ -49,7 +51,7 @@
 
         h4 {
             margin-bottom: 0;
-            line-height: $line-height-default;
+            @include v(line-height, default);
         }
     }
 }
@@ -63,7 +65,7 @@
         @include absolute(top, 100%);
         content: "(Hover to interact.)";
         @include v(color, kaiser);
-        margin-top: $measure-small;
+        @include v(margin-top, small);
     }
 
     @media ("pointer: coarse") {
@@ -78,9 +80,12 @@
     @include transition(color);
     width: 100%;
     max-width: $line-length-responsive;
+    max-width: var(--line-length-responsive);
     height: #{$measure-large * 1.5};
     display: block;
-    border: $border-width-thin $border-style-default $color-alto;
+    @include v(border-width, thin);
+    @include v(border-style, default);
+    @include v(border-color, alto);
     margin-left:  auto;
     margin-right: auto;
     overflow-x: hidden;
@@ -133,5 +138,17 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+.icons-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+        display: inline-block;
+        @include v(margin-left, medium);
+        @include v(margin-right, medium);
     }
 }

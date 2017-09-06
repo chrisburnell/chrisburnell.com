@@ -376,7 +376,7 @@
 ///
 /// @param {String} $values - Values
 ///
-/// @require {Variable} $transition-duration
+/// @require {Variable} $transition-duration-default
 /// @require {Variable} $transition-function
 ///
 /// @example scss - Zero parameters
@@ -408,7 +408,7 @@
 
     // if no parameter, transition all with default duration and function
     @if length($transitions) == 0 {
-        $transition: all #{$transition-duration} #{$transition-function};
+        $transition: all #{$transition-duration-default} #{$transition-function};
     }
     // if parameter just set to `none` then just transition nothing
     @else if $transitions == none {

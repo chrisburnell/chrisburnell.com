@@ -6,12 +6,12 @@
 
 // Appears only on article pages
 .webmentions {
-    margin-top: $measure-large;
+    @include v(margin-top, large);
 }
 
 .webmention__form,
 .webmentions-thread {
-    margin-top: $measure-medium;
+    @include v(margin-top, medium);
 }
 
 .webmentions__form {
@@ -24,11 +24,11 @@
     h4 {
         margin-bottom: 0;
         align-self: center;
-        padding-right: $measure-medium;
+        @include v(padding-right, medium);
 
         @include media("<=small") {
             flex: 1 0 100%;
-            margin-bottom: $measure-medium;
+            @include v(margin-bottom, medium);
         }
 
         @include media(">small") {
@@ -42,7 +42,7 @@
     }
 
     .webmentions-submit {
-        margin-left: $measure-small;
+        @include v(margin-left, small);
     }
 }
 

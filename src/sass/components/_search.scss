@@ -1,15 +1,17 @@
 ////
 /// Search
 /// @group components
+/// @link https://chrisburnell.com/styleguide/#forms
 ////
 
 
 .search-main {
     max-width: $wrapper-width-small;
-    margin-bottom: $measure-large;
+    max-width: var(--wrapper-width-small);
+    @include v(margin-bottom, large);
 }
 .search-results {
-    margin-top: $measure-medium;
+    @include v(margin-top, medium);
 
     .content-list {
         margin-bottom: 0;
@@ -29,6 +31,6 @@
 
 .search-submit {
     min-width: auto;
-    margin-left: $measure-small;
+    @include v(margin-left, small);
     margin-top: 0;
 }
