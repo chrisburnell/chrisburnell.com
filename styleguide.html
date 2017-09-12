@@ -432,11 +432,12 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block' %}
 
 <figure class="nohighlight">
-<pre><code>@mixin translate3d($values...) {
-    @if length($values) == 0 {
-        $values: 0, 0, 0;
+<pre><code>@function strip-units($number) {
+    @if not $number {
+        @warn "strip-units() expects at least one parameter.";
+        @return false;
     }
-    transform: translate3d(#{$values});
+    @return $number / ($number * 0 + 1);
 }</code></pre>
 </figure>
 
@@ -444,11 +445,12 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block with Language' %}
 
 {% highlight scss %}
-@mixin will-change($values...) {
-    @if length($values) == 0 {
-        @error "will-change() expects one or more parameters.";
+@function strip-units($number) {
+    @if not $number {
+        @warn "strip-units() expects at least one parameter.";
+        @return false;
     }
-    will-change: #{$values};
+    @return $number / ($number * 0 + 1);
 }
 {% endhighlight %}
 
@@ -457,18 +459,28 @@ p q r s t u v w x y z { | } ~ </pre>
 
 {% include content/code-toggle-top.html %}
 {% highlight javascript %}
-const codeToggleLabels = document.querySelectorAll('.code-toggle-label');
-for (let index of codeToggleLabels) {
-    index.addEventListener('click', event => {
-        toggleCode(event);
-    });
-}
-function toggleCode(node) {
-    node.target.setAttribute('aria-hidden', 'true');
-    node.target.removeEventListener('click', () => {});
-    node.target.querySelector('button').setAttribute('aria-pressed', 'true');
-    node.target.parentNode.setAttribute('aria-expanded', 'true');
-    window.location.hash = `#${node.target.querySelector('button').getAttribute('aria-controls')}`;
+formatDate: function(date) {
+    const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+    let day = date.getDate();
+    if (day < 10) {
+        day = `0${day}`;
+    }
+    let monthIndex = date.getMonth();
+    let year = date.getFullYear();
+    return `${day} ${months[monthIndex]} ${year}`;
 }
 {% endhighlight %}
 {% include content/code-toggle-bottom.html %}
