@@ -12,6 +12,7 @@ install:
   - bundle install
   - nvm install 5.4.1
   - npm install
+  - npm install gulp-cli
   - gem install jekyll
 
 script:
