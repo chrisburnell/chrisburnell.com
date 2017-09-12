@@ -24,6 +24,7 @@
 }
 
 .search-input {
+    @include v(background-color, white);
     min-width: 1px;
     flex: 1 1 0;
     @include v(font-size, small);

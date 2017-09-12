@@ -3038,6 +3038,8 @@ aside .content-list a {
 }
 
 .search-input {
+    background-color: #f9f9f9;
+    background-color: var(--color-white);
     min-width: 1px;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 0px;
@@ -4207,4 +4209,24 @@ video {
     margin-left: var(--measure-medium);
     margin-right: 1.25rem;
     margin-right: var(--measure-medium);
+}
+
+/*html*/
+.christmas {
+    --color-raven: green;
+    --color-bowhead: red;
+    --color-coyote: green;
+}
+
+/*html*/
+.halloween {
+    --color-black: #f9f9f9;
+    --color-mineshaft: #d4d4d4;
+    --color-kaiser: #b0b0b0;
+    --color-dove: #8c8c8c;
+    --color-alto: #222222;
+    --color-white: #060606;
+    --color-raven: #ff751a;
+    --color-bowhead: #f56200;
+    --color-coyote: #ff8b3d;
 }
