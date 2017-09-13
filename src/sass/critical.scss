@@ -1,15 +1,14 @@
 ////
-/// @author  Chris Burnell <me@chrisburnell.com>
+/// @author Chris Burnell <me@chrisburnell.com>
 //  @version 3.0.0
 //  @license GNU GPLv3
-/// @link    https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
+/// @link https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
 ////
 
 /// ABSTRACTS
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
-@import "abstracts/custom-variables";
 
 /// VENDORS
 @import "vendors/include-media";

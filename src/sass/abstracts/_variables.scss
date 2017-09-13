@@ -21,9 +21,9 @@ $wrapper-width-large: 1140px !default;
 /// @require {Variable} $wrapper-width-medium
 /// @require {Variable} $wrapper-width-large
 $breakpoints: (
-    "small":  $wrapper-width-small,
-    "medium": $wrapper-width-medium,
-    "large":  $wrapper-width-large
+    small:  $wrapper-width-small,
+    medium: $wrapper-width-medium,
+    large:  $wrapper-width-large
 ) !default;
 
 
@@ -67,17 +67,17 @@ $measure-one:                 1rem !default;
 $measure-one-relative:        1em !default;
 /// @type Map
 $measures: (
-    "small":               $measure-small,
-    "small-relative":      $measure-small-relative,
-    "small-proportional":  $measure-small-proportional,
-    "medium":              $measure-medium,
-    "medium-relative":     $measure-medium-relative,
-    "medium-proportional": $measure-medium-proportional,
-    "large":               $measure-large,
-    "large-relative":      $measure-large-relative,
-    "large-proportional":  $measure-large-proportional,
-    "one":                 $measure-one,
-    "one-relative":        $measure-one-relative
+    small:               $measure-small,
+    small-relative:      $measure-small-relative,
+    small-proportional:  $measure-small-proportional,
+    medium:              $measure-medium,
+    medium-relative:     $measure-medium-relative,
+    medium-proportional: $measure-medium-proportional,
+    large:               $measure-large,
+    large-relative:      $measure-large-relative,
+    large-proportional:  $measure-large-proportional,
+    one:                 $measure-one,
+    one-relative:        $measure-one-relative
 ) !default;
 
 
@@ -95,10 +95,10 @@ $opacity-delta: 0.050 !default;
 /// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 $opacities: (
-    "alpha": $opacity-alpha,
-    "beta":  $opacity-beta,
-    "gamma": $opacity-gamma,
-    "delta": $opacity-delta
+    alpha: $opacity-alpha,
+    beta:  $opacity-beta,
+    gamma: $opacity-gamma,
+    delta: $opacity-delta
 ) !default;
 
 
@@ -146,35 +146,35 @@ $color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
 /// @type Map
 /// @prop {Color} Color
 $site-colors: (
-    "transparent":  $color-transparent,
-    "bowhead":      $color-bowhead,
-    "raven":        $color-raven,
-    "coyote":       $color-coyote,
-    "canada":       $color-canada,
-    "black":        $color-black,
-    "mineshaft":    $color-mineshaft,
-    "kaiser":       $color-kaiser,
-    "dove":         $color-dove,
-    "alto":         $color-alto,
-    "white":        $color-white,
-    "black--alpha": $color-black--alpha,
-    "black--gamma": $color-black--gamma,
-    "black--delta": $color-black--delta,
-    "raven--gamma": $color-raven--gamma
+    transparent:  $color-transparent,
+    bowhead:      $color-bowhead,
+    raven:        $color-raven,
+    coyote:       $color-coyote,
+    canada:       $color-canada,
+    black:        $color-black,
+    mineshaft:    $color-mineshaft,
+    kaiser:       $color-kaiser,
+    dove:         $color-dove,
+    alto:         $color-alto,
+    white:        $color-white,
+    black--alpha: $color-black--alpha,
+    black--gamma: $color-black--gamma,
+    black--delta: $color-black--delta,
+    raven--gamma: $color-raven--gamma
 ) !default;
 /// @type Map
 /// @prop {Color} Color
 $palette-colors: (
-    "bowhead":      $color-bowhead,
-    "raven":        $color-raven,
-    "coyote":       $color-coyote,
-    "canada":       $color-canada,
-    "black":        $color-black,
-    "mineshaft":    $color-mineshaft,
-    "kaiser":       $color-kaiser,
-    "dove":         $color-dove,
-    "alto":         $color-alto,
-    "white":        $color-white
+    bowhead:      $color-bowhead,
+    raven:        $color-raven,
+    coyote:       $color-coyote,
+    canada:       $color-canada,
+    black:        $color-black,
+    mineshaft:    $color-mineshaft,
+    kaiser:       $color-kaiser,
+    dove:         $color-dove,
+    alto:         $color-alto,
+    white:        $color-white
 ) !default;
 
 
@@ -188,10 +188,10 @@ $border-width-hairline:     1px !default;
 $border-width-button:   0.182em !default;
 /// @type Map
 $border-widths: (
-    "default":  $border-width-default,
-    "thin":     $border-width-thin,
-    "hairline": $border-width-hairline,
-    "button":   $border-width-button
+    default:  $border-width-default,
+    thin:     $border-width-thin,
+    hairline: $border-width-hairline,
+    button:   $border-width-button
 ) !default;
 
 
@@ -201,8 +201,8 @@ $border-style-default: solid !default;
 $border-style-alternate: dotted !default;
 /// @type Map
 $border-styles: (
-    "default":   $border-style-default,
-    "alternate": $border-style-alternate
+    default:   $border-style-default,
+    alternate: $border-style-alternate
 ) !default;
 
 
@@ -217,9 +217,9 @@ $border-radius-thin:     0.250rem !default;
 $border-radius-hairline: 0.125rem !default;
 /// @type Map
 $border-radii: (
-    "default":  $border-radius-default,
-    "thin":     $border-radius-thin,
-    "hairline": $border-radius-hairline
+    default:  $border-radius-default,
+    thin:     $border-radius-thin,
+    hairline: $border-radius-hairline
 ) !default;
 
 
@@ -233,8 +233,8 @@ $font-weight-default: 400 !default;
 $font-weight-bold:    600 !default;
 /// @type Map
 $font-weights: (
-    "default": $font-weight-default,
-    "bold":    $font-weight-bold
+    default: $font-weight-default,
+    bold:    $font-weight-bold
 ) !default;
 
 
@@ -269,12 +269,12 @@ $font-size-small-relative: 0.875em !default;
 /// @require {Variable} $font-size-large
 /// @require {Variable} $font-size-small
 $font-sizes: (
-    "default": $font-size-default,
-    "alpha":   $font-size-alpha,
-    "beta":    $font-size-beta,
-    "gamma":   $font-size-gamma,
-    "large":   $font-size-large,
-    "small":   $font-size-small
+    default: $font-size-default,
+    alpha:   $font-size-alpha,
+    beta:    $font-size-beta,
+    gamma:   $font-size-gamma,
+    large:   $font-size-large,
+    small:   $font-size-small
 ) !default;
 
 
@@ -313,10 +313,10 @@ $font-family-monospace: "Menlo for Powerline",
 /// @require {Variable} $font-family-monospace
 /// @see {Mixin} font-family
 $font-families: (
-    "default":   $font-family-default,
-    "alpha":     $font-family-alpha,
-    "serif":     $font-family-serif,
-    "monospace": $font-family-monospace
+    default:   $font-family-default,
+    alpha:     $font-family-alpha,
+    serif:     $font-family-serif,
+    monospace: $font-family-monospace
 ) !default;
 /// @type List
 /// @prop {String} family - Font Family
@@ -342,10 +342,10 @@ $line-height-medium:  1.429 !default;
 $line-height-code:    2.000 !default;
 /// @type Map
 $line-heights: (
-    "default": $line-height-default,
-    "small":   $line-height-small,
-    "medium":  $line-height-medium,
-    "code":    $line-height-code
+    default: $line-height-default,
+    small:   $line-height-small,
+    medium:  $line-height-medium,
+    code:    $line-height-code
 ) !default;
 
 
@@ -395,13 +395,13 @@ $z-index-notification: 5 !default;
 /// @prop {Number} value - z-index value
 /// @see {Function} z-index
 $z-indexes: (
-    "below":        $z-index-below,
-    "root":         $z-index-root,
-    "default":      $z-index-default,
-    "above":        $z-index-above,
-    "modal":        $z-index-modal,
-    "dialog":       $z-index-dialog,
-    "notification": $z-index-notification
+    below:        $z-index-below,
+    root:         $z-index-root,
+    default:      $z-index-default,
+    above:        $z-index-above,
+    modal:        $z-index-modal,
+    dialog:       $z-index-dialog,
+    notification: $z-index-notification
 ) !default;
 
 
@@ -418,13 +418,13 @@ $aspect-ratios: (
 /// @prop {String} Body Class
 /// @prop {String} Primary Navigation Class
 $navigation-links: (
-    "home":      home,
-    "about":     about,
-    "article":   articles,
-    "articles":  articles,
-    "pen":       pens,
-    "pens":      pens,
-    "search":    search
+    home:      home,
+    about:     about,
+    article:   articles,
+    articles:  articles,
+    pen:       pens,
+    pens:      pens,
+    search:    search
 ) !default;
 
 
@@ -452,15 +452,15 @@ $color-sass: #c6538c !default;
 /// @require {Variable} $color-markdown
 /// @require {Variable} $color-sass
 $language-colors: (
-    "css":         $color-css,
-    "haml":        $color-html,
-    "html":        $color-html,
-    "jade":        $color-html,
-    "javascript":  $color-javascript,
-    "liquid":      $color-liquid,
-    "markdown":    $color-markdown,
-    "sass":        $color-sass,
-    "scss":        $color-sass
+    css:         $color-css,
+    haml:        $color-html,
+    html:        $color-html,
+    jade:        $color-html,
+    javascript:  $color-javascript,
+    liquid:      $color-liquid,
+    markdown:    $color-markdown,
+    sass:        $color-sass,
+    scss:        $color-sass
 ) !default;
 
 
@@ -514,3 +514,61 @@ $avatar-size: 6.25rem !default; // 100px
 
 /// @type Number
 $max-columns: 2 !default;
+
+
+/// @type Map
+/// @see {Mixin} v
+$variable-maps: (
+    border-width:   $border-widths,
+    border-style:   $border-styles,
+    color:          $site-colors,
+    font-family:    $font-families,
+    font-size:      $font-sizes,
+    font-weight:    $font-weights,
+    line-height:    $line-heights,
+    measure:        $measures,
+    opacity:        $opacities,
+    z-index:        $z-indexes
+);
+
+/// @type Map
+/// @see {Mixin} v
+$property-maps: (
+    opacity:                opacity,
+    background-color:       color,
+    color:                  color,
+    border-color:           color,
+    border-top-color:       color,
+    border-right-color:     color,
+    border-bottom-color:    color,
+    border-left-color:      color,
+    border-style:           border-style,
+    border-top-style:       border-style,
+    border-right-style:     border-style,
+    border-bottom-style:    border-style,
+    border-left-style:      border-style,
+    border-width:           border-width,
+    border-top-width:       border-width,
+    border-right-width:     border-width,
+    border-bottom-width:    border-width,
+    border-left-width:      border-width,
+    fill:                   color,
+    font-family:            font-family,
+    font-size:              font-size,
+    font-weight:            font-weight,
+    line-height:            line-height,
+    margin:                 measure,
+    margin-top:             measure,
+    margin-right:           measure,
+    margin-bottom:          measure,
+    margin-left:            measure,
+    padding:                measure,
+    padding-top:            measure,
+    padding-right:          measure,
+    padding-bottom:         measure,
+    padding-left:           measure,
+    stroke:                 color,
+    text-decoration-color:  color,
+    text-decoration-width:  border-width,
+    z-index:                z-index
+);
