@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
@@ -17,10 +17,10 @@
     const WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">
-                                     <a href="#webmention-{{id}}" rel="me">#</a>
-                                     <time datetime="{{date}}">{{dateClean}}</time>
-                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>
+    const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">
+                                     <a href="#webmention-{{ id }}" rel="me">#</a>
+                                     {{ typeSentencePrefix }} {{ author }} {{ date }}
+                                     {{ url }}
                                  </li>`;
     let webmentionsCount = 0;
 
@@ -50,7 +50,8 @@
                 if (WEBMENTIONS_BUTTON !== null && webmentionsCount > 0) {
                     WEBMENTIONS_BUTTON.querySelector('.js-webmention-comment-count').innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? 's' : ''}`;
                 }
-            } else {
+            }
+            else {
                 console.log(`WebMention request status error: ${request.status}`);
             }
         };
@@ -73,7 +74,8 @@
                 WEBMENTIONS_SECTION.scrollIntoView();
                 if (webmentionsCount > 1) {
                     WEBMENTIONS_THREAD.focus();
-                } else {
+                }
+                else {
                     WEBMENTIONS_INPUT.focus();
                 }
             }
@@ -88,22 +90,38 @@
     ////
     function populateWebmentionContent(html, item) {
         // ID
-        html = helpers.injectContent(html, item.id, '{{id}}');
+        html = helpers.injectContent(html, item.id, '{{ id }}');
 
         // TYPE
-        html = helpers.injectContent(html, item.activity.type, '{{type}}');
+        html = helpers.injectContent(html, item.activity.type, '{{ type }}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, 'Liked', '{{ typeSentencePrefix }}');
+        }
+        else {
+            html = helpers.injectContent(html, 'Posted', '{{ typeSentencePrefix }}');
+        }
 
         // DATE
-        html = helpers.injectContent(html, item.verified_date, '{{date}}');
+        html = helpers.injectContent(html, `on <time datetime="${item.verified_date}">${helpers.formatDate(new Date(item.verified_date))}</time>`, '{{ date }}');
 
-        // DATE, CLEAN
-        html = helpers.injectContent(html, helpers.formatDate(new Date(item.verified_date)), '{{dateClean}}');
+        // AUTHOR
+        if (item.data.author.name && item.data.url && item.activity.type === 'like') {
+            html = helpers.injectContent(html, `by <a href="${item.data.url}" class="webmentions__link__name" rel="external">${item.data.author.name}</a>`, '{{ author }}');
+        }
+        else if (item.data.author.name) {
+            html = helpers.injectContent(html, `by <span class="webmentions__link__name">${item.data.author.name}</span>`, '{{ author }}');
+        }
+        else {
+            html = helpers.injectContent(html, '', '{{ author }}');
+        }
 
         // URL
-        html = helpers.injectContent(html, item.data.url, '{{url}}');
-
-        // URL, TRIMMED
-        html = helpers.injectContent(html, item.data.url.split('//')[1], '{{urlTrimmed}}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, '', '{{ url }}');
+        }
+        else {
+            html = helpers.injectContent(html, `<a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a>`, '{{ url }}');
+        }
 
         return html;
     }

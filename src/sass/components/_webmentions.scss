@@ -47,13 +47,9 @@
 }
 
 .webmentions-thread {
+    .webmentions__link__name,
     time {
         @include v(font-weight, bold);
-
-        &::after {
-            content: " – ";
-            @include v(font-weight, default);
-        }
     }
 }
 

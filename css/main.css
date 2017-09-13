@@ -3652,15 +3652,10 @@ footer div {
     margin-left: var(--measure-small);
 }
 
+.webmentions-thread .webmentions__link__name,
 .webmentions-thread time {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-}
-
-.webmentions-thread time::after {
-    content: " – ";
-    font-weight: 400;
-    font-weight: var(--font-weight-default);
 }
 
 .webmentions__link__type {

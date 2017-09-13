@@ -218,8 +218,8 @@ helpers = {
         resultsList = document.querySelector('.js-search-results-list');
     var ALLOW_EMPTY = false;
     var JSON_FEED_URL = '../search.json';
-    var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{url}}">\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n            </a>\n        </article>\n    </li>';
-    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{url}}">\n                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>\n                <h4 class="title" itemprop="name">{{title}}</h4>\n                <p class="lede" itemprop="description">{{lede}}</p>\n                <time class="date" datetime="{{date}}">{{date_friendly}}</time>\n            </a>\n        </article>\n    </li>';
+    var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{ url }}">\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n            </a>\n        </article>\n    </li>';
+    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date" datetime="{{date}}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -433,40 +433,40 @@ helpers = {
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, '{{url}}');
+        html = helpers.injectContent(html, item.url, '{{ url }}');
 
         // ICON
         if (item.categories == 'article') {
-            html = helpers.injectContent(html, 'article', '{{icon}}');
+            html = helpers.injectContent(html, 'article', '{{ icon }}');
         } else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'link', '{{icon}}');
+            html = helpers.injectContent(html, 'link', '{{ icon }}');
         } else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'codepen', '{{icon}}');
+            html = helpers.injectContent(html, 'codepen', '{{ icon }}');
         } else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'bullhorn', '{{icon}}');
+            html = helpers.injectContent(html, 'bullhorn', '{{ icon }}');
         }
 
         // TITLE
-        html = helpers.injectContent(html, item.title, '{{title}}');
+        html = helpers.injectContent(html, item.title, '{{ title }}');
 
         // LEDE
         if (item.lede) {
             var ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
-            html = helpers.injectContent(html, ledeFormatted, '{{lede}}');
+            html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
         } else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'Shared Link', '{{lede}}');
+            html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
         } else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'Featured Pen', '{{lede}}');
+            html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
         } else if (item.categories == 'talk' && item.location) {
-            html = helpers.injectContent(html, 'Talk \u2013 Given at ' + item.location + '.', '{{lede}}');
+            html = helpers.injectContent(html, 'Talk \u2013 Given at ' + item.location + '.', '{{ lede }}');
         } else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'Talk', '{{lede}}');
+            html = helpers.injectContent(html, 'Talk', '{{ lede }}');
         }
 
         // DATE
         if (item.type == 'post') {
-            html = helpers.injectContent(html, item.date, '{{date}}');
-            html = helpers.injectContent(html, item.date_friendly, '{{date_friendly}}');
+            html = helpers.injectContent(html, item.date, '{{ date }}');
+            html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
         }
 
         return html;
@@ -493,7 +493,7 @@ helpers = {
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     var WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     var WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
     var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
@@ -501,7 +501,7 @@ helpers = {
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{id}}" class="webmentions__link" data-type="{{type}}">\n                                     <a href="#webmention-{{id}}" rel="me">#</a>\n                                     <time datetime="{{date}}">{{dateClean}}</time>\n                                     <a href="{{url}}" rel="external">{{urlTrimmed}}</a>\n                                 </li>';
+    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     <a href="#webmention-{{ id }}" rel="me">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                     {{ url }}\n                                 </li>';
     var webmentionsCount = 0;
 
     // enable the WebMentions button, input, and submit
@@ -590,22 +590,34 @@ helpers = {
     ////
     function populateWebmentionContent(html, item) {
         // ID
-        html = helpers.injectContent(html, item.id, '{{id}}');
+        html = helpers.injectContent(html, item.id, '{{ id }}');
 
         // TYPE
-        html = helpers.injectContent(html, item.activity.type, '{{type}}');
+        html = helpers.injectContent(html, item.activity.type, '{{ type }}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, 'Liked', '{{ typeSentencePrefix }}');
+        } else {
+            html = helpers.injectContent(html, 'Posted', '{{ typeSentencePrefix }}');
+        }
 
         // DATE
-        html = helpers.injectContent(html, item.verified_date, '{{date}}');
+        html = helpers.injectContent(html, 'on <time datetime="' + item.verified_date + '">' + helpers.formatDate(new Date(item.verified_date)) + '</time>', '{{ date }}');
 
-        // DATE, CLEAN
-        html = helpers.injectContent(html, helpers.formatDate(new Date(item.verified_date)), '{{dateClean}}');
+        // AUTHOR
+        if (item.data.author.name && item.data.url && item.activity.type === 'like') {
+            html = helpers.injectContent(html, 'by <a href="' + item.data.url + '" class="webmentions__link__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
+        } else if (item.data.author.name) {
+            html = helpers.injectContent(html, 'by <span class="webmentions__link__name">' + item.data.author.name + '</span>', '{{ author }}');
+        } else {
+            html = helpers.injectContent(html, '', '{{ author }}');
+        }
 
         // URL
-        html = helpers.injectContent(html, item.data.url, '{{url}}');
-
-        // URL, TRIMMED
-        html = helpers.injectContent(html, item.data.url.split('//')[1], '{{urlTrimmed}}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, '', '{{ url }}');
+        } else {
+            html = helpers.injectContent(html, '<a href="' + item.data.url + '" rel="external">' + item.data.url.split('//')[1] + '</a>', '{{ url }}');
+        }
 
         return html;
     }

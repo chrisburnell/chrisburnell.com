@@ -21,19 +21,19 @@
     const JSON_FEED_URL = '../search.json';
     const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
-            <a href="{{url}}">
-                <h4 class="title" itemprop="name">{{title}}</h4>
-                <p class="lede" itemprop="description">{{lede}}</p>
+            <a href="{{ url }}">
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
             </a>
         </article>
     </li>`;
     const SEARCH_POST_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/TechArticle">
-            <a href="{{url}}">
-                <svg class="icon  icon--{{icon}}" role="img"><use xlink:href="/images/sprites.svg#svg--{{icon}}" /></svg>
-                <h4 class="title" itemprop="name">{{title}}</h4>
-                <p class="lede" itemprop="description">{{lede}}</p>
-                <time class="date" datetime="{{date}}">{{date_friendly}}</time>
+            <a href="{{ url }}">
+                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
+                <time class="date" datetime="{{date}}">{{ date_friendly }}</time>
             </a>
         </article>
     </li>`;
@@ -234,47 +234,47 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, '{{url}}');
+        html = helpers.injectContent(html, item.url, '{{ url }}');
 
         // ICON
         if (item.categories == 'article') {
-            html = helpers.injectContent(html, 'article', '{{icon}}');
+            html = helpers.injectContent(html, 'article', '{{ icon }}');
         }
         else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'link', '{{icon}}');
+            html = helpers.injectContent(html, 'link', '{{ icon }}');
         }
         else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'codepen', '{{icon}}');
+            html = helpers.injectContent(html, 'codepen', '{{ icon }}');
         }
         else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'bullhorn', '{{icon}}');
+            html = helpers.injectContent(html, 'bullhorn', '{{ icon }}');
         }
 
         // TITLE
-        html = helpers.injectContent(html, item.title, '{{title}}');
+        html = helpers.injectContent(html, item.title, '{{ title }}');
 
         // LEDE
         if (item.lede) {
             let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
-            html = helpers.injectContent(html, ledeFormatted, '{{lede}}');
+            html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
         }
         else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'Shared Link', '{{lede}}');
+            html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
         }
         else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'Featured Pen', '{{lede}}');
+            html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
         }
         else if (item.categories == 'talk' && item.location) {
-            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{lede}}');
+            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{ lede }}');
         }
         else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, `Talk`, '{{lede}}');
+            html = helpers.injectContent(html, `Talk`, '{{ lede }}');
         }
 
         // DATE
         if (item.type == 'post') {
-            html = helpers.injectContent(html, item.date, '{{date}}');
-            html = helpers.injectContent(html, item.date_friendly, '{{date_friendly}}');
+            html = helpers.injectContent(html, item.date, '{{ date }}');
+            html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
         }
 
         return html;
