@@ -2,6 +2,7 @@
 _Store
 .DS_Store
 Desktop.ini
+Icon
 
 # Thumbnail cache files
 ._*
@@ -20,6 +21,9 @@ _site/
 
 # NPM
 node_modules/
+
+# Ruby
+Gemfile.lock
 
 # Original Images
 src/images/*
