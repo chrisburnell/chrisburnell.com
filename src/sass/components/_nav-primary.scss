@@ -77,26 +77,23 @@
     padding-bottom: 0.5rem;
     @include v(border-bottom-width, default);
 }
-@each $body-class, $navigation-class in $navigation-links {
-    .page--#{$body-class} .nav-primary--#{$navigation-class} a {
+@each $class in $navigation-classes {
+    [class*="page--#{$class}"] [class*="nav-primary--#{$class}"] a {
         @extend %nav-primary-anchor !optional;
     }
 }
 
 // Complementary to the Effect for interactions and active paths
 %nav-primary-anchor-arrow {
+    @include absolute(top, 100%);
     content: "";
     border-width: 0.5em 0.5em 0;
     @include v(border-style, default);
     @include v(border-color, transparent);
     @include v(border-top-color, raven);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
 }
-@each $body-class, $navigation-class in $navigation-links {
-    .page--#{$body-class} .nav-primary--#{$navigation-class} a::after {
+@each $class in $navigation-classes {
+    [class*="page--#{$class}"] [class*="nav-primary--#{$class}"] a::after {
         @extend %nav-primary-anchor-arrow !optional;
     }
 }

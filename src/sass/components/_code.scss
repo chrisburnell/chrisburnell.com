@@ -76,7 +76,6 @@ code[data-lang] {
         overflow-x: hidden;
 
         &::after {
-            @include absolute(full);
             @include border-radius(bottom);
             content: "";
             background-image: linear-gradient(to bottom,

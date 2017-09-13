@@ -414,18 +414,14 @@ $aspect-ratios: (
 ) !default;
 
 
-/// @type Map
-/// @prop {String} Body Class
-/// @prop {String} Primary Navigation Class
-$navigation-links: (
-    home:      home,
-    about:     about,
-    article:   articles,
-    articles:  articles,
-    pen:       pens,
-    pens:      pens,
-    search:    search
-) !default;
+/// @type List
+/// @prop {String} Body / Primary Navigation Class
+$navigation-classes:
+    home,
+    about,
+    article,
+    pen,
+    search !default;
 
 
 /// @type Color

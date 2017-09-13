@@ -501,7 +501,7 @@ helpers = {
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="me">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
+    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="bookmark">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
     var webmentionsCount = 0;
 
     // enable the WebMentions button, input, and submit
