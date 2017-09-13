@@ -17,7 +17,7 @@ shorturl: 58xlz
 ---
 
 
-While my enthusiasm for writing certainly dwindled in [2016](/search/?query=date:2016){:rel="me"}, I’m taking a new approach with 2017. I’m dropping my fear of publishing and just getting down to it. Time to get down to brass tacks.
+While my enthusiasm for writing certainly dwindled in [2016](/search/?query=date:2016), I’m taking a new approach with 2017. I’m dropping my fear of publishing and just getting down to it. Time to get down to brass tacks.
 
 <blockquote>
     <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server.</p>

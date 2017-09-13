@@ -1,6 +1,5 @@
 - title: About
   url: '/about/'
-  rel: 'me'
 
 - title: Articles
   url: '/articles/'

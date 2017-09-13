@@ -15,5 +15,4 @@
   url: 'https://last.fm/user/chrisburnell'
 
 - title: RSS
-  rel: 'me author'
   url: '/feed.xml'

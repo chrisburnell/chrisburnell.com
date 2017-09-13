@@ -1,24 +1,19 @@
 - title: Articles Archive
-  rel: 'me author'
   url: '/articles/'
   icon: 'article'
 
 - title: Pens Archive
-  rel: 'me author'
   url: '/pens/'
   icon: 'codepen'
 
 - title: Links Archive
-  rel: 'me author'
   url: '/links/'
   icon: 'link'
 
 - title: Talks Archive
-  rel: 'me author'
   url: '/talks/'
   icon: 'bullhorn'
 
 - title: Tags Archive
-  rel: 'me author'
   url: '/tags/'
   icon: 'tag'

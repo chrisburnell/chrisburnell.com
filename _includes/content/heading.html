@@ -32,6 +32,6 @@
         </a>
     {% endunless %}
     {% unless heading_id == '' %}
-        {% include content/fragment-anchor.html id=heading_id %}
+        {% include content/fragment-anchor.html id=heading_id rel='bookmark' %}
     {% endunless %}
 </{{ heading_type }}>

@@ -19,7 +19,7 @@
     const WEBMENTIONS_HASH = ['#webmention', '#mention'];
     const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">
                                      {{ content }}
-                                     <a href="#webmention-{{ id }}" rel="me">#</a>
+                                     <a href="#webmention-{{ id }}" rel="bookmark">#</a>
                                      {{ typeSentencePrefix }} {{ author }} {{ date }}
                                  </li>`;
     let webmentionsCount = 0;

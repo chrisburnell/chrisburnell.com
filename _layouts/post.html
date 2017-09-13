@@ -9,7 +9,7 @@
             {% if page.shorturl %}
                 {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% assign h1_rel = 'me' %}
+                {% assign h1_rel = 'me external' %}
                 {% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}
             {% endif %}
         </h1>
@@ -20,7 +20,7 @@
             <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
                 <span>published on</span>
                 {% if page.shorturl %}
-                    <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="me" itemprop="datePublished">
+                    <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="me external" itemprop="datePublished">
                 {% else %}
                     <strong itemprop="datePublished">
                 {% endif %}
