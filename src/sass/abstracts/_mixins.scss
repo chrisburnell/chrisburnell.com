@@ -368,6 +368,38 @@
 
 
 ///
+/// Reset Font Size
+///
+/// @author Chris Burnell
+///
+/// @example scss
+///   ul {
+///       @include reset-font-size(li);
+///   }
+///   // ul {
+///   //     font-size: 0;
+///   // }
+///   // ul > li {
+///   //     font-size: 1rem;
+///   // }
+///
+@mixin reset-font-size($child: null, $font-size: default) {
+    font-size: 0;
+
+    @if ($child) {
+        #{$child} {
+            @include v(font-size, $font-size);
+        }
+    }
+    @else {
+        & > * {
+            @include v(font-size, $font-size);
+        }
+    }
+}
+
+
+///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
 /// If passing two or more properties, quotation marks must be used.

@@ -54,7 +54,7 @@
     --font-display: swap;
     --font-weight-default: 400;
     --font-weight-bold: 600;
-    --font-size-default: var(--base-font-size);
+    --font-size-default: 1rem;
     --font-size-alpha: 4.5rem;
     --font-size-beta: 1.375rem;
     --font-size-gamma: 1.125rem;
@@ -172,7 +172,7 @@ html {
     font-family: var(--font-family-default);
     background-color: #4f4f4f;
     background-color: var(--color-kaiser);
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     font-style: normal;
     font-weight: 400;
@@ -310,7 +310,7 @@ h3:not(:last-child) {
  */
 .delta,
 h4 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -328,7 +328,7 @@ h4 {
  */
 .epsilon,
 h5 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     line-height: 1.25;
     line-height: var(--line-height-small);
@@ -339,7 +339,7 @@ h5 {
  */
 .zeta,
 h6 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     line-height: 1.25;
     line-height: var(--line-height-small);
@@ -1626,6 +1626,8 @@ h6[id]:target,
 .endnote-anchor[id]:target {
     -webkit-animation: anchor-target 2s linear;
             animation: anchor-target 2s linear;
+    -webkit-animation: anchor-target var(--animation-duration) var(--animation-function);
+            animation: anchor-target var(--animation-duration) var(--animation-function);
 }
 
 .border-radius,
@@ -1772,14 +1774,17 @@ h6[id]:target,
 }
 
 .nav-primary-list {
-    height: 3.75rem;
     font-size: 0;
+    height: 3.75rem;
+}
+
+.nav-primary-list li {
+    font-size: 1rem;
+    font-size: var(--font-size-default);
 }
 
 .nav-primary-list li {
     display: inline-block;
-    font-size: 1rem;
-    font-size: var(--measure-one);
 }
 
 @media screen and (max-width: 500px) {
@@ -2121,9 +2126,9 @@ aside + .lede {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-family: var(--font-family-default);
     color: inherit;
+    font-style: normal;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-    font-style: normal;
 }
 
 .author-information a {

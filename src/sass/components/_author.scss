@@ -45,8 +45,8 @@
         @include case(uppercase, 0);
         @include font-family(default);
         color: inherit;
-        @include v(font-weight, bold);
         font-style: normal;
+        @include v(font-weight, bold);
     }
 
     a {

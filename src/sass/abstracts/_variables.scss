@@ -239,8 +239,7 @@ $font-weights: (
 
 
 /// @type Length
-/// @require {Variable} $base-font-size
-$font-size-default: $base-font-size !default;
+$font-size-default: 1rem !default;
 // 72px
 /// @type Length
 $font-size-alpha: 4.500rem !default;

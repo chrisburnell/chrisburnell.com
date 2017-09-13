@@ -57,8 +57,7 @@ kbd {
 }
 mark {
     @include v(background-color, highlight);
-    font-size: $measure-one;
-    font-size: var(--measure-one);
+    @include v(font-size, default);
 }
 var {
     @include v(color, raven);

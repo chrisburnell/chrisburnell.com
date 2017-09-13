@@ -23,6 +23,7 @@
     &[id] {
         &:target {
             animation: anchor-target $animation-duration $animation-function;
+            animation: anchor-target var(--animation-duration) var(--animation-function);
         }
     }
 }

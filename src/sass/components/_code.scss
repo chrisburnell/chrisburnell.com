@@ -21,6 +21,7 @@ code[data-lang] {
         @include v(background-color, dove);
         @include v(color, white);
         padding: 0 $measure-medium;
+        padding: 0 var(--measure-medium);
         @include v(font-size, large);
         @include v(font-weight, bold);
         line-height: $measure-large;

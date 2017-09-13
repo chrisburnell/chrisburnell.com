@@ -125,7 +125,7 @@ $property-maps: (
     --font-weight-default: $font-weight-default;
     --font-weight-bold: $font-weight-bold;
 
-    --font-size-default: var(--base-font-size);
+    --font-size-default: $font-size-default;
     --font-size-alpha: $font-size-alpha;
     --font-size-beta: $font-size-beta;
     --font-size-gamma: $font-size-gamma;

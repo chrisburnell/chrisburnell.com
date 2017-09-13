@@ -54,7 +54,7 @@
     --font-display: swap;
     --font-weight-default: 400;
     --font-weight-bold: 600;
-    --font-size-default: var(--base-font-size);
+    --font-size-default: 1rem;
     --font-size-alpha: 4.5rem;
     --font-size-beta: 1.375rem;
     --font-size-gamma: 1.125rem;
@@ -172,7 +172,7 @@ html {
     font-family: var(--font-family-default);
     background-color: #4f4f4f;
     background-color: var(--color-kaiser);
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     font-style: normal;
     font-weight: 400;
@@ -363,7 +363,7 @@ h3:not(:last-child) {
  */
 .delta,
 h4 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -381,7 +381,7 @@ h4 {
  */
 .epsilon,
 h5 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     line-height: 1.25;
     line-height: var(--line-height-small);
@@ -392,7 +392,7 @@ h5 {
  */
 .zeta,
 h6 {
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
     line-height: 1.25;
     line-height: var(--line-height-small);
@@ -1388,7 +1388,7 @@ kbd {
 mark {
     background-color: var(--color-highlight);
     font-size: 1rem;
-    font-size: var(--measure-one);
+    font-size: var(--font-size-default);
 }
 
 var {
@@ -2070,7 +2070,7 @@ optgroup,
 select,
 textarea {
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
     font-size: var(--font-size-default);
 }
 
@@ -2342,14 +2342,26 @@ aside p {
 
 footer {
     width: 100%;
-    padding: 2.25rem 0;
-    padding: var(--measure-large) 0;
     border-top-width: 0.25rem;
     border-top-width: var(--border-width-default);
     border-top-style: solid;
     border-top-style: var(--border-style-default);
     border-top-color: #5f8aa6;
     border-top-color: var(--color-raven);
+}
+
+@media screen and (max-width: 800px) {
+    footer {
+        padding: 2.25rem 0;
+        padding: var(--measure-large) 0;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    footer {
+        padding: 8vmin 0;
+        padding: var(--measure-large-proportional) 0;
+    }
 }
 
 @-webkit-keyframes anchor-target {
@@ -2387,6 +2399,8 @@ h6[id]:target,
 .endnote-anchor[id]:target {
     -webkit-animation: anchor-target 2s linear;
             animation: anchor-target 2s linear;
+    -webkit-animation: anchor-target var(--animation-duration) var(--animation-function);
+            animation: anchor-target var(--animation-duration) var(--animation-function);
 }
 
 .border-radius,
@@ -2533,14 +2547,17 @@ h6[id]:target,
 }
 
 .nav-primary-list {
-    height: 3.75rem;
     font-size: 0;
+    height: 3.75rem;
+}
+
+.nav-primary-list li {
+    font-size: 1rem;
+    font-size: var(--font-size-default);
 }
 
 .nav-primary-list li {
     display: inline-block;
-    font-size: 1rem;
-    font-size: var(--measure-one);
 }
 
 @media screen and (max-width: 500px) {
@@ -3247,9 +3264,9 @@ p + .nav-secondary {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-family: var(--font-family-default);
     color: inherit;
+    font-style: normal;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-    font-style: normal;
 }
 
 .author-information a {
@@ -3686,6 +3703,7 @@ code[data-lang]::before {
     color: #f9f9f9;
     color: var(--color-white);
     padding: 0 1.25rem;
+    padding: 0 var(--measure-medium);
     font-size: 1.25rem;
     font-size: var(--font-size-large);
     font-weight: 600;

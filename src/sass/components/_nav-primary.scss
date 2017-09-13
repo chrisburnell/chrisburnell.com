@@ -17,18 +17,13 @@
 }
 
 .nav-primary-list {
+    @include reset-font-size(li);
     height: 3.75rem;
-    // remove space between list items
-    font-size: 0;
 
     li {
         display: inline-block;
-        // reset font-size
-        font-size: $measure-one;
-        font-size: var(--measure-one);
 
         & + li {
-
             @include media("screen", "<=small") {
                 margin-left: 0.25em;
             }
