@@ -1112,17 +1112,11 @@ blockquote cite {
     display: block;
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
-}
-
-@media screen and (min-width: 501px) {
-    blockquote cite {
-        margin-left: 2.25rem;
-        margin-left: var(--measure-large);
-    }
+    text-align: right;
 }
 
 blockquote cite::before {
-    content: "‐ ";
+    content: "—";
 }
 
 /*blockquote*/
@@ -3388,6 +3382,7 @@ aside .widget::after {
     margin-top: var(--measure-medium);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
+    text-underline-position: under;
 }
 
 .widget-related-anchor::after {
@@ -3652,15 +3647,14 @@ footer div {
     margin-left: var(--measure-small);
 }
 
-.webmentions-thread .webmentions__link__name,
-.webmentions-thread time {
-    font-weight: 600;
-    font-weight: var(--font-weight-bold);
+.webmentions-thread a {
+    word-break: break-all;
 }
 
-.webmentions__link__type {
-    font-style: italic;
-    text-transform: capitalize;
+.webmentions__link__name,
+.webmentions__link__time {
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 .button--show-webmentions::before, .button--show-webmentions:active::before {

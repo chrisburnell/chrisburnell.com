@@ -1059,17 +1059,11 @@ blockquote cite {
     display: block;
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
-}
-
-@media screen and (min-width: 501px) {
-    blockquote cite {
-        margin-left: 2.25rem;
-        margin-left: var(--measure-large);
-    }
+    text-align: right;
 }
 
 blockquote cite::before {
-    content: "‐ ";
+    content: "—";
 }
 
 /*blockquote*/

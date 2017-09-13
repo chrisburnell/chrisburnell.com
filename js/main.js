@@ -601,7 +601,7 @@ helpers = {
         }
 
         // DATE
-        html = helpers.injectContent(html, 'on <time datetime="' + item.verified_date + '">' + helpers.formatDate(new Date(item.verified_date)) + '</time>', '{{ date }}');
+        html = helpers.injectContent(html, 'on <time class="webmentions__link__time" datetime="' + item.verified_date + '">' + helpers.formatDate(new Date(item.verified_date)) + '</time>', '{{ date }}');
 
         // AUTHOR
         if (item.data.author.name && item.data.url && item.activity.type === 'like') {

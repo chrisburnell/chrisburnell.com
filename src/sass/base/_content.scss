@@ -642,14 +642,11 @@ blockquote {
     cite {
         display: block;
         @include v(margin-top, medium);
-
-        @include media("screen", ">small") {
-            @include v(margin-left, large);
-        }
+        text-align: right;
 
         &::before {
-            // HYPHEN, NO-BREAK SPACE
-            content: "‐ ";
+            // EM-DASH
+            content: "—";
         }
     }
 }

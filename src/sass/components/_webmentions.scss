@@ -47,15 +47,14 @@
 }
 
 .webmentions-thread {
-    .webmentions__link__name,
-    time {
-        @include v(font-weight, bold);
+    a {
+        word-break: break-all;
     }
 }
 
-.webmentions__link__type {
-    font-style: italic;
-    text-transform: capitalize;
+.webmentions__link__name,
+.webmentions__link__time {
+    @include v(font-weight, bold);
 }
 
 // Also appears only on article pages

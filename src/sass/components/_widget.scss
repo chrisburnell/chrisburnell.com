@@ -17,6 +17,7 @@
     align-self: flex-end;
     @include v(margin-top, medium);
     @include v(font-weight, bold);
+    text-underline-position: under;
 
     &::after {
         // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
