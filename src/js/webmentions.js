@@ -18,9 +18,9 @@
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ['#webmention', '#mention'];
     const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">
+                                     {{ content }}
                                      <a href="#webmention-{{ id }}" rel="me">#</a>
                                      {{ typeSentencePrefix }} {{ author }} {{ date }}
-                                     {{ url }}
                                  </li>`;
     let webmentionsCount = 0;
 
@@ -115,12 +115,15 @@
             html = helpers.injectContent(html, '', '{{ author }}');
         }
 
-        // URL
+        // CONTENT / URL
         if (item.activity.type === 'like') {
-            html = helpers.injectContent(html, '', '{{ url }}');
+            html = helpers.injectContent(html, '', '{{ content }}');
+        }
+        else if (item.activity.type === 'tweet') {
+            html = helpers.injectContent(html, `<div>${item.data.content}</div>`, '{{ content }}');
         }
         else {
-            html = helpers.injectContent(html, `<a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a>`, '{{ url }}');
+            html = helpers.injectContent(html, `<div><a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a></div>`, '{{ content }}');
         }
 
         return html;

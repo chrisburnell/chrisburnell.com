@@ -501,7 +501,7 @@ helpers = {
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     <a href="#webmention-{{ id }}" rel="me">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                     {{ url }}\n                                 </li>';
+    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="me">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
     var webmentionsCount = 0;
 
     // enable the WebMentions button, input, and submit
@@ -612,11 +612,13 @@ helpers = {
             html = helpers.injectContent(html, '', '{{ author }}');
         }
 
-        // URL
+        // CONTENT / URL
         if (item.activity.type === 'like') {
-            html = helpers.injectContent(html, '', '{{ url }}');
+            html = helpers.injectContent(html, '', '{{ content }}');
+        } else if (item.activity.type === 'tweet') {
+            html = helpers.injectContent(html, '<div>' + item.data.content + '</div>', '{{ content }}');
         } else {
-            html = helpers.injectContent(html, '<a href="' + item.data.url + '" rel="external">' + item.data.url.split('//')[1] + '</a>', '{{ url }}');
+            html = helpers.injectContent(html, '<div><a href="' + item.data.url + '" rel="external">' + item.data.url.split('//')[1] + '</a></div>', '{{ content }}');
         }
 
         return html;
