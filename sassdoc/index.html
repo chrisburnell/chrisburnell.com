@@ -199,6 +199,23 @@ color: contrasting-color(#111111);
     $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
     $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
+    @if $old-minimum &gt;= $old-maximum {
+        @warn &quot;old maximum must be greater than old minimum&quot;;
+        @return false;
+    }
+    @if $number &lt;= $old-minimum {
+        @warn &quot;initial number must be greater than old minimum&quot;;
+        @return false;
+    }
+    @if $number &gt;= $old-maximum {
+        @warn &quot;initial number must be less than old maximum&quot;;
+        @return false;
+    }
+    @if $new-minimum &gt;= $new-maximum {
+        @warn &quot;new maximum must be greater than new minimum&quot;;
+        @return false;
+    }
+
     @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
  }" data-collapsed="@function range-map($number, $ranges) { ... }"><code>@function range-map($number, $ranges) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remap a number from one range to another</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>Initial Value</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ranges</code></th><td data-label="desc"><p>2/4 minimum/maximum values representing the ranges</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Number re-mapped in new range</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$variable: range-map(2, 4, 100);
 // $variable: 50;</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$variable: range-map(68, 30, 160, 0, 100);

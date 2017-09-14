@@ -181,6 +181,23 @@
     $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
     $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
+    @if $old-minimum >= $old-maximum {
+        @warn "old maximum must be greater than old minimum";
+        @return false;
+    }
+    @if $number <= $old-minimum {
+        @warn "initial number must be greater than old minimum";
+        @return false;
+    }
+    @if $number >= $old-maximum {
+        @warn "initial number must be less than old maximum";
+        @return false;
+    }
+    @if $new-minimum >= $new-maximum {
+        @warn "new maximum must be greater than new minimum";
+        @return false;
+    }
+
     @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 
