@@ -36,6 +36,7 @@ var {
 }
 %heading-elements code,
 %content-elements code,
+del,
 ins,
 kbd,
 mark,
@@ -46,7 +47,6 @@ samp {
 }
 %heading-elements code,
 %content-elements code,
-ins,
 samp {
     @include v(background-color, raven--gamma);
 }

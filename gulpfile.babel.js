@@ -213,16 +213,14 @@ gulp.task('js-serviceworker', () => {
 gulp.task('compress-images', () => {
     return gulp.src(`${paths.images.src}/**/*`, { base: paths.images.src })
         .pipe(plumber())
-        .pipe(newer(`${paths.images.dest}/`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
 
-// Generate WebP-format counterparts for all PNG images
-gulp.task('png-to-webp', () => {
-    return gulp.src(`${paths.images.src}/**/*.png`, { base: paths.images.src })
+// Generate WebP-format counterparts for all JPG and PNG images
+gulp.task('images-to-webp', () => {
+    return gulp.src(`${paths.images.src}/*.{jpg,png}`, { base: paths.images.src })
         .pipe(plumber())
-        .pipe(newer(`${paths.images.dest}/`))
         .pipe(webp())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
@@ -251,7 +249,7 @@ gulp.task('js', ['js-compile'], () => {
 
 // Images task
 gulp.task('images', ['compress-images'], () => {
-    gulp.start('png-to-webp');
+    gulp.start('images-to-webp');
 });
 
 // -----------------------------------------------------------------------------

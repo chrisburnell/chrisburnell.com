@@ -645,8 +645,8 @@ blockquote {
         text-align: right;
 
         &::before {
-            // EM-DASH
-            content: "—";
+            // EN DASH, NO-BREAK SPACE
+            content: "– ";
         }
     }
 }
@@ -713,6 +713,16 @@ ins {
     text-decoration: none;
 }
 
+ins {
+    background-color: mix($color-white, $color-liquid, 80%);
+    color: contrasting-color(mix($color-white, $color-liquid, 80%));
+}
+
+del {
+    background-color: mix($color-white, $color-lastfm, 80%);
+    color: contrasting-color(mix($color-white, $color-lastfm, 80%));
+}
+
 small {
     @include v(font-size, small);
 }
@@ -729,10 +739,10 @@ sup {
     vertical-align: baseline;
 }
 sub {
-    bottom: -0.25em;
+    bottom: -0.4em;
 }
 sup {
-    top: -0.5em;
+    top: -0.4em;
 }
 
 [hidden] {

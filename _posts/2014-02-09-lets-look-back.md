@@ -566,7 +566,7 @@ And with *gulp* `watching`, the transition from the SCSS above to the minified C
 
 {% include content/heading.html title='So that’s what’s up' id='thats-whats-up' %}
 
-To sum up, the site looks <s>pretty much</s> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to <q>vanilla</q> CSS for so long, but writing SCSS feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
+To sum up, the site looks <del>pretty much</del> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to <q>vanilla</q> CSS for so long, but writing SCSS feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
 You can see the raw, uncompiled SCSS files on GitHub [here]({{ site.github.repository_url }}/tree/master/css "SCSS files for chrisburnell.com"){:rel="external"}, and the README file of the repository [here]({{ site.github.repository_url }}){:rel="external"}.
 

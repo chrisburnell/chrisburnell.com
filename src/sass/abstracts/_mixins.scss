@@ -12,11 +12,6 @@
 /// @param {String} $thickness - Thickness of Border Radius
 /// @param {String} $border-radius - Type of Border Radius
 ///
-/// @require {Variable} $border-radius-default
-/// @require {Variable} $border-radius-thin
-/// @require {Variable} $border-radius-hairline
-/// @require {Map} $border-radii
-///
 /// @example scss - Zero parameters
 ///   @include radius;
 ///   // border-radius: 0.375rem;
@@ -39,7 +34,7 @@
         }
     }
 
-    @if is-edge($border-radius) {
+    @if $border-radius and is-edge($border-radius) {
         $top-left: if($border-radius == "top" or $border-radius == "left" or $border-radius == "top-left", $thickness, 0);
         $top-right: if($border-radius == "top" or $border-radius == "right" or $border-radius == "top-right", $thickness, 0);
         $bottom-right: if($border-radius == "bottom" or $border-radius == "right" or $border-radius == "bottom-right", $thickness, 0);
@@ -61,8 +56,6 @@
 ///
 /// @param {String} $case - Case of Text
 /// @param {String} $letter-spacing [null] - Letter-spacing of Text
-///
-/// @require {Variable} $letter-spacing-uppercase
 ///
 /// @example scss
 ///   @include case(uppercase);
@@ -123,8 +116,6 @@
 /// @author Chris Burnell
 ///
 /// @param {String} $family - Font-family value
-///
-/// @require {Map} $font-families
 ///
 /// @example scss - One family
 ///   @include font-family(default);
@@ -407,9 +398,6 @@
 /// @author Chris Burnell
 ///
 /// @param {String} $values - Values
-///
-/// @require {Variable} $transition-duration-default
-/// @require {Variable} $transition-function
 ///
 /// @example scss - Zero parameters
 ///   @include transition;

@@ -91,13 +91,13 @@ a {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
+    @include absolute(right, -$measure-small);
     @include case(lowercase);
     @include font-family(monospace);
     @include v(color, dove);
     display: none;
     visibility: hidden;
-    @include v(margin-left, medium);
-    vertical-align: middle;
+    @include v(padding, small);
     @include v(font-size, small);
     @include v(font-weight, bold);
     @include v(line-height, small);

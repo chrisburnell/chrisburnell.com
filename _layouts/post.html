@@ -10,7 +10,7 @@
                 {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% assign h1_rel = 'me external' %}
-                {% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}
+                <!--{% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}-->
             {% endif %}
         </h1>
 

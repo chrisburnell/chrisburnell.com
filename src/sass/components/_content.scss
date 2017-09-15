@@ -51,8 +51,8 @@
         position: relative;
 
         &::before {
-            // EM-DASH
-            content: "—";
+            // EN-DASH
+            content: "–";
             @include v(color, dove);
             position: absolute;
             left: -($measure-medium);

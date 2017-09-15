@@ -96,7 +96,7 @@ twitter: true
 
 <p style="font-family: 'Menlo for Powerline', 'Menlo', Consolas, Courier, monospace; font-size: 0.875rem;">Monospace Font: "Menlo for Powerline", "Menlo", Consolas, Courier, monospace;</p>
 
-<p style="font-family: 'League Gothic', Impact, sans-serif; font-size: 1.375rem;">Title Font: "League Gothic", Impact, sans-serif;</p>
+<p style="font-family: 'League Gothic', Impact, sans-serif; font-size: 1.375rem; text-transform: uppercase;">Title Font: "League Gothic", Impact, sans-serif;</p>
 
 
 {% include content/heading.html title='Headings' %}
@@ -144,9 +144,9 @@ twitter: true
 
 <p><s>This text has a strikethrough</s></p>
 
-<p>Superscript<sup>®</sup></p>
+<p>Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp></p>
 
-<p>Subscript for things like H<sub>2</sub>O</p>
+<p>Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp></p>
 
 <p><small>This small text for fine print, etc.</small></p>
 
@@ -600,6 +600,8 @@ formatDate: function(date) {
 <p>I’m always been a proponent for establishing a useful dictionary of specific vocabulary as it pertains to a project. This helps to ensure that everyone can be understood by everyone else. It also reduces the “awkwardness” for people who might not be familiar with particular nomenclature or naming conventions and could be shy to ask for clarification—rather it makes these definitions known right off the bat, and serves as a reference for the future.</p>
 
 <dl>
+    <dt>DRY</dt>
+    <dd><strong>D</strong>on’t <strong>R</strong>epeat <strong>Y</strong>ourself—<q>a principle of software development aimed at reducing repetition of all kinds.</q> <cite>(<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" rel="external">Wikipedia</a>)</cite></dd>
     <dt>measure</dt>
     <dd>A unit of length, designated for specific values for one dimension of measurement, e.g. <code>margin</code>, <code>padding</code>, etc.</dd>
     <dt>size</dt>
@@ -613,7 +615,7 @@ formatDate: function(date) {
 
 <p><a href="http://sassdoc.com/" rel="external">SassDoc</a> is used to build the <a href="{{ site.urls.sassdoc }}" title="Sass Documentation for {{ site.url }}">SCSS Documentation</a>.</p>
 
-<p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://pages.github.com" rel="external">GitHub Pages</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <dfn title="storing data so future requests for that data can be served faster">caching</dfn>, <dfn title="Secure Sockets Layer">SSL</dfn>, and a <dfn title="Content Delivery Network">CDN</dfn>.
+<p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://pages.github.com" rel="external">GitHub Pages</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <dfn title="storing data so future requests for that data can be served faster">caching</dfn>, <dfn title="Secure Sockets Layer">SSL</dfn>, and as a <dfn title="Content Delivery Network">CDN</dfn>.
 
 
 {% include content/heading.html title='Tone and Voice' %}
@@ -631,4 +633,4 @@ formatDate: function(date) {
 
 {% include content/heading.html title='License' %}
 
-<p>The code and contents of this website are licensed under a <a href="/license">GNU GPLv3 license</a>.</p>
+<p>The code and contents of this website are licensed under a <a href="/license">GNU GPLv3 license</a> <a href="{{ site.urls.license }}" rel="license external" title="GNU GPLv3 on gnu.org">→</a>.</p>

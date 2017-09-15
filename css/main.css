@@ -1116,7 +1116,7 @@ blockquote cite {
 }
 
 blockquote cite::before {
-    content: "—";
+    content: "– ";
 }
 
 /*blockquote*/
@@ -1212,6 +1212,16 @@ ins {
     text-decoration: none;
 }
 
+ins {
+    background-color: #e0ebda;
+    color: #4f4f4f;
+}
+
+del {
+    background-color: #f5cdce;
+    color: #4f4f4f;
+}
+
 small {
     font-size: 0.875rem;
     font-size: var(--font-size-small);
@@ -1232,11 +1242,11 @@ sup {
 }
 
 sub {
-    bottom: -0.25em;
+    bottom: -0.4em;
 }
 
 sup {
-    top: -0.5em;
+    top: -0.4em;
 }
 
 [hidden] {
@@ -1340,6 +1350,7 @@ ol code,
 ul code,
 figure:not([class]) code,
 p code,
+del,
 ins,
 kbd,
 mark,
@@ -1364,7 +1375,6 @@ ol code,
 ul code,
 figure:not([class]) code,
 p code,
-ins,
 samp {
     background-color: rgba(95, 138, 166, 0.1);
     background-color: var(--color-raven--gamma);
@@ -1845,6 +1855,11 @@ a span:not([class]):not([itemprop]) {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
+    position: absolute;
+    right: -0.625rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     text-transform: lowercase;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
@@ -1854,9 +1869,8 @@ a span:not([class]):not([itemprop]) {
     color: var(--color-dove);
     display: none;
     visibility: hidden;
-    margin-left: 1.25rem;
-    margin-left: var(--measure-medium);
-    vertical-align: middle;
+    padding: 0.625rem;
+    padding: var(--measure-small);
     font-size: 0.875rem;
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -2702,7 +2716,7 @@ aside + .meta {
 
 .meta time + div::before,
 .meta div + div::before {
-    content: "—";
+    content: "–";
     color: #737373;
     color: var(--color-dove);
     position: absolute;

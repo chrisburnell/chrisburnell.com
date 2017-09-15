@@ -96,7 +96,7 @@ We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
 
 {% include content/heading.html title='Here’s the function!' %}
 
-Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <s>guarantee</s> <s>promise</s> think it’s less complex than building it manually):
+Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <del>guarantee</del> <del>promise</del> think it’s less complex than building it manually):
 
 {% highlight scss %}
 @function unique-pairs($data) {

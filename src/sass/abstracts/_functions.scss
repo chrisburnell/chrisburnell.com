@@ -9,9 +9,16 @@
 ///
 /// @param {*} $value - Value to test
 ///
+/// @throw Error if no parameter is passed.
+///
 /// @return {Bool}
 ///
 @function is-direction($value) {
+    @if not $value {
+        @warn "`is-direction()` expects one parameter.";
+        @return false;
+    }
+
     $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
     $is-angle: type-of($value) == "number" and index("deg" "grad" "turn" "rad", unit($value));
 
@@ -24,9 +31,16 @@
 ///
 /// @param {*} $value - Value to test
 ///
+/// @throw Error if no parameter is passed.
+///
 /// @return {Bool}
 ///
 @function is-edge($value) {
+    @if not $value {
+        @warn "`is-edge()` expects one parameter.";
+        @return false;
+    }
+
     $is-side: index((top, right, bottom, left), $value);
     $is-corner: index((top-left, top-right, bottom-right, bottom-left), $value);
 
@@ -39,9 +53,16 @@
 ///
 /// @param {*} $value - Value to test
 ///
+/// @throw Error if no parameter is passed.
+///
 /// @return {Bool}
 ///
 @function is-length($value) {
+    @if not $value {
+        @warn "`is-length()` expects one parameter.";
+        @return false;
+    }
+
     $is-length: type-of($value) == "number" and index("%" "ch" "cm" "em" "ex" "in" "mm" "pc" "pt" "px" "rem" "vmax" "vmin" "vh" "vw", unit($value));
 
     @return $is-length;
@@ -67,7 +88,7 @@
 ///
 @function contrasting-color($background-color, $text-color-dark: $color-kaiser, $text-color-light: $color-white) {
     @if not $background-color {
-        @warn "contrasting-color() expects at least one parameter.";
+        @warn "`contrasting-color()` expects at least one parameter.";
         @return false;
     }
 
@@ -99,7 +120,7 @@
 ///
 @function gradient($direction, $color-stops...) {
     @if not $direction and not $color-stops {
-        @warn "gradient() expects a direction and/or 2 or more colors to gradient between.";
+        @warn "`gradient()` expects a direction and/or 2 or more colors to gradient between.";
         @return false;
     }
 
@@ -125,7 +146,7 @@
 ///
 @function scrim-gradient($direction, $color-stops...) {
     @if not $direction and not $color-stops {
-        @warn "scrim-gradient() expects a direction and/or two colors to gradient between.";
+        @warn "`scrim-gradient()` expects a direction and/or two colors to gradient between.";
         @return false;
     }
 
@@ -211,11 +232,13 @@
 ///   line-height: strip-units(2em);
 ///   // line-height: 2;
 ///
+/// @throw Error if no parameter is passed.
+///
 /// @return {Number} Number without units
 ///
 @function strip-units($number) {
     @if not $number {
-        @warn "strip-units() expects at least one parameter.";
+        @warn "`strip-units()` expects one `$number` parameter.";
         @return false;
     }
 
@@ -258,7 +281,7 @@
 ///
 @function unique-groups($data, $size: 2) {
     @if not $data or not (type-of($data) == list or type-of($data) == map) {
-        @warn "unique-groups() expects either a single List or single Map of data.";
+        @warn "`unique-groups()` expects either a single List or single Map for `$data`.";
         @return false;
     }
 
@@ -328,7 +351,7 @@
     }
 
     @else {
-        @warn "unique-groups() expects either a List or Map.";
+        @warn "`unique-groups()` expects either a List or Map `$data` parameter.";
         @return false;
     }
 
@@ -346,9 +369,16 @@
 ///   transition: unpack-transition(all 1s)
 ///   // transition: all 1s ease;
 ///
+/// @throw Error if no parameter is passed.
+///
 /// @return {String} Full Transition
 ///
 @function unpack-transition($list) {
+    @if not $list {
+        @warn "`unpack-transition()` expects a `$list` parameter.";
+        @return false;
+    }
+
     $property: nth($list, 1);
     $time: if(length($list) > 1, nth($list, 2), $transition-duration-default);
     $function: if(length($list) > 2, nth($list, 3), $transition-function);
@@ -369,9 +399,17 @@
 ///   content: "#{walk(one two three, to-upper-case)}";
 ///   // content: "ONE TWO THREE";
 ///
+/// @throw Error if no parameters are passed.
+/// @throw Error if `$function parameter passed does not match an existing function.
+///
 /// @return {List} Updated list
 ///
 @function walk($list, $function, $args...) {
+    @if not $list or $function {
+        @warn "`walk()` expects two or more parameters (`$list`, `$function`, `$args...`).";
+        @return false;
+    }
+
     @if not function-exists($function) {
         @warn "There is no function named `#{$function}`.";
         @return false;
@@ -390,25 +428,23 @@
 ///
 /// @param {String} $z-index - Generic level
 ///
-/// @require {Variable} $z-indexes
-///
 /// @example scss
 ///   z-index: z-index(above);
 ///   // z-index: 2;
 ///
 /// @throw Error if no parameters are passed.
-/// @throw Error if parameter passed does not match a key in $z-indexes.
+/// @throw Error if `$z-index` parameter passed does not match a key in `$z-indexes`.
 ///
 /// @return {Number} z-index
 ///
 @function z-index($z-index) {
     @if not $z-index {
-        @warn "z-index() expects at least one parameter.";
+        @warn "`z-index()` expects at least one parameter.";
         @return false;
     }
 
     @if not map-has-key($z-indexes, $z-index) {
-        @warn "There is no `z-index` named `#{$z-index}` in `$z-indexes`. `z-index` should be one of `#{map-keys($z-index)}`.";
+        @warn "There is no `$z-index` named `#{$z-index}` in `$z-indexes`. `$z-index` should be one of `#{map-keys($z-index)}`.";
         @return false;
     }
 

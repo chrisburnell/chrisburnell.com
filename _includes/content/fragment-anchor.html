@@ -2,7 +2,7 @@
   Create a Fragment Anchor for linking to a specific part of the page
 
   @param {String} id *
-  @param {String} href *
+  @param {String} slug *
   @param {String} title
   @param {String} rel
 
@@ -16,10 +16,13 @@
 {% elsif include.href %}
     {% assign anchor_href = include.href %}
 {% endif %}
+{% if include.id %}
+    {% capture anchor_slug %}{{ include.id | prepend: 'data-slug="' | append: '"' }}{% endcapture %}
+{% endif %}
 {% if include.title %}
     {% capture anchor_title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
 {% endif %}
 {% if include.rel %}
     {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
-<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_title }} {{ anchor_rel }}>{{ anchor_href }}</a>
+<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>#</a>
