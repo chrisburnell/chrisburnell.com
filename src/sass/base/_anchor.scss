@@ -91,7 +91,6 @@ a {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
-    @include absolute(top-right);
     @include case(lowercase);
     @include font-family(monospace);
     @include v(color, dove);
@@ -99,6 +98,9 @@ a {
     visibility: hidden;
     @include v(padding-left, small);
     @include v(padding-right, small);
+    position: absolute;
+    top: $border-width-thin;
+    right: -($measure-small);
     @include v(font-size, small);
     @include v(font-weight, bold);
     @include v(line-height, code);

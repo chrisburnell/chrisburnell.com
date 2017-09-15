@@ -1855,9 +1855,6 @@ a span:not([class]):not([itemprop]) {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
-    position: absolute;
-    top: 0;
-    right: 0;
     text-transform: lowercase;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
@@ -1871,6 +1868,9 @@ a span:not([class]):not([itemprop]) {
     padding-left: var(--measure-small);
     padding-right: 0.625rem;
     padding-right: var(--measure-small);
+    position: absolute;
+    top: 0.125rem;
+    right: -0.625rem;
     font-size: 0.875rem;
     font-size: var(--font-size-small);
     font-weight: 600;
