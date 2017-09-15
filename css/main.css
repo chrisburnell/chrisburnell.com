@@ -1856,10 +1856,8 @@ a span:not([class]):not([itemprop]) {
  */
 .fragment-anchor {
     position: absolute;
-    right: -0.625rem;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    top: 0;
+    right: 0;
     text-transform: lowercase;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
@@ -1869,14 +1867,16 @@ a span:not([class]):not([itemprop]) {
     color: var(--color-dove);
     display: none;
     visibility: hidden;
-    padding: 0.625rem;
-    padding: var(--measure-small);
+    padding-left: 0.625rem;
+    padding-left: var(--measure-small);
+    padding-right: 0.625rem;
+    padding-right: var(--measure-small);
     font-size: 0.875rem;
     font-size: var(--font-size-small);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-    line-height: 1.25;
-    line-height: var(--line-height-small);
+    line-height: 2;
+    line-height: var(--line-height-code);
     text-shadow: none;
 }
 

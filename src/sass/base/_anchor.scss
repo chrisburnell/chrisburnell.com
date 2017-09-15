@@ -91,16 +91,17 @@ a {
  * Fragment Anchors inside Headings
  */
 .fragment-anchor {
-    @include absolute(right, -$measure-small);
+    @include absolute(top-right);
     @include case(lowercase);
     @include font-family(monospace);
     @include v(color, dove);
     display: none;
     visibility: hidden;
-    @include v(padding, small);
+    @include v(padding-left, small);
+    @include v(padding-right, small);
     @include v(font-size, small);
     @include v(font-weight, bold);
-    @include v(line-height, small);
+    @include v(line-height, code);
     text-shadow: none;
 
     %heading-elements:hover &,
