@@ -44,6 +44,14 @@ a {
                       1px  1px 0 var(--color-white);
     }
 
+    &[rel*="external"] {
+        &::after {
+            @include font-family(monospace);
+            // NO-BREAK SPACE, RIGHTWARDS ARROW
+            content: " →";
+        }
+    }
+
     %heading-elements & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
