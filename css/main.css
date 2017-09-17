@@ -65,7 +65,7 @@
     --font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --font-family-alpha: "League Gothic", Impact, sans-serif;
     --font-family-serif: Georgia, serif;
-    --font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    --font-family-monospace: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     --line-height-default: 1.875;
     --line-height-small: 1.25;
     --line-height-medium: 1.429;
@@ -1301,7 +1301,7 @@ kbd,
 samp,
 var,
 .monospace {
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -1419,7 +1419,7 @@ pre {
 pre:not(.codepen) {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -1787,6 +1787,14 @@ a:active {
     }
 }
 
+a[rel*="external"]::after {
+    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: var(--font-family-monospace);
+    -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
+    content: " →";
+}
+
 h1 a,
 h2 a,
 h3 a,
@@ -1856,7 +1864,7 @@ a span:not([class]):not([itemprop]) {
  */
 .fragment-anchor {
     text-transform: lowercase;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -2014,7 +2022,7 @@ button[rel*="external"]::after,
     right: auto;
     bottom: auto;
     left: auto;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
@@ -3214,6 +3222,10 @@ p + .nav-secondary {
     }
 }
 
+.author a[rel*="external"]::after {
+    content: "";
+}
+
 /**
  * More information about the Author
  */
@@ -3415,6 +3427,10 @@ footer div {
             -ms-flex-direction: column;
                 flex-direction: column;
     }
+}
+
+footer a[rel*="external"]::after {
+    content: "";
 }
 
 .license,

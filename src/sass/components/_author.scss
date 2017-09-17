@@ -18,6 +18,12 @@
         order: 999;
         @include v(margin-top, large);
     }
+
+    a[rel*="external"] {
+        &::after {
+            content: "";
+        }
+    }
 }
 
 /**

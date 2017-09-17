@@ -18,6 +18,12 @@ footer {
             flex-direction: column;
         }
     }
+
+    a[rel*="external"] {
+        &::after {
+            content: "";
+        }
+    }
 }
 
 .license,
