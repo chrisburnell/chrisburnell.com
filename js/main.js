@@ -606,7 +606,7 @@ helpers = {
         // AUTHOR
         if (item.data.author && item.data.url && item.activity.type === 'like') {
             html = helpers.injectContent(html, 'by <a href="' + item.data.url + '" class="webmentions__link__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
-        } else if (item.data.author.name) {
+        } else if (item.data.author) {
             html = helpers.injectContent(html, 'by <span class="webmentions__link__name">' + item.data.author.name + '</span>', '{{ author }}');
         } else {
             html = helpers.injectContent(html, '', '{{ author }}');
