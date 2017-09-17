@@ -2,24 +2,26 @@
 
 
 <main class="wrap" role="main">
-    <article class="content" id="content" role="article" itemscope itemtype="https://schema.org/TechArticle">
+    <article class="content  h-entry  e-content" id="content" role="article" itemscope itemtype="https://schema.org/TechArticle">
 
         <h1 class="title" id="article" role="heading">
-            <span itemprop="name">{{ page.title }}</span>
+            <span class="p-name" itemprop="name">{{ page.title }}</span>
             {% if page.shorturl %}
                 {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% assign h1_rel = 'me external' %}
-                <!--{% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}-->
+                {% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}
             {% endif %}
         </h1>
 
         {% include components/author.html %}
 
         <div class="meta">
-            <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
+            <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
                 <span>published on</span>
-                {% if page.shorturl %}
+                {% if page.url %}
+                    <a class="u-url" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" title="Permalink: {{ page.url | prepend: site.baseurl | prepend: site.url }}" itemprop="datePublished">
+                {% elsif page.shorturl %}
                     <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="me external" itemprop="datePublished">
                 {% else %}
                     <strong itemprop="datePublished">
@@ -36,7 +38,7 @@
                 <div class="tags">
                     <span>tagged under</span>
                     <span itemprop="keywords">
-                        {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
+                        {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
                     </span>
                 </div>
             {% endif %}
