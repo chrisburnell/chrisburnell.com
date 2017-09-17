@@ -106,13 +106,13 @@ a {
     @include v(line-height, code);
     text-shadow: none;
 
-    // %heading-elements:hover &,
-    // %heading-elements:focus &,
-    // %heading-elements:active &,
-    // &:target {
-    //     display: inline-block;
-    //     visibility: visible;
-    // }
+    %heading-elements:hover &,
+    %heading-elements:focus &,
+    %heading-elements:active &,
+    &:target {
+        display: inline-block;
+        visibility: visible;
+    }
 }
 
 /**
