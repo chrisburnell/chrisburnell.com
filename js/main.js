@@ -604,7 +604,7 @@ helpers = {
         html = helpers.injectContent(html, 'on <time class="webmentions__link__time" datetime="' + item.verified_date + '">' + helpers.formatDate(new Date(item.verified_date)) + '</time>', '{{ date }}');
 
         // AUTHOR
-        if (item.data.author.name && item.data.url && item.activity.type === 'like') {
+        if (item.data.author && item.data.url && item.activity.type === 'like') {
             html = helpers.injectContent(html, 'by <a href="' + item.data.url + '" class="webmentions__link__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
         } else if (item.data.author.name) {
             html = helpers.injectContent(html, 'by <span class="webmentions__link__name">' + item.data.author.name + '</span>', '{{ author }}');
