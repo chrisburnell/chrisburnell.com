@@ -6,17 +6,9 @@
 
 footer {
     width: 100%;
+    padding: $measure-large 0;
+    padding: var(--measure-large) 0;
     @include v(border-top-width, default);
     @include v(border-top-style, default);
     @include v(border-top-color, raven);
-
-    @include media("screen", "<=medium") {
-        padding: $measure-large 0;
-        padding: var(--measure-large) 0;
-    }
-
-    @include media("screen", ">medium") {
-        padding: $measure-large-proportional 0;
-        padding: var(--measure-large-proportional) 0;
-    }
 }

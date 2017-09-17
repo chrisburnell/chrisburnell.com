@@ -2330,26 +2330,14 @@ aside p {
 
 footer {
     width: 100%;
+    padding: 2.25rem 0;
+    padding: var(--measure-large) 0;
     border-top-width: 0.25rem;
     border-top-width: var(--border-width-default);
     border-top-style: solid;
     border-top-style: var(--border-style-default);
     border-top-color: #5f8aa6;
     border-top-color: var(--color-raven);
-}
-
-@media screen and (max-width: 800px) {
-    footer {
-        padding: 2.25rem 0;
-        padding: var(--measure-large) 0;
-    }
-}
-
-@media screen and (min-width: 801px) {
-    footer {
-        padding: 8vmin 0;
-        padding: var(--measure-large-proportional) 0;
-    }
 }
 
 @-webkit-keyframes anchor-target {
