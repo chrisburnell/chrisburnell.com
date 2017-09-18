@@ -11,7 +11,9 @@ location_url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-
 
 shorturl: 8fanl
 speakerdeck: true
-webmentions: true
+speakerdeck_slug: supporting-middle-out-in-css
+vimeo: true
+vimeo_slug: 164122074
 ---
 
 
@@ -25,7 +27,7 @@ I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04
         <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
     </div>
     <figcaption>
-        <a class="u-syndication" rel="syndication" href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
+        <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
     </figcaption>
 </figure>
 
@@ -34,9 +36,9 @@ I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04
 
 <figure>
     <div class="media  media--vimeo">
-        <iframe src="https://player.vimeo.com/video/164122074" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{ page.vimeo_slug }}" allowfullscreen></iframe>
     </div>
     <figcaption>
-        <a class="u-syndication" rel="syndication" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
+        <a class="u-syndication" rel="syndication" href="https://vimeo.com/{{ page.vimeo_slug}}" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
     </figcaption>
 </figure>
