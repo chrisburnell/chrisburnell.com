@@ -256,7 +256,6 @@ h3:not(:last-child) {
 }
 
 .content > h3,
-.content__body > h3,
 .widget h3 {
     clear: both;
     zoom: 1;
@@ -268,8 +267,6 @@ h3:not(:last-child) {
 }
 
 .content > h3::before, .content > h3::after,
-.content__body > h3::before,
-.content__body > h3::after,
 .widget h3::before,
 .widget h3::after {
     content: "";
@@ -277,14 +274,12 @@ h3:not(:last-child) {
 }
 
 .content > h3::after,
-.content__body > h3::after,
 .widget h3::after {
     clear: both;
 }
 
 @media screen and (max-width: 800px) {
     .content > h3,
-    .content__body > h3,
     .widget h3 {
         -ms-flex-item-align: start;
             align-self: flex-start;
@@ -1137,8 +1132,7 @@ small {
     font-size: var(--font-size-small);
 }
 
-strong,
-.strong {
+strong {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
 }
@@ -1864,9 +1858,7 @@ aside + .meta {
 }
 
 .meta a,
-.meta strong,
-.meta
-.strong {
+.meta strong {
     color: inherit;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -2022,9 +2014,7 @@ aside + .lede {
 }
 
 .author-information a,
-.author-information strong,
-.author-information
-.strong {
+.author-information strong {
     text-transform: uppercase;
     letter-spacing: 0;
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

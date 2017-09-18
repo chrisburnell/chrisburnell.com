@@ -58,7 +58,7 @@
     }
 
     a,
-    %strong {
+    strong {
         color: inherit;
         @include v(font-weight, bold);
         font-style: normal;

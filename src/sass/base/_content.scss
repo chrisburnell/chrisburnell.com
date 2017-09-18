@@ -96,7 +96,6 @@ h3 {
 
     // Match normal `h3`s without targetting `aside`-nested `h3`s
     .content > &,
-    .content__body > &,
     .widget & {
         @include clear;
         width: auto;
@@ -700,9 +699,7 @@ small {
     @include v(font-size, small);
 }
 
-strong,
-.strong {
-    @extend %strong;
+strong {
     @include v(font-weight, bold);
 }
 
