@@ -8,10 +8,10 @@
   url: '/feed-articles.xml'
   icon: 'rss'
 
-- title: Subscribe to Notes
-  rel: 'me author'
-  url: '/feed-notes.xml'
-  icon: 'rss'
+# - title: Subscribe to Notes
+#   rel: 'me author'
+#   url: '/feed-notes.xml'
+#   icon: 'rss'
 
 - title: Subscribe to Pens
   rel: 'me author'
