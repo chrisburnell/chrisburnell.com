@@ -80,11 +80,10 @@
                         <a class="u-syndication" rel="syndication" href="{{ syndication }}">{{ syndication_title }}</a>
                         {% if syndication contains 'twitter.com' %}
                             <small>
-                                (
+                                <span>–</span>
                                 <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>
                                 <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>
                                 <a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>
-                                )
                             </small>
                         {% endif %}
                     {% endfor %}
