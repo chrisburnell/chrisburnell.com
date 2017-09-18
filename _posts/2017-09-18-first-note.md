@@ -8,8 +8,8 @@ title: First Note
 
 webmentions: true
 
-# syndication:
-# - 
+syndication:
+- https://twitter.com/iamchrisburnell/status/909882697610350593
 ---
 
 
