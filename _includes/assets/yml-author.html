@@ -8,6 +8,10 @@
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
 {% elsif page.categories contains 'link' %}
     {% assign author_biography_closer = 'you’d really rather just be click that link' %}
+{% elsif page.page_class contains 'notes' %}
+    {% assign author_biography_closer = 'my waffling and whining is doing your head in' %}
+{% elsif page.categories contains 'note' %}
+    {% assign author_biography_closer = 'you’d rather glaze your eyes over something else' %}
 {% elsif page.page_class contains 'pens' %}
     {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
 {% elsif page.categories contains 'pen' %}
@@ -20,6 +24,8 @@
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
 {% elsif page.page_class contains 'search' %}
     {% assign author_biography_closer = 'everything you search for looks totally boring' %}
+{% elsif page.page_class contains 'hip-hop' %}
+    {% assign author_biography_closer = 'you don’t care about my distasteful choice in music' %}
 {% elsif page.page_class contains 'not-found' or page.page_class contains 'offline' %}
     {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
 {% else %}

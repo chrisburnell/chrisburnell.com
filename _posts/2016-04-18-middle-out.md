@@ -25,7 +25,7 @@ I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04
         <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
     </div>
     <figcaption>
-        <a rel="external" href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
+        <a class="u-syndication" rel="syndication" href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
     </figcaption>
 </figure>
 
@@ -37,6 +37,6 @@ I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04
         <iframe src="https://player.vimeo.com/video/164122074" allowfullscreen></iframe>
     </div>
     <figcaption>
-        <a rel="external" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
+        <a class="u-syndication" rel="syndication" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
     </figcaption>
 </figure>

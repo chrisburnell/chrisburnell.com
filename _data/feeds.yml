@@ -1,6 +1,16 @@
+- title: Subscribe to All
+  rel: 'me author'
+  url: '/feed.xml'
+  icon: 'rss'
+
 - title: Subscribe to Articles
   rel: 'me author'
   url: '/feed-articles.xml'
+  icon: 'rss'
+
+- title: Subscribe to Notes
+  rel: 'me author'
+  url: '/feed-notes.xml'
   icon: 'rss'
 
 - title: Subscribe to Pens
@@ -16,9 +26,4 @@
 - title: Subscribe to Talks
   rel: 'me author'
   url: '/feed-talks.xml'
-  icon: 'rss'
-
-- title: Subscribe to All
-  rel: 'me author'
-  url: '/feed.xml'
   icon: 'rss'

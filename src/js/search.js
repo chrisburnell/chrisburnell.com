@@ -243,6 +243,9 @@
         else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'link', '{{ icon }}');
         }
+        else if (item.categories == 'note') {
+            html = helpers.injectContent(html, 'feather', '{{ icon }}');
+        }
         else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'codepen', '{{ icon }}');
         }
@@ -260,6 +263,9 @@
         }
         else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
+        }
+        else if (item.categories == 'note') {
+            html = helpers.injectContent(html, 'Shared Note', '{{ lede }}');
         }
         else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');

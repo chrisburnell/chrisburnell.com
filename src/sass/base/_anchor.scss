@@ -44,14 +44,6 @@ a {
                       1px  1px 0 var(--color-white);
     }
 
-    &[rel*="external"] {
-        &::after {
-            @include font-family(monospace);
-            // NO-BREAK SPACE, RIGHTWARDS ARROW
-            content: " →";
-        }
-    }
-
     %heading-elements & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
@@ -76,9 +68,7 @@ a {
     }
 }
 
-/**
- * Title Anchors inside Headings
- */
+// Title Anchors inside Headings
 .title-anchor {
     display: inline-block;
 
@@ -95,9 +85,7 @@ a {
     }
 }
 
-/**
- * Fragment Anchors inside Headings
- */
+// Fragment Anchors inside Headings
 .fragment-anchor {
     @include case(lowercase);
     @include font-family(monospace);
@@ -123,17 +111,13 @@ a {
     }
 }
 
-/**
- * Endnote Anchors
- */
+// Endnote Anchors
 .endnote-anchor {
     @include v(padding-left, small-relative);
     @include v(padding-right, small-relative);
 }
 
-/**
- * Related Anchors
- */
+// Related Anchors
 .related-anchor::after {
     // NO-BREAK SPACE, RIGHTWARDS ARROW
     content: " →";

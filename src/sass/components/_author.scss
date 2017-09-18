@@ -4,10 +4,8 @@
 ////
 
 
-/**
- * The `.author` aside is always pushed underneath the content below the medium
- * breakpoint.
- */
+// The `.author` aside is always pushed underneath the content below the medium
+// breakpoint.
 /*aside*/.author {
     // override the default <aside> font-family
     @include font-family(default);
@@ -18,17 +16,9 @@
         order: 999;
         @include v(margin-top, large);
     }
-
-    a[rel*="external"] {
-        &::after {
-            content: "";
-        }
-    }
 }
 
-/**
- * More information about the Author
- */
+// More information about the Author
 .author-information {
     @include font-family(serif);
     display: flex;
@@ -70,9 +60,7 @@
     }
 }
 
-/**
- * Photograph of MY FACE
- */
+// Photograph of MY FACE
 .author-image {
     @include border-radius(50%);
     // gradient replacement while loading the `src` / `srcset`,
@@ -84,6 +72,7 @@
     background-size: 100%;
     width:  $avatar-size;
     height: $avatar-size;
+    flex: 0 0 $avatar-size;
     float: left;
     text-decoration: none;
 

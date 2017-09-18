@@ -5,10 +5,8 @@
 ////
 
 
-/**
- * Contains embedded media properly and allows them to be dynamically resized
- * inside a set aspect ratio container.
- */
+// Contains embedded media properly and allows them to be dynamically resized
+// inside a set aspect ratio container.
 .media {
     width: 100%;
     height: auto;
@@ -40,9 +38,7 @@
 }
 
 
-/**
- * CodePen Embeds
- */
+// CodePen Embeds
 .cp_embed_wrapper {
     @include v(margin-bottom, medium);
     resize: both;

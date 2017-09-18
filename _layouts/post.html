@@ -1,8 +1,18 @@
 {% include components/header.html %}
 
 
-<main class="wrap  h-entry" role="main">
-    <article class="content  e-content" id="content" role="article" itemscope itemtype="https://schema.org/TechArticle">
+{% assign itemtype = 'WebPage' %}
+{% if page.categories contains 'article' %}
+    {% assign itemtype = 'TechArticle' %}
+{% elsif page.categories contains 'link'
+      or page.categories contains 'note'
+      or page.categories contains 'pen' %}
+    {% assign itemtype = 'BlogPosting' %}
+{% elsif page.categories contains 'talk' %}
+    {% assign itemtype = 'PresentationDigitalDocument' %}
+{% endif %}
+<main class="wrap" role="main">
+    <article class="content  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name" itemprop="name">{{ page.title }}</span>
@@ -27,7 +37,7 @@
                     <strong itemprop="datePublished">
                 {% endif %}
                 {{ page.date | date_to_long_string }}
-                {% if page.shorturl %}
+                {% if page.url or page.shorturl %}
                     </a>
                 {% else %}
                     </strong>
@@ -38,7 +48,10 @@
                 <div class="tags">
                     <span>tagged under</span>
                     <span itemprop="keywords">
-                        {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
+                        {% for tag in tags_sorted %}
+                            {% unless forloop.first %}, {% endunless %}
+                            <a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>
+                        {% endfor %}
                     </span>
                 </div>
             {% endif %}
@@ -47,16 +60,39 @@
                 <div class="reading-time">
                     <span>reading time</span>
                     {% if words < 250 %}
-                        <strong><sub>~</sub>1 min</strong>
+                        <strong>~1 min</strong>
                     {% else %}
-                        <strong><sub>~</sub>{{ words | divided_by: 250 }} mins</strong>
+                        <strong>~{{ words | divided_by: 250 }} mins</strong>
                     {% endif %}
                 </div>
-            {% elsif page.categories contains 'pen' and page.codepen_featured and page.codepen_featured == true %}
-                <div class="featured">
-                    <span>featured on</span>
-                    <a rel="external" href="https://codepen.io/collection/hfqlg/">CodePen</a>
+            {% elsif page.categories contains 'note' and page.syndication %}
+                <div class="syndication">
+                    <span>also on</span>
+                    {% for syndication in page.syndication %}
+                        {% assign syndication_title = syndication | remove: 'http://' | remove: 'https://' %}
+                        {% if syndication contains 'codepen.io' %}
+                            {% assign syndication_title = 'CodePen' %}
+                        {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
+                            {% assign syndication_title = 'GitHub' %}
+                        {% elsif syndication contains 'twitter.com' %}
+                            {% assign syndication_title = 'Twitter' %}
+                        {% endif %}
+                        <a class="u-syndication" rel="syndication" href="{{ syndication }}">{{ syndication_title }}</a>
+                    {% endfor %}
                 </div>
+            {% elsif page.categories contains 'pen' %}
+                {% if page.codepen_slug %}
+                    <div class="syndication">
+                        <span>also on</span>
+                        <a class="u-syndication" rel="syndication" href="https://codepen.io/pen/{{ page.codepen_slug }}">CodePen</a>
+                    </div>
+                {% endif %}
+                {% if page.codepen_featured == true %}
+                    <div class="featured">
+                        <span>featured on</span>
+                        <a rel="external" href="https://codepen.io/collection/hfqlg/">CodePen Homepage</a>
+                    </div>
+                {% endif %}
             {% elsif page.categories contains 'talk' and page.location %}
                 <div class="location">
                     <span>given at</span>
@@ -93,7 +129,9 @@
             </nav>
         {% endif %}
 
-        {{ content }}
+        <div class="e-content">
+            {{ content }}
+        </div>
 
         {% if page.endnotes %}
             {% include content/heading.html title='Endnotes' %}
@@ -136,10 +174,14 @@
 
         {% if page.categories contains 'article' %}
             {% include components/widget-latest-articles.html %}
+        {% elsif page.categories contains 'link' %}
+            {% include components/widget-latest-links.html %}
+        {% elsif page.categories contains 'note' %}
+            <!--{% include components/widget-latest-notes.html %}-->
         {% elsif page.categories contains 'pen' %}
             {% include components/widget-latest-pens.html %}
         {% elsif page.categories contains 'talk' %}
-            {% include components/widget-latest-talks.html %}
+            <!--{% include components/widget-latest-talks.html %}-->
         {% endif %}
 
     </article>

@@ -22,7 +22,7 @@ VEN      OUSRAVENOUSRAVENOUSRAVENO
             US
 
 Checking out the source code, eh? Check out the GitHub repository:
-{{ site.github.repository_url }}
+{{ site.urls.github_repo }}
 Get in touch with me if you want to know more about the code, or if you want to use a
 snippet of code on a project of your own!  -->
 
@@ -63,11 +63,11 @@ snippet of code on a project of your own!  -->
         <link rel="prefetch" href="{{ url }}">
     {% endif %}
 
-    <link rel="alternate" type="application/rss+xml" title="All Posts RSS" href="/feed.xml">
-    <link rel="alternate" type="application/rss+xml" title="Articles RSS" href="/feed-articles.xml">
-    <link rel="alternate" type="application/rss+xml" title="Links RSS" href="/feed-links.xml">
-    <link rel="alternate" type="application/rss+xml" title="Pens RSS" href="/feed-pens.xml">
-    <link rel="alternate" type="application/rss+xml" title="Talks RSS" href="/feed-talks.xml">
+    <link rel="alternate" type="application/rss+xml" title="All Posts RSS" href="{{ site.urls.rss }}">
+    <link rel="alternate" type="application/rss+xml" title="Articles RSS" href="{{ site.urls.rss_articles }}">
+    <link rel="alternate" type="application/rss+xml" title="Links RSS" href="{{ site.urls.rss_links }}">
+    <link rel="alternate" type="application/rss+xml" title="Pens RSS" href="{{ site.urls.rss_pens }}">
+    <link rel="alternate" type="application/rss+xml" title="Talks RSS" href="{{ site.urls.rss_talks }}">
     <link rel="pingback" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
     <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
 

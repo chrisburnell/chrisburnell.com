@@ -1,0 +1,17 @@
+<section class="widget  widget--latest-notes">
+    {% include content/heading.html title='Latest Notes' href='/notes/' id='' %}
+    <ol class="content-list" role="list">
+        {% assign max_list_count = 2 %}
+        {% assign current_list_count = 0 %}
+        {% assign current_path = page.path %}
+        {% for page in site.categories.note %}
+            {% unless current_list_count == max_list_count %}
+                {% unless page.path == current_path %}
+                    {% assign current_list_count = current_list_count | plus: 1 %}
+                    {% include components/content-list-item.html %}
+                {% endunless %}
+            {% endunless %}
+        {% endfor %}
+    </ol>
+    <a class="widget-related-anchor" href="/notes/">All Notes</a>
+</section>

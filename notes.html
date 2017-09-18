@@ -1,0 +1,24 @@
+---
+layout: page
+page_class: page--notes
+searchable: no-content
+
+redirect_from:
+  - /note.html
+
+title: Notes
+lede: All of my Notes.
+---
+
+
+<p><em>There are {{ site.categories.note | size }} published Notes.</em></p>
+
+<ol class="content-list" id="notes" role="list">
+    {% for page in site.categories.note %}
+        {% include components/content-list-item.html %}
+    {% endfor %}
+</ol>
+
+{% include components/nav-secondary.html type='feeds' include='notes' %}
+
+{% include components/nav-secondary.html type='archives' exclude='notes' %}

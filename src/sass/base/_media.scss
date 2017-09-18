@@ -13,9 +13,7 @@ video {
     @extend %media-elements !optional;
 }
 
-/**
- * Fix `audio`, `iframe`, and `video`
- */
+// Fix `audio`, `iframe`, and `video`
 audio,
 iframe,
 video {

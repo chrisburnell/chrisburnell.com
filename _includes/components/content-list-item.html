@@ -15,6 +15,8 @@
                     {% include content/svg.html type='article' %}
                 {% elsif page.categories contains 'link' %}
                     {% include content/svg.html type='link' %}
+                {% elsif page.categories contains 'note' %}
+                    {% include content/svg.html type='feather' %}
                 {% elsif page.categories contains 'pen' %}
                     {% include content/svg.html type='codepen' %}
                 {% elsif page.categories contains 'talk' %}
@@ -24,8 +26,12 @@
             <p class="lede  e-content" itemprop="description">
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}
+                {% elsif page.categories contains 'article' %}
+                    Shared Articled
                 {% elsif page.categories contains 'link' %}
                     Shared Link
+                {% elsif page.categories contains 'note' %}
+                    Shared Note
                 {% elsif page.categories contains 'pen' %}
                     Featured Pen
                 {% elsif page.categories contains 'talk' %}

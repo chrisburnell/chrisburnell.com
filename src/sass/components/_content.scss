@@ -10,10 +10,8 @@
     @include v(margin-bottom, large);
 }
 
-/**
- * Banner / Hero Image
- * Can take two images, which are displayed with `srcset`
- */
+// Banner
+// Can take two images, which are displayed with `srcset`
 .banner {
     @include border-radius;
     width: $article-width;
@@ -26,9 +24,7 @@
     }
 }
 
-/**
- * Post Meta
- */
+// Post Meta
 .meta {
     @include v(padding-bottom, medium);
     overflow: hidden;
@@ -83,9 +79,7 @@
     }
 }
 
-/**
- * Page Introduction / Description
- */
+// Page Introduction / Description
 .lede {
     @extend %gamma !optional;
     @include v(margin-bottom, large);
@@ -113,9 +107,7 @@
     @include v(font-weight, bold);
 }
 
-/**
- * Explain required terminology for the content
- */
+// Explain required terminology for the content
 /*dl*/.terminology {
     @include v(padding-bottom, large);
     @include v(border-bottom-width, thin);
@@ -123,9 +115,7 @@
     @include v(border-bottom-color, black--gamma);
 }
 
-/**
- * Page Edit Notes
- */
+// Page Edit Notes
 .edit {
     @include border-radius;
     @include v(background-color, raven--gamma);

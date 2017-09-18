@@ -16,21 +16,27 @@ author:
     name: City, University of London
     url:  https://www.city.ac.uk
 
-repository: chrisburnell/chrisburnell.github.io
 url:      https://chrisburnell.com
 baseurl:  ""
 shorturl: https://repc.co/
 
 urls:
-  sassdoc:  /sassdoc
-  ravenous: https://ravenous.chrisburnell.com
-  codepen:  https://codepen.io/chrisburnell
-  gist:     https://gist.github.com/chrisburnell
-  github:   https://github.com/chrisburnell
-  lastfm:   https://last.fm/user/chrisburnell
-  spotify:  https://open.spotify.com/user/1128245857
-  twitter:  https://twitter.com/iamchrisburnell
-  license:  https://www.gnu.org/licenses/gpl-3.0.txt
+  codepen:      https://codepen.io/chrisburnell
+  gist:         https://gist.github.com/chrisburnell
+  github:       https://github.com/chrisburnell
+  github_repo:  https://github.com/chrisburnell/chrisburnell.github.io
+  lastfm:       https://last.fm/user/chrisburnell
+  license:      https://www.gnu.org/licenses/gpl-3.0.txt
+  ravenous:     https://ravenous.chrisburnell.com
+  rss:          /feed.xml
+  rss_articles: /feed-articles.xml
+  rss_links:    /feed-links.xml
+  rss_pens:     /feed-pens.xml
+  rss_talks:    /feed-talks.xml
+  sassdoc:      /sassdoc
+  speakerdeck:  https://speakerdeck.com/chrisburnell
+  spotify:      https://open.spotify.com/user/1128245857
+  twitter:      https://twitter.com/iamchrisburnell
 
 sitemap:
   changefreq: monthly
@@ -62,6 +68,7 @@ exclude:
 - package.json
 - README.md
 - src
+- yarn.lock
 
 gems:
 - jekyll-redirect-from

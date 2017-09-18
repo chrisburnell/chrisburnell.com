@@ -10,8 +10,12 @@
     <category>{{ page.categories }}</category>
     {% if page.lede %}
         <description>{{ page.lede | strip_html | xml_escape }}</description>
+    {% elsif page.categories contains 'article' %}
+        <description>Shared Article</description>
     {% elsif page.categories contains 'link' %}
         <description>Shared Link</description>
+    {% elsif page.categories contains 'note' %}
+        <description>Shared Note</description>
     {% elsif page.categories contains 'pen' %}
         <description>Featured Pen</description>
     {% elsif page.categories contains 'talk' %}

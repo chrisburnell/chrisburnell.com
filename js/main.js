@@ -440,6 +440,8 @@ helpers = {
             html = helpers.injectContent(html, 'article', '{{ icon }}');
         } else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'link', '{{ icon }}');
+        } else if (item.categories == 'note') {
+            html = helpers.injectContent(html, 'feather', '{{ icon }}');
         } else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'codepen', '{{ icon }}');
         } else if (item.categories == 'talk') {
@@ -455,6 +457,8 @@ helpers = {
             html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
         } else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
+        } else if (item.categories == 'note') {
+            html = helpers.injectContent(html, 'Shared Note', '{{ lede }}');
         } else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
         } else if (item.categories == 'talk' && item.location) {
@@ -493,7 +497,7 @@ helpers = {
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
     var WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     var WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
     var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');

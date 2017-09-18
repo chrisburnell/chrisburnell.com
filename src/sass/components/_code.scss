@@ -5,9 +5,7 @@
 ////
 
 
-/**
- * Highlighted Code Blocks
- */
+// Highlighted Code Blocks
 code[data-lang] {
     @include v(padding-top, large);
 
@@ -29,9 +27,7 @@ code[data-lang] {
     }
 }
 
-/**
- * Highlighted Code Block Labels
- */
+// Highlighted Code Block Labels
 @each $language, $color in $language-colors {
     &.language-#{$language} {
         &::before {
@@ -40,9 +36,7 @@ code[data-lang] {
     }
 }
 
-/**
- * Code Block Visibility Toggling
- */
+// Code Block Visibility Toggling
 .code-toggle {
     position: relative;
 }

@@ -5,9 +5,7 @@
 ////
 
 
-/**
- * Monospace Elements
- */
+// Monospace Elements
 code,
 kbd,
 samp,
@@ -22,9 +20,7 @@ samp {
     @include v(font-size, small);
 }
 
-/**
- * Inline Code Examples
- */
+// Inline Code Examples
 %heading-elements code,
 %content-elements code,
 ins,
@@ -65,9 +61,7 @@ var {
     @include v(font-weight, bold);
 }
 
-/**
- * Code Blocks
- */
+// Code Blocks
 pre {
     width: 100%;
     margin-top: 0;
@@ -106,9 +100,7 @@ pre {
     }
 }
 
-/**
- * Solarized Dark Code Highlighting
- */
+// Solarized Dark Code Highlighting
 .highlight {
     position: relative;
 

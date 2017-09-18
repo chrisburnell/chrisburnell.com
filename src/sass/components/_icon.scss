@@ -26,9 +26,7 @@
     }
 }
 
-/**
- * Brand Icon Widths and Colors
- */
+// Brand Icon Widths and Colors
 @each $color-brand in $brand-colors {
     $name:       nth($color-brand, 1);
     $icon-color: nth($color-brand, 2);

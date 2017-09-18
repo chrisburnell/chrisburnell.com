@@ -1,0 +1,15 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Notes Feed
+lede: All of my notes.
+category_path: '/notes/'
+---
+
+
+{% for page in site.categories.note limit: 10 %}
+    {% include components/item-feed.html %}
+{% endfor %}

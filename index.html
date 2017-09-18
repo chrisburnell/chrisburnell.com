@@ -19,6 +19,19 @@ searchable: no-content
 
 
 <h3>
+    <a href="/notes/">Latest Notes</a>
+</h3>
+
+<ol class="content-list" id="notes" role="list">
+    {% for page in site.categories.note limit: 4 %}
+        {% include components/content-list-item.html %}
+    {% endfor %}
+</ol>
+
+{% include components/nav-secondary.html type='archives' include='notes' %}
+
+
+<h3>
     <a href="/pens/">Featured Pens</a>
 </h3>
 

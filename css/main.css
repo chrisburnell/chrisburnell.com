@@ -185,12 +185,6 @@ html {
             font-feature-settings: "lnum" 1;
 }
 
-/**
- * Content Elements
- */
-/**
- * Heading Elements
- */
 h1,
 h2,
 h3,
@@ -257,9 +251,6 @@ h6
     text-transform: none;
 }
 
-/**
- * Heading - Alpha
- */
 .alpha,
 h1 {
     text-transform: uppercase;
@@ -280,9 +271,6 @@ h1 {
     }
 }
 
-/**
- * Heading - Beta
- */
 .beta,
 h2 {
     font-size: 1.375rem;
@@ -291,9 +279,6 @@ h2 {
     line-height: var(--line-height-small);
 }
 
-/**
- * Heading - Gamma
- */
 .gamma,
 h3,
 .lede {
@@ -358,9 +343,6 @@ h3:not(:last-child) {
     margin-top: 0;
 }
 
-/**
- * Heading - Delta
- */
 .delta,
 h4 {
     font-size: 1rem;
@@ -376,9 +358,6 @@ h4 {
     margin-bottom: var(--measure-small);
 }
 
-/**
- * Heading - Epsilon
- */
 .epsilon,
 h5 {
     font-size: 1rem;
@@ -387,9 +366,6 @@ h5 {
     line-height: var(--line-height-small);
 }
 
-/**
- * Heading - Zeta
- */
 .zeta,
 h6 {
     font-size: 1rem;
@@ -431,9 +407,6 @@ p:empty {
     }
 }
 
-/**
- * Lists
- */
 ol,
 ul {
     padding: 0;
@@ -610,9 +583,6 @@ dd:not(:last-child) {
     }
 }
 
-/**
- * Images and Figures
- */
 img,
 svg,
 picture {
@@ -714,9 +684,6 @@ figure figcaption {
     line-height: var(--line-height-small);
 }
 
-/**
- * Tables
- */
 table {
     min-width: 100%;
     -webkit-box-flex: 1;
@@ -976,9 +943,6 @@ tbody:last-child tr:last-of-type td:last-of-type:empty::before {
     left: 0;
 }
 
-/**
- * Details and Summary
- */
 details {
     background-clip: padding-box;
     border-radius: 0.25rem;
@@ -1054,9 +1018,6 @@ p {
     padding-top: var(--measure-medium);
 }
 
-/**
- * Quotes
- */
 blockquote {
     background-clip: padding-box;
     border-radius: 0.375rem;
@@ -1183,9 +1144,6 @@ hr {
     }
 }
 
-/**
- * Inline Content Elements
- */
 abbr[title],
 blockquote,
 cite,
@@ -1253,9 +1211,6 @@ sup {
     display: none;
 }
 
-/**
- * Touch Action
- */
 a,
 button,
 input,
@@ -1267,15 +1222,13 @@ textarea {
         touch-action: manipulation;
 }
 
-/**
- * Mouse Selection
- */
 ::-moz-selection {
     background-color: #5f8aa6;
     background-color: var(--color-raven);
     color: #f9f9f9;
     color: var(--color-white);
 }
+
 ::selection {
     background-color: #5f8aa6;
     background-color: var(--color-raven);
@@ -1293,9 +1246,6 @@ textarea {
     background-color: var(--color-canada);
 }
 
-/**
- * Monospace Elements
- */
 code,
 kbd,
 samp,
@@ -1314,9 +1264,6 @@ samp {
     font-size: var(--font-size-small);
 }
 
-/**
- * Inline Code Examples
- */
 h1 code,
 h2 code,
 h3 code,
@@ -1403,9 +1350,6 @@ var {
     font-weight: var(--font-weight-bold);
 }
 
-/**
- * Code Blocks
- */
 pre {
     width: 100%;
     margin-top: 0;
@@ -1452,9 +1396,6 @@ pre.codepen {
     contain: strict;
 }
 
-/**
- * Solarized Dark Code Highlighting
- */
 .highlight {
     position: relative;
 }
@@ -1787,14 +1728,6 @@ a:active {
     }
 }
 
-a[rel*="external"]::after {
-    font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    font-family: var(--font-family-monospace);
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
-    content: " →";
-}
-
 h1 a,
 h2 a,
 h3 a,
@@ -1839,9 +1772,6 @@ a span:not([class]):not([itemprop]) {
             clip-path: inset(100%) !important;
 }
 
-/**
- * Title Anchors inside Headings
- */
 .title-anchor {
     display: inline-block;
 }
@@ -1859,9 +1789,6 @@ a span:not([class]):not([itemprop]) {
     color: var(--color-kaiser);
 }
 
-/**
- * Fragment Anchors inside Headings
- */
 .fragment-anchor {
     text-transform: lowercase;
     font-family: "Input Mono", "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -1908,9 +1835,6 @@ h6:active .fragment-anchor, .fragment-anchor:target {
     visibility: visible;
 }
 
-/**
- * Endnote Anchors
- */
 .endnote-anchor {
     padding-left: 0.625em;
     padding-left: var(--measure-small-relative);
@@ -1918,9 +1842,6 @@ h6:active .fragment-anchor, .fragment-anchor:target {
     padding-right: var(--measure-small-relative);
 }
 
-/**
- * Related Anchors
- */
 .related-anchor::after {
     content: " →";
 }
@@ -2039,9 +1960,6 @@ button[disabled],
     pointer-events: none;
 }
 
-/**
- * Apply moz fixes to `button` element only
- */
 button {
     -webkit-font-smoothing: inherit;
 }
@@ -2157,9 +2075,6 @@ textarea {
     overflow: auto;
 }
 
-/**
- * Fix `audio`, `iframe`, and `video`
- */
 audio,
 iframe,
 video {
@@ -2270,11 +2185,6 @@ header::before {
     right: var(--gutter-width);
 }
 
-/**
- * The width of the content is fluid, and always has padding on the left-hand
- * side to make room for any `aside`, which can appear anywhere inside
- * `.content`.
- */
 .content {
     padding-top: 2.25rem;
     padding-top: var(--measure-large);
@@ -2298,11 +2208,6 @@ header::before {
     }
 }
 
-/**
- * The width of the asides is static above the medium breakpoint and always
- * floated within an article or list of articles. The math is calculated as in
- * `layout/_content.scss`.
- */
 aside {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
@@ -2390,9 +2295,6 @@ footer {
     }
 }
 
-/**
- * Anchor Target Animation
- */
 h1[id]:target,
 h2[id]:target,
 h3[id]:target,
@@ -2628,7 +2530,6 @@ h6[id]:target,
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
-[class*="page--home"] [class*="nav-primary--home"] a,
 [class*="page--about"] [class*="nav-primary--about"] a,
 [class*="page--article"] [class*="nav-primary--article"] a,
 [class*="page--pen"] [class*="nav-primary--pen"] a,
@@ -2647,10 +2548,6 @@ h6[id]:target,
     margin-bottom: var(--measure-large);
 }
 
-/**
- * Banner / Hero Image
- * Can take two images, which are displayed with `srcset`
- */
 .banner {
     background-clip: padding-box;
     border-radius: 0.375rem;
@@ -2667,9 +2564,6 @@ h6[id]:target,
     }
 }
 
-/**
- * Post Meta
- */
 .meta {
     padding-bottom: 1.25rem;
     padding-bottom: var(--measure-medium);
@@ -2733,9 +2627,6 @@ aside + .meta {
     color: var(--color-white);
 }
 
-/**
- * Page Introduction / Description
- */
 .lede {
     margin-bottom: 2.25rem;
     margin-bottom: var(--measure-large);
@@ -2771,9 +2662,6 @@ aside + .lede {
     font-weight: var(--font-weight-bold);
 }
 
-/**
- * Explain required terminology for the content
- */
 /*dl*/
 .terminology {
     padding-bottom: 2.25rem;
@@ -2786,9 +2674,6 @@ aside + .lede {
     border-bottom-color: var(--color-black--gamma);
 }
 
-/**
- * Page Edit Notes
- */
 .edit {
     background-clip: padding-box;
     border-radius: 0.375rem;
@@ -3058,9 +2943,6 @@ aside .content-list a {
     margin-top: 0;
 }
 
-/**
- * Contains buttons and internal links.
- */
 .nav-secondary,
 .buttons-list {
     width: 100%;
@@ -3179,10 +3061,6 @@ p + .nav-secondary {
     margin-bottom: var(--measure-large);
 }
 
-/**
- * The `.author` aside is always pushed underneath the content below the medium
- * breakpoint.
- */
 /*aside*/
 .author {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -3206,13 +3084,6 @@ p + .nav-secondary {
     }
 }
 
-.author a[rel*="external"]::after {
-    content: "";
-}
-
-/**
- * More information about the Author
- */
 .author-information {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
@@ -3278,9 +3149,6 @@ p + .nav-secondary {
     color: var(--color-white);
 }
 
-/**
- * Photograph of MY FACE
- */
 .author-image {
     background-clip: padding-box;
     border-radius: 50%;
@@ -3289,6 +3157,9 @@ p + .nav-secondary {
     background-size: 100%;
     width: 6.25rem;
     height: 6.25rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 6.25rem;
+            flex: 0 0 6.25rem;
     float: left;
     text-decoration: none;
 }
@@ -3411,10 +3282,6 @@ footer div {
             -ms-flex-direction: column;
                 flex-direction: column;
     }
-}
-
-footer a[rel*="external"]::after {
-    content: "";
 }
 
 .license,
@@ -3665,9 +3532,6 @@ footer a[rel*="external"]::after {
     left: auto;
 }
 
-/**
- * Highlighted Code Blocks
- */
 code[data-lang] {
     padding-top: 2.25rem;
     padding-top: var(--measure-large);
@@ -3701,9 +3565,6 @@ code[data-lang]::before {
     text-shadow: none;
 }
 
-/**
- * Highlighted Code Block Labels
- */
 .language-css::before {
     background-color: #016fba !important;
 }
@@ -3740,9 +3601,6 @@ code[data-lang]::before {
     background-color: #c6538c !important;
 }
 
-/**
- * Code Block Visibility Toggling
- */
 .code-toggle {
     position: relative;
 }
@@ -3819,9 +3677,6 @@ button .icon,
     height: 4.5rem;
 }
 
-/**
- * Brand Icon Widths and Colors
- */
 .icon--codepen {
     width: 41px;
     fill: #f9f9f9;
@@ -3891,10 +3746,6 @@ button .icon,
     vertical-align: middle;
 }
 
-/**
- * Contains embedded media properly and allows them to be dynamically resized
- * inside a set aspect ratio container.
- */
 .media {
     width: 100%;
     height: auto;
@@ -3925,9 +3776,6 @@ video {
     padding-top: 75%;
 }
 
-/**
- * CodePen Embeds
- */
 .cp_embed_wrapper {
     margin-bottom: 1.25rem;
     margin-bottom: var(--measure-medium);

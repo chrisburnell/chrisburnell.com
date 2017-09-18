@@ -2,6 +2,10 @@
   url: '/articles/'
   icon: 'article'
 
+- title: Notes Archive
+  url: '/notes/'
+  icon: 'feather'
+
 - title: Pens Archive
   url: '/pens/'
   icon: 'codepen'
