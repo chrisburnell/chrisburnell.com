@@ -37,7 +37,7 @@
     }
 
     a,
-    strong {
+    %strong {
         @include case(uppercase, 0);
         @include font-family(default);
         color: inherit;
