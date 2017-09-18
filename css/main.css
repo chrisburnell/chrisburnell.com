@@ -2640,22 +2640,6 @@ h6[id]:target,
     border-bottom-width: var(--border-width-default);
 }
 
-[class*="page--home"] [class*="nav-primary--home"] a::after, [class*="page--about"] [class*="nav-primary--about"] a::after, [class*="page--article"] [class*="nav-primary--article"] a::after, [class*="page--pen"] [class*="nav-primary--pen"] a::after, [class*="page--search"] [class*="nav-primary--search"] a::after {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    content: "";
-    border-width: 0.5em 0.5em 0;
-    border-style: solid;
-    border-style: var(--border-style-default);
-    border-color: transparent;
-    border-color: var(--color-transparent);
-    border-top-color: #5f8aa6;
-    border-top-color: var(--color-raven);
-}
-
 .title,
 .tagline {
     width: 100%;

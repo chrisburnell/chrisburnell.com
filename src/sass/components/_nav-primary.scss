@@ -82,18 +82,3 @@
         @extend %nav-primary-anchor !optional;
     }
 }
-
-// Complementary to the Effect for interactions and active paths
-%nav-primary-anchor-arrow {
-    @include absolute(top, 100%);
-    content: "";
-    border-width: 0.5em 0.5em 0;
-    @include v(border-style, default);
-    @include v(border-color, transparent);
-    @include v(border-top-color, raven);
-}
-@each $class in $navigation-classes {
-    [class*="page--#{$class}"] [class*="nav-primary--#{$class}"] a::after {
-        @extend %nav-primary-anchor-arrow !optional;
-    }
-}
