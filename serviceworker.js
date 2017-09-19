@@ -13,12 +13,14 @@
 // YYYY-MM-DD_hhmm
 const VERSION = '{{ site.time | date: '%F_%H%M' }}::';
 const STATIC_CACHE = VERSION + 'static';
-const PAGES_CACHE = 'pages';
+const ASSETS_CACHE = 'assets';
 const IMAGES_CACHE = 'images';
+const PAGES_CACHE = 'pages';
 const CACHE_LIST = [
-    STATIC_CACHE,
+    ASSETS_CACHE,
+    IMAGES_CACHE,
     PAGES_CACHE,
-    IMAGES_CACHE
+    STATIC_CACHE
 ];
 
 // Pages to cache
@@ -30,6 +32,7 @@ const OFFLINE_PAGES = [
     '/hip-hop/',
     '/license/',
     '/links/',
+    '/notes/',
     '/pens/',
     '/search/',
     '/styleguide/',
@@ -47,11 +50,7 @@ const CRITICAL_CACHE = [
 
 // Files that are cached but non-blocking
 const OPTIONAL_CACHE = [
-    '/images/sprites.svg',
-    '/fonts/league-gothic-regular.woff2',
-    '/fonts/proxima-nova-regular.woff2',
-    '/fonts/proxima-nova-italic.woff2',
-    '/fonts/proxima-nova-semibold.woff2'
+    '/images/sprites.svg'
 ];
 
 
@@ -112,6 +111,7 @@ self.addEventListener('message', event => {
     if (event.data.command == 'trimCaches') {
         trimCache(PAGES_CACHE, 35);
         trimCache(IMAGES_CACHE, 20);
+        trimCache(ASSETS_CACHE, 20);
     }
 });
 
@@ -171,6 +171,10 @@ self.addEventListener('fetch', event => {
                         if (request.headers.get('Accept').includes('image')) {
                             let copy = response.clone();
                             stashInCache(IMAGES_CACHE, request, copy);
+                        }
+                        else {
+                            let copy = response.clone();
+                            stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
                     })
