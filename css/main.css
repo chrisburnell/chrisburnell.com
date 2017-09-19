@@ -203,6 +203,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
+    text-decoration: underline;
     -webkit-text-decoration-color: #ff0000;
             text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
@@ -237,6 +238,7 @@ h5 a,
 h6 a {
     color: #4f4f4f;
     color: var(--color-kaiser);
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -278,6 +280,7 @@ a span:not([class]):not([itemprop]) {
 }
 
 .title-anchor, .title-anchor:link {
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -2597,6 +2600,7 @@ aside + .meta {
 }
 
 .meta a {
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -3137,6 +3141,7 @@ p + .nav-secondary {
 }
 
 .author-information a {
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -3649,8 +3654,8 @@ code[data-lang]::before {
     background-clip: padding-box;
     border-radius: 0 0 0.375rem 0.375rem;
     content: "";
-    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(6, 6, 6, 0.9)));
-    background-image: linear-gradient(to bottom, transparent, rgba(6, 6, 6, 0.9));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(19%, rgba(5, 5, 5, 0.2358)), color-stop(34%, rgba(6, 6, 6, 0.4131)), color-stop(47%, rgba(6, 6, 6, 0.5562)), color-stop(56.5%, rgba(6, 6, 6, 0.6498)), color-stop(65%, rgba(6, 6, 6, 0.7254)), color-stop(73%, rgba(6, 6, 6, 0.7866)), color-stop(80.2%, rgba(6, 6, 6, 0.8325)), color-stop(86.1%, rgba(6, 6, 6, 0.8622)), color-stop(91%, rgba(6, 6, 6, 0.8811)), color-stop(95.2%, rgba(6, 6, 6, 0.8928)), color-stop(98.2%, rgba(6, 6, 6, 0.8982)), to(rgba(6, 6, 6, 0.9)));
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(5, 5, 5, 0.2358) 19%, rgba(6, 6, 6, 0.4131) 34%, rgba(6, 6, 6, 0.5562) 47%, rgba(6, 6, 6, 0.6498) 56.5%, rgba(6, 6, 6, 0.7254) 65%, rgba(6, 6, 6, 0.7866) 73%, rgba(6, 6, 6, 0.8325) 80.2%, rgba(6, 6, 6, 0.8622) 86.1%, rgba(6, 6, 6, 0.8811) 91%, rgba(6, 6, 6, 0.8928) 95.2%, rgba(6, 6, 6, 0.8982) 98.2%, rgba(6, 6, 6, 0.9) 100%);
     background-size: 100% 7rem;
     background-position: bottom;
     background-repeat: no-repeat;

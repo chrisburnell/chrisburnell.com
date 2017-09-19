@@ -203,6 +203,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
+    text-decoration: underline;
     -webkit-text-decoration-color: #ff0000;
             text-decoration-color: #ff0000;
     -webkit-text-decoration-color: var(--color-canada);
@@ -237,6 +238,7 @@ h5 a,
 h6 a {
     color: #4f4f4f;
     color: var(--color-kaiser);
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -278,6 +280,7 @@ a span:not([class]):not([itemprop]) {
 }
 
 .title-anchor, .title-anchor:link {
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
@@ -1130,6 +1133,7 @@ aside + .lede {
 }
 
 .author-information a {
+    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);

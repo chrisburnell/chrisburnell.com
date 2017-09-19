@@ -506,6 +506,7 @@ helpers = {
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="bookmark">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
+    var webmentionsLoaded = false;
     var webmentionsCount = 0;
 
     // enable the WebMentions button, input, and submit
@@ -519,11 +520,23 @@ helpers = {
     window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
 
     if (WEBMENTIONS_SECTION !== null) {
+        var observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
+        observer.observe(WEBMENTIONS_BUTTON);
+    }
+
+    function checkWebmentionsVisible(element) {
+        if (element.intersectionRatio > 0) {
+            loadWebmentions();
+        }
+    }
+
+    function loadWebmentions() {
         var request = new XMLHttpRequest();
         request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
         request.onload = function () {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
+                webmentionsLoaded = true;
                 var data = JSON.parse(request.responseText);
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;
@@ -568,20 +581,22 @@ helpers = {
 
     // Load in WebMentions and remove the WebMentions button
     function showWebmentions() {
-        if (WEBMENTIONS_SECTION !== null) {
-            // only if the button still exists should we load and hide the button
-            if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute('aria-hidden') === 'false') {
-                WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
-                WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
-                WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
-                WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
-                WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
-                WEBMENTIONS_SECTION.scrollIntoView();
-                if (webmentionsCount > 1) {
-                    WEBMENTIONS_THREAD.focus();
-                } else {
-                    WEBMENTIONS_INPUT.focus();
-                }
+        // check if already loaded the data successfully, if not, load it (again)
+        if (webmentionsLoaded === false) {
+            loadWebmentions();
+        }
+        // only if the button still exists should we load and hide the button
+        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute('aria-hidden') === 'false') {
+            WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
+            WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
+            WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
+            WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
+            WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+            WEBMENTIONS_SECTION.scrollIntoView();
+            if (webmentionsCount > 1) {
+                WEBMENTIONS_THREAD.focus();
+            } else {
+                WEBMENTIONS_INPUT.focus();
             }
         }
     }
