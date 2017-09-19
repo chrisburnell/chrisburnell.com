@@ -1,29 +1,29 @@
 - title: Subscribe to All
-  rel: 'me author'
+  rel: 'alternate'
   url: '/feed.xml'
   icon: 'rss'
 
 - title: Subscribe to Articles
-  rel: 'me author'
+  rel: 'alternate'
   url: '/feed-articles.xml'
   icon: 'rss'
 
 # - title: Subscribe to Notes
-#   rel: 'me author'
+#   rel: 'alternate'
 #   url: '/feed-notes.xml'
 #   icon: 'rss'
 
 - title: Subscribe to Pens
-  rel: 'me author'
+  rel: 'alternate'
   url: '/feed-pens.xml'
   icon: 'rss'
 
 - title: Subscribe to Links
-  rel: 'me author'
+  rel: 'alternate'
   url: '/feed-links.xml'
   icon: 'rss'
 
 - title: Subscribe to Talks
-  rel: 'me author'
+  rel: 'alternate'
   url: '/feed-talks.xml'
   icon: 'rss'

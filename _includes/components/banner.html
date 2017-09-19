@@ -6,7 +6,7 @@
                     srcset="/images/banners/{{ page.banner_mobile | replace: '.png', '.webp' }} 540w,
                             /images/banners/{{ page.banner | replace: '.png', '.webp' }} 810w"
                     type="image/webp">
-            <img alt="" class="banner" role="presentation" itemprop="image"
+            <img alt="" class="banner  u-photo" role="presentation" itemprop="image"
                  src="/images/banners/{{ page.banner_mobile }}"
                  sizes="(min-width: 801px) calc(100vw - 18.375em),
                         calc(100vw - 2.5em)"
@@ -17,7 +17,7 @@
         <picture>
             <source srcset="/images/banners/{{ page.banner | replace: '.png', '.webp' }}"
                     type="image/webp">
-            <img alt="" class="banner" role="presentation" itemprop="image"
+            <img alt="" class="banner  u-photo" role="presentation" itemprop="image"
                  src="/images/banners/{{ page.banner }}">
         </picture>
     {% endif %}

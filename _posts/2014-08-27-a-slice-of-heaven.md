@@ -47,7 +47,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 {% include content/codepen.html slug='lcEvB' height='350' %}
 
 <div class="edit">
-    Edit: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me external"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
+    Edit: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="external  me"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
 </div>
 
 
