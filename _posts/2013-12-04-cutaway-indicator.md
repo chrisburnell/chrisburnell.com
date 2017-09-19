@@ -5,13 +5,10 @@ categories: pen
 date: 2013-12-04 12:00:00
 
 title: Cutaway Indicator
-tags:
-- codepen
 
 codepen_slug: yIwzd
 comments: codepen
 shorturl: b3sh4
-webmentions: true
 ---
 
 

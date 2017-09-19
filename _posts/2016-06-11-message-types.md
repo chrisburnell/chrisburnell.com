@@ -5,14 +5,11 @@ categories: pen
 date: 2016-06-11 01:00:00
 
 title: Message Types
-tags:
-- codepen
 
 codepen_slug: rLxjBz
 codepen_featured: true
 comments: codepen
 shorturl: h5f19
-webmentions: true
 ---
 
 

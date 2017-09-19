@@ -46,21 +46,21 @@ snippet of code on a project of your own!  -->
     {% if page.caniuse == true %}
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     {% endif %}
-    {% if page.codepen == true or (page.categories contains 'pen' and page.codepen_slug) %}
+    {% if page.codepen == true or page.codepen_slug %}
         <link rel="dns-prefetch" href="//codepen.io">
         <link rel="dns-prefetch" href="//assets.codepen.io">
         <link rel="dns-prefetch" href="//s.codepen.io">
     {% endif %}
-    {% if page.speakerdeck == true %}
+    {% if page.speakerdeck == true or page.speakerdeck_slug %}
         <link rel="dns-prefetch" href="//speakerdeck.com">
     {% endif %}
     {% if page.twitter == true %}
         <link rel="dns-prefetch" href="//platform.twitter.com">
     {% endif %}
-    {% if page.vimeo == true %}
+    {% if page.vimeo == true or page.vimeo_slug %}
         <link rel="dns-prefetch" href="//player.vimeo.com">
     {% endif %}
-    {% if page.youtube == true %}
+    {% if page.youtube == true or page.youtube_slug %}
         <link rel="dns-prefetch" href="//www.youtube.com">
     {% endif %}
 

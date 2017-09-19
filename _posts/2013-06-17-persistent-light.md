@@ -5,13 +5,10 @@ categories: pen
 date: 2013-06-17 12:00:00
 
 title: Persistent Light Source Transform
-tags:
-- codepen
 
 codepen_slug: mglHp
 comments: codepen
 shorturl: 9sogz
-webmentions: true
 ---
 
 

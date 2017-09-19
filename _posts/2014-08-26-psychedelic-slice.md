@@ -5,13 +5,10 @@ categories: pen
 date: 2014-08-18 12:00:00
 
 title: Psychedelic Slice
-tags:
-- codepen
 
 codepen_slug: apogK
 comments: codepen
 shorturl: k9ouo
-webmentions: true
 ---
 
 

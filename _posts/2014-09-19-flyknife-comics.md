@@ -5,14 +5,11 @@ categories: pen
 date: 2014-09-19 12:00:00
 
 title: Flyknife Comics
-tags:
-- codepen
 
 codepen_slug: hIxaj
 codepen_featured: true
 comments: codepen
 shorturl: 6aorh
-webmentions: true
 ---
 
 

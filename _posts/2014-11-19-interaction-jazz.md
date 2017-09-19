@@ -5,13 +5,10 @@ categories: pen
 date: 2014-11-19 12:00:00
 
 title: Interaction Jazz
-tags:
-- codepen
 
 codepen_slug: myyRqp
 comments: codepen
 shorturl: bhbt9
-webmentions: true
 ---
 
 

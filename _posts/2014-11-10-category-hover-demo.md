@@ -5,14 +5,11 @@ categories: pen
 date: 2014-11-10 12:00:00
 
 title: Category Hover Demo
-tags:
-- codepen
 
 codepen_slug: mybQEL
 codepen_featured: true
 comments: codepen
 shorturl: 058xp
-webmentions: true
 ---
 
 

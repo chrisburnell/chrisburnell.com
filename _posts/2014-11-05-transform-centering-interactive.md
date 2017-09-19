@@ -5,13 +5,10 @@ categories: pen
 date: 2014-11-05 13:00:00
 
 title: Power of Transform Centering - Interactive
-tags:
-- codepen
 
 codepen_slug: xutbs
 comments: codepen
 shorturl: 8x586
-webmentions: true
 ---
 
 

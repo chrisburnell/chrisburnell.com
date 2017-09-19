@@ -5,14 +5,11 @@ categories: pen
 date: 2014-08-18 13:00:00
 
 title: Zoomy Anchor Thing
-tags:
-- codepen
 
 codepen_slug: lcEvB
 codepen_featured: true
 comments: codepen
 shorturl: e1r8k
-webmentions: true
 ---
 
 

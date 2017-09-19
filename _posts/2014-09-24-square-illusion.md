@@ -5,14 +5,11 @@ categories: pen
 date: 2014-09-24 12:00:00
 
 title: Square Illusion
-tags:
-- codepen
 
 codepen_slug: IKHhC
 codepen_featured: true
 comments: codepen
 shorturl: f7utt
-webmentions: true
 ---
 
 

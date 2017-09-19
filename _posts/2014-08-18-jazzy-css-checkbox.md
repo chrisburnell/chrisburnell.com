@@ -5,13 +5,10 @@ categories: pen
 date: 2014-08-18 12:00:00
 
 title: Jazzy CSS Checkbox
-tags:
-- codepen
 
 codepen_slug: Cbiun
 comments: codepen
 shorturl: g6pky
-webmentions: true
 ---
 
 

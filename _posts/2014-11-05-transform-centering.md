@@ -5,13 +5,10 @@ categories: pen
 date: 2014-11-05 12:00:00
 
 title: Power of Transform Centering
-tags:
-- codepen
 
 codepen_slug: CHEbf
 comments: codepen
 shorturl: h8eek
-webmentions: true
 ---
 
 

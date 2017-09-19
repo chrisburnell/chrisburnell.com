@@ -5,13 +5,10 @@ categories: pen
 date: 2015-05-18 13:07:00
 
 title: Button Interaction Demo
-tags:
-- codepen
 
 codepen_slug: RPRwoo
 comments: codepen
 shorturl: ax7qc
-webmentions: true
 ---
 
 
