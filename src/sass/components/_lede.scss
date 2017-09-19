@@ -1,0 +1,33 @@
+////
+/// Lede
+/// @group components
+////
+
+
+.lede {
+    @extend %gamma !optional;
+    @include v(margin-bottom, large);
+
+    @include media("screen", "<=medium") {
+        text-align: left;
+    }
+
+    aside + & {
+        // pull up to align with `.author`
+        margin-top: -($measure-small);
+        margin-top: -(var(--measure-small));
+    }
+
+    .meta + & {
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, alto);
+        @include v(padding-top, medium);
+    }
+}
+
+.lede--featured {
+    max-width: 24em;
+    @include v(font-size, large);
+    @include v(font-weight, bold);
+}

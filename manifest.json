@@ -16,7 +16,7 @@ icon_sizes:
 
 {
     "manifest_version": 2,
-    "version": "3.0.0",
+    "version": "{{ site.version }}",
     "dir": "ltr",
     "lang": "{{ site.language }}",
     "default_locale": "{{ site.language }}",

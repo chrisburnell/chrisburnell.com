@@ -1,0 +1,59 @@
+////
+/// Meta Content
+/// @group components
+////
+
+
+.meta {
+    @include v(padding-bottom, medium);
+    overflow: hidden;
+    font-style: italic;
+
+    aside + & {
+        // pull up to align with `.author`
+        margin-top: -($measure-small);
+        margin-top: -(var(--measure-small));
+    }
+
+    time,
+    div {
+        display: inline-block;
+        @include v(margin-right, large);
+    }
+
+    time + div,
+    div + div {
+        position: relative;
+
+        &::before {
+            // EN-DASH
+            content: "–";
+            @include v(color, dove);
+            position: absolute;
+            left: -($measure-medium);
+            left: -(var(--measure-medium));
+            transform: translateX(-50%);
+        }
+    }
+
+    a,
+    %strong {
+        color: inherit;
+        @include v(font-weight, bold);
+        font-style: normal;
+    }
+
+    a {
+        @include v(text-decoration-color, transparent);
+
+        &:hover,
+        &:focus,
+        &:active {
+            @include v(text-decoration-color, canada);
+        }
+
+        &:active {
+            @include v(color, white);
+        }
+    }
+}

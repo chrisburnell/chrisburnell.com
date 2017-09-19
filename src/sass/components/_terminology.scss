@@ -1,0 +1,12 @@
+////
+/// Terminology
+/// @group components
+////
+
+
+/*dl*/.terminology {
+    @include v(padding-bottom, large);
+    @include v(border-bottom-width, thin);
+    @include v(border-bottom-style, default);
+    @include v(border-bottom-color, black--gamma);
+}

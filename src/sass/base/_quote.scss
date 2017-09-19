@@ -1,0 +1,50 @@
+////
+/// Quote
+/// @group base
+////
+
+
+blockquote {
+    @include border-radius;
+    @include font-family(serif);
+    @include quotes;
+    @include v(background-color, raven--gamma);
+    width: 100%;
+    max-width: $line-length-responsive;
+    @include v(padding, medium);
+    margin: 0 auto $measure-medium;
+
+    p {
+        &::before {
+            content: open-quote;
+        }
+
+        &::after {
+            content: close-quote;
+        }
+
+        &:not(:last-of-type) {
+            &::after {
+                @include visually-hidden;
+            }
+        }
+    }
+
+    cite {
+        display: block;
+        @include v(margin-top, medium);
+        text-align: right;
+
+        &::before {
+            // EN DASH, NO-BREAK SPACE
+            content: "– ";
+        }
+    }
+}
+/*blockquote*/.twitter-tweet {
+    margin: 0 auto $measure-medium !important;
+    contain: strict;
+}
+q {
+    @include quotes;
+}

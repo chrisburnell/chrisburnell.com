@@ -1,0 +1,47 @@
+////
+/// Details and Summary
+/// @group base
+////
+
+
+details {
+    @include border-radius(thin);
+    @include v(background-color, mineshaft);
+    @include v(color, white);
+    width: 100%;
+    max-width: $line-length-responsive;
+    @include v(padding, small);
+    margin-left:  auto;
+    margin-right: auto;
+
+    %content-elements {
+        padding: 0 $measure-small $measure-small;
+    }
+}
+summary {
+    @include non-selectable;
+    @include transition(transform);
+    display: list-item;
+    outline: 0;
+    @include v(font-weight, bold);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    details:not([open]) &:hover,
+    details:not([open]) &:focus {
+        transform: translateX($measure-small);
+    }
+
+    & + %content-elements {
+        @include v(margin-top, small);
+        @include v(border-top-width, thin);
+        @include v(border-top-style, default);
+        @include v(border-top-color, raven);
+        @include v(padding-top, medium);
+    }
+}

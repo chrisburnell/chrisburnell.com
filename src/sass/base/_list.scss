@@ -1,0 +1,99 @@
+////
+/// List
+/// @group base
+////
+
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ol:not([class]),
+ul:not([class]),
+dl:not([class]),
+.default-list {
+    @include v(margin-bottom, medium);
+
+    // List nested in a list, or list followed by a list
+    & &,
+    & + & {
+        @include v(margin-top, medium);
+    }
+}
+ol:not([class]),
+ul:not([class]),
+.default-list {
+    li {
+        @include v(padding-left, large);
+        position: relative;
+
+        &:not(:last-child) {
+            @include v(margin-bottom, small);
+        }
+
+        &::before {
+            @include absolute(top-left);
+            @include v(font-weight, bold);
+        }
+    }
+}
+ol:not([class]),
+ol.default-list {
+    counter-reset: ordered-list;
+
+    & > li {
+        counter-increment: ordered-list;
+
+        &::before {
+            content: counter(ordered-list, decimal) ".";
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+        }
+    }
+
+    &[reversed] {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+ul:not([class]) li::before,
+ul.default-list li::before {
+    // BULLET
+    content: "•";
+    font-size: 1.5rem;
+    line-height: 1;
+}
+dl {
+    overflow: hidden;
+}
+dt {
+    width: auto;
+    min-width: 10rem;
+    clear: left;
+    @include v(padding-right, medium);
+    @include v(font-weight, bold);
+
+    @include media("screen", ">small") {
+        float: left;
+    }
+}
+dd {
+    width: $wrapper-width-large;
+    width: var(--wrapper-width-large);
+    display: table-cell;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: top;
+
+    &:not(:last-child) {
+        @include v(padding-bottom, medium);
+    }
+
+    @include media("screen", "<=small") {
+        width: auto;
+        display: block;
+        @include v(padding-left, medium);
+    }
+}

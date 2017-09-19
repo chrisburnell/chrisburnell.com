@@ -6,7 +6,7 @@
 /// Please contact me if you want to learn about anything you see here.
 ///
 /// @author Chris Burnell <me@chrisburnell.com>
-//  @version 3.0.0
+//  @version 3.1.0
 //  @license GNU GPLv3
 /// @link https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
 ////
@@ -15,7 +15,7 @@
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
-@import "abstracts/custom-variables";
+@import "abstracts/css-variables";
 
 /// VENDORS
 @import "vendors/include-media";
@@ -23,12 +23,19 @@
 /// BASE
 @import "base/fonts";
 @import "base/page";
-@import "base/content";
-@import "base/code";
 @import "base/anchor";
 @import "base/button";
-@import "base/form";
+@import "base/heading";
+@import "base/paragraph";
+@import "base/list";
+@import "base/quote";
 @import "base/media";
+@import "base/figure";
+@import "base/code";
+@import "base/form";
+@import "base/table";
+@import "base/details";
+@import "base/miscellaneous";
 
 /// LAYOUT
 @import "layout/wrap";
@@ -39,11 +46,16 @@
 @import "layout/footer";
 
 /// COMPONENTS
-@import "components/animations";
+@import "components/animation";
 @import "components/helpers";
 @import "components/logo";
 @import "components/nav-primary";
-@import "components/content";
+@import "components/title";
+@import "components/meta";
+@import "components/banner";
+@import "components/lede";
+@import "components/terminology";
+@import "components/edit";
 @import "components/content-list";
 @import "components/search";
 @import "components/nav-secondary";

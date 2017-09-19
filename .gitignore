@@ -22,8 +22,11 @@ _site/
 # NPM
 node_modules/
 
-# Ruby
-Gemfile.lock
+# Snyk
+.snyk
+
+# Lockfiles
+*.lock
 
 # Original Images
 src/images/*

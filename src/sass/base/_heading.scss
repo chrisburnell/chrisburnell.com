@@ -1,0 +1,125 @@
+////
+/// Heading
+/// @group base
+////
+
+
+// Heading Elements
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %heading-elements !optional;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    @include v(font-weight, default);
+
+    // For special Monospace titles
+    %monospace-elements {
+        @include case(none);
+    }
+}
+
+// Heading - Alpha
+.alpha,
+%alpha {
+    @include case(uppercase);
+    @include font-family(alpha);
+    @include v(font-size, alpha);
+    line-height: 1;
+    text-shadow: $border-width-default $border-width-default 0 $color-black--delta;
+    text-shadow: var(--border-width-default) var(--border-width-default) 0 var(--color-black--delta);
+
+    @include media("screen", "<=small") {
+        font-size: #{$font-size-alpha / 1.285}; // 56px
+    }
+}
+h1 {
+    @extend %alpha !optional;
+}
+
+// Heading - Beta
+.beta,
+%beta {
+    @include v(font-size, beta);
+    @include v(line-height, small);
+}
+h2 {
+    @extend %beta !optional;
+}
+
+// Heading - Gamma
+.gamma,
+%gamma {
+    @include v(font-size, gamma);
+    @include v(line-height, default);
+}
+h3 {
+    @extend %gamma !optional;
+    @include case(uppercase);
+    @include v(margin-top, large);
+    @include v(border-bottom-width, thin);
+    @include v(border-bottom-style, default);
+    @include v(border-bottom-color, alto);
+    @include v(font-weight, bold);
+
+    &:not(:last-child) {
+        @include v(margin-bottom, medium);
+    }
+
+    // Match normal `h3`s without targetting `aside`-nested `h3`s
+    .content > &,
+    .content__body > &,
+    .widget & {
+        @include clear;
+        width: auto;
+        max-width: 100%;
+        display: inline-block;
+        @include v(padding-right, large);
+
+        @include media("screen", "<=medium") {
+            align-self: flex-start;
+        }
+    }
+
+    // Collapse margin-top when following a Featured Lede
+    // This happens on the Homepage
+    .lede + & {
+        margin-top: 0;
+    }
+}
+
+// Heading - Delta
+.delta,
+%delta {
+    @include v(font-size, default);
+    @include v(font-weight, bold);
+    @include v(line-height, small);
+}
+h4 {
+    @extend %delta !optional;
+    @include v(margin-bottom, small);
+}
+
+// Heading - Epsilon
+.epsilon,
+%epsilon {
+    @include v(font-size, default);
+    @include v(line-height, small);
+}
+h5 {
+    @extend %epsilon !optional;
+}
+
+// Heading - Zeta
+.zeta,
+%zeta {
+    @include v(font-size, default);
+    @include v(line-height, small);
+}
+h6 {
+    @extend %zeta !optional;
+}

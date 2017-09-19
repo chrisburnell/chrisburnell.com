@@ -3,7 +3,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-![Version](https://img.shields.io/badge/version-3.0.0-blue.svg?style=flat-square)
+![Version](https://img.shields.io/badge/version-3.1.0-blue.svg?style=flat-square)
 [![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
 
 [![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
@@ -70,7 +70,9 @@ _includes
 ├── assets
 │   ├── assets-body.html
 │   ├── assets-head.html
-│   └── svg-master.html
+│   ├── assets-social.html
+│   ├── yml-author.html
+│   └── yml-head.html
 ├── components
 │   ├── author.html
 │   ├── banner.html
@@ -84,15 +86,21 @@ _includes
 │   ├── nav-secondary.html
 │   ├── nav-tertiary.html
 │   ├── search-form.html
+│   ├── webmentions-button.html
+│   ├── webmentions-form.html
+│   ├── webmentions.html
 │   ├── widget-latest-articles.html
 │   ├── widget-latest-links.html
+│   ├── widget-latest-notes.html
 │   ├── widget-latest-pens.html
 │   ├── widget-latest-talks.html
 │   └── widget-search.html
 ├── content
+│   ├── caniuse.html
 │   ├── code-toggle-bottom.html
 │   ├── code-toggle-top.html
 │   ├── codepen.html
+│   ├── endnote.html
 │   ├── fragment-anchor.html
 │   ├── heading.html
 │   ├── img.html
@@ -109,6 +117,7 @@ _includes
 ```text
 src/css
 ├── abstracts
+│   ├── _css-variables.scss
 │   ├── _functions.scss
 │   ├── _mixins.scss
 │   └── _variables.scss
@@ -116,26 +125,41 @@ src/css
 │   ├── _anchor.scss
 │   ├── _button.scss
 │   ├── _code.scss
-│   ├── _content.scss
+│   ├── _details.scss
+│   ├── _figure.scss
 │   ├── _fonts.scss
 │   ├── _form.scss
-│   └── _page.scss
+│   ├── _heading.scss
+│   ├── _list.scss
+│   ├── _media.scss
+│   ├── _miscellaneous.scss
+│   ├── _page.scss
+│   ├── _paragraph.scss
+│   ├── _quote.scss
+│   └── _table.scss
 ├── components
+│   ├── _animation.scss
 │   ├── _author.scss
+│   ├── _banner.scss
 │   ├── _code.scss
 │   ├── _comments.scss
 │   ├── _content-list.scss
-│   ├── _content.scss
+│   ├── _edit.scss
 │   ├── _footer.scss
 │   ├── _helpers.scss
 │   ├── _icon.scss
+│   ├── _lede.scss
 │   ├── _logo.scss
 │   ├── _media.scss
+│   ├── _meta.scss
 │   ├── _nav-primary.scss
 │   ├── _nav-secondary.scss
 │   ├── _nav-tertiary.scss
 │   ├── _print.scss
 │   ├── _search.scss
+│   ├── _terminology.scss
+│   ├── _title.scss
+│   ├── _webmentions.scss
 │   └── _widget.scss
 ├── layout
 │   ├── _aside.scss
@@ -146,6 +170,9 @@ src/css
 │   └── _wrap.scss
 ├── pages
 │   └── _styleguide.scss
+├── themes
+│   ├── _christmas.scss
+│   └── _halloween.scss
 ├── vendors
 │   └── _include-media.scss
 ├── critical.scss

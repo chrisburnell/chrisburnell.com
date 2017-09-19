@@ -1,0 +1,11 @@
+////
+/// Title / Tagline
+/// @group components
+////
+
+
+.title,
+.tagline {
+    width: 100%;
+    @include v(margin-bottom, large);
+}

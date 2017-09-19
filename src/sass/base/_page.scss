@@ -5,6 +5,8 @@
 
 
 html {
+    @include font-family(default);
+    @include v(background-color, kaiser);
     min-height: 100%;
     position: relative;
     overflow-x: hidden;
@@ -12,6 +14,13 @@ html {
     overflow-y: scroll;
     // set the box model for the entire document
     box-sizing: border-box;
+    @include v(font-size, default);
+    font-style: normal;
+    @include v(font-weight, default);
+    @include v(line-height, default);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "lnum" 1;
     // prevent adjustments of font-size after orientation changes in IE on
     // Windows Phone and in iOS
     -webkit-text-size-adjust: 100%;
@@ -31,4 +40,16 @@ body {
     @include v(color, kaiser);
     width: 100%;
     margin: 0;
+}
+
+// Content Elements
+blockquote,
+details,
+table,
+dl,
+ol,
+ul,
+figure:not([class]),
+p {
+    @extend %content-elements !optional;
 }

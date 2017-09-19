@@ -5,6 +5,34 @@
 ////
 
 
+img,
+picture,
+svg {
+    @extend %image-elements !optional;
+    margin: 0 auto;
+    position: relative;
+
+    &,
+    a & {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
+img {
+    border-style: none;
+}
+picture {
+    &,
+    img,
+    svg {
+        display: block;
+    }
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
 audio,
 embed,
 iframe,
@@ -12,14 +40,21 @@ object,
 video {
     @extend %media-elements !optional;
 }
-
-// Fix `audio`, `iframe`, and `video`
 audio,
 iframe,
 video {
     width: 100%;
+    display: block;
     border: 0;
     overflow-x: hidden;
+}
+audio {
+    max-width: $wrapper-width-small;
+
+    &:not([controls]) {
+        display: none;
+        height: 0;
+    }
 }
 iframe {
     @include v(margin-bottom, medium);
