@@ -166,14 +166,15 @@ self.addEventListener('fetch', event => {
                 // CACHE
                 return response || fetch(request)
                     .then( response => {
-                        let copy = response.clone;
                         // NETWORK
                         // If the request is for an image, stash a copy of this image in the images cache
                         if (request.headers.get('Accept').includes('image')) {
+                            let copy = response.clone;
                             stashInCache(IMAGES_CACHE, request, copy);
                         }
                         // or stash a copy of this asset in the assets cache
                         else {
+                            let copy = response.clone;
                             stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
