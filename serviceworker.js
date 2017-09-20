@@ -141,7 +141,7 @@ self.addEventListener('fetch', event => {
             fetch(request)
                 .then( response => {
                     // NETWORK
-                    // Stash a copy of this page in the pages cache
+                    // Stash a copy of this page in the static or pages cache
                     let copy = response.clone();
                     if (OFFLINE_PAGES.includes(url.pathname) || OFFLINE_PAGES.includes(url.pathname + '/')) {
                         stashInCache(STATIC_CACHE, request, copy);
@@ -167,14 +167,12 @@ self.addEventListener('fetch', event => {
                 return response || fetch(request)
                     .then( response => {
                         // NETWORK
-                        // If the request is for an image, stash a copy of this image in the images cache
+                        // Stash a copy of this asset in the images or assets cache
+                        let copy = response.clone();
                         if (request.headers.get('Accept').includes('image')) {
-                            let copy = response.clone;
                             stashInCache(IMAGES_CACHE, request, copy);
                         }
-                        // or stash a copy of this asset in the assets cache
                         else {
-                            let copy = response.clone;
                             stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
