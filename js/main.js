@@ -508,6 +508,7 @@ helpers = {
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="bookmark">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
     var webmentionsLoaded = false;
     var webmentionsCount = 0;
+    var observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
 
     // enable the WebMentions button, input, and submit
     helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
@@ -520,14 +521,15 @@ helpers = {
     window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
 
     if (WEBMENTIONS_SECTION !== null) {
-        var observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkWebmentionsVisible(element) {
-        if (element.intersectionRatio > 0) {
-            loadWebmentions();
-        }
+    function checkWebmentionsVisible(entries) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                loadWebmentions();
+            }
+        });
     }
 
     function loadWebmentions() {
@@ -537,6 +539,8 @@ helpers = {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
+                // prevent the observer from continuing to fire
+                observer.disconnect();
                 var data = JSON.parse(request.responseText);
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;

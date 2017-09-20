@@ -24,6 +24,7 @@
                                  </li>`;
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
+    let observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
 
     // enable the WebMentions button, input, and submit
     helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
@@ -36,14 +37,15 @@
     window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
 
     if (WEBMENTIONS_SECTION !== null) {
-        let observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkWebmentionsVisible(element) {
-        if (element.intersectionRatio > 0) {
-            loadWebmentions();
-        }
+    function checkWebmentionsVisible(entries) {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                loadWebmentions();
+            }
+        });
     }
 
     function loadWebmentions() {
@@ -53,6 +55,8 @@
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
+                // prevent the observer from continuing to fire
+                observer.disconnect();
                 let data = JSON.parse(request.responseText);
                 for (let link of data.links) {
                     if (link.verified === true && link.private === false) {
