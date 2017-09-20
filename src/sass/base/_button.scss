@@ -39,6 +39,7 @@ button,
     &:focus,
     &:active {
         @include v(background-color, raven);
+        text-decoration: none;
     }
 
     &:active {

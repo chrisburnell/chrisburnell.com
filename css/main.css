@@ -403,6 +403,7 @@ button:hover, button:focus, button:active,
 .button:active {
     background-color: #5f8aa6;
     background-color: var(--color-raven);
+    text-decoration: none;
 }
 
 button:active,
