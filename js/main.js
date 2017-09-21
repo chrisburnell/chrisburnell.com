@@ -512,6 +512,9 @@ helpers = {
 
     // enable the WebMentions button, input, and submit
     helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
+    WEBMENTIONS_BUTTON.addEventListener('mouseover', function (event) {
+        loadWebmentions();
+    });
     helpers.enableElement(WEBMENTIONS_INPUT);
     helpers.enableElement(WEBMENTIONS_SUBMIT);
 
@@ -595,6 +598,7 @@ helpers = {
             WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
             WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
+            WEBMENTIONS_BUTTON.removeEventListener('mouseover', function () {});
             WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
             WEBMENTIONS_SECTION.scrollIntoView();
             if (webmentionsCount > 1) {
