@@ -1,4 +1,8 @@
 ---
+layout: null
+searchable: false
+sitemap:
+  exclude: true
 ---
 /*!
  * Service Worker
