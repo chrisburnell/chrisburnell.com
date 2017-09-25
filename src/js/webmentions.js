@@ -35,7 +35,9 @@
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
         WEBMENTIONS_BUTTON.addEventListener('mouseover', event => {
-            loadWebmentions();
+            if (webmentionsLoaded === false) {
+                loadWebmentions();
+            }
         });
         helpers.enableElement(WEBMENTIONS_INPUT);
         helpers.enableElement(WEBMENTIONS_SUBMIT);
@@ -44,11 +46,13 @@
     }
 
     function checkWebmentionsVisible(entries) {
-        entries.forEach(entry => {
-            if (entry.intersectionRatio > 0) {
-                loadWebmentions();
-            }
-        });
+        if (webmentionsLoaded === false) {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0) {
+                    loadWebmentions();
+                }
+            });
+        }
     }
 
     function loadWebmentions() {

@@ -519,7 +519,9 @@ helpers = {
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
         WEBMENTIONS_BUTTON.addEventListener('mouseover', function (event) {
-            loadWebmentions();
+            if (webmentionsLoaded === false) {
+                loadWebmentions();
+            }
         });
         helpers.enableElement(WEBMENTIONS_INPUT);
         helpers.enableElement(WEBMENTIONS_SUBMIT);
@@ -528,11 +530,13 @@ helpers = {
     }
 
     function checkWebmentionsVisible(entries) {
-        entries.forEach(function (entry) {
-            if (entry.intersectionRatio > 0) {
-                loadWebmentions();
-            }
-        });
+        if (webmentionsLoaded === false) {
+            entries.forEach(function (entry) {
+                if (entry.intersectionRatio > 0) {
+                    loadWebmentions();
+                }
+            });
+        }
     }
 
     function loadWebmentions() {
