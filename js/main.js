@@ -542,6 +542,8 @@ helpers = {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
+                // prevent hovering the button from continuing to fire
+                WEBMENTIONS_BUTTON.removeEventListener('mouseover', function () {});
                 // prevent the observer from continuing to fire
                 observer.disconnect();
                 var data = JSON.parse(request.responseText);
@@ -598,7 +600,6 @@ helpers = {
             WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
             WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
-            WEBMENTIONS_BUTTON.removeEventListener('mouseover', function () {});
             WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
             WEBMENTIONS_SECTION.scrollIntoView();
             if (webmentionsCount > 1) {

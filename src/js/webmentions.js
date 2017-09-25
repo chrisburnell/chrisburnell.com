@@ -58,6 +58,8 @@
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
+                // prevent hovering the button from continuing to fire
+                WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
                 // prevent the observer from continuing to fire
                 observer.disconnect();
                 let data = JSON.parse(request.responseText);
@@ -93,7 +95,6 @@
             WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
             WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
-            WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
             WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
             WEBMENTIONS_SECTION.scrollIntoView();
             if (webmentionsCount > 1) {
