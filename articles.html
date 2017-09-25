@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--articles
 searchable: no-content
 
@@ -25,7 +24,7 @@ lede: All of my self-authored Articles.
         {% assign my_year = current_year %}
     {% endif %}
 
-    {% include components/content-list-item.html %}
+    {% include components/item-content-list.html %}
 
     {% if forloop.last %}
         </ol>

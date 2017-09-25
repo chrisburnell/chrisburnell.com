@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--home
 searchable: no-content
 ---
@@ -11,7 +10,7 @@ searchable: no-content
 
 <ol class="content-list" id="articles" role="list">
     {% for page in site.categories.article limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -25,7 +24,7 @@ searchable: no-content
 
 <ol class="content-list" id="notes" role="list">
     {% for page in site.categories.note limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -39,7 +38,7 @@ searchable: no-content
 
 <ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
@@ -52,21 +51,23 @@ searchable: no-content
 
 <ol class="content-list" id="links" role="list">
     {% for page in site.categories.link limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
 {% include components/nav-secondary.html type='archives' include='links' %}
 
 
+<!--
 <h3>
     <a href="/talks/">Latest Talks</a>
 </h3>
 
 <ol class="content-list" id="talks" role="list">
     {% for page in site.categories.talk limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
 {% include components/nav-secondary.html type='archives' include='talks' %}
+-->

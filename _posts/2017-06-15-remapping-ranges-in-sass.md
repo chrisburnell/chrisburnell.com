@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2017-06-15 17:55:00
@@ -12,9 +11,10 @@ tags:
 - sass
 
 codepen: true
-comments: true
 shorturl: 0aby8
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/877492210241032192
 
 further_reading:
 - url: "http://thecodingtrain.com/"

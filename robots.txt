@@ -1,3 +1,8 @@
+---
+layout: null
+searchable: false
+---
+
 #      ____          _                        _           _        _
 #     ||o o|     ___| |_ ___  _ __  _ __ ___ | |__   ___ | |_ __ _| |__  _   _ ___  ___   ___ ___  _ __ ___
 #     ||===|    / __| __/ _ \| '_ \| '__/ _ \| '_ \ / _ \| __/ _` | '_ \| | | / __|/ _ \ / __/ _ \| '_ ` _ \
@@ -11,4 +16,6 @@
 
 User-agent: *
 Sitemap: https://chrisburnell.com/sitemap.xml
+Disallow: /fonts/
 Disallow: /images/
+Disallow: /sassdoc/

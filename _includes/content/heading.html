@@ -23,6 +23,7 @@
 {% endunless %}
 {% assign heading_class = include.class | default: '' %}
 {% assign heading_href = include.href | default: '' %}
+{% assign heading_title_stripped = include.title | strip_html %}
 <{{ heading_type }}{% unless heading_class == '' %} class="{{ heading_class }}"{% endunless %}{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
     {% unless heading_href == '' %}
         <a href="{{ heading_href }}">
@@ -32,6 +33,6 @@
         </a>
     {% endunless %}
     {% unless heading_id == '' %}
-        {% include content/fragment-anchor.html id=heading_id title=include.title rel='bookmark' %}
+        {% include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
     {% endunless %}
 </{{ heading_type }}>

@@ -1,8 +1,7 @@
 ---
-layout: post
 categories: article
 
-# date: 2016-08-16 12:00:00
+date: 2018-01-01 12:00:00
 
 title: Jekyll And Sass, Sitting in a Tree
 lede: I’ve been using Jekyll for over three years, and built a series of useful reusable components to streamline my templating and authoring processes.
@@ -11,8 +10,6 @@ tags:
 - liquid
 - tutorials
 
-webmentions: true
-comments: true
 shorturl: 58xlz
 ---
 

@@ -238,11 +238,21 @@ h5 a,
 h6 a {
     color: #4f4f4f;
     color: var(--color-kaiser);
-    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
+}
+
+@supports not ((-webkit-text-decoration-color: transparent) or (text-decoration-color: transparent)) {
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+        text-decoration: none;
+    }
 }
 
 .dark-background a {
@@ -280,12 +290,17 @@ a span:not([class]):not([itemprop]) {
 }
 
 .title-anchor, .title-anchor:link {
-    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
     text-underline-position: under;
+}
+
+@supports not ((-webkit-text-decoration-color: transparent) or (text-decoration-color: transparent)) {
+    .title-anchor, .title-anchor:link {
+        text-decoration: none;
+    }
 }
 
 .title-anchor:hover, .title-anchor:focus, .title-anchor:active {
@@ -1057,7 +1072,7 @@ aside + .lede {
 }
 
 .lede--featured {
-    max-width: 24em;
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
     font-size: 1.25rem;
     font-size: var(--font-size-large);
     font-weight: 600;
@@ -1133,11 +1148,16 @@ aside + .lede {
 }
 
 .author-information a {
-    text-decoration: none;
     -webkit-text-decoration-color: transparent;
             text-decoration-color: transparent;
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
+}
+
+@supports not ((-webkit-text-decoration-color: transparent) or (text-decoration-color: transparent)) {
+    .author-information a {
+        text-decoration: none;
+    }
 }
 
 .author-information a:hover, .author-information a:focus, .author-information a:active {

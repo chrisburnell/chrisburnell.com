@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: link
 
 date: 2016-01-08 15:17:00
@@ -10,4 +9,6 @@ tags:
 - serviceworker
 
 external_url: https://serviceworke.rs
+
+comments: false
 ---

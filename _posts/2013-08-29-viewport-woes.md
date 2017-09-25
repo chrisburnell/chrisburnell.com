@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2013-08-29 12:02:00
@@ -13,9 +12,12 @@ tags:
 banner:        viewport-woes.png
 banner_mobile: viewport-woes_mobile.png
 
-comments: true
 shorturl: xoskc
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/373096041509568512
+
+redirect_from: /articles/viewport-woes
 ---
 
 

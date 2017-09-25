@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2017-06-16 14:00:00
@@ -11,9 +10,10 @@ tags:
 - tutorials
 
 codepen: true
-comments: true
 shorturl: e1wjg
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/877492210241032192
 ---
 
 

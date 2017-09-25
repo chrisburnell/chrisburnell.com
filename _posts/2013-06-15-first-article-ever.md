@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2013-06-15 13:21:00
@@ -16,9 +15,12 @@ tags:
 banner:        first-article-ever.png
 banner_mobile: first-article-ever_mobile.png
 
-comments: true
 shorturl: bqrm4
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/345878691110334466
+
+redirect_from: /articles/first-article-ever
 ---
 
 

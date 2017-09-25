@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--tags
 searchable: no-content
 
@@ -19,7 +18,7 @@ lede: A list of Tags and their counterpart prose.
     {% include content/heading.html title=tag_name id=tag %}
     <ol class="content-list" role="list">
         {% for page in site.tags[tag] %}
-            {% include components/content-list-item.html %}
+            {% include components/item-content-list.html %}
         {% endfor %}
     </ol>
 {% endfor %}

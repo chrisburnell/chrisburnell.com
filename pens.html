@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--pens
 searchable: no-content
 
@@ -19,7 +18,7 @@ lede: All of my Pens.
 
 <ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 

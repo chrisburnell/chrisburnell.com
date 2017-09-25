@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2016-03-18 14:15:00
@@ -11,9 +10,10 @@ tags:
 - sass
 - tutorials
 
-comments: true
 shorturl: fqojr
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/710837030629023744
 
 further_reading:
 - url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"

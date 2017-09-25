@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2014-02-09 02:19:00
@@ -15,9 +14,12 @@ tags:
 banner:        lets-look-back.png
 banner_mobile: lets-look-back_mobile.png
 
-comments: true
 shorturl: dxaon
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/432475967098224640
+
+redirect_from: /articles/lets-look-back
 ---
 
 

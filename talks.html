@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--talks
 searchable: no-content
 
@@ -16,7 +15,7 @@ lede: All of my Talks.
 
 <ol class="content-list" id="talks" role="list">
     {% for page in site.categories.talk %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 

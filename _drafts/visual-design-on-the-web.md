@@ -1,16 +1,13 @@
 ---
-layout: post
 categories: article
 
-# date: 2016-01-21 15:00:00
+date: 2018-01-01 11:00:00
 
 title: Visual Design on the Web
 lede: Description description description description description.
 tags:
 - design
 
-webmentions: true
-comments: true
 shorturl: abhzs
 ---
 

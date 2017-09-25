@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2015-03-12 10:00:00
@@ -14,10 +13,13 @@ tags:
 banner:        theming-pinboard.png
 banner_mobile: theming-pinboard_mobile.png
 
-comments: true
 shorturl: 1faeu
 twitter: true
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/576014944627490816
+
+redirect_from: /articles/theming-pinboard
 ---
 
 

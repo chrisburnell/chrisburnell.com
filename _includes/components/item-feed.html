@@ -6,8 +6,8 @@
 <item>
     <title>{{ page.title | xml_escape }}</title>
     <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
+    <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
-    <category>{{ page.categories }}</category>
     {% if page.lede %}
         <description>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</description>
     {% elsif page.categories contains 'article' %}
@@ -19,6 +19,12 @@
     {% elsif page.categories contains 'pen' %}
         <description>Featured Pen</description>
     {% elsif page.categories contains 'talk' %}
-        <description>Talk{% if page.location %} – Given at {{ page.location }}{% endif %}</description>
+        <description>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</description>
     {% endif %}
+    {% for category in page.categories %}
+        <category>{{ category | xml_escape }}</category>
+    {% endfor %}
+    {% for tag in page.tags %}
+        <category>{{ tag | xml_escape }}</category>
+    {% endfor %}
 </item>

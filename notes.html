@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--notes
 searchable: no-content
 
@@ -15,7 +14,7 @@ lede: All of my Notes.
 
 <ol class="content-list" id="notes" role="list">
     {% for page in site.categories.note %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 

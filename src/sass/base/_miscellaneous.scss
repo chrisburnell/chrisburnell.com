@@ -53,6 +53,7 @@ ins {
 del {
     background-color: mix($color-white, $color-lastfm, 80%);
     color: contrasting-color(mix($color-white, $color-lastfm, 80%));
+    text-decoration-color: mix($color-white, $color-lastfm, 80%);
 }
 
 small {

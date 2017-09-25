@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2014-08-27 15:00:00
@@ -15,10 +14,13 @@ tags:
 # banner_mobile: a-slice-of-heaven_mobile.png
 
 codepen: true
-comments: true
 caniuse: true
 shorturl: ynt2q
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/504642274148765696
+
+redirect_from: /articles/a-slice-of-heaven
 ---
 
 

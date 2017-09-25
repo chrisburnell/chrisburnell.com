@@ -45,7 +45,9 @@
 
     a {
         // remove when text-decoration-color is supported
-        text-decoration: none;
+        @supports (not (text-decoration-color: transparent)) {
+            text-decoration: none;
+        }
         @include v(text-decoration-color, transparent);
 
         &:hover,

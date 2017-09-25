@@ -52,10 +52,33 @@ codepen:
 timezone: Europe/London
 language: en
 
+future: true
 incremental: true
 destination: ./_site
 layouts_dir: ./_layouts
 permalink: /:categories/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "drafts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      webmentions: true
 
 exclude:
 - CNAME

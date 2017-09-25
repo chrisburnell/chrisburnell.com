@@ -1,5 +1,4 @@
 ---
-layout: page
 page_class: page--style-guide
 searchable: no-content
 
@@ -565,7 +564,7 @@ formatDate: function(date) {
 
 <ol class="content-list" role="list">
     {% for page in site.posts limit: 4 %}
-        {% include components/content-list-item.html %}
+        {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 

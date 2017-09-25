@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2016-04-29 12:00:00
@@ -12,9 +11,7 @@ tags:
 
 edit_text: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
 
-comments: true
 shorturl: ndwg7
-webmentions: true
 ---
 
 

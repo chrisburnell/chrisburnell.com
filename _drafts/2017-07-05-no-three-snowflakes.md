@@ -1,8 +1,7 @@
 ---
-layout: post
 categories: article
 
-date: 2017-07-05 13:00:00
+date: 2018-01-01 13:00:00
 
 title: No Three Snowflakes Are Alike
 lede: I developed a Sass function to generate a list of unique pairs given a List or Map of data, so I extrapolated the idea and refactored the function to generate a series of unique groups of a specified size.
@@ -11,8 +10,6 @@ tags:
 - tutorials
 
 codepen: true
-webmentions: true
-comments: true
 shorturl: 2p4f3
 ---
 

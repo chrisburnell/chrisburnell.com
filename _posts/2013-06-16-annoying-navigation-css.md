@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2013-06-16 03:58:00
@@ -15,9 +14,7 @@ banner:        annoying-navigation-css.png
 banner_mobile: annoying-navigation-css_mobile.png
 
 codepen: true
-comments: true
 shorturl: nmwge
-webmentions: true
 ---
 
 

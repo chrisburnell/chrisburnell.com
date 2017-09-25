@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2013-06-18 02:45:00
@@ -15,9 +14,7 @@ banner:        persistent-shadows.png
 banner_mobile: persistent-shadows_mobile.png
 
 codepen: true
-comments: true
 shorturl: jmfy7
-webmentions: true
 ---
 
 

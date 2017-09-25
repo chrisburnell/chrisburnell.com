@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: talk
 
 date: 2016-04-18 19:45:00
@@ -9,6 +8,7 @@ title: Supporting Middle-Out in CSS
 location: London Web Standards
 location_url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/
 
+comments: false
 shorturl: 8fanl
 speakerdeck: true
 speakerdeck_slug: supporting-middle-out-in-css

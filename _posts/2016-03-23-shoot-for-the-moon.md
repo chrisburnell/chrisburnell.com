@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: article
 
 date: 2016-03-23 18:22:00
@@ -14,9 +13,10 @@ banner:        shoot-for-the-moon.png
 banner_mobile: shoot-for-the-moon_mobile.png
 
 codepen: true
-comments: true
 shorturl: uanoe
-webmentions: true
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/712709693878173697
 
 further_reading:
 - url: "http://cruft.io/posts/percentage-calculations-in-ie/"

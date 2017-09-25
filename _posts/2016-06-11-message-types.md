@@ -1,5 +1,4 @@
 ---
-layout: post
 categories: pen
 
 date: 2016-06-11 01:00:00
