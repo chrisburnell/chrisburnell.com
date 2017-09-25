@@ -3,10 +3,15 @@
   Consolidate markup for Content List Items.
 
 {% endcomment %}
-{% if page.layout == 'post' %}
-    {% assign itemtype = "TechArticle" %}
-{% elsif page.layout == "page" %}
-    {% assign itemtype = "Article" %}
+{% assign itemtype = 'WebPage' %}
+{% if page.categories contains 'article' %}
+    {% assign itemtype = 'TechArticle' %}
+{% elsif page.categories contains 'link'
+      or page.categories contains 'note'
+      or page.categories contains 'pen' %}
+    {% assign itemtype = 'BlogPosting' %}
+{% elsif page.categories contains 'talk' %}
+    {% assign itemtype = 'PresentationDigitalDocument' %}
 {% endif %}
 <li role="listitem">
     <article class="h-entry" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">

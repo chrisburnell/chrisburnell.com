@@ -10,7 +10,7 @@ sitemap:
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for page in site.pages %}
-        {% unless page.title == null or page.title == empty or page.sitemap.exclude == true or page.draft %}
+        {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
                 {% if page.sitemap.lastmod %}
@@ -34,7 +34,7 @@ sitemap:
         {% endunless %}
     {% endfor %}
     {% for page in site.posts %}
-        {% unless page.title == null or page.title == empty or page.sitemap.exclude == true or page.draft %}
+        {% unless page.draft or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
                 {% if page.sitemap.lastmod %}
