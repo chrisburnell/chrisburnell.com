@@ -81,19 +81,6 @@
 ///
 /// Clear an element of floats.
 ///
-/// @example scss
-///   @include clear;
-///   // clear: both;
-///   // zoom: 1;
-///   // &::before,
-///   // &::after {
-///   //     content: "";
-///   //     display: table;
-///   // }
-///   // &::after {
-///   //     clear: both;
-///   // }
-///
 @mixin clear() {
     clear: both;
     zoom: 1;
@@ -397,7 +384,7 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $values - Values
+/// @param {String} $transitions - Transitions
 ///
 /// @example scss - Zero parameters
 ///   @include transition;
@@ -453,7 +440,7 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $values - Values
+/// @param {String} $changes - Changes
 ///
 /// @example scss - One parameter
 ///   @include will-change(color);
