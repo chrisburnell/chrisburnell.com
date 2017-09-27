@@ -9,6 +9,13 @@ tags:
 - sass
 - tutorials
 
+banner:
+- unique-pairs-in-sass@2x.jpg
+- unique-pairs-in-sass.jpg
+banner_mobile:
+- unique-pairs-in-sass_mobile@2x.jpg
+- unique-pairs-in-sass_mobile.jpg
+
 codepen: true
 shorturl: e1wjg
 
