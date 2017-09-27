@@ -1,6 +1,6 @@
 # Folder view configuration files
 _Store
-.DS_Store
+.DS_Store*
 Desktop.ini
 Icon
 
@@ -11,6 +11,21 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
 
 # Jekyll
 .jekyll-metadata
