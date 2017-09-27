@@ -11,8 +11,10 @@ tags:
 - sass
 - tutorials
 
-banner:        lets-look-back.png
-banner_mobile: lets-look-back_mobile.png
+banner:
+- lets-look-back.png
+banner_mobile:
+- lets-look-back_mobile.png
 
 shorturl: dxaon
 

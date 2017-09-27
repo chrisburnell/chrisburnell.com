@@ -10,8 +10,10 @@ tags:
 - css
 - ux
 
-banner:        annoying-navigation-css.png
-banner_mobile: annoying-navigation-css_mobile.png
+banner:
+- annoying-navigation-css.png
+banner_mobile:
+- annoying-navigation-css_mobile.png
 
 codepen: true
 shorturl: nmwge

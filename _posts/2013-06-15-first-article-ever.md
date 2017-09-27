@@ -12,8 +12,10 @@ tags:
 - markdown
 - collaboration
 
-banner:        first-article-ever.png
-banner_mobile: first-article-ever_mobile.png
+banner:
+- first-article-ever.png
+banner_mobile:
+- first-article-ever_mobile.png
 
 shorturl: bqrm4
 

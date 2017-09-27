@@ -219,7 +219,7 @@ gulp.task('compress-images', () => {
 
 // Generate WebP-format counterparts for all JPG and PNG images
 gulp.task('images-to-webp', () => {
-    return gulp.src(`${paths.images.src}/*.{jpg,png}`, { base: paths.images.src })
+    return gulp.src(`${paths.images.src}/**/*.{jpg,png}`, { base: paths.images.src })
         .pipe(plumber())
         .pipe(webp())
         .pipe(gulp.dest(`${paths.images.dest}/`));

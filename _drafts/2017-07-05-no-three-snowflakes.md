@@ -9,6 +9,13 @@ tags:
 - sass
 - tutorials
 
+banner:
+- no-three-snowflakes@2x.jpg
+- no-three-snowflakes.jpg
+banner_mobile:
+- no-three-snowflakes_mobile@2x.jpg
+- no-three-snowflakes_mobile.jpg
+
 codepen: true
 shorturl: 2p4f3
 ---

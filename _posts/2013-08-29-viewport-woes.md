@@ -9,8 +9,10 @@ tags:
 - html
 - tutorials
 
-banner:        viewport-woes.png
-banner_mobile: viewport-woes_mobile.png
+banner:
+- viewport-woes.png
+banner_mobile:
+- viewport-woes_mobile.png
 
 shorturl: xoskc
 

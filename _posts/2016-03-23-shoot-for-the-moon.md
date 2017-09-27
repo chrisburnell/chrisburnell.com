@@ -9,8 +9,10 @@ tags:
 - css
 - tutorials
 
-banner:        shoot-for-the-moon.png
-banner_mobile: shoot-for-the-moon_mobile.png
+banner:
+- shoot-for-the-moon.png
+banner_mobile:
+- shoot-for-the-moon_mobile.png
 
 codepen: true
 shorturl: uanoe
