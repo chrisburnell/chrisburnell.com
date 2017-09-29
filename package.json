@@ -5,6 +5,7 @@
     {
       "name": "Chris Burnell",
       "email": "me@chrisburnell.com",
+      "url": "https://chrisburnell.com",
       "twitter": "@iamchrisburnell"
     }
   ],
@@ -39,7 +40,7 @@
     "postcss-reporter": "5.0.0",
     "postcss-scss": "1.0.2",
     "sassdoc": "2.3.0",
-    "snyk": "^1.40.2",
+    "snyk": "^1.41.1",
     "stylelint": "8.1.1"
   },
   "repository": {
@@ -51,7 +52,7 @@
   },
   "scripts": {
     "snyk-protect": "snyk protect",
-    "publish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect"
   },
   "snyk": true
 }
