@@ -10,9 +10,11 @@ tags:
 - tutorials
 
 banner:
-- shoot-for-the-moon.png
+- shoot-for-the-moon@2x.jpg
+- shoot-for-the-moon.jpg
 banner_mobile:
-- shoot-for-the-moon_mobile.png
+- shoot-for-the-moon_mobile@2x.jpg
+- shoot-for-the-moon_mobile.jpg
 
 codepen: true
 shorturl: uanoe
