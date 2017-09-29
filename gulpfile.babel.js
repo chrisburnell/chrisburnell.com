@@ -169,7 +169,7 @@ gulp.task('js-compile', ['js-lint'], () => {
     return gulp.src([`${paths.js.src}/helpers.js`,
                      `${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
-                     `!${paths.js.src}/vendors/**/{loadcss.js,loadcss-preload-polyfill.js,svg4everybody.js}`])
+                     `!${paths.js.src}/vendors/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`])
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())
@@ -211,7 +211,7 @@ gulp.task('js-serviceworker', () => {
 
 // Compress src images
 gulp.task('compress-images', () => {
-    return gulp.src(`${paths.images.src}/**/*`, { base: paths.images.src })
+    return gulp.src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
         .pipe(plumber())
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`));
@@ -219,7 +219,7 @@ gulp.task('compress-images', () => {
 
 // Generate WebP-format counterparts for all JPG and PNG images
 gulp.task('images-to-webp', () => {
-    return gulp.src(`${paths.images.src}/**/*.{jpg,png}`, { base: paths.images.src })
+    return gulp.src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
         .pipe(plumber())
         .pipe(webp())
         .pipe(gulp.dest(`${paths.images.dest}/`));
