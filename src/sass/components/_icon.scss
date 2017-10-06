@@ -9,14 +9,23 @@
     display: block;
     overflow: hidden;
 
-    %button-elements & {
+    %button-elements &,
+    .fragment-anchor & {
         fill: currentColor;
-        width:  0.8em;
-        height: 0.8em;
         display: inline-block;
-        margin-right: 0.25em;
         vertical-align: middle;
         pointer-events: none;
+    }
+
+    %button-elements & {
+        width:  $font-size-default;
+        height: $font-size-default;
+        margin-right: $measure-small;
+    }
+
+    .fragment-anchor & {
+        width:  $font-size-gamma;
+        height: $font-size-gamma;
     }
 
     // Used on the Style Guide page

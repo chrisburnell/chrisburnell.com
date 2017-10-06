@@ -109,7 +109,7 @@ a {
     right: -($measure-small);
     @include v(font-size, small);
     @include v(font-weight, bold);
-    @include v(line-height, code);
+    @include v(line-height, default);
     text-shadow: none;
 
     %heading-elements:hover &,

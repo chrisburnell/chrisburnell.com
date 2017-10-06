@@ -329,8 +329,8 @@ a span:not([class]):not([itemprop]) {
     font-size: var(--font-size-small);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-    line-height: 2;
-    line-height: var(--line-height-code);
+    line-height: 1.875;
+    line-height: var(--line-height-default);
     text-shadow: none;
 }
 
@@ -922,6 +922,7 @@ blockquote {
     padding: 1.25rem;
     padding: var(--measure-medium);
     margin: 0 auto 1.25rem;
+    font-style: italic;
 }
 
 blockquote,
@@ -961,6 +962,8 @@ blockquote p:not(:last-of-type)::after {
 }
 
 blockquote cite {
+    color: #737373;
+    color: var(--color-dove);
     display: block;
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
@@ -2008,8 +2011,6 @@ hr {
 }
 
 abbr[title],
-blockquote,
-cite,
 dfn[title] {
     color: #737373;
     color: var(--color-dove);
@@ -3700,14 +3701,24 @@ code[data-lang]::before {
 }
 
 button .icon,
-.button .icon {
+.button .icon,
+.fragment-anchor .icon {
     fill: currentColor;
-    width: 0.8em;
-    height: 0.8em;
     display: inline-block;
-    margin-right: 0.25em;
     vertical-align: middle;
     pointer-events: none;
+}
+
+button .icon,
+.button .icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.625rem;
+}
+
+.fragment-anchor .icon {
+    width: 1.125rem;
+    height: 1.125rem;
 }
 
 .icons-list .icon {

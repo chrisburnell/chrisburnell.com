@@ -26,8 +26,6 @@ hr {
 }
 
 abbr[title],
-blockquote,
-cite,
 dfn[title] {
     @include v(color, dove);
     font-style: italic;

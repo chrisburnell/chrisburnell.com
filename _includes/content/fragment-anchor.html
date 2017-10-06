@@ -25,4 +25,6 @@
 {% if include.rel %}
     {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
-<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>#</a>
+<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>
+    {% include content/svg.html type='link' %}
+</a>

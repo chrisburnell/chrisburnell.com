@@ -329,8 +329,8 @@ a span:not([class]):not([itemprop]) {
     font-size: var(--font-size-small);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
-    line-height: 2;
-    line-height: var(--line-height-code);
+    line-height: 1.875;
+    line-height: var(--line-height-default);
     text-shadow: none;
 }
 
