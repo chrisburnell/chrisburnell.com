@@ -42,12 +42,6 @@
     // initiate search functionality
     initSearch();
 
-    // enable search input and submit
-    searchInput.disabled  = false;
-    searchInput.setAttribute('aria-disabled', 'false');
-    searchSubmit.disabled = false;
-    searchSubmit.setAttribute('aria-disabled', 'false');
-
 
     ////
     /// Initiate search functionality.
@@ -55,6 +49,16 @@
     /// Binds search function to form submission.
     ////
     function initSearch() {
+        if (!searchContainer) {
+            return;
+        }
+
+        // enable search input and submit
+        searchInput.disabled  = false;
+        searchInput.setAttribute('aria-disabled', 'false');
+        searchSubmit.disabled = false;
+        searchSubmit.setAttribute('aria-disabled', 'false');
+
         // Get search results if query parameter is set in querystring
         if (helpers.getParameterByName('query')) {
             query = decodeURIComponent(helpers.getParameterByName('query'));
@@ -65,11 +69,7 @@
         query = searchInput.value;
 
         // Catch the form submission and initiate search lookup
-        if (searchContainer && searchForm.addEventListener) {
-            searchForm.addEventListener('submit', submitCallback);
-        } else if (searchContainer && searchForm.attachEvent) {
-            searchForm.attachEvent('onsubmit', submitCallback);
-        }
+        searchForm.addEventListener('submit', submitCallback);
     }
 
     function submitCallback(event) {

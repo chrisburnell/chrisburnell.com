@@ -1,5 +1,4 @@
 {% include components/head.html %}
-{% include components/header.html %}
 
 
 {% assign itemtype = 'WebPage' %}
@@ -13,7 +12,7 @@
     {% assign itemtype = 'PresentationDigitalDocument' %}
 {% endif %}
 <main class="wrap" role="main">
-    <article class="content  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
+    <article class="content  content--full  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name" itemprop="name">{{ page.title }}</span>
@@ -24,8 +23,6 @@
                 <!--{% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}-->
             {% endif %}
         </h1>
-
-        {% include components/author.html %}
 
         {% include components/meta.html %}
 
@@ -91,26 +88,8 @@
             </ul>
         {% endif %}
 
-        {% include components/nav-secondary.html type='archives' include=page.categories.first %}
-
-        {% include components/webmentions.html %}
-        {% include components/comments.html %}
-
-        {% if page.categories contains 'article' %}
-            {% include components/widget-latest-articles.html %}
-        {% elsif page.categories contains 'link' %}
-            {% include components/widget-latest-links.html %}
-        {% elsif page.categories contains 'note' %}
-            <!--{% include components/widget-latest-notes.html %}-->
-        {% elsif page.categories contains 'pen' %}
-            {% include components/widget-latest-pens.html %}
-        {% elsif page.categories contains 'talk' %}
-            <!--{% include components/widget-latest-talks.html %}-->
-        {% endif %}
-
     </article>
 </main>
 
 
-{% include components/footer.html %}
 {% include components/foot.html %}

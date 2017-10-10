@@ -2227,9 +2227,14 @@ header::before {
 }
 
 @media screen and (min-width: 801px) {
-    .content {
+    .content:not(.content--full) {
         padding-left: 18.125rem;
     }
+}
+
+.content--full {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 aside {

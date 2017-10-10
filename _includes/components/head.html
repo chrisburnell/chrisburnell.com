@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<!--R
+  AVENOU
+    SRAVENO
+      USRAVENO
+       USRAVEN
+       OUSRAVEN               O
+        USRAVEN             O US
+        RAVENOUS         RA VENO U
+         SRAVENOU     SRAVENOUSRAV
+          ENOUSRAVENOUSRAVENOUSRAV
+           ENOUSRAVENOUSRAVENOUSRA
+VEN      OUSRAVENOUSRAVENOUSRAVENO
+ USRAVENOUSRAVENOUSRAVENOUSR
+  AVENOUSRAVENOUSRAVENOUSR
+   AVENOUSRAVENOUSRAVENOU
+     SRAVENOUSRAVENOUSRAVE
+            NOUSR     AVE
+          NOUSR        AV
+          E NO
+            US
+
+Checking out the source code, eh? Check out the GitHub repository:
+{{ site.urls.github_repo }}
+Get in touch with me if you want to know more about the code, or if you want to use a
+snippet of code on a project of your own!  -->
+
+{% include assets/yml-head.html %}
+
+<html lang="{{ site.language }}">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <title>{{ meta_title }}</title>
+
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//webmention.io">
+    {% if page.comments == true %}
+        <link rel="dns-prefetch" href="//a.disquscdn.com">
+        <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
+    {% endif %}
+    {% if page.caniuse == true %}
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    {% endif %}
+    {% if page.codepen == true or page.codepen_slug %}
+        <link rel="dns-prefetch" href="//codepen.io">
+        <link rel="dns-prefetch" href="//assets.codepen.io">
+        <link rel="dns-prefetch" href="//s.codepen.io">
+    {% endif %}
+    {% if page.speakerdeck == true or page.speakerdeck_slug %}
+        <link rel="dns-prefetch" href="//speakerdeck.com">
+    {% endif %}
+    {% if page.twitter == true %}
+        <link rel="dns-prefetch" href="//platform.twitter.com">
+    {% endif %}
+    {% if page.vimeo == true or page.vimeo_slug %}
+        <link rel="dns-prefetch" href="//player.vimeo.com">
+    {% endif %}
+    {% if page.youtube == true or page.youtube_slug %}
+        <link rel="dns-prefetch" href="//www.youtube.com">
+    {% endif %}
+
+    {% if page.external_url %}
+        {% assign url = page.external_url.url | default: page.external_url %}
+        <link rel="prefetch" href="{{ url }}">
+    {% endif %}
+
+    <link rel="alternate" type="application/rss+xml" title="All Posts RSS" href="{{ site.urls.rss }}">
+    <link rel="alternate" type="application/rss+xml" title="Articles RSS" href="{{ site.urls.rss_articles }}">
+    <link rel="alternate" type="application/rss+xml" title="Links RSS" href="{{ site.urls.rss_links }}">
+    <link rel="alternate" type="application/rss+xml" title="Pens RSS" href="{{ site.urls.rss_pens }}">
+    <link rel="alternate" type="application/rss+xml" title="Talks RSS" href="{{ site.urls.rss_talks }}">
+    <link rel="pingback" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
+    <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
+
+    <link rel="mask-icon" href="{{ '/favicon.svg' | prepend: site.baseurl | prepend: site.url }}" color="#{{ site.color }}">
+
+    <link rel="author" href="/humans.txt">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="msapplication-starturl" content="{{ site.url }}">
+    <meta name="description" content="{{ meta_lede }}">
+    <meta name="theme-color" content="#{{ site.color }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta http-equiv="cleartype" content="on">
+
+    {% include assets/assets-social.html %}
+
+    {% include assets/assets-head.html %}
+
+</head>
+
+<body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %} itemscope itemtype="https://schema.org/WebPage">
+
+    <a class="visually-hidden" href="#content">Skip to main content</a>
