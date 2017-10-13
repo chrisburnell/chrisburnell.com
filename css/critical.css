@@ -35,7 +35,7 @@
     --color-raven: #5f8aa6;
     --color-bowhead: #507791;
     --color-coyote: #759ab3;
-    --color-canada: #ff0000;
+    --color-canada: #eb2d37;
     --color-highlight: gold;
     --color-black--alpha: rgba(6, 6, 6, 0.9);
     --color-black--gamma: rgba(6, 6, 6, 0.1);
@@ -204,14 +204,14 @@ a {
 
 a:hover, a:focus, a:active {
     text-decoration: underline;
-    -webkit-text-decoration-color: #ff0000;
-            text-decoration-color: #ff0000;
+    -webkit-text-decoration-color: #eb2d37;
+            text-decoration-color: #eb2d37;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }
 
 a:active {
-    background-color: #ff0000;
+    background-color: #eb2d37;
     background-color: var(--color-canada);
     color: #f9f9f9;
     color: var(--color-white);
@@ -265,8 +265,8 @@ h6 a {
 }
 
 .dark-background a:hover, .dark-background a:focus, .dark-background a:active {
-    -webkit-text-decoration-color: #ff0000;
-            text-decoration-color: #ff0000;
+    -webkit-text-decoration-color: #eb2d37;
+            text-decoration-color: #eb2d37;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }
@@ -745,6 +745,15 @@ aside {
     }
 }
 
+aside:not([class]) {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
+    background-color: #dddddd;
+    background-color: var(--color-alto);
+    padding: 0.625rem 1.25rem;
+    padding: var(--measure-small) var(--measure-medium);
+}
+
 @media screen and (max-width: 800px) {
     aside:not(.author):not(:last-child) {
         margin-bottom: 1.25rem;
@@ -1166,8 +1175,8 @@ aside + .lede {
 }
 
 .author-information a:hover, .author-information a:focus, .author-information a:active {
-    -webkit-text-decoration-color: #ff0000;
-            text-decoration-color: #ff0000;
+    -webkit-text-decoration-color: #eb2d37;
+            text-decoration-color: #eb2d37;
     -webkit-text-decoration-color: var(--color-canada);
             text-decoration-color: var(--color-canada);
 }

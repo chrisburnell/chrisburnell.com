@@ -508,7 +508,7 @@ helpers = {
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__link" data-type="{{ type }}">\n                                     {{ content }}\n                                     <a href="#webmention-{{ id }}" rel="bookmark">#</a>\n                                     {{ typeSentencePrefix }} {{ author }} {{ date }}\n                                 </li>';
     var webmentionsLoaded = false;
     var webmentionsCount = 0;
-    var observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
+    var observer = new IntersectionObserver(checkWebmentionsVisible);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
@@ -529,13 +529,15 @@ helpers = {
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkWebmentionsVisible(entries) {
+    function checkWebmentionsVisible(entries, observer) {
         if (webmentionsLoaded === false) {
             entries.forEach(function (entry) {
                 if (entry.intersectionRatio > 0) {
                     loadWebmentions();
                 }
             });
+        } else {
+            observer.unobserve(WEBMENTIONS_BUTTON);
         }
     }
 

@@ -24,7 +24,7 @@
                                  </li>`;
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
-    let observer = new IntersectionObserver(checkWebmentionsVisible, { rootMargin: '0px 0px' });
+    let observer = new IntersectionObserver(checkWebmentionsVisible);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
@@ -45,13 +45,16 @@
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkWebmentionsVisible(entries) {
+    function checkWebmentionsVisible(entries, observer) {
         if (webmentionsLoaded === false) {
             entries.forEach(entry => {
                 if (entry.intersectionRatio > 0) {
                     loadWebmentions();
                 }
             });
+        }
+        else {
+            observer.unobserve(WEBMENTIONS_BUTTON);
         }
     }
 

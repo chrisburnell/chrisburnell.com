@@ -28,6 +28,13 @@ aside {
         // }
     }
 
+    &:not([class]) {
+        @include border-radius;
+        @include v(background-color, alto);
+        padding: $measure-small $measure-medium;
+        padding: var(--measure-small) var(--measure-medium);
+    }
+
     &:not(.author):not(:last-child) {
         @include media("screen", "<=medium") {
             @include v(margin-bottom, medium);

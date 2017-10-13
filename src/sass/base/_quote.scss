@@ -13,7 +13,6 @@ blockquote {
     max-width: $line-length-responsive;
     @include v(padding, medium);
     margin: 0 auto $measure-medium;
-    font-style: italic;
 
     p {
         &::before {
@@ -35,6 +34,7 @@ blockquote {
         @include v(color, dove);
         display: block;
         @include v(margin-top, medium);
+        font-style: normal;
         text-align: right;
 
         &::before {
