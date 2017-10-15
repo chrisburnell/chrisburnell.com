@@ -219,7 +219,7 @@ helpers = {
     var ALLOW_EMPTY = false;
     var JSON_FEED_URL = '../search.json';
     var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{ url }}">\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n            </a>\n        </article>\n    </li>';
-    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date" datetime="{{date}}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
+    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
 
     // initiate search functionality
     initSearch();
@@ -449,7 +449,11 @@ helpers = {
         }
 
         // TITLE
-        html = helpers.injectContent(html, item.title, '{{ title }}');
+        if (item.categories == 'note') {
+            html = helpers.injectContent(html, item.date_friendly, '{{ title }}');
+        } else {
+            html = helpers.injectContent(html, item.title, '{{ title }}');
+        }
 
         // LEDE
         if (item.lede) {
@@ -471,6 +475,12 @@ helpers = {
         if (item.type == 'post') {
             html = helpers.injectContent(html, item.date, '{{ date }}');
             html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
+
+            if (item.categories == 'note') {
+                html = helpers.injectContent(html, '  visually-hidden', '{{ date_class }}');
+            } else {
+                html = helpers.injectContent(html, '', '{{ date_class }}');
+            }
         }
 
         return html;

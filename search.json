@@ -24,7 +24,11 @@ searchable: false
                 "url": "{{ page.url }}",
                 "title": "{{ page.title | xml_escape }}",
                 "date": "{{ page.date | date_to_xml_schema }}",
-                "date_friendly": "{{ page.date | date_to_long_string }}",
+                {% if page.categories contains 'note' %}
+                    "date_friendly": "{{ page.date | date: '%A, %d %B, %Y' }}",
+                {% else %}
+                    "date_friendly": "{{ page.date | date_to_long_string }}",
+                {% endif %}
                 {% if page.lede %}
                     "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
                 {% elsif page.categories contains 'note' %}

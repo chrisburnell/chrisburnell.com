@@ -15,7 +15,13 @@
     <article class="content  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
 
         <h1 class="title" id="article" role="heading">
-            <span class="p-name" itemprop="name">{{ page.title }}</span>
+            <span class="p-name" itemprop="name">
+                {% if page.categories contains 'note' %}
+                    {{ page.date | date: '%A, %d %B, %Y' }}
+                {% else %}
+                    {{ page.title }}
+                {% endif %}
+            </span>
             {% if page.shorturl %}
                 {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
                 {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}

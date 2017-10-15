@@ -27,7 +27,13 @@
                 {% elsif page.categories contains 'talk' %}
                     {% include content/svg.html type='bullhorn' %}
                 {% endif %}
-            <h4 class="title  p-name" itemprop="name">{{ page.title }}</h4>
+            <h4 class="title  p-name" itemprop="name">
+                {% if page.categories contains 'note' %}
+                    {{ page.date | date: '%A, %d %B, %Y' }}
+                {% else %}
+                    {{ page.title }}
+                {% endif %}
+            </h4>
             <p class="lede  e-content" itemprop="description">
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}
@@ -43,7 +49,7 @@
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}
             </p>
-            <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+            <time class="date  dt-published{% if page.categories contains 'note' %}  visually-hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
     </article>
 </li>

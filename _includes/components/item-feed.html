@@ -4,7 +4,11 @@
 
 {% endcomment %}
 <item>
-    <title>{{ page.title | xml_escape }}</title>
+    {% if page.categories contains 'note' %}
+        <title>{{ page.date | date: '%A, %d %B, %Y' }}</title>
+    {% else %}
+        <title>{{ page.title | xml_escape }}</title>
+    {% endif %}
     <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
     <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
