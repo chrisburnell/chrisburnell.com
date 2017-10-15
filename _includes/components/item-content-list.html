@@ -42,7 +42,7 @@
                 {% elsif page.categories contains 'link' %}
                     Shared Link
                 {% elsif page.categories contains 'note' %}
-                    {{ page.content | strip_html | truncatewords: 20 }}
+                    {{ page.content | markdownify | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'pen' %}
                     Featured Pen
                 {% elsif page.categories contains 'talk' %}

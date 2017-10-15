@@ -32,7 +32,7 @@ searchable: false
                 {% if page.lede %}
                     "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
                 {% elsif page.categories contains 'note' %}
-                    "lede": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+                    "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
                 {% endif %}
                 "categories": "{{ page.categories | join: ', ' }}",
                 "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
