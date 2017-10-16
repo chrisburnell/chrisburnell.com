@@ -30,7 +30,7 @@ aside {
 
     &:not([class]) {
         @include border-radius;
-        @include v(background-color, alto);
+        @include v(background-color, black--delta);
         padding: $measure-small $measure-medium;
         padding: var(--measure-small) var(--measure-medium);
     }

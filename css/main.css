@@ -2264,8 +2264,8 @@ aside {
 aside:not([class]) {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    background-color: #dddddd;
-    background-color: var(--color-alto);
+    background-color: rgba(6, 6, 6, 0.05);
+    background-color: var(--color-black--delta);
     padding: 0.625rem 1.25rem;
     padding: var(--measure-small) var(--measure-medium);
 }

@@ -15,16 +15,28 @@ codepen: true
 ---
 
 
-I’m lazy. I’m prone to making mistakes, overlooking obvious details, and underestimating efforts required to reach a goal.
+On the web, we’re used to change. We embrace change. It’s part of what makes the web unique: an ever-evolving, ever-moving ecosystem of growing users.
 
-But somehow I manage to overcome my <s>crippling</s> laziness, but I rarely let it affect my output! And many aren’t, but laziness isn’t always a bad thing when it comes to web development. It’s how and where you *choose* to be lazy that makes our choices a positive or negative one.
-
-You might notice I used the words <q>choose</q> and <q>choice</q>. Choice is a luxury often afforded to us by the web. I admit that laziness is often not a choice that I actively make. More often than not, I find myself being lazy without being entirely conscious that I’m doing so! But this is still a *choice*. I’ve *chosen* to turn a blind eye to the warning signs and direct my attention elsewhere.
-
-So, in knowing that I *will* be lazy, I can make some predictions and preparations to cover my lazy ass down the road.
+Part of embracing change means, as builders of the web, we have to be light on our toes, ready to adapt and change to factors within and without our control. Some call it a dance, some think it a nightmare; regardless, it is one of the facts of the web that you can either accept or not.
 
 
-{% include content/heading.html title='What did we do before?' %}
+{% include content/heading.html title='Hook, Line, & Sinker' %}
+
+<blockquote>
+    <p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
+    <cite><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
+</blockquote>
+
+If you’ve ever built (or used) a lazyloader or implemented infinite-scrolling on a website, you might be familiar with the history of these techniques. Extremely popular in native phone apps for their benefit to loading times, lazy-loading and infinite-scrolling are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
+
+In essence, rather than force the browser to download every asset required for a given page to 100% completion—which may be slow, or even costly, for some users—a division is made between <q>critical</q> and <q>non-critical</q> assets. In most cases, <q>critical</q> assets certainly include any **CSS** and **JavaScript** required for the page, and as such will be downloaded immediately, as is normal. However, images may fall into the <q>non-critical</q> category. In the case of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within 100px of the viewport should it begin loading.</q>
+
+Similarly, an infinite-scrolling technique typically involves a long list of many items. When the user reaches the bottom of the list—that is to say that the bottom of the list is within the viewport—the next set of `n` items are loaded and placed at the bottom of the list. This gives the impression that the list is never-ending, as it is technically bottomless if the data is infinite.
+
+Over the many years of employing these and similar techniques on the web, we’ve found ways of going about it in many ways.
+
+
+{% include content/heading.html title='Let me take you on a trip down memory lane' %}
 
 At it’s simplest, we would hook into the window’s `scroll` and `resize` events:
 
@@ -56,7 +68,7 @@ In this instance, our users are used to the UI and the positioning of things. As
 
 Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun){:rel="external"}, these events will fire at a rate nearly, if not completely, imperceptible to the human eye. In order to get an idea of the volume of these events, browse to your favourite news site and scroll from the top of the page to the bottom. Try to count the height of the page in pixels. Bonus points (and bonus events) if you do this on a small screen!
 
-Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px &times; 902px` and as small as `400px &times; 198px`. That gives me `1265 &times; 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
+Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
 
 Of course, the browser is powered by your computer, which is used to making such quick calculations that, as humans, we’re just not capable of doing even remotely as quickly, but that’s not to say that this job is easy for the browser! Or even that our browsers are doing this in the most efficient way (yet)!
 
