@@ -27,18 +27,20 @@ Part of embracing change means, as builders of the web, we have to be light on o
     <cite><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
 </blockquote>
 
-If you’ve ever built (or used) a lazyloader or implemented infinite-scrolling on a website, you might be familiar with the history of these techniques. Extremely popular in native phone apps for their benefit to loading times, lazy-loading and infinite-scrolling are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
+If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, lazy-loading and infinite-scrolling are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
-In essence, rather than force the browser to download every asset required for a given page to 100% completion—which may be slow, or even costly, for some users—a division is made between <q>critical</q> and <q>non-critical</q> assets. In most cases, <q>critical</q> assets certainly include any **CSS** and **JavaScript** required for the page, and as such will be downloaded immediately, as is normal. However, images may fall into the <q>non-critical</q> category. In the case of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within 100px of the viewport should it begin loading.</q>
+In essence, rather than force the browser to download every asset required for a given page to 100% completion—which may be slow, or even costly, for some users—a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page, and as such will be downloaded immediately, as is normal. However, images may fall into the **non-critical** category. In the case of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within 100px of the viewport should it begin loading.</q>
 
-Similarly, an infinite-scrolling technique typically involves a long list of many items. When the user reaches the bottom of the list—that is to say that the bottom of the list is within the viewport—the next set of `n` items are loaded and placed at the bottom of the list. This gives the impression that the list is never-ending, as it is technically bottomless if the data is infinite.
+Similarly, an infinite-scrolling technique typically involves a long list of many items. When the user reaches the bottom of the list—that is to say that the bottom of the list is within the viewport—the next set of `n` items are loaded and placed at the bottom of the list. This gives the impression that the list is never-ending, as it is technically as limitless as the dataset being represented.
 
-Over the many years of employing these and similar techniques on the web, we’ve found ways of going about it in many ways.
+I won’t get into the details of the pros and cons of these techniques, but be aware that they come with their own set of UX considerations.
 
 
 {% include content/heading.html title='Let me take you on a trip down memory lane' %}
 
-At it’s simplest, we would hook into the window’s `scroll` and `resize` events:
+Over the many years of employing lazy-loading, infinite-scrolling, and similar techniques on the web, we’ve come up with a couple of solutions.
+
+At it’s simplest, we hook into the window’s `scroll` and `resize` events:
 
 {% highlight javascript %}
 let visibilityCheck = function(event) {
