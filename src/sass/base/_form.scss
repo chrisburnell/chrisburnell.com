@@ -5,10 +5,19 @@
 ////
 
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+input[type="checkbox"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
+input[type="file"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
@@ -86,4 +95,56 @@ input {
 
 textarea {
     overflow: auto;
+}
+
+input[type="checkbox"] {
+    @include visually-hidden;
+
+    & + label {
+        @include border-radius;
+        @include non-selectable;
+        @include transition;
+        @include v(background-color, kaiser);
+        @include v(color, white);
+        display: inline-block;
+        padding: 0 $measure-medium;
+        padding: 0 var(--measure-medium);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+        line-height: ($line-height-code * 1.25);
+        line-height: calc(var(--line-height-code) * 1.25);
+
+        &::after {
+            content: "✔";
+            @include v(background-color, black--gamma);
+            width: $measure-large;
+            width: var(--measure-large);
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            @include v(font-size, beta);
+            line-height: 1;
+            border-radius: $border-radius-default 0 0 $border-radius-default;
+            border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+        }
+    }
+
+    &:checked + label {
+        background-color: $color-liquid;
+        background-color: var(--color-liquid);
+        padding-left: ($measure-large + $measure-small);
+        padding-left: calc(var(--measure-large) + var(--measure-small));
+        padding-right: ($measure-medium - $measure-small);
+        padding-right: calc(var(--measure-medium) - var(--measure-small));
+
+        &::after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }

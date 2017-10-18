@@ -1558,10 +1558,26 @@ pre.codepen {
     color: #2aa198;
 }
 
+form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+}
+
+input[type="checkbox"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
+input[type="file"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
@@ -1645,6 +1661,85 @@ input::-webkit-file-upload-button {
 
 textarea {
     overflow: auto;
+}
+
+input[type="checkbox"] {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(100%) !important;
+            clip-path: inset(100%) !important;
+}
+
+input[type="checkbox"] + label {
+    background-clip: padding-box;
+    border-radius: 0.375rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: #4f4f4f;
+    background-color: var(--color-kaiser);
+    color: #f9f9f9;
+    color: var(--color-white);
+    display: inline-block;
+    padding: 0 1.25rem;
+    padding: 0 var(--measure-medium);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    line-height: 2.5;
+    line-height: calc(var(--line-height-code) * 1.25);
+}
+
+input[type="checkbox"] + label::after {
+    content: "✔";
+    background-color: rgba(6, 6, 6, 0.1);
+    background-color: var(--color-black--gamma);
+    width: 2.25rem;
+    width: var(--measure-large);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 1.375rem;
+    font-size: var(--font-size-beta);
+    line-height: 1;
+    border-radius: 0.375rem 0 0 0.375rem;
+    border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #7ab55c;
+    background-color: var(--color-liquid);
+    padding-left: 2.875rem;
+    padding-left: calc(var(--measure-large) + var(--measure-small));
+    padding-right: 0.625rem;
+    padding-right: calc(var(--measure-medium) - var(--measure-small));
+}
+
+input[type="checkbox"]:checked + label::after {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 table {
@@ -2965,10 +3060,10 @@ aside .content-list a {
 }
 
 .search-form {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .search-input {

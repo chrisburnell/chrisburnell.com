@@ -19,8 +19,7 @@
 }
 
 .search-form {
-    position: relative;
-    display: flex;
+    flex-direction: row;
 }
 
 .search-input {
