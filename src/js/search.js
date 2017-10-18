@@ -10,13 +10,13 @@
     'use strict';
 
 
-    let query,
-        searchContainer = document.querySelector('.js-search'),
-        searchForm      = document.querySelector('.js-search-form'),
-        searchInput     = document.querySelector('.js-search-input'),
-        searchSubmit    = document.querySelector('.js-search-submit'),
-        resultsMeta     = document.querySelector('.js-search-meta'),
-        resultsList     = document.querySelector('.js-search-results-list');
+    let query;
+    let searchContainer = document.querySelector('.js-search');
+    let searchForm      = document.querySelector('.js-search-form');
+    let searchInput     = document.querySelector('.js-search-input');
+    let searchSubmit    = document.querySelector('.js-search-submit');
+    let resultsMeta     = document.querySelector('.js-search-meta');
+    let resultsList     = document.querySelector('.js-search-results-list');
     const ALLOW_EMPTY = false;
     const JSON_FEED_URL = '../search.json';
     const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
@@ -39,6 +39,13 @@
     </li>`;
 
 
+    // enable search input and submit ASAP
+    searchInput.disabled  = false;
+    searchInput.setAttribute('aria-disabled', 'false');
+    searchSubmit.disabled = false;
+    searchSubmit.setAttribute('aria-disabled', 'false');
+
+
     // initiate search functionality
     initSearch();
 
@@ -52,12 +59,6 @@
         if (!searchContainer) {
             return;
         }
-
-        // enable search input and submit
-        searchInput.disabled  = false;
-        searchInput.setAttribute('aria-disabled', 'false');
-        searchSubmit.disabled = false;
-        searchSubmit.setAttribute('aria-disabled', 'false');
 
         // Get search results if query parameter is set in querystring
         if (helpers.getParameterByName('query')) {

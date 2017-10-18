@@ -209,17 +209,23 @@ helpers = {
 
     'use strict';
 
-    var query = void 0,
-        searchContainer = document.querySelector('.js-search'),
-        searchForm = document.querySelector('.js-search-form'),
-        searchInput = document.querySelector('.js-search-input'),
-        searchSubmit = document.querySelector('.js-search-submit'),
-        resultsMeta = document.querySelector('.js-search-meta'),
-        resultsList = document.querySelector('.js-search-results-list');
+    var query = void 0;
+    var searchContainer = document.querySelector('.js-search');
+    var searchForm = document.querySelector('.js-search-form');
+    var searchInput = document.querySelector('.js-search-input');
+    var searchSubmit = document.querySelector('.js-search-submit');
+    var resultsMeta = document.querySelector('.js-search-meta');
+    var resultsList = document.querySelector('.js-search-results-list');
     var ALLOW_EMPTY = false;
     var JSON_FEED_URL = '../search.json';
     var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{ url }}">\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n            </a>\n        </article>\n    </li>';
     var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
+
+    // enable search input and submit ASAP
+    searchInput.disabled = false;
+    searchInput.setAttribute('aria-disabled', 'false');
+    searchSubmit.disabled = false;
+    searchSubmit.setAttribute('aria-disabled', 'false');
 
     // initiate search functionality
     initSearch();
@@ -233,12 +239,6 @@ helpers = {
         if (!searchContainer) {
             return;
         }
-
-        // enable search input and submit
-        searchInput.disabled = false;
-        searchInput.setAttribute('aria-disabled', 'false');
-        searchSubmit.disabled = false;
-        searchSubmit.setAttribute('aria-disabled', 'false');
 
         // Get search results if query parameter is set in querystring
         if (helpers.getParameterByName('query')) {
