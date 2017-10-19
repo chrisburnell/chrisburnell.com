@@ -22,12 +22,13 @@ script:
   - bundle exec jekyll build
 
 cache:
+  bundler: true
   directories:
-    - "node_modules"
+    - node_modules
 
 branches:
   only:
-  - master
+    - master
 
 after_success:
   - tar -czvf chrisburnell.tgz _site/*
