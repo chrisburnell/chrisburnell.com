@@ -6,11 +6,11 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 ![Version](https://img.shields.io/badge/version-3.1.0-blue.svg?style=flat-square)
 [![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
 
-[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.github.io/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.github.io)
-[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.github.io.svg?maxAge=2592000&style=flat-square)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/package.json)
+[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.com/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.com)
+[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&style=flat-square)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
 
-[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/css/main.min.css)
-[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.github.io/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.github.io/master/js/main.min.js)
+[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/css/main.min.css)
+[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/js/main.min.js)
 
 
 ### Table of Contents
