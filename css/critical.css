@@ -890,7 +890,7 @@ h6[id]:target,
     text-decoration: none;
 }
 
-.logo svg {
+.logo .icon {
     position: absolute;
     top: 0;
     left: 50%;
@@ -918,7 +918,7 @@ h6[id]:target,
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-    .logo svg {
+    .logo .icon {
         -webkit-transition: none 0.2s ease 0s;
         transition: none 0.2s ease 0s;
     }
@@ -934,7 +934,7 @@ h6[id]:target,
     background-color: var(--color-transparent);
 }
 
-.logo:active svg {
+.logo:active .icon {
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
     -webkit-transition-duration: var(--transition-duration-default);
