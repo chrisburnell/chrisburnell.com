@@ -31,14 +31,14 @@
         }
     }
 
-    &:hover,
-    &:focus {
-        svg {
+    &[href]:hover,
+    &[href]:focus {
+        .icon {
             transform: translateX(-40%) translateY(-30%);
         }
     }
 
-    &:active {
+    &[href]:active {
         @include v(background-color, transparent);
 
         .icon {

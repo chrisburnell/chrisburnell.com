@@ -2570,17 +2570,17 @@ h6[id]:target,
     }
 }
 
-.logo:hover svg, .logo:focus svg {
+.logo[href]:hover .icon, .logo[href]:focus .icon {
     -webkit-transform: translateX(-40%) translateY(-30%);
             transform: translateX(-40%) translateY(-30%);
 }
 
-.logo:active {
+.logo[href]:active {
     background-color: transparent;
     background-color: var(--color-transparent);
 }
 
-.logo:active .icon {
+.logo[href]:active .icon {
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
     -webkit-transition-duration: var(--transition-duration-default);
