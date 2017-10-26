@@ -2689,7 +2689,7 @@ h6[id]:target,
 .nav-primary-list a:active,
 [class*="page--about"] [class*="nav-primary--about"] a,
 [class*="page--article"] [class*="nav-primary--article"] a,
-[class*="page--pen"] [class*="nav-primary--pen"] a,
+[class*="page--note"] [class*="nav-primary--note"] a,
 [class*="page--search"] [class*="nav-primary--search"] a {
     color: #4f4f4f;
     color: var(--color-kaiser);
