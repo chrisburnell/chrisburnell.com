@@ -4,8 +4,8 @@
 - title: Articles
   url: '/articles/'
 
-- title: Pens
-  url: '/pens/'
+- title: Notes
+  url: '/notes/'
 
 - title: Search
   url: '/search/'

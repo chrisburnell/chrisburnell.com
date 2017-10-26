@@ -5,6 +5,8 @@
 
 
 .nav-primary {
+    display: flex;
+    align-items: center;
     @include v(padding-top, medium);
     @include v(padding-bottom, medium);
     white-space: nowrap;
@@ -18,7 +20,6 @@
 
 .nav-primary-list {
     @include reset-font-size(li);
-    height: 3.75rem;
 
     li {
         display: inline-block;
@@ -40,8 +41,6 @@
     }
 
     a {
-        @include case(uppercase);
-        @include font-family(alpha);
         @include transition(color, padding-bottom, border-bottom-width, transform);
         @include will-change(color, padding-bottom, border-bottom-width, transform);
         @include v(color, dove);
@@ -52,7 +51,7 @@
         @include v(border-color, raven);
         margin-bottom: $border-width-default;
         margin-bottom: var(--border-width-default);
-        @include v(font-size, large);
+        @include v(font-weight, bold);
         @include v(line-height, small);
         text-decoration: none;
 

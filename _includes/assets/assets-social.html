@@ -16,7 +16,7 @@
     {% elsif page.page_class contains 'about' %}
         <meta property="twitter:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
     {% else %}
-        <meta property="twitter:image" content="{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}">
+        <meta property="twitter:image" content="{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
     <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
     {% if page.twitter == true %}
@@ -44,7 +44,7 @@
     {% if page.page_class contains 'about' %}
         <meta property="og:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
-    <meta property="og:image" content="{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:image" content="{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}">
     {% if page.layout == 'post' %}
         <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">
         {% if page.edit_date %}
@@ -78,7 +78,7 @@
             {% elsif page.page_class contains 'about' %}
                 "image": "{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}",
             {% else %}
-                "image": "{{ '/favicon-256.png' | prepend: site.baseurl | prepend: site.url }}",
+                "image": "{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}",
             {% endif %}
             "author": {
                 "@type": "Person",

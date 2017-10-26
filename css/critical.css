@@ -944,6 +944,12 @@ h6[id]:target,
 }
 
 .nav-primary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-top: 1.25rem;
     padding-top: var(--measure-medium);
     padding-bottom: 1.25rem;
@@ -964,7 +970,6 @@ h6[id]:target,
 
 .nav-primary-list {
     font-size: 0;
-    height: 3.75rem;
 }
 
 .nav-primary-list li {
@@ -996,10 +1001,6 @@ h6[id]:target,
 }
 
 .nav-primary-list a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: "League Gothic", Impact, sans-serif;
-    font-family: var(--font-family-alpha);
     -webkit-transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s;
@@ -1016,8 +1017,8 @@ h6[id]:target,
     border-color: var(--color-raven);
     margin-bottom: 0.25rem;
     margin-bottom: var(--border-width-default);
-    font-size: 1.25rem;
-    font-size: var(--font-size-large);
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     line-height: 1.25;
     line-height: var(--line-height-small);
     text-decoration: none;
