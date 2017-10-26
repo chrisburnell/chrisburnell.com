@@ -70,7 +70,8 @@ gulp.task('css-lint', () => {
 
 // Compile CSS from Sass
 gulp.task('css-main', ['css-lint'], () => {
-    return gulp.src(`${paths.css.src}/main.scss`)
+    return gulp.src([`${paths.css.src}/main.scss`,
+                     `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
         .pipe(newer(`${paths.css.dest}`))
         .pipe(sourcemaps.init())
