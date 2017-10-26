@@ -15,9 +15,9 @@ codepen: true
 ---
 
 
-On the web, we’re used to change. We embrace change. It’s part of what makes the web unique: an ever-evolving, ever-moving ecosystem of growing users.
+On the web, we’re used to change. We embrace change. It’s part of what makes the web unique: an ever-evolving, ever-moving ecosystem of growing users, each with their own ideas, challenges, and goals to bring to the web.
 
-Part of embracing change means, as builders of the web, we have to be light on our toes, ready to adapt and change to factors within and without our control. Some call it a dance, some think it a nightmare; regardless, it is one of the facts of the web that you can either accept or not.
+Part of embracing that change means, as builders for the web, we have to be light on our toes and ready to adapt to factors within and without our control. It’s how you prepare and react to the changes that really matters.
 
 
 {% include content/heading.html title='Hook, Line, & Sinker' %}
@@ -29,16 +29,16 @@ Part of embracing change means, as builders of the web, we have to be light on o
 
 If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, lazy-loading and infinite-scrolling are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
-In essence, rather than force the browser to download every asset required for a given page to 100% completion—which may be slow, or even costly, for some users—a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page, and as such will be downloaded immediately, as is normal. However, images may fall into the **non-critical** category. In the case of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within 100px of the viewport should it begin loading.</q>
+In the case of lazy-loading, rather than force the browser to download every asset required for a given page to **100% completion** (which may be slow, or even expensive for some users) a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page to function properly, and as such these assets will be downloaded immediately. However, presentational images fall into the **non-critical** category. In the case of these types of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within the viewport should it begin loading.</q>
 
-Similarly, an infinite-scrolling technique typically involves a long list of many items. When the user reaches the bottom of the list—that is to say that the bottom of the list is within the viewport—the next set of `n` items are loaded and placed at the bottom of the list. This gives the impression that the list is never-ending, as it is technically as limitless as the dataset being represented.
+Similarly, an infinite-scrolling technique typically involves a long list of many items—too many to display on the page at once (to keep the page weight low). When the user reaches the bottom of the list—that is to say that the bottom of the list is visible within the viewport—the next set of `n` items are loaded and placed in the DOM at the bottom of the list. This gives the user the impression that the list is never-ending, as it is technically as limitless as the dataset being represented.
 
-I won’t get into the details of the pros and cons of these techniques, but be aware that they come with their own set of UX considerations.
+But be aware that these techniques come with their own set of UX and/or performance considerations.
 
 
 {% include content/heading.html title='Let me take you on a trip down memory lane' %}
 
-Over the many years of employing lazy-loading, infinite-scrolling, and similar techniques on the web, we’ve come up with a couple of solutions.
+Over the many years of employing lazy-loading, infinite-scrolling, and similar techniques on the web, developers have come up with some clever solutions.
 
 At it’s simplest, we hook into the window’s `scroll` and `resize` events:
 
@@ -51,28 +51,36 @@ window.addEventListener('scroll', visibilityCheck);
 window.addEventListener('resize', visibilityCheck);
 {% endhighlight %}
 
-But we run a performance risk with this implementation. And in order to understand the risk, it’s important to also understand a bit about how your browser displays a webpage, and what your browser has to do when you scroll or resize a webpage. I’ll avoid going into labourious detail here, but the basic idea is quite simple: given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate){:rel="external"} of most devices today is **60Hz**—the display refreshes its screen 60 times per second—we can determine that we have a budget of approximately **16ms** to do what we need to do for each frame/display refresh.
+But we run a performance risk with this implementation. And in order to understand the risk, it’s important to also understand a bit about how your browser displays a webpage, and what your browser has to do when you scroll or resize a webpage.
+
+Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate){:rel="external"} of most devices today is **60Hz**—the display refreshes its screen 60 times per second—we can determine that we have a budget of approximately **16 milliseconds** to do what we need to do for each frame/display refresh.
 
 <blockquote>
     <p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
     <cite><a href="https://developers.google.com/web/fundamentals/performance/rendering/" rel="external">Google Web Fundamentals</a></cite>
 </blockquote>
 
-This portion of our performance budget is a critical one. It can mean the difference between a smooth website, a positive user experience, and a janky website, a negative user experience.
+This might seem like an impossible amount of time to do **anything** with, but for a computer, this isn’t so much of a stretch. That’s not to say that it’s **easy** for the browser, nor that the browser is even doing it in the most efficient manner, in the most efficient circumstances, so we should do what we can to offer the browser any help!
 
-Imagine that the <q>something</q> we need to do involves checking the visibility percentage of a handful of elements on the page. As each element becomes **at least 50% visible**, we want to perform an action that element.
+This short, **16ms** portion of our performance budget is a critical one. It can mean the difference between a smooth website, promoting a positive user experience, and a janky website, a wholly negative user experience.
 
-Let’s make our scenario even more forgiving and imagine that our users are all extremely loyal to our website (or maybe we control an unavoidable monopoly), so we have no fears of losing users. Our determining factor is simply whether or not the website runs smoothly.
+<aside><p>Check out some <a href="https://www.youtube.com/watch?v=Z4I15-7L0ss" title="It's A Bird (1930)" rel="external">old-school stop motion animation</a> to see what 24 frames per second looks like.</p></aside>
 
-In this instance, our users are used to the UI and the positioning of things. As they scroll quickly and confidently around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re gate-checking before their consequences are delivered to the user.
+If the <q>action</q> we need to perform involves checking the visibility of an element as we move around the page, we need to make sure that any <q>checks</q> we’re making happen in under **16ms**, or we’ll fail to build each <q>frame</q> of the 60 <abbr title="Frames Per Second">FPS</abbr> animation in time. Failing to do so results in frames being painted late or not being painted at all, and the delaying **or** removal of any frames will naturally result in a lower FPS. Too low and your users will start to notice.
+
+
+--------
+
+
+<img src="/images/content/stickperson.svg">
+
+As the user scrolls quickly around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re trying to gate-check and  before their consequences are delivered to the user.
 
 <aside><p>For every single pixel the user scrolls, we’re asking the browser to tell us the exact position of a handful of elements.</p></aside>
 
 Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun){:rel="external"}, these events will fire at a rate nearly, if not completely, imperceptible to the human eye. In order to get an idea of the volume of these events, browse to your favourite news site and scroll from the top of the page to the bottom. Try to count the height of the page in pixels. Bonus points (and bonus events) if you do this on a small screen!
 
-Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
-
-Of course, the browser is powered by your computer, which is used to making such quick calculations that, as humans, we’re just not capable of doing even remotely as quickly, but that’s not to say that this job is easy for the browser! Or even that our browsers are doing this in the most efficient way (yet)!
+Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around the screen, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
 
 
 {% include content/heading.html title='How did we solve that?' %}
