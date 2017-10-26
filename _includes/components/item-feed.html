@@ -5,7 +5,7 @@
 {% endcomment %}
 <item>
     {% if page.categories contains 'note' %}
-        <title>{{ page.date | date: '%A, %d %B, %Y' }}</title>
+        <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}

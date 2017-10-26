@@ -17,7 +17,7 @@
         <h1 class="title" id="article" role="heading">
             <span class="p-name" itemprop="name">
                 {% if page.categories contains 'note' %}
-                    {{ page.date | date: '%A, %d %B, %Y' }}
+                    {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title }}
                 {% endif %}
