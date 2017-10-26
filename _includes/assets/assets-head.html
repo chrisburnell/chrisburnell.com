@@ -5,8 +5,8 @@
 <script>{% include generated/loadcss.html %}</script>
 
 <!-- Serve the main styles straight up if you haven't got JavaScript -->
-<link rel="preload" as="style" href="/css/non-critical.min.css" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
+<link rel="preload" as="style" href="/css/main.min.css?version={{ site.time | date: '%F_%H%M' }}" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/main.min.css?version={{ site.time | date: '%F_%H%M' }}"></noscript>
 
 <!-- Preload some assets -->
 <link rel="preload" as="script" href="/js/main.min.js">

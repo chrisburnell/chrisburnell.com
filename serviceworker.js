@@ -46,7 +46,7 @@ const OFFLINE_PAGES = [
 
 // Files that *must* be cached
 const CRITICAL_CACHE = [
-    '/css/non-critical.min.css',
+    '/css/main.min.css',
     '/js/main.min.js',
     '/search.json',
     '/offline/'
