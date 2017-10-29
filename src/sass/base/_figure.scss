@@ -19,7 +19,13 @@ figure {
         overflow-y: hidden;
     }
 
-    & %image-elements,
+    %image-elements,
+    %media-elements {
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    %image-elements,
     & > a,
     & > a %image-elements {
         @include border-radius;
