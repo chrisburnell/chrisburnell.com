@@ -1083,6 +1083,21 @@ figure:not(.highlight) {
 figure img, figure
 picture, figure
 svg,
+figure audio,
+figure
+embed,
+figure
+iframe,
+figure
+object,
+figure
+video {
+    max-height: 100vh;
+}
+
+figure img, figure
+picture, figure
+svg,
 figure > a,
 figure > a img,
 figure > a
