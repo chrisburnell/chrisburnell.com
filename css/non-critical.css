@@ -864,6 +864,43 @@ pre.codepen {
     color: #2aa198;
 }
 
+form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+}
+
+form:not([class]) input[type="checkbox"], form:not([class])
+input[type="date"], form:not([class])
+input[type="datetime"], form:not([class])
+input[type="datetime-local"], form:not([class])
+input[type="email"], form:not([class])
+input[type="file"], form:not([class])
+input[type="month"], form:not([class])
+input[type="number"], form:not([class])
+input[type="password"], form:not([class])
+input[type="range"], form:not([class])
+input[type="search"], form:not([class])
+input[type="tel"], form:not([class])
+input[type="text"], form:not([class])
+input[type="time"], form:not([class])
+input[type="week"], form:not([class])
+input[type="url"], form:not([class])
+optgroup, form:not([class])
+select, form:not([class])
+textarea {
+    margin-bottom: 1.25rem;
+    margin-bottom: var(--measure-medium);
+}
+
 input[type="checkbox"],
 input[type="date"],
 input[type="datetime"],
@@ -1032,43 +1069,6 @@ input[type="checkbox"]:checked + label::after {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-}
-
-form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    position: relative;
-}
-
-form:not([class]) input[type="checkbox"], form:not([class])
-input[type="date"], form:not([class])
-input[type="datetime"], form:not([class])
-input[type="datetime-local"], form:not([class])
-input[type="email"], form:not([class])
-input[type="file"], form:not([class])
-input[type="month"], form:not([class])
-input[type="number"], form:not([class])
-input[type="password"], form:not([class])
-input[type="range"], form:not([class])
-input[type="search"], form:not([class])
-input[type="tel"], form:not([class])
-input[type="text"], form:not([class])
-input[type="time"], form:not([class])
-input[type="week"], form:not([class])
-input[type="url"], form:not([class])
-optgroup, form:not([class])
-select, form:not([class])
-textarea {
-    margin-bottom: 1.25rem;
-    margin-bottom: var(--measure-medium);
 }
 
 table {
@@ -2228,9 +2228,10 @@ footer div {
 }
 
 .webmentions__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 @media (max-width: 500px) {

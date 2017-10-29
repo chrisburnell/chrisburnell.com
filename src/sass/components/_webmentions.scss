@@ -15,7 +15,7 @@
 }
 
 .webmentions__form {
-    display: flex;
+    flex-direction: row;
 
     @include media("<=small") {
         flex-wrap: wrap;

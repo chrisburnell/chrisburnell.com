@@ -5,6 +5,19 @@
 ////
 
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    &:not([class]) {
+        %form-elements {
+            @include v(margin-bottom, medium);
+        }
+    }
+}
+
 input[type="checkbox"],
 input[type="date"],
 input[type="datetime"],
@@ -138,19 +151,6 @@ input[type="checkbox"] {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-    }
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-
-    &:not([class]) {
-        %form-elements {
-            @include v(margin-bottom, medium);
         }
     }
 }
