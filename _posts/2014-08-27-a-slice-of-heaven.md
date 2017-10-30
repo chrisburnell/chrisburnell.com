@@ -21,8 +21,6 @@ shorturl: ynt2q
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/504642274148765696
-
-redirect_from: /articles/a-slice-of-heaven
 ---
 
 

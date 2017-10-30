@@ -18,8 +18,6 @@ shorturl: xoskc
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/373096041509568512
-
-redirect_from: /articles/viewport-woes
 ---
 
 

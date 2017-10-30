@@ -22,8 +22,6 @@ shorturl: 82n3v
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/395115858814840833
-
-redirect_from: /articles/ill-scratch-your-back
 ---
 
 

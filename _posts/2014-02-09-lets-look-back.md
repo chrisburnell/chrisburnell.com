@@ -20,8 +20,6 @@ shorturl: dxaon
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/432475967098224640
-
-redirect_from: /articles/lets-look-back
 ---
 
 

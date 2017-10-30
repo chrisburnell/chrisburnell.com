@@ -20,8 +20,6 @@ twitter: true
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/576014944627490816
-
-redirect_from: /articles/theming-pinboard
 ---
 
 

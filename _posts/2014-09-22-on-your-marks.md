@@ -21,8 +21,6 @@ shorturl: sfn8k
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/514049979347107840
-
-redirect_from: /articles/on-your-marks
 ---
 
 
