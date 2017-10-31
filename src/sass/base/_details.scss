@@ -22,7 +22,7 @@ summary {
     @include non-selectable;
     @include transition(transform);
     display: list-item;
-    outline: 0;
+    outline-width: 0;
     @include v(font-weight, bold);
     cursor: pointer;
 

@@ -378,6 +378,17 @@
 
 
 ///
+/// Tabular Lining Numerals
+///
+/// @author Chris Burnell
+///
+@mixin tabular-lining-numerals() {
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum", "tnum";
+}
+
+
+///
 /// Generate transitions based on flexible input parameters.
 /// Pass zero or more properties and zero to two further parameters.
 /// If passing two or more properties, quotation marks must be used.

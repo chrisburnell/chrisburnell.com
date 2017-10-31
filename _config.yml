@@ -67,14 +67,12 @@ defaults:
       layout: 'page'
   -
     scope:
-      path: ''
-      type: 'drafts'
+      path: '_drafts'
     values:
-      layout: 'post'
+      layout: 'draft'
   -
     scope:
-      path: ''
-      type: 'posts'
+      path: '_posts'
     values:
       layout: 'post'
       comments: true

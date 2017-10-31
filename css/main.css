@@ -842,10 +842,10 @@ ol.default-list > li {
 
 ol:not([class]) > li::before,
 ol.default-list > li::before {
+    font-variant-numeric: lining-nums tabular-nums;
+    -webkit-font-feature-settings: "lnum", "tnum";
+            font-feature-settings: "lnum", "tnum";
     content: counter(ordered-list, decimal) ".";
-    font-variant-numeric: tabular-nums;
-    -webkit-font-feature-settings: "tnum";
-            font-feature-settings: "tnum";
 }
 
 ol:not([class])[reversed],
@@ -1648,7 +1648,7 @@ textarea {
     border-style: solid;
     border-color: #dddddd;
     border-color: var(--color-alto);
-    outline-style: none;
+    outline-width: 0;
 }
 
 input:hover,
@@ -1781,18 +1781,15 @@ input[type="checkbox"]:checked + label::after {
 }
 
 table {
-    min-width: 100%;
+    font-variant-numeric: lining-nums tabular-nums;
+    -webkit-font-feature-settings: "lnum", "tnum";
+            font-feature-settings: "lnum", "tnum";
     -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    border-width: 0.125rem;
-    border-width: var(--border-width-thin);
-    border-style: solid;
-    border-style: var(--border-style-default);
-    border-color: #dddddd;
-    border-color: var(--color-alto);
+    border-width: 0;
     border-collapse: collapse;
     overflow-x: auto;
     overflow-y: hidden;
@@ -1801,92 +1798,26 @@ table {
 table.zebra tbody tr:nth-child(even) td {
     background-color: rgba(6, 6, 6, 0.05);
     background-color: var(--color-black--delta);
-    border-left-color: #dddddd;
-    border-left-color: var(--color-alto);
 }
 
 th,
 td {
-    -webkit-transition: background-color 0.2s ease 0s, border-left-color 0.2s ease 0s;
-    transition: background-color 0.2s ease 0s, border-left-color 0.2s ease 0s;
-    will-change: background-color, border-left-color;
+    -webkit-transition: background-color 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s;
+    will-change: background-color;
     padding: 0.625rem;
     padding: var(--measure-small);
     text-align: left;
+    vertical-align: top;
     -webkit-user-select: text;
        -moz-user-select: text;
         -ms-user-select: text;
             user-select: text;
 }
 
-/*table*/
-.highlight tbody tr:hover td,
-.highlight--row tbody tr:hover td {
-    border-left-color: #dddddd;
-    border-left-color: var(--color-alto);
-}
-
-.highlight tbody tr:hover td,
-.highlight tbody tr:hover + tr td,
-.highlight--row tbody tr:hover td,
-.highlight--row tbody tr:hover + tr td {
-    border-top-color: #dddddd;
-    border-top-color: var(--color-alto);
-}
-
-.highlight tbody tr:hover th,
-.highlight tbody tr:hover td:not(:hover),
-.highlight--row tbody tr:hover th,
-.highlight--row tbody tr:hover td:not(:hover) {
-    background-color: rgba(95, 138, 166, 0.1) !important;
-    background-color: var(--color-raven--gamma) !important;
-}
-
-/*table*/
-.highlight thead th:not(:empty),
-.highlight td,
-.highlight tfoot th:not(:empty),
-.highlight--columns thead th:not(:empty),
-.highlight--columns td,
-.highlight--columns tfoot th:not(:empty) {
-    position: relative;
-}
-
-.highlight thead th:not(:empty)::after,
-.highlight td::after,
-.highlight tfoot th:not(:empty)::after,
-.highlight--columns thead th:not(:empty)::after,
-.highlight--columns td::after,
-.highlight--columns tfoot th:not(:empty)::after {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    -webkit-transition: opacity 0.2s ease 0s;
-    transition: opacity 0.2s ease 0s;
-    content: "";
-    opacity: 0;
-    background-color: rgba(95, 138, 166, 0.1);
-    background-color: var(--color-raven--gamma);
-    width: 100%;
-    height: 200vw;
-    pointer-events: none;
-    z-index: 2;
-    z-index: var(--z-index-above);
-}
-
-.highlight thead th:not(:empty):hover::after,
-.highlight td:hover::after,
-.highlight tfoot th:not(:empty):hover::after,
-.highlight--columns thead th:not(:empty):hover::after,
-.highlight--columns td:hover::after,
-.highlight--columns tfoot th:not(:empty):hover::after {
-    opacity: 1;
-}
-
-th {
-    /*tfoot*/
+th.numeral,
+td.numeral {
+    text-align: right;
 }
 
 th:not(:empty) {
@@ -1901,72 +1832,10 @@ tfoot th {
     white-space: nowrap;
 }
 
-tfoot th {
-    border-top-width: 0.125rem;
-    border-top-width: var(--border-width-thin);
-    border-top-style: solid;
-    border-top-style: var(--border-style-default);
-    border-top-color: #dddddd;
-    border-top-color: var(--color-alto);
-}
-
-@media screen and (min-width: 801px) {
-    .totals th {
-        text-align: right;
-    }
-}
-
-.totals th::before {
-    content: "Total:";
-    padding-right: 0.5em;
-    font-style: italic;
-}
-
-@media screen and (min-width: 501px) {
-    .totals th::before {
-        float: left;
-    }
-}
-
 tbody th {
     font-style: italic;
     font-weight: 400;
     font-weight: var(--font-weight-default);
-}
-
-th + th {
-    border-left-width: 0.125rem;
-    border-left-width: var(--border-width-thin);
-    border-left-style: solid;
-    border-left-style: var(--border-style-default);
-    border-left-color: #dddddd;
-    border-left-color: var(--color-alto);
-}
-
-tbody th,
-td {
-    border-top-width: 0.125rem;
-    border-top-width: var(--border-width-thin);
-    border-top-style: solid;
-    border-top-style: var(--border-style-default);
-    border-top-color: #dddddd;
-    border-top-color: var(--color-alto);
-}
-
-tbody th + td,
-td + td {
-    border-left-width: 0.125rem;
-    border-left-width: var(--border-width-thin);
-    border-left-style: solid;
-    border-left-style: var(--border-style-default);
-    border-left-color: #dddddd;
-    border-left-color: var(--color-alto);
-}
-
-tbody th,
-tbody tr:first-child td {
-    border-top-color: #dddddd;
-    border-top-color: var(--color-alto);
 }
 
 tbody th {
@@ -1975,68 +1844,6 @@ tbody th {
     padding-right: var(--measure-medium);
     text-align: right;
     white-space: nowrap;
-}
-
-tbody th + td {
-    border-left-color: #dddddd;
-    border-left-color: var(--color-alto);
-}
-
-thead th:first-of-type:empty,
-tbody:first-child tr:first-of-type td:first-of-type:empty,
-thead th:last-of-type:empty,
-tbody:first-child tr:first-of-type td:last-of-type:empty,
-tfoot th:first-of-type:empty,
-tbody:last-child tr:last-of-type td:first-of-type:empty,
-tfoot th:last-of-type:empty,
-tbody:last-child tr:last-of-type td:last-of-type:empty {
-    position: relative;
-}
-
-thead th:first-of-type:empty::before,
-tbody:first-child tr:first-of-type td:first-of-type:empty::before,
-thead th:last-of-type:empty::before,
-tbody:first-child tr:first-of-type td:last-of-type:empty::before,
-tfoot th:first-of-type:empty::before,
-tbody:last-child tr:last-of-type td:first-of-type:empty::before,
-tfoot th:last-of-type:empty::before,
-tbody:last-child tr:last-of-type td:last-of-type:empty::before {
-    content: "";
-    background-color: #f9f9f9;
-    background-color: var(--color-white);
-    position: absolute;
-}
-
-thead th:first-of-type:empty::before,
-tbody:first-child tr:first-of-type td:first-of-type:empty::before {
-    top: -0.25rem;
-    right: 0;
-    bottom: 0;
-    left: -0.25rem;
-}
-
-thead th:last-of-type:empty::before,
-tbody:first-child tr:first-of-type td:last-of-type:empty::before {
-    top: -0.25rem;
-    right: -0.25rem;
-    bottom: 0;
-    left: 0;
-}
-
-tfoot th:first-of-type:empty::before,
-tbody:last-child tr:last-of-type td:first-of-type:empty::before {
-    top: 0;
-    right: 0;
-    bottom: -0.25rem;
-    left: -0.25rem;
-}
-
-tfoot th:last-of-type:empty::before,
-tbody:last-child tr:last-of-type td:last-of-type:empty::before {
-    top: 0;
-    right: -0.25rem;
-    bottom: -0.25rem;
-    left: 0;
 }
 
 details {
@@ -2077,7 +1884,7 @@ summary {
     transition: transform 0.2s ease 0s;
     transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     display: list-item;
-    outline: 0;
+    outline-width: 0;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
     cursor: pointer;
@@ -4050,14 +3857,14 @@ video {
 }
 
 .palette-list li {
+    font-variant-numeric: lining-nums tabular-nums;
+    -webkit-font-feature-settings: "lnum", "tnum";
+            font-feature-settings: "lnum", "tnum";
     padding: 1.25rem 0;
     padding: var(--measure-medium) 0;
     vertical-align: middle;
     font-size: 0.875rem;
     font-size: var(--font-size-small);
-    font-variant-numeric: tabular-nums;
-    -webkit-font-feature-settings: "tnum";
-            font-feature-settings: "tnum";
     text-align: center;
     white-space: nowrap;
 }

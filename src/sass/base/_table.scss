@@ -5,12 +5,10 @@
 
 
 table {
-    min-width: 100%;
+    @include tabular-lining-numerals;
     flex: 1 0 auto;
     align-self: flex-start;
-    @include v(border-width, thin);
-    @include v(border-style, default);
-    @include v(border-color, alto);
+    border-width: 0;
     border-collapse: collapse;
     overflow-x: auto;
     overflow-y: hidden;
@@ -18,65 +16,26 @@ table {
     &.zebra {
         tbody tr:nth-child(even) td {
             @include v(background-color, black--delta);
-            @include v(border-left-color, alto);
         }
     }
 }
+
+// Cells
 th,
 td {
-    @include transition(background-color, border-left-color);
-    @include will-change(background-color, border-left-color);
+    @include transition(background-color);
+    @include will-change(background-color);
     @include v(padding, small);
     text-align: left;
+    vertical-align: top;
     user-select: text;
-}
-// Row Highlighting
-/*table*/.highlight,
-/*table*/.highlight--row {
-    tbody tr:hover {
-        td {
-            @include v(border-left-color, alto);
-        }
 
-        td,
-        & + tr td {
-            @include v(border-top-color, alto);
-        }
-
-        th,
-        td:not(:hover) {
-            @include v(background-color, raven--gamma, true);
-        }
+    &.numeral {
+        text-align: right;
     }
 }
-// Column Highlighting
-/*table*/.highlight thead th:not(:empty),
-/*table*/.highlight td,
-/*table*/.highlight tfoot th:not(:empty),
-/*table*/.highlight--columns thead th:not(:empty),
-/*table*/.highlight--columns td,
-/*table*/.highlight--columns tfoot th:not(:empty) {
-    position: relative;
 
-    &::after {
-        @include absolute(left);
-        @include transition(opacity);
-        content: "";
-        opacity: 0;
-        @include v(background-color, raven--gamma);
-        width: 100%;
-        height: 200vw;
-        pointer-events: none;
-        @include v(z-index, above);
-    }
-
-    &:hover {
-        &::after {
-            opacity: 1;
-        }
-    }
-}
-// Head and Foot Cells
+// Heading Cells
 th {
     &:not(:empty) {
         @include v(background-color, black--delta);
@@ -88,117 +47,16 @@ th {
         white-space: nowrap;
     }
 
-    tfoot & {
-        @include v(border-top-width, thin);
-        @include v(border-top-style, default);
-        @include v(border-top-color, alto);
-    }
-    /*tfoot*/.totals & {
-        @include media("screen", ">medium") {
-            text-align: right;
-        }
-
-        &::before {
-            content: "Total:";
-            padding-right: 0.5em;
-            font-style: italic;
-
-            @include media("screen", ">small") {
-                float: left;
-            }
-        }
-    }
-
     tbody & {
         font-style: italic;
         @include v(font-weight, default);
     }
+}
 
-    & + th {
-        @include v(border-left-width, thin);
-        @include v(border-left-style, default);
-        @include v(border-left-color, alto);
-    }
-}
-// Body Cells
-tbody th,
-td {
-    @include v(border-top-width, thin);
-    @include v(border-top-style, default);
-    @include v(border-top-color, alto);
-
-    & + td {
-        @include v(border-left-width, thin);
-        @include v(border-left-style, default);
-        @include v(border-left-color, alto);
-    }
-}
-tbody th,
-tbody tr:first-child td {
-    @include v(border-top-color, alto);
-}
+// Body Heading Cells
 tbody th {
     width: 1px;
     @include v(padding-right, medium);
     text-align: right;
     white-space: nowrap;
-
-    & + td {
-        @include v(border-left-color, alto);
-    }
-}
-// Empty Corners
-thead th:first-of-type,
-tbody:first-child tr:first-of-type td:first-of-type,
-thead th:last-of-type,
-tbody:first-child tr:first-of-type td:last-of-type,
-tfoot th:first-of-type,
-tbody:last-child tr:last-of-type td:first-of-type,
-tfoot th:last-of-type,
-tbody:last-child tr:last-of-type td:last-of-type {
-    &:empty {
-        position: relative;
-    }
-
-    &:empty::before {
-        content: "";
-        @include v(background-color, white);
-        position: absolute;
-    }
-}
-thead th:first-of-type,
-tbody:first-child tr:first-of-type td:first-of-type {
-    &:empty::before {
-        top: -($border-width-default);
-        right: 0;
-        bottom: 0;
-        left: -($border-width-default);
-    }
-}
-thead th:last-of-type,
-tbody:first-child tr:first-of-type td:last-of-type {
-    &:empty::before {
-        top: -($border-width-default);
-        right: -($border-width-default);
-        bottom: 0;
-        left: 0;
-    }
-}
-tfoot th:first-of-type,
-tbody:last-child tr:last-of-type td:first-of-type {
-    &:empty::before {
-        top: 0;
-        right: 0;
-        bottom: -($border-width-default);
-        left: -($border-width-default);
-    }
-}
-tfoot th:last-of-type,
-tbody:last-child tr:last-of-type td:last-of-type {
-    &:empty::before {
-        top: 0;
-        right: -($border-width-default);
-        bottom: -($border-width-default);
-        left: 0;
-    }
 }

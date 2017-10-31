@@ -47,9 +47,8 @@ ol.default-list {
         counter-increment: ordered-list;
 
         &::before {
+            @include tabular-lining-numerals;
             content: counter(ordered-list, decimal) ".";
-            font-variant-numeric: tabular-nums;
-            font-feature-settings: "tnum";
         }
     }
 

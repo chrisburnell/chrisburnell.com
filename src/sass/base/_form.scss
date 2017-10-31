@@ -52,7 +52,7 @@ textarea {
     border-width: $border-width-thin;
     border-style: $border-style-default;
     @include v(border-color, alto);
-    outline-style: none;
+    outline-width: 0;
 
     &:hover {
         @include v(border-color, coyote);

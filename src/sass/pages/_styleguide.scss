@@ -21,12 +21,11 @@
     }
 
     li {
+        @include tabular-lining-numerals;
         padding: $measure-medium 0;
         padding: var(--measure-medium) 0;
         vertical-align: middle;
         @include v(font-size, small);
-        font-variant-numeric: tabular-nums;
-        font-feature-settings: "tnum";
         text-align: center;
         white-space: nowrap;
 

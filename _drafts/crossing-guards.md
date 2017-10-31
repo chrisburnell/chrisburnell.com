@@ -1,5 +1,4 @@
 ---
-layout: draft
 categories: article
 
 date: 2017-10-12 12:00:00
