@@ -18,6 +18,9 @@ banner_mobile:
 
 codepen: true
 shorturl: 2p4f3
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/926496715213033472
 ---
 
 
