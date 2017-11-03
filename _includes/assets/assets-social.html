@@ -9,15 +9,7 @@
     <meta name="twitter:creator" content="{{ site.author.twitter }}">
     <meta name="twitter:title" content="{{ meta_title }}">
     <meta name="twitter:description" content="{{ meta_lede }}">
-    {% if page.banner %}
-        <meta property="twitter:image" content="{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
-    {% elsif page.banner_mobile %}
-        <meta property="twitter:image" content="{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
-    {% elsif page.page_class contains 'about' %}
-        <meta property="twitter:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
-    {% else %}
-        <meta property="twitter:image" content="{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
+    <meta name="twitter:image" content="{{ meta_image }}">
     <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
     {% if page.twitter == true %}
         <meta name="twitter:widgets:theme" content="light">
@@ -36,15 +28,7 @@
     <meta property="og:description" content="{{ meta_lede }}">
     <meta property="og:locale" content="{{ site.language }}">
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-    {% if page.banner %}
-        <meta property="og:image" content="{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
-    {% elsif page.banner_mobile %}
-        <meta property="og:image" content="{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
-    {% if page.page_class contains 'about' %}
-        <meta property="og:image" content="{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
-    <meta property="og:image" content="{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:image" content="{{ meta_image }}">
     {% if page.layout == 'post' %}
         <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">
         {% if page.edit_date %}
@@ -71,15 +55,7 @@
             "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
             "headline": "{{ meta_title }}",
             "description": "{{ meta_lede }}",
-            {% if page.banner %}
-                "image": "{{ page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}",
-            {% elsif page.banner_mobile %}
-                "image": "{{ page.banner_mobile | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url }}",
-            {% elsif page.page_class contains 'about' %}
-                "image": "{{ '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url }}",
-            {% else %}
-                "image": "{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}",
-            {% endif %}
+            "image": "{{ meta_image }}",
             "author": {
                 "@type": "Person",
                 "name": "{{ site.author.name }}"
