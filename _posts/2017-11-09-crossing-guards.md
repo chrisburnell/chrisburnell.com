@@ -12,6 +12,9 @@ tags:
 caniuse: true
 codepen: true
 shorturl: 84ykc
+
+syndication:
+- https://twitter.com/iamchrisburnell/status/928671414017773568
 ---
 
 
