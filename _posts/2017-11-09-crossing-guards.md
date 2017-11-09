@@ -1,7 +1,7 @@
 ---
 categories: article
 
-date: 2017-10-12 12:00:00
+date: 2017-11-09 17:00:00
 
 title: Crossing Guards
 lede: Throttle back on your scroll events and watch out for the IntersectionObserver!
@@ -11,7 +11,14 @@ tags:
 
 caniuse: true
 codepen: true
+shorturl: 84ykc
 ---
+
+
+Web Developers are excited about the future. Just as we recently saw a feature explosion in *JavaScript* (for good and for worse), we’re preparing for and beginning a feature explosion in *CSS* as well. People seem to be [twice](https://blog.twitter.com/official/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself.html){:rel="external"} as excited about CSS Grid, CSS Variables, Element Queries, etc. as last year! So while I prepare myself for that tidal wave, I thought I’d take a step outside of my comfort zone to learn about and share some cool *JavaScript* coming into stability today.
+
+
+--------
 
 
 On the web, we’re used to change. We embrace change. It’s part of what makes the web unique: an ever-evolving, ever-moving ecosystem of growing users, each with their own ideas, challenges, and goals to bring to the web.
@@ -26,9 +33,9 @@ Part of embracing that change means, as builders for the web, we have to be ligh
     <cite><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
 </blockquote>
 
-If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, lazy-loading and infinite-scrolling are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
+If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
-In the case of lazy-loading, rather than force the browser to download every asset required for a given page to **100% completion** (which may be slow, or even expensive for some users) a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page to function properly, and as such these assets will be downloaded immediately. However, presentational images fall into the **non-critical** category. In the case of these types of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within the viewport should it begin loading.</q>
+In the case of *lazy-loading*, rather than force the browser to download every asset required for a given page to **100% completion** (which may be slow, or even expensive for some users) a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page to function properly, and as such these assets will be downloaded immediately. However, presentational images fall into the **non-critical** category. In the case of these types of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within the viewport should it begin loading.</q>
 
 Similarly, an infinite-scrolling technique typically involves a long list of many items—too many to display on the page at once (to keep the page weight low). When the user reaches the bottom of the list—that is to say that the bottom of the list is visible within the viewport—the next set of `n` items are loaded and placed in the DOM at the bottom of the list. This gives the user the impression that the list is never-ending, as it is technically as limitless as the dataset being represented.
 
@@ -37,7 +44,7 @@ But be aware that these techniques come with their own set of UX and/or performa
 
 {% include content/heading.html title='Let me take you on a trip down memory lane' %}
 
-Over the many years of employing lazy-loading, infinite-scrolling, and similar techniques on the web, developers have come up with some clever solutions.
+Over the many years of employing *lazy-loading*, *infinite-scrolling*, and similar techniques on the web, developers have come up with some clever solutions.
 
 At it’s simplest, we hook into the window’s `scroll` and `resize` events:
 
@@ -70,8 +77,6 @@ If the <q>action</q> we need to perform involves checking the visibility of an e
 
 --------
 
-
-<img src="/images/content/stickperson.svg">
 
 As the user scrolls quickly around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re trying to gate-check and  before their consequences are delivered to the user.
 
@@ -135,25 +140,42 @@ And even then, we’re making a pretty broad assumption about the refresh rates 
 
 It seems the ideal solution would remove the guesswork in finding the best <q>middle-ground</q> delay and the assumptions we have to make about refresh rates.
 
-[IntersectionObserver Specification](https://github.com/w3c/IntersectionObserver){:rel="external"}
 
-[IntersectionObserver Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill){:rel="external"}
+{% include content/heading.html title='Prevalence of Garbage' %}
 
-{% include content/caniuse.html feature='intersectionobserver' %}
+All of the techniques we’ve covered so far take an approach that, instead of reacting to each individual change as they happen, make proactive, repeated checks and set up reminders (in the form of `setInterval` or `setTimeout`) for the browser to do something with any changes that are found.
 
-[ResizeObserver Specfication](https://wicg.github.io/ResizeObserver){:rel="external"}
+Imagine if answering phone calls involved picking up and putting down your phone, constantly, over-and-over, all day, in the hope that eventually someone will be on the other end to talk to you.
 
-{% include content/caniuse.html feature='resizeobserver' %}
+**Not ideal.**
 
-[Mutation Observer Specfication](https://dom.spec.whatwg.org/#mutation-observers){:rel="external"}
+Might as well leave your oven on all day and all night, all year, because *eventually* you’ll bake bread, and you *might even* bake bread more than once that year.
 
-{% include content/caniuse.html feature='mutationobserver' %}
+**What a waste.**
+
+This is like running back-and-forth across a crosswalk, with a stop sign in hand, hoping that eventually, one of the times that you cross, you’ll find some use by helping someone across road.
+
+{% include content/codepen.html slug='GOrvrJ' theme='tabfree' %}
+
+When we use these `setInterval` / `setTimeout` techniques, this is the kind of functionality we’re creating. We’re not coupling our *observation* and *action* steps in a simple way, and we’re creating arbitrary benchmarks based on our best guesses as developers. What we fail to account for is the unbelievably broad spectrum of devices we might be serving. And it is rightfully so that we should fail to account for this broad spectrum, as any guesses and benchmarks we make sit within a context and hold a bias that the browser/computer would not.
+
+How often should the Crossing Guard cross the road?
+
+Is it better to go back-and-forth often, taking only one person per crossing? Or is it better to delay before each back-and-forth in order to potentially take more than one person per crossing?
+
+We have no way of guaranteeing an accurate <q>fits all</q> guess.
 
 
-An important caveat to note before diving too deep, at least at the time of writing, is that *IntersectionObserver* does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements){:rel="external"}; rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element){:rel="external"}-type parameter. While this will make some implementations more verbose, adding HTML solely for the purpose of supporting *IntersectionObserver* functionality, the mental overhead and performance tradeoffs that can be made by utilising *IntersectionObserver* are unquestionably beneficial.
+{% include content/heading.html title='What comes next?' %}
 
+Instead of doing so ourselves, let’s instead delegate these <del>guesses</del> decisions to each individual user’s browser and device. Instead of the Crossing Guard running across the road constantly, they should wait until someone needs to cross, and then do so.
+
+{% include content/codepen.html slug='rYjpVJ' theme='tabfree' %}
+
+When we use this *IntersectionObserver* technique, we cease relying on arbitrary benchmarks, and we let the browser do the lifting that we had to burden ourselves with before. Rather than the Crossing Guard repeatedly crossing and hoping to be useful eventually, the Crossing Guard instead waits for any pedestrians before crossing with them.
 
 {% highlight javascript %}
+let target = document.querySelector('.target');
 let observer = new IntersectionObserver(callback);
 
 let callback = function(entries, observer) {
@@ -168,6 +190,31 @@ let callback = function(entries, observer) {
     });
 };
 
-let target = document.querySelector('.target');
 observer.observe(target);
 {% endhighlight %}
+
+On top of the performance benefits and relief of mental overhead you’ll gain from this technique, there are also a number of useful properties made available to you, the most useful of which I find to be `entry.intersectionRatio` and `entry.target`. These properties could very likely simplify your existing code, and could even offset the added verbosity you might incur from using *IntersectionObserver* over a previous technique.
+
+Other benefits you’ll reap from *IntersectionObserver* include:
+
+- clean, easily-repeated syntax to create new instances of an *IntersectionObserver*
+- simple to begin and stop observing an Element at any point
+- ability to observe multiple Elements in different, siloed ways
+- simple to define what <q>observed</q> means: visible *at all*, *just* visible, *50%* visible, *100%* visible, etc.
+
+Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill){:rel="external"} or not.
+
+{% include content/caniuse.html feature='intersectionobserver' %}
+
+An important caveat to note before diving too deep, at least at the time of writing, is that [*IntersectionObserver*](https://github.com/w3c/IntersectionObserver){:rel="external"} does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements){:rel="external"}; rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element){:rel="external"}-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
+
+
+{% include content/heading.html title='In Conclusion' %}
+
+{% include content/codepen.html slug='JryQoM' %}
+
+*IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [*ResizeObserver*](https://wicg.github.io/ResizeObserver){:rel="external"} and [*Mutation Observer*](https://dom.spec.whatwg.org/#mutation-observers){:rel="external"}:
+
+Let the developer figure out *what* to do. Let the browser figure out *how* to do it.
+
+The future is looking bright for both *JavaScript* and *CSS*. If we remember to stay light on our toes and ready to adapt, adopting and embracing new technologies will pave the way for more exciting development and a more performant, accessible, and open World Wide Web.
