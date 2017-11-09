@@ -62,7 +62,7 @@
         let request = new XMLHttpRequest();
         request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
         request.onload = function() {
-            if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+            if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
