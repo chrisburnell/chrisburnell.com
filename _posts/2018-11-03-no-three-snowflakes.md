@@ -126,7 +126,7 @@ As with the previous version of the function, it can accept the required dataset
 </figure>
 
 <figure>
-    <p>So, from a dataset of size <var>4</var>, we can expect <var>4</var> unique groups of size <var>3</var>:</p>
+    <p>So, from a dataset of size <var>4</var>, if we want a group size of <var>3</var>, we can expect <var>4</var> unique groups:</p>
     <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;<var>3</var> = <var>4</var></samp>
 </figure>
 

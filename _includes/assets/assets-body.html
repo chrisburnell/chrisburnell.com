@@ -1,8 +1,8 @@
 <!-- Load in the main styles -->
-<script>loadCSS('/css/main.min.css?version={{ site.time | date: '%F_%H%M' }}');</script>
+<script type="text/javascript">loadCSS('/css/main.min.css?version={{ site.time | date: '%F_%H%M' }}');</script>
 
 <!-- ServiceWorker -->
-<script>
+<script type="text/javascript">
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
@@ -13,24 +13,24 @@
 </script>
 
 <!-- Main Scripts -->
-<script src="/js/main.min.js?version={{ site.time | date: '%F_%H%M'}}" defer></script>
+<script type="text/javascript" src="/js/main.min.js?version={{ site.time | date: '%F_%H%M'}}" defer></script>
 
 {% if page.caniuse %}
     <!-- Can I Use Embeds -->
-    <script src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js" defer></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js" defer></script>
 {% endif %}
 
 {% if page.codepen == true or page.codepen_slug %}
     <!-- CodePen Embeds -->
-    <script src="//codepen.io/assets/embed/ei.js" defer></script>
+    <script type="text/javascript" src="//codepen.io/assets/embed/ei.js" defer></script>
 {% endif %}
 
 {% if page.speakerdeck == true or page.speakerdeck_slug %}
     <!-- Speaker Deck Embeds -->
-    <script src="//speakerdeck.com/assets/embed.js" async defer></script>
+    <script type="text/javascript" src="//speakerdeck.com/assets/embed.js" async defer></script>
 {% endif %}
 
 {% if page.twitter == true %}
     <!-- Twitter Cards -->
-    <script src="//platform.twitter.com/widgets.js" async defer></script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
