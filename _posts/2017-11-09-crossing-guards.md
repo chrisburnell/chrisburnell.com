@@ -9,6 +9,13 @@ tags:
 - javascript
 - tutorials
 
+banner:
+- crossing-guards@2x.png
+- crossing-guards.png
+banner_mobile:
+- crossing-guards_mobile@2x.png
+- crossing-guards_mobile.png
+
 caniuse: true
 codepen: true
 shorturl: 84ykc
