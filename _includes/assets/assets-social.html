@@ -1,4 +1,4 @@
-{% if page.page_class contains 'not-found' or page.page_class contains 'offline' %}
+{% if page.page_class contains 'error' or page.page_class contains 'offline' %}
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
