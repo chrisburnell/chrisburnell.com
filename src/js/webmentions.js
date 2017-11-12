@@ -128,6 +128,9 @@
         if (item.activity.type === 'like') {
             html = helpers.injectContent(html, 'Liked', '{{ typeSentencePrefix }}');
         }
+        else if (item.activity.type === 'repost') {
+            html = helpers.injectContent(html, 'Retweeted', '{{ typeSentencePrefix }}');
+        }
         else {
             html = helpers.injectContent(html, 'Posted', '{{ typeSentencePrefix }}');
         }
