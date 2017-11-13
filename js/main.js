@@ -692,14 +692,13 @@ helpers = {
  * Google Analytics
  */
 
-(function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
-    (i[r].q = i[r].q || []).push(arguments);
-  }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
 
-ga('create', 'UA-10353655-1', 'auto');
-ga('send', 'pageview');
+gtag('config', 'UA-10353655-1');
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! picturefill - v3.0.2 - 2016-02-12

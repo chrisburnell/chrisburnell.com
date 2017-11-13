@@ -12,6 +12,9 @@
     }
 </script>
 
+<!-- Analytics -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-10353655-1" async></script>
+
 <!-- Main Scripts -->
 <script type="text/javascript" src="/js/main.min.js?version={{ site.time | date: '%F_%H%M'}}" defer></script>
 
@@ -27,10 +30,10 @@
 
 {% if page.speakerdeck == true or page.speakerdeck_slug %}
     <!-- Speaker Deck Embeds -->
-    <script type="text/javascript" src="//speakerdeck.com/assets/embed.js" async defer></script>
+    <script type="text/javascript" src="//speakerdeck.com/assets/embed.js" defer></script>
 {% endif %}
 
 {% if page.twitter == true %}
     <!-- Twitter Cards -->
-    <script type="text/javascript" src="//platform.twitter.com/widgets.js" async defer></script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js" defer></script>
 {% endif %}
