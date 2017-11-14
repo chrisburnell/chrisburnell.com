@@ -67,12 +67,9 @@
 // Photograph of MY FACE
 .author-image {
     @include border-radius(50%);
-    // gradient replacement while loading the `src` / `srcset`,
-    // colors generated from `avatar.png`
-    background-image: gradient(to top right,    $color-transparent, rgb(153, 192, 226)),
-                      gradient(to bottom left,  $color-transparent, rgb(157, 133, 139)),
-                      gradient(to bottom right, $color-transparent, rgb(89,  144, 173)),
-                      gradient(to top left,     $color-transparent, rgb(137, 99,  79));
+    // base64-encoded SVG generated from `/images/avatar@4x.png`
+    // https://github.com/technopagan/sqip
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjNzk4MTg5IiBkPSJNMCAwaDQwMHY0MDBIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC44IC44KSBzY2FsZSgxLjU2MjUpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBmaWxsPSIjMjQwMDAwIiBjeD0iMTE4IiBjeT0iMjI1IiByeD0iNTkiIHJ5PSIxOTkiLz48ZWxsaXBzZSBmaWxsPSIjZTBmZmZmIiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KC01NS42MTU0OCA3LjcyOTI3IC0xNS45MzM2NyAtMTE0LjY0OTcgMjE5IDU5LjcpIi8+PGVsbGlwc2UgZmlsbD0iI2Q4ZjhmZiIgY3g9IjkiIGN5PSI4OCIgcng9IjM3IiByeT0iMTE1Ii8+PGVsbGlwc2UgZmlsbD0iIzBiMDYwYSIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSg4OSAtOTIuNCAxNDUuNSkgc2NhbGUoMzIuOTQxMjQgMTU4LjE2NTA1KSIvPjxwYXRoIGZpbGw9IiNkZWZiZmYiIGQ9Ik0xNDEuNyAxNzQuMmwzOC4xLTc0LjkgMjguNSAxNC41LTM4LjEgNzQuOXoiLz48ZWxsaXBzZSBmaWxsPSIjYTFkZGZmIiBjeD0iMTEzIiBjeT0iMTEiIHJ4PSIyNTUiIHJ5PSIyMiIvPjxlbGxpcHNlIGZpbGw9IiMzMzBjMDAiIGN4PSI4NCIgY3k9IjkwIiByeD0iNDEiIHJ5PSI0MSIvPjxlbGxpcHNlIGZpbGw9IiNmZmZhZTgiIGN4PSI1MyIgY3k9IjE2NSIgcng9IjE1IiByeT0iNDIiLz48L2c+PC9zdmc+");
     background-size: 100%;
     width:  $avatar-size;
     height: $avatar-size;
