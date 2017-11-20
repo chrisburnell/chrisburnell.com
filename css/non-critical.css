@@ -1337,7 +1337,7 @@ aside + .meta {
 
 .meta time + div::before,
 .meta div + div::before {
-    content: "–";
+    content: "•";
     color: #737373;
     color: var(--color-dove);
     position: absolute;
@@ -1345,6 +1345,7 @@ aside + .meta {
     left: -var(--measure-medium);
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    font-style: italic;
 }
 
 .meta a,

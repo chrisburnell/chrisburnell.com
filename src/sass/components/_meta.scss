@@ -27,12 +27,13 @@
 
         &::before {
             // EN-DASH
-            content: "–";
+            content: "•";
             @include v(color, dove);
             position: absolute;
             left: -($measure-medium);
             left: -(var(--measure-medium));
             transform: translateX(-50%);
+            font-style: italic;
         }
     }
 

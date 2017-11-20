@@ -2553,7 +2553,7 @@ aside + .meta {
 
 .meta time + div::before,
 .meta div + div::before {
-    content: "–";
+    content: "•";
     color: #737373;
     color: var(--color-dove);
     position: absolute;
@@ -2561,6 +2561,7 @@ aside + .meta {
     left: -var(--measure-medium);
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    font-style: italic;
 }
 
 .meta a,
@@ -3161,10 +3162,11 @@ p + .nav-secondary {
     text-decoration: none;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image {
         background-image: none;
-        shape-outside: circle(50%);
+        -webkit-shape-outside: circle(50%);
+                shape-outside: circle(50%);
     }
 }
 
@@ -3192,7 +3194,7 @@ svg {
     display: block;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image img, .author-image
     picture, .author-image
     svg {
