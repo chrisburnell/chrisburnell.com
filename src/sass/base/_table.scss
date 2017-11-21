@@ -37,26 +37,16 @@ td {
 
 // Heading Cells
 th {
+    @include v(font-weight, bold);
+    white-space: nowrap;
+
     &:not(:empty) {
         @include v(background-color, black--delta);
     }
 
-    thead &,
-    tfoot & {
-        @include v(font-weight, bold);
-        white-space: nowrap;
-    }
-
     tbody & {
-        font-style: italic;
-        @include v(font-weight, default);
+        width: 1px;
+        @include v(padding-right, medium);
+        text-align: right;
     }
-}
-
-// Body Heading Cells
-tbody th {
-    width: 1px;
-    @include v(padding-right, medium);
-    text-align: right;
-    white-space: nowrap;
 }

@@ -1111,22 +1111,15 @@ td.numeral {
     text-align: right;
 }
 
-th:not(:empty) {
-    background-color: rgba(6, 6, 6, 0.05);
-    background-color: var(--color-black--delta);
-}
-
-thead th,
-tfoot th {
+th {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
     white-space: nowrap;
 }
 
-tbody th {
-    font-style: italic;
-    font-weight: 400;
-    font-weight: var(--font-weight-default);
+th:not(:empty) {
+    background-color: rgba(6, 6, 6, 0.05);
+    background-color: var(--color-black--delta);
 }
 
 tbody th {
@@ -1134,7 +1127,6 @@ tbody th {
     padding-right: 1.25rem;
     padding-right: var(--measure-medium);
     text-align: right;
-    white-space: nowrap;
 }
 
 details {
