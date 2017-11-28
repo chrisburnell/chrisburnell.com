@@ -73,8 +73,8 @@ helpers = {
         var minutes = date.getMinutes();
         var meridiem = hours < 12 ? 'am' : 'pm';
 
-        // format to 12-hour
-        hours = (hours + 24) % 12 || 12;
+        // format from 24-hours to 12-hours
+        hours = hours % 12 || 12;
 
         return hours + ':' + minutes + ' ' + meridiem;
     },
