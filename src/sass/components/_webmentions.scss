@@ -52,8 +52,7 @@
     }
 }
 
-.webmentions__link__name,
-.webmentions__link__time {
+.webmentions__item__name {
     @include v(font-weight, bold);
 }
 

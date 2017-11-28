@@ -78,6 +78,22 @@ helpers = {
     },
 
     ////
+    /// Format a Time
+    /// @param {String} date
+    /// @return {String} formattedTime
+    ////
+    formatTime: function(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let meridiem = hours < 12 ? 'am' : 'pm';
+
+        // format to 12-hour
+        hours = (hours + 24) % 12 || 12;
+
+        return `${hours}:${minutes} ${meridiem}`;
+    },
+
+    ////
     /// Action from Hash
     /// @param {Array} hashes
     /// @param {Function} action

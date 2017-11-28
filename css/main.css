@@ -3508,8 +3508,7 @@ footer div {
     word-break: break-all;
 }
 
-.webmentions__link__name,
-.webmentions__link__time {
+.webmentions__item__name {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
 }
