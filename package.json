@@ -41,7 +41,7 @@
     "postcss-scss": "1.0.2",
     "sassdoc": "2.5.0",
     "snyk": "^1.41.1",
-    "stylelint": "8.2.0"
+    "stylelint": "8.3.0"
   },
   "repository": {
     "type": "git",
