@@ -105,18 +105,6 @@
         {% include components/comments.html %}
         {% include components/widget-browse-posts.html %}
 
-        {% if page.categories contains 'article' %}
-
-        {% elsif page.categories contains 'link' %}
-            {% include components/widget-latest-links.html %}
-        {% elsif page.categories contains 'note' %}
-            {% include components/widget-latest-notes.html %}
-        {% elsif page.categories contains 'pen' %}
-            {% include components/widget-latest-pens.html %}
-        {% elsif page.categories contains 'talk' %}
-            <!--{% include components/widget-latest-talks.html %}-->
-        {% endif %}
-
     </article>
 </main>
 

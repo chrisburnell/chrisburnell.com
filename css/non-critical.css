@@ -1784,30 +1784,31 @@ aside .widget::after {
 
 .widget-related-anchor::after {
     content: " ↩︎";
-    color: #737373;
-    color: var(--color-dove);
 }
 
-.widget-previous-anchor {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+.widget-previous-anchor,
+.widget-next-anchor {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(50% - 0.625rem);
+            flex: 1 0 calc(50% - 0.625rem);
+}
+
+.widget-previous-anchor::before,
+.widget-next-anchor::before {
+    display: block;
 }
 
 .widget-previous-anchor::before {
-    content: "← ";
-    color: #737373;
-    color: var(--color-dove);
+    content: "← Older";
 }
 
 .widget-next-anchor {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    text-align: right;
+    margin-left: auto;
 }
 
-.widget-next-anchor::after {
-    content: " →";
-    color: #737373;
-    color: var(--color-dove);
+.widget-next-anchor::before {
+    content: "Newer →";
 }
 
 footer {

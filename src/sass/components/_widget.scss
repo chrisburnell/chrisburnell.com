@@ -32,26 +32,29 @@
     &::after {
         // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
         content: " ↩︎";
-        @include v(color, dove);
+    }
+}
+
+.widget-previous-anchor,
+.widget-next-anchor {
+    flex: 1 0 calc(50% - #{$gutter-width / 2});
+
+    &::before {
+        display: block;
     }
 }
 
 .widget-previous-anchor {
-    align-self: flex-start;
-
     &::before {
-        // LEFTWARDS ARROW, NO-BREAK SPACE
-        content: "← ";
-        @include v(color, dove);
+        content: "← Older";
     }
 }
 
 .widget-next-anchor {
-    align-self: flex-end;
+    text-align: right;
+    margin-left: auto;
 
-    &::after {
-        // NO-BREAK SPACE, RIGHTWARDS ARROW
-        content: " →";
-        @include v(color, dove);
+    &::before {
+        content: "Newer →";
     }
 }
