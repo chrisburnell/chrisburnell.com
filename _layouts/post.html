@@ -97,13 +97,16 @@
             </ul>
         {% endif %}
 
-        {% include components/nav-secondary.html type='archives' include=page.categories.first %}
+        <hr>
+
+        {% include components/buttons-list.html type='archives' include=page.categories.first %}
 
         {% include components/webmentions.html %}
         {% include components/comments.html %}
+        {% include components/widget-browse-posts.html %}
 
         {% if page.categories contains 'article' %}
-            {% include components/widget-latest-articles.html %}
+
         {% elsif page.categories contains 'link' %}
             {% include components/widget-latest-links.html %}
         {% elsif page.categories contains 'note' %}

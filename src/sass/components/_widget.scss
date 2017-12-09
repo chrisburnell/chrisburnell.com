@@ -13,14 +13,45 @@
     }
 }
 
-.widget-related-anchor {
-    align-self: flex-end;
+.widget--browse-posts {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.widget-related-anchor,
+.widget-previous-anchor,
+.widget-next-anchor {
     @include v(margin-top, medium);
     @include v(font-weight, bold);
     text-underline-position: under;
+}
+
+.widget-related-anchor {
+    align-self: flex-end;
 
     &::after {
         // NO-BREAK SPACE, LEFTWARDS ARROW WITH HOOK
         content: " ↩︎";
+        @include v(color, dove);
+    }
+}
+
+.widget-previous-anchor {
+    align-self: flex-start;
+
+    &::before {
+        // LEFTWARDS ARROW, NO-BREAK SPACE
+        content: "← ";
+        @include v(color, dove);
+    }
+}
+
+.widget-next-anchor {
+    align-self: flex-end;
+
+    &::after {
+        // NO-BREAK SPACE, RIGHTWARDS ARROW
+        content: " →";
+        @include v(color, dove);
     }
 }

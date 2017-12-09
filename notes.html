@@ -18,6 +18,10 @@ lede: All of my Notes.
     {% endfor %}
 </ol>
 
-{% include components/nav-secondary.html type='feeds' include='notes' %}
+<hr>
 
-{% include components/nav-secondary.html type='archives' exclude='notes' %}
+{% include components/buttons-list.html type='feeds' include='notes' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='notes' %}

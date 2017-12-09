@@ -1,16 +1,17 @@
 ////
-/// Secondary Navigation / Buttons List
+/// Buttons List
 /// @group components
 /// @link https://chrisburnell.com/styleguide/#buttons-list
 ////
 
 
 // Contains buttons and internal links
-.nav-secondary,
 .buttons-list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 0 $measure-medium;
+    margin: 0 0 var(--measure-medium);
 
     @include media("screen", "<=small") {
         flex-direction: column;
@@ -19,6 +20,10 @@
     @include media("screen", ">small") {
         flex-direction: row;
         justify-content: center;
+    }
+
+    %content-elements + & {
+        @include v(margin-top, medium);
     }
 
     %button-elements {
@@ -35,37 +40,5 @@
             @include v(margin-left, small);
             @include v(margin-right, small);
         }
-    }
-}
-
-.nav-secondary {
-    @include v(margin-top, large);
-    @include v(border-top-width, thin);
-    @include v(border-top-style, default);
-    @include v(border-top-color, black--gamma);
-    padding-top: #{$measure-large - 0.182rem};
-
-    .page--home & {
-        margin-top: 0;
-        border-top: 0;
-    }
-
-    .page--about & {
-        border-top: 0;
-        padding: 0 0 $measure-medium;
-        padding: 0 0 var(--measure-medium);
-    }
-
-    %content-elements + & {
-        @include v(margin-top, medium);
-    }
-}
-
-.buttons-list {
-    margin: 0 0 $measure-medium;
-    margin: 0 0 var(--measure-medium);
-
-    .lede + & {
-        @include v(margin-bottom, large);
     }
 }

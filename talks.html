@@ -19,6 +19,10 @@ lede: All of my Talks.
     {% endfor %}
 </ol>
 
-{% include components/nav-secondary.html type='feeds' include='talks' %}
+<hr>
 
-{% include components/nav-secondary.html type='archives' exclude='talks' %}
+{% include components/buttons-list.html type='feeds' include='talks' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='talks' %}

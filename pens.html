@@ -22,6 +22,10 @@ lede: All of my Pens.
     {% endfor %}
 </ol>
 
-{% include components/nav-secondary.html type='feeds' include='pens' %}
+<hr>
 
-{% include components/nav-secondary.html type='archives' exclude='pens' %}
+{% include components/buttons-list.html type='feeds' include='pens' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='pens' %}

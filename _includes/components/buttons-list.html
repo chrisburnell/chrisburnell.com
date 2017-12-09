@@ -1,6 +1,6 @@
 {% comment %}
 
-  Generates a Secondary Nav pattern from the `archives` or `feeds` datasets.
+  Generates a Buttons List from the `archives` or `feeds` datasets.
 
   @param {String} type *
   @param {String} include
@@ -12,7 +12,7 @@
 {% elsif include.type == 'archives' %}
     {% assign data = site.data.archives %}
 {% endif %}
-<nav class="nav-secondary" role="navigation">
+<nav class="buttons-list" role="navigation">
     {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}
     {% for link in data %}

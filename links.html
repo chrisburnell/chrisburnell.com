@@ -15,6 +15,10 @@ lede: All of my shared Links.
     {% endfor %}
 </ol>
 
-{% include components/nav-secondary.html type='feeds' include='links' %}
+<hr>
 
-{% include components/nav-secondary.html type='archives' exclude='links' %}
+{% include components/buttons-list.html type='feeds' include='links' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='links' %}

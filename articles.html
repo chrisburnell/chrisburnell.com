@@ -31,6 +31,10 @@ lede: All of my self-authored Articles.
     {% endif %}
 {% endfor %}
 
-{% include components/nav-secondary.html type='feeds' include='articles' %}
+<hr>
 
-{% include components/nav-secondary.html type='archives' exclude='articles' %}
+{% include components/buttons-list.html type='feeds' include='articles' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='articles' %}

@@ -1201,10 +1201,11 @@ aside + .lede {
     text-decoration: none;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image {
         background-image: none;
-        shape-outside: circle(50%);
+        -webkit-shape-outside: circle(50%);
+                shape-outside: circle(50%);
     }
 }
 
@@ -1232,7 +1233,7 @@ svg {
     display: block;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image img, .author-image
     picture, .author-image
     svg {

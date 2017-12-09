@@ -76,6 +76,7 @@ _includes
 ├── components
 │   ├── author.html
 │   ├── banner.html
+│   ├── buttons-list.html
 │   ├── comments-button.html
 │   ├── comments.html
 │   ├── footer.html
@@ -83,9 +84,8 @@ _includes
 │   ├── item-content-list.html
 │   ├── item-feed.html
 │   ├── nav-primary.html
-│   ├── nav-secondary.html
-│   ├── nav-tertiary.html
 │   ├── search-form.html
+│   ├── social-icons.html
 │   ├── webmentions-button.html
 │   ├── webmentions-form.html
 │   ├── webmentions.html
@@ -141,6 +141,7 @@ src/css
 │   ├── _animation.scss
 │   ├── _author.scss
 │   ├── _banner.scss
+│   ├── _buttons-list.scss
 │   ├── _code.scss
 │   ├── _comments.scss
 │   ├── _content-list.scss
@@ -153,10 +154,9 @@ src/css
 │   ├── _media.scss
 │   ├── _meta.scss
 │   ├── _nav-primary.scss
-│   ├── _nav-secondary.scss
-│   ├── _nav-tertiary.scss
 │   ├── _print.scss
 │   ├── _search.scss
+│   ├── _social-icons.scss
 │   ├── _terminology.scss
 │   ├── _title.scss
 │   ├── _webmentions.scss

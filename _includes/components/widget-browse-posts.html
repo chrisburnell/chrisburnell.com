@@ -1,0 +1,24 @@
+{% if page.previous or page.next %}
+    <section class="widget  widget--browse-posts">
+        {% if page.previous %}
+            <a class="widget-previous-anchor" href="{{ page.previous.url }}">
+                {{ page.previous.categories | first | capitalize | append: ":" }}
+                {% if page.previous.categories contains 'note' %}
+                    {{ page.previous.date | date: '%A, %d %B %Y' }}
+                {% else %}
+                    {{ page.previous.title }}
+                {% endif %}
+            </a>
+        {% endif %}
+        {% if page.next %}
+            <a class="widget-next-anchor" href="{{ page.next.url }}">
+                {{ page.next.categories | first | capitalize | append: ":" }}
+                {% if page.next.categories contains 'note' %}
+                    {{ page.next.date | date: '%A, %d %B %Y' }}
+                {% else %}
+                    {{ page.next.title }}
+                {% endif %}
+            </a>
+        {% endif %}
+    </section>
+{% endif %}

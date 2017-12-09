@@ -1,10 +1,10 @@
 ////
-/// Tertiary Navigation
+/// Social Icons
 /// @group components
 ////
 
 
-.nav-tertiary {
+.social-icons {
     @include media("screen", "<=medium") {
         @include v(margin-top, medium);
     }
@@ -14,7 +14,7 @@
     }
 }
 
-.nav-tertiary-list {
+.social-icons-list {
     li {
         display: inline-block;
 

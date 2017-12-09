@@ -2926,7 +2926,6 @@ aside .content-list a {
     margin-top: 0;
 }
 
-.nav-secondary,
 .buttons-list {
     width: 100%;
     display: -webkit-box;
@@ -2934,10 +2933,11 @@ aside .content-list a {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin: 0 0 1.25rem;
+    margin: 0 0 var(--measure-medium);
 }
 
 @media screen and (max-width: 500px) {
-    .nav-secondary,
     .buttons-list {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -2947,7 +2947,6 @@ aside .content-list a {
 }
 
 @media screen and (min-width: 501px) {
-    .nav-secondary,
     .buttons-list {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -2959,26 +2958,27 @@ aside .content-list a {
     }
 }
 
+blockquote + .buttons-list,
+details + .buttons-list,
+table + .buttons-list,
+dl + .buttons-list,
+ol + .buttons-list,
+ul + .buttons-list,
+figure:not([class]) + .buttons-list,
+p + .buttons-list {
+    margin-top: 1.25rem;
+    margin-top: var(--measure-medium);
+}
+
 @media screen and (max-width: 500px) {
-    .nav-secondary button, .nav-secondary
-    .button,
-    .buttons-list button,
-    .buttons-list
+    .buttons-list button, .buttons-list
     .button {
         margin-left: auto;
         margin-right: auto;
     }
-    .nav-secondary button + button, .nav-secondary
-    .button + button, .nav-secondary button +
-    .button, .nav-secondary
-    .button +
-    .button,
-    .buttons-list button + button,
-    .buttons-list
-    .button + button,
-    .buttons-list button +
-    .button,
-    .buttons-list
+    .buttons-list button + button, .buttons-list
+    .button + button, .buttons-list button +
+    .button, .buttons-list
     .button +
     .button {
         margin-top: 0.625rem;
@@ -2987,61 +2987,13 @@ aside .content-list a {
 }
 
 @media screen and (min-width: 501px) {
-    .nav-secondary button, .nav-secondary
-    .button,
-    .buttons-list button,
-    .buttons-list
+    .buttons-list button, .buttons-list
     .button {
         margin-left: 0.625rem;
         margin-left: var(--measure-small);
         margin-right: 0.625rem;
         margin-right: var(--measure-small);
     }
-}
-
-.nav-secondary {
-    margin-top: 2.25rem;
-    margin-top: var(--measure-large);
-    border-top-width: 0.125rem;
-    border-top-width: var(--border-width-thin);
-    border-top-style: solid;
-    border-top-style: var(--border-style-default);
-    border-top-color: rgba(6, 6, 6, 0.1);
-    border-top-color: var(--color-black--gamma);
-    padding-top: 2.068rem;
-}
-
-.page--home .nav-secondary {
-    margin-top: 0;
-    border-top: 0;
-}
-
-.page--about .nav-secondary {
-    border-top: 0;
-    padding: 0 0 1.25rem;
-    padding: 0 0 var(--measure-medium);
-}
-
-blockquote + .nav-secondary,
-details + .nav-secondary,
-table + .nav-secondary,
-dl + .nav-secondary,
-ol + .nav-secondary,
-ul + .nav-secondary,
-figure:not([class]) + .nav-secondary,
-p + .nav-secondary {
-    margin-top: 1.25rem;
-    margin-top: var(--measure-medium);
-}
-
-.buttons-list {
-    margin: 0 0 1.25rem;
-    margin: 0 0 var(--measure-medium);
-}
-
-.lede + .buttons-list {
-    margin-bottom: 2.25rem;
-    margin-bottom: var(--measure-large);
 }
 
 /*aside*/
@@ -3154,10 +3106,11 @@ p + .nav-secondary {
     text-decoration: none;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image {
         background-image: none;
-        shape-outside: circle(50%);
+        -webkit-shape-outside: circle(50%);
+                shape-outside: circle(50%);
     }
 }
 
@@ -3185,7 +3138,7 @@ svg {
     display: block;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image img, .author-image
     picture, .author-image
     svg {
@@ -3231,9 +3184,19 @@ aside .widget::after {
     clear: both;
 }
 
-.widget-related-anchor {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+.widget--browse-posts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.widget-related-anchor,
+.widget-previous-anchor,
+.widget-next-anchor {
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
     font-weight: 600;
@@ -3241,8 +3204,37 @@ aside .widget::after {
     text-underline-position: under;
 }
 
+.widget-related-anchor {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+}
+
 .widget-related-anchor::after {
     content: " ↩︎";
+    color: #737373;
+    color: var(--color-dove);
+}
+
+.widget-previous-anchor {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+}
+
+.widget-previous-anchor::before {
+    content: "← ";
+    color: #737373;
+    color: var(--color-dove);
+}
+
+.widget-next-anchor {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+}
+
+.widget-next-anchor::after {
+    content: " →";
+    color: #737373;
+    color: var(--color-dove);
 }
 
 footer {
@@ -3274,13 +3266,13 @@ footer div {
 }
 
 .license,
-.nav-tertiary {
+.social-icons {
     overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
     .license,
-    .nav-tertiary {
+    .social-icons {
         -webkit-box-flex: 1;
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
@@ -3354,32 +3346,32 @@ footer div {
 }
 
 @media screen and (max-width: 800px) {
-    .nav-tertiary {
+    .social-icons {
         margin-top: 1.25rem;
         margin-top: var(--measure-medium);
     }
 }
 
 @media screen and (min-width: 801px) {
-    .nav-tertiary {
+    .social-icons {
         margin-top: 0.3125rem;
     }
 }
 
-.nav-tertiary-list li {
+.social-icons-list li {
     display: inline-block;
 }
 
-.nav-tertiary-list li + li {
+.social-icons-list li + li {
     margin-left: 1rem;
     margin-left: var(--measure-one);
 }
 
-.nav-tertiary-list a {
+.social-icons-list a {
     text-decoration: none;
 }
 
-.nav-tertiary-list a .icon {
+.social-icons-list a .icon {
     -webkit-transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: opacity 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
@@ -3392,17 +3384,17 @@ footer div {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-    .nav-tertiary-list a .icon {
+    .social-icons-list a .icon {
         -webkit-transition: none 0.2s ease 0s;
         transition: none 0.2s ease 0s;
     }
 }
 
-.nav-tertiary-list a:hover .icon, .nav-tertiary-list a:focus .icon, .nav-tertiary-list a:active .icon {
+.social-icons-list a:hover .icon, .social-icons-list a:focus .icon, .social-icons-list a:active .icon {
     opacity: 1;
 }
 
-.nav-tertiary-list a:active .icon {
+.social-icons-list a:active .icon {
     -webkit-transform: translateY(0.125rem);
             transform: translateY(0.125rem);
 }
@@ -3674,6 +3666,15 @@ button .icon,
     fill: #4f4f4f;
     fill: var(--color-kaiser);
     height: 4.5rem;
+}
+
+.webmentions__item .icon {
+    fill: #4f4f4f;
+    fill: var(--color-kaiser);
+    width: 1.125rem;
+    height: 1.125rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .icon--codepen {
