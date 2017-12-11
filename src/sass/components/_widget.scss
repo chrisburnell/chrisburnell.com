@@ -37,7 +37,8 @@
 
 .widget-previous-anchor,
 .widget-next-anchor {
-    flex: 0 1 calc(50% - #{$gutter-width / 2});
+    max-width: calc(50% - #{$gutter-width / 2});
+    flex: 0 1 auto;
 
     &::before {
         display: block;

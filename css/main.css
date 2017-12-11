@@ -3215,9 +3215,10 @@ aside .widget::after {
 
 .widget-previous-anchor,
 .widget-next-anchor {
+    max-width: calc(50% - 0.625rem);
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 calc(50% - 0.625rem);
-            flex: 0 1 calc(50% - 0.625rem);
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
 }
 
 .widget-previous-anchor::before,

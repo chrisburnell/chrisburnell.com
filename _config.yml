@@ -90,6 +90,7 @@ exclude:
 - package.json
 - README.md
 - src
+- vendor
 - yarn.lock
 
 gems:
