@@ -22,17 +22,9 @@
 
 {% assign meta_image = '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url %}
 {% if page.banner %}
-    {% if page.banner.size > 1 %}
-        {% assign meta_image = page.banner | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
-    {% else %}
-        {% assign meta_image = page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
-    {% endif %}
+    {% assign meta_image = page.banner | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
 {% elsif page.banner_mobile %}
-    {% if page.banner_mobile.size > 1 %}
-        {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
-    {% else %}
-        {% assign meta_image = page.banner | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
-    {% endif %}
+    {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
 {% elsif page.page_class contains 'about' %}
     {% assign meta_image = '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url %}
 {% endif %}
