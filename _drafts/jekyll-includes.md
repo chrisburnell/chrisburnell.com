@@ -63,7 +63,7 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
     {% assign heading_type = include.type %}
 {% endif %}
 
-<!-- 2 + 3 -->
+<!-- 2 & 3 -->
 {% assign heading_id = include.title | slugify %}
 {% if include.id %}
     {% assign heading_id = include.id %}
