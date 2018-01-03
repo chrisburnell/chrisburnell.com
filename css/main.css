@@ -3106,11 +3106,10 @@ p + .buttons-list {
     text-decoration: none;
 }
 
-@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
+@supports (shape-outside: circle(50%)) {
     .author-image {
         background-image: none;
-        -webkit-shape-outside: circle(50%);
-                shape-outside: circle(50%);
+        shape-outside: circle(50%);
     }
 }
 
@@ -3138,7 +3137,7 @@ svg {
     display: block;
 }
 
-@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
+@supports (shape-outside: circle(50%)) {
     .author-image img, .author-image
     picture, .author-image
     svg {
