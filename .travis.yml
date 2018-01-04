@@ -9,6 +9,7 @@ addons:
       - sshpass
 
 install:
+  - gem install bundler
   - bundle install
   - nvm install 5.4.1
   - npm install
