@@ -10,7 +10,7 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 [![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/css/main.min.css)
 [![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/js/main.min.js)
 
-[![Build Status](https://img.shields.io/travis/chrisburnell/chrisburnell.com/master.svg?style=flat-square)](https://travis-ci.org/chrisburnell/chrisburnell.com)
+[![Build Status](https://semaphoreci.com/api/v1/chrisburnell/chrisburnell-com/branches/master/badge.svg)](https://semaphoreci.com/chrisburnell/chrisburnell-com)
 
 
 ### Table of Contents
