@@ -73,9 +73,11 @@ sup {
 }
 sub {
     bottom: -0.4em;
+    font-variant-position: sub;
 }
 sup {
     top: -0.4em;
+    font-variant-position: super;
 }
 
 [hidden] {

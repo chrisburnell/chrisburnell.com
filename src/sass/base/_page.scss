@@ -20,7 +20,7 @@ html {
     @include v(line-height, default);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "lnum" 1;
+    font-variant-numeric: oldstyle-nums;
     // prevent adjustments of font-size after orientation changes in IE on
     // Windows Phone and in iOS
     -webkit-text-size-adjust: 100%;

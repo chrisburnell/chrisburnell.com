@@ -13,6 +13,7 @@ var,
 .monospace {
     @extend %monospace-elements !optional;
     @include font-family(monospace);
+    font-variant-numeric: proportional-nums;
 }
 code,
 kbd,

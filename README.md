@@ -115,7 +115,7 @@ _includes
 ### Sass Structure
 
 ```text
-src/css
+src/sass
 ├── abstracts
 │   ├── _css-variables.scss
 │   ├── _functions.scss
