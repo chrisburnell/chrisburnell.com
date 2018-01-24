@@ -1164,7 +1164,9 @@ summary {
 
 summary:hover, summary:focus {
     text-decoration: underline;
-    -webkit-text-decoration-skip: objects;
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 }
 
 details:not([open]) summary:hover,

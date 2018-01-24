@@ -200,6 +200,7 @@ a {
             text-decoration-color: var(--color-alto);
     -webkit-text-decoration-skip: ink;
             text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 }
 
 a:hover, a:focus, a:active {

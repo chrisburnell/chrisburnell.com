@@ -18,6 +18,7 @@ details {
         padding: 0 $measure-small $measure-small;
     }
 }
+
 summary {
     @include non-selectable;
     @include transition(transform);
@@ -29,7 +30,8 @@ summary {
     &:hover,
     &:focus {
         text-decoration: underline;
-        -webkit-text-decoration-skip: objects;
+        text-decoration-skip: ink;
+        text-decoration-skip-ink: auto;
     }
 
     details:not([open]) &:hover,
