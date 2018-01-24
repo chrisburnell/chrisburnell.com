@@ -93,6 +93,6 @@ exclude:
 - vendor
 - yarn.lock
 
-gems:
+plugins:
 - jekyll-redirect-from
 - jemoji
