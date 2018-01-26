@@ -60,18 +60,6 @@
             {{ content }}
         </div>
 
-        {% if page.endnotes %}
-            {% include content/heading.html title='Endnotes' %}
-            <ol>
-                {% for note in page.endnotes %}
-                    <li class="endnote" id="endnote-{{ forloop.index }}">
-                        {{ note }}
-                        <a href="#note-{{ forloop.index }}" class="endnote-anchor" title="">↩︎</a>
-                    </li>
-                {% endfor %}
-            </ol>
-        {% endif %}
-
         {% if page.further_reading %}
             {% include content/heading.html title='Further Reading' %}
             <ul>
@@ -92,6 +80,18 @@
                     </li>
                 {% endfor %}
             </ul>
+        {% endif %}
+
+        {% if page.endnotes %}
+            {% include content/heading.html title='Endnotes' %}
+            <ol>
+                {% for note in page.endnotes %}
+                    <li class="endnote" id="endnote-{{ forloop.index }}">
+                        {{ note }}
+                        <a href="#note-{{ forloop.index }}" class="endnote-anchor" title="">↩︎</a>
+                    </li>
+                {% endfor %}
+            </ol>
         {% endif %}
 
     </article>
