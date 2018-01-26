@@ -474,6 +474,7 @@ var,
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
+    font-variant-numeric: proportional-nums;
 }
 
 code,
@@ -1084,6 +1085,7 @@ table {
     border-collapse: collapse;
     overflow-x: auto;
     overflow-y: hidden;
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 table.zebra tbody tr:nth-child(even) td {
@@ -1248,10 +1250,12 @@ sup {
 
 sub {
     bottom: -0.4em;
+    font-variant-position: sub;
 }
 
 sup {
     top: -0.4em;
+    font-variant-position: super;
 }
 
 [hidden] {
@@ -2077,6 +2081,14 @@ footer div {
     word-break: break-all;
 }
 
+.webmentions__item__image {
+    width: 1.125rem;
+    height: 1.125rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
 .webmentions__item__name {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -2243,15 +2255,6 @@ button .icon,
     fill: #4f4f4f;
     fill: var(--color-kaiser);
     height: 4.5rem;
-}
-
-.webmentions__item .icon {
-    fill: #4f4f4f;
-    fill: var(--color-kaiser);
-    width: 1.125rem;
-    height: 1.125rem;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .icon--codepen {

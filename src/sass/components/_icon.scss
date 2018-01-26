@@ -32,14 +32,6 @@
         @include v(fill, kaiser);
         height: #{$measure-large * 2};
     }
-
-    .webmentions__item & {
-        @include v(fill, kaiser);
-        width:  $font-size-gamma;
-        height: $font-size-gamma;
-        display: inline-block;
-        vertical-align: middle;
-    }
 }
 
 // Brand Icon Widths and Colors

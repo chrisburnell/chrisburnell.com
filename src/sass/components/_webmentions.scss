@@ -52,6 +52,14 @@
     }
 }
 
+.webmentions__item__image {
+    width:  $font-size-gamma;
+    height: $font-size-gamma;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: $border-width-default;
+}
+
 .webmentions__item__name {
     @include v(font-weight, bold);
 }
