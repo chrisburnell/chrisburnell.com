@@ -9,10 +9,10 @@ lede: A list of Tags and their counterpart prose.
 
 {% capture tags %}
     {% for tag in site.tags %}
-        {{ tag[0] }}
+        {{ tag[0] | downcase }}
     {% endfor %}
 {% endcapture %}
-{% assign tags_sorted = tags | split: ' ' | sort %}
+{% assign tags_sorted = tags | split: ' ' | uniq | sort_natural %}
 <dl role="navigation">
     <dt>Jump to a tag:</dt>
     <dd>

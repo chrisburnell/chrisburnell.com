@@ -4,7 +4,7 @@ categories: article
 date: 2018-01-09 22:00:00
 
 title: A Decade in the Making
-lede: This year marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it publicly, <em>irreversibly</em>, <em>for eternity</em>, might seem a little out of character.
+lede: This year marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it <em>publicly</em>, <em>irreversibly</em>, <em>for eternity</em>, might seem a little out of character.
 tags:
 - indieweb
 - personal
