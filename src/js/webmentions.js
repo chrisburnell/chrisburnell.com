@@ -20,7 +20,7 @@
     const WEBMENTIONS_TEMPLATE =
         `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
             {{ content }}
-            {{ typePrefix }}
+            {{ typeLink }}
             {{ author }}
             {{ date }}
         </li>`;
@@ -127,21 +127,38 @@
 
         // TYPE
         html = helpers.injectContent(html, item.activity.type, '{{ type }}');
-        html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">${item.activity.type}ed</a>`, '{{ typePrefix }}');
+        html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`, '{{ typeLink }}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, 'Liked', '{{ typePrefix }}');
+        }
+        else if (item.activity.type === 'reply') {
+            html = helpers.injectContent(html, 'Replied', '{{ typePrefix }}');
+        }
+        else if (item.activity.type === 'repost') {
+            html = helpers.injectContent(html, 'Reposted', '{{ typePrefix }}');
+        }
+        else {
+            html = helpers.injectContent(html, 'Posted', '{{ typePrefix }}');
+        }
 
-        // DATE
-        html = helpers.injectContent(html, `on <time class="webmentions__item__time" datetime="${item.data.published ? item.data.published : item.verified_date}">${helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date))} <small>@</small> ${helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date))}</time>`, '{{ date }}');
+        // CONTENT / URL
+        if (item.activity.type === 'like' || item.activity.type === 'repost') {
+            html = helpers.injectContent(html, '', '{{ content }}');
+        }
+        else if (item.activity.type === 'reply' && item.data.content) {
+            html = helpers.injectContent(html, `<div><q>${item.data.content}</q></div>`, '{{ content }}');
+        }
+        else {
+            html = helpers.injectContent(html, `<div><a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a></div>`, '{{ content }}');
+        }
 
         // AUTHOR
-        // Like
         if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.author.url}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
         }
-        // Repost
         else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.url.split('status')[0]}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
         }
-        // Posts
         else if (item.data.author.name && item.data.author.url) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external">${item.data.author.name}</a>`, '{{ author }}');
         }
@@ -155,16 +172,8 @@
             html = helpers.injectContent(html, '', '{{ author }}');
         }
 
-        // CONTENT / URL
-        if (item.activity.type === 'like' || item.activity.type === 'repost') {
-            html = helpers.injectContent(html, '', '{{ content }}');
-        }
-        else if (item.activity.type === 'reply' && item.data.content) {
-            html = helpers.injectContent(html, `<div>${item.data.content}</div>`, '{{ content }}');
-        }
-        else {
-            html = helpers.injectContent(html, `<div><a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a></div>`, '{{ content }}');
-        }
+        // DATE
+        html = helpers.injectContent(html, `on <time class="webmentions__item__time" datetime="${item.data.published ? item.data.published : item.verified_date}">${helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date))} <small>@</small> ${helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date))}</time>`, '{{ date }}');
 
         return html;
     }

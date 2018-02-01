@@ -531,7 +531,7 @@ helpers = {
     var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     var WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">\n            {{ content }}\n            {{ typePrefix }}\n            {{ author }}\n            {{ date }}\n        </li>';
+    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">\n            {{ content }}\n            {{ typeLink }}\n            {{ author }}\n            {{ date }}\n        </li>';
     var webmentionsLoaded = false;
     var webmentionsCount = 0;
     var observer = new IntersectionObserver(checkWebmentionsVisible);
@@ -654,39 +654,43 @@ helpers = {
 
         // TYPE
         html = helpers.injectContent(html, item.activity.type, '{{ type }}');
-        html = helpers.injectContent(html, '<a href="' + item.data.url + '" class="webmentions__item__activity" rel="external">' + item.activity.type + 'ed</a>', '{{ typePrefix }}');
-
-        // DATE
-        html = helpers.injectContent(html, 'on <time class="webmentions__item__time" datetime="' + (item.data.published ? item.data.published : item.verified_date) + '">' + helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date)) + ' <small>@</small> ' + helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date)) + '</time>', '{{ date }}');
-
-        // AUTHOR
-        // Like
-        if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
-            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.author.url + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
+        html = helpers.injectContent(html, '<a href="' + item.data.url + '" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>', '{{ typeLink }}');
+        if (item.activity.type === 'like') {
+            html = helpers.injectContent(html, 'Liked', '{{ typePrefix }}');
+        } else if (item.activity.type === 'reply') {
+            html = helpers.injectContent(html, 'Replied', '{{ typePrefix }}');
+        } else if (item.activity.type === 'repost') {
+            html = helpers.injectContent(html, 'Reposted', '{{ typePrefix }}');
+        } else {
+            html = helpers.injectContent(html, 'Posted', '{{ typePrefix }}');
         }
-        // Repost
-        else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
-                html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.url.split('status')[0] + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
-            }
-            // Posts
-            else if (item.data.author.name && item.data.author.url) {
-                    html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
-                } else if (item.data.author.name) {
-                    html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.author.name + '</span>', '{{ author }}');
-                } else if (item.data.name) {
-                    html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.name + '</span>', '{{ author }}');
-                } else {
-                    html = helpers.injectContent(html, '', '{{ author }}');
-                }
 
         // CONTENT / URL
         if (item.activity.type === 'like' || item.activity.type === 'repost') {
             html = helpers.injectContent(html, '', '{{ content }}');
         } else if (item.activity.type === 'reply' && item.data.content) {
-            html = helpers.injectContent(html, '<div>' + item.data.content + '</div>', '{{ content }}');
+            html = helpers.injectContent(html, '<div><q>' + item.data.content + '</q></div>', '{{ content }}');
         } else {
             html = helpers.injectContent(html, '<div><a href="' + item.data.url + '" rel="external">' + item.data.url.split('//')[1] + '</a></div>', '{{ content }}');
         }
+
+        // AUTHOR
+        if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
+            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.author.url + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
+        } else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
+            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.url.split('status')[0] + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
+        } else if (item.data.author.name && item.data.author.url) {
+            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
+        } else if (item.data.author.name) {
+            html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.author.name + '</span>', '{{ author }}');
+        } else if (item.data.name) {
+            html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.name + '</span>', '{{ author }}');
+        } else {
+            html = helpers.injectContent(html, '', '{{ author }}');
+        }
+
+        // DATE
+        html = helpers.injectContent(html, 'on <time class="webmentions__item__time" datetime="' + (item.data.published ? item.data.published : item.verified_date) + '">' + helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date)) + ' <small>@</small> ' + helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date)) + '</time>', '{{ date }}');
 
         return html;
     }
