@@ -3495,9 +3495,10 @@ footer div {
 }
 
 .webmentions__form .webmentions-input {
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     margin-top: 0.25rem;
+    line-height: 1.429;
 }
 
 .webmentions__form .webmentions-submit {

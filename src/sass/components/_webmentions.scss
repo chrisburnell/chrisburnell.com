@@ -38,8 +38,9 @@
     }
 
     .webmentions-input {
-        align-self: stretch;
+        align-self: flex-end;
         margin-top: $border-width-default;
+        line-height: $line-height-medium;
     }
 
     .webmentions-submit {
