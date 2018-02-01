@@ -20,7 +20,7 @@
     const WEBMENTIONS_TEMPLATE =
         `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
             {{ content }}
-            {{ typeSentencePrefix }}
+            {{ typePrefix }}
             {{ author }}
             {{ date }}
         </li>`;
@@ -127,28 +127,21 @@
 
         // TYPE
         html = helpers.injectContent(html, item.activity.type, '{{ type }}');
-        if (item.activity.type === 'like') {
-            html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">Liked</a>`, '{{ typeSentencePrefix }}');
-        }
-        else if (item.activity.type === 'repost') {
-            html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">Retweeted</a>`, '{{ typeSentencePrefix }}');
-        }
-        else {
-            html = helpers.injectContent(html, `<span class="webmentions__item__activity">Posted</span>`, '{{ typeSentencePrefix }}');
-        }
+        html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">${item.activity.type}ed</a>`, '{{ typePrefix }}');
 
         // DATE
         html = helpers.injectContent(html, `on <time class="webmentions__item__time" datetime="${item.data.published ? item.data.published : item.verified_date}">${helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date))} <small>@</small> ${helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date))}</time>`, '{{ date }}');
 
         // AUTHOR
-        // like
+        // Like
         if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.author.url}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
         }
-        // repost
+        // Repost
         else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.url.split('status')[0]}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
         }
+        // Posts
         else if (item.data.author.name && item.data.author.url) {
             html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external">${item.data.author.name}</a>`, '{{ author }}');
         }
@@ -166,7 +159,7 @@
         if (item.activity.type === 'like' || item.activity.type === 'repost') {
             html = helpers.injectContent(html, '', '{{ content }}');
         }
-        else if (item.activity.type === 'tweet') {
+        else if (item.activity.type === 'reply' && item.data.content) {
             html = helpers.injectContent(html, `<div>${item.data.content}</div>`, '{{ content }}');
         }
         else {
