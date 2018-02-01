@@ -23,18 +23,21 @@
 
 
 @each $aspect-ratio, $percentage in $aspect-ratios {
-    .media--#{nth($aspect-ratio, 1)}-by-#{nth($aspect-ratio, 2)} {
+    $aspect-ratio-x: nth($aspect-ratio, 1);
+    $aspect-ratio-y: nth($aspect-ratio, 2);
+
+    .media--#{$aspect-ratio-x}-by-#{$aspect-ratio-y} {
         padding-top: $percentage;
     }
 }
 
 .media--vimeo,
 .media--youtube {
-    @extend .media--16-by-9;
+    @extend .media--16-by-9 !optional;
 }
 
 .media--speakerdeck {
-    @extend .media--4-by-3;
+    @extend .media--4-by-3 !optional;
 }
 
 

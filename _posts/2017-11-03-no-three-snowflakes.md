@@ -134,6 +134,8 @@ As with the previous version of the function, it can accept the required dataset
 {% include content/heading.html title='In Action' %}
 
 {% highlight scss %}
+$border-styles: 5px solid black;
+
 $list:
     top,
     right,
@@ -146,9 +148,9 @@ $list:
     $unique-group-third:  nth($unique-group, 3);
 
     .border--#{$unique-group-first}-and-#{$unique-group-second}-and-#{$unique-group-third} {
-        border-#{$unique-group-first}:  5px solid black;
-        border-#{$unique-group-second}: 5px solid black;
-        border-#{$unique-group-third}:  5px solid black;
+        border-#{$unique-group-first}:  $border-styles;
+        border-#{$unique-group-second}: $border-styles;
+        border-#{$unique-group-third}:  $border-styles;
     }
 }
 {% endhighlight %}

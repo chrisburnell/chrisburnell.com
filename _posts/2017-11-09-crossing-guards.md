@@ -38,11 +38,6 @@ Part of embracing that change means, as builders for the web, we have to be ligh
 
 {% include content/heading.html title='Hook, Line, & Sinker' %}
 
-<blockquote>
-    <p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
-    <cite><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
-</blockquote>
-
 If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
 In the case of *lazy-loading*, rather than force the browser to download every asset required for a given page to **100% completion** (which may be slow, or even expensive for some users) a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page to function properly, and as such these assets will be downloaded immediately. However, presentational images fall into the **non-critical** category. In the case of these types of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within the viewport should it begin loading.</q>
@@ -73,7 +68,7 @@ Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate){:rel="
 
 <blockquote>
     <p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
-    <cite><a href="https://developers.google.com/web/fundamentals/performance/rendering/" rel="external">Google Web Fundamentals</a></cite>
+    <cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering/" rel="external">Google Web Fundamentals</a></cite>
 </blockquote>
 
 This might seem like an impossible amount of time to do **anything** with, but for a computer, this isn’t so much of a stretch. That’s not to say that it’s **easy** for the browser, nor that the browser is even doing it in the most efficient manner, in the most efficient circumstances, so we should do what we can to offer the browser any help!

@@ -26,7 +26,7 @@ syndication:
 
 <blockquote>
     <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-    <cite><a href="http://sass-lang.com/" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>
+    <cite class="h-cite"><a href="http://sass-lang.com/" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>
 </blockquote>
 
 CSS developers usually fall into one of two camps when it comes to preprocessors: a loving embrace or a cold shoulder. While I have an obvious bias, I get the sense that a portion of the <q>cold shoulder</q> folks perhaps hold a fundamental misunderstanding of Sass’ purpose, its strengths, and its weaknesses. This could be chaulked up to a poor introduction to Sass; it is not a tool that can be mindlessly slapped <q>on top</q> of CSS with the expectation that things will improve through its sheer use.
