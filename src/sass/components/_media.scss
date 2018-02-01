@@ -41,6 +41,11 @@
 }
 
 
+.pixelated {
+    image-rendering: pixelated;
+}
+
+
 // CodePen Embeds
 .cp_embed_wrapper {
     @include v(margin-bottom, medium);
