@@ -1,3 +1,9 @@
-[refs #00000] Subject line
+Fixes #.
 
-Body (72 chars)
+Changes proposed in this pull request:
+
+-
+-
+-
+
+@chrisburnell
