@@ -39,9 +39,14 @@ don’t hesitate to get in touch—via
 report bugs or suggestions.
 
 
+### Code of Conduct
+
+Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+
+
 ### Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md).
+Please see the [Contributing Guide](CONTRIBUTING.md).
 
 
 ### Build Process
