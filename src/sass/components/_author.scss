@@ -78,7 +78,6 @@
     text-decoration: none;
 
     @supports (shape-outside: circle(50%)) {
-        background-image: none;
         shape-outside: circle(50%);
     }
 
@@ -92,12 +91,21 @@
 
     %image-elements {
         @include border-radius;
+        @include transition(opacity);
         width:  100%;
         height: 100%;
         display: block;
 
         @supports (shape-outside: circle(50%)) {
             @include border-radius(50%);
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        %image-elements {
+            opacity: 0;
         }
     }
 }
