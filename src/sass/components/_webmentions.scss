@@ -20,33 +20,34 @@
     @include media("<=small") {
         flex-wrap: wrap;
     }
+}
 
-    .webmentions-label {
-        @extend %delta !optional;
-        align-self: center;
-        @include v(padding-right, medium);
-        margin-bottom: 0;
+.webmentions-label {
+    @extend %delta !optional;
+    align-self: center;
+    @include v(padding-right, medium);
+    margin-bottom: 0;
 
-        @include media("<=small") {
-            flex: 1 0 100%;
-            @include v(margin-bottom, medium);
-        }
-
-        @include media(">small") {
-            flex: 1 1 auto;
-        }
+    @include media("<=small") {
+        flex: 1 0 100%;
+        @include v(margin-bottom, medium);
     }
 
-    .webmentions-input {
-        align-self: flex-end;
-        margin-top: $border-width-default;
-        line-height: $line-height-medium;
+    @include media(">small") {
+        flex: 1 1 auto;
     }
+}
 
-    .webmentions-submit {
-        align-self: flex-end;
-        @include v(margin-left, small);
-    }
+.webmentions-input {
+    flex: 1 0 auto;
+    align-self: flex-end;
+    margin-top: $border-width-default;
+    line-height: $line-height-medium;
+}
+
+.webmentions-submit {
+    align-self: flex-end;
+    @include v(margin-left, small);
 }
 
 .webmentions-thread {
