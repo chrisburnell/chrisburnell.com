@@ -39,15 +39,14 @@
     </li>`;
 
 
-    // enable search input and submit ASAP
-    searchInput.disabled  = false;
-    searchInput.setAttribute('aria-disabled', 'false');
-    searchSubmit.disabled = false;
-    searchSubmit.setAttribute('aria-disabled', 'false');
-
-
-    // initiate search functionality
-    initSearch();
+    // enable Search
+    if (searchInput !== null && searchSubmit !== null) {
+        searchInput.disabled  = false;
+        searchInput.setAttribute('aria-disabled', 'false');
+        searchSubmit.disabled = false;
+        searchSubmit.setAttribute('aria-disabled', 'false');
+        initSearch();
+    }
 
 
     ////

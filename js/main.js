@@ -237,14 +237,14 @@ helpers = {
     var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{ url }}">\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n            </a>\n        </article>\n    </li>';
     var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
 
-    // enable search input and submit ASAP
-    searchInput.disabled = false;
-    searchInput.setAttribute('aria-disabled', 'false');
-    searchSubmit.disabled = false;
-    searchSubmit.setAttribute('aria-disabled', 'false');
-
-    // initiate search functionality
-    initSearch();
+    // enable Search
+    if (searchInput !== null && searchSubmit !== null) {
+        searchInput.disabled = false;
+        searchInput.setAttribute('aria-disabled', 'false');
+        searchSubmit.disabled = false;
+        searchSubmit.setAttribute('aria-disabled', 'false');
+        initSearch();
+    }
 
     ////
     /// Initiate search functionality.
@@ -534,19 +534,17 @@ helpers = {
     var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">\n            {{ content }}\n            {{ typeLink }}\n            {{ author }}\n            {{ date }}\n        </li>';
     var webmentionsLoaded = false;
     var webmentionsCount = 0;
-    var observer = new IntersectionObserver(function () {
-        showWebmentions(false);
-    });
+    var observer = new IntersectionObserver(checkVisibility);
 
     // initiate WebMentions if hash present on load
-    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentionsAndJump));
     // initiate WebMentions if hash present on hash change
-    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentionsAndJump));
 
     if (WEBMENTIONS_SECTION !== null) {
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
-        WEBMENTIONS_BUTTON.addEventListener('mouseover', function (event) {
+        WEBMENTIONS_BUTTON.addEventListener('mouseover', function () {
             if (webmentionsLoaded === false) {
                 loadWebmentions();
             }
@@ -557,9 +555,16 @@ helpers = {
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
+    function checkVisibility(entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                showWebmentions();
+                observer.disconnect();
+            }
+        });
+    }
+
     function loadWebmentions() {
-        // disconnect the IntersectionObserver
-        observer.disconnect();
         // made the request to webmention.io
         var request = new XMLHttpRequest();
         request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
@@ -613,29 +618,28 @@ helpers = {
         request.send();
     }
 
-    // Load in WebMentions and remove the WebMentions button
     function showWebmentions() {
-        var jumpToWebmentions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-        // check if already loaded the data successfully, if not, load it (again)
+        // check if already loaded the webmentions, if not, load it (again)
         if (webmentionsLoaded === false) {
             loadWebmentions();
         }
-        // only if the button still exists should we load and hide the button
+        // only if the button still exists should we hide the button
         if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute('aria-hidden') === 'false') {
             WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
             WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
-            WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
-            if (jumpToWebmentions) {
-                WEBMENTIONS_SECTION.scrollIntoView();
-            }
-            if (webmentionsCount > 1) {
-                WEBMENTIONS_THREAD.focus();
-            } else {
-                WEBMENTIONS_INPUT.focus();
-            }
+        }
+        WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+    }
+
+    function showWebmentionsAndJump() {
+        showWebmentions();
+        WEBMENTIONS_SECTION.scrollIntoView();
+        if (webmentionsCount > 1) {
+            WEBMENTIONS_THREAD.focus();
+        } else {
+            WEBMENTIONS_INPUT.focus();
         }
     }
 

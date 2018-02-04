@@ -14,8 +14,8 @@ author:
   codepen:     chrisburnell
   twitter:     '@iamchrisburnell'
   employer:
-    name: City, University of London
-    url:  https://www.city.ac.uk
+    name: Squiz
+    url:  https://www.squiz.net
 
 url:      https://chrisburnell.com
 baseurl:  ''
@@ -28,7 +28,6 @@ urls:
   github_repo:  https://github.com/chrisburnell/chrisburnell.com
   lastfm:       https://last.fm/user/chrisburnell
   license:      https://www.gnu.org/licenses/gpl-3.0.txt
-  ravenous:     https://ravenous.chrisburnell.com
   rss:          /feed.xml
   rss_articles: /feed-articles.xml
   rss_links:    /feed-links.xml
