@@ -26,7 +26,7 @@
         </li>`;
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
-    let observer = new IntersectionObserver(checkWebmentionsVisible);
+    let observer = new IntersectionObserver(function() { showWebmentions(false); });
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
@@ -47,20 +47,10 @@
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkWebmentionsVisible(entries, observer) {
-        if (webmentionsLoaded === false) {
-            entries.forEach(entry => {
-                if (entry.intersectionRatio > 0) {
-                    loadWebmentions();
-                }
-            });
-        }
-        else {
-            observer.unobserve(WEBMENTIONS_BUTTON);
-        }
-    }
-
     function loadWebmentions() {
+        // disconnect the IntersectionObserver
+        observer.disconnect();
+        // made the request to webmention.io
         let request = new XMLHttpRequest();
         request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
         request.onload = function() {
@@ -93,7 +83,7 @@
     }
 
     // Load in WebMentions and remove the WebMentions button
-    function showWebmentions() {
+    function showWebmentions(jumpToWebmentions = true) {
         // check if already loaded the data successfully, if not, load it (again)
         if (webmentionsLoaded === false) {
             loadWebmentions();
@@ -105,7 +95,9 @@
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
             WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
             WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
-            WEBMENTIONS_SECTION.scrollIntoView();
+            if (jumpToWebmentions) {
+                WEBMENTIONS_SECTION.scrollIntoView();
+            }
             if (webmentionsCount > 1) {
                 WEBMENTIONS_THREAD.focus();
             }
