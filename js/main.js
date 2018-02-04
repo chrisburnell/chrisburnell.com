@@ -555,17 +555,7 @@ helpers = {
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function checkVisibility(entries, observer) {
-        entries.forEach(function (entry) {
-            if (entry.intersectionRatio > 0) {
-                showWebmentions();
-                observer.disconnect();
-            }
-        });
-    }
-
     function loadWebmentions() {
-        // made the request to webmention.io
         var request = new XMLHttpRequest();
         request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
         request.onload = function () {
@@ -574,8 +564,6 @@ helpers = {
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
                 WEBMENTIONS_BUTTON.removeEventListener('mouseover', function () {});
-                // prevent the observer from continuing to fire
-                observer.disconnect();
                 var data = JSON.parse(request.responseText);
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;
@@ -631,6 +619,15 @@ helpers = {
             WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
         }
         WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+    }
+
+    function checkVisibility(entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                showWebmentions();
+                observer.disconnect();
+            }
+        });
     }
 
     function showWebmentionsAndJump() {

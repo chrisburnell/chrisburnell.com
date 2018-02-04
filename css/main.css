@@ -3527,6 +3527,8 @@ footer div {
 }
 
 .webmentions__item__image {
+    background-clip: padding-box;
+    border-radius: 50%;
     width: 1.125rem;
     height: 1.125rem;
     display: inline-block;

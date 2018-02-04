@@ -57,6 +57,7 @@
 }
 
 .webmentions__item__image {
+    @include border-radius(50%);
     width:  $font-size-gamma;
     height: $font-size-gamma;
     display: inline-block;
