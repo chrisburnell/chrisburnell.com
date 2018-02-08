@@ -29,24 +29,6 @@ a {
         @include v(color, white);
     }
 
-    // Fallback for text-decoration-skip
-    // Will not respect colors defined by text-decoration-color
-    @supports (not (text-decoration-skip: ink)) {
-        background-image: gradient(currentColor 75%, currentColor 75%);
-        background-repeat: repeat-x;
-        background-size: 1px 1px;
-        background-position: 0 90%;
-        text-decoration: none;
-        text-shadow: -1px -1px 0 $color-white,
-                      1px -1px 0 $color-white,
-                     -1px  1px 0 $color-white,
-                      1px  1px 0 $color-white;
-        text-shadow: -1px -1px 0 var(--color-white),
-                      1px -1px 0 var(--color-white),
-                     -1px  1px 0 var(--color-white),
-                      1px  1px 0 var(--color-white);
-    }
-
     %heading-elements & {
         @include v(color, kaiser);
         // remove when text-decoration-color is supported

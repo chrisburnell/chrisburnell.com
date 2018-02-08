@@ -217,19 +217,6 @@ a:active {
     color: var(--color-white);
 }
 
-@supports not ((-webkit-text-decoration-skip: ink) or (text-decoration-skip: ink)) {
-    a {
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, currentColor), color-stop(75%, currentColor));
-        background-image: linear-gradient(to bottom, currentColor 75%, currentColor 75%);
-        background-repeat: repeat-x;
-        background-size: 1px 1px;
-        background-position: 0 90%;
-        text-decoration: none;
-        text-shadow: -1px -1px 0 #f9f9f9, 1px -1px 0 #f9f9f9, -1px 1px 0 #f9f9f9, 1px 1px 0 #f9f9f9;
-        text-shadow: -1px -1px 0 var(--color-white), 1px -1px 0 var(--color-white), -1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white);
-    }
-}
-
 h1 a,
 h2 a,
 h3 a,
