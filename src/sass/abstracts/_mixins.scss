@@ -475,7 +475,7 @@
 ///
 /// Select a CSS variable and provide a fallback
 ///
-@mixin v($property, $variable, $important: false, $show-fallback: true) {
+@mixin v($property, $variable, $negative: false, $important: false, $show-fallback: true) {
     $map-name: map-get($property-maps, $property);
     $nest-name: null;
     $nest-map-name: null;

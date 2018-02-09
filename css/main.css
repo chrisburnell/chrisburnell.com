@@ -346,6 +346,10 @@ h6:active .fragment-anchor, .fragment-anchor:target {
     padding-left: var(--measure-small-relative);
     padding-right: 0.625em;
     padding-right: var(--measure-small-relative);
+    margin-left: -0.625em;
+    margin-left: calc(var(--measure-small-relative) * -1);
+    margin-right: -0.625em;
+    margin-right: calc(var(--measure-small-relative) * -1);
 }
 
 .related-anchor::after {
@@ -2767,8 +2771,8 @@ aside .content-list li + li {
 }
 
 .content-list a:hover, .content-list a:focus, .content-list a:active {
-    background-color: rgba(95, 138, 166, 0.1) !important;
-    background-color: var(--color-raven--gamma) !important;
+    background-color: rgba(95, 138, 166, 0.1);
+    background-color: var(--color-raven--gamma);
 }
 
 aside .content-list a {

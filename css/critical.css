@@ -346,6 +346,10 @@ h6:active .fragment-anchor, .fragment-anchor:target {
     padding-left: var(--measure-small-relative);
     padding-right: 0.625em;
     padding-right: var(--measure-small-relative);
+    margin-left: -0.625em;
+    margin-left: calc(var(--measure-small-relative) * -1);
+    margin-right: -0.625em;
+    margin-right: calc(var(--measure-small-relative) * -1);
 }
 
 .related-anchor::after {

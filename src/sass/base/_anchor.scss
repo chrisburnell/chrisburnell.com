@@ -108,6 +108,10 @@ a {
 .endnote-anchor {
     @include v(padding-left, small-relative);
     @include v(padding-right, small-relative);
+    margin-left: -$measure-small-relative;
+    margin-left: calc(var(--measure-small-relative) * -1);
+    margin-right: -$measure-small-relative;
+    margin-right: calc(var(--measure-small-relative) * -1);
 }
 
 // Related Anchors
