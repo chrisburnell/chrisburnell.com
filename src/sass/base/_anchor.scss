@@ -104,8 +104,8 @@ a {
     }
 }
 
-// Endnote Anchors
-.endnote-anchor {
+// Footnote Anchors
+.footnote-anchor {
     @include v(padding-left, small-relative);
     @include v(padding-right, small-relative);
     margin-left: -$measure-small-relative;
@@ -118,4 +118,25 @@ a {
 .related-anchor::after {
     // NO-BREAK SPACE, RIGHTWARDS ARROW
     content: " →";
+}
+
+// Anchor Target Animation
+%heading-elements,
+.footnote,
+.footnote-anchor {
+    &[id] {
+        &:target {
+            animation: anchor-target $animation-duration $animation-function;
+            animation: anchor-target var(--animation-duration) var(--animation-function);
+        }
+    }
+}
+@keyframes anchor-target {
+    0%,
+    50% {
+        @include v(background-color, highlight);
+    }
+    100% {
+        @include v(background-color, transparent);
+    }
 }

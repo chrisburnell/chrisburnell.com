@@ -2,15 +2,7 @@
 {% include components/header.html %}
 
 
-{% assign itemtype = 'WebPage' %}
-{% if page.categories contains 'article'
-   or page.categories contains 'link'
-   or page.categories contains 'note'
-   or page.categories contains 'pen' %}
-    {% assign itemtype = 'BlogPosting' %}
-{% elsif page.categories contains 'talk' %}
-    {% assign itemtype = 'PresentationDigitalDocument' %}
-{% endif %}
+{% assign itemtype = 'Article' %}
 <main class="wrap" role="main">
     <article class="content  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
 
@@ -30,9 +22,7 @@
             {% endif %}
         </h1>
 
-        {% include components/author.html %}
-
-        {% include components/meta.html %}
+        {% include components/ingredients.html %}
 
         {% include components/banner.html %}
 
@@ -49,15 +39,6 @@
             </div>
         {% endif %}
 
-        {% if page.external_url %}
-            <nav class="buttons-list" role="navigation">
-                {% assign url = page.external_url.url | default: page.external_url %}
-                {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% assign title = page.external_url.title | default: url_root %}
-                <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
-            </nav>
-        {% endif %}
-
         <div class="content__body  e-content">
             {{ content }}
         </div>
@@ -67,10 +48,7 @@
 
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.categories.first %}
-
         {% include components/webmentions.html %}
-        {% include components/comments.html %}
 
         <hr>
 

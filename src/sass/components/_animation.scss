@@ -16,8 +16,8 @@
 
 // Anchor Target Animation
 %heading-elements,
-.endnote,
-.endnote-anchor {
+.footnote,
+.footnote-anchor {
     &[id] {
         &:target {
             animation: anchor-target $animation-duration $animation-function;

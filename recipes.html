@@ -1,0 +1,24 @@
+---
+page_class: page--recipes
+searchable: no-content
+
+title: Recipes
+lede: All of my recipes.
+---
+
+
+<p><em>There are {{ site.categories.recipe | size }} published Recipes.</em></p>
+
+<ol class="content-list" id="talks" role="list">
+    {% for page in site.categories.recipe %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='recipes' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='recipes' %}

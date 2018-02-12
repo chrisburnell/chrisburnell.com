@@ -1,0 +1,15 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Recipes Feed
+lede: All of my recipes.
+category_path: '/recipes/'
+---
+
+
+{% for page in site.categories.recipe limit: 10 %}
+    {% include components/item-feed.html %}
+{% endfor %}

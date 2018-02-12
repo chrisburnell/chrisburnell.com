@@ -9,8 +9,6 @@
 // floated within an article or list of articles. The math is calculated as in
 // `layout/_content.scss`.
 aside {
-    @include font-family(serif);
-
     @include media("screen", "<=medium") {
         flex: 1 0 100%;
     }
@@ -30,6 +28,7 @@ aside {
 
     &:not([class]) {
         @include border-radius;
+        @include font-family(serif);
         @include v(background-color, black--delta);
         padding: $measure-small $measure-medium;
         padding: var(--measure-small) var(--measure-medium);

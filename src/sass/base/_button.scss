@@ -31,6 +31,7 @@ button,
     @include v(line-height, code);
     text-align: center;
     text-decoration: none;
+    text-shadow: 0 0 $border-width-hairline $color-black--gamma;
     white-space: nowrap;
     cursor: pointer;
     appearance: none;
@@ -84,6 +85,10 @@ button,
     &[disabled] {
         @include v(opacity, beta);
         pointer-events: none;
+    }
+
+    .icon {
+        filter: drop-shadow(0 0 $border-width-hairline $color-black--gamma);
     }
 }
 

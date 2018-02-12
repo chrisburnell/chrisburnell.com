@@ -4,11 +4,11 @@
 
 {% endcomment %}
 {% assign itemtype = 'WebPage' %}
-{% if page.categories contains 'article' %}
-    {% assign itemtype = 'TechArticle' %}
-{% elsif page.categories contains 'link'
-      or page.categories contains 'note'
-      or page.categories contains 'pen' %}
+{% if page.categories contains 'article'
+   or page.categories contains 'link'
+   or page.categories contains 'note'
+   or page.categories contains 'pen'
+   or page.categories contains 'recipe' %}
     {% assign itemtype = 'BlogPosting' %}
 {% elsif page.categories contains 'talk' %}
     {% assign itemtype = 'PresentationDigitalDocument' %}
@@ -24,6 +24,8 @@
                     {% include content/svg.html type='feather' %}
                 {% elsif page.categories contains 'pen' %}
                     {% include content/svg.html type='codepen' %}
+                {% elsif page.categories contains 'recipe' %}
+                    {% include content/svg.html type='article' %}
                 {% elsif page.categories contains 'talk' %}
                     {% include content/svg.html type='bullhorn' %}
                 {% endif %}
@@ -45,6 +47,8 @@
                     {{ page.content | markdownify | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'pen' %}
                     Featured Pen
+                {% elsif page.categories contains 'recipe' %}
+                    Recipe
                 {% elsif page.categories contains 'talk' %}
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}

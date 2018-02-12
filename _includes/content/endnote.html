@@ -1,7 +1,0 @@
-{% comment %}
-
-  This include lets you easily include an Endnote and the necessary markup will
-  be generated automatically.
-
-{% endcomment %}
-{% assign endnote_count = endnote_count | plus: 1 %}<sup><a href="#endnote-{{ endnote_count }}" class="endnote-anchor" id="note-{{ endnote_count }}" title="">{{ endnote_count }}</a></sup>

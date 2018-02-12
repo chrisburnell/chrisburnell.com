@@ -22,6 +22,8 @@
         <description>{{ page.content | markdownify | strip_html | xml_escape | truncatewords: 20 }}</description>
     {% elsif page.categories contains 'pen' %}
         <description>Featured Pen</description>
+    {% elsif page.categories contains 'recipe' %}
+        <description>Recipe</description>
     {% elsif page.categories contains 'talk' %}
         <description>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</description>
     {% endif %}

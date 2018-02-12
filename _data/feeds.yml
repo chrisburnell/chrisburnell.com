@@ -23,6 +23,11 @@
   url: '/feed-links.xml'
   icon: 'rss'
 
+- title: Subscribe to Recipes
+  rel: 'alternate'
+  url: '/feed-recipes.xml'
+  icon: 'rss'
+
 - title: Subscribe to Talks
   rel: 'alternate'
   url: '/feed-talks.xml'

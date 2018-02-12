@@ -82,13 +82,13 @@
             </ul>
         {% endif %}
 
-        {% if page.endnotes %}
-            {% include content/heading.html title='Endnotes' %}
+        {% if page.footnotes %}
+            {% include content/heading.html title='Footnotes' %}
             <ol>
-                {% for note in page.endnotes %}
-                    <li class="endnote" id="endnote-{{ forloop.index }}">
+                {% for note in page.footnotes %}
+                    <li class="footnote" id="footnote-{{ forloop.index }}">
                         {{ note }}
-                        <a href="#note-{{ forloop.index }}" class="endnote-anchor" title="">↩︎</a>
+                        <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="">↩︎</a>
                     </li>
                 {% endfor %}
             </ol>

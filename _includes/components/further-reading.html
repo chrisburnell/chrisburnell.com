@@ -1,0 +1,21 @@
+{% if page.further_reading %}
+    {% include content/heading.html title='Further Reading' %}
+    <ul>
+        {% for link in page.further_reading %}
+            {% assign url = link.url %}
+            {% if url contains site.url %}
+                {% assign rel = '' %}
+            {% else %}
+                {% assign rel = ' rel="external"' %}
+            {% endif %}
+            {% if link.title == null or link.title == empty %}
+                {% assign title = url %}
+            {% else %}
+                {% assign title = link.title %}
+            {% endif %}
+            <li>
+                <a href="{{ url }}"{{ rel }}>{{ title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

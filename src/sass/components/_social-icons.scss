@@ -43,6 +43,7 @@
         &:active {
             .icon {
                 opacity: 1;
+                animation: wiggle #{$transition-duration-default * 2} ease;
             }
         }
 
@@ -51,5 +52,16 @@
                 transform: translateY($border-width-thin);
             }
         }
+    }
+}
+@keyframes wiggle {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: translateY($border-width-thin);
+    }
+    100% {
+        transform: none;
     }
 }

@@ -14,6 +14,10 @@
   url: '/links/'
   icon: 'link'
 
+- title: Recipes Archive
+  url: '/recipes/'
+  icon: 'article'
+
 - title: Talks Archive
   url: '/talks/'
   icon: 'bullhorn'

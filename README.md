@@ -46,7 +46,7 @@ Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Contributing
 
-Please see the [Contributing Guide](CONTRIBUTING.md).
+Please see the [Contributing Guide](CONTRIBUTING.md), [Commit Template](COMMIT_TEMPLATE.md), [Issue Template](ISSUE_TEMPLATE.md), and [Pull Request Template(PULL_REQUEST_TEMPLATE.md).
 
 
 ### Build Process
@@ -64,7 +64,8 @@ Please see the [Contributing Guide](CONTRIBUTING.md).
 _layouts
 ├── feed.html
 ├── page.html
-└── post.html
+├── post.html
+└── recipe.html
 ```
 
 
@@ -86,6 +87,7 @@ _includes
 │   ├── comments.html
 │   ├── footer.html
 │   ├── header.html
+│   ├── ingredients.html
 │   ├── item-content-list.html
 │   ├── item-feed.html
 │   ├── nav-primary.html
@@ -105,7 +107,7 @@ _includes
 │   ├── code-toggle-bottom.html
 │   ├── code-toggle-top.html
 │   ├── codepen.html
-│   ├── endnote.html
+│   ├── footnote.html
 │   ├── fragment-anchor.html
 │   ├── heading.html
 │   ├── img.html
@@ -143,7 +145,6 @@ src/sass
 │   ├── _quote.scss
 │   └── _table.scss
 ├── components
-│   ├── _animation.scss
 │   ├── _author.scss
 │   ├── _banner.scss
 │   ├── _buttons-list.scss
@@ -154,6 +155,7 @@ src/sass
 │   ├── _footer.scss
 │   ├── _helpers.scss
 │   ├── _icon.scss
+│   ├── _ingredients.scss
 │   ├── _lede.scss
 │   ├── _logo.scss
 │   ├── _media.scss

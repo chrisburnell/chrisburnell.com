@@ -1,7 +1,7 @@
 <!-- </textarea> --><!-- '"´ -->
 <form id="webmentions-form" class="webmentions__form" method="post" action="https://webmention.io/chrisburnell.com/webmention">
     <label for="webmention-source" class="webmentions-label">Have you <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">responded</a> to this elsewhere on the web?<br>Let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
-    <input type="url" name="source" id="webmention-source" class="webmentions-input  js-webmentions-input" placeholder="www.example.com" aria-required="true" required aria-disabled="true" disabled>
+    <input type="url" name="source" id="webmention-source" class="webmentions-input  js-webmentions-input" placeholder="www.example.com/post-i-wrote" aria-required="true" required aria-disabled="true" disabled>
     <input type="hidden" name="target" value="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
     <input type="submit" class="button  button--small  webmentions-submit  js-webmentions-submit" value="Ping!" aria-disabled="true" disabled>
 </form>
