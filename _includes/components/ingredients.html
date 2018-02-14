@@ -3,7 +3,7 @@
     {% include content/heading.html title='Ingredients' %}
     <ul class="ingredients__list">
     {% for ingredient in page.ingredients %}
-        <li class="ingredient">
+        <li class="ingredient" id="{{ ingredient.name | slugify }}">
             <span class="ingredient__name">{{ ingredient.name }}</span>
             <span class="incredient__amount-units">{{ ingredient.amount }} {{ ingredient.units }}</span>
             <!--{% if ingredient.notes %}

@@ -65,7 +65,7 @@ Let’s break down how bookmarks are categorised, at least as far as I use them 
 So it was important for me to make these parts distinct in the new design, whilst maintaining a level of minimalism and a muted colour palette.
 
 
-{% include content/heading.html title='<code>injection"); DROP TABLE Bookmarks;--</code>' id='injection' %}
+{% include content/heading.html title='injection"); DROP TABLE Bookmarks;--' id='injection' class='monospace' %}
 
 <aside><figure>{% include content/img.html src='/images/content/idontbelievemyeyes.gif' alt='' %}</figure></aside>
 

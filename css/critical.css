@@ -149,8 +149,7 @@ html {
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-size: 1rem;
     font-size: var(--font-size-default);
     font-style: normal;
@@ -168,8 +167,7 @@ html {
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
@@ -182,7 +180,6 @@ body {
 }
 
 a {
-    -webkit-transition: background-color 0.2s ease 0s, color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
@@ -406,6 +403,15 @@ h6 {
     font-variant-numeric: lining-nums;
 }
 
+h1.monospace,
+h2.monospace,
+h3.monospace,
+h4.monospace,
+h5.monospace,
+h6.monospace {
+    text-transform: none;
+}
+
 .alpha,
 h1 {
     text-transform: uppercase;
@@ -494,8 +500,7 @@ h3:not(:last-child) {
     .content > h3,
     .content__body > h3,
     .widget h3 {
-        -ms-flex-item-align: start;
-            align-self: flex-start;
+        align-self: flex-start;
     }
 }
 
@@ -662,8 +667,6 @@ main {
 }
 
 header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     position: relative;
@@ -677,13 +680,8 @@ header {
 
 @media screen and (max-width: 800px) {
     header {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        flex-direction: column;
+        justify-content: center;
     }
     @supports (display: grid) {
         header {
@@ -695,9 +693,7 @@ header {
 
 @media screen and (min-width: 801px) {
     header {
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        justify-content: space-between;
     }
     @supports (display: grid) {
         header {
@@ -728,13 +724,8 @@ header::before {
 
 @media screen and (max-width: 800px) {
     .content {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
     }
 }
 
@@ -751,9 +742,7 @@ header::before {
 
 @media screen and (max-width: 800px) {
     aside {
-        -webkit-box-flex: 1;
-            -ms-flex: 1 0 100%;
-                flex: 1 0 100%;
+        flex: 1 0 100%;
     }
 }
 
@@ -869,11 +858,8 @@ aside p {
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     height: 6.25rem;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 15.875rem;
-            flex: 1 0 15.875rem;
-    -ms-flex: 1 0 var(--aside-width);
-        flex: 1 0 var(--aside-width);
+    flex: 1 0 15.875rem;
+    flex: 1 0 var(--aside-width);
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -885,11 +871,9 @@ aside p {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    -webkit-transition: -webkit-transform 1s ease 0s;
     transition: -webkit-transform 1s ease 0s;
     transition: transform 1s ease 0s;
     transition: transform 1s ease 0s, -webkit-transform 1s ease 0s;
-    -webkit-transition: -webkit-transform var(--transition-duration-long) ease 0s;
     transition: -webkit-transform var(--transition-duration-long) ease 0s;
     transition: transform var(--transition-duration-long) ease 0s;
     transition: transform var(--transition-duration-long) ease 0s, -webkit-transform var(--transition-duration-long) ease 0s;
@@ -908,7 +892,6 @@ aside p {
 
 @media screen and (prefers-reduced-motion: reduce) {
     .logo .icon {
-        -webkit-transition: none 0.2s ease 0s;
         transition: none 0.2s ease 0s;
     }
 }
@@ -924,21 +907,15 @@ aside p {
 }
 
 .logo[href]:active .icon {
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
-    -webkit-transition-duration: var(--transition-duration-default);
-            transition-duration: var(--transition-duration-default);
+    transition-duration: 0.2s;
+    transition-duration: var(--transition-duration-default);
     -webkit-transform: translateX(-30%) translateY(-25%);
             transform: translateX(-30%) translateY(-25%);
 }
 
 .nav-primary {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     padding-top: 1.25rem;
     padding-top: var(--measure-medium);
     padding-bottom: 1.25rem;
@@ -948,9 +925,7 @@ aside p {
 
 @media screen and (max-width: 800px) {
     .nav-primary {
-        -webkit-box-flex: 1;
-            -ms-flex: 1 0 100%;
-                flex: 1 0 100%;
+        flex: 1 0 100%;
         padding-top: 0.625rem;
         padding-top: var(--measure-small);
         text-align: center;
@@ -990,7 +965,6 @@ aside p {
 }
 
 .nav-primary-list a {
-    -webkit-transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s;
     transition: color 0.2s ease 0s, padding-bottom 0.2s ease 0s, border-bottom-width 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
@@ -1091,16 +1065,9 @@ aside + .lede {
 
 @media screen and (max-width: 800px) {
     .author {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-ordinal-group: 1000;
-            -ms-flex-order: 999;
-                order: 999;
+        flex-direction: column;
+        order: 999;
         margin-top: 2.25rem;
         margin-top: var(--measure-large);
     }
@@ -1109,13 +1076,8 @@ aside + .lede {
 .author-information {
     font-family: Georgia, serif;
     font-family: var(--font-family-serif);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     margin-bottom: 1.25rem;
     margin-bottom: var(--measure-medium);
     font-size: 0.875rem;
@@ -1177,9 +1139,7 @@ aside + .lede {
 }
 
 .author-image {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 6.25rem;
-            flex: 0 0 6.25rem;
+    flex: 0 0 6.25rem;
     float: left;
     position: relative;
     text-decoration: none;
@@ -1197,14 +1157,15 @@ svg {
     height: 6.25rem;
 }
 
-@supports (shape-outside: circle(50%)) {
+@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
     .author-image, .author-image::before,
     .author-image img,
     .author-image
     picture,
     .author-image
     svg {
-        shape-outside: circle(50%);
+        -webkit-shape-outside: circle(50%);
+                shape-outside: circle(50%);
     }
 }
 
@@ -1234,7 +1195,6 @@ svg {
 .author-image img, .author-image
 picture, .author-image
 svg {
-    -webkit-transition: opacity 0.2s ease 0s;
     transition: opacity 0.2s ease 0s;
     display: block;
 }
@@ -1293,14 +1253,7 @@ svg {
 }
 
 .author-name {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -14,6 +14,12 @@ blockquote {
     @include v(padding, medium);
     margin: 0 auto $measure-medium;
 
+    %monospace-elements,
+    cite,
+    em {
+        font-style: normal;
+    }
+
     p {
         &::before {
             content: open-quote;

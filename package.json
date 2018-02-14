@@ -18,7 +18,7 @@
     "node": ">= 5.10.0"
   },
   "dependencies": {
-    "autoprefixer": "7.2.5",
+    "autoprefixer": "8.0.0",
     "babel-core": "6.26.0",
     "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "babel-preset-env": "1.6.1",
@@ -51,6 +51,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "scripts": {
+    "build": "gulp",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },

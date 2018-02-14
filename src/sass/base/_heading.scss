@@ -19,7 +19,7 @@ h6 {
     font-variant-numeric: lining-nums;
 
     // For special Monospace titles
-    %monospace-elements {
+    &.monospace {
         @include case(none);
     }
 }
