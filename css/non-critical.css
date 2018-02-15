@@ -1875,11 +1875,6 @@ footer div {
             animation: wiggle 0.4s ease;
 }
 
-.social-icons-list a:active .icon {
-    -webkit-transform: translateY(0.125rem);
-            transform: translateY(0.125rem);
-}
-
 @-webkit-keyframes wiggle {
     0% {
         -webkit-transform: none;
@@ -1908,6 +1903,11 @@ footer div {
         -webkit-transform: none;
                 transform: none;
     }
+}
+
+.social-icons-list a:active .icon {
+    -webkit-transform: translateY(0.125rem);
+            transform: translateY(0.125rem);
 }
 
 .comments-anchor {

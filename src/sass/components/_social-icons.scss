@@ -43,7 +43,23 @@
         &:active {
             .icon {
                 opacity: 1;
+                // stylelint-disable no-unknown-animations
                 animation: wiggle #{$transition-duration-default * 2} ease;
+                // stylelint-disable max-nesting-depth
+                @at-root {
+                    @keyframes wiggle {
+                        0% {
+                            transform: none;
+                        }
+                        50% {
+                            transform: translateY($border-width-thin);
+                        }
+                        100% {
+                            transform: none;
+                        }
+                    }
+                }
+                // stylelint-enable no-unknown-animations, max-nesting-depth
             }
         }
 
@@ -52,16 +68,5 @@
                 transform: translateY($border-width-thin);
             }
         }
-    }
-}
-@keyframes wiggle {
-    0% {
-        transform: none;
-    }
-    50% {
-        transform: translateY($border-width-thin);
-    }
-    100% {
-        transform: none;
     }
 }

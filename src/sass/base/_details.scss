@@ -31,7 +31,9 @@ summary {
     &:focus {
         text-decoration: underline;
         text-decoration-skip: ink;
+        // stylelint-disable property-no-unknown
         text-decoration-skip-ink: auto;
+        // stylelint-enable
     }
 
     details:not([open]) &:hover,

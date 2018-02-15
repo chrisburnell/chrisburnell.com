@@ -368,8 +368,7 @@ h6[id]:target,
 }
 
 @-webkit-keyframes anchor-target {
-    0%,
-    50% {
+    0%, 50% {
         background-color: var(--color-highlight);
     }
     100% {
@@ -379,8 +378,7 @@ h6[id]:target,
 }
 
 @keyframes anchor-target {
-    0%,
-    50% {
+    0%, 50% {
         background-color: var(--color-highlight);
     }
     100% {

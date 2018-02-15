@@ -14,7 +14,9 @@ a {
     text-decoration: underline;
     @include v(text-decoration-color, alto);
     text-decoration-skip: ink;
+    // stylelint-disable property-no-unknown
     text-decoration-skip-ink: auto;
+    // stylelint-enable
 
     &:hover,
     &:focus,
@@ -128,15 +130,19 @@ a {
         &:target {
             animation: anchor-target $animation-duration $animation-function;
             animation: anchor-target var(--animation-duration) var(--animation-function);
+            // stylelint-disable max-nesting-depth
+            @at-root {
+                @keyframes anchor-target {
+                    0%,
+                    50% {
+                        @include v(background-color, highlight);
+                    }
+                    100% {
+                        @include v(background-color, transparent);
+                    }
+                }
+            }
+            // stylelint-enable max-nesting-depth
         }
-    }
-}
-@keyframes anchor-target {
-    0%,
-    50% {
-        @include v(background-color, highlight);
-    }
-    100% {
-        @include v(background-color, transparent);
     }
 }

@@ -115,24 +115,30 @@
         }
 
         & > %image-elements {
+            // stylelint-disable no-unknown-animations
             animation: peek #{$transition-duration-default * 3} ease $animation-duration forwards;
+            // stylelint-disable max-nesting-depth
+            @at-root {
+                @keyframes peek {
+                    0% {
+                        transform: none;
+                    }
+                    50% {
+                        transform: translateY(-#{$avatar-size * 0.7});
+                    }
+                    75% {
+                        transform: translateY(-#{$avatar-size * 0.45});
+                    }
+                    100% {
+                        transform: translateY(-#{$avatar-size * 0.6});
+                    }
+                }
+            }
+            // stylelint-enable no-unknown-animations, max-nesting-depth
         }
     }
 }
-@keyframes peek {
-    0% {
-        transform: none;
-    }
-    50% {
-        transform: translateY(-#{$avatar-size * 0.7});
-    }
-    75% {
-        transform: translateY(-#{$avatar-size * 0.45});
-    }
-    100% {
-        transform: translateY(-#{$avatar-size * 0.6});
-    }
-}
+
 
 .author-name {
     display: flex;
