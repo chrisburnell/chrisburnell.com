@@ -3247,38 +3247,6 @@ footer div {
 
 .social-icons-list a:hover .icon, .social-icons-list a:focus .icon, .social-icons-list a:active .icon {
     opacity: 1;
-    -webkit-animation: wiggle 0.4s ease;
-            animation: wiggle 0.4s ease;
-}
-
-@-webkit-keyframes wiggle {
-    0% {
-        -webkit-transform: none;
-                transform: none;
-    }
-    50% {
-        -webkit-transform: translateY(0.125rem);
-                transform: translateY(0.125rem);
-    }
-    100% {
-        -webkit-transform: none;
-                transform: none;
-    }
-}
-
-@keyframes wiggle {
-    0% {
-        -webkit-transform: none;
-                transform: none;
-    }
-    50% {
-        -webkit-transform: translateY(0.125rem);
-                transform: translateY(0.125rem);
-    }
-    100% {
-        -webkit-transform: none;
-                transform: none;
-    }
 }
 
 .social-icons-list a:active .icon {
