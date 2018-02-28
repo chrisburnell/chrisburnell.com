@@ -10,12 +10,13 @@ author:
   nationality: Canadian
   location:    London, UK
   email:       me@chrisburnell.com
-  job_title:   UI developer
+  role:        UI Developer
   codepen:     chrisburnell
   twitter:     '@iamchrisburnell'
-  employer:
+  employment:
     name: Squiz
     url:  https://www.squiz.net
+    role: Front End Developer
 
 url:      https://chrisburnell.com
 baseurl:  ''
@@ -31,9 +32,10 @@ urls:
   rss:          /feed.xml
   rss_articles: /feed-articles.xml
   rss_links:    /feed-links.xml
+  rss_notes:    /feed-notes.xml
   rss_pens:     /feed-pens.xml
   rss_talks:    /feed-talks.xml
-  sassdoc:      /sassdoc
+  rss_recipes:  /feed-recipes.xml
   speakerdeck:  https://speakerdeck.com/chrisburnell
   spotify:      https://open.spotify.com/user/1128245857
   twitter:      https://twitter.com/iamchrisburnell
