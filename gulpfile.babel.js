@@ -28,7 +28,6 @@ import webp from 'gulp-webp';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import reporter from 'postcss-reporter';
-import sassdoc from 'sassdoc';
 import scss_syntax from 'postcss-scss';
 import stylelint from 'stylelint';
 
@@ -47,8 +46,7 @@ const paths = {
         src: 'src/images',
         dest: 'images'
     },
-    includes: '_includes',
-    sassdoc: 'sassdoc'
+    includes: '_includes'
 };
 
 // -----------------------------------------------------------------------------
@@ -143,16 +141,6 @@ gulp.task('css-critical', () => {
         .pipe(gulp.dest(`${paths.includes}/generated/`));
 });
 
-// Generate Sass documentation
-gulp.task('css-sassdoc', () => {
-    return gulp.src(`${paths.css.src}/**/*.scss`)
-        .pipe(plumber())
-        .pipe(newer(`${paths.sassdoc}`))
-        .pipe(sassdoc({
-            dest: `${paths.sassdoc}/`
-        }));
-});
-
 // -----------------------------------------------------------------------------
 
 // Lint JavaScript
@@ -239,7 +227,6 @@ gulp.task('default', () => {
 gulp.task('css', () => {
     gulp.start('css-main');
     gulp.start('css-critical');
-    gulp.start('css-sassdoc');
 });
 
 // JS task

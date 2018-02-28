@@ -38,10 +38,9 @@
     "gulp-watch": "5.0.0",
     "gulp-webp": "3.0.0",
     "postcss-reporter": "5.0.0",
-    "postcss-scss": "1.0.3",
-    "sassdoc": "2.5.0",
+    "postcss-scss": "1.0.4",
     "snyk": "^1.41.1",
-    "stylelint": "8.4.0"
+    "stylelint": "9.1.1"
   },
   "repository": {
     "type": "git",
