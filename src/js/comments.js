@@ -11,7 +11,7 @@
 
     const DISQUS_SHORTNAME = 'chrisburnell';
     const COMMENTS_SECTION = document.querySelector('.js-comments');
-    const COMMENTS_BUTTON = document.querySelector('.js-show-comments');
+    const COMMENTS_BUTTON  = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
     const COMMENTS_HASH = ['#comment', '#disqus_thread'];
 

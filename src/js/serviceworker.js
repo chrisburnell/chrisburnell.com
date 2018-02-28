@@ -14,18 +14,17 @@ sitemap:
 
 
 // Set up the caches
-// YYYY-MM-DD_hhmm
-const VERSION = '{{ site.time | date: '%F_%H%M' }}::';
-const STATIC_CACHE = VERSION + 'static';
+const VERSION = '{{ site.time | date: '%F_%H%M%S' }}'; // 1970-01-01_000000
+const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
 const IMAGES_CACHE = 'images';
 const PAGES_CACHE = 'pages';
-const CACHE_LIST = [
-    ASSETS_CACHE,
-    IMAGES_CACHE,
-    PAGES_CACHE,
-    STATIC_CACHE
-];
+const CACHES = {
+    STATIC_CACHE: null,
+    ASSETS_CACHE: 20,
+    IMAGES_CACHE: 20,
+    PAGES_CACHE:  35,
+};
 
 // Pages to cache
 const OFFLINE_PAGES = [
@@ -38,6 +37,7 @@ const OFFLINE_PAGES = [
     '/links/',
     '/notes/',
     '/pens/',
+    '/recipes/',
     '/search/',
     '/styleguide/',
     '/tags/',
@@ -46,8 +46,8 @@ const OFFLINE_PAGES = [
 
 // Files that *must* be cached
 const CRITICAL_CACHE = [
-    '/css/main.min.css?version={{ site.time | date: '%F_%H%M' }}',
-    '/js/main.min.js?version={{ site.time | date: '%F_%H%M' }}',
+    `/css/main.min.css?version=${VERSION}`,
+    `/js/main.min.js?version=${VERSION}`,
     '/search.json',
     '/offline/'
 ];
@@ -92,7 +92,7 @@ function clearOldCaches() {
     return caches.keys()
         .then( keys => {
             return Promise.all(keys
-                .filter(key => !CACHE_LIST.includes(key))
+                .filter(key => !Object.keys(CACHES).includes(key))
                 .map(key => caches.delete(key))
             );
         });
@@ -113,9 +113,9 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('message', event => {
     if (event.data.command == 'trimCaches') {
-        trimCache(PAGES_CACHE, 35);
-        trimCache(IMAGES_CACHE, 20);
-        trimCache(ASSETS_CACHE, 20);
+        trimCache(ASSETS_CACHE, CACHES.ASSETS_CACHE);
+        trimCache(IMAGES_CACHE, CACHES.IMAGES_CACHE);
+        trimCache(PAGES_CACHE, CACHES.PAGES_CACHE);
     }
 });
 
@@ -125,11 +125,6 @@ self.addEventListener('fetch', event => {
 
     // Only deal with requests to my own server
     if (url.origin !== location.origin) {
-        return;
-    }
-
-    // Ignore requests to some directories
-    if (request.url.includes('/sassdoc')) {
         return;
     }
 

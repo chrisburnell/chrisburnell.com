@@ -22,9 +22,9 @@
 
     function toggleCode(codeToggleID) {
         let codeToggle       = document.querySelector(`#code-toggle--${codeToggleID}`);
-        let codeToggleInput  = codeToggle.querySelector(`#code-toggle-input--${codeToggleID}`);
-        let codeToggleLabel  = codeToggle.querySelector(`#code-toggle-label--${codeToggleID}`);
-        let codeToggleButton = codeToggleLabel.querySelector(`#code-toggle-button--${codeToggleID}`);
+        let codeToggleInput  = document.querySelector(`#code-toggle-input--${codeToggleID}`);
+        let codeToggleLabel  = document.querySelector(`#code-toggle-label--${codeToggleID}`);
+        let codeToggleButton = document.querySelector(`#code-toggle-button--${codeToggleID}`);
 
         codeToggleInput.checked = true;
         codeToggle.setAttribute('aria-expanded', 'true');

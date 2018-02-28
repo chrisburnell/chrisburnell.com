@@ -4,7 +4,7 @@
         {% for note in page.footnotes %}
             <li class="footnote" id="footnote-{{ forloop.index }}">
                 {{ note }}
-                <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="">↩︎</a>
+                <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="" aria-label="Back to content">↩︎</a>
             </li>
         {% endfor %}
     </ol>

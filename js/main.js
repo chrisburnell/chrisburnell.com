@@ -157,9 +157,9 @@ helpers = {
 
     function toggleCode(codeToggleID) {
         var codeToggle = document.querySelector('#code-toggle--' + codeToggleID);
-        var codeToggleInput = codeToggle.querySelector('#code-toggle-input--' + codeToggleID);
-        var codeToggleLabel = codeToggle.querySelector('#code-toggle-label--' + codeToggleID);
-        var codeToggleButton = codeToggleLabel.querySelector('#code-toggle-button--' + codeToggleID);
+        var codeToggleInput = document.querySelector('#code-toggle-input--' + codeToggleID);
+        var codeToggleLabel = document.querySelector('#code-toggle-label--' + codeToggleID);
+        var codeToggleButton = document.querySelector('#code-toggle-button--' + codeToggleID);
 
         codeToggleInput.checked = true;
         codeToggle.setAttribute('aria-expanded', 'true');

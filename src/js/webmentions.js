@@ -9,12 +9,12 @@
     'use strict';
 
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
-    const WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
-    const WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
-    const WEBMENTIONS_SUBMIT = document.querySelector('.js-webmentions-submit');
-    const WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
+    const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
+    const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
+    const WEBMENTIONS_SUBMIT  = document.querySelector('.js-webmentions-submit');
+    const WEBMENTIONS_THREAD  = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ['#webmention', '#mention'];
     const WEBMENTIONS_TEMPLATE =
