@@ -74,6 +74,7 @@
     --letter-spacing-uppercase: 1px;
     --animation-duration: 2s;
     --animation-function: linear;
+    --animation-fill-mode: forwards;
     --rotation-default: 5deg;
     --transition-duration-default: 0.2s;
     --transition-duration-long: 1s;
@@ -2991,8 +2992,10 @@ picture, .author-image:focus >
 svg, .author-image:active > img, .author-image:active >
 picture, .author-image:active >
 svg {
-    -webkit-animation: peek 0.6s ease 2s forwards;
-            animation: peek 0.6s ease 2s forwards;
+    -webkit-animation: peek 1s ease 2s forwards;
+            animation: peek 1s ease 2s forwards;
+    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
+            animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
 }
 
 @-webkit-keyframes peek {

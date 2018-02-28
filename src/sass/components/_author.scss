@@ -116,7 +116,8 @@
 
         & > %image-elements {
             // stylelint-disable no-unknown-animations
-            animation: peek #{$transition-duration-default * 3} ease $animation-duration forwards;
+            animation: peek $transition-duration-long $transition-function $animation-duration $animation-fill-mode;
+            animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
             // stylelint-disable max-nesting-depth
             @at-root {
                 @keyframes peek {

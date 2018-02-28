@@ -362,6 +362,8 @@ $letter-spacing-uppercase: 1px !default;
 $animation-duration: 2s !default;
 /// @type String
 $animation-function: linear !default;
+/// @type String
+$animation-fill-mode: forwards !default;
 
 
 /// @type Length
