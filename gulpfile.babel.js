@@ -9,27 +9,26 @@
 
 
 // Define gulp-centric objects
-import gulp from 'gulp';
-import babel from 'gulp-babel';
-import concat from 'gulp-concat';
-import eslint from 'gulp-eslint';
-import imagemin from 'gulp-imagemin';
-import newer from 'gulp-newer';
-import plumber from 'gulp-plumber';
-import postcss from 'gulp-postcss';
-import rename from 'gulp-rename';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
-import uglify from 'gulp-uglify';
-import watch from 'gulp-watch';
-import webp from 'gulp-webp';
+let gulp = require('gulp');
+let babel = require('gulp-babel');
+let concat = require('gulp-concat');
+let eslint = require('gulp-eslint');
+let imagemin = require('gulp-imagemin');
+let newer = require('gulp-newer');
+let plumber = require('gulp-plumber');
+let postcss = require('gulp-postcss');
+let rename = require('gulp-rename');
+let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let watch = require('gulp-watch');
+let webp = require('gulp-webp');
 
 // Define other objects
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
-import reporter from 'postcss-reporter';
-import scss_syntax from 'postcss-scss';
-import stylelint from 'stylelint';
+let autoprefixer = require('autoprefixer');
+let cssnano = require('cssnano');
+let reporter = require('postcss-reporter');
+let scss_syntax = require('postcss-scss');
+let stylelint = require('stylelint');
 
 // Define paths
 const paths = {
@@ -153,8 +152,8 @@ gulp.task('js-lint', () => {
         .pipe(eslint.format());
 });
 
-// Compile JavaScript
-gulp.task('js-compile', ['js-lint'], () => {
+// Concatenate JavaScript
+gulp.task('js-concat', ['js-lint'], () => {
     return gulp.src([`${paths.js.src}/helpers.js`,
                      `${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
@@ -162,12 +161,9 @@ gulp.task('js-compile', ['js-lint'], () => {
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())
-        .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(`${paths.js.dest}/`))
-        .pipe(uglify({
-            mangle: false
-        }))
+        .pipe(babel())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -181,9 +177,7 @@ gulp.task('js-loadcss', () => {
                      `${paths.js.src}/vendors/loadcss-preload-polyfill.js`])
         .pipe(plumber())
         .pipe(newer(`${paths.includes}/generated/`))
-        .pipe(uglify({
-            mangle: false
-        }))
+        .pipe(babel())
         .pipe(concat('loadcss.html'))
         .pipe(gulp.dest(`${paths.includes}/generated/`));
 });
@@ -230,7 +224,7 @@ gulp.task('css', () => {
 });
 
 // JS task
-gulp.task('js', ['js-compile'], () => {
+gulp.task('js', ['js-concat'], () => {
     gulp.start('js-loadcss');
     gulp.start('js-serviceworker');
 });

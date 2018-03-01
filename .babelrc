@@ -1,4 +1,4 @@
 {
-    "presets": ["env"],
+    "presets": ["minify"],
     "plugins": ["transform-remove-strict-mode"]
 }

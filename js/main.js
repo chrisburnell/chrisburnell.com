@@ -3,6 +3,7 @@
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
+
 helpers = {
     ////
     /// Injects content into template using placeholder
@@ -11,8 +12,8 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function injectContent(originalContent, injection, placeholder) {
-        var regex = new RegExp(placeholder, 'g');
+    injectContent: function(originalContent, injection, placeholder) {
+        const regex = new RegExp(placeholder, 'g');
 
         return originalContent.replace(regex, injection);
     },
@@ -23,8 +24,8 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: function getParameterByName(name) {
-        var regex = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    getParameterByName: function(name) {
+        const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, ' '));
     },
@@ -35,7 +36,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableElement: function enableElement(element, action) {
+    enableElement: function(element, action) {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute('aria-disabled', 'false');
@@ -50,17 +51,30 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedDate
     ////
-    formatDate: function formatDate(date) {
-        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    formatDate: function(date) {
+        const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
 
-        var day = date.getDate();
+        let day = date.getDate();
         if (day < 10) {
-            day = '0' + day;
+            day = `0${day}`;
         }
-        var monthIndex = date.getMonth();
-        var year = date.getFullYear();
+        let monthIndex = date.getMonth();
+        let year = date.getFullYear();
 
-        return day + ' ' + months[monthIndex] + ' ' + year;
+        return `${day} ${months[monthIndex]} ${year}`;
     },
 
     ////
@@ -68,15 +82,15 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedTime
     ////
-    formatTime: function formatTime(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var meridiem = hours < 12 ? 'am' : 'pm';
+    formatTime: function(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let meridiem = hours < 12 ? 'am' : 'pm';
 
         // format from 24-hours to 12-hours
         hours = hours % 12 || 12;
 
-        return hours + ':' + minutes + ' ' + meridiem;
+        return `${hours}:${minutes} ${meridiem}`;
     },
 
     ////
@@ -85,105 +99,71 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    actionFromHash: function actionFromHash(hashes, action) {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = hashes[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var hash = _step.value;
-
-                if (window.location.hash.indexOf(hash) !== -1) {
-                    action();
-                }
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
+    actionFromHash: function(hashes, action) {
+        for (let hash of hashes) {
+            if (window.location.hash.indexOf(hash) !== -1) {
+                action();
             }
         }
-    }
+    },
 
 };
+
 /*!
  * Code ARIA Toggling
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-(function () {
+
+(() => {
 
     'use strict';
 
-    var CODE_TOGGLE_LABELS = document.querySelectorAll('.code-toggle-label');
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    const CODE_TOGGLE_LABELS = document.querySelectorAll('.code-toggle-label');
 
-    try {
-        for (var _iterator = CODE_TOGGLE_LABELS[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var codeToggleLabel = _step.value;
-
-            codeToggleLabel.addEventListener('click', function (event) {
-                event.preventDefault();
-                var codeToggleIDArray = event.target.getAttribute('id').split('--');
-                toggleCode(codeToggleIDArray[1]);
-            });
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
+    for (let codeToggleLabel of CODE_TOGGLE_LABELS) {
+        codeToggleLabel.addEventListener('click', event => {
+            event.preventDefault();
+            let codeToggleIDArray = event.target.getAttribute('id').split('--');
+            toggleCode(codeToggleIDArray[1]);
+        });
     }
 
+
     function toggleCode(codeToggleID) {
-        var codeToggle = document.querySelector('#code-toggle--' + codeToggleID);
-        var codeToggleInput = document.querySelector('#code-toggle-input--' + codeToggleID);
-        var codeToggleLabel = document.querySelector('#code-toggle-label--' + codeToggleID);
-        var codeToggleButton = document.querySelector('#code-toggle-button--' + codeToggleID);
+        let codeToggle       = document.querySelector(`#code-toggle--${codeToggleID}`);
+        let codeToggleInput  = document.querySelector(`#code-toggle-input--${codeToggleID}`);
+        let codeToggleLabel  = document.querySelector(`#code-toggle-label--${codeToggleID}`);
+        let codeToggleButton = document.querySelector(`#code-toggle-button--${codeToggleID}`);
 
         codeToggleInput.checked = true;
         codeToggle.setAttribute('aria-expanded', 'true');
         codeToggleLabel.setAttribute('aria-hidden', 'true');
-        codeToggleLabel.removeEventListener('click', function () {});
+        codeToggleLabel.removeEventListener('click', () => {});
         codeToggleButton.setAttribute('aria-pressed', 'true');
 
-        window.location.hash = '#code-toggle--' + codeToggleID;
+        window.location.hash = `#code-toggle--${codeToggleID}`;
     }
+
 })();
+
 /*!
  * Conditional comments for article pages
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-(function () {
+
+(() => {
 
     'use strict';
 
-    var DISQUS_SHORTNAME = 'chrisburnell';
-    var COMMENTS_SECTION = document.querySelector('.js-comments');
-    var COMMENTS_BUTTON = document.querySelector('.js-show-comments');
+
+    const DISQUS_SHORTNAME = 'chrisburnell';
+    const COMMENTS_SECTION = document.querySelector('.js-comments');
+    const COMMENTS_BUTTON  = document.querySelector('.js-show-comments');
     // `#comment` will match both `#comment` and `#comments`
-    var COMMENTS_HASH = ['#comment', '#disqus_thread'];
+    const COMMENTS_HASH = ['#comment', '#disqus_thread'];
 
     // Enable the Comments button
     helpers.enableElement(COMMENTS_BUTTON, showComments);
@@ -201,12 +181,12 @@ helpers = {
                 COMMENTS_BUTTON.setAttribute('aria-pressed', 'true');
                 COMMENTS_BUTTON.setAttribute('aria-expanded', 'true');
                 COMMENTS_BUTTON.setAttribute('aria-hidden', 'true');
-                COMMENTS_BUTTON.removeEventListener('click', function () {});
-                (function () {
-                    var DISQUS_SCRIPT = document.createElement('script');
+                COMMENTS_BUTTON.removeEventListener('click', () => {});
+                (() => {
+                    const DISQUS_SCRIPT = document.createElement('script');
                     DISQUS_SCRIPT.type = 'text/javascript';
                     DISQUS_SCRIPT.async = true;
-                    DISQUS_SCRIPT.src = '//' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+                    DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
                     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
                 })();
                 COMMENTS_SECTION.setAttribute('aria-hidden', 'false');
@@ -214,37 +194,59 @@ helpers = {
             }
         }
     }
+
 })();
+
 /*!
  * A simple JSON search
  * @author Mat Hayward - Erskine Design (Original Author)
  * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications)
  */
 
-(function () {
+
+(() => {
 
     'use strict';
 
-    var query = void 0;
-    var searchContainer = document.querySelector('.js-search');
-    var searchForm = document.querySelector('.js-search-form');
-    var searchInput = document.querySelector('.js-search-input');
-    var searchSubmit = document.querySelector('.js-search-submit');
-    var resultsMeta = document.querySelector('.js-search-meta');
-    var resultsList = document.querySelector('.js-search-results-list');
-    var ALLOW_EMPTY = false;
-    var JSON_FEED_URL = '../search.json';
-    var SEARCH_PAGE_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/Article">\n            <a href="{{ url }}">\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n            </a>\n        </article>\n    </li>';
-    var SEARCH_POST_TEMPLATE = '<li role="listitem">\n        <article role="article" itemscope itemtype="https://schema.org/TechArticle">\n            <a href="{{ url }}">\n                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>\n                <h4 class="title" itemprop="name">{{ title }}</h4>\n                <p class="lede" itemprop="description">{{ lede }}</p>\n                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>\n            </a>\n        </article>\n    </li>';
+
+    let query;
+    let searchContainer = document.querySelector('.js-search');
+    let searchForm      = document.querySelector('.js-search-form');
+    let searchInput     = document.querySelector('.js-search-input');
+    let searchSubmit    = document.querySelector('.js-search-submit');
+    let resultsMeta     = document.querySelector('.js-search-meta');
+    let resultsList     = document.querySelector('.js-search-results-list');
+    const ALLOW_EMPTY = false;
+    const JSON_FEED_URL = '../search.json';
+    const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
+        <article role="article" itemscope itemtype="https://schema.org/Article">
+            <a href="{{ url }}">
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
+            </a>
+        </article>
+    </li>`;
+    const SEARCH_POST_TEMPLATE = `<li role="listitem">
+        <article role="article" itemscope itemtype="https://schema.org/TechArticle">
+            <a href="{{ url }}">
+                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
+                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>
+            </a>
+        </article>
+    </li>`;
+
 
     // enable Search
     if (searchInput !== null && searchSubmit !== null) {
-        searchInput.disabled = false;
+        searchInput.disabled  = false;
         searchInput.setAttribute('aria-disabled', 'false');
         searchSubmit.disabled = false;
         searchSubmit.setAttribute('aria-disabled', 'false');
         initSearch();
     }
+
 
     ////
     /// Initiate search functionality.
@@ -297,19 +299,19 @@ helpers = {
     /// @return void
     ////
     function getSearchResults() {
-        var request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
 
         request.open('GET', JSON_FEED_URL, true);
 
-        request.onload = function () {
+        request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
                 // Success!
-                var data = JSON.parse(request.responseText);
+                let data = JSON.parse(request.responseText);
                 processData(data);
             }
         };
 
-        request.onerror = function () {
+        request.onerror = () => {
             // There was a connection error of some sort
         };
 
@@ -321,101 +323,83 @@ helpers = {
     /// @return void
     ////
     function processData(data) {
-        var resultsCount = 0,
+        let resultsCount = 0,
             results = '';
 
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        for (let item of data) {
 
-        try {
-            for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var item = _step.value;
+            let queryFormatted  = query.toLowerCase(),
+                titleCheck      = false,
+                ledeCheck       = false,
+                dateCheck       = false,
+                contentCheck    = false,
+                categoriesCheck = false,
+                tagsCheck       = false,
+                locationCheck   = false;
 
-
-                var queryFormatted = query.toLowerCase(),
-                    titleCheck = false,
-                    ledeCheck = false,
-                    dateCheck = false,
-                    contentCheck = false,
-                    categoriesCheck = false,
-                    tagsCheck = false,
-                    locationCheck = false;
-
-                if (item.title) {
-                    titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
-                }
-
-                if (item.lede) {
-                    ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
-                }
-                if (item.date || item.date_friendly) {
-                    if (queryFormatted.substring(0, 5) == 'date:') {
-                        dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                        if (!dateCheck) {
-                            dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                        }
-                    } else {
-                        dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
-                        if (!dateCheck) {
-                            dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
-                        }
-                    }
-                }
-                if (item.content) {
-                    contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
-                }
-                if (item.categories) {
-                    categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
-                }
-                if (item.tags) {
-                    if (queryFormatted.substring(0, 4) == 'tag:') {
-                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
-                    } else if (queryFormatted.substring(0, 5) == 'tags:') {
-                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                    } else {
-                        tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
-                    }
-                }
-                if (item.location) {
-                    locationCheck = item.location.toLowerCase().indexOf(queryFormatted) > -1;
-                }
-
-                // if performing a date check
-                if (queryFormatted.substring(0, 5) == 'date:' && dateCheck) {
-                    resultsCount++;
-                    results += populateResultContent(SEARCH_POST_TEMPLATE, item);
-                }
-                // if performing a tags check
-                else if ((queryFormatted.substring(0, 4) == 'tag:' || queryFormatted.substring(0, 5) == 'tags:') && tagsCheck) {
-                        resultsCount++;
-                        results += populateResultContent(SEARCH_POST_TEMPLATE, item);
-                    }
-                    // or item type is a page, check if search term is in title,
-                    // content, or lede, categories, tags, or talk location
-                    else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
-                            resultsCount++;
-                            results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
-                        }
-                        // check if search term is in title, lede, content, categories,
-                        // tags, or talk location
-                        else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
-                                resultsCount++;
-                                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
-                            }
+            if (item.title) {
+                titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
             }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
+
+            if (item.lede) {
+                ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
+            }
+            if (item.date || item.date_friendly) {
+                if (queryFormatted.substring(0, 5) == 'date:') {
+                    dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    if (!dateCheck) {
+                        dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                    }
                 }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
+                else {
+                    dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
+                    if (!dateCheck) {
+                        dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
+                    }
                 }
+            }
+            if (item.content) {
+                contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
+            }
+            if (item.categories) {
+                categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
+            }
+            if (item.tags) {
+                if (queryFormatted.substring(0, 4) == 'tag:') {
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
+                }
+                else if (queryFormatted.substring(0, 5) == 'tags:') {
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
+                }
+                else {
+                    tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
+                }
+            }
+            if (item.location) {
+                locationCheck = item.location.toLowerCase().indexOf(queryFormatted) > -1;
+            }
+
+            // if performing a date check
+            if ((queryFormatted.substring(0, 5) == 'date:') && dateCheck) {
+                resultsCount++;
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
+            }
+            // if performing a tags check
+            else if (((queryFormatted.substring(0, 4) == 'tag:') || (queryFormatted.substring(0, 5) == 'tags:')) && tagsCheck) {
+                resultsCount++;
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
+            }
+            // or item type is a page, check if search term is in title,
+            // content, or lede, categories, tags, or talk location
+            else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+                resultsCount++;
+                results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
+            }
+            // check if search term is in title, lede, content, categories,
+            // tags, or talk location
+            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
+                resultsCount++;
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
         }
 
@@ -454,37 +438,47 @@ helpers = {
         // ICON
         if (item.categories == 'article') {
             html = helpers.injectContent(html, 'article', '{{ icon }}');
-        } else if (item.categories == 'link') {
+        }
+        else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'link', '{{ icon }}');
-        } else if (item.categories == 'note') {
+        }
+        else if (item.categories == 'note') {
             html = helpers.injectContent(html, 'feather', '{{ icon }}');
-        } else if (item.categories == 'pen') {
+        }
+        else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'codepen', '{{ icon }}');
-        } else if (item.categories == 'talk') {
+        }
+        else if (item.categories == 'talk') {
             html = helpers.injectContent(html, 'bullhorn', '{{ icon }}');
         }
 
         // TITLE
         if (item.categories == 'note') {
             html = helpers.injectContent(html, item.date_friendly, '{{ title }}');
-        } else {
+        }
+        else {
             html = helpers.injectContent(html, item.title, '{{ title }}');
         }
 
         // LEDE
         if (item.lede) {
-            var ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
+            let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
             html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
-        } else if (item.categories == 'link') {
+        }
+        else if (item.categories == 'link') {
             html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
-        } else if (item.categories == 'note') {
+        }
+        else if (item.categories == 'note') {
             html = helpers.injectContent(html, 'Shared Note', '{{ lede }}');
-        } else if (item.categories == 'pen') {
+        }
+        else if (item.categories == 'pen') {
             html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
-        } else if (item.categories == 'talk' && item.location) {
-            html = helpers.injectContent(html, 'Talk \u2013 Given at ' + item.location + '.', '{{ lede }}');
-        } else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'Talk', '{{ lede }}');
+        }
+        else if (item.categories == 'talk' && item.location) {
+            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{ lede }}');
+        }
+        else if (item.categories == 'talk') {
+            html = helpers.injectContent(html, `Talk`, '{{ lede }}');
         }
 
         // DATE
@@ -494,7 +488,8 @@ helpers = {
 
             if (item.categories == 'note') {
                 html = helpers.injectContent(html, '  visually-hidden', '{{ date_class }}');
-            } else {
+            }
+            else {
                 html = helpers.injectContent(html, '', '{{ date_class }}');
             }
         }
@@ -508,33 +503,43 @@ helpers = {
     /// @return void
     ////
     function populateResultsString(count) {
-        var resultSuffix = count == 1 ? '' : 's';
-        var searchMeta = '<strong>' + count + '</strong> result' + resultSuffix + ' found for <q>' + query + '</q>';
+        let resultSuffix = (count == 1) ? '' : 's';
+        let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 
         resultsMeta.innerHTML = searchMeta;
     }
+
 })();
+
 /*!
  * Conditional webmentions for article pages
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-(function () {
+
+(() => {
 
     'use strict';
 
-    var CANONICAL_URL = document.querySelector('link[rel="canonical"]').getAttribute('href');
-    var WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
-    var WEBMENTIONS_BUTTON = document.querySelector('.js-show-webmentions');
-    var WEBMENTIONS_INPUT = document.querySelector('.js-webmentions-input');
-    var WEBMENTIONS_SUBMIT = document.querySelector('.js-webmentions-submit');
-    var WEBMENTIONS_THREAD = document.querySelector('.js-webmentions-thread');
+
+    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
+    const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
+    const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
+    const WEBMENTIONS_SUBMIT  = document.querySelector('.js-webmentions-submit');
+    const WEBMENTIONS_THREAD  = document.querySelector('.js-webmentions-thread');
     // `#webmention` will match both `#webmention` and `#webmentions`
-    var WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    var WEBMENTIONS_TEMPLATE = '<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">\n            {{ content }}\n            {{ typeLink }}\n            {{ author }}\n            {{ date }}\n        </li>';
-    var webmentionsLoaded = false;
-    var webmentionsCount = 0;
-    var observer = new IntersectionObserver(checkVisibility);
+    const WEBMENTIONS_HASH = ['#webmention', '#mention'];
+    const WEBMENTIONS_TEMPLATE =
+        `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
+            {{ content }}
+            {{ typeLink }}
+            {{ author }}
+            {{ date }}
+        </li>`;
+    let webmentionsLoaded = false;
+    let webmentionsCount = 0;
+    let observer = new IntersectionObserver(checkVisibility);
 
     // initiate WebMentions if hash present on load
     window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentionsAndJump));
@@ -544,7 +549,7 @@ helpers = {
     if (WEBMENTIONS_SECTION !== null) {
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
-        WEBMENTIONS_BUTTON.addEventListener('mouseover', function () {
+        WEBMENTIONS_BUTTON.addEventListener('mouseover', () => {
             if (webmentionsLoaded === false) {
                 loadWebmentions();
             }
@@ -556,51 +561,30 @@ helpers = {
     }
 
     function loadWebmentions() {
-        var request = new XMLHttpRequest();
-        request.open('GET', 'https://webmention.io/api/mentions?jsonp&target=' + CANONICAL_URL, true);
-        request.onload = function () {
+        let request = new XMLHttpRequest();
+        request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
+        request.onload = function() {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener('mouseover', function () {});
-                var data = JSON.parse(request.responseText);
-                var _iteratorNormalCompletion = true;
-                var _didIteratorError = false;
-                var _iteratorError = undefined;
-
-                try {
-                    for (var _iterator = data.links.reverse()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                        var link = _step.value;
-
-                        if (link.verified === true && link.private === false) {
-                            webmentionsCount++;
-                            WEBMENTIONS_THREAD.innerHTML += populateWebmentionContent(WEBMENTIONS_TEMPLATE, link);
-                        }
-                    }
-                } catch (err) {
-                    _didIteratorError = true;
-                    _iteratorError = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion && _iterator.return) {
-                            _iterator.return();
-                        }
-                    } finally {
-                        if (_didIteratorError) {
-                            throw _iteratorError;
-                        }
+                WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
+                let data = JSON.parse(request.responseText);
+                for (let link of data.links.reverse()) {
+                    if (link.verified === true && link.private === false) {
+                        webmentionsCount++;
+                        WEBMENTIONS_THREAD.innerHTML += populateWebmentionContent(WEBMENTIONS_TEMPLATE, link);
                     }
                 }
-
                 if (WEBMENTIONS_BUTTON !== null && webmentionsCount > 0) {
-                    WEBMENTIONS_BUTTON.querySelector('.js-webmention-comment-count').innerHTML = webmentionsCount + ' mention' + (webmentionsCount > 1 ? 's' : '');
+                    WEBMENTIONS_BUTTON.querySelector('.js-webmention-comment-count').innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? 's' : ''}`;
                 }
-            } else {
-                console.log('WebMention request status error: ' + request.status);
+            }
+            else {
+                console.log(`WebMention request status error: ${request.status}`);
             }
         };
-        request.onerror = function () {
+        request.onerror = function() {
             console.log('WebMention request error');
         };
         request.send();
@@ -616,13 +600,13 @@ helpers = {
             WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
             WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
-            WEBMENTIONS_BUTTON.removeEventListener('click', function () {});
+            WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
         }
         WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
     }
 
     function checkVisibility(entries, observer) {
-        entries.forEach(function (entry) {
+        entries.forEach(entry => {
             if (entry.intersectionRatio > 0) {
                 showWebmentions();
                 observer.disconnect();
@@ -635,7 +619,8 @@ helpers = {
         WEBMENTIONS_SECTION.scrollIntoView();
         if (webmentionsCount > 1) {
             WEBMENTIONS_THREAD.focus();
-        } else {
+        }
+        else {
             WEBMENTIONS_INPUT.focus();
         }
     }
@@ -652,52 +637,65 @@ helpers = {
 
         // TYPE
         html = helpers.injectContent(html, item.activity.type, '{{ type }}');
-        html = helpers.injectContent(html, '<a href="' + item.data.url + '" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>', '{{ typeLink }}');
+        html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`, '{{ typeLink }}');
         if (item.activity.type === 'like') {
             html = helpers.injectContent(html, 'Liked', '{{ typePrefix }}');
-        } else if (item.activity.type === 'reply') {
+        }
+        else if (item.activity.type === 'reply') {
             html = helpers.injectContent(html, 'Replied', '{{ typePrefix }}');
-        } else if (item.activity.type === 'repost') {
+        }
+        else if (item.activity.type === 'repost') {
             html = helpers.injectContent(html, 'Reposted', '{{ typePrefix }}');
-        } else {
+        }
+        else {
             html = helpers.injectContent(html, 'Posted', '{{ typePrefix }}');
         }
 
         // CONTENT / URL
         if (item.activity.type === 'like' || item.activity.type === 'repost') {
             html = helpers.injectContent(html, '', '{{ content }}');
-        } else if (item.activity.type === 'reply' && item.data.content) {
-            html = helpers.injectContent(html, '<div><q>' + item.data.content + '</q></div>', '{{ content }}');
-        } else {
-            html = helpers.injectContent(html, '<div><a href="' + item.data.url + '" rel="external">' + item.data.url.split('//')[1] + '</a></div>', '{{ content }}');
+        }
+        else if (item.activity.type === 'reply' && item.data.content) {
+            html = helpers.injectContent(html, `<div><q>${item.data.content}</q></div>`, '{{ content }}');
+        }
+        else {
+            html = helpers.injectContent(html, `<div><a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a></div>`, '{{ content }}');
         }
 
         // AUTHOR
         if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
-            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.author.url + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
-        } else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
-            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="' + item.data.url.split('status')[0] + '/profile_image?size=normal" alt="">' + item.data.author.name + '</a>', '{{ author }}');
-        } else if (item.data.author.name && item.data.author.url) {
-            html = helpers.injectContent(html, 'by <a href="' + item.data.author.url + '" class="webmentions__item__name" rel="external">' + item.data.author.name + '</a>', '{{ author }}');
-        } else if (item.data.author.name) {
-            html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.author.name + '</span>', '{{ author }}');
-        } else if (item.data.name) {
-            html = helpers.injectContent(html, 'by <span class="webmentions__item__name">' + item.data.name + '</span>', '{{ author }}');
-        } else {
+            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.author.url}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
+        }
+        else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
+            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.url.split('status')[0]}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
+        }
+        else if (item.data.author.name && item.data.author.url) {
+            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external">${item.data.author.name}</a>`, '{{ author }}');
+        }
+        else if (item.data.author.name) {
+            html = helpers.injectContent(html, `by <span class="webmentions__item__name">${item.data.author.name}</span>`, '{{ author }}');
+        }
+        else if (item.data.name) {
+            html = helpers.injectContent(html, `by <span class="webmentions__item__name">${item.data.name}</span>`, '{{ author }}');
+        }
+        else {
             html = helpers.injectContent(html, '', '{{ author }}');
         }
 
         // DATE
-        html = helpers.injectContent(html, 'on <time class="webmentions__item__time" datetime="' + (item.data.published ? item.data.published : item.verified_date) + '">' + helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date)) + ' <small>@</small> ' + helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date)) + '</time>', '{{ date }}');
+        html = helpers.injectContent(html, `on <time class="webmentions__item__time" datetime="${item.data.published ? item.data.published : item.verified_date}">${helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date))} <small>@</small> ${helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date))}</time>`, '{{ date }}');
 
         return html;
     }
+
 })();
+
 /*!
  * Show comment counts on home and articles archive page
  */
 
-(function () {
+
+(function() {
 
     'use strict';
 
@@ -710,19 +708,19 @@ helpers = {
     dsqc.src = '//' + disqusShortname + '.disqus.com/count.js';
 
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsqc);
-})();
+
+}());
+
 /*!
  * Google Analytics
  */
 
+
 window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
+function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'UA-10353655-1');
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
@@ -733,17 +731,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * Firefox's early picture implementation (prior to FF41) is static and does
  * not react to viewport changes. This tiny module fixes this.
  */
-(function (window) {
+(function(window) {
     /*jshint eqnull:true */
     var ua = navigator.userAgent;
 
-    if (window.HTMLPictureElement && /ecko/.test(ua) && ua.match(/rv\:(\d+)/) && RegExp.$1 < 45) {
-        addEventListener("resize", function () {
+    if ( window.HTMLPictureElement && ((/ecko/).test(ua) && ua.match(/rv\:(\d+)/) && RegExp.$1 < 45) ) {
+        addEventListener("resize", (function() {
             var timer;
 
             var dummySrc = document.createElement("source");
 
-            var fixRespimg = function fixRespimg(img) {
+            var fixRespimg = function(img) {
                 var source, sizes;
                 var picture = img.parentNode;
 
@@ -751,32 +749,32 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     source = dummySrc.cloneNode();
 
                     picture.insertBefore(source, picture.firstElementChild);
-                    setTimeout(function () {
+                    setTimeout(function() {
                         picture.removeChild(source);
                     });
                 } else if (!img._pfLastSize || img.offsetWidth > img._pfLastSize) {
                     img._pfLastSize = img.offsetWidth;
                     sizes = img.sizes;
                     img.sizes += ",100vw";
-                    setTimeout(function () {
+                    setTimeout(function() {
                         img.sizes = sizes;
                     });
                 }
             };
 
-            var findPictureImgs = function findPictureImgs() {
+            var findPictureImgs = function() {
                 var i;
                 var imgs = document.querySelectorAll("picture > img, img[srcset][sizes]");
                 for (i = 0; i < imgs.length; i++) {
                     fixRespimg(imgs[i]);
                 }
             };
-            var onResize = function onResize() {
+            var onResize = function() {
                 clearTimeout(timer);
                 timer = setTimeout(findPictureImgs, 99);
             };
             var mq = window.matchMedia && matchMedia("(orientation: landscape)");
-            var init = function init() {
+            var init = function() {
                 onResize();
 
                 if (mq && mq.addListener) {
@@ -793,7 +791,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
 
             return onResize;
-        }());
+        })());
     }
 })(window);
 
@@ -803,20 +801,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  *  License: MIT
  */
 
-(function (window, document, undefined) {
+(function( window, document, undefined ) {
     // Enable strict mode
     "use strict";
 
     // HTML shim|v it for old IE (IE9 will still need the HTML video tag workaround)
-
-    document.createElement("picture");
+    document.createElement( "picture" );
 
     var warn, eminpx, alwaysCheckWDescriptor, evalId;
     // local object for method references and testing exposure
     var pf = {};
     var isSupportTestReady = false;
-    var noop = function noop() {};
-    var image = document.createElement("img");
+    var noop = function() {};
+    var image = document.createElement( "img" );
     var getImgAttr = image.getAttribute;
     var setImgAttr = image.setAttribute;
     var removeImgAttr = image.removeAttribute;
@@ -831,7 +828,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     // ua sniffing is done for undetectable img loading features,
     // to do some non crucial perf optimizations
     var ua = navigator.userAgent;
-    var supportAbort = /rident/.test(ua) || /ecko/.test(ua) && ua.match(/rv\:(\d+)/) && RegExp.$1 > 35;
+    var supportAbort = (/rident/).test(ua) || ((/ecko/).test(ua) && ua.match(/rv\:(\d+)/) && RegExp.$1 > 35 );
     var curSrcProp = "currentSrc";
     var regWDesc = /\s+\+?\d+(e\d+)?w/;
     var regSize = /(\([^)]+\))?\s*(.+)/;
@@ -851,7 +848,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         px: 1,
         "in": 96
     };
-    var anchor = document.createElement("a");
+    var anchor = document.createElement( "a" );
     /**
      * alreadyRun flag used for setOptions. is it true setOptions will reevaluate
      * @type {boolean}
@@ -867,19 +864,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         regexTrailingCommas = /[,]+$/,
         regexNonNegativeInteger = /^\d+$/,
 
+        // ( Positive or negative or unsigned integers or decimals, without or without exponents.
+        // Must include at least one digit.
+        // According to spec tests any decimal point must be followed by a digit.
+        // No leading plus sign is allowed.)
+        // https://html.spec.whatwg.org/multipage/infrastructure.html#valid-floating-point-number
+        regexFloatingPoint = /^-?(?:[0-9]+|[0-9]*\.[0-9]+)(?:[eE][+-]?[0-9]+)?$/;
 
-    // ( Positive or negative or unsigned integers or decimals, without or without exponents.
-    // Must include at least one digit.
-    // According to spec tests any decimal point must be followed by a digit.
-    // No leading plus sign is allowed.)
-    // https://html.spec.whatwg.org/multipage/infrastructure.html#valid-floating-point-number
-    regexFloatingPoint = /^-?(?:[0-9]+|[0-9]*\.[0-9]+)(?:[eE][+-]?[0-9]+)?$/;
-
-    var on = function on(obj, evt, fn, capture) {
-        if (obj.addEventListener) {
+    var on = function(obj, evt, fn, capture) {
+        if ( obj.addEventListener ) {
             obj.addEventListener(evt, fn, capture || false);
-        } else if (obj.attachEvent) {
-            obj.attachEvent("on" + evt, fn);
+        } else if ( obj.attachEvent ) {
+            obj.attachEvent( "on" + evt, fn);
         }
     };
 
@@ -887,13 +883,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * simple memoize function:
      */
 
-    var memoize = function memoize(fn) {
+    var memoize = function(fn) {
         var cache = {};
-        return function (input) {
-            if (!(input in cache)) {
-                cache[input] = fn(input);
+        return function(input) {
+            if ( !(input in cache) ) {
+                cache[ input ] = fn(input);
             }
-            return cache[input];
+            return cache[ input ];
         };
     };
 
@@ -902,11 +898,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     // Manual is faster than RegEx
     // http://jsperf.com/whitespace-character/5
     function isSpace(c) {
-        return c === " " || // space
-        c === "\t" || // horizontal tab
-        c === "\n" || // new line
-        c === "\f" || // form feed
-        c === "\r"; // carriage return
+        return (c === "\u0020" || // space
+                c === "\u0009" || // horizontal tab
+                c === "\u000A" || // new line
+                c === "\u000C" || // form feed
+                c === "\u000D");  // carriage return
     }
 
     /**
@@ -916,66 +912,64 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      *
      * based on: https://gist.github.com/jonathantneal/db4f77009b155f083738
      */
-    var evalCSS = function () {
+    var evalCSS = (function() {
 
         var regLength = /^([\d\.]+)(em|vw|px)$/;
-        var replace = function replace() {
-            var args = arguments,
-                index = 0,
-                string = args[0];
+        var replace = function() {
+            var args = arguments, index = 0, string = args[0];
             while (++index in args) {
                 string = string.replace(args[index], args[++index]);
             }
             return string;
         };
 
-        var buildStr = memoize(function (css) {
+        var buildStr = memoize(function(css) {
 
             return "return " + replace((css || "").toLowerCase(),
-            // interpret `and`
-            /\band\b/g, "&&",
+                // interpret `and`
+                /\band\b/g, "&&",
 
-            // interpret `,`
-            /,/g, "||",
+                // interpret `,`
+                /,/g, "||",
 
-            // interpret `min-` as >=
-            /min-([a-z-\s]+):/g, "e.$1>=",
+                // interpret `min-` as >=
+                /min-([a-z-\s]+):/g, "e.$1>=",
 
-            // interpret `max-` as <=
-            /max-([a-z-\s]+):/g, "e.$1<=",
+                // interpret `max-` as <=
+                /max-([a-z-\s]+):/g, "e.$1<=",
 
-            //calc value
-            /calc([^)]+)/g, "($1)",
+                //calc value
+                /calc([^)]+)/g, "($1)",
 
-            // interpret css values
-            /(\d+[\.]*[\d]*)([a-z]+)/g, "($1 * e.$2)",
-            //make eval less evil
-            /^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/ig, "") + ";";
+                // interpret css values
+                /(\d+[\.]*[\d]*)([a-z]+)/g, "($1 * e.$2)",
+                //make eval less evil
+                /^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/ig, ""
+            ) + ";";
         });
 
-        return function (css, length) {
+        return function(css, length) {
             var parsedLength;
             if (!(css in cssCache)) {
                 cssCache[css] = false;
-                if (length && (parsedLength = css.match(regLength))) {
-                    cssCache[css] = parsedLength[1] * units[parsedLength[2]];
+                if (length && (parsedLength = css.match( regLength ))) {
+                    cssCache[css] = parsedLength[ 1 ] * units[parsedLength[ 2 ]];
                 } else {
                     /*jshint evil:true */
-                    try {
+                    try{
                         cssCache[css] = new Function("e", buildStr(css))(units);
-                    } catch (e) {}
+                    } catch(e) {}
                     /*jshint evil:false */
                 }
             }
             return cssCache[css];
         };
-    }();
+    })();
 
-    var setResolution = function setResolution(candidate, sizesattr) {
-        if (candidate.w) {
-            // h = means height: || descriptor.type === 'h' do not handle yet...
-            candidate.cWidth = pf.calcListLength(sizesattr || "100vw");
-            candidate.res = candidate.w / candidate.cWidth;
+    var setResolution = function( candidate, sizesattr ) {
+        if ( candidate.w ) { // h = means height: || descriptor.type === 'h' do not handle yet...
+            candidate.cWidth = pf.calcListLength( sizesattr || "100vw" );
+            candidate.res = candidate.w / candidate.cWidth ;
         } else {
             candidate.res = candidate.d;
         }
@@ -986,38 +980,36 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      *
      * @param opt
      */
-    var picturefill = function picturefill(opt) {
+    var picturefill = function( opt ) {
 
-        if (!isSupportTestReady) {
-            return;
-        }
+        if (!isSupportTestReady) {return;}
 
         var elements, i, plen;
 
         var options = opt || {};
 
-        if (options.elements && options.elements.nodeType === 1) {
-            if (options.elements.nodeName.toUpperCase() === "IMG") {
-                options.elements = [options.elements];
+        if ( options.elements && options.elements.nodeType === 1 ) {
+            if ( options.elements.nodeName.toUpperCase() === "IMG" ) {
+                options.elements =  [ options.elements ];
             } else {
                 options.context = options.elements;
-                options.elements = null;
+                options.elements =  null;
             }
         }
 
-        elements = options.elements || pf.qsa(options.context || document, options.reevaluate || options.reselect ? pf.sel : pf.selShort);
+        elements = options.elements || pf.qsa( (options.context || document), ( options.reevaluate || options.reselect ) ? pf.sel : pf.selShort );
 
-        if (plen = elements.length) {
+        if ( (plen = elements.length) ) {
 
-            pf.setupRun(options);
+            pf.setupRun( options );
             alreadyRun = true;
 
             // Loop through all elements
-            for (i = 0; i < plen; i++) {
-                pf.fillImg(elements[i], options);
+            for ( i = 0; i < plen; i++ ) {
+                pf.fillImg(elements[ i ], options);
             }
 
-            pf.teardownRun(options);
+            pf.teardownRun( options );
         }
     };
 
@@ -1026,29 +1018,32 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param {message}
      * @type {Function}
      */
-    warn = window.console && console.warn ? function (message) {
-        console.warn(message);
-    } : noop;
+    warn = ( window.console && console.warn ) ?
+        function( message ) {
+            console.warn( message );
+        } :
+        noop
+    ;
 
-    if (!(curSrcProp in image)) {
+    if ( !(curSrcProp in image) ) {
         curSrcProp = "src";
     }
 
     // Add support for standard mime types.
-    types["image/jpeg"] = true;
-    types["image/gif"] = true;
-    types["image/png"] = true;
+    types[ "image/jpeg" ] = true;
+    types[ "image/gif" ] = true;
+    types[ "image/png" ] = true;
 
-    function detectTypeSupport(type, typeUri) {
+    function detectTypeSupport( type, typeUri ) {
         // based on Modernizr's lossless img-webp test
         // note: asynchronous
         var image = new window.Image();
-        image.onerror = function () {
-            types[type] = false;
+        image.onerror = function() {
+            types[ type ] = false;
             picturefill();
         };
-        image.onload = function () {
-            types[type] = image.width === 1;
+        image.onload = function() {
+            types[ type ] = image.width === 1;
             picturefill();
         };
         image.src = typeUri;
@@ -1056,7 +1051,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }
 
     // test svg support
-    types["image/svg+xml"] = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
+    types[ "image/svg+xml" ] = document.implementation.hasFeature( "http://www.w3.org/TR/SVG11/feature#Image", "1.1" );
 
     /**
      * updates the internal vW property with the current viewport width in px
@@ -1076,18 +1071,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         units.vw = units.width / 100;
         units.vh = units.height / 100;
 
-        evalId = [units.height, units.width, DPR].join("-");
+        evalId = [ units.height, units.width, DPR ].join("-");
 
         units.em = pf.getEmValue();
         units.rem = units.em;
     }
 
-    function chooseLowRes(lowerValue, higherValue, dprValue, isCached) {
+    function chooseLowRes( lowerValue, higherValue, dprValue, isCached ) {
         var bonusFactor, tooMuch, bonus, meanDensity;
 
         //experimental
-        if (cfg.algorithm === "saveData") {
-            if (lowerValue > 2.7) {
+        if (cfg.algorithm === "saveData" ){
+            if ( lowerValue > 2.7 ) {
                 meanDensity = dprValue + 1;
             } else {
                 tooMuch = higherValue - dprValue;
@@ -1102,59 +1097,61 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 meanDensity = lowerValue + bonus;
             }
         } else {
-            meanDensity = dprValue > 1 ? Math.sqrt(lowerValue * higherValue) : lowerValue;
+            meanDensity = (dprValue > 1) ?
+                Math.sqrt(lowerValue * higherValue) :
+                lowerValue;
         }
 
         return meanDensity > dprValue;
     }
 
-    function applyBestCandidate(img) {
+    function applyBestCandidate( img ) {
         var srcSetCandidates;
-        var matchingSet = pf.getSet(img);
+        var matchingSet = pf.getSet( img );
         var evaluated = false;
-        if (matchingSet !== "pending") {
+        if ( matchingSet !== "pending" ) {
             evaluated = evalId;
-            if (matchingSet) {
-                srcSetCandidates = pf.setRes(matchingSet);
-                pf.applySetCandidate(srcSetCandidates, img);
+            if ( matchingSet ) {
+                srcSetCandidates = pf.setRes( matchingSet );
+                pf.applySetCandidate( srcSetCandidates, img );
             }
         }
-        img[pf.ns].evaled = evaluated;
+        img[ pf.ns ].evaled = evaluated;
     }
 
-    function ascendingSort(a, b) {
+    function ascendingSort( a, b ) {
         return a.res - b.res;
     }
 
-    function setSrcToCur(img, src, set) {
+    function setSrcToCur( img, src, set ) {
         var candidate;
-        if (!set && src) {
-            set = img[pf.ns].sets;
+        if ( !set && src ) {
+            set = img[ pf.ns ].sets;
             set = set && set[set.length - 1];
         }
 
         candidate = getCandidateForSrc(src, set);
 
-        if (candidate) {
+        if ( candidate ) {
             src = pf.makeUrl(src);
-            img[pf.ns].curSrc = src;
-            img[pf.ns].curCan = candidate;
+            img[ pf.ns ].curSrc = src;
+            img[ pf.ns ].curCan = candidate;
 
-            if (!candidate.res) {
-                setResolution(candidate, candidate.set.sizes);
+            if ( !candidate.res ) {
+                setResolution( candidate, candidate.set.sizes );
             }
         }
         return candidate;
     }
 
-    function getCandidateForSrc(src, set) {
+    function getCandidateForSrc( src, set ) {
         var i, candidate, candidates;
-        if (src && set) {
-            candidates = pf.parseSet(set);
+        if ( src && set ) {
+            candidates = pf.parseSet( set );
             src = pf.makeUrl(src);
-            for (i = 0; i < candidates.length; i++) {
-                if (src === pf.makeUrl(candidates[i].url)) {
-                    candidate = candidates[i];
+            for ( i = 0; i < candidates.length; i++ ) {
+                if ( src === pf.makeUrl(candidates[ i ].url) ) {
+                    candidate = candidates[ i ];
                     break;
                 }
             }
@@ -1162,27 +1159,27 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return candidate;
     }
 
-    function getAllSourceElements(picture, candidates) {
+    function getAllSourceElements( picture, candidates ) {
         var i, len, source, srcset;
 
         // SPEC mismatch intended for size and perf:
         // actually only source elements preceding the img should be used
         // also note: don't use qsa here, because IE8 sometimes doesn't like source as the key part in a selector
-        var sources = picture.getElementsByTagName("source");
+        var sources = picture.getElementsByTagName( "source" );
 
-        for (i = 0, len = sources.length; i < len; i++) {
-            source = sources[i];
-            source[pf.ns] = true;
-            srcset = source.getAttribute("srcset");
+        for ( i = 0, len = sources.length; i < len; i++ ) {
+            source = sources[ i ];
+            source[ pf.ns ] = true;
+            srcset = source.getAttribute( "srcset" );
 
             // if source does not have a srcset attribute, skip
-            if (srcset) {
-                candidates.push({
+            if ( srcset ) {
+                candidates.push( {
                     srcset: srcset,
-                    media: source.getAttribute("media"),
-                    type: source.getAttribute("type"),
-                    sizes: source.getAttribute("sizes")
-                });
+                    media: source.getAttribute( "media" ),
+                    type: source.getAttribute( "type" ),
+                    sizes: source.getAttribute( "sizes" )
+                } );
             }
         }
     }
@@ -1208,7 +1205,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var chars,
                 match = regEx.exec(input.substring(pos));
             if (match) {
-                chars = match[0];
+                chars = match[ 0 ];
                 pos += chars.length;
                 return chars;
             }
@@ -1221,14 +1218,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             state,
             c,
 
+            // 2. Let position be a pointer into input, initially pointing at the start
+            //    of the string.
+            pos = 0,
 
-        // 2. Let position be a pointer into input, initially pointing at the start
-        //    of the string.
-        pos = 0,
-
-
-        // 3. Let candidates be an initially empty source set.
-        candidates = [];
+            // 3. Let candidates be an initially empty source set.
+            candidates = [];
 
         /**
         * Adds descriptor properties to a candidate, pushes to the candidates array
@@ -1242,90 +1237,62 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             // 9. Descriptor parser: Let error be no.
             var pError = false,
 
-
             // 10. Let width be absent.
             // 11. Let density be absent.
             // 12. Let future-compat-h be absent. (We're implementing it now as h)
-            w,
-                d,
-                h,
-                i,
+                w, d, h, i,
                 candidate = {},
-                desc,
-                lastChar,
-                value,
-                intVal,
-                floatVal;
+                desc, lastChar, value, intVal, floatVal;
 
             // 13. For each descriptor in descriptors, run the appropriate set of steps
             // from the following list:
-            for (i = 0; i < descriptors.length; i++) {
-                desc = descriptors[i];
+            for (i = 0 ; i < descriptors.length; i++) {
+                desc = descriptors[ i ];
 
-                lastChar = desc[desc.length - 1];
+                lastChar = desc[ desc.length - 1 ];
                 value = desc.substring(0, desc.length - 1);
                 intVal = parseInt(value, 10);
                 floatVal = parseFloat(value);
 
                 // If the descriptor consists of a valid non-negative integer followed by
                 // a U+0077 LATIN SMALL LETTER W character
-                if (regexNonNegativeInteger.test(value) && lastChar === "w") {
+                if (regexNonNegativeInteger.test(value) && (lastChar === "w")) {
 
                     // If width and density are not both absent, then let error be yes.
-                    if (w || d) {
-                        pError = true;
-                    }
+                    if (w || d) {pError = true;}
 
                     // Apply the rules for parsing non-negative integers to the descriptor.
                     // If the result is zero, let error be yes.
                     // Otherwise, let width be the result.
-                    if (intVal === 0) {
-                        pError = true;
-                    } else {
-                        w = intVal;
-                    }
+                    if (intVal === 0) {pError = true;} else {w = intVal;}
 
-                    // If the descriptor consists of a valid floating-point number followed by
-                    // a U+0078 LATIN SMALL LETTER X character
-                } else if (regexFloatingPoint.test(value) && lastChar === "x") {
+                // If the descriptor consists of a valid floating-point number followed by
+                // a U+0078 LATIN SMALL LETTER X character
+                } else if (regexFloatingPoint.test(value) && (lastChar === "x")) {
 
                     // If width, density and future-compat-h are not all absent, then let error
                     // be yes.
-                    if (w || d || h) {
-                        pError = true;
-                    }
+                    if (w || d || h) {pError = true;}
 
                     // Apply the rules for parsing floating-point number values to the descriptor.
                     // If the result is less than zero, let error be yes. Otherwise, let density
                     // be the result.
-                    if (floatVal < 0) {
-                        pError = true;
-                    } else {
-                        d = floatVal;
-                    }
+                    if (floatVal < 0) {pError = true;} else {d = floatVal;}
 
-                    // If the descriptor consists of a valid non-negative integer followed by
-                    // a U+0068 LATIN SMALL LETTER H character
-                } else if (regexNonNegativeInteger.test(value) && lastChar === "h") {
+                // If the descriptor consists of a valid non-negative integer followed by
+                // a U+0068 LATIN SMALL LETTER H character
+                } else if (regexNonNegativeInteger.test(value) && (lastChar === "h")) {
 
                     // If height and density are not both absent, then let error be yes.
-                    if (h || d) {
-                        pError = true;
-                    }
+                    if (h || d) {pError = true;}
 
                     // Apply the rules for parsing non-negative integers to the descriptor.
                     // If the result is zero, let error be yes. Otherwise, let future-compat-h
                     // be the result.
-                    if (intVal === 0) {
-                        pError = true;
-                    } else {
-                        h = intVal;
-                    }
+                    if (intVal === 0) {pError = true;} else {h = intVal;}
 
-                    // Anything else, Let error be yes.
-                } else {
-                    pError = true;
-                }
+                // Anything else, Let error be yes.
+                } else {pError = true;}
             } // (close step 13 for loop)
 
             // 15. If error is still no, then append a new image source to candidates whose
@@ -1334,21 +1301,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             if (!pError) {
                 candidate.url = url;
 
-                if (w) {
-                    candidate.w = w;
-                }
-                if (d) {
-                    candidate.d = d;
-                }
-                if (h) {
-                    candidate.h = h;
-                }
-                if (!h && !d && !w) {
-                    candidate.d = 1;
-                }
-                if (candidate.d === 1) {
-                    set.has1x = true;
-                }
+                if (w) { candidate.w = w;}
+                if (d) { candidate.d = d;}
+                if (h) { candidate.h = h;}
+                if (!h && !d && !w) {candidate.d = 1;}
+                if (candidate.d === 1) {set.has1x = true;}
                 candidate.set = set;
 
                 candidates.push(candidate);
@@ -1385,10 +1342,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 if (state === "in descriptor") {
                     // Do the following, depending on the value of c:
 
-                    // Space character
-                    // If current descriptor is not empty, append current descriptor to
-                    // descriptors and let current descriptor be the empty string.
-                    // Set state to after descriptor.
+                  // Space character
+                  // If current descriptor is not empty, append current descriptor to
+                  // descriptors and let current descriptor be the empty string.
+                  // Set state to after descriptor.
                     if (isSpace(c)) {
                         if (currentDescriptor) {
                             descriptors.push(currentDescriptor);
@@ -1396,10 +1353,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                             state = "after descriptor";
                         }
 
-                        // U+002C COMMA (,)
-                        // Advance position to the next character in input. If current descriptor
-                        // is not empty, append current descriptor to descriptors. Jump to the step
-                        // labeled descriptor parser.
+                    // U+002C COMMA (,)
+                    // Advance position to the next character in input. If current descriptor
+                    // is not empty, append current descriptor to descriptors. Jump to the step
+                    // labeled descriptor parser.
                     } else if (c === ",") {
                         pos += 1;
                         if (currentDescriptor) {
@@ -1408,15 +1365,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         parseDescriptors();
                         return;
 
-                        // U+0028 LEFT PARENTHESIS (()
-                        // Append c to current descriptor. Set state to in parens.
-                    } else if (c === "(") {
+                    // U+0028 LEFT PARENTHESIS (()
+                    // Append c to current descriptor. Set state to in parens.
+                    } else if (c === "\u0028") {
                         currentDescriptor = currentDescriptor + c;
                         state = "in parens";
 
-                        // EOF
-                        // If current descriptor is not empty, append current descriptor to
-                        // descriptors. Jump to the step labeled descriptor parser.
+                    // EOF
+                    // If current descriptor is not empty, append current descriptor to
+                    // descriptors. Jump to the step labeled descriptor parser.
                     } else if (c === "") {
                         if (currentDescriptor) {
                             descriptors.push(currentDescriptor);
@@ -1424,14 +1381,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         parseDescriptors();
                         return;
 
-                        // Anything else
-                        // Append c to current descriptor.
+                    // Anything else
+                    // Append c to current descriptor.
                     } else {
                         currentDescriptor = currentDescriptor + c;
                     }
-                    // (end "in descriptor"
+                // (end "in descriptor"
 
-                    // In parens
+                // In parens
                 } else if (state === "in parens") {
 
                     // U+0029 RIGHT PARENTHESIS ())
@@ -1440,44 +1397,45 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         currentDescriptor = currentDescriptor + c;
                         state = "in descriptor";
 
-                        // EOF
-                        // Append current descriptor to descriptors. Jump to the step labeled
-                        // descriptor parser.
+                    // EOF
+                    // Append current descriptor to descriptors. Jump to the step labeled
+                    // descriptor parser.
                     } else if (c === "") {
                         descriptors.push(currentDescriptor);
                         parseDescriptors();
                         return;
 
-                        // Anything else
-                        // Append c to current descriptor.
+                    // Anything else
+                    // Append c to current descriptor.
                     } else {
                         currentDescriptor = currentDescriptor + c;
                     }
 
-                    // After descriptor
+                // After descriptor
                 } else if (state === "after descriptor") {
 
                     // Do the following, depending on the value of c:
                     // Space character: Stay in this state.
                     if (isSpace(c)) {
 
-                        // EOF: Jump to the step labeled descriptor parser.
+                    // EOF: Jump to the step labeled descriptor parser.
                     } else if (c === "") {
                         parseDescriptors();
                         return;
 
-                        // Anything else
-                        // Set state to in descriptor. Set position to the previous character in input.
+                    // Anything else
+                    // Set state to in descriptor. Set position to the previous character in input.
                     } else {
                         state = "in descriptor";
                         pos -= 1;
+
                     }
                 }
 
                 // Advance position to the next character in input.
                 pos += 1;
 
-                // Repeat this step.
+            // Repeat this step.
             } // (close while true loop)
         }
 
@@ -1507,12 +1465,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 // (Jump ahead to step 9 to skip tokenization and just push the candidate).
                 parseDescriptors();
 
-                //  Otherwise, follow these substeps:
+            //  Otherwise, follow these substeps:
             } else {
                 tokenize();
             } // (close else of step 8)
 
-            // 16. Return to the step labeled splitting loop.
+        // 16. Return to the step labeled splitting loop.
         } // (Close of big while loop.)
     }
 
@@ -1600,14 +1558,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             while (true) {
                 chrctr = str.charAt(pos);
 
-                if (chrctr === "") {
-                    // ( End of string reached.)
+                if (chrctr === "") { // ( End of string reached.)
                     pushComponent();
                     pushComponentArray();
                     return listArray;
                 } else if (inComment) {
-                    if (chrctr === "*" && str[pos + 1] === "/") {
-                        // (At end of a comment.)
+                    if ((chrctr === "*") && (str[pos + 1] === "/")) { // (At end of a comment.)
                         inComment = false;
                         pos += 2;
                         pushComponent();
@@ -1620,12 +1576,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     // (If previous character in loop was also a space, or if
                     // at the beginning of the string, do not add space char to
                     // component.)
-                    if (str.charAt(pos - 1) && isSpace(str.charAt(pos - 1)) || !component) {
+                    if ( (str.charAt(pos - 1) && isSpace( str.charAt(pos - 1) ) ) || !component ) {
                         pos += 1;
                         continue;
                     } else if (parenDepth === 0) {
                         pushComponent();
-                        pos += 1;
+                        pos +=1;
                         continue;
                     } else {
                         // (Replace any space character with a plain space for legibility.)
@@ -1640,7 +1596,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     pushComponentArray();
                     pos += 1;
                     continue;
-                } else if (chrctr === "/" && str.charAt(pos + 1) === "*") {
+                } else if ( (chrctr === "/") && (str.charAt(pos + 1) === "*") ) {
                     inComment = true;
                     pos += 2;
                     continue;
@@ -1652,18 +1608,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
 
         function isValidNonNegativeSourceSizeValue(s) {
-            if (regexCssLengthWithUnits.test(s) && parseFloat(s) >= 0) {
-                return true;
-            }
-            if (regexCssCalc.test(s)) {
-                return true;
-            }
+            if (regexCssLengthWithUnits.test(s) && (parseFloat(s) >= 0)) {return true;}
+            if (regexCssCalc.test(s)) {return true;}
             // ( http://www.w3.org/TR/CSS2/syndata.html#numbers says:
             // "-0 is equivalent to 0 and is not a negative number." which means that
             // unitless zero and unitless negative zero must be accepted as special cases.)
-            if (s === "0" || s === "-0" || s === "+0") {
-                return true;
-            }
+            if ((s === "0") || (s === "-0") || (s === "+0")) {return true;}
             return false;
         }
 
@@ -1718,7 +1668,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             // media condition parses incorrectly but still somehow evaluates to true?
             // Can we just rely on the browser/polyfill to do it?)
             unparsedSize = unparsedSize.join(" ");
-            if (!pf.matchesMedia(unparsedSize)) {
+            if (!(pf.matchesMedia( unparsedSize ) ) ) {
                 continue;
             }
 
@@ -1742,7 +1692,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     // UC browser does claim to support srcset and picture, but not sizes,
     // this extended test reveals the browser does support nothing
     if (pf.supSrcset && pf.supPicture && !pf.supSizes) {
-        (function (image2) {
+        (function(image2) {
             image.srcset = "data:,a";
             image2.src = "data:,a";
             pf.supSrcset = image.complete === image2.complete;
@@ -1753,11 +1703,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     // Safari9 has basic support for sizes, but does't expose the `sizes` idl attribute
     if (pf.supSrcset && !pf.supSizes) {
 
-        (function () {
+        (function() {
             var width2 = "data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==";
             var width1 = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
             var img = document.createElement("img");
-            var test = function test() {
+            var test = function() {
                 var width = img.width;
 
                 if (width === 2) {
@@ -1778,6 +1728,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             img.srcset = width1 + " 1w," + width2 + " 9w";
             img.src = width1;
         })();
+
     } else {
         isSupportTestReady = true;
     }
@@ -1791,11 +1742,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     /**
      * Shortcut property for `devicePixelRatio` ( for easy overriding in tests )
      */
-    pf.DPR = DPR || 1;
+    pf.DPR = (DPR  || 1 );
     pf.u = units;
 
     // container of supported mime types that one might need to qualify before using
-    pf.types = types;
+    pf.types =  types;
 
     pf.setSize = noop;
 
@@ -1805,7 +1756,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @returns {String} absolute URL
      */
 
-    pf.makeUrl = memoize(function (src) {
+    pf.makeUrl = memoize(function(src) {
         anchor.href = src;
         return anchor.href;
     });
@@ -1817,8 +1768,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param sel
      * @returns {NodeList|Array}
      */
-    pf.qsa = function (context, sel) {
-        return "querySelector" in context ? context.querySelectorAll(sel) : [];
+    pf.qsa = function(context, sel) {
+        return ( "querySelector" in context ) ? context.querySelectorAll(sel) : [];
     };
 
     /**
@@ -1826,16 +1777,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * wether native or pf.mMQ is used will be decided lazy on first call
      * @returns {boolean}
      */
-    pf.matchesMedia = function () {
-        if (window.matchMedia && (matchMedia("(min-width: 0.1em)") || {}).matches) {
-            pf.matchesMedia = function (media) {
-                return !media || matchMedia(media).matches;
+    pf.matchesMedia = function() {
+        if ( window.matchMedia && (matchMedia( "(min-width: 0.1em)" ) || {}).matches ) {
+            pf.matchesMedia = function( media ) {
+                return !media || ( matchMedia( media ).matches );
             };
         } else {
             pf.matchesMedia = pf.mMQ;
         }
 
-        return pf.matchesMedia.apply(this, arguments);
+        return pf.matchesMedia.apply( this, arguments );
     };
 
     /**
@@ -1844,7 +1795,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param media
      * @returns {boolean}
      */
-    pf.mMQ = function (media) {
+    pf.mMQ = function( media ) {
         return media ? evalCSS(media) : true;
     };
 
@@ -1857,7 +1808,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param sourceSizeValue
      * @returns {Number}
      */
-    pf.calcLength = function (sourceSizeValue) {
+    pf.calcLength = function( sourceSizeValue ) {
 
         var value = evalCSS(sourceSizeValue, true) || false;
         if (value < 0) {
@@ -1871,8 +1822,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * Takes a type string and checks if its supported
      */
 
-    pf.supportsType = function (type) {
-        return type ? types[type] : true;
+    pf.supportsType = function( type ) {
+        return ( type ) ? types[ type ] : true;
     };
 
     /**
@@ -1880,16 +1831,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * @param sourceSizeStr
      * @returns {*}
      */
-    pf.parseSize = memoize(function (sourceSizeStr) {
-        var match = (sourceSizeStr || "").match(regSize);
+    pf.parseSize = memoize(function( sourceSizeStr ) {
+        var match = ( sourceSizeStr || "" ).match(regSize);
         return {
             media: match && match[1],
             length: match && match[2]
         };
     });
 
-    pf.parseSet = function (set) {
-        if (!set.cands) {
+    pf.parseSet = function( set ) {
+        if ( !set.cands ) {
             set.cands = parseSrcset(set.srcset, set);
         }
         return set.cands;
@@ -1900,10 +1851,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * function taken from respondjs
      * @returns {*|number}
      */
-    pf.getEmValue = function () {
+    pf.getEmValue = function() {
         var body;
-        if (!eminpx && (body = document.body)) {
-            var div = document.createElement("div"),
+        if ( !eminpx && (body = document.body) ) {
+            var div = document.createElement( "div" ),
                 originalHTMLCSS = docElem.style.cssText,
                 originalBodyCSS = body.style.cssText;
 
@@ -1914,16 +1865,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             docElem.style.cssText = fsCss;
             body.style.cssText = fsCss;
 
-            body.appendChild(div);
+            body.appendChild( div );
             eminpx = div.offsetWidth;
-            body.removeChild(div);
+            body.removeChild( div );
 
             //also update eminpx before returning
-            eminpx = parseFloat(eminpx, 10);
+            eminpx = parseFloat( eminpx, 10 );
 
             // restore the original values
             docElem.style.cssText = originalHTMLCSS;
             body.style.cssText = originalBodyCSS;
+
         }
         return eminpx || 16;
     };
@@ -1931,17 +1883,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     /**
      * Takes a string of sizes and returns the width in pixels as a number
      */
-    pf.calcListLength = function (sourceSizeListStr) {
+    pf.calcListLength = function( sourceSizeListStr ) {
         // Split up source size list, ie ( max-width: 30em ) 100%, ( max-width: 50em ) 50%, 33%
         //
         //                           or (min-width:30em) calc(30% - 15px)
-        if (!(sourceSizeListStr in sizeLengthCache) || cfg.uT) {
-            var winningLength = pf.calcLength(parseSizes(sourceSizeListStr));
+        if ( !(sourceSizeListStr in sizeLengthCache) || cfg.uT ) {
+            var winningLength = pf.calcLength( parseSizes( sourceSizeListStr ) );
 
-            sizeLengthCache[sourceSizeListStr] = !winningLength ? units.width : winningLength;
+            sizeLengthCache[ sourceSizeListStr ] = !winningLength ? units.width : winningLength;
         }
 
-        return sizeLengthCache[sourceSizeListStr];
+        return sizeLengthCache[ sourceSizeListStr ];
     };
 
     /**
@@ -1954,14 +1906,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      * where resolution is http://dev.w3.org/csswg/css-values-3/#resolution-value
      * If sizes is specified, res is calculated
      */
-    pf.setRes = function (set) {
+    pf.setRes = function( set ) {
         var candidates;
-        if (set) {
+        if ( set ) {
 
-            candidates = pf.parseSet(set);
+            candidates = pf.parseSet( set );
 
-            for (var i = 0, len = candidates.length; i < len; i++) {
-                setResolution(candidates[i], set.sizes);
+            for ( var i = 0, len = candidates.length; i < len; i++ ) {
+                setResolution( candidates[ i ], set.sizes );
             }
         }
         return candidates;
@@ -1969,13 +1921,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     pf.setRes.res = setResolution;
 
-    pf.applySetCandidate = function (candidates, img) {
-        if (!candidates.length) {
-            return;
-        }
-        var candidate, i, j, length, bestCandidate, curSrc, curCan, candidateSrc, abortCurSrc;
+    pf.applySetCandidate = function( candidates, img ) {
+        if ( !candidates.length ) {return;}
+        var candidate,
+            i,
+            j,
+            length,
+            bestCandidate,
+            curSrc,
+            curCan,
+            candidateSrc,
+            abortCurSrc;
 
-        var imageData = img[pf.ns];
+        var imageData = img[ pf.ns ];
         var dpr = pf.DPR;
 
         curSrc = imageData.curSrc || img[curSrcProp];
@@ -1983,40 +1941,43 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         curCan = imageData.curCan || setSrcToCur(img, curSrc, candidates[0].set);
 
         // if we have a current source, we might either become lazy or give this source some advantage
-        if (curCan && curCan.set === candidates[0].set) {
+        if ( curCan && curCan.set === candidates[ 0 ].set ) {
 
             // if browser can abort image request and the image has a higher pixel density than needed
             // and this image isn't downloaded yet, we skip next part and try to save bandwidth
-            abortCurSrc = supportAbort && !img.complete && curCan.res - 0.1 > dpr;
+            abortCurSrc = (supportAbort && !img.complete && curCan.res - 0.1 > dpr);
 
-            if (!abortCurSrc) {
+            if ( !abortCurSrc ) {
                 curCan.cached = true;
 
                 // if current candidate is "best", "better" or "okay",
                 // set it to bestCandidate
-                if (curCan.res >= dpr) {
+                if ( curCan.res >= dpr ) {
                     bestCandidate = curCan;
                 }
             }
         }
 
-        if (!bestCandidate) {
+        if ( !bestCandidate ) {
 
-            candidates.sort(ascendingSort);
+            candidates.sort( ascendingSort );
 
             length = candidates.length;
-            bestCandidate = candidates[length - 1];
+            bestCandidate = candidates[ length - 1 ];
 
-            for (i = 0; i < length; i++) {
-                candidate = candidates[i];
-                if (candidate.res >= dpr) {
+            for ( i = 0; i < length; i++ ) {
+                candidate = candidates[ i ];
+                if ( candidate.res >= dpr ) {
                     j = i - 1;
 
                     // we have found the perfect candidate,
                     // but let's improve this a little bit with some assumptions ;-)
-                    if (candidates[j] && (abortCurSrc || curSrc !== pf.makeUrl(candidate.url)) && chooseLowRes(candidates[j].res, candidate.res, dpr, candidates[j].cached)) {
+                    if (candidates[ j ] &&
+                        (abortCurSrc || curSrc !== pf.makeUrl( candidate.url )) &&
+                        chooseLowRes(candidates[ j ].res, candidate.res, dpr, candidates[ j ].cached)) {
 
-                        bestCandidate = candidates[j];
+                        bestCandidate = candidates[ j ];
+
                     } else {
                         bestCandidate = candidate;
                     }
@@ -2025,50 +1986,50 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
         }
 
-        if (bestCandidate) {
+        if ( bestCandidate ) {
 
-            candidateSrc = pf.makeUrl(bestCandidate.url);
+            candidateSrc = pf.makeUrl( bestCandidate.url );
 
             imageData.curSrc = candidateSrc;
             imageData.curCan = bestCandidate;
 
-            if (candidateSrc !== curSrc) {
-                pf.setSrc(img, bestCandidate);
+            if ( candidateSrc !== curSrc ) {
+                pf.setSrc( img, bestCandidate );
             }
-            pf.setSize(img);
+            pf.setSize( img );
         }
     };
 
-    pf.setSrc = function (img, bestCandidate) {
+    pf.setSrc = function( img, bestCandidate ) {
         var origWidth;
         img.src = bestCandidate.url;
 
         // although this is a specific Safari issue, we don't want to take too much different code paths
-        if (bestCandidate.set.type === "image/svg+xml") {
+        if ( bestCandidate.set.type === "image/svg+xml" ) {
             origWidth = img.style.width;
-            img.style.width = img.offsetWidth + 1 + "px";
+            img.style.width = (img.offsetWidth + 1) + "px";
 
             // next line only should trigger a repaint
             // if... is only done to trick dead code removal
-            if (img.offsetWidth + 1) {
+            if ( img.offsetWidth + 1 ) {
                 img.style.width = origWidth;
             }
         }
     };
 
-    pf.getSet = function (img) {
+    pf.getSet = function( img ) {
         var i, set, supportsType;
         var match = false;
-        var sets = img[pf.ns].sets;
+        var sets = img [ pf.ns ].sets;
 
-        for (i = 0; i < sets.length && !match; i++) {
+        for ( i = 0; i < sets.length && !match; i++ ) {
             set = sets[i];
 
-            if (!set.srcset || !pf.matchesMedia(set.media) || !(supportsType = pf.supportsType(set.type))) {
+            if ( !set.srcset || !pf.matchesMedia( set.media ) || !(supportsType = pf.supportsType( set.type )) ) {
                 continue;
             }
 
-            if (supportsType === "pending") {
+            if ( supportsType === "pending" ) {
                 set = supportsType;
             }
 
@@ -2079,46 +2040,46 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return match;
     };
 
-    pf.parseSets = function (element, parent, options) {
+    pf.parseSets = function( element, parent, options ) {
         var srcsetAttribute, imageSet, isWDescripor, srcsetParsed;
 
         var hasPicture = parent && parent.nodeName.toUpperCase() === "PICTURE";
-        var imageData = element[pf.ns];
+        var imageData = element[ pf.ns ];
 
-        if (imageData.src === undefined || options.src) {
-            imageData.src = getImgAttr.call(element, "src");
-            if (imageData.src) {
-                setImgAttr.call(element, srcAttr, imageData.src);
+        if ( imageData.src === undefined || options.src ) {
+            imageData.src = getImgAttr.call( element, "src" );
+            if ( imageData.src ) {
+                setImgAttr.call( element, srcAttr, imageData.src );
             } else {
-                removeImgAttr.call(element, srcAttr);
+                removeImgAttr.call( element, srcAttr );
             }
         }
 
-        if (imageData.srcset === undefined || options.srcset || !pf.supSrcset || element.srcset) {
-            srcsetAttribute = getImgAttr.call(element, "srcset");
+        if ( imageData.srcset === undefined || options.srcset || !pf.supSrcset || element.srcset ) {
+            srcsetAttribute = getImgAttr.call( element, "srcset" );
             imageData.srcset = srcsetAttribute;
             srcsetParsed = true;
         }
 
         imageData.sets = [];
 
-        if (hasPicture) {
+        if ( hasPicture ) {
             imageData.pic = true;
-            getAllSourceElements(parent, imageData.sets);
+            getAllSourceElements( parent, imageData.sets );
         }
 
-        if (imageData.srcset) {
+        if ( imageData.srcset ) {
             imageSet = {
                 srcset: imageData.srcset,
-                sizes: getImgAttr.call(element, "sizes")
+                sizes: getImgAttr.call( element, "sizes" )
             };
 
-            imageData.sets.push(imageSet);
+            imageData.sets.push( imageSet );
 
             isWDescripor = (alwaysCheckWDescriptor || imageData.src) && regWDesc.test(imageData.srcset || "");
 
             // add normal src as candidate, if source has no w descriptor
-            if (!isWDescripor && imageData.src && !getCandidateForSrc(imageData.src, imageSet) && !imageSet.has1x) {
+            if ( !isWDescripor && imageData.src && !getCandidateForSrc(imageData.src, imageSet) && !imageSet.has1x ) {
                 imageSet.srcset += ", " + imageData.src;
                 imageSet.cands.push({
                     url: imageData.src,
@@ -2126,11 +2087,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     set: imageSet
                 });
             }
-        } else if (imageData.src) {
-            imageData.sets.push({
+
+        } else if ( imageData.src ) {
+            imageData.sets.push( {
                 srcset: imageData.src,
                 sizes: null
-            });
+            } );
         }
 
         imageData.curCan = null;
@@ -2138,18 +2100,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         // if img has picture or the srcset was removed or has a srcset and does not support srcset at all
         // or has a w descriptor (and does not support sizes) set support to false to evaluate
-        imageData.supported = !(hasPicture || imageSet && !pf.supSrcset || isWDescripor && !pf.supSizes);
+        imageData.supported = !( hasPicture || ( imageSet && !pf.supSrcset ) || (isWDescripor && !pf.supSizes) );
 
-        if (srcsetParsed && pf.supSrcset && !imageData.supported) {
-            if (srcsetAttribute) {
-                setImgAttr.call(element, srcsetAttr, srcsetAttribute);
+        if ( srcsetParsed && pf.supSrcset && !imageData.supported ) {
+            if ( srcsetAttribute ) {
+                setImgAttr.call( element, srcsetAttr, srcsetAttribute );
                 element.srcset = "";
             } else {
-                removeImgAttr.call(element, srcsetAttr);
+                removeImgAttr.call( element, srcsetAttr );
             }
         }
 
-        if (imageData.supported && !imageData.srcset && (!imageData.src && element.src || element.src !== pf.makeUrl(imageData.src))) {
+        if (imageData.supported && !imageData.srcset && ((!imageData.src && element.src) ||  element.src !== pf.makeUrl(imageData.src))) {
             if (imageData.src === null) {
                 element.removeAttribute("src");
             } else {
@@ -2160,62 +2122,63 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         imageData.parsed = true;
     };
 
-    pf.fillImg = function (element, options) {
+    pf.fillImg = function(element, options) {
         var imageData;
         var extreme = options.reselect || options.reevaluate;
 
         // expando for caching data on the img
-        if (!element[pf.ns]) {
-            element[pf.ns] = {};
+        if ( !element[ pf.ns ] ) {
+            element[ pf.ns ] = {};
         }
 
-        imageData = element[pf.ns];
+        imageData = element[ pf.ns ];
 
         // if the element has already been evaluated, skip it
         // unless `options.reevaluate` is set to true ( this, for example,
         // is set to true when running `picturefill` on `resize` ).
-        if (!extreme && imageData.evaled === evalId) {
+        if ( !extreme && imageData.evaled === evalId ) {
             return;
         }
 
-        if (!imageData.parsed || options.reevaluate) {
-            pf.parseSets(element, element.parentNode, options);
+        if ( !imageData.parsed || options.reevaluate ) {
+            pf.parseSets( element, element.parentNode, options );
         }
 
-        if (!imageData.supported) {
-            applyBestCandidate(element);
+        if ( !imageData.supported ) {
+            applyBestCandidate( element );
         } else {
             imageData.evaled = evalId;
         }
     };
 
-    pf.setupRun = function () {
-        if (!alreadyRun || isVwDirty || DPR !== window.devicePixelRatio) {
+    pf.setupRun = function() {
+        if ( !alreadyRun || isVwDirty || (DPR !== window.devicePixelRatio) ) {
             updateMetrics();
         }
     };
 
     // If picture is supported, well, that's awesome.
-    if (pf.supPicture) {
+    if ( pf.supPicture ) {
         picturefill = noop;
         pf.fillImg = noop;
     } else {
 
-        // Set up picture polyfill by polling the document
-        (function () {
+         // Set up picture polyfill by polling the document
+        (function() {
             var isDomReady;
             var regReady = window.attachEvent ? /d$|^c/ : /d$|^c|^i/;
 
-            var run = function run() {
+            var run = function() {
                 var readyState = document.readyState || "";
 
-                timerId = setTimeout(run, readyState === "loading" ? 200 : 999);
-                if (document.body) {
+                timerId = setTimeout(run, readyState === "loading" ? 200 :  999);
+                if ( document.body ) {
                     pf.fillImgs();
                     isDomReady = isDomReady || regReady.test(readyState);
-                    if (isDomReady) {
-                        clearTimeout(timerId);
+                    if ( isDomReady ) {
+                        clearTimeout( timerId );
                     }
+
                 }
             };
 
@@ -2223,10 +2186,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
             // Also attach picturefill on resize and readystatechange
             // http://modernjavascript.blogspot.com/2013/08/building-better-debounce.html
-            var debounce = function debounce(func, wait) {
+            var debounce = function(func, wait) {
                 var timeout, timestamp;
-                var later = function later() {
-                    var last = new Date() - timestamp;
+                var later = function() {
+                    var last = (new Date()) - timestamp;
 
                     if (last < wait) {
                         timeout = setTimeout(later, wait - last);
@@ -2236,7 +2199,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     }
                 };
 
-                return function () {
+                return function() {
                     timestamp = new Date();
 
                     if (!timeout) {
@@ -2245,16 +2208,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 };
             };
             var lastClientWidth = docElem.clientHeight;
-            var onResize = function onResize() {
+            var onResize = function() {
                 isVwDirty = Math.max(window.innerWidth || 0, docElem.clientWidth) !== units.width || docElem.clientHeight !== lastClientWidth;
                 lastClientWidth = docElem.clientHeight;
-                if (isVwDirty) {
+                if ( isVwDirty ) {
                     pf.fillImgs();
                 }
             };
 
-            on(window, "resize", debounce(onResize, 99));
-            on(document, "readystatechange", run);
+            on( window, "resize", debounce(onResize, 99 ) );
+            on( document, "readystatechange", run );
         })();
     }
 
@@ -2268,14 +2231,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     window.picturefillCFG = {
         pf: pf,
-        push: function push(args) {
+        push: function(args) {
             var name = args.shift();
             if (typeof pf[name] === "function") {
                 pf[name].apply(pf, args);
             } else {
                 cfg[name] = args[0];
                 if (alreadyRun) {
-                    pf.fillImgs({ reselect: true });
+                    pf.fillImgs( { reselect: true } );
                 }
             }
         }
@@ -2289,18 +2252,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     window.picturefill = picturefill;
 
     /* expose picturefill */
-    if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
+    if ( typeof module === "object" && typeof module.exports === "object" ) {
         // CommonJS, just export
         module.exports = picturefill;
-    } else if (typeof define === "function" && define.amd) {
+    } else if ( typeof define === "function" && define.amd ) {
         // AMD support
-        define("picturefill", function () {
-            return picturefill;
-        });
+        define( "picturefill", function() { return picturefill; } );
     }
 
     // IE8 evals this sync, so it must be the last thing we do
-    if (!pf.supPicture) {
-        types["image/webp"] = detectTypeSupport("image/webp", "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==");
+    if ( !pf.supPicture ) {
+        types[ "image/webp" ] = detectTypeSupport("image/webp", "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==" );
     }
-})(window, document);
+
+} )( window, document );
