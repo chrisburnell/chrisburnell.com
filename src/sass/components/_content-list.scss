@@ -48,7 +48,7 @@
         aside & {
             width: 100%;
 
-            // Push all list items down (after the first one, in the <aside>’s
+            // Push all list items down (after the first one, in the <aside>'s
             // one-column format)
             & + li {
                 @include v(margin-top, small);
