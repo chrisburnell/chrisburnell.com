@@ -51,7 +51,7 @@
     --border-radius-thin: 0.25rem;
     --border-radius-hairline: 0.125rem;
     --button-border-width: 0.182em;
-    --font-display: swap;
+    --font-display: fallback;
     --font-weight-default: 400;
     --font-weight-bold: 600;
     --font-size-default: 1rem;
@@ -109,7 +109,7 @@
     font-family: "League Gothic";
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: fallback;
     src: local("League Gothic Regular"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/league-gothic-regular.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
@@ -118,7 +118,7 @@
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: fallback;
     src: local("Proxima Nova Regular"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-regular.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
@@ -127,7 +127,7 @@
     font-family: "Proxima Nova";
     font-style: italic;
     font-weight: 400;
-    font-display: swap;
+    font-display: fallback;
     src: local("Proxima Nova Italic"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-italic.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
@@ -136,7 +136,7 @@
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 600;
-    font-display: swap;
+    font-display: fallback;
     src: local("Proxima Nova Semibold"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }

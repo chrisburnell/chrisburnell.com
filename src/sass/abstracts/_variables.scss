@@ -229,7 +229,7 @@ $border-radii: (
 
 
 /// @type String
-$font-display: swap !default;
+$font-display: fallback !default;
 
 
 /// @type Number
