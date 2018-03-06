@@ -12,7 +12,7 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, injection, placeholder) {
+    injectContent: function(originalContent, placeholder, injection) {
         const regex = new RegExp(placeholder, 'g');
 
         return originalContent.replace(regex, injection);
@@ -175,23 +175,21 @@ helpers = {
 
     // Load in Disqus comments and remove the comments button
     function showComments() {
-        if (COMMENTS_SECTION !== null) {
-            // only if the button still exists should we load and hide the button
-            if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute('aria-hidden') === 'false') {
-                COMMENTS_BUTTON.setAttribute('aria-pressed', 'true');
-                COMMENTS_BUTTON.setAttribute('aria-expanded', 'true');
-                COMMENTS_BUTTON.setAttribute('aria-hidden', 'true');
-                COMMENTS_BUTTON.removeEventListener('click', () => {});
-                (() => {
-                    const DISQUS_SCRIPT = document.createElement('script');
-                    DISQUS_SCRIPT.type = 'text/javascript';
-                    DISQUS_SCRIPT.async = true;
-                    DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
-                })();
-                COMMENTS_SECTION.setAttribute('aria-hidden', 'false');
-                COMMENTS_SECTION.scrollIntoView();
-            }
+        // only if the button still exists, load comments and hide the button
+        if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute('aria-hidden') === 'false') {
+            COMMENTS_BUTTON.setAttribute('aria-pressed', 'true');
+            COMMENTS_BUTTON.setAttribute('aria-expanded', 'true');
+            COMMENTS_BUTTON.setAttribute('aria-hidden', 'true');
+            COMMENTS_BUTTON.removeEventListener('click', () => {});
+            (() => {
+                const DISQUS_SCRIPT = document.createElement('script');
+                DISQUS_SCRIPT.type = 'text/javascript';
+                DISQUS_SCRIPT.async = true;
+                DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
+            })();
+            COMMENTS_SECTION.setAttribute('aria-hidden', 'false');
+            COMMENTS_SECTION.scrollIntoView();
         }
     }
 
@@ -542,9 +540,9 @@ helpers = {
     let observer = new IntersectionObserver(checkVisibility);
 
     // initiate WebMentions if hash present on load
-    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentionsAndJump));
+    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
     // initiate WebMentions if hash present on hash change
-    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentionsAndJump));
+    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
 
     if (WEBMENTIONS_SECTION !== null) {
         // enable the WebMentions button, input, and submit
@@ -590,7 +588,7 @@ helpers = {
         request.send();
     }
 
-    function showWebmentions() {
+    function showWebmentions(jump = false) {
         // check if already loaded the webmentions, if not, load it (again)
         if (webmentionsLoaded === false) {
             loadWebmentions();
@@ -603,6 +601,13 @@ helpers = {
             WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
         }
         WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+        // check if we should jump to the appropriate section
+        if (jump) {
+            WEBMENTIONS_SECTION.scrollIntoView();
+            if (webmentionsCount === 0) {
+                WEBMENTIONS_INPUT.focus();
+            }
+        }
     }
 
     function checkVisibility(entries, observer) {
@@ -614,17 +619,6 @@ helpers = {
         });
     }
 
-    function showWebmentionsAndJump() {
-        showWebmentions();
-        WEBMENTIONS_SECTION.scrollIntoView();
-        if (webmentionsCount > 1) {
-            WEBMENTIONS_THREAD.focus();
-        }
-        else {
-            WEBMENTIONS_INPUT.focus();
-        }
-    }
-
     ////
     /// Add results content to WebMention template
     /// @param {String} html
@@ -632,58 +626,40 @@ helpers = {
     /// @return {String} Populated HTML
     ////
     function populateWebmentionContent(html, item) {
+        // Store some variables we'll check often
+        let id = item.id;
+        let type = item.activity.type;
+        let content = item.data.content;
+        let url = item.data.url;
+        let urlAuthor = item.data.author.url;
+        let author = item.data.author.name ? item.data.author.name : item.data.name;
+        let date = item.data.published ? item.data.published : item.verified_date;
+
         // ID
-        html = helpers.injectContent(html, item.id, '{{ id }}');
+        html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
 
         // TYPE
-        html = helpers.injectContent(html, item.activity.type, '{{ type }}');
-        html = helpers.injectContent(html, `<a href="${item.data.url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`, '{{ typeLink }}');
-        if (item.activity.type === 'like') {
-            html = helpers.injectContent(html, 'Liked', '{{ typePrefix }}');
-        }
-        else if (item.activity.type === 'reply') {
-            html = helpers.injectContent(html, 'Replied', '{{ typePrefix }}');
-        }
-        else if (item.activity.type === 'repost') {
-            html = helpers.injectContent(html, 'Reposted', '{{ typePrefix }}');
-        }
-        else {
-            html = helpers.injectContent(html, 'Posted', '{{ typePrefix }}');
-        }
+        html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
+        html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
+        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === 'like' ? 'Liked' :
+                                                               type === 'reply' ? 'Replied' :
+                                                               type === 'repost' ? 'Reposted' :
+                                                               'Posted');
 
         // CONTENT / URL
-        if (item.activity.type === 'like' || item.activity.type === 'repost') {
-            html = helpers.injectContent(html, '', '{{ content }}');
-        }
-        else if (item.activity.type === 'reply' && item.data.content) {
-            html = helpers.injectContent(html, `<div><q>${item.data.content}</q></div>`, '{{ content }}');
-        }
-        else {
-            html = helpers.injectContent(html, `<div><a href="${item.data.url}" rel="external">${item.data.url.split('//')[1]}</a></div>`, '{{ content }}');
-        }
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, type === 'like' || type === 'repost' ? '' :
+                                                            type === 'reply' && content ? `<div><q>${content}</q></div>` :
+                                                            `<div><a href="${url}" rel="external">${url.split('//')[1]}</a></div>`);
 
         // AUTHOR
-        if (item.data.author.name && item.data.author.url && item.data.author.url.includes('//twitter.com')) {
-            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.author.url}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
-        }
-        else if (item.data.author.name && item.data.author.url && item.data.url.includes('//twitter.com')) {
-            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${item.data.url.split('status')[0]}/profile_image?size=normal" alt="">${item.data.author.name}</a>`, '{{ author }}');
-        }
-        else if (item.data.author.name && item.data.author.url) {
-            html = helpers.injectContent(html, `by <a href="${item.data.author.url}" class="webmentions__item__name" rel="external">${item.data.author.name}</a>`, '{{ author }}');
-        }
-        else if (item.data.author.name) {
-            html = helpers.injectContent(html, `by <span class="webmentions__item__name">${item.data.author.name}</span>`, '{{ author }}');
-        }
-        else if (item.data.name) {
-            html = helpers.injectContent(html, `by <span class="webmentions__item__name">${item.data.name}</span>`, '{{ author }}');
-        }
-        else {
-            html = helpers.injectContent(html, '', '{{ author }}');
-        }
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${urlAuthor}/profile_image?size=normal" alt="">${author}</a>` :
+                                                           author && urlAuthor && url.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split('status')[0]}/profile_image?size=normal" alt="">${author}</a>` :
+                                                           author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` :
+                                                           author ? `by <span class="webmentions__item__name">${author}</span>` :
+                                                           '');
 
         // DATE
-        html = helpers.injectContent(html, `on <time class="webmentions__item__time" datetime="${item.data.published ? item.data.published : item.verified_date}">${helpers.formatDate(new Date(item.data.published ? item.data.published : item.verified_date))} <small>@</small> ${helpers.formatTime(new Date(item.data.published ? item.data.published : item.verified_date))}</time>`, '{{ date }}');
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__item__time" datetime="${date}">${helpers.formatDate(new Date(date))} <small>@</small> ${helpers.formatTime(new Date(date))}</time>`);
 
         return html;
     }

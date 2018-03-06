@@ -12,7 +12,7 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, injection, placeholder) {
+    injectContent: function(originalContent, placeholder, injection) {
         const regex = new RegExp(placeholder, 'g');
 
         return originalContent.replace(regex, injection);
