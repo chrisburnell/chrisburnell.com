@@ -84,7 +84,6 @@ exclude:
 - CONTRIBUTING.md
 - deploy.sh
 - Gemfile
-- Gemfile.lock
 - gulpfile.babel.js
 - LICENSE
 - node_modules
@@ -92,7 +91,6 @@ exclude:
 - README.md
 - src
 - vendor
-- yarn.lock
 
 plugins:
 - jekyll-redirect-from
