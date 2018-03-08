@@ -18,7 +18,7 @@
     "node": ">= 5.10.0"
   },
   "dependencies": {
-    "autoprefixer": "8.0.0",
+    "autoprefixer": "8.1.0",
     "babel-core": "6.26.0",
     "babel-preset-minify": "0.3.0",
     "cssnano": "3.10.0",

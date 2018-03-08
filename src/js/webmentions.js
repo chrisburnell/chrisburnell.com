@@ -131,21 +131,21 @@
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
         html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
         html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === 'like' ? 'Liked' :
-                                                               type === 'reply' ? 'Replied' :
-                                                               type === 'repost' ? 'Reposted' :
-                                                               'Posted');
+                                                                   type === 'reply' ? 'Replied' :
+                                                                   type === 'repost' ? 'Reposted' :
+                                                                   'Posted');
 
         // CONTENT / URL
         html = helpers.injectContent(html, /{{\s*content\s*}}/, type === 'like' || type === 'repost' ? '' :
-                                                            type === 'reply' && content ? `<div><q>${content}</q></div>` :
-                                                            `<div><a href="${url}" rel="external">${url.split('//')[1]}</a></div>`);
+                                                                type === 'reply' && content ? `<div><q>${content}</q></div>` :
+                                                                `<div><a href="${url}" rel="external">${url.split('//')[1]}</a></div>`);
 
         // AUTHOR
         html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${urlAuthor}/profile_image?size=normal" alt="">${author}</a>` :
-                                                           author && urlAuthor && url.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split('status')[0]}/profile_image?size=normal" alt="">${author}</a>` :
-                                                           author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` :
-                                                           author ? `by <span class="webmentions__item__name">${author}</span>` :
-                                                           '');
+                                                               author && urlAuthor && url.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split('status')[0]}/profile_image?size=normal" alt="">${author}</a>` :
+                                                               author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` :
+                                                               author ? `by <span class="webmentions__item__name">${author}</span>` :
+                                                               '');
 
         // DATE
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__item__time" datetime="${date}">${helpers.formatDate(new Date(date))} <small>@</small> ${helpers.formatTime(new Date(date))}</time>`);

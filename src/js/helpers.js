@@ -71,26 +71,29 @@ helpers = {
         if (day < 10) {
             day = `0${day}`;
         }
-        let monthIndex = date.getMonth();
+        let month = months[date.getMonth()];
         let year = date.getFullYear();
 
-        return `${day} ${months[monthIndex]} ${year}`;
+        return `${day} ${month} ${year}`;
     },
 
     ////
     /// Format a Time
-    /// @param {String} date
+    /// @param {Date} date
+    /// @param {Boolean} [false] includeSeconds
+    /// @param {Boolean} [true] includeMerdiem
     /// @return {String} formattedTime
     ////
-    formatTime: function(date) {
+    formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let meridiem = hours < 12 ? 'am' : 'pm';
+        let minutes = `:${date.getMinutes()}`;
+        let seconds = includeSeconds ? `:${date.getSeconds()}` : '';
+        let meridiem = includeMeridiem ? ` ${hours < 12 ? 'am' : 'pm'}` : '';
 
-        // format from 24-hours to 12-hours
-        hours = hours % 12 || 12;
+        // format from 24-hours to 12-hours if including meridiem
+        hours = includeMeridiem ? hours % 12 || 12 : hours;
 
-        return `${hours}:${minutes} ${meridiem}`;
+        return `${hours}${minutes}${seconds}${meridiem}`;
     },
 
     ////
