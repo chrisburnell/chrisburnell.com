@@ -434,9 +434,9 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block' %}
 
 <figure class="nohighlight">
-<pre><code>@function strip-units($number) {
+<pre><code>@function strip-unit($number) {
     @if not $number {
-        @warn "strip-units() expects at least one parameter.";
+        @warn "strip-unit() expects at least one parameter.";
         @return false;
     }
     @return $number / ($number * 0 + 1);
@@ -447,9 +447,9 @@ p q r s t u v w x y z { | } ~ </pre>
 {% include content/heading.html title='Code Block with Language' %}
 
 {% highlight scss %}
-@function strip-units($number) {
+@function strip-unit($number) {
     @if not $number {
-        @warn "strip-units() expects at least one parameter.";
+        @warn "strip-unit() expects at least one parameter.";
         @return false;
     }
     @return $number / ($number * 0 + 1);

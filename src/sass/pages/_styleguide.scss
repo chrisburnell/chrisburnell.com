@@ -89,7 +89,7 @@
     margin-right: auto;
     overflow-x: hidden;
     position: relative;
-    line-height: strip-units($measure-large * 1.5 - $border-width-thin * 2);
+    line-height: strip-unit($measure-large * 1.5 - $border-width-thin * 2);
     text-align: center;
     @include v(z-index, above);
 
