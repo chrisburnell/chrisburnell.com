@@ -1784,8 +1784,6 @@ th:not(:empty) {
 
 tbody th {
     width: 1px;
-    padding-right: 1.25rem;
-    padding-right: var(--measure-medium);
 }
 
 details {
