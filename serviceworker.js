@@ -13,7 +13,7 @@ sitemap:
 'use strict';
 
 
-// Set up the caches, version, and limits
+// Set up the caches
 const VERSION = '{{ site.time | date: '%F_%H%M%S' }}'; // 1970-01-01_000000
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
@@ -44,7 +44,7 @@ const OFFLINE_PAGES = [
     '/talks/'
 ];
 
-// Files that MUST be cached
+// Files that *must* be cached
 const CRITICAL_CACHE = [
     `/css/main.min.css?version=${VERSION}`,
     `/js/main.min.js?version=${VERSION}`,

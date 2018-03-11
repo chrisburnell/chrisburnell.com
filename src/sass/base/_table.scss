@@ -48,6 +48,5 @@ th {
     tbody & {
         width: 1px;
         @include v(padding-right, medium);
-        text-align: right;
     }
 }

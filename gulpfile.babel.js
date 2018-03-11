@@ -121,9 +121,6 @@ gulp.task('css-critical', () => {
             })
         ]))
         .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(postcss([
             cssnano(),
             reporter({
@@ -132,6 +129,9 @@ gulp.task('css-critical', () => {
                 throwError: true
             })
         ]))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(rename({
             basename: 'critical-css',
@@ -154,8 +154,7 @@ gulp.task('js-lint', () => {
 
 // Concatenate JavaScript
 gulp.task('js-concat', ['js-lint'], () => {
-    return gulp.src([`${paths.js.src}/helpers.js`,
-                     `${paths.js.src}/**/*.js`,
+    return gulp.src([`${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `!${paths.js.src}/vendors/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`])
         .pipe(plumber())

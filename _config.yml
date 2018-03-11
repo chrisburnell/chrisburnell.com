@@ -81,13 +81,16 @@ defaults:
 
 exclude:
 - CNAME
+- CODE_OF_CONDUCT.md
+- COMMIT_TEMPLATE.md
 - CONTRIBUTING.md
-- deploy.sh
 - Gemfile
 - gulpfile.babel.js
+- ISSUE_TEMPLATE.md
 - LICENSE
 - node_modules
 - package.json
+- PULL_REQUEST_TEMPLATE.md
 - README.md
 - src
 - vendor
