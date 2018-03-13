@@ -26,7 +26,6 @@ let webp = require('gulp-webp');
 // Define other objects
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
-let reporter = require('postcss-reporter');
 let scss_syntax = require('postcss-scss');
 let stylelint = require('stylelint');
 
@@ -56,12 +55,7 @@ gulp.task('css-lint', () => {
                      `${paths.css.src}/**/*.scss`])
         .pipe(plumber())
         .pipe(postcss([
-            stylelint(),
-            reporter({
-                plugins: ['!postcss-discard-empty'],
-                clearMessages: true,
-                throwError: false
-            })
+            stylelint()
         ], { syntax: scss_syntax }));
 });
 
@@ -79,24 +73,14 @@ gulp.task('css-main', ['css-lint'], () => {
             sourceMap: paths.css.src
         }))
         .pipe(postcss([
-            autoprefixer(),
-            reporter({
-                plugins: ['!postcss-discard-empty'],
-                clearMessages: true,
-                throwError: true
-            })
+            autoprefixer()
         ]))
         .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(postcss([
-            cssnano(),
-            reporter({
-                plugins: ['!postcss-discard-empty'],
-                clearMessages: true,
-                throwError: true
-            })
+            cssnano()
         ]))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(`${paths.css.dest}/`));
@@ -113,21 +97,11 @@ gulp.task('css-critical', () => {
             outputStyle: 'expanded'
         }))
         .pipe(postcss([
-            autoprefixer(),
-            reporter({
-                plugins: ['!postcss-discard-empty'],
-                clearMessages: true,
-                throwError: true
-            })
+            autoprefixer()
         ]))
         .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(postcss([
-            cssnano(),
-            reporter({
-                plugins: ['!postcss-discard-empty'],
-                clearMessages: true,
-                throwError: true
-            })
+            cssnano()
         ]))
         .pipe(rename({
             suffix: '.min'
