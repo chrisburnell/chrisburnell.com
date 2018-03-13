@@ -504,7 +504,7 @@ $max-columns: 2 !default;
 
 /// @type Map
 /// @see {Mixin} v
-$variable-maps: (
+$variable-map: (
     border-width:   $border-widths,
     border-style:   $border-styles,
     color:          $site-colors,
@@ -519,7 +519,7 @@ $variable-maps: (
 
 /// @type Map
 /// @see {Mixin} v
-$property-maps: (
+$property-map: (
     opacity:                opacity,
     background-color:       color,
     color:                  color,

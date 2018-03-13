@@ -60,24 +60,24 @@ layouts_dir: ./_layouts
 permalink: /:categories/:title/
 
 defaults:
-  -
-    scope:
-      path: ''
-      type: 'pages'
-    values:
-      layout: 'page'
-  -
-    scope:
-      path: '_drafts'
-    values:
-      layout: 'draft'
-  -
-    scope:
-      path: '_posts'
-    values:
-      layout: 'post'
-      comments: true
-      webmentions: true
+-
+  scope:
+    path: ''
+    type: 'pages'
+  values:
+    layout: 'page'
+-
+  scope:
+    path: '_drafts'
+  values:
+    layout: 'draft'
+-
+  scope:
+    path: '_posts'
+  values:
+    layout: 'post'
+    comments: true
+    webmentions: true
 
 exclude:
 - CNAME
