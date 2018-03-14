@@ -128,7 +128,8 @@ gulp.task('js-lint', () => {
 
 // Concatenate JavaScript
 gulp.task('js-concat', ['js-lint'], () => {
-    return gulp.src([`${paths.js.src}/**/*.js`,
+    return gulp.src([`${paths.js.src}/helpers.js`, // this must be first!
+                      `${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
                      `!${paths.js.src}/vendors/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`])
         .pipe(plumber())
