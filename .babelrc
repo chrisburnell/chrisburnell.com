@@ -1,3 +1,5 @@
 {
-    "presets": ["minify"]
+    "presets": [["minify", {
+        "mangle": false
+    }]]
 }
