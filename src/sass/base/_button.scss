@@ -31,7 +31,7 @@ button,
     @include v(line-height, code);
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 0 $border-width-hairline $color-black--gamma;
+    text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--gamma;
     white-space: nowrap;
     cursor: pointer;
     appearance: none;
