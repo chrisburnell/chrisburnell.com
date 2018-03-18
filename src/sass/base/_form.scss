@@ -104,7 +104,9 @@ textarea {
 }
 
 input[type="checkbox"] {
-    @include visually-hidden;
+    .code-toggle & {
+        @include visually-hidden;
+    }
 
     & + label {
         @include border-radius;
