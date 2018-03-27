@@ -237,6 +237,7 @@ $list:
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight css %}
 .from-small-to-medium {
     display: none;
@@ -250,6 +251,7 @@ $list:
     display: none;
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 
@@ -279,6 +281,7 @@ $map: (
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight css %}
 .from-small-to-medium {
     @media (min-width: 500px) and (max-width: 750px) {
@@ -316,6 +319,7 @@ $map: (
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 

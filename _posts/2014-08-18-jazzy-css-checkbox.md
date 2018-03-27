@@ -19,6 +19,7 @@ shorturl: g6pky
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html,
 body {
@@ -74,4 +75,5 @@ input[type="checkbox"] {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

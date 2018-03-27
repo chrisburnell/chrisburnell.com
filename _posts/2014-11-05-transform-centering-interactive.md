@@ -20,6 +20,7 @@ Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html {
     box-sizing: border-box;
@@ -50,4 +51,5 @@ body {
     transform: translate3d(-50%, -50%, 0);
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

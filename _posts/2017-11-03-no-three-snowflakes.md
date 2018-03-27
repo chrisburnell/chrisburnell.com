@@ -34,6 +34,7 @@ We’ll need to make sure our dataset contains more than <var>n</var> items—ma
 {% include content/heading.html title='Let’s just jump right into it' %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 @function unique-groups($data, $size: 2) {
     @if not $data or not (type-of($data) == list or type-of($data) == map) {
@@ -114,6 +115,7 @@ We’ll need to make sure our dataset contains more than <var>n</var> items—ma
     @return $unique-groups;
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 As with the previous version of the function, it can accept the required dataset as either a *List* or *Map*. Using our mathematical formula from before, we can plug in our variables and figure out how many unique multiples to expect from a dataset.

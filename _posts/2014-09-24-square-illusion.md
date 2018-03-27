@@ -26,6 +26,7 @@ shorturl: f7utt
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html {
     box-sizing: border-box;
@@ -177,4 +178,5 @@ body {
     opacity: .5;
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

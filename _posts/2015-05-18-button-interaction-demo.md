@@ -18,6 +18,7 @@ shorturl: ax7qc
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 $black:     #0d0d0d;
 $gray:      #1d1d1d;
@@ -63,4 +64,5 @@ button {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

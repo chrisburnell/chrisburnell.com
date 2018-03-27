@@ -23,6 +23,7 @@ shorturl: e1r8k
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html,
 body {
@@ -86,4 +87,5 @@ body {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

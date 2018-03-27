@@ -22,6 +22,7 @@ shorturl: 6aorh
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 @import url(https://fonts.googleapis.com/css?family=Yellowtail);
 @import url(https://fonts.googleapis.com/css?family=Archivo+Black);
@@ -99,4 +100,5 @@ h1 {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

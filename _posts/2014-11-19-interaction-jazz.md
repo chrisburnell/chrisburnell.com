@@ -21,6 +21,7 @@ shorturl: bhbt9
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 @function range-map($value, $ranges...) {
     $old-minimum: if(length($ranges) == 2, 0, nth($ranges, 1));
@@ -70,4 +71,5 @@ $hue-rotation: -75;
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

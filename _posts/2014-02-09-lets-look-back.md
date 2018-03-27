@@ -79,6 +79,7 @@ How does *gulp* work?
 Here’s a sample `gulpfile.js` that shows the workflow at play. It should give you a fairly good idea of what’s going on.
 
 {% include content/code-toggle-top.html %}
+
 {% highlight javascript %}
 var gulp = require('gulp');
 
@@ -118,6 +119,7 @@ gulp.task('watch', function () {
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['scripts', 'images', 'watch']);
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 What *gulp* does is runs a series of commands and even listens for and responds to changes. In the example above, from the [gulp GitHub repository](https://github.com/gulpjs/gulp "gulp GitHub Repository"){:rel="external"}, *gulp* is being used to compile multiple coffeescript files, minify them, and concatenate them into a single file as well as compress images. The `watch` task is being used to listen for changes to particular files and run tasks subsequently. My particular `gulpfile.js` is used to compile my SCSS, run *Autoprefixer*, minify the CSS, and refresh my browser. This becomes incredibly useful for front-end developers who are used to a <q>tweak a value, compile, refresh browser</q> workflow when `watch` is paired with *[LiveReload](http://livereload.com "LiveReload"){:rel="external"}* to automatically refresh the browser—the workflow then becomes, essentially, <q>tweak a value… tweak a value… tweak a value</q> as saving the file after each tweak would trigger *gulp* `watch` to compile, minify, and refesh for you!
@@ -127,6 +129,7 @@ What *gulp* does is runs a series of commands and even listens for and responds 
 Here’s an example of what the CSS for my logo looked like prior to these changes:
 
 {% include content/code-toggle-top.html %}
+
 {% highlight css %}
 .logo {
     color: #4f4f4f;
@@ -286,6 +289,7 @@ Here’s an example of what the CSS for my logo looked like prior to these chang
         }
     }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 Let’s face it, that’s a monumental amount of code to read, let alone scroll through. Although I spent a monumental amount of time organising it well and ensuring it was super-maintainable, there are a lot of repetitions and property values that could be assigned to variables and used elsewhere in the CSS. The advantage of this becomes obvious when you find yourself having to remember bespoke colour values, but we also have a lot of repetitions due to the requirement of vendor prefixes. Although we will need the vendor prefixes again when we deliver CSS to the user on the front-end, because we’re compiling our CSS beforehand, we can get rid of them in our uncompiled stylesheet.
@@ -297,6 +301,7 @@ Let’s face it, that’s a monumental amount of code to read, let alone scroll 
 Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I Use*.
 
 {% include content/code-toggle-top.html %}
+
 {% highlight css %}
 .logo {
     color: #4f4f4f;
@@ -370,6 +375,7 @@ Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* 
         }
     }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 Already looking much better! You’ll notice I was even able to exclude the entire repeated `-webkit-keyframes` declarations as *Autoprefixer* will include these for me when *gulp* runs.
@@ -381,6 +387,7 @@ Already looking much better! You’ll notice I was even able to exclude the enti
 Next, let’s turn this CSS into SCSS.
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 .logo {
     color: $text-color;
@@ -449,6 +456,7 @@ Next, let’s turn this CSS into SCSS.
     87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 <figure>

@@ -24,6 +24,7 @@ shorturl: 6dwvt
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html,
 body {
@@ -140,4 +141,5 @@ body {
   }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

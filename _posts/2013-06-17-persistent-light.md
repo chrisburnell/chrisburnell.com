@@ -18,6 +18,7 @@ shorturl: 9sogz
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html, body {
     height: 100%;
@@ -116,4 +117,5 @@ body {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

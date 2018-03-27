@@ -29,6 +29,7 @@ shorturl: h5f19
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 .message {
   background-color: white;
@@ -95,4 +96,5 @@ shorturl: h5f19
   }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

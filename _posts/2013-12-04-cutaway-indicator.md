@@ -18,6 +18,7 @@ shorturl: b3sh4
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight scss %}
 html,
 body {
@@ -70,4 +71,5 @@ button {
     }
 }
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}

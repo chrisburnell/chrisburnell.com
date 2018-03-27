@@ -225,6 +225,7 @@ var disqusShortname = 'chrisburnell';
 {% endhighlight %}
 
 {% include content/code-toggle-top.html %}
+
 {% highlight javascript %}
 (function () {
 
@@ -294,6 +295,7 @@ var disqusShortname = 'chrisburnell';
 
 }());
 {% endhighlight %}
+
 {% include content/code-toggle-bottom.html %}
 
 We’ve met all the conditions we set when we embarked upon this task:
