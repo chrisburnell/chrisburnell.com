@@ -45,3 +45,6 @@ node_modules/
 
 # Original Images
 src/images/*
+
+# Git Config
+.gitconfig
