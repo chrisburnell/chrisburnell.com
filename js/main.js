@@ -540,14 +540,13 @@ helpers = {
         </li>`;
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
-    let observer = new IntersectionObserver(checkVisibility);
-
-    // initiate WebMentions if hash present on load
-    window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
-    // initiate WebMentions if hash present on hash change
-    window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
 
     if (WEBMENTIONS_SECTION !== null) {
+        let observer = new IntersectionObserver(checkVisibility);
+        // initiate WebMentions if hash present on load
+        window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
+        // initiate WebMentions if hash present on hash change
+        window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
         WEBMENTIONS_BUTTON.addEventListener('mouseover', () => {
