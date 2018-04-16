@@ -18,9 +18,9 @@
     "node": ">= 5.10.0"
   },
   "dependencies": {
-    "autoprefixer": "8.1.0",
+    "autoprefixer": "8.3.0",
     "babel-core": "6.26.0",
-    "babel-preset-minify": "0.3.0",
+    "babel-preset-minify": "0.4.0",
     "cssnano": "3.10.0",
     "gulp": "3.9.1",
     "gulp-babel": "7.0.1",
@@ -31,13 +31,13 @@
     "gulp-plumber": "1.2.0",
     "gulp-postcss": "7.0.1",
     "gulp-rename": "1.2.2",
-    "gulp-sass": "3.1.0",
+    "gulp-sass": "4.0.1",
     "gulp-sourcemaps": "2.6.4",
     "gulp-watch": "5.0.0",
     "gulp-webp": "3.0.0",
-    "postcss-scss": "1.0.4",
+    "postcss-scss": "1.0.5",
     "snyk": "^1.41.1",
-    "stylelint": "9.1.1"
+    "stylelint": "9.2.0"
   },
   "repository": {
     "type": "git",

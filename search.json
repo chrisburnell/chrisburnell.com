@@ -12,7 +12,7 @@ searchable: false
                 "url": "{{ page.url }}",
                 "title": "{{ page.title | xml_escape }}",
                 "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
-                    "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
+                    "content": "{{ page.content | strip_html | xml_escape | normalize_whitespace | replace: '\', '' }}"
                 {% endunless %}
             }{% unless forloop.last %},{% endunless %}
         {% endunless %}
@@ -38,7 +38,7 @@ searchable: false
                 "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
                     "location": "{{ page.location | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
                 {% endif %}{% unless page.searchable == 'no-content' %},
-                    "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
+                    "content": "{{ page.content | strip_html | xml_escape | normalize_whitespace | replace: '\', '' }}"
                 {% endunless %}
             }{% unless forloop.last %},{% endunless %}
         {% endunless %}

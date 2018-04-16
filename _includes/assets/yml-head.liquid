@@ -11,7 +11,7 @@
 {% elsif page.categories contains 'link' %}
     {% capture meta_lede %}One of my shared links, {{ page.title }}.{% endcapture %}
 {% elsif page.categories contains 'note' %}
-    {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20}}{% endcapture %}
+    {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
 {% elsif page.categories contains 'pen' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title }}.{% endcapture %}
 {% elsif page.categories contains 'talk' %}
