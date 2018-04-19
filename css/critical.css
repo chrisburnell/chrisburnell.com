@@ -1,108 +1,108 @@
 @charset "UTF-8";
 :root {
-    --base-font-size: 16px;
-    --wrapper-width-small: 500px;
-    --wrapper-width-medium: 800px;
-    --wrapper-width-large: 1140px;
-    --gutter-width: 1.25rem;
-    --aside-width: 15.875rem;
-    --article-width: 50.625rem;
-    --line-length-minimum: 336px;
-    --line-length-maximum: 480px;
-    --line-length-responsive: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
-    --measure-small: 0.625rem;
-    --measure-small-relative: 0.625em;
-    --measure-small-proportional: 2vmin;
-    --measure-medium: 1.25rem;
-    --measure-medium-relative: 1.25em;
-    --measure-medium-proportional: 4vmin;
-    --measure-large: 2.25rem;
-    --measure-large-relative: 2.25em;
-    --measure-large-proportional: 8vmin;
-    --measure-one: 1rem;
-    --measure-one-relative: 1em;
-    --opacity-alpha: 0.9;
-    --opacity-beta: 0.7;
-    --opacity-gamma: 0.1;
-    --opacity-delta: 0.05;
-    --color-transparent: transparent;
-    --color-black: #060606;
-    --color-mineshaft: #2b2b2b;
-    --color-kaiser: #4f4f4f;
-    --color-dove: #737373;
-    --color-alto: #dddddd;
-    --color-white: #f9f9f9;
-    --color-raven: #5f8aa6;
-    --color-bowhead: #507791;
-    --color-coyote: #759ab3;
-    --color-canada: #eb2d37;
-    --color-highlight: gold;
-    --color-black--alpha: rgba(6, 6, 6, 0.9);
-    --color-black--gamma: rgba(6, 6, 6, 0.1);
-    --color-black--delta: rgba(6, 6, 6, 0.05);
-    --color-raven--gamma: rgba(95, 138, 166, 0.1);
-    --border-width-default: 0.25rem;
-    --border-width-thin: 0.125rem;
-    --border-width-hairline: 1px;
-    --border-width-button: 0.182em;
-    --border-style-default: solid;
-    --border-style-alternate: dotted;
-    --border-radius-default: 0.375rem;
-    --border-radius-thin: 0.25rem;
-    --border-radius-hairline: 0.125rem;
-    --button-border-width: 0.182em;
-    --font-display: fallback;
-    --font-weight-default: 400;
-    --font-weight-bold: 600;
-    --font-size-default: 1rem;
-    --font-size-alpha: 4.5rem;
-    --font-size-beta: 1.375rem;
-    --font-size-gamma: 1.125rem;
-    --font-size-large: 1.25rem;
-    --font-size-large-relative: 1.25em;
-    --font-size-small: 0.875rem;
-    --font-size-small-relative: 0.875em;
-    --font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --font-family-alpha: "League Gothic", Impact, sans-serif;
-    --font-family-serif: Georgia, serif;
-    --font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    --line-height-default: 1.875;
-    --line-height-small: 1.25;
-    --line-height-medium: 1.429;
-    --line-height-code: 2;
-    --letter-spacing-default: 0;
-    --letter-spacing-uppercase: 1px;
-    --animation-duration: 2s;
-    --animation-function: linear;
-    --animation-fill-mode: forwards;
-    --rotation-default: 5deg;
-    --transition-duration-default: 0.2s;
-    --transition-duration-long: 1s;
-    --transition-function: ease;
-    --z-index-below: -1;
-    --z-index-root: 0;
-    --z-index-default: 1;
-    --z-index-above: 2;
-    --z-index-modal: 3;
-    --z-index-dialog: 4;
-    --z-index-notification: 5;
-    --color-css: #016fba;
-    --color-html: #e54d26;
-    --color-javascript: #f1c54c;
-    --color-liquid: #7ab55c;
-    --color-markdown: #4a525a;
-    --color-sass: #c6538c;
-    --color-codepen: #212121;
-    --color-github: #333333;
-    --color-lastfm: #e31b23;
-    --color-rss: #ff9770;
-    --color-spotify: #1db954;
-    --color-spotify-alt: #191414;
-    --color-twitter: #4d9bd7;
-    --icon-size: 40px;
-    --logo-size: 8.5rem;
-    --avatar-size: 6.25rem;
-    --max-columns: 2;
+    --base-font-size: $base-font-size;
+    --wrapper-width-small: $wrapper-width-small;
+    --wrapper-width-medium: $wrapper-width-medium;
+    --wrapper-width-large: $wrapper-width-large;
+    --gutter-width: $gutter-width;
+    --aside-width: $aside-width;
+    --article-width: $article-width;
+    --line-length-minimum: $line-length-minimum;
+    --line-length-maximum: $line-length-maximum;
+    --line-length-responsive: $line-length-responsive;
+    --measure-small: $measure-small;
+    --measure-small-relative: $measure-small-relative;
+    --measure-small-proportional: $measure-small-proportional;
+    --measure-medium: $measure-medium;
+    --measure-medium-relative: $measure-medium-relative;
+    --measure-medium-proportional: $measure-medium-proportional;
+    --measure-large: $measure-large;
+    --measure-large-relative: $measure-large-relative;
+    --measure-large-proportional: $measure-large-proportional;
+    --measure-one: $measure-one;
+    --measure-one-relative: $measure-one-relative;
+    --opacity-alpha: $opacity-alpha;
+    --opacity-beta: $opacity-beta;
+    --opacity-gamma: $opacity-gamma;
+    --opacity-delta: $opacity-delta;
+    --color-transparent: $color-transparent;
+    --color-black: $color-black;
+    --color-mineshaft: $color-mineshaft;
+    --color-kaiser: $color-kaiser;
+    --color-dove: $color-dove;
+    --color-alto: $color-alto;
+    --color-white: $color-white;
+    --color-raven: $color-raven;
+    --color-bowhead: $color-bowhead;
+    --color-coyote: $color-coyote;
+    --color-canada: $color-canada;
+    --color-highlight: $color-highlight;
+    --color-black--alpha: $color-black--alpha;
+    --color-black--gamma: $color-black--gamma;
+    --color-black--delta: $color-black--delta;
+    --color-raven--gamma: $color-raven--gamma;
+    --border-width-default: $border-width-default;
+    --border-width-thin: $border-width-thin;
+    --border-width-hairline: $border-width-hairline;
+    --border-width-button: $border-width-button;
+    --border-style-default: $border-style-default;
+    --border-style-alternate: $border-style-alternate;
+    --border-radius-default: $border-radius-default;
+    --border-radius-thin: $border-radius-thin;
+    --border-radius-hairline: $border-radius-hairline;
+    --button-border-width: $border-width-button;
+    --font-display: $font-display;
+    --font-weight-default: $font-weight-default;
+    --font-weight-bold: $font-weight-bold;
+    --font-size-default: $font-size-default;
+    --font-size-alpha: $font-size-alpha;
+    --font-size-beta: $font-size-beta;
+    --font-size-gamma: $font-size-gamma;
+    --font-size-large: $font-size-large;
+    --font-size-large-relative: $font-size-large-relative;
+    --font-size-small: $font-size-small;
+    --font-size-small-relative: $font-size-small-relative;
+    --font-family-default: $font-family-default;
+    --font-family-alpha: $font-family-alpha;
+    --font-family-serif: $font-family-serif;
+    --font-family-monospace: $font-family-monospace;
+    --line-height-default: $line-height-default;
+    --line-height-small: $line-height-small;
+    --line-height-medium: $line-height-medium;
+    --line-height-code: $line-height-code;
+    --letter-spacing-default: $letter-spacing-default;
+    --letter-spacing-uppercase: $letter-spacing-uppercase;
+    --animation-duration: $animation-duration;
+    --animation-function: $animation-function;
+    --animation-fill-mode: $animation-fill-mode;
+    --rotation-default: $rotation-default;
+    --transition-duration-default: $transition-duration-default;
+    --transition-duration-long: $transition-duration-long;
+    --transition-function: $transition-function;
+    --z-index-below: $z-index-below;
+    --z-index-root: $z-index-root;
+    --z-index-default: $z-index-default;
+    --z-index-above: $z-index-above;
+    --z-index-modal: $z-index-modal;
+    --z-index-dialog: $z-index-dialog;
+    --z-index-notification: $z-index-notification;
+    --color-css: $color-css;
+    --color-html: $color-html;
+    --color-javascript: $color-javascript;
+    --color-liquid: $color-liquid;
+    --color-markdown: $color-markdown;
+    --color-sass: $color-sass;
+    --color-codepen: $color-codepen;
+    --color-github: $color-github;
+    --color-lastfm: $color-lastfm;
+    --color-rss: $color-rss;
+    --color-spotify: $color-spotify;
+    --color-spotify-alt: $color-spotify-alt;
+    --color-twitter: $color-twitter;
+    --icon-size: $icon-size;
+    --logo-size: $logo-size;
+    --avatar-size: $avatar-size;
+    --max-columns: $max-columns;
 }
 
 @font-face {
@@ -215,12 +215,7 @@ a:active {
     color: var(--color-white);
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #4f4f4f;
     color: var(--color-kaiser);
     -webkit-text-decoration-color: transparent;
@@ -230,12 +225,7 @@ h6 a {
 }
 
 @supports not ((-webkit-text-decoration-color: transparent) or (text-decoration-color: transparent)) {
-    h1 a,
-    h2 a,
-    h3 a,
-    h4 a,
-    h5 a,
-    h6 a {
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
         text-decoration: none;
     }
 }
@@ -319,17 +309,14 @@ a span:not([class]):not([itemprop]) {
     text-shadow: none;
 }
 
-h1:hover .fragment-anchor,
-h2:hover .fragment-anchor,
-h3:hover .fragment-anchor,
-h4:hover .fragment-anchor,
-h5:hover .fragment-anchor,
-h6:hover .fragment-anchor, h1:focus .fragment-anchor,
+h1:hover .fragment-anchor, h2:hover .fragment-anchor, h3:hover .fragment-anchor, h4:hover .fragment-anchor, h5:hover .fragment-anchor, h6:hover .fragment-anchor,
+h1:focus .fragment-anchor,
 h2:focus .fragment-anchor,
 h3:focus .fragment-anchor,
 h4:focus .fragment-anchor,
 h5:focus .fragment-anchor,
-h6:focus .fragment-anchor, h1:active .fragment-anchor,
+h6:focus .fragment-anchor,
+h1:active .fragment-anchor,
 h2:active .fragment-anchor,
 h3:active .fragment-anchor,
 h4:active .fragment-anchor,
@@ -1146,25 +1133,20 @@ aside + .lede {
 
 .author-image, .author-image::before,
 .author-image img,
-.author-image
-picture,
-.author-image
-svg {
+.author-image picture,
+.author-image svg {
     background-clip: padding-box;
     border-radius: 50%;
     width: 6.25rem;
     height: 6.25rem;
 }
 
-@supports ((-webkit-shape-outside: circle(50%)) or (shape-outside: circle(50%))) {
+@supports (shape-outside: circle(50%)) {
     .author-image, .author-image::before,
     .author-image img,
-    .author-image
-    picture,
-    .author-image
-    svg {
-        -webkit-shape-outside: circle(50%);
-                shape-outside: circle(50%);
+    .author-image picture,
+    .author-image svg {
+        shape-outside: circle(50%);
     }
 }
 
@@ -1191,9 +1173,10 @@ svg {
     }
 }
 
-.author-image img, .author-image
-picture, .author-image
-svg {
+
+.author-image img,
+.author-image picture,
+.author-image svg {
     transition: opacity 0.2s ease 0s;
     display: block;
 }
@@ -1202,13 +1185,13 @@ svg {
     z-index: 1;
 }
 
-.author-image:hover > img, .author-image:hover >
-picture, .author-image:hover >
-svg, .author-image:focus > img, .author-image:focus >
-picture, .author-image:focus >
-svg, .author-image:active > img, .author-image:active >
-picture, .author-image:active >
-svg {
+.author-image:hover > img,
+.author-image:hover > picture,
+.author-image:hover > svg, .author-image:focus > img,
+.author-image:focus > picture,
+.author-image:focus > svg, .author-image:active > img,
+.author-image:active > picture,
+.author-image:active > svg {
     -webkit-animation: peek 1s ease 2s forwards;
             animation: peek 1s ease 2s forwards;
     -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);

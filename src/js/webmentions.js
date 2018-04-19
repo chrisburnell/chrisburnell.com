@@ -30,9 +30,9 @@
     if (WEBMENTIONS_SECTION !== null) {
         let observer = new IntersectionObserver(checkVisibility);
         // initiate WebMentions if hash present on load
-        window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
+        window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
         // initiate WebMentions if hash present on hash change
-        window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions(true)));
+        window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
         WEBMENTIONS_BUTTON.addEventListener('mouseover', () => {
@@ -76,7 +76,7 @@
         request.send();
     }
 
-    function showWebmentions(jump = false) {
+    function showWebmentions() {
         // check if already loaded the webmentions, if not, load it (again)
         if (webmentionsLoaded === false) {
             loadWebmentions();
@@ -89,13 +89,6 @@
             WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
         }
         WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
-        // check if we should jump to the appropriate section
-        if (jump) {
-            WEBMENTIONS_SECTION.scrollIntoView();
-            if (webmentionsCount === 0) {
-                WEBMENTIONS_INPUT.focus();
-            }
-        }
     }
 
     function checkVisibility(entries, observer) {

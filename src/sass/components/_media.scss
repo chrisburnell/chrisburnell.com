@@ -23,10 +23,7 @@
 
 
 @each $aspect-ratio, $percentage in $aspect-ratios {
-    $aspect-ratio-x: nth($aspect-ratio, 1);
-    $aspect-ratio-y: nth($aspect-ratio, 2);
-
-    .media--#{$aspect-ratio-x}-by-#{$aspect-ratio-y} {
+    .media--#{$aspect-ratio} {
         padding-top: $percentage;
     }
 }

@@ -342,11 +342,11 @@ blockquote,
     quotes: "« " " »" "‹ " " ›";
 }
 
-blockquote code, blockquote
-kbd, blockquote
-samp, blockquote
-var, blockquote
-.monospace,
+blockquote code,
+blockquote kbd,
+blockquote samp,
+blockquote var,
+blockquote .monospace,
 blockquote cite,
 blockquote em {
     font-style: normal;
@@ -861,25 +861,25 @@ form {
     position: relative;
 }
 
-form:not([class]) input[type="checkbox"], form:not([class])
-input[type="date"], form:not([class])
-input[type="datetime"], form:not([class])
-input[type="datetime-local"], form:not([class])
-input[type="email"], form:not([class])
-input[type="file"], form:not([class])
-input[type="month"], form:not([class])
-input[type="number"], form:not([class])
-input[type="password"], form:not([class])
-input[type="range"], form:not([class])
-input[type="search"], form:not([class])
-input[type="tel"], form:not([class])
-input[type="text"], form:not([class])
-input[type="time"], form:not([class])
-input[type="week"], form:not([class])
-input[type="url"], form:not([class])
-optgroup, form:not([class])
-select, form:not([class])
-textarea {
+form:not([class]) input[type="checkbox"],
+form:not([class]) input[type="date"],
+form:not([class]) input[type="datetime"],
+form:not([class]) input[type="datetime-local"],
+form:not([class]) input[type="email"],
+form:not([class]) input[type="file"],
+form:not([class]) input[type="month"],
+form:not([class]) input[type="number"],
+form:not([class]) input[type="password"],
+form:not([class]) input[type="range"],
+form:not([class]) input[type="search"],
+form:not([class]) input[type="tel"],
+form:not([class]) input[type="text"],
+form:not([class]) input[type="time"],
+form:not([class]) input[type="week"],
+form:not([class]) input[type="url"],
+form:not([class]) optgroup,
+form:not([class]) select,
+form:not([class]) textarea {
     margin-bottom: 1.25rem;
     margin-bottom: var(--measure-medium);
 }
@@ -1312,8 +1312,7 @@ aside + .meta {
 
 .meta a,
 .meta strong,
-.meta
-.strong {
+.meta .strong {
     color: inherit;
     font-weight: 600;
     font-weight: var(--font-weight-bold);
@@ -1635,24 +1634,22 @@ aside .content-list a {
 }
 
 @media screen and (max-width: 500px) {
-    .buttons-list button, .buttons-list
-    .button {
+    .buttons-list button,
+    .buttons-list .button {
         margin-left: auto;
         margin-right: auto;
     }
-    .buttons-list button + button, .buttons-list
-    .button + button, .buttons-list button +
-    .button, .buttons-list
-    .button +
-    .button {
+    .buttons-list button + button, .buttons-list .button + button,
+    .buttons-list button + .button,
+    .buttons-list .button + .button {
         margin-top: 0.625rem;
         margin-top: var(--measure-small);
     }
 }
 
 @media screen and (min-width: 501px) {
-    .buttons-list button, .buttons-list
-    .button {
+    .buttons-list button,
+    .buttons-list .button {
         margin-left: 0.625rem;
         margin-left: var(--measure-small);
         margin-right: 0.625rem;
@@ -2117,8 +2114,7 @@ code[data-lang]::before {
     overflow: hidden;
 }
 
-button .icon,
-.button .icon,
+button .icon, .button .icon,
 .fragment-anchor .icon {
     fill: currentColor;
     display: inline-block;
@@ -2126,8 +2122,7 @@ button .icon,
     pointer-events: none;
 }
 
-button .icon,
-.button .icon {
+button .icon, .button .icon {
     width: 1rem;
     height: 1rem;
     margin-right: 0.625rem;
@@ -2163,7 +2158,8 @@ button .icon,
     width: 31px;
 }
 
-.icon--rss, button .icon--rss,
+.icon--rss,
+button .icon--rss,
 .button .icon--rss {
     fill: #ff9770;
 }
@@ -2509,12 +2505,12 @@ button .icon,
 
 /*html*/
 .halloween {
-    --color-black: #f9f9f9;
-    --color-mineshaft: #d4d4d4;
-    --color-kaiser: #b0b0b0;
-    --color-dove: #8c8c8c;
-    --color-alto: #222222;
-    --color-white: #060606;
+    --color-black: invert($color-black);
+    --color-mineshaft: invert($color-mineshaft);
+    --color-kaiser: invert($color-kaiser);
+    --color-dove: invert($color-dove);
+    --color-alto: invert($color-alto);
+    --color-white: invert($color-white);
     --color-raven: #ff751a;
     --color-bowhead: #f56200;
     --color-coyote: #ff8b3d;

@@ -415,8 +415,8 @@ $z-indexes: (
 /// @prop {Array} Aspect Ratio
 /// @prop {Length} Percentage for sizing
 $aspect-ratios: (
-    (16, 9): 56.25%,
-    (4, 3):  75.00%
+    "16-by-9": 56.25%,
+    "4-by-3":  75.00%
 ) !default;
 
 
