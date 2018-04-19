@@ -5,130 +5,130 @@
 
 
 :root {
-    --base-font-size: $base-font-size;
+    --base-font-size: #{$base-font-size};
 
-    --wrapper-width-small: $wrapper-width-small;
-    --wrapper-width-medium: $wrapper-width-medium;
-    --wrapper-width-large: $wrapper-width-large;
+    --wrapper-width-small: #{$wrapper-width-small};
+    --wrapper-width-medium: #{$wrapper-width-medium};
+    --wrapper-width-large: #{$wrapper-width-large};
 
-    --gutter-width: $gutter-width;
-    --aside-width: $aside-width;
-    --article-width: $article-width;
-    --line-length-minimum: $line-length-minimum;
-    --line-length-maximum: $line-length-maximum;
-    --line-length-responsive: $line-length-responsive;
+    --gutter-width: #{$gutter-width};
+    --aside-width: #{$aside-width};
+    --article-width: #{$article-width};
+    --line-length-minimum: #{$line-length-minimum};
+    --line-length-maximum: #{$line-length-maximum};
+    --line-length-responsive: #{$line-length-responsive};
 
-    --measure-small: $measure-small;
-    --measure-small-relative: $measure-small-relative;
-    --measure-small-proportional: $measure-small-proportional;
-    --measure-medium: $measure-medium;
-    --measure-medium-relative: $measure-medium-relative;
-    --measure-medium-proportional: $measure-medium-proportional;
-    --measure-large: $measure-large;
-    --measure-large-relative: $measure-large-relative;
-    --measure-large-proportional: $measure-large-proportional;
-    --measure-one: $measure-one;
-    --measure-one-relative: $measure-one-relative;
+    --measure-small: #{$measure-small};
+    --measure-small-relative: #{$measure-small-relative};
+    --measure-small-proportional: #{$measure-small-proportional};
+    --measure-medium: #{$measure-medium};
+    --measure-medium-relative: #{$measure-medium-relative};
+    --measure-medium-proportional: #{$measure-medium-proportional};
+    --measure-large: #{$measure-large};
+    --measure-large-relative: #{$measure-large-relative};
+    --measure-large-proportional: #{$measure-large-proportional};
+    --measure-one: #{$measure-one};
+    --measure-one-relative: #{$measure-one-relative};
 
-    --opacity-alpha: $opacity-alpha;
-    --opacity-beta: $opacity-beta;
-    --opacity-gamma: $opacity-gamma;
-    --opacity-delta: $opacity-delta;
+    --opacity-alpha: #{$opacity-alpha};
+    --opacity-beta: #{$opacity-beta};
+    --opacity-gamma: #{$opacity-gamma};
+    --opacity-delta: #{$opacity-delta};
 
-    --color-transparent: $color-transparent;
-    --color-black: $color-black;
-    --color-mineshaft: $color-mineshaft;
-    --color-kaiser: $color-kaiser;
-    --color-dove: $color-dove;
-    --color-alto: $color-alto;
-    --color-white: $color-white;
-    --color-raven: $color-raven;
-    --color-bowhead: $color-bowhead;
-    --color-coyote: $color-coyote;
-    --color-canada: $color-canada;
-    --color-highlight: $color-highlight;
-    --color-black--alpha: $color-black--alpha;
-    --color-black--gamma: $color-black--gamma;
-    --color-black--delta: $color-black--delta;
-    --color-raven--gamma: $color-raven--gamma;
+    --color-transparent: #{$color-transparent};
+    --color-black: #{$color-black};
+    --color-mineshaft: #{$color-mineshaft};
+    --color-kaiser: #{$color-kaiser};
+    --color-dove: #{$color-dove};
+    --color-alto: #{$color-alto};
+    --color-white: #{$color-white};
+    --color-raven: #{$color-raven};
+    --color-bowhead: #{$color-bowhead};
+    --color-coyote: #{$color-coyote};
+    --color-canada: #{$color-canada};
+    --color-highlight: #{$color-highlight};
+    --color-black--alpha: #{$color-black--alpha};
+    --color-black--gamma: #{$color-black--gamma};
+    --color-black--delta: #{$color-black--delta};
+    --color-raven--gamma: #{$color-raven--gamma};
 
-    --border-width-default: $border-width-default;
-    --border-width-thin: $border-width-thin;
-    --border-width-hairline: $border-width-hairline;
-    --border-width-button: $border-width-button;
+    --border-width-default: #{$border-width-default};
+    --border-width-thin: #{$border-width-thin};
+    --border-width-hairline: #{$border-width-hairline};
+    --border-width-button: #{$border-width-button};
 
-    --border-style-default: $border-style-default;
-    --border-style-alternate: $border-style-alternate;
+    --border-style-default: #{$border-style-default};
+    --border-style-alternate: #{$border-style-alternate};
 
-    --border-radius-default: $border-radius-default;
-    --border-radius-thin: $border-radius-thin;
-    --border-radius-hairline: $border-radius-hairline;
+    --border-radius-default: #{$border-radius-default};
+    --border-radius-thin: #{$border-radius-thin};
+    --border-radius-hairline: #{$border-radius-hairline};
 
-    --button-border-width: $border-width-button;
+    --button-border-width: #{$border-width-button};
 
-    --font-display: $font-display;
+    --font-display: #{$font-display};
 
-    --font-weight-default: $font-weight-default;
-    --font-weight-bold: $font-weight-bold;
+    --font-weight-default: #{$font-weight-default};
+    --font-weight-bold: #{$font-weight-bold};
 
-    --font-size-default: $font-size-default;
-    --font-size-alpha: $font-size-alpha;
-    --font-size-beta: $font-size-beta;
-    --font-size-gamma: $font-size-gamma;
-    --font-size-large: $font-size-large;
-    --font-size-large-relative: $font-size-large-relative;
-    --font-size-small: $font-size-small;
-    --font-size-small-relative: $font-size-small-relative;
+    --font-size-default: #{$font-size-default};
+    --font-size-alpha: #{$font-size-alpha};
+    --font-size-beta: #{$font-size-beta};
+    --font-size-gamma: #{$font-size-gamma};
+    --font-size-large: #{$font-size-large};
+    --font-size-large-relative: #{$font-size-large-relative};
+    --font-size-small: #{$font-size-small};
+    --font-size-small-relative: #{$font-size-small-relative};
 
-    --font-family-default: $font-family-default;
-    --font-family-alpha: $font-family-alpha;
-    --font-family-serif: $font-family-serif;
-    --font-family-monospace: $font-family-monospace;
+    --font-family-default: #{$font-family-default};
+    --font-family-alpha: #{$font-family-alpha};
+    --font-family-serif: #{$font-family-serif};
+    --font-family-monospace: #{$font-family-monospace};
 
-    --line-height-default: $line-height-default;
-    --line-height-small: $line-height-small;
-    --line-height-medium: $line-height-medium;
-    --line-height-code: $line-height-code;
+    --line-height-default: #{$line-height-default};
+    --line-height-small: #{$line-height-small};
+    --line-height-medium: #{$line-height-medium};
+    --line-height-code: #{$line-height-code};
 
-    --letter-spacing-default: $letter-spacing-default;
-    --letter-spacing-uppercase: $letter-spacing-uppercase;
+    --letter-spacing-default: #{$letter-spacing-default};
+    --letter-spacing-uppercase: #{$letter-spacing-uppercase};
 
-    --animation-duration: $animation-duration;
-    --animation-function: $animation-function;
-    --animation-fill-mode: $animation-fill-mode;
+    --animation-duration: #{$animation-duration};
+    --animation-function: #{$animation-function};
+    --animation-fill-mode: #{$animation-fill-mode};
 
-    --rotation-default: $rotation-default;
+    --rotation-default: #{$rotation-default};
 
-    --transition-duration-default: $transition-duration-default;
-    --transition-duration-long: $transition-duration-long;
-    --transition-function: $transition-function;
+    --transition-duration-default: #{$transition-duration-default};
+    --transition-duration-long: #{$transition-duration-long};
+    --transition-function: #{$transition-function};
 
-    --z-index-below: $z-index-below;
-    --z-index-root: $z-index-root;
-    --z-index-default: $z-index-default;
-    --z-index-above: $z-index-above;
-    --z-index-modal: $z-index-modal;
-    --z-index-dialog: $z-index-dialog;
-    --z-index-notification: $z-index-notification;
+    --z-index-below: #{$z-index-below};
+    --z-index-root: #{$z-index-root};
+    --z-index-default: #{$z-index-default};
+    --z-index-above: #{$z-index-above};
+    --z-index-modal: #{$z-index-modal};
+    --z-index-dialog: #{$z-index-dialog};
+    --z-index-notification: #{$z-index-notification};
 
-    --color-css: $color-css;
-    --color-html: $color-html;
-    --color-javascript: $color-javascript;
-    --color-liquid: $color-liquid;
-    --color-markdown: $color-markdown;
-    --color-sass: $color-sass;
+    --color-css: #{$color-css};
+    --color-html: #{$color-html};
+    --color-javascript: #{$color-javascript};
+    --color-liquid: #{$color-liquid};
+    --color-markdown: #{$color-markdown};
+    --color-sass: #{$color-sass};
 
-    --color-codepen: $color-codepen;
-    --color-github: $color-github;
-    --color-lastfm: $color-lastfm;
-    --color-rss: $color-rss;
-    --color-spotify: $color-spotify;
-    --color-spotify-alt: $color-spotify-alt;
-    --color-twitter: $color-twitter;
+    --color-codepen: #{$color-codepen};
+    --color-github: #{$color-github};
+    --color-lastfm: #{$color-lastfm};
+    --color-rss: #{$color-rss};
+    --color-spotify: #{$color-spotify};
+    --color-spotify-alt: #{$color-spotify-alt};
+    --color-twitter: #{$color-twitter};
 
-    --icon-size: $icon-size;
-    --logo-size: $logo-size;
-    --avatar-size: $avatar-size;
+    --icon-size: #{$icon-size};
+    --logo-size: #{$logo-size};
+    --avatar-size: #{$avatar-size};
 
-    --max-columns: $max-columns;
+    --max-columns: #{$max-columns};
 }
