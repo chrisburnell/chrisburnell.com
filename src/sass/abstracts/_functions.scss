@@ -227,29 +227,6 @@
 }
 
 
-///
-/// Strip Units from a Number
-///
-/// @param {Number} $number - Number with units
-///
-/// @example scss
-///   line-height: strip-unit(2em);
-///   // line-height: 2;
-///
-/// @throw Error if no parameter is passed.
-///
-/// @return {Number} Number without units
-///
-@function strip-unit($number) {
-    @if not $number {
-        @warn "`strip-unit()` expects one `$number` parameter.";
-        @return false;
-    }
-
-    @return $number / ($number * 0 + 1);
-}
-
-
 // stylelint-disable max-nesting-depth
 ///
 /// Unique Groups

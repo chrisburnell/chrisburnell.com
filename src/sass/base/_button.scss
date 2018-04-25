@@ -69,19 +69,6 @@ button,
         }
     }
 
-    // external anchors
-    &[rel*="external"] {
-        &::after {
-            @include absolute(none);
-            @include font-family(monospace);
-            @include will-change(initial);
-            // NO-BREAK SPACE, RIGHTWARDS ARROW
-            content: " →";
-            width:  auto; // unset `width` from above
-            height: auto; // unset `height` from above
-        }
-    }
-
     &[disabled] {
         @include v(opacity, beta);
         pointer-events: none;

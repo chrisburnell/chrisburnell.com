@@ -462,23 +462,6 @@ button:active::before, button:active::after,
     top: -var(--border-width-button);
 }
 
-button[rel*="external"]::after,
-.button[rel*="external"]::after {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    font-family: var(--font-family-monospace);
-    -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
-    will-change: initial;
-    content: " →";
-    width: auto;
-    height: auto;
-}
-
 button[disabled],
 .button[disabled] {
     opacity: 0.7;

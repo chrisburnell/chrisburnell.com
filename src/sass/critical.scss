@@ -2,12 +2,13 @@
 /// @author Chris Burnell <me@chrisburnell.com>
 //  @version 3.1.0
 //  @license GNU GPLv3
-/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/css
+/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/sass
 ////
 
 /// ABSTRACTS
 @import "abstracts/variables";
 @import "abstracts/functions";
+@import "abstracts/mathematics";
 @import "abstracts/mixins";
 @import "abstracts/css-variables";
 

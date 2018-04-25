@@ -559,7 +559,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials"){:rel="external"}
 5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import"){:rel="external"}
 6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins"){:rel="external"}
-7. [My Sass files]({{ site.urls.github_repo }}/tree/master/src/css "Sass files for chrisburnell.com"){:rel="external"}
+7. [My Sass files]({{ site.urls.github_repo }}/tree/master/src/sass "Sass files for chrisburnell.com"){:rel="external"}
 8. [My gulpfile configuration]({{ site.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration"){:rel="external"}
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp"){:rel="external"}</q>, by [Mark Goodyear](https://markgoodyear.com "Mark Goodyear — Front-end designer and developer"){:rel="external"}.
