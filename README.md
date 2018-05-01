@@ -3,12 +3,12 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-![Version](https://img.shields.io/badge/version-3.1.0-blue.svg?style=flat-square)
-[![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?style=flat-square)](LICENSE)
+![Version](https://img.shields.io/badge/version-3.1.0-blue.svg?longCache=true&style=for-the-badge)
+[![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?longCache=true&style=for-the-badge)](LICENSE)
 
-[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&style=flat-square)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
-[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/css/main.min.css?compression=gzip&style=flat-square&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/css/main.min.css)
-[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/js/main.min.js?compression=gzip&style=flat-square&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/js/main.min.js)
+[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&longCache=true&style=for-the-badge)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
+[![CSS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/css/main.min.css?compression=gzip&style=for-the-badge&label=CSS&color=016fba)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/css/main.min.css)
+[![JS Size](http://img.badgesize.io/chrisburnell/chrisburnell.com/master/js/main.min.js?compression=gzip&style=for-the-badge&label=JS&color=cda741)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/js/main.min.js)
 
 [![Build Status](https://semaphoreci.com/api/v1/chrisburnell/chrisburnell-com/branches/master/badge.svg)](https://semaphoreci.com/chrisburnell/chrisburnell-com)
 

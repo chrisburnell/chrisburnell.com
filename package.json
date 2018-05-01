@@ -49,7 +49,7 @@
   "scripts": {
     "build": "gulp",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect"
   },
   "snyk": true
 }
