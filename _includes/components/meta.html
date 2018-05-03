@@ -118,11 +118,17 @@
     {% if page.in_reply_to %}
         <div class="in-reply-to">
             <span>in reply to</span>
-            {% if page.in_reply_to_url %}
-                <a class="h-cite  u-in-reply-to" rel="external" href="{{ page.in_reply_to_url }}">{{ page.in_reply_to }}</a>
-            {% else %}
-                <strong>{{ page.in_reply_to }}</strong>
-            {% endif %}
+            {% for reply in page.in_reply_to %}
+                {% if reply contains 'twitter.com' %}
+                    {% if reply contains '/status/' %}
+                        <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">@{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}</a>
+                    {% else %}
+                        <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Tweet</a>
+                    {% endif %}
+                {% else %}
+                    <strong>{{ reply }}</strong>
+                {% endif %}
+            {% endfor %}
         </div>
     {% endif %}
     {% if page.categories contains 'pen' and page.codepen_featured == true %}
