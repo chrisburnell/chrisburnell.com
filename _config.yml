@@ -13,32 +13,34 @@ author:
   role:        UI Developer
   codepen:     chrisburnell
   twitter:     '@iamchrisburnell'
-  employment:
+  employer:
     name: Squiz
     url:  https://www.squiz.net
-    role: Front End Developer
+    role: Front-End Developer
 
 url:      https://chrisburnell.com
 baseurl:  ''
 shorturl: https://repc.co/
 
 urls:
-  codepen:      https://codepen.io/chrisburnell
-  gist:         https://gist.github.com/chrisburnell
-  github:       https://github.com/chrisburnell
-  github_repo:  https://github.com/chrisburnell/chrisburnell.com
-  lastfm:       https://last.fm/user/chrisburnell
-  license:      https://www.gnu.org/licenses/gpl-3.0.txt
-  rss:          /feed.xml
-  rss_articles: /feed-articles.xml
-  rss_links:    /feed-links.xml
-  rss_notes:    /feed-notes.xml
-  rss_pens:     /feed-pens.xml
-  rss_talks:    /feed-talks.xml
-  rss_recipes:  /feed-recipes.xml
-  speakerdeck:  https://speakerdeck.com/chrisburnell
-  spotify:      https://open.spotify.com/user/1128245857
-  twitter:      https://twitter.com/iamchrisburnell
+  codepen:            https://codepen.io/chrisburnell
+  gist:               https://gist.github.com/chrisburnell
+  github:             https://github.com/chrisburnell
+  github_repo:        https://github.com/chrisburnell/chrisburnell.com
+  lastfm:             https://last.fm/user/chrisburnell
+  license:            https://www.gnu.org/licenses/gpl-3.0.txt
+  londonwebstandards: https://londonwebstandards.org
+  rss:                /feed.xml
+  rss_articles:       /feed-articles.xml
+  rss_links:          /feed-links.xml
+  rss_notes:          /feed-notes.xml
+  rss_pens:           /feed-pens.xml
+  rss_talks:          /feed-talks.xml
+  rss_recipes:        /feed-recipes.xml
+  speakerdeck:        https://speakerdeck.com/chrisburnell
+  stateofthebrowser:  https://stateofthebrowser.com
+  spotify:            https://open.spotify.com/user/1128245857
+  twitter:            https://twitter.com/iamchrisburnell
 
 sitemap:
   changefreq: monthly
