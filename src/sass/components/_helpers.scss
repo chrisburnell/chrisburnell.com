@@ -17,14 +17,12 @@
 }
 
 // Hide elements visually
+[hidden],
 [aria-hidden="true"],
-.hidden,
-.hide,
-.sr-only,
-.visually-hidden {
+.hidden {
     &:not([href]),
     &[href]:not(:focus):not(:active) {
-        @include visually-hidden;
+        @include hidden;
     }
 }
 

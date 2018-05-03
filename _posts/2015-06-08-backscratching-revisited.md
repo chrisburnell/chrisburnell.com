@@ -32,7 +32,7 @@ In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-y
 
 I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/){:rel="external"} in the form of [ARIA](http://html5doctor.com/using-aria-in-html/){:rel="external"} and [Microdata](https://schema.org/docs/documents.html){:rel="external"}.
 
-In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/){:rel="external"} and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate visually-hidden text inside an anchor.
+In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/){:rel="external"} and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
 
 {% highlight html %}
 <a href="/article/interesting-article">
@@ -63,7 +63,7 @@ However, the code above *does* allow the element’s content to be read aloud, a
 In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
 {% highlight scss %}
-@mixin visually-hidden() {
+@mixin hidden() {
     width:  1px !important;
     height: 1px !important;
     padding: 0 !important;
@@ -75,7 +75,7 @@ In my actual SCSS, I abstract this snippet out and `@extend` it where I need it,
 
 a {
     span {
-        @include visually-hidden;
+        @include hidden;
     }
 }
 {% endhighlight %}
@@ -96,7 +96,7 @@ Looks like we’ve been a bit heavy-handed in hiding *all* `spans` nested inside
 {% highlight scss %}
 a {
     span:not([class]) {
-        @include visually-hidden;
+        @include hidden;
     }
 }
 {% endhighlight %}
@@ -127,7 +127,7 @@ But let’s focus on the `span` with the `itemprop` attribute. This isn’t text
 {% highlight scss %}
 a {
     span:not([class]):not([itemprop]) {
-        @include visually-hidden;
+        @include hidden;
     }
 }
 {% endhighlight %}

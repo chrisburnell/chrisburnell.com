@@ -55,7 +55,7 @@ a {
 
     // hide extra content, text targetted only to screen readers
     span:not([class]):not([itemprop]) {
-        @include visually-hidden;
+        @include hidden;
     }
 }
 

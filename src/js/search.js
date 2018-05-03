@@ -288,7 +288,7 @@
             html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
 
             if (item.categories == 'note') {
-                html = helpers.injectContent(html, '  visually-hidden', '{{ date_class }}');
+                html = helpers.injectContent(html, '  hidden', '{{ date_class }}');
             }
             else {
                 html = helpers.injectContent(html, '', '{{ date_class }}');

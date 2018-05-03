@@ -797,15 +797,11 @@ aside p {
     border-radius: 0.25rem;
 }
 
-[aria-hidden="true"]:not([href]), [aria-hidden="true"][href]:not(:focus):not(:active),
+[hidden]:not([href]), [hidden][href]:not(:focus):not(:active),
+[aria-hidden="true"]:not([href]),
+[aria-hidden="true"][href]:not(:focus):not(:active),
 .hidden:not([href]),
-.hidden[href]:not(:focus):not(:active),
-.hide:not([href]),
-.hide[href]:not(:focus):not(:active),
-.sr-only:not([href]),
-.sr-only[href]:not(:focus):not(:active),
-.visually-hidden:not([href]),
-.visually-hidden[href]:not(:focus):not(:active) {
+.hidden[href]:not(:focus):not(:active) {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;

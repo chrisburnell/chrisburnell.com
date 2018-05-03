@@ -53,7 +53,7 @@
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}
             </p>
-            <time class="date  dt-published{% if page.categories contains 'note' %}  visually-hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+            <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
     </article>
 </li>

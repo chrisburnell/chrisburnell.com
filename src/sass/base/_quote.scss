@@ -31,7 +31,7 @@ blockquote {
 
         &:not(:last-of-type) {
             &::after {
-                @include visually-hidden;
+                @include hidden;
             }
         }
     }

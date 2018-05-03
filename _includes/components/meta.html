@@ -1,5 +1,5 @@
 <div class="meta">
-    <time class="date  dt-published{% if page.categories contains 'note' %}  visually-hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
+    <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
         <span>published on</span>
         {% if page.url %}
             <a class="u-uid  u-url" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" title="Permalink: {{ page.url | prepend: site.baseurl | prepend: site.url }}" itemprop="datePublished">
