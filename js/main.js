@@ -553,7 +553,7 @@ helpers = {
     'use strict';
 
 
-    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
@@ -600,6 +600,7 @@ helpers = {
                 // prevent hovering the button from continuing to fire
                 WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
                 let data = JSON.parse(request.responseText);
+                console.log(data);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
                         webmentionsCount++;
@@ -656,8 +657,9 @@ helpers = {
         let type = item.activity.type;
         let content = item.data.content;
         let url = item.data.url;
-        let urlAuthor = item.data.author.url;
+        let urlAuthor = item.data.author.url.replace(/\/$/, '');
         let author = item.data.author.name ? item.data.author.name : item.data.name;
+        let authorImage = item.data.author.photo;
         let date = item.data.published ? item.data.published : item.verified_date;
 
         // ID
@@ -677,7 +679,7 @@ helpers = {
                                                                 `<div><a href="${url}" rel="external">${url.split('//')[1]}</a></div>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${urlAuthor}/profile_image?size=normal" alt="">${author}</a>` :
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${authorImage}" alt="">${author}</a>` :
                                                                author && urlAuthor && url.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split('status')[0]}/profile_image?size=normal" alt="">${author}</a>` :
                                                                author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` :
                                                                author ? `by <span class="webmentions__item__name">${author}</span>` :
