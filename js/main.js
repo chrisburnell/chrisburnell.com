@@ -553,7 +553,7 @@ helpers = {
     'use strict';
 
 
-    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href').replace('http://localhost:4000', 'https://chrisburnell.com');
+    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
@@ -600,7 +600,6 @@ helpers = {
                 // prevent hovering the button from continuing to fire
                 WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
                 let data = JSON.parse(request.responseText);
-                console.log(data);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
                         webmentionsCount++;
