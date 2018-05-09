@@ -19,12 +19,25 @@ const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
 const IMAGES_CACHE = 'images';
 const PAGES_CACHE = 'pages';
-const CACHES = {
-    STATIC_CACHE: null,
-    ASSETS_CACHE: 20,
-    IMAGES_CACHE: 20,
-    PAGES_CACHE:  35,
-};
+const CACHES = [
+    STATIC_CACHE,
+    ASSETS_CACHE,
+    IMAGES_CACHE,
+    PAGES_CACHE
+];
+
+// Files that *must* be cached
+const CRITICAL_CACHE = [
+    '/css/main.min.css',
+    '/js/main.min.js',
+    '/search.json',
+    '/offline/'
+];
+
+// Files that are cached but non-blocking
+const OPTIONAL_CACHE = [
+    '/images/sprites.svg'
+];
 
 // Pages to cache
 const OFFLINE_PAGES = [
@@ -42,19 +55,6 @@ const OFFLINE_PAGES = [
     '/styleguide/',
     '/tags/',
     '/talks/'
-];
-
-// Files that *must* be cached
-const CRITICAL_CACHE = [
-    `/css/main.min.css?version=${VERSION}`,
-    `/js/main.min.js?version=${VERSION}`,
-    '/search.json',
-    '/offline/'
-];
-
-// Files that are cached but non-blocking
-const OPTIONAL_CACHE = [
-    '/images/sprites.svg'
 ];
 
 
@@ -78,10 +78,10 @@ function trimCache(cacheName, maxItems) {
     caches.open(cacheName)
         .then( cache => {
             cache.keys()
-                .then(keys => {
+                .then( keys => {
                     if (keys.length > maxItems) {
                         cache.delete(keys[0])
-                            .then(trimCache(cacheName, maxItems));
+                            .then( trimCache(cacheName, maxItems) );
                     }
                 });
         });
@@ -92,7 +92,7 @@ function clearOldCaches() {
     return caches.keys()
         .then( keys => {
             return Promise.all(keys
-                .filter(key => !Object.keys(CACHES).includes(key))
+                .filter(key => !CACHES.includes(key))
                 .map(key => caches.delete(key))
             );
         });
@@ -111,14 +111,6 @@ self.addEventListener('activate', event => {
     );
 });
 
-self.addEventListener('message', event => {
-    if (event.data.command == 'trimCaches') {
-        trimCache(ASSETS_CACHE, CACHES.ASSETS_CACHE);
-        trimCache(IMAGES_CACHE, CACHES.IMAGES_CACHE);
-        trimCache(PAGES_CACHE, CACHES.PAGES_CACHE);
-    }
-});
-
 self.addEventListener('fetch', event => {
     let request = event.request;
     let url = new URL(request.url);
@@ -135,16 +127,16 @@ self.addEventListener('fetch', event => {
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get('Accept').includes('text/html')) {
-
         event.respondWith(
             fetch(request)
                 .then( response => {
                     // NETWORK
-                    // Stash a copy of this page in the static or pages cache
+                    // Stash a copy of this page in the STATIC or PAGES cache
                     let copy = response.clone();
                     if (OFFLINE_PAGES.includes(url.pathname) || OFFLINE_PAGES.includes(url.pathname + '/')) {
                         stashInCache(STATIC_CACHE, request, copy);
-                    } else {
+                    }
+                    else if (!CRITICAL_CACHE.includes(url.pathname) && !CRITICAL_CACHE.includes(url.pathname.slice(1))) {
                         stashInCache(PAGES_CACHE, request, copy);
                     }
                     return response;
@@ -161,17 +153,16 @@ self.addEventListener('fetch', event => {
     // For non-HTML requests, look in the cache first, fall back to the network
     event.respondWith(
         caches.match(request)
-            .then(response => {
-                // CACHE
+            .then( response => {
                 return response || fetch(request)
                     .then( response => {
                         // NETWORK
-                        // Stash a copy of this asset in the images or assets cache
+                        // Stash a copy of this asset in the IMAGES or ASSETS cache
                         let copy = response.clone();
                         if (request.headers.get('Accept').includes('image')) {
                             stashInCache(IMAGES_CACHE, request, copy);
                         }
-                        else {
+                        else if (!CRITICAL_CACHE.includes(url.pathname) && !CRITICAL_CACHE.includes(url.pathname.slice(1))) {
                             stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
@@ -185,4 +176,12 @@ self.addEventListener('fetch', event => {
                     });
             })
     );
+});
+
+self.addEventListener('message', event => {
+    if (event.data.command == 'trimCache') {
+        trimCache(ASSETS_CACHE, 20);
+        trimCache(IMAGES_CACHE, 20);
+        trimCache(PAGES_CACHE,  35);
+    }
 });
