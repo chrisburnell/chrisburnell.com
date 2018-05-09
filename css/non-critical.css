@@ -44,6 +44,14 @@ button,
             appearance: none;
 }
 
+button:focus,
+.button:focus {
+    outline: 0.125rem solid #5f8aa6;
+    outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+    outline-offset: 0.125rem;
+    outline-offset: var(--border-width-thin);
+}
+
 button:hover, button:focus, button:active,
 .button:hover,
 .button:focus,

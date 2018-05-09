@@ -36,6 +36,13 @@ button,
     cursor: pointer;
     appearance: none;
 
+    &:focus {
+        outline: $border-width-thin $border-style-default $color-raven;
+        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+        outline-offset: $border-width-thin;
+        outline-offset: var(--border-width-thin);
+    }
+
     &:hover,
     &:focus,
     &:active {

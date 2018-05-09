@@ -200,6 +200,13 @@ a {
     text-decoration-skip-ink: auto;
 }
 
+a:focus {
+    outline: 0.125rem solid #5f8aa6;
+    outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+    outline-offset: 0.125rem;
+    outline-offset: var(--border-width-thin);
+}
+
 a:hover, a:focus, a:active {
     text-decoration: underline;
     -webkit-text-decoration-color: #eb2d37;
