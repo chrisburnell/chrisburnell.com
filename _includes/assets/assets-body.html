@@ -9,6 +9,9 @@
         }).catch(function(err) {
             console.log('ServiceWorker registration failed: ', err);
         });
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.controller.postMessage({ 'command': 'trimCaches' });
+        });
     }
 </script>
 

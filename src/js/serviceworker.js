@@ -25,6 +25,7 @@ const CACHES = [
     IMAGES_CACHE,
     PAGES_CACHE
 ];
+const CACHE_SIZE = 20;
 
 // Files that *must* be cached
 const CRITICAL_CACHE = [
@@ -179,9 +180,9 @@ self.addEventListener('fetch', event => {
 });
 
 self.addEventListener('message', event => {
-    if (event.data.command == 'trimCache') {
-        trimCache(ASSETS_CACHE, 20);
-        trimCache(IMAGES_CACHE, 20);
-        trimCache(PAGES_CACHE,  35);
+    if (event.data.command == 'trimCaches') {
+        trimCache(ASSETS_CACHE, CACHE_SIZE);
+        trimCache(IMAGES_CACHE, CACHE_SIZE);
+        trimCache(PAGES_CACHE,  CACHE_SIZE);
     }
 });
