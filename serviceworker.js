@@ -13,8 +13,8 @@ sitemap:
 'use strict';
 
 
-// Set up the caches
 const VERSION = '{{ site.time | date: '%F_%H%M%S' }}'; // 1970-01-01_000000
+// Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
 const IMAGES_CACHE = 'images';
@@ -25,10 +25,11 @@ const CACHES = [
     IMAGES_CACHE,
     PAGES_CACHE
 ];
+// Represents the maximum number of items in each cache (except STATIC_CACHE)
 const CACHE_SIZE = 20;
 
 // Files that *must* be cached
-const CRITICAL_CACHE = [
+const CRITICAL_FILES = [
     '/css/main.min.css',
     '/js/main.min.js',
     '/search.json',
@@ -36,7 +37,7 @@ const CRITICAL_CACHE = [
 ];
 
 // Files that are cached but non-blocking
-const OPTIONAL_CACHE = [
+const OPTIONAL_FILES = [
     '/images/sprites.svg'
 ];
 
@@ -63,9 +64,9 @@ function updateStaticCache() {
     return caches.open(STATIC_CACHE)
         .then( cache => {
             // These items won't block the installation of the Service Worker
-            cache.addAll(OPTIONAL_CACHE.concat(OFFLINE_PAGES));
+            cache.addAll(OPTIONAL_FILES.concat(OFFLINE_PAGES));
             // These items must be cached for the Service Worker to complete installation
-            return cache.addAll(CRITICAL_CACHE);
+            return cache.addAll(CRITICAL_FILES);
         });
 }
 
@@ -137,7 +138,7 @@ self.addEventListener('fetch', event => {
                     if (OFFLINE_PAGES.includes(url.pathname) || OFFLINE_PAGES.includes(url.pathname + '/')) {
                         stashInCache(STATIC_CACHE, request, copy);
                     }
-                    else if (!CRITICAL_CACHE.includes(url.pathname) && !CRITICAL_CACHE.includes(url.pathname.slice(1))) {
+                    else if (!CRITICAL_FILES.includes(url.pathname) && !CRITICAL_FILES.includes(url.pathname.slice(1))) {
                         stashInCache(PAGES_CACHE, request, copy);
                     }
                     return response;
@@ -163,7 +164,7 @@ self.addEventListener('fetch', event => {
                         if (request.headers.get('Accept').includes('image')) {
                             stashInCache(IMAGES_CACHE, request, copy);
                         }
-                        else if (!CRITICAL_CACHE.includes(url.pathname) && !CRITICAL_CACHE.includes(url.pathname.slice(1))) {
+                        else if (!CRITICAL_FILES.includes(url.pathname) && !CRITICAL_FILES.includes(url.pathname.slice(1))) {
                             stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
