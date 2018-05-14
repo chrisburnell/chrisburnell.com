@@ -2174,6 +2174,11 @@ footer {
     -webkit-touch-callout: none;
 }
 
+.non-interactive {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 .logo {
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -3584,6 +3589,7 @@ button .icon--rss,
 .sparkline {
     width: 10rem;
     height: 1.5rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

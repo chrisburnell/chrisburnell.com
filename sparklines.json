@@ -26,6 +26,7 @@ searchable: false
                       {% assign count = count | plus: 1 %}
                   {% endif %}
               {% endfor %}
+              {% if count > 20 %}{% assign count = 20 %}{% endif %}
               {{ count }}
           {% endfor %}
           {% if tracking_year == ending_year and tracking_month > ending_month %}
@@ -52,6 +53,7 @@ searchable: false
                       {% assign count = count | plus: 1 %}
                   {% endif %}
               {% endfor %}
+              {% if count > 20 %}{% assign count = 20 %}{% endif %}
               {{ count }}
           {% endfor %}
           {% if tracking_year == ending_year and tracking_month > ending_month %}
@@ -78,6 +80,7 @@ searchable: false
                       {% assign count = count | plus: 1 %}
                   {% endif %}
               {% endfor %}
+              {% if count > 20 %}{% assign count = 20 %}{% endif %}
               {{ count }}
           {% endfor %}
           {% if tracking_year == ending_year and tracking_month > ending_month %}
@@ -104,6 +107,7 @@ searchable: false
                       {% assign count = count | plus: 1 %}
                   {% endif %}
               {% endfor %}
+              {% if count > 20 %}{% assign count = 20 %}{% endif %}
               {{ count }}
           {% endfor %}
           {% if tracking_year == ending_year and tracking_month > ending_month %}
@@ -130,6 +134,7 @@ searchable: false
                       {% assign count = count | plus: 1 %}
                   {% endif %}
               {% endfor %}
+              {% if count > 20 %}{% assign count = 20 %}{% endif %}
               {{ count }}
           {% endfor %}
           {% if tracking_year == ending_year and tracking_month > ending_month %}

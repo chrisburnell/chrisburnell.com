@@ -2133,6 +2133,7 @@ code[data-lang]::before {
 .sparkline {
     width: 10rem;
     height: 1.5rem;
+    cursor: pointer;
 }
 
 .ingredients {

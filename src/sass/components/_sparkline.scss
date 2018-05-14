@@ -8,6 +8,7 @@
 .sparkline {
     width: 10rem; // defaults which are overriden by inline styles, preferably
     height: 1.5rem; // defaults which are overriden by inline styles, preferably
+    cursor: pointer;
 
     %heading-elements & {
         @include media("screen", "<=small") {

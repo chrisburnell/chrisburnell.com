@@ -1,3 +1,10 @@
+/**
+ * Canvas Sparkline
+ * by Jeremy Keith <@adactio>
+ * https://github.com/adactio/Canvas-Sparkline
+ */
+
+
 let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor) {
     if (window.HTMLCanvasElement) {
         var c = document.getElementById(canvas_id),

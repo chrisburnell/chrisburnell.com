@@ -833,6 +833,11 @@ aside p {
     -webkit-touch-callout: none;
 }
 
+.non-interactive {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 .logo {
     -webkit-user-select: none;
        -moz-user-select: none;

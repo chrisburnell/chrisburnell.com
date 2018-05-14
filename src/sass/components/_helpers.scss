@@ -37,3 +37,9 @@
 .non-selectable {
     @include non-selectable;
 }
+
+// Make things non-interactive
+.non-interactive {
+    pointer-events: none;
+    cursor: not-allowed; // kind of redundant
+}

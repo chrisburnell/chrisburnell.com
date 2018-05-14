@@ -112,6 +112,13 @@ helpers = {
 
 };
 
+/**
+ * Canvas Sparkline
+ * by Jeremy Keith <@adactio>
+ * https://github.com/adactio/Canvas-Sparkline
+ */
+
+
 let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor) {
     if (window.HTMLCanvasElement) {
         var c = document.getElementById(canvas_id),
@@ -594,6 +601,11 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
 
     'use strict';
 
+
+    let types = ['articles', 'notes', 'pens', 'links', 'talks'],
+        duration = 2500,
+        data;
+
     if (document.querySelector('#sparkline-articles')
      || document.querySelector('#sparkline-notes')
      || document.querySelector('#sparkline-pens')
@@ -607,21 +619,11 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
         request.onload = function() {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
-                let data = JSON.parse(request.responseText);
-                if (document.querySelector('#sparkline-articles')) {
-                    sparkline('sparkline-articles', data['articles'], showEndpoint, sparklineColor, 'line', endpointColor);
-                }
-                if (document.querySelector('#sparkline-notes')) {
-                    sparkline('sparkline-notes', data['notes'], showEndpoint, sparklineColor, 'line', endpointColor);
-                }
-                if (document.querySelector('#sparkline-pens')) {
-                    sparkline('sparkline-pens', data['pens'], showEndpoint, sparklineColor, 'line', endpointColor);
-                }
-                if (document.querySelector('#sparkline-links')) {
-                    sparkline('sparkline-links', data['links'], showEndpoint, sparklineColor, 'line', endpointColor);
-                }
-                if (document.querySelector('#sparkline-talks')) {
-                    sparkline('sparkline-talks', data['talks'], showEndpoint, sparklineColor, 'line', endpointColor);
+                data = JSON.parse(request.responseText);
+                for (let type of types) {
+                    if (document.querySelector(`#sparkline-${type}`)) {
+                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, 'line', endpointColor);
+                    }
                 }
             }
             else {
@@ -632,6 +634,53 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
             console.log('Sparkline request error');
         };
         request.send();
+    }
+
+    ///
+    // playSparkline.js
+    // Pass in an array of numbers ranging from 0 to 20.
+    // by Jeremy Keith <@adactio>
+    // https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
+    // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+    // http://creativecommons.org/publicdomain/zero/1.0/
+    ///
+    function playSparkline(notes) {
+        if (!window.AudioContext && !window.webkitAudioContext) {
+            return;
+        }
+        var playing = null;
+        var note = 0;
+        var output = new (window.AudioContext || window.webkitAudioContext)();
+        var instrument = output.createOscillator();
+        var amplifier = output.createGain();
+        var noteLength = Math.floor(duration / notes.length);
+        var playNotes = function() {
+            if (note < notes.length) {
+                instrument.frequency.value = 220 + (notes[note] * 64); // hertz
+                note = note + 1;
+            } else {
+                amplifier.gain.value = 0;
+            }
+            playing = window.setTimeout(playNotes, noteLength);
+        };
+        instrument.type = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+        instrument.start();
+        instrument.connect(amplifier);
+        amplifier.gain.value = 0.5;
+        amplifier.connect(output.destination);
+        playNotes();
+    }
+
+    for (let sparkline of document.querySelectorAll('.sparkline')) {
+        sparkline.addEventListener('click', event => {
+            let type = sparkline.id.split('-')[1];
+            playSparkline(data[type]);
+            // Prevent the user from blowing their ears up by stacking sounds
+            sparkline.classList.add('non-interactive');
+            window.setTimeout(() => {
+                sparkline.classList.remove('non-interactive');
+            }, duration);
+        });
     }
 
 })();
