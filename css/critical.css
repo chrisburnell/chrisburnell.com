@@ -659,40 +659,34 @@ main {
     padding-bottom: var(--measure-large);
 }
 
+@media screen and (min-width: 801px) {
+    main {
+        display: grid;
+        grid-template-columns: 15.875rem 1fr;
+        grid-template-areas: "author content";
+        grid-column-gap: 1.25rem;
+    }
+}
+
 header {
-    display: flex;
+    display: grid;
     overflow: hidden;
     position: relative;
 }
 
-@supports (display: grid) {
-    header {
-        display: grid;
-    }
-}
-
 @media screen and (max-width: 800px) {
     header {
-        flex-direction: column;
+        grid-template-rows: 7rem -webkit-min-content;
+        grid-template-rows: 7rem min-content;
         justify-content: center;
-    }
-    @supports (display: grid) {
-        header {
-            grid-template-rows: 7rem -webkit-min-content;
-            grid-template-rows: 7rem min-content;
-        }
     }
 }
 
 @media screen and (min-width: 801px) {
     header {
+        grid-template-columns: 15.875rem -webkit-min-content;
+        grid-template-columns: 15.875rem min-content;
         justify-content: space-between;
-    }
-    @supports (display: grid) {
-        header {
-            grid-template-columns: 15.875rem -webkit-min-content;
-            grid-template-columns: 15.875rem min-content;
-        }
     }
 }
 
@@ -713,7 +707,6 @@ header::before {
 .content {
     padding-top: 2.25rem;
     padding-top: var(--measure-large);
-    position: relative;
 }
 
 @media screen and (max-width: 800px) {
@@ -725,7 +718,8 @@ header::before {
 
 @media screen and (min-width: 801px) {
     .content:not(.content--full) {
-        padding-left: 18.125rem;
+        display: grid;
+        grid-area: content;
     }
 }
 
@@ -1064,12 +1058,11 @@ aside + .lede {
 }
 
 @media screen and (min-width: 801px) {
-    .author {
+    .content:not(.content--full) + .author {
         float: none;
+        grid-area: author;
         margin-left: 0;
-        position: absolute;
-        top: 9rem;
-        left: 0;
+        margin-top: 9rem;
     }
 }
 

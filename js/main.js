@@ -692,27 +692,6 @@ helpers = {
 
 })();
 
-/*!
- * Show comment counts on home and articles archive page
- */
-
-
-(function() {
-
-    'use strict';
-
-    var disqusShortname = 'chrisburnell';
-
-    var dsqc = document.createElement('script');
-    dsqc.type = 'text/javascript';
-    dsqc.id = 'dsq-count-scr';
-    dsqc.async = true;
-    dsqc.src = '//' + disqusShortname + '.disqus.com/count.js';
-
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsqc);
-
-}());
-
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT

@@ -19,11 +19,6 @@ aside {
         float: left;
         margin-left: #{($aside-width + $measure-large) * -1};
         @include v(margin-bottom, large);
-
-        // @supports (display: grid) {
-        //     grid-area: aside;
-        //     margin-left: 0;
-        // }
     }
 
     &:not([class]) {

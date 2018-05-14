@@ -8,9 +8,10 @@ main {
     display: block;
     @include v(padding-bottom, large);
 
-    // @supports (display: grid) {
-    //     display: grid;
-    //     grid-template-columns: unquote("[aside] #{$aside-width} [content] 1fr");
-    //     grid-column-gap: $gutter-width;
-    // }
+    @include media("screen", ">medium") {
+        display: grid;
+        grid-template-columns: #{$aside-width} 1fr;
+        grid-template-areas: "author content";
+        grid-column-gap: $gutter-width;
+    }
 }

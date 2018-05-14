@@ -5,29 +5,18 @@
 
 
 header {
-    display: flex;
+    display: grid;
     overflow: hidden;
     position: relative;
 
-    @supports (display: grid) {
-        display: grid;
-    }
-
     @include media("screen", "<=medium") {
-        flex-direction: column;
+        grid-template-rows: 7rem min-content;
         justify-content: center;
-
-        @supports (display: grid) {
-            grid-template-rows: 7rem min-content;
-        }
     }
 
     @include media("screen", ">medium") {
+        grid-template-columns: $aside-width min-content;
         justify-content: space-between;
-
-        @supports (display: grid) {
-            grid-template-columns: $aside-width min-content;
-        }
     }
 
     &::before {
