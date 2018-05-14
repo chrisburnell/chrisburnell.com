@@ -1,0 +1,28 @@
+////
+/// Sparklines
+/// @group components
+/// @link https://chrisburnell.com/styleguide
+////
+
+
+.sparkline {
+    width: 10rem; // defaults which are overriden by inline styles, preferably
+    height: 1.5rem; // defaults which are overriden by inline styles, preferably
+
+    %heading-elements & {
+        @include media("screen", "<=small") {
+            display: none !important; // this needs to override the inline style
+        }
+
+        @include media("screen", ">small") {
+            float: right;
+            margin-left: $measure-medium;
+        }
+    }
+
+    %alpha & {
+        @include media("screen", ">small") {
+            margin-top: $measure-medium;
+        }
+    }
+}

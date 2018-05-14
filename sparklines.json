@@ -1,0 +1,140 @@
+---
+layout: null
+searchable: false
+---
+
+
+{% assign ending_year = site.time | date: '%Y' | plus: 0 %}
+{% assign ending_month = site.time | date: '%-m' | plus: 0 %}
+{
+    "articles": [
+      {% for page in site.categories.article reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% for tracking_year in (starting_year..ending_year) %}
+          {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+          {% assign outside_first = forloop.first %}
+          {% for tracking_month in (starting_month..12) %}
+              {% if tracking_year == ending_year and tracking_month > ending_month %}
+                  {% break %}
+              {% else %}
+                  {% unless outside_first and forloop.first %},{% endunless %}
+              {% endif %}
+              {% assign count = 0 %}
+              {% for page in site.categories.article reversed %}
+                  {% assign year = page.date | date: '%Y' | plus: 0 %}
+                  {% assign month = page.date | date: '%-m' | plus: 0 %}
+                  {% if year == tracking_year and month == tracking_month %}
+                      {% assign count = count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {{ count }}
+          {% endfor %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+    ],
+    "notes": [
+      {% for page in site.categories.note reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% for tracking_year in (starting_year..ending_year) %}
+          {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+          {% assign outside_first = forloop.first %}
+          {% for tracking_month in (starting_month..12) %}
+              {% if tracking_year == ending_year and tracking_month > ending_month %}
+                  {% break %}
+              {% else %}
+                  {% unless outside_first and forloop.first %},{% endunless %}
+              {% endif %}
+              {% assign count = 0 %}
+              {% for page in site.categories.note reversed %}
+                  {% assign year = page.date | date: '%Y' | plus: 0 %}
+                  {% assign month = page.date | date: '%-m' | plus: 0 %}
+                  {% if year == tracking_year and month == tracking_month %}
+                      {% assign count = count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {{ count }}
+          {% endfor %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+    ],
+    "pens": [
+      {% for page in site.categories.pen reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% for tracking_year in (starting_year..ending_year) %}
+          {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+          {% assign outside_first = forloop.first %}
+          {% for tracking_month in (starting_month..12) %}
+              {% if tracking_year == ending_year and tracking_month > ending_month %}
+                  {% break %}
+              {% else %}
+                  {% unless outside_first and forloop.first %},{% endunless %}
+              {% endif %}
+              {% assign count = 0 %}
+              {% for page in site.categories.pen reversed %}
+                  {% assign year = page.date | date: '%Y' | plus: 0 %}
+                  {% assign month = page.date | date: '%-m' | plus: 0 %}
+                  {% if year == tracking_year and month == tracking_month %}
+                      {% assign count = count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {{ count }}
+          {% endfor %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+    ],
+    "links": [
+      {% for page in site.categories.link reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% for tracking_year in (starting_year..ending_year) %}
+          {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+          {% assign outside_first = forloop.first %}
+          {% for tracking_month in (starting_month..12) %}
+              {% if tracking_year == ending_year and tracking_month > ending_month %}
+                  {% break %}
+              {% else %}
+                  {% unless outside_first and forloop.first %},{% endunless %}
+              {% endif %}
+              {% assign count = 0 %}
+              {% for page in site.categories.link reversed %}
+                  {% assign year = page.date | date: '%Y' | plus: 0 %}
+                  {% assign month = page.date | date: '%-m' | plus: 0 %}
+                  {% if year == tracking_year and month == tracking_month %}
+                      {% assign count = count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {{ count }}
+          {% endfor %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+    ],
+    "talks": [
+      {% for page in site.categories.talk reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% for tracking_year in (starting_year..ending_year) %}
+          {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+          {% assign outside_first = forloop.first %}
+          {% for tracking_month in (starting_month..12) %}
+              {% if tracking_year == ending_year and tracking_month > ending_month %}
+                  {% break %}
+              {% else %}
+                  {% unless outside_first and forloop.first %},{% endunless %}
+              {% endif %}
+              {% assign count = 0 %}
+              {% for page in site.categories.talk reversed %}
+                  {% assign year = page.date | date: '%Y' | plus: 0 %}
+                  {% assign month = page.date | date: '%-m' | plus: 0 %}
+                  {% if year == tracking_year and month == tracking_month %}
+                      {% assign count = count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {{ count }}
+          {% endfor %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+              {% break %}
+          {% endif %}
+      {% endfor %}
+    ]
+}

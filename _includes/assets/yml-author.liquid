@@ -1,5 +1,5 @@
 {% if page.page_class contains 'about' %}
-    {% assign author_biography_closer = 'you don’t care about my life. Sorry.' %}
+    {% assign author_biography_closer = 'you don’t care about my life. <span class="canada">Sorry</span>' %}
 {% elsif page.page_class contains 'articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
 {% elsif page.categories contains 'article' %}
@@ -27,7 +27,7 @@
 {% elsif page.page_class contains 'hip-hop' %}
     {% assign author_biography_closer = 'you don’t care about my distasteful choice in music' %}
 {% elsif page.page_class contains 'error' or page.page_class contains 'offline' %}
-    {% assign author_biography_closer = 'you’re upset that you found a broken page. Sorry' %}
+    {% assign author_biography_closer = 'you’re upset that you found a broken page. <span class="canada">Sorry</span>' %}
 {% else %}
     {% assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' %}
 {% endif %}

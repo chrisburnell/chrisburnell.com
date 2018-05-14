@@ -9,7 +9,7 @@ tags:
 - personal
 
 footnotes:
-  - I’m aware of the <a href="http://bradfrost.com/blog/post/just/" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.
+- I’m aware of the <a href="http://bradfrost.com/blog/post/just/" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.
 
 shorturl: 12345
 ---

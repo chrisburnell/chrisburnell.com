@@ -1047,6 +1047,7 @@ figure img,
 figure picture,
 figure svg,
 figure audio,
+figure canvas,
 figure embed,
 figure iframe,
 figure object,
@@ -2046,7 +2047,6 @@ header::before {
 
 @media screen and (min-width: 801px) {
     .content:not(.content--full) {
-        display: grid;
         grid-area: content;
     }
 }
@@ -3540,6 +3540,7 @@ button .icon--rss,
 }
 
 .media audio,
+.media canvas,
 .media embed,
 .media iframe,
 .media object,
@@ -3578,6 +3579,30 @@ button .icon--rss,
 
 .cp_embed_wrapper iframe {
     margin-bottom: 0;
+}
+
+.sparkline {
+    width: 10rem;
+    height: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+    h1 .sparkline, h2 .sparkline, h3 .sparkline, h4 .sparkline, h5 .sparkline, h6 .sparkline {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    h1 .sparkline, h2 .sparkline, h3 .sparkline, h4 .sparkline, h5 .sparkline, h6 .sparkline {
+        float: right;
+        margin-left: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    h1 .sparkline {
+        margin-top: 1.25rem;
+    }
 }
 
 .ingredients {

@@ -2230,6 +2230,11 @@ button .icon--rss,
     margin-bottom: 0;
 }
 
+.sparkline {
+    width: 10rem;
+    height: 1.5rem;
+}
+
 .ingredients {
     display: flex;
     align-items: space-between;

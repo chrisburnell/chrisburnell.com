@@ -18,7 +18,6 @@
 
     &:not(.content--full) {
         @include media("screen", ">medium") {
-            display: grid;
             grid-area: content;
         }
     }

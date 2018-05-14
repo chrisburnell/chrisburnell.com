@@ -112,6 +112,49 @@ helpers = {
 
 };
 
+let sparkline = function(canvas_id, data, endpoint, color, style) {
+    if (window.HTMLCanvasElement) {
+        var c = document.getElementById(canvas_id),
+            ctx = c.getContext('2d'),
+            color = (color ? color : 'rgba(0,0,0,0.5)'),
+            style = (style == 'bar' ? 'bar' : 'line'),
+            height = c.height - 3,
+            width = c.width,
+            total = data.length,
+            max = Math.max.apply(Math, data),
+            xstep = width/total,
+            ystep = max/height,
+            x = 0,
+            y = height - data[0]/ystep,
+            i;
+        if (window.devicePixelRatio) {
+            c.width = c.width * window.devicePixelRatio;
+            c.height = c.height * window.devicePixelRatio;
+            c.style.width = (c.width / window.devicePixelRatio) + 'px';
+            c.style.height = (c.height / window.devicePixelRatio) + 'px';
+            c.style.display = 'inline-block';
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        }
+        ctx.clearRect(0, 0, width, height);
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.moveTo(x, y);
+        for (i = 1; i < total; i = i + 1) {
+            x = x + xstep;
+            y = height - data[i]/ystep + 2;
+            if (style == 'bar') { ctx.moveTo(x,height); }
+            ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        if (endpoint && style == 'line') {
+            ctx.beginPath();
+            ctx.fillStyle = 'rgba(235,45,55,0.8)';
+            ctx.arc(x, y, 1.5, 0, Math.PI*2);
+            ctx.fill();
+        }
+    }
+};
+
 /*!
  * Code ARIA Toggling
  * @author Chris Burnell <me@chrisburnell.com>
@@ -538,6 +581,54 @@ helpers = {
         let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 
         resultsMeta.innerHTML = searchMeta;
+    }
+
+})();
+
+/*!
+ * Target and build sparklines
+ */
+
+(function() {
+
+    'use strict';
+
+    if (document.querySelector('#sparkline-articles')
+     || document.querySelector('#sparkline-notes')
+     || document.querySelector('#sparkline-pens')
+     || document.querySelector('#sparkline-links')) {
+        let showEndpoint = true;
+        let sparklineColor = '#4f4f4f';
+        let request = new XMLHttpRequest();
+        request.open('GET', '/sparklines.json', true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+                // Success!
+                let data = JSON.parse(request.responseText);
+                if (document.querySelector('#sparkline-articles')) {
+                    sparkline('sparkline-articles', data['articles'], showEndpoint, sparklineColor);
+                }
+                if (document.querySelector('#sparkline-notes')) {
+                    sparkline('sparkline-notes', data['notes'], showEndpoint, sparklineColor);
+                }
+                if (document.querySelector('#sparkline-pens')) {
+                    sparkline('sparkline-pens', data['pens'], showEndpoint, sparklineColor);
+                }
+                if (document.querySelector('#sparkline-links')) {
+                    sparkline('sparkline-links', data['links'], showEndpoint, sparklineColor);
+                }
+                if (document.querySelector('#sparkline-talks')) {
+                    sparkline('sparkline-talks', data['talks'], showEndpoint, sparklineColor);
+                }
+            }
+            else {
+                console.log(`Sparkline request status error: ${request.status}`);
+            }
+        };
+        request.onerror = function() {
+            console.log('Sparkline request error');
+        };
+        request.send();
     }
 
 })();

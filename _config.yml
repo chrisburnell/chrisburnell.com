@@ -100,3 +100,5 @@ exclude:
 plugins:
 - jekyll-redirect-from
 - jemoji
+
+emptyArray: []

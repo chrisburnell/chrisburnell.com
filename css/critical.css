@@ -718,7 +718,6 @@ header::before {
 
 @media screen and (min-width: 801px) {
     .content:not(.content--full) {
-        display: grid;
         grid-area: content;
     }
 }

@@ -6,6 +6,7 @@ searchable: no-content
 
 <h3>
     <a href="/articles/">Latest Articles</a>
+    <canvas id="sparkline-articles" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="articles" role="list">
@@ -19,6 +20,7 @@ searchable: no-content
 
 <h3>
     <a href="/notes/">Latest Notes</a>
+    <canvas id="sparkline-notes" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="notes" role="list">
@@ -32,6 +34,7 @@ searchable: no-content
 
 <h3>
     <a href="/pens/">Latest Pens</a>
+    <canvas id="sparkline-pens" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="pens" role="list">
@@ -45,6 +48,7 @@ searchable: no-content
 
 <h3>
     <a href="/links/">Latest Links</a>
+    <canvas id="sparkline-links" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="links" role="list">
@@ -56,9 +60,10 @@ searchable: no-content
 {% include components/buttons-list.html type='archives' include='links' %}
 
 
-<!--
+{% comment %}
 <h3>
     <a href="/talks/">Latest Talks</a>
+    <canvas id="sparkline-talks" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="talks" role="list">
@@ -68,4 +73,4 @@ searchable: no-content
 </ol>
 
 {% include components/buttons-list.html type='archives' include='talks' %}
--->
+{% endcomment %}

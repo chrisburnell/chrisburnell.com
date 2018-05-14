@@ -165,6 +165,7 @@ src/sass
 │   ├── _print.scss
 │   ├── _search.scss
 │   ├── _social-icons.scss
+│   ├── _sparkline.scss
 │   ├── _terminology.scss
 │   ├── _title.scss
 │   ├── _webmentions.scss
