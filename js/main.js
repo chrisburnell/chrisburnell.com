@@ -603,7 +603,6 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
 
 
     let types = ['articles', 'notes', 'pens', 'links', 'talks'],
-        duration = 2500,
         data;
 
     if (document.querySelector('#sparkline-articles')
@@ -644,6 +643,8 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
     // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
     // http://creativecommons.org/publicdomain/zero/1.0/
     ///
+    let baseFrequency = 220,
+        duration = 2500;
     function playSparkline(notes) {
         if (!window.AudioContext && !window.webkitAudioContext) {
             return;
@@ -656,14 +657,14 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
         var noteLength = Math.floor(duration / notes.length);
         var playNotes = function() {
             if (note < notes.length) {
-                instrument.frequency.value = 220 + (notes[note] * 64); // hertz
+                instrument.frequency.value = baseFrequency + (notes[note] * 64); // hertz
                 note = note + 1;
             } else {
                 amplifier.gain.value = 0;
             }
             playing = window.setTimeout(playNotes, noteLength);
         };
-        instrument.type = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+        instrument.type = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
         instrument.start();
         instrument.connect(amplifier);
         amplifier.gain.value = 0.5;

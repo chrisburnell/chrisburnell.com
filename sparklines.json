@@ -8,7 +8,9 @@ searchable: false
 {% assign ending_month = site.time | date: '%-m' | plus: 0 %}
 {
     "articles": [
-      {% for page in site.categories.article reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% assign last = site.categories.article | limit: 50 | last %}
+      {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
       {% for tracking_year in (starting_year..ending_year) %}
           {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
           {% assign outside_first = forloop.first %}
@@ -35,7 +37,9 @@ searchable: false
       {% endfor %}
     ],
     "notes": [
-      {% for page in site.categories.note reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% assign last = site.categories.note | limit: 50 | last %}
+      {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
       {% for tracking_year in (starting_year..ending_year) %}
           {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
           {% assign outside_first = forloop.first %}
@@ -62,7 +66,9 @@ searchable: false
       {% endfor %}
     ],
     "pens": [
-      {% for page in site.categories.pen reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% assign last = site.categories.pen | limit: 50 | last %}
+      {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
       {% for tracking_year in (starting_year..ending_year) %}
           {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
           {% assign outside_first = forloop.first %}
@@ -89,7 +95,9 @@ searchable: false
       {% endfor %}
     ],
     "links": [
-      {% for page in site.categories.link reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% assign last = site.categories.link | limit: 50 | last %}
+      {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
       {% for tracking_year in (starting_year..ending_year) %}
           {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
           {% assign outside_first = forloop.first %}
@@ -116,7 +124,9 @@ searchable: false
       {% endfor %}
     ],
     "talks": [
-      {% for page in site.categories.talk reversed %}{% assign starting_year = page.date | date: '%Y' | plus: 0 %}{% assign starting_month = page.date | date: '%-m' | plus: 0 %}{% break %}{% endfor %}
+      {% assign last = site.categories.talk | limit: 50 | last %}
+      {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
       {% for tracking_year in (starting_year..ending_year) %}
           {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
           {% assign outside_first = forloop.first %}

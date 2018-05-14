@@ -6,9 +6,22 @@
 
 
 .sparkline {
+    @include non-selectable;
+    @include transition;
     width: 10rem; // defaults which are overriden by inline styles, preferably
     height: 1.5rem; // defaults which are overriden by inline styles, preferably
-    cursor: pointer;
+
+    &:hover {
+        @include v(background-color, highlight);
+        outline: $border-width-thin $border-style-default $color-highlight;
+        outline: var(--border-width-thin) var(--border-style-default) var(--color-highlight);
+    }
+
+    &:active {
+        @include v(background-color, canada);
+        outline: $border-width-thin $border-style-default $color-canada;
+        outline: var(--border-width-thin) var(--border-style-default) var(--color-canada);
+    }
 
     %heading-elements & {
         @include media("screen", "<=small") {
