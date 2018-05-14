@@ -9,6 +9,7 @@
 // `.content`.
 .content {
     @include v(padding-top, large);
+    position: relative;
 
     @include media("screen", "<=medium") {
         // Below the medium breakpoint, `.content` and `aside` become full width.

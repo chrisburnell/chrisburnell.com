@@ -10,13 +10,12 @@
             console.log('ServiceWorker registration failed: ', err);
         });
         window.addEventListener('load', function() {
-            navigator.serviceWorker.controller.postMessage({ 'command': 'trimCaches' });
+            if (navigator.serviceWorker.controller != null) {
+                navigator.serviceWorker.controller.postMessage({ 'command': 'trimCaches' });
+            }
         });
     }
 </script>
-
-<!-- Analytics -->
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-10353655-1" async></script>
 
 <!-- Main Scripts -->
 <script type="text/javascript" src="/js/main.min.js?version={{ site.time | date: '%F_%H%M'}}" defer></script>

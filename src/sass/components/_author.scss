@@ -16,6 +16,14 @@
         order: 999;
         @include v(margin-top, large);
     }
+
+    @include media("screen", ">medium") {
+        float: none;
+        margin-left: 0;
+        position: absolute;
+        top: #{$measure-large * 2 + $font-size-alpha};
+        left: 0;
+    }
 }
 
 // More information about the Author

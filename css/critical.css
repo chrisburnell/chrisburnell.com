@@ -713,6 +713,7 @@ header::before {
 .content {
     padding-top: 2.25rem;
     padding-top: var(--measure-large);
+    position: relative;
 }
 
 @media screen and (max-width: 800px) {
@@ -1059,6 +1060,16 @@ aside + .lede {
         order: 999;
         margin-top: 2.25rem;
         margin-top: var(--measure-large);
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .author {
+        float: none;
+        margin-left: 0;
+        position: absolute;
+        top: 9rem;
+        left: 0;
     }
 }
 
