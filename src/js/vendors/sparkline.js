@@ -1,8 +1,9 @@
-let sparkline = function(canvas_id, data, endpoint, color, style) {
+let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor) {
     if (window.HTMLCanvasElement) {
         var c = document.getElementById(canvas_id),
             ctx = c.getContext('2d'),
             color = (color ? color : 'rgba(0,0,0,0.5)'),
+            endpointColor = (endpointColor ? endpointColor : 'rgba(255,0,0,0.5)'),
             style = (style == 'bar' ? 'bar' : 'line'),
             height = c.height - 3,
             width = c.width,
@@ -34,7 +35,7 @@ let sparkline = function(canvas_id, data, endpoint, color, style) {
         ctx.stroke();
         if (endpoint && style == 'line') {
             ctx.beginPath();
-            ctx.fillStyle = 'rgba(235,45,55,0.8)';
+            ctx.fillStyle = endpointColor;
             ctx.arc(x, y, 1.5, 0, Math.PI*2);
             ctx.fill();
         }
