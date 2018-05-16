@@ -643,8 +643,24 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
     // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
     // http://creativecommons.org/publicdomain/zero/1.0/
     ///
-    let baseFrequency = 220,
-        duration = 2500;
+    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let duration = 4000; // milliseconds
+    let volume = 0.5;
+    let frequencies = [
+        277.183,
+        329.628,
+        391.995,
+        466.164,
+        554.365,
+        659.255,
+        783.991,
+        932.328,
+        1108.73,
+        1318.51,
+        1567.98,
+        1864.66,
+        2217.46
+    ];
     function playSparkline(notes) {
         if (!window.AudioContext && !window.webkitAudioContext) {
             return;
@@ -657,17 +673,17 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
         var noteLength = Math.floor(duration / notes.length);
         var playNotes = function() {
             if (note < notes.length) {
-                instrument.frequency.value = baseFrequency + (notes[note] * 64); // hertz
+                instrument.frequency.value = frequencies[notes[note]];
                 note = note + 1;
             } else {
                 amplifier.gain.value = 0;
             }
             playing = window.setTimeout(playNotes, noteLength);
         };
-        instrument.type = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
+        instrument.type = wave;
         instrument.start();
         instrument.connect(amplifier);
-        amplifier.gain.value = 0.5;
+        amplifier.gain.value = volume;
         amplifier.connect(output.destination);
         playNotes();
     }

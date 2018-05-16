@@ -2131,9 +2131,28 @@ code[data-lang]::before {
 }
 
 .sparkline {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+    transition: all 0.2s ease;
     width: 10rem;
     height: 1.5rem;
-    cursor: pointer;
+}
+
+.sparkline:hover {
+    background-color: var(--color-highlight);
+    outline: 0.125rem solid gold;
+    outline: var(--border-width-thin) var(--border-style-default) var(--color-highlight);
+}
+
+.sparkline:active {
+    background-color: #eb2d37;
+    background-color: var(--color-canada);
+    outline: 0.125rem solid #eb2d37;
+    outline: var(--border-width-thin) var(--border-style-default) var(--color-canada);
 }
 
 .ingredients {
