@@ -40,6 +40,18 @@
         request.send();
     }
 
+    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let duration = 4000; // milliseconds
+    let volume = 0.5;
+    let keyStart = 41;
+    let keyInterval = 3;
+    let keyCount = 13;
+    let frequencies = [];
+    for (let count = 0; count < keyCount; count++) {
+        let frequency =  Math.pow(2, ((count * keyInterval + keyStart - 49) / 12)) * 440;
+        frequencies.push(frequency);
+    }
+    console.log(frequencies);
     ///
     // playSparkline.js
     // Pass in an array of numbers ranging from 0 to 20.
@@ -48,24 +60,6 @@
     // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
     // http://creativecommons.org/publicdomain/zero/1.0/
     ///
-    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
-    let duration = 4000; // milliseconds
-    let volume = 0.5;
-    let frequencies = [
-        277.183,
-        329.628,
-        391.995,
-        466.164,
-        554.365,
-        659.255,
-        783.991,
-        932.328,
-        1108.73,
-        1318.51,
-        1567.98,
-        1864.66,
-        2217.46
-    ];
     function playSparkline(notes) {
         if (!window.AudioContext && !window.webkitAudioContext) {
             return;
