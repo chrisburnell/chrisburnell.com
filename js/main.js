@@ -646,7 +646,6 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
         let frequency =  Math.pow(2, ((count * keyInterval + keyStart - 49) / 12)) * 440;
         frequencies.push(frequency);
     }
-    console.log(frequencies);
     ///
     // playSparkline.js
     // Pass in an array of numbers ranging from 0 to 20.
