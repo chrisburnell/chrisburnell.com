@@ -1,11 +1,9 @@
-/**
- * Canvas Sparkline
- * by Jeremy Keith <@adactio>
- * https://github.com/adactio/Canvas-Sparkline
- */
-
-
-let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor) {
+///
+// Canvas Sparkline
+// by Jeremy Keith <@adactio>
+// https://github.com/adactio/Canvas-Sparkline
+///
+let sparkline = (canvas_id, data, endpoint, color, style, endpointColor) => {
     if (window.HTMLCanvasElement) {
         var c = document.getElementById(canvas_id),
             ctx = c.getContext('2d'),
@@ -48,3 +46,38 @@ let sparkline = function(canvas_id, data, endpoint, color, style, endpointColor)
         }
     }
 };
+
+///
+// Play Sparkline
+// Pass in an array of numbers ranging from 0 to 20.
+// by Jeremy Keith <@adactio>
+// https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
+// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+// http://creativecommons.org/publicdomain/zero/1.0/
+///
+let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine', volume = 0.5) => {
+    if (!window.AudioContext && !window.webkitAudioContext) {
+        return;
+    }
+    let playing = null;
+    let note = 0;
+    let output = new (window.AudioContext || window.webkitAudioContext)();
+    let instrument = output.createOscillator();
+    let amplifier = output.createGain();
+    let noteLength = Math.floor(duration / notes.length);
+    let playNotes = () => {
+        if (note < notes.length) {
+            instrument.frequency.value = frequencies[notes[note]];
+            note = note + 1;
+        } else {
+            amplifier.gain.value = 0;
+        }
+        playing = window.setTimeout(playNotes, noteLength);
+    };
+    instrument.type = wave;
+    instrument.start();
+    instrument.connect(amplifier);
+    amplifier.gain.value = volume;
+    amplifier.connect(output.destination);
+    playNotes();
+}

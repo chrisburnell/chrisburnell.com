@@ -16,11 +16,11 @@
      || document.querySelector('#sparkline-links')
      || document.querySelector('#sparkline-talks')) {
         let showEndpoint = true;
-        let sparklineColor = '#4f4f4f';
-        let endpointColor = 'rgba(235,45,55,0.5)';
+        let sparklineColor = 'hsla(0, 0%, 31%, 1)';
+        let endpointColor = 'hsla(357, 83%, 55%, 0.5)';
         let request = new XMLHttpRequest();
         request.open('GET', '/sparklines.json', true);
-        request.onload = function() {
+        request.onload = () => {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 data = JSON.parse(request.responseText);
@@ -34,62 +34,31 @@
                 console.log(`Sparkline request status error: ${request.status}`);
             }
         };
-        request.onerror = function() {
+        request.onerror = () => {
             console.log('Sparkline request error');
         };
         request.send();
     }
 
-    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let volume = 0.5;
-    let keyStart = 41;
-    let keyInterval = 3;
+    let keyStart = 41; // C#4
+    let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
+    let keyInterval = 0;
     let keyCount = 13;
     let frequencies = [];
-    for (let count = 0; count < keyCount; count++) {
-        let frequency =  Math.pow(2, ((count * keyInterval + keyStart - 49) / 12)) * 440;
+    frequencies.push(Math.pow(2, ((keyStart - 49) / 12)) * 440);
+    for (let count = 0; count < keyCount - 1; count++) {
+        keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
+        let frequency = Math.pow(2, ((keyStart - 49 + keyInterval) / 12)) * 440;
         frequencies.push(frequency);
-    }
-    ///
-    // playSparkline.js
-    // Pass in an array of numbers ranging from 0 to 20.
-    // by Jeremy Keith <@adactio>
-    // https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
-    // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-    // http://creativecommons.org/publicdomain/zero/1.0/
-    ///
-    function playSparkline(notes) {
-        if (!window.AudioContext && !window.webkitAudioContext) {
-            return;
-        }
-        var playing = null;
-        var note = 0;
-        var output = new (window.AudioContext || window.webkitAudioContext)();
-        var instrument = output.createOscillator();
-        var amplifier = output.createGain();
-        var noteLength = Math.floor(duration / notes.length);
-        var playNotes = function() {
-            if (note < notes.length) {
-                instrument.frequency.value = frequencies[notes[note]];
-                note = note + 1;
-            } else {
-                amplifier.gain.value = 0;
-            }
-            playing = window.setTimeout(playNotes, noteLength);
-        };
-        instrument.type = wave;
-        instrument.start();
-        instrument.connect(amplifier);
-        amplifier.gain.value = volume;
-        amplifier.connect(output.destination);
-        playNotes();
     }
 
     for (let sparkline of document.querySelectorAll('.sparkline')) {
         sparkline.addEventListener('click', event => {
             let type = sparkline.id.split('-')[1];
-            playSparkline(data[type]);
+            playSparkline(data[type], frequencies, duration, wave, volume);
             // Prevent the user from blowing their ears up by stacking sounds
             sparkline.classList.add('non-interactive');
             window.setTimeout(() => {
