@@ -47,16 +47,18 @@ const OFFLINE_PAGES = [
     '/about/',
     '/articles/',
     '/contact/',
-    '/hip-hop/',
     '/license/',
     '/links/',
     '/notes/',
     '/pens/',
-    '/recipes/',
     '/search/',
     '/styleguide/',
     '/tags/',
-    '/talks/'
+    '/talks/'{% for page in site.categories.article limit: 2 %},
+    '{{ page.url }}'{% endfor %}{% for page in site.categories.note limit: 2 %},
+    '{{ page.url }}'{% endfor %}{% for page in site.categories.pen limit: 2 %},
+    '{{ page.url }}'{% endfor %}{% for page in site.categories.link limit: 2 %},
+    '{{ page.url }}'{% endfor %}
 ];
 
 
