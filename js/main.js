@@ -119,9 +119,9 @@ helpers = {
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 // http://creativecommons.org/publicdomain/zero/1.0/
 ///
-let sparkline = (canvas_id, data, endpoint, color, style, endpointColor) => {
+let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
     if (window.HTMLCanvasElement) {
-        var c = document.getElementById(canvas_id),
+        var c = document.getElementById(canvasID),
             ctx = c.getContext('2d'),
             color = (color ? color : 'rgba(0,0,0,0.5)'),
             endpointColor = (endpointColor ? endpointColor : 'rgba(255,0,0,0.5)'),
@@ -177,10 +177,10 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     }
     let playing = null;
     let note = 0;
+    let noteLength = Math.floor(duration / notes.length);
     let output = new (window.AudioContext || window.webkitAudioContext)();
     let instrument = output.createOscillator();
     let amplifier = output.createGain();
-    let noteLength = Math.floor(duration / notes.length);
     let playNotes = () => {
         if (note < notes.length) {
             instrument.frequency.value = frequencies[notes[note]];
@@ -640,11 +640,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     let types = ['articles', 'notes', 'pens', 'links', 'talks'],
         data;
 
-    if (document.querySelector('#sparkline-articles')
-     || document.querySelector('#sparkline-notes')
-     || document.querySelector('#sparkline-pens')
-     || document.querySelector('#sparkline-links')
-     || document.querySelector('#sparkline-talks')) {
+    if (document.querySelector('[id*="sparkline"]')) {
         let showEndpoint = true;
         let sparklineColor = 'hsla(0, 0%, 31%, 1)';
         let endpointColor = 'hsla(357, 83%, 55%, 0.5)';
@@ -670,25 +666,22 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         request.send();
     }
 
-    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
-    let volume = 0.5;
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
     let keyInterval = 0;
     let keyCount = 13;
-    let frequencies = [];
-    frequencies.push(Math.pow(2, ((keyStart - 49) / 12)) * 440);
+    let frequencies = [Math.pow(2, ((keyStart - 49) / 12)) * 440];
+
     for (let count = 0; count < keyCount - 1; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        let frequency = Math.pow(2, ((keyStart - 49 + keyInterval) / 12)) * 440;
-        frequencies.push(frequency);
+        frequencies.push(Math.pow(2, ((keyStart - 49 + keyInterval) / 12)) * 440);
     }
 
     for (let sparkline of document.querySelectorAll('.sparkline')) {
-        sparkline.addEventListener('click', event => {
-            let type = sparkline.id.split('-')[1];
-            playSparkline(data[type], frequencies, duration, wave, volume);
+        sparkline.addEventListener('click', (event) => {
+            playSparkline(data[sparkline.id.split('-')[1]], frequencies, duration, wave);
             // Prevent the user from blowing their ears up by stacking sounds
             sparkline.classList.add('non-interactive');
             window.setTimeout(() => {
@@ -696,7 +689,6 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
             }, duration);
         });
     }
-
 })();
 
 /*!
@@ -710,7 +702,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     'use strict';
 
 
-    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL       = (document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute('href') : null);
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');

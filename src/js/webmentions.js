@@ -9,7 +9,7 @@
     'use strict';
 
 
-    const CANONICAL_URL       = document.querySelector('link[rel="canonical"]').getAttribute('href');
+    const CANONICAL_URL       = (document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute('href') : null);
     const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
     const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
     const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
