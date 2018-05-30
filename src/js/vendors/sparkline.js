@@ -51,7 +51,7 @@ let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
 
 ///
 // Play Sparkline
-// Pass in an array of numbers ranging from 0 to 20.
+// Pass in an array of numbers ranging from 0 to 12.
 // by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
 // https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
