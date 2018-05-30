@@ -7,8 +7,8 @@
     'use strict';
 
 
-    let types = ['articles', 'notes', 'pens', 'links', 'talks'],
-        data;
+    const TYPES = ['articles', 'notes', 'pens', 'links', 'talks'];
+    let data;
 
     if (document.querySelector('[id*="sparkline"]')) {
         let showEndpoint = true;
@@ -20,7 +20,7 @@
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 data = JSON.parse(request.responseText);
-                for (let type of types) {
+                for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, 'line', endpointColor);
                     }
@@ -36,7 +36,7 @@
         request.send();
     }
 
-    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale

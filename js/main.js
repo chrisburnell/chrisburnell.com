@@ -165,7 +165,7 @@ let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
 
 ///
 // Play Sparkline
-// Pass in an array of numbers ranging from 0 to 20.
+// Pass in an array of numbers ranging from 0 to 12.
 // by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
 // https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -637,8 +637,8 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     'use strict';
 
 
-    let types = ['articles', 'notes', 'pens', 'links', 'talks'],
-        data;
+    const TYPES = ['articles', 'notes', 'pens', 'links', 'talks'];
+    let data;
 
     if (document.querySelector('[id*="sparkline"]')) {
         let showEndpoint = true;
@@ -650,7 +650,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 data = JSON.parse(request.responseText);
-                for (let type of types) {
+                for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, 'line', endpointColor);
                     }
@@ -666,7 +666,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         request.send();
     }
 
-    let wave = 'sine'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
