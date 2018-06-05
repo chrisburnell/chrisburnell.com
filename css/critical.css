@@ -25,7 +25,7 @@
     --opacity-beta: 0.7;
     --opacity-gamma: 0.1;
     --opacity-delta: 0.05;
-    --color-transparent: transparent;
+    --color-transparent: rgba(0, 0, 0, 0);
     --color-black: #060606;
     --color-mineshaft: #2b2b2b;
     --color-kaiser: #4f4f4f;
@@ -185,7 +185,7 @@ a {
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s;
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     will-change: background-color, color, text-decoration-color;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     background-color: var(--color-transparent);
     color: #507791;
     color: var(--color-bowhead);
@@ -225,8 +225,8 @@ a:active {
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #4f4f4f;
     color: var(--color-kaiser);
-    -webkit-text-decoration-color: transparent;
-            text-decoration-color: transparent;
+    -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+            text-decoration-color: rgba(0, 0, 0, 0);
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
 }
@@ -272,8 +272,8 @@ a span:not([class]):not([itemprop]) {
 }
 
 .title-anchor, .title-anchor:link {
-    -webkit-text-decoration-color: transparent;
-            text-decoration-color: transparent;
+    -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+            text-decoration-color: rgba(0, 0, 0, 0);
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
     text-underline-position: under;
@@ -367,7 +367,7 @@ h6[id]:target,
         background-color: var(--color-highlight);
     }
     100% {
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         background-color: var(--color-transparent);
     }
 }
@@ -377,7 +377,7 @@ h6[id]:target,
         background-color: var(--color-highlight);
     }
     100% {
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         background-color: var(--color-transparent);
     }
 }
@@ -890,7 +890,7 @@ aside p {
 }
 
 .logo[href]:active {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     background-color: var(--color-transparent);
 }
 
@@ -976,7 +976,7 @@ aside p {
 }
 
 .nav-primary-list a:active {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     background-color: var(--color-transparent);
     -webkit-transform: translateY(0.2rem);
             transform: translateY(0.2rem);
@@ -1111,8 +1111,8 @@ aside + .lede {
 }
 
 .author-information a {
-    -webkit-text-decoration-color: transparent;
-            text-decoration-color: transparent;
+    -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+            text-decoration-color: rgba(0, 0, 0, 0);
     -webkit-text-decoration-color: var(--color-transparent);
             text-decoration-color: var(--color-transparent);
 }

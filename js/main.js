@@ -130,16 +130,16 @@ let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
             width = c.width,
             total = data.length,
             max = Math.max.apply(Math, data),
-            xstep = width/total,
-            ystep = max/height,
+            xstep = width / total,
+            ystep = max / height,
             x = 0,
-            y = height - data[0]/ystep,
+            y = height - data[0] / ystep,
             i;
         if (window.devicePixelRatio) {
             c.width = c.width * window.devicePixelRatio;
             c.height = c.height * window.devicePixelRatio;
-            c.style.width = (c.width / window.devicePixelRatio) + 'px';
-            c.style.height = (c.height / window.devicePixelRatio) + 'px';
+            c.style.width = `${(c.width / window.devicePixelRatio)}px`;
+            c.style.height = `${(c.height / window.devicePixelRatio)}px`;
             c.style.display = 'inline-block';
             ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
         }
@@ -149,15 +149,17 @@ let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
         ctx.moveTo(x, y);
         for (i = 1; i < total; i = i + 1) {
             x = x + xstep;
-            y = height - data[i]/ystep + 2;
-            if (style == 'bar') { ctx.moveTo(x,height); }
+            y = height - data[i] / ystep + 2;
+            if (style == 'bar') {
+                ctx.moveTo(x,height);
+            }
             ctx.lineTo(x, y);
         }
         ctx.stroke();
         if (endpoint && style == 'line') {
             ctx.beginPath();
             ctx.fillStyle = endpointColor;
-            ctx.arc(x, y, 1.5, 0, Math.PI*2);
+            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
             ctx.fill();
         }
     }
