@@ -262,6 +262,7 @@ ul.default-list li::before {
 }
 
 dl {
+    margin-top: 0;
     overflow: hidden;
 }
 
