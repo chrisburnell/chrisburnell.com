@@ -1,6 +1,6 @@
 ///
 // Canvas Sparkline
-// by Jeremy Keith <@adactio>
+// by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
 // https://github.com/adactio/Canvas-Sparkline
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 // http://creativecommons.org/publicdomain/zero/1.0/

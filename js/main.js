@@ -114,7 +114,7 @@ helpers = {
 
 ///
 // Canvas Sparkline
-// by Jeremy Keith <@adactio>
+// by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
 // https://github.com/adactio/Canvas-Sparkline
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 // http://creativecommons.org/publicdomain/zero/1.0/
@@ -642,7 +642,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     const TYPES = ['articles', 'notes', 'pens', 'links', 'talks'];
     let data;
 
-    if (document.querySelector('[id*="sparkline"]')) {
+    if (document.querySelector('.sparkline')) {
         let showEndpoint = true;
         let sparklineColor = 'hsla(0, 0%, 31%, 1)';
         let endpointColor = 'hsla(357, 83%, 55%, 0.5)';

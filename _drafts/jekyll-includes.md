@@ -56,7 +56,7 @@ As I mentioned above, it involves a slight change to the way that I write headin
 
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
 
-{%- highlight liquid -%}{%- raw -%}
+{%- highlight liquid -%}{% raw %}
 <!-- 1 -->
 {%- assign heading_type = 'h3' -%}
 {%- if include.type -%}
@@ -74,7 +74,7 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
     <!-- 4 -->
     {%- include content/fragment-anchor.html id=heading_id -%}
 </{{ heading_type }}>
-{%- endraw -%}{%- endhighlight -%}
+{% endraw %}{%- endhighlight -%}
 
 0. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
 0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the fragment anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/){:rel="external"} to automatically generate the `id`.
@@ -83,7 +83,7 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
 
 Let’s see what the `fragment-anchor` *include* looks like.
 
-{%- highlight liquid -%}{%- raw -%}
+{%- highlight liquid -%}{% raw %}
 <!-- 1 -->
 {%- if include.id -%}
     {%- capture href -%}#{{ include.id }}{%- endcapture -%}
@@ -108,7 +108,7 @@ Let’s see what the `fragment-anchor` *include* looks like.
 
 <!-- 5 -->
 <a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }}{{ tabindex }}>{{ href }}</a>
-{%- endraw -%}{%- endhighlight -%}
+{% endraw %}{%- endhighlight -%}
 
 {%- highlight css -%}
 .fragment-anchor {

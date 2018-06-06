@@ -10,7 +10,7 @@
     const TYPES = ['articles', 'notes', 'pens', 'links', 'talks'];
     let data;
 
-    if (document.querySelector('[id*="sparkline"]')) {
+    if (document.querySelector('.sparkline')) {
         let showEndpoint = true;
         let sparklineColor = 'hsla(0, 0%, 31%, 1)';
         let endpointColor = 'hsla(357, 83%, 55%, 0.5)';
