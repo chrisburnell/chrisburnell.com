@@ -1,101 +1,101 @@
-{% include components/head.html %}
+{%- include components/head.html -%}
 
 
-{% assign itemtype = 'WebPage' %}
-{% if page.categories contains 'article' %}
-    {% assign itemtype = 'TechArticle' %}
-{% elsif page.categories contains 'link'
+{%- assign itemtype = 'WebPage' -%}
+{%- if page.categories contains 'article' -%}
+    {%- assign itemtype = 'TechArticle' -%}
+{%- elsif page.categories contains 'link'
       or page.categories contains 'note'
-      or page.categories contains 'pen' %}
-    {% assign itemtype = 'BlogPosting' %}
-{% elsif page.categories contains 'talk' %}
-    {% assign itemtype = 'PresentationDigitalDocument' %}
-{% endif %}
+      or page.categories contains 'pen' -%}
+    {%- assign itemtype = 'BlogPosting' -%}
+{%- elsif page.categories contains 'talk' -%}
+    {%- assign itemtype = 'PresentationDigitalDocument' -%}
+{%- endif -%}
 <main class="wrap" role="main">
     <article class="content  h-entry" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name" itemprop="name">
-                {% if page.categories contains 'note' %}
+                {%- if page.categories contains 'note' -%}
                     {{ page.date | date: '%A, %d %B %Y' }}
-                {% else %}
+                {%- else -%}
                     {{ page.title }}
-                {% endif %}
+                {%- endif -%}
             </span>
-            {% if page.shorturl %}
-                {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% assign h1_rel = 'external  me' %}
-                <!--{% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}-->
-            {% endif %}
+            {%- if page.shorturl -%}
+                {%- capture h1_href -%}{{ page.shorturl | prepend: site.shorturl }}{%- endcapture -%}
+                {%- capture h1_title -%}Permalink: {{ page.shorturl | prepend: site.shorturl }}{%- endcapture -%}
+                {%- assign h1_rel = 'external  me' -%}
+                <!--{%- include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel -%}-->
+            {%- endif -%}
         </h1>
 
-        {% include components/meta.html %}
+        {%- include components/meta.html -%}
 
-        {% include components/banner.html %}
+        {%- include components/banner.html -%}
 
-        {% if page.lede %}
+        {%- if page.lede -%}
             <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
-        {% endif %}
+        {%- endif -%}
 
-        {% if page.edit_text %}
+        {%- if page.edit_text -%}
             <div class="edit">
-                {% if page.edit_date %}
+                {%- if page.edit_date -%}
                     <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date_to_long_string }}:</time>
-                {% endif %}
+                {%- endif -%}
                 <p>{{ page.edit_text }}</p>
             </div>
-        {% endif %}
+        {%- endif -%}
 
-        {% if page.external_url %}
+        {%- if page.external_url -%}
             <nav class="buttons-list" role="navigation">
-                {% assign url = page.external_url.url | default: page.external_url %}
-                {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% assign title = page.external_url.title | default: url_root %}
+                {%- assign url = page.external_url.url | default: page.external_url -%}
+                {%- assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first -%}
+                {%- assign title = page.external_url.title | default: url_root -%}
                 <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
             </nav>
-        {% endif %}
+        {%- endif -%}
 
         <div class="content__body  e-content">
             {{ content }}
         </div>
 
-        {% if page.further_reading %}
-            {% include content/heading.html title='Further Reading' %}
+        {%- if page.further_reading -%}
+            {%- include content/heading.html title='Further Reading' -%}
             <ul>
-                {% for link in page.further_reading %}
-                    {% assign url = link.url %}
-                    {% if url contains site.url %}
-                        {% assign rel = '' %}
-                    {% else %}
-                        {% assign rel = ' rel="external"' %}
-                    {% endif %}
-                    {% if link.title == null or link.title == empty %}
-                        {% assign title = url %}
-                    {% else %}
-                        {% assign title = link.title %}
-                    {% endif %}
+                {%- for link in page.further_reading -%}
+                    {%- assign url = link.url -%}
+                    {%- if url contains site.url -%}
+                        {%- assign rel = '' -%}
+                    {%- else -%}
+                        {%- assign rel = ' rel="external"' -%}
+                    {%- endif -%}
+                    {%- if link.title == null or link.title == empty -%}
+                        {%- assign title = url -%}
+                    {%- else -%}
+                        {%- assign title = link.title -%}
+                    {%- endif -%}
                     <li>
                         <a href="{{ url }}"{{ rel }}>{{ title }}</a>
                     </li>
-                {% endfor %}
+                {%- endfor -%}
             </ul>
-        {% endif %}
+        {%- endif -%}
 
-        {% if page.footnotes %}
-            {% include content/heading.html title='Footnotes' %}
+        {%- if page.footnotes -%}
+            {%- include content/heading.html title='Footnotes' -%}
             <ol>
-                {% for note in page.footnotes %}
+                {%- for note in page.footnotes -%}
                     <li class="footnote" id="footnote-{{ forloop.index }}">
                         {{ note }}
                         <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="">↩︎</a>
                     </li>
-                {% endfor %}
+                {%- endfor -%}
             </ol>
-        {% endif %}
+        {%- endif -%}
 
     </article>
 </main>
 
 
-{% include components/foot.html %}
+{%- include components/foot.html -%}

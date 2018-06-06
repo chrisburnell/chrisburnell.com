@@ -1,13 +1,13 @@
-{% comment %}
+{%- comment -%}
 
   This include lets you easily add a code toggle.
   Used with discretion when code blocks are longer than at least five lines.
 
   @example
     < code block >
-    {% include content/code-toggle-top.html %}
+    {%- include content/code-toggle-top.html -%}
 
-{% endcomment %}
-{% assign code_toggle_count = code_toggle_count | plus: 1 %}
+{%- endcomment -%}
+{%- assign code_toggle_count = code_toggle_count | plus: 1 -%}
 <div class="code-toggle" id="code-toggle--{{ code_toggle_count }}" aria-expanded="false" aria-live="polite" aria-labelledby="code-toggle-button--{{ code_toggle_count }}">
     <input type="checkbox" role="checkbox" class="code-toggle-input" id="code-toggle-input--{{ code_toggle_count }}" name="code-toggle-input--{{ code_toggle_count }}" tabindex="-1">

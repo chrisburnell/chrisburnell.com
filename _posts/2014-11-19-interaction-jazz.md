@@ -11,18 +11,18 @@ shorturl: bhbt9
 ---
 
 
-{% include content/codepen.html height='600' %}
+{%- include content/codepen.html height='600' -%}
 
-{% highlight haml %}
+{%- highlight haml -%}
 - (1...51).each do |row|
     - (1...51).each do |column|
         %div{:class => "slice  row-#{row}  column-#{column}"}
 .jazz
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 @function range-map($value, $ranges...) {
     $old-minimum: if(length($ranges) == 2, 0, nth($ranges, 1));
     $old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
@@ -70,6 +70,6 @@ $hue-rotation: -75;
         }
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

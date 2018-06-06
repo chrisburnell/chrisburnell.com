@@ -12,18 +12,18 @@ shorturl: 6aorh
 ---
 
 
-{% include content/codepen.html height='400' %}
+{%- include content/codepen.html height='400' -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <div>
     <h1 class="miami-vice" data-text="Flyknife">Flyknife</h1>
     <h1 class="metal" data-text="COMICS">COMICS</h1>
 </div>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 @import url(https://fonts.googleapis.com/css?family=Yellowtail);
 @import url(https://fonts.googleapis.com/css?family=Archivo+Black);
 
@@ -99,6 +99,6 @@ h1 {
         z-index: -1;
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

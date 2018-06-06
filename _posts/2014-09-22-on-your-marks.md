@@ -28,7 +28,7 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 
 <figure>
     <a href="https://disqus.com/">
-        {% include content/img.html src='/images/content/disqus-logo-white-blue.png' alt='' %}
+        {%- include content/img.html src='/images/content/disqus-logo-white-blue.png' alt='' -%}
         <figcaption>Disqus © 2012.</figcaption>
     </a>
 </figure>
@@ -36,7 +36,7 @@ Since the last re-design of my website, I decided to make the switch to [Disqus]
 In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.
 
 
-{% include content/heading.html title='The Cons of Disqus' id='cons' %}
+{%- include content/heading.html title='The Cons of Disqus' id='cons' -%}
 
 - The greatest disadvantage of using *Disqus* may or may not be obvious, but it means you’re locked into using *Disqus* for your comments. *Disqus* do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options"){:rel="external"} and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"){:rel="external"}, but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with *Disqus* in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
@@ -44,7 +44,7 @@ In this article I’m going to run through how I manage my comments section from
 - It’s beyond my knowledge how caching is affected by *Disqus*—whether or not it is cached, or available to be cached offline—but as the movement to bring offline support to the web ramps up, this could present an issue.
 
 
-{% include content/heading.html title='The Pros of Disqus' id='pros' %}
+{%- include content/heading.html title='The Pros of Disqus' id='pros' -%}
 
 - Once you’ve signed up for a *Disqus* account, you’ll be able to comment on *every* site that has implemented *Disqus* for their commenting system and allows comments from the public.
 - *Disqus* has nearly all the bells and whistles you could want for making comments:
@@ -56,12 +56,12 @@ In this article I’m going to run through how I manage my comments section from
 - Option to add targeted ads and monetise upon clickthroughs
 
 
-{% include content/heading.html title='The Weigh In' %}
+{%- include content/heading.html title='The Weigh In' -%}
 
 First, let’s look at some statistics for loading *Disqus* comments on page load:
 
 - **37%** of an article page’s load time comes from loading *Disqus*
-    - This was tested on my article, <a href="{% post_url 2014-02-09-lets-look-back %}">Let’s Look Back</a>, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to *Disqus* could get even higher on my more minimal articles.
+    - This was tested on my article, <a href="{%- post_url 2014-02-09-lets-look-back -%}">Let’s Look Back</a>, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to *Disqus* could get even higher on my more minimal articles.
 - **298kB** of data comes from *Disqus’* three servers used to load comments, which isn’t a hell of a lot—at least, when you compare it to a decent-sized image asset.
 - **40** requests are made from *Disqus* in order to display the comments section.
 
@@ -72,7 +72,7 @@ By and large, this isn’t a massive hit. But we can *almost* always make things
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 
 
-{% include content/heading.html title='At My Signal, Unleash Hell' id='at-my-signal' %}
+{%- include content/heading.html title='At My Signal, Unleash Hell' id='at-my-signal' -%}
 
 Let’s decide what the conditions are for loading the comments:
 
@@ -82,7 +82,7 @@ Let’s decide what the conditions are for loading the comments:
 
 Let’s dive into some code. Here’s how I was loading *Disqus* *non-conditionally*:
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 (function(d) {
     var typekitTimeout = 5000;
     if( window.sessionStorage ) {
@@ -96,22 +96,22 @@ Let’s dive into some code. Here’s how I was loading *Disqus* *non-conditiona
     },
     h = d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
-{% endhighlight %}
+{%- endhighlight -%}
 
 I didn’t want to reinvent the wheel, so I followed in the footsteps of others who have done the same thing. First I wanted to create an action for the user to perform if they reached the bottom of an article and want to dip into the comments, and did so with a `button`.
 
 <aside><p>Remember, don’t mix classes for styling and JavaScript hooks. You’ll save yourself potential pains later on at no cost right now!</p></aside>
 
-{% highlight html %}
+{%- highlight html -%}
 <button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
     <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
-{% endhighlight %}
+{%- endhighlight -%}
 
 And let’s create some associated JavaScript to create and hook onto our `button` and perform two actions: remove the `button` and load *Disqus*.
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 var commentsButton  = document.querySelector('#js-show-comments');
 
 commentsButton.disabled = false;
@@ -132,7 +132,7 @@ function showComments() {
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 What we’re doing here is:
 
@@ -148,7 +148,7 @@ Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<
 
 <aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#search=onhashchange">onhashchange on Can I Use</a> before jumping in too deep!</p></aside>
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 var commentsHash = ['#comment', '#disqus_thread'];
 
 window.addEventListener('load', function() {
@@ -166,7 +166,7 @@ function updateFromHash() {
         }
     });
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 What we’re doing here is:
 
@@ -184,7 +184,7 @@ Almost there! Let’s create a failsafe—if our `button` no longer exists when 
 
 <aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after *Disqus* has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to *Disqus* in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the <a href="#comments">comments</a>.</p></aside>
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 function showComments() {
     if( commentsButton !== null ) {
         commentsButton.parentNode.removeChild(commentsButton);
@@ -199,34 +199,34 @@ function showComments() {
         })();
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 
-{% include content/heading.html title='The Whole Nine Yards' %}
+{%- include content/heading.html title='The Whole Nine Yards' -%}
 
 Here’s the entire snippet of code for my comments section:
 
-{% highlight html %}
+{%- highlight html -%}
 <button class="button--show-comments" id="js-show-comments" role="button" aria-pressed="false" disabled>
     <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <section id="comments" class="clear  comments">
     <div id="disqus_thread"></div>
     <noscript>Please enable JavaScript to view comments.</noscript>
 </section>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 var disqusShortname = 'chrisburnell';
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight javascript %}
+{%- highlight javascript -%}
 (function () {
 
     'use strict';
@@ -294,9 +294,9 @@ var disqusShortname = 'chrisburnell';
     }
 
 }());
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}
 
 We’ve met all the conditions we set when we embarked upon this task:
 

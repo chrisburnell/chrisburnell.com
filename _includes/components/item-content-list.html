@@ -1,59 +1,59 @@
-{% comment %}
+{%- comment -%}
 
   Consolidate markup for Content List Items.
 
-{% endcomment %}
-{% assign itemtype = 'WebPage' %}
-{% if page.categories contains 'article'
+{%- endcomment -%}
+{%- assign itemtype = 'WebPage' -%}
+{%- if page.categories contains 'article'
    or page.categories contains 'link'
    or page.categories contains 'note'
    or page.categories contains 'pen'
-   or page.categories contains 'recipe' %}
-    {% assign itemtype = 'BlogPosting' %}
-{% elsif page.categories contains 'talk' %}
-    {% assign itemtype = 'PresentationDigitalDocument' %}
-{% endif %}
+   or page.categories contains 'recipe' -%}
+    {%- assign itemtype = 'BlogPosting' -%}
+{%- elsif page.categories contains 'talk' -%}
+    {%- assign itemtype = 'PresentationDigitalDocument' -%}
+{%- endif -%}
 <li role="listitem">
     <article class="h-entry" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
         <a class="u-url" href="{{ page.url }}">
-                {% if page.categories contains 'article' %}
-                    {% include content/svg.html type='article' %}
-                {% elsif page.categories contains 'link' %}
-                    {% include content/svg.html type='link' %}
-                {% elsif page.categories contains 'note' %}
-                    {% include content/svg.html type='feather' %}
-                {% elsif page.categories contains 'pen' %}
-                    {% include content/svg.html type='codepen' %}
-                {% elsif page.categories contains 'recipe' %}
-                    {% include content/svg.html type='article' %}
-                {% elsif page.categories contains 'talk' %}
-                    {% include content/svg.html type='bullhorn' %}
-                {% endif %}
+                {%- if page.categories contains 'article' -%}
+                    {%- include content/svg.html type='article' -%}
+                {%- elsif page.categories contains 'link' -%}
+                    {%- include content/svg.html type='link' -%}
+                {%- elsif page.categories contains 'note' -%}
+                    {%- include content/svg.html type='feather' -%}
+                {%- elsif page.categories contains 'pen' -%}
+                    {%- include content/svg.html type='codepen' -%}
+                {%- elsif page.categories contains 'recipe' -%}
+                    {%- include content/svg.html type='article' -%}
+                {%- elsif page.categories contains 'talk' -%}
+                    {%- include content/svg.html type='bullhorn' -%}
+                {%- endif -%}
             <h4 class="title  p-name" itemprop="name">
-                {% if page.categories contains 'note' %}
+                {%- if page.categories contains 'note' -%}
                     {{ page.date | date: '%A, %d %B %Y' }}
-                {% else %}
+                {%- else -%}
                     {{ page.title }}
-                {% endif %}
+                {%- endif -%}
             </h4>
             <p class="lede  e-content" itemprop="description">
-                {% if page.lede %}
+                {%- if page.lede -%}
                     {{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.categories contains 'article' %}
+                {%- elsif page.categories contains 'article' -%}
                     Shared Articled
-                {% elsif page.categories contains 'link' %}
+                {%- elsif page.categories contains 'link' -%}
                     Shared Link
-                {% elsif page.categories contains 'note' %}
+                {%- elsif page.categories contains 'note' -%}
                     {{ page.content | markdownify | strip_html | truncatewords: 20 }}
-                {% elsif page.categories contains 'pen' %}
+                {%- elsif page.categories contains 'pen' -%}
                     Featured Pen
-                {% elsif page.categories contains 'recipe' %}
+                {%- elsif page.categories contains 'recipe' -%}
                     Recipe
-                {% elsif page.categories contains 'talk' %}
-                    Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
-                {% endif %}
+                {%- elsif page.categories contains 'talk' -%}
+                    Talk{%- if page.location -%} – Given at {{ page.location }}{%- endif -%}
+                {%- endif -%}
             </p>
-            <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+            <time class="date  dt-published{%- if page.categories contains 'note' -%}  hidden{%- endif -%}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
     </article>
 </li>

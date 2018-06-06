@@ -11,4 +11,4 @@ shorturl: rdua7
 ---
 
 
-{% include content/codepen.html %}
+{%- include content/codepen.html -%}

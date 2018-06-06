@@ -16,15 +16,15 @@ lede: All of my Talks.
 <p><em>There are {{ site.categories.talk | size }} published Talks.</em></p>
 
 <ol class="content-list" id="talks" role="list">
-    {% for page in site.categories.talk %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
+    {%- for page in site.categories.talk -%}
+        {%- include components/item-content-list.html -%}
+    {%- endfor -%}
 </ol>
 
 <hr>
 
-{% include components/buttons-list.html type='feeds' include='talks' %}
+{%- include components/buttons-list.html type='feeds' include='talks' -%}
 
 <hr>
 
-{% include components/buttons-list.html type='archives' exclude='talks' %}
+{%- include components/buttons-list.html type='archives' exclude='talks' -%}

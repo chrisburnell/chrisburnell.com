@@ -12,20 +12,20 @@ shorturl: 6dwvt
 ---
 
 
-{% include content/codepen.html height='350' %}
+{%- include content/codepen.html height='350' -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <div class="square">
     <div class="square-triangle  square-triangle--top"></div>
     <div class="square-triangle  square-triangle--bottom"></div>
     <div class="square-triangle  square-triangle--left"></div>
     <div class="square-triangle  square-triangle--right"></div>
 </div>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 html,
 body {
     height: 100%;
@@ -140,6 +140,6 @@ body {
     transform: rotateY(180deg);
   }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

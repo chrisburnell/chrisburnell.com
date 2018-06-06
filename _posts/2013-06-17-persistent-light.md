@@ -11,15 +11,15 @@ shorturl: 9sogz
 ---
 
 
-{% include content/codepen.html height='425' %}
+{%- include content/codepen.html height='425' -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <div class="square">A</div>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 html, body {
     height: 100%;
     position: relative;
@@ -116,6 +116,6 @@ body {
         transform: rotate3d(0, 0, 1, 360deg);
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

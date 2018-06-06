@@ -1,12 +1,12 @@
 <nav class="social-icons" role="navigation">
     <ul class="social-icons-list">
-    {% for link in site.data.social-icons %}
-        {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
+    {%- for link in site.data.social-icons -%}
+        {%- capture svg_type -%}{{ link.title | slugify }}{%- endcapture -%}
         <li>
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
-                {% include content/svg.html type=svg_type title=link.title %}
+            <a{%- if link.rel -%} rel="{{ link.rel }}"{%- endif -%} href="{{ link.url }}" title="{{ link.title }}">
+                {%- include content/svg.html type=svg_type title=link.title -%}
             </a>
         </li>
-    {% endfor %}
+    {%- endfor -%}
     </ul>
 </nav>

@@ -10,6 +10,6 @@ category_path: ''
 ---
 
 
-{% for page in site.posts limit: 10 %}
-    {% include components/item-feed.html %}
-{% endfor %}
+{%- for page in site.posts limit: 10 -%}
+    {%- include components/item-feed.html -%}
+{%- endfor -%}

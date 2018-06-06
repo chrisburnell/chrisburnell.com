@@ -12,9 +12,9 @@ shorturl: f7utt
 ---
 
 
-{% include content/codepen.html height='500' %}
+{%- include content/codepen.html height='500' -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <div class="container">
     <div class="square  square-1"></div>
     <div class="square  square-2"></div>
@@ -23,11 +23,11 @@ shorturl: f7utt
     <div class="circle  circle-3"></div>
     <div class="circle  circle-4"></div>
 </div>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 html {
     box-sizing: border-box;
 }
@@ -177,6 +177,6 @@ body {
 .container:hover:after {
     opacity: .5;
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

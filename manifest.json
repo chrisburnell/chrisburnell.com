@@ -38,7 +38,7 @@ icon_sizes:
             "type": "image/ico",
             "sizes": "16x16 32x32 48x48 64x64"
         },
-        {% for size in page.icon_sizes %}
+        {%- for size in page.icon_sizes -%}
         {
             "src": "/favicon-{{ size }}.png",
             "type": "image/png",
@@ -48,7 +48,7 @@ icon_sizes:
             "src": "/favicon-{{ size }}.webp",
             "type": "image/webp",
             "sizes": "{{ size }}x{{ size }}"
-        }{% if forloop.last == false %},{% endif %}
-        {% endfor %}
+        }{%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}
     ]
 }

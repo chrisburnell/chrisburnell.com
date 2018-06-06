@@ -11,6 +11,6 @@ shorturl: 6xcr7
 ---
 
 
-{% include content/codepen.html height='500' theme='tabfree' %}
+{%- include content/codepen.html height='500' theme='tabfree' -%}
 
 This pen is really more about the visual display.

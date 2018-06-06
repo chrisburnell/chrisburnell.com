@@ -1,25 +1,25 @@
-{% include components/head.html %}
-{% include components/header.html %}
+{%- include components/head.html -%}
+{%- include components/header.html -%}
 
 
 <main class="wrap" role="main">
     <section class="content" id="content" role="document" itemscope itemtype="https://schema.org/WebSite">
 
-        {% if page.page_class contains 'home' %}
-            <h1 class="tagline" role="heading" itemprop="name">{{ site.tagline }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
-        {% else %}
-            <h1 class="title" role="heading" itemprop="name">{{ page.title }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
-        {% endif %}
+        {%- if page.page_class contains 'home' -%}
+            <h1 class="tagline" role="heading" itemprop="name">{{ site.tagline }}{%- if page.sparkline -%} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{%- endif -%}</h1>
+        {%- else -%}
+            <h1 class="title" role="heading" itemprop="name">{{ page.title }}{%- if page.sparkline -%} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{%- endif -%}</h1>
+        {%- endif -%}
 
-        {% include components/banner.html %}
+        {%- include components/banner.html -%}
 
-        {% if page.page_class contains 'home' %}
+        {%- if page.page_class contains 'home' -%}
             <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ site.lede }}</h2>
-        {% elsif page.page_class contains 'search' %}
+        {%- elsif page.page_class contains 'search' -%}
             <h2 class="lede  lede--featured  js-search-meta" id="lede" itemprop="description">Search for something!</h2>
-        {% elsif page.lede %}
+        {%- elsif page.lede -%}
             <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
-        {% endif %}
+        {%- endif -%}
 
         <div class="content__body">
             {{ content }}
@@ -27,9 +27,9 @@
 
     </section>
 
-    {% include components/author.html %}
+    {%- include components/author.html -%}
 </main>
 
 
-{% include components/footer.html %}
-{% include components/foot.html %}
+{%- include components/footer.html -%}
+{%- include components/foot.html -%}

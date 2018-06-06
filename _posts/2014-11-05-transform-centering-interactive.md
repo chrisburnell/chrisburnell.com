@@ -11,17 +11,17 @@ shorturl: 8x586
 ---
 
 
-{% include content/codepen.html height='500' %}
+{%- include content/codepen.html height='500' -%}
 
-Check out the [demo version]({% post_url 2014-11-05-transform-centering %}).
+Check out the [demo version]({%- post_url 2014-11-05-transform-centering -%}).
 
-{% highlight html %}
+{%- highlight html -%}
 <textarea class="modal" disabled></textarea>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 html {
     box-sizing: border-box;
 }
@@ -50,6 +50,6 @@ body {
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

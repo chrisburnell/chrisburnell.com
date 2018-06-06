@@ -1,11 +1,11 @@
-{% if page.comments == true %}
+{%- if page.comments == true -%}
     <button type="button" class="button--show-comments  js-show-comments" id="show-comments" role="button" aria-label="Leave a comment" aria-controls="disqus_thread" aria-expanded="false" aria-pressed="false" aria-hidden="false" aria-disabled="true" disabled>
-        {% include content/svg.html type='feather' %}
+        {%- include content/svg.html type='feather' -%}
         <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}">Leave a Comment</span>
     </button>
-{% elsif page.comments == 'codepen' and page.codepen_slug %}
+{%- elsif page.comments == 'codepen' and page.codepen_slug -%}
     <a class="button" rel="external" href="{{ site.urls.codepen }}/{{ site.codepen.page }}/{{ page.codepen_slug }}/#comment-list">
-        {% include content/svg.html type='feather' %}
+        {%- include content/svg.html type='feather' -%}
         <span class="button-text">Comments on CodePen</span>
     </a>
-{% endif %}
+{%- endif -%}

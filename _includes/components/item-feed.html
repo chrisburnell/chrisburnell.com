@@ -1,36 +1,36 @@
-{% comment %}
+{%- comment -%}
 
   Consolidate markup for Feed Items.
 
-{% endcomment %}
+{%- endcomment -%}
 <item>
-    {% if page.categories contains 'note' %}
+    {%- if page.categories contains 'note' -%}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
-    {% else %}
+    {%- else -%}
         <title>{{ page.title | xml_escape }}</title>
-    {% endif %}
+    {%- endif -%}
     <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
     <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
-    {% if page.lede %}
+    {%- if page.lede -%}
         <description>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</description>
-    {% elsif page.categories contains 'article' %}
+    {%- elsif page.categories contains 'article' -%}
         <description>Shared Article</description>
-    {% elsif page.categories contains 'link' %}
+    {%- elsif page.categories contains 'link' -%}
         <description>Shared Link</description>
-    {% elsif page.categories contains 'note' %}
+    {%- elsif page.categories contains 'note' -%}
         <description>{{ page.content | markdownify | strip_html | xml_escape | truncatewords: 20 }}</description>
-    {% elsif page.categories contains 'pen' %}
+    {%- elsif page.categories contains 'pen' -%}
         <description>Featured Pen</description>
-    {% elsif page.categories contains 'recipe' %}
+    {%- elsif page.categories contains 'recipe' -%}
         <description>Recipe</description>
-    {% elsif page.categories contains 'talk' %}
-        <description>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</description>
-    {% endif %}
-    {% for category in page.categories %}
+    {%- elsif page.categories contains 'talk' -%}
+        <description>Talk{%- if page.location -%} – Given at {{ page.location | xml_escape }}{%- endif -%}</description>
+    {%- endif -%}
+    {%- for category in page.categories -%}
         <category>{{ category | xml_escape }}</category>
-    {% endfor %}
-    {% for tag in page.tags %}
+    {%- endfor -%}
+    {%- for tag in page.tags -%}
         <category>{{ tag | xml_escape }}</category>
-    {% endfor %}
+    {%- endfor -%}
 </item>

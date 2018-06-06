@@ -33,7 +33,7 @@ No longer was I just another not-yet-eclipsed star in the Geocities galaxy. More
 
 Looking back on my content, *my, how I’ve aged… thankfully*.
 
-But it’s that I have any content to speak of that I’m celebrating. Just write and just publish{% include content/footnote.html %}. A decade later, when I look back to my earliest work, it’s almost like looking into the mind of a different person. I do remember being that person, but I feel like I’ve grown a great deal since my first foray into web development.
+But it’s that I have any content to speak of that I’m celebrating. Just write and just publish{%- include content/footnote.html -%}. A decade later, when I look back to my earliest work, it’s almost like looking into the mind of a different person. I do remember being that person, but I feel like I’ve grown a great deal since my first foray into web development.
 
 Over the years of writing, editing, and not publishing, I regret almost every piece of work I’ve not published. I naïvely wanted to write prose that was ephemeral and rung true no matter how far into the future a reader might be. Sure, 
 

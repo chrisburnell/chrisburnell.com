@@ -1,11 +1,11 @@
-{% if page.footnotes %}
-    {% include content/heading.html title='Footnotes' %}
+{%- if page.footnotes -%}
+    {%- include content/heading.html title='Footnotes' -%}
     <ol>
-        {% for note in page.footnotes %}
+        {%- for note in page.footnotes -%}
             <li class="footnote" id="footnote-{{ forloop.index }}">
                 {{ note }}
                 <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="" aria-label="Back to content">↩︎</a>
             </li>
-        {% endfor %}
+        {%- endfor -%}
     </ol>
-{% endif %}
+{%- endif -%}

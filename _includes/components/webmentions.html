@@ -1,7 +1,7 @@
-{% if page.webmentions == true %}
+{%- if page.webmentions == true -%}
     <section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" aria-hidden="true">
-        {% include components/webmentions-form.html %}
+        {%- include components/webmentions-form.html -%}
         <ol id="webmentions-thread" class="default-list  webmentions-thread  js-webmentions-thread" aria-live="polite"></ol>
         <noscript>Please enable JavaScript to view WebMentions.</noscript>
     </section>
-{% endif %}
+{%- endif -%}

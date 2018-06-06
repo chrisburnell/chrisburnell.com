@@ -24,7 +24,7 @@ syndication:
 ---
 
 
-In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
+In [I’ll Scratch Your Back, And Mine Too]({%- post_url 2013-10-29-ill-scratch-your-back -%}), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
 
 
 --------
@@ -34,13 +34,13 @@ I’ve been revising the CSS architecture of my website recently trying to learn
 
 In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/){:rel="external"} and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
 
-{% highlight html %}
+{%- highlight html -%}
 <a href="/article/interesting-article">
     <span>Continue reading </span>Interesting Article by Emily
 </a>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% highlight css %}
+{%- highlight css -%}
 a span {
     width:  1px;
     height: 1px;
@@ -48,7 +48,7 @@ a span {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 <aside><p>This technique for hiding text comes from <a rel="external" href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding Content for Accessibility</a>. Credit to <a rel="external" href="https://snook.ca/">Jonathan Snook</a>.</p></aside>
 
@@ -62,7 +62,7 @@ However, the code above *does* allow the element’s content to be read aloud, a
 
 In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
-{% highlight scss %}
+{%- highlight scss -%}
 @mixin hidden() {
     width:  1px !important;
     height: 1px !important;
@@ -78,37 +78,37 @@ a {
         @include hidden;
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 
-{% include content/heading.html title='One Step Further' %}
+{%- include content/heading.html title='One Step Further' -%}
 
 We can tighten this up by slowing down a touch. What happens if we *do want* a `span` inside an anchor to be displayed visually?
 
-{% highlight html %}
+{%- highlight html -%}
 <a href="/article/interesting-article">
     <span>Continue reading</span>Interesting Article by <span class="author--emily">Emily</span>
 </a>
-{% endhighlight %}
+{%- endhighlight -%}
 
 Looks like we’ve been a bit heavy-handed in hiding *all* `spans` nested inside anchors because we can’t differentiate here between our two `spans`. Let’s revise a bit.
 
-{% highlight scss %}
+{%- highlight scss -%}
 a {
     span:not([class]) {
         @include hidden;
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
+Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({%- post_url 2013-10-29-ill-scratch-your-back -%}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
 
-{% include content/heading.html title='A Prickly Pear' %}
+{%- include content/heading.html title='A Prickly Pear' -%}
 
 But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html){:rel="external"}. Let me demonstrate with a modified snippet of HTML from my site.
 
-{% highlight html %}
+{%- highlight html -%}
 <aside class="author" itemscope itemtype="https://schema.org/Person">
     <div class="author-name">
         by <a href="/about/">
@@ -116,7 +116,7 @@ But there’s a problem if we want to use [Microdata](https://schema.org/docs/do
            </a>
     </div>
 </aside>
-{% endhighlight %}
+{%- endhighlight -%}
 
 I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person){:rel="external"}), but to sum up: we can use different attributes ([boolean](https://html.spec.whatwg.org/#boolean-attributes){:rel="external"} or [enumerated](https://html.spec.whatwg.org/#keywords-and-enumerated-attributes){:rel="external"}) to give the browser context about our data.
 
@@ -124,18 +124,18 @@ So instead of printing, for example, an author’s name, we’ll wrap it in a `s
 
 But let’s focus on the `span` with the `itemprop` attribute. This isn’t text I want to be hidden, so this breaks the rule we established before (all `spans` which are children of an anchor are hidden). But we can solve this with a further modification to our SCSS snippet.
 
-{% highlight scss %}
+{%- highlight scss -%}
 a {
     span:not([class]):not([itemprop]) {
         @include hidden;
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
 Now we can be sure to only target `spans` without a `class` *or* `itemprop` attribute!
 
 
-{% include content/heading.html title='The Takeaway' %}
+{%- include content/heading.html title='The Takeaway' -%}
 
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 

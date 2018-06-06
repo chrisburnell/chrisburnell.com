@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   Create a Fragment Anchor for linking to a specific part of the page
 
   @param {String} id *
@@ -7,24 +7,24 @@
   @param {String} rel
 
   @example
-    {% include content/fragment-anchor.html id='12345' %}
+    {%- include content/fragment-anchor.html id='12345' -%}
     // <a href="#12345" class="fragment-anchor">#12345</a>
 
-{% endcomment %}
-{% if include.id %}
-    {% assign anchor_href = include.id | prepend: '#' %}
-{% elsif include.href %}
-    {% assign anchor_href = include.href %}
-{% endif %}
-{% if include.id %}
-    {% capture anchor_slug %}{{ include.id | prepend: 'data-slug="' | append: '"' }}{% endcapture %}
-{% endif %}
-{% if include.title %}
-    {% capture anchor_title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
-{% endif %}
-{% if include.rel %}
-    {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
-{% endif %}
+{%- endcomment -%}
+{%- if include.id -%}
+    {%- assign anchor_href = include.id | prepend: '#' -%}
+{%- elsif include.href -%}
+    {%- assign anchor_href = include.href -%}
+{%- endif -%}
+{%- if include.id -%}
+    {%- capture anchor_slug -%}{{ include.id | prepend: 'data-slug="' | append: '"' }}{%- endcapture -%}
+{%- endif -%}
+{%- if include.title -%}
+    {%- capture anchor_title -%}{{ include.title | prepend: 'title="' | append: '"' }}{%- endcapture -%}
+{%- endif -%}
+{%- if include.rel -%}
+    {%- capture anchor_rel -%}{{ include.rel | prepend: 'rel="' | append: '"' }}{%- endcapture -%}
+{%- endif -%}
 <a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>
-    {% include content/svg.html type='link' %}
+    {%- include content/svg.html type='link' -%}
 </a>

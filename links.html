@@ -12,15 +12,15 @@ sparkline: links
 <p><em>There are {{ site.categories.link | size }} published Links.</em></p>
 
 <ol class="content-list" id="links" role="list">
-    {% for page in site.categories.link %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
+    {%- for page in site.categories.link -%}
+        {%- include components/item-content-list.html -%}
+    {%- endfor -%}
 </ol>
 
 <hr>
 
-{% include components/buttons-list.html type='feeds' include='links' %}
+{%- include components/buttons-list.html type='feeds' include='links' -%}
 
 <hr>
 
-{% include components/buttons-list.html type='archives' exclude='links' %}
+{%- include components/buttons-list.html type='archives' exclude='links' -%}

@@ -11,15 +11,15 @@ shorturl: b3sh4
 ---
 
 
-{% include content/codepen.html height='200' %}
+{%- include content/codepen.html height='200' -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <button>Hover Me</button>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 html,
 body {
     height: 100%;
@@ -70,6 +70,6 @@ button {
         border-right-color: rgba(orange, .6);
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}

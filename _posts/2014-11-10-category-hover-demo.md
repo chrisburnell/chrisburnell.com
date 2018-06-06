@@ -12,11 +12,11 @@ shorturl: 058xp
 ---
 
 
-{% include content/codepen.html height='525' %}
+{%- include content/codepen.html height='525' -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight html %}
+{%- highlight html -%}
 <div class="modal">
     <div class="card  archipelago">
         <a class="card-category" href="#">
@@ -44,13 +44,13 @@ shorturl: 058xp
         </a>
     </div>
 </div>
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}
 
-{% include content/code-toggle-top.html %}
+{%- include content/code-toggle-top.html -%}
 
-{% highlight scss %}
+{%- highlight scss -%}
 // Website Colour Palette
 $white:        #FFFFFF;
 $black:        #000000;
@@ -167,6 +167,6 @@ html {
         }
     }
 }
-{% endhighlight %}
+{%- endhighlight -%}
 
-{% include content/code-toggle-bottom.html %}
+{%- include content/code-toggle-bottom.html -%}
