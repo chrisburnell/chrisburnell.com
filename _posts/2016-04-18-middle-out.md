@@ -10,6 +10,8 @@ location_url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-
 
 comments: false
 shorturl: 8fanl
+notist: true
+notist_slug: Ua35T5/supporting-middle-out-in-css
 speakerdeck: true
 speakerdeck_slug: supporting-middle-out-in-css
 vimeo: true

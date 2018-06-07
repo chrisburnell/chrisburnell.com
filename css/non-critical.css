@@ -5,7 +5,7 @@ button,
     border-radius: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: "League Gothic", Impact, sans-serif;
+    font-family: "Heebo", "League Gothic", sans-serif;
     font-family: var(--font-family-alpha);
     -webkit-user-select: none;
        -moz-user-select: none;

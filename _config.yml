@@ -30,6 +30,7 @@ urls:
   lastfm:             https://last.fm/user/chrisburnell
   license:            https://www.gnu.org/licenses/gpl-3.0.txt
   londonwebstandards: https://londonwebstandards.org
+  notist:             https://noti.st/chrisburnell
   rss:                /feed.xml
   rss_articles:       /feed-articles.xml
   rss_links:          /feed-links.xml

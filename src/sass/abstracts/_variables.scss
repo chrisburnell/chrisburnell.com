@@ -293,8 +293,8 @@ $font-family-default: "Proxima Nova",
                       "Helvetica Neue",
                       sans-serif !default;
 /// @type List
-$font-family-alpha: "League Gothic",
-                    Impact,
+$font-family-alpha: "Heebo",
+                    "League Gothic",
                     sans-serif !default;
 /// @type List
 $font-family-serif: Georgia,
@@ -325,6 +325,7 @@ $font-families: (
 /// @prop {Number} weight - Font Weight
 /// @prop {String} filename - Font Filename
 $font-families-styles: (
+    ("Heebo",         "Black",    normal, 900, "heebo-black"),
     ("League Gothic", "Regular",  normal, 400, "league-gothic-regular"),
     ("Proxima Nova",  "Regular",  normal, 400, "proxima-nova-regular"),
     ("Proxima Nova",  "Italic",   italic, 400, "proxima-nova-italic"),

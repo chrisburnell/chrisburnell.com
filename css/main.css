@@ -63,7 +63,7 @@
     --font-size-small: 0.875rem;
     --font-size-small-relative: 0.875em;
     --font-family-default: Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-    --font-family-alpha: League Gothic, Impact, sans-serif;
+    --font-family-alpha: Heebo, League Gothic, sans-serif;
     --font-family-serif: Georgia, serif;
     --font-family-monospace: Menlo for Powerline, Menlo, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
     --line-height-default: 1.875;
@@ -106,11 +106,20 @@
 }
 
 @font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 900;
+    font-display: fallback;
+    src: local("Heebo Black"), url("/fonts/heebo-black.woff2") format("woff2"), url("/fonts/heebo-black.woff") format("woff"), url("/fonts/heebo-black.ttf") format("truetype");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
     font-family: "League Gothic";
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
-    src: local("League Gothic Regular"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/league-gothic-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/league-gothic-regular.ttf") format("truetype");
+    src: local("League Gothic Regular"), url("/fonts/league-gothic-regular.woff2") format("woff2"), url("/fonts/league-gothic-regular.woff") format("woff"), url("/fonts/league-gothic-regular.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -119,7 +128,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
-    src: local("Proxima Nova Regular"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-regular.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-regular.ttf") format("truetype");
+    src: local("Proxima Nova Regular"), url("/fonts/proxima-nova-regular.woff2") format("woff2"), url("/fonts/proxima-nova-regular.woff") format("woff"), url("/fonts/proxima-nova-regular.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -128,7 +137,7 @@
     font-style: italic;
     font-weight: 400;
     font-display: fallback;
-    src: local("Proxima Nova Italic"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-italic.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-italic.ttf") format("truetype");
+    src: local("Proxima Nova Italic"), url("/fonts/proxima-nova-italic.woff2") format("woff2"), url("/fonts/proxima-nova-italic.woff") format("woff"), url("/fonts/proxima-nova-italic.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -137,7 +146,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: fallback;
-    src: local("Proxima Nova Semibold"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff2") format("woff2"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.woff") format("woff"), url("https://chrisburnell.com/fonts/proxima-nova-semibold.ttf") format("truetype");
+    src: local("Proxima Nova Semibold"), url("/fonts/proxima-nova-semibold.woff2") format("woff2"), url("/fonts/proxima-nova-semibold.woff") format("woff"), url("/fonts/proxima-nova-semibold.ttf") format("truetype");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -388,7 +397,7 @@ button,
     border-radius: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: "League Gothic", Impact, sans-serif;
+    font-family: "Heebo", "League Gothic", sans-serif;
     font-family: var(--font-family-alpha);
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -543,10 +552,11 @@ h6.monospace {
 h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: "League Gothic", Impact, sans-serif;
+    font-family: "Heebo", "League Gothic", sans-serif;
     font-family: var(--font-family-alpha);
     font-size: 4.5rem;
     font-size: var(--font-size-alpha);
+    font-weight: 900;
     line-height: 1;
     text-shadow: 0.25rem 0.25rem 0 rgba(6, 6, 6, 0.05);
     text-shadow: var(--border-width-default) var(--border-width-default) 0 var(--color-black--delta);

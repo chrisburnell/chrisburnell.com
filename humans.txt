@@ -17,7 +17,7 @@ searchable: false
     URL:           {{ site.url }}
     Language:      {{ site.language }}
     Doctype:       HTML5
-    Fonts:         League Gothic, Proxima Nova
+    Fonts:         Heebo, League Gothic, Proxima Nova
     Compiled with: Jekyll, Gulp
 
 /* LANGUAGES */

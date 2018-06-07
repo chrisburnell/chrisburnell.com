@@ -4,7 +4,7 @@ categories: article
 date: 2018-04-21 09:00:00
 
 title: A Decade in the Making
-lede: Today marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it <em>publicly</em>, <em>irreversibly</em>, <em>for eternity</em>, might seem a little out of character. A decade later, what’s changed? What have I learned? What will I be doing differently in another decade’s time?
+lede: Today marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it publicly, irreversibly, for eternity, might seem a little out of character. A decade later, what’s changed? What have I learned? What will I be doing differently in another decade’s time?
 tags:
 - personal
 

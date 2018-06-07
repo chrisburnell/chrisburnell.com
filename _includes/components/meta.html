@@ -57,7 +57,6 @@
                                                          (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
                                                          <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>)
                                                      </small>{% endcapture %}
-                    }
                 {% elsif syndication contains 'gist.github.com' %}
                     {% capture syndication_gist %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{% endcapture %}
                 {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
