@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 .logo {
     @include non-selectable;
     height: $avatar-size;
@@ -19,8 +18,8 @@
         @include transition(transform var(--transition-duration-long));
         @include will-change(transform);
         @include v(fill, raven);
-        width:  $logo-size;
-        width:  var(--logo-size);
+        width: $logo-size;
+        width: var(--logo-size);
         height: $logo-size;
         height: var(--logo-size);
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);

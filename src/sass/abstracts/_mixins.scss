@@ -3,7 +3,6 @@
 /// @group abstracts
 ////
 
-
 ///
 /// Add a border-radius.
 ///
@@ -24,12 +23,10 @@
     @if not is-length($thickness) {
         @if map-has-key($border-radii, $thickness) {
             $thickness: map-get($border-radii, $thickness);
-        }
-        @else if is-edge($thickness) {
+        } @else if is-edge($thickness) {
             $border-radius: $thickness;
             $thickness: $border-radius-default;
-        }
-        @else {
+        } @else {
             @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
         }
     }
@@ -41,15 +38,13 @@
         $bottom-left: if($border-radius == "bottom" or $border-radius == "left" or $border-radius == "bottom-left", $thickness, 0);
 
         $border-radius: $top-left $top-right $bottom-right $bottom-left;
-    }
-    @else {
+    } @else {
         $border-radius: $thickness;
     }
 
     background-clip: padding-box;
     border-radius: $border-radius;
 }
-
 
 ///
 /// Change the case of text and apply appropriate letter-spacing.
@@ -71,12 +66,10 @@
 
     @if $letter-spacing != null {
         letter-spacing: $letter-spacing;
-    }
-    @else if $case == "uppercase" {
+    } @else if $case == "uppercase" {
         letter-spacing: $letter-spacing-uppercase;
     }
 }
-
 
 ///
 /// Clear an element of floats.
@@ -95,7 +88,6 @@
         clear: both;
     }
 }
-
 
 ///
 /// Specify a font-family.
@@ -131,7 +123,6 @@
     }
 }
 
-
 ///
 /// Hyphenate text.
 ///
@@ -144,7 +135,6 @@
     overflow-wrap: break-word;
     hyphens: auto;
 }
-
 
 ///
 /// Make text non-selectable.
@@ -160,7 +150,6 @@
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
 }
-
 
 ///
 /// Absolutely position an element.
@@ -207,24 +196,20 @@
 /// @throw Error if no parameters are passed.
 ///
 @mixin absolute($position, $offset: 0) {
-
     @if not $position {
         @error "absolute() expects one parameter.";
-    }
-    @else if $position == none {
+    } @else if $position == none {
         position: relative;
         top: auto;
         right: auto;
         bottom: auto;
         left: auto;
-    }
-    @else if $position == center {
+    } @else if $position == center {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-    }
-    @else if str-index(#{$position}, "full") {
+    } @else if str-index(#{$position}, "full") {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -233,56 +218,47 @@
             @if str-index(#{$position}, "offset") {
                 right: $offset;
                 left: $offset;
-            }
-            @else {
+            } @else {
                 right: 0;
                 left: 0;
             }
-        }
-        @else if str-index(#{$position}, "right") {
+        } @else if str-index(#{$position}, "right") {
             right: $offset;
 
             @if str-index(#{$position}, "offset") {
                 top: $offset;
                 bottom: $offset;
-            }
-            @else {
+            } @else {
                 top: 0;
                 bottom: 0;
             }
-        }
-        @else if str-index(#{$position}, "bottom") {
+        } @else if str-index(#{$position}, "bottom") {
             bottom: $offset;
 
             @if str-index(#{$position}, "offset") {
                 right: $offset;
                 left: $offset;
-            }
-            @else {
+            } @else {
                 right: 0;
                 left: 0;
             }
-        }
-        @else if str-index(#{$position}, "left") {
+        } @else if str-index(#{$position}, "left") {
             left: $offset;
 
             @if str-index(#{$position}, "offset") {
                 top: $offset;
                 bottom: $offset;
-            }
-            @else {
+            } @else {
                 top: 0;
                 bottom: 0;
             }
-        }
-        @else {
+        } @else {
             top: $offset;
             right: $offset;
             bottom: $offset;
             left: $offset;
         }
-    }
-    @else if is-edge($position) {
+    } @else if is-edge($position) {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -316,7 +292,6 @@
     }
 }
 
-
 ///
 /// Define characters for quotes
 ///
@@ -344,7 +319,6 @@
     }
 }
 
-
 ///
 /// Reset Font Size
 ///
@@ -368,14 +342,12 @@
         #{$child} {
             @include v(font-size, $font-size);
         }
-    }
-    @else {
+    } @else {
         & > * {
             @include v(font-size, $font-size);
         }
     }
 }
-
 
 ///
 /// Tabular Lining Numerals
@@ -386,7 +358,6 @@
     font-variant-numeric: lining-nums tabular-nums;
     font-feature-settings: "lnum", "tnum";
 }
-
 
 ///
 /// Generate transitions based on flexible input parameters.
@@ -437,14 +408,12 @@
         @each $transition-segment in $transitions {
             $transition: append($transition, unpack-transition($transition-segment), comma);
         }
-    }
-    @else {
+    } @else {
         $transition: unpack-transition($transitions...);
     }
 
     transition: $transition;
 }
-
 
 ///
 /// Describes CSS changes to the browser; to be coupled with any transitions.
@@ -470,7 +439,6 @@
 
     will-change: $changes;
 }
-
 
 ///
 /// Select a CSS variable and provide a fallback
@@ -499,8 +467,7 @@
         $variable-fallback: map-get($nest-map, $variable);
         // our CSS Variable output
         $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$variable});
-    }
-    @else {
+    } @else {
         // get the map from map name
         $map: map-get($variable-map, $map-name);
         // fallback value, grab the variable's value from the map
@@ -513,8 +480,7 @@
     @if $show-fallback {
         @if $important {
             #{$property}: $variable-fallback !important;
-        }
-        @else {
+        } @else {
             #{$property}: $variable-fallback;
         }
     }
@@ -522,18 +488,16 @@
     // CSS Variable
     @if $important {
         #{$property}: $variable-output !important;
-    }
-    @else {
+    } @else {
         #{$property}: $variable-output;
     }
 }
-
 
 ///
 /// Visually hide an element properly.
 ///
 @mixin hidden() {
-    width:  1px !important;
+    width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
     margin: -1px !important;

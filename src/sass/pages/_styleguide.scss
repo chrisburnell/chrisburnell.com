@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-
 .page--style-guide {
     .lede + h3 {
         margin-top: 0;
@@ -55,7 +54,6 @@
     }
 }
 
-
 .transition-example {
     position: relative;
     margin-bottom: #{$measure-large + $measure-medium};
@@ -85,7 +83,7 @@
     @include v(border-width, thin);
     @include v(border-style, default);
     @include v(border-color, alto);
-    margin-left:  auto;
+    margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
     position: relative;

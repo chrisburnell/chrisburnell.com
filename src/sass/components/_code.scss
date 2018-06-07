@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#code-block-with-language
 ////
 
-
 // Highlighted Code Blocks
 code[data-lang] {
     @include v(padding-top, large);
@@ -72,10 +71,7 @@ code[data-lang] {
         &::after {
             @include border-radius(bottom);
             content: "";
-            background-image: scrim-gradient(
-                $color-transparent,
-                $color-black--alpha
-            );
+            background-image: scrim-gradient($color-transparent, $color-black--alpha);
             // fade out over the last four lines
             // font size * line height * 4 lines
             background-size: 100% #{$font-size-small * $line-height-code * 4};
@@ -85,7 +81,7 @@ code[data-lang] {
             top: 0;
             right: 0;
             bottom: $measure-medium;
-            left:  0;
+            left: 0;
         }
     }
 }

@@ -3,7 +3,6 @@
 /// @group abstracts
 ////
 
-
 ///
 /// Test if `$value` is a valid direction
 ///
@@ -24,7 +23,6 @@
 
     @return $is-keyword or $is-angle;
 }
-
 
 ///
 /// Test if `$value` is a valid corner or side
@@ -47,7 +45,6 @@
     @return $is-side or $is-corner;
 }
 
-
 ///
 /// Test if `$value` is a valid length
 ///
@@ -67,7 +64,6 @@
 
     @return $is-length;
 }
-
 
 ///
 /// Contrasting Text Color
@@ -99,7 +95,6 @@
     @return $text-color-light;
 }
 
-
 ///
 /// Accepts 2 or more parameters.
 ///
@@ -129,12 +124,8 @@
         $direction: "to bottom";
     }
 
-    @return linear-gradient(
-        #{$direction},
-        #{$color-stops}
-    );
+    @return linear-gradient(#{$direction}, #{$color-stops});
 }
-
 
 ///
 /// Accepts 2 or 3 parameters.
@@ -158,26 +149,10 @@
     }
 
     $start-color: nth($color-stops, 1);
-    $end-color:   nth($color-stops, 2);
+    $end-color: nth($color-stops, 2);
 
-    @return linear-gradient(
-        #{$direction},
-        mix($start-color, $end-color,  100%)    0%,
-        mix($start-color, $end-color, 73.8%) 19.0%,
-        mix($start-color, $end-color, 54.1%) 34.0%,
-        mix($start-color, $end-color, 38.2%) 47.0%,
-        mix($start-color, $end-color, 27.8%) 56.5%,
-        mix($start-color, $end-color, 19.4%) 65.0%,
-        mix($start-color, $end-color, 12.6%) 73.0%,
-        mix($start-color, $end-color,  7.5%) 80.2%,
-        mix($start-color, $end-color,  4.2%) 86.1%,
-        mix($start-color, $end-color,  2.1%) 91.0%,
-        mix($start-color, $end-color,  0.8%) 95.2%,
-        mix($start-color, $end-color,  0.2%) 98.2%,
-        mix($start-color, $end-color,    0%)  100%
-    );
+    @return linear-gradient(#{$direction}, mix($start-color, $end-color, 100%) 0%, mix($start-color, $end-color, 73.8%) 19%, mix($start-color, $end-color, 54.1%) 34%, mix($start-color, $end-color, 38.2%) 47%, mix($start-color, $end-color, 27.8%) 56.5%, mix($start-color, $end-color, 19.4%) 65%, mix($start-color, $end-color, 12.6%) 73%, mix($start-color, $end-color, 7.5%) 80.2%, mix($start-color, $end-color, 4.2%) 86.1%, mix($start-color, $end-color, 2.1%) 91%, mix($start-color, $end-color, 0.8%) 95.2%, mix($start-color, $end-color, 0.2%) 98.2%, mix($start-color, $end-color, 0%) 100%);
 }
-
 
 ///
 /// Remap a number from one range to another
@@ -201,9 +176,9 @@
         @return false;
     }
 
-    $old-minimum: if(length($ranges) == 2, 0,               nth($ranges, 1));
+    $old-minimum: if(length($ranges) == 2, 0, nth($ranges, 1));
     $old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
-    $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
+    $new-minimum: if(length($ranges) == 2, 0, nth($ranges, 3));
     $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
     @if $old-minimum >= $old-maximum {
@@ -225,7 +200,6 @@
 
     @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
-
 
 // stylelint-disable max-nesting-depth
 ///
@@ -279,27 +253,18 @@
                     @if $size >= 3 {
                         @each $third in $data {
                             @if $second != $third and not index($seen-second, $third) {
-                                $unique-group: (
-                                    $first,
-                                    $second,
-                                    $third
-                                );
+                                $unique-group: ($first, $second, $third);
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    }
-                    @else {
-                        $unique-group: (
-                            $first,
-                            $second
-                        );
+                    } @else {
+                        $unique-group: ($first, $second);
                         $unique-groups: append($unique-groups, $unique-group);
                     }
                 }
             }
         }
-    }
-    @else if type-of($data) == map {
+    } @else if type-of($data) == map {
         $seen-first: ();
         @each $first-key, $first-value in $data {
             $seen-first: append($seen-first, $first-key);
@@ -311,27 +276,34 @@
                         @each $third-key, $third-value in $data {
                             @if $second-key != $third-key and not index($seen-second, $third-key) {
                                 $unique-group: (
-                                    ($first-key: $first-value),
-                                    ($second-key: $second-value),
-                                    ($third-key: $third-value)
+                                    (
+                                        $first-key: $first-value
+                                    ),
+                                    (
+                                        $second-key: $second-value
+                                    ),
+                                    (
+                                        $third-key: $third-value
+                                    )
                                 );
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    }
-                    @else {
+                    } @else {
                         $unique-group: (
-                            ($first-key: $first-value),
-                            ($second-key: $second-value)
+                            (
+                                $first-key: $first-value
+                            ),
+                            (
+                                $second-key: $second-value
+                            )
                         );
                         $unique-groups: append($unique-groups, $unique-group);
                     }
                 }
             }
         }
-    }
-
-    @else {
+    } @else {
         @warn "`unique-groups()` expects either a List or Map `$data` parameter.";
         @return false;
     }
@@ -339,7 +311,6 @@
     @return $unique-groups;
 }
 // stylelint-enable max-nesting-depth
-
 
 ///
 /// Unpack Transition List
@@ -367,7 +338,6 @@
 
     @return $property $time $function $delay;
 }
-
 
 ///
 /// Walk through a List with a Function
@@ -402,7 +372,6 @@
 
     @return $list;
 }
-
 
 ///
 /// Simplify z-index.

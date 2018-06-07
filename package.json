@@ -30,14 +30,14 @@
     "gulp-newer": "1.4.0",
     "gulp-plumber": "1.2.0",
     "gulp-postcss": "7.0.1",
+    "@bdchauvette/gulp-prettier": "^2.0.0",
     "gulp-rename": "1.2.3",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "gulp-webp": "^3.0.0",
-    "postcss-scss": "1.0.5",
-    "snyk": "^1.69.6",
-    "stylelint": "^9.2.0"
+    "prettier": "^1.13.4",
+    "snyk": "^1.69.6"
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,7 @@ let imagemin = require('gulp-imagemin');
 let newer = require('gulp-newer');
 let plumber = require('gulp-plumber');
 let postcss = require('gulp-postcss');
+let prettier = require('@bdchauvette/gulp-prettier');
 let rename = require('gulp-rename');
 let sass = require('gulp-sass');
 let sourcemaps = require('gulp-sourcemaps');
@@ -26,8 +27,6 @@ let webp = require('gulp-webp');
 // Define other objects
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
-let scss_syntax = require('postcss-scss');
-let stylelint = require('stylelint');
 
 // Define paths
 const paths = {
@@ -49,18 +48,20 @@ const paths = {
 
 // -----------------------------------------------------------------------------
 
-// Lint Sass
-gulp.task('css-lint', () => {
+// Prettify Sass
+gulp.task('css-prettify', () => {
     return gulp.src([`!${paths.css.src}/vendors/*.scss`,
                      `${paths.css.src}/**/*.scss`])
         .pipe(plumber())
-        .pipe(postcss([
-            stylelint()
-        ], { syntax: scss_syntax }));
+        .pipe(prettier({
+            printWidth: 999,
+            tabWidth: 4
+        }))
+        .pipe(gulp.dest(`${paths.css.src}/`));
 });
 
 // Compile CSS from Sass
-gulp.task('css-main', ['css-lint'], () => {
+gulp.task('css-main', ['css-prettify'], () => {
     return gulp.src([`${paths.css.src}/main.scss`,
                      `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
@@ -75,13 +76,17 @@ gulp.task('css-main', ['css-lint'], () => {
         .pipe(postcss([
             autoprefixer()
         ]))
-        .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(rename({
-            suffix: '.min'
+        .pipe(prettier({
+            printWidth: 999,
+            tabWidth: 4
         }))
+        .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(postcss([
             cssnano()
         ]))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(`${paths.css.dest}/`));
 });

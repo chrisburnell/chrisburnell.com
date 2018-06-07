@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 footer {
     @include v(background-color, kaiser);
     @include v(color, alto);
@@ -38,7 +37,7 @@ footer {
 }
 
 .footer-home-anchor {
-    width:  3.125rem;
+    width: 3.125rem;
     height: 3.125rem;
     @include v(margin-right, small);
     vertical-align: middle;

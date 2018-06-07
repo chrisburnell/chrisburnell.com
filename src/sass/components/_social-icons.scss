@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 .social-icons {
     @include media("screen", "<=medium") {
         @include v(margin-top, medium);

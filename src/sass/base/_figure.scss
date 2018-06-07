@@ -3,7 +3,6 @@
 /// @group base
 ////
 
-
 figure {
     max-width: 100%;
     display: flex;
@@ -35,8 +34,7 @@ figure {
         text-decoration: none;
     }
 
-    & > a
-    figcaption {
+    & > a figcaption {
         @include v(color, dove);
         font-style: italic;
     }

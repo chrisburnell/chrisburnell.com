@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
-
 // Monospace Elements
 code,
 kbd,
@@ -40,7 +39,7 @@ mark,
 samp {
     @include border-radius(thin);
     padding: 0.25em;
-    @include v(line-height, medium)
+    @include v(line-height, medium);
 }
 %heading-elements code,
 %content-elements code,

@@ -3,8 +3,7 @@
 /// @group components
 ////
 
-
-/*dl*/.terminology {
+.terminology {
     @include v(padding-bottom, large);
     @include v(border-bottom-width, thin);
     @include v(border-bottom-style, default);

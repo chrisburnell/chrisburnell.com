@@ -4,9 +4,9 @@ button,
     background-clip: padding-box;
     border-radius: 0.25rem;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     transition: background-color 0.2s ease 0s;
@@ -38,8 +38,8 @@ button,
     white-space: nowrap;
     cursor: pointer;
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 button:focus,
@@ -50,7 +50,9 @@ button:focus,
     outline-offset: var(--border-width-thin);
 }
 
-button:hover, button:focus, button:active,
+button:hover,
+button:focus,
+button:active,
 .button:hover,
 .button:focus,
 .button:active {
@@ -65,15 +67,16 @@ button:active,
     padding-bottom: 0;
     margin-bottom: 0.182em;
     margin-bottom: var(--border-width-button);
-    box-shadow: inset -1px 0 0 #507791;
-    box-shadow: inset 0-var(--border-width-hairline) 0 0 var(--color-bowhead);
+    box-shadow: inset 0 -1px 0 0 #507791;
+    box-shadow: inset 0 calc(-1 * var(--border-width-hairline)) 0 0 var(--color-bowhead);
     -webkit-transform: translateY(0.182em);
-            transform: translateY(0.182em);
+    transform: translateY(0.182em);
     -webkit-transform: translateY(var(--border-width-button));
-            transform: translateY(var(--border-width-button));
+    transform: translateY(var(--border-width-button));
 }
 
-button::before, button::after,
+button::before,
+button::after,
 .button::before,
 .button::after {
     position: absolute;
@@ -85,7 +88,8 @@ button::before, button::after,
     height: var(--border-width-button);
 }
 
-button:active::before, button:active::after,
+button:active::before,
+button:active::after,
 .button:active::before,
 .button:active::after {
     top: -0.182em;
@@ -102,7 +106,7 @@ button[disabled],
 button .icon,
 .button .icon {
     -webkit-filter: drop-shadow(0 0 1px rgba(6, 6, 6, 0.1));
-            filter: drop-shadow(0 0 1px rgba(6, 6, 6, 0.1));
+    filter: drop-shadow(0 0 1px rgba(6, 6, 6, 0.1));
 }
 
 button {
@@ -153,52 +157,31 @@ ul:not([class]) + ol:not([class]),
 dl:not([class]) ol:not([class]),
 dl:not([class]) + ol:not([class]),
 .default-list ol:not([class]),
-.default-list + ol:not([class]), ol:not([class])
-ul:not([class]),
-ol:not([class]) +
-ul:not([class]),
-ul:not([class])
-ul:not([class]),
-ul:not([class]) +
-ul:not([class]),
-dl:not([class])
-ul:not([class]),
-dl:not([class]) +
-ul:not([class]),
-.default-list
-ul:not([class]),
-.default-list +
-ul:not([class]), ol:not([class])
-dl:not([class]),
-ol:not([class]) +
-dl:not([class]),
-ul:not([class])
-dl:not([class]),
-ul:not([class]) +
-dl:not([class]),
-dl:not([class])
-dl:not([class]),
-dl:not([class]) +
-dl:not([class]),
-.default-list
-dl:not([class]),
-.default-list +
-dl:not([class]), ol:not([class])
-.default-list,
-ol:not([class]) +
-.default-list,
-ul:not([class])
-.default-list,
-ul:not([class]) +
-.default-list,
-dl:not([class])
-.default-list,
-dl:not([class]) +
-.default-list,
-.default-list
-.default-list,
-.default-list +
-.default-list {
+.default-list + ol:not([class]),
+ol:not([class]) ul:not([class]),
+ol:not([class]) + ul:not([class]),
+ul:not([class]) ul:not([class]),
+ul:not([class]) + ul:not([class]),
+dl:not([class]) ul:not([class]),
+dl:not([class]) + ul:not([class]),
+.default-list ul:not([class]),
+.default-list + ul:not([class]),
+ol:not([class]) dl:not([class]),
+ol:not([class]) + dl:not([class]),
+ul:not([class]) dl:not([class]),
+ul:not([class]) + dl:not([class]),
+dl:not([class]) dl:not([class]),
+dl:not([class]) + dl:not([class]),
+.default-list dl:not([class]),
+.default-list + dl:not([class]),
+ol:not([class]) .default-list,
+ol:not([class]) + .default-list,
+ul:not([class]) .default-list,
+ul:not([class]) + .default-list,
+dl:not([class]) .default-list,
+dl:not([class]) + .default-list,
+.default-list .default-list,
+.default-list + .default-list {
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
 }
@@ -242,7 +225,7 @@ ol:not([class]) > li::before,
 ol.default-list > li::before {
     font-variant-numeric: lining-nums tabular-nums;
     -webkit-font-feature-settings: "lnum", "tnum";
-            font-feature-settings: "lnum", "tnum";
+    font-feature-settings: "lnum", "tnum";
     content: counter(ordered-list, decimal) ".";
 }
 
@@ -361,7 +344,7 @@ blockquote p:not(:last-of-type)::after {
     white-space: nowrap !important;
     clip: rect(0 0 0 0) !important;
     -webkit-clip-path: inset(100%) !important;
-            clip-path: inset(100%) !important;
+    clip-path: inset(100%) !important;
 }
 
 blockquote cite {
@@ -378,7 +361,6 @@ blockquote cite::before {
     content: "– ";
 }
 
-/*blockquote*/
 .twitter-tweet {
     margin: 0 auto 1.25rem !important;
     contain: strict;
@@ -417,7 +399,6 @@ figure:not(.highlight) {
     overflow-y: hidden;
 }
 
-
 figure > a {
     background-clip: padding-box;
     border-radius: 0.375rem;
@@ -454,7 +435,7 @@ var,
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
+    font-variant-ligatures: none;
     font-variant-numeric: proportional-nums;
 }
 
@@ -465,14 +446,12 @@ samp {
     font-size: var(--font-size-small);
 }
 
-
 ins,
 mark,
 samp,
 var {
     overflow-wrap: break-word;
 }
-
 
 del,
 ins,
@@ -485,7 +464,6 @@ samp {
     line-height: 1.429;
     line-height: var(--line-height-medium);
 }
-
 
 samp {
     background-color: rgba(95, 138, 166, 0.1);
@@ -519,8 +497,8 @@ pre {
     margin-bottom: 1.25rem;
     margin-bottom: var(--measure-medium);
     -moz-tab-size: 4;
-      -o-tab-size: 4;
-         tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
 }
 
 pre:not(.codepen) {
@@ -529,7 +507,7 @@ pre:not(.codepen) {
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-family: var(--font-family-monospace);
     -webkit-font-variant-ligatures: none;
-            font-variant-ligatures: none;
+    font-variant-ligatures: none;
     background-color: #2b2b2b;
     background-color: var(--color-mineshaft);
     color: #f9f9f9;
@@ -642,9 +620,9 @@ pre.codepen {
 
 .highlight .gp {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     color: #93a1a1;
@@ -942,7 +920,8 @@ input {
     overflow: visible;
 }
 
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
@@ -951,7 +930,8 @@ input[type="search"] {
     outline-offset: -2px;
 }
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -974,16 +954,16 @@ textarea {
     white-space: nowrap !important;
     clip: rect(0 0 0 0) !important;
     -webkit-clip-path: inset(100%) !important;
-            clip-path: inset(100%) !important;
+    clip-path: inset(100%) !important;
 }
 
 input[type="checkbox"] + label {
     background-clip: padding-box;
     border-radius: 0.375rem;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     transition: all 0.2s ease;
@@ -1038,7 +1018,7 @@ input[type="checkbox"]:checked + label::after {
 table {
     font-variant-numeric: lining-nums tabular-nums;
     -webkit-font-feature-settings: "lnum", "tnum";
-            font-feature-settings: "lnum", "tnum";
+    font-feature-settings: "lnum", "tnum";
     flex: 1 0 auto;
     align-self: flex-start;
     border-width: 0;
@@ -1062,9 +1042,9 @@ td {
     text-align: left;
     vertical-align: top;
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 th.numeral,
@@ -1104,9 +1084,9 @@ details {
 
 summary {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     transition: -webkit-transform 0.2s ease 0s;
@@ -1119,17 +1099,18 @@ summary {
     cursor: pointer;
 }
 
-summary:hover, summary:focus {
+summary:hover,
+summary:focus {
     text-decoration: underline;
     -webkit-text-decoration-skip: ink;
-            text-decoration-skip: ink;
+    text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
 }
 
 details:not([open]) summary:hover,
 details:not([open]) summary:focus {
     -webkit-transform: translateX(0.625rem);
-            transform: translateX(0.625rem);
+    transform: translateX(0.625rem);
 }
 
 time {
@@ -1180,7 +1161,7 @@ del {
     background-color: #f5cdce;
     color: #4f4f4f;
     -webkit-text-decoration-color: #f5cdce;
-            text-decoration-color: #f5cdce;
+    text-decoration-color: #f5cdce;
 }
 
 small {
@@ -1292,7 +1273,7 @@ aside + .meta {
     left: -1.25rem;
     left: -var(--measure-medium);
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     font-style: normal;
 }
 
@@ -1307,9 +1288,9 @@ aside + .meta {
 
 .meta a {
     -webkit-text-decoration-color: rgba(0, 0, 0, 0);
-            text-decoration-color: rgba(0, 0, 0, 0);
+    text-decoration-color: rgba(0, 0, 0, 0);
     -webkit-text-decoration-color: var(--color-transparent);
-            text-decoration-color: var(--color-transparent);
+    text-decoration-color: var(--color-transparent);
 }
 
 @supports not ((-webkit-text-decoration-color: transparent) or (text-decoration-color: transparent)) {
@@ -1318,11 +1299,13 @@ aside + .meta {
     }
 }
 
-.meta a:hover, .meta a:focus, .meta a:active {
+.meta a:hover,
+.meta a:focus,
+.meta a:active {
     -webkit-text-decoration-color: #eb2d37;
-            text-decoration-color: #eb2d37;
+    text-decoration-color: #eb2d37;
     -webkit-text-decoration-color: var(--color-canada);
-            text-decoration-color: var(--color-canada);
+    text-decoration-color: var(--color-canada);
 }
 
 .meta a:active {
@@ -1420,7 +1403,7 @@ aside + .meta {
 }
 
 @media screen and (min-width: 501px) {
-    .content-list li:nth-child(n+3) {
+    .content-list li:nth-child(n + 3) {
         margin-top: 1.25rem;
         margin-top: var(--measure-medium);
     }
@@ -1452,7 +1435,9 @@ aside .content-list li + li {
     text-decoration: none;
 }
 
-.content-list a:hover, .content-list a:focus, .content-list a:active {
+.content-list a:hover,
+.content-list a:focus,
+.content-list a:active {
     background-color: rgba(95, 138, 166, 0.1);
     background-color: var(--color-raven--gamma);
 }
@@ -1479,9 +1464,9 @@ aside .content-list a {
     margin-bottom: 0;
     text-decoration: underline;
     -webkit-text-decoration-color: #dddddd;
-            text-decoration-color: #dddddd;
+    text-decoration-color: #dddddd;
     -webkit-text-decoration-color: var(--color-alto);
-            text-decoration-color: var(--color-alto);
+    text-decoration-color: var(--color-alto);
     text-underline-position: under;
 }
 
@@ -1491,9 +1476,9 @@ aside .content-list a {
     color: #5f8aa6;
     color: var(--color-raven);
     -webkit-text-decoration-color: #eb2d37;
-            text-decoration-color: #eb2d37;
+    text-decoration-color: #eb2d37;
     -webkit-text-decoration-color: var(--color-canada);
-            text-decoration-color: var(--color-canada);
+    text-decoration-color: var(--color-canada);
 }
 
 .content-list .lede,
@@ -1538,7 +1523,7 @@ aside .content-list a {
     right: 0.625rem;
     right: var(--measure-small);
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     z-index: 0;
     z-index: var(--z-index-root);
 }
@@ -1556,9 +1541,9 @@ aside .content-list a {
     opacity: 0.1;
     opacity: var(--opacity-gamma);
     -webkit-transform: translateX(-2.25rem) translateY(-50%) scale(1.2);
-            transform: translateX(-2.25rem) translateY(-50%) scale(1.2);
+    transform: translateX(-2.25rem) translateY(-50%) scale(1.2);
     -webkit-transform: translateX(-var(--measure-large)) translateY(-50%) scale(1.2);
-            transform: translateX(-var(--measure-large)) translateY(-50%) scale(1.2);
+    transform: translateX(-var(--measure-large)) translateY(-50%) scale(1.2);
 }
 
 .search-main {
@@ -1625,7 +1610,8 @@ aside .content-list a {
         margin-left: auto;
         margin-right: auto;
     }
-    .buttons-list button + button, .buttons-list .button + button,
+    .buttons-list button + button,
+    .buttons-list .button + button,
     .buttons-list button + .button,
     .buttons-list .button + .button {
         margin-top: 0.625rem;
@@ -1653,7 +1639,8 @@ aside .widget {
     zoom: 1;
 }
 
-aside .widget::before, aside .widget::after {
+aside .widget::before,
+aside .widget::after {
     content: "";
     display: table;
 }
@@ -1786,13 +1773,15 @@ footer div {
     }
 }
 
-.footer-home-anchor:hover .icon, .footer-home-anchor:focus .icon, .footer-home-anchor:active .icon {
+.footer-home-anchor:hover .icon,
+.footer-home-anchor:focus .icon,
+.footer-home-anchor:active .icon {
     opacity: 1;
 }
 
 .footer-home-anchor:active .icon {
     -webkit-transform: translateY(0.125rem);
-            transform: translateY(0.125rem);
+    transform: translateY(0.125rem);
 }
 
 .footer-license-anchor,
@@ -1849,13 +1838,15 @@ footer div {
     }
 }
 
-.social-icons-list a:hover .icon, .social-icons-list a:focus .icon, .social-icons-list a:active .icon {
+.social-icons-list a:hover .icon,
+.social-icons-list a:focus .icon,
+.social-icons-list a:active .icon {
     opacity: 1;
 }
 
 .social-icons-list a:active .icon {
     -webkit-transform: translateY(0.125rem);
-            transform: translateY(0.125rem);
+    transform: translateY(0.125rem);
 }
 
 .comments-anchor {
@@ -1885,7 +1876,8 @@ footer div {
     font-style: italic;
 }
 
-.button--show-comments::before, .button--show-comments:active::before {
+.button--show-comments::before,
+.button--show-comments:active::before {
     position: relative;
     top: auto;
     right: auto;
@@ -1967,7 +1959,8 @@ footer div {
     font-weight: var(--font-weight-bold);
 }
 
-.button--show-webmentions::before, .button--show-webmentions:active::before {
+.button--show-webmentions::before,
+.button--show-webmentions:active::before {
     position: relative;
     top: auto;
     right: auto;
@@ -2066,7 +2059,7 @@ code[data-lang]::before {
     top: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
 }
 
@@ -2102,19 +2095,21 @@ code[data-lang]::before {
     position: relative;
 }
 
-.media--16-by-9, .media--vimeo,
+.media--16-by-9,
+.media--vimeo,
 .media--youtube {
     padding-top: 56.25%;
 }
 
-.media--4-by-3, .media--speakerdeck {
+.media--4-by-3,
+.media--speakerdeck {
     padding-top: 75%;
 }
 
 .pixelated {
     -ms-interpolation-mode: nearest-neighbor;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
 }
 
 .cp_embed_wrapper {
@@ -2130,9 +2125,9 @@ code[data-lang]::before {
 
 .sparkline {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     transition: all 0.2s ease;
@@ -2180,7 +2175,7 @@ code[data-lang]::before {
         border-color: var(--color-kaiser);
         box-shadow: none;
     }
-    
+
     p {
         orphans: 3;
         widows: 3;
@@ -2209,7 +2204,7 @@ code[data-lang]::before {
 .palette-list li {
     font-variant-numeric: lining-nums tabular-nums;
     -webkit-font-feature-settings: "lnum", "tnum";
-            font-feature-settings: "lnum", "tnum";
+    font-feature-settings: "lnum", "tnum";
     padding: 1.25rem 0;
     padding: var(--measure-medium) 0;
     vertical-align: middle;
@@ -2303,7 +2298,7 @@ code[data-lang]::before {
     top: 100%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     content: "(Hover to interact.)";
     color: #4f4f4f;
     color: var(--color-kaiser);
@@ -2342,7 +2337,8 @@ code[data-lang]::before {
     z-index: var(--z-index-above);
 }
 
-.transition-example__demo:hover, .transition-example__demo:focus {
+.transition-example__demo:hover,
+.transition-example__demo:focus {
     color: #f9f9f9;
     color: var(--color-white);
 }
@@ -2371,12 +2367,13 @@ code[data-lang]::before {
     transition: transform 0.2s ease 0s;
     transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
     -webkit-transform: translateX(-101%);
-            transform: translateX(-101%);
+    transform: translateX(-101%);
 }
 
-.transition-example--slide .transition-example__demo:hover::before, .transition-example--slide .transition-example__demo:focus::before {
+.transition-example--slide .transition-example__demo:hover::before,
+.transition-example--slide .transition-example__demo:focus::before {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
 }
 
 .transition-example--fade .transition-example__demo {
@@ -2388,7 +2385,8 @@ code[data-lang]::before {
     opacity: 0;
 }
 
-.transition-example--fade .transition-example__demo:hover::before, .transition-example--fade .transition-example__demo:focus::before {
+.transition-example--fade .transition-example__demo:hover::before,
+.transition-example--fade .transition-example__demo:focus::before {
     opacity: 1;
 }
 

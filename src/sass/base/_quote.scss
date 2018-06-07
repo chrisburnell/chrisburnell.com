@@ -3,7 +3,6 @@
 /// @group base
 ////
 
-
 blockquote {
     @include border-radius;
     @include font-family(serif);
@@ -49,10 +48,12 @@ blockquote {
         }
     }
 }
-/*blockquote*/.twitter-tweet {
+
+.twitter-tweet {
     margin: 0 auto $measure-medium !important;
     contain: strict;
 }
+
 q {
     @include quotes;
 }

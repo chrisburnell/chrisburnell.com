@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#buttons-list
 ////
 
-
 // Contains buttons and internal links
 .buttons-list {
     width: 100%;
@@ -28,7 +27,7 @@
 
     %button-elements {
         @include media("screen", "<=small") {
-            margin-left:  auto;
+            margin-left: auto;
             margin-right: auto;
 
             & + %button-elements {

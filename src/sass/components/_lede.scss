@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 .lede {
     @extend %gamma !optional;
     @include v(margin-bottom, large);

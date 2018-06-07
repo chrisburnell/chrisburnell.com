@@ -2,12 +2,11 @@
 // Math SCSS
 ///
 
-
 // Constants
 // stylelint-disable
-$E:     2.718281828459045;
-$PI:    3.141592653589793;
-$LN2:   0.6931471805599453;
+$E: 2.718281828459045;
+$PI: 3.141592653589793;
+$LN2: 0.6931471805599453;
 $SQRT2: 1.4142135623730951;
 // stylelint-enable
 
@@ -63,7 +62,7 @@ $SQRT2: 1.4142135623730951;
 //     fact(0) // 1
 //     fact(8) // 40320
 @function fact($x) {
-    @if $x < 0 or  $x != floor($x) {
+    @if $x < 0 or $x != floor($x) {
         @warn "Argument for `fact()` must be a positive integer.";
         @return null;
     }
@@ -141,7 +140,6 @@ $SQRT2: 1.4142135623730951;
     @return $x;
 }
 
-
 // Returns the natural logarithm of a number.
 // @param {Number} $x
 // @param {Number} $b The base number
@@ -188,7 +186,6 @@ $SQRT2: 1.4142135623730951;
     $x: unitless-rad($x);
     @return cos($x - $PI / 2);
 }
-
 
 // Returns the cosine of a number.
 // @param {Number} $x A number in rad or deg. Assuming unitless number to be in rad.
@@ -278,26 +275,26 @@ $SQRT2: 1.4142135623730951;
 //     atan(0.1) // 0.09967
 //     atan(-1)  // -0.7854
 @function atan($x) {
-    $i:  24;
+    $i: 24;
     $sgn: 0;
-    $a:   0;
+    $a: 0;
     @if $x > 1 {
-        $sgn:  1;
-        $x:    1 / $x;
+        $sgn: 1;
+        $x: 1 / $x;
     } @else if $x < -1 {
         $sgn: -1;
-        $x:    1 / $x;
+        $x: 1 / $x;
     }
     @while $i > 0 {
         $a: ($i * $i * $x * $x) / (2 * $i + 1 + $a);
         $i: $i - 1;
     }
     @if $sgn > 0 {
-        @return  $PI / 2 - $x / (1 + $a);
+        @return $PI / 2 - $x / (1 + $a);
     } @else if $sgn < 0 {
         @return -$PI / 2 - $x / (1 + $a);
     } @else {
-        @return            $x / (1 + $a);
+        @return $x / (1 + $a);
     }
 }
 
@@ -322,7 +319,7 @@ $SQRT2: 1.4142135623730951;
         }
     } @else {
         @if $y < 0 {
-            @return - $PI / 2;
+            @return -$PI / 2;
         } @else if $y > 0 {
             @return $PI / 2;
         } @else {

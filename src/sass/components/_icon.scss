@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#icons
 ////
 
-
 .icon {
     display: block;
     overflow: hidden;
@@ -18,13 +17,13 @@
     }
 
     %button-elements & {
-        width:  $font-size-default;
+        width: $font-size-default;
         height: $font-size-default;
         margin-right: $measure-small;
     }
 
     .fragment-anchor & {
-        width:  $font-size-gamma;
+        width: $font-size-gamma;
         height: $font-size-gamma;
     }
 
@@ -36,9 +35,9 @@
 
 // Brand Icon Widths and Colors
 @each $color-brand in $brand-colors {
-    $name:       nth($color-brand, 1);
+    $name: nth($color-brand, 1);
     $icon-color: nth($color-brand, 2);
-    $ratio:      nth($color-brand, 3);
+    $ratio: nth($color-brand, 3);
 
     .icon--#{$name} {
         width: #{$ratio * $icon-size};
@@ -48,8 +47,7 @@
             %button-elements & {
                 fill: $icon-color;
             }
-        }
-        @else {
+        } @else {
             fill: $icon-color;
         }
     }

@@ -3,7 +3,6 @@
 /// @group base
 ////
 
-
 details {
     @include border-radius(thin);
     @include v(background-color, mineshaft);
@@ -11,7 +10,7 @@ details {
     width: 100%;
     max-width: $line-length-responsive;
     @include v(padding, small);
-    margin-left:  auto;
+    margin-left: auto;
     margin-right: auto;
 
     %content-elements {

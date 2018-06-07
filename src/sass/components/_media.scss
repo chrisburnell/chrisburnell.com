@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#figure
 ////
 
-
 // Contains embedded media properly and allows them to be dynamically resized
 // inside a set aspect ratio container.
 .media {
@@ -21,7 +20,6 @@
     }
 }
 
-
 @each $aspect-ratio, $percentage in $aspect-ratios {
     .media--#{$aspect-ratio} {
         padding-top: $percentage;
@@ -37,11 +35,9 @@
     @extend .media--4-by-3 !optional;
 }
 
-
 .pixelated {
     image-rendering: pixelated;
 }
-
 
 // CodePen Embeds
 .cp_embed_wrapper {

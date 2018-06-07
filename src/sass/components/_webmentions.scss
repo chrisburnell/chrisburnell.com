@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 // Appears only on article pages
 .webmentions {
     @include v(margin-top, large);
@@ -58,7 +57,7 @@
 
 .webmentions__item__image {
     @include border-radius(50%);
-    width:  $font-size-gamma;
+    width: $font-size-gamma;
     height: $font-size-gamma;
     display: inline-block;
     vertical-align: middle;

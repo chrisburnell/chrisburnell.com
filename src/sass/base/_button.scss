@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#buttons
 ////
 
-
 button,
 .button {
     @extend %button-elements !optional;
@@ -54,8 +53,8 @@ button,
         padding-bottom: 0;
         margin-bottom: $border-width-button;
         margin-bottom: var(--border-width-button);
-        box-shadow: inset 0 -($border-width-hairline) 0 0 $color-bowhead;
-        box-shadow: inset 0 -(var(--border-width-hairline)) 0 0 var(--color-bowhead);
+        box-shadow: inset 0 #{-1 * $border-width-hairline} 0 0 $color-bowhead;
+        box-shadow: inset 0 calc(-1 * var(--border-width-hairline)) 0 0 var(--color-bowhead);
         transform: translateY($border-width-button);
         transform: translateY(var(--border-width-button));
     }

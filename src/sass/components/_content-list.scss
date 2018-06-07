@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#content-list
 ////
 
-
 .content-list {
     display: flex;
     flex-direction: row;
@@ -39,7 +38,7 @@
 
         // Push all list items down (after the first two, in the two-column
         // format)
-        &:nth-child(n+3) {
+        &:nth-child(n + 3) {
             @include media("screen", ">small") {
                 @include v(margin-top, medium);
             }
@@ -138,7 +137,7 @@
         @include v(opacity, delta);
         @include v(stroke, kaiser);
         // override `_icons.scss` + 4px
-        width:  6.25em !important;
+        width: 6.25em !important;
         height: 6.25em !important;
         position: absolute;
         top: 50%;
@@ -148,7 +147,7 @@
         @include v(z-index, root);
 
         @include media("screen", "<=small") {
-            width:  4em !important;
+            width: 4em !important;
             height: 4em !important;
         }
     }

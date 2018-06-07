@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-
 a {
     @include transition(background-color, color, text-decoration-color);
     @include will-change(background-color, color, text-decoration-color);

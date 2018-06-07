@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-
 .nav-primary {
     display: flex;
     align-items: center;
@@ -61,7 +60,7 @@
         }
 
         @include media("screen", "<=small") {
-            padding-left:  0.5rem;
+            padding-left: 0.5rem;
             padding-right: 0.5rem;
         }
     }

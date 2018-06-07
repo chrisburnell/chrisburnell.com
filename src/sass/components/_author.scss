@@ -3,8 +3,7 @@
 /// @group components
 ////
 
-
-/*aside*/.author {
+.author {
     // override the default <aside> font-family
     @include font-family(default);
 
@@ -82,7 +81,7 @@
     &::before,
     %image-elements {
         @include border-radius(50%);
-        width:  $avatar-size;
+        width: $avatar-size;
         height: $avatar-size;
 
         @supports (shape-outside: circle(50%)) {
@@ -146,7 +145,6 @@
         }
     }
 }
-
 
 .author-name {
     display: flex;
