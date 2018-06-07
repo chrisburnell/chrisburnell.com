@@ -26,6 +26,7 @@ button,
     overflow: visible;
     position: relative;
     @include v(font-size, beta);
+    @include v(font-weight, bold);
     @include v(line-height, code);
     text-align: center;
     text-decoration: none;

@@ -28,6 +28,8 @@ button,
     position: relative;
     font-size: 1.375rem;
     font-size: var(--font-size-beta);
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     line-height: 2;
     line-height: var(--line-height-code);
     text-align: center;
