@@ -30,7 +30,6 @@ h6 {
     @include case(uppercase);
     @include font-family(alpha);
     @include v(font-size, alpha);
-    font-weight: 900;
     line-height: 1;
     text-shadow: $border-width-default $border-width-default 0 $color-black--delta;
     text-shadow: var(--border-width-default) var(--border-width-default) 0 var(--color-black--delta);
