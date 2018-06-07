@@ -1,48 +1,48 @@
-{%- if page.page_class contains 'home' -%}
-    {%- capture meta_title -%}{{ site.title }} – {{ site.tagline | strip_html }}{%- endcapture -%}
-{%- elsif page.categories contains 'note' -%}
-    {%- capture meta_title -%}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{%- endcapture -%}
-{%- else -%}
-    {%- capture meta_title -%}{{ page.title }} – {{ site.title }}{%- endcapture -%}
-{%- endif -%}
+{% if page.page_class contains 'home' %}
+    {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% endcapture %}
+{% elsif page.categories contains 'note' %}
+    {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
+{% else %}
+    {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
+{% endif %}
 
-{%- if page.lede -%}
-    {%- assign meta_lede = page.lede | strip_html -%}
-{%- elsif page.categories contains 'link' -%}
-    {%- capture meta_lede -%}One of my shared links, {{ page.title }}.{%- endcapture -%}
-{%- elsif page.categories contains 'note' -%}
-    {%- capture meta_lede -%}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{%- endcapture -%}
-{%- elsif page.categories contains 'pen' -%}
-    {%- capture meta_lede -%}One of my CodePens, {{ page.title }}.{%- endcapture -%}
-{%- elsif page.categories contains 'talk' -%}
-    {%- capture meta_lede -%}One of my talks, {{ page.title }}{%- if page.location -%}, given at {{ page.location }}{%- endif -%},{%- endcapture -%}
-{%- else -%}
-    {%- assign meta_lede = site.lede | strip_html -%}
-{%- endif -%}
+{% if page.lede %}
+    {% assign meta_lede = page.lede | strip_html %}
+{% elsif page.categories contains 'link' %}
+    {% capture meta_lede %}One of my shared links, {{ page.title }}.{% endcapture %}
+{% elsif page.categories contains 'note' %}
+    {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
+{% elsif page.categories contains 'pen' %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title }}.{% endcapture %}
+{% elsif page.categories contains 'talk' %}
+    {% capture meta_lede %}One of my talks, {{ page.title }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
+{% else %}
+    {% assign meta_lede = site.lede | strip_html %}
+{% endif %}
 
-{%- assign meta_image = '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url -%}
-{%- if page.banner -%}
-    {%- assign meta_image = page.banner | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url -%}
-{%- elsif page.banner_mobile -%}
-    {%- assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url -%}
-{%- elsif page.page_class contains 'about' -%}
-    {%- assign meta_image = '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url -%}
-{%- endif -%}
+{% assign meta_image = '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url %}
+{% if page.banner %}
+    {% assign meta_image = page.banner | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
+{% elsif page.banner_mobile %}
+    {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
+{% elsif page.page_class contains 'about' %}
+    {% assign meta_image = '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url %}
+{% endif %}
 
-{%- capture body_class -%}
-    {%- for class in page.page_class -%}
+{% capture body_class %}
+    {% for class in page.page_class %}
         {{ class }}
-    {%- endfor -%}
-    {%- if page.categories -%}
+    {% endfor %}
+    {% if page.categories %}
         page--{{ page.categories | first }}
-    {%- endif -%}
-{%- endcapture -%}
-{%- assign body_class_array = body_class | split: ' ' | join: '  ' -%}
+    {% endif %}
+{% endcapture %}
+{% assign body_class_array = body_class | split: ' ' | join: '  ' %}
 
-{%- assign meta_name = site.author.name | split: ' ' -%}
-{%- assign meta_first_name = meta_name[0] -%}
-{%- assign meta_last_name = meta_name[1] -%}
+{% assign meta_name = site.author.name | split: ' ' %}
+{% assign meta_first_name = meta_name[0] %}
+{% assign meta_last_name = meta_name[1] %}
 
-{%- assign svg_title_count = 0 -%}
-{%- assign code_toggle_count = 0 -%}
-{%- assign footnote_count = 0 -%}
+{% assign svg_title_count = 0 %}
+{% assign code_toggle_count = 0 %}
+{% assign footnote_count = 0 %}

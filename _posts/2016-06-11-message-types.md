@@ -12,9 +12,9 @@ shorturl: h5f19
 ---
 
 
-{%- include content/codepen.html height='500' -%}
+{% include content/codepen.html height='500' %}
 
-{%- highlight html -%}
+{% highlight html %}
 <div class="message  message--error">
   <p>Pastrami biltong sirloin alcatra ham hock ball tip short ribs tail chuck. Brisket turkey bacon ham porchetta ball tip. Andouille kielbasa pork loin turkey.</p>
 </div>
@@ -26,11 +26,11 @@ shorturl: h5f19
 <div class="message  message--success">
   <p>Pig tri-tip ground round venison bresaola fatback prosciutto porchetta. Bresaola strip steak rump, turkey meatball pork pig t-bone porchetta cupim ham hock pancetta ham.</p>
 </div>
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-top.html -%}
+{% include content/code-toggle-top.html %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 .message {
   background-color: white;
   width: calc(100% - 3em);
@@ -95,6 +95,6 @@ shorturl: h5f19
     content: "✔";
   }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-bottom.html -%}
+{% include content/code-toggle-bottom.html %}

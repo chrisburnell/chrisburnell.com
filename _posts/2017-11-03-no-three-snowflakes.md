@@ -24,18 +24,18 @@ syndication:
 ---
 
 
-In [Unique Pairs in Sass]({%- post_url 2017-06-16-unique-pairs-in-sass -%}) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to leverage this function.
+In [Unique Pairs in Sass]({% post_url 2017-06-16-unique-pairs-in-sass %}) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to leverage this function.
 
 But what about when you want to generate unique groups of more than <var>2</var> items? Multiples of <var>3</var>, <var>4</var>, <var>n</var>?
 
 We’ll need to make sure our dataset contains more than <var>n</var> items—making unique groups of three items from a dataset of only three items would make our function entirely moot. From there, refactoring the function mostly comes down to keep track of how we’re iterating through the items in the dataset and repeating this iteration in a recursive-like way the same number of times as items per unique group.
 
 
-{%- include content/heading.html title='Let’s just jump right into it' -%}
+{% include content/heading.html title='Let’s just jump right into it' %}
 
-{%- include content/code-toggle-top.html -%}
+{% include content/code-toggle-top.html %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 @function unique-groups($data, $size: 2) {
     @if not $data or not (type-of($data) == list or type-of($data) == map) {
         @warn "`unique-groups()` expects either a single List or single Map for `$data`.";
@@ -114,9 +114,9 @@ We’ll need to make sure our dataset contains more than <var>n</var> items—ma
 
     @return $unique-groups;
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-bottom.html -%}
+{% include content/code-toggle-bottom.html %}
 
 As with the previous version of the function, it can accept the required dataset as either a *List* or *Map*. Using our mathematical formula from before, we can plug in our variables and figure out how many unique multiples to expect from a dataset.
 
@@ -133,9 +133,9 @@ As with the previous version of the function, it can accept the required dataset
 </figure>
 
 
-{%- include content/heading.html title='In Action' -%}
+{% include content/heading.html title='In Action' %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 $border-styles: 5px solid black;
 
 $list:
@@ -155,9 +155,9 @@ $list:
         border-#{$unique-group-third}:  $border-styles;
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- highlight css -%}
+{% highlight css %}
 .border--top-and-right-and-bottom {
     border-top:    5px solid black;
     border-right:  5px solid black;
@@ -181,6 +181,6 @@ $list:
     border-bottom: 5px solid black;
     border-left:   5px solid black;
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 If you find a clever use for this `@function`, I’d love to see it in action on your own projects, so hit me up and let me know!

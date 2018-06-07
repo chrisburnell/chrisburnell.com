@@ -72,7 +72,7 @@ The method which is far more predictable in its use of `@extend` does something 
 
 I have created the above *placeholder selectors* to represent different groups of *multiple selectors*, and the terse naming makes it easy to understand what they represent (at least I think so). How these are used is best explained with an example, so let’s look at how I target all *heading elements* (`h1`, `h2`, `h3`, `h4`, `h5`, `h6`) throughout my Sass:
 
-{%- highlight scss -%}
+{% highlight scss %}
 h1,
 h2,
 h3,
@@ -81,13 +81,13 @@ h5,
 h6 {
     @extend %heading-elements;
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 If you recall how *placeholder selectors* and `@extend` work, you can understand that what we’re doing here is telling our Sass to do a simple replacement during compilation: Wherever `%heading-elements` appears in the Sass, replace it with `h1, h2, h3, h4, h5, h6`. This comes in handy when you want to target heading elements outside the scope of where your heading’s styles are defined.
 
 For example, so that users can easily link to a specific part of the content, attached to most headings is a fragment anchor, `.fragment-anchor`. These anchors are direct children of heading elements, and should only appear when the user interacts with the heading element (by hovering with the mouse or tapping on a touch-device):
 
-{%- highlight scss -%}
+{% highlight scss %}
 .fragment-anchor {
     display: none;
 
@@ -106,11 +106,11 @@ For example, so that users can easily link to a specific part of the content, at
         display: inline-block;
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 This makes sense, but is just too *long-winded*. We can simplify this declaration by referring to our *placeholder selector*, `%heading-elements`, like so:
 
-{%- highlight scss -%}
+{% highlight scss %}
 .fragment-anchor {
     display: none;
 
@@ -119,7 +119,7 @@ This makes sense, but is just too *long-winded*. We can simplify this declaratio
         display: inline-block;
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 The CSS output of the two techniques is exactly the same, but the Sass source files are now much easier to understand. The advantages here are that we aren’t making any negative impact on the cascade of the compiled CSS because we’re not using `@extend` in such a way that the source order of declarations doesn’t matter—we’re using `@extend` to represent *multiple selectors*. This technique also makes the Sass *much* easier to scan through, and saves us from having to remember *multiple selectors* whilst traversing our Sass partials.
 

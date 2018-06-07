@@ -1,38 +1,38 @@
-{%- if page.banner -%}
+{% if page.banner %}
     <picture class="u-photo">
-        {%- if page.banner.size > 1 or page.banner_mobile.size > 1 -%}
-            {%- if page.banner_mobile -%}
+        {% if page.banner.size > 1 or page.banner_mobile.size > 1 %}
+            {% if page.banner_mobile %}
                 <source media="(min-width: 501px)"
                         sizes="calc(100vw - 18.375em)"
-                        srcset="{%- for banner in page.banner -%}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}"
+                        srcset="{% for banner in page.banner %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}"
                         type="image/webp">
                 <source sizes="calc(100vw - 2.5em)"
-                        srcset="{%- for banner in page.banner_mobile -%}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}"
+                        srcset="{% for banner in page.banner_mobile %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}"
                         type="image/webp">
                 <source media="(min-width: 501px)"
                         sizes="calc(100vw - 18.375em)"
-                        srcset="{%- for banner in page.banner -%}/images/banners/{{ banner }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}">
+                        srcset="{% for banner in page.banner %}/images/banners/{{ banner }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}">
                 <img    alt="" class="banner  u-photo" role="presentation" itemprop="image"
                         src="/images/banners/{{ page.banner_mobile | last }}"
                         sizes="calc(100vw - 2.5em)"
-                        srcset="{%- for banner in page.banner_mobile -%}/images/banners/{{ banner }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}">
-            {%- else -%}
+                        srcset="{% for banner in page.banner_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}">
+            {% else %}
                 <source media="(min-width: 501px)"
                         sizes="calc(100vw - 18.375em)"
-                        srcset="{%- for banner in page.banner -%}/images/banners/{{ banner }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}">
+                        srcset="{% for banner in page.banner %}/images/banners/{{ banner }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}">
                 <img    alt="" class="banner  u-photo" role="presentation" itemprop="image"
                         src="/images/banners/{{ page.banner_mobile | last }}"
                         sizes="calc(100vw - 2.5em)"
-                        srcset="{%- for banner in page.banner -%}/images/banners/{{ banner }} {%- if banner contains '@' -%}{%- assign resolution = banner | split: '@' -%}{%- assign resolution = resolution[1] | split: '.' -%}{{ resolution[0] }}{%- else -%}1x{%- endif -%}{%- unless forloop.last -%},
-                        {%- endunless -%}{%- endfor -%}">
-            {%- endif -%}
-        {%- else -%}
-            {%- if page.banner_mobile -%}
+                        srcset="{% for banner in page.banner %}/images/banners/{{ banner }} {% if banner contains '@' %}{% assign resolution = banner | split: '@' %}{% assign resolution = resolution[1] | split: '.' %}{{ resolution[0] }}{% else %}1x{% endif %}{% unless forloop.last %},
+                        {% endunless %}{% endfor %}">
+            {% endif %}
+        {% else %}
+            {% if page.banner_mobile %}
                 <source media="(min-width: 501px)"
                         sizes="calc(100vw - 18.375em)"
                         srcset="/images/banners/{{ page.banner | last | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} 810w"
@@ -47,12 +47,12 @@
                         src="/images/banners/{{ page.banner_mobile | last }}"
                         sizes="calc(100vw - 2.5em)"
                         srcset="/images/banners/{{ page.banner_mobile | last }} 540w">
-            {%- else -%}
+            {% else %}
                 <source srcset="/images/banners/{{ page.banner | last | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}"
                         type="image/webp">
                 <img alt="" class="banner  u-photo" role="presentation" itemprop="image"
                      src="/images/banners/{{ page.banner | last }}">
-            {%- endif -%}
-        {%- endif -%}
+            {% endif %}
+        {% endif %}
     </picture>
-{%- endif -%}
+{% endif %}

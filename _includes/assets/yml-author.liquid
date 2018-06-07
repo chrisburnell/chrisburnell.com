@@ -1,33 +1,33 @@
-{%- if page.page_class contains 'about' -%}
-    {%- assign author_biography_closer = 'you don’t care about my life. <span class="canada">Sorry</span>' -%}
-{%- elsif page.page_class contains 'articles' -%}
-    {%- assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' -%}
-{%- elsif page.categories contains 'article' -%}
-    {%- assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' -%}
-{%- elsif page.page_class contains 'links' -%}
-    {%- assign author_biography_closer = 'my taste in websites makes you hate me a little bit' -%}
-{%- elsif page.categories contains 'link' -%}
-    {%- assign author_biography_closer = 'you’d really rather just be click that link' -%}
-{%- elsif page.page_class contains 'notes' -%}
-    {%- assign author_biography_closer = 'my waffling and whining is doing your head in' -%}
-{%- elsif page.categories contains 'note' -%}
-    {%- assign author_biography_closer = 'you’d rather glaze your eyes over something else' -%}
-{%- elsif page.page_class contains 'pens' -%}
-    {%- assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' -%}
-{%- elsif page.categories contains 'pen' -%}
-    {%- assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' -%}
-{%- elsif page.page_class contains 'talks' -%}
-    {%- assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' -%}
-{%- elsif page.categories contains 'talk' -%}
-    {%- assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' -%}
-{%- elsif page.page_class contains 'tags' -%}
-    {%- assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' -%}
-{%- elsif page.page_class contains 'search' -%}
-    {%- assign author_biography_closer = 'everything you search for looks totally boring' -%}
-{%- elsif page.page_class contains 'hip-hop' -%}
-    {%- assign author_biography_closer = 'you don’t care about my distasteful choice in music' -%}
-{%- elsif page.page_class contains 'error' or page.page_class contains 'offline' -%}
-    {%- assign author_biography_closer = 'you’re upset that you found a broken page. <span class="canada">Sorry</span>' -%}
-{%- else -%}
-    {%- assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' -%}
-{%- endif -%}
+{% if page.page_class contains 'about' %}
+    {% assign author_biography_closer = 'you don’t care about my life. <span class="canada">Sorry</span>' %}
+{% elsif page.page_class contains 'articles' %}
+    {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
+{% elsif page.categories contains 'article' %}
+    {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
+{% elsif page.page_class contains 'links' %}
+    {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
+{% elsif page.categories contains 'link' %}
+    {% assign author_biography_closer = 'you’d really rather just be click that link' %}
+{% elsif page.page_class contains 'notes' %}
+    {% assign author_biography_closer = 'my waffling and whining is doing your head in' %}
+{% elsif page.categories contains 'note' %}
+    {% assign author_biography_closer = 'you’d rather glaze your eyes over something else' %}
+{% elsif page.page_class contains 'pens' %}
+    {% assign author_biography_closer = 'my whimsical pens don’t capture your child-like wonder' %}
+{% elsif page.categories contains 'pen' %}
+    {% assign author_biography_closer = 'this pen is uninspiring and makes you want to claw your eyeballs out' %}
+{% elsif page.page_class contains 'talks' %}
+    {% assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' %}
+{% elsif page.categories contains 'talk' %}
+    {% assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' %}
+{% elsif page.page_class contains 'tags' %}
+    {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
+{% elsif page.page_class contains 'search' %}
+    {% assign author_biography_closer = 'everything you search for looks totally boring' %}
+{% elsif page.page_class contains 'hip-hop' %}
+    {% assign author_biography_closer = 'you don’t care about my distasteful choice in music' %}
+{% elsif page.page_class contains 'error' or page.page_class contains 'offline' %}
+    {% assign author_biography_closer = 'you’re upset that you found a broken page. <span class="canada">Sorry</span>' %}
+{% else %}
+    {% assign author_biography_closer = 'this page makes you wish you were doing something else, like folding socks' %}
+{% endif %}

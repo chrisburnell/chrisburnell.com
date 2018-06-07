@@ -11,16 +11,16 @@ shorturl: g6pky
 ---
 
 
-{%- include content/codepen.html height='250' -%}
+{% include content/codepen.html height='250' %}
 
-{%- highlight html -%}
+{% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">
 <label for="jazzycheckbox" class="check">Check me!</label>
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-top.html -%}
+{% include content/code-toggle-top.html %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 html,
 body {
     height: 100%;
@@ -74,6 +74,6 @@ input[type="checkbox"] {
         transition: all .25s ease-in-out;
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-bottom.html -%}
+{% include content/code-toggle-bottom.html %}

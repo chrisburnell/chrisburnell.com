@@ -3,13 +3,13 @@
 
         <section class="license">
             <a rel="home" class="footer-home-anchor" href="/" title="Home">
-                {%- include content/svg.html type='raven' title=site.title -%}
+                {% include content/svg.html type='raven' title=site.title %}
             </a>
             <a rel="license" class="footer-license-anchor" href="/license">© 2008–{{ 'now' | date: '%Y' }} <span class="canada">{{ site.author.name }}</span></a>
             <a class="footer-style-guide-anchor" href="/styleguide">Style Guide</a>
         </section>
 
-        {%- include components/social-icons.html -%}
+        {% include components/social-icons.html %}
 
     </div>
 </footer>

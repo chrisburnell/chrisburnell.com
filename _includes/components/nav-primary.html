@@ -1,9 +1,9 @@
 <nav class="nav-primary" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
     <ol class="nav-primary-list" role="list">
-    {%- for link in site.data.nav-primary -%}
+    {% for link in site.data.nav-primary %}
         <li class="nav-primary--{{ link.title | slugify }}" role="listitem">
             <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
         </li>
-    {%- endfor -%}
+    {% endfor %}
     </ol>
 </nav>

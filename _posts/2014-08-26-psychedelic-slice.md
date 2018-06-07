@@ -11,15 +11,15 @@ shorturl: k9ouo
 ---
 
 
-{%- include content/codepen.html height='350' -%}
+{% include content/codepen.html height='350' %}
 
-{%- highlight html -%}
+{% highlight html %}
 <div class="curvy-arrow"></div>
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-top.html -%}
+{% include content/code-toggle-top.html %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 html,
 body {
     background-color: cornsilk;
@@ -88,6 +88,6 @@ body {
         background-color: rgba(indianred, .8);
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-bottom.html -%}
+{% include content/code-toggle-bottom.html %}

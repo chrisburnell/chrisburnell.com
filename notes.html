@@ -15,15 +15,15 @@ sparkline: notes
 <p><em>There are {{ site.categories.note | size }} published Notes.</em></p>
 
 <ol class="content-list" id="notes" role="list">
-    {%- for page in site.categories.note -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.note %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
 <hr>
 
-{%- include components/buttons-list.html type='feeds' include='notes' -%}
+{% include components/buttons-list.html type='feeds' include='notes' %}
 
 <hr>
 
-{%- include components/buttons-list.html type='archives' exclude='notes' -%}
+{% include components/buttons-list.html type='archives' exclude='notes' %}

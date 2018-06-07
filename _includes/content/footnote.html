@@ -1,7 +1,7 @@
-{%- comment -%}
+{% comment %}
 
   This include lets you easily include an Footnote and the necessary markup will
   be generated automatically.
 
-{%- endcomment -%}
-{%- assign footnote_count = footnote_count | plus: 1 -%}<sup><a href="#footnote-{{ footnote_count }}" class="footnote-anchor" id="note-{{ footnote_count }}" title="" aria-describedby="footnotes">{{ footnote_count }}</a></sup>
+{% endcomment %}
+{% assign footnote_count = footnote_count | plus: 1 %}<sup><a href="#footnote-{{ footnote_count }}" class="footnote-anchor" id="note-{{ footnote_count }}" title="" aria-describedby="footnotes">{{ footnote_count }}</a></sup>

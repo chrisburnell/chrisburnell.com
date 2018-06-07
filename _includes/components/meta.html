@@ -1,140 +1,140 @@
 <div class="meta">
     <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
         <span>published on</span>
-        {%- if page.url -%}
+        {% if page.url %}
             <a class="u-uid  u-url" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" title="Permalink: {{ page.url | prepend: site.baseurl | prepend: site.url }}" itemprop="datePublished">
-        {%- elsif page.shorturl -%}
+        {% elsif page.shorturl %}
             <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="external  me" itemprop="datePublished">
-        {%- else -%}
+        {% else %}
             <strong itemprop="datePublished">
-        {%- endif -%}
+        {% endif %}
         {{ page.date | date_to_long_string }}
-        {%- if page.url or page.shorturl -%}
+        {% if page.url or page.shorturl %}
             </a>
-        {%- else -%}
+        {% else %}
             </strong>
-        {%- endif -%}
+        {% endif %}
     </time>
-    {%- if page.tags.size > 0 -%}
-        {%- assign tags_sorted = page.tags | sort -%}
+    {% if page.tags.size > 0 %}
+        {% assign tags_sorted = page.tags | sort %}
         <div class="tags">
             <span>tagged under</span>
             <span itemprop="keywords">
-                {%- for tag in tags_sorted -%}{%- unless forloop.first -%}, {%- endunless -%}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{%- endfor -%}
+                {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
             </span>
         </div>
-    {%- endif -%}
-    {%- if page.categories contains 'article' -%}
-        {%- assign words = content | number_of_words -%}
+    {% endif %}
+    {% if page.categories contains 'article' %}
+        {% assign words = content | number_of_words %}
         <div class="reading-time">
             <span>reading time</span>
-            {%- if words < 250 -%}
+            {% if words < 250 %}
                 <strong>~1 min</strong>
-            {%- else -%}
+            {% else %}
                 <strong>~{{ words | divided_by: 250 }} mins</strong>
-            {%- endif -%}
+            {% endif %}
         </div>
-    {%- endif -%}
-    {%- if page.location -%}
+    {% endif %}
+    {% if page.location %}
         <div class="location">
             <span>given at</span>
-            {%- if page.location_url -%}
+            {% if page.location_url %}
                 <a class="p-location" rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
-            {%- else -%}
+            {% else %}
                 <strong class="p-location">{{ page.location }}</strong>
-            {%- endif -%}
+            {% endif %}
         </div>
-    {%- endif -%}
-    {%- if page.syndication or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug -%}
+    {% endif %}
+    {% if page.syndication or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             <span>also on</span>
-            {%- assign syndication_count = 0 -%}
-            {%- for syndication in page.syndication -%}
-                {%- if syndication contains 'codepen.io' -%}
-                    {%- assign syndication_slug = syndication | split: '/' | last -%}
-                    {%- capture syndication_codepen -%}<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
+            {% assign syndication_count = 0 %}
+            {% for syndication in page.syndication %}
+                {% if syndication contains 'codepen.io' %}
+                    {% assign syndication_slug = syndication | split: '/' | last %}
+                    {% capture syndication_codepen %}<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
                                                      <small class="strong">
                                                          (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
                                                          <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>)
-                                                     </small>{%- endcapture -%}
+                                                     </small>{% endcapture %}
                     }
-                {%- elsif syndication contains 'gist.github.com' -%}
-                    {%- capture syndication_gist -%}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{%- endcapture -%}
-                {%- elsif syndication contains 'github.com' or syndication contains 'github.io' -%}
-                    {%- capture syndication_github -%}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>{%- endcapture -%}
-                {%- elsif syndication contains 'twitter.com' -%}
-                    {%- capture syndication_twitter -%}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
+                {% elsif syndication contains 'gist.github.com' %}
+                    {% capture syndication_gist %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{% endcapture %}
+                {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
+                    {% capture syndication_github %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>{% endcapture %}
+                {% elsif syndication contains 'twitter.com' %}
+                    {% capture syndication_twitter %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
                                                      <small class="strong">
                                                          (<a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
                                                          <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
                                                          <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>)
-                                                     </small>{%- endcapture -%}
-                {%- endif -%}
-            {%- endfor -%}
-            {%- if page.codepen_slug -%}
+                                                     </small>{% endcapture %}
+                {% endif %}
+            {% endfor %}
+            {% if page.codepen_slug %}
                 <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
                 <small class="strong">
                     (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>)
                 </small>
-            {%- endif -%}
-            {%- if page.speakerdeck_slug -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+            {% endif %}
+            {% if page.speakerdeck_slug %}
+                {% if syndication_count > 0 %},{% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}">Speaker Deck</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if page.vimeo_slug -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if page.vimeo_slug %}
+                {% if syndication_count > 0 %},{% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.vimeo_slug | prepend: 'https://vimeo.com/' }}">Vimeo</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if page.youtube_slug -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if page.youtube_slug %}
+                {% if syndication_count > 0 %},{% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.youtube_slug | prepend: 'https://www.youtube.com/watch?v=' }}">YouTube</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_codepen -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if syndication_codepen %}
+                {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_codepen }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_gist -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if syndication_gist %}
+                {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_gist }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_github -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if syndication_github %}
+                {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_github }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_twitter -%}
-                {%- if syndication_count > 0 -%},{%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if syndication_twitter %}
+                {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_twitter }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
         </div>
-    {%- endif -%}
-    {%- if page.in_reply_to -%}
+    {% endif %}
+    {% if page.in_reply_to %}
         <div class="in-reply-to">
             <span>in reply to</span>
-            {%- for reply in page.in_reply_to -%}
-                {%- if reply contains 'twitter.com' -%}
-                    {%- if reply contains '/status/' -%}
+            {% for reply in page.in_reply_to %}
+                {% if reply contains 'twitter.com' %}
+                    {% if reply contains '/status/' %}
                         <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">@{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}</a>
-                    {%- else -%}
+                    {% else %}
                         <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Tweet</a>
-                    {%- endif -%}
-                {%- else -%}
+                    {% endif %}
+                {% else %}
                     <strong>{{ reply }}</strong>
-                {%- endif -%}
-            {%- endfor -%}
+                {% endif %}
+            {% endfor %}
         </div>
-    {%- endif -%}
-    {%- if page.categories contains 'pen' and page.codepen_featured == true -%}
+    {% endif %}
+    {% if page.categories contains 'pen' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg/">CodePen Homepage</a>
         </div>
-    {%- endif -%}
+    {% endif %}
 </div>

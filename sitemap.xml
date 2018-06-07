@@ -10,54 +10,54 @@ sitemap:
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {%- for page in site.pages -%}
-        {%- unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true -%}
+    {% for page in site.pages %}
+        {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
-                {%- if page.sitemap.lastmod -%}
+                {% if page.sitemap.lastmod %}
                     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-                {%- elsif page.edit_date -%}
+                {% elsif page.edit_date %}
                     <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
-                {%- elsif page.date -%}
+                {% elsif page.date %}
                     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-                {%- endif -%}
-                {%- if page.sitemap.changefreq -%}
+                {% endif %}
+                {% if page.sitemap.changefreq %}
                     <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-                {%- else -%}
+                {% else %}
                     <changefreq>{{ site.sitemap.changefreq }}</changefreq>
-                {%- endif -%}
-                {%- if page.sitemap.priority -%}
+                {% endif %}
+                {% if page.sitemap.priority %}
                     <priority>{{ page.sitemap.priority }}</priority>
-                {%- else -%}
+                {% else %}
                     <priority>{{ site.sitemap.priority }}</priority>
-                {%- endif -%}
+                {% endif %}
             </url>
-        {%- endunless -%}
-    {%- endfor -%}
-    {%- for page in site.posts -%}
-        {%- unless page.draft or page.sitemap.exclude == true -%}
+        {% endunless %}
+    {% endfor %}
+    {% for page in site.posts %}
+        {% unless page.draft or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
-                {%- if page.sitemap.lastmod -%}
+                {% if page.sitemap.lastmod %}
                     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-                {%- elsif page.edit_date -%}
+                {% elsif page.edit_date %}
                     <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
-                {%- elsif page.date -%}
+                {% elsif page.date %}
                     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-                {%- else -%}
+                {% else %}
                     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-                {%- endif -%}
-                {%- if page.sitemap.changefreq -%}
+                {% endif %}
+                {% if page.sitemap.changefreq %}
                     <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-                {%- else -%}
+                {% else %}
                     <changefreq>{{ site.sitemap.changefreq }}</changefreq>
-                {%- endif -%}
-                {%- if page.sitemap.priority -%}
+                {% endif %}
+                {% if page.sitemap.priority %}
                     <priority>{{ page.sitemap.priority }}</priority>
-                {%- else -%}
+                {% else %}
                     <priority>{{ site.sitemap.priority }}</priority>
-                {%- endif -%}
+                {% endif %}
             </url>
-        {%- endunless -%}
-    {%- endfor -%}
+        {% endunless %}
+    {% endfor %}
 </urlset>

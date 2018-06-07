@@ -1,6 +1,6 @@
-{%- comment -%}
+{% comment %}
 
   This include lets you easily add an Ingredient to a Recipe contents
 
-{%- endcomment -%}
-{%- if include.text -%}<a class="ingredient-anchor" href="#{{ include.name | slugify }}" title="{{ include.text }}">{{ include.text }}</a>{%- else -%}<a class="ingredient-anchor" href="#{{ include.name | slugify }}" title="{{ include.name | slugify }}">{{ include.name }}</a>{%- endif -%}
+{% endcomment %}
+{% if include.text %}<a class="ingredient-anchor" href="#{{ include.name | slugify }}" title="{{ include.text }}">{{ include.text }}</a>{% else %}<a class="ingredient-anchor" href="#{{ include.name | slugify }}" title="{{ include.name | slugify }}">{{ include.name }}</a>{% endif %}

@@ -38,7 +38,7 @@ One of the most engaging ways I’ve found, of recent, to keep myself open-minde
 I’ve found a great deal of enjoyment in watching and participating in these live coding streams; it’s given me new perspectives on what I already know and expanded new horizons for things I don’t know but want to learn about.
 
 
-{%- include content/heading.html title='Inspiration Strikes' -%}
+{% include content/heading.html title='Inspiration Strikes' %}
 
 It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman){:rel="external"} streams on his *YouTube* channel, [The Coding Train](https://www.youtube.com/user/shiffman/live){:rel="external"}, that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
 
@@ -53,11 +53,11 @@ Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to
 Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
 
 
-{%- include content/heading.html title='In Theory' -%}
+{% include content/heading.html title='In Theory' %}
 
 Like most of my endeavours, this Sass technique is neither revolutionary, nor is it particularly useful. But not everything need be born out of necessity and steeped in unit-testing for it to be fun. I find a lot of enjoyment in experimenting at the limits of CSS and finding unexplored avenues to solve challenges in a different way.
 
-{%- highlight scss -%}
+{% highlight scss %}
 @function range-map($value, $ranges...) {
     @if not $value or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
         @warn "`range-map()` requires three or five parameters: initial value, (old minimum), old maximum, (new minimum), and new maximum.";
@@ -71,14 +71,14 @@ Like most of my endeavours, this Sass technique is neither revolutionary, nor is
 
     @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 Our `@function` takes a variable number of parameters, *three* or *five*, and we use Sass’ built-in `if()` as a <dfn title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</dfn> to utilise the parameters appropriately in determining the value remapped in the new range.
 
 There really isn’t any magic going on here (as usual). Everything before the `@return` statement is just checking to make sure we’ve correctly passed in the right parameters, and that we’ve given the correct number of parameters. The `@return` statement performs a small calculation based on the 3–5 parameters and gives us back the remapped initial value.
 
 
-{%- include content/heading.html title='In Practice' -%}
+{% include content/heading.html title='In Practice' %}
 
 To be frank, I’m having a hard time finding a great deal of use out of this operation in CSS, but you might find a persuasive reason to use it. 😉
 
@@ -86,7 +86,7 @@ To serve as an example (*not* as an example of best practice), one way to use th
 
 We’ll start with some basic HTML:
 
-{%- highlight html -%}
+{% highlight html %}
 <div class="interact  interact--1"></div>
 <div class="interact  interact--2"></div>
 <div class="interact  interact--3"></div>
@@ -94,20 +94,20 @@ We’ll start with some basic HTML:
 <div class="interact  interact--5"></div>
 
 <div class="globe"></div>
-{%- endhighlight -%}
+{% endhighlight %}
 
 Now let’s define some variables to plug into our remapping `@function`:
 
-{%- highlight scss -%}
+{% highlight scss %}
 $number-of-columns: 5;
 
 $rotation-start: 0deg;
 $rotation-offset: 45deg;
-{%- endhighlight -%}
+{% endhighlight %}
 
 Before we apply our different rotations to the globe, we can even use our `@function` to layout our equal-width columns by remapping the index of each column to a value for the `left` property:
 
-{%- highlight scss -%}
+{% highlight scss %}
 .interact {
     width: (100% / $number-of-columns);
     height: 100%;
@@ -120,20 +120,20 @@ Before we apply our different rotations to the globe, we can even use our `@func
         left: range-map($i, 1, $number-of-columns, 0%, (100% - 100% / $number-of-columns));
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 The last parameter being passed to the `@function` looks a little unusual, but you have to remember that we’re setting a value for the `left` property, so the maximum value we should be setting is `100% - the width of a column`. This means that we’re remapping the index of each column to a value between `0%` and `100% - $number-of-columns`.
 
 Lastly, we’ll perform a similar operation as before, by remapping the index of the column to a parameter for the `rotateY` value of the `transform` property. In this case, we’re transitioning between <var>($rotation-start - $rotation-offset)</var> (`-45deg`) and <var>($rotation-start + $rotation-offset)</var> (`45deg`).
 
-{%- highlight scss -%}
+{% highlight scss %}
 @for $i from 1 through $number-of-columns {
     .interact--#{$i}:hover ~ .globe {
         transform: rotateZ(range-map($i, 1, $number-of-columns, ($rotation-start - $rotation-offset), ($rotation-start + $rotation-offset)));
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/codepen.html slug='vZyywR' height='400' -%}
+{% include content/codepen.html slug='vZyywR' height='400' %}
 
-{%- include content/codepen.html slug='myyRqp' height='400' -%}
+{% include content/codepen.html slug='myyRqp' height='400' %}

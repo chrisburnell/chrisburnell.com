@@ -20,22 +20,22 @@
 <!-- Main Scripts -->
 <script type="text/javascript" src="/js/main.min.js?version={{ site.time | date: '%F_%H%M'}}"></script>
 
-{%- if page.caniuse -%}
+{% if page.caniuse %}
     <!-- Can I Use Embeds -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js" defer></script>
-{%- endif -%}
+{% endif %}
 
-{%- if page.codepen == true or page.codepen_slug -%}
+{% if page.codepen == true or page.codepen_slug %}
     <!-- CodePen Embeds -->
     <script type="text/javascript" src="//codepen.io/assets/embed/ei.js" defer></script>
-{%- endif -%}
+{% endif %}
 
-{%- if page.speakerdeck == true or page.speakerdeck_slug -%}
+{% if page.speakerdeck == true or page.speakerdeck_slug %}
     <!-- Speaker Deck Embeds -->
     <script type="text/javascript" src="//speakerdeck.com/assets/embed.js" defer></script>
-{%- endif -%}
+{% endif %}
 
-{%- if page.twitter == true -%}
+{% if page.twitter == true %}
     <!-- Twitter Cards -->
     <script type="text/javascript" src="//platform.twitter.com/widgets.js" defer></script>
-{%- endif -%}
+{% endif %}

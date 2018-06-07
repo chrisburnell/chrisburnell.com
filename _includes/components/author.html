@@ -1,4 +1,4 @@
-{%- include assets/yml-author.liquid -%}
+{% include assets/yml-author.liquid %}
 
 <aside class="author  p-author  h-card" role="complementary" itemscope itemtype="https://schema.org/Person">
 
@@ -31,8 +31,8 @@
         <p>I also <a class="u-url" rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (sometimes)</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.lastfm }}">listen to music (often)</a>, and <a class="u-url" rel="external  me" href="/recipes">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
-    {%- unless page.page_class contains 'search' -%}
-        {%- include components/widget-search.html -%}
-    {%- endunless -%}
+    {% unless page.page_class contains 'search' %}
+        {% include components/widget-search.html %}
+    {% endunless %}
 
 </aside>

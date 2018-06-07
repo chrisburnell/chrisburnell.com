@@ -14,7 +14,7 @@ syndication:
 ---
 
 
-{%- include content/codepen.html height='750' -%}
+{% include content/codepen.html height='750' %}
 
 This Pen demonstrates the differences between scaling an image with a transform and scaling an image by modifying the dimensions.
 

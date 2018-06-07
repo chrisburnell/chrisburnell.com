@@ -1,4 +1,4 @@
-{%- comment -%}
+{% comment %}
 
   Generates a Buttons List from the `archives` or `feeds` datasets.
 
@@ -6,37 +6,37 @@
   @param {String} include
   @param {String} exclude
 
-{%- endcomment -%}
-{%- if include.type == 'feeds' -%}
-    {%- assign data = site.data.feeds -%}
-{%- elsif include.type == 'archives' -%}
-    {%- assign data = site.data.archives -%}
-{%- endif -%}
+{% endcomment %}
+{% if include.type == 'feeds' %}
+    {% assign data = site.data.feeds %}
+{% elsif include.type == 'archives' %}
+    {% assign data = site.data.archives %}
+{% endif %}
 <nav class="buttons-list" role="navigation">
-    {%- include components/webmentions-button.html -%}
-    {%- include components/comments-button.html -%}
-    {%- for link in data -%}
-        {%- assign title = link.title | downcase -%}
-        {%- if include.include -%}
-            {%- if title contains include.include or title contains 'all' -%}
-                <a class="button"{%- if link.rel -%} rel="{{ link.rel }}"{%- endif -%} href="{{ link.url }}">
-                    {%- include content/svg.html type=link.icon -%}
+    {% include components/webmentions-button.html %}
+    {% include components/comments-button.html %}
+    {% for link in data %}
+        {% assign title = link.title | downcase %}
+        {% if include.include %}
+            {% if title contains include.include or title contains 'all' %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+                    {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
-            {%- endif -%}
-        {%- elsif include.exclude -%}
-            {%- unless title contains include.exclude -%}
-                <a class="button"{%- if link.rel -%} rel="{{ link.rel }}"{%- endif -%} href="{{ link.url }}">
-                    {%- include content/svg.html type=link.icon -%}
+            {% endif %}
+        {% elsif include.exclude %}
+            {% unless title contains include.exclude %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+                    {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
-            {%- endunless -%}
-        {%- else -%}
-            <a class="button"{%- if link.rel -%} rel="{{ link.rel }}"{%- endif -%} href="{{ link.url }}">
-                {%- include content/svg.html type=link.icon -%}
+            {% endunless %}
+        {% else %}
+            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+                {% include content/svg.html type=link.icon %}
                 {{ link.title }}
             </a>
-        {%- endif -%}
-    {%- endfor -%}
+        {% endif %}
+    {% endfor %}
     <noscript>Please enable JavaScript to view webmentions and comments.</noscript>
 </nav>

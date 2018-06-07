@@ -28,7 +28,7 @@ Another caveat to the challenge is that my site <s>is</s> was hosted on [GitHub 
 Regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes using a combination of *Jekyll*-powered *Liquid* alongside some *Sass*, avoiding *JavaScript* where unnecessary.
 
 
-{%- include content/heading.html title='Linked Headings' -%}
+{% include content/heading.html title='Linked Headings' %}
 
 When authoring articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in a post’s content. Users can link to these anchors and new visitors using that link will jump right to that heading in the content.
 
@@ -47,34 +47,34 @@ So how do I actually get *Jekyll* to build a *heading* and an *associated anchor
 
 As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown*. Instead of writing headings in the traditional method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes:
 
-{%- highlight html -%}
+{% highlight html %}
 <h3 id="brass-tacks">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h3>
-{%- endhighlight -%}
+{% endhighlight %}
 
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
 
-{%- highlight liquid -%}{% raw %}
+{% highlight liquid %}{% raw %}
 <!-- 1 -->
-{%- assign heading_type = 'h3' -%}
-{%- if include.type -%}
-    {%- assign heading_type = include.type -%}
-{%- endif -%}
+{% assign heading_type = 'h3' %}
+{% if include.type %}
+    {% assign heading_type = include.type %}
+{% endif %}
 
 <!-- 2 & 3 -->
-{%- assign heading_id = include.title | slugify -%}
-{%- if include.id -%}
-    {%- assign heading_id = include.id -%}
-{%- endif -%}
+{% assign heading_id = include.title | slugify %}
+{% if include.id %}
+    {% assign heading_id = include.id %}
+{% endif %}
 
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
     <!-- 4 -->
-    {%- include content/fragment-anchor.html id=heading_id -%}
+    {% include content/fragment-anchor.html id=heading_id %}
 </{{ heading_type }}>
-{% endraw %}{%- endhighlight -%}
+{% endraw %}{% endhighlight %}
 
 0. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
 0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the fragment anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/){:rel="external"} to automatically generate the `id`.
@@ -83,39 +83,39 @@ Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include
 
 Let’s see what the `fragment-anchor` *include* looks like.
 
-{%- highlight liquid -%}{% raw %}
+{% highlight liquid %}{% raw %}
 <!-- 1 -->
-{%- if include.id -%}
-    {%- capture href -%}#{{ include.id }}{%- endcapture -%}
-{%- elsif include.url -%}
-    {%- assign href = include.url -%}
-{%- endif -%}
+{% if include.id %}
+    {% capture href %}#{{ include.id }}{% endcapture %}
+{% elsif include.url %}
+    {% assign href = include.url %}
+{% endif %}
 
 <!-- 2 -->
-{%- if include.title -%}
-    {%- capture title -%} title="{{ include.title }}"{%- endcapture -%}
-{%- endif -%}
+{% if include.title %}
+    {% capture title %} title="{{ include.title }}"{% endcapture %}
+{% endif %}
 
 <!-- 3 -->
-{%- if include.rel -%}
-    {%- capture rel -%} rel="{{ include.rel }}"{%- endcapture -%}
-{%- endif -%}
+{% if include.rel %}
+    {% capture rel %} rel="{{ include.rel }}"{% endcapture %}
+{% endif %}
 
 <!-- 4 -->
-{%- if include.tabindex -%}
-    {%- capture tabindex -%} tabindex="{{ include.tabindex }}"{%- endcapture -%}
-{%- endif -%}
+{% if include.tabindex %}
+    {% capture tabindex %} tabindex="{{ include.tabindex }}"{% endcapture %}
+{% endif %}
 
 <!-- 5 -->
 <a href="{{ href }}" class="fragment-anchor"{{ title }}{{ rel }}{{ tabindex }}>{{ href }}</a>
-{% endraw %}{%- endhighlight -%}
+{% endraw %}{% endhighlight %}
 
-{%- highlight css -%}
+{% highlight css %}
 .fragment-anchor {
     display: none;
     /* ... */
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
 0. The *include* accepts parameters `id` and `url`, one or the other being **required** for the *include* to function. If an `id` parameter is passed then the `href` attribute of the anchor tag is set to the `id` prepended with `#`, to properly link to the correct heading on the page. If a `url` parameter is passed, then the `href` of the anchor tag is set to the `url`.
 0. The *include* also accepts an optional `title` parameter, which equates to a `title` attribute on the anchor tag. If the `title` parameter is not passed, no `title` attribute is printed on the anchor tag.
@@ -123,11 +123,11 @@ Let’s see what the `fragment-anchor` *include* looks like.
 0. The *include* also accepts an optional `tabindex` parameter, which equates to a `tabindex` attribute on the anchor tag. If the `tabindex` parameter is not passed, no `tabindex` attribute is printed on the anchor tag.
 0. For accessibility reasons and a coherent reading experience for screen readers, fragment anchors are always set to `display: none;` to exclude them from being read aloud or included in navigation searches.
 
-{%- highlight html -%}
+{% highlight html %}
 <h3 id="brass-tacks">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h3>
-{%- endhighlight -%}
+{% endhighlight %}
 
 This is the fully-generated output of the original *include* in the *Markdown* file.

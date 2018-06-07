@@ -19,15 +19,15 @@ sparkline: pens
 <p><em>There are {{ site.categories.pen | size }} published Pens.</em></p>
 
 <ol class="content-list" id="pens" role="list">
-    {%- for page in site.categories.pen -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.pen %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
 <hr>
 
-{%- include components/buttons-list.html type='feeds' include='pens' -%}
+{% include components/buttons-list.html type='feeds' include='pens' %}
 
 <hr>
 
-{%- include components/buttons-list.html type='archives' exclude='pens' -%}
+{% include components/buttons-list.html type='archives' exclude='pens' %}

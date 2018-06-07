@@ -10,12 +10,12 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="articles" role="list">
-    {%- for page in site.categories.article limit: 4 -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.article limit: 4 %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
-{%- include components/buttons-list.html type='archives' include='articles' -%}
+{% include components/buttons-list.html type='archives' include='articles' %}
 
 
 <h3>
@@ -24,12 +24,12 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="notes" role="list">
-    {%- for page in site.categories.note limit: 4 -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.note limit: 4 %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
-{%- include components/buttons-list.html type='archives' include='notes' -%}
+{% include components/buttons-list.html type='archives' include='notes' %}
 
 
 <h3>
@@ -38,12 +38,12 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="pens" role="list">
-    {%- for page in site.categories.pen limit: 4 -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.pen limit: 4 %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
-{%- include components/buttons-list.html type='archives' include='pens' -%}
+{% include components/buttons-list.html type='archives' include='pens' %}
 
 
 <h3>
@@ -52,25 +52,25 @@ searchable: no-content
 </h3>
 
 <ol class="content-list" id="links" role="list">
-    {%- for page in site.categories.link limit: 4 -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.link limit: 4 %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
-{%- include components/buttons-list.html type='archives' include='links' -%}
+{% include components/buttons-list.html type='archives' include='links' %}
 
 
-{%- comment -%}
+{% comment %}
 <h3>
     <a href="/talks/">Latest Talks</a>
     <canvas id="sparkline-talks" class="sparkline" width="120" height="22"></canvas>
 </h3>
 
 <ol class="content-list" id="talks" role="list">
-    {%- for page in site.categories.talk limit: 4 -%}
-        {%- include components/item-content-list.html -%}
-    {%- endfor -%}
+    {% for page in site.categories.talk limit: 4 %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
 </ol>
 
-{%- include components/buttons-list.html type='archives' include='talks' -%}
-{%- endcomment -%}
+{% include components/buttons-list.html type='archives' include='talks' %}
+{% endcomment %}

@@ -1,4 +1,4 @@
-{%- comment -%}
+{% comment %}
 
   This include lets you easily add a heading element with a fragment anchor.
 
@@ -9,30 +9,30 @@
   @param {Element} type [h3]
 
   @example
-    {%- include content/heading.html title='Let’s look at some code' -%}
+    {% include content/heading.html title='Let’s look at some code' %}
     // <h3 id="lets-look-at-some-code">
     //     Let’s look at some code
     //     <a href="#lets-look-at-some-code" class="fragment-anchor" aria-hidden="true">#</a>
     // </h3>
 
-{%- endcomment -%}
-{%- assign heading_type = include.type | default: 'h3' -%}
-{%- assign heading_id = include.id -%}
-{%- unless include.id -%}
-    {%- assign heading_id = include.title | slugify -%}
-{%- endunless -%}
-{%- assign heading_class = include.class | default: '' -%}
-{%- assign heading_href = include.href | default: '' -%}
-{%- assign heading_title_stripped = include.title | strip_html | prepend: 'Permalink: ' -%}
-<{{ heading_type }}{%- unless heading_class == '' -%} class="{{ heading_class }}"{%- endunless -%}{%- unless heading_id == '' -%} id="{{ heading_id }}"{%- endunless -%}>
-    {%- unless heading_href == '' -%}
+{% endcomment %}
+{% assign heading_type = include.type | default: 'h3' %}
+{% assign heading_id = include.id %}
+{% unless include.id %}
+    {% assign heading_id = include.title | slugify %}
+{% endunless %}
+{% assign heading_class = include.class | default: '' %}
+{% assign heading_href = include.href | default: '' %}
+{% assign heading_title_stripped = include.title | strip_html | prepend: 'Permalink: ' %}
+<{{ heading_type }}{% unless heading_class == '' %} class="{{ heading_class }}"{% endunless %}{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
+    {% unless heading_href == '' %}
         <a href="{{ heading_href }}">
-    {%- endunless -%}
+    {% endunless %}
     {{ include.title }}
-    {%- unless heading_href == '' -%}
+    {% unless heading_href == '' %}
         </a>
-    {%- endunless -%}
-    {%- unless heading_id == '' -%}
-        {%- include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' -%}
-    {%- endunless -%}
+    {% endunless %}
+    {% unless heading_id == '' %}
+        {% include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
+    {% endunless %}
 </{{ heading_type }}>

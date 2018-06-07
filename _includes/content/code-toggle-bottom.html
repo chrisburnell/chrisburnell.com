@@ -1,13 +1,13 @@
-{%- comment -%}
+{% comment %}
 
   This include lets you easily add a button for a code toggle.
   Used with discretion when code blocks are longer than at least five lines.
 
   @example
     < code block >
-    {%- include content/code-toggle-bottom.html -%}
+    {% include content/code-toggle-bottom.html %}
 
-{%- endcomment -%}
+{% endcomment %}
     <label id="code-toggle-label--{{ code_toggle_count }}" class="code-toggle-label" for="code-toggle-input--{{ code_toggle_count }}" aria-hidden="false">
         <button id="code-toggle-button--{{ code_toggle_count }}" aria-controls="code-toggle--{{ code_toggle_count}}" aria-pressed="false">View Full Code</button>
     </label>

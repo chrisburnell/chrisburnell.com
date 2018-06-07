@@ -1,4 +1,4 @@
-{%- comment -%}
+{% comment %}
 
   This include lets you easily add an Image with a WebP fallback
 
@@ -10,7 +10,7 @@
   @param {String} role
 
   @example
-    {%- include content/img.html src='/hero.png 1x, /hero@2x.png 2x' -%}
+    {% include content/img.html src='/hero.png 1x, /hero@2x.png 2x' %}
     // <picture>
     //     <source srcset="/hero.webp 1x,
     //                     /hero@2x.webp 2x"
@@ -20,34 +20,34 @@
     //          srcset="/hero@2x.png 2x">
     // </picture>
 
-{%- endcomment -%}
-{%- assign srcs = include.src | split: ',' -%}
-{%- assign src = srcs.first | strip | split: ' ' | first -%}
-{%- assign srcset = '' -%}
-{%- if srcs.size > 1 -%}
-    {%- capture srcset -%}srcset="{%- for src in srcs -%}
-        {%- unless forloop.first -%}
-            {%- unless forloop.last -%}, {%- endunless -%}
+{% endcomment %}
+{% assign srcs = include.src | split: ',' %}
+{% assign src = srcs.first | strip | split: ' ' | first %}
+{% assign srcset = '' %}
+{% if srcs.size > 1 %}
+    {% capture srcset %}srcset="{% for src in srcs %}
+        {% unless forloop.first %}
+            {% unless forloop.last %}, {% endunless %}
             {{ src }}
-        {%- endunless -%}
-    {%- endfor -%}"{%- endcapture -%}
-{%- endif -%}
-{%- assign alt = include.alt | default: '' -%}
-{%- capture width -%}{%- if include.width -%}width="{{ include.width }}"{%- endif -%}{%- endcapture -%}
-{%- capture height -%}{%- if include.height -%}height="{{ include.height }}"{%- endif -%}{%- endcapture -%}
-{%- capture style_width -%}{%- if include.width -%}width: {{ include.width | append: 'px' | replace: 'pxpx', 'px' }};{%- endif -%}{%- endcapture -%}
-{%- capture style_height -%}{%- if include.height -%}height: {{ include.height | append: 'px' | replace: 'pxpx', 'px' }};{%- endif -%}{%- endcapture -%}
-{%- assign style = '' -%}
-{%- if include.width or include.height -%}
-    {%- capture style -%}style="{{ style_width }} {{ style_height }}"{%- endcapture -%}
-{%- endif -%}
-{%- capture class -%}{%- if include.class -%}class="{{ include.class }}"{%- endif -%}{%- endcapture -%}
-{%- assign role = include.role | default: 'presentation' -%}
+        {% endunless %}
+    {% endfor %}"{% endcapture %}
+{% endif %}
+{% assign alt = include.alt | default: '' %}
+{% capture width %}{% if include.width %}width="{{ include.width }}"{% endif %}{% endcapture %}
+{% capture height %}{% if include.height %}height="{{ include.height }}"{% endif %}{% endcapture %}
+{% capture style_width %}{% if include.width %}width: {{ include.width | append: 'px' | replace: 'pxpx', 'px' }};{% endif %}{% endcapture %}
+{% capture style_height %}{% if include.height %}height: {{ include.height | append: 'px' | replace: 'pxpx', 'px' }};{% endif %}{% endcapture %}
+{% assign style = '' %}
+{% if include.width or include.height %}
+    {% capture style %}style="{{ style_width }} {{ style_height }}"{% endcapture %}
+{% endif %}
+{% capture class %}{% if include.class %}class="{{ include.class }}"{% endif %}{% endcapture %}
+{% assign role = include.role | default: 'presentation' %}
 <picture>
-    {%- if include.src contains 'jpg' or include.src contains 'jpeg' or include.src contains 'png' -%}
+    {% if include.src contains 'jpg' or include.src contains 'jpeg' or include.src contains 'png' %}
         <source srcset="{{ include.src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}"
                 type="image/webp">
-    {%- endif -%}
+    {% endif %}
     <img alt="{{ alt }}" role="{{ role }}"
          {{ class }} {{ style }} {{ width }} {{ height }}
          src="{{ src }}"

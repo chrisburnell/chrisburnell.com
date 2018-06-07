@@ -1,17 +1,17 @@
 <section class="widget  widget--latest-talks">
-    {%- include content/heading.html title='Latest Talks' href='/talks/' id='' -%}
+    {% include content/heading.html title='Latest Talks' href='/talks/' id='' %}
     <ol class="content-list" role="list">
-        {%- assign max_list_count = 2 -%}
-        {%- assign current_list_count = 0 -%}
-        {%- assign current_path = page.path -%}
-        {%- for page in site.categories.talk -%}
-            {%- unless current_list_count == max_list_count -%}
-                {%- unless page.path == current_path -%}
-                    {%- assign current_list_count = current_list_count | plus: 1 -%}
-                    {%- include components/item-content-list.html -%}
-                {%- endunless -%}
-            {%- endunless -%}
-        {%- endfor -%}
+        {% assign max_list_count = 2 %}
+        {% assign current_list_count = 0 %}
+        {% assign current_path = page.path %}
+        {% for page in site.categories.talk %}
+            {% unless current_list_count == max_list_count %}
+                {% unless page.path == current_path %}
+                    {% assign current_list_count = current_list_count | plus: 1 %}
+                    {% include components/item-content-list.html %}
+                {% endunless %}
+            {% endunless %}
+        {% endfor %}
     </ol>
     <a class="widget-related-anchor" href="/talks/">All Talks</a>
 </section>

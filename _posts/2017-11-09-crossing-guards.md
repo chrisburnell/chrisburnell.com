@@ -36,7 +36,7 @@ On the web, we’re used to change. We embrace change. It’s part of what makes
 Part of embracing that change means, as builders for the web, we have to be light on our toes and ready to adapt to factors within and without our control. It’s how you prepare and react to the changes that really matters.
 
 
-{%- include content/heading.html title='Hook, Line, & Sinker' -%}
+{% include content/heading.html title='Hook, Line, & Sinker' %}
 
 If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
@@ -47,20 +47,20 @@ Similarly, an infinite-scrolling technique typically involves a long list of man
 But be aware that these techniques come with their own set of UX and/or performance considerations.
 
 
-{%- include content/heading.html title='Let me take you on a trip down memory lane' -%}
+{% include content/heading.html title='Let me take you on a trip down memory lane' %}
 
 Over the many years of employing *lazy-loading*, *infinite-scrolling*, and similar techniques on the web, developers have come up with some clever solutions.
 
 At it’s simplest, we hook into the window’s `scroll` and `resize` events:
 
-{%- highlight javascript -%}
+{% highlight javascript %}
 let visibilityCheck = function(event) {
     // DO SOMETHING
 };
 
 window.addEventListener('scroll', visibilityCheck);
 window.addEventListener('resize', visibilityCheck);
-{%- endhighlight -%}
+{% endhighlight %}
 
 But we run a performance risk with this implementation. And in order to understand the risk, it’s important to also understand a bit about how your browser displays a webpage, and what your browser has to do when you scroll or resize a webpage.
 
@@ -92,12 +92,12 @@ Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun){:rel="external"}
 Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around the screen, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
 
 
-{%- include content/heading.html title='How did we solve that?' -%}
+{% include content/heading.html title='How did we solve that?' %}
 
 There are a handful of approaches to prevent our code from thrashing our users' browsers. I won’t highlight all of them here, but two of the most common techniques involve limiting how often we perform our checks.
 
 
-{%- highlight javascript -%}
+{% highlight javascript %}
 let locked = false;
 
 let visibilityCheck = function(event) {
@@ -111,14 +111,14 @@ let visibilityCheck = function(event) {
 
 window.addEventListener('scroll', visibilityCheck);
 window.addEventListener('resize', visibilityCheck);
-{%- endhighlight -%}
+{% endhighlight %}
 
 In this example, we set up a lock to prevent the check from firing if we’re already scrolling or resizing. Each time an event fires, we set our `locked` variable to true, and if the function runs and detects that the variable is still true, it prevents the action from carrying out by [returning the function](https://stackoverflow.com/questions/3330193/early-exit-from-function){:rel="external"}. If the JavaScript is already busy doing the <q>stuff</q> we want, the lock will be up, and our function will not run completely again until the first pass is complete, upon which time the lock will be lifted and we’ll be free to do more <q>stuff</q>.
 
 While we’ve stopped our code from executing every scroll or resize event, we’ve also limited the opportunities in time for our actions to be carried out. Instead of our actions firing at the exact moment they should, we may defer the action to the next frame if too many events occur within our **16ms** budget. The complexity of the code has also increased, and tracking our lock feels a little wonky.
 
 
-{%- highlight javascript -%}
+{% highlight javascript %}
 let checkTimeout;
 
 let visibilityCheck = function(event) {
@@ -135,7 +135,7 @@ let visibilityAction = function() {
 
 window.addEventListener('scroll', visibilityCheck);
 window.addEventListener('resize', visibilityCheck);
-{%- endhighlight -%}
+{% endhighlight %}
 
 In this example, we set up a timeout so that the check will only run every 250ms at the most. Each event triggers a timeout which calls the action function after 250ms. If another event occurs before this 250ms timeout, the existing timeout will be destroyed and a new 250ms timeout will be created.
 
@@ -146,7 +146,7 @@ And even then, we’re making a pretty broad assumption about the refresh rates 
 It seems the ideal solution would remove the guesswork in finding the best <q>middle-ground</q> delay and the assumptions we have to make about refresh rates.
 
 
-{%- include content/heading.html title='Prevalence of Garbage' -%}
+{% include content/heading.html title='Prevalence of Garbage' %}
 
 All of the techniques we’ve covered so far take an approach that, instead of reacting to each individual change as they happen, make proactive, repeated checks and set up reminders (in the form of `setInterval` or `setTimeout`) for the browser to do something with any changes that are found.
 
@@ -160,7 +160,7 @@ Might as well leave your oven on all day and all night, all year, because *event
 
 This is like running back-and-forth across a crosswalk, with a stop sign in hand, hoping that eventually, one of the times that you cross, you’ll find some use by helping someone across road.
 
-{%- include content/codepen.html slug='GOrvrJ' theme='tabfree' -%}
+{% include content/codepen.html slug='GOrvrJ' theme='tabfree' %}
 
 When we use these `setInterval` / `setTimeout` techniques, this is the kind of functionality we’re creating. We’re not coupling our *observation* and *action* steps in a simple way, and we’re creating arbitrary benchmarks based on our best guesses as developers. What we fail to account for is the unbelievably broad spectrum of devices we might be serving. And it is rightfully so that we should fail to account for this broad spectrum, as any guesses and benchmarks we make sit within a context and hold a bias that the browser/computer would not.
 
@@ -171,15 +171,15 @@ Is it better to go back-and-forth often, taking only one person per crossing? Or
 We have no way of guaranteeing an accurate <q>fits all</q> guess.
 
 
-{%- include content/heading.html title='What comes next?' -%}
+{% include content/heading.html title='What comes next?' %}
 
 Instead of doing so ourselves, let’s instead delegate these <del>guesses</del> decisions to each individual user’s browser and device. Instead of the Crossing Guard running across the road constantly, they should wait until someone needs to cross, and then do so.
 
-{%- include content/codepen.html slug='rYjpVJ' theme='tabfree' -%}
+{% include content/codepen.html slug='rYjpVJ' theme='tabfree' %}
 
 When we use this *IntersectionObserver* technique, we cease relying on arbitrary benchmarks, and we let the browser do the lifting that we had to burden ourselves with before. Rather than the Crossing Guard repeatedly crossing and hoping to be useful eventually, the Crossing Guard instead waits for any pedestrians before crossing with them.
 
-{%- highlight javascript -%}
+{% highlight javascript %}
 let target = document.querySelector('.target');
 let observer = new IntersectionObserver(callback);
 
@@ -196,7 +196,7 @@ let callback = function(entries, observer) {
 };
 
 observer.observe(target);
-{%- endhighlight -%}
+{% endhighlight %}
 
 On top of the performance benefits and relief of mental overhead you’ll gain from this technique, there are also a number of useful properties made available to you, the most useful of which I find to be `entry.intersectionRatio` and `entry.target`. These properties could very likely simplify your existing code, and could even offset the added verbosity you might incur from using *IntersectionObserver* over a previous technique.
 
@@ -209,14 +209,14 @@ Other benefits you’ll reap from *IntersectionObserver* include:
 
 Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill){:rel="external"} or not.
 
-{%- include content/caniuse.html feature='intersectionobserver' -%}
+{% include content/caniuse.html feature='intersectionobserver' %}
 
 An important caveat to note before diving too deep, at least at the time of writing, is that [*IntersectionObserver*](https://github.com/w3c/IntersectionObserver){:rel="external"} does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements){:rel="external"}; rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element){:rel="external"}-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
 
 
-{%- include content/heading.html title='In Conclusion' -%}
+{% include content/heading.html title='In Conclusion' %}
 
-{%- include content/codepen.html slug='JryQoM' -%}
+{% include content/codepen.html slug='JryQoM' %}
 
 *IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [*ResizeObserver*](https://wicg.github.io/ResizeObserver){:rel="external"} and [*Mutation Observer*](https://dom.spec.whatwg.org/#mutation-observers){:rel="external"}:
 

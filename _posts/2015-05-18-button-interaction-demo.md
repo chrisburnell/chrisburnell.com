@@ -11,15 +11,15 @@ shorturl: ax7qc
 ---
 
 
-{%- include content/codepen.html height='300' -%}
+{% include content/codepen.html height='300' %}
 
-{%- highlight html -%}
+{% highlight html %}
 <button>Hello!</button>
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-top.html -%}
+{% include content/code-toggle-top.html %}
 
-{%- highlight scss -%}
+{% highlight scss %}
 $black:     #0d0d0d;
 $gray:      #1d1d1d;
 $brand:     #8cddff;
@@ -63,6 +63,6 @@ button {
         }
     }
 }
-{%- endhighlight -%}
+{% endhighlight %}
 
-{%- include content/code-toggle-bottom.html -%}
+{% include content/code-toggle-bottom.html %}

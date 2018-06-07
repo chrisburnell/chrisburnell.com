@@ -17,10 +17,10 @@ vimeo_slug: 164122074
 ---
 
 
-I wrote about this talk in another article, [April LWS Talk]({%- post_url 2016-04-29-april-lws-talk -%}), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
+I wrote about this talk in another article, [April LWS Talk]({% post_url 2016-04-29-april-lws-talk %}), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
 
-{%- include content/heading.html title='Slides' -%}
+{% include content/heading.html title='Slides' %}
 
 <figure>
     <div class="media  media--speakerdeck">
@@ -32,7 +32,7 @@ I wrote about this talk in another article, [April LWS Talk]({%- post_url 2016-0
 </figure>
 
 
-{%- include content/heading.html title='Video' -%}
+{% include content/heading.html title='Video' %}
 
 <figure>
     <div class="media  media--vimeo">
