@@ -9,8 +9,6 @@ button,
 .button {
     @extend %button-elements !optional;
     @include border-radius(thin);
-    @include case(uppercase);
-    @include font-family(alpha);
     @include non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
