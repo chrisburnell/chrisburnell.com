@@ -30,14 +30,14 @@ summary {
     &:focus {
         text-decoration: underline;
         text-decoration-skip: ink;
-        // stylelint-disable property-no-unknown
         text-decoration-skip-ink: auto;
-        // stylelint-enable
     }
 
-    details:not([open]) &:hover,
-    details:not([open]) &:focus {
-        transform: translateX($measure-small);
+    details:not([open]) {
+        &:hover,
+        &:focus {
+            transform: translateX($measure-small);
+        }
     }
 
     & + %content-elements {

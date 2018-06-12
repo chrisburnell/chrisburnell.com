@@ -17,6 +17,7 @@ banner_mobile:
 edit_date: 2015-06-08 15:00:00
 edit_text: I originally documented this technique in a previous article, <a href="/article/ill-scratch-your-back">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message.
 
+comments: disqus
 shorturl: fv8cj
 
 syndication:

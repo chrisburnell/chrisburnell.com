@@ -14,6 +14,7 @@ banner:
 banner_mobile:
 - viewport-woes_mobile.png
 
+comments: disqus
 shorturl: xoskc
 
 syndication:

@@ -18,6 +18,7 @@ banner_mobile:
 
 caniuse: true
 codepen: true
+comments: disqus
 shorturl: 84ykc
 
 syndication:

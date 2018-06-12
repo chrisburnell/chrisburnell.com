@@ -17,6 +17,7 @@ banner_mobile:
 - shoot-for-the-moon_mobile.jpg
 
 codepen: true
+comments: disqus
 shorturl: uanoe
 
 syndication:

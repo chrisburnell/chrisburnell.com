@@ -15,6 +15,7 @@ banner:
 banner_mobile:
 - persistent-shadows_mobile.png
 
+comments: disqus
 codepen: true
 shorturl: jmfy7
 ---

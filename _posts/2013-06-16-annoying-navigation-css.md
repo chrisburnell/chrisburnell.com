@@ -15,6 +15,7 @@ banner:
 banner_mobile:
 - annoying-navigation-css_mobile.png
 
+comments: disqus
 codepen: true
 shorturl: nmwge
 ---

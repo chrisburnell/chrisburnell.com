@@ -9,6 +9,4 @@ tags:
 - serviceworker
 
 external_url: https://serviceworke.rs
-
-comments: false
 ---

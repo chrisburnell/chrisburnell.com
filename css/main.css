@@ -1838,8 +1838,8 @@ summary:focus {
     text-decoration-skip-ink: auto;
 }
 
-details:not([open]) summary:hover,
-details:not([open]) summary:focus {
+summary details:not([open]):hover,
+summary details:not([open]):focus {
     -webkit-transform: translateX(0.625rem);
     transform: translateX(0.625rem);
 }
@@ -2377,10 +2377,10 @@ footer {
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
-[class*="page--about"] [class*="nav-primary--about"] a,
-[class*="page--article"] [class*="nav-primary--article"] a,
-[class*="page--note"] [class*="nav-primary--note"] a,
-[class*="page--search"] [class*="nav-primary--search"] a {
+[class~="page--about"] [class~="nav-primary--about"] a,
+[class~="page--article"] [class~="nav-primary--article"] a,
+[class~="page--note"] [class~="nav-primary--note"] a,
+[class~="page--search"] [class~="nav-primary--search"] a {
     color: #4f4f4f;
     color: var(--color-kaiser);
     padding-bottom: 0.5rem;
@@ -2519,7 +2519,6 @@ aside + .lede {
     font-weight: var(--font-weight-bold);
 }
 
-/*dl*/
 .terminology {
     padding-bottom: 2.25rem;
     padding-bottom: var(--measure-large);
@@ -2831,7 +2830,6 @@ p + .buttons-list {
     }
 }
 
-/*aside*/
 .author {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-family: var(--font-family-default);
@@ -3000,8 +2998,8 @@ p + .buttons-list {
 .author-image:active > svg {
     -webkit-animation: peek 1s ease 2s forwards;
     animation: peek 1s ease 2s forwards;
-    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
-    animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
+    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
+    animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
 }
 
 @-webkit-keyframes peek {
@@ -3974,14 +3972,12 @@ button .icon--rss,
     margin-right: var(--measure-medium);
 }
 
-/*html*/
 .christmas {
     --color-raven: green;
     --color-bowhead: red;
     --color-coyote: green;
 }
 
-/*html*/
 .halloween {
     --color-black: invert($color-black);
     --color-mineshaft: invert($color-mineshaft);

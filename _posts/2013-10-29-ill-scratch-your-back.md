@@ -18,6 +18,7 @@ edit_date: 2015-06-06 20:20:00
 edit_text: I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="{% post_url 2015-06-08-backscratching-revisited %}">Backscratching Revisited</a>, or continue reading.
 
 caniuse: true
+comments: disqus
 shorturl: 82n3v
 
 syndication:

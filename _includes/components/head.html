@@ -39,7 +39,7 @@ snippet of code on a project of your own!  -->
 
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//webmention.io">
-    {% if page.comments == true %}
+    {% if page.comments == 'disqus' %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
         <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
     {% endif %}

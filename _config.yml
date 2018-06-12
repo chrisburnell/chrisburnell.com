@@ -79,7 +79,6 @@ defaults:
     path: '_posts'
   values:
     layout: 'post'
-    comments: true
     webmentions: true
 
 exclude:

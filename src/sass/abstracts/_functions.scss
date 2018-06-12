@@ -201,7 +201,6 @@
     @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 
-// stylelint-disable max-nesting-depth
 ///
 /// Unique Groups
 ///
@@ -310,7 +309,6 @@
 
     @return $unique-groups;
 }
-// stylelint-enable max-nesting-depth
 
 ///
 /// Unpack Transition List

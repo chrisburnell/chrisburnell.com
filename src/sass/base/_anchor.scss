@@ -13,9 +13,7 @@ a {
     text-decoration: underline;
     @include v(text-decoration-color, alto);
     text-decoration-skip: ink;
-    // stylelint-disable property-no-unknown
     text-decoration-skip-ink: auto;
-    // stylelint-enable
 
     &:focus {
         outline: $border-width-thin $border-style-default $color-raven;
@@ -136,7 +134,6 @@ a {
         &:target {
             animation: anchor-target $animation-duration $animation-function;
             animation: anchor-target var(--animation-duration) var(--animation-function);
-            // stylelint-disable max-nesting-depth
             @at-root {
                 @keyframes anchor-target {
                     0%,
@@ -148,7 +145,6 @@ a {
                     }
                 }
             }
-            // stylelint-enable max-nesting-depth
         }
     }
 }

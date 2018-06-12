@@ -76,7 +76,7 @@
     @include v(border-bottom-width, default);
 }
 @each $class in $navigation-classes {
-    [class*="page--#{$class}"] [class*="nav-primary--#{$class}"] a {
+    [class~="page--#{$class}"] [class~="nav-primary--#{$class}"] a {
         @extend %nav-primary-anchor !optional;
     }
 }

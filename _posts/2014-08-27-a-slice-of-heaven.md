@@ -17,6 +17,7 @@ tags:
 
 codepen: true
 caniuse: true
+comments: disqus
 shorturl: ynt2q
 
 syndication:

@@ -1001,10 +1001,10 @@ aside p {
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
-[class*="page--about"] [class*="nav-primary--about"] a,
-[class*="page--article"] [class*="nav-primary--article"] a,
-[class*="page--note"] [class*="nav-primary--note"] a,
-[class*="page--search"] [class*="nav-primary--search"] a {
+[class~="page--about"] [class~="nav-primary--about"] a,
+[class~="page--article"] [class~="nav-primary--article"] a,
+[class~="page--note"] [class~="nav-primary--note"] a,
+[class~="page--search"] [class~="nav-primary--search"] a {
     color: #4f4f4f;
     color: var(--color-kaiser);
     padding-bottom: 0.5rem;
@@ -1054,7 +1054,6 @@ aside + .lede {
     font-weight: var(--font-weight-bold);
 }
 
-/*aside*/
 .author {
     font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-family: var(--font-family-default);
@@ -1214,8 +1213,8 @@ aside + .lede {
 .author-image:active > svg {
     -webkit-animation: peek 1s ease 2s forwards;
             animation: peek 1s ease 2s forwards;
-    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
-            animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation--fill-mode);
+    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
+            animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
 }
 
 @-webkit-keyframes peek {

@@ -17,6 +17,7 @@ banner:
 banner_mobile:
 - first-article-ever_mobile.png
 
+comments: disqus
 shorturl: bqrm4
 
 syndication:

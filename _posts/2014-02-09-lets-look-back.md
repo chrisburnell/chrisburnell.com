@@ -16,6 +16,7 @@ banner:
 banner_mobile:
 - lets-look-back_mobile.png
 
+comments: disqus
 shorturl: dxaon
 
 syndication:

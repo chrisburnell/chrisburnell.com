@@ -17,6 +17,7 @@ banner_mobile:
 - unique-pairs-in-sass_mobile.jpg
 
 codepen: true
+comments: disqus
 shorturl: e1wjg
 
 syndication:

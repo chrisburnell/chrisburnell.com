@@ -1107,8 +1107,8 @@ summary:focus {
     text-decoration-skip-ink: auto;
 }
 
-details:not([open]) summary:hover,
-details:not([open]) summary:focus {
+summary details:not([open]):hover,
+summary details:not([open]):focus {
     -webkit-transform: translateX(0.625rem);
     transform: translateX(0.625rem);
 }
@@ -1329,7 +1329,6 @@ aside + .meta {
     }
 }
 
-/*dl*/
 .terminology {
     padding-bottom: 2.25rem;
     padding-bottom: var(--measure-large);
@@ -2404,14 +2403,12 @@ code[data-lang]::before {
     margin-right: var(--measure-medium);
 }
 
-/*html*/
 .christmas {
     --color-raven: green;
     --color-bowhead: red;
     --color-coyote: green;
 }
 
-/*html*/
 .halloween {
     --color-black: invert($color-black);
     --color-mineshaft: invert($color-mineshaft);

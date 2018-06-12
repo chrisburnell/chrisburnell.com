@@ -9,6 +9,4 @@ tags:
 - svg
 
 external_url: http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css
-
-comments: false
 ---

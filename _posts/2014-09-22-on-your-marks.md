@@ -17,6 +17,7 @@ banner_mobile:
 edit_date: 2016-01-25 12:45:00
 edit_text: I’ve modified the JavaScript for this section of my site over time, but have reflected the changes in the code snippets below.
 
+comments: disqus
 shorturl: sfn8k
 
 syndication:

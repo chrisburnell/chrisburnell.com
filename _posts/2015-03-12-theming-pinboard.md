@@ -15,8 +15,9 @@ banner:
 banner_mobile:
 - theming-pinboard_mobile.png
 
-shorturl: 1faeu
+comments: disqus
 twitter: true
+shorturl: 1faeu
 
 syndication:
 - https://twitter.com/iamchrisburnell/status/576014944627490816

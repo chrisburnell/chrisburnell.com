@@ -11,6 +11,7 @@ tags:
 - sass
 
 codepen: true
+comments: disqus
 shorturl: 0aby8
 
 syndication:

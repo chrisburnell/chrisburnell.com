@@ -10,6 +10,7 @@ tags:
 - sass
 - tutorials
 
+comments: disqus
 shorturl: fqojr
 
 syndication:

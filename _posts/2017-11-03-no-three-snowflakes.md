@@ -17,6 +17,7 @@ banner_mobile:
 - no-three-snowflakes_mobile.jpg
 
 codepen: true
+comments: disqus
 shorturl: 2p4f3
 
 syndication:

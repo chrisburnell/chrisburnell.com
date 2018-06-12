@@ -7,6 +7,4 @@ title: Editing your last embarrassment
 lede: <q>In other words Quick editing your last sent texts</q>
 
 external_url: https://suganth.cc/editing-your-last-embarrassment-af377f7c123d
-
-comments: false
 ---
