@@ -61,7 +61,7 @@ port: 4000
 timezone: Europe/London
 language: en
 
-show_drafts: true
+show_drafts: false
 future: false
 unpublished: false
 incremental: true
