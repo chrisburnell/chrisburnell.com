@@ -4,21 +4,18 @@
  * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications)
  */
 
-
 (() => {
-
-    'use strict';
-
+    "use strict";
 
     let query;
-    let searchContainer = document.querySelector('.js-search');
-    let searchForm      = document.querySelector('.js-search-form');
-    let searchInput     = document.querySelector('.js-search-input');
-    let searchSubmit    = document.querySelector('.js-search-submit');
-    let resultsMeta     = document.querySelector('.js-search-meta');
-    let resultsList     = document.querySelector('.js-search-results-list');
+    let searchContainer = document.querySelector(".js-search");
+    let searchForm = document.querySelector(".js-search-form");
+    let searchInput = document.querySelector(".js-search-input");
+    let searchSubmit = document.querySelector(".js-search-submit");
+    let resultsMeta = document.querySelector(".js-search-meta");
+    let resultsList = document.querySelector(".js-search-results-list");
     const ALLOW_EMPTY = false;
-    const JSON_FEED_URL = '../search.json';
+    const JSON_FEED_URL = "../search.json";
     const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
             <a href="{{ url }}">
@@ -38,16 +35,14 @@
         </article>
     </li>`;
 
-
     // enable Search
     if (searchInput !== null && searchSubmit !== null) {
-        searchInput.disabled  = false;
-        searchInput.setAttribute('aria-disabled', 'false');
+        searchInput.disabled = false;
+        searchInput.setAttribute("aria-disabled", "false");
         searchSubmit.disabled = false;
-        searchSubmit.setAttribute('aria-disabled', 'false');
+        searchSubmit.setAttribute("aria-disabled", "false");
         initSearch();
     }
-
 
     ////
     /// Initiate search functionality.
@@ -60,8 +55,8 @@
         }
 
         // Get search results if query parameter is set in querystring
-        if (helpers.getParameterByName('query')) {
-            query = decodeURIComponent(helpers.getParameterByName('query'));
+        if (helpers.getParameterByName("query")) {
+            query = decodeURIComponent(helpers.getParameterByName("query"));
             searchInput.value = query;
             execSearch(query);
         }
@@ -69,7 +64,7 @@
         query = searchInput.value;
 
         // Catch the form submission and initiate search lookup
-        searchForm.addEventListener('submit', submitCallback);
+        searchForm.addEventListener("submit", submitCallback);
     }
 
     function submitCallback(event) {
@@ -79,7 +74,7 @@
         if (query.length >= 2 && query.length <= 30) {
             execSearch(query);
         } else {
-            resultsMeta.innerHTML = 'Your search query must be 2–30 characters in length.';
+            resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
         }
     }
 
@@ -89,7 +84,7 @@
     /// @return void
     ////
     function execSearch(query) {
-        if (query !== '' || ALLOW_EMPTY) {
+        if (query !== "" || ALLOW_EMPTY) {
             getSearchResults();
         }
     }
@@ -102,7 +97,7 @@
     function getSearchResults() {
         let request = new XMLHttpRequest();
 
-        request.open('GET', JSON_FEED_URL, true);
+        request.open("GET", JSON_FEED_URL, true);
 
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
@@ -125,18 +120,17 @@
     ////
     function processData(data) {
         let resultsCount = 0,
-            results = '';
+            results = "";
 
         for (let item of data) {
-
-            let queryFormatted  = query.toLowerCase(),
-                titleCheck      = false,
-                ledeCheck       = false,
-                dateCheck       = false,
-                contentCheck    = false,
+            let queryFormatted = query.toLowerCase(),
+                titleCheck = false,
+                ledeCheck = false,
+                dateCheck = false,
+                contentCheck = false,
                 categoriesCheck = false,
-                tagsCheck       = false,
-                locationCheck   = false;
+                tagsCheck = false,
+                locationCheck = false;
 
             if (item.title) {
                 titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
@@ -146,13 +140,12 @@
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
             }
             if (item.date || item.date_friendly) {
-                if (queryFormatted.substring(0, 5) == 'date:') {
+                if (queryFormatted.substring(0, 5) == "date:") {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     if (!dateCheck) {
                         dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     }
-                }
-                else {
+                } else {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
                     if (!dateCheck) {
                         dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
@@ -166,13 +159,11 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
             }
             if (item.tags) {
-                if (queryFormatted.substring(0, 4) == 'tag:') {
+                if (queryFormatted.substring(0, 4) == "tag:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
-                }
-                else if (queryFormatted.substring(0, 5) == 'tags:') {
+                } else if (queryFormatted.substring(0, 5) == "tags:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                }
-                else {
+                } else {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }
@@ -181,18 +172,18 @@
             }
 
             // if performing a date check
-            if ((queryFormatted.substring(0, 5) == 'date:') && dateCheck) {
+            if (queryFormatted.substring(0, 5) == "date:" && dateCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // if performing a tags check
-            else if (((queryFormatted.substring(0, 4) == 'tag:') || (queryFormatted.substring(0, 5) == 'tags:')) && tagsCheck) {
+            else if ((queryFormatted.substring(0, 4) == "tag:" || queryFormatted.substring(0, 5) == "tags:") && tagsCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // or item type is a page, check if search term is in title,
             // content, or lede, categories, tags, or talk location
-            else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+            else if (item.type == "page" && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
             }
@@ -207,7 +198,7 @@
         populateResultsString(resultsCount);
         showSearchResults(results);
 
-        ga('send', 'event', 'search', resultsCount, query);
+        ga("send", "event", "search", resultsCount, query);
     }
 
     ////
@@ -223,7 +214,7 @@
         // And scroll to the results
         resultsMeta.scrollIntoView();
         // And mark the resultsList as `aria-expanded="true"`
-        resultsList.setAttribute('aria-expanded', 'true');
+        resultsList.setAttribute("aria-expanded", "true");
     }
 
     ////
@@ -234,64 +225,57 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, '{{ url }}');
+        html = helpers.injectContent(html, item.url, "{{ url }}");
 
         // ICON
-        if (item.categories == 'article') {
-            html = helpers.injectContent(html, 'article', '{{ icon }}');
-        }
-        else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'link', '{{ icon }}');
-        }
-        else if (item.categories == 'note') {
-            html = helpers.injectContent(html, 'feather', '{{ icon }}');
-        }
-        else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'codepen', '{{ icon }}');
-        }
-        else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'bullhorn', '{{ icon }}');
+        if (item.categories == "article") {
+            html = helpers.injectContent(html, "article", "{{ icon }}");
+        } else if (item.categories == "link") {
+            html = helpers.injectContent(html, "link", "{{ icon }}");
+        } else if (item.categories == "note") {
+            html = helpers.injectContent(html, "feather", "{{ icon }}");
+        } else if (item.categories == "pen") {
+            html = helpers.injectContent(html, "codepen", "{{ icon }}");
+        } else if (item.categories == "talk") {
+            html = helpers.injectContent(html, "bullhorn", "{{ icon }}");
         }
 
         // TITLE
-        if (item.categories == 'note') {
-            html = helpers.injectContent(html, item.date_friendly, '{{ title }}');
-        }
-        else {
-            html = helpers.injectContent(html, item.title, '{{ title }}');
+        if (item.categories == "note") {
+            html = helpers.injectContent(html, item.date_friendly, "{{ title }}");
+        } else {
+            html = helpers.injectContent(html, item.title, "{{ title }}");
         }
 
         // LEDE
         if (item.lede) {
-            let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
-            html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
-        }
-        else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
-        }
-        else if (item.categories == 'note') {
-            html = helpers.injectContent(html, 'Shared Note', '{{ lede }}');
-        }
-        else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
-        }
-        else if (item.categories == 'talk' && item.location) {
-            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{ lede }}');
-        }
-        else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, `Talk`, '{{ lede }}');
+            let ledeFormatted = item.lede
+                .replace(/(<([^>]+)>)/gi, "")
+                .split(/(?=\s)/gi)
+                .slice(0, 20)
+                .join("");
+            html = helpers.injectContent(html, ledeFormatted, "{{ lede }}");
+        } else if (item.categories == "link") {
+            html = helpers.injectContent(html, "Shared Link", "{{ lede }}");
+        } else if (item.categories == "note") {
+            html = helpers.injectContent(html, "Shared Note", "{{ lede }}");
+        } else if (item.categories == "pen") {
+            html = helpers.injectContent(html, "Featured Pen", "{{ lede }}");
+        } else if (item.categories == "talk" && item.location) {
+            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, "{{ lede }}");
+        } else if (item.categories == "talk") {
+            html = helpers.injectContent(html, `Talk`, "{{ lede }}");
         }
 
         // DATE
-        if (item.type == 'post') {
-            html = helpers.injectContent(html, item.date, '{{ date }}');
-            html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
+        if (item.type == "post") {
+            html = helpers.injectContent(html, item.date, "{{ date }}");
+            html = helpers.injectContent(html, item.date_friendly, "{{ date_friendly }}");
 
-            if (item.categories == 'note') {
-                html = helpers.injectContent(html, '  hidden', '{{ date_class }}');
-            }
-            else {
-                html = helpers.injectContent(html, '', '{{ date_class }}');
+            if (item.categories == "note") {
+                html = helpers.injectContent(html, "  hidden", "{{ date_class }}");
+            } else {
+                html = helpers.injectContent(html, "", "{{ date_class }}");
             }
         }
 
@@ -304,10 +288,9 @@
     /// @return void
     ////
     function populateResultsString(count) {
-        let resultSuffix = (count == 1) ? '' : 's';
+        let resultSuffix = count == 1 ? "" : "s";
         let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 
         resultsMeta.innerHTML = searchMeta;
     }
-
 })();

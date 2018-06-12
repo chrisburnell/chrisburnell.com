@@ -9,7 +9,6 @@
       "twitter": "@iamchrisburnell"
     }
   ],
-  "version": "3.2.0",
   "description": "Some real sweet codestuffs.",
   "license": "GPL-3.0",
   "main": "gulpfile.babel.js",
@@ -25,7 +24,6 @@
     "gulp": "^3.9.1",
     "gulp-babel": "7.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^4.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "1.4.0",
     "gulp-plumber": "1.2.0",

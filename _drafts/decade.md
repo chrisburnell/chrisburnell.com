@@ -4,14 +4,14 @@ categories: article
 date: 2018-04-21 09:00:00
 
 title: A Decade in the Making
-lede: Today marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it publicly, irreversibly, for eternity, might seem a little out of character. A decade later, what’s changed? What have I learned? What will I be doing differently in another decade’s time?
+lede: This year marks ten years that I’ve been making a mess on the web. While making a mess has always been the norm for me, documenting it publicly, irreversibly, for eternity, might seem a little out of character. A decade later, what’s changed? What have I learned? What will I be doing differently in another decade’s time?
 tags:
 - personal
 
 footnotes:
 - I’m aware of the <a href="http://bradfrost.com/blog/post/just/" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.
 
-shorturl: 12345
+shorturl: TODO
 ---
 
 
@@ -38,9 +38,3 @@ But it’s that I have any content to speak of that I’m celebrating. Just writ
 Over the years of writing, editing, and not publishing, I regret almost every piece of work I’ve not published. I naïvely wanted to write prose that was ephemeral and rung true no matter how far into the future a reader might be. Sure, 
 
 But this is an impossible task. There is an inescapable timeliness to words and prose.
-
-
-
-
-
-

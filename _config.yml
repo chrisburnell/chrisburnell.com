@@ -2,7 +2,6 @@ title:       Chris Burnell
 short_title: cb
 tagline:     'I’m Ravenous for CSS.'
 lede:        'I’m a <span class="canada">Canadian</span> UI developer living in London, UK. This is where I write about and share my passions: CSS, best practices and web standards, performance, front-end architecture, and innovations on the web.'
-version:     3.2.0
 color:       5f8aa6
 
 author:
@@ -17,10 +16,6 @@ author:
     name: Squiz
     url:  https://www.squiz.net
     role: Front-End Developer
-
-url:      https://chrisburnell.com
-baseurl:  ''
-shorturl: https://repc.co/
 
 urls:
   codepen:            https://codepen.io/chrisburnell
@@ -53,13 +48,24 @@ codepen:
     default: 119
     tabfree: 8863
 
+emptyArray: []
+
+url:      https://chrisburnell.com
+baseurl:  ''
+shorturl: https://repc.co/
+
+detach: false
+host: 127.0.0.1
+port: 4000
+
 timezone: Europe/London
 language: en
 
-future: true
+show_drafts: true
+future: false
+unpublished: false
 incremental: true
 destination: ./_site
-layouts_dir: ./_layouts
 permalink: /:categories/:title/
 
 defaults:
@@ -100,5 +106,3 @@ exclude:
 plugins:
 - jekyll-redirect-from
 - jemoji
-
-emptyArray: []

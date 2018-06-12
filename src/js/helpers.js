@@ -3,7 +3,6 @@
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-
 helpers = {
     ////
     /// Injects content into template using placeholder
@@ -13,7 +12,7 @@ helpers = {
     /// @return {String} injected content
     ////
     injectContent: function(originalContent, placeholder, injection) {
-        const regex = new RegExp(placeholder, 'g');
+        const regex = new RegExp(placeholder, "g");
 
         return originalContent.replace(regex, injection);
     },
@@ -27,7 +26,7 @@ helpers = {
     getParameterByName: function(name) {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
-        return regex && decodeURIComponent(regex[1].replace(/\+/g, ' '));
+        return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
     },
 
     ////
@@ -39,9 +38,9 @@ helpers = {
     enableElement: function(element, action) {
         if (element !== null) {
             element.disabled = false;
-            element.setAttribute('aria-disabled', 'false');
+            element.setAttribute("aria-disabled", "false");
             if (action) {
-                element.addEventListener('click', action);
+                element.addEventListener("click", action);
             }
         }
     },
@@ -52,20 +51,7 @@ helpers = {
     /// @return {String} formattedDate
     ////
     formatDate: function(date) {
-        const months = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December'
-        ];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let day = date.getDate();
         if (day < 10) {
@@ -87,8 +73,8 @@ helpers = {
     formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
         let minutes = `:${date.getMinutes()}`;
-        let seconds = includeSeconds ? `:${date.getSeconds()}` : '';
-        let meridiem = includeMeridiem ? ` ${hours < 12 ? 'am' : 'pm'}` : '';
+        let seconds = includeSeconds ? `:${date.getSeconds()}` : "";
+        let meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : "";
 
         // format from 24-hours to 12-hours if including meridiem
         hours = includeMeridiem ? hours % 12 || 12 : hours;
@@ -108,6 +94,5 @@ helpers = {
                 action();
             }
         }
-    },
-
+    }
 };

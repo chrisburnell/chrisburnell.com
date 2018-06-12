@@ -1,9 +1,7 @@
 ## chrisburnell.com
 
-
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-![Version](https://img.shields.io/badge/version-3.2.0-blue.svg?longCache=true&style=for-the-badge)
 [![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?longCache=true&style=for-the-badge)](LICENSE)
 
 [![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&longCache=true&style=for-the-badge)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
@@ -12,20 +10,18 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
 [![Build Status](https://semaphoreci.com/api/v1/chrisburnell/chrisburnell-com/branches/master/badge.svg)](https://semaphoreci.com/chrisburnell/chrisburnell-com)
 
-
 ### Table of Contents
 
-- [Title](#chrisburnellcom)
-- [Description](#description)
-- [Contributing](#contributing)
-- [Build Process](#build-process)
-- [Layouts](#layouts)
-- [Includes](#includes)
-- [Sass Structure](#sass-structure)
-- [Generated](#generated)
-- [Network](#network)
-- [License](#license)
-
+-   [Title](#chrisburnellcom)
+-   [Description](#description)
+-   [Contributing](#contributing)
+-   [Build Process](#build-process)
+-   [Layouts](#layouts)
+-   [Includes](#includes)
+-   [Sass Structure](#sass-structure)
+-   [Generated](#generated)
+-   [Network](#network)
+-   [License](#license)
 
 ### Description
 
@@ -38,25 +34,21 @@ don’t hesitate to get in touch—via
 [twitter](https://twitter.com/iamchrisburnell) or email—or open a new issue to
 report bugs or suggestions.
 
-
 ### Code of Conduct
 
 Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
-
 
 ### Contributing
 
 Please see the [Contributing Guide](CONTRIBUTING.md), [Commit Template](COMMIT_TEMPLATE.md), [Issue Template](ISSUE_TEMPLATE.md), and [Pull Request Template](PULL_REQUEST_TEMPLATE.md).
 
-
 ### Build Process
 
-- [Jekyll](https://jekyllrb.com)
-- [SCSS](http://sass-lang.com)
-- [Autoprefixer](https://github.com/ai/autoprefixer)
-- [Gulp](http://gulpjs.com)
-- [PostCSS](http://postcss.org/)
-
+-   [Jekyll](https://jekyllrb.com)
+-   [SCSS](http://sass-lang.com)
+-   [Autoprefixer](https://github.com/ai/autoprefixer)
+-   [Gulp](http://gulpjs.com)
+-   [PostCSS](http://postcss.org/)
 
 ### Layouts
 
@@ -67,7 +59,6 @@ _layouts
 ├── post.html
 └── recipe.html
 ```
-
 
 ### Includes
 
@@ -117,7 +108,6 @@ _includes
     ├── critical-css.html
     └── loadcss.html
 ```
-
 
 ### Sass Structure
 
@@ -188,7 +178,6 @@ src/sass
 └── main.scss
 ```
 
-
 ### Generated
 
 ```text
@@ -198,11 +187,9 @@ _includes/generated
 serviceworker.js
 ```
 
-
 ### Network
 
 SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/) 🙏
-
 
 ### License
 

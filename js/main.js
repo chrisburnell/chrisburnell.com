@@ -3,7 +3,6 @@
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-
 helpers = {
     ////
     /// Injects content into template using placeholder
@@ -13,7 +12,7 @@ helpers = {
     /// @return {String} injected content
     ////
     injectContent: function(originalContent, placeholder, injection) {
-        const regex = new RegExp(placeholder, 'g');
+        const regex = new RegExp(placeholder, "g");
 
         return originalContent.replace(regex, injection);
     },
@@ -27,7 +26,7 @@ helpers = {
     getParameterByName: function(name) {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
-        return regex && decodeURIComponent(regex[1].replace(/\+/g, ' '));
+        return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
     },
 
     ////
@@ -39,9 +38,9 @@ helpers = {
     enableElement: function(element, action) {
         if (element !== null) {
             element.disabled = false;
-            element.setAttribute('aria-disabled', 'false');
+            element.setAttribute("aria-disabled", "false");
             if (action) {
-                element.addEventListener('click', action);
+                element.addEventListener("click", action);
             }
         }
     },
@@ -52,20 +51,7 @@ helpers = {
     /// @return {String} formattedDate
     ////
     formatDate: function(date) {
-        const months = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December'
-        ];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let day = date.getDate();
         if (day < 10) {
@@ -87,8 +73,8 @@ helpers = {
     formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
         let minutes = `:${date.getMinutes()}`;
-        let seconds = includeSeconds ? `:${date.getSeconds()}` : '';
-        let meridiem = includeMeridiem ? ` ${hours < 12 ? 'am' : 'pm'}` : '';
+        let seconds = includeSeconds ? `:${date.getSeconds()}` : "";
+        let meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : "";
 
         // format from 24-hours to 12-hours if including meridiem
         hours = includeMeridiem ? hours % 12 || 12 : hours;
@@ -108,8 +94,7 @@ helpers = {
                 action();
             }
         }
-    },
-
+    }
 };
 
 ///
@@ -205,38 +190,33 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-
 (() => {
+    "use strict";
 
-    'use strict';
-
-
-    const CODE_TOGGLE_LABELS = document.querySelectorAll('.code-toggle-label');
+    const CODE_TOGGLE_LABELS = document.querySelectorAll(".code-toggle-label");
 
     for (let codeToggleLabel of CODE_TOGGLE_LABELS) {
-        codeToggleLabel.addEventListener('click', event => {
+        codeToggleLabel.addEventListener("click", event => {
             event.preventDefault();
-            let codeToggleIDArray = event.target.getAttribute('id').split('--');
+            let codeToggleIDArray = event.target.getAttribute("id").split("--");
             toggleCode(codeToggleIDArray[1]);
         });
     }
 
-
     function toggleCode(codeToggleID) {
-        let codeToggle       = document.querySelector(`#code-toggle--${codeToggleID}`);
-        let codeToggleInput  = document.querySelector(`#code-toggle-input--${codeToggleID}`);
-        let codeToggleLabel  = document.querySelector(`#code-toggle-label--${codeToggleID}`);
+        let codeToggle = document.querySelector(`#code-toggle--${codeToggleID}`);
+        let codeToggleInput = document.querySelector(`#code-toggle-input--${codeToggleID}`);
+        let codeToggleLabel = document.querySelector(`#code-toggle-label--${codeToggleID}`);
         let codeToggleButton = document.querySelector(`#code-toggle-button--${codeToggleID}`);
 
         codeToggleInput.checked = true;
-        codeToggle.setAttribute('aria-expanded', 'true');
-        codeToggleLabel.setAttribute('aria-hidden', 'true');
-        codeToggleLabel.removeEventListener('click', () => {});
-        codeToggleButton.setAttribute('aria-pressed', 'true');
+        codeToggle.setAttribute("aria-expanded", "true");
+        codeToggleLabel.setAttribute("aria-hidden", "true");
+        codeToggleLabel.removeEventListener("click", () => {});
+        codeToggleButton.setAttribute("aria-pressed", "true");
 
         window.location.hash = `#code-toggle--${codeToggleID}`;
     }
-
 })();
 
 /*!
@@ -244,76 +224,70 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-
 (() => {
+    "use strict";
 
-    'use strict';
-
-
-    const DISQUS_SHORTNAME = 'chrisburnell';
-    const COMMENTS_SECTION = document.querySelector('.js-comments');
-    const COMMENTS_BUTTON  = document.querySelector('.js-show-comments');
+    const DISQUS_SHORTNAME = "chrisburnell";
+    const COMMENTS_SECTION = document.querySelector(".js-comments");
+    const COMMENTS_BUTTON = document.querySelector(".js-show-comments");
     // `#comment` will match both `#comment` and `#comments`
-    const COMMENTS_HASH = ['#comment', '#disqus_thread'];
+    const COMMENTS_HASH = ["#comment", "#disqus_thread"];
 
     // Enable the Comments button
     helpers.enableElement(COMMENTS_BUTTON, showComments);
 
     // initiate Comments if hash present on load
-    window.addEventListener('load', helpers.actionFromHash(COMMENTS_HASH, showComments));
+    window.addEventListener("load", helpers.actionFromHash(COMMENTS_HASH, showComments));
     // initiate Comments if hash present on hash change
-    window.addEventListener('hashchange', helpers.actionFromHash(COMMENTS_HASH, showComments));
+    window.addEventListener("hashchange", helpers.actionFromHash(COMMENTS_HASH, showComments));
 
     // Load in Disqus comments and remove the comments button
     function showComments() {
         // only if the button still exists, load comments and hide the button
-        if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute('aria-hidden') === 'false') {
-            COMMENTS_BUTTON.setAttribute('aria-pressed', 'true');
-            COMMENTS_BUTTON.setAttribute('aria-expanded', 'true');
-            COMMENTS_BUTTON.setAttribute('aria-hidden', 'true');
-            COMMENTS_BUTTON.removeEventListener('click', () => {});
+        if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute("aria-hidden") === "false") {
+            COMMENTS_BUTTON.setAttribute("aria-pressed", "true");
+            COMMENTS_BUTTON.setAttribute("aria-expanded", "true");
+            COMMENTS_BUTTON.setAttribute("aria-hidden", "true");
+            COMMENTS_BUTTON.removeEventListener("click", () => {});
             (() => {
-                const DISQUS_SCRIPT = document.createElement('script');
-                DISQUS_SCRIPT.type = 'text/javascript';
+                const DISQUS_SCRIPT = document.createElement("script");
+                DISQUS_SCRIPT.type = "text/javascript";
                 DISQUS_SCRIPT.async = true;
                 DISQUS_SCRIPT.src = `//${DISQUS_SHORTNAME}.disqus.com/embed.js`;
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(DISQUS_SCRIPT);
+                (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(DISQUS_SCRIPT);
             })();
-            COMMENTS_SECTION.setAttribute('aria-hidden', 'false');
+            COMMENTS_SECTION.setAttribute("aria-hidden", "false");
             COMMENTS_SECTION.scrollIntoView();
         }
     }
-
 })();
 
 (() => {
+    "use strict";
 
-    'use strict';
-
-    console.log('%cRAVEN', 'color: #507791');
-    console.log('%c  OUSRAV', 'color: #507791');
-    console.log('%c    ENOUSRA', 'color: #507791');
-    console.log('%c      VENOUSRA', 'color: #507791');
-    console.log('%c       VENOUSR', 'color: #507791');
-    console.log('%c       AVENOUSR               A', 'color: #507791');
-    console.log('%c        VENOUSR             A VE', 'color: #507791');
-    console.log('%c        NOUSRAVE         NO USRA V', 'color: #507791');
-    console.log('%c         ENOUSRAV     ENOUSRAVENOU', 'color: #507791');
-    console.log('%c          SRAVENOUSRAVENOUSRAVENOU', 'color: #507791');
-    console.log('%c           SRAVENOUSRAVENOUSRAVENO', 'color: #507791');
-    console.log('%cUSR      AVENOUSRAVENOUSRAVENOUSRA', 'color: #507791');
-    console.log('%c VENOUSRAVENOUSRAVENOUSRAVEN', 'color: #507791');
-    console.log('%c  OUSRAVENOUSRAVENOUSRAVEN', 'color: #507791');
-    console.log('%c   OUSRAVENOUSRAVENOUSRAV', 'color: #507791');
-    console.log('%c     ENOUSRAVENOUSRAVEN' + '%cO' + '%cUS', 'color: #507791', 'color: #eb2d37', 'color: #507791');
-    console.log('%c            RAVEN     OUS', 'color: #507791');
-    console.log('%c          RAVEN        OU', 'color: #507791');
-    console.log('%c         SR AV', 'color: #507791');
-    console.log('%c            EN', 'color: #507791');
-    console.log('');
-    console.log('%cChecking out the source code, eh?', 'color: #507791');
-    console.log('%cGet in touch with me if you want to know more about the code, or if you want to use a snippet of code on a project of your own!', 'color: #507791');
-
+    console.log("%cRAVEN", "color: #507791");
+    console.log("%c  OUSRAV", "color: #507791");
+    console.log("%c    ENOUSRA", "color: #507791");
+    console.log("%c      VENOUSRA", "color: #507791");
+    console.log("%c       VENOUSR", "color: #507791");
+    console.log("%c       AVENOUSR               A", "color: #507791");
+    console.log("%c        VENOUSR             A VE", "color: #507791");
+    console.log("%c        NOUSRAVE         NO USRA V", "color: #507791");
+    console.log("%c         ENOUSRAV     ENOUSRAVENOU", "color: #507791");
+    console.log("%c          SRAVENOUSRAVENOUSRAVENOU", "color: #507791");
+    console.log("%c           SRAVENOUSRAVENOUSRAVENO", "color: #507791");
+    console.log("%cUSR      AVENOUSRAVENOUSRAVENOUSRA", "color: #507791");
+    console.log("%c VENOUSRAVENOUSRAVENOUSRAVEN", "color: #507791");
+    console.log("%c  OUSRAVENOUSRAVENOUSRAVEN", "color: #507791");
+    console.log("%c   OUSRAVENOUSRAVENOUSRAV", "color: #507791");
+    console.log("%c     ENOUSRAVENOUSRAVEN" + "%cO" + "%cUS", "color: #507791", "color: #eb2d37", "color: #507791");
+    console.log("%c            RAVEN     OUS", "color: #507791");
+    console.log("%c          RAVEN        OU", "color: #507791");
+    console.log("%c         SR AV", "color: #507791");
+    console.log("%c            EN", "color: #507791");
+    console.log("");
+    console.log("%cChecking out the source code, eh?", "color: #507791");
+    console.log("%cGet in touch with me if you want to know more about the code, or if you want to use a snippet of code on a project of your own!", "color: #507791");
 })();
 
 /*!
@@ -322,21 +296,18 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  * @author Chris Burnell <me@chrisburnell.com> (Slight, poor modifications)
  */
 
-
 (() => {
-
-    'use strict';
-
+    "use strict";
 
     let query;
-    let searchContainer = document.querySelector('.js-search');
-    let searchForm      = document.querySelector('.js-search-form');
-    let searchInput     = document.querySelector('.js-search-input');
-    let searchSubmit    = document.querySelector('.js-search-submit');
-    let resultsMeta     = document.querySelector('.js-search-meta');
-    let resultsList     = document.querySelector('.js-search-results-list');
+    let searchContainer = document.querySelector(".js-search");
+    let searchForm = document.querySelector(".js-search-form");
+    let searchInput = document.querySelector(".js-search-input");
+    let searchSubmit = document.querySelector(".js-search-submit");
+    let resultsMeta = document.querySelector(".js-search-meta");
+    let resultsList = document.querySelector(".js-search-results-list");
     const ALLOW_EMPTY = false;
-    const JSON_FEED_URL = '../search.json';
+    const JSON_FEED_URL = "../search.json";
     const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
             <a href="{{ url }}">
@@ -356,16 +327,14 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         </article>
     </li>`;
 
-
     // enable Search
     if (searchInput !== null && searchSubmit !== null) {
-        searchInput.disabled  = false;
-        searchInput.setAttribute('aria-disabled', 'false');
+        searchInput.disabled = false;
+        searchInput.setAttribute("aria-disabled", "false");
         searchSubmit.disabled = false;
-        searchSubmit.setAttribute('aria-disabled', 'false');
+        searchSubmit.setAttribute("aria-disabled", "false");
         initSearch();
     }
-
 
     ////
     /// Initiate search functionality.
@@ -378,8 +347,8 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         }
 
         // Get search results if query parameter is set in querystring
-        if (helpers.getParameterByName('query')) {
-            query = decodeURIComponent(helpers.getParameterByName('query'));
+        if (helpers.getParameterByName("query")) {
+            query = decodeURIComponent(helpers.getParameterByName("query"));
             searchInput.value = query;
             execSearch(query);
         }
@@ -387,7 +356,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         query = searchInput.value;
 
         // Catch the form submission and initiate search lookup
-        searchForm.addEventListener('submit', submitCallback);
+        searchForm.addEventListener("submit", submitCallback);
     }
 
     function submitCallback(event) {
@@ -397,7 +366,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         if (query.length >= 2 && query.length <= 30) {
             execSearch(query);
         } else {
-            resultsMeta.innerHTML = 'Your search query must be 2–30 characters in length.';
+            resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
         }
     }
 
@@ -407,7 +376,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     /// @return void
     ////
     function execSearch(query) {
-        if (query !== '' || ALLOW_EMPTY) {
+        if (query !== "" || ALLOW_EMPTY) {
             getSearchResults();
         }
     }
@@ -420,7 +389,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     function getSearchResults() {
         let request = new XMLHttpRequest();
 
-        request.open('GET', JSON_FEED_URL, true);
+        request.open("GET", JSON_FEED_URL, true);
 
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
@@ -443,18 +412,17 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     ////
     function processData(data) {
         let resultsCount = 0,
-            results = '';
+            results = "";
 
         for (let item of data) {
-
-            let queryFormatted  = query.toLowerCase(),
-                titleCheck      = false,
-                ledeCheck       = false,
-                dateCheck       = false,
-                contentCheck    = false,
+            let queryFormatted = query.toLowerCase(),
+                titleCheck = false,
+                ledeCheck = false,
+                dateCheck = false,
+                contentCheck = false,
                 categoriesCheck = false,
-                tagsCheck       = false,
-                locationCheck   = false;
+                tagsCheck = false,
+                locationCheck = false;
 
             if (item.title) {
                 titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
@@ -464,13 +432,12 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
             }
             if (item.date || item.date_friendly) {
-                if (queryFormatted.substring(0, 5) == 'date:') {
+                if (queryFormatted.substring(0, 5) == "date:") {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     if (!dateCheck) {
                         dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
                     }
-                }
-                else {
+                } else {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted) > -1;
                     if (!dateCheck) {
                         dateCheck = item.date_friendly.toLowerCase().indexOf(queryFormatted) > -1;
@@ -484,13 +451,11 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
             }
             if (item.tags) {
-                if (queryFormatted.substring(0, 4) == 'tag:') {
+                if (queryFormatted.substring(0, 4) == "tag:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
-                }
-                else if (queryFormatted.substring(0, 5) == 'tags:') {
+                } else if (queryFormatted.substring(0, 5) == "tags:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                }
-                else {
+                } else {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }
@@ -499,18 +464,18 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
             }
 
             // if performing a date check
-            if ((queryFormatted.substring(0, 5) == 'date:') && dateCheck) {
+            if (queryFormatted.substring(0, 5) == "date:" && dateCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // if performing a tags check
-            else if (((queryFormatted.substring(0, 4) == 'tag:') || (queryFormatted.substring(0, 5) == 'tags:')) && tagsCheck) {
+            else if ((queryFormatted.substring(0, 4) == "tag:" || queryFormatted.substring(0, 5) == "tags:") && tagsCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item);
             }
             // or item type is a page, check if search term is in title,
             // content, or lede, categories, tags, or talk location
-            else if (item.type == 'page' && (titleCheck || ledeCheck || contentCheck)) {
+            else if (item.type == "page" && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
             }
@@ -525,7 +490,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         populateResultsString(resultsCount);
         showSearchResults(results);
 
-        ga('send', 'event', 'search', resultsCount, query);
+        ga("send", "event", "search", resultsCount, query);
     }
 
     ////
@@ -541,7 +506,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         // And scroll to the results
         resultsMeta.scrollIntoView();
         // And mark the resultsList as `aria-expanded="true"`
-        resultsList.setAttribute('aria-expanded', 'true');
+        resultsList.setAttribute("aria-expanded", "true");
     }
 
     ////
@@ -552,64 +517,57 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, '{{ url }}');
+        html = helpers.injectContent(html, item.url, "{{ url }}");
 
         // ICON
-        if (item.categories == 'article') {
-            html = helpers.injectContent(html, 'article', '{{ icon }}');
-        }
-        else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'link', '{{ icon }}');
-        }
-        else if (item.categories == 'note') {
-            html = helpers.injectContent(html, 'feather', '{{ icon }}');
-        }
-        else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'codepen', '{{ icon }}');
-        }
-        else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, 'bullhorn', '{{ icon }}');
+        if (item.categories == "article") {
+            html = helpers.injectContent(html, "article", "{{ icon }}");
+        } else if (item.categories == "link") {
+            html = helpers.injectContent(html, "link", "{{ icon }}");
+        } else if (item.categories == "note") {
+            html = helpers.injectContent(html, "feather", "{{ icon }}");
+        } else if (item.categories == "pen") {
+            html = helpers.injectContent(html, "codepen", "{{ icon }}");
+        } else if (item.categories == "talk") {
+            html = helpers.injectContent(html, "bullhorn", "{{ icon }}");
         }
 
         // TITLE
-        if (item.categories == 'note') {
-            html = helpers.injectContent(html, item.date_friendly, '{{ title }}');
-        }
-        else {
-            html = helpers.injectContent(html, item.title, '{{ title }}');
+        if (item.categories == "note") {
+            html = helpers.injectContent(html, item.date_friendly, "{{ title }}");
+        } else {
+            html = helpers.injectContent(html, item.title, "{{ title }}");
         }
 
         // LEDE
         if (item.lede) {
-            let ledeFormatted = item.lede.replace(/(<([^>]+)>)/ig, '').split(/(?=\s)/gi).slice(0, 20).join('');
-            html = helpers.injectContent(html, ledeFormatted, '{{ lede }}');
-        }
-        else if (item.categories == 'link') {
-            html = helpers.injectContent(html, 'Shared Link', '{{ lede }}');
-        }
-        else if (item.categories == 'note') {
-            html = helpers.injectContent(html, 'Shared Note', '{{ lede }}');
-        }
-        else if (item.categories == 'pen') {
-            html = helpers.injectContent(html, 'Featured Pen', '{{ lede }}');
-        }
-        else if (item.categories == 'talk' && item.location) {
-            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, '{{ lede }}');
-        }
-        else if (item.categories == 'talk') {
-            html = helpers.injectContent(html, `Talk`, '{{ lede }}');
+            let ledeFormatted = item.lede
+                .replace(/(<([^>]+)>)/gi, "")
+                .split(/(?=\s)/gi)
+                .slice(0, 20)
+                .join("");
+            html = helpers.injectContent(html, ledeFormatted, "{{ lede }}");
+        } else if (item.categories == "link") {
+            html = helpers.injectContent(html, "Shared Link", "{{ lede }}");
+        } else if (item.categories == "note") {
+            html = helpers.injectContent(html, "Shared Note", "{{ lede }}");
+        } else if (item.categories == "pen") {
+            html = helpers.injectContent(html, "Featured Pen", "{{ lede }}");
+        } else if (item.categories == "talk" && item.location) {
+            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, "{{ lede }}");
+        } else if (item.categories == "talk") {
+            html = helpers.injectContent(html, `Talk`, "{{ lede }}");
         }
 
         // DATE
-        if (item.type == 'post') {
-            html = helpers.injectContent(html, item.date, '{{ date }}');
-            html = helpers.injectContent(html, item.date_friendly, '{{ date_friendly }}');
+        if (item.type == "post") {
+            html = helpers.injectContent(html, item.date, "{{ date }}");
+            html = helpers.injectContent(html, item.date_friendly, "{{ date_friendly }}");
 
-            if (item.categories == 'note') {
-                html = helpers.injectContent(html, '  hidden', '{{ date_class }}');
-            }
-            else {
-                html = helpers.injectContent(html, '', '{{ date_class }}');
+            if (item.categories == "note") {
+                html = helpers.injectContent(html, "  hidden", "{{ date_class }}");
+            } else {
+                html = helpers.injectContent(html, "", "{{ date_class }}");
             }
         }
 
@@ -622,12 +580,11 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     /// @return void
     ////
     function populateResultsString(count) {
-        let resultSuffix = (count == 1) ? '' : 's';
+        let resultSuffix = count == 1 ? "" : "s";
         let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 
         resultsMeta.innerHTML = searchMeta;
     }
-
 })();
 
 /*!
@@ -635,59 +592,56 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  */
 
 (function() {
+    "use strict";
 
-    'use strict';
-
-
-    const TYPES = ['articles', 'notes', 'pens', 'links', 'talks'];
+    const TYPES = ["articles", "notes", "pens", "links", "talks"];
     let data;
 
-    if (document.querySelector('.sparkline')) {
+    if (document.querySelector(".sparkline")) {
         let showEndpoint = true;
-        let sparklineColor = 'hsla(0, 0%, 31%, 1)';
-        let endpointColor = 'hsla(357, 83%, 55%, 0.5)';
+        let sparklineColor = "hsla(0, 0%, 31%, 1)";
+        let endpointColor = "hsla(357, 83%, 55%, 0.5)";
         let request = new XMLHttpRequest();
-        request.open('GET', '/sparklines.json', true);
+        request.open("GET", "/sparklines.json", true);
         request.onload = () => {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 data = JSON.parse(request.responseText);
                 for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
-                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, 'line', endpointColor);
+                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
                     }
                 }
-            }
-            else {
+            } else {
                 console.log(`Sparkline request status error: ${request.status}`);
             }
         };
         request.onerror = () => {
-            console.log('Sparkline request error');
+            console.log("Sparkline request error");
         };
         request.send();
     }
 
-    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = "triangle"; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
     let keyInterval = 0;
     let keyCount = 13;
-    let frequencies = [Math.pow(2, ((keyStart - 49) / 12)) * 440];
+    let frequencies = [Math.pow(2, (keyStart - 49) / 12) * 440];
 
     for (let count = 0; count < keyCount - 1; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(Math.pow(2, ((keyStart - 49 + keyInterval) / 12)) * 440);
+        frequencies.push(Math.pow(2, (keyStart - 49 + keyInterval) / 12) * 440);
     }
 
-    for (let sparkline of document.querySelectorAll('.sparkline')) {
-        sparkline.addEventListener('click', (event) => {
-            playSparkline(data[sparkline.id.split('-')[1]], frequencies, duration, wave);
+    for (let sparkline of document.querySelectorAll(".sparkline")) {
+        sparkline.addEventListener("click", event => {
+            playSparkline(data[sparkline.id.split("-")[1]], frequencies, duration, wave);
             // Prevent the user from blowing their ears up by stacking sounds
-            sparkline.classList.add('non-interactive');
+            sparkline.classList.add("non-interactive");
             window.setTimeout(() => {
-                sparkline.classList.remove('non-interactive');
+                sparkline.classList.remove("non-interactive");
             }, duration);
         });
     }
@@ -698,22 +652,18 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-
 (() => {
+    "use strict";
 
-    'use strict';
-
-
-    const CANONICAL_URL       = (document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute('href') : null);
-    const WEBMENTIONS_SECTION = document.querySelector('.js-webmentions');
-    const WEBMENTIONS_BUTTON  = document.querySelector('.js-show-webmentions');
-    const WEBMENTIONS_INPUT   = document.querySelector('.js-webmentions-input');
-    const WEBMENTIONS_SUBMIT  = document.querySelector('.js-webmentions-submit');
-    const WEBMENTIONS_THREAD  = document.querySelector('.js-webmentions-thread');
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href") : null;
+    const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
+    const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
+    const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");
+    const WEBMENTIONS_SUBMIT = document.querySelector(".js-webmentions-submit");
+    const WEBMENTIONS_THREAD = document.querySelector(".js-webmentions-thread");
     // `#webmention` will match both `#webmention` and `#webmentions`
-    const WEBMENTIONS_HASH = ['#webmention', '#mention'];
-    const WEBMENTIONS_TEMPLATE =
-        `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
+    const WEBMENTIONS_HASH = ["#webmention", "#mention"];
+    const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
             {{ content }}
             {{ typeLink }}
             {{ author }}
@@ -725,12 +675,12 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     if (WEBMENTIONS_SECTION !== null) {
         let observer = new IntersectionObserver(checkVisibility);
         // initiate WebMentions if hash present on load
-        window.addEventListener('load', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+        window.addEventListener("load", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
         // initiate WebMentions if hash present on hash change
-        window.addEventListener('hashchange', helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+        window.addEventListener("hashchange", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
         // enable the WebMentions button, input, and submit
         helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
-        WEBMENTIONS_BUTTON.addEventListener('mouseover', () => {
+        WEBMENTIONS_BUTTON.addEventListener("mouseover", () => {
             if (webmentionsLoaded === false) {
                 loadWebmentions();
             }
@@ -743,13 +693,13 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
 
     function loadWebmentions() {
         let request = new XMLHttpRequest();
-        request.open('GET', `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
+        request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
         request.onload = function() {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener('mouseover', () => {});
+                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
                 let data = JSON.parse(request.responseText);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
@@ -758,15 +708,14 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
                     }
                 }
                 if (WEBMENTIONS_BUTTON !== null && webmentionsCount > 0) {
-                    WEBMENTIONS_BUTTON.querySelector('.js-webmention-comment-count').innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? 's' : ''}`;
+                    WEBMENTIONS_BUTTON.querySelector(".js-webmention-comment-count").innerHTML = `${webmentionsCount} mention${webmentionsCount > 1 ? "s" : ""}`;
                 }
-            }
-            else {
+            } else {
                 console.log(`WebMention request status error: ${request.status}`);
             }
         };
         request.onerror = function() {
-            console.log('WebMention request error');
+            console.log("WebMention request error");
         };
         request.send();
     }
@@ -777,13 +726,13 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
             loadWebmentions();
         }
         // only if the button still exists should we hide the button
-        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute('aria-hidden') === 'false') {
-            WEBMENTIONS_BUTTON.setAttribute('aria-pressed', 'true');
-            WEBMENTIONS_BUTTON.setAttribute('aria-expanded', 'true');
-            WEBMENTIONS_BUTTON.setAttribute('aria-hidden', 'true');
-            WEBMENTIONS_BUTTON.removeEventListener('click', () => {});
+        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute("aria-hidden") === "false") {
+            WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
+            WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
+            WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
         }
-        WEBMENTIONS_SECTION.setAttribute('aria-hidden', 'false');
+        WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     }
 
     function checkVisibility(entries, observer) {
@@ -807,7 +756,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         let type = item.activity.type;
         let content = item.data.content;
         let url = item.data.url;
-        let urlAuthor = item.data.author.url.replace(/\/$/, '');
+        let urlAuthor = item.data.author.url.replace(/\/$/, "");
         let author = item.data.author.name ? item.data.author.name : item.data.name;
         let authorImage = item.data.author.photo;
         let date = item.data.published ? item.data.published : item.verified_date;
@@ -818,29 +767,19 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         // TYPE
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
         html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
-        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === 'like' ? 'Liked' :
-                                                                   type === 'reply' ? 'Replied' :
-                                                                   type === 'repost' ? 'Reposted' :
-                                                                   'Posted');
+        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Replied" : type === "repost" ? "Reposted" : "Posted");
 
         // CONTENT / URL
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, type === 'like' || type === 'repost' ? '' :
-                                                                type === 'reply' && content ? `<div><q>${content}</q></div>` :
-                                                                `<div><a href="${url}" rel="external">${url.split('//')[1]}</a></div>`);
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, type === "like" || type === "repost" ? "" : type === "reply" && content ? `<div><q>${content}</q></div>` : `<div><a href="${url}" rel="external">${url.split("//")[1]}</a></div>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${authorImage}" alt="">${author}</a>` :
-                                                               author && urlAuthor && url.includes('//twitter.com') ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split('status')[0]}/profile_image?size=normal" alt="">${author}</a>` :
-                                                               author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` :
-                                                               author ? `by <span class="webmentions__item__name">${author}</span>` :
-                                                               '');
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes("//twitter.com") ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${authorImage}" alt="">${author}</a>` : author && urlAuthor && url.includes("//twitter.com") ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split("status")[0]}/profile_image?size=normal" alt="">${author}</a>` : author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` : author ? `by <span class="webmentions__item__name">${author}</span>` : "");
 
         // DATE
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__item__time" datetime="${date}">${helpers.formatDate(new Date(date))} <small>@</small> ${helpers.formatTime(new Date(date))}</time>`);
 
         return html;
     }
-
 })();
 
 /*! picturefill - v3.0.2 - 2016-02-12
