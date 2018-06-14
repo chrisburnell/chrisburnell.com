@@ -49,6 +49,7 @@ gulp.task("css-prettify", () => {
     return gulp
         .src([`!${paths.css.src}/vendors/*.scss`, `${paths.css.src}/**/*.scss`])
         .pipe(plumber())
+        .pipe(newer(`${paths.css.src}`))
         .pipe(
             prettier({
                 printWidth: 999,
@@ -135,6 +136,7 @@ gulp.task("js-prettify", () => {
     return gulp
         .src([`!${paths.js.src}/vendors/*.js`, `!${paths.js.src}/serviceworker.js`, `${paths.js.src}/**/*.js`])
         .pipe(plumber())
+        .pipe(newer(`${paths.js.src}/`))
         .pipe(
             prettier({
                 printWidth: 999,
@@ -185,7 +187,7 @@ gulp.task("js-serviceworker", () => {
     return gulp
         .src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
-        .pipe(newer(`${paths.root}/`))
+        .pipe(newer(`${paths.js.src}/serviceworker.js`))
         .pipe(gulp.dest(`${paths.root}/`));
 });
 

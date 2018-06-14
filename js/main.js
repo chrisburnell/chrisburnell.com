@@ -11,10 +11,10 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, placeholder, injection) {
-        const regex = new RegExp(placeholder, "g");
+    injectContent: function(originalContent, injection, placeholder) {
+        const REGEX = new RegExp(placeholder, "g");
 
-        return originalContent.replace(regex, injection);
+        return originalContent.replace(REGEX, injection);
     },
 
     ////
@@ -308,24 +308,8 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     let resultsList = document.querySelector(".js-search-results-list");
     const ALLOW_EMPTY = false;
     const JSON_FEED_URL = "../search.json";
-    const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
-        <article role="article" itemscope itemtype="https://schema.org/Article">
-            <a href="{{ url }}">
-                <h4 class="title" itemprop="name">{{ title }}</h4>
-                <p class="lede" itemprop="description">{{ lede }}</p>
-            </a>
-        </article>
-    </li>`;
-    const SEARCH_POST_TEMPLATE = `<li role="listitem">
-        <article role="article" itemscope itemtype="https://schema.org/TechArticle">
-            <a href="{{ url }}">
-                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
-                <h4 class="title" itemprop="name">{{ title }}</h4>
-                <p class="lede" itemprop="description">{{ lede }}</p>
-                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>
-            </a>
-        </article>
-    </li>`;
+    const SEARCH_PAGE_TEMPLATE = document.querySelector(".search-template--page") ? document.querySelector(".search-template--page").innerHTML.trim() : "";
+    const SEARCH_POST_TEMPLATE = document.querySelector(".search-template--post") ? document.querySelector(".search-template--post").innerHTML.trim() : "";
 
     // enable Search
     if (searchInput !== null && searchSubmit !== null) {
@@ -489,8 +473,6 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
 
         populateResultsString(resultsCount);
         showSearchResults(results);
-
-        ga("send", "event", "search", resultsCount, query);
     }
 
     ////
@@ -556,7 +538,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
         } else if (item.categories == "talk" && item.location) {
             html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, "{{ lede }}");
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, `Talk`, "{{ lede }}");
+            html = helpers.injectContent(html, "Talk", "{{ lede }}");
         }
 
         // DATE
