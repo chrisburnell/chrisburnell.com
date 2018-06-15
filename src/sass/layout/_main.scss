@@ -9,8 +9,9 @@ main {
 
     @include media("screen", ">medium") {
         display: grid;
-        grid-template-columns: #{$aside-width} 1fr;
+        // I don't understand why this works:
+        grid-template-columns: #{$aside-width} minmax(1px, 1fr);
         grid-template-areas: "author content";
-        grid-column-gap: $gutter-width;
+        grid-column-gap: $gap-width;
     }
 }

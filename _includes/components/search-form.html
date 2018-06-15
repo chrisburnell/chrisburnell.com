@@ -5,3 +5,31 @@
     <input type="submit" class="button  search-submit  js-search-submit" id="search-button" value="Search" role="button" aria-disabled="true" disabled>
 </form>
 <noscript>Please enable JavaScript to search.</noscript>
+
+{% raw %}
+<template class="search-template--page">
+    <li role="listitem">
+        <article role="article" itemscope itemtype="https://schema.org/Article">
+            <a href="{{ url }}">
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
+            </a>
+        </article>
+    </li>
+</template>
+{% endraw %}
+
+{% raw %}
+<template class="search-template--post">
+    <li role="listitem">
+        <article role="article" itemscope itemtype="https://schema.org/TechArticle">
+            <a href="{{ url }}">
+                <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
+                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <p class="lede" itemprop="description">{{ lede }}</p>
+                <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>
+            </a>
+        </article>
+    </li>
+</template>
+{% endraw %}

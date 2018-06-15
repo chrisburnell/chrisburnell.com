@@ -14,12 +14,7 @@
     const WEBMENTIONS_THREAD = document.querySelector(".js-webmentions-thread");
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ["#webmention", "#mention"];
-    const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
-            {{ content }}
-            {{ typeLink }}
-            {{ author }}
-            {{ date }}
-        </li>`;
+    const WEBMENTIONS_TEMPLATE = document.querySelector(".webmentions-template") ? document.querySelector(".webmentions-template").innerHTML.trim() : "";
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
 
@@ -45,12 +40,12 @@
     function loadWebmentions() {
         let request = new XMLHttpRequest();
         request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-        request.onload = function() {
+        request.onload = function () {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
+                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
                 let data = JSON.parse(request.responseText);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
@@ -65,7 +60,7 @@
                 console.log(`WebMention request status error: ${request.status}`);
             }
         };
-        request.onerror = function() {
+        request.onerror = function () {
             console.log("WebMention request error");
         };
         request.send();
@@ -81,7 +76,7 @@
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
-            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     }

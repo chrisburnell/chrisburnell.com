@@ -17,6 +17,7 @@
 
     &:not(.content--full) {
         @include media("screen", ">medium") {
+            max-width: $article-width;
             grid-area: content;
         }
     }

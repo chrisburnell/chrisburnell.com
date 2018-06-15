@@ -2033,9 +2033,9 @@ main {
 @media screen and (min-width: 801px) {
     main {
         display: grid;
-        grid-template-columns: 15.875rem 1fr;
+        grid-template-columns: 15.875rem minmax(1px, 1fr);
         grid-template-areas: "author content";
-        grid-column-gap: 1.25rem;
+        grid-column-gap: 2.25rem;
     }
 }
 
@@ -2089,6 +2089,7 @@ header::before {
 
 @media screen and (min-width: 801px) {
     .content:not(.content--full) {
+        max-width: 50.625rem;
         grid-area: content;
     }
 }

@@ -4,4 +4,15 @@
         <ol id="webmentions-thread" class="default-list  webmentions-thread  js-webmentions-thread" aria-live="polite"></ol>
         <noscript>Please enable JavaScript to view WebMentions.</noscript>
     </section>
+
+    {% raw %}
+    <template class="webmentions-template">
+        <li id="webmentions-{{ id }}" class="webmentions__item" data-type="{{ type }}">
+            {{ content }}
+            {{ typeLink }}
+            {{ author }}
+            {{ date }}
+        </li>
+    </template>
+    {% endraw %}
 {% endif %}

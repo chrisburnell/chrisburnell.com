@@ -151,7 +151,6 @@ gulp.task("js-concat", ["js-prettify"], () => {
     return gulp
         .src([
             `${paths.js.src}/helpers.js`, // dependency
-            `${paths.js.src}/vendors/sparkline.js`, // dependency
             `${paths.js.src}/**/*.js`,
             `!${paths.js.src}/serviceworker.js`,
             `!${paths.js.src}/vendors/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`

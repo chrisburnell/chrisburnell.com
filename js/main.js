@@ -97,94 +97,6 @@ helpers = {
     }
 };
 
-///
-// Canvas Sparkline
-// by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
-// https://github.com/adactio/Canvas-Sparkline
-// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-// http://creativecommons.org/publicdomain/zero/1.0/
-///
-let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
-    if (window.HTMLCanvasElement) {
-        var c = document.getElementById(canvasID),
-            ctx = c.getContext('2d'),
-            color = (color ? color : 'rgba(0,0,0,0.5)'),
-            endpointColor = (endpointColor ? endpointColor : 'rgba(255,0,0,0.5)'),
-            style = (style == 'bar' ? 'bar' : 'line'),
-            height = c.height - 3,
-            width = c.width,
-            total = data.length,
-            max = Math.max.apply(Math, data),
-            xstep = width / total,
-            ystep = max / height,
-            x = 0,
-            y = height - data[0] / ystep,
-            i;
-        if (window.devicePixelRatio) {
-            c.width = c.width * window.devicePixelRatio;
-            c.height = c.height * window.devicePixelRatio;
-            c.style.width = `${(c.width / window.devicePixelRatio)}px`;
-            c.style.height = `${(c.height / window.devicePixelRatio)}px`;
-            c.style.display = 'inline-block';
-            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        }
-        ctx.clearRect(0, 0, width, height);
-        ctx.beginPath();
-        ctx.strokeStyle = color;
-        ctx.moveTo(x, y);
-        for (i = 1; i < total; i = i + 1) {
-            x = x + xstep;
-            y = height - data[i] / ystep + 2;
-            if (style == 'bar') {
-                ctx.moveTo(x,height);
-            }
-            ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-        if (endpoint && style == 'line') {
-            ctx.beginPath();
-            ctx.fillStyle = endpointColor;
-            ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-};
-
-///
-// Play Sparkline
-// Pass in an array of numbers ranging from 0 to 12.
-// by Jeremy Keith <@adactio>, modified by Chris Burnell <@iamchrisburnell>
-// https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
-// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-// http://creativecommons.org/publicdomain/zero/1.0/
-///
-let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine', volume = 0.5) => {
-    if (!window.AudioContext && !window.webkitAudioContext) {
-        return;
-    }
-    let playing = null;
-    let note = 0;
-    let noteLength = Math.floor(duration / notes.length);
-    let output = new (window.AudioContext || window.webkitAudioContext)();
-    let instrument = output.createOscillator();
-    let amplifier = output.createGain();
-    let playNotes = () => {
-        if (note < notes.length) {
-            instrument.frequency.value = frequencies[notes[note]];
-            note = note + 1;
-        } else {
-            amplifier.gain.value = 0;
-        }
-        playing = window.setTimeout(playNotes, noteLength);
-    };
-    instrument.type = wave;
-    instrument.start();
-    instrument.connect(amplifier);
-    amplifier.gain.value = volume;
-    amplifier.connect(output.destination);
-    playNotes();
-}
-
 /*!
  * Code ARIA Toggling
  * @author Chris Burnell <me@chrisburnell.com>
@@ -573,8 +485,96 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
  * Target and build sparklines
  */
 
-(function() {
+(function () {
     "use strict";
+
+    ///
+    // Canvas Sparkline
+    // by Jeremy Keith <@adactio>, modified by Chris Burnell <me@chrisburnell.com>
+    // https://github.com/adactio/Canvas-Sparkline
+    // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+    // http://creativecommons.org/publicdomain/zero/1.0/
+    ///
+    let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
+        if (window.HTMLCanvasElement) {
+            var c = document.getElementById(canvasID),
+                ctx = c.getContext('2d'),
+                color = (color ? color : 'rgba(0,0,0,0.5)'),
+                endpointColor = (endpointColor ? endpointColor : 'rgba(255,0,0,0.5)'),
+                style = (style == 'bar' ? 'bar' : 'line'),
+                height = c.height - 3,
+                width = c.width,
+                total = data.length,
+                max = Math.max.apply(Math, data),
+                xstep = width / total,
+                ystep = max / height,
+                x = 0,
+                y = height - data[0] / ystep,
+                i;
+            if (window.devicePixelRatio) {
+                c.width = c.width * window.devicePixelRatio;
+                c.height = c.height * window.devicePixelRatio;
+                c.style.width = `${(c.width / window.devicePixelRatio)}px`;
+                c.style.height = `${(c.height / window.devicePixelRatio)}px`;
+                c.style.display = 'inline-block';
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            }
+            ctx.clearRect(0, 0, width, height);
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.moveTo(x, y);
+            for (i = 1; i < total; i = i + 1) {
+                x = x + xstep;
+                y = height - data[i] / ystep + 2;
+                if (style == 'bar') {
+                    ctx.moveTo(x, height);
+                }
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            if (endpoint && style == 'line') {
+                ctx.beginPath();
+                ctx.fillStyle = endpointColor;
+                ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+    };
+
+    ///
+    // Play Sparkline
+    // Pass in an array of numbers ranging from 0 to 12.
+    // by Jeremy Keith <@adactio>, modified by Chris Burnell <me@chrisburnell.com>
+    // https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
+    // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+    // http://creativecommons.org/publicdomain/zero/1.0/
+    ///
+    let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine', volume = 0.5) => {
+        if (!window.AudioContext && !window.webkitAudioContext) {
+            return;
+        }
+        let playing = null;
+        let note = 0;
+        let noteLength = Math.floor(duration / notes.length);
+        let output = new (window.AudioContext || window.webkitAudioContext)();
+        let instrument = output.createOscillator();
+        let amplifier = output.createGain();
+        let playNotes = () => {
+            if (note < notes.length) {
+                instrument.frequency.value = frequencies[notes[note]];
+                note = note + 1;
+            } else {
+                amplifier.gain.value = 0;
+            }
+            playing = window.setTimeout(playNotes, noteLength);
+        };
+        instrument.type = wave;
+        instrument.start();
+        instrument.connect(amplifier);
+        amplifier.gain.value = volume;
+        amplifier.connect(output.destination);
+        playNotes();
+    };
 
     const TYPES = ["articles", "notes", "pens", "links", "talks"];
     let data;
@@ -645,12 +645,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     const WEBMENTIONS_THREAD = document.querySelector(".js-webmentions-thread");
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ["#webmention", "#mention"];
-    const WEBMENTIONS_TEMPLATE = `<li id="webmention-{{ id }}" class="webmentions__item" data-type="{{ type }}">
-            {{ content }}
-            {{ typeLink }}
-            {{ author }}
-            {{ date }}
-        </li>`;
+    const WEBMENTIONS_TEMPLATE = document.querySelector(".webmentions-template") ? document.querySelector(".webmentions-template").innerHTML.trim() : "";
     let webmentionsLoaded = false;
     let webmentionsCount = 0;
 
@@ -676,12 +671,12 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
     function loadWebmentions() {
         let request = new XMLHttpRequest();
         request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-        request.onload = function() {
+        request.onload = function () {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
+                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
                 let data = JSON.parse(request.responseText);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
@@ -696,7 +691,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
                 console.log(`WebMention request status error: ${request.status}`);
             }
         };
-        request.onerror = function() {
+        request.onerror = function () {
             console.log("WebMention request error");
         };
         request.send();
@@ -712,7 +707,7 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, wave = 'sine',
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
-            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     }
