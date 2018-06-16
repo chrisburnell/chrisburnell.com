@@ -3603,6 +3603,11 @@ button .icon--rss,
     fill: #f9f9f9;
 }
 
+.icon--coffee {
+    width: 40px;
+    fill: #d2b48c;
+}
+
 .emoji {
     height: 1.5em;
     vertical-align: middle;

@@ -410,6 +410,8 @@ $language-colors: (
 ) !default;
 
 /// @type Color
+$color-coffee: #d2b48c !default;
+/// @type Color
 $color-codepen: #212121 !default;
 /// @type Color
 $color-github: #333333 !default;
@@ -427,7 +429,7 @@ $color-twitter: mix($color-black, #55acee, 10%) !default;
 /// @prop {String} name - Brand name
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity
-$brand-colors: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-rss 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1 !default;
+$brand-colors: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-rss 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1, coffee $color-coffee 1 !default;
 
 /// @type Length
 $icon-size: 40px !default;
