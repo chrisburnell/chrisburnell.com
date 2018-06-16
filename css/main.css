@@ -2379,8 +2379,8 @@ footer {
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
 [class~="page--about"] [class~="nav-primary--about"] a,
-[class~="page--article"] [class~="nav-primary--article"] a,
-[class~="page--note"] [class~="nav-primary--note"] a,
+[class~="page--articles"] [class~="nav-primary--articles"] a,
+[class~="page--notes"] [class~="nav-primary--notes"] a,
 [class~="page--search"] [class~="nav-primary--search"] a {
     color: #4f4f4f;
     color: var(--color-kaiser);
