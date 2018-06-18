@@ -11,7 +11,7 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, injection, placeholder) {
+    injectContent: function (originalContent, placeholder, injection) {
         const REGEX = new RegExp(placeholder, "g");
 
         return originalContent.replace(REGEX, injection);
@@ -23,7 +23,7 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: function(name) {
+    getParameterByName: function (name) {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -35,7 +35,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableElement: function(element, action) {
+    enableElement: function (element, action) {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute("aria-disabled", "false");
@@ -50,7 +50,7 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedDate
     ////
-    formatDate: function(date) {
+    formatDate: function (date) {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let day = date.getDate();
@@ -70,7 +70,7 @@ helpers = {
     /// @param {Boolean} [true] includeMerdiem
     /// @return {String} formattedTime
     ////
-    formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
+    formatTime: function (date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
         let minutes = `:${date.getMinutes()}`;
         let seconds = includeSeconds ? `:${date.getSeconds()}` : "";
@@ -88,7 +88,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    actionFromHash: function(hashes, action) {
+    actionFromHash: function (hashes, action) {
         for (let hash of hashes) {
             if (window.location.hash.indexOf(hash) !== -1) {
                 action();
@@ -124,7 +124,7 @@ helpers = {
         codeToggleInput.checked = true;
         codeToggle.setAttribute("aria-expanded", "true");
         codeToggleLabel.setAttribute("aria-hidden", "true");
-        codeToggleLabel.removeEventListener("click", () => {});
+        codeToggleLabel.removeEventListener("click", () => { });
         codeToggleButton.setAttribute("aria-pressed", "true");
 
         window.location.hash = `#code-toggle--${codeToggleID}`;
@@ -160,7 +160,7 @@ helpers = {
             COMMENTS_BUTTON.setAttribute("aria-pressed", "true");
             COMMENTS_BUTTON.setAttribute("aria-expanded", "true");
             COMMENTS_BUTTON.setAttribute("aria-hidden", "true");
-            COMMENTS_BUTTON.removeEventListener("click", () => {});
+            COMMENTS_BUTTON.removeEventListener("click", () => { });
             (() => {
                 const DISQUS_SCRIPT = document.createElement("script");
                 DISQUS_SCRIPT.type = "text/javascript";
@@ -411,26 +411,26 @@ helpers = {
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, "{{ url }}");
+        html = helpers.injectContent(html, "{{ url }}", item.url);
 
         // ICON
         if (item.categories == "article") {
-            html = helpers.injectContent(html, "article", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "article");
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "link", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "feather", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "feather");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "codepen", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "codepen");
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "bullhorn", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "bullhorn");
         }
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, item.date_friendly, "{{ title }}");
+            html = helpers.injectContent(html, "{{ title }}", item.date_friendly);
         } else {
-            html = helpers.injectContent(html, item.title, "{{ title }}");
+            html = helpers.injectContent(html, "{{ title }}", item.title);
         }
 
         // LEDE
@@ -440,28 +440,28 @@ helpers = {
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
                 .join("");
-            html = helpers.injectContent(html, ledeFormatted, "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", ledeFormatted);
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "Shared Link", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Shared Link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "Shared Note", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Shared Note");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "Featured Pen", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Featured Pen");
         } else if (item.categories == "talk" && item.location) {
-            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", `Talk – Given at ${item.location}.`);
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "Talk", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Talk");
         }
 
         // DATE
         if (item.type == "post") {
-            html = helpers.injectContent(html, item.date, "{{ date }}");
-            html = helpers.injectContent(html, item.date_friendly, "{{ date_friendly }}");
+            html = helpers.injectContent(html, "{{ date }}", item.date);
+            html = helpers.injectContent(html, "{{ date_friendly }}", item.date_friendly);
 
             if (item.categories == "note") {
-                html = helpers.injectContent(html, "  hidden", "{{ date_class }}");
+                html = helpers.injectContent(html, "{{ date_class }}", "  hidden");
             } else {
-                html = helpers.injectContent(html, "", "{{ date_class }}");
+                html = helpers.injectContent(html, "{{ date_class }}", "");
             }
         }
 
@@ -637,7 +637,7 @@ helpers = {
 (() => {
     "use strict";
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href") : null;
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href").replace('http://localhost:4000/', 'https://chrisburnell.com/') : null;
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
     const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");

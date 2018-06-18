@@ -207,26 +207,26 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, item.url, "{{ url }}");
+        html = helpers.injectContent(html, "{{ url }}", item.url);
 
         // ICON
         if (item.categories == "article") {
-            html = helpers.injectContent(html, "article", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "article");
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "link", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "feather", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "feather");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "codepen", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "codepen");
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "bullhorn", "{{ icon }}");
+            html = helpers.injectContent(html, "{{ icon }}", "bullhorn");
         }
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, item.date_friendly, "{{ title }}");
+            html = helpers.injectContent(html, "{{ title }}", item.date_friendly);
         } else {
-            html = helpers.injectContent(html, item.title, "{{ title }}");
+            html = helpers.injectContent(html, "{{ title }}", item.title);
         }
 
         // LEDE
@@ -236,28 +236,28 @@
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
                 .join("");
-            html = helpers.injectContent(html, ledeFormatted, "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", ledeFormatted);
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "Shared Link", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Shared Link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "Shared Note", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Shared Note");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "Featured Pen", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Featured Pen");
         } else if (item.categories == "talk" && item.location) {
-            html = helpers.injectContent(html, `Talk – Given at ${item.location}.`, "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", `Talk – Given at ${item.location}.`);
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "Talk", "{{ lede }}");
+            html = helpers.injectContent(html, "{{ lede }}", "Talk");
         }
 
         // DATE
         if (item.type == "post") {
-            html = helpers.injectContent(html, item.date, "{{ date }}");
-            html = helpers.injectContent(html, item.date_friendly, "{{ date_friendly }}");
+            html = helpers.injectContent(html, "{{ date }}", item.date);
+            html = helpers.injectContent(html, "{{ date_friendly }}", item.date_friendly);
 
             if (item.categories == "note") {
-                html = helpers.injectContent(html, "  hidden", "{{ date_class }}");
+                html = helpers.injectContent(html, "{{ date_class }}", "  hidden");
             } else {
-                html = helpers.injectContent(html, "", "{{ date_class }}");
+                html = helpers.injectContent(html, "{{ date_class }}", "");
             }
         }
 
