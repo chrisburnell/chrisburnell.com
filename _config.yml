@@ -63,7 +63,7 @@ timezone: Europe/London
 language: en
 
 show_drafts: false
-future: false
+future: true
 unpublished: false
 incremental: true
 destination: ./_site
@@ -105,5 +105,8 @@ exclude:
 - vendor
 
 plugins:
+- jekyll-mentions
 - jekyll-redirect-from
-- jemoji
+
+jekyll-mentions:
+  base_url: https://twitter.com

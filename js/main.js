@@ -671,12 +671,12 @@ helpers = {
     function loadWebmentions() {
         let request = new XMLHttpRequest();
         request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-        request.onload = function () {
+        request.onload = function() {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
+                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
                 let data = JSON.parse(request.responseText);
                 for (let link of data.links.reverse()) {
                     if (link.verified === true && link.private === false) {
@@ -691,7 +691,7 @@ helpers = {
                 console.log(`WebMention request status error: ${request.status}`);
             }
         };
-        request.onerror = function () {
+        request.onerror = function() {
             console.log("WebMention request error");
         };
         request.send();
@@ -707,7 +707,7 @@ helpers = {
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
-            WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     }
@@ -750,7 +750,7 @@ helpers = {
         html = helpers.injectContent(html, /{{\s*content\s*}}/, type === "like" || type === "repost" ? "" : type === "reply" && content ? `<div><q>${content}</q></div>` : `<div><a href="${url}" rel="external">${url.split("//")[1]}</a></div>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor && urlAuthor.includes("//twitter.com") ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${authorImage}" alt="">${author}</a>` : author && urlAuthor && url.includes("//twitter.com") ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external"><img class="webmentions__item__image" src="${url.split("status")[0]}/profile_image?size=normal" alt="">${author}</a>` : author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` : author ? `by <span class="webmentions__item__name">${author}</span>` : "");
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author && urlAuthor ? `by <a href="${urlAuthor}" class="webmentions__item__name" rel="external">${author}</a>` : author ? `by <span class="webmentions__item__name">${author}</span>` : "");
 
         // DATE
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__item__time" datetime="${date}">${helpers.formatDate(new Date(date))} <small>@</small> ${helpers.formatTime(new Date(date))}</time>`);

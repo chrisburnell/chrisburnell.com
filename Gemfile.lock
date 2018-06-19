@@ -16,7 +16,6 @@ GEM
     eventmachine (1.2.7)
     ffi (1.9.25)
     forwardable-extended (2.6.0)
-    gemoji (3.0.0)
     html-pipeline (2.8.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -36,16 +35,15 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-mentions (1.4.0)
+      html-pipeline (~> 2.3)
+      jekyll (~> 3.0)
     jekyll-redirect-from (0.13.0)
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
-    jemoji (0.10.0)
-      gemoji (~> 3.0)
-      html-pipeline (~> 2.2)
-      jekyll (~> 3.0)
     kramdown (1.17.0)
     liquid (4.0.0)
     listen (3.1.5)
@@ -55,7 +53,7 @@ GEM
     mercenary (0.3.6)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
@@ -80,8 +78,8 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-mentions
   jekyll-redirect-from
-  jemoji
 
 BUNDLED WITH
    1.16.2
