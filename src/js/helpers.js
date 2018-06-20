@@ -72,8 +72,8 @@ helpers = {
     ////
     formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
-        let minutes = `:${date.getMinutes() < 10 ? 0 : ""}${date.getMinutes()}`;
-        let seconds = includeSeconds ? `:${date.getSeconds() < 10 ? 0 : ""}${date.getSeconds()}` : "";
+        let minutes = `:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}`;
+        let seconds = includeSeconds ? `:${date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()}` : "";
         let meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : "";
 
         // format from 24-hours to 12-hours if including meridiem

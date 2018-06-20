@@ -45,7 +45,7 @@
             {% endif %}
         </div>
     {% endif %}
-    {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to %}
+    {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: nil %}
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             <span>also on</span>
@@ -68,7 +68,8 @@
                                                          (<a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
                                                          <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
                                                          <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>)
-                                                     </small>{% endcapture %}
+                                                     </small>
+                                                     <a href="https://brid.gy/publish/twitter" aria-hidden="true"></a>{% endcapture %}
                 {% endif %}
             {% endfor %}
             {% if page.codepen_slug %}
@@ -115,7 +116,7 @@
             {% endif %}
         </div>
     {% endif %}
-    {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to %}
+    {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil %}
     {% if in_reply_to %}
         <div class="in-reply-to">
             <span>in reply to</span>
