@@ -19,7 +19,7 @@ comments: disqus
 twitter: true
 shorturl: 1faeu
 
-syndication:
+syndicate-to:
 - https://twitter.com/iamchrisburnell/status/576014944627490816
 ---
 

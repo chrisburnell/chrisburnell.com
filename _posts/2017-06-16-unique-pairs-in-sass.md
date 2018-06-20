@@ -20,7 +20,7 @@ codepen: true
 comments: disqus
 shorturl: e1wjg
 
-syndication:
+syndicate-to:
 - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---
 

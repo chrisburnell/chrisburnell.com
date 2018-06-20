@@ -13,7 +13,7 @@ tags:
 comments: disqus
 shorturl: fqojr
 
-syndication:
+syndicate-to:
 - https://twitter.com/iamchrisburnell/status/710837030629023744
 
 further_reading:

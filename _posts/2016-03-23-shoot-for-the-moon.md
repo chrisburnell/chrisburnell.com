@@ -20,7 +20,7 @@ codepen: true
 comments: disqus
 shorturl: uanoe
 
-syndication:
+syndicate-to:
 - https://twitter.com/iamchrisburnell/status/712709693878173697
 
 further_reading:

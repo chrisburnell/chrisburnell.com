@@ -17,7 +17,7 @@ banner_mobile:
 comments: disqus
 shorturl: xoskc
 
-syndication:
+syndicate-to:
 - https://twitter.com/iamchrisburnell/status/373096041509568512
 ---
 

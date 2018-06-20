@@ -2,13 +2,8 @@
 {% include components/header.html %}
 
 
-{% assign itemtype = 'WebPage' %}
-{% if page.categories contains 'article'
-   or page.categories contains 'link'
-   or page.categories contains 'note'
-   or page.categories contains 'pen' %}
-    {% assign itemtype = 'BlogPosting' %}
-{% elsif page.categories contains 'talk' %}
+{% assign itemtype = 'BlogPosting' %}
+{% if page.categories contains 'talk' %}
     {% assign itemtype = 'PresentationDigitalDocument' %}
 {% endif %}
 <main class="wrap" role="main">
