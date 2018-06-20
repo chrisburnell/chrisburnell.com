@@ -743,7 +743,7 @@ helpers = {
         // TYPE
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
         html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
-        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Response" : type === "repost" ? "Reposted" : "Posted");
+        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Reply" : type === "repost" ? "Reposted" : "Posted");
 
         // CONTENT / URL
         html = helpers.injectContent(html, /{{\s*content\s*}}/, type === "like" || type === "repost" ? "" : type === "reply" && content ? `<div><q>${content}</q></div>` : `<div><a href="${url}" rel="external">${url.split("//")[1]}</a></div>`);
