@@ -45,11 +45,12 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if page.syndicate-to or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
+    {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to %}
+    {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             <span>also on</span>
             {% assign syndication_count = 0 %}
-            {% for syndication in page.syndicate-to %}
+            {% for syndication in syndications %}
                 {% if syndication contains 'codepen.io' %}
                     {% assign syndication_slug = syndication | split: '/' | last %}
                     {% capture syndication_codepen %}<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
@@ -114,10 +115,11 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if page.in_reply_to %}
+    {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to %}
+    {% if in_reply_to %}
         <div class="in-reply-to">
             <span>in reply to</span>
-            {% for reply in page.in_reply_to %}
+            {% for reply in in_reply_to %}
                 {% if reply contains 'twitter.com' %}
                     {% if reply contains '/status/' %}
                         <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">@{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}</a>
