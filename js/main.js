@@ -11,7 +11,7 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function (originalContent, placeholder, injection) {
+    injectContent: function(originalContent, placeholder, injection) {
         const REGEX = new RegExp(placeholder, "g");
 
         return originalContent.replace(REGEX, injection);
@@ -23,7 +23,7 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: function (name) {
+    getParameterByName: function(name) {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -35,7 +35,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableElement: function (element, action) {
+    enableElement: function(element, action) {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute("aria-disabled", "false");
@@ -50,7 +50,7 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedDate
     ////
-    formatDate: function (date) {
+    formatDate: function(date) {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let day = date.getDate();
@@ -70,10 +70,10 @@ helpers = {
     /// @param {Boolean} [true] includeMerdiem
     /// @return {String} formattedTime
     ////
-    formatTime: function (date, includeSeconds = false, includeMeridiem = true) {
+    formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
         let hours = date.getHours();
-        let minutes = `:${date.getMinutes()}`;
-        let seconds = includeSeconds ? `:${date.getSeconds()}` : "";
+        let minutes = `:${date.getMinutes() < 10 ? 0 : ""}${date.getMinutes()}`;
+        let seconds = includeSeconds ? `:${date.getSeconds() < 10 ? 0 : ""}${date.getSeconds()}` : "";
         let meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : "";
 
         // format from 24-hours to 12-hours if including meridiem
@@ -88,7 +88,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    actionFromHash: function (hashes, action) {
+    actionFromHash: function(hashes, action) {
         for (let hash of hashes) {
             if (window.location.hash.indexOf(hash) !== -1) {
                 action();
@@ -735,7 +735,6 @@ helpers = {
         let url = item.data.url;
         let urlAuthor = item.data.author.url.replace(/\/$/, "");
         let author = item.data.author.name ? item.data.author.name : item.data.name;
-        let authorImage = item.data.author.photo;
         let date = item.data.published ? item.data.published : item.verified_date;
 
         // ID
@@ -744,7 +743,7 @@ helpers = {
         // TYPE
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
         html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
-        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Replied" : type === "repost" ? "Reposted" : "Posted");
+        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Response" : type === "repost" ? "Reposted" : "Posted");
 
         // CONTENT / URL
         html = helpers.injectContent(html, /{{\s*content\s*}}/, type === "like" || type === "repost" ? "" : type === "reply" && content ? `<div><q>${content}</q></div>` : `<div><a href="${url}" rel="external">${url.split("//")[1]}</a></div>`);

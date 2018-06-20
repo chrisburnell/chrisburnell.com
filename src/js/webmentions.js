@@ -104,7 +104,6 @@
         let url = item.data.url;
         let urlAuthor = item.data.author.url.replace(/\/$/, "");
         let author = item.data.author.name ? item.data.author.name : item.data.name;
-        let authorImage = item.data.author.photo;
         let date = item.data.published ? item.data.published : item.verified_date;
 
         // ID
@@ -113,7 +112,7 @@
         // TYPE
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
         html = helpers.injectContent(html, /{{\s*typeLink\s*}}/, `<a href="${url}" class="webmentions__item__activity" rel="external">{{ typePrefix }}</a>`);
-        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Replied" : type === "repost" ? "Reposted" : "Posted");
+        html = helpers.injectContent(html, /{{\s*typePrefix\s*}}/, type === "like" ? "Liked" : type === "reply" ? "Response" : type === "repost" ? "Reposted" : "Posted");
 
         // CONTENT / URL
         html = helpers.injectContent(html, /{{\s*content\s*}}/, type === "like" || type === "repost" ? "" : type === "reply" && content ? `<div><q>${content}</q></div>` : `<div><a href="${url}" rel="external">${url.split("//")[1]}</a></div>`);
