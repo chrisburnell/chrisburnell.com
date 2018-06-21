@@ -37,7 +37,9 @@
     {% endif %}
     {% if page.location %}
         <div class="location">
-            <span>given at</span>
+            {% if page.categories contains 'talk' %}
+                <span>given at</span>
+            {% endif %}
             {% if page.location_url %}
                 <a class="p-location" rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
             {% else %}

@@ -13,7 +13,7 @@ sitemap:
 'use strict';
 
 
-const VERSION = '{{ site.time | date: '%F_%H%M%S' }}'; // 1970-01-01_000000
+const VERSION = 'v2.0.0';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';

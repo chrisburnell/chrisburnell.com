@@ -186,7 +186,6 @@ gulp.task("js-serviceworker", () => {
     return gulp
         .src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
-        .pipe(newer(`${paths.js.src}/serviceworker.js`))
         .pipe(gulp.dest(`${paths.root}/`));
 });
 

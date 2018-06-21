@@ -57,6 +57,14 @@
         {% endif %}
 
         <div class="content__body  e-content">
+            {% for photo in page.mf-photo %}
+                <figure class="media">
+                    <a href="{{ photo }}"{% unless photo contains '//chrisburnell.com' %} rel="external"{% endunless %}>
+                        <img src="{{ photo }}" alt="">
+                    </a>
+                </figure>
+            {% endfor %}
+
             {{ content }}
         </div>
 
