@@ -56,16 +56,16 @@ const OFFLINE_PAGES = [
     '/tags/',
     '/talks/'
     {% for page in site.categories.article limit: 2 %},
-        '{{ page.url }}/'
+        '{{ page.url }}'
     {% endfor %}
     {% for page in site.categories.note limit: 2 %},
-        '{{ page.url }}/'
+        '{{ page.url }}'
     {% endfor %}
     {% for page in site.categories.pen limit: 2 %},
-        '{{ page.url }}/'
+        '{{ page.url }}'
     {% endfor %}
     {% for page in site.categories.link limit: 2 %},
-        '{{ page.url }}/'
+        '{{ page.url }}'
     {% endfor %}
 ];
 
