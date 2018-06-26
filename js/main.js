@@ -642,6 +642,7 @@ helpers = {
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
     const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");
     const WEBMENTIONS_SUBMIT = document.querySelector(".js-webmentions-submit");
+    const WEBMENTIONS_RESPONSES = document.querySelector(".js-webmentions-responses");
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#response"];
     let webmentionsLoaded = false;
@@ -687,6 +688,9 @@ helpers = {
                     for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                         webmentionCount.innerHTML = `${responsesCount} response${responsesCount > 1 ? "s" : ""}`;
                     }
+                }
+                else {
+                    WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "true");
                 }
             } else {
                 console.log(`Webmention request status error: ${request.status}`);
