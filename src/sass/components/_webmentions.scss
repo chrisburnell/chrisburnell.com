@@ -1,5 +1,5 @@
 ////
-/// WebMentions
+/// Webmentions
 /// @group components
 ////
 
@@ -9,7 +9,7 @@
 }
 
 .webmention__form,
-.webmentions-thread {
+.webmentions__thread {
     @include v(margin-top, medium);
 }
 
@@ -21,7 +21,7 @@
     }
 }
 
-.webmentions-label {
+.webmentions__label {
     @extend %delta !optional;
     align-self: center;
     @include v(padding-right, medium);
@@ -37,34 +37,29 @@
     }
 }
 
-.webmentions-input {
+.webmentions__input {
     flex: 1 0 auto;
     align-self: flex-end;
     margin-top: $border-width-default;
     line-height: $line-height-medium;
 }
 
-.webmentions-submit {
+.webmentions__submit {
     align-self: flex-end;
     @include v(margin-left, small);
 }
 
-.webmentions-thread {
+.webmentions__list {
     a {
         word-break: break-all;
     }
+
+    .webmentions__list__replies {
+        margin-top: 0;
+    }
 }
 
-.webmentions__item__image {
-    @include border-radius(50%);
-    width: $font-size-gamma;
-    height: $font-size-gamma;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: $border-width-default;
-}
-
-.webmentions__item__name {
+.webmentions__response__name {
     @include v(font-weight, bold);
 }
 

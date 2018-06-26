@@ -675,7 +675,7 @@ h3:not(:last-child) {
 
 .delta,
 h4,
-.webmentions-label {
+.webmentions__label {
     font-size: 1rem;
     font-size: var(--font-size-default);
     font-weight: 600;
@@ -3309,7 +3309,7 @@ footer div {
 }
 
 .webmention__form,
-.webmentions-thread {
+.webmentions__thread {
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
 }
@@ -3324,7 +3324,7 @@ footer div {
     }
 }
 
-.webmentions-label {
+.webmentions__label {
     align-self: center;
     padding-right: 1.25rem;
     padding-right: var(--measure-medium);
@@ -3332,7 +3332,7 @@ footer div {
 }
 
 @media (max-width: 500px) {
-    .webmentions-label {
+    .webmentions__label {
         flex: 1 0 100%;
         margin-bottom: 1.25rem;
         margin-bottom: var(--measure-medium);
@@ -3340,39 +3340,33 @@ footer div {
 }
 
 @media (min-width: 501px) {
-    .webmentions-label {
+    .webmentions__label {
         flex: 1 1 auto;
     }
 }
 
-.webmentions-input {
+.webmentions__input {
     flex: 1 0 auto;
     align-self: flex-end;
     margin-top: 0.25rem;
     line-height: 1.429;
 }
 
-.webmentions-submit {
+.webmentions__submit {
     align-self: flex-end;
     margin-left: 0.625rem;
     margin-left: var(--measure-small);
 }
 
-.webmentions-thread a {
+.webmentions__list a {
     word-break: break-all;
 }
 
-.webmentions__item__image {
-    background-clip: padding-box;
-    border-radius: 50%;
-    width: 1.125rem;
-    height: 1.125rem;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.25rem;
+.webmentions__list .webmentions__list__replies {
+    margin-top: 0;
 }
 
-.webmentions__item__name {
+.webmentions__response__name {
     font-weight: 600;
     font-weight: var(--font-weight-bold);
 }

@@ -3,7 +3,7 @@
 /// @group base
 ////
 
-@each $style in $font-families-styles {
+@each $style in $font-faces {
     @font-face {
         font-family: "#{nth($style, 1)}";
         font-style: #{nth($style, 3)};
