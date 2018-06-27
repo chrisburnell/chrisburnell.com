@@ -646,7 +646,6 @@ helpers = {
     // `#webmention` will match both `#webmention` and `#webmentions`
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#response"];
     let webmentionsLoaded = false;
-    let responsesCount = 0;
     let responses = {
         "like": [],
         "repost": [],
@@ -679,15 +678,16 @@ helpers = {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
-                // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
-                let data = JSON.parse(request.responseText);
-                populateResponses(data);
-                responsesCount = responses["like"].length + responses["repost"].length + responses["reply"].length;
+                populateResponses(JSON.parse(request.responseText));
+                let responsesCount = Object.keys(responses).map(type => {
+                    return responses[type].length;
+                }).reduce((p, c) => p + c, 0);
                 if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                     for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                         webmentionCount.innerHTML = `${responsesCount} response${responsesCount > 1 ? "s" : ""}`;
                     }
+                    // prevent hovering the button from continuing to fire
+                    WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
                 }
                 else {
                     WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "true");
@@ -742,16 +742,8 @@ helpers = {
         let webmentionsReplyContent = document.querySelector(".js-webmentions-replies-content");
 
         for (let link of data.links.reverse()) {
-            if (link.verified === true && link.private === false) {
-                if (link.activity.type === "like") {
-                    responses["like"].push(link);
-                }
-                else if (link.activity.type === "repost") {
-                    responses["repost"].push(link);
-                }
-                else if (link.activity.type === "reply") {
-                    responses["reply"].push(link);
-                }
+            if (link.verified === true && link.private === false && (link.activity.type === "like" || link.activity.type === "repost" || link.activity.type === "reply")) {
+                responses[link.activity.type].push(link);
             }
         }
 
@@ -801,7 +793,7 @@ helpers = {
         let content = response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
-        // let authorUrl = response.data.author.url.replace(/\/$/, "");
+        let authorUrl = response.data.author.url.replace(/\/$/, "");
 
         // ID
         html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
@@ -816,7 +808,10 @@ helpers = {
         html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, `${author}`);
+
+        // AUTHOR URL
+        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, `<a href="${authorUrl}" rel="external noopener">↗</a>`);
 
         // DATE
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);

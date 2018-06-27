@@ -3,16 +3,5 @@
         {% include components/webmentions-form.html %}
         {% include components/webmentions-responses.html %}
     </section>
-
-    {% raw %}
-    <template class="webmentions-template-default">
-        <a href="{{ url }}" id="webmentions-{{ id }}" class="webmentions__response" data-tyle="{{ type }}" rel="external noopener">{{ author }}</a>
-    </template>
-    <template class="webmentions-template-reply">
-        <li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
-            <div>{{ content }}</div>
-            <div>by <a href="{{ url }}" rel="external noopener">{{ author }}</a> {{ date }}</div>
-        </li>
-    </template>
-    {% endraw %}
+    {% include components/webmentions-templates.html %}
 {% endif %}
