@@ -675,12 +675,12 @@ helpers = {
     function loadWebmentions() {
         let request = new XMLHttpRequest();
         request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-        request.onload = function() {
+        request.onload = function () {
             if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 webmentionsLoaded = true;
                 // prevent hovering the button from continuing to fire
-                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
+                WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
                 let data = JSON.parse(request.responseText);
                 populateResponses(data);
                 responsesCount = responses["like"].length + responses["repost"].length + responses["reply"].length;
@@ -696,7 +696,7 @@ helpers = {
                 console.log(`Webmention request status error: ${request.status}`);
             }
         };
-        request.onerror = function() {
+        request.onerror = function () {
             console.log("Webmention request error");
         };
         request.send();
@@ -712,7 +712,7 @@ helpers = {
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
-            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     }
@@ -756,6 +756,7 @@ helpers = {
         }
 
         if (!!responses.like.length) {
+            webmentionsLikeLabel.innerHTML = `${responses.like.length} ${webmentionsLikeLabel.innerHTML}`;
             for (let response of responses.like) {
                 if (response !== responses.like[0]) {
                     webmentionsLikeContent.innerHTML += ", ";
@@ -767,6 +768,7 @@ helpers = {
         }
 
         if (!!responses.repost.length) {
+            webmentionsRepostLabel.innerHTML = `${responses.repost.length} ${webmentionsRepostLabel.innerHTML}`;
             for (let response of responses.repost) {
                 if (response !== responses.repost[0]) {
                     webmentionsRepostContent.innerHTML += ", ";
@@ -778,6 +780,7 @@ helpers = {
         }
 
         if (!!responses.reply.length) {
+            webmentionsReplyLabel.innerHTML = `${responses.reply.length} ${webmentionsReplyLabel.innerHTML}`;
             for (let response of responses.reply) {
                 webmentionsReplyContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_REPLY, response);
             }
@@ -816,7 +819,7 @@ helpers = {
         html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))} <small>@</small> ${helpers.formatTime(new Date(date))}</time>`);
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
 
         return html;
     }
