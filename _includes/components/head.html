@@ -64,8 +64,8 @@ snippet of code on a project of your own!  -->
         <link rel="dns-prefetch" href="//www.youtube.com">
     {% endif %}
 
-    {% if page.external_url %}
-        {% assign url = page.external_url.url | default: page.external_url %}
+    {% if page.bookmark_of %}
+        {% assign url = page.bookmark_of.url | default: page.bookmark_of %}
         <link rel="prefetch" href="{{ url }}">
     {% endif %}
 

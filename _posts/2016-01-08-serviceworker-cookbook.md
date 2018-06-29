@@ -8,5 +8,5 @@ lede: <q>The Service Worker Cookbook is a collection of working, practical examp
 tags:
 - serviceworker
 
-external_url: https://serviceworke.rs
+bookmark_of: https://serviceworke.rs
 ---
