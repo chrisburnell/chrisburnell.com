@@ -116,6 +116,9 @@
                 {{ syndication_twitter }}
                 {% assign syndication_count = syndication_count | plus: 1 %}
             {% endif %}
+            {% if page.categories contains 'note' %}
+                <a href="https://brid.gy/publish/twitter" aria-hidden="true"></a>
+            {% endif %}
         </div>
     {% endif %}
     {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil %}
