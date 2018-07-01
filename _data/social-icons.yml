@@ -10,8 +10,8 @@
 - title: LastFM
   url: 'https://last.fm/user/chrisburnell'
 
-- title: Coffee
-  url: 'https://www.buymeacoffee.com/8mtx3EQfI'
+# - title: Coffee
+#   url: 'https://www.buymeacoffee.com/8mtx3EQfI'
 
 - title: RSS
   url: '/feed.xml'

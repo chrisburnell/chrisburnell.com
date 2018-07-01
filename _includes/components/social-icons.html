@@ -1,12 +1,17 @@
 <nav class="social-icons" role="navigation">
     <ul class="social-icons-list">
-    {% for link in site.data.social-icons %}
-        {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
-        <li>
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
-                {% include content/svg.html type=svg_type title=link.title %}
+        {% for link in site.data.social-icons %}
+            {% capture svg_type %}{{ link.title | slugify }}{% endcapture %}
+            <li>
+                <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
+                    {% include content/svg.html type=svg_type title=link.title %}
+                </a>
+            </li>
+        {% endfor %}
+        <li class="hidden">
+            <a rel="me" href="https://mastodon.social/@chrisburnell" title="Mastodon">
+                Mastodon
             </a>
         </li>
-    {% endfor %}
     </ul>
 </nav>
