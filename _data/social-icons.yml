@@ -1,17 +1,28 @@
 - title: GitHub
   url: 'https://github.com/chrisburnell'
+  svg: github
 
 - title: Twitter
   url: 'https://twitter.com/iamchrisburnell'
+  svg: twitter
 
 - title: CodePen
   url: 'https://codepen.io/chrisburnell'
+  svg: codepen
 
 - title: LastFM
   url: 'https://last.fm/user/chrisburnell'
+  svg: lastfm
 
 # - title: Coffee
 #   url: 'https://www.buymeacoffee.com/8mtx3EQfI'
+#   svg: coffee
 
 - title: RSS
   url: '/feed.xml'
+  svg: rss
+
+- title: Mastodon
+  url: 'https://mastodon.social/@chrisburnell'
+  svg: feather
+  hidden: true
