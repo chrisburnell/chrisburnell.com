@@ -1,9 +1,10 @@
 <nav class="social-icons" role="navigation">
     <ul class="social-icons-list">
         {% for link in site.data.social-icons %}
+            {% assign svg = link.svg | default: 'feather' %}
             <li{% if link.hidden %} class="hidden"{% endif %}>
                 <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
-                    {% include content/svg.html type=link.svg title=link.title %}
+                    {% include content/svg.html type=svg title=link.title %}
                 </a>
             </li>
         {% endfor %}

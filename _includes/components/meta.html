@@ -124,7 +124,12 @@
     {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil %}
     {% if in_reply_to %}
         <div class="in-reply-to">
-            <span>in reply to</span>
+            {% if page.rsvp %}
+                <span class="p-rsvp  hidden">{{ page.rsvp }}</span>
+                <span>RSVPed <em>{{ page.rsvp | capitalize }}</em> to</span>
+            {% else %}
+                <span>in reply to</span>
+            {% endif %}
             {% for reply in in_reply_to %}
                 {% if reply contains 'twitter.com' %}
                     {% if reply contains '/status/' %}
