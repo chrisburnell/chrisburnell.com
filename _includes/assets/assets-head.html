@@ -22,3 +22,6 @@
 {% if page.twitter == true %}
     <link rel="preload" as="script" href="//platform.twitter.com/widgets.js">
 {% endif %}
+{% if page.webmentions == true %}
+    {% include components/webmentions-templates.html %}
+{% endif %}
