@@ -126,7 +126,7 @@
         <div class="in-reply-to">
             {% if page.rsvp %}
                 <span class="p-rsvp  hidden">{{ page.rsvp }}</span>
-                <span>RSVPed <em>{{ page.rsvp | capitalize }}</em> to</span>
+                <span>responded</span> <strong>{{ page.rsvp | capitalize }}</strong> <span>to</span>
             {% else %}
                 <span>in reply to</span>
             {% endif %}
@@ -137,6 +137,8 @@
                     {% else %}
                         <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Tweet</a>
                     {% endif %}
+                {% elsif reply contains 'hwclondon.co.uk' %}
+                    <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">Homebrew Website Club London</a>
                 {% else %}
                     <strong>{{ reply }}</strong>
                 {% endif %}
