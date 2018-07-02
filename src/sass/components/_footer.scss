@@ -31,7 +31,8 @@ footer {
 
 .footer-home-anchor,
 .footer-license-anchor,
-.footer-style-guide-anchor {
+.footer-style-guide-anchor,
+.footer-privacy-anchor {
     display: inline-block;
     white-space: nowrap;
 }
@@ -79,7 +80,8 @@ footer {
 }
 
 .footer-license-anchor,
-.footer-style-guide-anchor {
+.footer-style-guide-anchor,
+.footer-privacy-anchor {
     @include case(uppercase);
     @include v(margin-left, small);
     @include v(margin-right, small);

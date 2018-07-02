@@ -1731,7 +1731,8 @@ footer div {
 
 .footer-home-anchor,
 .footer-license-anchor,
-.footer-style-guide-anchor {
+.footer-style-guide-anchor,
+.footer-privacy-anchor {
     display: inline-block;
     white-space: nowrap;
 }
@@ -1784,7 +1785,8 @@ footer div {
 }
 
 .footer-license-anchor,
-.footer-style-guide-anchor {
+.footer-style-guide-anchor,
+.footer-privacy-anchor {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-left: 0.625rem;
