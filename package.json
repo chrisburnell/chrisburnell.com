@@ -35,7 +35,7 @@
     "gulp-watch": "^5.0.0",
     "gulp-webp": "^3.0.0",
     "prettier": "^1.13.4",
-    "snyk": "^1.69.6"
+    "snyk": "^1.88.1"
   },
   "repository": {
     "type": "git",
