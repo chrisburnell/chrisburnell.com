@@ -1,6 +1,6 @@
 {% include assets/yml-author.liquid %}
 
-<aside class="author  h-card" role="complementary" itemscope itemtype="https://schema.org/Person">
+<aside class="author" role="complementary" itemscope itemtype="https://schema.org/Person">
 
     <div class="clear  author-information">
         <a class="author-image  canada" href="/about/" title="About me" tabindex="-1">
@@ -20,8 +20,8 @@
         </a>
         <div class="author-name">
             <span>about</span>
-            <a href="/about/">
-                <span class="p-author  canada" itemprop="author">{{ site.author.name }}</span>
+            <a href="/about/" class="p-author  h-card  canada" rel="author">
+                <span itemprop="author">{{ site.author.name }}</span>
             </a>
         </div>
     </div>
