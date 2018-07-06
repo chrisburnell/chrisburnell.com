@@ -206,8 +206,34 @@ patch:
   'npm:debug:20170905':
     - gulp-sourcemaps > debug-fabulous > debug:
         patched: '2017-09-26T22:44:18.768Z'
-      gulp-watch > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
         patched: '2018-06-05T12:32:28.985Z'
   'npm:tough-cookie:20170905':
     - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         patched: '2018-06-05T12:32:28.985Z'
+  'npm:hoek:20180212':
+    - gulp-sass > node-sass > node-gyp > request > hawk > hoek:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-sass > node-sass > node-gyp > request > hawk > sntp > hoek:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-sass > node-sass > node-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-sass > node-sass > node-gyp > request > hawk > boom > hoek:
+        patched: '2018-07-06T21:10:33.597Z'
+  'npm:tunnel-agent:20170305':
+    - gulp-imagemin > imagemin-gifsicle > gifsicle > bin-build > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-imagemin > imagemin-gifsicle > gifsicle > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-webp > imagemin-webp > cwebp-bin > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-imagemin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-imagemin > imagemin-optipng > optipng-bin > bin-build > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-imagemin > imagemin-optipng > optipng-bin > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-webp > imagemin-webp > cwebp-bin > bin-build > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
+    - gulp-imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > caw > tunnel-agent:
+        patched: '2018-07-06T21:10:33.597Z'
