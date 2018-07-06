@@ -366,6 +366,10 @@ blockquote cite::before {
     contain: strict;
 }
 
+cite {
+    font-style: normal;
+}
+
 q {
     hanging-punctuation: first;
 }
@@ -1942,16 +1946,11 @@ footer div {
 }
 
 .webmentions__list a {
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .webmentions__list .webmentions__list__replies {
     margin-top: 0;
-}
-
-.webmentions__response__name {
-    font-weight: 600;
-    font-weight: var(--font-weight-bold);
 }
 
 .button--show-webmentions::before,
@@ -2180,10 +2179,6 @@ code[data-lang]::before {
     }
 }
 
-.page--style-guide .lede + h3 {
-    margin-top: 0;
-}
-
 .palette-list {
     width: 100%;
     display: flex;
@@ -2277,10 +2272,35 @@ code[data-lang]::before {
     color: #4f4f4f;
 }
 
-.palette-list li h4 {
-    margin-bottom: 0;
-    line-height: 1.875;
-    line-height: var(--line-height-default);
+.measure-example {
+    background-color: #dddddd;
+    background-color: var(--color-alto);
+    background-image: linear-gradient(to bottom, #eb2d37, #eb2d37);
+    background-position: center center;
+    background-size: 100% 0.125rem;
+    background-repeat: no-repeat;
+    height: 1.25rem;
+    display: block;
+}
+
+.measure-example--small {
+    width: 0.625rem;
+}
+
+.measure-example--medium {
+    width: 1.25rem;
+}
+
+.measure-example--large {
+    width: 2.25rem;
+}
+
+.measure-example--one {
+    width: 1rem;
+}
+
+.measure-example--responsive {
+    width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
 }
 
 .transition-example {
@@ -2301,7 +2321,7 @@ code[data-lang]::before {
     margin-top: var(--measure-small);
 }
 
-@media (pointer: coarse) {
+@media (any-pointer: coarse) {
     .transition-example::before {
         content: "(Tap to interact.)";
     }

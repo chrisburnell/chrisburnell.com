@@ -49,8 +49,6 @@ codepen:
     default: 119
     tabfree: 8863
 
-emptyArray: []
-
 url:      https://chrisburnell.com
 baseurl:  ''
 shorturl: https://repc.co/
@@ -69,20 +67,23 @@ incremental: true
 destination: ./_site
 permalink: /:categories/:title/
 
+emptyArray: []
+
+collections:
+  books:
+    output: false
+
 defaults:
--
-  scope:
+- scope:
     path: ''
     type: 'pages'
   values:
     layout: 'page'
--
-  scope:
+- scope:
     path: '_drafts'
   values:
     layout: 'draft'
--
-  scope:
+- scope:
     path: '_posts'
   values:
     layout: 'post'

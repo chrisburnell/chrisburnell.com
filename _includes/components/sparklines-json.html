@@ -1,0 +1,27 @@
+{% assign last = include.target | limit: 50 | last %}
+{% assign starting_year = last.date | date: '%Y' | plus: 0 %}
+{% assign starting_month = last.date | date: '%-m' | plus: 0 %}
+{% for tracking_year in (starting_year..ending_year) %}
+    {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+    {% assign outside_first = forloop.first %}
+    {% for tracking_month in (starting_month..12) %}
+        {% if tracking_year == ending_year and tracking_month > ending_month %}
+            {% break %}
+        {% else %}
+            {% unless outside_first and forloop.first %},{% endunless %}
+        {% endif %}
+        {% assign count = 0 %}
+        {% for page in include.target reversed %}
+            {% assign year = page.date | date: '%Y' | plus: 0 %}
+            {% assign month = page.date | date: '%-m' | plus: 0 %}
+            {% if year == tracking_year and month == tracking_month %}
+                {% assign count = count | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+        {% if count > 12 %}{% assign count = 12 %}{% endif %}
+        {{ count }}
+    {% endfor %}
+    {% if tracking_year == ending_year and tracking_month > ending_month %}
+        {% break %}
+    {% endif %}
+{% endfor %}

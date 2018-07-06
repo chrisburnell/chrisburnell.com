@@ -29,13 +29,13 @@
                 {% elsif page.categories contains 'talk' %}
                     {% include content/svg.html type='bullhorn' %}
                 {% endif %}
-            <h4 class="title  p-name" itemprop="name">
+            <h3 class="delta  title  p-name" itemprop="name">
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title }}
                 {% endif %}
-            </h4>
+            </h3>
             <p class="lede  e-content" itemprop="description">
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}

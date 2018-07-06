@@ -14,11 +14,11 @@
         {% include components/banner.html %}
 
         {% if page.page_class contains 'home' %}
-            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ site.lede }}</h2>
+            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ site.lede }}</p>
         {% elsif page.page_class contains 'search' %}
-            <h2 class="lede  lede--featured  js-search-meta" id="lede" itemprop="description">Search for something!</h2>
+            <p class="beta  lede  lede--featured  js-search-meta" id="lede" itemprop="description">Search for something!</p>
         {% elsif page.lede %}
-            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
+            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</p>
         {% endif %}
 
         <div class="content__body">

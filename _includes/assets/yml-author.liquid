@@ -4,6 +4,8 @@
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
 {% elsif page.categories contains 'article' %}
     {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
+{% elsif page.page_class contains 'books' %}
+    {% assign author_biography_closer = 'my taste in books has lost me any respect I may have had' %}
 {% elsif page.page_class contains 'links' %}
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
 {% elsif page.categories contains 'link' %}
@@ -24,7 +26,7 @@
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
 {% elsif page.page_class contains 'search' %}
     {% assign author_biography_closer = 'everything you search for looks totally boring' %}
-{% elsif page.page_class contains 'hip-hop' %}
+{% elsif page.page_class contains 'music' %}
     {% assign author_biography_closer = 'you don’t care about my distasteful choice in music' %}
 {% elsif page.page_class contains 'error' or page.page_class contains 'offline' %}
     {% assign author_biography_closer = 'you’re upset that you found a broken page. <span class="canada">Sorry</span>' %}

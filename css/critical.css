@@ -473,11 +473,27 @@ h3,
 .lede {
     font-size: 1.125rem;
     font-size: var(--font-size-gamma);
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     line-height: 1.875;
     line-height: var(--line-height-default);
 }
 
-h3 {
+.gamma:not(:last-child),
+h3:not(:last-child),
+.lede:not(:last-child) {
+    margin-bottom: 1.25rem;
+    margin-bottom: var(--measure-medium);
+}
+
+.content__body > .gamma,
+.widget .gamma,
+.content__body > h3,
+.content__body > .lede,
+.widget h3,
+.widget .lede {
+    clear: both;
+    zoom: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 2.25rem;
@@ -488,20 +504,6 @@ h3 {
     border-bottom-style: var(--border-style-default);
     border-bottom-color: #dddddd;
     border-bottom-color: var(--color-alto);
-    font-weight: 600;
-    font-weight: var(--font-weight-bold);
-}
-
-h3:not(:last-child) {
-    margin-bottom: 1.25rem;
-    margin-bottom: var(--measure-medium);
-}
-
-.content > h3,
-.content__body > h3,
-.widget h3 {
-    clear: both;
-    zoom: 1;
     width: auto;
     max-width: 100%;
     display: inline-block;
@@ -509,31 +511,45 @@ h3:not(:last-child) {
     padding-right: var(--measure-large);
 }
 
-.content > h3::before,
-.content > h3::after,
+.content__body > .gamma::before,
+.content__body > .gamma::after,
+.widget .gamma::before,
+.widget .gamma::after,
 .content__body > h3::before,
+.content__body > .lede::before,
 .content__body > h3::after,
+.content__body > .lede::after,
 .widget h3::before,
-.widget h3::after {
+.widget .lede::before,
+.widget h3::after,
+.widget .lede::after {
     content: "";
     display: table;
 }
 
-.content > h3::after,
+.content__body > .gamma::after,
+.widget .gamma::after,
 .content__body > h3::after,
-.widget h3::after {
+.content__body > .lede::after,
+.widget h3::after,
+.widget .lede::after {
     clear: both;
 }
 
 @media screen and (max-width: 800px) {
-    .content > h3,
+    .content__body > .gamma,
+    .widget .gamma,
     .content__body > h3,
-    .widget h3 {
+    .content__body > .lede,
+    .widget h3,
+    .widget .lede {
         align-self: flex-start;
     }
 }
 
-.lede + h3 {
+.lede + .gamma,
+.lede + h3,
+.lede + .lede {
     margin-top: 0;
 }
 
@@ -799,7 +815,8 @@ aside:not([class]) {
     }
 }
 
-h3 + aside {
+h3 + aside,
+.lede + aside {
     margin-top: 2.25rem;
     margin-top: var(--measure-large);
 }
@@ -1077,7 +1094,7 @@ aside + .lede {
 }
 
 .lede--featured {
-    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500)));
+    max-width: calc(336px + (480 - 336) * ((100vw - 500px) / (1140 - 500))) !important;
     font-size: 1.25rem;
     font-size: var(--font-size-large);
     font-weight: 600;

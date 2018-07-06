@@ -55,26 +55,22 @@ h2 {
 .gamma,
 %gamma {
     @include v(font-size, gamma);
-    @include v(line-height, default);
-}
-h3 {
-    @extend %gamma !optional;
-    @include case(uppercase);
-    @include v(margin-top, large);
-    @include v(border-bottom-width, thin);
-    @include v(border-bottom-style, default);
-    @include v(border-bottom-color, alto);
     @include v(font-weight, bold);
+    @include v(line-height, default);
 
     &:not(:last-child) {
         @include v(margin-bottom, medium);
     }
 
-    // Match normal `h3`s without targetting `aside`-nested `h3`s
-    .content > &,
+    // Match normal `gamma`s without targetting `aside`-nested `gamma`s
     .content__body > &,
     .widget & {
         @include clear;
+        @include case(uppercase);
+        @include v(margin-top, large);
+        @include v(border-bottom-width, thin);
+        @include v(border-bottom-style, default);
+        @include v(border-bottom-color, alto);
         width: auto;
         max-width: 100%;
         display: inline-block;
@@ -90,6 +86,9 @@ h3 {
     .lede + & {
         margin-top: 0;
     }
+}
+h3 {
+    @extend %gamma !optional;
 }
 
 // Heading - Delta

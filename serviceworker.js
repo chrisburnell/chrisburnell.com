@@ -13,7 +13,7 @@ sitemap:
 'use strict';
 
 
-const VERSION = 'v2.0.0';
+const VERSION = 'v2.0.1';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
@@ -46,6 +46,7 @@ const OFFLINE_PAGES = [
     '/',
     '/about/',
     '/articles/',
+    '/books/',
     '/contact/',
     '/license/',
     '/links/',

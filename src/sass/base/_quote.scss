@@ -48,10 +48,13 @@ blockquote {
         }
     }
 }
-
 .twitter-tweet {
     margin: 0 auto $measure-medium !important;
     contain: strict;
+}
+
+cite {
+    font-style: normal;
 }
 
 q {

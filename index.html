@@ -4,10 +4,10 @@ searchable: no-content
 ---
 
 
-<h3>
+<h2 class="gamma">
     <a href="/articles/">Latest Articles</a>
     <canvas id="sparkline-articles" class="sparkline" width="120" height="22"></canvas>
-</h3>
+</h2>
 
 <ol class="content-list" id="articles" role="list">
     {% for page in site.categories.article limit: 4 %}
@@ -18,10 +18,10 @@ searchable: no-content
 {% include components/buttons-list.html type='archives' include='articles' %}
 
 
-<h3>
+<h2 class="gamma">
     <a href="/notes/">Latest Notes</a>
     <canvas id="sparkline-notes" class="sparkline" width="120" height="22"></canvas>
-</h3>
+</h2>
 
 <ol class="content-list" id="notes" role="list">
     {% for page in site.categories.note limit: 4 %}
@@ -32,10 +32,10 @@ searchable: no-content
 {% include components/buttons-list.html type='archives' include='notes' %}
 
 
-<h3>
+<h2 class="gamma">
     <a href="/pens/">Latest Pens</a>
     <canvas id="sparkline-pens" class="sparkline" width="120" height="22"></canvas>
-</h3>
+</h2>
 
 <ol class="content-list" id="pens" role="list">
     {% for page in site.categories.pen limit: 4 %}
@@ -46,10 +46,10 @@ searchable: no-content
 {% include components/buttons-list.html type='archives' include='pens' %}
 
 
-<h3>
+<h2 class="gamma">
     <a href="/links/">Latest Links</a>
     <canvas id="sparkline-links" class="sparkline" width="120" height="22"></canvas>
-</h3>
+</h2>
 
 <ol class="content-list" id="links" role="list">
     {% for page in site.categories.link limit: 4 %}
@@ -61,10 +61,10 @@ searchable: no-content
 
 
 {% comment %}
-<h3>
+<h2 class="gamma">
     <a href="/talks/">Latest Talks</a>
     <canvas id="sparkline-talks" class="sparkline" width="120" height="22"></canvas>
-</h3>
+</h2>
 
 <ol class="content-list" id="talks" role="list">
     {% for page in site.categories.talk limit: 4 %}

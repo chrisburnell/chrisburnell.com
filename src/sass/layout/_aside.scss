@@ -34,7 +34,7 @@ aside {
         }
     }
 
-    h3 + & {
+    %gamma + & {
         @include v(margin-top, large);
     }
 

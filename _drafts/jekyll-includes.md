@@ -48,10 +48,10 @@ So how do I actually get *Jekyll* to build a *heading* and an *associated anchor
 As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown*. Instead of writing headings in the traditional method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes:
 
 {% highlight html %}
-<h3 id="brass-tacks">
+<h2 id="gamma  brass-tacks">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
-</h3>
+</h2>
 {% endhighlight %}
 
 Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.

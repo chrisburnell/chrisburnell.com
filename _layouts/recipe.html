@@ -8,11 +8,7 @@
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name" itemprop="name">
-                {% if page.categories contains 'note' %}
-                    {{ page.date | date: '%A, %d %B %Y' }}
-                {% else %}
-                    {{ page.title }}
-                {% endif %}
+                {{ page.title }}
             </span>
             {% if page.shorturl %}
                 {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
@@ -27,7 +23,7 @@
         {% include components/banner.html %}
 
         {% if page.lede %}
-            <h2 class="lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</h2>
+            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</p>
         {% endif %}
 
         {% if page.edit_text %}

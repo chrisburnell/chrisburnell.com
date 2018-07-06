@@ -51,16 +51,12 @@
 
 .webmentions__list {
     a {
-        word-break: break-all;
+        word-break: break-word;
     }
 
     .webmentions__list__replies {
         margin-top: 0;
     }
-}
-
-.webmentions__response__name {
-    @include v(font-weight, bold);
 }
 
 // Also appears only on article pages

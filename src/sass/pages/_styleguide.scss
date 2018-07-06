@@ -5,7 +5,7 @@
 ////
 
 .page--style-guide {
-    .lede + h3 {
+    .lede + %gamma {
         margin-top: 0;
     }
 }
@@ -47,11 +47,36 @@
             }
         }
 
-        h4 {
+        %gamma {
             margin-bottom: 0;
             @include v(line-height, default);
         }
     }
+}
+
+.measure-example {
+    @include v(background-color, alto);
+    background-image: linear-gradient(to bottom, $color-canada, $color-canada);
+    background-position: center center;
+    background-size: 100% $border-width-thin;
+    background-repeat: no-repeat;
+    height: $measure-medium;
+    display: block;
+}
+.measure-example--small {
+    width: $measure-small;
+}
+.measure-example--medium {
+    width: $measure-medium;
+}
+.measure-example--large {
+    width: $measure-large;
+}
+.measure-example--one {
+    width: $measure-one;
+}
+.measure-example--responsive {
+    width: $line-length-responsive;
 }
 
 .transition-example {
@@ -65,7 +90,7 @@
         @include v(margin-top, small);
     }
 
-    @media ("pointer: coarse") {
+    @include media('coarse') {
         &::before {
             content: "(Tap to interact.)";
         }

@@ -11,7 +11,7 @@
     <li role="listitem">
         <article role="article" itemscope itemtype="https://schema.org/Article">
             <a href="{{ url }}">
-                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <h3 class="delta  title" itemprop="name">{{ title }}</h3>
                 <p class="lede" itemprop="description">{{ lede }}</p>
             </a>
         </article>
@@ -25,7 +25,7 @@
         <article role="article" itemscope itemtype="https://schema.org/TechArticle">
             <a href="{{ url }}">
                 <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
-                <h4 class="title" itemprop="name">{{ title }}</h4>
+                <h3 class="delta  title" itemprop="name">{{ title }}</h3>
                 <p class="lede" itemprop="description">{{ lede }}</p>
                 <time class="date{{ date_class }}" datetime="{{ date }}">{{ date_friendly }}</time>
             </a>
