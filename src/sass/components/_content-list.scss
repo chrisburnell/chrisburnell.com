@@ -88,16 +88,20 @@
     }
 
     .title {
-        @include transition(text-decoration-color);
-        @include will-change(text-decoration-color);
         width: auto;
         display: inline-block;
         margin-bottom: 0;
-        text-decoration: underline;
-        @include v(text-decoration-color, alto);
-        // coming soon!
-        // @include v(text-decoration-width, thin);
-        text-underline-position: under;
+    }
+    a:link {
+        .title {
+            @include transition(text-decoration-color);
+            @include will-change(text-decoration-color);
+            text-decoration: underline;
+            @include v(text-decoration-color, alto);
+            // coming soon!
+            // @include v(text-decoration-width, thin);
+            text-underline-position: under;
+        }
     }
     a:hover,
     a:focus,

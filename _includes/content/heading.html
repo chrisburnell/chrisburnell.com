@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
   This include lets you easily add a heading element with a fragment anchor.
 
@@ -15,7 +15,7 @@
     //     <a href="#lets-look-at-some-code" class="fragment-anchor" aria-hidden="true">#</a>
     // </h2>
 
-{% endcomment %}
+{%- endcomment -%}
 {% assign heading_type = include.type | default: 'gamma' %}
 {% assign heading_id = include.id %}
 {% unless include.id %}

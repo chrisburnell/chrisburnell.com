@@ -58,19 +58,3 @@ searchable: no-content
 </ol>
 
 {% include components/buttons-list.html type='archives' include='links' %}
-
-
-{% comment %}
-<h2 class="gamma">
-    <a href="/talks/">Latest Talks</a>
-    <canvas id="sparkline-talks" class="sparkline" width="120" height="22"></canvas>
-</h2>
-
-<ol class="content-list" id="talks" role="list">
-    {% for page in site.categories.talk limit: 4 %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
-</ol>
-
-{% include components/buttons-list.html type='archives' include='talks' %}
-{% endcomment %}

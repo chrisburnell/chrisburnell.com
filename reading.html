@@ -9,19 +9,17 @@ sparkline: books
 ---
 
 
-<ol class="content-list" id="books" role="list">
+<ol class="content-list  bookshelf" id="books" role="list">
 {% for page in site.books %}
     <li role="listitem" class="h-entry">
         <div class="p-summary">
-            {% if page.image %}
-                <img src="{{ page.image }}" alt="">
+            {% if page.bookcover %}
+                {% include components/bookcover.html %}
             {% endif %}
             <div class="p-read-of  h-cite">
-                <cite class="delta  p-name">{{ page.title }}</cite>
-                <div>by <span class="delta  p-author">{% for author in page.authors %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span></div>
-                <div class="delta  p-uid">{{ page.isbn }}</div>
+                <h2 class="delta  title"><data class="p-read-status" value="{{ page.read_status }}">{{ page.read_status | replace: 'to-read', 'Coming up' | capitalize }}</data>: <cite class="p-name">{{ page.title }}</cite></h2>
+                <div>by <span class="delta  p-author">{% for author in page.authors %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span> • <span class="delta  p-uid">{{ page.isbn }}</span></div>
             </div>
-            <data class="p-read-status" value="{{ page.read_status }}">
         </div>
     </li>
 {% endfor %}

@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
   Generates a Buttons List from the `archives` or `feeds` datasets.
 
@@ -6,7 +6,7 @@
   @param {String} include
   @param {String} exclude
 
-{% endcomment %}
+{%- endcomment -%}
 {% if include.type == 'feeds' %}
     {% assign data = site.data.feeds %}
 {% elsif include.type == 'archives' %}

@@ -2666,13 +2666,16 @@ aside .content-list a {
 }
 
 .content-list .title {
+    width: auto;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.content-list a:link .title {
     transition: -webkit-text-decoration-color 0.2s ease 0s;
     transition: text-decoration-color 0.2s ease 0s;
     transition: text-decoration-color 0.2s ease 0s, -webkit-text-decoration-color 0.2s ease 0s;
     will-change: text-decoration-color;
-    width: auto;
-    display: inline-block;
-    margin-bottom: 0;
     text-decoration: underline;
     -webkit-text-decoration-color: #dddddd;
     text-decoration-color: #dddddd;
@@ -3727,6 +3730,29 @@ button .icon--rss,
     h1 .sparkline {
         margin-top: 1.25rem;
     }
+}
+
+.bookshelf li {
+    background-color: rgba(95, 138, 166, 0.1);
+    background-color: var(--color-raven--gamma);
+    padding: 0.625rem;
+    padding: var(--measure-small);
+    text-align: center;
+}
+
+.bookshelf img,
+.bookshelf picture,
+.bookshelf svg {
+    max-width: 100%;
+    max-height: 16em;
+    display: block;
+    margin-bottom: 0.625rem;
+    margin-bottom: var(--measure-small);
+}
+
+.bookshelf .title {
+    margin-bottom: 0.625rem;
+    margin-bottom: var(--measure-small);
 }
 
 .ingredients {

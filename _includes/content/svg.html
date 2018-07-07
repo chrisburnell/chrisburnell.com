@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
   This include lets you easily add an SVG.
 
@@ -9,7 +9,7 @@
     {% include content/svg.html type='raven' title='The Raven' %}
     // <svg class="icon  icon--raven" title="The Raven" role="img"><use xlink:href="/images/sprites.svg#svg--raven" /></svg>
 
-{% endcomment %}
+{%- endcomment -%}
 {% if include.title %}
     {% assign svg_title_count = svg_title_count | plus: 1 %}
     <svg class="icon  icon--{{ include.type }}" role="img" title="{{ include.title }}" aria-labelledby="svg-title--{{ svg_title_count }}">

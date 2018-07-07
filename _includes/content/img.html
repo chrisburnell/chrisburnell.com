@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
   This include lets you easily add an Image with a WebP fallback
 
@@ -20,7 +20,7 @@
     //          srcset="/hero@2x.png 2x">
     // </picture>
 
-{% endcomment %}
+{%- endcomment -%}
 {% assign srcs = include.src | split: ',' %}
 {% assign src = srcs.first | strip | split: ' ' | first %}
 {% assign srcset = '' %}

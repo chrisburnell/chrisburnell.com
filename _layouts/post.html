@@ -17,14 +17,6 @@
                     {{ page.title }}
                 {% endif %}
             </span>
-            {% comment %}
-            {% if page.shorturl %}
-                {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% assign h1_rel = 'external  me' %}
-                {% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}
-            {% endif %}
-            {% endcomment %}
             {% if page.sparkline %}
                 <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>
             {% endif %}

@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   Create a Fragment Anchor for linking to a specific part of the page
 
   @param {String} id *
@@ -10,7 +10,7 @@
     {% include content/fragment-anchor.html id='12345' %}
     // <a href="#12345" class="fragment-anchor">#12345</a>
 
-{% endcomment %}
+{%- endcomment -%}
 {% if include.id %}
     {% assign anchor_href = include.id | prepend: '#' %}
 {% elsif include.href %}

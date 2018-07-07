@@ -1,0 +1,10 @@
+{% if page.bookcover or page.mf-photo %}
+    {% assign bookcovers = page.mf-photo | default: page.bookcover | default: site.emptyArray %}
+    <picture class="u-photo">
+        <source srcset="{% for bookcover in bookcovers %}/images/bookcovers/{{ bookcover | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if bookcover contains '@' %}{{ bookcover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                type="image/webp">
+        <img    alt="" class="bookcover  u-photo" role="presentation" itemprop="image"
+                src="/images/bookcovers/{{ bookcovers | last }}"
+                srcset="{% for bookcover in bookcovers %}/images/bookcovers/{{ bookcover }} {% if bookcover contains '@' %}{{ bookcover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+    </picture>
+{% endif %}

@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
   This include lets you easily embed a CodePen.
 
@@ -16,7 +16,7 @@
     // </pre>
     // <noscript>Please enable JavaScript to view this Pen.</noscript>
 
-{% endcomment %}
+{%- endcomment -%}
 {% assign slug = include.slug | default: page.codepen_slug %}
 {% assign height = include.height | default: '400' %}
 {% assign tab = include.tab | default: 'result' %}
