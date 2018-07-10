@@ -1574,17 +1574,19 @@ aside .content-list a {
 .buttons-list {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: -webkit-max-content;
+    grid-template-columns: max-content;
     grid-gap: 1.25rem;
     grid-gap: var(--measure-medium);
-    justify-items: center;
+    justify-content: center;
     margin: 0 0 1.25rem;
     margin: 0 0 var(--measure-medium);
 }
 
 @media screen and (min-width: 501px) {
     .buttons-list {
-        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(12em, -webkit-max-content));
+        grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
     }
 }
 
@@ -2113,6 +2115,76 @@ code[data-lang]::before {
 
 .bookshelf .rating {
     letter-spacing: 2px;
+}
+
+.network {
+    padding: 0.625rem 1.25rem;
+    padding: var(--measure-small) var(--measure-medium);
+    font-size: 1.125rem;
+    font-size: var(--font-size-gamma);
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    position: fixed;
+    bottom: 1.25rem;
+    bottom: var(--measure-medium);
+    right: 1.25rem;
+    right: var(--measure-medium);
+}
+
+body:not(.is-online):not(.is-offline):not(.offline-ready) .network {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(100%) !important;
+    clip-path: inset(100%) !important;
+}
+
+.offline-ready .network,
+.is-online .network,
+.is-offline .network {
+    -webkit-animation: fade-out 0.2s linear 2s forwards;
+    animation: fade-out 0.2s linear 2s forwards;
+    -webkit-animation: fade-out var(--transition-duration-default) var(--animation-function) var(--animation-duration) var(--animation-fill-mode);
+    animation: fade-out var(--transition-duration-default) var(--animation-function) var(--animation-duration) var(--animation-fill-mode);
+}
+
+@-webkit-keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.offline-ready .network,
+.is-online .network {
+    background-color: #7ab55c;
+    color: #f9f9f9;
+    color: var(--color-white);
+}
+
+.is-offline .network {
+    background-color: #eb2d37;
+    background-color: var(--color-canada);
+    color: #f9f9f9;
+    color: var(--color-white);
 }
 
 .ingredients {

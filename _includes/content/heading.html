@@ -24,15 +24,15 @@
 {% assign heading_class = include.class | default: '' %}
 {% assign heading_href = include.href | default: '' %}
 {% assign heading_title_stripped = include.title | strip_html | prepend: 'Permalink: ' %}
-<h2 class="{{ heading_type }}{% unless heading_class == '' %}  {{ heading_class }}{% endunless %}"{% unless heading_id == '' %} id="{{ heading_id }}"{% endunless %}>
-    {% unless heading_href == '' %}
+<h2 class="{{ heading_type }}{% unless heading_class == blank %}  {{ heading_class }}{% endunless %}"{% unless heading_id == blank %} id="{{ heading_id }}"{% endunless %}>
+    {% unless heading_href == blank %}
         <a href="{{ heading_href }}">
     {% endunless %}
     {{ include.title }}
-    {% unless heading_href == '' %}
+    {% unless heading_href == blank %}
         </a>
     {% endunless %}
-    {% unless heading_id == '' %}
+    {% unless heading_id == blank %}
         {% include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
     {% endunless %}
 </h2>

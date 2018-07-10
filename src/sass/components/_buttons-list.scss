@@ -8,14 +8,14 @@
 .buttons-list {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: max-content;
     @include v(grid-gap, medium);
-    justify-items: center;
+    justify-content: center;
     margin: 0 0 $measure-medium;
     margin: 0 0 var(--measure-medium);
 
     @include media("screen", ">small") {
-        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
     }
 
     %content-elements + & {

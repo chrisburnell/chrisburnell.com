@@ -1,0 +1,48 @@
+////
+/// Network Indicator
+/// @group components
+////
+
+.network {
+    padding: $measure-small $measure-medium;
+    padding: var(--measure-small) var(--measure-medium);
+    @include v(font-size, gamma);
+    @include v(font-weight, bold);
+    display: block;
+    position: fixed;
+    @include v(bottom, medium);
+    @include v(right, medium);
+
+    body:not(.is-online):not(.is-offline):not(.offline-ready) & {
+        @include hidden;
+    }
+
+    .offline-ready &,
+    .is-online &,
+    .is-offline & {
+        animation: fade-out $transition-duration-default $animation-function $animation-duration $animation-fill-mode;
+        animation: fade-out var(--transition-duration-default) var(--animation-function) var(--animation-duration) var(--animation-fill-mode);
+
+        @at-root {
+            @keyframes fade-out {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .offline-ready &,
+    .is-online & {
+        background-color: $color-liquid;
+        @include v(color, white);
+    }
+
+    .is-offline & {
+        @include v(background-color, canada);
+        @include v(color, white);
+    }
+}
