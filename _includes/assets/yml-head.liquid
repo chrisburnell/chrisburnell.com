@@ -20,13 +20,13 @@
     {% assign meta_lede = site.lede | strip_html %}
 {% endif %}
 
-{% assign meta_image = '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url %}
+{% assign meta_image = '/images/avatar@4x.png' | absolute_url %}
 {% if page.banner %}
-    {% assign meta_image = page.banner | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
+    {% assign meta_image = page.banner | last | prepend: '/images/banners/' | absolute_url %}
 {% elsif page.banner_mobile %}
-    {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | prepend: site.baseurl | prepend: site.url %}
+    {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | absolute_url %}
 {% elsif page.page_class contains 'about' %}
-    {% assign meta_image = '/images/rachel-and-i.png' | prepend: site.baseurl | prepend: site.url %}
+    {% assign meta_image = '/images/rachel-and-i.png' | absolute_url %}
 {% endif %}
 
 {% capture body_class %}

@@ -2,7 +2,7 @@
     <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
         <span>published on</span>
         {% if page.url %}
-            <a class="u-uid  u-url" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" title="Permalink: {{ page.url | prepend: site.baseurl | prepend: site.url }}" itemprop="datePublished">
+            <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}" itemprop="datePublished">
         {% elsif page.shorturl %}
             <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="external  me" itemprop="datePublished">
         {% else %}

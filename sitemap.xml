@@ -13,7 +13,7 @@ sitemap:
     {% for page in site.pages %}
         {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>
-                <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+                <loc>{{ page.url | absolute_url }}</loc>
                 {% if page.sitemap.lastmod %}
                     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
                 {% elsif page.edit_date %}
@@ -37,7 +37,7 @@ sitemap:
     {% for page in site.posts %}
         {% unless page.draft or page.sitemap.exclude == true %}
             <url>
-                <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+                <loc>{{ page.url | absolute_url }}</loc>
                 {% if page.sitemap.lastmod %}
                     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
                 {% elsif page.edit_date %}

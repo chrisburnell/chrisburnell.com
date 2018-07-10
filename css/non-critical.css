@@ -26,8 +26,8 @@ button,
     box-shadow: inset 0 -0.182em 0 0 var(--color-black--gamma);
     overflow: visible;
     position: relative;
-    font-size: 1.125rem;
-    font-size: var(--font-size-gamma);
+    font-size: 1rem;
+    font-size: var(--font-size-default);
     font-weight: 600;
     font-weight: var(--font-weight-bold);
     line-height: 2;
@@ -496,6 +496,10 @@ var {
 }
 
 pre {
+    margin: 0;
+}
+
+figure pre {
     width: 100%;
     margin-top: 0;
     margin-bottom: 1.25rem;
@@ -505,7 +509,7 @@ pre {
     tab-size: 4;
 }
 
-pre:not(.codepen) {
+figure pre:not(.codepen) {
     background-clip: padding-box;
     border-radius: 0.375rem;
     font-family: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -524,20 +528,20 @@ pre:not(.codepen) {
     font-size: var(--font-size-small);
 }
 
-pre:not(.codepen),
-pre:not(.codepen) code {
+figure pre:not(.codepen),
+figure pre:not(.codepen) code {
     line-height: 2;
     line-height: var(--line-height-code);
 }
 
-pre:not(.codepen) code {
+figure pre:not(.codepen) code {
     min-width: 100%;
     display: block;
     text-shadow: 0 1px 1px rgba(6, 6, 6, 0.05);
     text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
 }
 
-pre.codepen {
+figure pre.codepen {
     contain: strict;
 }
 
@@ -1370,14 +1374,20 @@ aside + .meta {
 }
 
 .content-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.25rem;
+    grid-gap: var(--measure-medium);
     margin-bottom: 2.25rem;
     margin-bottom: var(--measure-large);
     line-height: 1.25;
     line-height: var(--line-height-small);
+}
+
+@media screen and (min-width: 501px) {
+    .content-list {
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    }
 }
 
 .page--home .content-list,
@@ -1385,52 +1395,20 @@ aside + .meta {
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 500px) {
-    .content-list li {
-        width: 100%;
-        display: inline-block;
-    }
-    .content-list li + li {
-        margin-top: 1.25rem;
-        margin-top: var(--measure-medium);
-    }
-}
-
-@media screen and (min-width: 501px) {
-    .content-list li {
-        width: 49.01235%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-}
-
-@media screen and (min-width: 501px) {
-    .content-list li:nth-child(n + 3) {
-        margin-top: 1.25rem;
-        margin-top: var(--measure-medium);
-    }
-}
-
-aside .content-list li {
-    width: 100%;
-}
-
-aside .content-list li + li {
-    margin-top: 0.625rem;
-    margin-top: var(--measure-small);
-}
-
+.content-list li,
 .content-list article {
-    flex: 1 0 100%;
     display: flex;
     flex-direction: column;
+}
+
+.content-list article,
+.content-list a {
+    flex: 1 0 100%;
 }
 
 .content-list a {
     background-clip: padding-box;
     border-radius: 0.375rem;
-    flex: 1 0 100%;
     display: block;
     padding: 1.25rem;
     padding: var(--measure-medium);
@@ -1503,14 +1481,18 @@ aside .content-list a {
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 801px) {
-    .content-list .date {
-        text-align: right;
-    }
+.content-list .date {
+    width: 100%;
 }
 
 .content-list .date::before {
     content: "– ";
+}
+
+@media screen and (min-width: 801px) {
+    .content-list .date {
+        text-align: right;
+    }
 }
 
 .content-list svg {
@@ -1591,47 +1573,18 @@ aside .content-list a {
 
 .buttons-list {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.25rem;
+    grid-gap: var(--measure-medium);
+    justify-items: center;
     margin: 0 0 1.25rem;
     margin: 0 0 var(--measure-medium);
 }
 
-@media screen and (max-width: 500px) {
-    .buttons-list {
-        flex-direction: column;
-    }
-}
-
 @media screen and (min-width: 501px) {
     .buttons-list {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .buttons-list button,
-    .buttons-list .button {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .buttons-list button + button,
-    .buttons-list .button + button,
-    .buttons-list button + .button,
-    .buttons-list .button + .button {
-        margin-top: 0.625rem;
-        margin-top: var(--measure-small);
-    }
-}
-
-@media screen and (min-width: 501px) {
-    .buttons-list button,
-    .buttons-list .button {
-        margin-left: 0.625rem;
-        margin-left: var(--measure-small);
-        margin-right: 0.625rem;
-        margin-right: var(--measure-small);
+        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 }
 
@@ -2145,17 +2098,21 @@ code[data-lang]::before {
     outline: var(--border-width-thin) var(--border-style-default) var(--color-canada);
 }
 
-.bookshelf li {
-    background-color: rgba(95, 138, 166, 0.1);
-    background-color: var(--color-raven--gamma);
-    padding: 0.625rem;
-    padding: var(--measure-small);
-    text-align: center;
+.bookshelf {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.25rem;
+    grid-gap: var(--measure-medium);
 }
 
-.bookshelf .title {
-    margin-bottom: 0.625rem;
-    margin-bottom: var(--measure-small);
+@media screen and (min-width: 501px) {
+    .bookshelf {
+        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    }
+}
+
+.bookshelf .rating {
+    letter-spacing: 2px;
 }
 
 .ingredients {

@@ -2,6 +2,9 @@
 page_class: page--books
 searchable: no-content
 
+redirect_from:
+- /books/index.html
+
 title: Reading
 lede: Tracking books I’ve read.
 
@@ -9,16 +12,53 @@ sparkline: books
 ---
 
 
-<ol class="content-list  bookshelf" id="books" role="list">
+<ol class="bookshelf" id="books" role="list">
+{% assign books = site.emptyArray %}
+{% assign books_to_read = site.emptyArray %}
 {% for page in site.books %}
+    {% if page.date_start %}
+        {% assign books = books | push: page %}
+    {% else %}
+        {% assign books_to_read = books_to_read | push: page %}
+    {% endif %}
+{% endfor %}
+{% assign books = books | sort: 'date_start' %}
+{% assign books_to_read = books_to_read | sort: 'title' %}
+{% for page in books_to_read %}
     <li role="listitem" class="h-entry">
         <div class="p-summary">
-            {% if page.bookcover %}
+            {% if page.cover %}
                 {% include components/bookcover.html %}
             {% endif %}
             <div class="p-read-of  h-cite">
-                <h2 class="delta  title"><data class="p-read-status" value="{{ page.read_status }}">{{ page.read_status | replace: 'to-read', 'Coming up' | capitalize }}</data>: <cite class="p-name">{{ page.title }}</cite></h2>
-                <div>by <span class="delta  p-author">{% for author in page.authors %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span> • <span class="delta  p-uid">{{ page.isbn }}</span></div>
+                <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+                <div class="p-author">{{ page.authors }}</div>
+                <data class="p-uid" value="{{ page.isbn }} "aria-hidden="true">{{ page.isbn }}</data>
+                <data class="p-read-status" value="to-read"><em>(Coming Up)</em></data>
+            </div>
+        </div>
+    </li>
+{% endfor %}
+{% for page in books reversed %}
+    {% assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor %}
+    {% assign rating_half = page.rating | default: 0 | at_least: 0 | at_most: 5 | modulo: 1 %}
+    {% assign read_status = 'reading' %}
+    {% if page.date_end %}
+        {% assign read_status = 'finished' %}
+    {% endif %}
+    <li role="listitem" class="h-entry">
+        <div class="p-summary">
+            {% if page.cover %}
+                {% include components/bookcover.html %}
+            {% endif %}
+            <div class="p-read-of  h-cite">
+                <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+                <div class="p-author">{{ page.authors }}</div>
+                <data class="p-uid" value="{{ page.isbn }} "aria-hidden="true">{{ page.isbn }}</data>
+                {% if page.rating %}
+                    <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
+                {% endif %}
+                <data class="p-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} aria-hidden="true"{% endif %}><em>({{ read_status | capitalize }})</em></data>
             </div>
         </div>
     </li>

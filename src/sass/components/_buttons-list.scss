@@ -7,37 +7,18 @@
 // Contains buttons and internal links
 .buttons-list {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include v(grid-gap, medium);
+    justify-items: center;
     margin: 0 0 $measure-medium;
     margin: 0 0 var(--measure-medium);
 
-    @include media("screen", "<=small") {
-        flex-direction: column;
-    }
-
     @include media("screen", ">small") {
-        flex-direction: row;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 
     %content-elements + & {
         @include v(margin-top, medium);
-    }
-
-    %button-elements {
-        @include media("screen", "<=small") {
-            margin-left: auto;
-            margin-right: auto;
-
-            & + %button-elements {
-                @include v(margin-top, small);
-            }
-        }
-
-        @include media("screen", ">small") {
-            @include v(margin-left, small);
-            @include v(margin-right, small);
-        }
     }
 }

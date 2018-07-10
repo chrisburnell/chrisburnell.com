@@ -1265,10 +1265,10 @@ aside + .lede {
 .author-image:active > img,
 .author-image:active > picture,
 .author-image:active > svg {
-    -webkit-animation: peek 1s ease 2s forwards;
-    animation: peek 1s ease 2s forwards;
-    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
-    animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
+    -webkit-animation: peek 1s ease 0.2s forwards;
+    animation: peek 1s ease 0.2s forwards;
+    -webkit-animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-default) var(--animation-fill-mode);
+    animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-default) var(--animation-fill-mode);
 }
 
 @-webkit-keyframes peek {

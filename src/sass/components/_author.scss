@@ -121,8 +121,8 @@
         }
 
         & > %image-elements {
-            animation: peek $transition-duration-long $transition-function $animation-duration $animation-fill-mode;
-            animation: peek var(--transition-duration-long) var(--transition-function) var(--animation-duration) var(--animation-fill-mode);
+            animation: peek $transition-duration-long $transition-function $transition-duration-default $animation-fill-mode;
+            animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-default) var(--animation-fill-mode);
 
             @at-root {
                 @keyframes peek {

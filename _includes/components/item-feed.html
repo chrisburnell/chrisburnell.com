@@ -9,8 +9,8 @@
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
-    <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
-    <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+    <link>{{ page.url | absolute_url }}</link>
+    <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
     <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
     {% if page.lede %}
         <description>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</description>

@@ -5,20 +5,24 @@
 ////
 
 .bookshelf {
-    li {
-        @include v(background-color, raven--gamma, true);
-        @include v(padding, small);
-        text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include v(grid-gap, medium);
+
+    @include media("screen", ">small") {
+        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 
     %image-elements {
         max-width: 100%;
         max-height: 16em;
         display: block;
-        @include v(margin-bottom, small);
+        object-fit: contain;
+        margin: 0 0 $measure-small;
+        margin: 0 0 var(--measure-small);
     }
 
-    .title {
-        @include v(margin-bottom, small);
+    .rating {
+        letter-spacing: 2px;
     }
 }

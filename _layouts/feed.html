@@ -5,17 +5,17 @@
 
         <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
         <description>{{ page.lede | xml_escape }}</description>
-        <link>{{ page.category_path | prepend: site.baseurl | prepend: site.url }}</link>
-        <atom:link href="{{ page.path | prepend: '/' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+        <link>{{ page.category_path | absolute_url }}</link>
+        <atom:link href="{{ page.path | prepend: '/' | absolute_url }}" rel="self" type="application/rss+xml"/>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
         <generator>Jekyll v{{ jekyll.version }}</generator>
         <language>en</language>
 
         <image>
-            <url>{{ '/images/avatar@4x.png' | prepend: site.baseurl | prepend: site.url }}</url>
+            <url>{{ '/images/avatar@4x.png' | absolute_url }}</url>
             <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
-            <link>{{ page.category_path | prepend: site.baseurl | prepend: site.url }}</link>
+            <link>{{ page.category_path | absolute_url }}</link>
         </image>
 
         {{ content }}

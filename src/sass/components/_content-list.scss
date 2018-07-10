@@ -5,65 +5,34 @@
 ////
 
 .content-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include v(grid-gap, medium);
     @include v(margin-bottom, large);
     @include v(line-height, small);
+
+    @include media("screen", ">small") {
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    }
 
     .page--home &,
     .widget & {
         margin-bottom: 0;
     }
 
-    li {
-        @include media("screen", "<=small") {
-            width: 100%;
-            display: inline-block;
-
-            // Push all list items down (after the first one, in the default
-            // one-column format)
-            & + li {
-                @include v(margin-top, medium);
-            }
-        }
-
-        @include media("screen", ">small") {
-            width: #{($article-width - ($max-columns - 1)) / $max-columns / $article-width * 100%};
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-
-        // Push all list items down (after the first two, in the two-column
-        // format)
-        &:nth-child(n + 3) {
-            @include media("screen", ">small") {
-                @include v(margin-top, medium);
-            }
-        }
-
-        aside & {
-            width: 100%;
-
-            // Push all list items down (after the first one, in the <aside>'s
-            // one-column format)
-            & + li {
-                @include v(margin-top, small);
-            }
-        }
-    }
-
+    li,
     article {
-        flex: 1 0 100%;
         display: flex;
         flex-direction: column;
     }
 
+    article,
+    a {
+        flex: 1 0 100%;
+    }
+
     a {
         @include border-radius;
-        flex: 1 0 100%;
         display: block;
         @include v(padding, medium);
         overflow: hidden;
@@ -125,13 +94,15 @@
     }
 
     .date {
-        @include media("screen", ">medium") {
-            text-align: right;
-        }
+        width: 100%;
 
         &::before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
+        }
+
+        @include media("screen", ">medium") {
+            text-align: right;
         }
     }
 

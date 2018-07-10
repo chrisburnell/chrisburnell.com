@@ -2,7 +2,7 @@
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
-    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{% if page.shorturl %}
+    <link rel="canonical" href="{{ page.url | absolute_url }}">{% if page.shorturl %}
     <link rel="shortlink" href="{{ page.shorturl | prepend: site.shorturl }}">{% endif %}{% if page.previous.url %}
     <link rel="prev" href="{{ page.previous.url }}">{% endif %}{% if page.next.url %}
     <link rel="next" href="{{ page.next.url }}">{% endif %}
@@ -29,7 +29,7 @@
     <meta property="og:title" content="{{ meta_title }}">
     <meta property="og:description" content="{{ meta_lede }}">
     <meta property="og:locale" content="{{ site.language }}">
-    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ meta_image }}">
     {% if page.layout == 'post' %}
         <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">
@@ -54,7 +54,7 @@
             {% else %}
                 "@type": "WebSite",
             {% endif %}
-            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+            "url": "{{ page.url | absolute_url }}",
             "headline": "{{ meta_title }}",
             "description": "{{ meta_lede }}",
             "image": "{{ meta_image }}",
