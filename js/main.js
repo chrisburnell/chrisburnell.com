@@ -673,32 +673,34 @@ helpers = {
     }
 
     function loadWebmentions() {
-        let request = new XMLHttpRequest();
-        request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-        request.onload = function () {
-            if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
-                // Success!
-                webmentionsLoaded = true;
-                populateResponses(JSON.parse(request.responseText));
-                let responsesCount = Object.keys(responses).map(type => {
-                    return responses[type].length;
-                }).reduce((p, c) => p + c, 0);
-                if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
-                    for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
-                        webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
+        if (navigator.onLine) {
+            let request = new XMLHttpRequest();
+            request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
+            request.onload = function () {
+                if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+                    // Success!
+                    webmentionsLoaded = true;
+                    populateResponses(JSON.parse(request.responseText));
+                    let responsesCount = Object.keys(responses).map(type => {
+                        return responses[type].length;
+                    }).reduce((p, c) => p + c, 0);
+                    if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
+                        for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
+                            webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
+                        }
+                        WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "false");
+                        // prevent hovering the button from continuing to fire
+                        WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
                     }
-                    WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "false");
-                    // prevent hovering the button from continuing to fire
-                    WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
+                } else {
+                    console.log(`Webmention request status error: ${request.status}`);
                 }
-            } else {
-                console.log(`Webmention request status error: ${request.status}`);
-            }
-        };
-        request.onerror = function () {
-            console.log("Webmention request error");
-        };
-        request.send();
+            };
+            request.onerror = function () {
+                console.log("Webmention request error");
+            };
+            request.send();
+        }
     }
 
     function showWebmentions() {
