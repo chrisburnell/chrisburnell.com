@@ -9,7 +9,7 @@ searchable: false
         {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
             {
                 "type": "page",
-                "url": "{{ page.url }}",
+                "url": "{{ page.url | absolute_url }}",
                 "title": "{{ page.title | xml_escape }}",
                 "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
                     "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
@@ -21,7 +21,7 @@ searchable: false
         {% unless page.draft or page.searchable == false %}
             {
                 "type": "post",
-                "url": "{{ page.url }}",
+                "url": "{{ page.url | absolute_url }}",
                 "title": "{{ page.title | xml_escape }}",
                 "date": "{{ page.date | date_to_xml_schema }}",
                 {% if page.categories contains 'note' %}

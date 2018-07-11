@@ -207,26 +207,26 @@
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, "URL", item.url);
+        html = helpers.injectContent(html, "#", item.url);
 
         // ICON
         if (item.categories == "article") {
-            html = helpers.injectContent(html, "ICON", "article");
+            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "article");
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "ICON", "link");
+            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "ICON", "feather");
+            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "feather");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "ICON", "codepen");
+            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "codepen");
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "ICON", "bullhorn");
+            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "bullhorn");
         }
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, "TITLE", item.date_friendly);
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly);
         } else {
-            html = helpers.injectContent(html, "TITLE", item.title);
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title);
         }
 
         // LEDE
@@ -236,30 +236,30 @@
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
                 .join("");
-            html = helpers.injectContent(html, "LEDE", ledeFormatted);
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "LEDE", "Shared Link");
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "LEDE", "Shared Note");
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Note");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "LEDE", "Featured Pen");
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Featured Pen");
         } else if (item.categories == "talk" && item.location) {
-            html = helpers.injectContent(html, "LEDE", `Talk – Given at ${item.location}.`);
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, `Talk – Given at ${item.location}.`);
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "LEDE", "Talk");
+            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Talk");
         }
 
         // DATE
         if (item.type == "post") {
-            html = helpers.injectContent(html, "DATE_FRIENDLY", item.date_friendly);
+            html = helpers.injectContent(html, /{{\s*date_friendly\s*}}/, item.date_friendly);
 
             if (item.categories == "note") {
-                html = helpers.injectContent(html, "DATE_CLASS", "  hidden");
+                html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "  hidden");
             } else {
-                html = helpers.injectContent(html, "DATE_CLASS", "");
+                html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "");
             }
 
-            html = helpers.injectContent(html, "DATE", item.date);
+            html = helpers.injectContent(html, /{{\s*date_full\s*}}/, item.date);
         }
 
         return html;
