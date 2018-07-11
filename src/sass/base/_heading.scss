@@ -64,7 +64,8 @@ h2 {
 
     // Match normal `gamma`s without targetting `aside`-nested `gamma`s
     .content__body > &,
-    .widget & {
+    .widget &,
+    .webmentions & {
         @include clear;
         @include case(uppercase);
         @include v(margin-top, large);

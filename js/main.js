@@ -637,7 +637,7 @@ helpers = {
 (() => {
     "use strict";
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href").replace('http://localhost:4000', 'https://chrisburnell.com') : null;
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href") : null;
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
     const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");
@@ -684,7 +684,7 @@ helpers = {
                 }).reduce((p, c) => p + c, 0);
                 if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                     for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
-                        webmentionCount.innerHTML = `${responsesCount} response${responsesCount > 1 ? "s" : ""}`;
+                        webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
                     }
                     // prevent hovering the button from continuing to fire
                     WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });

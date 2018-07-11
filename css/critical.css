@@ -488,10 +488,13 @@ h3:not(:last-child),
 
 .content__body > .gamma,
 .widget .gamma,
+.webmentions .gamma,
 .content__body > h3,
 .content__body > .lede,
 .widget h3,
-.widget .lede {
+.widget .lede,
+.webmentions h3,
+.webmentions .lede {
     clear: both;
     zoom: 1;
     text-transform: uppercase;
@@ -515,6 +518,8 @@ h3:not(:last-child),
 .content__body > .gamma::after,
 .widget .gamma::before,
 .widget .gamma::after,
+.webmentions .gamma::before,
+.webmentions .gamma::after,
 .content__body > h3::before,
 .content__body > .lede::before,
 .content__body > h3::after,
@@ -522,27 +527,37 @@ h3:not(:last-child),
 .widget h3::before,
 .widget .lede::before,
 .widget h3::after,
-.widget .lede::after {
+.widget .lede::after,
+.webmentions h3::before,
+.webmentions .lede::before,
+.webmentions h3::after,
+.webmentions .lede::after {
     content: "";
     display: table;
 }
 
 .content__body > .gamma::after,
 .widget .gamma::after,
+.webmentions .gamma::after,
 .content__body > h3::after,
 .content__body > .lede::after,
 .widget h3::after,
-.widget .lede::after {
+.widget .lede::after,
+.webmentions h3::after,
+.webmentions .lede::after {
     clear: both;
 }
 
 @media screen and (max-width: 800px) {
     .content__body > .gamma,
     .widget .gamma,
+    .webmentions .gamma,
     .content__body > h3,
     .content__body > .lede,
     .widget h3,
-    .widget .lede {
+    .widget .lede,
+    .webmentions h3,
+    .webmentions .lede {
         align-self: flex-start;
     }
 }
