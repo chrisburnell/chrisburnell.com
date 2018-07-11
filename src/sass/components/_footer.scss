@@ -9,23 +9,34 @@ footer {
     @include v(font-weight, bold);
     text-transform: uppercase;
 
-    div {
-        display: flex;
-        justify-content: space-between;
+    .wrap {
+        display: grid;
+        @include v(grid-gap, medium);
 
         @include media("screen", "<=medium") {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+        }
+
+        @include media("screen", ">medium") {
+            grid-template-columns: auto 1fr auto;
         }
     }
 }
 
-.license,
+.footer-links,
 .social-icons {
     overflow: hidden;
+    vertical-align: middle;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 
     @include media("screen", "<=medium") {
-        flex: 1 0 100%;
-        text-align: center;
+        justify-content: center;
     }
 }
 
@@ -40,7 +51,7 @@ footer {
 .footer-home-anchor {
     width: 3.125rem;
     height: 3.125rem;
-    @include v(margin-right, small);
+    justify-self: center;
     vertical-align: middle;
     text-indent: 100%;
     text-decoration: none;

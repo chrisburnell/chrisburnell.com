@@ -8,6 +8,7 @@ button,
 .button {
     @extend %button-elements !optional;
     @include border-radius(thin);
+    @include font-family(default);
     @include non-selectable;
     @include transition(background-color);
     @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);

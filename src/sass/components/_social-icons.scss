@@ -5,11 +5,7 @@
 
 .social-icons {
     @include media("screen", "<=medium") {
-        @include v(margin-top, medium);
-    }
-
-    @include media("screen", ">medium") {
-        margin-top: #{$measure-small / 2};
+        text-align: center;
     }
 }
 

@@ -686,11 +686,9 @@ helpers = {
                     for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                         webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
                     }
+                    WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "false");
                     // prevent hovering the button from continuing to fire
                     WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
-                }
-                else {
-                    WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "true");
                 }
             } else {
                 console.log(`Webmention request status error: ${request.status}`);

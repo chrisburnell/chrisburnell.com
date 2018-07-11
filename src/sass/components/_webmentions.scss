@@ -13,40 +13,20 @@
     @include v(margin-top, medium);
 }
 
-.webmentions__form {
-    flex-direction: row;
-
-    @include media("<=small") {
-        flex-wrap: wrap;
-    }
-}
-
 .webmentions__label {
     @extend %delta !optional;
-    align-self: center;
-    @include v(padding-right, medium);
+    grid-column: 1 / span 2;
     margin-bottom: 0;
+    @include v(margin-bottom, small);
 
     @include media("<=small") {
-        flex: 1 0 100%;
         @include v(margin-bottom, medium);
     }
-
-    @include media(">small") {
-        flex: 1 1 auto;
-    }
-}
-
-.webmentions__input {
-    flex: 1 0 auto;
-    align-self: flex-end;
-    margin-top: $border-width-default;
-    line-height: $line-height-medium;
 }
 
 .webmentions__submit {
-    align-self: flex-end;
-    @include v(margin-left, small);
+    min-width: 5em;
+    margin-top: 0;
 }
 
 .webmentions__list {

@@ -43,7 +43,7 @@
             function updateNetwork(event) {
                 if (navigator.onLine) {
                     console.log('You have regained your network connection.');
-                    document.querySelector('.network').innerHTML = 'You have regained your network connection. 🤩';
+                    document.querySelector('.network').innerHTML = 'You have regained your network connection.';
                     document.querySelector('body').classList.remove('is-offline');
                     setTimeout(() => {
                         document.querySelector('body').classList.add('is-online');
@@ -51,7 +51,7 @@
                 }
                 else {
                     console.log('You have lost your network connection.');
-                    document.querySelector('.network').innerHTML = 'You have lost your network connection. 😔';
+                    document.querySelector('.network').innerHTML = 'You have lost your network connection.';
                     document.querySelector('body').classList.remove('is-online');
                     setTimeout(() => {
                         document.querySelector('body').classList.add('is-offline');

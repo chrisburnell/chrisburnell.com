@@ -1,14 +1,15 @@
 <footer class="clear  dark-background" role="contentinfo">
     <div class="wrap">
 
-        <section class="license">
-            <a rel="home" class="footer-home-anchor" href="/" title="Home">
-                {% include content/svg.html type='raven' title=site.title %}
-            </a>
+        <a rel="home" class="footer-home-anchor" href="/" title="Home">
+            {% include content/svg.html type='raven' title=site.title %}
+        </a>
+
+        <div class="footer-links">
             <a rel="license" class="footer-license-anchor" href="/license">© 2008–{{ 'now' | date: '%Y' }} <span class="canada">{{ site.author.name }}</span></a>
             <a class="footer-style-guide-anchor" href="/styleguide">Style Guide</a>
             <a class="footer-privacy-anchor" href="/privacy">Privacy</a>
-        </section>
+        </div>
 
         {% include components/social-icons.html %}
 

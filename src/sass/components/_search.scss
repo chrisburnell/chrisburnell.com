@@ -17,20 +17,7 @@
     }
 }
 
-.search-form {
-    flex-direction: row;
-    align-items: stretch;
-}
-
-.search-input {
-    @include v(background-color, white);
-    min-width: 1px;
-    flex: 1 1 0;
-    @include v(font-size, small);
-}
-
 .search-submit {
-    min-width: auto;
-    @include v(margin-left, small);
+    min-width: 5em;
     margin-top: 0;
 }

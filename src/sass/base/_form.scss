@@ -5,12 +5,18 @@
 ////
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 100%;
+    display: grid;
+    @include v(grid-gap, small);
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr min-content;
     position: relative;
 
     &:not([class]) {
+        @include media("screen", "<=small") {
+            grid-template-columns: 1fr;
+        }
+
         %form-elements {
             @include v(margin-bottom, medium);
         }
@@ -38,7 +44,8 @@ select,
 textarea {
     @extend %form-elements !optional;
     margin: 0;
-    @include v(font-size, default);
+    @include v(font-size, small);
+    line-height: $line-height-default;
 }
 
 input,
@@ -46,8 +53,9 @@ textarea {
     @include border-radius(thin);
     @include transition(border-color);
     @include will-change(border-color);
+    @include v(background-color, white);
     box-sizing: inherit !important;
-    padding: 0.4em;
+    padding: 0 0.4em;
     border-width: $border-width-thin;
     border-style: $border-style-default;
     @include v(border-color, alto);
@@ -80,7 +88,8 @@ input {
         height: auto;
     }
 
-    &[type="search"] {
+    &[type="search"],
+    &[type="url"] {
         // correct odd appearance in Chrome and Safari
         -webkit-appearance: textfield;
         // correct the outline style in Safari

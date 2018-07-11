@@ -12,6 +12,11 @@
     position: fixed;
     @include v(bottom, medium);
     @include v(right, medium);
+    @include v(left, medium);
+
+    @include media("screen", ">small") {
+        left: 0;
+    }
 
     body:not(.is-online):not(.is-offline):not(.offline-ready) & {
         @include hidden;
