@@ -3736,7 +3736,7 @@ button .icon--rss,
 
 @media screen and (min-width: 501px) {
     .network {
-        left: 0;
+        left: auto;
     }
 }
 

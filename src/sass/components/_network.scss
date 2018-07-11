@@ -15,7 +15,7 @@
     @include v(left, medium);
 
     @include media("screen", ">small") {
-        left: 0;
+        left: auto;
     }
 
     body:not(.is-online):not(.is-offline):not(.offline-ready) & {
