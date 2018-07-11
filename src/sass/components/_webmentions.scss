@@ -8,15 +8,19 @@
     @include v(margin-top, large);
 }
 
-.webmention__form,
 .webmentions__thread {
     @include v(margin-top, medium);
+}
+
+.webmentions__form {
+    max-width: $wrapper-width-small;
+    max-width: var(--wrapper-width-small);
+    margin: 0 auto;
 }
 
 .webmentions__label {
     @extend %delta !optional;
     grid-column: 1 / span 2;
-    margin-bottom: 0;
     @include v(margin-bottom, small);
 
     @include media("<=small") {

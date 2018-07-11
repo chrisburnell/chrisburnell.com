@@ -1860,15 +1860,19 @@ footer .wrap {
     margin-top: var(--measure-large);
 }
 
-.webmention__form,
 .webmentions__thread {
     margin-top: 1.25rem;
     margin-top: var(--measure-medium);
 }
 
+.webmentions__form {
+    max-width: 500px;
+    max-width: var(--wrapper-width-small);
+    margin: 0 auto;
+}
+
 .webmentions__label {
     grid-column: 1 / span 2;
-    margin-bottom: 0;
     margin-bottom: 0.625rem;
     margin-bottom: var(--measure-small);
 }

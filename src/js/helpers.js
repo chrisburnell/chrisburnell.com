@@ -11,10 +11,10 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, placeholder, injection) {
-        const REGEX = new RegExp(placeholder, "g");
+    injectContent: function(originalContent, placeholder, injection, flags = "g") {
+        const PATTERN = new RegExp(placeholder, flags);
 
-        return originalContent.replace(REGEX, injection);
+        return originalContent.replace(PATTERN, injection);
     },
 
     ////

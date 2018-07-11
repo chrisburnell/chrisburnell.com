@@ -11,10 +11,10 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, placeholder, injection) {
-        const REGEX = new RegExp(placeholder, "g");
+    injectContent: function(originalContent, placeholder, injection, flags = "g") {
+        const PATTERN = new RegExp(placeholder, flags);
 
-        return originalContent.replace(REGEX, injection);
+        return originalContent.replace(PATTERN, injection);
     },
 
     ////
@@ -411,26 +411,26 @@ helpers = {
     ////
     function populateResultContent(html, item) {
         // URL
-        html = helpers.injectContent(html, "{{ url }}", item.url);
+        html = helpers.injectContent(html, "URL", item.url);
 
         // ICON
         if (item.categories == "article") {
-            html = helpers.injectContent(html, "{{ icon }}", "article");
+            html = helpers.injectContent(html, "ICON", "article");
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "{{ icon }}", "link");
+            html = helpers.injectContent(html, "ICON", "link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "{{ icon }}", "feather");
+            html = helpers.injectContent(html, "ICON", "feather");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "{{ icon }}", "codepen");
+            html = helpers.injectContent(html, "ICON", "codepen");
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "{{ icon }}", "bullhorn");
+            html = helpers.injectContent(html, "ICON", "bullhorn");
         }
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, "{{ title }}", item.date_friendly);
+            html = helpers.injectContent(html, "TITLE", item.date_friendly);
         } else {
-            html = helpers.injectContent(html, "{{ title }}", item.title);
+            html = helpers.injectContent(html, "TITLE", item.title);
         }
 
         // LEDE
@@ -440,29 +440,30 @@ helpers = {
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
                 .join("");
-            html = helpers.injectContent(html, "{{ lede }}", ledeFormatted);
+            html = helpers.injectContent(html, "LEDE", ledeFormatted);
         } else if (item.categories == "link") {
-            html = helpers.injectContent(html, "{{ lede }}", "Shared Link");
+            html = helpers.injectContent(html, "LEDE", "Shared Link");
         } else if (item.categories == "note") {
-            html = helpers.injectContent(html, "{{ lede }}", "Shared Note");
+            html = helpers.injectContent(html, "LEDE", "Shared Note");
         } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, "{{ lede }}", "Featured Pen");
+            html = helpers.injectContent(html, "LEDE", "Featured Pen");
         } else if (item.categories == "talk" && item.location) {
-            html = helpers.injectContent(html, "{{ lede }}", `Talk – Given at ${item.location}.`);
+            html = helpers.injectContent(html, "LEDE", `Talk – Given at ${item.location}.`);
         } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, "{{ lede }}", "Talk");
+            html = helpers.injectContent(html, "LEDE", "Talk");
         }
 
         // DATE
         if (item.type == "post") {
-            html = helpers.injectContent(html, "{{ date }}", item.date);
-            html = helpers.injectContent(html, "{{ date_friendly }}", item.date_friendly);
+            html = helpers.injectContent(html, "DATE_FRIENDLY", item.date_friendly);
 
             if (item.categories == "note") {
-                html = helpers.injectContent(html, "{{ date_class }}", "  hidden");
+                html = helpers.injectContent(html, "DATE_CLASS", "  hidden");
             } else {
-                html = helpers.injectContent(html, "{{ date_class }}", "");
+                html = helpers.injectContent(html, "DATE_CLASS", "");
             }
+
+            html = helpers.injectContent(html, "DATE", item.date);
         }
 
         return html;
@@ -794,25 +795,25 @@ helpers = {
         let authorUrl = response.data.author.url.replace(/\/$/, "");
 
         // ID
-        html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
+        html = helpers.injectContent(html, 'ID', id);
 
         // TYPE
-        html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
+        html = helpers.injectContent(html, 'TYPE', type);
 
         // URL
-        html = helpers.injectContent(html, /{{\s*url\s*}}/, url);
+        html = helpers.injectContent(html, 'URL', url);
 
         // CONTENT
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
-
-        // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, `${author}`);
+        html = helpers.injectContent(html, 'CONTENT', `<q>${content}</q>`);
 
         // AUTHOR URL
-        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, `<a href="${authorUrl}" rel="external noopener">↗</a>`);
+        html = helpers.injectContent(html, 'AUTHOR_URL', `<a href="${authorUrl}" rel="external noopener">↗</a>`);
+
+        // AUTHOR
+        html = helpers.injectContent(html, 'AUTHOR', `${author}`);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
+        html = helpers.injectContent(html, 'DATE', `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
 
         return html;
     }
