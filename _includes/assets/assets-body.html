@@ -47,7 +47,7 @@
                     document.querySelector('body').classList.remove('is-offline');
                     setTimeout(() => {
                         document.querySelector('body').classList.add('is-online');
-                    }, 0);
+                    }, 5);
                 }
                 else {
                     console.log('You have lost your network connection.');
@@ -55,7 +55,7 @@
                     document.querySelector('body').classList.remove('is-online');
                     setTimeout(() => {
                         document.querySelector('body').classList.add('is-offline');
-                    }, 0);
+                    }, 5);
                 }
             }
             window.addEventListener('online', updateNetwork);
