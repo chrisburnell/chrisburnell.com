@@ -55,7 +55,7 @@ shorturl: https://repc.co/
 
 detach: false
 host: 127.0.0.1
-port: 4000
+port: 9001
 
 timezone: Europe/London
 language: en
