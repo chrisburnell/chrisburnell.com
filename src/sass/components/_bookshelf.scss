@@ -13,6 +13,18 @@
         grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 
+    a {
+        color: inherit;
+        display: block;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-transparent;
+        }
+    }
+
     %image-elements {
         max-width: 100%;
         max-height: 16em;
@@ -20,6 +32,27 @@
         object-fit: contain;
         margin: 0 0 $measure-small;
         margin: 0 0 var(--measure-small);
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+    a:link {
+        .title {
+            @include transition(text-decoration-color);
+            @include will-change(text-decoration-color);
+        }
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        .title {
+            text-decoration: underline;
+            @include v(text-decoration-color, canada);
+            // coming soon!
+            // @include v(text-decoration-width, thin);
+            text-underline-position: under;
+        }
     }
 
     .rating {

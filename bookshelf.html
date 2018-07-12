@@ -16,17 +16,17 @@ lede: Tracking books I’ve read.
 {% assign books_to_read = site.books | where_exp: 'book', 'book.date_start == nil' | sort: 'title' %}
 {% for page in books_to_read %}
     <li role="listitem" class="h-entry">
-        <div class="p-summary">
+        <{% if page.link %}a href="{{ page.link }}" rel="external  noopener"{% else %}div{% endif %} class="p-summary">
             {% if page.cover %}
                 {% include components/bookcover.html %}
             {% endif %}
             <div class="p-read-of  h-cite">
-                <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+                <h2 class="delta  title"><cite class="p-name">{{ page.title }}</cite></h2>
                 <div class="p-author">{{ page.authors }}</div>
                 <data class="p-uid" value="{{ page.isbn }} "aria-hidden="true">{{ page.isbn }}</data>
                 <data class="p-read-status" value="to-read"><em>(Coming Up)</em></data>
             </div>
-        </div>
+        </{% if page.link %}a{% else %}div{% endif %}>
     </li>
 {% endfor %}
 {% assign books = site.books | where_exp: 'book', 'book.date_start' | sort: 'date_start' %}
@@ -38,12 +38,12 @@ lede: Tracking books I’ve read.
         {% assign read_status = 'finished' %}
     {% endif %}
     <li role="listitem" class="h-entry">
-        <div class="p-summary">
+        <{% if page.link %}a href="{{ page.link }}" rel="external  noopener"{% else %}div{% endif %} class="p-summary">
             {% if page.cover %}
                 {% include components/bookcover.html %}
             {% endif %}
             <div class="p-read-of  h-cite">
-                <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+                <h2 class="delta  title"><cite class="p-name">{{ page.title }}</cite></h2>
                 <div class="p-author">{{ page.authors }}</div>
                 <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true">{{ page.isbn }}</data>
             </div>
@@ -55,7 +55,7 @@ lede: Tracking books I’ve read.
             {% if page.date_end %}
                 <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" aria-hidden="true">{{ page.date_end | date: '%Y-%m-%d' }}</data>
             {% endif %}
-        </div>
+        </{% if page.link %}a{% else %}div{% endif %}>
     </li>
 {% endfor %}
 </ol>
