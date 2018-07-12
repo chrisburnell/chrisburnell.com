@@ -3284,7 +3284,8 @@ code[data-lang]::before {
 }
 
 code[data-lang][data-lang="html"]::before,
-code[data-lang][data-lang="css"]::before {
+code[data-lang][data-lang="css"]::before,
+code[data-lang][data-lang="scss"]::before {
     text-transform: uppercase;
     letter-spacing: 1px;
 }

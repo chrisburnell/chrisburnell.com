@@ -28,7 +28,8 @@ code[data-lang] {
     }
 
     &[data-lang="html"]::before,
-    &[data-lang="css"]::before {
+    &[data-lang="css"]::before,
+    &[data-lang="scss"]::before {
         @include case(uppercase);
     }
 
