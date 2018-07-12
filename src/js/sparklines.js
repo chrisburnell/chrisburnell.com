@@ -1,5 +1,5 @@
 /*!
- * Target and build sparklines
+ * Target and build Sparklines
  */
 
 (function () {

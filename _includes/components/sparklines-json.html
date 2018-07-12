@@ -1,4 +1,4 @@
-{% assign last = include.target | limit: 50 | last %}
+{% assign last = include.target | limit: include.limit_x | last %}
 {% assign starting_year = last.date | date: '%Y' | plus: 0 %}
 {% assign starting_month = last.date | date: '%-m' | plus: 0 %}
 {% for tracking_year in (starting_year..ending_year) %}
@@ -18,7 +18,7 @@
                 {% assign count = count | plus: 1 %}
             {% endif %}
         {% endfor %}
-        {% if count > 12 %}{% assign count = 12 %}{% endif %}
+        {% if count > include.limit_y %}{% assign count = include.limit_y %}{% endif %}
         {{ count }}
     {% endfor %}
     {% if tracking_year == ending_year and tracking_month > ending_month %}

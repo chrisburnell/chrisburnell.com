@@ -13,9 +13,14 @@
         grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 
-    a {
-        color: inherit;
-        display: block;
+    li {
+        @include v(margin-bottom, medium);
+    }
+
+    .bookcover {
+        display: inline-block;
+        margin: 0 0 $measure-small;
+        margin: 0 0 var(--measure-small);
         text-decoration: none;
 
         &:hover,
@@ -30,29 +35,7 @@
         max-height: 16em;
         display: block;
         object-fit: contain;
-        margin: 0 0 $measure-small;
-        margin: 0 0 var(--measure-small);
-    }
-
-    .title {
-        margin-bottom: 0;
-    }
-    a:link {
-        .title {
-            @include transition(text-decoration-color);
-            @include will-change(text-decoration-color);
-        }
-    }
-    a:hover,
-    a:focus,
-    a:active {
-        .title {
-            text-decoration: underline;
-            @include v(text-decoration-color, canada);
-            // coming soon!
-            // @include v(text-decoration-width, thin);
-            text-underline-position: under;
-        }
+        margin: 0;
     }
 
     .rating {
