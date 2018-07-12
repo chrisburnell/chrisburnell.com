@@ -18,22 +18,13 @@
 @import "base/fonts";
 @import "base/page";
 @import "base/anchor";
-@import "base/heading";
-@import "base/paragraph";
-@import "base/media";
 
 /// LAYOUT
 @import "layout/wrap";
 @import "layout/main";
 @import "layout/header";
-@import "layout/content";
-@import "layout/aside";
 
 /// COMPONENTS
-@import "components/helpers";
 @import "components/logo";
 @import "components/nav-primary";
 @import "components/title";
-@import "components/lede";
-@import "components/author";
-@import "components/icon";

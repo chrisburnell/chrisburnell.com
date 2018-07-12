@@ -105,8 +105,7 @@ _includes
 │   ├── svg.html
 │   └── twitter-card.html
 └── generated
-    ├── critical-css.html
-    └── loadcss.html
+    └── critical-css.html
 ```
 
 ### Sass Structure
@@ -182,8 +181,7 @@ src/sass
 
 ```text
 _includes/generated
-├── critical-css.html
-├── loadcss.html
+└── critical-css.html
 serviceworker.js
 ```
 

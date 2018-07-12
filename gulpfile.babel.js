@@ -62,7 +62,7 @@ gulp.task("css-prettify", () => {
 // Compile CSS from Sass
 gulp.task("css-main", ["css-prettify"], () => {
     return gulp
-        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
+        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/main-without-variables.scss`, `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
         .pipe(newer(`${paths.css.dest}`))
         .pipe(sourcemaps.init())
@@ -153,7 +153,7 @@ gulp.task("js-concat", ["js-prettify"], () => {
             `${paths.js.src}/helpers.js`, // dependency
             `${paths.js.src}/**/*.js`,
             `!${paths.js.src}/serviceworker.js`,
-            `!${paths.js.src}/vendors/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`
+            `!${paths.js.src}/vendors/svg4everybody.js`
         ])
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
@@ -168,17 +168,6 @@ gulp.task("js-concat", ["js-prettify"], () => {
         )
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(`${paths.js.dest}/`));
-});
-
-// Generate inline LoadCSS include
-gulp.task("js-loadcss", () => {
-    return gulp
-        .src([`${paths.js.src}/vendors/loadcss.js`, `${paths.js.src}/vendors/loadcss-preload-polyfill.js`])
-        .pipe(plumber())
-        .pipe(newer(`${paths.includes}/generated/`))
-        .pipe(babel())
-        .pipe(concat("loadcss.html"))
-        .pipe(gulp.dest(`${paths.includes}/generated/`));
 });
 
 // Place the Service Worker at the root
@@ -226,7 +215,6 @@ gulp.task("css", () => {
 
 // JS task
 gulp.task("js", ["js-concat"], () => {
-    gulp.start("js-loadcss");
     gulp.start("js-serviceworker");
 });
 
