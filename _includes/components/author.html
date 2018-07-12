@@ -2,8 +2,8 @@
 
 <aside class="author" role="complementary" itemscope itemtype="https://schema.org/Person">
 
-    <div class="clear  author-information">
-        <a class="author-image  canada" href="/about/" title="About me" tabindex="-1">
+    <div class="clear author-information">
+        <a class="author-image canada" href="/about/" title="About me" tabindex="-1">
             <picture class="u-photo">
                 <source srcset="/images/avatar.webp 1x,
                                 /images/avatar@2x.webp 2x,
@@ -20,13 +20,13 @@
         </a>
         <div class="author-name">
             <span>about</span>
-            <a href="/about/" class="p-author  h-card  canada" rel="author" itemprop="author">{{ site.author.name }}</a>
+            <a href="/about/" class="p-author h-card canada" rel="author" itemprop="author">{{ site.author.name }}</a>
         </div>
     </div>
 
-    <div class="clear  author-biography  p-note">
+    <div class="clear author-biography p-note">
         <p>I’m a <span class="canada" itemprop="nationality">Canadian</span> <span class="p-job-title" itemprop="jobTitle">{{ site.author.employer.role }}</span> working for <a rel="external" href="{{ site.author.employer.url }}"><span class="p-org" itemprop="worksFor">{{ site.author.employer.name }}</span></a> and organising for <a rel="external" href="{{ site.urls.londonwebstandards }}"><span class="p-org" itemprop="memberOf">London Web Standards</span></a>. I’m driven by a passion for web standards, lean CSS, and an open and semantic web, and this is my personal website where I think, write, and share—<a href="{{ site.urls.rss }}">subscribe via RSS</a>, if you’d like.</p>
-        <p>I also <a class="u-url" rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.lastfm }}">listen to music (often)</a>, and <a class="u-url" rel="external  me" href="/recipes">bake bread</a> if {{ author_biography_closer }}.</p>
+        <p>I also <a class="u-url" rel="external me publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a class="u-url" rel="external me publisher" href="{{ site.urls.codepen }}">pen code</a>, <a class="u-url" rel="external me publisher" href="{{ site.urls.github }}">commit code</a>, <a class="u-url" rel="external me publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a class="u-url" rel="external me publisher" href="{{ site.urls.lastfm }}">listen to music (often)</a>, and <a class="u-url" rel="external me" href="/recipes">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
     {% unless page.page_class contains 'search' %}
