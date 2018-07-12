@@ -3360,6 +3360,8 @@ footer .wrap {
 code[data-lang] {
     padding-top: 2.25rem;
     padding-top: var(--measure-large);
+    padding-top: 2.875rem;
+    padding-top: calc(var(--measure-large) + var(--measure-small));
 }
 
 code[data-lang]::before {
@@ -3369,10 +3371,8 @@ code[data-lang]::before {
     left: 0;
     background-clip: padding-box;
     border-radius: 0.375rem 0.375rem 0 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-family: var(--font-family-default);
+    font-family: "Heebo", "League Gothic", sans-serif;
+    font-family: var(--font-family-alpha);
     transition: all 0.2s ease;
     content: attr(data-lang);
     background-color: #737373;
@@ -3383,46 +3383,66 @@ code[data-lang]::before {
     padding: 0 var(--measure-medium);
     font-size: 1.25rem;
     font-size: var(--font-size-large);
-    font-weight: 600;
-    font-weight: var(--font-weight-bold);
-    line-height: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 2.875rem;
     text-shadow: none;
+    text-transform: capitalize;
+}
+
+code[data-lang][data-lang="html"]::before,
+code[data-lang][data-lang="css"]::before {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+code[data-lang][data-lang="javascript"]::before {
+    content: "JavaScript";
+    text-transform: none;
 }
 
 .language-css::before {
     background-color: #016fba !important;
+    color: #f9f9f9 !important;
 }
 
 .language-haml::before {
     background-color: #e54d26 !important;
+    color: #2b2b2b !important;
 }
 
 .language-html::before {
     background-color: #e54d26 !important;
+    color: #2b2b2b !important;
 }
 
 .language-jade::before {
     background-color: #e54d26 !important;
+    color: #2b2b2b !important;
 }
 
 .language-javascript::before {
     background-color: #f1c54c !important;
+    color: #2b2b2b !important;
 }
 
 .language-liquid::before {
     background-color: #7ab55c !important;
+    color: #2b2b2b !important;
 }
 
 .language-markdown::before {
     background-color: #4a525a !important;
+    color: #f9f9f9 !important;
 }
 
 .language-sass::before {
     background-color: #c6538c !important;
+    color: #2b2b2b !important;
 }
 
 .language-scss::before {
     background-color: #c6538c !important;
+    color: #2b2b2b !important;
 }
 
 .code-toggle {
@@ -3909,17 +3929,17 @@ body:not(.is-online):not(.is-offline):not(.offline-ready) .network {
 
 .palette-list li[data-color="raven"] {
     background-color: #5f8aa6;
-    color: #f9f9f9;
+    color: #4f4f4f;
 }
 
 .palette-list li[data-color="coyote"] {
     background-color: #759ab3;
-    color: #f9f9f9;
+    color: #4f4f4f;
 }
 
 .palette-list li[data-color="canada"] {
     background-color: #eb2d37;
-    color: #f9f9f9;
+    color: #4f4f4f;
 }
 
 .palette-list li[data-color="black"] {

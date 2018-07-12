@@ -7,12 +7,13 @@
 // Highlighted Code Blocks
 code[data-lang] {
     @include v(padding-top, large);
+    padding-top: #{$measure-large + $measure-small};
+    padding-top: calc(var(--measure-large) + var(--measure-small));
 
     &::before {
         @include absolute(top-full);
         @include border-radius(top);
-        @include case(uppercase);
-        @include font-family(default);
+        @include font-family(alpha);
         @include transition;
         content: attr(data-lang);
         @include v(background-color, dove);
@@ -20,9 +21,20 @@ code[data-lang] {
         padding: 0 $measure-medium;
         padding: 0 var(--measure-medium);
         @include v(font-size, large);
-        @include v(font-weight, bold);
-        line-height: $measure-large;
+        letter-spacing: $letter-spacing-uppercase;
+        line-height: #{$measure-large + $measure-small};
         text-shadow: none;
+        text-transform: capitalize;
+    }
+
+    &[data-lang="html"]::before,
+    &[data-lang="css"]::before {
+        @include case(uppercase);
+    }
+
+    &[data-lang="javascript"]::before {
+        content: "JavaScript";
+        text-transform: none;
     }
 }
 
@@ -31,6 +43,7 @@ code[data-lang] {
     &.language-#{$language} {
         &::before {
             background-color: #{$color} !important;
+            color: contrasting-color($color, $color-mineshaft, $color-white) !important;
         }
     }
 }

@@ -34,12 +34,9 @@ When authoring articles, I like to provide a way for users to share or link to a
 
 I considered *three* ways of implementing this:
 
-0. Use *JavaScript* to parse headings in my content and inject the necessary HTML (`<a>`) after parsing
-  - not using *JavaScript*
-0. Maintain the heading and anchor’s *HTML* inside my *Markdown* every time I want to display a heading and its associated anchor
-  - this sounds *tedious*
-0. Use *Jekyll* to generate the necessary anchors whenever I use a heading
-  - requires a change to the way I write *Markdown* headings, although consistent, deviating entirely from the standard *Markdown* heading syntax
+0. Use *JavaScript* to parse headings in my content and inject the necessary HTML (`<a>`) after parsing.<br><em>— But I’d like to avoid JavaScript.</em>
+0. Maintain the heading and anchor’s *HTML* inside my *Markdown* every time I want to display a heading and its associated anchor.<br>— <em>This sounds extremely tedious.</em>
+0. Use *Jekyll* to generate the necessary anchors whenever I use a heading.<br>— <em>Requires a change to the way I write *Markdown* headings, although consistent, deviating entirely from the standard *Markdown* heading syntax.</em>
 
 I went for the third option. I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes"){:rel="external"}* to provide the functionality and take the pain away of crafting and maintaining the markup. In fact, I make liberal use of *includes* throughout the templating of my site; anything that is used at least twice is likely to be assigned to an *include*. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
 
@@ -48,13 +45,13 @@ So how do I actually get *Jekyll* to build a *heading* and an *associated anchor
 As I mentioned above, it involves a slight change to the way that I write headings in my *Markdown*. Instead of writing headings in the traditional method (with preceding `#`s or <q>underlined</q> by `-`s or `=`s), I have created a *Jekyll* *include* which spits out a heading with its specifics defined in the *include’s* attributes:
 
 {% highlight html %}
-<h2 id="gamma  brass-tacks">
+<h2 id="brass-tacks" class="gamma">
     Brass Tacks
     <a href="#brass-tacks" class="fragment-anchor">#brass-tacks</a>
 </h2>
 {% endhighlight %}
 
-Any *Liquid* code in *Markdown* files is parsed, so let’s follow this *include* to its source and see what it does.
+Any *Liquid* code in *Markdown* files is parsed as such, so let’s follow this *include* to its source and see what it does.
 
 {% highlight liquid %}{% raw %}
 <!-- 1 -->
