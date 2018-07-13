@@ -4,6 +4,8 @@
 ////
 
 .social-icons {
+    max-height: $icon-size;
+
     @include media("screen", "<=medium") {
         text-align: center;
     }
@@ -19,6 +21,7 @@
     }
 
     a {
+        display: block;
         text-decoration: none;
 
         .icon {
