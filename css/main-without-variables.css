@@ -3038,23 +3038,8 @@ footer .wrap {
     vertical-align: middle;
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-@media screen and (max-width: 800px) {
-    .footer-links {
-        justify-content: center;
-    }
-}
-
 .footer-home-anchor,
-.footer-license-anchor,
-.footer-style-guide-anchor,
-.footer-privacy-anchor {
+.footer-links a {
     display: inline-block;
     white-space: nowrap;
 }
@@ -3105,9 +3090,20 @@ footer .wrap {
     transform: translateY(0.125rem);
 }
 
-.footer-license-anchor,
-.footer-style-guide-anchor,
-.footer-privacy-anchor {
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+.footer-links a {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-left: 0.625rem;

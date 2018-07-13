@@ -29,21 +29,8 @@ footer {
     vertical-align: middle;
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-
-    @include media("screen", "<=medium") {
-        justify-content: center;
-    }
-}
-
 .footer-home-anchor,
-.footer-license-anchor,
-.footer-style-guide-anchor,
-.footer-privacy-anchor {
+.footer-links a {
     display: inline-block;
     white-space: nowrap;
 }
@@ -90,13 +77,22 @@ footer {
     }
 }
 
-.footer-license-anchor,
-.footer-style-guide-anchor,
-.footer-privacy-anchor {
-    @include case(uppercase);
-    @include v(margin-left, small);
-    @include v(margin-right, small);
-    // coming soon!
-    // @include v(text-decoration-width, thin);
-    text-underline-position: under;
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include media("screen", "<=medium") {
+        justify-content: center;
+    }
+
+    a {
+        @include case(uppercase);
+        @include v(margin-left, small);
+        @include v(margin-right, small);
+        // coming soon!
+        // @include v(text-decoration-width, thin);
+        text-underline-position: under;
+    }
 }
