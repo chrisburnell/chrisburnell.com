@@ -15,6 +15,7 @@
     let resultsMeta = document.querySelector(".js-search-meta");
     let resultsList = document.querySelector(".js-search-results-list");
     const ALLOW_EMPTY = false;
+    const ALLOW_AS_YOU_TYPE = false;
     const JSON_FEED_URL = "../search.json";
     const SEARCH_PAGE_TEMPLATE = document.querySelector(".search-template--page") ? document.querySelector(".search-template--page").innerHTML.trim() : "";
     const SEARCH_POST_TEMPLATE = document.querySelector(".search-template--post") ? document.querySelector(".search-template--post").innerHTML.trim() : "";
@@ -49,10 +50,25 @@
 
         // Catch the form submission and initiate search lookup
         searchForm.addEventListener("submit", submitCallback);
+        if (ALLOW_AS_YOU_TYPE) {
+            let inputCheck;
+            searchInput.addEventListener("focus", () => {
+                inputCheck = setInterval(() => {
+                    if (searchInput.value != query && searchInput.value.length >= 2 && searchInput.value.length <= 30) {
+                        submitCallback(false);
+                    }
+                }, 50)
+            });
+            searchInput.addEventListener("blur", () => {
+                window.clearInterval(inputCheck);
+            });
+        }
     }
 
-    function submitCallback(event) {
-        event.preventDefault();
+    function submitCallback(event = false) {
+        if (event) {
+            event.preventDefault();
+        }
         query = searchInput.value;
 
         if (query.length >= 2 && query.length <= 30) {
@@ -191,10 +207,6 @@
     function showSearchResults(results) {
         // Add results HTML to placeholder
         resultsList.innerHTML = results;
-        // Remove focus from the search input by toggling focus on the resultsList
-        document.activeElement.blur();
-        // And scroll to the results
-        resultsMeta.scrollIntoView();
         // And mark the resultsList as `aria-expanded="true"`
         resultsList.setAttribute("aria-expanded", "true");
     }
