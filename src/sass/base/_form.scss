@@ -8,7 +8,6 @@ form {
     width: 100%;
     display: grid;
     @include v(grid-gap, small);
-    grid-template-columns: 1fr;
     grid-template-columns: 1fr min-content;
     position: relative;
 
