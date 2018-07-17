@@ -48,3 +48,7 @@ src/images/*
 
 # Git Config
 .gitconfig
+
+# Site Assets
+css/
+js/
