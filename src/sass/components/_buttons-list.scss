@@ -15,6 +15,9 @@
     margin: 0 0 var(--measure-medium);
 
     @include media("screen", ">small") {
+        // 1───────────────────────────2→
+        // │ minmax(12em, max-content) │→
+        // 2───────────────────────────┴→
         grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
     }
 

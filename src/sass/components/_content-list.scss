@@ -12,6 +12,9 @@
     @include v(line-height, small);
 
     @include media("screen", ">small") {
+        // 1───────────────────2→
+        // │ minmax(20em, 1fr) │→
+        // 2───────────────────┴→
         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
     }
 

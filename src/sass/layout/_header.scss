@@ -9,11 +9,19 @@ header {
     position: relative;
 
     @include media("screen", "<=medium") {
+        // 1─────────────2
+        // │     7em     │
+        // 2─────────────┤
+        // │ min-content │
+        // 3─────────────┘
         grid-template-rows: 7rem min-content;
         justify-content: center;
     }
 
     @include media("screen", ">medium") {
+        // 1──────────────2─────────────3
+        // │ $aside-width │ min-content │
+        // 2──────────────┴─────────────┘
         grid-template-columns: $aside-width min-content;
         justify-content: space-between;
     }

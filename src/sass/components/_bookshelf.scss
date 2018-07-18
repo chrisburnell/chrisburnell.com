@@ -10,6 +10,9 @@
     @include v(grid-gap, medium);
 
     @include media("screen", ">small") {
+        // 1───────────────────2→
+        // │ minmax(12em, 1fr) │→
+        // 2───────────────────┴→
         grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     }
 

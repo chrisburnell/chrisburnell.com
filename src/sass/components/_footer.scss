@@ -8,20 +8,6 @@ footer {
     @include v(color, alto);
     @include v(font-weight, bold);
     text-transform: uppercase;
-
-    .wrap {
-        display: grid;
-        @include v(grid-gap, medium);
-        align-items: center;
-
-        @include media("screen", "<=medium") {
-            grid-template-columns: 1fr;
-        }
-
-        @include media("screen", ">medium") {
-            grid-template-columns: auto 1fr auto;
-        }
-    }
 }
 
 .footer-links,

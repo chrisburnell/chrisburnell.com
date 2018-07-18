@@ -10,4 +10,21 @@ footer {
     @include v(border-top-width, default);
     @include v(border-top-style, default);
     @include v(border-top-color, raven);
+
+    .wrap {
+        display: grid;
+        @include v(grid-gap, medium);
+        align-items: center;
+
+        @include media("screen", "<=medium") {
+            grid-template-columns: 1fr;
+        }
+
+        @include media("screen", ">medium") {
+            // 1──────2─────3──────4
+            // │ auto │ 1fr │ auto │
+            // 2──────┴─────┴──────┘
+            grid-template-columns: auto 1fr auto;
+        }
+    }
 }
