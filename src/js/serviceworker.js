@@ -38,7 +38,8 @@ const CRITICAL_FILES = [
 
 // Files that are cached but non-blocking
 const OPTIONAL_FILES = [
-    '/images/sprites.svg'
+    '/images/sprites.svg',
+    '/sparklines.json'
 ];
 
 // Pages to cache
