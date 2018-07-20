@@ -3,8 +3,12 @@
         {% for link in site.data.social-icons %}
             {% assign svg = link.svg | default: 'feather' %}
             <li{% if link.hidden %} class="hidden"{% endif %}>
-                <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
-                    {% include content/svg.html type=svg title=link.title %}
+                <a{% if link.class %} rel="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
+                    {% if link.svg %}
+                        {% include content/svg.html type=svg title=link.title %}
+                    {% else %}
+                        {{ link.content | default: link.title }}
+                    {% endif %}
                 </a>
             </li>
         {% endfor %}

@@ -23,6 +23,13 @@
   rel: 'me  external'
   svg: rss
 
+- title: PGP
+  content: '9604 F098 260A 0057'
+  url: 'https://keybase.io/chrisburnell/key.asc'
+  class: 'p-pgp'
+  rel: 'me  external'
+  hidden: true
+
 - title: Mastodon
   url: 'https://mastodon.social/@chrisburnell'
   rel: 'me  external'
