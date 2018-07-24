@@ -37,9 +37,6 @@ _site/
 # NPM
 node_modules/
 
-# Snyk
-.snyk
-
 # Lockfiles
 *.lock
 
