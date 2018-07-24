@@ -1,43 +1,15 @@
 <!DOCTYPE html>
-
-<!--R
-  AVENOU
-    SRAVENO
-      USRAVENO
-       USRAVEN
-       OUSRAVEN               O
-        USRAVEN             O US
-        RAVENOUS         RA VENO U
-         SRAVENOU     SRAVENOUSRAV
-          ENOUSRAVENOUSRAVENOUSRAV
-           ENOUSRAVENOUSRAVENOUSRA
-VEN      OUSRAVENOUSRAVENOUSRAVENO
- USRAVENOUSRAVENOUSRAVENOUSR
-  AVENOUSRAVENOUSRAVENOUSR
-   AVENOUSRAVENOUSRAVENOU
-     SRAVENOUSRAVENOUSRAVE
-            NOUSR     AVE
-          NOUSR        AV
-          E NO
-            US
-
-Checking out the source code, eh? Check out the GitHub repository:
-{{ site.urls.github_repo }}
-Get in touch with me if you want to know more about the code, or if you want to use a
-snippet of code on a project of your own!  -->
-
-{% include assets/yml-head.liquid %}
-
 <html lang="{{ site.language }}">
 
 <head>
+
+    {%- include assets/yml-head.liquid -%}
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
     <title>{{ meta_title }}</title>
 
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//webmention.io">
     {% if page.comments == 'disqus' %}
         <link rel="dns-prefetch" href="//a.disquscdn.com">
@@ -80,8 +52,8 @@ snippet of code on a project of your own!  -->
     <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-    <link rel="micropub" href="https://micropub.chrisburnell.com">
-    <link rel="microsub" href="https://aperture.p3k.io/microsub/69">
+    <link rel="micropub" href="{{ site.urls.micropub }}">
+    <link rel="microsub" href="{{ site.urls.microsub }}">
 
     <link rel="mask-icon" href="{{ '/favicon.svg' | absolute_url }}" color="#{{ site.color }}">
 

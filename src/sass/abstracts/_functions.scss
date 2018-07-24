@@ -88,7 +88,7 @@
         @return false;
     }
 
-    @if lightness($background-color) > 50 {
+    @if lightness($background-color) > 65 {
         @return $text-color-dark;
     }
 

@@ -10,9 +10,10 @@ author:
   location:    London, UK
   email:       me@chrisburnell.com
   role:        UI Developer
-  codepen:     chrisburnell
-  twitter:     '@iamchrisburnell'
   pgp:         9604F098260A0057
+  codepen:     chrisburnell
+  github:      chrisburnell
+  twitter:     '@iamchrisburnell'
   employer:
     name: Squiz
     url:  https://www.squiz.net
@@ -27,6 +28,8 @@ urls:
   lastfm:             https://last.fm/user/chrisburnell
   license:            https://www.gnu.org/licenses/gpl-3.0.txt
   londonwebstandards: https://londonwebstandards.org
+  micropub:           https://micropub.chrisburnell.com
+  microsub:           https://aperture.p3k.io/microsub/69
   notist:             https://noti.st/chrisburnell
   rss:                /feed.xml
   rss_articles:       /feed-articles.xml
@@ -67,6 +70,8 @@ unpublished: false
 incremental: true
 destination: ./_site
 permalink: /:categories/:title/
+
+feed_limit: 25
 
 emptyArray: []
 

@@ -47,7 +47,8 @@ ol.default-list {
 
         &::before {
             @include tabular-lining-numerals;
-            content: counter(ordered-list, decimal) ".";
+            content: counter(ordered-list, decimal-leading-zeroes) ".";
+            @include v(color, canada);
         }
     }
 

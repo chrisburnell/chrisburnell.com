@@ -10,6 +10,6 @@ category_path: '/pens/'
 ---
 
 
-{% for page in site.categories.pen limit: 10 %}
+{% for page in site.categories.pen limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

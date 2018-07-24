@@ -10,6 +10,6 @@ category_path: '/links/'
 ---
 
 
-{% for page in site.categories.link limit: 10 %}
+{% for page in site.categories.link limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

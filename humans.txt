@@ -10,6 +10,8 @@ searchable: false
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
     Twitter: {{ site.author.twitter }}
+    GitHub: {{ site.author.github }}
+    PGP: {{ site.author.pgp }}
 
 /* SITE */
 
@@ -31,7 +33,8 @@ searchable: false
 
 /* SERVICES */
 
-    CodePen:          https://codepen.io/
-    Disqus:           https://disqus.com
-    Google Analytics: https://google.com/analytics
-    Twitter:          https://dev.twitter.com
+    CodePen:       https://codepen.io
+    Disqus:        https://disqus.com
+    Twitter:       https://dev.twitter.com
+    WebMention.io: https://webmention.io
+    Aperture:      https://aperture.p3k.io
