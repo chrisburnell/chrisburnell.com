@@ -29,20 +29,23 @@ sparkline: books
             <div class="p-read-of  h-cite">
                 <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
                 <div class="p-author">
-                    {% for author in page.authors %}
-                        {% if page.authors_link and page.authors_link[1] %}
+                    {%- for author in page.authors -%}
+                        {%- if page.authors_link and page.authors_link[1] -%}
                             <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external  noopener">
-                        {% elsif page.authors_link %}
+                        {%- elsif page.authors_link -%}
                             <a href="{{ page.authors_link }}" title="" rel="external  noopener">
-                        {% endif %}
+                        {%- endif -%}
                         {{ author }}
-                        {% if page.authors_link %}
+                        {%- if page.authors_link -%}
                             </a>
-                        {% endif %}
-                    {% endfor %}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- if page.year -%}
+                        <span>, </span><data value="{{ page.year }}">{{ page.year }}</data>
+                    {%- endif -%}
                 </div>
                 <data class="p-uid" value="{{ page.isbn }} "aria-hidden="true">{{ page.isbn }}</data>
-                <data class="p-read-status" value="to-read"><em>(Coming Up)</em></data>
+                <strong><data class="p-read-status" value="to-read">To Read</data></strong>
             </div>
         </div>
     </li>
@@ -69,24 +72,27 @@ sparkline: books
             <div class="p-read-of  h-cite">
                 <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
                 <div class="p-author">
-                    {% for author in page.authors %}
-                        {% if page.authors_link and page.authors_link[1] %}
+                    {%- for author in page.authors -%}
+                        {%- if page.authors_link and page.authors_link[1] -%}
                             <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external  noopener">
-                        {% elsif page.authors_link %}
+                        {%- elsif page.authors_link -%}
                             <a href="{{ page.authors_link }}" title="" rel="external  noopener">
-                        {% endif %}
+                        {%- endif -%}
                         {{ author }}
-                        {% if page.authors_link %}
+                        {%- if page.authors_link -%}
                             </a>
-                        {% endif %}
-                    {% endfor %}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- if page.year -%}
+                        <span>, </span><data value="{{ page.year }}">{{ page.year }}</data>
+                    {%- endif -%}
                 </div>
                 <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true">{{ page.isbn }}</data>
             </div>
             {% if page.rating %}
                 <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
             {% endif %}
-            <data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} aria-hidden="true"{% endif %}><em>({{ read_status | capitalize }})</em></data>
+            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} aria-hidden="true"{% endif %}>{{ read_status | capitalize }}</data></strong>
             <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" aria-hidden="true">{{ page.date_start | date: '%Y-%m-%d' }}</data>
             {% if page.date_end %}
                 <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" aria-hidden="true">{{ page.date_end | date: '%Y-%m-%d' }}</data>
