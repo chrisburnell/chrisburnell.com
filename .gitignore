@@ -49,3 +49,5 @@ src/images/*
 # Site Assets
 /css/
 /js/
+_includes/generated/
+/serviceworker.js
