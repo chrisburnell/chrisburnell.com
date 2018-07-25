@@ -2,11 +2,11 @@
     <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
         <span>published on</span>
         {% if page.url %}
-            <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}" itemprop="datePublished">
+            <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}">
         {% elsif page.shorturl %}
-            <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="external  me" itemprop="datePublished">
+            <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="external  me">
         {% else %}
-            <strong itemprop="datePublished">
+            <strong>
         {% endif %}
         {{ page.date | date_to_long_string }}
         {% if page.url or page.shorturl %}
@@ -19,7 +19,7 @@
         {% assign tags_sorted = page.tags | sort %}
         <div class="tags">
             <span>tagged under</span>
-            <span itemprop="keywords">
+            <span>
                 {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
             </span>
         </div>

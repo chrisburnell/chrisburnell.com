@@ -1,9 +1,9 @@
 {% include assets/yml-author.liquid %}
 
-<aside class="author" role="complementary" itemscope itemtype="https://schema.org/Person">
+<aside class="author  h-card  hcard  vcard" role="complementary">
 
     <div class="clear  author-information">
-        <a rel="author" class="p-author  h-card  author-image  canada" href="/about/" title="{{ site.author.name }}" tabindex="-1">
+        <a rel="author  me" class="author-image  canada  u-url  u-uid" href="/" title="{{ site.author.name }}" tabindex="-1">
             <picture class="u-photo">
                 <source srcset="/images/avatar.webp 1x,
                                 /images/avatar@2x.webp 2x,
@@ -15,18 +15,18 @@
                      srcset="/images/avatar@2x.png 2x,
                              /images/avatar@3x.png 3x,
                              /images/avatar@4x.png 4x"
-                     role="presentation" itemprop="photo">
+                     role="presentation">
             </picture>
         </a>
         <div class="author-name">
             <span>about</span>
-            <a href="/about/" class="canada" itemprop="author">{{ site.author.name }}</a>
+            <a rel="author  me" href="/about/" class="canada  p-name  u-url">{{ site.author.name }}</a>
         </div>
     </div>
 
     <div class="clear  author-biography  p-note">
-        <p>I’m a <span class="canada" itemprop="nationality">Canadian</span> <span class="p-job-title" itemprop="jobTitle">{{ site.author.employer.role }}</span> working for <a rel="external" href="{{ site.author.employer.url }}"><span class="p-org" itemprop="worksFor">{{ site.author.employer.name }}</span></a> and organising for <a rel="external" href="{{ site.urls.londonwebstandards }}"><span class="p-org" itemprop="memberOf">London Web Standards</span></a>. I’m driven by a passion for web standards, lean CSS, and an open and semantic web, and this is my personal website where I think, write, and share—<a href="{{ site.urls.rss }}">subscribe via RSS</a>, if you’d like.</p>
-        <p>I also <a class="u-url" rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a class="u-url" rel="external  me  publisher" href="{{ site.urls.lastfm }}">listen to music (often)</a>, and <a class="u-url" rel="external  me" href="/recipes">bake bread</a> if {{ author_biography_closer }}.</p>
+        <p>I’m a <span class="canada">Canadian</span> <span class="p-job-title">{{ site.author.employer.role }}</span> working for <a rel="external" href="{{ site.author.employer.url }}"><span class="p-org">{{ site.author.employer.name }}</span></a> and <span class="p-role">Organiser</span> for <a rel="external" href="{{ site.urls.londonwebstandards }}"><span class="p-org">London Web Standards</span></a>. I’m driven by a passion for web standards, lean CSS, and an open and semantic web, and this is my personal website where I think, write, and share—<a href="{{ site.urls.rss }}">subscribe via RSS</a>, if you’d like.</p>
+        <p>I also <a rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a rel="external  me  publisher" href="{{ site.urls.lastfm }}">listen to music (often)</a>, <a rel="external  me" href="/bookshelf">read books</a>, and <a rel="external  me" href="/recipes">bake bread</a> if {{ author_biography_closer }}.</p>
     </div>
 
     {% unless page.page_class contains 'search' %}

@@ -3,22 +3,22 @@
 
 
 <main class="wrap" role="main">
-    <section class="content" id="content" role="document" itemscope itemtype="https://schema.org/WebPage">
+    <section class="content" id="content" role="document">
 
         {% if page.page_class contains 'home' %}
-            <h1 class="tagline" role="heading" itemprop="name">{{ site.tagline | replace: ' for', '<br>for' }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
+            <h1 class="tagline" role="heading">{{ site.tagline | replace: ' for', '<br>for' }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
         {% else %}
-            <h1 class="title" role="heading" itemprop="name">{{ page.title }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
+            <h1 class="title" role="heading">{{ page.title }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
         {% endif %}
 
         {% include components/banner.html %}
 
         {% if page.page_class contains 'home' %}
-            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ site.lede }}</p>
+            <p class="beta  lede  lede--featured" id="lede">{{ site.lede }}</p>
         {% elsif page.page_class contains 'search' %}
-            <p class="beta  lede  lede--featured  js-search-meta" id="lede" itemprop="description">Search for something!</p>
+            <p class="beta  lede  lede--featured  js-search-meta" id="lede">Search for something!</p>
         {% elsif page.lede %}
-            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</p>
+            <p class="beta  lede  lede--featured" id="lede">{{ page.lede }}</p>
         {% endif %}
 
         <div class="content__body">

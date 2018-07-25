@@ -2,11 +2,11 @@
     {% assign bookcover = page.mf-photo | default: page.cover %}
     <picture class="u-photo">
         {% if bookcover contains '://' %}
-            <img alt="" class="bookcover  u-photo" role="presentation" itemprop="image" src="{{ bookcover }}">
+            <img alt="" class="bookcover  u-photo" role="presentation" src="{{ bookcover }}">
         {% else %}
             <source srcset="/images/bookcovers/{{ bookcover | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if bookcover contains '@' %}{{ bookcover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}"
                     type="image/webp">
-            <img    alt="" class="bookcover  u-photo" role="presentation" itemprop="image"
+            <img    alt="" class="bookcover  u-photo" role="presentation"
                     src="/images/bookcovers/{{ bookcover }}"
                     srcset="/images/bookcovers/{{ bookcover }} {% if bookcover contains '@' %}{{ bookcover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}">
         {% endif %}

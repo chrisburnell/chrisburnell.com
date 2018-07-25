@@ -110,10 +110,10 @@ Since I know that if I have the need for a `span` to change some visual style, I
 But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html){:rel="external"}. Let me demonstrate with a modified snippet of HTML from my site.
 
 {% highlight html %}
-<aside class="author" itemscope itemtype="https://schema.org/Person">
+<aside class="author" itemtype="https://schema.org/Person">
     <div class="author-name">
         by <a href="/about/">
-               <span itemprop="author">Chris Burnell</span>
+               <span>Chris Burnell</span>
            </a>
     </div>
 </aside>

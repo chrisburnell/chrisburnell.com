@@ -1,15 +1,11 @@
 {% include components/head.html %}
 
 
-{% assign itemtype = 'BlogPosting' %}
-{% if page.categories contains 'talk' %}
-    {% assign itemtype = 'PresentationDigitalDocument' %}
-{% endif %}
 <main class="wrap  h-entry" role="main">
-    <article class="content" id="content" role="article" itemscope itemtype="https://schema.org/{{ itemtype }}">
+    <article class="content" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
-            <span class="p-name" itemprop="name">
+            <span class="p-name">
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
@@ -29,7 +25,7 @@
         {% include components/banner.html %}
 
         {% if page.lede %}
-            <p class="beta  lede  lede--featured" id="lede" itemprop="description">{{ page.lede }}</p>
+            <p class="beta  lede  lede--featured" id="lede">{{ page.lede }}</p>
         {% endif %}
 
         {% if page.edit_text %}
