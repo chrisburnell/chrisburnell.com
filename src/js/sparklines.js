@@ -93,22 +93,22 @@
         playNotes();
     };
 
-    const TYPES = ["articles", "books", "links", "notes", "pens", "talks"];
+    const TYPES = ['articles', 'books', 'links', 'notes', 'pens', 'talks'];
     let data;
 
-    if (document.querySelector(".sparkline")) {
+    if (document.querySelector('.sparkline')) {
         let showEndpoint = true;
-        let sparklineColor = "hsla(0, 0%, 31%, 1)";
-        let endpointColor = "hsla(357, 83%, 55%, 0.5)";
+        let sparklineColor = 'hsla(0, 0%, 31%, 1)';
+        let endpointColor = 'hsla(357, 83%, 55%, 0.5)';
         let request = new XMLHttpRequest();
-        request.open("GET", "/sparklines.json", true);
+        request.open('GET', '/sparklines.json', true);
         request.onload = () => {
             if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                 // Success!
                 data = JSON.parse(request.responseText);
                 for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
-                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
+                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, 'line', endpointColor);
                     }
                 }
             } else {
@@ -116,12 +116,12 @@
             }
         };
         request.onerror = () => {
-            console.log("Sparkline request error");
+            console.log('Sparkline request error');
         };
         request.send();
     }
 
-    let wave = "triangle"; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = 'triangle'; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
@@ -134,13 +134,13 @@
         frequencies.push(Math.pow(2, (keyStart - 49 + keyInterval) / 12) * 440);
     }
 
-    for (let sparkline of document.querySelectorAll(".sparkline")) {
-        sparkline.addEventListener("click", event => {
-            playSparkline(data[sparkline.id.split("-")[1]], frequencies, duration, wave);
+    for (let sparkline of document.querySelectorAll('.sparkline')) {
+        sparkline.addEventListener('click', event => {
+            playSparkline(data[sparkline.id.split('-')[1]], frequencies, duration, wave);
             // Prevent the user from blowing their ears up by stacking sounds
-            sparkline.classList.add("non-interactive");
+            sparkline.classList.add('non-interactive');
             window.setTimeout(() => {
-                sparkline.classList.remove("non-interactive");
+                sparkline.classList.remove('non-interactive');
             }, duration);
         });
     }

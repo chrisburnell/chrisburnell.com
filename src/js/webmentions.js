@@ -4,6 +4,7 @@
  */
 
 (() => {
+
     "use strict";
 
     const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href") : null;
