@@ -5,7 +5,6 @@
 
 blockquote {
     @include border-radius;
-    @include font-family(serif);
     @include quotes;
     @include v(background-color, raven--gamma);
     width: 100%;
@@ -20,6 +19,8 @@ blockquote {
     }
 
     p {
+        @include font-family(serif);
+
         &::before {
             content: open-quote;
         }
