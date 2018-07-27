@@ -12,16 +12,8 @@
     // `#comment` will match both `#comment` and `#comments`
     const COMMENTS_HASH = ["#comment", "#disqus_thread"];
 
-    // Enable the Comments button
-    helpers.enableElement(COMMENTS_BUTTON, showComments);
-
-    // initiate Comments if hash present on load
-    window.addEventListener("load", helpers.actionFromHash(COMMENTS_HASH, showComments));
-    // initiate Comments if hash present on hash change
-    window.addEventListener("hashchange", helpers.actionFromHash(COMMENTS_HASH, showComments));
-
     // Load in Disqus comments and remove the comments button
-    function showComments() {
+    let showComments = () => {
         // only if the button still exists, load comments and hide the button
         if (COMMENTS_BUTTON !== null && COMMENTS_BUTTON.getAttribute("aria-hidden") === "false") {
             COMMENTS_BUTTON.setAttribute("aria-pressed", "true");
@@ -38,5 +30,13 @@
             COMMENTS_SECTION.setAttribute("aria-hidden", "false");
             COMMENTS_SECTION.scrollIntoView();
         }
-    }
+    };
+
+    // Enable the Comments button
+    helpers.enableElement(COMMENTS_BUTTON, showComments);
+
+    // initiate Comments if hash present on load
+    window.addEventListener("load", helpers.actionFromHash(COMMENTS_HASH, showComments));
+    // initiate Comments if hash present on hash change
+    window.addEventListener("hashchange", helpers.actionFromHash(COMMENTS_HASH, showComments));
 })();

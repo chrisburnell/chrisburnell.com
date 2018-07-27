@@ -41,11 +41,11 @@
         observer.observe(WEBMENTIONS_BUTTON);
     }
 
-    function loadWebmentions() {
+    let loadWebmentions = () => {
         if (navigator.onLine) {
             let request = new XMLHttpRequest();
             request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-            request.onload = function () {
+            request.onload = () => {
                 if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
                     // Success!
                     webmentionsLoaded = true;
@@ -65,14 +65,14 @@
                     console.log(`Webmention request status error: ${request.status}`);
                 }
             };
-            request.onerror = function () {
+            request.onerror = () => {
                 console.log("Webmention request error");
             };
             request.send();
         }
-    }
+    };
 
-    function showWebmentions() {
+    let showWebmentions = () => {
         // check if already loaded the webmentions, if not, load it (again)
         if (webmentionsLoaded === false) {
             loadWebmentions();
@@ -85,22 +85,22 @@
             WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
-    }
+    };
 
-    function checkVisibility(entries, observer) {
+    let checkVisibility = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.intersectionRatio > 0) {
                 showWebmentions();
                 observer.disconnect();
             }
         });
-    }
+    };
 
     ////
     /// Add responses content to Webmention template
     /// @return {String} Populated HTML
     ////
-    function populateResponses(data) {
+    let populateResponses = (data) => {
         const WEBMENTIONS_TEMPLATE_DEFAULT = document.querySelector(".webmentions-template-default") ? document.querySelector(".webmentions-template-default").innerHTML.trim() : "";
         const WEBMENTIONS_TEMPLATE_REPLY = document.querySelector(".webmentions-template-reply") ? document.querySelector(".webmentions-template-reply").innerHTML.trim() : "";
 
@@ -149,13 +149,13 @@
             webmentionsReplyLabel.setAttribute("aria-hidden", "false");
             webmentionsReplyContent.parentNode.setAttribute("aria-hidden", "false");
         }
-    }
+    };
 
     ////
     /// Process responses
     /// @return {String} Process HTML
     ////
-    function processResponses(html, response) {
+    let processResponses = (html, response) => {
         // Store some variables we'll check often
         let id = response.id;
         let type = response.activity.type;
@@ -187,5 +187,5 @@
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
 
         return html;
-    }
+    };
 })();

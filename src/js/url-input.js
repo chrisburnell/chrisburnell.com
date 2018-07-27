@@ -10,7 +10,7 @@
         if (target.value.match(/^(?!https?:).+\..+/)) {
             target.value = `http://${target.value}`;
         }
-    }
+    };
 
     let elements = document.querySelectorAll('input[type="url"]');
 

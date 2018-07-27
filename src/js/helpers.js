@@ -11,7 +11,7 @@ helpers = {
     /// @param {String} placeholder
     /// @return {String} injected content
     ////
-    injectContent: function(originalContent, placeholder, injection, flags = "g") {
+    injectContent: (originalContent, placeholder, injection, flags = "g") => {
         const PATTERN = new RegExp(placeholder, flags);
 
         return originalContent.replace(PATTERN, injection);
@@ -23,7 +23,7 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: function(name) {
+    getParameterByName: (name) => {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -35,7 +35,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    enableElement: function(element, action) {
+    enableElement: (element, action) => {
         if (element !== null) {
             element.disabled = false;
             element.setAttribute("aria-disabled", "false");
@@ -50,7 +50,7 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedDate
     ////
-    formatDate: function(date) {
+    formatDate: (date) => {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let day = date.getDate();
@@ -70,7 +70,7 @@ helpers = {
     /// @param {Boolean} [true] includeMerdiem
     /// @return {String} formattedTime
     ////
-    formatTime: function(date, includeSeconds = false, includeMeridiem = true) {
+    formatTime: (date, includeSeconds = false, includeMeridiem = true) => {
         let hours = date.getHours();
         let minutes = `:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}`;
         let seconds = includeSeconds ? `:${date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()}` : "";
@@ -88,7 +88,7 @@ helpers = {
     /// @param {Function} action
     /// @return false
     ////
-    actionFromHash: function(hashes, action) {
+    actionFromHash: (hashes, action) => {
         for (let hash of hashes) {
             if (window.location.hash.indexOf(hash) !== -1) {
                 action();

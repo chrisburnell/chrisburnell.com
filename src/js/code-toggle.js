@@ -16,7 +16,7 @@
         });
     }
 
-    function toggleCode(codeToggleID) {
+    let toggleCode = (codeToggleID) => {
         let codeToggle = document.querySelector(`#code-toggle--${codeToggleID}`);
         let codeToggleInput = document.querySelector(`#code-toggle-input--${codeToggleID}`);
         let codeToggleLabel = document.querySelector(`#code-toggle-label--${codeToggleID}`);
@@ -29,5 +29,5 @@
         codeToggleButton.setAttribute("aria-pressed", "true");
 
         window.location.hash = `#code-toggle--${codeToggleID}`;
-    }
+    };
 })();

@@ -20,21 +20,12 @@
     const SEARCH_PAGE_TEMPLATE = document.querySelector(".search-template--page") ? document.querySelector(".search-template--page").innerHTML.trim() : "";
     const SEARCH_POST_TEMPLATE = document.querySelector(".search-template--post") ? document.querySelector(".search-template--post").innerHTML.trim() : "";
 
-    // enable Search
-    if (searchInput !== null && searchSubmit !== null) {
-        searchInput.disabled = false;
-        searchInput.setAttribute("aria-disabled", "false");
-        searchSubmit.disabled = false;
-        searchSubmit.setAttribute("aria-disabled", "false");
-        initSearch();
-    }
-
     ////
     /// Initiate search functionality.
     /// Shows results based on querystring if present.
     /// Binds search function to form submission.
     ////
-    function initSearch() {
+    let initSearch = () => {
         if (!searchContainer) {
             return;
         }
@@ -63,9 +54,9 @@
                 window.clearInterval(inputCheck);
             });
         }
-    }
+    };
 
-    function submitCallback(event = false) {
+    let submitCallback = (event = false) => {
         if (event) {
             event.preventDefault();
         }
@@ -76,25 +67,25 @@
         } else {
             resultsMeta.innerHTML = "Your search query must be 2–30 characters in length.";
         }
-    }
+    };
 
     ////
     /// Executes search
     /// @param {String} query
     /// @return void
     ////
-    function execSearch(query) {
+    let execSearch = (query) => {
         if (query !== "" || ALLOW_EMPTY) {
             getSearchResults();
         }
-    }
+    };
 
     ////
     /// Get Search results from JSON
     /// @param {Function} callbackFunction
     /// @return void
     ////
-    function getSearchResults() {
+    let getSearchResults = () => {
         let request = new XMLHttpRequest();
 
         request.open("GET", JSON_FEED_URL, true);
@@ -112,13 +103,13 @@
         };
 
         request.send();
-    }
+    };
 
     ////
     /// Process search result data
     /// @return void
     ////
-    function processData(data) {
+    let processData = (data) => {
         let resultsCount = 0,
             results = "";
 
@@ -197,19 +188,19 @@
 
         populateResultsString(resultsCount);
         showSearchResults(results);
-    }
+    };
 
     ////
     /// Add search results to placeholder
     /// @param {String} results
     /// @return void
     ////
-    function showSearchResults(results) {
+    let showSearchResults = (results) => {
         // Add results HTML to placeholder
         resultsList.innerHTML = results;
         // And mark the resultsList as `aria-expanded="true"`
         resultsList.setAttribute("aria-expanded", "true");
-    }
+    };
 
     ////
     /// Add results content to item templates
@@ -217,7 +208,7 @@
     /// @param {object} item
     /// @return {String} Populated HTML
     ////
-    function populateResultContent(html, item) {
+    let populateResultContent = (html, item) => {
         // URL
         html = helpers.injectContent(html, "#", item.url);
 
@@ -275,17 +266,26 @@
         }
 
         return html;
-    }
+    };
 
     ////
     /// Populates results string
     /// @param {String} count
     /// @return void
     ////
-    function populateResultsString(count) {
+    let populateResultsString = (count) => {
         let resultSuffix = count == 1 ? "" : "s";
         let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 
         resultsMeta.innerHTML = searchMeta;
+    };
+
+    // enable Search
+    if (searchInput !== null && searchSubmit !== null) {
+        searchInput.disabled = false;
+        searchInput.setAttribute("aria-disabled", "false");
+        searchSubmit.disabled = false;
+        searchSubmit.setAttribute("aria-disabled", "false");
+        initSearch();
     }
 })();
