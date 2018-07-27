@@ -4,10 +4,14 @@
  */
 
 (() => {
-
     "use strict";
 
-    const CANONICAL_URL = document.querySelector('link[rel="canonical"]') ? document.querySelector('link[rel="canonical"]').getAttribute("href") : null;
+    const CANONICAL_URL = document.querySelector('link[rel="canonical"]')
+        ? document
+              .querySelector('link[rel="canonical"]')
+              .getAttribute("href")
+              .replace("http://localhost:4000", "https://chrisburnell.com")
+        : null;
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
     const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");
@@ -17,29 +21,10 @@
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#response"];
     let webmentionsLoaded = false;
     let responses = {
-        "like": [],
-        "repost": [],
-        "reply": []
+        like: [],
+        repost: [],
+        reply: []
     };
-
-    if (WEBMENTIONS_SECTION !== null) {
-        let observer = new IntersectionObserver(checkVisibility);
-        // initiate Webmentions if hash present on load
-        window.addEventListener("load", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
-        // initiate Webmentions if hash present on hash change
-        window.addEventListener("hashchange", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
-        // enable the Webmentions button, input, and submit
-        helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
-        WEBMENTIONS_BUTTON.addEventListener("mouseover", () => {
-            if (webmentionsLoaded === false) {
-                loadWebmentions();
-            }
-        });
-        helpers.enableElement(WEBMENTIONS_INPUT);
-        helpers.enableElement(WEBMENTIONS_SUBMIT);
-        // observe the Webmentions button to load in data
-        observer.observe(WEBMENTIONS_BUTTON);
-    }
 
     let loadWebmentions = () => {
         if (navigator.onLine) {
@@ -50,16 +35,18 @@
                     // Success!
                     webmentionsLoaded = true;
                     populateResponses(JSON.parse(request.responseText));
-                    let responsesCount = Object.keys(responses).map(type => {
-                        return responses[type].length;
-                    }).reduce((p, c) => p + c, 0);
+                    let responsesCount = Object.keys(responses)
+                        .map(type => {
+                            return responses[type].length;
+                        })
+                        .reduce((p, c) => p + c, 0);
                     if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                         for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                             webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
                         }
                         WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "false");
                         // prevent hovering the button from continuing to fire
-                        WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => { });
+                        WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
                     }
                 } else {
                     console.log(`Webmention request status error: ${request.status}`);
@@ -82,7 +69,7 @@
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
-            WEBMENTIONS_BUTTON.removeEventListener("click", () => { });
+            WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
         }
         WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
     };
@@ -100,7 +87,7 @@
     /// Add responses content to Webmention template
     /// @return {String} Populated HTML
     ////
-    let populateResponses = (data) => {
+    let populateResponses = data => {
         const WEBMENTIONS_TEMPLATE_DEFAULT = document.querySelector(".webmentions-template-default") ? document.querySelector(".webmentions-template-default").innerHTML.trim() : "";
         const WEBMENTIONS_TEMPLATE_REPLY = document.querySelector(".webmentions-template-reply") ? document.querySelector(".webmentions-template-reply").innerHTML.trim() : "";
 
@@ -188,4 +175,23 @@
 
         return html;
     };
+
+    if (WEBMENTIONS_SECTION !== null) {
+        let observer = new IntersectionObserver(checkVisibility);
+        // initiate Webmentions if hash present on load
+        window.addEventListener("load", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+        // initiate Webmentions if hash present on hash change
+        window.addEventListener("hashchange", helpers.actionFromHash(WEBMENTIONS_HASH, showWebmentions));
+        // enable the Webmentions button, input, and submit
+        helpers.enableElement(WEBMENTIONS_BUTTON, showWebmentions);
+        WEBMENTIONS_BUTTON.addEventListener("mouseover", () => {
+            if (webmentionsLoaded === false) {
+                loadWebmentions();
+            }
+        });
+        helpers.enableElement(WEBMENTIONS_INPUT);
+        helpers.enableElement(WEBMENTIONS_SUBMIT);
+        // observe the Webmentions button to load in data
+        observer.observe(WEBMENTIONS_BUTTON);
+    }
 })();

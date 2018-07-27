@@ -27,7 +27,7 @@
   content: '9604 F098 260A 0057'
   url: 'https://keybase.io/chrisburnell/key.asc'
   class: 'p-pgp'
-  rel: 'me  external'
+  rel: 'pgpkey  me  external'
   hidden: true
 
 - title: Mastodon

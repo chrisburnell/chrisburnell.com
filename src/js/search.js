@@ -48,7 +48,7 @@
                     if (searchInput.value != query && searchInput.value.length >= 2 && searchInput.value.length <= 30) {
                         submitCallback(false);
                     }
-                }, 50)
+                }, 50);
             });
             searchInput.addEventListener("blur", () => {
                 window.clearInterval(inputCheck);
@@ -74,7 +74,7 @@
     /// @param {String} query
     /// @return void
     ////
-    let execSearch = (query) => {
+    let execSearch = query => {
         if (query !== "" || ALLOW_EMPTY) {
             getSearchResults();
         }
@@ -109,7 +109,7 @@
     /// Process search result data
     /// @return void
     ////
-    let processData = (data) => {
+    let processData = data => {
         let resultsCount = 0,
             results = "";
 
@@ -195,7 +195,7 @@
     /// @param {String} results
     /// @return void
     ////
-    let showSearchResults = (results) => {
+    let showSearchResults = results => {
         // Add results HTML to placeholder
         resultsList.innerHTML = results;
         // And mark the resultsList as `aria-expanded="true"`
@@ -273,7 +273,7 @@
     /// @param {String} count
     /// @return void
     ////
-    let populateResultsString = (count) => {
+    let populateResultsString = count => {
         let resultSuffix = count == 1 ? "" : "s";
         let searchMeta = `<strong>${count}</strong> result${resultSuffix} found for <q>${query}</q>`;
 

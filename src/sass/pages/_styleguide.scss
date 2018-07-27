@@ -90,7 +90,7 @@
         @include v(margin-top, small);
     }
 
-    @include media('coarse') {
+    @include media("coarse") {
         &::before {
             content: "(Tap to interact.)";
         }

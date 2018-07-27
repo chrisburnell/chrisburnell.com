@@ -19,7 +19,7 @@
             COMMENTS_BUTTON.setAttribute("aria-pressed", "true");
             COMMENTS_BUTTON.setAttribute("aria-expanded", "true");
             COMMENTS_BUTTON.setAttribute("aria-hidden", "true");
-            COMMENTS_BUTTON.removeEventListener("click", () => { });
+            COMMENTS_BUTTON.removeEventListener("click", () => {});
             (() => {
                 const DISQUS_SCRIPT = document.createElement("script");
                 DISQUS_SCRIPT.type = "text/javascript";

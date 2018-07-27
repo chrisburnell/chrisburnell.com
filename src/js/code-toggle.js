@@ -16,7 +16,7 @@
         });
     }
 
-    let toggleCode = (codeToggleID) => {
+    let toggleCode = codeToggleID => {
         let codeToggle = document.querySelector(`#code-toggle--${codeToggleID}`);
         let codeToggleInput = document.querySelector(`#code-toggle-input--${codeToggleID}`);
         let codeToggleLabel = document.querySelector(`#code-toggle-label--${codeToggleID}`);
@@ -25,7 +25,7 @@
         codeToggleInput.checked = true;
         codeToggle.setAttribute("aria-expanded", "true");
         codeToggleLabel.setAttribute("aria-hidden", "true");
-        codeToggleLabel.removeEventListener("click", () => { });
+        codeToggleLabel.removeEventListener("click", () => {});
         codeToggleButton.setAttribute("aria-pressed", "true");
 
         window.location.hash = `#code-toggle--${codeToggleID}`;

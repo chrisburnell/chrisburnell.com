@@ -1,5 +1,6 @@
 <style>{% include generated/critical-css.html %}</style>
 <link rel="preload" as="style" href="/css/main-without-variables.min.css?version={{ site.time | date: '%F_%H%M' }}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/main-without-variables.min.css?version={{ site.time | date: '%F_%H%M' }}"></noscript>
 
 <link rel="preload" as="script" href="/js/main.min.js?version={{ site.time | date: '%F_%H%M' }}">
 {% if page.caniuse == true %}
@@ -13,7 +14,4 @@
 {% endif %}
 {% if page.twitter == true %}
     <link rel="preload" as="script" href="//platform.twitter.com/widgets.js">
-{% endif %}
-{% if page.webmentions == true %}
-    {% include components/webmentions-templates.html %}
 {% endif %}
