@@ -1,27 +1,27 @@
 - title: Articles Archive
-  url: '/articles/'
+  type: articles
   icon: 'article'
 
 - title: Notes Archive
-  url: '/notes/'
+  type: notes
   icon: 'feather'
 
 - title: Pens Archive
-  url: '/pens/'
+  type: pens
   icon: 'codepen'
 
 - title: Links Archive
-  url: '/links/'
+  type: links
   icon: 'link'
 
 - title: Recipes Archive
-  url: '/recipes/'
+  type: recipes
   icon: 'article'
 
 - title: Talks Archive
-  url: '/talks/'
+  type: talks
   icon: 'bullhorn'
 
 - title: Tags Archive
-  url: '/tags/'
+  type: tags
   icon: 'tag'

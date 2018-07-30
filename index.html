@@ -4,57 +4,23 @@ searchable: no-content
 ---
 
 
-<h2 class="gamma">
-    <a href="/articles/">Latest Articles</a>
-    <canvas id="sparkline-articles" class="sparkline" width="120" height="22"></canvas>
-</h2>
+<dl>
+    <dt>Articles</dt>
+    <dd><canvas id="sparkline-articles" class="sparkline" width="120" height="22"></canvas></dd>
+    <dt>Notes</dt>
+    <dd><canvas id="sparkline-notes" class="sparkline" width="120" height="22"></canvas></dd>
+    <dt>Links</dt>
+    <dd><canvas id="sparkline-links" class="sparkline" width="120" height="22"></canvas></dd>
+    <dt>Pens</dt>
+    <dd><canvas id="sparkline-pens" class="sparkline" width="120" height="22"></canvas></dd>
+</dl>
 
-<ol class="content-list" id="articles" role="list">
-    {% for page in site.categories.article limit: 4 %}
+<h2 class="gamma">Latest Posts</h2>
+
+<ol class="content-list" role="list">
+    {% for page in site.posts limit: 12 %}
         {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' include='articles' %}
-
-
-<h2 class="gamma">
-    <a href="/notes/">Latest Notes</a>
-    <canvas id="sparkline-notes" class="sparkline" width="120" height="22"></canvas>
-</h2>
-
-<ol class="content-list" id="notes" role="list">
-    {% for page in site.categories.note limit: 4 %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
-</ol>
-
-{% include components/buttons-list.html type='archives' include='notes' %}
-
-
-<h2 class="gamma">
-    <a href="/pens/">Latest Pens</a>
-    <canvas id="sparkline-pens" class="sparkline" width="120" height="22"></canvas>
-</h2>
-
-<ol class="content-list" id="pens" role="list">
-    {% for page in site.categories.pen limit: 4 %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
-</ol>
-
-{% include components/buttons-list.html type='archives' include='pens' %}
-
-
-<h2 class="gamma">
-    <a href="/links/">Latest Links</a>
-    <canvas id="sparkline-links" class="sparkline" width="120" height="22"></canvas>
-</h2>
-
-<ol class="content-list" id="links" role="list">
-    {% for page in site.categories.link limit: 4 %}
-        {% include components/item-content-list.html %}
-    {% endfor %}
-</ol>
-
-{% include components/buttons-list.html type='archives' include='links' %}
+{% include components/buttons-list.html type='archives' exclude='recipes talks' %}

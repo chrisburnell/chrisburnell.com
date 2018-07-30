@@ -18,25 +18,26 @@
     {% for link in data %}
         {% assign title = link.title | downcase %}
         {% if include.include %}
-            {% if title contains include.include or title contains 'all' %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+            {% assign include = include.include | split: ' ' | join: ' ' %}
+            {% if include contains link.type or title contains 'all' %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endif %}
         {% elsif include.exclude %}
-            {% unless title contains include.exclude %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+            {% assign exclude = include.exclude | split: ' ' | join: ' ' %}
+            {% unless exclude contains link.type %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endunless %}
         {% else %}
-            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">
+            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
                 {% include content/svg.html type=link.icon %}
                 {{ link.title }}
             </a>
         {% endif %}
     {% endfor %}
-    <noscript>Please enable JavaScript to view webmentions and comments.</noscript>
 </nav>
