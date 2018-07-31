@@ -122,11 +122,11 @@
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
     let keyCount = 13;
-    let frequencies = [2 ** ((keyStart - 49) / 12) * 440];
+    let frequencies = [helpers.getFrequency(keyStart)];
 
     for (let count = 0; count < keyCount - 1; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(2 ** ((keyStart - 49 + keyInterval) / 12) * 440);
+        frequencies.push(helpers.getFrequency(keyStart, keyInterval));
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {

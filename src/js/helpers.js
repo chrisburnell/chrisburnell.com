@@ -98,6 +98,9 @@ helpers = {
 
     ////
     /// Ensure fetch response is OK
+    /// @param {Object} response
+    /// @return {Object} response
+    /// @throw {Object} error
     ////
     checkFetchStatus: response => {
         if (response.status >= 200 && response.status < 300) {
@@ -108,5 +111,15 @@ helpers = {
             error.response = response;
             throw error;
         }
+    },
+
+    ////
+    /// Return a frequency based on starting key and interval
+    /// @param {Number} keyStart [49]
+    /// @param {Number} keyInterval [0]
+    /// @return {Number} frequency
+    ////
+    getFrequency: (keyStart = 49, keyInterval = 0) => {
+        return (2 ** ((keyStart - 49 + keyInterval) / 12) * 440);
     }
 };
