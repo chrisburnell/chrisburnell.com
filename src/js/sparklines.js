@@ -94,6 +94,7 @@
     };
 
     const TYPES = ["articles", "books", "links", "notes", "pens", "talks"];
+    let data;
 
     if (document.querySelector(".sparkline")) {
         let showEndpoint = true;
@@ -102,7 +103,8 @@
         fetch("/sparklines.json")
             .then(helpers.checkFetchStatus)
             .then(response => response.json())
-            .then(data => {
+            .then(response => {
+                data = response;
                 for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
@@ -120,11 +122,11 @@
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
     let keyCount = 13;
-    let frequencies = [2 ** (((keyStart - 49) / 12) * 440)];
+    let frequencies = [2 ** ((keyStart - 49) / 12) * 440];
 
     for (let count = 0; count < keyCount - 1; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(2 ** (((keyStart - 49 + keyInterval) / 12) * 440));
+        frequencies.push(2 ** ((keyStart - 49 + keyInterval) / 12) * 440);
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {
