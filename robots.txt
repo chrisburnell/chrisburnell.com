@@ -17,4 +17,3 @@ searchable: false
 User-agent: *
 Sitemap: https://chrisburnell.com/sitemap.xml
 Disallow: /fonts/
-Disallow: /images/
