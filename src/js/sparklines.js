@@ -121,10 +121,10 @@
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
-    let keyCount = 13;
+    let keyCount = 12;
     let frequencies = [helpers.getFrequency(keyStart)];
 
-    for (let count = 0; count < keyCount - 1; count++) {
+    for (let count = 0; count < keyCount; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
         frequencies.push(helpers.getFrequency(keyStart, keyInterval));
     }
