@@ -27,14 +27,14 @@
     };
 
     let loadWebmentions = () => {
-        if (navigator.onLine) {
-            let request = new XMLHttpRequest();
-            request.open("GET", `https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`, true);
-            request.onload = () => {
-                if (webmentionsLoaded === false && request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
+        fetch(`https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`)
+            .then(helpers.checkFetchStatus)
+            .then(response => response.json())
+            .then(data => {
+                if (webmentionsLoaded === false) {
                     // Success!
                     webmentionsLoaded = true;
-                    populateResponses(JSON.parse(request.responseText));
+                    populateResponses(data);
                     let responsesCount = Object.keys(responses)
                         .map(type => {
                             return responses[type].length;
@@ -48,15 +48,11 @@
                         // prevent hovering the button from continuing to fire
                         WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
                     }
-                } else {
-                    console.log(`Webmention request status error: ${request.status}`);
                 }
-            };
-            request.onerror = () => {
-                console.log("Webmention request error");
-            };
-            request.send();
-        }
+            })
+            .catch(error => {
+                console.log(`Webmention request status error: ${error.status} ${error.statusText}`);
+            });
     };
 
     let showWebmentions = () => {

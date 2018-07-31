@@ -44,35 +44,27 @@ const OPTIONAL_FILES = [
 
 // Pages to cache
 const OFFLINE_PAGES = [
-    '/',
-    '/about/',
-    '/articles/',
-    '/bookshelf/',
-    '/contact/',
-    '/license/',
-    '/links/',
-    '/notes/',
-    '/pens/',
-    '/search/',
-    '/styleguide/',
-    '/tags/',
-    '/talks/'
-    {% for page in site.categories.article limit: 2 %},
-        '{{ page.url }}'
+    {% for page in site.html_pages %}
+        {% unless page.url contains 'html' or page.url contains 'offline' %}
+            '{{ page.url }}',
+        {% endunless %}
     {% endfor %}
-    {% for page in site.categories.note limit: 2 %},
-        '{{ page.url }}'
+    {% for page in site.categories.article limit: 2 %}
+        '{{ page.url }}',
     {% endfor %}
-    {% for page in site.categories.pen limit: 2 %},
-        '{{ page.url }}'
+    {% for page in site.categories.note limit: 2 %}
+        '{{ page.url }}',
     {% endfor %}
-    {% for page in site.categories.link limit: 2 %},
-        '{{ page.url }}'
+    {% for page in site.categories.pen limit: 2 %}
+        '{{ page.url }}',
+    {% endfor %}
+    {% for page in site.categories.link limit: 2 %}
+        '{{ page.url }}'{% unless forloop.last %},{% endunless %}
     {% endfor %}
 ];
 
 
-function updateStaticCache() {
+let updateStaticCache = () => {
     return caches.open(STATIC_CACHE)
         .then( cache => {
             // These items won't block the installation of the Service Worker
@@ -82,13 +74,13 @@ function updateStaticCache() {
         });
 }
 
-function stashInCache(cacheName, request, response) {
+let stashInCache = (cacheName, request, response) => {
     caches.open(cacheName)
         .then( cache => cache.put(request, response) );
 }
 
 // Limit the number of items in a specified cache.
-function trimCache(cacheName, maxItems) {
+let trimCache = (cacheName, maxItems) => {
     caches.open(cacheName)
         .then( cache => {
             cache.keys()
@@ -102,7 +94,7 @@ function trimCache(cacheName, maxItems) {
 }
 
 // Remove caches whose name is no longer valid
-function clearOldCaches() {
+let clearOldCaches = () => {
     return caches.keys()
         .then( keys => {
             return Promise.all(keys

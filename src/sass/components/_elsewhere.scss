@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-.social-icons {
+.elsewhere {
     max-height: $icon-size;
 
     @include media("screen", "<=medium") {
@@ -11,7 +11,7 @@
     }
 }
 
-.social-icons-list {
+.elsewhere__list {
     li {
         display: inline-block;
 

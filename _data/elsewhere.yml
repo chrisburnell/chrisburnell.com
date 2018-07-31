@@ -20,7 +20,7 @@
 
 - title: RSS
   url: '/feed.xml'
-  rel: 'me  external'
+  rel: 'alternate  me'
   svg: rss
 
 - title: PGP

@@ -1,6 +1,6 @@
-<nav class="social-icons" role="navigation">
-    <ul class="social-icons-list">
-        {% for link in site.data.social-icons %}
+<nav class="elsewhere" role="navigation">
+    <ul class="elsewhere__list">
+        {% for link in site.data.elsewhere %}
             {% assign svg = link.svg | default: 'feather' %}
             <li{% if link.hidden %} class="hidden"{% endif %}>
                 <a{% if link.class %} rel="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">

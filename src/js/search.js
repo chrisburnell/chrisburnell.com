@@ -16,7 +16,7 @@
     let resultsList = document.querySelector(".js-search-results-list");
     const ALLOW_EMPTY = false;
     const ALLOW_AS_YOU_TYPE = false;
-    const JSON_FEED_URL = "../search.json";
+    const JSON_FEED_URL = "/search.json";
     const SEARCH_PAGE_TEMPLATE = document.querySelector(".search-template--page") ? document.querySelector(".search-template--page").innerHTML.trim() : "";
     const SEARCH_POST_TEMPLATE = document.querySelector(".search-template--post") ? document.querySelector(".search-template--post").innerHTML.trim() : "";
 
@@ -86,23 +86,15 @@
     /// @return void
     ////
     let getSearchResults = () => {
-        let request = new XMLHttpRequest();
-
-        request.open("GET", JSON_FEED_URL, true);
-
-        request.onload = () => {
-            if (request.status >= 200 && request.status < 400) {
-                // Success!
-                let data = JSON.parse(request.responseText);
+        fetch(JSON_FEED_URL)
+            .then(helpers.checkFetchStatus)
+            .then(response => response.json())
+            .then(data => {
                 processData(data);
-            }
-        };
-
-        request.onerror = () => {
-            // There was a connection error of some sort
-        };
-
-        request.send();
+            })
+            .catch(error => {
+                console.log(`Search request status error: ${error.status} ${error.statusText}`);
+            });
     };
 
     ////

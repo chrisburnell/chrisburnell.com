@@ -94,44 +94,37 @@
     };
 
     const TYPES = ["articles", "books", "links", "notes", "pens", "talks"];
-    let data;
 
     if (document.querySelector(".sparkline")) {
         let showEndpoint = true;
         let sparklineColor = "hsla(0, 0%, 31%, 1)";
         let endpointColor = "hsla(357, 83%, 55%, 0.5)";
-        let request = new XMLHttpRequest();
-        request.open("GET", "/sparklines.json", true);
-        request.onload = () => {
-            if (request.status >= 200 && request.status < 400 && request.responseText.length > 0) {
-                // Success!
-                data = JSON.parse(request.responseText);
+        fetch("/sparklines.json")
+            .then(helpers.checkFetchStatus)
+            .then(response => response.json())
+            .then(data => {
                 for (let type of TYPES) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
                     }
                 }
-            } else {
-                console.log(`Sparkline request status error: ${request.status}`);
-            }
-        };
-        request.onerror = () => {
-            console.log("Sparkline request error");
-        };
-        request.send();
+            })
+            .catch(error => {
+                console.log(`Sparklines request status error: ${error.status} ${error.statusText}`);
+            });
     }
 
     let wave = "triangle"; // 'sine', 'square', 'sawtooth', 'triangle'
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
-    let keyIntervals = [2, 3, 2, 2, 3]; // pentatonic scale
+    let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
     let keyCount = 13;
-    let frequencies = [Math.pow(2, (keyStart - 49) / 12) * 440];
+    let frequencies = [2 ** (((keyStart - 49) / 12) * 440)];
 
     for (let count = 0; count < keyCount - 1; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(Math.pow(2, (keyStart - 49 + keyInterval) / 12) * 440);
+        frequencies.push(2 ** (((keyStart - 49 + keyInterval) / 12) * 440));
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {

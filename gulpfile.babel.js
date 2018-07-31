@@ -152,8 +152,7 @@ gulp.task("js-concat", ["js-prettify"], () => {
         .src([
             `${paths.js.src}/helpers.js`, // dependency
             `${paths.js.src}/**/*.js`,
-            `!${paths.js.src}/serviceworker.js`,
-            `!${paths.js.src}/vendors/svg4everybody.js`
+            `!${paths.js.src}/serviceworker.js`
         ])
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
