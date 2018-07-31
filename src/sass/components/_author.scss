@@ -14,12 +14,26 @@
         @include v(margin-top, large);
     }
 
-    .content:not(.content--full) + & {
+    @include media("screen", ">medium") {
+        float: none;
+        margin-left: 0;
+    }
+
+    :not(.stretch) > & {
         @include media("screen", ">medium") {
             float: none;
             grid-area: author;
-            margin-left: 0;
             margin-top: #{$measure-large * 2 + $font-size-alpha};
+            margin-left: 0;
+        }
+    }
+
+    .stretch > & {
+        @include media("screen", ">medium") {
+            width: 100%;
+            max-width: $wrapper-width-medium;
+            float: none;
+            margin: $measure-large auto 0;
         }
     }
 }

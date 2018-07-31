@@ -15,15 +15,15 @@
         flex-direction: column;
     }
 
-    &:not(.content--full) {
+    :not(.stretch) > & {
         @include media("screen", ">medium") {
-            max-width: $article-width;
+            max-width: $content-width;
             grid-area: content;
         }
     }
-}
 
-.content--full {
-    max-width: $wrapper-width-medium;
-    margin: 0 auto;
+    .stretch > & {
+        max-width: $wrapper-width-medium;
+        margin: 0 auto;
+    }
 }

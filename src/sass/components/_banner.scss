@@ -7,7 +7,7 @@
 // Can take two images, which are displayed with `srcset`
 .banner {
     @include border-radius;
-    width: $article-width;
+    width: $content-width;
     width: var(--article-width);
     @include v(margin-bottom, large);
 
