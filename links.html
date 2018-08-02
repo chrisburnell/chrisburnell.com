@@ -14,7 +14,7 @@ sparkline: links
 
 <p><em>There are {{ site.categories.link | size }} published Links.</em></p>
 
-<ol class="content-list" id="links" role="list">
+<ol class="content-list  h-feed" id="links" role="list">
     {% for page in site.categories.link %}
         {% include components/item-content-list.html %}
     {% endfor %}

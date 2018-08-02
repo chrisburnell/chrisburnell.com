@@ -19,18 +19,18 @@
                 {% elsif page.categories contains 'talk' %}
                     {% include content/svg.html type='bullhorn' %}
                 {% endif %}
-            <h3 class="delta  title  p-name">
+            <h3 class="delta  title  p-name{% if page.categories contains 'note' %}  hidden{% endif %}">
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title }}
                 {% endif %}
             </h3>
-            <p class="lede  e-content">
+            <p class="lede  p-summary">
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'article' %}
-                    Shared Articled
+                    Shared Article
                 {% elsif page.categories contains 'link' %}
                     Shared Link
                 {% elsif page.categories contains 'note' %}
@@ -43,7 +43,8 @@
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}
             </p>
-            <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+            <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
+        <a class="p-author  h-card  hidden" href="{{ site.baseurl | prepend: site.url }}" aria-hidden="true">{{ site.author.name }}</a>
     </article>
 </li>

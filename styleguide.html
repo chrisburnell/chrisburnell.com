@@ -595,7 +595,7 @@ formatDate: function(date) {
 
 {% include content/heading.html title='Content List' %}
 
-<ol class="content-list" role="list">
+<ol class="content-list  h-feed" role="list">
     {% for page in site.posts limit: 4 %}
         {% include components/item-content-list.html %}
     {% endfor %}

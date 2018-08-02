@@ -1,6 +1,6 @@
 <section class="widget  widget--latest-notes">
     {% include content/heading.html title='Latest Notes' href='/notes/' id='' %}
-    <ol class="content-list" role="list">
+    <ol class="content-list  h-feed" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
         {% assign current_path = page.path %}

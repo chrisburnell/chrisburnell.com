@@ -62,7 +62,7 @@
     .title {
         width: auto;
         display: inline-block;
-        margin-bottom: 0;
+        @include v(margin-bottom, small);
     }
     a:link {
         .title {
@@ -87,7 +87,6 @@
     .lede,
     .date {
         @include v(color, dove);
-        @include v(margin-top, small);
         @include v(font-size, small);
         @include v(font-weight, bold);
     }
@@ -98,14 +97,11 @@
 
     .date {
         width: 100%;
+        text-align: right;
 
         &::before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
-        }
-
-        @include media("screen", ">medium") {
-            text-align: right;
         }
     }
 

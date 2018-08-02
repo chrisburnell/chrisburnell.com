@@ -21,7 +21,7 @@ sparkline: pens
 
 <p><em>There are {{ site.categories.pen | size }} published Pens.</em></p>
 
-<ol class="content-list" id="pens" role="list">
+<ol class="content-list  h-feed" id="pens" role="list">
     {% for page in site.categories.pen %}
         {% include components/item-content-list.html %}
     {% endfor %}

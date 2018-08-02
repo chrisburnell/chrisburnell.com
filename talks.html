@@ -16,7 +16,7 @@ lede: All of my Talks.
 
 <p><em>There are {{ site.categories.talk | size }} published Talks.</em></p>
 
-<ol class="content-list" id="talks" role="list">
+<ol class="content-list  h-feed" id="talks" role="list">
     {% for page in site.categories.talk %}
         {% include components/item-content-list.html %}
     {% endfor %}

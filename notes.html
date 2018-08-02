@@ -14,7 +14,7 @@ sparkline: notes
 
 <p><em>There are {{ site.categories.note | size }} published Notes.</em></p>
 
-<ol class="content-list" id="notes" role="list">
+<ol class="content-list  h-feed" id="notes" role="list">
     {% for page in site.categories.note %}
         {% include components/item-content-list.html %}
     {% endfor %}

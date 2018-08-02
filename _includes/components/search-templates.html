@@ -1,23 +1,25 @@
 {% raw %}
 <template class="search-template--page">
     <li role="listitem">
-        <article role="article">
-            <a href="#">
-                <h3 class="delta  title">{{ title }}</h3>
-                <p class="lede">{{ lede }}</p>
+        <article class="h-entry" role="article">
+            <a class="u-url" href="#">
+                <h3 class="delta  title  p-name">{{ title }}</h3>
+                <p class="lede  p-summary">{{ lede }}</p>
             </a>
+            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.baseurl | prepend: site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
         </article>
     </li>
 </template>
 <template class="search-template--post">
     <li role="listitem">
-        <article role="article">
-            <a href="#">
+        <article class="h-entry" role="article">
+            <a class="u-url" href="#">
                 <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
-                <h3 class="delta  title">{{ title }}</h3>
-                <p class="lede">{{ lede }}</p>
+                <h3 class="delta  title  p-name">{{ title }}</h3>
+                <p class="lede  p-summary">{{ lede }}</p>
                 <time class="date  {{ date_class }}" datetime="{{ date_full }}">{{ date_friendly }}</time>
             </a>
+            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.baseurl | prepend: site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
         </article>
     </li>
 </template>
