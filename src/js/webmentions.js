@@ -161,7 +161,7 @@
         html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
 
         // AUTHOR URL
-        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, `<a href="${authorUrl}" rel="external noopener">↗</a>`);
+        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, `<a href="${authorUrl}" rel="external">↗</a>`);
 
         // AUTHOR
         html = helpers.injectContent(html, /{{\s*author\s*}}/, `${author}`);

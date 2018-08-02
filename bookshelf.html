@@ -19,7 +19,7 @@ sparkline: books
         <div class="p-summary">
             {% if page.cover %}
                 {% if page.link %}
-                    <a class="bookcover" href="{{ page.link }}" rel="external  noopener" title="">
+                    <a class="bookcover" href="{{ page.link }}" rel="external" title="">
                 {% endif %}
                 {% include components/bookcover.html %}
                 {% if page.link %}
@@ -31,9 +31,9 @@ sparkline: books
                 <div class="p-author">
                     {%- for author in page.authors -%}
                         {%- if page.authors_link and page.authors_link[1] -%}
-                            <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external  noopener">
+                            <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
                         {%- elsif page.authors_link -%}
-                            <a href="{{ page.authors_link }}" title="" rel="external  noopener">
+                            <a href="{{ page.authors_link }}" title="" rel="external">
                         {%- endif -%}
                         {{ author }}
                         {%- if page.authors_link -%}
@@ -62,7 +62,7 @@ sparkline: books
         <div class="p-summary">
             {% if page.cover %}
                 {% if page.link %}
-                    <a class="bookcover" href="{{ page.link }}" rel="external  noopener" title="">
+                    <a class="bookcover" href="{{ page.link }}" rel="external" title="">
                 {% endif %}
                 {% include components/bookcover.html %}
                 {% if page.link %}
@@ -74,9 +74,9 @@ sparkline: books
                 <div class="p-author">
                     {%- for author in page.authors -%}
                         {%- if page.authors_link and page.authors_link[1] -%}
-                            <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external  noopener">
+                            <a href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
                         {%- elsif page.authors_link -%}
-                            <a href="{{ page.authors_link }}" title="" rel="external  noopener">
+                            <a href="{{ page.authors_link }}" title="" rel="external">
                         {%- endif -%}
                         {{ author }}
                         {%- if page.authors_link -%}

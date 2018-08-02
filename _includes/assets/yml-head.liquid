@@ -36,6 +36,9 @@
     {% if page.categories %}
         page--{{ page.categories | first }}
     {% endif %}
+    {% if site.color_scheme %}
+        {{ site.color_scheme | downcase }}
+    {% endif %}
 {% endcapture %}
 {% assign body_class_array = body_class | split: ' ' | join: '  ' %}
 
