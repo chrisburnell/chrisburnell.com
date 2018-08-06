@@ -1,10 +1,10 @@
-<section class="widget  widget--latest-links">
-    {% include content/heading.html title='Latest Links' href='/links/' id='' %}
+<section class="widget  widget--latest-reviews">
+    {% include content/heading.html title='Latest Reviews' href='/reviews/' id='' %}
     <ol class="content-list  h-feed" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
         {% assign current_path = page.path %}
-        {% for page in site.categories.link %}
+        {% for page in site.categories.review %}
             {% unless current_list_count == max_list_count %}
                 {% unless page.path == current_path %}
                     {% assign current_list_count = current_list_count | plus: 1 %}
@@ -13,5 +13,5 @@
             {% endunless %}
         {% endfor %}
     </ol>
-    <a class="widget-related-anchor" href="/links/">All Shared Links</a>
+    <a class="widget-related-anchor" href="/reviews/">All Reviews</a>
 </section>

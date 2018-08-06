@@ -43,14 +43,20 @@ limit_y: 12
         {% endif %}
       {% endfor %}
     ],
-    "links": [
-      {% include components/sparklines-json.html target=site.categories.link limit_x=page.limit_x limit_y=page.limit_y %}
+    "bookmarks": [
+      {% include components/sparklines-json.html target=site.categories.bookmark limit_x=page.limit_x limit_y=page.limit_y %}
     ],
     "notes": [
       {% include components/sparklines-json.html target=site.categories.note limit_x=page.limit_x limit_y=page.limit_y %}
     ],
     "pens": [
       {% include components/sparklines-json.html target=site.categories.pen limit_x=page.limit_x limit_y=page.limit_y %}
+    ],
+    "recipes": [
+      {% include components/sparklines-json.html target=site.categories.recipe limit_x=page.limit_x limit_y=page.limit_y %}
+    ],
+    "reviews": [
+      {% include components/sparklines-json.html target=site.categories.review limit_x=page.limit_x limit_y=page.limit_y %}
     ],
     "talks": [
       {% include components/sparklines-json.html target=site.categories.talk limit_x=page.limit_x limit_y=page.limit_y %}

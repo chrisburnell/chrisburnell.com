@@ -5,11 +5,11 @@
 {% elsif page.categories contains 'article' %}
     {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
 {% elsif page.page_class contains 'books' %}
-    {% assign author_biography_closer = 'my taste in books has lost me any respect I may have had' %}
-{% elsif page.page_class contains 'links' %}
+    {% assign author_biography_closer = 'my taste in books has lost me any respect I may have had in your book (pun intended)' %}
+{% elsif page.page_class contains 'bookmarks' %}
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
-{% elsif page.categories contains 'link' %}
-    {% assign author_biography_closer = 'you’d really rather just be click that link' %}
+{% elsif page.categories contains 'bookmark' %}
+    {% assign author_biography_closer = 'you’d really rather just click that link' %}
 {% elsif page.page_class contains 'notes' %}
     {% assign author_biography_closer = 'my waffling and whining is doing your head in' %}
 {% elsif page.categories contains 'note' %}
@@ -22,6 +22,14 @@
     {% assign author_biography_closer = 'my talks make you long for your childhood, when the burdens of language comprehension laid on the shoulders of others' %}
 {% elsif page.categories contains 'talk' %}
     {% assign author_biography_closer = 'this talk sounds like broken nails on a chalkboard' %}
+{% elsif page.page_class contains 'recipes' %}
+    {% assign author_biography_closer = 'reading this page makes you smell burnt toast' %}
+{% elsif page.categories contains 'recipe' %}
+    {% assign author_biography_closer = 'you’d send this back' %}
+{% elsif page.page_class contains 'reviews' %}
+    {% assign author_biography_closer = 'my opinions are utterly meaningless to you' %}
+{% elsif page.categories contains 'review' %}
+    {% assign author_biography_closer = 'you think my opinion is stupid and want to see what other stupid things I think' %}
 {% elsif page.page_class contains 'tags' %}
     {% assign author_biography_closer = 'my whimsical articles and pens don’t capture your child-like wonder' %}
 {% elsif page.page_class contains 'search' %}

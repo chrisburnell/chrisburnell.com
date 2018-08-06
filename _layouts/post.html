@@ -1,8 +1,9 @@
 {% include components/head.html %}
 {% include components/header.html %}
+{%- capture h -%}h-{% if page.categories contains 'review' %}review{% else %}entry{% endif %}{%- endcapture -%}
 
 
-<main class="wrap  h-entry" role="main">
+<main class="wrap  {{ h }}" role="main">
     <article class="content" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">

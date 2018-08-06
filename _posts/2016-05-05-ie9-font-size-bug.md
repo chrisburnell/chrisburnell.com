@@ -1,5 +1,5 @@
 ---
-categories: link
+categories: bookmark
 
 date: 2016-05-05 01:00:00
 

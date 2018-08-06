@@ -93,7 +93,7 @@
         playNotes();
     };
 
-    const TYPES = ["articles", "books", "links", "notes", "pens", "talks"];
+    const TYPES = ["articles", "bookmarks", "books", "notes", "pens", "recipes", "reviews", "talks"];
     let data;
 
     if (document.querySelector(".sparkline")) {

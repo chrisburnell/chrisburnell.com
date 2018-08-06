@@ -34,7 +34,7 @@ urls:
   notist:             https://noti.st/chrisburnell
   rss:                /feed.xml
   rss_articles:       /feed-articles.xml
-  rss_links:          /feed-links.xml
+  rss_bookmarks:      /feed-bookmarks.xml
   rss_notes:          /feed-notes.xml
   rss_pens:           /feed-pens.xml
   rss_talks:          /feed-talks.xml

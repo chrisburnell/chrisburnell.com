@@ -1,0 +1,29 @@
+---
+page_class: page--reviews
+searchable: no-content
+
+redirect_from:
+- /review/index.html
+
+title: Reviews
+lede: All of my Reviews.
+
+sparkline: reviews
+---
+
+
+<p><em>There are {{ site.categories.review | size }} published Reviews.</em></p>
+
+<ol class="content-list  h-feed" id="reviews" role="list">
+    {% for page in site.categories.review %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='reviews' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='reviews' %}

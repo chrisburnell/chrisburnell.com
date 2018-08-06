@@ -7,10 +7,10 @@ searchable: no-content
 <dl>
     <dt><h2 class="delta"><a href="/articles/">Articles</a></h2></dt>
     <dd><canvas id="sparkline-articles" class="sparkline" width="120" height="22"></canvas></dd>
+    <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks</a></h2></dt>
+    <dd><canvas id="sparkline-bookmarks" class="sparkline" width="120" height="22"></canvas></dd>
     <dt><h2 class="delta"><a href="/notes/">Notes</a></h2></dt>
     <dd><canvas id="sparkline-notes" class="sparkline" width="120" height="22"></canvas></dd>
-    <dt><h2 class="delta"><a href="/links/">Links</a></h2></dt>
-    <dd><canvas id="sparkline-links" class="sparkline" width="120" height="22"></canvas></dd>
     <dt><h2 class="delta"><a href="/pens/">Pens</a></h2></dt>
     <dd><canvas id="sparkline-pens" class="sparkline" width="120" height="22"></canvas></dd>
 </dl>
@@ -23,4 +23,4 @@ searchable: no-content
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' exclude='recipes talks' %}
+{% include components/buttons-list.html type='archives' exclude='recipes reviews talks' %}

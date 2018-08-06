@@ -2,6 +2,10 @@
   type: articles
   icon: 'article'
 
+- title: Bookmarks Archive
+  type: bookmarks
+  icon: 'link'
+
 - title: Notes Archive
   type: notes
   icon: 'feather'
@@ -10,12 +14,12 @@
   type: pens
   icon: 'codepen'
 
-- title: Links Archive
-  type: links
-  icon: 'link'
-
 - title: Recipes Archive
   type: recipes
+  icon: 'article'
+
+- title: Reviews Archive
+  type: reviews
   icon: 'article'
 
 - title: Talks Archive

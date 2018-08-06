@@ -8,6 +8,11 @@
   url: '/feed-articles.xml'
   icon: 'rss'
 
+- title: Subscribe to Bookmarks
+  rel: 'alternate'
+  url: '/feed-bookmarks.xml'
+  icon: 'rss'
+
 - title: Subscribe to Notes
   rel: 'alternate'
   url: '/feed-notes.xml'
@@ -18,9 +23,9 @@
   url: '/feed-pens.xml'
   icon: 'rss'
 
-- title: Subscribe to Links
+- title: Subscribe to Reviews
   rel: 'alternate'
-  url: '/feed-links.xml'
+  url: '/feed-reviews.xml'
   icon: 'rss'
 
 - title: Subscribe to Recipes

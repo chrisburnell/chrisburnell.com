@@ -13,7 +13,7 @@ sitemap:
 'use strict';
 
 
-const VERSION = 'v2.0.4';
+const VERSION = 'v2.0.5';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
@@ -52,13 +52,13 @@ const OFFLINE_PAGES = [
     {% for page in site.categories.article limit: 2 %}
         '{{ page.url }}',
     {% endfor %}
+    {% for page in site.categories.bookmark limit: 2 %}
+        '{{ page.url }}',
+    {% endfor %}
     {% for page in site.categories.note limit: 2 %}
         '{{ page.url }}',
     {% endfor %}
     {% for page in site.categories.pen limit: 2 %}
-        '{{ page.url }}',
-    {% endfor %}
-    {% for page in site.categories.link limit: 2 %}
         '{{ page.url }}'{% unless forloop.last %},{% endunless %}
     {% endfor %}
 ];

@@ -1,0 +1,31 @@
+---
+page_class: page--bookmarks
+searchable: no-content
+
+redirect_from:
+- /bookmark/index.html
+- /link/index.html
+- /links/index.html
+
+title: Bookmarks
+lede: All of my Bookmarks.
+
+sparkline: bookmarks
+---
+
+
+<p><em>There are {{ site.categories.bookmark | size }} published Bookmarks.</em></p>
+
+<ol class="content-list  h-feed" id="bookmarks" role="list">
+    {% for page in site.categories.bookmark %}
+        {% include components/item-content-list.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='bookmarks' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='bookmarks' %}

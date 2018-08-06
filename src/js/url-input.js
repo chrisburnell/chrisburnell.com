@@ -2,7 +2,7 @@
  * Add `http://` to URL input fields on blur or when Enter is pressed
  */
 
-(function() {
+(() => {
     "use strict";
 
     let addDefaultScheme = target => {

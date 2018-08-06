@@ -8,13 +8,15 @@
         <a class="u-url" href="{{ page.url }}">
                 {% if page.categories contains 'article' %}
                     {% include content/svg.html type='article' %}
-                {% elsif page.categories contains 'link' %}
+                {% elsif page.categories contains 'bookmark' %}
                     {% include content/svg.html type='link' %}
                 {% elsif page.categories contains 'note' %}
                     {% include content/svg.html type='feather' %}
                 {% elsif page.categories contains 'pen' %}
                     {% include content/svg.html type='codepen' %}
                 {% elsif page.categories contains 'recipe' %}
+                    {% include content/svg.html type='article' %}
+                {% elsif page.categories contains 'review' %}
                     {% include content/svg.html type='article' %}
                 {% elsif page.categories contains 'talk' %}
                     {% include content/svg.html type='bullhorn' %}
@@ -31,14 +33,16 @@
                     {{ page.lede | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'article' %}
                     Shared Article
-                {% elsif page.categories contains 'link' %}
-                    Shared Link
+                {% elsif page.categories contains 'bookmark' %}
+                    Bookmark
                 {% elsif page.categories contains 'note' %}
                     {{ page.content | markdownify | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'pen' %}
                     Featured Pen
                 {% elsif page.categories contains 'recipe' %}
                     Recipe
+                {% elsif page.categories contains 'review' %}
+                    Review
                 {% elsif page.categories contains 'talk' %}
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% endif %}
