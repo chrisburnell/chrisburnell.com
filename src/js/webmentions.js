@@ -39,7 +39,9 @@
                         .map(type => {
                             return responses[type].length;
                         })
-                        .reduce((p, c) => p + c, 0);
+                        .reduce((sum, count) => {
+                            sum + count, 0
+                        });
                     if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                         for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                             webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
