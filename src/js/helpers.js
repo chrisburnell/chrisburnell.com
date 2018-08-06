@@ -102,11 +102,10 @@ helpers = {
     /// @return {Object} response
     /// @throw {Object} error
     ////
-    checkFetchStatus: response => {
+    getFetchResponse: response => {
         if (response.status >= 200 && response.status < 300) {
             return response;
-        }
-        else {
+        } else {
             let error = new Error(response.statusText);
             error.response = response;
             throw error;
@@ -119,7 +118,18 @@ helpers = {
     /// @param {Number} keyInterval [0]
     /// @return {Number} frequency
     ////
-    getFrequency: (keyStart = 49, keyInterval = 0) => {
-        return (2 ** ((keyStart - 49 + keyInterval) / 12) * 440);
+    getFrequencyFromKeys: (keyStart = 49, keyInterval = 0) => {
+        return 2 ** ((keyStart - 49 + keyInterval) / 12) * 440;
+    },
+
+    ////
+    /// Return a frequency based on starting key and interval
+    /// @param {Number} keyStart [49]
+    /// @param {Number} keyInterval [0]
+    /// @return {Number} frequency
+    ////
+    padWithZeroes: (number, integersMax = 2) => {
+        const [integers, decimals] = number.toString().split(".");
+        return integers.toString().padStart(integersMax, "0") + (decimals ? `.${decimals}` : "");
     }
 };

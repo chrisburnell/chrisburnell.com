@@ -6,7 +6,7 @@
                 <h3 class="delta  title  p-name">{{ title }}</h3>
                 <p class="lede  p-summary">{{ lede }}</p>
             </a>
-            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.baseurl | prepend: site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
+            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
         </article>
     </li>
 </template>
@@ -19,7 +19,7 @@
                 <p class="lede  p-summary">{{ lede }}</p>
                 <time class="date  {{ date_class }}" datetime="{{ date_full }}">{{ date_friendly }}</time>
             </a>
-            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.baseurl | prepend: site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
+            {% endraw %}<a class="p-author  h-card  hidden" href="{{ site.url }}" aria-hidden="true">{{ site.author.name }}</a>{% raw %}
         </article>
     </li>
 </template>

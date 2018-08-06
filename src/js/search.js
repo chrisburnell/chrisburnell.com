@@ -87,7 +87,7 @@
     ////
     let getSearchResults = () => {
         fetch(JSON_FEED_URL)
-            .then(helpers.checkFetchStatus)
+            .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(data => {
                 processData(data);

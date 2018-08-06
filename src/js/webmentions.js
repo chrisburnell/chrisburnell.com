@@ -28,7 +28,7 @@
 
     let loadWebmentions = () => {
         fetch(`https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`)
-            .then(helpers.checkFetchStatus)
+            .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(data => {
                 if (webmentionsLoaded === false) {

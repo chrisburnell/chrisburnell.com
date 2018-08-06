@@ -101,7 +101,7 @@
         let sparklineColor = "hsla(0, 0%, 31%, 1)";
         let endpointColor = "hsla(357, 83%, 55%, 0.5)";
         fetch("/sparklines.json")
-            .then(helpers.checkFetchStatus)
+            .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(response => {
                 data = response;
@@ -122,11 +122,11 @@
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
     let keyCount = 12;
-    let frequencies = [helpers.getFrequency(keyStart)];
+    let frequencies = [helpers.getFrequencyFromKeys(keyStart)];
 
     for (let count = 0; count < keyCount; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(helpers.getFrequency(keyStart, keyInterval));
+        frequencies.push(helpers.getFrequencyFromKeys(keyStart, keyInterval));
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {

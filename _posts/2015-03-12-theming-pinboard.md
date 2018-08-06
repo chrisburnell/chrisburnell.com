@@ -230,7 +230,7 @@ html {
 
 {% include content/code-toggle-bottom.html %}
 
-- modified the colour palette to match [my styleguide]({{ site.baseurl | prepend: site.url }}/style-guide)
+- modified the colour palette to match [my styleguide]({{ '/styleguide' | absolute_url }})
 - implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 

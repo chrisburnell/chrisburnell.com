@@ -39,6 +39,7 @@ urls:
   rss_pens:           /feed-pens.xml
   rss_talks:          /feed-talks.xml
   rss_recipes:        /feed-recipes.xml
+  rss_reviews:        /feed-reviews.xml
   speakerdeck:        https://speakerdeck.com/chrisburnell
   stateofthebrowser:  https://stateofthebrowser.com
   spotify:            https://open.spotify.com/user/1128245857
@@ -55,7 +56,7 @@ codepen:
     default: 119
     tabfree: 8863
 
-url:      https://chrisburnell.com
+url:      https://chrisburnell.com/
 baseurl:  ''
 shorturl: https://repc.co/
 
