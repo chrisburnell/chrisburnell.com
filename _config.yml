@@ -59,6 +59,7 @@ codepen:
 url:      https://chrisburnell.com
 baseurl:  ''
 shorturl: https://repc.co/
+live_url: https://chrisburnell.com
 
 detach: false
 host: 127.0.0.1

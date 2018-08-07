@@ -70,8 +70,7 @@
                                                          (<a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
                                                          <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
                                                          <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>)
-                                                     </small>
-                                                     <a href="https://brid.gy/publish/twitter" aria-hidden="true"></a>{% endcapture %}
+                                                     </small>{% endcapture %}
                 {% endif %}
             {% endfor %}
             {% if page.codepen_slug %}
@@ -115,9 +114,6 @@
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_twitter }}
                 {% assign syndication_count = syndication_count | plus: 1 %}
-            {% endif %}
-            {% if page.categories contains 'note' %}
-                <a href="https://brid.gy/publish/twitter" aria-hidden="true"></a>
             {% endif %}
         </div>
     {% endif %}

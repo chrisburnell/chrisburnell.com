@@ -4,11 +4,11 @@
             {% assign svg = link.svg | default: 'feather' %}
             <li{% if link.hidden %} class="hidden"{% endif %}>
                 <a{% if link.class %} rel="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
-                    {% if link.svg %}
+                    {%- if link.svg -%}
                         {% include content/svg.html type=svg title=link.title %}
-                    {% else %}
+                    {%- else -%}
                         {{ link.content | default: link.title }}
-                    {% endif %}
+                    {%- endif -%}
                 </a>
             </li>
         {% endfor %}

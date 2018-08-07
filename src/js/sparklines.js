@@ -126,7 +126,7 @@
 
     for (let count = 0; count < keyCount; count++) {
         keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-        frequencies.push(helpers.getFrequencyFromKeys(keyStart, keyInterval));
+        frequencies.push(helpers.getFrequencyFromKeys(keyStart + keyInterval));
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {

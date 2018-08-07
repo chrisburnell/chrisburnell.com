@@ -44,7 +44,7 @@ sparkline: books
                         <span>, </span><data value="{{ page.year }}">{{ page.year }}</data>
                     {%- endif -%}
                 </div>
-                <data class="p-uid" value="{{ page.isbn }} "aria-hidden="true">{{ page.isbn }}</data>
+                <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
                 <strong><data class="p-read-status" value="to-read">To Read</data></strong>
             </div>
         </div>
@@ -87,15 +87,15 @@ sparkline: books
                         <span>, </span><data value="{{ page.year }}">{{ page.year }}</data>
                     {%- endif -%}
                 </div>
-                <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true">{{ page.isbn }}</data>
+                <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
             </div>
             {% if page.rating %}
                 <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
             {% endif %}
-            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} aria-hidden="true"{% endif %}>{{ read_status | capitalize }}</data></strong>
-            <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" aria-hidden="true">{{ page.date_start | date: '%Y-%m-%d' }}</data>
+            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{{ read_status | capitalize }}</data></strong>
+            <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
             {% if page.date_end %}
-                <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" aria-hidden="true">{{ page.date_end | date: '%Y-%m-%d' }}</data>
+                <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
             {% endif %}
         </div>
     </li>

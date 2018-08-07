@@ -115,11 +115,10 @@ helpers = {
     ////
     /// Return a frequency based on starting key and interval
     /// @param {Number} keyStart [49]
-    /// @param {Number} keyInterval [0]
     /// @return {Number} frequency
     ////
-    getFrequencyFromKeys: (keyStart = 49, keyInterval = 0) => {
-        return 2 ** ((keyStart - 49 + keyInterval) / 12) * 440;
+    getFrequencyFromKeys: (key = 49) => {
+        return 2 ** ((key - 49) / 12) * 440;
     },
 
     ////

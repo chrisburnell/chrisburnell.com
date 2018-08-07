@@ -16,13 +16,9 @@
 }
 
 // Hide elements visually
-[hidden],
-[aria-hidden="true"],
+[hidden]:not([hidden="false"]),
 .hidden {
-    &:not([href]),
-    &[href]:not(:focus):not(:active) {
-        @include hidden;
-    }
+    @include hidden;
 }
 
 // Hyphenate any looooooooooooooooooooo-

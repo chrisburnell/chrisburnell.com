@@ -24,7 +24,7 @@
 
         codeToggleInput.checked = true;
         codeToggle.setAttribute("aria-expanded", "true");
-        codeToggleLabel.setAttribute("aria-hidden", "true");
+        codeToggleLabel.setAttribute("hidden", true);
         codeToggleLabel.removeEventListener("click", () => {});
         codeToggleButton.setAttribute("aria-pressed", "true");
 

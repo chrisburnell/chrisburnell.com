@@ -10,7 +10,6 @@
         ? document
               .querySelector('link[rel="canonical"]')
               .getAttribute("href")
-              .replace("http://localhost:4000", "https://chrisburnell.com")
         : null;
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
@@ -39,14 +38,12 @@
                         .map(type => {
                             return responses[type].length;
                         })
-                        .reduce((sum, count) => {
-                            sum + count;
-                        }, 0);
+                        .reduce((sum, count) => sum + count, 0);
                     if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                         for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
                             webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
                         }
-                        WEBMENTIONS_RESPONSES.setAttribute("aria-hidden", "false");
+                        WEBMENTIONS_RESPONSES.removeAttribute("hidden");
                         // prevent hovering the button from continuing to fire
                         WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
                     }
@@ -63,13 +60,13 @@
             loadWebmentions();
         }
         // only if the button still exists should we hide the button
-        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute("aria-hidden") === "false") {
+        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute("hidden") !== "true") {
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
-            WEBMENTIONS_BUTTON.setAttribute("aria-hidden", "true");
+            WEBMENTIONS_BUTTON.parentNode.setAttribute("hidden", true);
             WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
         }
-        WEBMENTIONS_SECTION.setAttribute("aria-hidden", "false");
+        WEBMENTIONS_SECTION.removeAttribute("hidden");
     };
 
     let checkVisibility = (entries, observer) => {
@@ -110,8 +107,8 @@
                 }
                 webmentionsLikeContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
             }
-            webmentionsLikeLabel.setAttribute("aria-hidden", "false");
-            webmentionsLikeContent.setAttribute("aria-hidden", "false");
+            webmentionsLikeLabel.removeAttribute("hidden");
+            webmentionsLikeContent.removeAttribute("hidden");
         }
 
         if (!!responses.repost.length) {
@@ -122,8 +119,8 @@
                 }
                 webmentionsRepostContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
             }
-            webmentionsRepostLabel.setAttribute("aria-hidden", "false");
-            webmentionsRepostContent.setAttribute("aria-hidden", "false");
+            webmentionsRepostLabel.removeAttribute("hidden");
+            webmentionsRepostContent.removeAttribute("hidden");
         }
 
         if (!!responses.reply.length) {
@@ -131,8 +128,8 @@
             for (let response of responses.reply) {
                 webmentionsReplyContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_REPLY, response);
             }
-            webmentionsReplyLabel.setAttribute("aria-hidden", "false");
-            webmentionsReplyContent.parentNode.setAttribute("aria-hidden", "false");
+            webmentionsReplyLabel.removeAttribute("hidden");
+            webmentionsReplyContent.parentNode.removeAttribute("hidden");
         }
     };
 
