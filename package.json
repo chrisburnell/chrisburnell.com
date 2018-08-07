@@ -36,6 +36,9 @@
     "gulp-webp": "^3.0.0",
     "prettier": "^1.13.4"
   },
+  "devDependencies": {
+    "gulp-cli": "2.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:chrisburnell/chrisburnell.com.git"
