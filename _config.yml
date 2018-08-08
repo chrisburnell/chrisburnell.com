@@ -82,6 +82,8 @@ emptyArray: []
 collections:
   books:
     output: false
+  music:
+    output: false
 
 defaults:
 - scope:

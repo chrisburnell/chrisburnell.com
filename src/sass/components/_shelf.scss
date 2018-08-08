@@ -1,10 +1,11 @@
 ////
-/// Bookshelf
+/// Shelf
 /// @group components
 /// @link https://chrisburnell.com/bookshelf
+/// @link https://chrisburnell.com/music
 ////
 
-.bookshelf {
+.shelf {
     display: grid;
     grid-template-columns: 1fr;
     @include v(grid-gap, medium);
@@ -20,7 +21,7 @@
         @include v(margin-bottom, medium);
     }
 
-    .bookcover {
+    .cover {
         display: inline-block;
         margin: 0 0 $measure-small;
         margin: 0 0 var(--measure-small);
@@ -30,6 +31,10 @@
         &:focus,
         &:active {
             background-color: $color-transparent;
+            outline: $border-width-thin $border-style-default $color-raven;
+            outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+            outline-offset: $border-width-thin;
+            outline-offset: var(--border-width-thin);
         }
     }
 

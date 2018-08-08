@@ -93,7 +93,7 @@
                 processData(data);
             })
             .catch(error => {
-                console.log(`Search request status error: ${error.status} ${error.statusText}`);
+                console.error(`Search request status error: ${error.status} ${error.statusText}`);
             });
     };
 

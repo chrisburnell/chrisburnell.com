@@ -46,6 +46,36 @@ limit_y: 12
     "bookmarks": [
       {% include components/sparklines-json.html target=site.categories.bookmark limit_x=page.limit_x limit_y=page.limit_y %}
     ],
+    "music": [
+      {% assign music = site.music | sort: 'year' %}
+      {% assign last = music | reverse | limit: page.limit_x | last %}
+      {% assign starting_year = last.date_end | date: '%Y' | plus: 0 %}
+      {% assign starting_month = last.date_end | date: '%-m' | plus: 0 %}
+      {% for tracking_year in (starting_year..ending_year) %}
+        {% unless forloop.first %}{% assign starting_month = 1 %}{% endunless %}
+        {% assign outside_first = forloop.first %}
+        {% for tracking_month in (starting_month..12) %}
+          {% if tracking_year == ending_year and tracking_month > ending_month %}
+            {% break %}
+          {% else %}
+            {% unless outside_first and forloop.first %},{% endunless %}
+          {% endif %}
+          {% assign count = 0 %}
+          {% for page in music reversed %}
+            {% assign year = page.date_end | date: '%Y' | plus: 0 %}
+            {% assign month = page.date_end | date: '%-m' | plus: 0 %}
+            {% if year == tracking_year and month == tracking_month %}
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if count > page.limit_y %}{% assign count = page.limit_y %}{% endif %}
+          {{ count }}
+        {% endfor %}
+        {% if tracking_year == ending_year and tracking_month > ending_month %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    ],
     "notes": [
       {% include components/sparklines-json.html target=site.categories.note limit_x=page.limit_x limit_y=page.limit_y %}
     ],

@@ -136,7 +136,7 @@
 
         & > %image-elements {
             animation: peek $transition-duration-long $transition-function $transition-duration-default $animation-fill-mode;
-            animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-default) var(--animation-fill-mode);
+            animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-long) var(--animation-fill-mode);
 
             @at-root {
                 @keyframes peek {
@@ -150,7 +150,7 @@
                         transform: translateY(-#{$avatar-size * 0.45});
                     }
                     100% {
-                        transform: translateY(-#{$avatar-size * 0.6});
+                        transform: rotateZ(-#{$rotation-default * 2}) translateX(-#{$avatar-size * 0.2}) translateY(-#{$avatar-size * 0.6});
                     }
                 }
             }

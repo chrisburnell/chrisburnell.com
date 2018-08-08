@@ -33,7 +33,6 @@
                 c.height = c.height * window.devicePixelRatio;
                 c.style.width = `${c.width / window.devicePixelRatio}px`;
                 c.style.height = `${c.height / window.devicePixelRatio}px`;
-                c.style.display = "inline-block";
                 ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
             }
             ctx.clearRect(0, 0, width, height);
@@ -112,7 +111,7 @@
                 }
             })
             .catch(error => {
-                console.log(`Sparklines request status error: ${error.status} ${error.statusText}`);
+                console.error(`Sparklines request status error: ${error.status} ${error.statusText}`);
             });
     }
 

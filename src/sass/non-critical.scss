@@ -14,6 +14,7 @@
 @import "abstracts/functions";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
+@import "abstracts/css-variables";
 
 /// VENDORS
 @import "vendors/include-media";
@@ -57,7 +58,7 @@
 @import "components/code";
 @import "components/media";
 @import "components/sparkline";
-@import "components/bookshelf";
+@import "components/shelf";
 @import "components/network";
 @import "components/ingredients";
 @import "components/print";

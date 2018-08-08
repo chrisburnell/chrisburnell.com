@@ -62,7 +62,7 @@ gulp.task("css-prettify", () => {
 // Compile CSS from Sass
 gulp.task("css-main", ["css-prettify"], () => {
     return gulp
-        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/main-without-variables.scss`, `${paths.css.src}/non-critical.scss`])
+        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
         .pipe(newer(`${paths.css.dest}`))
         .pipe(sourcemaps.init())

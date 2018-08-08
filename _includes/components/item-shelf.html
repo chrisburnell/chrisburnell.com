@@ -1,0 +1,65 @@
+{%- comment -%}
+
+  Consolidate markup for Content List Items.
+
+{%- endcomment -%}
+{%- assign date = page.date | default: page.year -%}
+{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+{%- assign rating_half = page.rating | default: 0 | at_least: 0 | at_most: 5 | modulo: 1 -%}
+{%- assign read_status = 'to-read' -%}
+{%- if page.date_end or page.upc -%}
+    {%- assign read_status = 'finished' -%}
+{%- elsif page.date_start -%}
+    {%- assign read_status = 'reading' -%}
+{%- endif -%}
+<li role="listitem" class="h-review">
+    <div class="p-summary">
+        {% if page.cover %}
+            {% if page.link %}
+                <a class="cover" href="{{ page.link }}" rel="external" title="">
+            {% endif %}
+            {% include components/cover.html %}
+            {% if page.link %}
+                </a>
+            {% endif %}
+        {% endif %}
+        <div class="p-read-of  h-cite">
+            <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+            <div>
+                {% assign authors = page.authors | split: ', ' | uniq | sort %}
+                {%- for author in authors -%}
+                    {% unless forloop.first %}, {% endunless %}
+                    {%- if page.authors_link and page.authors_link[1] -%}
+                        <a class="p-author  h-card" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
+                    {%- elsif page.authors_link -%}
+                        <a class="p-author  h-card" href="{{ page.authors_link }}" title="" rel="external">
+                    {%- endif -%}
+                    {{ author | strip }}
+                    {%- if page.authors_link -%}
+                        </a>
+                    {%- endif -%}
+                {%- endfor -%}
+                {%- if date -%}
+                    <span> (<data value="{{ date }}">{{ date | split: '-' | first }}</data>)</span>
+                {%- endif -%}
+            </div>
+            {% if page.isbn %}
+                <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
+            {% endif %}
+        </div>
+        {% if page.rating %}
+            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
+            <span class="p-worst" hidden>1</span>
+            <span class="p-best" hidden>5</span>
+        {% endif %}
+        {% if page.isbn %}
+            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include content/titleize.html title=read_status %}</data></strong>
+        {% endif %}
+        {% if page.start_date %}
+            <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
+        {% endif %}
+        {% if page.date_end %}
+            <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
+        {% endif %}
+    </div>
+</li>

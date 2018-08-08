@@ -1,18 +1,16 @@
 ---
 page_class: page--music
-sitemap:
-  priority: 1.0
 
 title: Music
-lede: A selection of my favourite music.
+lede: Reviewing albums one-by-one.
+
+sparkline: music
 ---
 
 
-<figure>
-    <div class="media  media--4-by-3">
-        <iframe src="https://open.spotify.com/embed/user/1128245857/playlist/5dTQ2Ek7wJQJM6n2rjuPUS"></iframe>
-    </div>
-    <figcaption>
-        <p>There are more tracks in the playlist than can be embedded—<a rel="external  me  publisher" href="https://open.spotify.com/user/1128245857/playlist/5dTQ2Ek7wJQJM6n2rjuPUS">check out the playlist on Spotify</a>.</p>
-    </figcaption>
-</figure>
+<ol class="shelf  h-feed" id="music" role="list">
+    {% assign music = site.music | date_sort %}
+    {% for page in music reversed %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
