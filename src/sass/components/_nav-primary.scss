@@ -25,11 +25,11 @@
 
         & + li {
             @include media("screen", "<=small") {
-                margin-left: 0.25em;
+                margin-left: #{$measure-one-relative / 4};
             }
 
             @include media("screen", ">small", "<=medium") {
-                margin-left: 0.5em;
+                margin-left: #{$measure-one-relative / 2};
             }
 
             @include media("screen", ">medium") {
@@ -72,7 +72,7 @@
 .nav-primary-list a:active,
 %nav-primary-anchor {
     @include v(color, kaiser);
-    padding-bottom: 0.5rem;
+    padding-bottom: #{$measure-one / 2};
     @include v(border-bottom-width, default);
 }
 @each $class in $navigation-classes {

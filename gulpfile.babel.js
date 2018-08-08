@@ -9,6 +9,7 @@
 let gulp = require("gulp");
 let babel = require("gulp-babel");
 let concat = require("gulp-concat");
+let csso = require("gulp-csso");
 let imagemin = require("gulp-imagemin");
 let newer = require("gulp-newer");
 let plumber = require("gulp-plumber");
@@ -22,7 +23,6 @@ let webp = require("gulp-webp");
 
 // Define other objects
 let autoprefixer = require("autoprefixer");
-let cssnano = require("cssnano");
 
 // Define paths
 const paths = {
@@ -65,13 +65,11 @@ gulp.task("css-main", ["css-prettify"], () => {
         .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
         .pipe(newer(`${paths.css.dest}`))
-        .pipe(sourcemaps.init())
         .pipe(
             sass({
                 errLogToConsole: true,
                 indentWidth: 4,
-                outputStyle: "expanded",
-                sourceMap: paths.css.src
+                outputStyle: "expanded"
             })
         )
         .pipe(postcss([autoprefixer()]))
@@ -82,13 +80,14 @@ gulp.task("css-main", ["css-prettify"], () => {
             })
         )
         .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(postcss([cssnano()]))
+        .pipe(csso({
+            restructure: false
+        }))
         .pipe(
             rename({
                 suffix: ".min"
             })
         )
-        .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(`${paths.css.dest}/`));
 });
 
@@ -113,7 +112,9 @@ gulp.task("css-critical", () => {
             })
         )
         .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(postcss([cssnano()]))
+        .pipe(csso({
+            restructure: false
+        }))
         .pipe(
             rename({
                 suffix: ".min"
