@@ -92,7 +92,6 @@
         playNotes();
     };
 
-    const TYPES = ["articles", "bookmarks", "books", "notes", "pens", "recipes", "reviews", "talks"];
     let data;
 
     if (document.querySelector(".sparkline")) {
@@ -104,7 +103,7 @@
             .then(response => response.json())
             .then(response => {
                 data = response;
-                for (let type of TYPES) {
+                for (let type in data) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
                     }

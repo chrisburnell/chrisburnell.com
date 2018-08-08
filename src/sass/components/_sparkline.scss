@@ -7,8 +7,9 @@
 .sparkline {
     @include non-selectable;
     @include transition;
-    width: 10rem; // defaults which are overriden by inline styles, preferably
-    height: 1.5rem; // defaults which are overriden by inline styles, preferably
+    // !important here prevents jumping when sparklines load
+    width: 120px !important;
+    height: 22px !important;
 
     &:hover {
         @include v(background-color, highlight);

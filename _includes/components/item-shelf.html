@@ -3,6 +3,11 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
+{%- if page.link contains 'amazon' -%}
+    {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Amazon' -%}
+{%- elsif page.link contains 'spotify' %}
+    {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Spotify' -%}
+{%- endif -%}
 {%- assign date = page.date | default: page.year -%}
 {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
 {%- assign rating_half = page.rating | default: 0 | at_least: 0 | at_most: 5 | modulo: 1 -%}
@@ -16,7 +21,7 @@
     <div class="p-summary">
         {% if page.cover %}
             {% if page.link %}
-                <a class="cover" href="{{ page.link }}" rel="external" title="">
+                <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
             {% endif %}
             {% include components/cover.html %}
             {% if page.link %}
