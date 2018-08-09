@@ -8,16 +8,18 @@
 @import "abstracts/functions";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
+@import "abstracts/css-variables";
 
 /// VENDORS
 @import "vendors/include-media";
 
 /// BASE
-@import "base/fonts";
 @import "base/page";
-@import "base/anchor";
 
 /// LAYOUT
 @import "layout/wrap";
-@import "layout/main";
 @import "layout/header";
+
+/// COMPONENTS
+@import "components/logo";
+@import "components/nav-primary";

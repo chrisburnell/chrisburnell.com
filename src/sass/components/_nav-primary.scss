@@ -52,7 +52,7 @@
         margin-bottom: var(--border-width-default);
         @include v(font-weight, bold);
         @include v(line-height, small);
-        text-decoration: none;
+        text-decoration: none !important;
 
         &:active {
             @include v(background-color, transparent);
@@ -60,8 +60,8 @@
         }
 
         @include media("screen", "<=small") {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
+            padding-left:  #{$measure-one / 2};
+            padding-right: #{$measure-one / 2};
         }
     }
 }

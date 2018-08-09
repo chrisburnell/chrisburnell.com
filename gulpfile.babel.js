@@ -80,9 +80,7 @@ gulp.task("css-main", ["css-prettify"], () => {
             })
         )
         .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(csso({
-            restructure: false
-        }))
+        .pipe(csso())
         .pipe(
             rename({
                 suffix: ".min"
@@ -112,9 +110,7 @@ gulp.task("css-critical", () => {
             })
         )
         .pipe(gulp.dest(`${paths.css.dest}/`))
-        .pipe(csso({
-            restructure: false
-        }))
+        .pipe(csso())
         .pipe(
             rename({
                 suffix: ".min"

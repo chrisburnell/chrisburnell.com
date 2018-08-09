@@ -38,7 +38,7 @@ kbd,
 mark,
 samp {
     @include border-radius(thin);
-    padding: 0.25em;
+    padding: #{$measure-one-relative / 4};
     @include v(line-height, medium);
 }
 %heading-elements code,

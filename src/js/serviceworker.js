@@ -1,19 +1,18 @@
 ---
-    layout: null
+layout: null
 searchable: false
 sitemap:
 exclude: true
 ---
-    /*!
-     * Service Worker
-     * @author Chris Burnell <me@chrisburnell.com>
-     */
+/*!
+ * Service Worker
+ * @author Chris Burnell <me@chrisburnell.com>
+ */
+
+'use strict';
 
 
-    'use strict';
-
-
-const VERSION = 'v2.0.7';
+const VERSION = 'v2.0.8';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
@@ -44,22 +43,22 @@ const OPTIONAL_FILES = [
 
 // Pages to cache
 const OFFLINE_PAGES = [
-    {% for page in site.html_pages %}
-{% unless page.url contains 'html' or page.url contains 'offline' %}
-'{{ page.url }}',
+{% for page in site.html_pages %}
+    {% unless page.url contains 'html' or page.url contains 'offline' %}
+        '{{ page.url }}',
     {% endunless %}
 {% endfor %}
 {% for page in site.categories.article limit: 2 %}
-'{{ page.url }}',
-    {% endfor %}
+    '{{ page.url }}',
+{% endfor %}
 {% for page in site.categories.bookmark limit: 2 %}
-'{{ page.url }}',
-    {% endfor %}
+    '{{ page.url }}',
+{% endfor %}
 {% for page in site.categories.note limit: 2 %}
-'{{ page.url }}',
-    {% endfor %}
+    '{{ page.url }}',
+{% endfor %}
 {% for page in site.categories.pen limit: 2 %}
-'{{ page.url }}'{% unless forloop.last %}, {% endunless %}
+    '{{ page.url }}'{% unless forloop.last %}, {% endunless %}
 {% endfor %}
 ];
 
