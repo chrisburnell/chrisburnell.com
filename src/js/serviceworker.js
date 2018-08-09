@@ -1,16 +1,16 @@
 ---
-layout: null
+    layout: null
 searchable: false
 sitemap:
-  exclude: true
+exclude: true
 ---
-/*!
- * Service Worker
- * @author Chris Burnell <me@chrisburnell.com>
- */
+    /*!
+     * Service Worker
+     * @author Chris Burnell <me@chrisburnell.com>
+     */
 
 
-'use strict';
+    'use strict';
 
 
 const VERSION = 'v2.0.7';
@@ -45,28 +45,28 @@ const OPTIONAL_FILES = [
 // Pages to cache
 const OFFLINE_PAGES = [
     {% for page in site.html_pages %}
-        {% unless page.url contains 'html' or page.url contains 'offline' %}
-            '{{ page.url }}',
-        {% endunless %}
+{% unless page.url contains 'html' or page.url contains 'offline' %}
+'{{ page.url }}',
+    {% endunless %}
+{% endfor %}
+{% for page in site.categories.article limit: 2 %}
+'{{ page.url }}',
     {% endfor %}
-    {% for page in site.categories.article limit: 2 %}
-        '{{ page.url }}',
+{% for page in site.categories.bookmark limit: 2 %}
+'{{ page.url }}',
     {% endfor %}
-    {% for page in site.categories.bookmark limit: 2 %}
-        '{{ page.url }}',
+{% for page in site.categories.note limit: 2 %}
+'{{ page.url }}',
     {% endfor %}
-    {% for page in site.categories.note limit: 2 %}
-        '{{ page.url }}',
-    {% endfor %}
-    {% for page in site.categories.pen limit: 2 %}
-        '{{ page.url }}'{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+{% for page in site.categories.pen limit: 2 %}
+'{{ page.url }}'{% unless forloop.last %}, {% endunless %}
+{% endfor %}
 ];
 
 
 let updateStaticCache = () => {
     return caches.open(STATIC_CACHE)
-        .then( cache => {
+        .then(cache => {
             // These items won't block the installation of the Service Worker
             cache.addAll(OPTIONAL_FILES.concat(OFFLINE_PAGES));
             // These items must be cached for the Service Worker to complete installation
@@ -76,18 +76,18 @@ let updateStaticCache = () => {
 
 let stashInCache = (cacheName, request, response) => {
     caches.open(cacheName)
-        .then( cache => cache.put(request, response) );
+        .then(cache => cache.put(request, response));
 }
 
 // Limit the number of items in a specified cache.
 let trimCache = (cacheName, maxItems) => {
     caches.open(cacheName)
-        .then( cache => {
+        .then(cache => {
             cache.keys()
-                .then( keys => {
+                .then(keys => {
                     if (keys.length > maxItems) {
                         cache.delete(keys[0])
-                            .then( trimCache(cacheName, maxItems) );
+                            .then(trimCache(cacheName, maxItems));
                     }
                 });
         });
@@ -96,24 +96,23 @@ let trimCache = (cacheName, maxItems) => {
 // Remove caches whose name is no longer valid
 let clearOldCaches = () => {
     return caches.keys()
-        .then( keys => {
-            return Promise.all(keys
-                .filter(key => !CACHES.includes(key))
-                .map(key => caches.delete(key))
-            );
-        });
+        .then(keys => Promise.all(
+            keys.map(key => {
+                if (!CACHES.includes(key)) return caches.delete(key)
+            })
+        ));
 }
 
 
 self.addEventListener('install', event => {
     event.waitUntil(updateStaticCache()
-        .then( () => self.skipWaiting() )
+        .then(() => self.skipWaiting())
     );
 });
 
 self.addEventListener('activate', event => {
     event.waitUntil(clearOldCaches()
-        .then( () => self.clients.claim() )
+        .then(() => self.clients.claim())
     );
 });
 
@@ -135,7 +134,7 @@ self.addEventListener('fetch', event => {
     if (request.headers.get('Accept').includes('text/html')) {
         event.respondWith(
             fetch(request)
-                .then( response => {
+                .then(response => {
                     // NETWORK
                     // Stash a copy of this page in the STATIC or PAGES cache
                     let copy = response.clone();
@@ -147,10 +146,10 @@ self.addEventListener('fetch', event => {
                     }
                     return response;
                 })
-                .catch( () => {
+                .catch(() => {
                     // CACHE or FALLBACK
                     return caches.match(request)
-                        .then( response => response || caches.match('/offline') );
+                        .then(response => response || caches.match('/offline'));
                 })
         );
         return;
@@ -159,9 +158,9 @@ self.addEventListener('fetch', event => {
     // For non-HTML requests, look in the cache first, fall back to the network
     event.respondWith(
         caches.match(request)
-            .then( response => {
+            .then(response => {
                 return response || fetch(request)
-                    .then( response => {
+                    .then(response => {
                         // NETWORK
                         // Stash a copy of this asset in the IMAGES or ASSETS cache
                         let copy = response.clone();
@@ -173,11 +172,11 @@ self.addEventListener('fetch', event => {
                         }
                         return response;
                     })
-                    .catch( () => {
+                    .catch(() => {
                         // OFFLINE
                         // If the request is for an image, show an offline placeholder
                         if (request.headers.get('Accept').includes('image')) {
-                            return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', {headers: {'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store'}});
+                            return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store' } });
                         }
                     });
             })
@@ -188,6 +187,6 @@ self.addEventListener('message', event => {
     if (event.data.command == 'trimCaches') {
         trimCache(ASSETS_CACHE, CACHE_SIZE);
         trimCache(IMAGES_CACHE, CACHE_SIZE);
-        trimCache(PAGES_CACHE,  CACHE_SIZE);
+        trimCache(PAGES_CACHE, CACHE_SIZE);
     }
 });

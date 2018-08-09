@@ -24,8 +24,8 @@
 <!-- ServiceWorker -->
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceworker.js').then( (registration) => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        navigator.serviceWorker.register('/serviceworker.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope:', registration.scope);
             // TODO: Figure this out!
             // registration.installing.onstatechange = () => {
             //     if (registration.installing.state === 'activated' && !navigator.serviceWorker.controller) {
