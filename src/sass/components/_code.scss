@@ -24,7 +24,6 @@ code[data-lang] {
         letter-spacing: $letter-spacing-uppercase;
         line-height: #{$measure-large + $measure-small};
         text-shadow: none;
-        text-transform: capitalize;
     }
 
     &[data-lang="html"]::before,

@@ -48,5 +48,16 @@
 
     .rating {
         letter-spacing: 2px;
+
+        .half {
+            &::before {
+                content: "½";
+
+                @supports (clip-path: polygon(0% 0%)) {
+                    content: "★";
+                    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+                }
+            }
+        }
     }
 }

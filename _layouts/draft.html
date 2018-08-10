@@ -12,12 +12,6 @@
                     {{ page.title }}
                 {% endif %}
             </span>
-            {% if page.shorturl %}
-                {% capture h1_href %}{{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% capture h1_title %}Permalink: {{ page.shorturl | prepend: site.shorturl }}{% endcapture %}
-                {% assign h1_rel = 'external  me' %}
-                <!--{% include content/fragment-anchor.html href=h1_href title=h1_title rel=h1_rel %}-->
-            {% endif %}
         </h1>
 
         {% include components/meta.html %}
@@ -50,39 +44,8 @@
             {{ content }}
         </div>
 
-        {% if page.further_reading %}
-            {% include content/heading.html title='Further Reading' %}
-            <ul>
-                {% for link in page.further_reading %}
-                    {% assign url = link.url %}
-                    {% if url contains site.url %}
-                        {% assign rel = '' %}
-                    {% else %}
-                        {% assign rel = ' rel="external"' %}
-                    {% endif %}
-                    {% if link.title == null or link.title == empty %}
-                        {% assign title = url %}
-                    {% else %}
-                        {% assign title = link.title %}
-                    {% endif %}
-                    <li>
-                        <a href="{{ url }}"{{ rel }}>{{ title }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-        {% if page.footnotes %}
-            {% include content/heading.html title='Footnotes' %}
-            <ol>
-                {% for note in page.footnotes %}
-                    <li class="footnote" id="footnote-{{ forloop.index }}">
-                        {{ note }}
-                        <a href="#note-{{ forloop.index }}" class="footnote-anchor" title="">↩︎</a>
-                    </li>
-                {% endfor %}
-            </ol>
-        {% endif %}
+        {% include components/further-reading.html %}
+        {% include components/footnotes.html %}
 
     </article>
 </main>

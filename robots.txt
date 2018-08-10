@@ -11,7 +11,7 @@ searchable: false
 #   | | o:.o |               |_|
 #   | |      |
 #   `-".-.-.-'    This website is officially robot abuse free.
-#   _| | : |_
+#   _| | : |_     http://stoprobotabuse.com
 #  (oOoOo)_)_)
 
 User-agent: Twitterbot

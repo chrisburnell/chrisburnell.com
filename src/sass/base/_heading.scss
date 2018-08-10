@@ -52,7 +52,6 @@ h2 {
 }
 
 // Heading - Gamma
-.gamma,
 %gamma {
     @include v(font-size, gamma);
     @include v(font-weight, bold);
@@ -61,9 +60,13 @@ h2 {
     &:not(:last-child) {
         @include v(margin-bottom, medium);
     }
-
+}
+.gamma {
+    @extend %gamma !optional;
     // Match normal `gamma`s without targetting `aside`-nested `gamma`s
     .content__body > &,
+    .footnotes > &,
+    .further-reading > &,
     .widget &,
     .webmentions & {
         @include clear;

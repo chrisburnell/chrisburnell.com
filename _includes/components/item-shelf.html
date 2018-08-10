@@ -8,11 +8,10 @@
 {%- elsif page.link contains 'spotify' %}
     {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Spotify' -%}
 {%- endif -%}
-{%- assign date = page.date | default: page.year -%}
 {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
 {%- assign rating_half = page.rating | default: 0 | at_least: 0 | at_most: 5 | modulo: 1 -%}
 {%- assign read_status = 'to-read' -%}
-{%- if page.date_end or page.upc -%}
+{%- if page.date_end -%}
     {%- assign read_status = 'finished' -%}
 {%- elsif page.date_start -%}
     {%- assign read_status = 'reading' -%}
@@ -44,8 +43,8 @@
                         </a>
                     {%- endif -%}
                 {%- endfor -%}
-                {%- if date -%}
-                    <span> (<data value="{{ date }}">{{ date | split: '-' | first }}</data>)</span>
+                {%- if page.date -%}
+                    <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
                 {%- endif -%}
             </div>
             {% if page.isbn %}
@@ -53,7 +52,7 @@
             {% endif %}
         </div>
         {% if page.rating %}
-            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
+            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}<span class="half"></span>{% endif %}</data>
             <span class="p-worst" hidden>1</span>
             <span class="p-best" hidden>5</span>
         {% endif %}

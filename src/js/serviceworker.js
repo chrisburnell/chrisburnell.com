@@ -2,7 +2,7 @@
 layout: null
 searchable: false
 sitemap:
-exclude: true
+  exclude: true
 ---
 /*!
  * Service Worker
@@ -12,7 +12,7 @@ exclude: true
 'use strict';
 
 
-const VERSION = 'v2.0.8';
+const VERSION = 'v2.0.9';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';

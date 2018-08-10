@@ -45,6 +45,9 @@
         }
 
         &:active {
+            background-color: $color-transparent;
+            outline-width: 0;
+
             .icon {
                 transform: translateY($border-width-thin);
             }

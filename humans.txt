@@ -28,8 +28,10 @@ searchable: false
     CSS (SCSS)
     JavaScript
     JSON
+    Liquid
     Markdown
     XML
+    YAML
 
 /* SERVICES */
 

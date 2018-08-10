@@ -3,10 +3,11 @@
   This include lets you easily add a heading element with a fragment anchor.
 
   @param {String} title *
+  @param {Element} level [2]
+  @param {Element} type [gamma]
   @param {String} id [title | slugify]
-  @param {String} href
-  @param {String} class
-  @param {Element} type [h2]
+  @param {String} href []
+  @param {String} class []
 
   @example
     {% include content/heading.html title='Let’s look at some code' %}
@@ -16,7 +17,7 @@
     // </h2>
 
 {%- endcomment -%}
-{% assign heading_type = include.type | default: 'gamma' %}
+{% assign heading_level = include.level | default: '2' %}
 {% assign heading_id = include.id %}
 {% unless include.id %}
     {% assign heading_id = include.title | slugify %}
@@ -24,7 +25,7 @@
 {% assign heading_class = include.class | default: '' %}
 {% assign heading_href = include.href | default: '' %}
 {% assign heading_title_stripped = include.title | strip_html | prepend: 'Permalink: ' %}
-<h2 class="{{ heading_type }}{% unless heading_class == blank %}  {{ heading_class }}{% endunless %}"{% unless heading_id == blank %} id="{{ heading_id }}"{% endunless %}>
+<h{{ heading_level | replace: 'h', '' }} class="{% unless include.type == ' ' %}{{ include.type | default: 'gamma' }}{% endunless %}{% unless heading_class == blank %}  {{ heading_class }}{% endunless %}"{% unless heading_id == blank %} id="{{ heading_id }}"{% endunless %}>
     {% unless heading_href == blank %}
         <a href="{{ heading_href }}">
     {% endunless %}
@@ -35,4 +36,4 @@
     {% unless heading_id == blank %}
         {% include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
     {% endunless %}
-</h2>
+</h{{ heading_level | replace: 'h', '' }}>
