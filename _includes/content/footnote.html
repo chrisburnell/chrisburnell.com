@@ -4,8 +4,4 @@
   markup will be generated automatically.
 
 {%- endcomment -%}
-{%- assign text = include.text | append: '@@' | split: '@@' -%}
-{%- assign footnotes = footnotes | concat: text -%}
-{%- assign footnote_count = footnote_count | plus: 1 -%}
-<sup><a href="#footnote-{{ footnote_count }}" class="footnote-anchor" id="reference-{{ footnote_count }}" title="" aria-describedby="footnotes">{{ footnote_count }}</a></sup>
-{{ footnotes | inspect }}
+{%- assign footnote_count = footnote_count | plus: 1 -%}<sup><a href="#footnote-{{ footnote_count }}" class="footnote-anchor" id="reference-{{ footnote_count }}" title="" aria-describedby="footnotes">{{ footnote_count }}</a></sup>
