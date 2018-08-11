@@ -21,7 +21,8 @@
         grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
     }
 
-    %content-elements + & {
+    %content-elements + &,
+    .content-list + & {
         @include v(margin-top, medium);
     }
 }

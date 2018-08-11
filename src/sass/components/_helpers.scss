@@ -18,7 +18,10 @@
 // Hide elements visually
 [hidden]:not([hidden="false"]),
 .hidden {
-    @include hidden;
+    &:not([href]),
+    &[href]:not(:focus):not(:active) {
+        @include hidden;
+    }
 }
 
 // Hyphenate any looooooooooooooooooooo-
