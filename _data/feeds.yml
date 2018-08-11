@@ -1,39 +1,47 @@
 - title: Subscribe to All
+  type: all
   rel: 'alternate'
   url: '/feed.xml'
   icon: 'rss'
 
 - title: Subscribe to Articles
+  type: articles
   rel: 'alternate'
   url: '/feed-articles.xml'
   icon: 'rss'
 
 - title: Subscribe to Bookmarks
+  type: bookmarks
   rel: 'alternate'
   url: '/feed-bookmarks.xml'
   icon: 'rss'
 
 - title: Subscribe to Notes
+  type: notes
   rel: 'alternate'
   url: '/feed-notes.xml'
   icon: 'rss'
 
 - title: Subscribe to Pens
+  type: pens
   rel: 'alternate'
   url: '/feed-pens.xml'
   icon: 'rss'
 
 - title: Subscribe to Reviews
+  type: reviews
   rel: 'alternate'
   url: '/feed-reviews.xml'
   icon: 'rss'
 
 - title: Subscribe to Recipes
+  type: recipes
   rel: 'alternate'
   url: '/feed-recipes.xml'
   icon: 'rss'
 
 - title: Subscribe to Talks
+  type: talks
   rel: 'alternate'
   url: '/feed-talks.xml'
   icon: 'rss'

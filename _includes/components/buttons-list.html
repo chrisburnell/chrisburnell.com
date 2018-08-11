@@ -8,33 +8,36 @@
 
 {%- endcomment -%}
 {% if include.type == 'feeds' %}
-    {% assign data = site.data.feeds %}
+    {%- assign data = site.data.feeds -%}
 {% elsif include.type == 'archives' %}
-    {% assign data = site.data.archives %}
+    {%- assign data = site.data.archives -%}
 {% endif %}
 <nav class="buttons-list" role="navigation">
     {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}
     {% for link in data %}
-        {% assign title = link.title | downcase %}
+        {%- assign title = link.title | downcase -%}
+        {%- if include.type == 'feeds' -%}
+            {%- assign url = link.url -%}
+        {%- elsif include.type == 'archives' -%}
+            {%- assign url = link.type | prepend: '/' | append: '/' -%}
+        {%- endif -%}
         {% if include.include %}
-            {% assign include = include.include | split: ' ' | join: ' ' %}
-            {% if include contains link.type or title contains 'all' %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
+            {% if include.include contains link.type or link.type == 'all' %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endif %}
         {% elsif include.exclude %}
-            {% assign exclude = include.exclude | split: ' ' | join: ' ' %}
-            {% unless exclude contains link.type %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
+            {% unless include.exclude contains link.type %}
+                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
                     {% include content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endunless %}
         {% else %}
-            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="/{{ link.type }}/">
+            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
                 {% include content/svg.html type=link.icon %}
                 {{ link.title }}
             </a>
