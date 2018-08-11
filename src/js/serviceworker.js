@@ -12,7 +12,7 @@ sitemap:
 'use strict';
 
 
-const VERSION = 'v2.0.11';
+const VERSION = 'v2.0.12';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
@@ -29,7 +29,7 @@ const CACHE_SIZE = 20;
 
 // Files that *must* be cached
 const CRITICAL_FILES = [
-    '/css/main.min.css',
+    '/css/non-critical.min.css',
     '/js/main.min.js',
     '/search.json',
     '/offline/'
