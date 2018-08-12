@@ -52,7 +52,7 @@
             {% endif %}
         </div>
         {% if page.rating %}
-            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}<span class="half"></span>{% endif %}</data>
+            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
             <span class="p-worst" hidden>1</span>
             <span class="p-best" hidden>5</span>
         {% endif %}
