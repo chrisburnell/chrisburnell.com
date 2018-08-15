@@ -13,12 +13,14 @@ blockquote {
     margin: 0 auto $measure-medium;
 
     %monospace-elements,
-    cite {
+    cite,
+    strong {
         font-style: normal;
     }
 
     p {
         @include font-family(serif);
+        font-style: italic;
 
         &::before {
             content: open-quote;
@@ -36,10 +38,9 @@ blockquote {
     }
 
     cite {
-        @include v(color, dove);
+        @include v(color, kaiser);
         display: block;
         @include v(margin-top, medium);
-        font-style: normal;
         text-align: right;
 
         &::before {
