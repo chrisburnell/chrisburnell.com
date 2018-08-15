@@ -13,8 +13,7 @@ blockquote {
     margin: 0 auto $measure-medium;
 
     %monospace-elements,
-    cite,
-    em {
+    cite {
         font-style: normal;
     }
 
