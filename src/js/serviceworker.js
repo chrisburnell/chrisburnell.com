@@ -12,7 +12,7 @@ sitemap:
 'use strict';
 
 
-const VERSION = 'v2.0.12';
+const VERSION = 'v2.0.13';
 // Set up the caches
 const STATIC_CACHE = VERSION + '::static';
 const ASSETS_CACHE = 'assets';
