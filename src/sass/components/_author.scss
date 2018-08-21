@@ -131,7 +131,7 @@
     &:focus,
     &:active {
         &::before {
-            z-index: z-index(default);
+            @include z-index(default);
         }
 
         & > %image-elements {
