@@ -505,7 +505,7 @@
 /// @throw Error if no parameters are passed.
 /// @throw Error if `$z-index` parameter passed does not match a key in `$z-indexes`.
 ///
-@function z-index($z-index) {
+@mixin z-index($z-index) {
     @if not $z-index {
         @error "`z-index()` expects at least one parameter.";
     }
