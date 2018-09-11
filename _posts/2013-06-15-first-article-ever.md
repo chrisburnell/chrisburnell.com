@@ -9,8 +9,6 @@ tags:
 - css
 - github
 - jekyll
-- markdown
-- collaboration
 - stateofthebrowser
 
 banner:
