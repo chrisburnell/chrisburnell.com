@@ -11,6 +11,7 @@ tags:
 - jekyll
 - markdown
 - collaboration
+- stateofthebrowser
 
 banner:
 - first-article-ever.png
