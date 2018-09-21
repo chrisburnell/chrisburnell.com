@@ -32,7 +32,7 @@ But what about when you want to generate unique groups of more than <var>2</var>
 We’ll need to make sure our dataset contains more than <var>n</var> items—making unique groups of three items from a dataset of only three items would make our function entirely moot. From there, refactoring the function mostly comes down to keep track of how we’re iterating through the items in the dataset and repeating this iteration in a recursive-like way the same number of times as items per unique group.
 
 
-{% include content/heading.html title='Let’s just jump right into it' %}
+{% include_cached content/heading.html title='Let’s just jump right into it' %}
 
 {% include content/code-toggle-top.html %}
 
@@ -134,7 +134,7 @@ As with the previous version of the function, it can accept the required dataset
 </figure>
 
 
-{% include content/heading.html title='In Action' %}
+{% include_cached content/heading.html title='In Action' %}
 
 {% highlight scss %}
 $border-styles: 5px solid black;

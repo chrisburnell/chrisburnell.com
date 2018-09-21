@@ -1,6 +1,6 @@
 <aside class="ingredients" role="complementary">
 
-    {% include content/heading.html title='Ingredients' %}
+    {% include_cached content/heading.html title='Ingredients' %}
     <ul class="ingredients__list">
     {% for ingredient in page.ingredients %}
         <li class="ingredient" id="{{ ingredient.name | slugify }}">

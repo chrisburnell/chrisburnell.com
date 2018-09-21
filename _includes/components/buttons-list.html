@@ -25,20 +25,20 @@
         {% if include.include %}
             {% if include.include contains link.type or link.type == 'all' %}
                 <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                    {% include content/svg.html type=link.icon %}
+                    {% include_cached content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endif %}
         {% elsif include.exclude %}
             {% unless include.exclude contains link.type %}
                 <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                    {% include content/svg.html type=link.icon %}
+                    {% include_cached content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endunless %}
         {% else %}
             <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                {% include content/svg.html type=link.icon %}
+                {% include_cached content/svg.html type=link.icon %}
                 {{ link.title }}
             </a>
         {% endif %}

@@ -1,5 +1,5 @@
 <section class="widget  widget--latest-articles">
-    {% include content/heading.html title='Latest Articles' href='/articles/' id='' %}
+    {% include_cached content/heading.html title='Latest Articles' href='/articles/' id='' %}
     <ol class="content-list  h-feed" role="list">
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}

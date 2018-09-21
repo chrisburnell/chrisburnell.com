@@ -39,7 +39,7 @@ One of the most engaging ways I’ve found, of recent, to keep myself open-minde
 I’ve found a great deal of enjoyment in watching and participating in these live coding streams; it’s given me new perspectives on what I already know and expanded new horizons for things I don’t know but want to learn about.
 
 
-{% include content/heading.html title='Inspiration Strikes' %}
+{% include_cached content/heading.html title='Inspiration Strikes' %}
 
 It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman){:rel="external"} streams on his *YouTube* channel, [The Coding Train](https://www.youtube.com/user/shiffman/live){:rel="external"}, that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
 
@@ -54,7 +54,7 @@ Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to
 Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
 
 
-{% include content/heading.html title='In Theory' %}
+{% include_cached content/heading.html title='In Theory' %}
 
 Like most of my endeavours, this Sass technique is neither revolutionary, nor is it particularly useful. But not everything need be born out of necessity and steeped in unit-testing for it to be fun. I find a lot of enjoyment in experimenting at the limits of CSS and finding unexplored avenues to solve challenges in a different way.
 
@@ -79,7 +79,7 @@ Our `@function` takes a variable number of parameters, *three* or *five*, and we
 There really isn’t any magic going on here (as usual). Everything before the `@return` statement is just checking to make sure we’ve correctly passed in the right parameters, and that we’ve given the correct number of parameters. The `@return` statement performs a small calculation based on the 3–5 parameters and gives us back the remapped initial value.
 
 
-{% include content/heading.html title='In Practice' %}
+{% include_cached content/heading.html title='In Practice' %}
 
 To be frank, I’m having a hard time finding a great deal of use out of this operation in CSS, but you might find a persuasive reason to use it. 😉
 

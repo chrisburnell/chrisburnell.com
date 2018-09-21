@@ -30,7 +30,7 @@ I’ve been making quite a few pens over on [*CodePen*](https://codepen.io){:rel
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
 
-{% include content/heading.html title='Psychedelic Slice' %}
+{% include_cached content/heading.html title='Psychedelic Slice' %}
 
 Hover the slice to see how this one works.
 
@@ -43,7 +43,7 @@ In this Pen, I’m taking advantage of `border-radius` and `overflow` on an elem
 </div>
 
 
-{% include content/heading.html title='Zoomy Anchor Thing' %}
+{% include_cached content/heading.html title='Zoomy Anchor Thing' %}
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals){:rel="external"}.
 
@@ -54,7 +54,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 </div>
 
 
-{% include content/heading.html title='Modal Container without JavaScript' %}
+{% include_cached content/heading.html title='Modal Container without JavaScript' %}
 
 This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal"){:rel="external"} explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
 
@@ -63,14 +63,14 @@ This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codep
 One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a JavaScript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
 
-{% include content/heading.html title='Slip-n-slide Modal' %}
+{% include_cached content/heading.html title='Slip-n-slide Modal' %}
 
 This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
 
 {% include content/codepen.html slug='sDBJk' height='630' %}
 
 
-{% include content/heading.html title='Jazzy CSS Checkbox Revisited' %}
+{% include_cached content/heading.html title='Jazzy CSS Checkbox Revisited' %}
 
 This is a pen which I overhauled a bit since I first wrote about it in <a href="{% post_url 2013-06-18-persistent-shadows %}">Persistent Shadows</a>:
 
@@ -82,12 +82,12 @@ And the revisited version:
 
 Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors"){:rel="external"}) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 
-{% include content/caniuse.html feature='css-sel2' %}
+{% include_cached content/caniuse.html feature='css-sel2' %}
 
 Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter"){:rel="external"} for helping me improve this even further by adding keyboard support for the hidden `input` field.
 
 
-{% include content/heading.html title='Over to you' %}
+{% include_cached content/heading.html title='Over to you' %}
 
 Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"){:rel="external"}, a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher"){:rel="external"}.
 

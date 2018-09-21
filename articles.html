@@ -23,7 +23,7 @@ sparkline: articles
         {% unless forloop.first %}
             </ol>
         {% endunless %}
-        {% include content/heading.html title=page_year id=page_year %}
+        {% include_cached content/heading.html title=page_year id=page_year %}
         <ol class="content-list  h-feed" id="articles" role="list">
     {% endif %}
 

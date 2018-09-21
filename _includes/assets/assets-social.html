@@ -48,48 +48,6 @@
     {% elsif page.page_class contains 'about' %}
         <meta property="profile:first_name" content="{{ meta_first_name }}">
         <meta property="profile:last_name" content="{{ meta_last_name }}">
-        <meta property="profile:username" content="{{ site.author.codepen }}">
+        <meta property="profile:username" content="{{ site.shortname }}">
     {% endif %}
-    <!-- Google Sitelinks Searchbox -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            {% if page.layout == 'post' %}
-                "@type": "TechArticle",
-            {% else %}
-                "@type": "WebSite",
-            {% endif %}
-            "url": "{{ page.url | absolute_url }}",
-            "headline": "{{ meta_title }}",
-            "description": "{{ meta_lede }}",
-            "image": "{{ meta_image }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ site.author.name }}"
-            },
-            {% if page.layout == 'post' %}
-                {% if page.tags %}
-                    "keywords": "{{ page.tags | join: ' ' }}",
-                {% endif %}
-                "datePublished": "{{ page.date | date: '%F_%H%M' }}",
-                {% if page.edit_date %}
-                    "dateModified": "{{ page.edit_date | date: '%F_%H%M' }}",
-                {% endif %}
-                {% if page.categories contains 'article' %}
-                    "wordcount": "{{ content | number_of_words }}",
-                {% endif %}
-            {% endif %}
-            "sameAs": [
-                "{{ site.urls.codepen }}",
-                "{{ site.urls.github }}",
-                "{{ site.urls.lastfm }}",
-                "{{ site.urls.twitter }}"
-            ],
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "{{ site.url }}/search?query={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
 {% endif %}

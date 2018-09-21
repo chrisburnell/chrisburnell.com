@@ -37,7 +37,7 @@ On the web, we’re used to change. We embrace change. It’s part of what makes
 Part of embracing that change means, as builders for the web, we have to be light on our toes and ready to adapt to factors within and without our control. It’s how you prepare and react to the changes that really matters.
 
 
-{% include content/heading.html title='Hook, Line, & Sinker' %}
+{% include_cached content/heading.html title='Hook, Line, & Sinker' %}
 
 If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
@@ -48,7 +48,7 @@ Similarly, an infinite-scrolling technique typically involves a long list of man
 But be aware that these techniques come with their own set of UX and/or performance considerations.
 
 
-{% include content/heading.html title='Let me take you on a trip down memory lane' %}
+{% include_cached content/heading.html title='Let me take you on a trip down memory lane' %}
 
 Over the many years of employing *lazy-loading*, *infinite-scrolling*, and similar techniques on the web, developers have come up with some clever solutions.
 
@@ -93,7 +93,7 @@ Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun){:rel="external"}
 Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around the screen, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
 
 
-{% include content/heading.html title='How did we solve that?' %}
+{% include_cached content/heading.html title='How did we solve that?' %}
 
 There are a handful of approaches to prevent our code from thrashing our users' browsers. I won’t highlight all of them here, but two of the most common techniques involve limiting how often we perform our checks.
 
@@ -147,7 +147,7 @@ And even then, we’re making a pretty broad assumption about the refresh rates 
 It seems the ideal solution would remove the guesswork in finding the best <q>middle-ground</q> delay and the assumptions we have to make about refresh rates.
 
 
-{% include content/heading.html title='Prevalence of Garbage' %}
+{% include_cached content/heading.html title='Prevalence of Garbage' %}
 
 All of the techniques we’ve covered so far take an approach that, instead of reacting to each individual change as they happen, make proactive, repeated checks and set up reminders (in the form of `setInterval` or `setTimeout`) for the browser to do something with any changes that are found.
 
@@ -172,7 +172,7 @@ Is it better to go back-and-forth often, taking only one person per crossing? Or
 We have no way of guaranteeing an accurate <q>fits all</q> guess.
 
 
-{% include content/heading.html title='What comes next?' %}
+{% include_cached content/heading.html title='What comes next?' %}
 
 Instead of doing so ourselves, let’s instead delegate these <del>guesses</del> decisions to each individual user’s browser and device. Instead of the Crossing Guard running across the road constantly, they should wait until someone needs to cross, and then do so.
 
@@ -210,12 +210,12 @@ Other benefits you’ll reap from *IntersectionObserver* include:
 
 Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill){:rel="external"} or not.
 
-{% include content/caniuse.html feature='intersectionobserver' %}
+{% include_cached content/caniuse.html feature='intersectionobserver' %}
 
 An important caveat to note before diving too deep, at least at the time of writing, is that [*IntersectionObserver*](https://github.com/w3c/IntersectionObserver){:rel="external"} does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements){:rel="external"}; rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element){:rel="external"}-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
 
 
-{% include content/heading.html title='In Conclusion' %}
+{% include_cached content/heading.html title='In Conclusion' %}
 
 {% include content/codepen.html slug='JryQoM' %}
 

@@ -28,7 +28,7 @@ Another caveat to the challenge is that my site <s>is</s> was hosted on [GitHub 
 Regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes using a combination of *Jekyll*-powered *Liquid* alongside some *Sass*, avoiding *JavaScript* where unnecessary.
 
 
-{% include content/heading.html title='Linked Headings' %}
+{% include_cached content/heading.html title='Linked Headings' %}
 
 When authoring articles, I like to provide a way for users to share or link to a certain part of the content, which I do by including anchors to each heading in a post’s content. Users can link to these anchors and new visitors using that link will jump right to that heading in the content.
 
@@ -69,7 +69,7 @@ Any *Liquid* code in *Markdown* files is parsed as such, so let’s follow this 
 <{{ heading_type }} id="{{ heading_id }}">
     {{ include.title }}
     <!-- 4 -->
-    {% include content/fragment-anchor.html id=heading_id %}
+    {% include_cached content/fragment-anchor.html id=heading_id %}
 </{{ heading_type }}>
 {% endraw %}{% endhighlight %}
 

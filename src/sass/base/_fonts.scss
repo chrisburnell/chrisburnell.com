@@ -9,7 +9,11 @@
         font-style: #{nth($style, 3)};
         font-weight: #{nth($style, 4)};
         font-display: $font-display;
-        src: local("#{nth($style, 1)} #{nth($style, 2)}"), url("/fonts/#{nth($style, 5)}.woff2") format("woff2"), url("/fonts/#{nth($style, 5)}.woff") format("woff"), url("/fonts/#{nth($style, 5)}.ttf") format("truetype");
+        src: local("#{nth($style, 1)} #{nth($style, 2)}"),
+             url("/fonts/#{nth($style, 5)}.woff2") format("woff2"),
+             url("/fonts/#{nth($style, 5)}.woff") format("woff"),
+             url("/fonts/#{nth($style, 5)}.ttf") format("truetype"),
+             url("/fonts/#{nth($style, 5)}.svg##{nth($style, 5)}") format("svg");
         unicode-range: U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
     }
 }

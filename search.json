@@ -3,7 +3,6 @@ layout: null
 searchable: false
 ---
 
-
 [
     {% for page in site.pages %}
         {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}

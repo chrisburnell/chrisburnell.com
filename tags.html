@@ -23,7 +23,7 @@ lede: A list of Tags and their counterpart prose.
 </dl>
 {% for tag in tags_sorted %}
     {% capture tag_name %}{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span>{% endcapture %}
-    {% include content/heading.html title=tag_name id=tag %}
+    {% include_cached content/heading.html title=tag_name id=tag %}
     <ol class="content-list  h-feed" role="list">
         {% for page in site.tags[tag] %}
             {% include components/item-content-list.html %}

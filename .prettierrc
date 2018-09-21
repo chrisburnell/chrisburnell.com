@@ -1,3 +1,4 @@
+# .prettierrc
 printWidth: 999
 tabWidth: 4
 overrides:

@@ -1,6 +1,6 @@
 {% if page.further_reading %}
     <section class="further-reading">
-        {% include content/heading.html title='Further Reading' %}
+        {% include_cached content/heading.html title='Further Reading' %}
         <ul>
             {% for link in page.further_reading %}
                 {% assign url = link.url %}

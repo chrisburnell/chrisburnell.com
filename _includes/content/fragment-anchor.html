@@ -7,7 +7,7 @@
   @param {String} rel
 
   @example
-    {% include content/fragment-anchor.html id='12345' %}
+    {% include_cached content/fragment-anchor.html id='12345' %}
     // <a href="#12345" class="fragment-anchor">#12345</a>
 
 {%- endcomment -%}
@@ -26,5 +26,5 @@
     {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
 {% endif %}
 <a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>
-    {% include content/svg.html type='link' %}
+    {% include_cached content/svg.html type='link' %}
 </a>

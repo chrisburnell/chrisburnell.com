@@ -16,7 +16,7 @@ youtube: true
 ---
 
 
-{% include content/heading.html title='Colours' %}
+{% include_cached content/heading.html title='Colours' %}
 
 <ul class="palette-list" id="colors">
     {% for colour in site.data.palette %}
@@ -29,7 +29,7 @@ youtube: true
 </ul>
 
 
-{% include content/heading.html title='Measures' %}
+{% include_cached content/heading.html title='Measures' %}
 
 <dl>
     <dt>Small</dt>
@@ -45,7 +45,7 @@ youtube: true
 </dl>
 
 
-{% include content/heading.html title='Transitions' %}
+{% include_cached content/heading.html title='Transitions' %}
 
 <div class="transition-example  transition-example--slide">
     <div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
@@ -56,7 +56,7 @@ youtube: true
 </div>
 
 
-{% include content/heading.html title='Fonts' %}
+{% include_cached content/heading.html title='Fonts' %}
 
 <p style="font-family: 'Proxima Nova', sans-serif;">Primary Font: "Proxima Nova", sans-serif;</p>
 
@@ -73,7 +73,7 @@ youtube: true
 <p style="font-family: 'Heebo', 'League Gothic', sans-serif; font-size: 1.375rem; text-transform: uppercase;">Title Font: "Heebo", "League Gothic", sans-serif;</p>
 
 
-{% include content/heading.html title='Headings' %}
+{% include_cached content/heading.html title='Headings' %}
 
 <h1>Heading Level 1</h1>
 
@@ -88,14 +88,14 @@ youtube: true
 <h6>Heading Level 6</h6>
 
 
-{% include content/heading.html title='Paragraph' %}
+{% include_cached content/heading.html title='Paragraph' %}
 
 <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 <p class="columns">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 
-{% include content/heading.html title='Aside' %}
+{% include_cached content/heading.html title='Aside' %}
 
 <aside>
     <p>An aside represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.</p>
@@ -104,7 +104,7 @@ youtube: true
 <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 
-{% include content/heading.html title='Inline Elements' %}
+{% include_cached content/heading.html title='Inline Elements' %}
 
 <p><a href="#">This is a text link</a></p>
 
@@ -149,14 +149,14 @@ youtube: true
 <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
 
 
-{% include content/heading.html title='Blockquote' %}
+{% include_cached content/heading.html title='Blockquote' %}
 
 <blockquote>
     <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
 </blockquote>
 
 
-{% include content/heading.html title='Blockquote with Citation' %}
+{% include_cached content/heading.html title='Blockquote with Citation' %}
 
 <blockquote>
     <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
@@ -164,13 +164,13 @@ youtube: true
 </blockquote>
 
 
-{% include content/heading.html title='Twitter Embedded Quote' %}
+{% include_cached content/heading.html title='Twitter Embedded Quote' %}
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none"><p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a></blockquote>
 <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
 
 
-{% include content/heading.html title='Unordered List' %}
+{% include_cached content/heading.html title='Unordered List' %}
 
 <ul>
     <li>This is a list item in an unordered list</li>
@@ -186,7 +186,7 @@ youtube: true
 </ul>
 
 
-{% include content/heading.html title='Ordered List' %}
+{% include_cached content/heading.html title='Ordered List' %}
 
 <ol>
     <li>This is a list item in an ordered list</li>
@@ -202,7 +202,7 @@ youtube: true
 </ol>
 
 
-{% include content/heading.html title='Ordered List Reversed' %}
+{% include_cached content/heading.html title='Ordered List Reversed' %}
 
 <ol reversed>
     <li>This is a list item in an ordered list</li>
@@ -217,7 +217,7 @@ youtube: true
 </ol>
 
 
-{% include content/heading.html title='Ordered List Reversed, Twice' %}
+{% include_cached content/heading.html title='Ordered List Reversed, Twice' %}
 
 <ol reversed>
     <li>This is a list item in an ordered list</li>
@@ -232,7 +232,7 @@ youtube: true
 </ol>
 
 
-{% include content/heading.html title='Definition List' %}
+{% include_cached content/heading.html title='Definition List' %}
 
 <dl>
     <dt>Definition List</dt>
@@ -244,7 +244,7 @@ youtube: true
 </dl>
 
 
-{% include content/heading.html title='Table' %}
+{% include_cached content/heading.html title='Table' %}
 
 <figure>
     <table role="grid" aria-readonly="true">
@@ -288,7 +288,7 @@ youtube: true
 </figure>
 
 
-{% include content/heading.html title='Table with Alternating Rows' %}
+{% include_cached content/heading.html title='Table with Alternating Rows' %}
 
 <figure>
     <table class="zebra" role="grid" aria-readonly="true">
@@ -337,7 +337,7 @@ youtube: true
 </figure>
 
 
-{% include content/heading.html title='Table with Subheadings' %}
+{% include_cached content/heading.html title='Table with Subheadings' %}
 
 <figure>
     <table role="grid" aria-readonly="true">
@@ -375,7 +375,7 @@ youtube: true
 </figure>
 
 
-{% include content/heading.html title='Details &amp; Summary' id='details-and-summary' %}
+{% include_cached content/heading.html title='Details &amp; Summary' id='details-and-summary' %}
 
 <figure>
     <details>
@@ -394,7 +394,7 @@ youtube: true
 </figure>
 
 
-{% include content/heading.html title='Preformatted Text' %}
+{% include_cached content/heading.html title='Preformatted Text' %}
 
 <figure>
     <pre>P R E F O R M A T T E D T E X T
@@ -407,7 +407,7 @@ p q r s t u v w x y z { | } ~ </pre>
 </figure>
 
 
-{% include content/heading.html title='Code Block' %}
+{% include_cached content/heading.html title='Code Block' %}
 
 <figure class="nohighlight">
 <pre><code>{% raw %}@function strip-unit($number) {
@@ -420,7 +420,7 @@ p q r s t u v w x y z { | } ~ </pre>
 </figure>
 
 
-{% include content/heading.html title='Code Block with Language' %}
+{% include_cached content/heading.html title='Code Block with Language' %}
 
 {% highlight scss %}
 @function strip-unit($number) {
@@ -433,7 +433,7 @@ p q r s t u v w x y z { | } ~ </pre>
 {% endhighlight %}
 
 
-{% include content/heading.html title='Extended Code Block with Language' %}
+{% include_cached content/heading.html title='Extended Code Block with Language' %}
 
 {% include content/code-toggle-top.html %}
 
@@ -466,22 +466,22 @@ formatDate: function(date) {
 {% include content/code-toggle-bottom.html %}
 
 
-{% include content/heading.html title='Figure' %}
+{% include_cached content/heading.html title='Figure' %}
 
 <figure>
-    {% include content/img.html src='/images/content/SintraSkyline.png' alt='' %}
+    {% include_cached content/img.html src='/images/content/SintraSkyline.png' alt='' %}
 </figure>
 
 
-{% include content/heading.html title='Figure with Caption' %}
+{% include_cached content/heading.html title='Figure with Caption' %}
 
 <figure>
-    {% include content/img.html src='/images/content/SintraSkyline.png' alt='' %}
+    {% include_cached content/img.html src='/images/content/SintraSkyline.png' alt='' %}
     <figcaption>Sintra, Portugal skyline by &#133; me</figcaption>
 </figure>
 
 
-{% include content/heading.html title='Video' %}
+{% include_cached content/heading.html title='Video' %}
 
 <figure>
     <div class="media  media--youtube">
@@ -496,7 +496,7 @@ formatDate: function(date) {
 </figure>
 
 
-{% include content/heading.html title='Buttons' %}
+{% include_cached content/heading.html title='Buttons' %}
 
 <figure role="group">
     <button type="button" role="button">Button</button>
@@ -509,7 +509,7 @@ formatDate: function(date) {
 </figure>
 
 
-{% include content/heading.html title='Buttons List' %}
+{% include_cached content/heading.html title='Buttons List' %}
 
 <nav class="buttons-list" role="navigation">
     <button type="button" role="button">Button</button>
@@ -518,7 +518,7 @@ formatDate: function(date) {
 </nav>
 
 
-{% include content/heading.html title='Forms' %}
+{% include_cached content/heading.html title='Forms' %}
 
 <figure role="group">
     <form class="search-form" name="search-styleguide" method="get" action="/search/" role="search">
@@ -534,7 +534,7 @@ formatDate: function(date) {
 </figure>
 
 
-{% include content/heading.html title='Sparklines' %}
+{% include_cached content/heading.html title='Sparklines' %}
 
 <figure>
     <canvas id="sparkline-articles" class="sparkline" width="160" height="24"></canvas>
@@ -544,12 +544,12 @@ formatDate: function(date) {
 </figure>
 
 
-{% include content/heading.html title='Horizontal Rule' %}
+{% include_cached content/heading.html title='Horizontal Rule' %}
 
 <hr>
 
 
-{% include content/heading.html title='Content List' %}
+{% include_cached content/heading.html title='Content List' %}
 
 <ol class="content-list  h-feed" role="list">
     {% for page in site.posts limit: 4 %}
@@ -558,24 +558,24 @@ formatDate: function(date) {
 </ol>
 
 
-{% include content/heading.html title='Icons' %}
+{% include_cached content/heading.html title='Icons' %}
 
 <ul class="icons-list">
-    <li>{% include content/svg.html type='codepen' %}</li>
-    <li>{% include content/svg.html type='github' %}</li>
-    <li>{% include content/svg.html type='lastfm' %}</li>
-    <li>{% include content/svg.html type='spotify' %}</li>
-    <li>{% include content/svg.html type='rss' %}</li>
-    <li>{% include content/svg.html type='twitter' %}</li>
-    <li>{% include content/svg.html type='article' %}</li>
-    <li>{% include content/svg.html type='feather' %}</li>
-    <li>{% include content/svg.html type='link' %}</li>
-    <li>{% include content/svg.html type='search' %}</li>
-    <li>{% include content/svg.html type='tag' %}</li>
+    <li>{% include_cached content/svg.html type='codepen' %}</li>
+    <li>{% include_cached content/svg.html type='github' %}</li>
+    <li>{% include_cached content/svg.html type='lastfm' %}</li>
+    <li>{% include_cached content/svg.html type='spotify' %}</li>
+    <li>{% include_cached content/svg.html type='rss' %}</li>
+    <li>{% include_cached content/svg.html type='twitter' %}</li>
+    <li>{% include_cached content/svg.html type='article' %}</li>
+    <li>{% include_cached content/svg.html type='feather' %}</li>
+    <li>{% include_cached content/svg.html type='link' %}</li>
+    <li>{% include_cached content/svg.html type='search' %}</li>
+    <li>{% include_cached content/svg.html type='tag' %}</li>
 </ul>
 
 
-{% include content/heading.html title='HTML Attributes' %}
+{% include_cached content/heading.html title='HTML Attributes' %}
 
 <p><em>Classes</em> should be double-space delimited.</p>
 
@@ -584,7 +584,7 @@ formatDate: function(date) {
 {% endhighlight %}
 
 
-{% include content/heading.html title='Vocabulary' %}
+{% include_cached content/heading.html title='Vocabulary' %}
 
 <p>I’m always been a proponent for establishing a useful dictionary of specific vocabulary as it pertains to a project. This helps to ensure that everyone can be understood by everyone else. It also reduces the <q>awkwardness</q> for people who might not be familiar with particular nomenclature or naming conventions and could be shy to ask for clarification—rather it makes these definitions known right off the bat, and serves as a reference for the future.</p>
 
@@ -598,14 +598,14 @@ formatDate: function(date) {
 </dl>
 
 
-{% include content/heading.html title='Technology' %}
+{% include_cached content/heading.html title='Technology' %}
 
 <p>The CSS is compiled from SCSS using <a href="https://github.com/gulpjs/gulp#readme" rel="external">gulp.js</a> and some <a href="http://postcss.org/" rel="external">PostCSS</a>.</p>
 
 <p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://github.com" rel="external">GitHub</a>, front-end hosted by <a href="https://digitalocean.com" rel="external">DigitalOcean</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <dfn title="storing data so future requests for that data can be served faster">caching</dfn>, <dfn title="Secure Sockets Layer">SSL</dfn>, and as a <dfn title="Content Delivery Network">CDN</dfn>.
 
 
-{% include content/heading.html title='Tone and Voice' %}
+{% include_cached content/heading.html title='Tone and Voice' %}
 
 <p>Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:</p>
 
@@ -618,6 +618,6 @@ formatDate: function(date) {
 </ul>
 
 
-{% include content/heading.html title='License' %}
+{% include_cached content/heading.html title='License' %}
 
 <p>The code and contents of this website are licensed under a <a href="/license">GNU GPLv3 license</a> <a href="{{ site.urls.license }}" rel="external  license" title="GNU GPLv3 on gnu.org">(official)</a>.</p>

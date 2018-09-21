@@ -57,7 +57,7 @@
             <span class="p-best" hidden>5</span>
         {% endif %}
         {% if page.isbn %}
-            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include content/titleize.html title=read_status %}</data></strong>
+            <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}
         {% if page.start_date %}
             <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>

@@ -7,19 +7,19 @@
     <article class="h-entry" role="article">
         <a class="u-url" href="{{ page.url }}">
                 {% if page.categories contains 'article' %}
-                    {% include content/svg.html type='article' %}
+                    {% include_cached content/svg.html type='article' %}
                 {% elsif page.categories contains 'bookmark' %}
-                    {% include content/svg.html type='link' %}
+                    {% include_cached content/svg.html type='link' %}
                 {% elsif page.categories contains 'note' %}
-                    {% include content/svg.html type='feather' %}
+                    {% include_cached content/svg.html type='feather' %}
                 {% elsif page.categories contains 'pen' %}
-                    {% include content/svg.html type='codepen' %}
+                    {% include_cached content/svg.html type='codepen' %}
                 {% elsif page.categories contains 'recipe' %}
-                    {% include content/svg.html type='article' %}
+                    {% include_cached content/svg.html type='article' %}
                 {% elsif page.categories contains 'review' %}
-                    {% include content/svg.html type='article' %}
+                    {% include_cached content/svg.html type='article' %}
                 {% elsif page.categories contains 'talk' %}
-                    {% include content/svg.html type='bullhorn' %}
+                    {% include_cached content/svg.html type='bullhorn' %}
                 {% endif %}
             <h3 class="delta  title  p-name{% if page.categories contains 'note' %}  hidden{% endif %}">
                 {% if page.categories contains 'note' %}
