@@ -15,6 +15,12 @@
             </strong>
         {% endif %}
     </time>
+    {% if page.edit_date %}
+        <time class="date  dt-updated{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.edit_date | date_to_xmlschema }}">
+            <span>updated on</span>
+            <strong>{{ page.edit_date | date_to_long_string }}</strong>
+        </time>
+    {% endif %}
     {% if page.tags.size > 0 %}
         {% assign tags_sorted = page.tags | sort %}
         <div class="tags">
@@ -35,12 +41,12 @@
         {% endfor %}
         {% assign words = words | join: ' ' | number_of_words %}
         <div class="reading-time">
-            <span>length</span>
+            <span>reading time</span>
             <strong>~{{ words | divided_by: 50 | round | times: 50 }} words</strong>
             {% if words < 250 %}
-                <strong hidden>~1 min</strong>
+                <strong hidden aria-hidden="true">~1 min</strong>
             {% else %}
-                <strong hidden>~{{ words | divided_by: 250 }} mins</strong>
+                <strong hidden aria-hidden="true">~{{ words | divided_by: 250 }} mins</strong>
             {% endif %}
         </div>
     {% endif %}
@@ -73,6 +79,11 @@
                     {% capture syndication_gist %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{% endcapture %}
                 {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
                     {% capture syndication_github %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>{% endcapture %}
+                {% elsif syndication contains 'mastodon' %}
+                    {% capture syndication_mastodon %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
+                                                     <small class="strong">
+                                                         (<a rel="external" href="https://mastodon.social/interact/{{ syndication | split: '/' | last }}">Interact</a>)
+                                                     </small>{% endcapture %}
                 {% elsif syndication contains 'twitter.com' %}
                     {% capture syndication_twitter %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
                                                      <small class="strong">
@@ -122,6 +133,11 @@
             {% if syndication_twitter %}
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_twitter }}
+                {% assign syndication_count = syndication_count | plus: 1 %}
+            {% endif %}
+            {% if syndication_mastodon %}
+                {% if syndication_count > 0 %},{% endif %}
+                {{ syndication_mastodon }}
                 {% assign syndication_count = syndication_count | plus: 1 %}
             {% endif %}
         </div>

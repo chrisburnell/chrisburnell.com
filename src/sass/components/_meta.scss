@@ -7,6 +7,7 @@
     @include v(padding-bottom, medium);
     overflow: hidden;
     font-style: italic;
+    line-height: 3;
 
     aside + & {
         // pull up to align with `.author`
@@ -20,7 +21,9 @@
         @include v(margin-right, large);
     }
 
+    time + time,
     time + div,
+    div + time,
     div + div {
         position: relative;
 
