@@ -1,0 +1,11 @@
+---
+title: Selection 5
+link: https://open.spotify.com/album/6VtgidhTijyDjI0t6iGhKx
+authors: Mitch Murder
+authors_link: https://mitchmurder.bandcamp.com
+cover: https://f4.bcbits.com/img/a0536863985_16.jpg
+date: 2018-09-06
+rating: 4.5
+---
+
+Silky-smooth synths will captivate you and take you to a time long ago… but not forgotten. Like a mother’s cooking, this will instantly transport you back in time to when life was simpler—when all you wanted to do was cruise the winding coastline roads, ever-washed in moonlight, while some hard-hitting basslines and uplifting melodies punch through the night air, interrupted only by the fierce roar of the V8-engine that pulls you endlessly, onwards, into the future.
