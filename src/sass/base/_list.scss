@@ -40,7 +40,9 @@ ul:not([class]),
 }
 ol:not([class]),
 ol.default-list {
-    counter-reset: ordered-list;
+    &:not([class*="continued-list"]) {
+        counter-reset: ordered-list;
+    }
 
     & > li {
         counter-increment: ordered-list;
@@ -49,12 +51,21 @@ ol.default-list {
             @include tabular-lining-numerals;
             content: counter(ordered-list, decimal-leading-zero) ".";
         }
+
+        @for $i from 1 through 10 {
+            &[start="#{$i}"] {
+                counter-increment: ordered-list $i !important;
+            }
+        }
     }
 
     &[reversed] {
         display: flex;
         flex-direction: column-reverse;
     }
+}
+[counter-reset] {
+    counter-reset: ordered-list;
 }
 ul:not([class]) li::before,
 ul.default-list li::before {
