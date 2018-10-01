@@ -153,7 +153,9 @@
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
-                {% if reply contains 'twitter.com' %}
+                {% if reply contains 'mastodon.social' %}
+                    <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Toot</a>
+                {% elsif reply contains 'twitter.com' %}
                     {% if reply contains '/status/' %}
                         <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">@{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}</a>
                     {% else %}
