@@ -90,6 +90,11 @@ textarea {
     touch-action: manipulation;
 }
 
+// Remove outline for mouse users
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
 // Mouse Selection
 ::selection {
     @include v(background-color, raven);
