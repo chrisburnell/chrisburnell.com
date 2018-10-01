@@ -148,25 +148,25 @@
         let authorUrl = response.data.author.url.replace(/\/$/, "");
 
         // ID
-        html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
+        html = helpers.injectContent(html, /__id__/, id);
 
         // TYPE
-        html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
-
-        // URL
-        html = helpers.injectContent(html, /{{\s*url\s*}}/, url);
+        html = helpers.injectContent(html, /__type__/, type);
 
         // CONTENT
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
-
-        // AUTHOR URL
-        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, authorUrl);
+        html = helpers.injectContent(html, /__content__/, `<q>${content}</q>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
+        html = helpers.injectContent(html, /__author__/, author);
+
+        // URL
+        html = helpers.injectContent(html, /__url__/, url);
+
+        // AUTHOR URL
+        html = helpers.injectContent(html, /__author_url__/, authorUrl);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
+        html = helpers.injectContent(html, /__date__/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
 
         return html;
     };

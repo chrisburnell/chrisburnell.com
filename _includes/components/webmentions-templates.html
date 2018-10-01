@@ -1,11 +1,11 @@
 {% raw %}
 <template class="webmentions-template-default">
-    <a href="{{ url }}" id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}" rel="external">{{ author }}</a>
+    <a href="__author_url__" id="webmentions-__id__" class="webmentions__response" data-type="__type__" rel="external">__author__</a>
 </template>
 <template class="webmentions-template-reply">
-    <li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
-        <div>{{ content }} <a href="{{ url }}" rel="external">↗</a></div>
-        <div>by <a href="{{ author_url }}" rel="external">{{ author }}</a> {{ date }}</div>
+    <li id="webmentions-__id__" class="webmentions__response" data-type="__type__">
+        <div>__content__ <a href="__url__" rel="external">↗</a></div>
+        <div>by <a href="__author_url__" rel="external">__author__</a> __date__</div>
     </li>
 </template>
 {% endraw %}
