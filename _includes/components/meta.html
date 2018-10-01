@@ -99,6 +99,7 @@
                     (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>)
                 </small>
+                {% assign syndication_count = syndication_count | plus: 1 %}
             {% endif %}
             {% if page.speakerdeck_slug %}
                 {% if syndication_count > 0 %},{% endif %}
