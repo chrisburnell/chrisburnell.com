@@ -34,6 +34,10 @@
 }
 
 .webmentions__list {
+    @include media("screen", ">medium") {
+        grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
+    }
+
     a {
         word-break: break-word;
     }

@@ -69,7 +69,6 @@
         if (!window.AudioContext && !window.webkitAudioContext) {
             return;
         }
-        let playing = null;
         let note = 0;
         let noteLength = Math.floor(duration / notes.length);
         let output = new (window.AudioContext || window.webkitAudioContext)();
