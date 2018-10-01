@@ -65,5 +65,8 @@
         {% if page.date_end %}
             <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
         {% endif %}
+        {% if page.content %}
+            <div hidden>{{ page.content | markdownify }}</div>
+        {% endif %}
     </div>
 </li>

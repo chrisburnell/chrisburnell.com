@@ -47,6 +47,17 @@
     }
 }
 
+.webmentions__response {
+    & + & {
+        @include v(margin-top, medium);
+    }
+
+    time {
+        @include v(color, dove);
+        font-style: italic;
+    }
+}
+
 // Also appears only on article pages
 .button--show-webmentions {
     &,

@@ -154,19 +154,19 @@
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
 
         // URL
-        html = helpers.injectContent(html, "#", url);
+        html = helpers.injectContent(html, /{{\s*url\s*}}/, url);
 
         // CONTENT
         html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
 
         // AUTHOR URL
-        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, `<a href="${authorUrl}" rel="external">↗</a>`);
+        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, authorUrl);
 
         // AUTHOR
-        html = helpers.injectContent(html, /{{\s*author\s*}}/, `${author}`);
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `on <time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
 
         return html;
     };
