@@ -10,7 +10,6 @@
         ? document
               .querySelector('link[rel="canonical"]')
               .getAttribute("href")
-              .replace('http://localhost:9001', 'https://chrisburnell.com')
         : null;
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
@@ -149,25 +148,25 @@
         let authorUrl = response.data.author.url.replace(/\/$/, "");
 
         // ID
-        html = helpers.injectContent(html, /\_\_id\_\_/, id);
+        html = helpers.injectContent(decodeURI(html), /{{\s*id\s*}}/, id);
 
         // TYPE
-        html = helpers.injectContent(html, /\_\_type\_\_/, type);
+        html = helpers.injectContent(decodeURI(html), /{{\s*type\s*}}/, type);
 
         // CONTENT
-        html = helpers.injectContent(html, /\_\_content\_\_/, `<q>${content}</q>`);
+        html = helpers.injectContent(decodeURI(html), /{{\s*content\s*}}/, `<q>${content}</q>`);
 
         // AUTHOR
-        html = helpers.injectContent(html, /\_\_author\_\_/, author);
+        html = helpers.injectContent(decodeURI(html), /{{\s*author\s*}}/, author);
 
         // URL
-        html = helpers.injectContent(html, /\_\_url\_\_/, url);
+        html = helpers.injectContent(decodeURI(html), /{{\s*response_url\s*}}/, url);
 
         // AUTHOR URL
-        html = helpers.injectContent(html, /\_\_author_url\_\_/, authorUrl);
+        html = helpers.injectContent(decodeURI(html), /{{\s*author_url\s*}}/, authorUrl);
 
         // DATE
-        html = helpers.injectContent(html, /\_\_date\_\_/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
+        html = helpers.injectContent(decodeURI(html), /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
 
         return html;
     };
