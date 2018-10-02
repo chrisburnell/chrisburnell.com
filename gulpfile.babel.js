@@ -166,6 +166,21 @@ gulp.task("js-concat", ["js-prettify"], () => {
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 
+// Place the CSS rel preload file in the right place
+gulp.task("js-css-preload", () => {
+    return gulp
+        .src(`${paths.js.src}/vendors/cssrelpreload.js`)
+        .pipe(plumber())
+        .pipe(babel())
+        .pipe(
+            rename({
+                basename: "css-rel-preload",
+                extname: ".html"
+            })
+        )
+        .pipe(gulp.dest(`${paths.includes}/generated/`));
+});
+
 // Place the Service Worker at the root
 gulp.task("js-serviceworker", () => {
     return gulp
@@ -211,6 +226,7 @@ gulp.task("css", () => {
 
 // JS task
 gulp.task("js", ["js-concat"], () => {
+    gulp.start("js-css-preload");
     gulp.start("js-serviceworker");
 });
 
