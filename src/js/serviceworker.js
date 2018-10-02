@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.19--{{ site.posts | map: 'date' | first | date: '%s' }}';
+const VERSION = 'v2.0.20--{{ site.posts | map: 'date' | first | date: '%s' }}';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -42,21 +42,12 @@ const OPTIONAL_FILES = [
 
 // Pages to cache
 const OFFLINE_PAGES = [
-{% for page in site.html_pages %}
-    {% unless page.url contains 'html' or page.url contains 'offline' %}
+{%- for page in site.html_pages -%}
+    {% unless page.url contains 'html' or page.url contains 'offline' or page.url contains 'review' %}
         '{{ page.url }}',
     {% endunless %}
-{% endfor %}
-{% for page in site.categories.article limit: 2 %}
-    '{{ page.url }}',
-{% endfor %}
-{% for page in site.categories.bookmark limit: 2 %}
-    '{{ page.url }}',
-{% endfor %}
-{% for page in site.categories.note limit: 2 %}
-    '{{ page.url }}',
-{% endfor %}
-{% for page in site.categories.pen limit: 2 %}
+{%- endfor -%}
+{% for page in site.posts limit: 5 %}
     '{{ page.url }}'{% unless forloop.last %}, {% endunless %}
 {% endfor %}
 ];

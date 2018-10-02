@@ -83,8 +83,8 @@
     /// @return {String} Populated HTML
     ////
     let populateResponses = data => {
-        const WEBMENTIONS_TEMPLATE_DEFAULT = document.querySelector(".webmentions-template-default") ? document.querySelector(".webmentions-template-default").innerHTML.trim() : "";
-        const WEBMENTIONS_TEMPLATE_REPLY = document.querySelector(".webmentions-template-reply") ? document.querySelector(".webmentions-template-reply").innerHTML.trim() : "";
+        const WEBMENTIONS_TEMPLATE_DEFAULT = document.querySelector(".webmentions-template-default") ? decodeURI(document.querySelector(".webmentions-template-default").innerHTML.trim()) : "";
+        const WEBMENTIONS_TEMPLATE_REPLY = document.querySelector(".webmentions-template-reply") ? decodeURI(document.querySelector(".webmentions-template-reply").innerHTML.trim()) : "";
 
         let webmentionsLikeLabel = document.querySelector(".js-webmentions-likes-label");
         let webmentionsLikeContent = document.querySelector(".js-webmentions-likes-content");
@@ -148,25 +148,25 @@
         let authorUrl = response.data.author.url.replace(/\/$/, "");
 
         // ID
-        html = helpers.injectContent(decodeURI(html), /{{\s*id\s*}}/, id);
+        html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
 
         // TYPE
-        html = helpers.injectContent(decodeURI(html), /{{\s*type\s*}}/, type);
+        html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
 
         // CONTENT
-        html = helpers.injectContent(decodeURI(html), /{{\s*content\s*}}/, `<q>${content}</q>`);
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
 
         // AUTHOR
-        html = helpers.injectContent(decodeURI(html), /{{\s*author\s*}}/, author);
+        html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
 
         // URL
-        html = helpers.injectContent(decodeURI(html), /{{\s*response_url\s*}}/, url);
+        html = helpers.injectContent(html, /{{\s*url\s*}}/, url);
 
         // AUTHOR URL
-        html = helpers.injectContent(decodeURI(html), /{{\s*author_url\s*}}/, authorUrl);
+        html = helpers.injectContent(html, /{{\s*author_url\s*}}/, authorUrl);
 
         // DATE
-        html = helpers.injectContent(decodeURI(html), /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
 
         return html;
     };
