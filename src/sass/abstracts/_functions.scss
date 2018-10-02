@@ -354,7 +354,7 @@
 /// @return {List} Updated list
 ///
 @function walk($list, $function, $args...) {
-    @if not $list or $function {
+    @if not $list and $function {
         @warn "`walk()` expects two or more parameters (`$list`, `$function`, `$args...`).";
         @return false;
     }
