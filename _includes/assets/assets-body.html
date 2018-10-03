@@ -28,8 +28,34 @@
 
 <!-- ServiceWorker -->
 <script>
-    const bodyElement = document.querySelector("body");
-    const networkElement = document.querySelector(".network");
+    const notificationElement = document.querySelector(".notification");
+
+    let updateNotification = (text, type = "positive") => {
+        notificationElement.innerHTML = text;
+        notificationElement.classList.add(`notification--${type}`);
+        notificationElement.classList.remove("hidden");
+        setTimeout(() => {
+            notificationElement.classList.add("hidden");
+            notificationElement.classList.remove(`notification--${type}`);
+        }, 1000);
+    };
+
+    let updateNetwork = (event) => {
+        if (navigator.onLine) {
+            console.log("You have regained your network connection.");
+            notificationElement.innerHTML = "👍 You have regained your network connection.";
+            notificationElement.classList.add("notification--positive");
+        } else {
+            console.log("You have lost your network connection.");
+            notificationElement.innerHTML = "👎 You have lost your network connection.";
+            notificationElement.classList.add("notification--negative");
+        }
+        notificationElement.classList.remove("hidden");
+        setTimeout(() => {
+            notificationElement.classList.add("hidden");
+            notificationElement.classList.remove("notification--positive", "notification--negative");
+        }, 1000);
+    };
 
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker
@@ -49,8 +75,7 @@
                 if (serviceWorker) {
                     serviceWorker.addEventListener("statechange", () => {
                         if (registration.active && !navigator.serviceWorker.controller) {
-                            bodyElement.classList.add("offline-ready");
-                            networkElement.innerHTML = "All cached and ready to go offline!";
+                            updateNotification("🤩 All cached and ready to go offline!", "positive");
                         }
                     });
                 }
@@ -59,27 +84,12 @@
                 console.log("ServiceWorker registration failed:", err);
             });
         window.addEventListener("load", () => {
-            function updateNetwork(event) {
-                if (navigator.onLine) {
-                    console.log("You have regained your network connection.");
-                    networkElement.innerHTML = "You have regained your network connection.";
-                    bodyElement.classList.remove("is-offline");
-                    setTimeout(() => {
-                        bodyElement.classList.add("is-online");
-                    }, 5);
-                } else {
-                    console.log("You have lost your network connection.");
-                    networkElement.innerHTML = "You have lost your network connection.";
-                    bodyElement.classList.remove("is-online");
-                    setTimeout(() => {
-                        bodyElement.classList.add("is-offline");
-                    }, 5);
-                }
-            }
             window.addEventListener("online", updateNetwork);
             window.addEventListener("offline", updateNetwork);
             if (!!navigator.serviceWorker.controller) {
-                navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
+                navigator.serviceWorker.controller.postMessage({
+                    command: "trimCaches"
+                });
             }
         });
     } else {

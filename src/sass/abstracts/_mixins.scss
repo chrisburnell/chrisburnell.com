@@ -452,7 +452,7 @@
     $variable-output: null;
 
     // if a Nested List, we need to go deeper
-    @if type-of($map-name) == "list" {
+    @if type-of($map-name) == list {
         $nest-name: nth($map-name, 1);
         $nest-map-name: nth($map-name, 2);
     }

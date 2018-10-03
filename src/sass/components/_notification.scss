@@ -1,30 +1,26 @@
 ////
-/// Network Indicator
+/// Notification
 /// @group components
 ////
 
-.network {
+.notification {
+    @include v(background-color, mineshaft);
+    @include v(color, white);
+    display: block;
     padding: $measure-small $measure-medium;
     padding: var(--measure-small) var(--measure-medium);
-    @include v(font-size, gamma);
-    @include v(font-weight, bold);
-    display: block;
     position: fixed;
     @include v(bottom, medium);
     @include v(right, medium);
     @include v(left, medium);
+    @include v(font-size, gamma);
+    @include v(font-weight, bold);
 
     @include media("screen", ">small") {
         left: auto;
     }
 
-    body:not(.is-online):not(.is-offline):not(.offline-ready) & {
-        @include hidden;
-    }
-
-    .offline-ready &,
-    .is-online &,
-    .is-offline & {
+    &:not([class*="hidden"]) {
         animation: fade-out $transition-duration-default $animation-function $animation-duration $animation-fill-mode;
         animation: fade-out var(--transition-duration-default) var(--animation-function) var(--animation-duration) var(--animation-fill-mode);
 
@@ -40,14 +36,11 @@
         }
     }
 
-    .offline-ready &,
-    .is-online & {
+    &.notification--positive {
         background-color: $color-liquid;
-        @include v(color, white);
     }
 
-    .is-offline & {
+    &.notification--negative {
         @include v(background-color, canada);
-        @include v(color, white);
     }
 }
