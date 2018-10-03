@@ -11,6 +11,7 @@ icon_sizes:
 - 180
 - 192
 - 256
+- 512
 ---
 
 
@@ -22,7 +23,7 @@ icon_sizes:
     "name": "{{ site.title | strip_html | xml_escape }}",
     "short_name": "{{ site.title | replace: ' ', '' | strip_html | xml_escape }}",
     "description": "{{ site.lede | strip_html | xml_escape }}",
-    "display": "browser",
+    "display": "standalone",
     "orientation": "any",
     "start_url": "/",
     "homepage_url": "{{ site.url }}",

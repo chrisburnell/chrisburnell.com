@@ -15,7 +15,7 @@
     <svg class="icon  icon--{{ include.type }}" role="img" title="{{ include.title }}" aria-labelledby="svg-title--{{ svg_title_count }}">
         <title id="svg-title--{{ svg_title_count }}">{{ include.title }}</title>
 {% else %}
-    <svg class="icon  icon--{{ include.type }}" role="presentation">
+    <svg class="icon  icon--{{ include.type }}" role="img">
 {% endif %}
     <use xlink:href="/images/sprites.svg#svg--{{ include.type }}" />
 </svg>
