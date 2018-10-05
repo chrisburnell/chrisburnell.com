@@ -61,12 +61,12 @@ let updateStaticCache = () => {
             // These items must be cached for the Service Worker to complete installation
             return cache.addAll(CRITICAL_FILES);
         });
-}
+};
 
 let stashInCache = (cacheName, request, response) => {
     caches.open(cacheName)
         .then(cache => cache.put(request, response));
-}
+};
 
 // Limit the number of items in a specified cache.
 let trimCache = (cacheName, maxItems) => {
@@ -80,7 +80,7 @@ let trimCache = (cacheName, maxItems) => {
                     }
                 });
         });
-}
+};
 
 // Remove caches whose name is no longer valid
 let clearOldCaches = () => {
@@ -90,7 +90,7 @@ let clearOldCaches = () => {
                 if (!CACHES.includes(key)) return caches.delete(key)
             })
         ));
-}
+};
 
 
 self.addEventListener('install', event => {
