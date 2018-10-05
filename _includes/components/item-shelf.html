@@ -56,8 +56,6 @@
             <details>
                 {% if page.rating %}
                     <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data></summary>
-                    <span class="p-worst" hidden>1</span>
-                    <span class="p-best" hidden>5</span>
                 {% else %}
                     <summary>Review</summary>
                 {% endif %}
@@ -65,6 +63,8 @@
             </details>
         {% elsif page.rating %}
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
+        {% endif %}
+        {% if page.rating %}
             <span class="p-worst" hidden>1</span>
             <span class="p-best" hidden>5</span>
         {% endif %}
