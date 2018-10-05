@@ -51,7 +51,19 @@
                 <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
             {% endif %}
         </div>
-        {% if page.rating %}
+        {%- assign content = page.content | strip_newlines -%}
+        {% if content != empty %}
+            <details>
+                {% if page.rating %}
+                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data></summary>
+                    <span class="p-worst" hidden>1</span>
+                    <span class="p-best" hidden>5</span>
+                {% else %}
+                    <summary>Review</summary>
+                {% endif %}
+                <div class="e-content">{{ page.content | markdownify }}</div>
+            </details>
+        {% elsif page.rating %}
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
             <span class="p-worst" hidden>1</span>
             <span class="p-best" hidden>5</span>
@@ -59,14 +71,11 @@
         {% if page.isbn %}
             <strong><data class="p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}
-        {% if page.start_date %}
+        {% if page.date_start %}
             <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if page.date_end %}
             <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
-        {% endif %}
-        {% if page.content %}
-            <div hidden>{{ page.content | markdownify }}</div>
         {% endif %}
     </div>
 </li>

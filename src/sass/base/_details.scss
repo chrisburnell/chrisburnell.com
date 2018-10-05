@@ -5,13 +5,16 @@
 
 details {
     @include border-radius(thin);
-    @include v(background-color, mineshaft);
-    @include v(color, white);
     width: 100%;
     max-width: $line-length-responsive;
     @include v(padding, small);
     margin-left: auto;
     margin-right: auto;
+
+    &[open] {
+        @include v(background-color, mineshaft);
+        @include v(color, white);
+    }
 
     %content-elements {
         padding: 0 $measure-small $measure-small;
