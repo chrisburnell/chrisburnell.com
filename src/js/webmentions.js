@@ -17,7 +17,8 @@
     const WEBMENTIONS_SUBMIT = document.querySelector(".js-webmentions-submit");
     const WEBMENTIONS_RESPONSES = document.querySelector(".js-webmentions-responses");
     // `#webmention` will match both `#webmention` and `#webmentions`
-    const WEBMENTIONS_HASH = ["#webmention", "#mention", "#response"];
+    // `#respon` will match both `#respond` and `#response`
+    const WEBMENTIONS_HASH = ["#webmention", "#mention", "#respon"];
     let webmentionsLoaded = false;
     let responses = {
         like: [],
