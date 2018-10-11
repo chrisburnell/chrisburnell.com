@@ -167,7 +167,7 @@
         html = helpers.injectContent(html, /{{\s*author_url\s*}}/, authorUrl);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">(${helpers.formatDate(new Date(date))})</time>`);
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}"><small>on ${helpers.formatDate(new Date(date))}</small></time>`);
 
         return html;
     };
