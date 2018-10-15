@@ -40,8 +40,8 @@
             {% assign words = words | push: close_figure_split %}
         {% endfor %}
         {% assign words = words | join: ' ' | number_of_words %}
-        <div class="reading-time">
-            <span>reading time</span>
+        <div class="reading-length">
+            <span>reading length</span>
             <strong>~{{ words | divided_by: 50 | round | times: 50 }} words</strong>
             {% if words < 250 %}
                 <strong hidden aria-hidden="true">~1 min</strong>
