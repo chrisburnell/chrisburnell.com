@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.28--{{ site.posts | map: 'date' | first | date: '%s' }}';
+const VERSION = 'v2.0.29--{{ site.posts | map: 'date' | first | date: '%s' }}';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -157,7 +157,7 @@ self.addEventListener('fetch', event => {
                         if (request.headers.get('Accept').includes('image')) {
                             stashInCache(IMAGES_CACHE, request, copy);
                         }
-                        else if (!CRITICAL_FILES.includes(url.pathname) && !CRITICAL_FILES.includes(url.pathname.slice(1))) {
+                        else {
                             stashInCache(ASSETS_CACHE, request, copy);
                         }
                         return response;
