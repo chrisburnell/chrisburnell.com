@@ -265,3 +265,5 @@ Changing the default value of <var>$show-fallback</var> from `true` to `false` w
 {% include_cached content/heading.html title='The Takeaway' %}
 
 The benefits to using CSS Variables are enormous, and I’d strongly recommend using them as soon as you can across your projects. Others have better explained what those many benefits are, so I encourage you to read up on the subject. A mixin like the one we’ve gone over in this article will help you both in transitioning towards using CSS Variables as well as, when the time comes for your project(s), ceasing to provide fallbacks for your CSS Variables.
+
+This technique could also certainly use some extra eyes to tighten up the code and make it more approachable to a wider audience. Let me know if you have any suggestions or feedback—I’d love to make this technique even stronger, or maybe you have an even better solution!
