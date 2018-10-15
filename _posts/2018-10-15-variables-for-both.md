@@ -10,11 +10,11 @@ tags:
 - scss
 
 further_reading:
-- title: CSS Custom Properties Specification
+- title: W3 CSS Custom Properties Specification
   url: https://www.w3.org/TR/css-variables/
-- title: Using CSS custom properties
+- title: MDN — Using CSS custom properties
   url: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
-- title: CSS-Tricks Guide to CSS Custom Properties
+- title: CSS-Tricks’ Guide to CSS Custom Properties
   url: https://css-tricks.com/guides/css-custom-properties/
 
 syndicate_to:
