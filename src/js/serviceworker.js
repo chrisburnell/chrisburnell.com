@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.27--{{ site.posts | map: 'date' | first | date: '%s' }}';
+const VERSION = 'v2.0.28--{{ site.posts | map: 'date' | first | date: '%s' }}';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -121,16 +121,17 @@ self.addEventListener('fetch', event => {
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get('Accept').includes('text/html')) {
+        url.pathname = url.pathname.replace(/\/?$/, "/");
         event.respondWith(
             fetch(request)
                 .then(response => {
                     // NETWORK
                     // Stash a copy of this page in the STATIC or PAGES cache
                     let copy = response.clone();
-                    if (OFFLINE_PAGES.includes(url.pathname) || OFFLINE_PAGES.includes(url.pathname + '/')) {
+                    if (OFFLINE_PAGES.includes(url.pathname)) {
                         stashInCache(STATIC_CACHE, request, copy);
                     }
-                    else if (!CRITICAL_FILES.includes(url.pathname) && !CRITICAL_FILES.includes(url.pathname.slice(1))) {
+                    else {
                         stashInCache(PAGES_CACHE, request, copy);
                     }
                     return response;
