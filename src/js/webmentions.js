@@ -95,6 +95,7 @@
         let webmentionsReplyContent = document.querySelector(".js-webmentions-replies-content");
 
         for (let link of data.links.reverse()) {
+            link.activity.type = link.activity.type === "link" ? "reply" : link.activity.type;
             if (link.verified === true && link.private === false && (link.activity.type === "like" || link.activity.type === "repost" || link.activity.type === "reply")) {
                 responses[link.activity.type].push(link);
             }
