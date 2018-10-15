@@ -17,6 +17,10 @@ further_reading:
 - title: CSS-Tricks Guide to CSS Custom Properties
   url: https://css-tricks.com/guides/css-custom-properties/
 
+syndicate_to:
+- https://mastodon.social/users/chrisburnell/statuses/100899031142247634
+- https://twitter.com/iamchrisburnell/status/1051772305360195584
+
 caniuse: true
 ---
 
