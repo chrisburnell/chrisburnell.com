@@ -476,19 +476,16 @@
         $variable-output: var(--#{$map-name}-#{$variable});
     }
 
-    // if show fallback is not overridden to be null
-    @if $show-fallback {
-        @if $important {
-            #{$property}: $variable-fallback !important;
-        } @else {
-            #{$property}: $variable-fallback;
-        }
-    }
-
     // CSS Variable
     @if $important {
+        @if $show-fallback {
+            #{$property}: $variable-fallback !important;
+        }
         #{$property}: $variable-output !important;
     } @else {
+        @if $show-fallback {
+            #{$property}: $variable-fallback;
+        }
         #{$property}: $variable-output;
     }
 }

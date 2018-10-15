@@ -17,77 +17,49 @@
     --line-length-maximum: #{$line-length-maximum};
     --line-length-responsive: #{$line-length-responsive};
 
-    --measure-small: #{$measure-small};
-    --measure-small-relative: #{$measure-small-relative};
-    --measure-small-proportional: #{$measure-small-proportional};
-    --measure-medium: #{$measure-medium};
-    --measure-medium-relative: #{$measure-medium-relative};
-    --measure-medium-proportional: #{$measure-medium-proportional};
-    --measure-large: #{$measure-large};
-    --measure-large-relative: #{$measure-large-relative};
-    --measure-large-proportional: #{$measure-large-proportional};
-    --measure-one: #{$measure-one};
-    --measure-one-relative: #{$measure-one-relative};
+    @each $key, $value in $measures {
+        --measure-#{$key}: #{$value};
+    }
 
-    --opacity-alpha: #{$opacity-alpha};
-    --opacity-beta: #{$opacity-beta};
-    --opacity-gamma: #{$opacity-gamma};
-    --opacity-delta: #{$opacity-delta};
+    @each $key, $value in $opacities {
+        --opacity-#{$key}: #{$value};
+    }
 
-    --color-transparent: #{$color-transparent};
-    --color-black: #{$color-black};
-    --color-mineshaft: #{$color-mineshaft};
-    --color-kaiser: #{$color-kaiser};
-    --color-dove: #{$color-dove};
-    --color-alto: #{$color-alto};
-    --color-white: #{$color-white};
-    --color-raven: #{$color-raven};
-    --color-bowhead: #{$color-bowhead};
-    --color-coyote: #{$color-coyote};
-    --color-canada: #{$color-canada};
-    --color-highlight: #{$color-highlight};
-    --color-black--alpha: #{$color-black--alpha};
-    --color-black--gamma: #{$color-black--gamma};
-    --color-black--delta: #{$color-black--delta};
-    --color-raven--gamma: #{$color-raven--gamma};
+    @each $key, $value in $site-colors {
+        --color-#{$key}: #{$value};
+    }
 
-    --border-width-default: #{$border-width-default};
-    --border-width-thin: #{$border-width-thin};
-    --border-width-hairline: #{$border-width-hairline};
-    --border-width-button: #{$border-width-button};
+    @each $key, $value in $border-widths {
+        --border-width-#{$key}: #{$value};
+    }
 
-    --border-style-default: #{$border-style-default};
-    --border-style-alternate: #{$border-style-alternate};
+    @each $key, $value in $border-styles {
+        --border-style-#{$key}: #{$value};
+    }
 
-    --border-radius-default: #{$border-radius-default};
-    --border-radius-thin: #{$border-radius-thin};
-    --border-radius-hairline: #{$border-radius-hairline};
+    @each $key, $value in $border-radii {
+        --border-radius-#{$key}: #{$value};
+    }
 
     --button-border-width: #{$border-width-button};
 
     --font-display: #{$font-display};
 
-    --font-weight-default: #{$font-weight-default};
-    --font-weight-bold: #{$font-weight-bold};
+    @each $key, $value in $font-weights {
+        --font-weight-#{$key}: #{$value};
+    }
 
-    --font-size-default: #{$font-size-default};
-    --font-size-alpha: #{$font-size-alpha};
-    --font-size-beta: #{$font-size-beta};
-    --font-size-gamma: #{$font-size-gamma};
-    --font-size-large: #{$font-size-large};
-    --font-size-large-relative: #{$font-size-large-relative};
-    --font-size-small: #{$font-size-small};
-    --font-size-small-relative: #{$font-size-small-relative};
+    @each $key, $value in $font-sizes {
+        --font-size-#{$key}: #{$value};
+    }
 
-    --font-family-default: #{$font-family-default};
-    --font-family-alpha: #{$font-family-alpha};
-    --font-family-serif: #{$font-family-serif};
-    --font-family-monospace: #{$font-family-monospace};
+    @each $key, $value in $font-families {
+        --font-family-#{$key}: #{$value};
+    }
 
-    --line-height-default: #{$line-height-default};
-    --line-height-small: #{$line-height-small};
-    --line-height-medium: #{$line-height-medium};
-    --line-height-code: #{$line-height-code};
+    @each $key, $value in $line-heights {
+        --line-height-#{$key}: #{$value};
+    }
 
     --letter-spacing-default: #{$letter-spacing-default};
     --letter-spacing-uppercase: #{$letter-spacing-uppercase};
@@ -102,20 +74,13 @@
     --transition-duration-long: #{$transition-duration-long};
     --transition-function: #{$transition-function};
 
-    --z-index-below: #{$z-index-below};
-    --z-index-root: #{$z-index-root};
-    --z-index-default: #{$z-index-default};
-    --z-index-above: #{$z-index-above};
-    --z-index-modal: #{$z-index-modal};
-    --z-index-dialog: #{$z-index-dialog};
-    --z-index-notification: #{$z-index-notification};
+    @each $key, $value in $z-indexes {
+        --z-index-#{$key}: #{$value};
+    }
 
-    --color-css: #{$color-css};
-    --color-html: #{$color-html};
-    --color-javascript: #{$color-javascript};
-    --color-liquid: #{$color-liquid};
-    --color-markdown: #{$color-markdown};
-    --color-sass: #{$color-sass};
+    @each $key, $value in $language-colors {
+        --color-#{$key}: #{$value};
+    }
 
     --color-codepen: #{$color-codepen};
     --color-github: #{$color-github};

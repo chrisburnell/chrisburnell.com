@@ -267,7 +267,9 @@ $font-sizes: (
     beta: $font-size-beta,
     gamma: $font-size-gamma,
     large: $font-size-large,
-    small: $font-size-small
+    large-relative: $font-size-large-relative,
+    small: $font-size-small,
+    small-relative: $font-size-small-relative
 ) !default;
 
 /// @type List
