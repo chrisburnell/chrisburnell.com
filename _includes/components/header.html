@@ -1,10 +1,7 @@
 <header class="wrap" role="banner">
 
     <a rel="home" class="logo" href="/" title="{{ site.title }}">
-        <svg class="icon  icon--raven" role="img" title="Chris Burnell" aria-labelledby="logo">
-            <title id="logo">Chris Burnell</title>
-            <use xlink:href="/images/sprites.svg#svg--raven"></use>
-        </svg>
+        {% include content/svg.html type='raven' title=site.title %}
     </a>
 
     {% include_cached components/nav-primary.html %}
