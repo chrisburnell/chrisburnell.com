@@ -44,7 +44,7 @@
         &:hover,
         &:focus,
         &:active {
-            @include v(background-color, raven--gamma, true);
+            @include v(background-color, raven--gamma, $important: true);
         }
 
         aside & {
