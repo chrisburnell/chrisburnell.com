@@ -454,7 +454,7 @@ $variable-map: (
     measure: $measures,
     opacity: $opacities,
     z-index: $z-indexes
-);
+) !default;
 
 /// @type Map
 /// @see {Mixin} v
@@ -503,4 +503,4 @@ $property-map: (
     text-decoration-color: color,
     text-decoration-width: border-width,
     z-index: z-index
-);
+) !default;

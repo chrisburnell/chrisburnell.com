@@ -443,7 +443,7 @@
 ///
 /// Select a CSS variable and provide a fallback
 ///
-@mixin v($property, $variable, $negative: false, $important: false, $show-fallback: true) {
+@mixin v($property, $value, $negative: false, $important: false, $show-fallback: true) {
     $map-name: map-get($property-map, $property);
     $nest-name: null;
     $nest-map-name: null;
@@ -464,29 +464,49 @@
         // get the nested map
         $nest-map: map-get($map, $nest-map-name);
         // fallback value, get the var value from the nested map
-        $variable-fallback: map-get($nest-map, $variable);
+        $variable-fallback: map-get($nest-map, $value);
         // our CSS Variable output
-        $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$variable});
+        $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
     } @else {
         // get the map from map name
         $map: map-get($variable-map, $map-name);
         // fallback value, grab the variable's value from the map
-        $variable-fallback: map-get($map, $variable);
+        $variable-fallback: map-get($map, $value);
         // our CSS Variable output
-        $variable-output: var(--#{$map-name}-#{$variable});
+        $variable-output: var(--#{$map-name}-#{$value});
     }
 
-    // CSS Variable
+    // output the value from SCSS as-is as well as the associated CSS variable
     @if $important {
         @if $show-fallback {
-            #{$property}: $variable-fallback !important;
+            @if $negative {
+                #{$property}: #{$variable-fallback * -1} !important;
+            }
+            @else {
+                #{$property}: $variable-fallback !important;
+            }
         }
-        #{$property}: $variable-output !important;
+        @if $negative {
+            #{$property}: calc(#{$variable-output} * -1) !important;
+        }
+        @else {
+            #{$property}: $variable-output !important;
+        }
     } @else {
         @if $show-fallback {
-            #{$property}: $variable-fallback;
+            @if $negative {
+                #{$property}: #{$variable-fallback * -1};
+            }
+            @else {
+                #{$property}: $variable-fallback;
+            }
         }
-        #{$property}: $variable-output;
+        @if $negative {
+            #{$property}: calc(#{$variable-output} * -1);
+        }
+        @else {
+            #{$property}: $variable-output;
+        }
     }
 }
 

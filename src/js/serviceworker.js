@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.24--{{ site.posts | map: 'date' | first | date: '%s' }}';
+const VERSION = 'v2.0.25--{{ site.posts | map: 'date' | first | date: '%s' }}';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
