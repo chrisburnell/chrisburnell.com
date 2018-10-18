@@ -45,12 +45,18 @@ ins {
 ins {
     background-color: mix($color-white, $color-liquid, 80%);
     color: contrasting-color(mix($color-white, $color-liquid, 80%));
+    @include v(font-size, default);
 }
 
 del {
-    background-color: mix($color-white, $color-lastfm, 80%);
-    color: contrasting-color(mix($color-white, $color-lastfm, 80%));
-    text-decoration-color: mix($color-white, $color-lastfm, 80%);
+    @include v(background-color, canada);
+    @include v(color, white);
+    @include v(text-decoration-color, canada);
+    @include v(font-size, default);
+}
+
+s {
+    @include v(color, canada);
 }
 
 small {
