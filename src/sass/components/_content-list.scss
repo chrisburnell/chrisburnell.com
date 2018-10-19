@@ -94,11 +94,10 @@
     .lede {
         margin-bottom: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
         overflow-wrap: break-word;
-        word-wrap: break-word;
+        text-overflow: ellipsis;
         word-break: break-word;
-        hyphens: auto;
+        word-wrap: break-word;
     }
 
     .date {
