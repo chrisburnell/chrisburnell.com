@@ -7,12 +7,6 @@ details {
     @include border-radius(thin);
     width: 100%;
     max-width: $line-length-responsive;
-    @include v(padding, small);
-
-    &[open] {
-        @include v(background-color, mineshaft);
-        @include v(color, white);
-    }
 
     %content-elements {
         padding: 0 $measure-small $measure-small;
@@ -21,23 +15,41 @@ details {
 
 summary {
     @include non-selectable;
-    @include transition(transform);
+    @include transition(padding);
     display: list-item;
     outline-width: 0;
     @include v(font-weight, bold);
     cursor: pointer;
 
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-        text-decoration-skip: ink;
-        text-decoration-skip-ink: auto;
+    &::-webkit-details-marker {
+        display: none;
     }
 
-    details:not([open]) {
+    &::after {
+        content: " ▼";
+        @include v(color, dove);
+    }
+
+    &:hover,
+    &:focus {
+        @include v(padding-left, small);
+
+        &::after {
+            content: " Close";
+            @include v(font-size, small);
+        }
+    }
+
+    details:not([open]) & {
+        &::after {
+            content: " ▶";
+        }
+
         &:hover,
         &:focus {
-            transform: translateX($measure-small);
+            &::after {
+                content: " Open";
+            }
         }
     }
 

@@ -23,18 +23,23 @@ code[data-lang] {
         @include v(font-size, large);
         letter-spacing: $letter-spacing-uppercase;
         line-height: #{$measure-large + $measure-small};
-        text-shadow: none;
+        text-shadow: 0 $border-width-hairline 0 $color-mineshaft;
+        text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
     }
 
     &[data-lang="html"]::before,
     &[data-lang="css"]::before,
-    &[data-lang="scss"]::before {
+    &[data-lang="scss"]::before,
+    &[data-lang="yaml"]::before {
         @include case(uppercase);
     }
 
     &[data-lang="javascript"]::before {
         content: "JavaScript";
-        text-transform: none;
+    }
+
+    &[data-lang="liquid"]::before {
+        @include case(capitalize);
     }
 }
 
@@ -44,6 +49,8 @@ code[data-lang] {
         &::before {
             background-color: #{$color} !important;
             color: contrasting-color($color, $color-mineshaft, $color-white) !important;
+            text-shadow: 0 $border-width-hairline 0 contrasting-color($color, $color-white, $color-mineshaft);
+            text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft);
         }
     }
 }
