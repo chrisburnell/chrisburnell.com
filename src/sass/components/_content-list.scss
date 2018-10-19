@@ -86,13 +86,13 @@
 
     .lede,
     .date {
+        width: 100%;
         @include v(color, dove);
         @include v(font-size, small);
         @include v(font-weight, bold);
     }
 
     .lede {
-        width: 100%;
         margin-bottom: 0;
         overflow: hidden;
         overflow-wrap: break-word;
@@ -102,7 +102,6 @@
     }
 
     .date {
-        width: 100%;
         text-align: right;
 
         &::before {
