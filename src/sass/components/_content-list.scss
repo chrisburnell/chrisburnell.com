@@ -95,7 +95,10 @@
         margin-bottom: 0;
         overflow: hidden;
         text-overflow: ellipsis;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
         word-break: break-word;
+        hyphens: auto;
     }
 
     .date {
