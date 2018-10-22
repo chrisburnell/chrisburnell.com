@@ -28,15 +28,24 @@ summary {
     &::after {
         content: " ▼";
         @include v(color, dove);
+        @include v(font-size, small);
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         @include v(padding-left, small);
 
         &::after {
-            content: " Close";
-            @include v(font-size, small);
+            content: " ▼ Close";
+        }
+    }
+
+    @include media("coarse") {
+        &:focus {
+            @include v(padding-left, small);
+
+            &::after {
+                content: " ▼ Close";
+            }
         }
     }
 
@@ -45,10 +54,17 @@ summary {
             content: " ▶";
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             &::after {
-                content: " Open";
+                content: " ▶ Open";
+            }
+        }
+
+        @include media("coarse") {
+            &:focus {
+                &::after {
+                    content: " ▶ Open";
+                }
             }
         }
     }
