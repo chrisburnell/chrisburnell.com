@@ -61,6 +61,7 @@
         display: block;
     }
 
+    small,
     time {
         @include v(color, dove);
         font-style: italic;
