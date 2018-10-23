@@ -1,13 +1,13 @@
 {% raw %}
 <template class="webmentions-template-default">
-    <a href="{{ author_url }}" id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}" rel="external">
+    <a href="{{ author_url }}" id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}" rel="external" title="{{ author }}">
         <img src="{{ author_image_url }}">
         <!-- {{ author }} -->
     </a>
 </template>
 <template class="webmentions-template-reply">
     <li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
-        <div>{{ content }} <a href="{{ url }}" rel="external">↗</a></div>
+        <div>{{ content }} <a href="{{ url }}" rel="external" title="Read externally">↗</a></div>
         <div><small>by</small> <a href="{{ author_url }}" rel="external">{{ author }}</a> {{ date }}</div>
     </li>
 </template>
