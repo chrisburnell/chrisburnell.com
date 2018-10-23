@@ -26,8 +26,8 @@
                     playingLabel = "🎵 Last Played";
                 }
                 LASTFM_STATUS.innerHTML = `<time datetime="${datetime.toISOString()}">${playingLabel}</time>`;
-                LASTFM_ARTIST.innerHTML = data["artist"]["#text"] ? ` —  <em>${data["artist"]["#text"]}</em>` : "";
-                LASTFM_TRACK.innerHTML = data["name"] ? `<em>${data["name"]}</em>` : "";
+                LASTFM_ARTIST.innerHTML = data["artist"]["#text"] ? ` <em>by</em> ${data["artist"]["#text"]}` : "";
+                LASTFM_TRACK.innerHTML = data["name"] ? ${data["name"] : "";
                 LASTFM_LINK.href = data.url;
                 for (let section of LASTFM_SECTION) {
                     section.removeAttribute("hidden");
