@@ -17,10 +17,7 @@ searchable: no-content
     <dd><canvas id="sparkline-books" class="sparkline" width="160" height="24"></canvas></dd-->
     <dt><h2 class="delta"><a href="/music/">Music</a></h2></dt>
     <dd><canvas id="sparkline-music" class="sparkline" width="160" height="24"></canvas></dd>
-    <dt class="js-lastfm" hidden><h2 class="delta"><a class="js-lastfm-status" href="{{ site.urls.lastfm }}" rel="me  external"></a></h2></dt>
-    <dd class="leading-small  js-lastfm" hidden>
-        <span class="js-lastfm-track"></span><span class="js-lastfm-artist"></span> <a class="js-lastfm-link" href="" rel="external">↗</a>
-    </dd>
+    {% include components/lastfm.html %}
 </dl>
 
 <h2 class="gamma">Latest Posts</h2>
