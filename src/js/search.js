@@ -90,9 +90,11 @@
             .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(data => {
+                // Success!
                 processData(data);
             })
             .catch(error => {
+                // Fail!
                 console.error(`Search request status error: ${error.status} ${error.statusText}`);
             });
     };

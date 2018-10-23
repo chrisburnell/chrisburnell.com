@@ -95,4 +95,10 @@ dt {
 dd {
     margin: 0;
     vertical-align: top;
+
+    &:only-of-type {
+        @include media("screen", ">medium") {
+            grid-column: 2 / span 3;
+        }
+    }
 }

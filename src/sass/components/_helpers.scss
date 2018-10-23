@@ -41,3 +41,7 @@
     pointer-events: none;
     cursor: not-allowed; // kind of redundant
 }
+
+.leading-small {
+    @include v(line-height, small);
+}

@@ -1,5 +1,6 @@
 {
     "presets": [["minify", {
+        "builtIns": false,
         "mangle": false
     }]]
 }

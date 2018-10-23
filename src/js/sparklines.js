@@ -101,8 +101,8 @@
         fetch("/sparklines.json")
             .then(helpers.getFetchResponse)
             .then(response => response.json())
-            .then(response => {
-                data = response;
+            .then(data => {
+                // Success!
                 for (let type in data) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
@@ -110,6 +110,7 @@
                 }
             })
             .catch(error => {
+                // Fail!
                 console.error(`Sparklines request status error: ${error.status} ${error.statusText}`);
             });
     }

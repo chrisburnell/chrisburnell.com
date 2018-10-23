@@ -51,6 +51,7 @@
                 }
             })
             .catch(error => {
+                // Fail!
                 console.error(`Webmention request status error: ${error.status} ${error.statusText}`);
             });
     };
