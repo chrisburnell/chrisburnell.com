@@ -1,6 +1,9 @@
 {% raw %}
 <template class="webmentions-template-default">
-    <a href="{{ author_url }}" id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}" rel="external">{{ author }}</a>
+    <a href="{{ author_url }}" id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}" rel="external">
+        <img src="{{ author_image_url }}">
+        <!-- {{ author }} -->
+    </a>
 </template>
 <template class="webmentions-template-reply">
     <li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">

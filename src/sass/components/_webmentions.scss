@@ -42,19 +42,36 @@
         word-break: break-word;
     }
 
-    .webmentions__list__replies {
+    .webmentions__list__replies ol {
         margin-top: 0;
     }
 }
 
 .webmentions__response {
-    & + & {
+    .webmentions__list__replies & + & {
         @include v(margin-top, medium);
+    }
+
+    img {
+        @include border-radius(50%);
+        width: auto;
+        max-width: 3rem;
+        max-height: 3rem;
+        height: auto;
+        display: block;
     }
 
     time {
         @include v(color, dove);
         font-style: italic;
+    }
+}
+
+.webmentions__list__likes,
+.webmentions__list__reposts {
+    a {
+        display: inline-block;
+        @include v(margin-right, small);
     }
 }
 

@@ -2,12 +2,12 @@
     <h2 class="gamma  js-webmention-count" data-webmentions-url="{{ page.url | absolute_url }}">Responses</h2>
     <dl class="webmentions__list" aria-live="polite">
         <dt class="js-webmentions-likes-label" hidden>Likes:</dt>
-        <dd class="js-webmentions-likes-content" hidden></dd>
+        <dd class="webmentions__list__likes  js-webmentions-likes-content" hidden></dd>
         <dt class="js-webmentions-reposts-label" hidden>Reposts:</dt>
-        <dd class="js-webmentions-reposts-content" hidden></dd>
+        <dd class="webmentions__list__reposts  js-webmentions-reposts-content" hidden></dd>
         <dt class="js-webmentions-replies-label" hidden>Replies:</dt>
-        <dd hidden>
-            <ol class="webmentions__list__replies  js-webmentions-replies-content"></ol>
+        <dd class="webmentions__list__replies" hidden>
+            <ol class="js-webmentions-replies-content"></ol>
         </dd>
     </dl>
     <noscript>Please enable JavaScript to view Webmentions.</noscript>

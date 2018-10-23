@@ -105,9 +105,6 @@
         if (!!responses.like.length) {
             webmentionsLikeLabel.innerHTML = `${responses.like.length} ${webmentionsLikeLabel.innerHTML}`;
             for (let response of responses.like) {
-                if (response !== responses.like[0]) {
-                    webmentionsLikeContent.innerHTML += ", ";
-                }
                 webmentionsLikeContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
             }
             webmentionsLikeLabel.removeAttribute("hidden");
@@ -117,9 +114,6 @@
         if (!!responses.repost.length) {
             webmentionsRepostLabel.innerHTML = `${responses.repost.length} ${webmentionsRepostLabel.innerHTML}`;
             for (let response of responses.repost) {
-                if (response !== responses.repost[0]) {
-                    webmentionsRepostContent.innerHTML += ", ";
-                }
                 webmentionsRepostContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
             }
             webmentionsRepostLabel.removeAttribute("hidden");
@@ -148,7 +142,8 @@
         let content = response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
-        let authorUrl = response.data.author.url.replace(/\/$/, "");
+        let authorUrl = response.data.author.url;
+        let authorImgUrl = response.data.author.photo ? response.data.author.photo : "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png";
 
         // ID
         html = helpers.injectContent(html, /{{\s*id\s*}}/, id);
@@ -167,6 +162,9 @@
 
         // AUTHOR URL
         html = helpers.injectContent(html, /{{\s*author_url\s*}}/, authorUrl);
+
+        // AUTHOR IMAGE URL
+        html = helpers.injectContent(html, /{{\s*author_image_url\s*}}/, authorImgUrl);
 
         // DATE
         html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}"><small>on ${helpers.formatDate(new Date(date))}</small></time>`);
