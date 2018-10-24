@@ -19,33 +19,33 @@ limit_y: 12
   {%- endif -%}
 {%- endfor -%}
 {
-    "articles": [
-      {% include components/sparklines-json.html target=site.categories.article limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "books": [
-      {% include components/sparklines-json.html target=site.books limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "bookmarks": [
-      {% include components/sparklines-json.html target=site.categories.bookmark limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "music": [
-      {% include components/sparklines-json.html target=site.music limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "notes": [
-      {% include components/sparklines-json.html target=site.categories.note limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "pens": [
-      {% include components/sparklines-json.html target=site.categories.pen limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ],
-    "recipes": [
-      0
-      {% comment %}{% include components/sparklines-json.html target=site.categories.recipe limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
-    ],
-    "reviews": [
-      0
-      {% comment %}{% include components/sparklines-json.html target=site.categories.review limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
-    ],
-    "talks": [
-      {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
-    ]
+  "articles": [
+    {% include components/sparklines-json.html target=site.categories.article limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "books": [
+    {% include components/sparklines-json.html target=site.books limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "bookmarks": [
+    {% include components/sparklines-json.html target=site.categories.bookmark limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "music": [
+    {% include components/sparklines-json.html target=site.music limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "notes": [
+    {% include components/sparklines-json.html target=site.categories.note limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "pens": [
+    {% include components/sparklines-json.html target=site.categories.pen limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
+  "recipes": [
+    0
+    {% comment %}{% include components/sparklines-json.html target=site.categories.recipe limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
+  ],
+  "reviews": [
+    0
+    {% comment %}{% include components/sparklines-json.html target=site.categories.review limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
+  ],
+  "talks": [
+    {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ]
 }
