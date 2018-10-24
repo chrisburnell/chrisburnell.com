@@ -6,13 +6,14 @@
 :root {
     --base-font-size: #{$base-font-size};
 
-    --wrapper-width-small: #{$wrapper-width-small};
-    --wrapper-width-medium: #{$wrapper-width-medium};
-    --wrapper-width-large: #{$wrapper-width-large};
+    @each $key, $value in $breakpoints {
+        --wrapper-width-#{$key}: #{$value};
+    }
 
     --gutter-width: #{$gutter-width};
+    --gap-width: #{$gap-width};
     --aside-width: #{$aside-width};
-    --article-width: #{$content-width};
+    --content-width: #{$content-width};
     --line-length-minimum: #{$line-length-minimum};
     --line-length-maximum: #{$line-length-maximum};
     --line-length-responsive: #{$line-length-responsive};
@@ -25,7 +26,7 @@
         --opacity-#{$key}: #{$value};
     }
 
-    @each $key, $value in $site-colors {
+    @each $key, $value in $all-colors {
         --color-#{$key}: #{$value};
     }
 
@@ -40,8 +41,6 @@
     @each $key, $value in $border-radii {
         --border-radius-#{$key}: #{$value};
     }
-
-    --button-border-width: #{$border-width-button};
 
     --font-display: #{$font-display};
 
@@ -77,17 +76,6 @@
     @each $key, $value in $z-indexes {
         --z-index-#{$key}: #{$value};
     }
-
-    @each $key, $value in $language-colors {
-        --color-#{$key}: #{$value};
-    }
-
-    --color-codepen: #{$color-codepen};
-    --color-github: #{$color-github};
-    --color-lastfm: #{$color-lastfm};
-    --color-spotify: #{$color-spotify};
-    --color-spotify-alt: #{$color-spotify-alt};
-    --color-twitter: #{$color-twitter};
 
     --icon-size: #{$icon-size};
     --logo-size: #{$logo-size};

@@ -8,7 +8,7 @@
 .banner {
     @include border-radius;
     width: $content-width;
-    width: var(--article-width);
+    width: var(--content-width);
     @include v(margin-bottom, large);
 
     @include media("screen", "<=small") {

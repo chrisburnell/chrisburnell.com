@@ -35,7 +35,7 @@
 }
 
 // Brand Icon Widths and Colors
-@each $color-brand in $brand-colors {
+@each $color-brand in $brand-details {
     $name: nth($color-brand, 1);
     $icon-color: nth($color-brand, 2);
     $ratio: nth($color-brand, 3);
