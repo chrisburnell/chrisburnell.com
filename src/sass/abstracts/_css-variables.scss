@@ -44,12 +44,12 @@
 
     --font-display: #{$font-display};
 
-    @each $key, $value in $font-weights {
-        --font-weight-#{$key}: #{$value};
-    }
-
     @each $key, $value in $font-sizes {
         --font-size-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-weights {
+        --font-weight-#{$key}: #{$value};
     }
 
     @each $key, $value in $font-families {

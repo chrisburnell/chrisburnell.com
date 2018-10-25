@@ -75,7 +75,9 @@ $measures: (
     large-relative: $measure-large-relative,
     large-proportional: $measure-large-proportional,
     one: $measure-one,
-    one-relative: $measure-one-relative
+    one-relative: $measure-one-relative,
+    gutter: $gutter-width,
+    gap: $gap-width
 ) !default;
 
 /// @type Number
@@ -86,7 +88,6 @@ $opacity-beta: 0.7 !default;
 $opacity-gamma: 0.1 !default;
 /// @type Number
 $opacity-delta: 0.05 !default;
-
 /// @type Map
 /// @prop {String} Opacity name
 /// @prop {Number} Opacity value
@@ -224,19 +225,6 @@ $border-radii: (
 /// @type String
 $font-display: swap !default;
 
-/// @type Number
-$font-weight-default: 400 !default;
-/// @type Number
-$font-weight-bold: 600 !default;
-/// @type Map
-/// @prop {String} Font Weight Name
-/// @prop {Color} Font Weight Value
-/// @see {Mixin} v
-$font-weights: (
-    default: $font-weight-default,
-    bold: $font-weight-bold
-) !default;
-
 /// @type Length
 $font-size-default: 1rem !default;
 // 52px
@@ -271,6 +259,19 @@ $font-sizes: (
     large-relative: $font-size-large-relative,
     small: $font-size-small,
     small-relative: $font-size-small-relative
+) !default;
+
+/// @type Number
+$font-weight-default: 400 !default;
+/// @type Number
+$font-weight-bold: 600 !default;
+/// @type Map
+/// @prop {String} Font Weight Name
+/// @prop {Color} Font Weight Value
+/// @see {Mixin} v
+$font-weights: (
+    default: $font-weight-default,
+    bold: $font-weight-bold
 ) !default;
 
 /// @type List
