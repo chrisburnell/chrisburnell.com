@@ -5,8 +5,7 @@
 ////
 
 .search-main {
-    max-width: $wrapper-width-small;
-    max-width: var(--wrapper-width-small);
+    @include v(max-width, breakpoint-small);
     @include v(margin-bottom, large);
 }
 .search-results {

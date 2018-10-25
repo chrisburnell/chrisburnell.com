@@ -17,13 +17,13 @@
 
     :not(.stretch) > & {
         @include media("screen", ">medium") {
-            max-width: $content-width;
+            @include v(max-width, content);
             grid-area: content;
         }
     }
 
     .stretch > & {
-        max-width: $wrapper-width-medium;
+        @include v(max-width, breakpoint-medium);
         margin: 0 auto;
     }
 }

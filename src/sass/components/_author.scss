@@ -31,9 +31,10 @@
     .stretch > & {
         @include media("screen", ">medium") {
             width: 100%;
-            max-width: $wrapper-width-medium;
+            @include v(max-width, breakpoint-medium);
             float: none;
             margin: $measure-large auto 0;
+            margin: var(--measure-large) auto 0;
         }
     }
 }
@@ -86,7 +87,9 @@
 
 // Photograph of MY FACE
 .author-image {
-    flex: 0 0 $avatar-size;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include v(flex-basis, avatar);
     float: left;
     position: relative;
     text-decoration: none;
@@ -95,8 +98,8 @@
     &::before,
     %image-elements {
         @include border-radius(50%);
-        width: $avatar-size;
-        height: $avatar-size;
+        @include v(width, avatar);
+        @include v(height, avatar);
 
         @supports (shape-outside: circle(50%)) {
             shape-outside: circle(50%);
@@ -144,13 +147,13 @@
                         transform: none;
                     }
                     50% {
-                        transform: translateY(-#{$avatar-size * 0.7});
+                        transform: translateY(-#{$measure-avatar * 0.7});
                     }
                     75% {
-                        transform: translateY(-#{$avatar-size * 0.45});
+                        transform: translateY(-#{$measure-avatar * 0.45});
                     }
                     100% {
-                        transform: rotateZ(-#{$rotation-default * 2}) translateX(-#{$avatar-size * 0.2}) translateY(-#{$avatar-size * 0.6});
+                        transform: rotateZ(-#{$rotation-default * 2}) translateX(-#{$measure-avatar * 0.2}) translateY(-#{$measure-avatar * 0.6});
                     }
                 }
             }

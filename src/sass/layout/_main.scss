@@ -13,9 +13,10 @@ main {
             // 1────────2─────────3
             // │ author │ content │
             // 2────────┴─────────┘
-            grid-template-columns: $aside-width minmax(1px, 1fr);
+            grid-template-columns: $measure-aside minmax(1px, 1fr);
+            grid-template-columns: var(--measure-aside) minmax(1px, 1fr);
             grid-template-areas: "author content";
-            grid-column-gap: $gap-width;
+            @include v(column-gap, gap);
         }
     }
 }

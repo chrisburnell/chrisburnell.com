@@ -6,18 +6,6 @@
 :root {
     --base-font-size: #{$base-font-size};
 
-    @each $key, $value in $breakpoints {
-        --wrapper-width-#{$key}: #{$value};
-    }
-
-    --gutter-width: #{$gutter-width};
-    --gap-width: #{$gap-width};
-    --aside-width: #{$aside-width};
-    --content-width: #{$content-width};
-    --line-length-minimum: #{$line-length-minimum};
-    --line-length-maximum: #{$line-length-maximum};
-    --line-length-responsive: #{$line-length-responsive};
-
     @each $key, $value in $measures {
         --measure-#{$key}: #{$value};
     }
@@ -76,10 +64,6 @@
     @each $key, $value in $z-indexes {
         --z-index-#{$key}: #{$value};
     }
-
-    --icon-size: #{$icon-size};
-    --logo-size: #{$logo-size};
-    --avatar-size: #{$avatar-size};
 
     --max-columns: #{$max-columns};
 }

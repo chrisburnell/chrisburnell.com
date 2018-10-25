@@ -7,12 +7,10 @@
 // Can take two images, which are displayed with `srcset`
 .banner {
     @include border-radius;
-    width: $content-width;
-    width: var(--content-width);
+    @include v(width, content);
     @include v(margin-bottom, large);
 
     @include media("screen", "<=small") {
-        width: $wrapper-width-small;
-        width: var(--wrapper-width-small);
+        @include v(width, breakpoint-small);
     }
 }

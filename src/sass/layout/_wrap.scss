@@ -5,12 +5,9 @@
 
 .wrap {
     width: auto;
-    max-width: $wrapper-width-large;
-    max-width: var(--wrapper-width-large);
-    padding-left: $gutter-width;
-    padding-left: var(--gutter-width);
-    padding-right: $gutter-width;
-    padding-right: var(--gutter-width);
+    @include v(max-width, breakpoint-large);
+    @include v(padding-left, gutter);
+    @include v(padding-right, gutter);
     margin-left: auto;
     margin-right: auto;
 }

@@ -49,7 +49,7 @@ video {
     overflow-x: hidden;
 }
 audio {
-    max-width: $wrapper-width-small;
+    @include v(max-width, breakpoint-small);
 
     &:not([controls]) {
         display: none;

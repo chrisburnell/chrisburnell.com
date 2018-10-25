@@ -8,9 +8,10 @@ blockquote {
     @include quotes;
     @include v(background-color, raven--gamma);
     width: 100%;
-    max-width: $line-length-responsive;
+    @include v(max-width, line-length-responsive);
     @include v(padding, medium);
     margin: 0 auto $measure-medium;
+    margin: 0 auto var(--measure-medium);
 
     %monospace-elements,
     cite,

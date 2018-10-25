@@ -60,23 +60,23 @@
     background-position: center center;
     background-size: 100% $border-width-thin;
     background-repeat: no-repeat;
-    height: $measure-medium;
+    @include v(height, medium);
     display: block;
 }
 .measure-example--small {
-    width: $measure-small;
+    @include v(width, small);
 }
 .measure-example--medium {
-    width: $measure-medium;
+    @include v(width, medium);
 }
 .measure-example--large {
-    width: $measure-large;
+    @include v(width, large);
 }
 .measure-example--one {
-    width: $measure-one;
+    @include v(width, one);
 }
 .measure-example--responsive {
-    width: $line-length-responsive;
+    @include v(width, line-length-responsive);
 }
 
 .transition-example {
@@ -101,8 +101,7 @@
     @include border-radius(thin);
     @include transition(color);
     width: 100%;
-    max-width: $line-length-responsive;
-    max-width: var(--line-length-responsive);
+    @include v(max-width, line-length-responsive);
     height: #{$measure-large * 1.5};
     display: block;
     @include v(border-width, thin);

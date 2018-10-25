@@ -6,7 +6,7 @@
 details {
     @include border-radius(thin);
     width: 100%;
-    max-width: $line-length-responsive;
+    @include v(max-width, line-length-responsive);
 
     %content-elements {
         padding: 0 $measure-small $measure-small;

@@ -7,37 +7,27 @@
 $base-font-size: 16px !default;
 
 /// @type Length
-$wrapper-width-small: 500px !default;
+$measure-breakpoint-small: 500px !default;
 /// @type Length
-$wrapper-width-medium: 800px !default;
+$measure-breakpoint-medium: 800px !default;
 /// @type Length
-$wrapper-width-large: 1140px !default;
-/// @type Map
-/// @prop {String} Breakpoint name
-/// @prop {Length} Breakpoint value
-$breakpoints: (
-    small: $wrapper-width-small,
-    medium: $wrapper-width-medium,
-    large: $wrapper-width-large
-) !default;
-
+$measure-breakpoint-large: 1140px !default;
 /// @type Length
-$gutter-width: 1.25rem !default;
+$measure-gap: 2.25rem !default;
 /// @type Length
-$gap-width: 2.25rem !default;
+$measure-gutter: 1.25rem !default;
 /// @type Length
-$aside-width: 15.875rem !default;
+$measure-aside: 15.875rem !default;
 /// @type Length
-$content-width: 50.625rem !default;
-// 21em
+$measure-content: 50.625rem !default;
 /// @type Length
-$line-length-minimum: 336px !default;
-// 30em
+$measure-avatar: 6.25rem !default;
 /// @type Length
-$line-length-maximum: 480px !default;
+$measure-avatar-small: 3rem !default;
 /// @type Length
-$line-length-responsive: calc(#{$line-length-minimum} + (#{$line-length-maximum / ($line-length-maximum * 0 + 1)} - #{$line-length-minimum / ($line-length-minimum * 0 + 1)}) * ((100vw - #{$wrapper-width-small}) / (#{$wrapper-width-large / ($wrapper-width-large * 0 + 1)} - #{$wrapper-width-small / ($wrapper-width-small * 0 + 1)})));
-
+$measure-icon: 40px !default;
+/// @type Length
+$measure-logo: 8.5rem !default;
 /// @type Length
 $measure-small: 0.625rem !default;
 /// @type Length
@@ -60,11 +50,37 @@ $measure-large-proportional: 8vmin !default;
 $measure-one: 1rem !default;
 /// @type Length
 $measure-one-relative: 1em !default;
+/// @type Length
+$measure-line-length-minimum: 21em !default;
+/// @type Length
+$measure-line-length-maximum: 30em !default;
+/// @type Length
+$measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)})));
+/// @type Map
+/// @prop {String} Breakpoint name
+/// @prop {Length} Breakpoint value
+/// @see {Mixin} media
+$breakpoints: (
+    small: $measure-breakpoint-small,
+    medium: $measure-breakpoint-medium,
+    large: $measure-breakpoint-large
+) !default;
 /// @type Map
 /// @prop {String} Measure name
 /// @prop {Length} Measure value
 /// @see {Mixin} v
 $measures: (
+    breakpoint-small: $measure-breakpoint-small,
+    breakpoint-medium: $measure-breakpoint-medium,
+    breakpoint-large: $measure-breakpoint-large,
+    gap: $measure-gap,
+    gutter: $measure-gutter,
+    aside: $measure-aside,
+    content: $measure-content,
+    avatar: $measure-avatar,
+    avatar-small: $measure-avatar-small,
+    icon: $measure-icon,
+    logo: $measure-logo,
     small: $measure-small,
     small-relative: $measure-small-relative,
     small-proportional: $measure-small-proportional,
@@ -76,8 +92,9 @@ $measures: (
     large-proportional: $measure-large-proportional,
     one: $measure-one,
     one-relative: $measure-one-relative,
-    gutter: $gutter-width,
-    gap: $gap-width
+    line-length-minimum: $measure-line-length-minimum,
+    line-length-maximum: $measure-line-length-maximum,
+    line-length-responsive: $measure-line-length-responsive
 ) !default;
 
 /// @type Number
@@ -445,13 +462,6 @@ $brand-colors: (
 /// @prop {Number} opacity - Brand icon opacity
 $brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-white 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1, coffee $color-coffee 1 !default;
 
-/// @type Length
-$icon-size: 40px !default;
-/// @type Length
-$logo-size: 8.5rem !default; // 136px
-/// @type Length
-$avatar-size: 6.25rem !default; // 100px
-
 /// @type Number
 $max-columns: 2 !default;
 
@@ -495,9 +505,11 @@ $property-map: (
     border-bottom-width: border-width,
     border-left-width: border-width,
     fill: color,
+    flex-basis: measure,
     font-family: font-family,
     font-size: font-size,
     font-weight: font-weight,
+    height: measure,
     line-height: line-height,
     grid-gap: measure,
     column-gap: measure,
@@ -507,6 +519,8 @@ $property-map: (
     margin-right: measure,
     margin-bottom: measure,
     margin-left: measure,
+    max-height: measure,
+    max-width: measure,
     padding: measure,
     padding-top: measure,
     padding-right: measure,
@@ -519,5 +533,6 @@ $property-map: (
     stroke: color,
     text-decoration-color: color,
     text-decoration-width: border-width,
+    width: measure,
     z-index: z-index
 ) !default;

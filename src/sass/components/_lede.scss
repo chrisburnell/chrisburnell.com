@@ -26,7 +26,7 @@
 }
 
 .lede--featured {
-    max-width: $line-length-responsive !important;
+    @include v(max-width, line-length-responsive, $important: true);
     @include v(margin-bottom, large, $important: true);
     @include v(font-size, large);
     @include v(font-weight, bold);

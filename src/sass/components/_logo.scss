@@ -5,9 +5,10 @@
 
 .logo {
     @include non-selectable;
-    height: $avatar-size;
-    flex: 1 0 $aside-width;
-    flex: 1 0 var(--aside-width);
+    @include v(height, avatar);
+    flex-grow: 1;
+    flex-shrink: 0;
+    @include v(flex-basis, aside);
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -18,10 +19,8 @@
         @include transition(transform var(--transition-duration-long));
         @include will-change(transform);
         @include v(fill, raven);
-        width: $logo-size;
-        width: var(--logo-size);
-        height: $logo-size;
-        height: var(--logo-size);
+        @include v(width, logo);
+        @include v(height, logo);
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
         transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
 

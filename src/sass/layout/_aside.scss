@@ -13,10 +13,9 @@ aside {
     }
 
     @include media("screen", ">medium") {
-        width: $aside-width;
-        width: var(--aside-width);
+        @include v(width, aside);
         float: left;
-        margin-left: #{($aside-width + $measure-large) * -1};
+        margin-left: #{($measure-aside + $measure-large) * -1};
         @include v(margin-bottom, large);
     }
 

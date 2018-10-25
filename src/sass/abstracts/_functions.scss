@@ -66,6 +66,25 @@
 }
 
 ///
+/// Combine 3+ Maps
+///
+/// @param {*} $maps... - List of Maps
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Map}
+///
+@function map-combine($maps...) {
+    $collection: ();
+
+    @each $map in $maps {
+      $collection: map-merge($collection, $map);
+    }
+    @return $collection;
+  }
+
+
+///
 /// Contrasting Text Color
 ///
 /// @param {Color} $background-color - Background-color to contrast against

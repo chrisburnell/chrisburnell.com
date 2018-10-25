@@ -41,7 +41,7 @@
     $ratio: nth($color-brand, 3);
 
     .icon--#{$name} {
-        width: #{$ratio * $icon-size};
+        width: #{$ratio * $measure-icon};
         fill: $icon-color;
     }
 }

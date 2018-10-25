@@ -19,10 +19,11 @@ header {
     }
 
     @include media("screen", ">medium") {
-        // 1──────────────2─────────────3
-        // │ $aside-width │ min-content │
-        // 2──────────────┴─────────────┘
-        grid-template-columns: $aside-width min-content;
+        // 1────────────────2─────────────3
+        // │ $measure-aside │ min-content │
+        // 2────────────────┴─────────────┘
+        grid-template-columns: $measure-aside min-content;
+        grid-template-columns: var(--measure-aside) min-content;
         justify-content: space-between;
     }
 
@@ -33,9 +34,7 @@ header {
         height: var(--border-width-default);
         position: absolute;
         bottom: 0;
-        left: $gutter-width;
-        left: var(--gutter-width);
-        right: $gutter-width;
-        right: var(--gutter-width);
+        @include v(left, gutter);
+        @include v(right, gutter);
     }
 }

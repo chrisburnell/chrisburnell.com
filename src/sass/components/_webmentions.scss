@@ -13,8 +13,7 @@
 }
 
 .webmentions__form {
-    max-width: $wrapper-width-small;
-    max-width: var(--wrapper-width-small);
+    @include v(max-width, breakpoint-small);
     margin: 0 auto;
 }
 
@@ -55,9 +54,9 @@
     img {
         @include border-radius(50%);
         width: auto;
-        max-width: 3rem;
-        max-height: 3rem;
+        @include v(max-width, avatar-small);
         height: auto;
+        @include v(max-height, avatar-small);
         display: block;
     }
 
