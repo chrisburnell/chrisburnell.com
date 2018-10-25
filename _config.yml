@@ -82,9 +82,11 @@ emptyArray: []
 
 collections:
   books:
-    output: false
+    output: true
+    permalink: /bookshelf/:path/
   music:
-    output: false
+    output: true
+    permalink: /music/:path/
 
 defaults:
 - scope:
@@ -101,6 +103,16 @@ defaults:
   values:
     layout: 'post'
     webmentions: true
+- scope:
+    path: ''
+    type: 'books'
+  values:
+    layout: 'page'
+- scope:
+    path: ''
+    type: 'music'
+  values:
+    layout: 'page'
 
 exclude:
 - CNAME

@@ -39,11 +39,11 @@ limit_y: 12
   ],
   "recipes": [
     0
-    {% comment %}{% include components/sparklines-json.html target=site.categories.recipe limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
+    {% comment %}{% include components/sparklines-json.html target=site.recipes limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
   ],
   "reviews": [
     0
-    {% comment %}{% include components/sparklines-json.html target=site.categories.review limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
+    {% comment %}{% include components/sparklines-json.html target=site.reviews limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}{% endcomment %}
   ],
   "talks": [
     {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
