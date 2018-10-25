@@ -6,7 +6,7 @@
 (() => {
     "use strict";
 
-    const LASTFM_URL = "https://micropub.chrisburnell.com/lastfm.php";
+    const LASTFM_URL = "https://micropub.chrisburnell.com/lastfm";
     const LASTFM_ELEMENTS = document.querySelectorAll(".js-lastfm");
     const LASTFM_LABEL = document.querySelector(".js-lastfm-label");
     const LASTFM_ARTIST = document.querySelector(".js-lastfm-artist");
