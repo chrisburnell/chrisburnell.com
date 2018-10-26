@@ -30,7 +30,7 @@
 {% elsif page.banner_mobile %}
     {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | absolute_url %}
 {% elsif page.page_class contains 'about' %}
-    {% assign meta_image = '/images/rachel-and-i.png' | absolute_url %}
+    {% assign meta_image = '/images/content/rachel-and-i.png' | absolute_url %}
 {% endif %}
 
 {% capture body_class %}
