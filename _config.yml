@@ -114,6 +114,12 @@ defaults:
   values:
     layout: 'page'
 
+keep_files:
+- css
+- js
+- fonts
+- images
+
 exclude:
 - CNAME
 - CODE_OF_CONDUCT.md
@@ -125,6 +131,7 @@ exclude:
 - LICENSE
 - node_modules
 - package.json
+- package-lock.json
 - PULL_REQUEST_TEMPLATE.md
 - README.md
 - src
