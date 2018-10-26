@@ -40,9 +40,6 @@ node_modules/
 # Lockfiles
 *.lock
 
-# Original Images
-src/images/*
-
 # Git Config
 .gitconfig
 
