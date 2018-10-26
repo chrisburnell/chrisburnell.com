@@ -1,25 +1,25 @@
-{% if page.page_class contains 'home' %}
-    {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% endcapture %}
+{% if page.title %}
+    {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
 {% elsif page.categories contains 'note' %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% else %}
-    {% capture meta_title %}{{ page.title }} – {{ site.title }}{% endcapture %}
+    {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% endcapture %}
 {% endif %}
 
 {% if page.lede %}
     {% assign meta_lede = page.lede | strip_html %}
 {% elsif page.categories contains 'bookmark' %}
-    {% capture meta_lede %}One of my shared bookmarks, {{ page.title }}.{% endcapture %}
+    {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
 {% elsif page.categories contains 'pen' %}
-    {% capture meta_lede %}One of my CodePens, {{ page.title }}.{% endcapture %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'recipe' %}
-    {% capture meta_lede %}One of my recipes, {{ page.title }}.{% endcapture %}
+    {% capture meta_lede %}One of my recipes, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'review' %}
-    {% capture meta_lede %}One of my reviews, {{ page.title }}.{% endcapture %}
+    {% capture meta_lede %}One of my reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'talk' %}
-    {% capture meta_lede %}One of my talks, {{ page.title }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
+    {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}
     {% assign meta_lede = site.lede | strip_html %}
 {% endif %}

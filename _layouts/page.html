@@ -8,7 +8,7 @@
         {% if page.page_class contains 'home' %}
             <h1 class="tagline" role="heading">{{ site.tagline | replace: ' for', '<br>for' }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
         {% else %}
-            <h1 class="title" role="heading">{{ page.title }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
+            <h1 class="title" role="heading">{{ page.title | strip_html }}{% if page.sparkline %} <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>{% endif %}</h1>
         {% endif %}
 
         {% include components/banner.html %}

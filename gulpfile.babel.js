@@ -191,21 +191,31 @@ gulp.task("js-serviceworker", () => {
 
 // -----------------------------------------------------------------------------
 
-// Compress src images
-gulp.task("compress-images", () => {
+// Compress standard-type images
+gulp.task("images-compress", () => {
     return gulp
         .src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
         .pipe(plumber())
+        .pipe(newer(`${paths.images.src}`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
 
-// Generate WebP-format counterparts for all JPG and PNG images
+// Generate WebP-format counterparts for all standard-type images
 gulp.task("images-to-webp", () => {
     return gulp
-        .src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
+        .src(`${paths.images.dest}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.dest })
         .pipe(plumber())
+        .pipe(newer(`${paths.images.dest}`))
         .pipe(webp())
+        .pipe(gulp.dest(`${paths.images.dest}/`));
+});
+
+// Move SVGs to destination
+gulp.task("images-move-svg", () => {
+    return gulp
+        .src(`${paths.images.src}/**/*.svg`, { base: paths.images.src })
+        .pipe(plumber())
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
 
@@ -231,8 +241,9 @@ gulp.task("js", ["js-concat"], () => {
 });
 
 // Images task
-gulp.task("images", ["compress-images"], () => {
+gulp.task("images", ["images-compress"], () => {
     gulp.start("images-to-webp");
+    gulp.start("images-move-svg");
 });
 
 // -----------------------------------------------------------------------------

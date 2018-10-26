@@ -9,7 +9,7 @@
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
-                    {{ page.title }}
+                    {{ page.title | strip_html }}
                 {% endif %}
             </span>
         </h1>

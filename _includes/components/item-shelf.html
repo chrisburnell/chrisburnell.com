@@ -28,7 +28,7 @@
             {% endif %}
         {% endif %}
         <div class="p-read-of  h-cite">
-            <h2 class="delta"><cite class="p-name">{{ page.title }}</cite></h2>
+            <h2 class="delta"><cite class="p-name">{{ page.title | strip_html }}</cite></h2>
             <div>
                 {% assign authors = page.authors | split: ', ' | uniq | sort %}
                 {%- for author in authors -%}
