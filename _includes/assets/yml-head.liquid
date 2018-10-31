@@ -1,7 +1,7 @@
-{% if page.title %}
-    {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
-{% elsif page.categories contains 'note' %}
+{% if page.categories contains 'note' %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
+{% elsif page.title %}
+    {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
 {% else %}
     {% capture meta_title %}{{ site.title }} – {{ site.tagline | strip_html }}{% endcapture %}
 {% endif %}

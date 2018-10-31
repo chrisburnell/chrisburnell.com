@@ -204,15 +204,6 @@ gulp.task("images-compress", () => {
         .pipe(gulp.dest(`${paths.images.dest}/`));
 });
 
-gulp.task("images-to-webp", () => {
-    return gulp
-        .src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
-        .pipe(plumber())
-        .pipe(newer(`${paths.images.dest}`))
-        .pipe(webp())
-        .pipe(gulp.dest(`${paths.images.dest}/`));
-});
-
 // Move SVGs to destination
 gulp.task("images-move-svg", () => {
     return gulp
