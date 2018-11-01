@@ -80,8 +80,8 @@ dl {
     // │ minmax(6em, min-content)│ minmax(12em, min-content)│→
     // 2────────────────────────2/2───────────────────────3/2→
     grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
-    @include v(column-gap, large);
-    @include v(row-gap, medium);
+    @include v(column-gap, medium);
+    @include v(row-gap, large);
     margin-top: 0;
     overflow: hidden;
 

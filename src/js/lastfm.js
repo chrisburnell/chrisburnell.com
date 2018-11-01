@@ -9,6 +9,7 @@
     const LASTFM_URL = "https://micropub.chrisburnell.com/lastfm";
     const LASTFM_ELEMENTS = document.querySelectorAll(".js-lastfm");
     const LASTFM_LABEL = document.querySelector(".js-lastfm-label");
+    const LASTFM_COVER = document.querySelector(".js-lastfm-cover");
     const LASTFM_ARTIST = document.querySelector(".js-lastfm-artist");
     const LASTFM_TRACK = document.querySelector(".js-lastfm-track");
     const LASTFM_LINK = document.querySelector(".js-lastfm-link");
@@ -31,6 +32,7 @@
                 }
                 datetime = datetime.toISOString();
                 LASTFM_LABEL.innerHTML = `<time datetime="${datetime}">${playingLabel}</time>`;
+                LASTFM_COVER.src = data["image"][1]["#text"] ? data["image"][1]["#text"] : "";
                 LASTFM_ARTIST.innerHTML = data["artist"]["#text"] ? data["artist"]["#text"] : "";
                 LASTFM_TRACK.innerHTML = data["name"] ? data["name"] : "";
                 LASTFM_LINK.href = data.url;

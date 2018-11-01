@@ -4,6 +4,13 @@
 /// @link https://csswizardry.com/2013/04/shame-css/
 ////
 
+.last-fm__cover {
+    @include v(max-height, icon);
+    float: left;
+    @include v(margin-right, small);
+    @include v(margin-bottom, small);
+}
+
 .last-fm__track + .last-fm__artist:not(:empty) {
     &::before {
         content: " by ";

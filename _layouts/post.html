@@ -55,6 +55,16 @@
             {% endfor %}
 
             {{ content }}
+
+            {% unless page.categories contains 'talk' %}
+                {% if page.location_image %}
+                    <figure class="media">
+                        {% if page.location_url %}<a href="{{ page.location_url }}" rel="external"{% if page.location %} title="{{ page.location }}"{% endif %}>{% endif %}
+                            <img src="{{ page.location_image | prepend: '/static/' | prepend: site.live_url }}" alt="">
+                        {% if page.location_url %}</a>{% endif %}
+                    </figure>
+                {% endif %}
+            {% endunless %}
         </div>
 
         {% include components/further-reading.html %}
