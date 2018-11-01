@@ -11,7 +11,9 @@ lede: Let’s get in touch!
 
 <dl>
     <dt>Email:</dt>
-    <dd><a rel="me" href="mailto:{{ site.author.email }}"><span class="canada">{{ site.author.email }}</span></a></dd>
+    <dd><a class="canada" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd>
     <dt>Twitter:</dt>
-    <dd><a rel="external  me  publisher" href="{{ site.urls.twitter }}">{{ site.author.twitter }}</a></dd>
+    <dd><a class="canada" href="{{ site.urls.twitter }}">{{ site.author.twitter }}</a></dd>
+    <dt>Twitter Direct Message:</dt>
+    <dd><a class="canada" href="https://twitter.com/messages/compose?recipient_id={{ site.author.twitter | replace: '@', '' }}">{{ site.author.twitter }}</a></dd>
 </dl>
