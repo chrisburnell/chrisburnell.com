@@ -13,4 +13,8 @@ Fundamentally, for me, it comes down to a skewed vision of equality. I don’t u
 
 It just seems like indefensible hypocrisy to me.
 
-I am a wholehearted advocate for equality and eliminating discrimination from this industry entirely, and I don’t mean to paint anyone’s struggles as if I understand them myself, so If I’m making any errors in my judgement of the situation, I’d love to be corrected. ❤️ you all.
+I am a wholehearted advocate for equality and eliminating discrimination from this industry entirely, and I don’t mean to paint anyone’s struggles as if I understand them myself, so If I’m making any errors in my judgement of the situation, I’d love to be corrected.
+
+I don’t disagree with your mission at all; in fact, I’m brimming with pride at the strides people have made to become more aware and accepting—to actually try to understand where people are coming from. I just think the route being taken is driving you further from the ideal that we can imagine.
+
+❤️ you all.
