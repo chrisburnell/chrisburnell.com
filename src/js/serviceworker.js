@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.36--{{ site.posts | map: 'date' | first | date: '%s' }}';
+const VERSION = 'v2.0.37--{{ site.posts | map: 'date' | first | date: '%s' }}';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -85,11 +85,12 @@ let trimCache = (cacheName, maxItems) => {
 // Remove caches whose name is no longer valid
 let clearOldCaches = () => {
     return caches.keys()
-        .then(keys => Promise.all(
-            keys.map(key => {
-                if (!CACHES.includes(key)) return caches.delete(key)
-            })
-        ));
+        .then(keys => {
+            return Promise.all(keys
+                .filter(key => !CACHES.includes(key))
+                .map(key => caches.delete(key))
+            );
+        });
 };
 
 
