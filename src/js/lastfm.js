@@ -23,11 +23,11 @@
             .then(data => {
                 // Success!
                 let datetime = new Date();
-                let playingLabel = "Now Playing 🎶";
+                let playingLabel = "Now Playing <small>🎶</small>";
                 let status = 'playing';
                 if (data.hasOwnProperty("date")) {
                     datetime.setSeconds(Number(data.date.uts));
-                    playingLabel = "Last Played 🎵";
+                    playingLabel = "Last Played <small>🎵</small>";
                     status = 'finished';
                 }
                 datetime = datetime.toISOString();
