@@ -4,7 +4,8 @@ categories: article
 date: 2018-10-18 09:00:00
 
 title: Numerals, Romanticised
-lede: For a better part of the year, I’ve been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online/" rel="external me">BloodBuilder</a> for managing my Sorcerer in a game of Pathfinder I’ve been playing in with some friends. One of the many intricate parts of the PWA involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple include to handle this.
+lede: For a better part of the year, I’ve been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online/" rel="external me">BloodBuilder</a> for managing my Sorcerer in a game of Pathfinder I’ve been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple include to handle this.
+
 tags:
 - jekyll
 - liquid
@@ -30,9 +31,9 @@ M = 1000
 </pre>
 </figure>
 
-These *seven* are the only Roman numerals, and using combinations of these numerals in a particular order, you can represent any Arabic numerals; although, the readability of Roman numerals can suffer greatly depending on the number you want to represent. For example, <samp>13 = XIII</samp>, which is simple enough to follow, but <samp>1888 = MDCCCLXXXVIII</samp> is rather unwieldly.
+These seven are the only Roman numerals, and using combinations of these numerals in a particular order, you can represent any Arabic numerals; although, the readability of Roman numerals can suffer greatly depending on the number you want to represent. For example, <samp>13 = XIII</samp>, which is simple enough to follow, but <samp>1888 = MDCCCLXXXVIII</samp> is rather unwieldy.
 
-These two examples are quite straightforward, and despite its length, even <samp>MDCCCLXXXVIII</samp> can be parsed with relative ease and you’ll quickly arrive at the result.
+Despite its length, even <samp>MDCCCLXXXVIII</samp> can be parsed with relative ease and you’ll quickly arrive at the result.
 
 However, there are some exceptions that we need to be aware of based on the left-to-right parsing we’ll be performing on the Roman numerals, so let’s focus for a moment on the first ten numbers and highlight the exceptions:
 
@@ -51,19 +52,19 @@ X = 10
 </pre>
 </figure>
 
-We can read Roman numerals such as <samp>7</samp> (<samp>VII</samp>) as <samp>5 + 1 + 1</samp>.
+We can read Roman numerals such as <samp>VII</samp> as <samp>5 + 1 + 1 = 7</samp>.
 
-Similarly, <samp>8</samp> (<samp>VIII</samp>) can be thought of as <samp>5 + 1 + 1 + 1</samp>.
+Similarly, <samp>VIII</samp> can be thought of as <samp>5 + 1 + 1 + 1 = 8</samp>.
 
-But to read <samp>9</samp> as <samp>5 + 1 + 1 + 1 + 1</samp> and write <samp>VIIII</samp> is not correct.
+But to follow that line of thinking and think of <samp>9</samp> as <samp>5 + 1 + 1 + 1 + 1</samp> and write <samp>VIIII</samp> is not correct.
 
 The rule here is that a character in Roman numerals can have no more than *three <q>modifiers</q>*. So, to represent <samp>9</samp> in Roman numerals, we instead refer to the *next higher value* (<samp>I</samp>, <samp>V</samp>, <samp>X</samp>, <samp>L</samp>, etc.) and modify that value. In this case, the next higher value from <samp>V</samp> is <samp>X</samp>, so we say <samp>10 - 1</samp>, or <q>one before ten</q>, so <samp>9</samp> is written as <samp>IX</samp>.
 
 An easy way to spot these <q>exceptions</q> is to look for letters which appear out of order—Roman numerals are written with higher-value letters *almost always* appearing before lower-value letters, reading from left to right, higher to lower—so any letter which appears before a higher value tells you that it falls under the <q>one before</q> exception.
 
-<samp>IV</samp> isn’t <samp>1 + 5</samp>, it is <q>1 before 5</q>.
+<samp>IV</samp> is not <samp>1 + 5</samp>, it is <q>1 before 5</q>, or <samp>-1 + 5 = 4</samp>.
 
-<samp>XL</samp> isn’t <samp>10 + 50</samp>, it is <q>10 before 50</q>.
+<samp>XL</samp> is not <samp>10 + 50</samp>, it is <q>10 before 50</q>, or <samp>-10 + 50 = 40</samp>.
 
 Rewriting the first ten numbers to take into account this rule, we now have:
 
