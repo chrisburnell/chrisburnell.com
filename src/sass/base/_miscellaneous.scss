@@ -111,3 +111,10 @@ textarea {
         @include v(background-color, canada);
     }
 }
+
+// Reduced Motion
+@include media("prefers-reduced-motion") {
+    --animation-duration: 0;
+    --transition-duration-default: 0;
+    --transition-duration-long: 0;
+}
