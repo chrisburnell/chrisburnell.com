@@ -13,7 +13,8 @@ html {
     overflow-y: scroll;
     // set the box model for the entire document
     box-sizing: border-box;
-    @include v(font-size, default);
+    font-size: $base-font-size;
+    font-size: var(--base-font-size);
     font-style: normal;
     @include v(font-weight, default);
     @include v(line-height, default);
