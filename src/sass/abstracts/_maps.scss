@@ -92,6 +92,37 @@ $palette-colors: (
 ) !default;
 
 /// @type Map
+/// @prop {String} Language name
+/// @prop {Color} Language color
+$language-colors: (
+    css: $color-css,
+    haml: $color-html,
+    html: $color-html,
+    jade: $color-html,
+    javascript: $color-javascript,
+    liquid: $color-liquid,
+    markdown: $color-markdown,
+    sass: $color-sass,
+    scss: $color-sass
+) !default;
+
+/// @type Map
+/// @prop {String} Language name
+/// @prop {Color} Language color
+$brand-colors: (
+    coffee: $color-coffee,
+    codepen: $color-codepen,
+    github: $color-github,
+    lastfm: $color-lastfm,
+    spotify: $color-spotify,
+    spotify-alt: $color-spotify-alt,
+    twitter: $color-twitter
+) !default;
+
+/// @type Map
+$all-colors: map-merge($site-colors, map-merge($language-colors, $brand-colors));
+
+/// @type Map
 /// @prop {String} Border Width Name
 /// @prop {Color} Border Width Value
 /// @see {Mixin} v
@@ -190,37 +221,6 @@ $aspect-ratios: (
     "16-by-9": 56.25%,
     "4-by-3": 75%
 ) !default;
-
-/// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
-$language-colors: (
-    css: $color-css,
-    haml: $color-html,
-    html: $color-html,
-    jade: $color-html,
-    javascript: $color-javascript,
-    liquid: $color-liquid,
-    markdown: $color-markdown,
-    sass: $color-sass,
-    scss: $color-sass
-) !default;
-
-/// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
-$brand-colors: (
-    coffee: $color-coffee,
-    codepen: $color-codepen,
-    github: $color-github,
-    lastfm: $color-lastfm,
-    spotify: $color-spotify,
-    spotify-alt: $color-spotify-alt,
-    twitter: $color-twitter
-) !default;
-
-/// @type Map
-$all-colors: map-merge($site-colors, map-merge($language-colors, $brand-colors));
 
 /// @type Map
 /// @see {Mixin} v
