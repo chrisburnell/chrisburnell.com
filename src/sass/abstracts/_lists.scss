@@ -20,3 +20,7 @@ $font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("League Gothic", 
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity
 $brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-white 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1, coffee $color-coffee 1 !default;
+
+/// @type List
+/// @prop {String} Body / Primary Navigation Class
+$navigation-classes: about, articles, notes, search !default;
