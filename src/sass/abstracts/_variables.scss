@@ -56,46 +56,6 @@ $measure-line-length-minimum: 21em !default;
 $measure-line-length-maximum: 30em !default;
 /// @type Length
 $measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)})));
-/// @type Map
-/// @prop {String} Breakpoint name
-/// @prop {Length} Breakpoint value
-/// @see {Mixin} media
-$breakpoints: (
-    small: $measure-breakpoint-small,
-    medium: $measure-breakpoint-medium,
-    large: $measure-breakpoint-large
-) !default;
-/// @type Map
-/// @prop {String} Measure name
-/// @prop {Length} Measure value
-/// @see {Mixin} v
-$measures: (
-    breakpoint-small: $measure-breakpoint-small,
-    breakpoint-medium: $measure-breakpoint-medium,
-    breakpoint-large: $measure-breakpoint-large,
-    gap: $measure-gap,
-    gutter: $measure-gutter,
-    aside: $measure-aside,
-    content: $measure-content,
-    avatar: $measure-avatar,
-    avatar-small: $measure-avatar-small,
-    icon: $measure-icon,
-    logo: $measure-logo,
-    small: $measure-small,
-    small-relative: $measure-small-relative,
-    small-proportional: $measure-small-proportional,
-    medium: $measure-medium,
-    medium-relative: $measure-medium-relative,
-    medium-proportional: $measure-medium-proportional,
-    large: $measure-large,
-    large-relative: $measure-large-relative,
-    large-proportional: $measure-large-proportional,
-    one: $measure-one,
-    one-relative: $measure-one-relative,
-    line-length-minimum: $measure-line-length-minimum,
-    line-length-maximum: $measure-line-length-maximum,
-    line-length-responsive: $measure-line-length-responsive
-) !default;
 
 /// @type Number
 $opacity-alpha: 0.9 !default;
@@ -105,17 +65,6 @@ $opacity-beta: 0.7 !default;
 $opacity-gamma: 0.1 !default;
 /// @type Number
 $opacity-delta: 0.05 !default;
-/// @type Map
-/// @prop {String} Opacity name
-/// @prop {Number} Opacity value
-/// @see {Function} opacities
-/// @see {Mixin} v
-$opacities: (
-    alpha: $opacity-alpha,
-    beta: $opacity-beta,
-    gamma: $opacity-gamma,
-    delta: $opacity-delta
-) !default;
 
 // this allows transparency to be transitioned to a different color
 /// @type Color
@@ -143,50 +92,41 @@ $color-canada: #eb2d37 !default;
 /// @type Color
 $color-highlight: gold !default;
 /// @type Color
-$color-black--alpha: rgba($color-black, map-get($opacities, "alpha")) !default;
+$color-black--alpha: rgba($color-black, $opacity-alpha) !default;
 /// @type Color
-$color-black--gamma: rgba($color-black, map-get($opacities, "gamma")) !default;
+$color-black--gamma: rgba($color-black, $opacity-gamma) !default;
 /// @type Color
-$color-black--delta: rgba($color-black, map-get($opacities, "delta")) !default;
+$color-black--delta: rgba($color-black, $opacity-delta) !default;
 /// @type Color
-$color-raven--gamma: rgba($color-raven, map-get($opacities, "gamma")) !default;
-/// @type Map
-/// @prop {String} Color Name
-/// @prop {Color} Color Value
-/// @see {Mixin} v
-$site-colors: (
-    transparent: $color-transparent,
-    bowhead: $color-bowhead,
-    raven: $color-raven,
-    coyote: $color-coyote,
-    canada: $color-canada,
-    black: $color-black,
-    mineshaft: $color-mineshaft,
-    kaiser: $color-kaiser,
-    dove: $color-dove,
-    alto: $color-alto,
-    white: $color-white,
-    highlight: $color-highlight,
-    black--alpha: $color-black--alpha,
-    black--gamma: $color-black--gamma,
-    black--delta: $color-black--delta,
-    raven--gamma: $color-raven--gamma
-) !default;
-/// @type Map
-/// @prop {String} Color Name
-/// @prop {Color} Color Value
-$palette-colors: (
-    bowhead: $color-bowhead,
-    raven: $color-raven,
-    coyote: $color-coyote,
-    canada: $color-canada,
-    black: $color-black,
-    mineshaft: $color-mineshaft,
-    kaiser: $color-kaiser,
-    dove: $color-dove,
-    alto: $color-alto,
-    white: $color-white
-) !default;
+$color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
+
+/// @type Color
+$color-css: #016fba !default;
+/// @type Color
+$color-html: #e54d26 !default;
+/// @type Color
+$color-javascript: #f1c54c !default;
+/// @type Color
+$color-liquid: #7ab55c !default;
+/// @type Color
+$color-markdown: #4a525a !default;
+/// @type Color
+$color-sass: #c6538c !default;
+
+/// @type Color
+$color-coffee: #d2b48c !default;
+/// @type Color
+$color-codepen: #212121 !default;
+/// @type Color
+$color-github: #333333 !default;
+/// @type Color
+$color-lastfm: #e31b23 !default;
+/// @type Color
+$color-spotify: #1db954 !default;
+/// @type Color
+$color-spotify-alt: #191414 !default;
+/// @type Color
+$color-twitter: mix($color-black, #55acee, 10%) !default;
 
 /// @type Length
 $border-width-default: 0.25rem !default;
@@ -196,29 +136,11 @@ $border-width-thin: 0.125rem !default;
 $border-width-hairline: 1px !default;
 /// @type Length
 $border-width-button: 0.182em !default;
-/// @type Map
-/// @prop {String} Border Width Name
-/// @prop {Color} Border Width Value
-/// @see {Mixin} v
-$border-widths: (
-    default: $border-width-default,
-    thin: $border-width-thin,
-    hairline: $border-width-hairline,
-    button: $border-width-button
-) !default;
 
 /// @type String
 $border-style-default: solid !default;
 /// @type String
 $border-style-alternate: dotted !default;
-/// @type Map
-/// @prop {String} Border Style Name
-/// @prop {Color} Border Style Value
-/// @see {Mixin} v
-$border-styles: (
-    default: $border-style-default,
-    alternate: $border-style-alternate
-) !default;
 
 /// @type Length
 /// @see {Mixin} border-radius
@@ -229,15 +151,6 @@ $border-radius-thin: 0.25rem !default;
 /// @type Length
 /// @see {Mixin} border-radius
 $border-radius-hairline: 0.125rem !default;
-/// @type Map
-/// @prop {String} Border Radius Name
-/// @prop {Color} Border Radius Value
-/// @see {Mixin} v
-$border-radii: (
-    default: $border-radius-default,
-    thin: $border-radius-thin,
-    hairline: $border-radius-hairline
-) !default;
 
 /// @type String
 $font-display: swap !default;
@@ -263,60 +176,11 @@ $font-size-large-relative: 1.25em !default;
 $font-size-small: 0.875rem !default;
 /// @type Length
 $font-size-small-relative: 0.875em !default;
-/// @type Map
-/// @prop {String} Font Size Name
-/// @prop {Number} Font Size Value
-/// @see {Mixin} v
-$font-sizes: (
-    default: $font-size-default,
-    alpha: $font-size-alpha,
-    beta: $font-size-beta,
-    gamma: $font-size-gamma,
-    large: $font-size-large,
-    large-relative: $font-size-large-relative,
-    small: $font-size-small,
-    small-relative: $font-size-small-relative
-) !default;
 
 /// @type Number
 $font-weight-default: 400 !default;
 /// @type Number
 $font-weight-bold: 600 !default;
-/// @type Map
-/// @prop {String} Font Weight Name
-/// @prop {Color} Font Weight Value
-/// @see {Mixin} v
-$font-weights: (
-    default: $font-weight-default,
-    bold: $font-weight-bold
-) !default;
-
-/// @type List
-$font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
-/// @type List
-$font-family-alpha: "Heebo", "League Gothic", sans-serif !default;
-/// @type List
-$font-family-serif: Georgia, serif !default;
-/// @type List
-$font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !default;
-/// @type Map
-/// @prop {String} key - Font Family name
-/// @prop {Number} value - Font Family value
-/// @see {Mixin} font-family
-/// @see {Mixin} v
-$font-families: (
-    default: $font-family-default,
-    alpha: $font-family-alpha,
-    serif: $font-family-serif,
-    monospace: $font-family-monospace
-) !default;
-/// @type List
-/// @prop {String} family - Font Family
-/// @prop {String} variant - Font Family Variant
-/// @prop {String} style - Font Style
-/// @prop {Number} weight - Font Weight
-/// @prop {String} filename - Font Filename
-$font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("League Gothic", "Regular", normal, 400, "league-gothic-regular"), ("Proxima Nova", "Regular", normal, 400, "proxima-nova-regular"), ("Proxima Nova", "Italic", italic, 400, "proxima-nova-italic"), ("Proxima Nova", "Semibold", normal, 600, "proxima-nova-semibold")) !default;
 
 /// @type Number
 $line-height-default: 1.875 !default;
@@ -326,16 +190,6 @@ $line-height-small: 1.25 !default;
 $line-height-medium: 1.429 !default;
 /// @type Number
 $line-height-code: 2 !default;
-/// @type Map
-/// @prop {String} Line Height Name
-/// @prop {Number} Line Height Value
-/// @see {Mixin} v
-$line-heights: (
-    default: $line-height-default,
-    small: $line-height-small,
-    medium: $line-height-medium,
-    code: $line-height-code
-) !default;
 
 /// @type Length
 $letter-spacing-default: 0 !default;
@@ -376,172 +230,10 @@ $z-index-modal: 3 !default;
 $z-index-dialog: 4 !default;
 /// @type Number
 $z-index-notification: 5 !default;
-/// @type Map
-/// @prop {String} z-index Name
-/// @prop {Number} z-index Value
-/// @see {Function} z-index
-/// @see {Mixin} v
-$z-indexes: (
-    below: $z-index-below,
-    root: $z-index-root,
-    default: $z-index-default,
-    above: $z-index-above,
-    modal: $z-index-modal,
-    dialog: $z-index-dialog,
-    notification: $z-index-notification
-) !default;
-
-/// @type Map
-/// @prop {Array} Aspect Ratio
-/// @prop {Length} Percentage for sizing
-$aspect-ratios: (
-    "16-by-9": 56.25%,
-    "4-by-3": 75%
-) !default;
 
 /// @type List
 /// @prop {String} Body / Primary Navigation Class
 $navigation-classes: about, articles, notes, search !default;
 
-/// @type Color
-$color-css: #016fba !default;
-/// @type Color
-$color-html: #e54d26 !default;
-/// @type Color
-$color-javascript: #f1c54c !default;
-/// @type Color
-$color-liquid: #7ab55c !default;
-/// @type Color
-$color-markdown: #4a525a !default;
-/// @type Color
-$color-sass: #c6538c !default;
-/// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
-$language-colors: (
-    css: $color-css,
-    haml: $color-html,
-    html: $color-html,
-    jade: $color-html,
-    javascript: $color-javascript,
-    liquid: $color-liquid,
-    markdown: $color-markdown,
-    sass: $color-sass,
-    scss: $color-sass
-) !default;
-
-/// @type Color
-$color-coffee: #d2b48c !default;
-/// @type Color
-$color-codepen: #212121 !default;
-/// @type Color
-$color-github: #333333 !default;
-/// @type Color
-$color-lastfm: #e31b23 !default;
-/// @type Color
-$color-spotify: #1db954 !default;
-/// @type Color
-$color-spotify-alt: #191414 !default;
-/// @type Color
-$color-twitter: mix($color-black, #55acee, 10%) !default;
-/// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
-$brand-colors: (
-    coffee: $color-coffee,
-    codepen: $color-codepen,
-    github: $color-github,
-    lastfm: $color-lastfm,
-    spotify: $color-spotify,
-    spotify-alt: $color-spotify-alt,
-    twitter: $color-twitter
-) !default;
-/// @type List
-/// @prop {String} name - Brand name
-/// @prop {Color} color - Icon color
-/// @prop {Number} opacity - Brand icon opacity
-$brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-white 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1, coffee $color-coffee 1 !default;
-
 /// @type Number
 $max-columns: 2 !default;
-
-/// @type List
-$all-colors: map-merge($site-colors, map-merge($language-colors, $brand-colors));
-
-/// @type Map
-/// @see {Mixin} v
-$variable-map: (
-    border-width: $border-widths,
-    border-style: $border-styles,
-    color: $all-colors,
-    font-family: $font-families,
-    font-size: $font-sizes,
-    font-weight: $font-weights,
-    line-height: $line-heights,
-    measure: $measures,
-    opacity: $opacities,
-    z-index: $z-indexes
-) !default;
-
-/// @type Map
-/// @see {Mixin} v
-$property-map: (
-    opacity: opacity,
-    background-color: color,
-    color: color,
-    border-color: color,
-    border-top-color: color,
-    border-right-color: color,
-    border-bottom-color: color,
-    border-left-color: color,
-    border-style: border-style,
-    border-top-style: border-style,
-    border-right-style: border-style,
-    border-bottom-style: border-style,
-    border-left-style: border-style,
-    border-width: border-width,
-    border-top-width: border-width,
-    border-right-width: border-width,
-    border-bottom-width: border-width,
-    border-left-width: border-width,
-    fill: color,
-    flex-basis: measure,
-    font-family: font-family,
-    font-size: font-size,
-    font-weight: font-weight,
-    height: measure,
-    line-height: line-height,
-    grid-gap: measure,
-    column-gap: measure,
-    row-gap: measure,
-    margin: measure,
-    margin-top: measure,
-    margin-right: measure,
-    margin-bottom: measure,
-    margin-left: measure,
-    max-height: measure,
-    max-width: measure,
-    padding: measure,
-    padding-top: measure,
-    padding-right: measure,
-    padding-bottom: measure,
-    padding-left: measure,
-    top: measure,
-    bottom: measure,
-    left: measure,
-    right: measure,
-    stroke: color,
-    text-decoration-color: color,
-    text-decoration-width: border-width,
-    width: measure,
-    z-index: z-index
-) !default;
-
-/// @type Map
-/// @see {Mixin} t
-/// @see {Mixin} v
-/// @see /src/sass/themes
-/// Unused with CSS Variables
-// $themes: (
-//     ...
-// ) !default;

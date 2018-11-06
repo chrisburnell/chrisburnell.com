@@ -1,0 +1,22 @@
+/// @type List
+$font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+/// @type List
+$font-family-alpha: "Heebo", "League Gothic", sans-serif !default;
+/// @type List
+$font-family-serif: Georgia, serif !default;
+/// @type List
+$font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !default;
+
+/// @type List
+/// @prop {String} family - Font Family
+/// @prop {String} variant - Font Family Variant
+/// @prop {String} style - Font Style
+/// @prop {Number} weight - Font Weight
+/// @prop {String} filename - Font Filename
+$font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("League Gothic", "Regular", normal, 400, "league-gothic-regular"), ("Proxima Nova", "Regular", normal, 400, "proxima-nova-regular"), ("Proxima Nova", "Italic", italic, 400, "proxima-nova-italic"), ("Proxima Nova", "Semibold", normal, 600, "proxima-nova-semibold")) !default;
+
+/// @type List
+/// @prop {String} name - Brand name
+/// @prop {Color} color - Icon color
+/// @prop {Number} opacity - Brand icon opacity
+$brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-white 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1, coffee $color-coffee 1 !default;

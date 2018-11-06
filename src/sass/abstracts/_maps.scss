@@ -1,0 +1,301 @@
+/// @type Map
+/// @prop {String} Breakpoint name
+/// @prop {Length} Breakpoint value
+/// @see {Mixin} media
+$breakpoints: (
+    small: $measure-breakpoint-small,
+    medium: $measure-breakpoint-medium,
+    large: $measure-breakpoint-large
+) !default;
+
+/// @type Map
+/// @prop {String} Measure name
+/// @prop {Length} Measure value
+/// @see {Mixin} v
+$measures: (
+    breakpoint-small: $measure-breakpoint-small,
+    breakpoint-medium: $measure-breakpoint-medium,
+    breakpoint-large: $measure-breakpoint-large,
+    gap: $measure-gap,
+    gutter: $measure-gutter,
+    aside: $measure-aside,
+    content: $measure-content,
+    avatar: $measure-avatar,
+    avatar-small: $measure-avatar-small,
+    icon: $measure-icon,
+    logo: $measure-logo,
+    small: $measure-small,
+    small-relative: $measure-small-relative,
+    small-proportional: $measure-small-proportional,
+    medium: $measure-medium,
+    medium-relative: $measure-medium-relative,
+    medium-proportional: $measure-medium-proportional,
+    large: $measure-large,
+    large-relative: $measure-large-relative,
+    large-proportional: $measure-large-proportional,
+    one: $measure-one,
+    one-relative: $measure-one-relative,
+    line-length-minimum: $measure-line-length-minimum,
+    line-length-maximum: $measure-line-length-maximum,
+    line-length-responsive: $measure-line-length-responsive
+) !default;
+
+/// @type Map
+/// @prop {String} Opacity name
+/// @prop {Number} Opacity value
+/// @see {Function} opacities
+/// @see {Mixin} v
+$opacities: (
+    alpha: $opacity-alpha,
+    beta: $opacity-beta,
+    gamma: $opacity-gamma,
+    delta: $opacity-delta
+) !default;
+
+/// @type Map
+/// @prop {String} Color Name
+/// @prop {Color} Color Value
+/// @see {Mixin} v
+$site-colors: (
+    transparent: $color-transparent,
+    bowhead: $color-bowhead,
+    raven: $color-raven,
+    coyote: $color-coyote,
+    canada: $color-canada,
+    black: $color-black,
+    mineshaft: $color-mineshaft,
+    kaiser: $color-kaiser,
+    dove: $color-dove,
+    alto: $color-alto,
+    white: $color-white,
+    highlight: $color-highlight,
+    black--alpha: $color-black--alpha,
+    black--gamma: $color-black--gamma,
+    black--delta: $color-black--delta,
+    raven--gamma: $color-raven--gamma
+) !default;
+
+/// @type Map
+/// @prop {String} Color Name
+/// @prop {Color} Color Value
+$palette-colors: (
+    bowhead: $color-bowhead,
+    raven: $color-raven,
+    coyote: $color-coyote,
+    canada: $color-canada,
+    black: $color-black,
+    mineshaft: $color-mineshaft,
+    kaiser: $color-kaiser,
+    dove: $color-dove,
+    alto: $color-alto,
+    white: $color-white
+) !default;
+
+/// @type Map
+/// @prop {String} Border Width Name
+/// @prop {Color} Border Width Value
+/// @see {Mixin} v
+$border-widths: (
+    default: $border-width-default,
+    thin: $border-width-thin,
+    hairline: $border-width-hairline,
+    button: $border-width-button
+) !default;
+
+/// @type Map
+/// @prop {String} Border Style Name
+/// @prop {Color} Border Style Value
+/// @see {Mixin} v
+$border-styles: (
+    default: $border-style-default,
+    alternate: $border-style-alternate
+) !default;
+
+/// @type Map
+/// @prop {String} Border Radius Name
+/// @prop {Color} Border Radius Value
+/// @see {Mixin} v
+$border-radii: (
+    default: $border-radius-default,
+    thin: $border-radius-thin,
+    hairline: $border-radius-hairline
+) !default;
+
+/// @type Map
+/// @prop {String} Font Size Name
+/// @prop {Number} Font Size Value
+/// @see {Mixin} v
+$font-sizes: (
+    default: $font-size-default,
+    alpha: $font-size-alpha,
+    beta: $font-size-beta,
+    gamma: $font-size-gamma,
+    large: $font-size-large,
+    large-relative: $font-size-large-relative,
+    small: $font-size-small,
+    small-relative: $font-size-small-relative
+) !default;
+
+/// @type Map
+/// @prop {String} Font Weight Name
+/// @prop {Color} Font Weight Value
+/// @see {Mixin} v
+$font-weights: (
+    default: $font-weight-default,
+    bold: $font-weight-bold
+) !default;
+
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family value
+/// @see {Mixin} font-family
+/// @see {Mixin} v
+$font-families: (
+    default: $font-family-default,
+    alpha: $font-family-alpha,
+    serif: $font-family-serif,
+    monospace: $font-family-monospace
+) !default;
+
+/// @type Map
+/// @prop {String} Line Height Name
+/// @prop {Number} Line Height Value
+/// @see {Mixin} v
+$line-heights: (
+    default: $line-height-default,
+    small: $line-height-small,
+    medium: $line-height-medium,
+    code: $line-height-code
+) !default;
+
+/// @type Map
+/// @prop {String} z-index Name
+/// @prop {Number} z-index Value
+/// @see {Function} z-index
+/// @see {Mixin} v
+$z-indexes: (
+    below: $z-index-below,
+    root: $z-index-root,
+    default: $z-index-default,
+    above: $z-index-above,
+    modal: $z-index-modal,
+    dialog: $z-index-dialog,
+    notification: $z-index-notification
+) !default;
+
+/// @type Map
+/// @prop {Array} Aspect Ratio
+/// @prop {Length} Percentage for sizing
+$aspect-ratios: (
+    "16-by-9": 56.25%,
+    "4-by-3": 75%
+) !default;
+
+/// @type Map
+/// @prop {String} Language name
+/// @prop {Color} Language color
+$language-colors: (
+    css: $color-css,
+    haml: $color-html,
+    html: $color-html,
+    jade: $color-html,
+    javascript: $color-javascript,
+    liquid: $color-liquid,
+    markdown: $color-markdown,
+    sass: $color-sass,
+    scss: $color-sass
+) !default;
+
+/// @type Map
+/// @prop {String} Language name
+/// @prop {Color} Language color
+$brand-colors: (
+    coffee: $color-coffee,
+    codepen: $color-codepen,
+    github: $color-github,
+    lastfm: $color-lastfm,
+    spotify: $color-spotify,
+    spotify-alt: $color-spotify-alt,
+    twitter: $color-twitter
+) !default;
+
+/// @type Map
+$all-colors: map-merge($site-colors, map-merge($language-colors, $brand-colors));
+
+/// @type Map
+/// @see {Mixin} v
+$variable-map: (
+    border-width: $border-widths,
+    border-style: $border-styles,
+    color: $all-colors,
+    font-family: $font-families,
+    font-size: $font-sizes,
+    font-weight: $font-weights,
+    line-height: $line-heights,
+    measure: $measures,
+    opacity: $opacities,
+    z-index: $z-indexes
+) !default;
+
+/// @type Map
+/// @see {Mixin} v
+$property-map: (
+    opacity: opacity,
+    background-color: color,
+    color: color,
+    border-color: color,
+    border-top-color: color,
+    border-right-color: color,
+    border-bottom-color: color,
+    border-left-color: color,
+    border-style: border-style,
+    border-top-style: border-style,
+    border-right-style: border-style,
+    border-bottom-style: border-style,
+    border-left-style: border-style,
+    border-width: border-width,
+    border-top-width: border-width,
+    border-right-width: border-width,
+    border-bottom-width: border-width,
+    border-left-width: border-width,
+    fill: color,
+    flex-basis: measure,
+    font-family: font-family,
+    font-size: font-size,
+    font-weight: font-weight,
+    height: measure,
+    line-height: line-height,
+    grid-gap: measure,
+    column-gap: measure,
+    row-gap: measure,
+    margin: measure,
+    margin-top: measure,
+    margin-right: measure,
+    margin-bottom: measure,
+    margin-left: measure,
+    max-height: measure,
+    max-width: measure,
+    padding: measure,
+    padding-top: measure,
+    padding-right: measure,
+    padding-bottom: measure,
+    padding-left: measure,
+    top: measure,
+    bottom: measure,
+    left: measure,
+    right: measure,
+    stroke: color,
+    text-decoration-color: color,
+    text-decoration-width: border-width,
+    width: measure,
+    z-index: z-index
+) !default;
+
+/// @type Map
+/// @see {Mixin} t
+/// @see {Mixin} v
+/// @see /src/sass/themes
+/// Unused with CSS Variables
+// $themes: (
+//     ...
+// ) !default;

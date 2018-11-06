@@ -4,7 +4,6 @@
 ////
 
 html {
-    @include font-family(default);
     @include v(background-color, kaiser);
     min-height: 100%;
     position: relative;
@@ -15,9 +14,6 @@ html {
     box-sizing: border-box;
     font-size: $base-font-size;
     font-size: var(--base-font-size);
-    font-style: normal;
-    @include v(font-weight, default);
-    @include v(line-height, default);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-variant-numeric: oldstyle-nums;
@@ -40,6 +36,10 @@ body {
     @include v(color, kaiser);
     width: 100%;
     margin: 0;
+    @include font-family(default);
+    font-style: normal;
+    @include v(font-weight, default);
+    @include v(line-height, default);
 }
 
 // Content Elements
