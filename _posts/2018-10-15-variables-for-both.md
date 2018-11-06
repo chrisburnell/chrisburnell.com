@@ -165,7 +165,7 @@ Let’s tie it all together with this SCSS mixin.
 
 {% include content/code-toggle-top.html %}
 {% highlight scss %}
-@mixin v($property, $value, $negative: false, $important: false, $show-fallback: true) {
+@mixin v($property, $value, $negative: false, $important: false, $hide: false) {
     $map-name: map-get($property-map, $property);
     $nest-name: null;
     $nest-map-name: null;
@@ -200,7 +200,7 @@ Let’s tie it all together with this SCSS mixin.
 
     // output the value from SCSS as-is as well as the associated CSS Variable
     @if $important {
-        @if $show-fallback {
+        @if $hide != 'fallback' {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1} !important;
             }
@@ -208,14 +208,16 @@ Let’s tie it all together with this SCSS mixin.
                 #{$property}: $variable-fallback !important;
             }
         }
-        @if $negative {
-            #{$property}: calc(#{$variable-output} * -1) !important;
-        }
-        @else {
-            #{$property}: $variable-output !important;
+        @if $hide != 'output' {
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1) !important;
+            }
+            @else {
+                #{$property}: $variable-output !important;
+            }
         }
     } @else {
-        @if $show-fallback {
+        @if $hide !== 'fallback' {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1};
             }
@@ -223,11 +225,13 @@ Let’s tie it all together with this SCSS mixin.
                 #{$property}: $variable-fallback;
             }
         }
-        @if $negative {
-            #{$property}: calc(#{$variable-output} * -1);
-        }
-        @else {
-            #{$property}: $variable-output;
+        @if $hide != 'output' {
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1);
+            }
+            @else {
+                #{$property}: $variable-output;
+            }
         }
     }
 }
@@ -264,7 +268,7 @@ If CSS Variables are unsupported in the browser, the lines with CSS Variables ar
 
 Because we’ve set <var>$negative</var> to `true` for the `margin-top` declaration, it is multiplied by <var>-1</var> for the SCSS-calculated value and the same operation is made within a `calc()` function call for the CSS Variable equivalent.
 
-Changing the default value of <var>$show-fallback</var> from `true` to `false` where you are declaring this mixin will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+Changing the default value of <var>$hide</var> from `false` to `fallback|output` where you are declaring this mixin will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.html title='The Takeaway' %}
 

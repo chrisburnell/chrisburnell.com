@@ -536,3 +536,12 @@ $property-map: (
     width: measure,
     z-index: z-index
 ) !default;
+
+/// @type Map
+/// @see {Mixin} t
+/// @see {Mixin} v
+/// @see /src/sass/themes
+/// Unused with CSS Variables
+// $themes: (
+//     ...
+// ) !default;

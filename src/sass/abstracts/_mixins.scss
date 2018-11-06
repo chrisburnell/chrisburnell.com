@@ -443,7 +443,7 @@
 ///
 /// Select a CSS variable and provide a fallback
 ///
-@mixin v($property, $value, $negative: false, $important: false, $show-fallback: true) {
+@mixin v($property, $value, $negative: false, $important: false, $hide: false) {
     $map-name: map-get($property-map, $property);
     $nest-name: null;
     $nest-map-name: null;
@@ -478,34 +478,57 @@
 
     // output the value from SCSS as-is as well as the associated CSS variable
     @if $important {
-        @if $show-fallback {
+        @if $hide != "fallback" {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1} !important;
-            }
-            @else {
+            } @else {
                 #{$property}: $variable-fallback !important;
             }
         }
-        @if $negative {
-            #{$property}: calc(#{$variable-output} * -1) !important;
-        }
-        @else {
-            #{$property}: $variable-output !important;
+        @if $hide != "output" {
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1) !important;
+            } @else {
+                #{$property}: $variable-output !important;
+            }
         }
     } @else {
-        @if $show-fallback {
+        @if $hide != "fallback" {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1};
-            }
-            @else {
+            } @else {
                 #{$property}: $variable-fallback;
             }
         }
-        @if $negative {
-            #{$property}: calc(#{$variable-output} * -1);
+        @if $hide != "output" {
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1);
+            } @else {
+                #{$property}: $variable-output;
+            }
         }
-        @else {
-            #{$property}: $variable-output;
+    }
+}
+
+///
+/// Output properties and values for all defined themes
+///
+@mixin t($properties...) {
+    @each $theme, $data in $themes {
+        @if $theme == "default" {
+            @each $property in $properties {
+                @if map-has-key($data, $property) {
+                    @include v($property, map-get($data, $property));
+                }
+            }
+        } @else {
+            .#{$theme} & {
+                @each $property in $properties {
+                    @if map-has-key($data, $property) {
+                        @include v($property, map-get($data, $property));
+                    }
+                }
+            }
         }
     }
 }
