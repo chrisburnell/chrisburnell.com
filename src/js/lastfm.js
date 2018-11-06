@@ -41,6 +41,7 @@
                 LASTFM_DATETIME.setAttribute("datetime", datetime);
                 LASTFM_DATETIME.innerHTML = datetime;
                 for (let section of LASTFM_ELEMENTS) {
+                    section.setAttribute("aria-hidden", "false");
                     section.removeAttribute("hidden");
                 }
             })
