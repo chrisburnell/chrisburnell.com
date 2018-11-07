@@ -10,6 +10,13 @@ tags:
 - jekyll
 - liquid
 
+banner:
+- numerals-romanticised@2x.jpg
+- numerals-romanticised.jpg
+banner_mobile:
+- numerals-romanticised_mobile@2x.jpg
+- numerals-romanticised_mobile.jpg
+
 further_reading:
 - title: Roman numerals on Wikipedia
   url: https://en.wikipedia.org/wiki/Roman_numerals
