@@ -19,7 +19,7 @@ banner_mobile:
 comments: disqus
 shorturl: bqrm4
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/345878691110334466
 ---
 

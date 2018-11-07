@@ -19,7 +19,7 @@ edit_text: I originally documented this technique in a previous article, <a href
 comments: disqus
 shorturl: fv8cj
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/607915792911495168
 ---
 

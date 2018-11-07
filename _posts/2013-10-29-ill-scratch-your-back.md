@@ -21,7 +21,7 @@ caniuse: true
 comments: disqus
 shorturl: 82n3v
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/395115858814840833
 ---
 

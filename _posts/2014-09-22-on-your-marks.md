@@ -20,7 +20,7 @@ edit_text: I’ve modified the JavaScript for this section of my site over time,
 comments: disqus
 shorturl: sfn8k
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/514049979347107840
 ---
 

@@ -19,7 +19,7 @@ banner_mobile:
 comments: disqus
 shorturl: dxaon
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/432475967098224640
 ---
 

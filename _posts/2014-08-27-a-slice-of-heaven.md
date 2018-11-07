@@ -20,7 +20,7 @@ caniuse: true
 comments: disqus
 shorturl: ynt2q
 
-syndicate-to:
+syndicate_to:
 - https://twitter.com/iamchrisburnell/status/504642274148765696
 ---
 
