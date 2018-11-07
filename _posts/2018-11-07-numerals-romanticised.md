@@ -13,8 +13,14 @@ tags:
 further_reading:
 - title: Roman numerals on Wikipedia
   url: https://en.wikipedia.org/wiki/Roman_numerals
+- title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
+  url: https://bloodbuilder.online/
 
 redirect_from: /article/numerals-romanticized.html
+
+syndicate_to:
+- https://mastodon.social/users/chrisburnell/statuses/101029942322511486
+- https://twitter.com/iamchrisburnell/status/1060150621091827712
 ---
 
 <blockquote>

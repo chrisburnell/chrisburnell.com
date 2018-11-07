@@ -66,10 +66,10 @@
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             <span>also on</span>
-            {% assign syndication_count = 0 %}
+            {%- assign syndication_count = 0 -%}
             {% for syndication in syndications %}
                 {% if syndication contains 'codepen.io' %}
-                    {% assign syndication_slug = syndication | split: '/' | last %}
+                    {%- assign syndication_slug = syndication | split: '/' | last -%}
                     {% capture syndication_codepen %}<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
                                                      <small class="strong">
                                                          (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
@@ -99,47 +99,47 @@
                     (<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>)
                 </small>
-                {% assign syndication_count = syndication_count | plus: 1 %}
-            {% endif %}
-            {% if page.speakerdeck_slug %}
-                {% if syndication_count > 0 %},{% endif %}
-                <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}">Speaker Deck</a>
-                {% assign syndication_count = syndication_count | plus: 1 %}
-            {% endif %}
-            {% if page.vimeo_slug %}
-                {% if syndication_count > 0 %},{% endif %}
-                <a class="u-syndication" rel="syndication" href="{{ page.vimeo_slug | prepend: 'https://vimeo.com/' }}">Vimeo</a>
-                {% assign syndication_count = syndication_count | plus: 1 %}
-            {% endif %}
-            {% if page.youtube_slug %}
-                {% if syndication_count > 0 %},{% endif %}
-                <a class="u-syndication" rel="syndication" href="{{ page.youtube_slug | prepend: 'https://www.youtube.com/watch?v=' }}">YouTube</a>
-                {% assign syndication_count = syndication_count | plus: 1 %}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {% endif %}
             {% if syndication_codepen %}
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_codepen }}
-                {% assign syndication_count = syndication_count | plus: 1 %}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {% endif %}
             {% if syndication_gist %}
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_gist }}
-                {% assign syndication_count = syndication_count | plus: 1 %}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {% endif %}
             {% if syndication_github %}
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_github }}
-                {% assign syndication_count = syndication_count | plus: 1 %}
-            {% endif %}
-            {% if syndication_twitter %}
-                {% if syndication_count > 0 %},{% endif %}
-                {{ syndication_twitter }}
-                {% assign syndication_count = syndication_count | plus: 1 %}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {% endif %}
             {% if syndication_mastodon %}
                 {% if syndication_count > 0 %},{% endif %}
                 {{ syndication_mastodon }}
-                {% assign syndication_count = syndication_count | plus: 1 %}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
+            {% endif %}
+            {% if page.speakerdeck_slug %}
+                {% if syndication_count > 0 %},{% endif %}
+                <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}">Speaker Deck</a>
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
+            {% endif %}
+            {% if syndication_twitter %}
+                {% if syndication_count > 0 %},{% endif %}
+                {{ syndication_twitter }}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
+            {% endif %}
+            {% if page.vimeo_slug %}
+                {% if syndication_count > 0 %},{% endif %}
+                <a class="u-syndication" rel="syndication" href="{{ page.vimeo_slug | prepend: 'https://vimeo.com/' }}">Vimeo</a>
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
+            {% endif %}
+            {% if page.youtube_slug %}
+                {% if syndication_count > 0 %},{% endif %}
+                <a class="u-syndication" rel="syndication" href="{{ page.youtube_slug | prepend: 'https://www.youtube.com/watch?v=' }}">YouTube</a>
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {% endif %}
         </div>
     {% endif %}
