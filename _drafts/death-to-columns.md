@@ -22,22 +22,37 @@ Because we aren’t beholden to using floats anymore, and we have access to supe
 
 With flex or grid, it’s trivial now to compose a layout exactly as you and/or your designers visualise it.
 
-We used to say:
+### We used to say:
 
-- by default
-    - the layout is composed of <samp>12</samp> columns
-    - the main content area takes up <samp>8</samp> of those columns
-    - the sidebar takes up <samp>4</samp> of those columns
-- when the browser viewport is between <samp>500px</samp> and <samp>800px</samp> wide
-    - the layout is composed of <samp>6</samp> columns
-    - the main content area takes up <samp>4</samp> of those columns
-    - the sidebar takes up <samp>2</samp> of those columns
-- when the browser viewport is less than <samp>500px</samp> wide
-    - the layout is composed of <samp>1</samp> column
-    - the main content area and sidebar sit in that <samp>1</samp> column
+<dl>
+    <dt>By default…</dt>
+    <dd>
+        <p>the layout is composed of <samp>12</samp> columns</p>
+        <p>the main content area takes up <samp>8</samp> of those columns</p>
+        <p>the sidebar takes up <samp>4</samp> of those columns</p>
+    </dd>
+    <dt>When the browser viewport is between <samp>500px</samp> and <samp>800px</samp> wide…</dt>
+    <dd>
+        <p>the layout is composed of <samp>6</samp> columns</p>
+        <p>the main content area takes up <samp>4</samp> of those columns</p>
+        <p>the sidebar takes up <samp>2</samp> of those columns</p>
+    </dd>
+    <dt>When the browser viewport is less than <samp>500px</samp> wide…</dt>
+    <dd>
+        <p>the layout is composed of <samp>1</samp> column</p>
+        <p>the main content area and sidebar sit in that <samp>1</samp> column</p>
+    </dd>
+</dl>
 
-now we say:
+### Now we say:
 
-- the main content area and sidebar sit side-by-side at a <samp>2:1</samp> width ratio
-- when the browser viewport is less than <samp>500px</samp> wide
-    - the main content area and sidebar stack vertically, each taking up the full width
+<dl>
+    <dt>By default…</dt>
+    <dd>
+        <p>the main content area and sidebar sit side-by-side at a <samp>2:1</samp> width ratio</p>
+    </dd>
+    <dt>When the browser viewport is less than <samp>500px</samp> wide…</dt>
+    <dd>
+        <p>the main content area and sidebar stack vertically, each taking up the full width</p>
+    </dd>
+</dl>
