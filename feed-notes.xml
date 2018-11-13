@@ -9,7 +9,7 @@ lede: All of my notes.
 category_path: '/notes/'
 ---
 
-<link href="{{ site.urls.superfeedr }}" rel="hub" />
+<link href="{{ site.urls.switchboard }}" rel="hub" />
 
 {% for page in site.categories.note limit: site.feed_limit %}
     {% include components/item-feed.html %}
