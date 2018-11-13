@@ -24,7 +24,7 @@
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
         transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
 
-        @include media("screen", "prefers-reduced-motion") {
+        @include media("screen", "reduced-motion") {
             @include transition(none);
         }
     }

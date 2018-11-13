@@ -30,7 +30,7 @@
             @include v(opacity, beta);
             @include v(height, icon);
 
-            @include media("screen", "prefers-reduced-motion") {
+            @include media("screen", "reduced-motion") {
                 @include transition(none);
             }
         }

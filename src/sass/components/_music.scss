@@ -1,0 +1,20 @@
+////
+/// Music
+/// @group components
+////
+
+.last-fm__cover {
+    @include v(max-height, icon);
+    float: left;
+    @include v(margin-right, small);
+    @include v(margin-bottom, small);
+}
+
+.last-fm__track + .last-fm__artist:not(:empty) {
+    &::before {
+        content: " by ";
+        @include v(color, dove);
+        font-style: italic;
+        @include v(font-size, small);
+    }
+}

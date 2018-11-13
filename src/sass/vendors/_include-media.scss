@@ -6,12 +6,13 @@
 //    |_|_| |_|\___|_|\__,_|\__,_|\___| |_| |_| |_|\___|\__,_|_|\__,_|
 //
 //      Simple, elegant and maintainable media queries in Sass
-//                        v1.4.9
+//                        v1.4.9-cb
 //
 //                http://include-media.com
 //
 //         Authors: Eduardo Boucas (@eduardoboucas)
 //                  Hugo Giraudel (@hugogiraudel)
+//                  Chris Burnell (@iamchrisburnell)
 //
 //      This project is licensed under the terms of the MIT license
 
@@ -60,7 +61,9 @@ $media-expressions: (
   'hover': '(any-hover: hover)',
   'coarse': '(any-pointer: coarse)',
   'fine': '(any-pointer: fine)',
-  'prefers-reduced-motion': '(prefers-reduced-motion: reduce)'
+  'reduced-motion': '(prefers-reduced-motion: reduce)',
+  'light': '(prefers-color-scheme: light)',
+  'dark': '(prefers-color-scheme: dark)'
 ) !default;
 
 
@@ -264,10 +267,10 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 ///
 /// @param {String} $expression - Expression to extract operator from
 ///
-/// @return {String} - Any of `>=`, `>`, `<=`, `<`, `≥`, `≤`
+/// @return {String} - Any of `>=`, `>`, `<=`, `<`, `≥`, `≤`, `:below`, `:above`
 ///
 @function get-expression-operator($expression) {
-  @each $operator in ('>=', '>', '<=', '<', '≥', '≤') {
+  @each $operator in ('>=', '>', '<=', '<', '≥', '≤', 'below:', 'above:') {
     @if str-index($expression, $operator) {
       @return $operator;
     }
@@ -311,7 +314,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 /// @return {String} - `min` or `max`
 ///
 @function get-expression-prefix($operator) {
-  @return if(index(('<', '<=', '≤'), $operator), 'max', 'min');
+  @return if(index(('<', '<=', '≤', 'below:'), $operator), 'max', 'min');
 }
 
 
@@ -344,7 +347,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     $_: im-log('Unknown unit `#{unit($value)}`.');
   }
 
-  @if $operator == '>' {
+  @if $operator == '>' or $operator == 'above:' {
     $value: $value + $interval;
   } @else if $operator == '<' {
     $value: $value - $interval;

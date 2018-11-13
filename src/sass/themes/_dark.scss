@@ -1,0 +1,15 @@
+////
+/// Dark Mode
+/// @group themes
+////
+
+@include media("dark") {
+    :root {
+        --color-black: #{$color-white};
+        --color-mineshaft: #{$color-alto};
+        --color-kaiser: #{$color-dove};
+        --color-dove: #{$color-kaiser};
+        --color-alto: #{$color-mineshaft};
+        --color-white: #{$color-black};
+    }
+}

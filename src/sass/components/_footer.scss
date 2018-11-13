@@ -17,7 +17,8 @@ footer {
 }
 
 .footer-home-anchor,
-.footer-links a {
+.footer-links a,
+.footer-links div {
     display: inline-block;
     white-space: nowrap;
 }
@@ -43,7 +44,7 @@ footer {
         height: 100%;
         display: block;
 
-        @include media("screen", "prefers-reduced-motion") {
+        @include media("screen", "reduced-motion") {
             @include transition(none);
         }
     }

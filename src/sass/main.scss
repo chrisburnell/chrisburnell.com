@@ -70,6 +70,7 @@
 @import "components/media";
 @import "components/sparkline";
 @import "components/shelf";
+@import "components/music";
 @import "components/notification";
 @import "components/ingredients";
 @import "components/print";
@@ -78,6 +79,7 @@
 @import "pages/styleguide";
 
 /// THEMES
+@import "themes/dark";
 @import "themes/christmas";
 @import "themes/halloween";
 @import "themes/outrun";
