@@ -11,7 +11,7 @@
     {% endif %}
     <link>{{ page.url | absolute_url }}</link>
     <guid isPermaLink="true">{{ page.url | absolute_url }}</guid>
-    <pubDate>{{ page.date | date_to_xmlschema }}</pubDate>
+    <pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
     {% if page.lede %}
         <description>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</description>
     {% elsif page.categories contains 'article' %}
