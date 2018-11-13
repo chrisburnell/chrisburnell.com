@@ -6,11 +6,11 @@
         <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
         <description>{{ page.lede | xml_escape }}</description>
         <link>{{ page.category_path | absolute_url }}</link>
-        <atom:link href="{{ page.path | prepend: '/' | absolute_url }}" rel="self" type="application/rss+xml"/>
+        <link href="{{ page.path | prepend: '/' | absolute_url }}" rel="self" type="application/rss+xml"/>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
         <generator>Jekyll v{{ jekyll.version }}</generator>
-        <language>en</language>
+        <language>{{ site.language }}</language>
 
         <image>
             <url>{{ '/images/avatar@4x.png' | absolute_url }}</url>

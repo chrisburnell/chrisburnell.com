@@ -11,7 +11,6 @@ lede: All of my bookmarks.
 category_path: '/bookmarks/'
 ---
 
-
 {% for page in site.categories.bookmark limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

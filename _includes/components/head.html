@@ -40,7 +40,6 @@
         <link rel="prefetch" href="{{ url }}">
     {% endif %}
 
-    <link rel="alternate" type="application/atom+xml" title="All Posts Atom Feed" href="{{ site.urls.rss }}">
     <link rel="alternate" type="application/rss+xml" title="All Posts RSS Feed" href="{{ site.urls.rss }}">
     <link rel="alternate" type="application/rss+xml" title="Articles RSS Feed" href="{{ site.urls.rss_articles }}">
     <link rel="alternate" type="application/rss+xml" title="Bookmarks RSS Feed" href="{{ site.urls.rss_bookmarks }}">
@@ -49,6 +48,7 @@
     <link rel="alternate" type="application/rss+xml" title="Recipes RSS Feed" href="{{ site.urls.rss_recipes }}">
     <link rel="alternate" type="application/rss+xml" title="Reviews RSS Feed" href="{{ site.urls.rss_reviews }}">
     <link rel="alternate" type="application/rss+xml" title="Talks RSS Feed" href="{{ site.urls.rss_talks }}">
+    <link rel="alternate" type="application/atom+xml" title="Notes Atom Feed" href="{{ site.urls.rss_notes }}">
     <link rel="pingback" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
     <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">

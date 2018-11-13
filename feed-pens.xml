@@ -9,7 +9,6 @@ lede: All of my pens.
 category_path: '/pens/'
 ---
 
-
 {% for page in site.categories.pen limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

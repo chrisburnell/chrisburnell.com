@@ -9,7 +9,6 @@ lede: All of my reviews.
 category_path: '/reviews/'
 ---
 
-
 {% for page in site.categories.review limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

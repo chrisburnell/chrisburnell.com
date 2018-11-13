@@ -9,7 +9,6 @@ lede: All of my articles.
 category_path: '/articles/'
 ---
 
-
 {% for page in site.categories.article limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}
