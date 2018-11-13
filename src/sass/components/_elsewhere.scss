@@ -6,7 +6,7 @@
 .elsewhere {
     @include v(max-height, icon);
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         text-align: center;
     }
 }

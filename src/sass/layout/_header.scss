@@ -8,7 +8,7 @@ header {
     overflow: hidden;
     position: relative;
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         // 1─────────────2
         // │     7em     │
         // 2─────────────┤
@@ -18,7 +18,7 @@ header {
         justify-content: center;
     }
 
-    @include media("screen", ">medium") {
+    @include media("screen", "above:medium") {
         // 1────────────────2─────────────3
         // │ $measure-aside │ min-content │
         // 2────────────────┴─────────────┘

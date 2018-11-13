@@ -85,7 +85,7 @@ dl {
     margin-top: 0;
     overflow: hidden;
 
-    @include media("screen", ">medium") {
+    @include media("screen", "above:medium") {
         grid-template-columns: repeat(auto-fill, minmax(6em, max-content) minmax(12em, 1fr));
     }
 }
@@ -97,7 +97,7 @@ dd {
     vertical-align: top;
 
     &:only-of-type {
-        @include media("screen", ">medium") {
+        @include media("screen", "above:medium") {
             grid-column: 2 / span 3;
         }
     }

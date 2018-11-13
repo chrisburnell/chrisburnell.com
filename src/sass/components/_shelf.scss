@@ -10,7 +10,7 @@
     grid-template-columns: 1fr;
     @include v(grid-gap, medium);
 
-    @include media("screen", ">small") {
+    @include media("screen", "above:small") {
         // 1───────────────────2→
         // │ minmax(12em, 1fr) │→
         // 2───────────────────┴→

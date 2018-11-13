@@ -16,7 +16,7 @@
     @include v(font-size, gamma);
     @include v(font-weight, bold);
 
-    @include media("screen", ">small") {
+    @include media("screen", "above:small") {
         left: auto;
     }
 

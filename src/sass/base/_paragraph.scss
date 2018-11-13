@@ -18,12 +18,12 @@ p {
     }
 
     &.columns {
-        @include media("screen", ">small", "<=medium") {
+        @include media("screen", "above:small", "below:medium") {
             column-count: $max-columns;
             column-gap: $measure-medium;
         }
 
-        @include media("screen", ">large") {
+        @include media("screen", "above:large") {
             column-count: $max-columns;
             column-gap: $measure-medium;
         }

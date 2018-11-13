@@ -15,7 +15,7 @@ form {
     position: relative;
 
     &:not([class]) {
-        @include media("screen", "<=small") {
+        @include media("screen", "below:small") {
             grid-template-columns: 1fr;
         }
 

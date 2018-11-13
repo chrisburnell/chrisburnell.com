@@ -10,7 +10,7 @@
     @include v(width, content);
     @include v(margin-bottom, large);
 
-    @include media("screen", "<=small") {
+    @include media("screen", "below:small") {
         @include v(width, breakpoint-small);
     }
 }

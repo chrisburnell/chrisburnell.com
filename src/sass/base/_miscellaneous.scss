@@ -18,7 +18,7 @@ hr {
     overflow: visible;
 
     %content-elements + & {
-        @include media("screen", "<=medium") {
+        @include media("screen", "below:medium") {
             @include v(margin-top, medium);
         }
     }

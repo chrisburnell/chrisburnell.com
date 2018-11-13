@@ -7,7 +7,7 @@
     @extend %gamma !optional;
     @include v(margin-bottom, large);
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         text-align: left;
     }
 

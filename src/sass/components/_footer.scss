@@ -70,7 +70,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         justify-content: center;
     }
 

@@ -33,7 +33,7 @@ h6 {
     text-shadow: $border-width-default $border-width-default 0 $color-black--delta;
     text-shadow: var(--border-width-default) var(--border-width-default) 0 var(--color-black--delta);
 
-    @include media("screen", "<=small") {
+    @include media("screen", "below:small") {
         font-size: #{$font-size-alpha / 1.285}; // 56px
     }
 }
@@ -80,7 +80,7 @@ h2 {
         display: inline-block;
         @include v(padding-right, large);
 
-        @include media("screen", "<=medium") {
+        @include media("screen", "below:medium") {
             align-self: flex-start;
         }
     }

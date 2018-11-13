@@ -10,7 +10,7 @@
     @include v(padding-bottom, medium);
     white-space: nowrap;
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         flex: 1 0 100%;
         @include v(padding-top, small);
         text-align: center;
@@ -24,15 +24,15 @@
         display: inline-block;
 
         & + li {
-            @include media("screen", "<=small") {
+            @include media("screen", "below:small") {
                 margin-left: #{$measure-one-relative / 4};
             }
 
-            @include media("screen", ">small", "<=medium") {
+            @include media("screen", "above:small", "below:medium") {
                 margin-left: #{$measure-one-relative / 2};
             }
 
-            @include media("screen", ">medium") {
+            @include media("screen", "above:medium") {
                 margin-left: $measure-one-relative;
                 margin-left: var(--measure-one-relative);
             }
@@ -59,7 +59,7 @@
             transform: translateY(0.2rem);
         }
 
-        @include media("screen", "<=small") {
+        @include media("screen", "below:small") {
             padding-left:  #{$measure-one / 2};
             padding-right: #{$measure-one / 2};
         }

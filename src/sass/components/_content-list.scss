@@ -11,7 +11,7 @@
     @include v(margin-bottom, large);
     @include v(line-height, small);
 
-    @include media("screen", ">small") {
+    @include media("screen", "above:small") {
         // 1───────────────────2→
         // │ minmax(20em, 1fr) │→
         // 2───────────────────┴→
@@ -124,7 +124,7 @@
         transform: translateY(-50%);
         @include v(z-index, root);
 
-        @include media("screen", "<=small") {
+        @include media("screen", "below:small") {
             width: 4em !important;
             height: 4em !important;
         }

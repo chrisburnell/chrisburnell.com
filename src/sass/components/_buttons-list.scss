@@ -14,7 +14,7 @@
     margin: 0 0 $measure-medium;
     margin: 0 0 var(--measure-medium);
 
-    @include media("screen", ">small") {
+    @include media("screen", "above:small") {
         // 1───────────────────────────2→
         // │ minmax(12em, max-content) │→
         // 2───────────────────────────┴→

@@ -7,20 +7,20 @@
     // override the default <aside> font-family
     @include font-family(default);
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         display: flex;
         flex-direction: column;
         order: 999;
         @include v(margin-top, large);
     }
 
-    @include media("screen", ">medium") {
+    @include media("screen", "above:medium") {
         float: none;
         margin-left: 0;
     }
 
     :not(.stretch) > & {
-        @include media("screen", ">medium") {
+        @include media("screen", "above:medium") {
             float: none;
             grid-area: author;
             margin-top: #{$measure-large * 2 + $font-size-alpha};
@@ -29,7 +29,7 @@
     }
 
     .stretch > & {
-        @include media("screen", ">medium") {
+        @include media("screen", "above:medium") {
             width: 100%;
             @include v(max-width, breakpoint-medium);
             float: none;
@@ -49,7 +49,7 @@
     font-style: italic;
     @include v(line-height, medium);
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         @include v(padding-top, large);
         @include v(border-top-width, thin);
         @include v(border-top-style, default);
@@ -117,11 +117,11 @@
         left: 0;
     }
 
-    @include media("screen", "<=medium") {
+    @include media("screen", "below:medium") {
         @include v(margin-right, medium);
     }
 
-    @include media("screen", ">medium") {
+    @include media("screen", "above:medium") {
         @include v(margin-right, small);
     }
 

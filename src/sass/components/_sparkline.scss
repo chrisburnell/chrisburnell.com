@@ -24,18 +24,18 @@
     }
 
     %heading-elements & {
-        @include media("screen", "<=small") {
+        @include media("screen", "below:small") {
             display: none !important; // this needs to override the inline style
         }
 
-        @include media("screen", ">small") {
+        @include media("screen", "above:small") {
             float: right;
             margin-left: $measure-medium;
         }
     }
 
     %alpha & {
-        @include media("screen", ">small") {
+        @include media("screen", "above:small") {
             margin-top: $measure-medium;
         }
     }

@@ -16,11 +16,11 @@ footer {
         @include v(grid-gap, medium);
         align-items: center;
 
-        @include media("screen", "<=medium") {
+        @include media("screen", "below:medium") {
             grid-template-columns: 1fr;
         }
 
-        @include media("screen", ">medium") {
+        @include media("screen", "above:medium") {
             // 1──────2─────3──────4
             // │ auto │ 1fr │ auto │
             // 2──────┴─────┴──────┘
