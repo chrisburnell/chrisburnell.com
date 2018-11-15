@@ -463,6 +463,10 @@
         $map: map-get($variable-map, $nest-name);
         // get the nested map
         $nest-map: map-get($map, $nest-map-name);
+        // throw a warning if the value does not exist
+        @if not map-has-key($nest-map, $value) {
+            @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+        }
         // fallback value, get the var value from the nested map
         $variable-fallback: map-get($nest-map, $value);
         // our CSS Variable output
@@ -470,6 +474,10 @@
     } @else {
         // get the map from map name
         $map: map-get($variable-map, $map-name);
+        // throw a warning if the value does not exist
+        @if not map-has-key($map, $value) {
+            @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+        }
         // fallback value, grab the variable's value from the map
         $variable-fallback: map-get($map, $value);
         // our CSS Variable output
