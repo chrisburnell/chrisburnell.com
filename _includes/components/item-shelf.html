@@ -17,65 +17,64 @@
     {%- assign read_status = 'reading' -%}
 {%- endif -%}
 <li role="listitem" class="h-review">
-    <div class="p-summary">
-        {% if page.cover %}
-            {% if page.link %}
-                <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
-            {% endif %}
-            {% include components/cover.html %}
-            {% if page.link %}
-                </a>
-            {% endif %}
+    {% if page.cover %}
+        {% if page.link %}
+            <a class="cover  p-summary" href="{{ page.link }}" rel="external" title="{{ link_title }}">
         {% endif %}
-        <div class="p-read-of  h-cite">
-            <h2 class="delta"><cite class="p-name">{{ page.title | strip_html }}</cite></h2>
-            <div>
-                {% assign authors = page.authors | split: ', ' | uniq | sort %}
-                {%- for author in authors -%}
-                    {% unless forloop.first %}, {% endunless %}
-                    {%- if page.authors_link and page.authors_link[1] -%}
-                        <a class="p-author  h-card" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
-                    {%- elsif page.authors_link -%}
-                        <a class="p-author  h-card" href="{{ page.authors_link }}" title="" rel="external">
-                    {%- endif -%}
-                    {{ author | strip }}
-                    {%- if page.authors_link -%}
-                        </a>
-                    {%- endif -%}
-                {%- endfor -%}
-                {%- if page.date -%}
-                    <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
+        {% include components/cover.html %}
+        {% if page.link %}
+            </a>
+        {% endif %}
+    {% endif %}
+    <div class="p-read-of  h-cite">
+        <h2 class="delta"><cite class="p-name">{{ page.title | strip_html }}</cite></h2>
+        <div>
+            {% assign authors = page.authors | split: ', ' | uniq | sort %}
+            {%- for author in authors -%}
+                {% unless forloop.first %}, {% endunless %}
+                {%- if page.authors_link and page.authors_link[1] -%}
+                    <a class="p-author  h-card" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
+                {%- elsif page.authors_link -%}
+                    <a class="p-author  h-card" href="{{ page.authors_link }}" title="" rel="external">
                 {%- endif -%}
-            </div>
-            {% if page.isbn %}
-                <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
-            {% endif %}
+                {{ author | strip }}
+                {%- if page.authors_link -%}
+                    </a>
+                {%- endif -%}
+            {%- endfor -%}
+            {%- if page.date -%}
+                <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
+            {%- endif -%}
         </div>
-        {%- assign content = page.content | strip_newlines -%}
-        {% if content != empty %}
-            <details>
-                {% if page.rating %}
-                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data></summary>
-                {% else %}
-                    <summary>Review</summary>
-                {% endif %}
-                <div class="e-content">{{ page.content | markdownify }}</div>
-            </details>
-        {% elsif page.rating %}
-            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
-        {% endif %}
-        {% if page.rating %}
-            <span class="p-worst" hidden>1</span>
-            <span class="p-best" hidden>5</span>
-        {% endif %}
         {% if page.isbn %}
-            <strong><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
-        {% endif %}
-        {% if page.date_start %}
-            <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
-        {% endif %}
-        {% if page.date_end %}
-            <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
+            <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
         {% endif %}
     </div>
+    {%- assign content = page.content | strip_newlines -%}
+    {% if content != empty %}
+        <details>
+            {% if page.rating %}
+                <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data></summary>
+            {% else %}
+                <summary>Review</summary>
+            {% endif %}
+            <div class="e-content">{{ page.content | markdownify }}</div>
+        </details>
+    {% elsif page.rating %}
+        <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_half != 0 %}½{% endif %}</data>
+    {% endif %}
+    {% if page.rating %}
+        <span class="p-worst" hidden>1</span>
+        <span class="p-best" hidden>5</span>
+    {% endif %}
+    {% if page.isbn %}
+        <strong><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
+    {% endif %}
+    {% if page.date_start %}
+        <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
+    {% endif %}
+    {% if page.date_end %}
+        <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
+    {% endif %}
+    <a class="u-author" href="/" hidden tabindex="-1"></a>
 </li>
