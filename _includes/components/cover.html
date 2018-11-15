@@ -1,6 +1,6 @@
 {% if page.cover or page.mf-photo %}
     {% assign cover = page.mf-photo | default: page.cover %}
-    <picture class="u-photo">
+    <picture>
         {% if cover contains '://' %}
             <img alt="" class="u-photo" role="presentation" src="{{ cover }}">
         {% else %}
