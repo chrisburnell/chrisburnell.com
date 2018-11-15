@@ -19,7 +19,7 @@
 <li role="listitem" class="h-review">
     {% if page.cover %}
         {% if page.link %}
-            <a class="cover  p-summary" href="{{ page.link }}" rel="external" title="{{ link_title }}">
+            <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
         {% endif %}
         {% include components/cover.html %}
         {% if page.link %}
@@ -27,7 +27,7 @@
         {% endif %}
     {% endif %}
     <div class="p-read-of  h-cite">
-        <h2 class="delta"><cite class="p-name">{{ page.title | strip_html }}</cite></h2>
+        <h2 class="delta"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></h2>
         <div>
             {% assign authors = page.authors | split: ', ' | uniq | sort %}
             {%- for author in authors -%}
