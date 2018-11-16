@@ -91,6 +91,13 @@ dl {
 }
 dt {
     @include v(font-weight, bold);
+
+    .beta,
+    %beta,
+    .delta,
+    %delta {
+        @include v(line-height, default);
+    }
 }
 dd {
     margin: 0;
