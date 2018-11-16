@@ -31,8 +31,8 @@
         }
 
         // Get search results if query parameter is set in querystring
-        if (helpers.getParameterByName("query")) {
-            query = decodeURIComponent(helpers.getParameterByName("query"));
+        if (helpers.getParameterByName("q") || helpers.getParameterByName("query")) {
+            query = decodeURIComponent(helpers.getParameterByName("q") ? helpers.getParameterByName("q") : helpers.getParameterByName("query"));
             searchInput.value = query;
             execSearch(query);
         }
