@@ -9,7 +9,7 @@ lede: All of my posts.
 category_path: ''
 ---
 
-<link rel="self" href="{{ page.url | prepend: site.live_url }}" />
+<link rel="self" href="{{ site.urls.rss | prepend: site.live_url }}" />
 <link rel="hub" href="{{ site.urls.switchboard }}" />
 
 {% for page in site.posts limit: site.feed_limit %}
