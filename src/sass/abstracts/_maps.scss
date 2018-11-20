@@ -115,12 +115,11 @@ $brand-colors: (
     github: $color-github,
     lastfm: $color-lastfm,
     spotify: $color-spotify,
-    spotify-alt: $color-spotify-alt,
     twitter: $color-twitter
 ) !default;
 
 /// @type Map
-$all-colors: map-merge($site-colors, map-merge($language-colors, $brand-colors));
+$all-colors: map-multiple-merge($site-colors, $language-colors, $brand-colors);
 
 /// @type Map
 /// @prop {String} Border Width Name

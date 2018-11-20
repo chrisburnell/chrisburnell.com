@@ -74,13 +74,13 @@
 ///
 /// @return {Map}
 ///
-@function map-combine($maps...) {
-    $collection: ();
+@function map-multiple-merge($maps...) {
+    $merged: ();
 
     @each $map in $maps {
-      $collection: map-merge($collection, $map);
+      $merged: map-merge($merged, $map);
     }
-    @return $collection;
+    @return $merged;
   }
 
 
