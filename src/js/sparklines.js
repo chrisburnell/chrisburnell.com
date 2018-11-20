@@ -92,8 +92,7 @@
         playNotes();
     };
 
-    let data;
-
+    let notes;
     if (document.querySelector(".sparkline")) {
         let showEndpoint = true;
         let sparklineColor = "hsla(0, 0%, 31%, 1)";
@@ -103,6 +102,7 @@
             .then(response => response.json())
             .then(data => {
                 // Success!
+                notes = data; // We need this later to play the tones
                 for (let type in data) {
                     if (document.querySelector(`#sparkline-${type}`)) {
                         sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
@@ -129,8 +129,8 @@
     }
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {
-        sparkline.addEventListener("click", event => {
-            playSparkline(data[sparkline.id.split("-")[1]], frequencies, duration, wave);
+        sparkline.addEventListener("click", () => {
+            playSparkline(notes[sparkline.id.split("-")[1]], frequencies, duration, wave);
             // Prevent the user from blowing their ears up by stacking sounds
             sparkline.classList.add("non-interactive");
             window.setTimeout(() => {
