@@ -60,7 +60,7 @@ gulp.task("css-prettify", () => {
 });
 
 // Compile CSS from Sass
-gulp.task("css-main", ["css-prettify"], () => {
+gulp.task("css-main", () => {
     return gulp
         .src([`!${paths.css.src}/critical.scss`, `${paths.css.src}/*.scss`])
         .pipe(plumber())
@@ -144,7 +144,7 @@ gulp.task("js-prettify", () => {
 });
 
 // Concatenate JavaScript
-gulp.task("js-concat", ["js-prettify"], () => {
+gulp.task("js-concat", () => {
     return gulp
         .src([
             `${paths.js.src}/helpers.js`, // dependency
@@ -215,41 +215,32 @@ gulp.task("images-move-svg", () => {
 
 // -----------------------------------------------------------------------------
 
-// Default task
-gulp.task("default", () => {
-    gulp.start("css");
-    gulp.start("js");
-    gulp.start("images");
-});
-
 // CSS task
-gulp.task("css", () => {
-    gulp.start("css-main");
-    gulp.start("css-critical");
-});
+gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-main", "css-critical")));
 
 // JS task
-gulp.task("js", ["js-concat"], () => {
-    gulp.start("js-css-preload");
-    gulp.start("js-serviceworker");
-});
+gulp.task("js", gulp.series("js-concat", gulp.parallel("js-css-preload", "js-serviceworker")));
 
 // Images task
-gulp.task("images", ["images-compress"], () => {
-    gulp.start("images-move-svg");
-});
+gulp.task("images", gulp.series("images-compress", gulp.parallel("images-move-svg")));
+
+// Default task
+gulp.task("default", gulp.parallel("css", "js", "images"));
 
 // -----------------------------------------------------------------------------
 
 // Watch files and perform the appropriate tasks
-gulp.task("watch", ["css", "js"], () => {
-    watch(`${paths.css.src}/**/*`, () => {
-        gulp.start("css");
-    });
-    watch(`${paths.js.src}/**/*`, () => {
-        gulp.start("js");
-    });
-    watch(`${paths.images.src}/**/*`, () => {
-        gulp.start("images");
-    });
+gulp.task("watch", () => {
+    gulp.watch(`${paths.css.src}/**/*`)
+        .on("change", () => {
+            gulp.parallel("css");
+        });
+    gulp.watch(`${paths.js.src}/**/*`)
+        .on("change", () => {
+            gulp.parallel("js");
+        });
+    gulp.watch(`${paths.images.src}/**/*`)
+        .on("change", () => {
+            gulp.parallel("images");
+        });
 });
