@@ -15,6 +15,7 @@ author:
   pgp:         9604F098260A0057
   codepen:     chrisburnell
   github:      chrisburnell
+  mastodon:    chrisburnell@mastodon.social
   twitter:     iamchrisburnell
   employer:
     name: Squiz
@@ -30,6 +31,7 @@ urls:
   lastfm:             https://last.fm/user/chrisburnell
   license:            https://www.gnu.org/licenses/gpl-3.0.txt
   londonwebstandards: https://londonwebstandards.org
+  mastodon:           https://mastodon.social/@chrisburnell
   micropub:           https://micropub.chrisburnell.com
   microsub:           https://aperture.p3k.io/microsub/69
   notist:             https://noti.st/chrisburnell
