@@ -16,7 +16,7 @@ searchable: false
 /* SITE */
 
     Last updated:  {{ 'now' | date: '%F' }}
-    URL:           {{ site.url }}
+    URL:           {{ site.url | append: site.baseurl }}
     Language:      {{ site.language }}
     Doctype:       HTML5
     Fonts:         Heebo, League Gothic, Proxima Nova

@@ -63,9 +63,9 @@ codepen:
     tabfree: 8863
 
 url:      https://chrisburnell.com
-baseurl:  ''
-shorturl: https://repc.co/
+baseurl:  '/'
 live_url: https://chrisburnell.com
+shorturl: https://repc.co/
 
 detach: false
 host: 127.0.0.1

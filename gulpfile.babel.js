@@ -231,16 +231,21 @@ gulp.task("default", gulp.parallel("css", "js", "images"));
 
 // Watch files and perform the appropriate tasks
 gulp.task("watch", () => {
-    gulp.watch(`${paths.css.src}/**/*`)
-        .on("change", () => {
-            gulp.parallel("css");
-        });
-    gulp.watch(`${paths.js.src}/**/*`)
-        .on("change", () => {
-            gulp.parallel("js");
-        });
-    gulp.watch(`${paths.images.src}/**/*`)
-        .on("change", () => {
-            gulp.parallel("images");
-        });
+    gulp.watch(`${paths.css.src}/**/*`, gulp.series("css"));
+    gulp.watch(`${paths.js.src}/**/*`, gulp.series("js"));
+    gulp.watch(`${paths.images.src}/**/*`, gulp.series("images"));
 });
+// gulp.task("watch", () => {
+//     gulp.watch(`${paths.css.src}/**/*`)
+//         .on("change", () => {
+//             gulp.parallel("css");
+//         });
+//     gulp.watch(`${paths.js.src}/**/*`)
+//         .on("change", () => {
+//             gulp.parallel("js");
+//         });
+//     gulp.watch(`${paths.images.src}/**/*`)
+//         .on("change", () => {
+//             gulp.parallel("images");
+//         });
+// });

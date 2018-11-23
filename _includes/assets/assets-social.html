@@ -2,7 +2,7 @@
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
-    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.live_url }}">
+    <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
     {% if page.shorturl %}
         <link rel="shortlink" href="{{ page.shorturl | prepend: site.shorturl }}">
     {% endif %}

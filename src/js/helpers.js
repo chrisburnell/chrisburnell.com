@@ -103,7 +103,7 @@ helpers = {
     /// @throw {Object} error
     ////
     getFetchResponse: response => {
-        if (response.status >= 200 && response.status < 300) {
+        if (response.ok) {
             return response;
         } else {
             let error = new Error(response.statusText);
