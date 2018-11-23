@@ -235,17 +235,3 @@ gulp.task("watch", () => {
     gulp.watch(`${paths.js.src}/**/*`, gulp.series("js"));
     gulp.watch(`${paths.images.src}/**/*`, gulp.series("images"));
 });
-// gulp.task("watch", () => {
-//     gulp.watch(`${paths.css.src}/**/*`)
-//         .on("change", () => {
-//             gulp.parallel("css");
-//         });
-//     gulp.watch(`${paths.js.src}/**/*`)
-//         .on("change", () => {
-//             gulp.parallel("js");
-//         });
-//     gulp.watch(`${paths.images.src}/**/*`)
-//         .on("change", () => {
-//             gulp.parallel("images");
-//         });
-// });
