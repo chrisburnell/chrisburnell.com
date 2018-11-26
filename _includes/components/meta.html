@@ -82,7 +82,7 @@
                 {% elsif syndication contains 'mastodon' %}
                     {% capture syndication_mastodon %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
                                                      <small class="strong">
-                                                         (<a rel="external" href="https://mastodon.social/interact/{{ syndication | split: '/' | last }}">Interact</a>)
+                                                         (<a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}interact/{{ syndication | split: '/' | last }}">Interact</a>)
                                                      </small>{% endcapture %}
                 {% elsif syndication contains 'twitter.com' %}
                     {% capture syndication_twitter %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>

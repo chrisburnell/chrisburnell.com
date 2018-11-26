@@ -15,7 +15,8 @@ author:
   pgp:         9604F098260A0057
   codepen:     chrisburnell
   github:      chrisburnell
-  twitter:     '@iamchrisburnell'
+  mastodon:    chrisburnell@mastodon.social
+  twitter:     iamchrisburnell
   employer:
     name: Squiz
     url:  https://www.squiz.net
@@ -30,6 +31,7 @@ urls:
   lastfm:             https://last.fm/user/chrisburnell
   license:            https://www.gnu.org/licenses/gpl-3.0.txt
   londonwebstandards: https://londonwebstandards.org
+  mastodon:           https://mastodon.social/@chrisburnell
   micropub:           https://micropub.chrisburnell.com
   microsub:           https://aperture.p3k.io/microsub/69
   notist:             https://noti.st/chrisburnell
@@ -61,9 +63,9 @@ codepen:
     tabfree: 8863
 
 url:      https://chrisburnell.com
-baseurl:  ''
-shorturl: https://repc.co/
+baseurl:  '/'
 live_url: https://chrisburnell.com
+shorturl: https://repc.co/
 
 detach: false
 host: 127.0.0.1

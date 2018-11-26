@@ -9,14 +9,14 @@ searchable: false
 
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
-    Twitter: {{ site.author.twitter }}
+    Twitter: {{ site.author.twitter | prepend: '@' }}
     GitHub: {{ site.author.github }}
     PGP: {{ site.author.pgp }}
 
 /* SITE */
 
     Last updated:  {{ 'now' | date: '%F' }}
-    URL:           {{ site.url }}
+    URL:           {{ site.url | append: site.baseurl }}
     Language:      {{ site.language }}
     Doctype:       HTML5
     Fonts:         Heebo, League Gothic, Proxima Nova

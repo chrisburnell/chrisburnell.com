@@ -13,10 +13,10 @@ $SQRT2: 1.4142135623730951;
 // @param {Number} $exp The exponent to which to raise base
 // @return {Number}
 // @example
-//     pow(4, 2)   // 16
-//     pow(4, -2)  // 0.0625
-//     pow(4, 0.2) // 1.31951
-@function pow($base, $exp) {
+//     power(4, 2)   // 16
+//     power(4, -2)  // 0.0625
+//     power(4, 0.2) // 1.31951
+@function power($base, $exp) {
     @if $exp == floor($exp) {
         $r: 1;
         $s: 0;
@@ -36,14 +36,14 @@ $SQRT2: 1.4142135623730951;
         @return 0;
     } @else {
         $expint: floor($exp);
-        $r1: pow($base, $expint);
-        $r2: _exp(log($base) * ($exp - $expint));
+        $r1: power($base, $expint);
+        $r2: _exponent(log($base) * ($exp - $expint));
         @return $r1 * $r2;
     }
 }
 
 // A good approximation for $x close to 0.
-@function _exp($x) {
+@function _exponent($x) {
     $ret: 0;
     $i: 1;
     @for $n from 0 to 24 {
@@ -57,11 +57,11 @@ $SQRT2: 1.4142135623730951;
 // @param {Number} $x A non-negative integer.
 // @return {Number}
 // @example
-//     fact(0) // 1
-//     fact(8) // 40320
-@function fact($x) {
+//     factorial(0) // 1
+//     factorial(8) // 40320
+@function factorial($x) {
     @if $x < 0 or $x != floor($x) {
-        @warn "Argument for `fact()` must be a positive integer.";
+        @warn "Argument for `factorial()` must be a positive integer.";
         @return null;
     }
     $ret: 1;
@@ -95,7 +95,7 @@ $SQRT2: 1.4142135623730951;
 //     exp(1)  // 2.71828
 //     exp(-1) // 0.36788
 @function exp($x) {
-    @return pow($E, $x);
+    @return power($E, $x);
 }
 
 // Returns a two-element list containing the normalized fraction and exponent of number.
@@ -365,7 +365,7 @@ $SQRT2: 1.4142135623730951;
     } @else if unit($angle) == deg {
         @return deg-to-rad($angle, false);
     } @else if type-of($angle) != number or not unitless($angle) {
-        @warn "#{ $angle } is not a valid number.";
+        @warn "#{$angle} is not a valid number.";
         @return $angle;
     }
 }

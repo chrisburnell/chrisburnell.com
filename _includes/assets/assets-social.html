@@ -2,7 +2,7 @@
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
-    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.live_url }}">
+    <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
     {% if page.shorturl %}
         <link rel="shortlink" href="{{ page.shorturl | prepend: site.shorturl }}">
     {% endif %}
@@ -14,11 +14,11 @@
     {% endif %}
     <!-- Twitter Microdata -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="{{ site.author.twitter }}">
+    <meta name="twitter:creator" content="{{ site.author.twitter | prepend: '@' }}">
     <meta name="twitter:title" content="{{ meta_title }}">
     <meta name="twitter:description" content="{{ meta_lede }}">
     <meta name="twitter:image" content="{{ meta_image }}">
-    <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
+    <meta name="twitter:domain" content="{{ site.live_url | remove: 'http://' | remove: 'https://' }}">
     {% if page.twitter == true %}
         <meta name="twitter:widgets:theme" content="light">
         <meta name="twitter:widgets:link-color" content="#{{ site.color }}">

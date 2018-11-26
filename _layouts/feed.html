@@ -6,7 +6,8 @@
         <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
         <description>{{ page.lede | xml_escape }}</description>
         <link>{{ page.category_path | absolute_url }}</link>
-        <link href="{{ page.path | prepend: '/' | absolute_url }}" rel="self" type="application/rss+xml"/>
+        <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/rss+xml" />
+        <link rel="hub" href="{{ site.urls.switchboard }}" />
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         <generator>Jekyll v{{ jekyll.version }}</generator>

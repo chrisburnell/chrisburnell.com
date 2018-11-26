@@ -48,13 +48,13 @@
     <link rel="alternate" type="application/rss+xml" title="Recipes RSS Feed" href="{{ site.urls.rss_recipes }}">
     <link rel="alternate" type="application/rss+xml" title="Reviews RSS Feed" href="{{ site.urls.rss_reviews }}">
     <link rel="alternate" type="application/rss+xml" title="Talks RSS Feed" href="{{ site.urls.rss_talks }}">
-    <link rel="pingback" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
-    <link rel="webmention" href="https://webmention.io/{{ site.url | remove: 'http://' | remove: 'https://' }}/webmention">
+    <link rel="pingback" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
+    <link rel="webmention" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/webmention">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     <link rel="micropub" href="{{ site.urls.micropub }}">
     <link rel="microsub" href="{{ site.urls.microsub }}">
-    <link rel="openid.delegate" href="https://chrisburnell.com/" />
+    <link rel="openid.delegate" href="{{ site.live_url }}" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
     <link rel="mask-icon" href="{{ 'favicon.svg' | relative_url }}" color="#{{ site.color }}">
@@ -67,7 +67,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="{{ site.title }}">
     <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
-    <meta name="msapplication-starturl" content="{{ site.url }}">
+    <meta name="msapplication-starturl" content="{{ site.url | append: site.baseurl }}">
     <meta name="description" content="{{ meta_lede }}">
     <meta name="theme-color" content="#{{ site.color }}">
     <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
