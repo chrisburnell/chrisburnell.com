@@ -93,7 +93,6 @@ gulp.task("css-critical", () => {
     return gulp
         .src(`${paths.css.src}/critical.scss`)
         .pipe(plumber())
-        .pipe(newer(`${paths.includes}/generated/`))
         .pipe(
             sass({
                 errLogToConsole: true,
@@ -151,7 +150,6 @@ gulp.task("js-concat", () => {
             `!${paths.js.src}/serviceworker.js`
         ])
         .pipe(plumber())
-        .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())
         .pipe(concat("main.js"))
         .pipe(gulp.dest(`${paths.js.dest}/`))
