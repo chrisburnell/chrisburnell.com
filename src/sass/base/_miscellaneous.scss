@@ -35,6 +35,10 @@ dfn[title] {
     @include v(border-bottom-style, alternate);
     @include v(border-bottom-color, dove);
     cursor: help;
+
+    a & {
+        border-bottom-width: 0;
+    }
 }
 abbr[title],
 dfn[title],

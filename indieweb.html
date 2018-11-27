@@ -11,15 +11,18 @@ lede: How I’ve implemented and interact with the <a href="https://indieweb.org
 
 <dl>
     <dt><h2 class="delta"><a href="/articles/">Articles</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external">PESOS</a> the lede to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
     <dt><h2 class="delta"><a href="/notes/">Notes</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external">PESOS</a> in full to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> in full to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
     <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external">PESOS</a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
     <dt><h2 class="delta"><a href="/pens/">Pens</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external">PESOS</a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
+    <!--dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd-->
+    <dd>Typically posted only on this website.</dd>
     <dt><h2 class="delta"><a href="/bookshelf/">Books</a></h2></dt>
     <dd>Typically posted only on this website.</dd>
     <dt><h2 class="delta"><a href="/music/">Music</a></h2></dt>
     <dd>Typically posted only on this website.</dd>
 </dl>
+
+<p>I still need to do some work to change my syndication model from <abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr> to <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>. At the moment, because my Micropub endpoint doesn’t have the ability to modify an existing post, I first post to <em>Twitter</em> and/or <em>Mastodon</em> and grab the permalinks from the responses which are then pumped into the front matter as syndication targets of the post when it gets posted to <em>GitHub</em>.</p>

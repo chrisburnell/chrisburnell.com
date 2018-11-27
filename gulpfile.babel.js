@@ -60,11 +60,11 @@ gulp.task("css-prettify", () => {
 });
 
 // Compile CSS from Sass
-gulp.task("css-main", () => {
+gulp.task("css-compile", () => {
     return gulp
-        .src([`!${paths.css.src}/critical.scss`, `${paths.css.src}/*.scss`])
+        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
-        .pipe(newer(`${paths.css.dest}`))
+        .pipe(newer(`${paths.css.src}`))
         .pipe(
             sass({
                 errLogToConsole: true,
@@ -216,7 +216,7 @@ gulp.task("images-move-svg", () => {
 // -----------------------------------------------------------------------------
 
 // CSS task
-gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-main", "css-critical")));
+gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-compile", "css-critical")));
 
 // JS task
 gulp.task("js", gulp.series("js-concat", gulp.parallel("js-css-preload", "js-serviceworker")));
