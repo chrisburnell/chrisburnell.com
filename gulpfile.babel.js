@@ -64,7 +64,6 @@ gulp.task("css-compile", () => {
     return gulp
         .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
         .pipe(plumber())
-        .pipe(newer(`${paths.css.src}`))
         .pipe(
             sass({
                 errLogToConsole: true,
