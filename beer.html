@@ -7,8 +7,10 @@ lede: Reviewing beers, pint-by-pint.
 sparkline: beer
 ---
 
+<p>Images below link out to <em>Untappd</em>.</p>
+
 <ol class="shelf  h-feed" id="beer" role="list">
-    {% assign beer = site.beer | sort: title %}
+    {% assign beer = site.beer | date_sort %}
     {% for page in beer %}
         {% include components/item-shelf.html %}
     {% endfor %}
