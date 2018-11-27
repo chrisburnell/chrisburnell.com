@@ -22,6 +22,9 @@ limit_y: 12
   "articles": [
     {% include components/sparklines-json.html target=site.categories.article limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
   ],
+  "beer": [
+    {% include components/sparklines-json.html target=site.beer limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
   "books": [
     {% include components/sparklines-json.html target=site.books limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
   ],
