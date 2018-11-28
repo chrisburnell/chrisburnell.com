@@ -1,26 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
 
-    <channel>
+    <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
+    <subtitle>{{ page.lede | xml_escape }}</subtitle>
+    <id>{{ site.live_url | append: site.baseurl }}</id>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <author>
+        <name>{{ site.author.name }}</name>
+        <uri>{{ site.live_url | append: site.baseurl }}</uri>
+    </author>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    <icon>{{ '/images/avatar.png' | absolute_url }}</icon>
+    <link href="{{ page.category_path | absolute_url }}" />
+    <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/atom+xml" />
+    <link rel="hub" href="{{ site.urls.switchboard }}" />
 
-        <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
-        <description>{{ page.lede | xml_escape }}</description>
-        <link>{{ page.category_path | absolute_url }}</link>
-        <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/rss+xml" />
-        <link rel="hub" href="{{ site.urls.switchboard }}" />
-        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-        <generator>Jekyll v{{ jekyll.version }}</generator>
-        <language>{{ site.language }}</language>
+    {{ content }}
 
-        <image>
-            <url>{{ '/images/avatar@4x.png' | absolute_url }}</url>
-            <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
-            <link>{{ page.category_path | absolute_url }}</link>
-        </image>
-
-        {{ content }}
-
-    </channel>
-
-</rss>
+</feed>

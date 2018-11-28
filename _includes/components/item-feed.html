@@ -3,36 +3,33 @@
   Consolidate markup for Feed Items.
 
 {%- endcomment -%}
-<item>
+<entry>
     {% if page.categories contains 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
-    <link>{{ page.url | absolute_url }}</link>
-    <guid isPermaLink="true">{{ page.url | absolute_url }}</guid>
-    <pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
+    <id>{{ page.url | absolute_url }}</id>
+    <published>{{ page.date | date_to_rfc822 }}</published>
+    <updated>{{ page.edit_date | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
-        <description>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</description>
+        <summary>{{ page.lede | strip_html | xml_escape | truncatewords: 20 }}</summary>
     {% elsif page.categories contains 'article' %}
-        <description>Shared Article</description>
+        <summary>Shared Article</summary>
     {% elsif page.categories contains 'bookmark' %}
-        <description>Bookmark</description>
+        <summary>Bookmark</summary>
     {% elsif page.categories contains 'note' %}
-        <description>{{ page.content | markdownify | strip_html | xml_escape | truncatewords: 20 }}</description>
+        <summary>{{ page.content | markdownify | strip_html | xml_escape | truncatewords: 20 }}</summary>
     {% elsif page.categories contains 'pen' %}
-        <description>Featured Pen</description>
+        <summary>Featured Pen</summary>
     {% elsif page.categories contains 'recipe' %}
-        <description>Recipe</description>
+        <summary>Recipe</summary>
     {% elsif page.categories contains 'review' %}
-        <description>Review</description>
+        <summary>Review</summary>
     {% elsif page.categories contains 'talk' %}
-        <description>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</description>
+        <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
     {% endif %}
     {% for category in page.categories %}
-        <category>{{ category | xml_escape }}</category>
+        <category term="{{ category | xml_escape }}" />
     {% endfor %}
-    {% for tag in page.tags %}
-        <category>{{ tag | xml_escape }}</category>
-    {% endfor %}
-</item>
+</entry>

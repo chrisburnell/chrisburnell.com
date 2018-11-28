@@ -35,14 +35,14 @@ urls:
   micropub:           https://micropub.chrisburnell.com
   microsub:           https://aperture.p3k.io/microsub/69
   notist:             https://noti.st/chrisburnell
-  rss:                /feed.xml
-  rss_articles:       /feed-articles.xml
-  rss_bookmarks:      /feed-bookmarks.xml
-  rss_notes:          /feed-notes.xml
-  rss_pens:           /feed-pens.xml
-  rss_talks:          /feed-talks.xml
-  rss_recipes:        /feed-recipes.xml
-  rss_reviews:        /feed-reviews.xml
+  atom:                /feed.xml
+  atom_articles:       /feed-articles.xml
+  atom_bookmarks:      /feed-bookmarks.xml
+  atom_notes:          /feed-notes.xml
+  atom_pens:           /feed-pens.xml
+  atom_talks:          /feed-talks.xml
+  atom_recipes:        /feed-recipes.xml
+  atom_reviews:        /feed-reviews.xml
   speakerdeck:        https://speakerdeck.com/chrisburnell
   spotify:            https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z
   stateofthebrowser:  https://stateofthebrowser.com
