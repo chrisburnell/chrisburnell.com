@@ -159,24 +159,24 @@
             // if performing a date check
             if (queryFormatted.substring(0, 5) == "date:" && dateCheck) {
                 resultsCount++;
-                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item, queryFormatted);
             }
             // if performing a tags check
             else if ((queryFormatted.substring(0, 4) == "tag:" || queryFormatted.substring(0, 5) == "tags:") && tagsCheck) {
                 resultsCount++;
-                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item, queryFormatted);
             }
             // or item type is a page, check if search term is in title,
             // content, or lede, categories, tags, or talk location
             else if (item.type == "page" && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
-                results += populateResultContent(SEARCH_PAGE_TEMPLATE, item);
+                results += populateResultContent(SEARCH_PAGE_TEMPLATE, item, queryFormatted);
             }
             // check if search term is in title, lede, content, categories,
             // tags, or talk location
             else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
                 resultsCount++;
-                results += populateResultContent(SEARCH_POST_TEMPLATE, item);
+                results += populateResultContent(SEARCH_POST_TEMPLATE, item, queryFormatted);
             }
         }
 
@@ -202,7 +202,7 @@
     /// @param {object} item
     /// @return {String} Populated HTML
     ////
-    let populateResultContent = (html, item) => {
+    let populateResultContent = (html, item, query) => {
         // URL
         html = helpers.injectContent(html, "#", item.url);
 
@@ -221,9 +221,9 @@
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly);
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(query, `<mark>${query}</mark>`));
         } else {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title);
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(query, `<mark>${query}</mark>`));
         }
 
         // LEDE
@@ -232,7 +232,8 @@
                 .replace(/(<([^>]+)>)/gi, "")
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
-                .join("");
+                .join("")
+                .replace(query, `<mark>${query}</mark>`);
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
         } else if (item.categories == "link") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Link");
