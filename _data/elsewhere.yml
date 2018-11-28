@@ -35,6 +35,11 @@
   rel: 'me  external'
   hidden: true
 
+- title: Micro.blog
+  url: 'https://micro.blog/chrisburnell'
+  rel: 'me  external'
+  hidden: true
+
 - title: Pinboard
   url: 'https://pinboard.in/u:chrisburnell'
   rel: 'me  external'
