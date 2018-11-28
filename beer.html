@@ -11,7 +11,7 @@ sparkline: beer
 
 <ol class="shelf  h-feed" id="beer" role="list">
     {% assign beer = site.beer | date_sort %}
-    {% for page in beer %}
+    {% for page in beer reversed %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>
