@@ -76,17 +76,19 @@ ul.default-list li::before {
 }
 dl {
     display: grid;
-    // 1─────────────────────────2──────────────────────────3→
-    // │ minmax(6em, min-content)│ minmax(12em, min-content)│→
-    // 2────────────────────────2/2───────────────────────3/2→
-    grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
+    // 1───────────────────2─────────────────────────────────3→
+    // │ minmax(12em, 33vw)│ minmax(min-content, max-content)│→
+    // 2──────────────────2/2──────────────────────────────3/2→
+    grid-template-columns: minmax(12em, 33vw) minmax(min-content, max-content);
     @include v(column-gap, medium);
     @include v(row-gap, large);
     margin-top: 0;
     overflow: hidden;
 
-    @include media("screen", "above:medium") {
-        grid-template-columns: repeat(auto-fill, minmax(6em, max-content) minmax(12em, 1fr));
+    &:not([class*="full"]) {
+        @include media("screen", "above:medium") {
+            grid-template-columns: repeat(auto-fill, minmax(6em, max-content) minmax(12em, 1fr));
+        }
     }
 }
 dt {
@@ -103,7 +105,7 @@ dd {
     margin: 0;
     vertical-align: top;
 
-    &:only-of-type {
+    :not([class*="full"]) > &:only-of-type {
         @include media("screen", "above:medium") {
             grid-column: 2 / span 3;
         }
