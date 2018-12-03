@@ -43,7 +43,11 @@
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}
-                <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
+                {%- if page.collection == 'beer' -%}
+                    <div><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><em>{{ page.date | date: '%d %B %Y' }}</em></time></div>
+                {%- else -%}
+                    <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
+                {%- endif -%}
             {%- endif -%}
         </div>
         {% if page.isbn %}
