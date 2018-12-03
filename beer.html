@@ -10,8 +10,8 @@ sparkline: beer
 <p>Images below link out to <em>Untappd</em>.</p>
 
 <ol class="shelf  h-feed" id="beer" role="list">
-    {% assign beer = site.beer | date_sort %}
-    {% for page in beer reversed %}
+    {% assign beer = site.beer | sort: 'title' %}
+    {% for page in beer %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>
