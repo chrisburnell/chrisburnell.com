@@ -10,6 +10,7 @@ html {
     overflow-x: hidden;
     // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
+    scroll-behavior: smooth;
     // set the box model for the entire document
     box-sizing: border-box;
     font-size: $base-font-size;
