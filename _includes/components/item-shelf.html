@@ -29,7 +29,7 @@
     <div class="p-read-of  h-cite">
         <h2 class="delta"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></h2>
         <div>
-            {% assign authors = page.authors | split: ', ' | uniq | sort %}
+            {% assign authors = page.authors | uniq %}
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if page.authors_link and page.authors_link[1] -%}
