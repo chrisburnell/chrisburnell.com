@@ -14,7 +14,7 @@ banner:
 - death-to-cols.png
 ---
 
-If you’ve ever developed a website with Twitter’s Bootstrap or a similar front-end library, you’ll be familiar with the concept. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+If you’ve ever developed a website with *Twitter’s Bootstrap*, *Zurb’s Foundation*, or a similar front-end framework, you’ll be familiar with the concept. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
 What I’m proposing is that we do away with this way of thinking about layout on the web.
 
@@ -24,35 +24,47 @@ With flex or grid, it’s trivial now to compose a layout exactly as you and/or 
 
 ### We used to say:
 
-<dl>
+<dl class="full">
     <dt>By default…</dt>
     <dd>
-        <p>the layout is composed of <samp>12</samp> columns</p>
-        <p>the main content area takes up <samp>8</samp> of those columns</p>
-        <p>the sidebar takes up <samp>4</samp> of those columns</p>
+        <ul>
+            <li>the layout is composed of <samp>12</samp> columns</li>
+            <li>the main content area takes up <samp>8</samp> of those columns</li>
+            <li>the sidebar takes up <samp>4</samp> of those columns</li>
+        </ul>
     </dd>
     <dt>When the browser viewport is between <samp>500px</samp> and <samp>800px</samp> wide…</dt>
     <dd>
-        <p>the layout is composed of <samp>6</samp> columns</p>
-        <p>the main content area takes up <samp>4</samp> of those columns</p>
-        <p>the sidebar takes up <samp>2</samp> of those columns</p>
+        <ul>
+            <li>the layout is composed of <samp>6</samp> columns</li>
+            <li>the main content area takes up <samp>4</samp> of those columns</li>
+            <li>the sidebar takes up <samp>2</samp> of those columns</li>
+        </ul>
     </dd>
     <dt>When the browser viewport is less than <samp>500px</samp> wide…</dt>
     <dd>
-        <p>the layout is composed of <samp>1</samp> column</p>
-        <p>the main content area and sidebar sit in that <samp>1</samp> column</p>
+        <ul>
+            <li>the layout is composed of <samp>1</samp> column</li>
+            <li>the main content area and sidebar sit in that <samp>1</samp> column</li>
+        </ul>
     </dd>
 </dl>
 
+--------
+
 ### Now we say:
 
-<dl>
+<dl class="full">
     <dt>By default…</dt>
     <dd>
-        <p>the main content area and sidebar sit side-by-side at a <samp>2:1</samp> width ratio</p>
+        <ul>
+            <li>the main content area and sidebar sit side-by-side at a <samp>2:1</samp> width ratio</li>
+        </ul>
     </dd>
     <dt>When the browser viewport is less than <samp>500px</samp> wide…</dt>
     <dd>
-        <p>the main content area and sidebar stack vertically, each taking up the full width</p>
+        <ul>
+            <li>the main content area and sidebar stack vertically, each taking up the full width</li>
+        </ul>
     </dd>
 </dl>

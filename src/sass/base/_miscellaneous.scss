@@ -75,10 +75,12 @@ strong,
 
 sub,
 sup {
-    @include v(font-size, small);
-    line-height: 0;
+    @include v(padding-left, small-relative);
+    @include v(padding-right, small-relative);
     position: relative;
     vertical-align: baseline;
+    @include v(font-size, small);
+    line-height: 0;
 }
 sub {
     bottom: -0.4em;

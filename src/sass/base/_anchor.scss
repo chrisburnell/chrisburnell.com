@@ -105,16 +105,6 @@ a {
     }
 }
 
-// Footnote Anchors
-.footnote-anchor {
-    @include v(padding-left, small-relative);
-    @include v(padding-right, small-relative);
-    margin-left: -$measure-small-relative;
-    margin-left: calc(var(--measure-small-relative) * -1);
-    margin-right: -$measure-small-relative;
-    margin-right: calc(var(--measure-small-relative) * -1);
-}
-
 // Related Anchors
 .related-anchor::after {
     // NO-BREAK SPACE, RIGHTWARDS ARROW
@@ -123,8 +113,8 @@ a {
 
 // Anchor Target Animation
 %heading-elements,
-.footnote,
-.footnote-anchor {
+sup,
+li {
     &[id] {
         &:target {
             animation: anchor-target $animation-duration $animation-function;
