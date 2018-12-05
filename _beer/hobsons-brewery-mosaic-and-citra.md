@@ -7,6 +7,6 @@ authors:
 authors_link:
 - http://www.hobsons-brewery.co.uk/
 - http://www.brewbynumbers.com/
-date: 2018-12-03
+date: 2018-12-04
 rating: 3.5
 ---
