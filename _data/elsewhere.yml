@@ -30,6 +30,11 @@
   rel: 'pgpkey  me  external'
   hidden: true
 
+- title: GitLab
+  url: 'https://gitlab.com/chrisburnell'
+  rel: 'me  external'
+  hidden: true
+
 - title: Mastodon
   url: 'https://mastodon.social/@chrisburnell'
   rel: 'me  external'
