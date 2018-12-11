@@ -50,6 +50,18 @@
     <link rel="microsub" href="{{ site.urls.microsub }}">
     <link rel="openid.delegate" href="{{ site.live_url }}" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https://chrisburnell.com/",
+        "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://chrisburnell.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 
     <link rel="mask-icon" href="{{ 'favicon.svg' | relative_url }}" color="#{{ site.color }}">
 
