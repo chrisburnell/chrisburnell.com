@@ -223,9 +223,9 @@
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, `<mark>${query}</mark>`));
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, "<mark>$1</mark>"));
         } else {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, `<mark>${query}</mark>`));
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, "<mark>$1</mark>"));
         }
 
         // LEDE
