@@ -223,9 +223,9 @@
 
         // TITLE
         if (item.categories == "note") {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, "<mark>$1</mark>"));
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, `<mark>$&</mark>`));
         } else {
-            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, "<mark>$1</mark>"));
+            html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, `<mark>$&</mark>`));
         }
 
         // LEDE
@@ -235,7 +235,7 @@
                 .split(/(?=\s)/gi)
                 .slice(0, 20)
                 .join("")
-                .replace(queryHighlightRegex, `<mark>${query}</mark>`);
+                .replace(queryHighlightRegex, `<mark>$&</mark>`);
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
         } else if (item.categories == "link") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Link");
