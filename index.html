@@ -31,20 +31,7 @@ searchable: no-content
 <h2 class="gamma">Latest Posts</h2>
 
 <ol class="content-list  h-feed" role="list">
-    {%- assign posts = site.emptyArray -%}
-    {%- for page in site.posts -%}
-        {% if page.in_reply_to == nil or page.rsvp != nil %}
-            {% assign posts = posts | push: page %}
-        {% elsif page.in_reply_to != nil %}
-            {% for target in page.in_reply_to %}
-                {% if target contains 'chrisburnell' %}
-                    {% assign posts = posts | push: page %}
-                    {% break %}
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {%- endfor -%}
-    {% for page in posts limit: 12 %}
+    {% for page in site.posts limit: 12 %}
         {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
