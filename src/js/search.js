@@ -203,7 +203,7 @@
     /// @return {String} Populated HTML
     ////
     let populateResultContent = (html, item, query) => {
-        let queryHighlightRegex = new RegExp(query, "g");
+        let queryHighlightRegex = new RegExp(query, "gi");
 
         // URL
         html = helpers.injectContent(html, "#", item.url);
