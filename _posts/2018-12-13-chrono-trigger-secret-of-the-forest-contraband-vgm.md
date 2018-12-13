@@ -1,6 +1,6 @@
 ---
 categories: bookmark
-title: Chrono Trigger\: Secret of the Forest - Contraband VGM
+title: "Chrono Trigger: Secret of the Forest - Contraband VGM"
 lede: This is seriously amazing. It deserves way more recognition than it has; @ContraReloaded mesh together some incredible talent and synergy.
 date: 2018-12-13 11:36:40
 tags:
