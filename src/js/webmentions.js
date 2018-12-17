@@ -143,7 +143,12 @@
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
         let authorUrl = response.data.author.url;
-        let authorImgUrl = response.data.author.photo ? response.data.author.photo : "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png";
+        let authorImgUrl = response.data.author.photo ? response.data.author.photo : "/images/default_profile.png";
+        if ('connection' in navigator) {
+            if (navigator.connection.saveData) {
+                authorImgUrl = "";
+            }
+        }
 
         // ID
         html = helpers.injectContent(html, /{{\s*id\s*}}/, id);

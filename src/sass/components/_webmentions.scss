@@ -54,20 +54,25 @@
         @include v(margin-top, medium);
     }
 
-    img {
-        @include border-radius(50%);
-        width: auto;
-        @include v(max-width, avatar-small);
-        height: auto;
-        @include v(max-height, avatar-small);
-        display: block;
-    }
-
     small,
     time {
         @include v(color, dove);
         font-style: italic;
     }
+}
+
+.webmentions__response__image {
+    @include border-radius(50%);
+    width: auto;
+    @include v(max-width, avatar-small);
+    height: auto;
+    @include v(max-height, avatar-small);
+    display: block;
+}
+
+.webmentions__response__image[src=""],
+.webmentions__response__image:not([src=""]) + .webmentions__response__name {
+    display: none;
 }
 
 .webmentions__list__likes,
