@@ -107,6 +107,10 @@ input {
         // correct inability to style clickable types in iOS and Safari
         -webkit-appearance: button;
     }
+
+    &::-webkit-inner-spin-button {
+        opacity: 1;
+    }
 }
 
 textarea {
