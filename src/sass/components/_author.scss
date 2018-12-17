@@ -92,6 +92,8 @@
     @include v(flex-basis, avatar);
     float: left;
     position: relative;
+    box-shadow: inset 0 $border-width-default 0 0 $color-white;
+    box-shadow: inset 0 var(--border-width-default) 0 0 var(--color-white);
     text-decoration: none;
 
     &,
@@ -109,8 +111,8 @@
     &::before {
         content: "";
         // base64-encoded SVG generated from `/images/avatar@4x.png`
-        // https://github.com/technopagan/sqip
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjNzk4MTg5IiBkPSJNMCAwaDQwMHY0MDBIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC44IC44KSBzY2FsZSgxLjU2MjUpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBmaWxsPSIjMjQwMDAwIiBjeD0iMTE4IiBjeT0iMjI1IiByeD0iNTkiIHJ5PSIxOTkiLz48ZWxsaXBzZSBmaWxsPSIjZTBmZmZmIiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KC01NS42MTU0OCA3LjcyOTI3IC0xNS45MzM2NyAtMTE0LjY0OTcgMjE5IDU5LjcpIi8+PGVsbGlwc2UgZmlsbD0iI2Q4ZjhmZiIgY3g9IjkiIGN5PSI4OCIgcng9IjM3IiByeT0iMTE1Ii8+PGVsbGlwc2UgZmlsbD0iIzBiMDYwYSIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSg4OSAtOTIuNCAxNDUuNSkgc2NhbGUoMzIuOTQxMjQgMTU4LjE2NTA1KSIvPjxwYXRoIGZpbGw9IiNkZWZiZmYiIGQ9Ik0xNDEuNyAxNzQuMmwzOC4xLTc0LjkgMjguNSAxNC41LTM4LjEgNzQuOXoiLz48ZWxsaXBzZSBmaWxsPSIjYTFkZGZmIiBjeD0iMTEzIiBjeT0iMTEiIHJ4PSIyNTUiIHJ5PSIyMiIvPjxlbGxpcHNlIGZpbGw9IiMzMzBjMDAiIGN4PSI4NCIgY3k9IjkwIiByeD0iNDEiIHJ5PSI0MSIvPjxlbGxpcHNlIGZpbGw9IiNmZmZhZTgiIGN4PSI1MyIgY3k9IjE2NSIgcng9IjE1IiByeT0iNDIiLz48L2c+PC9zdmc+");
+        // https://github.com/technopagan/sqip using default settings
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjZDBjZGNjIiBkPSJNMCAwaDQwMHY0MDBIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC44IC44KSBzY2FsZSgxLjU2MjUpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBmaWxsPSIjN2EzYzAxIiBjeD0iMTMwIiBjeT0iODEiIHJ4PSI1NCIgcnk9IjQzIi8+PGVsbGlwc2UgZmlsbD0iIzM5NWY5NyIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtMTIxLjUyNDc2IDYuNjM4NDggLTMuNTY2MzEgLTY1LjI4NTMyIDEyNy44IDI0OS4zKSIvPjxlbGxpcHNlIGZpbGw9IiNmZWIzN2MiIGN4PSIxMjgiIGN5PSIxNDMiIHJ4PSI0NSIgcnk9IjgxIi8+PGVsbGlwc2UgZmlsbD0iI2ZmZiIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtNDkuMzk3MDUgMi41ODg3OSAtOC4yODAwNSAtMTU3Ljk5MjczIDIyNi41IDU2LjUpIi8+PGVsbGlwc2UgZmlsbD0iI2ZmZiIgY3g9IjI1IiBjeT0iODciIHJ4PSI1MyIgcnk9IjEzMCIvPjxlbGxpcHNlIGZpbGw9IiNmZmYiIGN4PSIxMDkiIGN5PSIxNiIgcng9IjI1NSIgcnk9IjI0Ii8+PHBhdGggZmlsbD0iIzE0MDkwMCIgZD0iTTEwOCA0Mmw3NSA1MS0yNy00OXoiLz48ZWxsaXBzZSBmaWxsPSIjYmY3NzQ4IiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KDI3LjQwNjE1IC00LjU2OTI4IDYuMTY1NTYgMzYuOTgwNTUgMTMyLjMgMTcyLjIpIi8+PC9nPjwvc3ZnPg==");
         background-size: 100%;
         position: absolute;
         top: 0;
