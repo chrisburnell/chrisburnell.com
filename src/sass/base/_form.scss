@@ -11,7 +11,7 @@ form {
     // 1─────2─────────────3
     // │ 1fr │ min-content │
     // 2─────┴─────────────┘
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 65% 1fr;
     position: relative;
 
     &:not([class]) {

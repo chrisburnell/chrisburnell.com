@@ -8,6 +8,13 @@
     @include v(max-width, breakpoint-small);
     @include v(margin-bottom, large);
 }
+
+.search-form {
+    .widget--search & {
+        grid-template-columns: 65% 1fr;
+    }
+}
+
 .search-results {
     @include v(margin-top, medium);
 
