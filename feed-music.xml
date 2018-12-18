@@ -1,0 +1,14 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Music Feed
+lede: All of my music check-ins.
+category_path: '/music/'
+---
+
+{% for page in site.music limit: site.feed_limit %}
+    {% include components/item-feed.html %}
+{% endfor %}

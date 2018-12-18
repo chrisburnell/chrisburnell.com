@@ -3,12 +3,10 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
-redirect_from:
-- /feed-links.xml
 
-title: Bookmarks Feed
-lede: All of my bookmarks.
-category_path: '/bookmarks/'
+title: Bookshelf Feed
+lede: All of my bookshelf check-ins.
+category_path: '/bookshelf/'
 ---
 
 {% for page in site.books limit: site.feed_limit %}

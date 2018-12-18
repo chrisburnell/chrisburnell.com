@@ -1,0 +1,16 @@
+---
+page_class: page--likes
+searchable: no-content
+
+title: Likes
+lede: Stuff from around the web I’ve liked.
+
+sparkline: like
+---
+
+<ol class="shelf  h-feed" id="likes" role="list">
+    {% assign likes = site.likes | date_sort %}
+    {% for page in likes reversed %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>

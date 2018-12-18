@@ -1,0 +1,26 @@
+{% include components/head.html %}
+{% include components/header.html %}
+{%- assign like_url = page.link | remove: 'http://' | remove: 'https://' -%}
+
+
+<main class="wrap" role="main">
+    <section class="content  p-like-of" id="content" role="document">
+
+        <h1 class="title" role="heading">Liked a page on: {{ like_url | split: '/' | first }}</h1>
+
+        {% include components/meta.html %}
+
+        <div class="content__body">
+            <nav class="buttons-list" role="navigation">
+                <a class="button" href="{{ like_url }}" rel="external">{{ like_url }}</a>
+            </nav>
+        </div>
+
+    </section>
+
+    {% include components/author.html %}
+</main>
+
+
+{% include components/footer.html %}
+{% include components/foot.html %}

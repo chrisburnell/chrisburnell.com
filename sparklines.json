@@ -31,6 +31,9 @@ limit_y: 12
   "bookmarks": [
     {% include components/sparklines-json.html target=site.categories.bookmark limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
   ],
+  "likes": [
+    {% include components/sparklines-json.html target=site.likes limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
+  ],
   "music": [
     {% include components/sparklines-json.html target=site.music limit_y=page.limit_y starting_year=starting_year starting_month=starting_month ending_year=ending_year ending_month=ending_month %}
   ],

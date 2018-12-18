@@ -1,0 +1,14 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Likes Feed
+lede: All of my likes.
+category_path: '/likes/'
+---
+
+{% for page in site.likes limit: site.feed_limit %}
+    {% include components/item-feed.html %}
+{% endfor %}

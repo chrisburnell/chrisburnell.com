@@ -19,27 +19,25 @@
     div {
         display: inline-block;
         @include v(margin-right, large);
-    }
 
-    time + time,
-    time + div,
-    div + time,
-    div + div {
-        position: relative;
+        & + & {
+            position: relative;
 
-        &::before {
-            // EN-DASH
-            content: "•";
-            @include v(color, dove);
-            position: absolute;
-            left: -($measure-medium);
-            left: -(var(--measure-medium));
-            transform: translateX(-50%);
-            font-style: normal;
+            &::before {
+                // EN-DASH
+                content: "•";
+                @include v(color, dove);
+                position: absolute;
+                left: -($measure-medium);
+                left: -(var(--measure-medium));
+                transform: translateX(-50%);
+                font-style: normal;
+            }
         }
     }
 
     a,
+    data,
     %strong {
         color: inherit;
         @include v(font-weight, bold);

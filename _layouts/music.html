@@ -1,0 +1,33 @@
+{% include components/head.html %}
+{% include components/header.html %}
+{%- assign like_url = page.link | remove: 'http://' | remove: 'https://' -%}
+
+
+<main class="wrap" role="main">
+    <section class="content  p-listen-of" id="content" role="document">
+
+        <h1 class="title" role="heading">{{ page.title | strip_html }}</h1>
+
+        {% include components/meta.html %}
+
+        {% include components/banner.html %}
+
+        {%- assign content = page.content | strip_newlines -%}
+        {% if content != empty %}
+            <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
+        {% endif %}
+
+        <div class="content__body">
+            <nav class="buttons-list" role="navigation">
+                <a class="button" href="{{ like_url }}" rel="external">{{ like_url }}</a>
+            </nav>
+        </div>
+
+    </section>
+
+    {% include components/author.html %}
+</main>
+
+
+{% include components/footer.html %}
+{% include components/foot.html %}

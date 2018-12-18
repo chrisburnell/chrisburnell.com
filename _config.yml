@@ -96,6 +96,9 @@ collections:
   books:
     output: true
     permalink: /bookshelf/:path/
+  likes:
+    output: true
+    permalink: /like/:path/
   music:
     output: true
     permalink: /music/:path/
@@ -127,9 +130,14 @@ defaults:
     layout: 'page'
 - scope:
     path: ''
+    type: 'likes'
+  values:
+    layout: 'like'
+- scope:
+    path: ''
     type: 'music'
   values:
-    layout: 'page'
+    layout: 'music'
 
 keep_files:
 - css

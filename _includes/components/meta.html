@@ -16,10 +16,37 @@
         {% endif %}
     </time>
     {% if page.edit_date %}
-        <time class="date  dt-updated{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.edit_date | date_to_xmlschema }}">
+        <time class="date  dt-updated" datetime="{{ page.edit_date | date_to_xmlschema }}">
             <span>updated on</span>
             <strong>{{ page.edit_date | date_to_long_string }}</strong>
         </time>
+    {% endif %}
+    {% if page.rating %}
+        <div class="rating">
+            {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+            {%- assign rating_fraction = page.rating | minus: rating_base -%}
+            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
+            <data class="p-worst" hidden>1</data>
+            <data class="p-best" hidden>5</data>
+        </div>
+    {% endif %}
+    {% if page.authors %}
+        <div class="authors">
+            <span>by</span>
+            {% assign authors = page.authors | uniq %}
+            {%- for author in authors -%}
+                {% unless forloop.first %}, {% endunless %}
+                {%- if page.authors_link and page.authors_link[1] -%}
+                    <a class="p-author  h-card" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
+                {%- elsif page.authors_link -%}
+                    <a class="p-author  h-card" href="{{ page.authors_link }}" title="" rel="external">
+                {%- endif -%}
+                {{ author | strip }}
+                {%- if page.authors_link -%}
+                    </a>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
     {% endif %}
     {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil %}
     {% if in_reply_to %}

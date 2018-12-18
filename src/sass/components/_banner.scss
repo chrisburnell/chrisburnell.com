@@ -14,3 +14,8 @@
         @include v(width, breakpoint-small);
     }
 }
+
+.banner--cover {
+    width: auto;
+    @include v(max-width, line-length-minimum);
+}
