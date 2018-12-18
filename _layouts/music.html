@@ -1,6 +1,6 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- assign like_url = page.link | remove: 'http://' | remove: 'https://' -%}
+{%- assign music_url = page.link | remove: 'http://' | remove: 'https://' -%}
 
 
 <main class="wrap" role="main">
@@ -19,7 +19,7 @@
 
         <div class="content__body">
             <nav class="buttons-list" role="navigation">
-                <a class="button" href="{{ page.link }}" rel="external">{{ like_url }}</a>
+                <a class="button  u-listen-of" href="{{ page.link }}" rel="external">{{ music_url }}</a>
             </nav>
         </div>
 
