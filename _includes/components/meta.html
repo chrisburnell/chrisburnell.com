@@ -105,8 +105,10 @@
     {% endif %}
     {% if page.location %}
         <div class="location">
-            {% if page.categories contains 'talk' %}
-                <span>given at</span>
+            {% if page.collection == 'beer' %}
+                <small>drank at</small>
+            {% elsif page.categories contains 'talk' %}
+                <small>given at</small>
             {% endif %}
             {% if page.location_url %}
                 <a class="p-location" rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
