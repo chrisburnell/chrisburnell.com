@@ -39,7 +39,7 @@
     "prettier": "^1.13.4"
   },
   "devDependencies": {
-    "gulp-cli": "2.0.1"
+    "gulp-cli": "^2.0.1"
   },
   "repository": {
     "type": "git",

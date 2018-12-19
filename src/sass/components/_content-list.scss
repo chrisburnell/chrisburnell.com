@@ -138,4 +138,12 @@
             transform: translateX(-(var(--measure-large))) translateY(-50%) scale(1.2);
         }
     }
+
+    .rating {
+        display: block;
+    }
+
+    .emoji {
+        @include v(margin-right, small);
+    }
 }

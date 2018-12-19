@@ -13,6 +13,8 @@ searchable: no-content
     <dd><canvas id="sparkline-bookmarks" class="sparkline" width="160" height="24"></canvas></dd>
     <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-pens" class="sparkline" width="160" height="24"></canvas></dd>
+    <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.likes.size }})<small></a></h2></dt>
+    <dd><canvas id="sparkline-likes" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-talks" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/recipes/">Recipes <small>({{ site.recipes.size }})<small></a></h2></dt>
@@ -28,12 +30,35 @@ searchable: no-content
     {% include components/lastfm.html %}
 </dl>
 
-<h2 class="gamma">Latest Posts</h2>
+<h2 class="gamma">The Latest</h2>
 
 <ol class="content-list  h-feed" role="list">
-    {% for page in site.posts limit: 12 %}
+    {% assign all_beer = site.beer | date_sort | reverse %}
+    {% assign recent_beer = site.emptyArray %}
+    {% for page in all_beer limit: 12 %}
+        {% assign recent_beer = recent_beer | push: page %}
+    {% endfor %}
+    {% assign all_music = site.music | date_sort | reverse %}
+    {% assign recent_music = site.emptyArray %}
+    {% for page in all_music limit: 12 %}
+        {% assign recent_music = recent_music | push: page %}
+    {% endfor %}
+    {% comment %}
+    {% assign all_likes = site.likes | date_sort | reverse %}
+    {% assign recent_likes = site.emptyArray %}
+    {% for page in all_likes limit: 12 %}
+        {% assign recent_likes = recent_likes | push: page %}
+    {% endfor %}
+    {% endcomment %}
+    {% assign all_posts = site.posts | date_sort %}
+    {% assign recent_posts = site.emptyArray %}
+    {% for page in all_posts limit: 12 %}
+        {% assign recent_posts = recent_posts | push: page %}
+    {% endfor %}
+    {% assign concatenated_posts = recent_posts | concat: recent_beer | concat: recent_music | sort: 'date' | reverse %}
+    {% for page in concatenated_posts limit: 12 %}
         {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' exclude='recipes reviews tags talks' %}
+{% include components/buttons-list.html type='archives' include='articles bookmarks notes pens' %}

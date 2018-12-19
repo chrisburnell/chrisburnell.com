@@ -6,22 +6,22 @@
 <li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="{{ page.url }}">
-                {% if page.categories contains 'article' %}
-                    {% include_cached content/svg.html type='article' %}
-                {% elsif page.categories contains 'bookmark' %}
-                    {% include_cached content/svg.html type='link' %}
-                {% elsif page.categories contains 'note' %}
-                    {% include_cached content/svg.html type='feather' %}
-                {% elsif page.categories contains 'pen' %}
-                    {% include_cached content/svg.html type='codepen' %}
-                {% elsif page.categories contains 'recipe' %}
-                    {% include_cached content/svg.html type='article' %}
-                {% elsif page.categories contains 'review' %}
-                    {% include_cached content/svg.html type='article' %}
-                {% elsif page.categories contains 'talk' %}
-                    {% include_cached content/svg.html type='bullhorn' %}
-                {% endif %}
-            <h3 class="delta  title  p-name{% if page.categories contains 'note' %}  hidden{% endif %}">
+            {% if page.categories contains 'article' %}
+                {% include_cached content/svg.html type='article' %}
+            {% elsif page.categories contains 'bookmark' %}
+                {% include_cached content/svg.html type='link' %}
+            {% elsif page.categories contains 'note' %}
+                {% include_cached content/svg.html type='feather' %}
+            {% elsif page.categories contains 'pen' %}
+                {% include_cached content/svg.html type='codepen' %}
+            {% elsif page.categories contains 'recipe' %}
+                {% include_cached content/svg.html type='article' %}
+            {% elsif page.categories contains 'review' %}
+                {% include_cached content/svg.html type='article' %}
+            {% elsif page.categories contains 'talk' %}
+                {% include_cached content/svg.html type='bullhorn' %}
+            {% endif %}
+            <h3 class="delta  title  p-name"{% if page.categories contains 'note' %} hidden{% endif %}>
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
@@ -30,7 +30,7 @@
             </h3>
             <p class="lede  p-summary">
                 {% if page.lede %}
-                    {{ page.lede | strip_html | truncatewords: 20 }}
+                    {% if page.categories contains 'bookmark' %}<span class="emoji">🔗</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'article' %}
                     Shared Article
                 {% elsif page.categories contains 'bookmark' %}
@@ -38,7 +38,7 @@
                 {% elsif page.categories contains 'note' %}
                     {%- assign content = page.content -%}
                     {%- if content contains '<img' -%}
-                        {%- assign content = content | prepend: '🖼️' -%}
+                        {%- assign content = content | prepend: '<span class="emoji">🖼️</span> ' -%}
                     {%- endif -%}
                     {{ content | markdownify | strip_html | truncatewords: 20 | strip }}
                 {% elsif page.categories contains 'pen' %}
@@ -49,6 +49,26 @@
                     Review
                 {% elsif page.categories contains 'talk' %}
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
+                {% elsif page.collection == 'beer' or page.collection == 'music' %}
+                    {% if page.authors %}
+                        {% if page.collection == 'beer' %}
+                            <small><span class="emoji">🍺</span> Beer by</small>
+                        {% elsif page.collection == 'music' %}
+                            <small><span class="emoji">🎶</span> Album by</small>
+                        {% endif %}
+                        {% assign authors = page.authors | uniq %}
+                        {%- for author in authors -%}
+                            {% unless forloop.first %}, {% endunless %}
+                            {{ author | strip }}
+                        {%- endfor -%}
+                    {% endif %}
+                    {% if page.rating %}
+                        {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+                        {%- assign rating_fraction = page.rating | minus: rating_base -%}
+                        <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
+                        <data class="p-worst" hidden>1</data>
+                        <data class="p-best" hidden>5</data>
+                    {% endif %}
                 {% endif %}
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
