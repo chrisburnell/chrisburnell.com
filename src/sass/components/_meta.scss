@@ -19,20 +19,23 @@
     div {
         display: inline-block;
         @include v(margin-right, large);
+    }
 
-        & + & {
-            position: relative;
+    div + div,
+    div + time,
+    time + time,
+    time + div {
+        position: relative;
 
-            &::before {
-                // EN-DASH
-                content: "•";
-                @include v(color, dove);
-                position: absolute;
-                left: -($measure-medium);
-                left: -(var(--measure-medium));
-                transform: translateX(-50%);
-                font-style: normal;
-            }
+        &::before {
+            // EN-DASH
+            content: "•";
+            @include v(color, dove);
+            position: absolute;
+            left: -($measure-medium);
+            left: -(var(--measure-medium));
+            transform: translateX(-50%);
+            font-style: normal;
         }
     }
 

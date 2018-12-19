@@ -122,7 +122,7 @@ defaults:
     path: ''
     type: 'beer'
   values:
-    layout: 'page'
+    layout: 'beer'
 - scope:
     path: ''
     type: 'books'
