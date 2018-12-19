@@ -61,9 +61,9 @@
             {%- endfor -%}
             {%- if page.date -%}
                 {%- if page.collection == 'beer' -%}
-                    <div><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><em>{{ page.date | date: '%d %B %Y' }}</em></time></div>
+                    <div><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><a href="{{ page.url | absolute_url }}">{{ page.date | date: '%d %B %Y' }}</a></time></div>
                 {%- elsif page.collection == 'likes' -%}
-                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> {{ page.date | date: '%d %B %Y' }}</time></span>
+                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> <a href="{{ page.url | absolute_url }}">{{ page.date | date: '%d %B %Y' }}</a></time></span>
                 {%- else -%}
                     <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
                 {%- endif -%}

@@ -1,6 +1,10 @@
 <div class="meta">
     <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
-        <span>published on</span>
+        {% if page.collection == 'beer' or page.collection == 'music' %}
+            <span>reviewed on</span>
+        {% else %}
+            <span>published on</span>
+        {% endif %}
         {% if page.url %}
             <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}">
         {% elsif page.shorturl %}
