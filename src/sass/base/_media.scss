@@ -22,7 +22,7 @@ img {
     border-style: none;
 
     &[src=""] {
-        display: none;
+        display: none !important;
     }
 }
 picture {
