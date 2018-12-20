@@ -70,7 +70,6 @@
     display: block;
 }
 
-.webmentions__response__image[src=""],
 .webmentions__response__image:not([src=""]) + .webmentions__response__name {
     display: none;
 }

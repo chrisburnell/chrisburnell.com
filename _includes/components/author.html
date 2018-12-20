@@ -29,6 +29,12 @@
         <p>I also <a rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a rel="external  me  publisher" href="{{ site.urls.mastodon }}">toot drivel</a>, <a rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a href="/music/">listen to music (often)</a>, <a href="/beer/">enjoy beer</a>, <a href="/bookshelf/">read books</a>, and participate in <a href="https://indieweb.org/" rel="external">IndieWeb</a> if {{ author_biography_closer }}. <a href="/contact/">Get in touch.</a></p>
     </div>
 
+    <div class="clear  webring-links">
+        <a rel="external" id="indiewebring" class="webring-links__previous" href="{{ site.urls.webring }}/previous" title="Previous Page in the IndieWeb Webring">←</a>
+        <a rel="external" class="webring-links__home" href="https://🕸💍.ws/" title="IndieWeb WebRing">🕸💍</a>
+        <a rel="external" id="webring" class="webring-links__next" href="{{ site.urls.webring }}/next" title="Next Page in the IndieWeb Webring">→</a>
+    </div>
+
     {% unless page.page_class contains 'search' %}
         {% include components/widget-search.html %}
     {% endunless %}
