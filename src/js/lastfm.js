@@ -32,11 +32,11 @@
                 }
                 datetime = datetime.toISOString();
                 LASTFM_LABEL.innerHTML = `<time datetime="${datetime}">${playingLabel}</time>`;
-                if (navigator.connection.saveData) {
-                    LASTFM_COVER.src = "";
-                }
-                else {
-                    LASTFM_COVER.src = data["image"][1]["#text"] ? data["image"][1]["#text"] : "";
+                LASTFM_COVER.src = data["image"][1]["#text"] ? data["image"][1]["#text"] : "";
+                if ('connection' in navigator) {
+                    if (navigator.connection.saveData) {
+                        LASTFM_COVER.src = "";
+                    }
                 }
                 LASTFM_ARTIST.innerHTML = data["artist"]["#text"] ? data["artist"]["#text"] : "";
                 LASTFM_TRACK.innerHTML = data["name"] ? data["name"] : "";
