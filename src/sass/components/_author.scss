@@ -163,6 +163,10 @@
     }
 }
 
+.author-biography {
+    @include v(margin-bottom, medium);
+}
+
 .author-name {
     display: flex;
     flex-direction: column;
