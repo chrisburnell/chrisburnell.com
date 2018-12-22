@@ -76,14 +76,18 @@ ul.default-list li::before {
 }
 dl {
     display: grid;
-    // 1───────────────────2─────────────────────────────────3→
-    // │ minmax(12em, 33vw)│ minmax(min-content, max-content)│→
-    // 2──────────────────2/2──────────────────────────────3/2→
-    grid-template-columns: minmax(12em, 33vw) minmax(min-content, max-content);
+    grid-template-columns: 1fr;
     @include v(column-gap, medium);
     @include v(row-gap, large);
     margin-top: 0;
     overflow: hidden;
+
+    @include media("screen", "above:small") {
+        // 1───────────────────2─────────────────────────────────3→
+        // │ minmax(12em, 33vw)│ minmax(min-content, max-content)│→
+        // 2──────────────────2/2──────────────────────────────3/2→
+        grid-template-columns: minmax(12em, 33vw) minmax(min-content, max-content);
+    }
 
     &:not([class*="full"]) {
         @include media("screen", "above:medium") {
