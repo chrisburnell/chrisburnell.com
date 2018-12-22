@@ -1,6 +1,5 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- assign beer_url = page.link | remove: 'http://' | remove: 'https://' -%}
 
 
 <main class="wrap  h-entry" role="main">
@@ -19,7 +18,7 @@
 
         <div class="content__body">
             <nav class="buttons-list" role="navigation">
-                <a class="button  u-pk-drank" href="{{ page.link }}" rel="external">{{ beer_url }}</a>
+                <a class="button  u-pk-drank" href="{{ page.link }}" rel="external">Check out this beer on Untappd!</a>
             </nav>
         </div>
 
