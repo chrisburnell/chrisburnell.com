@@ -33,16 +33,16 @@ searchable: no-content
 <h2 class="gamma">The Latest</h2>
 
 <ol class="content-list  h-feed" role="list">
-    {% assign all_beer = site.beer | date_sort | reverse %}
-    {% assign recent_beer = site.emptyArray %}
-    {% for page in all_beer limit: 12 %}
-        {% assign recent_beer = recent_beer | push: page %}
-    {% endfor %}
-    {% assign all_music = site.music | date_sort | reverse %}
-    {% assign recent_music = site.emptyArray %}
-    {% for page in all_music limit: 12 %}
-        {% assign recent_music = recent_music | push: page %}
-    {% endfor %}
+    {%- assign all_beer = site.beer | date_sort | reverse -%}
+    {%- assign recent_beer = site.emptyArray -%}
+    {%- for page in all_beer limit: 12 -%}
+        {%- assign recent_beer = recent_beer | push: page -%}
+    {%- endfor -%}
+    {%- assign all_music = site.music | date_sort | reverse -%}
+    {%- assign recent_music = site.emptyArray -%}
+    {%- for page in all_music limit: 12 -%}
+        {%- assign recent_music = recent_music | push: page -%}
+    {%- endfor -%}
     {% comment %}
     {% assign all_likes = site.likes | date_sort | reverse %}
     {% assign recent_likes = site.emptyArray %}
@@ -50,12 +50,14 @@ searchable: no-content
         {% assign recent_likes = recent_likes | push: page %}
     {% endfor %}
     {% endcomment %}
-    {% assign all_posts = site.posts | date_sort %}
-    {% assign recent_posts = site.emptyArray %}
-    {% for page in all_posts limit: 12 %}
-        {% assign recent_posts = recent_posts | push: page %}
-    {% endfor %}
-    {% assign concatenated_posts = recent_posts | concat: recent_beer | concat: recent_music | sort: 'date' | reverse %}
+    {%- assign all_posts = site.posts | date_sort -%}
+    {%- assign recent_posts = site.emptyArray -%}
+    {%- for page in all_posts limit: 18 -%}
+        {%- unless page.in_reply_to.first contains 'twitter' or page.in_reply_to.first contains 'mastodon' -%}
+            {%- assign recent_posts = recent_posts | push: page -%}
+        {%- endunless -%}
+    {%- endfor -%}
+    {%- assign concatenated_posts = recent_posts | concat: recent_beer | concat: recent_music | sort: 'date' | reverse -%}
     {% for page in concatenated_posts limit: 12 %}
         {% include components/item-content-list.html %}
     {% endfor %}
