@@ -28,8 +28,15 @@
         <summary>Review</summary>
     {% elsif page.categories contains 'talk' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
+    {% elsif page.collection == 'beer' %}
+        <summary>Beer Review</summary>
+    {% elsif page.collection == 'music' %}
+        <summary>Music Review</summary>
     {% endif %}
     {% for category in page.categories %}
         <category term="{{ category | xml_escape }}" />
     {% endfor %}
+    {% if page.collection and page.collection != "posts" %}
+        <category term="{{ page.collection | downcase }}" />
+    {% endif %}
 </entry>
