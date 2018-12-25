@@ -12,6 +12,10 @@
     <id>{{ page.url | absolute_url }}</id>
     <published>{{ page.date | date_to_rfc822 }}</published>
     <updated>{{ page.edit_date | default: page.date | date_to_rfc822 }}</updated>
+    {%- if page.rating -%}
+        {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+        {%- assign rating_fraction = page.rating | minus: rating_base -%}
+    {%- endif -%}
     {% if page.lede %}
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
     {% elsif page.categories contains 'article' %}
@@ -29,9 +33,17 @@
     {% elsif page.categories contains 'talk' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
     {% elsif page.collection == 'beer' %}
-        <summary>Beer Review</summary>
+        {%- if page.rating -%}
+            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+        {%- else -%}
+            <summary>Beer Review</summary>
+        {%- endif -%}
     {% elsif page.collection == 'music' %}
-        <summary>Music Review</summary>
+        {%- if page.rating -%}
+            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+        {%- else -%}
+            <summary>Music Review</summary>
+        {%- endif -%}
     {% endif %}
     {% for category in page.categories %}
         <category term="{{ category | xml_escape }}" />
