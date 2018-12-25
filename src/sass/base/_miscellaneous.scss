@@ -124,3 +124,13 @@ textarea {
     --transition-duration-default: 0;
     --transition-duration-long: 0;
 }
+* {
+    @include media("reduced-motion") {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.rating {
+    letter-spacing: 4px;
+}
