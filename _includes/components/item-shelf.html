@@ -18,13 +18,15 @@
 {%- endif -%}
 <li role="listitem" class="h-review">
     {% if page.cover %}
-        {% if page.link %}
-            <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
-        {% endif %}
-        {% include components/cover.html %}
-        {% if page.link %}
-            </a>
-        {% endif %}
+        {% unless page.collection == 'beer' %}
+            {% if page.link %}
+                <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
+            {% endif %}
+            {% include components/cover.html %}
+            {% if page.link %}
+                </a>
+            {% endif %}
+        {% endunless %}
     {% endif %}
     {%- if page.collection == 'beer' -%}
         {%- assign mf_class = 'p-pk-drank' -%}
