@@ -2,9 +2,21 @@
   type: articles
   icon: 'article'
 
+- title: Beer Archive
+  type: beer
+  icon: 'bullhorn'
+
 - title: Bookmarks Archive
   type: bookmarks
   icon: 'link'
+
+- title: Bookshelf
+  type: books
+  icon: 'bullhorn'
+
+- title: Music Review Archive
+  type: music
+  icon: 'bullhorn'
 
 - title: Notes Archive
   type: notes
