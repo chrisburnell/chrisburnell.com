@@ -1,10 +1,11 @@
-{%- assign starting_month = include.starting_month -%}
-{%- assign ending_month = include.ending_month -%}
+{%- assign starting_week = include.starting_week -%}
+{%- assign ending_week = include.ending_week -%}
 {% for tracking_year in (include.starting_year..include.ending_year) %}
-    {%- unless forloop.first %}{%- assign starting_month = 1 -%}{% endunless -%}
+    {%- unless forloop.first %}{%- assign starting_week = 1 -%}{% endunless -%}
     {%- assign outside_first = forloop.first -%}
-    {% for tracking_month in (starting_month..12) %}
-        {%- if tracking_year == include.ending_year and tracking_month > ending_month -%}
+    {% assign last_week_of_the_year = "December 31 " | append: tracking_year | date: '%W' %}
+    {% for tracking_week in (starting_week..last_week_of_the_year) %}
+        {%- if tracking_year == include.ending_year and tracking_week > ending_week -%}
             {% break %}
         {%- else -%}
             {%- unless outside_first and forloop.first -%},{%- endunless -%}
@@ -12,8 +13,8 @@
         {%- assign count = 0 -%}
         {%- for page in include.target reversed -%}
             {%- assign year = page.date_end | default: page.date | date: '%Y' | plus: 0 -%}
-            {%- assign month = page.date_end | default: page.date | date: '%-m' | plus: 0 -%}
-            {%- if year == tracking_year and month == tracking_month -%}
+            {%- assign week = page.date_end | default: page.date | date: '%-W' | plus: 0 -%}
+            {%- if year == tracking_year and week == tracking_week -%}
                 {%- assign count = count | plus: 1 -%}
             {%- endif -%}
         {%- endfor -%}
