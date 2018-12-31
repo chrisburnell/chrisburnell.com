@@ -8,16 +8,22 @@
 
 {% if page.lede %}
     {% assign meta_lede = page.lede | strip_html %}
+{% elsif page.collection == 'beer' %}
+    {% capture meta_lede %}One of my beer reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'bookmark' %}
     {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
+{% elsif page.collection == 'books' %}
+    {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
+{% elsif page.collection == 'likes' %}
+    {% capture meta_lede %}One of my liked pages, {{ page.title | strip_html }}.{% endcapture %}
+{% elsif page.collection == 'music' %}
+    {% capture meta_lede %}One of my music album reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
 {% elsif page.categories contains 'pen' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'recipe' %}
     {% capture meta_lede %}One of my recipes, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories contains 'review' %}
-    {% capture meta_lede %}One of my reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.categories contains 'talk' %}
     {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}

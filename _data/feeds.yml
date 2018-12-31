@@ -28,12 +28,6 @@
   url: '/feed-pens.xml'
   icon: 'rss'
 
-- title: Subscribe to Reviews
-  type: reviews
-  rel: 'alternate'
-  url: '/feed-reviews.xml'
-  icon: 'rss'
-
 - title: Subscribe to Recipes
   type: recipes
   rel: 'alternate'

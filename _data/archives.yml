@@ -1,12 +1,12 @@
-- title: Articles Archive
+- title: Articles
   type: articles
   icon: 'article'
 
-- title: Beer Archive
+- title: Beer
   type: beer
   icon: 'bullhorn'
 
-- title: Bookmarks Archive
+- title: Bookmarks
   type: bookmarks
   icon: 'link'
 
@@ -14,30 +14,26 @@
   type: books
   icon: 'bullhorn'
 
-- title: Music Review Archive
+- title: Music Reviews
   type: music
   icon: 'bullhorn'
 
-- title: Notes Archive
+- title: Notes
   type: notes
   icon: 'feather'
 
-- title: Pens Archive
+- title: Pens
   type: pens
   icon: 'codepen'
 
-- title: Recipes Archive
+- title: Recipes
   type: recipes
   icon: 'article'
 
-- title: Reviews Archive
-  type: reviews
-  icon: 'article'
-
-- title: Talks Archive
+- title: Talks
   type: talks
   icon: 'bullhorn'
 
-- title: Tags Archive
+- title: Tags
   type: tags
   icon: 'tag'

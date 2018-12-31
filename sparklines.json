@@ -48,10 +48,6 @@ limit_y: 12
     0
     {% comment %}{% include components/sparklines-json.html target=site.recipes limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}{% endcomment %}
   ],
-  "reviews": [
-    0
-    {% comment %}{% include components/sparklines-json.html target=site.reviews limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}{% endcomment %}
-  ],
   "talks": [
     {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ]

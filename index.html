@@ -11,16 +11,14 @@ searchable: no-content
     <dd><canvas id="sparkline-notes" class="sparkline" width="160" height="24"></canvas></dd>
     <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-bookmarks" class="sparkline" width="160" height="24"></canvas></dd>
-    <!--dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
-    <dd><canvas id="sparkline-pens" class="sparkline" width="160" height="24"></canvas></dd-->
+    <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
+    <dd><canvas id="sparkline-pens" class="sparkline" width="160" height="24"></canvas></dd>
     <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.likes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-likes" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-talks" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/recipes/">Recipes <small>({{ site.recipes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-recipes" class="sparkline" width="160" height="24"></canvas></dd-->
-    <!--dt><h2 class="delta"><a href="/reviews/">Reviews <small>({{ site.reviews.size }})<small></a></h2></dt>
-    <dd><canvas id="sparkline-reviews" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/bookshelf/">Bookshelf <small>({{ site.books.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-books" class="sparkline" width="160" height="24"></canvas></dd-->
     <dt><h2 class="delta"><a href="/beer/">Beer Reviews <small>({{ site.beer.size }})<small></a></h2></dt>
@@ -68,4 +66,4 @@ searchable: no-content
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' include='articles bookmarks notes pens beer music' %}
+{% include components/buttons-list.html type='archives' include='articles bookmarks notes pens beer music tags' %}

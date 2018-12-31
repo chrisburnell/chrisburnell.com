@@ -28,10 +28,14 @@
         <summary>Featured Pen</summary>
     {% elsif page.categories contains 'recipe' %}
         <summary>Recipe</summary>
-    {% elsif page.categories contains 'review' %}
-        <summary>Review</summary>
     {% elsif page.categories contains 'talk' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
+    {% elsif page.collection == 'books' %}
+        {% if page.rating %}
+            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+        {% else %}
+            <summary>Book Review</summary>
+        {% endif %}
     {% elsif page.collection == 'beer' %}
         {% if page.rating %}
             <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>

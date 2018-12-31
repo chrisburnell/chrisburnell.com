@@ -16,8 +16,8 @@
                 {% include_cached content/svg.html type='codepen' %}
             {% elsif page.categories contains 'recipe' %}
                 {% include_cached content/svg.html type='article' %}
-            {% elsif page.categories contains 'review' %}
-                {% include_cached content/svg.html type='article' %}
+            {% elsif page.collection == 'beer' or page.collection == 'books' or page.collection == 'music' %}
+                {% include_cached content/svg.html type='bullhorn' %}
             {% elsif page.categories contains 'talk' %}
                 {% include_cached content/svg.html type='bullhorn' %}
             {% endif %}
@@ -62,8 +62,6 @@
                     Featured Pen
                 {% elsif page.categories contains 'recipe' %}
                     Recipe
-                {% elsif page.categories contains 'review' %}
-                    Review
                 {% elsif page.categories contains 'talk' %}
                     Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
                 {% elsif page.collection == 'beer' or page.collection == 'music' %}
