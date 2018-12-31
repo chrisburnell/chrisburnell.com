@@ -3,6 +3,7 @@
 /// @group components
 ////
 
+.endnotes,
 .footnotes {
     @include v(max-width, line-length-responsive);
 
@@ -11,4 +12,10 @@
         content: "Footnotes" !important;
         @include v(margin-bottom, medium);
     }
+}
+
+.endnote,
+.footnote {
+    @include v(padding-left, small-relative);
+    @include v(padding-right, small-relative);
 }
