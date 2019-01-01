@@ -42,7 +42,6 @@
 
     <link rel="self" href="{{ site.urls.atom | prepend: site.live_url }}">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ site.urls.atom | prepend: site.live_url }}">
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed with Replies" href="{{ site.urls.atom_replies | prepend: site.live_url }}">
     <link rel="pingback" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
     <link rel="webmention" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/webmention">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
