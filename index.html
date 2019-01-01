@@ -6,13 +6,13 @@ searchable: no-content
 
 <dl>
     <dt><h2 class="delta"><a href="/articles/">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
-    <dd><canvas id="sparkline-articles" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
+    <dd><canvas id="sparkline-articles" title="since 15 June, 2013" class="sparkline" width="160" height="24"></canvas></dd>
     <dt><h2 class="delta"><a href="/notes/">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-notes" title="since 22 September, 2017" class="sparkline" width="160" height="24"></canvas></dd>
     <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-bookmarks" title="since 05 January, 2016" class="sparkline" width="160" height="24"></canvas></dd>
     <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
-    <dd><canvas id="sparkline-pens" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
+    <dd><canvas id="sparkline-pens" title="since 17 June, 2013" class="sparkline" width="160" height="24"></canvas></dd>
     <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.likes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-likes" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
@@ -38,13 +38,6 @@ searchable: no-content
 {%- for page in all_music limit: 12 -%}
     {%- assign recent_music = recent_music | push: page -%}
 {%- endfor -%}
-{% comment %}
-{% assign all_likes = site.likes | date_sort | reverse %}
-{% assign recent_likes = site.emptyArray %}
-{% for page in all_likes limit: 12 %}
-    {% assign recent_likes = recent_likes | push: page %}
-{% endfor %}
-{% endcomment %}
 {%- assign all_posts = site.posts | date_sort -%}
 {%- assign recent_posts = site.emptyArray -%}
 {%- for page in all_posts limit: 18 -%}
@@ -52,10 +45,11 @@ searchable: no-content
         {%- assign recent_posts = recent_posts | push: page -%}
     {%- endunless -%}
 {%- endfor -%}
+{%- assign all_concatenated_posts = all_posts | concat: all_beer | concat: all_music | sort: 'date' | reverse -%}
 {%- assign concatenated_posts = recent_posts | concat: recent_beer | concat: recent_music | sort: 'date' | reverse -%}
 
 
-{% include components/on-this-day.html %}
+{% include components/on-this-day.html all_concatenated_posts=all_concatenated_posts %}
 
 
 <h2 class="gamma">The Latest</h2>
