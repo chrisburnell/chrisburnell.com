@@ -1,0 +1,49 @@
+---
+page_class: page--error
+searchable: false
+sitemap:
+  exclude: true
+permalink: /201.html
+
+title: 201 Created
+---
+
+<p>Your file was successfully created!</p>
+
+<p>This page will refresh <em>every 10 seconds</em> until your file becomes available…</p>
+
+<p>Or click the following link to jump to the page straight away:</p>
+
+<p><strong id="target-url"></strong></p>
+
+<script>
+    let getParameterByName = name => {
+        const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
+        return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
+    };
+
+    let targetURL = getParameterByName("query")
+        ? getParameterByName("query") : getParameterByName("q")
+        ? getParameterByName("q") : getParameterByName("t")
+        ? getParameterByName("t") : null;
+
+    if (targetURL) {
+        function targetURLCheck() {
+            fetch(targetURL + "?q=" + (+ new Date()))
+                .then(function(response) {
+                    let targetURL = response.url.split('?q=')[0];
+                    document.querySelector('#target-url').innerHTML = '<a href="' + targetURL + '">' + targetURL + '</a>';
+                    console.log("Checking … " + targetURL);
+                    if (response.status == 200) {
+                        window.location.href = targetURL;
+                    }
+                    else {
+                        console.log("Returned failing response … " + response.status);
+                    }
+                });
+            setTimeout(targetURLCheck, 10000);
+        }
+        targetURLCheck();
+        setTimeout(targetURLCheck, 10000);
+    }
+</script>
