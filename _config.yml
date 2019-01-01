@@ -131,7 +131,7 @@ defaults:
     path: ''
     type: 'books'
   values:
-    layout: 'page'
+    layout: 'books'
 - scope:
     path: ''
     type: 'likes'
