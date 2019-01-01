@@ -13,9 +13,9 @@ limit_y: 12
 {%- assign global_starting_year = ending_year -%}
 {%- for i in (1..page.limit_x) -%}
   {%- assign global_starting_week = global_starting_week | minus: 1 -%}
-  {%- if global_starting_week == 0 -%}
+  {%- if global_starting_week < 0 -%}
     {%- assign global_starting_year = global_starting_year | minus: 1 -%}
-    {% assign last_week_of_the_year = "December 31 " | append: global_starting_year | date: '%W' %}
+    {%- assign last_week_of_the_year = "December 31 " | append: global_starting_year | date: '%W' -%}
     {%- assign global_starting_week = last_week_of_the_year -%}
   {%- endif -%}
 {%- endfor -%}
