@@ -63,7 +63,8 @@ s {
     @include v(color, canada);
 }
 
-small {
+small,
+.small {
     @include v(font-size, small);
 }
 

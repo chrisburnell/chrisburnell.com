@@ -91,6 +91,9 @@
             <data class="p-worst" hidden>1</data>
             <data class="p-best" hidden>5</data>
         {% endif %}
+        {% if page.badges %}
+            <div class="small"><data value="{{ page.badges.size }}">earned {{ page.badges.size }} badges</data></div>
+        {% endif %}
         {% if page.isbn %}
             <strong><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}

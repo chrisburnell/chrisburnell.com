@@ -76,6 +76,9 @@
                             {% unless forloop.first %}, {% endunless %}
                             {{ author | strip }}
                         {%- endfor -%}
+                        {%- if page.badges -%}
+                            <data value="{{ page.badges.size }}"> (earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %})</data>
+                        {%- endif -%}
                     {% endif %}
                     {% if page.rating %}
                         {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}

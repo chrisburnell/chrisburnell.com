@@ -7,10 +7,11 @@
   @param {Element} type [gamma]
   @param {String} id [title | slugify]
   @param {String} href []
+  @param {String} rel []
   @param {String} class []
 
   @example
-    {% include_cached content/heading.html title='Let’s look at some code' %}
+    {% include content/heading.html title='Let’s look at some code' %}
     // <h2 id="lets-look-at-some-code">
     //     Let’s look at some code
     //     <a href="#lets-look-at-some-code" class="fragment-anchor">#</a>
@@ -24,16 +25,21 @@
 {% endunless %}
 {% assign heading_class = include.class | default: '' %}
 {% assign heading_href = include.href | default: '' %}
+{% assign heading_rel = include.rel | default: '' %}
 {% assign heading_title_stripped = include.title | strip_html | prepend: 'Permalink: ' %}
 <h{{ heading_level }} class="{% unless include.type == ' ' %}{{ include.type | default: 'gamma' }}{% endunless %}{% unless heading_class == blank %}  {{ heading_class }}{% endunless %}"{% unless heading_id == blank %} id="{{ heading_id }}"{% endunless %}>
     {% unless heading_href == blank %}
-        <a href="{{ heading_href }}">
+        <a href="{{ heading_href }}"{% unless heading_rel == blank %} rel="{{ heading_rel }}"{% endunless %}>
     {% endunless %}
     {{ include.title }}
     {% unless heading_href == blank %}
+        {% assign heading_href = heading_href | absolute_url %}
+        {% unless heading_href contains site.url %}
+            {% include_cached content/svg.html type='link' %}
+        {% endunless %}
         </a>
     {% endunless %}
     {% unless heading_id == blank %}
-        {% include_cached content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
+        {% include content/fragment-anchor.html id=heading_id title=heading_title_stripped rel='bookmark' %}
     {% endunless %}
 </h{{ heading_level }}>
