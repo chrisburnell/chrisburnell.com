@@ -1,5 +1,7 @@
 {% include components/head.html %}
 {% include components/header.html %}
+{% assign untappd_url = "https://untappd.com/user/chrisburnell/checkin/" | append: page.slug %}
+{% assign syndicate_to = site.emptyArray | push: untappd_url %}
 
 
 <main class="wrap  h-entry" role="main">

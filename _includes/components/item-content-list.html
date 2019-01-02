@@ -37,7 +37,7 @@
                     <span class="emoji">🔗</span> Bookmark
                 {% elsif page.categories contains 'note' %}
                     {% if page.in_reply_to.first %}
-                        In reply to:
+                        <span class="emoji">↩️</span> In reply to:
                         {% if page.in_reply_to.first contains 'mastodon.social' %}
                             <span class="h-cite  u-in-reply-to">a Toot</span>
                         {% elsif page.in_reply_to.first contains 'twitter.com' %}
@@ -53,13 +53,16 @@
                         {% endif %}
                         <br>
                     {% endif %}
-                    {%- assign content = page.content -%}
+                    {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
+                    {%- if page.rsvp -%}
+                        {%- assign content = content | prepend: '<span class="emoji">📅</span> ' -%}
+                    {%- endif -%}
                     {%- if content contains '<img' -%}
                         {%- assign content = content | prepend: '<span class="emoji">🖼️</span> ' -%}
                     {%- endif -%}
-                    {{ content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip }}
+                    {{ content }}
                 {% elsif page.categories contains 'pen' %}
-                    Featured Pen
+                    <span class="emoji">✒️</span> Featured Pen
                 {% elsif page.categories contains 'recipe' %}
                     Recipe
                 {% elsif page.categories contains 'talk' %}
