@@ -16,7 +16,6 @@ category_path: ''
         {%- assign posts_without_replies = posts_without_replies | push: page -%}
     {%- endif -%}
 {%- endfor -%}
-{%- assign concatenated_posts = posts_without_replies | concat: site.beer | concat: site.music | sort: 'date' | reverse -%}
-{% for page in concatenated_posts limit: site.feed_limit %}
+{% for page in posts_without_replies limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}
