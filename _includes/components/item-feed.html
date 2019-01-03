@@ -6,12 +6,14 @@
 <entry>
     {% if page.categories contains 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
+    {% elsif page.collection == 'likes' %}
+        <title>{{ page.link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
     <id>{{ page.url | absolute_url }}</id>
-    <published>{{ page.date | date_to_rfc822 }}</published>
-    <updated>{{ page.edit_date | default: page.date | date_to_rfc822 }}</updated>
+    <published>{{ page.date_start | default: page.date | date_to_rfc822 }}</published>
+    <updated>{{ page.edit_date | default: page.date_end | default: page.date | date_to_rfc822 }}</updated>
     {%- if page.rating -%}
         {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
         {%- assign rating_fraction = page.rating | minus: rating_base -%}
@@ -32,19 +34,19 @@
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
     {% elsif page.collection == 'books' %}
         {% if page.rating %}
-            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Book Review</summary>
         {% endif %}
     {% elsif page.collection == 'beer' %}
         {% if page.rating %}
-            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Beer Review</summary>
         {% endif %}
     {% elsif page.collection == 'music' %}
         {%- if page.rating -%}
-            <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}

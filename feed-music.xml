@@ -9,6 +9,7 @@ lede: All of my music check-ins.
 category_path: '/music/'
 ---
 
-{% for page in site.music limit: site.feed_limit %}
+{%- assign all_music = site.music | sort: 'date' | reverse -%}
+{% for page in all_music limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}
