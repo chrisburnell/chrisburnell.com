@@ -1,10 +1,10 @@
 <div class="webmentions__responses  js-webmentions-responses" hidden>
     <h2 class="gamma  js-webmention-count" data-webmentions-url="{{ page.url | absolute_url }}">Responses</h2>
-    <dl class="webmentions__list  full" aria-live="polite">
-        <dt class="js-webmentions-likes-label" hidden>Likes:</dt>
-        <dd class="webmentions__list__likes  js-webmentions-likes-content" hidden></dd>
-        <dt class="js-webmentions-reposts-label" hidden>Reposts:</dt>
-        <dd class="webmentions__list__reposts  js-webmentions-reposts-content" hidden></dd>
+    <dl class="full  webmentions__list" aria-live="polite">
+        <dt class="js-webmentions-reactions-label" hidden>Reactions:</dt>
+        <dd class="webmentions__list__reactions" hidden>
+            <ol class="js-webmentions-reactions-content"></ol>
+        </dd>
         <dt class="js-webmentions-replies-label" hidden>Replies:</dt>
         <dd class="webmentions__list__replies" hidden>
             <ol class="js-webmentions-replies-content"></ol>

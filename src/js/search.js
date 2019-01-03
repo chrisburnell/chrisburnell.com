@@ -17,8 +17,30 @@
     const ALLOW_EMPTY = false;
     const ALLOW_AS_YOU_TYPE = false;
     const JSON_FEED_URL = "/search.json";
-    const SEARCH_PAGE_TEMPLATE = document.querySelector(".search-template--page") ? document.querySelector(".search-template--page").innerHTML.trim() : "";
-    const SEARCH_POST_TEMPLATE = document.querySelector(".search-template--post") ? document.querySelector(".search-template--post").innerHTML.trim() : "";
+    const author = document.querySelector("meta[name=author]").content;
+    const rootUrl = document.querySelector("link[rel=self]").href.replace("feed.xml", "");
+    const SEARCH_PAGE_TEMPLATE =
+`<li role="listitem">
+    <article class="h-entry" role="article">
+        <a class="u-url" href="#">
+            <h3 class="delta  title  p-name">{{ title }}</h3>
+            <p class="lede  p-summary">{{ lede }}</p>
+        </a>
+        <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
+    </article>
+</li>`;
+    const SEARCH_POST_TEMPLATE =
+`<li role="listitem">
+    <article class="h-entry" role="article">
+        <a class="u-url" href="#">
+            <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
+            <h3 class="delta  title  p-name">{{ title }}</h3>
+            <p class="lede  p-summary">{{ lede }}</p>
+            <time class="date  {{ date_class }}" datetime="{{ date_full }}">{{ date_friendly }}</time>
+        </a>
+        <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
+    </article>
+</li>`;
 
     ////
     /// Initiate search functionality.

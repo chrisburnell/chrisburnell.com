@@ -131,7 +131,7 @@
     {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: syndicate_to | default: nil %}
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
-            <span>also on</span>
+            <span>also on </span>
             {%- assign syndication_count = 0 -%}
             {% for syndication in syndications %}
                 {% if syndication contains 'codepen.io' %}

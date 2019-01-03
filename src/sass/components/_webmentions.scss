@@ -38,6 +38,7 @@
         // │ minmax(6rem, max-content) │ minmax(12em, 1fr) │
         // 2───────────────────────────┴───────────────────┘
         grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
+        @include v(row-gap, small);
     }
 
     a {
@@ -50,6 +51,8 @@
 }
 
 .webmentions__response {
+    position: relative;
+
     .webmentions__list__replies & + & {
         @include v(margin-top, medium);
     }
@@ -74,11 +77,42 @@
     display: none;
 }
 
-.webmentions__list__likes,
-.webmentions__list__reposts {
-    a {
+.webmentions__list__reactions {
+    [hidden] + & {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+
+    li {
         display: inline-block;
         @include v(margin-right, small);
+    }
+
+    .webmentions__response__avatar,
+    .webmentions__response__type {
+        display: block;
+    }
+
+    .webmentions__response__type {
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        transform: translateX(-50%);
+        @include v(font-size, gamma);
+        line-height: 1;
+        text-decoration: none;
+    }
+
+    [data-type="bookmark"] .webmentions__response__type::before {
+        content: "🔖";
+    }
+
+    [data-type="like"] .webmentions__response__type::before {
+        content: "♥️";
+    }
+
+    [data-type="repost"] .webmentions__response__type::before {
+        content: "🔄️";
     }
 }
 
