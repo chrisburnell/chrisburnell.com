@@ -150,7 +150,7 @@ gulp.task("js-concat", () => {
             `!${paths.js.src}/serviceworker.js`
         ])
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(concat("main.js"))
         .pipe(gulp.dest(`${paths.js.dest}/`))
         .pipe(babel())
@@ -159,7 +159,7 @@ gulp.task("js-concat", () => {
                 suffix: ".min"
             })
         )
-        .pipe(sourcemaps.write("./"))
+        // .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 

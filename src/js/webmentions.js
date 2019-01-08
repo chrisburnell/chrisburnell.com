@@ -17,14 +17,26 @@
     const WEBMENTIONS_SUBMIT = document.querySelector(".js-webmentions-submit");
     const WEBMENTIONS_RESPONSES = document.querySelector(".js-webmentions-responses");
     // `#webmention` will match both `#webmention` and `#webmentions`
-    // `#respon` will match both `#respond` and `#response`
+    // `#respon` will match both `#respond`, `#response`, and `#responses`
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#respon"];
-    let webmentionsLoaded = false;
+    const WEBMENTIONS_TEMPLATE_REACTION =
+`<li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
+    <a class="webmentions__response__avatar" href="{{ author_url }}" rel="external" title="{{ author }}">
+        <img class="webmentions__response__image" src="{{ author_image_url }}">
+        <span class="webmentions__response__name">{{ author }}</span>
+    </a>
+    <a class="webmentions__response__type" href="{{ url }}" rel="external" title="Read externally" tabindex="-1"></a>
+</li>`;
+    const WEBMENTIONS_TEMPLATE_REPLY =
+`<li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
+    <div>{{ content }} <a href="{{ url }}" rel="external" title="Read externally">↗</a></div>
+    <div><small>by</small> <a href="{{ author_url }}" rel="external">{{ author }}</a> {{ date }}</div>
+</li>`;
     let responses = {
-        like: [],
-        repost: [],
+        reaction: [],
         reply: []
     };
+    let webmentionsLoaded = false;
 
     let loadWebmentions = () => {
         fetch(`https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`)
@@ -85,39 +97,25 @@
     /// @return {String} Populated HTML
     ////
     let populateResponses = data => {
-        const WEBMENTIONS_TEMPLATE_DEFAULT = document.querySelector(".webmentions-template-default") ? decodeURI(document.querySelector(".webmentions-template-default").innerHTML.trim()) : "";
-        const WEBMENTIONS_TEMPLATE_REPLY = document.querySelector(".webmentions-template-reply") ? decodeURI(document.querySelector(".webmentions-template-reply").innerHTML.trim()) : "";
-
-        let webmentionsLikeLabel = document.querySelector(".js-webmentions-likes-label");
-        let webmentionsLikeContent = document.querySelector(".js-webmentions-likes-content");
-        let webmentionsRepostLabel = document.querySelector(".js-webmentions-reposts-label");
-        let webmentionsRepostContent = document.querySelector(".js-webmentions-reposts-content");
+        let webmentionsReactionLabel = document.querySelector(".js-webmentions-reactions-label");
+        let webmentionsReactionContent = document.querySelector(".js-webmentions-reactions-content");
         let webmentionsReplyLabel = document.querySelector(".js-webmentions-replies-label");
         let webmentionsReplyContent = document.querySelector(".js-webmentions-replies-content");
 
         for (let link of data.links.reverse()) {
             link.activity.type = link.activity.type === "link" ? "reply" : link.activity.type;
-            if (link.verified === true && link.private === false && (link.activity.type === "like" || link.activity.type === "repost" || link.activity.type === "reply")) {
-                responses[link.activity.type].push(link);
+            if (link.verified === true && link.private === false) {
+                responses[(link.activity.type === "reply" ? "reply" : "reaction")].push(link);
             }
         }
 
-        if (!!responses.like.length) {
-            webmentionsLikeLabel.innerHTML = `${responses.like.length} ${webmentionsLikeLabel.innerHTML}`;
-            for (let response of responses.like) {
-                webmentionsLikeContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
+        if (!!responses.reaction.length) {
+            webmentionsReactionLabel.innerHTML = `${responses.reaction.length} ${webmentionsReactionLabel.innerHTML}`;
+            for (let response of responses.reaction) {
+                webmentionsReactionContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_REACTION, response);
             }
-            webmentionsLikeLabel.removeAttribute("hidden");
-            webmentionsLikeContent.removeAttribute("hidden");
-        }
-
-        if (!!responses.repost.length) {
-            webmentionsRepostLabel.innerHTML = `${responses.repost.length} ${webmentionsRepostLabel.innerHTML}`;
-            for (let response of responses.repost) {
-                webmentionsRepostContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_DEFAULT, response);
-            }
-            webmentionsRepostLabel.removeAttribute("hidden");
-            webmentionsRepostContent.removeAttribute("hidden");
+            // webmentionsReactionLabel.removeAttribute("hidden");
+            webmentionsReactionContent.parentNode.removeAttribute("hidden");
         }
 
         if (!!responses.reply.length) {
