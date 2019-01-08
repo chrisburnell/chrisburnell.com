@@ -11,6 +11,7 @@
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
+    <link href="{{ page.url | absolute_url }}" />
     <id>{{ page.url | absolute_url }}</id>
     <published>{{ page.date_start | default: page.date | date_to_rfc822 }}</published>
     <updated>{{ page.edit_date | default: page.date_end | default: page.date | date_to_rfc822 }}</updated>

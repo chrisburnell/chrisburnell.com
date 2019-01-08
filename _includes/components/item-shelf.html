@@ -8,13 +8,17 @@
 {%- elsif page.link contains 'spotify' %}
     {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Spotify' -%}
 {%- endif -%}
-{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
-{%- assign rating_fraction = page.rating | minus: rating_base -%}
-{%- assign read_status = 'to-read' -%}
-{%- if page.date_end -%}
-    {%- assign read_status = 'finished' -%}
-{%- elsif page.date_start -%}
-    {%- assign read_status = 'reading' -%}
+{%- if page.rating -%}
+    {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+    {%- assign rating_fraction = page.rating | minus: rating_base -%}
+{%- endif -%
+{%- if page.collection == 'books' -%}
+    {%- assign read_status = 'to-read' -%}
+    {%- if page.date_end -%}
+        {%- assign read_status = 'finished' -%}
+    {%- elsif page.date_start -%}
+        {%- assign read_status = 'reading' -%}
+    {%- endif -%}
 {%- endif -%}
 <li role="listitem" class="h-review">
     {% if page.cover %}
