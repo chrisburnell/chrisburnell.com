@@ -12,21 +12,20 @@
     // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
     // http://creativecommons.org/publicdomain/zero/1.0/
     ///
-    let sparkline = (canvasID, data, endpoint, color, style, endpointColor) => {
+    let sparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%, 1)", endpointColor = "hsla(357, 83%, 55%, 0.5)") => {
         if (window.HTMLCanvasElement) {
             var c = document.getElementById(canvasID),
                 ctx = c.getContext("2d"),
-                color = color ? color : "rgba(0,0,0,0.5)",
-                endpointColor = endpointColor ? endpointColor : "rgba(255,0,0,0.5)",
-                style = style == "bar" ? "bar" : "line",
                 height = c.height - 3,
                 width = c.width,
                 total = data.length,
                 max = Math.max.apply(Math, data),
-                xstep = width / total,
-                ystep = max / height,
+                xStep = width / total,
+                yStep = max / height,
                 x = 0,
-                y = height - data[0] / ystep,
+                y = height - data[0] / yStep,
+                dX,
+                dY,
                 i;
             if (window.devicePixelRatio) {
                 c.width = c.width * window.devicePixelRatio;
@@ -39,16 +38,23 @@
             ctx.beginPath();
             ctx.strokeStyle = color;
             ctx.moveTo(x, y);
-            for (i = 1; i < total; i = i + 1) {
-                x = x + xstep;
-                y = height - data[i] / ystep + 2;
-                if (style == "bar") {
-                    ctx.moveTo(x, height);
+            for (i = 0; i < total; i = i + 1) {
+                dX = x;
+                dY = y;
+                x = x + xStep;
+                y = height - data[i] / yStep + 2;
+                dX = (dX + x) / 2;
+                if (y > dY) {
+                    dY = (dY + y) / 3 * 2;
                 }
+                else if (y < dY) {
+                    dY = (dY + y) / 3;
+                }
+                // ctx.quadraticCurveTo(x, y, dX, dY);
                 ctx.lineTo(x, y);
             }
             ctx.stroke();
-            if (endpoint && style == "line") {
+            if (endpoint) {
                 ctx.beginPath();
                 ctx.fillStyle = endpointColor;
                 ctx.arc(x, y, 1.5, 0, Math.PI * 2);
@@ -94,9 +100,6 @@
 
     let notes;
     if (document.querySelector(".sparkline")) {
-        let showEndpoint = true;
-        let sparklineColor = "hsla(0, 0%, 31%, 1)";
-        let endpointColor = "hsla(357, 83%, 55%, 0.5)";
         fetch("/sparklines.json")
             .then(helpers.getFetchResponse)
             .then(response => response.json())
@@ -105,7 +108,7 @@
                 notes = data; // We need this later to play the tones
                 for (let type in data) {
                     if (document.querySelector(`#sparkline-${type}`)) {
-                        sparkline(`sparkline-${type}`, data[type], showEndpoint, sparklineColor, "line", endpointColor);
+                        sparkline(`sparkline-${type}`, data[type]);
                     }
                 }
             })
