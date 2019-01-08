@@ -11,7 +11,7 @@
 {%- if page.rating -%}
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
-{%- endif -%
+{%- endif -%}
 {%- if page.collection == 'books' -%}
     {%- assign read_status = 'to-read' -%}
     {%- if page.date_end -%}
