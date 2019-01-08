@@ -1,0 +1,46 @@
+{% include components/head.html %}
+{% include components/header.html %}
+{%- assign link_clean = page.link | remove: 'http://' | remove: 'https://' -%}
+{%- if page.collection == 'beer' -%}
+    {% assign untappd_url = "https://untappd.com/user/chrisburnell/checkin/" | append: page.slug %}
+    {% assign syndicate_to = site.emptyArray | push: untappd_url %}
+{%- endif -%}
+
+
+<main class="wrap  h-review" role="main">
+    <section class="content  p-{{ page.mf_property }}" id="content" role="document">
+
+        <h1 class="title  p-name" role="heading">
+            {% if page.collection == 'likes' %}
+                Liked a page on: {{ link_clean | split: '/' | first }}
+            {% else %}
+                {{ page.title | strip_html }}
+            {% endif %}
+        </h1>
+
+        {% include components/meta.html %}
+
+        {% include components/banner.html %}
+
+        {%- assign content = page.content | strip_newlines -%}
+        {%- if page.reacji -%}
+            {%- assign content = content | prepend: '<span class="p-name  p-content" hidden>{{ page.reacji }}</span> ' -%}
+        {%- endif -%}
+        {% if content != empty %}
+            <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
+        {% endif %}
+
+        <div class="content__body">
+            <nav class="buttons-list" role="navigation">
+                <a class="button  u-{{ page.mf_property }}" href="{{ page.link }}" rel="external">{{ link_clean }}</a>
+            </nav>
+        </div>
+
+    </section>
+
+    {% include components/author.html %}
+</main>
+
+
+{% include components/footer.html %}
+{% include components/foot.html %}

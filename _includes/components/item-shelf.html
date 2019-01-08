@@ -107,6 +107,17 @@
         {% if page.date_end %}
             <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
         {% endif %}
+        {% if page.collection == 'beer' %}
+            <data class="u-pk-drank" hidden>{{ page.link }}</data>
+        {% elsif page.categories contains 'bookmark' %}
+            <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
+        {% elsif page.collection == 'books' %}
+            <data class="u-read-of" hidden>{{ page.link }}</data>
+        {% elsif page.collection == 'likes' %}
+            <data class="u-like-of" hidden>{{ page.link }}</data>
+        {% elsif page.collection == 'music' %}
+            <data class="u-listen-of" hidden>{{ page.link }}</data>
+        {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </div>
 </li>

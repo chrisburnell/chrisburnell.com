@@ -1,9 +1,8 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- capture h -%}h-{% if page.categories contains 'review' %}review{% else %}entry{% endif %}{%- endcapture -%}
 
 
-<main class="wrap  {{ h }}" role="main">
+<main class="wrap  h-entry" role="main">
     <article class="content" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
@@ -41,7 +40,7 @@
                 {% assign url = page.bookmark_of.url | default: page.bookmark_of %}
                 {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
                 {% assign title = page.bookmark_of.title | default: url_root %}
-                <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
+                <a class="button  u-bookmark-of" href="{{ url }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 

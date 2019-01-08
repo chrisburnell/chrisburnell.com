@@ -96,10 +96,23 @@
                         <data class="p-worst" hidden>1</data>
                         <data class="p-best" hidden>5</data>
                     {% endif %}
+                {% elsif page.collection == 'like' %}
+                    <span class="emoji">❤️</span> Like
                 {% endif %}
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
+        {% if page.collection == 'beer' %}
+            <data class="u-pk-drank" hidden>{{ page.link }}</data>
+        {% elsif page.categories contains 'bookmark' %}
+            <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
+        {% elsif page.collection == 'books' %}
+            <data class="u-read-of" hidden>{{ page.link }}</data>
+        {% elsif page.collection == 'likes' %}
+            <data class="u-like-of" hidden>{{ page.link }}</data>
+        {% elsif page.collection == 'music' %}
+            <data class="u-listen-of" hidden>{{ page.link }}</data>
+        {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </article>
 </li>

@@ -126,22 +126,27 @@ defaults:
     path: ''
     type: 'beer'
   values:
-    layout: 'beer'
+    layout: 'review'
+    mf_property: 'pk-drank'
 - scope:
     path: ''
     type: 'books'
   values:
-    layout: 'book'
+    layout: 'review'
+    mf_property: 'read-of'
 - scope:
     path: ''
     type: 'likes'
   values:
-    layout: 'like'
+    layout: 'review'
+    mf_property: 'like-of'
+    reacji: '❤️'
 - scope:
     path: ''
     type: 'music'
   values:
-    layout: 'music'
+    layout: 'review'
+    mf_property: 'listen-of'
 
 keep_files:
 - css
