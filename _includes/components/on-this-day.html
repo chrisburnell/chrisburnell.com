@@ -16,7 +16,7 @@
     <section class="on-this-day">
         <ol class="content-list  h-feed" role="list">
             {% for page in on_this_day_posts %}
-                {% include components/item-content-list.html %}
+                {% include components/item-content-list.html relative_year=true %}
             {% endfor %}
         </ol>
     </section>
