@@ -2,8 +2,9 @@
 {% include components/header.html %}
 {%- assign link_clean = page.link | remove: 'http://' | remove: 'https://' -%}
 {%- if page.collection == 'beer' -%}
-    {% assign untappd_url = "https://untappd.com/user/chrisburnell/checkin/" | append: page.slug %}
-    {% assign syndicate_to = site.emptyArray | push: untappd_url %}
+    {%- assign link_clean = page.title | append: ' on Untappd' -%}
+    {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
+    {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
 {%- endif -%}
 
 

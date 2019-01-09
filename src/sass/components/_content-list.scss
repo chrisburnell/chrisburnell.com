@@ -98,6 +98,7 @@
         overflow-wrap: break-word;
         text-overflow: ellipsis;
         word-break: break-word;
+        line-clamp: 3;
     }
 
     .date {

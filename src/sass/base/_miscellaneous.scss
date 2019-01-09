@@ -63,8 +63,7 @@ s {
     @include v(color, canada);
 }
 
-small,
-.small {
+small {
     @include v(font-size, small);
 }
 
@@ -88,6 +87,13 @@ sub {
 sup {
     top: 0;
     font-variant-position: super;
+}
+
+em {
+    &.small {
+        font-variant: small-caps;
+        text-transform: lowercase;
+    }
 }
 
 // Touch Action
