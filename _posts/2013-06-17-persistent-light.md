@@ -7,7 +7,6 @@ title: Persistent Light Source Transform
 
 codepen_slug: mglHp
 comments: codepen
-shorturl: 9sogz
 ---
 
 

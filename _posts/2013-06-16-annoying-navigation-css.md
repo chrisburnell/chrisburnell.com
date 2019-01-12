@@ -17,7 +17,6 @@ banner_mobile:
 
 comments: disqus
 codepen: true
-shorturl: nmwge
 ---
 
 

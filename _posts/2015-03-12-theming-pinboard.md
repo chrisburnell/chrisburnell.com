@@ -17,7 +17,6 @@ banner_mobile:
 
 comments: disqus
 twitter: true
-shorturl: 1faeu
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/576014944627490816

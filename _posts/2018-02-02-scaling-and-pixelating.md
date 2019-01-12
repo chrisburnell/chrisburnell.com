@@ -7,7 +7,6 @@ title: Scaling and Pixelating
 
 codepen_slug: vdNeEa
 comments: codepen
-shorturl: n17ji
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/959107237590589441

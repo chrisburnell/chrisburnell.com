@@ -9,8 +9,6 @@ tags:
 - jekyll
 - liquid
 - tutorials
-
-shorturl: 58xlz
 ---
 
 

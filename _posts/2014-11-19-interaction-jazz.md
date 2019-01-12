@@ -7,7 +7,6 @@ title: Interaction Jazz
 
 codepen_slug: myyRqp
 comments: codepen
-shorturl: bhbt9
 ---
 
 

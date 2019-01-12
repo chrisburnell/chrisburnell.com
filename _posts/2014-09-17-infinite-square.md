@@ -8,7 +8,6 @@ title: Infinite Square
 codepen_slug: HlcAJ
 codepen_featured: true
 comments: codepen
-shorturl: 6dwvt
 ---
 
 

@@ -19,7 +19,6 @@ edit_text: I have revised this technique and its explanation since originally pe
 
 caniuse: true
 comments: disqus
-shorturl: 82n3v
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/395115858814840833

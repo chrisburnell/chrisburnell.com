@@ -18,7 +18,6 @@ tags:
 codepen: true
 caniuse: true
 comments: disqus
-shorturl: ynt2q
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/504642274148765696

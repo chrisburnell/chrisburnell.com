@@ -7,7 +7,6 @@ title: Power of Transform Centering
 
 codepen_slug: CHEbf
 comments: codepen
-shorturl: h8eek
 ---
 
 

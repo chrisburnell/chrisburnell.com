@@ -7,7 +7,6 @@ title: content-box vs. border-box
 
 codepen_slug: lBJnz
 comments: codepen
-shorturl: 6xcr7
 ---
 
 

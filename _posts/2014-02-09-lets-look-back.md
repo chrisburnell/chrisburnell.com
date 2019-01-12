@@ -17,7 +17,6 @@ banner_mobile:
 - lets-look-back_mobile.png
 
 comments: disqus
-shorturl: dxaon
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/432475967098224640

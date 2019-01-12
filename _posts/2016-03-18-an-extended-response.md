@@ -11,7 +11,6 @@ tags:
 - tutorials
 
 comments: disqus
-shorturl: fqojr
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/710837030629023744

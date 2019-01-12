@@ -7,7 +7,6 @@ title: Psychedelic Slice
 
 codepen_slug: apogK
 comments: codepen
-shorturl: k9ouo
 ---
 
 

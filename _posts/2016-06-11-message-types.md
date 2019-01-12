@@ -8,7 +8,6 @@ title: Message Types
 codepen_slug: rLxjBz
 codepen_featured: true
 comments: codepen
-shorturl: h5f19
 ---
 
 

@@ -7,7 +7,6 @@ title: Jazzy CSS Checkbox
 
 codepen_slug: Cbiun
 comments: codepen
-shorturl: g6pky
 ---
 
 

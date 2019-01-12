@@ -7,7 +7,6 @@ title: Power of Transform Centering - Interactive
 
 codepen_slug: xutbs
 comments: codepen
-shorturl: 8x586
 ---
 
 

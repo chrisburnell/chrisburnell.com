@@ -15,7 +15,6 @@ banner_mobile:
 - viewport-woes_mobile.png
 
 comments: disqus
-shorturl: xoskc
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/373096041509568512

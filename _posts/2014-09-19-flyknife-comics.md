@@ -8,7 +8,6 @@ title: Flyknife Comics
 codepen_slug: hIxaj
 codepen_featured: true
 comments: codepen
-shorturl: 6aorh
 ---
 
 

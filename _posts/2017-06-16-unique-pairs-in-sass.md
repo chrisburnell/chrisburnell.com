@@ -18,7 +18,6 @@ banner_mobile:
 
 codepen: true
 comments: disqus
-shorturl: e1wjg
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/877492210241032192

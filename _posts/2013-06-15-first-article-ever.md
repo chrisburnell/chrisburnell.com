@@ -17,7 +17,6 @@ banner_mobile:
 - first-article-ever_mobile.png
 
 comments: disqus
-shorturl: bqrm4
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/345878691110334466

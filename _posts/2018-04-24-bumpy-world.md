@@ -7,7 +7,6 @@ title: Bumpy World
 
 codepen_slug: MQNwqp
 comments: codepen
-shorturl: rdua7
 ---
 
 

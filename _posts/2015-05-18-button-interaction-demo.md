@@ -7,7 +7,6 @@ title: Button Interaction Demo
 
 codepen_slug: RPRwoo
 comments: codepen
-shorturl: ax7qc
 ---
 
 

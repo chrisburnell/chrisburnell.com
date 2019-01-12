@@ -7,7 +7,6 @@ title: Cutaway Indicator
 
 codepen_slug: yIwzd
 comments: codepen
-shorturl: b3sh4
 ---
 
 
