@@ -9,7 +9,7 @@ lede: All of my posts.
 category_path: ''
 ---
 
-{%- assign posts = site.posts | concat: site.bookmarks | concat: site.notes | concat: site.pens | sort: 'date' | reverse -%}
+{%- assign posts = site.posts | concat: site.bookmarks | concat: site.notes | sort: 'date' | reverse -%}
 {%- assign posts_without_replies = site.emptyArray -%}
 {%- for page in posts -%}
     {%- if page.rsvp or page.in_reply_to.first == nil -%}
