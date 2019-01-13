@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2017-06-16 14:00:00
 
 title: Unique Pairs in Sass

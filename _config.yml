@@ -87,7 +87,7 @@ future: true
 unpublished: false
 incremental: true
 destination: ./_site
-permalink: /:categories/:title/
+permalink: /article/:title/
 
 feed_limit: 25
 
@@ -97,6 +97,9 @@ collections:
   beer:
     output: true
     permalink: /beer/:path/
+  bookmarks:
+    output: true
+    permalink: /bookmark/:path/
   books:
     output: true
     permalink: /bookshelf/:path/
@@ -106,6 +109,15 @@ collections:
   music:
     output: true
     permalink: /music/:path/
+  notes:
+    output: true
+    permalink: /note/:path/
+  pens:
+    output: true
+    permalink: /pen/:path/
+  talks:
+    output: true
+    permalink: /talk/:path/
 
 defaults:
 - scope:
@@ -130,6 +142,12 @@ defaults:
     mf_property: 'pk-drank'
 - scope:
     path: ''
+    type: 'bookmarks'
+  values:
+    layout: 'post'
+    webmentions: true
+- scope:
+    path: ''
     type: 'books'
   values:
     layout: 'review'
@@ -140,13 +158,30 @@ defaults:
   values:
     layout: 'review'
     mf_property: 'like-of'
-    reacji: '❤️'
 - scope:
     path: ''
     type: 'music'
   values:
     layout: 'review'
     mf_property: 'listen-of'
+- scope:
+    path: ''
+    type: 'notes'
+  values:
+    layout: 'post'
+    webmentions: true
+- scope:
+    path: ''
+    type: 'pens'
+  values:
+    layout: 'post'
+    webmentions: true
+- scope:
+    path: ''
+    type: 'talks'
+  values:
+    layout: 'post'
+    webmentions: true
 
 keep_files:
 - css

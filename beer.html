@@ -20,4 +20,10 @@ sparkline: beer
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' exclude='beer books recipes talks tags' %}
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='beer' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='beer' %}

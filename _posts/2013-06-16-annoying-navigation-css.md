@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2013-06-16 03:58:00
 
 title: Annoying Navigation CSS

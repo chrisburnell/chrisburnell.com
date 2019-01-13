@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2015-06-08 15:00:00
 
 title: Backscratching Revisited
@@ -23,7 +21,7 @@ syndicate_to:
 ---
 
 
-In [I’ll Scratch Your Back, And Mine Too]({% post_url 2013-10-29-ill-scratch-your-back %}), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
+In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
 
 
 --------
@@ -100,7 +98,7 @@ a {
 }
 {% endhighlight %}
 
-Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article]({% post_url 2013-10-29-ill-scratch-your-back %}), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
+Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article](/article/ill-scratch-your-back/), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
 
 {% include_cached content/heading.html title='A Prickly Pear' %}

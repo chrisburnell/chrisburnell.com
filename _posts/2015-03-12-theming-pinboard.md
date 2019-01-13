@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2015-03-12 10:00:00
 
 title: Theming Pinboard

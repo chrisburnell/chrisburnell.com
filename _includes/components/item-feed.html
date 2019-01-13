@@ -8,7 +8,7 @@
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
 <entry>
-    {% if page.categories contains 'note' %}
+    {% if page.collection == 'notes' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
     {% elsif page.collection == 'likes' %}
         <title>{{ page.link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
@@ -21,17 +21,17 @@
     <updated>{{ page.edit_date | default: page.date_end | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
-    {% elsif page.categories contains 'article' %}
+    {% elsif page.is_post %}
         <summary>Shared Article</summary>
-    {% elsif page.categories contains 'bookmark' %}
+    {% elsif page.collection == 'bookmarks' %}
         <summary>Bookmark</summary>
-    {% elsif page.categories contains 'note' %}
+    {% elsif page.collection == 'notes' %}
         <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
-    {% elsif page.categories contains 'pen' %}
+    {% elsif page.collection == 'pens' %}
         <summary>Featured Pen</summary>
-    {% elsif page.categories contains 'recipe' %}
+    {% elsif page.collection == 'recipe' %}
         <summary>Recipe</summary>
-    {% elsif page.categories contains 'talk' %}
+    {% elsif page.collection == 'talks' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
     {% elsif page.collection == 'books' %}
         {% if page.rating %}
@@ -52,10 +52,10 @@
             <summary>Music Review</summary>
         {%- endif -%}
     {% endif %}
-    {% for category in page.categories %}
-        <category term="{{ category | xml_escape }}" />
-    {% endfor %}
+    {% if page.is_post %}
+        <category term="article" />
+    {% endif %}
     {% if page.collection and page.collection != "posts" %}
-        <category term="{{ page.collection | downcase }}" />
+        <category term="{{ page.collection | downcase | xml_escape }}" />
     {% endif %}
 </entry>

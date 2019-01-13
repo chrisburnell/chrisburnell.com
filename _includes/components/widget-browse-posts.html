@@ -2,7 +2,7 @@
     <section class="widget  widget--browse-posts">
         {% if page.previous %}
             <a class="widget-previous-anchor" href="{{ page.previous.url }}">
-                {% if page.previous.categories contains 'note' %}
+                {% if page.previous.collection == 'notes' %}
                     Note from {{ page.previous.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.previous.title }}
@@ -11,7 +11,7 @@
         {% endif %}
         {% if page.next %}
             <a class="widget-next-anchor" href="{{ page.next.url }}">
-                {% if page.next.categories contains 'note' %}
+                {% if page.next.collection == 'notes' %}
                     Note on {{ page.next.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.next.title }}

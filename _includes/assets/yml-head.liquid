@@ -1,4 +1,4 @@
-{% if page.categories contains 'note' %}
+{% if page.collection == 'notes' %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% elsif page.title %}
     {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
@@ -10,7 +10,7 @@
     {% assign meta_lede = page.lede | strip_html %}
 {% elsif page.collection == 'beer' %}
     {% capture meta_lede %}One of my beer reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories contains 'bookmark' %}
+{% elsif page.collection == 'bookmarks' %}
     {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.collection == 'books' %}
     {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
@@ -18,13 +18,13 @@
     {% capture meta_lede %}One of my liked pages, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.collection == 'music' %}
     {% capture meta_lede %}One of my music album reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories contains 'note' %}
+{% elsif page.collection == 'notes' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
-{% elsif page.categories contains 'pen' %}
+{% elsif page.collection == 'pens' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories contains 'recipe' %}
+{% elsif page.collection == 'recipe' %}
     {% capture meta_lede %}One of my recipes, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories contains 'talk' %}
+{% elsif page.collection == 'talks' %}
     {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}
     {% assign meta_lede = site.lede | strip_html %}
@@ -43,8 +43,11 @@
     {% for class in page.page_class %}
         {{ class }}
     {% endfor %}
-    {% if page.categories %}
-        page--{{ page.categories | first }}
+    {% if page.is_post %}
+        page--article
+    {% endif %}
+    {% if page.collection %}
+        page--{{ page.collection }}
     {% endif %}
     {% if site.color_scheme %}
         {{ site.color_scheme | downcase }}

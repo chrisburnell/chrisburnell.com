@@ -21,7 +21,7 @@ limit_y: 12
 {%- endfor -%}
 {
   "articles": [
-    {% include components/sparklines-json.html target=site.categories.article limit_y=page.limit_y starting_year=2013 starting_week=24 ending_year=ending_year ending_week=ending_week %}
+    {% include components/sparklines-json.html target=site.posts limit_y=page.limit_y starting_year=2013 starting_week=24 ending_year=ending_year ending_week=ending_week %}
   ],
   "beer": [
     {% include components/sparklines-json.html target=site.beer limit_y=page.limit_y starting_year=2018 starting_week=45 ending_year=ending_year ending_week=ending_week %}
@@ -30,7 +30,7 @@ limit_y: 12
     {% include components/sparklines-json.html target=site.books limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ],
   "bookmarks": [
-    {% include components/sparklines-json.html target=site.categories.bookmark limit_y=page.limit_y starting_year=2016 starting_week=1 ending_year=ending_year ending_week=ending_week %}
+    {% include components/sparklines-json.html target=site.bookmarks limit_y=page.limit_y starting_year=2016 starting_week=1 ending_year=ending_year ending_week=ending_week %}
   ],
   "likes": [
     {% include components/sparklines-json.html target=site.likes limit_y=page.limit_y starting_year=2018 starting_week=51 ending_year=ending_year ending_week=ending_week %}
@@ -39,16 +39,16 @@ limit_y: 12
     {% include components/sparklines-json.html target=site.music limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ],
   "notes": [
-    {% include components/sparklines-json.html target=site.categories.note limit_y=page.limit_y starting_year=2017 starting_week=38 ending_year=ending_year ending_week=ending_week %}
+    {% include components/sparklines-json.html target=site.notes limit_y=page.limit_y starting_year=2017 starting_week=38 ending_year=ending_year ending_week=ending_week %}
   ],
   "pens": [
-    {% include components/sparklines-json.html target=site.categories.pen limit_y=page.limit_y starting_year=2013 starting_week=25 ending_year=ending_year ending_week=ending_week %}
+    {% include components/sparklines-json.html target=site.pens limit_y=page.limit_y starting_year=2013 starting_week=25 ending_year=ending_year ending_week=ending_week %}
   ],
   "recipes": [
     0
     {% comment %}{% include components/sparklines-json.html target=site.recipes limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}{% endcomment %}
   ],
   "talks": [
-    {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
+    {% include components/sparklines-json.html target=site.talks limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ]
 }

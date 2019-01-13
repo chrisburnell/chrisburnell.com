@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2013-10-29 00:10:00
 
 title: I’ll Scratch Your Back, And Mine Too

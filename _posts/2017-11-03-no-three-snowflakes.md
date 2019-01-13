@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2017-11-03 17:01:00
 
 title: No Three Snowflakes Are Alike
@@ -24,7 +22,7 @@ syndicate_to:
 ---
 
 
-In [Unique Pairs in Sass]({% post_url 2017-06-16-unique-pairs-in-sass %}) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to leverage this function.
+In [Unique Pairs in Sass](/article/unique-pairs-in-sass/) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to leverage this function.
 
 But what about when you want to generate unique groups of more than <var>2</var> items? Multiples of <var>3</var>, <var>4</var>, <var>n</var>?
 

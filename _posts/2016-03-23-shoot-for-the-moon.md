@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2016-03-23 18:22:00
 
 title: Shoot for the Moon

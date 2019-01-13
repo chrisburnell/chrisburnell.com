@@ -7,7 +7,7 @@
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name">
-                {% if page.categories contains 'note' %}
+                {% if page.collection == 'notes' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
@@ -55,7 +55,7 @@
 
             {{ content }}
 
-            {% unless page.categories contains 'talk' %}
+            {% unless page.collection == 'talks' %}
                 {% if page.location_image %}
                     <figure class="media">
                         {% if page.location_url %}<a href="{{ page.location_url }}" rel="external"{% if page.location %} title="{{ page.location }}"{% endif %}>{% endif %}
@@ -70,7 +70,8 @@
 
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.categories.first %}
+        {%- assign included = page.collection | default: 'article' -%}
+        {% include components/buttons-list.html type='archives' include=included %}
 
         {% include components/webmentions.html %}
         {% include components/comments.html %}

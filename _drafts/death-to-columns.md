@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2018-10-25 09:00:00
 
 title: Let me show you the door, <code>col-md-4</code>

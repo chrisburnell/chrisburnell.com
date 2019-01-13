@@ -1,5 +1,5 @@
 <div class="meta">
-    <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
+    <time class="date  dt-published{% if page.collection == 'notes' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
         {% if page.collection == 'beer' or page.collection == 'books' or page.collection == 'music' %}
             <span>reviewed on</span>
         {% elsif page.collection == 'likes' %}
@@ -84,7 +84,7 @@
             </span>
         </div>
     {% endif %}
-    {% if page.categories contains 'article' %}
+    {% if page.is_post %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
         {% assign words = words | push: open_figure_splits[0] %}
@@ -108,7 +108,7 @@
         <div class="location">
             {% if page.collection == 'beer' %}
                 <span>drank at</span>
-            {% elsif page.categories contains 'talk' %}
+            {% elsif page.collection == 'talks' %}
                 <span>given at</span>
             {% endif %}
             {% if page.location_url %}
@@ -227,15 +227,33 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.categories contains 'pen' and page.codepen_featured == true %}
+    {% if page.collection == 'pens' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
         </div>
     {% endif %}
-    {% if page.categories or page.collection == 'beer' or page.collection == 'likes' %}
+    {% if page.is_post or page.collection == 'beer' or page.collection == 'bookmarks' or page.collection == 'likes' or page.collection == 'notes' or page.collection == 'pens' %}
         {%- capture shorturl -%}
-            {%- if page.collection == 'beer' -%}b{%- assign posts_to_check = site.beer | date_sort -%}{%- elsif page.collection == 'likes' -%}f{%- assign posts_to_check = site.likes | date_sort -%}{%- elsif page.categories -%}t{%- assign posts_to_check = site.posts | date_sort | reverse -%}{%- endif -%}
+            {%- if page.is_post -%}
+                a
+                {%- assign posts_to_check = site.posts | date_sort -%}
+            {%- elsif page.collection == 'beer' -%}
+                b
+                {%- assign posts_to_check = site.beer | date_sort -%}
+            {%- elsif page.collection == 'bookmarks' -%}
+                h
+                {%- assign posts_to_check = site.bookmarks | date_sort -%}
+            {%- elsif page.collection == 'likes' -%}
+                f
+                {%- assign posts_to_check = site.likes | date_sort -%}
+            {%- elsif page.collection == 'pens' -%}
+                p
+                {%- assign posts_to_check = site.pens | date_sort -%}
+            {%- elsif page.collection == 'notes' -%}
+                t
+                {%- assign posts_to_check = site.notes | date_sort | reverse -%}
+            {%- endif -%}
             {%- assign n = page.date_start | default: page.date | date: '%s' | divided_by: 86400 -%}
             {%- assign s = "" -%}
             {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}

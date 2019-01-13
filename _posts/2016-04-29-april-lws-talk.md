@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2016-04-29 12:00:00
 
 title: April LWS Talk

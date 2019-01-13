@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2017-06-15 17:55:00
 
 title: Remapping Ranges in Sass

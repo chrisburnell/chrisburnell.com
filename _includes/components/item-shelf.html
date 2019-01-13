@@ -109,7 +109,7 @@
         {% endif %}
         {% if page.collection == 'beer' %}
             <data class="u-pk-drank" hidden>{{ page.link }}</data>
-        {% elsif page.categories contains 'bookmark' %}
+        {% elsif page.collection == 'bookmarks' %}
             <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
         {% elsif page.collection == 'books' %}
             <data class="u-read-of" hidden>{{ page.link }}</data>

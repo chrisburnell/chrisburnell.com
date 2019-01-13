@@ -9,6 +9,13 @@ lede: All of my notes.
 category_path: '/notes/'
 ---
 
-{% for page in site.categories.note limit: site.feed_limit %}
+{%- assign notes = site.notes | sort: 'date' | reverse -%}
+{%- assign notes_without_replies = site.emptyArray -%}
+{%- for page in notes -%}
+    {%- if page.rsvp or page.in_reply_to.first == nil -%}
+        {%- assign notes_without_replies = notes_without_replies | push: page -%}
+    {%- endif -%}
+{%- endfor -%}
+{% for page in notes_without_replies limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

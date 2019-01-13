@@ -7,17 +7,17 @@ limit: 16
 
 
 <dl>
-    <dt><h2 class="delta"><a href="/articles/">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
+    <dt><h2 class="delta"><a href="/articles/">Articles <small>({{ site.posts.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-articles" title="since 15 June 2013" class="sparkline" width="160" height="24"></canvas></dd>
-    <dt><h2 class="delta"><a href="/notes/">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
+    <dt><h2 class="delta"><a href="/notes/">Notes <small>({{ site.notes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-notes" title="since 22 September 2017" class="sparkline" width="160" height="24"></canvas></dd>
-    <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
+    <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.bookmarks.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-bookmarks" title="since 05 January 2016" class="sparkline" width="160" height="24"></canvas></dd>
-    <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
+    <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.pens.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-pens" title="since 17 June 2013" class="sparkline" width="160" height="24"></canvas></dd>
     <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.likes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-likes" class="sparkline" width="160" height="24"></canvas></dd-->
-    <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
+    <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.talks.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-talks" class="sparkline" width="160" height="24"></canvas></dd-->
     <!--dt><h2 class="delta"><a href="/recipes/">Recipes <small>({{ site.recipes.size }})<small></a></h2></dt>
     <dd><canvas id="sparkline-recipes" class="sparkline" width="160" height="24"></canvas></dd-->
@@ -30,39 +30,22 @@ limit: 16
     {% include components/lastfm.html %}
 </dl>
 
-{%- assign all_beer = site.beer | date_sort | reverse -%}
-{%- assign recent_beer = site.emptyArray -%}
-{%- for page in all_beer limit: page.limit -%}
-    {%- assign recent_beer = recent_beer | push: page -%}
-{%- endfor -%}
-{%- assign all_music = site.music | date_sort | reverse -%}
-{%- assign recent_music = site.emptyArray -%}
-{%- for page in all_music limit: page.limit -%}
-    {%- assign recent_music = recent_music | push: page -%}
-{%- endfor -%}
-{%- assign all_posts = site.posts | date_sort -%}
-{%- assign recent_posts = site.emptyArray -%}
-{%- assign posts_limit = page.limit -%}
-{%- for page in all_posts -%}
+{%- assign posts = site.posts | concat: site.beer | concat: site.bookmarks | concat: site.music | concat: site.notes | concat: site.pens | sort: 'date' | reverse -%}
+{%- assign posts_without_replies = site.emptyArray -%}
+{%- for page in posts -%}
     {%- unless page.in_reply_to.first contains 'twitter' or page.in_reply_to.first contains 'mastodon' -%}
-        {%- assign recent_posts = recent_posts | push: page -%}
-        {%- assign posts_limit = posts_limit | minus: 1 -%}
-        {%- if posts_limit == 0 -%}
-            {%- break -%}
-        {%- endif -%}
+        {%- assign posts_without_replies = posts_without_replies | push: page -%}
     {%- endunless -%}
 {%- endfor -%}
-{%- assign all_concatenated_posts = all_posts | concat: all_beer | concat: all_music | sort: 'date' | reverse -%}
-{%- assign concatenated_posts = recent_posts | concat: recent_beer | concat: recent_music | sort: 'date' | reverse -%}
 
 
-{% include components/on-this-day.html all_concatenated_posts=all_concatenated_posts %}
+{% include components/on-this-day.html posts=posts_without_replies %}
 
 
 <h2 class="gamma">The Latest</h2>
 
 <ol class="content-list  h-feed" role="list">
-    {% for page in concatenated_posts limit: page.limit %}
+    {% for page in posts_without_replies limit: page.limit %}
         {% include components/item-content-list.html %}
     {% endfor %}
 </ol>

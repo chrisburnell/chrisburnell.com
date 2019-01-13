@@ -11,14 +11,12 @@
             <h1 class="title{% if page.page_class contains 'error' %}  title--error{% endif %}" role="heading">
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
-                    {%- for category in site.categories -%}
-                        {%- if page.sparkline contains category.first -%}
-                            {%- assign date_first_of_these_posts = category.last.last.date | date_to_long_string -%}
-                            {%- break -%}
-                        {%- endif -%}
-                    {%- endfor -%}
-                    {%- if page.sparkline contains 'beer' -%}
+                    {%- if page.sparkline contains 'article' -%}
+                        {%- assign date_first_of_these_posts = site.posts.first.date | date_to_long_string -%}
+                    {%- elsif page.sparkline contains 'beer' -%}
                         {%- assign date_first_of_these_posts = site.beer.first.date | date_to_long_string -%}
+                    {%- elsif page.sparkline contains 'bookmark' -%}
+                        {%- assign date_first_of_these_posts = site.bookmarks.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'books' -%}
                         {%- assign books_sorted = site.books | sort: 'date_start' -%}
                         {%- assign date_first_of_these_posts = books_sorted.first.date_start | date_to_long_string -%}
@@ -30,6 +28,8 @@
                         {%- assign date_first_of_these_posts = site.music.first.date | date_to_long_string -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}
+                    {%- elsif page.sparkline contains 'notes' -%}
+                        {%- assign date_first_of_these_posts = site.notes.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'talk' -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}

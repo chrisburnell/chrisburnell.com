@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2019-04-29 09:00:00
 
 title: A Decade in the Making

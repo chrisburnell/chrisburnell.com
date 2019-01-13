@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2017-11-09 17:00:00
 
 title: Crossing Guards

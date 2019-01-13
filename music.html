@@ -22,4 +22,10 @@ sparkline: music
     {% endfor %}
 </ol>
 
-{% include components/buttons-list.html type='archives' exclude='music books recipes talks tags' %}
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='music' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='music' %}

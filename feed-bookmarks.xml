@@ -11,6 +11,7 @@ lede: All of my bookmarks.
 category_path: '/bookmarks/'
 ---
 
-{% for page in site.books limit: site.feed_limit %}
+{%- assign bookmarks = site.bookmarks | sort: 'date' | reverse -%}
+{% for page in bookmarks limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

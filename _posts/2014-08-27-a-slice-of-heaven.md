@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2014-08-27 15:00:00
 
 title: A Slice of Heaven
@@ -71,7 +69,7 @@ This was an effect I’ve seen used across the web before that I’d wanted to t
 
 {% include_cached content/heading.html title='Jazzy CSS Checkbox Revisited' %}
 
-This is a pen which I overhauled a bit since I first wrote about it in <a href="{% post_url 2013-06-18-persistent-shadows %}">Persistent Shadows</a>:
+This is a pen which I overhauled a bit since I first wrote about it in <a href="/article/persistent-shadows/">Persistent Shadows</a>:
 
 {% include content/codepen.html slug='arouk' height='250' %}
 

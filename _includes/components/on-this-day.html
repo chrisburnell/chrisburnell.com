@@ -2,7 +2,7 @@
 {%- assign day = site.time | date: '%d' -%}
 {%- assign month = site.time | date: '%m' -%}
 {%- assign year = site.time | date: '%Y' -%}
-{%- for page in include.all_concatenated_posts -%}
+{%- for page in include.posts -%}
     {%- assign check_day = page.date | date: '%d' -%}
     {%- assign check_month = page.date | date: '%m' -%}
     {%- assign check_year = page.date | date: '%Y' -%}

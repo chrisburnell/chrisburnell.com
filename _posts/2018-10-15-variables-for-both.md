@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2018-10-15 10:34:00
 
 title: Variables for Both

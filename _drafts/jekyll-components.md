@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2017-09-25 22:00:00
 
 title: Jekyll Components

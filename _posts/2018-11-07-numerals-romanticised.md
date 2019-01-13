@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2018-11-07 12:13:00
 
 title: Numerals, Romanticised

@@ -6,7 +6,7 @@
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name">
-                {% if page.categories contains 'note' %}
+                {% if page.collection == 'notes' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}

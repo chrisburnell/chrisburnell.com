@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2013-08-29 12:02:00
 
 title: Viewport Woes

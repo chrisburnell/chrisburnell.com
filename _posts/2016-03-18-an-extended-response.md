@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2016-03-18 14:15:00
 
 title: An Extended Response

@@ -1,6 +1,4 @@
 ---
-categories: article
-
 date: 2018-11-01 17:03:00
 
 title: The Broad Brush

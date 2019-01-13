@@ -11,9 +11,19 @@ lede: Stuff from around the web I’ve liked, believe it or not!
 sparkline: likes
 ---
 
+<p><em>There are {{ site.likes | size }} published Likes.</em></p>
+
 <ol class="shelf  h-feed" id="likes" role="list">
-    {% assign likes = site.likes | date_sort %}
+    {% assign likes = site.likes %}
     {% for page in likes reversed %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>
+
+{% comment %} <hr>
+
+{% include components/buttons-list.html type='feeds' include='likes' %} {% endcomment %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='likes' %}

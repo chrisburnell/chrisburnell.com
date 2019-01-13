@@ -10,9 +10,9 @@
   type: bookmarks
   icon: 'link'
 
-- title: Bookshelf
-  type: books
-  icon: 'bullhorn'
+# - title: Bookshelf
+#   type: books
+#   icon: 'bullhorn'
 
 - title: Music Reviews
   type: music
@@ -26,13 +26,13 @@
   type: pens
   icon: 'codepen'
 
-- title: Recipes
-  type: recipes
-  icon: 'article'
+# - title: Recipes
+#   type: recipes
+#   icon: 'article'
 
-- title: Talks
-  type: talks
-  icon: 'bullhorn'
+# - title: Talks
+#   type: talks
+#   icon: 'bullhorn'
 
 - title: Tags
   type: tags
