@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.54';
+const VERSION = 'v2.0.55';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -47,7 +47,8 @@ const OFFLINE_PAGES = [
     '/license/',
     '/privacy/',
     '/search/',
-{% for page in site.posts limit: 5 %}
+{%- assign posts = site.posts | concat: site.beer | concat: site.bookmarks | concat: site.music | concat: site.notes | concat: site.pens | sort: 'date' | reverse -%}
+{% for page in posts limit: 5 %}
     '{{ page.url }}'{% unless forloop.last %}, {% endunless %}
 {% endfor %}
 ];
