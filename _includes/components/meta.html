@@ -84,7 +84,7 @@
             </span>
         </div>
     {% endif %}
-    {% if page.is_post %}
+    {% if page.collection == 'posts' %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
         {% assign words = words | push: open_figure_splits[0] %}
@@ -233,9 +233,9 @@
             <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
         </div>
     {% endif %}
-    {% if page.is_post or page.collection == 'beer' or page.collection == 'bookmarks' or page.collection == 'likes' or page.collection == 'notes' or page.collection == 'pens' %}
+    {% if page.collection == 'posts' or page.collection == 'beer' or page.collection == 'bookmarks' or page.collection == 'likes' or page.collection == 'notes' or page.collection == 'pens' %}
         {%- capture shorturl -%}
-            {%- if page.is_post -%}
+            {%- if page.collection == 'posts' -%}
                 a
                 {%- assign posts_to_check = site.posts | date_sort -%}
             {%- elsif page.collection == 'beer' -%}

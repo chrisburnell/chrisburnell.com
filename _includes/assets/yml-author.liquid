@@ -2,7 +2,7 @@
     {% assign author_biography_closer = 'you don’t care about my life. <span class="canada">Sorry</span>' %}
 {% elsif page.page_class contains 'articles' %}
     {% assign author_biography_closer = 'my whimsical articles don’t capture your child-like wonder' %}
-{% elsif page.is_post %}
+{% elsif page.collection == 'posts' %}
     {% assign author_biography_closer = 'this article is boring and makes you want to claw your eyeballs out' %}
 {% elsif page.page_class contains 'books' %}
     {% assign author_biography_closer = 'my taste in books has lost me any respect I may have had in your book (pun intended)' %}

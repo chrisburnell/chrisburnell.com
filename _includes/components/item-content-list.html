@@ -12,7 +12,7 @@
 <li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="{{ page.url }}">
-            {% if page.is_post %}
+            {% if page.collection == 'posts' %}
                 {% include_cached content/svg.html type='article' %}
             {% elsif page.collection == 'bookmarks' %}
                 {% include_cached content/svg.html type='link' %}
@@ -37,7 +37,7 @@
             <p class="lede  p-summary">
                 {% if page.lede %}
                     {% if page.banner or page.banner_mobile %}<span class="emoji">🖼️</span> {% endif %}{% if page.collection == 'bookmarks' %}<span class="emoji">🔖</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.is_post %}
+                {% elsif page.collection == 'posts' %}
                     Shared Article
                 {% elsif page.collection == 'bookmarks' %}
                     <span class="emoji">🔖</span> Bookmark

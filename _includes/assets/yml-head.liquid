@@ -43,7 +43,7 @@
     {% for class in page.page_class %}
         {{ class }}
     {% endfor %}
-    {% if page.is_post %}
+    {% if page.collection == 'posts' %}
         page--article
     {% endif %}
     {% if page.collection %}
