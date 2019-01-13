@@ -96,28 +96,28 @@ emptyArray: []
 collections:
   beer:
     output: true
-    permalink: /beer/:path/
+    permalink: /beer/:title/
   bookmarks:
     output: true
-    permalink: /bookmark/:path/
+    permalink: /bookmark/:title/
   books:
     output: true
-    permalink: /bookshelf/:path/
+    permalink: /bookshelf/:title/
   likes:
     output: true
-    permalink: /like/:path/
+    permalink: /like/:title/
   music:
     output: true
-    permalink: /music/:path/
+    permalink: /music/:title/
   notes:
     output: true
-    permalink: /note/:path/
+    permalink: /note/:title/
   pens:
     output: true
-    permalink: /pen/:path/
+    permalink: /pen/:title/
   talks:
     output: true
-    permalink: /talk/:path/
+    permalink: /talk/:title/
 
 defaults:
 - scope:
