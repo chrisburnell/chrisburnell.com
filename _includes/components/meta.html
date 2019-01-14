@@ -252,7 +252,7 @@
                 {%- assign posts_to_check = site.pens | date_sort -%}
             {%- elsif page.collection == 'notes' -%}
                 t
-                {%- assign posts_to_check = site.notes | date_sort | reverse -%}
+                {%- assign posts_to_check = site.notes | date_sort -%}
             {%- endif -%}
             {%- assign n = page.date_start | default: page.date | date: '%s' | divided_by: 86400 -%}
             {%- assign s = "" -%}
