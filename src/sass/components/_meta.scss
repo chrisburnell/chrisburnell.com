@@ -8,7 +8,6 @@
     overflow: hidden;
     @include v(font-family, serif);
     font-style: italic;
-    @include v(font-size, small);
     line-height: 3;
 
     aside + & {
@@ -48,7 +47,6 @@
         @include v(font-weight, bold);
         @include v(font-family, default);
         font-style: normal;
-        @include v(font-size, default);
     }
 
     a {
