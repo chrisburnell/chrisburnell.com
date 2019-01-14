@@ -22,6 +22,12 @@
   url: '/feed-bookshelf.xml'
   icon: 'rss'
 
+- title: Subscribe to Likes
+  type: likes
+  rel: 'alternate'
+  url: '/feed-likes.xml'
+  icon: 'rss'
+
 - title: Subscribe to Music
   type: music
   rel: 'alternate'

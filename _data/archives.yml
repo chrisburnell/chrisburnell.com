@@ -14,6 +14,10 @@
 #   type: books
 #   icon: 'bullhorn'
 
+- title: Likes
+  type: likes
+  icon: 'bullhorn'
+
 - title: Music Reviews
   type: music
   icon: 'bullhorn'
@@ -30,9 +34,9 @@
 #   type: recipes
 #   icon: 'article'
 
-# - title: Talks
-#   type: talks
-#   icon: 'bullhorn'
+- title: Talks
+  type: talks
+  icon: 'bullhorn'
 
 - title: Tags
   type: tags

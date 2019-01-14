@@ -1,13 +1,16 @@
 {% include components/head.html %}
 {% include components/header.html %}
+{%- assign link_clean = page.link | remove: 'http://' | remove: 'https://' -%}
 
 
-<main class="wrap  h-entry" role="main">
-    <article class="content" id="content" role="article">
+<main class="wrap  h-{{ page.h | default: 'entry' }}" role="main">
+    <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name">
-                {% if page.collection == 'notes' %}
+                {% if page.collection == 'likes' %}
+                    Liked a page on: {{ link_clean | split: '/' | first }}
+                {% elsif page.collection == 'notes' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
@@ -35,35 +38,37 @@
             </div>
         {% endif %}
 
-        {% if page.bookmark_of %}
+        {% if page.bookmark_of or page.link %}
             <nav class="buttons-list" role="navigation">
-                {% assign url = page.bookmark_of.url | default: page.bookmark_of %}
+                {% assign url = page.bookmark_of.url | default: page.bookmark_of | default: page.link.url | default: page.link %}
                 {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% assign title = page.bookmark_of.title | default: url_root %}
-                <a class="button  u-bookmark-of" href="{{ url }}" rel="external">{{ title }}</a>
+                {% assign title = page.bookmark_of.title | default: page.link.title | default: url_root %}
+                <a class="button  u-{{ page.mf_property }}" href="{{ url }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 
-        <div class="content__body  e-content">
+        <div class="content__body{% unless page.reacji %}  e-content{% endunless %}">
             {% for photo in page.mf-photo %}
                 <figure class="media">
-                    <a href="{{ photo }}"{% unless photo contains '//chrisburnell.com' %} rel="external"{% endunless %}>
+                    <a href="{{ photo }}"{% unless photo contains site.live_url %} rel="external"{% endunless %}>
                         <img src="{{ photo }}" alt="">
                     </a>
                 </figure>
             {% endfor %}
 
-            {{ content }}
+            {% if page.reacji %}
+                <span class="p-content">{{ page.reacji }}</span>
+            {% else %}
+                {{ content }}
+            {% endif %}
 
-            {% unless page.collection == 'talks' %}
-                {% if page.location_image %}
-                    <figure class="media">
-                        {% if page.location_url %}<a href="{{ page.location_url }}" rel="external"{% if page.location %} title="{{ page.location }}"{% endif %}>{% endif %}
-                            <img src="{{ page.location_image | prepend: '/static/' | prepend: site.live_url }}" alt="">
-                        {% if page.location_url %}</a>{% endif %}
-                    </figure>
-                {% endif %}
-            {% endunless %}
+            {% if page.location_image %}
+                <figure class="media">
+                    {% if page.location_url %}<a href="{{ page.location_url }}" rel="external"{% if page.location %} title="{{ page.location }}"{% endif %}>{% endif %}
+                        <img src="{{ page.location_image | prepend: '/static/' | prepend: site.live_url }}" alt="">
+                    {% if page.location_url %}</a>{% endif %}
+                </figure>
+            {% endif %}
         </div>
 
         {% include components/further-reading.html %}
@@ -76,9 +81,10 @@
         {% include components/webmentions.html %}
         {% include components/comments.html %}
 
-        <hr>
-
-        {% include components/widget-browse-posts.html %}
+        {% unless page.collection == 'likes' or page.collection == 'talks' %}
+            <hr>
+            {% include components/widget-browse-posts.html %}
+        {% endunless %}
 
     </article>
 

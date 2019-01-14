@@ -143,6 +143,7 @@ defaults:
     h: 'review'
     layout: 'review'
     mf_property: 'pk-drank'
+    webmentions: true
 - scope:
     path: ''
     type: 'bookmarks'
@@ -162,8 +163,9 @@ defaults:
     type: 'likes'
   values:
     h: 'entry'
-    layout: 'review'
+    layout: 'post'
     mf_property: 'like-of'
+    webmentions: true
 - scope:
     path: ''
     type: 'music'
@@ -171,6 +173,7 @@ defaults:
     h: 'review'
     layout: 'review'
     mf_property: 'listen-of'
+    webmentions: true
 - scope:
     path: ''
     type: 'notes'

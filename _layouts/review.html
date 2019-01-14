@@ -8,15 +8,11 @@
 {%- endif -%}
 
 
-<main class="wrap  h-{{ page.h }}" role="main">
-    <section class="content  p-{{ page.mf_property }}" id="content" role="document">
+<main class="wrap  h-{{ page.h | default: 'entry' }}" role="main">
+    <article class="content  p-{{ page.mf_property }}" id="content" role="document">
 
         <h1 class="title  p-name" role="heading">
-            {% if page.collection == 'likes' %}
-                Liked a page on: {{ link_clean | split: '/' | first }}
-            {% else %}
-                {{ page.title | strip_html }}
-            {% endif %}
+            {{ page.title | strip_html }}
         </h1>
 
         {% include components/meta.html %}
@@ -24,9 +20,6 @@
         {% include components/banner.html %}
 
         {%- assign content = page.content | strip_newlines -%}
-        {%- if page.reacji -%}
-            {%- assign content = content | prepend: '<span class="p-name  p-content" hidden>{{ page.reacji }}</span> ' -%}
-        {%- endif -%}
         {% if content != empty %}
             <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
         {% endif %}
@@ -41,7 +34,7 @@
 
         {% include components/buttons-list.html type='archives' include=page.collection %}
 
-    </section>
+    </article>
 
     {% include components/author.html %}
 </main>
