@@ -8,7 +8,7 @@
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
-            <span class="p-name">
+            {% unless page.reacji %}<span class="p-name">{% endunless %}
                 {% if page.collection == 'likes' %}
                     Liked a page on: {{ link_clean | split: '/' | first }}
                 {% elsif page.collection == 'notes' %}
@@ -16,7 +16,7 @@
                 {% else %}
                     {{ page.title | strip_html }}
                 {% endif %}
-            </span>
+            {% unless page.reacji %}</span>{% endunless %}
             {% if page.sparkline %}
                 <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>
             {% endif %}
@@ -56,7 +56,7 @@
             {% endfor %}
 
             {% if page.reacji %}
-                <span class="p-content">{{ page.reacji }}</span>
+                <span class="p-name  p-content">{{ page.reacji }}</span>
             {% else %}
                 {{ content }}
             {% endif %}

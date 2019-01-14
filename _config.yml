@@ -150,6 +150,7 @@ defaults:
   values:
     h: 'entry'
     layout: 'post'
+    mf_property: 'bookmark-of'
     webmentions: true
 - scope:
     path: ''
