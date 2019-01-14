@@ -36,11 +36,11 @@
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if page.authors_link and page.authors_link[1] -%}
-                    <a class="p-author  h-cite" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
+                    <a class="h-cite" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
                 {%- elsif page.authors_link -%}
-                    <a class="p-author  h-cite" href="{{ page.authors_link }}" title="" rel="external">
+                    <a class="h-cite" href="{{ page.authors_link }}" title="" rel="external">
                 {%- else -%}
-                    <strong class="p-author  h-cite">
+                    <strong class="h-cite">
                 {%- endif -%}
                 {{ author | strip }}
                 {%- if page.authors_link -%}
@@ -217,7 +217,7 @@
     {% endif %}
     {% if page.badges %}
         <div class="badges">
-            <span>earning {{ pages.badges.size }} badges</span>
+            <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
             {% for badge in page.badges %}
                 {%- if badge.name and badge.id -%}
                     {% unless forloop.first %}, {% endunless %}<a rel="external" href="{{ site.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
