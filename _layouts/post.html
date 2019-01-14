@@ -80,10 +80,9 @@
         {% include components/webmentions.html %}
         {% include components/comments.html %}
 
-        {% unless page.collection == 'likes' or page.collection == 'talks' %}
-            <hr>
-            {% include components/widget-browse-posts.html %}
-        {% endunless %}
+        <hr>
+
+        {% include components/widget-browse-posts.html %}
 
     </article>
 

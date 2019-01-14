@@ -10,19 +10,6 @@
     @include media("screen", "below:medium") {
         text-align: left;
     }
-
-    aside + & {
-        // pull up to align with `.author`
-        margin-top: -($measure-small);
-        margin-top: -(var(--measure-small));
-    }
-
-    .meta + & {
-        @include v(border-top-width, thin);
-        @include v(border-top-style, default);
-        @include v(border-top-color, alto);
-        @include v(padding-top, medium);
-    }
 }
 
 .lede--featured {

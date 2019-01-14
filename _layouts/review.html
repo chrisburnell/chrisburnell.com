@@ -30,9 +30,19 @@
             </nav>
         </div>
 
+        {% include components/further-reading.html %}
+
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.collection %}
+        {%- assign included = page.collection | default: 'article' -%}
+        {% include components/buttons-list.html type='archives' include=included %}
+
+        {% include components/webmentions.html %}
+        {% include components/comments.html %}
+
+        <hr>
+
+        {% include components/widget-browse-posts.html %}
 
     </article>
 

@@ -1,6 +1,8 @@
 <div class="meta">
     <time class="date  dt-published{% if page.collection == 'notes' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
-        {% if page.collection == 'beer' or page.collection == 'books' or page.collection == 'music' %}
+        {% if page.collection == 'beer' %}
+            <span>drank on</span>
+        {% elsif page.collection == 'books' or page.collection == 'music' %}
             <span>reviewed on</span>
         {% elsif page.collection == 'likes' %}
             <span>liked on</span>
