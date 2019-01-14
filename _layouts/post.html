@@ -1,6 +1,7 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- assign link_clean = page.link | remove: 'http://' | remove: 'https://' -%}
+{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.link.url | default: page.link -%}
+{%- assign link_clean = link | remove: 'http://' | remove: 'https://' -%}
 
 
 <main class="wrap  h-{{ page.h | default: 'entry' }}" role="main">
@@ -40,10 +41,8 @@
 
         {% if page.bookmark_of or page.link %}
             <nav class="buttons-list" role="navigation">
-                {% assign url = page.bookmark_of.url | default: page.bookmark_of | default: page.link.url | default: page.link %}
-                {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% assign title = page.bookmark_of.title | default: page.link.title | default: url_root %}
-                <a class="button  u-{{ page.mf_property }}" href="{{ url }}" rel="external">{{ title }}</a>
+                {% assign title = page.bookmark_of.title | default: page.link.title | default: link_clean %}
+                <a class="button  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 
