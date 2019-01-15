@@ -11,5 +11,5 @@ authors_link:
 - https://open.spotify.com/artist/1URnnhqYAYcrqrcwql10ft
 cover: https://i.scdn.co/image/cbeb99770353e401e6696fc9461293febbeebf50
 date: 2018-11-01
-rating: 3.75
+rating: 3.5
 ---
