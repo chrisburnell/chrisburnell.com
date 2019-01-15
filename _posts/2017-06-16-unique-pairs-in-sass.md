@@ -57,7 +57,7 @@ $breakpoints: (
 
 The Sass needs to be able to handle any number of breakpoints, not just an arbitrary number, so we’re going to have to use `@each` and/or `@for` to create some loops. We need to be able to say <q>below <var>A</var></q>, <q>above <var>B</var></q>, <q>above <var>A</var> and below <var>B</var></q>, etc. do *something*.
 
-So using a <dfn title="Block Element Modifier">*BEM*</dfn> naming methodology, we’ll use a *base class* of `.hide` and extend it like so:
+So using a <abbr title="Block Element Modifier">*BEM*</abbr> naming methodology, we’ll use a *base class* of `.hide` and extend it like so:
 
 - `.hide--below-small`
 - `.hide--above-medium`

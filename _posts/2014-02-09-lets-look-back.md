@@ -26,7 +26,7 @@ One of the most important aspects to any codebase, besides the obvious fact that
 
 {% include_cached content/heading.html title='In Comes Sass' %}
 
-Well, not quite. I haven’t found a need myself for the full library of options available in [<dfn title="a CSS extension language">Sass</dfn>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"){:rel="external"}, a CSS extension language, but I have adopted a few of the tools that comprise <dfn title="a superset of CSS3’s syntax">SCSS</dfn>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
+Well, not quite. I haven’t found a need myself for the full library of options available in [<abbr title="a CSS extension language">Sass</abbr>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"){:rel="external"}, a CSS extension language, but I have adopted a few of the tools that comprise <abbr title="a superset of CSS3’s syntax">SCSS</abbr>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
 
 {% include_cached content/heading.html title='I don’t want to do anything, anymore!' id='i-dont-want-to-do-anything' %}
@@ -544,7 +544,7 @@ The CSS here a lot more concise now, and the advantages are tremendous as you ge
 --------
 
 
-Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <dfn title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</dfn>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
+Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <abbr title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</abbr>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 

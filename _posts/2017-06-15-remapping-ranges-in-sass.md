@@ -71,7 +71,7 @@ Like most of my endeavours, this Sass technique is neither revolutionary, nor is
 }
 {% endhighlight %}
 
-Our `@function` takes a variable number of parameters, *three* or *five*, and we use Sass’ built-in `if()` as a <dfn title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</dfn> to utilise the parameters appropriately in determining the value remapped in the new range.
+Our `@function` takes a variable number of parameters, *three* or *five*, and we use Sass’ built-in `if()` as a <abbr title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</abbr> to utilise the parameters appropriately in determining the value remapped in the new range.
 
 There really isn’t any magic going on here (as usual). Everything before the `@return` statement is just checking to make sure we’ve correctly passed in the right parameters, and that we’ve given the correct number of parameters. The `@return` statement performs a small calculation based on the 3–5 parameters and gives us back the remapped initial value.
 
