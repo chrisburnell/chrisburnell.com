@@ -128,6 +128,24 @@
             <data class="p-best" hidden>5</data>
         </div>
     {% endif %}
+    {% if page.badges %}
+        <div class="badges">
+            <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
+            {% for badge in page.badges %}
+                {%- if badge.name and badge.id -%}
+                    {% unless forloop.first %}, {% endunless %}<a rel="external" href="{{ site.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
+                {%- else -%}
+                    {% unless forloop.first %}, {% endunless %}<strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
+                {%- endif -%}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if page.collection == 'pens' and page.codepen_featured == true %}
+        <div class="featured">
+            <span>featured on</span>
+            <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
+        </div>
+    {% endif %}
     {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: syndicate_to | default: nil %}
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
@@ -215,24 +233,6 @@
             {%- endif -%}
         </div>
     {% endif %}
-    {% if page.badges %}
-        <div class="badges">
-            <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
-            {% for badge in page.badges %}
-                {%- if badge.name and badge.id -%}
-                    {% unless forloop.first %}, {% endunless %}<a rel="external" href="{{ site.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
-                {%- else -%}
-                    {% unless forloop.first %}, {% endunless %}<strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
-                {%- endif -%}
-            {% endfor %}
-        </div>
-    {% endif %}
-    {% if page.collection == 'pens' and page.codepen_featured == true %}
-        <div class="featured">
-            <span>featured on</span>
-            <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
-        </div>
-    {% endif %}
     {% if page.collection == 'posts' or page.collection == 'beer' or page.collection == 'bookmarks' or page.collection == 'likes' or page.collection == 'notes' or page.collection == 'pens' %}
         {%- capture shorturl -%}
             {%- if page.collection == 'posts' -%}
@@ -254,13 +254,12 @@
                 t
                 {%- assign posts_to_check = site.notes | date_sort -%}
             {%- endif -%}
-            {%- assign n = page.date_start | default: page.date | date: '%s' | divided_by: 86400 -%}
+            {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
             {%- assign s = "" -%}
             {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
-            {%- if n == empty or n == 0 -%}0{%- endif -%}
             {%- for i in (1..9999) -%}
                 {%- assign d = n | modulo: 60 -%}
-                {%- assign s = m[d] | append: s -%}
+                {%- assign s = s | prepend: m[d] -%}
                 {%- assign n = n | minus: d | divided_by: 60 -%}
                 {%- if n <= 0 -%}
                     {%- break -%}

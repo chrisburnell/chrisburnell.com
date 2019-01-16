@@ -17,8 +17,8 @@
     {% endif %}
     <link href="{{ page.url | absolute_url }}" />
     <id>{{ page.url | absolute_url }}</id>
-    <published>{{ page.date_start | default: page.date | date_to_rfc822 }}</published>
-    <updated>{{ page.edit_date | default: page.date_end | default: page.date | date_to_rfc822 }}</updated>
+    <published>{{ default: page.date | date_to_rfc822 }}</published>
+    <updated>{{ page.edit_date | default: page.finish | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
     {% elsif page.collection == 'posts' %}

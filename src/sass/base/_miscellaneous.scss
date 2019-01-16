@@ -77,7 +77,6 @@ sub,
 sup {
     position: relative;
     vertical-align: baseline;
-    @include v(font-size, small);
     line-height: 0;
 }
 sub {

@@ -12,8 +12,8 @@
         {%- endif -%}
         {%- assign count = 0 -%}
         {%- for page in include.target reversed -%}
-            {%- assign year = page.date_end | default: page.date | date: '%Y' | plus: 0 -%}
-            {%- assign week = page.date_end | default: page.date | date: '%-W' | plus: 0 -%}
+            {%- assign year = page.finish | default: page.date | date: '%Y' | plus: 0 -%}
+            {%- assign week = page.finish | default: page.date | date: '%-W' | plus: 0 -%}
             {%- if year == tracking_year and week == tracking_week -%}
                 {%- assign count = count | plus: 1 -%}
             {%- endif -%}

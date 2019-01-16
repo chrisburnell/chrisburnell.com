@@ -18,8 +18,7 @@
                     {%- elsif page.sparkline contains 'bookmark' -%}
                         {%- assign date_first_of_these_posts = site.bookmarks.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'books' -%}
-                        {%- assign books_sorted = site.books | sort: 'date_start' -%}
-                        {%- assign date_first_of_these_posts = books_sorted.first.date_start | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.books.first.date | date_to_long_string -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}
                     {%- elsif page.sparkline contains 'likes' -%}

@@ -4,9 +4,9 @@
 
 {%- endcomment -%}
 {%- if page.link contains 'amazon' -%}
-    {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Amazon' -%}
+    {%- assign link_title = page.title | append: ' on Amazon' -%}
 {%- elsif page.link contains 'spotify' %}
-    {%- assign link_title = page.title | prepend: 'Open ' | append: ' on Spotify' -%}
+    {%- assign link_title = page.title | append: ' on Spotify' -%}
 {%- endif -%}
 {%- if page.rating -%}
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
@@ -14,9 +14,9 @@
 {%- endif -%}
 {%- if page.collection == 'books' -%}
     {%- assign read_status = 'to-read' -%}
-    {%- if page.date_end -%}
+    {%- if page.finish -%}
         {%- assign read_status = 'finished' -%}
-    {%- elsif page.date_start -%}
+    {%- elsif page.date -%}
         {%- assign read_status = 'reading' -%}
     {%- endif -%}
 {%- endif -%}
@@ -32,16 +32,7 @@
             {% endif %}
         {% endunless %}
     {% endif %}
-    {%- if page.collection == 'beer' -%}
-        {%- assign mf_class = 'p-pk-drank' -%}
-    {%- elsif page.collection == 'books' -%}
-        {%- assign mf_class = 'p-read-of' -%}
-    {%- elsif page.collection == 'music' -%}
-        {%- assign mf_class = 'p-listen-of' -%}
-    {%- elsif page.collection == 'likes' -%}
-        {%- assign mf_class = 'p-like-of' -%}
-    {%- endif -%}
-    <div class="h-cite  {{ mf_class }}">
+    <div class="h-cite  p-{{ page.mf_property }}">
         <h2 class="delta">
             {% if page.link and page.collection == 'beer' %}
                 <a href="{{ page.link }}" rel="external"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>
@@ -67,11 +58,11 @@
             {%- endfor -%}
             {%- if page.date -%}
                 {%- if page.collection == 'beer' -%}
-                    <div><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><a href="{{ page.url | absolute_url }}">{{ page.date | date: '%d %B %Y' }}</a></time></div>
+                    <div><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}"><a href="{{ page.url | absolute_url }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</a></time></div>
                 {%- elsif page.collection == 'likes' -%}
-                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> <a href="{{ page.url | absolute_url }}">{{ page.date | date: '%d %B %Y' }}</a></time></span>
+                    <span><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}"><small>on</small> <a href="{{ page.url | absolute_url }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</a></time></span>
                 {%- else -%}
-                    <span> (<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
+                    <span> (<time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%Y' }}</time>)</span>
                 {%- endif -%}
             {%- endif -%}
         </div>
@@ -99,25 +90,15 @@
             <div class="badges"><data value="{{ page.badges.size }}">earned {{ page.badges.size }} badges</data></div>
         {% endif %}
         {% if page.isbn %}
-            <strong><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}"{% if read_status == 'finished' %} hidden{% endif %}>{% include_cached content/titleize.html title=read_status %}</data></strong>
+            <strong{% if read_status == 'finished' %} hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}
-        {% if page.date_start %}
-            <data class="p-start-date" value="{{ page.date_start | date: '%Y-%m-%d' }}" hidden>{{ page.date_start | date: '%Y-%m-%d' }}</data>
+        {% if page.collection == 'books' and page.date %}
+            <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" hidden>{{ page.date | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        {% if page.date_end %}
-            <data class="p-end-date" value="{{ page.date_end | date: '%Y-%m-%d' }}" hidden>{{ page.date_end | date: '%Y-%m-%d' }}</data>
+        {% if page.collection == 'books' and page.finish %}
+            <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        {% if page.collection == 'beer' %}
-            <data class="u-pk-drank" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'bookmarks' %}
-            <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
-        {% elsif page.collection == 'books' %}
-            <data class="u-read-of" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'likes' %}
-            <data class="u-like-of" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'music' %}
-            <data class="u-listen-of" hidden>{{ page.link }}</data>
-        {% endif %}
+        <data class="u-{{ page.mf_property }}" hidden>{{ page.bookmark_of | default: page.link }}</data>
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </div>
 </li>
