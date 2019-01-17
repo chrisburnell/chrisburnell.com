@@ -259,6 +259,9 @@
             {%- elsif page.collection == 'books' -%}
                 r
                 {%- assign posts_to_check = site.books | date_sort -%}
+            {%- elsif page.collection == 'talks' -%}
+                s
+                {%- assign posts_to_check = site.talks | date_sort -%}
             {%- endif -%}
             {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
             {%- assign s = "" -%}
