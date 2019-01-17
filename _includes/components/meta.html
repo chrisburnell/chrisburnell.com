@@ -233,66 +233,64 @@
             {%- endif -%}
         </div>
     {% endif %}
-    {% if page.collection == 'posts' or page.collection == 'beer' or page.collection == 'bookmarks' or page.collection == 'likes' or page.collection == 'notes' or page.collection == 'pens' %}
-        {%- capture shorturl -%}
-            {%- if page.collection == 'posts' -%}
-                a
-                {%- assign posts_to_check = site.posts | date_sort | reverse -%}
-            {%- elsif page.collection == 'beer' -%}
-                b
-                {%- assign posts_to_check = site.beer | date_sort -%}
-            {%- elsif page.collection == 'bookmarks' -%}
-                h
-                {%- assign posts_to_check = site.bookmarks | date_sort -%}
-            {%- elsif page.collection == 'likes' -%}
-                f
-                {%- assign posts_to_check = site.likes | date_sort -%}
-            {%- elsif page.collection == 'pens' -%}
-                c
-                {%- assign posts_to_check = site.pens | date_sort -%}
-            {%- elsif page.collection == 'notes' -%}
-                t
-                {%- assign posts_to_check = site.notes | date_sort -%}
-            {%- elsif page.collection == 'music' -%}
-                m
-                {%- assign posts_to_check = site.music | date_sort -%}
-            {%- elsif page.collection == 'books' -%}
-                r
-                {%- assign posts_to_check = site.books | date_sort -%}
-            {%- elsif page.collection == 'talks' -%}
-                s
-                {%- assign posts_to_check = site.talks | date_sort -%}
-            {%- endif -%}
-            {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
-            {%- assign s = "" -%}
-            {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
-            {%- for i in (1..9999) -%}
-                {%- assign d = n | modulo: 60 -%}
-                {%- assign s = s | prepend: m[d] -%}
-                {%- assign n = n | minus: d | divided_by: 60 -%}
-                {%- if n <= 0 -%}
-                    {%- break -%}
-                {%- endif -%}
-            {%- endfor -%}{{ s }}
-        {%- endcapture -%}
-        {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
-        {%- assign filtered_posts = site.emptyArray -%}
-        {%- for check in posts_to_check -%}
-            {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
-            {%- if check_date == page_date -%}
-                {%- assign filtered_posts = filtered_posts | push: check -%}
-            {%- endif -%}
-        {%- endfor -%}
-        {%- for check in filtered_posts -%}
-            {%- if check.title == page.title -%}
-                {%- assign shorturl = shorturl | append: forloop.index -%}
+    {%- capture shorturl -%}
+        {%- if page.collection == 'posts' -%}
+            a
+            {%- assign posts_to_check = site.posts | date_sort | reverse -%}
+        {%- elsif page.collection == 'beer' -%}
+            b
+            {%- assign posts_to_check = site.beer | date_sort -%}
+        {%- elsif page.collection == 'bookmarks' -%}
+            h
+            {%- assign posts_to_check = site.bookmarks | date_sort -%}
+        {%- elsif page.collection == 'likes' -%}
+            f
+            {%- assign posts_to_check = site.likes | date_sort -%}
+        {%- elsif page.collection == 'pens' -%}
+            c
+            {%- assign posts_to_check = site.pens | date_sort -%}
+        {%- elsif page.collection == 'notes' -%}
+            t
+            {%- assign posts_to_check = site.notes | date_sort -%}
+        {%- elsif page.collection == 'music' -%}
+            m
+            {%- assign posts_to_check = site.music | date_sort -%}
+        {%- elsif page.collection == 'books' -%}
+            r
+            {%- assign posts_to_check = site.books | date_sort -%}
+        {%- elsif page.collection == 'talks' -%}
+            s
+            {%- assign posts_to_check = site.talks | date_sort -%}
+        {%- endif -%}
+        {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
+        {%- assign s = "" -%}
+        {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
+        {%- for i in (1..9999) -%}
+            {%- assign d = n | modulo: 60 -%}
+            {%- assign s = s | prepend: m[d] -%}
+            {%- assign n = n | minus: d | divided_by: 60 -%}
+            {%- if n <= 0 -%}
                 {%- break -%}
             {%- endif -%}
-        {%- endfor -%}
-        <div class="shorturl">
-            <span>shorturl</span>
-            <a rel="" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
-        </div>
-    {% endif %}
+        {%- endfor -%}{{ s }}
+    {%- endcapture -%}
+    {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
+    {%- assign filtered_posts = site.emptyArray -%}
+    {%- for check in posts_to_check -%}
+        {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
+        {%- if check_date == page_date -%}
+            {%- assign filtered_posts = filtered_posts | push: check -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- for check in filtered_posts -%}
+        {%- if check.title == page.title -%}
+            {%- assign shorturl = shorturl | append: forloop.index -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}
+    <div class="shorturl">
+        <span>shorturl</span>
+        <a rel="" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
+    </div>
     <a href="https://fed.brid.gy/" hidden></a>
 </div>
