@@ -43,8 +43,8 @@
     {% for class in page.page_class %}
         {{ class }}
     {% endfor %}
-    {% if page.categories contains 'article' %}
-        page--article
+    {% if page.category %}
+        page--{{ page.category }}
     {% endif %}
     {% if page.collection %}
         page--{{ page.collection }}

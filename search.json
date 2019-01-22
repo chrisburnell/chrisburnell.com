@@ -29,7 +29,7 @@ searchable: false
         {% elsif page.categories contains 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
-        "categories": "{{ page.collection | default: 'article' | join: ', ' }}",
+        "categories": "{{ page.categories | join: ', ' }}",
         "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
           "location": "{{ page.location | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
         {% endif %}{% unless page.searchable == 'no-content' %},

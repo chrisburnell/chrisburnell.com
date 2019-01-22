@@ -89,6 +89,8 @@ incremental: true
 destination: ./_site
 permalink: /:categories/:title/
 
+paginate: 16
+paginate_path: "/:num/"
 feed_limit: 25
 
 emptyArray: []
@@ -142,6 +144,7 @@ defaults:
   values:
     categories: 'like'
     mf_property: 'like-of'
+    hidden: true
 - scope:
     type: 'posts'
     path: '_posts/music'
@@ -192,6 +195,7 @@ exclude:
 plugins:
 - jekyll-include-cache
 - jekyll-mentions
+- jekyll-paginate
 - jekyll-redirect-from
 
 jekyll-mentions:

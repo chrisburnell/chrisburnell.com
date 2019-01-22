@@ -40,6 +40,7 @@ GEM
     jekyll-mentions (1.4.0)
       html-pipeline (~> 2.3)
       jekyll (~> 3.0)
+    jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.13.0)
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
@@ -82,6 +83,7 @@ DEPENDENCIES
   jekyll
   jekyll-include-cache
   jekyll-mentions
+  jekyll-paginate
   jekyll-redirect-from
 
 BUNDLED WITH

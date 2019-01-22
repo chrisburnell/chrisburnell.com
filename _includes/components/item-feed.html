@@ -52,8 +52,8 @@
             <summary>Music Review</summary>
         {%- endif -%}
     {% endif %}
-    {% if page.categories contains 'article' %}
-        <category term="article" />
+    {% if page.categories %}
+        <category term="{{ page.categories | downcase | xml_escape }}" />
     {% endif %}
     {% if page.collection and page.collection != "posts" %}
         <category term="{{ page.collection | downcase | xml_escape }}" />

@@ -12,7 +12,8 @@
     }
 }
 
-.widget--browse-posts {
+.widget--browse-posts,
+.widget--pagination {
     flex-direction: row;
     justify-content: space-between;
 }

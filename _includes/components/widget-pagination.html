@@ -1,0 +1,10 @@
+{% if paginator.previous_page or paginator.next_page %}
+    <section class="widget  widget--pagination">
+        {% if paginator.next_page %}
+            <a class="widget-previous-anchor" href="{{ paginator.next_page_path }}" title="Older Posts"></a>
+        {% endif %}
+        {% if paginator.previous_page %}
+            <a class="widget-next-anchor" href="{{ paginator.previous_page_path }}" title="Newer Posts"></a>
+        {% endif %}
+    </section>
+{% endif %}

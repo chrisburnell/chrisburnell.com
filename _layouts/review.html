@@ -35,8 +35,7 @@
 
         <hr>
 
-        {%- assign included = page.collection | default: 'article' -%}
-        {% include components/buttons-list.html type='archives' include=included %}
+        {% include components/buttons-list.html type='archives' include=page.categories %}
 
         {% include components/webmentions.html %}
         {% include components/comments.html %}
