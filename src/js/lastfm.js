@@ -52,7 +52,7 @@
             })
             .catch(error => {
                 // Fail!
-                console.error(`LastFM request status error: ${error.status} ${error.statusText}`);
+                console.error(`LastFM request status error: ${error}`);
             });
     }
 })();

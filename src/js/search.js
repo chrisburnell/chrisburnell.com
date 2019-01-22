@@ -117,7 +117,7 @@
             })
             .catch(error => {
                 // Fail!
-                console.error(`Search request status error: ${error.status} ${error.statusText}`);
+                console.error(`Search request status error: ${error}`);
             });
     };
 
@@ -233,18 +233,18 @@
         // ICON
         if (item.categories == "article") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "article");
-        } else if (item.categories == "bookmarks") {
+        } else if (item.categories == "bookmark") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "link");
-        } else if (item.categories == "notes") {
+        } else if (item.categories == "note") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "feather");
-        } else if (item.categories == "pens") {
+        } else if (item.categories == "pen") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "codepen");
-        } else if (item.categories == "talks") {
+        } else if (item.categories == "talk") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "bullhorn");
         }
 
         // TITLE
-        if (item.categories == "notes") {
+        if (item.categories == "note") {
             html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, `<mark>$&</mark>`));
         } else {
             html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, `<mark>$&</mark>`));
@@ -259,15 +259,15 @@
                 .join("")
                 .replace(queryHighlightRegex, `<mark>$&</mark>`);
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
-        } else if (item.categories == "bookmarks") {
+        } else if (item.categories == "bookmark") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Link");
-        } else if (item.categories == "notes") {
+        } else if (item.categories == "note") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Note");
-        } else if (item.categories == "pens") {
+        } else if (item.categories == "pen") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Featured Pen");
-        } else if (item.categories == "talks" && item.location) {
+        } else if (item.categories == "talk" && item.location) {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, `Talk – Given at ${item.location}.`);
-        } else if (item.categories == "talks") {
+        } else if (item.categories == "talk") {
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Talk");
         }
 
@@ -275,7 +275,7 @@
         if (item.type == "post") {
             html = helpers.injectContent(html, /{{\s*date_friendly\s*}}/, item.date_friendly);
 
-            if (item.categories == "notes") {
+            if (item.categories == "note") {
                 html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "  hidden");
             } else {
                 html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "");

@@ -114,7 +114,7 @@
             })
             .catch(error => {
                 // Fail!
-                console.error(`Sparklines request status error: ${error.status} ${error.statusText}`);
+                console.error(`Sparklines request status error: ${error}`);
             });
     }
 

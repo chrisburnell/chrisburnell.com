@@ -114,6 +114,10 @@
     [data-type="repost"] .webmentions__response__type::before {
         content: "🔄️";
     }
+
+    .webmentions__response__type[data-reacji]:not([data-reacji=""])::before {
+        content: attr(data-reacji);
+    }
 }
 
 // Also appears only on article pages

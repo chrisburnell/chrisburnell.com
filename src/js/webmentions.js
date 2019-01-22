@@ -20,17 +20,20 @@
     // `#respon` will match both `#respond`, `#response`, and `#responses`
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#respon"];
     const WEBMENTIONS_TEMPLATE_REACTION =
-`<li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
-    <a class="webmentions__response__avatar" href="{{ author_url }}" rel="external" title="{{ author }}">
-        <img class="webmentions__response__image" src="{{ author_image_url }}">
-        <span class="webmentions__response__name">{{ author }}</span>
+`<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-{{ type }}" data-type="{{ type }}">
+    <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
+        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
+        <span class="webmentions__response__name  p-name">{{ author }}</span>
     </a>
-    <a class="webmentions__response__type" href="{{ url }}" rel="external" title="Read externally" tabindex="-1"></a>
+    <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="Read externally" tabindex="-1" data-reacji="{{ content }}"></a>
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY =
-`<li id="webmentions-{{ id }}" class="webmentions__response" data-type="{{ type }}">
-    <div>{{ content }} <a href="{{ url }}" rel="external" title="Read externally">↗</a></div>
-    <div><small>by</small> <a href="{{ author_url }}" rel="external">{{ author }}</a> {{ date }}</div>
+`<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
+    <div>
+        <q class="e-content">{{ content }}</q>
+        <a class="u-url" href="{{ url }}" rel="external" title="Read externally">↗</a>
+    </div>
+    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> {{ date }}</div>
 </li>`;
     let responses = {
         reaction: [],
@@ -64,7 +67,7 @@
             })
             .catch(error => {
                 // Fail!
-                console.error(`Webmention request status error: ${error.status} ${error.statusText}`);
+                console.error(`Webmention request status error: ${error}`);
             });
     };
 
@@ -103,9 +106,12 @@
         let webmentionsReplyContent = document.querySelector(".js-webmentions-replies-content");
 
         for (let link of data.links.reverse()) {
-            link.activity.type = link.activity.type === "link" ? "reply" : link.activity.type;
+            let type = "reaction";
+            if (link.data.content && link.data.content.length > 2) {
+                type = "reply";
+            }
             if (link.verified === true && link.private === false) {
-                responses[(link.activity.type === "reply" ? "reply" : "reaction")].push(link);
+                responses[type].push(link);
             }
         }
 
@@ -137,7 +143,7 @@
         let id = response.id;
         let type = response.activity.type;
         let url = response.data.url;
-        let content = response.data.content;
+        let content = !response.data.content ? "" : response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
         let authorUrl = response.data.author.url;
@@ -155,7 +161,7 @@
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
 
         // CONTENT
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, `<q>${content}</q>`);
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, content);
 
         // AUTHOR
         html = helpers.injectContent(html, /{{\s*author\s*}}/, author);

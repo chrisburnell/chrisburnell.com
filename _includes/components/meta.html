@@ -55,7 +55,7 @@
     {% if in_reply_to %}
         <div class="in-reply-to">
             {% if page.rsvp %}
-                <span class="p-rsvp  hidden">{{ page.rsvp }}</span>
+                <data class="p-rsvp" hidden>{{ page.rsvp }}</data>
                 <span>responded</span> <strong>{{ page.rsvp | capitalize }}</strong> <span>to</span>
             {% else %}
                 <span>in reply to</span>
