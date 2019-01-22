@@ -9,7 +9,7 @@ lede: All of my notes.
 category_path: '/notes/'
 ---
 
-{%- assign notes = site.notes | sort: 'date' | reverse -%}
+{%- assign notes = site.categories.note | date_sort | reverse -%}
 {%- assign notes_without_replies = site.emptyArray -%}
 {%- for page in notes -%}
     {%- if page.rsvp or page.in_reply_to.first == nil -%}

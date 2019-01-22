@@ -11,11 +11,10 @@ lede: Stuff from around the web I’ve liked, believe it or not!
 sparkline: likes
 ---
 
-<p><em>There are {{ site.likes | size }} published Likes.</em></p>
+<p><em>There are {{ site.categories.like | size }} published Likes.</em></p>
 
 <ol class="shelf  h-feed" id="likes" role="list">
-    {% assign likes = site.likes %}
-    {% for page in likes reversed %}
+    {% for page in site.categories.like %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>

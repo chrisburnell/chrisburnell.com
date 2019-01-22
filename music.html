@@ -16,8 +16,7 @@ sparkline: music
 <p>Images below link out to <em>Spotify</em>.</p>
 
 <ol class="shelf  h-feed" id="music" role="list">
-    {% assign music = site.music | date_sort %}
-    {% for page in music reversed %}
+    {% for page in site.categories.music %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>

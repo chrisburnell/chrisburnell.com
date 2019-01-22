@@ -14,8 +14,7 @@ sparkline: beer
 <p>Connect with <a href="{{ site.urls.untappd }}" rel="me  external">me on Untappd</a>! Beer titles below also link out to <a href="https://untappd.com/" rel="external">Untappd</a>.</p>
 
 <ol class="shelf  h-feed" id="beer" role="list">
-    {% assign beer = site.beer | date_sort %}
-    {% for page in beer reversed %}
+    {% for page in site.categories.beer %}
         {% include components/item-shelf.html %}
     {% endfor %}
 </ol>

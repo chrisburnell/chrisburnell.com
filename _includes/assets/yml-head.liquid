@@ -1,4 +1,4 @@
-{% if page.collection == 'notes' %}
+{% if page.categories contains 'note' %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% elsif page.title %}
     {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
@@ -8,23 +8,23 @@
 
 {% if page.lede %}
     {% assign meta_lede = page.lede | strip_html %}
-{% elsif page.collection == 'beer' %}
+{% elsif page.categories contains 'beer' %}
     {% capture meta_lede %}One of my beer reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'bookmarks' %}
+{% elsif page.categories contains 'bookmark' %}
     {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'books' %}
+{% elsif page.categories contains 'book' %}
     {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'likes' %}
+{% elsif page.categories contains 'like' %}
     {% capture meta_lede %}One of my liked pages, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'music' %}
+{% elsif page.categories contains 'music' %}
     {% capture meta_lede %}One of my music album reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'notes' %}
+{% elsif page.categories contains 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
-{% elsif page.collection == 'pens' %}
+{% elsif page.categories contains 'pen' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'recipe' %}
+{% elsif page.categories contains 'recipe' %}
     {% capture meta_lede %}One of my recipes, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.collection == 'talks' %}
+{% elsif page.categories contains 'talk' %}
     {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}
     {% assign meta_lede = site.lede | strip_html %}
@@ -43,7 +43,7 @@
     {% for class in page.page_class %}
         {{ class }}
     {% endfor %}
-    {% if page.collection == 'posts' %}
+    {% if page.categories contains 'article' %}
         page--article
     {% endif %}
     {% if page.collection %}

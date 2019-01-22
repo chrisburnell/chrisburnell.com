@@ -12,23 +12,23 @@
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
                     {%- if page.sparkline contains 'article' -%}
-                        {%- assign date_first_of_these_posts = site.posts.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.article.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'beer' -%}
-                        {%- assign date_first_of_these_posts = site.beer.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.beer.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'bookmark' -%}
-                        {%- assign date_first_of_these_posts = site.bookmarks.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.bookmark.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'books' -%}
-                        {%- assign date_first_of_these_posts = site.books.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.book.first.date | date_to_long_string -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}
                     {%- elsif page.sparkline contains 'likes' -%}
-                        {%- assign date_first_of_these_posts = site.likes.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.like.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'music' -%}
-                        {%- assign date_first_of_these_posts = site.music.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.music.first.date | date_to_long_string -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}
                     {%- elsif page.sparkline contains 'notes' -%}
-                        {%- assign date_first_of_these_posts = site.notes.first.date | date_to_long_string -%}
+                        {%- assign date_first_of_these_posts = site.categories.note.first.date | date_to_long_string -%}
                     {%- elsif page.sparkline contains 'talk' -%}
                         {% comment %} TODO: Fix this override {% endcomment %}
                         {%- assign date_first_of_these_posts = '26 weeks ago' -%}

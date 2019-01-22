@@ -87,115 +87,84 @@ future: true
 unpublished: false
 incremental: true
 destination: ./_site
-permalink: /article/:title/
+permalink: /:categories/:title/
 
 feed_limit: 25
 
 emptyArray: []
 
-collections:
-  beer:
-    output: true
-    permalink: /beer/:title/
-  bookmarks:
-    output: true
-    permalink: /bookmark/:title/
-  books:
-    output: true
-    permalink: /bookshelf/:title/
-  likes:
-    output: true
-    permalink: /like/:title/
-  music:
-    output: true
-    permalink: /music/:title/
-  notes:
-    output: true
-    permalink: /note/:title/
-  pens:
-    output: true
-    permalink: /pen/:title/
-  talks:
-    output: true
-    permalink: /talk/:title/
-
 defaults:
 - scope:
-    path: ''
     type: 'pages'
   values:
     layout: 'page'
 - scope:
-    path: '_drafts'
+    type: 'drafts'
   values:
     layout: 'draft'
     h: 'entry'
 - scope:
-    path: '_posts'
+    type: 'posts'
   values:
     layout: 'post'
     h: 'entry'
     webmentions: true
 - scope:
-    path: ''
-    type: 'beer'
+    type: 'posts'
+    path: '_posts/articles'
   values:
+    categories: 'article'
+- scope:
+    type: 'posts'
+    path: '_posts/beer'
+  values:
+    categories: 'beer'
     h: 'review'
     layout: 'review'
     mf_property: 'pk-drank'
-    webmentions: true
 - scope:
-    path: ''
-    type: 'bookmarks'
+    type: 'posts'
+    path: '_posts/bookmarks'
   values:
-    h: 'entry'
-    layout: 'post'
+    categories: 'bookmark'
     mf_property: 'bookmark-of'
-    webmentions: true
 - scope:
-    path: ''
-    type: 'books'
+    type: 'posts'
+    path: '_posts/books'
   values:
+    categories: 'book'
     h: 'review'
     layout: 'review'
     mf_property: 'read-of'
 - scope:
-    path: ''
-    type: 'likes'
+    type: 'posts'
+    path: '_posts/likes'
   values:
-    h: 'entry'
-    layout: 'post'
+    categories: 'like'
     mf_property: 'like-of'
-    webmentions: true
 - scope:
-    path: ''
-    type: 'music'
+    type: 'posts'
+    path: '_posts/music'
   values:
+    categories: 'music'
     h: 'review'
     layout: 'review'
     mf_property: 'listen-of'
-    webmentions: true
 - scope:
-    path: ''
-    type: 'notes'
+    type: 'posts'
+    path: '_posts/notes'
   values:
-    h: 'entry'
-    layout: 'post'
-    webmentions: true
+    categories: 'note'
 - scope:
-    path: ''
-    type: 'pens'
+    type: 'posts'
+    path: '_posts/pens'
   values:
-    h: 'entry'
-    layout: 'post'
-    webmentions: true
+    categories: 'pen'
 - scope:
-    path: ''
-    type: 'talks'
+    type: 'posts'
+    path: '_posts/talks'
   values:
-    h: 'entry'
-    layout: 'post'
-    webmentions: true
+    categories: 'talk'
 
 keep_files:
 - css

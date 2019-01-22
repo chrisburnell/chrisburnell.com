@@ -12,23 +12,23 @@
 <li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="{{ page.url }}">
-            {% if page.collection == 'posts' %}
+            {% if page.categories contains 'article' %}
                 {% include_cached content/svg.html type='article' %}
-            {% elsif page.collection == 'bookmarks' %}
+            {% elsif page.categories contains 'bookmark' %}
                 {% include_cached content/svg.html type='link' %}
-            {% elsif page.collection == 'notes' %}
+            {% elsif page.categories contains 'note' %}
                 {% include_cached content/svg.html type='feather' %}
-            {% elsif page.collection == 'pens' %}
+            {% elsif page.categories contains 'pen' %}
                 {% include_cached content/svg.html type='codepen' %}
-            {% elsif page.collection == 'recipe' %}
+            {% elsif page.categories contains 'recipe' %}
                 {% include_cached content/svg.html type='article' %}
-            {% elsif page.collection == 'beer' or page.collection == 'books' or page.collection == 'music' %}
+            {% elsif page.categories contains 'beer' or page.categories contains 'book' or page.categories contains 'music' %}
                 {% include_cached content/svg.html type='bullhorn' %}
-            {% elsif page.collection == 'talks' %}
+            {% elsif page.categories contains 'talk' %}
                 {% include_cached content/svg.html type='bullhorn' %}
             {% endif %}
-            <h3 class="delta  title  p-name"{% if page.collection == 'notes' %} hidden tabindex="-1"{% endif %}>
-                {% if page.collection == 'notes' %}
+            <h3 class="delta  title  p-name"{% if page.categories contains 'note' %} hidden tabindex="-1"{% endif %}>
+                {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
@@ -36,12 +36,12 @@
             </h3>
             <p class="lede  p-summary">
                 {% if page.lede %}
-                    {% if page.banner or page.banner_mobile %}<span class="emoji">🖼️</span> {% endif %}{% if page.collection == 'bookmarks' %}<span class="emoji">🔖</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.collection == 'posts' %}
+                    {% if page.banner or page.banner_mobile %}<span class="emoji">🖼️</span> {% endif %}{% if page.categories contains 'bookmark' %}<span class="emoji">🔖</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
+                {% elsif page.categories contains 'article' %}
                     Shared Article
-                {% elsif page.collection == 'bookmarks' %}
+                {% elsif page.categories contains 'bookmark' %}
                     <span class="emoji">🔖</span> Bookmark
-                {% elsif page.collection == 'notes' %}
+                {% elsif page.categories contains 'note' %}
                     {% if page.in_reply_to.first %}
                         <span class="emoji">↩️</span> In reply to:
                         {% if page.in_reply_to.first contains 'mastodon.social' %}
@@ -67,17 +67,17 @@
                         {%- assign content = content | prepend: '<span class="emoji">🖼️</span> ' -%}
                     {%- endif -%}
                     {{ content }}
-                {% elsif page.collection == 'pens' %}
+                {% elsif page.categories contains 'pen' %}
                     <span class="emoji">✒️</span> Featured Pen
-                {% elsif page.collection == 'recipe' %}
+                {% elsif page.categories contains 'recipe' %}
                     <span class="emoji">📝</span> Recipe
-                {% elsif page.collection == 'talks' %}
+                {% elsif page.categories contains 'talk' %}
                     <span class="emoji">🗣</span> Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
-                {% elsif page.collection == 'beer' or page.collection == 'music' %}
+                {% elsif page.categories contains 'beer' or page.categories contains 'music' %}
                     {% if page.authors %}
-                        {% if page.collection == 'beer' %}
+                        {% if page.categories contains 'beer' %}
                             {% if page.cover %}<span class="emoji">🖼️</span> {% endif %}<span class="emoji">🍺</span> Beer by
-                        {% elsif page.collection == 'music' %}
+                        {% elsif page.categories contains 'music' %}
                             <span class="emoji">🎶</span> Album by
                         {% endif %}
                         {% assign authors = page.authors | uniq %}
@@ -102,15 +102,15 @@
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
-        {% if page.collection == 'beer' %}
+        {% if page.categories contains 'beer' %}
             <data class="u-pk-drank" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'bookmarks' %}
+        {% elsif page.categories contains 'bookmark' %}
             <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
-        {% elsif page.collection == 'books' %}
+        {% elsif page.categories contains 'book' %}
             <data class="u-read-of" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'likes' %}
+        {% elsif page.categories contains 'like' %}
             <data class="u-like-of" hidden>{{ page.link }}</data>
-        {% elsif page.collection == 'music' %}
+        {% elsif page.categories contains 'music' %}
             <data class="u-listen-of" hidden>{{ page.link }}</data>
         {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>

@@ -9,7 +9,6 @@ lede: All of my beer check-ins.
 category_path: '/beer/'
 ---
 
-{%- assign beer = site.beer | sort: 'date' | reverse -%}
-{% for page in beer limit: site.feed_limit %}
+{% for page in site.categories.beer limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

@@ -19,9 +19,9 @@ sparkline: pens
 
 <p>These are my best pens—seven of which were <a rel="external" href="https://codepen.io/collection/hfqlg" rel="external">featured on their homepage</a>.</p>
 
-<p><em>There are {{ site.pens | size }} published Pens.</em></p>
+<p><em>There are {{ site.categories.pen | size }} published Pens.</em></p>
 
-{% for page in site.pens reversed %}
+{% for page in site.categories.pen %}
     {% assign page_year = page.date | date: '%Y' %}
 
     {% if page_year != current_year %}

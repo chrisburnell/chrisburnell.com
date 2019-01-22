@@ -13,9 +13,9 @@ lede: All of my Bookmarks.
 sparkline: bookmarks
 ---
 
-<p><em>There are {{ site.bookmarks | size }} published Bookmarks.</em></p>
+<p><em>There are {{ site.categories.bookmark | size }} published Bookmarks.</em></p>
 
-{% for page in site.bookmarks reversed %}
+{% for page in site.categories.bookmark %}
     {% assign page_year = page.date | date: '%Y' %}
 
     {% if page_year != current_year %}

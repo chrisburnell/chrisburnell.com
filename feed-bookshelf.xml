@@ -10,12 +10,12 @@ category_path: '/bookshelf/'
 ---
 
 {%- assign limit = site.feed_limit -%}
-{%- assign books_to_read = site.books | where_exp: 'book', 'book.date == nil' | sort: 'title' -%}
+{%- assign books_to_read = site.categories.book | where_exp: 'book', 'book.date == nil' | sort: 'title' -%}
 {% for page in books_to_read %}
     {%- assign limit = limit | minus: 1 -%}
     {% include components/item-feed.html %}
 {% endfor %}
-{%- assign books = site.books | where_exp: 'book', 'book.date' | date_sort | reverse -%}
+{%- assign books = site.categories.book | where_exp: 'book', 'book.date' | date_sort | reverse -%}
 {% for page in books limit: limit %}
     {% include components/item-feed.html %}
 {% endfor %}

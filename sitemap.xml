@@ -33,8 +33,7 @@ sitemap:
             </url>
         {% endunless %}
     {% endfor %}
-    {%- assign posts = site.posts | concat: site.beer | concat: site.bookmarks | concat: site.music | concat: site.notes | concat: site.pens | sort: 'date' | reverse -%}
-    {% for page in posts %}
+    {% for page in site.posts %}
         {% unless page.draft or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | absolute_url }}</loc>

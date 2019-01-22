@@ -4,7 +4,7 @@
         {% assign max_list_count = 2 %}
         {% assign current_list_count = 0 %}
         {% assign current_path = page.path %}
-        {% for page in site.recipes %}
+        {% for page in site.categories.recipe %}
             {% unless current_list_count == max_list_count %}
                 {% unless page.path == current_path %}
                     {% assign current_list_count = current_list_count | plus: 1 %}

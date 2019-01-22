@@ -8,9 +8,9 @@
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
 <entry>
-    {% if page.collection == 'notes' %}
+    {% if page.categories contains 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
-    {% elsif page.collection == 'likes' %}
+    {% elsif page.categories contains 'like' %}
         <title>{{ page.link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
@@ -21,38 +21,38 @@
     <updated>{{ page.edit_date | default: page.finish | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
-    {% elsif page.collection == 'posts' %}
+    {% elsif page.categories contains 'article' %}
         <summary>Shared Article</summary>
-    {% elsif page.collection == 'bookmarks' %}
+    {% elsif page.categories contains 'bookmark' %}
         <summary>Bookmark</summary>
-    {% elsif page.collection == 'notes' %}
+    {% elsif page.categories contains 'note' %}
         <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
-    {% elsif page.collection == 'pens' %}
+    {% elsif page.categories contains 'pen' %}
         <summary>Featured Pen</summary>
-    {% elsif page.collection == 'recipe' %}
+    {% elsif page.categories contains 'recipe' %}
         <summary>Recipe</summary>
-    {% elsif page.collection == 'talks' %}
+    {% elsif page.categories contains 'talk' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
-    {% elsif page.collection == 'books' %}
+    {% elsif page.categories contains 'book' %}
         {% if page.rating %}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Book Review</summary>
         {% endif %}
-    {% elsif page.collection == 'beer' %}
+    {% elsif page.categories contains 'beer' %}
         {% if page.rating %}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Beer Review</summary>
         {% endif %}
-    {% elsif page.collection == 'music' %}
+    {% elsif page.categories contains 'music' %}
         {%- if page.rating -%}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}
     {% endif %}
-    {% if page.collection == 'posts' %}
+    {% if page.categories contains 'article' %}
         <category term="article" />
     {% endif %}
     {% if page.collection and page.collection != "posts" %}

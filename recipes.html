@@ -8,9 +8,9 @@ lede: All of my recipes.
 ---
 
 
-<p><em>There are {{ site.recipes | size }} published Recipes.</em></p>
+<p><em>There are {{ site.categories.recipe | size }} published Recipes.</em></p>
 
-{% for page in site.recipes %}
+{% for page in site.categories.recipe %}
     {% assign page_year = page.date | date: '%Y' %}
 
     {% if page_year != current_year %}

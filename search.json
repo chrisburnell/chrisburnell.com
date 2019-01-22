@@ -16,8 +16,7 @@ searchable: false
       }{% unless forloop.last %},{% endunless %}
     {% endunless %}
   {% endfor %}
-  {%- assign posts = site.posts | concat: site.beer | concat: site.bookmarks | concat: site.music | concat: site.notes | concat: site.pens | sort: 'date' | reverse -%}
-  {% for page in posts %}
+  {% for page in site.posts %}
     {% unless page.draft or page.searchable == false %}
       {
         "type": "post",
@@ -27,7 +26,7 @@ searchable: false
         "date_friendly": "{{ page.date | date_to_long_string }}",
         {% if page.lede %}
           "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
-        {% elsif page.collection == 'notes' %}
+        {% elsif page.categories contains 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
         "categories": "{{ page.collection | default: 'article' | join: ', ' }}",

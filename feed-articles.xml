@@ -9,7 +9,7 @@ lede: All of my articles.
 category_path: '/articles/'
 ---
 
-{%- assign articles = site.posts | sort: 'date' | reverse -%}
+{%- assign articles = site.categories.article | date_sort | reverse -%}
 {%- assign articles_without_replies = site.emptyArray -%}
 {%- for page in articles -%}
     {%- if page.rsvp or page.in_reply_to.first == nil -%}

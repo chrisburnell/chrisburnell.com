@@ -9,7 +9,6 @@ lede: All of my pens.
 category_path: '/pens/'
 ---
 
-{%- assign pens = site.pens | sort: 'date' | reverse -%}
-{% for page in pens limit: site.feed_limit %}
+{% for page in site.categories.pen limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

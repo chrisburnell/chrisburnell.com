@@ -1,10 +1,10 @@
 <div class="meta">
-    <time class="date  dt-published{% if page.collection == 'notes' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
-        {% if page.collection == 'beer' %}
+    <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
+        {% if page.categories contains 'beer' %}
             <span>drank on</span>
-        {% elsif page.collection == 'books' or page.collection == 'music' %}
+        {% elsif page.categories contains 'book' or page.categories contains 'music' %}
             <span>reviewed on</span>
-        {% elsif page.collection == 'likes' %}
+        {% elsif page.categories contains 'like' %}
             <span>liked on</span>
         {% else %}
             <span>published on</span>
@@ -84,7 +84,7 @@
             {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
         </div>
     {% endif %}
-    {% if page.collection == 'posts' %}
+    {% if page.categories contains 'article' %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
         {% assign words = words | push: open_figure_splits[0] %}
@@ -106,9 +106,9 @@
     {% endif %}
     {% if page.location %}
         <div class="location">
-            {% if page.collection == 'beer' %}
+            {% if page.categories contains 'beer' %}
                 <span>drank at</span>
-            {% elsif page.collection == 'talks' %}
+            {% elsif page.categories contains 'talk' %}
                 <span>given at</span>
             {% endif %}
             {% if page.location_url %}
@@ -156,7 +156,7 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.collection == 'pens' and page.codepen_featured == true %}
+    {% if page.categories contains 'pen' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
@@ -250,33 +250,33 @@
         </div>
     {% endif %}
     {%- capture shorturl -%}
-        {%- if page.collection == 'posts' -%}
+        {%- if page.categories contains 'article' -%}
             a
-            {%- assign posts_to_check = site.posts | date_sort | reverse -%}
-        {%- elsif page.collection == 'beer' -%}
+            {%- assign posts_to_check = site.categories.article | date_sort | reverse -%}
+        {%- elsif page.categories contains 'beer' -%}
             b
-            {%- assign posts_to_check = site.beer | date_sort -%}
-        {%- elsif page.collection == 'bookmarks' -%}
+            {%- assign posts_to_check = site.categories.beer | date_sort | reverse -%}
+        {%- elsif page.categories contains 'bookmark' -%}
             h
-            {%- assign posts_to_check = site.bookmarks | date_sort -%}
-        {%- elsif page.collection == 'likes' -%}
+            {%- assign posts_to_check = site.categories.bookmark | date_sort | reverse -%}
+        {%- elsif page.categories contains 'like' -%}
             f
-            {%- assign posts_to_check = site.likes | date_sort -%}
-        {%- elsif page.collection == 'pens' -%}
+            {%- assign posts_to_check = site.categories.like | date_sort | reverse -%}
+        {%- elsif page.categories contains 'pen' -%}
             c
-            {%- assign posts_to_check = site.pens | date_sort -%}
-        {%- elsif page.collection == 'notes' -%}
+            {%- assign posts_to_check = site.categories.pen | date_sort | reverse -%}
+        {%- elsif page.categories contains 'note' -%}
             t
-            {%- assign posts_to_check = site.notes | date_sort -%}
-        {%- elsif page.collection == 'music' -%}
+            {%- assign posts_to_check = site.categories.note | date_sort | reverse -%}
+        {%- elsif page.categories contains 'music' -%}
             m
-            {%- assign posts_to_check = site.music | date_sort -%}
-        {%- elsif page.collection == 'books' -%}
+            {%- assign posts_to_check = site.categories.music | date_sort | reverse -%}
+        {%- elsif page.categories contains 'book' -%}
             r
-            {%- assign posts_to_check = site.books | date_sort -%}
-        {%- elsif page.collection == 'talks' -%}
+            {%- assign posts_to_check = site.categories.book | date_sort | reverse -%}
+        {%- elsif page.categories contains 'talk' -%}
             s
-            {%- assign posts_to_check = site.talks | date_sort -%}
+            {%- assign posts_to_check = site.categories.talk | date_sort | reverse -%}
         {%- endif -%}
         {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
         {%- assign s = "" -%}

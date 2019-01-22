@@ -9,6 +9,6 @@ lede: All of my recipes.
 category_path: '/recipes/'
 ---
 
-{% for page in site.recipes limit: site.feed_limit %}
+{% for page in site.categories.recipe limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

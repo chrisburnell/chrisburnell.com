@@ -9,7 +9,6 @@ lede: All of my likes.
 category_path: '/likes/'
 ---
 
-{%- assign likes = site.likes | sort: 'date' | reverse -%}
-{% for page in likes limit: site.feed_limit %}
+{% for page in site.categories.like limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}
