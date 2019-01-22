@@ -38,5 +38,6 @@ searchable: false
     CodePen:       https://codepen.io
     Disqus:        https://disqus.com
     Twitter:       https://dev.twitter.com
-    WebMention.io: https://webmention.io
+    Webmention.io: https://webmention.io
     Aperture:      https://aperture.p3k.io
+    Telegraph:     https://telegraph.p3k.io
