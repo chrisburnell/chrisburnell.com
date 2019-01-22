@@ -252,31 +252,31 @@
     {%- capture shorturl -%}
         {%- if page.categories contains 'article' -%}
             a
-            {%- assign posts_to_check = site.categories.article | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.article -%}
         {%- elsif page.categories contains 'beer' -%}
             b
-            {%- assign posts_to_check = site.categories.beer | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.beer -%}
         {%- elsif page.categories contains 'bookmark' -%}
             h
-            {%- assign posts_to_check = site.categories.bookmark | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.bookmark -%}
         {%- elsif page.categories contains 'like' -%}
             f
-            {%- assign posts_to_check = site.categories.like | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.like -%}
         {%- elsif page.categories contains 'pen' -%}
             c
-            {%- assign posts_to_check = site.categories.pen | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.pen -%}
         {%- elsif page.categories contains 'note' -%}
             t
-            {%- assign posts_to_check = site.categories.note | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.note -%}
         {%- elsif page.categories contains 'music' -%}
             m
-            {%- assign posts_to_check = site.categories.music | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.music -%}
         {%- elsif page.categories contains 'book' -%}
             r
-            {%- assign posts_to_check = site.categories.book | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.book -%}
         {%- elsif page.categories contains 'talk' -%}
             s
-            {%- assign posts_to_check = site.categories.talk | date_sort | reverse -%}
+            {%- assign posts_to_check = site.categories.talk -%}
         {%- endif -%}
         {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
         {%- assign s = "" -%}
