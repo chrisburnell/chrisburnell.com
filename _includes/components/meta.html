@@ -292,7 +292,7 @@
     {%- endcapture -%}
     {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
     {%- assign filtered_posts = site.emptyArray -%}
-    {%- for check in posts_to_check -%}
+    {%- for check in posts_to_check reversed -%}
         {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
         {%- if check_date == page_date -%}
             {%- assign filtered_posts = filtered_posts | push: check -%}
