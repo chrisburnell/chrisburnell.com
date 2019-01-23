@@ -37,6 +37,7 @@
             ctx.clearRect(0, 0, width, height);
             ctx.beginPath();
             ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
             ctx.moveTo(x, y);
             for (i = 0; i < total; i = i + 1) {
                 dX = x;
