@@ -35,13 +35,12 @@
 
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.categories %}
-
         {% include components/webmentions.html %}
         {% include components/comments.html %}
 
         <hr>
 
+        {% include components/buttons-list.html type='archives' include=page.categories.first %}
         {% include components/widget-browse-posts.html %}
 
     </article>

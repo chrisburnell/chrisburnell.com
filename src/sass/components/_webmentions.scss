@@ -130,3 +130,7 @@
         }
     }
 }
+
+hr + .webmentions[hidden] + hr {
+    display: none;
+}

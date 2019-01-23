@@ -23,14 +23,14 @@
             {%- assign url = link.type | prepend: '/' | append: '/' -%}
         {%- endif -%}
         {% if include.include %}
-            {% if include.include contains link.type or link.type == 'all' %}
+            {% if link.type contains include.include or include.include contains link.type or link.type == 'all' %}
                 <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
                     {% include_cached content/svg.html type=link.icon %}
                     {{ link.title }}
                 </a>
             {% endif %}
         {% elsif include.exclude %}
-            {% unless include.exclude contains link.type %}
+            {% unless link.type contains include.exclude or include.exclude contains link.type %}
                 <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
                     {% include_cached content/svg.html type=link.icon %}
                     {{ link.title }}

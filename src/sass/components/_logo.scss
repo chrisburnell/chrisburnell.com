@@ -23,10 +23,6 @@
         @include v(height, logo);
         transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
         transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
-
-        @include media("screen", "reduced-motion") {
-            @include transition(none);
-        }
     }
 
     &[href]:hover,

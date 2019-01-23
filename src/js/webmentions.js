@@ -80,7 +80,7 @@
         if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute("hidden") !== "true") {
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
-            WEBMENTIONS_BUTTON.parentNode.setAttribute("hidden", true);
+            WEBMENTIONS_BUTTON.setAttribute("hidden", true);
             WEBMENTIONS_BUTTON.removeEventListener("click", () => {});
         }
         WEBMENTIONS_SECTION.removeAttribute("hidden");

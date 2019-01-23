@@ -123,11 +123,6 @@ textarea {
 }
 
 // Reduced Motion
-@include media("reduced-motion") {
-    --animation-duration: 0;
-    --transition-duration-default: 0;
-    --transition-duration-long: 0;
-}
 * {
     @include media("reduced-motion") {
         animation: none !important;
