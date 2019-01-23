@@ -3,6 +3,9 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
+redirect_from:
+- /feed-book.xml
+- /feed-bookshelf.xml
 
 title: Bookshelf Feed
 lede: All of my bookshelf check-ins.
@@ -15,7 +18,7 @@ category_path: '/bookshelf/'
     {%- assign limit = limit | minus: 1 -%}
     {% include components/item-feed.html %}
 {% endfor %}
-{%- assign books = site.categories.book | where_exp: 'book', 'book.date' | date_sort | reverse -%}
+{%- assign books = site.categories.book | where_exp: 'book', 'book.date' -%}
 {% for page in books limit: limit %}
     {% include components/item-feed.html %}
 {% endfor %}

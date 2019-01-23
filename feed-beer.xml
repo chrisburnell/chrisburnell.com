@@ -3,6 +3,8 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
+redirect_from:
+- /feed-beers.xml
 
 title: Beer Feed
 lede: All of my beer check-ins.

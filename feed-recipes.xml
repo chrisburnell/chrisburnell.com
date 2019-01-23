@@ -3,6 +3,8 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
+redirect_from:
+- /feed-recipe.xml
 
 title: Recipes Feed
 lede: All of my recipes.

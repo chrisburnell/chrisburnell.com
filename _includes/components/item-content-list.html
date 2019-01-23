@@ -63,7 +63,7 @@
                     {%- if page.rsvp -%}
                         {%- assign content = content | prepend: '<span class="emoji">📅</span> ' -%}
                     {%- endif -%}
-                    {%- if content contains '<img' -%}
+                    {%- if page.content contains '<img' -%}
                         {%- assign content = content | prepend: '<span class="emoji">🖼️</span> ' -%}
                     {%- endif -%}
                     {{ content }}

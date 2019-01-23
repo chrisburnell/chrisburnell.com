@@ -3,15 +3,16 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
+redirect_from:
+- /feed-article.xml
 
 title: Articles Feed
 lede: All of my articles.
 category_path: '/articles/'
 ---
 
-{%- assign articles = site.categories.article | date_sort | reverse -%}
 {%- assign articles_without_replies = site.emptyArray -%}
-{%- for page in articles -%}
+{%- for page in site.categories.article -%}
     {%- if page.rsvp or page.in_reply_to.first == nil -%}
         {%- assign articles_without_replies = articles_without_replies | push: page -%}
     {%- endif -%}

@@ -40,14 +40,10 @@
             <summary>Book Review</summary>
         {% endif %}
     {% elsif page.categories contains 'beer' %}
-        {% if page.rating %}
-            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
-        {% else %}
-            <summary>Beer Review</summary>
-        {% endif %}
+        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% if page.location %}Drank at {{ page.location | xml_escape }}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
     {% elsif page.categories contains 'music' %}
         {%- if page.rating -%}
-            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
+            <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}

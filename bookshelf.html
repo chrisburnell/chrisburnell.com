@@ -17,7 +17,7 @@ sparkline: books
     {% for page in books_to_read %}
         {% include components/item-shelf.html %}
     {% endfor %}
-    {% assign books = site.categories.book | where_exp: 'book', 'book.date' | date_sort %}
+    {% assign books = site.categories.book | where_exp: 'book', 'book.date' %}
     {% for page in books %}
         {% include components/item-shelf.html %}
     {% endfor %}

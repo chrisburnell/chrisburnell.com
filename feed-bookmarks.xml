@@ -4,6 +4,7 @@ searchable: false
 sitemap:
   exclude: true
 redirect_from:
+- /feed-bookmark.xml
 - /feed-links.xml
 
 title: Bookmarks Feed

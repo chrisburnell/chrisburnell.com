@@ -3,6 +3,8 @@ layout: feed
 searchable: false
 sitemap:
   exclude: true
+redirect_from:
+- /feed-pen.xml
 
 title: Pens Feed
 lede: All of my pens.
