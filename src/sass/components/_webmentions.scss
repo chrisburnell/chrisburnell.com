@@ -66,10 +66,8 @@
 
 .webmentions__response__image {
     @include border-radius(50%);
-    width: auto;
-    @include v(max-width, avatar-small);
-    height: auto;
-    @include v(max-height, avatar-small);
+    @include v(width, avatar-small);
+    @include v(height, avatar-small);
     display: block;
 }
 

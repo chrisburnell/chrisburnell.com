@@ -147,6 +147,14 @@ defaults:
     hidden: true
 - scope:
     type: 'posts'
+    path: '_posts/movies'
+  values:
+    categories: 'movie'
+    h: 'review'
+    layout: 'review'
+    mf_property: 'watch-of'
+- scope:
+    type: 'posts'
     path: '_posts/music'
   values:
     categories: 'music'
@@ -165,9 +173,30 @@ defaults:
     categories: 'pen'
 - scope:
     type: 'posts'
+    path: '_posts/podcasts'
+  values:
+    categories: 'podcast'
+    h: 'review'
+    layout: 'review'
+    mf_property: 'listen-of'
+- scope:
+    type: 'posts'
+    path: '_posts/recipes'
+  values:
+    categories: 'recipe'
+- scope:
+    type: 'posts'
     path: '_posts/talks'
   values:
     categories: 'talk'
+- scope:
+    type: 'posts'
+    path: '_posts/tv'
+  values:
+    categories: 'tv'
+    h: 'review'
+    layout: 'review'
+    mf_property: 'watch-of'
 
 keep_files:
 - css
