@@ -5,6 +5,8 @@
     {%- assign link_clean = page.title | append: ' on Untappd' -%}
     {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
     {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
+{%- elsif page.categories contains 'music' -%}
+    {%- assign link_clean = page.title | append: ' on Spotify' -%}
 {%- endif -%}
 
 
