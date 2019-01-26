@@ -22,7 +22,7 @@
 {%- endif -%}
 <li role="listitem" class="h-review">
     {% if page.cover %}
-        {% unless page.categories contains 'beer' %}
+        {% unless page.categories contains 'beer' or page.categories contains 'movie' or page.categories contains 'tv' %}
             <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
                 {% include components/cover.html %}
             </a>
@@ -34,6 +34,8 @@
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
             {% elsif page.categories contains 'like' %}
                 <a href="{{ page.link }}" rel="external"><cite class="p-name">Liked: {{ page.link | remove: 'http://' | remove: 'https://' }}</cite></a>
+            {% elsif page.categories contains 'tv' %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
             {% else %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
             {% endif %}
@@ -79,7 +81,7 @@
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
         {% endif %}
         {% if page.rating %}
-            <data class="p-worst" hidden>1</data>
+            <data class="p-worst" hidden>0</data>
             <data class="p-best" hidden>5</data>
         {% endif %}
         {% if page.badges %}

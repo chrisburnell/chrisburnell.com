@@ -1,0 +1,23 @@
+---
+page_class: page--movies
+searchable: no-content
+
+title: Movies
+lede: Tracking what I watch.
+
+sparkline: movies
+---
+
+<ol class="shelf  h-feed" id="movies" role="list">
+    {% for page in site.categories.movie %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='movies' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='movies' %}

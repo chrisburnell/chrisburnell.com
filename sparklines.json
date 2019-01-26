@@ -35,6 +35,9 @@ limit_y: 12
   "likes": [
     {% include components/sparklines-json.html target=site.categories.like limit_y=page.limit_y starting_year=2018 starting_week=51 ending_year=ending_year ending_week=ending_week %}
   ],
+  "movies": [
+    {% include components/sparklines-json.html target=site.categories.movie limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
+  ],
   "music": [
     {% include components/sparklines-json.html target=site.categories.music limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ],
@@ -44,11 +47,17 @@ limit_y: 12
   "pens": [
     {% include components/sparklines-json.html target=site.categories.pen limit_y=page.limit_y starting_year=2013 starting_week=25 ending_year=ending_year ending_week=ending_week %}
   ],
+  "podcasts": [
+    {% include components/sparklines-json.html target=site.categories.podcast limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
+  ],
   "recipes": [
     0
     {% comment %}{% include components/sparklines-json.html target=site.categories.recipe limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}{% endcomment %}
   ],
   "talks": [
     {% include components/sparklines-json.html target=site.categories.talk limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
+  ],
+  "tv": [
+    {% include components/sparklines-json.html target=site.categories.tv limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ]
 }

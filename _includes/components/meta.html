@@ -1,27 +1,17 @@
 <div class="meta">
-    <time class="date  dt-published{% if page.categories contains 'note' %}  hidden{% endif %}" datetime="{{ page.date | date_to_xmlschema }}">
+    <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {% if page.categories contains 'beer' %}
             <span>drank on</span>
-        {% elsif page.categories contains 'book' or page.categories contains 'music' %}
-            <span>reviewed on</span>
         {% elsif page.categories contains 'like' %}
             <span>liked on</span>
+        {% elsif page.h == 'review' %}
+            <span>reviewed on</span>
         {% else %}
             <span>published on</span>
         {% endif %}
-        {% if page.url %}
-            <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}">
-        {% elsif page.shorturl %}
-            <a href="{{ page.shorturl | prepend: site.shorturl }}" title="Permalink: {{ page.shorturl | prepend: site.shorturl }}" rel="external  me">
-        {% else %}
-            <strong>
-        {% endif %}
-        {{ page.date | date_to_long_string }}
-        {% if page.url or page.shorturl %}
-            </a>
-        {% else %}
-            </strong>
-        {% endif %}
+        <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}">
+            {{ page.date | date_to_long_string }}
+        </a>
     </time>
     {% if page.edit_date %}
         <time class="date  dt-updated" datetime="{{ page.edit_date | date_to_xmlschema }}">
@@ -147,7 +137,7 @@
             {%- assign rating_fraction = page.rating | minus: rating_base -%}
             <span>I rate it</span>
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
-            <data class="p-worst" hidden>1</data>
+            <data class="p-worst" hidden>0</data>
             <data class="p-best" hidden>5</data>
         </div>
     {% endif %}
@@ -320,7 +310,7 @@
     {%- endfor -%}
     <div class="shorturl">
         <span>shorturl</span>
-        <a rel="" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
+        <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
     </div>
     <a href="https://fed.brid.gy/" hidden></a>
 </div>

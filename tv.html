@@ -1,0 +1,23 @@
+---
+page_class: page--tv
+searchable: no-content
+
+title: TV Shows
+lede: Tracking what I watch.
+
+sparkline: tv
+---
+
+<ol class="shelf  h-feed" id="tv" role="list">
+    {% for page in site.categories.tv %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-list.html type='feeds' include='tv' %}
+
+<hr>
+
+{% include components/buttons-list.html type='archives' exclude='tv' %}

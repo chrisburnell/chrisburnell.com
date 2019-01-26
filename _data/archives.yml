@@ -18,6 +18,10 @@
   type: likes
   icon: 'bullhorn'
 
+- title: Movies
+  type: movie
+  icon: 'bullhorn'
+
 - title: Music Reviews
   type: music
   icon: 'bullhorn'
@@ -30,12 +34,20 @@
   type: pens
   icon: 'codepen'
 
+- title: Podcasts
+  type: podcasts
+  icon: 'bullhorn'
+
 # - title: Recipes
 #   type: recipes
 #   icon: 'article'
 
 - title: Talks
   type: talks
+  icon: 'bullhorn'
+
+- title: TV
+  type: tv
   icon: 'bullhorn'
 
 - title: Tags
