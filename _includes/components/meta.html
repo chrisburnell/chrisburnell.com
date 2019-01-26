@@ -83,13 +83,6 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.tags.size > 0 %}
-        {% assign tags_sorted = page.tags | sort %}
-        <div class="tags">
-            <span>tagged under</span>
-            {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
-        </div>
-    {% endif %}
     {% if page.categories contains 'article' %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
@@ -116,6 +109,8 @@
                 <span>drank at</span>
             {% elsif page.categories contains 'talk' %}
                 <span>given at</span>
+            {% else %}
+                <span>at</span>
             {% endif %}
             {% if page.location_url %}
                 <a class="p-location" rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
@@ -160,6 +155,13 @@
                     {% unless forloop.first %}, {% endunless %}<strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
                 {%- endif -%}
             {% endfor %}
+        </div>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+        {% assign tags_sorted = page.tags | sort %}
+        <div class="tags">
+            <span>tagged under</span>
+            {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
         </div>
     {% endif %}
     {% if page.categories contains 'pen' and page.codepen_featured == true %}
