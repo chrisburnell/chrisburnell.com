@@ -23,23 +23,19 @@
 <li role="listitem" class="h-review">
     {% if page.cover %}
         {% unless page.categories contains 'beer' %}
-            {% if page.link %}
-                <a class="cover" href="{{ page.link }}" rel="external" title="{{ link_title }}">
-            {% endif %}
-            {% include components/cover.html %}
-            {% if page.link %}
-                </a>
-            {% endif %}
+            <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
+                {% include components/cover.html %}
+            </a>
         {% endunless %}
     {% endif %}
     <div class="h-cite  p-{{ page.mf_property }}">
         <h2 class="delta">
-            {% if page.link and page.categories contains 'beer' %}
-                <a href="{{ page.link }}" rel="external"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>
-            {% elsif page.link and page.categories contains 'like' %}
+            {% if page.categories contains 'beer' %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
+            {% elsif page.categories contains 'like' %}
                 <a href="{{ page.link }}" rel="external"><cite class="p-name">Liked: {{ page.link | remove: 'http://' | remove: 'https://' }}</cite></a>
             {% else %}
-                <cite class="p-name  p-summary">{{ page.title | strip_html }}</cite>
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
             {% endif %}
         </h2>
         <div>
@@ -58,9 +54,9 @@
             {%- endfor -%}
             {%- if page.date -%}
                 {%- if page.categories contains 'beer' -%}
-                    <div><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}"><a href="{{ page.url | absolute_url }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</a></time></div>
+                    <div><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</time></div>
                 {%- elsif page.categories contains 'like' -%}
-                    <span><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}"><small>on</small> <a href="{{ page.url | absolute_url }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</a></time></span>
+                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> {{ page.date | date: '%d %B %Y' }}</time></span>
                 {%- else -%}
                     <span> (<time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%Y' }}</time>)</span>
                 {%- endif -%}

@@ -37,7 +37,13 @@
     {% endif %}
     {% if page.authors %}
         <div class="authors">
-            <span>by</span>
+            {% if page.categories contains 'beer' %}
+                <span>brewed by</span>
+            {% elsif page.categories contains 'book' %}
+                <span>written by</span>
+            {% else %}
+                <span>by</span>
+            {% endif %}
             {% assign authors = page.authors | uniq %}
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
@@ -139,7 +145,7 @@
         <div>
             {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
             {%- assign rating_fraction = page.rating | minus: rating_base -%}
-            <span>rated</span>
+            <span>I rate it</span>
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
             <data class="p-worst" hidden>1</data>
             <data class="p-best" hidden>5</data>
