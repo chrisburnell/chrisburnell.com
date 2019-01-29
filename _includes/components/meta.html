@@ -2,8 +2,14 @@
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {% if page.categories contains 'beer' %}
             <span>drank on</span>
+        {% elsif page.categories contains 'food' %}
+            <span>ate on</span>
         {% elsif page.categories contains 'like' %}
             <span>liked on</span>
+        {% elsif page.categories contains 'movie' or page.categories contains 'tv' %}
+            <span>watched on</span>
+        {% elsif page.categories contains 'podcast' %}
+            <span>listened on</span>
         {% elsif page.h == 'review' %}
             <span>reviewed on</span>
         {% else %}

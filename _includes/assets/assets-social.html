@@ -3,9 +3,6 @@
 {% else %}
     <!-- The URL -->
     <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
-    {% if page.shorturl %}
-        <link rel="shortlink" href="{{ page.shorturl | prepend: site.shorturl }}">
-    {% endif %}
     {% if page.previous.url %}
         <link rel="prev" href="{{ page.previous.url }}">
     {% endif %}
