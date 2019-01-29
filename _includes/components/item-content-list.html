@@ -39,6 +39,8 @@
                     {% if page.banner or page.banner_mobile %}<span class="emoji">🖼️</span> {% endif %}{% if page.categories contains 'bookmark' %}<span class="emoji">🔖</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
                 {% elsif page.categories contains 'article' %}
                     Shared Article
+                {% elsif page.categories contains 'book' %}
+                    <span class="emoji">📖</span> Book
                 {% elsif page.categories contains 'bookmark' %}
                     <span class="emoji">🔖</span> Bookmark
                 {% elsif page.categories contains 'note' %}
@@ -68,7 +70,7 @@
                     {%- endif -%}
                     {{ content }}
                 {% elsif page.categories contains 'pen' %}
-                    <span class="emoji">✒️</span> Featured Pen
+                    <span class="emoji">✒️</span> Pen
                 {% elsif page.categories contains 'recipe' %}
                     <span class="emoji">📝</span> Recipe
                 {% elsif page.categories contains 'talk' %}
@@ -96,22 +98,23 @@
                         <data class="p-worst" hidden>0</data>
                         <data class="p-best" hidden>5</data>
                     {% endif %}
+                {% elsif page.categories contains 'food' %}
+                    <span class="emoji">🍛</span> Food
                 {% elsif page.categories contains 'like' %}
                     <span class="emoji">❤️</span> Like
+                {% elsif page.categories contains 'movie' %}
+                    <span class="emoji">🎬</span> Movie
+                {% elsif page.categories contains 'podcast' %}
+                    <span class="emoji">🎙</span> Podcast
+                {% elsif page.categories contains 'tv' %}
+                    <span class="emoji">📺</span> TV
                 {% endif %}
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
-        {% if page.categories contains 'beer' %}
-            <data class="u-pk-drank" hidden>{{ page.link }}</data>
-        {% elsif page.categories contains 'bookmark' %}
-            <data class="u-bookmark-of" hidden>{{ page.bookmark_of }}</data>
-        {% elsif page.categories contains 'book' %}
-            <data class="u-read-of" hidden>{{ page.link }}</data>
-        {% elsif page.categories contains 'like' %}
-            <data class="u-like-of" hidden>{{ page.link }}</data>
-        {% elsif page.categories contains 'music' %}
-            <data class="u-listen-of" hidden>{{ page.link }}</data>
+        {% if page.p %}
+            {%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+            <data class="u-{{ page.p }}" hidden>{{ link }}</data>
         {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </article>

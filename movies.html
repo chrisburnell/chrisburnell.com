@@ -2,6 +2,9 @@
 page_class: page--movies
 searchable: no-content
 
+redirect_from:
+- /movie/index.html
+
 title: Movies
 lede: Tracking what I watch.
 
@@ -16,8 +19,4 @@ sparkline: movies
 
 <hr>
 
-{% include components/buttons-list.html type='feeds' include='movies' %}
-
-<hr>
-
-{% include components/buttons-list.html type='archives' exclude='movies' %}
+{% include components/buttons-categories.html %}

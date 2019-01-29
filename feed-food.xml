@@ -1,0 +1,14 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Food Feed
+lede: All of my food check-ins.
+category_path: '/food/'
+---
+
+{% for page in site.categories.food limit: site.feed_limit %}
+    {% include components/item-feed.html %}
+{% endfor %}

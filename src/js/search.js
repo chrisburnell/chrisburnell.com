@@ -34,9 +34,9 @@
     <article class="h-entry" role="article">
         <a class="u-url" href="#">
             <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
-            <h3 class="delta  title  p-name">{{ title }}</h3>
+            <h3 class="delta  title  p-name"{{ hidden }}>{{ title }}</h3>
             <p class="lede  p-summary">{{ lede }}</p>
-            <time class="date  {{ date_class }}" datetime="{{ date_full }}">{{ date_friendly }}</time>
+            <time class="date" datetime="{{ date_full }}">{{ date_friendly }}</time>
         </a>
         <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
     </article>
@@ -164,13 +164,79 @@
             }
             if (item.categories) {
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
+
+                if (item.categories == "beer") {
+                    item.lede = `<span class="emoji">🍺</span> By ` + item.authors + ". " + (item.location ? "Drank at " + item.location + ".<br>" : "<br>") + item.rating;
+                }
+                else if (item.categories == "book") {
+                    item.lede = `<span class="emoji">📖</span> By ` + item.authors + "." + (item.rating ? "<br>" + item.rating : "");
+                }
+                else if (item.categories == "bookmark") {
+                    item.lede = `<span class="emoji">🔖</span> ${item.lede}`;
+                }
+                else if (item.categories == "music") {
+                    item.lede = `<span class="emoji">🎶</span> By ` + item.authors + ".<br>" + item.rating;
+                }
+                else if (item.categories == "like") {
+                    item.lede = '<span class="emoji">❤️</span> Like';
+                }
+                else if (item.categories == "food") {
+                    item.lede = '<span class="emoji">🍛</span> Food';
+                }
+                else if (item.categories == "movie") {
+                    item.lede = '<span class="emoji">🎬</span> Movie';
+                }
+                else if (item.categories == "podcast") {
+                    item.lede = '<span class="emoji">🎙</span> Podcast';
+                }
+                else if (item.categories == "recipe") {
+                    item.lede = '<span class="emoji">📝</span> Recipe';
+                }
+                else if (item.categories == "talk") {
+                    item.lede = '<span class="emoji">🗣</span> Talk';
+                    if (item.location) {
+                        item.lede += ` – Given at ${item.location}`;
+                    }
+                }
+                else if (item.categories == "tv") {
+                    item.lede = '<span class="emoji">📺</span> TV';
+                }
+            }
+            if (item.banner || item.cover || item.has_image) {
+                item.lede = `<span class="emoji">🖼️</span> ${item.lede}`;
+            }
+            if (item.rsvp) {
+                item.lede = `<span class="emoji">📅</span> ${item.lede}`;
+            }
+            if (item.in_reply_to) {
+                let reply;
+                if (item.in_reply_to.includes('mastodon.social')) {
+                    reply = `<span class="h-cite  u-in-reply-to">a Toot</span>`;
+                }
+                else if (item.in_reply_to.includes('twitter.com')) {
+                    if (item.in_reply_to.includes('/status/')) {
+                        reply = `<span class="h-cite  p-in-reply-to">@${item.in_reply_to.split('/status/')[0].split('twitter.com/')[1]}</span>`;
+                    }
+                    else {
+                        reply = `<span class="h-cite  p-in-reply-to">a Tweet</span>`;
+                    }
+                }
+                else if (item.in_reply_to.includes('hwclondon.co.uk')) {
+                    reply = `<span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>`;
+                }
+                else {
+                    reply = `<span class="h-cite  p-in-reply-to">${item.in_reply_to}</span>`;
+                }
+                item.lede = `<span class="emoji">↩️</span> In reply to: ${reply}<br>${item.lede}`;
             }
             if (item.tags) {
                 if (queryFormatted.substring(0, 4) == "tag:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
-                } else if (queryFormatted.substring(0, 5) == "tags:") {
+                }
+                else if (queryFormatted.substring(0, 5) == "tags:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                } else {
+                }
+                else {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }
@@ -231,6 +297,7 @@
         html = helpers.injectContent(html, "#", item.url);
 
         // ICON
+        html = helpers.injectContent(html, /{{\s*icon\s*}}/, "bullhorn");
         if (item.categories == "article") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "article");
         } else if (item.categories == "bookmark") {
@@ -239,8 +306,6 @@
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "feather");
         } else if (item.categories == "pen") {
             html = helpers.injectContent(html, /{{\s*icon\s*}}/, "codepen");
-        } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "bullhorn");
         }
 
         // TITLE
@@ -253,22 +318,12 @@
         // LEDE
         if (item.lede) {
             let ledeFormatted = item.lede
-                .replace(/(<([^>]+)>)/gi, "")
-                .split(/(?=\s)/gi)
-                .slice(0, 20)
-                .join("")
+                // .replace(/(<([^>]+)>)/gi, "")
+                // .split(/(?=\s)/gi)
+                // .slice(0, 20)
+                // .join("")
                 .replace(queryHighlightRegex, `<mark>$&</mark>`);
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
-        } else if (item.categories == "bookmark") {
-            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Link");
-        } else if (item.categories == "note") {
-            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Shared Note");
-        } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Featured Pen");
-        } else if (item.categories == "talk" && item.location) {
-            html = helpers.injectContent(html, /{{\s*lede\s*}}/, `Talk – Given at ${item.location}.`);
-        } else if (item.categories == "talk") {
-            html = helpers.injectContent(html, /{{\s*lede\s*}}/, "Talk");
         }
 
         // DATE
@@ -276,9 +331,9 @@
             html = helpers.injectContent(html, /{{\s*date_friendly\s*}}/, item.date_friendly);
 
             if (item.categories == "note") {
-                html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "  hidden");
+                html = helpers.injectContent(html, /{{\s*hidden\s*}}/, " hidden");
             } else {
-                html = helpers.injectContent(html, /{{\s*date_class\s*}}/, "");
+                html = helpers.injectContent(html, /{{\s*hidden\s*}}/, "");
             }
 
             html = helpers.injectContent(html, /{{\s*date_full\s*}}/, item.date);

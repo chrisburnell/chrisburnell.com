@@ -1,55 +1,69 @@
 - title: Articles
   type: articles
+  category: article
   icon: 'article'
 
 - title: Beer Reviews
   type: beer
+  category: beer
   icon: 'bullhorn'
 
 - title: Bookmarks
   type: bookmarks
+  category: bookmark
   icon: 'link'
 
-# - title: Bookshelf
-#   type: books
-#   icon: 'bullhorn'
+- title: Bookshelf
+  type: books
+  category: book
+  icon: 'bullhorn'
+
+- title: Food
+  type: food
+  category: food
+  icon: 'bullhorn'
 
 - title: Likes
   type: likes
+  category: like
   icon: 'bullhorn'
 
 - title: Movies
-  type: movie
+  type: movies
+  category: movie
   icon: 'bullhorn'
 
 - title: Music Reviews
   type: music
+  category: music
   icon: 'bullhorn'
 
 - title: Notes
   type: notes
+  category: note
   icon: 'feather'
 
 - title: Pens
   type: pens
+  category: pen
   icon: 'codepen'
 
 - title: Podcasts
   type: podcasts
+  category: podcast
   icon: 'bullhorn'
 
-# - title: Recipes
-#   type: recipes
-#   icon: 'article'
+- title: Recipes
+  type: recipes
+  category: recipe
+  icon: 'article'
 
 - title: Talks
   type: talks
+  category: talk
   icon: 'bullhorn'
 
 - title: TV
   type: tv
+  category: tv
   icon: 'bullhorn'
-
-- title: Tags
-  type: tags
-  icon: 'tag'

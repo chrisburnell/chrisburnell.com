@@ -1,0 +1,19 @@
+---
+page_class: page--food
+searchable: no-content
+
+title: Food
+lede: Tracking what I eat.
+
+sparkline: food
+---
+
+<ol class="shelf  h-feed" id="food" role="list">
+    {% for page in site.categories.food %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-categories.html %}

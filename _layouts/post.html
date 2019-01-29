@@ -1,11 +1,9 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.link.url | default: page.link -%}
-{%- assign link_clean = link | remove: 'http://' | remove: 'https://' -%}
 
 
 <main class="wrap  h-{{ page.h | default: 'entry' }}" role="main">
-    <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
+    <article class="content{% if page.p %}  p-{{ page.p }}{% endif %}" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
             {% unless page.reacji %}<span class="p-name">{% endunless %}
@@ -39,10 +37,10 @@
             </div>
         {% endif %}
 
-        {% if page.bookmark_of or page.link %}
+        {% if link %}
             <nav class="buttons-list" role="navigation">
-                {% assign title = page.bookmark_of.title | default: page.link.title | default: link_clean %}
-                <a class="button  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ title }}</a>
+                {% assign title = page.bookmark_of.title | default: page.like_of.title | default: page.link.title | default: link_clean %}
+                <a class="button  u-{{ page.p }}" href="{{ link }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 
@@ -79,7 +77,7 @@
 
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.categories.first %}
+        {% include components/buttons-categories.html %}
         {% include components/widget-browse-posts.html %}
 
     </article>

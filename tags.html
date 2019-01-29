@@ -2,6 +2,9 @@
 page_class: page--tags
 searchable: no-content
 
+redirect_from:
+- /tag/index.html
+
 title: Tags
 lede: A list of Tags and their counterpart prose.
 ---
@@ -17,12 +20,12 @@ lede: A list of Tags and their counterpart prose.
     <dt>Jump to a tag:</dt>
     <dd>
         {% for tag in tags_sorted %}
-            <a href="#{{ tag }}" title="Jump to all posts tagged under {{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+            <a href="#{{ tag }}" title="Jump to all posts tagged under {% include content/capitalizer.html input=tag %}">{% include content/capitalizer.html input=tag %}</a>{% unless forloop.last %}, {% endunless %}
         {% endfor %}
     </dd>
 </dl>
 {% for tag in tags_sorted %}
-    {% capture tag_name %}{{ tag }} <span class="tags-count">({{ site.tags[tag].size }})</span>{% endcapture %}
+    {% capture tag_name %}{% include content/capitalizer.html input=tag %} <small>({{ site.tags[tag].size }})</small>{% endcapture %}
     {% include_cached content/heading.html title=tag_name id=tag %}
     <ol class="content-list  h-feed" role="list">
         {% for page in site.tags[tag] %}
@@ -33,4 +36,4 @@ lede: A list of Tags and their counterpart prose.
 
 <hr>
 
-{% include components/buttons-list.html type='archives' exclude='tags' %}
+{% include components/buttons-categories.html %}

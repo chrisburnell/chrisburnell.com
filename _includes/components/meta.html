@@ -157,7 +157,7 @@
         {% assign tags_sorted = page.tags | sort %}
         <div class="tags">
             <span>tagged under</span>
-            {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
+            {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.html input=tag %}</a>{% endfor %}
         </div>
     {% endif %}
     {% if page.categories contains 'pen' and page.codepen_featured == true %}

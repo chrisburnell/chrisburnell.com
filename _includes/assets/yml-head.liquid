@@ -58,3 +58,15 @@
 {% assign meta_name = site.author.name | split: ' ' %}
 {% assign meta_first_name = meta_name[0] %}
 {% assign meta_last_name = meta_name[1] %}
+
+{% if page.collection == 'posts' %}
+    {%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+    {%- assign link_clean = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
+    {%- if page.categories contains 'beer' -%}
+        {%- assign link_clean = page.title | append: ' on Untappd' -%}
+        {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
+        {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
+    {%- elsif page.categories contains 'music' -%}
+        {%- assign link_clean = page.title | append: ' on Spotify' -%}
+    {%- endif -%}
+{% endif %}

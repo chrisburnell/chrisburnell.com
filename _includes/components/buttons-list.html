@@ -7,40 +7,47 @@
   @param {String} exclude
 
 {%- endcomment -%}
-{% if include.type == 'feeds' %}
-    {%- assign data = site.data.feeds -%}
-{% elsif include.type == 'archives' %}
-    {%- assign data = site.data.archives -%}
-{% endif %}
 <nav class="buttons-list" role="navigation">
     {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}
-    {% for link in data %}
-        {%- assign title = link.title | downcase -%}
-        {%- if include.type == 'feeds' -%}
-            {%- assign url = link.url -%}
-        {%- elsif include.type == 'archives' -%}
-            {%- assign url = link.type | prepend: '/' | append: '/' -%}
-        {%- endif -%}
-        {% if include.include %}
-            {% if link.type contains include.include or include.include contains link.type or link.type == 'all' %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                    {% include_cached content/svg.html type=link.icon %}
-                    {{ link.title }}
+    {%- assign categories = site.categories | sort -%}
+    {% if include.type == 'archive' %}
+        <a class="button" href="/archive/">
+            {% include_cached content/svg.html type='article' %}
+            Archive
+        </a>
+    {% else %}
+        {% for check in categories %}
+            {%- assign category_title = check[0] -%}
+            {%- assign category = site.data.categories | where: 'category', category_title | first -%}
+            {%- assign icon = category.icon -%}
+            {%- if include.type == 'feeds' -%}
+                {%- assign url = '/feed-' | append: category.type | append: '.xml' -%}
+                {%- assign rel = 'alternate' -%}
+                {%- assign icon = 'rss' -%}
+            {%- elsif include.type == 'archives' -%}
+                {%- assign url = '/' | append: category.type | append: '/' -%}
+            {%- endif -%}
+            {% if include.include %}
+                {% if include.include contains category.type %}
+                    <a class="button"{% if rel %} rel="{{ rel }}"{% endif %} href="{{ url }}">
+                        {% include_cached content/svg.html type=icon %}
+                        {{ category.title }}
+                    </a>
+                {% endif %}
+            {% elsif include.exclude %}
+                {% unless include.exclude contains category.type %}
+                    <a class="button"{% if rel %} rel="{{ rel }}"{% endif %} href="{{ url }}">
+                        {% include_cached content/svg.html type=icon %}
+                        {{ category.title }}
+                    </a>
+                {% endunless %}
+            {% else %}
+                <a class="button"{% if rel %} rel="{{ rel }}"{% endif %} href="{{ url }}">
+                    {% include_cached content/svg.html type=icon %}
+                    {{ category.title }}
                 </a>
             {% endif %}
-        {% elsif include.exclude %}
-            {% unless link.type contains include.exclude or include.exclude contains link.type %}
-                <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                    {% include_cached content/svg.html type=link.icon %}
-                    {{ link.title }}
-                </a>
-            {% endunless %}
-        {% else %}
-            <a class="button"{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ url }}">
-                {% include_cached content/svg.html type=link.icon %}
-                {{ link.title }}
-            </a>
-        {% endif %}
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 </nav>

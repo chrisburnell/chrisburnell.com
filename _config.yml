@@ -91,7 +91,7 @@ permalink: /:categories/:title/
 
 paginate: 16
 paginate_path: "/:num/"
-feed_limit: 25
+feed_limit: 24
 
 emptyArray: []
 
@@ -121,47 +121,62 @@ defaults:
     path: '_posts/beer'
   values:
     categories: 'beer'
-    h: 'review'
     layout: 'review'
-    mf_property: 'pk-drank'
+    h: 'review'
+    p: 'pk-drank'
+    hidden: true
 - scope:
     type: 'posts'
     path: '_posts/bookmarks'
   values:
     categories: 'bookmark'
-    mf_property: 'bookmark-of'
+    p: 'bookmark-of'
 - scope:
     type: 'posts'
     path: '_posts/books'
   values:
     categories: 'book'
-    h: 'review'
     layout: 'review'
-    mf_property: 'read-of'
+    h: 'review'
+    p: 'read-of'
+    ignore: true
+- scope:
+    type: 'posts'
+    path: '_posts/food'
+  values:
+    categories: 'food'
+    layout: 'review'
+    h: 'review'
+    p: 'pk-ate'
+    hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/likes'
   values:
     categories: 'like'
-    mf_property: 'like-of'
+    p: 'like-of'
     hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/movies'
   values:
     categories: 'movie'
-    h: 'review'
     layout: 'review'
-    mf_property: 'watch-of'
+    h: 'review'
+    p: 'watch-of'
     hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/music'
   values:
     categories: 'music'
-    h: 'review'
     layout: 'review'
-    mf_property: 'listen-of'
+    h: 'review'
+    p: 'listen-of'
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/notes'
@@ -172,15 +187,17 @@ defaults:
     path: '_posts/pens'
   values:
     categories: 'pen'
+    comments: codepen
 - scope:
     type: 'posts'
     path: '_posts/podcasts'
   values:
     categories: 'podcast'
-    h: 'review'
     layout: 'review'
-    mf_property: 'listen-of'
+    h: 'review'
+    p: 'listen-of'
     hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/recipes'
@@ -196,10 +213,11 @@ defaults:
     path: '_posts/tv'
   values:
     categories: 'tv'
-    h: 'review'
     layout: 'review'
-    mf_property: 'watch-of'
+    h: 'review'
+    p: 'watch-of'
     hidden: true
+    ignore: true
 
 keep_files:
 - css

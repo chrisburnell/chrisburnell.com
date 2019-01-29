@@ -32,6 +32,22 @@ searchable: false
         "categories": "{{ page.categories | join: ', ' }}",
         "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
           "location": "{{ page.location | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
+        {% endif %}{% if page.rating %}{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}{%- assign rating_fraction = page.rating | minus: rating_base -%},
+          "rating": "{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}"
+        {% endif %}{% if page.authors %},
+          "authors": "{% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}"
+        {% endif %}{% if page.in_reply_to %},
+          "in_reply_to": "{{ page.in_reply_to }}"
+        {% endif %}{% if page.rsvp %},
+          "rsvp": true
+        {% endif %}{% if page.badges %},
+          "badges": {{ page.badges.size }}
+        {% endif %}{% if page.banner %},
+          "banner": true
+        {% endif %}{% if page.cover %},
+          "cover": true
+        {% endif %}{% if page.content contains '<img' %},
+          "has_image": true
         {% endif %}{% unless page.searchable == 'no-content' %},
           "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
         {% endunless %}

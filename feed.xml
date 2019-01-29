@@ -11,7 +11,7 @@ category_path: ''
 
 {%- assign posts_without_replies = site.emptyArray -%}
 {%- for page in site.posts -%}
-    {%- unless page.categories contains 'like' or page.layout == 'review' -%}
+    {%- unless page.hidden or page.ignore -%}
         {%- if page.rsvp or page.in_reply_to.first == nil -%}
             {%- assign posts_without_replies = posts_without_replies | push: page -%}
         {%- endif -%}

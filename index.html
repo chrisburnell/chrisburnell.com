@@ -1,32 +1,28 @@
 ---
 page_class: page--home
 searchable: no-content
-
-redirect_from:
-- /archive/index.html
-- /archives/index.html
 ---
 
 {% if paginator.page == 1 %}
     <dl>
         <dt><h2 class="delta"><a href="/articles/">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-articles" title="since 15 June 2013" class="sparkline" width="160" height="24"></canvas></dd>
+        <dd><canvas id="sparkline-articles" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         <dt><h2 class="delta"><a href="/notes/">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-notes" title="since 22 September 2017" class="sparkline" width="160" height="24"></canvas></dd>
+        <dd><canvas id="sparkline-notes" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-bookmarks" title="since 05 January 2016" class="sparkline" width="160" height="24"></canvas></dd>
+        <dd><canvas id="sparkline-bookmarks" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         <dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-pens" title="since 17 June 2013" class="sparkline" width="160" height="24"></canvas></dd>
+        <dd><canvas id="sparkline-pens" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.categories.like.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-likes" class="sparkline" width="160" height="24"></canvas></dd-->
+        <dd><canvas id="sparkline-likes" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd-->
         <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-talks" class="sparkline" width="160" height="24"></canvas></dd-->
+        <dd><canvas id="sparkline-talks" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd-->
         <!--dt><h2 class="delta"><a href="/recipes/">Recipes <small>({{ site.categories.recipe.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-recipes" class="sparkline" width="160" height="24"></canvas></dd-->
+        <dd><canvas id="sparkline-recipes" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd-->
         <!--dt><h2 class="delta"><a href="/bookshelf/">Bookshelf <small>({{ site.categories.book.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-books" class="sparkline" width="160" height="24"></canvas></dd-->
+        <dd><canvas id="sparkline-books" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd-->
         <dt><h2 class="delta"><a href="/beer/">Beer Reviews <small>({{ site.categories.beer.size }})<small></a></h2></dt>
-        <dd><canvas id="sparkline-beer" title="since 09 November 2018" class="sparkline" width="160" height="24"></canvas></dd>
+        <dd><canvas id="sparkline-beer" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         <dt><h2 class="delta"><a href="/music/">Music Reviews <small>({{ site.categories.music.size }})<small></a></h2></dt>
         <dd><canvas id="sparkline-music" title="over 26 weeks" class="sparkline" width="160" height="24"></canvas></dd>
         {% include components/lastfm.html %}
@@ -34,7 +30,7 @@ redirect_from:
 
     {%- assign posts_without_replies = site.emptyArray -%}
     {%- for page in site.posts -%}
-        {%- unless page.in_reply_to.first contains 'twitter' or page.in_reply_to.first contains 'mastodon' or page.categories contains 'like' -%}
+        {%- unless page.ignore or page.in_reply_to.first contains 'twitter' or page.in_reply_to.first contains 'mastodon' -%}
             {%- assign posts_without_replies = posts_without_replies | push: page -%}
         {%- endunless -%}
     {%- endfor -%}
@@ -56,4 +52,4 @@ redirect_from:
 
 <hr>
 
-{% include components/buttons-list.html type='archives' include='articles bookmarks notes pens beer music tags' %}
+{% include components/buttons-categories.html %}

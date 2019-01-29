@@ -7,11 +7,12 @@
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
+{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 <entry>
     {% if page.categories contains 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
     {% elsif page.categories contains 'like' %}
-        <title>{{ page.link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
+        <title>{{ link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
@@ -28,7 +29,7 @@
     {% elsif page.categories contains 'note' %}
         <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
     {% elsif page.categories contains 'pen' %}
-        <summary>Featured Pen</summary>
+        <summary>Pen</summary>
     {% elsif page.categories contains 'recipe' %}
         <summary>Recipe</summary>
     {% elsif page.categories contains 'talk' %}
@@ -49,7 +50,7 @@
         {%- endif -%}
     {% endif %}
     {% if page.categories %}
-        <category term="{{ page.categories | join: ', ' | downcase | xml_escape }}" />
+        <category term="{{ page.categories | default: 'draft' | join: ', ' | downcase | xml_escape }}" />
     {% endif %}
     {% if page.collection and page.collection != "posts" %}
         <category term="{{ page.collection | downcase | xml_escape }}" />

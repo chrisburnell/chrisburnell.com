@@ -1,0 +1,22 @@
+---
+page_class: page--tv
+searchable: no-content
+
+redirect_from:
+- /podcast/index.html
+
+title: Podcasts
+lede: Tracking what I listen to.
+
+sparkline: podcasts
+---
+
+<ol class="shelf  h-feed" id="podcasts" role="list">
+    {% for page in site.categories.podcast %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-categories.html %}

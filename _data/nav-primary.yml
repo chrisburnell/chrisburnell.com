@@ -1,11 +1,8 @@
 - title: About
   url: '/about/'
 
-- title: Articles
-  url: '/articles/'
-
-- title: Notes
-  url: '/notes/'
+- title: Archive
+  url: '/archive/'
 
 - title: Search
   url: '/search/'

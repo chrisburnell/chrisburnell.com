@@ -4,7 +4,6 @@ date: 2013-06-17 12:00:00
 title: Persistent Light Source Transform
 
 codepen_slug: mglHp
-comments: codepen
 ---
 
 

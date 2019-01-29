@@ -31,12 +31,10 @@
             </div>
         {% endif %}
 
-        {% if page.bookmark_of %}
+        {% if link %}
             <nav class="buttons-list" role="navigation">
-                {% assign url = page.bookmark_of.url | default: page.bookmark_of %}
-                {% assign url_root = url | remove: 'http://' | remove: 'https://' | split: '/' | first %}
-                {% assign title = page.bookmark_of.title | default: url_root %}
-                <a class="button" href="{{ url }}" rel="external">{{ title }}</a>
+                {% assign title = page.bookmark_of.title | default: page.like_of.title | default: page.link.title | default: link_clean %}
+                <a class="button  u-{{ page.p }}" href="{{ link }}" rel="external">{{ title }}</a>
             </nav>
         {% endif %}
 

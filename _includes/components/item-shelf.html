@@ -3,9 +3,10 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
-{%- if page.link contains 'amazon' -%}
+{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- if link contains 'amazon' -%}
     {%- assign link_title = page.title | append: ' on Amazon' -%}
-{%- elsif page.link contains 'spotify' %}
+{%- elsif link contains 'spotify' %}
     {%- assign link_title = page.title | append: ' on Spotify' -%}
 {%- endif -%}
 {%- if page.rating -%}
@@ -28,16 +29,16 @@
             </a>
         {% endunless %}
     {% endif %}
-    <div class="h-cite  p-{{ page.mf_property }}">
+    <div class="h-cite{% if page.p %}  p-{{ page.p }}{% endif %}">
         <h2 class="delta">
             {% if page.categories contains 'beer' %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
             {% elsif page.categories contains 'like' %}
-                <a href="{{ page.link }}" rel="external"><cite class="p-name">Liked: {{ page.link | remove: 'http://' | remove: 'https://' }}</cite></a>
+                <a href="{{ link }}" rel="external"><cite class="p-name">Liked: {{ link | remove: 'http://' | remove: 'https://' }}</cite></a>
             {% elsif page.categories contains 'tv' %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
             {% else %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if page.link %} <a href="{{ page.link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
             {% endif %}
         </h2>
         <div>
@@ -96,7 +97,9 @@
         {% if page.categories contains 'book' and page.finish %}
             <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        <data class="u-{{ page.mf_property }}" hidden>{{ page.bookmark_of | default: page.link }}</data>
+        {% if page.p %}
+            <data class="u-{{ page.p }}" hidden>{{ link }}</data>
+        {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </div>
 </li>

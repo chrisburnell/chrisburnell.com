@@ -1,0 +1,32 @@
+{%- comment -%}
+
+  Generates a Buttons List from the current category
+
+  @param {String} category *
+
+{%- endcomment -%}
+<nav class="buttons-list" role="navigation">
+    {% include components/webmentions-button.html %}
+    {% include components/comments-button.html %}
+    {% if page.categories %}
+        {%- assign metadata = site.data.categories | where: 'category', page.categories.first | first -%}
+    {% elsif page.sparkline %}
+        {%- assign metadata = site.data.categories | where: 'type', page.sparkline | first -%}
+    {% endif %}
+    <a class="button" href="/archive/">
+        {% include_cached content/svg.html type='article' %}
+        Archive
+    </a>
+    {% if page.categories %}
+        <a class="button" href="/{{ metadata.type }}/">
+            {% include_cached content/svg.html type=metadata.icon %}
+            {{ metadata.title }}
+        </a>
+    {% endif %}
+    {% if metadata %}
+        <a class="button" rel="alternate" href="/feed-{{ metadata.type }}.xml">
+            {% include_cached content/svg.html type='rss' %}
+            {{ metadata.title }}
+        </a>
+    {% endif %}
+</nav>

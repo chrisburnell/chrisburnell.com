@@ -1,17 +1,9 @@
 {% include components/head.html %}
 {% include components/header.html %}
-{%- assign link_clean = page.link | remove: 'http://' | remove: 'https://' -%}
-{%- if page.categories contains 'beer' -%}
-    {%- assign link_clean = page.title | append: ' on Untappd' -%}
-    {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
-    {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
-{%- elsif page.categories contains 'music' -%}
-    {%- assign link_clean = page.title | append: ' on Spotify' -%}
-{%- endif -%}
 
 
 <main class="wrap  h-{{ page.h | default: 'entry' }}" role="main">
-    <article class="content  p-{{ page.mf_property }}" id="content" role="document">
+    <article class="content  p-{{ page.p }}" id="content" role="document">
 
         <h1 class="title  p-name" role="heading">
             {{ page.title | strip_html }}
@@ -26,11 +18,11 @@
             <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
         {% endif %}
 
-        {% if page.link %}
+        {% if link %}
             <div class="content__body">
                 <nav class="buttons-list" role="navigation">
-                    <a class="p-item  h-product" href="{{ page.link }}" hidden>{{ page.title | strip_html }}</a>
-                    <a class="button  u-{{ page.mf_property }}" href="{{ page.link }}" rel="external">{{ page.link.title | default: link_clean }}</a>
+                    <a class="p-item  h-product" href="{{ link }}" hidden>{{ page.title | strip_html }}</a>
+                    <a class="button  u-{{ page.p }}" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.link.title | default: link_clean }}</a>
                 </nav>
             </div>
         {% endif %}
@@ -44,7 +36,7 @@
 
         <hr>
 
-        {% include components/buttons-list.html type='archives' include=page.categories.first %}
+        {% include components/buttons-categories.html %}
         {% include components/widget-browse-posts.html %}
 
     </article>
