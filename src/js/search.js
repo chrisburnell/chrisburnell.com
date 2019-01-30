@@ -146,6 +146,10 @@
             if (item.lede) {
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
             }
+            else {
+                item.lede = item.categories.charAt(0).toUpperCase() + item.categories.slice(1);
+            }
+
             if (item.date || item.date_friendly) {
                 if (queryFormatted.substring(0, 5) == "date:") {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
@@ -166,40 +170,19 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `<span class="emoji">🍺</span> By ` + item.authors + ". " + (item.location ? "Drank at " + item.location + ".<br>" : "<br>") + item.rating;
+                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + ".<br>" : "<br>") + item.rating;
                 }
                 else if (item.categories == "book") {
-                    item.lede = `<span class="emoji">📖</span> By ` + item.authors + "." + (item.rating ? "<br>" + item.rating : "");
-                }
-                else if (item.categories == "bookmark") {
-                    item.lede = `<span class="emoji">🔖</span> ${item.lede}`;
+                    item.lede = `Book by ` + item.authors + "." + (item.rating ? "<br>" + item.rating : "");
                 }
                 else if (item.categories == "music") {
-                    item.lede = `<span class="emoji">🎶</span> By ` + item.authors + ".<br>" + item.rating;
-                }
-                else if (item.categories == "like") {
-                    item.lede = '<span class="emoji">❤️</span> Like';
-                }
-                else if (item.categories == "food") {
-                    item.lede = '<span class="emoji">🍛</span> Food';
-                }
-                else if (item.categories == "movie") {
-                    item.lede = '<span class="emoji">🎬</span> Movie';
-                }
-                else if (item.categories == "podcast") {
-                    item.lede = '<span class="emoji">🎙</span> Podcast';
-                }
-                else if (item.categories == "recipe") {
-                    item.lede = '<span class="emoji">📝</span> Recipe';
+                    item.lede = `Album by ` + item.authors + ".<br>" + item.rating;
                 }
                 else if (item.categories == "talk") {
-                    item.lede = '<span class="emoji">🗣</span> Talk';
+                    item.lede = 'Talk';
                     if (item.location) {
                         item.lede += ` – Given at ${item.location}`;
                     }
-                }
-                else if (item.categories == "tv") {
-                    item.lede = '<span class="emoji">📺</span> TV';
                 }
             }
             if (item.banner || item.cover || item.has_image) {
@@ -207,6 +190,9 @@
             }
             if (item.rsvp) {
                 item.lede = `<span class="emoji">📅</span> ${item.lede}`;
+            }
+            if (item.emoji) {
+                item.lede = `<span class="emoji">${item.emoji}</span> ${item.lede}`;
             }
             if (item.in_reply_to) {
                 let reply;

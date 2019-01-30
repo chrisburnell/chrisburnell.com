@@ -29,7 +29,9 @@ searchable: false
         {% elsif page.categories contains 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
-        "categories": "{{ page.categories | join: ', ' }}",
+        "categories": "{{ page.categories | join: ', ' }}"{%- assign category = site.data.categories | where: 'category', page.categories.first | first -%}{% if category.emoji %},
+          "emoji": "{{ category.emoji }}"
+        {% endif %},
         "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
           "location": "{{ page.location | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
         {% endif %}{% if page.rating %}{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}{%- assign rating_fraction = page.rating | minus: rating_base -%},

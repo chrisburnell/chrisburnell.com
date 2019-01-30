@@ -7,36 +7,43 @@
   type: beer
   category: beer
   icon: 'bullhorn'
+  emoji: '🍺'
 
 - title: Bookmarks
   type: bookmarks
   category: bookmark
   icon: 'link'
+  emoji: '🔖'
 
 - title: Bookshelf
   type: books
   category: book
   icon: 'bullhorn'
+  emoji: '📖'
 
 - title: Food
   type: food
   category: food
   icon: 'bullhorn'
+  emoji: '🍛'
 
 - title: Likes
   type: likes
   category: like
   icon: 'bullhorn'
+  emoji: '❤️'
 
 - title: Movies
   type: movies
   category: movie
   icon: 'bullhorn'
+  emoji: '🎬'
 
 - title: Music Reviews
   type: music
   category: music
   icon: 'bullhorn'
+  emoji: '🎶'
 
 - title: Notes
   type: notes
@@ -47,23 +54,28 @@
   type: pens
   category: pen
   icon: 'codepen'
+  emoji: '✒️'
 
 - title: Podcasts
   type: podcasts
   category: podcast
   icon: 'bullhorn'
+  emoji: '🎙'
 
 - title: Recipes
   type: recipes
   category: recipe
   icon: 'article'
+  emoji: '📝'
 
 - title: Talks
   type: talks
   category: talk
   icon: 'bullhorn'
+  emoji: '🗣'
 
 - title: TV
   type: tv
   category: tv
   icon: 'bullhorn'
+  emoji: '📺'

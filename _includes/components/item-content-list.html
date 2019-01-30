@@ -12,7 +12,7 @@
 <li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="{{ page.url }}">
-            {% if page.categories contains 'article' %}
+            {% if page.categories contains 'article' or page.categories contains 'recipe' %}
                 {% include_cached content/svg.html type='article' %}
             {% elsif page.categories contains 'bookmark' %}
                 {% include_cached content/svg.html type='link' %}
@@ -20,14 +20,10 @@
                 {% include_cached content/svg.html type='feather' %}
             {% elsif page.categories contains 'pen' %}
                 {% include_cached content/svg.html type='codepen' %}
-            {% elsif page.categories contains 'recipe' %}
-                {% include_cached content/svg.html type='article' %}
-            {% elsif page.categories contains 'beer' or page.categories contains 'book' or page.categories contains 'music' %}
-                {% include_cached content/svg.html type='bullhorn' %}
-            {% elsif page.categories contains 'talk' %}
+            {% else %}
                 {% include_cached content/svg.html type='bullhorn' %}
             {% endif %}
-            <h3 class="delta  title  p-name"{% if page.categories contains 'note' %} hidden tabindex="-1"{% endif %}>
+            <h3 class="delta  title  p-name"{% if page.categories contains 'note' %} hidden{% endif %}>
                 {% if page.categories contains 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
@@ -35,79 +31,63 @@
                 {% endif %}
             </h3>
             <p class="lede  p-summary">
-                {% if page.lede %}
-                    {% if page.banner or page.banner_mobile %}<span class="emoji">🖼️</span> {% endif %}{% if page.categories contains 'bookmark' %}<span class="emoji">🔖</span> {% endif %}{{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.categories contains 'article' %}
-                    Shared Article
-                {% elsif page.categories contains 'book' %}
-                    <span class="emoji">📖</span> Book
-                {% elsif page.categories contains 'bookmark' %}
-                    <span class="emoji">🔖</span> Bookmark
-                {% elsif page.categories contains 'note' %}
-                    {% if page.in_reply_to.first %}
-                        <span class="emoji">↩️</span> In reply to:
-                        {% if page.in_reply_to.first contains 'mastodon.social' %}
-                            <span class="h-cite  u-in-reply-to">a Toot</span>
-                        {% elsif page.in_reply_to.first contains 'twitter.com' %}
-                            {% if page.in_reply_to.first contains '/status/' %}
-                                <span class="h-cite  p-in-reply-to">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</span>
-                            {% else %}
-                                <span class="h-cite  p-in-reply-to">a Tweet</span>
-                            {% endif %}
-                        {% elsif page.in_reply_to.first contains 'hwclondon.co.uk' %}
-                            <span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>
+                {% if page.in_reply_to.first %}
+                    <span class="emoji">↩️</span> In reply to:
+                    {% if page.in_reply_to.first contains 'mastodon.social' %}
+                        <span class="h-cite  u-in-reply-to">a Toot</span>
+                    {% elsif page.in_reply_to.first contains 'twitter.com' %}
+                        {% if page.in_reply_to.first contains '/status/' %}
+                            <span class="h-cite  p-in-reply-to">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</span>
                         {% else %}
-                            <span class="h-cite  p-in-reply-to">{{ page.in_reply_to.first }}</span>
+                            <span class="h-cite  p-in-reply-to">a Tweet</span>
                         {% endif %}
-                        <br>
+                    {% elsif page.in_reply_to.first contains 'hwclondon.co.uk' %}
+                        <span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>
+                    {% else %}
+                        <span class="h-cite  p-in-reply-to">{{ page.in_reply_to.first }}</span>
                     {% endif %}
+                    <br>
+                {% endif %}
+                {% assign category = site.data.categories | where: 'category', page.categories.first | first %}
+                {% if category.emoji %}
+                    <span class="emoji">{{ category.emoji }}</span>
+                {% endif %}
+                {% if page.rsvp %}
+                    <span class="emoji">📅</span>
+                {% endif %}
+                {% if page.banner or page.banner_mobile or page.cover or page.content contains '<img' %}
+                    <span class="emoji">🖼️</span>
+                {% endif %}
+                {% if page.lede %}
+                    {{ page.lede | strip_html | truncatewords: 20 }}
+                {% elsif page.categories contains 'note' %}
                     {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
-                    {%- if page.rsvp -%}
-                        {%- assign content = content | prepend: '<span class="emoji">📅</span> ' -%}
-                    {%- endif -%}
-                    {%- if page.content contains '<img' -%}
-                        {%- assign content = content | prepend: '<span class="emoji">🖼️</span> ' -%}
-                    {%- endif -%}
                     {{ content }}
-                {% elsif page.categories contains 'pen' %}
-                    <span class="emoji">✒️</span> Pen
-                {% elsif page.categories contains 'recipe' %}
-                    <span class="emoji">📝</span> Recipe
-                {% elsif page.categories contains 'talk' %}
-                    <span class="emoji">🗣</span> Talk{% if page.location %} – Given at {{ page.location }}{% endif %}
-                {% elsif page.categories contains 'beer' or page.categories contains 'music' %}
-                    {% if page.authors %}
-                        {% if page.categories contains 'beer' %}
-                            {% if page.cover %}<span class="emoji">🖼️</span> {% endif %}<span class="emoji">🍺</span> Beer by
-                        {% elsif page.categories contains 'music' %}
-                            <span class="emoji">🎶</span> Album by
-                        {% endif %}
-                        {% assign authors = page.authors | uniq %}
-                        {%- for author in authors -%}
-                            {% unless forloop.first %}, {% endunless %}
-                            {{ author | strip }}
-                        {%- endfor -%}
-                    {% endif %}
-                    {%- if page.badges -%}
-                        <data value="{{ page.badges.size }}"> (earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %})</data>
-                    {%- endif -%}
-                    {% if page.rating %}
-                        {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
-                        {%- assign rating_fraction = page.rating | minus: rating_base -%}
-                        <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
-                        <data class="p-worst" hidden>0</data>
-                        <data class="p-best" hidden>5</data>
-                    {% endif %}
-                {% elsif page.categories contains 'food' %}
-                    <span class="emoji">🍛</span> Food
-                {% elsif page.categories contains 'like' %}
-                    <span class="emoji">❤️</span> Like
-                {% elsif page.categories contains 'movie' %}
-                    <span class="emoji">🎬</span> Movie
-                {% elsif page.categories contains 'podcast' %}
-                    <span class="emoji">🎙</span> Podcast
-                {% elsif page.categories contains 'tv' %}
-                    <span class="emoji">📺</span> TV
+                {% elsif page.categories contains 'music' %}
+                    Album
+                {% else %}
+                    {% include content/capitalizer.html input=page.categories.first %}
+                {% endif %}
+                {% if page.categories contains 'talk' and page.location %}
+                    — Given at {{ page.location }}
+                {% endif %}
+                {% if page.authors %}
+                    by
+                    {%- assign authors = page.authors | uniq -%}
+                    {%- for author in authors -%}
+                        {% unless forloop.first %}, {% endunless %}
+                        {{ author | strip }}
+                    {%- endfor -%}
+                {% endif %}
+                {%- if page.badges -%}
+                    <data value="{{ page.badges.size }}"> (earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %})</data>
+                {%- endif -%}
+                {% if page.rating %}
+                    {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+                    {%- assign rating_fraction = page.rating | minus: rating_base -%}
+                    <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
+                    <data class="p-worst" hidden>0</data>
+                    <data class="p-best" hidden>5</data>
                 {% endif %}
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>

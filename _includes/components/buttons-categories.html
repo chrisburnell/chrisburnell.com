@@ -15,18 +15,18 @@
     {% endif %}
     <a class="button" href="/archive/">
         {% include_cached content/svg.html type='article' %}
-        Archive
+        Full Archive
     </a>
     {% if page.categories %}
         <a class="button" href="/{{ metadata.type }}/">
             {% include_cached content/svg.html type=metadata.icon %}
-            {{ metadata.title }}
+            {{ metadata.title }} Archive
         </a>
     {% endif %}
     {% if metadata %}
         <a class="button" rel="alternate" href="/feed-{{ metadata.type }}.xml">
             {% include_cached content/svg.html type='rss' %}
-            {{ metadata.title }}
+            {{ metadata.title }} Atom Feed
         </a>
     {% endif %}
 </nav>
