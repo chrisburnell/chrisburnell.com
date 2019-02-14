@@ -7,9 +7,9 @@
 
         <h1 class="title" id="article" role="heading">
             {% unless page.reacji %}<span class="p-name">{% endunless %}
-                {% if page.categories contains 'like' %}
+                {% if page.categories == 'like' %}
                     Liked a page on: {{ link_clean | split: '/' | first }}
-                {% elsif page.categories contains 'note' %}
+                {% elsif page.categories == 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}

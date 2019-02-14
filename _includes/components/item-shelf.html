@@ -13,7 +13,7 @@
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
-{%- if page.categories contains 'book' -%}
+{%- if page.categories == 'book' -%}
     {%- assign read_status = 'to-read' -%}
     {%- if page.finish -%}
         {%- assign read_status = 'finished' -%}
@@ -23,7 +23,7 @@
 {%- endif -%}
 <li role="listitem" class="h-review">
     {% if page.cover %}
-        {% unless page.categories contains 'beer' or page.categories contains 'movie' or page.categories contains 'tv' %}
+        {% unless page.categories == 'beer' or page.categories == 'movie' or page.categories == 'tv' %}
             <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
                 {% include components/cover.html %}
             </a>
@@ -31,11 +31,11 @@
     {% endif %}
     <div class="h-cite{% if page.p %}  p-{{ page.p }}{% endif %}">
         <h2 class="delta">
-            {% if page.categories contains 'beer' %}
+            {% if page.categories == 'beer' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
-            {% elsif page.categories contains 'like' %}
+            {% elsif page.categories == 'like' %}
                 <a href="{{ link }}" rel="external"><cite class="p-name">Liked: {{ link | remove: 'http://' | remove: 'https://' }}</cite></a>
-            {% elsif page.categories contains 'tv' %}
+            {% elsif page.categories == 'tv' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
             {% else %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
@@ -56,9 +56,9 @@
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}
-                {%- if page.categories contains 'beer' -%}
+                {%- if page.categories == 'beer' -%}
                     <div><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</time></div>
-                {%- elsif page.categories contains 'like' -%}
+                {%- elsif page.categories == 'like' -%}
                     <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> {{ page.date | date: '%d %B %Y' }}</time></span>
                 {%- else -%}
                     <span> (<time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%Y' }}</time>)</span>
@@ -91,10 +91,10 @@
         {% if page.isbn %}
             <strong{% if read_status == 'finished' %} hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}
-        {% if page.categories contains 'book' and page.date %}
+        {% if page.categories == 'book' and page.date %}
             <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" hidden>{{ page.date | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        {% if page.categories contains 'book' and page.finish %}
+        {% if page.categories == 'book' and page.finish %}
             <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if page.p %}

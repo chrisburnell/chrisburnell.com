@@ -26,7 +26,7 @@ searchable: false
         "date_friendly": "{{ page.date | date_to_long_string }}",
         {% if page.lede %}
           "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
-        {% elsif page.categories contains 'note' %}
+        {% elsif page.categories == 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
         "categories": "{{ page.categories | join: ', ' }}"{%- assign category = site.data.categories | where: 'category', page.categories.first | first -%}{% if category.emoji %},

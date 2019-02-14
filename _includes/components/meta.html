@@ -1,15 +1,17 @@
 <div class="meta">
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {% if page.categories contains 'beer' %}
+        {% if page.categories == 'beer' %}
             <span>drank on</span>
-        {% elsif page.categories contains 'food' %}
+        {% elsif page.categories == 'food' %}
             <span>ate on</span>
-        {% elsif page.categories contains 'like' %}
+        {% elsif page.categories == 'like' %}
             <span>liked on</span>
-        {% elsif page.categories contains 'movie' or page.categories contains 'tv' %}
+        {% elsif page.categories == 'movie' or page.categories == 'tv' %}
             <span>watched on</span>
-        {% elsif page.categories contains 'podcast' %}
+        {% elsif page.categories == 'podcast' %}
             <span>listened on</span>
+        {% elsif page.categories == 'book' %}
+            <span>started reading on</span>
         {% elsif page.h == 'review' %}
             <span>reviewed on</span>
         {% else %}
@@ -33,9 +35,9 @@
     {% endif %}
     {% if page.authors %}
         <div class="authors">
-            {% if page.categories contains 'beer' %}
+            {% if page.categories == 'beer' %}
                 <span>brewed by</span>
-            {% elsif page.categories contains 'book' %}
+            {% elsif page.categories == 'book' %}
                 <span>written by</span>
             {% else %}
                 <span>by</span>
@@ -85,7 +87,7 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.categories contains 'article' %}
+    {% if page.categories == 'article' %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
         {% assign words = words | push: open_figure_splits[0] %}
@@ -107,9 +109,9 @@
     {% endif %}
     {% if page.location %}
         <div class="location">
-            {% if page.categories contains 'beer' %}
+            {% if page.categories == 'beer' %}
                 <span>drank at</span>
-            {% elsif page.categories contains 'talk' %}
+            {% elsif page.categories == 'talk' %}
                 <span>given at</span>
             {% else %}
                 <span>at</span>
@@ -166,7 +168,7 @@
             {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.html input=tag %}</a>{% endfor %}
         </div>
     {% endif %}
-    {% if page.categories contains 'pen' and page.codepen_featured == true %}
+    {% if page.categories == 'pen' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
@@ -260,31 +262,31 @@
         </div>
     {% endif %}
     {%- capture shorturl -%}
-        {%- if page.categories contains 'article' -%}
+        {%- if page.categories == 'article' -%}
             a
             {%- assign posts_to_check = site.categories.article -%}
-        {%- elsif page.categories contains 'beer' -%}
+        {%- elsif page.categories == 'beer' -%}
             b
             {%- assign posts_to_check = site.categories.beer -%}
-        {%- elsif page.categories contains 'bookmark' -%}
+        {%- elsif page.categories == 'bookmark' -%}
             h
             {%- assign posts_to_check = site.categories.bookmark -%}
-        {%- elsif page.categories contains 'like' -%}
+        {%- elsif page.categories == 'like' -%}
             f
             {%- assign posts_to_check = site.categories.like -%}
-        {%- elsif page.categories contains 'pen' -%}
+        {%- elsif page.categories == 'pen' -%}
             c
             {%- assign posts_to_check = site.categories.pen -%}
-        {%- elsif page.categories contains 'note' -%}
+        {%- elsif page.categories == 'note' -%}
             t
             {%- assign posts_to_check = site.categories.note -%}
-        {%- elsif page.categories contains 'music' -%}
+        {%- elsif page.categories == 'music' -%}
             m
             {%- assign posts_to_check = site.categories.music -%}
-        {%- elsif page.categories contains 'book' -%}
+        {%- elsif page.categories == 'book' -%}
             r
             {%- assign posts_to_check = site.categories.book -%}
-        {%- elsif page.categories contains 'talk' -%}
+        {%- elsif page.categories == 'talk' -%}
             s
             {%- assign posts_to_check = site.categories.talk -%}
         {%- endif -%}
