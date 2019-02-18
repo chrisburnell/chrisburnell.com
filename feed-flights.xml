@@ -1,0 +1,14 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Flights Feed
+lede: All of my flight check-ins.
+category_path: '/flights/'
+---
+
+{% for page in site.categories.flight limit: site.feed_limit %}
+    {% include components/item-feed.html %}
+{% endfor %}

@@ -9,9 +9,9 @@
 {%- endif -%}
 {%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 <entry>
-    {% if page.categories == 'note' %}
+    {% if page.category == 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
-    {% elsif page.categories == 'like' %}
+    {% elsif page.category == 'like' %}
         <title>{{ link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
     {% else %}
         <title>{{ page.title | xml_escape }}</title>
@@ -22,35 +22,35 @@
     <updated>{{ page.edit_date | default: page.finish | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
-    {% elsif page.categories == 'article' %}
+    {% elsif page.category == 'article' %}
         <summary>Shared Article</summary>
-    {% elsif page.categories == 'bookmark' %}
+    {% elsif page.category == 'bookmark' %}
         <summary>Bookmark</summary>
-    {% elsif page.categories == 'note' %}
+    {% elsif page.category == 'note' %}
         <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
-    {% elsif page.categories == 'pen' %}
+    {% elsif page.category == 'pen' %}
         <summary>Pen</summary>
-    {% elsif page.categories == 'recipe' %}
+    {% elsif page.category == 'recipe' %}
         <summary>Recipe</summary>
-    {% elsif page.categories == 'talk' %}
+    {% elsif page.category == 'talk' %}
         <summary>Talk{% if page.location %} – Given at {{ page.location | xml_escape }}{% endif %}</summary>
-    {% elsif page.categories == 'book' %}
+    {% elsif page.category == 'book' %}
         {% if page.rating %}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Book Review</summary>
         {% endif %}
-    {% elsif page.categories == 'beer' %}
+    {% elsif page.category == 'beer' %}
         <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% if page.location %}Drank at {{ page.location | xml_escape }}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
-    {% elsif page.categories == 'music' %}
+    {% elsif page.category == 'music' %}
         {%- if page.rating -%}
             <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}
     {% endif %}
-    {% if page.categories %}
-        <category term="{{ page.categories | default: 'draft' | join: ', ' | downcase | xml_escape }}" />
+    {% if page.category %}
+        <category term="{{ page.category | default: 'draft' | join: ', ' | downcase | xml_escape }}" />
     {% endif %}
     {% if page.collection and page.collection != "posts" %}
         <category term="{{ page.collection | downcase | xml_escape }}" />

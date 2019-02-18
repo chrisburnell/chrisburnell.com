@@ -8,8 +8,8 @@
 <nav class="buttons-list" role="navigation">
     {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}
-    {% if page.categories %}
-        {%- assign metadata = site.data.categories | where: 'category', page.categories.first | first -%}
+    {% if page.category %}
+        {%- assign metadata = site.data.categories | where: 'category', page.category | first -%}
     {% elsif page.sparkline %}
         {%- assign metadata = site.data.categories | where: 'type', page.sparkline | first -%}
     {% endif %}
@@ -17,7 +17,7 @@
         {% include_cached content/svg.html type='article' %}
         Full Archive
     </a>
-    {% if page.categories %}
+    {% if page.category %}
         <a class="button" href="/{{ metadata.type }}/">
             {% include_cached content/svg.html type=metadata.icon %}
             {{ metadata.title }} Archive

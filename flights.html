@@ -1,20 +1,20 @@
 ---
-page_class: page--notes
+page_class: page--flights
 searchable: no-content
 
 redirect_from:
-- /note/index.html
+- /flight/index.html
 
-title: Notes
-lede: All of my Notes.
+title: Flights
+lede: I hate flying. This is a record of my misery.
 
-sparkline: notes
+sparkline: flights
 ---
 
 
-<p><em>There are {{ site.categories.note | size }} published Notes.</em></p>
+<p><em>There are {{ site.categories.flight | size }} tracked Flights.</em></p>
 
-{% for page in site.categories.note %}
+{% for page in site.categories.flight %}
     {% assign page_year = page.date | date: '%Y' %}
 
     {% if page_year != current_year %}
@@ -23,7 +23,7 @@ sparkline: notes
             </ol>
         {% endunless %}
         {% include_cached content/heading.html title=page_year id=page_year %}
-        <ol class="content-list  h-feed" id="notes" role="list">
+        <ol class="content-list  h-feed" id="articles" role="list">
     {% endif %}
 
     {% include components/item-content-list.html %}

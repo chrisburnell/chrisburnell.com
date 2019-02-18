@@ -1,16 +1,18 @@
 <div class="meta">
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {% if page.categories == 'beer' %}
+        {% if page.category == 'beer' %}
             <span>drank on</span>
-        {% elsif page.categories == 'food' %}
+        {% elsif page.category == 'flight' %}
+            <span>departed on</span>
+        {% elsif page.category == 'food' %}
             <span>ate on</span>
-        {% elsif page.categories == 'like' %}
+        {% elsif page.category == 'like' %}
             <span>liked on</span>
-        {% elsif page.categories == 'movie' or page.categories == 'tv' %}
+        {% elsif page.category == 'movie' or page.category == 'tv' %}
             <span>watched on</span>
-        {% elsif page.categories == 'podcast' %}
+        {% elsif page.category == 'podcast' %}
             <span>listened on</span>
-        {% elsif page.categories == 'book' %}
+        {% elsif page.category == 'book' %}
             <span>started reading on</span>
         {% elsif page.h == 'review' %}
             <span>reviewed on</span>
@@ -21,6 +23,26 @@
             {{ page.date | date_to_long_string }}
         </a>
     </time>
+    {% if page.category == 'flight' %}
+        {% if page.finish %}
+            <time class="date  dt-arrived" datetime="{{ page.finish | date_to_xmlschema }}">
+                <span>arrived on</span>
+                <strong>{{ page.finish | date_to_long_string }}</strong>
+            </time>
+        {% endif %}
+        {% if page.depart %}
+            <div class="departure">
+                <span>departed from</span>
+                <strong>{{ page.depart | string_html }}</strong>
+            </div>
+        {% endif %}
+        {% if page.arrive %}
+            <div class="departure">
+                <span>arrived in</span>
+                <strong>{{ page.arrive | string_html }}</strong>
+            </div>
+        {% endif %}
+    {% endif %}
     {% if page.edit_date %}
         <time class="date  dt-updated" datetime="{{ page.edit_date | date_to_xmlschema }}">
             <span>updated on</span>
@@ -35,9 +57,9 @@
     {% endif %}
     {% if page.authors %}
         <div class="authors">
-            {% if page.categories == 'beer' %}
+            {% if page.category == 'beer' %}
                 <span>brewed by</span>
-            {% elsif page.categories == 'book' %}
+            {% elsif page.category == 'book' %}
                 <span>written by</span>
             {% else %}
                 <span>by</span>
@@ -87,7 +109,7 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.categories == 'article' %}
+    {% if page.category == 'article' %}
         {% assign words = site.emptyArray %}
         {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
         {% assign words = words | push: open_figure_splits[0] %}
@@ -109,9 +131,9 @@
     {% endif %}
     {% if page.location %}
         <div class="location">
-            {% if page.categories == 'beer' %}
+            {% if page.category == 'beer' %}
                 <span>drank at</span>
-            {% elsif page.categories == 'talk' %}
+            {% elsif page.category == 'talk' %}
                 <span>given at</span>
             {% else %}
                 <span>at</span>
@@ -168,7 +190,7 @@
             {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.html input=tag %}</a>{% endfor %}
         </div>
     {% endif %}
-    {% if page.categories == 'pen' and page.codepen_featured == true %}
+    {% if page.category == 'pen' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
@@ -262,31 +284,31 @@
         </div>
     {% endif %}
     {%- capture shorturl -%}
-        {%- if page.categories == 'article' -%}
+        {%- if page.category == 'article' -%}
             a
             {%- assign posts_to_check = site.categories.article -%}
-        {%- elsif page.categories == 'beer' -%}
+        {%- elsif page.category == 'beer' -%}
             b
             {%- assign posts_to_check = site.categories.beer -%}
-        {%- elsif page.categories == 'bookmark' -%}
+        {%- elsif page.category == 'bookmark' -%}
             h
             {%- assign posts_to_check = site.categories.bookmark -%}
-        {%- elsif page.categories == 'like' -%}
+        {%- elsif page.category == 'like' -%}
             f
             {%- assign posts_to_check = site.categories.like -%}
-        {%- elsif page.categories == 'pen' -%}
+        {%- elsif page.category == 'pen' -%}
             c
             {%- assign posts_to_check = site.categories.pen -%}
-        {%- elsif page.categories == 'note' -%}
+        {%- elsif page.category == 'note' -%}
             t
             {%- assign posts_to_check = site.categories.note -%}
-        {%- elsif page.categories == 'music' -%}
+        {%- elsif page.category == 'music' -%}
             m
             {%- assign posts_to_check = site.categories.music -%}
-        {%- elsif page.categories == 'book' -%}
+        {%- elsif page.category == 'book' -%}
             r
             {%- assign posts_to_check = site.categories.book -%}
-        {%- elsif page.categories == 'talk' -%}
+        {%- elsif page.category == 'talk' -%}
             s
             {%- assign posts_to_check = site.categories.talk -%}
         {%- endif -%}

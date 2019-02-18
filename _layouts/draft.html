@@ -6,7 +6,7 @@
 
         <h1 class="title" id="article" role="heading">
             <span class="p-name">
-                {% if page.categories == 'note' %}
+                {% if page.category == 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
@@ -48,4 +48,4 @@
 </main>
 
 
-{% include components/foot.html %}
+{% include_cached components/foot.html %}

@@ -21,6 +21,12 @@
   icon: 'bullhorn'
   emoji: '📖'
 
+- title: Flights
+  type: flights
+  category: flight
+  icon: 'bullhorn'
+  emoji: '✈️'
+
 - title: Food
   type: food
   category: food

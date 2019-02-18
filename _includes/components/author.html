@@ -26,7 +26,7 @@
 
     <div class="clear  author-biography">
         <p><span class="p-note">I’m a <span class="canada">Canadian</span> <span class="p-job-title">{{ site.author.employer.role }}</span> working for <a rel="external" href="{{ site.author.employer.url }}"><span class="p-org">{{ site.author.employer.name }}</span></a> and an <span class="p-role">Organiser</span> for <a rel="external" href="{{ site.urls.londonwebstandards }}"><span class="p-org">London Web Standards</span></a>. I’m driven by a passion for an open and welcoming web, and driving the standards that power it.</span> This is my personal website where I think, write, and share.</p>
-        <p>I also <a rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a rel="external  me  publisher" href="{{ site.urls.mastodon }}">toot drivel</a>, <a rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a href="/music/">listen to music (often)</a>, <a href="/beer/">enjoy beer</a>, <a href="/bookshelf/">read books</a>, and participate in <a href="https://indieweb.org/" rel="external">IndieWeb</a> if {{ author_biography_closer }}. <a href="/contact/">Get in touch.</a></p>
+        <p>I also <a rel="external  me  publisher" href="{{ site.urls.twitter }}">tweet nonsense</a>, <a rel="external  me  publisher" href="{{ site.urls.mastodon }}">toot drivel</a>, <a rel="external  me  publisher" href="{{ site.urls.codepen }}">pen code</a>, <a rel="external  me  publisher" href="{{ site.urls.github }}">commit code</a>, <a rel="external  me  publisher" href="{{ site.urls.speakerdeck }}">speak (on rare occasions)</a>, <a href="/music/">listen to music (often)</a>, <a href="/beer/">enjoy beer</a>, <a href="/books/">read books</a>, and participate in <a href="https://indieweb.org/" rel="external">IndieWeb</a> if {{ author_biography_closer }}. <a href="/contact/">Get in touch.</a></p>
     </div>
 
     <div class="clear  webring-links">
@@ -38,7 +38,7 @@
     </div>
 
     {% unless page.page_class contains 'search' %}
-        {% include components/widget-search.html %}
+        {% include_cached components/widget-search.html %}
     {% endunless %}
 
 </aside>

@@ -26,10 +26,10 @@ searchable: false
         "date_friendly": "{{ page.date | date_to_long_string }}",
         {% if page.lede %}
           "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
-        {% elsif page.categories == 'note' %}
+        {% elsif page.category == 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
-        "categories": "{{ page.categories | join: ', ' }}"{%- assign category = site.data.categories | where: 'category', page.categories.first | first -%}{% if category.emoji %},
+        "categories": "{{ page.category | join: ', ' }}"{%- assign category = site.data.categories | where: 'category', page.category | first -%}{% if category.emoji %},
           "emoji": "{{ category.emoji }}"
         {% endif %},
         "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},

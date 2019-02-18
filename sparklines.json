@@ -32,6 +32,9 @@ limit_y: 12
   "bookmarks": [
     {% include components/sparklines-json.html target=site.categories.bookmark limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ],
+  "flights": [
+    {% include components/sparklines-json.html target=site.categories.flight limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
+  ],
   "food": [
     {% include components/sparklines-json.html target=site.categories.food limit_y=page.limit_y starting_year=global_starting_year starting_week=global_starting_week ending_year=ending_year ending_week=ending_week %}
   ],

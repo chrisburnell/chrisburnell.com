@@ -1,4 +1,4 @@
-{% if page.categories == 'note' %}
+{% if page.category == 'note' %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% elsif page.title %}
     {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
@@ -8,23 +8,23 @@
 
 {% if page.lede %}
     {% assign meta_lede = page.lede | strip_html %}
-{% elsif page.categories == 'beer' %}
+{% elsif page.category == 'beer' %}
     {% capture meta_lede %}One of my beer reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'bookmark' %}
+{% elsif page.category == 'bookmark' %}
     {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'book' %}
+{% elsif page.category == 'book' %}
     {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'like' %}
+{% elsif page.category == 'like' %}
     {% capture meta_lede %}One of my liked pages, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'music' %}
+{% elsif page.category == 'music' %}
     {% capture meta_lede %}One of my music album reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'note' %}
+{% elsif page.category == 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
-{% elsif page.categories == 'pen' %}
+{% elsif page.category == 'pen' %}
     {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'recipe' %}
+{% elsif page.category == 'recipe' %}
     {% capture meta_lede %}One of my recipes, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.categories == 'talk' %}
+{% elsif page.category == 'talk' %}
     {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.location %}, given at {{ page.location }}{% endif %},{% endcapture %}
 {% else %}
     {% assign meta_lede = site.lede | strip_html %}
@@ -46,7 +46,7 @@
     {% if page.category %}
         page--{{ page.category }}
     {% endif %}
-    {% if page.collection %}
+    {% if page.collection and page.collection != 'posts' %}
         page--{{ page.collection }}
     {% endif %}
     {% if site.color_scheme %}
@@ -62,11 +62,11 @@
 {% if page.collection == 'posts' %}
     {%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
     {%- assign link_clean = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
-    {%- if page.categories == 'beer' -%}
+    {%- if page.category == 'beer' -%}
         {%- assign link_clean = page.title | append: ' on Untappd' -%}
         {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
         {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
-    {%- elsif page.categories == 'music' -%}
+    {%- elsif page.category == 'music' -%}
         {%- assign link_clean = page.title | append: ' on Spotify' -%}
     {%- endif -%}
 {% endif %}
