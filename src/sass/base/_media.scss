@@ -62,5 +62,6 @@ audio {
 }
 iframe {
     @include v(margin-bottom, medium);
+    max-width: 100% !important;
     contain: strict;
 }

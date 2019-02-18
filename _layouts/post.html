@@ -28,6 +28,8 @@
             <p class="beta  lede  lede--featured" id="lede">{{ page.lede }}</p>
         {% endif %}
 
+        {% include components/reply-context.html %}
+
         {% if page.edit_text %}
             <div class="edit">
                 {% if page.edit_date %}
@@ -87,4 +89,4 @@
 
 
 {% include components/footer.html %}
-{% include_cached components/foot.html %}
+{% include components/foot.html %}

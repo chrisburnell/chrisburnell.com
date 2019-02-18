@@ -1,0 +1,9 @@
+{% if page.in_reply_to.first contains 'twitter.com' or page.in_reply_to.first contains 'mastodon.social' %}
+    <div class="reply-context">
+    {% if page.in_reply_to.first contains 'twitter.com' %}
+    {% endif %}
+    {% if page.in_reply_to.first contains 'mastodon.social' %}
+        <iframe src="{{ page.in_reply_to.first }}/embed" class="mastodon-embed"></iframe>
+    {% endif %}
+    </div>
+{% endif %}

@@ -21,9 +21,14 @@
     <script src="//speakerdeck.com/assets/embed.js" async defer></script>
 {% endif %}
 
-{% if page.twitter %}
+{% if page.twitter or page.in_reply_to.first contains 'twitter.com' %}
     <!-- Twitter Cards -->
     <script src="//platform.twitter.com/widgets.js" async defer></script>
+{% endif %}
+
+{% if page.mastodon or page.in_reply_to.first contains 'mastodon.social' %}
+    <!-- Mastodon Cards -->
+    <script src="https://mastodon.social/embed.js" async defer></script>
 {% endif %}
 
 <!-- ServiceWorker -->
