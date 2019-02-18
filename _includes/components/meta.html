@@ -93,18 +93,25 @@
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
+                <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">
                 {% if reply contains 'mastodon.social' %}
-                    <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Toot</a>
+                    {% if reply contains '/@' %}
+                        @{{ reply | split: '/@' | last | split: '/' | first }}
+                    {% elsif reply contains '/users/' %}
+                        @{{ reply | split: '/users/' | last | split: '/' | first }}
+                    {% else %}
+                        a Toot
+                    {% endif %}
                 {% elsif reply contains 'twitter.com' %}
                     {% if reply contains '/status/' %}
-                        <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">@{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}</a>
+                        @{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}
                     {% else %}
-                        <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">a Tweet</a>
+                        a Tweet
                     {% endif %}
                 {% elsif reply contains 'hwclondon.co.uk' %}
-                    <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">Homebrew Website Club London</a>
+                    Homebrew Website Club London
                 {% else %}
-                    <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">{{ reply }}</a>
+                    {{ reply }}
                 {% endif %}
             {% endfor %}
         </div>
