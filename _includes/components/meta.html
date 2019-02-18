@@ -283,64 +283,40 @@
             {%- endif -%}
         </div>
     {% endif %}
-    {%- capture shorturl -%}
-        {%- if page.category == 'article' -%}
-            a
-            {%- assign posts_to_check = site.categories.article -%}
-        {%- elsif page.category == 'beer' -%}
-            b
-            {%- assign posts_to_check = site.categories.beer -%}
-        {%- elsif page.category == 'bookmark' -%}
-            h
-            {%- assign posts_to_check = site.categories.bookmark -%}
-        {%- elsif page.category == 'like' -%}
-            f
-            {%- assign posts_to_check = site.categories.like -%}
-        {%- elsif page.category == 'pen' -%}
-            c
-            {%- assign posts_to_check = site.categories.pen -%}
-        {%- elsif page.category == 'note' -%}
-            t
-            {%- assign posts_to_check = site.categories.note -%}
-        {%- elsif page.category == 'music' -%}
-            m
-            {%- assign posts_to_check = site.categories.music -%}
-        {%- elsif page.category == 'book' -%}
-            r
-            {%- assign posts_to_check = site.categories.book -%}
-        {%- elsif page.category == 'talk' -%}
-            s
-            {%- assign posts_to_check = site.categories.talk -%}
-        {%- endif -%}
-        {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
-        {%- assign s = "" -%}
-        {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
-        {%- for i in (1..9999) -%}
-            {%- assign d = n | modulo: 60 -%}
-            {%- assign s = s | prepend: m[d] -%}
-            {%- assign n = n | minus: d | divided_by: 60 -%}
-            {%- if n <= 0 -%}
+    {% if page.prefix %}
+        {%- assign posts_to_check = site.posts | where: 'category', page.category -%}
+        {%- capture shorturl -%}
+            {{ page.prefix }}
+            {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
+            {%- assign s = "" -%}
+            {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
+            {%- for i in (1..9999) -%}
+                {%- assign d = n | modulo: 60 -%}
+                {%- assign s = s | prepend: m[d] -%}
+                {%- assign n = n | minus: d | divided_by: 60 -%}
+                {%- if n <= 0 -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}{{ s }}
+        {%- endcapture -%}
+        {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
+        {%- assign filtered_posts = site.emptyArray -%}
+        {%- for check in posts_to_check reversed -%}
+            {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
+            {%- if check_date == page_date -%}
+                {%- assign filtered_posts = filtered_posts | push: check -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- for check in filtered_posts -%}
+            {%- if check.title == page.title -%}
+                {%- assign shorturl = shorturl | append: forloop.index -%}
                 {%- break -%}
             {%- endif -%}
-        {%- endfor -%}{{ s }}
-    {%- endcapture -%}
-    {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
-    {%- assign filtered_posts = site.emptyArray -%}
-    {%- for check in posts_to_check reversed -%}
-        {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
-        {%- if check_date == page_date -%}
-            {%- assign filtered_posts = filtered_posts | push: check -%}
-        {%- endif -%}
-    {%- endfor -%}
-    {%- for check in filtered_posts -%}
-        {%- if check.title == page.title -%}
-            {%- assign shorturl = shorturl | append: forloop.index -%}
-            {%- break -%}
-        {%- endif -%}
-    {%- endfor -%}
-    <div class="shorturl">
-        <span>shorturl</span>
-        <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
-    </div>
+        {%- endfor -%}
+        <div class="shorturl">
+            <span>shorturl</span>
+            <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
+        </div>
+    {% endif %}
     <a href="https://fed.brid.gy/" hidden></a>
 </div>

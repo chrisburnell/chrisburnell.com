@@ -104,35 +104,45 @@ defaults:
     path: '_posts/articles'
   values:
     category: 'article'
+    prefix: a
 - scope:
     type: 'posts'
     path: '_posts/beer'
   values:
     category: 'beer'
     layout: 'review'
+    prefix: b
     h: 'review'
     p: 'pk-drank'
+    emoji: '🍺'
     hidden: true
 - scope:
     type: 'posts'
     path: '_posts/bookmarks'
   values:
     category: 'bookmark'
+    prefix: h
     p: 'bookmark-of'
+    emoji: '🔖'
 - scope:
     type: 'posts'
     path: '_posts/books'
   values:
     category: 'book'
     layout: 'review'
+    prefix: r
     h: 'review'
     p: 'read-of'
+    emoji: '📖'
     ignore: true
 - scope:
     type: 'posts'
     path: '_posts/flights'
   values:
     category: 'flight'
+    prefix: g
+    emoji: '✈️'
+    hidden: true
     ignore: true
 - scope:
     type: 'posts'
@@ -140,8 +150,10 @@ defaults:
   values:
     category: 'food'
     layout: 'review'
+    prefix: e
     h: 'review'
     p: 'pk-ate'
+    emoji: '🍛'
     hidden: true
     ignore: true
 - scope:
@@ -149,7 +161,9 @@ defaults:
     path: '_posts/likes'
   values:
     category: 'like'
+    prefix: f
     p: 'like-of'
+    emoji: '❤️'
     hidden: true
     ignore: true
 - scope:
@@ -160,6 +174,7 @@ defaults:
     layout: 'review'
     h: 'review'
     p: 'watch-of'
+    emoji: '🎬'
     hidden: true
     ignore: true
 - scope:
@@ -168,28 +183,35 @@ defaults:
   values:
     category: 'music'
     layout: 'review'
+    prefix: m
     h: 'review'
     p: 'listen-of'
+    emoji: '🎶'
     ignore: true
 - scope:
     type: 'posts'
     path: '_posts/notes'
   values:
     category: 'note'
+    prefix: t
 - scope:
     type: 'posts'
     path: '_posts/pens'
   values:
     category: 'pen'
+    prefix: c
     comments: codepen
+    emoji: '✒️'
 - scope:
     type: 'posts'
     path: '_posts/podcasts'
   values:
     category: 'podcast'
     layout: 'review'
+    prefix: l
     h: 'review'
     p: 'listen-of'
+    emoji: '🎙'
     hidden: true
     ignore: true
 - scope:
@@ -197,11 +219,17 @@ defaults:
     path: '_posts/recipes'
   values:
     category: 'recipe'
+    prefix: d
+    emoji: '📝'
+    hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/talks'
   values:
     category: 'talk'
+    prefix: s
+    emoji: '🗣'
 - scope:
     type: 'posts'
     path: '_posts/tv'
@@ -210,6 +238,7 @@ defaults:
     layout: 'review'
     h: 'review'
     p: 'watch-of'
+    emoji: '📺'
     hidden: true
     ignore: true
 

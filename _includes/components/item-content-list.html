@@ -48,9 +48,8 @@
                     {% endif %}
                     <br>
                 {% endif %}
-                {% assign category = site.data.categories | where: 'category', page.category | first %}
-                {% if category.emoji %}
-                    <span class="emoji">{{ category.emoji }}</span>
+                {% if page.emoji %}
+                    <span class="emoji">{{ page.emoji }}</span>
                 {% endif %}
                 {% if page.rsvp %}
                     <span class="emoji">📅</span>
