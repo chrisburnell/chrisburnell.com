@@ -12,7 +12,6 @@ a {
     position: relative;
     text-decoration: underline;
     @include v(text-decoration-color, alto);
-    text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
 
     &:focus {
