@@ -137,15 +137,6 @@ defaults:
     ignore: true
 - scope:
     type: 'posts'
-    path: '_posts/flights'
-  values:
-    category: 'flight'
-    prefix: g
-    emoji: '✈️'
-    hidden: true
-    ignore: true
-- scope:
-    type: 'posts'
     path: '_posts/food'
   values:
     category: 'food'
@@ -230,6 +221,15 @@ defaults:
     category: 'talk'
     prefix: s
     emoji: '🗣'
+- scope:
+    type: 'posts'
+    path: '_posts/travel'
+  values:
+    category: 'travel'
+    prefix: g
+    emoji: '✈️'
+    hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/tv'

@@ -1,0 +1,14 @@
+---
+layout: feed
+searchable: false
+sitemap:
+  exclude: true
+
+title: Travel Feed
+lede: All of my travel check-ins.
+category_path: '/travel/'
+---
+
+{% for page in site.categories.travel limit: site.feed_limit %}
+    {% include components/item-feed.html %}
+{% endfor %}

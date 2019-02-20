@@ -61,8 +61,8 @@
                 {% endif %}
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.category == 'flight' %}
-                    Flight from {{ page.depart }} to {{ page.arrive }}.
+                {% elsif page.category == 'travel' %}
+                    Travel from {{ page.depart }} to {{ page.arrive }}.
                 {% elsif page.category == 'note' %}
                     {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
                     {{ content }}
@@ -83,7 +83,7 @@
                     {%- endfor -%}
                 {% endif %}
                 {%- if page.badges -%}
-                    <data value="{{ page.badges.size }}"> (earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %})</data>
+                    <data value="{{ page.badges.size }}"> (🏅 earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %})</data>
                 {%- endif -%}
                 {% if page.rating %}
                     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}

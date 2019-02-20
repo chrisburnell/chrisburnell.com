@@ -170,7 +170,7 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + ".<br>" : "<br>") + item.rating;
+                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + "<br>" + item.rating + (item.badges ? "<br>🏅 Earned " + item.badges + " badge" + (item.badges > 1 ? "s" : "") + "." : "");
                 }
                 else if (item.categories == "book") {
                     item.lede = `Book by ` + item.authors + "." + (item.rating ? "<br>" + item.rating : "");

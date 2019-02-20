@@ -2,7 +2,9 @@
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {% if page.category == 'beer' %}
             <span>drank on</span>
-        {% elsif page.category == 'flight' %}
+        {% elsif page.category == 'book' %}
+            <span>started reading on</span>
+        {% elsif page.category == 'travel' %}
             <span>departed on</span>
         {% elsif page.category == 'food' %}
             <span>ate on</span>
@@ -12,8 +14,6 @@
             <span>watched on</span>
         {% elsif page.category == 'podcast' %}
             <span>listened on</span>
-        {% elsif page.category == 'book' %}
-            <span>started reading on</span>
         {% elsif page.h == 'review' %}
             <span>reviewed on</span>
         {% else %}
@@ -23,7 +23,7 @@
             {{ page.date | date_to_long_string }}
         </a>
     </time>
-    {% if page.category == 'flight' %}
+    {% if page.category == 'travel' %}
         {% if page.finish %}
             <time class="date  dt-arrived" datetime="{{ page.finish | date_to_xmlschema }}">
                 <span>arrived on</span>
