@@ -29,7 +29,7 @@
             </a>
         {% endunless %}
     {% endif %}
-    <div class="h-cite{% if page.p %}  p-{{ page.p }}{% endif %}">
+    <div class="h-cite{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}">
         <h2 class="delta">
             {% if page.category == 'beer' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
@@ -97,8 +97,8 @@
         {% if page.category == 'book' and page.finish %}
             <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        {% if page.p %}
-            <data class="u-{{ page.p }}" hidden>{{ link }}</data>
+        {% if page.mf_property %}
+            <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>
     </div>

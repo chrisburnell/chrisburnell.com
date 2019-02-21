@@ -92,12 +92,12 @@ defaults:
     type: 'drafts'
   values:
     layout: 'draft'
-    h: 'entry'
+    mf_root: 'entry'
 - scope:
     type: 'posts'
   values:
     layout: 'post'
-    h: 'entry'
+    mf_root: 'entry'
     webmentions: true
 - scope:
     type: 'posts'
@@ -112,8 +112,8 @@ defaults:
     category: 'beer'
     layout: 'review'
     prefix: b
-    h: 'review'
-    p: 'pk-drank'
+    mf_root: 'review'
+    mf_property: 'pk-drank'
     emoji: '🍺'
     hidden: true
 - scope:
@@ -122,7 +122,7 @@ defaults:
   values:
     category: 'bookmark'
     prefix: h
-    p: 'bookmark-of'
+    mf_property: 'bookmark-of'
     emoji: '🔖'
 - scope:
     type: 'posts'
@@ -131,8 +131,8 @@ defaults:
     category: 'book'
     layout: 'review'
     prefix: r
-    h: 'review'
-    p: 'read-of'
+    mf_root: 'review'
+    mf_property: 'read-of'
     emoji: '📖'
     ignore: true
 - scope:
@@ -142,8 +142,8 @@ defaults:
     category: 'food'
     layout: 'review'
     prefix: e
-    h: 'review'
-    p: 'pk-ate'
+    mf_root: 'review'
+    mf_property: 'pk-ate'
     emoji: '🍛'
     hidden: true
     ignore: true
@@ -153,7 +153,7 @@ defaults:
   values:
     category: 'like'
     prefix: f
-    p: 'like-of'
+    mf_property: 'like-of'
     emoji: '❤️'
     hidden: true
     ignore: true
@@ -163,8 +163,8 @@ defaults:
   values:
     category: 'movie'
     layout: 'review'
-    h: 'review'
-    p: 'watch-of'
+    mf_root: 'review'
+    mf_property: 'watch-of'
     emoji: '🎬'
     hidden: true
     ignore: true
@@ -175,8 +175,8 @@ defaults:
     category: 'music'
     layout: 'review'
     prefix: m
-    h: 'review'
-    p: 'listen-of'
+    mf_root: 'review'
+    mf_property: 'listen-of'
     emoji: '🎶'
     ignore: true
 - scope:
@@ -200,8 +200,8 @@ defaults:
     category: 'podcast'
     layout: 'review'
     prefix: l
-    h: 'review'
-    p: 'listen-of'
+    mf_root: 'review'
+    mf_property: 'listen-of'
     emoji: '🎙'
     hidden: true
     ignore: true
@@ -236,8 +236,8 @@ defaults:
   values:
     category: 'tv'
     layout: 'review'
-    h: 'review'
-    p: 'watch-of'
+    mf_root: 'review'
+    mf_property: 'watch-of'
     emoji: '📺'
     hidden: true
     ignore: true
