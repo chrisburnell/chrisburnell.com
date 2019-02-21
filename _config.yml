@@ -111,9 +111,9 @@ defaults:
   values:
     category: 'beer'
     layout: 'review'
-    prefix: b
     mf_root: 'review'
     mf_property: 'pk-drank'
+    prefix: b
     emoji: '🍺'
     hidden: true
 - scope:
@@ -121,8 +121,8 @@ defaults:
     path: '_posts/bookmarks'
   values:
     category: 'bookmark'
-    prefix: h
     mf_property: 'bookmark-of'
+    prefix: h
     emoji: '🔖'
 - scope:
     type: 'posts'
@@ -130,9 +130,9 @@ defaults:
   values:
     category: 'book'
     layout: 'review'
-    prefix: r
     mf_root: 'review'
     mf_property: 'read-of'
+    prefix: r
     emoji: '📖'
     ignore: true
 - scope:
@@ -141,9 +141,9 @@ defaults:
   values:
     category: 'food'
     layout: 'review'
-    prefix: e
     mf_root: 'review'
     mf_property: 'pk-ate'
+    prefix: e
     emoji: '🍛'
     hidden: true
     ignore: true
@@ -152,8 +152,8 @@ defaults:
     path: '_posts/likes'
   values:
     category: 'like'
-    prefix: f
     mf_property: 'like-of'
+    prefix: f
     emoji: '❤️'
     hidden: true
     ignore: true
@@ -174,9 +174,9 @@ defaults:
   values:
     category: 'music'
     layout: 'review'
-    prefix: m
     mf_root: 'review'
     mf_property: 'listen-of'
+    prefix: m
     emoji: '🎶'
     ignore: true
 - scope:
@@ -199,9 +199,9 @@ defaults:
   values:
     category: 'podcast'
     layout: 'review'
-    prefix: l
     mf_root: 'review'
     mf_property: 'listen-of'
+    prefix: l
     emoji: '🎙'
     hidden: true
     ignore: true
