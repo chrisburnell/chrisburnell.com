@@ -5,6 +5,6 @@ release: 2015-03-15
 authors: Kendrick Lamar
 authors_link: https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg
 link: https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP
-cover: https://i.scdn.co/image/5d78516b21c1845a1fc3b2bbb94c745998c19146
+cover: to-pimp-a-butterfly.jpg
 rating: 5
 ---

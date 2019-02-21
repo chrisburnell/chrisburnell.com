@@ -22,7 +22,7 @@
     {%- endif -%}
 {%- endif -%}
 <li role="listitem" class="h-review">
-    {% if page.cover %}
+    {% if page.mf-photo or page.cover %}
         {% unless page.category == 'beer' or page.category == 'movie' or page.category == 'tv' %}
             <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
                 {% include components/cover.html %}
@@ -61,7 +61,7 @@
                 {%- elsif page.category == 'like' -%}
                     <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> {{ page.date | date: '%d %B %Y' }}</time></span>
                 {%- else -%}
-                    <span> (<time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%Y' }}</time>)</span>
+                    <span> <time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">({{ page.release | default: page.date | date: '%Y' }})</time></span>
                 {%- endif -%}
             {%- endif -%}
         </div>

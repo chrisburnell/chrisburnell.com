@@ -32,7 +32,7 @@
                     srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
         {% elsif cover != empty %}
             <img    alt="" class="banner  banner--cover  u-photo  u-featured"
-                    src="{{ cover }}">
+                    src="{{ site.static_url | append: page.category | append: '/' | append: cover }}">
         {% endif %}
     </picture>
 {% endif %}

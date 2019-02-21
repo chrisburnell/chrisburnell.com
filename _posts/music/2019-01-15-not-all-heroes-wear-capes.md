@@ -11,6 +11,6 @@ authors_link:
 - https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY
 - https://open.spotify.com/artist/1URnnhqYAYcrqrcwql10ft
 link: https://open.spotify.com/album/3IO8IPjwXuzPJnoaqkwYrj
-cover: https://i.scdn.co/image/cbeb99770353e401e6696fc9461293febbeebf50
+cover: not-all-heroes-wear-capes.jpg
 rating: 3.5
 ---

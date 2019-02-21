@@ -54,8 +54,8 @@
                 {% if page.rsvp %}
                     <span class="emoji">📅</span>
                 {% endif %}
-                {% if page.banner or page.banner_mobile or page.cover or page.content contains '<img' %}
-                    {% unless page.category == 'book' or page.category == 'movie' or page.category == 'music' or page.category == 'podcast' or page.category == 'tv' %}
+                {% if page.banner or page.banner_mobile or page.mf-photo or page.cover or page.content contains '<img' %}
+                    {% unless page.mf_root == 'review' %}
                         <span class="emoji">🖼️</span>
                     {% endunless %}
                 {% endif %}

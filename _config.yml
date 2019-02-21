@@ -59,10 +59,11 @@ codepen:
     default: 119
     tabfree: 8863
 
-url:      https://chrisburnell.com
-baseurl:  '/'
-live_url: https://chrisburnell.com
-shorturl: https://repc.co/
+url:        https://chrisburnell.com
+baseurl:    '/'
+live_url:   https://chrisburnell.com
+static_url: https://chrisburnell.com/static/
+shorturl:   https://repc.co/
 
 detach: false
 host: 127.0.0.1

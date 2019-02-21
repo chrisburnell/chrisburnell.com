@@ -4,11 +4,11 @@
         {% if cover contains '://' %}
             <img alt="" class="u-photo" role="presentation" src="{{ cover }}">
         {% else %}
-            <source srcset="/images/covers/{{ cover | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if cover contains '@' %}{{ cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}"
+            <source srcset="{{ site.static_url | append: page.category }}/{{ cover | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if cover contains '@' %}{{ cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}"
                     type="image/webp">
             <img    alt="" class="u-photo" role="presentation"
-                    src="/images/covers/{{ cover }}"
-                    srcset="/images/covers/{{ cover }} {% if cover contains '@' %}{{ cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}">
+                    src="{{ site.static_url | append: page.category }}/{{ cover }}"
+                    srcset="{{ site.static_url | append: page.category }}/{{ cover }} {% if cover contains '@' %}{{ cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}">
         {% endif %}
     </picture>
 {% endif %}
