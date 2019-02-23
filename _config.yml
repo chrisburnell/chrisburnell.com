@@ -226,7 +226,8 @@ defaults:
     type: 'posts'
     path: '_posts/travel'
   values:
-    category: 'travel'
+    published: false
+    # category: 'travel'
     prefix: g
     emoji: '✈️'
     hidden: true

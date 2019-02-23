@@ -29,6 +29,7 @@ code[data-lang] {
 
     &[data-lang="html"]::before,
     &[data-lang="css"]::before,
+    &[data-lang="json"]::before,
     &[data-lang="scss"]::before,
     &[data-lang="yaml"]::before {
         @include case(uppercase);
