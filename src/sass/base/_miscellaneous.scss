@@ -11,11 +11,24 @@ hr {
     @include v(background-color, black--gamma);
     width: 100%;
     height: $border-width-thin;
+    height: var(--border-width-thin);
     display: block;
     margin: $measure-large 0;
+    margin: var(--measure-large) 0;
     border: 0;
+    position: relative;
     // show the overflow in Edge and IE
     overflow: visible;
+
+    &::before {
+        content: "❦";
+        @include v(background-color, white);
+        @include v(color, black--gamma);
+        @include v(padding-left, small);
+        @include v(padding-right, small);
+        @include absolute(center);
+        @include v(font-size, large);
+    }
 
     %content-elements + & {
         @include media("screen", "below:medium") {
