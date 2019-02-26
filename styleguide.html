@@ -541,14 +541,16 @@ formatDate: function(date) {
 {% include_cached content/heading.html title='Sparklines' %}
 
 <figure>
-    <canvas id="sparkline-articles" class="sparkline" width="160" height="24"></canvas>
+    <canvas id="sparkline-beer" class="sparkline" width="160" height="24"></canvas>
 </figure>
 <figure>
     <canvas id="sparkline-notes" class="sparkline" width="160" height="24"></canvas>
 </figure>
 
 
-{% include_cached content/heading.html title='Horizontal Rule' %}
+{% include_cached content/heading.html title='Horizontal Rules' %}
+
+<hr>
 
 <hr>
 
@@ -556,7 +558,7 @@ formatDate: function(date) {
 {% include_cached content/heading.html title='Content List' %}
 
 <ol class="content-list  h-feed" role="list">
-    {% for page in site.posts limit: 4 %}
+    {% for page in paginator.posts limit: 4 %}
         {% include components/item-content-list.html %}
     {% endfor %}
 </ol>
