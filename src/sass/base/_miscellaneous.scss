@@ -21,13 +21,22 @@ hr {
     overflow: visible;
 
     &::before {
-        content: "❦";
+        content: "";
         @include v(background-color, white);
-        @include v(color, black--gamma);
+        background-image: url("/images/raven.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $measure-small;
+        background-size: var(--measure-small);
+        filter: grayscale(100%);
+        width: #{$measure-medium + $measure-small};
+        width: calc(var(--measure-medium) + var(--measure-small));
+        height: #{$measure-medium + $measure-small};
+        height: calc(var(--measure-medium) + var(--measure-small));
+        display: block;
         @include v(padding-left, small);
         @include v(padding-right, small);
         @include absolute(center);
-        @include v(font-size, large);
     }
 
     %content-elements + & {
