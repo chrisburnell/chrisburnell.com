@@ -26,17 +26,37 @@ hr {
         background-image: url("/images/raven.svg");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: $measure-small;
-        background-size: var(--measure-small);
+        background-size: $measure-medium;
+        background-size: var(--measure-medium);
         filter: grayscale(100%);
-        width: #{$measure-medium + $measure-small};
-        width: calc(var(--measure-medium) + var(--measure-small));
-        height: #{$measure-medium + $measure-small};
-        height: calc(var(--measure-medium) + var(--measure-small));
+        width: #{$measure-medium * 2};
+        width: calc(var(--measure-medium) * 2);
+        height: #{$measure-medium * 2};
+        height: calc(var(--measure-medium) * 2);
         display: block;
-        @include v(padding-left, small);
-        @include v(padding-right, small);
+        border-radius: 50%;
         @include absolute(center);
+        @include transition(transform 1s);
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+        }
+    }
+
+    &:nth-of-type(even) {
+        &::before {
+            transform: translateX(-50%) translateY(-50%) rotateY(180deg);
+        }
+    }
+
+    &:hover {
+        &:nth-of-type(even) {
+            &::before {
+                transform: translateX(-50%) translateY(-50%) rotateY(180deg) rotateZ(360deg);
+            }
+        }
     }
 
     %content-elements + & {
