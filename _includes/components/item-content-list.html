@@ -90,7 +90,9 @@
                     <data class="p-best" hidden>5</data>
                 {% endif %}
                 {%- if page.badges -%}
-                    <data value="{{ page.badges.size }}">🏅 Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+                    <div class="badges">
+                        <data value="{{ page.badges.size }}">🏅 Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+                    </div>
                 {%- endif -%}
             </p>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
