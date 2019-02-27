@@ -34,9 +34,6 @@
     {{ include.title }}
     {% unless heading_href == blank %}
         {% assign heading_href = heading_href | absolute_url %}
-        {% unless heading_href contains site.url %}
-            {% include_cached content/svg.html type='link' %}
-        {% endunless %}
         </a>
     {% endunless %}
     {% unless heading_id == blank %}

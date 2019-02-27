@@ -21,7 +21,8 @@ further_reading:
 - title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
   url: https://bloodbuilder.online/
 
-redirect_from: /article/numerals-romanticized.html
+redirect_from:
+- /article/numerals-romanticized.html
 
 syndicate_to:
 - https://mastodon.social/users/chrisburnell/statuses/101029942322511486
