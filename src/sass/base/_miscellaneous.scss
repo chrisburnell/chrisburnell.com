@@ -178,5 +178,6 @@ textarea {
 }
 
 .badges {
+    display: block;
     @include v(font-size, small);
 }

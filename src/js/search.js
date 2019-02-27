@@ -170,13 +170,13 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "") + (item.badges ? "🏅 Earned " + item.badges + " badge" + (item.badges > 1 ? "s" : "") + "." : "");
+                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + (item.badges ? '<data class="badges" value="' + item.badges + ''"><span class="emoji">🏅</span> Earned ' + item.badges + " badge" + (item.badges > 1 ? "s" : "") + ".</data>" : "") + (item.rating ? '<data class="rating" value="' + item.rating_raw + '">' + item.rating + '</data>' : "");
                 }
                 else if (item.categories == "book") {
-                    item.lede = `Book by ` + item.authors + "." + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "");
+                    item.lede = `Book by ` + item.authors + "." + (item.rating ? '<data class="rating" value="' + item.rating_raw + ''">' + item.rating + '</data>' : "");
                 }
                 else if (item.categories == "music") {
-                    item.lede = `Album by ` + item.authors + "." + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "");
+                    item.lede = `Album by ` + item.authors + "." + (item.rating ? '<data class="rating" value="' + item.rating_raw + ''">' + item.rating + '</data>' : "");
                 }
                 else if (item.categories == "talk") {
                     item.lede = 'Talk';

@@ -30,7 +30,7 @@
                     {{ page.title | strip_html }}
                 {% endif %}
             </h3>
-            <p class="lede  p-summary">
+            <div class="lede  p-summary">
                 {% if page.in_reply_to.first %}
                     <span class="emoji">↩️</span> In reply to:
                     {% if page.in_reply_to.first contains 'mastodon.social' %}
@@ -82,19 +82,17 @@
                         {{ author | strip }}
                     {%- endfor -%}
                 {% endif %}
+                {% if page.badges %}
+                    <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+                {% endif %}
                 {% if page.rating %}
                     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
                     {%- assign rating_fraction = page.rating | minus: rating_base -%}
-                    <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
                     <data class="p-worst" hidden>0</data>
                     <data class="p-best" hidden>5</data>
+                    <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
                 {% endif %}
-                {%- if page.badges -%}
-                    <div class="badges">
-                        <data value="{{ page.badges.size }}">🏅 Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
-                    </div>
-                {%- endif -%}
-            </p>
+            </div>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
         {% if page.mf_property %}
