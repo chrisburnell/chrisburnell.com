@@ -17,7 +17,10 @@ lede: Browse posts by a variety of metrics.
 {%- endfor -%}
 <p><em>There are {{ posts_size }} published posts.</em></p>
 
-{% include_cached content/heading.html title='By year' %}
+{%- assign year_newest = site.posts.first.date | date: '%Y' -%}
+{%- assign year_oldest = site.posts.last.date | date: '%Y' -%}
+{%- assign year_title = year_newest | minus: year_oldest | plus: 1 | prepend: 'By year <small>(' | append: ')</small>' -%}
+{% include_cached content/heading.html title=year_title %}
 <ul class="shelf" role="navigation">
     {%- assign current_year = site.posts.first.date | date: '%Y' -%}
     {% for page in site.posts %}
@@ -35,7 +38,8 @@ lede: Browse posts by a variety of metrics.
     {% endfor %}
 </ul>
 
-{% include_cached content/heading.html title='By category' %}
+{%- assign category_title = site.categories.size | prepend: 'By category <small>(' | append: ')</small>' -%}
+{% include_cached content/heading.html title=category_title %}
 <ul class="shelf" role="navigation">
     {%- assign categories = site.categories | sort -%}
     {% for category in categories %}
@@ -46,7 +50,8 @@ lede: Browse posts by a variety of metrics.
     {% endfor %}
 </ul>
 
-{% include_cached content/heading.html title='By tag' %}
+{%- assign tag_title = site.tags.size | prepend: 'By tag <small>(' | append: ')</small>' -%}
+{% include_cached content/heading.html title=tag_title %}
 {% capture tags %}
     {% for tag in site.tags %}
         {{ tag[0] | downcase }}
