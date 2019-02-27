@@ -43,8 +43,4 @@
         object-fit: contain;
         margin: 0;
     }
-
-    .badges {
-        @include v(font-size, small);
-    }
 }

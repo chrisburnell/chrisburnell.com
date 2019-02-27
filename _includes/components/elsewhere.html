@@ -3,7 +3,7 @@
         {% for link in site.data.elsewhere %}
             {% assign svg = link.svg | default: 'feather' %}
             <li{% if link.hidden %} hidden{% endif %}>
-                <a{% if link.class %} class="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
+                <a{% if link.class %} class="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}"{% if link.hidden %} hidden{% endif %}>
                     {%- if link.svg -%}
                         {% include_cached content/svg.html type=svg title=link.title %}
                     {%- else -%}

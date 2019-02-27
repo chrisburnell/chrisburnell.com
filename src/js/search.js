@@ -24,7 +24,7 @@
     <article class="h-entry" role="article">
         <a class="u-url" href="#">
             <h3 class="delta  title  p-name">{{ title }}</h3>
-            <p class="lede  p-summary">{{ lede }}</p>
+            <div class="lede  p-summary">{{ lede }}</div>
         </a>
         <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
     </article>
@@ -35,7 +35,7 @@
         <a class="u-url" href="#">
             <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
             <h3 class="delta  title  p-name"{{ hidden }}>{{ title }}</h3>
-            <p class="lede  p-summary">{{ lede }}</p>
+            <div class="lede  p-summary">{{ lede }}</div>
             <time class="date" datetime="{{ date_full }}">{{ date_friendly }}</time>
         </a>
         <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
@@ -146,7 +146,7 @@
             if (item.lede) {
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            else {
+            else if (item.categories) {
                 item.lede = item.categories.charAt(0).toUpperCase() + item.categories.slice(1);
             }
 
@@ -170,13 +170,13 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + "<br>" + item.rating + (item.badges ? "<br>🏅 Earned " + item.badges + " badge" + (item.badges > 1 ? "s" : "") + "." : "");
+                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "") + (item.badges ? "🏅 Earned " + item.badges + " badge" + (item.badges > 1 ? "s" : "") + "." : "");
                 }
                 else if (item.categories == "book") {
-                    item.lede = `Book by ` + item.authors + "." + (item.rating ? "<br>" + item.rating : "");
+                    item.lede = `Book by ` + item.authors + "." + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "");
                 }
                 else if (item.categories == "music") {
-                    item.lede = `Album by ` + item.authors + ".<br>" + item.rating;
+                    item.lede = `Album by ` + item.authors + "." + (item.rating ? '<div class="rating">' + item.rating + '</div>' : "");
                 }
                 else if (item.categories == "talk") {
                     item.lede = 'Talk';

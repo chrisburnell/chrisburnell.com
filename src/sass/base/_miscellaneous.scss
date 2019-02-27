@@ -173,5 +173,10 @@ textarea {
 }
 
 .rating {
+    display: block;
     letter-spacing: 4px;
+}
+
+.badges {
+    @include v(font-size, small);
 }
