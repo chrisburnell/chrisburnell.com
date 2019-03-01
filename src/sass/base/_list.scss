@@ -98,6 +98,10 @@ dl {
             grid-template-columns: repeat(auto-fill, minmax(6em, max-content) minmax(12em, 1fr));
         }
     }
+
+    &.compact {
+        row-gap: 0.5rem;
+    }
 }
 dt {
     @include v(font-weight, bold);

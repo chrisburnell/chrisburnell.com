@@ -12,7 +12,7 @@
     // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
     // http://creativecommons.org/publicdomain/zero/1.0/
     ///
-    let sparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%, 1)", endpointColor = "hsla(357, 83%, 55%, 0.5)") => {
+    let buildSparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%, 1)", endpointColor = "hsla(357, 83%, 55%, 0.5)") => {
         if (window.HTMLCanvasElement) {
             var c = document.getElementById(canvasID),
                 ctx = c.getContext("2d"),
@@ -58,7 +58,7 @@
             if (endpoint) {
                 ctx.beginPath();
                 ctx.fillStyle = endpointColor;
-                ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+                ctx.arc(x - 1, y, 2, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
@@ -106,11 +106,13 @@
             .then(response => response.json())
             .then(data => {
                 // Success!
-                notes = data; // We need this later to play the tones
-                for (let type in data) {
-                    if (document.querySelector(`#sparkline-${type}`)) {
-                        sparkline(`sparkline-${type}`, data[type]);
+                notes = data; // We need this for playSparkline
+                for (let sparkline of document.querySelectorAll(".sparkline")) {
+                    let type = sparkline.id.replace("sparkline-", "");
+                    if (sparkline.hasAttribute("data-values")) {
+                        notes[type] = sparkline.getAttribute("data-values").split("");
                     }
+                    buildSparkline(`sparkline-${type}`, data[type]);
                 }
             })
             .catch(error => {
@@ -119,7 +121,7 @@
             });
     }
 
-    let wave = "triangle"; // 'sine', 'square', 'sawtooth', 'triangle'
+    let wave = "triangle"; // "sine", "square", "sawtooth", "triangle"
     let duration = 4000; // milliseconds
     let keyStart = 41; // C#4
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale

@@ -157,6 +157,8 @@ defaults:
     mf_property: 'like-of'
     prefix: f
     emoji: '❤️'
+    sitemap:
+      exclude: true
     hidden: true
     ignore: true
 - scope:
@@ -220,6 +222,17 @@ defaults:
     ignore: true
 - scope:
     type: 'posts'
+    path: '_posts/sleep'
+  values:
+    category: 'sleep'
+    emoji: '😴'
+    searchable: false
+    sitemap:
+      exclude: true
+    hidden: true
+    ignore: true
+- scope:
+    type: 'posts'
     path: '_posts/talks'
   values:
     category: 'talk'
@@ -229,10 +242,14 @@ defaults:
     type: 'posts'
     path: '_posts/travel'
   values:
+    output: false
     published: false
-    # category: 'travel'
+    category: 'travel'
     prefix: g
     emoji: '✈️'
+    searchable: false
+    sitemap:
+      exclude: true
     hidden: true
     ignore: true
 - scope:

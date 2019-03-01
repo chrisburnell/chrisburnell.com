@@ -58,6 +58,11 @@
   category: recipe
   icon: 'article'
 
+- title: Sleep
+  type: sleep
+  category: sleep
+  icon: 'feather'
+
 - title: Talks
   type: talks
   category: talk

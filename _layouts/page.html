@@ -11,7 +11,7 @@
             <h1 class="title{% if page.page_class contains 'error' %}  title--error{% endif %}" role="heading">
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
-                    <canvas id="sparkline-{{ page.sparkline }}" title="since 26 weeks ago" class="sparkline" width="160" height="24"></canvas>
+                    <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>
                 {% endif %}
             </h1>
         {% endif %}

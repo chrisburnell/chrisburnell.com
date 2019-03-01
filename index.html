@@ -38,9 +38,9 @@ codefund: true
 
     {% include components/on-this-day.html posts=posts_without_replies %}
 
-    <h2 class="gamma">The Latest</h2>
+    <h2 id="latest" class="gamma">The Latest</h2>
 {% else %}
-    <h2 class="gamma">The Latest <small>— Page {{ paginator.page }}</small></h2>
+    <h2 id="latest" class="gamma">The Latest <small>— Page {{ paginator.page }}</small></h2>
 {% endif %}
 
 <ol class="content-list  h-feed" role="list">

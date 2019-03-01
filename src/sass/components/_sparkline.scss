@@ -8,8 +8,8 @@
     @include non-selectable;
     @include transition;
     // !important here prevents jumping when sparklines load
-    width: 120px !important;
-    height: 22px !important;
+    width: 160px !important;
+    height: 24px !important;
 
     &:hover {
         @include v(background-color, highlight);
@@ -39,4 +39,8 @@
             margin-top: $measure-medium;
         }
     }
+}
+
+.sparkline--sleep {
+    padding: 2px;
 }

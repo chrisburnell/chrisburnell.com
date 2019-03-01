@@ -150,6 +150,10 @@
                 item.lede = item.categories.charAt(0).toUpperCase() + item.categories.slice(1);
             }
 
+            if (item.codepen_featured) {
+                item.lede = `Featured ${item.lede}`;
+            }
+
             if (item.date || item.date_friendly) {
                 if (queryFormatted.substring(0, 5) == "date:") {
                     dateCheck = item.date.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
@@ -170,16 +174,16 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `Beer by ` + item.authors + ". " + (item.location ? "Drank at " + item.location + "." : "") + (item.badges ? '<data class="badges" value="' + item.badges + ''"><span class="emoji">🏅</span> Earned ' + item.badges + " badge" + (item.badges > 1 ? "s" : "") + ".</data>" : "") + (item.rating ? '<data class="rating" value="' + item.rating_raw + '">' + item.rating + '</data>' : "");
+                    item.lede = `Beer by ${item.authors}.` + (item.location ? ` Drank at ${item.location}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
                 else if (item.categories == "book") {
-                    item.lede = `Book by ` + item.authors + "." + (item.rating ? '<data class="rating" value="' + item.rating_raw + ''">' + item.rating + '</data>' : "");
+                    item.lede = `Book by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
                 else if (item.categories == "music") {
-                    item.lede = `Album by ` + item.authors + "." + (item.rating ? '<data class="rating" value="' + item.rating_raw + ''">' + item.rating + '</data>' : "");
+                    item.lede = `Album by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
                 else if (item.categories == "talk") {
-                    item.lede = 'Talk';
+                    item.lede = "Talk";
                     if (item.location) {
                         item.lede += ` – Given at ${item.location}`;
                     }
@@ -196,18 +200,18 @@
             }
             if (item.in_reply_to) {
                 let reply;
-                if (item.in_reply_to.includes('mastodon.social')) {
+                if (item.in_reply_to.includes("mastodon.social")) {
                     reply = `<span class="h-cite  u-in-reply-to">a Toot</span>`;
                 }
-                else if (item.in_reply_to.includes('twitter.com')) {
-                    if (item.in_reply_to.includes('/status/')) {
-                        reply = `<span class="h-cite  p-in-reply-to">@${item.in_reply_to.split('/status/')[0].split('twitter.com/')[1]}</span>`;
+                else if (item.in_reply_to.includes("twitter.com")) {
+                    if (item.in_reply_to.includes("/status/")) {
+                        reply = `<span class="h-cite  p-in-reply-to">@${item.in_reply_to.split("/status/")[0].split("twitter.com/")[1]}</span>`;
                     }
                     else {
                         reply = `<span class="h-cite  p-in-reply-to">a Tweet</span>`;
                     }
                 }
-                else if (item.in_reply_to.includes('hwclondon.co.uk')) {
+                else if (item.in_reply_to.includes("hwclondon.co.uk")) {
                     reply = `<span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>`;
                 }
                 else {

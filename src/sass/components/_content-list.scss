@@ -101,13 +101,21 @@
         line-clamp: 3;
     }
 
-    .date {
+    .date:not(.date--range) {
         text-align: right;
 
         &::before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
         }
+    }
+
+    dl + .date {
+        @include v(margin-top, small);
+    }
+
+    canvas {
+        @include v(margin-bottom, small);
     }
 
     svg {
