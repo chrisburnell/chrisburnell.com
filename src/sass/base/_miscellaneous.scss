@@ -173,8 +173,12 @@ textarea {
 }
 
 .rating {
-    display: block;
     letter-spacing: 4px;
+
+    .content-list &,
+    .shelf & {
+        display: block;
+    }
 }
 
 .badges {
