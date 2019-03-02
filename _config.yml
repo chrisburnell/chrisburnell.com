@@ -106,7 +106,6 @@ defaults:
   values:
     category: 'article'
     prefix: a
-    codefund: true
 - scope:
     type: 'posts'
     path: '_posts/beer'
@@ -189,7 +188,6 @@ defaults:
   values:
     category: 'note'
     prefix: t
-    codefund: true
 - scope:
     type: 'posts'
     path: '_posts/pens'
@@ -198,7 +196,6 @@ defaults:
     prefix: c
     comments: codepen
     emoji: '✒️'
-    codefund: true
 - scope:
     type: 'posts'
     path: '_posts/podcasts'

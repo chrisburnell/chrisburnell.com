@@ -17,7 +17,6 @@ lede: How I’ve implemented and interact with the <a href="https://indieweb.org
     <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks</a></h2></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd>
     <dt><h2 class="delta"><a href="/pens/">Pens</a></h2></dt>
-    <!--dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a></dd-->
     <dd>Typically posted only on this website.</dd>
     <dt><h2 class="delta"><a href="/beer/">Beer</a></h2></dt>
     <dd>Typically posted only on this website.</dd>
@@ -29,6 +28,7 @@ lede: How I’ve implemented and interact with the <a href="https://indieweb.org
 
 <p>I still need to do some work to change my syndication model from <abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr> to <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>. At the moment, because my Micropub endpoint doesn’t have the ability to modify an existing post, I first post to <em>Twitter</em> and/or <em>Mastodon</em> and grab the permalinks from the responses which are then pumped into the front matter as syndication targets of the post when it gets posted to <em>GitHub</em>.</p>
 
+
 {% include_cached content/heading.html title='Tools Used' %}
 
 <p>To handle <em>incoming</em> webmentions, I use <a href="https://webmention.io/" rel="external">Webmention.io</a>, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.</p>
@@ -38,6 +38,9 @@ lede: How I’ve implemented and interact with the <a href="https://indieweb.org
 <p><em>Outgoing</em> webmentions are handled for me by <a href="https://telegraph.p3k.io/" rel="external">Telegraph</a>, which also takes care of microformats parsing and endpoint discovery for each link in my content.</p>
 
 <p>I also take advantage of both <a href="https://fed.brid.gy/" rel="external">Bridgy Fed</a> and <a href="https://switchboard.p3k.io/" rel="external">Switchboard</a> to interact with federated networks and to make <a href="https://indieweb.org/WebSub" rel="external">WebSub</a> and <a href="https://activitypub.rocks/" rel="external">ActivityPub</a> work.</p>
+
+<p>Lastly, I use <a href="https://zapier.com/" rel="external">Zapier</a> to syndicate check-ins from <a href="https://untappd.com/" rel="external">Untappd</a> to my <a href="/beer/">beer page</a>.</p>
+
 
 {% include_cached content/heading.html title='Thanks' %}
 
