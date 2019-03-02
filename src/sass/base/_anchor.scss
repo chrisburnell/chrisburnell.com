@@ -52,7 +52,7 @@ a {
     }
 
     // hide extra content, text targetted only to screen readers
-    span:not([class]) {
+    :not(.codefund) & span:not([class]) {
         @include hidden;
     }
 }
