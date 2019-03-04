@@ -1,0 +1,189 @@
+---
+date: 2019-03-14 18:43:00
+title: LiquidBase60
+lede: I have started auto-generating short-URLs for each of my posts, old and new, and opted to implement Tantek Çelik’s <a href="http://tantek.pbworks.com/w/page/19402946/NewBase60" rel="external"><abbr title="A base 60 numbering system using only ASCII numbers and letters">NewBase60</abbr></a> for representing the unique URLs, but I’ve done so with Liquid so it plays nicely with my Jekyll-powered website.
+---
+
+
+[Whistle](http://tantek.pbworks.com/w/page/21743973/Whistle){:rel="external"}
+
+Depending on how you publish, you may only have posts, but I put *notes*/*bookmarks*/*etc.* into their own separate [Collections](https://jekyllrb.com/docs/collections/){:rel="external"}, so choose how you would implement your own.
+
+The essence of *NewBase60* is that…
+
+For example, there is a *Note* that I published on *08 September 2018*, and is the *1<sup>st</sup> (and only) Note* of that day. Let’s look at the page’s short URL and break down what the code at the end means:
+
+<figure>
+    <samp class="beta">repc.co/<strong style="color: var(--color-raven);">t</strong><strong style="color: var(--color-canada);">4wN</strong><strong style="color: var(--color-liquid);">1</strong> <a href="https://repc.co/t4wN1">→</a></samp>
+</figure>
+
+This code is comprised of *three* parts:
+
+0. <samp class="strong" style="color: var(--color-raven);">t</samp> — **Category** *(required, 1 character)* <a href="#post-type">↩</a>
+0. <samp class="strong" style="color: var(--color-canada);">4wN</samp> — **[Sexagesimal](http://en.wikipedia.org/wiki/Sexagesimal){:rel="external"} [Epoch](https://en.wikipedia.org/wiki/Unix_time){:rel="external"} Days** *(required, 3 characters)* <a href="#sexagesimal-epoch-days">↩</a>
+0. <samp class="strong" style="color: var(--color-liquid);">1</samp> — **Post Number for the Day** *(optional, 1 character, default = 1)* <a href="#post-number-for-the-day">↩</a>
+
+{% include_cached content/heading.html title='Category' %}
+
+Firstly, we need to figure out the category for a particular page. I’m assigning a letter to each category for two reasons: to limit the loop to posts of that type, and to make it such that one can discern the category from the short URL’s slug.
+
+| Category | Prefix  |
+| -------- | ------: |
+| Article  | **`a`** |
+| Bookmark | **`h`** |
+| Note     | **`t`** |
+
+{% highlight liquid %}{% raw %}
+{%- if page.category == 'article' -%}
+    a
+{%- elsif page.category == 'bookmark' -%}
+    h
+{%- elsif page.category == 'note' -%}
+    t
+{%- endif -%}
+{% endraw %}{% endhighlight %}
+
+{% include_cached content/heading.html title='Sexagesimal Epoch Days' %}
+
+How do we calculate *Epoch days* from a given post’s date?
+
+The full [ISO 8601 datetime](https://en.wikipedia.org/wiki/ISO_8601){:rel="external"} for our example post is <samp>2018-09-08T23:58:42+01:00</samp>, and the first step is to convert this to a Unix timestamp (*seconds* since Epoch), and from there we can divide by <samp>86400</samp> (the number of seconds in a day) to get the number of *days* since Epoch. Fortunately, this is quite trivial with *Jekyll*:
+
+<figure>
+    <p><samp>2018-09-08T23:58:42+01:00</samp> → <samp>1536447522</samp> → <samp>17782</samp> <em>(rounded down)</em></p>
+</figure>
+
+{% highlight liquid %}{% raw %}
+{% assign n = page.date | date: '%s' | divided_by: 86400 | floor %}
+{% endraw %}{% endhighlight %}
+
+*Sexagesimal* is a number system with *60* as its *base* and is actually over 5000 years old[^1]! For our short URLs, the 60 characters are represented by the following:
+
+<figure>
+    <pre>0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz</pre>
+</figure>
+
+In order to complete this step, we need to loop through our *Epoch days* tallying and converting into base 60 until we hit `0`. One limitation that we’ll experience with using *Liquid* (as opposed to *NewBase60’s* original languages, *PHP* or *JavaScript*) is its lack of a `while` loop, so the following won’t work:
+
+{% highlight liquid %}{% raw %}
+{% while condition != satisfied %}
+    ...
+{% endwhile %}
+{% endraw %}{% endhighlight %}
+
+However, we can mimic one using a `for` loop that counts to a (theoretically) unreachable number, and we can break out of the loop when our condition is met (as with a standard `while` loop):
+
+{% highlight liquid %}{% raw %}
+{% for i in (1..9999) %}
+    ...
+    {% if condition == satisfied %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+{% endraw %}{% endhighlight %}
+
+Much like a `while` loop, we are not concerned with the iteration variable, <var>i</var>, we simply want to perform an action until a condition is met—it doesn’t matter how many iterations are required.
+
+Putting it all together, our code now looks like the following, where we are storing our output in the <var>s</var> variable:
+
+{% highlight liquid %}{% raw %}
+{% assign n = page.date | date: '%s' | divided_by: 86400 | floor %}
+{% assign s = "" %}
+{% assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" %}
+{% for i in (1..9999) %}
+    {% assign d = n | modulo: 60 %}
+    {% assign s = s | prepend: m[d] %}
+    {% assign n = n | minus: d | divided_by: 60 %}
+    {% if n <= 0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+{{ s }}
+{% endraw %}{% endhighlight %}
+
+{% include_cached content/heading.html title='Post Number for the Day' %}
+
+The remaining portion of work is to determine how many posts of the given category have been published on the given day, and which of those posts, chronologically, this one is. To do so, we need to add an additional action to our category checks which instructs which category of posts to trawl:
+
+{% highlight liquid %}{% raw %}
+{%- if page.category == 'article' -%}
+    a
+    {%- assign posts_to_check = site.categories.article -%}
+{%- elsif page.category == 'bookmark' -%}
+    h
+    {%- assign posts_to_check = site.categories.bookmark -%}
+{%- elsif page.category == 'note' -%}
+    t
+    {%- assign posts_to_check = site.categories.note -%}
+{%- endif -%}
+{% endraw %}{% endhighlight %}
+
+We can use this categorised list of posts to match dates against and build an array of posts under the specific category on the specific day. Looping through this array of posts until we reach the post for which we’re building and pulling out the array index gives us the number we’re looking for:
+
+{% highlight liquid %}{% raw %}
+{%- assign page_date = page.date | date: '%Y-%m-%d' -%}
+{%- assign filtered_posts = site.emptyArray -%}
+{%- for check in posts_to_check -%}
+    {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
+    {%- if check_date == page_date -%}
+        {%- assign filtered_posts = filtered_posts | push: check -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- for check in filtered_posts -%}
+    {%- if check.title == page.title -%}
+        {%- assign shorturl = shorturl | append: forloop.index -%}
+        {%- break -%}
+    {%- endif -%}
+{%- endfor -%}
+{% endraw %}{% endhighlight %}
+
+{% include content/heading.html title='Presenting…' %}
+
+{% highlight liquid %}{% raw %}
+{%- capture shorturl -%}
+    {%- if page.category == 'article' -%}
+        a
+        {%- assign posts_to_check = site.categories.article -%}
+    {%- elsif page.category == 'bookmark' -%}
+        h
+        {%- assign posts_to_check = site.categories.bookmark -%}
+    {%- elsif page.category == 'note' -%}
+        t
+        {%- assign posts_to_check = site.categories.note -%}
+    {%- endif -%}
+    {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
+    {%- assign s = "" -%}
+    {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
+    {%- if n == empty or n == 0 -%}0{%- endif -%}
+    {%- for i in (1..9999) -%}
+        {%- assign d = n | modulo: 60 -%}
+        {%- assign s = m[d] | append: s -%}
+        {%- assign n = n | minus: d | divided_by: 60 -%}
+        {%- if n <= 0 -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}{{ s }}
+{%- endcapture -%}
+{%- assign page_date = page.date | date: '%Y-%m-%d' -%}
+{%- assign filtered_posts = site.emptyArray -%}
+{%- for check in posts_to_check -%}
+    {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
+    {%- if check_date == page_date -%}
+        {%- assign filtered_posts = filtered_posts | push: check -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- for check in filtered_posts -%}
+    {%- if check.title == page.title -%}
+        {%- assign shorturl = shorturl | append: forloop.index -%}
+        {%- break -%}
+    {%- endif -%}
+{%- endfor -%}
+{% endraw %}{% endhighlight %}
+
+At last, the following variable available for use:
+
+{% highlight liquid %}{% raw %}
+{{ shorturl }}
+{% endraw %}{% endhighlight %}
+
+[^1]: [Sexagesimal - Wikipedia](https://en.wikipedia.org/wiki/Sexagesimal){:rel="external"}
