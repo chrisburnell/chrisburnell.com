@@ -112,7 +112,7 @@
                     if (sparkline.hasAttribute("data-values")) {
                         notes[type] = sparkline.getAttribute("data-values").split("");
                     }
-                    buildSparkline(`sparkline-${type}`, data[type]);
+                    buildSparkline(`sparkline-${type}`, notes[type]);
                 }
             })
             .catch(error => {
@@ -123,7 +123,7 @@
 
     let wave = "triangle"; // "sine", "square", "sawtooth", "triangle"
     let duration = 4000; // milliseconds
-    let keyStart = 41; // C#4
+    let keyStart = 41; // C♯4 / D♭4
     let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
     let keyInterval = 0;
     let keyCount = 12;
@@ -136,7 +136,7 @@
 
     for (let sparkline of document.querySelectorAll(".sparkline")) {
         sparkline.addEventListener("click", () => {
-            playSparkline(notes[sparkline.id.split("-")[1]], frequencies, duration, wave);
+            playSparkline(notes[sparkline.id.replace("sparkline-", "")], frequencies, duration, wave);
             // Prevent the user from blowing their ears up by stacking sounds
             sparkline.classList.add("non-interactive");
             window.setTimeout(() => {
