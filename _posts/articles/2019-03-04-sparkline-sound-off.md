@@ -1,7 +1,12 @@
 ---
-date: 2019-02-22 14:42:40
+date: 2019-03-04 13:10:40
+
 title: Sparkline Sound-Off
 lede: For a few months now I have been following in the footsteps of Jeremy Keith and displaying sparklines representing my activity over time with different post types. As an added bonus, a little tune based on the sparkline’s values plays when you click on the sparkline. With a moderate amount of musical theory under my belt, here’s how I accomplished that audio delight.
+
+tags:
+- javascript
+- music
 ---
 
 I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js){:rel="external"} and made some modifications to suit my needs. I won’t go into detail here about how the sparklines are *drawn*, the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API){:rel="external"}, or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"}, but there are a number of resources out there if you need some background before I dive in.
