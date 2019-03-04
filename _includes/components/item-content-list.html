@@ -71,8 +71,8 @@
                 {% else %}
                     {% include content/capitalizer.html input=page.category %}
                 {% endif %}
-                {% if page.category == 'talk' and page.location %}
-                    — Given at {{ page.location }}
+                {% if page.category == 'talk' and page.checkin %}
+                    — Given at {{ page.checkin.name | default: page.checkin }}
                 {% endif %}
                 {% if page.authors %}
                     by

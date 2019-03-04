@@ -136,7 +136,7 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if page.location %}
+    {% if page.checkin %}
         <div class="location">
             {% if page.category == 'beer' %}
                 <span>drank at</span>
@@ -145,12 +145,12 @@
             {% else %}
                 <span>at</span>
             {% endif %}
-            {% if page.location_url %}
-                <a class="p-location" rel="external" href="{{ page.location_url }}">{{ page.location }}</a>
-            {% elsif page.location_coordinates %}
-                <a class="p-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location_coordinates | split: ',' | first }}&mlon={{ location_coordinates | split: ',' | last }}&zoom=12">{{ page.location }}</a>
+            {% if page.checkin.url %}
+                <a class="p-location" rel="external" href="{{ page.checkin.url }}">{{ page.checkin.name | default: page.checkin }}</a>
+            {% elsif page.checkin.geo %}
+                <a class="p-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location.geo | split: ',' | first }}&mlon={{ location.geo | split: ',' | last }}&zoom=12">{{ page.checkin.name }}</a>
             {% else %}
-                <strong class="p-location">{{ page.location }}</strong>
+                <strong class="p-location">{{ page.checkin.name | default: page.checkin }}</strong>
             {% endif %}
         </div>
     {% endif %}

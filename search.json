@@ -34,8 +34,8 @@ searchable: false
         {% endif %}{% if page.emoji %},
           "emoji": "{{ page.emoji }}"
         {% endif %},
-        "tags": "{{ page.tags | join: ', ' }}"{% if page.location %},
-          "location": "{{ page.location | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
+        "tags": "{{ page.tags | join: ', ' }}"{% if page.checkin %},
+          "location": "{{ page.checkin.name | default: page.checkin | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
         {% endif %}{% if page.rating %}{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}{%- assign rating_fraction = page.rating | minus: rating_base -%},
           "rating": "{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}",
           "rating_raw": "{{ page.rating }}"
