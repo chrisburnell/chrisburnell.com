@@ -41,9 +41,9 @@ As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitc
 
 **A<sub>4</sub>** = <samp>440Hz</samp>
 
-**A♯<sub>4</sub>** / **B♭<sub>4</sub>** = <samp>440Hz</samp> × <!-- <sup>12</sup>√2 -->2<sup>1⁄12</sup> = <samp>466.16Hz</samp>
+**A♯<sub>4</sub>** / **B♭<sub>4</sub>** = <samp>440Hz</samp> × <sup>12</sup>√2 = <samp>466.16Hz</samp>
 
-**B<sub>4</sub>** = <samp>466.16Hz</samp> × <!-- <sup>12</sup>√2 -->2<sup>1⁄12</sup> = <samp>493.88Hz</samp>
+**B<sub>4</sub>** = <samp>466.16Hz</samp> × <sup>12</sup>√2 = <samp>493.88Hz</samp>
 
 Because I want the <q>music</q> produced by the sparklines to be remotely pleasing to listen to, we need a way to reliably map our unitless number inputs to musical notes. As a result, and to make the music theory more familiar to myself, the data should map directly onto the standard chromatic scale that most modern Western music is based on.
 

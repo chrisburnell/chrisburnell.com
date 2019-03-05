@@ -82,7 +82,7 @@ If the <q>action</q> we need to perform involves checking the visibility of an e
 --------
 
 
-As the user scrolls quickly around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re trying to gate-check and  before their consequences are delivered to the user.
+As the user scrolls quickly around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re trying to gate-check and before their consequences are delivered to the user.
 
 <aside><p>For every single pixel the user scrolls, we’re asking the browser to tell us the exact position of a handful of elements.</p></aside>
 

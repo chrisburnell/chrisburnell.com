@@ -137,7 +137,7 @@
                 contentCheck = false,
                 categoriesCheck = false,
                 tagsCheck = false,
-                locationCheck = false;
+                checkinCheck = false;
 
             if (item.title) {
                 titleCheck = item.title.toLowerCase().indexOf(queryFormatted) > -1;
@@ -174,7 +174,7 @@
                 categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.categories == "beer") {
-                    item.lede = `Beer by ${item.authors}.` + (item.location ? ` Drank at ${item.location}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
+                    item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
                 else if (item.categories == "book") {
                     item.lede = `Book by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
@@ -184,8 +184,8 @@
                 }
                 else if (item.categories == "talk") {
                     item.lede = "Talk";
-                    if (item.location) {
-                        item.lede += ` – Given at ${item.location}`;
+                    if (item.checkin) {
+                        item.lede += ` – Given at ${item.checkin}`;
                     }
                 }
             }
@@ -230,8 +230,8 @@
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }
-            if (item.location) {
-                locationCheck = item.location.toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.checkin) {
+                checkinCheck = item.checkin.toLowerCase().indexOf(queryFormatted) > -1;
             }
 
             // if performing a date check
@@ -245,14 +245,14 @@
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item, query);
             }
             // or item type is a page, check if search term is in title,
-            // content, or lede, categories, tags, or talk location
+            // content, or lede, categories, tags, or talk checkin
             else if (item.type == "page" && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_PAGE_TEMPLATE, item, query);
             }
             // check if search term is in title, lede, content, categories,
-            // tags, or talk location
-            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || locationCheck) {
+            // tags, or talk checkin
+            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || checkinCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item, query);
             }
