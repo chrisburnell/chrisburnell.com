@@ -10,7 +10,7 @@
     padding: $measure-small $measure-medium;
     padding: var(--measure-small) var(--measure-medium);
     position: fixed;
-    @include v(bottom, medium);
+    @include v(bottom, large);
     @include v(right, medium);
     @include v(left, medium);
     @include v(font-size, gamma);
