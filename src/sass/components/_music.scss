@@ -13,8 +13,7 @@
 .last-fm__track + .last-fm__artist:not(:empty) {
     &::before {
         content: " by ";
-        @include v(color, dove);
+        @include v(font-family, serif);
         font-style: italic;
-        @include v(font-size, small);
     }
 }

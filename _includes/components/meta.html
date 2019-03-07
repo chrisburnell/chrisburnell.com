@@ -61,29 +61,37 @@
                 <span>brewed by</span>
             {% elsif page.category == 'book' %}
                 <span>written by</span>
+            {% elsif page.category == 'movie' or page.category == 'tv' %}
+                <span>produced by</span>
             {% else %}
                 <span>by</span>
             {% endif %}
-            {% assign authors = page.authors | uniq %}
+            {%- assign authors = page.authors | uniq -%}
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if page.authors_link and page.authors_link[1] -%}
-                    <a class="h-cite" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
-                {%- elsif page.authors_link -%}
-                    <a class="h-cite" href="{{ page.authors_link }}" title="" rel="external">
+                {%- if author.link -%}
+                    <a class="h-cite  u-author" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
                 {%- else -%}
-                    <strong class="h-cite">
-                {%- endif -%}
-                {{ author | strip }}
-                {%- if page.authors_link -%}
-                    </a>
-                {%- else -%}
-                    </strong>
+                    <strong class="h-cite  p-author">{{ author.name | default: author | strip }}</strong>
                 {%- endif -%}
             {%- endfor -%}
         </div>
     {% endif %}
-    {% assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil %}
+    {% if page.audience %}
+        <div class="audience">
+            <span>written for</span>
+            {%- assign audiences = page.audiences | uniq -%}
+            {%- for audience in audiences -%}
+                {% unless forloop.first %}, {% endunless %}
+                {%- if audience.link -%}
+                    <a class="h-card  u-audience" href="{{ audience.link }}" title="" rel="external">{{ audience.name | default: audience | strip }}</a>
+                {%- else -%}
+                    <strong class="h-card  p-audience">{{ audience.name | default: audience | strip }}</strong>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+    {% endif %}
+    {%- assign in_reply_to = page.in_reply_to | default: page.in-reply-to | default: page.mf-in-reply-to | default: nil -%}
     {% if in_reply_to %}
         <div class="in-reply-to">
             {% if page.rsvp %}
@@ -117,15 +125,15 @@
         </div>
     {% endif %}
     {% if page.category == 'article' %}
-        {% assign words = site.emptyArray %}
-        {% assign open_figure_splits = content | split: '<figure class="highlight">' %}
-        {% assign words = words | push: open_figure_splits[0] %}
-        {% assign open_figure_splits = open_figure_splits | shift %}
-        {% for open_figure_split in open_figure_splits %}
-            {% assign close_figure_split = open_figure_split | split: '</figure>' | last %}
-            {% assign words = words | push: close_figure_split %}
-        {% endfor %}
-        {% assign words = words | join: ' ' | number_of_words %}
+        {%- assign words = site.emptyArray -%}
+        {%- assign open_figure_splits = content | split: '<figure class="highlight">' -%}
+        {%- assign words = words | push: open_figure_splits[0] -%}
+        {%- assign open_figure_splits = open_figure_splits | shift -%}
+        {%- for open_figure_split in open_figure_splits -%}
+            {%- assign close_figure_split = open_figure_split | split: '</figure>' | last -%}
+            {%- assign words = words | push: close_figure_split -%}
+        {%- endfor -%}
+        {%- assign words = words | join: ' ' | number_of_words -%}
         <div class="reading-length">
             <span>reading length</span>
             <strong>~{{ words | divided_by: 50 | round | times: 50 }} words</strong>
@@ -145,8 +153,8 @@
             {% else %}
                 <span>at</span>
             {% endif %}
-            {% if page.checkin.url %}
-                <a class="p-location" rel="external" href="{{ page.checkin.url }}">{{ page.checkin.name | default: page.checkin }}</a>
+            {% if page.checkin.link %}
+                <a class="p-location" rel="external" href="{{ page.checkin.link }}">{{ page.checkin.name | default: page.checkin }}</a>
             {% elsif page.checkin.geo %}
                 <a class="p-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location.geo | split: ',' | first }}&mlon={{ location.geo | split: ',' | last }}&zoom=12">{{ page.checkin.name }}</a>
             {% else %}

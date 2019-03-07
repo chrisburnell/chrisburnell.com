@@ -3,7 +3,7 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
-{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 {%- if link contains 'amazon' -%}
     {%- assign link_title = page.title | append: ' on Amazon' -%}
 {%- elsif link contains 'spotify' %}
@@ -45,14 +45,10 @@
             {% assign authors = page.authors | uniq %}
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if page.authors_link and page.authors_link[1] -%}
-                    <a class="p-author  h-card" href="{{ page.authors_link[forloop.index0] }}" title="" rel="external">
-                {%- elsif page.authors_link -%}
-                    <a class="p-author  h-card" href="{{ page.authors_link }}" title="" rel="external">
-                {%- endif -%}
-                {{ author | strip }}
-                {%- if page.authors_link -%}
-                    </a>
+                {%- if author.link -%}
+                    <a class="h-card  u-author" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
+                {%- else -%}
+                    <span class="h-card  p-author">{{ author.name | default: author | strip }}</span>
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}

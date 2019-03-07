@@ -14,17 +14,17 @@ syndicate_to:
 - https://twitter.com/iamchrisburnell/status/710837030629023744
 
 further_reading:
-- url: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
+- link: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
   title: "Mixins Better for Performance"
-- url: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"
+- link: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"
   title: "When to use @extend; when to use a mixin"
-- url: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass/"
+- link: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass/"
   title: "Extending silent classes in Sass"
-- url: "http://www.sitepoint.com/avoid-sass-extend/"
+- link: "http://www.sitepoint.com/avoid-sass-extend/"
   title: "Why You Should Avoid Sass @extend"
-- url: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/"
+- link: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/"
   title: "Don’t Over-@extend Yourself in Sass"
-- url: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
+- link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
   title: "Sass Mixins vs Extends: The Data"
 ---
 

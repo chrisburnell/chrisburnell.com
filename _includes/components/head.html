@@ -36,7 +36,7 @@
     {% endif %}
 
     {% if page.bookmark_of %}
-        {% assign url = page.bookmark_of.url | default: page.bookmark_of %}
+        {% assign url = page.bookmark_of.link | default: page.bookmark_of %}
         <link rel="prefetch" href="{{ url }}">
     {% endif %}
 

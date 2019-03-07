@@ -7,7 +7,7 @@
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
-{%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 <entry>
     {% if page.category == 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
@@ -41,10 +41,10 @@
             <summary>Book Review</summary>
         {% endif %}
     {% elsif page.category == 'beer' %}
-        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
+        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
     {% elsif page.category == 'music' %}
         {%- if page.rating -%}
-            <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author | xml_escape }}{% endfor %}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
+            <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}

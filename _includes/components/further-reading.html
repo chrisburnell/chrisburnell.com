@@ -2,20 +2,20 @@
     <section class="further-reading">
         {% include_cached content/heading.html title='Further Reading' %}
         <ul>
-            {% for link in page.further_reading %}
-                {% assign url = link.url %}
-                {% if url contains site.url %}
+            {%- assign further_readings = page.further_reading | uniq -%}
+            {% for further_reading in further_readings %}
+                {% if further_reading.link contains site.url %}
                     {% assign rel = '' %}
                 {% else %}
                     {% assign rel = ' rel="external"' %}
                 {% endif %}
-                {% if link.title == null or link.title == empty %}
-                    {% assign title = url %}
+                {% if further_reading.title == null or further_reading.title == empty %}
+                    {% assign title = further_reading.link %}
                 {% else %}
-                    {% assign title = link.title %}
+                    {% assign title = further_reading.title %}
                 {% endif %}
                 <li>
-                    <a href="{{ url }}"{{ rel }}>{{ title }}</a>
+                    <a href="{{ further_reading.link }}"{{ rel }}>{{ title }}</a>
                 </li>
             {% endfor %}
         </ul>

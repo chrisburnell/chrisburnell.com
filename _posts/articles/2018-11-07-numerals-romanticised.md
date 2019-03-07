@@ -17,9 +17,9 @@ banner_mobile:
 
 further_reading:
 - title: Roman numerals on Wikipedia
-  url: https://en.wikipedia.org/wiki/Roman_numerals
+  link: https://en.wikipedia.org/wiki/Roman_numerals
 - title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
-  url: https://bloodbuilder.online/
+  link: https://bloodbuilder.online/
 
 redirect_from:
 - /article/numerals-romanticized.html

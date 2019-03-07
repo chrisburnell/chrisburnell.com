@@ -21,13 +21,13 @@ syndicate_to:
 - https://twitter.com/iamchrisburnell/status/712709693878173697
 
 further_reading:
-- url: "http://cruft.io/posts/percentage-calculations-in-ie/"
+- link: "http://cruft.io/posts/percentage-calculations-in-ie/"
   title: "Browser Rounding and Fractional Pixels"
-- url: "http://ejohn.org/blog/sub-pixel-problems-in-css/"
+- link: "http://ejohn.org/blog/sub-pixel-problems-in-css/"
   title: "Sub-Pixel Problems in CSS"
-- url: "http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass/"
+- link: "http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass/"
   title: "Reduce sub-pixel rendering issues with Sass functions"
-- url: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/"
+- link: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering/"
   title: "A Closer Look At Font Rendering"
 ---
 

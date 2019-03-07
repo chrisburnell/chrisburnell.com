@@ -79,7 +79,7 @@
                     {%- assign authors = page.authors | uniq -%}
                     {%- for author in authors -%}
                         {% unless forloop.first %}, {% endunless %}
-                        {{ author | strip }}
+                        <span class="p-author  h-card">{{ author.name | default: author | strip }}</span>
                     {%- endfor -%}
                 {% endif %}
                 {% if page.badges %}
@@ -96,7 +96,7 @@
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
         {% if page.mf_property %}
-            {%- assign link = page.bookmark_of.url | default: page.bookmark_of | default: page.like_of.url | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+            {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
         <a class="u-author" href="/" hidden tabindex="-1"></a>

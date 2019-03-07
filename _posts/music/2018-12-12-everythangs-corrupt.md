@@ -2,8 +2,9 @@
 title: Everythangs Corrupt
 date: 2018-12-12
 release: 2018-12-07
-authors: Ice Cube
-authors_link: https://icecube.com/
+authors:
+- name: Ice Cube
+  link: https://icecube.com/
 link: https://open.spotify.com/album/0EVgPaKOC8o9JFVpKLMSoz
 cover: everythangs-corrupt.jpg
 rating: 4

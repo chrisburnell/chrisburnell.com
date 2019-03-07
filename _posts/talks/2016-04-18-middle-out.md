@@ -5,7 +5,7 @@ title: Supporting Middle-Out in CSS
 
 checkin:
   name: London Web Standards
-  url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/
+  link: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/
 notist_slug: Ua35T5/supporting-middle-out-in-css
 speakerdeck_slug: supporting-middle-out-in-css
 vimeo_slug: 164122074
