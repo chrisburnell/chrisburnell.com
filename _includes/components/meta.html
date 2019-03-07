@@ -79,7 +79,7 @@
     {% endif %}
     {% if page.audience %}
         <div class="audience">
-            <span>written for</span>
+            <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
             {%- for audience in audiences -%}
                 {% unless forloop.first %}, {% endunless %}
