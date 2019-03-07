@@ -42,3 +42,6 @@ Testing
 
 {% include content/heading.html title='Kristof De Jaeger' href='https://realize.be/' rel='external friend' id='' %}
 Testing
+
+{% include content/heading.html title='Vincent Pickering' href='https://vincentp.me/' rel='external friend' id='' %}
+Testing
