@@ -29,7 +29,12 @@ footer {
     }
 
     .codefund:not(:empty) + & {
-        padding: $measure-large 0 calc(#{$measure-large} + #{$measure-codefund});
-        padding: var(--measure-large) 0 calc(var(--measure-large) + var(--measure-codefund));
+        padding: $measure-large 0 calc(#{$measure-large} + #{$measure-codefund} * 2);
+        padding: var(--measure-large) 0 calc(var(--measure-large) + var(--measure-codefund) * 2);
+
+        @include media("screen", "above:small") {
+            padding: $measure-large 0 calc(#{$measure-large} + #{$measure-codefund});
+            padding: var(--measure-large) 0 calc(var(--measure-large) + var(--measure-codefund));
+        }
     }
 }
