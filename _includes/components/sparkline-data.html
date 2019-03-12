@@ -1,9 +1,9 @@
+{%- assign limit_x = site.sparklines.limit_x -%}
+{%- assign limit_y = site.sparklines.limit_y -%}
 {%- assign ending_week = site.time | date: '%-W' | plus: 0 -%}
 {%- assign ending_year = site.time | date: '%Y' | plus: 0 -%}
 {%- assign starting_week = ending_week -%}
 {%- assign starting_year = ending_year -%}
-{%- assign limit_x = site.sparklines.limit_x -%}
-{%- assign limit_y = site.sparklines.limit_y -%}
 {%- for i in (1..limit_x) -%}
     {%- assign starting_week = starting_week | minus: 1 -%}
     {%- if starting_week < 0 -%}
