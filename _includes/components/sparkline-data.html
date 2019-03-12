@@ -2,7 +2,9 @@
 {%- assign ending_year = site.time | date: '%Y' | plus: 0 -%}
 {%- assign starting_week = ending_week -%}
 {%- assign starting_year = ending_year -%}
-{%- for i in (1..26) -%}
+{%- assign limit_x = site.sparklines.limit_x -%}
+{%- assign limit_y = site.sparklines.limit_y -%}
+{%- for i in (1..limit_x) -%}
     {%- assign starting_week = starting_week | minus: 1 -%}
     {%- if starting_week < 0 -%}
         {%- assign starting_year = starting_year | minus: 1 -%}
@@ -25,6 +27,6 @@
                 {%- assign count = count | plus: 1 -%}
             {%- endif -%}
         {%- endfor -%}
-        {{ count | at_most: 9 }}
+        {{ count | at_most: limit_y }}
     {%- endfor -%}
 {%- endfor -%}

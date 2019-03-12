@@ -59,6 +59,10 @@ sitemap:
   changefreq: monthly
   priority:   0.5
 
+sparklines:
+  limit_x: 26
+  limit_y: 9
+
 codepen:
   page: details
   themes:
