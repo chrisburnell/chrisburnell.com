@@ -1,3 +1,6 @@
+emptyArray: []
+username: &username chrisburnell
+
 title:        Chris Burnell
 short_title:  cb
 tagline:      'I’m Ravenous for CSS.'
@@ -13,12 +16,15 @@ author:
   email:       me@chrisburnell.com
   role:        Front-End Developer
   pgp:         9604F098260A0057
-  codepen:     chrisburnell
-  github:      chrisburnell
-  gitlab:      chrisburnell
+  codepen:     *username
+  github:      *username
+  gitlab:      *username
+  lastfm:      *username
   mastodon:    chrisburnell@mastodon.social
+  notist:      *username
+  speakerdeck: *username
   twitter:     iamchrisburnell
-  untappd:     chrisburnell
+  untappd:     *username
   employer:
     name: Squiz
     url:  https://www.squiz.net
@@ -81,8 +87,6 @@ permalink: /:categories/:title/
 paginate: 16
 paginate_path: "/:num/"
 feed_limit: 24
-
-emptyArray: []
 
 defaults:
 - scope:

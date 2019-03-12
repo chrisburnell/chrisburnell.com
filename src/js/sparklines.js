@@ -99,26 +99,16 @@
         playNotes();
     };
 
-    let notes;
+    let notes = {},
+        type;
     if (document.querySelector(".sparkline")) {
-        fetch("/sparklines.json")
-            .then(helpers.getFetchResponse)
-            .then(response => response.json())
-            .then(data => {
-                // Success!
-                notes = data; // We need this for playSparkline
-                for (let sparkline of document.querySelectorAll(".sparkline")) {
-                    let type = sparkline.id.replace("sparkline-", "");
-                    if (sparkline.hasAttribute("data-values")) {
-                        notes[type] = sparkline.getAttribute("data-values").split("");
-                    }
-                    buildSparkline(`sparkline-${type}`, notes[type]);
-                }
-            })
-            .catch(error => {
-                // Fail!
-                console.error(`Sparklines request status error: ${error}`);
-            });
+        for (let sparkline of document.querySelectorAll(".sparkline")) {
+            if (sparkline.hasAttribute("data-values")) {
+                type = sparkline.id.replace("sparkline-", "");
+                notes[type] = sparkline.getAttribute("data-values").split("");
+                buildSparkline(`sparkline-${type}`, notes[type]);
+            }
+        }
     }
 
     let wave = "triangle"; // "sine", "square", "sawtooth", "triangle"

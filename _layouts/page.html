@@ -11,7 +11,13 @@
             <h1 class="title{% if page.page_class contains 'error' %}  title--error{% endif %}" role="heading">
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
-                    <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>
+                    {%- for category in site.categories -%}
+                        {%- if page.sparkline contains category[0] -%}
+                            {%- assign posts_by_category = category[1] -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=posts_by_category %}" width="160" height="24"></canvas>
                 {% endif %}
             </h1>
         {% endif %}

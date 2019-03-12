@@ -16,7 +16,7 @@
                 {% endif %}
             {% unless page.reacji %}</span>{% endunless %}
             {% if page.sparkline %}
-                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" width="160" height="24"></canvas>
+                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=page.category %}" width="160" height="24"></canvas>
             {% endif %}
         </h1>
 
@@ -64,7 +64,7 @@
             {% if page.checkin.image %}
                 <figure class="media">
                     {% if page.checkin.link %}<a href="{{ page.checkin.link }}" rel="external"{% if page.checkin.name %} title="{{ page.checkin.name }}"{% endif %}>{% endif %}
-                        <img src="{{ page.checkin.image | prepend: '/static/' | prepend: site.live_url }}" alt="">
+                        <img src="{{ page.checkin.image | prepend: site.static_url }}" alt="">
                     {% if page.checkin.link %}</a>{% endif %}
                 </figure>
             {% endif %}
