@@ -1,0 +1,22 @@
+////
+/// Recipe
+/// @group components
+/// @link https://chrisburnell.com/recipes/
+////
+
+.unit {
+    display: none;
+}
+
+@each $unit in $cooking-units {
+    [id="#{$unit}"]:checked {
+        & ~ .units [for="#{$unit}"] {
+            @include v(opacity, beta);
+            pointer-events: none;
+        }
+
+        & ~ .ingredients .unit--#{$unit} {
+            display: inline;
+        }
+    }
+}

@@ -2,17 +2,17 @@
 {% include components/header.html %}
 
 
-<main class="wrap  h-recipe" role="main">
-    <article class="content" id="content" role="article">
+<main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
+    <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
-            <span class="p-name">
-                {{ page.title | strip_html }}
-            </span>
+            <span class="p-name">{{ page.title | strip_html }}</span>
+            {% if page.sparkline %}
+                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=page.category %}" width="160" height="24"></canvas>
+            {% endif %}
         </h1>
 
-        {% include components/ingredients.html %}
-
+        {% include components/meta.html %}
         {% include components/banner.html %}
 
         {% if page.lede %}
@@ -29,7 +29,74 @@
         {% endif %}
 
         <div class="content__body  e-content">
-            {{ content }}
+            <input type="radio" id="metric" name="units" aria-hidden="true" hidden checked>
+            <input type="radio" id="us" name="units" aria-hidden="true" hidden>
+            <div class="units">
+                <label for="metric" class="button  button--small">Metric</label>
+                <label for="us" class="button  button--small">US</label>
+            </div>
+
+            {% include_cached content/heading.html title='Ingredients' %}
+            {%- assign has_ingredients_notes = page.ingredients | where_exp: 'ingredient', 'ingredient.notes != nil' | first -%}
+            <div class="ingredients">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Metric</th>
+                            <th>US</th>
+                            {% if has_ingredients_notes %}<th>Notes</th>{% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ingredient in page.ingredients %}
+                            {%- if ingredient.g -%}
+                                {%- assign metric = ingredient.g | prepend: '__' | append: ' g' -%}
+                                {%- assign us = ingredient.g | prepend: '__' | append: ' g' -%}
+                                {%- if ingredient.g >= site.data.cooking_units.mass.lb -%}
+                                    {%- assign us = ingredient.g | divided_by: site.data.cooking_units.mass.lb | prepend: '__' | append: ' lb' -%}
+                                {%- elsif ingredient.g >= site.data.cooking_units.mass.oz -%}
+                                    {%- assign us = ingredient.g | divided_by: site.data.cooking_units.mass.oz | prepend: '__' | append: ' oz' -%}
+                                {%- endif -%}
+                            {%- elsif ingredient.ml -%}
+                                {%- assign metric = ingredient.ml | prepend: '__' | append: ' mL' -%}
+                                {%- if ingredient.ml >= site.data.cooking_units.volume.cup -%}
+                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.cup -%}
+                                    {%- if us > 1 -%}
+                                        {%- assign us = us | prepend: '__' | append: ' cups' -%}
+                                    {%- else -%}
+                                        {%- assign us = us | prepend: '__' | append: ' cup' -%}
+                                    {%- endif -%}
+                                {%- elsif ingredient.ml >= site.data.cooking_units.mass.tbsp -%}
+                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.tbsp | prepend: '__' | append: ' tbsp' -%}
+                                {%- else -%}
+                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.tsp | prepend: '__' | append: ' tsp' -%}
+                                {%- endif -%}
+                            {%- endif -%}
+                            {%- assign metric = metric | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.5 ', '½ ' | replace: '__', '' -%}
+                            {%- assign us = us | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.5 ', '½ ' | replace: '__', '' -%}
+                            <tr class="ingredient" id="{{ ingredient.name | slugify }}">
+                                <td>{{ ingredient.name }}</td>
+                                <td>{{ metric }}</td>
+                                <td>{{ us }}</td>
+                                <!--td>
+                                    <span class="unit  unit--metric">{{ metric | replace: '.0 ', ' ' }}</span>
+                                    <span class="unit  unit--us">{{ us | replace: '.0 ', ' ' }}</span>
+                                </td-->
+                                <td>{% for note in ingredient.notes %}{% unless forloop.first %}<br>{% endunless %}• {{ note }}{% endfor %}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% include_cached content/heading.html title='Directions' %}
+            <div class="directions">
+                {% if page.preheat and page.preheat == true %}
+                    <p class="preheat-step">There is a <a href="#preheat">preheat</a> step in this recipe.<p>
+                {% endif %}
+                {{ content }}
+            </div>
         </div>
 
         {% include components/further-reading.html %}
@@ -45,6 +112,8 @@
         {% include components/widget-browse-posts.html %}
 
     </article>
+
+    {% include components/author.html %}
 </main>
 
 

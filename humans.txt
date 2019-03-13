@@ -19,7 +19,7 @@ searchable: false
     URL:           {{ site.url | append: site.baseurl }}
     Language:      {{ site.language }}
     Doctype:       HTML5
-    Fonts:         Heebo, League Gothic, Proxima Nova
+    Fonts:         Heebo, Proxima Nova
     Compiled with: Jekyll
 
 /* LANGUAGES */

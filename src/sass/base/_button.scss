@@ -102,7 +102,7 @@ button {
 
 .button--small {
     min-width: 5em;
-    @include v(font-size, large);
+    @include v(font-size, small);
     height: #{$line-height-code}em;
     line-height: #{$line-height-code - strip-unit($border-width-button)};
 

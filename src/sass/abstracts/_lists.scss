@@ -1,7 +1,7 @@
 /// @type List
 $font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 /// @type List
-$font-family-alpha: "Heebo", "League Gothic", sans-serif !default;
+$font-family-alpha: "Heebo", sans-serif !default;
 /// @type List
 $font-family-serif: Georgia, serif !default;
 /// @type List
@@ -13,7 +13,7 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andal
 /// @prop {String} style - Font Style
 /// @prop {Number} weight - Font Weight
 /// @prop {String} filename - Font Filename
-$font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("League Gothic", "Regular", normal, 400, "league-gothic-regular"), ("Proxima Nova", "Regular", normal, 400, "proxima-nova-regular"), ("Proxima Nova", "Italic", italic, 400, "proxima-nova-italic"), ("Proxima Nova", "Semibold", normal, 600, "proxima-nova-semibold")) !default;
+$font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("Proxima Nova", "Regular", normal, 400, "proxima-nova-regular"), ("Proxima Nova", "Italic", italic, 400, "proxima-nova-italic"), ("Proxima Nova", "Semibold", normal, 600, "proxima-nova-semibold")) !default;
 
 /// @type List
 /// @prop {String} name - Brand name
@@ -24,3 +24,7 @@ $brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color
 /// @type List
 /// @prop {String} Body / Primary Navigation Class
 $navigation-classes: about, archive, search !default;
+
+/// @type List
+/// @prop {String} Cooking Unit
+$cooking-units: metric, us !default;

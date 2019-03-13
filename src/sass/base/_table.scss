@@ -35,6 +35,13 @@ td {
     }
 }
 
+// Body Cells
+td {
+    &.numeral {
+        white-space: nowrap;
+    }
+}
+
 // Heading Cells
 th {
     @include v(font-weight, bold);

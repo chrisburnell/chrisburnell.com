@@ -221,10 +221,9 @@ defaults:
     path: '_posts/recipes'
   values:
     category: 'recipe'
+    layout: 'recipe'
     prefix: d
     emoji: '📝'
-    hidden: true
-    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/sleep'
