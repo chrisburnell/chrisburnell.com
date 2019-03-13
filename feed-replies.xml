@@ -6,17 +6,12 @@ sitemap:
 redirect_from:
 - /feed-reply.xml
 
-title: Full Feed
-lede: All of my posts.
+title: Replies Feed
+lede: All of my replis.
 category_path: ''
 ---
 
-{%- assign posts_with_replies = site.emptyArray -%}
-{%- for page in site.posts -%}
-    {%- if page.in_reply_to -%}
-        {%- assign posts_with_replies = posts_with_replies | push: page -%}
-    {%- endif -%}
-{%- endfor -%}
+{%- assign posts_with_replies = site.posts | where_exp: 'page', 'page.in_reply_to != nil' -%}
 {% for page in posts_with_replies limit: site.feed_limit %}
     {% include components/item-feed.html %}
 {% endfor %}

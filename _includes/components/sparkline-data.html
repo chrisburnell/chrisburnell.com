@@ -14,10 +14,13 @@
 {%- endfor -%}
 {%- for tracking_year in (starting_year..ending_year) -%}
     {%- unless forloop.first %}{%- assign starting_week = 1 -%}{% endunless -%}
+    {%- assign outside_first = forloop.first -%}
     {%- assign last_week_of_the_year = "December 31 " | append: tracking_year | date: '%W' -%}
     {%- for tracking_week in (starting_week..last_week_of_the_year) -%}
         {%- if tracking_year == ending_year and tracking_week > ending_week -%}
             {% break %}
+        {%- else -%}
+            {%- unless outside_first and forloop.first -%},{%- endunless -%}
         {%- endif -%}
         {%- assign count = 0 -%}
         {%- for page in include.target reversed -%}

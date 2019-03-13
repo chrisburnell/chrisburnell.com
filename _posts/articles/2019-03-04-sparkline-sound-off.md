@@ -13,14 +13,10 @@ I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Ca
 
 --------
 
-I’m using the same JSON to generate the audio as I am the sparkline itself. Each of the values in the array represent how many posts I made per week for the most recent 26 weeks (half a year).
+I’m using the same CSV to generate the audio as I am the sparkline itself. Each of the values in the array represent how many posts I made per week for the most recent 26 weeks (half a year).
 
-{% highlight json %}
-…
-"notes": [
-    0, 1, 1, 0, 0, 5, 2, 0, 0, 1, 0, 0, 0, 2, 5, 2, 3, 0, 0, 1, 0, 0, 2, 1, 0, 1
-],
-…
+{% highlight html %}
+<canvas id="sparkline-demo-1" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></canvas>
 {% endhighlight %}
 
 Because this is really just a fun little easter egg as opposed to a perfect 1-to-1 representation of the data, rather than traverse up-and-down a [chromatic scale](https://en.wikipedia.org/wiki/Chromatic_scale){:rel="external"} for each of the values, I decided to map the values against a [major pentatonic scale](https://en.wikipedia.org/wiki/Pentatonic_scale){:rel="external"} which results in <q>music</q> that is a bit more pleasant to listen to, rather than unharmonious noise. If I was going for a perfect representation of the data, I would stick to a chromatic scale so that the difference between notes matches their difference in numerical value.
@@ -98,7 +94,7 @@ In order to quell any feverish posting on my part, *as unlikely as that may be*,
 {% include content/heading.html title='money = [mouth, mouth = money][0];' id='put-your-money-where-your-mouth-is' %}
 
 <figure>
-    <canvas id="sparkline-demo-1" class="sparkline" width="160" height="24" data-values="00000000400491452426464650"></canvas>
+    <canvas id="sparkline-demo-2" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></canvas>
 </figure>
 
 Here’s an example. First, we need the per-week data:
@@ -118,5 +114,5 @@ If we work through this array, item by item, using each value as the key to retr
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"} to create the tones in our browsers, playing each frequency in succession over four seconds:
 
 <figure>
-    <canvas id="sparkline-demo-2" class="sparkline" width="160" height="24" data-values="00000000400491452426464650"></canvas>
+    <canvas id="sparkline-demo-3" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></canvas>
 </figure>

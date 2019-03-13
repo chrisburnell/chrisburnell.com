@@ -105,7 +105,7 @@
         for (let sparkline of document.querySelectorAll(".sparkline")) {
             if (sparkline.hasAttribute("data-values")) {
                 type = sparkline.id.replace("sparkline-", "");
-                notes[type] = sparkline.getAttribute("data-values").split("");
+                notes[type] = sparkline.getAttribute("data-values").split(",");
                 buildSparkline(`sparkline-${type}`, notes[type]);
             }
         }
