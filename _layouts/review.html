@@ -27,6 +27,14 @@
             </div>
         {% endif %}
 
+        {% if checkin.image %}
+            <figure class="media">
+                {% if checkin.link %}<a href="{{ checkin.link }}" rel="external"{% if checkin.name %} title="{{ checkin.name }}"{% endif %}>{% endif %}
+                    <img src="{{ checkin.image | prepend: site.static_url }}" alt="">
+                {% if checkin.link %}</a>{% endif %}
+            </figure>
+        {% endif %}
+
         {% include components/further-reading.html %}
 
         <hr>

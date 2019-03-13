@@ -95,14 +95,11 @@ ins {
 }
 
 del {
-    @include v(background-color, canada);
-    @include v(color, white);
-    @include v(text-decoration-color, canada);
-    @include v(font-size, default);
+    @include v(color, canada);
 }
 
 s {
-    @include v(color, canada);
+    @include v(color, dove);
 }
 
 small {
@@ -184,5 +181,9 @@ textarea {
 
 .badges {
     display: block;
-    @include v(font-size, small);
+
+    .content-list &,
+    .shelf & {
+        @include v(font-size, small);
+    }
 }

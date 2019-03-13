@@ -145,6 +145,7 @@
         </div>
     {% endif %}
     {% if page.checkin %}
+        {%- assign checkin = site.data.locations | where: 'name', page.checkin.name | first | default: page.checkin -%}
         <div class="location">
             {% if page.category == 'beer' %}
                 <span>drank at</span>
@@ -153,12 +154,12 @@
             {% else %}
                 <span>at</span>
             {% endif %}
-            {% if page.checkin.link %}
-                <a class="p-location" rel="external" href="{{ page.checkin.link }}">{{ page.checkin.name | default: page.checkin }}</a>
-            {% elsif page.checkin.geo %}
-                <a class="p-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location.geo | split: ',' | first }}&mlon={{ location.geo | split: ',' | last }}&zoom=12">{{ page.checkin.name }}</a>
+            {% if checkin.link %}
+                <a class="p-location" rel="external" href="{{ checkin.link }}">{{ checkin.name | default: checkin }}</a>
+            {% elsif checkin.geo %}
+                <a class="p-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location.geo | split: ',' | first }}&mlon={{ location.geo | split: ',' | last }}&zoom=12">{{ checkin.name }}</a>
             {% else %}
-                <strong class="p-location">{{ page.checkin.name | default: page.checkin }}</strong>
+                <strong class="p-location">{{ checkin.name | default: checkin }}</strong>
             {% endif %}
         </div>
     {% endif %}
@@ -333,5 +334,5 @@
             <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
         </div>
     {% endif %}
-    <a href="https://fed.brid.gy/" hidden></a>
+    <a href="https://fed.brid.gy/" aria-hidden="true" hidden></a>
 </div>

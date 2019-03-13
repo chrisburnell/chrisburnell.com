@@ -61,11 +61,11 @@
                 {{ content }}
             {% endif %}
 
-            {% if page.checkin.image %}
+            {% if checkin.image %}
                 <figure class="media">
-                    {% if page.checkin.link %}<a href="{{ page.checkin.link }}" rel="external"{% if page.checkin.name %} title="{{ page.checkin.name }}"{% endif %}>{% endif %}
-                        <img src="{{ page.checkin.image | prepend: site.static_url }}" alt="">
-                    {% if page.checkin.link %}</a>{% endif %}
+                    {% if checkin.link %}<a href="{{ checkin.link }}" rel="external"{% if checkin.name %} title="{{ checkin.name }}"{% endif %}>{% endif %}
+                        <img src="{{ checkin.image | prepend: site.static_url }}" alt="">
+                    {% if checkin.link %}</a>{% endif %}
                 </figure>
             {% endif %}
         </div>

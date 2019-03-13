@@ -1,0 +1,16 @@
+- name: The Griffin
+  link: http://the-griffin.com/
+  image: maps/the-griffin.png
+  geo: 51.5248105,-0.0842363
+- name: Homebrew Website Club London
+  link: https://hwclondon.co.uk/
+  image: maps/hwclondon.png
+  geo: 51.5100055,-0.1294994
+- name: Conway Hall
+  link: https://conwayhall.org.uk/
+  image: maps/conway-hall.png
+  geo: 51.5196715,-0.1205393
+- name: Pig's Ear CAMRA Beer & Cider Festival
+  link: http://www.pigsear.org.uk/
+  image: maps/pigs-ear-beer-festival.png
+  geo: 51.5524691;-0.0526876

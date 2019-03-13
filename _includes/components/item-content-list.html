@@ -99,6 +99,6 @@
             {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
-        <a class="u-author" href="/" hidden tabindex="-1"></a>
+        <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </article>
 </li>

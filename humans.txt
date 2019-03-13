@@ -9,8 +9,8 @@ searchable: false
 
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
-    Twitter: {{ site.author.twitter | prepend: '@' }}
-    GitHub: {{ site.author.github }}
+    Twitter: {{ site.urls.twitter }}
+    GitHub: {{ site.urls.github }}
     PGP: {{ site.author.pgp }}
 
 /* SITE */
@@ -20,7 +20,7 @@ searchable: false
     Language:      {{ site.language }}
     Doctype:       HTML5
     Fonts:         Heebo, League Gothic, Proxima Nova
-    Compiled with: Jekyll, Gulp
+    Compiled with: Jekyll
 
 /* LANGUAGES */
 
@@ -35,9 +35,11 @@ searchable: false
 
 /* SERVICES */
 
+    Aperture:      https://aperture.p3k.io
+    Atlas:         https://atlas.p3k.io
     CodePen:       https://codepen.io
     Disqus:        https://disqus.com
+    Switchboard:   https://switchboard.p3k.io
+    Telegraph:     https://telegraph.p3k.io
     Twitter:       https://dev.twitter.com
     Webmention.io: https://webmention.io
-    Aperture:      https://aperture.p3k.io
-    Telegraph:     https://telegraph.p3k.io
