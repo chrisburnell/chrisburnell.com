@@ -107,7 +107,7 @@
 
         for (let link of data.links.reverse()) {
             let type = "reaction";
-            if (link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
+            if (link.activity.type !== "bookmark" && link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
                 type = "reply";
             }
             if (link.verified === true && link.private === false) {
@@ -143,7 +143,7 @@
         let id = response.id;
         let type = response.activity.type;
         let url = response.data.url;
-        let content = !response.data.content || type === "repost" ? "" : response.data.content;
+        let content = !response.data.content || type === "bookmark" || type === "like" || type === "repost" ? "" : response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
         let authorUrl = response.data.author.url;
