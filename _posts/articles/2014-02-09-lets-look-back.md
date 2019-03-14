@@ -6,7 +6,7 @@ lede: I haven’t published a new article in a while now, but I haven’t been t
 tags:
 - css
 - github
-- sass
+- scss
 - tutorials
 
 banner:

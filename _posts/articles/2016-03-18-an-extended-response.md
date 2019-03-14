@@ -5,7 +5,7 @@ title: An Extended Response
 lede: If you’ve dabbled in Sass before, you’re likely familiar with <code>@extend</code> and <code>@mixin</code>, but is there any use-case for <code>@extend</code>? Given the benchmark performance of the two, can we still be confident in the cascade when <code>@extending</code> in Sass?
 tags:
 - css
-- sass
+- scss
 - tutorials
 
 comments: disqus

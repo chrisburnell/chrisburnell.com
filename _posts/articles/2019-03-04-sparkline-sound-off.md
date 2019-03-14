@@ -5,6 +5,7 @@ title: Sparkline Sound-Off
 lede: For a few months now I have been following in the footsteps of Jeremy Keith and displaying sparklines representing my activity over time with different post types. As an added bonus, a little tune based on the sparkline’s values plays when you click on the sparkline. With a moderate amount of musical theory under my belt, here’s how I accomplished that audio delight.
 
 tags:
+- canvas
 - javascript
 - music
 ---

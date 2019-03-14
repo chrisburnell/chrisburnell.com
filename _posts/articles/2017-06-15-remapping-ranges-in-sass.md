@@ -6,7 +6,7 @@ lede: Great inspiration can sometimes be found in exploring available opportunit
 tags:
 - collaboration
 - css
-- sass
+- scss
 
 codepen: true
 comments: disqus

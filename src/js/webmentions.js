@@ -149,7 +149,7 @@
         let authorUrl = response.data.author.url;
         let authorImgUrl = response.data.author.photo ? response.data.author.photo : "/images/default-profile.png";
         if (authorUrl.includes("twitter.com")) {
-            authorImgUrl = "http://avatars.io/twitter/" + authorUrl.split("twitter.com/")[1].split("/status/")[0];
+            authorImgUrl = "https://avatars.io/twitter/" + authorUrl.split("twitter.com/")[1].split("/status/")[0];
         }
         if ('connection' in navigator) {
             if (navigator.connection.saveData) {
