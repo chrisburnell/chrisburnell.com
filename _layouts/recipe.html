@@ -80,23 +80,23 @@
                                     {% if ingredient.ml > site.data.cooking_units.volume.cup %}
                                         {% assign canada = canada | append: 's' %}
                                     {% endif %}
-                                {% elsif canada >= site.data.cooking_units.mass.tbsp %}
+                                {% elsif canada >= site.data.cooking_units.volume.tbsp %}
                                     {% assign canada = canada | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
                                     {% assign canada = canada | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
                                 {% endif %}
                                 {% assign uk = ingredient.ml %}
-                                {% if uk >= site.data.cooking_units.mass.gallon %}
+                                {% if uk >= site.data.cooking_units.volume.gallon %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.gallon | round: 2 | append: ' gallon' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.gallon %}
                                         {% assign uk = uk | append: 's' %}
                                     {% endif %}
-                                {% elsif uk >= site.data.cooking_units.mass.quart %}
+                                {% elsif uk >= site.data.cooking_units.volume.quart %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.quart | round: 2 | append: ' quart' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.quart %}
                                         {% assign uk = uk | append: 's' %}
                                     {% endif %}
-                                {% elsif uk >= site.data.cooking_units.mass.pint %}
+                                {% elsif uk >= site.data.cooking_units.volume.pint %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.pint | round: 2 | append: ' pint' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.pint %}
                                         {% assign uk = uk | append: 's' %}
@@ -106,37 +106,37 @@
                                     {% if ingredient.ml >= site.data.cooking_units.volume.cup_uk %}
                                         {% assign uk = uk | append: 's' %}
                                     {% endif %}
-                                {% elsif uk >= site.data.cooking_units.mass.floz_uk %}
+                                {% elsif uk >= site.data.cooking_units.volume.floz_uk %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.floz_uk | round: 2 | append: ' floz' %}
-                                {% elsif uk >= site.data.cooking_units.mass.tbsp %}
+                                {% elsif uk >= site.data.cooking_units.volume.tbsp %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
                                 {% endif %}
                                 {% assign us = ingredient.ml %}
-                                {% if uk >= site.data.cooking_units.mass.gallon_us %}
-                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.gallon_us | round: 2 | append: ' gallon' %}
+                                {% if us >= site.data.cooking_units.volume.gallon_us %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.gallon_us | round: 2 | append: ' gallon' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.gallon_us %}
-                                        {% assign uk = uk | append: 's' %}
+                                        {% assign us = us | append: 's' %}
                                     {% endif %}
-                                {% elsif uk >= site.data.cooking_units.mass.quart_us %}
-                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.quart_us | round: 2 | append: ' quart' %}
+                                {% elsif us >= site.data.cooking_units.volume.quart_us %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.quart_us | round: 2 | append: ' quart' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.quart_us %}
-                                        {% assign uk = uk | append: 's' %}
+                                        {% assign us = us | append: 's' %}
                                     {% endif %}
-                                {% elsif uk >= site.data.cooking_units.mass.pint_us %}
-                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.pint_us | round: 2 | append: ' pint' %}
+                                {% elsif us >= site.data.cooking_units.volume.pint_us %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.pint_us | round: 2 | append: ' pint' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.pint_us %}
-                                        {% assign uk = uk | append: 's' %}
+                                        {% assign us = us | append: 's' %}
                                     {% endif %}
                                 {% elsif us >= site.data.cooking_units.volume.quarter_cup_us %}
                                     {% assign us = us | divided_by: site.data.cooking_units.volume.cup_us | round: 2 | append: ' cup' %}
                                     {% if ingredient.ml > site.data.cooking_units.volume.cup_us %}
                                         {% assign us = us | append: 's' %}
                                     {% endif %}
-                                {% elsif us >= site.data.cooking_units.mass.floz_us %}
+                                {% elsif us >= site.data.cooking_units.volume.floz_us %}
                                     {% assign us = us | divided_by: site.data.cooking_units.volume.floz_us | round: 2 | append: ' floz' %}
-                                {% elsif us >= site.data.cooking_units.mass.tbsp %}
+                                {% elsif us >= site.data.cooking_units.volume.tbsp %}
                                     {% assign us = us | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
                                     {% assign us = us | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
