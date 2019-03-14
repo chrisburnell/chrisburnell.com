@@ -30,10 +30,10 @@
 
         <div class="content__body  e-content">
             <input type="radio" id="metric" name="units" aria-hidden="true" hidden checked>
-            <input type="radio" id="us" name="units" aria-hidden="true" hidden>
+            <input type="radio" id="typical" name="units" aria-hidden="true" hidden>
             <div class="units">
                 <label for="metric" class="button  button--small">Metric</label>
-                <label for="us" class="button  button--small">US</label>
+                <label for="typical" class="button  button--small">Typical</label>
             </div>
 
             {% include_cached content/heading.html title='Ingredients' %}
@@ -43,8 +43,7 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Metric</th>
-                            <th>US</th>
+                            <th>Measure</th>
                             {% if has_ingredients_notes %}<th>Notes</th>{% endif %}
                         </tr>
                     </thead>
@@ -52,37 +51,35 @@
                         {% for ingredient in page.ingredients %}
                             {%- if ingredient.g -%}
                                 {%- assign metric = ingredient.g | prepend: '__' | append: ' g' -%}
-                                {%- assign us = ingredient.g | prepend: '__' | append: ' g' -%}
+                                {%- assign typical = ingredient.g | prepend: '__' | append: ' g' -%}
                                 {%- if ingredient.g >= site.data.cooking_units.mass.lb -%}
-                                    {%- assign us = ingredient.g | divided_by: site.data.cooking_units.mass.lb | prepend: '__' | append: ' lb' -%}
+                                    {%- assign typical = ingredient.g | divided_by: site.data.cooking_units.mass.lb | prepend: '__' | append: ' lb' -%}
                                 {%- elsif ingredient.g >= site.data.cooking_units.mass.oz -%}
-                                    {%- assign us = ingredient.g | divided_by: site.data.cooking_units.mass.oz | prepend: '__' | append: ' oz' -%}
+                                    {%- assign typical = ingredient.g | divided_by: site.data.cooking_units.mass.oz | prepend: '__' | append: ' oz' -%}
                                 {%- endif -%}
                             {%- elsif ingredient.ml -%}
                                 {%- assign metric = ingredient.ml | prepend: '__' | append: ' mL' -%}
                                 {%- if ingredient.ml >= site.data.cooking_units.volume.cup -%}
-                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.cup -%}
-                                    {%- if us > 1 -%}
-                                        {%- assign us = us | prepend: '__' | append: ' cups' -%}
+                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.cup -%}
+                                    {%- if typical > 1 -%}
+                                        {%- assign typical = typical | prepend: '__' | append: ' cups' -%}
                                     {%- else -%}
-                                        {%- assign us = us | prepend: '__' | append: ' cup' -%}
+                                        {%- assign typical = typical | prepend: '__' | append: ' cup' -%}
                                     {%- endif -%}
                                 {%- elsif ingredient.ml >= site.data.cooking_units.mass.tbsp -%}
-                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.tbsp | prepend: '__' | append: ' tbsp' -%}
+                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.tbsp | prepend: '__' | append: ' tbsp' -%}
                                 {%- else -%}
-                                    {%- assign us = ingredient.ml | divided_by: site.data.cooking_units.volume.tsp | prepend: '__' | append: ' tsp' -%}
+                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.tsp | prepend: '__' | append: ' tsp' -%}
                                 {%- endif -%}
                             {%- endif -%}
-                            {%- assign metric = metric | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.5 ', '½ ' | replace: '__', '' -%}
-                            {%- assign us = us | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.5 ', '½ ' | replace: '__', '' -%}
+                            {%- assign metric = metric | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.33 ', '⅓ ' | replace: '.5 ', '½ ' | replace: '.66 ', '⅔ ' | replace: '.67 ', '⅔ ' | replace: '.75 ', '¾ ' | replace: '__', '' -%}
+                            {%- assign typical = typical | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.33 ', '⅓ ' | replace: '.5 ', '½ ' | replace: '.66 ', '⅔ ' | replace: '.67 ', '⅔ ' | replace: '.75 ', '¾ ' | replace: '__', '' -%}
                             <tr class="ingredient" id="{{ ingredient.name | slugify }}">
                                 <td>{{ ingredient.name }}</td>
-                                <td>{{ metric }}</td>
-                                <td>{{ us }}</td>
-                                <!--td>
-                                    <span class="unit  unit--metric">{{ metric | replace: '.0 ', ' ' }}</span>
-                                    <span class="unit  unit--us">{{ us | replace: '.0 ', ' ' }}</span>
-                                </td-->
+                                <td>
+                                    <span class="unit  unit--metric">{{ metric }}</span>
+                                    <span class="unit  unit--typical">{{ typical }}</span>
+                                </td>
                                 <td>{% for note in ingredient.notes %}{% unless forloop.first %}<br>{% endunless %}• {{ note }}{% endfor %}</td>
                             </tr>
                         {% endfor %}
