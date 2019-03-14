@@ -27,7 +27,7 @@ lede: All of my sleep.
     <li>
         <article class="h-entry" role="article">
             <h3 class="delta  title  p-name" hidden>Slept from {{ page.date | date_to_long_string }} until {{ page.finish | date_to_long_string }}</h3>
-            <canvas id="sparkline-{{ page.slug }}" class="sparkline  sparkline--sleep" width="160" height="24" data-values="{{ page.data }}"></canvas>
+            {% include content/sparkline.html title=page.slug values=page.data %}
             <dl class="compact  lede  p-summary">
                 {%- assign total_hours = page.data.size | divided_by: 60 | floor -%}
                 {%- assign total_minutes = page.data.size | modulo: 60 -%}

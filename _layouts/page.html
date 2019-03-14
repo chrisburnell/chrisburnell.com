@@ -17,7 +17,7 @@
                             {%- break -%}
                         {%- endif -%}
                     {%- endfor -%}
-                    <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=posts_by_category %}" width="160" height="24"></canvas>
+                    {% include content/sparkline.html title=page.sparkline values=posts_by_category %}
                 {% endif %}
             </h1>
         {% endif %}

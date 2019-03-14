@@ -11,7 +11,8 @@
     width: 160px !important;
     height: 24px !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
         @include v(background-color, highlight);
         outline: $border-width-thin $border-style-default $color-highlight;
         outline: var(--border-width-thin) var(--border-style-default) var(--color-highlight);
@@ -30,17 +31,18 @@
 
         @include media("screen", "above:small") {
             float: right;
-            margin-left: $measure-medium;
+            @include v(margin-top, medium);
         }
     }
 
     %alpha & {
         @include media("screen", "above:small") {
-            margin-top: $measure-medium;
+            @include v(margin-top, medium);
         }
     }
 }
 
 .sparkline--sleep {
-    padding: 2px;
+    padding: $border-width-thin;
+    padding: var(--border-width-thin);
 }

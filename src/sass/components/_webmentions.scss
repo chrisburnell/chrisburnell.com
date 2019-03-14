@@ -64,6 +64,12 @@
     }
 }
 
+.webmentions__response__avatar {
+    background-image: url("/images/default-profile.png");
+    background-size: 100%;
+    @include border-radius(50%);
+}
+
 .webmentions__response__image {
     @include border-radius(50%);
     @include v(width, avatar-small);
@@ -71,8 +77,12 @@
     display: block;
 }
 
-.webmentions__response__image:not([src=""]) + .webmentions__response__name {
-    display: none;
+.webmentions__response__name {
+    @include  v(padding-right, medium);
+
+    .webmentions__response__image:not([src=""]) + & {
+        display: none;
+    }
 }
 
 .webmentions__list__reactions {

@@ -16,7 +16,7 @@
                 {% endif %}
             {% unless page.reacji %}</span>{% endunless %}
             {% if page.sparkline %}
-                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=page.category %}" width="160" height="24"></canvas>
+                {% include content/sparkline.html title=page.sparkline values=page.category %}
             {% endif %}
         </h1>
 

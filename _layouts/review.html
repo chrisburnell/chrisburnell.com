@@ -8,7 +8,7 @@
         <h1 class="title" id="article" role="heading">
             <span class="p-name">{{ page.title | strip_html }}</span>
             {% if page.sparkline %}
-                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=page.category %}" width="160" height="24"></canvas>
+                {% include content/sparkline.html title=page.sparkline values=page.category %}
             {% endif %}
         </h1>
 

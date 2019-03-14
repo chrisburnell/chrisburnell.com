@@ -153,7 +153,7 @@
         }
         if ('connection' in navigator) {
             if (navigator.connection.saveData) {
-                authorImgUrl = "";
+                authorImgUrl = "/images/default-profile.png";
             }
         }
 

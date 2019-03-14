@@ -8,7 +8,7 @@
         <h1 class="title" id="article" role="heading">
             <span class="p-name">{{ page.title | strip_html }}</span>
             {% if page.sparkline %}
-                <canvas id="sparkline-{{ page.sparkline }}" class="sparkline" data-values="{% include components/sparkline-data.html target=page.category %}" width="160" height="24"></canvas>
+                {% include content/sparkline.html title=page.sparkline values=page.category %}
             {% endif %}
         </h1>
 
@@ -107,7 +107,7 @@
                                         {% assign uk = uk | append: 's' %}
                                     {% endif %}
                                 {% elsif uk >= site.data.cooking_units.volume.floz_uk %}
-                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.floz_uk | round: 2 | append: ' floz' %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.floz_uk | round: 2 | append: ' fl. oz' %}
                                 {% elsif uk >= site.data.cooking_units.volume.tbsp %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
@@ -135,7 +135,7 @@
                                         {% assign us = us | append: 's' %}
                                     {% endif %}
                                 {% elsif us >= site.data.cooking_units.volume.floz_us %}
-                                    {% assign us = us | divided_by: site.data.cooking_units.volume.floz_us | round: 2 | append: ' floz' %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.floz_us | round: 2 | append: ' fl. oz' %}
                                 {% elsif us >= site.data.cooking_units.volume.tbsp %}
                                     {% assign us = us | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
