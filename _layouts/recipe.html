@@ -30,57 +30,134 @@
 
         <div class="content__body  e-content">
             <input type="radio" id="metric" name="units" aria-hidden="true" hidden checked>
-            <input type="radio" id="typical" name="units" aria-hidden="true" hidden>
+            <input type="radio" id="canada" name="units" aria-hidden="true" hidden>
+            <input type="radio" id="uk" name="units" aria-hidden="true" hidden>
+            <input type="radio" id="us" name="units" aria-hidden="true" hidden>
             <div class="units">
                 <label for="metric" class="button  button--small">Metric</label>
-                <label for="typical" class="button  button--small">Typical</label>
+                <label for="canada" class="button  button--small">Canada</label>
+                <label for="uk" class="button  button--small">UK</label>
+                <label for="us" class="button  button--small">US</label>
             </div>
 
             {% include_cached content/heading.html title='Ingredients' %}
             {%- assign has_ingredients_notes = page.ingredients | where_exp: 'ingredient', 'ingredient.notes != nil' | first -%}
+            {%- assign has_ingredients_optional = page.ingredients | where_exp: 'ingredient', 'ingredient.optional != nil' | first -%}
             <div class="ingredients">
                 <table>
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Measure</th>
-                            {% if has_ingredients_notes %}<th>Notes</th>{% endif %}
+                            {% if has_ingredients_notes or has_ingredients_optional %}<th>Notes</th>{% endif %}
                         </tr>
                     </thead>
                     <tbody>
                         {% for ingredient in page.ingredients %}
-                            {%- if ingredient.g -%}
-                                {%- assign metric = ingredient.g | prepend: '__' | append: ' g' -%}
-                                {%- assign typical = ingredient.g | prepend: '__' | append: ' g' -%}
-                                {%- if ingredient.g >= site.data.cooking_units.mass.lb -%}
-                                    {%- assign typical = ingredient.g | divided_by: site.data.cooking_units.mass.lb | prepend: '__' | append: ' lb' -%}
-                                {%- elsif ingredient.g >= site.data.cooking_units.mass.oz -%}
-                                    {%- assign typical = ingredient.g | divided_by: site.data.cooking_units.mass.oz | prepend: '__' | append: ' oz' -%}
-                                {%- endif -%}
-                            {%- elsif ingredient.ml -%}
-                                {%- assign metric = ingredient.ml | prepend: '__' | append: ' mL' -%}
-                                {%- if ingredient.ml >= site.data.cooking_units.volume.cup -%}
-                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.cup -%}
-                                    {%- if typical > 1 -%}
-                                        {%- assign typical = typical | prepend: '__' | append: ' cups' -%}
-                                    {%- else -%}
-                                        {%- assign typical = typical | prepend: '__' | append: ' cup' -%}
-                                    {%- endif -%}
-                                {%- elsif ingredient.ml >= site.data.cooking_units.mass.tbsp -%}
-                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.tbsp | prepend: '__' | append: ' tbsp' -%}
-                                {%- else -%}
-                                    {%- assign typical = ingredient.ml | divided_by: site.data.cooking_units.volume.tsp | prepend: '__' | append: ' tsp' -%}
-                                {%- endif -%}
-                            {%- endif -%}
-                            {%- assign metric = metric | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.33 ', '⅓ ' | replace: '.5 ', '½ ' | replace: '.66 ', '⅔ ' | replace: '.67 ', '⅔ ' | replace: '.75 ', '¾ ' | replace: '__', '' -%}
-                            {%- assign typical = typical | replace: '__0.', '.' | replace: '.0 ', ' ' | replace: '.25 ', '¼ ' | replace: '.33 ', '⅓ ' | replace: '.5 ', '½ ' | replace: '.66 ', '⅔ ' | replace: '.67 ', '⅔ ' | replace: '.75 ', '¾ ' | replace: '__', '' -%}
+                            {% if ingredient.g %}
+                                {% assign metric = ingredient.g | round: 2 | append: ' g' %}
+                                {% assign us = metric %}
+                                {% if ingredient.g >= site.data.cooking_units.mass.kg %}
+                                    {% assign metric = ingredient.g | divided_by: site.data.cooking_units.mass.kg | round: 2 | append: ' kg' %}
+                                {% endif %}
+                                {% assign canada = metric %}
+                                {% if ingredient.g >= site.data.cooking_units.mass.lb %}
+                                    {% assign us = ingredient.g | divided_by: site.data.cooking_units.mass.lb | round: 2 | append: ' lb' %}
+                                {% elsif ingredient.g >= site.data.cooking_units.mass.oz %}
+                                    {% assign us = ingredient.g | divided_by: site.data.cooking_units.mass.oz | round: 2 | append: ' oz' %}
+                                {% endif %}
+                                {% assign uk = us %}
+                            {% elsif ingredient.ml %}
+                                {% assign metric = ingredient.ml %}
+                                {% if metric >= site.data.cooking_units.volume.l %}
+                                    {% assign metric = metric | divided_by: site.data.cooking_units.volume.l | round: 2 | append: ' L' %}
+                                {% else %}
+                                    {% assign metric = metric | round: 2 | append: ' mL' %}
+                                {% endif %}
+                                {% assign canada = ingredient.ml %}
+                                {% if canada >= site.data.cooking_units.volume.quarter_cup %}
+                                    {% assign canada = canada | divided_by: site.data.cooking_units.volume.cup | round: 2 | append: ' cup' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.cup %}
+                                        {% assign canada = canada | append: 's' %}
+                                    {% endif %}
+                                {% elsif canada >= site.data.cooking_units.mass.tbsp %}
+                                    {% assign canada = canada | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
+                                {% else %}
+                                    {% assign canada = canada | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
+                                {% endif %}
+                                {% assign uk = ingredient.ml %}
+                                {% if uk >= site.data.cooking_units.mass.gallon %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.gallon | round: 2 | append: ' gallon' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.gallon %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.mass.quart %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.quart | round: 2 | append: ' quart' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.quart %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.mass.pint %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.pint | round: 2 | append: ' pint' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.pint %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.volume.quarter_cup_uk %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.cup_uk | round: 2 | append: ' cup' %}
+                                    {% if ingredient.ml >= site.data.cooking_units.volume.cup_uk %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.mass.floz_uk %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.floz_uk | round: 2 | append: ' floz' %}
+                                {% elsif uk >= site.data.cooking_units.mass.tbsp %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
+                                {% else %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
+                                {% endif %}
+                                {% assign us = ingredient.ml %}
+                                {% if uk >= site.data.cooking_units.mass.gallon_us %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.gallon_us | round: 2 | append: ' gallon' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.gallon_us %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.mass.quart_us %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.quart_us | round: 2 | append: ' quart' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.quart_us %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif uk >= site.data.cooking_units.mass.pint_us %}
+                                    {% assign uk = uk | divided_by: site.data.cooking_units.volume.pint_us | round: 2 | append: ' pint' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.pint_us %}
+                                        {% assign uk = uk | append: 's' %}
+                                    {% endif %}
+                                {% elsif us >= site.data.cooking_units.volume.quarter_cup_us %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.cup_us | round: 2 | append: ' cup' %}
+                                    {% if ingredient.ml > site.data.cooking_units.volume.cup_us %}
+                                        {% assign us = us | append: 's' %}
+                                    {% endif %}
+                                {% elsif us >= site.data.cooking_units.mass.floz_us %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.floz_us | round: 2 | append: ' floz' %}
+                                {% elsif us >= site.data.cooking_units.mass.tbsp %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
+                                {% else %}
+                                    {% assign us = us | divided_by: site.data.cooking_units.volume.tsp | round: 2 | append: ' tsp' %}
+                                {% endif %}
+                            {% elsif ingredient.amount %}
+                                {% assign metric = ingredient.amount %}
+                                {% assign canada = metric %}
+                                {% assign uk = metric %}
+                                {% assign us = metric %}
+                            {% endif %}
                             <tr class="ingredient" id="{{ ingredient.name | slugify }}">
                                 <td>{{ ingredient.name }}</td>
                                 <td>
-                                    <span class="unit  unit--metric">{{ metric }}</span>
-                                    <span class="unit  unit--typical">{{ typical }}</span>
+                                    {% if ingredient.g or ingredient.ml or ingredient.amount %}
+                                        <span class="unit  unit--metric">{% include content/fractionize.html value=metric %}</span>
+                                        <span class="unit  unit--canada" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=canada %}</span>
+                                        <span class="unit  unit--uk" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=uk %}</span>
+                                        <span class="unit  unit--us" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=us %}</span>
+                                    {% endif %}
                                 </td>
-                                <td>{% for note in ingredient.notes %}{% unless forloop.first %}<br>{% endunless %}• {{ note }}{% endfor %}</td>
+                                {% if has_ingredients_notes or has_ingredients_optional %}<td>{% if ingredient.optional == true %}• <em>optional</em><br>{% endif %}{% for note in ingredient.notes %}{% unless forloop.first %}<br>{% endunless %}• {{ note }}{% endfor %}</td>{% endif %}
                             </tr>
                         {% endfor %}
                     </tbody>

@@ -2,19 +2,23 @@ mass:
   g: 1.00
   oz: 28.00
   lb: 448.00
+  kg: 1000.00
 volume:
   ml: 1.00
   tsp: 5.00
   tbsp: 15.00
   floz_uk: 28.41
   floz_us: 29.57
-  cup: 250.00
+  quarter_cup_us: 59.15
+  quarter_cup: 62.50
+  quarter_cup_uk: 71.03
   cup_us: 236.59
+  cup: 250.00
   cup_uk: 284.10
   pint_us: 473.18
-  pint_uk: 568.26
+  pint: 568.26
   quart_us: 946.35
   l: 1000.00
-  quart_uk: 1136.52
+  quart: 1136.52
   gallon_us: 3785.41
-  gallon_uk: 4546.09
+  gallon: 4546.09

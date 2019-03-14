@@ -1,6 +1,4 @@
 ---
-date: 2015-01-25 13:10:00
-
 title: NYT No Knead Bread
 prep_time: 14–20 hours
 cooking_time: 45–60 minutes
@@ -12,29 +10,21 @@ banner_mobile: nyt-no-knead-bread_mobile.png
 ingredients:
 - name: flour
   g: 400
-  metric: 400 g
-  amount: 3 cups
   notes:
   - all-purpose, white, whole wheat flour
   - typically do 2:1–4:1 ratio of white to whole wheat flour
   - more flour for dusting
 - name: salt
   ml: 6.25
-  metric: 6.25 mL
-  amount: 1¼ tsp
 - name: yeast
   ml: 1.25
-  metric: 1.25 mL
-  amount: ¼ tsp
 - name: water
   ml: 385
-  metric: 385 mL
-  amount: 1⅝ cups
 - name: bran or cornmeal as desired
 
-source:
-- No-Knead Bread
-- http://cooking.nytimes.com/recipes/11376-no-knead-bread
+authors:
+- name: New York Times Cooking
+  link: http://cooking.nytimes.com/recipes/11376-no-knead-bread
 ---
 
 0. In a large bowl combine {% include content/ingredient.html id="flour" %}, {% include content/ingredient.html id="salt" %}, {% include content/ingredient.html id="yeast" %}, and {% include content/ingredient.html id="water" %}. Stir until blended; dough will be shaggy and sticky. Cover bowl with plastic wrap. Let dough rest *at least 12 hours, preferably about 18*, at warm room temperature, about *21°C/70°F*.

@@ -63,6 +63,8 @@
                 <span>written by</span>
             {% elsif page.category == 'movie' or page.category == 'tv' %}
                 <span>produced by</span>
+            {% elsif page.category == 'recipe' %}
+                <span>sourced from</span>
             {% else %}
                 <span>by</span>
             {% endif %}
@@ -143,6 +145,26 @@
                 <strong hidden aria-hidden="true">~{{ words | divided_by: 250 }} mins</strong>
             {% endif %}
         </div>
+    {% endif %}
+    {% if page.category == 'recipe' %}
+        {% if page.prep_time %}
+            <div class="prep-time">
+                <span>preparation time</span>
+                <strong class="p-prep-time">{{ page.prep_time }}</strong>
+            </div>
+        {% endif %}
+        {% if page.cooking_time %}
+            <div class="cooking-time">
+                <span>cooking time</span>
+                <strong class="p-cooking-time">{{ page.cooking_time }}</strong>
+            </div>
+        {% endif %}
+        {% if page.serves %}
+            <div class="serves">
+                <span>serves</span>
+                <strong class="p-serves">{{ page.serves }}</strong>
+            </div>
+        {% endif %}
     {% endif %}
     {% if page.checkin %}
         {%- assign checkin = site.data.locations | where: 'name', page.checkin.name | first | default: page.checkin -%}
