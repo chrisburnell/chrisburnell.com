@@ -228,6 +228,8 @@ defaults:
     type: 'posts'
     path: '_posts/sleep'
   values:
+    output: false
+    published: false
     category: 'sleep'
     emoji: '😴'
     searchable: false

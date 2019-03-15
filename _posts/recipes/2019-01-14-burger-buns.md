@@ -1,7 +1,7 @@
 ---
 title: Burger Buns
-prep_time: 5 minutes
-cooking_time: 10–15 minutes
+prep_time: 20 minutes
+cooking_time: 10 minutes
 
 ingredients:
 - name: active dry yeast
@@ -17,6 +17,10 @@ ingredients:
   ml: 5
 - name: all-purpose flour
   ml: 750
+
+authors:
+- name: Taste of Home
+  link: https://www.tasteofhome.com/recipes/40-minute-hamburger-buns/
 ---
 
 0. In a large bowl, dissolve yeast in warm water. Add oil and sugar; let stand for 5 minutes. Add the egg, salt and enough flour to form a soft dough.
