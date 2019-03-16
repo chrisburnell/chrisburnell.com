@@ -2,7 +2,7 @@
 date: 2019-03-04 13:10:40
 
 title: Sparkline Sound-Off
-lede: For a few months now I have been following in the footsteps of Jeremy Keith and displaying sparklines representing my activity over time with different post types. As an added bonus, a little tune based on the sparkline’s values plays when you click on the sparkline. With a moderate amount of musical theory under my belt, here’s how I accomplished that audio delight.
+lede: I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline’s values plays when you click on it. With a moderate amount of musical theory under my belt, here’s how I accomplished that audio delight.
 
 tags:
 - canvas
@@ -10,7 +10,7 @@ tags:
 - music
 ---
 
-I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js){:rel="external"} and made some modifications to suit my needs. I won’t go into detail here about how the sparklines are *drawn*, the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API){:rel="external"}, or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"}, but there are a number of resources out there if you need some background before I dive in.
+To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js){:rel="external"} and made some modifications. I won’t go into detail about how the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API){:rel="external"} or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"}, but there are many resources available if you want a background.
 
 --------
 
@@ -20,7 +20,7 @@ I’m using the same CSV to generate the audio as I am the sparkline itself. Eac
 <canvas id="sparkline-demo-1" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></canvas>
 {% endhighlight %}
 
-Because this is really just a fun little easter egg as opposed to a perfect 1-to-1 representation of the data, rather than traverse up-and-down a [chromatic scale](https://en.wikipedia.org/wiki/Chromatic_scale){:rel="external"} for each of the values, I decided to map the values against a [major pentatonic scale](https://en.wikipedia.org/wiki/Pentatonic_scale){:rel="external"} which results in <q>music</q> that is a bit more pleasant to listen to, rather than unharmonious noise. If I was going for a perfect representation of the data, I would stick to a chromatic scale so that the difference between notes matches their difference in numerical value.
+Because this is really just a fun little easter egg as opposed to a perfect 1-to-1 representation of the data, I decided to map the values against a [major pentatonic scale](https://en.wikipedia.org/wiki/Pentatonic_scale){:rel="external"} which results in <q>music</q> that is a bit more pleasant to listen to, rather than unharmonious noise if I used a [chromatic scale](https://en.wikipedia.org/wiki/Chromatic_scale){:rel="external"}. If I was going for a perfect representation of the data, I would stick to a chromatic scale so that the difference between notes matches their difference in numerical value.
 
 I’ve chosen **C<sub>4</sub>**, also known as [Middle C](https://en.wikipedia.org/wiki/C_(musical_note)){:rel="external"}, for my starting base notes which represent values of 0 in my data.
 
@@ -28,7 +28,7 @@ I’ve chosen **C<sub>4</sub>**, also known as [Middle C](https://en.wikipedia.o
 
 Let’s pause and review a little background about musical notes and their relationship to the frequency of each note.
 
-As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits nicely at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot just increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
+As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
 
 <figure>
     <a href="/images/content/diatonic-scale.svg">
@@ -67,7 +67,7 @@ So if we want to calculate the frequency of **C<sub>4</sub>** (Middle C), the *<
 
 {% include content/heading.html title='Quintuplets' %}
 
-Now that we have established a way of translating each unitless value in our sparkline into a pitch, let’s get a bit more musical with a Major Pentatonic scale.
+Now that we have established a way of translating each unitless value in our sparkline into a pitch, let’s get a bit more musical and start mapping to a Major Pentatonic scale.
 
 Without going into gory detail, [which you can read about here](https://en.wikipedia.org/wiki/Pentatonic_scale){:rel="external"} ([even more reading if you’re interested](){:rel="external"}), this type of scale is nice because between any two notes of the scale there exists harmony. This means that no matter what notes are <q>chosen</q> by the sparkline data, a mostly-pleasant tune will come back.
 
