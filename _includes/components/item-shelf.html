@@ -92,7 +92,7 @@
         {% if page.category == 'book' and page.finish %}
             <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
-        {% if page.mf_property %}
+        {% if link and page.mf_property %}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>

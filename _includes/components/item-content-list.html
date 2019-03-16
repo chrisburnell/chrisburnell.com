@@ -100,7 +100,6 @@
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
-        {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
         {% if link and page.mf_property %}
             <a class="h-cite  u-{{ page.mf_property }}" href="{{ link }}" aria-hidden="true" tabindex="-1"></a>
         {% endif %}
