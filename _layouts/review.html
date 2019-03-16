@@ -24,7 +24,7 @@
             <div class="content__body">
                 <nav class="buttons-list" role="navigation">
                     <a class="p-item  h-product" href="{{ link }}" hidden>{{ page.title | strip_html }}</a>
-                    <a class="button  u-{{ page.mf_property }}  h-cite" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.link.title | default: link_clean }}</a>
+                    <a class="button  h-cite  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.link.title | default: link_clean }}</a>
                 </nav>
             </div>
         {% endif %}
