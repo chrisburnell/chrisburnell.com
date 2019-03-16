@@ -32,7 +32,7 @@
     <div class="h-cite{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}">
         <h2 class="delta">
             {% if page.category == 'beer' %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link %} <a href="{{ link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}  h-cite" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% elsif page.category == 'like' %}
                 <a href="{{ link }}" rel="external"><cite class="p-name">Liked: {{ link | remove: 'http://' | remove: 'https://' }}</cite></a>
             {% elsif page.category == 'tv' %}
