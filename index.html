@@ -34,7 +34,6 @@ searchable: no-content
             {%- assign posts_without_replies = posts_without_replies | push: page -%}
         {%- endunless -%}
     {%- endfor -%}
-
     {% include components/on-this-day.html posts=posts_without_replies %}
 
     <h2 id="latest" class="gamma">The Latest</h2>

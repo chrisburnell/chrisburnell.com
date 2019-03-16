@@ -24,15 +24,17 @@ lede: A list of tags and their counterpart posts.
         {% endfor %}
     </dd>
 </dl>
-{% for tag in tags_sorted %}
-    {% capture tag_name %}{% include content/capitalizer.html input=tag %} <small>({{ site.tags[tag].size }})</small>{% endcapture %}
-    {% include_cached content/heading.html title=tag_name id=tag %}
-    <ol class="content-list  h-feed" role="list">
-        {% for page in site.tags[tag] %}
-            {% include components/item-content-list.html %}
-        {% endfor %}
-    </ol>
-{% endfor %}
+<div class="h-feed" id="tags">
+    {% for tag in tags_sorted %}
+        {% capture tag_name %}{% include content/capitalizer.html input=tag %} <small>({{ site.tags[tag].size }})</small>{% endcapture %}
+        {% include_cached content/heading.html title=tag_name id=tag %}
+        <ol class="content-list" role="list">
+            {% for page in site.tags[tag] %}
+                {% include components/item-content-list.html %}
+            {% endfor %}
+        </ol>
+    {% endfor %}
+</div>
 
 <hr>
 
