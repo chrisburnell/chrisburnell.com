@@ -3,8 +3,9 @@ date: 2019-03-16 23:33:00
 release: 2019-03-16
 title: Air Misery
 authors:
-- Brilliant Idiots
+- name: Brilliant Idiots
+  link: https://soundcloud.com/thebrilliantidiots/
 season: Brilliant Idiots
-link: https://soundcloud.com/thebrilliantidiots/
+link: https://soundcloud.com/thebrilliantidiots/air-misery
 runtime: 120:57
 ---

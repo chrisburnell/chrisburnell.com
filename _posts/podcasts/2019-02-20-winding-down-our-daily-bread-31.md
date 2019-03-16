@@ -3,7 +3,8 @@ date: 2019-02-20 13:08:07
 release: 2018-08-31
 title: Winding Down
 authors:
-- Jeremy Cherfas
+- name: Jeremy Cherfas
+  link: https://www.jeremycherfas.net/
 season: Our Daily Bread
 episode: 31
 link: https://www.eatthispodcast.com/our-daily-bread-31/
