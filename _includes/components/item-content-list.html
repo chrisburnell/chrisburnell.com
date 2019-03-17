@@ -3,6 +3,8 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
 {%- assign date_human = page.date | date_to_long_string -%}
 {%- if include.relative_year == true -%}
     {%- assign year_today = site.time | date: '%Y' -%}
@@ -96,7 +98,7 @@
         {% if page.mf_property %}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
-        <data class="p-category" hidden>{{ page.category }}</data>
+        <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </article>
 </li>

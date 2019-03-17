@@ -59,8 +59,8 @@
 {% assign meta_first_name = meta_name[0] %}
 {% assign meta_last_name = meta_name[1] %}
 
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 {% if page.collection == 'posts' %}
-    {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
     {%- assign link_clean = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
     {%- if page.category == 'beer' -%}
         {%- assign link_clean = page.title | append: ' on Untappd' -%}

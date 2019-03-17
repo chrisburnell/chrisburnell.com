@@ -95,7 +95,7 @@
         {% if link and page.mf_property %}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
-        <data class="p-category" hidden>{{ page.category }}</data>
+        <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </div>
 </li>

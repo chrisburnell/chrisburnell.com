@@ -334,5 +334,7 @@
             <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
         </div>
     {% endif %}
+    {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
+    <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
     <a href="https://fed.brid.gy/" aria-hidden="true" hidden></a>
 </div>
