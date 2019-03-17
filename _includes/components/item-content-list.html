@@ -32,7 +32,7 @@
                     {{ page.title | strip_html }}
                 {% endif %}
             </h3>
-            <div class="lede  p-summary">
+            <div class="lede">
                 {% if page.in_reply_to.first %}
                     <span class="emoji">↩️</span> In reply to:
                     {% if page.in_reply_to.first contains 'mastodon.social' %}
@@ -61,27 +61,29 @@
                         <span class="emoji">🖼️</span>
                     {% endunless %}
                 {% endif %}
-                {% if page.lede %}
-                    {{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.category == 'note' %}
-                    {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
-                    {{ content }}
-                {% elsif page.category == 'music' %}
-                    Album
-                {% else %}
-                    {% include content/capitalizer.html input=page.category %}
-                {% endif %}
-                {% if page.category == 'talk' and page.checkin %}
-                    — Given at {{ page.checkin.name | default: page.checkin }}
-                {% endif %}
-                {% if page.authors %}
-                    by
-                    {%- assign authors = page.authors | uniq -%}
-                    {%- for author in authors -%}
-                        {% unless forloop.first %}, {% endunless %}
-                        <span class="h-cite">{{ author.name | default: author | strip }}</span>
-                    {%- endfor -%}
-                {% endif %}
+                <div class="p-summary">
+                    {% if page.lede %}
+                        {{ page.lede | strip_html | truncatewords: 20 }}
+                    {% elsif page.category == 'note' %}
+                        {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
+                        {{ content }}
+                    {% elsif page.category == 'music' %}
+                        Album
+                    {% else %}
+                        {% include content/capitalizer.html input=page.category %}
+                    {% endif %}
+                    {% if page.category == 'talk' and page.checkin %}
+                        — Given at {{ page.checkin.name | default: page.checkin }}
+                    {% endif %}
+                    {% if page.authors %}
+                        by
+                        {%- assign authors = page.authors | uniq -%}
+                        {%- for author in authors -%}
+                            {% unless forloop.first %}, {% endunless %}
+                            <span class="h-cite">{{ author.name | default: author | strip }}</span>
+                        {%- endfor -%}
+                    {% endif %}
+                </div>
                 {% if page.badges %}
                     <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
                 {% endif %}
