@@ -6,8 +6,16 @@
 {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
 {%- if link contains 'amazon' -%}
     {%- assign link_title = page.title | append: ' on Amazon' -%}
-{%- elsif link contains 'spotify' %}
-    {%- assign link_title = page.title | append: ' on Spotify' -%}
+{%- elsif link contains 'bandcamp' -%}
+    {%- assign link_clean = page.title | append: ' on Bandcamp' -%}
+{%- elsif link contains 'soundcloud' -%}
+    {%- assign link_clean = page.title | append: ' on SoundCloud' -%}
+{%- elsif link contains 'spotify' -%}
+    {%- assign link_clean = page.title | append: ' on Spotify' -%}
+{%- elsif link contains 'untappd' -%}
+    {%- assign link_clean = page.title | append: ' on Untappd' -%}
+{%- elsif link contains 'youtube' -%}
+    {%- assign link_clean = page.title | append: ' on YouTube' -%}
 {%- endif -%}
 {%- if page.rating -%}
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}

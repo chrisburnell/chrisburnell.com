@@ -67,6 +67,15 @@
         {%- assign untappd_url = site.urls.untappd | append: "checkin/" | append: page.slug -%}
         {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
     {%- elsif page.category == 'music' -%}
-        {%- assign link_clean = page.title | append: ' on Spotify' -%}
+        {%- assign link_clean = page.title -%}
+        {%- if link contains 'bandcamp' -%}
+            {%- assign link_clean = link_clean | append: ' on Bandcamp' -%}
+        {%- elsif link contains 'soundcloud' -%}
+            {%- assign link_clean = link_clean | append: ' on SoundCloud' -%}
+        {%- elsif link contains 'spotify' -%}
+            {%- assign link_clean = link_clean | append: ' on Spotify' -%}
+        {%- elsif link contains 'youtube' -%}
+            {%- assign link_clean = link_clean | append: ' on YouTube' -%}
+        {%- endif -%}
     {%- endif -%}
 {% endif %}
