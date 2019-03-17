@@ -176,6 +176,7 @@ defaults:
     layout: 'review'
     mf_root: 'review'
     mf_property: 'watch-of'
+    prefix: w
     emoji: '🎬'
     hidden: true
     ignore: true
@@ -195,15 +196,15 @@ defaults:
     path: '_posts/notes'
   values:
     category: 'note'
-    prefix: t
+    prefix: n
 - scope:
     type: 'posts'
     path: '_posts/pens'
   values:
     category: 'pen'
     prefix: c
-    comments: codepen
     emoji: '✒️'
+    comments: codepen
 - scope:
     type: 'posts'
     path: '_posts/podcasts'
@@ -229,7 +230,7 @@ defaults:
     path: '_posts/talks'
   values:
     category: 'talk'
-    prefix: s
+    prefix: t
     emoji: '🗣'
 - scope:
     type: 'posts'
@@ -239,6 +240,7 @@ defaults:
     layout: 'review'
     mf_root: 'review'
     mf_property: 'watch-of'
+    prefix: v
     emoji: '📺'
     hidden: true
     ignore: true
