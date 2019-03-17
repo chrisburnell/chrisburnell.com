@@ -34,17 +34,17 @@
                 {% if page.in_reply_to.first %}
                     <span class="emoji">↩️</span> In reply to:
                     {% if page.in_reply_to.first contains 'mastodon.social' %}
-                        <span class="h-cite  u-in-reply-to">a Toot</span>
+                        <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
                     {% elsif page.in_reply_to.first contains 'twitter.com' %}
                         {% if page.in_reply_to.first contains '/status/' %}
-                            <span class="h-cite  p-in-reply-to">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</span>
+                            <data class="h-cite  p-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</data>
                         {% else %}
-                            <span class="h-cite  p-in-reply-to">a Tweet</span>
+                            <data class="h-cite  p-in-reply-to" value="{{ page.in_reply_to.first }}">a Tweet</data>
                         {% endif %}
                     {% elsif page.in_reply_to.first contains 'hwclondon.co.uk' %}
-                        <span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>
+                        <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">Homebrew Website Club London</data>
                     {% else %}
-                        <span class="h-cite  p-in-reply-to">{{ page.in_reply_to.first }}</span>
+                        <data class="h-cite  p-in-reply-to" value="{{ page.in_reply_to.first }}">{{ page.in_reply_to.first }}</data>
                     {% endif %}
                     <br>
                 {% endif %}
@@ -94,9 +94,9 @@
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
         {% if page.mf_property %}
-            {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
             <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
         {% endif %}
+        <data class="p-category" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </article>
 </li>
