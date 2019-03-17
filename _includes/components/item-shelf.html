@@ -54,9 +54,9 @@
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if author.link -%}
-                    <a class="h-card  u-author" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
+                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
                 {%- else -%}
-                    <span class="h-card  p-author">{{ author.name | default: author | strip }}</span>
+                    <span class="h-cite">{{ author.name | default: author | strip }}</span>
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}

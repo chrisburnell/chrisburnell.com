@@ -79,7 +79,7 @@
                     {%- assign authors = page.authors | uniq -%}
                     {%- for author in authors -%}
                         {% unless forloop.first %}, {% endunless %}
-                        <span class="p-author  h-card">{{ author.name | default: author | strip }}</span>
+                        <span class="h-cite">{{ author.name | default: author | strip }}</span>
                     {%- endfor -%}
                 {% endif %}
                 {% if page.badges %}
