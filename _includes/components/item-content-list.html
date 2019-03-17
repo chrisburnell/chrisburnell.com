@@ -94,7 +94,7 @@
                 {% endif %}
             </div>
             {% if page.category == 'note' %}
-                <div class="e-content">{{ page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip }}</div>
+                <div class="e-content" aria-hidden="true" hidden>{{ page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip }}</div>
             {% endif %}
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
