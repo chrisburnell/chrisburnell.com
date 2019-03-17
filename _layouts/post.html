@@ -49,7 +49,7 @@
             {% for photo in page.mf-photo %}
                 <figure class="media">
                     <a href="{{ photo }}"{% unless photo contains site.live_url %} rel="external"{% endunless %}>
-                        <img src="{{ photo }}" alt="">
+                        <img class="u-photo" src="{{ photo }}" alt="">
                     </a>
                 </figure>
             {% endfor %}
