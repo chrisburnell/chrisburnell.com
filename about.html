@@ -87,11 +87,9 @@ lede: My name is <span class="canada">Chris Burnell</span>, and I’m a <span cl
 
 <ul>
     <li><a href="/feed.xml" rel="alternate">All Posts</a></li>
-    <li><a href="/feed-articles.xml" rel="alternate">Articles</a></li>
-    <li><a href="/feed-bookmarks.xml" rel="alternate">Bookmarks</a></li>
-    <li><a href="/feed-notes.xml" rel="alternate">Notes</a></li>
-    <li><a href="/feed-pens.xml" rel="alternate">Pens</a></li>
-    <li><a href="/feed-talks.xml" rel="alternate">Talks</a></li>
+    {% for page in site.data.categories %}
+        <li><a href="/feed-{{ page.type }}.xml" rel="alternate">{{ page.title }}</a></li>
+    {% endfor %}
 </ul>
 
 <p>If you want to get in touch, I’m reachable through <a rel="me  publisher" href="{{ site.urls.twitter }}">Twitter</a> or email <a rel="me" class="u-email" href="mailto:{{ site.author.email }}"><span class="canada">{{ site.author.email }}</span></a>.</p>
