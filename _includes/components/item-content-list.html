@@ -61,8 +61,10 @@
                         <span class="emoji">🖼️</span>
                     {% endunless %}
                 {% endif %}
-                <span class="p-summary">
-                    {% if page.lede %}
+                <span class="p-summary  e-content">
+                    {% if page.reacji %}
+                        <span class="emoji">{{ page.reacji }}</span>
+                    {% elsif page.lede %}
                         {{ page.lede | strip_html | truncatewords: 20 }}
                     {% elsif page.category == 'note' %}
                         {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
@@ -83,21 +85,18 @@
                             <span class="h-cite">{{ author.name | default: author | strip }}</span>
                         {%- endfor -%}
                     {% endif %}
+                    {% if page.badges %}
+                        <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+                    {% endif %}
+                    {% if page.rating %}
+                        {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
+                        {%- assign rating_fraction = page.rating | minus: rating_base -%}
+                        <data class="p-worst" hidden>0</data>
+                        <data class="p-best" hidden>5</data>
+                        <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
+                    {% endif %}
                 </span>
-                {% if page.badges %}
-                    <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
-                {% endif %}
-                {% if page.rating %}
-                    {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
-                    {%- assign rating_fraction = page.rating | minus: rating_base -%}
-                    <data class="p-worst" hidden>0</data>
-                    <data class="p-best" hidden>5</data>
-                    <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
-                {% endif %}
             </div>
-            {% if page.category == 'book' or page.category == 'bookmark' or page.category == 'music' or page.category == 'note' %}
-                <div class="e-content" aria-hidden="true" hidden>{{ page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip }}</div>
-            {% endif %}
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
         {% if page.mf_property %}
