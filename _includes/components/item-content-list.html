@@ -23,7 +23,7 @@
             {% else %}
                 {% include_cached content/svg.html type='bullhorn' %}
             {% endif %}
-            <h3 class="delta  title  p-name"{% if page.category == 'note' %} hidden{% endif %}>
+            <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} hidden{% endif %}>
                 {% if page.category == 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
