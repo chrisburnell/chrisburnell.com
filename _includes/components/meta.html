@@ -50,9 +50,9 @@
             {%- for author in authors -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if author.link -%}
-                    <a class="h-cite  u-author" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
+                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
                 {%- else -%}
-                    <strong class="h-cite  p-author">{{ author.name | default: author | strip }}</strong>
+                    <strong class="h-cite">{{ author.name | default: author | strip }}</strong>
                 {%- endif -%}
             {%- endfor -%}
         </div>
