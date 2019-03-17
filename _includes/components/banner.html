@@ -1,6 +1,6 @@
-{% if page.banner or page.mf-photo or page.banner_mobile or page.mf-photo_mobile or page.cover %}
-    {%- assign banners = page.mf-photo | default: page.banner | default: site.emptyArray -%}
-    {%- assign banners_mobile = page.mf-photo_mobile | default: page.banner_mobile | default: site.emptyArray -%}
+{% if page.banner or page.banner_mobile or page.cover %}
+    {%- assign banners = page.banner | default: site.emptyArray -%}
+    {%- assign banners_mobile = page.banner_mobile | default: site.emptyArray -%}
     {%- assign cover = page.cover | default: site.emptyArray -%}
     <picture>
         {% if banners != empty and banners_mobile != empty %}
