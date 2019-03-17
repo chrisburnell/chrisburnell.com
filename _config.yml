@@ -226,38 +226,11 @@ defaults:
     emoji: '📝'
 - scope:
     type: 'posts'
-    path: '_posts/sleep'
-  values:
-    output: false
-    published: false
-    category: 'sleep'
-    emoji: '😴'
-    searchable: false
-    sitemap:
-      exclude: true
-    hidden: true
-    ignore: true
-- scope:
-    type: 'posts'
     path: '_posts/talks'
   values:
     category: 'talk'
     prefix: s
     emoji: '🗣'
-- scope:
-    type: 'posts'
-    path: '_posts/travel'
-  values:
-    output: false
-    published: false
-    category: 'travel'
-    prefix: g
-    emoji: '✈️'
-    searchable: false
-    sitemap:
-      exclude: true
-    hidden: true
-    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/tv'

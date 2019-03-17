@@ -61,8 +61,6 @@
                 {% endif %}
                 {% if page.lede %}
                     {{ page.lede | strip_html | truncatewords: 20 }}
-                {% elsif page.category == 'travel' %}
-                    Travel from {{ page.depart }} to {{ page.arrive }}.
                 {% elsif page.category == 'note' %}
                     {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | truncatewords: 20 | strip -%}
                     {{ content }}
