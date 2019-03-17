@@ -201,5 +201,12 @@
         helpers.enableElement(WEBMENTIONS_SUBMIT);
         // observe the Webmentions button to load in data
         observer.observe(WEBMENTIONS_BUTTON);
+        // check the connection, and initiate Webmentions if saveData is off
+        if ("connection" in navigator) {
+            if (!navigator.connection.saveData) {
+                showWebmentions();
+                observer.disconnect();
+            }
+        }
     }
 })();
