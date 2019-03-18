@@ -66,22 +66,20 @@
                         <span class="emoji">🖼️</span>
                     {% endunless %}
                 {% endif %}
-                <span class="p-summary">
-                    {% if page.reacji %}
-                        <span class="emoji  e-content">{{ page.reacji }}</span>
-                    {% elsif page.lede %}
-                        {{ page.lede | strip_html | truncatewords: 20 | replace: ',...', '...' | replace: '....', '...' | strip }}
-                        <span class="e-content" aria-hidden="true" hidden>{{ page.lede | strip_html | strip }}</span>
-                    {% elsif page.category == 'music' %}
-                        <span class="e-content">Album Review</span>
-                    {% elsif page.category == 'note' %}
-                        {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip -%}
-                        {{ content | truncatewords: 30 | replace: ',...', '...' | replace: '....', '...' | strip }}
-                        <span class="e-content" aria-hidden="true" hidden>{{ content }}</span>
-                    {% else %}
-                        <span class="e-content">{% include content/capitalizer.html input=page.category %}{% if page.layout == 'review' %} Review{% endif %}</span>
-                    {% endif %}
-                </span>
+                {% if page.reacji %}
+                    <span class="emoji  p-summary  e-content">{{ page.reacji }}</span>
+                {% elsif page.lede %}
+                    <span class="p-summary">{{ page.lede | strip_html | truncatewords: 20 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
+                    <span class="e-content" aria-hidden="true" hidden>{{ page.lede | strip_html | strip }}</span>
+                {% elsif page.category == 'music' %}
+                    <span class="p-summary  e-content">Album Review</span>
+                {% elsif page.category == 'note' %}
+                    {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip -%}
+                    <span class="p-summary">{{ content | truncatewords: 30 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
+                    <span class="e-content" aria-hidden="true" hidden>{{ content }}</span>
+                {% else %}
+                    <span class="p-summary  e-content">{% include content/capitalizer.html input=page.category %}{% if page.layout == 'review' %} Review{% endif %}</span>
+                {% endif %}
                 {% if page.layout == 'review' and page.authors %}
                     by
                     {%- assign authors = page.authors | uniq -%}
