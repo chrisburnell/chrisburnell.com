@@ -65,6 +65,7 @@ h2 {
     @extend %gamma !optional;
     // Match normal `gamma`s without targetting `aside`-nested `gamma`s
     .content__body > &,
+    .content__body > .h-feed > &,
     .further-reading > &,
     .widget &,
     .webmentions & {
