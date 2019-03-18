@@ -14,7 +14,7 @@
 {% if on_this_day_posts.size > 0 %}
     <h2 id="on-this-day" class="gamma">On This Day</h2>
     <section class="on-this-day">
-        <ol class="content-list  h-feed" role="list">
+        <ol class="content-list" role="list">
             {% for page in on_this_day_posts %}
                 {% include components/item-content-list.html relative_year=true %}
             {% endfor %}
