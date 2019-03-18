@@ -132,6 +132,8 @@
         right: var(--measure-small);
         transform: translateY(-50%);
         @include v(z-index, root);
+        @include non-selectable;
+        pointer-events: none;
 
         @include media("screen", "below:small") {
             width: 4em !important;
