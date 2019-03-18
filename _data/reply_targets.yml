@@ -1,0 +1,18 @@
+- contains: 'chrisburnell'
+  name: 'myself'
+
+- contains: 'hwclondon'
+  name: 'Homebrew Website Club London'
+- contains: '2019.indieweb.org/online'
+  name: 'IndieWebCamp Online'
+
+- contains: 'dletorey'
+  name: 'Dave Letorey'
+- contains: 'dompatmore'
+  name: 'Dom Patmore'
+- contains: 'calum_ryan'
+  name: 'Calum Ryan'
+- contains: 'justinavery'
+  name: 'Justin Avery'
+- contains: 'aaronparecki'
+  name: 'Aaron Parecki'

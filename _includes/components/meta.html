@@ -81,8 +81,11 @@
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
+                {%- assign reply_targets_map = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.contains' | first | map: 'name' | default: null -%}
                 <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">
-                {% if reply contains 'mastodon.social' %}
+                {% if reply_targets_map %}
+                    {{ reply_targets_map }}
+                {% elsif reply contains 'mastodon.social' %}
                     {% if reply contains '/@' %}
                         @{{ reply | split: '/@' | last | split: '/' | first }}
                     {% elsif reply contains '/users/' %}
@@ -96,8 +99,6 @@
                     {% else %}
                         a Tweet
                     {% endif %}
-                {% elsif reply contains 'hwclondon.co.uk' %}
-                    Homebrew Website Club London
                 {% else %}
                     {{ reply }}
                 {% endif %}
