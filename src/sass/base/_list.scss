@@ -83,21 +83,21 @@ dl {
     overflow: hidden;
 
     @include media("screen", "above:350px") {
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: minmax(min-content, 33.33%) 1fr;
         // grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
     }
 
     @include media("screen", "above:700px", "below:medium") {
-        grid-template-columns: repeat(2, max-content 1fr);
+        grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
     }
 
     @include media("screen", "above:985px") {
-        grid-template-columns: repeat(2, max-content 1fr);
+        grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
     }
 
     &.full {
         @include media("screen", "above:350px") {
-            grid-template-columns: max-content 1fr !important;
+            grid-template-columns: minmax(min-content, 33.33%) 1fr !important;
         }
     }
 
