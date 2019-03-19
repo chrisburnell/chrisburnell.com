@@ -52,7 +52,8 @@
                     <br>
                 {% endif %}
                 {% if page.checkin %}
-                    at <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
+                    <span class="emoji">🗺</span>
+                    <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
                     <br>
                 {% endif %}
                 {% if page.emoji %}
