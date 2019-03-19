@@ -18,9 +18,18 @@ figure {
         overflow-y: hidden;
     }
 
-    %image-elements,
-    %media-elements {
-        max-height: 100vh;
+    &.wide {
+        %image-elements,
+        %media-elements {
+            max-width: initial;
+        }
+    }
+
+    &:not(.tall) {
+        %image-elements,
+        %media-elements {
+            max-height: 100vh;
+        }
     }
 
     %image-elements,
