@@ -46,8 +46,9 @@
         {% endif %}
 
         <div class="content__body{% unless page.reacji %}  e-content{% endunless %}">
+            {% include components/mf_photo.html mf_photo=page.mf_photo %}
             {% if page.reacji %}
-                <span class="p-name  p-content">{{ page.reacji }}</span>
+                <span class="p-name  e-content">{{ page.reacji }}</span>
             {% else %}
                 {{ content }}
             {% endif %}
