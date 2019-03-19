@@ -46,14 +46,6 @@
         {% endif %}
 
         <div class="content__body{% unless page.reacji %}  e-content{% endunless %}">
-            {% for photo in page.mf-photo %}
-                <figure class="media">
-                    <a href="{{ photo }}"{% unless photo contains site.live_url %} rel="external"{% endunless %}>
-                        <img class="u-photo" src="{{ photo }}" alt="">
-                    </a>
-                </figure>
-            {% endfor %}
-
             {% if page.reacji %}
                 <span class="p-name  p-content">{{ page.reacji }}</span>
             {% else %}

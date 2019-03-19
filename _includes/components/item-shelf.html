@@ -30,7 +30,7 @@
     {%- endif -%}
 {%- endif -%}
 <li role="listitem" class="h-review">
-    {% if page.mf-photo or page.cover %}
+    {% if page.cover %}
         {% unless page.category == 'beer' or page.category == 'movie' or page.category == 'tv' %}
             <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
                 {% include components/cover.html %}

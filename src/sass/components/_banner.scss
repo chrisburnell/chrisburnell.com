@@ -8,6 +8,7 @@
 .banner {
     @include border-radius;
     @include v(width, content);
+    max-height: 100vh;
     @include v(margin-bottom, large);
 
     @include media("screen", "below:small") {

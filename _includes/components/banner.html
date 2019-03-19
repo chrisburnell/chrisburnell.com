@@ -1,7 +1,8 @@
-{% if page.banner or page.banner_mobile or page.cover %}
+{% if page.banner or page.banner_mobile or page.cover or page.mf_photo %}
     {%- assign banners = page.banner | default: site.emptyArray -%}
     {%- assign banners_mobile = page.banner_mobile | default: site.emptyArray -%}
-    {%- assign cover = page.cover | default: site.emptyArray -%}
+    {%- assign covers = page.cover | default: site.emptyArray -%}
+    {%- assign mf_photos = page.mf_photo | default: site.emptyArray -%}
     <picture>
         {% if banners != empty and banners_mobile != empty %}
             <source media="(min-width: 501px)"
@@ -30,9 +31,13 @@
             <img    alt="" class="banner  u-photo  u-featured" role="presentation"
                     src="/images/banners/{{ banners_mobile | last }}"
                     srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
-        {% elsif cover != empty %}
+        {% elsif covers != empty %}
             <img    alt="" class="banner  banner--cover  u-photo  u-featured"
-                    src="{{ site.static_url | append: page.category | append: '/' | append: cover }}">
+                    src="{{ site.static_url | append: page.category | append: '/' | append: covers }}">
+        {% elsif mf_photos != empty %}
+            <img    alt="" class="banner  u-photo  u-featured"
+                    src="{{ mf_photos | last }}"
+                    srcset="{% for banner in mf_photos %}{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
         {% endif %}
     </picture>
 {% endif %}
