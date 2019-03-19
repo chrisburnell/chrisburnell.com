@@ -45,7 +45,8 @@
             </nav>
         {% endif %}
 
-        <div class="content__body{% unless page.reacji %}  e-content{% endunless %}">
+        {% include components/mf_photo.html mf_photo=page.mf_photo %}
+        <div class="content__body{% unless page.eacji %}  e-content{% endunless %}">
             {% include components/mf_photo.html mf_photo=page.mf_photo %}
             {% if page.reacji %}
                 <span class="p-name  e-content">{{ page.reacji }}</span>
