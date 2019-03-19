@@ -23,13 +23,6 @@
   rel: 'alternate  me'
   svg: rss
 
-- title: PGP
-  content: '9604 F098 260A 0057'
-  url: 'https://keybase.io/chrisburnell/key.asc'
-  class: 'p-pgp'
-  rel: 'pgpkey  me  external'
-  hidden: true
-
 - title: GitLab
   url: 'https://gitlab.com/chrisburnell'
   rel: 'me  external'
@@ -45,7 +38,34 @@
   rel: 'me  external'
   hidden: true
 
+- title: Notist
+  url: 'https://noti.st/chrisburnell'
+  rel: 'me  external'
+  hidden: true
+
+- title: PGP
+  content: '9604 F098 260A 0057'
+  url: 'https://keybase.io/chrisburnell/key.asc'
+  class: 'p-pgp'
+  rel: 'pgpkey  me  external'
+  hidden: true
+
 - title: Pinboard
   url: 'https://pinboard.in/u:chrisburnell'
+  rel: 'me  external'
+  hidden: true
+
+- title: Speakerdeck
+  url: 'https://speakerdeck.com/chrisburnell'
+  rel: 'me  external'
+  hidden: true
+
+- title: Spotify
+  url: 'https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z'
+  rel: 'me  external'
+  hidden: true
+
+- title: Untappd
+  url: 'https://untappd.com/user/chrisburnell/'
   rel: 'me  external'
   hidden: true
