@@ -59,7 +59,7 @@
                 {% if page.emoji %}
                     <span class="emoji">{{ page.emoji }}</span>
                 {% endif %}
-                {% if page.rsvp %}
+                {% if page.rsvp or page.tags contains 'rsvp' %}
                     <span class="emoji">📅</span>
                 {% endif %}
                 {% if page.banner or page.banner_mobile or page.mf_photo or page.cover or page.content contains '<img' %}

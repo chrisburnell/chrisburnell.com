@@ -1,18 +1,20 @@
 {% if include.mf_photo %}
-    {%- assign photos = include.mf_photo -%}
-    {%- assign photo_names = site.emptyArray -%}
-    {%- for photo in photos -%}
-        {% unless photo contains '@2x' or photo contains '@3x' or photo contains '@4x' %}
-            {%- assign photo_name = photo | split: '/' | last | split: '.' | first -%}
-            {%- assign photo_names = photo_names | push: photo_name -%}
-        {%- endunless -%}
-    {%- endfor -%}
-    {% for photo_name in photo_names %}
-        {%- assign photo_sources = photos | where_exp: 'photo', 'photo contains photo_name' | sort | reverse -%}
+    {%- assign links = site.emptyArray -%}
+    {%- for photo in include.mf_photo -%}
+        {%- assign source = photo.link | default: photo -%}
+        {%- if source.first -%}
+            {%- for link in source -%}
+                {%- assign links = links | push: link -%}
+            {%- endfor -%}
+        {%- else -%}
+            {%- assign links = links | push: source -%}
+        {%- endif -%}
+        {%- assign links = links | sort -%}
+        {%- assign alt = photo.alt | default: '' -%}
         <figure class="media">
-            <img alt="" class="u-photo"
-                src="{{ photo_sources | last }}"
-                srcset="{% for photo in photo_sources %}{{ photo }} {% if photo contains '@' %}{{ photo | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+            <img alt="{{ alt }}" class="u-photo"
+                src="{{ links | first }}"{% if source.first %}
+                srcset="{% for link in links %}{{ link }} {% if link contains '@' or photo contains '@' %}{{ link | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"{% endif %}>
         </figure>
     {% endfor %}
 {% endif %}
