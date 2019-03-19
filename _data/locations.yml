@@ -13,4 +13,8 @@
 - name: Pig's Ear CAMRA Beer & Cider Festival
   link: http://www.pigsear.org.uk/
   image: maps/pigs-ear-beer-festival.png
-  geo: 51.5524691;-0.0526876
+  geo: 51.5524691-0.0526876
+- name: Lee Valley Almost Wild Campsite
+  link: https://www.visitleevalley.org.uk/en/content/cms/where-to-stay-and-short-breaks/lee-valley-almost-wild-campsit/
+  image: maps/lee-valley-almost-wild-campsite.png
+  geo: 51.7433919,-0.0094743
