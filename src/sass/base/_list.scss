@@ -83,19 +83,12 @@ dl {
     overflow: hidden;
 
     @include media("screen", "above:small") {
-        // 1───────────────────2─────────────────────────────────3→
-        // │ minmax(12em, 33vw)│ minmax(min-content, max-content)│→
-        // 2──────────────────2/2──────────────────────────────3/2→
-        grid-template-columns: minmax(12em, 33vw) minmax(min-content, max-content);
+        grid-template-columns: max-content 1fr;
     }
 
     &:not([class*="full"]) {
         @include media("screen", "above:medium") {
-            // 1─────────────────────────2──────────────────3→
-            // │ minmax(6em, max-content)│ minmax(12em, 1fr)│→
-            // 2────────────────────────2/2───────────────3/2→
-            grid-template-columns: minmax(6em, max-content) minmax(12em, 1fr);
-            grid-template-columns: repeat(auto-fill, minmax(6em, max-content) minmax(12em, 1fr));
+            grid-template-columns: repeat(2, max-content 1fr);
         }
     }
 
