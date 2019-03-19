@@ -84,11 +84,13 @@ dl {
 
     @include media("screen", "above:small") {
         grid-template-columns: max-content 1fr;
+        grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
     }
 
     &:not([class*="full"]) {
         @include media("screen", "above:medium") {
             grid-template-columns: repeat(2, max-content 1fr);
+            grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
         }
     }
 
