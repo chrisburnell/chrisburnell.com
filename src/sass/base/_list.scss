@@ -82,14 +82,22 @@ dl {
     margin-top: 0;
     overflow: hidden;
 
-    @include media("screen", "above:small") {
+    @include media("screen", "above:350px") {
+        grid-template-columns: max-content 1fr;
+        // grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
+    }
+
+    @include media("screen", "above:700px", "below:medium") {
         grid-template-columns: repeat(2, max-content 1fr);
-        grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
+    }
+
+    @include media("screen", "above:985px") {
+        grid-template-columns: repeat(2, max-content 1fr);
     }
 
     &.full {
-        @include media("screen", "above:small") {
-            grid-template-columns: max-content 1fr;
+        @include media("screen", "above:350px") {
+            grid-template-columns: max-content 1fr !important;
         }
     }
 
