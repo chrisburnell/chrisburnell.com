@@ -1,6 +1,6 @@
-{% if include.mf_photo %}
+{% if include.photo %}
     {%- assign links = site.emptyArray -%}
-    {%- for photo in include.mf_photo -%}
+    {%- for photo in include.photo -%}
         {%- assign source = photo.link | default: photo -%}
         {%- if source.first -%}
             {%- for link in source -%}
