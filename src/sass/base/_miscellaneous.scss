@@ -170,6 +170,13 @@ textarea {
     }
 }
 
+.checkin {
+    .content-list &,
+    .shelf & {
+        display: block;
+    }
+}
+
 .rating {
     letter-spacing: 4px;
 

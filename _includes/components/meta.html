@@ -147,7 +147,7 @@
     {% endif %}
     {% if page.checkin %}
         {%- assign checkin = site.data.locations | where: 'name', page.checkin.name | first | default: page.checkin -%}
-        <div class="location">
+        <div class="checkin">
             {% if page.category == 'beer' %}
                 <span>drank at</span>
             {% elsif page.category == 'talk' %}
