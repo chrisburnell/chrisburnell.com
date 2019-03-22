@@ -33,7 +33,6 @@
 `<li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="#">
-            <svg class="icon  icon--{{ icon }}" role="img"><use xlink:href="/images/sprites.svg#svg--{{ icon }}" /></svg>
             <h3 class="delta  title  p-name"{{ hidden }}>{{ title }}</h3>
             <div class="lede  p-summary">{{ lede }}</div>
             <time class="date" datetime="{{ date_full }}">{{ date_friendly }}</time>
@@ -285,18 +284,6 @@
 
         // URL
         html = helpers.injectContent(html, "#", item.url);
-
-        // ICON
-        html = helpers.injectContent(html, /{{\s*icon\s*}}/, "bullhorn");
-        if (item.categories == "article") {
-            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "article");
-        } else if (item.categories == "bookmark") {
-            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "link");
-        } else if (item.categories == "note") {
-            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "feather");
-        } else if (item.categories == "pen") {
-            html = helpers.injectContent(html, /{{\s*icon\s*}}/, "codepen");
-        }
 
         // TITLE
         if (item.categories == "note") {
