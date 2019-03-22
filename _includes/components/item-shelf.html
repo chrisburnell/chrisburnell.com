@@ -70,14 +70,18 @@
             {%- endif -%}
         </div>
         {% if page.isbn %}
-            <data class="p-uid" value="{{ page.isbn }}" hidden>{{ page.isbn }}</data>
+            <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true" hidden>{{ page.isbn }}</data>
+        {% endif %}
+        {% if page.rating and page.rating == 'Parti Pris' %}
+            <data class="p-worst" aria-hidden="true" hidden>0</data>
+            <data class="p-best" aria-hidden="true" hidden>5</data>
         {% endif %}
         {%- assign content = page.content | strip_newlines -%}
         {% if content != empty %}
             <details>
-                {% if page.rating %}
-                    <data class="p-worst" hidden>0</data>
-                    <data class="p-best" hidden>5</data>
+                {% if page.rating and page.rating == 'Parti Pris' %}
+                    <summary>Parti Pris</summary>
+                {% elsif page.rating %}
                     <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
                 {% else %}
                     <summary>Review</summary>
@@ -85,25 +89,27 @@
                 <div class="e-content">{{ page.content | markdownify }}</div>
             </details>
         {% endif %}
-        {% if content == empty and page.rating %}
+        {% if content == empty and page.rating and page.rating == 'Parti Pris' %}
+            <data value="Parti Pris">Parti Pris</data>
+        {% elsif content == empty and page.rating %}
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
         {% endif %}
         {% if page.badges %}
             <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
         {% endif %}
         {% if page.isbn %}
-            <strong{% if read_status == 'finished' %} hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.html title=read_status %}</data></strong>
+            <strong{% if read_status == 'finished' %} aria-hidden="true" hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.html title=read_status %}</data></strong>
         {% endif %}
         {% if page.category == 'book' and page.date %}
-            <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" hidden>{{ page.date | date: '%Y-%m-%d' }}</data>
+            <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" aria-hidden="true" hidden>{{ page.date | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if page.category == 'book' and page.finish %}
-            <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
+            <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" aria-hidden="true" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if link and page.mf_property %}
-            <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
+            <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
         {% endif %}
-        <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
+        <data class="u-category" value="/{{ category_link }}/" aria-hidden="true" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </div>
 </li>

@@ -14,7 +14,7 @@
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
-            <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} hidden{% endif %}>
+            <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} aria-hidden="true" hidden{% endif %}>
                 {% if page.category == 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
@@ -82,20 +82,22 @@
                 {% if page.badges %}
                     <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
                 {% endif %}
-                {% if page.rating %}
+                {% if page.rating and page.rating == 'Parti Pris' %}
+                    <data value="Parti Pris" aria-hidden="true" hidden>Parti Pris</data>
+                {% elsif page.rating %}
                     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
                     {%- assign rating_fraction = page.rating | minus: rating_base -%}
-                    <data class="p-worst" hidden>0</data>
-                    <data class="p-best" hidden>5</data>
+                    <data class="p-worst" aria-hidden="true" hidden>0</data>
+                    <data class="p-best" aria-hidden="true" hidden>5</data>
                     <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
                 {% endif %}
             </div>
             <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
         </a>
         {% if page.mf_property %}
-            <data class="u-{{ page.mf_property }}" hidden>{{ link }}</data>
+            <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
         {% endif %}
-        <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
+        <data class="u-category" value="/{{ category_link }}/" aria-hidden="true" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </article>
 </li>

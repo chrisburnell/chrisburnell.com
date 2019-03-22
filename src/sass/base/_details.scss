@@ -7,9 +7,26 @@ details {
     @include border-radius(thin);
     width: 100%;
     @include v(max-width, line-length-responsive);
+    position: relative;
 
     %content-elements {
         padding: 0 $measure-small $measure-small;
+    }
+
+    & > div {
+        @include v(background-color, alto);
+        max-height: 0;
+        @include v(padding-top, small);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        @include v(font-size, small);
+        @include transition(max-height);
+        @include v(z-index, above);
+    }
+
+    &[open] > div {
+        max-height: 999vh;
     }
 }
 
@@ -23,50 +40,6 @@ summary {
 
     &::-webkit-details-marker {
         display: none;
-    }
-
-    &::after {
-        content: " ▼";
-        @include v(color, dove);
-        @include v(font-size, small);
-    }
-
-    &:hover {
-        @include v(padding-left, small);
-
-        &::after {
-            content: " ▼ Close";
-        }
-    }
-
-    @include media("coarse") {
-        &:focus {
-            @include v(padding-left, small);
-
-            &::after {
-                content: " ▼ Close";
-            }
-        }
-    }
-
-    details:not([open]) & {
-        &::after {
-            content: " ▶";
-        }
-
-        &:hover {
-            &::after {
-                content: " ▶ Open";
-            }
-        }
-
-        @include media("coarse") {
-            &:focus {
-                &::after {
-                    content: " ▶ Open";
-                }
-            }
-        }
     }
 
     & + %content-elements {

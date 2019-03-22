@@ -170,6 +170,15 @@ textarea {
     }
 }
 
+.badges {
+    display: block;
+
+    .content-list &,
+    .shelf & {
+        @include v(font-size, small);
+    }
+}
+
 .checkin {
     .content-list &,
     .shelf & {
@@ -181,16 +190,7 @@ textarea {
     letter-spacing: 4px;
 
     .content-list &,
-    .shelf & {
+    .shelf :not(summary) > & {
         display: block;
-    }
-}
-
-.badges {
-    display: block;
-
-    .content-list &,
-    .shelf & {
-        @include v(font-size, small);
     }
 }
