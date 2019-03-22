@@ -307,12 +307,8 @@
 
         // LEDE
         if (item.lede) {
-            let ledeFormatted = item.lede
-                // .replace(/(<([^>]+)>)/gi, "")
-                // .split(/(?=\s)/gi)
-                // .slice(0, 20)
-                // .join("")
-                .replace(queryHighlightRegex, `<mark>$&</mark>`);
+            let ledeFormatted = helpers.decodeHTML(item.lede).replace(queryHighlightRegex, `<mark>$&</mark>`);
+
             html = helpers.injectContent(html, /{{\s*lede\s*}}/, ledeFormatted);
         }
 

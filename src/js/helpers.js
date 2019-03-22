@@ -130,5 +130,11 @@ helpers = {
     padWithZeroes: (number, integersMax = 2) => {
         const [integers, decimals] = number.toString().split(".");
         return integers.toString().padStart(integersMax, "0") + (decimals ? `.${decimals}` : "");
+    },
+
+    decodeHTML: (html) => {
+        let text = document.createElement("textarea");
+        text.innerHTML = html;
+        return text.value;
     }
 };
