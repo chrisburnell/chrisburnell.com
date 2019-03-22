@@ -80,7 +80,7 @@
         {% if content != empty %}
             <details>
                 {% if page.rating and page.rating == 'Parti Pris' %}
-                    <summary>Parti Pris</summary>
+                    <summary><em>Parti Pris</em></summary>
                 {% elsif page.rating %}
                     <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
                 {% else %}
@@ -90,7 +90,7 @@
             </details>
         {% endif %}
         {% if content == empty and page.rating and page.rating == 'Parti Pris' %}
-            <data value="Parti Pris">Parti Pris</data>
+            <data value="Parti Pris"><em>Parti Pris</em></data>
         {% elsif content == empty and page.rating %}
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
         {% endif %}
