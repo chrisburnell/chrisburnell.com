@@ -12,19 +12,8 @@
     {%- assign date_human = year_today | minus: year_then | append: ' years ago' -%}
 {%- endif -%}
 <li role="listitem">
-    <article class="h-entry" role="article">
+    <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
-            {% if page.category == 'article' or page.category == 'recipe' %}
-                {% include_cached content/svg.html type='article' %}
-            {% elsif page.category == 'bookmark' %}
-                {% include_cached content/svg.html type='link' %}
-            {% elsif page.category == 'note' %}
-                {% include_cached content/svg.html type='feather' %}
-            {% elsif page.category == 'pen' %}
-                {% include_cached content/svg.html type='codepen' %}
-            {% else %}
-                {% include_cached content/svg.html type='bullhorn' %}
-            {% endif %}
             <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} hidden{% endif %}>
                 {% if page.category == 'note' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
@@ -37,23 +26,18 @@
                     {%- assign reply_targets_map = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.contains' | first | map: 'name' | default: null -%}
                     <span class="emoji">↩️</span> In reply to:
                     {% if reply_targets_map %}
-                        <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_targets_map }}</data>
+                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_targets_map }}</data>
                     {% elsif page.in_reply_to.first contains 'mastodon.social' %}
-                        <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
+                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
                     {% elsif page.in_reply_to.first contains 'twitter.com' %}
                         {% if page.in_reply_to.first contains '/status/' %}
-                            <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</data>
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</data>
                         {% else %}
-                            <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Tweet</data>
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Tweet</data>
                         {% endif %}
                     {% else %}
-                        <data class="h-cite  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ page.in_reply_to.first }}</data>
+                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ page.in_reply_to.first }}</data>
                     {% endif %}
-                    <br>
-                {% endif %}
-                {% if page.checkin %}
-                    <span class="emoji">🗺</span>
-                    <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
                     <br>
                 {% endif %}
                 {% if page.emoji %}
@@ -86,8 +70,14 @@
                     {%- assign authors = page.authors | uniq -%}
                     {%- for author in authors -%}
                         {% unless forloop.first %}, {% endunless %}
-                        <span class="h-cite">{{ author.name | default: author | strip }}</span>
+                        <span class="{% unless include.strip_h == true %}h-cite{% endunless %}">{{ author.name | default: author | strip }}</span>
                     {%- endfor -%}
+                {% endif %}
+                {% if page.checkin %}
+                    <data class="checkin">
+                        <span class="emoji">🗺</span>
+                        <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
+                    </data>
                 {% endif %}
                 {% if page.badges %}
                     <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>

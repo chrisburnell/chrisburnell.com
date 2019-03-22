@@ -1,7 +1,7 @@
 ---
 title: Buffalo Sauce
+lede: Throw this on some wings and you’re off to the races.
 prep_time: 5 minutes
-
 ingredients:
 - name: Frank’s Hot Sauce
   ml: 83.33
