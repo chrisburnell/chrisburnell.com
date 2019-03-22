@@ -17,7 +17,6 @@ let postcss = require("gulp-postcss");
 let prettier = require("@bdchauvette/gulp-prettier");
 let rename = require("gulp-rename");
 let sass = require("gulp-sass");
-let sourcemaps = require("gulp-sourcemaps");
 let watch = require("gulp-watch");
 let webp = require("gulp-webp");
 
@@ -150,7 +149,6 @@ gulp.task("js-concat", () => {
             `!${paths.js.src}/serviceworker.js`
         ])
         .pipe(plumber())
-        // .pipe(sourcemaps.init())
         .pipe(concat("main.js"))
         .pipe(gulp.dest(`${paths.js.dest}/`))
         .pipe(babel())
@@ -159,7 +157,6 @@ gulp.task("js-concat", () => {
                 suffix: ".min"
             })
         )
-        // .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 
