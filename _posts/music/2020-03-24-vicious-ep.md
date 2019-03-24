@@ -6,6 +6,6 @@ authors:
 - name: Skepta
   link: https://open.spotify.com/artist/2p1fiYHYiXz9qi0JJyxBzN
 link: https://open.spotify.com/album/1dSvdsbgLtbSd7vUckHvKS
-cover: everybodys-talking-nobodys-listening.jpg
+cover: vicious-ep.jpg
 rating: 4
 ---
