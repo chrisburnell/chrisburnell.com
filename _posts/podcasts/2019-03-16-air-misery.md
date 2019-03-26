@@ -6,6 +6,6 @@ authors:
 - name: The Brilliant Idiots
   link: https://soundcloud.com/thebrilliantidiots/
 season: The Brilliant Idiots
-link: https://soundcloud.com/thebrilliantidiots/air-misery
+listen_of: https://soundcloud.com/thebrilliantidiots/air-misery
 runtime: 120:57
 ---

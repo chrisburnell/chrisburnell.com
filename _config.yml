@@ -146,6 +146,17 @@ defaults:
     ignore: true
 - scope:
     type: 'posts'
+    path: '_posts/coffee'
+  values:
+    category: 'coffee'
+    layout: 'review'
+    mf_root: 'review'
+    mf_property: 'pk-drank'
+    prefix: c
+    emoji: '☕️'
+    hidden: true
+- scope:
+    type: 'posts'
     path: '_posts/food'
   values:
     category: 'food'
@@ -202,7 +213,7 @@ defaults:
     path: '_posts/pens'
   values:
     category: 'pen'
-    prefix: c
+    prefix: p
     emoji: '✒️'
     comments: codepen
 - scope:

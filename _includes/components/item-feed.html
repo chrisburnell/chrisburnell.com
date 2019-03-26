@@ -7,7 +7,7 @@
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
-{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
 <entry>
     {% if page.category == 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
@@ -24,30 +24,42 @@
         <summary>{{ page.lede | strip_html | xml_escape }}</summary>
     {% elsif page.category == 'article' %}
         <summary>Shared Article</summary>
-    {% elsif page.category == 'bookmark' %}
-        <summary>Bookmark</summary>
-    {% elsif page.category == 'note' %}
-        <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
-    {% elsif page.category == 'pen' %}
-        <summary>Pen</summary>
-    {% elsif page.category == 'recipe' %}
-        <summary>Recipe</summary>
-    {% elsif page.category == 'talk' %}
-        <summary>Talk{% if page.checkin %} – Given at {{ page.checkin.name | default: page.checkin | xml_escape }}{% endif %}</summary>
+    {% elsif page.category == 'beer' %}
+        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
     {% elsif page.category == 'book' %}
         {% if page.rating and page.rating != 'Parti Pris' %}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
         {% else %}
             <summary>Book Review</summary>
         {% endif %}
-    {% elsif page.category == 'beer' %}
-        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
+    {% elsif page.category == 'bookmark' %}
+        <summary>Bookmark</summary>
+    {% elsif page.category == 'coffee' %}
+        <summary>Coffee</summary>
+    {% elsif page.category == 'food' %}
+        <summary>Food</summary>
+    {% elsif page.category == 'like' %}
+        <summary>Like</summary>
+    {% elsif page.category == 'movie' %}
+        <summary>Movie Review</summary>
     {% elsif page.category == 'music' %}
         {%- if page.rating and page.rating != 'Parti Pris' -%}
             <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
         {%- else -%}
             <summary>Music Review</summary>
         {%- endif -%}
+    {% elsif page.category == 'note' %}
+        <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
+    {% elsif page.category == 'pen' %}
+        <summary>Pen</summary>
+    {% elsif page.category == 'podcast' %}
+        <summary>Podcast</summary>
+    {% elsif page.category == 'recipe' %}
+        <summary>Recipe</summary>
+    {% elsif page.category == 'talk' %}
+        <summary>Talk{% if page.checkin %} – Given at {{ page.checkin.name | default: page.checkin | xml_escape }}{% endif %}</summary>
+    {% elsif page.category == 'tv' %}
+        <summary>TV Review</summary>
     {% endif %}
     {% if page.category %}
         <category term="{{ page.category | default: 'draft' | join: ', ' | downcase | xml_escape }}" />

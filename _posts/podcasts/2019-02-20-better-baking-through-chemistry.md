@@ -6,7 +6,7 @@ authors:
 - name: Jeremy Cherfas
   link: https://www.jeremycherfas.net/
 season: Eat This Podcast
-link: https://www.eatthispodcast.com/baking-powder/
+listen_of: https://www.eatthispodcast.com/baking-powder/
 media: https://media.blubrry.com/eatthispodcast/s/mange-tout.s3.amazonaws.com/2019/baking-powder.mp3
 runtime: 27:09
 ---

@@ -1,0 +1,23 @@
+---
+page_class: page--coffee
+searchable: no-content
+
+redirect_from:
+- /coffees/index.html
+- /category/coffee/index.html
+
+title: Coffee
+lede: Reviewing coffee, cup-by-cup.
+
+sparkline: coffee
+---
+
+<ol class="shelf  h-feed" id="coffee" role="list">
+    {% for page in site.categories.coffee %}
+        {% include components/item-shelf.html %}
+    {% endfor %}
+</ol>
+
+<hr>
+
+{% include components/buttons-categories.html %}

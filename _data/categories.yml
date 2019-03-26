@@ -18,6 +18,11 @@
   category: book
   icon: 'bullhorn'
 
+- title: Coffee
+  type: coffee
+  category: coffee
+  icon: 'bullhorn'
+
 # - title: Food
 #   type: food
 #   category: food

@@ -35,9 +35,8 @@
         <link rel="dns-prefetch" href="//www.youtube.com">
     {% endif %}
 
-    {% if page.bookmark_of %}
-        {% assign url = page.bookmark_of.link | default: page.bookmark_of %}
-        <link rel="prefetch" href="{{ url }}">
+    {% if link %}
+        <link rel="prefetch" href="{{ link }}">
     {% endif %}
 
     <link rel="self" href="{{ site.urls.feed | prepend: site.live_url }}">

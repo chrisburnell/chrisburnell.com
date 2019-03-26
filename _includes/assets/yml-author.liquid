@@ -6,6 +6,8 @@
     {% assign author_biography_closer = 'my taste in books has lost me any respect I may have had in your book (pun intended)' %}
 {% elsif page.page_class contains 'bookmark' %}
     {% assign author_biography_closer = 'my taste in websites makes you hate me a little bit' %}
+{% elsif page.page_class contains 'coffee' %}
+    {% assign author_biography_closer = 'my taste in coffee leaves a bitter taste in your mouth' %}
 {% elsif page.page_class contains 'food' %}
     {% assign author_biography_closer = 'you’d rather eat this food than read what I think about it' %}
 {% elsif page.page_class contains 'like' %}

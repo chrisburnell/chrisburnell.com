@@ -3,7 +3,7 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
-{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.link.url | default: page.link | default: null -%}
+{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
 {%- if link contains 'amazon' -%}
     {%- assign link_title = page.title | append: ' on Amazon' -%}
 {%- elsif link contains 'bandcamp' -%}

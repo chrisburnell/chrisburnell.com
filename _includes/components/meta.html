@@ -1,17 +1,19 @@
 <div class="meta">
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {% if page.category == 'beer' %}
-            <span>drank on</span>
-        {% elsif page.category == 'book' %}
-            <span>started reading on</span>
-        {% elsif page.category == 'food' %}
-            <span>ate on</span>
-        {% elsif page.category == 'like' %}
+        {% if page.mf_property contains 'bookmark-of' %}
+            <span>bookmarked on</span>
+        {% elsif page.mf_property contains 'like-of' %}
             <span>liked on</span>
-        {% elsif page.category == 'movie' or page.category == 'tv' %}
-            <span>watched on</span>
-        {% elsif page.category == 'podcast' %}
+        {% elsif page.mf_property contains 'listen-of' %}
             <span>listened on</span>
+        {% elsif page.mf_property contains 'read-of' %}
+            <span>started reading on</span>
+        {% elsif page.mf_property contains 'watch-of' %}
+            <span>watched on</span>
+        {% elsif page.mf_property contains 'pk-drank' %}
+            <span>drank on</span>
+        {% elsif page.mf_property contains 'pk-ate' %}
+            <span>ate on</span>
         {% elsif page.mf_root == 'review' %}
             <span>reviewed on</span>
         {% else %}
@@ -173,7 +175,7 @@
                 {% endif %}
                 {% if page.weather.temperature %}
                     {% if page.weather.summary %}and{% endif %}
-                    {{ page.weather.summary | split: '.' | first | replace: '-0', '0' | append: '°C' }}
+                    {{ page.weather.temperature | split: '.' | first | replace: '-0', '0' | append: '°C' }}
                 {% endif %}
             </strong>
         </div>

@@ -5,7 +5,7 @@ release: 2018-09-14
 authors:
 - name: Dizzee Rascal
   link: https://open.spotify.com/artist/0gusqTJKxtU1UTmNRMHZcv
-link: https://open.spotify.com/album/40s9ebO3BAEye8KqbIM8tU
+listen_of: https://open.spotify.com/album/40s9ebO3BAEye8KqbIM8tU
 cover: dont-gas-me.jpg
 rating: 4
 ---

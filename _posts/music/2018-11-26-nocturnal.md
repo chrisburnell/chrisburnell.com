@@ -5,7 +5,7 @@ release: 2017-10-13
 authors:
 - name: The Midnight
   link: https://open.spotify.com/artist/2NFrAuh8RQdQoS7iYFbckw
-link: https://open.spotify.com/album/5MDQfxmG16gD34X0gUZW6A
+listen_of: https://open.spotify.com/album/5MDQfxmG16gD34X0gUZW6A
 cover: nocturnal.jpg
 rating: 4
 ---
