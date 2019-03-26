@@ -21,8 +21,8 @@ samp {
 }
 
 // Inline Code Examples
-%heading-elements code,
-%content-elements code,
+%heading-elements > code,
+%content-elements > code,
 ins,
 mark,
 samp,
@@ -30,8 +30,8 @@ var {
     // force text to wrap
     overflow-wrap: break-word;
 }
-%heading-elements code,
-%content-elements code,
+%heading-elements > code,
+%content-elements > code,
 del,
 ins,
 kbd,
@@ -41,8 +41,8 @@ samp {
     padding: #{$measure-one-relative / 4};
     @include v(line-height, medium);
 }
-%heading-elements code,
-%content-elements code,
+%heading-elements > code,
+%content-elements > code,
 samp {
     @include v(background-color, raven--gamma);
 }
