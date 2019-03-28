@@ -27,7 +27,7 @@
         {% elsif page.category == 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}
-        "categories": "{{ page.category | join: ', ' }}"{% if page.codepen_featured %},
+        "category": "{{ page.category }}"{% if page.codepen_featured %},
           "codepen_featured": true
         {% endif %}{% if page.emoji %},
           "emoji": "{{ page.emoji }}"

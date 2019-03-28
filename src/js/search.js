@@ -134,7 +134,7 @@
                 ledeCheck = false,
                 dateCheck = false,
                 contentCheck = false,
-                categoriesCheck = false,
+                categoryCheck = false,
                 tagsCheck = false,
                 checkinCheck = false;
 
@@ -145,8 +145,8 @@
             if (item.lede) {
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            else if (item.categories) {
-                item.lede = item.categories.charAt(0).toUpperCase() + item.categories.slice(1);
+            else if (item.category) {
+                item.lede = item.category.charAt(0).toUpperCase() + item.category.slice(1);
             }
 
             if (item.codepen_featured) {
@@ -169,19 +169,19 @@
             if (item.content) {
                 contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
             }
-            if (item.categories) {
-                categoriesCheck = item.categories.toLowerCase().indexOf(queryFormatted) > -1;
+            if (item.category) {
+                categoryCheck = item.category.toLowerCase().indexOf(queryFormatted) > -1;
 
-                if (item.categories == "beer") {
+                if (item.category == "beer") {
                     item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
-                else if (item.categories == "book") {
+                else if (item.category == "book") {
                     item.lede = `Book by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
-                else if (item.categories == "music") {
+                else if (item.category == "music") {
                     item.lede = `Album by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
-                else if (item.categories == "talk") {
+                else if (item.category == "talk") {
                     item.lede = "Talk";
                     if (item.checkin) {
                         item.lede += ` – Given at ${item.checkin}`;
@@ -244,14 +244,14 @@
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item, query);
             }
             // or item type is a page, check if search term is in title,
-            // content, or lede, categories, tags, or talk checkin
+            // content, or lede, category, tags, or talk checkin
             else if (item.type == "page" && (titleCheck || ledeCheck || contentCheck)) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_PAGE_TEMPLATE, item, query);
             }
-            // check if search term is in title, lede, content, categories,
+            // check if search term is in title, lede, content, category,
             // tags, or talk checkin
-            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoriesCheck || tagsCheck || checkinCheck) {
+            else if (titleCheck || ledeCheck || dateCheck || contentCheck || categoryCheck || tagsCheck || checkinCheck) {
                 resultsCount++;
                 results += populateResultContent(SEARCH_POST_TEMPLATE, item, query);
             }
@@ -286,7 +286,7 @@
         html = helpers.injectContent(html, "#", item.url);
 
         // TITLE
-        if (item.categories == "note") {
+        if (item.category == "note") {
             html = helpers.injectContent(html, /{{\s*title\s*}}/, item.date_friendly.replace(queryHighlightRegex, `<mark>$&</mark>`));
         } else {
             html = helpers.injectContent(html, /{{\s*title\s*}}/, item.title.replace(queryHighlightRegex, `<mark>$&</mark>`));
@@ -303,7 +303,7 @@
         if (item.type == "post") {
             html = helpers.injectContent(html, /{{\s*date_friendly\s*}}/, item.date_friendly);
 
-            if (item.categories == "note") {
+            if (item.category == "note") {
                 html = helpers.injectContent(html, /{{\s*hidden\s*}}/, " hidden");
             } else {
                 html = helpers.injectContent(html, /{{\s*hidden\s*}}/, "");
