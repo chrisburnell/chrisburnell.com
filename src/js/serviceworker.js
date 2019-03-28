@@ -27,7 +27,7 @@ const CACHES = [
 const CACHE_SIZE = 20;
 
 // Files that *must* be cached
-const CRITICAL_FILES = [
+const REQUIRED_FILES = [
     '/css/non-critical.min.css',
     '/js/main.min.js',
     '/search.json',
@@ -61,7 +61,7 @@ let updateStaticCache = () => {
             // These items won't block the installation of the Service Worker
             cache.addAll(OPTIONAL_FILES.concat(OFFLINE_PAGES));
             // These items must be cached for the Service Worker to complete installation
-            return cache.addAll(CRITICAL_FILES);
+            return cache.addAll(REQUIRED_FILES);
         });
 };
 
