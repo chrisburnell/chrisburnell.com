@@ -1,6 +1,7 @@
 ---
 title: Pens Feed
 lede: All of my pens.
+type: pens
 ---
 
 {% for page in site.categories.pen limit: site.feed_limit %}

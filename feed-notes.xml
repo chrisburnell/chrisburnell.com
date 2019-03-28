@@ -1,6 +1,7 @@
 ---
 title: Notes Feed
 lede: All of my notes.
+type: notes
 ---
 
 {%- assign notes_without_replies = site.categories.note | where_exp: 'page', 'page.in_reply_to == nil' -%}

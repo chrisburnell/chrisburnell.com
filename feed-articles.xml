@@ -1,6 +1,7 @@
 ---
 title: Articles Feed
 lede: All of my articles.
+type: articles
 ---
 
 {%- assign articles_without_replies = site.emptyArray -%}

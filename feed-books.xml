@@ -1,6 +1,7 @@
 ---
 title: Bookshelf Feed
 lede: All of my bookshelf check-ins.
+type: books
 ---
 
 {%- assign limit = site.feed_limit -%}

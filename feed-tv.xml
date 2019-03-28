@@ -1,6 +1,7 @@
 ---
 title: TV Feed
 lede: All of my TV check-ins.
+type: tv
 ---
 
 {% for page in site.categories.tv limit: site.feed_limit %}

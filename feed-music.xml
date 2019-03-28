@@ -1,6 +1,7 @@
 ---
 title: Music Feed
 lede: All of my music check-ins.
+type: music
 ---
 
 {% for page in site.categories.music limit: site.feed_limit %}

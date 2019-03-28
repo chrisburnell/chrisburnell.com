@@ -1,6 +1,7 @@
 ---
 title: Bookmarks Feed
 lede: All of my bookmarks.
+type: bookmarks
 ---
 
 {% for page in site.categories.bookmark limit: site.feed_limit %}

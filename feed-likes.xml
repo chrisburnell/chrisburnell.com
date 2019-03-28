@@ -1,6 +1,7 @@
 ---
 title: Likes Feed
 lede: All of my likes.
+type: likes
 ---
 
 {% for page in site.categories.like limit: site.feed_limit %}
