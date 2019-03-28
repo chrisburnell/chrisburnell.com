@@ -1,15 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-bookmark.xml
-- /feed-links.xml
-
 title: Bookmarks Feed
 lede: All of my bookmarks.
-category_path: '/bookmarks/'
 ---
 
 {% for page in site.categories.bookmark limit: site.feed_limit %}

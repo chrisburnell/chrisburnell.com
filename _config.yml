@@ -155,6 +155,7 @@ defaults:
     prefix: c
     emoji: '☕️'
     hidden: true
+    ignore: true
 - scope:
     type: 'posts'
     path: '_posts/food'
@@ -255,6 +256,45 @@ defaults:
     emoji: '📺'
     hidden: true
     ignore: true
+- scope:
+    path: '*.js'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    path: '*.json'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    path: 'images/*.svg'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    path: '*.txt'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    path: '*.xml'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    path: 'feed*.xml'
+  values:
+    layout: feed
 
 keep_files:
 - css

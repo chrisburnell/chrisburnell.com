@@ -1,14 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-reply.xml
-
 title: Replies Feed
-lede: All of my replis.
-category_path: ''
+lede: All of my replies.
 ---
 
 {%- assign posts_with_replies = site.posts | where_exp: 'page', 'page.in_reply_to != nil' -%}

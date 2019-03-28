@@ -1,14 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-note.xml
-
 title: Notes Feed
 lede: All of my notes.
-category_path: '/notes/'
 ---
 
 {%- assign notes_without_replies = site.categories.note | where_exp: 'page', 'page.in_reply_to == nil' -%}

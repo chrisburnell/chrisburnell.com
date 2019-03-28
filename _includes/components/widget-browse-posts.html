@@ -2,8 +2,8 @@
     <section class="widget  widget--browse-posts">
         {% if page.previous %}
             <a class="widget-previous-anchor" href="{{ page.previous.url }}">
-                {% if page.previous.categories contains 'like' or page.previous.categories contains 'note' %}
-                    {{ page.category | capitalize }} from {{ page.previous.date | date: '%d %B %Y' }}
+                {% if page.previous.category == 'like' or page.previous.category == 'note' %}
+                    {{ page.previous.category | capitalize }} from {{ page.previous.date | date: '%d %B %Y' }}
                 {% else %}
                     {{ page.previous.title }}
                 {% endif %}
@@ -11,8 +11,8 @@
         {% endif %}
         {% if page.next %}
             <a class="widget-next-anchor" href="{{ page.next.url }}">
-                {% if page.next.categories contains 'like' or page.next.categories contains 'note' %}
-                    {{ page.category | capitalize }} from {{ page.next.date | date: '%d %B %Y' }}
+                {% if page.next.category == 'like' or page.next.category == 'note' %}
+                    {{ page.next.category | capitalize }} from {{ page.next.date | date: '%d %B %Y' }}
                 {% else %}
                     {{ page.next.title }}
                 {% endif %}

@@ -1,14 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-podcast.xml
-
 title: Podcasts Feed
 lede: All of my podcast check-ins.
-category_path: '/podcasts/'
 ---
 
 {% for page in site.categories.podcast limit: site.feed_limit %}

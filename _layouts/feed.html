@@ -11,7 +11,7 @@
     </author>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     <icon>{{ '/images/avatar.png' | absolute_url }}</icon>
-    <link href="{{ page.category_path | absolute_url }}" />
+    <link href="{{ page.url | split: '/' | last | split: '-' | last | split: '.' | first | prepend: '/' | append: '/' | prepend: site.live_url }}" />
     <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/atom+xml" />
     <link rel="hub" href="{{ site.urls.switchboard }}" />
 

@@ -1,15 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-book.xml
-- /feed-bookshelf.xml
-
 title: Bookshelf Feed
 lede: All of my bookshelf check-ins.
-category_path: '/bookshelf/'
 ---
 
 {%- assign limit = site.feed_limit -%}

@@ -1,9 +1,3 @@
----
-layout: null
-searchable: false
-sitemap:
-  exclude: true
----
 /*!
  * Service Worker
  * @author Chris Burnell <me@chrisburnell.com>

@@ -1,14 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-redirect_from:
-- /feed-article.xml
-
 title: Articles Feed
 lede: All of my articles.
-category_path: '/articles/'
 ---
 
 {%- assign articles_without_replies = site.emptyArray -%}

@@ -1,12 +1,6 @@
 ---
-layout: feed
-searchable: false
-sitemap:
-  exclude: true
-
 title: Full Feed
 lede: All of my posts.
-category_path: ''
 ---
 
 {%- assign posts_without_replies = site.emptyArray -%}
