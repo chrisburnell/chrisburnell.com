@@ -11,7 +11,7 @@ sitemap:
 
 'use strict';
 
-const VERSION = 'v2.0.77';
+const VERSION = 'v2.0.78';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -48,6 +48,11 @@ const OFFLINE_PAGES = [
     '/privacy/',
     '/search/'
 ];
+
+// Pages to ignore
+const IGNORE_PAGES = [
+    '/ignore/'
+]
 
 
 let updateStaticCache = () => {
@@ -107,13 +112,18 @@ self.addEventListener('fetch', event => {
     let request = event.request;
     let url = new URL(request.url);
 
-    // Only deal with requests to my own server
+    // Ignore requests which aren't to my own server
     if (url.origin !== location.origin) {
         return;
     }
 
     // Ignore non-GET requests
     if (request.method !== 'GET') {
+        return;
+    }
+
+    // Ignore particular URLs
+    if (IGNORE_PAGES.includes(url.pathname)) {
         return;
     }
 
