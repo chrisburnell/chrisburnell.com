@@ -14,7 +14,7 @@ author:
   nationality: Canadian
   location:    London, UK
   email:       me@chrisburnell.com
-  role:        Front-End Developer
+  avatar:      /images/avatar@2x.png
   pgp:         9604F098260A0057
   codepen:     *username
   github:      *username
@@ -257,42 +257,7 @@ defaults:
     hidden: true
     ignore: true
 - scope:
-    path: '*.js'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    path: '*.json'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    path: 'images/*.svg'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    path: '*.txt'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    path: '*.xml'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    path: 'feed*.xml'
+    path: '/feed*.xml'
   values:
     layout: feed
 

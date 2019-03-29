@@ -10,7 +10,7 @@
         <uri>{{ site.live_url | append: site.baseurl }}</uri>
     </author>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    <icon>{{ '/images/avatar@2x.png' | absolute_url }}</icon>
+    <icon>{{ site.author.avatar | absolute_url }}</icon>
     <link href="{{ '/' | append: page.type | append: '/' | replace: '//', '/' | prepend: site.live_url }}" />
     <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/atom+xml" />
     <link rel="hub" href="{{ site.urls.switchboard }}" />

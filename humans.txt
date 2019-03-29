@@ -1,4 +1,8 @@
 ---
+layout: null
+searchable: false
+sitemap:
+  exclude: true
 ---
 
 # humanstxt.org
@@ -7,8 +11,9 @@
 
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
-    Twitter: {{ site.urls.twitter }}
     GitHub: {{ site.urls.github }}
+    Mastodon: {{ site.urls.mastodon }}
+    Twitter: {{ site.urls.twitter }}
     PGP: {{ site.author.pgp }}
 
 /* SITE */
