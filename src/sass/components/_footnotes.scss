@@ -16,6 +16,8 @@
 
 .endnote,
 .footnote {
-    @include v(padding-left, small-relative);
-    @include v(padding-right, small-relative);
+    padding-left: $border-width-default;
+    padding-left: var(--border-width-default);
+    padding-right: $border-width-default;
+    padding-right: var(--border-width-default);
 }
