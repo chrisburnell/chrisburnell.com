@@ -14,6 +14,7 @@
     &::before {
         content: " by ";
         @include v(font-family, serif);
+        @include v(font-size, small);
         font-style: italic;
     }
 }

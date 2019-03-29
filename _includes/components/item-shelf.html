@@ -42,7 +42,7 @@
             {% if page.category == 'beer' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% elsif page.category == 'like' %}
-                <a {% if page.mf_property %}class="u-{{ page.mf_property }}"{% endif %} href="{{ link }}" rel="external"><cite class="p-name">Liked: {{ link | remove: 'http://' | remove: 'https://' }}</cite></a>
+                <a {% if page.mf_property %}class="u-{{ page.mf_property }}"{% endif %} href="{{ link }}" rel="external"><cite class="break-anywhere  p-name">Liked: {{ link | remove: 'http://' | remove: 'https://' }}</cite></a>
             {% elsif page.category == 'tv' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% else %}
@@ -109,6 +109,7 @@
         {% if link and page.mf_property %}
             <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
         {% endif %}
+        {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
         <data class="u-category" value="/{{ category_link }}/" aria-hidden="true" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </div>
