@@ -93,11 +93,10 @@
     }
 
     .lede {
+        @include hyphenate;
         margin-bottom: 0;
         overflow: hidden;
-        overflow-wrap: break-word;
         text-overflow: ellipsis;
-        word-break: break-word;
         line-clamp: 3;
     }
 

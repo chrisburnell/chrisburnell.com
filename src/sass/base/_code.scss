@@ -28,7 +28,7 @@ mark,
 samp,
 var {
     // force text to wrap
-    overflow-wrap: break-word;
+    @include break-words;
 }
 %heading-elements > code,
 %content-elements > code,

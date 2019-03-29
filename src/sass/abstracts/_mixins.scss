@@ -124,26 +124,26 @@
 }
 
 ///
-/// Hyphenate text.
-///
-/// @example scss
-///   @include hyphenate;
-///   // overflow-wrap: break-word;
-///   // hyphens: auto;
+/// Hyphenate words.
 ///
 @mixin hyphenate() {
-    overflow-wrap: break-word;
     hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+}
+
+///
+/// Break words.
+///
+@mixin break-words() {
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 ///
 /// Make text non-selectable.
-///
-/// @example scss
-///   @include non-selectable;
-///   // user-select: none;
-///   // -webkit-touch-callout: default;
-///   // -webkit-touch-callout: none;
 ///
 @mixin non-selectable() {
     user-select: none;

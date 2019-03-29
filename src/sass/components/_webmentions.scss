@@ -42,7 +42,7 @@
     }
 
     a {
-        word-break: break-word;
+        @inlude break-words;
     }
 
     .webmentions__list__replies ol {
