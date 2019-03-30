@@ -302,6 +302,17 @@
             {%- endif -%}
         </div>
     {% endif %}
+    {% if page.posting_method %}
+        {%- assign posting_methods_map = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.contains' | first | map: 'name' | default: null -%}
+        <div class="posting-method">
+            <span>posted using</span>
+            {% if page.posting_method contains 'http' %}
+                <a href="{{ page.posting_method }}" rel="external">{{ posting_methods_map | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
+            {% else %}
+                <strong>{{ posting_methods_map | default: page.posting_method }}</strong>
+            {% endif %}
+        </div>
+    {% endif %}
     {% if page.prefix %}
         {%- assign posts_to_check = site.posts | where: 'category', page.category -%}
         {%- capture shorturl -%}
