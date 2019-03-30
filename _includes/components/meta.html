@@ -303,7 +303,7 @@
         </div>
     {% endif %}
     {% if page.posting_method %}
-        {%- assign posting_methods_map = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.contains' | first | map: 'name' | default: null -%}
+        {%- assign posting_methods_map = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.contains' | first | map: 'name' | first | default: null -%}
         <div class="posting-method">
             <span>posted using</span>
             {% if page.posting_method contains 'http' %}
