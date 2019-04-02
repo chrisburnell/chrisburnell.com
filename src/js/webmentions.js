@@ -51,9 +51,7 @@
                     webmentionsLoaded = true;
                     populateResponses(data);
                     let responsesCount = Object.keys(responses)
-                        .map(type => {
-                            return responses[type].length;
-                        })
+                        .map(type => responses[type].length)
                         .reduce((sum, count) => sum + count, 0);
                     if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
                         for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
