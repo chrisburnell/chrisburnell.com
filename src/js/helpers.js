@@ -19,7 +19,7 @@ helpers = {
 
     ////
     /// Gets query string parameter
-    /// Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
+    /// @see Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
     /// @param {String} name
     /// @return {String} parameter value
     ////
@@ -105,7 +105,8 @@ helpers = {
     getFetchResponse: response => {
         if (response.ok) {
             return response;
-        } else {
+        }
+        else {
             let error = new Error(response.statusText);
             error.response = response;
             throw error;
@@ -132,9 +133,46 @@ helpers = {
         return integers.toString().padStart(integersMax, "0") + (decimals ? `.${decimals}` : "");
     },
 
+    ////
+    /// Reliably extract text from HTML
+    /// @param {String} html
+    /// @return {String} text
+    ////
     decodeHTML: (html) => {
         let text = document.createElement("textarea");
         text.innerHTML = html;
         return text.value;
+    },
+
+    ////
+    /// Wilson Score Interval
+    /// @see https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval
+    /// @param {Number} positive items
+    /// @param {Number} total items
+    /// @return {Object} confidence percentages
+    ////
+    wilson: (positive, total) => {
+        if (total === 0) {
+            return {
+                left: 0,
+                right: 0
+            };
+        }
+
+        // phat is the proportion of successes in a Bernoulli trial process
+        const phat = positive / total;
+
+        // z is 1-alpha/2 percentile of a standard normal distribution for error alpha = 5%
+        const z = 1.96;
+
+        // implement the algorithm
+        const a = phat + z * z / (2 * total);
+        const b = z * Math.sqrt((phat * (1 - phat) + z * z / (4 * total)) / total);
+        const c = 1 + z * z / total;
+
+        return {
+            left: (a - b) / c,
+            right: (a + b) / c
+        };
     }
 };
