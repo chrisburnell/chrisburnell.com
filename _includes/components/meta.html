@@ -318,8 +318,8 @@
         {%- capture shorturl -%}
             {{ page.prefix }}
             {%- assign n = page.date | date: '%s' | divided_by: 86400 -%}
-            {%- assign s = "" -%}
-            {%- assign m = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz" | split: "" -%}
+            {%- assign s = '' -%}
+            {%- assign m = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz' | split: '' -%}
             {%- for i in (1..9999) -%}
                 {%- assign d = n | modulo: 60 -%}
                 {%- assign s = s | prepend: m[d] -%}

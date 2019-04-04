@@ -1,7 +1,7 @@
-{%- assign input_filtered = include.input | downcase | replace: " ", "" -%}
+{%- assign input_filtered = include.input | downcase | replace: ' ', '' -%}
 {%- assign output = include.input | capitalize -%}
 {%- for r in site.data.replacements -%}
-    {%- assign r_filtered = r | downcase | replace: " ", "" -%}
+    {%- assign r_filtered = r | downcase | replace: ' ', '' -%}
     {%- if r_filtered == input_filtered -%}
         {%- assign output = r -%}
         {%- break -%}
