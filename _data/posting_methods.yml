@@ -1,5 +1,7 @@
 - name: 'IndieBookClub'
   contains: 'https://indiebookclub.biz'
+- name: 'Indigenous'
+  contains: 'https://indigenous.abode.pub'
 - name: 'Micropublish'
   contains: 'https://micropublish.net'
 - name: 'Monocle'
