@@ -51,7 +51,7 @@ gulp.task("css-prettify", () => {
         .pipe(newer(`${paths.css.src}`))
         .pipe(
             prettier({
-                printWidth: 999,
+                printWidth: 9999,
                 tabWidth: 4
             })
         )
@@ -73,7 +73,7 @@ gulp.task("css-compile", () => {
         .pipe(postcss([autoprefixer()]))
         .pipe(
             prettier({
-                printWidth: 999,
+                printWidth: 9999,
                 tabWidth: 4
             })
         )
@@ -102,7 +102,7 @@ gulp.task("css-critical", () => {
         .pipe(postcss([autoprefixer()]))
         .pipe(
             prettier({
-                printWidth: 999,
+                printWidth: 9999,
                 tabWidth: 4
             })
         )
@@ -133,7 +133,7 @@ gulp.task("js-prettify", () => {
         .pipe(newer(`${paths.js.src}/`))
         .pipe(
             prettier({
-                printWidth: 999,
+                printWidth: 9999,
                 tabWidth: 4
             })
         )

@@ -80,7 +80,7 @@ code[data-lang] {
     & + .highlight pre {
         @include transition(max-height);
         // conservative super-tall buffer for code blocks
-        max-height: 999vh;
+        max-height: 9999vh;
     }
 
     &:not(:checked) ~ .highlight pre {

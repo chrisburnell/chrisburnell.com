@@ -1,5 +1,5 @@
 # .prettierrc
-printWidth: 999
+printWidth: 9999
 tabWidth: 4
 overrides:
 - files: "*.json"

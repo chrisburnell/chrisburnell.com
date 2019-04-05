@@ -65,3 +65,24 @@ With flex or grid, it’s trivial now to compose a layout exactly as you and/or 
         </ul>
     </dd>
 </dl>
+
+--------
+
+One of the major selling points about *Bootstrap* or *Foundation* was the ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and, of course, twelfths (1 columns each).
+
+But these are really just abstractions of how our brain thinks about layout, or at least, how we previously thought about layout before these column-based layout systems became popular and the de facto standard.
+
+This is where CSS Grid really shines and takes away a great deal of mental overhead—even moreso than the column-based systems of yore. These old column-based systems break down any time you want to do something with layout that doesn’t align with your columns. What happens if you need to embed a third-party widget that should always appear at 300 pixels wide?
+
+{% highlight html %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5"></div>
+</div>
+{% endhighlight %}
+
+{% highlight css %}
+grid-template-columns: 3fr 5fr;
+{% endhighlight %}
+
+An added benefit to CSS Grid here is that we can avoid a lot more media queries thanks to the repeat() function and the auto-fill and auto-fit keywords.

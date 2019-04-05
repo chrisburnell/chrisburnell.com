@@ -10,7 +10,7 @@
     @include media("screen", "below:medium") {
         display: flex;
         flex-direction: column;
-        order: 999;
+        order: 9999;
         @include v(margin-top, large);
     }
 
