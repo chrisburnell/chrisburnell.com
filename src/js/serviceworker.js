@@ -5,7 +5,7 @@
 
 'use strict';
 
-const VERSION = 'v2.0.80';
+const VERSION = 'v2.0.81';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -37,6 +37,7 @@ const OPTIONAL_FILES = [
 const OFFLINE_PAGES = [
     '/',
     '/about/',
+    '/archive/',
     '/contact/',
     '/license/',
     '/privacy/',
