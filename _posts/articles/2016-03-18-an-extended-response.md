@@ -6,7 +6,7 @@ lede: If you’ve dabbled in Sass before, you’re likely familiar with <code>@e
 tags:
 - css
 - scss
-- tutorials
+- tutorial
 
 comments: disqus
 

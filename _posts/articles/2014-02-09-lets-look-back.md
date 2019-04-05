@@ -7,7 +7,7 @@ tags:
 - css
 - github
 - scss
-- tutorials
+- tutorial
 
 banner:
 - lets-look-back.png

@@ -5,7 +5,7 @@ title: Backscratching Revisited
 lede: I revised my original technique for styling default elements and took it a step further to scratch the greatest number of backs.
 tags:
 - css
-- tutorials
+- tutorial
 
 banner:
 - backscratching-revisited.png
