@@ -139,7 +139,7 @@ Let’s step through converting an Arabic numeral (e.g. <samp>1569</samp>) to Ro
 
 {% highlight liquid %}{% raw %}
 {% assign input = include.value %}
-{% for c in (1..999) %}
+{% for c in (1..9999) %}
     {% for numeral in site.data.numerals %}
         {% if input >= numeral.arabic %}
             {% assign input = input | minus: numeral.arabic %}
@@ -160,7 +160,7 @@ The same can be done for going from Roman numerals to Arabic. To do so, we have 
 
 {% highlight liquid %}{% raw %}
 {% assign input = include.value %}
-{% for c in (1..999) %}
+{% for c in (1..9999) %}
     {% assign slice_double = input | slice: 0, 2 %}
     {% assign slice_single = input | slice: 0 %}
     {% for numeral in site.data.numerals %}
@@ -187,7 +187,7 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
 {%- assign input = include.value | times: 1 -%}
 {%- if input != 0 -%}
     {%- assign output = '' -%}
-    {%- for c in (1..999) -%}
+    {%- for c in (1..9999) -%}
         {%- for numeral in site.data.numerals -%}
             {%- if input >= numeral.arabic -%}
                 {%- assign input = input | minus: numeral.arabic -%}
@@ -202,7 +202,7 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
 {%- else -%}
     {%- assign input = include.value -%}
     {%- assign output = 0 -%}
-    {%- for c in (1..999) -%}
+    {%- for c in (1..9999) -%}
         {%- assign slice_double = input | slice: 0, 2 -%}
         {%- assign slice_single = input | slice: 0 -%}
         {%- for numeral in site.data.numerals -%}
