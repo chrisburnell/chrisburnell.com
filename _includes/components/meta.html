@@ -64,8 +64,11 @@
             <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
             {%- for audience in audiences -%}
+                {%- assign audiences_map = site.data.audiences | where_exp: 'target', 'audience.name contains target.contains' | first | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if audience.link -%}
+                {%- if audiences_map -%}
+                    <a class="h-card  u-audience" href="{{ audiences_map.link }}" title="" rel="external">{{ audiences_map.name | strip }}</a>
+                {%- elsif audience.link -%}
                     <a class="h-card  u-audience" href="{{ audience.link }}" title="" rel="external">{{ audience.name | default: audience | strip }}</a>
                 {%- else -%}
                     <strong class="h-card  p-audience">{{ audience.name | default: audience | strip }}</strong>
@@ -78,15 +81,17 @@
         <div class="in-reply-to">
             {% if page.rsvp %}
                 <data class="p-rsvp" hidden>{{ page.rsvp }}</data>
-                <span>responded</span> <strong>{{ page.rsvp | capitalize }}</strong> <span>to</span>
+                <span>responded</span>
+                <strong>{{ page.rsvp | capitalize }}</strong>
+                <span>to</span>
             {% else %}
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
-                {%- assign reply_targets_map = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.contains' | first | map: 'name' | default: null -%}
+                {%- assign reply_targets_name = site.data.reply_targets | where_exp: 'target', 'reply contains target.contains' | first | map: 'name' | default: null -%}
                 <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">
-                {% if reply_targets_map %}
-                    {{ reply_targets_map }}
+                {% if reply_targets_name %}
+                    {{ reply_targets_name }}
                 {% elsif reply contains 'mastodon.social' %}
                     {% if reply contains '/@' %}
                         @{{ reply | split: '/@' | last | split: '/' | first }}
@@ -106,6 +111,12 @@
                 {% endif %}
             {% endfor %}
         </div>
+    {% endif %}
+    {% if page.rsvp_date %}
+        <time class="date" datetime="{{ page.rsvp_date | date_to_xmlschema }}{% if page.rsvp_finish %}–{{ page.rsvp_finish | date_to_xmlschema }}{% endif %}">
+            <span>taking place on</span>
+            <strong>{{ page.rsvp_date | date_to_long_string }}{% if page.rsvp_finish %} – {{ page.rsvp_finish | date_to_long_string }}{% endif %}</strong>
+        </time>
     {% endif %}
     {% if page.category == 'article' %}
         {%- assign words = site.emptyArray -%}

@@ -100,12 +100,16 @@
         line-clamp: 3;
     }
 
-    .date:not(.date--range) {
+    .date {
         text-align: right;
 
         &::before {
             // EN DASH, NO-BREAK SPACE
             content: "– ";
+        }
+
+        &.date--range::before {
+            content: "on ";
         }
     }
 

@@ -15,7 +15,7 @@
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
             <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} aria-hidden="true" hidden{% endif %}>
-                {% if page.category == 'note' %}
+                {% if page.category == 'note' or page.category == 'like' %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
@@ -92,7 +92,12 @@
                     <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
                 {% endif %}
             </div>
-            <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
+            {% if page.rsvp_date %}
+                <time class="date  date--range" datetime="{{ page.rsvp_date | date_to_xmlschema }}">{{ page.rsvp_date | date_to_long_string }}{% if page.rsvp_finish %} – {{ page.rsvp_finish | date_to_long_string }}{% endif %}</time>
+                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
+            {% else %}
+                <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
+            {% endif %}
         </a>
         {% if page.mf_property and link %}
             <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
