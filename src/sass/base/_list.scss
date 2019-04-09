@@ -97,7 +97,7 @@ dl {
 
     &.full {
         @include media("screen", "above:350px") {
-            grid-template-columns: minmax(min-content, 33.33%) 1fr !important;
+            grid-template-columns: max-content 1fr !important;
         }
     }
 
