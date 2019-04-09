@@ -11,9 +11,7 @@
 <entry>
     {% if page.category == 'note' %}
         <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
-    {% elsif page.category == 'like' %}
-        <title>{{ link | remove: 'http://' | remove: 'https://' | remove: 'www.' }}</title>
-    {% else %}
+    {% elsif page.category != 'like' %}
         <title>{{ page.title | xml_escape }}</title>
     {% endif %}
     <link href="{{ page.url | absolute_url }}" />
@@ -38,8 +36,6 @@
         <summary>Coffee</summary>
     {% elsif page.category == 'food' %}
         <summary>Food</summary>
-    {% elsif page.category == 'like' %}
-        <summary>Like</summary>
     {% elsif page.category == 'movie' %}
         <summary>Movie Review</summary>
     {% elsif page.category == 'music' %}
