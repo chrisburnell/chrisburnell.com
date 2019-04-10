@@ -5,13 +5,15 @@
     <article class="content" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
-            <span class="p-name">
-                {% if page.category == 'note' %}
+            {% unless page.reacji or page.titlefree %}<span class="p-name">{% endunless %}
+                {% if page.category == 'like' %}
+                    Liked a page on: {{ link_clean | split: '/' | first }}
+                {% elsif page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
                 {% endif %}
-            </span>
+            {% unless page.reacji or page.titlefree %}</span>{% endunless %}
         </h1>
 
         {% include components/meta.html %}

@@ -180,6 +180,7 @@ defaults:
       exclude: true
     hidden: true
     ignore: true
+    titlefree: true
 - scope:
     type: 'posts'
     path: '_posts/movies'
@@ -209,6 +210,7 @@ defaults:
   values:
     category: 'note'
     prefix: n
+    titlefree: true
 - scope:
     type: 'posts'
     path: '_posts/pens'

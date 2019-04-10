@@ -9,11 +9,9 @@
 {%- endif -%}
 {%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
 <entry>
-    {% if page.category == 'note' %}
-        <title>{{ page.date | date: '%A, %d %B %Y' }}</title>
-    {% elsif page.category != 'like' %}
+    {% unless page.reacji or page.titlefree %}
         <title>{{ page.title | xml_escape }}</title>
-    {% endif %}
+    {% endunless %}
     <link href="{{ page.url | absolute_url }}" />
     <id>{{ page.url | absolute_url }}</id>
     <published>{{ page.date | date_to_rfc822 }}</published>

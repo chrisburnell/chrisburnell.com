@@ -6,15 +6,15 @@
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         <h1 class="title" id="article" role="heading">
-            {% unless page.reacji or page.category == 'note' %}<span class="p-name">{% endunless %}
+            {% unless page.reacji or page.titlefree %}<span class="p-name">{% endunless %}
                 {% if page.category == 'like' %}
                     Liked a page on: {{ link_clean | split: '/' | first }}
-                {% elsif page.category == 'note' %}
+                {% elsif page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}
                 {% endif %}
-            {% unless page.reacji or page.category == 'note' %}</span>{% endunless %}
+            {% unless page.reacji or page.titlefree %}</span>{% endunless %}
             {% if page.sparkline %}
                 {% include content/sparkline.html title=page.sparkline values=page.category %}
             {% endif %}

@@ -14,8 +14,8 @@
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
-            <h3 class="delta  title{% unless page.category == 'note' %}  p-name{% endunless %}"{% if page.category == 'note' %} aria-hidden="true" hidden{% endif %}>
-                {% if page.category == 'note' or page.category == 'like' %}
+            <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} aria-hidden="true" hidden{% endif %}>
+                {% if page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
                     {{ page.title | strip_html }}

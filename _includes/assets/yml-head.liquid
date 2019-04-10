@@ -1,4 +1,4 @@
-{% if page.category == 'note' %}
+{% if page.titlefree %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% elsif page.title %}
     {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
