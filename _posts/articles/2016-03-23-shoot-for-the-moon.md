@@ -2,7 +2,7 @@
 date: 2016-03-23 18:22:00
 
 title: Shoot for the Moon
-lede: Don’t be half-minded when dealing with fractions and pixels. How can we ensure all browsers interpret fractions in our CSS equally?
+lede: Don't be half-minded when dealing with fractions and pixels. How can we ensure all browsers interpret fractions in our CSS equally?
 tags:
 - css
 - tutorial

@@ -2,7 +2,7 @@
 date: 2013-10-29 00:10:00
 
 title: I’ll Scratch Your Back, And Mine Too
-lede: I’ve been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
+lede: I've been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
 tags:
 - css
 - tutorial

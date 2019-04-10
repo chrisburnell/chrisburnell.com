@@ -29,7 +29,7 @@
         {% elsif page.page_class contains 'search' %}
             <p class="beta  lede  lede--featured  js-search-meta" id="lede">Search for something!</p>
         {% elsif page.lede %}
-            <p class="beta  lede  lede--featured" id="lede">{{ page.lede }}</p>
+            <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
         {% endif %}
 
         <div class="content__body">

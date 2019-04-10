@@ -2,7 +2,7 @@
 date: 2014-09-22 10:00:00
 
 title: On Your Marks, Get Set, Wait
-lede: What’s really important when reading an article online? Content should always come first, and give users the option for more later.
+lede: What's really important when reading an article online? Content should always come first, and give users the option for more later.
 tags:
 - javascript
 - tutorial

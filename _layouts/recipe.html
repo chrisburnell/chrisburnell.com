@@ -16,7 +16,7 @@
         {% include components/banner.html %}
 
         {% if page.lede %}
-            <p class="beta  lede  lede--featured" id="lede">{{ page.lede }}</p>
+            <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
         {% endif %}
 
         {% if page.edit_text %}

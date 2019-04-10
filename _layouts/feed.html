@@ -2,7 +2,7 @@
 <feed xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
 
     <title>{{ site.title | xml_escape }} – {{ page.title | xml_escape }}</title>
-    <subtitle>{{ page.lede | xml_escape }}</subtitle>
+    <subtitle>{{ page.lede | replace: "'", "’" | xml_escape }}</subtitle>
     <id>{{ site.live_url | append: site.baseurl }}</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
     <author>

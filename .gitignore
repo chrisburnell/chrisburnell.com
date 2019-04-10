@@ -46,6 +46,7 @@ node_modules/
 # Site Assets
 /css/
 /js/
+/fonts/
 /images/
 _includes/generated/
 /serviceworker.js

@@ -54,8 +54,8 @@
                 {% if page.reacji %}
                     <span class="emoji  p-summary  e-content">{{ page.reacji }}</span>
                 {% elsif page.lede %}
-                    <span class="p-summary">{{ page.lede | strip_html | truncatewords: 20 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
-                    <span class="e-content" aria-hidden="true" hidden>{{ page.lede | strip_html | strip }}</span>
+                    <span class="p-summary">{{ page.lede | replace: "'", "’" | strip_html | truncatewords: 20 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
+                    <span class="e-content" aria-hidden="true" hidden>{{ page.lede | replace: "'", "’" | strip_html | strip }}</span>
                 {% elsif page.category == 'music' %}
                     <span class="p-summary  e-content">Album <span>Review</span></span>
                 {% elsif page.category == 'note' %}

@@ -5,7 +5,7 @@ redirect_from:
 - /follow/index.html
 
 title: Following
-lede: I’ve had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways over my years on this Earth. Here are a handful of them.
+lede: I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways over my years on this Earth. Here are a handful of them.
 ---
 
 This page is still being built!

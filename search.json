@@ -12,7 +12,7 @@ sitemap:
         "type": "page",
         "url": "{{ page.url | absolute_url }}",
         "title": "{{ page.title | xml_escape }}",
-        "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
+        "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
           "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
         {% endunless %}
       }{% unless forloop.last %},{% endunless %}
@@ -27,7 +27,7 @@ sitemap:
         "date": "{{ page.date | date_to_xml_schema }}",
         "date_friendly": "{{ page.date | date_to_long_string }}",
         {% if page.lede %}
-          "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% elsif page.category == 'note' %}
           "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
         {% endif %}

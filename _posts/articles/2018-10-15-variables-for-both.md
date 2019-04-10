@@ -2,7 +2,7 @@
 date: 2018-10-15 10:34:00
 
 title: Variables for Both
-lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I’m using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS mixin.
+lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS mixin.
 tags:
 - css
 - scss

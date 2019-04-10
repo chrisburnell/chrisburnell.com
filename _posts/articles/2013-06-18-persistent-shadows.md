@@ -2,7 +2,7 @@
 date: 2013-06-18 02:45:00
 
 title: Persistent Shadows
-lede: How easy is it to keep a shadow’s direction consistent whilst rotating an element?
+lede: How easy is it to keep a shadow's direction consistent whilst rotating an element?
 tags:
 - codepen
 - css
