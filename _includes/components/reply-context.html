@@ -1,11 +1,8 @@
-{% if page.in_reply_to.first contains 'twitter.com' or page.in_reply_to.first contains 'mastodon.social' %}
+{% if page.in_reply_to.first contains 'twitter.com' %}
     <div class="reply-context">
     {% if page.in_reply_to.first contains 'twitter.com' %}
         <blockquote class="twitter-tweet" lang="en"><a href="{{ page.in_reply_to.first }}"></a></blockquote>
         <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
-    {% endif %}
-    {% if page.in_reply_to.first contains 'mastodon.social' %}
-        <iframe src="{{ page.in_reply_to.first }}/embed" class="mastodon-embed"></iframe>
     {% endif %}
     </div>
 {% endif %}

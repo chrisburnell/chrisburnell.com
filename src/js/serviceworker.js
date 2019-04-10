@@ -47,7 +47,7 @@ const OFFLINE_PAGES = [
 // Pages to ignore
 const IGNORE_PAGES = [
     '/ignore/'
-]
+];
 
 
 let updateStaticCache = () => {
