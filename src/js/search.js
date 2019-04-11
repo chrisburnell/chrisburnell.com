@@ -199,7 +199,7 @@
             }
             if (item.in_reply_to) {
                 let reply;
-                if (item.in_reply_to.includes("mastodon.social")) {
+                if (item.in_reply_to.includes("mastodon.social") || item.in_reply_to.includes("octodon.social") || item.in_reply_to.includes("playvicious.social")) {
                     reply = `<span class="h-cite  u-in-reply-to">a Toot</span>`;
                 }
                 else if (item.in_reply_to.includes("twitter.com")) {

@@ -1,8 +1,8 @@
 - title: About
-  url: '/about/'
+  link: '/about/'
 
 - title: Archive
-  url: '/archive/'
+  link: '/archive/'
 
 - title: Search
-  url: '/search/'
+  link: '/search/'

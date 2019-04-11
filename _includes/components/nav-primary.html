@@ -1,8 +1,8 @@
 <nav class="nav-primary" role="navigation">
     <ol class="nav-primary-list" role="list">
-    {% for link in site.data.nav_primary %}
-        <li class="nav-primary--{{ link.title | slugify }}" role="listitem">
-            <a{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+    {% for item in site.data.nav_primary %}
+        <li class="nav-primary--{{ item.title | slugify }}" role="listitem">
+            <a{% if item.rel %} rel="{{ item.rel }}"{% endif %} href="{{ item.link }}">{{ item.title }}</a>
         </li>
     {% endfor %}
     </ol>
