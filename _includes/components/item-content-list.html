@@ -36,9 +36,9 @@
                         <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_twitter }}</data>
                     {% elsif is_mastodon_link %}
                         {% if page.in_reply_to.first contains '/@' %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/@' | last | split: '/' | first }}</data>
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/@' | last | split: '/' | first }}@{{ is_mastodon_link }}</data>
                         {% elsif page.in_reply_to.first contains '/users/' %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/users/' | last | split: '/' | first }}</data>
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/users/' | last | split: '/' | first }}@{{ is_mastodon_link }}</data>
                         {% else %}
                             <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
                         {% endif %}

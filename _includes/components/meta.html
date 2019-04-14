@@ -101,9 +101,9 @@
                     {{ reply_target_by_twitter }}
                 {% elsif is_mastodon_link %}
                     {% if reply contains '/@' %}
-                        @{{ reply | split: '/@' | last | split: '/' | first }}
+                        @{{ reply | split: '/@' | last | split: '/' | first }}@{{ is_mastodon_link }}
                     {% elsif reply contains '/users/' %}
-                        @{{ reply | split: '/users/' | last | split: '/' | first }}
+                        @{{ reply | split: '/users/' | last | split: '/' | first }}@{{ is_mastodon_link }}
                     {% else %}
                         a Toot
                     {% endif %}
@@ -321,13 +321,13 @@
         </div>
     {% endif %}
     {% if page.posting_method %}
-        {%- assign posting_methods_map = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.contains' | first | map: 'name' | first | default: null -%}
+        {%- assign posting_method_by_link = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.link' | first | map: 'name' | first | default: null -%}
         <div class="posting-method">
             <span>posted using</span>
             {% if page.posting_method contains 'http' %}
-                <a href="{{ page.posting_method }}" rel="external">{{ posting_methods_map | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
+                <a href="{{ page.posting_method }}" rel="external">{{ posting_method_by_link | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
             {% else %}
-                <strong>{{ posting_methods_map | default: page.posting_method }}</strong>
+                <strong>{{ posting_method_by_link | default: page.posting_method }}</strong>
             {% endif %}
         </div>
     {% endif %}
