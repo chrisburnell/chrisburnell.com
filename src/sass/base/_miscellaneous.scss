@@ -3,10 +3,6 @@
 /// @group base
 ////
 
-time {
-    display: inline-block;
-}
-
 hr {
     @include v(background-color, black--gamma);
     width: 100%;
@@ -133,6 +129,10 @@ em {
         font-variant: small-caps;
         text-transform: lowercase;
     }
+}
+
+time {
+    display: inline-block;
 }
 
 // Touch Action

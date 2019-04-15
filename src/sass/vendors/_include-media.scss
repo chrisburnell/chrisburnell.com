@@ -16,14 +16,6 @@
 //
 //      This project is licensed under the terms of the MIT license
 
-
-///
-/// include-media library public configuration
-/// @author Eduardo Boucas
-/// @access public
-///
-
-
 ///
 /// Creates a list of global breakpoints
 ///
@@ -179,13 +171,6 @@ $im-no-media-breakpoint: 'desktop' !default;
 $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
 ///
-/// Cross-engine logging engine
-/// @author Hugo Giraudel
-/// @access private
-///
-
-
-///
 /// Log a message either with `@error` if supported
 /// else with `@warn`, using `feature-exists('at-error')`
 /// to detect support.
@@ -254,13 +239,6 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
   @return true;
 }
-
-///
-/// Parsing engine
-/// @author Hugo Giraudel
-/// @access private
-///
-
 
 ///
 /// Get operator of an expression
@@ -405,13 +383,6 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 }
 
 ///
-/// String to number converter
-/// @author Hugo Giraudel
-/// @access private
-///
-
-
-///
 /// Casts a string into a number
 ///
 /// @param {String | Number} $value - Value to be parsed
@@ -481,8 +452,6 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 /// configuration such as custom breakpoints (referred to as tweakpoints)
 /// for instance.
 ///
-/// @author Hugo Giraudel
-///
 /// @param {Map} $tweakpoints [()] - Map of tweakpoints to be merged with `$breakpoints`
 /// @param {Map} $tweak-media-expressions [()] - Map of tweaked media expressions to be merged with `$media-expression`
 ///
@@ -528,13 +497,6 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   $breakpoints: $global-breakpoints !global;
   $media-expressions: $global-media-expressions !global;
 }
-
-///
-/// include-media public exposed API
-/// @author Eduardo Boucas
-/// @access public
-///
-
 
 ///
 /// Generates a media query based on a list of conditions
