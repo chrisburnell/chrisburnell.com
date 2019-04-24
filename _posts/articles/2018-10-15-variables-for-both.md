@@ -187,7 +187,8 @@ Let’s tie it all together with this SCSS mixin.
         $variable-fallback: map-get($nest-map, $value);
         // our CSS Variable output
         $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
-    } @else {
+    }
+    @else {
         // get the map from map name
         $map: map-get($variable-map, $map-name);
         // fallback value, grab the variable's value from the map
@@ -214,7 +215,8 @@ Let’s tie it all together with this SCSS mixin.
                 #{$property}: $variable-output !important;
             }
         }
-    } @else {
+    }
+    @else {
         @if $hide !== 'fallback' {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1};

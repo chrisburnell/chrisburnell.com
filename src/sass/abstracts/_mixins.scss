@@ -23,10 +23,12 @@
     @if not is-length($thickness) {
         @if map-has-key($border-radii, $thickness) {
             $thickness: map-get($border-radii, $thickness);
-        } @else if is-edge($thickness) {
+        }
+        @else if is-edge($thickness) {
             $border-radius: $thickness;
             $thickness: $border-radius-default;
-        } @else {
+        }
+        @else {
             @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
         }
     }
@@ -38,7 +40,8 @@
         $bottom-left: if($border-radius == "bottom" or $border-radius == "left" or $border-radius == "bottom-left", $thickness, 0);
 
         $border-radius: $top-left $top-right $bottom-right $bottom-left;
-    } @else {
+    }
+    @else {
         $border-radius: $thickness;
     }
 
@@ -66,7 +69,8 @@
 
     @if $letter-spacing != null {
         letter-spacing: $letter-spacing;
-    } @else if $case == "uppercase" {
+    }
+    @else if $case == "uppercase" {
         letter-spacing: $letter-spacing-uppercase;
     }
 }
@@ -198,18 +202,21 @@
 @mixin absolute($position, $offset: 0) {
     @if not $position {
         @error "absolute() expects one parameter.";
-    } @else if $position == none {
+    }
+    @else if $position == none {
         position: relative;
         top: auto;
         right: auto;
         bottom: auto;
         left: auto;
-    } @else if $position == center {
+    }
+    @else if $position == center {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-    } @else if str-index(#{$position}, "full") {
+    }
+    @else if str-index(#{$position}, "full") {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -218,47 +225,56 @@
             @if str-index(#{$position}, "offset") {
                 right: $offset;
                 left: $offset;
-            } @else {
+            }
+            @else {
                 right: 0;
                 left: 0;
             }
-        } @else if str-index(#{$position}, "right") {
+        }
+        @else if str-index(#{$position}, "right") {
             right: $offset;
 
             @if str-index(#{$position}, "offset") {
                 top: $offset;
                 bottom: $offset;
-            } @else {
+            }
+            @else {
                 top: 0;
                 bottom: 0;
             }
-        } @else if str-index(#{$position}, "bottom") {
+        }
+        @else if str-index(#{$position}, "bottom") {
             bottom: $offset;
 
             @if str-index(#{$position}, "offset") {
                 right: $offset;
                 left: $offset;
-            } @else {
+            }
+            @else {
                 right: 0;
                 left: 0;
             }
-        } @else if str-index(#{$position}, "left") {
+        }
+        @else if str-index(#{$position}, "left") {
             left: $offset;
 
             @if str-index(#{$position}, "offset") {
                 top: $offset;
                 bottom: $offset;
-            } @else {
+            }
+            @else {
                 top: 0;
                 bottom: 0;
             }
-        } @else {
+        }
+        @else {
             top: $offset;
             right: $offset;
             bottom: $offset;
             left: $offset;
         }
-    } @else if is-edge($position) {
+    }
+    @else if is-edge($position) {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -342,7 +358,8 @@
         #{$child} {
             @include v(font-size, $font-size);
         }
-    } @else {
+    }
+    @else {
         & > * {
             @include v(font-size, $font-size);
         }
@@ -408,7 +425,8 @@
         @each $transition-segment in $transitions {
             $transition: append($transition, unpack-transition($transition-segment), comma);
         }
-    } @else {
+    }
+    @else {
         $transition: unpack-transition($transitions...);
     }
 
@@ -471,7 +489,8 @@
         $variable-fallback: map-get($nest-map, $value);
         // our CSS Variable output
         $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
-    } @else {
+    }
+    @else {
         // get the map from map name
         $map: map-get($variable-map, $map-name);
         // throw a warning if the value does not exist
@@ -489,29 +508,34 @@
         @if $hide != "fallback" {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1} !important;
-            } @else {
+            }
+            @else {
                 #{$property}: $variable-fallback !important;
             }
         }
         @if $hide != "output" {
             @if $negative {
                 #{$property}: calc(#{$variable-output} * -1) !important;
-            } @else {
+            }
+            @else {
                 #{$property}: $variable-output !important;
             }
         }
-    } @else {
+    }
+    @else {
         @if $hide != "fallback" {
             @if $negative {
                 #{$property}: #{$variable-fallback * -1};
-            } @else {
+            }
+            @else {
                 #{$property}: $variable-fallback;
             }
         }
         @if $hide != "output" {
             @if $negative {
                 #{$property}: calc(#{$variable-output} * -1);
-            } @else {
+            }
+            @else {
                 #{$property}: $variable-output;
             }
         }
@@ -529,7 +553,8 @@
                     @include v($property, map-get($data, $property));
                 }
             }
-        } @else {
+        }
+        @else {
             .#{$theme} & {
                 @each $property in $properties {
                     @if map-has-key($data, $property) {

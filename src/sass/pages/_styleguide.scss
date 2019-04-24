@@ -59,6 +59,7 @@
     background-image: linear-gradient(to bottom, $color-canada, $color-canada);
     background-position: center center;
     background-size: 100% $border-width-thin;
+    background-size: 100% var(--border-width-thin);
     background-repeat: no-repeat;
     @include v(height, medium);
     display: block;
@@ -82,10 +83,11 @@
 .transition-example {
     position: relative;
     margin-bottom: #{$measure-large + $measure-medium};
+    margin-bottom: calc(var(--measure-large) + var(--measure-medium));
 
     &::before {
-        @include absolute(top, 100%);
         content: "(Hover to interact.)";
+        @include absolute(top, 100%);
         @include v(color, kaiser);
         @include v(margin-top, small);
     }
@@ -103,6 +105,7 @@
     width: 100%;
     @include v(max-width, line-length-responsive);
     height: #{$measure-large * 1.5};
+    height: calc(var(--measure-large) * 1.5);
     display: block;
     @include v(border-width, thin);
     @include v(border-style, default);
@@ -121,9 +124,9 @@
     }
 
     &::before {
+        content: "";
         @include absolute(full);
         @include border-radius(hairline);
-        content: "";
         @include v(background-color, kaiser);
         @include v(z-index, below);
     }

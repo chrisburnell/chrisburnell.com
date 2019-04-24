@@ -32,9 +32,11 @@ $SQRT2: 1.4142135623730951;
             $base: $base * $base;
         }
         @return if($s != 0, 1 / $r, $r);
-    } @else if $base == 0 and $exp > 0 {
+    }
+    @else if $base == 0 and $exp > 0 {
         @return 0;
-    } @else {
+    }
+    @else {
         $expint: floor($exp);
         $r1: power($base, $expint);
         $r2: _exponent(log($base) * ($exp - $expint));
@@ -111,7 +113,8 @@ $SQRT2: 1.4142135623730951;
             $x: $x * 2;
             $exp: $exp - 1;
         }
-    } @else if $x >= 1 {
+    }
+    @else if $x >= 1 {
         @while $x >= 1 {
             $x: $x / 2;
             $exp: $exp + 1;
@@ -279,7 +282,8 @@ $SQRT2: 1.4142135623730951;
     @if $x > 1 {
         $sgn: 1;
         $x: 1 / $x;
-    } @else if $x < -1 {
+    }
+    @else if $x < -1 {
         $sgn: -1;
         $x: 1 / $x;
     }
@@ -289,9 +293,11 @@ $SQRT2: 1.4142135623730951;
     }
     @if $sgn > 0 {
         @return $PI / 2 - $x / (1 + $a);
-    } @else if $sgn < 0 {
+    }
+    @else if $sgn < 0 {
         @return -$PI / 2 - $x / (1 + $a);
-    } @else {
+    }
+    @else {
         @return $x / (1 + $a);
     }
 }
@@ -309,24 +315,31 @@ $SQRT2: 1.4142135623730951;
 @function atan2($y, $x) {
     @if $x > 0 {
         @return atan($y / $x);
-    } @else if $x < 0 {
+    }
+    @else if $x < 0 {
         @if $y < 0 {
             @return atan($y / $x) - $PI;
-        } @else {
+        }
+        @else {
             @return atan($y / $x) + $PI;
         }
-    } @else {
+    }
+    @else {
         @if $y < 0 {
             @return -$PI / 2;
-        } @else if $y > 0 {
+        }
+        @else if $y > 0 {
             @return $PI / 2;
-        } @else {
+        }
+        @else {
             @if 1 / $x == 1 / 0 {
                 @return 0;
-            } @else {
+            }
+            @else {
                 @if 1 / $y == 1 / 0 {
                     @return $PI;
-                } @else {
+                }
+                @else {
                     @return -$PI;
                 }
             }
@@ -338,7 +351,8 @@ $SQRT2: 1.4142135623730951;
 @function strip-unit($number) {
     @if unitless($number) {
         @return $number;
-    } @else {
+    }
+    @else {
         @return $number / ($number * 0 + 1);
     }
 }
@@ -360,11 +374,14 @@ $SQRT2: 1.4142135623730951;
 @function unitless-rad($angle) {
     @if unitless($angle) {
         @return $angle;
-    } @else if unit($angle) == rad {
+    }
+    @else if unit($angle) == rad {
         @return $angle / 1rad;
-    } @else if unit($angle) == deg {
+    }
+    @else if unit($angle) == deg {
         @return deg-to-rad($angle, false);
-    } @else if type-of($angle) != number or not unitless($angle) {
+    }
+    @else if type-of($angle) != number or not unitless($angle) {
         @warn "#{$angle} is not a valid number.";
         @return $angle;
     }
