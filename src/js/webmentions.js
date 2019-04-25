@@ -31,9 +31,8 @@
 `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
     <div>
         <q class="e-content">{{ content }}</q>
-        <a class="u-url" href="{{ url }}" rel="external" title="Read externally">↗</a>
     </div>
-    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> {{ date }}</div>
+    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
 </li>`;
     let responses = {
         reaction: [],
