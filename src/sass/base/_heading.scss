@@ -26,7 +26,6 @@ h6 {
 // Heading - Alpha
 .alpha,
 %alpha {
-    @include case(uppercase);
     @include font-family(alpha);
     @include v(font-size, alpha);
     line-height: 1;
