@@ -14,7 +14,7 @@
   "main": "gulpfile.babel.js",
   "private": true,
   "engines": {
-    "node": ">= 11.14.0"
+    "node": "~11"
   },
   "dependencies": {
     "@babel/core": "7.4.3",
