@@ -3,7 +3,7 @@ username: &username chrisburnell
 
 title:        Chris Burnell
 short_title:  cb
-tagline:      'I’m Ravenous for CSS.'
+tagline:      'I’m ravenous for CSS.'
 lede:         'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, UK. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
 color:        5f8aa6
 color_scheme: false
