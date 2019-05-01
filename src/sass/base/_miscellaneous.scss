@@ -37,7 +37,7 @@ hr {
 
     &:hover {
         &::before {
-            transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+            transform: translateX(-50%) translateY(-50%) rotateY(180deg);
         }
     }
 
@@ -50,7 +50,7 @@ hr {
     &:hover {
         &:nth-of-type(even) {
             &::before {
-                transform: translateX(-50%) translateY(-50%) rotateY(180deg) rotateZ(360deg);
+                transform: translateX(-50%) translateY(-50%) rotateY(360deg);
             }
         }
     }
