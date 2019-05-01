@@ -15,6 +15,12 @@
 .webmentions__form {
     @include v(max-width, breakpoint-small);
     margin: 0 auto;
+
+    p {
+        @extend %delta !optional;
+        grid-column: 1 / span 2;
+        @include v(margin-top, small);
+    }
 }
 
 .webmentions__label {
@@ -60,6 +66,9 @@
     small,
     time {
         @include v(color, dove);
+    }
+
+    small {
         font-style: italic;
     }
 }

@@ -53,10 +53,10 @@
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "https://chrisburnell.com/",
+        "url": "{{ site.live_url | append: site.baseurl }}",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://chrisburnell.com/search?q={search_term_string}",
+            "target": "{{ site.live_url }}/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }

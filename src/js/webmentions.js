@@ -32,7 +32,7 @@
     <div>
         <q class="e-content">{{ content }}</q>
     </div>
-    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
+    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <small>on</small> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
 </li>`;
     let responses = {
         reaction: [],
@@ -176,7 +176,7 @@
         html = helpers.injectContent(html, /{{\s*author_image_url\s*}}/, authorImgUrl);
 
         // DATE
-        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}"><small>on ${helpers.formatDate(new Date(date))}</small></time>`);
+        html = helpers.injectContent(html, /{{\s*date\s*}}/, `<time class="webmentions__response__time" datetime="${date}">${helpers.formatDate(new Date(date))}</time>`);
 
         return html;
     };
