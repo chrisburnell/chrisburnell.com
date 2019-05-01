@@ -41,14 +41,14 @@
 
     <link rel="self" href="{{ site.urls.feed | prepend: site.live_url }}">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: site.urls.feed | prepend: site.live_url }}">
-    <link rel="pingback" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/xmlrpc">
-    <link rel="webmention" href="https://webmention.io/{{ site.live_url | remove: 'http://' | remove: 'https://' }}/webmention">
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="pingback" href="{{ site.urls.webmention }}/xmlrpc">
+    <link rel="webmention" href="{{ site.urls.webmention }}/webmention">
+    <link rel="authorization_endpoint" href="{{ site.urls.authorization }}">
+    <link rel="token_endpoint" href="{{ site.urls.token }}">
     <link rel="micropub" href="{{ site.urls.micropub }}">
     <link rel="microsub" href="{{ site.urls.microsub }}">
     <link rel="openid.delegate" href="{{ site.live_url }}" />
-    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    <link rel="openid.server" href="{{ site.urls.openid }}" />
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",

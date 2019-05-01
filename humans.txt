@@ -42,6 +42,7 @@ sitemap:
     Atlas:         https://atlas.p3k.io
     CodePen:       https://codepen.io
     Disqus:        https://disqus.com
+    IndieAuth:     https://indieauth.com
     Switchboard:   https://switchboard.p3k.io
     Telegraph:     https://telegraph.p3k.io
     Twitter:       https://dev.twitter.com
