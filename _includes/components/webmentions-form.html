@@ -4,5 +4,5 @@
     <input type="url" inputmode="url" name="source" id="webmention-source" class="webmentions__input  js-webmentions-input" aria-required="true" required aria-disabled="true" disabled>
     <input type="hidden" name="target" value="{{ page.url | absolute_url }}">
     <input type="submit" class="button  webmentions__submit  js-webmentions-submit" value="Send" aria-disabled="true" disabled>
-    <p>You can also leave an <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ page.url }}" rel="external">anonymonous comment</a>, thanks to <a href="https://commentpara.de" rel="external">Comment Parade</a>.</p>
+    <p>You can also leave an <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ page.url | absolute_url }}" rel="external">anonymonous comment</a>, thanks to <a href="https://commentpara.de" rel="external">Comment Parade</a>.</p>
 </form>
