@@ -143,7 +143,7 @@
         let content = !response.data.content || type === "bookmark" || type === "like" || type === "repost" ? "" : response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author.name ? response.data.author.name : response.data.name;
-        let authorUrl = response.data.author.url;
+        let authorUrl = response.data.author.url ? response.data.author.url : response.data.url;
         let authorImgUrl = response.data.author.photo ? response.data.author.photo : "/images/default-profile.png";
         if (authorUrl.includes("twitter.com")) {
             authorImgUrl = "https://avatars.io/twitter/" + authorUrl.split("twitter.com/")[1].split("/status/")[0];
