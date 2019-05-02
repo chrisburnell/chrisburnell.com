@@ -252,7 +252,7 @@
                 {% elsif syndication contains 'mastodon.social' %}
                     {% capture syndication_mastodon %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
                                                      <small class="strong">
-                                                         (<a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}interact/{{ syndication | split: '/' | last }}">Interact</a>)</small>{% endcapture %}
+                                                         (<a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}/interact/{{ syndication | split: '/' | last }}">Interact</a>)</small>{% endcapture %}
                 {% elsif syndication contains 'twitter.com' %}
                     {% capture syndication_twitter %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
                                                      <small class="strong">
