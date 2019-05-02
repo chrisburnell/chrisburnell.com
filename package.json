@@ -17,8 +17,8 @@
     "node": "~11"
   },
   "dependencies": {
-    "@babel/core": "7.4.3",
-    "@babel/preset-env": "7.4.3",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
     "@bdchauvette/gulp-prettier": "2.0.0",
     "autoprefixer": "9.5.1",
     "babel-core": "6.26.3",
