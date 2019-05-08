@@ -266,6 +266,7 @@ defaults:
     path: '/feed*.xml'
   values:
     layout: feed
+    searchable: no-content
 
 keep_files:
 - css
