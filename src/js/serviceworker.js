@@ -5,7 +5,7 @@
 
 'use strict';
 
-const VERSION = 'v2.0.84';
+const VERSION = 'v2.0.85';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -22,7 +22,7 @@ const CACHES = [
 const CACHE_SIZE = 20;
 
 // Represents the maximum amount of time to wait for the network
-const TIMEOUT = 3000;
+const TIMEOUT = 5000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
