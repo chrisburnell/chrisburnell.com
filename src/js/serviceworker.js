@@ -5,7 +5,7 @@
 
 'use strict';
 
-const VERSION = 'v2.0.83';
+const VERSION = 'v2.0.84';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -17,8 +17,12 @@ const CACHES = [
     IMAGES_CACHE,
     PAGES_CACHE
 ];
+
 // Represents the maximum number of items in each cache (except STATIC_CACHE)
 const CACHE_SIZE = 20;
+
+// Represents the maximum amount of time to wait for the network
+const TIMEOUT = 3000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
@@ -125,47 +129,68 @@ self.addEventListener('fetch', event => {
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get('Accept').includes('text/html')) {
         url.pathname = url.pathname.replace(/\/?$/, "/");
+        let fetchPromise = fetch(request);
+        let cachePromise = caches.match(request);
         event.respondWith(
-            fetch(request)
-                .then(response => {
+            new Promise(resolveWithResponse => {
+                let timer = setTimeout(() => {
+                    // Timeout: CACHE
+                    cachePromise.then(responseFromCache => {
+                        if (responseFromCache) {
+                            resolveWithResponse(responseFromCache);
+                        }
+                    })
+                }, TIMEOUT);
+
+                fetchPromise.then(responseFromFetch => {
                     // NETWORK
                     // Stash a copy of this page in the STATIC or PAGES cache
-                    let copy = response.clone();
-                    if (OFFLINE_PAGES.includes(url.pathname)) {
-                        stashInCache(STATIC_CACHE, request, copy);
+                    clearTimeout(timer);
+                    let copy = responseFromFetch.clone();
+                    try {
+                        event.waitUntil(
+                            stashInCache((OFFLINE_PAGES.includes(url.pathname) ? STATIC_CACHE : PAGES_CACHE), request, copy)
+                        );
                     }
-                    else {
-                        stashInCache(PAGES_CACHE, request, copy);
+                    catch (error) {
+                        console.error(error);
                     }
-                    return response;
+                    resolveWithResponse(responseFromFetch);
                 })
-                .catch(() => {
+                .catch(error => {
+                    console.error(error);
+                    clearTimeout(timer);
                     // CACHE or FALLBACK
-                    return caches.match(request)
-                        .then(response => response || caches.match('/offline'));
-                })
-        );
+                    cachePromise.then(responseFromCache => {
+                        resolveWithResponse(responseFromCache || caches.match('/offline'));
+                    });
+                });
+            })
+        )
         return;
     }
 
     // For non-HTML requests, look in the cache first, fall back to the network
     event.respondWith(
         caches.match(request)
-            .then(response => {
-                return response || fetch(request)
-                    .then(response => {
+            .then(responseFromCache => {
+                return responseFromCache || fetch(request)
+                    .then(responseFromFetch => {
                         // NETWORK
                         // Stash a copy of this asset in the IMAGES or ASSETS cache
                         let copy = response.clone();
-                        if (request.headers.get('Accept').includes('image')) {
-                            stashInCache(IMAGES_CACHE, request, copy);
+                        try {
+                            event.waitUntil(
+                                stashInCache((request.headers.get('Accept').includes('image') ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
+                            );
                         }
-                        else {
-                            stashInCache(ASSETS_CACHE, request, copy);
+                        catch (error) {
+                            console.error(error);
                         }
-                        return response;
+                        return responseFromFetch;
                     })
-                    .catch(() => {
+                    .catch(error => {
+                        console.error(error);
                         // OFFLINE
                         // If the request is for an image, show an offline placeholder
                         if (request.headers.get('Accept').includes('image')) {
