@@ -3,7 +3,7 @@ title: Likes Feed
 lede: All of my likes.
 type: likes
 redirect_from:
-- /likes.json
+- /likes.xml
 ---
 
 {% for page in site.categories.like limit: site.feed_limit %}

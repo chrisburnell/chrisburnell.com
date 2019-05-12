@@ -3,7 +3,7 @@ title: Food Feed
 lede: All of my food check-ins.
 type: food
 redirect_from:
-- /food.json
+- /food.xml
 ---
 
 {% for page in site.categories.food limit: site.feed_limit %}

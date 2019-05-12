@@ -3,7 +3,7 @@ title: Movie Feed
 lede: All of my movie check-ins.
 type: movies
 redirect_from:
-- /movies.json
+- /movies.xml
 ---
 
 {% for page in site.categories.movie limit: site.feed_limit %}

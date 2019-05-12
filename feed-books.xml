@@ -3,7 +3,7 @@ title: Bookshelf Feed
 lede: All of my bookshelf check-ins.
 type: books
 redirect_from:
-- /books.json
+- /books.xml
 ---
 
 {%- assign limit = site.feed_limit -%}
