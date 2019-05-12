@@ -2,8 +2,6 @@
 title: Beer Feed
 lede: All of my beer check-ins.
 type: beer
-redirect_from:
-- /beer.xml
 ---
 
 {% for page in site.categories.beer limit: site.feed_limit %}

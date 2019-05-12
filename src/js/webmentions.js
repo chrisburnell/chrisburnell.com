@@ -161,7 +161,9 @@
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
 
         // CONTENT
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, content);
+        let textOnlyContent = document.createElement("div");
+        textOnlyContent.innerHTML = content;
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, (textOnlyContent.textContent || textOnlyContent.innerText || ""));
 
         // AUTHOR
         html = helpers.injectContent(html, /{{\s*author\s*}}/, author);

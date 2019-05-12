@@ -63,7 +63,7 @@
                 {%- if page.category == 'beer' -%}
                     <div><time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</time></div>
                 {%- elsif page.category == 'like' -%}
-                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> {{ page.date | date: '%d %B %Y' }}</time></span>
+                    <span><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"><small>on</small> <a href="{{ page.url }}">{{ page.date | date: '%d %B %Y' }}</a></time></span>
                 {%- else -%}
                     <span> <time class="dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">({{ page.release | default: page.date | date: '%Y' }})</time></span>
                 {%- endif -%}

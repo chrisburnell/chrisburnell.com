@@ -2,8 +2,6 @@
 title: Talks Feed
 lede: All of my talks.
 type: talks
-redirect_from:
-- /talks.xml
 ---
 
 {% for page in site.categories.talk limit: site.feed_limit %}

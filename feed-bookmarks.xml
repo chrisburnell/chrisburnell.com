@@ -2,8 +2,6 @@
 title: Bookmarks Feed
 lede: All of my bookmarks.
 type: bookmarks
-redirect_from:
-- /bookmarks.xml
 ---
 
 {% for page in site.categories.bookmark limit: site.feed_limit %}

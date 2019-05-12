@@ -2,8 +2,6 @@
 title: Replies Feed
 lede: All of my replies.
 type: replies
-redirect_from:
-- /replies.xml
 ---
 
 {%- assign posts_with_replies = site.posts | where_exp: 'page', 'page.in_reply_to != nil' -%}

@@ -2,8 +2,6 @@
 title: Pens Feed
 lede: All of my pens.
 type: pens
-redirect_from:
-- /pens.xml
 ---
 
 {% for page in site.categories.pen limit: site.feed_limit %}

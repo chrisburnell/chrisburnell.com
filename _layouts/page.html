@@ -36,6 +36,12 @@
             {{ content }}
         </div>
 
+        {% if page.webmentions == true %}
+            <hr>
+            {% include components/webmentions.html %}
+            {% include components/webmentions-button.html %}
+        {% endif %}
+
     </section>
 
     {% include components/author.html %}
