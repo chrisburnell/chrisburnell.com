@@ -2,6 +2,8 @@
 title: Articles Feed
 lede: All of my articles.
 type: articles
+redirect_from:
+- /articles.json
 ---
 
 {%- assign articles_without_replies = site.emptyArray -%}

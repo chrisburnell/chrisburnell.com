@@ -2,6 +2,8 @@
 title: Recipes Feed
 lede: All of my recipes.
 type: recipes
+redirect_from:
+- /recipes.json
 ---
 
 {% for page in site.categories.recipe limit: site.feed_limit %}

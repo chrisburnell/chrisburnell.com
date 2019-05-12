@@ -2,6 +2,8 @@
 title: Podcasts Feed
 lede: All of my podcast check-ins.
 type: podcasts
+redirect_from:
+- /podcasts.json
 ---
 
 {% for page in site.categories.podcast limit: site.feed_limit %}
