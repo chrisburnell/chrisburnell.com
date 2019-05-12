@@ -5,7 +5,7 @@
 
 'use strict';
 
-const VERSION = 'v2.0.86';
+const VERSION = 'v2.0.87';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -65,7 +65,7 @@ let updateStaticCache = () => {
 };
 
 let stashInCache = (cacheName, request, response) => {
-    return caches.open(cacheName)
+    caches.open(cacheName)
         .then(cache => cache.put(request, response));
 };
 
@@ -178,7 +178,7 @@ self.addEventListener('fetch', event => {
                     .then(responseFromFetch => {
                         // NETWORK
                         // Stash a copy of this asset in the IMAGES or ASSETS cache
-                        let copy = response.clone();
+                        let copy = responseFromFetch.clone();
                         try {
                             event.waitUntil(
                                 stashInCache((request.headers.get('Accept').includes('image') ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
