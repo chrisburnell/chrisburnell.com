@@ -1,4 +1,6 @@
-{% if page.titlefree %}
+{% if page.category == 'like' %}
+    {% capture meta_title %}Liked a page on: {{ page.like_of | remove: 'http://' | remove: 'https://' | split: '/' | first }} – {{ site.title }}{% endcapture %}
+{% elsif page.titlefree %}
     {% capture meta_title %}{{ page.date | date: '%A, %d %B %Y' }} – {{ site.title }}{% endcapture %}
 {% elsif page.title %}
     {% capture meta_title %}{{ page.title | strip_html }} – {{ site.title }}{% endcapture %}
