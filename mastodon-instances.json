@@ -1,0 +1,12 @@
+---
+layout: null
+searchable: false
+sitemap:
+  exclude: true
+---
+
+[
+  {% for instance in site.data.mastodon_instances %}
+    "{{ instance }}"{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

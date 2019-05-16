@@ -5,7 +5,7 @@
 
 'use strict';
 
-const VERSION = 'v2.0.87';
+const VERSION = 'v2.0.88';
 // Set up the caches
 const STATIC_CACHE = 'static::' + VERSION;
 const ASSETS_CACHE = 'assets';
@@ -29,6 +29,8 @@ const REQUIRED_FILES = [
     '/css/non-critical.min.css',
     '/js/main.min.js',
     '/search.json',
+    '/reply-targets.json',
+    '/mastodon-instances.json',
     '/offline/'
 ];
 

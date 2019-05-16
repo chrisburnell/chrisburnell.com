@@ -17,6 +17,8 @@
     const ALLOW_EMPTY = false;
     const ALLOW_AS_YOU_TYPE = false;
     const JSON_FEED_URL = "/search.json";
+    const REPLY_TARGETS_URL = "/reply-targets.json";
+    const MASTODON_INSTANCES_URL = "/mastodon-instances.json";
     const author = document.querySelector("meta[name=author]").content;
     const rootUrl = document.querySelector("link[rel=self]").href.replace("feed.xml", "");
     const SEARCH_PAGE_TEMPLATE =
@@ -107,16 +109,40 @@
     /// @return void
     ////
     let getSearchResults = () => {
+        let resultData, replyTargets, mastodonInstances;
         fetch(JSON_FEED_URL)
             .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(data => {
                 // Success!
-                processData(data);
+                resultData = data;
+                fetch(REPLY_TARGETS_URL)
+                .then(helpers.getFetchResponse)
+                .then(response => response.json())
+                .then(data => {
+                    // Success!
+                    replyTargets = data;
+                    fetch(MASTODON_INSTANCES_URL)
+                        .then(helpers.getFetchResponse)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Success!
+                            mastodonInstances = data;
+                            processData(resultData, replyTargets, mastodonInstances);
+                        })
+                        .catch(error => {
+                            // Fail!
+                            console.error(`Mastodon instances request status error: ${error}`);
+                        });
+                })
+                .catch(error => {
+                    // Fail!
+                    console.error(`Reply targets request status error: ${error}`);
+                });
             })
             .catch(error => {
                 // Fail!
-                console.error(`Search request status error: ${error}`);
+                console.error(`Search results request status error: ${error}`);
             });
     };
 
@@ -124,11 +150,11 @@
     /// Process search result data
     /// @return void
     ////
-    let processData = data => {
+    let processData = (resultData, replyTargets, mastodonInstances) => {
         let resultsCount = 0,
             results = "";
 
-        for (let item of data) {
+        for (let item of resultData) {
             let queryFormatted = query.toLowerCase(),
                 titleCheck = false,
                 ledeCheck = false,
@@ -198,25 +224,64 @@
                 item.lede = `<span class="emoji">${item.emoji}</span> ${item.lede}`;
             }
             if (item.in_reply_to) {
-                let reply;
-                if (item.in_reply_to.includes("mastodon.social") || item.in_reply_to.includes("octodon.social") || item.in_reply_to.includes("playvicious.social")) {
-                    reply = `<span class="h-cite  u-in-reply-to">a Toot</span>`;
+                let reply, mastodonInstance, mastodonUsername, twitterUsername, link, replyTarget;
+                for (let instance of mastodonInstances) {
+                    if (item.in_reply_to.includes(instance)) {
+                        mastodonInstance = instance;
+                    }
+                }
+                if (mastodonInstance) {
+                    if (item.in_reply_to.includes("/@")) {
+                        mastodonUsername = item.in_reply_to.split("/@")[1].split("/")[0];
+                    }
+                    else if (item.in_reply_to.includes("/users/")) {
+                        mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
+                    }
+                    for (let target of replyTargets) {
+                        if (target.mastodon == mastodonUsername) {
+                            replyTarget = target.name;
+                        }
+                    }
                 }
                 else if (item.in_reply_to.includes("twitter.com")) {
-                    if (item.in_reply_to.includes("/status/")) {
-                        reply = `<span class="h-cite  p-in-reply-to">@${item.in_reply_to.split("/status/")[0].split("twitter.com/")[1]}</span>`;
+                    twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
+                    for (let target of replyTargets) {
+                        if (target.twitter == twitterUsername) {
+                            replyTarget = target.name;
+                        }
                     }
-                    else {
-                        reply = `<span class="h-cite  p-in-reply-to">a Tweet</span>`;
-                    }
-                }
-                else if (item.in_reply_to.includes("hwclondon.co.uk")) {
-                    reply = `<span class="h-cite  p-in-reply-to">Homebrew Website Club London</span>`;
                 }
                 else {
-                    reply = `<span class="h-cite  p-in-reply-to">${item.in_reply_to}</span>`;
+                    link = item.in_reply_to.replace("http://", "").replace("https://", "").split("/")[0];
+                    for (let target of replyTargets) {
+                        if (target.link == link) {
+                            replyTarget = target.name;
+                        }
+                    }
                 }
-                item.lede = `<span class="emoji">↩️</span> In reply to: ${reply}<br>${item.lede}`;
+                if (replyTarget) {
+                    reply = replyTarget;
+                }
+                else if (mastodonInstance) {
+                    if (mastodonUsername) {
+                        reply = `@${mastodonUsername}@${mastodonInstance}`;
+                    }
+                    else {
+                        reply = "a Toot";
+                    }
+                }
+                else if (item.in_reply_to.includes("twitter.com")) {
+                    if (twitterUsername) {
+                        reply = `@${twitterUsername}`;
+                    }
+                    else {
+                        reply = "a Tweet";
+                    }
+                }
+                else {
+                    reply = item.in_reply_to;
+                }
+                item.lede = `<span class="emoji">↩️</span> In reply to: <span class="h-cite  p-in-reply-to">${reply}</span><br>${item.lede}`;
             }
             if (item.tags) {
                 if (queryFormatted.substring(0, 4) == "tag:") {
