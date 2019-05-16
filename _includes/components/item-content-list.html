@@ -33,36 +33,33 @@
                         {%- elsif page.in_reply_to.first contains '/users/' -%}
                             {%- assign mastodon_username = page.in_reply_to.first | split: '/users/' | last | split: '/' | first -%}
                         {%- endif -%}
-                        {%- assign reply_target_by_mastodon = site.data.reply_targets | where_exp: 'target', 'target.mastodon == mastodon_username' | first | map: 'name' | default: null -%}
+                        {%- assign reply_target = site.data.reply_targets | where_exp: 'target', 'target.mastodon == mastodon_username' | first | map: 'name' | default: null -%}
                     {%- elsif page.in_reply_to.first contains 'twitter.com' -%}
                         {%- assign twitter_username = page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last -%}
-                        {%- assign reply_target_by_twitter = site.data.reply_targets | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
+                        {%- assign reply_target = site.data.reply_targets | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
                     {%- else -%}
                         {%- assign link = page.in_reply_to.first | remove: 'http://' | remove: 'https://' | split: '/' | first -%}
-                        {%- assign reply_target_by_link = site.data.reply_targets | where_exp: 'target', 'target.link == link' | first | map: 'name' | default: null -%}
+                        {%- assign reply_target = site.data.reply_targets | where_exp: 'target', 'target.link == link' | first | map: 'name' | default: null -%}
                     {%- endif -%}
-                    <span class="emoji">↩️</span> In reply to:
-                    {% if reply_target_by_mastodon %}
-                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_mastodon }}</data>
-                    {% elsif reply_target_by_twitter %}
-                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_twitter }}</data>
-                    {% elsif reply_target_by_link %}
-                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_link }}</data>
+                    {% if reply_target %}
+                        {% assign reply = reply_target %}
                     {% elsif mastodon_instance %}
                         {% if mastodon_username %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ mastodon_username }}@{{ mastodon_instance }}</data>
+                            {% assign reply = '@' | append: mastodon_username | append: '@' | append: mastodon_instance %}
                         {% else %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
+                            {% assign reply = 'a Toot' %}
                         {% endif %}
                     {% elsif page.in_reply_to.first contains 'twitter.com' %}
                         {% if twitter_username %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ twitter_username }}</data>
+                            {% assign reply = '@' | append: twitter_username %}
                         {% else %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Tweet</data>
+                            {% assign reply = 'a Tweet' %}
                         {% endif %}
                     {% else %}
-                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ page.in_reply_to.first }}</data>
+                        {% assign reply = page.in_reply_to.first %}
                     {% endif %}
+                    <span class="emoji">↩️</span> In reply to:
+                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply }}</data>
                     <br>
                 {% endif %}
                 {% if page.emoji %}
