@@ -23,34 +23,52 @@
             </h3>
             <div class="lede">
                 {% if page.in_reply_to.first %}
-                    {%- assign reply_target_by_link = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.link' | first | map: 'name' | default: null -%}
-                    {%- assign reply_target_by_mastodon = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.mastodon' | first | map: 'name' | default: null -%}
-                    {%- assign reply_target_by_twitter = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.twitter' | first | map: 'name' | default: null -%}
-                    {%- assign is_mastodon_link = site.data.mastodon_instances | where_exp: 'target', 'page.in_reply_to.first contains target' | first | default: null -%}
+                    {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'target', 'page.in_reply_to.first contains target' | first | default: null -%}
+                    {%- assign mastodon_username = "" -%}
+                    {%- assign twitter_username = "" -%}
+                    {%- assign domain = "" -%}
+                    {%- if mastodon_instance -%}
+                        {%- if page.in_reply_to.first contains '/@' -%}
+                            {%- assign mastodon_username = page.in_reply_to.first | split: '/@' | last | split: '/' | first -%}
+                        {%- elsif page.in_reply_to.first contains '/users/' -%}
+                            {%- assign mastodon_username = page.in_reply_to.first | split: '/users/' | last | split: '/' | first -%}
+                        {%- endif -%}
+                    {%- elsif page.in_reply_to.first contains 'twitter.com' -%}
+                        {%- assign twitter_username = page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last -%}
+                    {%- else -%}
+                        {%- assign domain = page.in_reply_to.first | remove: 'http://' | remove: 'https://' | split: '/' | first -%}
+                    {%- endif -%}
+                    {%- assign reply_target_by_mastodon = site.data.reply_targets | where_exp: 'target', 'target.mastodon == mastodon_username' | first | map: 'name' | default: null -%}
+                    {%- assign reply_target_by_twitter = site.data.reply_targets | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
+                    {%- assign reply_target_by_link = site.data.reply_targets | where_exp: 'target', 'target.link == domain' | first | map: 'name' | default: null -%}
                     <span class="emoji">↩️</span> In reply to:
-                    {% if reply_target_by_link %}
-                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_link }}</data>
-                    {% elsif reply_target_by_mastodon %}
+                    {% if reply_target_by_mastodon %}
                         <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_mastodon }}</data>
                     {% elsif reply_target_by_twitter %}
                         <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_twitter }}</data>
-                    {% elsif is_mastodon_link %}
-                        {% if page.in_reply_to.first contains '/@' %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/@' | last | split: '/' | first }}@{{ is_mastodon_link }}</data>
-                        {% elsif page.in_reply_to.first contains '/users/' %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/users/' | last | split: '/' | first }}@{{ is_mastodon_link }}</data>
+                    {% elsif reply_target_by_link %}
+                        <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply_target_by_link }}</data>
+                    {% elsif mastodon_instance %}
+                        {% if mastodon_username %}
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ mastodon_username }}@{{ mastodon_instance }}</data>
                         {% else %}
                             <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Toot</data>
                         {% endif %}
                     {% elsif page.in_reply_to.first contains 'twitter.com' %}
-                        {% if page.in_reply_to.first contains '/status/' %}
-                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last }}</data>
+                        {% if twitter_username %}
+                            <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">@{{ twitter_username }}</data>
                         {% else %}
                             <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">a Tweet</data>
                         {% endif %}
                     {% else %}
                         <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ page.in_reply_to.first }}</data>
                     {% endif %}
+                    <!-- {{ reply_target_by_mastodon }} -->
+                    <!-- {{ reply_target_by_twitter }} -->
+                    <!-- {{ reply_target_by_link }} -->
+                    <!-- @{{ mastodon_username }}@{{ mastodon_instance}} -->
+                    <!-- @{{ twitter_username }} -->
+                    <!-- {{ domain }} -->
                     <br>
                 {% endif %}
                 {% if page.emoji %}

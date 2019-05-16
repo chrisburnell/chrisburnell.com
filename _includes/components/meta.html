@@ -88,28 +88,40 @@
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
-                {%- assign reply_target_by_link = site.data.reply_targets | where_exp: 'target', 'reply contains target.link' | first | map: 'name' | default: null -%}
-                {%- assign reply_target_by_mastodon = site.data.reply_targets | where_exp: 'target', 'reply contains target.mastodon' | first | map: 'name' | default: null -%}
-                {%- assign reply_target_by_twitter = site.data.reply_targets | where_exp: 'target', 'reply contains target.twitter' | first | map: 'name' | default: null -%}
-                {%- assign is_mastodon_link = site.data.mastodon_instances | where_exp: 'target', 'reply contains target' | first | default: null -%}
+                {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'target', 'reply contains target' | first | default: null -%}
+                {%- assign mastodon_username = "" -%}
+                {%- assign twitter_username = "" -%}
+                {%- assign domain = "" -%}
+                {%- if mastodon_instance -%}
+                    {%- if reply contains '/@' -%}
+                        {%- assign mastodon_username = reply | split: '/@' | last | split: '/' | first -%}
+                    {%- elsif reply contains '/users/' -%}
+                        {%- assign mastodon_username = reply | split: '/users/' | last | split: '/' | first -%}
+                    {%- endif -%}
+                {%- elsif reply contains 'twitter.com' -%}
+                    {%- assign twitter_username = reply | split: '/status/' | first | split: 'twitter.com/' | last -%}
+                {%- else -%}
+                    {%- assign domain = reply | remove: 'http://' | remove: 'https://' | split: '/' | first -%}
+                {%- endif -%}
+                {%- assign reply_target_by_mastodon = site.data.reply_targets | where_exp: 'target', 'target.mastodon == mastodon_username' | first | map: 'name' | default: null -%}
+                {%- assign reply_target_by_twitter = site.data.reply_targets | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
+                {%- assign reply_target_by_link = site.data.reply_targets | where_exp: 'target', 'target.link == domain' | first | map: 'name' | default: null -%}
                 <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">
-                {% if reply_target_by_link %}
-                    {{ reply_target_by_link }}
-                {% elsif reply_target_by_mastodon %}
+                {% if reply_target_by_mastodon %}
                     {{ reply_target_by_mastodon }}
                 {% elsif reply_target_by_twitter %}
                     {{ reply_target_by_twitter }}
-                {% elsif is_mastodon_link %}
-                    {% if reply contains '/@' %}
-                        @{{ reply | split: '/@' | last | split: '/' | first }}@{{ is_mastodon_link }}
-                    {% elsif reply contains '/users/' %}
-                        @{{ reply | split: '/users/' | last | split: '/' | first }}@{{ is_mastodon_link }}
+                {% elsif reply_target_by_link %}
+                    {{ reply_target_by_link }}
+                {% elsif mastodon_instance %}
+                    {% if mastodon_username %}
+                        @{{ mastodon_username }}@{{ mastodon_instance }}
                     {% else %}
                         a Toot
                     {% endif %}
                 {% elsif reply contains 'twitter.com' %}
-                    {% if reply contains '/status/' %}
-                        @{{ reply | split: '/status/' | first | split: 'twitter.com/' | last }}
+                    {% if twitter_username %}
+                        @{{ twitter_username }}
                     {% else %}
                         a Tweet
                     {% endif %}
