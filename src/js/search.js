@@ -224,38 +224,52 @@
                 item.lede = `<span class="emoji">${item.emoji}</span> ${item.lede}`;
             }
             if (item.in_reply_to) {
-                let reply, mastodonInstance, mastodonUsername, twitterUsername, link, replyTarget;
-                for (let instance of mastodonInstances) {
-                    if (item.in_reply_to.includes(instance)) {
-                        mastodonInstance = instance;
-                    }
-                }
-                if (mastodonInstance) {
-                    if (item.in_reply_to.includes("/@")) {
-                        mastodonUsername = item.in_reply_to.split("/@")[1].split("/")[0];
-                    }
-                    else if (item.in_reply_to.includes("/users/")) {
-                        mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
-                    }
-                    for (let target of replyTargets) {
-                        if (target.mastodon == mastodonUsername) {
+                let reply, mastodonInstance, mastodonUsername, twitterUsername, replyTarget;
+                for (let target of replyTargets) {
+                    if (target.mastodon) {
+                        targetMastodonInstance = target.mastodon.split('@')[1];
+                        targetMastodonUsername = target.mastodon.split('@')[0];
+                        if (item.in_reply_to.includes(targetMastodonInstance) && item.in_reply_to.includes(targetMastodonUsername)) {
                             replyTarget = target.name;
+                            break;
                         }
                     }
                 }
-                else if (item.in_reply_to.includes("twitter.com")) {
-                    twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
-                    for (let target of replyTargets) {
-                        if (target.twitter == twitterUsername) {
-                            replyTarget = target.name;
+                if (!replyTarget) {
+                    for (let instance of mastodonInstances) {
+                        if (item.in_reply_to.includes(instance)) {
+                            mastodonInstance = instance;
                         }
                     }
-                }
-                else {
-                    link = item.in_reply_to.replace("http://", "").replace("https://", "").split("/")[0];
-                    for (let target of replyTargets) {
-                        if (target.link == link) {
-                            replyTarget = target.name;
+                    if (mastodonInstance) {
+                        if (item.in_reply_to.includes("/@")) {
+                            mastodonUsername = item.in_reply_to.split("/@")[1].split("/")[0];
+                        }
+                        else if (item.in_reply_to.includes("/users/")) {
+                            mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
+                        }
+                        for (let target of replyTargets) {
+                            let targetInstance = target.mastodon.split('@')[0];
+                            let targetUsername = target.mastodon.split('@')[1];
+                            if (targetInstance == mastodonInstance && targetUsername == mastodonUsername) {
+                                replyTarget = target.name;
+                                break;
+                            }
+                        }
+                    }
+                    else if (item.in_reply_to.includes("twitter.com")) {
+                        twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
+                        for (let target of replyTargets) {
+                            if (target.twitter == twitterUsername) {
+                                replyTarget = target.name;
+                            }
+                        }
+                    }
+                    else {
+                        for (let target of replyTargets) {
+                            if (target.includes(target.link)) {
+                                replyTarget = target.name;
+                            }
                         }
                     }
                 }

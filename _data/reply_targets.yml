@@ -1,7 +1,7 @@
 - name: a previous post
   link: chrisburnell.com
 - name: a previous toot
-  mastodon: chrisburnell
+  mastodon: chrisburnell@mastodon.social
 - name: a previous tweet
   twitter: iamchrisburnell
 
@@ -31,7 +31,7 @@
   twitter: dompatmore
 - name: Jacky Alciné
   link: jacky.wtf
-  mastodon: jalcine
+  mastodon: jalcine@playvicious.social
   twitter: jackyalcine
 - name: Jonas Voss
   link: blog.voss.co
@@ -46,7 +46,8 @@
   twitter: ilpeach
 - name: Neil Mather
   link: doubleloop.net
-  mastodon: neil
+  mastodon: neil@social.coop
+  twitter: loopdouble
 - name: Tantek Çelik
   link: tantek.com
   twitter: t
