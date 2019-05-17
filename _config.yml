@@ -159,6 +159,7 @@ defaults:
     mf_property: 'pk-drank'
     prefix: c
     emoji: '☕️'
+    draft: true
     hidden: true
     ignore: true
 - scope:
@@ -171,6 +172,7 @@ defaults:
     mf_property: 'pk-ate'
     prefix: e
     emoji: '🍛'
+    draft: true
     hidden: true
     ignore: true
 - scope:
