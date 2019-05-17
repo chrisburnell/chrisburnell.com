@@ -28,11 +28,13 @@
                     {%- assign twitter_username = null -%}
                     {%- assign reply_target = null -%}
                     {%- for target in site.data.reply_targets -%}
-                        {%- assign target_mastodon_instance = target.mastodon | split: '@' | last -%}
-                        {%- assign target_mastodon_username = target.mastodon | split: '@' | first -%}
-                        {%- if page.in_reply_to.first contains target_mastodon_instance and page.in_reply_to.first contains target_mastodon_username -%}
-                            {%- assign reply_target = target | map: 'name' | default: null -%}
-                            {%- break -%}
+                        {%- if target.mastodon -%}
+                            {%- assign mastodon_instance = target.mastodon | split: '@' | last -%}
+                            {%- assign mastodon_username = target.mastodon | split: '@' | first -%}
+                            {%- if page.in_reply_to.first contains mastodon_instance and page.in_reply_to.first contains mastodon_username -%}
+                                {%- assign reply_target = target | map: 'name' | default: null -%}
+                                {%- break -%}
+                            {%- endif -%}
                         {%- endif -%}
                     {%- endfor -%}
                     {%- unless reply_target -%}

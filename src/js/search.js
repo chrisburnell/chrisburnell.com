@@ -224,12 +224,16 @@
                 item.lede = `<span class="emoji">${item.emoji}</span> ${item.lede}`;
             }
             if (item.in_reply_to) {
-                let reply, mastodonInstance, mastodonUsername, twitterUsername, replyTarget;
+                let reply = null;
+                let mastodonInstance = null;
+                let mastodonUsername = null;
+                let twitterUsername = null;
+                let replyTarget = null;
                 for (let target of replyTargets) {
-                    if (target.mastodon) {
-                        targetMastodonInstance = target.mastodon.split('@')[1];
-                        targetMastodonUsername = target.mastodon.split('@')[0];
-                        if (item.in_reply_to.includes(targetMastodonInstance) && item.in_reply_to.includes(targetMastodonUsername)) {
+                    if ("mastodon" in target) {
+                        let targetInstance = target.mastodon.split('@')[1];
+                        let targetUsername = target.mastodon.split('@')[0];
+                        if (item.in_reply_to.includes(targetInstance) && item.in_reply_to.includes(targetUsername)) {
                             replyTarget = target.name;
                             break;
                         }
@@ -239,6 +243,7 @@
                     for (let instance of mastodonInstances) {
                         if (item.in_reply_to.includes(instance)) {
                             mastodonInstance = instance;
+                            break;
                         }
                     }
                     if (mastodonInstance) {
@@ -249,26 +254,34 @@
                             mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
                         }
                         for (let target of replyTargets) {
-                            let targetInstance = target.mastodon.split('@')[0];
-                            let targetUsername = target.mastodon.split('@')[1];
-                            if (targetInstance == mastodonInstance && targetUsername == mastodonUsername) {
-                                replyTarget = target.name;
-                                break;
+                            if ("mastodon" in target) {
+                                let targetInstance = target.mastodon.split('@')[0];
+                                let targetUsername = target.mastodon.split('@')[1];
+                                if (targetInstance === mastodonInstance && targetUsername === mastodonUsername) {
+                                    replyTarget = target.name;
+                                    break;
+                                }
                             }
                         }
                     }
                     else if (item.in_reply_to.includes("twitter.com")) {
                         twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
                         for (let target of replyTargets) {
-                            if (target.twitter == twitterUsername) {
-                                replyTarget = target.name;
+                            if ("twitter" in target) {
+                                if (target.twitter === twitterUsername) {
+                                    replyTarget = target.name;
+                                    break;
+                                }
                             }
                         }
                     }
                     else {
                         for (let target of replyTargets) {
-                            if (target.includes(target.link)) {
-                                replyTarget = target.name;
+                            if ("link" in target) {
+                                if (item.in_reply_to.includes(target.link)) {
+                                    replyTarget = target.name;
+                                    break;
+                                }
                             }
                         }
                     }

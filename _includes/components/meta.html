@@ -93,11 +93,13 @@
                 {%- assign twitter_username = null -%}
                 {%- assign reply_target = null -%}
                 {%- for target in site.data.reply_targets -%}
-                    {%- assign target_mastodon_instance = target.mastodon | split: '@' | last -%}
-                    {%- assign target_mastodon_username = target.mastodon | split: '@' | first -%}
-                    {%- if reply contains target_mastodon_instance and reply contains target_mastodon_username -%}
-                        {%- assign reply_target = target | map: 'name' | default: null -%}
-                        {%- break -%}
+                    {%- if target.mastodon -%}
+                        {%- assign target_instance = target.mastodon | split: '@' | last -%}
+                        {%- assign target_username = target.mastodon | split: '@' | first -%}
+                        {%- if reply contains target_instance and reply contains target_username -%}
+                            {%- assign reply_target = target | map: 'name' | default: null -%}
+                            {%- break -%}
+                        {%- endif -%}
                     {%- endif -%}
                 {%- endfor -%}
                 {%- unless reply_target -%}
