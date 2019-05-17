@@ -3,14 +3,14 @@
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
-'use strict';
+"use strict";
 
-const VERSION = 'v2.0.88';
+const VERSION = "v2.0.89";
 // Set up the caches
-const STATIC_CACHE = 'static::' + VERSION;
-const ASSETS_CACHE = 'assets';
-const IMAGES_CACHE = 'images';
-const PAGES_CACHE = 'pages';
+const STATIC_CACHE = "static::" + VERSION;
+const ASSETS_CACHE = "assets";
+const IMAGES_CACHE = "images";
+const PAGES_CACHE = "pages";
 const CACHES = [
     STATIC_CACHE,
     ASSETS_CACHE,
@@ -26,40 +26,40 @@ const TIMEOUT = 5000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
-    '/css/non-critical.min.css',
-    '/js/main.min.js',
-    '/search.json',
-    '/reply-targets.json',
-    '/mastodon-instances.json',
-    '/offline/'
+    "/css/non-critical.min.css",
+    "/js/main.min.js",
+    "/search.json",
+    "/reply-targets.json",
+    "/mastodon-instances.json",
+    "/offline/"
 ];
 
 // Files that are cached but non-blocking
 const OPTIONAL_FILES = [
-    '/images/sprites.svg'
+    "/images/sprites.svg"
 ];
 
 // Pages to cache
 const OFFLINE_PAGES = [
-    '/',
-    '/about/',
-    '/archive/',
-    '/contact/',
-    '/license/',
-    '/privacy/',
-    '/search/'
+    "/",
+    "/about/",
+    "/archive/",
+    "/contact/",
+    "/license/",
+    "/privacy/",
+    "/search/"
 ];
 
 // Pages to ignore
 const IGNORE_PAGES = [
-    '/ignore/'
+    "/ignore/"
 ];
 
 
 let updateStaticCache = () => {
     return caches.open(STATIC_CACHE)
         .then(cache => {
-            // These items won't block the installation of the Service Worker
+            // These items won"t block the installation of the Service Worker
             cache.addAll(OPTIONAL_FILES.concat(OFFLINE_PAGES));
             // These items must be cached for the Service Worker to complete installation
             return cache.addAll(REQUIRED_FILES);
@@ -97,29 +97,29 @@ let clearOldCaches = () => {
 };
 
 
-self.addEventListener('install', event => {
+self.addEventListener("install", event => {
     event.waitUntil(updateStaticCache()
         .then(() => self.skipWaiting())
     );
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener("activate", event => {
     event.waitUntil(clearOldCaches()
         .then(() => self.clients.claim())
     );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener("fetch", event => {
     let request = event.request;
     let url = new URL(request.url);
 
-    // Ignore requests which aren't to my own server
+    // Ignore requests which aren"t to my own server
     if (url.origin !== location.origin) {
         return;
     }
 
     // Ignore non-GET requests
-    if (request.method !== 'GET') {
+    if (request.method !== "GET") {
         return;
     }
 
@@ -129,7 +129,7 @@ self.addEventListener('fetch', event => {
     }
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
-    if (request.headers.get('Accept').includes('text/html')) {
+    if (request.headers.get("Accept").includes("text/html")) {
         url.pathname = url.pathname.replace(/\/?$/, "/");
         let fetchPromise = fetch(request);
         let cachePromise = caches.match(request);
@@ -164,7 +164,7 @@ self.addEventListener('fetch', event => {
                     clearTimeout(timer);
                     // CACHE or FALLBACK
                     cachePromise.then(responseFromCache => {
-                        resolveWithResponse(responseFromCache || caches.match('/offline'));
+                        resolveWithResponse(responseFromCache || caches.match("/offline"));
                     });
                 });
             })
@@ -183,7 +183,7 @@ self.addEventListener('fetch', event => {
                         let copy = responseFromFetch.clone();
                         try {
                             event.waitUntil(
-                                stashInCache((request.headers.get('Accept').includes('image') ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
+                                stashInCache((request.headers.get("Accept").includes("image") ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
                             );
                         }
                         catch (error) {
@@ -195,16 +195,16 @@ self.addEventListener('fetch', event => {
                         console.error(error);
                         // OFFLINE
                         // If the request is for an image, show an offline placeholder
-                        if (request.headers.get('Accept').includes('image')) {
-                            return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store' } });
+                        if (request.headers.get("Accept").includes("image")) {
+                            return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { "Content-Type": "image/svg+xml", "Cache-Control": "no-store" } });
                         }
                     });
             })
     );
 });
 
-self.addEventListener('message', event => {
-    if (event.data.command == 'trimCaches') {
+self.addEventListener("message", event => {
+    if (event.data.command == "trimCaches") {
         trimCache(ASSETS_CACHE, CACHE_SIZE);
         trimCache(IMAGES_CACHE, CACHE_SIZE);
         trimCache(PAGES_CACHE, CACHE_SIZE);
