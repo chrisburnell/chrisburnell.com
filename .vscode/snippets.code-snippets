@@ -1,0 +1,18 @@
+{
+  "CSS Variable Fallback": {
+    "description": "De-abstracts variables from their colloquial names into their programmatic goodness and provides a fallback to the CSS Variables.",
+    "scope": "scss",
+    "prefix": "v",
+    "body": [
+      "@include v($1, $2);"
+    ]
+  },
+  "Media Query": {
+    "description": "Media Query",
+    "scope": "scss",
+    "prefix": "m",
+    "body": [
+        "@include media(\"screen\", \"$1:$2\") {$3}"
+    ]
+  }
+}

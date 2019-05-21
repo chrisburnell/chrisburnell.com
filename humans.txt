@@ -18,7 +18,7 @@ sitemap:
 
 /* SITE */
 
-    Last updated:  {{ 'now' | date: '%F' }}
+    Last updated:  {{ site.time | date: '%F' }}
     URL:           {{ site.url | append: site.baseurl }}
     Language:      {{ site.language }}
     Doctype:       HTML5
