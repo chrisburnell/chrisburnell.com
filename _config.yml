@@ -100,13 +100,13 @@ feed_limit: 24
 collections:
   assets:
     output: true
-    permalink: /:title
+    permalink: /:title/
   categorypages:
     output: true
     permalink: /:title/
   errorpages:
     output: true
-    permalink: /:title
+    permalink: /:title/
   feeds:
     output: true
     permalink: /:title/
