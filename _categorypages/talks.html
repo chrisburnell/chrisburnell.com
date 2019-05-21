@@ -1,24 +1,24 @@
 ---
-page_class: page--bookmarks
-searchable: no-content
+page_class: page--talks
 
 redirect_from:
-- /bookmark/index.html
-- /link/index.html
-- /links/index.html
-- /category/bookmark/index.html
+- /talk/index.html
+- /slides/index.html
+- /presentations/index.html
+- /category/talk/index.html
 
-title: Bookmarks
-lede: All of my bookmarks.
+title: Talks
+lede: All of my talks.
 
-feed: /feed-bookmarks.xml
-sparkline: bookmarks
+feed: /feed-talks.xml
+sparkline: talks
 ---
 
-<p><em>There are {{ site.categories.bookmark | size }} published Bookmarks.</em></p>
 
-<div class="h-feed" id="bookmarks">
-    {% for page in site.categories.bookmark %}
+<p><em>There are {{ site.categories.talk | size }} published Talks.</em></p>
+
+<div class="h-feed" id="talks">
+    {% for page in site.categories.talk %}
         {% assign page_year = page.date | date: '%Y' %}
 
         {% if page_year != current_year %}

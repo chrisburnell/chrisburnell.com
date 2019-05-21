@@ -6,7 +6,8 @@ sitemap:
 ---
 
 [
-  {% for page in site.pages %}
+  {%- assign pages = site.pages | concat: site.categorypages | concat: site.errorpages | concat: site.yearpages -%}
+  {% for page in pages %}
     {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
       {
         "type": "page",

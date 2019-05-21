@@ -1,14 +1,10 @@
 ---
-page_class: page--2014
-searchable: no-content
-
-title: 2014
 ---
 
 <ol class="content-list  h-feed" role="list">
     {% for page in site.posts %}
         {%- assign year = page.date | date: '%Y' -%}
-        {% if year == '2014' %}
+        {% if year == page.title %}
             {% include components/item-content-list.html %}
         {% endif %}
     {% endfor %}

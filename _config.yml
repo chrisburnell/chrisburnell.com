@@ -97,7 +97,54 @@ paginate: 16
 paginate_path: '/:num/'
 feed_limit: 24
 
+collections:
+  assets:
+    output: true
+    permalink: /:title
+  categorypages:
+    output: true
+    permalink: /:title/
+  errorpages:
+    output: true
+    permalink: /:title
+  feeds:
+    output: true
+    permalink: /:title/
+  yearpages:
+    output: true
+    permalink: /:title/
+
 defaults:
+- scope:
+    type: 'assets'
+  values:
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    type: 'categorypages'
+  values:
+    layout: 'page'
+    searchable: no-content
+- scope:
+    type: 'errorpages'
+  values:
+    layout: 'page'
+    page_class: 'page--error'
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    type: 'feeds'
+  values:
+    searchable: false
+    sitemap:
+      exclude: true
+- scope:
+    type: 'yearpages'
+  values:
+    layout: 'page'
+    searchable: no-content
 - scope:
     type: 'pages'
   values:
