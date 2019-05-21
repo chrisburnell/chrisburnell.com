@@ -291,6 +291,8 @@ defaults:
   values:
     category: 'recipe'
     layout: 'recipe'
+    mf_root: 'recipe'
+    mf_property: 'recipe-of'
     prefix: d
     emoji: '📝'
 - scope:

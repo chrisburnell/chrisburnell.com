@@ -14,6 +14,8 @@
             <span>drank on</span>
         {% elsif page.mf_property contains 'pk-ate' %}
             <span>ate on</span>
+        {% elsif page.mf_root == 'recipe' %}
+            <span>cooked on</span>
         {% elsif page.mf_root == 'review' %}
             <span>reviewed on</span>
         {% else %}
