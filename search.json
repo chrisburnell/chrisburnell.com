@@ -6,7 +6,7 @@ sitemap:
 ---
 
 [
-  {%- assign pages = site.pages | concat: site.categorypages | concat: site.errorpages | concat: site.yearpages -%}
+  {%- assign pages = site.pages | concat: site.archives | concat: site.errors -%}
   {% for page in pages %}
     {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
       {

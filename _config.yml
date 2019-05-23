@@ -98,23 +98,25 @@ paginate_path: /:num/
 feed_limit: 24
 
 collections:
+  archives:
+    output: true
+    permalink: /:title/
   assets:
     output: true
     permalink: /:title/
-  categorypages:
+  errors:
     output: true
-    permalink: /:title/
-  errorpages:
-    output: true
-    permalink: /:title/
+    permalink: /:title:output_ext
   feeds:
     output: true
-    permalink: /:title/
-  yearpages:
-    output: true
-    permalink: /:title/
+    permalink: /:title:output_ext
 
 defaults:
+- scope:
+    type: 'archives'
+  values:
+    layout: 'page'
+    searchable: no-content
 - scope:
     type: 'assets'
   values:
@@ -122,12 +124,7 @@ defaults:
     sitemap:
       exclude: true
 - scope:
-    type: 'categorypages'
-  values:
-    layout: 'page'
-    searchable: no-content
-- scope:
-    type: 'errorpages'
+    type: 'errors'
   values:
     layout: 'page'
     page_class: 'page--error'
@@ -137,14 +134,10 @@ defaults:
 - scope:
     type: 'feeds'
   values:
+    layout: feed
     searchable: false
     sitemap:
       exclude: true
-- scope:
-    type: 'yearpages'
-  values:
-    layout: 'page'
-    searchable: no-content
 - scope:
     type: 'pages'
   values:
@@ -314,11 +307,6 @@ defaults:
     emoji: '📺'
     hidden: true
     ignore: true
-- scope:
-    path: '/feed*.xml'
-  values:
-    layout: feed
-    searchable: no-content
 
 keep_files:
 - css
