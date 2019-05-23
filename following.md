@@ -1,4 +1,5 @@
 ---
+published: false
 page_class: page--following
 
 redirect_from:
