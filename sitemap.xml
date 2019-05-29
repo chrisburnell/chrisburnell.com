@@ -9,7 +9,7 @@ sitemap:
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {%- assign pages = site.pages | concat: site.archives | concat: site.errors -%}
+    {%- assign pages = site.pages | concat: site.archives | concat: site.httpstatuses -%}
     {% for page in pages %}
         {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>

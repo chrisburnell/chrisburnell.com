@@ -104,7 +104,7 @@ collections:
   assets:
     output: true
     permalink: /:title/
-  errors:
+  httpstatuses:
     output: true
     permalink: /:title:output_ext
   feeds:
@@ -124,7 +124,7 @@ defaults:
     sitemap:
       exclude: true
 - scope:
-    type: 'errors'
+    type: 'httpstatuses'
   values:
     layout: 'page'
     page_class: 'page--error'
