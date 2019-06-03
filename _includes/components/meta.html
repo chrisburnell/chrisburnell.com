@@ -261,7 +261,7 @@
     {% if page.category == 'pen' and page.codepen_featured == true %}
         <div class="featured">
             <span>featured on</span>
-            <a rel="external" href="https://codepen.io/collection/hfqlg/">the CodePen Homepage</a>
+            <a rel="external" href="https://codepen.io/collection/hfqlg">the CodePen Homepage</a>
         </div>
     {% endif %}
     {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: syndicate_to | default: nil %}
@@ -394,10 +394,10 @@
         {%- endfor -%}
         <div class="shorturl">
             <span>shorturl</span>
-            <a rel="self" href="{{ site.shorturl | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: shorturl }}</a>
+            <a rel="self" href="{{ site.shorturl | append: '/' | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: '/' | append: shorturl }}</a>
         </div>
     {% endif %}
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
-    <data class="u-category" value="/{{ category_link }}/" hidden>{{ page.category }}</data>
-    <a href="https://fed.brid.gy/" aria-hidden="true" hidden></a>
+    <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
+    <a href="https://fed.brid.gy" aria-hidden="true" hidden></a>
 </div>

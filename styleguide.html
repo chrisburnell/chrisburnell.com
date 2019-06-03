@@ -525,12 +525,12 @@ formatDate: function(date) {
 {% include_cached content/heading.html title='Text Input' %}
 
 <figure role="group">
-    <form class="search-form" name="search-styleguide" method="get" action="/search/" role="search">
+    <form class="search-form" name="search-styleguide" method="get" action="/search" role="search">
         <label class="search-label  hidden" id="search-label-styleguide" for="search-input-styleguide" hidden>Search for pages and posts</label>
         <input type="search" class="search-input" id="search-input-styleguide" name="query" value="" maxlength="30" aria-labelledby="search-label-styleguide" aria-required="true" required>
         <input type="submit" class="button  search-submit" id="search-button-styleguide" value="Search" role="button">
     </form>
-    <form class="search-form" name="search-styleguide-disabled" method="get" action="/search/" role="search">
+    <form class="search-form" name="search-styleguide-disabled" method="get" action="/search" role="search">
         <label class="search-label  hidden" id="search-label-styleguide-disabled" for="search-input-styleguide" hidden>Search for pages and posts</label>
         <input type="search" class="search-input" id="search-input-styleguide-disabled" name="query" value="" maxlength="30" aria-labelledby="search-label-styleguide" aria-required="true" required aria-disabled="true" disabled>
         <input type="submit" class="button  search-submit" id="search-button-styleguide-disabled" value="Search" role="button" aria-disabled="true" disabled>
@@ -606,7 +606,7 @@ formatDate: function(date) {
 
 {% include_cached content/heading.html title='Technology' %}
 
-<p>The CSS is compiled from SCSS using <a href="https://github.com/gulpjs/gulp#readme" rel="external">gulp.js</a> and some <a href="http://postcss.org/" rel="external">PostCSS</a>.</p>
+<p>The CSS is compiled from SCSS using <a href="https://github.com/gulpjs/gulp#readme" rel="external">gulp.js</a> and some <a href="http://postcss.org" rel="external">PostCSS</a>.</p>
 
 <p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://github.com" rel="external">GitHub</a>, front-end hosted by <a href="https://digitalocean.com" rel="external">DigitalOcean</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.
 
@@ -616,9 +616,9 @@ formatDate: function(date) {
 <p>Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:</p>
 
 <ul>
-    <li><a rel="external" href="http://styleguide.mailchimp.com/voice-and-tone/">MailChimp Content Style Guide</a></li>
+    <li><a rel="external" href="http://styleguide.mailchimp.com/voice-and-tone">MailChimp Content Style Guide</a></li>
     <li><a rel="external" href="https://www.gov.uk/topic/government-digital-guidance/content-publishing">GOV.UK Content and Publishing</a></li>
-    <li><a rel="external" href="https://pages.18f.gov/content-guide/voice-and-tone/">18F Content Guide</a></li>
+    <li><a rel="external" href="https://pages.18f.gov/content-guide/voice-and-tone">18F Content Guide</a></li>
     <li><a rel="external" href="https://buffer.com/tone-guide">Buffer Tone Guide</a></li>
     <li><a rel="external" href="http://www.economist.com/styleguide/introduction">The Economist Style Guide</a></li>
 </ul>

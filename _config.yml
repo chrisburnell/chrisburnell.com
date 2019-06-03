@@ -51,11 +51,11 @@ urls:
   speakerdeck:        https://speakerdeck.com/chrisburnell
   spotify:            https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z
   stateofthebrowser:  https://stateofthebrowser.com
-  superfeedr:         https://chrisburnell.superfeedr.com/
-  switchboard:        https://switchboard.p3k.io/
+  superfeedr:         https://chrisburnell.superfeedr.com
+  switchboard:        https://switchboard.p3k.io
   token:              https://tokens.indieauth.com/token
   twitter:            https://twitter.com/iamchrisburnell
-  untappd:            https://untappd.com/user/chrisburnell/
+  untappd:            https://untappd.com/user/chrisburnell
   webmention:         https://webmention.io/chrisburnell.com
   webring:            https://🕸💍.ws/💘🇹🇫
   websub:             '@chrisburnell.com@chrisburnell.com'
@@ -75,10 +75,9 @@ codepen:
     tabfree: 8863
 
 url:        https://chrisburnell.com
-baseurl:    '/'
 live_url:   https://chrisburnell.com
 static_url: https://chrisburnell.com/static/
-shorturl:   https://repc.co/
+shorturl:   https://repc.co
 
 detach: false
 host: 127.0.0.1
@@ -91,7 +90,7 @@ future: true
 unpublished: false
 incremental: true
 destination: ./_site
-permalink: /:categories/:title/
+permalink: /:categories/:title
 
 paginate: 16
 paginate_path: /:num/
@@ -100,10 +99,10 @@ feed_limit: 24
 collections:
   archives:
     output: true
-    permalink: /:title/
+    permalink: /:title
   assets:
     output: true
-    permalink: /:title/
+    permalink: /:title
   httpstatuses:
     output: true
     permalink: /:title:output_ext

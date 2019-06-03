@@ -27,7 +27,7 @@ icon_sizes:
   "display": "standalone",
   "orientation": "any",
   "start_url": "/",
-  "homepage_url": "{{ site.url | append: site.baseurl }}",
+  "homepage_url": "{{ site.url }}",
   "theme_color": "#{{ site.color }}",
   "background_color": "#{{ site.color }}",
   "background": {

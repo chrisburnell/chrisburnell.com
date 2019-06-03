@@ -5,29 +5,29 @@ searchable: no-content
 
 {% if paginator.page == 1 %}
     <dl>
-        <dt><h2 class="delta"><a href="/articles/">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
+        <dt><h2 class="delta"><a href="/articles">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='articles' values=site.categories.article %}</dd>
-        <dt><h2 class="delta"><a href="/bookmarks/">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
+        <dt><h2 class="delta"><a href="/bookmarks">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='bookmarks' values=site.categories.bookmark %}</dd>
-        <!--dt><h2 class="delta"><a href="/books/">Bookshelf <small>({{ site.categories.book.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/books">Bookshelf <small>({{ site.categories.book.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='books' values=site.categories.book %}</dd-->
-        <dt><h2 class="delta"><a href="/notes/">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
+        <dt><h2 class="delta"><a href="/notes">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='notes' values=site.categories.note %}</dd>
-        <!--dt><h2 class="delta"><a href="/coffee/">Coffee <small>({{ site.categories.coffee.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/coffee">Coffee <small>({{ site.categories.coffee.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='coffee' values=site.categories.coffee %}</dd-->
-        <!--dt><h2 class="delta"><a href="/food/">Food <small>({{ site.categories.food.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/food">Food <small>({{ site.categories.food.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='food' values=site.categories.food %}</dd-->
-        <!--dt><h2 class="delta"><a href="/likes/">Likes <small>({{ site.categories.like.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/likes">Likes <small>({{ site.categories.like.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='likes' values=site.categories.like %}</dd-->
-        <!--dt><h2 class="delta"><a href="/pens/">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/pens">Pens <small>({{ site.categories.pen.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='pens' values=site.categories.pen %}</dd-->
-        <!--dt><h2 class="delta"><a href="/recipes/">Recipes <small>({{ site.categories.recipe.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/recipes">Recipes <small>({{ site.categories.recipe.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='recipes' values=site.categories.recipe %}</dd-->
-        <!--dt><h2 class="delta"><a href="/talks/">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
+        <!--dt><h2 class="delta"><a href="/talks">Talks <small>({{ site.categories.talk.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='talks' values=site.categories.talk %}</dd-->
-        <dt><h2 class="delta"><a href="/beer/">Beer Reviews <small>({{ site.categories.beer.size }})<small></a></h2></dt>
+        <dt><h2 class="delta"><a href="/beer">Beer Reviews <small>({{ site.categories.beer.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='beer' values=site.categories.beer %}</dd>
-        <dt><h2 class="delta"><a href="/music/">Music Reviews <small>({{ site.categories.music.size }})<small></a></h2></dt>
+        <dt><h2 class="delta"><a href="/music">Music Reviews <small>({{ site.categories.music.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.html title='music' values=site.categories.music %}</dd>
         {% include components/lastfm.html %}
     </dl>

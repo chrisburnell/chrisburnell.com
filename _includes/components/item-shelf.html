@@ -110,7 +110,7 @@
             <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
         {% endif %}
         {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
-        <data class="u-category" value="/{{ category_link }}/" aria-hidden="true" hidden>{{ page.category }}</data>
+        <data class="u-category" value="/{{ category_link }}" aria-hidden="true" hidden>{{ page.category }}</data>
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </div>
 </li>

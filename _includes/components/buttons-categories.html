@@ -13,12 +13,12 @@
     {% elsif page.sparkline %}
         {%- assign metadata = site.data.categories | where: 'type', page.sparkline | first -%}
     {% endif %}
-    <a class="button" href="/archive/">
+    <a class="button" href="/archive">
         {% include_cached content/svg.html type='article' %}
         Full Archive
     </a>
     {% if page.category %}
-        <a class="button" href="/{{ metadata.type }}/">
+        <a class="button" href="/{{ metadata.type }}">
             {% include_cached content/svg.html type=metadata.icon %}
             {{ metadata.title }} Archive
         </a>

@@ -12,7 +12,7 @@
     {% include components/comments-button.html %}
     {%- assign categories = site.categories | sort -%}
     {% if include.type == 'archive' %}
-        <a class="button" href="/archive/">
+        <a class="button" href="/archive">
             {% include_cached content/svg.html type='article' %}
             Archive
         </a>
@@ -26,7 +26,7 @@
                 {%- assign rel = 'alternate' -%}
                 {%- assign icon = 'rss' -%}
             {%- elsif include.type == 'archives' -%}
-                {%- assign url = '/' | append: category.type | append: '/' -%}
+                {%- assign url = '/' | append: category.type -%}
             {%- endif -%}
             {% if include.include %}
                 {% if include.include contains category.type %}

@@ -29,7 +29,7 @@ lede: Browse posts by a variety of metrics.
             {%- assign page_year = page.date | date: '%Y' -%}
             {% if page_year != current_year or forloop.last %}
                 <li>
-                    <a class="button" href="/{{ current_year }}/">{{ current_year }} <small>({{ yearly_count }})</small></a>
+                    <a class="button" href="/{{ current_year }}">{{ current_year }} <small>({{ yearly_count }})</small></a>
                 </li>
                 {%- assign current_year = page_year -%}
                 {%- assign yearly_count = 0 -%}
@@ -45,7 +45,7 @@ lede: Browse posts by a variety of metrics.
     {% for category in categories %}
         {%- assign category_title = category[0] -%}
         <li>
-            <a class="button" href="/{{ site.data.categories | where: 'category', category_title | map: 'type' | first }}/" title="Jump to all posts categorised under {% include content/capitalizer.html input=category_title %}">{{ site.data.categories | where: 'category', category_title | map: 'title' | first }} <small>({{ site.categories[category_title].size }})</small></a>
+            <a class="button" href="/{{ site.data.categories | where: 'category', category_title | map: 'type' | first }}" title="Jump to all posts categorised under {% include content/capitalizer.html input=category_title %}">{{ site.data.categories | where: 'category', category_title | map: 'title' | first }} <small>({{ site.categories[category_title].size }})</small></a>
         </li>
     {% endfor %}
 </ul>
