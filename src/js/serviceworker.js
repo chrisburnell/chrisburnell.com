@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.90";
+const VERSION = "v2.0.91";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -31,7 +31,7 @@ const REQUIRED_FILES = [
     "/search.json",
     "/reply-targets.json",
     "/mastodon-instances.json",
-    "/offline/"
+    "/offline"
 ];
 
 // Files that are cached but non-blocking
@@ -42,17 +42,17 @@ const OPTIONAL_FILES = [
 // Pages to cache
 const OFFLINE_PAGES = [
     "/",
-    "/about/",
-    "/archive/",
-    "/contact/",
-    "/license/",
-    "/privacy/",
-    "/search/"
+    "/about",
+    "/archive",
+    "/contact",
+    "/license",
+    "/privacy",
+    "/search"
 ];
 
 // Pages to ignore
 const IGNORE_PAGES = [
-    "/ignore/"
+    "/ignore"
 ];
 
 
