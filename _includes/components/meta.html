@@ -21,7 +21,7 @@
         {% else %}
             <span>published on</span>
         {% endif %}
-        <a class="u-uid  u-url" href="{{ page.url | absolute_url }}" title="Permalink: {{ page.url | absolute_url }}">
+        <a class="u-uid  u-url" href="{{ canonical_local }}" title="Permalink: {{ canonical_local }}">
             {{ page.date | date_to_long_string }}
         </a>
     </time>

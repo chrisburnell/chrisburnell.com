@@ -5,7 +5,9 @@
     {%- if page.trailing_slash == true -%}
         {% assign trailing_slash = '/' %}
     {%- endif -%}
-    <link rel="canonical" href="{{ page.url | prepend: site.live_url | append: trailing_slash }}">
+    {%- assign canonical = page.url | prepend: site.live_url | append: trailing_slash -%}
+    {%- assign canonical_local = page.url | prepend: site.url | append: trailing_slash -%}
+    <link rel="canonical" href="{{ canonical }}">
     {% if page.previous.url %}
         <link rel="prev" href="{{ page.previous.url }}">
     {% endif %}
@@ -36,7 +38,7 @@
     {% endif %}
     <meta property="og:description" content="{{ meta_lede }}">
     <meta property="og:locale" content="{{ site.language }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:url" content="{{ canonical }}">
     <meta property="og:image" content="{{ meta_image }}">
     {% if page.layout == 'post' or page.layout == 'review' %}
         <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">

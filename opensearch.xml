@@ -9,8 +9,8 @@ sitemap:
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
     <ShortName>{{ site.author.shortname }}</ShortName>
     <Description>{{ site.author.name }}</Description>
-    <Url type="text/html" method="get" rel="results" template="{{ site.url }}/search/?query={searchTerms}"/>
-    <Image width="16" height="16">{{ site.url | append: '/favicon.ico' }}</Image>
+    <Url type="text/html" method="get" rel="results" template="{{ site.live_url }}/search/?query={searchTerms}"/>
+    <Image width="16" height="16">{{ site.live_url | append: '/favicon.ico' }}</Image>
     <InputEncoding>UTF-8</InputEncoding>
-    <SearchForm>{{ site.url | append: '/search/' }}</SearchForm>
+    <SearchForm>{{ site.live_url | append: '/search/' }}</SearchForm>
 </OpenSearchDescription>

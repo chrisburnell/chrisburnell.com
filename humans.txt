@@ -19,7 +19,7 @@ sitemap:
 /* SITE */
 
     Last updated:  {{ site.time | date: '%F' }}
-    URL:           {{ site.url }}
+    URL:           {{ site.live_url }}
     Language:      {{ site.language }}
     Doctype:       HTML5
     Fonts:         Heebo, Proxima Nova

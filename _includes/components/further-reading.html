@@ -4,7 +4,7 @@
         <ul>
             {%- assign further_readings = page.further_reading | uniq -%}
             {% for further_reading in further_readings %}
-                {% if further_reading.link contains site.url %}
+                {% if further_reading.link contains site.live_url %}
                     {% assign rel = '' %}
                 {% else %}
                     {% assign rel = ' rel="external"' %}

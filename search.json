@@ -11,7 +11,7 @@ sitemap:
     {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
       {
         "type": "page",
-        "url": "{{ page.url | absolute_url }}",
+        "url": "{{ page.url | absolute_url }}{% if page.trailing_slash == true %}/{% endif %}",
         "title": "{{ page.title | xml_escape }}",
         "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
         "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
@@ -24,7 +24,7 @@ sitemap:
     {% unless page.draft or page.searchable == false %}
       {
         "type": "post",
-        "url": "{{ page.url | absolute_url }}",
+        "url": "{{ page.url | absolute_url }}{% if page.trailing_slash == true %}/{% endif %}",
         "title": "{{ page.title | xml_escape }}",
         "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
         "date": "{{ page.date | date_to_xml_schema }}",

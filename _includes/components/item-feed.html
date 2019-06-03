@@ -12,8 +12,8 @@
     {% unless page.reacji or page.titlefree %}
         <title>{{ page.title | xml_escape }}</title>
     {% endunless %}
-    <link href="{{ page.url | absolute_url }}" />
-    <id>{{ page.url | absolute_url }}</id>
+    <link href="{{ page.url | absolute_url }}{% if page.trailing_slash == true %}/{% endif %}" />
+    <id>{{ page.url | absolute_url }}{% if page.trailing_slash == true %}/{% endif %}</id>
     <published>{{ page.date | date_to_rfc822 }}</published>
     <updated>{{ page.edit_date | default: page.finish | default: page.date | date_to_rfc822 }}</updated>
     {% if page.lede %}
