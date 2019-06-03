@@ -14,17 +14,17 @@ syndicate_to:
 - https://twitter.com/iamchrisburnell/status/710837030629023744
 
 further_reading:
-- link: "http://csswizardry.com/2016/02/mixins-better-for-performance/"
+- link: "http://csswizardry.com/2016/02/mixins-better-for-performance"
   title: "Mixins Better for Performance"
-- link: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"
+- link: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin"
   title: "When to use @extend; when to use a mixin"
-- link: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass/"
+- link: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass"
   title: "Extending silent classes in Sass"
-- link: "http://www.sitepoint.com/avoid-sass-extend/"
+- link: "http://www.sitepoint.com/avoid-sass-extend"
   title: "Why You Should Avoid Sass @extend"
-- link: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/"
+- link: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass"
   title: "Don’t Over-@extend Yourself in Sass"
-- link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/"
+- link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data"
   title: "Sass Mixins vs Extends: The Data"
 ---
 
@@ -46,7 +46,7 @@ The gist of Harry’s article is that using `@extend` to repeat styles is not wo
 While using `@mixin` means repeated code in the compiled CSS output (remember: **D**on’t **R**epeat **Y**ourself), *gzipping* our CSS will actually make the impact of this repeated code almost negligible; however, it’s important to ensure that any and all static output from a `@mixin` is in the same order in each instance it is used. This is because *gzip* casts repeated strings to a variable and substitutes in the variable (instead of the full string) wherever the string is repeated in the CSS. By ensuring the same (or as close to the same) order of selectors, properties, values, etc. in the output of a `@mixin`, you set the maximum-possible-length-string of characters to a variable and thereby reduce the size of your *gzipped output CSS*.
 
 <section class="edit">
-    <p>If you want a clearer explanation or more information on the above, check out <a rel="external" href="http://csswizardry.com/2016/02/mixins-better-for-performance/">Harry Roberts’ article</a>.</p>
+    <p>If you want a clearer explanation or more information on the above, check out <a rel="external" href="http://csswizardry.com/2016/02/mixins-better-for-performance">Harry Roberts’ article</a>.</p>
 </section>
 
 Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined that `@mixin` were as performant as, if not more than, `@extend`. This spurred me on to refactor my Sass and make sure I was using `@extend` properly…

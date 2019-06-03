@@ -32,4 +32,4 @@ Over the years of writing, editing, and not publishing, I regret almost every pi
 
 But this is an impossible task. There is an inescapable timeliness to words and prose.
 
-[^1]: I’m aware of the <a href="http://bradfrost.com/blog/post/just/" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.
+[^1]: I’m aware of the <a href="http://bradfrost.com/blog/post/just" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.

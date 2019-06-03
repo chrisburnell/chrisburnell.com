@@ -2,7 +2,7 @@
 date: 2018-11-07 12:13:00
 
 title: Numerals, Romanticised
-lede: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online/" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
+lede: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
 
 tags:
 - jekyll

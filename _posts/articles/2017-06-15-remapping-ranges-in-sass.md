@@ -15,7 +15,7 @@ syndicate_to:
 - https://twitter.com/iamchrisburnell/status/877492210241032192
 
 further_reading:
-- link: "http://thecodingtrain.com/"
+- link: "http://thecodingtrain.com"
   title: "The Coding Train by Daniel Shiffman"
 - link: "https://www.youtube.com/watch?v=N633bLi_YCw"
   title: "Polar Coordinates, a p5.js Tutorial by Daniel Shiffman"

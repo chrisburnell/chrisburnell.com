@@ -67,7 +67,7 @@ Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate){:rel="
 
 <blockquote>
     <p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
-    <cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering/" rel="external">Google Web Fundamentals</a></cite>
+    <cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering" rel="external">Google Web Fundamentals</a></cite>
 </blockquote>
 
 This might seem like an impossible amount of time to do **anything** with, but for a computer, this isn’t so much of a stretch. That’s not to say that it’s **easy** for the browser, nor that the browser is even doing it in the most efficient manner, in the most efficient circumstances, so we should do what we can to offer the browser any help!
