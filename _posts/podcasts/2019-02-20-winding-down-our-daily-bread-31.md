@@ -10,4 +10,5 @@ episode: 31
 listen_of: https://www.eatthispodcast.com/our-daily-bread-31/
 media: http://media.blubrry.com/eatthispodcast/s/mange-tout.s3.amazonaws.com/2018/odb-31.mp3
 runtime: 4:09
+trailing_slash: true
 ---

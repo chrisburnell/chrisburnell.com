@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/1DBkJIEoeHrTX4WCBQGcCi
 cover: the-king-of-limbs.jpg
 rating: 4.5
+trailing_slash: true
 ---

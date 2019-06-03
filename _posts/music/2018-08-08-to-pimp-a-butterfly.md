@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP
 cover: to-pimp-a-butterfly.jpg
 rating: 5
+trailing_slash: true
 ---

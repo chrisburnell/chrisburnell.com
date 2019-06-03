@@ -8,4 +8,5 @@ authors:
 season: The Brilliant Idiots
 listen_of: https://soundcloud.com/thebrilliantidiots/air-misery
 runtime: 120:57
+trailing_slash: true
 ---

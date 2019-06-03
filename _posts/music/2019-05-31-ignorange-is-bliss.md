@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/22zpCX6Nb9ppOVklalvGec
 cover: ignorance-is-bliss.jpg
 rating: 3.25
+trailing_slash: true
 ---

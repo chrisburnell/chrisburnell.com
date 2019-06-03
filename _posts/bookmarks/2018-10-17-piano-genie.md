@@ -4,4 +4,5 @@ lede: <q>Piano Genie, an intelligent controller that maps 8-button input to a fu
 date: 2018-10-17 15:02:00
 
 bookmark_of: https://magenta.tensorflow.org/pianogenie
+trailing_slash: true
 ---

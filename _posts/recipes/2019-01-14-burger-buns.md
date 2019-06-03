@@ -21,6 +21,7 @@ ingredients:
 authors:
 - name: Taste of Home
   link: https://www.tasteofhome.com/recipes/40-minute-hamburger-buns/
+trailing_slash: true
 ---
 
 0. In a large bowl, dissolve yeast in warm water. Add oil and sugar; let stand for 5 minutes. Add the egg, salt and enough flour to form a soft dough.

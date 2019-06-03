@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/0kL3TYRsSXnu0iJvFO3rud
 cover: untitled-unmastered.jpg
 rating: 4.5
+trailing_slash: true
 ---

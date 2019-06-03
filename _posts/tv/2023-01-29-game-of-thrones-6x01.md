@@ -5,4 +5,5 @@ season: 6
 episode: 1
 runtime:
 cover:
+trailing_slash: true
 ---

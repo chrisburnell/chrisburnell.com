@@ -26,6 +26,7 @@ further_reading:
   title: "Don’t Over-@extend Yourself in Sass"
 - link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data"
   title: "Sass Mixins vs Extends: The Data"
+trailing_slash: true
 ---
 
 

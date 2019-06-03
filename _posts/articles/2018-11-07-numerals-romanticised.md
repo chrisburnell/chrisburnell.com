@@ -27,6 +27,7 @@ redirect_from:
 syndicate_to:
 - https://mastodon.social/users/chrisburnell/statuses/101029942322511486
 - https://twitter.com/iamchrisburnell/status/1060150621091827712
+trailing_slash: true
 ---
 
 <blockquote>

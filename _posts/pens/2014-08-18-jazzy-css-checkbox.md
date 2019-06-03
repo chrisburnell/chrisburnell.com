@@ -4,6 +4,7 @@ date: 2014-08-18 12:00:00
 title: Jazzy CSS Checkbox
 
 codepen_slug: Cbiun
+trailing_slash: true
 ---
 
 

@@ -7,4 +7,5 @@ tags:
 - svg
 
 bookmark_of: http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css
+trailing_slash: true
 ---

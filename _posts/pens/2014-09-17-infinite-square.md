@@ -5,6 +5,7 @@ title: Infinite Square
 
 codepen_slug: HlcAJ
 codepen_featured: true
+trailing_slash: true
 ---
 
 

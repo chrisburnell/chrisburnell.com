@@ -5,6 +5,7 @@ title: Square Illusion
 
 codepen_slug: IKHhC
 codepen_featured: true
+trailing_slash: true
 ---
 
 

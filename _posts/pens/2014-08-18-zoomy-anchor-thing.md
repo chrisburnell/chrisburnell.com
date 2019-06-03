@@ -5,6 +5,7 @@ title: Zoomy Anchor Thing
 
 codepen_slug: lcEvB
 codepen_featured: true
+trailing_slash: true
 ---
 
 

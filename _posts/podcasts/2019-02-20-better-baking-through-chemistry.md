@@ -9,4 +9,5 @@ season: Eat This Podcast
 listen_of: https://www.eatthispodcast.com/baking-powder/
 media: https://media.blubrry.com/eatthispodcast/s/mange-tout.s3.amazonaws.com/2019/baking-powder.mp3
 runtime: 27:09
+trailing_slash: true
 ---

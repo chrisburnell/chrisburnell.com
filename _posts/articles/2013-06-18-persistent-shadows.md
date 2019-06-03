@@ -15,6 +15,7 @@ banner_mobile:
 
 comments: disqus
 codepen: true
+trailing_slash: true
 ---
 
 

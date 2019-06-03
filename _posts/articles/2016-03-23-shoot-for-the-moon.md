@@ -29,6 +29,7 @@ further_reading:
   title: "Reduce sub-pixel rendering issues with Sass functions"
 - link: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering"
   title: "A Closer Look At Font Rendering"
+trailing_slash: true
 ---
 
 

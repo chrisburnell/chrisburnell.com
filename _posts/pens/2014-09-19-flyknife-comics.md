@@ -5,6 +5,7 @@ title: Flyknife Comics
 
 codepen_slug: hIxaj
 codepen_featured: true
+trailing_slash: true
 ---
 
 

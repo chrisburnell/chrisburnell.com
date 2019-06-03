@@ -39,6 +39,7 @@ ingredients:
 authors:
 - name: Kitchen Sanctuary
   link: https://www.kitchensanctuary.com/firecracker-chicken/
+trailing_slash: true
 ---
 
 0. Combine all ingredients except water in a bowl. If *not* marinating, add the water.

@@ -4,4 +4,5 @@ lede: These are the coolest instructional demos I've ever seen. It's just such a
 date: 2018-10-09 11:27:00
 
 bookmark_of: https://generativeartistry.com/
+trailing_slash: true
 ---

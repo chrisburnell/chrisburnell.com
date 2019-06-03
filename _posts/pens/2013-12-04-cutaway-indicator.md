@@ -4,6 +4,7 @@ date: 2013-12-04 12:00:00
 title: Cutaway Indicator
 
 codepen_slug: yIwzd
+trailing_slash: true
 ---
 
 

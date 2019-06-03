@@ -5,4 +5,5 @@ season: 5
 episode: 10
 runtime:
 cover:
+trailing_slash: true
 ---

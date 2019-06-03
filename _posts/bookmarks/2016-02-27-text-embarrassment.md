@@ -5,4 +5,5 @@ title: Editing your last embarrassment
 lede: <q>In other words Quick editing your last sent texts</q>
 
 bookmark_of: https://suganth.cc/editing-your-last-embarrassment-af377f7c123d
+trailing_slash: true
 ---

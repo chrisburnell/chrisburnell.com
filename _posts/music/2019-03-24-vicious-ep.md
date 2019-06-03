@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/1dSvdsbgLtbSd7vUckHvKS
 cover: vicious-ep.jpg
 rating: 4
+trailing_slash: true
 ---

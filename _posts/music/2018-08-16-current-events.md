@@ -8,4 +8,5 @@ authors:
 listen_of: https://open.spotify.com/album/32DCg73oLWQNvWwXvi6fIs
 cover: current-events.jpg
 rating: 4.5
+trailing_slash: true
 ---

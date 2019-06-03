@@ -7,6 +7,7 @@ codepen_slug: vdNeEa
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/959107237590589441
+trailing_slash: true
 ---
 
 

@@ -5,6 +5,7 @@ title: Regex Golf
 lede: Test your regex skills. So much fun. Brainmelting, but fun.
 
 bookmark_of: http://regex.alf.nu
+trailing_slash: true
 ---
 
 
