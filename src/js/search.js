@@ -132,12 +132,12 @@
                         })
                         .catch(error => {
                             // Fail!
-                            console.error(`Mastodon instances request status error: ${error}`);
+                            console.error(`Search data processing error: ${error}`);
                         });
                 })
                 .catch(error => {
                     // Fail!
-                    console.error(`Reply targets request status error: ${error}`);
+                    console.error(`Search data processing error: ${error}`);
                 });
             })
             .catch(error => {
@@ -151,6 +151,20 @@
     /// @return void
     ////
     let processData = (resultData, replyTargets, mastodonInstances) => {
+        // Sort the results by:
+        //   1. Priority
+        //   2. Occurrence
+        //   3. Pages then Post Time
+        let queryRegex = new RegExp(query, "gi");
+        resultData.sort((a, b) => {
+            let aText = (a.title ? a.title : "") + (a.lede ? a.lede : "") + (a.content ? a.content : "");
+            let bText = (b.title ? b.title : "") + (b.lede ? b.lede : "") + (b.content ? b.content : "");
+            return (bText.match(queryRegex) || []).length - (aText.match(queryRegex) || []).length;
+        });
+        resultData.sort((a, b) => {
+            return b.priority - a.priority;
+        });
+
         let resultsCount = 0,
             results = "";
 
@@ -158,8 +172,8 @@
             let queryFormatted = query.toLowerCase(),
                 titleCheck = false,
                 ledeCheck = false,
-                dateCheck = false,
                 contentCheck = false,
+                dateCheck = false,
                 categoryCheck = false,
                 tagsCheck = false,
                 checkinCheck = false;

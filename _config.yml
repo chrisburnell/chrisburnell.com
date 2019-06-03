@@ -74,6 +74,8 @@ codepen:
     default: 119
     tabfree: 8863
 
+trailing_slash_switchover: 2019-06-03
+
 url:        https://chrisburnell.com
 live_url:   https://chrisburnell.com
 static_url: https://chrisburnell.com/static/

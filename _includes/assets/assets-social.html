@@ -2,7 +2,21 @@
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
-    <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
+    {% if page.date %}
+        {%- assign day = site.trailing_slash_switchover | date: '%d' -%}
+        {%- assign month = site.trailing_slash_switchover | date: '%m' -%}
+        {%- assign year = site.trailing_slash_switchover | date: '%Y' -%}
+        {%- assign check_day = page.date | date: '%d' -%}
+        {%- assign check_month = page.date | date: '%m' -%}
+        {%- assign check_year = page.date | date: '%Y' -%}
+        {% if check_year > year or (check_year == year and check_month > month) or (check_year == year and check_month == month and check_day >= day) %}
+            <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
+        {% else %}
+            <link rel="canonical" href="{{ page.url | prepend: site.live_url | append: '/' }}">
+        {% endif %}
+    {% else %}
+        <link rel="canonical" href="{{ page.url | prepend: site.live_url }}">
+    {% endif %}
     {% if page.previous.url %}
         <link rel="prev" href="{{ page.previous.url }}">
     {% endif %}

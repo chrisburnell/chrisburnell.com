@@ -13,6 +13,7 @@ sitemap:
         "type": "page",
         "url": "{{ page.url | absolute_url }}",
         "title": "{{ page.title | xml_escape }}",
+        "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
         "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
           "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
         {% endunless %}
@@ -25,6 +26,7 @@ sitemap:
         "type": "post",
         "url": "{{ page.url | absolute_url }}",
         "title": "{{ page.title | xml_escape }}",
+        "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
         "date": "{{ page.date | date_to_xml_schema }}",
         "date_friendly": "{{ page.date | date_to_long_string }}",
         {% if page.lede %}

@@ -14,23 +14,9 @@ sitemap:
         {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | absolute_url }}</loc>
-                {% if page.sitemap.lastmod %}
-                    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-                {% elsif page.edit_date %}
-                    <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
-                {% elsif page.date %}
-                    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-                {% endif %}
-                {% if page.sitemap.changefreq %}
-                    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-                {% else %}
-                    <changefreq>{{ site.sitemap.changefreq }}</changefreq>
-                {% endif %}
-                {% if page.sitemap.priority %}
-                    <priority>{{ page.sitemap.priority }}</priority>
-                {% else %}
-                    <priority>{{ site.sitemap.priority }}</priority>
-                {% endif %}
+                <lastmod>{{ page.sitemap.lastmod | default: page.edit_date | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
+                <changefreq>{{ page.sitemap.changefreq | default: site.sitemap.changefreq }}</changefreq>
+                <priority>{{ page.sitemap.priority | default: site.sitemap.priority }}</priority>
             </url>
         {% endunless %}
     {% endfor %}
@@ -38,25 +24,9 @@ sitemap:
         {% unless page.draft or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | absolute_url }}</loc>
-                {% if page.sitemap.lastmod %}
-                    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-                {% elsif page.edit_date %}
-                    <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
-                {% elsif page.date %}
-                    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-                {% else %}
-                    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-                {% endif %}
-                {% if page.sitemap.changefreq %}
-                    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-                {% else %}
-                    <changefreq>{{ site.sitemap.changefreq }}</changefreq>
-                {% endif %}
-                {% if page.sitemap.priority %}
-                    <priority>{{ page.sitemap.priority }}</priority>
-                {% else %}
-                    <priority>{{ site.sitemap.priority }}</priority>
-                {% endif %}
+                <lastmod>{{ page.sitemap.lastmod | default: page.edit_date | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
+                <changefreq>{{ page.sitemap.changefreq | default: site.sitemap.changefreq }}</changefreq>
+                <priority>{{ page.sitemap.priority | default: site.sitemap.priority }}</priority>
             </url>
         {% endunless %}
     {% endfor %}
