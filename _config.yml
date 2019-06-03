@@ -95,7 +95,7 @@ destination: ./_site
 permalink: /:categories/:title
 
 paginate: 16
-paginate_path: /:num/
+paginate_path: /:num
 feed_limit: 24
 
 collections:
