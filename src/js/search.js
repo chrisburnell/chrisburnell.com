@@ -17,8 +17,6 @@
     const ALLOW_EMPTY = false;
     const ALLOW_AS_YOU_TYPE = false;
     const JSON_FEED_URL = "/search.json";
-    const REPLY_TARGETS_URL = "/reply-targets.json";
-    const MASTODON_INSTANCES_URL = "/mastodon-instances.json";
     const author = document.querySelector("meta[name=author]").content;
     const rootUrl = document.querySelector("link[rel=self]").href.replace("feed.xml", "");
     const SEARCH_PAGE_TEMPLATE =
@@ -115,30 +113,10 @@
             .then(response => response.json())
             .then(data => {
                 // Success!
-                resultData = data;
-                fetch(REPLY_TARGETS_URL)
-                .then(helpers.getFetchResponse)
-                .then(response => response.json())
-                .then(data => {
-                    // Success!
-                    replyTargets = data;
-                    fetch(MASTODON_INSTANCES_URL)
-                        .then(helpers.getFetchResponse)
-                        .then(response => response.json())
-                        .then(data => {
-                            // Success!
-                            mastodonInstances = data;
-                            processData(resultData, replyTargets, mastodonInstances);
-                        })
-                        .catch(error => {
-                            // Fail!
-                            console.error(`Search data processing error: ${error}`);
-                        });
-                })
-                .catch(error => {
-                    // Fail!
-                    console.error(`Search data processing error: ${error}`);
-                });
+                resultData = data["results"];
+                replyTargets = data["reply-targets"];
+                mastodonInstances = data["mastodon-instances"];
+                processData(resultData, replyTargets, mastodonInstances);
             })
             .catch(error => {
                 // Fail!

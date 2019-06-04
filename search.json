@@ -5,63 +5,80 @@ sitemap:
   exclude: true
 ---
 
-[
-  {%- assign pages = site.pages | concat: site.archives | concat: site.httpstatuses -%}
-  {% for page in pages %}
-    {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
+{
+  "results": [
+    {%- assign pages = site.pages | concat: site.archives -%}
+    {% for page in pages %}
+      {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
+        {
+          "type": "page",
+          "url": "{{ page.url | absolute_url }}",
+          "title": "{{ page.title | xml_escape }}",
+          "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
+          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
+            "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
+          {% endunless %}
+        },
+      {% endunless %}
+    {% endfor %}
+    {% for page in site.posts %}
+      {% unless page.draft or page.searchable == false %}
+        {
+          "type": "post",
+          "url": "{{ page.url | absolute_url }}",
+          "title": "{{ page.title | xml_escape }}",
+          "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
+          "date": "{{ page.date | date_to_xml_schema }}",
+          "date_friendly": "{{ page.date | date_to_long_string }}",
+          {% if page.lede %}
+            "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+          {% elsif page.category == 'note' %}
+            "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+          {% endif %}
+          "category": "{{ page.category }}"{% if page.codepen_featured %},
+            "codepen_featured": true
+          {% endif %}{% if page.emoji %},
+            "emoji": "{{ page.emoji }}"
+          {% endif %},
+          "tags": "{{ page.tags | join: ', ' }}"{% if page.checkin %},
+            "checkin": "{{ page.checkin.name | default: page.checkin | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
+          {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}{%- assign rating_fraction = page.rating | minus: rating_base -%},
+            "rating": "{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}",
+            "rating_raw": "{{ page.rating }}"
+          {% endif %}{% if page.authors %},
+            "authors": "{% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}"
+          {% endif %}{% if page.in_reply_to %},
+            "in_reply_to": "{{ page.in_reply_to }}"
+          {% endif %}{% if page.rsvp %},
+            "rsvp": true
+          {% endif %}{% if page.badges %},
+            "badges": {{ page.badges.size }}
+          {% endif %}{% if page.banner %},
+            "banner": true
+          {% endif %}{% if page.cover %},
+            "cover": true
+          {% endif %}{% if page.content contains '<img' %},
+            "has_image": true
+          {% endif %}{% unless page.searchable == 'no-content' %},
+            "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
+          {% endunless %}
+        }{% unless forloop.last %},{% endunless %}
+      {% endunless %}
+    {% endfor %}
+  ],
+  "reply-targets": [
+    {% for target in site.data.reply_targets %}
       {
-        "type": "page",
-        "url": "{{ page.url | absolute_url }}",
-        "title": "{{ page.title | xml_escape }}",
-        "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
-        "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
-          "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
-        {% endunless %}
+        "name": "{{ target.name }}"{% if target.mastodon %},
+        "mastodon": "{{ target.mastodon }}"{% endif %}{% if target.twitter %},
+        "twitter": "{{ target.twitter }}"{% endif %}{% if target.link %},
+        "link": "{{ target.link }}"{% endif %}
       }{% unless forloop.last %},{% endunless %}
-    {% endunless %}
-  {% endfor %}
-  {% for page in site.posts %}
-    {% unless page.draft or page.searchable == false %}
-      {
-        "type": "post",
-        "url": "{{ page.url | absolute_url }}",
-        "title": "{{ page.title | xml_escape }}",
-        "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
-        "date": "{{ page.date | date_to_xml_schema }}",
-        "date_friendly": "{{ page.date | date_to_long_string }}",
-        {% if page.lede %}
-          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
-        {% elsif page.category == 'note' %}
-          "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
-        {% endif %}
-        "category": "{{ page.category }}"{% if page.codepen_featured %},
-          "codepen_featured": true
-        {% endif %}{% if page.emoji %},
-          "emoji": "{{ page.emoji }}"
-        {% endif %},
-        "tags": "{{ page.tags | join: ', ' }}"{% if page.checkin %},
-          "checkin": "{{ page.checkin.name | default: page.checkin | strip_html | xml_escape | strip_newlines | normalize_whitespace | xml_escape }}"
-        {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}{%- assign rating_fraction = page.rating | minus: rating_base -%},
-          "rating": "{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}",
-          "rating_raw": "{{ page.rating }}"
-        {% endif %}{% if page.authors %},
-          "authors": "{% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}"
-        {% endif %}{% if page.in_reply_to %},
-          "in_reply_to": "{{ page.in_reply_to }}"
-        {% endif %}{% if page.rsvp %},
-          "rsvp": true
-        {% endif %}{% if page.badges %},
-          "badges": {{ page.badges.size }}
-        {% endif %}{% if page.banner %},
-          "banner": true
-        {% endif %}{% if page.cover %},
-          "cover": true
-        {% endif %}{% if page.content contains '<img' %},
-          "has_image": true
-        {% endif %}{% unless page.searchable == 'no-content' %},
-          "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
-        {% endunless %}
-      }{% unless forloop.last %},{% endunless %}
-    {% endunless %}
-  {% endfor %}
-]
+    {% endfor %}
+  ],
+  "mastodon-instances": [
+    {% for instance in site.data.mastodon_instances %}
+      "{{ instance }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.92";
+const VERSION = "v2.0.93";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -28,10 +28,7 @@ const TIMEOUT = 5000;
 const REQUIRED_FILES = [
     "/css/non-critical.min.css",
     "/js/main.min.js",
-    "/search.json",
-    "/reply-targets.json",
-    "/mastodon-instances.json",
-    "/offline"
+    "/search.json"
 ];
 
 // Files that are cached but non-blocking
@@ -41,6 +38,7 @@ const OPTIONAL_FILES = [
 
 // Pages to cache
 const OFFLINE_PAGES = [
+    "/offline",
     "/",
     "/about",
     "/archive",
