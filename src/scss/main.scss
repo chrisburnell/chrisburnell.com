@@ -6,7 +6,7 @@
 /// Please contact me if you want to learn about anything you see here.
 ///
 /// @author Chris Burnell <me@chrisburnell.com>
-/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/sass
+/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
 
 /// ABSTRACTS
@@ -16,20 +16,21 @@
 @import "abstracts/maps";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
+@import "abstracts/css-variables";
 
 /// VENDORS
 @import "vendors/include-media";
 
 /// BASE
-@import "base/page";
 @import "base/fonts";
+@import "base/page";
 @import "base/anchor";
+@import "base/button";
 @import "base/heading";
 @import "base/paragraph";
-@import "base/media";
-@import "base/button";
 @import "base/list";
 @import "base/quote";
+@import "base/media";
 @import "base/figure";
 @import "base/code";
 @import "base/form";
@@ -38,23 +39,27 @@
 @import "base/miscellaneous";
 
 /// LAYOUT
+@import "layout/wrap";
 @import "layout/main";
+@import "layout/header";
 @import "layout/content";
 @import "layout/aside";
 @import "layout/footer";
 
 /// COMPONENTS
+@import "components/helpers";
+@import "components/logo";
+@import "components/nav-primary";
 @import "components/title";
 @import "components/meta";
 @import "components/banner";
 @import "components/lede";
-@import "components/author";
-@import "components/icon";
 @import "components/terminology";
 @import "components/edit";
 @import "components/content-list";
 @import "components/search";
 @import "components/buttons-list";
+@import "components/author";
 @import "components/widget";
 @import "components/footnotes";
 @import "components/footer";
@@ -62,6 +67,7 @@
 @import "components/comments";
 @import "components/webmentions";
 @import "components/code";
+@import "components/icon";
 @import "components/media";
 @import "components/sparkline";
 @import "components/shelf";

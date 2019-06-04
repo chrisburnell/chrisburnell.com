@@ -25,17 +25,6 @@
     }
 
     %heading-elements & {
-        @include media("screen", "below:small") {
-            display: none !important; // this needs to override the inline style
-        }
-
-        @include media("screen", "above:small") {
-            float: right;
-            @include v(margin-top, medium);
-        }
-    }
-
-    %alpha & {
         @include media("screen", "above:small") {
             @include v(margin-top, medium);
         }

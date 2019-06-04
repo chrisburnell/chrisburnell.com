@@ -27,7 +27,7 @@ let autoprefixer = require("autoprefixer");
 const paths = {
     root: ".",
     css: {
-        src: "src/sass",
+        src: "src/scss",
         dest: "css"
     },
     js: {

@@ -9,6 +9,12 @@
     @include v(margin-bottom, large);
 }
 
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .title--error {
     @include v(background-color, canada);
     @include v(color, white);
