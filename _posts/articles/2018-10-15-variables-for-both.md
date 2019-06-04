@@ -20,7 +20,6 @@ syndicate_to:
 - https://twitter.com/iamchrisburnell/status/1051772305360195584
 
 caniuse: true
-trailing_slash: true
 ---
 
 {% include_cached content/caniuse.html feature='css-variables' periods='current' %}

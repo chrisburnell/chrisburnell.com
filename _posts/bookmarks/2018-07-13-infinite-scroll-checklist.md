@@ -4,5 +4,4 @@ lede: Adrian hits the nail on the head with this checklist for implementing infi
 date: 2018-07-13 13:59:50
 
 bookmark_of: http://adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html
-trailing_slash: true
 ---

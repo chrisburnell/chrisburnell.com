@@ -8,7 +8,6 @@ tags:
 - canvas
 - javascript
 - music
-trailing_slash: true
 ---
 
 To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js){:rel="external"} and made some modifications. I won’t go into detail about how the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API){:rel="external"} or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"}, but there are many resources available if you want a background.

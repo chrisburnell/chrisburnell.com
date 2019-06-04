@@ -4,7 +4,6 @@ date: 2014-11-19 12:00:00
 title: Interaction Jazz
 
 codepen_slug: myyRqp
-trailing_slash: true
 ---
 
 

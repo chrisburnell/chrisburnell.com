@@ -12,5 +12,4 @@ authors:
 listen_of: https://open.spotify.com/album/3IO8IPjwXuzPJnoaqkwYrj
 cover: not-all-heroes-wear-capes.jpg
 rating: 3.5
-trailing_slash: true
 ---

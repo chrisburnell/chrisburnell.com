@@ -19,7 +19,6 @@ ingredients:
   ml: 0.31
 - name: salt
   amount: to taste
-trailing_slash: true
 ---
 
 0. Melt {% include content/ingredient.html id="unsalted butter" %}.

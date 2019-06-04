@@ -2,11 +2,8 @@
     <meta name="robots" content="noindex,nofollow">
 {% else %}
     <!-- The URL -->
-    {%- if page.trailing_slash == true -%}
-        {% assign trailing_slash = '/' %}
-    {%- endif -%}
-    {%- assign canonical = page.url | prepend: site.live_url | append: trailing_slash -%}
-    {%- assign canonical_local = page.url | prepend: site.url | append: trailing_slash -%}
+    {%- assign canonical = page.url | prepend: site.live_url -%}
+    {%- assign canonical_local = page.url | prepend: site.url -%}
     <link rel="canonical" href="{{ canonical }}">
     {% if page.previous.url %}
         <link rel="prev" href="{{ page.previous.url }}">

@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/0EVgPaKOC8o9JFVpKLMSoz
 cover: everythangs-corrupt.jpg
 rating: 4
-trailing_slash: true
 ---

@@ -5,7 +5,6 @@ title: Message Types
 
 codepen_slug: rLxjBz
 codepen_featured: true
-trailing_slash: true
 ---
 
 

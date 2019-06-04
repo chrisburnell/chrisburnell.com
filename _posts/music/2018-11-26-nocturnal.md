@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/5MDQfxmG16gD34X0gUZW6A
 cover: nocturnal.jpg
 rating: 4
-trailing_slash: true
 ---

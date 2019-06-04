@@ -4,7 +4,6 @@ date: 2014-11-05 12:00:00
 title: Power of Transform Centering
 
 codepen_slug: CHEbf
-trailing_slash: true
 ---
 
 

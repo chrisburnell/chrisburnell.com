@@ -18,7 +18,6 @@ comments: disqus
 
 syndicate_to:
 - https://twitter.com/iamchrisburnell/status/607915792911495168
-trailing_slash: true
 ---
 
 

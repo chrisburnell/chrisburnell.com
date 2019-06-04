@@ -8,5 +8,4 @@ bookmark_of: https://www.youtube.com/watch?v=pYgQEjcosP0
 syndicate_to:
 - https://mastodon.social/users/chrisburnell/statuses/101233534871559531
 - https://twitter.com/iamchrisburnell/status/1073179904831823872
-trailing_slash: true
 ---

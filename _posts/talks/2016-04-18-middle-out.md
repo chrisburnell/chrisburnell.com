@@ -9,7 +9,6 @@ checkin:
 notist_slug: Ua35T5/supporting-middle-out-in-css
 speakerdeck_slug: supporting-middle-out-in-css
 vimeo_slug: 164122074
-trailing_slash: true
 ---
 
 

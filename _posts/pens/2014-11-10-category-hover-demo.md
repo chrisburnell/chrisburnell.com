@@ -5,7 +5,6 @@ title: Category Hover Demo
 
 codepen_slug: mybQEL
 codepen_featured: true
-trailing_slash: true
 ---
 
 

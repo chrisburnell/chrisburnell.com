@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/1v9d39PxNmtRvYWw2ztydx
 cover: kids-see-ghosts.jpg
 rating: 3.5
-trailing_slash: true
 ---

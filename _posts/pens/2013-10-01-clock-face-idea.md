@@ -5,7 +5,6 @@ title: Clock Face Idea
 
 codepen_slug: AGtdF
 codepen_featured: true
-trailing_slash: true
 ---
 
 

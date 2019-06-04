@@ -7,5 +7,4 @@ tags:
 - serviceworker
 
 bookmark_of: https://serviceworke.rs
-trailing_slash: true
 ---

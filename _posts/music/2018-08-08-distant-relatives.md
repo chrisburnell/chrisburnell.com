@@ -10,5 +10,4 @@ authors:
 listen_of: https://open.spotify.com/album/63bs3omFkaEXjzTfTFOEPj
 cover: distant-relatives.jpg
 rating: 5
-trailing_slash: true
 ---

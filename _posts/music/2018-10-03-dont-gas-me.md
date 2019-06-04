@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/40s9ebO3BAEye8KqbIM8tU
 cover: dont-gas-me.jpg
 rating: 4
-trailing_slash: true
 ---

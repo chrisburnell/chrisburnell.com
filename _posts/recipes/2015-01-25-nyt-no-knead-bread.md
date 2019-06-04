@@ -25,7 +25,6 @@ ingredients:
 authors:
 - name: New York Times Cooking
   link: http://cooking.nytimes.com/recipes/11376-no-knead-bread
-trailing_slash: true
 ---
 
 0. In a large bowl combine {% include content/ingredient.html id="flour" %}, {% include content/ingredient.html id="salt" %}, {% include content/ingredient.html id="yeast" %}, and {% include content/ingredient.html id="water" %}. Stir until blended; dough will be shaggy and sticky. Cover bowl with plastic wrap. Let dough rest *at least 12 hours, preferably about 18*, at warm room temperature, about *21°C/70°F*.

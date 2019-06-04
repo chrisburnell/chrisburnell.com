@@ -4,7 +4,6 @@ date: 2014-11-05 13:00:00
 title: Power of Transform Centering - Interactive
 
 codepen_slug: xutbs
-trailing_slash: true
 ---
 
 

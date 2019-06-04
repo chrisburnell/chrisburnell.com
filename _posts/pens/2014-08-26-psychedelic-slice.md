@@ -4,7 +4,6 @@ date: 2014-08-18 12:00:00
 title: Psychedelic Slice
 
 codepen_slug: apogK
-trailing_slash: true
 ---
 
 

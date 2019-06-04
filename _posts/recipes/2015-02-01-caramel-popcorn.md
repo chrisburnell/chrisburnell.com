@@ -24,7 +24,6 @@ ingredients:
 
 authors:
 - name: My Mother
-trailing_slash: true
 ---
 
 0. Pop the {% include content/ingredient.html id="unpopped popcorn" %} and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").

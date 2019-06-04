@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/7397LusD3Odk8yvnHJC4hw
 cover: cosmic-boundaries.jpg
 rating: 4.25
-trailing_slash: true
 ---

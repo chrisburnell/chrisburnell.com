@@ -8,5 +8,4 @@ authors:
 listen_of: https://open.spotify.com/album/1sjg3emGXcOFStmqIUvFeU
 cover: turbulence.jpg
 rating: 4
-trailing_slash: true
 ---
