@@ -16,45 +16,6 @@ hr {
     // show the overflow in Edge and IE
     overflow: visible;
 
-    &::before {
-        content: "";
-        @include v(background-color, white);
-        background-image: url("/images/raven.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: $measure-medium;
-        background-size: var(--measure-medium);
-        filter: grayscale(100%);
-        width: #{$measure-medium * 2};
-        width: calc(var(--measure-medium) * 2);
-        height: #{$measure-medium * 2};
-        height: calc(var(--measure-medium) * 2);
-        display: block;
-        border-radius: 50%;
-        @include absolute(center);
-        @include transition(transform 1s);
-    }
-
-    &:hover {
-        &::before {
-            transform: translateX(-50%) translateY(-50%) rotateY(180deg);
-        }
-    }
-
-    &:nth-of-type(even) {
-        &::before {
-            transform: translateX(-50%) translateY(-50%) rotateY(180deg);
-        }
-    }
-
-    &:hover {
-        &:nth-of-type(even) {
-            &::before {
-                transform: translateX(-50%) translateY(-50%) rotateY(360deg);
-            }
-        }
-    }
-
     %content-elements + & {
         @include media("screen", "below:medium") {
             @include v(margin-top, medium);
