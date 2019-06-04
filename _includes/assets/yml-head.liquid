@@ -76,7 +76,7 @@
     {%- assign link_clean = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
     {%- if page.category == 'beer' -%}
         {%- assign link_clean = page.title | append: ' on Untappd' -%}
-        {%- assign untappd_url = site.urls.untappd | append: 'checkin/' | append: page.slug -%}
+        {%- assign untappd_url = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
         {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
     {%- elsif page.category == 'music' -%}
         {%- assign link_clean = page.title | append: ' on ' -%}
