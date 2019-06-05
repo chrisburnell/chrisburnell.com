@@ -25,10 +25,10 @@
             {{ page.date | date_to_long_string }}
         </a>
     </time>
-    {% if page.edit_date %}
-        <time class="date  dt-updated" datetime="{{ page.edit_date | date_to_xmlschema }}">
+    {% if page.sitemap.lastmod or page.edit_date %}
+        <time class="date  dt-updated" datetime="{{ page.sitemap.lastmod | default: page.edit_date | date_to_xmlschema }}">
             <span>updated on</span>
-            <strong>{{ page.edit_date | date_to_long_string }}</strong>
+            <strong>{{ page.sitemap.lastmod | default: page.edit_date | date_to_long_string }}</strong>
         </time>
     {% endif %}
     {% if page.release %}
