@@ -5,7 +5,6 @@ title: Theming Pinboard
 lede: I recently decided I would embark on the task of theming Pinboard. Here's how I did it.
 tags:
 - css
-- tutorial
 - ux
 
 banner:

@@ -6,7 +6,6 @@ lede: If you've dabbled in Sass before, you're likely familiar with <code>@exten
 tags:
 - css
 - scss
-- tutorial
 
 comments: disqus
 

@@ -6,7 +6,6 @@ lede: We know that webpages are composed of text and boxes. Lots and lots of box
 tags:
 - codepen
 - css
-- tutorial
 
 # banner:
 # - a-slice-of-heaven.png

@@ -6,7 +6,6 @@ lede: Throttle back on your scroll events and watch out for the IntersectionObse
 
 tags:
 - javascript
-- tutorial
 
 banner:
 - crossing-guards@2x.png

@@ -6,7 +6,6 @@ lede: I've been using Jekyll for over three years, and built a series of useful 
 tags:
 - jekyll
 - liquid
-- tutorial
 ---
 
 
