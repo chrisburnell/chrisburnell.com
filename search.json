@@ -77,8 +77,6 @@ sitemap:
     {% endfor %}
   ],
   "mastodon-instances": [
-    {% for instance in site.data.mastodon_instances %}
-      "{{ instance }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+    {{ site.data.mastodon_instances | join: '","' | prepend: '"' | append: '"' }}
   ]
 }

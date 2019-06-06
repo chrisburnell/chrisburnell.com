@@ -8,7 +8,7 @@
         {% if page.page_class contains 'home' %}
             <h1 class="tagline" role="heading">{{ site.tagline | replace: ' for', '<br>for' }}</h1>
         {% else %}
-            <h1 class="title{% if page.page_class contains 'error' %}  title--error{% endif %}" role="heading">
+            <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}" role="heading">
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
                     {%- for category in site.categories -%}

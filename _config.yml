@@ -95,19 +95,17 @@ permalink: /:categories/:title
 
 paginate: 16
 paginate_path: /:num
+
 feed_limit: 24
 
 collections:
   archives:
     output: true
     permalink: /:title
-  assets:
-    output: true
-    permalink: /:title
-  httpstatuses:
+  feeds:
     output: true
     permalink: /:title:output_ext
-  feeds:
+  httpstatuses:
     output: true
     permalink: /:title:output_ext
 
@@ -118,8 +116,9 @@ defaults:
     layout: 'page'
     searchable: no-content
 - scope:
-    type: 'assets'
+    type: 'feeds'
   values:
+    layout: feed
     searchable: false
     sitemap:
       exclude: true
@@ -128,13 +127,6 @@ defaults:
   values:
     layout: 'page'
     page_class: 'page--error'
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    type: 'feeds'
-  values:
-    layout: feed
     searchable: false
     sitemap:
       exclude: true
@@ -155,13 +147,11 @@ defaults:
     mf_root: 'entry'
     webmentions: true
 - scope:
-    type: 'posts'
     path: '_posts/articles'
   values:
     category: 'article'
     prefix: a
 - scope:
-    type: 'posts'
     path: '_posts/beer'
   values:
     category: 'beer'
@@ -172,7 +162,6 @@ defaults:
     emoji: '🍺'
     hidden: true
 - scope:
-    type: 'posts'
     path: '_posts/bookmarks'
   values:
     category: 'bookmark'
@@ -180,7 +169,6 @@ defaults:
     prefix: h
     emoji: '🔖'
 - scope:
-    type: 'posts'
     path: '_posts/books'
   values:
     category: 'book'
@@ -191,7 +179,6 @@ defaults:
     emoji: '📖'
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/coffee'
   values:
     category: 'coffee'
@@ -204,7 +191,6 @@ defaults:
     hidden: true
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/food'
   values:
     category: 'food'
@@ -217,7 +203,6 @@ defaults:
     hidden: true
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/likes'
   values:
     category: 'like'
@@ -230,7 +215,6 @@ defaults:
     ignore: true
     titlefree: true
 - scope:
-    type: 'posts'
     path: '_posts/movies'
   values:
     category: 'movie'
@@ -242,7 +226,6 @@ defaults:
     hidden: true
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/music'
   values:
     category: 'music'
@@ -253,14 +236,12 @@ defaults:
     emoji: '🎶'
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/notes'
   values:
     category: 'note'
     prefix: n
     titlefree: true
 - scope:
-    type: 'posts'
     path: '_posts/pens'
   values:
     category: 'pen'
@@ -268,7 +249,6 @@ defaults:
     emoji: '✒️'
     comments: codepen
 - scope:
-    type: 'posts'
     path: '_posts/podcasts'
   values:
     category: 'podcast'
@@ -280,7 +260,6 @@ defaults:
     hidden: true
     ignore: true
 - scope:
-    type: 'posts'
     path: '_posts/recipes'
   values:
     category: 'recipe'
@@ -290,14 +269,12 @@ defaults:
     prefix: d
     emoji: '📝'
 - scope:
-    type: 'posts'
     path: '_posts/talks'
   values:
     category: 'talk'
     prefix: t
     emoji: '🗣'
 - scope:
-    type: 'posts'
     path: '_posts/tv'
   values:
     category: 'tv'
@@ -308,6 +285,13 @@ defaults:
     emoji: '📺'
     hidden: true
     ignore: true
+- scope:
+    path: '*.svg'
+  values:
+    layout: null
+    searchable: false
+    sitemap:
+      exclude: true
 
 keep_files:
 - css

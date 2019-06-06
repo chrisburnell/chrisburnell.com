@@ -15,11 +15,20 @@
     justify-content: space-between;
 }
 
+.title--success,
 .title--error {
-    @include v(background-color, canada);
-    @include v(color, white);
     width: auto;
     display: inline-block;
     @include v(padding, small);
     text-shadow: none;
+}
+
+.title--success {
+    @include v(background-color, liquid);
+    @include v(color, white);
+}
+
+.title--error {
+    @include v(background-color, canada);
+    @include v(color, white);
 }
