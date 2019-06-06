@@ -28,6 +28,7 @@ Thumbs.db
 *.sqlite
 
 # Jekyll
+.jekyll-cache
 .jekyll-metadata
 _site/
 
