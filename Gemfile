@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 4.0.0.pre.alpha1'
+gem 'jekyll', '~> 3.8.5'
 gem 'jekyll-include-cache'
 gem 'jekyll-mentions'
 gem 'jekyll-paginate'
