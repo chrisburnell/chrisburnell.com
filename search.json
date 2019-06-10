@@ -15,7 +15,7 @@ sitemap:
           "url": "{{ page.url | absolute_url }}",
           "title": "{{ page.title | xml_escape }}",
           "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
-          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}"{% unless page.searchable == 'no-content' %},
+          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace }}"{% unless page.searchable == 'no-content' %},
             "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
           {% endunless %}
         },
@@ -31,9 +31,9 @@ sitemap:
           "date": "{{ page.date | date_to_xml_schema }}",
           "date_friendly": "{{ page.date | date_to_long_string }}",
           {% if page.lede %}
-            "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+            "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace }}",
           {% elsif page.category == 'note' %}
-            "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace | truncatewords: 20 }}",
+            "lede": "{{ page.content | markdownify | strip_html | xml_escape | strip_newlines | normalize_whitespace }}",
           {% endif %}
           "category": "{{ page.category }}"{% if page.codepen_featured %},
             "codepen_featured": true
