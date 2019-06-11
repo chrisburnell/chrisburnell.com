@@ -17,7 +17,7 @@
     <published>{{ page.date | date_to_rfc822 }}</published>
     <updated>{{ page.sitemap.lastmod | default: page.edit_date | default: page.finish | default: page.date | default: site.time | date_to_rfc822 }}</updated>
     {% if page.lede %}
-        <summary>{{ page.lede | replace: "'", "’" | strip_html | xml_escape }}</summary>
+        <summary>{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip }}</summary>
     {% elsif page.category == 'article' %}
         <summary>Shared Article</summary>
     {% elsif page.category == 'beer' %}
