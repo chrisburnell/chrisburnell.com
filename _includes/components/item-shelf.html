@@ -52,11 +52,13 @@
         <div>
             {% assign authors = page.authors | uniq %}
             {%- for author in authors -%}
+                {%- assign author_map = site.data.authors | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
+                {%- assign author_name = author_map.name | default: author.name | default: author | strip -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if author.link -%}
-                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
+                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author_name }}</a>
                 {%- else -%}
-                    <span class="h-cite">{{ author.name | default: author | strip }}</span>
+                    <span class="h-cite">{{ author_name }}</span>
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}

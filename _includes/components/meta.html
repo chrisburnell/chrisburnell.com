@@ -52,11 +52,15 @@
             {% endif %}
             {%- assign authors = page.authors | uniq -%}
             {%- for author in authors -%}
+                {%- assign author_map = site.data.authors | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
+                {%- assign author_name = author_map.name | default: author.name | default: author | strip -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if author.link -%}
-                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author.name | default: author | strip }}</a>
+                {%- if author_map -%}
+                    <a class="h-cite" href="{{ author_map.link }}" title="" rel="external">{{ author_name }}</a>
+                {%- elsif author.link -%}
+                    <a class="h-cite" href="{{ author.link }}" title="" rel="external">{{ author_name }}</a>
                 {%- else -%}
-                    <strong class="h-cite">{{ author.name | default: author | strip }}</strong>
+                    <strong class="h-cite">{{ author_name }}</strong>
                 {%- endif -%}
             {%- endfor -%}
         </div>
@@ -66,14 +70,15 @@
             <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
             {%- for audience in audiences -%}
-                {%- assign audiences_map = site.data.audiences | where_exp: 'target', 'audience.name contains target.contains' | first | default: null -%}
+                {%- assign audience_map = site.data.audiences | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
+                {%- assign audience_name = audience_map.name | default: audience.name | default: audience | strip -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if audiences_map -%}
-                    <a class="h-card  u-audience" href="{{ audiences_map.link }}" title="" rel="external">{{ audiences_map.name | strip }}</a>
+                {%- if audience_map -%}
+                    <a class="h-card  u-audience" href="{{ audience_map.link }}" title="" rel="external">{{ audience_name }}</a>
                 {%- elsif audience.link -%}
-                    <a class="h-card  u-audience" href="{{ audience.link }}" title="" rel="external">{{ audience.name | default: audience | strip }}</a>
+                    <a class="h-card  u-audience" href="{{ audience.link }}" title="" rel="external">{{ audience_name }}</a>
                 {%- else -%}
-                    <strong class="h-card  p-audience">{{ audience.name | default: audience | strip }}</strong>
+                    <strong class="h-card  p-audience">{{ audience_name }}</strong>
                 {%- endif -%}
             {%- endfor -%}
         </div>
@@ -120,23 +125,24 @@
                     {%- endif -%}
                 {%- endunless -%}
                 <a class="h-cite  u-in-reply-to" rel="external" href="{{ reply }}">
-                {% if reply_target %}
-                    {{ reply_target }}
-                {% elsif mastodon_instance %}
-                    {% if mastodon_username %}
-                        @{{ mastodon_username }}@{{ mastodon_instance }}
+                    {% if reply_target %}
+                        {{ reply_target }}
+                    {% elsif mastodon_instance %}
+                        {% if mastodon_username %}
+                            @{{ mastodon_username }}@{{ mastodon_instance }}
+                        {% else %}
+                            a Toot
+                        {% endif %}
+                    {% elsif reply contains 'twitter.com' %}
+                        {% if twitter_username %}
+                            @{{ twitter_username }}
+                        {% else %}
+                            a Tweet
+                        {% endif %}
                     {% else %}
-                        a Toot
+                        {{ reply }}
                     {% endif %}
-                {% elsif reply contains 'twitter.com' %}
-                    {% if twitter_username %}
-                        @{{ twitter_username }}
-                    {% else %}
-                        a Tweet
-                    {% endif %}
-                {% else %}
-                    {{ reply }}
-                {% endif %}
+                </a>
             {% endfor %}
         </div>
     {% endif %}

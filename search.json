@@ -46,7 +46,7 @@ sitemap:
             "rating": "{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}",
             "rating_raw": "{{ page.rating }}"
           {% endif %}{% if page.authors %},
-            "authors": "{% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}"
+            "authors": "{% for author in page.authors %}{%- assign author_map = site.data.authors | where_exp: 'target', 'author_name == target.name' | first | default: null -%}{%- assign author_name = author_map.name | default: author.name | default: author | strip -%}{% unless forloop.first %}, {% endunless %}{{ author_name | xml_escape }}{% endfor %}"
           {% endif %}{% if page.in_reply_to %},
             "in_reply_to": "{{ page.in_reply_to }}"
           {% endif %}{% if page.rsvp %},

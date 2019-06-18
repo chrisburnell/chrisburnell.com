@@ -21,7 +21,7 @@
     {% elsif page.category == 'article' %}
         <summary>Shared Article</summary>
     {% elsif page.category == 'beer' %}
-        <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
+        <summary>{% if page.authors %}By {% for author in page.authors %}{%- assign author_map = site.data.authors | where_exp: 'target', 'author_name == target.name' | first | default: null -%}{%- assign author_name = author_map.name | default: author.name | default: author | strip -%}{% unless forloop.first %}, {% endunless %}{{ author_name | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
     {% elsif page.category == 'book' %}
         {% if page.rating and page.rating != 'Parti Pris' %}
             <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
