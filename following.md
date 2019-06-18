@@ -1,10 +1,8 @@
 ---
 published: false
 page_class: page--following
-
 redirect_from:
-- follow.html
-
+  - follow.html
 title: Following
 lede: I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways over my years on this Earth. Here are a handful of them.
 ---

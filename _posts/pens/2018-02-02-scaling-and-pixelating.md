@@ -1,12 +1,9 @@
 ---
 date: 2018-02-02 16:48:00
-
 title: Scaling and Pixelating
-
 codepen_slug: vdNeEa
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/959107237590589441
+  - https://twitter.com/iamchrisburnell/status/959107237590589441
 ---
 
 

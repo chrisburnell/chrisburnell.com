@@ -4,5 +4,4 @@ title: Game of Thrones
 season: 5
 episode: 6
 runtime: 53:42
-cover:
 ---

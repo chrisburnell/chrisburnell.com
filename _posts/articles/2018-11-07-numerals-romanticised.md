@@ -1,32 +1,26 @@
 ---
 date: 2018-11-07 12:13:00
-
 title: Numerals, Romanticised
 lede: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
-
 tags:
-- jekyll
-- liquid
-
+  - jekyll
+  - liquid
 banner:
-- numerals-romanticised@2x.jpg
-- numerals-romanticised.jpg
+  - numerals-romanticised@2x.jpg
+  - numerals-romanticised.jpg
 banner_mobile:
-- numerals-romanticised_mobile@2x.jpg
-- numerals-romanticised_mobile.jpg
-
+  - numerals-romanticised_mobile@2x.jpg
+  - numerals-romanticised_mobile.jpg
 further_reading:
-- title: Roman numerals on Wikipedia
-  link: https://en.wikipedia.org/wiki/Roman_numerals
-- title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
-  link: https://bloodbuilder.online/
-
+  - title: Roman numerals on Wikipedia
+    link: https://en.wikipedia.org/wiki/Roman_numerals
+  - title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
+    link: https://bloodbuilder.online/
 redirect_from:
-- /article/numerals-romanticized.html
-
+  - /article/numerals-romanticized.html
 syndicate_to:
-- https://mastodon.social/users/chrisburnell/statuses/101029942322511486
-- https://twitter.com/iamchrisburnell/status/1060150621091827712
+  - https://mastodon.social/users/chrisburnell/statuses/101029942322511486
+  - https://twitter.com/iamchrisburnell/status/1060150621091827712
 ---
 
 <blockquote>

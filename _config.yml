@@ -2,68 +2,68 @@ emptyArray: []
 name: &name Chris Burnell
 username: &username chrisburnell
 
-title:        *name
-short_title:  cb
-tagline:      'I’m ravenous for CSS.'
-lede:         'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, UK. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
-color:        5f8aa6
+title: *name
+short_title: cb
+tagline: "I’m ravenous for CSS."
+lede: 'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, UK. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
+color: 5f8aa6
 color_scheme: false
-birth:        2008
+birth: 2008
 
 author:
-  name:        *name
-  shortname:   *username
+  name: *name
+  shortname: *username
   nationality: Canadian
-  location:    London, UK
-  email:       me@chrisburnell.com
-  avatar:      /images/avatar@2x.jpg
-  pgp:         9604F098260A0057
-  codepen:     *username
-  github:      *username
-  gitlab:      *username
-  lastfm:      *username
-  mastodon:    chrisburnell@mastodon.social
-  notist:      *username
+  location: London, UK
+  email: me@chrisburnell.com
+  avatar: /images/avatar@2x.jpg
+  pgp: 9604F098260A0057
+  codepen: *username
+  github: *username
+  gitlab: *username
+  lastfm: *username
+  mastodon: chrisburnell@mastodon.social
+  notist: *username
   speakerdeck: *username
-  twitter:     iamchrisburnell
-  untappd:     *username
+  twitter: iamchrisburnell
+  untappd: *username
   employer:
     name: Squiz
-    url:  https://www.squiz.net
+    url: https://www.squiz.net
     role: Front-End Developer
 
 urls:
-  feed:               /feed.xml
-  authorization:      https://indieauth.com/auth
-  buymeacoffee:       https://www.buymeacoffee.com/8mtx3EQfI
-  codepen:            https://codepen.io/chrisburnell
-  gist:               https://gist.github.com/chrisburnell
-  github:             https://github.com/chrisburnell
-  github_repo:        https://github.com/chrisburnell/chrisburnell.com
-  gitlab:             https://gitlab.com/chrisburnell
-  lastfm:             https://last.fm/user/chrisburnell
-  license:            https://www.gnu.org/licenses/gpl-3.0.txt
+  feed: /feed.xml
+  authorization: https://indieauth.com/auth
+  buymeacoffee: https://www.buymeacoffee.com/8mtx3EQfI
+  codepen: https://codepen.io/chrisburnell
+  gist: https://gist.github.com/chrisburnell
+  github: https://github.com/chrisburnell
+  github_repo: https://github.com/chrisburnell/chrisburnell.com
+  gitlab: https://gitlab.com/chrisburnell
+  lastfm: https://last.fm/user/chrisburnell
+  license: https://www.gnu.org/licenses/gpl-3.0.txt
   londonwebstandards: https://londonwebstandards.org
-  mastodon:           https://mastodon.social/users/chrisburnell
-  micropub:           https://corvus.chrisburnell.com
-  microsub:           https://aperture.p3k.io/microsub/69
-  notist:             https://noti.st/chrisburnell
-  openid:             https://openid.indieauth.com/openid
-  speakerdeck:        https://speakerdeck.com/chrisburnell
-  spotify:            https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z
-  stateofthebrowser:  https://stateofthebrowser.com
-  superfeedr:         https://chrisburnell.superfeedr.com
-  switchboard:        https://switchboard.p3k.io
-  token:              https://tokens.indieauth.com/token
-  twitter:            https://twitter.com/iamchrisburnell
-  untappd:            https://untappd.com/user/chrisburnell
-  webmention:         https://webmention.io/chrisburnell.com
-  webring:            https://🕸💍.ws/💘🇹🇫
-  websub:             '@chrisburnell.com@chrisburnell.com'
+  mastodon: https://mastodon.social/users/chrisburnell
+  micropub: https://corvus.chrisburnell.com
+  microsub: https://aperture.p3k.io/microsub/69
+  notist: https://noti.st/chrisburnell
+  openid: https://openid.indieauth.com/openid
+  speakerdeck: https://speakerdeck.com/chrisburnell
+  spotify: https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z
+  stateofthebrowser: https://stateofthebrowser.com
+  superfeedr: https://chrisburnell.superfeedr.com
+  switchboard: https://switchboard.p3k.io
+  token: https://tokens.indieauth.com/token
+  twitter: https://twitter.com/iamchrisburnell
+  untappd: https://untappd.com/user/chrisburnell
+  webmention: https://webmention.io/chrisburnell.com
+  webring: https://🕸💍.ws/💘🇹🇫
+  websub: "@chrisburnell.com@chrisburnell.com"
 
 sitemap:
   changefreq: monthly
-  priority:   0.5
+  priority: 0.5
 
 sparklines:
   limit_x: 26
@@ -75,10 +75,10 @@ codepen:
     default: 119
     tabfree: 8863
 
-url:        https://chrisburnell.com
-live_url:   https://chrisburnell.com
+url: https://chrisburnell.com
+live_url: https://chrisburnell.com
 static_url: https://chrisburnell.com/static/
-shorturl:   https://repc.co
+shorturl: https://repc.co
 
 detach: false
 host: 127.0.0.1
@@ -110,217 +110,217 @@ collections:
     permalink: /:title:output_ext
 
 defaults:
-- scope:
-    type: 'archives'
-  values:
-    layout: 'page'
-    searchable: no-content
-- scope:
-    type: 'feeds'
-  values:
-    layout: feed
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    type: 'httpstatuses'
-  values:
-    layout: 'page'
-    page_class: 'page--error'
-    searchable: false
-    sitemap:
-      exclude: true
-- scope:
-    type: 'pages'
-  values:
-    layout: 'page'
-- scope:
-    type: 'drafts'
-  values:
-    layout: 'draft'
-    mf_root: 'entry'
-- scope:
-    type: 'posts'
-  values:
-    layout: 'post'
-    author: *name
-    mf_root: 'entry'
-    webmentions: true
-- scope:
-    path: '_posts/articles'
-  values:
-    category: 'article'
-    prefix: a
-- scope:
-    path: '_posts/beer'
-  values:
-    category: 'beer'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'pk-drank'
-    prefix: b
-    emoji: '🍺'
-    hidden: true
-- scope:
-    path: '_posts/bookmarks'
-  values:
-    category: 'bookmark'
-    mf_property: 'bookmark-of'
-    prefix: h
-    emoji: '🔖'
-- scope:
-    path: '_posts/books'
-  values:
-    category: 'book'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'read-of'
-    prefix: r
-    emoji: '📖'
-    ignore: true
-- scope:
-    path: '_posts/coffee'
-  values:
-    category: 'coffee'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'pk-drank'
-    prefix: c
-    emoji: '☕️'
-    draft: true
-    hidden: true
-    ignore: true
-- scope:
-    path: '_posts/food'
-  values:
-    category: 'food'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'pk-ate'
-    prefix: e
-    emoji: '🍛'
-    draft: true
-    hidden: true
-    ignore: true
-- scope:
-    path: '_posts/likes'
-  values:
-    category: 'like'
-    mf_property: 'like-of'
-    prefix: f
-    emoji: '❤️'
-    sitemap:
-      exclude: true
-    hidden: true
-    ignore: true
-    titlefree: true
-- scope:
-    path: '_posts/movies'
-  values:
-    category: 'movie'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'watch-of'
-    prefix: w
-    emoji: '🎬'
-    hidden: true
-    ignore: true
-- scope:
-    path: '_posts/music'
-  values:
-    category: 'music'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'listen-of'
-    prefix: m
-    emoji: '🎶'
-    ignore: true
-- scope:
-    path: '_posts/notes'
-  values:
-    category: 'note'
-    prefix: n
-    titlefree: true
-- scope:
-    path: '_posts/pens'
-  values:
-    category: 'pen'
-    prefix: p
-    emoji: '✒️'
-    comments: codepen
-- scope:
-    path: '_posts/podcasts'
-  values:
-    category: 'podcast'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'listen-of'
-    prefix: l
-    emoji: '🎙'
-    hidden: true
-    ignore: true
-- scope:
-    path: '_posts/recipes'
-  values:
-    category: 'recipe'
-    layout: 'recipe'
-    mf_root: 'recipe'
-    mf_property: 'recipe-of'
-    prefix: d
-    emoji: '📝'
-- scope:
-    path: '_posts/talks'
-  values:
-    category: 'talk'
-    prefix: t
-    emoji: '🗣'
-- scope:
-    path: '_posts/tv'
-  values:
-    category: 'tv'
-    layout: 'review'
-    mf_root: 'review'
-    mf_property: 'watch-of'
-    prefix: v
-    emoji: '📺'
-    hidden: true
-    ignore: true
-- scope:
-    path: '*.svg'
-  values:
-    layout: null
-    searchable: false
-    sitemap:
-      exclude: true
+  - scope:
+      type: "archives"
+    values:
+      layout: "page"
+      searchable: no-content
+  - scope:
+      type: "feeds"
+    values:
+      layout: feed
+      searchable: false
+      sitemap:
+        exclude: true
+  - scope:
+      type: "httpstatuses"
+    values:
+      layout: "page"
+      page_class: "page--error"
+      searchable: false
+      sitemap:
+        exclude: true
+  - scope:
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      type: "drafts"
+    values:
+      layout: "draft"
+      mf_root: "entry"
+  - scope:
+      type: "posts"
+    values:
+      layout: "post"
+      author: *name
+      mf_root: "entry"
+      webmentions: true
+  - scope:
+      path: "_posts/articles"
+    values:
+      category: "article"
+      prefix: a
+  - scope:
+      path: "_posts/beer"
+    values:
+      category: "beer"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "pk-drank"
+      prefix: b
+      emoji: "🍺"
+      hidden: true
+  - scope:
+      path: "_posts/bookmarks"
+    values:
+      category: "bookmark"
+      mf_property: "bookmark-of"
+      prefix: h
+      emoji: "🔖"
+  - scope:
+      path: "_posts/books"
+    values:
+      category: "book"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "read-of"
+      prefix: r
+      emoji: "📖"
+      ignore: true
+  - scope:
+      path: "_posts/coffee"
+    values:
+      category: "coffee"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "pk-drank"
+      prefix: c
+      emoji: "☕️"
+      draft: true
+      hidden: true
+      ignore: true
+  - scope:
+      path: "_posts/food"
+    values:
+      category: "food"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "pk-ate"
+      prefix: e
+      emoji: "🍛"
+      draft: true
+      hidden: true
+      ignore: true
+  - scope:
+      path: "_posts/likes"
+    values:
+      category: "like"
+      mf_property: "like-of"
+      prefix: f
+      emoji: "❤️"
+      sitemap:
+        exclude: true
+      hidden: true
+      ignore: true
+      titlefree: true
+  - scope:
+      path: "_posts/movies"
+    values:
+      category: "movie"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "watch-of"
+      prefix: w
+      emoji: "🎬"
+      hidden: true
+      ignore: true
+  - scope:
+      path: "_posts/music"
+    values:
+      category: "music"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "listen-of"
+      prefix: m
+      emoji: "🎶"
+      ignore: true
+  - scope:
+      path: "_posts/notes"
+    values:
+      category: "note"
+      prefix: n
+      titlefree: true
+  - scope:
+      path: "_posts/pens"
+    values:
+      category: "pen"
+      prefix: p
+      emoji: "✒️"
+      comments: codepen
+  - scope:
+      path: "_posts/podcasts"
+    values:
+      category: "podcast"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "listen-of"
+      prefix: l
+      emoji: "🎙"
+      hidden: true
+      ignore: true
+  - scope:
+      path: "_posts/recipes"
+    values:
+      category: "recipe"
+      layout: "recipe"
+      mf_root: "recipe"
+      mf_property: "recipe-of"
+      prefix: d
+      emoji: "📝"
+  - scope:
+      path: "_posts/talks"
+    values:
+      category: "talk"
+      prefix: t
+      emoji: "🗣"
+  - scope:
+      path: "_posts/tv"
+    values:
+      category: "tv"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "watch-of"
+      prefix: v
+      emoji: "📺"
+      hidden: true
+      ignore: true
+  - scope:
+      path: "*.svg"
+    values:
+      layout: null
+      searchable: false
+      sitemap:
+        exclude: true
 
 keep_files:
-- css
-- js
-- fonts
-- images
+  - css
+  - js
+  - fonts
+  - images
 
 exclude:
-- CNAME
-- CODE_OF_CONDUCT.md
-- COMMIT_TEMPLATE.md
-- CONTRIBUTING.md
-- Gemfile
-- gulpfile.babel.js
-- ISSUE_TEMPLATE.md
-- LICENSE
-- node_modules
-- package.json
-- package-lock.json
-- PULL_REQUEST_TEMPLATE.md
-- README.md
-- src
-- vendor
+  - CNAME
+  - CODE_OF_CONDUCT.md
+  - COMMIT_TEMPLATE.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - gulpfile.babel.js
+  - ISSUE_TEMPLATE.md
+  - LICENSE
+  - node_modules
+  - package.json
+  - package-lock.json
+  - PULL_REQUEST_TEMPLATE.md
+  - README.md
+  - src
+  - vendor
 
 plugins:
-- jekyll-include-cache
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
 
 jekyll-mentions:
   base_url: https://twitter.com

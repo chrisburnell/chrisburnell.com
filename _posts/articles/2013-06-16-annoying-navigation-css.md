@@ -1,18 +1,15 @@
 ---
 date: 2013-06-16 03:58:00
-
 title: Annoying Navigation CSS
 lede: Navigation is crucial to a functional website. It is how your users find the information they're after; get it right, and your users are happy—get it wrong, and they go insane!
 tags:
-- codepen
-- css
-- ux
-
+  - codepen
+  - css
+  - ux
 banner:
-- annoying-navigation-css.png
+  - annoying-navigation-css.png
 banner_mobile:
-- annoying-navigation-css_mobile.png
-
+  - annoying-navigation-css_mobile.png
 comments: disqus
 codepen: true
 ---

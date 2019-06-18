@@ -1,24 +1,20 @@
 ---
 date: 2018-10-15 10:34:00
-
 title: Variables for Both
 lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS mixin.
 tags:
-- css
-- scss
-
+  - css
+  - scss
 further_reading:
-- title: W3 CSS Custom Properties Specification
-  link: https://www.w3.org/TR/css-variables/
-- title: MDN — Using CSS custom properties
-  link: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
-- title: CSS-Tricks’ Guide to CSS Custom Properties
-  link: https://css-tricks.com/guides/css-custom-properties/
-
+  - title: W3 CSS Custom Properties Specification
+    link: https://www.w3.org/TR/css-variables/
+  - title: MDN — Using CSS custom properties
+    link: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+  - title: CSS-Tricks’ Guide to CSS Custom Properties
+    link: https://css-tricks.com/guides/css-custom-properties/
 syndicate_to:
-- https://mastodon.social/users/chrisburnell/statuses/100899031142247634
-- https://twitter.com/iamchrisburnell/status/1051772305360195584
-
+  - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
+  - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
 ---
 

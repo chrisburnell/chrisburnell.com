@@ -1,23 +1,19 @@
 ---
 date: 2013-06-15 13:21:00
-
 title: First Article Ever
 lede: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
-- css
-- github
-- jekyll
-- stateofthebrowser
-
+  - css
+  - github
+  - jekyll
+  - stateofthebrowser
 banner:
-- first-article-ever.png
+  - first-article-ever.png
 banner_mobile:
-- first-article-ever_mobile.png
-
+  - first-article-ever_mobile.png
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/345878691110334466
+  - https://twitter.com/iamchrisburnell/status/345878691110334466
 ---
 
 

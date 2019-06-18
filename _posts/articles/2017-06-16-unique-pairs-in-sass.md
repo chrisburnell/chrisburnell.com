@@ -1,23 +1,19 @@
 ---
 date: 2017-06-16 14:00:00
-
 title: Unique Pairs in Sass
 lede: In creating a from-scratch grid for a redevelopment project, I was using Sass to loop through various bits of data to generate a bunch of repetitive CSS, but I realised I had no DRY way of generating a list of unique pairs of items from a given dataset, so I set out to find out how.
 tags:
-- scss
-
+  - scss
 banner:
-- unique-pairs-in-sass@2x.jpg
-- unique-pairs-in-sass.jpg
+  - unique-pairs-in-sass@2x.jpg
+  - unique-pairs-in-sass.jpg
 banner_mobile:
-- unique-pairs-in-sass_mobile@2x.jpg
-- unique-pairs-in-sass_mobile.jpg
-
+  - unique-pairs-in-sass_mobile@2x.jpg
+  - unique-pairs-in-sass_mobile.jpg
 codepen: true
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/877492210241032192
+  - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---
 
 

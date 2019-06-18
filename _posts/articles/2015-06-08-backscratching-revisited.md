@@ -1,22 +1,17 @@
 ---
 date: 2015-06-08 15:00:00
-
 title: Backscratching Revisited
 lede: I revised my original technique for styling default elements and took it a step further to scratch the greatest number of backs.
 tags:
-- css
-
+  - css
 banner:
-- backscratching-revisited.png
+  - backscratching-revisited.png
 banner_mobile:
-- backscratching-revisited_mobile.png
-
+  - backscratching-revisited_mobile.png
 edit_text: I originally documented this technique in a previous article, <a href="https://chrisburnell.com/article/ill-scratch-your-back">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message; although, I no longer use Microdata, opting for [Microformats](http://microformats.org/){:rel="external"} instead.
-
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/607915792911495168
+  - https://twitter.com/iamchrisburnell/status/607915792911495168
 ---
 
 

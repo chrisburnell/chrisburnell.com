@@ -1,23 +1,19 @@
 ---
 date: 2014-08-27 15:00:00
-
 title: A Slice of Heaven
 lede: We know that webpages are composed of text and boxes. Lots and lots of boxes. But with the power and might of CSS3 we can do some fancy stuff that never used to be possible.
 tags:
-- codepen
-- css
-
+  - codepen
+  - css
 # banner:
-# - a-slice-of-heaven.png
+#   - a-slice-of-heaven.png
 # banner_mobile:
-# - a-slice-of-heaven_mobile.png
-
+#   - a-slice-of-heaven_mobile.png
 codepen: true
 caniuse: true
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/504642274148765696
+  - https://twitter.com/iamchrisburnell/status/504642274148765696
 ---
 
 

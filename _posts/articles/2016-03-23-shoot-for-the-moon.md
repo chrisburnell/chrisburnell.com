@@ -1,33 +1,28 @@
 ---
 date: 2016-03-23 18:22:00
-
 title: Shoot for the Moon
 lede: Don't be half-minded when dealing with fractions and pixels. How can we ensure all browsers interpret fractions in our CSS equally?
 tags:
-- css
-
+  - css
 banner:
-- shoot-for-the-moon@2x.jpg
-- shoot-for-the-moon.jpg
+  - shoot-for-the-moon@2x.jpg
+  - shoot-for-the-moon.jpg
 banner_mobile:
-- shoot-for-the-moon_mobile@2x.jpg
-- shoot-for-the-moon_mobile.jpg
-
+  - shoot-for-the-moon_mobile@2x.jpg
+  - shoot-for-the-moon_mobile.jpg
 codepen: true
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/712709693878173697
-
+  - https://twitter.com/iamchrisburnell/status/712709693878173697
 further_reading:
-- link: "http://cruft.io/posts/percentage-calculations-in-ie"
-  title: "Browser Rounding and Fractional Pixels"
-- link: "http://ejohn.org/blog/sub-pixel-problems-in-css"
-  title: "Sub-Pixel Problems in CSS"
-- link: "http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass"
-  title: "Reduce sub-pixel rendering issues with Sass functions"
-- link: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering"
-  title: "A Closer Look At Font Rendering"
+  - link: "http://cruft.io/posts/percentage-calculations-in-ie"
+    title: "Browser Rounding and Fractional Pixels"
+  - link: "http://ejohn.org/blog/sub-pixel-problems-in-css"
+    title: "Sub-Pixel Problems in CSS"
+  - link: "http://www.guyroutledge.co.uk/blog/reduce-sub-pixel-rendering-with-sass"
+    title: "Reduce sub-pixel rendering issues with Sass functions"
+  - link: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering"
+    title: "A Closer Look At Font Rendering"
 ---
 
 

@@ -1,22 +1,18 @@
 ---
 date: 2015-03-12 10:00:00
-
 title: Theming Pinboard
 lede: I recently decided I would embark on the task of theming Pinboard. Here's how I did it.
 tags:
-- css
-- ux
-
+  - css
+  - ux
 banner:
-- theming-pinboard.png
+  - theming-pinboard.png
 banner_mobile:
-- theming-pinboard_mobile.png
-
+  - theming-pinboard_mobile.png
 comments: disqus
 twitter: true
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/576014944627490816
+  - https://twitter.com/iamchrisburnell/status/576014944627490816
 ---
 
 

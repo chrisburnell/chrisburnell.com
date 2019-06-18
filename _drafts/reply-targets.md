@@ -1,11 +1,10 @@
 ---
 date: 2019-05-16 00:00:00
-
 title: Reply Targets
 lede: What abstractions can we make to simplify the process of presenting meaningful context to replies?
 tags:
-- jekyll
-- liquid
+  - jekyll
+  - liquid
 ---
 
 Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner.

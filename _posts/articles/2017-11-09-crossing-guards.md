@@ -1,25 +1,20 @@
 ---
 date: 2017-11-09 17:00:00
-
 title: Crossing Guards
 lede: Throttle back on your scroll events and watch out for the IntersectionObserver!
-
 tags:
-- javascript
-
+  - javascript
 banner:
-- crossing-guards@2x.png
-- crossing-guards.png
+  - crossing-guards@2x.png
+  - crossing-guards.png
 banner_mobile:
-- crossing-guards_mobile@2x.png
-- crossing-guards_mobile.png
-
+  - crossing-guards_mobile@2x.png
+  - crossing-guards_mobile.png
 caniuse: true
 codepen: true
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/928671414017773568
+  - https://twitter.com/iamchrisburnell/status/928671414017773568
 ---
 
 

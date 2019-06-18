@@ -1,30 +1,26 @@
 ---
 date: 2016-03-18 14:15:00
-
 title: An Extended Response
 lede: If you've dabbled in Sass before, you're likely familiar with <code>@extend</code> and <code>@mixin</code>, but is there any use-case for <code>@extend</code>? Given the benchmark performance of the two, can we still be confident in the cascade when <code>@extending</code> in Sass?
 tags:
-- css
-- scss
-
+  - css
+  - scss
 comments: disqus
-
 syndicate_to:
-- https://twitter.com/iamchrisburnell/status/710837030629023744
-
+  - https://twitter.com/iamchrisburnell/status/710837030629023744
 further_reading:
-- link: "http://csswizardry.com/2016/02/mixins-better-for-performance"
-  title: "Mixins Better for Performance"
-- link: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin"
-  title: "When to use @extend; when to use a mixin"
-- link: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass"
-  title: "Extending silent classes in Sass"
-- link: "http://www.sitepoint.com/avoid-sass-extend"
-  title: "Why You Should Avoid Sass @extend"
-- link: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass"
-  title: "Don’t Over-@extend Yourself in Sass"
-- link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data"
-  title: "Sass Mixins vs Extends: The Data"
+  - link: "http://csswizardry.com/2016/02/mixins-better-for-performance"
+    title: "Mixins Better for Performance"
+  - link: "http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin"
+    title: "When to use @extend; when to use a mixin"
+  - link: "http://csswizardry.com/2014/01/extending-silent-classes-in-sass"
+    title: "Extending silent classes in Sass"
+  - link: "http://www.sitepoint.com/avoid-sass-extend"
+    title: "Why You Should Avoid Sass @extend"
+  - link: "http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass"
+    title: "Don’t Over-@extend Yourself in Sass"
+  - link: "https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data"
+    title: "Sass Mixins vs Extends: The Data"
 ---
 
 

@@ -3,10 +3,10 @@ date: 2018-10-25 09:00:00
 title: Let me show you the door, <code>col-md-4</code>
 lede: For over a decade now, it's been the norm to layout our websites with a system in CSS that divides the page into columns and defines the width for components based on the number of columns it should take up. I'm proposing we drop arbitrary numbers of columns and write CSS that reflects exactly what we want without roundabout definitions imposed by a column-based layout.
 tags:
-- css
+  - css
 banner:
-- death-to-cols.png
-- death-to-cols@2x.png
+  - death-to-cols.png
+  - death-to-cols@2x.png
 ---
 
 If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the concept of a CSS grid system. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.

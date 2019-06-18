@@ -1,36 +1,36 @@
 language: ruby
 
 rvm:
-- 2.3
+  - 2.3
 
 addons:
   apt:
     packages:
-    - sshpass
+      - sshpass
 
 install:
-- gem update bundler
-- bundle install --path vendor/bundle
-- npm install gulp-cli
-- npm install
+  - gem update bundler
+  - bundle install --path vendor/bundle
+  - npm install gulp-cli
+  - npm install
 
 before_script:
-- export SSHPASS=$password
+  - export SSHPASS=$password
 
 script:
-- gulp
-- bundle exec jekyll build
+  - gulp
+  - bundle exec jekyll build
 
 cache:
   bundler: true
   directories:
-  - node_modules
+    - node_modules
 
 branches:
   only:
-  - master
+    - master
 
 after_success:
-- tar -czvf chrisburnell.tgz _site/*
-- sshpass -e scp -P $port -o stricthostkeychecking=no chrisburnell.tgz $username@$host:$path
-- sshpass -e ssh -p $port $username@$host $path/$file
+  - tar -czvf chrisburnell.tgz _site/*
+  - sshpass -e scp -P $port -o stricthostkeychecking=no chrisburnell.tgz $username@$host:$path
+  - sshpass -e ssh -p $port $username@$host $path/$file

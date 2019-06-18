@@ -2,28 +2,25 @@
 title: Caramel Popcorn
 cooking_time: 75 minutes
 preheat: true
-
 banner: caramel-popcorn.png
 banner_mobile: caramel-popcorn_mobile.png
-
 ingredients:
-- name: unpopped popcorn
-  ml: 250
-- name: margarine
-  ml: 250
-- name: brown sugar, packed
-  ml: 500
-- name: corn/golden syrup
-  ml: 125
-- name: salt
-  ml: 2.5
-- name: vanilla extract
-  ml: 2.5
-- name: baking soda
-  ml: 1.25
-
+  - name: unpopped popcorn
+    ml: 250
+  - name: margarine
+    ml: 250
+  - name: brown sugar, packed
+    ml: 500
+  - name: corn/golden syrup
+    ml: 125
+  - name: salt
+    ml: 2.5
+  - name: vanilla extract
+    ml: 2.5
+  - name: baking soda
+    ml: 1.25
 authors:
-- name: My Mother
+  - name: My Mother
 ---
 
 0. Pop the {% include content/ingredient.html id="unpopped popcorn" %} and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").
