@@ -27,7 +27,7 @@
                     {%- assign mastodon_username = null -%}
                     {%- assign twitter_username = null -%}
                     {%- assign reply_target = null -%}
-                    {%- for target in site.data.reply_targets -%}
+                    {%- for target in site.data.people -%}
                         {%- if target.mastodon -%}
                             {%- assign mastodon_instance = target.mastodon | split: '@' | last -%}
                             {%- assign mastodon_username = target.mastodon | split: '@' | first -%}
@@ -47,9 +47,9 @@
                             {%- endif -%}
                         {%- elsif page.in_reply_to.first contains 'twitter.com' -%}
                             {%- assign twitter_username = page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last | default: null -%}
-                            {%- assign reply_target = site.data.reply_targets | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
+                            {%- assign reply_target = site.data.people | where_exp: 'target', 'target.twitter == twitter_username' | first | map: 'name' | default: null -%}
                         {%- else -%}
-                            {%- assign reply_target = site.data.reply_targets | where_exp: 'target', 'page.in_reply_to.first contains target.link' | first | map: 'name' | default: null -%}
+                            {%- assign reply_target = site.data.people | where_exp: 'target', 'page.in_reply_to.first contains target.link' | first | map: 'name' | default: null -%}
                         {%- endif -%}
                     {%- endunless -%}
                     {% if reply_target %}
@@ -102,8 +102,8 @@
                     by
                     {%- assign authors = page.authors | uniq -%}
                     {%- for author in authors -%}
-                        {%- assign author_map = site.data.authors | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
-                        {%- assign author_name = author_map.name | default: author.name | default: author | strip -%}
+                        {%- assign author_name = author.name | default: author | strip -%}
+                        {%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
                         {% unless forloop.first %}, {% endunless %}
                         <span class="{% unless include.strip_h == true %}h-cite{% endunless %}">{{ author_name }}</span>
                     {%- endfor -%}

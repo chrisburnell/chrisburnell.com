@@ -1,3 +1,4 @@
+# Me
 - name: a previous post
   link: chrisburnell.com
 - name: a previous toot
@@ -5,18 +6,16 @@
 - name: a previous tweet
   twitter: iamchrisburnell
 
-- name: Homebrew Website Club London
-  link: hwclondon.co.uk
-- name: IndieWebCamp Online
-  link: 2019.indieweb.org/online
-
+# People
 - name: Aaron Parecki
   link: aaronparecki.com
+  twitter: aaronpk
 - name: Ana Rodrigues
   link: ohhelloana.blog
   twitter: ohhelloana
 - name: Ben Walters
   link: forgotten.media
+  twitter: ForgottenMG
 - name: Bruce Delo
   link: flyknifecomics.com
   twitter: flyknifecomics
@@ -35,6 +34,7 @@
   twitter: jackyalcine
 - name: Jonas Voss
   link: blog.voss.co
+  twitter: voss
 - name: Justin Avery
   link: responsivedesign.is
   twitter: justinavery
@@ -54,3 +54,23 @@
 - name: Vincent Pickering
   link: vincentp.me
   twitter: vincentp
+- name: Jeremy Cherfas
+  link: https://www.jeremycherfas.net/
+
+# Places and Conferences
+- name: Homebrew Website Club London
+  link: hwclondon.co.uk
+- name: IndieWebCamp Online
+  link: 2019.indieweb.org/online
+
+# Music
+- name: Kendrick Lamar
+  link: https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg
+- name: Skepta
+  link: https://open.spotify.com/artist/2p1fiYHYiXz9qi0JJyxBzN
+- name: Mitch Murder
+  link: https://mitchmurder.bandcamp.com
+
+# Breweries
+- name: Mikkeller
+  link: http://mikkeller.dk/
