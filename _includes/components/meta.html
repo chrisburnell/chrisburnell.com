@@ -69,13 +69,12 @@
             <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
             {%- for audience in audiences -%}
-                {%- assign audience_map = site.data.audiences | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
-                {%- assign audience_name = audience_map.name | default: audience.name | default: audience | strip -%}
+                {%- assign audience_name = audience.name | default: audience | strip -%}
+                {%- assign audience_map = site.data.people | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
+                {%- assign audience_link = audience_map.link | default: audience.link | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if audience_map -%}
-                    <a class="h-card  u-audience" href="{{ audience_map.link }}" title="" rel="external">{{ audience_name }}</a>
-                {%- elsif audience.link -%}
-                    <a class="h-card  u-audience" href="{{ audience.link }}" title="" rel="external">{{ audience_name }}</a>
+                {%- if audience_link -%}
+                    <a class="h-card  u-audience" href="{{ audience_link }}" title="" rel="external">{{ audience_name }}</a>
                 {%- else -%}
                     <strong class="h-card  p-audience">{{ audience_name }}</strong>
                 {%- endif -%}

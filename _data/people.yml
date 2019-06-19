@@ -63,6 +63,12 @@
 - name: IndieWebCamp Online
   link: 2019.indieweb.org/online
 
+# Websites
+- name: IndieWeb
+  link: https://indieweb.org
+- name: Squiz
+  link: https://squiz.net
+
 # Music
 - name: Kendrick Lamar
   link: https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg
