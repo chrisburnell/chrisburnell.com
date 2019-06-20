@@ -16,6 +16,13 @@
   "engines": {
     "node": "~11"
   },
+  "scripts": {
+    "start": "gulp",
+    "css": "gulp css",
+    "js": "gulp js",
+    "images": "gulp images",
+    "watch": "gulp watch"
+  },
   "dependencies": {
     "@babel/core": "7.4.5",
     "@babel/preset-env": "7.4.5",
@@ -46,8 +53,5 @@
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
-  },
-  "scripts": {
-    "build": "gulp"
   }
 }
