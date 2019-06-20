@@ -85,9 +85,9 @@
     {% if in_reply_to %}
         <div class="in-reply-to">
             {% if page.rsvp %}
-                <data class="p-rsvp" hidden>{{ page.rsvp }}</data>
+                {%- assign rsvp_response = page.rsvp.response | default: page.rsvp -%}
                 <span>responded</span>
-                <strong>{{ page.rsvp | capitalize }}</strong>
+                <strong class="p-rsvp">{{ rsvp_response | capitalize }}</strong>
                 <span>to</span>
             {% else %}
                 <span>in reply to</span>
@@ -144,20 +144,20 @@
             {% endfor %}
         </div>
     {% endif %}
-    {% if page.rsvp_date %}
+    {% if page.rsvp.date %}
         {%- assign day = site.time | date: '%d' -%}
         {%- assign month = site.time | date: '%m' -%}
         {%- assign year = site.time | date: '%Y' -%}
-        {%- assign check_day = page.rsvp_date | date: '%d' -%}
-        {%- assign check_month = page.rsvp_date | date: '%m' -%}
-        {%- assign check_year = page.rsvp_date | date: '%Y' -%}
-        <time class="date" datetime="{{ page.rsvp_date | date_to_xmlschema }}{% if page.rsvp_finish %}–{{ page.rsvp_finish | date_to_xmlschema }}{% endif %}">
+        {%- assign check_day = page.rsvp.date | date: '%d' -%}
+        {%- assign check_month = page.rsvp.date | date: '%m' -%}
+        {%- assign check_year = page.rsvp.date | date: '%Y' -%}
+        <time class="date" datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}–{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
             {%- if check_year > year or (check_year == year and check_month > month) or (check_year == year and check_month == month and check_day >= day) -%}
                 <span>taking place on</span>
             {%- else -%}
                 <span>took place on</span>
             {%- endif -%}
-            <strong>{{ page.rsvp_date | date_to_long_string }}{% if page.rsvp_finish %} – {{ page.rsvp_finish | date_to_long_string }}{% endif %}</strong>
+            <strong>{{ page.rsvp.date | date_to_long_string }}{% if page.rsvp.finish %} – {{ page.rsvp.finish | date_to_long_string }}{% endif %}</strong>
         </time>
     {% endif %}
     {% if page.category == 'article' %}

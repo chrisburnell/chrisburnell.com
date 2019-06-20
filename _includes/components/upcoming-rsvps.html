@@ -3,9 +3,9 @@
 {%- assign month = site.time | date: '%m' -%}
 {%- assign year = site.time | date: '%Y' -%}
 {%- for page in include.posts -%}
-    {%- assign check_day = page.rsvp_date | date: '%d' -%}
-    {%- assign check_month = page.rsvp_date | date: '%m' -%}
-    {%- assign check_year = page.rsvp_date | date: '%Y' -%}
+    {%- assign check_day = page.rsvp.date | date: '%d' -%}
+    {%- assign check_month = page.rsvp.date | date: '%m' -%}
+    {%- assign check_year = page.rsvp.date | date: '%Y' -%}
     {%- if check_year > year or (check_year == year and check_month > month) or (check_year == year and check_month == month and check_day >= day) -%}
         {%- assign upcoming_rsvps = upcoming_rsvps | push: page -%}
     {%- endif -%}

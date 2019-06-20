@@ -127,8 +127,8 @@
                     <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
                 {% endif %}
             </div>
-            {% if page.rsvp_date %}
-                <time class="date  date--range" datetime="{{ page.rsvp_date | date_to_xmlschema }}">{{ page.rsvp_date | date_to_long_string }}{% if page.rsvp_finish %} – {{ page.rsvp_finish | date_to_long_string }}{% endif %}</time>
+            {% if page.rsvp.date %}
+                <time class="date  date--range" datetime="{{ page.rsvp.date | date_to_xmlschema }}">{{ page.rsvp.date | date_to_long_string }}{% if page.rsvp.finish %} – {{ page.rsvp.finish | date_to_long_string }}{% endif %}</time>
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
             {% else %}
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
