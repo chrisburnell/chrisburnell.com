@@ -7,7 +7,7 @@ tags:
   - liquid
 ---
 
-Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner.
+Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner, as can be seen on [this post](/note/1525182719).
 
 For example, if I respond to someone on *Twitter*, the reply target is the URL to the tweet to which I am responding, e.g. [https://twitter.com/dletorey/status/991247595132551168](https://twitter.com/dletorey/status/991247595132551168){:rel="external"}.
 
