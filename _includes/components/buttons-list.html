@@ -22,7 +22,7 @@
             {%- assign category = site.data.categories | where: 'category', category_title | first -%}
             {%- assign icon = category.icon -%}
             {%- if include.type == 'feeds' -%}
-                {%- assign url = '/feed-' | append: category.type | append: '.xml' -%}
+                {%- assign url = '/' | append: category.type | append: '.xml' -%}
                 {%- assign rel = 'alternate' -%}
                 {%- assign icon = 'rss' -%}
             {%- elsif include.type == 'archives' -%}

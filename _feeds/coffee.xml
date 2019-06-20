@@ -2,6 +2,8 @@
 title: Coffee Feed
 lede: All of my coffee check-ins.
 type: coffee
+redirect_from:
+  - feed-coffee.xml
 ---
 
 {% for page in site.categories.coffee limit: site.feed_limit %}

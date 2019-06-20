@@ -24,9 +24,9 @@
         </a>
     {% endif %}
     {% if metadata %}
-        <a class="button" rel="alternate" href="/feed-{{ metadata.type }}.xml">
+        <a class="button" rel="alternate" href="/{{ metadata.type }}.xml">
             {% include_cached content/svg.html type='rss' %}
-            {{ metadata.title }} Atom Feed
+            {{ metadata.title }} Feed
         </a>
     {% endif %}
 </nav>

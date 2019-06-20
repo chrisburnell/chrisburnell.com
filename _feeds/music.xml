@@ -2,6 +2,8 @@
 title: Music Feed
 lede: All of my music check-ins.
 type: music
+redirect_from:
+  - feed-music.xml
 ---
 
 {% for page in site.categories.music limit: site.feed_limit %}

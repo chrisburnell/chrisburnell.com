@@ -5,7 +5,7 @@ searchable: no-content
 title: Replies
 lede: All of my replies.
 
-feed: /feed-replies.xml
+feed: /replies.xml
 ---
 
 {%- assign replies = site.posts | where_exp: 'page', 'page.in_reply_to != nil' -%}

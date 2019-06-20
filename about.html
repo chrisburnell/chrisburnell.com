@@ -1,13 +1,11 @@
 ---
+title: About Me
+lede: My name is <span class="canada">Chris Burnell</span>, and I'm a <span class="canada">Canadian</span> User Interface Developer living and working in London, UK.
 page_class: page--about
 sitemap:
   priority: 1.0
-
 redirect_from:
-- me.html
-
-title: About Me
-lede: My name is <span class="canada">Chris Burnell</span>, and I'm a <span class="canada">Canadian</span> User Interface Developer living and working in London, UK.
+  - me.html
 ---
 
 
@@ -89,7 +87,7 @@ lede: My name is <span class="canada">Chris Burnell</span>, and I'm a <span clas
     <li><a class="button" href="/feed.xml" rel="alternate">All Posts</a></li>
     {% for page in site.data.categories %}
         <li>
-            <a class="button" href="/feed-{{ page.type }}.xml" rel="alternate">{{ page.title }}</a>
+            <a class="button" href="/{{ page.type }}.xml" rel="alternate">{{ page.title }}</a>
         </li>
     {% endfor %}
 </ul>
