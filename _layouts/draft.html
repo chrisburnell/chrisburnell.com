@@ -4,7 +4,7 @@
 <main class="wrap  h-entry" role="main">
     <article class="content" id="content" role="article">
 
-        <h1 class="title" id="article" role="heading">
+        <h1 class="title" id="article">
             {% unless page.reacji or page.titlefree %}<span class="p-name">{% endunless %}
                 {% if page.category == 'like' %}
                     Liked a page on: {{ link_clean | split: '/' | first }}
