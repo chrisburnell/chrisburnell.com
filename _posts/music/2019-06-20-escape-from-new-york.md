@@ -7,5 +7,5 @@ authors:
     link: https://open.spotify.com/artist/1Nd1g8fezKoJ6DGauWbZIm
 listen_of: https://open.spotify.com/album/1NPxBmG3k3UzybcaxxSVuB
 cover: escape-from-new-york.jpg
-# rating:
+rating: 3.25
 ---
