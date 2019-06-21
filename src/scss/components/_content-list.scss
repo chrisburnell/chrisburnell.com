@@ -107,10 +107,6 @@
             // EN DASH, NO-BREAK SPACE
             content: "– ";
         }
-
-        &.date--range::before {
-            content: "on ";
-        }
     }
 
     dl + .date {

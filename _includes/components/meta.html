@@ -85,9 +85,9 @@
     {% if in_reply_to %}
         <div class="in-reply-to">
             {% if page.rsvp %}
-                {%- assign rsvp_response = page.rsvp.response | default: page.rsvp -%}
+                {%- assign rsvp_going = page.rsvp.going | default: page.rsvp -%}
                 <span>responded</span>
-                <strong class="p-rsvp">{{ rsvp_response | capitalize }}</strong>
+                <strong class="p-rsvp">{% if rsvp_going %}Yes{% else %}No{% endif %}</strong>
                 <span>to</span>
             {% else %}
                 <span>in reply to</span>
