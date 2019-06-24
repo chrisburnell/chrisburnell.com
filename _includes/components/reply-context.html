@@ -1,11 +1,21 @@
-{% if page.in_reply_to.first contains 'twitter.com' or page.in_reply_to.first contains 'mastodon.social' %}
+{% if page.in_reply_to.first contains 'chrisburnell.com' or page.in_reply_to.first contains 'twitter.com' or page.in_reply_to.first contains 'mastodon.social' %}
     <div class="reply-context">
-    {% if page.in_reply_to.first contains 'twitter.com' %}
-        <blockquote class="twitter-tweet" lang="en"><a href="{{ page.in_reply_to.first }}"></a></blockquote>
-        <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
-    {% endif %}
-    {% if page.in_reply_to.first contains 'mastodon.social' %}
-        <iframe src="{{ page.in_reply_to.first }}/embed" class="mastodon-embed"></iframe>
-    {% endif %}
+        {% if page.in_reply_to.first contains 'twitter.com' %}
+            <blockquote class="twitter-tweet" lang="en"><a href="{{ page.in_reply_to.first }}"></a></blockquote>
+            <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
+        {% elsif page.in_reply_to.first contains 'mastodon.social' %}
+            <iframe src="{{ page.in_reply_to.first }}/embed" class="mastodon-embed"></iframe>
+            <noscript>Please enable JavaScript to see Mastodon.social-specific components.</noscript>
+        {% elsif page.in_reply_to.first contains 'chrisburnell.com' %}
+            {% assign page_map = site.posts | where_exp: 'post', 'page.in_reply_to.first contains post.slug' | first %}
+            <blockquote>
+                <div><em>in reply to:</em></div>
+                {% if page_map.titlefree %}
+                    <p><a href="{{ page_map.url }}">{{ page_map.content }} →</a></p>
+                {% else %}
+                    <h3 class="delta"><a href="{{ page_map.url }}">{{ page_map.title }} →</a></h3>
+                {% endif %}
+            </blockquote>
+        {% endif %}
     </div>
 {% endif %}

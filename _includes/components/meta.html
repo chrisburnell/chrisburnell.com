@@ -96,7 +96,13 @@
                 {%- assign mastodon_instance = null -%}
                 {%- assign mastodon_username = null -%}
                 {%- assign twitter_username = null -%}
+                {%- assign page_map = site.posts | where_exp: 'post', 'page.in_reply_to.first contains post.slug' | first -%}
                 {%- assign reply_target = null -%}
+                {%- if page_map -%}
+                    {%- unless page_map.titlefree -%}
+                        {%- assign reply_target = page_map.title -%}
+                    {%- endunless -%}
+                {%- endif -%}
                 {%- for target in site.data.people -%}
                     {%- if target.mastodon -%}
                         {%- assign target_instance = target.mastodon | split: '@' | last -%}
