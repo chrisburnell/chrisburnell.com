@@ -4,7 +4,7 @@
             <img alt="" class="u-photo" role="presentation" src="{{ page.cover }}">
         {% else %}
             <source srcset="{{ site.static_url | append: page.category }}/{{ page.cover | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if page.cover contains '@' %}{{ page.cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}"
-                    type="image/webp">
+                    type="image/webp" />
             <img    alt="" class="u-photo" role="presentation"
                     src="{{ site.static_url | append: page.category }}/{{ page.cover }}"
                     srcset="{{ site.static_url | append: page.category }}/{{ page.cover }} {% if page.cover contains '@' %}{{ page.cover | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}">
