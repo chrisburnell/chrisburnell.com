@@ -284,6 +284,8 @@
                     {% capture syndication_gist %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{% endcapture %}
                 {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
                     {% capture syndication_github %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>{% endcapture %}
+                {% elsif syndication contains 'news.indieweb.org' %}
+                    {% capture syndication_indienews %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">IndieNews</a>{% endcapture %}
                 {% elsif syndication contains 'mastodon.social' %}
                     {% capture syndication_mastodon %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
                                                      <small class="strong">
@@ -321,6 +323,11 @@
             {%- if syndication_github -%}
                 {% if syndication_count > 0 %}, {% endif %}
                 {{ syndication_github }}
+                {%- assign syndication_count = syndication_count | plus: 1 -%}
+            {%- endif -%}
+            {%- if syndication_indienews -%}
+                {% if syndication_count > 0 %}, {% endif %}
+                {{ syndication_indienews }}
                 {%- assign syndication_count = syndication_count | plus: 1 -%}
             {%- endif -%}
             {%- if syndication_mastodon -%}
