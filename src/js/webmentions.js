@@ -30,9 +30,7 @@
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY =
 `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
-    <div>
-        <q class="e-content">{{ content }}</q>
-    </div>
+    <div class="e-content">{{ content }}</div>
     <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <small>on</small> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
 </li>`;
     let responses = {
