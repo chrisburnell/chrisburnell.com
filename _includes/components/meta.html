@@ -87,7 +87,7 @@
             {% if page.rsvp %}
                 {%- assign rsvp_going = page.rsvp.going | default: page.rsvp -%}
                 <span>responded</span>
-                <strong class="p-rsvp">{% if rsvp_going %}Yes{% else %}No{% endif %}</strong>
+                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}Yes{% else %}No{% endif %}</data>
                 <span>to</span>
             {% else %}
                 <span>in reply to</span>
