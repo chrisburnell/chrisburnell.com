@@ -109,7 +109,7 @@
 
         for (let link of data.links.reverse()) {
             let type = "reaction";
-            if (link.activity.type !== "bookmark" && link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
+            if (link.activity.type !== "bookmark" link.activity.type !== "link" && link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
                 type = "reply";
             }
             if (link.verified === true && link.private === false) {
