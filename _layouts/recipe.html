@@ -19,12 +19,12 @@
             <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
         {% endif %}
 
-        {% if page.edit_text %}
+        {% if page.edit %}
             <div class="edit">
-                {% if page.edit_date %}
-                    <time datetime="{{ page.edit_date | date_to_xmlschema }}">Edited on {{ page.edit_date | date_to_long_string }}:</time>
+                {% if page.sitemap.lastmod %}
+                    <time datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">Edited on {{ page.sitemap.lastmod | date_to_long_string }}:</time>
                 {% endif %}
-                {{ page.edit_text | markdownify }}
+                {{ page.edit | markdownify }}
             </div>
         {% endif %}
 

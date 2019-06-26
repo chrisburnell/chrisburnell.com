@@ -1,15 +1,14 @@
 ---
+sitemap:
+  lastmod: 2019-06-26 09:00:00
 date: 2019-06-19 17:13:00
 title: Reply Targets
 lede: Providing a useful context to content written in response to someone else's blog post, tweet, toot, etc. helps a reader to understand the conversational nature of these back-and-forths. What abstractions can we make to the data that holds these reply targets, and how can those abstractions make for a richer reading experience and for a leaner publishing workflow?
-tags:
-  - jekyll
-  - liquid
 syndicate_to:
   - https://news.indieweb.org/en
 ---
 
-Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner, as can be seen on [this post](/note/1525182719).
+Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner, as can be seen on [this post](/note/1525182719)[^1].
 
 For example, if I respond to someone on *Twitter*, the reply target is the URL to the tweet to which I am responding, e.g. [https://twitter.com/dletorey/status/991247595132551168](https://twitter.com/dletorey/status/991247595132551168){:rel="external"}.
 
@@ -75,7 +74,7 @@ Do I want my posts to be a reflection of the time they were made? Or should they
 
 If I responded to *John Doe* last year, but this year they are called *Jane Doe*, should my old replies display *John* or *Jane*?
 
-Can I pull the name of the person to whom I am responding from the *Twitter* API[^1]? *Mastodon* API? Can it be extracted from microformats or clever parsing of the page?
+Can I pull the name of the person to whom I am responding from the *Twitter* API[^2]? *Mastodon* API? Can it be extracted from microformats or clever parsing of the page?
 
 #### For Personal Websites:
 
@@ -85,4 +84,5 @@ There is a [Microformats-2](http://microformats.org/wiki/microformats-2){:rel="e
 - *Type* of the *Post* to which I am responding?
 - *Content* of the *Post* to which I am responding?
 
-[^1]: Unfortunately, when I POST a new Tweet, the response from *Twitter’s* API does not include the target’s name, so pulling this data out cannot simply be tacked onto the end of the *Micropub* work. This means that a second request to the *Twitter* API would have to be made to pull out the name of the person.
+[^1]: It has been pointed out that the UX of my posts' metadata could use some work. I’ll have to think about how to better present it.
+[^2]: Unfortunately, when I POST a new Tweet, the response from *Twitter’s* API does not include the target’s name, so pulling this data out cannot simply be tacked onto the end of the *Micropub* work. This means that a second request to the *Twitter* API would have to be made to pull out the name of the person.

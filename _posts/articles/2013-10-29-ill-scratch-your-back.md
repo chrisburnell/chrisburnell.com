@@ -1,4 +1,7 @@
 ---
+sitemap:
+  lastmod: 2015-06-06 20:20:00
+edit: I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="https://chrisburnell.com/article/backscratching-revisited">Backscratching Revisited</a>, or continue reading.
 date: 2013-10-29 00:10:00
 title: I’ll Scratch Your Back, And Mine Too
 lede: I've been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
@@ -8,8 +11,6 @@ banner:
   - ill-scratch-your-back.png
 banner_mobile:
   - ill-scratch-your-back_mobile.png
-edit_date: 2015-06-06 20:20:00
-edit_text: I have revised this technique and its explanation since originally penning this article. You can jump to the updated article, <a href="https://chrisburnell.com/article/backscratching-revisited">Backscratching Revisited</a>, or continue reading.
 caniuse: true
 comments: disqus
 syndicate_to:

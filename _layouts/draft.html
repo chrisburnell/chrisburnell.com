@@ -25,12 +25,12 @@
 
         {% include components/reply-context.html %}
 
-        {% if page.edit_text %}
+        {% if page.edit %}
             <div class="edit">
-                {% if page.sitemap.lastmod or page.edit_date %}
-                    <time datetime="{{ page.sitemap.lastmod | default: page.edit_date | date_to_xmlschema }}">Edited on {{ page.sitemap.lastmod | default: page.edit_date | date_to_long_string }}:</time>
+                {% if page.sitemap.lastmod %}
+                    <time datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">Edited on {{ page.sitemap.lastmod | date_to_long_string }}:</time>
                 {% endif %}
-                {{ page.edit_text | markdownify }}
+                {{ page.edit | markdownify }}
             </div>
         {% endif %}
 

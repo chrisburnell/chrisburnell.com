@@ -39,8 +39,8 @@
     <meta property="og:image" content="{{ meta_image }}">
     {% if page.layout == 'post' or page.layout == 'review' %}
         <meta property="article:published_time" content="{{ page.date | date: '%F_%H%M' }}">
-        {% if page.sitemap.lastmod or page.edit_date or page.finish %}
-            <meta property="article:modified_time" content="{{ page.sitemap.lastmod | default: page.edit_date | default: page.finish | date: '%F_%H%M' }}">
+        {% if page.sitemap.lastmod or page.finish %}
+            <meta property="article:modified_time" content="{{ page.sitemap.lastmod | default: page.finish | date: '%F_%H%M' }}">
         {% endif %}
         <meta property="article:author" content="{{ site.author.name }}">
         {% for tag in page.tags %}

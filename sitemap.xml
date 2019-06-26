@@ -14,7 +14,7 @@ sitemap:
         {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | absolute_url }}</loc>
-                <lastmod>{{ page.sitemap.lastmod | default: page.edit_date | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
+                <lastmod>{{ page.sitemap.lastmod | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
                 <changefreq>{{ page.sitemap.changefreq | default: site.sitemap.changefreq }}</changefreq>
                 <priority>{{ page.sitemap.priority | default: site.sitemap.priority }}</priority>
             </url>
@@ -24,7 +24,7 @@ sitemap:
         {% unless page.draft or page.sitemap.exclude == true %}
             <url>
                 <loc>{{ page.url | absolute_url }}</loc>
-                <lastmod>{{ page.sitemap.lastmod | default: page.edit_date | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
+                <lastmod>{{ page.sitemap.lastmod | default: page.date | default: site.time | date_to_xmlschema }}</lastmod>
                 <changefreq>{{ page.sitemap.changefreq | default: site.sitemap.changefreq }}</changefreq>
                 <priority>{{ page.sitemap.priority | default: site.sitemap.priority }}</priority>
             </url>

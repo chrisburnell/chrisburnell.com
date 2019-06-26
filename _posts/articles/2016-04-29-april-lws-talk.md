@@ -5,7 +5,7 @@ lede: I gave a talk at London Web Standards and asked the question, <q>So how ca
 tags:
   - css
   - collaboration
-edit_text: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
+edit: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
 comments: disqus
 ---
 
