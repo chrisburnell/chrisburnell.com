@@ -95,7 +95,7 @@
             {% if page.rsvp %}
                 {%- assign rsvp_going = page.rsvp.going | default: page.rsvp -%}
                 <span>responded</span>
-                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}{% include content/emoji.html emoji='✅</span> Yes{% else %}<span class="emoji">❌' %} No{% endif %}</data>
+                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}{% include content/emoji.html emoji='✅' %} Yes{% else %}{% include content/emoji.html emoji='❌' %} No{% endif %}</data>
                 <span>to</span>
             {% else %}
                 {% include content/emoji.html emoji='↪️' %}
