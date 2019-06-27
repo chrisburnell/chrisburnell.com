@@ -69,19 +69,19 @@
                     {% else %}
                         {% assign reply = page.in_reply_to.first %}
                     {% endif %}
-                    <span class="emoji">↩️</span> In reply to:
+                    {% include content/emoji.html emoji='↩️' %} In reply to:
                     <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply }}</data>
                     <br>
                 {% endif %}
                 {% if page.emoji %}
-                    <span class="emoji">{{ page.emoji }}</span>
+                    {% include content/emoji.html emoji=page.emoji %}
                 {% endif %}
                 {% if page.rsvp or page.tags contains 'rsvp' %}
-                    <span class="emoji">📅</span>
+                    {% include content/emoji.html emoji='📅' %}
                 {% endif %}
                 {% if page.banner or page.banner_mobile or page.photo or page.cover or page.content contains '<img' %}
                     {% unless page.mf_root == 'review' %}
-                        <span class="emoji">🖼️</span>
+                        {% include content/emoji.html emoji='🖼️' %}
                     {% endunless %}
                 {% endif %}
                 {% if page.reacji %}
@@ -110,12 +110,12 @@
                 {% endif %}
                 {% if page.checkin %}
                     <data class="checkin">
-                        <span class="emoji">🗺</span>
+                        {% include content/emoji.html emoji='🗺' %}
                         <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
                     </data>
                 {% endif %}
                 {% if page.badges %}
-                    <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+                    <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.html emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
                 {% endif %}
                 {% if page.rating and page.rating == 'Parti Pris' %}
                     <data value="Parti Pris" aria-hidden="true" hidden>Parti Pris</data>

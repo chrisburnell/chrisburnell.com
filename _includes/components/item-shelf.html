@@ -98,7 +98,7 @@
             <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
         {% endif %}
         {% if page.badges %}
-            <data class="badges" value="{{ page.badges.size }}"><span class="emoji">🏅</span> Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
+            <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.html emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
         {% endif %}
         {% if page.isbn %}
             <strong{% if read_status == 'finished' %} aria-hidden="true" hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.html title=read_status %}</data></strong>

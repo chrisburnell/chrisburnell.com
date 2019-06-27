@@ -1,6 +1,6 @@
 <div class="meta">
     <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        <span class="emoji">🗓</span>
+        {% include content/emoji.html emoji='🗓' %}
         {% if page.mf_property contains 'bookmark-of' %}
             <span>bookmarked on</span>
         {% elsif page.mf_property contains 'like-of' %}
@@ -28,14 +28,14 @@
     </time>
     {% if page.sitemap.lastmod %}
         <time class="date  dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">
-            <span class="emoji">🗓</span>
+            {% include content/emoji.html emoji='🗓' %}
             <span>updated on</span>
             <strong>{{ page.sitemap.lastmod | date_to_long_string }}</strong>
         </time>
     {% endif %}
     {% if page.release %}
         <time class="date  dt-released" datetime="{{ page.released | date_to_xmlschema }}">
-            <span class="emoji">🗓</span>
+            {% include content/emoji.html emoji='🗓' %}
             <span>released on</span>
             <strong>{{ page.release | date_to_long_string }}</strong>
         </time>
@@ -43,16 +43,16 @@
     {% if page.authors %}
         <div class="authors">
             {% if page.category == 'beer' %}
-                <span class="emoji">🍺</span>
+                {% include content/emoji.html emoji='🍺' %}
                 <span>brewed by</span>
             {% elsif page.category == 'book' %}
-                <span class="emoji">✍️</span>
+                {% include content/emoji.html emoji='✍️' %}
                 <span>written by</span>
             {% elsif page.category == 'movie' or page.category == 'tv' %}
-                <span class="emoji">🎥</span>
+                {% include content/emoji.html emoji='🎥' %}
                 <span>produced by</span>
             {% elsif page.category == 'recipe' %}
-                <span class="emoji">📝</span>
+                {% include content/emoji.html emoji='📝' %}
                 <span>sourced from</span>
             {% else %}
                 <span>by</span>
@@ -73,7 +73,7 @@
     {% endif %}
     {% if page.audience %}
         <div class="audience">
-            <span class="emoji">📣</span>
+            {% include content/emoji.html emoji='📣' %}
             <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
             {%- for audience in audiences -%}
@@ -95,10 +95,10 @@
             {% if page.rsvp %}
                 {%- assign rsvp_going = page.rsvp.going | default: page.rsvp -%}
                 <span>responded</span>
-                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}<span class="emoji">✅</span> Yes{% else %}<span class="emoji">❌</span> No{% endif %}</data>
+                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}{% include content/emoji.html emoji='✅</span> Yes{% else %}<span class="emoji">❌' %} No{% endif %}</data>
                 <span>to</span>
             {% else %}
-                <span class="emoji">↪️</span>
+                {% include content/emoji.html emoji='↪️' %}
                 <span>in reply to</span>
             {% endif %}
             {% for reply in in_reply_to %}
@@ -160,7 +160,7 @@
         </div>
     {% endif %}
     {% if page.rsvp.date %}
-        <span class="emoji">🗓</span>
+        {% include content/emoji.html emoji='🗓' %}
         {%- assign day = site.time | date: '%d' -%}
         {%- assign month = site.time | date: '%m' -%}
         {%- assign year = site.time | date: '%Y' -%}
@@ -177,7 +177,7 @@
         </time>
     {% endif %}
     {% if page.category == 'article' %}
-        <span class="emoji">📚</span>
+        {% include content/emoji.html emoji='📚' %}
         {%- assign words = site.emptyArray -%}
         {%- assign open_figure_splits = content | split: '<figure class="highlight">' -%}
         {%- assign words = words | push: open_figure_splits[0] -%}
@@ -200,21 +200,21 @@
     {% if page.category == 'recipe' %}
         {% if page.prep_time %}
             <div class="prep-time">
-                <span class="emoji">🕝</span>
+                {% include content/emoji.html emoji='🕝' %}
                 <span>preparation time</span>
                 <strong class="p-prep-time">{{ page.prep_time }}</strong>
             </div>
         {% endif %}
         {% if page.cooking_time %}
             <div class="cooking-time">
-                <span class="emoji">⏲</span>
+                {% include content/emoji.html emoji='⏲' %}
                 <span>cooking time</span>
                 <strong class="p-cooking-time">{{ page.cooking_time }}</strong>
             </div>
         {% endif %}
         {% if page.serves %}
             <div class="serves">
-                <span class="emoji">🍛</span>
+                {% include content/emoji.html emoji='🍛' %}
                 <span>serves</span>
                 <strong class="p-serves">{{ page.serves }}</strong>
             </div>
@@ -224,10 +224,10 @@
         {%- assign checkin = site.data.locations | where: 'name', page.checkin.name | first | default: page.checkin -%}
         <div class="checkin">
             {% if page.category == 'beer' %}
-                <span class="emoji">🍺</span>
+                {% include content/emoji.html emoji='🍺' %}
                 <span>drank at</span>
             {% elsif page.category == 'talk' %}
-                <span class="emoji">🗣</span>
+                {% include content/emoji.html emoji='🗣' %}
                 <span>given at</span>
             {% else %}
                 <span>at</span>
@@ -245,39 +245,39 @@
         <div class="weather">
             {%- assign summary = page.weather.summary | downcase -%}
             {% if summary contains 'sun' and summary contains 'cloud' or summary contains 'rain' %}
-                <span class="emoji">🌦</span>
+                {% include content/emoji.html emoji='🌦' %}
             {% elsif summary contains 'rain' and summary contains 'thunder' or summary contains 'lightning' %}
-                <span class="emoji">⛈</span>
+                {% include content/emoji.html emoji='⛈' %}
             {% elsif summary contains 'thunder' or summary contains 'lightning' %}
-                <span class="emoji">🌩</span>
+                {% include content/emoji.html emoji='🌩' %}
             {% elsif summary contains 'snow' %}
-                <span class="emoji">❄️</span>
+                {% include content/emoji.html emoji='❄️' %}
             {% elsif summary contains 'rain' %}
-                <span class="emoji">🌧</span>
+                {% include content/emoji.html emoji='🌧' %}
             {% elsif summary contains 'fog' %}
-                <span class="emoji">🌫</span>
+                {% include content/emoji.html emoji='🌫' %}
             {% elsif summary contains 'wind' %}
-                <span class="emoji">💨</span>
+                {% include content/emoji.html emoji='💨' %}
             {% elsif summary contains 'cloud' %}
-                <span class="emoji">🌥</span>
+                {% include content/emoji.html emoji='🌥' %}
             {% elsif summary contains 'sun' %}
-                <span class="emoji">🌞</span>
+                {% include content/emoji.html emoji='🌞' %}
             {% elsif summary contains 'moon' and summary contains 'full' %}
-                <span class="emoji">🌝</span>
+                {% include content/emoji.html emoji='🌝' %}
             {% elsif summary contains 'moon' and summary contains 'new' %}
-                <span class="emoji">🌚</span>
+                {% include content/emoji.html emoji='🌚' %}
             {% elsif summary contains 'moon' and summary contains 'crescent' and summary contains 'waxing' %}
-                <span class="emoji">🌒</span>
+                {% include content/emoji.html emoji='🌒' %}
             {% elsif summary contains 'moon' and summary contains 'crescent' and summary contains 'waning' %}
-                <span class="emoji">🌘</span>
+                {% include content/emoji.html emoji='🌘' %}
             {% elsif summary contains 'moon' and summary contains 'quarter' and summary contains 'first' %}
-                <span class="emoji">🌛</span>
+                {% include content/emoji.html emoji='🌛' %}
             {% elsif summary contains 'moon' and summary contains 'quarter' and summary contains 'last' %}
-                <span class="emoji">🌜</span>
+                {% include content/emoji.html emoji='🌜' %}
             {% elsif summary contains 'moon' and summary contains 'gibbous' and summary contains 'waxing' %}
-                <span class="emoji">🌔</span>
+                {% include content/emoji.html emoji='🌔' %}
             {% elsif summary contains 'moon' and summary contains 'gibbous' and summary contains 'waning' %}
-                <span class="emoji">🌖</span>
+                {% include content/emoji.html emoji='🌖' %}
             {% endif %}
             <span>weather</span>
             <strong class="p-weather">
@@ -293,7 +293,7 @@
     {% endif %}
     {% if page.rating %}
         <div>
-            <span class="emoji">✨</span>
+            {% include content/emoji.html emoji='✨' %}
             {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
             {%- assign rating_fraction = page.rating | minus: rating_base -%}
             <span>I rate it</span>
@@ -304,7 +304,7 @@
     {% endif %}
     {% if page.badges %}
         <div class="badges">
-            <span class="emoji">🏆</span>
+            {% include content/emoji.html emoji='🏆' %}
             <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
             {% for badge in page.badges %}
                 {%- if badge.name and badge.id -%}
@@ -318,14 +318,14 @@
     {% if page.tags.size > 0 %}
         {% assign tags_sorted = page.tags | sort %}
         <div class="tags">
-            <span class="emoji">🏷</span>
+            {% include content/emoji.html emoji='🏷' %}
             <span>tagged under</span>
             {% for tag in tags_sorted %}{% unless forloop.first %}, {% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.html input=tag %}</a>{% endfor %}
         </div>
     {% endif %}
     {% if page.category == 'pen' and page.codepen_featured == true %}
         <div class="featured">
-            <span class="emoji">✨️</span>
+            {% include content/emoji.html emoji='✨️' %}
             <span>featured on</span>
             <a rel="external" href="https://codepen.io/collection/hfqlg">the CodePen Homepage</a>
         </div>
@@ -333,7 +333,7 @@
     {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: syndicate_to | default: nil %}
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
-            <span class="emoji">⤴️</span>
+            {% include content/emoji.html emoji='⤴️' %}
             <span>also on </span>
             {%- assign syndication_count = 0 -%}
             {% for syndication in syndications %}
@@ -428,7 +428,7 @@
     {% if page.posting_method %}
         {%- assign posting_method_by_link = site.data.posting_methods | where_exp: 'target', 'page.posting_method contains target.link' | first | map: 'name' | first | default: null -%}
         <div class="posting-method">
-            <span class="emoji">✍️</span>
+            {% include content/emoji.html emoji='✍️' %}
             <span>posted using</span>
             {% if page.posting_method contains 'http' %}
                 <a href="{{ page.posting_method }}" rel="external">{{ posting_method_by_link | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
@@ -468,7 +468,7 @@
             {%- endif -%}
         {%- endfor -%}
         <div class="shorturl">
-            <span class="emoji">🔗</span>
+            {% include content/emoji.html emoji='🔗' %}
             <span>shorturl</span>
             <a rel="self" href="{{ site.shorturl | append: '/' | append: shorturl }}">{{ site.shorturl | remove: 'http://' | remove: 'https://' | append: '/' | append: shorturl }}</a>
         </div>
