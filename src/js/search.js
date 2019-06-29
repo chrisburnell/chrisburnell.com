@@ -162,6 +162,7 @@
 
             if (item.lede) {
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
+                item.lede = helpers.truncate(item.lede, 20);
             }
             else if (item.category) {
                 item.lede = item.category.charAt(0).toUpperCase() + item.category.slice(1);
@@ -186,6 +187,7 @@
             }
             if (item.content) {
                 contentCheck = item.content.toLowerCase().indexOf(queryFormatted) > -1;
+                item.content = helpers.truncate(item.content, 30);
             }
             if (item.category) {
                 categoryCheck = item.category.toLowerCase().indexOf(queryFormatted) > -1;

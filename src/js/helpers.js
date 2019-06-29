@@ -145,6 +145,16 @@ helpers = {
     },
 
     ////
+    /// Truncate text to n words
+    ////
+    truncate: (string, maximum = 10) => {
+        let array = string.trim().split(" ");
+        let ellipsis = array.length > maximum ? "…" : "";
+        console.log(array.slice(0, maximum).join(" ") + ellipsis);
+        return array.slice(0, maximum).join(" ").replace(/[\,\.\;]$/, "") + ellipsis;
+    },
+
+    ////
     /// Wilson Score Interval
     /// @see https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval
     /// @param {Number} positive items
