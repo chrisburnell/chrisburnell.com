@@ -107,16 +107,16 @@
     /// @return void
     ////
     let getSearchResults = () => {
-        let resultData, replyTargets, mastodonInstances;
+        let resultData, people, mastodonInstances;
         fetch(JSON_FEED_URL)
             .then(helpers.getFetchResponse)
             .then(response => response.json())
             .then(data => {
                 // Success!
                 resultData = data["results"];
-                replyTargets = data["reply-targets"];
+                people = data["people"];
                 mastodonInstances = data["mastodon-instances"];
-                processData(resultData, replyTargets, mastodonInstances);
+                processData(resultData, people, mastodonInstances);
             })
             .catch(error => {
                 // Fail!
@@ -128,7 +128,7 @@
     /// Process search result data
     /// @return void
     ////
-    let processData = (resultData, replyTargets, mastodonInstances) => {
+    let processData = (resultData, people, mastodonInstances) => {
         // Sort the results by:
         //   1. Priority
         //   2. Occurrence
@@ -223,13 +223,21 @@
                 let mastodonUsername = null;
                 let twitterUsername = null;
                 let replyTarget = null;
-                for (let target of replyTargets) {
+                for (let result of resultData) {
+                    if (item.in_reply_to.includes(result.url) && !item.titlefree) {
+                        replyTarget = item.title;
+                        break;
+                    }
+                }
+                for (let target of people) {
                     if ("mastodon" in target) {
-                        let targetInstance = target.mastodon.split('@')[1];
-                        let targetUsername = target.mastodon.split('@')[0];
-                        if (item.in_reply_to.includes(targetInstance) && item.in_reply_to.includes(targetUsername)) {
-                            replyTarget = target.name;
-                            break;
+                        for (let target_mastodon of target.mastodon) {
+                            let targetInstance = target_mastodon.split('@')[1];
+                            let targetUsername = target_mastodon.split('@')[0];
+                            if (item.in_reply_to.includes(targetInstance) && item.in_reply_to.includes(targetUsername)) {
+                                replyTarget = target.name;
+                                break;
+                            }
                         }
                     }
                 }
@@ -247,34 +255,28 @@
                         else if (item.in_reply_to.includes("/users/")) {
                             mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
                         }
-                        for (let target of replyTargets) {
-                            if ("mastodon" in target) {
-                                let targetInstance = target.mastodon.split('@')[0];
-                                let targetUsername = target.mastodon.split('@')[1];
-                                if (targetInstance === mastodonInstance && targetUsername === mastodonUsername) {
-                                    replyTarget = target.name;
-                                    break;
-                                }
-                            }
-                        }
                     }
                     else if (item.in_reply_to.includes("twitter.com")) {
                         twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
-                        for (let target of replyTargets) {
+                        for (let target of people) {
                             if ("twitter" in target) {
-                                if (target.twitter === twitterUsername) {
-                                    replyTarget = target.name;
-                                    break;
+                                for (let target_twitter of target.twitter) {
+                                    if (target_twitter === twitterUsername) {
+                                        replyTarget = target.name;
+                                        break;
+                                    }
                                 }
                             }
                         }
                     }
                     else {
-                        for (let target of replyTargets) {
+                        for (let target of people) {
                             if ("link" in target) {
-                                if (item.in_reply_to.includes(target.link)) {
-                                    replyTarget = target.name;
-                                    break;
+                                for (let target_link of target.link) {
+                                    if (item.in_reply_to.includes(target_link)) {
+                                        replyTarget = target.name;
+                                        break;
+                                    }
                                 }
                             }
                         }

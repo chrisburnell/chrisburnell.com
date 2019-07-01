@@ -61,12 +61,14 @@ sitemap:
             "has_image": true
           {% endif %}{% unless page.searchable == 'no-content' %},
             "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
-          {% endunless %}
+          {% endunless %}{% if page.titlefree %},
+            "titlefree": true,
+          {% endif %}
         }{% unless forloop.last %},{% endunless %}
       {% endunless %}
     {% endfor %}
   ],
-  "reply-targets": [
+  "people": [
     {% for target in site.data.people %}
       {
         "name": "{{ target.name }}"{% if target.mastodon %},
