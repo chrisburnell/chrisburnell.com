@@ -70,9 +70,9 @@ sitemap:
     {% for target in site.data.people %}
       {
         "name": "{{ target.name }}"{% if target.mastodon %},
-        "mastodon": "{{ target.mastodon }}"{% endif %}{% if target.twitter %},
-        "twitter": "{{ target.twitter }}"{% endif %}{% if target.link %},
-        "link": "{{ target.link }}"{% endif %}
+        "mastodon": ["{{ target.mastodon | join: '", "' }}"]{% endif %}{% if target.twitter %},
+        "twitter": ["{{ target.twitter | join: '", "' }}"]{% endif %}{% if target.link %},
+        "link": ["{{ target.link | join: '", "' }}"]{% endif %}
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ],

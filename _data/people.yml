@@ -53,9 +53,11 @@
   twitter: t
 - name: Vincent Pickering
   link: vincentp.me
-  twitter: vincentp
+  twitter:
+    - vincentp
+    - vincentlistens
 - name: Jeremy Cherfas
-  link: https://www.jeremycherfas.net/
+  link: jeremycherfas.net
 
 # Places and Conferences
 - name: Homebrew Website Club London
@@ -79,4 +81,4 @@
 
 # Breweries
 - name: Mikkeller
-  link: http://mikkeller.dk/
+  link: http://mikkeller.dk
