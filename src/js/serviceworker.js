@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.99";
+const VERSION = "v2.0.100";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -77,7 +77,9 @@ let trimCache = (cacheName, maxItems) => {
                 .then(keys => {
                     if (keys.length > maxItems) {
                         cache.delete(keys[0])
-                            .then(trimCache(cacheName, maxItems));
+                            .then(() => {
+                                trimCache(cacheName, maxItems)
+                            });
                     }
                 });
         });
