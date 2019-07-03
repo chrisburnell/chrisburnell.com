@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.100";
+const VERSION = "v2.0.101";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -130,7 +130,7 @@ self.addEventListener("fetch", event => {
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get("Accept").includes("text/html")) {
-        url.pathname = url.pathname.replace(/\/?$/, "");
+        url.pathname = url.pathname.replace(/\/$/, "");
         let fetchPromise = fetch(request);
         let cachePromise = caches.match(request);
         event.respondWith(
