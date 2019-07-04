@@ -188,6 +188,9 @@ $font-weight-default: 400 !default;
 /// @type Number
 $font-weight-bold: 600 !default;
 
+/// @type String
+$unicode-range-default: "U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000";
+
 /// @type Number
 $line-height-default: 1.875 !default;
 /// @type Number

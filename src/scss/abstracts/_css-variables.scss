@@ -38,10 +38,6 @@
         --font-family-#{$key}: #{$value};
     }
 
-    @each $key, $value in $font-weights {
-        --font-weight-#{$key}: #{$value};
-    }
-
     @each $key, $value in $font-sizes {
         --font-size-#{$key}: #{$value};
     }
@@ -52,6 +48,14 @@
 
     @each $key, $value in $font-variants {
         --font-variant-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-weights {
+        --font-weight-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $unicode-ranges {
+        --unicode-range-#{$key}: #{$value};
     }
 
     @each $key, $value in $line-heights {

@@ -218,6 +218,14 @@ $font-variants: (
 ) !default;
 
 /// @type Map
+/// @prop {String} key - Unicode Range Name
+/// @prop {String} value - Unicode Range Value
+/// @see {Mixin} v
+$unicode-ranges: (
+    default: $unicode-range-default
+) !default;
+
+/// @type Map
 /// @prop {String} key - Line Height Name
 /// @prop {Number} value - Line Height Value
 /// @see {Mixin} v
@@ -257,12 +265,16 @@ $variable-map: (
     border-width: $border-widths,
     border-style: $border-styles,
     color: $all-colors,
+    font-display: $font-displays,
     font-family: $font-families,
     font-size: $font-sizes,
+    font-stretch: $font-stretches,
+    font-variant: $font-variants,
     font-weight: $font-weights,
     line-height: $line-heights,
     measure: $measures,
     opacity: $opacities,
+    unicode-range: $unicode-ranges,
     z-index: $z-indexes
 ) !default;
 
@@ -289,8 +301,11 @@ $property-map: (
     border-left-width: border-width,
     fill: color,
     flex-basis: measure,
+    font-display: font-display,
     font-family: font-family,
     font-size: font-size,
+    font-stretch: font-stretch,
+    font-variant: font-variant,
     font-weight: font-weight,
     height: measure,
     line-height: line-height,
@@ -319,6 +334,7 @@ $property-map: (
     text-decoration-color: color,
     text-decoration-width: border-width,
     width: measure,
+    unicode-range: unicode-range,
     z-index: z-index
 ) !default;
 
