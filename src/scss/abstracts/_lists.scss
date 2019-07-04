@@ -22,10 +22,10 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andal
 /// @prop {Number} weight - Font Weight
 /// @prop {String} filename - Font Filename
 $font-faces: (
-    ("Heebo",        "Black",    swap, normal, normal, normal, 400, "heebo-black"),
-    ("Proxima Nova", "Regular",  swap, normal, normal, normal, 400, "proxima-nova-regular"),
-    ("Proxima Nova", "Italic",   swap, normal, italic, normal, 400, "proxima-nova-italic"),
-    ("Proxima Nova", "Semibold", swap, normal, normal, normal, 600, "proxima-nova-semibold")
+    ("Heebo",        "Black",    default, default, normal, default, default, "heebo-black"),
+    ("Proxima Nova", "Regular",  default, default, normal, default, default, "proxima-nova-regular"),
+    ("Proxima Nova", "Italic",   default, default, italic, default, default, "proxima-nova-italic"),
+    ("Proxima Nova", "Semibold", default, default, normal, default, bold,    "proxima-nova-semibold")
 ) !default;
 
 /// @type List

@@ -6,11 +6,11 @@
 @each $style in $font-faces {
     @font-face {
         font-family: "#{nth($style, 1)}";
-        font-display: #{nth($style, 3)};
-        font-stretch: #{nth($style, 4)};
+        font-display: map-get($font-displays, nth($style, 3));
+        font-stretch: map-get($font-stretches, nth($style, 4));
         font-style: #{nth($style, 5)};
-        font-variant: #{nth($style, 6)};
-        font-weight: #{nth($style, 7)};
+        font-variant: map-get($font-variants, nth($style, 6));
+        font-weight: map-get($font-weights, nth($style, 7));
         src: local("#{nth($style, 1)} #{nth($style, 2)}"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff2") format("woff2"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff") format("woff"),
