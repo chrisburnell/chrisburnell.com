@@ -14,11 +14,19 @@ $font-family-monospace: "Menlo for Powerline", "Menlo", Consolas, Monaco, "Andal
 
 /// @type List
 /// @prop {String} family - Font Family
-/// @prop {String} variant - Font Family Variant
+/// @prop {String} name - Font Family Friendly Name
+/// @prop {Number} display - Font Display
+/// @prop {Number} stretch - Font Stretch
 /// @prop {String} style - Font Style
+/// @prop {String} variant - Font Variant
 /// @prop {Number} weight - Font Weight
 /// @prop {String} filename - Font Filename
-$font-faces: (("Heebo", "Black", normal, 400, "heebo-black"), ("Proxima Nova", "Regular", normal, 400, "proxima-nova-regular"), ("Proxima Nova", "Italic", italic, 400, "proxima-nova-italic"), ("Proxima Nova", "Semibold", normal, 600, "proxima-nova-semibold")) !default;
+$font-faces: (
+    ("Heebo",        "Black",    swap, normal, normal, normal, 400, "heebo-black"),
+    ("Proxima Nova", "Regular",  swap, normal, normal, normal, 400, "proxima-nova-regular"),
+    ("Proxima Nova", "Italic",   swap, normal, italic, normal, 400, "proxima-nova-italic"),
+    ("Proxima Nova", "Semibold", swap, normal, normal, normal, 600, "proxima-nova-semibold")
+) !default;
 
 /// @type List
 /// @prop {String} name - Brand name

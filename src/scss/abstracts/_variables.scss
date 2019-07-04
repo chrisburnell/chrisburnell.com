@@ -153,7 +153,7 @@ $border-radius-thin: 0.25rem !default;
 $border-radius-hairline: 0.125rem !default;
 
 /// @type String
-$font-display: swap !default;
+$font-display-default: swap;
 
 /// @type Length
 $font-size-default: 1rem !default;
@@ -176,6 +176,12 @@ $font-size-large-relative: 1.25em !default;
 $font-size-small: 0.875rem !default;
 /// @type Length
 $font-size-small-relative: 0.875em !default;
+
+/// @type String
+$font-stretch-default: normal;
+
+/// @type String
+$font-variant-default: normal;
 
 /// @type Number
 $font-weight-default: 400 !default;

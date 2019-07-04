@@ -30,18 +30,28 @@
         --border-radius-#{$key}: #{$value};
     }
 
-    --font-display: #{$font-display};
+    @each $key, $value in $font-displays {
+        --font-display-#{$key}: #{$value};
+    }
 
-    @each $key, $value in $font-sizes {
-        --font-size-#{$key}: #{$value};
+    @each $key, $value in $font-families {
+        --font-family-#{$key}: #{$value};
     }
 
     @each $key, $value in $font-weights {
         --font-weight-#{$key}: #{$value};
     }
 
-    @each $key, $value in $font-families {
-        --font-family-#{$key}: #{$value};
+    @each $key, $value in $font-sizes {
+        --font-size-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-stretches {
+        --font-stretch-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-variants {
+        --font-variant-#{$key}: #{$value};
     }
 
     @each $key, $value in $line-heights {

@@ -4,8 +4,8 @@
 ////
 
 /// @type Map
-/// @prop {String} Breakpoint name
-/// @prop {Length} Breakpoint value
+/// @prop {String} key - Breakpoint name
+/// @prop {Length} value - Breakpoint value
 /// @see {Mixin} media
 $breakpoints: (
     small: $measure-breakpoint-small,
@@ -14,8 +14,8 @@ $breakpoints: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Measure name
-/// @prop {Length} Measure value
+/// @prop {String} key - Measure name
+/// @prop {Length} value - Measure value
 /// @see {Mixin} v
 $measures: (
     breakpoint-small: $measure-breakpoint-small,
@@ -47,8 +47,8 @@ $measures: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Opacity name
-/// @prop {Number} Opacity value
+/// @prop {String} key - Opacity name
+/// @prop {Number} value - Opacity value
 /// @see {Function} opacities
 /// @see {Mixin} v
 $opacities: (
@@ -59,8 +59,8 @@ $opacities: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Color Name
-/// @prop {Color} Color Value
+/// @prop {String} key - Color Name
+/// @prop {Color} value - Color Value
 /// @see {Mixin} v
 $site-colors: (
     transparent: $color-transparent,
@@ -82,8 +82,8 @@ $site-colors: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Color Name
-/// @prop {Color} Color Value
+/// @prop {String} key - Color Name
+/// @prop {Color} value - Color Value
 $palette-colors: (
     bowhead: $color-bowhead,
     raven: $color-raven,
@@ -98,8 +98,8 @@ $palette-colors: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
+/// @prop {String} key - Language name
+/// @prop {Color} value - Language color
 $language-colors: (
     css: $color-css,
     haml: $color-html,
@@ -113,8 +113,8 @@ $language-colors: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Language name
-/// @prop {Color} Language color
+/// @prop {String} key - Language name
+/// @prop {Color} value - Language color
 $brand-colors: (
     coffee: $color-coffee,
     codepen: $color-codepen,
@@ -128,8 +128,8 @@ $brand-colors: (
 $all-colors: map-multiple-merge($site-colors, $language-colors, $brand-colors);
 
 /// @type Map
-/// @prop {String} Border Width Name
-/// @prop {Color} Border Width Value
+/// @prop {String} key - Border Width Name
+/// @prop {Color} value - Border Width Value
 /// @see {Mixin} v
 $border-widths: (
     default: $border-width-default,
@@ -139,8 +139,8 @@ $border-widths: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Border Style Name
-/// @prop {Color} Border Style Value
+/// @prop {String} key - Border Style Name
+/// @prop {Color} value - Border Style Value
 /// @see {Mixin} v
 $border-styles: (
     default: $border-style-default,
@@ -148,8 +148,8 @@ $border-styles: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Border Radius Name
-/// @prop {Color} Border Radius Value
+/// @prop {String} key - Border Radius Name
+/// @prop {Color} value - Border Radius Value
 /// @see {Mixin} v
 $border-radii: (
     default: $border-radius-default,
@@ -158,8 +158,28 @@ $border-radii: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Font Size Name
-/// @prop {Number} Font Size Value
+/// @prop {String} key - Font Display Name
+/// @prop {String} value - Font Display Value
+/// @see {Mixin} v
+$font-displays: (
+    default: $font-display-default
+) !default;
+
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family Value
+/// @see {Mixin} font-family
+/// @see {Mixin} v
+$font-families: (
+    default: $font-family-default,
+    alpha: $font-family-alpha,
+    serif: $font-family-serif,
+    monospace: $font-family-monospace
+) !default;
+
+/// @type Map
+/// @prop {String} key - Font Size Name
+/// @prop {Number} value - Font Size Value
 /// @see {Mixin} v
 $font-sizes: (
     default: $font-size-default,
@@ -173,8 +193,8 @@ $font-sizes: (
 ) !default;
 
 /// @type Map
-/// @prop {String} Font Weight Name
-/// @prop {Color} Font Weight Value
+/// @prop {String} key - Font Weight Name
+/// @prop {Color} value - Font Weight Value
 /// @see {Mixin} v
 $font-weights: (
     default: $font-weight-default,
@@ -182,20 +202,24 @@ $font-weights: (
 ) !default;
 
 /// @type Map
-/// @prop {String} key - Font Family name
-/// @prop {Number} value - Font Family value
-/// @see {Mixin} font-family
+/// @prop {String} key - Font Stretch Name
+/// @prop {String} value - Font Stretch Value
 /// @see {Mixin} v
-$font-families: (
-    default: $font-family-default,
-    alpha: $font-family-alpha,
-    serif: $font-family-serif,
-    monospace: $font-family-monospace
+$font-stretches: (
+    default: $font-stretch-default
 ) !default;
 
 /// @type Map
-/// @prop {String} Line Height Name
-/// @prop {Number} Line Height Value
+/// @prop {String} key - Font Variant Name
+/// @prop {String} value - Font Variant Value
+/// @see {Mixin} v
+$font-variants: (
+    default: $font-variant-default
+) !default;
+
+/// @type Map
+/// @prop {String} key - Line Height Name
+/// @prop {Number} value - Line Height Value
 /// @see {Mixin} v
 $line-heights: (
     default: $line-height-default,
@@ -205,8 +229,8 @@ $line-heights: (
 ) !default;
 
 /// @type Map
-/// @prop {String} z-index Name
-/// @prop {Number} z-index Value
+/// @prop {String} key - z-index Name
+/// @prop {Number} value - z-index Value
 /// @see {Function} z-index
 /// @see {Mixin} v
 $z-indexes: (
@@ -220,8 +244,8 @@ $z-indexes: (
 ) !default;
 
 /// @type Map
-/// @prop {Array} Aspect Ratio
-/// @prop {Length} Percentage for sizing
+/// @prop {Array} key - Aspect Ratio
+/// @prop {Length} value - Percentage for sizing
 $aspect-ratios: (
     "16-by-9": 56.25%,
     "4-by-3": 75%
