@@ -18,11 +18,11 @@ lede: All of my review posts.
             {% unless forloop.first %}
                 </ol>
             {% endunless %}
-            {% include_cached content/heading.html title=page_year id=page_year %}
+            {% include_cached content/heading.liquid title=page_year id=page_year %}
             <ol class="content-list" role="list">
         {% endif %}
 
-        {% include components/item-content-list.html %}
+        {% include components/item_content_list.liquid %}
 
         {% if forloop.last %}
             </ol>
@@ -32,4 +32,4 @@ lede: All of my review posts.
 
 <hr>
 
-{% include components/buttons-categories.html %}
+{% include components/buttons_categories.liquid %}

@@ -7,5 +7,5 @@ redirect_from:
 ---
 
 {% for page in site.categories.music limit: site.feed_limit %}
-    {% include components/item-feed.html %}
+    {% include components/item_feed.liquid %}
 {% endfor %}

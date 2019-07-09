@@ -13,5 +13,5 @@ redirect_from:
     {%- endif -%}
 {%- endfor -%}
 {% for page in articles_without_replies limit: site.feed_limit %}
-    {% include components/item-feed.html %}
+    {% include components/item_feed.liquid %}
 {% endfor %}

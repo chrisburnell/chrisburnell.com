@@ -37,7 +37,7 @@ If your code does the opposite of any of those things, you should re-evaluate wh
 Be wary of Sass which appears more complex or lengthier than its compiled CSS counterpart. It’s only worth the luxury of not having to manage something manually if the pre-compiled code is easy, if not easier, to understand than the compiled output. An example of where this would work might be within a grid system, when defining and maintaining the styles for multiple columns and layouts of columns in CSS is clearly more time-consuming than generating it automatically from a handful of Sass variables.
 
 
-{% include_cached content/heading.html title='An example' %}
+{% include_cached content/heading.liquid title='An example' %}
 
 Let’s say I want to be able to show and hide content based on screen size, and I want some level of minute control around these screen sizes and how they’re used. I’ve got to create a series of CSS classes which hide content based on some given media query breakpoints. Let’s define a small *Map* of breakpoint names (to reference in the class names) and their respective pixel values (to reference in the media queries).
 
@@ -94,7 +94,7 @@ So in our case, in which we have <var>4</var> breakpoints:
 We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
 
 
-{% include_cached content/heading.html title='Here’s the function!' %}
+{% include_cached content/heading.liquid title='Here’s the function!' %}
 
 Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <del>guarantee</del> <del>promise</del> think it’s less complex than building it manually):
 
@@ -212,7 +212,7 @@ The code in this block is nearly identical to the one for *Lists*, with some sma
 Now let’s look at how the `@function` is actually used.
 
 
-{% include_cached content/heading.html title='From a List' %}
+{% include_cached content/heading.liquid title='From a List' %}
 
 {% highlight scss %}
 $list:
@@ -229,7 +229,7 @@ $list:
 }
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight css %}
 .from-small-to-medium {
@@ -245,10 +245,10 @@ $list:
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}
 
 
-{% include_cached content/heading.html title='From a Map' %}
+{% include_cached content/heading.liquid title='From a Map' %}
 
 {% highlight scss %}
 $map: (
@@ -273,7 +273,7 @@ $map: (
 }
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight css %}
 .from-small-to-medium {
@@ -313,15 +313,15 @@ $map: (
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}
 
 
-{% include_cached content/heading.html title='Conclusion and Demo' %}
+{% include_cached content/heading.liquid title='Conclusion and Demo' %}
 
 While the `@function` that powers all this jazz is lengthy and intimidating, I think it’s pretty clear that we’re saving ourselves some typing and mental overhead. Because the `@function` is doing the brunt of the heavy-lifting here, we’ve afforded ourselves the luxury of only having to touch the *List*/*Map* of breakpoints (and respective pixel values) in order to build out CSS for the entire grid, including complex class and media query combinations.
 
 Here’s a small demo of the `@function` on *CodePen*, which I recommend opening in a new tab/window so you can resize properly:
 
-{% include content/codepen.html slug='OWWYdj' height='400' %}
+{% include content/codepen.liquid slug='OWWYdj' height='400' %}
 
 This is a pretty extreme example of how smart utilisation of Sass’ features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, measures, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/){:rel="external"} has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/){:rel="external"} [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/){:rel="external"}.

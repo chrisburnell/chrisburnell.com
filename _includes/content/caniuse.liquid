@@ -1,0 +1,20 @@
+{%- comment -%}
+
+  This include lets you easily embed Can I Use Stats.
+
+  @param {String} feature *
+  @param {String} periods [future_1,current,past_1,past_2]
+
+  @example
+    {% include_cached content/caniuse.liquid feature='css-sel3' periods='future_1,current,past_1' %}
+    // <p class="ciu_embed" data-feature="css-sel3" data-periods="future_1,current,past_1">
+    //     <a href="http://caniuse.com/#feat=css-sel3">Can I Use css-sel3?</a> Data on support for the css-sel3 feature across the major browsers from caniuse.com.
+    // </p>
+    // <noscript>Please enable JavaScript to view the latest Can I Use Stats.</noscript>
+
+{%- endcomment -%}
+{% assign periods = include.periods | default: 'future_1,current,past_1,past_2' %}
+<p class="ciu_embed" data-feature="{{ include.feature }}" data-periods="{{ periods }}">
+    <a href="http://caniuse.com/#feat={{ include.feature }}">Can I Use {{ include.feature }}?</a> Data on support for the {{ include.feature }} feature across the major browsers from caniuse.com.
+</p>
+<noscript>Please enable JavaScript to view the latest Can I Use Stats.</noscript>

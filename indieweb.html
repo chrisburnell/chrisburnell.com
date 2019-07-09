@@ -8,7 +8,7 @@ page_class: page--indieweb
     <img src="/images/content/indiewebcamp.svg" alt="IndieWebCamp logo">
 </figure>
 
-{% include_cached content/heading.html title='My Setup' %}
+{% include_cached content/heading.liquid title='My Setup' %}
 
 <p>I author posts of various *types* on this website, some of which I syndicate to silos around the web.</p>
 
@@ -32,7 +32,7 @@ page_class: page--indieweb
 <p>I still need to do some work to change my syndication model from <abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr> to <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>. At the moment, because my Micropub endpoint doesn’t have the ability to modify an existing post, I first post to <em>Twitter</em> and/or <em>Mastodon</em> and grab the permalinks from the responses which are then pumped into the front matter as syndication targets of the post when it gets posted to <em>GitHub</em>.</p>
 
 
-{% include_cached content/heading.html title='Tools Used' %}
+{% include_cached content/heading.liquid title='Tools Used' %}
 
 <p>To handle <em>incoming</em> webmentions, I use <a href="https://webmention.io" rel="external">Webmention.io</a>, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.</p>
 
@@ -45,7 +45,7 @@ page_class: page--indieweb
 <p>Lastly, I use <a href="https://zapier.com" rel="external">Zapier</a> to syndicate check-ins from <a href="https://untappd.com" rel="external">Untappd</a> to my <a href="/beer">beer page</a>.</p>
 
 
-{% include_cached content/heading.html title='Thanks' %}
+{% include_cached content/heading.liquid title='Thanks' %}
 
 <p>As much work as I’ve put into my sections of code, I have to give a massive thanks to a handful of people that helped to make all of this happen, as there’s no way I could have done all this myself.</p>
 

@@ -1,5 +1,5 @@
-{% include components/head.html %}
-{% include components/header.html %}
+{% include components/head.liquid %}
+{% include components/header.liquid %}
 
 
 <main class="wrap" role="main">
@@ -17,12 +17,12 @@
                             {%- break -%}
                         {%- endif -%}
                     {%- endfor -%}
-                    {% include content/sparkline.html title=page.sparkline values=posts_by_category %}
+                    {% include content/sparkline.liquid title=page.sparkline values=posts_by_category %}
                 {% endif %}
             </h1>
         {% endif %}
 
-        {% include components/banner.html %}
+        {% include components/banner.liquid %}
 
         {% if page.page_class contains 'home' %}
             <p class="beta  lede  lede--featured" id="lede">{{ site.lede }}</p>
@@ -38,15 +38,15 @@
 
         {% if page.webmentions == true %}
             <hr>
-            {% include components/webmentions.html %}
-            {% include components/webmentions-button.html %}
+            {% include components/webmentions.liquid %}
+            {% include components/webmentions_button.liquid %}
         {% endif %}
 
     </section>
 
-    {% include components/author.html %}
+    {% include components/author.liquid %}
 </main>
 
 
-{% include components/footer.html %}
-{% include components/foot.html %}
+{% include components/footer.liquid %}
+{% include components/foot.liquid %}

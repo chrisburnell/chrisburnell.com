@@ -6,4 +6,4 @@ title: Doubly-Center-Aligned Text
 codepen_slug: zJLoGK
 ---
 
-{% include content/codepen.html %}
+{% include content/codepen.liquid %}

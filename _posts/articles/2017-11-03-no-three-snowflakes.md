@@ -24,9 +24,9 @@ But what about when you want to generate unique groups of more than <var>2</var>
 We’ll need to make sure our dataset contains more than <var>n</var> items—making unique groups of three items from a dataset of only three items would make our function entirely moot. From there, refactoring the function mostly comes down to keep track of how we’re iterating through the items in the dataset and repeating this iteration in a recursive-like way the same number of times as items per unique group.
 
 
-{% include_cached content/heading.html title='Let’s just jump right into it' %}
+{% include_cached content/heading.liquid title='Let’s just jump right into it' %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 @function unique-groups($data, $size: 2) {
@@ -109,7 +109,7 @@ We’ll need to make sure our dataset contains more than <var>n</var> items—ma
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}
 
 As with the previous version of the function, it can accept the required dataset as either a *List* or *Map*. Using our mathematical formula from before, we can plug in our variables and figure out how many unique multiples to expect from a dataset.
 
@@ -126,7 +126,7 @@ As with the previous version of the function, it can accept the required dataset
 </figure>
 
 
-{% include_cached content/heading.html title='In Action' %}
+{% include_cached content/heading.liquid title='In Action' %}
 
 {% highlight scss %}
 $border-styles: 5px solid black;

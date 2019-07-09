@@ -1,0 +1,18 @@
+<aside class="ingredients" role="complementary">
+
+    {% include_cached content/heading.liquid title='Ingredients' %}
+    <ul class="ingredients__list">
+    {% for ingredient in page.ingredients %}
+        <li class="ingredient" id="{{ ingredient.name | slugify }}">
+            <span class="ingredient__name">{{ ingredient.name }}</span>
+            <span class="incredient__amount-units">{{ ingredient.amount }} {{ ingredient.units }}</span>
+            <!--{% if ingredient.notes %}
+                {% for note in ingredient.notes %}
+                    <div class="ingredient__note">{{ note }}</div>
+                {% endfor %}
+            {% endif %}-->
+        </li>
+    {% endfor %}
+    </ul>
+
+</aside>

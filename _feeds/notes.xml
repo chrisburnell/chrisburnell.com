@@ -8,5 +8,5 @@ redirect_from:
 
 {%- assign notes_without_replies = site.categories.note | where_exp: 'page', 'page.in_reply_to == nil' -%}
 {% for page in notes_without_replies limit: site.feed_limit %}
-    {% include components/item-feed.html %}
+    {% include components/item_feed.liquid %}
 {% endfor %}

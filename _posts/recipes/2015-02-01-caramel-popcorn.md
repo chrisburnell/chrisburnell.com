@@ -23,8 +23,8 @@ authors:
   - name: My Mother
 ---
 
-0. Pop the {% include content/ingredient.html id="unpopped popcorn" %} and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").
-0. Combine the {% include content/ingredient.html id="margarine" %}, {% include content/ingredient.html id="brown sugar, packed" %}, {% include content/ingredient.html id="corn/golden syrup" %}, and {% include content/ingredient.html id="salt" %} in a pan.
+0. Pop the {% include content/ingredient.liquid id="unpopped popcorn" %} and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").
+0. Combine the {% include content/ingredient.liquid id="margarine" %}, {% include content/ingredient.liquid id="brown sugar, packed" %}, {% include content/ingredient.liquid id="corn/golden syrup" %}, and {% include content/ingredient.liquid id="salt" %} in a pan.
 0. Stir over medium heat *until boiling*, and boil while stirring for *5 minutes*.
-0. Remove from heat and stir in {% include content/ingredient.html id="vanilla extract" %} and {% include content/ingredient.html id="baking soda" %}.
-0. Toss over popcorn and {% include content/preheat.html text="bake for *one hour* at *120°C/250°F*" %}, tossing every *15 minutes*.
+0. Remove from heat and stir in {% include content/ingredient.liquid id="vanilla extract" %} and {% include content/ingredient.liquid id="baking soda" %}.
+0. Toss over popcorn and {% include content/preheat.liquid text="bake for *one hour* at *120°C/250°F*" %}, tossing every *15 minutes*.

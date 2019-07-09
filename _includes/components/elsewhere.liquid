@@ -1,0 +1,20 @@
+<nav class="elsewhere" role="navigation">
+    <ul class="elsewhere__list">
+        {% for link in site.data.elsewhere %}
+            {% if link.hidden %}
+                <link href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
+            {% else %}
+                {%- assign svg = link.svg | default: 'feather' -%}
+                <li>
+                    <a{% if link.class %} class="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
+                        {%- if link.svg -%}
+                            {% include_cached content/svg.liquid type=svg title=link.title %}
+                        {%- else -%}
+                            {{ link.content | default: link.title }}
+                        {%- endif -%}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

@@ -8,4 +8,4 @@ codepen_featured: true
 ---
 
 
-{% include content/codepen.html height='600' %}
+{% include content/codepen.liquid height='600' %}

@@ -1,0 +1,32 @@
+<svg width="80" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 15">
+  <defs>
+    <linearGradient id="greendient">
+      <stop offset="0%" stop-color="#5c8e17"/>
+      <stop offset="100%" stop-color="#b8eb30"/>
+    </linearGradient>
+  </defs>
+<rect x="0" y="0" width="80" height="15" fill="white" stroke-width="2" stroke="#666"/>
+<rect x="18" y="1" width="61" height="13" fill="url('#greendient')"/>
+<rect x="17" y="1" width="1" height="13" fill="#666"/>
+<polygon points="4,4 6,4 6,9 7,9 7,10 12,10, 12,12 11,12 11,13 4,13 4,12 3,12 3,5 4,5" fill="#5c8d17"/>
+<polygon points="7,3 9,3 9,6 10,6 10,7 13,7 13,9 8,9 8,8 7,8" fill="#8dc024"/>
+<polygon points="10,2 13,2 13,3 14,3 14,6 11,6 11,5 10,5" fill="#a5d82b"/>
+
+<path d="m20,5 h1 v1 h1 v1 h1 v-1 h1 v-1 h1 v5 h-1 v-3 h-1 v1 h-1 v-1 h-1 v3 h-1 z" fill="#fff"/>
+<path d="m26,5 h1 v5 h-1 z" fill="#fff"/>
+<path d="m29,5 h2 v1 h1 v1 h-1 v-1 h-2 v3 h2 v-1 h1 v1 h-1 v1 h-2 v-1 h-1 v-3 h1 z" fill="#fff"/>
+<path d="m33,5 h3 v1 h-2 v1 h2 v2 h1 v1 h-1 v-1 h-1 v-1 h-1 v2 h-1 z" fill="#fff"/>
+<rect x="36" y="6" width="1" height="1" fill="#fff"/>
+<path d="m39,5 h2 v1 h1 v1 h-1 v-1 h-2 v3 h2 v-1 h1 v1 h-1 v1 h-2 v-1 h-1 v-3 h1 z" fill="#fff"/>
+<rect x="41" y="7" width="1" height="1" fill="#fff"/>
+<path d="m43,5 h3 v1 h-2 v1 h2 v1 h-2 v2 h-1 z" fill="#fff"/>
+<path d="m48,5 h2 v1 h1 v1 h-1 v-1 h-2 v3 h2 v-1 h1 v1 h-1 v1 h-2 v-1 h-1 v-3 h1 z" fill="#fff"/>
+<rect x="50" y="7" width="1" height="1" fill="#fff"/>
+<path d="m52,5 h3 v1 h-2 v1 h2 v2 h1 v1 h-1 v-1 h-1 v-1 h-1 v2 h-1 z" fill="#fff"/>
+<rect x="55" y="6" width="1" height="1" fill="#fff"/>
+<path d="m57,5 h1 v1 h1 v1 h1 v-1 h1 v-1 h1 v5 h-1 v-3 h-1 v1 h-1 v-1 h-1 v3 h-1 z" fill="#fff"/>
+<path d="m64,5 h2 v1 h1 v4 h-1 v-4 h-2 v4 h-1 v-4 h1 z" fill="#fff"/>
+<rect x="64" y="7" width="2" height="1" fill="#fff"/>
+<path d="m68,5 h3 v1 h-1 v4 h-1 v-4 h-1" fill="#fff"/>
+<path d="m73,5 h3 v1 h-3 v1 h2 v1 h1 v1 h-1 v1 h-3 v-1 h3 v-1 h-2 v-1 h-1 v-1 h1" fill="#fff"/>
+</svg>

@@ -7,13 +7,13 @@ codepen_slug: mglHp
 ---
 
 
-{% include content/codepen.html height='425' %}
+{% include content/codepen.liquid height='425' %}
 
 {% highlight html %}
 <div class="square">A</div>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html, body {
@@ -114,4 +114,4 @@ body {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

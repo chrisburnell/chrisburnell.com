@@ -1,0 +1,6 @@
+{% if page.webmentions == true %}
+    <button type="button" class="button--show-webmentions  js-show-webmentions" id="show-webmentions" role="button" aria-label="Ping a Webmention" aria-controls="webmentions-form" aria-expanded="false" aria-pressed="false" aria-disabled="true" disabled>
+        {% include_cached content/svg.liquid type='link' %}
+        <span class="js-webmention-count" data-webmentions-url="{{ canonical }}">Mentioned this?</span>
+    </button>
+{% endif %}

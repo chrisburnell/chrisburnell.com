@@ -7,4 +7,4 @@ codepen_slug: MQNwqp
 ---
 
 
-{% include content/codepen.html %}
+{% include content/codepen.liquid %}

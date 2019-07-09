@@ -1,5 +1,5 @@
-{% include components/head.html %}
-{% include components/header.html %}
+{% include components/head.liquid %}
+{% include components/header.liquid %}
 
 
 <main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
@@ -8,12 +8,12 @@
         <h1 class="title" id="article">
             <span class="p-name">{{ page.title | strip_html }}</span>
             {% if page.sparkline %}
-                {% include content/sparkline.html title=page.sparkline values=page.category %}
+                {% include content/sparkline.liquid title=page.sparkline values=page.category %}
             {% endif %}
         </h1>
 
-        {% include components/meta.html %}
-        {% include components/banner.html %}
+        {% include components/meta.liquid %}
+        {% include components/banner.liquid %}
 
         {% if page.lede %}
             <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
@@ -41,7 +41,7 @@
                 <em>* Only metric is reliable while I figure this out!</em>
             </div>
 
-            {% include_cached content/heading.html title='Ingredients' %}
+            {% include_cached content/heading.liquid title='Ingredients' %}
             {%- assign has_ingredients_notes = page.ingredients | where_exp: 'ingredient', 'ingredient.notes != nil' | first -%}
             {%- assign has_ingredients_optional = page.ingredients | where_exp: 'ingredient', 'ingredient.optional != nil' | first -%}
             <div class="ingredients">
@@ -152,10 +152,10 @@
                                 <td>{{ ingredient.name }}</td>
                                 <td>
                                     {% if ingredient.g or ingredient.ml or ingredient.amount %}
-                                        <span class="unit  unit--metric">{% include content/fractionize.html value=metric %}</span>
-                                        <span class="unit  unit--canada" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=canada %}</span>
-                                        <span class="unit  unit--uk" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=uk %}</span>
-                                        <span class="unit  unit--us" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.html value=us %}</span>
+                                        <span class="unit  unit--metric">{% include content/fractionize.liquid value=metric %}</span>
+                                        <span class="unit  unit--canada" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.liquid value=canada %}</span>
+                                        <span class="unit  unit--uk" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.liquid value=uk %}</span>
+                                        <span class="unit  unit--us" title="{% if ingredient.g %}{{ ingredient.g }} g{% else %}{{ ingredient.ml }} mL{% endif %}">{% include content/fractionize.liquid value=us %}</span>
                                     {% endif %}
                                 </td>
                                 {% if has_ingredients_notes or has_ingredients_optional %}<td>{% if ingredient.optional == true %}• <em>optional</em><br>{% endif %}{% for note in ingredient.notes %}{% unless forloop.first %}<br>{% endunless %}• {{ note }}{% endfor %}</td>{% endif %}
@@ -165,7 +165,7 @@
                 </table>
             </div>
 
-            {% include_cached content/heading.html title='Directions' %}
+            {% include_cached content/heading.liquid title='Directions' %}
             <div class="directions">
                 {% if page.preheat and page.preheat == true %}
                     <p class="preheat-step">There is a <a href="#preheat">preheat</a> step in this recipe.<p>
@@ -174,23 +174,23 @@
             </div>
         </div>
 
-        {% include components/further-reading.html %}
+        {% include components/further_reading.liquid %}
 
         <hr>
 
-        {% include components/webmentions.html %}
-        {% include components/comments.html %}
+        {% include components/webmentions.liquid %}
+        {% include components/comments.liquid %}
 
         <hr>
 
-        {% include components/buttons-categories.html %}
-        {% include components/widget-browse-posts.html %}
+        {% include components/buttons_categories.liquid %}
+        {% include components/widget_browse_posts.liquid %}
 
     </article>
 
-    {% include components/author.html %}
+    {% include components/author.liquid %}
 </main>
 
 
-{% include components/footer.html %}
-{% include components/foot.html %}
+{% include components/footer.liquid %}
+{% include components/foot.liquid %}

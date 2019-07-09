@@ -116,8 +116,8 @@ gulp.task("css-critical", () => {
         .pipe(gulp.dest(`${paths.css.dest}/`))
         .pipe(
             rename({
-                basename: "critical-css",
-                extname: ".html"
+                basename: "critical_css",
+                extname: ".liquid"
             })
         )
         .pipe(gulp.dest(`${paths.includes}/generated/`));
@@ -168,8 +168,8 @@ gulp.task("js-css-preload", () => {
         .pipe(babel())
         .pipe(
             rename({
-                basename: "css-rel-preload",
-                extname: ".html"
+                basename: "css_rel_preload",
+                extname: ".liquid"
             })
         )
         .pipe(gulp.dest(`${paths.includes}/generated/`));

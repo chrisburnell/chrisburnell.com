@@ -94,7 +94,7 @@ X = 10
 </figure>
 
 
-{% include content/heading.html title='History Lesson Over, On To The Code' %}
+{% include content/heading.liquid title='History Lesson Over, On To The Code' %}
 
 First we need to set up some data to be able to relate Arabic numerals to their Roman counterparts.
 
@@ -175,7 +175,7 @@ In this case we know we’re done converting when we’ve run out of Roman chara
 
 You’ll also notice, in both cases, that there’s a loop that goes from <samp>1</samp> through <samp>999</samp>. While normally this would be a point of poor performance, this limit should never be reached, unless the value being converted is *extremely* long, in which case Roman numerals would be poorly-suited to represent. This big loop is used to cycle through an arbitrary number of characters passed as an input to the include.
 
-{% include content/heading.html title='Copy This Part' %}
+{% include content/heading.liquid title='Copy This Part' %}
 
 {% highlight liquid %}{% raw %}
 {%- assign input = include.value | times: 1 -%}

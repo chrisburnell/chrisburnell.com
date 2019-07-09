@@ -1,4 +1,4 @@
-{% include components/head.html %}
+{% include components/head.liquid %}
 
 
 <main class="wrap  h-entry" role="main">
@@ -16,14 +16,14 @@
             {% unless page.reacji or page.titlefree %}</span>{% endunless %}
         </h1>
 
-        {% include components/meta.html %}
-        {% include components/banner.html %}
+        {% include components/meta.liquid %}
+        {% include components/banner.liquid %}
 
         {% if page.lede %}
             <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
         {% endif %}
 
-        {% include components/reply-context.html %}
+        {% include components/reply_context.liquid %}
 
         {% if page.edit %}
             <div class="edit">
@@ -42,14 +42,14 @@
         {% endif %}
 
         <div class="content__body  e-content">
-            {% include components/photo.html photo=page.photo %}
+            {% include components/photo.liquid photo=page.photo %}
             {{ content }}
         </div>
 
-        {% include components/further-reading.html %}
+        {% include components/further_reading.liquid %}
 
     </article>
 </main>
 
 
-{% include components/foot.html %}
+{% include components/foot.liquid %}

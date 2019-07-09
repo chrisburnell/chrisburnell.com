@@ -1,5 +1,5 @@
-{% include components/head.html %}
-{% include components/header.html %}
+{% include components/head.liquid %}
+{% include components/header.liquid %}
 
 
 <main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
@@ -8,12 +8,12 @@
         <h1 class="title" id="article">
             <span class="p-name">{{ page.title | strip_html }}</span>
             {% if page.sparkline %}
-                {% include content/sparkline.html title=page.sparkline values=page.category %}
+                {% include content/sparkline.liquid title=page.sparkline values=page.category %}
             {% endif %}
         </h1>
 
-        {% include components/meta.html %}
-        {% include components/banner.html %}
+        {% include components/meta.liquid %}
+        {% include components/banner.liquid %}
 
         {%- assign content = page.content | strip_newlines -%}
         {% if content != empty %}
@@ -37,23 +37,23 @@
             </figure>
         {% endif %}
 
-        {% include components/further-reading.html %}
+        {% include components/further_reading.liquid %}
 
         <hr>
 
-        {% include components/webmentions.html %}
-        {% include components/comments.html %}
+        {% include components/webmentions.liquid %}
+        {% include components/comments.liquid %}
 
         <hr>
 
-        {% include components/buttons-categories.html %}
-        {% include components/widget-browse-posts.html %}
+        {% include components/buttons_categories.liquid %}
+        {% include components/widget_browse_posts.liquid %}
 
     </article>
 
-    {% include components/author.html %}
+    {% include components/author.liquid %}
 </main>
 
 
-{% include components/footer.html %}
-{% include components/foot.html %}
+{% include components/footer.liquid %}
+{% include components/foot.liquid %}

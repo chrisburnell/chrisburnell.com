@@ -7,7 +7,7 @@ codepen_slug: xutbs
 ---
 
 
-{% include content/codepen.html height='500' %}
+{% include content/codepen.liquid height='500' %}
 
 Check out the [demo version](/pen/transform-centering/).
 
@@ -15,7 +15,7 @@ Check out the [demo version](/pen/transform-centering/).
 <textarea class="modal" disabled></textarea>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html {
@@ -48,4 +48,4 @@ body {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

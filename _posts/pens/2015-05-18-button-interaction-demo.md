@@ -7,13 +7,13 @@ codepen_slug: RPRwoo
 ---
 
 
-{% include content/codepen.html height='300' %}
+{% include content/codepen.liquid height='300' %}
 
 {% highlight html %}
 <button>Hello!</button>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 $black:     #0d0d0d;
@@ -61,4 +61,4 @@ button {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

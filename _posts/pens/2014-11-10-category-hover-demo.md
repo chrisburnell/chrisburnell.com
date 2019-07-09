@@ -8,9 +8,9 @@ codepen_featured: true
 ---
 
 
-{% include content/codepen.html height='525' %}
+{% include content/codepen.liquid height='525' %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight html %}
 <div class="modal">
@@ -42,9 +42,9 @@ codepen_featured: true
 </div>
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 // Website Colour Palette
@@ -165,4 +165,4 @@ html {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

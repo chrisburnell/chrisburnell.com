@@ -1,0 +1,6 @@
+{% if page.webmentions == true %}
+    <section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" hidden>
+        {% include components/webmentions_form.liquid %}
+        {% include_cached components/webmentions_responses.liquid %}
+    </section>
+{% endif %}

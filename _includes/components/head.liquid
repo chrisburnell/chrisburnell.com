@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+
+<head>
+
+    {%- include assets/yml_head.liquid -%}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <title>{{ meta_title }}</title>
+
+    {% if page.comments == 'disqus' %}
+        <link rel="dns-prefetch" href="//a.disquscdn.com">
+        <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
+    {% endif %}
+    {% if page.caniuse %}
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    {% endif %}
+    {% if page.codepen or page.codepen_slug %}
+        <link rel="dns-prefetch" href="//codepen.io">
+        <link rel="dns-prefetch" href="//assets.codepen.io">
+        <link rel="dns-prefetch" href="//s.codepen.io">
+    {% endif %}
+    {% if page.speakerdeck or page.speakerdeck_slug %}
+        <link rel="dns-prefetch" href="//speakerdeck.com">
+    {% endif %}
+    {% if page.twitter %}
+        <link rel="dns-prefetch" href="//platform.twitter.com">
+    {% endif %}
+    {% if page.vimeo or page.vimeo_slug %}
+        <link rel="dns-prefetch" href="//player.vimeo.com">
+    {% endif %}
+    {% if page.youtube or page.youtube_slug %}
+        <link rel="dns-prefetch" href="//www.youtube.com">
+    {% endif %}
+
+    {% if link %}
+        <link rel="prefetch" href="{{ link }}">
+    {% endif %}
+
+    <link rel="self" href="{{ site.urls.feed | prepend: site.live_url }}">
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: site.urls.feed | prepend: site.live_url }}">
+    <link rel="pingback" href="{{ site.urls.webmention }}/xmlrpc">
+    <link rel="webmention" href="{{ site.urls.webmention }}/webmention">
+    <link rel="authorization_endpoint" href="{{ site.urls.authorization }}">
+    <link rel="token_endpoint" href="{{ site.urls.token }}">
+    <link rel="micropub" href="{{ site.urls.micropub }}">
+    <link rel="microsub" href="{{ site.urls.microsub }}">
+    <link rel="openid.delegate" href="{{ site.live_url }}" />
+    <link rel="openid.server" href="{{ site.urls.openid }}" />
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ site.live_url }}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ site.live_url }}/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <link rel="mask-icon" href="{{ 'favicon.svg' | relative_url }}" color="#{{ site.color }}">
+
+    <link rel="author" href="{{ 'humans.txt' | relative_url }}">
+    <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.json' | relative_url }}">
+
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="msapplication-starturl" content="{{ site.live_url }}">
+    <meta name="description" content="{{ meta_lede }}">
+    <meta name="theme-color" content="#{{ site.color }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta http-equiv="cleartype" content="on">
+
+    {% include assets/assets_social.liquid %}
+    {% include assets/assets_head.liquid %}
+
+</head>
+
+<body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %}>
+
+    <a href="#content" hidden>Skip to main content</a>

@@ -1,0 +1,30 @@
+{%- comment -%}
+  Create a Fragment Anchor for linking to a specific part of the page
+
+  @param {String} id *
+  @param {String} slug *
+  @param {String} title
+  @param {String} rel
+
+  @example
+    {% include_cached content/fragment_anchor.liquid id='12345' %}
+    // <a href="#12345" class="fragment-anchor">#12345</a>
+
+{%- endcomment -%}
+{% if include.id %}
+    {% assign anchor_href = include.id | prepend: '#' %}
+{% elsif include.href %}
+    {% assign anchor_href = include.href %}
+{% endif %}
+{% if include.id %}
+    {% capture anchor_slug %}{{ include.id | prepend: 'data-slug="' | append: '"' }}{% endcapture %}
+{% endif %}
+{% if include.title %}
+    {% capture anchor_title %}{{ include.title | prepend: 'title="' | append: '"' }}{% endcapture %}
+{% endif %}
+{% if include.rel %}
+    {% capture anchor_rel %}{{ include.rel | prepend: 'rel="' | append: '"' }}{% endcapture %}
+{% endif %}
+<a href="{{ anchor_href }}" class="fragment-anchor" {{ anchor_slug }} {{ anchor_title }} {{ anchor_rel }}>
+    {% include_cached content/svg.liquid type='link' %}
+</a>

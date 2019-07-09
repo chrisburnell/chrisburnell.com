@@ -1,0 +1,17 @@
+{%- comment -%}
+
+  This include lets you easily embed a Twitter Card.
+
+  @param {String} content *
+
+  @example
+    {% include_cached content/twitter_card.liquid content='<p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a>' %}
+    // <blockquote class="twitter-tweet" lang="en" data-conversation="none">
+    //     <p>assumptions do not a civil developer make</p>— Chris Burnell (@iamchrisburnell) <a href="https://twitter.com/iamchrisburnell/status/590910692955389952">April 22, 2015</a>
+    // </blockquote>
+
+{%- endcomment -%}
+<blockquote class="twitter-tweet" lang="{{ site.language }}" data-conversation="none">
+    {{ include.content }}
+</blockquote>
+<noscript>Please enable JavaScript to see this Twitter Card.</noscript>

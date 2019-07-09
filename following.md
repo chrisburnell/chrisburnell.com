@@ -9,38 +9,38 @@ redirect_from:
 
 This page is still being built!
 
-{% include content/heading.html title='Rachel Tan' %}
+{% include content/heading.liquid title='Rachel Tan' %}
 Testing
 
-{% include content/heading.html title='Dave Letorey' href='https://letorey.co.uk/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Dave Letorey' href='https://letorey.co.uk/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Ben Walters' href='https://forgotten.media/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Ben Walters' href='https://forgotten.media/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Dominic Patmore' href='http://www.pilifter.com/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Dominic Patmore' href='http://www.pilifter.com/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Matteo Pescarin' href='https://peach.smartart.it/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Matteo Pescarin' href='https://peach.smartart.it/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Bruce Delo' href='https://flyknifecomics.com/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Bruce Delo' href='https://flyknifecomics.com/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Calum Ryan' href='https://calumryan.com/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Calum Ryan' href='https://calumryan.com/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Ana Rodriguez' href='https://ohhelloana.blog/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Ana Rodriguez' href='https://ohhelloana.blog/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Jonas Voss' href='https://blog.voss.co/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Jonas Voss' href='https://blog.voss.co/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Neil Mather' href='https://doubleloop.net/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Neil Mather' href='https://doubleloop.net/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Kristof De Jaeger' href='https://realize.be/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Kristof De Jaeger' href='https://realize.be/' rel='external friend' id='' %}
 Testing
 
-{% include content/heading.html title='Vincent Pickering' href='https://vincentp.me/' rel='external friend' id='' %}
+{% include content/heading.liquid title='Vincent Pickering' href='https://vincentp.me/' rel='external friend' id='' %}
 Testing

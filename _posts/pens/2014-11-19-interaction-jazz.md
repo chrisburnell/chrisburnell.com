@@ -7,7 +7,7 @@ codepen_slug: myyRqp
 ---
 
 
-{% include content/codepen.html height='600' %}
+{% include content/codepen.liquid height='600' %}
 
 {% highlight haml %}
 - (1...51).each do |row|
@@ -16,7 +16,7 @@ codepen_slug: myyRqp
 .jazz
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 @function range-map($value, $ranges...) {
@@ -68,4 +68,4 @@ $hue-rotation: -75;
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

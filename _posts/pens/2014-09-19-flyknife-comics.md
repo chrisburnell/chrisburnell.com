@@ -8,7 +8,7 @@ codepen_featured: true
 ---
 
 
-{% include content/codepen.html height='400' %}
+{% include content/codepen.liquid height='400' %}
 
 {% highlight html %}
 <div>
@@ -17,7 +17,7 @@ codepen_featured: true
 </div>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 @import url(https://fonts.googleapis.com/css?family=Yellowtail);
@@ -97,4 +97,4 @@ h1 {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

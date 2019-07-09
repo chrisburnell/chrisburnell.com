@@ -12,5 +12,5 @@ lede: All of my posts.
     {%- endunless -%}
 {%- endfor -%}
 {% for page in posts_without_replies limit: site.feed_limit %}
-    {% include components/item-feed.html %}
+    {% include components/item_feed.liquid %}
 {% endfor %}

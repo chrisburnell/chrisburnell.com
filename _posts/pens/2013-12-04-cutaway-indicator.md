@@ -7,13 +7,13 @@ codepen_slug: yIwzd
 ---
 
 
-{% include content/codepen.html height='200' %}
+{% include content/codepen.liquid height='200' %}
 
 {% highlight html %}
 <button>Hover Me</button>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html,
@@ -68,4 +68,4 @@ button {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

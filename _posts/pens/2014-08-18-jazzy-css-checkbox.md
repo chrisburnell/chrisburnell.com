@@ -7,14 +7,14 @@ codepen_slug: Cbiun
 ---
 
 
-{% include content/codepen.html height='250' %}
+{% include content/codepen.liquid height='250' %}
 
 {% highlight html %}
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">
 <label for="jazzycheckbox" class="check">Check me!</label>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html,
@@ -72,4 +72,4 @@ input[type="checkbox"] {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

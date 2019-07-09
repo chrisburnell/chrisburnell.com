@@ -8,7 +8,7 @@ codepen_featured: true
 ---
 
 
-{% include content/codepen.html height='350' %}
+{% include content/codepen.liquid height='350' %}
 
 {% highlight html %}
 <a href="#" class="article-link">
@@ -18,7 +18,7 @@ codepen_featured: true
 </a>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html,
@@ -84,4 +84,4 @@ body {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

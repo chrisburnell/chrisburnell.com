@@ -15,6 +15,7 @@
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff2") format("woff2"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff") format("woff"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.ttf") format("truetype"),
+             url('https://chrisburnell.com/fonts/#{nth($style, 8)}.eot?#iefix') format('embedded-opentype'),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.svg##{nth($style, 8)}") format("svg");
         @include v(unicode-range, default);
     }

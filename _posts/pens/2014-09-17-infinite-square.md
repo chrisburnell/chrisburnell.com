@@ -8,7 +8,7 @@ codepen_featured: true
 ---
 
 
-{% include content/codepen.html height='350' %}
+{% include content/codepen.liquid height='350' %}
 
 {% highlight html %}
 <div class="square">
@@ -19,7 +19,7 @@ codepen_featured: true
 </div>
 {% endhighlight %}
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 
 {% highlight scss %}
 html,
@@ -138,4 +138,4 @@ body {
 }
 {% endhighlight %}
 
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}

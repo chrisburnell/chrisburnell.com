@@ -18,12 +18,12 @@ syndicate_to:
 caniuse: true
 ---
 
-{% include_cached content/caniuse.html feature='css-variables' periods='current' %}
+{% include_cached content/caniuse.liquid feature='css-variables' periods='current' %}
 
 One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* mixin should be useful for you.
 
 
-{% include_cached content/heading.html title='The Setup' %}
+{% include_cached content/heading.liquid title='The Setup' %}
 
 I won’t pretend I’m writing the introduction to a family recipe for chocolate cake and bore you with twenty minutes of introduction; instead, let’s just jump into the technique, then I’ll break it down a little bit. But before I get too ahead of myself, *please keep in mind there are some bits that require setting up!*
 
@@ -53,7 +53,7 @@ $z-indexes: (
 ) !default;
 {% endhighlight %}
 
-{% include_cached content/heading.html title='New kid on the block' %}
+{% include_cached content/heading.liquid title='New kid on the block' %}
 
 Now we need to prepare our CSS Variables. In order to make them available for the entire scope of our (S)CSS, we’ll assign them underneath `:root`.
 
@@ -157,7 +157,7 @@ Things are pretty straightforward for `z-index` and `opacity`, but you can see t
 
 Let’s tie it all together with this SCSS mixin.
 
-{% include content/code-toggle-top.html %}
+{% include content/code_toggle_top.liquid %}
 {% highlight scss %}
 @mixin v($property, $value, $negative: false, $important: false, $hide: false) {
     $map-name: map-get($property-map, $property);
@@ -232,11 +232,11 @@ Let’s tie it all together with this SCSS mixin.
     }
 }
 {% endhighlight %}
-{% include content/code-toggle-bottom.html %}
+{% include content/code_toggle_bottom.liquid %}
 
 You might have noticed that there are a number of parameters you can pass to this mixin: the property, a value, negation of the passed value (optional), whether or not to mark the declaration as `!important` (optional), and whether or not to provide the fallback value (optional).
 
-{% include_cached content/heading.html title='Putting it to use' %}
+{% include_cached content/heading.liquid title='Putting it to use' %}
 
 {% highlight scss %}
 .modal {
@@ -266,7 +266,7 @@ Because we’ve set <var>$negative</var> to `true` for the `margin-top` declarat
 
 Changing the default value of <var>$hide</var> from `false` to `fallback|output` where you are declaring this mixin will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
-{% include_cached content/heading.html title='The Takeaway' %}
+{% include_cached content/heading.liquid title='The Takeaway' %}
 
 The benefits to using CSS Variables are enormous, and I’d strongly recommend using them as soon as you can across your projects. Others have better explained what those many benefits are, so I encourage you to read up on the subject. A mixin like the one we’ve gone over in this article will help you both in transitioning towards using CSS Variables as well as, when the time comes for your project(s), ceasing to provide fallbacks for your CSS Variables.
 

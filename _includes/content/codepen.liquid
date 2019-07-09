@@ -1,0 +1,32 @@
+{%- comment -%}
+
+  This include lets you easily embed a CodePen.
+
+  @param {String} slug *
+  @param {Number} height *
+  @param {String} tab [result]
+  @param {String} user [chrisburnell]
+  @param {String} theme [119]
+
+  @example
+    {% include content/codepen.liquid slug='lBJnz' height='500' theme='tabfree' %}
+    // <pre class="codepen" data-slug-hash="lBJnz" data-default-tab="result" data-theme-id="8863" data-user="chrisburnell" data-height="500" data-safe="true">
+    //     <code></code>
+    //     <a href="//codepen.io/chrisburnell/pen/lBJnz">Check out this Pen!</a>
+    // </pre>
+    // <noscript>Please enable JavaScript to view this Pen.</noscript>
+
+{%- endcomment -%}
+{% assign slug = include.slug | default: page.codepen_slug %}
+{% assign height = include.height | default: '400' %}
+{% assign tab = include.tab | default: 'result' %}
+{% assign user = include.user | default: site.author.codepen %}
+{% assign theme = site.codepen.themes.default %}
+{% if include.theme == 'tabfree' %}
+    {% assign theme = site.codepen.themes.tabfree %}
+{% endif %}
+<pre class="codepen" data-slug-hash="{{ slug }}" data-default-tab="{{ tab }}" data-theme-id="{{ theme }}" data-user="{{ user }}" data-safe="true" data-height="{{ height }}">
+    <code></code>
+    <a href="https://codepen.io/{{ user }}/pen/{{ slug }}">Check out this Pen!</a>
+</pre>
+<noscript>Please enable JavaScript to view this Pen.</noscript>

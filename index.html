@@ -6,19 +6,19 @@ searchable: no-content
 {% if paginator.page == 1 %}
     <dl>
         <dt><h2 class="delta"><a href="/articles">Articles <small>({{ site.categories.article.size }})<small></a></h2></dt>
-        <dd>{% include content/sparkline.html title='articles' values=site.categories.article %}</dd>
+        <dd>{% include content/sparkline.liquid title='articles' values=site.categories.article %}</dd>
         <dt><h2 class="delta"><a href="/bookmarks">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
-        <dd>{% include content/sparkline.html title='bookmarks' values=site.categories.bookmark %}</dd>
+        <dd>{% include content/sparkline.liquid title='bookmarks' values=site.categories.bookmark %}</dd>
         <dt><h2 class="delta"><a href="/notes">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
-        <dd>{% include content/sparkline.html title='notes' values=site.categories.note %}</dd>
+        <dd>{% include content/sparkline.liquid title='notes' values=site.categories.note %}</dd>
         <dt><h2 class="delta"><a href="/beer">Beer Reviews <small>({{ site.categories.beer.size }})<small></a></h2></dt>
-        <dd>{% include content/sparkline.html title='beer' values=site.categories.beer %}</dd>
+        <dd>{% include content/sparkline.liquid title='beer' values=site.categories.beer %}</dd>
         <dt><h2 class="delta"><a href="/music">Music Reviews <small>({{ site.categories.music.size }})<small></a></h2></dt>
-        <dd>{% include content/sparkline.html title='music' values=site.categories.music %}</dd>
-        {% include components/lastfm.html %}
+        <dd>{% include content/sparkline.liquid title='music' values=site.categories.music %}</dd>
+        {% include components/lastfm.liquid %}
     </dl>
 
-    {% include components/upcoming-rsvps.html posts=site.posts %}
+    {% include components/upcoming_rsvps.liquid posts=site.posts %}
 
     {%- assign posts_without_replies = site.emptyArray -%}
     {%- for page in site.posts -%}
@@ -26,7 +26,7 @@ searchable: no-content
             {%- assign posts_without_replies = posts_without_replies | push: page -%}
         {%- endunless -%}
     {%- endfor -%}
-    {% include components/on-this-day.html posts=posts_without_replies %}
+    {% include components/on_this_day.liquid posts=posts_without_replies %}
 
     <h2 id="latest" class="gamma">The Latest</h2>
 {% else %}
@@ -35,12 +35,12 @@ searchable: no-content
 
 <ol class="content-list  h-feed" role="list">
     {% for page in paginator.posts %}
-        {% include components/item-content-list.html %}
+        {% include components/item_content_list.liquid %}
     {% endfor %}
 </ol>
 
-{% include components/widget-pagination.html %}
+{% include components/widget_pagination.liquid %}
 
 <hr>
 
-{% include components/buttons-categories.html %}
+{% include components/buttons_categories.liquid %}

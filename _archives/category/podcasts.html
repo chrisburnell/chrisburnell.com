@@ -14,10 +14,10 @@ sparkline: podcasts
 
 <ol class="shelf  h-feed" id="podcasts" role="list">
     {% for page in site.categories.podcast %}
-        {% include components/item-shelf.html %}
+        {% include components/item_shelf.liquid %}
     {% endfor %}
 </ol>
 
 <hr>
 
-{% include components/buttons-categories.html %}
+{% include components/buttons_categories.liquid %}

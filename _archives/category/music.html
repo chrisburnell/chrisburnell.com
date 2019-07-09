@@ -14,7 +14,7 @@ sparkline: music
 ---
 
 <dl>
-    {% include components/lastfm.html %}
+    {% include components/lastfm.liquid %}
 </dl>
 
 <p>If you like hip-hop, check out my chronological playlist, <a href="https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u" rel="external">Hippity Hop and Whatnot Through the Ages</a>.</p>
@@ -25,10 +25,10 @@ sparkline: music
 
 <ol class="shelf  h-feed" id="music" role="list">
     {% for page in site.categories.music %}
-        {% include components/item-shelf.html %}
+        {% include components/item_shelf.liquid %}
     {% endfor %}
 </ol>
 
 <hr>
 
-{% include components/buttons-categories.html %}
+{% include components/buttons_categories.liquid %}
