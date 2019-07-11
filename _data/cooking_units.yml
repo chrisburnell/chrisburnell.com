@@ -1,11 +1,12 @@
 mass:
   g: 1.00
-  oz: 28.00
-  lb: 448.00
+  oz: 28.35
+  lb: 453.60
   kg: 1000.00
 volume:
   ml: 1.00
   tsp: 5.00
+  dsp: 10.00
   tbsp: 15.00
   floz_uk: 28.41
   floz_us: 29.57
