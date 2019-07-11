@@ -18,3 +18,11 @@
   link: https://www.visitleevalley.org.uk/en/content/cms/where-to-stay-and-short-breaks/lee-valley-almost-wild-campsit/
   image: maps/lee-valley-almost-wild-campsite.png
   geo: 51.7433919,-0.0094743
+- name: The Old Fountain
+  link: https://oldfountain.co.uk
+  # image: maps/the-old-fountain.png
+  geo: 51.5271,-0.0890309
+- name: Mikkeller Bar London
+  link: http://mikkeller.dk/location/mikkeller-bar-london
+  # image: maps/mikkeller-bar-london.png
+  geo: 51.5273,-0.077116

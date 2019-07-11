@@ -58,10 +58,12 @@
     - vincentlistens
 - name: Jeremy Cherfas
   link: jeremycherfas.net
+  twitter: EatPodcast
 
 # Places and Conferences
 - name: Homebrew Website Club London
   link: hwclondon.co.uk
+  twitter: hwclondon
 - name: IndieWebCamp Online
   link: 2019.indieweb.org/online
 
@@ -74,23 +76,36 @@
 # Music
 - name: Kendrick Lamar
   link: https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg
+  twitter: kendricklamar
 - name: Skepta
   link: https://open.spotify.com/artist/2p1fiYHYiXz9qi0JJyxBzN
+  twitter: Skepta
 - name: Mitch Murder
   link: https://mitchmurder.bandcamp.com
+  twitter: mitch_murder
 
 # Breweries
 - name: Amundsen Bryggeri
   link: https://www.amundsenbrewery.com
+  twitter: amundsenbrewery
 - name: Beavertown
   link: https://www.beavertownbrewery.co.uk
+  twitter: BeavertownBeer
 - name: Mikkeller
   link: http://mikkeller.dk
+  twitter: MikkellerBeer
 - name: LERVIG
   link: https://www.lervig.no
-- name: The Kernel Brewry
+  twitter: LervigBeer
+- name: Siren Craft Brew
+  link: http://www.sirencraftbrew.com
+  twitter: sirencraftbrew
+- name: The Kernel Brewery
   link: http://www.thekernelbrewery.com
+  twitter: kernelbrewery
 - name: Thornbridge Brewery
   link: https://thornbridgebrewery.co.uk
+  twitter: thornbridge
 - name: Wild Card Brewery
   link: https://wildcardbrewco.com
+  twitter: WildCardBrewery
