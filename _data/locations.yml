@@ -26,3 +26,7 @@
   link: http://mikkeller.dk/location/mikkeller-bar-london
   # image: maps/mikkeller-bar-london.png
   geo: 51.5273,-0.077116
+- name: Beer Merchants Tap
+  link: https://beermerchantstap.com/
+  # image: maps/beer-merchants-tap.png
+  geo: 51.5442,-0.0236325

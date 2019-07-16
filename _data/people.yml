@@ -91,12 +91,15 @@
 - name: Beavertown
   link: https://www.beavertownbrewery.co.uk
   twitter: BeavertownBeer
-- name: Mikkeller
-  link: http://mikkeller.dk
-  twitter: MikkellerBeer
+- name: Cloudwater Brew Co.
+  link: http://cloudwaterbrew.co
+  twitter: cloudwaterbrew
 - name: LERVIG
   link: https://www.lervig.no
   twitter: LervigBeer
+- name: Mikkeller
+  link: http://mikkeller.dk
+  twitter: MikkellerBeer
 - name: Siren Craft Brew
   link: http://www.sirencraftbrew.com
   twitter: sirencraftbrew
