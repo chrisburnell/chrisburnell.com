@@ -1,6 +1,10 @@
 ---
 title: Full Feed
 lede: All of my posts.
+redirect_from:
+  - all.xml
+  - firehose.xml
+  - full.xml
 ---
 
 {%- assign posts_without_replies = site.emptyArray -%}

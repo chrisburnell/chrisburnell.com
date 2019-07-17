@@ -118,7 +118,7 @@ defaults:
   - scope:
       type: "feeds"
     values:
-      layout: feed
+      layout: "feed"
       searchable: false
       sitemap:
         exclude: true
@@ -177,30 +177,6 @@ defaults:
       mf_property: "read-of"
       prefix: r
       emoji: "📖"
-      ignore: true
-  - scope:
-      path: "_posts/coffee"
-    values:
-      category: "coffee"
-      layout: "review"
-      mf_root: "review"
-      mf_property: "pk-drank"
-      prefix: c
-      emoji: "☕️"
-      draft: true
-      hidden: true
-      ignore: true
-  - scope:
-      path: "_posts/food"
-    values:
-      category: "food"
-      layout: "review"
-      mf_root: "review"
-      mf_property: "pk-ate"
-      prefix: e
-      emoji: "🍛"
-      draft: true
-      hidden: true
       ignore: true
   - scope:
       path: "_posts/likes"

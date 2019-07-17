@@ -16,10 +16,6 @@
     {% capture meta_lede %}One of my shared bookmarks, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'book' %}
     {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.category == 'coffee' %}
-    {% capture meta_lede %}One of my coffee check-ins, {{ page.title | strip_html }}.{% endcapture %}
-{% elsif page.category == 'food' %}
-    {% capture meta_lede %}One of my food reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'like' %}
     {% capture meta_lede %}One of my liked pages, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'movie' %}

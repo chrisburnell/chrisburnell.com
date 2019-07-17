@@ -14,14 +14,6 @@
   type: books
   category: book
   icon: 'bullhorn'
-- title: Coffee
-  type: coffee
-  category: coffee
-  icon: 'bullhorn'
-# - title: Food
-#   type: food
-#   category: food
-#   icon: 'bullhorn'
 - title: Likes
   type: likes
   category: like
