@@ -11,7 +11,6 @@ speakerdeck_slug: supporting-middle-out-in-css
 vimeo_slug: 164122074
 ---
 
-
 I wrote about this talk in another article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
 

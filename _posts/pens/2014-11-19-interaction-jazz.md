@@ -6,7 +6,6 @@ title: Interaction Jazz
 codepen_slug: myyRqp
 ---
 
-
 {% include content/codepen.liquid height='600' %}
 
 {% highlight haml %}

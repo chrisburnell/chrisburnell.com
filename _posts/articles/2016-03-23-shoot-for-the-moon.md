@@ -25,7 +25,6 @@ further_reading:
     title: "A Closer Look At Font Rendering"
 ---
 
-
 As CSS changes and morphs over time, we must not forget that legacy browsers remain unchanged; one *gotcha* that a legacy browser might snipe you with, if left unattended, is **decimals**.
 
 A confusing subject for the uninitiated (myself included), decimals in CSS behave in a way that might not be straightforward to some, especially when you consider the variety of browsers and their individual behaviours.

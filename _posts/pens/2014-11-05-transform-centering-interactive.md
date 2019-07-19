@@ -6,7 +6,6 @@ title: Power of Transform Centering - Interactive
 codepen_slug: xutbs
 ---
 
-
 {% include content/codepen.liquid height='500' %}
 
 Check out the [demo version](/pen/transform-centering/).

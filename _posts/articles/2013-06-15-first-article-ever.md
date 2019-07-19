@@ -16,7 +16,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/345878691110334466
 ---
 
-
 Since my last design update, I started working at [*Squiz*](https://squiz.net/uk "Squiz UK"){:rel="external"} and expanded my web development horizons exponentially, stepping into the fast-paced role of front-end web developer at their London office. Since September of last year, I’ve been part of a strong team at *Squiz* working with gambling giant, William Hill, in migrating their expansive network of sites from their previous systems onto [*Matrix*](https://www.squiz.net/uk/suite/matrix "Squiz Matrix"){:rel="external"}, an extremely powerful and flexible Content Management System. My role in the team of developers, technical leads, account and project managers was to oversee the CSS of the migration project and ensure that we’re adhering to standards as part of making improvements to HTML, CSS, JavaScript, and implementation during the migration.
 
 

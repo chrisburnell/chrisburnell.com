@@ -6,7 +6,6 @@ tags:
   - personal
 ---
 
-
 So I’ve officially been a <abbr title="an architect or engineer whose responsibilities include the maintenance of a website">Webmaster</abbr> for a decade now.
 
 This is a big achievement for me because it nicely sums up and boils down my sentiments towards the web. While others might be more inclined to celebrate the fruits of their labour, I’d like to celebrate the labour itself.

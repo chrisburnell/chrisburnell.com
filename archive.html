@@ -7,7 +7,6 @@ redirect_from:
   - archives.html
 ---
 
-
 {%- for page in site.posts -%}
     {%- unless page.draft or page.ignore or page.searchable == false -%}
         {%- assign posts_size = posts_size | plus: 1 -%}

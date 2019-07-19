@@ -6,7 +6,6 @@ title: Cutaway Indicator
 codepen_slug: yIwzd
 ---
 
-
 {% include content/codepen.liquid height='200' %}
 
 {% highlight html %}

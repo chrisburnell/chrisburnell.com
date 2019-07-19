@@ -14,7 +14,6 @@ comments: disqus
 codepen: true
 ---
 
-
 Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
 {% include content/codepen.liquid slug='LHqFy' height='740' theme='tabfree' %}

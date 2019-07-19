@@ -16,7 +16,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/514049979347107840
 ---
 
-
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus"){:rel="external"} for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
 <figure>

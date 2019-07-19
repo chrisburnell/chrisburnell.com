@@ -16,7 +16,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---
 
-
 <blockquote>
     <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
     <cite class="h-cite"><a href="http://sass-lang.com" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>

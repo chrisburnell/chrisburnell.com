@@ -6,5 +6,4 @@ title: Bumpy World
 codepen_slug: MQNwqp
 ---
 
-
 {% include content/codepen.liquid %}

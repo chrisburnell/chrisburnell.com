@@ -6,7 +6,6 @@ title: Persistent Light Source Transform
 codepen_slug: mglHp
 ---
 
-
 {% include content/codepen.liquid height='425' %}
 
 {% highlight html %}

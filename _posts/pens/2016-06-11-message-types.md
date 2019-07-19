@@ -7,7 +7,6 @@ codepen_slug: rLxjBz
 codepen_featured: true
 ---
 
-
 {% include content/codepen.liquid height='500' %}
 
 {% highlight html %}

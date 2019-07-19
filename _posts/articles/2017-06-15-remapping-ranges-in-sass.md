@@ -17,7 +17,6 @@ further_reading:
     title: "Polar Coordinates, a p5.js Tutorial by Daniel Shiffman"
 ---
 
-
 <blockquote>
     <p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
     <cite class="h-cite"><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>

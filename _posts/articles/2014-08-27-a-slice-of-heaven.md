@@ -16,7 +16,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/504642274148765696
 ---
 
-
 I’ve been making quite a few pens over on [*CodePen*](https://codepen.io){:rel="external"} lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element"){:rel="external"} nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.

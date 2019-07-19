@@ -6,7 +6,6 @@ title: Button Interaction Demo
 codepen_slug: RPRwoo
 ---
 
-
 {% include content/codepen.liquid height='300' %}
 
 {% highlight html %}

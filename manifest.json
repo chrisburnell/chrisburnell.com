@@ -15,7 +15,6 @@ icon_sizes:
 - 512
 ---
 
-
 {
   "manifest_version": 2,
   "dir": "ltr",

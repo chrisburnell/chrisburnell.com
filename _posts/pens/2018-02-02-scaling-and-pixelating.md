@@ -6,7 +6,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/959107237590589441
 ---
 
-
 {% include content/codepen.liquid height='750' %}
 
 This Pen demonstrates the differences between scaling an image with a transform and scaling an image by modifying the dimensions.

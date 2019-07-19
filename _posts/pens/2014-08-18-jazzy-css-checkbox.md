@@ -6,7 +6,6 @@ title: Jazzy CSS Checkbox
 codepen_slug: Cbiun
 ---
 
-
 {% include content/codepen.liquid height='250' %}
 
 {% highlight html %}

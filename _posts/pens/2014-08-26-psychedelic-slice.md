@@ -6,7 +6,6 @@ title: Psychedelic Slice
 codepen_slug: apogK
 ---
 
-
 {% include content/codepen.liquid height='350' %}
 
 {% highlight html %}

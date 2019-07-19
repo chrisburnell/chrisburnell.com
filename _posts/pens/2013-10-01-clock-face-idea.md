@@ -7,5 +7,4 @@ codepen_slug: AGtdF
 codepen_featured: true
 ---
 
-
 {% include content/codepen.liquid height='600' %}

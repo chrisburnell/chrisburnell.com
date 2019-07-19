@@ -7,7 +7,6 @@ codepen_slug: mybQEL
 codepen_featured: true
 ---
 
-
 {% include content/codepen.liquid height='525' %}
 
 {% include content/code_toggle_top.liquid %}

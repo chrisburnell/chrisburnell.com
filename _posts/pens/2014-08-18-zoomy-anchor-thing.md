@@ -7,7 +7,6 @@ codepen_slug: lcEvB
 codepen_featured: true
 ---
 
-
 {% include content/codepen.liquid height='350' %}
 
 {% highlight html %}
