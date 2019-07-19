@@ -36,6 +36,11 @@ ul:not([class]),
             @include absolute(top-left);
             @include v(font-weight, bold);
         }
+
+        li {
+            padding-left: #{$measure-large + $measure-medium};
+            padding-left: calc(var(--measure-large) + var(--measure-medium));
+        }
     }
 }
 ol:not([class]),
@@ -49,7 +54,7 @@ ol.default-list {
 
         &::before {
             @include tabular-lining-numerals;
-            content: counter(ordered-list, decimal-leading-zero) ".";
+            content: counters(ordered-list, ".", decimal-leading-zero) ".";
         }
 
         @for $i from 1 through 10 {
