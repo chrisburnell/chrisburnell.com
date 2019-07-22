@@ -44,30 +44,46 @@ ol.default-list {
         counter-reset: ordered-list;
     }
 
+    @for $i from 1 through 10 {
+        &[start="#{$i}"] {
+            counter-increment: ordered-list #{$i - 1} !important;
+        }
+    }
+
     & > li {
         counter-increment: ordered-list;
 
         &::before {
             @include tabular-lining-numerals;
-            content: counters(ordered-list, ".", decimal-leading-zero) ".";
-        }
-
-        @for $i from 1 through 10 {
-            &[start="#{$i}"] {
-                counter-increment: ordered-list $i !important;
-            }
+            content: counters(ordered-list, "·", decimal-leading-zero);
         }
     }
 
-    & & li {
-        padding-left: #{$measure-large + $measure-medium};
-        padding-left: calc(var(--measure-large) + var(--measure-medium));
+    &[type="a"] li::before,
+    &.lower-alpha li::before {
+        content: counters(ordered-list, "·", lower-alpha);
+    }
+
+    &[type="A"] li::before,
+    &.upper-alpha li::before {
+        content: counters(ordered-list, "·", upper-alpha);
+    }
+
+    &[type="i"] li::before,
+    &.lower-roman li::before {
+        content: counters(ordered-list, "·", lower-roman);
+    }
+
+    &[type="I"] li::before,
+    &.upper-roman li::before {
+        content: counters(ordered-list, "·", upper-roman);
     }
 
     &[reversed] {
         display: flex;
         flex-direction: column-reverse;
 
+        // fix spacing based on reverse ordering
         & > li {
             &:first-child {
                 margin-bottom: 0;
@@ -77,6 +93,12 @@ ol.default-list {
                 @include v(margin-bottom, small);
             }
         }
+    }
+
+    // Nested Ordered List Item
+    li li {
+        padding-left: #{$measure-large + $measure-medium};
+        padding-left: calc(var(--measure-large) + var(--measure-medium));
     }
 }
 [counter-reset] {
