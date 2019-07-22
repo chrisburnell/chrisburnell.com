@@ -67,6 +67,16 @@ ol.default-list {
     &[reversed] {
         display: flex;
         flex-direction: column-reverse;
+
+        li {
+            &:first-child {
+                margin-bottom: 0;
+            }
+
+            &:not(:first-child) {
+                @include v(margin-bottom, small);
+            }
+        }
     }
 }
 [counter-reset] {
