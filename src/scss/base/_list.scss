@@ -68,7 +68,7 @@ ol.default-list {
         display: flex;
         flex-direction: column-reverse;
 
-        li {
+        & > li {
             &:first-child {
                 margin-bottom: 0;
             }
