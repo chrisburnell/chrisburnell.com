@@ -36,11 +36,6 @@ ul:not([class]),
             @include absolute(top-left);
             @include v(font-weight, bold);
         }
-
-        li {
-            padding-left: #{$measure-large + $measure-medium};
-            padding-left: calc(var(--measure-large) + var(--measure-medium));
-        }
     }
 }
 ol:not([class]),
@@ -62,6 +57,11 @@ ol.default-list {
                 counter-increment: ordered-list $i !important;
             }
         }
+    }
+
+    & & li {
+        padding-left: #{$measure-large + $measure-medium};
+        padding-left: calc(var(--measure-large) + var(--measure-medium));
     }
 
     &[reversed] {
