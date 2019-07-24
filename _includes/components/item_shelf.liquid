@@ -17,10 +17,6 @@
 {%- elsif link contains 'youtube' -%}
     {%- assign link_clean = page.title | append: ' on YouTube' -%}
 {%- endif -%}
-{%- if page.rating -%}
-    {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
-    {%- assign rating_fraction = page.rating | minus: rating_base -%}
-{%- endif -%}
 {%- if page.category == 'book' -%}
     {%- assign read_status = 'to-read' -%}
     {%- if page.finish -%}
@@ -75,7 +71,7 @@
         {% if page.isbn %}
             <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true" hidden>{{ page.isbn }}</data>
         {% endif %}
-        {% if page.rating and page.rating == 'Parti Pris' %}
+        {% if page.rating and page.rating != 'Parti Pris' %}
             <data class="p-worst" aria-hidden="true" hidden>0</data>
             <data class="p-best" aria-hidden="true" hidden>5</data>
         {% endif %}
@@ -85,7 +81,7 @@
                 {% if page.rating and page.rating == 'Parti Pris' %}
                     <summary><em>Parti Pris</em></summary>
                 {% elsif page.rating %}
-                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data></summary>
+                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}"></data></summary>
                 {% else %}
                     <summary>Review</summary>
                 {% endif %}
@@ -95,7 +91,7 @@
         {% if content == empty and page.rating and page.rating == 'Parti Pris' %}
             <data value="Parti Pris"><em>Parti Pris</em></data>
         {% elsif content == empty and page.rating %}
-            <data class="p-rating  rating  delta" value="{{ page.rating }}">{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</data>
+            <data class="p-rating  rating  delta" value="{{ page.rating }}"></data>
         {% endif %}
         {% if page.badges %}
             <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.liquid emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
