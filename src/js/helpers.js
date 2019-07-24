@@ -52,6 +52,7 @@ helpers = {
     ////
     formatDate: date => {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         let day = date.getDate();
         if (day < 10) {

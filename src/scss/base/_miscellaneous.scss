@@ -27,6 +27,7 @@ abbr[title],
 dfn[title] {
     @include v(color, dove);
     font-style: italic;
+    @include v(font-weight, default, false, true);
 }
 abbr[title],
 dfn[title] {
@@ -46,8 +47,9 @@ ins {
 }
 
 ins {
-    background-color: mix($color-white, $color-liquid, 80%);
-    color: contrasting-color(mix($color-white, $color-liquid, 80%));
+    $color-liquid-white: mix($color-white, $color-liquid, 80%);
+    background-color: $color-liquid-white;
+    color: contrasting-color($color-liquid-white);
     @include v(font-size, default);
 }
 
