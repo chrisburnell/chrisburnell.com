@@ -154,6 +154,7 @@ textarea {
 }
 
 .rating {
+    display: inline-block;
     position: relative;
     @include v(font-size, large);
     line-height: 1;
@@ -165,7 +166,7 @@ textarea {
     }
 
     &::before {
-        @include v(color, dove);
+        @include v(color, alto);
     }
 
     &::after {
@@ -186,10 +187,5 @@ textarea {
 
     &[value="5"]::after {
         width: 100%;
-    }
-
-    .content-list &,
-    .shelf :not(summary) > & {
-        display: block;
     }
 }
