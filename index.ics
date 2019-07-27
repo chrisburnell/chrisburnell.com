@@ -1,0 +1,23 @@
+---
+layout: null
+---
+
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+
+{% for page in site.posts %}{% if page.rsvp.going %}
+{%- assign person = site.data.people | where_exp: 'item', 'page.in_reply_to.first contains item.link' | first -%}
+{%- assign place = site.data.places | where_exp: 'item', 'page.in_reply_to.first contains item.link' | first -%}
+{%- assign summary = place.name | default: person.name -%}
+{%- assign location = place.address | default: null -%}
+BEGIN:VEVENT
+SUMMARY:{{ summary }}
+DESCRIPTION:More details can be found at {{ page.in_reply_to.first | default: page.in_reply_to }}{% if page.rsvp.date %}
+DTSTART;TZID={{ site.timezone }}:{{ page.rsvp.date | date: '%Y%m%dT%H%M%S' }}{% endif %}{% if page.rsvp.finish %}
+DTEND;TZID={{ site.timezone }}:{{ page.rsvp.finish | date: '%Y%m%dT%H%M%S' }}{% endif %}{% if location %}
+LOCATION:{{ location }}{% endif %}
+END:VEVENT
+
+{% endif %}{% endfor %}
+END:VCALENDAR
