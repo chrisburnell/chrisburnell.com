@@ -184,13 +184,16 @@
         {%- assign check_day = page.rsvp.date | date: '%d' -%}
         {%- assign check_month = page.rsvp.date | date: '%m' -%}
         {%- assign check_year = page.rsvp.date | date: '%Y' -%}
-        <time class="date" datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}–{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
-            {%- if check_year > year or (check_year == year and check_month > month) or (check_year == year and check_month == month and check_day >= day) -%}
+        {%- assign finish_day = page.rsvp.finish | date: '%d' -%}
+        {%- assign finish_month = page.rsvp.finish | date: '%m' -%}
+        {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
+        <time class="date" datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}-{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
+            {%- if check_year > year or check_month > month or check_day > day -%}
                 <span>taking place on</span>
             {%- else -%}
                 <span>took place on</span>
             {%- endif -%}
-            <strong>{{ page.rsvp.date | date_to_long_string }}{% if page.rsvp.finish %} – {{ page.rsvp.finish | date_to_long_string }}{% endif %}</strong>
+            <strong>{{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}{% if page.rsvp.finish %} – {% if finish_year > check_year or finish_month > check_month or finish_day > check_day %}{{ page.rsvp.finish | date_to_long_string }}, {% endif %}{{ page.rsvp.finish | date: '%R' }}{% endif %}</strong>
         </time>
     {% endif %}
     {% if page.category == 'article' %}
