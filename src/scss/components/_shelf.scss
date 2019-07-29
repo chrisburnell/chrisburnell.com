@@ -43,8 +43,4 @@
         object-fit: contain;
         margin: 0;
     }
-
-    .emoji {
-        @include v(margin-right, small);
-    }
 }

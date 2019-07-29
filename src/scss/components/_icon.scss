@@ -50,4 +50,9 @@
     height: 1.5em;
     font-style: normal;
     vertical-align: middle;
+
+    .content-list &,
+    .shelf & {
+        @include v(margin-right, small);
+    }
 }

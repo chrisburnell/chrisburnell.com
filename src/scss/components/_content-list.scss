@@ -148,8 +148,4 @@
             transform: translateX(-(var(--measure-large))) translateY(-50%) scale(1.2);
         }
     }
-
-    .emoji {
-        @include v(margin-right, small);
-    }
 }

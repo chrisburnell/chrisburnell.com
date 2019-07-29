@@ -170,7 +170,7 @@ textarea {
     }
 
     &::after {
-        @include v(background-color, white);
+        background-color: inherit;
         @include v(color, kaiser);
         width: 0;
         overflow: hidden;
@@ -184,7 +184,6 @@ textarea {
             width: range-map($i, 0, 20, 0%, 100%);
         }
     }
-
     &[value="5"]::after {
         width: 100%;
     }
