@@ -187,4 +187,10 @@ textarea {
     &[value="5"]::after {
         width: 100%;
     }
+
+    .content-list &,
+    .shelf & {
+        width: #{5rem * strip-units($font-size-large)};
+        display: block;
+    }
 }
