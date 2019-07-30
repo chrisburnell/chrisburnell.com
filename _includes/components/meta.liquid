@@ -208,7 +208,7 @@
                     {% elsif finish_year == check_year and finish_month == check_month and finish_day > check_day %}
                         {{ page.rsvp.finish | date_to_long_string }},
                     {% endif %}
-                    {{ page.rsvp.finish | date: '%R' }}
+                    {{ page.rsvp.finish | date: '%R %z' | replace: '+0000', 'UTC' | replace: '+0100', 'BST' }}
                 {% endif %}
             </strong>
         </time>
