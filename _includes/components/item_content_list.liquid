@@ -158,7 +158,15 @@
                     {%- assign finish_month = page.rsvp.finish | date: '%m' -%}
                     {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
                 {%- endif -%}
-                <time class="date  date--range" datetime="{{ page.rsvp.date | date_to_xmlschema }}">{{ page.rsvp.date | date_to_long_string }}{% if finish_year > check_year or finish_month > check_month or finish_day > check_day %} – {{ page.rsvp.finish | date_to_long_string }}{% endif %}</time>
+                <time class="date  date--range" datetime="{{ page.rsvp.date | date_to_xmlschema }}">
+                    {{ page.rsvp.date | date_to_long_string }}
+                    {% if finish_year > check_year %}
+                        – {{ page.rsvp.finish | date_to_long_string }}
+                    {% elsif finish_year == check_year and finish_month > check_month %}
+                        – {{ page.rsvp.finish | date_to_long_string }}
+                    {% elsif finish_year == check_year and finish_month == check_month and finish_day > check_day %}
+                        – {{ page.rsvp.finish | date_to_long_string }}
+                    {% endif %}</time>
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
             {% else %}
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
