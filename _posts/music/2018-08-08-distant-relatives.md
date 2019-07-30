@@ -1,7 +1,7 @@
 ---
 title: Distant Relatives
-date: 2018-08-08
-release: 2010-05-18
+date: 2018-08-08 12:00:00 +0100
+release: 2010-05-18 12:00:00 +0100
 authors:
   - name: Damian Marley
     link: https://open.spotify.com/artist/3QJzdZJYIAcoET1GcfpNGi

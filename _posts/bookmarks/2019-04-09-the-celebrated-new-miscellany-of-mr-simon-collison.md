@@ -1,5 +1,5 @@
 ---
-date: 2019-04-09 14:56:28
+date: 2019-04-09 14:56:28 +0100
 title: "The Celebrated New Miscellany of Mr. Simon Collison"
 bookmark_of: https://colly.com/v4/index.html
 posting_method: https://omnibear.com

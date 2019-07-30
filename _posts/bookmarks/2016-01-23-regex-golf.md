@@ -1,5 +1,5 @@
 ---
-date: 2016-01-23 16:04:00
+date: 2016-01-23 16:04:00 +0000
 
 title: Regex Golf
 lede: Test your regex skills. So much fun. Brainmelting, but fun.

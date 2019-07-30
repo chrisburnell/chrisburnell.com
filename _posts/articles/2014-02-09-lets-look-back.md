@@ -1,5 +1,5 @@
 ---
-date: 2014-02-09 02:19:00
+date: 2014-02-09 02:19:00 +0000
 title: Let’s Look Back
 lede: I haven't published a new article in a while now, but I haven't been twiddling my thumbs. Let's look at what happened behind-the-scenes in the last eight months since my first article.
 tags:

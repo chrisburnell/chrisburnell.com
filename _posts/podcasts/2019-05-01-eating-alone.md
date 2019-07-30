@@ -1,6 +1,6 @@
 ---
-date: 2019-05-01 15:55:00
-release: 2019-04-29
+date: 2019-05-01 15:55:00 +0100
+release: 2019-04-29 12:00:00 +0100
 title: Eating Alone
 authors: Jeremy Cherfas
 season: Eat This Podcast

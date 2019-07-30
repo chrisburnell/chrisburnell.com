@@ -1,7 +1,7 @@
 ---
 title: Escape From New York
-date: 2019-06-20 09:43:00
-release: 2018-05-24
+date: 2019-06-20 09:43:00 +0100
+release: 2018-05-24 12:00:00 +0100
 authors:
   - name: Beast Coast
     link: https://open.spotify.com/artist/1Nd1g8fezKoJ6DGauWbZIm

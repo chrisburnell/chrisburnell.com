@@ -1,5 +1,5 @@
 ---
-date: 2016-04-18 19:45:00
+date: 2016-04-18 19:45:00 +0100
 
 title: Supporting Middle-Out in CSS
 

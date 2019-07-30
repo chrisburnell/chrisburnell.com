@@ -1,6 +1,6 @@
 ---
-date: 2019-02-20 13:11:22
-release: 2019-02-18
+date: 2019-02-20 13:11:22 +0000
+release: 2019-02-18 12:00:00 +0000
 title: Better baking through chemistry
 authors: Jeremy Cherfas
 season: Eat This Podcast

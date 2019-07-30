@@ -1,5 +1,5 @@
 ---
-date: 2018-02-02 16:48:00
+date: 2018-02-02 16:48:00 +0000
 title: Scaling and Pixelating
 codepen_slug: vdNeEa
 syndicate_to:

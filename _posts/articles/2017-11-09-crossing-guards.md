@@ -1,5 +1,5 @@
 ---
-date: 2017-11-09 17:00:00
+date: 2017-11-09 17:00:00 +0000
 title: Crossing Guards
 lede: Throttle back on your scroll events and watch out for the IntersectionObserver!
 tags:

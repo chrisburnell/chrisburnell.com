@@ -1,8 +1,8 @@
 ---
 sitemap:
-  lastmod: 2016-01-25 12:45:00
+  lastmod: 2016-01-25 12:45:00 +0000
 edit: I’ve modified the JavaScript for this section of my site over time, but have reflected the changes in the code snippets below.
-date: 2014-09-22 10:00:00
+date: 2014-09-22 10:00:00 +0100
 title: On Your Marks, Get Set, Wait
 lede: What's really important when reading an article online? Content should always come first, and give users the option for more later.
 tags:

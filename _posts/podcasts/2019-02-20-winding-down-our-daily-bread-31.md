@@ -1,6 +1,6 @@
 ---
-date: 2019-02-20 13:08:07
-release: 2018-08-31
+date: 2019-02-20 13:08:07 +0000
+release: 2018-08-31 12:00:00 +0100
 title: Winding Down
 authors: Jeremy Cherfas
 season: Our Daily Bread

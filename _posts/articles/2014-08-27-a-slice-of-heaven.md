@@ -1,5 +1,5 @@
 ---
-date: 2014-08-27 15:00:00
+date: 2014-08-27 15:00:00 +0100
 title: A Slice of Heaven
 lede: We know that webpages are composed of text and boxes. Lots and lots of boxes. But with the power and might of CSS3 we can do some fancy stuff that never used to be possible.
 tags:

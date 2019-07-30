@@ -1,5 +1,5 @@
 ---
-date: 2017-11-03 17:01:00
+date: 2017-11-03 17:01:00 +0000
 title: No Three Snowflakes Are Alike
 lede: I developed a Sass function to generate a list of unique pairs given a List or Map of data, so I extrapolated the idea and refactored the function to generate a series of unique groups of size <var>n</var>.
 tags:

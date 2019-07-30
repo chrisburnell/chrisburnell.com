@@ -1,5 +1,5 @@
 ---
-date: 2016-01-21 11:25:00
+date: 2016-01-21 11:25:00 +0000
 title: Styling SVG use Content with CSS
 lede: Little late on this one, but gold dust nonetheless. SVG Wizard, Sara Soueidan, discusses in-depth how to style SVG's <use> element and how to overcome the challenges in doing so.
 tags:

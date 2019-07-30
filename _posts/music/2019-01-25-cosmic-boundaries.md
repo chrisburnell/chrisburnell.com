@@ -1,7 +1,7 @@
 ---
 title: Cosmic Boundaries
-date: 2019-01-25
-release: 2017-02-10
+date: 2019-01-25 12:00:00 +0000
+release: 2017-02-10 12:00:00 +0000
 authors:
   - name: Phaserland
     link: https://open.spotify.com/artist/318JBsDJrao7DYDwsaE715

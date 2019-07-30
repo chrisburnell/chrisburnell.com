@@ -1,5 +1,5 @@
 ---
-date: 2019-04-29 09:00:00
+date: 2019-04-29 09:00:00 +0100
 title: A Decade in the Making
 lede: 2019 marks ten years that I've been making a mess on the web. While making a mess has always been the norm for me, documenting it publicly, irreversibly, for eternity, might seem a little out of character. A decade later, what's changed? What have I learned? What will I be doing differently in another decade's time?
 tags:

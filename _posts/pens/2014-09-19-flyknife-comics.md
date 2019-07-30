@@ -1,5 +1,5 @@
 ---
-date: 2014-09-19 12:00:00
+date: 2014-09-19 12:00:00 +0100
 
 title: Flyknife Comics
 

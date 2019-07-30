@@ -1,5 +1,5 @@
 ---
-date: 2014-11-19 12:00:00
+date: 2014-11-19 12:00:00 +0000
 
 title: Interaction Jazz
 

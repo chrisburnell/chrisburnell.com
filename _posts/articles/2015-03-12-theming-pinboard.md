@@ -1,5 +1,5 @@
 ---
-date: 2015-03-12 10:00:00
+date: 2015-03-12 10:00:00 +0000
 title: Theming Pinboard
 lede: I recently decided I would embark on the task of theming Pinboard. Here's how I did it.
 tags:

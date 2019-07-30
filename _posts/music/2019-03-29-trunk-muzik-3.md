@@ -1,7 +1,7 @@
 ---
 title: Trunk Muzik 3
-date: 2019-03-29 12:06:00
-release: 2019-03-29
+date: 2019-03-29 12:06:00 +0000
+release: 2019-03-29 12:00:00 +0000
 authors:
   - name: Yelawolf
     link: https://open.spotify.com/artist/68DWke2VjdDmA75aJX5C57

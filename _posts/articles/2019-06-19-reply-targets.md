@@ -1,7 +1,7 @@
 ---
 sitemap:
-  lastmod: 2019-06-26 09:00:00
-date: 2019-06-19 17:13:00
+  lastmod: 2019-06-26 09:00:00 +0100
+date: 2019-06-19 17:13:00 +0100
 title: Reply Targets
 lede: Providing a useful context to content written in response to someone else's blog post, tweet, toot, etc. helps a reader to understand the conversational nature of these back-and-forths. What abstractions can we make to the data that holds these reply targets, and how can those abstractions make for a richer reading experience and for a leaner publishing workflow?
 syndicate_to:

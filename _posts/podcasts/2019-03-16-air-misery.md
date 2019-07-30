@@ -1,6 +1,6 @@
 ---
-date: 2019-03-16 23:33:00
-release: 2019-03-16
+date: 2019-03-16 23:33:00 +0000
+release: 2019-03-16 12:00:00 +0000
 title: Air Misery
 authors:
   - name: The Brilliant Idiots
