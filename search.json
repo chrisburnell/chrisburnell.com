@@ -59,11 +59,11 @@ sitemap:
             "cover": true
           {% endif %}{% if page.content contains '<img' %},
             "has_image": true
+          {% endif %}{% if page.titlefree %},
+            "titlefree": true,
           {% endif %}{% unless page.searchable == 'no-content' %},
             "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
-          {% endunless %}{% if page.titlefree %},
-            "titlefree": true,
-          {% endif %}
+          {% endunless %}
         }{% unless forloop.last %},{% endunless %}
       {% endunless %}
     {% endfor %}

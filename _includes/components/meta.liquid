@@ -261,7 +261,7 @@
         {%- assign checkin = site.data.places | where: 'name', page.checkin.name | first | default: page.checkin -%}
         <div class="checkin">
             {% if page.category == 'beer' %}
-                {% include content/emoji.liquid emoji='🍺' %}
+                {% include content/emoji.liquid emoji='🍻' %}
                 <span>drank at</span>
             {% elsif page.category == 'talk' %}
                 {% include content/emoji.liquid emoji='🗣' %}
