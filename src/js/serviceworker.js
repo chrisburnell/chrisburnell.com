@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.108";
+const VERSION = "v2.0.109";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -22,7 +22,7 @@ const CACHES = [
 const CACHE_SIZE = 20;
 
 // Represents the maximum amount of time to wait for the network
-const TIMEOUT = 5000;
+const TIMEOUT = 10000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
@@ -109,6 +109,12 @@ self.addEventListener("activate", event => {
     );
 });
 
+if (registration.navigationPreload) {
+    addEventListener("activate", event => {
+        event.waitUntil(registration.navigationPreload.enable());
+    });
+}
+
 self.addEventListener("fetch", event => {
     let request = event.request;
     let url = new URL(request.url);
@@ -131,7 +137,7 @@ self.addEventListener("fetch", event => {
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get("Accept").includes("text/html")) {
         url.pathname = url.pathname.replace(/\/$/, "");
-        let fetchPromise = fetch(request);
+        let fetchPromise = event.preloadResponse ? event.preloadResponse : fetch(request);
         let cachePromise = caches.match(request);
         event.respondWith(
             new Promise(resolveWithResponse => {
@@ -160,8 +166,8 @@ self.addEventListener("fetch", event => {
                     resolveWithResponse(responseFromFetch);
                 })
                 .catch(error => {
-                    console.error(error);
                     clearTimeout(timer);
+                    console.error(error);
                     // CACHE or FALLBACK
                     cachePromise.then(responseFromCache => {
                         resolveWithResponse(responseFromCache || caches.match("/offline"));
@@ -176,6 +182,7 @@ self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(request)
             .then(responseFromCache => {
+                // CACHE
                 return responseFromCache || fetch(request)
                     .then(responseFromFetch => {
                         // NETWORK
@@ -193,7 +200,7 @@ self.addEventListener("fetch", event => {
                     })
                     .catch(error => {
                         console.error(error);
-                        // OFFLINE
+                        // OFFLINE FALLBACK
                         // If the request is for an image, show an offline placeholder
                         if (request.headers.get("Accept").includes("image")) {
                             return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { "Content-Type": "image/svg+xml", "Cache-Control": "no-store" } });
