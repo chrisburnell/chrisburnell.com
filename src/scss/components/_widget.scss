@@ -23,7 +23,6 @@
 .widget-next-anchor {
     @include v(margin-top, medium);
     @include v(font-weight, bold);
-    text-underline-position: under;
 }
 
 .widget-related-anchor {
