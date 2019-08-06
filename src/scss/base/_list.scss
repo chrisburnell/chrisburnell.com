@@ -97,7 +97,7 @@ ol.default-list {
     }
 
     // Nested Ordered List Item
-    li li {
+    & & li {
         padding-left: #{$measure-large + $measure-medium};
         padding-left: calc(var(--measure-large) + var(--measure-medium));
     }
