@@ -26,7 +26,7 @@
         <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
         <span class="webmentions__response__name  p-name">{{ author }}</span>
     </a>
-    <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="Read externally" tabindex="-1" data-reacji="{{ content }}"></a>
+    <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="Read externally" tabindex="-1" data-reacji="{{ content | slice: 0 }}"></a>
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY =
 `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">

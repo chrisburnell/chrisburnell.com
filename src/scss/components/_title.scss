@@ -20,7 +20,6 @@
     width: auto;
     display: inline-block;
     @include v(padding, small);
-    text-shadow: none;
 }
 
 .title--success {
