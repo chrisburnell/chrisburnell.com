@@ -15,8 +15,8 @@ sitemap:
           "url": "{{ page.url | absolute_url }}",
           "title": "{{ page.title | xml_escape }}",
           "priority": "{{ page.sitemap.priority | default: site.sitemap.priority }}",
-          "lede": "{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip_newlines | normalize_whitespace }}"{% unless page.searchable == 'no-content' %},
-            "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
+          "lede": "{{ page.lede | strip_html | xml_escape | strip_newlines | normalize_whitespace }}"{% unless page.searchable == 'no-content' %},
+            "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace }}"
           {% endunless %}
         },
       {% endunless %}
@@ -60,7 +60,7 @@ sitemap:
           {% endif %}{% if page.content contains '<img' %},
             "has_image": true
           {% endif %}{% if page.titlefree %},
-            "titlefree": true,
+            "titlefree": true
           {% endif %}{% unless page.searchable == 'no-content' %},
             "content": "{{ page.content | strip_html | xml_escape | strip_newlines | normalize_whitespace | replace: '\', '' }}"
           {% endunless %}
