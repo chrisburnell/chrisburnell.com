@@ -194,4 +194,8 @@ textarea {
         width: #{5rem * strip-units($font-size-large)};
         display: block;
     }
+
+    details summary & {
+        display: inline-block !important;
+    }
 }
