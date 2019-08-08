@@ -154,7 +154,7 @@ textarea {
     }
 }
 
-.rating {
+/*data*/.rating {
     display: inline-block;
     position: relative;
     @include v(font-size, large);
@@ -178,6 +178,10 @@ textarea {
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    &:not([value]) {
+        display: none;
     }
 
     @for $i from 1 through 19 {
