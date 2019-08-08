@@ -24,10 +24,10 @@
     "images": "gulp images"
   },
   "dependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
     "@bdchauvette/gulp-prettier": "2.0.0",
-    "autoprefixer": "9.6.0",
+    "autoprefixer": "9.6.1",
     "babel-core": "6.26.3",
     "babel-preset-minify": "0.5.0",
     "gulp": "4.0.2",
