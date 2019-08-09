@@ -197,6 +197,7 @@ textarea {
     .shelf & {
         width: #{5rem * strip-units($font-size-large)};
         display: block;
+        @include v(margin-top, small);
     }
 
     details summary & {

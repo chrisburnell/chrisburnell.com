@@ -9,7 +9,7 @@
 {%- if include.relative_year == true -%}
     {%- assign year_today = site.time | date: '%Y' -%}
     {%- assign year_then = page.date | date: '%Y' -%}
-    {%- assign date_human = year_today | minus: year_then | append: ' years ago' -%}
+    {%- assign date_human = year_today | minus: year_then | append: ' years ago' | replace: '1 years', '1 year' -%}
 {%- endif -%}
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
