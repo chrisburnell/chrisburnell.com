@@ -3,7 +3,20 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
-{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
+{%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to | default: null -%}
+{%- assign in_reply_to_title = page.in_reply_to.title | default: page.in_reply_to | default: null -%}
+{%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of | default: null -%}
+{%- assign bookmark_of_title = page.bookmark_of.title | default: page.bookmark_of | default: null -%}
+{%- assign like_of_link = page.like_of.link | default: page.like_of | default: null -%}
+{%- assign like_of_title = page.like_of.title | default: page.like_of | default: null -%}
+{%- assign listen_of_link = page.listen_of.link | default: page.listen_of | default: null -%}
+{%- assign listen_of_title = page.listen_of.title | default: page.listen_of | default: null -%}
+{%- assign read_of_link = page.read_of.link | default: page.read_of | default: null -%}
+{%- assign read_of_title = page.read_of.title | default: page.read_of | default: null -%}
+{%- assign watch_of_link = page.watch_of.link | default: page.watch_of | default: null -%}
+{%- assign watch_of_title = page.watch_of.title | default: page.watch_of | default: null -%}
+{%- assign link = bookmark_of_link | default: like_of_link | default: listen_of_link | default: read_of_link | default: watch_of_link | default: page.link | default: null -%}
+{%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title | default: null -%}
 {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
 {%- assign date_human = page.date | date_to_long_string -%}
 {%- if include.relative_year == true -%}
@@ -22,77 +35,80 @@
                 {% endif %}
             </h3>
             <div class="lede">
-                {% if page.in_reply_to.first %}
+                {% if in_reply_to_link %}
                     {%- assign mastodon_instance = null -%}
                     {%- assign mastodon_username = null -%}
                     {%- assign twitter_username = null -%}
                     {%- assign reply_target = null -%}
-                    {%- assign page_map = site.posts | where_exp: 'post', 'page.in_reply_to.first contains post.slug' | first -%}
+                    {%- assign page_map = site.posts | where_exp: 'post', 'in_reply_to_link contains post.slug' | first -%}
                     {%- if page_map -%}
                         {%- unless page_map.titlefree -%}
                             {%- assign reply_target = page_map.title -%}
                         {%- endunless -%}
                     {%- endif -%}
-                    {%- for target in site.data.people -%}
-                        {%- if target.mastodon -%}
-                            {%- for target_mastodon in target.mastodon -%}
-                                {%- assign mastodon_instance = target_mastodon | split: '@' | last -%}
-                                {%- assign mastodon_username = target_mastodon | split: '@' | first -%}
-                                {%- if page.in_reply_to.first contains mastodon_instance and page.in_reply_to.first contains mastodon_username -%}
-                                    {%- assign reply_target = target | map: 'name' | default: null -%}
+                    {%- for person in site.data.people -%}
+                        {%- if person.mastodon -%}
+                            {%- for person_mastodon in person.mastodon -%}
+                                {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
+                                {%- assign mastodon_username = person_mastodon | split: '@' | first -%}
+                                {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
+                                    {%- assign reply_target = person | map: 'name' | default: null -%}
                                     {%- break -%}
                                 {%- endif -%}
                             {%- endfor -%}
                         {%- endif -%}
                     {%- endfor -%}
                     {%- unless reply_target -%}
-                        {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'target', 'page.in_reply_to.first contains target' | first | default: null -%}
+                        {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
                         {%- if mastodon_instance -%}
-                            {%- if page.in_reply_to.first contains '/@' -%}
-                                {%- assign mastodon_username = page.in_reply_to.first | split: '/@' | last | split: '/' | first | default: null -%}
-                            {%- elsif page.in_reply_to.first contains '/users/' -%}
-                                {%- assign mastodon_username = page.in_reply_to.first | split: '/users/' | last | split: '/' | first | default: null -%}
+                            {%- if in_reply_to_link contains '/@' -%}
+                                {%- assign mastodon_username = in_reply_to_link | split: '/@' | last | split: '/' | first | default: null -%}
+                            {%- elsif in_reply_to_link contains '/users/' -%}
+                                {%- assign mastodon_username = in_reply_to_link | split: '/users/' | last | split: '/' | first | default: null -%}
                             {%- endif -%}
-                        {%- elsif page.in_reply_to.first contains 'twitter.com' -%}
-                            {%- assign twitter_username = page.in_reply_to.first | split: '/status/' | first | split: 'twitter.com/' | last | default: null -%}
-                            {%- for target in site.data.people -%}
-                                {%- for target_twitter in target.twitter -%}
-                                    {%- if target_twitter == twitter_username -%}
-                                        {%- assign reply_target = target | map: 'name' -%}
+                        {%- elsif in_reply_to_link contains 'twitter.com' -%}
+                            {%- assign twitter_username = in_reply_to_link | split: '/status/' | first | split: 'twitter.com/' | last | default: null -%}
+                            {%- for person in site.data.people -%}
+                                {%- for person_twitter in person.twitter -%}
+                                    {%- if person_twitter == twitter_username -%}
+                                        {%- assign reply_target = person | map: 'name' -%}
                                         {%- break -%}
                                     {%- endif -%}
                                 {%- endfor -%}
                             {%- endfor -%}
                         {%- else -%}
-                            {%- for target in site.data.people -%}
-                                {%- for target_link in target.link -%}
-                                    {%- if page.in_reply_to.first contains target_link -%}
-                                        {%- assign reply_target = target | map: 'name' -%}
+                            {%- for person in site.data.people -%}
+                                {%- for person_link in person.link -%}
+                                    {%- if in_reply_to_link contains person_link -%}
+                                        {%- assign reply_target = person | map: 'name' -%}
                                         {%- break -%}
                                     {%- endif -%}
                                 {%- endfor -%}
                             {%- endfor -%}
                         {%- endif -%}
                     {%- endunless -%}
-                    {% if reply_target %}
+                    {%- if reply_target -%}
                         {% assign reply = reply_target %}
-                    {% elsif mastodon_instance %}
+                    {%- elsif mastodon_instance -%}
                         {% if mastodon_username %}
                             {% assign reply = '@' | append: mastodon_username | append: '@' | append: mastodon_instance %}
                         {% else %}
                             {% assign reply = 'a Toot' %}
                         {% endif %}
-                    {% elsif page.in_reply_to.first contains 'twitter.com' %}
+                    {%- elsif in_reply_to_link contains 'twitter.com' -%}
                         {% if twitter_username %}
                             {% assign reply = '@' | append: twitter_username %}
                         {% else %}
                             {% assign reply = 'a Tweet' %}
                         {% endif %}
-                    {% else %}
-                        {% assign reply = page.in_reply_to.first %}
-                    {% endif %}
+                    {%- else -%}
+                        {% assign reply = in_reply_to_link %}
+                    {%- endif -%}
+                    {%- if in_reply_to_title != in_reply_to_link -%}
+                        {% assign reply = reply | prepend: ' by ' | prepend: in_reply_to_title %}
+                    {%- endif -%}
                     {% include content/emoji.liquid emoji='↩️' %} In reply to:
-                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ page.in_reply_to.first }}">{{ reply }}</data>
+                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}
                 {% if page.emoji %}

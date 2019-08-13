@@ -24,12 +24,12 @@
     <script src="https://speakerdeck.com/assets/embed.js" async defer></script>
 {% endif %}
 
-{% if page.twitter or page.in_reply_to.first contains 'twitter.com' %}
+{% if page.twitter or in_reply_to_link contains 'twitter.com' %}
     <!-- Twitter Cards -->
     <script src="https://platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
 
-{% if page.mastodon or page.in_reply_to.first contains 'mastodon.social' %}
+{% if page.mastodon or in_reply_to_link contains 'mastodon.social' %}
     <!-- Mastodon Cards -->
     <script src="https://mastodon.social/embed.js" async defer></script>
 {% endif %}

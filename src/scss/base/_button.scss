@@ -15,7 +15,7 @@ button,
     @include v(background-color, bowhead);
     @include v(color, white);
     min-width: 8em;
-    height: #{$line-height-code + strip-unit($border-width-button)}em;
+    min-height: #{$line-height-code + strip-unit($border-width-button)}em;
     display: inline-block;
     padding: 0 #{$border-width-button * 4} $border-width-button;
     border-width: 0;
@@ -31,7 +31,6 @@ button,
     text-align: center;
     text-decoration: none;
     text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--gamma;
-    white-space: nowrap;
     cursor: pointer;
     appearance: none;
 

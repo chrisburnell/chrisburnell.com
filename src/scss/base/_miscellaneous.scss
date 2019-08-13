@@ -89,6 +89,8 @@ sup {
 }
 
 em {
+    @include v(font-weight, default);
+
     &.small {
         font-variant: small-caps;
         text-transform: lowercase;

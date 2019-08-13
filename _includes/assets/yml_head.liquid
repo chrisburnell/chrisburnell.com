@@ -67,23 +67,39 @@
 {% assign meta_first_name = meta_name[0] %}
 {% assign meta_last_name = meta_name[1] %}
 
-{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
+{%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to | default: null -%}
+{%- assign in_reply_to_title = page.in_reply_to.title | default: in_reply_to_link -%}
+{%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of | default: null -%}
+{%- assign bookmark_of_title = page.bookmark_of.title | default: bookmark_of_link -%}
+{%- assign like_of_link = page.like_of.link | default: page.like_of | default: null -%}
+{%- assign like_of_title = page.like_of.title | default: like_of_link -%}
+{%- assign listen_of_link = page.listen_of.link | default: page.listen_of | default: null -%}
+{%- assign listen_of_title = page.listen_of.title | default: listen_of_link -%}
+{%- assign read_of_link = page.read_of.link | default: page.read_of | default: null -%}
+{%- assign read_of_title = page.read_of.title | default: read_of_link -%}
+{%- assign watch_of_link = page.watch_of.link | default: page.watch_of | default: null -%}
+{%- assign watch_of_title = page.watch_of.title | default: watch_of_link -%}
+{%- assign link = bookmark_of_link | default: like_of_link | default: listen_of_link | default: read_of_link | default: watch_of_link | default: page.link | default: null -%}
+{%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title | default: null -%}
 {% if page.collection == 'posts' %}
-    {%- assign link_clean = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
+    {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
     {%- if page.category == 'beer' -%}
-        {%- assign link_clean = page.title | append: ' on Untappd' -%}
-        {%- assign untappd_url = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
-        {%- assign syndicate_to = site.emptyArray | push: untappd_url -%}
+        {%- assign link_title = page.title -%}
+            {%- if link contains 'untappd' -%}
+            {%- assign link_title = link_title | append: ' on Untappd' -%}
+        {%- endif -%}
+        {%- assign untappd_link = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
+        {%- assign syndicate_to = site.emptyArray | push: untappd_link -%}
     {%- elsif page.category == 'music' -%}
-        {%- assign link_clean = page.title | append: ' on ' -%}
+        {%- assign link_title = page.title -%}
         {%- if link contains 'bandcamp' -%}
-            {%- assign link_clean = link_clean | append: 'Bandcamp' -%}
+            {%- assign link_title = link_title | append: ' on Bandcamp' -%}
         {%- elsif link contains 'soundcloud' -%}
-            {%- assign link_clean = link_clean | append: 'SoundCloud' -%}
+            {%- assign link_title = link_title | append: ' on SoundCloud' -%}
         {%- elsif link contains 'spotify' -%}
-            {%- assign link_clean = link_clean | append: 'Spotify' -%}
+            {%- assign link_title = link_title | append: ' on Spotify' -%}
         {%- elsif link contains 'youtube' -%}
-            {%- assign link_clean = link_clean | append: 'YouTube' -%}
+            {%- assign link_title = link_title | append: ' on YouTube' -%}
         {%- endif -%}
     {%- endif -%}
 {% endif %}

@@ -8,7 +8,7 @@ redirect_from:
 
 {%- assign articles_without_replies = site.emptyArray -%}
 {%- for page in site.categories.article -%}
-    {%- if page.rsvp or page.in_reply_to.first == nil -%}
+    {%- if page.rsvp or page.in_reply_to -%}
         {%- assign articles_without_replies = articles_without_replies | push: page -%}
     {%- endif -%}
 {%- endfor -%}
