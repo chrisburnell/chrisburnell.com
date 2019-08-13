@@ -3,20 +3,23 @@
   Consolidate markup for Content List Items.
 
 {%- endcomment -%}
-{%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to | default: null -%}
-{%- assign in_reply_to_title = page.in_reply_to.title | default: page.in_reply_to | default: null -%}
-{%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of | default: null -%}
-{%- assign bookmark_of_title = page.bookmark_of.title | default: page.bookmark_of | default: null -%}
-{%- assign like_of_link = page.like_of.link | default: page.like_of | default: null -%}
-{%- assign like_of_title = page.like_of.title | default: page.like_of | default: null -%}
-{%- assign listen_of_link = page.listen_of.link | default: page.listen_of | default: null -%}
-{%- assign listen_of_title = page.listen_of.title | default: page.listen_of | default: null -%}
-{%- assign read_of_link = page.read_of.link | default: page.read_of | default: null -%}
-{%- assign read_of_title = page.read_of.title | default: page.read_of | default: null -%}
-{%- assign watch_of_link = page.watch_of.link | default: page.watch_of | default: null -%}
-{%- assign watch_of_title = page.watch_of.title | default: page.watch_of | default: null -%}
-{%- assign link = bookmark_of_link | default: like_of_link | default: listen_of_link | default: read_of_link | default: watch_of_link | default: page.link | default: null -%}
-{%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title | default: null -%}
+{%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to -%}
+{%- assign in_reply_to_title = page.in_reply_to.title -%}
+{%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of -%}
+{%- assign bookmark_of_title = page.bookmark_of.title -%}
+{%- assign like_of_link = page.like_of.link | default: page.like_of -%}
+{%- assign like_of_title = page.like_of.title -%}
+{%- assign listen_of_link = page.listen_of.link | default: page.listen_of -%}
+{%- assign listen_of_title = page.listen_of.title -%}
+{%- assign read_of_link = page.read_of.link | default: page.read_of -%}
+{%- assign read_of_title = page.read_of.title -%}
+{%- assign watch_of_link = page.watch_of.link | default: page.watch_of -%}
+{%- assign watch_of_title = page.watch_of.title -%}
+{%- assign link = bookmark_of_link | default: like_of_link | default: listen_of_link | default: read_of_link | default: watch_of_link | default: page.link -%}
+{%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title -%}
+{%- unless link_title -%}
+    {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
+{%- endunless -%}
 {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
 {%- assign date_human = page.date | date_to_long_string -%}
 {%- if include.relative_year == true -%}
@@ -46,16 +49,19 @@
                             {%- assign reply_target = page_map.title -%}
                         {%- endunless -%}
                     {%- endif -%}
+                    {%- assign break = false -%}
                     {%- for person in site.data.people -%}
-                        {%- if person.mastodon -%}
-                            {%- for person_mastodon in person.mastodon -%}
-                                {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
-                                {%- assign mastodon_username = person_mastodon | split: '@' | first -%}
-                                {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
-                                    {%- assign reply_target = person | map: 'name' | default: null -%}
-                                    {%- break -%}
-                                {%- endif -%}
-                            {%- endfor -%}
+                        {%- for person_mastodon in person.mastodon -%}
+                            {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
+                            {%- assign mastodon_username = person_mastodon | split: '@' | first -%}
+                            {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
+                                {%- assign reply_target = person | map: 'name' | first | default: null -%}
+                                {%- break -%}
+                                {%- assign break = true -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                        {%- if break -%}
+                            {% break %}
                         {%- endif -%}
                     {%- endfor -%}
                     {%- unless reply_target -%}
@@ -68,22 +74,32 @@
                             {%- endif -%}
                         {%- elsif in_reply_to_link contains 'twitter.com' -%}
                             {%- assign twitter_username = in_reply_to_link | split: '/status/' | first | split: 'twitter.com/' | last | default: null -%}
+                            {%- assign break = false -%}
                             {%- for person in site.data.people -%}
                                 {%- for person_twitter in person.twitter -%}
                                     {%- if person_twitter == twitter_username -%}
-                                        {%- assign reply_target = person | map: 'name' -%}
+                                        {%- assign reply_target = person | map: 'name' | first -%}
                                         {%- break -%}
+                                        {%- assign break = true -%}
                                     {%- endif -%}
                                 {%- endfor -%}
+                                {%- if break -%}
+                                    {% break %}
+                                {%- endif -%}
                             {%- endfor -%}
                         {%- else -%}
+                            {%- assign break = false -%}
                             {%- for person in site.data.people -%}
                                 {%- for person_link in person.link -%}
                                     {%- if in_reply_to_link contains person_link -%}
-                                        {%- assign reply_target = person | map: 'name' -%}
+                                        {%- assign reply_target = person | map: 'name' | first -%}
                                         {%- break -%}
+                                        {%- assign break = true -%}
                                     {%- endif -%}
                                 {%- endfor -%}
+                                {%- if break -%}
+                                    {% break %}
+                                {%- endif -%}
                             {%- endfor -%}
                         {%- endif -%}
                     {%- endunless -%}

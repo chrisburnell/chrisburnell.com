@@ -61,6 +61,10 @@
         &:active {
             @include v(color, white);
         }
+
+        em {
+            @include v(font-family, serif);
+        }
     }
 
     span {

@@ -153,7 +153,7 @@
             {%- endunless -%}
             <a class="h-cite  u-in-reply-to" rel="external" href="{{ in_reply_to_link }}">
                 {% if in_reply_to_title != in_reply_to_link %}
-                    {{ in_reply_to_title }} by
+                    {{ in_reply_to_title }} <em>by</em>
                 {% endif %}
                 {% if reply_target %}
                     {{ reply_target }}

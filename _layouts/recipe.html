@@ -5,7 +5,7 @@
 <main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
-        <h1 class="title" id="article">
+        <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}" id="article">
             <span class="p-name">{{ page.title | strip_html }}</span>
             {% if page.sparkline %}
                 {% include content/sparkline.liquid title=page.sparkline values=page.category %}

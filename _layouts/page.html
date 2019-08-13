@@ -11,8 +11,10 @@
             <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}">
                 {{ page.title | strip_html }}
                 {% if page.sparkline %}
+                    {%- assign category_link = site.data.categories | where: 'type', page.sparkline | first | map: 'category' | first -%}
                     {%- for category in site.categories -%}
-                        {%- if page.sparkline contains category[0] -%}
+                        {%- if category_link == category[0] -%}
+                            {%- assign clo = category[0] -%}
                             {%- assign posts_by_category = category[1] -%}
                             {%- break -%}
                         {%- endif -%}

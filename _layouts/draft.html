@@ -4,7 +4,7 @@
 <main class="wrap  h-entry" role="main">
     <article class="content" id="content" role="article">
 
-        <h1 class="title" id="article">
+        <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}" id="article">
             {% unless page.reacji or page.titlefree %}<span class="p-name">{% endunless %}
                 {% if page.category == 'like' %}
                     Liked a page on: {{ link_title | split: '/' | first }}

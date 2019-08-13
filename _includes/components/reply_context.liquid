@@ -9,9 +9,14 @@
         {% elsif in_reply_to_link contains 'chrisburnell.com' %}
             {% assign page_map = site.posts | where_exp: 'post', 'in_reply_to_link contains post.slug' | first %}
             <blockquote>
-                <div><em>in reply to:</em></div>
+                <div><em>In reply to:</em></div>
                 {% if page_map.titlefree %}
-                    <p><a href="{{ page_map.url }}">{{ page_map.content }} →</a></p>
+                    {% if page_map.content != '' %}
+                        <p>{{ page_map.content }}</p>
+                        <div><a href="{{ page_map.url }}">Read more →</a></div>
+                    {% else %}
+                        <a href="{{ page_map.url }}">{% include_cached content/titleize.liquid title=page_map.category %} from {{ page_map.date | date: '%A, %d %B %Y' }} →</a>
+                    {% endif %}
                 {% else %}
                     <h3 class="delta"><a href="{{ page_map.url }}">{{ page_map.title }} →</a></h3>
                 {% endif %}
