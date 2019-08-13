@@ -8,7 +8,7 @@
 .buttons-list {
     width: 100%;
     display: grid;
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(12em, max-content);
     @include v(grid-gap, medium);
     justify-content: center;
     margin: 0 0 $measure-medium;
