@@ -29,10 +29,6 @@ $font-faces: (
 ) !default;
 
 /// @type List
-/// @prop {String} Theme
-$themes: default, christmas, dark, halloween, outrun !default;
-
-/// @type List
 /// @prop {String} name - Brand name
 /// @prop {Color} color - Icon color
 /// @prop {Number} opacity - Brand icon opacity

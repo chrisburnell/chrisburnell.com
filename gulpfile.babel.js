@@ -160,21 +160,6 @@ gulp.task("js-concat", () => {
         .pipe(gulp.dest(`${paths.js.dest}/`));
 });
 
-// Place the CSS rel preload file in the right place
-gulp.task("js-css-preload", () => {
-    return gulp
-        .src(`${paths.js.src}/vendors/cssrelpreload.js`)
-        .pipe(plumber())
-        .pipe(babel())
-        .pipe(
-            rename({
-                basename: "css_rel_preload",
-                extname: ".liquid"
-            })
-        )
-        .pipe(gulp.dest(`${paths.includes}/generated/`));
-});
-
 // Place the Service Worker at the root
 gulp.task("js-serviceworker", () => {
     return gulp
@@ -213,10 +198,10 @@ gulp.task("images-move-svg", () => {
 gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-compile", "css-critical")));
 
 // JS task
-gulp.task("js", gulp.series("js-concat", gulp.parallel("js-css-preload", "js-serviceworker")));
+gulp.task("js", gulp.series("js-concat", "js-serviceworker"));
 
 // Images task
-gulp.task("images", gulp.series("images-compress", gulp.parallel("images-move-svg")));
+gulp.task("images", gulp.series("images-compress", "images-move-svg"));
 
 // Default task
 gulp.task("default", gulp.parallel("css", "js", "images"));

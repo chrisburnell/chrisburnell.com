@@ -7,7 +7,6 @@ footer {
     @include v(background-color, kaiser);
     @include v(color, alto);
     @include v(font-weight, bold);
-    @include case(uppercase);
 }
 
 .footer-links,
@@ -24,6 +23,11 @@ footer {
     white-space: nowrap;
 }
 
+.footer-home-anchor,
+.footer-links a {
+    @include case(uppercase);
+}
+
 .footer-home-anchor {
     width: 3.125rem;
     height: 3.125rem;
@@ -31,10 +35,6 @@ footer {
     text-indent: 100%;
     text-decoration: none;
     white-space: nowrap;
-
-    &:active {
-        @include v(background-color, transparent);
-    }
 
     .icon {
         @include transition(opacity, transform);
@@ -55,6 +55,8 @@ footer {
     }
 
     &:active {
+        @include v(background-color, transparent);
+
         .icon {
             transform: translateY($border-width-thin);
         }
@@ -69,6 +71,10 @@ footer {
 
     @include media("screen", "below:medium") {
         justify-content: center;
+    }
+
+    @include media("screen", "above:medium") {
+        @include v(margin-top, medium);
     }
 
     a,

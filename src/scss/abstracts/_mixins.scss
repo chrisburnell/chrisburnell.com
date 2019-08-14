@@ -547,7 +547,7 @@
 ///
 @mixin t($properties...) {
     @each $theme, $data in $themes {
-        @if $theme == "default" {
+        @if $theme == "light" {
             @each $property in $properties {
                 @if map-has-key($data, $property) {
                     @include v($property, map-get($data, $property));

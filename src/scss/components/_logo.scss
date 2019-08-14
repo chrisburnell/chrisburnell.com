@@ -15,20 +15,29 @@
 
     .icon {
         @include absolute(top);
-        @include transition(transform $transition-duration-long);
-        @include transition(transform var(--transition-duration-long));
-        @include will-change(transform);
         @include v(fill, raven);
         @include v(width, logo);
         @include v(height, logo);
-        transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
-        transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
+
+        @include media("coarse") {
+            transform: translateX(-50%) translateY(-30%);
+        }
+
+        @include media("fine") {
+            @include transition(transform $transition-duration-long);
+            @include transition(transform var(--transition-duration-long));
+            @include will-change(transform);
+            transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
+            transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
+        }
     }
 
     &[href]:hover,
     &[href]:focus {
         .icon {
-            transform: translateX(-40%) translateY(-30%);
+            @include media("fine") {
+                transform: translateX(-40%) translateY(-30%);
+            }
         }
     }
 
@@ -36,9 +45,11 @@
         @include v(background-color, transparent);
 
         .icon {
-            transition-duration: $transition-duration-default;
-            transition-duration: var(--transition-duration-default);
-            transform: translateX(-30%) translateY(-25%);
+            @include media("fine") {
+                transition-duration: $transition-duration-default;
+                transition-duration: var(--transition-duration-default);
+                transform: translateX(-30%) translateY(-25%);
+            }
         }
     }
 }
