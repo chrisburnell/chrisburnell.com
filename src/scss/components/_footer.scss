@@ -73,10 +73,6 @@ footer {
         justify-content: center;
     }
 
-    @include media("screen", "above:medium") {
-        @include v(margin-top, medium);
-    }
-
     a,
     button {
         @include v(margin-left, small);
@@ -88,5 +84,11 @@ footer {
 
     button {
         @include case(initial);
+    }
+}
+
+.footer-links--indieweb {
+    @include media("screen", "below:medium") {
+        @include v(margin-top, medium);
     }
 }
