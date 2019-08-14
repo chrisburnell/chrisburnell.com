@@ -24,7 +24,7 @@
             document.documentElement.setAttribute("data-user-color-scheme", currentSetting);
             schemeStatusText.innerText = `Enable ${currentSetting === "dark" ? "Light" : "Dark"} Theme`;
         } else {
-            schemeStatusText.innerText = getCSSCustomProp(COLOR_SCHEME_KEY);
+            schemeStatusText.innerText = `Enable ${getCSSCustomProp(COLOR_SCHEME_KEY)} Theme`;
         }
     };
 
