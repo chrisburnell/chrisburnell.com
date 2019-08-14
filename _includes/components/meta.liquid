@@ -79,13 +79,13 @@
             {%- for audience in audiences -%}
                 {%- assign audience_name = audience.name | default: audience | strip -%}
                 {%- assign audience_map = site.data.people | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
-                {%- assign audience_link = audience_map.link.last | audience_map.link | default: audience.link.last | default: audience.link | default: null -%}
+                {%- assign audience_link = audience.link | default: audience_map.link | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
-                {%- if audience_link -%}
+                {% if audience_link %}
                     <a class="h-card  u-audience" href="{{ audience_link }}" title="" rel="external">{{ audience_name }}</a>
-                {%- else -%}
+                {% else %}
                     <strong class="h-card  p-audience">{{ audience_name }}</strong>
-                {%- endif -%}
+                {% endif %}
             {%- endfor -%}
         </div>
     {% endif %}

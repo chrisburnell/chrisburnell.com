@@ -10,7 +10,7 @@
 - name: a previous tweet
   twitter: iamchrisburnell
 
-# People
+# Friends / Acquaintances
 - name: Aaron Parecki
   link: aaronparecki.com
   twitter: aaronpk
@@ -64,20 +64,20 @@
   link: jeremycherfas.net
   twitter: EatPodcast
 
-# Places and Conferences
+# Places / Conferences
 - name: Homebrew Website Club London
   link: hwclondon.co.uk
   twitter: hwclondon
 - name: IndieWebCamp Online
   link: 2019.indieweb.org/online
 
-# Websites
+# Audiences / Websites
 - name: IndieWeb
   link: https://indieweb.org
 - name: Squiz
   link: https://squiz.net
 
-# Music
+# Music Artists
 - name: Kendrick Lamar
   link: https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg
   twitter: kendricklamar
@@ -88,7 +88,7 @@
   link: https://mitchmurder.bandcamp.com
   twitter: mitch_murder
 
-# Breweries
+# Beer Brewers
 - name: Amundsen Bryggeri
   link: https://www.amundsenbrewery.com
   twitter: amundsenbrewery
