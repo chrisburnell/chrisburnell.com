@@ -40,23 +40,29 @@
     }
 
     a {
-        @include transition(color, padding-bottom, border-bottom-width, transform);
-        @include will-change(color, padding-bottom, border-bottom-width, transform);
+        @include transition(box-shadow, color, transform);
+        @include will-change(box-shadow, color, transform);
         @include v(color, dove);
         display: block;
         padding: #{$measure-one - $border-width-default} $measure-one;
-        border-width: 0;
-        @include v(border-style, default);
-        @include v(border-color, raven);
-        margin-bottom: $border-width-default;
-        margin-bottom: var(--border-width-default);
         @include v(font-weight, bold);
         @include v(line-height, small);
         text-decoration: none !important;
 
         &:active {
             @include v(background-color, transparent);
-            transform: translateY(0.2rem);
+            transform: translateY($border-width-button);
+            transform: translateY(var(--border-width-button));
+
+            &::before {
+                content: "";
+                height: $border-width-button;
+                height: var(--border-width-button);
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                right: 0;
+            }
         }
 
         @include media("screen", "below:small") {
@@ -74,6 +80,8 @@
     @include v(color, kaiser);
     padding-bottom: #{$measure-one / 2};
     @include v(border-bottom-width, default);
+    box-shadow: inset 0 $border-bottom-width $color-raven;
+    box-shadow: inset 0 var(--border-bottom-width) var(--color-raven);
 }
 @each $class in $navigation-classes {
     .page--#{$class} .nav-primary--#{$class} a {
