@@ -98,6 +98,20 @@ $palette-colors: (
 ) !default;
 
 /// @type Map
+/// @prop {String} key - Highlight Color Name
+/// @prop {Color} value - Highlight Color Value
+$highlight-colors: (
+    highlight-alpha: $color-highlight-alpha,
+    highlight-beta: $color-highlight-beta,
+    highlight-gamma: $color-highlight-gamma,
+    highlight-delta: $color-highlight-delta,
+    highlight-epsilon: $color-highlight-epsilon,
+    highlight-zeta: $color-highlight-zeta,
+    highlight-eta: $color-highlight-eta,
+    highlight-theta: $color-highlight-theta,
+) !default;
+
+/// @type Map
 /// @prop {String} key - Language name
 /// @prop {Color} value - Language color
 $language-colors: (
@@ -125,7 +139,7 @@ $brand-colors: (
 ) !default;
 
 /// @type Map
-$all-colors: map-multiple-merge($site-colors, $language-colors, $brand-colors);
+$all-colors: map-multiple-merge($site-colors, $highlight-colors, $language-colors, $brand-colors);
 
 /// @type Map
 /// @prop {String} key - Border Width Name

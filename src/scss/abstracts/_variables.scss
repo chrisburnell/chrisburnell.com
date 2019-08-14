@@ -103,6 +103,23 @@ $color-black--delta: rgba($color-black, $opacity-delta) !default;
 $color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
 
 /// @type Color
+$color-highlight-alpha: #586e75;
+/// @type Color
+$color-highlight-beta: #abbbbb;
+/// @type Color
+$color-highlight-gamma: lightgreen;
+/// @type Color
+$color-highlight-delta: #cb4b16;
+/// @type Color
+$color-highlight-epsilon: mediumaquamarine;
+/// @type Color
+$color-highlight-zeta: #dc322f;
+/// @type Color
+$color-highlight-eta: skyblue;
+/// @type Color
+$color-highlight-theta: #b58900;
+
+/// @type Color
 $color-css: #016fba !default;
 /// @type Color
 $color-html: #e54d26 !default;

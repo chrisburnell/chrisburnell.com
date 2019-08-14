@@ -206,3 +206,9 @@ textarea {
         display: inline-block !important;
     }
 }
+
+.requires-js {
+    .no-js & {
+        display: none;
+    }
+}

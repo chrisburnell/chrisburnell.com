@@ -105,26 +105,6 @@ figure pre {
     }
 }
 
-$highlight-alpha: #586e75;
-$highlight-beta: #abbbbb;
-$highlight-gamma: lightgreen;
-$highlight-delta: #cb4b16;
-$highlight-epsilon: mediumaquamarine;
-$highlight-zeta: #dc322f;
-$highlight-eta: skyblue;
-$highlight-theta: #b58900;
-
-:root {
-    --highlight-alpha: #{$highlight-alpha};
-    --highlight-beta: #{$highlight-beta};
-    --highlight-gamma: #{$highlight-gamma};
-    --highlight-delta: #{$highlight-delta};
-    --highlight-epsilon: #{$highlight-epsilon};
-    --highlight-zeta: #{$highlight-zeta};
-    --highlight-eta: #{$highlight-eta};
-    --highlight-theta: #{$highlight-theta};
-}
-
 // Solarized Dark Code Highlighting
 .highlight {
     position: relative;
@@ -135,345 +115,277 @@ $highlight-theta: #b58900;
 
     // Comment
     .c {
-        color: $highlight-alpha;
-        color: var(--highlight-alpha);
+        @include v(color, highlight-alpha);
     }
     // Error
     .err {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Generic
     .g {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Keyword
     .k {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Literal
     .l {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name
     .n {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Operator
     .o {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Other
     .x {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Punctuation
     .p {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Comment.Multiline
     .cm {
-        color: $highlight-alpha;
-        color: var(--highlight-alpha);
+        @include v(color, highlight-alpha);
     }
     // Comment.Preproc
     .cp {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Comment.Single
     .c1 {
-        color: $highlight-alpha;
-        color: var(--highlight-alpha);
+        @include v(color, highlight-alpha);
     }
     // Comment.Special
     .cs {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Generic.Deleted
     .gd {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Generic.Emph
     .ge {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
         font-style: italic;
     }
     // Generic.Error
     .gr {
-        color: $highlight-zeta;
-        color: var(--highlight-zeta);
+        @include v(color, highlight-zeta);
     }
     // Generic.Heading
     .gh {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Generic.Inserted
     .gi {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Generic.Output
     .go {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Generic.Prompt
     .gp {
         @include non-selectable;
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Generic.Strong
     .gs {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
         @include v(font-weight, bold);
     }
     // Generic.Subheading
     .gu {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Generic.Traceback
     .gt {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Keyword.Constant
     .kc {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Keyword.Declaration
     .kd {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Keyword.Namespace
     .kn {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Keyword.Pseudo
     .kp {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Keyword.Reserved
     .kr {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Keyword.Type
     .kt {
-        color: $highlight-zeta;
-        color: var(--highlight-zeta);
+        @include v(color, highlight-zeta);
     }
     // Literal.Date
     .ld {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Literal.Number
     .m {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String
     .s {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Name.Attribute
     .na {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name.Builtin
     .nb {
-        color: $highlight-theta;
-        color: var(--highlight-theta);
+        @include v(color, highlight-theta);
     }
     // Name.Class
     .nc {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Constant
     .no {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Name.Decorator
     .nd {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Entity
     .ni {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Name.Exception
     .ne {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Name.Function
     .nf {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Label
     .nl {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name.Namespace
     .nn {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name.Other
     .nx {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name.Property
     .py {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Name.Tag
     .nt {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Variable
     .nv {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Operator.Word
     .ow {
-        color: $highlight-gamma;
-        color: var(--highlight-gamma);
+        @include v(color, highlight-gamma);
     }
     // Text.Whitespace
     .w {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Literal.Number.Float
     .mf {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.Number.Hex
     .mh {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.Number.Integer
     .mi {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.Number.Oct
     .mo {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Backtick
     .sb {
-        color: $highlight-alpha;
-        color: var(--highlight-alpha);
+        @include v(color, highlight-alpha);
     }
     // Literal.String.Char
     .sc {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Doc
     .sd {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Literal.String.Double
     .s2 {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Escape
     .se {
-        color: $highlight-delta;
-        color: var(--highlight-delta);
+        @include v(color, highlight-delta);
     }
     // Literal.String.Heredoc
     .sh {
-        color: $highlight-beta;
-        color: var(--highlight-beta);
+        @include v(color, highlight-beta);
     }
     // Literal.String.Interpol
     .si {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Other
     .sx {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Regex
     .sr {
-        color: $highlight-zeta;
-        color: var(--highlight-zeta);
+        @include v(color, highlight-zeta);
     }
     // Literal.String.Single
     .s1 {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Literal.String.Symbol
     .ss {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
     // Name.Builtin.Pseudo
     .bp {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Variable.Class
     .vc {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Variable.Global
     .vg {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Name.Variable.Instance
     .vi {
-        color: $highlight-eta;
-        color: var(--highlight-eta);
+        @include v(color, highlight-eta);
     }
     // Literal.Number.Integer.Long
     .il {
-        color: $highlight-epsilon;
-        color: var(--highlight-epsilon);
+        @include v(color, highlight-epsilon);
     }
 }

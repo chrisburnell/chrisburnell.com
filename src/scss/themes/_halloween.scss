@@ -3,7 +3,7 @@
 /// @group themes
 ////
 
-.halloween {
+[data-user-color-scheme="halloween"] {
     --color-black: #{invert($color-black)};
     --color-mineshaft: #{invert($color-mineshaft)};
     --color-kaiser: #{invert($color-kaiser)};

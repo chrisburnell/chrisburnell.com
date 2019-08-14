@@ -18,6 +18,7 @@ footer {
 
 .footer-home-anchor,
 .footer-links a,
+.footer-links button,
 .footer-links div {
     display: inline-block;
     white-space: nowrap;
@@ -70,7 +71,8 @@ footer {
         justify-content: center;
     }
 
-    a {
+    a,
+    button {
         @include case(uppercase);
         @include v(margin-left, small);
         @include v(margin-right, small);
