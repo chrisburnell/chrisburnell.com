@@ -170,6 +170,9 @@
 }
 
 .webring-links {
+    p {
+        @include v(font-size, default);
+    }
     .webring-links__previous,
     .webring-links__home {
         margin-right: 0;
