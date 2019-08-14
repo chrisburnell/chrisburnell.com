@@ -14,18 +14,18 @@ a {
     @include v(text-decoration-color, alto);
     text-decoration-skip-ink: auto;
 
-    &:focus {
-        outline: $border-width-thin $border-style-default $color-raven;
-        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
-        outline-offset: $border-width-thin;
-        outline-offset: var(--border-width-thin);
-    }
-
     &:hover,
     &:focus,
     &:active {
         text-decoration: underline;
         @include v(text-decoration-color, canada);
+    }
+
+    &:focus-visible {
+        outline: $border-width-thin $border-style-default $color-raven;
+        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+        outline-offset: $border-width-thin;
+        outline-offset: var(--border-width-thin);
     }
 
     &:active {

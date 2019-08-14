@@ -15,9 +15,8 @@ button,
     @include v(background-color, bowhead);
     @include v(color, white);
     min-width: 8em;
-    min-height: #{$line-height-code + strip-unit($border-width-button)}em;
     display: inline-block;
-    padding: 0 #{$border-width-button * 4} $border-width-button;
+    padding: 0.5em $measure-small;
     border-width: 0;
     margin-top: $border-width-default;
     margin-top: var(--border-width-default);
@@ -27,19 +26,12 @@ button,
     position: relative;
     @include v(font-size, default);
     @include v(font-weight, bold);
-    @include v(line-height, code);
+    @include v(line-height, medium);
     text-align: center;
     text-decoration: none;
     text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--gamma;
     cursor: pointer;
     appearance: none;
-
-    &:focus {
-        outline: $border-width-thin $border-style-default $color-raven;
-        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
-        outline-offset: $border-width-thin;
-        outline-offset: var(--border-width-thin);
-    }
 
     &:hover,
     &:focus,
@@ -48,29 +40,26 @@ button,
         text-decoration: none;
     }
 
-    &:active {
-        height: #{$line-height-code}em;
-        padding-bottom: 0;
-        margin-bottom: $border-width-button;
-        margin-bottom: var(--border-width-button);
-        box-shadow: inset 0 #{-1 * $border-width-hairline} 0 0 $color-bowhead;
-        box-shadow: inset 0 calc(-1 * var(--border-width-hairline)) 0 0 var(--color-bowhead);
-        transform: translateY($border-width-button);
-        transform: translateY(var(--border-width-button));
+    &:focus-visible {
+        outline: $border-width-thin $border-style-default $color-raven;
+        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+        outline-offset: $border-width-thin;
+        outline-offset: var(--border-width-thin);
     }
 
-    &::before,
-    &::after {
-        @include absolute(top-full);
-        content: "";
-        height: $border-width-button;
-        height: var(--border-width-button);
-    }
     &:active {
-        &::before,
-        &::after {
-            top: -($border-width-button);
-            top: -(var(--border-width-button));
+        box-shadow: none;
+        transform: translateY($border-width-button);
+        transform: translateY(var(--border-width-button));
+
+        &::before {
+            content: "";
+            height: $border-width-button;
+            height: var(--border-width-button);
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
         }
     }
 
@@ -101,11 +90,6 @@ button {
 
 .button--small {
     min-width: 5em;
+    padding: 0.25em 0.5em;
     @include v(font-size, small);
-    height: #{$line-height-code}em;
-    line-height: #{$line-height-code - strip-unit($border-width-button)};
-
-    &:active {
-        height: #{$line-height-code - strip-unit($border-width-button)}em;
-    }
 }
