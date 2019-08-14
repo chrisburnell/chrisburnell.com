@@ -7,7 +7,7 @@ footer {
     @include v(background-color, kaiser);
     @include v(color, alto);
     @include v(font-weight, bold);
-    text-transform: uppercase;
+    @include case(uppercase);
 }
 
 .footer-links,
@@ -73,11 +73,14 @@ footer {
 
     a,
     button {
-        @include case(uppercase);
         @include v(margin-left, small);
         @include v(margin-right, small);
         @include v(font-size, small);
         // coming soon!
         // @include v(text-decoration-width, thin);
+    }
+
+    button {
+        @include case(initial);
     }
 }
