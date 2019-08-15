@@ -76,13 +76,9 @@
 .nav-primary-list a:hover,
 .nav-primary-list a:focus,
 .nav-primary-list a:active,
-%nav-primary-anchor {
+.nav-primary-list a[aria-current="page"],
+.nav-primary-list a[aria-current="true"] {
     @include v(color, kaiser);
     box-shadow: inset 0 $border-width-button $color-raven;
     box-shadow: inset 0 var(--border-width-button) var(--color-raven);
-}
-@each $class in $navigation-classes {
-    .page--#{$class} .nav-primary--#{$class} a {
-        @extend %nav-primary-anchor !optional;
-    }
 }
