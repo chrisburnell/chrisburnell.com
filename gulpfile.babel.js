@@ -198,11 +198,10 @@ gulp.task("images-move-svg", () => {
 gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-compile", "css-critical")));
 
 // JS task
-gulp.task("js", gulp.series("js-concat", gulp.parallel("js-serviceworker")));
+gulp.task("js", gulp.series("js-concat", "js-serviceworker"));
 
 // Images task
-// gulp.task("images", gulp.series("images-compress", gulp.parallel("images-move-svg")));
-gulp.task("images", gulp.parallel("images-move-svg"));
+gulp.task("images", gulp.series("images-compress", "images-move-svg"));
 
 // Default task
 gulp.task("default", gulp.parallel("css", "js", "images"));
