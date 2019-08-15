@@ -53,7 +53,6 @@ const IGNORE_PAGES = [
     "/ignore"
 ];
 
-
 let updateStaticCache = () => {
     return caches.open(STATIC_CACHE)
         .then(cache => {
