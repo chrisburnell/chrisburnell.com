@@ -79,6 +79,6 @@
 .nav-primary-list a[aria-current="page"],
 .nav-primary-list a[aria-current="true"] {
     @include v(color, kaiser);
-    box-shadow: inset 0 $border-width-button $color-raven;
-    box-shadow: inset 0 var(--border-width-button) var(--color-raven);
+    box-shadow: inset 0 #{$border-width-button * -1} $color-raven;
+    box-shadow: inset 0 calc(var(--border-width-button) * -1) var(--color-raven);
 }
