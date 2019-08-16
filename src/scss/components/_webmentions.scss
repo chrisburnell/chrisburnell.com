@@ -120,7 +120,8 @@
         text-decoration: none;
     }
 
-    [data-type="bookmark"] .webmentions__response__type::before {
+    [data-type="bookmark"] .webmentions__response__type::before,
+    [data-type="link"] .webmentions__response__type::before {
         content: "🔖";
     }
 
