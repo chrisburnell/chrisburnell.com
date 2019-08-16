@@ -9,7 +9,7 @@ codepen_slug: yIwzd
 {% include content/codepen.liquid height='200' %}
 
 {% highlight html %}
-<button>Hover Me</button>
+<button role="button" type="button">Hover Me</button>
 {% endhighlight %}
 
 {% include content/code_toggle_top.liquid %}

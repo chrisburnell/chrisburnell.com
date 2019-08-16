@@ -1,5 +1,5 @@
 {% if page.comments == 'disqus' %}
-    <button type="button" class="button--show-comments  js-show-comments" id="show-comments" role="button" aria-label="Leave a comment" aria-controls="disqus_thread" aria-expanded="false" aria-pressed="false" aria-disabled="true" disabled>
+    <button role="button" type="button" class="button--show-comments  js-show-comments" id="show-comments" aria-label="Leave a comment" aria-controls="disqus_thread" aria-expanded="false" aria-pressed="false" aria-disabled="true" disabled>
         {% include_cached content/svg.liquid type='feather' %}
         <span class="disqus-comment-count" data-disqus-url="{{ canonical }}">Leave a Comment</span>
     </button>

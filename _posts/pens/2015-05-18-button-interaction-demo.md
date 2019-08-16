@@ -9,7 +9,7 @@ codepen_slug: RPRwoo
 {% include content/codepen.liquid height='300' %}
 
 {% highlight html %}
-<button>Hello!</button>
+<button role="button" type="button">Hello!</button>
 {% endhighlight %}
 
 {% include content/code_toggle_top.liquid %}
