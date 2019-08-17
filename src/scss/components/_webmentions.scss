@@ -133,7 +133,7 @@
         content: "🔄️";
     }
 
-    .webmentions__response__type[data-reacji]:not([data-reacji=""])::before {
+    .webmentions__response__type[data-reacji]::before {
         content: attr(data-reacji);
     }
 }
