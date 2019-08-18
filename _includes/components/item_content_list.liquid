@@ -120,10 +120,10 @@
                     {%- else -%}
                         {% assign reply = in_reply_to_link %}
                     {%- endif -%}
-                    {%- if in_reply_to_title != in_reply_to_link -%}
+                    {%- if in_reply_to_title != null and in_reply_to_title != in_reply_to_link -%}
                         {% assign reply = reply | prepend: ' by ' | prepend: in_reply_to_title %}
                     {%- endif -%}
-                    {% include content/emoji.liquid emoji='↩️' %} In reply to:
+                    {% include content/emoji.liquid emoji='↩️' %} In reply to
                     <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}
