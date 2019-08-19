@@ -4,6 +4,8 @@
 ////
 
 .meta {
+    display: flex;
+    flex-wrap: wrap;
     @include v(padding-bottom, medium);
     overflow: hidden;
     @include v(font-family, serif);
@@ -18,7 +20,9 @@
 
     time,
     div {
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
         @include v(margin-right, large);
     }
 
@@ -70,5 +74,10 @@
     span {
         padding-right: $border-width-default;
         padding-right: var(--border-width-default);
+
+        &:not(:first-child) {
+            padding-left: $border-width-default;
+            padding-left: var(--border-width-default);
+        }
     }
 }

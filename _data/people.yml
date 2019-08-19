@@ -68,8 +68,10 @@
 - name: Homebrew Website Club London
   link: hwclondon.co.uk
   twitter: hwclondon
-- name: IndieWebCamp Online
+- name: IndieWebCamp Online 2019
   link: 2019.indieweb.org/online
+- name: IndieWebCamp Brighton 2019
+  link: indieweb.org/2019/Brighton
 
 # Audiences / Websites
 - name: IndieWeb

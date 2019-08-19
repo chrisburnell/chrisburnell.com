@@ -38,3 +38,13 @@
   # image: maps/beer-merchants-tap.png
   geo: 51.5442,-0.0236325
   address: 99 Wallis Rd, Hackney Wick, London E9 5LN
+- name: The Craft Beer Co.
+  link: https://www.thecraftbeerco.com/
+  # image: maps/the-craft-beer-co.png
+  geo: 51.5262,-0.0881
+  address: 235 Old St, Old Street, London EC1V 9HE
+- name: Sixty Eight Middle Street
+  link: http://68middle.st/
+  # image: maps/sixty-eight-middle-street.png
+  geo: 50.8210794,-0.1435692
+  address: 68 Middle St, Brighton BN1 1AL

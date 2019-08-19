@@ -64,7 +64,7 @@
                 {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if author_link -%}
-                    <a class="h-cite" href="{{ author_link }}" title="" rel="external">{{ author_name }}</a>
+                    <a class="h-cite" href="{{ author_link }}" title="{{ author_name }}" rel="external">{{ author_name }}</a>
                 {%- else -%}
                     <strong class="h-cite">{{ author_name }}</strong>
                 {%- endif -%}
@@ -82,7 +82,7 @@
                 {%- assign audience_link = audience.link | default: audience_map.link | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
                 {% if audience_link %}
-                    <a class="h-card  u-audience" href="{{ audience_link }}" title="" rel="external">{{ audience_name }}</a>
+                    <a class="h-card  u-audience" href="{{ audience_link }}" title="{{ audience_name }}" rel="external">{{ audience_name }}</a>
                 {% else %}
                     <strong class="h-card  p-audience">{{ audience_name }}</strong>
                 {% endif %}
@@ -141,19 +141,21 @@
                         {%- endfor -%}
                     {%- endfor -%}
                 {%- else -%}
+                    {%- assign stored_person_link = '' -%}
                     {%- for person in site.data.people -%}
                         {%- for person_link in person.link -%}
-                            {%- if in_reply_to_link contains person_link -%}
+                            {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
+                                {%- assign stored_person_link = person_link -%}
                                 {%- assign reply_target = person | map: 'name' -%}
-                                {%- break -%}
                             {%- endif -%}
                         {%- endfor -%}
                     {%- endfor -%}
                 {%- endif -%}
             {%- endunless -%}
-            <a class="h-cite  u-in-reply-to" rel="external" href="{{ in_reply_to_link }}">
-                {% if in_reply_to_title != in_reply_to_link %}
-                    {{ in_reply_to_title }} <em>by</em>
+            <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_link }}"{% unless in_reply_to_link contains site.url %} rel="external"{% endunless %}>
+                {% if in_reply_to_title != null and in_reply_to_title != in_reply_to_link %}
+                    {{ in_reply_to_title }}
+                    <em>by</em>
                 {% endif %}
                 {% if reply_target %}
                     {{ reply_target }}
@@ -199,6 +201,11 @@
             <strong>
                 {{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}
                 {% if page.rsvp.finish %}
+                    {%- assign date_timezone = page.rsvp.date | date: '%z' -%}
+                    {%- assign finish_timezone = page.rsvp.finish | date: '%z' -%}
+                    {% if date_timezone != finish_timezone %}
+                        {{ date_timezone | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}
+                    {% endif %}
                     –
                     {% if finish_year > check_year %}
                         {{ page.rsvp.finish | date_to_long_string }},
@@ -207,7 +214,7 @@
                     {% elsif finish_year == check_year and finish_month == check_month and finish_day > check_day %}
                         {{ page.rsvp.finish | date_to_long_string }},
                     {% endif %}
-                    {{ page.rsvp.finish | date: '%R %z' | replace: '+0000', 'UTC' | replace: '+0100', 'BST' }}
+                    {{ page.rsvp.finish | date: '%R %z' | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}
                 {% endif %}
             </strong>
         </time>
@@ -266,6 +273,7 @@
                 {% include content/emoji.liquid emoji='🗣' %}
                 <span>given at</span>
             {% else %}
+                {% include content/emoji.liquid emoji='🗺' %}
                 <span>at</span>
             {% endif %}
             {% if checkin.link %}

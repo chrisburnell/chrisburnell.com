@@ -49,7 +49,6 @@
                             {%- assign reply_target = page_map.title -%}
                         {%- endunless -%}
                     {%- endif -%}
-                    {%- assign break = false -%}
                     {%- for person in site.data.people -%}
                         {%- for person_mastodon in person.mastodon -%}
                             {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
@@ -57,12 +56,8 @@
                             {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
                                 {%- assign reply_target = person | map: 'name' | first | default: null -%}
                                 {%- break -%}
-                                {%- assign break = true -%}
                             {%- endif -%}
                         {%- endfor -%}
-                        {%- if break -%}
-                            {% break %}
-                        {%- endif -%}
                     {%- endfor -%}
                     {%- unless reply_target -%}
                         {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
@@ -74,32 +69,23 @@
                             {%- endif -%}
                         {%- elsif in_reply_to_link contains 'twitter.com' -%}
                             {%- assign twitter_username = in_reply_to_link | split: '/status/' | first | split: 'twitter.com/' | last | default: null -%}
-                            {%- assign break = false -%}
                             {%- for person in site.data.people -%}
                                 {%- for person_twitter in person.twitter -%}
                                     {%- if person_twitter == twitter_username -%}
                                         {%- assign reply_target = person | map: 'name' | first -%}
                                         {%- break -%}
-                                        {%- assign break = true -%}
                                     {%- endif -%}
                                 {%- endfor -%}
-                                {%- if break -%}
-                                    {% break %}
-                                {%- endif -%}
                             {%- endfor -%}
                         {%- else -%}
-                            {%- assign break = false -%}
+                            {%- assign stored_person_link = '' -%}
                             {%- for person in site.data.people -%}
                                 {%- for person_link in person.link -%}
-                                    {%- if in_reply_to_link contains person_link -%}
+                                    {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
+                                        {%- assign stored_person_link = person_link -%}
                                         {%- assign reply_target = person | map: 'name' | first -%}
-                                        {%- break -%}
-                                        {%- assign break = true -%}
                                     {%- endif -%}
                                 {%- endfor -%}
-                                {%- if break -%}
-                                    {% break %}
-                                {%- endif -%}
                             {%- endfor -%}
                         {%- endif -%}
                     {%- endunless -%}
@@ -123,7 +109,8 @@
                     {%- if in_reply_to_title != null and in_reply_to_title != in_reply_to_link -%}
                         {% assign reply = reply | prepend: ' by ' | prepend: in_reply_to_title %}
                     {%- endif -%}
-                    {% include content/emoji.liquid emoji='↩️' %} In reply to
+                    {% include content/emoji.liquid emoji='↩️' %}
+                    In reply to
                     <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}
@@ -167,7 +154,7 @@
                 {% if page.checkin %}
                     <data class="checkin">
                         {% include content/emoji.liquid emoji='🗺' %}
-                        <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
+                        at <span class="p-location">{{ page.checkin.name | default: page.checkin }}</span>
                     </data>
                 {% endif %}
                 {% if page.badges %}
@@ -198,8 +185,9 @@
                         – {{ page.rsvp.finish | date_to_long_string }}
                     {% elsif finish_year == check_year and finish_month == check_month and finish_day > check_day %}
                         – {{ page.rsvp.finish | date_to_long_string }}
-                    {% endif %}</time>
-                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
+                    {% endif %}
+                </time>
+                <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
             {% else %}
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
             {% endif %}
