@@ -276,18 +276,15 @@ keep_files:
   - images
 
 exclude:
-  - CNAME
   - CODE_OF_CONDUCT.md
   - COMMIT_TEMPLATE.md
   - CONTRIBUTING.md
-  - Gemfile
-  - gulpfile.babel.js
   - ISSUE_TEMPLATE.md
+  - PULL_REQUEST_TEMPLATE.md
+  - gulpfile.babel.js
   - LICENSE
-  - node_modules
   - package.json
   - package-lock.json
-  - PULL_REQUEST_TEMPLATE.md
   - README.md
   - src
   - vendor
