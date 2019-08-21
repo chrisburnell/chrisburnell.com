@@ -263,6 +263,7 @@
             </div>
         {% endif %}
     {% endif %}
+    {%- assign checkin = null -%}
     {% if page.checkin %}
         {%- assign checkin = site.data.places | where: 'name', page.checkin.name | first | default: page.checkin -%}
         <div class="checkin">
