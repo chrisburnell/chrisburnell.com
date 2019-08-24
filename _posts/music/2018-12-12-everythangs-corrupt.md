@@ -5,7 +5,7 @@ release: 2018-12-07 12:00:00 +0000
 authors:
   - name: Ice Cube
     link: https://icecube.com/
-listen_of: https://open.spotify.com/album/0EVgPaKOC8o9JFVpKLMSoz
+listen_of: 0EVgPaKOC8o9JFVpKLMSoz
 cover: everythangs-corrupt.jpg
 rating: 4
 ---

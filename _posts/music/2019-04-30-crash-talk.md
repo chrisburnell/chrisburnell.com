@@ -5,7 +5,7 @@ release: 2019-04-26 12:00:00 +0100
 authors:
   - name: ScHoolboy Q
     link: https://open.spotify.com/artist/5IcR3N7QB1j6KBL8eImZ8m
-listen_of: https://open.spotify.com/album/3UTp6spxkyTdvsmJDPfb7n
+listen_of: 3UTp6spxkyTdvsmJDPfb7n
 cover: crash-talk.jpg
 rating: 4.5
 ---

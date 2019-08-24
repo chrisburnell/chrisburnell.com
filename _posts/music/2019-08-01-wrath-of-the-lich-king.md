@@ -8,7 +8,7 @@ authors:
   - Jason Hayes
   - Neal Acree
   - Glenn Stafford
-listen_of: https://open.spotify.com/album/36Dk0lgHLB8nfpaC8EvGiy
+listen_of: 36Dk0lgHLB8nfpaC8EvGiy
 cover: wrath-of-the-lich-king.jpg
 rating: 5
 ---

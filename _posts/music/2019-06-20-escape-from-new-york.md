@@ -5,7 +5,7 @@ release: 2018-05-24 12:00:00 +0100
 authors:
   - name: Beast Coast
     link: https://open.spotify.com/artist/1Nd1g8fezKoJ6DGauWbZIm
-listen_of: https://open.spotify.com/album/1NPxBmG3k3UzybcaxxSVuB
+listen_of: 1NPxBmG3k3UzybcaxxSVuB
 cover: escape-from-new-york.jpg
 rating: 3.25
 ---

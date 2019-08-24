@@ -72,12 +72,23 @@
     }
 
     span {
-        padding-right: $border-width-default;
-        padding-right: var(--border-width-default);
+        padding-right: 1ex;
 
         &:not(:first-child) {
-            padding-left: $border-width-default;
-            padding-left: var(--border-width-default);
+            padding-left: 1ex;
         }
+    }
+
+    .comma {
+        padding-left: 0 !important;
+    }
+
+    .left-bracket {
+        padding-left: 1ex;
+        padding-right: 0 !important;
+    }
+
+    .right-bracket {
+        padding-left: 0 !important;
     }
 }

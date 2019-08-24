@@ -10,6 +10,9 @@
 {%- assign like_of_link = page.like_of.link | default: page.like_of -%}
 {%- assign like_of_title = page.like_of.title -%}
 {%- assign listen_of_link = page.listen_of.link | default: page.listen_of -%}
+{%- unless listen_of_link contains 'http' -%}
+    {%- assign listen_of_link = 'https://song.link/album/s/' | append: listen_of_link -%}
+{%- endunless -%}
 {%- assign listen_of_title = page.listen_of.title -%}
 {%- assign read_of_link = page.read_of.link | default: page.read_of -%}
 {%- assign read_of_title = page.read_of.title -%}

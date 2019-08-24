@@ -27,6 +27,12 @@
                     <a class="button  h-cite  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.read_of.title | default: page.link.title | default: link_title }}</a>
                 </nav>
             </div>
+
+            {% if page.category == 'music' %}
+                <figure>
+                    <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"></iframe>
+                </figure>
+            {% endif %}
         {% endif %}
 
         {% if checkin.image %}

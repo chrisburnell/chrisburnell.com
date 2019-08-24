@@ -7,7 +7,7 @@ authors:
     link: https://open.spotify.com/artist/3QJzdZJYIAcoET1GcfpNGi
   - name: Nas
     link: https://open.spotify.com/artist/20qISvAhX20dpIbOOzGK3q
-listen_of: https://open.spotify.com/album/63bs3omFkaEXjzTfTFOEPj
+listen_of: 63bs3omFkaEXjzTfTFOEPj
 cover: distant-relatives.jpg
 rating: 5
 ---

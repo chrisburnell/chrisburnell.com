@@ -7,7 +7,6 @@
     {%- assign rating_base = page.rating | default: 0 | at_least: 0 | at_most: 5 | floor -%}
     {%- assign rating_fraction = page.rating | minus: rating_base -%}
 {%- endif -%}
-{%- assign link = page.bookmark_of.link | default: page.bookmark_of | default: page.like_of.link | default: page.like_of | default: page.listen_of.link | default: page.listen_of | default: page.read_of.link | default: page.read_of | default: page.watch_of.link | default: page.watch_of | default: page.link | default: null -%}
 <entry>
     {% unless page.reacji or page.titlefree %}
         <title>{{ page.title | xml_escape }}</title>

@@ -3,7 +3,7 @@ title: Hardwired
 date: 2018-12-03 12:00:00 +0000
 release: 2018-11-30 12:00:00 +0000
 authors: Mitch Murder
-listen_of: https://open.spotify.com/album/4nagl2ORrwFi8nAmjTrqp3
+listen_of: 4nagl2ORrwFi8nAmjTrqp3
 cover: hardwired.jpg
 rating: 4.5
 ---

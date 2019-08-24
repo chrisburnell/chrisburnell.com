@@ -5,7 +5,7 @@ release: 2006-05-09 12:00:00 +0100
 authors:
   - name: Red Hot Chili Peppers
     link: https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5
-listen_of: https://open.spotify.com/album/7xl50xr9NDkd3i2kBbzsNZ
+listen_of: 7xl50xr9NDkd3i2kBbzsNZ
 cover: stadium-arcadium.jpg
 rating: 5
 ---
