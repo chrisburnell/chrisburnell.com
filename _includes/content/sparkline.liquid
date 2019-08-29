@@ -6,8 +6,8 @@
 {% capture values %}
     {%- assign limit_x = site.sparklines.limit_x -%}
     {%- assign limit_y = site.sparklines.limit_y -%}
-    {%- assign ending_week = site.time | date: '%-W' | plus: 0 -%}
-    {%- assign ending_year = site.time | date: '%Y' | plus: 0 -%}
+    {%- assign ending_week = site.time | date: '%-W' | to_integer -%}
+    {%- assign ending_year = site.time | date: '%Y' | to_integer -%}
     {%- assign starting_week = ending_week -%}
     {%- assign starting_year = ending_year -%}
     {%- for i in (1..limit_x) -%}
@@ -30,8 +30,8 @@
             {%- endif -%}
             {%- assign count = 0 -%}
             {%- for page in include.values reversed -%}
-                {%- assign year = page.finish | default: page.date | date: '%Y' | plus: 0 -%}
-                {%- assign week = page.finish | default: page.date | date: '%-W' | plus: 0 -%}
+                {%- assign year = page.finish | default: page.date | date: '%Y' | to_integer -%}
+                {%- assign week = page.finish | default: page.date | date: '%-W' | to_integer -%}
                 {%- if year == tracking_year and week == tracking_week -%}
                     {%- assign count = count | plus: 1 -%}
                 {%- endif -%}

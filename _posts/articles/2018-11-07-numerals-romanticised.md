@@ -178,7 +178,7 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
 {% include content/heading.liquid title='Copy This Part' %}
 
 {% highlight liquid %}{% raw %}
-{%- assign input = include.value | times: 1 -%}
+{%- assign input = include.value | to_integer -%}
 {%- if input != 0 -%}
     {%- assign output = '' -%}
     {%- for c in (1..9999) -%}
