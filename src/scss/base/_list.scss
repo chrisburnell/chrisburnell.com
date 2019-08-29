@@ -42,7 +42,9 @@ ol:not([class]),
 ol.default-list {
     // This class *requires* `default-list` to work
     &:not([class*="continued-list"]) {
-        counter-reset: ordered-list;
+        & > li:first-child {
+            counter-reset: ordered-list;
+        }
     }
 
     @for $i from 1 through 10 {
