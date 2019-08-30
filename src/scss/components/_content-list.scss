@@ -148,3 +148,22 @@
         }
     }
 }
+
+.content-list__image {
+    @include transition(opacity);
+    @include will-change(opacity);
+    @include v(opacity, delta);
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    @include absolute(top);
+    @include z-index(root);
+    pointer-events: none;
+
+    :hover > &,
+    :focus > &,
+    :active > & {
+        @include v(opacity, gamma);
+    }
+}

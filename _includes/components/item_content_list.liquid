@@ -33,6 +33,20 @@
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
+            {% comment %}
+            {% if page.cover %}
+                <img class="content-list__image" src="{{ site.static_url | append: page.category | append: '/' | append: page.cover }}">
+            {% elsif page.banner_mobile or page.banner %}
+                <img class="content-list__image" src="/images/banners/{{ page.banner_mobile | default: page.banner | first }}">
+            {% elsif page.photo %}
+                <img class="content-list__image" src="{{ page.photo | first | map: 'link' | first }}">
+            {% elsif page.checkin.name %}
+                {% assign checkin_image = site.data.places | where: 'name', page.checkin.name | map: 'image' | first | default: null %}
+                {% if checkin_image %}
+                    <img class="content-list__image" src="{{ site.static_url | append: '/' | append: checkin_image }}">
+                {% endif %}
+            {% endif %}
+            {% endcomment %}
             <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} aria-hidden="true" hidden{% endif %}>
                 {% if page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
