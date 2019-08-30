@@ -4,6 +4,9 @@ title: "The Flip-Flop Technique"
 lede: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://andy-bell.design\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, but I found a hacky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
 tags:
   - css
+syndicate_to:
+  - https://mastodon.social/users/chrisburnell/statuses/102705333471640919
+  - https://twitter.com/iamchrisburnell/status/1167375436617330693
 ---
 
 <style>
@@ -115,7 +118,7 @@ That’s done it. By applying the same filter *again* to the emoji, it flip-flop
 
 {% include content/heading.liquid title='Hue, Saturation, Lightness' %}
 
-But something’s *off*. The colours of the emoji in the final example seem more muted or less vibrant than the unaltered emoji in the first example, which is most noticeable on the yellow hair of the dragon. Interact with this demo to see the unaltered state alongside the fully-filtered state and see for yourself.
+But something’s *off*. The colours of the emoji in the final example seem less saturated or less vibrant than the unaltered emoji in the first example, which is most noticeable on the yellow hair of the dragon. Interact with this demo to see the unaltered state alongside the fully-filtered state and see for yourself.
 
 <figure class="figure--dragon  figure--dragon--animate" tabindex="0">
     <div>
@@ -125,6 +128,8 @@ But something’s *off*. The colours of the emoji in the final example seem more
         <span class="emoji" role="img" aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</span>
     </div>
 </figure>
+
+Even more confusing to me is that this discrepancy only exists when I look at it using my default *light* theme—when viewed with my *dark* theme the unaltered emoji appears just as unsaturated as the final product.
 
 
 {% include content/heading.liquid title='The Code' %}
