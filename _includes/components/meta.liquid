@@ -378,63 +378,65 @@
         </div>
     {% endif %}
     {% assign syndications = page.syndicate_to | default: page.syndicate-to | default: page.mf-syndicate-to | default: syndicate_to | default: null %}
-    <!-- TEST {{ syndications }} -->
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             {% include content/emoji.liquid emoji='⤴️' %}
             <span>also on </span>
-            {%- assign syndication_count = 0 -%}
-            {% for syndication in syndications %}
-                {%- assign syndication_codepen = null -%}
-                {%- assign syndication_gist = null -%}
-                {%- assign syndication_github = null -%}
-                {%- assign syndication_indienews = null -%}
-                {%- assign syndication_mastodon = null -%}
-                {%- assign syndication_twitter = null -%}
-                {%- assign syndication_untappd = null -%}
-                {% if syndication contains 'codepen.io' %}
-                    {%- assign syndication_slug = syndication | split: '/' | last -%}
-                    {% capture syndication_codepen %}<a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
-                                                     <small class="strong">
-                                                         <span class="left-bracket">(</span>
-                                                         <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
-                                                         <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
-                                                         <span class="right-bracket">)</span>
-                                                     </small>{% endcapture %}
-                {% elsif syndication contains 'gist.github.com' %}
-                    {% capture syndication_gist %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>{% endcapture %}
-                {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
-                    {% capture syndication_github %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>{% endcapture %}
-                {% elsif syndication contains 'news.indieweb.org' %}
-                    {% capture syndication_indienews %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">IndieNews</a>{% endcapture %}
-                {% elsif syndication contains 'mastodon.social' %}
-                    {% capture syndication_mastodon %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
-                                                     <small class="strong">
-                                                         <span class="left-bracket">(</span>
-                                                         <a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}/interact/{{ syndication | split: '/' | last }}">Interact</a>
-                                                         <span class="right-bracket">)</span>
-                                                     </small>{% endcapture %}
-                {% elsif syndication contains 'song.link' %}
-                    {% capture syndication_songlink %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Songlink</a>{% endcapture %}
-                {% elsif syndication contains 'twitter.com' %}
-                    {% capture syndication_twitter %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
-                                                     <small class="strong">
-                                                         <span class="left-bracket">(</span>
-                                                         <a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
-                                                         <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
-                                                         <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>
-                                                         <span class="right-bracket">)</span>
-                                                     </small>{% endcapture %}
-                {% elsif syndication contains 'untappd.com' %}
-                    {% capture syndication_untappd %}<a class="u-syndication" rel="syndication" href="{{ syndication }}">Untappd</a>
-                                                     <small class="strong">
-                                                         <span class="left-bracket">(</span>
-                                                         <a rel="external" href="{{ syndication }}#commentBox">Comment</a>
-                                                         <span class="right-bracket">)</span>
-                                                     </small>{% endcapture %}
+            {%- assign first_syndication = true -%}
+            {%- for syndication in syndications -%}
+                {% if first_syndication %}
+                    {% assign first_syndication = false %}
+                {% else %}
+                    <span class="comma">, </span>
                 {% endif %}
-            {% endfor %}
+                {% if syndication contains 'codepen.io' %}
+                    {% assign syndication_slug = syndication | split: '/' | last %}
+                    <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
+                    <small class="strong">
+                        <span class="left-bracket">(</span>
+                        <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
+                        <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
+                        <span class="right-bracket">)</span>
+                    </small>
+                {% elsif syndication contains 'gist.github.com' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>
+                {% elsif syndication contains 'github.com' or syndication contains 'github.io' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>
+                {% elsif syndication contains 'news.indieweb.org' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">IndieNews</a>
+                {% elsif syndication contains 'mastodon.social' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
+                    <small class="strong">
+                        <span class="left-bracket">(</span>
+                        <a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}/interact/{{ syndication | split: '/' | last }}">Interact</a>
+                        <span class="right-bracket">)</span>
+                    </small>
+                {% elsif syndication contains 'song.link' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">Songlink</a>
+                {% elsif syndication contains 'twitter.com' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
+                    <small class="strong">
+                        <span class="left-bracket">(</span>
+                        <a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
+                        <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
+                        <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>
+                        <span class="right-bracket">)</span>
+                    </small>
+                {% elsif syndication contains 'untappd.com' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">Untappd</a>
+                    <small class="strong">
+                        <span class="left-bracket">(</span>
+                        <a rel="external" href="{{ syndication }}#commentBox">Comment</a>
+                        <span class="right-bracket">)</span>
+                    </small>
+                {% endif %}
+            {%- endfor -%}
             {%- if page.codepen_slug -%}
+                {% if first_syndication %}
+                    {% assign first_syndication = false %}
+                {% else %}
+                    <span class="comma">, </span>
+                {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
                 <small class="strong">
                     <span class="left-bracket">(</span>
@@ -442,62 +444,30 @@
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
                     <span class="right-bracket">)</span>
                 </small>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_codepen -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_codepen }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_gist -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_gist }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_github -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_github }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_indienews -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_indienews }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_mastodon -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_mastodon }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_songlink -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_songlink }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {%- endif -%}
             {%- if page.speakerdeck_slug -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
+                {% if first_syndication %}
+                    {% assign first_syndication = false %}
+                {% else %}
+                    <span class="comma">, </span>
+                {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}">Speaker Deck</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_twitter -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_twitter }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
-            {%- endif -%}
-            {%- if syndication_untappd -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
-                {{ syndication_untappd }}
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {%- endif -%}
             {%- if page.vimeo_slug -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
+                {% if first_syndication %}
+                    {% assign first_syndication = false %}
+                {% else %}
+                    <span class="comma">, </span>
+                {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.vimeo_slug | prepend: 'https://vimeo.com/' }}">Vimeo</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {%- endif -%}
             {%- if page.youtube_slug -%}
-                {% if syndication_count > 0 %}<span class="comma">, </span>{% endif %}
+                {% if first_syndication %}
+                    {% assign first_syndication = false %}
+                {% else %}
+                    <span class="comma">, </span>
+                {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.youtube_slug | prepend: 'https://www.youtube.com/watch?v=' }}">YouTube</a>
-                {%- assign syndication_count = syndication_count | plus: 1 -%}
             {%- endif -%}
         </div>
     {% endif %}
