@@ -1,7 +1,7 @@
 ---
 date: 2019-08-30 10:48:00 +0100
 title: "The Flip-Flop Technique"
-lede: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://andy-bell.design\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, but I found a hacky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
+lede: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://andy-bell.design\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, and I found a wonky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
 tags:
   - css
 syndicate_to:
