@@ -2,7 +2,9 @@
     <section class="widget  widget--browse-posts">
         {% if page.previous %}
             <a class="widget-previous-anchor" href="{{ page.previous.url }}">
-                {% if page.previous.category == 'like' or page.previous.category == 'note' %}
+                {% if page.previous.like_of.title %}
+                    Liked: {{ page.previous.like_of.title }}
+                {% elsif page.previous.category == 'like' or page.previous.category == 'note' %}
                     {{ page.previous.category | capitalize }} from {{ page.previous.date | date: '%d %B %Y' }}
                 {% else %}
                     {{ page.previous.title }}
@@ -11,7 +13,9 @@
         {% endif %}
         {% if page.next %}
             <a class="widget-next-anchor" href="{{ page.next.url }}">
-                {% if page.next.category == 'like' or page.next.category == 'note' %}
+                {% if page.next.like_of.title %}
+                    Liked: {{ page.next.like_of.title }}
+                {% elsif page.next.category == 'like' or page.next.category == 'note' %}
                     {{ page.next.category | capitalize }} from {{ page.next.date | date: '%d %B %Y' }}
                 {% else %}
                     {{ page.next.title }}
