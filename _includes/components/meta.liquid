@@ -224,7 +224,6 @@
         </time>
     {% endif %}
     {% if page.category == 'article' %}
-        {% include content/emoji.liquid emoji='📚' %}
         {%- assign words = site.emptyArray -%}
         {%- assign open_figure_splits = content | split: '<figure class="highlight">' -%}
         {%- assign words = words | push: open_figure_splits[0] -%}
@@ -235,6 +234,7 @@
         {%- endfor -%}
         {%- assign words = words | join: ' ' | number_of_words -%}
         <div class="reading-length">
+            {% include content/emoji.liquid emoji='📚' %}
             <span>reading length</span>
             <strong>~{{ words | divided_by: 50 | round | times: 50 }} words</strong>
             {% if words < 250 %}

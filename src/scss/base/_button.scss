@@ -20,6 +20,8 @@ button,
     border-width: 0;
     box-shadow: inset 0 (-$border-width-button) 0 0 $color-black--gamma;
     box-shadow: inset 0 (-$border-width-button) 0 0 var(--color-black--gamma);
+    outline: 0 $border-style-default $color-raven;
+    outline: 0 var(--border-style-default) var(--color-raven);
     overflow: visible;
     position: relative;
     @include v(font-size, default);
@@ -39,14 +41,15 @@ button,
     }
 
     &:focus-visible {
-        outline: $border-width-thin $border-style-default $color-raven;
-        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+        outline-width: $border-width-thin;
+        outline-width: var(--border-width-thin);
         outline-offset: $border-width-thin;
         outline-offset: var(--border-width-thin);
     }
 
     &:active {
         box-shadow: none;
+        outline-width: 0;
         transform: translateY($border-width-button);
         transform: translateY(var(--border-width-button));
 

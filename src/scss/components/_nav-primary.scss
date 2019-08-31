@@ -51,6 +51,7 @@
 
         &:active {
             @include v(background-color, transparent);
+            outline-width: 0;
             transform: translateY($border-width-button);
             transform: translateY(var(--border-width-button));
 

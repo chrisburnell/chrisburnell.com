@@ -108,6 +108,10 @@
     .webmentions__response__avatar,
     .webmentions__response__type {
         display: block;
+
+        &:active {
+            outline-width: 0;
+        }
     }
 
     .webmentions__response__type {

@@ -9,6 +9,8 @@ a {
     @include will-change(background-color, color, text-decoration-color);
     @include v(background-color, transparent);
     @include v(color, bowhead);
+    outline: 0 $border-style-default $color-canada;
+    outline: 0 var(--border-style-default) var(--color-canada);
     position: relative;
     text-decoration: underline;
     @include v(text-decoration-color, alto);
@@ -22,8 +24,9 @@ a {
     }
 
     &:focus-visible {
-        outline: $border-width-thin $border-style-default $color-raven;
-        outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
+        @include v(outline-color, raven);
+        outline-width: $border-width-thin;
+        outline-width: var(--border-width-thin);
         outline-offset: $border-width-thin;
         outline-offset: var(--border-width-thin);
     }
@@ -31,6 +34,9 @@ a {
     &:active {
         @include v(background-color, canada);
         @include v(color, white);
+        outline-width: $border-width-thin;
+        outline-width: var(--border-width-thin);
+        outline-offset: 0;
     }
 
     %heading-elements & {
