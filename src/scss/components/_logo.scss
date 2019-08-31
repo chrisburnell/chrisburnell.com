@@ -43,6 +43,7 @@
 
     &[href]:active {
         @include v(background-color, transparent);
+        outline-width: 0;
 
         .icon {
             @include media("fine") {

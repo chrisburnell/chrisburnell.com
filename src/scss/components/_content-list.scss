@@ -47,6 +47,10 @@
             @include v(background-color, raven--gamma, $important: true);
         }
 
+        &:active {
+            outline-width: 0;
+        }
+
         aside & {
             @include v(padding, small);
         }

@@ -157,6 +157,10 @@
             }
         }
     }
+
+    &:active {
+        outline-width: 0;
+    }
 }
 
 .author-biography {
