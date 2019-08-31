@@ -1,11 +1,11 @@
 ---
 layout: null
 ---
-
+{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil and page.rsvp.going == true' -%}
 BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
-{% for page in site.posts %}{% if page.rsvp.going %}
+{% for page in rsvps %}
 {%- assign person = site.data.people | where_exp: 'item', 'page.in_reply_to contains item.link' | first -%}
 {%- assign place = site.data.places | where_exp: 'item', 'page.in_reply_to contains item.link' | first -%}
 {%- assign summary = place.name | default: person.name -%}
@@ -22,4 +22,4 @@ DESCRIPTION:{{ summary }}
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
-{% endif %}{% endfor %}END:VCALENDAR
+{% endfor %}END:VCALENDAR
