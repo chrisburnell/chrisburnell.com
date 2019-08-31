@@ -309,7 +309,7 @@
                 {% include content/emoji.liquid emoji='💨' %}
             {% elsif summary contains 'cloud' %}
                 {% include content/emoji.liquid emoji='🌥' %}
-            {% elsif summary contains 'sun' %}
+            {% elsif summary contains 'sun' or summary contains 'clear' %}
                 {% include content/emoji.liquid emoji='🌞' %}
             {% elsif summary contains 'moon' and summary contains 'full' %}
                 {% include content/emoji.liquid emoji='🌝' %}
