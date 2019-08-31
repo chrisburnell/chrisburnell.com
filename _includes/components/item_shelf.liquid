@@ -36,6 +36,8 @@
 {%- elsif link contains 'song.link' -%}
     {%- assign link_title = link_title | append: ' on Songlink' -%}
 {%- endif -%}
+{%- assign link_author_name = page.bookmark_of.authors[0].name | default: null -%}
+{%- assign link_author_url = page.bookmark_of.authors[0].url | default: null -%}
 {%- if page.category == 'book' -%}
     {%- assign read_status = 'to-read' -%}
     {%- if page.finish -%}

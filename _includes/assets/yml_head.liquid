@@ -15,9 +15,12 @@
 {%- assign watch_of_title = page.watch_of.title -%}
 {%- assign link = bookmark_of_link | default: like_of_link | default: listen_of_link | default: read_of_link | default: watch_of_link | default: page.link | default: null -%}
 {%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title | default: null -%}
-{%- unless link_title -%}
+{%- assign link_author_name = page.bookmark_of.authors[0].name | default: null -%}
+{%- assign link_author_url = page.bookmark_of.authors[0].url | default: null -%}
+{%- if link_title -%}
+{%- else -%}
     {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
-{%- endunless -%}
+{%- endif -%}
 {%- assign syndicate_to = null -%}
 {% if page.collection == 'posts' %}
     {%- if page.category == 'beer' -%}

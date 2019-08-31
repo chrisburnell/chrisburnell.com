@@ -23,6 +23,8 @@
 {%- unless link_title -%}
     {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
 {%- endunless -%}
+{%- assign link_author_name = page.bookmark_of.authors[0].name | default: null -%}
+{%- assign link_author_url = page.bookmark_of.authors[0].url | default: null -%}
 {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
 {%- assign date_human = page.date | date_to_long_string -%}
 {%- if include.relative_year == true -%}
