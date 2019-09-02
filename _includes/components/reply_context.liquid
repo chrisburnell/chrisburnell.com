@@ -1,11 +1,12 @@
-{% if in_reply_to_link contains 'chrisburnell.com' or in_reply_to_link contains 'twitter.com' or in_reply_to_link contains 'mastodon.social' %}
+{%- assign in_reply_to_link_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
+{% if in_reply_to_link contains 'chrisburnell.com' or in_reply_to_link contains 'twitter.com' or in_reply_to_link_mastodon_instance %}
     <div class="reply-context">
         {% if in_reply_to_link contains 'twitter.com' %}
             <blockquote class="twitter-tweet" lang="en"><a href="{{ in_reply_to_link }}"></a></blockquote>
             <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
-        {% elsif in_reply_to_link contains 'mastodon.social' %}
+        {% elsif in_reply_to_link_mastodon_instance %}
             <iframe src="{{ in_reply_to_link }}/embed" class="mastodon-embed"></iframe>
-            <noscript>Please enable JavaScript to see Mastodon.social-specific components.</noscript>
+            <noscript>Please enable JavaScript to see Mastodon-specific components.</noscript>
         {% elsif in_reply_to_link contains 'chrisburnell.com' %}
             {% assign page_map = site.posts | where_exp: 'post', 'in_reply_to_link contains post.slug' | first %}
             <blockquote>

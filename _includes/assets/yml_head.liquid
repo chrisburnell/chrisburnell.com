@@ -22,29 +22,27 @@
     {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
 {%- endif -%}
 {%- assign syndicate_to = null -%}
-{% if page.collection == 'posts' %}
-    {%- if page.category == 'beer' -%}
-        {%- assign link_title = page.title -%}
-        {%- if link contains 'untappd' -%}
-            {%- assign link_title = link_title | append: ' on Untappd' -%}
-        {%- endif -%}
-        {%- assign untappd_link = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
-        {%- assign syndicate_to = site.emptyArray | push: untappd_link -%}
-    {%- elsif page.category == 'music' -%}
-        {%- assign link_title = page.title -%}
-        {%- if link contains 'bandcamp' -%}
-            {%- assign link_title = link_title | append: ' on Bandcamp' -%}
-        {%- elsif link contains 'soundcloud' -%}
-            {%- assign link_title = link_title | append: ' on SoundCloud' -%}
-        {%- elsif link contains 'spotify' -%}
-            {%- assign link_title = link_title | append: ' on Spotify' -%}
-        {%- elsif link contains 'youtube' -%}
-            {%- assign link_title = link_title | append: ' on YouTube' -%}
-        {%- elsif link contains 'song.link' -%}
-            {%- assign link_title = link_title | append: ' on Songlink' -%}
-        {%- endif -%}
+{%- if page.category == 'beer' -%}
+    {%- assign link_title = page.title -%}
+    {%- if link contains 'untappd' -%}
+        {%- assign link_title = link_title | append: ' on Untappd' -%}
     {%- endif -%}
-{% endif %}
+    {%- assign untappd_link = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
+    {%- assign syndicate_to = site.emptyArray | push: untappd_link -%}
+{%- elsif page.category == 'music' -%}
+    {%- assign link_title = page.title -%}
+    {%- if link contains 'bandcamp' -%}
+        {%- assign link_title = link_title | append: ' on Bandcamp' -%}
+    {%- elsif link contains 'soundcloud' -%}
+        {%- assign link_title = link_title | append: ' on SoundCloud' -%}
+    {%- elsif link contains 'spotify' -%}
+        {%- assign link_title = link_title | append: ' on Spotify' -%}
+    {%- elsif link contains 'youtube' -%}
+        {%- assign link_title = link_title | append: ' on YouTube' -%}
+    {%- elsif link contains 'song.link' -%}
+        {%- assign link_title = link_title | append: ' on Songlink' -%}
+    {%- endif -%}
+{%- endif -%}
 
 {% if page.category == 'like' %}
     {% capture meta_title %}Liked: {{ link_title }} – {{ site.title }}{% endcapture %}

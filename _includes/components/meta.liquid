@@ -389,6 +389,7 @@
                 {% else %}
                     <span class="comma">, </span>
                 {% endif %}
+                {%- assign syndication_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'syndication contains instance' | first | default: null -%}
                 {% if syndication contains 'codepen.io' %}
                     {% assign syndication_slug = syndication | split: '/' | last %}
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
@@ -404,11 +405,11 @@
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub</a>
                 {% elsif syndication contains 'news.indieweb.org' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">IndieNews</a>
-                {% elsif syndication contains 'mastodon.social' %}
+                {% elsif syndication_mastodon_instance %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
                     <small class="strong">
                         <span class="left-bracket">(</span>
-                        <a rel="external" href="{{ site.urls.mastodon | split: '@' | first }}/interact/{{ syndication | split: '/' | last }}">Interact</a>
+                        <a rel="external" href="https://{{ syndication_mastodon_instance }}/interact/{{ syndication | split: '/' | last }}">Interact</a>
                         <span class="right-bracket">)</span>
                     </small>
                 {% elsif syndication contains 'song.link' %}

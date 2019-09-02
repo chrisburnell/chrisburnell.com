@@ -21,9 +21,10 @@
     <script src="https://platform.twitter.com/widgets.js" async defer></script>
 {% endif %}
 
-{% if page.mastodon or in_reply_to_link contains 'mastodon.social' %}
+{%- assign in_reply_to_link_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
+{% if page.mastodon or in_reply_to_link_mastodon_instance %}
     <!-- Mastodon Cards -->
-    <script src="https://mastodon.social/embed.js" async defer></script>
+    <script src="https://{{ in_reply_to_link_mastodon_instance }}/embed.js" async defer></script>
 {% endif %}
 
 <!-- ServiceWorker -->
