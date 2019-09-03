@@ -88,7 +88,7 @@ youtube: true
 
 {% include_cached content/heading.liquid title='Paragraph' %}
 
-<p>A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
 
 <p class="columns">A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
@@ -99,7 +99,7 @@ youtube: true
     <p>An aside represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.</p>
 </aside>
 
-<p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
 
 
 {% include_cached content/heading.liquid title='Inline Elements' %}
