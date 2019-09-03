@@ -80,17 +80,12 @@ live_url: https://chrisburnell.com
 static_url: https://chrisburnell.com/static/
 shorturl: https://repc.co
 
-detach: false
-host: 127.0.0.1
-
 timezone: Europe/London
 language: en
 
 show_drafts: false
 future: true
-unpublished: false
 incremental: true
-destination: ./_site
 permalink: /:categories/:title
 
 paginate: 16
@@ -102,12 +97,18 @@ collections:
   archives:
     output: true
     permalink: /:title
+  favicons:
+    output: true
+    permalink: /:path
   feeds:
     output: true
-    permalink: /:title:output_ext
+    permalink: /:title
   httpstatuses:
     output: true
-    permalink: /:title:output_ext
+    permalink: /:title
+  webpages:
+    output: true
+    permalink: /:title
 
 defaults:
   - scope:
@@ -132,6 +133,10 @@ defaults:
         exclude: true
   - scope:
       type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      type: "webpages"
     values:
       layout: "page"
   - scope:

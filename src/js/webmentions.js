@@ -26,7 +26,7 @@
         <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
         <span class="webmentions__response__name  p-name">{{ author }}</span>
     </a>
-    <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="Read externally" tabindex="-1" data-reacji="{{ content }}"></a>
+    <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="{{ author }} {{ type_action }} this" tabindex="-1" data-reacji="{{ content }}"></a>
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY =
 `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
@@ -144,6 +144,7 @@
         // Store some variables we'll check often
         let id = response.id;
         let type = response.activity.type;
+        let typeAction = (type + "ed").replace("eed", "ed").replace("linked", "linked to");
         let url = response.data.url;
         let content = !response.data.content || type === "bookmark" || type === "link" || type === "like" || type === "repost" ? "" : response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
@@ -164,6 +165,9 @@
 
         // TYPE
         html = helpers.injectContent(html, /{{\s*type\s*}}/, type);
+
+        // TYPE ACTION
+        html = helpers.injectContent(html, /{{\s*type_action\s*}}/, typeAction);
 
         // CONTENT
         let textOnlyContent = document.createElement("div");

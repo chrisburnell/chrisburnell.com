@@ -9,6 +9,8 @@ searchable: no-content
         <dd>{% include content/sparkline.liquid title='articles' values=site.categories.article %}</dd>
         <dt><h2 class="delta"><a href="/bookmarks">Bookmarks <small>({{ site.categories.bookmark.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.liquid title='bookmarks' values=site.categories.bookmark %}</dd>
+        <dt><h2 class="delta"><a href="/likes">Likes <small>({{ site.categories.like.size }})<small></a></h2></dt>
+        <dd>{% include content/sparkline.liquid title='likes' values=site.categories.like %}</dd>
         <dt><h2 class="delta"><a href="/notes">Notes <small>({{ site.categories.note.size }})<small></a></h2></dt>
         <dd>{% include content/sparkline.liquid title='notes' values=site.categories.note %}</dd>
         <dt><h2 class="delta"><a href="/beer">Beer Reviews <small>({{ site.categories.beer.size }})<small></a></h2></dt>
