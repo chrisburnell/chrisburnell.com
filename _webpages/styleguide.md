@@ -68,22 +68,22 @@ youtube: true
 
 <p style="font-family: 'Menlo for Powerline', 'Menlo', Consolas, Courier, monospace; font-size: 0.875rem;">Monospace Font: "Menlo for Powerline", "Menlo", Consolas, Courier, monospace;</p>
 
-<p style="font-family: 'Heebo', sans-serif; font-size: 1.375rem; text-transform: uppercase;">Title Font: "Heebo", sans-serif;</p>
+<p style="font-family: 'Heebo', sans-serif; font-size: 1.375rem;">Title Font: "Heebo", sans-serif;</p>
 
 
 {% include_cached content/heading.liquid title='Headings' %}
 
-<h1>Heading Level 1 — α</h1>
+<h1>Heading Level 1/α</h1>
 
-<h2>Heading Level 2 — β</h2>
+<h2>Heading Level 2/β</h2>
 
-<h3>Heading Level 3 — γ</h3>
+<h3>Heading Level 3/γ</h3>
 
-<h4>Heading Level 4 — δ</h4>
+<h4>Heading Level 4/δ</h4>
 
-<h5>Heading Level 5 — ε</h5>
+<h5>Heading Level 5/ε</h5>
 
-<h6>Heading Level 6 — ζ</h6>
+<h6>Heading Level 6/ζ</h6>
 
 
 {% include_cached content/heading.liquid title='Paragraph' %}
@@ -104,54 +104,52 @@ youtube: true
 
 {% include_cached content/heading.liquid title='Inline Elements' %}
 
-<p><a href="#">This is a text link</a></p>
+[This is a text link](#_)
 
-<p><strong>Strong is used to indicate strong importance</strong></p>
+**Strong is used to indicate strong importance**
 
-<p><em>This text has added emphasis</em></p>
+*This text has added emphasis*
 
-<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
+The <b>b element</b> is stylistically different text from normal text, without any special importance
 
-<p>The <i>i element</i> is text that is set off from the normal text</p>
+The <i>i element</i> is text that is set off from the normal text
 
-<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>
+The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation
 
-<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>
+<del>This text is deleted</del> and <ins>This text is inserted</ins>
 
-<p><s>This text has a strikethrough</s></p>
+<s>This text has a strikethrough</s>
 
-<p>Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp></p>
+Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp>
 
-<p>Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp></p>
+Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp>
 
-<p><small>This small text for fine print, etc.</small></p>
+<small>This small text for fine print, etc.</small>
 
-<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
 
-<p>Keyboard input: <kbd>Tab</kbd></p>
+Keyboard input: <kbd>Tab</kbd>
 
-<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
+<q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q>
 
-<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation with <q>another short inline quotation</q> inside</q></p>
+<q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation with <q>another short inline quotation</q> inside</q>
 
-<p><cite class="h-cite">This is a citation</cite></p>
+<cite class="h-cite">This is a citation</cite>
 
-<p>The <dfn title="definition element">dfn element</dfn> indicates a definition</p>
+The <dfn title="definition element">dfn element</dfn> indicates a definition
 
-<p>The <mark>mark element</mark> indicates a highlight</p>
+The <mark>mark element</mark> indicates a highlight
 
-<p><code>This is what inline code looks like</code></p>
+<code>This is what inline code looks like</code>
 
-<p><samp>This is sample output from a computer program</samp></p>
+<samp>This is sample output from a computer program</samp>
 
-<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
+The <var>variable element</var>, such as <var>x</var> = <var>y</var>
 
 
 {% include_cached content/heading.liquid title='Blockquote' %}
 
-<blockquote>
-    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
-</blockquote>
+> A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.
 
 
 {% include_cached content/heading.liquid title='Blockquote with Citation' %}
@@ -349,13 +347,13 @@ youtube: true
         </thead>
         <tbody>
             <tr role="row">
-                <th role="rowheader">Subheading i</td>
+                <th role="rowheader">Subheading i</th>
                 <td role="gridcell">Cell A-i</td>
                 <td role="gridcell">Cell B-i</td>
                 <td role="gridcell">Cell C-i</td>
             </tr>
             <tr role="row">
-                <th role="rowheader">Subheading ii</td>
+                <th role="rowheader">Subheading ii</th>
                 <td role="gridcell">Cell A-ii</td>
                 <td role="gridcell">Cell B-ii</td>
                 <td role="gridcell">Cell C-ii</td>
@@ -546,15 +544,13 @@ formatDate: function(date) {
 
 {% include_cached content/heading.liquid title='Horizontal Rules' %}
 
-<hr>
-
-<hr>
+--------
 
 
 {% include_cached content/heading.liquid title='Content List' %}
 
 <ol class="content-list  h-feed" role="list">
-    {% for page in site.posts limit: 4 %}
+    {% for page in site.posts limit: 2 %}
         {% include components/item_content_list.liquid %}
     {% endfor %}
 </ol>
@@ -579,7 +575,7 @@ formatDate: function(date) {
 
 {% include_cached content/heading.liquid title='HTML Attributes' %}
 
-<p><em>Classes</em> should be double-space delimited.</p>
+<em>Classes</em> should be double-space delimited.
 
 {% highlight html %}
 <div class="content__body  e-content"></div>
@@ -588,7 +584,7 @@ formatDate: function(date) {
 
 {% include_cached content/heading.liquid title='Vocabulary' %}
 
-<p>I’m always been a proponent for establishing a useful dictionary of specific vocabulary as it pertains to a project. This helps to ensure that everyone can be understood by everyone else. It also reduces the <q>awkwardness</q> for people who might not be familiar with particular nomenclature or naming conventions and could be shy to ask for clarification—rather it makes these definitions known right off the bat, and serves as a reference for the future.</p>
+I’m always been a proponent for establishing a useful dictionary of specific vocabulary as it pertains to a project. This helps to ensure that everyone can be understood by everyone else. It also reduces the <q>awkwardness</q> for people who might not be familiar with particular nomenclature or naming conventions and could be shy to ask for clarification—rather it makes these definitions known right off the bat, and serves as a reference for the future.
 
 <dl>
     <dt>DRY</dt>
@@ -602,24 +598,22 @@ formatDate: function(date) {
 
 {% include_cached content/heading.liquid title='Technology' %}
 
-<p>The CSS is compiled from SCSS using <a href="https://github.com/gulpjs/gulp#readme" rel="external">gulp.js</a> and some <a href="http://postcss.org" rel="external">PostCSS</a>.</p>
+The CSS is compiled from SCSS using [gulp.js](https://github.com/gulpjs/gulp#readme){:rel="external"} and some [PostCSS](http://postcss.org){:rel="external"}.
 
-<p>The front-end is compiled with <a href="https://jekyllrb.com" rel="external">Jekyll</a>, source files hosted by <a href="https://github.com" rel="external">GitHub</a>, front-end hosted by <a href="https://digitalocean.com" rel="external">DigitalOcean</a>, and sits behind <a href="https://www.cloudflare.com" rel="external">CloudFlare</a> for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.
+The front-end is compiled with [Jekyll](https://jekyllrb.com){:rel="external"}, source files hosted by [GitHub](https://github.com){:rel="external"}, front-end hosted by [DigitalOcean](https://digitalocean.com){:rel="external"}, and sits behind [CloudFlare](https://www.cloudflare.com){:rel="external"} for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.
 
 
 {% include_cached content/heading.liquid title='Tone and Voice' %}
 
-<p>Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:</p>
+Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:
 
-<ul>
-    <li><a rel="external" href="http://styleguide.mailchimp.com/voice-and-tone">MailChimp Content Style Guide</a></li>
-    <li><a rel="external" href="https://www.gov.uk/topic/government-digital-guidance/content-publishing">GOV.UK Content and Publishing</a></li>
-    <li><a rel="external" href="https://pages.18f.gov/content-guide/voice-and-tone">18F Content Guide</a></li>
-    <li><a rel="external" href="https://buffer.com/tone-guide">Buffer Tone Guide</a></li>
-    <li><a rel="external" href="http://www.economist.com/styleguide/introduction">The Economist Style Guide</a></li>
-</ul>
+- [MailChimp Content Style Guide](http://styleguide.mailchimp.com/voice-and-tone){:rel="external"}
+- [GOV.UK Content and Publishing](https://www.gov.uk/topic/government-digital-guidance/content-publishing){:rel="external"}
+- [18F Content Guide](https://pages.18f.gov/content-guide/voice-and-tone){:rel="external"}
+- [Buffer Tone Guide](https://buffer.com/tone-guide){:rel="external"}
+- [The Economist Style Guide](http://www.economist.com/styleguide/introduction){:rel="external"}
 
 
 {% include_cached content/heading.liquid title='License' %}
 
-<p>The code and contents of this website are licensed under a <a href="/license">GNU GPLv3 license</a> <a href="{{ site.urls.license }}" rel="external  license" title="GNU GPLv3 on gnu.org">(official)</a>.</p>
+The code and contents of this website are licensed under a [GNU GPLv3 license](/license) [(official)]({{ site.urls.license }}){:rel="external  license"}.

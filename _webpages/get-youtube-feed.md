@@ -6,7 +6,7 @@ redirect_from:
   - gyf.html
 ---
 
-<p>Expects a URL in the following format:</p>
+Expects a URL in the following format:
 
 <pre><code>https://www.youtube.com/channel/AaBbCcDdEeFfGg0123456789</code></pre>
 

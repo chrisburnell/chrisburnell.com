@@ -13,6 +13,6 @@ searchable: false
     <ul class="content-list  js-search-results-list" id="search-results" role="list" aria-controlledby="search-button" aria-expanded="false" aria-live="polite"></ul>
 </section>
 
-<hr>
+--------
 
 {% include components/buttons_categories.liquid %}

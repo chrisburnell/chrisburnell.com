@@ -17,3 +17,14 @@ sitemap:
     <dt>Mastdon:</dt>
     <dd><a class="canada" href="{{ site.urls.mastodon }}">{{ site.author.mastodon | prepend: '@' }}</a></dd>
 </dl>
+
+<p>There are a number of Atom Feeds you also can subscribe to:</p>
+
+<ul class="shelf" role="navigation">
+    <li><a class="button" href="/feed.xml" rel="alternate">All Posts</a></li>
+    {% for page in site.data.categories %}
+        <li>
+            <a class="button" href="/{{ page.type }}.xml" rel="alternate">{{ page.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

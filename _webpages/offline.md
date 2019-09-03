@@ -7,7 +7,7 @@ sitemap:
   exclude: true
 ---
 
-<p>If you’re stuck, try <a rel="home" href="/">the homepage</a>.</p>
+If you’re stuck, try <a rel="home" href="/">the homepage</a>.
 
 <nav class="buttons-list" role="navigation">
     <button role="button" type="button" onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
