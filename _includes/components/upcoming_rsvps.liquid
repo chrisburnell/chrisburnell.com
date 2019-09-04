@@ -3,7 +3,7 @@
 {%- assign month = site.time | date: '%m' -%}
 {%- assign year = site.time | date: '%Y' -%}
 {%- for page in include.posts -%}
-    {%- if page.rsvp.going -%}
+    {%- if page.rsvp.value != 'no' -%}
         {%- assign check_day = page.rsvp.date | date: '%d' -%}
         {%- assign check_month = page.rsvp.date | date: '%m' -%}
         {%- assign check_year = page.rsvp.date | date: '%Y' -%}

@@ -96,9 +96,19 @@
     {% if in_reply_to_link %}
         <div class="in-reply-to">
             {% if page.rsvp %}
-                {%- assign rsvp_going = page.rsvp.going | default: page.rsvp -%}
+                {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
                 <span>responded</span>
-                <data class="p-rsvp  strong" value="{% if rsvp_going %}yes{% else %}no{% endif %}">{% if rsvp_going %}{% include content/emoji.liquid emoji='✅' %} Yes{% else %}{% include content/emoji.liquid emoji='❌' %} No{% endif %}</data>
+                <data class="p-rsvp  strong" value="{{ rsvp_value }}">
+                    {% if rsvp_value == true %}
+                        {% include content/emoji.liquid emoji='✅' %} Yes
+                    {% elsif rsvp_value == "maybe" %}
+                        {% include content/emoji.liquid emoji='🤔' %} Maybe
+                    {% elsif rsvp_value == "interested" %}
+                        {% include content/emoji.liquid emoji='😯' %} Interested
+                    {% else %}
+                        {% include content/emoji.liquid emoji='❌' %} No
+                    {% endif %}
+                </data>
                 <span>to</span>
             {% else %}
                 {% include content/emoji.liquid emoji='↪️' %}

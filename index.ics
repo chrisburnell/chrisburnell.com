@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil and page.rsvp.going == true' -%}
+{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil and page.rsvp.value != "no"' -%}
 BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN

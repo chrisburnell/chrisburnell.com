@@ -6,7 +6,7 @@ redirect_from:
   - feed-rsvps.xml
 ---
 
-{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil and page.rsvp.going == true' -%}
+{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil' -%}
 {% for page in rsvps limit: site.feed_limit %}
     {% include components/item_feed.liquid %}
 {% endfor %}

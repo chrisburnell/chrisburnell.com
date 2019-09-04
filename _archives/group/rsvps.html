@@ -8,7 +8,7 @@ lede: All of my RSVPs.
 feed: /rsvps.xml
 ---
 
-{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil and page.rsvp.going == true' -%}
+{%- assign rsvps = site.posts | where_exp: 'page', 'page.rsvp != nil' -%}
 <p><em>There are {{ rsvps | size }} RSVPs.</em></p>
 
 <div class="h-feed" id="rsvps">
