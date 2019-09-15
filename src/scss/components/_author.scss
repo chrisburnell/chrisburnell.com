@@ -44,7 +44,6 @@
     @include font-family(serif);
     display: flex;
     flex-direction: row;
-    @include v(margin-bottom, medium);
     @include v(font-size, small);
     font-style: italic;
     @include v(line-height, medium);
@@ -54,7 +53,6 @@
         @include v(border-top-width, thin);
         @include v(border-top-style, default);
         @include v(border-top-color, black--gamma);
-        @include v(margin-bottom, small);
     }
 
     a,
@@ -161,10 +159,6 @@
     &:active {
         outline-width: 0;
     }
-}
-
-.author-biography {
-    @include v(margin-bottom, medium);
 }
 
 .author-name {

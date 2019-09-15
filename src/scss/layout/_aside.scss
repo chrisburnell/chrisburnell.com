@@ -8,6 +8,8 @@
 // floated within an article or list of articles. The math is calculated as in
 // `layout/_content.scss`.
 aside {
+    @include owl;
+
     @include media("screen", "below:medium") {
         flex: 1 0 100%;
     }

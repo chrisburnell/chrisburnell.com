@@ -6,7 +6,6 @@
 .meta {
     display: flex;
     flex-wrap: wrap;
-    @include v(padding-bottom, medium);
     overflow: hidden;
     @include v(font-family, serif);
     font-style: italic;

@@ -6,18 +6,8 @@
 
 .search-main {
     @include v(max-width, breakpoint-small);
-    @include v(margin-bottom, large);
-}
-
-.search-results {
-    @include v(margin-top, medium);
-
-    .content-list {
-        margin-bottom: 0;
-    }
 }
 
 .search-submit {
     min-width: 5em;
-    margin-top: 0;
 }

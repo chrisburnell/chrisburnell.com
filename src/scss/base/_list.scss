@@ -13,8 +13,6 @@ ol:not([class]),
 ul:not([class]),
 dl:not([class]),
 .default-list {
-    @include v(margin-bottom, medium);
-
     // List nested in a list, or list followed by a list
     & &,
     & + & {

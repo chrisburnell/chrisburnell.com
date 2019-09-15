@@ -53,10 +53,6 @@ h2 {
     @include v(font-size, gamma);
     @include v(font-weight, bold);
     @include v(line-height, default);
-
-    &:not(:last-child) {
-        @include v(margin-bottom, medium);
-    }
 }
 .gamma {
     @extend %gamma !optional;
@@ -68,7 +64,6 @@ h2 {
     .webmentions & {
         @include clear;
         @include case(uppercase);
-        @include v(margin-top, large);
         @include v(border-bottom-width, thin);
         @include v(border-bottom-style, default);
         @include v(border-bottom-color, alto);
@@ -80,12 +75,6 @@ h2 {
         @include media("screen", "below:medium") {
             align-self: flex-start;
         }
-    }
-
-    // Collapse margin-top when following a Featured Lede
-    // This happens on the Homepage
-    .lede + & {
-        margin-top: 0;
     }
 }
 h3 {
@@ -101,7 +90,6 @@ h3 {
 }
 h4 {
     @extend %delta !optional;
-    @include v(margin-bottom, small);
 }
 
 // Heading - Epsilon

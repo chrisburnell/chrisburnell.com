@@ -8,7 +8,6 @@
     display: grid;
     grid-template-columns: 1fr;
     @include v(grid-gap, medium);
-    @include v(margin-bottom, large);
     @include v(line-height, small);
 
     @include media("screen", "above:small") {
@@ -16,11 +15,6 @@
         // │ minmax(20em, 1fr) │→
         // 2───────────────────┴→
         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-    }
-
-    .page--home &,
-    .widget & {
-        margin-bottom: 0;
     }
 
     li,

@@ -15,12 +15,10 @@ form {
     position: relative;
 
     &:not([class]) {
+        @include owl;
+
         @include media("screen", "below:small") {
             grid-template-columns: 1fr;
-        }
-
-        %form-elements {
-            @include v(margin-bottom, medium);
         }
     }
 }
