@@ -5,7 +5,7 @@ release: 2005-05-11 12:00:00 +0100
 authors:
   - name: Gorillaz
     link: https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ
-listen_of: 850571319
+listen_of: 0bUTHlWbkSQysoM3VsWldT
 cover: demon-days.jpg
 rating: 5
 ---
