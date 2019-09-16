@@ -9,6 +9,8 @@
 // `layout/_content.scss`.
 aside {
     @include owl;
+    @include v(margin-top, large);
+    position: relative;
 
     @include media("screen", "below:medium") {
         flex: 1 0 100%;
