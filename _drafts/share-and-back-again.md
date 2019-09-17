@@ -5,12 +5,12 @@ lede: "On a website on the Internet there lived a webpage. Not a table-laden sou
 
 Thick metaphors aside, I’m talking about writing code that speaks
 
-This post aims to unravel some of the mystery which surrounds *microdata*, *microformats*, *JSON-LD*, *RDFa*, and the like.
+This post aims to unravel some of the mystery which surrounds *microdata*, *microformats*, <abbr title="Linked Data">JSON-LD</abbr>, <abbr title="Resource Description Framework in Attributes">RDFa</abbr>, and the like.
 
 
 {% include content/heading.liquid title='What’s the point?' %}
 
-The whole point of marking up your content with one of the various formats is to make your content grokkable by computers. By using one of these systems, you can, with relative ease (depending on the solution you choose), make a great portion of your content available for computers to parse and, in a way, understand.
+The whole point of marking up your content with one of the various formats is to make your content <dfn title="capable of being understood">grokkable</dfn> by computers. By using one of these systems, you can, with relative ease (depending on the solution you choose), make a great portion of your content available for computers to parse and, in a way, understand.
 
 In the same way that Facebook collects stasuses from your friends' feeds and displays them on the homepage in a unified feed, these data-exposing frameworks can enable you to parse a webpage and break it down into bits that fit into a common vocabulary.
 

@@ -51,7 +51,7 @@ Andy does a great job at explaining how this solution works, so I recommending r
 
 The gist is that we have some JavaScript that hooks onto a number of CSS Variables exposed on our pages, and we’re toggling their values back and forth between a <q>light</q> and <q>dark</q> palette by changing an attribute on the root element:
 
-{% highlight scss %}
+{% highlight css %}
 :root {
     --color-text: black;
 }
