@@ -15,6 +15,7 @@ codepen: true
 comments: disqus
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/928671414017773568
+coil: true
 ---
 
 Web Developers are excited about the future. Just as we recently saw a feature explosion in *JavaScript* (for good and for worse), we’re preparing for and beginning a feature explosion in *CSS* as well. People seem to be [twice](https://blog.twitter.com/official/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself.html){:rel="external"} as excited about CSS Grid, CSS Variables, Element Queries, etc. as last year! So while I prepare myself for that tidal wave, I thought I’d take a step outside of my comfort zone to learn about and share some cool *JavaScript* coming into stability today.
