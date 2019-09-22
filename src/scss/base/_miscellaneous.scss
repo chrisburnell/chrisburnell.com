@@ -207,6 +207,10 @@ textarea {
     }
 }
 
+.h-feed {
+    @include owl;
+}
+
 .requires-js {
     .no-js & {
         display: none;
