@@ -5,7 +5,7 @@
 
 // Appears only on article pages
 .webmentions {
-    @include v(margin-top, large);
+    @include owl;
 }
 
 .webmentions__thread {
@@ -54,6 +54,10 @@
     .webmentions__list__replies ol {
         margin-top: 0;
     }
+}
+
+.webmentions__responses {
+    @include owl;
 }
 
 .webmentions__response {
