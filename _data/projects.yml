@@ -1,0 +1,18 @@
+- url: https://ownyour.beer
+  title: OwnYour.Beer
+  lede: 'An IndieWeb tool to help you pull check-ins from Untappd. Still a work-in-progress.'
+- url: https://repc.co
+  title: Reptile C
+  lede: 'My personal (and automatic) URL-shortening <q>service</q> based on Tantek Çelik’s base-60 numbering system, NewBase60.'
+- url: https://corvus.chrisburnell.com
+  title: Corvus
+  lede: 'My personal Micropub endpoint.'
+- url: https://bloodbuilder.online
+  title: BloodBuilder
+  lede: 'Super Simple PWA for 1<sup>st</sup> Edition Pathfinder Pure Core Classes'
+- url: https://media.chrisburnell.com
+  title: Media Controls
+  lede: 'Play native web media and utilise keyboard controls à la YouTube.'
+- url: https://gifs.chrisburnell.com
+  title: GIFs on GIFs on GIFs
+  lede: 'A curated list of <em>sick</em> GIFs.'

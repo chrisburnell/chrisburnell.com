@@ -35,20 +35,6 @@
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
-            {% comment %}
-            {% if page.cover %}
-                <img class="content-list__image" src="{{ site.static_url | append: page.category | append: '/' | append: page.cover }}">
-            {% elsif page.banner_mobile or page.banner %}
-                <img class="content-list__image" src="/images/banners/{{ page.banner_mobile | default: page.banner | first }}">
-            {% elsif page.photo %}
-                <img class="content-list__image" src="{{ page.photo | first | map: 'link' | first }}">
-            {% elsif page.checkin.name %}
-                {% assign checkin_image = site.data.places | where: 'name', page.checkin.name | map: 'image' | first | default: null %}
-                {% if checkin_image %}
-                    <img class="content-list__image" src="{{ site.static_url | append: '/' | append: checkin_image }}">
-                {% endif %}
-            {% endif %}
-            {% endcomment %}
             <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} aria-hidden="true" hidden{% endif %}>
                 {% if page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
@@ -207,14 +193,16 @@
                     {% endif %}
                 </time>
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
-            {% else %}
+            {% elsif page.date %}
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
             {% endif %}
         </a>
         {% if page.mf_property and link %}
             <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
         {% endif %}
-        <data class="u-category" value="/{{ category_link }}" aria-hidden="true" hidden>{{ page.category }}</data>
+        {% if page.category %}
+            <data class="u-category" value="/{{ category_link }}" aria-hidden="true" hidden>{{ page.category }}</data>
+        {% endif %}
         <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
     </article>
 </li>
