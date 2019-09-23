@@ -16,7 +16,7 @@
     }
 
     li {
-        @include v(margin-bottom, medium);
+        margin: 0;
     }
 
     .cover {
