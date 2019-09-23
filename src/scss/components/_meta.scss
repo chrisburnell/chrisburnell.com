@@ -17,7 +17,6 @@
         margin-top: -(var(--measure-small));
     }
 
-    time,
     div {
         display: flex;
         flex-wrap: wrap;
@@ -25,10 +24,7 @@
         @include v(margin-right, large);
     }
 
-    div + div,
-    div + time,
-    time + time,
-    time + div {
+    div + div {
         position: relative;
 
         &::before {
@@ -45,7 +41,8 @@
 
     a,
     data,
-    %strong {
+    %strong,
+    time {
         color: inherit;
         @include v(font-weight, bold);
         @include v(font-family, default);

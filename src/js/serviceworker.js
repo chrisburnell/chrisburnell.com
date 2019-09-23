@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.123";
+const VERSION = "v2.0.124";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -57,9 +57,17 @@ let updateStaticCache = () => {
     return caches.open(STATIC_CACHE)
         .then(cache => {
             // These items won"t block the installation of the Service Worker
-            cache.addAll(OPTIONAL_FILES.concat(OFFLINE_PAGES));
+            cache.addAll(OPTIONAL_FILES);
             // These items must be cached for the Service Worker to complete installation
             return cache.addAll(REQUIRED_FILES);
+        });
+};
+
+let updatePagesCache = () => {
+    return caches.open(PAGES_CACHE)
+        .then(cache => {
+            // These items must be cached for the Service Worker to complete installation
+            return cache.addAll(OFFLINE_PAGES);
         });
 };
 
@@ -98,6 +106,7 @@ let clearOldCaches = () => {
 
 self.addEventListener("install", event => {
     event.waitUntil(updateStaticCache()
+        .then(updatePagesCache())
         .then(() => self.skipWaiting())
     );
 });
@@ -158,7 +167,7 @@ self.addEventListener("fetch", event => {
                     let copy = responseFromFetch.clone();
                     try {
                         event.waitUntil(
-                            stashInCache((OFFLINE_PAGES.includes(url.pathname) ? STATIC_CACHE : PAGES_CACHE), request, copy)
+                            stashInCache(PAGES_CACHE, request, copy)
                         );
                     }
                     catch(error) {

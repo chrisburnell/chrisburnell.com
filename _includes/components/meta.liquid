@@ -1,5 +1,5 @@
 <div class="meta">
-    <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+    <div class="date">
         {% include content/emoji.liquid emoji='🗓' %}
         {% if page.mf_property contains 'bookmark-of' %}
             <span>bookmarked on</span>
@@ -23,22 +23,22 @@
             <span>published on</span>
         {% endif %}
         <a class="u-uid  u-url" href="{{ canonical_local }}" title="Permalink: {{ canonical_local }}">
-            {{ page.date | date_to_long_string }}
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
         </a>
-    </time>
+    </div>
     {% if page.sitemap.lastmod %}
-        <time class="date  dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">
+        <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
             <span>updated on</span>
-            <strong>{{ page.sitemap.lastmod | date_to_long_string }}</strong>
-        </time>
+            <time class="dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">{{ page.sitemap.lastmod | date_to_long_string }}</time>
+        </div>
     {% endif %}
     {% if page.release %}
-        <time class="date  dt-released" datetime="{{ page.released | date_to_xmlschema }}">
+        <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
             <span>released on</span>
-            <strong>{{ page.release | date_to_long_string }}</strong>
-        </time>
+            <time class="dt-released" datetime="{{ page.released | date_to_xmlschema }}">{{ page.release | date_to_long_string }}</time>
+        </div>
     {% endif %}
     {% if page.authors %}
         <div class="authors">
@@ -201,7 +201,7 @@
         {%- assign finish_day = page.rsvp.finish | date: '%d' -%}
         {%- assign finish_month = page.rsvp.finish | date: '%m' -%}
         {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
-        <time class="date" datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}-{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
+        <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
             {%- if check_year > year -%}
                 <span>taking place on</span>
@@ -212,7 +212,7 @@
             {%- else -%}
                 <span>took place on</span>
             {%- endif -%}
-            <strong>
+            <time datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}-{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
                 {{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}
                 {% if page.rsvp.finish %}
                     {%- assign date_timezone = page.rsvp.date | date: '%z' -%}
@@ -230,8 +230,8 @@
                     {% endif %}
                     {{ page.rsvp.finish | date: '%R %z' | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}
                 {% endif %}
-            </strong>
-        </time>
+            </time>
+        </div>
     {% endif %}
     {% if page.category == 'article' %}
         {%- assign words = site.emptyArray -%}
