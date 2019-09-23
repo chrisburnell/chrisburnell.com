@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.124";
+const VERSION = "v2.0.125";
 // Set up the caches
 const STATIC_CACHE = "static::" + VERSION;
 const ASSETS_CACHE = "assets";
@@ -33,6 +33,10 @@ const REQUIRED_FILES = [
 
 // Files that are cached but non-blocking
 const OPTIONAL_FILES = [
+    "/fonts/heebo-black.woff2",
+    "/fonts/proxima-nova-regular.woff2",
+    "/fonts/proxima-nova-semibold.woff2",
+    "/fonts/proxima-nova-italic.woff2",
     "/images/sprites.svg"
 ];
 
