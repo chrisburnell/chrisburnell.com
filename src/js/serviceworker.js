@@ -5,20 +5,18 @@
 
 "use strict";
 
-const VERSION = "v2.0.125";
+const VERSION = "v2.0.126";
 // Set up the caches
-const STATIC_CACHE = "static::" + VERSION;
-const ASSETS_CACHE = "assets";
+const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
 const PAGES_CACHE = "pages";
 const CACHES = [
-    STATIC_CACHE,
     ASSETS_CACHE,
     IMAGES_CACHE,
     PAGES_CACHE
 ];
 
-// Represents the maximum number of items in each cache (except STATIC_CACHE)
+// Represents the maximum number of items in each cache (except ASSETS_CACHE)
 const CACHE_SIZE = 20;
 
 // Represents the maximum amount of time to wait for the network
@@ -57,8 +55,8 @@ const IGNORE_PAGES = [
     "/ignore"
 ];
 
-let updateStaticCache = () => {
-    return caches.open(STATIC_CACHE)
+let updateAssetsCache = () => {
+    return caches.open(ASSETS_CACHE)
         .then(cache => {
             // These items won"t block the installation of the Service Worker
             cache.addAll(OPTIONAL_FILES);
@@ -109,7 +107,7 @@ let clearOldCaches = () => {
 
 
 self.addEventListener("install", event => {
-    event.waitUntil(updateStaticCache()
+    event.waitUntil(updateAssetsCache()
         .then(updatePagesCache())
         .then(() => self.skipWaiting())
     );
@@ -166,7 +164,7 @@ self.addEventListener("fetch", event => {
 
                 fetchPromise.then(responseFromFetch => {
                     // NETWORK
-                    // Stash a copy of this page in the STATIC or PAGES cache
+                    // Stash a copy of this page in the PAGES cache
                     clearTimeout(timer);
                     let copy = responseFromFetch.clone();
                     try {
@@ -233,7 +231,6 @@ self.addEventListener("fetch", event => {
 
 self.addEventListener("message", event => {
     if (event.data.command == "trimCaches") {
-        trimCache(ASSETS_CACHE, CACHE_SIZE);
         trimCache(IMAGES_CACHE, CACHE_SIZE);
         trimCache(PAGES_CACHE, CACHE_SIZE);
     }
