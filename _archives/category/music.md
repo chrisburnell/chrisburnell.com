@@ -25,11 +25,13 @@ Or, if you like synthwave, check out [OutRetroSynthVapourRunWave](https://open.s
 
 --------
 
-<ol class="shelf  h-feed" id="music" role="list">
-    {% for page in site.categories.music %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="music">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.music %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 

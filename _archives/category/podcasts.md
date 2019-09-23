@@ -14,11 +14,13 @@ sparkline: podcasts
 
 *There are {{ site.categories.podcast | size }} published Podcast Check-ins.*
 
-<ol class="shelf  h-feed" id="podcasts" role="list">
-    {% for page in site.categories.podcast %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="podcasts">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.podcast %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 

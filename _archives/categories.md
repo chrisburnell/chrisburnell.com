@@ -26,11 +26,13 @@ lede: A list of categories and their counterpart posts.
 {% for category in categories_sorted %}
     {% capture category_name %}{% include content/capitalizer.liquid input=category %} <small>({{ site.categories[category].size }})</small>{% endcapture %}
     {% include_cached content/heading.liquid title=category_name id=category %}
-    <ol class="content-list  h-feed" id="categories" role="list">
-        {% for page in site.categories[category] %}
-            {% include components/item_content_list.liquid %}
-        {% endfor %}
-    </ol>
+    <div class="h-feed" id="categories">
+        <ol class="content-list" role="list">
+            {% for page in site.categories[category] %}
+                {% include components/item_content_list.liquid %}
+            {% endfor %}
+        </ol>
+    </div>
 {% endfor %}
 
 --------

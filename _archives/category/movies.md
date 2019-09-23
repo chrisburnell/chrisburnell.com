@@ -14,11 +14,13 @@ sparkline: movies
 
 *There are {{ site.categories.movie | size }} published Movie Reviews.*
 
-<ol class="shelf  h-feed" id="movies" role="list">
-    {% for page in site.categories.movie %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="movies">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.movie %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 

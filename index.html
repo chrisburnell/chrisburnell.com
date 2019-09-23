@@ -35,11 +35,13 @@ searchable: no-content
     <h2 id="latest" class="gamma">From the Archives <small>— Page {{ paginator.page }}</small></h2>
 {% endif %}
 
-<ol class="content-list  h-feed" role="list">
-    {% for page in paginator.posts %}
-        {% include components/item_content_list.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed">
+    <ol class="content-list" role="list">
+        {% for page in paginator.posts %}
+            {% include components/item_content_list.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 {% include components/widget_pagination.liquid %}
 

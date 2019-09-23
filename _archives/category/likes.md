@@ -14,11 +14,13 @@ sparkline: likes
 
 *There are {{ site.categories.like | size }} published Likes.*
 
-<ol class="shelf  h-feed" id="likes" role="list">
-    {% for page in site.categories.like %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="likes">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.like %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 

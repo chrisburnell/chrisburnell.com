@@ -14,11 +14,13 @@ sparkline: tv
 
 *There are {{ site.categories.tv | size }} published TV Reviews.*
 
-<ol class="shelf  h-feed" id="tv" role="list">
-    {% for page in site.categories.tv %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="tv">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.tv %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 

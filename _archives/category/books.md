@@ -17,16 +17,18 @@ sparkline: books
 
 *There are {{ site.categories.book | size }} published Book Reviews.*
 
-<ol class="shelf  h-feed" id="books" role="list">
-    {% assign books_to_read = site.categories.book | where_exp: 'book', 'book.date == nil' | sort: 'title' %}
-    {% for page in books_to_read %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-    {% assign books = site.categories.book | where_exp: 'book', 'book.date' %}
-    {% for page in books %}
-        {% include components/item_shelf.liquid %}
-    {% endfor %}
-</ol>
+<div class="h-feed" id="books">
+    <ol class="shelf" role="list">
+        {% assign books_to_read = site.categories.book | where_exp: 'book', 'book.date == nil' | sort: 'title' %}
+        {% for page in books_to_read %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+        {% assign books = site.categories.book | where_exp: 'book', 'book.date' %}
+        {% for page in books %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
 
 --------
 
