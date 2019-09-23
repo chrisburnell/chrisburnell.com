@@ -1,6 +1,6 @@
 ---
 title: Search
-lede: Search articles, pens, and pages.
+lede: Search pages and posts.
 page_class: page--search
 searchable: false
 ---

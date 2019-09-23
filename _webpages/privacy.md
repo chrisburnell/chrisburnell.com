@@ -1,6 +1,6 @@
 ---
 title: Privacy
-lede: Your right to privacy on this website.
+lede: Your right to privacy on my website.
 page_class: page--privacy
 ---
 
