@@ -42,8 +42,7 @@ a {
     %heading-elements & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
-        // coming soon!
-        // @include v(text-decoration-width, thin);
+        @include v(text-decoration-width, thin);
     }
 
     .dark-background & {
