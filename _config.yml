@@ -33,9 +33,9 @@ author:
     role: Front-End Developer
 
 urls:
-  feed: /feed.xml
   authorization: https://indieauth.com/auth
   buymeacoffee: https://www.buymeacoffee.com/8mtx3EQfI
+  chess: https://www.chess.com/member/chrisburnell
   codepen: https://codepen.io/chrisburnell
   gist: https://gist.github.com/chrisburnell
   github: https://github.com/chrisburnell
