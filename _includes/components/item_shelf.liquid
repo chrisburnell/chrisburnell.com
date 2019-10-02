@@ -90,11 +90,11 @@
             {%- endif -%}
         </div>
         {% if page.isbn %}
-            <data class="p-uid" value="{{ page.isbn }}" aria-hidden="true" hidden>{{ page.isbn }}</data>
+            <data class="p-uid" value="{{ page.isbn }}" hidden aria-hidden="true">{{ page.isbn }}</data>
         {% endif %}
         {% if page.rating and page.rating != 'Parti Pris' %}
-            <data class="p-worst" aria-hidden="true" hidden>0</data>
-            <data class="p-best" aria-hidden="true" hidden>5</data>
+            <data class="p-worst" hidden aria-hidden="true">0</data>
+            <data class="p-best" hidden aria-hidden="true">5</data>
         {% endif %}
         {%- assign content = page.content | strip_newlines -%}
         {% if content != empty %}
@@ -118,19 +118,19 @@
             <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.liquid emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
         {% endif %}
         {% if page.isbn %}
-            <strong{% if read_status == 'finished' %} aria-hidden="true" hidden{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.liquid title=read_status %}</data></strong>
+            <strong{% if read_status == 'finished' %} hidden aria-hidden="true"{% endif %}><data class="p-status  p-read-status  p-x-read-status" value="{{ read_status }}">{% include_cached content/titleize.liquid title=read_status %}</data></strong>
         {% endif %}
         {% if page.category == 'book' and page.date %}
-            <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" aria-hidden="true" hidden>{{ page.date | date: '%Y-%m-%d' }}</data>
+            <data class="p-start-date" value="{{ page.date | date: '%Y-%m-%d' }}" hidden aria-hidden="true">{{ page.date | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if page.category == 'book' and page.finish %}
-            <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" aria-hidden="true" hidden>{{ page.finish | date: '%Y-%m-%d' }}</data>
+            <data class="p-end-date" value="{{ page.finish | date: '%Y-%m-%d' }}" hidden aria-hidden="true">{{ page.finish | date: '%Y-%m-%d' }}</data>
         {% endif %}
         {% if link and page.mf_property %}
-            <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
+            <data class="u-{{ page.mf_property }}" hidden aria-hidden="true">{{ link }}</data>
         {% endif %}
         {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
-        <data class="u-category" value="/{{ category_link }}" aria-hidden="true" hidden>{{ page.category }}</data>
-        <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
+        <data class="u-category" value="/{{ category_link }}" hidden aria-hidden="true">{{ page.category }}</data>
+        <a class="u-author" href="/" hidden aria-hidden="true" tabindex="-1"></a>
     </div>
 </li>

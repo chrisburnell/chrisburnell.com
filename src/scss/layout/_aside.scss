@@ -19,7 +19,7 @@ aside {
     @include media("screen", "above:medium") {
         @include v(width, aside);
         float: left;
-        margin-left: #{($measure-aside + $measure-large) * -1};
+        margin-left: calc((var(--measure-aside) + var(--measure-large)) * -1);
         @include v(margin-bottom, large);
     }
 
@@ -27,7 +27,6 @@ aside {
         @include border-radius;
         @include font-family(serif);
         @include v(background-color, black--delta);
-        padding: $measure-small $measure-medium;
         padding: var(--measure-small) var(--measure-medium);
     }
 

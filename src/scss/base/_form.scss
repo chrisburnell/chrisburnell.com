@@ -128,19 +128,16 @@ input[type="checkbox"] {
         @include v(background-color, kaiser);
         @include v(color, white);
         display: inline-block;
-        padding: 0 $measure-medium;
         padding: 0 var(--measure-medium);
         position: relative;
         overflow: hidden;
         text-align: center;
         cursor: pointer;
-        line-height: ($line-height-code * 1.25);
         line-height: calc(var(--line-height-code) * 1.25);
 
         &::after {
             content: "✔";
             @include v(background-color, black--gamma);
-            width: $measure-large;
             width: var(--measure-large);
             display: none;
             position: absolute;
@@ -149,17 +146,13 @@ input[type="checkbox"] {
             bottom: 0;
             @include v(font-size, beta);
             line-height: 1;
-            border-radius: $border-radius-default 0 0 $border-radius-default;
             border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
         }
     }
 
     &:checked + label {
-        background-color: $color-liquid;
         background-color: var(--color-liquid);
-        padding-left: ($measure-large + $measure-small);
         padding-left: calc(var(--measure-large) + var(--measure-small));
-        padding-right: ($measure-medium - $measure-small);
         padding-right: calc(var(--measure-medium) - var(--measure-small));
 
         &::after {

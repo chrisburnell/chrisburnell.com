@@ -9,7 +9,6 @@ a {
     @include will-change(background-color, color, text-decoration-color);
     @include v(background-color, transparent);
     @include v(color, bowhead);
-    outline: 0 $border-style-default $color-canada;
     outline: 0 var(--border-style-default) var(--color-canada);
     position: relative;
     text-decoration: underline;
@@ -25,16 +24,13 @@ a {
 
     &:focus-visible {
         @include v(outline-color, raven);
-        outline-width: $border-width-thin;
         outline-width: var(--border-width-thin);
-        outline-offset: $border-width-thin;
         outline-offset: var(--border-width-thin);
     }
 
     &:active {
         @include v(background-color, canada);
         @include v(color, white);
-        outline-width: $border-width-thin;
         outline-width: var(--border-width-thin);
         outline-offset: 0;
     }
@@ -67,7 +63,6 @@ a {
     &:hover,
     &:focus,
     &:active {
-        background-image: linear-gradient(to bottom right, $color-raven, $color-canada);
         background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-canada));
         background-clip: text;
         text-fill-color: transparent;
@@ -102,8 +97,8 @@ a {
     @include v(padding-left, small);
     @include v(padding-right, small);
     position: absolute;
-    top: $border-width-thin;
-    right: -($measure-small);
+    top: var(--border-width-thin);
+    right: calc(var(--measure-small) * -1);
     @include v(font-size, small);
     @include v(font-weight, bold);
     @include v(line-height, default);
@@ -130,7 +125,6 @@ sup,
 li {
     &[id] {
         &:target {
-            animation: anchor-target $animation-duration $animation-function;
             animation: anchor-target var(--animation-duration) var(--animation-function);
             @at-root {
                 @keyframes anchor-target {

@@ -9,7 +9,6 @@ figure {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: $measure-large 0 $measure-large;
     margin: var(--measure-large) 0 var(--measure-large);
 
     // Allow for content to overflow without breaking the page with scrollbar

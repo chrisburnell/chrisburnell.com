@@ -38,7 +38,7 @@ kbd,
 mark,
 samp {
     @include border-radius(thin);
-    padding: #{$measure-one-relative / 4};
+    padding: calc(var(--measure-one-relative) / 4);
     @include v(line-height, medium);
 }
 %heading-elements > code,
@@ -48,7 +48,6 @@ samp {
 }
 kbd {
     @include case(uppercase);
-    box-shadow: inset 0 0 0 $border-width-hairline $color-kaiser;
     box-shadow: inset 0 0 0 var(--border-width-hairline) var(--color-kaiser);
 }
 mark {
@@ -62,7 +61,6 @@ var {
 }
 
 pre {
-    margin: 0 0 $measure-large;
     margin: 0 0 var(--measure-large);
     tab-size: 4;
     white-space: pre-wrap;
@@ -80,7 +78,6 @@ figure pre {
         @include font-family(monospace);
         @include v(background-color, mineshaft);
         @include v(color, white);
-        padding: $measure-medium $measure-medium $measure-one;
         padding: var(--measure-medium) var(--measure-medium) var(--measure-one);
         // disallow text from wrapping inside the container
         overflow-x: auto;
@@ -95,7 +92,6 @@ figure pre {
         code {
             min-width: 100%;
             display: block;
-            text-shadow: 0 $border-width-hairline $border-width-hairline $color-black--delta;
             text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
         }
     }

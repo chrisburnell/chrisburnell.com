@@ -1,0 +1,38 @@
+////
+/// Reset
+/// @group base
+// Inspired by Andy Bell's Modern CSS Reset
+// https://github.com/hankchizljaw/modern-css-reset
+////
+
+// Box model set to `border-box` by default
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// Touch Action
+a,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}
+
+// Remove outline for mouse users
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+// Reduced Motion
+* {
+    @include media("reduced-motion") {
+        animation-play-state: paused !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

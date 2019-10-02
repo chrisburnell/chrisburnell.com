@@ -7,7 +7,6 @@
 // Highlighted Code Blocks
 code[data-lang] {
     @include v(padding-top, large);
-    padding-top: #{$measure-large + $measure-small};
     padding-top: calc(var(--measure-large) + var(--measure-small));
 
     &::before {
@@ -18,12 +17,10 @@ code[data-lang] {
         content: attr(data-lang);
         @include v(background-color, dove);
         @include v(color, white);
-        padding: 0 $measure-medium;
         padding: 0 var(--measure-medium);
         @include v(font-size, large);
-        letter-spacing: $letter-spacing-uppercase;
-        line-height: #{$measure-large + $measure-small};
-        text-shadow: 0 $border-width-hairline 0 $color-mineshaft;
+        letter-spacing: var(--letter-spacing-uppercase);
+        line-height: calc(var(--measure-large) + var(--measure-small));
         text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
     }
 
@@ -50,7 +47,6 @@ code[data-lang] {
         &::before {
             background-color: #{$color} !important;
             color: contrasting-color($color, $color-mineshaft, $color-white) !important;
-            text-shadow: 0 $border-width-hairline 0 contrasting-color($color, $color-white, $color-mineshaft);
             text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft);
         }
     }
@@ -86,7 +82,6 @@ code[data-lang] {
     &:not(:checked) ~ .highlight pre {
         // limit number of lines of code
         // font size * line height * 5 lines + padding + code block header
-        max-height: #{$font-size-small * $line-height-code * 5 + $measure-medium * 2};
         max-height: calc(var(--font-size-small) * var(--line-height-code) * 5 + var(--measure-medium) * 2);
         overflow-x: hidden;
 
@@ -96,7 +91,6 @@ code[data-lang] {
             background-image: scrim-gradient($color-transparent, $color-black--alpha);
             // fade out over the last four lines
             // font size * line height * 4 lines
-            background-size: 100% #{$font-size-small * $line-height-code * 4};
             background-size: 100% calc(var(--font-size-small) * var(--line-height-code) * 4);
             background-position: bottom;
             background-repeat: no-repeat;

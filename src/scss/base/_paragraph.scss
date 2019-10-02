@@ -14,13 +14,11 @@ p {
 
     &.columns {
         @include media("screen", "above:small", "below:medium") {
-            column-count: $max-columns;
             column-count: var(--max-columns);
             @include v(column-gap, medium);
         }
 
         @include media("screen", "above:large") {
-            column-count: $max-columns;
             column-count: var(--max-columns);
             @include v(column-gap, medium);
         }

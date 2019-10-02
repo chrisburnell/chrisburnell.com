@@ -21,7 +21,6 @@
 
     li {
         @include tabular-lining-numerals;
-        padding: $measure-medium 0;
         padding: var(--measure-medium) 0;
         vertical-align: middle;
         @include v(font-size, small);
@@ -58,7 +57,6 @@
     @include v(background-color, alto);
     background-image: linear-gradient(to bottom, $color-canada, $color-canada);
     background-position: center center;
-    background-size: 100% $border-width-thin;
     background-size: 100% var(--border-width-thin);
     background-repeat: no-repeat;
     @include v(height, medium);
@@ -82,7 +80,6 @@
 
 .transition-example {
     position: relative;
-    margin-bottom: #{$measure-large + $measure-medium};
     margin-bottom: calc(var(--measure-large) + var(--measure-medium));
 
     &::before {
@@ -104,7 +101,6 @@
     @include transition(color);
     width: 100%;
     @include v(max-width, line-length-responsive);
-    height: #{$measure-large * 1.5};
     height: calc(var(--measure-large) * 1.5);
     display: block;
     @include v(border-width, thin);

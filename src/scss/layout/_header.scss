@@ -22,7 +22,6 @@ header {
         // 1────────────────2─────────────3
         // │ $measure-aside │ min-content │
         // 2────────────────┴─────────────┘
-        grid-template-columns: $measure-aside min-content;
         grid-template-columns: var(--measure-aside) min-content;
         justify-content: space-between;
     }
@@ -30,7 +29,6 @@ header {
     &::before {
         content: "";
         @include v(background-color, raven);
-        height: $border-width-default;
         height: var(--border-width-default);
         position: absolute;
         bottom: 0;

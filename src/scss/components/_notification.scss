@@ -7,7 +7,6 @@
     @include v(background-color, mineshaft);
     @include v(color, white);
     display: block;
-    padding: $measure-small $measure-medium;
     padding: var(--measure-small) var(--measure-medium);
     position: fixed;
     @include v(bottom, large);
@@ -21,7 +20,6 @@
     }
 
     &:not([class*="hidden"]) {
-        animation: fade-out $transition-duration-default $animation-function $animation-duration $animation-fill-mode;
         animation: fade-out var(--transition-duration-default) var(--animation-function) var(--animation-duration) var(--animation-fill-mode);
 
         @at-root {
@@ -37,7 +35,7 @@
     }
 
     &.notification--positive {
-        background-color: $color-liquid;
+        background-color: var(--color-liquid);
     }
 
     &.notification--negative {

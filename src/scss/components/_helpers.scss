@@ -3,18 +3,6 @@
 /// @group components
 ////
 
-// We're goin' up around the bend
-.border-radius,
-.round,
-.rounded {
-    @include border-radius;
-}
-.border-radius--thin,
-.round--thin,
-.rounded--thin {
-    @include border-radius(thin);
-}
-
 // Hide elements visually
 [hidden]:not([hidden="false"]),
 .hidden {
@@ -42,6 +30,14 @@
     cursor: not-allowed; // kind of redundant
 }
 
+// Make things short
 .leading-small {
     @include v(line-height, small);
+}
+
+// Make things that require JS when JS is not available unavailable
+.requires-js {
+    .no-js & {
+        display: none;
+    }
 }

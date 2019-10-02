@@ -21,17 +21,14 @@
 
     .cover {
         display: inline-block;
-        margin: 0 0 $measure-small;
         margin: 0 0 var(--measure-small);
         text-decoration: none;
 
         &:hover,
         &:focus,
         &:active {
-            background-color: $color-transparent;
-            outline: $border-width-thin $border-style-default $color-raven;
+            @include v(background-color, transparent);
             outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
-            outline-offset: $border-width-thin;
             outline-offset: var(--border-width-thin);
         }
     }

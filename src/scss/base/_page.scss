@@ -5,16 +5,13 @@
 
 html {
     @include v(background-color, kaiser);
-    min-height: 100%;
+    min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
     overflow-behavior: contain;
     scroll-behavior: smooth;
-    // set the box model for the entire document
-    box-sizing: border-box;
-    font-size: $base-font-size;
     font-size: var(--base-font-size);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -23,14 +20,6 @@ html {
     // Windows Phone and in iOS
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-}
-
-// Box model set to `inherit` by default so children of `content-box` elements
-// inherit from the parent properly
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
 }
 
 body {

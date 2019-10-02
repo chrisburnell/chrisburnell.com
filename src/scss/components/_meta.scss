@@ -13,8 +13,7 @@
 
     aside + & {
         // pull up to align with `.author`
-        margin-top: -($measure-small);
-        margin-top: -(var(--measure-small));
+        margin-top: calc(var(--measure-small) * -1);
     }
 
     div {
@@ -32,8 +31,7 @@
             content: "•";
             @include v(color, dove);
             position: absolute;
-            left: -($measure-medium);
-            left: -(var(--measure-medium));
+            left: calc(var(--measure-medium) * -1);
             transform: translateX(-50%);
             font-style: normal;
         }

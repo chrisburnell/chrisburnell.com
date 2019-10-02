@@ -6,10 +6,8 @@
 hr {
     @include v(background-color, black--gamma);
     width: 100%;
-    height: $border-width-thin;
     height: var(--border-width-thin);
     display: block;
-    margin: $measure-large 0;
     margin: var(--measure-large) 0;
     border: 0;
     position: relative;
@@ -101,22 +99,6 @@ time {
     display: inline-block;
 }
 
-// Touch Action
-a,
-button,
-input,
-label,
-select,
-summary,
-textarea {
-    touch-action: manipulation;
-}
-
-// Remove outline for mouse users
-:focus:not(:focus-visible) {
-    outline: none;
-}
-
 // Mouse Selection
 ::selection {
     @include v(background-color, raven);
@@ -128,91 +110,6 @@ textarea {
     }
 }
 
-// Reduced Motion
-* {
-    @include media("reduced-motion") {
-        animation: none !important;
-        transition: none !important;
-    }
-}
-
 .break-anywhere {
     word-wrap: anywhere;
-}
-
-.badges {
-    display: block;
-
-    .content-list &,
-    .shelf & {
-        @include v(font-size, small);
-    }
-}
-
-.checkin {
-    .content-list &,
-    .shelf & {
-        display: block;
-    }
-}
-
-/*data*/.rating {
-    display: inline-block;
-    position: relative;
-    @include v(font-size, large);
-    line-height: 1;
-
-    &::before,
-    &::after {
-        content: "★★★★★";
-        speak: none;
-    }
-
-    &::before {
-        @include v(color, alto);
-    }
-
-    &::after {
-        background-color: inherit;
-        @include v(color, kaiser);
-        width: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    &:not([value]) {
-        display: none;
-    }
-
-    @for $i from 1 through 19 {
-        &[value="#{$i / 4}"]::after {
-            width: range-map($i, 0, 20, 0%, 100%);
-        }
-    }
-    &[value="5"]::after {
-        width: 100%;
-    }
-
-    .content-list &,
-    .shelf & {
-        width: #{5rem * strip-units($font-size-large)};
-        display: block;
-        @include v(margin-top, small);
-    }
-
-    details summary & {
-        display: inline-block !important;
-    }
-}
-
-.h-feed {
-    @include owl;
-}
-
-.requires-js {
-    .no-js & {
-        display: none;
-    }
 }

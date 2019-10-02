@@ -1,0 +1,75 @@
+////
+/// List-y Bits
+/// @group components
+////
+
+.h-feed {
+    @include owl;
+}
+
+.badges {
+    display: block;
+
+    .content-list &,
+    .shelf & {
+        @include v(font-size, small);
+    }
+}
+
+.checkin {
+    .content-list &,
+    .shelf & {
+        display: block;
+    }
+}
+
+.rating {
+    display: inline-block;
+    position: relative;
+    @include v(font-size, large);
+    line-height: 1;
+
+    &::before,
+    &::after {
+        content: "★★★★★";
+        speak: none;
+    }
+
+    &::before {
+        @include v(color, alto);
+    }
+
+    &::after {
+        background-color: inherit;
+        @include v(color, kaiser);
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:not([value]) {
+        display: none;
+    }
+
+    @for $i from 1 through 19 {
+        &[value="#{$i / 4}"]::after {
+            width: range-map($i, 0, 20, 0%, 100%);
+        }
+    }
+    &[value="5"]::after {
+        width: 100%;
+    }
+
+    .content-list &,
+    .shelf & {
+        width: #{5rem * strip-units($font-size-large)};
+        display: block;
+        @include v(margin-top, small);
+    }
+
+    details summary & {
+        display: inline-block !important;
+    }
+}

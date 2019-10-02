@@ -355,8 +355,8 @@
             {% include content/emoji.liquid emoji='✨' %}
             <span>I rate it</span>
             <data class="p-rating  rating  delta" value="{{ page.rating }}"></data>
-            <data class="p-worst" aria-hidden="true" hidden>0</data>
-            <data class="p-best" aria-hidden="true" hidden>5</data>
+            <data class="p-worst" hidden aria-hidden="true">0</data>
+            <data class="p-best" hidden aria-hidden="true">5</data>
         </div>
     {% endif %}
     {% if page.badges %}
@@ -532,5 +532,5 @@
     {% endif %}
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
     <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
-    <a href="https://fed.brid.gy" aria-hidden="true" hidden></a>
+    <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
 </div>

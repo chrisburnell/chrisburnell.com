@@ -34,9 +34,9 @@
     let updateNotification = (text, type = "positive") => {
         notification.innerHTML = text;
         notification.classList.add(`notification--${type}`);
-        notification.classList.remove("hidden");
+        notification.hidden = false;
         setTimeout(() => {
-            notification.classList.add("hidden");
+            notification.hidden = true;
             notification.classList.remove(`notification--${type}`);
         }, 1000);
     };
@@ -51,9 +51,9 @@
             notification.innerHTML = "👎 You have lost your network connection.";
             notification.classList.add("notification--negative");
         }
-        notification.classList.remove("hidden");
+        notification.hidden = false;
         setTimeout(() => {
-            notification.classList.add("hidden");
+            notification.hidden = true;
             notification.classList.remove("notification--positive", "notification--negative");
         }, 1000);
     };

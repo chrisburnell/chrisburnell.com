@@ -11,7 +11,6 @@
     grid-template-columns: minmax(12em, max-content);
     @include v(grid-gap, medium);
     justify-content: center;
-    margin: 0 0 $measure-medium;
     margin: 0 0 var(--measure-medium);
 
     @include media("screen", "above:small") {

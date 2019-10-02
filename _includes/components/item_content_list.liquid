@@ -35,7 +35,7 @@
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
         <a class="u-url" href="{{ page.url }}">
-            <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} aria-hidden="true" hidden{% endif %}>
+            <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} hidden aria-hidden="true"{% endif %}>
                 {% if page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
                 {% else %}
@@ -134,7 +134,7 @@
                     <span class="emoji  p-summary  e-content">{{ page.reacji }}</span>
                 {% elsif page.lede %}
                     <span class="p-summary">{{ page.lede | replace: "'", "’" | strip_html | truncatewords: 20 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
-                    <span class="e-content" aria-hidden="true" hidden>{{ page.lede | replace: "'", "’" | strip_html | strip }}</span>
+                    <span class="e-content" hidden aria-hidden="true">{{ page.lede | replace: "'", "’" | strip_html | strip }}</span>
                 {% elsif page.category == 'like' %}
                     <span class="p-summary  e-content"><cite class="break-anywhere">Liked: {{ link_title }}</cite></span>
                 {% elsif page.category == 'music' %}
@@ -142,7 +142,7 @@
                 {% elsif page.category == 'note' %}
                     {%- assign content = page.content | markdownify | strip_html | replace: '&lt;figcaption&gt;', '' | replace: '&lt;/figcaption&gt;', '' | replace: '&lt;p&gt;', '' | replace: '&lt;/p&gt;', '' | strip -%}
                     <span class="p-summary">{{ content | truncatewords: 30 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
-                    <span class="e-content" aria-hidden="true" hidden>{{ content }}</span>
+                    <span class="e-content" hidden aria-hidden="true">{{ content }}</span>
                 {% else %}
                     <span class="p-summary  e-content">{% include content/capitalizer.liquid input=page.category %}{% if page.layout == 'review' %} <span>Review</span>{% endif %}</span>
                 {% endif %}
@@ -166,11 +166,11 @@
                     <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.liquid emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
                 {% endif %}
                 {% if page.rating and page.rating == 'Parti Pris' %}
-                    <data value="Parti Pris" aria-hidden="true" hidden>Parti Pris</data>
+                    <data value="Parti Pris" hidden aria-hidden="true">Parti Pris</data>
                 {% elsif page.rating %}
                     <data class="p-rating  rating  delta" value="{{ page.rating }}"></data>
-                    <data class="p-worst" aria-hidden="true" hidden>0</data>
-                    <data class="p-best" aria-hidden="true" hidden>5</data>
+                    <data class="p-worst" hidden aria-hidden="true">0</data>
+                    <data class="p-best" hidden aria-hidden="true">5</data>
                 {% endif %}
             </div>
             {% if page.rsvp.date %}
@@ -198,11 +198,11 @@
             {% endif %}
         </a>
         {% if page.mf_property and link %}
-            <data class="u-{{ page.mf_property }}" aria-hidden="true" hidden>{{ link }}</data>
+            <data class="u-{{ page.mf_property }}" hidden aria-hidden="true">{{ link }}</data>
         {% endif %}
         {% if page.category %}
-            <data class="u-category" value="/{{ category_link }}" aria-hidden="true" hidden>{{ page.category }}</data>
+            <data class="u-category" value="/{{ category_link }}" hidden aria-hidden="true">{{ page.category }}</data>
         {% endif %}
-        <a class="u-author" href="/" aria-hidden="true" hidden tabindex="-1"></a>
+        <a class="u-author" href="/" hidden aria-hidden="true" tabindex="-1"></a>
     </article>
 </li>

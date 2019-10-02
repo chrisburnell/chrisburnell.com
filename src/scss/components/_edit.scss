@@ -9,7 +9,6 @@
     width: 100%;
     @include v(max-width, line-length-responsive);
     @include v(padding, medium);
-    margin: 0 auto $measure-large;
     margin: 0 auto var(--measure-large);
     @include v(line-height, medium);
 

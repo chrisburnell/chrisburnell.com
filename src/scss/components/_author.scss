@@ -23,7 +23,7 @@
         @include media("screen", "above:medium") {
             float: none;
             grid-area: author;
-            margin-top: #{$measure-large * 2 + $font-size-alpha};
+            margin-top: calc(var(--measure-large) * 2 + var(--font-size-alpha));
             margin-left: 0;
         }
     }
@@ -33,7 +33,6 @@
             width: 100%;
             @include v(max-width, breakpoint-medium);
             float: none;
-            margin: $measure-large auto 0;
             margin: var(--measure-large) auto 0;
         }
     }
@@ -86,7 +85,6 @@
     @include v(flex-basis, avatar);
     float: left;
     position: relative;
-    box-shadow: inset 0 $border-width-default 0 0 $color-black--gamma;
     box-shadow: inset 0 var(--border-width-default) 0 0 var(--color-black--gamma);
     text-decoration: none;
 
@@ -134,7 +132,6 @@
         }
 
         & > %image-elements {
-            animation: peek $transition-duration-long $transition-function $transition-duration-default $animation-fill-mode;
             animation: peek var(--transition-duration-long) var(--transition-function) var(--transition-duration-long) var(--animation-fill-mode);
 
             @at-root {
@@ -143,13 +140,13 @@
                         transform: none;
                     }
                     50% {
-                        transform: translateY(-#{$measure-avatar * 0.7});
+                        transform: translateY(calc(var(--measure-avatar) * 0.7 * -1));
                     }
                     75% {
-                        transform: translateY(-#{$measure-avatar * 0.45});
+                        transform: translateY(calc(var(--measure-avatar) * 0.45 * -1));
                     }
                     100% {
-                        transform: rotateZ(-#{$rotation-default * 2}) translateX(-#{$measure-avatar * 0.2}) translateY(-#{$measure-avatar * 0.6});
+                        transform: rotateZ(calc(var(--rotation-default) * 2 * -1)) translateX(calc(var(--measure-avatar) * 0.2 * -1)) translateY(calc(var(--measure-avatar) * 0.6 * -1));
                     }
                 }
             }

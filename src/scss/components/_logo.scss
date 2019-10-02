@@ -24,10 +24,8 @@
         }
 
         @include media("fine") {
-            @include transition(transform $transition-duration-long);
             @include transition(transform var(--transition-duration-long));
             @include will-change(transform);
-            transform: translateX(-65%) translateY(-40%) rotateZ($rotation-default);
             transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
         }
     }
@@ -47,7 +45,6 @@
 
         .icon {
             @include media("fine") {
-                transition-duration: $transition-duration-default;
                 transition-duration: var(--transition-duration-default);
                 transform: translateX(-30%) translateY(-25%);
             }

@@ -59,7 +59,7 @@ footer {
         outline-width: 0;
 
         .icon {
-            transform: translateY($border-width-thin);
+            transform: translateY(var(--border-width-thin));
         }
     }
 }
@@ -84,9 +84,7 @@ footer {
 
     button {
         @include case(initial);
-        margin-top: $border-width-button;
         margin-top: var(--border-width-button);
-        margin-bottom: $border-width-button;
         margin-bottom: var(--border-width-button);
     }
 }
