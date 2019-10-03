@@ -76,24 +76,6 @@
 }
 
 ///
-/// Clear an element of floats.
-///
-@mixin clear() {
-    clear: both;
-    zoom: 1;
-
-    &::before,
-    &::after {
-        content: "";
-        display: table;
-    }
-
-    &::after {
-        clear: both;
-    }
-}
-
-///
 /// Specify a font-family.
 ///
 /// @author Chris Burnell

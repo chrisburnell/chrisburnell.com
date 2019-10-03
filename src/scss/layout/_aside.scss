@@ -27,7 +27,8 @@ aside {
         @include border-radius;
         @include font-family(serif);
         @include v(background-color, black--delta);
-        padding: var(--measure-small) var(--measure-medium);
+        padding: var(--measure-medium);
+        @include v(z-index, above);
     }
 
     &:not(.author):not(:last-child) {
@@ -40,14 +41,8 @@ aside {
         @include v(margin-top, large);
     }
 
-    figure {
-        margin-bottom: 0;
-    }
-
     figcaption,
     p {
-        clear: both;
-
         @include media("screen", "above:small") {
             @include v(font-size, small);
         }

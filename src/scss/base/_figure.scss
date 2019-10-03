@@ -9,7 +9,7 @@ figure {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: var(--measure-large) 0 var(--measure-large);
+    margin: 0;
 
     // Allow for content to overflow without breaking the page with scrollbar
     &:not(.highlight) {

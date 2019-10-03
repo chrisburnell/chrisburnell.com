@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "gulp && bundle exec jekyll build --drafts",
-    "start": "sleep 1 && open 'http://localhost:4000/' & gulp watch & bundle exec jekyll serve --drafts --incremental --livereload",
+    "serve": "sleep 1 && open 'http://localhost:4000/' & gulp watch & bundle exec jekyll serve --drafts --incremental --livereload",
     "css": "gulp css",
     "js": "gulp js",
     "images": "gulp images"

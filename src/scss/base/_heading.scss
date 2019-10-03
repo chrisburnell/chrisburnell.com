@@ -62,7 +62,6 @@ h2 {
     .further-reading > &,
     .widget &,
     .webmentions & {
-        @include clear;
         @include case(uppercase);
         @include v(border-bottom-width, thin);
         @include v(border-bottom-style, default);

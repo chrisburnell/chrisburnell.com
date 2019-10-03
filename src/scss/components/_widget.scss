@@ -7,10 +7,6 @@
     @include owl;
     display: flex;
     flex-direction: column;
-
-    aside & {
-        @include clear;
-    }
 }
 
 .widget--browse-posts,
