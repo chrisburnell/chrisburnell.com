@@ -7,7 +7,7 @@ sitemap:
 
 {
   "results": [
-    {%- assign pages = site.pages | concat: site.webpages | concat: site.archives -%}
+    {%- assign pages = site.pages | concat: site.webpages -%}
     {% for page in pages %}
       {% unless page.draft or page.title == null or page.title == empty or page.searchable == false %}
         {

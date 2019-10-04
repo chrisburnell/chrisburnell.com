@@ -94,16 +94,10 @@ paginate_path: /:num
 feed_limit: 24
 
 collections:
-  archives:
-    output: true
-    permalink: /:title
   favicons:
     output: true
     permalink: /:path
   feeds:
-    output: true
-    permalink: /:title
-  httpstatuses:
     output: true
     permalink: /:title
   webpages:
@@ -112,10 +106,28 @@ collections:
 
 defaults:
   - scope:
-      type: "archives"
+      type: "webpages"
     values:
       layout: "page"
+  - scope:
+      path: "_webpages/category"
+    values:
       searchable: no-content
+  - scope:
+      path: "_webpages/group"
+    values:
+      searchable: no-content
+  - scope:
+      path: "_webpages/year"
+    values:
+      searchable: no-content
+  - scope:
+      path: "_webpages/httpstatuses"
+    values:
+      page_class: "page--error"
+      searchable: false
+      sitemap:
+        exclude: true
   - scope:
       type: "feeds"
     values:
@@ -123,22 +135,6 @@ defaults:
       searchable: false
       sitemap:
         exclude: true
-  - scope:
-      type: "httpstatuses"
-    values:
-      layout: "page"
-      page_class: "page--error"
-      searchable: false
-      sitemap:
-        exclude: true
-  - scope:
-      type: "pages"
-    values:
-      layout: "page"
-  - scope:
-      type: "webpages"
-    values:
-      layout: "page"
   - scope:
       type: "drafts"
     values:

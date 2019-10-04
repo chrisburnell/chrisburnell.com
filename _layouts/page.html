@@ -14,7 +14,6 @@
                     {%- assign category_link = site.data.categories | where: 'type', page.sparkline | first | map: 'category' | first -%}
                     {%- for category in site.categories -%}
                         {%- if category_link == category[0] -%}
-                            {%- assign clo = category[0] -%}
                             {%- assign posts_by_category = category[1] -%}
                             {%- break -%}
                         {%- endif -%}
