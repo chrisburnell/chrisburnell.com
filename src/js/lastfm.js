@@ -20,7 +20,8 @@
         fetch(LASTFM_URL)
             .then(helpers.getFetchResponse)
             .then(response => response.json())
-            .then(data => {
+            .then(response => {
+                const data = response[0];
                 // Success!
                 let datetime = new Date();
                 let playingLabel = "Now Playing <small>🎶</small>";
