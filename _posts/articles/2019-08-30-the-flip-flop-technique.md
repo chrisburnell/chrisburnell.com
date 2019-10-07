@@ -48,7 +48,9 @@ syndicate_to:
     }
 </style>
 
-Andy does a great job at explaining how this solution works, so I recommending reading [his article](https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode){:rel="external"} if you want more information.
+I highly recommend you read [Andy’s post](https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode){:rel="external"} first! Come back after, this page isn’t going anywhere…
+
+--------
 
 The gist is that we have some JavaScript that hooks onto a number of CSS Variables exposed on our pages, and we’re toggling their values back and forth between a <q>light</q> and <q>dark</q> palette by changing an attribute on the root element:
 
