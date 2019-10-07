@@ -30,6 +30,12 @@
     cursor: not-allowed; // kind of redundant
 }
 
+.non-motion {
+    animation-play-state: paused !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
 // Make things short
 .leading-small {
     @include v(line-height, small);
