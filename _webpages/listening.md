@@ -48,9 +48,13 @@ function timeSince(timeStamp) {
 <div class="h-cite  p-listen-of">
     <img class="last-fm__cover" src="{{ image }}" alt="">
     <h2 class="delta">
-        <cite class="p-name  p-summary">{{ name }}</cite>
+        <a href="{{ url }}" rel="external">
+            <cite class="p-name  p-summary">{{ name }}</cite>
+        </a>
     </h2>
-    <div class="h-cite">{{ artist }}</div>
+    <div>
+        <a class="h-cite" href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
+    </div>
     <time class="dt-published" datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
 </div>
 `;
@@ -70,8 +74,10 @@ function timeSince(timeStamp) {
         .then(data => {
             // Success!
             for (let track of data) {
+                let url = track["url"];
                 let trackName = track["name"];
-                let trackArtist = track["artist"]["#text"];
+                let trackArtist = track["artist"]["name"];
+                let trackArtistURL = track["artist"]["url"];
                 let datetime = new Date();
                 let datetimeFriendly = "🎶 <em>Listening now</em>";
                 if (track.hasOwnProperty("date")) {
@@ -87,8 +93,10 @@ function timeSince(timeStamp) {
                 listItem.setAttribute("role", "listitem");
                 listItem.innerHTML =
                     LASTFM_TEMPLATE
+                        .replace(/{{ url }}/g, url)
                         .replace(/{{ name }}/g, trackName)
                         .replace(/{{ artist }}/g, trackArtist)
+                        .replace(/{{ artistURL }}/g, trackArtistURL)
                         .replace(/{{ datetime }}/g, datetime)
                         .replace(/{{ datetimeFriendly }}/g, datetimeFriendly)
                         .replace(/{{ image }}/g, image);

@@ -39,7 +39,7 @@
                         LASTFM_COVER.src = "";
                     }
                 }
-                LASTFM_ARTIST.innerHTML = data["artist"]["#text"] ? data["artist"]["#text"] : "";
+                LASTFM_ARTIST.innerHTML = data["artist"]["name"] ? data["artist"]["name"] : "";
                 LASTFM_TRACK.innerHTML = data["name"] ? data["name"] : "";
                 LASTFM_LINK.href = data.url;
                 LASTFM_STATUS.value = status;
