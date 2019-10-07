@@ -5,6 +5,8 @@ title: Listening
 lede: What have I been listening to?
 ---
 
+Powered by [LastFM](https://last.fm){:rel="external"}. Check out my [Music Reviews](/music) for more musical data.
+
 <div id="listening" class="h-feed">
     <ol class="shelf  js-lastfm-feed" role="list">
     </ol>
