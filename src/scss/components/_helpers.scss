@@ -30,6 +30,7 @@
     cursor: not-allowed; // kind of redundant
 }
 
+// Turn off motion (for reduced-motion-like cases)
 .non-motion {
     animation-play-state: paused !important;
     transition: none !important;

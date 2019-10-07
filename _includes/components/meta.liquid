@@ -405,8 +405,15 @@
                     <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
                     <small class="strong">
                         <span class="left-bracket">(</span>
-                        <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
-                        <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
+                        <a href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
+                        <a href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
+                        <span class="right-bracket">)</span>
+                    </small>
+                {% elsif syndication contains 'dev.to' %}
+                    <a class="u-syndication" rel="syndication" href="{{ syndication }}">DEV Community</a>
+                    <small class="strong">
+                        <span class="left-bracket">(</span>
+                        <a href="{{ syndication}}#new_comment">Comment</a>
                         <span class="right-bracket">)</span>
                     </small>
                 {% elsif syndication contains 'gist.github.com' %}
@@ -451,8 +458,8 @@
                 <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
                 <small class="strong">
                     <span class="left-bracket">(</span>
-                    <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
-                    <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
+                    <a href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
+                    <a href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
                     <span class="right-bracket">)</span>
                 </small>
             {%- endif -%}
