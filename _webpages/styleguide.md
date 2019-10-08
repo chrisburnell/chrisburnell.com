@@ -547,12 +547,12 @@ formatDate: function(date) {
 --------
 
 
-{% include_cached content/heading.liquid title='Content List' %}
+{% include_cached content/heading.liquid title='Deck' %}
 
 <div class="h-feed">
-    <ol class="content-list" role="list">
-        {% for page in site.posts limit: 2 %}
-            {% include components/item_content_list.liquid %}
+    <ol class="deck" role="list">
+        {% for page in site.posts limit: 4 %}
+            {% include components/item_deck.liquid %}
         {% endfor %}
     </ol>
 </div>

@@ -33,10 +33,10 @@ These are my best pens—seven of which were [featured on their homepage](https:
                 </ol>
             {% endunless %}
             {% include_cached content/heading.liquid title=page_year id=page_year %}
-            <ol class="content-list" role="list">
+            <ol class="deck" role="list">
         {% endif %}
 
-        {% include components/item_content_list.liquid %}
+        {% include components/item_deck.liquid %}
 
         {% if forloop.last %}
             </ol>

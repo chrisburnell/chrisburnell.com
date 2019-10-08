@@ -10,7 +10,7 @@ searchable: false
 </section>
 
 <section class="search-results  js-search-results">
-    <ul class="content-list  js-search-results-list" id="search-results" role="list" aria-controlledby="search-button" aria-expanded="false" aria-live="polite"></ul>
+    <ul class="deck  js-search-results-list" id="search-results" role="list" aria-controlledby="search-button" aria-expanded="false" aria-live="polite"></ul>
 </section>
 
 --------

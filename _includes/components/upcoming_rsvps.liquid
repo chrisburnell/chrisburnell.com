@@ -20,9 +20,9 @@
 {% if upcoming_rsvps.size > 0 %}
     <h2 id="upcoming-rsvps" class="gamma">Upcoming Events</h2>
     <section class="upcoming-rsvps">
-        <ol class="content-list" role="list">
+        <ol class="deck" role="list">
             {% for page in upcoming_rsvps %}
-                {% include components/item_content_list.liquid strip_h=true %}
+                {% include components/item_deck.liquid strip_h=true %}
             {% endfor %}
         </ol>
     </section>

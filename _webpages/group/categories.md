@@ -27,9 +27,9 @@ lede: A list of categories and their counterpart posts.
     {% capture category_name %}{% include content/capitalizer.liquid input=category %} <small>({{ site.categories[category].size }})</small>{% endcapture %}
     {% include_cached content/heading.liquid title=category_name id=category %}
     <div class="h-feed" id="categories">
-        <ol class="content-list" role="list">
+        <ol class="deck" role="list">
             {% for page in site.categories[category] %}
-                {% include components/item_content_list.liquid %}
+                {% include components/item_deck.liquid %}
             {% endfor %}
         </ol>
     </div>

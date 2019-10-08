@@ -2,12 +2,12 @@
 
 {%- assign current_year = page.title | minus: 0 -%}
 <div class="h-feed">
-    <ol class="content-list" role="list">
+    <ol class="deck" role="list">
         {% for page in site.posts %}
             {% unless page.hidden or page.ignore %}
                 {%- assign year = page.date | date: '%Y' | minus: 0 -%}
                 {% if year == current_year %}
-                    {% include components/item_content_list.liquid %}
+                    {% include components/item_deck.liquid %}
                 {% endif %}
             {% endunless %}
         {% endfor %}

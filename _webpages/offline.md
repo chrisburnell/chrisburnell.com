@@ -37,7 +37,7 @@ sitemap:
     browsingHistory.sort( (a,b) => {
       return b.timestamp - a.timestamp;
     });
-    let markup = '<h2 class="gamma">Here are some cached pages:</h2><ol class="content-list" role="list">';
+    let markup = '<h2 class="gamma">Here are some cached pages:</h2><ol class="deck" role="list">';
     browsingHistory.forEach( data => {
       markup += `
 <li role="listitem">

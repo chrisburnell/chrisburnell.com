@@ -10,14 +10,14 @@
 .badges {
     display: block;
 
-    .content-list &,
+    .deck &,
     .shelf & {
         @include v(font-size, small);
     }
 }
 
 .checkin {
-    .content-list &,
+    .deck &,
     .shelf & {
         display: block;
     }
@@ -62,7 +62,7 @@
         width: 100%;
     }
 
-    .content-list &,
+    .deck &,
     .shelf & {
         width: #{5rem * strip-units($font-size-large)};
         display: block;

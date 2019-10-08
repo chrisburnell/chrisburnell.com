@@ -52,7 +52,7 @@
     vertical-align: middle;
     text-shadow: none;
 
-    .content-list &,
+    .deck &,
     .shelf & {
         @include v(margin-right, small);
     }

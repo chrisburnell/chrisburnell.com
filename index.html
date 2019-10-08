@@ -37,9 +37,9 @@ searchable: no-content
 {% endif %}
 
 <div class="h-feed">
-    <ol class="content-list" role="list">
+    <ol class="deck" role="list">
         {% for page in paginator.posts %}
-            {% include components/item_content_list.liquid %}
+            {% include components/item_deck.liquid %}
         {% endfor %}
     </ol>
 </div>

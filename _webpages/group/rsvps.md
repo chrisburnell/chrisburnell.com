@@ -22,10 +22,10 @@ feed: /rsvps.xml
                 </ol>
             {% endunless %}
             {% include_cached content/heading.liquid title=page_year id=page_year %}
-            <ol class="content-list" role="list">
+            <ol class="deck" role="list">
         {% endif %}
 
-        {% include components/item_content_list.liquid %}
+        {% include components/item_deck.liquid %}
 
         {% if forloop.last %}
             </ol>

@@ -27,9 +27,9 @@ lede: A list of tags and their counterpart posts.
     {% for tag in tags_sorted %}
         {% capture tag_name %}{% include content/capitalizer.liquid input=tag %} <small>({{ site.tags[tag].size }})</small>{% endcapture %}
         {% include_cached content/heading.liquid title=tag_name id=tag %}
-        <ol class="content-list" role="list">
+        <ol class="deck" role="list">
             {% for page in site.tags[tag] %}
-                {% include components/item_content_list.liquid %}
+                {% include components/item_deck.liquid %}
             {% endfor %}
         </ol>
     {% endfor %}

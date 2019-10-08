@@ -5,9 +5,9 @@ page_class: page--projects
 ---
 
 <div class="h-feed" id="projects">
-    <ol class="content-list" role="list">
+    <ol class="deck" role="list">
         {% for page in site.data.projects %}
-            {% include components/item_content_list.liquid %}
+            {% include components/item_deck.liquid %}
         {% endfor %}
     </ol>
 </div>
