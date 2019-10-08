@@ -24,9 +24,9 @@
         margin: 0 0 var(--measure-small);
         text-decoration: none;
 
-        &:hover,
-        &:focus,
-        &:active {
+        &[href]:hover,
+        &[href]:focus,
+        &[href]:active {
             @include v(background-color, transparent);
             outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
             outline-offset: var(--border-width-thin);
