@@ -10,28 +10,31 @@
     <title>{{ meta_title }}</title>
 
     {% if page.comments == 'disqus' %}
-        <link rel="dns-prefetch" href="//a.disquscdn.com">
-        <link rel="dns-prefetch" href="//chrisburnell.disqus.com">
+        <link rel="dns-prefetch" href="https://a.disquscdn.com">
+        <link rel="dns-prefetch" href="https://chrisburnell.disqus.com">
     {% endif %}
     {% if page.caniuse %}
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     {% endif %}
     {% if page.codepen or page.codepen_slug %}
-        <link rel="dns-prefetch" href="//codepen.io">
-        <link rel="dns-prefetch" href="//assets.codepen.io">
-        <link rel="dns-prefetch" href="//s.codepen.io">
+        <link rel="dns-prefetch" href="https://codepen.io">
+        <link rel="dns-prefetch" href="https://assets.codepen.io">
+        <link rel="dns-prefetch" href="https://s.codepen.io">
     {% endif %}
     {% if page.speakerdeck or page.speakerdeck_slug %}
-        <link rel="dns-prefetch" href="//speakerdeck.com">
+        <link rel="dns-prefetch" href="https://speakerdeck.com">
     {% endif %}
     {% if page.twitter %}
-        <link rel="dns-prefetch" href="//platform.twitter.com">
+        <link rel="dns-prefetch" href="https://platform.twitter.com">
     {% endif %}
     {% if page.vimeo or page.vimeo_slug %}
-        <link rel="dns-prefetch" href="//player.vimeo.com">
+        <link rel="dns-prefetch" href="https://player.vimeo.com">
     {% endif %}
     {% if page.youtube or page.youtube_slug %}
-        <link rel="dns-prefetch" href="//www.youtube.com">
+        <link rel="dns-prefetch" href="https://www.youtube.com">
+    {% endif %}
+    {% if checkin.geo %}
+        <link rel="dns-prefetch" href="https://api.mapbox.com">
     {% endif %}
 
     {% if link %}

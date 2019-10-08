@@ -294,7 +294,7 @@
             {% if checkin.link %}
                 <a class="u-location" rel="external" href="{{ checkin.link }}">{{ checkin.name | default: checkin }}</a>
             {% elsif checkin.geo %}
-                <a class="u-location" rel="external" href="http://www.openstreetmap.org/?mlat={{ location.geo | split: ',' | first }}&mlon={{ location.geo | split: ',' | last }}&zoom=12">{{ checkin.name }}</a>
+                <a class="u-location" rel="external" href="http://www.openstreetmap.org/#map=13/{{ checkin.geo | replace: ',', '/' }}">{{ checkin.name }}</a>
             {% else %}
                 <strong class="p-location">{{ checkin.name | default: checkin }}</strong>
             {% endif %}
