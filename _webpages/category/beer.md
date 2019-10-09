@@ -14,7 +14,7 @@ sparkline: beer
 
 *There are {{ site.categories.beer | size }} published Beer Reviews.*
 
-[Connect with me on Untappd]({{ site.urls.untappd }}){:rel="me  external"}! Beer titles below also link out to [Untappd](https://untappd.com){:rel="external"}.
+[Connect with me on Untappd]({{ site.author.urls.untappd }}){:rel="me  external"}! Beer titles below also link out to [Untappd](https://untappd.com){:rel="external"}.
 
 <div class="h-feed" id="beer">
     <ol class="shelf" role="list">

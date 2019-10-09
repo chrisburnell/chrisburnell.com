@@ -11,9 +11,9 @@ sitemap:
 
     Name: {{ site.author.name }}
     Email: {{ site.author.email }}
-    GitHub: {{ site.urls.github }}
-    Mastodon: {{ site.urls.mastodon }}
-    Twitter: {{ site.urls.twitter }}
+    GitHub: {{ site.author.urls.github }}
+    Mastodon: {{ site.author.urls.mastodon }}
+    Twitter: {{ site.author.urls.twitter }}
     PGP: {{ site.author.pgp }}
 
 /* SITE */

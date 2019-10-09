@@ -27,7 +27,7 @@
     {%- if link contains 'untappd' -%}
         {%- assign link_title = link_title | append: ' on Untappd' -%}
     {%- endif -%}
-    {%- assign untappd_link = site.urls.untappd | append: '/checkin/' | append: page.slug -%}
+    {%- assign untappd_link = site.author.urls.untappd | append: '/checkin/' | append: page.slug -%}
     {%- assign syndicate_to = site.emptyArray | push: untappd_link -%}
 {%- elsif page.category == 'music' -%}
     {%- assign link_title = page.title -%}

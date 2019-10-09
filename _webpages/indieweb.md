@@ -14,11 +14,11 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 <dl>
     <dt><h2 class="delta"><a href="/articles">Articles</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><h2 class="delta"><a href="/notes">Notes</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><h2 class="delta"><a href="/bookmarks">Bookmarks</a></h2></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ site.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><h2 class="delta"><a href="/pens">Pens</a></h2></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
     <dt><h2 class="delta"><a href="/beer">Beer</a></h2></dt>

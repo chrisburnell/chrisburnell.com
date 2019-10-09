@@ -4,7 +4,7 @@
         <span class="disqus-comment-count" data-disqus-url="{{ canonical }}">Leave a Comment</span>
     </button>
 {% elsif page.comments == 'codepen' and page.codepen_slug %}
-    <a class="button" rel="external" href="{{ site.urls.codepen }}/{{ site.codepen.page }}/{{ page.codepen_slug }}/#comment-list">
+    <a class="button" rel="external" href="{{ site.author.urls.codepen }}/{{ site.codepen.page }}/{{ page.codepen_slug }}/#comment-list">
         {% include_cached content/svg.liquid type='feather' %}
         <span class="button-text">Comments on CodePen</span>
     </a>

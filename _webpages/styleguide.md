@@ -618,4 +618,4 @@ Instead of trying to explain the madness behind the tone and voice of my website
 
 {% include_cached content/heading.liquid title='License' %}
 
-The code and contents of this website are licensed under a [GNU GPLv3 license](/license) [(official)]({{ site.urls.license }}){:rel="external  license"}.
+The code and contents of this website are licensed under a [GNU GPLv3 license](/license) [(official)]({{ site.author.urls.license }}){:rel="external  license"}.

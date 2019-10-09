@@ -13,7 +13,7 @@
     <icon>{{ site.author.avatar | absolute_url }}</icon>
     <link href="{{ '/' | append: page.type | replace: '//', '/' | prepend: site.live_url }}" />
     <link rel="self" href="{{ page.url | prepend: site.live_url }}" type="application/atom+xml" />
-    <link rel="hub" href="{{ site.urls.switchboard }}" />
+    <link rel="hub" href="{{ site.author.urls.switchboard }}" />
 
     {{ content }}
 

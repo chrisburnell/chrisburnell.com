@@ -231,7 +231,7 @@ html {
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <nav class="buttons-list" role="navigation">
-    <a class="button" href="{{ site.urls.gist }}/ef5367e7dd263356c48a">gist.github.com →</a>
+    <a class="button" href="{{ site.author.urls.gist }}/ef5367e7dd263356c48a">gist.github.com →</a>
 </nav>
 
 

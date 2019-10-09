@@ -11,11 +11,11 @@ sitemap:
     <dt>Email:</dt>
     <dd><a class="canada" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd>
     <dt>Twitter:</dt>
-    <dd><a class="canada" href="{{ site.urls.twitter }}">{{ site.author.twitter | prepend: '@' }}</a></dd>
+    <dd><a class="canada" href="{{ site.author.urls.twitter }}">{{ site.author.twitter | prepend: '@' }}</a></dd>
     <dt>Twitter Direct Message:</dt>
     <dd><a class="canada" href="https://twitter.com/messages/compose?recipient_id={{ site.author.twitter }}">{{ site.author.twitter | prepend: '@' }}</a></dd>
     <dt>Mastdon:</dt>
-    <dd><a class="canada" href="{{ site.urls.mastodon }}">{{ site.author.mastodon | prepend: '@' }}</a></dd>
+    <dd><a class="canada" href="{{ site.author.urls.mastodon }}">{{ site.author.mastodon | prepend: '@' }}</a></dd>
 </dl>
 
 <p>There are a number of Atom Feeds you also can subscribe to:</p>

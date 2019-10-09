@@ -365,7 +365,7 @@
             <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
             {% for badge in page.badges %}
                 {%- if badge.name and badge.id -%}
-                    {% unless forloop.first %}<span class="comma">, </span>{% endunless %}<a rel="external" href="{{ site.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
+                    {% unless forloop.first %}<span class="comma">, </span>{% endunless %}<a rel="external" href="{{ site.author.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
                 {%- else -%}
                     {% unless forloop.first %}<span class="comma">, </span>{% endunless %}<strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
                 {%- endif -%}
@@ -402,11 +402,11 @@
                 {%- assign syndication_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'syndication contains instance' | first | default: null -%}
                 {% if syndication contains 'codepen.io' %}
                     {% assign syndication_slug = syndication | split: '/' | last %}
-                    <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
+                    <a class="u-syndication" rel="syndication" href="{{ site.author.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
                     <small class="strong">
                         <span class="left-bracket">(</span>
-                        <a href="{{ site.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
-                        <a href="{{ site.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
+                        <a href="{{ site.author.urls.codepen }}/details/{{ syndication_slug }}">Details</a>,
+                        <a href="{{ site.author.urls.codepen }}/full/{{ syndication_slug }}">Full</a>
                         <span class="right-bracket">)</span>
                     </small>
                 {% elsif syndication contains 'dev.to' %}
@@ -455,11 +455,11 @@
                 {% else %}
                     <span class="comma">, </span>
                 {% endif %}
-                <a class="u-syndication" rel="syndication" href="{{ site.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
+                <a class="u-syndication" rel="syndication" href="{{ site.author.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
                 <small class="strong">
                     <span class="left-bracket">(</span>
-                    <a href="{{ site.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
-                    <a href="{{ site.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
+                    <a href="{{ site.author.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
+                    <a href="{{ site.author.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
                     <span class="right-bracket">)</span>
                 </small>
             {%- endif -%}
@@ -469,7 +469,7 @@
                 {% else %}
                     <span class="comma">, </span>
                 {% endif %}
-                <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}">Speaker Deck</a>
+                <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.author.urls.speakerdeck }}">Speaker Deck</a>
             {%- endif -%}
             {%- if page.vimeo_slug -%}
                 {% if first_syndication %}

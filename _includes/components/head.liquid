@@ -43,14 +43,14 @@
 
     <link rel="self" href="{{ '/feed.xml' | prepend: site.live_url }}">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: '/feed.xml' | prepend: site.live_url }}">
-    <link rel="pingback" href="{{ site.urls.webmention }}/xmlrpc">
-    <link rel="webmention" href="{{ site.urls.webmention }}/webmention">
-    <link rel="authorization_endpoint" href="{{ site.urls.authorization }}">
-    <link rel="token_endpoint" href="{{ site.urls.token }}">
-    <link rel="micropub" href="{{ site.urls.micropub }}">
-    <link rel="microsub" href="{{ site.urls.microsub }}">
+    <link rel="pingback" href="{{ site.author.urls.webmention }}/xmlrpc">
+    <link rel="webmention" href="{{ site.author.urls.webmention }}/webmention">
+    <link rel="authorization_endpoint" href="{{ site.author.urls.authorization }}">
+    <link rel="token_endpoint" href="{{ site.author.urls.token }}">
+    <link rel="micropub" href="{{ site.author.urls.micropub }}">
+    <link rel="microsub" href="{{ site.author.urls.microsub }}">
     <link rel="openid.delegate" href="{{ site.live_url }}" />
-    <link rel="openid.server" href="{{ site.urls.openid }}" />
+    <link rel="openid.server" href="{{ site.author.urls.openid }}" />
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",

@@ -21,7 +21,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
         <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
     </div>
     <figcaption>
-        <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.urls.speakerdeck }}" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
+        <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.author.urls.speakerdeck }}" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>
     </figcaption>
 </figure>
 
