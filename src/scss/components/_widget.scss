@@ -42,7 +42,7 @@
 }
 
 .widget-previous-anchor {
-    &::before {
+    .widget--browse-posts &::before {
         content: "← Older";
     }
 }
@@ -51,7 +51,7 @@
     text-align: right;
     margin-left: auto;
 
-    &::before {
+    .widget--browse-posts &::before {
         content: "Newer →";
     }
 }
