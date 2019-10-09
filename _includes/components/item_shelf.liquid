@@ -102,7 +102,7 @@
                 {% if page.rating and page.rating == 'Parti Pris' %}
                     <summary><em>Parti Pris</em></summary>
                 {% elsif page.rating %}
-                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}"></data></summary>
+                    <summary><data class="p-rating  rating  delta" value="{{ page.rating }}"> </data></summary>
                 {% else %}
                     <summary>Review</summary>
                 {% endif %}
@@ -112,7 +112,7 @@
         {% if content == empty and page.rating and page.rating == 'Parti Pris' %}
             <data value="Parti Pris"><em>Parti Pris</em></data>
         {% elsif content == empty and page.rating %}
-            <data class="p-rating  rating  delta" value="{{ page.rating }}"></data>
+            <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
         {% endif %}
         {% if page.badges %}
             <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.liquid emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
