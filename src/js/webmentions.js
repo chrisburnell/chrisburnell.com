@@ -47,7 +47,6 @@
                 .then(data => {
                     // Success!
                     webmentionsLoaded = true;
-                    data.links = data.links.concat(dataWithoutTrailingSlash.links);
                     populateResponses(data);
                     let responsesCount = Object.keys(responses)
                         .map(type => responses[type].length)
