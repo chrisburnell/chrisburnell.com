@@ -41,34 +41,29 @@
 
     let loadWebmentions = () => {
         if (webmentionsLoaded === false) {
-            fetch(`https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}`)
+            fetch(`https://webmention.io/api/mentions?jsonp&target[]=${CANONICAL_URL}&target[]=${CANONICAL_URL}/`)
                 .then(helpers.getFetchResponse)
                 .then(response => response.json())
-                .then(dataWithoutTrailingSlash => {
-                fetch(`https://webmention.io/api/mentions?jsonp&target=${CANONICAL_URL}/`)
-                    .then(helpers.getFetchResponse)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Success!
-                        webmentionsLoaded = true;
-                        data.links = data.links.concat(dataWithoutTrailingSlash.links);
-                        populateResponses(data);
-                        let responsesCount = Object.keys(responses)
-                            .map(type => responses[type].length)
-                            .reduce((sum, count) => sum + count, 0);
-                        if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
-                            for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
-                                webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
-                            }
-                            WEBMENTIONS_RESPONSES.removeAttribute("hidden");
-                            // prevent hovering the button from continuing to fire
-                            WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
+                .then(data => {
+                    // Success!
+                    webmentionsLoaded = true;
+                    data.links = data.links.concat(dataWithoutTrailingSlash.links);
+                    populateResponses(data);
+                    let responsesCount = Object.keys(responses)
+                        .map(type => responses[type].length)
+                        .reduce((sum, count) => sum + count, 0);
+                    if (WEBMENTIONS_BUTTON !== null && responsesCount > 0) {
+                        for (let webmentionCount of document.querySelectorAll(".js-webmention-count")) {
+                            webmentionCount.innerHTML = `${responsesCount} Response${responsesCount > 1 ? "s" : ""}`;
                         }
-                    })
-                    .catch(error => {
-                        // Fail!
-                        console.error(`Webmention request status error: ${error}`);
-                    });
+                        WEBMENTIONS_RESPONSES.removeAttribute("hidden");
+                        // prevent hovering the button from continuing to fire
+                        WEBMENTIONS_BUTTON.removeEventListener("mouseover", () => {});
+                    }
+                })
+                .catch(error => {
+                    // Fail!
+                    console.error(`Webmention request status error: ${error}`);
                 });
         }
     };
