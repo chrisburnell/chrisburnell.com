@@ -47,12 +47,10 @@
     {%- endif -%}
 {%- endif -%}
 <li role="listitem" class="h-review">
-    {% if page.cover %}
-        {% unless page.category == 'beer' or page.category == 'movie' or page.category == 'tv' %}
-            <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
-                {% include components/cover.liquid %}
-            </a>
-        {% endunless %}
+    {% if page.cover and page.category != 'beer' %}
+        <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
+            {% include components/cover.liquid %}
+        </a>
     {% endif %}
     <div class="h-cite{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}">
         <h2 class="delta">
