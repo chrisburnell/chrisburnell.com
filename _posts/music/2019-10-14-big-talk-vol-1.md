@@ -5,5 +5,5 @@ release: 2019-10-11 00:00:01 +0100
 authors: Ocean Wisdom
 listen_of: 1sZtB2VSS5sZewLUqFOxi8
 cover: big-talk-vol-1.jpg
-rating: 4.5
+rating: 4.75
 ---
