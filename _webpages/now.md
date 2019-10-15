@@ -9,6 +9,8 @@ The time where I am is <time datetime="{{ site.time | date_to_xmlschema }}" clas
 
 More to come…
 
+About the [/now movement](https://sivers.org/nowff){:rel="external"} and [people involved](https://nownownow.com/){:rel="external"}.
+
 <script src="/js/vendors/luxon.min.js"></script>
 
 <script>
