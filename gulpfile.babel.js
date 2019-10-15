@@ -46,7 +46,10 @@ const paths = {
 // Prettify Sass
 gulp.task("css-prettify", () => {
     return gulp
-        .src([`!${paths.css.src}/vendors/*.scss`, `${paths.css.src}/**/*.scss`])
+        .src([
+            `${paths.css.src}/**/*.scss`,
+            `!${paths.css.src}/vendors/*.scss`
+        ])
         .pipe(plumber())
         .pipe(newer(`${paths.css.src}`))
         .pipe(
@@ -61,7 +64,10 @@ gulp.task("css-prettify", () => {
 // Compile CSS from Sass
 gulp.task("css-compile", () => {
     return gulp
-        .src([`${paths.css.src}/main.scss`, `${paths.css.src}/non-critical.scss`])
+        .src([
+            `${paths.css.src}/main.scss`,
+            `${paths.css.src}/non-critical.scss`
+        ])
         .pipe(plumber())
         .pipe(
             sass({
@@ -128,7 +134,11 @@ gulp.task("css-critical", () => {
 // Prettify JavaScript
 gulp.task("js-prettify", () => {
     return gulp
-        .src([`!${paths.js.src}/vendors/*.js`, `!${paths.js.src}/serviceworker.js`, `${paths.js.src}/**/*.js`])
+        .src([
+            `${paths.js.src}/**/*.js`,
+            `!${paths.js.src}/serviceworker.js`,
+            `!${paths.js.src}/vendors/*.js`
+        ])
         .pipe(plumber())
         .pipe(newer(`${paths.js.src}/`))
         .pipe(
@@ -146,7 +156,8 @@ gulp.task("js-concat", () => {
         .src([
             `${paths.js.src}/helpers.js`, // dependency
             `${paths.js.src}/**/*.js`,
-            `!${paths.js.src}/serviceworker.js`
+            `!${paths.js.src}/serviceworker.js`,
+            `!${paths.js.src}/vendors/luxon.js`
         ])
         .pipe(plumber())
         .pipe(concat("main.js"))
@@ -166,6 +177,24 @@ gulp.task("js-serviceworker", () => {
         .src(`${paths.js.src}/serviceworker.js`)
         .pipe(plumber())
         .pipe(gulp.dest(`${paths.root}/`));
+});
+
+// Place the Vendor files in the JS directory
+gulp.task("js-vendors", () => {
+    return gulp
+        .src([
+            `${paths.js.src}/vendors/**/*.js`,
+            `!${paths.js.src}/vendors/picturefill.js`
+        ])
+        .pipe(plumber())
+        .pipe(gulp.dest(`${paths.js.dest}/vendors/`))
+        .pipe(babel())
+        .pipe(
+            rename({
+                suffix: ".min"
+            })
+        )
+        .pipe(gulp.dest(`${paths.js.dest}/vendors/`));
 });
 
 // -----------------------------------------------------------------------------
@@ -198,7 +227,7 @@ gulp.task("images-move-svg", () => {
 gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-compile", "css-critical")));
 
 // JS task
-gulp.task("js", gulp.series("js-concat", "js-serviceworker"));
+gulp.task("js", gulp.series("js-concat", "js-serviceworker", "js-vendors"));
 
 // Images task
 gulp.task("images", gulp.series("images-compress", "images-move-svg"));
