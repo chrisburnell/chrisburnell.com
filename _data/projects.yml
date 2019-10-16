@@ -1,18 +1,44 @@
+- url: https://dnd.chrisburnell.com
+  title: Waterdeep, A Curated Guide
+  lede: 'A chronicle of my players’ time spent in the D&D campaign of Waterdeep: Dragon Heist I’m DMing.'
+  emoji: 🐉
+- url: https://weather.chrisburnell.com
+  title: Weather
+  lede: 'Not the most interesting of project titles, this is a WIP personalised weather web app.'
+  emoji: ⛈
 - url: https://ownyour.beer
   title: OwnYour.Beer
   lede: 'An IndieWeb tool to help you pull check-ins from Untappd. Still a work-in-progress.'
+  emoji: 🍻
 - url: https://repc.co
   title: Reptile C
-  lede: 'My personal (and automatic) URL-shortening <q>service</q> based on Tantek Çelik’s base-60 numbering system, NewBase60.'
+  lede: 'My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60.'
+  emoji: 🔗
 - url: https://corvus.chrisburnell.com
   title: Corvus
   lede: 'My personal Micropub endpoint.'
+  emoji: 🐦
 - url: https://bloodbuilder.online
   title: BloodBuilder
-  lede: 'Super Simple PWA for 1<sup>st</sup> Edition Pathfinder Pure Core Classes'
+  lede: 'Super Simple PWA for 1st Edition Pathfinder Pure Core Classes.'
+  emoji: 🗡
 - url: https://media.chrisburnell.com
   title: Media Controls
   lede: 'Play native web media and utilise keyboard controls à la YouTube.'
+  emoji: 🎧
 - url: https://gifs.chrisburnell.com
   title: GIFs on GIFs on GIFs
-  lede: 'A curated list of <em>sick</em> GIFs.'
+  lede: 'A curated list of sick GIFs.'
+  emoji: 🌠
+- url: https://ww.chrisburnell.com
+  title: Viewport Dimensions
+  lede: 'A very simple tool to measure your viewport dimensions.'
+  emoji: 📐
+- url: https://dizzy.chrisburnell.com
+  title: Feelin’ Dizzy
+  lede: 'Feelin’ dizzy or blue? This should sort you right out.'
+  emoji: 🌪
+- url: https://v1.chrisburnell.com/
+  title: Version 1
+  lede: 'The first-ever version of my personal site. Things have changed slightly since 2009.'
+  emoji: 🐣
