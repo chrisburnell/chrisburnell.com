@@ -98,10 +98,17 @@
     }
 
     if (navigator.share) {
-        navigator.share({
-            title: document.querySelector("title").textContent,
-            url: document.querySelector("link[rel='canonical']").getAttribute("href"),
-            // text: document.querySelector("meta[name='description']").getAttribute("content")
-        })
+        navigator
+            .share({
+                title: document.querySelector("title").textContent,
+                url: document.querySelector("link[rel='canonical']").getAttribute("href"),
+                // text: document.querySelector("meta[name='description']").getAttribute("content")
+            })
+            .then(() => {
+                console.log("Successfully shared the page")
+            })
+            .catch((error) => {
+                console.log('Error sharing the page', error)
+            });
     }
 </script>
