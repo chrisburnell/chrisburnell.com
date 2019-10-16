@@ -96,4 +96,12 @@
     } else {
         console.log("ServiceWorkers are not supported in your browser.");
     }
+
+    if (navigator.share) {
+        navigator.share({
+            title: document.querySelector("title").textContent,
+            url: document.querySelector("link[rel='canonical']").getAttribute("href"),
+            // text: document.querySelector("meta[name='description']").getAttribute("content")
+        })
+    }
 </script>
