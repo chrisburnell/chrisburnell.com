@@ -73,3 +73,7 @@
         display: inline-block !important;
     }
 }
+
+.further-reading {
+    @include owl;
+}
