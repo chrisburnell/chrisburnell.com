@@ -4,6 +4,7 @@ lede: Paste a YouTube channel URL and get the URL to the equivalent Atom Feed fo
 webmentions: true
 redirect_from:
   - gyf.html
+coil: true
 ---
 
 Expects a URL in the following format:

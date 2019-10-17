@@ -16,7 +16,6 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
-coil: true
 ---
 
 {% include_cached content/caniuse.liquid feature='css-variables' periods='current' %}

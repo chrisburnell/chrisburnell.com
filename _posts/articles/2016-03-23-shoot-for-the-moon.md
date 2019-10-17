@@ -23,7 +23,6 @@ further_reading:
     title: "Reduce sub-pixel rendering issues with Sass functions"
   - link: "https://www.smashingmagazine.com/2012/04/a-closer-look-at-font-rendering"
     title: "A Closer Look At Font Rendering"
-coil: true
 ---
 
 As CSS changes and morphs over time, we must not forget that legacy browsers remain unchanged; one *gotcha* that a legacy browser might snipe you with, if left unattended, is **decimals**.

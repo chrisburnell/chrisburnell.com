@@ -6,7 +6,6 @@ title: Reply Targets
 lede: Providing a useful context to content written in response to someone else's blog post, tweet, toot, etc. helps a reader to understand the conversational nature of these back-and-forths. What abstractions can we make to the data that holds these reply targets, and how can those abstractions make for a richer reading experience and for a leaner publishing workflow?
 syndicate_to:
   - https://news.indieweb.org/en
-coil: true
 ---
 
 Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner, as can be seen on [this post](/note/1525182719)[^1].

@@ -14,7 +14,6 @@ codepen: true
 comments: disqus
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
-coil: true
 ---
 
 <blockquote>

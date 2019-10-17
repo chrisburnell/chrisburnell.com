@@ -15,7 +15,6 @@ further_reading:
     title: "The Coding Train by Daniel Shiffman"
   - link: "https://www.youtube.com/watch?v=N633bLi_YCw"
     title: "Polar Coordinates, a p5.js Tutorial by Daniel Shiffman"
-coil: true
 ---
 
 <blockquote>

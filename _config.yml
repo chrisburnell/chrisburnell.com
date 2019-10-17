@@ -151,6 +151,7 @@ defaults:
     values:
       category: "article"
       prefix: a
+      coil: true
   - scope:
       path: "_posts/beer"
     values:
