@@ -42,6 +42,7 @@ h1 {
 .beta,
 %beta {
     @include v(font-size, beta);
+    @include v(font-weight, bold);
     @include v(line-height, small);
 }
 h2 {

@@ -14,5 +14,4 @@
 .lede--featured {
     @include v(max-width, line-length-responsive, $important: true);
     @include v(font-size, large);
-    @include v(font-weight, bold);
 }

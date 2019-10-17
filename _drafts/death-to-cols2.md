@@ -1,7 +1,7 @@
 ---
 date: 2019-06-24 09:31:00 +0100
 title: Let me show you the door, <code>col-md-4</code>
-lede: For over a decade now, it's been the norm to layout our websites with a system in CSS that divides the page into columns and defines the width for components based on the number of columns it should take up. I'm proposing we drop arbitrary column counts and write CSS that expresses as closely as possible what we want without limitations imposed by a column-based layout.
+lede: For over a decade now, it’s been the norm to layout our websites with a system in CSS that divides the page into columns and defines the size of components on the page based on the number of columns it should take up. I’m proposing we move away from using arbitrary column counts and write CSS that expresses what we actually want, shedding the limitations imposed by a column-based layout.
 tags:
   - css
 banner:
@@ -9,19 +9,23 @@ banner:
   - death-to-cols@2x.png
 ---
 
-If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the concept of a CSS grid system. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the classic CSS grid system. Libraries of this sort present the developer with a huge swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
-Specifically, they approach layout by dividing the page into <var>n</var> columns and assigning each section of the page to a different number of these columns, e.g. a *12-column* layout being split into a *9-column* content section and a *3-column* sidebar. *12* is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject <q>double</q> the granularity and opt for a *24-column* grid.
+Specifically, they approach layout by dividing the width of the page into <var>n</var> columns and assigning components on the page to a different number of these columns. For example, a <var>12</var>-column layout might be split into a <var>9</var>-column content section and a <var>3</var>-column sidebar. <var>12</var> is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject *double* the granularity and opt for a <var>24</var>-column grid.
 
-But what about when we want to divide the page into *fifths (12 / 5 = 2.4)*? What about when we want to display a section at the *full width of the page* instead of just the span of centered columns? How do we sanely manage the responsive breakpoints where these columns will change their ratios to make better use of screen real-estate?
+But what about when we want to divide <var>12</var> columns into *fifths*? <var>12</var> / <var>5</var> = <var>2.4</var> is quite unwieldy to work with.
 
-There are a whole host of reasons to <q>break out</q> out of the defined columns and an infinite number of designs which do not adhere to a *12*/*24*/<var>n</var>-column layout.
+What about when we want to display a section at the *full width of the window* instead of just the span of centered columns? How do we sanely manage the responsive breakpoints where these columns will change their ratios to make better use of screen real-estate?
 
-What I’m proposing, and certainly not the first to do so, is that we do away with thinking of layout in terms of columns.
+There are a whole host of reasons to <q>break out</q> out of the defined columns and an infinite number of designs which do not adhere to a <var>12</var>/<var>24</var>/<var>n</var>/*fixed*-column layout.
 
-Because we aren’t beholden to using floats anymore, and we have access to superior parts of CSS for layout, the way that we think about layout on the web needs to change.
+--------
 
-With flex or grid, it’s trivial now to compose a layout exactly as you and/or your designers visualise it.
+What I’m proposing, and certainly not the first to do so, is that we do away with thinking of layout in terms of <var>x</var>/<var>y</var> columns.
+
+Because we aren’t beholden to using `floats` anymore and we have access to superior parts of CSS for layout, the way that we think about layout on the web needs to change.
+
+With `flex` or `grid`, it’s trivial now to compose a layout exactly as you and/or your designers visualise it.
 
 ### We used to say:
 
@@ -89,4 +93,4 @@ This is where CSS Grid really shines and takes away a great deal of mental overh
 grid-template-columns: 3fr 5fr;
 {% endhighlight %}
 
-An added benefit to CSS Grid here is that we can avoid a lot more media queries thanks to the repeat() function and the auto-fill and auto-fit keywords.
+An added benefit to CSS Grid here is that we can avoid a lot more media queries thanks to the `repeat()` function and the `auto-fill` and `auto-fit` keywords.

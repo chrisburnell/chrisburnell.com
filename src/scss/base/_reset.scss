@@ -29,8 +29,9 @@ textarea {
 }
 
 // Reduced Motion
-* {
+*, ::before, ::after {
     @include media("reduced-motion") {
+        background-attachment: initial !important;
         animation-play-state: paused !important;
         transition: none !important;
         scroll-behavior: auto !important;

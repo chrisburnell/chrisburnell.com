@@ -118,7 +118,7 @@ The <u>u element</u> is text with an unarticulated, though explicitly rendered, 
 
 <del>This text is deleted</del> and <ins>This text is inserted</ins>
 
-<s>This text has a strikethrough</s>
+<p><s>This text has a strikethrough</s></p>
 
 Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp>
 

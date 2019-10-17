@@ -53,6 +53,7 @@ video {
     overflow-x: hidden;
 }
 audio {
+    width: 100%;
     @include v(max-width, breakpoint-small);
 
     &:not([controls]) {
