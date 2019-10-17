@@ -1,5 +1,5 @@
 /*!
- * Handle Navigator bits
+ * Navigator
  * @author Chris Burnell <me@chrisburnell.com>
  */
 
