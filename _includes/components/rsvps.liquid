@@ -13,7 +13,7 @@
         {%- assign finish_year = page.rsvp.finish | default: page.rsvp.date | date: '%Y' -%}
         {%- if start_year == year and start_month == month and start_day == day -%}
             {%- assign todays_rsvps = todays_rsvps | push: page -%}
-        {%- if finish_year == year and finish_month == month and finish_day == day -%}
+        {%- elsif finish_year == year and finish_month == month and finish_day == day -%}
             {%- assign todays_rsvps = todays_rsvps | push: page -%}
         {%- elsif start_year > year -%}
             {%- assign upcoming_rsvps = upcoming_rsvps | push: page -%}
