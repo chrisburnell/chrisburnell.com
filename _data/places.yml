@@ -1,40 +1,55 @@
 - name: The Griffin
   link: http://the-griffin.com
-  geo: 51.5248105,-0.0842363
+  lat: 51.525
+  long: -0.084
   address: 93 Leonard St, Hackney, London EC2A 4RD
 - name: Homebrew Website Club London
   link: https://hwclondon.co.uk
-  geo: 51.5100055,-0.1294994
+  lat: 51.510
+  long: -0.129
   address: 110 St Martin's Ln, Charing Cross, London WC2N 4BA
 - name: Conway Hall
   link: https://conwayhall.org.uk
-  geo: 51.5196715,-0.1205393
+  lat: 51.520
+  long: -0.121
   address: 25 Red Lion Square, Holborn, London WC1R 4RL
 - name: Pig's Ear CAMRA Beer & Cider Festival
   link: http://www.pigsear.org.uk
-  geo: 51.5524691,-0.0526876
+  lat: 51.552
+  long: -0.053
   address: 1D Glenarm Rd, Clapton, London E5 0LY
 - name: Lee Valley Almost Wild Campsite
   link: https://www.visitleevalley.org.uk/en/content/cms/where-to-stay-and-short-breaks/lee-valley-almost-wild-campsit/
-  geo: 51.7433919,-0.0094743
+  lat: 51.743
+  long: -0.009
   address: Nazeing New Rd, Broxbourne, Hertfordshire EN10 6TD
 - name: The Old Fountain
   link: https://oldfountain.co.uk
-  geo: 51.5271,-0.0890309
+  lat: 51.527
+  long: -0.089
   address: 3 Baldwin St, Old Street, London EC1V 9NU
 - name: Mikkeller Bar London
   link: http://mikkeller.dk/location/mikkeller-bar-london
-  geo: 51.5273,-0.077116
+  lat: 51.527
+  long: -0.077
   address: 2-4 Hackney Rd, London E2 7NS
 - name: Beer Merchants Tap
   link: https://beermerchantstap.com/
-  geo: 51.5442,-0.0236325
+  lat: 51.544
+  long: -0.024
   address: 99 Wallis Rd, Hackney Wick, London E9 5LN
 - name: The Craft Beer Co.
   link: https://www.thecraftbeerco.com/
-  geo: 51.5262,-0.0881
+  lat: 51.526
+  long: -0.088
   address: 235 Old St, Old Street, London EC1V 9HE
 - name: Sixty Eight Middle Street
   link: http://68middle.st/
-  geo: 50.8210794,-0.1435692
+  lat: 50.821
+  long: -0.144
   address: 68 Middle St, Brighton BN1 1AL
+- name: The Craft Beer Co.
+  link: https://www.thecraftbeerco.com/
+  lat: 50.825
+  long: -0.146
+  address: 22-23 Upper N Street, Brighton, BN1 3FG

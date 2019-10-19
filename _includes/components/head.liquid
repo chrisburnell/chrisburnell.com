@@ -33,7 +33,7 @@
     {% if page.youtube or page.youtube_slug %}
         <link rel="dns-prefetch" href="https://www.youtube.com">
     {% endif %}
-    {% if checkin.geo %}
+    {% if checkin.lat and checkin.long %}
         <link rel="dns-prefetch" href="https://api.mapbox.com">
     {% endif %}
 
