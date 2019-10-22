@@ -6,6 +6,7 @@
 .meta {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     overflow: hidden;
     @include v(font-family, serif);
     font-style: italic;
@@ -85,4 +86,14 @@
     .right-bracket {
         padding-left: 0 !important;
     }
+
+    label {
+        @include v(padding-left, small);
+        @include v(padding-right, small);
+        cursor: pointer;
+    }
+}
+
+#meta-toggle:not(:checked) ~ div:not(:first-of-type) {
+    @include hidden;
 }

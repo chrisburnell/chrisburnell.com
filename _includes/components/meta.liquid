@@ -1,4 +1,5 @@
 <div class="meta">
+    <input type="checkbox" id="meta-toggle" aria-hidden="true" hidden></input>
     <div class="date">
         {% include content/emoji.liquid emoji='🗓' %}
         {% if page.mf_property contains 'bookmark-of' %}
@@ -546,4 +547,5 @@
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
     <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
     <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
+    <label for="meta-toggle" role="button" class="delta" title="Expand meta information" aria-hidden="true">…</label>
 </div>
