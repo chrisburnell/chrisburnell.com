@@ -48,7 +48,7 @@ sitemap:
           {% endif %}{% if page.authors %},
             "authors": "{% for author in page.authors %}{%- assign author_name = author.name | default: author | strip -%}{%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}{% unless forloop.first %}, {% endunless %}{{ author_name | xml_escape }}{% endfor %}"
           {% endif %}{% if page.in_reply_to %},
-            "in_reply_to": "{{ page.in_reply_to }}"
+            "in_reply_to": "{{ page.in_reply_to.link | default: page.in_reply_to }}"
           {% endif %}{% if page.rsvp %},
             "rsvp": true
           {% endif %}{% if page.badges %},
