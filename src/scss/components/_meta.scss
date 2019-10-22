@@ -88,9 +88,15 @@
     }
 
     label {
-        @include v(padding-left, small);
-        @include v(padding-right, small);
+        @include v(background-color, black--delta);
+        padding: 0.1rem var(--measure-small);
         cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+            @include v(color, canada);
+        }
     }
 }
 
