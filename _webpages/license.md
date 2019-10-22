@@ -1,16 +1,25 @@
 ---
 title: License
-lede: GNU General Public License, Version 3
+lede: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 page_class: page--license
 searchable: false
 sitemap:
   exclude: true
 ---
 
-<h3 class="delta">© {{ site.birth }}–{{ site.time | date: '%Y' }} <span class="canada">{{ site.author.name }}</span>.</h3>
+### You are free to:
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
 
-See [the full GNU GPLv3 license]({{ site.author.urls.github_repo }}/blob/master/LICENSE){:rel="external"} for further details.
+### Under the following terms:
+
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- NonCommercial — You may not use the material for commercial purposes.
+- ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+See [the full license]({{ site.author.urls.github_repo }}/blob/master/LICENSE){:rel="external"} for further details.

@@ -2,7 +2,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-[![License](https://img.shields.io/badge/license-GNU_GPLv3-blue.svg?longCache=true&style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/license-CC-BY-NC-SA-4.0-blue.svg?longCache=true&style=for-the-badge)](LICENSE)
 [![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&longCache=true&style=for-the-badge)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
 [![Build Status](https://semaphoreci.com/api/v1/chrisburnell/chrisburnell-com/branches/master/badge.svg)](https://semaphoreci.com/chrisburnell/chrisburnell-com)
 
@@ -48,4 +48,4 @@ SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/) 
 
 ### License
 
-The contents of this repository are licensed under the [GNU General Public License v3.0](LICENSE).
+The contents of this repository, unless otherwise specified, are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](LICENSE).
