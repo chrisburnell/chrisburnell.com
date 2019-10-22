@@ -625,19 +625,3 @@ I’m always been a proponent for establishing a useful dictionary of specific v
 The CSS is compiled from SCSS using [gulp.js](https://github.com/gulpjs/gulp#readme){:rel="external"} and some [PostCSS](http://postcss.org){:rel="external"}.
 
 The front-end is compiled with [Jekyll](https://jekyllrb.com){:rel="external"}, source files hosted by [GitHub](https://github.com){:rel="external"}, front-end hosted by [DigitalOcean](https://digitalocean.com){:rel="external"}, and sits behind [CloudFlare](https://www.cloudflare.com){:rel="external"} for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.
-
-
-{% include_cached content/heading.liquid title='Tone and Voice' %}
-
-Instead of trying to explain the madness behind the tone and voice of my website, I’m just going to throw out some references to some other great Content Guides which inspire me:
-
-- [MailChimp Content Style Guide](http://styleguide.mailchimp.com/voice-and-tone){:rel="external"}
-- [GOV.UK Content and Publishing](https://www.gov.uk/topic/government-digital-guidance/content-publishing){:rel="external"}
-- [18F Content Guide](https://pages.18f.gov/content-guide/voice-and-tone){:rel="external"}
-- [Buffer Tone Guide](https://buffer.com/tone-guide){:rel="external"}
-- [The Economist Style Guide](http://www.economist.com/styleguide/introduction){:rel="external"}
-
-
-{% include_cached content/heading.liquid title='License' %}
-
-The code and contents of this website are licensed under a [GNU GPLv3 license](/license) [(official)]({{ site.author.urls.license }}){:rel="external  license"}.
