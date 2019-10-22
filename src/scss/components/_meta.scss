@@ -90,6 +90,7 @@
     label {
         @include v(background-color, black--delta);
         padding: 0.1rem var(--measure-small);
+        @include border-radius(thin);
         cursor: pointer;
 
         &:hover,
