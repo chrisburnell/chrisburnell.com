@@ -95,6 +95,10 @@
         &:hover,
         &:focus,
         &:active {
+            @include v(background-color, raven--gamma);
+        }
+
+        &:active {
             @include v(color, canada);
         }
     }

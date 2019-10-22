@@ -558,6 +558,28 @@ formatDate: function(date) {
 </div>
 
 
+{% include_cached content/heading.liquid title='Shelf' %}
+
+<div class="h-feed">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.beer limit: 3 %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
+
+
+{% include_cached content/heading.liquid title='Shelf with Images' %}
+
+<div class="h-feed">
+    <ol class="shelf" role="list">
+        {% for page in site.categories.music limit: 3 %}
+            {% include components/item_shelf.liquid %}
+        {% endfor %}
+    </ol>
+</div>
+
+
 {% include_cached content/heading.liquid title='Icons' %}
 
 <ul class="icons-list">
