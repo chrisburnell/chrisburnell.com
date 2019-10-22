@@ -43,6 +43,11 @@
   lat: 51.526
   long: -0.088
   address: 235 Old St, Old Street, London EC1V 9HE
+- name: Brew by Numbers
+  link: https://www.brewbynumbers.com/
+  lat: 51.497
+  long: -0.072
+  address: 75 Enid St, Bermondsey, London SE16 3RA
 - name: Sixty Eight Middle Street
   link: http://68middle.st/
   lat: 50.821
@@ -52,4 +57,9 @@
   link: https://www.thecraftbeerco.com/
   lat: 50.825
   long: -0.146
-  address: 22-23 Upper N Street, Brighton, BN1 3FG
+  address: 22-23 Upper N Street, Brighton BN1 3FG
+- name: Bison Beer Crafthouse
+  link: https://www.bisonbeer.co.uk/
+  lat: 50.825
+  long: -0.137
+  address: 103 North Rd, Brighton BN1 1YW

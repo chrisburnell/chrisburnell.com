@@ -280,13 +280,13 @@
     {% endif %}
     {%- assign checkin = null -%}
     {% if page.checkin %}
+        {%- assign checkin = site.data.places | where: 'name', page.checkin.name | first | default: page.checkin -%}
         {%- if page.checkin.lat and page.checkin.long -%}
             {%- assign lat = page.checkin.lat | round: 3 -%}
             {%- assign long = page.checkin.long | round: 3 -%}
-            {%- assign checkin = site.data.places | where_exp: 'target', 'target.lat == lat' | where_exp: 'target', 'target.long == long' | first -%}
-        {%- else -%}
-            {%- assign checkin = site.data.places | where: 'name', page.checkin.name | first | default: page.checkin -%}
+            {%- assign checkin = site.data.places | where_exp: 'target', 'target.lat == lat' | where_exp: 'target', 'target.long == long' | first | default: checkin -%}
         {%- endif -%}
+        <!-- CHECKIN {{ checkin | inspect }} -->
         <div class="checkin">
             {% if page.category == 'beer' %}
                 {% include content/emoji.liquid emoji='🍻' %}
@@ -299,7 +299,7 @@
                 <span>at</span>
             {% endif %}
             {% if checkin.link %}
-                <a class="u-location" rel="external" href="{{ checkin.link }}">{{ checkin.name | default: checkin }}</a>
+                <a class="u-location" rel="external" href="{{ checkin.link }}">{{ checkin.name }}</a>
             {% elsif checkin.lat and checkin.long %}
                 <a class="u-location" rel="external" href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.name }}</a>
             {% else %}
