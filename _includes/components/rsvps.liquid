@@ -26,7 +26,7 @@
 {%- endfor -%}
 
 {% if todays_rsvps.size > 0 %}
-    <h2 id="todays-rsvps" class="gamma">Events I’m Attending Now</h2>
+    <h2 id="todays-rsvps" class="gamma">Events I’m attending today</h2>
     <section class="todays-rsvps">
         <ol class="deck" role="list">
             {% for page in todays_rsvps %}
@@ -37,7 +37,7 @@
 {% endif %}
 
 {% if upcoming_rsvps.size > 0 %}
-    <h2 id="upcoming-rsvps" class="gamma">Upcoming Events</h2>
+    <h2 id="upcoming-rsvps" class="gamma">Upcoming events I’m attending</h2>
     <section class="upcoming-rsvps">
         <ol class="deck" role="list">
             {% for page in upcoming_rsvps %}
