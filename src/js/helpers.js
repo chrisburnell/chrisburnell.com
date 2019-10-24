@@ -151,7 +151,6 @@ helpers = {
     truncate: (string, maximum = 10) => {
         let array = string.trim().split(" ");
         let ellipsis = array.length > maximum ? "…" : "";
-        console.log(array.slice(0, maximum).join(" ") + ellipsis);
         return array.slice(0, maximum).join(" ").replace(/[\,\.\;]$/, "") + ellipsis;
     },
 
