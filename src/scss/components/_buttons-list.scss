@@ -11,17 +11,11 @@
     grid-template-columns: minmax(12em, max-content);
     @include v(grid-gap, medium);
     justify-content: center;
-    margin: 0 0 var(--measure-medium);
 
     @include media("screen", "above:small") {
         // 1───────────────────────────2→
         // │ minmax(12em, max-content) │→
         // 2───────────────────────────┴→
         grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
-    }
-
-    %content-elements + &,
-    .deck + & {
-        @include v(margin-top, medium);
     }
 }
