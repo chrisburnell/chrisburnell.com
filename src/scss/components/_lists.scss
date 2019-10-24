@@ -64,7 +64,7 @@
 
     .deck &,
     .shelf & {
-        width: #{5rem * strip-units($font-size-large)};
+        width: 6.5rem;
         display: block;
         @include v(margin-top, small);
     }
