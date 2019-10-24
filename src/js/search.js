@@ -196,10 +196,10 @@
                     item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
                 }
                 else if (item.category == "book") {
-                    item.lede = `Book by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
+                    item.lede = `Book by ${item.authors}.` + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
                 }
                 else if (item.category == "music") {
-                    item.lede = `Album by ${item.authors}.` + (item.rating ? `<data class="rating" value="${item.rating_raw}">${item.rating}</data>` : ``);
+                    item.lede = `Album by ${item.authors}.` + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
                 }
                 else if (item.category == "talk") {
                     item.lede = "Talk";

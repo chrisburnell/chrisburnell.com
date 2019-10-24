@@ -64,8 +64,7 @@
 
     .deck &,
     .shelf & {
-        width: 6.5rem;
-        display: block;
+        display: inline-block;
         @include v(margin-top, small);
     }
 

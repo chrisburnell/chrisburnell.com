@@ -168,9 +168,11 @@
                 {% if page.rating and page.rating == 'Parti Pris' %}
                     <data value="Parti Pris" hidden aria-hidden="true">Parti Pris</data>
                 {% elsif page.rating %}
-                    <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
-                    <data class="p-worst" hidden aria-hidden="true">0</data>
-                    <data class="p-best" hidden aria-hidden="true">5</data>
+                    <div>
+                        <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
+                        <data class="p-worst" hidden aria-hidden="true">0</data>
+                        <data class="p-best" hidden aria-hidden="true">5</data>
+                    </div>
                 {% endif %}
             </div>
             {% if page.rsvp.date %}
