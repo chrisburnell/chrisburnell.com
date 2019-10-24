@@ -8,6 +8,8 @@
             <span>liked on</span>
         {% elsif page.mf_property contains 'listen-of' %}
             <span>listened on</span>
+        {% elsif page.mf_property contains 'played-of' %}
+            <span>played on</span>
         {% elsif page.mf_property contains 'read-of' %}
             <span>started reading on</span>
         {% elsif page.mf_property contains 'watch-of' %}
@@ -551,5 +553,5 @@
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
     <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
     <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
-    <label for="meta-toggle" role="button" class="delta" title="Expand meta information" aria-hidden="true">…</label>
+    <label for="meta-toggle" role="button" class="delta" title="Expand/Collape" aria-hidden="true">…</label>
 </div>

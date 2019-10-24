@@ -14,6 +14,10 @@
   type: books
   category: book
   icon: 'bullhorn'
+- title: Chess Games
+  type: chess
+  category: chess
+  icon: 'feather'
 - title: Likes
   type: likes
   category: like

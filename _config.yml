@@ -18,10 +18,12 @@ author:
   email: me@chrisburnell.com
   avatar: /images/avatar@2x.jpg
   pgp: 9604F098260A0057
+  chess: *username
   codepen: *username
   github: *username
   gitlab: *username
   lastfm: *username
+  lichess: *username
   mastodon: chrisburnell@mastodon.social
   notist: *username
   speakerdeck: *username
@@ -179,6 +181,18 @@ defaults:
       prefix: r
       emoji: "📖"
       ignore: true
+  - scope:
+      path: "_posts/chess"
+    values:
+      category: "chess"
+      mf_property: "played-of"
+      prefix: c
+      emoji: "♟"
+      sitemap:
+        exclude: true
+      hidden: true
+      ignore: true
+      titlefree: true
   - scope:
       path: "_posts/likes"
     values:

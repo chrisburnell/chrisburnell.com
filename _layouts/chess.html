@@ -42,16 +42,6 @@
             </div>
         {% endif %}
 
-        {% if page.chess %}
-            <figure>
-                <iframe src="https://www.chess.com/emboard?id={{ page.chess }}" width="603" height="465">
-            </figure>
-        {% elsif page.lichess %}
-            <figure>
-                <iframe src="https://lichess.org/embed/{{ page.lichess }}?pov={{ site.author.chess }}" width="600" height="397">
-            </figure>
-        {% endif %}
-
         {% if link %}
             <nav class="buttons-list" role="navigation">
                 <a class="button  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ link_title }}</a>
