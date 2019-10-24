@@ -38,5 +38,9 @@
         display: block;
         object-fit: contain;
         margin: 0;
+
+        .page--books & {
+            height: var(--measure-aside);
+        }
     }
 }
