@@ -17,27 +17,33 @@
 {%- assign link_title = bookmark_of_title | default: like_of_title | default: listen_of_title | default: read_of_title | default: watch_of_title | default: page.link.title | default: null -%}
 {%- assign link_author_name = page.bookmark_of.authors[0].name | default: null -%}
 {%- assign link_author_url = page.bookmark_of.authors[0].url | default: null -%}
-{%- if link_title -%}
-{%- else -%}
+{%- unless link_title -%}
     {%- assign link_title = link | remove: 'http://' | remove: 'https://' | remove: 'www.' -%}
-{%- endif -%}
+{%- endunless -%}
 {%- assign syndicate_to = null -%}
 {%- if page.category == 'beer' -%}
     {%- assign link_title = page.title -%}
-    {%- if link contains 'untappd' -%}
+    {%- if link contains 'untappd.com' -%}
         {%- assign link_title = link_title | append: ' on Untappd' -%}
     {%- endif -%}
     {%- assign untappd_link = site.author.urls.untappd | append: '/checkin/' | append: page.slug -%}
     {%- assign syndicate_to = site.emptyArray | push: untappd_link -%}
+{%- elsif page.category == 'book' -%}
+    {%- assign link_title = page.title -%}
+    {%- if link contains 'abookapart.com' -%}
+        {%- assign link_title = link_title | append: ' on A Book Apart' -%}
+    {%- elsif link contains 'goodreads.com' -%}
+        {%- assign link_title = link_title | append: ' on Goodreads' -%}
+    {%- endif -%}
 {%- elsif page.category == 'music' -%}
     {%- assign link_title = page.title -%}
-    {%- if link contains 'bandcamp' -%}
+    {%- if link contains 'bandcamp.com' -%}
         {%- assign link_title = link_title | append: ' on Bandcamp' -%}
-    {%- elsif link contains 'soundcloud' -%}
+    {%- elsif link contains 'soundcloud.com' -%}
         {%- assign link_title = link_title | append: ' on SoundCloud' -%}
-    {%- elsif link contains 'spotify' -%}
+    {%- elsif link contains 'spotify.com' -%}
         {%- assign link_title = link_title | append: ' on Spotify' -%}
-    {%- elsif link contains 'youtube' -%}
+    {%- elsif link contains 'youtube.com' -%}
         {%- assign link_title = link_title | append: ' on YouTube' -%}
     {%- elsif link contains 'song.link' -%}
         {%- assign link_title = link_title | append: ' on Songlink' -%}
