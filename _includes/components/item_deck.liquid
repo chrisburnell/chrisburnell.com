@@ -195,8 +195,10 @@
                     {% endif %}
                 </time>
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}" hidden>{{ date_human }}</time>
-            {% elsif page.date %}
+            {% elsif page.date and include.relative_year %}
                 <time class="date  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
+            {% elsif page.date %}
+                <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ date_human }}</time>
             {% endif %}
         </a>
         {% if page.mf_property and link %}

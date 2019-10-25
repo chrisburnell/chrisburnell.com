@@ -65,6 +65,9 @@
     .deck &,
     .shelf & {
         display: inline-block;
+    }
+
+    .deck & {
         @include v(margin-top, small);
     }
 
