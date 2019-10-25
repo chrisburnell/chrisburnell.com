@@ -36,8 +36,8 @@
         difference = Math.abs(compare - today);
         timeElement.setAttribute("title", timeElement.innerHTML);
 
-        if (difference < minute) {
-            timeElement.innerHTML = "mere seconds ago";
+        if (difference < (minute * 2)) {
+            timeElement.innerHTML = "just moments ago";
         }
         else if (difference < (hour * 2)) {
             minutes = Math.ceil((compare - today) / minute);
