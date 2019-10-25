@@ -27,40 +27,41 @@
 
     const today = Math.floor(Date.now() / 1000);
     let compare;
-    let abs;
+    let difference;
 
-    const timeElements = document.querySelectorAll('.date--relative');
+    const timeElements = document.querySelectorAll(".date--relative");
 
     for (let timeElement of timeElements) {
-        compare = Math.floor(new Date(timeElement.getAttribute('datetime')).getTime() / 1000);
-        abs = Math.abs(compare - today);
+        compare = Math.floor(new Date(timeElement.getAttribute("datetime")).getTime() / 1000);
+        difference = Math.abs(compare - today);
+        timeElement.setAttribute("title", timeElement.innerHTML);
 
-        if (abs < minute) {
-            timeElement.innerHTML = 'seconds ago';
+        if (difference < minute) {
+            timeElement.innerHTML = "mere seconds ago";
         }
-        else if (abs < hour) {
+        else if (difference < (hour * 2)) {
             minutes = Math.ceil((compare - today) / minute);
-            timeElement.innerHTML = rtf.format(minutes, 'minute');
+            timeElement.innerHTML = rtf.format(minutes, "minute");
         }
-        else if (abs < day) {
+        else if (difference < (day * 2)) {
             hours = Math.ceil((compare - today) / hour);
-            timeElement.innerHTML = rtf.format(hours, 'hour');
+            timeElement.innerHTML = rtf.format(hours, "hour");
         }
-        else if (abs < week) {
+        else if (difference < (week * 2)) {
             days = Math.ceil((compare - today) / day);
-            timeElement.innerHTML = rtf.format(days, 'day');
+            timeElement.innerHTML = rtf.format(days, "day");
         }
-        else if (abs < month) {
+        else if (difference < (month * 2)) {
             weeks = Math.ceil((compare - today) / week);
-            timeElement.innerHTML = rtf.format(weeks, 'week');
+            timeElement.innerHTML = rtf.format(weeks, "week");
         }
-        else if (abs < year) {
+        else if (difference < (year * 2)) {
             months = Math.ceil((compare - today) / month);
-            timeElement.innerHTML = rtf.format(months, 'month');
+            timeElement.innerHTML = rtf.format(months, "month");
         }
         else {
             years = Math.ceil((compare - today) / year);
-            timeElement.innerHTML = rtf.format(years, 'year');
+            timeElement.innerHTML = rtf.format(years, "year");
         }
     }
 })();
