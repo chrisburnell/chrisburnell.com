@@ -107,8 +107,10 @@
                                     {% if ingredient.ml >= site.data.cooking_units.volume.cup_uk %}
                                         {% assign uk = uk | append: 's' %}
                                     {% endif %}
+                                {% comment %}
                                 {% elsif uk >= site.data.cooking_units.volume.floz_uk %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.floz_uk | round: 2 | append: ' fl. oz' %}
+                                {% endcomment %}
                                 {% elsif uk >= site.data.cooking_units.volume.tbsp %}
                                     {% assign uk = uk | divided_by: site.data.cooking_units.volume.tbsp | round: 2 | append: ' tbsp' %}
                                 {% else %}
