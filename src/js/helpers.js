@@ -23,7 +23,7 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: name => {
+    getParameterByName: (name) => {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -50,9 +50,9 @@ helpers = {
     /// @param {String} date
     /// @return {String} formattedDate
     ////
-    formatDate: date => {
+    formatDate: (date, includeWeekday = false) => {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         let day = date.getDate();
         if (day < 10) {
@@ -61,7 +61,9 @@ helpers = {
         let month = months[date.getMonth()];
         let year = date.getFullYear();
 
-        return `${day} ${month} ${year}`;
+        let weekday = includeWeekday ? `${weekdays[date.getDay()]} ` : "";
+
+        return `${weekday}${day} ${month} ${year}`;
     },
 
     ////
@@ -103,7 +105,7 @@ helpers = {
     /// @return {Object} response
     /// @throw {Object} error
     ////
-    getFetchResponse: response => {
+    getFetchResponse: (response) => {
         if (response.ok) {
             return response;
         }

@@ -26,15 +26,18 @@
     });
 
     const today = Math.floor(Date.now() / 1000);
+    let date;
     let compare;
     let difference;
 
     const timeElements = document.querySelectorAll(".date--relative");
 
     for (let timeElement of timeElements) {
-        compare = Math.floor(new Date(timeElement.getAttribute("datetime")).getTime() / 1000);
+        date = new Date(timeElement.getAttribute("datetime"));
+        compare = Math.floor(date.getTime() / 1000);
         difference = Math.abs(compare - today);
-        timeElement.setAttribute("title", timeElement.innerHTML);
+
+        timeElement.setAttribute("title", date.toString());
 
         if (difference < (minute * 2)) {
             timeElement.innerHTML = "just moments ago";
