@@ -75,7 +75,7 @@ In <time datetime="2018-02">February 2018</time>, after having made a difficult,
 
 If you talk someone who knows me well, they will tell you I’m absolutely obsessed with the web, and it’s <del>almost</del> unhealthy. It’s <del>almost</del> sad how excited I can get about semantic code, web standards and best practices, code architecture and organistion, sharing ideas, open source and collaboration, clean and accessible user interfaces, typography, user experience, *[IndieWeb](https://indieweb.org/principles){:rel="external"}*, oh, and *CSS*.
 
-I also play the piano, bake bread from time to time, and play Dungeons & Dragons here and there.
+I also play the piano, bake bread from time to time, and DM Dungeons & Dragons here and there.
 
 
 {% include_cached content/heading.liquid title='Want to get in touch?' id='contact' %}
