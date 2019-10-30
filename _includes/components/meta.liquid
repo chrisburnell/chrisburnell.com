@@ -553,5 +553,5 @@
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
     <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
     <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
-    <label for="meta-toggle" role="button" class="delta" title="Expand/Collape" aria-hidden="true">…</label>
+    <label for="meta-toggle" role="button" class="delta" title="Expand/Collapse" aria-hidden="true">…</label>
 </div>
