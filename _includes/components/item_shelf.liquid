@@ -79,11 +79,13 @@
             {%- endfor -%}
             {%- if page.date -%}
                 {%- if page.category == 'beer' -%}
-                    <div><time class="date  date--relative  dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%d %B %Y' }}</time></div>
+                    <div> <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></div>
                 {%- elsif page.category == 'like' -%}
-                    <span><a href="{{ page.url }}"><time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></a></span>
+                    <span> <a href="{{ page.url }}"><time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></a></span>
+                {%- elsif page.release -%}
+                    <span> (<time class="date  dt-published" datetime="{{ page.release | date_to_xmlschema }}">{{ page.release | date: '%Y' }}</time>)</span>
                 {%- else -%}
-                    <span>(<time class="date  date--relative  dt-published" datetime="{{ page.release | default: page.date | date_to_xmlschema }}">{{ page.release | default: page.date | date: '%Y' }}</time>)</span>
+                    <span> (<time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
                 {%- endif -%}
             {%- endif -%}
         </div>
