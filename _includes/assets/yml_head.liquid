@@ -105,6 +105,10 @@
     {% assign meta_image = page.banner | last | prepend: '/images/banners/' | absolute_url %}
 {% elsif page.banner_mobile %}
     {% assign meta_image = page.banner_mobile | last | prepend: '/images/banners/' | absolute_url %}
+{% elsif page.cover contains 'http' %}
+    {% assign meta_image = page.cover %}
+{% elsif page.cover %}
+    {% assign meta_image = page.cover | prepend: '/' | prepend: page.category | prepend: '/static/' | absolute_url %}
 {% elsif page.page_class contains 'about' %}
     {% assign meta_image = '/images/content/rachel-and-i.jpg' | absolute_url %}
 {% endif %}
