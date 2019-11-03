@@ -57,7 +57,7 @@
             {% if page.category == 'beer' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% elsif page.category == 'like' %}
-                <a href="{{ link }}" rel="external"><cite class="break-anywhere">Liked: {{ link_title }}</cite></a>
+                <a href="{{ page.url }}"><cite class="break-anywhere">Liked: {{ link_title }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% elsif page.category == 'tv' %}
                 <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
             {% else %}
@@ -78,10 +78,10 @@
                 {%- endif -%}
             {%- endfor -%}
             {%- if page.date -%}
-                {%- if page.category == 'beer' -%}
-                    <div> <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></div>
-                {%- elsif page.category == 'like' -%}
-                    <span> <a href="{{ page.url }}"><time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></a></span>
+                {%- if page.category == 'beer' or page.category == 'like' -%}
+                    <div>
+                        <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time>
+                    </div>
                 {%- elsif page.release -%}
                     <span> (<time class="date  dt-published" datetime="{{ page.release | date_to_xmlschema }}">{{ page.release | date: '%Y' }}</time>)</span>
                 {%- else -%}
@@ -100,7 +100,7 @@
         {% if content != empty %}
             <details>
                 {% if page.rating and page.rating == 'Parti Pris' %}
-                    <summary><em>Parti Pris</em></summary>
+                    <summary><strong class="delta">Parti Pris</strong></summary>
                 {% elsif page.rating %}
                     <summary><data class="p-rating  rating  delta" value="{{ page.rating }}"> </data></summary>
                 {% else %}
@@ -110,7 +110,7 @@
             </details>
         {% endif %}
         {% if content == empty and page.rating and page.rating == 'Parti Pris' %}
-            <data value="Parti Pris"><em>Parti Pris</em></data>
+            <strong class="delta">Parti Pris</strong>
         {% elsif content == empty and page.rating %}
             <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
         {% endif %}

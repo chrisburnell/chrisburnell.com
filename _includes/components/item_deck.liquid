@@ -166,10 +166,10 @@
                     <data class="badges" value="{{ page.badges.size }}">{% include content/emoji.liquid emoji='🏅' %} Earned {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}.</data>
                 {% endif %}
                 {% if page.rating and page.rating == 'Parti Pris' %}
-                    <data value="Parti Pris" hidden aria-hidden="true">Parti Pris</data>
+                    <strong class="delta">Parti Pris</strong>
                 {% elsif page.rating %}
                     <div>
-                        <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
+                        <data class="p-rating  rating  delta" value="{{ page.rating }}" title="{{ page.rating }}/5"> </data>
                         <data class="p-worst" hidden aria-hidden="true">0</data>
                         <data class="p-best" hidden aria-hidden="true">5</data>
                     </div>

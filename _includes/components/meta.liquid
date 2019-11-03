@@ -363,10 +363,10 @@
         <div>
             {% include content/emoji.liquid emoji='✨' %}
             {% if page.rating == 'Parti Pris' %}
-                <strong class="p-rating  delta">Parti Pris</strong>
+                <strong class="delta">Parti Pris</strong>
             {% else %}
                 <span>I rate it</span>
-                <data class="p-rating  rating  delta" value="{{ page.rating }}"> </data>
+                <data class="p-rating  rating  delta" value="{{ page.rating }}" title="{{ page.rating }}/5"> </data>
                 <data class="p-worst" hidden aria-hidden="true">0</data>
                 <data class="p-best" hidden aria-hidden="true">5</data>
             {% endif %}
