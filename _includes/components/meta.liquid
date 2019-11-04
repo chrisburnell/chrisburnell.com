@@ -507,7 +507,7 @@
         <div class="posting-method">
             {% include content/emoji.liquid emoji='✍️' %}
             <span>posted using</span>
-            {% if page.posting_method contains 'http' %}
+            {% if page.posting_method contains '://' %}
                 <a href="{{ page.posting_method }}" rel="external">{{ posting_method_by_link | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
             {% else %}
                 <strong>{{ posting_method_by_link | default: page.posting_method }}</strong>
