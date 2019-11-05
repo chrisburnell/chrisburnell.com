@@ -55,13 +55,16 @@
     <div class="h-cite{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}">
         <h2 class="delta">
             {% if page.category == 'beer' %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>
             {% elsif page.category == 'like' %}
-                <a href="{{ page.url }}"><cite class="break-anywhere">Liked: {{ link_title }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="break-anywhere">Liked: {{ link_title }}</cite></a>
             {% elsif page.category == 'tv' %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite></a>
             {% else %}
-                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>{% if link and page.mf_property %} <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>{% endif %}
+                <a href="{{ page.url }}"><cite class="p-name  p-summary">{{ page.title | strip_html }}</cite></a>
+            {% endif %}
+            {% if link and page.mf_property %}
+                <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>
             {% endif %}
         </h2>
         <div>
