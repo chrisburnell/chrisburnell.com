@@ -90,7 +90,7 @@ With these keys we can calculate their respective frequencies:
 In order to quell any feverish posting on my part, *as unlikely as that may be*, I am limiting the highest value for the sparkline arbitrarily to <var>12</var>. This prevents clarity from being lost at the bottom end of the visual sparkline and limits the tunes that are generated from varying too wildly or playing notes which are unpleasant or [imperceptible](https://en.wikipedia.org/wiki/Hearing_range){:rel="external"}.
 
 
-{% include content/heading.liquid title='money = [mouth, mouth = money][0];' id='put-your-money-where-your-mouth-is' %}
+{% include content/heading.liquid title='[money, mouth] = [mouth, money];' id='put-your-money-where-your-mouth-is' %}
 
 <figure>
     <canvas id="sparkline-demo-2" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" tabindex="0"></canvas>
