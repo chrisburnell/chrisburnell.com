@@ -80,17 +80,17 @@
                     <span class="h-cite">{{ author_name }}</span>
                 {%- endif -%}
             {%- endfor -%}
-            {%- if page.date -%}
-                {%- if page.category == 'beer' or page.category == 'like' -%}
+            {% if page.date %}
+                {% if page.category == 'beer' or page.category == 'like' %}
                     <div>
                         <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time>
                     </div>
-                {%- elsif page.release -%}
-                    <span> (<time class="date  dt-published" datetime="{{ page.release | date_to_xmlschema }}">{{ page.release | date: '%Y' }}</time>)</span>
-                {%- else -%}
-                    <span> (<time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}</time>)</span>
-                {%- endif -%}
-            {%- endif -%}
+                {% elsif page.release %}
+                    <time class="date  dt-published" datetime="{{ page.release | date_to_xmlschema }}">({{ page.release | date: '%Y' }})</time>
+                {% else %}
+                    <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">({{ page.date | date: '%Y' }})</time>
+                {% endif %}
+            {% endif %}
         </div>
         {% if page.isbn %}
             <data class="p-uid" value="{{ page.isbn }}" hidden aria-hidden="true">{{ page.isbn }}</data>
