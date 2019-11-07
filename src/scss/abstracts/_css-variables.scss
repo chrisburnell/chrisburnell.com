@@ -62,8 +62,9 @@
         --line-height-#{$key}: #{$value};
     }
 
-    --letter-spacing-default: #{$letter-spacing-default};
-    --letter-spacing-uppercase: #{$letter-spacing-uppercase};
+    @each $key, $value in $letter-spacings {
+        --letter-spacing-#{$key}: #{$value};
+    }
 
     --animation-duration: #{$animation-duration};
     --animation-function: #{$animation-function};

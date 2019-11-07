@@ -206,15 +206,6 @@ $font-sizes: (
 ) !default;
 
 /// @type Map
-/// @prop {String} key - Font Weight Name
-/// @prop {Color} value - Font Weight Value
-/// @see {Mixin} v
-$font-weights: (
-    default: $font-weight-default,
-    bold: $font-weight-bold
-) !default;
-
-/// @type Map
 /// @prop {String} key - Font Stretch Name
 /// @prop {String} value - Font Stretch Value
 /// @see {Mixin} v
@@ -228,6 +219,15 @@ $font-stretches: (
 /// @see {Mixin} v
 $font-variants: (
     default: $font-variant-default
+) !default;
+
+/// @type Map
+/// @prop {String} key - Font Weight Name
+/// @prop {Color} value - Font Weight Value
+/// @see {Mixin} v
+$font-weights: (
+    default: $font-weight-default,
+    bold: $font-weight-bold
 ) !default;
 
 /// @type Map
@@ -247,6 +247,15 @@ $line-heights: (
     small: $line-height-small,
     medium: $line-height-medium,
     code: $line-height-code
+) !default;
+
+/// @type Map
+/// @prop {String} key - Letter Spacing Name
+/// @prop {Number} value - Letter Spacing Value
+/// @see {Mixin} v
+$letter-spacings: (
+    default: $letter-spacing-default,
+    uppercase: $letter-spacing-uppercase
 ) !default;
 
 /// @type Map
