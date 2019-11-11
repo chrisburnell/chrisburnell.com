@@ -49,10 +49,11 @@
 
         {% include components/further_reading.liquid %}
 
-        <hr>
-
-        {% include components/webmentions.liquid %}
-        {% include components/comments.liquid %}
+        {% if page.webmentions == true %}
+            <hr>
+            {% include components/webmentions.liquid %}
+            {% include components/webmentions_button.liquid %}
+        {% endif %}
 
         <hr>
 
