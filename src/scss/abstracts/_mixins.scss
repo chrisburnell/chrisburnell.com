@@ -591,8 +591,12 @@
 ///
 /// Space out elements evenly
 ///
-@mixin owl() {
+@mixin owl($measure: large) {
+    @if not map-has-key($measures, $measure) {
+        @error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
+    }
+
     & > * + * {
-        @include v(margin-top, large);
+        @include v(margin-top, $measure);
     }
 }
