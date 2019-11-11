@@ -140,6 +140,7 @@ defaults:
       type: "drafts"
     values:
       layout: "draft"
+      author: *name
       mf_root: "entry"
   - scope:
       type: "posts"
@@ -149,13 +150,13 @@ defaults:
       mf_root: "entry"
       webmentions: true
   - scope:
-      path: "_posts/articles"
+      path: "_*/articles"
     values:
       category: "article"
       prefix: a
       coil: true
   - scope:
-      path: "_posts/beer"
+      path: "_*/beer"
     values:
       category: "beer"
       layout: "review"
@@ -165,14 +166,14 @@ defaults:
       emoji: "🍺"
       hidden: true
   - scope:
-      path: "_posts/bookmarks"
+      path: "_*/bookmarks"
     values:
       category: "bookmark"
       mf_property: "bookmark-of"
       prefix: h
       emoji: "🔖"
   - scope:
-      path: "_posts/books"
+      path: "_*/books"
     values:
       category: "book"
       layout: "review"
@@ -182,7 +183,7 @@ defaults:
       emoji: "📖"
       ignore: true
   - scope:
-      path: "_posts/chess"
+      path: "_*/chess"
     values:
       category: "chess"
       mf_property: "played-of"
@@ -194,7 +195,7 @@ defaults:
       ignore: true
       titlefree: true
   - scope:
-      path: "_posts/likes"
+      path: "_*/likes"
     values:
       category: "like"
       mf_property: "like-of"
@@ -206,7 +207,7 @@ defaults:
       ignore: true
       titlefree: true
   - scope:
-      path: "_posts/movies"
+      path: "_*/movies"
     values:
       category: "movie"
       layout: "review"
@@ -217,7 +218,7 @@ defaults:
       hidden: true
       ignore: true
   - scope:
-      path: "_posts/music"
+      path: "_*/music"
     values:
       category: "music"
       layout: "review"
@@ -227,20 +228,20 @@ defaults:
       emoji: "🎶"
       ignore: true
   - scope:
-      path: "_posts/notes"
+      path: "_*/notes"
     values:
       category: "note"
       prefix: n
       titlefree: true
   - scope:
-      path: "_posts/pens"
+      path: "_*/pens"
     values:
       category: "pen"
       prefix: p
       emoji: "✒️"
       comments: codepen
   - scope:
-      path: "_posts/podcasts"
+      path: "_*/podcasts"
     values:
       category: "podcast"
       layout: "review"
@@ -251,7 +252,7 @@ defaults:
       hidden: true
       ignore: true
   - scope:
-      path: "_posts/recipes"
+      path: "_*/recipes"
     values:
       category: "recipe"
       layout: "recipe"
@@ -260,13 +261,13 @@ defaults:
       prefix: d
       emoji: "📝"
   - scope:
-      path: "_posts/talks"
+      path: "_*/talks"
     values:
       category: "talk"
       prefix: t
       emoji: "🗣"
   - scope:
-      path: "_posts/tv"
+      path: "_*/tv"
     values:
       category: "tv"
       layout: "review"
