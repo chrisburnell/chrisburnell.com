@@ -79,7 +79,8 @@ footer {
         @include v(margin-left, small);
         @include v(margin-right, small);
         @include v(font-size, small);
-        @include v(text-decoration-width, thin);
+        @include v(text-decoration-thickness, thin);
+        @include v(text-underline-offset, default);
     }
 
     button {

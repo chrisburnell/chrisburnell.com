@@ -67,7 +67,8 @@
             @include will-change(text-decoration-color);
             text-decoration: underline;
             @include v(text-decoration-color, alto);
-            @include v(text-decoration-width, thin);
+            @include v(text-decoration-thickness, thin);
+            @include v(text-underline-offset, default);
         }
     }
     a:hover,

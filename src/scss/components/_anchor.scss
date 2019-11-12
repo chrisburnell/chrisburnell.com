@@ -7,7 +7,8 @@ a {
     %heading-elements & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
-        @include v(text-decoration-width, thin);
+        @include v(text-decoration-thickness, thin);
+        @include v(text-underline-offset, default);
     }
 
     .dark-background & {

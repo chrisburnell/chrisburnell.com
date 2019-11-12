@@ -355,7 +355,8 @@ $property-map: (
     right: measure,
     stroke: color,
     text-decoration-color: color,
-    text-decoration-width: border-width,
+    text-decoration-thickness: border-width,
+    text-underline-offset: border-width,
     width: measure,
     unicode-range: unicode-range,
     z-index: z-index
