@@ -1,0 +1,111 @@
+////
+/// Anchor
+/// @group components
+////
+
+a {
+    %heading-elements & {
+        @include v(color, kaiser);
+        @include v(text-decoration-color, transparent);
+        @include v(text-decoration-width, thin);
+    }
+
+    .dark-background & {
+        @include v(color, white);
+        @include v(text-decoration-color, dove);
+
+        &:hover,
+        &:focus,
+        &:active {
+            @include v(text-decoration-color, canada);
+        }
+    }
+
+    // hide extra content, text targetted only to screen readers
+    :not(.cf-wrapper) > & span:not([class]) {
+        @include hidden;
+    }
+}
+
+// Fancy gradient anchor text
+.colourful-anchor {
+    &:hover,
+    &:focus,
+    &:active {
+        background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-canada));
+        background-clip: text;
+        text-fill-color: transparent;
+        box-decoration-break: clone;
+        text-shadow: none;
+    }
+}
+
+// Title Anchors inside Headings
+.title-anchor {
+    display: inline-block;
+
+    &,
+    &:link {
+        @include v(text-decoration-color, transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        @include v(color, kaiser);
+    }
+}
+
+// Fragment Anchors inside Headings
+.fragment-anchor {
+    @include case(lowercase);
+    @include font-family(monospace);
+    @include v(color, dove);
+    display: none;
+    visibility: hidden;
+    @include v(padding-left, small);
+    @include v(padding-right, small);
+    position: absolute;
+    top: var(--border-width-thin);
+    right: calc(var(--measure-small) * -1);
+    @include v(font-size, small);
+    @include v(font-weight, bold);
+    @include v(line-height, default);
+    text-shadow: none;
+
+    %heading-elements:hover &,
+    %heading-elements:focus &,
+    %heading-elements:active &,
+    &:target {
+        display: inline-block;
+        visibility: visible;
+    }
+}
+
+// Related Anchors
+.related-anchor::after {
+    // NO-BREAK SPACE, RIGHTWARDS ARROW
+    content: " →";
+}
+
+// Anchor Target Animation
+%heading-elements,
+sup,
+li {
+    &[id] {
+        &:target {
+            animation: anchor-target var(--animation-duration) var(--animation-function);
+            @at-root {
+                @keyframes anchor-target {
+                    0%,
+                    50% {
+                        @include v(background-color, highlight);
+                    }
+                    100% {
+                        @include v(background-color, transparent);
+                    }
+                }
+            }
+        }
+    }
+}
