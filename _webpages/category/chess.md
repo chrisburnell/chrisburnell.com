@@ -1,6 +1,9 @@
 ---
 page_class: page--chess
 
+redirect_from:
+  - category/chess.html
+
 title: Chess Games
 lede: Tracking chess games I've played.
 

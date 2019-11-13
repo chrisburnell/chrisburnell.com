@@ -3,7 +3,7 @@ page_class: page--tags
 searchable: no-content
 
 redirect_from:
-- tag.html
+  - tag.html
 
 title: Tags
 lede: A list of tags and their counterpart posts.

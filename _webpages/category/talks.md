@@ -2,10 +2,11 @@
 page_class: page--talks
 
 redirect_from:
-- talk.html
-- slides.html
-- presentations.html
-- category/talk.html
+  - talk.html
+  - slides.html
+  - presentations.html
+  - category/talk.html
+  - category/talks.html
 
 title: Talks
 lede: All of my talks.

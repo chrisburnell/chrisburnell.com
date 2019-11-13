@@ -2,8 +2,9 @@
 page_class: page--likes
 
 redirect_from:
-- like.html
-- category/like.html
+  - like.html
+  - category/like.html
+  - category/likes.html
 
 title: Likes
 lede: Stuff from around the web I've liked, believe it or not!

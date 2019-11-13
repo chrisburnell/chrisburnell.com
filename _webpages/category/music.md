@@ -2,9 +2,9 @@
 page_class: page--music
 
 redirect_from:
-- album.html
-- albums.html
-- category/music.html
+  - album.html
+  - albums.html
+  - category/music.html
 
 title: Music
 lede: Reviewing music albums one-by-one.

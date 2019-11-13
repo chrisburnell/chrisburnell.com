@@ -2,8 +2,9 @@
 page_class: page--podcasts
 
 redirect_from:
-- podcast.html
-- category/podcast.html
+  - podcast.html
+  - category/podcast.html
+  - category/podcasts.html
 
 title: Podcasts
 lede: Tracking what I listen to.

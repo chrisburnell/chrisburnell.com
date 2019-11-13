@@ -139,9 +139,10 @@ defaults:
   - scope:
       type: "drafts"
     values:
-      layout: "draft"
+      layout: "post"
       author: *name
       mf_root: "entry"
+      webmentions: true
   - scope:
       type: "posts"
     values:

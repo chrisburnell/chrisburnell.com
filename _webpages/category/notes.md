@@ -2,8 +2,9 @@
 page_class: page--notes
 
 redirect_from:
-- note.html
-- category/note.html
+  - note.html
+  - category/note.html
+  - category/notes.html
 
 title: Notes
 lede: All of my notes.

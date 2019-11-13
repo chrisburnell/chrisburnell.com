@@ -2,8 +2,9 @@
 page_class: page--beer
 
 redirect_from:
-- beers.html
-- category/beer.html
+  - beers.html
+  - category/beer.html
+  - category/beers.html
 
 title: Beer
 lede: Reviewing beers, pint-by-pint.

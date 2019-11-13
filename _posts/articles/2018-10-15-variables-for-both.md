@@ -30,12 +30,12 @@ I won’t pretend I’m writing the introduction to a family recipe for chocolat
 For the purposes of this example, I’ll create a simple mapping for `z-index`. Let’s start by setting up a variable for each level of `z-index` that we want to use. This can help remove the mental overhead of setting values for this property, as it’s generally obvious what level an element should live at when they’re named in a way that makes sense to you (and your team). *This part is optional.*
 
 {% highlight scss %}
-$z-index-below: -1 !default;
-$z-index-root: 0 !default;
-$z-index-default: 1 !default;
-$z-index-above: 2 !default;
-$z-index-modal: 3 !default;
-$z-index-dialog: 4 !default;
+$z-index-below:       -1 !default;
+$z-index-root:         0 !default;
+$z-index-default:      1 !default;
+$z-index-above:        2 !default;
+$z-index-modal:        3 !default;
+$z-index-dialog:       4 !default;
 $z-index-notification: 5 !default;
 {% endhighlight %}
 
@@ -43,12 +43,12 @@ And the next step is to create a [Map](https://sass-lang.com/documentation/file.
 
 {% highlight scss %}
 $z-indexes: (
-    below: $z-index-below,
-    root: $z-index-root,
-    default: $z-index-default,
-    above: $z-index-above,
-    modal: $z-index-modal,
-    dialog: $z-index-dialog,
+    below:        $z-index-below,
+    root:         $z-index-root,
+    default:      $z-index-default,
+    above:        $z-index-above,
+    modal:        $z-index-modal,
+    dialog:       $z-index-dialog,
     notification: $z-index-notification
 ) !default;
 {% endhighlight %}
@@ -69,12 +69,12 @@ Additionally, because we’re using SCSS, and to keep our code <abbr title="Don�
 
 {% highlight css %}
 :root {
-    --z-index-below: -1;
-    --z-index-root: 0;
-    --z-index-default: 1;
-    --z-index-above: 2;
-    --z-index-modal: 3;
-    --z-index-dialog: 4;
+    --z-index-below:       -1;
+    --z-index-root:         0;
+    --z-index-default:      1;
+    --z-index-above:        2;
+    --z-index-modal:        3;
+    --z-index-dialog:       4;
     --z-index-notification: 5;
 }
 {% endhighlight %}
@@ -111,11 +111,12 @@ $measures: (
 {% highlight css %}
 :root {
     --opacity-alpha: 0.9;
-    --opacity-beta: 0.6;
+    --opacity-beta:  0.6;
     --opacity-gamma: 0.3;
-    --measure-small: 1rem;
+
+    --measure-small:  1rem;
     --measure-medium: 2rem;
-    --measure-large: 4rem;
+    --measure-large:  4rem;
 }
 {% endhighlight %}
 

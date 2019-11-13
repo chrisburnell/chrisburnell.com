@@ -2,8 +2,9 @@
 page_class: page--articles
 
 redirect_from:
-- article.html
-- category/article.html
+  - article.html
+  - category/article.html
+  - category/articles.html
 
 title: Articles
 lede: All of my self-authored articles.

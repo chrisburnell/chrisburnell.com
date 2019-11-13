@@ -2,8 +2,8 @@
 page_class: page--tv
 
 redirect_from:
-- television.html
-- category/tv.html
+  - television.html
+  - category/tv.html
 
 title: TV Shows
 lede: Tracking what I watch.

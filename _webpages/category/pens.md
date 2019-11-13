@@ -2,8 +2,9 @@
 page_class: page--pens
 
 redirect_from:
-- pen.html
-- category/pen.html
+  - pen.html
+  - category/pen.html
+  - category/pens.html
 
 title: Pens
 lede: All of my Pens.

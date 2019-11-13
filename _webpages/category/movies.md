@@ -2,8 +2,9 @@
 page_class: page--movies
 
 redirect_from:
-- movie.html
-- category/movie.html
+  - movie.html
+  - category/movie.html
+  - category/movies.html
 
 title: Movies
 lede: Tracking what I watch.

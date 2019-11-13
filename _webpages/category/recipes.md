@@ -2,8 +2,9 @@
 page_class: page--recipes
 
 redirect_from:
-- recipe.html
-- category/recipe.html
+  - recipe.html
+  - category/recipe.html
+  - category/recipes.html
 
 title: Recipes
 lede: All of my recipes.

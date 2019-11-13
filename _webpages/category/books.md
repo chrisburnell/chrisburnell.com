@@ -2,11 +2,12 @@
 page_class: page--books
 
 redirect_from:
-- book.html
-- bookshelf.html
-- read.html
-- reading.html
-- category/book.html
+  - book.html
+  - bookshelf.html
+  - read.html
+  - reading.html
+  - category/book.html
+  - category/books.html
 
 title: Bookshelf
 lede: Tracking books I've read, am reading, and want to read.

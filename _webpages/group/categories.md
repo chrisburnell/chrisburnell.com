@@ -3,7 +3,7 @@ page_class: page--categories
 searchable: no-content
 
 redirect_from:
-- category.html
+  - category.html
 
 title: Categories
 lede: A list of categories and their counterpart posts.

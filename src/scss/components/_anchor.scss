@@ -96,6 +96,7 @@ li {
     &[id] {
         &:target {
             animation: anchor-target var(--animation-duration) var(--animation-function);
+
             @at-root {
                 @keyframes anchor-target {
                     0%,

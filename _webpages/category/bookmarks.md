@@ -2,10 +2,11 @@
 page_class: page--bookmarks
 
 redirect_from:
-- bookmark.html
-- link.html
-- links.html
-- category/bookmark.html
+  - bookmark.html
+  - link.html
+  - links.html
+  - category/bookmark.html
+  - category/bookmarks.html
 
 title: Bookmarks
 lede: All of my bookmarks.
