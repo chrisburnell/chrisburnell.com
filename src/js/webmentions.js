@@ -73,7 +73,7 @@
             loadWebmentions();
         }
         // only if the button still exists should we hide the button
-        if (WEBMENTIONS_BUTTON !== null && WEBMENTIONS_BUTTON.getAttribute("hidden") !== "true") {
+        if (WEBMENTIONS_BUTTON !== null) {
             WEBMENTIONS_BUTTON.setAttribute("aria-pressed", "true");
             WEBMENTIONS_BUTTON.setAttribute("aria-expanded", "true");
             WEBMENTIONS_BUTTON.setAttribute("hidden", true);

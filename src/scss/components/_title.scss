@@ -17,6 +17,7 @@
 .title--success,
 .title--error {
     width: auto;
+    align-self: flex-start;
     display: inline-block;
     @include v(padding, small);
 }
