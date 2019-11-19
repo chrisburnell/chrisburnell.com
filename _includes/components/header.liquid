@@ -1,4 +1,4 @@
-<header class="wrap" role="banner">
+<header class="wrap{% if include.longform == true %}  hidden{% endif %}" role="banner">
 
     <a rel="home" class="logo" href="/" title="{{ site.title }}">
         {% include content/svg.liquid type='raven' title=site.title %}

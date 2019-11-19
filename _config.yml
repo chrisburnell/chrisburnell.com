@@ -153,6 +153,7 @@ defaults:
   - scope:
       path: "_*/articles"
     values:
+      longform: true
       category: "article"
       prefix: a
       coil: true

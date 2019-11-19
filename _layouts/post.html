@@ -1,8 +1,8 @@
 {% include components/head.liquid %}
-{% include components/header.liquid %}
+{% include components/header.liquid longform=page.longform %}
 
 
-<main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
+<main class="wrap{% if page.longform == true %}  stretch{% endif %}  h-{{ page.mf_root | default: 'entry' }}" role="main">
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}" id="article">
