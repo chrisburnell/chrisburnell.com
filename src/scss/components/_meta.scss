@@ -92,6 +92,7 @@
     }
 
     label {
+        display: none;
         @include v(background-color, black--delta);
         padding: 0.1rem var(--measure-small);
         @include border-radius(thin);
@@ -106,6 +107,10 @@
         &:active {
             @include v(color, canada);
         }
+    }
+
+    div + div ~ label {
+        display: inline-block;
     }
 }
 
