@@ -11,6 +11,9 @@
     {% if page.next.url %}
         <link rel="next" href="{{ page.next.url }}">
     {% endif %}
+    {% for link in page.redirect_from %}
+        <link rel="redirect_from" href="{{ site.live_url | append: '/' | append: link | replace: '.html', '' }}">
+    {% endfor %}
     <!-- Twitter Microdata -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="{{ site.author.twitter | prepend: '@' }}">

@@ -12,6 +12,15 @@
               .getAttribute("href")
               .replace(/\/?$/, "")
         : null;
+    let REDIRECT_FROM_URLS = [];
+    const REDIRECT_FROM_LINKS = document.querySelectorAll('link[rel="redirect_from"]') ? document.querySelectorAll('link[rel="redirect_from"]') : [];
+    for (let link of REDIRECT_FROM_LINKS) {
+        REDIRECT_FROM_URLS.push(
+            link
+                .getAttribute("href")
+                .replace(/\/?$/, "")
+        );
+    }
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
     const WEBMENTIONS_INPUT = document.querySelector(".js-webmentions-input");
@@ -41,7 +50,11 @@
 
     let loadWebmentions = () => {
         if (webmentionsLoaded === false) {
-            fetch(`https://webmention.io/api/mentions?jsonp&target[]=${CANONICAL_URL}&target[]=${CANONICAL_URL}/`)
+            let fetchUrl = `https://webmention.io/api/mentions?jsonp&target[]=${CANONICAL_URL}&target[]=${CANONICAL_URL}/`;
+            for (let link of REDIRECT_FROM_URLS) {
+                fetchUrl += `&target[]=${link}`;
+            }
+            fetch(fetchUrl)
                 .then(helpers.getFetchResponse)
                 .then(response => response.json())
                 .then(data => {
