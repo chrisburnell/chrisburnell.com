@@ -191,11 +191,11 @@ defaults:
       mf_property: "played-of"
       prefix: c
       emoji: "♟"
+      titlefree: true
       sitemap:
         exclude: true
       hidden: true
       ignore: true
-      titlefree: true
   - scope:
       path: "_*/likes"
     values:
@@ -203,11 +203,11 @@ defaults:
       mf_property: "like-of"
       prefix: f
       emoji: "❤️"
+      titlefree: true
       sitemap:
         exclude: true
       hidden: true
       ignore: true
-      titlefree: true
   - scope:
       path: "_*/movies"
     values:
