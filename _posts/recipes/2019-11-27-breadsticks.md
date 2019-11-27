@@ -29,6 +29,8 @@ authors:
     link: https://tastesbetterfromscratch.com/homemade-olive-garden-breadsticks
 hidden: true
 ignore: true
+redirect_from:
+  - recipe/breaksticks.html # stupid Twitter typo
 ---
 
 0. Add {% include content/ingredient.liquid id="warm water" %}, {% include content/ingredient.liquid id="active dry yeast" text="yeast" %} and ½ tsp of the {% include content/ingredient.liquid id="granulated sugar, divided" text="sugar" %} to the bowl of a stand mixer and stir gently. Allow to rest for 10 minutes. The {% include content/ingredient.liquid id="active dry yeast" text="yeast" %} should "proof" during this time, meaning the water mixture will get slightly foamy looking, which confirms the yeast is working. If this doesn't happen, your {% include content/ingredient.liquid id="active dry yeast" text="yeast" %} is not fresh, or the water was too hot.
