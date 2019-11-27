@@ -76,6 +76,10 @@
 
     small.strong {
         display: flex;
+
+        a:not(:first-of-type) {
+            margin-left: 1ex;
+        }
     }
 
     .comma {
