@@ -87,7 +87,7 @@
                             {%- for person in site.data.people -%}
                                 {%- for person_link in person.link -%}
                                     {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
-                                        {%- assign stored_person_link = person_link -%}
+                                        {%- assign stored_person_link = 'https://' | append: person_link -%}
                                         {%- assign reply_target = person | map: 'name' | first -%}
                                     {%- endif -%}
                                 {%- endfor -%}
@@ -116,7 +116,7 @@
                     {%- endif -%}
                     {% include content/emoji.liquid emoji='↩️' %}
                     In reply to
-                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ in_reply_to_link }}">{{ reply }}</data>
+                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ stored_person_link | default: in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}
                 {% if page.emoji %}

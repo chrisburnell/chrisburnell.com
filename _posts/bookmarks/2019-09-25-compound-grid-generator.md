@@ -5,8 +5,5 @@ lede: "A little tool to generate compound grids by Michelle Barker. Enter the nu
 bookmark_of:
   title: ""
   link: https://codepen.io/michellebarker/full/zYOMYWv
-  authors:
-    - name: ""
-      link:
 posting_method: https://omnibear.com
 ---

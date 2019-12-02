@@ -68,7 +68,7 @@
             {%- for author in authors -%}
                 {%- assign author_name = author.name | default: author | strip -%}
                 {%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
-                {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | default: null -%}
+                {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', '' | default: null -%}
                 {% unless forloop.first %}<span class="comma">,</span>{% endunless %}
                 {%- if author_link -%}
                     <a class="h-cite" href="{{ author_link }}" title="{{ author_name }}" rel="external">{{ author_name }}</a>
@@ -162,14 +162,15 @@
                     {%- for person in site.data.people -%}
                         {%- for person_link in person.link -%}
                             {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
-                                {%- assign stored_person_link = person_link -%}
+                                {%- assign stored_person_link = 'https://' | append: person_link -%}
                                 {%- assign reply_target = person | map: 'name' -%}
+                                <!-- IS THIS THING ON?!?!?! -->
                             {%- endif -%}
                         {%- endfor -%}
                     {%- endfor -%}
                 {%- endif -%}
             {%- endunless -%}
-            <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_link }}"{% unless in_reply_to_link contains site.url %} rel="external"{% endunless %}>
+            <a class="h-cite  u-in-reply-to" href="{{ stored_person_link | default: in_reply_to_link }}"{% unless in_reply_to_link contains site.url %} rel="external"{% endunless %}>
                 {% if in_reply_to_title != null and in_reply_to_title != in_reply_to_link %}
                     {{ in_reply_to_title }}
                     <em>by</em>
@@ -505,7 +506,7 @@
             {% include content/emoji.liquid emoji='✍️' %}
             <span>posted using</span>
             {% if page.posting_method contains '://' %}
-                <a href="{{ page.posting_method }}" rel="external">{{ posting_method_by_link | default: page.posting_method | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
+                <a href="{{ page.posting_method }}" rel="external">{{ posting_method_by_link | default: page.posting_method | replace: 'www.', '' }}</a>
             {% else %}
                 <strong>{{ posting_method_by_link | default: page.posting_method }}</strong>
             {% endif %}

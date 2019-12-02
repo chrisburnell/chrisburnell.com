@@ -72,7 +72,7 @@
             {%- for author in authors -%}
                 {%- assign author_name = author.name | default: author | strip -%}
                 {%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
-                {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | default: null -%}
+                {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', 'http' | default: null -%}
                 {% unless forloop.first %}, {% endunless %}
                 {%- if author_link -%}
                     <a class="h-cite" href="{{ author_link }}" title="" rel="external">{{ author_name }}</a>
