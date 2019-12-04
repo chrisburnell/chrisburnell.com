@@ -126,9 +126,7 @@
                     {% include content/emoji.liquid emoji='📅' %}
                 {% endif %}
                 {% if page.banner or page.banner_mobile or page.photo or page.cover or page.content contains '<img' %}
-                    {% unless page.mf_root == 'review' %}
-                        {% include content/emoji.liquid emoji='🖼️' %}
-                    {% endunless %}
+                    {% include content/emoji.liquid emoji='🖼️' %}
                 {% endif %}
                 {% if page.reacji %}
                     <span class="emoji  p-summary  e-content">{{ page.reacji }}</span>
