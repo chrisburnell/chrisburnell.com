@@ -193,7 +193,7 @@
                 categoryCheck = item.category.toLowerCase().indexOf(queryFormatted) > -1;
 
                 if (item.category == "beer") {
-                    item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<data class="rating" value="${item.rating}"> </data>` : ``);
+                    item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
                 }
                 else if (item.category == "book") {
                     item.lede = `Book by ${item.authors}.` + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);

@@ -62,17 +62,8 @@
         width: 100%;
     }
 
-    .deck &,
-    .shelf & {
-        display: inline-block;
-    }
-
     .deck & {
         @include v(margin-top, small);
-    }
-
-    details summary & {
-        display: inline-block !important;
     }
 }
 
