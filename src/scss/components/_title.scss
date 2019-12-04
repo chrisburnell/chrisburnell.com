@@ -12,30 +12,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
 
-    .stretch & {
-        height: calc(90vh - var(--measure-large));
-        position: relative;
+.title--tall {
+    height: calc(90vh - var(--measure-large));
+    position: relative;
 
-        &::after {
-            content: "";
-            @include v(background-color, raven);
-            display: block;
-            position: absolute;
-            top: calc(var(--measure-large) * -1);
-            bottom: 0;
-            left:  -100%;
-            right: -100%;
-            @include z-index(root);
-        }
+    &::after {
+        content: "";
+        @include v(background-color, raven);
+        display: block;
+        position: absolute;
+        top: calc(var(--measure-large) * -1);
+        bottom: 0;
+        left:  -100%;
+        right: -100%;
+        @include z-index(root);
+    }
 
-        span {
-            @include v(color, white);
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            @include z-index(default);
-        }
+    span {
+        @include v(color, white);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include z-index(default);
     }
 }
 
