@@ -8,7 +8,7 @@
         {%- assign banners_mobile = banners_mobile | sort -%}
     {%- endif -%}
     {%- assign cover = page.cover | default: site.emptyArray -%}
-    {% if page.longform == true %}
+    {% if page.longform == true and (banners != empty or banners_mobile != empty) %}
         <style>
             .title--tall::after {
                 background-color: var(--color-transparent);
