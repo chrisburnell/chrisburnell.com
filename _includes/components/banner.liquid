@@ -11,7 +11,9 @@
     {% if page.longform == true %}
         <style>
             .title--tall::after {
-                background-image: url("/images/banners/{{ banners.last | default: banners_mobile.last | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}");
+                background-color: var(--color-transparent);
+                background-image: url("/images/banners/{{ banners.last | default: banners_mobile.last | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}");{% if page.banner_contain %}
+                background-size: contain;{% endif %}
             }
         </style>
     {% else %}

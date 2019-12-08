@@ -7,6 +7,7 @@ tags:
 banner:
   - death-to-cols.png
   - death-to-cols@2x.png
+banner_contain: true
 ---
 
 If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the concept of a CSS grid system. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.

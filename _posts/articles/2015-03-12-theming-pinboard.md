@@ -9,6 +9,7 @@ banner:
   - theming-pinboard.png
 banner_mobile:
   - theming-pinboard_mobile.png
+longform: false
 comments: disqus
 twitter: true
 syndicate_to:

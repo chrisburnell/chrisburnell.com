@@ -22,6 +22,7 @@
         content: "";
         @include v(background-color, raven);
         background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
         display: block;
         position: absolute;
