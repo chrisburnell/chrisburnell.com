@@ -8,37 +8,45 @@
         {%- assign banners_mobile = banners_mobile | sort -%}
     {%- endif -%}
     {%- assign cover = page.cover | default: site.emptyArray -%}
-    <picture>
-        {% if banners != empty and banners_mobile != empty %}
-            <source media="(min-width: 501px)"
-                    sizes="calc(100vw - 18.375em)"
-                    srcset="{% for banner in banners %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
-                    type="image/webp" />
-            <source sizes="calc(100vw - 2.5em)"
-                    srcset="{% for banner in banners_mobile %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
-                    type="image/webp" />
-            <source media="(min-width: 501px)"
-                    sizes="calc(100vw - 18.375em)"
-                    srcset="{% for banner in banners %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}" />
-            <img    alt="" class="banner  u-photo  u-featured" role="presentation"
-                    src="/images/banners/{{ banners_mobile | first }}"
-                    sizes="calc(100vw - 2.5em)"
-                    srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
-        {% elsif banners != empty %}
-            <source srcset="{% for banner in banners %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
-                    type="image/webp" />
-            <img    alt="" class="banner  u-photo  u-featured" role="presentation"
-                    src="/images/banners/{{ banners | first }}"
-                    srcset="{% for banner in banners %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
-        {% elsif banners_mobile != empty %}
-            <source srcset="{% for banner in banners_mobile %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
-                    type="image/webp" />
-            <img    alt="" class="banner  u-photo  u-featured" role="presentation"
-                    src="/images/banners/{{ banners_mobile | first }}"
-                    srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
-        {% elsif cover != empty %}
-            <img    alt="" class="banner  banner--cover  u-photo  u-featured"
-                    src="{{ site.static_url | append: page.category | append: '/' | append: cover }}">
-        {% endif %}
-    </picture>
+    {% if page.longform == true %}
+        <style>
+            .title--tall::after {
+                background-image: url("/images/banners/{{ banners.last | default: banners_mobile.last | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }}");
+            }
+        </style>
+    {% else %}
+        <picture>
+            {% if banners != empty and banners_mobile != empty %}
+                <source media="(min-width: 501px)"
+                        sizes="calc(100vw - 18.375em)"
+                        srcset="{% for banner in banners %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                        type="image/webp" />
+                <source sizes="calc(100vw - 2.5em)"
+                        srcset="{% for banner in banners_mobile %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                        type="image/webp" />
+                <source media="(min-width: 501px)"
+                        sizes="calc(100vw - 18.375em)"
+                        srcset="{% for banner in banners %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}" />
+                <img    alt="" class="banner  u-photo  u-featured" role="presentation"
+                        src="/images/banners/{{ banners_mobile | first }}"
+                        sizes="calc(100vw - 2.5em)"
+                        srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+            {% elsif banners != empty %}
+                <source srcset="{% for banner in banners %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                        type="image/webp" />
+                <img    alt="" class="banner  u-photo  u-featured" role="presentation"
+                        src="/images/banners/{{ banners | first }}"
+                        srcset="{% for banner in banners %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+            {% elsif banners_mobile != empty %}
+                <source srcset="{% for banner in banners_mobile %}/images/banners/{{ banner | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                        type="image/webp" />
+                <img    alt="" class="banner  u-photo  u-featured" role="presentation"
+                        src="/images/banners/{{ banners_mobile | first }}"
+                        srcset="{% for banner in banners_mobile %}/images/banners/{{ banner }} {% if banner contains '@' %}{{ banner | split: '@' | last | split: '.' | first }}{% else %}1x{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+            {% elsif cover != empty %}
+                <img    alt="" class="banner  banner--cover  u-photo  u-featured"
+                        src="{{ site.static_url | append: page.category | append: '/' | append: cover }}">
+            {% endif %}
+        </picture>
+    {% endif %}
 {% endif %}

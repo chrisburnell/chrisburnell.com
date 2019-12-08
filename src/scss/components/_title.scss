@@ -15,12 +15,14 @@
 }
 
 .title--tall {
-    height: calc(90vh - var(--measure-large));
+    min-height: calc(50vh - var(--measure-large));
     position: relative;
 
     &::after {
         content: "";
         @include v(background-color, raven);
+        background-position: center;
+        background-size: cover;
         display: block;
         position: absolute;
         top: calc(var(--measure-large) * -1);
