@@ -130,7 +130,7 @@ self.addEventListener("fetch", event => {
     let request = event.request;
     let url = new URL(request.url);
 
-    // Ignore requests which aren"t to my own server
+    // Ignore requests which aren't to my own server
     if (url.origin !== location.origin) {
         return;
     }
@@ -145,7 +145,7 @@ self.addEventListener("fetch", event => {
         return;
     }
 
-    // Set up some Promises
+    // Pink Swear?
     let fetchPromise = event.preloadResponse ? event.preloadResponse : fetch(request);
     let cachePromise = caches.match(request);
 
