@@ -460,6 +460,7 @@
                     </small>
                 {% endif %}
             {%- endfor -%}
+            {%- assign first_syndication = true -%}
             {%- if page.codepen_slug -%}
                 {% if first_syndication %}
                     {% assign first_syndication = false %}
