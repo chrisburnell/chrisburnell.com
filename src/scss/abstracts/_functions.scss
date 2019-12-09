@@ -78,11 +78,10 @@
     $merged: ();
 
     @each $map in $maps {
-      $merged: map-merge($merged, $map);
+        $merged: map-merge($merged, $map);
     }
     @return $merged;
-  }
-
+}
 
 ///
 /// Contrasting Text Color
@@ -275,16 +274,14 @@
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    }
-                    @else {
+                    } @else {
                         $unique-group: ($first, $second);
                         $unique-groups: append($unique-groups, $unique-group);
                     }
                 }
             }
         }
-    }
-    @else if type-of($data) == map {
+    } @else if type-of($data) == map {
         $seen-first: ();
         @each $first-key, $first-value in $data {
             $seen-first: append($seen-first, $first-key);
@@ -309,8 +306,7 @@
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    }
-                    @else {
+                    } @else {
                         $unique-group: (
                             (
                                 $first-key: $first-value
@@ -324,8 +320,7 @@
                 }
             }
         }
-    }
-    @else {
+    } @else {
         @warn "`unique-groups()` expects either a List or Map `$data` parameter.";
         @return false;
     }
