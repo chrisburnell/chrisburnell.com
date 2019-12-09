@@ -46,9 +46,8 @@
                 y = height - data[i] / yStep + 2;
                 dX = (dX + x) / 2;
                 if (y > dY) {
-                    dY = (dY + y) / 3 * 2;
-                }
-                else if (y < dY) {
+                    dY = ((dY + y) / 3) * 2;
+                } else if (y < dY) {
                     dY = (dY + y) / 3;
                 }
                 // ctx.quadraticCurveTo(x, y, dX, dY);

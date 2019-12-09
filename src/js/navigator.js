@@ -18,7 +18,7 @@
         }, 1000);
     };
 
-    let updateNetwork = (event) => {
+    let updateNetwork = event => {
         if (navigator.onLine) {
             console.log("You have regained your network connection.");
             notification.innerHTML = "👍 You have regained your network connection.";
@@ -43,11 +43,9 @@
                 let serviceWorker;
                 if (registration.installing) {
                     serviceWorker = registration.installing;
-                }
-                else if (registration.waiting) {
+                } else if (registration.waiting) {
                     serviceWorker = registration.waiting;
-                }
-                else if (registration.active) {
+                } else if (registration.active) {
                     serviceWorker = registration.active;
                 }
                 if (serviceWorker) {
@@ -78,15 +76,15 @@
         navigator
             .share({
                 title: document.querySelector("title").textContent,
-                url: document.querySelector("link[rel='canonical']").getAttribute("href"),
+                url: document.querySelector("link[rel='canonical']").getAttribute("href")
                 // breaks in iOS, copies text to clipboard instead of URL
                 // text: document.querySelector("meta[name='description']").getAttribute("content")
             })
             .then(() => {
-                console.log("Successfully shared the page")
+                console.log("Successfully shared the page");
             })
-            .catch((error) => {
-                console.log('Error sharing the page', error)
+            .catch(error => {
+                console.log("Error sharing the page", error);
             });
     }
 })();

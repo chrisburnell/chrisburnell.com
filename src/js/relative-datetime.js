@@ -22,7 +22,7 @@
     const rtf = new Intl.RelativeTimeFormat("en", {
         localeMatcher: "best fit", // other values: "lookup"
         numeric: "always", // other values: "auto"
-        style: "long", // other values: "short" or "narrow"
+        style: "long" // other values: "short" or "narrow"
     });
 
     const today = Math.floor(Date.now() / 1000);
@@ -39,30 +39,24 @@
 
         timeElement.setAttribute("title", date.toString());
 
-        if (difference < (minute * 2)) {
+        if (difference < minute * 2) {
             timeElement.innerHTML = "just moments ago";
-        }
-        else if (difference < (hour * 2)) {
+        } else if (difference < hour * 2) {
             minutes = Math.ceil((compare - today) / minute);
             timeElement.innerHTML = rtf.format(minutes, "minute");
-        }
-        else if (difference < (day * 2)) {
+        } else if (difference < day * 2) {
             hours = Math.ceil((compare - today) / hour);
             timeElement.innerHTML = rtf.format(hours, "hour");
-        }
-        else if (difference < (week * 2)) {
+        } else if (difference < week * 2) {
             days = Math.ceil((compare - today) / day);
             timeElement.innerHTML = rtf.format(days, "day");
-        }
-        else if (difference < (month * 2)) {
+        } else if (difference < month * 2) {
             weeks = Math.ceil((compare - today) / week);
             timeElement.innerHTML = rtf.format(weeks, "week");
-        }
-        else if (difference < (year * 2)) {
+        } else if (difference < year * 2) {
             months = Math.ceil((compare - today) / month);
             timeElement.innerHTML = rtf.format(months, "month");
-        }
-        else {
+        } else {
             years = Math.ceil((compare - today) / year);
             timeElement.innerHTML = rtf.format(years, "year");
         }

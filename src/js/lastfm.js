@@ -25,16 +25,16 @@
                 // Success!
                 let datetime = new Date();
                 let playingLabel = "Now Playing <small>🎶</small>";
-                let status = 'playing';
+                let status = "playing";
                 if (data.hasOwnProperty("date")) {
                     datetime.setSeconds(Number(data.date.uts));
                     playingLabel = "Last Played <small>🎵</small>";
-                    status = 'finished';
+                    status = "finished";
                 }
                 datetime = datetime.toISOString();
                 LASTFM_LABEL.innerHTML = `<time datetime="${datetime}">${playingLabel}</time>`;
                 LASTFM_COVER.src = data["image"][1]["#text"] ? data["image"][1]["#text"] : "";
-                if ('connection' in navigator) {
+                if ("connection" in navigator) {
                     if (navigator.connection.saveData) {
                         LASTFM_COVER.src = "";
                     }

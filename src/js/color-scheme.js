@@ -4,7 +4,7 @@
     const STORAGE_KEY = "user-color-scheme";
     const COLOR_SCHEME_KEY = "--color-scheme";
 
-    const schemeToggleButton = document.querySelector(".js-color-scheme-toggle")
+    const schemeToggleButton = document.querySelector(".js-color-scheme-toggle");
     const schemeStatusText = document.querySelector(".js-color-scheme-status");
 
     const getCSSCustomProp = propKey => {

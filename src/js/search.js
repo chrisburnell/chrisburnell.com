@@ -19,8 +19,7 @@
     const JSON_FEED_URL = "/search.json";
     const author = document.querySelector("meta[name=author]").content;
     const rootUrl = document.querySelector("link[rel=self]").href.replace("feed.xml", "");
-    const SEARCH_PAGE_TEMPLATE =
-`<li role="listitem">
+    const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="#">
             <h3 class="delta  title  p-name">{{ title }}</h3>
@@ -29,8 +28,7 @@
         <a class="p-author  h-card" href="${rootUrl}" hidden aria-hidden="true" tabindex="-1">${author}</a>
     </article>
 </li>`;
-    const SEARCH_POST_TEMPLATE =
-`<li role="listitem">
+    const SEARCH_POST_TEMPLATE = `<li role="listitem">
     <article class="h-entry" role="article">
         <a class="u-url" href="#">
             <h3 class="delta  title  p-name"{{ hidden }}>{{ title }}</h3>
@@ -163,8 +161,7 @@
             if (item.lede) {
                 ledeCheck = item.lede.toLowerCase().indexOf(queryFormatted) > -1;
                 item.lede = helpers.truncate(item.lede, 20);
-            }
-            else if (item.category) {
+            } else if (item.category) {
                 item.lede = item.category.charAt(0).toUpperCase() + item.category.slice(1);
             }
 
@@ -194,14 +191,11 @@
 
                 if (item.category == "beer") {
                     item.lede = `Beer by ${item.authors}.` + (item.checkin ? ` Drank at ${item.checkin}.` : ``) + (item.badges ? `<data class="badges" value="${item.badges}"><span class="emoji">🏅</span> Earned ${item.badges} badge${item.badges > 1 ? `s` : ``}.</data>` : ``) + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
-                }
-                else if (item.category == "book") {
+                } else if (item.category == "book") {
                     item.lede = `Book by ${item.authors}.` + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
-                }
-                else if (item.category == "music") {
+                } else if (item.category == "music") {
                     item.lede = `Album by ${item.authors}.` + (item.rating ? `<div><data class="rating" value="${item.rating}"> </data></div>` : ``);
-                }
-                else if (item.category == "talk") {
+                } else if (item.category == "talk") {
                     item.lede = "Talk";
                     if (item.checkin) {
                         item.lede += ` – Given at ${item.checkin}`;
@@ -232,8 +226,8 @@
                 for (let target of people) {
                     if ("mastodon" in target) {
                         for (let target_mastodon of target.mastodon) {
-                            let targetInstance = target_mastodon.split('@')[1];
-                            let targetUsername = target_mastodon.split('@')[0];
+                            let targetInstance = target_mastodon.split("@")[1];
+                            let targetUsername = target_mastodon.split("@")[0];
                             if (item.in_reply_to.includes(targetInstance) && item.in_reply_to.includes(targetUsername)) {
                                 replyTarget = target.name;
                                 break;
@@ -251,12 +245,10 @@
                     if (mastodonInstance) {
                         if (item.in_reply_to.includes("/@")) {
                             mastodonUsername = item.in_reply_to.split("/@")[1].split("/")[0];
-                        }
-                        else if (item.in_reply_to.includes("/users/")) {
+                        } else if (item.in_reply_to.includes("/users/")) {
                             mastodonUsername = item.in_reply_to.split("/users/")[1].split("/")[0];
                         }
-                    }
-                    else if (item.in_reply_to.includes("twitter.com")) {
+                    } else if (item.in_reply_to.includes("twitter.com")) {
                         twitterUsername = item.in_reply_to.split("/status/")[0].split("twitter.com/")[1];
                         for (let target of people) {
                             if ("twitter" in target) {
@@ -268,8 +260,7 @@
                                 }
                             }
                         }
-                    }
-                    else {
+                    } else {
                         for (let target of people) {
                             if ("link" in target) {
                                 for (let target_link of target.link) {
@@ -284,24 +275,19 @@
                 }
                 if (replyTarget) {
                     reply = replyTarget;
-                }
-                else if (mastodonInstance) {
+                } else if (mastodonInstance) {
                     if (mastodonUsername) {
                         reply = `@${mastodonUsername}@${mastodonInstance}`;
-                    }
-                    else {
+                    } else {
                         reply = "a Toot";
                     }
-                }
-                else if (item.in_reply_to.includes("twitter.com")) {
+                } else if (item.in_reply_to.includes("twitter.com")) {
                     if (twitterUsername) {
                         reply = `@${twitterUsername}`;
-                    }
-                    else {
+                    } else {
                         reply = "a Tweet";
                     }
-                }
-                else {
+                } else {
                     reply = item.in_reply_to;
                 }
                 item.lede = `<span class="emoji">↩️</span> In reply to: <span class="h-cite  p-in-reply-to">${reply}</span><br>${item.lede}`;
@@ -309,11 +295,9 @@
             if (item.tags) {
                 if (queryFormatted.substring(0, 4) == "tag:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(4)) > -1;
-                }
-                else if (queryFormatted.substring(0, 5) == "tags:") {
+                } else if (queryFormatted.substring(0, 5) == "tags:") {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted.slice(5)) > -1;
-                }
-                else {
+                } else {
                     tagsCheck = item.tags.toLowerCase().indexOf(queryFormatted) > -1;
                 }
             }

@@ -23,7 +23,7 @@ helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: (name) => {
+    getParameterByName: name => {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -105,11 +105,10 @@ helpers = {
     /// @return {Object} response
     /// @throw {Object} error
     ////
-    getFetchResponse: (response) => {
+    getFetchResponse: response => {
         if (response.ok) {
             return response;
-        }
-        else {
+        } else {
             let error = new Error(response.statusText);
             error.response = response;
             throw error;
@@ -141,7 +140,7 @@ helpers = {
     /// @param {String} html
     /// @return {String} text
     ////
-    decodeHTML: (html) => {
+    decodeHTML: html => {
         let text = document.createElement("textarea");
         text.innerHTML = html;
         return text.value;
@@ -153,7 +152,12 @@ helpers = {
     truncate: (string, maximum = 10) => {
         let array = string.trim().split(" ");
         let ellipsis = array.length > maximum ? "…" : "";
-        return array.slice(0, maximum).join(" ").replace(/[\,\.\;]$/, "") + ellipsis;
+        return (
+            array
+                .slice(0, maximum)
+                .join(" ")
+                .replace(/[\,\.\;]$/, "") + ellipsis
+        );
     },
 
     ////
@@ -178,9 +182,9 @@ helpers = {
         const z = 1.96;
 
         // implement the algorithm
-        const a = phat + z * z / (2 * total);
-        const b = z * Math.sqrt((phat * (1 - phat) + z * z / (4 * total)) / total);
-        const c = 1 + z * z / total;
+        const a = phat + (z * z) / (2 * total);
+        const b = z * Math.sqrt((phat * (1 - phat) + (z * z) / (4 * total)) / total);
+        const c = 1 + (z * z) / total;
 
         return {
             left: (a - b) / c,

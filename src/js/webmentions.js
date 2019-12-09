@@ -15,11 +15,7 @@
     let REDIRECT_FROM_URLS = [];
     const REDIRECT_FROM_LINKS = document.querySelectorAll('link[rel="redirect_from"]') ? document.querySelectorAll('link[rel="redirect_from"]') : [];
     for (let link of REDIRECT_FROM_LINKS) {
-        REDIRECT_FROM_URLS.push(
-            link
-                .getAttribute("href")
-                .replace(/\/?$/, "")
-        );
+        REDIRECT_FROM_URLS.push(link.getAttribute("href").replace(/\/?$/, ""));
     }
     const WEBMENTIONS_SECTION = document.querySelector(".js-webmentions");
     const WEBMENTIONS_BUTTON = document.querySelector(".js-show-webmentions");
@@ -29,16 +25,14 @@
     // `#webmention` will match both `#webmention` and `#webmentions`
     // `#respon` will match both `#respond`, `#response`, and `#responses`
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#respon"];
-    const WEBMENTIONS_TEMPLATE_REACTION =
-`<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-{{ type }}" data-type="{{ type }}">
+    const WEBMENTIONS_TEMPLATE_REACTION = `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-{{ type }}" data-type="{{ type }}">
     <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
         <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
         <span class="webmentions__response__name  p-name">{{ author }}</span>
     </a>
     <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="{{ author }} {{ type_action }} this" tabindex="-1" data-reacji="{{ content }}"></a>
 </li>`;
-    const WEBMENTIONS_TEMPLATE_REPLY =
-`<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
+    const WEBMENTIONS_TEMPLATE_REPLY = `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
     <div class="e-content">{{ content }}</div>
     <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <small>on</small> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
 </li>`;
@@ -161,7 +155,7 @@
         if (authorUrl.includes("twitter.com")) {
             authorImgUrl = "https://avatars.io/twitter/" + authorUrl.split("twitter.com/")[1].split("/status/")[0];
         }
-        if ('connection' in navigator) {
+        if ("connection" in navigator) {
             if (navigator.connection.saveData) {
                 authorImgUrl = "/images/default-profile.png";
             }
@@ -179,7 +173,7 @@
         // CONTENT
         let textOnlyContent = document.createElement("div");
         textOnlyContent.innerHTML = content;
-        html = helpers.injectContent(html, /{{\s*content\s*}}/, (textOnlyContent.textContent || textOnlyContent.innerText || ""));
+        html = helpers.injectContent(html, /{{\s*content\s*}}/, textOnlyContent.textContent || textOnlyContent.innerText || "");
 
         // AUTHOR
         html = helpers.injectContent(html, /{{\s*author\s*}}/, author);
