@@ -9,32 +9,34 @@
 
     <title>{{ meta_title }}</title>
 
+    <link rel="preconnect" href="https://cdn.carbonads.com">
+    <link rel="preconnect" href="https://srv.carbonads.com">
     {% if page.comments == 'disqus' %}
-        <link rel="dns-prefetch" href="https://a.disquscdn.com">
-        <link rel="dns-prefetch" href="https://chrisburnell.disqus.com">
+        <link rel="preconnect" href="https://a.disquscdn.com">
+        <link rel="preconnect" href="https://chrisburnell.disqus.com">
     {% endif %}
     {% if page.caniuse %}
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
     {% endif %}
     {% if page.codepen or page.codepen_slug %}
-        <link rel="dns-prefetch" href="https://codepen.io">
-        <link rel="dns-prefetch" href="https://assets.codepen.io">
-        <link rel="dns-prefetch" href="https://s.codepen.io">
+        <link rel="preconnect" href="https://codepen.io">
+        <link rel="preconnect" href="https://assets.codepen.io">
+        <link rel="preconnect" href="https://s.codepen.io">
     {% endif %}
     {% if page.speakerdeck or page.speakerdeck_slug %}
-        <link rel="dns-prefetch" href="https://speakerdeck.com">
+        <link rel="preconnect" href="https://speakerdeck.com">
     {% endif %}
     {% if page.twitter %}
-        <link rel="dns-prefetch" href="https://platform.twitter.com">
+        <link rel="preconnect" href="https://platform.twitter.com">
     {% endif %}
     {% if page.vimeo or page.vimeo_slug %}
-        <link rel="dns-prefetch" href="https://player.vimeo.com">
+        <link rel="preconnect" href="https://player.vimeo.com">
     {% endif %}
     {% if page.youtube or page.youtube_slug %}
-        <link rel="dns-prefetch" href="https://www.youtube.com">
+        <link rel="preconnect" href="https://www.youtube.com">
     {% endif %}
     {% if checkin.lat and checkin.long %}
-        <link rel="dns-prefetch" href="https://api.mapbox.com">
+        <link rel="preconnect" href="https://api.mapbox.com">
     {% endif %}
 
     {% if link %}
