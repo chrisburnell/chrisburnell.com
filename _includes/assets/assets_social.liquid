@@ -55,8 +55,5 @@
         <meta property="profile:username" content="{{ site.shortname }}">
     {% endif %}
 
-    {% if page.coil %}
-        <!-- Coil (Web Monetisation) -->
-        <meta name="monetization" content="$coil.xrptipbot.com/11hOHx-5QYC-dBZ4d7Tu7w">
-    {% endif %}
+    {% include assets/coil.liquid %}
 {% endif %}
