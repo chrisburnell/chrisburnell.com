@@ -28,3 +28,7 @@ sitemap:
         </li>
     {% endfor %}
 </ul>
+
+--------
+
+{% include components/carbon.liquid %}

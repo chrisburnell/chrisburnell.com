@@ -113,3 +113,7 @@ function timeSince(timeStamp) {
 })();
 </script>
 {% endraw %}
+
+--------
+
+{% include components/carbon.liquid %}

@@ -38,3 +38,7 @@ Expects a URL in the following format:
         }
     };
 </script>
+
+--------
+
+{% include components/carbon.liquid %}

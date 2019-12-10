@@ -26,3 +26,7 @@ About the [/now movement](https://sivers.org/nowff){:rel="external"} and [people
         timeElement.setAttribute("datetime", localTime.toISO());
     }, 1000);
 </script>
+
+--------
+
+{% include components/carbon.liquid %}

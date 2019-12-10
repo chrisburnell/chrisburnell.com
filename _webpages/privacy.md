@@ -19,3 +19,5 @@ I do, however, employ the use of Service Workers. If you’re using a relatively
 {% include_cached content/heading.liquid title='Further' %}
 
 If you have any further questions or concerns regarding your privacy on this website, please [contact me](/contact) so that I can address it as soon as possible.
+
+<!-- nocarbonads -->

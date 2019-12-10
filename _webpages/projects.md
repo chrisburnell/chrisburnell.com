@@ -11,3 +11,7 @@ page_class: page--projects
         {% endfor %}
     </ol>
 </div>
+
+--------
+
+{% include components/carbon.liquid %}

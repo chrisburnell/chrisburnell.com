@@ -57,3 +57,7 @@ As much work as I’ve put into my sections of code, I have to give a massive th
     <dt><a href="https://snarfed.org" rel="external">Ryan Barrett</a></dt>
     <dd>*for* <a href="https://brid.gy" rel="external">Bridgy</a> and <a href="https://fed.brid.gy" rel="external">Bridgy Fed</a></dd>
 </dl>
+
+--------
+
+{% include components/carbon.liquid %}

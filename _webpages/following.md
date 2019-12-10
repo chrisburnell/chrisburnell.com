@@ -42,3 +42,7 @@ Testing
 
 {% include content/heading.liquid title='Vincent Pickering' href='https://vincentp.me/' rel='external friend' id='' %}
 Testing
+
+--------
+
+{% include components/carbon.liquid %}
