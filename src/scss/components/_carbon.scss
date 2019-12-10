@@ -4,7 +4,9 @@
 ////
 
 [id="carbonads"] {
+    width: 100%;
     @include v(max-width, breakpoint-small);
+    display: flex;
     margin-left:  auto;
     margin-right: auto;
 
@@ -19,6 +21,7 @@
     }
 
     span {
+        flex: 1;
         display: block;
         overflow: hidden;
         position: relative;
@@ -55,6 +58,7 @@
 }
 
 .carbon-text {
+    flex: 1;
     border-radius: 0 var(--border-radius-thin) var(--border-radius-thin) 0;
     border-left-width: 0;
 }
