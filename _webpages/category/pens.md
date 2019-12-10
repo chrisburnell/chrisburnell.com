@@ -47,4 +47,6 @@ These are my best pens—seven of which were [featured on their homepage](https:
 
 --------
 
+{% include components/carbon.liquid %}
+
 {% include components/buttons_categories.liquid %}

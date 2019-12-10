@@ -20,6 +20,10 @@
             <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
         {% endif %}
 
+        {% unless content contains 'carbonads' %}
+            {% include components/carbon.liquid %}
+        {% endunless %}
+
         {% if link %}
             <div class="content__body">
                 <nav class="buttons-list" role="navigation">

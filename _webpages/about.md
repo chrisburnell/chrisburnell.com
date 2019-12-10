@@ -13,6 +13,12 @@ redirect_from:
     <figcaption>My girlfriend, Rachel, and I (July 2015)</figcaption>
 </figure>
 
+--------
+
+{% include components/carbon.liquid %}
+
+--------
+
 
 {% include_cached content/heading.liquid title='Freelance' %}
 

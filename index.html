@@ -21,6 +21,10 @@ searchable: no-content
         {% include components/lastfm.liquid %}
     </dl>
 
+    <hr>
+
+    {%- include components/carbon.liquid -%}
+
     {% include components/rsvps.liquid posts=site.posts %}
 
     {%- assign posts_without_replies = site.emptyArray -%}

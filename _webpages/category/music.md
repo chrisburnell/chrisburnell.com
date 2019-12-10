@@ -31,4 +31,6 @@ Check out my [Listening page](/listening) to see what I’ve been listening to r
 
 --------
 
+{% include components/carbon.liquid %}
+
 {% include components/buttons_categories.liquid %}

@@ -62,3 +62,7 @@ redirect_from:
         {% endunless %}
     {% endfor %}
 </ul>
+
+--------
+
+{% include components/carbon.liquid %}

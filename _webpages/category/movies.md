@@ -25,4 +25,6 @@ sparkline: movies
 
 --------
 
+{% include components/carbon.liquid %}
+
 {% include components/buttons_categories.liquid %}

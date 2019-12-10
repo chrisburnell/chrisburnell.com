@@ -26,6 +26,12 @@ youtube: true
     {% endfor %}
 </ul>
 
+--------
+
+{% include components/carbon.liquid %}
+
+--------
+
 
 {% include_cached content/heading.liquid title='Measures' %}
 

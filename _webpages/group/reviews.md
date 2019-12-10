@@ -33,4 +33,6 @@ lede: All of my review posts.
 
 --------
 
+{% include components/carbon.liquid %}
+
 {% include components/buttons_categories.liquid %}

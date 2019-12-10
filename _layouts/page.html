@@ -35,6 +35,10 @@
 
         <div class="content__body">
             {{ content }}
+
+            {% unless content contains 'carbonads' %}
+                {% include components/carbon.liquid %}
+            {% endunless %}
         </div>
 
         {% if page.webmentions == true %}

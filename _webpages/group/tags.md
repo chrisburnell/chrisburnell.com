@@ -37,4 +37,6 @@ lede: A list of tags and their counterpart posts.
 
 --------
 
+{% include components/carbon.liquid %}
+
 {% include components/buttons_categories.liquid %}
