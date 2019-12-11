@@ -37,7 +37,7 @@
     background-clip: padding-box;
     display: flex;
     align-items: center;
-    @include v(border-width, hairline);
+    @include v(border-width, thin);
     @include v(border-style, default);
     @include v(border-color, alto);
     @include v(padding, small);

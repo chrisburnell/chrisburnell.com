@@ -173,14 +173,14 @@
                     <p class="preheat-step">There is a <a href="#preheat">preheat</a> step in this recipe.<p>
                 {% endif %}
                 {{ content }}
-
-                {% unless content contains 'carbonads' %}
-                    {% include components/carbon.liquid %}
-                {% endunless %}
             </div>
         </div>
 
         {% include components/further_reading.liquid %}
+
+        {% unless content contains 'carbonads' %}
+            {% include components/carbon.liquid %}
+        {% endunless %}
 
         {% if page.webmentions == true %}
             <hr>
