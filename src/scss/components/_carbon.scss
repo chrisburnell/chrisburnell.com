@@ -34,6 +34,7 @@
 
 .carbon-img,
 .carbon-text {
+    @include v(background-color, black--delta);
     background-clip: padding-box;
     display: flex;
     align-items: center;
@@ -61,13 +62,14 @@
     flex: 1;
     border-radius: 0 var(--border-radius-thin) var(--border-radius-thin) 0;
     border-left-width: 0;
+    @include v(line-height, small);
 }
 
 .carbon-poweredby {
     @include case(uppercase);
+    @include v(color, kaiser);
     display: block;
     padding: var(--measure-small-relative) var(--measure-small);
-    // @include v(font-size, small);
     font-size: 12px;
     @include v(font-weight, bold);
     line-height: 1;
