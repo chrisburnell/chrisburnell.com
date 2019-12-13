@@ -5,6 +5,7 @@ page_class: page--error
 searchable: false
 sitemap:
   exclude: true
+carbon: false
 ---
 
 <nav class="buttons-list" role="navigation">
@@ -62,5 +63,3 @@ sitemap:
   }
 })();
 </script>
-
-<!-- nocarbonads -->
