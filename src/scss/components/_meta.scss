@@ -118,6 +118,6 @@
     }
 }
 
-#meta-toggle:not(:checked) ~ div:not(:first-of-type) {
+.js-meta-toggle:not(:checked) ~ div:not(:first-of-type) {
     @include hidden;
 }
