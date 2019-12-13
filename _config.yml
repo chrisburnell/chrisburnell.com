@@ -110,6 +110,8 @@ defaults:
       type: "webpages"
     values:
       layout: "page"
+      carbon: true
+      coil: true
   - scope:
       path: "_webpages/category"
     values:
@@ -143,6 +145,8 @@ defaults:
       author: *name
       mf_root: "entry"
       webmentions: true
+      carbon: true
+      coil: true
   - scope:
       type: "posts"
     values:
@@ -150,13 +154,14 @@ defaults:
       author: *name
       mf_root: "entry"
       webmentions: true
+      carbon: true
+      coil: true
   - scope:
       path: "_*/articles"
     values:
       longform: true
       category: "article"
       prefix: a
-      coil: true
   - scope:
       path: "_*/beer"
     values:

@@ -68,29 +68,29 @@ $opacity-delta: 0.05 !default;
 
 // this allows transparency to be transitioned to a different color
 /// @type Color
-$color-transparent: rgba(0, 0, 0, 0) !default;
+$color-transparent: hsla(0, 0, 0, 0) !default;
 /// @type Color
-$color-black: #060606 !default;
+$color-black: hsl(0, 0%, 2.4%) !default; // #060606
 /// @type Color
-$color-mineshaft: #2b2b2b !default;
+$color-mineshaft: hsl(0, 0%, 16.9%) !default; // #2b2b2b
 /// @type Color
-$color-kaiser: #4f4f4f !default;
+$color-kaiser: hsl(0, 0%, 31%) !default; // #4f4f4f
 /// @type Color
-$color-dove: #737373 !default;
+$color-dove: hsl(0, 0%, 45.1%) !default; // #737373
 /// @type Color
-$color-alto: #dddddd !default;
+$color-alto: hsl(0, 0%, 86.7%) !default; // #dddddd
 /// @type Color
-$color-white: #f9f9f9 !default;
+$color-white: hsl(0, 0%, 97.6%) !default; // #f9f9f9
 /// @type Color
-$color-bowhead: #507791 !default; // hsl(204, 29%, 44%)
+$color-bowhead: hsl(203.7, 28.5%, 43.2%) !default; // #4f758e
 /// @type Color
-$color-raven: #5f8aa6 !default; // hsl(204, 29%, 51%)
+$color-raven: hsl(203.7, 28.5%, 51.2%) !default; // #5f8aa6
 /// @type Color
-$color-coyote: #759ab3 !default; // hsl(204, 29%, 58%)
+$color-coyote: hsl(203.7, 28.5%, 57.1%) !default; // #7298b1
 /// @type Color
-$color-canada: #eb2d37 !default;
+$color-canada: hsl(356.8, 82.6%, 54.9%) !default; // #eb2d37
 /// @type Color
-$color-highlight: gold !default;
+$color-highlight: hsl(50.6, 100%, 50%) !default; // #ffd700
 /// @type Color
 $color-black--alpha: rgba($color-black, $opacity-alpha) !default;
 /// @type Color
@@ -101,47 +101,45 @@ $color-black--delta: rgba($color-black, $opacity-delta) !default;
 $color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
 
 /// @type Color
-$color-highlight-alpha: #586e75;
+$color-highlight-alpha: hsl(194.5, 14.1%, 40.2%); // #586e75
 /// @type Color
-$color-highlight-beta: #abbbbb;
+$color-highlight-beta: hsl(180, 10.5%, 70.2%); // #abbbbb
 /// @type Color
-$color-highlight-gamma: lightgreen;
+$color-highlight-gamma: hsl(120, 73.4%, 74.9%); // #90ee90
 /// @type Color
-$color-highlight-delta: #cb4b16;
+$color-highlight-delta: hsl(17.6, 80.4%, 44.1%); // #cb4b16
 /// @type Color
-$color-highlight-epsilon: mediumaquamarine;
+$color-highlight-epsilon: hsl(157, 100%, 49%); // #00fa9a
 /// @type Color
-$color-highlight-zeta: #dc322f;
+$color-highlight-zeta: hsl(1, 71.2%, 52.4%); // #dc322f
 /// @type Color
-$color-highlight-eta: skyblue;
+$color-highlight-eta: hsl(197.4, 71.4%, 72.5%); // #87ceeb
 /// @type Color
-$color-highlight-theta: #b58900;
+$color-highlight-theta: hsl(45.4, 100%, 35.5%); // #b58900
 
 /// @type Color
-$color-css: #016fba !default;
+$color-css: hsl(204.3, 98.9%, 36.7%) !default; // #016fba
 /// @type Color
-$color-html: #e54d26 !default;
+$color-html: hsl(12.3, 78.6%, 52.4%) !default; // #e54d26
 /// @type Color
-$color-javascript: #f1c54c !default;
+$color-javascript: hsl(44, 85.5%, 62.2%) !default; // #f1c54c
 /// @type Color
-$color-liquid: #7ab55c !default;
+$color-liquid: hsl(99.8, 37.6%, 53.5%) !default; // #7ab55c
 /// @type Color
-$color-markdown: #4a525a !default;
+$color-markdown: hsl(210, 9.8%, 32.2%) !default; // #4a525a
 /// @type Color
-$color-sass: #c6538c !default;
+$color-sass: hsl(330.3, 50.2%, 55.1%) !default; // #c6538c
 
 /// @type Color
-$color-coffee: #d2b48c !default;
+$color-codepen: hsl(0, 0%, 12.9%) !default; // #212121
 /// @type Color
-$color-codepen: #212121 !default;
+$color-github: hsl(0, 0%, 20%) !default; // #333333
 /// @type Color
-$color-github: #333333 !default;
+$color-lastfm: hsl(357.6, 78.7%, 49.8%) !default; // #e31b23
 /// @type Color
-$color-lastfm: #e31b23 !default;
+$color-spotify: hsl(141.2, 72.9%, 42%) !default; // #1db954
 /// @type Color
-$color-spotify: #1db954 !default;
-/// @type Color
-$color-twitter: mix($color-black, #55acee, 10%) !default;
+$color-twitter: hsl(205.9, 81.8%, 63.3%) !default; // #55acee
 
 /// @type Length
 $border-width-default: 0.25rem !default;
