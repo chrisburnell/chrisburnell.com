@@ -5,7 +5,7 @@
             <blockquote class="twitter-tweet" lang="en"><a href="{{ in_reply_to_link }}"></a></blockquote>
             <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
         {% elsif in_reply_to_link_mastodon_instance %}
-            <iframe src="{{ in_reply_to_link }}/embed" class="mastodon-embed"></iframe>
+            <iframe src="{{ in_reply_to_link }}/embed" class="mastodon-embed" loading="lazy"></iframe>
             <noscript>Please enable JavaScript to see Mastodon-specific components.</noscript>
         {% elsif in_reply_to_link contains 'chrisburnell.com' %}
             {% assign page_map = site.posts | where_exp: 'post', 'in_reply_to_link contains post.slug' | first %}

@@ -39,7 +39,7 @@ Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to
 
 <figure>
     <div class="media  media--youtube">
-        <iframe src="https://www.youtube.com/embed/nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
     </div>
 </figure>
 

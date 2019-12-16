@@ -489,13 +489,13 @@ formatDate: function(date) {
 
 <figure>
     <div class="media  media--youtube">
-        <iframe src="https://www.youtube.com/embed/G7RgN9ijwE4" title="Have you ever had a dream like this?" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/G7RgN9ijwE4" title="Have you ever had a dream like this?" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
     </div>
 </figure>
 
 <figure>
     <div class="media  media--vimeo">
-        <iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" width="810" height="455" title="Cloud Lapse on Vimeo" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" width="810" height="455" title="Cloud Lapse on Vimeo" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
     </div>
 </figure>
 

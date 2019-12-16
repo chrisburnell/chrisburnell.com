@@ -30,7 +30,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
 
 <figure>
     <div class="media  media--vimeo">
-        <iframe src="https://player.vimeo.com/video/{{ page.vimeo_slug }}" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{ page.vimeo_slug }}" allowfullscreen loading="lazy"></iframe>
     </div>
     <figcaption>
         <a class="u-syndication" rel="syndication" href="https://vimeo.com/{{ page.vimeo_slug}}" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>

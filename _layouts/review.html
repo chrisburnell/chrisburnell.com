@@ -30,7 +30,7 @@
 
             {% if page.category == 'music' %}
                 <figure>
-                    <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"></iframe>
+                    <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
                 </figure>
             {% endif %}
         {% endif %}
