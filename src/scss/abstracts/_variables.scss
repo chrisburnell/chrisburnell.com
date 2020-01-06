@@ -56,6 +56,8 @@ $measure-line-length-minimum: 21em !default;
 $measure-line-length-maximum: 30em !default;
 /// @type Length
 $measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)})));
+/// @type Length
+$measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-line-length-maximum) !default;
 
 /// @type Number
 $opacity-alpha: 0.9 !default;

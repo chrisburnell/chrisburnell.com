@@ -42,7 +42,8 @@ $measures: (
     one-relative: $measure-one-relative,
     line-length-minimum: $measure-line-length-minimum,
     line-length-maximum: $measure-line-length-maximum,
-    line-length-responsive: $measure-line-length-responsive
+    line-length-responsive: $measure-line-length-responsive,
+    line-length-clamp: $measure-line-length-clamp
 ) !default;
 
 /// @type Map
