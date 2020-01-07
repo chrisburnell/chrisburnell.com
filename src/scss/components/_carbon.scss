@@ -6,6 +6,7 @@
 [id="carbonads"] {
     width: 100%;
     @include v(max-width, breakpoint-small);
+    min-height: 9.75rem;
     display: flex;
     margin-left:  auto;
     margin-right: auto;
@@ -69,8 +70,8 @@
     @include case(uppercase);
     @include v(color, kaiser);
     display: block;
-    padding: var(--measure-small-relative) var(--measure-small);
-    font-size: 12px;
+    @include v(padding, small);
+    @include v(font-size, tiny);
     @include v(font-weight, bold);
     line-height: 1;
     text-align: center;

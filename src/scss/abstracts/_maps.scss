@@ -202,7 +202,9 @@ $font-sizes: (
     large: $font-size-large,
     large-relative: $font-size-large-relative,
     small: $font-size-small,
-    small-relative: $font-size-small-relative
+    small-relative: $font-size-small-relative,
+    tiny: $font-size-tiny,
+    tiny-relative: $font-size-tiny-relative
 ) !default;
 
 /// @type Map
