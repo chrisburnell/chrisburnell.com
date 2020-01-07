@@ -92,8 +92,8 @@
         @include hyphenate;
         margin-bottom: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
         line-clamp: 3;
+        text-overflow: ellipsis;
     }
 
     .date {

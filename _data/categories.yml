@@ -22,7 +22,7 @@
   type: likes
   category: like
   icon: 'bullhorn'
-- title: Movies
+- title: Movie Reviews
   type: movies
   category: movie
   icon: 'bullhorn'
@@ -38,7 +38,7 @@
   type: pens
   category: pen
   icon: 'codepen'
-- title: Podcasts
+- title: Podcast Reviews
   type: podcasts
   category: podcast
   icon: 'bullhorn'
@@ -50,7 +50,7 @@
   type: talks
   category: talk
   icon: 'bullhorn'
-- title: TV
+- title: TV Reviews
   type: tv
   category: tv
   icon: 'bullhorn'
