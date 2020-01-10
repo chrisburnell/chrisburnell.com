@@ -26,4 +26,4 @@ See [the full license]({{ site.author.urls.github_repo }}/blob/master/LICENSE){:
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}

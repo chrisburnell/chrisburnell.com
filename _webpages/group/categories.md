@@ -37,6 +37,6 @@ lede: A list of categories and their counterpart posts.
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}
 
 {% include components/buttons_categories.liquid %}

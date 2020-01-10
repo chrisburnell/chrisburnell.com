@@ -29,4 +29,4 @@ About the [/now movement](https://sivers.org/nowff){:rel="external"} and [people
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}

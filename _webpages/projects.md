@@ -14,4 +14,4 @@ page_class: page--projects
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}

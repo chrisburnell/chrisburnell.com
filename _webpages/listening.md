@@ -116,4 +116,4 @@ function timeSince(timeStamp) {
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}

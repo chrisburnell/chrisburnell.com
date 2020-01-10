@@ -35,6 +35,6 @@ feed: /rsvps.xml
 
 -------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}
 
 {% include components/buttons_categories.liquid %}

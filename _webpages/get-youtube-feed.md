@@ -40,4 +40,4 @@ Expects a URL in the following format:
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}

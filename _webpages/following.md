@@ -45,4 +45,4 @@ Testing
 
 --------
 
-{% include components/carbon.liquid %}
+{% include components/ads.liquid %}
