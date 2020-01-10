@@ -508,14 +508,17 @@
         @if $theme == "light" {
             @each $property in $properties {
                 @if map-has-key($data, $property) {
-                    @include v($property, map-get($data, $property));
+                    $property-clean: nth(str-split($property, "--"), 1);
+                    @include v($property-clean, map-get($data, $property));
                 }
             }
-        } @else {
-            .#{$theme} & {
+        }
+        @else {
+            .theme--#{$theme} & {
                 @each $property in $properties {
                     @if map-has-key($data, $property) {
-                        @include v($property, map-get($data, $property));
+                        $property-clean: nth(str-split($property, "--"), 1);
+                        @include v($property-clean, map-get($data, $property));
                     }
                 }
             }
