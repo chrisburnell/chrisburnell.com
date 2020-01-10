@@ -426,75 +426,86 @@
 /// Select a CSS variable and provide a fallback
 ///
 @mixin v($property, $value, $negative: false, $important: false, $hide: "fallback") {
-    $map-name: map-get($property-map, $property);
-    $nest-name: null;
-    $nest-map-name: null;
-    $map: null;
-    $variable-fallback: null;
-    $variable-output: null;
 
-    // if a Nested List, we need to go deeper
-    @if type-of($map-name) == list {
-        $nest-name: nth($map-name, 1);
-        $nest-map-name: nth($map-name, 2);
+    @if (index($generic-values, $value)) {
+        @if $important {
+            #{$property}: #{$value} !important;
+        }
+        @else {
+            #{$property}: #{$value};
+        }
     }
+    @else {
+        $map-name: map-get($property-map, $property);
+        $nest-name: null;
+        $nest-map-name: null;
+        $map: null;
+        $variable-fallback: null;
+        $variable-output: null;
 
-    // if it is a Nested List
-    @if $nest-name {
-        // get the map from nested map-name
-        $map: map-get($variable-map, $nest-name);
-        // get the nested map
-        $nest-map: map-get($map, $nest-map-name);
-        // throw a warning if the value does not exist
-        @if not map-has-key($nest-map, $value) {
-            @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+        // if a Nested List, we need to go deeper
+        @if type-of($map-name) == list {
+            $nest-name: nth($map-name, 1);
+            $nest-map-name: nth($map-name, 2);
         }
-        // fallback value, get the var value from the nested map
-        $variable-fallback: map-get($nest-map, $value);
-        // our CSS Variable output
-        $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
-    } @else {
-        // get the map from map name
-        $map: map-get($variable-map, $map-name);
-        // throw a warning if the value does not exist
-        @if not map-has-key($map, $value) {
-            @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
-        }
-        // fallback value, grab the variable's value from the map
-        $variable-fallback: map-get($map, $value);
-        // our CSS Variable output
-        $variable-output: var(--#{$map-name}-#{$value});
-    }
 
-    // output the value from SCSS as-is as well as the associated CSS variable
-    @if $important {
-        @if $hide != "fallback" {
-            @if $negative {
-                #{$property}: #{$variable-fallback * -1} !important;
-            } @else {
-                #{$property}: $variable-fallback !important;
+        // if it is a Nested List
+        @if $nest-name {
+            // get the map from nested map-name
+            $map: map-get($variable-map, $nest-name);
+            // get the nested map
+            $nest-map: map-get($map, $nest-map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($nest-map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
             }
-        }
-        @if $hide != "output" {
-            @if $negative {
-                #{$property}: calc(#{$variable-output} * -1) !important;
-            } @else {
-                #{$property}: $variable-output !important;
+            // fallback value, get the var value from the nested map
+            $variable-fallback: map-get($nest-map, $value);
+            // our CSS Variable output
+            $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
+        } @else {
+            // get the map from map name
+            $map: map-get($variable-map, $map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
             }
+            // fallback value, grab the variable's value from the map
+            $variable-fallback: map-get($map, $value);
+            // our CSS Variable output
+            $variable-output: var(--#{$map-name}-#{$value});
         }
-    } @else {
-        @if $hide != "fallback" {
-            @if $negative {
-                #{$property}: #{$variable-fallback * -1};
-            } @else {
-                #{$property}: $variable-fallback;
+
+        // output the value from SCSS as-is as well as the associated CSS variable
+        @if $important {
+            @if $hide != "fallback" {
+                @if $negative {
+                    #{$property}: #{$variable-fallback * -1} !important;
+                } @else {
+                    #{$property}: $variable-fallback !important;
+                }
             }
-        }
-        @if $hide != "output" {
-            @if $negative {
-                #{$property}: calc(#{$variable-output} * -1);
-            } @else {
-                #{$property}: $variable-output;
+            @if $hide != "output" {
+                @if $negative {
+                    #{$property}: calc(#{$variable-output} * -1) !important;
+                } @else {
+                    #{$property}: $variable-output !important;
+                }
+            }
+        } @else {
+            @if $hide != "fallback" {
+                @if $negative {
+                    #{$property}: #{$variable-fallback * -1};
+                } @else {
+                    #{$property}: $variable-fallback;
+                }
+            }
+            @if $hide != "output" {
+                @if $negative {
+                    #{$property}: calc(#{$variable-output} * -1);
+                } @else {
+                    #{$property}: $variable-output;
+                }
             }
         }
     }
