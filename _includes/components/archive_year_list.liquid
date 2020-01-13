@@ -4,12 +4,10 @@
 <div class="h-feed">
     <ol class="deck" role="list">
         {% for page in site.posts %}
-            {% unless page.hidden or page.ignore %}
-                {%- assign year = page.date | date: '%Y' | minus: 0 -%}
-                {% if year == current_year %}
-                    {% include components/item_deck.liquid %}
-                {% endif %}
-            {% endunless %}
+            {%- assign year = page.date | date: '%Y' | minus: 0 -%}
+            {% if year == current_year %}
+                {% include components/item_deck.liquid %}
+            {% endif %}
         {% endfor %}
     </ol>
 </div>
