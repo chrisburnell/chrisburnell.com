@@ -159,13 +159,13 @@ html {
 - including *normalize* with <samp>@import</samp>:
 
 {% highlight css %}
-@import url("//chrisburnell.com/css/normalize.min.css");
+@import url("https://chrisburnell.com/css/normalize.min.css");
 {% endhighlight %}
 
 - changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](https://www.google.com/fonts){:rel="external"} with <samp>@import</samp>:
 
 {% highlight css %}
-@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600");
+@import url("https:/fonts.googleapis.com/css?family=Open+Sans:400italic,400,600");
 {% endhighlight %}
 
 - changing the base <samp>font-size</samp> to <samp>16px</samp> and changing many properties to be relative to the <samp>font-size</samp> with <samp>ems</samp> and <samp>rems</samp>

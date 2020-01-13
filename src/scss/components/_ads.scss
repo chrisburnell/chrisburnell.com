@@ -3,11 +3,15 @@
 /// @group components
 ////
 
+.ads {
+    @include owl;
+}
+
 .ad {
     width: 100%;
     @include v(max-width, breakpoint-small);
-    min-height: 9.75rem;
     display: flex;
+    flex-direction: column;
     margin-left:  auto;
     margin-right: auto;
 
@@ -49,8 +53,6 @@
     line-height: 1;
 
     img {
-        width: 130px !important;
-        height: 100px !important;
         display: block;
     }
 }
@@ -76,6 +78,7 @@
 
 [id="carbonads"] {
     @extend .ad;
+    min-height: 9.75rem;
 }
 .carbon-wrap {
     @extend .ad__wrap;
@@ -86,6 +89,11 @@
 }
 .carbon-img {
     @extend .ad__image;
+
+    img {
+        width: 130px !important;
+        height: 100px !important;
+    }
 }
 .carbon-text {
     @extend .ad__content;
