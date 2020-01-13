@@ -118,6 +118,6 @@
     }
 }
 
-.js-meta-toggle:not(:checked) ~ div:not(.date):not(.checkin-rating) {
+.js-meta-toggle:not(:checked) ~ div:not(.published-date):not(.checkin-rating) {
     @include hidden;
 }

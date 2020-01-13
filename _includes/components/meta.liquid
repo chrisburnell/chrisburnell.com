@@ -1,6 +1,6 @@
 <div class="meta">
     <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden></input>
-    <div class="date">
+    <div class="published-date">
         {% include content/emoji.liquid emoji='🗓' %}
         {% if page.mf_property contains 'bookmark-of' %}
             <span>bookmarked on</span>
@@ -30,14 +30,14 @@
         </a>
     </div>
     {% if page.sitemap.lastmod %}
-        <div class="date">
+        <div class="updated-date">
             {% include content/emoji.liquid emoji='🗓' %}
             <span>updated on</span>
             <time class="dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">{{ page.sitemap.lastmod | date_to_long_string }}</time>
         </div>
     {% endif %}
     {% if page.release %}
-        <div class="date">
+        <div class="released-date">
             {% include content/emoji.liquid emoji='🗓' %}
             <span>released on</span>
             <time class="dt-released" datetime="{{ page.released | date_to_xmlschema }}">{{ page.release | date_to_long_string }}</time>
