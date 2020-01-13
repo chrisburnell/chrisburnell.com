@@ -27,6 +27,9 @@ ingredients:
 authors:
   - name: Tastes Better From Scratch
     link: https://tastesbetterfromscratch.com/homemade-olive-garden-breadsticks
+photo:
+  - link: https://chrisburnell.com/static/breadsticks.jpg
+    alt: Warm and fluffy breadsticks made by yours truly
 hidden: true
 ignore: true
 redirect_from:
