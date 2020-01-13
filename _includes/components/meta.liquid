@@ -311,7 +311,7 @@
         </div>
     {% endif %}
     {% if page.weather %}
-        <div class="weather">
+        <div class="checkin-weather">
             {%- assign summary = page.weather.summary | downcase -%}
             {% if summary contains 'sun' and summary contains 'cloud' or summary contains 'rain' %}
                 {% include content/emoji.liquid emoji='🌦' %}
@@ -347,6 +347,8 @@
                 {% include content/emoji.liquid emoji='🌔' %}
             {% elsif summary contains 'moon' and summary contains 'gibbous' and summary contains 'waning' %}
                 {% include content/emoji.liquid emoji='🌖' %}
+            {% else %}
+                {% include content/emoji.liquid emoji='⛅️' %}
             {% endif %}
             <span>weather</span>
             <strong class="p-weather">
@@ -361,7 +363,7 @@
         </div>
     {% endif %}
     {% if page.rating %}
-        <div>
+        <div class="checkin-rating">
             {% include content/emoji.liquid emoji='✨' %}
             {% if page.rating == 'Parti Pris' %}
                 <strong class="delta">Parti Pris</strong>
