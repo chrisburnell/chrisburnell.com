@@ -23,7 +23,7 @@
     console.log("%c          RAVEN        OU", "color: #507791");
     console.log("%c         SR AV", "color: #507791");
     console.log("%c            EN", "color: #507791");
-    console.log("");
+    console.log(" ");
     console.log("%cChecking out the source code, eh?", "color: #507791");
     console.log("%cGet in touch with me if you want to know more about the code, or if you want to use a snippet of code on a project of your own!", "color: #507791");
 })();
