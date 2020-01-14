@@ -81,9 +81,9 @@
 {% elsif page.category == 'like' %}
     {% capture meta_lede %}One of my liked pages, {{ link_title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'movie' %}
-    {% capture meta_lede %}One of my movie check-ins, {{ page.title | strip_html }}.{% endcapture %}
+    {% capture meta_lede %}One of my movie reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'music' %}
-    {% capture meta_lede %}One of my music album reviews, {{ page.title | strip_html }}.{% endcapture %}
+    {% capture meta_lede %}One of my music reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
 {% elsif page.category == 'pen' %}
@@ -95,7 +95,7 @@
 {% elsif page.category == 'talk' %}
     {% capture meta_lede %}One of my talks, {{ page.title | strip_html }}{% if page.checkin %}, given at {{ page.checkin.name | default: page.checkin }}{% endif %},{% endcapture %}
 {% elsif page.category == 'tv' %}
-    {% capture meta_lede %}One of my TV check-ins, {{ page.title | strip_html }}.{% endcapture %}
+    {% capture meta_lede %}One of my TV reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% else %}
     {% assign meta_lede = site.lede | strip_html %}
 {% endif %}

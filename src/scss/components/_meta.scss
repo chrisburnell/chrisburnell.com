@@ -18,9 +18,6 @@
     }
 
     div {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
         @include v(margin-right, large);
     }
 
@@ -66,35 +63,6 @@
         }
     }
 
-    span {
-        padding-right: 1ex;
-
-        &:not(:first-child) {
-            padding-left: 1ex;
-        }
-    }
-
-    small.strong {
-        display: flex;
-
-        a:not(:first-of-type) {
-            margin-left: 1ex;
-        }
-    }
-
-    .comma {
-        padding-left: 0 !important;
-    }
-
-    .left-bracket {
-        padding-left: 1ex;
-        padding-right: 0 !important;
-    }
-
-    .right-bracket {
-        padding-left: 0 !important;
-    }
-
     label {
         display: none;
         @include v(background-color, black--delta);
@@ -113,8 +81,13 @@
         }
     }
 
+    // Only show the label if there is more than one meta item
     div + div ~ label {
         display: inline-block;
+    }
+
+    .emoji {
+        margin-right: 1ch;
     }
 }
 

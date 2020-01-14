@@ -1,5 +1,5 @@
 <div class="meta">
-    <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden></input>
+    <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden />
     <div class="published-date">
         {% include content/emoji.liquid emoji='🗓' %}
         {% if page.mf_property contains 'bookmark-of' %}
@@ -64,18 +64,18 @@
                 {% include content/emoji.liquid emoji='✍️' %}
                 <span>by</span>
             {% endif %}
-            {%- assign authors = page.authors | uniq -%}
-            {%- for author in authors -%}
-                {%- assign author_name = author.name | default: author | strip -%}
-                {%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}
-                {%- assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', 'http' | default: null -%}
-                {% unless forloop.first %}<span class="comma">,</span>{% endunless %}
-                {%- if author_link -%}
+            {% assign authors = page.authors | uniq %}
+            {% for author in authors %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
+                {% assign author_name = author.name | default: author | strip %}
+                {% assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null %}
+                {% assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', 'http' | default: null %}
+                {% if author_link %}
                     <a class="h-cite" href="{{ author_link }}" title="{{ author_name }}" rel="external">{{ author_name }}</a>
-                {%- else -%}
+                {% else %}
                     <strong class="h-cite">{{ author_name }}</strong>
-                {%- endif -%}
-            {%- endfor -%}
+                {% endif %}
+            {% endfor %}
         </div>
     {% endif %}
     {% if page.audience %}
@@ -83,17 +83,17 @@
             {% include content/emoji.liquid emoji='📣' %}
             <span>target audience</span>
             {%- assign audiences = page.audience | uniq -%}
-            {%- for audience in audiences -%}
+            {% for audience in audiences %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
                 {%- assign audience_name = audience.name | default: audience | strip -%}
                 {%- assign audience_map = site.data.people | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
                 {%- assign audience_link = audience.link | default: audience_map.link | default: null -%}
-                {% unless forloop.first %}<span class="comma">,</span>{% endunless %}
                 {% if audience_link %}
                     <a class="h-card  u-audience" href="{{ audience_link }}" title="{{ audience_name }}" rel="external">{{ audience_name }}</a>
                 {% else %}
                     <strong class="h-card  p-audience">{{ audience_name }}</strong>
                 {% endif %}
-            {%- endfor -%}
+            {% endfor %}
         </div>
     {% endif %}
     {% if in_reply_to_link %}
@@ -380,11 +380,13 @@
             {% include content/emoji.liquid emoji='🏆' %}
             <span>earning {{ page.badges.size }} badge{% if page.badges.size > 1 %}s{% endif %}</span>
             {% for badge in page.badges %}
-                {%- if badge.name and badge.id -%}
-                    {% unless forloop.first %}<span class="comma">,</span>{% endunless %}<a rel="external" href="{{ site.author.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
-                {%- else -%}
-                    {% unless forloop.first %}<span class="comma">,</span>{% endunless %}<strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
-                {%- endif -%}
+                {% if badge.name and badge.id %}
+                    {% unless forloop.first %}<span>, </span>{% endunless %}
+                    <a rel="external" href="{{ site.author.urls.untappd | append: 'badges/' | append: badge.id }}">{{ badge.name | replace: '(', '<small>(' | replace: ')', ')</small>' }}</a>
+                {% else %}
+                    {% unless forloop.first %}<span>, </span>{% endunless %}
+                    <strong>{{ badge.name | default: badge | replace: '(', '<small>(' | replace: ')', ')</small>' }}</strong>
+                {% endif %}
             {% endfor %}
         </div>
     {% endif %}
@@ -393,7 +395,10 @@
         <div class="tags">
             {% include content/emoji.liquid emoji='🏷' %}
             <span>tagged under</span>
-            {% for tag in tags_sorted %}{% unless forloop.first %}<span class="comma">,</span>{% endunless %}<a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.liquid input=tag %}</a>{% endfor %}
+            {% for tag in tags_sorted %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
+                <a class="p-category" href="/tags/#{{ tag | slugify }}" rel="tag">{% include content/capitalizer.liquid input=tag %}</a>
+            {% endfor %}
         </div>
     {% endif %}
     {% if page.category == 'pen' and page.codepen_featured == true %}
@@ -407,27 +412,25 @@
     {% if syndications or page.codepen_slug or page.speakerdeck_slug or page.vimeo_slug or page.youtube_slug %}
         <div class="syndication">
             {% include content/emoji.liquid emoji='⤴️' %}
-            <span>also on </span>
-            {%- for syndication in syndications -%}
-                {% unless forloop.first %}
-                    <span class="comma">,</span>
-                {% endunless %}
+            <span>also on</span>
+            {% for syndication in syndications %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
                 {%- assign syndication_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'syndication contains instance' | first | default: null -%}
                 {% if syndication contains 'codepen.io' %}
                     {%- assign syndication_slug = syndication | split: '/' | last -%}
                     <a class="u-syndication" rel="syndication" href="{{ site.author.urls.codepen }}/pen/{{ syndication_slug }}">CodePen</a>
                     <small class="strong">
-                        <span class="left-bracket">(</span>
+                        <span>(</span>
                         <a href="{{ site.author.urls.codepen }}/details/{{ syndication_slug }}" rel="external">Details</a>,
                         <a href="{{ site.author.urls.codepen }}/full/{{ syndication_slug }}" rel="external">Full</a>
-                        <span class="right-bracket">)</span>
+                        <span>)</span>
                     </small>
                 {% elsif syndication contains 'dev.to' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">DEV Community</a>
                     <small class="strong">
-                        <span class="left-bracket">(</span>
+                        <span>(</span>
                         <a href="{{ syndication }}#new_comment" rel="external">Comment</a>
-                        <span class="right-bracket">)</span>
+                        <span>)</span>
                     </small>
                 {% elsif syndication contains 'gist.github.com' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">GitHub Gist</a>
@@ -438,69 +441,69 @@
                 {% elsif syndication_mastodon_instance %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">Mastodon</a>
                     <small class="strong">
-                        <span class="left-bracket">(</span>
+                        <span>(</span>
                         <a rel="external" href="https://{{ syndication_mastodon_instance }}/interact/{{ syndication | split: '/' | last }}">Interact</a>
-                        <span class="right-bracket">)</span>
+                        <span>)</span>
                     </small>
                 {% elsif syndication contains 'song.link' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">Songlink</a>
                 {% elsif syndication contains 'twitter.com' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">Twitter</a>
                     <small class="strong">
-                        <span class="left-bracket">(</span>
+                        <span>(</span>
                         <a rel="external" href="https://twitter.com/intent/like?tweet_id={{ syndication | split: '/' | last }}">Like</a>,
                         <a rel="external" href="https://twitter.com/intent/tweet?in_reply_to={{ syndication | split: '/' | last }}">Reply</a>,
                         <a rel="external" href="https://twitter.com/intent/retweet?tweet_id={{ syndication | split: '/' | last }}">Retweet</a>
-                        <span class="right-bracket">)</span>
+                        <span>)</span>
                     </small>
                 {% elsif syndication contains 'untappd.com' %}
                     <a class="u-syndication" rel="syndication" href="{{ syndication }}">Untappd</a>
                     <small class="strong">
-                        <span class="left-bracket">(</span>
+                        <span>(</span>
                         <a rel="external" href="{{ syndication }}#commentBox">Comment</a>
-                        <span class="right-bracket">)</span>
+                        <span>)</span>
                     </small>
                 {% endif %}
-            {%- endfor -%}
+            {% endfor %}
             {%- assign first_syndication = true -%}
-            {%- if page.codepen_slug -%}
+            {% if page.codepen_slug %}
                 {% if first_syndication %}
                     {% assign first_syndication = false %}
                 {% else %}
-                    <span class="comma">,</span>
+                    <span>, </span>
                 {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ site.author.urls.codepen }}/pen/{{ page.codepen_slug }}">CodePen</a>
                 <small class="strong">
-                    <span class="left-bracket">(</span>
+                    <span>(</span>
                     <a href="{{ site.author.urls.codepen }}/details/{{ page.codepen_slug }}">Details</a>,
                     <a href="{{ site.author.urls.codepen }}/full/{{ page.codepen_slug }}">Full</a>
-                    <span class="right-bracket">)</span>
+                    <span>)</span>
                 </small>
-            {%- endif -%}
-            {%- if page.speakerdeck_slug -%}
+            {% endif %}
+            {% if page.speakerdeck_slug %}
                 {% if first_syndication %}
                     {% assign first_syndication = false %}
                 {% else %}
-                    <span class="comma">,</span>
+                    <span>, </span>
                 {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.speakerdeck_slug | prepend: '/' | prepend: site.author.urls.speakerdeck }}">Speaker Deck</a>
-            {%- endif -%}
-            {%- if page.vimeo_slug -%}
+            {% endif %}
+            {% if page.vimeo_slug %}
                 {% if first_syndication %}
                     {% assign first_syndication = false %}
                 {% else %}
-                    <span class="comma">,</span>
+                    <span>, </span>
                 {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.vimeo_slug | prepend: 'https://vimeo.com/' }}">Vimeo</a>
-            {%- endif -%}
-            {%- if page.youtube_slug -%}
+            {% endif %}
+            {% if page.youtube_slug %}
                 {% if first_syndication %}
                     {% assign first_syndication = false %}
                 {% else %}
-                    <span class="comma">,</span>
+                    <span>, </span>
                 {% endif %}
                 <a class="u-syndication" rel="syndication" href="{{ page.youtube_slug | prepend: 'https://www.youtube.com/watch?v=' }}">YouTube</a>
-            {%- endif -%}
+            {% endif %}
         </div>
     {% endif %}
     {% if page.posting_method %}
@@ -534,16 +537,16 @@
         {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
         {%- assign filtered_posts = site.emptyArray -%}
         {%- for check in posts_to_check reversed -%}
-            {%- assign check_date = check.date | date: '%Y-%m-%d' -%}
-            {%- if check_date == page_date -%}
-                {%- assign filtered_posts = filtered_posts | push: check -%}
-            {%- endif -%}
+            {% assign check_date = check.date | date: '%Y-%m-%d' %}
+            {% if check_date == page_date %}
+                {% assign filtered_posts = filtered_posts | push: check %}
+            {% endif %}
         {%- endfor -%}
         {%- for check in filtered_posts -%}
-            {%- if check.title == page.title -%}
-                {%- assign shorturl = shorturl | append: forloop.index -%}
-                {%- break -%}
-            {%- endif -%}
+            {% if check.title == page.title %}
+                {% assign shorturl = shorturl | append: forloop.index %}
+                {% break %}
+            {% endif %}
         {%- endfor -%}
         <div class="shorturl">
             {% include content/emoji.liquid emoji='🔗' %}
@@ -552,7 +555,7 @@
         </div>
     {% endif %}
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
-    <data class="u-category" value="/{{ category_link }}" hidden>{{ page.category }}</data>
+    <data class="u-category" value="/{{ category_link }}" hidden aria-hidden="true">{{ page.category }}</data>
     <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
     <label for="meta-toggle" role="button" class="delta" title="Expand/Collapse" aria-hidden="true">…</label>
 </div>

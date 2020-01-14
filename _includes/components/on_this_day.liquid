@@ -1,8 +1,10 @@
 {%- assign on_this_day_posts = site.emptyArray -%}
-{%- assign day = site.time | date: '%d' -%}
-{%- assign month = site.time | date: '%m' -%}
-{%- assign year = site.time | date: '%Y' -%}
-{%- for page in include.posts -%}
+{%- assign posts = include.posts | default: site.posts -%}
+{%- assign reference = include.reference | default: site -%}
+{%- assign day = reference.time | date: '%d' -%}
+{%- assign month = reference.time | date: '%m' -%}
+{%- assign year = reference.time | date: '%Y' -%}
+{%- for page in posts -%}
     {%- assign check_day = page.date | date: '%d' -%}
     {%- assign check_month = page.date | date: '%m' -%}
     {%- assign check_year = page.date | date: '%Y' -%}
