@@ -1,10 +1,16 @@
 ---
-date: 2019-11-13 11:00:00 +0000
+date: 2020-01-14 12:20:00 +0000
 title: "Sassy Lobotomised Owl"
-lede: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in—a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it with a Sass mixin."
+lede: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin."
 redirect_from:
   - article/sassy-lobotomized-owl.html
 ---
+
+The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external">lobotomised owl</a> technique takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom` / `margin-top` / etc. for each component, we’ll make use of the <samp class="beta">*</samp> selector in CSS to perform the following:
+
+> For every direct child element of X which is not the first direct child of X, apply a `margin-top`.
+
+*And almost as if by magic*, you’ll have a robust spacing system in place. All you need to do is decide which elements <samp>X</samp> can represent, and what the value of <samp>margin-top</samp> is going to be.
 
 Let’s say we want the following kind of output:
 
@@ -23,6 +29,16 @@ article > * + * {
 {% endhighlight %}
 
 Let’s start things off by pumping the excitement all the way up to **3**. At its simplest, the mixin looks like this:
+
+{% highlight scss %}
+@mixin owl($measure) {
+  & > * + * {
+    margin-top: $measure;
+  }
+}
+{% endhighlight %}
+
+In fact, if we know that more often than not we'll be using a specific value, we can use a default parameter value, like so:
 
 {% highlight scss %}
 @mixin owl($measure: 1em) {
@@ -74,7 +90,7 @@ $measures: (
 }
 {% endhighlight %}
 
-And using my `v` mixin I can now rewrite my `owl` mixin with the above configuration in place.
+And using my <samp>v</samp> mixin I can now rewrite my <samp>owl</samp> mixin with the above configuration in place.
 
 {% highlight scss %}
 @mixin owl($measure: small) {
@@ -84,7 +100,7 @@ And using my `v` mixin I can now rewrite my `owl` mixin with the above configura
 }
 {% endhighlight %}
 
-In congruency with the methodology behind using the `v` mixin, we’ve now abstracted away the need to remember or look up the numeric values for the various measures you might be using, and can instead refer to them as you might think about them or speak about them—using words like small, medium, large, etc.:
+In congruency with the methodology behind using the <samp>v</samp> mixin, we’ve now abstracted away the need to remember or look up the numeric values for the various measures you might be using, and can instead refer to them as you might think about them or speak about them—using words like small, medium, large, etc.:
 
 {% highlight scss %}
 body {
@@ -102,7 +118,7 @@ article {
 
 --------
 
-Now, using some error-checking in Sass, we end up with:
+Now, using some error-checking in SCSS, we end up with:
 
 {% highlight scss %}
 @mixin owl($measure: small) {
@@ -116,7 +132,7 @@ Now, using some error-checking in Sass, we end up with:
 }
 {% endhighlight %}
 
-So if we attempt to pass a parameter to the mixin that does not map to a defined measure, we get the following error message:
+So if we attempt to pass a parameter to the mixin that does not map to a defined measure…
 
 {% highlight scss %}
 header {
@@ -124,6 +140,10 @@ header {
 }
 {% endhighlight %}
 
+We get the following error message:
+
 {% highlight bash %}
 Error: There is no measure named gigantic in `$measures`. measure should be one of small, medium, large.
 {% endhighlight %}
+
+And I’m calling it a day!
