@@ -100,6 +100,9 @@
   twitter: Yelawolf
 
 # Beer Brewers
+- name: 2 Crows Brewing
+  link: https://www.2crowsbrewing.com
+  twitter: 2CrowsBrewing
 - name: Amundsen Bryggeri
   link: https://www.amundsenbrewery.com
   twitter: amundsenbrewery
@@ -107,7 +110,7 @@
   link: https://www.beavertownbrewery.co.uk
   twitter: BeavertownBeer
 - name: Brew By Numbers
-  link: https://www.brewbynumbers.com/
+  link: https://www.brewbynumbers.com
   twitter: brewbynumbers
 - name: Brick Brewery
   link: http://www.brickbrewery.co.uk
@@ -115,8 +118,11 @@
 - name: Cloudwater Brew Co.
   link: http://cloudwaterbrew.co
   twitter: cloudwaterbrew
+- name: Collective Arts Brewing
+  link: https://collectiveartsbrewing.com
+  twitter: CollectiveBrew
 - name: Hackney Brewery
-  link: https://www.hackneybrewery.co.uk/
+  link: https://www.hackneybrewery.co.uk
   twitter: HackneyBrewery
 - name: LERVIG
   link: https://www.lervig.no
@@ -124,6 +130,12 @@
 - name: Mikkeller
   link: http://mikkeller.dk
   twitter: MikkellerBeer
+- name: Nine Locks Brewing Co.
+  link: https://www.ninelocksbrewing.ca
+  twitter: ninelocksbrew
+- name: Pressure Drop Brewing
+  link: https://pressuredropbrewing.co.uk
+  twitter: pressuredropbrw
 - name: Siren Craft Brew
   link: http://www.sirencraftbrew.com
   twitter: sirencraftbrew
@@ -133,6 +145,9 @@
 - name: Thornbridge Brewery
   link: https://thornbridgebrewery.co.uk
   twitter: thornbridge
+- name: The Wild Beer Co
+  link: https://www.wildbeerco.com
+  twitter: WildBeerCo
 - name: Wild Card Brewery
   link: https://wildcardbrewco.com
   twitter: WildCardBrewery
