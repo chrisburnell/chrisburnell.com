@@ -1,5 +1,5 @@
 {%- assign on_this_day_posts = site.emptyArray -%}
-{%- assign posts = include.posts | default: site.posts -%}
+{%- assign posts = include.posts | default: site.posts | where: 'on_this_day', true -%}
 {%- assign reference = include.reference | default: site -%}
 {%- assign day = reference.time | date: '%d' -%}
 {%- assign month = reference.time | date: '%m' -%}

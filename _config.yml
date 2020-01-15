@@ -162,6 +162,7 @@ defaults:
       longform: true
       category: "article"
       prefix: a
+      on_this_day: true
   - scope:
       path: "_*/beer"
     values:
@@ -240,6 +241,7 @@ defaults:
       category: "note"
       prefix: n
       titlefree: true
+      on_this_day: true
   - scope:
       path: "_*/pens"
     values:
@@ -247,6 +249,7 @@ defaults:
       prefix: p
       emoji: "✒️"
       comments: codepen
+      on_this_day: true
   - scope:
       path: "_*/podcasts"
     values:
@@ -267,6 +270,7 @@ defaults:
       mf_property: "recipe-of"
       prefix: d
       emoji: "📝"
+      on_this_day: true
   - scope:
       path: "_*/talks"
     values:
