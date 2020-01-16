@@ -164,7 +164,6 @@
                             {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
                                 {%- assign stored_person_link = 'https://' | append: person_link -%}
                                 {%- assign reply_target = person | map: 'name' -%}
-                                <!-- IS THIS THING ON?!?!?! -->
                             {%- endif -%}
                         {%- endfor -%}
                     {%- endfor -%}
@@ -173,23 +172,26 @@
             <a class="h-cite  u-in-reply-to" href="{{ stored_person_link | default: in_reply_to_link }}"{% unless in_reply_to_link contains site.url %} rel="external"{% endunless %}>
                 {% if in_reply_to_title != null and in_reply_to_title != in_reply_to_link %}
                     {{ in_reply_to_title }}
-                    <em>by</em>
                 {% endif %}
                 {% if reply_target %}
+                    <em>by</em>
                     {{ reply_target }}
                 {% elsif mastodon_instance %}
+                    <em>by</em>
                     {% if mastodon_username %}
                         @{{ mastodon_username }}@{{ mastodon_instance }}
                     {% else %}
                         a Toot
                     {% endif %}
                 {% elsif in_reply_to_link contains 'twitter.com' %}
+                    <em>by</em>
                     {% if twitter_username %}
                         @{{ twitter_username }}
                     {% else %}
                         a Tweet
                     {% endif %}
                 {% else %}
+                    <em>from</em>
                     {{ in_reply_to_link }}
                 {% endif %}
             </a>
