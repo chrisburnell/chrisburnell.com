@@ -114,6 +114,8 @@ function timeSince(timeStamp) {
 </script>
 {% endraw %}
 
+To see (almost) my entire listening history, checkout my [LastFM profile]({{ site.author.urls.lastfm }}){:rel="external"}.
+
 --------
 
 {% include components/ads.liquid %}
