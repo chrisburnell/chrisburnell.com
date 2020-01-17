@@ -145,7 +145,7 @@ self.addEventListener("fetch", event => {
         return;
     }
 
-    // Pink Swear?
+    // Pinkie Swear?
     let fetchPromise = event.preloadResponse ? event.preloadResponse : fetch(request);
     let cachePromise = caches.match(request);
 
@@ -231,7 +231,7 @@ self.addEventListener("fetch", event => {
 });
 
 self.addEventListener("message", event => {
-    if (event.data.command == "trimCaches") {
+    if (event.data.command === "trimCaches") {
         trimCache(IMAGES_CACHE, CACHE_SIZE);
         trimCache(PAGES_CACHE, CACHE_SIZE);
     }
