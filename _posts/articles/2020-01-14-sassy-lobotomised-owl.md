@@ -4,6 +4,8 @@ title: "Sassy Lobotomised Owl"
 lede: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin."
 tags:
   - scss
+syndicate_to:
+  - https://dev.to/chrisburnell/sassy-lobotomised-owl-pfl
 banner:
   - sassy-lobotomised-owl@2x.jpg
   - sassy-lobotomised-owl.jpg
