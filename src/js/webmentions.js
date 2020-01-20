@@ -27,14 +27,14 @@
     const WEBMENTIONS_HASH = ["#webmention", "#mention", "#respon"];
     const WEBMENTIONS_TEMPLATE_REACTION = `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-{{ type }}" data-type="{{ type }}">
     <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
-        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
+        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}" loading="lazy">
         <span class="webmentions__response__name  p-name">{{ author }}</span>
     </a>
     <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="{{ author }} {{ type_action }} this" tabindex="-1" data-reacji="{{ content }}"></a>
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY = `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
     <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
-        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
+        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}" loading="lazy">
     </a>
     <div class="webmentions__response__content  e-content">{{ content }}</div>
     <div class="webmentions__response__meta">
