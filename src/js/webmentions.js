@@ -33,8 +33,18 @@
     <a class="webmentions__response__type  u-url" href="{{ url }}" rel="external" title="{{ author }} {{ type_action }} this" tabindex="-1" data-reacji="{{ content }}"></a>
 </li>`;
     const WEBMENTIONS_TEMPLATE_REPLY = `<li id="webmentions-{{ id }}" class="webmentions__response  h-cite  p-comment" data-type="{{ type }}">
+    <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
+        <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
+    </a>
     <div class="e-content">{{ content }}</div>
-    <div><small>by</small> <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external"><span class="p-name">{{ author }}</span></a> <small>on</small> <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a></div>
+    <div>
+        <small>by</small>
+        <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external">
+            <span class="p-name">{{ author }}</span>
+        </a>
+        <small>on</small>
+        <a class="u-url" href="{{ url }}" rel="external" title="Read externally">{{ date }}</a>
+    </div>
 </li>`;
     let responses = {
         reaction: [],
@@ -110,7 +120,11 @@
 
         for (let link of data.links.reverse()) {
             let type = "reaction";
-            if (link.activity.type !== "bookmark" && link.activity.type !== "link" && link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
+
+            // REMOVE
+            console.log(link.data.content.length);
+
+            if (link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
                 type = "reply";
             }
             if (link.verified === true && link.private === false) {
@@ -123,7 +137,6 @@
             for (let response of responses.reaction) {
                 webmentionsReactionContent.innerHTML += processResponses(WEBMENTIONS_TEMPLATE_REACTION, response);
             }
-            // webmentionsReactionLabel.removeAttribute("hidden");
             webmentionsReactionContent.parentNode.removeAttribute("hidden");
         }
 
@@ -147,7 +160,7 @@
         let type = response.activity.type;
         let typeAction = (type + "ed").replace("eed", "ed").replace("linked", "linked to");
         let url = response.data.url;
-        let content = !response.data.content || type === "bookmark" || type === "link" || type === "like" || type === "repost" ? "" : response.data.content;
+        let content = !response.data.content || type === "like" || type === "repost" ? "" : response.data.content;
         let date = response.data.published ? response.data.published : response.verified_date;
         let author = response.data.author && response.data.author.name ? response.data.author.name : response.data.name;
         let authorUrl = response.data.author && response.data.author.url ? response.data.author.url : response.data.url;

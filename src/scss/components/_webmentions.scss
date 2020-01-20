@@ -67,33 +67,38 @@
         @include v(margin-top, medium);
     }
 
-    small,
-    time {
-        @include v(color, dove);
-    }
-
     small {
+        @include v(color, dove);
         font-style: italic;
     }
+}
+
+.webmentions__response__avatar,
+.webmentions__response__image {
+    @include border-radius(50%);
+    @include v(width, avatar-small);
+    @include v(height, avatar-small);
 }
 
 .webmentions__response__avatar {
     background-image: url("/images/default-profile.png");
     background-size: 100%;
-    @include border-radius(50%);
+
+    .webmentions__list__replies & {
+        float: left;
+        @include v(margin-right, medium);
+        @include v(margin-bottom, medium);
+    }
 }
 
 .webmentions__response__image {
-    @include border-radius(50%);
-    @include v(width, avatar-small);
-    @include v(height, avatar-small);
     display: block;
 }
 
 .webmentions__response__name {
     @include  v(padding-right, medium);
 
-    .webmentions__response__image:not([src=""]) + & {
+    .webmentions__list__reactions & {
         display: none;
     }
 }
@@ -127,26 +132,26 @@
         line-height: 1;
         text-decoration: none;
     }
+}
 
-    [data-type="bookmark"] .webmentions__response__type::before {
-        content: "🔖";
-    }
+[data-type="bookmark"] .webmentions__response__type::before {
+    content: "🔖";
+}
 
-    [data-type="like"] .webmentions__response__type::before {
-        content: "❤️";
-    }
+[data-type="like"] .webmentions__response__type::before {
+    content: "❤️";
+}
 
-    [data-type="link"] .webmentions__response__type::before {
-        content: "🔗";
-    }
+[data-type="link"] .webmentions__response__type::before {
+    content: "🔗";
+}
 
-    [data-type="repost"] .webmentions__response__type::before {
-        content: "🔄️";
-    }
+[data-type="repost"] .webmentions__response__type::before {
+    content: "🔄️";
+}
 
-    .webmentions__response__type:not([data-reacji=""])::before {
-        content: attr(data-reacji);
-    }
+.webmentions__response__type:not([data-reacji=""])::before {
+    content: attr(data-reacji);
 }
 
 // Also appears only on article pages
