@@ -9,7 +9,8 @@
     width: 100%;
     @include v(max-width, line-length-responsive);
     @include v(padding, medium);
-    margin: 0 auto var(--measure-large);
+    @include v(margin-left, auto);
+    @include v(margin-right, auto);
     @include v(line-height, medium);
 
     time {
