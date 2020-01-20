@@ -5,11 +5,14 @@ lede: "Managing spacing between elements and components on your page can be a ti
 tags:
   - scss
 banner:
+  - sassy-lobotomised-owl@2x.jpg
   - sassy-lobotomised-owl.jpg
 banner_mobile:
+  - sassy-lobotomised-owl_mobile@2x.jpg
   - sassy-lobotomised-owl_mobile.jpg
 redirect_from:
   - article/sassy-lobotomized-owl.html
+longform: false
 ---
 
 The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external">lobotomised owl</a> technique takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:
