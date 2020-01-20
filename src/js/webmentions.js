@@ -36,7 +36,7 @@
     <a class="webmentions__response__avatar  p-author  h-card  u-url" href="{{ author_url }}" rel="external" title="{{ author }}">
         <img class="webmentions__response__image  u-photo" src="{{ author_image_url }}">
     </a>
-    <div class="e-content">{{ content }}</div>
+    <div class="webmentions__response__content  e-content">{{ content }}</div>
     <div>
         <small>by</small>
         <a class="p-author  h-card  u-url" href="{{ author_url }}" rel="external">

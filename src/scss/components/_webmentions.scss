@@ -154,6 +154,10 @@
     content: attr(data-reacji);
 }
 
+.webmentions__response__content {
+    clear: both;
+}
+
 // Also appears only on article pages
 .button--show-webmentions {
     &,
