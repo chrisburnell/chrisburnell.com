@@ -1,5 +1,5 @@
 {% if page.further_reading %}
-    <section class="further-reading">
+    <section class="further-reading" aria-label="Further Reading">
         {% include_cached content/heading.liquid title='Further Reading' %}
         <ul>
             {%- assign further_readings = page.further_reading | uniq -%}

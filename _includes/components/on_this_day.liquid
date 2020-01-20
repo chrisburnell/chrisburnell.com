@@ -14,8 +14,8 @@
 {%- endfor -%}
 
 {% if on_this_day_posts.size > 0 %}
-    <h2 id="on-this-day" class="gamma">On This Day</h2>
-    <section class="on-this-day">
+    <section class="on-this-day" aria-label="On This Day">
+        {% include content/heading.liquid title='On This Day' %}
         <ol class="deck" role="list">
             {% for page in on_this_day_posts %}
                 {% include components/item_deck.liquid relative_year=true strip_h=true %}

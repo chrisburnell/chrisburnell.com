@@ -25,9 +25,9 @@ further_reading:
 
 A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/){:rel="external"} some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
 
-<section class="edit">
+<div class="edit">
     <p>N.B. This assumes that you are gzipping your assets on the front-end.</p>
-</section>
+</div>
 
 I’ve been using both `@extend` and `@mixin` in my Sass for a number of years, but finding the balance between the two techniques, to find what works for me, took some time. I think it was Harry’s article that prompted me to re-evaluate how I approach the subject.
 
@@ -39,9 +39,9 @@ The gist of Harry’s article is that using `@extend` to repeat styles is not wo
 
 While using `@mixin` means repeated code in the compiled CSS output (remember: **D**on’t **R**epeat **Y**ourself), *gzipping* our CSS will actually make the impact of this repeated code almost negligible; however, it’s important to ensure that any and all static output from a `@mixin` is in the same order in each instance it is used. This is because *gzip* casts repeated strings to a variable and substitutes in the variable (instead of the full string) wherever the string is repeated in the CSS. By ensuring the same (or as close to the same) order of selectors, properties, values, etc. in the output of a `@mixin`, you set the maximum-possible-length-string of characters to a variable and thereby reduce the size of your *gzipped output CSS*.
 
-<section class="edit">
+<div class="edit">
     <p>If you want a clearer explanation or more information on the above, check out <a rel="external" href="http://csswizardry.com/2016/02/mixins-better-for-performance">Harry Roberts’ article</a>.</p>
-</section>
+</div>
 
 Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined that `@mixin` were as performant as, if not more than, `@extend`. This spurred me on to refactor my Sass and make sure I was using `@extend` properly…
 

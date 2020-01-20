@@ -1,5 +1,5 @@
 {% if paginator.previous_page or paginator.next_page %}
-    <section class="widget  widget--pagination">
+    <section class="widget  widget--pagination" aria-label="Pagination">
         {% if paginator.next_page %}
             <a class="widget-previous-anchor" href="{{ paginator.next_page_path }}" title="Older Posts">← Older</a>
         {% endif %}

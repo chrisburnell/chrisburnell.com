@@ -3,7 +3,7 @@
 
 
 <main class="wrap" role="main">
-    <section class="content" id="content" role="document">
+    <div class="content" id="content" role="document">
 
         {% if page.page_class contains 'home' %}
             <h1 class="tagline">{{ site.tagline | replace: ' for', ' <br>for' }}</h1>
@@ -48,7 +48,7 @@
             {% include components/buttons_categories.liquid %}
         {% endif %}
 
-    </section>
+    </div>
 
     {% include components/author.liquid %}
 </main>
