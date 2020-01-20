@@ -113,7 +113,7 @@ ul.default-list li::before {
 }
 dl {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     @include v(column-gap, medium);
     @include v(row-gap, large);
     margin-top: 0;
