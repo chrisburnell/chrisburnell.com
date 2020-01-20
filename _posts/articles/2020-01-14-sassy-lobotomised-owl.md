@@ -141,7 +141,7 @@ Now, using some error-checking in SCSS, we end up with:
 }
 {% endhighlight %}
 
-So if we attempt to pass a parameter to the mixin that does not map to a defined measure…
+So if we attempt to pass a parameter to the mixin that does not map to a defined measure (`small`, `medium`, or `large`)…
 
 {% highlight scss %}
 header {
