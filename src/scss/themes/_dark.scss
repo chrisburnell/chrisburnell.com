@@ -3,16 +3,6 @@
 /// @group themes
 ////
 
-img,
-svg,
-[role="img"],
-embed,
-iframe,
-object,
-video {
-
-}
-
 @mixin theme-dark() {
     --color-black: #{$color-white};
     --color-mineshaft: #{$color-alto};
