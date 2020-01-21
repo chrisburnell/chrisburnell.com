@@ -119,7 +119,7 @@ dl {
     margin-top: 0;
     overflow: hidden;
 
-    @include media("screen", "above:350px") {
+    @include media("screen", "above:small") {
         grid-template-columns: minmax(min-content, 33.33%) 1fr;
         // grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
     }
@@ -133,7 +133,7 @@ dl {
     }
 
     &.full {
-        @include media("screen", "above:350px") {
+        @include media("screen", "above:small") {
             grid-template-columns: max-content 1fr !important;
         }
     }

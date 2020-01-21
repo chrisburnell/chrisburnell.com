@@ -58,6 +58,7 @@
 
 .webmentions__responses {
     @include owl;
+    contain: content;
 }
 
 .webmentions__response {

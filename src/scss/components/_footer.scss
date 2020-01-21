@@ -76,8 +76,7 @@ footer {
 
     a,
     button {
-        @include v(margin-left, small);
-        @include v(margin-right, small);
+        @include v(margin, small);
         @include v(font-size, small);
         @include v(text-decoration-thickness, thin);
         @include v(text-underline-offset, default);
@@ -85,8 +84,6 @@ footer {
 
     button {
         @include case(initial);
-        margin-top: var(--border-width-button);
-        margin-bottom: var(--border-width-button);
     }
 }
 
