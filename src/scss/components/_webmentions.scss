@@ -87,7 +87,7 @@
     .webmentions__list__replies & {
         float: left;
         @include v(margin-right, medium);
-        @include v(margin-bottom, medium);
+        @include v(margin-bottom, small);
     }
 }
 
