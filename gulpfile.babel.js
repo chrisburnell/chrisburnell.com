@@ -156,8 +156,7 @@ gulp.task("js-concat", () => {
         .src([
             `${paths.js.src}/helpers.js`, // dependency
             `${paths.js.src}/**/*.js`,
-            `!${paths.js.src}/serviceworker.js`,
-            `!${paths.js.src}/vendors/luxon.js`
+            `!${paths.js.src}/serviceworker.js`
         ])
         .pipe(plumber())
         .pipe(concat("main.js"))
