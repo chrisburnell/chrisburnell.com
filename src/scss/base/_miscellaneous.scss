@@ -45,8 +45,7 @@ ins {
 }
 
 ins {
-    $color-liquid-white: mix($color-white, $color-liquid, 80%);
-    background-color: $color-liquid-white;
+    @include v(background-color, liquid-white);
     color: contrasting-color($color-liquid-white);
     @include v(font-size, default);
 }

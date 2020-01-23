@@ -40,11 +40,11 @@
         }
 
         &:active {
-            background-color: $color-transparent;
+            @include v(background-color, transparent);
             outline-width: 0;
 
             .icon {
-                transform: translateY($border-width-thin);
+                transform: translateY(var(--border-width-thin));
             }
         }
     }

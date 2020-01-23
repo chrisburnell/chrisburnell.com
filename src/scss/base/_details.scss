@@ -10,7 +10,7 @@ details {
     position: relative;
 
     %content-elements {
-        padding: 0 $measure-small $measure-small;
+        padding: 0 var(--measure-small) var(--measure-small);
     }
 
     & > div {

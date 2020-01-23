@@ -18,19 +18,19 @@
     }
 
     %button-elements & {
-        width: $font-size-default;
-        height: $font-size-default;
-        margin-right: $measure-small;
+        width: var(--font-size-default);
+        height: var(--font-size-default);
+        @include v(margin-right, small);
     }
 
     .fragment-anchor & {
-        width: $font-size-gamma;
-        height: $font-size-gamma;
+        width: var(--font-size-gamma);
+        height: var(--font-size-gamma);
     }
 
     .icons-list & {
         @include v(fill, kaiser);
-        height: #{$measure-large * 2};
+        height: calc(var(--measure-large) * 2);
     }
 }
 

@@ -131,6 +131,8 @@ $color-liquid: hsl(99.8, 37.6%, 53.5%) !default; // #7ab55c
 $color-markdown: hsl(210, 9.8%, 32.2%) !default; // #4a525a
 /// @type Color
 $color-sass: hsl(330.3, 50.2%, 55.1%) !default; // #c6538c
+/// @type Color
+$color-liquid-white: mix($color-white, $color-liquid, 80%) !default; // #dfebd9
 
 /// @type Color
 $color-codepen: hsl(0, 0%, 12.9%) !default; // #212121

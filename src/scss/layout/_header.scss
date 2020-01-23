@@ -20,7 +20,7 @@ header {
 
     @include media("screen", "above:medium") {
         // 1────────────────2─────────────3
-        // │ $measure-aside │ min-content │
+        // │ measure-aside  │ min-content │
         // 2────────────────┴─────────────┘
         grid-template-columns: var(--measure-aside) min-content;
         justify-content: space-between;

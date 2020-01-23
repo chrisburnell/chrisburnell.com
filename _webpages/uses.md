@@ -14,6 +14,6 @@ My font of choice for coding is [Menlo](https://en.wikipedia.org/wiki/Menlo_(typ
 
 {% include content/heading.liquid title='Hardware' %}
 
-I run a **Mid-2015 15" Retina Macbook Pro** with a 4-core i7 processor and 16 GB of RAM.
+I run a *Mid-2015 15" Retina Macbook Pro* with a 4-core i7 processor and 16 GB of RAM.
 
 When I’m able to, I also use a [Ducky One RGB TKL keyboard](https://www.duckychannel.com.tw/en/Ducky-One-RGB-TKL){:rel="external"} and a [Logitech G502 Proteus Spectrum mouse](https://www.logitechg.com/en-hk/products/gaming-mice/g502-proteus-spectrum-rgb-gaming-mouse.html){:rel="external"}. *All the colours.*
