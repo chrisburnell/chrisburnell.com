@@ -5,6 +5,12 @@ lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid sta
 tags:
   - css
   - scss
+banner:
+  - variables-for-both@2x.jpg
+  - variables-for-both.jpg
+banner_mobile:
+  - variables-for-both_mobile@2x.jpg
+  - variables-for-both_mobile.jpg
 further_reading:
   - title: W3 CSS Custom Properties Specification
     link: https://www.w3.org/TR/css-variables/
@@ -16,6 +22,10 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
+longform: false
+sitemap:
+  lastmod: 2020-01-23 10:00:00 +0000
+edit: Since writing this post, I have made a number of small tweaks to the original mixin, and I've reflected those changes in the contents below.
 ---
 
 {% include_cached content/caniuse.liquid feature='css-variables' periods='current' %}
@@ -156,78 +166,93 @@ $property-map: (
 
 Things are pretty straightforward for `z-index` and `opacity`, but you can see that we’ve now assigned our <q>measure-type</q> variables to a handful of properties—we can use any of our <samp>measures</samp> (small, medium, large) when assigning a value to `margin`, `margin-X`, `padding`, `padding-X`, and `X-gap` properties.
 
+Lastly, we’ll check our passed-in value against a list of “generic” CSS property values, which includes: <samp>auto</samp>, <samp>inherit</samp>, <samp>initial</samp>, <samp>none</samp>, <samp>revert</samp>, <samp>unset</samp>, <samp>0</samp>, and <samp>1</samp>. If it does match one of those generic values, we’ll forego any processing and output a singular property-value pair.
+
 Let’s tie it all together with this SCSS mixin.
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
 @mixin v($property, $value, $negative: false, $important: false, $hide: false) {
-    $map-name: map-get($property-map, $property);
-    $nest-name: null;
-    $nest-map-name: null;
-    $map: null;
-    $variable-fallback: null;
-    $variable-output: null;
 
-    // if a Nested List, we need to go deeper
-    @if type-of($map-name) == list {
-        $nest-name: nth($map-name, 1);
-        $nest-map-name: nth($map-name, 2);
-    }
-
-    // if it is a Nested List
-    @if $nest-name {
-        // get the map from nested map-name
-        $map: map-get($variable-map, $nest-name);
-        // get the nested map
-        $nest-map: map-get($map, $nest-map-name);
-        // fallback value, get the var value from the nested map
-        $variable-fallback: map-get($nest-map, $value);
-        // our CSS Variable output
-        $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
-    }
-    @else {
-        // get the map from map name
-        $map: map-get($variable-map, $map-name);
-        // fallback value, grab the variable's value from the map
-        $variable-fallback: map-get($map, $value);
-        // our CSS Variable output
-        $variable-output: var(--#{$map-name}-#{$value});
-    }
-
-    // output the value from SCSS as-is as well as the associated CSS Variable
-    @if $important {
-        @if $hide != 'fallback' {
-            @if $negative {
-                #{$property}: #{$variable-fallback * -1} !important;
-            }
-            @else {
-                #{$property}: $variable-fallback !important;
-            }
+    @if (index($generic-values, $value)) {
+        @if $important {
+            #{$property}: #{$value} !important;
         }
-        @if $hide != 'output' {
-            @if $negative {
-                #{$property}: calc(#{$variable-output} * -1) !important;
-            }
-            @else {
-                #{$property}: $variable-output !important;
-            }
+        @else {
+            #{$property}: #{$value};
         }
     }
     @else {
-        @if $hide !== 'fallback' {
-            @if $negative {
-                #{$property}: #{$variable-fallback * -1};
-            }
-            @else {
-                #{$property}: $variable-fallback;
-            }
+        $map-name: map-get($property-map, $property);
+        $nest-name: null;
+        $nest-map-name: null;
+        $map: null;
+        $variable-fallback: null;
+        $variable-output: null;
+
+        // if a Nested List, we need to go deeper
+        @if type-of($map-name) == list {
+            $nest-name: nth($map-name, 1);
+            $nest-map-name: nth($map-name, 2);
         }
-        @if $hide != 'output' {
-            @if $negative {
-                #{$property}: calc(#{$variable-output} * -1);
+
+        // if it is a Nested List
+        @if $nest-name {
+            // get the map from nested map-name
+            $map: map-get($variable-map, $nest-name);
+            // get the nested map
+            $nest-map: map-get($map, $nest-map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($nest-map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
             }
-            @else {
-                #{$property}: $variable-output;
+            // fallback value, get the var value from the nested map
+            $variable-fallback: map-get($nest-map, $value);
+            // our CSS Variable output
+            $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
+        } @else {
+            // get the map from map name
+            $map: map-get($variable-map, $map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+            }
+            // fallback value, grab the variable's value from the map
+            $variable-fallback: map-get($map, $value);
+            // our CSS Variable output
+            $variable-output: var(--#{$map-name}-#{$value});
+        }
+
+        // output the value from SCSS as-is as well as the associated CSS variable
+        @if $important {
+            @if $hide != "fallback" {
+                @if $negative {
+                    #{$property}: #{$variable-fallback * -1} !important;
+                } @else {
+                    #{$property}: $variable-fallback !important;
+                }
+            }
+            @if $hide != "output" {
+                @if $negative {
+                    #{$property}: calc(#{$variable-output} * -1) !important;
+                } @else {
+                    #{$property}: $variable-output !important;
+                }
+            }
+        } @else {
+            @if $hide != "fallback" {
+                @if $negative {
+                    #{$property}: #{$variable-fallback * -1};
+                } @else {
+                    #{$property}: $variable-fallback;
+                }
+            }
+            @if $hide != "output" {
+                @if $negative {
+                    #{$property}: calc(#{$variable-output} * -1);
+                } @else {
+                    #{$property}: $variable-output;
+                }
             }
         }
     }
