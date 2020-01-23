@@ -121,9 +121,6 @@
         for (let link of data.links.reverse()) {
             let type = "reaction";
 
-            // REMOVE
-            console.log(link.data.content.length);
-
             if (link.activity.type !== "like" && link.activity.type !== "repost" && link.data.content && link.data.content.length > 2) {
                 type = "reply";
             }
