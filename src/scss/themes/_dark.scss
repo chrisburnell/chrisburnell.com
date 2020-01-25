@@ -3,13 +3,35 @@
 /// @group themes
 ////
 
+img,
+svg,
+[role="img"],
+embed,
+iframe,
+object,
+video,
+.highlight {
+    @extend %asset-elements;
+}
+
 @mixin theme-dark() {
-    --color-black: #{$color-white};
-    --color-mineshaft: #{$color-alto};
-    --color-kaiser: #{$color-dove};
-    --color-dove: #{$color-kaiser};
-    --color-alto: #{$color-mineshaft};
-    --color-white: #{$color-black};
+    @supports (filter: invert(1) hue-rotate(180deg)) {
+        & {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        %asset-elements {
+            filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+        }
+    }
+
+    @supports not (filter: invert(1) hue-rotate(180deg)) {
+        --color-black: #{$color-white};
+        --color-mineshaft: #{$color-alto};
+        --color-kaiser: #{$color-dove};
+        --color-dove: #{$color-kaiser};
+        --color-alto: #{$color-mineshaft};
+        --color-white: #{$color-black};
+    }
 }
 
 @include media("dark") {
