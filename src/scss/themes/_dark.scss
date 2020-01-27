@@ -22,6 +22,12 @@ video,
         %asset-elements {
             filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
         }
+        .dark-background {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        .dark-background %asset-elements {
+            filter: none;
+        }
     }
 
     @supports not (filter: invert(1) hue-rotate(180deg)) {
