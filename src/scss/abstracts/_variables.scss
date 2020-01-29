@@ -55,7 +55,7 @@ $measure-line-length-minimum: 21em !default;
 /// @type Length
 $measure-line-length-maximum: 30em !default;
 /// @type Length
-$measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)})));
+$measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)}))) !default;
 /// @type Length
 $measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-line-length-maximum) !default;
 
@@ -103,21 +103,21 @@ $color-black--delta: rgba($color-black, $opacity-delta) !default;
 $color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
 
 /// @type Color
-$color-highlight-alpha: hsl(194.5, 14.1%, 40.2%); // #586e75
+$color-highlight-alpha: hsl(194.5, 14.1%, 40.2%) !default; // #586e75
 /// @type Color
-$color-highlight-beta: hsl(180, 10.5%, 70.2%); // #abbbbb
+$color-highlight-beta: hsl(180, 10.5%, 70.2%) !default; // #abbbbb
 /// @type Color
-$color-highlight-gamma: hsl(120, 73.4%, 74.9%); // #90ee90
+$color-highlight-gamma: hsl(120, 73.4%, 74.9%) !default; // #90ee90
 /// @type Color
-$color-highlight-delta: hsl(17.6, 80.4%, 44.1%); // #cb4b16
+$color-highlight-delta: hsl(17.6, 80.4%, 44.1%) !default; // #cb4b16
 /// @type Color
-$color-highlight-epsilon: hsl(157, 100%, 49%); // #00fa9a
+$color-highlight-epsilon: hsl(157, 100%, 49%) !default; // #00fa9a
 /// @type Color
-$color-highlight-zeta: hsl(1, 71.2%, 52.4%); // #dc322f
+$color-highlight-zeta: hsl(1, 71.2%, 52.4%) !default; // #dc322f
 /// @type Color
-$color-highlight-eta: hsl(197.4, 71.4%, 72.5%); // #87ceeb
+$color-highlight-eta: hsl(197.4, 71.4%, 72.5%) !default; // #87ceeb
 /// @type Color
-$color-highlight-theta: hsl(45.4, 100%, 35.5%); // #b58900
+$color-highlight-theta: hsl(45.4, 100%, 35.5%) !default; // #b58900
 
 /// @type Color
 $color-css: hsl(204.3, 98.9%, 36.7%) !default; // #016fba
@@ -170,7 +170,7 @@ $border-radius-thin: 0.25rem !default;
 $border-radius-hairline: 0.125rem !default;
 
 /// @type String
-$font-display-default: swap;
+$font-display-default: swap !default;
 
 /// @type Length
 $font-size-default: 1rem !default;
@@ -200,10 +200,10 @@ $font-size-tiny: 0.75rem !default;
 $font-size-tiny-relative: 0.75em !default;
 
 /// @type String
-$font-stretch-default: normal;
+$font-stretch-default: normal !default;
 
 /// @type String
-$font-variant-default: normal;
+$font-variant-default: normal !default;
 
 /// @type Number
 $font-weight-default: 400 !default;
@@ -211,7 +211,7 @@ $font-weight-default: 400 !default;
 $font-weight-bold: 600 !default;
 
 /// @type String
-$unicode-range-default: "U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000";
+$unicode-range-default: "U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000" !default;
 
 /// @type Number
 $line-height-default: 1.875 !default;
