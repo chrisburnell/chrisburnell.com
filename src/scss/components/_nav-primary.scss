@@ -64,7 +64,7 @@
         }
 
         @include media("screen", "below:small") {
-            padding-left:  calc(var(--measure-one) / 2);
+            padding-left: calc(var(--measure-one) / 2);
             padding-right: calc(var(--measure-one) / 2);
         }
     }

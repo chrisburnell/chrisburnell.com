@@ -426,7 +426,6 @@
 /// Select a CSS variable and provide a fallback
 ///
 @mixin v($property, $value, $negative: false, $important: false, $hide: "fallback") {
-
     @if (index($generic-values, $value)) {
         @if $important {
             #{$property}: #{$value} !important;

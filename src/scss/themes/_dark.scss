@@ -50,6 +50,6 @@ video,
     }
 }
 
-/*:root*/[data-user-color-scheme="dark"] {
+[data-user-color-scheme="dark"] {
     @include theme-dark;
 }

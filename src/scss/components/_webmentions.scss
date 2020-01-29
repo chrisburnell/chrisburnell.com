@@ -97,7 +97,7 @@
 }
 
 .webmentions__response__name {
-    @include  v(padding-right, medium);
+    @include v(padding-right, medium);
 
     .webmentions__list__reactions & {
         display: none;
