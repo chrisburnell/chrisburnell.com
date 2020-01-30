@@ -22,7 +22,7 @@ button,
     outline: 0 var(--border-style-default) var(--color-raven);
     overflow: visible;
     position: relative;
-    @include v(font-size, default);
+    @include v(font-size);
     @include v(font-weight, bold);
     @include v(line-height, medium);
     text-align: center;

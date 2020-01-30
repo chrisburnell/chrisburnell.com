@@ -18,7 +18,7 @@
     %button-elements {
         @include v(color, kaiser);
         @include v(border-width, hairline);
-        @include v(border-style, default);
+        @include v(border-style);
         @include v(border-color, kaiser);
         box-shadow: none;
     }

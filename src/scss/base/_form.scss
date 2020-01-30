@@ -45,7 +45,7 @@ textarea {
     @extend %form-elements !optional;
     margin: 0;
     @include v(font-size, small);
-    @include v(line-height, default);
+    @include v(line-height);
 }
 
 input,
@@ -58,7 +58,7 @@ textarea {
     box-sizing: inherit !important;
     padding: 0 0.4em;
     @include v(border-width, thin);
-    @include v(border-style, default);
+    @include v(border-style);
     @include v(border-color, alto);
     outline-width: 0;
 

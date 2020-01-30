@@ -6,8 +6,8 @@
 footer {
     width: 100%;
     padding: var(--measure-large) 0;
-    @include v(border-top-width, default);
-    @include v(border-top-style, default);
+    @include v(border-top-width);
+    @include v(border-top-style);
     @include v(border-top-color, raven);
 
     .wrap {

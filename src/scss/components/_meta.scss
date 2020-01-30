@@ -41,7 +41,7 @@
     time {
         color: inherit;
         @include v(font-weight, bold);
-        @include v(font-family, default);
+        @include v(font-family);
         font-style: normal;
     }
 

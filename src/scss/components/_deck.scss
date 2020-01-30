@@ -68,7 +68,7 @@
             text-decoration: underline;
             @include v(text-decoration-color, alto);
             @include v(text-decoration-thickness, thin);
-            @include v(text-underline-offset, default);
+            @include v(text-underline-offset);
         }
     }
     a:hover,

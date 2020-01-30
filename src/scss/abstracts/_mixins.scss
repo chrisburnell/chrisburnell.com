@@ -8,8 +8,8 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $thickness - Thickness of Border Radius
-/// @param {String} $border-radius - Type of Border Radius
+/// @param {String} $width - Width of Border Radius
+/// @param {String} $edge - Sides of Border Radius
 ///
 /// @example scss - Zero parameters
 ///   @include radius;
@@ -19,27 +19,27 @@
 ///   @include radius(1em);
 ///   // border-radius: 1em;
 ///
-@mixin border-radius($thickness: default, $border-radius: null) {
-    @if not is-length($thickness) {
-        @if map-has-key($border-radii, $thickness) {
-            $thickness: map-get($border-radii, $thickness);
-        } @else if is-edge($thickness) {
-            $border-radius: $thickness;
-            $thickness: $border-radius-default;
+@mixin border-radius($width: default, $edge: null) {
+    @if not is-length($width) {
+        @if map-has-key($border-radii, $width) {
+            $width: map-get($border-radii, $width);
+        } @else if is-edge($width) {
+            $edge: $width;
+            $width: $border-radius-default;
         } @else {
-            @error "There is no `thickness` named `#{$thickness}` in `$border-radii`. `thickness` should be one of `#{map-keys($border-radii)}`.";
+            @error "There is no `width` named `#{$width}` in `$border-radii`. `width` should be one of `#{map-keys($border-radii)}`.";
         }
     }
 
-    @if $border-radius and is-edge($border-radius) {
-        $top-left: if($border-radius == "top" or $border-radius == "left" or $border-radius == "top-left", $thickness, 0);
-        $top-right: if($border-radius == "top" or $border-radius == "right" or $border-radius == "top-right", $thickness, 0);
-        $bottom-right: if($border-radius == "bottom" or $border-radius == "right" or $border-radius == "bottom-right", $thickness, 0);
-        $bottom-left: if($border-radius == "bottom" or $border-radius == "left" or $border-radius == "bottom-left", $thickness, 0);
+    $border-radius: $width;
+
+    @if $edge and is-edge($edge) {
+        $top-left: if(index((top, left, top-left), $edge), $width, 0);
+        $top-right: if(index((top, right, top-right), $edge), $width, 0);
+        $bottom-right: if(index((bottom, right, bottom-right), $edge), $width, 0);
+        $bottom-left: if(index((bottom, left, bottom-left), $edge), $width, 0);
 
         $border-radius: $top-left $top-right $bottom-right $bottom-left;
-    } @else {
-        $border-radius: $thickness;
     }
 
     background-clip: padding-box;
@@ -425,7 +425,7 @@
 ///
 /// Select a CSS variable and provide a fallback
 ///
-@mixin v($property, $value, $negative: false, $important: false, $hide: "fallback") {
+@mixin v($property, $value: default, $negative: false, $important: false, $fallback: false) {
     @if (index($generic-values, $value)) {
         @if $important {
             #{$property}: #{$value} !important;
@@ -477,34 +477,30 @@
 
         // output the value from SCSS as-is as well as the associated CSS variable
         @if $important {
-            @if $hide != "fallback" {
+            @if $fallback {
                 @if $negative {
                     #{$property}: #{$variable-fallback * -1} !important;
                 } @else {
                     #{$property}: $variable-fallback !important;
                 }
             }
-            @if $hide != "output" {
-                @if $negative {
-                    #{$property}: calc(#{$variable-output} * -1) !important;
-                } @else {
-                    #{$property}: $variable-output !important;
-                }
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1) !important;
+            } @else {
+                #{$property}: $variable-output !important;
             }
         } @else {
-            @if $hide != "fallback" {
+            @if $fallback {
                 @if $negative {
                     #{$property}: #{$variable-fallback * -1};
                 } @else {
                     #{$property}: $variable-fallback;
                 }
             }
-            @if $hide != "output" {
-                @if $negative {
-                    #{$property}: calc(#{$variable-output} * -1);
-                } @else {
-                    #{$property}: $variable-output;
-                }
+            @if $negative {
+                #{$property}: calc(#{$variable-output} * -1);
+            } @else {
+                #{$property}: $variable-output;
             }
         }
     }

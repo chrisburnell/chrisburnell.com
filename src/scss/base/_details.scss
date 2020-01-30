@@ -45,7 +45,7 @@ summary {
     & + %content-elements {
         @include v(margin-top, small);
         @include v(border-top-width, thin);
-        @include v(border-top-style, default);
+        @include v(border-top-style);
         @include v(border-top-color, raven);
         @include v(padding-top, medium);
     }

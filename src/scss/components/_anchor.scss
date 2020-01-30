@@ -8,7 +8,7 @@ a {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
         @include v(text-decoration-thickness, thin);
-        @include v(text-underline-offset, default);
+        @include v(text-underline-offset);
     }
 
     .dark-background & {
@@ -71,7 +71,7 @@ a {
     right: calc(var(--measure-small) * -1);
     @include v(font-size, small);
     @include v(font-weight, bold);
-    @include v(line-height, default);
+    @include v(line-height);
     text-shadow: none;
 
     %heading-elements:hover &,

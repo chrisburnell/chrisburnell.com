@@ -14,7 +14,7 @@ h6 {
     padding: 0;
     margin: 0;
     position: relative;
-    @include v(font-weight, default);
+    @include v(font-weight);
     font-variant-numeric: lining-nums;
 
     // For special Monospace titles
@@ -53,7 +53,7 @@ h2 {
 %gamma {
     @include v(font-size, gamma);
     @include v(font-weight, bold);
-    @include v(line-height, default);
+    @include v(line-height);
 }
 .gamma {
     @extend %gamma !optional;
@@ -65,7 +65,7 @@ h2 {
     .webmentions & {
         @include case(uppercase);
         @include v(border-bottom-width, thin);
-        @include v(border-bottom-style, default);
+        @include v(border-bottom-style);
         @include v(border-bottom-color, alto);
         width: auto;
         max-width: 100%;
@@ -84,7 +84,7 @@ h3 {
 // Heading - Delta
 .delta,
 %delta {
-    @include v(font-size, default);
+    @include v(font-size);
     @include v(font-weight, bold);
     @include v(line-height, small);
 }
@@ -95,7 +95,7 @@ h4 {
 // Heading - Epsilon
 .epsilon,
 %epsilon {
-    @include v(font-size, default);
+    @include v(font-size);
     @include v(line-height, small);
 }
 h5 {
@@ -105,7 +105,7 @@ h5 {
 // Heading - Zeta
 .zeta,
 %zeta {
-    @include v(font-size, default);
+    @include v(font-size);
     @include v(line-height, small);
 }
 h6 {

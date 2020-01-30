@@ -29,8 +29,8 @@ body {
     margin: 0;
     @include font-family(default);
     font-style: normal;
-    @include v(font-weight, default);
-    @include v(line-height, default);
+    @include v(font-weight);
+    @include v(line-height);
 }
 
 // Content Elements

@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     @include v(border-width, thin);
-    @include v(border-style, default);
+    @include v(border-style);
     @include v(border-color, alto);
     @include v(padding, small);
 }

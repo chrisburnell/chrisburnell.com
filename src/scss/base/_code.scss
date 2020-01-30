@@ -52,7 +52,7 @@ kbd {
 }
 mark {
     @include v(background-color, highlight);
-    @include v(font-size, default);
+    @include v(font-size);
 }
 var {
     @include v(color, raven);

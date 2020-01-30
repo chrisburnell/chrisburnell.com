@@ -47,7 +47,7 @@ ins {
 ins {
     @include v(background-color, liquid-white);
     color: contrasting-color($color-liquid-white);
-    @include v(font-size, default);
+    @include v(font-size);
 }
 
 del {

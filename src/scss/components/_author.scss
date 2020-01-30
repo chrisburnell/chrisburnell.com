@@ -50,7 +50,7 @@
     @include media("screen", "below:medium") {
         @include v(padding-top, large);
         @include v(border-top-width, thin);
-        @include v(border-top-style, default);
+        @include v(border-top-style);
         @include v(border-top-color, black--gamma);
     }
 
@@ -166,7 +166,7 @@
 
 .webring-links {
     p {
-        @include v(font-size, default);
+        @include v(font-size);
     }
     .webring-links__previous,
     .webring-links__home {

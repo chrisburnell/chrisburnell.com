@@ -149,7 +149,7 @@ dt {
     %beta,
     .delta,
     %delta {
-        @include v(line-height, default);
+        @include v(line-height);
     }
 }
 dd {
