@@ -16,9 +16,9 @@ In the same way that Facebook collects stasuses from your friends' feeds and dis
 
 {% include content/heading.liquid title='Links' %}
 
-- [https://schema.org/](https://schema.org/){:rel="external"}
-- [http://microformats.org/](http://microformats.org/){:rel="external"}
-- [https://json-ld.org/](https://json-ld.org/){:rel="external"}
-- [https://www.w3.org/TR/rdfa-primer/](https://www.w3.org/TR/rdfa-primer/){:rel="external"}
+- [https://schema.org](https://schema.org/){:rel="external"}
+- [http://microformats.org](http://microformats.org/){:rel="external"}
+- [https://json-ld.org](https://json-ld.org/){:rel="external"}
+- [https://www.w3.org/TR/rdfa-primer](https://www.w3.org/TR/rdfa-primer/){:rel="external"}
 - [http://pin13.net/mf2/?url=https%3A%2F%2Fchrisburnell.com%2F](http://pin13.net/mf2/?url=https%3A%2F%2Fchrisburnell.com%2F){:rel="external"}
 - [http://xray.p3k.io/parse?url=https%3A%2F%2Fchrisburnell.com%2F&pretty=true&expect=feed](http://xray.p3k.io/parse?url=https%3A%2F%2Fchrisburnell.com%2F&pretty=true&expect=feed){:rel="external"}
