@@ -159,7 +159,6 @@ defaults:
   - scope:
       path: "_*/articles"
     values:
-      longform: true
       category: "article"
       prefix: a
       on_this_day: true
