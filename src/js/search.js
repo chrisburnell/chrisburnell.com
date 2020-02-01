@@ -21,7 +21,7 @@
     const rootUrl = document.querySelector("link[rel=self]").href.replace("feed.xml", "");
     const SEARCH_PAGE_TEMPLATE = `<li role="listitem">
     <article class="h-entry" role="article">
-        <a class="u-url" href="#">
+        <a href="{{ url }}" class="u-url>
             <h3 class="delta  title  p-name">{{ title }}</h3>
             <div class="lede  p-summary">{{ lede }}</div>
         </a>
@@ -30,7 +30,8 @@
 </li>`;
     const SEARCH_POST_TEMPLATE = `<li role="listitem">
     <article class="h-entry" role="article">
-        <a class="u-url" href="#">
+        <a href="{{ url }}">
+            <data class="u-url" hidden aria-hidden="true">{{ link }}</data>
             <h3 class="delta  title  p-name"{{ hidden }}>{{ title }}</h3>
             <div class="lede  p-summary">{{ lede }}</div>
             <time class="date" datetime="{{ date_full }}">{{ date_friendly }}</time>
@@ -355,7 +356,15 @@
         let queryHighlightRegex = new RegExp(query, "gi");
 
         // URL
-        html = helpers.injectContent(html, "#", item.url);
+        html = helpers.injectContent(html, /{{\s*url\s*}}/, item.url);
+
+        // LINK
+        if (item.link) {
+            html = helpers.injectContent(html, /{{\s*link\s*}}/, item.link);
+        }
+        else {
+            html = helpers.injectContent(html, /{{\s*link\s*}}/, item.url);
+        }
 
         // TITLE
         if (item.category == "note") {

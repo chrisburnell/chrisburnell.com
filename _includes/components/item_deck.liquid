@@ -34,7 +34,12 @@
 {%- endif -%}
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
-        <a class="u-url" href="{{ page.url }}">
+        {% if page.category == 'bookmark' or page.category == 'like' %}
+            <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
+            <a href="{{ link }}" rel="external">
+        {% else %}
+            <a href="{{ page.url }}" class="u-url">
+        {% endif %}
             <h3 class="delta  title{% unless page.titlefree %}  p-name{% endunless %}"{% if page.titlefree %} hidden aria-hidden="true"{% endif %}>
                 {% if page.titlefree %}
                     {{ page.date | date: '%A, %d %B %Y' }}
