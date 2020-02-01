@@ -77,7 +77,7 @@
                     <cite class="p-name  p-summary">{{ page.title | strip_html }}</cite>
                 </a>
             {% endif %}
-            {% if link and page.mf_property and page.category != 'bookmark' and page.category != 'link' %}
+            {% if link and page.mf_property and page.category != 'bookmark' and page.category != 'like' %}
                 <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>
             {% endif %}
         </h2>
