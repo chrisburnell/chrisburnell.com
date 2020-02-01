@@ -48,7 +48,7 @@
 {%- endif -%}
 <li role="listitem" class="h-review">
     {% if page.cover and page.category != 'beer' %}
-        <a class="cover" href="{% if page.category == 'bookmark' %}{{ page.bookmark_of.link | default: page.bookmark_of }}{% elsif page.category == 'like' %}{{ page.like_of.link | default: page.like_of }}{% else %}{{ page.url }}{% endif %}" title="{{ link_title }}">
+        <a class="cover" href="{{ page.url }}" title="{{ link_title }}">
             {% include components/cover.liquid %}
         </a>
     {% endif %}
