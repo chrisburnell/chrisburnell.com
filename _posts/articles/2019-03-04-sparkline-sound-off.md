@@ -6,6 +6,9 @@ tags:
   - canvas
   - javascript
   - music
+further_reading:
+  - link: https://beginnerguitarhq.com/pentatonic-scale
+    title: "How to Play the Pentatonic Scale | Beginner Guitar HQ"
 ---
 
 To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js){:rel="external"} and made some modifications. I won’t go into detail about how the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API){:rel="external"} or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API){:rel="external"}, but there are many resources available if you want a background.
@@ -115,3 +118,7 @@ We can pump these values into the [Web Audio API](https://developer.mozilla.org/
 <figure>
     <canvas id="sparkline-demo-3" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" tabindex="0"></canvas>
 </figure>
+
+--------
+
+Lastly, I've included a link below if you’re a guitar player and you’re interested in playing in this type of scale! Thanks to [Jess Miller](https://www.jenreviews.com){:rex="external"} for reaching out.
