@@ -10,7 +10,7 @@
         @include v(font-stretch, nth($style, 4));
         font-style: #{nth($style, 5)};
         @include v(font-variant, nth($style, 6));
-        @include v(font-weight, nth($style, 7), $hide: false);
+        @include v(font-weight, nth($style, 7), $fallback: true);
         src: local("#{nth($style, 1)} #{nth($style, 2)}"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff2") format("woff2"),
              url("https://chrisburnell.com/fonts/#{nth($style, 8)}.woff") format("woff"),
