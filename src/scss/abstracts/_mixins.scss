@@ -475,7 +475,7 @@
             $variable-output: var(--#{$map-name}-#{$value});
         }
 
-        // output the value from SCSS as-is as well as the associated CSS variable
+        // output the CSS Variable and optionally the SCSS value as well
         @if $important {
             @if $fallback {
                 @if $negative {
