@@ -65,12 +65,6 @@
                 <span class="p-name  e-content">{{ page.reacji }}</span>
             {% else %}
                 {{ content }}
-
-                {% if page.category == 'article' %}
-                    {% unless content contains 'carbonads' %}
-                        {% include components/ads.liquid %}
-                    {% endunless %}
-                {% endif %}
             {% endif %}
 
             {% if checkin.lat and checkin.long %}
@@ -88,10 +82,8 @@
 
         {% include components/further_reading.liquid %}
 
-        {% unless page.category == 'article' %}
-            {% unless content contains 'carbonads' %}
-                {% include components/ads.liquid %}
-            {% endunless %}
+        {% unless content contains 'carbonads' %}
+            {% include components/ads.liquid %}
         {% endunless %}
 
         {% if page.webmentions == true %}
