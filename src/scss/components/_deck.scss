@@ -80,6 +80,12 @@
         }
     }
 
+    [rel*="external"] {
+        %heading-elements::after {
+            content: " ↗";
+        }
+    }
+
     .lede,
     .date {
         width: 100%;

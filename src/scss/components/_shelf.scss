@@ -43,4 +43,8 @@
             height: var(--measure-aside);
         }
     }
+
+    [rel*="external"]::after {
+        content: " ↗";
+    }
 }

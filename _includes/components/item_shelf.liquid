@@ -59,15 +59,15 @@
                     <cite class="p-name  p-summary">{{ page.title | strip_html }}</cite>
                 </a>
             {% elsif page.category == 'bookmark' %}
+                <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
                 <a href="{{ link }}" rel="external">
                     <cite class="p-name  p-summary">{{ page.title | strip_html }}</cite>
                 </a>
-                <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
             {% elsif page.category == 'like' %}
+                <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
                 <a href="{{ link }}" rel="external">
                     <cite class="break-anywhere">Liked: {{ link_title }}</cite>
                 </a>
-                <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
             {% elsif page.category == 'tv' %}
                 <a href="{{ page.url }}" class="u-url">
                     <cite class="p-name  p-summary">{{ page.title | strip_html }}<br>Season {{ page.season }}, Episode {{ page.episode }}</cite>
@@ -76,9 +76,6 @@
                 <a href="{{ page.url }}" class="u-url">
                     <cite class="p-name  p-summary">{{ page.title | strip_html }}</cite>
                 </a>
-            {% endif %}
-            {% if link and page.mf_property and page.category != 'bookmark' and page.category != 'like' %}
-                <a class="u-{{ page.mf_property }}" href="{{ link }}" rel="external">↗</a>
             {% endif %}
         </h2>
         <div>
