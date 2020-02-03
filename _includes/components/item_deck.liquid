@@ -147,7 +147,7 @@
                     <span class="p-summary">{{ content | truncatewords: 30 | replace: ',...', '...' | replace: '....', '...' | strip }}</span>
                     <span class="e-content" hidden aria-hidden="true">{{ content }}</span>
                 {% else %}
-                    <span class="p-summary  p-content">{% include content/capitalizer.liquid input=page.category %}{% if page.layout == 'review' %} <span>Review</span>{% endif %}</span>
+                    <span class="p-summary  p-content">{% include content/capitalizer.liquid input=page.category %}{% if page.layout == 'review' %} <span>Review</span>{% elsif page.category == 'code' %} <span>Snippet</span>{% endif %}</span>
                 {% endif %}
                 {% if page.layout == 'review' and page.authors %}
                     by
