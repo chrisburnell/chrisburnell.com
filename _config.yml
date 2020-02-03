@@ -193,6 +193,7 @@ defaults:
   - scope:
       path: "_*/chess"
     values:
+      layout: "chess"
       category: "chess"
       mf_property: "played-of"
       prefix: e
@@ -205,6 +206,7 @@ defaults:
   - scope:
       path: "_*/code"
     values:
+      layout: "code"
       category: "code"
       prefix: c
       emoji: "✒️"
@@ -213,6 +215,7 @@ defaults:
   - scope:
       path: "_*/likes"
     values:
+      layout: "like"
       category: "like"
       mf_property: "like-of"
       prefix: f

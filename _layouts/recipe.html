@@ -5,30 +5,22 @@
 <main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
-        <h1 class="title{% if page.page_class contains 'success' %}  title--success{% elsif page.page_class contains 'error' %}  title--error{% endif %}" id="article">
-            <span class="p-name">{{ page.title | strip_html }}</span>
-            {% if page.sparkline %}
-                {% include content/sparkline.liquid title=page.sparkline values=page.category %}
-            {% endif %}
-        </h1>
+        {% include components/title.liquid %}
 
         {% include components/meta.liquid %}
+
         {% include components/banner.liquid %}
 
-        {% if page.lede %}
-            <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
-        {% endif %}
+        {% include components/lede.liquid %}
 
-        {% if page.edit %}
-            <div class="edit">
-                {% if page.sitemap.lastmod %}
-                    <time datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">Edited on {{ page.sitemap.lastmod | date_to_long_string }}:</time>
-                {% endif %}
-                {{ page.edit | markdownify }}
-            </div>
-        {% endif %}
+        {% include components/reply_context.liquid %}
 
-        {% include components/photo.liquid photo=page.photo %}
+        {% include components/edit.liquid %}
+
+        {% include components/link.liquid %}
+
+        {% include components/photo.liquid %}
+
         <div class="content__body  e-content">
             <input type="radio" id="metric" name="units" hidden aria-hidden="true" checked>
             <input type="radio" id="canada" name="units" hidden aria-hidden="true">
@@ -183,14 +175,10 @@
             {% include components/ads.liquid %}
         {% endunless %}
 
-        {% if page.webmentions == true %}
-            <hr>
-            {% include components/webmentions.liquid %}
-        {% endif %}
-
-        <hr>
+        {% include components/webmentions.liquid %}
 
         {% include components/buttons_categories.liquid %}
+
         {% include components/widget_browse_posts.liquid %}
 
     </article>

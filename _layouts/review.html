@@ -13,6 +13,7 @@
         </h1>
 
         {% include components/meta.liquid %}
+
         {% include components/banner.liquid %}
 
         {%- assign content = page.content | strip_newlines -%}
@@ -20,32 +21,22 @@
             <p class="beta  lede  lede--featured  p-summary" id="lede">{{ content }}</p>
         {% endif %}
 
-        {% if link %}
-            <div class="content__body">
+        <div class="content__body  e-content">
+            {% if link %}
                 <nav class="buttons-list" role="navigation">
                     <a class="p-item  h-product" href="{{ link }}" hidden>{{ page.title | strip_html }}</a>
                     <a class="button  h-cite  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.read_of.title | default: page.link.title | default: link_title }}</a>
                 </nav>
-            </div>
 
-            {% if page.category == 'music' %}
-                <figure>
-                    <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
-                </figure>
+                {% if page.category == 'music' %}
+                    <figure>
+                        <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+                    </figure>
+                {% endif %}
             {% endif %}
-        {% endif %}
 
-        {% if checkin.lat and checkin.long %}
-            <figure class="media">
-                <a href="https://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" rel="external" title="Open with OpenStreetMap">
-                    <picture>
-                        <source media="all and (prefers-color-scheme: dark)" srcset="https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 1x, https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280@2x?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 2x">
-                        <source media="all and not (prefers-color-scheme: dark)" srcset="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 1x, https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280@2x?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 2x">
-                        <img src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA" alt="{{ checkin.name }} {{ checkin.address }}">
-                    </picture>
-                </a>
-            </figure>
-        {% endif %}
+            {% include components/checkin.liquid %}
+        </div>
 
         {% include components/further_reading.liquid %}
 
@@ -53,14 +44,10 @@
             {% include components/ads.liquid %}
         {% endunless %}
 
-        {% if page.webmentions == true %}
-            <hr>
-            {% include components/webmentions.liquid %}
-        {% endif %}
-
-        <hr>
+        {% include components/webmentions.liquid %}
 
         {% include components/buttons_categories.liquid %}
+
         {% include components/widget_browse_posts.liquid %}
 
     </article>

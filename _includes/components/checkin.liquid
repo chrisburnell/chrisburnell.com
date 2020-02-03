@@ -1,0 +1,11 @@
+{% if checkin.lat and checkin.long %}
+    <figure class="media">
+        <a href="https://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" rel="external" title="Open with OpenStreetMap">
+            <picture>
+                <source media="all and (prefers-color-scheme: dark)" srcset="https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 1x, https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280@2x?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 2x">
+                <source media="all" srcset="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 1x, https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280@2x?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA 2x">
+                <img src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/{{ checkin.long }},{{ checkin.lat }},13,0,0/500x280?access_token=pk.eyJ1IjoiY2hyaXNidXJuZWxsIiwiYSI6ImNqbnlpNmM2NTBpM2MzcW54MGozNm0zenoifQ.nmCtk9G88dV3VpKMTTsusA" alt="{{ checkin.name }} {{ checkin.address }}">
+            </picture>
+        </a>
+    </figure>
+{% endif %}

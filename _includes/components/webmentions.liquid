@@ -1,4 +1,8 @@
-<section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" hidden>
-    {% include components/webmentions_form.liquid %}
-    {% include components/webmentions_responses.liquid %}
-</section>
+{% if page.webmentions == true %}
+    <hr>
+
+    <section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" hidden>
+        {% include components/webmentions_form.liquid %}
+        {% include components/webmentions_responses.liquid %}
+    </section>
+{% endif %}

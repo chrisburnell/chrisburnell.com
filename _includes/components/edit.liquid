@@ -1,0 +1,8 @@
+{% if page.edit %}
+    <div class="edit">
+        {% if page.sitemap.lastmod %}
+            <time datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">Edited on {{ page.sitemap.lastmod | date_to_long_string }}:</time>
+        {% endif %}
+        {{ page.edit | markdownify }}
+    </div>
+{% endif %}

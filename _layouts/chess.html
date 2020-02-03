@@ -9,33 +9,17 @@
 
         {% include components/meta.liquid %}
 
-        {% include components/banner.liquid %}
-
         {% include components/lede.liquid %}
 
-        {% include components/reply_context.liquid %}
-
-        {% include components/edit.liquid %}
+        {% include components/chess.liquid %}
 
         {% include components/link.liquid %}
 
-        {% include components/photo.liquid %}
-
-        <div class="content__body{% unless page.reacji %}  e-content{% endunless %}">
-            {% if page.reacji %}
-                <span class="p-name  e-content">{{ page.reacji }}</span>
-            {% endif %}
-
+        <div class="content__body  e-content">
             {{ content }}
-
-            {% include components/checkin.liquid %}
         </div>
 
-        {% include components/further_reading.liquid %}
-
-        {% unless content contains 'carbonads' %}
-            {% include components/ads.liquid %}
-        {% endunless %}
+        {% include components/ads.liquid %}
 
         {% include components/webmentions.liquid %}
 

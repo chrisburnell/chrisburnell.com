@@ -95,9 +95,13 @@
                 {%- endif -%}
             {%- endfor -%}
             {% if page.date %}
-                {% if page.category == 'beer' or page.category == 'like' %}
+                {% if page.category == 'beer' %}
                     <div>
                         <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time>
+                    </div>
+                {% elsif page.category == 'like' %}
+                    <div>
+                        <a href="{{ page.url }}"><time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></a>
                     </div>
                 {% elsif page.release %}
                     <time class="date  dt-published" datetime="{{ page.release | date_to_xmlschema }}">({{ page.release | date: '%Y' }})</time>

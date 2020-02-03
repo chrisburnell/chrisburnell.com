@@ -29,24 +29,19 @@
             <p class="beta  lede  lede--featured" id="lede">{{ site.lede }}</p>
         {% elsif page.page_class contains 'search' %}
             <p class="beta  lede  lede--featured  js-search-meta" id="lede">Search for something!</p>
-        {% elsif page.lede %}
-            <p class="beta  lede  lede--featured" id="lede">{{ page.lede | replace: "'", "’" }}</p>
+        {% else %}
+            {% include components/lede.liquid %}
         {% endif %}
 
-        <div class="content__body">
+        <div class="content__body  e-content">
             {{ content }}
-
-            {% unless content contains 'carbonads' %}
-                {% include components/ads.liquid %}
-            {% endunless %}
         </div>
 
-        {% if page.webmentions == true %}
-            <hr>
-            {% include components/webmentions.liquid %}
-            <hr>
-            {% include components/buttons_categories.liquid %}
-        {% endif %}
+        {% unless content contains 'carbonads' %}
+            {% include components/ads.liquid %}
+        {% endunless %}
+
+        {% include components/webmentions.liquid %}
 
     </div>
 
