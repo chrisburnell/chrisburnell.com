@@ -31,6 +31,8 @@
         <summary>Bookmark</summary>
     {% elsif page.category == 'chess' %}
         <summary>Chess Game</summary>
+    {% elsif page.category == 'code' %}
+        <summary>Code</summary>
     {% elsif page.category == 'movie' %}
         <summary>Movie Review</summary>
     {% elsif page.category == 'music' %}
@@ -41,8 +43,6 @@
         {%- endif -%}
     {% elsif page.category == 'note' %}
         <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
-    {% elsif page.category == 'pen' %}
-        <summary>Pen</summary>
     {% elsif page.category == 'podcast' %}
         <summary>Podcast</summary>
     {% elsif page.category == 'recipe' %}

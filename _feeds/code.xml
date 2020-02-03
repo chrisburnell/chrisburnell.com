@@ -1,0 +1,11 @@
+---
+title: Code Feed
+lede: All of my code snippets.
+type: code
+redirect_from:
+  - feed-code.xml
+---
+
+{% for page in site.categories.code limit: site.feed_limit %}
+    {% include components/item_feed.liquid %}
+{% endfor %}

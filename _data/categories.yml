@@ -18,6 +18,10 @@
   type: chess
   category: chess
   icon: 'feather'
+- title: Code
+  type: code
+  category: code
+  icon: 'codepen'
 - title: Likes
   type: likes
   category: like
@@ -34,10 +38,6 @@
   type: notes
   category: note
   icon: 'feather'
-- title: Pens
-  type: pens
-  category: pen
-  icon: 'codepen'
 - title: Podcast Reviews
   type: podcasts
   category: podcast

@@ -78,6 +78,8 @@
     {% capture meta_lede %}One of my book reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'chess' %}
     {% capture meta_lede %}One of my chess games from {{ page.date | date: '%A, %d %B %Y' }}.{% endcapture %}
+{% elsif page.category == 'code' %}
+    {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'like' %}
     {% capture meta_lede %}One of my liked pages, {{ link_title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'movie' %}
@@ -86,8 +88,6 @@
     {% capture meta_lede %}One of my music reviews, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'note' %}
     {% capture meta_lede %}{{ page.content | markdownify | strip_html | strip_newlines | normalize_whitespace | xml_escape | replace: '\', '' | truncatewords: 20 }}{% endcapture %}
-{% elsif page.category == 'pen' %}
-    {% capture meta_lede %}One of my CodePens, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'podcast' %}
     {% capture meta_lede %}One of my podcast check-ins, {{ page.title | strip_html }}.{% endcapture %}
 {% elsif page.category == 'recipe' %}
