@@ -1,7 +1,7 @@
 ---
 date: 2018-10-15 10:34:00 +0100
 title: Variables for Both
-lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS mixin.
+lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS function and mixin.
 tags:
   - css
   - scss
@@ -24,13 +24,13 @@ syndicate_to:
 caniuse: true
 longform: false
 sitemap:
-  lastmod: 2020-01-23 10:00:00 +0000
-edit: Since writing this post, I have made a number of small tweaks to the original mixin, and I've reflected those changes in the contents below.
+  lastmod: 2020-02-04 10:00:00 +0000
+edit: Since writing this post, I have made a number of small tweaks to the original mixin and now function, and I've reflected those changes in the contents below.
 ---
 
 {% include_cached content/caniuse.liquid feature='css-variables' periods='current' %}
 
-One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* mixin should be useful for you.
+One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* setup should be useful for you.
 
 
 {% include_cached content/heading.liquid title='The Setup' %}
@@ -89,9 +89,9 @@ Additionally, because we’re using SCSS, and to keep our code <abbr title="Don�
 }
 {% endhighlight %}
 
-Now we’ve established our SCSS Variables, a Map for them to live in and be iterated over, and the CSS Variable equivalents of those SCSS Variables. There is, however, one more thing we need to do before we can pull this all together inside our mixin.
+Now we’ve established our SCSS Variables, a Map for them to live in and be iterated over, and the CSS Variable equivalents of those SCSS Variables. There is, however, one more thing we need to do before we can pull this all together inside our function and mixin.
 
-We could hard-code some logic inside the mixin in order to designate that our numeric values should be used against the `z-index` property, but I prefer things to be more robust than that. In this case, we’ll use two more SCSS Maps to hold some relational information about the properties and the possible values we want to be able to use inside them.
+We could hard-code some logic in order to designate that our numeric values should be used against the `z-index` property, but I prefer things to be more robust than that. In this case, we’ll use two more SCSS Maps to hold some relational information about the properties and the possible values we want to be able to use inside them.
 
 Before that, though, let’s expand our example a little bit and include two more CSS properties in this methodology: `opacity` and `border-width`. This will help to illustrate the value in creating these relational Maps.
 
@@ -168,90 +168,70 @@ Things are pretty straightforward for `z-index` and `opacity`, but you can see t
 
 Lastly, we’ll check our passed-in value against a list of “generic” CSS property values, which includes: <samp>auto</samp>, <samp>inherit</samp>, <samp>initial</samp>, <samp>none</samp>, <samp>revert</samp>, <samp>unset</samp>, <samp>0</samp>, and <samp>1</samp>. If it does match one of those generic values, we’ll forego any processing and output a singular property-value pair.
 
-Let’s tie it all together with this SCSS mixin.
+Let’s tie it all together with this SCSS function and mixin.
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
-@mixin v($property, $value, $negative: false, $important: false, $hide: false) {
-
+@function v($property, $value: default, $fallback: false) {
     @if (index($generic-values, $value)) {
-        @if $important {
-            #{$property}: #{$value} !important;
-        }
-        @else {
-            #{$property}: #{$value};
-        }
+        @return $value;
     }
     @else {
-        $map-name: map-get($property-map, $property);
-        $nest-name: null;
-        $nest-map-name: null;
-        $map: null;
-        $variable-fallback: null;
-        $variable-output: null;
+        $map-variables: map-get($variable-map, $property);
 
-        // if a Nested List, we need to go deeper
-        @if type-of($map-name) == list {
-            $nest-name: nth($map-name, 1);
-            $nest-map-name: nth($map-name, 2);
-        }
-
-        // if it is a Nested List
-        @if $nest-name {
-            // get the map from nested map-name
-            $map: map-get($variable-map, $nest-name);
-            // get the nested map
-            $nest-map: map-get($map, $nest-map-name);
+        // if we pass in a variable set (e.g. measure)
+        @if $map-variables {
             // throw a warning if the value does not exist
-            @if not map-has-key($nest-map, $value) {
-                @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+            @if not map-has-key($map-variables, $value) {
+                @warn "There is no value named `#{$value}` in the variable list. The value should be one of `#{map-keys($map-variables)}`.";
             }
-            // fallback value, get the var value from the nested map
-            $variable-fallback: map-get($nest-map, $value);
-            // our CSS Variable output
-            $variable-output: var(--#{$nest-name}-#{$nest-map-name}-#{$value});
-        } @else {
-            // get the map from map name
-            $map: map-get($variable-map, $map-name);
-            // throw a warning if the value does not exist
-            @if not map-has-key($map, $value) {
-                @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+            @if $fallback {
+                @return map-get($map-variables, $value);
+            } @else {
+                @return var(--#{$property}-#{$value});
             }
-            // fallback value, grab the variable's value from the map
-            $variable-fallback: map-get($map, $value);
-            // our CSS Variable output
-            $variable-output: var(--#{$map-name}-#{$value});
         }
+        // otherwise we're passing in a CSS property
+        @else {
+            $map-properties: map-get($property-map, $property);
+            $nest-name: null;
+            $nest-map-name: null;
+            $map: null;
+            $variable-fallback: null;
+            $variable-output: null;
 
-        // output the value from SCSS as-is as well as the associated CSS variable
-        @if $important {
-            @if $hide != "fallback" {
-                @if $negative {
-                    #{$property}: #{$variable-fallback * -1} !important;
-                } @else {
-                    #{$property}: $variable-fallback !important;
-                }
+            // if a Nested List, we need to go deeper
+            @if type-of($map-properties) == list {
+                $nest-name: nth($map-properties, 1);
+                $nest-map-name: nth($map-properties, 2);
             }
-            @if $hide != "output" {
-                @if $negative {
-                    #{$property}: calc(#{$variable-output} * -1) !important;
-                } @else {
-                    #{$property}: $variable-output !important;
+
+            // if it is a Nested List
+            @if $nest-name {
+                // get the map from nested map-name
+                $map: map-get($variable-map, $nest-name);
+                // get the nested map
+                $nest-map: map-get($map, $nest-map-name);
+                // throw a warning if the value does not exist
+                @if not map-has-key($nest-map, $value) {
+                    @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
                 }
-            }
-        } @else {
-            @if $hide != "fallback" {
-                @if $negative {
-                    #{$property}: #{$variable-fallback * -1};
+                @if $fallback {
+                    @return map-get($nest-map, $value);
                 } @else {
-                    #{$property}: $variable-fallback;
+                    @return var(--#{$nest-name}-#{$nest-map-name}-#{$value});
                 }
-            }
-            @if $hide != "output" {
-                @if $negative {
-                    #{$property}: calc(#{$variable-output} * -1);
+            } @else {
+                // get the map from map name
+                $map: map-get($variable-map, $map-properties);
+                // throw a warning if the value does not exist
+                @if not map-has-key($map, $value) {
+                    @warn "There is no value named `#{$value}` in the `#{$map-properties}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+                }
+                @if $fallback {
+                    @return map-get($map, $value);
                 } @else {
-                    #{$property}: $variable-output;
+                    @return var(--#{$map-properties}-#{$value});
                 }
             }
         }
@@ -260,7 +240,20 @@ Let’s tie it all together with this SCSS mixin.
 {% endhighlight %}
 {% include content/code_toggle_bottom.liquid %}
 
-You might have noticed that there are a number of parameters you can pass to this mixin: the property, a value, negation of the passed value (optional), whether or not to mark the declaration as `!important` (optional), and whether or not to provide the fallback value (optional).
+{% include content/code_toggle_top.liquid %}
+{% highlight scss %}
+@mixin v($property, $value: default, $fallback: false) {
+    // leverage the v() function and output the CSS Variable(s) and optionally
+    // the respective SCSS value(s) as well
+    @if $fallback {
+        #{$property}: v($property, $value, true);
+    }
+    #{$property}: v($property, $value, false);
+}
+{% endhighlight %}
+{% include content/code_toggle_bottom.liquid %}
+
+You might have noticed that there are a number of parameters you can pass to the function and mixin: the property, a value, negation of the passed value (optional), whether or not to mark the declaration as `!important` (optional), and whether or not to provide the fallback value (optional).
 
 {% include_cached content/heading.liquid title='Putting it to use' %}
 
@@ -269,7 +262,7 @@ You might have noticed that there are a number of parameters you can pass to thi
     @include v(z-index, modal);
     @include v(opacity, beta);
     @include v(padding, medium);
-    @include v(margin-top, medium, true);
+    @include v(margin-top, medium);
 }
 {% endhighlight %}
 
@@ -281,19 +274,43 @@ You might have noticed that there are a number of parameters you can pass to thi
     opacity: var(--opacity-beta);
     padding: 2rem;
     padding: var(--measure-medium);
-    margin-top: -2rem;
-    margin-top: calc(var(--measure-large) * -1);
+    margin-top: 2rem;
+    margin-top: var(--measure-large);
 }
 {% endhighlight %}
 
-If CSS Variables are unsupported in the browser, the lines with CSS Variables are ignored, and the browser will apply the previous line containing the value as-is.
+And if we want to do any kind of computation, modify the value, or combine values under a multi-value property (e.g. `border`) in any way, we can use our function instead of the mixin:
 
-Because we’ve set <var>$negative</var> to `true` for the `margin-top` declaration, it is multiplied by <var>-1</var> for the SCSS-calculated value and the same operation is made within a `calc()` function call for the CSS Variable equivalent.
+{% highlight scss %}
+.modal {
+    border: v(measure, small) solid v(color, dove);
+}
+{% endhighlight %}
 
-Changing the default value of <var>$hide</var> from `false` to `fallback|output` where you are declaring this mixin will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+{% highlight css %}
+.modal {
+    border: var(--measure-small) solid var(--color-dove);
+}
+{% endhighlight %}
+
+And by modifying the third parameter, `$fallback`, we can return the computed SCSS values instead:
+
+{% highlight scss %}
+.modal {
+    border: v(measure, small, true) solid v(color, dove, true);
+}
+{% endhighlight %}
+
+{% highlight css %}
+.modal {
+    border: 0.625rem solid #737373;
+}
+{% endhighlight %}
+
+Changing the default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 
-The benefits to using CSS Variables are enormous, and I’d strongly recommend using them as soon as you can across your projects. Others have better explained what those many benefits are, so I encourage you to read up on the subject. A mixin like the one we’ve gone over in this article will help you both in transitioning towards using CSS Variables as well as, when the time comes for your project(s), ceasing to provide fallbacks for your CSS Variables.
+The benefits to using CSS Variables are enormous, and I’d strongly recommend using them as soon as you can across your projects. Others have better explained what those many benefits are, so I encourage you to read up on the subject. A function or mixin like the ones we’ve gone over in this article will help you both in transitioning towards using CSS Variables as well as, when the time comes for your project(s), ceasing to provide fallbacks for your CSS Variables.
 
 This technique could also certainly use some extra eyes to tighten up the code and make it more approachable to a wider audience. Let me know if you have any suggestions or feedback—I’d love to make this technique even stronger, or maybe you have an even better solution!
