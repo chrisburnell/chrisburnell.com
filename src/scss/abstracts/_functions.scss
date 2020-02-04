@@ -426,3 +426,52 @@
 
     @return $list;
 }
+
+@function v($property, $value: default, $fallback: false) {
+    @if (index($generic-values, $value)) {
+        @return $value;
+    }
+    @else {
+        $map-name: map-get($property-map, $property);
+        $nest-name: null;
+        $nest-map-name: null;
+        $map: null;
+        $variable-fallback: null;
+        $variable-output: null;
+
+        // if a Nested List, we need to go deeper
+        @if type-of($map-name) == list {
+            $nest-name: nth($map-name, 1);
+            $nest-map-name: nth($map-name, 2);
+        }
+
+        // if it is a Nested List
+        @if $nest-name {
+            // get the map from nested map-name
+            $map: map-get($variable-map, $nest-name);
+            // get the nested map
+            $nest-map: map-get($map, $nest-map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($nest-map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+            }
+            @if $fallback {
+                @return map-get($nest-map, $value);
+            } @else {
+                @return var(--#{$nest-name}-#{$nest-map-name}-#{$value});
+            }
+        } @else {
+            // get the map from map name
+            $map: map-get($variable-map, $map-name);
+            // throw a warning if the value does not exist
+            @if not map-has-key($map, $value) {
+                @warn "There is no value named `#{$value}` in the `#{$map-name}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+            }
+            @if $fallback {
+                @return map-get($map, $value);
+            } @else {
+                @return var(--#{$map-name}-#{$value});
+            }
+        }
+    }
+}

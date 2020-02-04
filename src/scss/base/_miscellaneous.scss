@@ -25,7 +25,7 @@ abbr[title],
 dfn[title] {
     @include v(color, dove);
     font-style: italic;
-    @include v(font-weight, default, false, true);
+    font-weight: v(font-weight) !important;
 }
 abbr[title],
 dfn[title] {
@@ -87,7 +87,7 @@ sup {
 }
 
 em {
-    @include v(font-weight, default, false, true);
+    font-weight: v(font-weight) !important;
 
     &.small {
         font-variant: small-caps;

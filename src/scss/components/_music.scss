@@ -6,8 +6,8 @@
 .last-fm__cover {
     @include v(max-height, icon);
     float: left;
-    @include v(margin-right, small, $important: true);
-    @include v(margin-bottom, small, $important: true);
+    margin-right: v(margin-right, small) !important;
+    margin-bottom: v(margin-bottom, small) !important;
 }
 
 .last-fm__track + .last-fm__artist:not(:empty) {

@@ -38,7 +38,7 @@
         &:hover,
         &:focus,
         &:active {
-            @include v(background-color, raven--gamma, $important: true);
+            background-color: v(background-color, raven--gamma) !important;
         }
 
         &:active {
