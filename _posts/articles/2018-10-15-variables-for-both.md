@@ -242,7 +242,7 @@ Let’s tie it all together with this SCSS function and mixin.
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
-@mixin v($property, $value: default, $fallback: false) {
+@mixin v($property, $value: default, $fallback: true) {
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well
     @if $fallback {
@@ -307,7 +307,7 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 }
 {% endhighlight %}
 
-Changing the default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+ the default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 
