@@ -40,7 +40,6 @@
 
     a {
         @include transition(box-shadow, color, transform);
-        @include will-change(box-shadow, color, transform);
         @include v(color, dove);
         display: block;
         padding: calc(var(--measure-one) - var(--border-width-default)) var(--measure-one);

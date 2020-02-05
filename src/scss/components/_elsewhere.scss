@@ -26,7 +26,6 @@
 
         .icon {
             @include transition(opacity, transform);
-            @include will-change(opacity, transform);
             @include v(opacity, beta);
             @include v(height, icon);
         }

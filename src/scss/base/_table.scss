@@ -24,7 +24,6 @@ table {
 th,
 td {
     @include transition(background-color);
-    @include will-change(background-color);
     @include v(padding, small);
     text-align: left;
     vertical-align: top;

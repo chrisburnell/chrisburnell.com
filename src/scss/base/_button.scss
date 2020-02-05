@@ -11,7 +11,6 @@ button,
     @include font-family(default);
     @include non-selectable;
     @include transition(background-color);
-    @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
     @include v(background-color, bowhead);
     @include v(color, white);
     min-width: 8em;

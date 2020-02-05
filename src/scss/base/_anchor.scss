@@ -6,7 +6,6 @@
 
 a {
     @include transition(background-color, color, text-decoration-color);
-    @include will-change(background-color, color, text-decoration-color);
     @include v(background-color, transparent);
     @include v(color, bowhead);
     outline: 0 var(--border-style-default) var(--color-canada);

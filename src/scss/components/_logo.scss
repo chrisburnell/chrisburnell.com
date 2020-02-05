@@ -25,7 +25,6 @@
 
         @include media("fine") {
             @include transition(transform var(--transition-duration-long));
-            @include will-change(transform);
             transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
         }
     }

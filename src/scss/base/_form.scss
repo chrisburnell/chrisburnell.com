@@ -52,7 +52,6 @@ input,
 textarea {
     @include border-radius(thin);
     @include transition(border-color);
-    @include will-change(border-color);
     @include v(background-color, white);
     @include v(color, black);
     box-sizing: inherit !important;

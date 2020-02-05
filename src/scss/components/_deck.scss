@@ -64,7 +64,6 @@
     a:link {
         .title {
             @include transition(text-decoration-color);
-            @include will-change(text-decoration-color);
             text-decoration: underline;
             @include v(text-decoration-color, alto);
             @include v(text-decoration-thickness, thin);
@@ -121,7 +120,6 @@
 
     svg {
         @include transition(opacity, transform);
-        @include will-change(opacity, transform);
         @include v(opacity, delta);
         @include v(stroke, kaiser);
         // override `_icons.scss` + 4px
@@ -152,7 +150,6 @@
 
 .deck__image {
     @include transition(opacity);
-    @include will-change(opacity);
     @include v(opacity, delta);
     width: auto;
     height: auto;
