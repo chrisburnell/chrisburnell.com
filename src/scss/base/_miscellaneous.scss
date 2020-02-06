@@ -99,6 +99,14 @@ time {
     display: inline-block;
 }
 
+// <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
+// This allows screen readers to read aloud acronyms as they would be spoken, as
+// opposed to an initialism, for which each letter is spoken individually,
+// (e.g. HTML, CSS).
+.acronym {
+    text-transform: uppercase;
+}
+
 // Mouse Selection
 ::selection {
     @include v(background-color, raven);

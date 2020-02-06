@@ -427,6 +427,9 @@
     @return $list;
 }
 
+///
+/// Output a property's' associated value or CSS Variable
+///
 @function v($property, $value: default, $fallback: false) {
     @if (index($generic-values, $value)) {
         @return $value;

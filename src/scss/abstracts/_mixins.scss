@@ -423,7 +423,7 @@
 }
 
 ///
-/// Select a CSS variable and provide a fallback
+/// Output a property and its associated value and CSS Variable
 ///
 @mixin v($property, $value: default, $fallback: false) {
     // leverage the v() function and output the CSS Variable(s) and optionally
