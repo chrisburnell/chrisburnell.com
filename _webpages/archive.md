@@ -16,7 +16,8 @@ redirect_from:
 
 {%- assign category_title = site.categories.size | prepend: 'By category <small>(' | append: ')</small>' -%}
 {% include_cached content/heading.liquid title=category_title %}
-<ul class="shelf" role="navigation">
+<link rel="stylesheet" href="/css/shelf.min.css">
+<ol class="shelf" role="navigation">
     {%- assign categories = site.categories | sort -%}
     {% for category in categories %}
         {%- assign category_title = category[0] -%}
@@ -24,7 +25,7 @@ redirect_from:
             <a class="button" href="/{{ site.data.categories | where: 'category', category_title | map: 'type' | first }}" title="Jump to all posts categorised under {% include content/capitalizer.liquid input=category_title %}">{{ site.data.categories | where: 'category', category_title | map: 'title' | first }} <small>({{ site.categories[category_title].size }})</small></a>
         </li>
     {% endfor %}
-</ul>
+</ol>
 
 {%- assign tag_title = site.tags.size | prepend: 'By tag <small>(' | append: ')</small>' -%}
 {% include_cached content/heading.liquid title=tag_title %}
@@ -34,19 +35,21 @@ redirect_from:
     {% endfor %}
 {% endcapture %}
 {%- assign tags_sorted = tags | split: ' ' | uniq | sort_natural -%}
-<ul class="shelf" role="navigation">
+<link rel="stylesheet" href="/css/shelf.min.css">
+<ol class="shelf" role="navigation">
     {% for tag in tags_sorted %}
         <li>
             <a class="button" href="/tags/#{{ tag }}" title="Jump to all posts tagged under {% include content/capitalizer.liquid input=tag %}">{% include content/capitalizer.liquid input=tag %} <small>({{ site.tags[tag].size }})</small></a>
         </li>
     {% endfor %}
-</ul>
+</ol>
 
 {%- assign year_newest = site.posts.first.date | date: '%Y' -%}
 {%- assign year_oldest = site.posts.last.date | date: '%Y' -%}
 {%- assign year_title = year_newest | minus: year_oldest | plus: 1 | prepend: 'By year <small>(' | append: ')</small>' -%}
 {% include_cached content/heading.liquid title=year_title %}
-<ul class="shelf" role="navigation">
+<link rel="stylesheet" href="/css/shelf.min.css">
+<ol class="shelf" role="navigation">
     {%- assign current_year = site.posts.first.date | date: '%Y' -%}
     {% for page in site.posts %}
         {% unless page.draft or page.ignore or page.searchable == false %}
@@ -61,7 +64,7 @@ redirect_from:
             {% endif %}
         {% endunless %}
     {% endfor %}
-</ul>
+</ol>
 
 --------
 

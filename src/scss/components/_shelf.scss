@@ -47,4 +47,16 @@
     [rel*="external"]::after {
         content: " ↗";
     }
+
+    .emoji {
+        @include v(margin-right, small);
+    }
+
+    .badges {
+        @include v(font-size, small);
+    }
+
+    .checkin {
+        display: block;
+    }
 }

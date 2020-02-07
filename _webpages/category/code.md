@@ -25,7 +25,8 @@ These are my best CodePens—seven of which were [featured on their homepage](ht
 
 *There are {{ site.categories.code | size }} published code snippets.*
 
-<div class="h-feed" id="pens">
+<div class="h-feed" id="code">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.code %}
         {% assign page_year = page.date | date: '%Y' %}
 

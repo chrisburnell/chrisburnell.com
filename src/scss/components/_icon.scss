@@ -51,9 +51,4 @@
     font-style: normal;
     vertical-align: middle;
     text-shadow: none;
-
-    .deck &,
-    .shelf & {
-        @include v(margin-right, small);
-    }
 }

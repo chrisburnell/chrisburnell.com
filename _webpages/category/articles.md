@@ -16,6 +16,7 @@ sparkline: articles
 *There are {{ site.categories.article | size }} published Articles.*
 
 <div class="h-feed" id="articles">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.article %}
         {%- assign page_year = page.date | date: '%Y' -%}
 

@@ -18,6 +18,7 @@ sparkline: bookmarks
 *There are {{ site.categories.bookmark | size }} published Bookmarks.*
 
 <div class="h-feed" id="bookmarks">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.bookmark %}
         {% assign page_year = page.date | date: '%Y' %}
 

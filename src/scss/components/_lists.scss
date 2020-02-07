@@ -9,18 +9,6 @@
 
 .badges {
     display: block;
-
-    .deck &,
-    .shelf & {
-        @include v(font-size, small);
-    }
-}
-
-.checkin {
-    .deck &,
-    .shelf & {
-        display: block;
-    }
 }
 
 .rating {
@@ -60,10 +48,6 @@
     }
     &[value="5"]::after {
         width: 100%;
-    }
-
-    .deck & {
-        @include v(margin-top, small);
     }
 }
 

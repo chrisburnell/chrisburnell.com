@@ -65,8 +65,8 @@ gulp.task("css-prettify", () => {
 gulp.task("css-compile", () => {
     return gulp
         .src([
-            `${paths.css.src}/main.scss`,
-            `${paths.css.src}/non-critical.scss`
+            `${paths.css.src}/*.scss`,
+            `!${paths.css.src}/critical.scss`
         ])
         .pipe(plumber())
         .pipe(

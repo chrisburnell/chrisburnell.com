@@ -10,6 +10,7 @@ searchable: false
 </section>
 
 <section class="search-results  js-search-results" aria-label="Search Results">
+    <link rel="stylesheet" href="/css/deck.min.css">
     <ul class="deck  js-search-results-list" id="search-results" role="list" aria-controlledby="search-button" aria-expanded="false" aria-live="polite"></ul>
 </section>
 

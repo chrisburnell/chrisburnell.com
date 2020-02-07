@@ -3,19 +3,6 @@
 /// @group components
 ////
 
-// Appears only in `.deck`
-.comments-anchor {
-    display: inline-block;
-    margin-top: 1.625em;
-    @include v(font-weight, bold);
-    line-height: 2;
-
-    &::after {
-        // NO-BREAK SPACE, RIGHTWARDS ARROW
-        content: " →";
-    }
-}
-
 // Appears only on article pages
 .comments {
     text-align: center;

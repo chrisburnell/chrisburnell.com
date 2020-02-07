@@ -16,6 +16,7 @@ sparkline: recipes
 *There are {{ site.categories.recipe | size }} published recipes.*
 
 <div class="h-feed" id="recipes">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.recipe %}
         {% assign page_year = page.date | date: '%Y' %}
 

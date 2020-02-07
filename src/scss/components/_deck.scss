@@ -114,54 +114,19 @@
         @include v(margin-top, small);
     }
 
-    canvas {
-        @include v(margin-bottom, small);
+    .emoji {
+        @include v(margin-right, small);
     }
 
-    svg {
-        @include transition(opacity, transform);
-        @include v(opacity, delta);
-        @include v(stroke, kaiser);
-        // override `_icons.scss` + 4px
-        width: 6.25em !important;
-        height: 6.25em !important;
-        position: absolute;
-        top: 50%;
-        right: var(--measure-small);
-        transform: translateY(-50%);
-        @include v(z-index, root);
-        @include non-selectable;
-        pointer-events: none;
-
-        @include media("screen", "below:small") {
-            width: 4em !important;
-            height: 4em !important;
-        }
+    .badges {
+        @include v(font-size, small);
     }
-    a:hover,
-    a:focus,
-    a:active {
-        svg {
-            @include v(opacity, gamma);
-            transform: translateX(-(var(--measure-large))) translateY(-50%) scale(1.2);
-        }
+
+    .checkin {
+        display: block;
     }
-}
 
-.deck__image {
-    @include transition(opacity);
-    @include v(opacity, delta);
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    @include absolute(top);
-    @include z-index(root);
-    pointer-events: none;
-
-    :hover > &,
-    :focus > &,
-    :active > & {
-        @include v(opacity, gamma);
+    .rating {
+        @include v(margin-top, small);
     }
 }

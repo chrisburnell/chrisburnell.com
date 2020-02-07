@@ -2,6 +2,7 @@
 
 {%- assign current_year = page.title | minus: 0 -%}
 <div class="h-feed">
+    <link rel="stylesheet" href="/css/deck.min.css">
     <ol class="deck" role="list">
         {% for page in site.posts %}
             {%- assign year = page.date | date: '%Y' | minus: 0 -%}

@@ -38,7 +38,7 @@ carbon: false
     browsingHistory.sort( (a,b) => {
       return b.timestamp - a.timestamp;
     });
-    let markup = '<h2 class="gamma">Here are some cached pages:</h2><ol class="deck" role="list">';
+    let markup = '<h2 class="gamma">Here are some cached pages:</h2><link rel="stylesheet" href="/css/deck.min.css"><ul class="deck" role="list">';
     browsingHistory.forEach( data => {
       markup += `
 <li role="listitem">
@@ -58,7 +58,7 @@ carbon: false
 </li>
 `;
     });
-    markup += '</ol>';
+    markup += '</ul>';
     document.querySelector('.content__body').insertAdjacentHTML('beforeend', markup);
   }
 })();

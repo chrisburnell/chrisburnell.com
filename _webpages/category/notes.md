@@ -16,6 +16,7 @@ sparkline: notes
 *There are {{ site.categories.note | size }} published Notes.*
 
 <div class="h-feed" id="notes">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.note %}
         {% assign page_year = page.date | date: '%Y' %}
 

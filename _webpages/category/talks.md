@@ -18,6 +18,7 @@ sparkline: talks
 *There are {{ site.categories.talk | size }} published Talks.*
 
 <div class="h-feed" id="talks">
+    <link rel="stylesheet" href="/css/deck.min.css">
     {% for page in site.categories.talk %}
         {% assign page_year = page.date | date: '%Y' %}
 
