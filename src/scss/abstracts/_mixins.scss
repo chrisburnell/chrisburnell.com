@@ -65,9 +65,9 @@
     text-transform: $case;
 
     @if $letter-spacing != null {
-        letter-spacing: $letter-spacing;
+        @include v(letter-spacing, $letter-spacing);
     } @else if $case == "uppercase" {
-        letter-spacing: $letter-spacing-uppercase;
+        @include v(letter-spacing, uppercase);
     }
 }
 
@@ -81,10 +81,6 @@
 /// @example scss - One family
 ///   @include font-family(default);
 ///   // font-family: "Proxima Nova", sans-serif;
-///
-/// @example scss - One family, one display
-///   @include font-family(serif, auto);
-///   // font-family: Georgia, serif;
 ///
 /// @throw Error if no parameters are passed.
 /// @throw Error if parameter passed does not match a key in $font-families.
@@ -148,9 +144,9 @@
 ///   // left: 0;
 ///
 /// @example scss
-///   @include absolute(right, 1em);
+///   @include absolute(right, medium);
 ///   // position: absolute;
-///   // right: 1em;
+///   // right: var(--measure-medium);
 ///   // top: 50%;
 ///   // transform: translateY(-50%);
 ///
@@ -162,18 +158,18 @@
 ///   // left: 0;
 ///
 /// @example scss
-///   @include absolute(top-full, 1em);
+///   @include absolute(top-full, medium);
 ///   // position: absolute;
-///   // top: 1em;
+///   // top: var(--measure-medium);
 ///   // right: 0;
 ///   // left: 0;
 ///
 /// @example scss
-///   @include absolute(top-full-offset, 1em);
+///   @include absolute(top-full-offset, medium);
 ///   // position: absolute;
-///   // top: 1em;
-///   // right: 1em;
-///   // left: 1em;
+///   // top: var(--measure-medium);
+///   // right: var(--measure-medium);
+///   // left: var(--measure-medium);
 ///
 /// @throw Error if no parameters are passed.
 ///
@@ -195,77 +191,77 @@
         position: absolute;
 
         @if str-index(#{$position}, "top") {
-            top: $offset;
+            top: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                right: $offset;
-                left: $offset;
+                right: v(measure, $offset);
+                left: v(measure, $offset);
             } @else {
                 right: 0;
                 left: 0;
             }
         } @else if str-index(#{$position}, "right") {
-            right: $offset;
+            right: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                top: $offset;
-                bottom: $offset;
+                top: v(measure, $offset);
+                bottom: v(measure, $offset);
             } @else {
                 top: 0;
                 bottom: 0;
             }
         } @else if str-index(#{$position}, "bottom") {
-            bottom: $offset;
+            bottom: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                right: $offset;
-                left: $offset;
+                right: v(measure, $offset);
+                left: v(measure, $offset);
             } @else {
                 right: 0;
                 left: 0;
             }
         } @else if str-index(#{$position}, "left") {
-            left: $offset;
+            left: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                top: $offset;
-                bottom: $offset;
+                top: v(measure, $offset);
+                bottom: v(measure, $offset);
             } @else {
                 top: 0;
                 bottom: 0;
             }
         } @else {
-            top: $offset;
-            right: $offset;
-            bottom: $offset;
-            left: $offset;
+            top: v(measure, $offset);
+            right: v(measure, $offset);
+            bottom: v(measure, $offset);
+            left: v(measure, $offset);
         }
     } @else if is-edge($position) {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
-            top: $offset;
+            top: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
         @if str-index(#{$position}, "right") {
-            right: $offset;
+            right: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
                 top: 50%;
                 transform: translateY(-50%);
             }
         }
         @if str-index(#{$position}, "bottom") {
-            bottom: $offset;
+            bottom: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
         @if str-index(#{$position}, "left") {
-            left: $offset;
+            left: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
                 top: 50%;
                 transform: translateY(-50%);
@@ -352,19 +348,19 @@
 ///
 /// @example scss - Zero parameters
 ///   @include transition;
-///   // transition: all 0.2s ease;
+///   // transition: all var(--transition-duration-default) var(--transition-function-default);
 ///
 /// @example scss - One property
 ///   @include transition(color);
-///   // transition: color 0.2s ease;
+///   // transition: color var(--transition-duration-default) var(--transition-function-default);
 ///
 /// @example scss - Two properties
 ///   @include transition(color, border);
-///   // transition: color 0.2s ease, border 0.2s ease;
+///   // transition: color var(--transition-duration-default) var(--transition-function-default), border var(--transition-duration-default) var(--transition-function-default);
 ///
 /// @example scss - One property, one duration
 ///   @include transition(color 0.5s);
-///   // transition: color 0.5s ease;
+///   // transition: color 0.5s var(--transition-function-default);
 ///
 /// @example scss - One property, one duration, one timing function
 ///   @include transition(color 1s linear);
@@ -379,7 +375,7 @@
 
     // if no parameter, transition all with default duration and function
     @if length($transitions) == 0 {
-        $transition: all #{$transition-duration-default} #{$transition-function};
+        $transition: all v(transition-duration, default) v(transition-function, default);
     }
     // if parameter just set to `none` then just transition nothing
     @else if $transitions == none {

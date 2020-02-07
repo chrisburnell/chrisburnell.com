@@ -387,7 +387,7 @@
 
     $property: nth($list, 1);
     $time: if(length($list) > 1, nth($list, 2), $transition-duration-default);
-    $function: if(length($list) > 2, nth($list, 3), $transition-function);
+    $function: if(length($list) > 2, nth($list, 3), $transition-function-default);
     $delay: if(length($list) > 3, nth($list, 4), 0s);
 
     @return $property $time $function $delay;

@@ -248,7 +248,10 @@ $transition-duration-default: 0.2s !default;
 $transition-duration-long: 1s !default;
 /// @type String
 /// @see {Mixin} transition
-$transition-function: ease !default;
+$transition-function-default: ease !default;
+/// @type String
+/// @see {Mixin} transition
+$transition-function-alternate: linear !default;
 
 /// @type Number
 $z-index-below: -1 !default;

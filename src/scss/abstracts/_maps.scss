@@ -262,6 +262,24 @@ $letter-spacings: (
 ) !default;
 
 /// @type Map
+/// @prop {String} key - Transition Duration Name
+/// @prop {Number} value - Transition Duration Value
+/// @see {Mixin} v
+$transition-durations: (
+    default: $transition-duration-default,
+    uppercase: $transition-duration-long
+) !default;
+
+/// @type Map
+/// @prop {String} key - Transition Function Name
+/// @prop {Number} value - Transition Function Value
+/// @see {Mixin} v
+$transition-functions: (
+    default: $transition-function-default,
+    alternate: $transition-function-alternate
+) !default;
+
+/// @type Map
 /// @prop {String} key - z-index Name
 /// @prop {Number} value - z-index Value
 /// @see {Function} z-index
@@ -297,9 +315,12 @@ $variable-map: (
     font-stretch: $font-stretches,
     font-variant: $font-variants,
     font-weight: $font-weights,
+    letter-spacing: $letter-spacings,
     line-height: $line-heights,
     measure: $measures,
     opacity: $opacities,
+    transition-duration: $transition-durations,
+    transition-function: $transition-functions,
     unicode-range: $unicode-ranges,
     z-index: $z-indexes
 ) !default;
@@ -361,6 +382,7 @@ $property-map: (
     font-variant: font-variant,
     font-weight: font-weight,
     height: measure,
+    letter-spacing: letter-spacing,
     line-height: line-height,
     grid-gap: measure,
     column-gap: measure,
@@ -404,6 +426,8 @@ $property-map: (
     text-decoration-color: color,
     text-decoration-thickness: border-width,
     text-underline-offset: border-width,
+    transition-duration: transition-duration,
+    transition-function: transition-function,
     width: measure,
     unicode-range: unicode-range,
     z-index: z-index

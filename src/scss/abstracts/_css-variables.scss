@@ -72,9 +72,13 @@
 
     --rotation-default: #{$rotation-default};
 
-    --transition-duration-default: #{$transition-duration-default};
-    --transition-duration-long: #{$transition-duration-long};
-    --transition-function: #{$transition-function};
+    @each $key, $value in $transition-durations {
+        --transition-duration-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $transition-functions {
+        --transition-function-#{$key}: #{$value};
+    }
 
     @each $key, $value in $z-indexes {
         --z-index-#{$key}: #{$value};
