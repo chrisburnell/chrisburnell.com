@@ -423,11 +423,11 @@
 }
 
 ///
-/// Output a property and its associated value and CSS Variable
+/// Output a property, CSS Variable, and, optionally, SCSS value
 ///
 @mixin v($property, $value: default, $fallback: false) {
     // leverage the v() function and output the CSS Variable(s) and optionally
-    // the respective SCSS value(s) as well
+    // the respective SCSS value(s) as well as the propeerty
     @if $fallback {
         #{$property}: v($property, $value, true);
     }
