@@ -425,9 +425,24 @@
 ///
 /// Output a property, CSS Variable, and, optionally, SCSS value
 ///
+/// @author Chris Burnell
+///
+/// @param {String} $property - key from $property-map or $variable-map
+/// @param {String} $value [default] - key from inner map
+/// @param {Boolean} $fallback [false] - whether or not to show the SCSS value
+///
+/// @example scss
+///   @include v(padding, small);
+///   // padding: var(--measure-small);
+/// @example scss
+///   @include v(padding, small);
+///   // padding: 0.625rem;
+///
+/// @return Associated property and CSS Variable or SCSS value
+///
 @mixin v($property, $value: default, $fallback: false) {
     // leverage the v() function and output the CSS Variable(s) and optionally
-    // the respective SCSS value(s) as well as the propeerty
+    // the respective SCSS value(s) as well as the property
     @if $fallback {
         #{$property}: v($property, $value, true);
     }

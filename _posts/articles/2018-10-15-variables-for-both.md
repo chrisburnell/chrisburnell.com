@@ -177,22 +177,23 @@ Let’s tie it all together with this SCSS function and mixin.
         @return $value;
     }
     @else {
-        $map-variables: map-get($variable-map, $property);
+        // if we're passing in a key in the variables Map (e.g. measure)
+        @if map-has-key($variable-map, $property) {
+            $map-variables: map-get($variable-map, $property);
 
-        // if we pass in a variable set (e.g. measure)
-        @if $map-variables {
-            // throw a warning if the value does not exist
+            // throw a warning if the value does not exist in the associated Map
             @if not map-has-key($map-variables, $value) {
                 @warn "There is no value named `#{$value}` in the variable list. The value should be one of `#{map-keys($map-variables)}`.";
             }
+
             @if $fallback {
                 @return map-get($map-variables, $value);
             } @else {
                 @return var(--#{$property}-#{$value});
             }
         }
-        // otherwise we're passing in a CSS property
-        @else {
+        // otherwise we're passing in a value from the properties Map (e.g. fill)
+        @else if map-has-key($property-map, $property) {
             $map-properties: map-get($property-map, $property);
             $nest-name: null;
             $nest-map-name: null;
@@ -212,10 +213,12 @@ Let’s tie it all together with this SCSS function and mixin.
                 $map: map-get($variable-map, $nest-name);
                 // get the nested map
                 $nest-map: map-get($map, $nest-map-name);
+
                 // throw a warning if the value does not exist
                 @if not map-has-key($nest-map, $value) {
-                    @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+                    @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`.";
                 }
+
                 @if $fallback {
                     @return map-get($nest-map, $value);
                 } @else {
@@ -224,16 +227,21 @@ Let’s tie it all together with this SCSS function and mixin.
             } @else {
                 // get the map from map name
                 $map: map-get($variable-map, $map-properties);
+
                 // throw a warning if the value does not exist
                 @if not map-has-key($map, $value) {
-                    @warn "There is no value named `#{$value}` in the `#{$map-properties}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+                    @warn "There is no value named `#{$value}` in the `#{$map-properties}` variable map. The value should be one of `#{map-keys($map)}`.";
                 }
+
                 @if $fallback {
                     @return map-get($map, $value);
                 } @else {
                     @return var(--#{$map-properties}-#{$value});
                 }
             }
+        } @else {
+            // throw a warning if the property does not exist
+            @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($variable-map, $property-map))}`.";
         }
     }
 }
@@ -242,13 +250,13 @@ Let’s tie it all together with this SCSS function and mixin.
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
-@mixin v($property, $value: default, $fallback: true) {
+@mixin v($property, $value: default, $fallback: false) {
     // leverage the v() function and output the CSS Variable(s) and optionally
-    // the respective SCSS value(s) as well
+    // the respective SCSS value(s) as well as the property
     @if $fallback {
         #{$property}: v($property, $value, true);
     }
-    #{$property}: v($property, $value, false);
+    #{$property}: v($property, $value);
 }
 {% endhighlight %}
 {% include content/code_toggle_bottom.liquid %}
@@ -307,7 +315,7 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 }
 {% endhighlight %}
 
- the default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+The default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 

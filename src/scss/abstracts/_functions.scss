@@ -430,6 +430,24 @@
 ///
 /// Output a property's CSS Cariable or SCSS value
 ///
+/// @author Chris Burnell
+///
+/// @param {String} $property - key from $property-map or $variable-map
+/// @param {String} $value [default] - key from inner map
+/// @param {Boolean} $fallback [false] - whether or not to show the SCSS value
+///
+/// @example scss
+///   padding: v(measure, small) v(measure, medium);
+///   // padding: var(--measure-small) var(--measure-medium);
+/// @example scss
+///   padding: v(measure, small, true) v(measure, medium, true);
+///   // padding: 0.625rem 1.25rem;
+///
+/// @throw Error if $property doesn't exist in $property
+/// @throw Error if $value passed doesn't exist in the map passed by $property
+///
+/// @return Associated CSS Variable or SCSS value
+///
 @function v($property, $value: default, $fallback: false) {
     @if (index($generic-values, $value)) {
         @return $value;
@@ -474,7 +492,7 @@
 
                 // throw a warning if the value does not exist
                 @if not map-has-key($nest-map, $value) {
-                    @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`. As a result, the fallback value cannot be provided.";
+                    @warn "There is no value named `#{$value}` in the `#{$nest-name}` variable list. The value should be one of `#{map-keys($nest-map)}`.";
                 }
 
                 @if $fallback {
@@ -488,7 +506,7 @@
 
                 // throw a warning if the value does not exist
                 @if not map-has-key($map, $value) {
-                    @warn "There is no value named `#{$value}` in the `#{$map-properties}` variable map. The value should be one of `#{map-keys($map)}`. As a result, the fallback value cannot be provided.";
+                    @warn "There is no value named `#{$value}` in the `#{$map-properties}` variable map. The value should be one of `#{map-keys($map)}`.";
                 }
 
                 @if $fallback {
@@ -497,6 +515,9 @@
                     @return var(--#{$map-properties}-#{$value});
                 }
             }
+        } @else {
+            // throw a warning if the property does not exist
+            @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($variable-map, $property-map))}`.";
         }
     }
 }
