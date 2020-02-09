@@ -4,132 +4,6 @@
 ////
 
 ///
-/// Add a border-radius.
-///
-/// @author Chris Burnell
-///
-/// @param {String} $width - Width of Border Radius
-/// @param {String} $edge - Sides of Border Radius
-///
-/// @example scss - Zero parameters
-///   @include radius;
-///   // border-radius: 0.375rem;
-///
-/// @example scss - One parameter
-///   @include radius(1em);
-///   // border-radius: 1em;
-///
-@mixin border-radius($width: default, $edge: null) {
-    @if not is-length($width) {
-        @if map-has-key($border-radii, $width) {
-            $width: map-get($border-radii, $width);
-        } @else if is-edge($width) {
-            $edge: $width;
-            $width: $border-radius-default;
-        } @else {
-            @error "There is no `width` named `#{$width}` in `$border-radii`. `width` should be one of `#{map-keys($border-radii)}`.";
-        }
-    }
-
-    $border-radius: $width;
-
-    @if $edge and is-edge($edge) {
-        $top-left: if(index((top, left, top-left), $edge), $width, 0);
-        $top-right: if(index((top, right, top-right), $edge), $width, 0);
-        $bottom-right: if(index((bottom, right, bottom-right), $edge), $width, 0);
-        $bottom-left: if(index((bottom, left, bottom-left), $edge), $width, 0);
-
-        $border-radius: $top-left $top-right $bottom-right $bottom-left;
-    }
-
-    background-clip: padding-box;
-    border-radius: $border-radius;
-}
-
-///
-/// Change the case of text and apply appropriate letter-spacing.
-///
-/// @param {String} $case - Case of Text
-/// @param {String} $letter-spacing [null] - Letter-spacing of Text
-///
-/// @example scss
-///   @include case(uppercase);
-///   // text-transform: uppercase;
-///   // letter-spacing: 1px;
-///
-@mixin case($case, $letter-spacing: null) {
-    @if not $case {
-        @error "case() expects at least one parameter.";
-    }
-
-    text-transform: $case;
-
-    @if $letter-spacing != null {
-        @include v(letter-spacing, $letter-spacing);
-    } @else if $case == "uppercase" {
-        @include v(letter-spacing, uppercase);
-    }
-}
-
-///
-/// Specify a font-family.
-///
-/// @author Chris Burnell
-///
-/// @param {String} $family - Font-family value
-///
-/// @example scss - One family
-///   @include font-family(default);
-///   // font-family: "Proxima Nova", sans-serif;
-///
-/// @throw Error if no parameters are passed.
-/// @throw Error if parameter passed does not match a key in $font-families.
-///
-@mixin font-family($family) {
-    @if not $family {
-        @error "font-family() expects at least one parameter.";
-    }
-
-    @if not map-has-key($font-families, $family) {
-        @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
-    }
-
-    @include v(font-family, $family);
-
-    @if $family == "monospace" {
-        font-variant-ligatures: none;
-    }
-}
-
-///
-/// Hyphenate words.
-///
-@mixin hyphenate() {
-    hyphens: auto;
-    hyphenate-limit-chars: 6 3 3;
-    hyphenate-limit-lines: 2;
-    hyphenate-limit-last: always;
-    hyphenate-limit-zone: 8%;
-}
-
-///
-/// Break words.
-///
-@mixin break-words() {
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-///
-/// Make text non-selectable.
-///
-@mixin non-selectable() {
-    user-select: none;
-    -webkit-touch-callout: default;
-    -webkit-touch-callout: none;
-}
-
-///
 /// Absolutely position an element.
 ///
 /// @author Chris Burnell
@@ -271,29 +145,113 @@
 }
 
 ///
-/// Define characters for quotes
+/// Add a border-radius.
 ///
 /// @author Chris Burnell
 ///
-/// @example scss
-///   @include quotes;
-///   // quotes: "“" "”" "‘" "’";
+/// @param {String} $width - Width of Border Radius
+/// @param {String} $edge - Sides of Border Radius
 ///
-@mixin quotes() {
-    hanging-punctuation: first;
-
-    &,
-    :lang(en) & {
-        quotes: "“" "”" "‘" "’";
+/// @example scss - Zero parameters
+///   @include radius;
+///   // border-radius: 0.375rem;
+///
+/// @example scss - One parameter
+///   @include radius(1em);
+///   // border-radius: 1em;
+///
+@mixin border-radius($width: default, $edge: null) {
+    @if not is-length($width) {
+        @if map-has-key($border-radii, $width) {
+            $width: map-get($border-radii, $width);
+        } @else if is-edge($width) {
+            $edge: $width;
+            $width: $border-radius-default;
+        } @else {
+            @error "There is no `width` named `#{$width}` in `$border-radii`. `width` should be one of `#{map-keys($border-radii)}`.";
+        }
     }
 
-    :lang(de) &,
-    :lang(pl) & {
-        quotes: "„" "“" "‚" "‘";
+    $border-radius: $width;
+
+    @if $edge and is-edge($edge) {
+        $top-left: if(index((top, left, top-left), $edge), $width, 0);
+        $top-right: if(index((top, right, top-right), $edge), $width, 0);
+        $bottom-right: if(index((bottom, right, bottom-right), $edge), $width, 0);
+        $bottom-left: if(index((bottom, left, bottom-left), $edge), $width, 0);
+
+        $border-radius: $top-left $top-right $bottom-right $bottom-left;
     }
 
-    :lang(fr) & {
-        quotes: "« " " »" "‹ " " ›";
+    background-clip: padding-box;
+    border-radius: $border-radius;
+}
+
+///
+/// Change the case of text and apply appropriate letter-spacing.
+///
+/// @param {String} $case - Case of Text
+/// @param {String} $letter-spacing [null] - Letter-spacing of Text
+///
+/// @example scss
+///   @include case(uppercase);
+///   // text-transform: uppercase;
+///   // letter-spacing: 1px;
+///
+@mixin case($case, $letter-spacing: null) {
+    @if not $case {
+        @error "case() expects at least one parameter.";
+    }
+
+    text-transform: $case;
+
+    @if $letter-spacing != null {
+        @include v(letter-spacing, $letter-spacing);
+    } @else if $case == "uppercase" {
+        @include v(letter-spacing, uppercase);
+    }
+}
+
+///
+/// Specify a font-family.
+///
+/// @author Chris Burnell
+///
+/// @param {String} $family - Font-family value
+///
+/// @example scss - One family
+///   @include font-family(default);
+///   // font-family: "Proxima Nova", sans-serif;
+///
+/// @throw Error if no parameters are passed.
+/// @throw Error if parameter passed does not match a key in $font-families.
+///
+@mixin font-family($family) {
+    @if not $family {
+        @error "font-family() expects at least one parameter.";
+    }
+
+    @if not map-has-key($font-families, $family) {
+        @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
+    }
+
+    @include v(font-family, $family);
+
+    @if $family == "monospace" {
+        font-variant-ligatures: none;
+    }
+}
+
+///
+/// Space out elements evenly
+///
+@mixin owl($measure: large) {
+    @if not map-has-key($measures, $measure) {
+        @error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
+    }
+
+    & > * + * {
+        @include v(margin-top, $measure);
     }
 }
 
@@ -325,16 +283,6 @@
             @include v(font-size, $font-size);
         }
     }
-}
-
-///
-/// Tabular Lining Numerals
-///
-/// @author Chris Burnell
-///
-@mixin tabular-lining-numerals() {
-    font-variant-numeric: lining-nums tabular-nums;
-    font-feature-settings: "lnum", "tnum";
 }
 
 ///
@@ -394,31 +342,6 @@
 }
 
 ///
-/// Describes CSS changes to the browser; to be coupled with any transitions.
-///
-/// @author Chris Burnell
-///
-/// @param {String} $changes - Changes
-///
-/// @example scss - One parameter
-///   @include will-change(color);
-///   // will-change: color;
-///
-/// @example scss - Multiple parameters
-///   @include will-change(color, border);
-///   // will-change: color, border;
-///
-/// @throw Error if no parameters are passed.
-///
-@mixin will-change($changes...) {
-    @if length($changes) == 0 {
-        @error "will-change() expects at least one parameter.";
-    }
-
-    will-change: $changes;
-}
-
-///
 /// Output a property, CSS Variable, and, optionally, SCSS value
 ///
 /// @author Chris Burnell
@@ -470,28 +393,13 @@
     }
 }
 
-///
-/// Simplify z-index.
-///
-/// @param {String} $z-index - Generic level
-///
-/// @example scss
-///   @include z-index(above);
-///   // z-index: 2;
-///
-/// @throw Error if no parameters are passed.
-/// @throw Error if `$z-index` parameter passed does not match a key in `$z-indexes`.
-///
-@mixin z-index($z-index) {
-    @if not $z-index {
-        @error "`z-index()` expects at least one parameter.";
-    }
 
-    @if not map-has-key($z-indexes, $z-index) {
-        @error "There is no `$z-index` named `#{$z-index}` in `$z-indexes`. `$z-index` should be one of `#{map-keys($z-index)}`.";
-    }
-
-    z-index: map-get($z-indexes, $z-index);
+///
+/// Break words.
+///
+@mixin break-words() {
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 ///
@@ -511,14 +419,71 @@
 }
 
 ///
-/// Space out elements evenly
+/// Hyphenate words.
 ///
-@mixin owl($measure: large) {
-    @if not map-has-key($measures, $measure) {
-        @error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
+@mixin hyphenate() {
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+}
+
+///
+/// Make text non-selectable.
+///
+/// @author Chris Burnell
+///
+@mixin non-selectable() {
+    user-select: none;
+    -webkit-touch-callout: default;
+    -webkit-touch-callout: none;
+}
+
+///
+/// Make text non-interactive.
+///
+/// @author Chris Burnell
+///
+@mixin non-interactive() {
+    @include non-selectable;
+    pointer-events: none;
+    cursor: not-allowed; // kind of redundant
+}
+
+///
+/// Define characters for quotes
+///
+/// @author Chris Burnell
+///
+/// @example scss
+///   @include quotes;
+///   // quotes: "“" "”" "‘" "’";
+///
+@mixin quotes() {
+    hanging-punctuation: first;
+
+    &,
+    :lang(en) & {
+        quotes: "“" "”" "‘" "’";
     }
 
-    & > * + * {
-        @include v(margin-top, $measure);
+    :lang(de) &,
+    :lang(pl) & {
+        quotes: "„" "“" "‚" "‘";
     }
+
+    :lang(fr) & {
+        quotes: "« " " »" "‹ " " ›";
+    }
+}
+
+///
+/// Tabular Lining Numerals
+///
+/// @author Chris Burnell
+///
+@mixin tabular-lining-numerals() {
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum", "tnum";
 }

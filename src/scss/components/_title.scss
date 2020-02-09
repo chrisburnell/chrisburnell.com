@@ -30,7 +30,7 @@
         bottom: 0;
         left: -100%;
         right: -100%;
-        @include z-index(root);
+        @include v(z-index, root);
     }
 
     span {
@@ -38,7 +38,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        @include z-index(default);
+        @include v(z-index, default);
     }
 }
 
