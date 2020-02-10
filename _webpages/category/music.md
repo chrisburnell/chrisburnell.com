@@ -22,6 +22,7 @@ Check out my [Listening page](/listening) to see what I’ve been listening to r
 --------
 
 <div class="h-feed" id="music">
+    <link rel="stylesheet" href="/css/shelf.min.css">
     <ol class="shelf" role="list">
         {% for page in site.categories.music %}
             {% include components/item_shelf.liquid %}

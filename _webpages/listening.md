@@ -8,6 +8,7 @@ lede: What have I been listening to?
 Powered by [LastFM](https://last.fm){:rel="external"}. Check out my [Music Reviews](/music) for more musical data.
 
 <div id="listening" class="h-feed">
+    <link rel="stylesheet" href="/css/shelf.min.css">
     <ol class="shelf  js-lastfm-feed" role="list">
     </ol>
 </div>
