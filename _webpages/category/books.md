@@ -20,7 +20,7 @@ sparkline: books
 
 <div class="h-feed" id="books">
     <ol class="shelf" role="list">
-        {% assign books_to_read = site.categories.book | where_exp: 'book', 'book.date == nil' | sort: 'title' %}
+        {% assign books_to_read = site.categories.book | default: site.emptyArray | where_exp: 'book', 'book.date == nil' | sort: 'title' %}
         {% for page in books_to_read %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

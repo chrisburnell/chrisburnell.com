@@ -13,9 +13,8 @@ ol:not([class]),
 ul:not([class]),
 dl:not([class]),
 .default-list {
-    // List nested in a list, or list followed by a list
-    & &,
-    & + & {
+    // Space out lists nested in a list
+    & & {
         @include v(margin-top, medium);
     }
 }
