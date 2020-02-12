@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.158";
+const VERSION = "v2.0.159";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
