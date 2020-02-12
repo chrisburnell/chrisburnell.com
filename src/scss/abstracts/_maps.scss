@@ -267,7 +267,7 @@ $letter-spacings: (
 /// @see {Mixin} v
 $transition-durations: (
     default: $transition-duration-default,
-    uppercase: $transition-duration-long
+    long: $transition-duration-long
 ) !default;
 
 /// @type Map
