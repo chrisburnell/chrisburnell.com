@@ -161,7 +161,6 @@ defaults:
     values:
       category: "article"
       prefix: a
-      emoji: "📝"
       on_this_day: true
   - scope:
       path: "_*/beer"
@@ -250,6 +249,7 @@ defaults:
       path: "_*/notes"
     values:
       category: "note"
+      emoji: ✍️
       prefix: n
       titlefree: true
       on_this_day: true

@@ -39,15 +39,15 @@ code[data-lang] {
     &[data-lang="liquid"]::before {
         @include case(capitalize);
     }
-}
 
-// Highlighted Code Block Labels
-@each $language, $color in $language-colors {
-    &.language-#{$language} {
-        &::before {
-            background-color: #{$color} !important;
-            color: contrasting-color($color, $color-mineshaft, $color-white) !important;
-            text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft);
+    // Highlighted Code Block Labels
+    @each $language, $color in $language-colors {
+        &.language-#{$language} {
+            &::before {
+                background-color: #{$color} !important;
+                color: contrasting-color($color, $color-mineshaft, $color-white) !important;
+                text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft);
+            }
         }
     }
 }
