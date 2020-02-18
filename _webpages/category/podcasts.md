@@ -16,8 +16,7 @@ sparkline: podcasts
 *There are {{ site.categories.podcast | size }} published Podcast Check-ins.*
 
 <div class="h-feed" id="podcasts">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.podcast %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

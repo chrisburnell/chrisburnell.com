@@ -24,22 +24,6 @@ code[data-lang] {
         text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
     }
 
-    &[data-lang="html"]::before,
-    &[data-lang="css"]::before,
-    &[data-lang="json"]::before,
-    &[data-lang="scss"]::before,
-    &[data-lang="yaml"]::before {
-        @include case(uppercase);
-    }
-
-    &[data-lang="javascript"]::before {
-        content: "JavaScript";
-    }
-
-    &[data-lang="liquid"]::before {
-        @include case(capitalize);
-    }
-
     // Highlighted Code Block Labels
     @each $language, $color in $language-colors {
         &.language-#{$language} {
@@ -49,6 +33,22 @@ code[data-lang] {
                 text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft);
             }
         }
+    }
+
+    &.language--html::before,
+    &.language--css::before,
+    &.language--json::before,
+    &.language--scss::before,
+    &.language--yaml::before {
+        @include case(uppercase);
+    }
+
+    &.language--javascript::before {
+        content: "JavaScript";
+    }
+
+    &.language--liquid::before {
+        @include case(capitalize);
     }
 }
 

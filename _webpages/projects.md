@@ -5,8 +5,7 @@ page_class: page--projects
 ---
 
 <div class="h-feed" id="projects">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    <ol class="deck" role="list">
+        <ol class="deck" role="list">
         {% for page in site.data.projects %}
             {% include components/item_deck.liquid %}
         {% endfor %}

@@ -16,8 +16,7 @@ sparkline: movies
 *There are {{ site.categories.movie | size }} published Movie Reviews.*
 
 <div class="h-feed" id="movies">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.movie %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

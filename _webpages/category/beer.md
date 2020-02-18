@@ -18,8 +18,7 @@ sparkline: beer
 [Connect with me on Untappd]({{ site.author.urls.untappd }}){:rel="me  external"}! Beer titles below also link out to [Untappd](https://untappd.com){:rel="external"}.
 
 <div class="h-feed" id="beer">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.beer %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

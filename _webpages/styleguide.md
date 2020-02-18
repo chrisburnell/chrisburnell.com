@@ -556,8 +556,7 @@ formatDate: function(date) {
 {% include_cached content/heading.liquid title='Deck' %}
 
 <div class="h-feed">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    <ol class="deck" role="list">
+        <ol class="deck" role="list">
         {% for page in site.posts limit: 4 %}
             {% include components/item_deck.liquid %}
         {% endfor %}
@@ -568,8 +567,7 @@ formatDate: function(date) {
 {% include_cached content/heading.liquid title='Shelf' %}
 
 <div class="h-feed">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.beer limit: 3 %}
             {% include components/item_shelf.liquid %}
         {% endfor %}
@@ -580,8 +578,7 @@ formatDate: function(date) {
 {% include_cached content/heading.liquid title='Shelf with Images' %}
 
 <div class="h-feed">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.music limit: 3 %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

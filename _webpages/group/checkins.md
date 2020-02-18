@@ -11,8 +11,7 @@ lede: All of my checkins.
 *There are {{ checkins | size }} Checkins.*
 
 <div class="h-feed" id="checkins">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    {% for page in checkins %}
+        {% for page in checkins %}
         {%- assign page_year = page.date | date: '%Y' -%}
 
         {% if page_year != current_year %}

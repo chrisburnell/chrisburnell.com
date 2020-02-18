@@ -13,8 +13,7 @@ feed: /replies.xml
 *There are {{ replies | size }} published Replies.*
 
 <div class="h-feed" id="replies">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    {% for page in replies %}
+        {% for page in replies %}
         {%- assign page_year = page.date | date: '%Y' -%}
 
         {% if page_year != current_year %}

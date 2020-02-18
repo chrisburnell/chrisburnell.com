@@ -15,8 +15,7 @@ sparkline: tv
 *There are {{ site.categories.tv | size }} published TV Reviews.*
 
 <div class="h-feed" id="tv">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.tv %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

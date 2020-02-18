@@ -43,8 +43,7 @@ coil: true
 {% endif %}
 
 <div class="h-feed">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    <ol class="deck" role="list">
+        <ol class="deck" role="list">
         {% for page in paginator.posts %}
             {% include components/item_deck.liquid %}
         {% endfor %}

@@ -19,8 +19,7 @@ sparkline: books
 *There are {{ site.categories.book | size }} published Book Reviews.*
 
 <div class="h-feed" id="books">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% assign books_to_read = site.categories.book | default: site.emptyArray | where_exp: 'book', 'book.date == nil' | sort: 'title' %}
         {% for page in books_to_read %}
             {% include components/item_shelf.liquid %}

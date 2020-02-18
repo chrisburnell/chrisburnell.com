@@ -16,7 +16,6 @@ redirect_from:
 
 {%- assign category_title = site.categories.size | prepend: 'By category <small>(' | append: ')</small>' -%}
 {% include_cached content/heading.liquid title=category_title %}
-<link rel="stylesheet" href="/css/shelf.min.css">
 <ol class="shelf" role="navigation">
     {%- assign categories = site.categories | sort -%}
     {% for category in categories %}
@@ -35,7 +34,6 @@ redirect_from:
     {% endfor %}
 {% endcapture %}
 {%- assign tags_sorted = tags | split: ' ' | uniq | sort_natural -%}
-<link rel="stylesheet" href="/css/shelf.min.css">
 <ol class="shelf" role="navigation">
     {% for tag in tags_sorted %}
         <li>
@@ -48,7 +46,6 @@ redirect_from:
 {%- assign year_oldest = site.posts.last.date | date: '%Y' -%}
 {%- assign year_title = year_newest | minus: year_oldest | plus: 1 | prepend: 'By year <small>(' | append: ')</small>' -%}
 {% include_cached content/heading.liquid title=year_title %}
-<link rel="stylesheet" href="/css/shelf.min.css">
 <ol class="shelf" role="navigation">
     {%- assign current_year = site.posts.first.date | date: '%Y' -%}
     {% for page in site.posts %}

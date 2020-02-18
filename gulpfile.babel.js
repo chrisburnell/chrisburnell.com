@@ -38,6 +38,10 @@ const paths = {
         src: "src/images",
         dest: "images"
     },
+    fonts: {
+        src: "src/fonts",
+        dest: "fonts"
+    },
     includes: "_includes"
 };
 
@@ -199,10 +203,10 @@ gulp.task("js-vendors", () => {
 // -----------------------------------------------------------------------------
 
 // Compress standard-type images
-// Generate WebP-format counterparts for all standard-type images
+// Generate WebP-format counterparts for JPGs and PNGs
 gulp.task("images-compress", () => {
     return gulp
-        .src(`${paths.images.src}/**/*.{gif,jpg,jpeg,png}`, { base: paths.images.src })
+        .src(`${paths.images.src}/**/*.{jpg,jpeg,png}`, { base: paths.images.src })
         .pipe(plumber())
         .pipe(newer(`${paths.images.dest}`))
         .pipe(imagemin())
@@ -222,6 +226,17 @@ gulp.task("images-move-svg", () => {
 
 // -----------------------------------------------------------------------------
 
+// Move fonts to destination
+gulp.task("fonts-move", () => {
+    return gulp
+        .src(`${paths.fonts.src}/**/*`)
+        .pipe(plumber())
+        .pipe(newer(`${paths.fonts.dest}`))
+        .pipe(gulp.dest(`${paths.fonts.dest}/`));
+});
+
+// -----------------------------------------------------------------------------
+
 // CSS task
 gulp.task("css", gulp.series("css-prettify", gulp.parallel("css-compile", "css-critical")));
 
@@ -231,8 +246,11 @@ gulp.task("js", gulp.series("js-concat", "js-serviceworker", "js-vendors"));
 // Images task
 gulp.task("images", gulp.series("images-compress", "images-move-svg"));
 
+// Fonts task
+gulp.task("fonts", gulp.series("fonts-move"));
+
 // Default task
-gulp.task("default", gulp.parallel("css", "js", "images"));
+gulp.task("default", gulp.parallel("css", "js", "images", "fonts"));
 
 // -----------------------------------------------------------------------------
 
@@ -241,4 +259,5 @@ gulp.task("watch", () => {
     gulp.watch(`${paths.css.src}/**/*`, gulp.series("css"));
     gulp.watch(`${paths.js.src}/**/*`, gulp.series("js"));
     gulp.watch(`${paths.images.src}/**/*`, gulp.series("images"));
+    gulp.watch(`${paths.fonts.src}/**/*`, gulp.series("fonts"));
 });

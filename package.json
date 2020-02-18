@@ -24,8 +24,8 @@
     "images": "gulp images"
   },
   "dependencies": {
-    "@babel/core": "7.8.3",
-    "@babel/preset-env": "7.8.3",
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "7.8.4",
     "@bdchauvette/gulp-prettier": "2.0.0",
     "autoprefixer": "9.7.4",
     "babel-core": "6.26.3",
@@ -34,7 +34,7 @@
     "gulp-babel": "8.0.0",
     "gulp-concat": "2.6.1",
     "gulp-csso": "4.0.1",
-    "gulp-imagemin": "7.0.0",
+    "gulp-imagemin": "7.1.0",
     "gulp-newer": "1.4.0",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",

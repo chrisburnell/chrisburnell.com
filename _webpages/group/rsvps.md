@@ -13,8 +13,7 @@ feed: /rsvps.xml
 *There are {{ rsvps | size }} RSVPs.*
 
 <div class="h-feed" id="rsvps">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    {% for page in rsvps %}
+        {% for page in rsvps %}
         {%- assign page_year = page.date | date: '%Y' -%}
 
         {% if page_year != current_year %}

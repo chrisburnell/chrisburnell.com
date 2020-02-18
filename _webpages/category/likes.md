@@ -16,8 +16,7 @@ sparkline: likes
 *There are {{ site.categories.like | size }} published Likes.*
 
 <div class="h-feed" id="likes">
-    <link rel="stylesheet" href="/css/shelf.min.css">
-    <ol class="shelf" role="list">
+        <ol class="shelf" role="list">
         {% for page in site.categories.like %}
             {% include components/item_shelf.liquid %}
         {% endfor %}

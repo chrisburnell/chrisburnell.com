@@ -11,8 +11,7 @@ lede: All of my review posts.
 *There are {{ reviews | size }} published Reviews.*
 
 <div class="h-feed" id="reviews">
-    <link rel="stylesheet" href="/css/deck.min.css">
-    {% for page in reviews %}
+        {% for page in reviews %}
         {%- assign page_year = page.date | date: '%Y' -%}
 
         {% if page_year != current_year %}
