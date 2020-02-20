@@ -1,4 +1,10 @@
+@charset "UTF-8";
+
 ////
+/// Chris Burnell
+///
+/// Please contact me if you want to learn about anything you see here.
+///
 /// @author Chris Burnell <me@chrisburnell.com>
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
@@ -16,22 +22,3 @@
 
 /// VENDORS
 @import "vendors/include-media";
-
-/// THEMES
-@import "themes/dark";
-// @import "themes/christmas";
-// @import "themes/halloween";
-// @import "themes/outrun";
-
-/// BASE
-@import "base/reset";
-@import "base/page";
-
-/// LAYOUT
-@import "layout/wrap";
-@import "layout/header";
-
-/// COMPONENTS
-@import "components/helpers";
-@import "components/logo";
-@import "components/nav-primary";

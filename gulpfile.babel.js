@@ -207,8 +207,8 @@ gulp.task("js-vendors", () => {
 gulp.task("images-compress", () => {
     return gulp
         .src(`${paths.images.src}/**/*.{jpg,jpeg,png}`, { base: paths.images.src })
-        .pipe(plumber())
-        .pipe(newer(`${paths.images.dest}`))
+        // .pipe(plumber())
+        // .pipe(newer(`${paths.images.dest}`))
         .pipe(imagemin())
         .pipe(gulp.dest(`${paths.images.dest}/`))
         .pipe(webp())

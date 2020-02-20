@@ -16,7 +16,9 @@
 @import "abstracts/maps";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
-@import "abstracts/css-variables";
+
+/// CSS VARIABLES
+@import "base/variables";
 
 /// VENDORS
 @import "vendors/include-media";
