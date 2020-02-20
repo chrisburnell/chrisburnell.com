@@ -14,34 +14,6 @@
     justify-content: space-between;
 }
 
-.title--tall {
-    min-height: calc(50vh - var(--measure-large));
-    position: relative;
-
-    &::after {
-        content: "";
-        @include v(background-color, raven);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        position: absolute;
-        top: calc(var(--measure-large) * -1);
-        bottom: 0;
-        left: -100%;
-        right: -100%;
-        @include v(z-index, root);
-    }
-
-    span {
-        @include v(color, white);
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        @include v(z-index, default);
-    }
-}
-
 .title--success,
 .title--error {
     width: auto;

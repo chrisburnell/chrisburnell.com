@@ -22,7 +22,7 @@ sparkline: code
 
 --------
 
-These are my best CodePens—seven of which were [featured on their homepage](https://codepen.io/collection/hfqlg){:rel="external"}.
+These are my best CodePens—seven of which were [featured on their homepage](https://codepen.io/collection/hfqlg).
 
 *There are {{ site.categories.code | size }} published code snippets.*
 

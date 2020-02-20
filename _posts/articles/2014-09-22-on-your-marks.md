@@ -16,7 +16,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/514049979347107840
 ---
 
-Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus"){:rel="external"} for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
+Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
 <figure>
     <a href="https://disqus.com">
@@ -30,7 +30,7 @@ In this article I’m going to run through how I manage my comments section from
 
 {% include_cached content/heading.liquid title='The Cons of Disqus' id='cons' %}
 
-- The greatest disadvantage of using *Disqus* may or may not be obvious, but it means you’re locked into using *Disqus* for your comments. *Disqus* do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options"){:rel="external"} and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"){:rel="external"}, but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
+- The greatest disadvantage of using *Disqus* may or may not be obvious, but it means you’re locked into using *Disqus* for your comments. *Disqus* do offer [importing](https://help.disqus.com/customer/portal/topics/215157-importing/articles "importing options") and [exporting options](https://help.disqus.com/customer/portal/articles/472149-comments-export "exporting options"), but it’s not a guarantee that whatever commenting platform you want to move from or to will make for an easy, foolproof process.
 - It also used to be the case that you needed to have an account with *Disqus* in order to be able to make comments, but there is now an optional setting that owners can toggle enabling guests to make comments.
 - Another issue with *Disqus* that isn’t terribly relevant anymore today, outside the context of a few edge case users, is that *Disqus* relies on JavaScript to inject your comments and commenting form onto your page—users with JavaScript turned off won’t be able to comment. I imagine there are also some aggressive ad-block browser plugins which would disallow *Disqus* from loading, but they’re probably also an edge case. In the case that the user doesn’t have JavaScript turned on, a message is displayed using a `noscript` tag.
 - It’s beyond my knowledge how caching is affected by *Disqus*—whether or not it is cached, or available to be cached offline—but as the movement to bring offline support to the web ramps up, this could present an issue.
@@ -302,14 +302,14 @@ As we saw in [the statistics](#the-weigh-in "The Weigh In") of *Disqus’* impac
 --------
 
 
-We still have a small thorn when it comes to users without JavaScript enabled. Of course, the `noscript` tag will display a message, <q>Please enable JavaScript to view comments</q>, but there’s no way for those users to view the comments. On the other hand, *Disqus* have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven"){:rel="external"} for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](https://jekyllrb.com/ "Jekyll"){:rel="external"}) dynamically; furthermore, these pages don’t work without JavaScript enabled anyway.
+We still have a small thorn when it comes to users without JavaScript enabled. Of course, the `noscript` tag will display a message, <q>Please enable JavaScript to view comments</q>, but there’s no way for those users to view the comments. On the other hand, *Disqus* have [discussion pages](https://disqus.com/home/discussion/chrisburnell/a_slice_of_heaven_chris_burnell_28 "Disqus Discussion Page for A Slice of Heaven") for each of your articles, but the URL isn’t predictable enough to print this URL with my CMS ([Jekyll](https://jekyllrb.com/ "Jekyll")) dynamically; furthermore, these pages don’t work without JavaScript enabled anyway.
 
-[A List Apart](http://alistapart.com "A List Apart"){:rel="external"} has a pretty nice solution to this in the same vein as *Disqus*, but it works without JavaScript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"){:rel="external"}. Maybe if *Disqus* was able to give a similar URL back in the case where JavaScript is disabled, but as it’s an external service, this doesn’t seem possible without JavaScript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope *Disqus* implements something like this soon.
+[A List Apart](http://alistapart.com "A List Apart") has a pretty nice solution to this in the same vein as *Disqus*, but it works without JavaScript enabled, for example: [this comments page](http://alistapart.com/comments/client-education-and-post-launch-success#337686 "The Comments for Client Education and Post-Launch Success on A List Apart"). Maybe if *Disqus* was able to give a similar URL back in the case where JavaScript is disabled, but as it’s an external service, this doesn’t seem possible without JavaScript. `https://disqus.com/comments/?url=https://chrisburnell.com/article/a-slice-of-heaven` is a possible solution to a minor problem—let’s hope *Disqus* implements something like this soon.
 
 
 --------
 
 
-Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"){:rel="external"}, a JavaScript wizard and close friend of mine, for helping me achieve this solution.
+Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a JavaScript wizard and close friend of mine, for helping me achieve this solution.
 
 Let me know, as always, [down below](#comments "Jump to the comments") *(treat that link as a proof of concept)* if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!

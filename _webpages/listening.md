@@ -5,7 +5,7 @@ title: Listening
 lede: What have I been listening to?
 ---
 
-Powered by [LastFM](https://last.fm){:rel="external"}. Check out my [Music Reviews](/music) for more musical data.
+Powered by [LastFM](https://last.fm). Check out my [Music Reviews](/music) for more musical data.
 
 <div id="listening" class="h-feed">
         <ol class="shelf  js-lastfm-feed" role="list">
@@ -114,7 +114,7 @@ function timeSince(timeStamp) {
 </script>
 {% endraw %}
 
-To see (almost) my entire listening history, checkout my [LastFM profile]({{ site.author.urls.lastfm }}){:rel="external"}.
+To see (almost) my entire listening history, checkout my [LastFM profile]({{ site.author.urls.lastfm }}).
 
 --------
 

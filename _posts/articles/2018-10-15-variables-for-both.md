@@ -22,7 +22,6 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
-longform: false
 sitemap:
   lastmod: 2020-02-04 10:00:00 +0000
 edit: Since writing this post, I have made a number of small tweaks to the original mixin and now function, and I've reflected those changes in the contents below.
@@ -49,7 +48,7 @@ $z-index-dialog:       4 !default;
 $z-index-notification: 5 !default;
 {% endhighlight %}
 
-And the next step is to create a [Map](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps){:rel="external"} of these values. You don’t actually need to use the variables for each value in the Map; you can instead put your typical CSS property values in their place—whole numbers in the case of `z-index`.
+And the next step is to create a [Map](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps) of these values. You don’t actually need to use the variables for each value in the Map; you can instead put your typical CSS property values in their place—whole numbers in the case of `z-index`.
 
 {% highlight scss %}
 $z-indexes: (

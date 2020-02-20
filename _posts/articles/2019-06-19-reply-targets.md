@@ -10,7 +10,7 @@ syndicate_to:
 
 Ever since adopting *IndieWeb* technologies, I have been posting all of my notes and replies onto my website with syndication links to *Twitter*/*Mastodon*. Because I write responses to people across a variety of channels, I wanted a means to present the context of the reply in the most meaningful manner, as can be seen on [this post](/note/1525182719)[^1].
 
-For example, if I respond to someone on *Twitter*, the reply target is the URL to the tweet to which I am responding, e.g. [https://twitter.com/dletorey/status/991247595132551168](https://twitter.com/dletorey/status/991247595132551168){:rel="external"}.
+For example, if I respond to someone on *Twitter*, the reply target is the URL to the tweet to which I am responding, e.g. [https://twitter.com/dletorey/status/991247595132551168](https://twitter.com/dletorey/status/991247595132551168).
 
 
 {% include_cached content/heading.liquid title='How to present reply context' %}
@@ -24,7 +24,7 @@ But this looks a little unwieldy. There are a handful of things that we can infe
 0. The reply target is on *Twitter*.
 0. The username of the reply target is <q>dletorey</q>.
 
-With this information, and a little [splitting](https://shopify.github.io/liquid/filters/split/){:rel="external"}, we can extract the username and present the reply target a little differently:
+With this information, and a little [splitting](https://shopify.github.io/liquid/filters/split/), we can extract the username and present the reply target a little differently:
 
 > in reply to {% include content/twitter_username.liquid username='dletorey' %}
 
@@ -57,7 +57,7 @@ The same can be done in the library for replies to non-siloed content, where the
 
 {% include_cached content/heading.liquid title='Federated Networks' %}
 
-Things get a little bit more complicated when we consider replies to federated networks, such as *Mastodon*. The tricky part here is the decentralised aspect of these networks—users on one network can interact with people on other networks. For example, I have an account on [Mastodon.social](https://mastodon.social/){:rel="external"} and could reply to someone on [Social.coop](https://social.coop/){:rel="external"}.
+Things get a little bit more complicated when we consider replies to federated networks, such as *Mastodon*. The tricky part here is the decentralised aspect of these networks—users on one network can interact with people on other networks. For example, I have an account on [Mastodon.social](https://mastodon.social/) and could reply to someone on [Social.coop](https://social.coop/).
 
 So how can I differentiate a *Mastodon* URL from a *Personal Website* URL? At the time of writing, there are over 5000 *Mastodon* instances, and that number is ever-changing, some instances are private, etc. It is not entirely feasible for me to replicate and maintain this list of *Mastodon* instances, a gross majority of which I will never interact with. Instead, I opted to maintain a finite list of *Mastodon* instances, populated based on which instances I have already replied to and which instances I may reply to in the future (updated manually as and when I do).
 
@@ -78,7 +78,7 @@ Can I pull the name of the person to whom I am responding from the *Twitter* API
 
 #### For Personal Websites:
 
-There is a [Microformats-2](http://microformats.org/wiki/microformats-2){:rel="external"} tool, [php-mf2](https://github.com/microformats/php-mf2){:rel="external"}, which I can use to parse the reply target URL and extract parts from the post which enhance the context of my reply:
+There is a [Microformats-2](http://microformats.org/wiki/microformats-2) tool, [php-mf2](https://github.com/microformats/php-mf2), which I can use to parse the reply target URL and extract parts from the post which enhance the context of my reply:
 
 - *Name* of the *Person* to whom I am responding?
 - *Type* of the *Post* to which I am responding?

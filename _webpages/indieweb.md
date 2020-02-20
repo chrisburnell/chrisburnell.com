@@ -34,15 +34,15 @@ I still need to do some work to change my syndication model from <abbr title="Pu
 
 {% include_cached content/heading.liquid title='Tools Used' %}
 
-To handle *incoming* webmentions, I use *[Webmention.io](https://webmention.io){:rel="external"}*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
+To handle *incoming* webmentions, I use *[Webmention.io](https://webmention.io)*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
 
-To syndicate interactions on my content inside silos, I use *[Bridgy](https://brid.gy){:rel="external"}* to push those interactions through *Webmention.io* and onto my website.
+To syndicate interactions on my content inside silos, I use *[Bridgy](https://brid.gy)* to push those interactions through *Webmention.io* and onto my website.
 
-*Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io){:rel="external"}*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
+*Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
-I also take advantage of both *[Bridgy Fed](https://fed.brid.gy){:rel="external"}* and *[Switchboard](https://switchboard.p3k.io){:rel="external"}* to interact with federated networks and to make *[WebSub](https://indieweb.org/WebSub){:rel="external"}* and *[ActivityPub](https://activitypub.rocks){:rel="external"}* work.
+I also take advantage of both *[Bridgy Fed](https://fed.brid.gy)* and *[Switchboard](https://switchboard.p3k.io)* to interact with federated networks and to make *[WebSub](https://indieweb.org/WebSub)* and *[ActivityPub](https://activitypub.rocks)* work.
 
-Lastly, I use *[OwnYourBeer](https://ownyour.beer){:rel="external"}* to syndicate check-ins from *[Untappd](https://untappd.com){:rel="external"}* to my [beer](/beer) category</a>.
+Lastly, I use *[OwnYourBeer](https://ownyour.beer)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
 
 
 {% include_cached content/heading.liquid title='Thanks' %}

@@ -48,7 +48,7 @@ syndicate_to:
     }
 </style>
 
-I highly recommend you read [Andy’s post](https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode){:rel="external"} first! Come back after, this page isn’t going anywhere…
+I highly recommend you read [Andy’s post](https://andy-bell.design/wrote/create-a-user-controlled-dark-or-light-mode) first! Come back after, this page isn’t going anywhere…
 
 --------
 

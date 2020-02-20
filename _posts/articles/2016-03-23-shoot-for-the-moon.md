@@ -32,7 +32,7 @@ A confusing subject for the uninitiated (myself included), decimals in CSS behav
 
 {% include_cached content/heading.liquid title='A Bit of Prerequisite Information' id='prerequisite-information' %}
 
-It’s probably worth refreshing yourself on the various rounding methods used in CSS in various browsers. [Alex Kilgour](https://github.com/howlingmad/){:rel="external"} wrote an excellent article on the subject, [Browser Rounding and Fractional Pixels](http://cruft.io/posts/percentage-calculations-in-ie/){:rel="external"}, that’s more than worth reading through and bookmarking, if only for his [concise table of rounding methods](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table){:rel="external"} used by browsers and when they’re used. I’ve summarised these different rounding methods below, but I still recommend checking out Alex’s article.
+It’s probably worth refreshing yourself on the various rounding methods used in CSS in various browsers. [Alex Kilgour](https://github.com/howlingmad/) wrote an excellent article on the subject, [Browser Rounding and Fractional Pixels](http://cruft.io/posts/percentage-calculations-in-ie/), that’s more than worth reading through and bookmarking, if only for his [concise table of rounding methods](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table) used by browsers and when they’re used. I’ve summarised these different rounding methods below, but I still recommend checking out Alex’s article.
 
 <dl>
     <dt>truncate to <em>x</em> decimals</dt>
@@ -97,7 +97,7 @@ Modern browsers will utilise *sub-pixel rendering* to render a *pixel* value con
 
 Even the above value is rounded to the wrong target value by a modern browser.
 
-Due to [discrepancies between browsers](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table){:rel="external"}, we can’t be sure whether a value will receive *sub-pixel rendering*, be truncated, be rounded to the nearest integer, or even be rounded *down* (floored) to the nearest integer!
+Due to [discrepancies between browsers](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table), we can’t be sure whether a value will receive *sub-pixel rendering*, be truncated, be rounded to the nearest integer, or even be rounded *down* (floored) to the nearest integer!
 
 <aside>
     <p>Let’s not get into viewport units (<code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>, etc.). That’s a whole other beast.</p>

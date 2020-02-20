@@ -7,5 +7,5 @@ authors:
     link: https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0
 listen_of: 2yopGJJSiA6ZDpw9IsGXTA
 cover: stop-staring-at-the-shadows.jpg
-rating: 3.5
+rating: 4.25
 ---

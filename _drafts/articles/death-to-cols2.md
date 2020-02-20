@@ -1,5 +1,5 @@
 ---
-date: 2019-06-24 09:31:00 +0100
+date: 2020-02-09 09:31:00 +0100
 title: Let me show you the door, <code>col-md-4</code>
 lede: For over a decade now, it’s been the norm to layout our websites with a system in CSS that divides the page into columns and defines the size of components on the page based on the number of columns it should take up. I’m proposing we move away from using arbitrary column counts and write CSS that expresses what we actually want, shedding the limitations imposed by a column-based layout.
 tags:
@@ -7,14 +7,13 @@ tags:
 banner:
   - death-to-cols.png
   - death-to-cols@2x.png
-banner_contain: true
 ---
 
-If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the classic CSS grid system. Libraries of this sort present the developer with a huge swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework like the ol’ [960 Grid System](https://960.gs). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
-Specifically, they approach layout by dividing the width of the page into <var>n</var> columns and assigning components on the page to a different number of these columns. For example, a <var>12</var>-column layout might be split into a <var>9</var>-column content section and a <var>3</var>-column sidebar. <var>12</var> is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject *double* the granularity and opt for a <var>24</var>-column grid.
+Specifically, they approach layout by dividing the width of the page into <var>n</var> (typically 12 or 24) columns and assigning the width of components on the page to a different number of these columns. For example, a <var>12</var>-column layout might be split into a <var>9</var>-column content section and a <var>3</var>-column sidebar. <var>12</var> is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject *double* the granularity and opt for a <var>24</var>-column grid; although, you’re certainly not limited to these numbers.
 
-But what about when we want to divide <var>12</var> columns into *fifths*? <var>12</var> / <var>5</var> = <var>2.4</var> is quite unwieldy to work with.
+But what about when we want to divide <var>12</var> columns into *fifths*, for a layout where we want five items side-by-side? <var>12</var> / <var>5</var> = <var>2.4</var> is quite unwieldy to work with.
 
 What about when we want to display a section at the *full width of the window* instead of just the span of centered columns? How do we sanely manage the responsive breakpoints where these columns will change their ratios to make better use of screen real-estate?
 
@@ -22,11 +21,11 @@ There are a whole host of reasons to <q>break out</q> out of the defined columns
 
 --------
 
-What I’m proposing, and certainly not the first to do so, is that we do away with thinking of layout in terms of <var>x</var>/<var>y</var> columns.
+What I’m proposing, and *certainly* not the first to do so, is that we do away with thinking of layout in terms of <var>n</var> columns.
 
 Because we aren’t beholden to using `floats` anymore and we have access to superior parts of CSS for layout, the way that we think about layout on the web needs to change.
 
-With `flex` or `grid`, it’s trivial now to compose a layout exactly as you and/or your designers visualise it.
+With the power of CSS’s Flex and Grid, it’s trivial now to compose a layout exactly as you and/or your designers visualise it.
 
 ### We used to say:
 
@@ -77,11 +76,11 @@ With `flex` or `grid`, it’s trivial now to compose a layout exactly as you and
 
 --------
 
-One of the major selling points about *Bootstrap* or *Foundation* was the ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and, of course, twelfths (1 columns each).
+One of the major selling points about these classic grid systems was their ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and, of course, twelfths (1 columns each).
 
-But these are really just abstractions of how our brain thinks about layout, or at least, how we previously thought about layout before these column-based layout systems became popular and the de facto standard.
+But these are really just abstractions of how our brain thinks about layout, or at least, how we previously thought about layout before these column-based layout systems became popular and the de facto standard. Moreso, the designs that we come up with are compromised to fit into the framework that we're clinging to.
 
-This is where CSS Grid really shines and takes away a great deal of mental overhead—even moreso than the column-based systems of yore. These old column-based systems break down any time you want to do something with layout that doesn’t align with your columns. What happens if you need to embed a third-party widget that should always appear at 300 pixels wide?
+This is where CSS Flex and Grid really shine and take away a great deal of mental overhead—even moreso than the column-based systems of yore. These old column-based systems break down any time you want to do something with layout that doesn’t align with your columns. What happens if you need to embed a third-party widget that should always appear at 300 pixels wide?
 
 {% highlight html %}
 <div class="row">

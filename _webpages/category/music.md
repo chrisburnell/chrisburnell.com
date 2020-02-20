@@ -15,7 +15,7 @@ sparkline: music
 
 *There are {{ site.categories.music | size }} published Music Reviews.*
 
-If you like hip-hop, check out my chronological playlist, [Hippity Hop and Whatnot Through the Ages](https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u){:rel="external"}, or, if you’re into synthwave, check out my playlist, [OutRetroSynthVapourRunWave](https://open.spotify.com/playlist/3H8w4bXd8Kwz70Z1cFNdc0){:rel="external"}.
+If you like hip-hop, check out my chronological playlist, [Hippity Hop and Whatnot Through the Ages](https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u), or, if you’re into synthwave, check out my playlist, [OutRetroSynthVapourRunWave](https://open.spotify.com/playlist/3H8w4bXd8Kwz70Z1cFNdc0).
 
 Check out my [Listening page](/listening) to see what I’ve been listening to regularly.
 

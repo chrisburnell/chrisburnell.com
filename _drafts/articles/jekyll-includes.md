@@ -12,11 +12,11 @@ tags:
     <cite class="h-cite"><a href="https://jekyllrb.com" rel="external">Jekyll</a></cite>
 </blockquote>
 
-I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to enforce a [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth){:rel="external"} methodology.
+I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liquid* were built as a way for me to experiment with what was a new CMS (*Jekyll*) to me at the time of conception. The overarching purpose of these snippets relates to my templating and content authoring processes, whether it be to automate something, keep my codebase organised, reduce mental overhead, or to enforce a [Single Source of Truth](https://en.wikipedia.org/wiki/Single_source_of_truth) methodology.
 
-And because *Jekyll* is a [static site generator](https://davidwalsh.name/introduction-static-site-generators){:rel="external"}, I don’t mind deferring the heavy-lifting to the build process and away from the user, so many of these components serve as equivalents to functionality usually relegated for *JavaScript*.
+And because *Jekyll* is a [static site generator](https://davidwalsh.name/introduction-static-site-generators), I don’t mind deferring the heavy-lifting to the build process and away from the user, so many of these components serve as equivalents to functionality usually relegated for *JavaScript*.
 
-Another caveat to the challenge is that my site <s>is</s> was hosted on [GitHub Pages](https://pages.github.com){:rel="external"}, so only a [small set of plugins](https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/){:rel="external"} are available to use. This means achieving solutions with pure *Liquid*.
+Another caveat to the challenge is that my site <s>is</s> was hosted on [GitHub Pages](https://pages.github.com), so only a [small set of plugins](https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/) are available to use. This means achieving solutions with pure *Liquid*.
 
 Regardless of whether you agree with my approach or not, let’s take a look at how I’ve handled these functionalities and streamlined my processes using a combination of *Jekyll*-powered *Liquid* alongside some *Sass*, avoiding *JavaScript* where unnecessary.
 
@@ -31,7 +31,7 @@ I considered *three* ways of implementing this:
 0. Maintain the heading and anchor’s *HTML* inside my *Markdown* every time I want to display a heading and its associated anchor.<br>— <em>This sounds extremely tedious.</em>
 0. Use *Jekyll* to generate the necessary anchors whenever I use a heading.<br>— <em>Requires a change to the way I write *Markdown* headings, although consistent, deviating entirely from the standard *Markdown* heading syntax.</em>
 
-I went for the third option. I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes"){:rel="external"}* to provide the functionality and take the pain away of crafting and maintaining the markup. In fact, I make liberal use of *includes* throughout the templating of my site; anything that is used at least twice is likely to be assigned to an *include*. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
+I went for the third option. I did so by leveraging *Jekyll’s* *[includes](https://jekyllrb.com/docs/templates/#includes "Jekyll Templating Includes")* to provide the functionality and take the pain away of crafting and maintaining the markup. In fact, I make liberal use of *includes* throughout the templating of my site; anything that is used at least twice is likely to be assigned to an *include*. Maybe it’s overkill, but I like to strive for a *Single Source of Truth* methodology in my codebase *wherever possible*.
 
 So how do I actually get *Jekyll* to build a *heading* and an *associated anchor* in my content?
 
@@ -67,7 +67,7 @@ Any *Liquid* code in *Markdown* files is parsed as such, so let’s follow this 
 {% endraw %}{% endhighlight %}
 
 0. The `heading` *include* accepts an optional `type` parameter, which defines the heading tag (`h1`–`h6`). If no `type` parameter is passed, the default is an `h3` tag, as this is the tag I use most often with this *include*.
-0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the fragment anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/){:rel="external"} to automatically generate the `id`.
+0. The *include* also accepts an optional `id` parameter, which is used for both the `id` attribute on the heading tag and the target `href` attribute on the fragment anchor tag. If no `id` parameter is passed, the **required** `title` parameter is [slugified](https://jekyllrb.com/docs/templates/) to automatically generate the `id`.
 0. The *include* also accepts a **required** `title` parameter, which becomes the textual contents of the heading. It may also be used to generate the `id` parameter, if it is not passed.
 0. A second *include* is called from inside the `heading` *include*, to which we’re passing the `id` of the `heading` *include*.
 

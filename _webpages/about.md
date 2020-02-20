@@ -46,7 +46,7 @@ After a bit of searching, I found a job at a small startup company that did cab 
     </a>
 </figure>
 
-In <time datetime="2012-04">April of 2012</time>, I joined the *Production Team* at *[Squiz](http://squiz.net){:rel="external"}* as a *Front-end Web Developer*. My job involved two general tasks: implementing a website’s functionality into *Squiz’s* CMS, *[Squiz Matrix](https://www.squiz.net/technology/cms){:rel="external"}*, and creating <abbr title="the product of translating a website’s design (usually in PSD format) into HTML, CSS, JavaScript, and media">cut-ups</abbr>. These tasks were almost always performed as client services and it was in this <q>deliver the best possible projects with fresh technology</q> environment that my passion and thirst for web development skyrocketed. Feeling particularly inclined towards the HTML and CSS side of things, I was often tasked with performing the cut-ups while other team members built the implementation side of things.
+In <time datetime="2012-04">April of 2012</time>, I joined the *Production Team* at *[Squiz](http://squiz.net)* as a *Front-end Web Developer*. My job involved two general tasks: implementing a website’s functionality into *Squiz’s* CMS, *[Squiz Matrix](https://www.squiz.net/technology/cms)*, and creating <abbr title="the product of translating a website’s design (usually in PSD format) into HTML, CSS, JavaScript, and media">cut-ups</abbr>. These tasks were almost always performed as client services and it was in this <q>deliver the best possible projects with fresh technology</q> environment that my passion and thirst for web development skyrocketed. Feeling particularly inclined towards the HTML and CSS side of things, I was often tasked with performing the cut-ups while other team members built the implementation side of things.
 
 Further on down the road, after tackling many amazing projects with the team, with clients like *William Hill*, *The Recruitment &amp; Employment Confederation*, and *Middlesex University*, I changed role to become a *User Interface Developer*. No longer sitting in the *Production Team*, but in the *UX team* at *Squiz* is where my focus became solely on building cut-ups and becoming a bridge between Design and Development, as well as aiding in UX projects.
 
@@ -61,7 +61,7 @@ For a long time I was also the organiser of a weekly meeting, *Implementor Scrum
     </a>
 </figure>
 
-From <time datetime="2014-06">June 2014</time>–<time datetime="2018-02">February 2018</time>, I took on the role of *Web Developer* at *[City, University of London](http://www.city.ac.uk){:rel="external"}*, where I looked forward to carrying the torch forward, and devoting my time and efforts towards perfecting and streamlining the codebase, promoting the ideologies and thirst for strong, readable code I harboured within myself at *Squiz*.
+From <time datetime="2014-06">June 2014</time>–<time datetime="2018-02">February 2018</time>, I took on the role of *Web Developer* at *[City, University of London](http://www.city.ac.uk)*, where I looked forward to carrying the torch forward, and devoting my time and efforts towards perfecting and streamlining the codebase, promoting the ideologies and thirst for strong, readable code I harboured within myself at *Squiz*.
 
 Over the near four years with *City*, I had the opportunity to learn a great deal about the cogs that keep Higher Education ticking. I was able to span a variety of interesting projects and challenges over the years: some small day-to-day tasks and others behemoth undertakings which held key positions in grand University endeavours. Some of the work which I'm particularly proud of includes a News redevelopment, Library event and openings management tools, a Clearing Progressive Web Application, and the development of a from-scratch codebase for the entire Cass Business School. More so than the URLs I affected at *City*, it brought me even more joy to hear the words of my coworkers as I left—that I had taught them a great deal about web development while we worked together, and that together we helped contribute to making education a more accessible and engaging experience for people.
 
@@ -79,7 +79,7 @@ In <time datetime="2018-02">February 2018</time>, after having made a difficult,
 
 {% include_cached content/heading.liquid title='The Web is Awesome' %}
 
-If you talk someone who knows me well, they will tell you I’m absolutely obsessed with the web, and it’s <del>almost</del> unhealthy. It’s <del>almost</del> sad how excited I can get about semantic code, web standards and best practices, code architecture and organistion, sharing ideas, open source and collaboration, clean and accessible user interfaces, typography, user experience, *[IndieWeb](https://indieweb.org/principles){:rel="external"}*, oh, and *CSS*.
+If you talk someone who knows me well, they will tell you I’m absolutely obsessed with the web, and it’s <del>almost</del> unhealthy. It’s <del>almost</del> sad how excited I can get about semantic code, web standards and best practices, code architecture and organistion, sharing ideas, open source and collaboration, clean and accessible user interfaces, typography, user experience, *[IndieWeb](https://indieweb.org/principles)*, oh, and *CSS*.
 
 I also play the piano, bake bread from time to time, and DM Dungeons & Dragons here and there.
 

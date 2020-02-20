@@ -2,7 +2,7 @@
 {% include components/header.liquid %}
 
 
-<main class="wrap{% if page.longform == true %}  stretch{% endif %}  h-{{ page.mf_root | default: 'entry' }}" role="main">
+<main class="wrap  h-{{ page.mf_root | default: 'entry' }}" role="main">
     <article class="content{% if page.mf_property %}  p-{{ page.mf_property }}{% endif %}" id="content" role="article">
 
         {% include components/title.liquid %}

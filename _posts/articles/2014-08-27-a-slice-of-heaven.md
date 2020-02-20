@@ -16,7 +16,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/504642274148765696
 ---
 
-I’ve been making quite a few pens over on [*CodePen*](https://codepen.io){:rel="external"} lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element"){:rel="external"} nowadays.
+I’ve been making quite a few pens over on [*CodePen*](https://codepen.io) lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
@@ -36,7 +36,7 @@ In this Pen, I’m taking advantage of `border-radius` and `overflow` on an elem
 
 {% include_cached content/heading.liquid title='Zoomy Anchor Thing' %}
 
-This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals){:rel="external"}.
+This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals).
 
 {% include content/codepen.liquid slug='lcEvB' height='350' %}
 
@@ -47,7 +47,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 {% include_cached content/heading.liquid title='Modal Container without JavaScript' %}
 
-This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal"){:rel="external"} explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
+This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
 
 {% include content/codepen.liquid slug='scyKF' height='350' %}
 
@@ -56,7 +56,7 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 {% include_cached content/heading.liquid title='Slip-n-slide Modal' %}
 
-This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"){:rel="external"}, let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
+This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#comments). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
 
 {% include content/codepen.liquid slug='sDBJk' height='630' %}
 
@@ -71,15 +71,15 @@ And the revisited version:
 
 {% include content/codepen.liquid slug='Cbiun' height='250' %}
 
-Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors"){:rel="external"}) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
+Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 
 {% include_cached content/caniuse.liquid feature='css-sel2' %}
 
-Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter"){:rel="external"} for helping me improve this even further by adding keyboard support for the hidden `input` field.
+Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Twitter") for helping me improve this even further by adding keyboard support for the hidden `input` field.
 
 
 {% include_cached content/heading.liquid title='Over to you' %}
 
-Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"){:rel="external"}, a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher"){:rel="external"}.
+Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
 
 Let me know in the [comments](#comments) if you have any examples or cool pens of your own!

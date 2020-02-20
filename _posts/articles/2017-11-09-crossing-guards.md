@@ -10,8 +10,6 @@ banner:
 banner_mobile:
   - crossing-guards_mobile@2x.png
   - crossing-guards_mobile.png
-banner_contain: true
-longform: false
 caniuse: true
 codepen: true
 comments: disqus
@@ -19,7 +17,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/928671414017773568
 ---
 
-Web Developers are excited about the future. Just as we recently saw a feature explosion in *JavaScript* (for good and for worse), we’re preparing for and beginning a feature explosion in *CSS* as well. People seem to be [twice](https://blog.twitter.com/official/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself.html){:rel="external"} as excited about CSS Grid, CSS Variables, Element Queries, etc. as last year! So while I prepare myself for that tidal wave, I thought I’d take a step outside of my comfort zone to learn about and share some cool *JavaScript* coming into stability today.
+Web Developers are excited about the future. Just as we recently saw a feature explosion in *JavaScript* (for good and for worse), we’re preparing for and beginning a feature explosion in *CSS* as well. People seem to be [twice](https://blog.twitter.com/official/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself.html) as excited about CSS Grid, CSS Variables, Element Queries, etc. as last year! So while I prepare myself for that tidal wave, I thought I’d take a step outside of my comfort zone to learn about and share some cool *JavaScript* coming into stability today.
 
 
 --------
@@ -32,7 +30,7 @@ Part of embracing that change means, as builders for the web, we have to be ligh
 
 {% include_cached content/heading.liquid title='Hook, Line, & Sinker' %}
 
-If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading){:rel="external"} or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/){:rel="external"} on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
+If you’ve ever built (or used) a [lazy-loader](https://en.wikipedia.org/wiki/Lazy_loading) or implemented [infinite-scrolling](https://www.smashingmagazine.com/2013/05/infinite-scrolling-lets-get-to-the-bottom-of-this/) on a website, you might be familiar with the history of these techniques. Extremely popular within native phone apps for their benefit to loading times and lower bandwidth overhead, *lazy-loading* and *infinite-scrolling* are part of a methodology for building leaner apps and websites, specifically to do with speed and performance of loading times.
 
 In the case of *lazy-loading*, rather than force the browser to download every asset required for a given page to **100% completion** (which may be slow, or even expensive for some users) a division is made between **critical** and **non-critical** assets. In most cases, **critical** assets certainly include any CSS and JavaScript required for the page to function properly, and as such these assets will be downloaded immediately. However, presentational images fall into the **non-critical** category. In the case of these types of images, a lazy-loading technique could be employed which dictates that <q>only when an image is within the viewport should it begin loading.</q>
 
@@ -58,7 +56,7 @@ window.addEventListener('resize', visibilityCheck);
 
 But we run a performance risk with this implementation. And in order to understand the risk, it’s important to also understand a bit about how your browser displays a webpage, and what your browser has to do when you scroll or resize a webpage.
 
-Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate){:rel="external"} of most devices today is **60Hz**—the display refreshes its screen 60 times per second—we can determine that we have a budget of approximately **16 milliseconds** to do what we need to do for each frame/display refresh.
+Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate) of most devices today is **60Hz**—the display refreshes its screen 60 times per second—we can determine that we have a budget of approximately **16 milliseconds** to do what we need to do for each frame/display refresh.
 
 <blockquote>
     <p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
@@ -81,7 +79,7 @@ As the user scrolls quickly around the website, their browser is silently firing
 
 <aside><p>For every single pixel the user scrolls, we’re asking the browser to tell us the exact position of a handful of elements.</p></aside>
 
-Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun){:rel="external"}, these events will fire at a rate nearly, if not completely, imperceptible to the human eye. In order to get an idea of the volume of these events, browse to your favourite news site and scroll from the top of the page to the bottom. Try to count the height of the page in pixels. Bonus points (and bonus events) if you do this on a small screen!
+Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun), these events will fire at a rate nearly, if not completely, imperceptible to the human eye. In order to get an idea of the volume of these events, browse to your favourite news site and scroll from the top of the page to the bottom. Try to count the height of the page in pixels. Bonus points (and bonus events) if you do this on a small screen!
 
 Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around the screen, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
 
@@ -107,7 +105,7 @@ window.addEventListener('scroll', visibilityCheck);
 window.addEventListener('resize', visibilityCheck);
 {% endhighlight %}
 
-In this example, we set up a lock to prevent the check from firing if we’re already scrolling or resizing. Each time an event fires, we set our `locked` variable to true, and if the function runs and detects that the variable is still true, it prevents the action from carrying out by [returning the function](https://stackoverflow.com/questions/3330193/early-exit-from-function){:rel="external"}. If the JavaScript is already busy doing the <q>stuff</q> we want, the lock will be up, and our function will not run completely again until the first pass is complete, upon which time the lock will be lifted and we’ll be free to do more <q>stuff</q>.
+In this example, we set up a lock to prevent the check from firing if we’re already scrolling or resizing. Each time an event fires, we set our `locked` variable to true, and if the function runs and detects that the variable is still true, it prevents the action from carrying out by [returning the function](https://stackoverflow.com/questions/3330193/early-exit-from-function). If the JavaScript is already busy doing the <q>stuff</q> we want, the lock will be up, and our function will not run completely again until the first pass is complete, upon which time the lock will be lifted and we’ll be free to do more <q>stuff</q>.
 
 While we’ve stopped our code from executing every scroll or resize event, we’ve also limited the opportunities in time for our actions to be carried out. Instead of our actions firing at the exact moment they should, we may defer the action to the next frame if too many events occur within our **16ms** budget. The complexity of the code has also increased, and tracking our lock feels a little wonky.
 
@@ -201,18 +199,18 @@ Other benefits you’ll reap from *IntersectionObserver* include:
 - ability to observe multiple Elements in different, siloed ways
 - simple to define what <q>observed</q> means: visible *at all*, *just* visible, *50%* visible, *100%* visible, etc.
 
-Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill){:rel="external"} or not.
+Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) or not.
 
 {% include_cached content/caniuse.liquid feature='intersectionobserver' %}
 
-An important caveat to note before diving too deep, at least at the time of writing, is that [*IntersectionObserver*](https://github.com/w3c/IntersectionObserver){:rel="external"} does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements){:rel="external"}; rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element){:rel="external"}-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
+An important caveat to note before diving too deep, at least at the time of writing, is that [*IntersectionObserver*](https://github.com/w3c/IntersectionObserver) does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements); rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
 
 
 {% include_cached content/heading.liquid title='In Conclusion' %}
 
 {% include content/codepen.liquid slug='JryQoM' %}
 
-*IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [*ResizeObserver*](https://wicg.github.io/ResizeObserver){:rel="external"} and [*Mutation Observer*](https://dom.spec.whatwg.org/#mutation-observers){:rel="external"}:
+*IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [*ResizeObserver*](https://wicg.github.io/ResizeObserver) and [*Mutation Observer*](https://dom.spec.whatwg.org/#mutation-observers):
 
 Let the developer figure out *what* to do. Let the browser figure out *how* to do it.
 

@@ -628,6 +628,6 @@ I’m always been a proponent for establishing a useful dictionary of specific v
 
 {% include_cached content/heading.liquid title='Technology' %}
 
-The CSS is compiled from SCSS using [gulp.js](https://github.com/gulpjs/gulp#readme){:rel="external"} and some [PostCSS](http://postcss.org){:rel="external"}.
+The CSS is compiled from SCSS using [gulp.js](https://github.com/gulpjs/gulp#readme) and some [PostCSS](http://postcss.org).
 
-The front-end is compiled with [Jekyll](https://jekyllrb.com){:rel="external"}, source files hosted by [GitHub](https://github.com){:rel="external"}, front-end hosted by [DigitalOcean](https://digitalocean.com){:rel="external"}, and sits behind [CloudFlare](https://www.cloudflare.com){:rel="external"} for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.
+The front-end is compiled with [Jekyll](https://jekyllrb.com), source files hosted by [GitHub](https://github.com), front-end hosted by [DigitalOcean](https://digitalocean.com), and sits behind [CloudFlare](https://www.cloudflare.com) for <abbr title="storing data so future requests for that data can be served faster">caching</abbr>, <abbr title="Secure Sockets Layer">SSL</abbr>, and as a <abbr title="Content Delivery Network">CDN</abbr>.

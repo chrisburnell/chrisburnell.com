@@ -67,6 +67,6 @@ Fine. I’ve rambled enough.
 - Use `maximum-scale` and `minimum-scale`, other variations don’t cut it.
 - Scalable only has one *E*, at the end.
 
-This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/ "Viewport Sizes"){:rel="external"} is a great resource of popular devices and their respective viewport attributes.
+This is one bit of HTML you should be diligent in getting the syntax correct because older browsers and ones that appeared around the advent of mobile phones won’t understand if you’re not very specific (à la olde ways). [Viewport Sizes](http://viewportsizes.com/ "Viewport Sizes") is a great resource of popular devices and their respective viewport attributes.
 
 I’m sure I’ve missed something or even gotten something wrong somewhere. Please let me know in the [comments](#comments) if I did.

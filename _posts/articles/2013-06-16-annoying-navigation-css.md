@@ -26,4 +26,4 @@ This is a User Experience or Accessibility issue. Anything we can do to make our
 
 {% include_cached content/heading.liquid title='Don’t throw away your visitors!' id='dont-throw-away-visitors' %}
 
-Check me out [on *CodePen*](https://codepen.io/chrisburnell "Chris Burnell on CodePen"){:rel="external"}, if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](https://blog.codepen.io/rodeo/ "The Pattern Rodeo"){:rel="external"} if your motivation needs a kick up the rear!
+Check me out [on *CodePen*](https://codepen.io/chrisburnell "Chris Burnell on CodePen"), if you you’ve got some spare time. I highly recommend taking part in the [Pattern Rodeo](https://blog.codepen.io/rodeo/ "The Pattern Rodeo") if your motivation needs a kick up the rear!

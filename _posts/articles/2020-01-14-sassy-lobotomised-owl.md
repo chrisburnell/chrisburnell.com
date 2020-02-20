@@ -15,7 +15,6 @@ banner_mobile:
   - sassy-lobotomised-owl_mobile.jpg
 redirect_from:
   - article/sassy-lobotomized-owl.html
-longform: false
 edit: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both">Variables for Both</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
 ---
 

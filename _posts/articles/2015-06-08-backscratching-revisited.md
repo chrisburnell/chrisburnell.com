@@ -8,7 +8,7 @@ banner:
   - backscratching-revisited.png
 banner_mobile:
   - backscratching-revisited_mobile.png
-edit: I originally documented this technique in a previous article, <a href="https://chrisburnell.com/article/ill-scratch-your-back">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message; although, I no longer use Microdata, opting for [Microformats](http://microformats.org/){:rel="external"} instead.
+edit: I originally documented this technique in a previous article, <a href="https://chrisburnell.com/article/ill-scratch-your-back">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message; although, I no longer use Microdata, opting for [Microformats](http://microformats.org/) instead.
 comments: disqus
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/607915792911495168
@@ -20,9 +20,9 @@ In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I 
 --------
 
 
-I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/){:rel="external"} in the form of [ARIA](http://html5doctor.com/using-aria-in-html/){:rel="external"} and [Microdata](https://schema.org/docs/documents.html){:rel="external"}.
+I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/) in the form of [ARIA](http://html5doctor.com/using-aria-in-html/) and [Microdata](https://schema.org/docs/documents.html).
 
-In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/){:rel="external"} and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
+In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/) and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
 
 {% highlight html %}
 <a href="/article/interesting-article">
@@ -96,7 +96,7 @@ Since I know that if I have the need for a `span` to change some visual style, I
 
 {% include_cached content/heading.liquid title='A Prickly Pear' %}
 
-But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html){:rel="external"}. Let me demonstrate with a modified snippet of HTML from my site.
+But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html). Let me demonstrate with a modified snippet of HTML from my site.
 
 {% highlight html %}
 <aside class="author" itemtype="https://schema.org/Person">
@@ -108,7 +108,7 @@ But there’s a problem if we want to use [Microdata](https://schema.org/docs/do
 </aside>
 {% endhighlight %}
 
-I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person){:rel="external"}), but to sum up: we can use different attributes ([boolean](https://html.spec.whatwg.org/#boolean-attributes){:rel="external"} or [enumerated](https://html.spec.whatwg.org/#keywords-and-enumerated-attributes){:rel="external"}) to give the browser context about our data.
+I won’t go into specifics on the attribute types here and what they mean as Microdata (read about that [here](https://schema.org/Person)), but to sum up: we can use different attributes ([boolean](https://html.spec.whatwg.org/#boolean-attributes) or [enumerated](https://html.spec.whatwg.org/#keywords-and-enumerated-attributes)) to give the browser context about our data.
 
 So instead of printing, for example, an author’s name, we’ll wrap it in a `span` and give it an `itemprop` attribute. When the value of the `itemprop` attribute is set to <q>author</q> within the scope of the *Person* schema, we’re essentially tagging the page with an author. There are numerous Schemas and Properties within each Schema to help you provide context to the content of your website.
 
@@ -129,4 +129,4 @@ Now we can be sure to only target `spans` without a `class` *or* `itemprop` attr
 
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
-I have to reiterate that this technique needs to be taken with a grain of salt. **Do not [copy-pasta](https://gifs.chrisburnell.com/copypasta.gif "Copy and Paste"){:rel="external"} this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
+I have to reiterate that this technique needs to be taken with a grain of salt. **Do not [copy-pasta](https://gifs.chrisburnell.com/copypasta.gif "Copy and Paste") this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.

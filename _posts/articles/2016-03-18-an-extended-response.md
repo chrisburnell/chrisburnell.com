@@ -23,7 +23,7 @@ further_reading:
     title: "Sass Mixins vs Extends: The Data"
 ---
 
-A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/){:rel="external"} some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
+A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/) some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
 
 <div class="edit">
     <p>N.B. This assumes that you are gzipping your assets on the front-end.</p>
@@ -51,7 +51,7 @@ Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined
 
 While this may be a contentious topic, I believe there are some predictable use-cases for Sass’ `@extend`, and the key in these use-cases is *what exactly* is being `@extended`. Typically, developers use `@extend` to apply one or more *properties* to *multiple selectors*, but as we know, this can cause unpredictable CSS output as it’s difficult to remember every selector for which you’ve extended the properties.
 
-The method which is far more predictable in its use of `@extend` does something different. Instead of `@extending` *properties* to *multiple selectors*, `@extend` *multiple selectors* to a *[placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_){:rel="external"}* (also called a *silent class*) and reference the *placeholder selector* wherever applying styles to those *multiple selectors*.
+The method which is far more predictable in its use of `@extend` does something different. Instead of `@extending` *properties* to *multiple selectors*, `@extend` *multiple selectors* to a *[placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)* (also called a *silent class*) and reference the *placeholder selector* wherever applying styles to those *multiple selectors*.
 
 
 --------
