@@ -16,41 +16,73 @@
     <published>{{ page.date | date_to_xml_schema }}</published>
     <updated>{{ page.sitemap.lastmod | default: page.finish | default: page.date | default: site.time | date_to_xml_schema }}</updated>
     {% if page.lede %}
-        <summary>{{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip }}</summary>
+        <summary><![CDATA[
+            {{ page.lede | replace: "'", "’" | strip_html | xml_escape | strip }}
+        ]]></summary>
     {% elsif page.category == 'article' %}
-        <summary>Shared Article</summary>
+        <summary><![CDATA[
+            Shared Article
+        ]]></summary>
     {% elsif page.category == 'beer' %}
-        <summary>{% if page.authors %}By {% for author in page.authors %}{%- assign author_name = author.name | default: author | strip -%}{%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}{% unless forloop.first %}, {% endunless %}{{ author_name | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
+        <summary><![CDATA[
+            {% if page.authors %}By {% for author in page.authors %}{%- assign author_name = author.name | default: author | strip -%}{%- assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null -%}{% unless forloop.first %}, {% endunless %}{{ author_name | xml_escape }}{% endfor %}. {% endif %}{% if page.checkin.name %}Drank at {{ page.checkin.name | xml_escape }}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}
+        ]]></summary>
     {% elsif page.category == 'book' %}
         {% if page.rating and page.rating != 'Parti Pris' %}
-            <summary>{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}</summary>
+            <summary><![CDATA[
+                {% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}
+            ]]></summary>
         {% else %}
-            <summary>Book Review</summary>
+            <summary><![CDATA[
+                Book Review
+            ]]></summary>
         {% endif %}
     {% elsif page.category == 'bookmark' %}
-        <summary>Bookmark</summary>
+        <summary><![CDATA[
+            Bookmark
+        ]]></summary>
     {% elsif page.category == 'chess' %}
-        <summary>Chess Game</summary>
+        <summary><![CDATA[
+            Chess Game
+        ]]></summary>
     {% elsif page.category == 'code' %}
-        <summary>Code</summary>
+        <summary><![CDATA[
+            Code
+        ]]></summary>
     {% elsif page.category == 'movie' %}
-        <summary>Movie Review</summary>
+        <summary><![CDATA[
+            Movie Review
+        ]]></summary>
     {% elsif page.category == 'music' %}
         {%- if page.rating and page.rating != 'Parti Pris' -%}
-            <summary>{% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}</summary>
+            <summary><![CDATA[
+                {% if page.authors %}By {% for author in page.authors %}{% unless forloop.first %}, {% endunless %}{{ author.name | default: author | xml_escape }}{% endfor %}. {% endif %}{% if page.rating and page.rating != 'Parti Pris' %}{% for count in (1..rating_base) %}★{% endfor %}{% if rating_fraction == 0.25 %}¼{% elsif rating_fraction == 0.5 %}½{% elsif rating_fraction == 0.75 %}¾{% endif %}{% endif %}
+            ]]></summary>
         {%- else -%}
-            <summary>Music Review</summary>
+            <summary><![CDATA[
+                Music Review
+            ]]></summary>
         {%- endif -%}
     {% elsif page.category == 'note' %}
-        <summary>{{ page.content | markdownify | strip_html | xml_escape }}</summary>
+        <summary><![CDATA[
+            {{ page.content | markdownify | strip_html | xml_escape }}
+        ]]></summary>
     {% elsif page.category == 'podcast' %}
-        <summary>Podcast</summary>
+        <summary><![CDATA[
+            Podcast
+        ]]></summary>
     {% elsif page.category == 'recipe' %}
-        <summary>Recipe</summary>
+        <summary><![CDATA[
+            Recipe
+        ]]></summary>
     {% elsif page.category == 'talk' %}
-        <summary>Talk{% if page.checkin %} – Given at {{ page.checkin.name | default: page.checkin | xml_escape }}{% endif %}</summary>
+        <summary><![CDATA[
+            Talk{% if page.checkin %} – Given at {{ page.checkin.name | default: page.checkin | xml_escape }}{% endif %}
+        ]]></summary>
     {% elsif page.category == 'tv' %}
-        <summary>TV Review</summary>
+        <summary><![CDATA[
+            TV Review
+        ]]></summary>
     {% endif %}
     {% if page.category %}
         <category term="{{ page.category | default: 'draft' | join: ', ' | downcase | xml_escape }}" />
