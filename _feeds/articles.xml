@@ -6,12 +6,6 @@ redirect_from:
   - feed-article.xml
 ---
 
-{%- assign articles_without_replies = site.emptyArray -%}
-{%- for page in site.categories.article -%}
-    {%- if page.rsvp or page.in_reply_to -%}
-        {%- assign articles_without_replies = articles_without_replies | push: page -%}
-    {%- endif -%}
-{%- endfor -%}
-{% for page in articles_without_replies limit: site.feed_limit %}
+{% for page in site.categories.article limit: site.feed_limit %}
     {% include components/item_feed.liquid %}
 {% endfor %}
