@@ -6,7 +6,7 @@ page_class: page--uses
 
 {% include content/heading.liquid title='Coding' %}
 
-I use [Visual Studio Code](https://code.visualstudio.com) for coding with [Wes Bos’](https://wesbos.com) [Cobalt2 theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2); although, I sometimes forego *Visual Studio Code* and simply use [Vim](https://www.vim.org).
+I use [Visual Studio Code](https://code.visualstudio.com) for coding with [Wes Bos’](https://wesbos.com) [Cobalt2 theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2); although, I’m currently trying to familiarise myself with [Vim](https://www.vim.org), so these days I often simply use that or a plugin within *Visual Studio Code*.
 
 My terminal of choice is [iTerm2](https://iterm2.com) running [Z shell/zsh](https://www.zsh.org). [Oh My Zsh](https://ohmyz.sh) allows me to easily manage my *zsh* configuration and pulls in [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) for theming.
 
