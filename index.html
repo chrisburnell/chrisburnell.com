@@ -37,7 +37,7 @@ coil: true
     {%- endfor -%}
     {% include components/on_this_day.liquid posts=posts_without_replies %}
 
-    <h2 id="latest" class="gamma">The Latest</h2>
+    {% include content/heading.liquid title='The Latest' id='latest' %}
 {% else %}
     <h2 id="latest" class="gamma">From the Archives <small>— Page {{ paginator.page }}</small></h2>
 {% endif %}
