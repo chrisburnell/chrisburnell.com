@@ -3,49 +3,48 @@ date: 2018-10-15 10:34:00 +0100
 title: Variables for Both
 lede: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS function and mixin.
 tags:
-  - css
-  - scss
+    - css
+    - scss
 banner:
-  - variables-for-both@2x.jpg
-  - variables-for-both.jpg
+    - variables-for-both@2x.jpg
+    - variables-for-both.jpg
 banner_mobile:
-  - variables-for-both_mobile@2x.jpg
-  - variables-for-both_mobile.jpg
+    - variables-for-both_mobile@2x.jpg
+    - variables-for-both_mobile.jpg
 further_reading:
-  - title: W3 CSS Custom Properties Specification
-    link: https://www.w3.org/TR/css-variables/
-  - title: MDN — Using CSS custom properties
-    link: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
-  - title: CSS-Tricks’ Guide to CSS Custom Properties
-    link: https://css-tricks.com/guides/css-custom-properties/
+    - title: W3 CSS Custom Properties Specification
+      link: https://www.w3.org/TR/css-variables/
+    - title: MDN — Using CSS custom properties
+      link: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+    - title: CSS-Tricks’ Guide to CSS Custom Properties
+      link: https://css-tricks.com/guides/css-custom-properties/
 syndicate_to:
-  - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
-  - https://twitter.com/iamchrisburnell/status/1051772305360195584
+    - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
+    - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
 sitemap:
-  lastmod: 2020-02-04 10:00:00 +0000
+    lastmod: 2020-02-04 10:00:00 +0000
 edit: Since writing this post, I have made a number of small tweaks to the original mixin and now function, and I've reflected those changes in the contents below.
 ---
 
 {% include_cached content/caniuse.liquid feature='css-variables' periods='current' %}
 
-One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* setup should be useful for you.
-
+One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, _CSS Variables_ are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of _Internet Explorer_ or making sure _all_ of your browser support bases are covered, this _SCSS_ setup should be useful for you.
 
 {% include_cached content/heading.liquid title='The Setup' %}
 
-I won’t pretend I’m writing the introduction to a family recipe for chocolate cake and bore you with twenty minutes of introduction; instead, let’s just jump into the technique, then I’ll break it down a little bit. But before I get too ahead of myself, *please keep in mind there are some bits that require setting up!*
+I won’t pretend I’m writing the introduction to a family recipe for chocolate cake and bore you with twenty minutes of introduction; instead, let’s just jump into the technique, then I’ll break it down a little bit. But before I get too ahead of myself, _please keep in mind there are some bits that require setting up!_
 
-For the purposes of this example, I’ll create a simple mapping for `z-index`. Let’s start by setting up a variable for each level of `z-index` that we want to use. This can help remove the mental overhead of setting values for this property, as it’s generally obvious what level an element should live at when they’re named in a way that makes sense to you (and your team). *This part is optional.*
+For the purposes of this example, I’ll create a simple mapping for `z-index`. Let’s start by setting up a variable for each level of `z-index` that we want to use. This can help remove the mental overhead of setting values for this property, as it’s generally obvious what level an element should live at when they’re named in a way that makes sense to you (and your team). _This part is optional._
 
 {% highlight scss %}
 $z-index-below:       -1 !default;
-$z-index-root:         0 !default;
+$z-index-root: 0 !default;
 $z-index-default:      1 !default;
-$z-index-above:        2 !default;
+$z-index-above: 2 !default;
 $z-index-modal:        3 !default;
-$z-index-dialog:       4 !default;
-$z-index-notification: 5 !default;
+$z-index-dialog: 4 !default;
+\$z-index-notification: 5 !default;
 {% endhighlight %}
 
 And the next step is to create a [Map](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps) of these values. You don’t actually need to use the variables for each value in the Map; you can instead put your typical CSS property values in their place—whole numbers in the case of `z-index`.
@@ -53,11 +52,11 @@ And the next step is to create a [Map](https://sass-lang.com/documentation/file.
 {% highlight scss %}
 $z-indexes: (
     below:        $z-index-below,
-    root:         $z-index-root,
+root: $z-index-root,
     default:      $z-index-default,
-    above:        $z-index-above,
+above: $z-index-above,
     modal:        $z-index-modal,
-    dialog:       $z-index-dialog,
+dialog: $z-index-dialog,
     notification: $z-index-notification
 ) !default;
 {% endhighlight %}
@@ -68,9 +67,9 @@ Now we need to prepare our CSS Variables. In order to make them available for th
 
 {% highlight scss %}
 :root {
-    @each $key, $value in $z-indexes {
-        --z-index-#{$key}: #{$value};
-    }
+@each $key, $value in $z-indexes {
+        --z-index-#{$key}: #{\$value};
+}
 }
 {% endhighlight %}
 
@@ -78,13 +77,13 @@ Additionally, because we’re using SCSS, and to keep our code <abbr title="Don�
 
 {% highlight css %}
 :root {
-    --z-index-below:       -1;
-    --z-index-root:         0;
-    --z-index-default:      1;
-    --z-index-above:        2;
-    --z-index-modal:        3;
-    --z-index-dialog:       4;
-    --z-index-notification: 5;
+--z-index-below: -1;
+--z-index-root: 0;
+--z-index-default: 1;
+--z-index-above: 2;
+--z-index-modal: 3;
+--z-index-dialog: 4;
+--z-index-notification: 5;
 }
 {% endhighlight %}
 
@@ -95,71 +94,72 @@ We could hard-code some logic in order to designate that our numeric values shou
 Before that, though, let’s expand our example a little bit and include two more CSS properties in this methodology: `opacity` and `border-width`. This will help to illustrate the value in creating these relational Maps.
 
 {% highlight scss %}
-$opacities: (
-    alpha: 0.9,
-    beta:  0.6,
-    gamma: 0.3
+\$opacities: (
+alpha: 0.9,
+beta: 0.6,
+gamma: 0.3
 ) !default;
 
-$measures: (
-    small:  1rem,
-    medium: 2rem,
-    large:  4rem
+\$measures: (
+small: 1rem,
+medium: 2rem,
+large: 4rem
 ) !default;
 
 :root {
-    @each $key, $value in $opacities {
+@each $key, $value in $opacities {
         --opacity-#{$key}: #{$value};
     }
     @each $key, $value in $measures {
-        --measure-#{$key}: #{$value};
-    }
+--measure-#{$key}: #{$value};
+}
 }
 {% endhighlight %}
 
 {% highlight css %}
 :root {
-    --opacity-alpha: 0.9;
-    --opacity-beta:  0.6;
-    --opacity-gamma: 0.3;
+--opacity-alpha: 0.9;
+--opacity-beta: 0.6;
+--opacity-gamma: 0.3;
 
     --measure-small:  1rem;
     --measure-medium: 2rem;
     --measure-large:  4rem;
+
 }
 {% endhighlight %}
 
 One important thing to note about this new code is that we’ve introduced a new set of variables, `measures`, which are used as values for properties like `border-width` or `margin`. These `measures` establish consistent spacing and sizing across your components. We will be using the <var>--opacity-</var> <q>type</q> variables for `opacity` but the <var>--measure-</var> <q>type</q> variables can be used for a great number of properties.
 
-This is where the penultimate step really shines. First we’ll establish which SCSS Map of Variables should be used for each <q>type</q> by preparing <var>$variable-map</var>.
+This is where the penultimate step really shines. First we’ll establish which SCSS Map of Variables should be used for each <q>type</q> by preparing <var>\$variable-map</var>.
 
 {% highlight scss %}
 $variable-map: (
     z-index: $z-indexes,
-    opacity: $opacities,
+opacity: $opacities,
     measure: $measures
 ) !default;
 {% endhighlight %}
 
-Secondly, we’ll create a Map that relates each *CSS property* to a set of values of a particular <q>type</q>:
+Secondly, we’ll create a Map that relates each _CSS property_ to a set of values of a particular <q>type</q>:
 
 {% highlight scss %}
-$property-map: (
-    z-index: z-index,
-    opacity: opacity,
-    margin: measure,
-    margin-top: measure,
-    margin-right: measure,
-    margin-bottom: measure,
-    margin-left: measure,
-    padding: measure,
-    padding-top: measure,
-    padding-right: measure,
-    padding-bottom: measure,
-    padding-left: measure,
-    grid-gap: measure,
-    column-gap: measure,
-    row-gap: measure
+\$property-map: (
+z-index: z-index,
+opacity: opacity,
+margin: measure,
+margin-top: measure,
+margin-right: measure,
+margin-bottom: measure,
+margin-left: measure,
+padding: measure,
+padding-top: measure,
+padding-right: measure,
+padding-bottom: measure,
+padding-left: measure,
+grid-gap: measure,
+column-gap: measure,
+row-gap: measure
 ) !default;
 {% endhighlight %}
 
@@ -174,11 +174,11 @@ Let’s tie it all together with this SCSS function and mixin.
 @function v($property, $value: default, $fallback: false) {
     @if (index($generic-values, $value)) {
         @return $value;
-    }
-    @else {
-        // if we're passing in a key in the variables Map (e.g. measure)
-        @if map-has-key($variable-map, $property) {
-            $map-variables: map-get($variable-map, $property);
+}
+@else {
+// if we're passing in a key in the variables Map (e.g. measure)
+@if map-has-key($variable-map, $property) {
+$map-variables: map-get($variable-map, \$property);
 
             // throw a warning if the value does not exist in the associated Map
             @if not map-has-key($map-variables, $value) {
@@ -243,6 +243,7 @@ Let’s tie it all together with this SCSS function and mixin.
             @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($variable-map, $property-map))}`.";
         }
     }
+
 }
 {% endhighlight %}
 {% include content/code_toggle_bottom.liquid %}
@@ -253,7 +254,7 @@ Let’s tie it all together with this SCSS function and mixin.
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well as the property
     @if $fallback {
-        #{$property}: v($property, $value, true);
+#{$property}: v($property, $value, true);
     }
     #{$property}: v($property, $value);
 }
@@ -266,23 +267,23 @@ You might have noticed that there are a number of parameters you can pass to the
 
 {% highlight scss %}
 .modal {
-    @include v(z-index, modal);
-    @include v(opacity, beta);
-    @include v(padding, medium);
-    @include v(margin-top, medium);
+@include v(z-index, modal);
+@include v(opacity, beta);
+@include v(padding, medium);
+@include v(margin-top, medium);
 }
 {% endhighlight %}
 
 {% highlight css %}
 .modal {
-    z-index: 3;
-    z-index: var(--z-index-modal);
-    opacity: 0.6;
-    opacity: var(--opacity-beta);
-    padding: 2rem;
-    padding: var(--measure-medium);
-    margin-top: 2rem;
-    margin-top: var(--measure-large);
+z-index: 3;
+z-index: var(--z-index-modal);
+opacity: 0.6;
+opacity: var(--opacity-beta);
+padding: 2rem;
+padding: var(--measure-medium);
+margin-top: 2rem;
+margin-top: var(--measure-medium);
 }
 {% endhighlight %}
 
@@ -290,13 +291,13 @@ And if we want to do any kind of computation, modify the value, or combine value
 
 {% highlight scss %}
 .modal {
-    border: v(measure, small) solid v(color, dove);
+border: v(measure, small) solid v(color, dove);
 }
 {% endhighlight %}
 
 {% highlight css %}
 .modal {
-    border: var(--measure-small) solid var(--color-dove);
+border: var(--measure-small) solid var(--color-dove);
 }
 {% endhighlight %}
 
@@ -304,17 +305,17 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 
 {% highlight scss %}
 .modal {
-    border: v(measure, small, true) solid v(color, dove, true);
+border: v(measure, small, true) solid v(color, dove, true);
 }
 {% endhighlight %}
 
 {% highlight css %}
 .modal {
-    border: 0.625rem solid #737373;
+border: 0.625rem solid #737373;
 }
 {% endhighlight %}
 
-The default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+The default value of <var>\$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 
