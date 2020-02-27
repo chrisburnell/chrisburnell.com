@@ -100,16 +100,15 @@
         <div class="in-reply-to">
             {% if page.rsvp %}
                 {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
-                <span>responded</span>
                 <data class="p-rsvp  strong" value="{{ rsvp_value }}">
                     {% if rsvp_value == true %}
-                        {% include content/emoji.liquid emoji='✅' %} Yes
+                        {% include content/emoji.liquid emoji='✅' %} Going
                     {% elsif rsvp_value == "maybe" %}
-                        {% include content/emoji.liquid emoji='🤔' %} Maybe
+                        {% include content/emoji.liquid emoji='🤔' %} Might go
                     {% elsif rsvp_value == "interested" %}
-                        {% include content/emoji.liquid emoji='😯' %} Interested
+                        {% include content/emoji.liquid emoji='😯' %} Interested in going
                     {% else %}
-                        {% include content/emoji.liquid emoji='❌' %} No
+                        {% include content/emoji.liquid emoji='❌' %} Not going
                     {% endif %}
                 </data>
                 <span>to</span>
@@ -190,9 +189,6 @@
                     {% else %}
                         a Tweet
                     {% endif %}
-                {% else %}
-                    <em>from</em>
-                    {{ in_reply_to_link }}
                 {% endif %}
             </a>
         </div>
@@ -209,15 +205,15 @@
         {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
         <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
-            {%- if check_year > year -%}
+            {% if check_year > year %}
                 <span>taking place on</span>
-            {%- elsif check_year == year and check_month > month -%}
+            {% elsif check_year == year and check_month > month %}
                 <span>taking place on</span>
-            {%- elsif check_year == year and check_month == month and check_day > day -%}
+            {% elsif check_year == year and check_month == month and check_day > day %}
                 <span>taking place on</span>
-            {%- else -%}
+            {% else %}
                 <span>took place on</span>
-            {%- endif -%}
+            {% endif %}
             <time datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}-{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
                 {{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}
                 {% if page.rsvp.finish %}
