@@ -26,8 +26,8 @@
 {%- endfor -%}
 
 {% if todays_rsvps.size > 0 %}
+    {% include content/heading.liquid title='Events I’m attending today' id='todays-rsvps' %}
     <section class="todays-rsvps" aria-label="Today's RSVPs">
-        {% include content/heading.liquid title='Events I’m attending today' id='todays-rsvps' %}
                 <ol class="deck" role="list">
             {% for page in todays_rsvps %}
                 {% include components/item_deck.liquid strip_h=true %}
@@ -37,8 +37,8 @@
 {% endif %}
 
 {% if upcoming_rsvps.size > 0 %}
+    {% include content/heading.liquid title='Upcoming events I’m attending' id='upcoming-rsvps' %}
     <section class="upcoming-rsvps" aria-label="Upcoming RSVPs">
-        {% include content/heading.liquid title='Upcoming events I’m attending' id='upcoming-rsvps' %}
                 <ol class="deck" role="list">
             {% for page in upcoming_rsvps %}
                 {% include components/item_deck.liquid strip_h=true %}
