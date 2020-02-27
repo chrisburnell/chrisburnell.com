@@ -249,7 +249,7 @@ Let’s tie it all together with this SCSS function and mixin.
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
-@mixin v($property, $value: default, $fallback: false) {
+@mixin v($property, $value: default, $fallback: true) {
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well as the property
     @if $fallback {
@@ -260,7 +260,7 @@ Let’s tie it all together with this SCSS function and mixin.
 {% endhighlight %}
 {% include content/code_toggle_bottom.liquid %}
 
-You might have noticed that there are a number of parameters you can pass to the function and mixin: the property, a value, negation of the passed value (optional), whether or not to mark the declaration as `!important` (optional), and whether or not to provide the fallback value (optional).
+You might have noticed that there are a number of parameters you can pass to the function and mixin: the property, a value, and whether or not to provide the fallback value (optional).
 
 {% include_cached content/heading.liquid title='Putting it to use' %}
 
@@ -282,7 +282,7 @@ You might have noticed that there are a number of parameters you can pass to the
     padding: 2rem;
     padding: var(--measure-medium);
     margin-top: 2rem;
-    margin-top: var(--measure-large);
+    margin-top: var(--measure-medium);
 }
 {% endhighlight %}
 
@@ -314,7 +314,7 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 }
 {% endhighlight %}
 
-The default value of <var>$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+Changing the default value of <var>$fallback</var> from `true` to `false` on the mixin itself will have a knock-on effect across your codebase, and for every <samp>@include v(...);</samp>, you’ll be shaving off a line of code in your compiled CSS—not much, especially after compression, but it might add up if you are consistently using this technique across your codebase.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 
