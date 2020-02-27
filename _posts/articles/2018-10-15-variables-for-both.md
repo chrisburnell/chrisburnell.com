@@ -250,7 +250,7 @@ $map-variables: map-get($variable-map, \$property);
 
 {% include content/code_toggle_top.liquid %}
 {% highlight scss %}
-@mixin v($property, $value: default, $fallback: true) {
+@mixin v($property, $value: default, $fallback: false) {
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well as the property
     @if $fallback {
@@ -261,7 +261,7 @@ $map-variables: map-get($variable-map, \$property);
 {% endhighlight %}
 {% include content/code_toggle_bottom.liquid %}
 
-You might have noticed that there are a number of parameters you can pass to the function and mixin: the property, a value, and whether or not to provide the fallback value (optional).
+You might have noticed that there are a number of parameters you can pass to the function and mixin: the property, a value, negation of the passed value (optional), whether or not to mark the declaration as `!important` (optional), and whether or not to provide the fallback value (optional).
 
 {% include_cached content/heading.liquid title='Putting it to use' %}
 
@@ -315,7 +315,7 @@ border: 0.625rem solid #737373;
 }
 {% endhighlight %}
 
-Changing the default value of <var>\$fallback</var> from `false` to `true` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
+The default value of <var>\$fallback</var> from `true` to `hide` on the mixin itself will have a knock-on effect across your codebase, and for every `include` of this mixin, you’ll be shaving off a line of code in your compiled CSS—not much, but it adds up if you are consistently using this technique.
 
 {% include_cached content/heading.liquid title='The Takeaway' %}
 
