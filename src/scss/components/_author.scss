@@ -146,7 +146,7 @@
                         transform: translateY(-30%);
                     }
                     100% {
-                        transform: rotateZ(calc(var(--rotation-default) * 2 * -1)) translateX(calc(var(--measure-avatar) * 0.2 * -1)) translateY(-60%);
+                        transform: rotateZ(calc(var(--rotation-default) * 2 * -1)) translateY(-60%);
                     }
                 }
             }
