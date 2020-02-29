@@ -91,6 +91,10 @@
     }
 }
 
-.js-meta-toggle:not(:checked) ~ div:not(.published-date):not(.checkin-rating) {
+// Always show:
+//   Published Date
+//   Reply Context
+//   Checkin Rating
+.js-meta-toggle:not(:checked) ~ div:not(.published-date):not(.in-reply-to):not(.checkin-rating) {
     @include hidden;
 }

@@ -44,10 +44,6 @@
         }
     }
 
-    [rel*="external"]::after {
-        content: " ↗";
-    }
-
     .emoji {
         @include v(margin-right, small);
     }
