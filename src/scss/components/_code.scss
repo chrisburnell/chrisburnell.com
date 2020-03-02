@@ -35,19 +35,19 @@ code[data-lang] {
         }
     }
 
-    &.language--html::before,
-    &.language--css::before,
-    &.language--json::before,
-    &.language--scss::before,
-    &.language--yaml::before {
+    &.language-html::before,
+    &.language-css::before,
+    &.language-json::before,
+    &.language-scss::before,
+    &.language-yaml::before {
         @include case(uppercase);
     }
 
-    &.language--javascript::before {
+    &.language-javascript::before {
         content: "JavaScript";
     }
 
-    &.language--liquid::before {
+    &.language-liquid::before {
         @include case(capitalize);
     }
 }
