@@ -5,7 +5,8 @@
 ////
 
 button,
-.button {
+.button,
+[type="button"] {
     @extend %button-elements !optional;
     @include border-radius(thin);
     @include font-family(default);
