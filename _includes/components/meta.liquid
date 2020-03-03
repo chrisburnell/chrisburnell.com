@@ -8,102 +8,6 @@
 {%- endif -%}
 <div class="meta">
     <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden />
-    <div class="published-date">
-        {% include content/emoji.liquid emoji='🗓' %}
-        {% if page.mf_property contains 'bookmark-of' %}
-            <span>bookmarked on</span>
-        {% elsif page.mf_property contains 'like-of' %}
-            <span>liked on</span>
-        {% elsif page.mf_property contains 'listen-of' %}
-            <span>listened on</span>
-        {% elsif page.mf_property contains 'played-of' %}
-            <span>played on</span>
-        {% elsif page.mf_property contains 'read-of' %}
-            <span>started reading on</span>
-        {% elsif page.mf_property contains 'watch-of' %}
-            <span>watched on</span>
-        {% elsif page.mf_property contains 'pk-drank' %}
-            <span>drank on</span>
-        {% elsif page.mf_property contains 'pk-ate' %}
-            <span>ate on</span>
-        {% elsif page.mf_root == 'recipe' %}
-            <span>cooked on</span>
-        {% elsif page.mf_root == 'review' %}
-            <span>reviewed on</span>
-        {% else %}
-            <span>published on</span>
-        {% endif %}
-        <a class="u-uid  u-url" href="{{ canonical_local }}" title="Permalink: {{ canonical_local }}">
-            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
-        </a>
-    </div>
-    {% if page.sitemap.lastmod %}
-        <div class="updated-date">
-            {% include content/emoji.liquid emoji='🗓' %}
-            <span>updated on</span>
-            <time class="dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">{{ page.sitemap.lastmod | date_to_long_string }}</time>
-        </div>
-    {% endif %}
-    {% if page.release %}
-        <div class="released-date">
-            {% include content/emoji.liquid emoji='🗓' %}
-            <span>released on</span>
-            <time class="dt-released" datetime="{{ page.released | date_to_xmlschema }}">{{ page.release | date_to_long_string }}</time>
-        </div>
-    {% endif %}
-    {% if page.authors %}
-        <div class="authors">
-            {% if page.category == 'beer' %}
-                {% include content/emoji.liquid emoji='🍺' %}
-                <span>brewed by</span>
-            {% elsif page.category == 'book' %}
-                {% include content/emoji.liquid emoji='✍️' %}
-                <span>written by</span>
-            {% elsif page.category == 'movie' or page.category == 'tv' %}
-                {% include content/emoji.liquid emoji='🎥' %}
-                <span>produced by</span>
-            {% elsif page.category == 'music' %}
-                {% include content/emoji.liquid emoji='🎼' %}
-                <span>by</span>
-            {% elsif page.category == 'recipe' %}
-                {% include content/emoji.liquid emoji='📝' %}
-                <span>sourced from</span>
-            {% else %}
-                {% include content/emoji.liquid emoji='✍️' %}
-                <span>by</span>
-            {% endif %}
-            {% assign authors = page.authors | uniq %}
-            {% for author in authors %}
-                {% unless forloop.first %}<span>, </span>{% endunless %}
-                {% assign author_name = author.name | default: author | strip %}
-                {% assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null %}
-                {% assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', 'http' | default: null %}
-                {% if author_link %}
-                    <a class="h-cite" href="{{ author_link }}" title="{{ author_name }}" rel="external">{{ author_name }}</a>
-                {% else %}
-                    <strong class="h-cite">{{ author_name }}</strong>
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endif %}
-    {% if page.audience %}
-        <div class="audience">
-            {% include content/emoji.liquid emoji='📣' %}
-            <span>target audience</span>
-            {%- assign audiences = page.audience | uniq -%}
-            {% for audience in audiences %}
-                {% unless forloop.first %}<span>, </span>{% endunless %}
-                {%- assign audience_name = audience.name | default: audience | strip -%}
-                {%- assign audience_map = site.data.people | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
-                {%- assign audience_link = audience.link | default: audience_map.link | default: null -%}
-                {% if audience_link %}
-                    <a class="h-card  u-audience" href="{{ audience_link }}" title="{{ audience_name }}" rel="external">{{ audience_name }}</a>
-                {% else %}
-                    <strong class="h-card  p-audience">{{ audience_name }}</strong>
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endif %}
     {% if in_reply_to_link %}
         <div class="in-reply-to">
             {%- assign mastodon_instance = null -%}
@@ -229,6 +133,115 @@
             <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_link }}">
                 {{ reply }}
             </a>
+        </div>
+    {% endif %}
+    {% if page.rating %}
+        <div class="checkin-rating">
+            {% include content/emoji.liquid emoji='✨' %}
+            {% if page.rating == 'Parti Pris' %}
+                <strong class="delta">Parti Pris</strong>
+            {% else %}
+                <span>I rate it</span>
+                <data class="p-rating  rating  delta" value="{{ page.rating }}" title="{{ page.rating }}/5"> </data>
+                <data class="p-worst" hidden aria-hidden="true">0</data>
+                <data class="p-best" hidden aria-hidden="true">5</data>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="published-date">
+        {% include content/emoji.liquid emoji='🗓' %}
+        {% if page.mf_property contains 'bookmark-of' %}
+            <span>bookmarked on</span>
+        {% elsif page.mf_property contains 'like-of' %}
+            <span>liked on</span>
+        {% elsif page.mf_property contains 'listen-of' %}
+            <span>listened on</span>
+        {% elsif page.mf_property contains 'played-of' %}
+            <span>played on</span>
+        {% elsif page.mf_property contains 'read-of' %}
+            <span>started reading on</span>
+        {% elsif page.mf_property contains 'watch-of' %}
+            <span>watched on</span>
+        {% elsif page.mf_property contains 'pk-drank' %}
+            <span>drank on</span>
+        {% elsif page.mf_property contains 'pk-ate' %}
+            <span>ate on</span>
+        {% elsif page.mf_root == 'recipe' %}
+            <span>cooked on</span>
+        {% elsif page.mf_root == 'review' %}
+            <span>reviewed on</span>
+        {% else %}
+            <span>published on</span>
+        {% endif %}
+        <a class="u-uid  u-url" href="{{ canonical_local }}" title="Permalink: {{ canonical_local }}">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+        </a>
+    </div>
+    {% if page.sitemap.lastmod %}
+        <div class="updated-date">
+            {% include content/emoji.liquid emoji='🗓' %}
+            <span>updated on</span>
+            <time class="dt-updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">{{ page.sitemap.lastmod | date_to_long_string }}</time>
+        </div>
+    {% endif %}
+    {% if page.release %}
+        <div class="released-date">
+            {% include content/emoji.liquid emoji='🗓' %}
+            <span>released on</span>
+            <time class="dt-released" datetime="{{ page.released | date_to_xmlschema }}">{{ page.release | date_to_long_string }}</time>
+        </div>
+    {% endif %}
+    {% if page.authors %}
+        <div class="authors">
+            {% if page.category == 'beer' %}
+                {% include content/emoji.liquid emoji='🍺' %}
+                <span>brewed by</span>
+            {% elsif page.category == 'book' %}
+                {% include content/emoji.liquid emoji='✍️' %}
+                <span>written by</span>
+            {% elsif page.category == 'movie' or page.category == 'tv' %}
+                {% include content/emoji.liquid emoji='🎥' %}
+                <span>produced by</span>
+            {% elsif page.category == 'music' %}
+                {% include content/emoji.liquid emoji='🎼' %}
+                <span>by</span>
+            {% elsif page.category == 'recipe' %}
+                {% include content/emoji.liquid emoji='📝' %}
+                <span>sourced from</span>
+            {% else %}
+                {% include content/emoji.liquid emoji='✍️' %}
+                <span>by</span>
+            {% endif %}
+            {% assign authors = page.authors | uniq %}
+            {% for author in authors %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
+                {% assign author_name = author.name | default: author | strip %}
+                {% assign author_map = site.data.people | where_exp: 'target', 'author_name == target.name' | first | default: null %}
+                {% assign author_link = author_map.link.last | default: author_map.link | default: author.link.last | default: author.link | prepend: 'https://' | replace: 'https://http', 'http' | default: null %}
+                {% if author_link %}
+                    <a class="h-cite" href="{{ author_link }}" title="{{ author_name }}" rel="external">{{ author_name }}</a>
+                {% else %}
+                    <strong class="h-cite">{{ author_name }}</strong>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if page.audience %}
+        <div class="audience">
+            {% include content/emoji.liquid emoji='📣' %}
+            <span>target audience</span>
+            {%- assign audiences = page.audience | uniq -%}
+            {% for audience in audiences %}
+                {% unless forloop.first %}<span>, </span>{% endunless %}
+                {%- assign audience_name = audience.name | default: audience | strip -%}
+                {%- assign audience_map = site.data.people | where_exp: 'target', 'audience_name == target.name' | first | default: null -%}
+                {%- assign audience_link = audience.link | default: audience_map.link | default: null -%}
+                {% if audience_link %}
+                    <a class="h-card  u-audience" href="{{ audience_link }}" title="{{ audience_name }}" rel="external">{{ audience_name }}</a>
+                {% else %}
+                    <strong class="h-card  p-audience">{{ audience_name }}</strong>
+                {% endif %}
+            {% endfor %}
         </div>
     {% endif %}
     {% if page.rsvp.date %}
@@ -390,19 +403,6 @@
                     {{ page.weather.temperature | split: '.' | first | replace: '-0', '0' | append: '°C' }}
                 {% endif %}
             </strong>
-        </div>
-    {% endif %}
-    {% if page.rating %}
-        <div class="checkin-rating">
-            {% include content/emoji.liquid emoji='✨' %}
-            {% if page.rating == 'Parti Pris' %}
-                <strong class="delta">Parti Pris</strong>
-            {% else %}
-                <span>I rate it</span>
-                <data class="p-rating  rating  delta" value="{{ page.rating }}" title="{{ page.rating }}/5"> </data>
-                <data class="p-worst" hidden aria-hidden="true">0</data>
-                <data class="p-best" hidden aria-hidden="true">5</data>
-            {% endif %}
         </div>
     {% endif %}
     {% if page.badges %}

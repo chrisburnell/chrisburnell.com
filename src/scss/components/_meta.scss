@@ -92,9 +92,9 @@
 }
 
 // Always show:
-//   Published Date
 //   Reply Context
 //   Checkin Rating
-.js-meta-toggle:not(:checked) ~ div:not(.published-date):not(.in-reply-to):not(.checkin-rating) {
+//   Published Date
+.js-meta-toggle:not(:checked) ~ div:not(.in-reply-to):not(.checkin-rating):not(.published-date) {
     @include hidden;
 }
