@@ -1,3 +1,11 @@
+{%- assign day = site.time | date: '%d' -%}
+{%- assign month = site.time | date: '%m' -%}
+{%- assign year = site.time | date: '%Y' -%}
+{%- if page.rsvp.date -%}
+    {%- assign check_day = page.rsvp.date | date: '%d' -%}
+    {%- assign check_month = page.rsvp.date | date: '%m' -%}
+    {%- assign check_year = page.rsvp.date | date: '%Y' -%}
+{%- endif -%}
 <div class="meta">
     <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden />
     <div class="published-date">
@@ -98,24 +106,6 @@
     {% endif %}
     {% if in_reply_to_link %}
         <div class="in-reply-to">
-            {% if page.rsvp %}
-                {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
-                <data class="p-rsvp  strong" value="{{ rsvp_value }}">
-                    {% if rsvp_value == "yes" %}
-                        {% include content/emoji.liquid emoji='👋' %} Going
-                    {% elsif rsvp_value == "maybe" %}
-                        {% include content/emoji.liquid emoji='🤔' %} Might go
-                    {% elsif rsvp_value == "interested" %}
-                        {% include content/emoji.liquid emoji='😯' %} Interested in going
-                    {% else %}
-                        {% include content/emoji.liquid emoji='❌' %} Not going
-                    {% endif %}
-                </data>
-                <span>to</span>
-            {% else %}
-                {% include content/emoji.liquid emoji='↪️' %}
-                <span>in reply to</span>
-            {% endif %}
             {%- assign mastodon_instance = null -%}
             {%- assign mastodon_username = null -%}
             {%- assign twitter_username = null -%}
@@ -127,16 +117,14 @@
                 {%- endunless -%}
             {%- endif -%}
             {%- for person in site.data.people -%}
-                {%- if person.mastodon -%}
-                    {%- for person_mastodon in person.mastodon -%}
-                        {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
-                        {%- assign mastodon_username = person_mastodon | split: '@' | first -%}
-                        {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
-                            {%- assign reply_target = person | map: 'name' | default: null -%}
-                            {%- break -%}
-                        {%- endif -%}
-                    {%- endfor -%}
-                {%- endif -%}
+                {%- for person_mastodon in person.mastodon -%}
+                    {%- assign mastodon_instance = person_mastodon | split: '@' | last -%}
+                    {%- assign mastodon_username = person_mastodon | split: '@' | first -%}
+                    {%- if in_reply_to_link contains mastodon_instance and in_reply_to_link contains mastodon_username -%}
+                        {%- assign reply_target = person | map: 'name' | first | default: null -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
             {%- endfor -%}
             {%- unless reply_target -%}
                 {%- assign mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
@@ -151,7 +139,7 @@
                     {%- for person in site.data.people -%}
                         {%- for person_twitter in person.twitter -%}
                             {%- if person_twitter == twitter_username -%}
-                                {%- assign reply_target = person | map: 'name' -%}
+                                {%- assign reply_target = person | map: 'name' | first -%}
                                 {%- break -%}
                             {%- endif -%}
                         {%- endfor -%}
@@ -162,47 +150,88 @@
                         {%- for person_link in person.link -%}
                             {%- if in_reply_to_link contains person_link and person_link.size > stored_person_link.size -%}
                                 {%- assign stored_person_link = 'https://' | append: person_link -%}
-                                {%- assign reply_target = person | map: 'name' -%}
+                                {%- assign reply_target = person | map: 'name' | first -%}
                             {%- endif -%}
                         {%- endfor -%}
                     {%- endfor -%}
                 {%- endif -%}
             {%- endunless -%}
-            <a class="h-cite  u-in-reply-to" href="{{ stored_person_link | default: in_reply_to_link }}"{% unless in_reply_to_link contains site.url %} rel="external"{% endunless %}>
-                {% if in_reply_to_title != null and in_reply_to_title != in_reply_to_link %}
-                    {{ in_reply_to_title }}
+            {%- if reply_target -%}
+                {% assign reply = reply_target %}
+            {%- elsif mastodon_instance -%}
+                {% if mastodon_username %}
+                    {% assign reply = '@' | append: mastodon_username | append: '@' | append: mastodon_instance %}
+                {% else %}
+                    {% assign reply = 'a Toot' %}
                 {% endif %}
-                {% if reply_target %}
-                    <em>by</em>
-                    {{ reply_target }}
-                {% elsif mastodon_instance %}
-                    <em>by</em>
-                    {% if mastodon_username %}
-                        @{{ mastodon_username }}@{{ mastodon_instance }}
-                    {% else %}
-                        a Toot
-                    {% endif %}
-                {% elsif in_reply_to_link contains 'twitter.com' %}
-                    <em>by</em>
-                    {% if twitter_username %}
-                        @{{ twitter_username }}
-                    {% else %}
-                        a Tweet
-                    {% endif %}
+            {%- elsif in_reply_to_link contains 'twitter.com' -%}
+                {% if twitter_username %}
+                    {% assign reply = '@' | append: twitter_username %}
+                {% else %}
+                    {% assign reply = 'a Tweet' %}
                 {% endif %}
+            {%- elsif in_reply_to_title != null -%}
+                {% assign reply = in_reply_to_title %}
+            {%- else -%}
+                {% assign reply = in_reply_to_link %}
+            {%- endif -%}
+            {%- if in_reply_to_title != null and in_reply_to_title != in_reply_to_link and reply != in_reply_to_title and reply != in_reply_to_link -%}
+                {% assign reply = reply | prepend: ' by ' | prepend: in_reply_to_title %}
+            {%- endif -%}
+            {% if page.rsvp %}
+                {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
+                <data class="p-rsvp  strong" value="{{ rsvp_value }}">
+                    {% if rsvp_value == "yes" %}
+                        {% if page.rsvp.date %}
+                            {% if check_year > year %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Going
+                            {% elsif check_year == year and check_month > month %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Going
+                            {% elsif check_year == year and check_month == month and check_day > day %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Going
+                            {% else %}
+                                {% include content/emoji.liquid emoji='✅' %}
+                                Went
+                            {% endif %}
+                        {% else %}
+                            {% include content/emoji.liquid emoji='👋' %}
+                            Going
+                        {% endif %}
+                    {% elsif rsvp_value == "maybe" %}
+                        {% include content/emoji.liquid emoji='🤔' %} Might go
+                    {% elsif rsvp_value == "interested" %}
+                        {% include content/emoji.liquid emoji='😯' %} Interested in going
+                    {% else %}
+                        {% include content/emoji.liquid emoji='😔' %}
+                        {% if page.rsvp.date %}
+                            {% if check_year > year %}
+                                Not going
+                            {% elsif check_year == year and check_month > month %}
+                                Not going
+                            {% elsif check_year == year and check_month == month and check_day > day %}
+                                Not going
+                            {% else %}
+                                Didn’t go
+                            {% endif %}
+                        {% else %}
+                            Not going
+                        {% endif %}
+                    {% endif %}
+                </data>
+                <span>to</span>
+            {% else %}
+                {% include content/emoji.liquid emoji='↪️' %}
+                <span>in reply to</span>
+            {% endif %}
+            <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_link }}">
+                {{ reply }}
             </a>
         </div>
     {% endif %}
     {% if page.rsvp.date %}
-        {%- assign day = site.time | date: '%d' -%}
-        {%- assign month = site.time | date: '%m' -%}
-        {%- assign year = site.time | date: '%Y' -%}
-        {%- assign check_day = page.rsvp.date | date: '%d' -%}
-        {%- assign check_month = page.rsvp.date | date: '%m' -%}
-        {%- assign check_year = page.rsvp.date | date: '%Y' -%}
-        {%- assign finish_day = page.rsvp.finish | date: '%d' -%}
-        {%- assign finish_month = page.rsvp.finish | date: '%m' -%}
-        {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
         <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
             {% if check_year > year %}
@@ -218,6 +247,9 @@
                 {{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}
                 {% if page.rsvp.finish %}
                     {%- assign date_timezone = page.rsvp.date | date: '%z' -%}
+                    {%- assign finish_day = page.rsvp.finish | date: '%d' -%}
+                    {%- assign finish_month = page.rsvp.finish | date: '%m' -%}
+                    {%- assign finish_year = page.rsvp.finish | date: '%Y' -%}
                     {%- assign finish_timezone = page.rsvp.finish | date: '%z' -%}
                     {% if date_timezone != finish_timezone %}
                         {{ date_timezone | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}

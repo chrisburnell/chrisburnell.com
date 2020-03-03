@@ -3,6 +3,14 @@
   Consolidate markup for Deck Items.
 
 {%- endcomment -%}
+{%- assign day = site.time | date: '%d' -%}
+{%- assign month = site.time | date: '%m' -%}
+{%- assign year = site.time | date: '%Y' -%}
+{% if page.rsvp.date %}
+    {%- assign check_day = page.rsvp.date | date: '%d' -%}
+    {%- assign check_month = page.rsvp.date | date: '%m' -%}
+    {%- assign check_year = page.rsvp.date | date: '%Y' -%}
+{% endif %}
 {%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to -%}
 {%- assign in_reply_to_title = page.in_reply_to.title -%}
 {%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of -%}
@@ -28,9 +36,8 @@
 {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
 {%- assign date_human = page.date | date_to_long_string -%}
 {%- if include.relative_year == true -%}
-    {%- assign year_today = site.time | date: '%Y' -%}
     {%- assign year_then = page.date | date: '%Y' -%}
-    {%- assign date_human = year_today | minus: year_then | append: ' years ago' | replace: '1 years', '1 year' -%}
+    {%- assign date_human = year | minus: year_then | append: ' years ago' | replace: '1 years', '1 year' -%}
 {%- endif -%}
 <li role="listitem">
     <article class="{% unless include.strip_h == true %}h-entry{% endunless %}" role="article">
@@ -125,13 +132,43 @@
                         {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
                         <data class="p-rsvp" value="{{ rsvp_value }}">
                             {% if rsvp_value == "yes" %}
-                                {% include content/emoji.liquid emoji='👋' %} Going
+                                {% if page.rsvp.date %}
+                                    {% if check_year > year %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Going
+                                    {% elsif check_year == year and check_month > month %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Going
+                                    {% elsif check_year == year and check_month == month and check_day > day %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Going
+                                    {% else %}
+                                        {% include content/emoji.liquid emoji='✅' %}
+                                        Went
+                                    {% endif %}
+                                {% else %}
+                                    {% include content/emoji.liquid emoji='👋' %}
+                                    Going
+                                {% endif %}
                             {% elsif rsvp_value == "maybe" %}
                                 {% include content/emoji.liquid emoji='🤔' %} Might go
                             {% elsif rsvp_value == "interested" %}
                                 {% include content/emoji.liquid emoji='😯' %} Interested in going
                             {% else %}
-                                {% include content/emoji.liquid emoji='❌' %} Not going
+                                {% include content/emoji.liquid emoji='😔' %}
+                                {% if page.rsvp.date %}
+                                    {% if check_year > year %}
+                                        Not going
+                                    {% elsif check_year == year and check_month > month %}
+                                        Not going
+                                    {% elsif check_year == year and check_month == month and check_day > day %}
+                                        Not going
+                                    {% else %}
+                                        Didn’t go
+                                    {% endif %}
+                                {% else %}
+                                    Not going
+                                {% endif %}
                             {% endif %}
                         </data>
                         to
@@ -139,7 +176,7 @@
                         {% include content/emoji.liquid emoji='↩️' %}
                         In reply to
                     {% endif %}
-                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ stored_person_link | default: in_reply_to_link }}">{{ reply }}</data>
+                    <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}
                 {% if page.emoji %}
