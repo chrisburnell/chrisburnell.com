@@ -121,8 +121,24 @@
                     {%- if in_reply_to_title != null and in_reply_to_title != in_reply_to_link and reply != in_reply_to_title and reply != in_reply_to_link -%}
                         {% assign reply = reply | prepend: ' by ' | prepend: in_reply_to_title %}
                     {%- endif -%}
-                    {% include content/emoji.liquid emoji='↩️' %}
-                    In reply to
+                    {% if page.rsvp %}
+                        {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
+                        <data class="p-rsvp" value="{{ rsvp_value }}">
+                            {% if rsvp_value == "yes" %}
+                                {% include content/emoji.liquid emoji='👋' %} Going
+                            {% elsif rsvp_value == "maybe" %}
+                                {% include content/emoji.liquid emoji='🤔' %} Might go
+                            {% elsif rsvp_value == "interested" %}
+                                {% include content/emoji.liquid emoji='😯' %} Interested in going
+                            {% else %}
+                                {% include content/emoji.liquid emoji='❌' %} Not going
+                            {% endif %}
+                        </data>
+                        to
+                    {% else %}
+                        {% include content/emoji.liquid emoji='↩️' %}
+                        In reply to
+                    {% endif %}
                     <data class="{% unless include.strip_h == true %}h-cite{% endunless %}  u-in-reply-to" value="{{ stored_person_link | default: in_reply_to_link }}">{{ reply }}</data>
                     <br>
                 {% endif %}

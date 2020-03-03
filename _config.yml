@@ -243,7 +243,7 @@ defaults:
       mf_root: "review"
       mf_property: "listen-of"
       prefix: m
-      emoji: "🎶"
+      emoji: "🎧"
       ignore: true
   - scope:
       path: "_*/notes"

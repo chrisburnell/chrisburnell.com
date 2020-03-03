@@ -101,8 +101,8 @@
             {% if page.rsvp %}
                 {%- assign rsvp_value = page.rsvp.value | default: page.rsvp -%}
                 <data class="p-rsvp  strong" value="{{ rsvp_value }}">
-                    {% if rsvp_value == true %}
-                        {% include content/emoji.liquid emoji='✅' %} Going
+                    {% if rsvp_value == "yes" %}
+                        {% include content/emoji.liquid emoji='👋' %} Going
                     {% elsif rsvp_value == "maybe" %}
                         {% include content/emoji.liquid emoji='🤔' %} Might go
                     {% elsif rsvp_value == "interested" %}
