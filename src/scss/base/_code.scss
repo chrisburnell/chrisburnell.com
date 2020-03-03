@@ -95,11 +95,6 @@ figure pre {
             text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
         }
     }
-
-    &.codepen {
-        // Limit re-paint and re-layout calculations for Pens to the container
-        contain: strict;
-    }
 }
 
 // Solarized Dark Code Highlighting
