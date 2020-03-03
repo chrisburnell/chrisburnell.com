@@ -1,7 +1,11 @@
 {%- assign in_reply_to_link_mastodon_instance = site.data.mastodon_instances | where_exp: 'instance', 'in_reply_to_link contains instance' | first | default: null -%}
+{%- assign twitter_syndication_link = page.syndicate_to | default: site.emptyArray | where_exp: 'link', 'link contains "twitter.com"' -%}
 {% if in_reply_to_link contains 'chrisburnell.com' or in_reply_to_link contains 'twitter.com' or in_reply_to_link_mastodon_instance %}
     <div class="reply-context">
-        {% if in_reply_to_link contains 'twitter.com' %}
+        {% if twitter_syndication_link and in_reply_to_link contains 'twitter.com' %}
+            <blockquote class="twitter-tweet" lang="en"><a href="{{ twitter_syndication_link }}"></a></blockquote>
+            <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
+        {% elsif in_reply_to_link contains 'twitter.com' %}
             <blockquote class="twitter-tweet" lang="en"><a href="{{ in_reply_to_link }}"></a></blockquote>
             <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
         {% elsif in_reply_to_link_mastodon_instance %}
