@@ -34,14 +34,15 @@
 }
 
 // Brand Icon Widths and Colors
-@each $color-brand in $brand-details {
-    $name: nth($color-brand, 1);
-    $icon-color: nth($color-brand, 2);
-    $ratio: nth($color-brand, 3);
+@each $brand-detail in $brand-details {
+    $name: map-get($brand-detail, "name");
+    $color: map-get($brand-detail, "color");
+    $ratio: map-get($brand-detail, "ratio");
 
     .icon--#{$name} {
         width: #{$ratio * $measure-icon};
-        fill: $icon-color;
+        width: calc(#{$ratio} * var(--measure-icon));
+        fill: $color;
     }
 }
 

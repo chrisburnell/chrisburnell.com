@@ -13,28 +13,6 @@ $font-family-serif: Georgia, serif !default;
 $font-family-monospace: "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !default;
 
 /// @type List
-/// @prop {String} family - Font Family
-/// @prop {String} name - Font Family Friendly Name
-/// @prop {String} display - Font Display
-/// @prop {String} stretch - Font Stretch
-/// @prop {String} style - Font Style
-/// @prop {String} variant - Font Variant
-/// @prop {Number} weight - Font Weight
-/// @prop {String} filename - Font Filename
-$font-faces: (
-    ("Heebo",        "Black",    default, default, normal, default, default, "heebo-black"),
-    ("Proxima Nova", "Regular",  default, default, normal, default, default, "proxima-nova-regular"),
-    ("Proxima Nova", "Italic",   default, default, italic, default, default, "proxima-nova-italic"),
-    ("Proxima Nova", "Semibold", default, default, normal, default, bold,    "proxima-nova-semibold")
-) !default;
-
-/// @type List
-/// @prop {String} name - Brand name
-/// @prop {Color} color - Icon color
-/// @prop {Number} opacity - Brand icon opacity
-$brand-details: codepen $color-white 1.025, github $color-white 1, lastfm $color-lastfm 1, rss $color-white 0.775, spotify $color-spotify 0.925, twitter $color-twitter 0.925, article $color-white 0.9, feather $color-white 0.725, heart $color-white 1, link $color-white 1, search $color-white 1, tag $color-white 1 !default;
-
-/// @type List
 /// @prop {String} Body / Primary Navigation Class
 $navigation-classes: about, archive, search !default;
 

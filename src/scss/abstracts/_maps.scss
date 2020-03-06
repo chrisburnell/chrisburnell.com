@@ -171,6 +171,59 @@ $border-radii: (
     hairline: $border-radius-hairline
 ) !default;
 
+
+/// @type Map
+/// @prop {String} family - Font Family
+/// @prop {String} name - Font Family Friendly Name
+/// @prop {String} display - Font Display
+/// @prop {String} stretch - Font Stretch
+/// @prop {String} style - Font Style
+/// @prop {String} variant - Font Variant
+/// @prop {Number} weight - Font Weight
+/// @prop {String} filename - Font Filename
+$font-faces: (
+    (
+        family: "Heebo",
+        name: "Black",
+        display: default,
+        stretch: default,
+        style: normal,
+        variant: default,
+        weight: default,
+        filename: "heebo-black"
+    ),
+    (
+        family: "Proxima Nova",
+        name: "Regular",
+        display: default,
+        stretch: default,
+        style: normal,
+        variant: default,
+        weight: default,
+        filename: "proxima-nova-regular"
+    ),
+    (
+        family: "Proxima Nova",
+        name: "Italic",
+        display: default,
+        stretch: default,
+        style: italic,
+        variant: default,
+        weight: default,
+        filename: "proxima-nova-italic"
+    ),
+    (
+        family: "Proxima Nova",
+        name: "Semibold",
+        display: default,
+        stretch: default,
+        style: normal,
+        variant: default,
+        weight: bold,
+        filename: "proxima-nova-semibold"
+    )
+) !default;
+
 /// @type Map
 /// @prop {String} key - Font Display Name
 /// @prop {String} value - Font Display Value
@@ -300,6 +353,63 @@ $z-indexes: (
 $aspect-ratios: (
     "16-by-9": 56.25%,
     "4-by-3": 75%
+) !default;
+
+/// @type Map
+/// @prop {String} name - Brand name
+/// @prop {Color} color - Icon color
+/// @prop {Number} opacity - Brand icon opacity
+$brand-details: (
+    (
+        name: "codepen",
+        color: $color-white,
+        ratio: 1
+    ),
+    (
+        name: "github",
+        color: $color-white,
+        ratio: 1
+    ), (
+        name: "lastfm",
+        color: $color-lastfm,
+        ratio: 1
+    ), (
+        name: "rss",
+        color: $color-white,
+        ratio: 0.775
+    ), (
+        name: "spotify",
+        color: $color-spotify,
+        ratio: 0.925
+    ), (
+        name: "twitter",
+        color: $color-twitter,
+        ratio: 0.925
+    ), (
+        name: "article",
+        color: $color-white,
+        ratio: 0.9
+    ), (
+        name: "feather",
+        color: $color-white,
+        ratio: 0.725
+    ), (
+        name: "heart",
+        color: $color-white,
+        ratio: 1
+    ), (
+        name: "link",
+        color: $color-white,
+        ratio: 1
+    ), (
+        name: "search",
+        color: $color-white,
+        ratio: 1
+    ), (
+        name: "tag",
+        color: $color-white,
+        ratio: 1
+    )
 ) !default;
 
 /// @type Map
