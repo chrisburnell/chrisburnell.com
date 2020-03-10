@@ -25,7 +25,7 @@ icon_sizes:
   "description": "{{ site.lede | strip_html | xml_escape }}",
   "display": "browser",
   "orientation": "any",
-  "start_url": "/",
+  "start_url": "{{ site.live_url }}",
   "homepage_url": "{{ site.live_url }}",
   "theme_color": "#{{ site.color }}",
   "background_color": "#{{ site.color }}",
