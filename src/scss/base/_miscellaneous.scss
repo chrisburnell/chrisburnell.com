@@ -107,7 +107,7 @@ time {
     text-transform: uppercase;
 }
 
-// Mouse Selection
+// Text Selection
 ::selection {
     @include v(background-color, raven);
     @include v(color, white);
@@ -118,6 +118,14 @@ time {
     }
 }
 
+// Full Bleed
+.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+// Break text on any character
 .break-anywhere {
     word-wrap: anywhere;
 }

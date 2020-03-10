@@ -12,11 +12,11 @@
         @include v(font-variant, map-get($font-face, "variant"));
         @include v(font-weight, map-get($font-face, "weight"), true);
         src: local("#{map-get($font-face, "family") map-get($font-face, "name")}"),
-             url("https://chrisburnell.com/fonts/#{map-get($font-face, "filename")}.woff2") format("woff2"),
-             url("https://chrisburnell.com/fonts/#{map-get($font-face, "filename")}.woff") format("woff"),
-             url("https://chrisburnell.com/fonts/#{map-get($font-face, "filename")}.ttf") format("truetype"),
-             url('https://chrisburnell.com/fonts/#{map-get($font-face, "filename")}.eot?#iefix') format('embedded-opentype'),
-             url("https://chrisburnell.com/fonts/#{map-get($font-face, "filename")}.svg##{map-get($font-face, "filename")}") format("svg");
+             url("https://chrisburnell.com/fonts/#{map-get($font-face, 'filename')}.woff2") format("woff2"),
+             url("https://chrisburnell.com/fonts/#{map-get($font-face, 'filename')}.woff") format("woff"),
+             url("https://chrisburnell.com/fonts/#{map-get($font-face, 'filename')}.ttf") format("truetype"),
+             url("https://chrisburnell.com/fonts/#{map-get($font-face, 'filename')}.eot?#iefix") format("embedded-opentype"),
+             url("https://chrisburnell.com/fonts/#{map-get($font-face, 'filename')}.svg##{map-get($font-face, 'filename')}") format("svg");
         @include v(unicode-range);
     }
 }

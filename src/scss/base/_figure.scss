@@ -17,17 +17,22 @@ figure {
         overflow-y: hidden;
     }
 
-    &.wide {
+    %image-elements,
+    %media-elements {
+        max-height: 100vh;
+    }
+
+    &.full {
         %image-elements,
         %media-elements {
             max-width: initial;
         }
     }
 
-    &:not(.tall) {
+    &.tall {
         %image-elements,
         %media-elements {
-            max-height: 100vh;
+            max-height: auto;
         }
     }
 
