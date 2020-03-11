@@ -49,6 +49,12 @@ textarea {
 }
 
 input,
+textarea,
+[contenteditable] {
+    @include v(caret-color, raven);
+}
+
+input,
 textarea {
     @include border-radius(thin);
     @include transition(border-color);
