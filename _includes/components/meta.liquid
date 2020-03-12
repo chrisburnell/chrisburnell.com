@@ -1,3 +1,8 @@
+{%- assign year = site.time | date: '%Y' -%}
+{%- assign month = site.time | date: '%m' -%}
+{%- assign day = site.time | date: '%d' -%}
+{%- assign hour = site.time | date: '%H' -%}
+{%- assign minute = site.time | date: '%M' -%}
 {%- if page.rsvp.date -%}
     {%- assign start_year = page.rsvp.date | date: '%Y' -%}
     {%- assign start_month = page.rsvp.date | date: '%m' -%}
