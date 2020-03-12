@@ -1,10 +1,19 @@
-{%- assign day = site.time | date: '%d' -%}
-{%- assign month = site.time | date: '%m' -%}
 {%- assign year = site.time | date: '%Y' -%}
+{%- assign month = site.time | date: '%m' -%}
+{%- assign day = site.time | date: '%d' -%}
+{%- assign hour = site.time | date: '%H' -%}
+{%- assign minute = site.time | date: '%M' -%}
 {%- if page.rsvp.date -%}
-    {%- assign check_day = page.rsvp.date | date: '%d' -%}
-    {%- assign check_month = page.rsvp.date | date: '%m' -%}
-    {%- assign check_year = page.rsvp.date | date: '%Y' -%}
+    {%- assign start_year = page.rsvp.date | date: '%Y' -%}
+    {%- assign start_month = page.rsvp.date | date: '%m' -%}
+    {%- assign start_day = page.rsvp.date | date: '%d' -%}
+    {%- assign start_hour = page.rsvp.date | date: '%H' -%}
+    {%- assign start_minute = page.rsvp.date | date: '%M' -%}
+    {%- assign finish_year = page.rsvp.finish | default: page.rsvp.date | date: '%Y' -%}
+    {%- assign finish_month = page.rsvp.finish | default: page.rsvp.date | date: '%m' -%}
+    {%- assign finish_day = page.rsvp.finish | default: page.rsvp.date | date: '%d' -%}
+    {%- assign finish_hour = page.rsvp.finish | default: page.rsvp.date | date: '%H' -%}
+    {%- assign finish_minute = page.rsvp.finish | default: page.rsvp.date | date: '%M' -%}
 {%- endif -%}
 <div class="meta">
     <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden />
@@ -87,45 +96,67 @@
                 <data class="p-rsvp  strong" value="{{ rsvp_value }}">
                     {% if rsvp_value == "yes" %}
                         {% if page.rsvp.date %}
-                            {% if check_year > year %}
+                            {% if start_year > year %}
                                 {% include content/emoji.liquid emoji='👋' %}
-                                Going
-                            {% elsif check_year == year and check_month > month %}
+                                Going to
+                            {% elsif start_year == year and start_month > month %}
                                 {% include content/emoji.liquid emoji='👋' %}
-                                Going
-                            {% elsif check_year == year and check_month == month and check_day > day %}
+                                Going to
+                            {% elsif start_year == year and start_month == month and start_day > day %}
                                 {% include content/emoji.liquid emoji='👋' %}
-                                Going
-                            {% else %}
+                                Going to
+                            {% elsif start_year == year and start_month == month and start_day == day and start_hour > hour %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Going to
+                            {% elsif start_year == year and start_month == month and start_day == day and start_hour == hour and start_minute > minute %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Going to
+                            {% elsif year > finish_year %}
                                 {% include content/emoji.liquid emoji='✅' %}
-                                Went
+                                Went to
+                            {% elsif year == finish_year and month > finish_month %}
+                                {% include content/emoji.liquid emoji='✅' %}
+                                Went to
+                            {% elsif year == finish_year and month == finish_month and day > finish_day %}
+                                {% include content/emoji.liquid emoji='✅' %}
+                                Went to
+                            {% elsif year == finish_year and month == finish_month and day == finish_day and hour > finish_hour %}
+                                {% include content/emoji.liquid emoji='✅' %}
+                                Went to
+                            {% elsif year == finish_year and month == finish_month and day == finish_day and hour == finish_hour and minute > finish_minute %}
+                                {% include content/emoji.liquid emoji='✅' %}
+                                Went to
+                            {% else %}
+                                {% include content/emoji.liquid emoji='👋' %}
+                                Currently at
                             {% endif %}
                         {% else %}
                             {% include content/emoji.liquid emoji='👋' %}
-                            Going
+                            Going to
                         {% endif %}
                     {% elsif rsvp_value == "maybe" %}
-                        {% include content/emoji.liquid emoji='🤔' %} Might go
+                        {% include content/emoji.liquid emoji='🤔' %}
+                        Might go to
                     {% elsif rsvp_value == "interested" %}
-                        {% include content/emoji.liquid emoji='😯' %} Interested in going
+                        {% include content/emoji.liquid emoji='😯' %}
+                        Interested in going to
                     {% else %}
                         {% include content/emoji.liquid emoji='😔' %}
                         {% if page.rsvp.date %}
-                            {% if check_year > year %}
-                                Not going
-                            {% elsif check_year == year and check_month > month %}
-                                Not going
-                            {% elsif check_year == year and check_month == month and check_day > day %}
-                                Not going
+                            {% if start_year > year %}
+                                Not going to
+                            {% elsif start_year == year and start_month > month %}
+                                Not going to
+                            {% elsif start_year == year and start_month == month and start_day > day %}
+                                Not going to
                             {% else %}
-                                Didn’t go
+                                Didn’t go to
                             {% endif %}
                         {% else %}
-                            Not going
+                            Not going to
                         {% endif %}
                     {% endif %}
                 </data>
-                <span>to</span>
             {% else %}
                 {% include content/emoji.liquid emoji='↪️' %}
                 <span>in reply to</span>
@@ -247,14 +278,28 @@
     {% if page.rsvp.date %}
         <div class="date">
             {% include content/emoji.liquid emoji='🗓' %}
-            {% if check_year > year %}
-                <span>taking place on</span>
-            {% elsif check_year == year and check_month > month %}
-                <span>taking place on</span>
-            {% elsif check_year == year and check_month == month and check_day > day %}
-                <span>taking place on</span>
+            {% if start_year > year %}
+                taking place on
+            {% elsif start_year == year and start_month > month %}
+                taking place on
+            {% elsif start_year == year and start_month == month and start_day > day %}
+                taking place on
+            {% elsif start_year == year and start_month == month and start_day == day and start_hour > hour %}
+                taking place on
+            {% elsif start_year == year and start_month == month and start_day == day and start_hour == hour and start_minute > minute %}
+                taking place on
+            {% elsif year > finish_year %}
+                took place on
+            {% elsif year == finish_year and month > finish_month %}
+                took place on
+            {% elsif year == finish_year and month == finish_month and day > finish_day %}
+                took place on
+            {% elsif year == finish_year and month == finish_month and day == finish_day and hour > finish_hour %}
+                took place on
+            {% elsif year == finish_year and month == finish_month and day == finish_day and hour == finish_hour and minute > finish_minute %}
+                took place on
             {% else %}
-                <span>took place on</span>
+                taking place on
             {% endif %}
             <time datetime="{{ page.rsvp.date | date_to_xmlschema }}{% if page.rsvp.finish %}-{{ page.rsvp.finish | date_to_xmlschema }}{% endif %}">
                 {{ page.rsvp.date | date_to_long_string }}, {{ page.rsvp.date | date: '%R' }}
@@ -268,11 +313,11 @@
                         {{ date_timezone | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}
                     {% endif %}
                     –
-                    {% if finish_year > check_year %}
+                    {% if finish_year > start_year %}
                         {{ page.rsvp.finish | date_to_long_string }},
-                    {% elsif finish_year == check_year and finish_month > check_month %}
+                    {% elsif finish_year == start_year and finish_month > start_month %}
                         {{ page.rsvp.finish | date_to_long_string }},
-                    {% elsif finish_year == check_year and finish_month == check_month and finish_day > check_day %}
+                    {% elsif finish_year == start_year and finish_month == start_month and finish_day > start_day %}
                         {{ page.rsvp.finish | date_to_long_string }},
                     {% endif %}
                     {{ page.rsvp.finish | date: '%R %z' | replace: '+0000', 'GMT' | replace: '+0100', 'BST' }}
@@ -567,8 +612,8 @@
         {%- assign page_date = page.date | date: '%Y-%m-%d' -%}
         {%- assign filtered_posts = site.emptyArray -%}
         {%- for check in posts_to_check reversed -%}
-            {% assign check_date = check.date | date: '%Y-%m-%d' %}
-            {% if check_date == page_date %}
+            {% assign start_date = check.date | date: '%Y-%m-%d' %}
+            {% if start_date == page_date %}
                 {% assign filtered_posts = filtered_posts | push: check %}
             {% endif %}
         {%- endfor -%}
