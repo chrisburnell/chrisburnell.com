@@ -3,14 +3,18 @@
   Consolidate markup for Deck Items.
 
 {%- endcomment -%}
-{%- assign day = site.time | date: '%d' -%}
-{%- assign month = site.time | date: '%m' -%}
-{%- assign year = site.time | date: '%Y' -%}
-{% if page.rsvp.date %}
-    {%- assign check_day = page.rsvp.date | date: '%d' -%}
-    {%- assign check_month = page.rsvp.date | date: '%m' -%}
-    {%- assign check_year = page.rsvp.date | date: '%Y' -%}
-{% endif %}
+{%- if page.rsvp.date -%}
+    {%- assign start_year = page.rsvp.date | date: '%Y' -%}
+    {%- assign start_month = page.rsvp.date | date: '%m' -%}
+    {%- assign start_day = page.rsvp.date | date: '%d' -%}
+    {%- assign start_hour = page.rsvp.date | date: '%H' -%}
+    {%- assign start_minute = page.rsvp.date | date: '%M' -%}
+    {%- assign finish_year = page.rsvp.finish | default: page.rsvp.date | date: '%Y' -%}
+    {%- assign finish_month = page.rsvp.finish | default: page.rsvp.date | date: '%m' -%}
+    {%- assign finish_day = page.rsvp.finish | default: page.rsvp.date | date: '%d' -%}
+    {%- assign finish_hour = page.rsvp.finish | default: page.rsvp.date | date: '%H' -%}
+    {%- assign finish_minute = page.rsvp.finish | default: page.rsvp.date | date: '%M' -%}
+{%- endif -%}
 {%- assign in_reply_to_link = page.in_reply_to.link | default: page.in_reply_to -%}
 {%- assign in_reply_to_title = page.in_reply_to.title -%}
 {%- assign bookmark_of_link = page.bookmark_of.link | default: page.bookmark_of -%}
@@ -133,45 +137,67 @@
                         <data class="p-rsvp" value="{{ rsvp_value }}">
                             {% if rsvp_value == "yes" %}
                                 {% if page.rsvp.date %}
-                                    {% if check_year > year %}
+                                    {% if start_year > year %}
                                         {% include content/emoji.liquid emoji='👋' %}
-                                        Going
-                                    {% elsif check_year == year and check_month > month %}
+                                        Going to
+                                    {% elsif start_year == year and start_month > month %}
                                         {% include content/emoji.liquid emoji='👋' %}
-                                        Going
-                                    {% elsif check_year == year and check_month == month and check_day > day %}
+                                        Going to
+                                    {% elsif start_year == year and start_month == month and start_day > day %}
                                         {% include content/emoji.liquid emoji='👋' %}
-                                        Going
-                                    {% else %}
+                                        Going to
+                                    {% elsif start_year == year and start_month == month and start_day == day and start_hour > hour %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Going to
+                                    {% elsif start_year == year and start_month == month and start_day == day and start_hour == hour and start_minute > minute %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Going to
+                                    {% elsif year > finish_year %}
                                         {% include content/emoji.liquid emoji='✅' %}
-                                        Went
+                                        Went to
+                                    {% elsif year == finish_year and month > finish_month %}
+                                        {% include content/emoji.liquid emoji='✅' %}
+                                        Went to
+                                    {% elsif year == finish_year and month == finish_month and day > finish_day %}
+                                        {% include content/emoji.liquid emoji='✅' %}
+                                        Went to
+                                    {% elsif year == finish_year and month == finish_month and day == finish_day and hour > finish_hour %}
+                                        {% include content/emoji.liquid emoji='✅' %}
+                                        Went to
+                                    {% elsif year == finish_year and month == finish_month and day == finish_day and hour == finish_hour and minute > finish_minute %}
+                                        {% include content/emoji.liquid emoji='✅' %}
+                                        Went to
+                                    {% else %}
+                                        {% include content/emoji.liquid emoji='👋' %}
+                                        Currently at
                                     {% endif %}
                                 {% else %}
                                     {% include content/emoji.liquid emoji='👋' %}
-                                    Going
+                                    Going to
                                 {% endif %}
                             {% elsif rsvp_value == "maybe" %}
-                                {% include content/emoji.liquid emoji='🤔' %} Might go
+                                {% include content/emoji.liquid emoji='🤔' %}
+                                Might go to
                             {% elsif rsvp_value == "interested" %}
-                                {% include content/emoji.liquid emoji='😯' %} Interested in going
+                                {% include content/emoji.liquid emoji='😯' %}
+                                Interested in going to
                             {% else %}
                                 {% include content/emoji.liquid emoji='😔' %}
                                 {% if page.rsvp.date %}
-                                    {% if check_year > year %}
-                                        Not going
-                                    {% elsif check_year == year and check_month > month %}
-                                        Not going
-                                    {% elsif check_year == year and check_month == month and check_day > day %}
-                                        Not going
+                                    {% if start_year > year %}
+                                        Not going to
+                                    {% elsif start_year == year and start_month > month %}
+                                        Not going to
+                                    {% elsif start_year == year and start_month == month and start_day > day %}
+                                        Not going to
                                     {% else %}
-                                        Didn’t go
+                                        Didn’t go to
                                     {% endif %}
                                 {% else %}
-                                    Not going
+                                    Not going to
                                 {% endif %}
                             {% endif %}
                         </data>
-                        to
                     {% else %}
                         {% include content/emoji.liquid emoji='↩️' %}
                         In reply to
