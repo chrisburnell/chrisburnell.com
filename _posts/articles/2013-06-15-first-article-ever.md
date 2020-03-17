@@ -95,4 +95,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 {% include_cached content/heading.liquid title='And that’s it!' id='thats-it' %}
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "My Atom Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Twitter]({{ site.author.urls.twitter }} "My Twitter") or [send me an email](mailto:{{ site.author.email }})!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "All Posts Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Twitter]({{ site.author.urls.twitter }} "My Twitter") or [send me an email](mailto:{{ site.author.email }})!

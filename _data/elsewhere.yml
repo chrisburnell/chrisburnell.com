@@ -14,7 +14,7 @@
   url: 'https://last.fm/user/chrisburnell'
   rel: 'me  external'
   svg: lastfm
-- title: All Posts Atom Feed
+- title: All Posts Feed
   url: '/feed.xml'
   rel: 'alternate  me'
   svg: rss

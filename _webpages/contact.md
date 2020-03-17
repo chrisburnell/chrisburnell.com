@@ -18,7 +18,7 @@ sitemap:
     <dd><a class="canada" href="{{ site.author.urls.mastodon }}">{{ site.author.mastodon | prepend: '@' }}</a></dd>
 </dl>
 
-<p>There are a number of Atom Feeds you also can subscribe to:</p>
+<p>There are a number of Feeds you also can subscribe to:</p>
 
 <ul class="shelf" role="navigation">
     <li><a class="button" href="/feed.xml" rel="alternate">All Posts</a></li>
