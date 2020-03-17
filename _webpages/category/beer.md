@@ -27,6 +27,4 @@ sparkline: beer
 
 --------
 
-{% include components/ads.liquid %}
-
 {% include components/buttons_categories.liquid %}

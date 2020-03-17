@@ -37,11 +37,11 @@
             {{ content }}
         </div>
 
+        {% include components/webmentions.liquid %}
+
         {% unless content contains 'carbonads' %}
             {% include components/ads.liquid %}
         {% endunless %}
-
-        {% include components/webmentions.liquid %}
 
     </div>
 

@@ -12,8 +12,6 @@
             {% endif %}
         </h1>
 
-        {% include components/meta.liquid %}
-
         {% include components/banner.liquid %}
 
         {%- assign content = page.content | strip_newlines -%}
@@ -40,15 +38,17 @@
 
         {% include components/further_reading.liquid %}
 
-        {% unless content contains 'carbonads' %}
-            {% include components/ads.liquid %}
-        {% endunless %}
-
-        {% include components/webmentions.liquid %}
+        {% include components/meta.liquid %}
 
         {% include components/buttons_categories.liquid %}
 
+        {% include components/webmentions.liquid %}
+
         {% include components/widget_browse_posts.liquid %}
+
+        {% unless content contains 'carbonads' %}
+            {% include components/ads.liquid %}
+        {% endunless %}
 
     </article>
 

@@ -31,6 +31,4 @@ Check out my [Listening page](/listening) to see what I’ve been listening to r
 
 --------
 
-{% include components/ads.liquid %}
-
 {% include components/buttons_categories.liquid %}

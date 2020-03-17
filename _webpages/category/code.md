@@ -49,6 +49,4 @@ These are my best CodePens—seven of which were [featured on their homepage](ht
 
 --------
 
-{% include components/ads.liquid %}
-
 {% include components/buttons_categories.liquid %}

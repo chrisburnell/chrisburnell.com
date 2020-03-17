@@ -7,8 +7,6 @@
 
         {% include components/title.liquid %}
 
-        {% include components/meta.liquid %}
-
         {% include components/lede.liquid %}
 
         {% include components/chess.liquid %}
@@ -19,13 +17,19 @@
             {{ content }}
         </div>
 
-        {% include components/ads.liquid %}
+        {% include components/further_reading.liquid %}
 
-        {% include components/webmentions.liquid %}
+        {% include components/meta.liquid %}
 
         {% include components/buttons_categories.liquid %}
 
+        {% include components/webmentions.liquid %}
+
         {% include components/widget_browse_posts.liquid %}
+
+        {% unless content contains 'carbonads' %}
+            {% include components/ads.liquid %}
+        {% endunless %}
 
     </article>
 
