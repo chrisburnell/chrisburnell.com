@@ -45,6 +45,7 @@
 
     <link rel="self" href="{{ '/feed.xml' | prepend: site.live_url }}">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: '/feed.xml' | prepend: site.live_url }}">
+    <link rel="feed" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: '/feed.xml' | prepend: site.live_url }}">
     <link rel="pingback" href="{{ site.author.urls.webmention }}/xmlrpc">
     <link rel="webmention" href="{{ site.author.urls.webmention }}/webmention">
     <link rel="authorization_endpoint" href="{{ site.author.urls.authorization }}">
