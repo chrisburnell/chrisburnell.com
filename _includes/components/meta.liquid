@@ -16,7 +16,6 @@
     {%- assign finish_minute = page.rsvp.finish | default: page.rsvp.date | date: '%M' -%}
 {%- endif -%}
 <div class="meta">
-    <input type="checkbox" class="js-meta-toggle" id="meta-toggle" aria-hidden="true" hidden />
     {% if in_reply_to_link %}
         <div class="in-reply-to">
             {%- assign mastodon_instance = null -%}
@@ -632,5 +631,4 @@
     {%- assign category_link = site.data.categories | where: 'category', page.category | first | map: 'type' -%}
     <data class="u-category" value="/{{ category_link }}" hidden aria-hidden="true">{{ page.category }}</data>
     <a href="https://fed.brid.gy" hidden aria-hidden="true"></a>
-    <label for="meta-toggle" role="button" class="delta" title="Expand/Collapse" aria-hidden="true">…</label>
 </div>

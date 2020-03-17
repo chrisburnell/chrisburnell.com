@@ -90,11 +90,3 @@
         margin-right: 1ch;
     }
 }
-
-// Always show:
-//   Reply Context
-//   Checkin Rating
-//   Published Date
-.js-meta-toggle:not(:checked) ~ div:not(.in-reply-to):not(.checkin-rating):not(.published-date) {
-    @include hidden;
-}
