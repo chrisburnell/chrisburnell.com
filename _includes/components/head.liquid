@@ -43,14 +43,10 @@
         <link rel="prefetch" href="{{ link }}">
     {% endif %}
 
-    <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — All" href="{{ '/feed.xml' | prepend: site.live_url }}">
     <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — All" href="{{ '/feed.xml' | prepend: site.live_url }}">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — Replies" href="{{ '/replies.xml' | prepend: site.live_url }}">
     <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — Replies" href="{{ '/replies.xml' | prepend: site.live_url }}">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — RSVPs" href="{{ '/rsvps.xml' | prepend: site.live_url }}">
     <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — RSVPs" href="{{ '/rsvps.xml' | prepend: site.live_url }}">
     {% if page.feed %}
-        <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — {{ page.title }}" href="{{ page.feed | prepend: site.live_url }}">
         <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — {{ page.title }}" href="{{ page.feed | prepend: site.live_url }}">
     {% endif %}
     <link rel="self" href="{{ '/feed.xml' | prepend: site.live_url }}">
