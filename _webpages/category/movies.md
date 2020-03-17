@@ -6,7 +6,7 @@ redirect_from:
   - category/movie.html
   - category/movies.html
 
-title: Movies
+title: Movie Reviews
 lede: Tracking what I watch.
 
 feed: /movies.xml

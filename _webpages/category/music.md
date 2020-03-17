@@ -6,7 +6,7 @@ redirect_from:
   - albums.html
   - category/music.html
 
-title: Music
+title: Music Reviews
 lede: Reviewing music albums one-by-one.
 
 feed: /music.xml

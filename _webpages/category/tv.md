@@ -5,7 +5,7 @@ redirect_from:
   - television.html
   - category/tv.html
 
-title: TV Shows
+title: TV Show Reviews
 lede: Tracking what I watch.
 
 feed: /tv.xml

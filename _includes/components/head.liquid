@@ -43,9 +43,13 @@
         <link rel="prefetch" href="{{ link }}">
     {% endif %}
 
+    <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — All" href="{{ '/feed.xml' | prepend: site.live_url }}">
+    <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — All" href="{{ '/feed.xml' | prepend: site.live_url }}">
+    {% if page.feed %}
+        <link rel="alternate" type="application/atom+xml" title="{{ site.author.name }} — {{ page.title }}" href="{{ page.feed | prepend: site.live_url }}">
+        <link rel="feed" type="application/atom+xml" title="{{ site.author.name }} — {{ page.title }}" href="{{ page.feed | prepend: site.live_url }}">
+    {% endif %}
     <link rel="self" href="{{ '/feed.xml' | prepend: site.live_url }}">
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: '/feed.xml' | prepend: site.live_url }}">
-    <link rel="feed" type="application/atom+xml" title="Atom Feed" href="{{ page.feed | default: '/feed.xml' | prepend: site.live_url }}">
     <link rel="pingback" href="{{ site.author.urls.webmention }}/xmlrpc">
     <link rel="webmention" href="{{ site.author.urls.webmention }}/webmention">
     <link rel="authorization_endpoint" href="{{ site.author.urls.authorization }}">
