@@ -42,6 +42,8 @@ youtube: true
     <dd><div class="measure-example  measure-example--medium"></div></dd>
     <dt>Large</dt>
     <dd><div class="measure-example  measure-example--large"></div></dd>
+    <dt>Gigantic</dt>
+    <dd><div class="measure-example  measure-example--gigantic"></div></dd>
     <dt>One</dt>
     <dd><div class="measure-example  measure-example--one"></div></dd>
     <dt>Responsive</dt>

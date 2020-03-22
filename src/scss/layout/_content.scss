@@ -3,15 +3,11 @@
 /// @group layout
 ////
 
-.content,
-.content__body {
-    @include owl;
-}
-
 // The width of the content is fluid, and always has padding on the left-hand
 // side to make room for any `aside`, which can appear anywhere inside
 // `.content`.
 .content {
+    @include owl;
     @include v(padding-top, large);
 
     @include media("screen", "below:medium") {
@@ -31,4 +27,8 @@
         @include v(max-width, breakpoint-medium);
         margin: 0 auto;
     }
+}
+
+.content__body {
+    @include owl(gigantic);
 }
