@@ -376,7 +376,6 @@
             {%- assign long = page.checkin.long | round: 3 -%}
             {%- assign checkin = site.data.places | where_exp: 'target', 'target.lat == lat' | where_exp: 'target', 'target.long == long' | first | default: checkin -%}
         {%- endif -%}
-        <!-- CHECKIN {{ checkin | inspect }} -->
         <div class="checkin">
             {% if page.category == 'beer' %}
                 {% include content/emoji.liquid emoji='🍻' %}
