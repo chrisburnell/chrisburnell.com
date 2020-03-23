@@ -25,3 +25,12 @@
     <!-- Mastodon Cards -->
     <script src="https://{{ in_reply_to_link_mastodon_instance }}/embed.js" async defer></script>
 {% endif %}
+
+<script>
+    performance.measure("Head — Time", "Head — Start", "Head — End");
+    performance.measure("CSS — Time", "CSS — Start", "CSS — End");
+    console.log(performance.getEntriesByType("mark"));
+    console.log(performance.getEntriesByType("measure"));
+    performance.clearMarks();
+    performance.clearMeasures();
+</script>

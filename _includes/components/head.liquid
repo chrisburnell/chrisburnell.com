@@ -1,8 +1,8 @@
 {%- include assets/yml_head.liquid -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}" class="no-js">
-
 <head>
+    <script>performance.mark("Head — Start");</script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
@@ -97,8 +97,8 @@
     {% include assets/assets_social.liquid %}
     {% include assets/assets_head.liquid %}
 
+    <script>performance.mark("Head — End");</script>
 </head>
 
 <body{% if body_class_array != '' %} class="{{ body_class_array }}"{% endif %}>
-
     <a href="#content" hidden>Skip to main content</a>
