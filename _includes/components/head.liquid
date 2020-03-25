@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-    <title>{{ meta_title }}</title>
+    <title>{% if jekyll.environment == 'development' %}DEV — {% endif %}{{ meta_title }}</title>
 
     <link rel="preconnect" href="https://cdn.carbonads.com">
     <link rel="preconnect" href="https://srv.carbonads.com">
@@ -72,11 +72,19 @@
     }
     </script>
 
-    <link rel="icon" href="{{ 'favicon.ico' | relative_url }}" sizes="512x512">
-    <link rel="mask-icon" href="{{ 'favicon.svg' | relative_url }}" color="#{{ site.color }}">
-    <link rel="apple-touch-icon" href="{{ 'favicon-180.png' | relative_url }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ 'favicon-180.png' | relative_url }}">
-    <link rel="msapplication-square310x310logo" href="{{ 'favicon-310.png' | relative_url }}">
+    {% if jekyll.environment == 'production' %}
+        <link rel="icon" href="{{ 'favicon.ico' | relative_url }}" sizes="512x512">
+        <link rel="mask-icon" href="{{ 'favicon.svg' | relative_url }}" color="#{{ site.color }}">
+        <link rel="apple-touch-icon" href="{{ 'favicon-180.png' | relative_url }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ 'favicon-180.png' | relative_url }}">
+        <link rel="msapplication-square310x310logo" href="{{ 'favicon-310.png' | relative_url }}">
+    {% else %}
+        <link rel="icon" href="{{ 'favicon-bw.ico' | relative_url }}" sizes="512x512">
+        <link rel="mask-icon" href="{{ 'favicon-bw.svg' | relative_url }}" color="#{{ site.color }}">
+        <link rel="apple-touch-icon" href="{{ 'favicon-180-bw.png' | relative_url }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ 'favicon-180-bw.png' | relative_url }}">
+        <link rel="msapplication-square310x310logo" href="{{ 'favicon-310-bw.png' | relative_url }}">
+    {% endif %}
 
     <link rel="author" href="{{ 'humans.txt' | relative_url }}">
     <link rel="manifest" href="{{ 'manifest.json' | relative_url }}">
