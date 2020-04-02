@@ -1,6 +1,6 @@
 ---
 title: About Me
-lede: My name is <span class="canada">Chris Burnell</span>, and I'm a <span class="canada">Canadian</span> User Interface Developer living and working in London, UK.
+lede: My name is <span class="canada">Chris Burnell</span>, and I'm a <span class="canada">Canadian</span> User Interface Developer living and working in London, England.
 page_class: page--about
 sitemap:
   priority: 1.0

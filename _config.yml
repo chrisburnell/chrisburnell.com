@@ -5,7 +5,7 @@ username: &username chrisburnell
 title: *name
 short_title: cb
 tagline: "I’m ravenous for CSS."
-lede: 'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, UK. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
+lede: 'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, England. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
 color: 5f8aa6
 color_scheme: false
 birth: 2008
@@ -14,7 +14,7 @@ author:
   name: *name
   shortname: *username
   nationality: Canadian
-  location: London, UK
+  location: London, England
   email: me@chrisburnell.com
   avatar: /images/avatar@2x.jpg
   pgp: 9604F098260A0057
