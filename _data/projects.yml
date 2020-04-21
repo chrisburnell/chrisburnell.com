@@ -1,4 +1,8 @@
-- url: https://dnd.chrisburnell.com
+- url: https://micro.bloodbuilder.online
+  title: Microlite20 Character Builder
+  lede: 'Super Simple PWA for Microlite20 Characters.'
+  emoji: 🔬
+- url: https://waterdeep.bloodbuilder.online
   title: Waterdeep, A Curated Guide
   lede: 'I’m the Dungeon Master for a D&D campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.'
   emoji: 🐉
