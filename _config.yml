@@ -5,7 +5,7 @@ username: &username chrisburnell
 title: *name
 short_title: cb
 tagline: "I’m ravenous for CSS."
-lede: 'I’m a <span class="canada">Canadian</span> Front-End Developer living in London, England. This is where I write about and share my passions: CSS, front-end development, innovating on the web, best practices and standards, learning, performance, IndieWeb, and owning your content.'
+lede: 'I’m a <span class="canada">Canadian</span> front-end developer, writer, and rabbit-hole deep-diver. This is where I think, write, and share my passion for the web.'
 color: 5f8aa6
 color_scheme: false
 birth: 2008
@@ -32,7 +32,7 @@ author:
   employer:
     name: Squiz
     url: https://www.squiz.net
-    role: Front-End Developer
+    role: front-end developer
   urls:
     authorization: https://indieauth.com/auth
     buymeacoffee: https://www.buymeacoffee.com/8mtx3EQfI
