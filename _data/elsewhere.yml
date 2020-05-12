@@ -1,62 +1,55 @@
 - title: GitHub
-  url: 'https://github.com/chrisburnell'
+  value: 'https://github.com/chrisburnell'
   rel: 'me  external'
   svg: github
 - title: Twitter
-  url: 'https://twitter.com/iamchrisburnell'
+  value: 'https://twitter.com/iamchrisburnell'
   rel: 'me  external'
   svg: twitter
 - title: CodePen
-  url: 'https://codepen.io/chrisburnell'
+  value: 'https://codepen.io/chrisburnell'
   rel: 'me  external'
   svg: codepen
 - title: LastFM
-  url: 'https://last.fm/user/chrisburnell'
+  value: 'https://last.fm/user/chrisburnell'
   rel: 'me  external'
   svg: lastfm
 - title: All Posts Feed
-  url: '/feed.xml'
+  value: '/feed.xml'
   rel: 'alternate  me'
   svg: rss
 - title: Chess.com
-  url: 'https://www.chess.com/member/chrisburnell'
-  rel: 'me  external'
+  value: 'https://www.chess.com/member/chrisburnell'
   hidden: true
 - title: GitLab
-  url: 'https://gitlab.com/chrisburnell'
-  rel: 'me  external'
+  value: 'https://gitlab.com/chrisburnell'
   hidden: true
 - title: Mastodon
-  url: 'https://mastodon.social/@chrisburnell'
-  rel: 'me  external'
+  value: 'https://mastodon.social/@chrisburnell'
   hidden: true
 - title: Micro.blog
-  url: 'https://micro.blog/chrisburnell'
-  rel: 'me  external'
+  value: 'https://micro.blog/chrisburnell'
+  hidden: true
+- title: Nintendo
+  value: 'SW-5773-6068-9986'
+  class: 'p-nintendo-friend-id'
   hidden: true
 - title: Notist
-  url: 'https://noti.st/chrisburnell'
-  rel: 'me  external'
+  value: 'https://noti.st/chrisburnell'
   hidden: true
 - title: PGP
-  content: '9604 F098 260A 0057'
-  url: 'https://keybase.io/chrisburnell/key.asc'
-  class: 'p-pgp'
-  rel: 'pgpkey  me  external'
+  value: '9604 F098 260A 0057'
+  rel: 'pgpkey'
   hidden: true
 - title: Pinboard
-  url: 'https://pinboard.in/u:chrisburnell'
-  rel: 'me  external'
+  value: 'https://pinboard.in/u:chrisburnell'
   hidden: true
 - title: Speakerdeck
-  url: 'https://speakerdeck.com/chrisburnell'
-  rel: 'me  external'
+  value: 'https://speakerdeck.com/chrisburnell'
   hidden: true
 - title: Spotify
-  url: 'https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z'
-  rel: 'me  external'
+  value: 'https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z'
   hidden: true
 - title: Untappd
-  url: 'https://untappd.com/user/chrisburnell/'
-  rel: 'me  external'
+  value: 'https://untappd.com/user/chrisburnell/'
   hidden: true

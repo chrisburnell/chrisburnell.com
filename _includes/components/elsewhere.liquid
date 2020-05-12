@@ -2,11 +2,11 @@
     <ul class="elsewhere__list">
         {% for link in site.data.elsewhere %}
             {% if link.hidden %}
-                <link href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
+                <data title="{{ link.title }}" value="{{ link.value }}"{% if link.class %} rel="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %}></data>
             {% else %}
                 {%- assign svg = link.svg | default: 'feather' -%}
                 <li>
-                    <a{% if link.class %} class="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.url }}" title="{{ link.title }}">
+                    <a{% if link.class %} class="{{ link.class }}"{% endif %}{% if link.rel %} rel="{{ link.rel }}"{% endif %} href="{{ link.value }}" title="{{ link.title }}">
                         {%- if link.svg -%}
                             {% include_cached content/svg.liquid type=svg title=link.title %}
                         {%- else -%}
