@@ -1,22 +1,18 @@
 - title: GitHub
   value: 'https://github.com/chrisburnell'
-  rel: 'me  external'
   svg: github
 - title: Twitter
   value: 'https://twitter.com/iamchrisburnell'
-  rel: 'me  external'
   svg: twitter
 - title: CodePen
   value: 'https://codepen.io/chrisburnell'
-  rel: 'me  external'
   svg: codepen
 - title: LastFM
   value: 'https://last.fm/user/chrisburnell'
-  rel: 'me  external'
   svg: lastfm
 - title: All Posts Feed
   value: '/feed.xml'
-  rel: 'alternate  me'
+  rel: 'alternate'
   svg: rss
 - title: Chess.com
   value: 'https://www.chess.com/member/chrisburnell'
