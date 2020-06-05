@@ -22,6 +22,10 @@
   type: code
   category: code
   icon: 'codepen'
+- title: Games
+  type: games
+  category: game
+  icon: 'bullhorn'
 - title: Likes
   type: likes
   category: like

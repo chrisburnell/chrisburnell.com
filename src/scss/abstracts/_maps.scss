@@ -137,6 +137,7 @@ $brand-colors: (
     codepen: $color-codepen,
     github: $color-github,
     lastfm: $color-lastfm,
+    nintendo: $color-nintendo,
     spotify: $color-spotify,
     twitter: $color-twitter
 ) !default;
@@ -365,52 +366,67 @@ $aspect-ratios: (
 $brand-details: (
     (
         name: "codepen",
-        color: $color-white,
+        color: white,
         ratio: 1
     ),
     (
         name: "github",
-        color: $color-white,
+        color: white,
         ratio: 1
-    ), (
+    ),
+    (
         name: "lastfm",
-        color: $color-lastfm,
+        color: lastfm,
         ratio: 1
-    ), (
-        name: "rss",
-        color: $color-white,
-        ratio: 0.775
-    ), (
-        name: "spotify",
-        color: $color-spotify,
-        ratio: 0.925
-    ), (
-        name: "twitter",
-        color: $color-twitter,
-        ratio: 0.925
-    ), (
-        name: "article",
-        color: $color-white,
+    ),
+    (
+        name: "switch",
+        color: nintendo,
         ratio: 0.9
-    ), (
+    ),
+    (
+        name: "rss",
+        color: white,
+        ratio: 0.775
+    ),
+    (
+        name: "spotify",
+        color: spotify,
+        ratio: 0.925
+    ),
+    (
+        name: "twitter",
+        color: twitter,
+        ratio: 0.925
+    ),
+    (
+        name: "article",
+        color: white,
+        ratio: 0.9
+    ),
+    (
         name: "feather",
-        color: $color-white,
+        color: white,
         ratio: 0.725
-    ), (
+    ),
+    (
         name: "heart",
-        color: $color-white,
+        color: white,
         ratio: 1
-    ), (
+    ),
+    (
         name: "link",
-        color: $color-white,
+        color: white,
         ratio: 1
-    ), (
+    ),
+    (
         name: "search",
-        color: $color-white,
+        color: white,
         ratio: 1
-    ), (
+    ),
+    (
         name: "tag",
-        color: $color-white,
+        color: white,
         ratio: 1
     )
 ) !default;

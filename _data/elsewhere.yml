@@ -14,6 +14,10 @@
   value: '/feed.xml'
   rel: 'alternate'
   svg: rss
+- title: Nintendo
+  value: 'SW-5773-6068-9986'
+  class: 'p-nintendo-friend-id'
+  svg: switch
 - title: Chess.com
   value: 'https://www.chess.com/member/chrisburnell'
   hidden: true
@@ -25,10 +29,6 @@
   hidden: true
 - title: Micro.blog
   value: 'https://micro.blog/chrisburnell'
-  hidden: true
-- title: Nintendo
-  value: 'SW-5773-6068-9986'
-  class: 'p-nintendo-friend-id'
   hidden: true
 - title: Notist
   value: 'https://noti.st/chrisburnell'

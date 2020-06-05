@@ -42,7 +42,7 @@
     .icon--#{$name} {
         width: #{$ratio * $measure-icon};
         width: calc(#{$ratio} * var(--measure-icon));
-        fill: $color;
+        @include v(fill, $color);
     }
 }
 

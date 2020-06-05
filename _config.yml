@@ -192,9 +192,9 @@ defaults:
   - scope:
       path: "_*/chess"
     values:
-      layout: "chess"
       category: "chess"
-      mf_property: "played-of"
+      layout: "chess"
+      mf_property: "play-of"
       prefix: e
       emoji: "♟"
       titlefree: true
@@ -205,12 +205,22 @@ defaults:
   - scope:
       path: "_*/code"
     values:
-      layout: "code"
       category: "code"
+      layout: "code"
       prefix: c
       emoji: "✒️"
       comments: codepen
       on_this_day: true
+  - scope:
+      path: "_*/games"
+    values:
+      category: "game"
+      layout: "review"
+      mf_root: "review"
+      mf_property: "play-of"
+      prefix: g
+      emoji: "🕹"
+      ignore: true
   - scope:
       path: "_*/likes"
     values:
@@ -249,8 +259,8 @@ defaults:
       path: "_*/notes"
     values:
       category: "note"
-      emoji: ✍️
       prefix: n
+      emoji: "✍️"
       titlefree: true
       on_this_day: true
   - scope:

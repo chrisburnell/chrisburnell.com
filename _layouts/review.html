@@ -22,17 +22,15 @@
         <div class="content__body  e-content">
             {% if link %}
                 <nav class="buttons-list" role="navigation">
-                    <a class="p-item  h-product" href="{{ link }}" hidden>{{ page.title | strip_html }}</a>
+                    <data class="p-item  h-product" value="{{ link }}" hidden>{{ page.title | strip_html }}</data>
                     <a class="button  h-cite  u-{{ page.mf_property }}" href="{{ link }}" rel="external">{{ page.bookmark_of.title | default: page.like_of.title | default: page.read_of.title | default: page.link.title | default: link_title }}</a>
                 </nav>
-
                 {% if page.category == 'music' %}
                     <figure>
                         <iframe width="100%" height="150" src="https://embed.song.link/?url={{ link }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
                     </figure>
                 {% endif %}
             {% endif %}
-
             {% include components/checkin.liquid %}
         </div>
 
