@@ -35,10 +35,24 @@
         overflow: hidden;
         text-decoration: none;
 
+        &::before {
+            content: "";
+            @include absolute(full);
+            @include transition(opacity);
+            opacity: 0;
+            background-position: center;
+            background-size: cover;
+        }
+
         &:hover,
         &:focus,
         &:active {
             background-color: v(background-color, raven--gamma) !important;
+
+            &::before {
+                background-image: var(--cover);
+                @include v(opacity, gamma);
+            }
         }
 
         &:active {

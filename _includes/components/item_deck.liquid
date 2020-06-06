@@ -55,6 +55,12 @@
         {% if page.category == 'bookmark' or page.category == 'like' %}
             <data class="u-url" hidden aria-hidden="true">{{ page.url }}</data>
             <a href="{{ link }}" rel="external">
+        {% elsif page.banner_mobile or page.banner %}
+            <a href="{{ page.url }}" class="u-url" style="--cover: url('{{ page.banner_mobile | default: page.banner | first | prepend: '/images/banners/' | prepend: site.live_url }}');">
+        {% elsif page.cover %}
+            <a href="{{ page.url }}" class="u-url" style="--cover: url('{{ page.cover | prepend: '/' | prepend: page.category | prepend: site.static_url }}');">
+        {% elsif page.photo %}
+            <a href="{{ page.url }}" class="u-url" style="--cover: url('{{ page.photo.first.link | default: page.photo.first | default: page.photo }}');">
         {% else %}
             <a href="{{ page.url }}" class="u-url">
         {% endif %}

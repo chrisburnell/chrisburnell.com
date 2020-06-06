@@ -1,6 +1,6 @@
 - url: https://micro.bloodbuilder.online
-  title: Microlite20 Character Builder
-  lede: 'Super Simple PWA for Microlite20 Characters.'
+  title: Micrathene
+  lede: 'Super Simple PWA for building Microlite20 characters.'
   emoji: 🔬
 - url: https://waterdeep.bloodbuilder.online
   title: Waterdeep, A Curated Guide
@@ -8,7 +8,7 @@
   emoji: 🐉
 - url: https://weather.chrisburnell.com
   title: Weather
-  lede: 'Not the most interesting of project titles, this is a WIP personalised weather web app.'
+  lede: 'Not the most interesting of project titles, this is a personalised weather web app.'
   emoji: ⛈
 - url: https://ownyour.beer
   title: OwnYour.Beer
@@ -46,3 +46,7 @@
   title: Version 1
   lede: 'The first-ever version of my personal site. Things have changed slightly since 2009.'
   emoji: 🐣
+- url: https://codepen.io/collection/hfqlg
+  title: My Featured Pens
+  lede: 'Pens that were featured on Codepen.'
+  emoji: 💻
