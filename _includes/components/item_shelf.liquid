@@ -108,6 +108,9 @@
                     <time class="date  date--relative  dt-published" datetime="{{ page.date | date_to_xmlschema }}">({{ page.date | date: '%Y' }})</time>
                 {% endif %}
             {% endif %}
+            {%- if page.console -%}
+                <span>{{ page.console }}</span>
+            {%- endif -%}
         </div>
         {% if page.isbn %}
             <data class="p-uid" value="{{ page.isbn }}" hidden aria-hidden="true">{{ page.isbn }}</data>
