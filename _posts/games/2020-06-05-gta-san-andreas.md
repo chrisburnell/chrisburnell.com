@@ -7,4 +7,5 @@ rating: 5
 cover: gta-san-andreas.jpg
 console: PC
 authors: Rockstar
+finish: true
 ---

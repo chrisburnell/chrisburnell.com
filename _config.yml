@@ -220,6 +220,7 @@ defaults:
       mf_property: "play-of"
       prefix: g
       emoji: "🕹"
+      hidden: true
       ignore: true
   - scope:
       path: "_*/likes"

@@ -7,4 +7,5 @@ rating: 5
 cover: breath-of-the-wild.jpg
 console: Nintendo Switch
 authors: Nintendo
+finish: true
 ---
