@@ -9,16 +9,14 @@
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
 
-/// ABSTRACTS
+/// ABSTRACTS & VENDORS
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/lists";
 @import "abstracts/maps";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
+@import "vendors/include-media";
 
 /// CSS VARIABLES
 @import "base/variables";
-
-/// VENDORS
-@import "vendors/include-media";

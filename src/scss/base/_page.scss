@@ -10,8 +10,9 @@ html {
     overflow-x: hidden;
     // prevent horizontal jump when navigating short page <--> tall page
     overflow-y: scroll;
-    overflow-behavior: contain;
+    overscroll-behavior: contain;
     scroll-behavior: smooth;
+    scrollbar-color: v(color, raven) v(color, white);
     font-size: var(--base-font-size);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
