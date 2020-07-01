@@ -29,10 +29,12 @@ author:
   speakerdeck: *username
   twitter: iamchrisburnell
   untappd: *username
-  employer:
-    name: Squiz
-    url: https://www.squiz.net
-    role: front-end developer
+  # Hire me?
+  # me@chrisburnell.com
+  # employer:
+  #   name:
+  #   url:
+  #   role:
   urls:
     authorization: https://indieauth.com/auth
     buymeacoffee: https://www.buymeacoffee.com/8mtx3EQfI
