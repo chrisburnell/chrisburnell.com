@@ -1,9 +1,10 @@
 ---
-title: Archive
-lede: Browse posts by a variety of metrics.
-page_class: page--archive
+title: Posts
+lede: Browse all my posts by a variety of metrics.
+page_class: page--posts
 searchable: no-content
 redirect_from:
+  - archive.html
   - archives.html
 ---
 

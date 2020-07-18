@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v2.0.165";
+const VERSION = "v2.0.166";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -43,7 +43,7 @@ const OFFLINE_PAGES = [
     "/offline",
     "/",
     "/about",
-    "/archive",
+    "/posts",
     "/contact",
     "/license",
     "/privacy",
