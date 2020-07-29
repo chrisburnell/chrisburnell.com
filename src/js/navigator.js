@@ -18,7 +18,7 @@
         }, 1000);
     };
 
-    let updateNetwork = event => {
+    let updateNetwork = () => {
         if (navigator.onLine) {
             console.log("You have regained your network connection.");
             notification.innerHTML = "👍 You have regained your network connection.";
