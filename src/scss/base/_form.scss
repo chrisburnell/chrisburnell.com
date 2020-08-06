@@ -42,7 +42,6 @@ input[type="url"],
 optgroup,
 select,
 textarea {
-    @extend %form-elements !optional;
     margin: 0;
     font-size: var(--font-scale--1);
     @include v(line-height);

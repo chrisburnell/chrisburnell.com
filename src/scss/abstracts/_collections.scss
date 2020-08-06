@@ -6,7 +6,7 @@
 img,
 picture,
 svg {
-    @extend %collection-image !optional;
+    @extend %collection-images !optional;
 }
 
 audio,
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %heading-elements !optional;
+    @extend %collection-headings !optional;
 }
 
 code,
@@ -43,13 +43,13 @@ kbd,
 samp,
 var,
 .monospace {
-    @extend %monospace-elements !optional;
+    @extend %collection-monospace !optional;
 }
 
 button,
 .button,
 [type="button"] {
-    @extend %button-elements !optional;
+    @extend %collection-buttons !optional;
 }
 
 input[type="checkbox"],
@@ -71,5 +71,5 @@ input[type="url"],
 optgroup,
 select,
 textarea {
-    @extend %form-elements !optional;
+    @extend %collection-form !optional;
 }

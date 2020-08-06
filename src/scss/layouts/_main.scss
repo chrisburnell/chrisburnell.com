@@ -40,7 +40,7 @@
             [outdent-end];
     }
 
-    & > %content-elements {
+    & > %collection-content {
         @include v(max-width, line-length-clamp);
     }
 }

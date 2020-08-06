@@ -7,7 +7,6 @@
 img,
 picture,
 svg {
-    @extend %image-elements !optional;
     margin: 0 auto;
     position: relative;
 
@@ -36,14 +35,6 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-audio,
-canvas,
-embed,
-iframe,
-object,
-video {
-    @extend %media-elements !optional;
-}
 audio,
 iframe,
 video {

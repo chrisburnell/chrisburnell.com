@@ -17,21 +17,21 @@ figure {
         overflow-y: hidden;
     }
 
-    %image-elements,
-    %media-elements {
+    %collection-images,
+    %collection-media {
         max-height: 100vh;
     }
 
     &.full {
-        %image-elements,
-        %media-elements {
+        %collection-images,
+        %collection-media {
             max-width: initial;
         }
     }
 
     &.tall {
-        %image-elements,
-        %media-elements {
+        %collection-images,
+        %collection-media {
             max-height: initial;
         }
     }

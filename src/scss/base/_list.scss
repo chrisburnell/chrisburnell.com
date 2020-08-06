@@ -144,10 +144,7 @@ dl {
 dt {
     @include v(font-weight, bold);
 
-    .beta,
-    %beta,
-    .delta,
-    %delta {
+    h2 {
         @include v(line-height);
     }
 }

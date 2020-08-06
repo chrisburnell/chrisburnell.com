@@ -152,7 +152,7 @@
         </li>
     {% endif %}
     {% if checkin %}
-        <li class="checkin">
+        <li class="checkin" hidden>
             {% emoji '📍', 'checked in at' %}
             {% set checkin = checkin.title | default(checkin) | getPlace('object') %}
             {% if checkin.url %}

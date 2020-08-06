@@ -14,7 +14,7 @@ twitter: true
 <ul class="palette-list" id="colors">
     {%- for colour in palette -%}
         <li data-color="{{ colour.name | lower }}">
-            <h3 class="epsilon">{{ colour.name }}</h3>
+            <h3>{{ colour.name }}</h3>
             <div class="monospace">#{{ colour.hex }}</div>
             <div class="monospace">{{ colour.hsl }}</div>
         </li>

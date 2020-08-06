@@ -19,7 +19,7 @@
     overflow: hidden;
     position: relative;
 
-    %media-elements {
+    %collection-media {
         @include absolute(full);
         // necessary for `iframe`
         height: 100%;

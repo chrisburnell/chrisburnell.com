@@ -42,7 +42,7 @@ summary {
         display: none;
     }
 
-    & + %content-elements {
+    & + %collection-content {
         @include v(margin-top, small);
         @include v(border-top-width, thin);
         @include v(border-top-style);

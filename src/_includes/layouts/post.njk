@@ -43,7 +43,7 @@ layout: base
 
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) -%}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
-<article id="content" class=" [ content ] [ wrap ] [ post h-{{ page.mf_root }}{% if page.mf_property %} p-{{ page.mf_property }}{% endif %} ] ">
+<article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }}{% if mf_property %} p-{{ mf_property }}{% endif %} ] ">
 
     <h1 id="title" class="title" {{ 'hidden' if not title and not of_title }}>
         {% if of_title %}

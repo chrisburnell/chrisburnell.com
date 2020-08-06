@@ -13,12 +13,12 @@
   {
     "title": "Archive",
     "url": "/archive/",
+    "primary": true,
     "secondary": true
   },
   {
     "title": "Projects",
     "url": "/projects/",
-    "primary": true,
     "secondary": true
   },
   {

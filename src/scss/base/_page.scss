@@ -36,14 +36,3 @@ body {
     @include v(font-weight);
     @include v(line-height);
 }
-
-// Content Elements
-blockquote,
-details,
-dl,
-ol,
-ul,
-figure:not([class]),
-p {
-    @extend %content-elements !optional;
-}

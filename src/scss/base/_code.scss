@@ -23,11 +23,11 @@ samp,
 var {
     // force text to wrap
     @include break-words;
-    font-size: inherit;
+    font-size: var(--font-scale--1);
 }
 h1 > code,
 h2 > code,
-%content-elements > code,
+%collection-content > code,
 del,
 ins,
 kbd,
@@ -39,7 +39,7 @@ samp {
 }
 h1 > code,
 h2 > code,
-%content-elements > code,
+%collection-content > code,
 samp {
     @include v(background-color, raven--gamma);
 }
