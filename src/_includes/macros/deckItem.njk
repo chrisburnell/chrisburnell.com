@@ -181,7 +181,7 @@
                 {% endif %}
                 {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
                 {% if responses.length %}
-                    <a class="webmentions-count" href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{% emoji '📢' %} {{ responses.length }}</a>
+                    <a class="webmentions-count" href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{% emoji '📢' %} {{ responses.length | numberStringFormat }} responses</a>
                 {% endif %}
             </div>
         {% endif %}
