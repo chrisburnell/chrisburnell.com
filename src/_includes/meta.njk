@@ -179,6 +179,7 @@
         </li>
     {% endif %}
     {% if syndicate_to %}
+        {% set syndicate_to = syndicate_to | toArray %}
         <li class="syndicate-to">
             {% emoji '⤴️' %}
             <small>also on</small>
