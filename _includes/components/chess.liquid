@@ -1,9 +1,0 @@
-{% if page.chess %}
-    <figure>
-        <iframe src="https://www.chess.com/emboard?id={{ page.chess }}" width="603" height="465" loading="lazy">
-    </figure>
-{% elsif page.lichess %}
-    <figure>
-        <iframe src="https://lichess.org/embed/{{ page.lichess }}?pov={{ site.author.chess }}" width="600" height="397" loading="lazy">
-    </figure>
-{% endif %}

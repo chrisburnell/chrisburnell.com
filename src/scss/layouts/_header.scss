@@ -1,0 +1,25 @@
+////
+/// Header
+/// @group layout
+////
+
+.header {
+    @include v(background-color, bear);
+
+    .wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include v(padding-top, small);
+        @include v(padding-bottom, small);
+    }
+
+    .logo {
+        flex: 0 1 auto;
+    }
+
+    .navigation {
+        flex: 0 1 auto;
+    }
+}

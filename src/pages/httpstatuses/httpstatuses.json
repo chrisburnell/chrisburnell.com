@@ -1,0 +1,8 @@
+{
+  "permalink": "{{ page.fileSlug }}.html",
+  "sitemap": {
+    "exclude": true
+  },
+  "carbon": false,
+  "coil": false
+}

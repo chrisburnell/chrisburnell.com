@@ -1,9 +1,0 @@
----
-title: Games Feed
-lede: All of my game reviews.
-type: games
----
-
-{% for page in site.categories.game limit: site.feed_limit %}
-    {% include components/item_feed.liquid %}
-{% endfor %}

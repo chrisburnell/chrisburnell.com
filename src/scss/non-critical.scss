@@ -9,9 +9,10 @@
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
 
-/// ABSTRACTS & VENDORS
+/// REQUIRED — ABSTRACTS & VENDORS
 @import "abstracts/variables";
 @import "abstracts/functions";
+@import "abstracts/collections";
 @import "abstracts/lists";
 @import "abstracts/maps";
 @import "abstracts/mathematics";
@@ -20,56 +21,41 @@
 
 /// BASE
 @import "base/anchor";
-@import "base/heading";
-@import "base/paragraph";
-@import "base/media";
 @import "base/button";
+@import "base/headings";
+@import "base/paragraph";
 @import "base/list";
-@import "base/quote";
+@import "base/prose";
 @import "base/figure";
+@import "base/media";
+@import "base/quote";
 @import "base/code";
 @import "base/form";
 @import "base/table";
 @import "base/details";
-@import "base/miscellaneous";
 
-/// LAYOUT
-@import "layout/main";
-@import "layout/content";
-@import "layout/aside";
-@import "layout/footer";
+/// LAYOUTS
+@import "layouts/wrap";
+@import "layouts/header";
+@import "layouts/main";
+@import "layouts/footer";
 
 /// COMPONENTS
+@import "components/logo";
 @import "components/anchor";
-@import "components/title";
+@import "components/navigation";
 @import "components/meta";
-@import "components/banner";
-@import "components/lede";
-@import "components/author";
-@import "components/icon";
-@import "components/edit";
-@import "components/lists";
 @import "components/deck";
 @import "components/shelf";
-@import "components/search";
-@import "components/buttons-list";
-@import "components/widget";
-@import "components/footnotes";
-@import "components/footer";
-@import "components/elsewhere";
-@import "components/comments";
+@import "components/banner";
+@import "components/cover";
+@import "components/navigator";
+@import "components/helpers";
 @import "components/webmentions";
-@import "components/code";
+@import "components/widget";
+@import "components/author";
 @import "components/media";
-@import "components/sparkline";
-@import "components/music";
-@import "components/notification";
-@import "components/recipe";
-@import "components/print";
 @import "components/ads";
 
 /// PAGES
 @import "pages/styleguide";
-
-/// SHAME
-@import "components/shame";

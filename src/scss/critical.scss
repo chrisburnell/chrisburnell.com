@@ -1,36 +1,31 @@
+@charset "UTF-8";
+
 ////
+/// Chris Burnell
+///
+/// Please contact me if you want to learn about anything you see here.
+///
 /// @author Chris Burnell <me@chrisburnell.com>
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
 
-/// ABSTRACTS & VENDORS
+/// REQUIRED — ABSTRACTS & VENDORS
 @import "abstracts/variables";
 @import "abstracts/functions";
+@import "abstracts/collections";
 @import "abstracts/lists";
 @import "abstracts/maps";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
 @import "vendors/include-media";
 
-/// CSS VARIABLES
-@import "base/variables";
+/// FIRST THINGS FIRST
+@import "base/fonts";
+@import "variables";
 
 /// THEMES
 @import "themes/dark";
-// @import "themes/christmas";
-// @import "themes/halloween";
-// @import "themes/outrun";
 
 /// BASE
 @import "base/reset";
 @import "base/page";
-@import "base/fonts";
-
-/// LAYOUT
-@import "layout/wrap";
-@import "layout/header";
-
-/// COMPONENTS
-@import "components/helpers";
-@import "components/logo";
-@import "components/nav-primary";

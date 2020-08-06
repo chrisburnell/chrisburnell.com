@@ -27,9 +27,7 @@ Thumbs.db
 *.sql
 *.sqlite
 
-# Jekyll
-.jekyll-cache
-.jekyll-metadata
+# Eleventy
 _site/
 
 # Sass
@@ -45,9 +43,8 @@ node_modules/
 .gitconfig
 
 # Site Assets
-/css/
-/js/
-/fonts/
-/images/
-_includes/generated/
-/serviceworker.js
+/css
+/fonts
+/static
+/src/_includes/generated/
+/.cache

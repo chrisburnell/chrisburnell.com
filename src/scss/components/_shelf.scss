@@ -5,54 +5,27 @@
 
 .shelf {
     display: grid;
-    grid-template-columns: 1fr;
-    @include v(grid-gap, medium);
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+    @include v(grid-gap, gutter);
 
-    @include media("screen", "above:small") {
-        // 1───────────────────2→
-        // │ minmax(12em, 1fr) │→
-        // 2───────────────────┴→
-        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    @include media("screen", "above:medium") {
+        @include v(grid-gap, gap);
     }
 
-    li {
-        margin: 0;
+    article {
+        @include owl(small);
+        @include v(line-height, medium);
     }
 
-    .cover {
-        display: inline-block;
-        margin: 0 0 var(--measure-small);
-        text-decoration: none;
+    h3 {
+        @extend %epsilon;
 
-        &[href]:hover,
-        &[href]:focus,
-        &[href]:active {
-            @include v(background-color, transparent);
-            outline: var(--border-width-thin) var(--border-style-default) var(--color-raven);
-            outline-offset: var(--border-width-thin);
+        a {
+            color: inherit;
+
+            &:not(:hover):not(:focus):not(:active) {
+                text-decoration-color: var(--color-raven);
+            }
         }
-    }
-
-    %image-elements {
-        max-width: 100%;
-        display: block;
-        object-fit: contain;
-        margin: 0;
-
-        .page--books & {
-            height: var(--measure-aside);
-        }
-    }
-
-    .emoji {
-        @include v(margin-right, small);
-    }
-
-    .badges {
-        @include v(font-size, small);
-    }
-
-    .checkin {
-        display: block;
     }
 }

@@ -1,7 +1,0 @@
-{
-    "presets": [["minify", {
-        "builtIns": false,
-        "mangle": false
-    }]],
-    "comments": false
-}

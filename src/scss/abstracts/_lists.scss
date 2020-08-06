@@ -8,17 +8,13 @@ $font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe 
 /// @type List
 $font-family-alpha: "Heebo", sans-serif !default;
 /// @type List
-$font-family-serif: Georgia, serif !default;
+$font-family-serif: Georgia, Times, Times New Roman, serif !default;
 /// @type List
-$font-family-monospace: "Menlo", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !default;
+$font-family-monospace: monospace !default;
 
 /// @type List
 /// @prop {String} Body / Primary Navigation Class
-$navigation-classes: about, posts, search !default;
-
-/// @type List
-/// @prop {String} Cooking Unit
-$cooking-units: metric, canada, uk, us !default;
+$navigation-classes: about, archive, search !default;
 
 /// @type List
 /// @prop {String} Generic Property Value

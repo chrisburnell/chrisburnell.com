@@ -1,0 +1,10 @@
+---
+title: Projects
+lede: A list of my side-projects and rabbit-hole-deep-dives.
+---
+{% from 'macros/deckItem.njk' import deckItem %}
+<nav class=" [ deck ] [ h-feed ] ">
+    {% for item in projects %}
+        {{ deckItem(item, global.now, collections.all, webmentions, false, false) }}
+    {% endfor %}
+</nav>

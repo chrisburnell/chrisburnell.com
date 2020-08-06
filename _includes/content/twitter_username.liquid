@@ -1,6 +1,0 @@
-{%- comment -%}
-
-  Display a Twitter Username without letting it process as a link
-
-{%- endcomment -%}
-{{ include.username | remove: '@' | prepend: '@<span class="non-selectable">​</span>' | strip }}

@@ -1,9 +1,0 @@
-<nav class="nav-primary" role="navigation">
-    <ol class="nav-primary-list" role="list">
-    {% for item in site.data.nav_primary %}
-        <li role="listitem">
-            <a href="{{ item.link }}"{% if item.rel %} rel="{{ item.rel }}"{% endif %}{% if item.link == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
-        </li>
-    {% endfor %}
-    </ol>
-</nav>

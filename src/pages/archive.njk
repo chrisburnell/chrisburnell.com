@@ -1,0 +1,73 @@
+---
+layout: base
+title: Archive
+lede: Browse all of my posts by a variety of metrics.
+---
+{% from 'macros/deckItem.njk' import deckItem %}
+{% from 'macros/shelfItem.njk' import shelfItem %}
+{%- set collection = collections.posts -%}
+{%- set count = collection.length -%}
+{%- set latest_year = collection[0].date.getFullYear() -%}
+{%- set first_year = collection[count-1].date.getFullYear() -%}
+<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+
+    <h1 id="title" class="title">
+        <span class="p-name">{{ title | safe }}</span>
+    </h1>
+
+    <div class=" [ details ] ">
+        <p class=" [ p-summary ] ">Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
+    </div>
+
+    <div class=" [ content__body  content__body--wide ] [ h-feed ] ">
+        {% for lookup in collections.categories %}
+            {%- if lookup.title == 'note' -%}
+                {% set collection = collections.notesWithoutReplies %}
+            {%- else -%}
+                {% set collection = collections[lookup.title] | reverse %}
+            {%- endif -%}
+            <h2 id="{{ lookup.plural }}">
+                <a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
+                <a href="#{{ lookup.plural }}" class="fragment-anchor">
+                    <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+                        <use xlink:href="/images/sprites.svg#svg--link"></use>
+                    </svg>
+                </a>
+            </h2>
+            {% if collection[0].data.mf_root == 'review' %}
+                <nav class=" [ shelf ] ">
+                    {% for item in collection | limit(site.limits.snapshot) %}
+                        {{ shelfItem(item, global.now, collections.all) }}
+                    {% endfor %}
+                </nav>
+            {% else %}
+                <nav class=" [ deck ] ">
+                    {% for item in collection | limit(site.limits.snapshot) %}
+                        {{ deckItem(item, global.now, collections.all, webmentions) }}
+                    {% endfor %}
+                </nav>
+            {% endif %}
+            {% if collection.length > site.limits.spotlight %}
+                <nav class=" [ navigator ] ">
+                    <a class="button" href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
+                </nav>
+            {% endif %}
+        {% endfor %}
+
+        {% include 'webmentions.njk' %}
+
+        {% include 'ads.njk' %}
+    </div>
+
+    <div class=" [ meta ] ">
+        <h3>Browse by category:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}
+        </ul>
+        <h3>Here are some tags that you can explore, too:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
+        </ul>
+    </div>
+
+</div>

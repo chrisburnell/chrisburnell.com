@@ -1,0 +1,15 @@
+---
+permalink: /images/sprites.svg
+layout: null
+sitemap:
+  exclude: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="svg--sprites" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+{% for symbol in svg %}
+    <symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
+        <title>{{ symbol.title }}</title>
+        <path d="{{ symbol.path }}" />
+    </symbol>
+{% endfor %}
+</svg>

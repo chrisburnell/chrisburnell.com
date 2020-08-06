@@ -3,40 +3,50 @@
 /// @group themes
 ////
 
-img,
-svg,
-[role="img"],
-embed,
-iframe,
-object,
-video,
-.highlight {
-    @extend %asset-elements;
-}
 
 @mixin theme-dark() {
-    @supports (filter: invert(1) hue-rotate(180deg)) {
-        & {
-            filter: invert(1) hue-rotate(180deg);
-        }
-        %asset-elements {
-            filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
-        }
-        .dark-background {
-            filter: invert(1) hue-rotate(180deg);
-        }
-        .dark-background %asset-elements {
-            filter: none;
-        }
+    --color-kaiser: #{$color-dove};
+    --color-dove: #{$color-kaiser};
+    --color-coyote: #{$color-bowhead};
+    --color-bowhead: #{$color-coyote};
+    $color-bear: mix($color-raven, $color-mineshaft, $opacity-gamma * 100);
+    --color-bear: #{$color-bear};
+
+    .header,
+    .main {
+        color: var(--color-white);
     }
 
-    @supports not (filter: invert(1) hue-rotate(180deg)) {
-        --color-black: #{$color-white};
-        --color-mineshaft: #{$color-alto};
-        --color-kaiser: #{$color-dove};
-        --color-dove: #{$color-kaiser};
-        --color-alto: #{$color-mineshaft};
-        --color-white: #{$color-black};
+    .main {
+        background-color: var(--color-mineshaft);
+    }
+
+    .footer {
+        background-image: linear-gradient(to bottom, var(--color-black--gamma), var(--color-black--gamma));
+    }
+
+    h1 {
+        text-shadow: 0.025em -0.025em 0 var(--color-mineshaft), 0.025em -0.0125em 0 var(--color-mineshaft), 0.025em 0.025em 0 var(--color-mineshaft), 0 0.025em 0 var(--color-mineshaft), -0.025em 0.025em 0 var(--color-mineshaft), -0.025em -0.0125em 0 var(--color-mineshaft), -0.025em -0.025em 0 var(--color-mineshaft);
+    }
+
+    a,
+    .anchor {
+        @include v(text-decoration-color, kaiser);
+    }
+
+    h2 a {
+        @include v(color, alto);
+        @include v(text-decoration-color, transparent);
+    }
+
+    .rating {
+        &::before {
+            @include v(color, kaiser);
+        }
+
+        &::after {
+            @include v(color, alto);
+        }
     }
 }
 

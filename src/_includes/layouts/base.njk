@@ -1,0 +1,291 @@
+{%- set of = bookmark_of | default(drink_of) | default(like_of) | default(listen_of) | default(play_of) | default(read_of) | default(watch_of) | default(link) -%}
+{%- set of_url = of -%}
+{%- if of.url -%}
+    {% set of_url = of.url %}
+{%- endif -%}
+{%- set of_title = of_url -%}
+{%- if of.title -%}
+    {% set of_title = of.title %}
+{%- endif -%}
+
+{%- if category and of_title -%}
+    {% set meta_title %}{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}” · {{ site.title }}{% endset %}
+{%- elif title -%}
+    {% set meta_title %}{{ title | striptags(true) | safe }} · {{ site.title }}{% endset %}
+{%- elif category -%}
+    {% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | dateFormat }} · {{ site.title }}{% endset %}
+{%- else -%}
+    {% set meta_title %}{{ site.tagline | striptags(true) }} · {{ site.title }}{% endset %}
+{%- endif -%}
+
+{%- set meta_description = lede | striptags(true) | default('A page on chrisburnell.com') | safe -%}
+{%- set meta_image = '/images/avatar@4x.jpg' -%}
+{%- if banner -%}
+    {%- set meta_image -%}/images/banners/{{ banner | toArray | last }}{%- endset -%}
+{%- elif cover -%}
+    {%- set meta_image -%}/images/covers/{{ cover }}{%- endset -%}
+{%- endif -%}
+{%- set canonical = site.url + page.url -%}
+{%- if category -%}
+    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+{%- endif -%}
+<!DOCTYPE html>
+<html lang="{{ site.locale }}" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ meta_title | safe }}</title>
+
+    <link rel="self" href="{{ site.url + '/feed.xml' }}">
+    <link rel="alternate" type="application/atom+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
+    <link rel="alternate" type="application/atom+xml" title="Writing Feed" href="{{ site.url + '/writing.xml' }}">
+    <link rel="pingback" href="{{ author.urls.webmention }}/xmlrpc">
+    <link rel="webmention" href="{{ author.urls.webmention }}/webmention">
+    <link rel="authorization_endpoint" href="{{ author.urls.authorization }}">
+    <link rel="token_endpoint" href="{{ author.urls.token }}">
+    <link rel="micropub" href="{{ author.urls.micropub }}">
+    <link rel="microsub" href="{{ author.urls.microsub }}">
+    <link rel="openid.delegate" href="{{ site.url }}" />
+    <link rel="openid.server" href="{{ author.urls.openid }}" />
+
+    {% if global.environment == 'production' %}
+        <link rel="icon" href="/images/favicon.ico" sizes="512x512">
+        <link rel="mask-icon" href="/images/favicon.svg" color="#{{ site.color }}">
+        <link rel="apple-touch-icon" href="/images/favicon-180.png">
+        <link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
+        <link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
+    {% else %}
+        <link rel="icon" href="/images/favicon-bw.ico" sizes="512x512">
+        <link rel="mask-icon" href="/images/favicon-bw.svg" color="#{{ site.color }}">
+        <link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
+        <link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
+        <link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
+    {% endif %}
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="mask-icon" href="/favicon.svg" color="#{{ site.color }}">
+    <link rel="apple-touch-icon" href="/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon-180.png">
+    <link rel="msapplication-square310x310logo" href="/favicon-310.png">
+
+    <link rel="author" href="/humans.txt">
+    <link rel="manifest" type="application/manifest+json" href="/manifest.json">
+
+    <meta name="author" content="{{ author.name }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="msapplication-starturl" content="{{ site.url }}">
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="theme-color" content="#{{ site.color }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="supported-color-schemes" content="light dark">
+
+    <meta http-equiv="cleartype" content="on">
+
+    <style>{%- include 'generated/critical.css' -%}</style>
+    <link rel="preload" as="style" href="/css/non-critical.css">
+    <link rel="stylesheet" href="/css/non-critical.css" media="print" onload="this.media='all'">
+
+    {% if page.inputPath.includes('httpstatus') %}
+        <meta name="robots" content="noindex,nofollow">
+    {% else %}
+        <!-- The URL -->
+        <link rel="canonical" href="{{ canonical }}">
+        {% if previousPost %}
+            <link rel="prev" href="{{ site.url + previousPost.url }}">
+        {% endif %}
+        {% if nextPost %}
+            <link rel="next" href="{{ site.url + nextPost.url }}">
+        {% endif %}
+        <!-- Twitter Microdata -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@{{ author.twitter }}">
+        <meta name="twitter:title" content="{{ meta_title }}">
+        <meta name="twitter:description" content="{{ meta_description }}">
+        <meta name="twitter:image" content="{{ cover.url | default(cover) | default(meta_image) }}">
+        <meta name="twitter:domain" content="{{ site.url | getHost }}">
+        {% if twitter %}
+            <meta name="twitter:widgets:theme" content="light">
+            <meta name="twitter:widgets:link-color" content="#{{ site.color }}">
+            <meta name="twitter:widgets:border-color" content="#{{ site.color }}">
+        {% endif %}
+        <!-- OpenGraph Microdata -->
+        {% if mf_root == 'review' %}
+            <meta property="og:type" content="review">
+        {% elif layout == 'post' %}
+            <meta property="og:type" content="article">
+        {% elif page.url.includes('/about') %}
+            <meta property="og:type" content="profile">
+        {% else %}
+            <meta property="og:type" content="website">
+        {% endif %}
+        <meta property="og:description" content="{{ meta_description }}">
+        <meta property="og:locale" content="{{ site.locale }}">
+        <meta property="og:url" content="{{ canonical }}">
+        <meta property="og:image" content="{{ meta_image }}">
+        {% if layout == 'post' %}
+            <meta property="article:published_time" content="{{ page.date | dateFormat }}">
+            {% if updated or finish %}
+                <meta property="article:modified_time" content="{{ updated | default(finish) | dateFormat }}">
+            {% endif %}
+            <meta property="article:author" content="{{ author.name }}">
+            {% for tag in tags | categoryFilter | tagFilter %}
+                <meta property="article:tag" content="{{ tag }}">
+            {% endfor %}
+        {% elif page_about %}
+            <meta property="profile:first_name" content="{{ author.firstname }}">
+            <meta property="profile:last_name" content="{{ author.lastname }}">
+            <meta property="profile:username" content="{{ author.shortname }}">
+        {% endif %}
+
+        <!-- Coil -->
+        <meta name="monetization" content="{{ site.payment_pointer }}">
+    {% endif %}
+
+    <script>document.documentElement.classList.remove("no-js");</script>
+
+    {% if category == 'code' or caniuse %}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    {% endif %}
+    {% if category == 'code' or codepen %}
+        <link rel="preconnect" href="https://codepen.io">
+        <link rel="preconnect" href="https://assets.codepen.io">
+        <link rel="preconnect" href="https://s.codepen.io">
+    {% endif %}
+    {% if twitter %}
+        <link rel="preconnect" href="https://platform.twitter.com">
+    {% endif %}
+
+    {% block head %}
+    {% endblock %}
+
+    <script>performance.mark("Head · End");</script>
+</head>
+<body>
+    <a href="#content" hidden>Skip to main content</a>
+
+    <header class=" [ header ] ">
+        <div class=" [ wrap  wrap--large ] ">
+            <a rel="home" class="logo" href="/" title="Chris Burnell">
+                <svg class=" [ icon icon--raven ] " aria-hidden="true" focusable="false">
+                    <use xlink:href="/images/sprites.svg#svg--raven"></use>
+                </svg>
+            </a>
+            <nav class="navigation">
+                <ol class="navigation__list">
+                    {% for link in navigation %}
+                        {% if link.primary %}
+                            <li>
+                                <a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <main class=" [ main ] ">
+
+        {{ content | safe }}
+
+    </main>
+
+    <footer class=" [ footer ] ">
+        <div class=" [ wrap ] ">
+            <div class=" [ author ] [ h-card  p-author ] ">
+                <a href="/about" class=" [ author__information ] [ u-url ] " rel="author  me">
+                    <picture class=" [ author__image ] [ canada ] ">
+                        <source srcset="/images/avatar.webp 1x,
+                                        /images/avatar@2x.webp 2x,
+                                        /images/avatar@3x.webp 3x,
+                                        /images/avatar@4x.webp 4x"
+                                type="image/webp" />
+                        <img alt="{{ author.name }}" class=" [ u-photo ] "
+                            src="/images/avatar.jpg"
+                            srcset="/images/avatar@2x.jpg 2x,
+                                    /images/avatar@3x.jpg 3x,
+                                    /images/avatar@4x.jpg 4x"
+                            width="100" height="100"
+                            role="presentation">
+                    </picture>
+                    <div class=" [ author__name ] ">
+                        <small>about</small>
+                        <span class=" [ anchor ] [ canada ] [ p-name ] ">{{ author.name }}</span>
+                    </div>
+                </a>
+                <div class=" [ author__biography ] ">
+                    <p class=" [ p-note ] ">{{ site.lede | safe }}</p>
+                    <p><a href="{{ author.urls.github_repo }}/tree/master/{{ page.inputPath }}">You can edit this page.</a></p>
+                </div>
+                <data class=" [ u-url u-uid ] " value="/" rel="author me" hidden> </data>
+                <data class=" [ p-x-pronoun-nominative ] " value="he" hidden> </data>
+                <data class=" [ p-x-pronoun-oblique ] " value="him" hidden> </data>
+                <data class=" [ p-x-pronoun-possessive ] " value="his" hidden> </data>
+            </div>
+            <ol class=" [ footer__navigation ] " role="navigation">
+                {% for link in navigation %}
+                    {% if link.secondary %}
+                        <li>
+                            <a class="colourful-anchor" href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <button id="color-scheme-toggle" class=" [ anchor ] [ requires-js  js-color-scheme-toggle ] ">
+                        <span class=" [ js-color-scheme-status ] ">Enable dark mode</span>
+                    </button>
+                </li>
+            </ol>
+            <ol class=" [ footer__navigation ] " role="navigation">
+                <li>
+                    <a id="copyright" rel="license" href="/license">© 2020 <span class="canada">Chris Burnell</span></a>
+                </li>
+                {% for link in social %}
+                    {% if not link.hidden %}
+                        <li{% if not link.primary %} hidden{% endif %}>
+                            <a href="{{ link.url }}" rel="me">{{ link.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <a rel="external" id="indiewebring" class="webring-links__previous" href="{{ author.urls.webring }}/previous" title="Previous website in the IndieWeb Webring">←</a>
+                    <a rel="external" class="webring-links__home" href="https://🕸💍.ws" title="Part of an IndieWeb WebRing"><span class="emoji" aria-hidden="true">🕸</span><span class="emoji" aria-hidden="true">💍</span></a>
+                    <a rel="external" id="webring" class="webring-links__next" href="{{ author.urls.webring }}/next" title="Next website in the IndieWeb Webring">→</a>
+                </li>
+            </ol>
+        </div>
+    </footer>
+
+    <script src="/js/helpers.js"></script>
+    <script src="/js/navigator.js"></script>
+    <script src="/js/color-scheme.js"></script>
+    <script src="/js/sparklines.js"></script>
+    <script src="/js/welcome.js"></script>
+
+    {% if category == 'code' or caniuse %}
+        <!-- Can I Use Embeds -->
+        <script src="https://cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js" async defer></script>
+    {% endif %}
+
+    {% if category == 'code' or codepen %}
+        <!-- CodePen Embeds -->
+        <script src="https://codepen.io/assets/embed/ei.js" async defer></script>
+    {% endif %}
+
+    {% if twitter or in_reply_to.link | default(in_reply_to).includes('twitter.com') %}
+        <!-- Twitter Cards -->
+        <script src="https://platform.twitter.com/widgets.js" async defer></script>
+    {% endif %}
+
+    {% if speakerdeck or speakerdeck_slug %}
+        <!-- Speaker Deck Embeds -->
+        <script src="https://speakerdeck.com/assets/embed.js" async defer></script>
+    {% endif %}
+</body>
+</html>

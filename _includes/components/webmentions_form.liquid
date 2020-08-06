@@ -1,8 +1,0 @@
-<!-- </textarea> --><!-- '"´ -->
-<form id="webmentions-form" class="webmentions__form" method="post" action="{{ site.author.urls.webmention }}/webmention">
-    <label for="webmention-source" class="webmentions__label">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this post?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
-    <input type="url" inputmode="url" name="source" id="webmention-source" class="webmentions__input  js-webmentions-input" aria-required="true" required aria-disabled="true" disabled>
-    <input type="hidden" name="target" value="{{ canonical }}">
-    <input type="submit" class="button  webmentions__submit  js-webmentions-submit" value="Send" aria-disabled="true" disabled>
-    <p>You can also leave an <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" rel="external">anonymonous comment</a>, thanks to <a href="https://commentpara.de" rel="external">Comment Parade</a>.</p>
-</form>

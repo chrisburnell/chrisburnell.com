@@ -10,7 +10,8 @@
 $breakpoints: (
     small: $measure-breakpoint-small,
     medium: $measure-breakpoint-medium,
-    large: $measure-breakpoint-large
+    large: $measure-breakpoint-large,
+    gigantic: $measure-breakpoint-gigantic
 ) !default;
 
 /// @type Map
@@ -18,31 +19,23 @@ $breakpoints: (
 /// @prop {Length} value - Measure value
 /// @see {Mixin} v
 $measures: (
+    one: $measure-one,
+    one-relative: $measure-one-relative,
     breakpoint-small: $measure-breakpoint-small,
     breakpoint-medium: $measure-breakpoint-medium,
     breakpoint-large: $measure-breakpoint-large,
+    breakpoint-gigantic: $measure-breakpoint-gigantic,
     gap: $measure-gap,
     gutter: $measure-gutter,
-    aside: $measure-aside,
-    content: $measure-content,
     avatar: $measure-avatar,
     avatar-small: $measure-avatar-small,
     icon: $measure-icon,
     logo: $measure-logo,
+    tiny: $measure-tiny,
     small: $measure-small,
-    small-relative: $measure-small-relative,
-    small-proportional: $measure-small-proportional,
     medium: $measure-medium,
-    medium-relative: $measure-medium-relative,
-    medium-proportional: $measure-medium-proportional,
     large: $measure-large,
-    large-relative: $measure-large-relative,
-    large-proportional: $measure-large-proportional,
-    gigantic: $measure-large,
-    gigantic-relative: $measure-large-relative,
-    gigantic-proportional: $measure-large-proportional,
-    one: $measure-one,
-    one-relative: $measure-one-relative,
+    gigantic: $measure-gigantic,
     line-length-minimum: $measure-line-length-minimum,
     line-length-maximum: $measure-line-length-maximum,
     line-length-responsive: $measure-line-length-responsive,
@@ -70,6 +63,7 @@ $site-colors: (
     bowhead: $color-bowhead,
     raven: $color-raven,
     coyote: $color-coyote,
+    bear: $color-bear,
     canada: $color-canada,
     black: $color-black,
     mineshaft: $color-mineshaft,
@@ -79,9 +73,25 @@ $site-colors: (
     white: $color-white,
     highlight: $color-highlight,
     black--alpha: $color-black--alpha,
+    black--beta: $color-black--beta,
     black--gamma: $color-black--gamma,
     black--delta: $color-black--delta,
-    raven--gamma: $color-raven--gamma
+    white--alpha: $color-white--alpha,
+    white--beta: $color-white--beta,
+    white--gamma: $color-white--gamma,
+    white--delta: $color-white--delta,
+    raven--alpha: $color-raven--alpha,
+    raven--beta: $color-raven--beta,
+    raven--gamma: $color-raven--gamma,
+    raven--delta: $color-raven--delta,
+    coyote--alpha: $color-coyote--alpha,
+    coyote--beta: $color-coyote--beta,
+    coyote--gamma: $color-coyote--gamma,
+    coyote--delta: $color-coyote--delta,
+    bowhead--alpha: $color-bowhead--alpha,
+    bowhead--beta: $color-bowhead--beta,
+    bowhead--gamma: $color-bowhead--gamma,
+    bowhead--delta: $color-bowhead--delta
 ) !default;
 
 /// @type Map
@@ -172,7 +182,6 @@ $border-styles: (
 /// @see {Mixin} v
 $border-radii: (
     default: $border-radius-default,
-    thin: $border-radius-thin,
     hairline: $border-radius-hairline
 ) !default;
 
@@ -247,23 +256,6 @@ $font-families: (
     alpha: $font-family-alpha,
     serif: $font-family-serif,
     monospace: $font-family-monospace
-) !default;
-
-/// @type Map
-/// @prop {String} key - Font Size Name
-/// @prop {Number} value - Font Size Value
-/// @see {Mixin} v
-$font-sizes: (
-    default: $font-size-default,
-    alpha: $font-size-alpha,
-    beta: $font-size-beta,
-    gamma: $font-size-gamma,
-    large: $font-size-large,
-    large-relative: $font-size-large-relative,
-    small: $font-size-small,
-    small-relative: $font-size-small-relative,
-    tiny: $font-size-tiny,
-    tiny-relative: $font-size-tiny-relative
 ) !default;
 
 /// @type Map
@@ -441,7 +433,6 @@ $variable-map: (
     color: $all-colors,
     font-display: $font-displays,
     font-family: $font-families,
-    font-size: $font-sizes,
     font-stretch: $font-stretches,
     font-variant: $font-variants,
     font-weight: $font-weights,
@@ -556,7 +547,6 @@ $property-map: (
     opacity: opacity,
     font-display: font-display,
     font-family: font-family,
-    font-size: font-size,
     font-stretch: font-stretch,
     font-variant: font-variant,
     font-weight: font-weight,
@@ -567,12 +557,3 @@ $property-map: (
     unicode-range: unicode-range,
     z-index: z-index
 ) !default;
-
-/// @type Map
-/// @see {Mixin} t
-/// @see {Mixin} v
-/// @see /src/scss/themes
-/// Unused with CSS Variables
-// $themes: (
-//     ...
-// ) !default;

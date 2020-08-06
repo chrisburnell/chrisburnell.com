@@ -1,0 +1,196 @@
+{% macro deckItem(item, now, posts, webmentions, hfeed = true, truncate = true) %}
+    {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
+    {%- set item_of_url = item_of -%}
+    {%- if item_of.url -%}
+        {% set item_of_url = item_of.url %}
+    {%- endif -%}
+    {%- set item_of_title = item_of_url -%}
+    {%- if item_of.title -%}
+        {% set item_of_title = item_of.title %}
+    {%- endif -%}
+    {%- if not item.data.authors -%}
+        {% set item_of_author_by_url = item_of_url | getPerson('object') %}
+        {% if item_of_author_by_url != item_of_url %}
+            {% set item_of_authors = item_of_author_by_url %}
+        {% endif %}
+    {%- endif -%}
+
+    {%- set item_in_reply_to = item.data.in_reply_to -%}
+    {%- set item_in_reply_to_url = item_in_reply_to -%}
+    {%- if item_in_reply_to.url -%}
+        {% set item_in_reply_to_url = item_in_reply_to.url %}
+    {%- endif -%}
+    {%- set item_in_reply_to_title = item_in_reply_to_url -%}
+    {%- if item_in_reply_to.title -%}
+        {% set item_in_reply_to_title = item_in_reply_to.title %}
+    {%- endif -%}
+    {%- if item_in_reply_to.authors -%}
+        {% set item_in_reply_to_authors = item_in_reply_to.authors %}
+    {%- else -%}
+        {% set item_in_reply_to_author_lookup = item_in_reply_to_url | getPerson('object') %}
+        {% if item_in_reply_to_author_lookup != item_in_reply_to_url %}
+            {% set item_in_reply_to_authors = item_in_reply_to_author_lookup %}
+        {% endif %}
+    {%- endif -%}
+
+    {%- set item_title = item.data.title -%}
+
+    <article{% if hfeed %} class="h-{{ item.data.mf_root }}"{% endif %}>
+        {% if item_in_reply_to %}
+            <div class="italic">
+                {% if item.data.rsvp %}
+                    <data class="p-rsvp" value="{{ item.data.rsvp.value }}" hidden></data>
+                    {% if item.data.rsvp.value == 'yes' %}
+                        {% emoji '✅' %}
+                        {% if item.data.rsvp.date | epochFormat > now %}
+                            {# Future #}
+                            <small>going to</small>
+                        {% elif item.data.rsvp.date | epochFormat <= now and item.data.rsvp.finish | epochFormat > now %}
+                            {# Current #}
+                            <small>currently attending</small>
+                        {% else %}
+                            {# Past #}
+                            <small>went to</small>
+                        {% endif %}
+                    {% elif item.data.rsvp.value == 'maybe' %}
+                        {% emoji '🤔' %}
+                        {% if item.data.rsvp.date | epochFormat > now %}
+                            {# Future #}
+                            <small>might go to</small>
+                        {% else %}
+                            {# Past #}
+                            <small>thought about going to</small>
+                        {% endif %}
+                    {% elif item.data.rsvp.value == 'interested' %}
+                        {% emoji '😯' %}
+                        {% if item.data.rsvp.date | epochFormat > now %}
+                            {# Future #}
+                            <small>interested in going to</small>
+                        {% else %}
+                            {# Past #}
+                            <small>was interested in going to</small>
+                        {% endif %}
+                    {% else %}
+                        {% emoji '😔' %}
+                        {% if item.data.rsvp.date | epochFormat > now %}
+                            {# Future #}
+                            <small>unable to go to</small>
+                        {% else %}
+                            {# Past #}
+                            <small>wasn’t able to go to</small>
+                        {% endif %}
+                    {% endif %}
+                {% else %}
+                    <small>in reply to</small>
+                {% endif %}
+                <a class="h-cite  u-in-reply-to" href="{{ item_in_reply_to_url }}">{{ item_in_reply_to_title | getPerson | getInternalTarget(posts) | getMastodonHandle | getTwitterHandle | getHost }}</a>
+                {% if item_in_reply_to_authors %}
+                    {% set first_author = item_in_reply_to_authors | toArray | first | getPerson %}
+                    {% if first_author != item_in_reply_to_title | getPerson %}
+                        <small>by</small>
+                        {% for author in item_in_reply_to_authors | toArray %}
+                            {% set author = author.url | default(author) | getPerson('object') %}
+                            {% if author.url %}
+                                <a href="{{ author.url }}">{{ author.title }}</a>{% if not loop.last %},{% endif %}
+                            {% else %}
+                                {{ author | getPerson }}{% if not loop.last %},{% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+                {# Non-Past #}
+                {% if item.data.rsvp.value == 'yes' %}
+                    {% if item.data.rsvp.date | dateFormat == now | dateFormat %}
+                        {# Today #}
+                        <small>from</small>
+                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
+                        –
+                        <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
+                    {% elif item.data.rsvp.date | epochFormat > now %}
+                        {# Future #}
+                        <small>on</small>
+                        {% if item.data.rsvp.date | dateFormat != item.data.rsvp.finish | dateFormat %}
+                            <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                            –
+                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
+                        {% else %}
+                            <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
+                        {% endif %}
+                    {% elif item.data.rsvp.date | epochFormat < now and item.data.rsvp.finish | epochFormat > now %}
+                        {# Current #}
+                        <small>from</small>
+                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
+                        –
+                        <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
+                    {% else %}
+                        {# Past #}
+                        <small>on</small>
+                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                        {% if item.data.rsvp.date | dateFormat != item.data.rsvp.finish | dateFormat %}
+                            –
+                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
+                        {% else %}
+                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if item_title or item_of_title %}
+            <h3>
+                {% if item.data.tags and item.data.tags.includes('clickthrough') and item.data.emoji %}
+                    <a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
+                        {% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
+                    </a>
+                {% elif item.data.emoji %}
+                    <a href="{{ item.url | striptags(true) | safe }}">
+                        {% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
+                    </a>
+                {% else %}
+                    <a href="{{ item.url | striptags(true) | safe }}">
+                        {{ item_title | default(item_of_title) | striptags(true) | safe }}
+                    </a>
+                {% endif %}
+            </h3>
+        {% endif %}
+        {% if item.data.lede and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
+            <p>{{ item.data.lede | striptags(true) | urlize | safe }}</p>
+        {% elif item.data.lede %}
+            <p>{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% elif item.data.category == 'bookmark' %}
+            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% elif item.data.category == 'code' %}
+            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% elif item.data.category == 'like' %}
+            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% elif item.data.category == 'note' %}
+            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% elif item.data.category == 'recipe' %}
+            <p>A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {% for author in item.data.authors | toArray %}{% if author.url %}<a href="{{ author | getPerson('url') }}">{{ author | getPerson }}</a>{% if not loop.last %}, {% endif %}{% else %}{{ author | getPerson }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}{% endif %}</p>
+        {% elif item.data.category == 'talk' %}
+            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+        {% endif %}
+        {% if item.date %}
+            <div class="italic">
+                <small>published</small>
+                <a class="u-url" href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class="dt-published" datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
+                {%- if item.data.updated %}
+                    <small>updated</small>
+                    <time class="dt-updated" datetime="{{ item.data.updated | w3DateFormat }}">{{ item.data.updated | dateFormat }}</time>
+                {% endif %}
+                {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
+                {% if responses.length %}
+                    <a class="webmentions-count" href="{{ item.url }}#webmentions">{% emoji '📢' %} {{ responses.length }}</a>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if item.data.mf_property and item_of %}
+            <data class="u-{{ item.data.mf_property }}" hidden>{{ item_of_url | default(item_of) }}</data>
+        {% endif %}
+        {% if item.data.category %}
+            <data class="u-category" value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
+        {% endif %}
+        <data class="u-author" value="/" hidden></data>
+    </article>
+{% endmacro %}

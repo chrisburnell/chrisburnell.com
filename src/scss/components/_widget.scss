@@ -9,15 +9,15 @@
     flex-direction: column;
 }
 
-.widget--browse-posts,
+.widget--browse,
 .widget--pagination {
     flex-direction: row;
     justify-content: space-between;
 }
 
 .widget-related-anchor,
-.widget-previous-anchor,
-.widget-next-anchor {
+.widget-anchor-previous,
+.widget-anchor-next {
     @include v(margin-top, medium);
     @include v(font-weight, bold);
 }
@@ -31,8 +31,8 @@
     }
 }
 
-.widget-previous-anchor,
-.widget-next-anchor {
+.widget-anchor-previous,
+.widget-anchor-next {
     max-width: calc(50% - (var(--measure-gutter) / 2));
     flex: 0 1 auto;
 
@@ -41,17 +41,17 @@
     }
 }
 
-.widget-previous-anchor {
-    .widget--browse-posts &::before {
+.widget-anchor-previous {
+    .widget--browse &::before {
         content: "← Older";
     }
 }
 
-.widget-next-anchor {
+.widget-anchor-next {
     text-align: right;
     margin-left: auto;
 
-    .widget--browse-posts &::before {
+    .widget--browse &::before {
         content: "Newer →";
     }
 }

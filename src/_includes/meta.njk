@@ -1,0 +1,211 @@
+<ul class=" [ meta ] ">
+    {% if in_reply_to %}
+        <li class="in-reply-to">
+            {% if rsvp %}
+                <data class="p-rsvp" value="{{ rsvp.value }}" hidden></data>
+                {% if rsvp.value == 'yes' %}
+                    {% emoji '✅' %}
+                    {% if rsvp.date | epochFormat > global.now %}
+                        {# Future #}
+                        <small>going to</small>
+                    {% elif rsvp.date | epochFormat <= global.now and rsvp.finish | epochFormat > global.now %}
+                        {# Current #}
+                        <small>currently attending</small>
+                    {% else %}
+                        {# Past #}
+                        <small>went to</small>
+                    {% endif %}
+                {% elif rsvp.value == 'maybe' %}
+                    {% emoji '🤔' %}
+                    {% if rsvp.date | epochFormat > global.now %}
+                        {# Future #}
+                        <small>might go to</small>
+                    {% else %}
+                        {# Past #}
+                        <small>thought about going to</small>
+                    {% endif %}
+                {% elif rsvp.value == 'interested' %}
+                    {% emoji '😯' %}
+                    {% if rsvp.date | epochFormat > global.now %}
+                        {# Future #}
+                        <small>interested in going to</small>
+                    {% else %}
+                        {# Past #}
+                        <small>was interested in going to</small>
+                    {% endif %}
+                {% else %}
+                    {% emoji '😔' %}
+                    {% if rsvp.date | epochFormat > global.now %}
+                        {# Future #}
+                        <small>unable to go to</small>
+                    {% else %}
+                        {# Past #}
+                        <small>wasn’t able to go to</small>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% emoji '↪️' %}
+                <small>in reply to</small>
+            {% endif %}
+            <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_url }}">
+                {{ in_reply_to_title | getPerson | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}
+            </a>
+            {% if in_reply_to_authors %}
+                {% set first_author = in_reply_to_authors | toArray | first | getPerson %}
+                {% if first_author != in_reply_to_title | getPerson %}
+                    <small>by</small>
+                    {% for author in in_reply_to_authors | toArray %}
+                        {% set author = author.url | default(author) | getPerson('object') %}
+                        {% if author.url %}
+                            <a href="{{ author.url }}">{{ author.title }}</a>{% if not loop.last %},{% endif %}
+                        {% else %}
+                            {{ author | getPerson }}{% if not loop.last %},{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </li>
+    {% endif %}
+    {% if rsvp %}
+        <li class="rsvp">
+            {% emoji '🗓' %}
+            {% if rsvp.finish | epochFormat > global.now %}
+                <small>taking place</small>
+            {% else %}
+                <small>took place</small>
+            {% endif %}
+            <time class="dt-start" datetime="{{ rsvp.date | w3DateFormat }}">{{ rsvp.date | dateFormat }} {{ rsvp.date | timeFormat(false) }}</time>
+            –
+            <time class="dt-end" datetime="{{ rsvp.finish | w3DateFormat }}">{% if rsvp.date | dateFormat != rsvp.finish | dateFormat %}{{ rsvp.finish | dateFormat }} {% endif %}{{ rsvp.finish | timeFormat(true) }}</time>
+        </li>
+    {% endif %}
+    {% if tags.includes('article') %}
+        <li class="reading-length">
+            {% emoji '📚' %}
+            <strong>{{ helpers.getReadingTime(content) }}</strong>
+            <small>minute read</small>
+        </li>
+    {% endif %}
+    {%- set tags_filtered = tags | categoryFilter | tagFilter -%}
+    {% if tags_filtered.length %}
+        <li class="tags">
+            {% emoji '🏷' %}
+            <small>tagged</small>
+            {% if tags_filtered.length > 1 %}<ul class="meta__list">{% endif %}
+                {% for tag in tags_filtered %}
+                    {% if tags_filtered.length > 1 %}<li>{% endif %}<a class="p-tag" href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
+                {% endfor %}
+            {% if tags_filtered.length > 1 %}</ul>{% endif %}
+        </li>
+    {% endif %}
+    {% if authors %}
+        <li class="authors">
+            {% if category == 'beer' %}
+                {% emoji '🍺' %}
+                <small>brewed by</small>
+            {% elif category == 'book' %}
+                {% emoji '✍️' %}
+                <small>written by</small>
+            {% elif category == 'game' %}
+                {% emoji '🕹' %}
+                <small>produced by</small>
+            {% elif category == 'music' %}
+                {% emoji '🎼' %}
+                <small>created by</small>
+            {% elif category == 'recipe' %}
+                {% emoji '📝' %}
+                <small>sourced from</small>
+            {% else %}
+                {% emoji '✍️' %}
+                <small>authored by</small>
+            {% endif %}
+            {%- set authors = authors | toArray -%}
+            {% if authors.length > 1 %}<ul class="meta__list">{% endif %}
+            {% for author in authors -%}
+                {% if authors.length > 1 %}<li>{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
+            {%- endfor %}
+            {% if authors.length > 1 %}</ul>{% endif %}
+            {% if console %}
+                <small>for</small>
+                <strong>{{ console | getConsole | safe }}</strong>
+            {% endif %}
+        </li>
+    {% endif %}
+    {% if release %}
+        <li class="date-released">
+            {% emoji '🗓' %}
+            <small>released</small>
+            <time class="dt-released" datetime="{{ release | w3DateFormat }}">{{ release | dateFormat }}</time>
+        </li>
+    {% endif %}
+    {% if rating %}
+        <li class="review-rating">
+            {% emoji '✨' %}
+            <small>my rating</small>
+            {% if rating == 'Parti Pris' %}
+                <data class=" [ p-rating ] ">Parti Pris</data>
+            {% else %}
+                <data class=" [ rating ] [ p-rating ] " value="{{ rating }}" title="{{ rating }} out of 5"> </data>
+                <data class=" [ p-worst ] " hidden>0</data>
+                <data class=" [ p-best ] " hidden>5</data>
+            {% endif %}
+        </li>
+    {% endif %}
+    {% if checkin %}
+        <li class="checkin">
+            {% emoji '📍', 'checked in at' %}
+            {% set checkin = checkin.title | default(checkin) | getPlace('object') %}
+            {% if checkin.url %}
+                <a class="u-location" href="{{ checkin.url }}">{{ checkin.title }}</span>
+            {% else %}
+                <span class="p-location">{{ checkin.title | default(checkin) | getPlace() }}</span>
+            {% endif %}
+        </li>
+    {% endif %}
+    {% if badges %}
+        <li class="badges">
+            {% emoji '🏆', 'earning badges' %}
+            {% if badges.length > 1 %}<ul class="meta__list">{% endif %}
+            {% for badge in badges -%}
+                {% if badges.length > 1 %}<li>{% endif %}
+                    {% if badge.id %}
+                        <a href="{{ author.urls.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
+                    {% else %}
+                        <a href="#_">{{ badge.title | default(badge) }}</a>
+                    {% endif %}
+                {% if badges.length > 1 %}</li>{% endif %}
+            {%- endfor %}
+            {% if badges.length > 1 %}</ul>{% endif %}
+        </li>
+    {% endif %}
+    {% if syndicate_to %}
+        <li class="syndicate-to">
+            {% emoji '⤴️' %}
+            <small>also on</small>
+            {% if syndicate_to.length > 1 %}<ul class="meta__list">{% endif %}
+            {% for syndication in syndicate_to %}{% if syndicate_to.length > 1 %}<li>{% endif %}<a href="{{ syndication }}">{{ syndication | getTarget }}</a>{% if syndicate_to.length > 1 %}</li>{% endif %}{% endfor %}
+            {% if syndicate_to.length > 1 %}</ul>{% endif %}
+        </li>
+    {% endif %}
+    {% if posting_method %}
+        <li class="posting-method">
+            {% emoji '🖋' %}
+            <small>posted with</small>
+            {% if posting_method | getMethod('url') %}
+                <a href="{{ posting_method }}">{{ posting_method | getMethod }}</a>
+            {% else %}
+                <strong>{{ posting_method }}</strong>
+            {% endif %}
+        </li>
+    {% endif %}
+    <li class="shorturl">
+        {%- set shorturl_id %}{{ page.date | newBase60Format(prefix, collections[category]) }}{% endset -%}
+        {% emoji '🔗', 'shorturl' %}
+        <a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
+    </li>
+    <li hidden>
+        <a href="https://fed.brid.gy" hidden></a>
+    </li>
+</ul>
+<data class="u-url" value="{{ page.url }}" hidden></data>
+<data class="u-author" value="/" hidden></data>

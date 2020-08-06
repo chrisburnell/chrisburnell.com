@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Bowhead",
+    "hex": "4f758e",
+    "hsl": "203.7, 28.5%, 43.2%"
+  },
+  {
+    "name": "Raven",
+    "hex": "5f8aa6",
+    "hsl": "203.7, 28.5%, 51.2%",
+    "pantone": "7454 C"
+  },
+  {
+    "name": "Coyote",
+    "hex": "7298b1",
+    "hsl": "203.7, 28.5%, 57.1%"
+  },
+  {
+    "name": "Canada",
+    "hex": "eb2d37",
+    "hsl": "356.8, 82.6%, 54.9%"
+  },
+  {
+    "name": "Black",
+    "hex": "060606",
+    "hsl": "0, 0%, 2.4%"
+  },
+  {
+    "name": "Mineshaft",
+    "hex": "2b2b2b",
+    "hsl": "0, 0%, 16.9%"
+  },
+  {
+    "name": "Kaiser",
+    "hex": "4f4f4f",
+    "hsl": "0, 0%, 31%"
+  },
+  {
+    "name": "Dove",
+    "hex": "737373",
+    "hsl": "0, 0%, 45.1%"
+  },
+  {
+    "name": "Alto",
+    "hex": "dddddd",
+    "hsl": "0, 0%, 86.7%"
+  },
+  {
+    "name": "White",
+    "hex": "f9f9f9",
+    "hsl": "0, 0%, 97.6%"
+  }
+]

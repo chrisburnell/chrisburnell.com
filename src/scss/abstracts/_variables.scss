@@ -4,58 +4,48 @@
 ////
 
 /// @type Length
-$base-font-size: 100% !default;
+$measure-one: 1rem !default;
+/// @type Length
+$measure-one-relative: 1em !default;
 
 /// @type Length
 $measure-breakpoint-small: 500px !default;
 /// @type Length
-$measure-breakpoint-medium: 800px !default;
+$measure-breakpoint-medium: 700px !default;
 /// @type Length
-$measure-breakpoint-large: 1140px !default;
+$measure-breakpoint-large: 1000px !default;
 /// @type Length
-$measure-gap: 2.25rem !default;
+$measure-breakpoint-gigantic: 1200px !default;
+
+/// @type Length
+$measure-gap: 2.5rem !default;
 /// @type Length
 $measure-gutter: 1.25rem !default;
-/// @type Length
-$measure-aside: 15.875rem !default;
-/// @type Length
-$measure-content: 50.625rem !default;
-/// @type Length
-$measure-avatar: 6.25rem !default;
-/// @type Length
-$measure-avatar-small: 3rem !default;
-/// @type Length
-$measure-icon: 40px !default;
+
+/// ARE THESE NEEDED
 /// @type Length
 $measure-logo: 8.5rem !default;
+/// ARE THESE NEEDED
+/// @type Length
+$measure-avatar: 6.25rem !default;
+/// ARE THESE NEEDED
+/// @type Length
+$measure-avatar-small: 3rem !default;
+/// ARE THESE NEEDED
+/// @type Length
+$measure-icon: 40px !default;
+
+/// @type Length
+$measure-tiny: 0.3125rem !default;
 /// @type Length
 $measure-small: 0.625rem !default;
 /// @type Length
-$measure-small-relative: 0.625em !default;
-/// @type Length
-$measure-small-proportional: 2vmin !default;
-/// @type Length
 $measure-medium: 1.25rem !default;
-/// @type Length
-$measure-medium-relative: 1.25em !default;
-/// @type Length
-$measure-medium-proportional: 4vmin !default;
 /// @type Length
 $measure-large: 2.25rem !default;
 /// @type Length
-$measure-large-relative: 2.25em !default;
-/// @type Length
-$measure-large-proportional: 8vmin !default;
-/// @type Length
 $measure-gigantic: 4rem !default;
-/// @type Length
-$measure-gigantic-relative: 4em !default;
-/// @type Length
-$measure-gigantic-proportional: 12vmin !default;
-/// @type Length
-$measure-one: 1rem !default;
-/// @type Length
-$measure-one-relative: 1em !default;
+
 /// @type Length
 $measure-line-length-minimum: 21em !default;
 /// @type Length
@@ -68,7 +58,7 @@ $measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-
 /// @type Number
 $opacity-alpha: 0.9 !default;
 /// @type Number
-$opacity-beta: 0.7 !default;
+$opacity-beta: 0.5 !default;
 /// @type Number
 $opacity-gamma: 0.1 !default;
 /// @type Number
@@ -95,21 +85,57 @@ $color-bowhead: hsl(203.7, 28.5%, 43.2%) !default; // #4f758e
 $color-raven: hsl(203.7, 28.5%, 51.2%) !default; // #5f8aa6
 /// @type Color
 $color-coyote: hsl(203.7, 28.5%, 57.1%) !default; // #7298b1
-$color-canada-h: 356.8 !default;
-$color-canada-s: 82.6% !default;
-$color-canada-l: 54.9% !default;
 /// @type Color
-$color-canada: hsl($color-canada-h, $color-canada-s, $color-canada-l) !default; // #eb2d37
+$color-bear: mix($color-raven, $color-white, $opacity-gamma * 100) !default; // #eaeef1
+/// @type Color
+$color-canada: hsl(356.8, 82.6%, 54.9%) !default; // #eb2d37
 /// @type Color
 $color-highlight: hsl(50.6, 100%, 50%) !default; // #ffd700
+
 /// @type Color
 $color-black--alpha: rgba($color-black, $opacity-alpha) !default;
+/// @type Color
+$color-black--beta: rgba($color-black, $opacity-beta) !default;
 /// @type Color
 $color-black--gamma: rgba($color-black, $opacity-gamma) !default;
 /// @type Color
 $color-black--delta: rgba($color-black, $opacity-delta) !default;
+
+/// @type Color
+$color-white--alpha: rgba($color-white, $opacity-alpha) !default;
+/// @type Color
+$color-white--beta: rgba($color-white, $opacity-beta) !default;
+/// @type Color
+$color-white--gamma: rgba($color-white, $opacity-gamma) !default;
+/// @type Color
+$color-white--delta: rgba($color-white, $opacity-delta) !default;
+
+/// @type Color
+$color-raven--alpha: rgba($color-raven, $opacity-alpha) !default;
+/// @type Color
+$color-raven--beta: rgba($color-raven, $opacity-beta) !default;
 /// @type Color
 $color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
+/// @type Color
+$color-raven--delta: rgba($color-raven, $opacity-delta) !default;
+
+/// @type Color
+$color-coyote--alpha: rgba($color-coyote, $opacity-alpha) !default;
+/// @type Color
+$color-coyote--beta: rgba($color-coyote, $opacity-beta) !default;
+/// @type Color
+$color-coyote--gamma: rgba($color-coyote, $opacity-gamma) !default;
+/// @type Color
+$color-coyote--delta: rgba($color-coyote, $opacity-delta) !default;
+
+/// @type Color
+$color-bowhead--alpha: rgba($color-bowhead, $opacity-alpha) !default;
+/// @type Color
+$color-bowhead--beta: rgba($color-bowhead, $opacity-beta) !default;
+/// @type Color
+$color-bowhead--gamma: rgba($color-bowhead, $opacity-gamma) !default;
+/// @type Color
+$color-bowhead--delta: rgba($color-bowhead, $opacity-delta) !default;
 
 /// @type Color
 $color-highlight-alpha: hsl(194.5, 14.1%, 40.2%) !default; // #586e75
@@ -174,43 +200,13 @@ $border-style-alternate: dotted !default;
 
 /// @type Length
 /// @see {Mixin} border-radius
-$border-radius-default: 0.375rem !default;
-/// @type Length
-/// @see {Mixin} border-radius
-$border-radius-thin: 0.25rem !default;
+$border-radius-default: 0.25rem !default;
 /// @type Length
 /// @see {Mixin} border-radius
 $border-radius-hairline: 0.125rem !default;
 
 /// @type String
 $font-display-default: swap !default;
-
-/// @type Length
-$font-size-default: 1rem !default;
-// 52px
-/// @type Length
-$font-size-alpha: 3.25rem !default;
-// 22px
-/// @type Length
-$font-size-beta: 1.375rem !default;
-// 18px
-/// @type Length
-$font-size-gamma: 1.125rem !default;
-// 20px
-/// @type Length
-$font-size-large: 1.25rem !default;
-/// @type Length
-$font-size-large-relative: 1.25em !default;
-// 14px
-/// @type Length
-$font-size-small: 0.875rem !default;
-/// @type Length
-$font-size-small-relative: 0.875em !default;
-// 12px
-/// @type Length
-$font-size-tiny: 0.75rem !default;
-/// @type Length
-$font-size-tiny-relative: 0.75em !default;
 
 /// @type String
 $font-stretch-default: normal !default;
@@ -280,3 +276,13 @@ $z-index-notification: 5 !default;
 
 /// @type Number
 $max-columns: 2 !default;
+
+/// @type String
+$color-scheme: "light";
+
+/// @type Number
+$fluid-size: 16;
+/// @type Number
+$fluid-ratio-minimum: 1.2;
+/// @type Number
+$fluid-ratio-maximum: 1.292;

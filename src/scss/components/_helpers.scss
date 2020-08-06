@@ -3,13 +3,24 @@
 /// @group components
 ////
 
-// Hide elements visually
-[hidden]:not([hidden="false"]),
-.hidden {
-    &:not([href]),
-    &[href]:not(:focus):not(:active) {
-        @include hidden;
-    }
+// Full Bleed
+.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+// <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
+// This allows screen readers to read aloud acronyms as they would be spoken, as
+// opposed to an initialism, for which each letter is spoken individually,
+// (e.g. HTML, CSS).
+.acronym {
+    text-transform: uppercase;
+}
+
+// Break text on any character
+.break-anywhere {
+    word-wrap: anywhere;
 }
 
 // Hyphenate any looooooooooooooooooooo-
@@ -27,7 +38,6 @@
 // Make things non-interactive
 .non-interactive {
     pointer-events: none;
-    cursor: not-allowed; // kind of redundant
 }
 
 // Turn off motion (for reduced-motion-like cases)
@@ -37,14 +47,89 @@
     scroll-behavior: auto !important;
 }
 
-// Make things short
-.leading-small {
-    @include v(line-height, small);
-}
-
 // Make things that require JS when JS is not available unavailable
 .requires-js {
     .no-js & {
         display: none;
     }
+}
+
+// Make text serifed and italicised
+.fancy {
+    @include v(font-family, serif);
+    font-style: italic;
+    // font-size: var(--font-scale--1);
+}
+
+// Make text italicised
+.italic {
+    font-style: italic;
+}
+
+.serif {
+    @include v(font-family, serif);
+}
+
+.monospace {
+    @include v(font-family, monospace);
+}
+
+// Owls
+@each $key, $_ in $measures {
+    .owl--#{$key} > * + * {
+        @include v(margin-top, #{$key});
+    }
+}
+
+// Rating
+.rating {
+    display: inline-block;
+    position: relative;
+    font-size: var(--font-scale-1);
+    line-height: 1;
+
+    &::before,
+    &::after {
+        content: "★★★★★";
+        speak: none;
+    }
+
+    &::before {
+        @include v(color, alto);
+    }
+
+    &::after {
+        background-color: inherit;
+        @include v(color, kaiser);
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:not([value]) {
+        display: none;
+    }
+
+    @for $i from 1 through 19 {
+        &[value="#{$i / 4}"]::after {
+            width: range-map($i, 0, 20, 0%, 100%);
+        }
+    }
+    &[value="5"]::after {
+        width: 100%;
+    }
+}
+
+// Emoji
+.emoji {
+    font-size: var(--font-scale-0);
+    font-style: normal;
+    vertical-align: middle;
+    text-shadow: none;
+}
+
+.webmentions-count {
+    @include v(margin-left, small);
 }

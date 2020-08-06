@@ -1,0 +1,59 @@
+////
+/// Footer
+/// @group layout
+////
+
+.footer {
+    background-color: var(--color-mineshaft);
+    @include v(padding-top, large);
+    @include v(padding-bottom, large);
+    border-top: var(--border-width-thin) solid var(--color-coyote);
+
+    &,
+    a,
+    button {
+        color: var(--color-white);
+    }
+
+    .wrap {
+        @include media("below:medium") {
+            @include owl(medium);
+        }
+
+        @include media("above:medium") {
+            display: grid;
+            grid-template-columns:
+                [left-start]
+                1fr
+                [left-end]
+                var(--measure-gap)
+                [right-start]
+                1fr
+                [right-end];
+            grid-template-rows: auto 1fr;
+            @include v(row-gap, gutter);
+        }
+
+        .author {
+            grid-column: right;
+            grid-row: 1/3;
+        }
+
+        .footer__navigation {
+            grid-column: left;
+        }
+    }
+}
+
+.footer__navigation {
+    li {
+        display: inline-block;
+    }
+
+    li + li {
+        &::before {
+            content: "·";
+            display: inline-block;
+        }
+    }
+}

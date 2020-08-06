@@ -1,0 +1,109 @@
+////
+/// Navigation
+/// @group components
+////
+
+.navigation {
+
+}
+
+.navigation__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    @include v(column-gap, small);
+    @include v(row-gap, tiny);
+
+    @include media("above:small") {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto;
+    }
+
+    li {
+        text-align: center;
+    }
+
+    a {
+        @include transition;
+        color: inherit;
+        display: inline-block;
+        font-size: var(--font-scale-0);
+        @include v(font-weight, bold);
+        padding: var(--measure-tiny) var(--measure-small);
+        position: relative;
+        text-decoration: none;
+        text-shadow:
+            1px 1px var(--color-bear),
+            -1px 1px var(--color-bear),
+            1px -1px var(--color-bear),
+            -1px -1px var(--color-bear);
+        z-index: 0;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &[aria-current="page"] {
+            background-color: transparent;
+            background-image: linear-gradient(
+                to bottom,
+                $color-transparent 0,
+                $color-transparent 55%,
+                $color-coyote 55%,
+                $color-bowhead calc(55% + 0.5em),
+                $color-transparent calc(55% + 0.5em),
+                $color-transparent 100%
+            );
+            outline: none;
+        }
+    }
+
+    &:hover [aria-current="page"]:not(:hover):not(:focus):not(:active) {
+        background-image: linear-gradient(
+            to bottom,
+            $color-transparent 0,
+            $color-transparent 55%,
+            $color-coyote--beta 55%,
+            $color-bowhead--beta calc(55% + 0.625em),
+            $color-transparent calc(55% + 0.625em),
+            $color-transparent 100%
+        );
+    }
+
+    // Cicada Interactions
+    :nth-child(1) a {
+        &:hover,
+        &:focus {
+            transform: translateY(-7.5%) rotateZ(-4deg);
+        }
+        &:active {
+            transform: translateY(5%) rotateZ(-4deg);
+        }
+    }
+    :nth-child(2) a {
+        &:hover,
+        &:focus {
+            transform: translateY(-7.5%) rotateZ(5deg);
+        }
+        &:active {
+            transform: translateY(5%) rotateZ(5deg);
+        }
+    }
+    :nth-child(3) a {
+        &:hover,
+        &:focus {
+            transform: translateY(-7.5%) rotateZ(3deg);
+        }
+        &:active {
+            transform: translateY(5%) rotateZ(3deg);
+        }
+    }
+    :nth-child(4) a {
+        &:hover,
+        &:focus {
+            transform: translateY(-7.5%) rotateZ(-4deg);
+        }
+        &:active {
+            transform: translateY(5%) rotateZ(-4deg);
+        }
+    }
+}

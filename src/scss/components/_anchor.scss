@@ -4,22 +4,11 @@
 ////
 
 a {
-    %heading-elements & {
+    h2 & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
         @include v(text-decoration-thickness, thin);
         @include v(text-underline-offset);
-    }
-
-    .dark-background & {
-        @include v(color, white);
-        @include v(text-decoration-color, dove);
-
-        &:hover,
-        &:focus,
-        &:active {
-            @include v(text-decoration-color, canada);
-        }
     }
 
     // hide extra content, text targetted only to screen readers
@@ -41,22 +30,6 @@ a {
     }
 }
 
-// Title Anchors inside Headings
-.title-anchor {
-    display: inline-block;
-
-    &,
-    &:link {
-        @include v(text-decoration-color, transparent);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-        @include v(color, kaiser);
-    }
-}
-
 // Fragment Anchors inside Headings
 .fragment-anchor {
     @include case(lowercase);
@@ -69,14 +42,14 @@ a {
     position: absolute;
     top: var(--border-width-thin);
     right: calc(var(--measure-small) * -1);
-    @include v(font-size, small);
+    font-size: inherit;
     @include v(font-weight, bold);
     @include v(line-height);
     text-shadow: none;
 
-    %heading-elements:hover &,
-    %heading-elements:focus &,
-    %heading-elements:active &,
+    h2:hover &,
+    h2:focus &,
+    h2:active &,
     &:target {
         display: inline-block;
         visibility: visible;
@@ -90,7 +63,7 @@ a {
 }
 
 // Anchor Target Animation
-%heading-elements,
+h2,
 sup,
 li {
     &[id] {

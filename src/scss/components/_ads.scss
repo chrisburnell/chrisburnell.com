@@ -5,6 +5,7 @@
 
 .ads {
     @include owl;
+    @include v(margin-top, gigantic);
 }
 
 .ad {
@@ -12,6 +13,7 @@
     @include v(max-width, breakpoint-small);
     display: flex;
     flex-direction: column;
+
     margin-left: auto;
     margin-right: auto;
 
@@ -39,14 +41,13 @@
     background-clip: padding-box;
     display: flex;
     align-items: center;
-    @include v(border-width, thin);
-    @include v(border-style);
-    @include v(border-color, alto);
-    @include v(padding, small);
+    @include v(padding, medium);
+    border-top: var(--border-width-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
 }
 
 .ad__image {
-    border-radius: var(--border-radius-thin) 0 0 var(--border-radius-thin);
+    border-radius: 0 0 0 var(--border-radius-thin);
     border-right-width: 0;
     justify-content: center;
     margin: 0;
@@ -59,7 +60,7 @@
 
 .ad__content {
     flex: 1;
-    border-radius: 0 var(--border-radius-thin) var(--border-radius-thin) 0;
+    border-radius: 0 0 var(--border-radius-thin) 0;
     border-left-width: 0;
     @include v(line-height, small);
 }
@@ -69,7 +70,7 @@
     @include v(color, kaiser);
     display: block;
     @include v(padding, small);
-    @include v(font-size, tiny);
+    font-size: var(--font-scale--1);
     @include v(font-weight, bold);
     line-height: 1;
     text-align: center;

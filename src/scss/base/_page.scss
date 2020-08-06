@@ -5,7 +5,6 @@
 
 html {
     @include v(background-color, kaiser);
-    min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     // prevent horizontal jump when navigating short page <--> tall page
@@ -13,22 +12,26 @@ html {
     overscroll-behavior: contain;
     scroll-behavior: smooth;
     scrollbar-color: v(color, raven) v(color, white);
-    font-size: var(--base-font-size);
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-variant-numeric: oldstyle-nums;
+    font-size: 100%;
     // prevent adjustments of font-size after orientation changes in IE on
     // Windows Phone and in iOS
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: oldstyle-nums;
 }
 
 body {
     @include v(background-color, white);
     @include v(color, kaiser);
     width: 100%;
+    min-height: 100vh;
     margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     @include font-family(default);
+    font-size: var(--font-scale-0);
     font-style: normal;
     @include v(font-weight);
     @include v(line-height);
@@ -37,7 +40,6 @@ body {
 // Content Elements
 blockquote,
 details,
-table,
 dl,
 ol,
 ul,

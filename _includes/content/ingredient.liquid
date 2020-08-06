@@ -1,5 +1,0 @@
-{% if include.text %}
-    <a class="ingredient-link" href="#{{ include.id | downcase | handle | replace: ' ', '-' | replace: '/', '-' | replace: ',', '' }}" title="{{ include.text }}">{{ include.text }}</a>
-{% else %}
-    <a class="ingredient-link" href="#{{ include.id | downcase | handle | replace: ' ', '-' | replace: '/', '-' | replace: ',', '' }}" title="{{ include.id | downcase | handle | replace: ' ', '-' | replace: '/', '-' | replace: ',', '' }}">{{ include.id }}</a>
-{% endif %}

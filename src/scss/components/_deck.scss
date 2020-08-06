@@ -1,146 +1,41 @@
 ////
 /// Deck
 /// @group components
-/// @link https://chrisburnell.com/styleguide/#deck
 ////
 
 .deck {
-    display: grid;
-    grid-template-columns: 1fr;
-    @include v(grid-gap, medium);
-    @include v(line-height, small);
 
-    @include media("screen", "above:small") {
-        // 1───────────────────2→
-        // │ minmax(20em, 1fr) │→
-        // 2───────────────────┴→
-        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-    }
-
-    li,
     article {
-        display: flex;
-        flex-direction: column;
+        @include owl(tiny);
+        @include v(max-width, breakpoint-medium);
+        @include v(max-width, line-length-clamp);
+        @include v(padding-top,    medium);
+        @include v(padding-bottom, medium);
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    article + article {
+        border-top: var(--border-width-thin) solid var(--color-black--delta);
     }
 
-    article,
     a {
-        flex: 1 0 100%;
+        color: inherit;
     }
 
-    a {
-        @include border-radius;
-        display: block;
-        @include v(padding, medium);
-        overflow: hidden;
-        text-decoration: none;
-
-        &::before {
-            content: "";
-            @include absolute(full);
-            @include transition(opacity);
-            opacity: 0;
-            background-position: center;
-            background-size: cover;
+    h3 {
+        a:not(:hover):not(:focus):not(:active) {
+            text-decoration-color: var(--color-raven);
         }
 
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: v(background-color, raven--gamma) !important;
-
-            &::before {
-                background-image: var(--cover);
-                @include v(opacity, gamma);
-            }
+        .emoji {
+            display: inline-block;
+            @include v(padding-right, small);
         }
-
-        &:active {
-            outline-width: 0;
-        }
-
-        aside & {
-            @include v(padding, small);
-        }
-    }
-
-    .title,
-    .lede,
-    .date {
-        text-shadow: 0 var(--border-width-hairline) 0 var(--color-white);
-    }
-
-    .title {
-        width: auto;
-        display: inline-block;
-        @include v(margin-bottom, small);
-    }
-    a:link {
-        .title {
-            @include transition(text-decoration-color);
-            text-decoration: underline;
-            @include v(text-decoration-color, alto);
-            @include v(text-decoration-thickness, thin);
-            @include v(text-underline-offset);
-        }
-    }
-    a:hover,
-    a:focus,
-    a:active {
-        .title {
-            @include v(color, raven);
-            @include v(text-decoration-color, canada);
-        }
-    }
-
-    [rel*="external"] {
-        %heading-elements::after {
-            content: " ↗";
-        }
-    }
-
-    .lede,
-    .date {
-        width: 100%;
-        @include v(color, dove);
-        @include v(font-size, small);
-        @include v(font-weight, bold);
-    }
-
-    .lede {
-        @include hyphenate;
-        margin-bottom: 0;
-        overflow: hidden;
-        line-clamp: 3;
-        text-overflow: ellipsis;
-    }
-
-    .date {
-        text-align: right;
-
-        &::before {
-            // EN DASH, NO-BREAK SPACE
-            content: "– ";
-        }
-    }
-
-    dl + .date {
-        @include v(margin-top, small);
-    }
-
-    .emoji {
-        @include v(margin-right, small);
-    }
-
-    .badges {
-        @include v(font-size, small);
-    }
-
-    .checkin {
-        display: block;
-    }
-
-    .rating {
-        @include v(margin-top, small);
     }
 }

@@ -1,0 +1,12 @@
+{% if photo %}
+    {% set photos = photo | toArray %}
+    {% for item in photos %}
+        <figure>
+            <img alt="" role="presentation" loading="lazy"
+                 src="{{ item.url | default(item) }}">
+            {% if item.alt %}
+                <figcaption>{{ item.alt }}</figcaption>
+            {% endif %}
+        </figure>
+    {% endfor %}
+{% endif %}

@@ -8,11 +8,10 @@ blockquote {
     @include quotes;
     @include v(background-color, raven--gamma);
     width: 100%;
-    @include v(max-width, line-length-responsive);
+    @include v(max-width, line-length-clamp);
     @include v(padding, medium);
     margin: 0 auto var(--measure-medium);
 
-    %monospace-elements,
     cite,
     strong {
         font-style: normal;
@@ -50,7 +49,8 @@ blockquote {
     }
 }
 .twitter-tweet {
-    margin: 0 auto var(--measure-medium) !important;
+    margin-top: var(--measure-large) !important;
+    margin-bottom: 0 !important;
 }
 
 cite {

@@ -1,0 +1,23 @@
+{%- from 'macros/feedItem.njk' import feedItem -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
+
+    <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
+    <subtitle>{{ lede | striptags(true) }}</subtitle>
+    <id>{{ site.url }}</id>
+    <updated>{{ global.now | w3DateFormat }}</updated>
+    <author>
+        <name>{{ author.name }}</name>
+        <uri>{{ site.url }}</uri>
+    </author>
+    <generator>Eleventy v{{ pkg['dependencies']['@11ty/eleventy'] | replace('^', '') }}</generator>
+    <icon>{{ site.url + author.avatar }}</icon>
+    <link href="{{ site.url + '/' + related_collection | replace('featurePosts', '') }}" />
+    <link rel="self" href="{{ site.url + page.url }}" type="application/atom+xml" />
+    <link rel="hub" href="{{ author.urls.switchboard }}" />
+
+    {% for item in collections[related_collection] | limit(site.limits.feed) %}
+        {{ feedItem(item, site) }}
+    {% endfor %}
+
+</feed>

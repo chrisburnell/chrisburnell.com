@@ -3,9 +3,13 @@
 /// @group components
 ////
 
-// Appears only on article pages
 .webmentions {
-    @include owl;
+    @include owl(medium);
+    @include v(background-color, black--delta);
+    @include v(margin-top, gigantic);
+    @include v(padding, medium);
+    border-top: var(--border-width-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
 }
 
 .webmentions__thread {
@@ -14,17 +18,11 @@
 
 .webmentions__form {
     @include v(max-width, breakpoint-small);
+    grid-template-columns: 1fr min-content;
     margin: 0 auto;
-
-    p {
-        @extend %delta !optional;
-        grid-column: 1 / span 2;
-        @include v(margin-top, small);
-    }
 }
 
 .webmentions__label {
-    @extend %delta !optional;
     grid-column: 1 / span 2;
     @include v(margin-bottom, small);
 
@@ -36,6 +34,13 @@
 .webmentions__submit {
     min-width: 5em;
     margin-top: 0;
+
+    @include media("below:small") {
+        font-size: var(--font-scale--1);
+    }
+    @include media("above:medium", "below:large") {
+        font-size: var(--font-scale--1);
+    }
 }
 
 .webmentions__list {
@@ -70,30 +75,32 @@
 
     small {
         @include v(color, dove);
-        font-style: italic;
     }
 }
 
-.webmentions__response__avatar,
-.webmentions__response__image {
-    @include border-radius(50%);
-    @include v(width, avatar-small);
-    @include v(height, avatar-small);
+.webmentions__response__avatar {
+    &,
+    .avatar,
+    .avatar img {
+        @include border-radius(50%);
+        @include v(width, avatar-small);
+        @include v(height, avatar-small);
+    }
+
+    .avatar {
+        &,
+        img {
+            display: block;
+        }
+    }
 }
 
 .webmentions__response__avatar {
-    background-image: url("/images/default-profile.png");
-    background-size: 100%;
-
     .webmentions__list__replies & {
         float: left;
         @include v(margin-right, medium);
         @include v(margin-bottom, small);
     }
-}
-
-.webmentions__response__image {
-    display: block;
 }
 
 .webmentions__response__name {
@@ -105,7 +112,7 @@
 }
 
 .webmentions__list__reactions {
-    [hidden] + & {
+    .hidden + & {
         grid-column-start: 1;
         grid-column-end: -1;
     }
@@ -129,7 +136,7 @@
         bottom: 0;
         left: 100%;
         transform: translateX(-50%);
-        @include v(font-size, gamma);
+        font-size: var(--font-scale--1);
         line-height: 1;
         text-decoration: none;
     }
@@ -151,25 +158,10 @@
     content: "🔄️";
 }
 
-.webmentions__response__type:not([data-reacji=""])::before {
+.webmentions__response__type[data-reacji]:not([data-reacji=""])::before {
     content: attr(data-reacji);
 }
 
 .webmentions__response__meta {
     clear: both;
-}
-
-// Also appears only on article pages
-.button--show-webmentions {
-    &,
-    &:active {
-        &::before {
-            // override default `.button:active::before` behaviour
-            @include absolute(none);
-        }
-    }
-}
-
-hr + .webmentions[hidden] + hr {
-    display: none;
 }

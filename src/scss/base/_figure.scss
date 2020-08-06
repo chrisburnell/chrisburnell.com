@@ -36,12 +36,6 @@ figure {
         }
     }
 
-    %image-elements,
-    & > a,
-    & > a %image-elements {
-        @include border-radius;
-    }
-
     & > a {
         display: block;
         text-decoration: none;

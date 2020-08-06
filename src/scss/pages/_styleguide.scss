@@ -4,12 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-.page--style-guide {
-    .lede + %gamma {
-        margin-top: 0;
-    }
-}
-
 .palette-list {
     width: 100%;
     display: flex;
@@ -23,7 +17,7 @@
         @include tabular-lining-numerals;
         padding: var(--measure-medium) 0;
         vertical-align: middle;
-        @include v(font-size, small);
+        font-size: var(--font-scale--1);
         text-align: center;
         white-space: nowrap;
 
@@ -48,7 +42,6 @@
 
         %gamma {
             margin-bottom: 0;
-            @include v(line-height);
         }
     }
 }
@@ -62,6 +55,9 @@
     @include v(height, medium);
     display: block;
 }
+.measure-example--tiny {
+    @include v(width, tiny);
+}
 .measure-example--small {
     @include v(width, small);
 }
@@ -71,11 +67,11 @@
 .measure-example--large {
     @include v(width, large);
 }
-.measure-example--one {
-    @include v(width, one);
+.measure-example--gigantic {
+    @include v(width, gigantic);
 }
 .measure-example--responsive {
-    @include v(width, line-length-responsive);
+    @include v(width, line-length-clamp);
 }
 
 .transition-example {
@@ -97,10 +93,11 @@
 }
 
 .transition-example__demo {
-    @include border-radius(thin);
+    border-top: var(--border-width-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
     @include transition(color);
     width: 100%;
-    @include v(max-width, line-length-responsive);
+    @include v(max-width, line-length-clamp);
     height: calc(var(--measure-large) * 1.5);
     display: block;
     @include v(border-width, thin);

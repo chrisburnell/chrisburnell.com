@@ -1,0 +1,13 @@
+{
+  "permalink": "talk/{{ page.fileSlug }}/",
+  "category": "talk",
+  "categoryPlural": "talks",
+  "tags": [
+    "talk",
+    "feature"
+  ],
+  "emoji": "🗣",
+  "prefix": "t",
+  "show_webmentions": false,
+  "speakerdeck": true
+}

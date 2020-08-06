@@ -1,0 +1,75 @@
+////
+/// Collections
+/// @group abstracts
+////
+
+img,
+picture,
+svg {
+    @extend %collection-image !optional;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+object,
+video {
+    @extend %collection-media !optional;
+}
+
+blockquote,
+details,
+table,
+dl,
+ol,
+ul,
+figure:not([class]),
+p {
+    @extend %collection-content !optional;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %heading-elements !optional;
+}
+
+code,
+kbd,
+samp,
+var,
+.monospace {
+    @extend %monospace-elements !optional;
+}
+
+button,
+.button,
+[type="button"] {
+    @extend %button-elements !optional;
+}
+
+input[type="checkbox"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="week"],
+input[type="url"],
+optgroup,
+select,
+textarea {
+    @extend %form-elements !optional;
+}

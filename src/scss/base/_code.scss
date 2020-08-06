@@ -10,38 +10,35 @@ kbd,
 samp,
 var,
 .monospace {
-    @extend %monospace-elements !optional;
     @include font-family(monospace);
     font-variant-numeric: proportional-nums;
 }
-code,
-kbd,
-samp {
-    @include v(font-size, small);
-}
 
 // Inline Code Examples
-%heading-elements > code,
-%content-elements > code,
+code,
+code,
 ins,
 mark,
 samp,
 var {
     // force text to wrap
     @include break-words;
+    font-size: inherit;
 }
-%heading-elements > code,
+h1 > code,
+h2 > code,
 %content-elements > code,
 del,
 ins,
 kbd,
 mark,
 samp {
-    @include border-radius(thin);
+    @include border-radius;
     padding: calc(var(--measure-one-relative) / 4);
     @include v(line-height, medium);
 }
-%heading-elements > code,
+h1 > code,
+h2 > code,
 %content-elements > code,
 samp {
     @include v(background-color, raven--gamma);
@@ -52,7 +49,7 @@ kbd {
 }
 mark {
     @include v(background-color, highlight);
-    @include v(font-size);
+    font-size: var(--font-scale-0);
 }
 var {
     @include v(color, raven);
@@ -63,321 +60,207 @@ var {
 pre {
     margin: 0 0 var(--measure-large);
     tab-size: 4;
+    font-size: initial;
     white-space: pre-wrap;
 }
 
 // Code Blocks
-figure pre {
+pre[class*="language-"] {
+    @include v(background-color, mineshaft);
+    @include v(color, white);
     width: auto;
     min-width: 10vw;
     margin-bottom: 0;
+    @include v(padding, gutter);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    // disallow text from wrapping inside the container
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    @include font-family(monospace);
 
-    // Main Code Blocks
-    &:not(.codepen) {
-        @include border-radius;
-        @include font-family(monospace);
-        @include v(background-color, mineshaft);
-        @include v(color, white);
-        padding: var(--measure-medium) var(--measure-medium) var(--measure-one);
-        // disallow text from wrapping inside the container
-        overflow-x: auto;
-        overflow-y: hidden;
-        @include v(font-size, small);
+    &,
+    code {
+        @include v(line-height, code);
+    }
 
-        &,
-        code {
-            @include v(line-height, code);
-        }
-
-        code {
-            min-width: 100%;
-            display: block;
-            text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
-        }
+    code {
+        min-width: 100%;
+        display: block;
+        text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--delta);
+        overflow-wrap: normal;
+        word-break: normal;
     }
 }
 
-// Solarized Dark Code Highlighting
-.highlight {
-    position: relative;
+// Highlighted Code Blocks
+code[class*="language-"] {
+    padding-top: calc(var(--measure-large) + var(--measure-small));
 
-    pre {
-        width: 100%;
+    &::before {
+        @include absolute(top-full);
+        @include font-family(alpha);
+        @include v(background-color, dove);
+        @include v(color, white);
+        padding: var(--measure-small) var(--measure-gutter);
+        border-bottom: var(--border-width-thin) solid var(--color-coyote);
+        text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
     }
 
-    // Comment
-    .c {
-        @include v(color, highlight-alpha);
-    }
-    // Error
-    .err {
-        @include v(color, highlight-beta);
-    }
-    // Generic
-    .g {
-        @include v(color, highlight-beta);
-    }
-    // Keyword
-    .k {
-        @include v(color, highlight-gamma);
-    }
-    // Literal
-    .l {
-        @include v(color, highlight-beta);
-    }
-    // Name
-    .n {
-        @include v(color, highlight-beta);
-    }
-    // Operator
-    .o {
-        @include v(color, highlight-gamma);
-    }
-    // Other
-    .x {
-        @include v(color, highlight-delta);
-    }
-    // Punctuation
-    .p {
-        @include v(color, highlight-beta);
-    }
-    // Comment.Multiline
-    .cm {
-        @include v(color, highlight-alpha);
-    }
-    // Comment.Preproc
-    .cp {
-        @include v(color, highlight-gamma);
-    }
-    // Comment.Single
-    .c1 {
-        @include v(color, highlight-alpha);
-    }
-    // Comment.Special
-    .cs {
-        @include v(color, highlight-gamma);
-    }
-    // Generic.Deleted
-    .gd {
-        @include v(color, highlight-epsilon);
-    }
-    // Generic.Emph
-    .ge {
-        @include v(color, highlight-beta);
-        font-style: italic;
-    }
-    // Generic.Error
-    .gr {
-        @include v(color, highlight-zeta);
-    }
-    // Generic.Heading
-    .gh {
-        @include v(color, highlight-delta);
-    }
-    // Generic.Inserted
-    .gi {
-        @include v(color, highlight-gamma);
-    }
-    // Generic.Output
-    .go {
-        @include v(color, highlight-beta);
-    }
-    // Generic.Prompt
-    .gp {
-        @include non-selectable;
-        @include v(color, highlight-beta);
-    }
-    // Generic.Strong
-    .gs {
-        @include v(color, highlight-beta);
-        @include v(font-weight, bold);
-    }
-    // Generic.Subheading
-    .gu {
-        @include v(color, highlight-delta);
-    }
-    // Generic.Traceback
-    .gt {
-        @include v(color, highlight-beta);
-    }
-    // Keyword.Constant
-    .kc {
-        @include v(color, highlight-delta);
-    }
-    // Keyword.Declaration
-    .kd {
-        @include v(color, highlight-eta);
-    }
-    // Keyword.Namespace
-    .kn {
-        @include v(color, highlight-gamma);
-    }
-    // Keyword.Pseudo
-    .kp {
-        @include v(color, highlight-gamma);
-    }
-    // Keyword.Reserved
-    .kr {
-        @include v(color, highlight-eta);
-    }
-    // Keyword.Type
-    .kt {
-        @include v(color, highlight-zeta);
-    }
-    // Literal.Date
-    .ld {
-        @include v(color, highlight-beta);
-    }
-    // Literal.Number
-    .m {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String
-    .s {
-        @include v(color, highlight-epsilon);
-    }
-    // Name.Attribute
-    .na {
-        @include v(color, highlight-beta);
-    }
-    // Name.Builtin
-    .nb {
-        @include v(color, highlight-theta);
-    }
-    // Name.Class
-    .nc {
-        @include v(color, highlight-eta);
-    }
-    // Name.Constant
-    .no {
-        @include v(color, highlight-delta);
-    }
-    // Name.Decorator
-    .nd {
-        @include v(color, highlight-eta);
-    }
-    // Name.Entity
-    .ni {
-        @include v(color, highlight-delta);
-    }
-    // Name.Exception
-    .ne {
-        @include v(color, highlight-delta);
-    }
-    // Name.Function
-    .nf {
-        @include v(color, highlight-eta);
-    }
-    // Name.Label
-    .nl {
-        @include v(color, highlight-beta);
-    }
-    // Name.Namespace
-    .nn {
-        @include v(color, highlight-beta);
-    }
-    // Name.Other
-    .nx {
-        @include v(color, highlight-beta);
-    }
-    // Name.Property
-    .py {
-        @include v(color, highlight-beta);
-    }
-    // Name.Tag
-    .nt {
-        @include v(color, highlight-eta);
-    }
-    // Name.Variable
-    .nv {
-        @include v(color, highlight-eta);
-    }
-    // Operator.Word
-    .ow {
-        @include v(color, highlight-gamma);
-    }
-    // Text.Whitespace
-    .w {
-        @include v(color, highlight-beta);
-    }
-    // Literal.Number.Float
-    .mf {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.Number.Hex
-    .mh {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.Number.Integer
-    .mi {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.Number.Oct
-    .mo {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Backtick
-    .sb {
-        @include v(color, highlight-alpha);
-    }
-    // Literal.String.Char
-    .sc {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Doc
-    .sd {
-        @include v(color, highlight-beta);
-    }
-    // Literal.String.Double
-    .s2 {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Escape
-    .se {
-        @include v(color, highlight-delta);
-    }
-    // Literal.String.Heredoc
-    .sh {
-        @include v(color, highlight-beta);
-    }
-    // Literal.String.Interpol
-    .si {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Other
-    .sx {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Regex
-    .sr {
-        @include v(color, highlight-zeta);
-    }
-    // Literal.String.Single
-    .s1 {
-        @include v(color, highlight-epsilon);
-    }
-    // Literal.String.Symbol
-    .ss {
-        @include v(color, highlight-epsilon);
-    }
-    // Name.Builtin.Pseudo
-    .bp {
-        @include v(color, highlight-eta);
-    }
-    // Name.Variable.Class
-    .vc {
-        @include v(color, highlight-eta);
-    }
-    // Name.Variable.Global
-    .vg {
-        @include v(color, highlight-eta);
-    }
-    // Name.Variable.Instance
-    .vi {
-        @include v(color, highlight-eta);
-    }
-    // Literal.Number.Integer.Long
-    .il {
-        @include v(color, highlight-epsilon);
+    // Highlighted Code Block Labels
+    @each $language, $color in $language-colors {
+        &.language-#{$language} {
+            &::before {
+                background-color: #{$color} !important;
+                color: contrasting-color($color, $color-mineshaft, $color-white) !important;
+                text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft) !important;
+            }
+        }
+    }
+    &.language-html::before {
+        content: "HTML";
+    }
+    &.language-css::before {
+        content: "CSS";
+    }
+    &.language-javascript::before {
+        content: "JavaScript";
+    }
+    &.language-bash::before {
+        content: "bash";
+    }
+    &.language-scss::before {
+        content: "SCSS";
+    }
+    &.language-json::before {
+        content: "JSON";
+    }
+    &.language-yaml::before {
+        content: "YAML";
+    }
+    &.language-liquid::before {
+        content: "Liquid";
+    }
+    &.language-nunjucks::before {
+        content: "Nunjucks";
+    }
+}
+
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #d4d0ab;
+}
+
+.token.punctuation {
+    color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #ffa07a;
+}
+
+.token.boolean,
+.token.number {
+    color: #00e0e0;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #abe338;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #00e0e0;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+    color: #ffd700;
+}
+
+.token.keyword {
+    color: #00e0e0;
+}
+
+.token.regex,
+.token.important {
+    color: #ffd700;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+@media screen and (-ms-high-contrast: active) {
+    code[class*='language-'],
+    pre[class*='language-'] {
+        color: windowText;
+        background: window;
+    }
+
+    :not(pre) > code[class*='language-'],
+    pre[class*='language-'] {
+        background: window;
+    }
+
+    .token.important {
+        background: highlight;
+        color: window;
+        font-weight: normal;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.function,
+    .token.keyword,
+    .token.operator,
+    .token.selector {
+        font-weight: bold;
+    }
+
+    .token.attr-value,
+    .token.comment,
+    .token.doctype,
+    .token.function,
+    .token.keyword,
+    .token.operator,
+    .token.property,
+    .token.string {
+        color: highlight;
+    }
+
+    .token.attr-value,
+    .token.url {
+        font-weight: normal;
     }
 }

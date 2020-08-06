@@ -1,0 +1,90 @@
+////
+/// Heading
+/// @group base
+////
+
+%heading-elements {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    @include v(font-weight);
+    font-variant-numeric: lining-nums;
+
+    // For special Monospace titles
+    &.monospace {
+        @include case(none);
+    }
+}
+
+%alpha,
+.alpha {
+    @include font-family(alpha);
+    font-size: var(--font-scale-4);
+    @include v(line-height, small);
+}
+
+%beta,
+.beta {
+    font-size: var(--font-scale-3);
+    @include v(font-weight, bold);
+}
+
+%gamma,
+.gamma {
+    font-size: var(--font-scale-2);
+    @include v(font-weight, bold);
+}
+
+%delta,
+.delta {
+    font-size: var(--font-scale-1);
+    @include v(font-weight, bold);
+}
+
+%epsilon,
+.epsilon {
+    font-size: var(--font-scale-0);
+    @include v(font-weight, bold);
+}
+
+%zeta,
+.zeta {
+    font-size: var(--font-scale-0);
+    @include v(font-weight, bold);
+}
+
+h1 {
+    @extend %alpha;
+    text-shadow:
+         0.025em  -0.025em 0 var(--color-white),
+         0.025em -0.0125em 0 var(--color-white),
+         0.025em   0.025em 0 var(--color-white),
+         0         0.025em 0 var(--color-white),
+        -0.025em   0.025em 0 var(--color-white),
+        -0.025em -0.0125em 0 var(--color-white),
+        -0.025em  -0.025em 0 var(--color-white);
+    @include v(z-index, above);
+}
+
+h2 {
+    @extend %delta;
+
+    @include case(uppercase);
+    @include v(border-bottom-width, thin);
+    @include v(border-bottom-style);
+    @include v(border-bottom-color, alto);
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+    @include v(padding-right, large);
+}
+
+h3 {
+    @extend %delta;
+}
+
+h4,
+h5,
+h6 {
+    @extend %epsilon;
+}

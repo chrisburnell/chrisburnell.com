@@ -4,49 +4,20 @@
 ////
 
 .logo {
-    @include non-selectable;
-    @include v(height, avatar);
-    flex-grow: 1;
-    flex-shrink: 0;
-    @include v(flex-basis, aside);
+    @include v(fill, raven);
+    width: 4rem;
+    height: 4rem;
     display: inline-block;
-    position: relative;
-    text-decoration: none;
 
-    .icon {
-        @include absolute(top);
-        @include v(fill, raven);
-        @include v(width, logo);
-        @include v(height, logo);
-
-        @include media("coarse") {
-            transform: translateX(-50%) translateY(-30%);
-        }
-
-        @include media("fine") {
-            @include transition(transform var(--transition-duration-long));
-            transform: translateX(-65%) translateY(-40%) rotateZ(var(--rotation-default));
-        }
+    &:hover,
+    &:focus,
+    &:active {
+        background: none;
+        outline: none;
     }
 
-    &[href]:hover,
-    &[href]:focus {
-        .icon {
-            @include media("fine") {
-                transform: translateX(-40%) translateY(-30%);
-            }
-        }
-    }
-
-    &[href]:active {
-        @include v(background-color, transparent);
-        outline-width: 0;
-
-        .icon {
-            @include media("fine") {
-                transition-duration: var(--transition-duration-default);
-                transform: translateX(-30%) translateY(-25%);
-            }
-        }
+    svg {
+        max-height: 100%;
+        object-fit: contain;
     }
 }

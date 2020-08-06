@@ -1,92 +1,48 @@
 ////
-/// Meta Content
+/// Meta
 /// @group components
 ////
 
 .meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    overflow: hidden;
-    @include v(font-family, serif);
-    font-style: italic;
-    line-height: 3;
+    @include v(background-color, raven--gamma);
+    @include v(padding, medium);
+    border-top: var(--border-width-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
 
-    aside + & {
-        // pull up to align with `.author`
-        margin-top: calc(var(--measure-small) * -1);
+    .archive & {
+        @include owl(large);
     }
 
-    div {
-        @include v(margin-right, large);
+    .emoji {
+        width: calc(var(--measure-medium) + var(--measure-tiny));
+        display: inline-block;
     }
 
-    div + div {
-        position: relative;
-
-        &::before {
-            // EN-DASH
-            content: "•";
-            @include v(color, dove);
-            position: absolute;
-            left: calc(var(--measure-medium) * -1);
-            transform: translateX(-50%);
-            font-style: normal;
-        }
+    h3 {
+        @extend %epsilon;
     }
 
     a,
     data,
-    %strong,
     time {
-        color: inherit;
         @include v(font-weight, bold);
-        @include v(font-family);
-        font-style: normal;
     }
+}
 
-    a {
-        @include v(text-decoration-color, transparent);
+.meta__list {
+    display: inline;
+    font-size: var(--font-scale--1);
 
-        &:hover,
-        &:focus,
-        &:active {
-            @include v(text-decoration-color, canada);
-        }
+    li {
+        display: inline;
 
-        &:active {
-            @include v(color, white);
-        }
-
-        em {
-            @include v(font-family, serif);
+        &:not(:last-child) {
+            &::after {
+                content: ", ";
+            }
         }
     }
-
-    label {
-        display: none;
-        @include v(background-color, black--delta);
-        padding: 0.1rem var(--measure-small);
-        @include border-radius(thin);
-        cursor: pointer;
-
-        &:hover,
-        &:focus,
-        &:active {
-            @include v(background-color, raven--gamma);
-        }
-
-        &:active {
-            @include v(color, canada);
-        }
-    }
-
-    // Only show the label if there is more than one meta item
-    div + div ~ label {
-        display: inline-block;
-    }
-
-    .emoji {
-        margin-right: 1ch;
-    }
+}
+h3 + .meta__list {
+    margin-top: v(measure, small) !important;
 }

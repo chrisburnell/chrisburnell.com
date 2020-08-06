@@ -4,9 +4,9 @@
 ////
 
 details {
-    @include border-radius(thin);
+    @include border-radius;
     width: 100%;
-    @include v(max-width, line-length-responsive);
+    @include v(max-width, line-length-clamp);
     position: relative;
 
     %content-elements {
@@ -20,7 +20,7 @@ details {
         position: absolute;
         top: 100%;
         left: 0;
-        @include v(font-size, small);
+        font-size: var(--font-scale--1);
         @include transition(max-height);
         @include v(z-index, above);
     }

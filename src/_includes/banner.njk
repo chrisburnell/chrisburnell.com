@@ -1,0 +1,30 @@
+{% if banner %}
+    {% set banners = banner | toArray %}
+    <picture class=" [ banner ] ">
+        {% if banners.length == 1 %}
+            <source srcset="/images/banners/{{ banners[0] | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
+                    type="image/webp" />
+            <img alt="" class="u-photo" src="/images/banners/{{ banners[0] }}" role="presentation" loading="lazy">
+        {% else %}
+            <source srcset="
+{%- for item in banners -%}
+    {% if not loop.first %},{% endif %}
+    /images/banners/{{ item | replace('jpg', 'webp') | replace('png', 'webp') }}
+    {% if item.includes('@') %}
+        {{ item.split('@')[1].split('.')[0] }}
+    {% endif %}
+{%- endfor -%}"
+                    type="image/webp" />
+            <img    alt="" class="u-photo" role="presentation" loading="lazy"
+                    src="/images/banners/{{ banners | last }}"
+                    srcset="
+{%- for item in banners -%}
+    {% if not loop.first %},{% endif %}
+    /images/banners/{{ item }}
+    {% if item.includes('@') %}
+        {{ item.split('@')[1].split('.')[0] }}
+    {% endif %}
+{%- endfor -%}">
+        {% endif %}
+    </picture>
+{% endif %}

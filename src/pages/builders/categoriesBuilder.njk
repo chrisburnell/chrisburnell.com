@@ -1,0 +1,82 @@
+---
+layout: base
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /{{ category.plural }}/
+eleventyComputed:
+  title: "{{ category.properPlural | title }}"
+  lede: "All of my {{ category.properPlural }}."
+---
+{% from 'macros/deckItem.njk' import deckItem %}
+{% from 'macros/shelfItem.njk' import shelfItem %}
+{% set collection = collections[category.title] | publishedFilter | reverse %}
+{%- set count = collection.length -%}
+{%- set latest_year = collection[0].date.getFullYear() -%}
+{%- set first_year = collection[count-1].date.getFullYear() -%}
+<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+
+    <h1 id="title" class="title">
+        <span class="p-name">{{ title | safe }}</span>
+    </h1>
+
+    <div class=" [ details ] ">
+        <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+    </div>
+
+    <div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  content__body--wide{% endif %} ] [ h-feed ] ">
+        {% if categoryIntroductions[category.title] %}
+            {{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
+        {% endif %}
+        {% if collection[0].data.mf_root == 'review' %}
+            <nav class=" [ shelf ] ">
+                {% for item in collection %}
+                    {{ shelfItem(item, global.now, collections.all) }}
+                {% endfor %}
+            </nav>
+        {% else %}
+            {%- set year = latest_year -%}
+            <h2 id="{{ year }}">
+                {{ year }}
+                <small>({{ collection | getCountByYear(year) }})</small>
+                <a href="#{{ year }}" class="fragment-anchor">
+                    <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+                        <use xlink:href="/images/sprites.svg#svg--link"></use>
+                    </svg>
+                </a>
+            </h2>
+            <nav class=" [ deck ] ">
+                {% for item in collection %}
+                    {% if year != item.date.getFullYear() %}
+                        {%- set year = item.date.getFullYear() -%}
+                        </nav>
+                        <h2 id="{{ year }}">
+                            {{ year }}
+                            <small>({{ collection | getCountByYear(year) }})</small>
+                            <a href="#{{ year }}" class="fragment-anchor">
+                                <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+                                    <use xlink:href="/images/sprites.svg#svg--link"></use>
+                                </svg>
+                            </a>
+                        </h2>
+                        <nav class=" [ deck ] ">
+                    {% endif %}
+                    {{ deckItem(item, global.now, collections.all, webmentions) }}
+                {% endfor %}
+            </nav>
+        {% endif %}
+    </div>
+
+    <div class=" [ meta ] ">
+        <h3>Browse other categories:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.categories %}{% if lookup.title != category.title %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endif %}{% endfor %}
+        </ul>
+        <h3>Here are some tags that you can explore, too:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
+        </ul>
+    </div>
+
+</div>

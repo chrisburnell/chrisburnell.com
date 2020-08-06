@@ -1,12 +1,6 @@
-@charset "UTF-8";
-
 ////
-/// Chris Burnell
-///
-/// Please contact me if you want to learn about anything you see here.
-///
-/// @author Chris Burnell <me@chrisburnell.com>
-/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
+/// CSS Variables
+/// @group base
 ////
 
 /// ABSTRACTS & VENDORS
@@ -14,9 +8,148 @@
 @import "abstracts/functions";
 @import "abstracts/lists";
 @import "abstracts/maps";
-@import "abstracts/mathematics";
-@import "abstracts/mixins";
-@import "vendors/include-media";
 
-/// CSS VARIABLES
-@import "base/variables";
+:root {
+    @each $key, $value in $measures {
+        --measure-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $opacities {
+        --opacity-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $all-colors {
+        --color-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $border-widths {
+        --border-width-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $border-styles {
+        --border-style-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $border-radii {
+        --border-radius-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-displays {
+        --font-display-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-families {
+        --font-family-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-stretches {
+        --font-stretch-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-variants {
+        --font-variant-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-weights {
+        --font-weight-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $unicode-ranges {
+        --unicode-range-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $line-heights {
+        --line-height-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $letter-spacings {
+        --letter-spacing-#{$key}: #{$value};
+    }
+
+    --animation-duration: #{$animation-duration};
+    --animation-function: #{$animation-function};
+    --animation-fill-mode: #{$animation-fill-mode};
+
+    --rotation-default: #{$rotation-default};
+
+    @each $key, $value in $transition-durations {
+        --transition-duration-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $transition-functions {
+        --transition-function-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $z-indexes {
+        --z-index-#{$key}: #{$value};
+    }
+
+    --max-columns: #{$max-columns};
+
+    --color-scheme: "#{$color-scheme}";
+
+    --fluid-min-width: #{strip-unit($measure-breakpoint-small)};
+    --fluid-max-width: #{strip-unit($measure-breakpoint-gigantic)};
+    --fluid-min-size: #{$fluid-size};
+    --fluid-max-size: #{$fluid-size};
+    --fluid-min-ratio: #{$fluid-ratio-minimum};
+    --fluid-max-ratio: #{$fluid-ratio-maximum};
+
+    --fluid-screen: 100vw;
+    --fluid-bp: calc(
+        (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+        ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+    );
+
+    --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+    --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+
+    --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+    --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+    --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) / 16;
+    --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) / 16;
+    --font-scale--1: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+    --font-scale--1: 0.875rem;
+
+    --fluid-min-scale-0: var(--fluid-min-ratio);
+    --fluid-max-scale-0: var(--fluid-max-ratio);
+    --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+    --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+    --font-scale-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+
+    --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+    --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+    --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+    --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+    --font-scale-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+
+    --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+    --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+    --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+    --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+    --font-scale-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+
+    --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+    --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+    --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+    --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+    --font-scale-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+
+    --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+    --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+    --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+    --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+    --font-scale-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+
+    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+    --font-scale-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+}
+
+@media screen and (min-width: #{$measure-breakpoint-gigantic}) {
+    :root {
+        --fluid-screen: calc(var(--fluid-max-width) * 1px);
+    }
+}

@@ -1,0 +1,10 @@
+{% if previousPost or nextPost %}
+    <nav hidden class=" [ widget widget--browse ] ">
+        {% if previousPost %}
+            <a class=" [ widget-anchor-previous ] " href="{{ previousPost.url }}">TODO</a>
+        {% endif %}
+        {% if nextPost %}
+            <a class=" [ widget-anchor-next ] " href="{{ nextPost.url }}">TODO</a>
+        {% endif %}
+    </nav>
+{% endif %}

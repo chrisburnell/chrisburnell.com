@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Home",
+    "url": "/",
+    "primary": true,
+    "secondary": true
+  },
+  {
+    "title": "Writing",
+    "url": "/writing/",
+    "primary": true
+  },
+  {
+    "title": "Archive",
+    "url": "/archive/",
+    "secondary": true
+  },
+  {
+    "title": "Projects",
+    "url": "/projects/",
+    "primary": true,
+    "secondary": true
+  },
+  {
+    "title": "About",
+    "url": "/about/",
+    "primary": true,
+    "secondary": true
+  },
+  {
+    "title": "Contact",
+    "url": "/contact/",
+    "secondary": true
+  },
+  {
+    "title": "Styleguide",
+    "url": "/styleguide/",
+    "secondary": true
+  }
+]

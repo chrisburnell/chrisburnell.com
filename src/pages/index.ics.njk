@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /index.ics
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+{% for item in collections.rsvps %}
+{%- if item.data.rsvp.value != "no" -%}
+{%- set location = item.data.in_reply_to.url | default(item.data.in_reply_to) | getPlace | replace(",", "\\,") -%}
+BEGIN:VEVENT
+SUMMARY:{{ item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) }}
+DESCRIPTION:Details:\n{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}
+DTSTART;TZID="{{ item.data.rsvp.date | timezoneFormat }}":{{ item.data.rsvp.date | w3DateFormat(false) }}
+DTEND;TZID="{{ item.data.rsvp.finish | timezoneFormat }}":{{ item.data.rsvp.finish | w3DateFormat(false) }}{% if location %}
+LOCATION:{{ location }}{% endif %}
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:{{ item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) }}
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+{%- endif -%}
+{% endfor %}END:VCALENDAR

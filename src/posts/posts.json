@@ -1,0 +1,10 @@
+{
+  "layout": "post",
+  "mf_root": "entry",
+  "tags": [
+    "post"
+  ],
+  "show_webmentions": true,
+  "carbon": true,
+  "coil": true
+}

@@ -1,0 +1,19 @@
+////
+/// Wrap
+/// @group layout
+////
+
+.wrap {
+    width: 100%;
+    @include v(max-width, breakpoint-gigantic);
+    @include v(padding-left, gutter);
+    @include v(padding-right, gutter);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@each $name, $measure in $breakpoints {
+    .wrap--#{$name} {
+        max-width: $measure;
+    }
+}

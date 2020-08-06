@@ -4,11 +4,21 @@
 /// @link https://chrisburnell.com/styleguide/#buttons
 ////
 
-button,
+button {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: 0;
+    font-family: inherit;
+    font-size: var(--font-scale-0);
+    user-select: text;
+    cursor: pointer;
+}
+
 .button,
 [type="button"] {
     @extend %button-elements !optional;
-    @include border-radius(thin);
+    @include border-radius;
     @include font-family(default);
     @include non-selectable;
     @include transition(background-color);
@@ -22,13 +32,12 @@ button,
     outline: 0 var(--border-style-default) var(--color-raven);
     overflow: visible;
     position: relative;
-    @include v(font-size);
+    font-size: var(--font-scale-0);
     @include v(font-weight, bold);
     @include v(line-height, medium);
     text-align: center;
     text-decoration: none;
     text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--gamma);
-    cursor: pointer;
     appearance: none;
 
     &:hover,
@@ -70,7 +79,7 @@ button,
 
 .button--small {
     min-width: 5em;
-    padding: 0.25em 0.5em;
-    @include v(font-size, small);
+    padding: var(--measure-tiny) var(--measure-small);
+    font-size: var(--font-scale--1);
     line-height: 1;
 }

@@ -4,7 +4,8 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-a {
+a,
+.anchor {
     @include transition(background-color, color, text-decoration-color);
     @include v(background-color, transparent);
     @include v(color, bowhead);
@@ -12,12 +13,12 @@ a {
     position: relative;
     text-decoration: underline;
     @include v(text-decoration-color, alto);
+    text-decoration-thickness: var(--border-width-thin);
     text-decoration-skip-ink: auto;
 
     &:hover,
     &:focus,
     &:active {
-        text-decoration: underline;
         @include v(text-decoration-color, canada);
     }
 
@@ -29,7 +30,7 @@ a {
 
     &:active {
         @include v(background-color, canada);
-        @include v(color, white);
+        color: var(--color-white) !important;
         outline-width: var(--border-width-thin);
         outline-offset: 0;
     }

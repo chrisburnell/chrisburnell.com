@@ -1,9 +1,0 @@
----
-title: Chess Games Feed
-lede: All of my chess games.
-type: chess
----
-
-{% for page in site.categories.chess limit: site.feed_limit %}
-    {% include components/item_feed.liquid %}
-{% endfor %}

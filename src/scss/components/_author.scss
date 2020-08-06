@@ -4,82 +4,57 @@
 ////
 
 .author {
-    // override the default <aside> font-family
-    @include font-family(default);
-
-    @include media("screen", "below:medium") {
-        display: flex;
-        flex-direction: column;
-        order: 9999;
-        @include v(margin-top, large);
-    }
-
-    @include media("screen", "above:medium") {
-        float: none;
-        margin-left: 0;
-    }
-
-    :not(.stretch) > & {
-        @include media("screen", "above:medium") {
-            float: none;
-            grid-area: author;
-            margin-top: calc(var(--measure-large) * 2 + var(--font-size-alpha));
-            margin-left: 0;
-        }
-    }
-
-    .stretch > & {
-        @include media("screen", "above:medium") {
-            width: 100%;
-            @include v(max-width, breakpoint-medium);
-            float: none;
-            margin: var(--measure-large) auto 0;
-        }
+    @include media("below:medium") {
+        @include owl(small);
     }
 }
 
-// More information about the Author
-.author-information {
+.author__information {
+    @include owl(small);
     @include font-family(serif);
+    color: inherit;
     display: flex;
-    flex-direction: row;
-    @include v(font-size, small);
+    flex-direction: column;
+    font-size: var(--font-scale--1);
     font-style: italic;
     @include v(line-height, medium);
+    text-align: center;
+    text-decoration: none;
 
-    @include media("screen", "below:medium") {
-        @include v(padding-top, large);
-        @include v(border-top-width, thin);
-        @include v(border-top-style);
-        @include v(border-top-color, black--gamma);
+    @include media("below:small") {
+        @include v(margin-bottom, gutter);
     }
 
-    a,
-    %strong {
+    @include media("below:medium") {
+        float: left;
+        @include v(margin-right, gap);
+        @include v(margin-bottom, gap);
+    }
+
+    @include media("above:medium") {
+        float: right;
+        @include v(margin-left, gap);
+    }
+
+    .anchor {
         @include case(uppercase, 0);
         @include font-family(default);
         color: inherit;
         font-style: normal;
         @include v(font-weight, bold);
+        @include v(text-decoration-color, transparent);
     }
 
-    a {
-        @include v(text-decoration-color, transparent);
-
-        &:hover,
-        &:focus,
-        &:active {
+    &:hover,
+    &:focus,
+    &:active {
+        .anchor {
             @include v(text-decoration-color, canada);
-        }
-
-        &:active {
-            @include v(color, white);
         }
     }
 }
 
-// Photograph of MY FACE
-.author-image {
+.author__image {
     flex-grow: 0;
     flex-shrink: 0;
     @include v(flex-basis, avatar);
@@ -87,10 +62,11 @@
     position: relative;
     box-shadow: inset 0 var(--border-width-default) 0 0 var(--color-black--gamma);
     text-decoration: none;
+    @include transition(opacity);
 
     &,
-    &::before,
-    %image-elements {
+    img,
+    &::before {
         @include border-radius(50%);
         @include v(width, avatar);
         @include v(height, avatar);
@@ -111,27 +87,14 @@
         left: 0;
     }
 
-    @include media("screen", "below:medium") {
-        @include v(margin-right, medium);
-    }
-
-    @include media("screen", "above:medium") {
-        @include v(margin-right, small);
-    }
-
-    %image-elements {
-        @include transition(opacity);
-        display: block;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
+    .author__information:hover &,
+    .author__information:focus &,
+    .author__information:active & {
         &::before {
-            @include v(z-index, default);
+            @include v(z-index);
         }
 
-        & %image-elements {
+        & img {
             animation: peek v(transition-duration, long) v(transition-function) v(transition-duration, long) var(--animation-fill-mode);
 
             @at-root {
@@ -152,23 +115,23 @@
             }
         }
     }
+}
 
-    &:active {
-        outline-width: 0;
+.author__biography {
+    font-size: var(--font-scale--1);
+
+    @include media("above:medium") {
+        text-align: right;
     }
 }
 
-.author-name {
+.author__name {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .webring-links {
-    p {
-        @include v(font-size);
-    }
-
     .webring-links__previous,
     .webring-links__home {
         margin-right: 0;

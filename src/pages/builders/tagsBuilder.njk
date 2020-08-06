@@ -1,0 +1,46 @@
+---
+layout: base
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+permalink: /tag/{{ tag }}/
+eleventyComputed:
+  title: "Tagged: <q>{{ tag | capitalizeFormat }}</q>"
+  lede: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
+---
+{% from 'macros/deckItem.njk' import deckItem %}
+{%- set collection = collections[tag] | publishedFilter | reverse -%}
+{%- set count = collection.length -%}
+{%- set latest_year = collection[0].date.getFullYear() -%}
+{%- set first_year = collection[count-1].date.getFullYear() -%}
+<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+
+    <h1 id="title" class="title">
+        <span class="p-name">{{ title | safe }}</span>
+    </h1>
+
+    <div class=" [ details ] ">
+        <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
+    </div>
+
+    <div class=" [ content__body ] ">
+        <nav class=" [ deck ] [ h-feed ] ">
+            {% for item in collection %}
+                {{ deckItem(item, global.now, collections.all, webmentions) }}
+            {% endfor %}
+        </nav>
+    </div>
+
+    <div class=" [ meta ] ">
+        <h3>Browse by category:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}
+        </ul>
+        <h3>Here are some other tags that you can explore, too:</h3>
+        <ul class=" [ meta__list ] ">
+            {% for lookup in collections.tags | sort %}{% if lookup != tag %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endif %}{% endfor %}
+        </ul>
+    </div>
+
+</div>

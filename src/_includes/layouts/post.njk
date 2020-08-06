@@ -1,0 +1,108 @@
+---
+layout: base
+---
+{%- set of = bookmark_of | default(drink_of) | default(like_of) | default(listen_of) | default(play_of) | default(read_of) | default(watch_of) | default(link) -%}
+{%- set of_url = of -%}
+{%- if of.url -%}
+    {% set of_url = of.url %}
+{%- endif -%}
+{%- set of_title = of_url -%}
+{%- if of.title -%}
+    {% set of_title = of.title %}
+{%- endif -%}
+{%- if not authors -%}
+    {% set of_author_by_url = of_url | getPerson('object') %}
+    {% if of_author_by_url != of_url %}
+        {% set authors = of_author_by_url %}
+    {% endif %}
+{%- endif -%}
+
+{%- set in_reply_to_url = in_reply_to -%}
+{%- if in_reply_to.url -%}
+    {% set in_reply_to_url = in_reply_to.url %}
+{%- endif -%}
+{%- set in_reply_to_title = in_reply_to_url -%}
+{%- if in_reply_to.title -%}
+    {% set in_reply_to_title = in_reply_to.title %}
+{%- endif -%}
+{%- if in_reply_to.authors -%}
+    {% set in_reply_to_authors = in_reply_to.authors %}
+{%- else -%}
+    {% set in_reply_to_author_lookup = in_reply_to_url | getPerson('object') %}
+    {% if in_reply_to_author_lookup != in_reply_to_url %}
+        {% set in_reply_to_authors = in_reply_to_author_lookup %}
+    {% endif %}
+{%- endif -%}
+
+{%- if category == 'beer' -%}
+    {% set syndicate_to = ['https://untappd.com/user/chrisburnell/checkin/' + page.fileSlug] %}
+{%- elif category == 'music' -%}
+    {% set of_url = 'https://album.link/s/' + of_url %}
+    {% set syndicate_to = [of_url] %}
+{%- endif -%}
+
+{# TODO change from collections.posts #}
+{%- set previousPost = collections.posts | getPreviousCollectionItem(page) -%}
+{%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
+<article id="content" class=" [ content ] [ wrap ] [ post h-{{ page.mf_root }}{% if page.mf_property %} p-{{ page.mf_property }}{% endif %} ] ">
+
+    <h1 id="title" class="title" {{ 'hidden' if not title and not of_title }}>
+        {% if of_title %}
+            <span class="p-name">{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
+        {% elif title %}
+            <span class="p-name">{{ title | safe }}</span>
+        {% else %}
+            {{ categoryProper | default(category) | title }} from {{ page.date | dateFormat }}
+        {% endif %}
+    </h1>
+
+    <div class=" [ details details--published ] ">
+        <p>This <a class="u-category" href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> was published on <time class="dt-published" datetime="{{ date | w3DateFormat }}">{{ date | dateFormat }}</time>{% if updated %} and last updated on <time class="dt-updated" datetime="{{ updated | w3DateFormat }}">{{ updated | dateFormat }}</time>{% endif %}.</p>
+    </div>
+
+    <div class=" [ content__body ] ">
+
+        {% include 'banner.njk' %}
+
+        {% if lede %}
+            <p class=" [ lede ] [ p-summary ] ">{{ lede | safe }}</p>
+        {% endif %}
+
+        {% include 'cover.njk' %}
+
+        {% include 'photo.njk' %}
+
+        {% if of_url %}
+            {% set of_label = 'Read more' %}
+            {%- if drink_of -%}
+                {% set of_label = 'See more on Untappd' %}
+            {%- elif listen_of -%}
+
+                {% set of_label = 'See more on Odesli' %}
+            {%- elif read_of -%}
+                {% set of_label = 'Read more on Goodreads' %}
+            {%- elif watch_of -%}
+                {% set of_label = 'Watch now' %}
+            {%- endif -%}
+            <nav class=" [ navigator ] ">
+                <a class="button" href="{{ of_url }}">{{ of_label }} →</a>
+            </nav>
+        {% endif %}
+
+        {% if listen_of %}
+            <iframe width="100%" height="150" src="https://embed.song.link/?url=spotify:album:{{ listen_of.url | default(listen_of) }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+        {% endif %}
+
+        <div class=" [ e-content ] ">
+            {{ content | safe }}
+        </div>
+
+        {% include 'webmentions.njk' %}
+
+        {# {% include 'browse.njk' %} #}
+
+        {% include 'ads.njk' %}
+    </div>
+
+    {% include 'meta.njk' %}
+</article>

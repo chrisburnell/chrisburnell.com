@@ -1,9 +1,0 @@
-{%- comment -%}
-
-  Transform a string of text into titlecase
-
-{%- endcomment -%}
-{%- assign title_array = include.title | replace: '-', ' ' | split: ' ' -%}
-{% for word in title_array %}
-    {{ word | capitalize }}
-{% endfor %}

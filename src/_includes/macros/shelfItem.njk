@@ -1,0 +1,82 @@
+{% macro shelfItem(item, now, posts, hfeed = true, truncate = true) %}
+    {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
+    {%- set item_of_url = item_of -%}
+    {%- if item_of.url -%}
+        {% set item_of_url = item_of.url %}
+    {%- endif -%}
+    {%- set item_of_title = item_of_url -%}
+    {%- if item_of.title -%}
+        {% set item_of_title = item_of.title %}
+    {%- endif -%}
+    {%- if not item.data.authors -%}
+        {% set item_of_author_by_url = item_of_url | getPerson('object') %}
+        {% if item_of_author_by_url != item_of_url %}
+            {% set item_of_authors = item_of_author_by_url %}
+        {% endif %}
+    {%- endif -%}
+
+    {%- set item_title = item.data.title -%}
+
+    <article{% if hfeed %} class="h-{{ item.data.mf_root }}"{% endif %}>
+        {% if item.data.cover and (item.data.category == 'book' or item.data.category == 'music') %}
+            <a href="{{ item.url }}">
+                <picture class="cover">
+                    {% if item.data.cover.includes('://') %}
+                        <img alt="" class="u-photo" role="presentation" loading="lazy" src="{{ item.data.cover }}">
+                    {% else %}
+                        <source srcset="/static/{{ item.data.category }}/{{ item.data.cover | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
+                                type="image/webp" />
+                        <img    alt="" class="u-photo" role="presentation" loading="lazy"
+                                src="/static/{{ item.data.category }}/{{ item.data.cover }}"
+                                srcset="/static/{{ item.data.category }}/{{ item.data.cover }}">
+                    {% endif %}
+                </picture>
+            </a>
+        {% endif %}
+        <h3>
+            {% if item.data.tags and item.data.tags.includes('clickthrough') %}
+                <a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">{{ item_title | default(item_of_title) | striptags(true) | safe }}</a>
+            {% else %}
+                <a href="{{ item.url | striptags(true) | safe }}">{{ item_title | default(item_of_title) | striptags(true) | safe }}</a>
+            {% endif %}
+        </h3>
+        {% if item.data.authors or item.data.release %}
+            <div>
+                {% if item.data.authors %}
+                    {%- set authors = item.data.authors | toArray -%}
+                    {% for author in authors -%}
+                        {% if not loop.first %}, {% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}{{ author | safe }}{% endif %}
+                    {%- endfor %}
+                {% endif %}
+                {% if item.data.release %}
+                    ({{ item.data.release | dateFormat('yyyy') }})
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if item.data.rating %}
+            <div>
+                {% if item.data.rating == 'Parti Pris' %}
+                    <data class=" [ p-rating ] ">Parti Pris</data>
+                {% else %}
+                    <data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" title="{{ item.data.rating }} out of 5"> </data>
+                    <data class=" [ p-worst ] " hidden>0</data>
+                    <data class=" [ p-best ] " hidden>5</data>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if item.date %}
+            <time class="dt-published" datetime="{{ item.date | w3DateFormat }}" hidden>{{ item.date | dateFormat }}</time>
+            {% if item.data.updated %}
+                <time class="dt-updated" datetime="{{ item.data.updated | w3DateFormat }}" hidden>{{ item.data.updated | dateFormat }}</time>
+            {% endif %}
+        {% endif %}
+        {% if item.data.mf_property and item_of %}
+            <data class="u-{{ item.data.mf_property }}" hidden>{{ item_of_url | default(item_of) }}</data>
+        {% endif %}
+        {% if item.data.category %}
+            <data class="u-category" value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
+        {% endif %}
+        <a class="u-url" href="{{ item.url }}" hidden></a>
+        <data class="u-author" value="/" hidden></data>
+    </article>
+{% endmacro %}

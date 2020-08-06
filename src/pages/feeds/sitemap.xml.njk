@@ -1,0 +1,18 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for item in collections.all %}
+        {% if not item.data.draft and not item.sitemap.exclude %}
+            <url>
+                <loc>{{ site.url + item.url }}</loc>
+                <lastmod>{{ item.data.update | default(item.date) | default(global.now) | w3DateFormat }}</lastmod>
+                <changefreq>{{ item.data.sitemap.changefreq | default('monthly') }}</changefreq>
+                <priority>{{ item.data.sitemap.priority | default('0.5') }}</priority>
+            </url>
+        {% endif %}
+    {% endfor %}
+</urlset>

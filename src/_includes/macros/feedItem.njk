@@ -1,0 +1,32 @@
+{% macro feedItem(item, site) %}
+    {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
+    {%- set item_of_url = item_of -%}
+    {%- if item_of.url -%}
+        {% set item_of_url = item_of.url %}
+    {%- endif -%}
+    {%- set item_of_title = item_of_url -%}
+    {%- if item_of.title -%}
+        {% set item_of_title = item_of.title %}
+    {%- endif -%}
+
+    <entry>
+        <id>{{ site.url + item.url }}</id>
+        <link href="{{ site.url + item.url }}" />{% if item_of_url %}
+        <link rel="via" href="{{ item_of_url }}" />{% endif %}{% if item.data.in_reply_to %}
+        <link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />{% endif %}
+        <published>{{ item.date | w3DateFormat }}</published>
+        <updated>{{ item.data.updated | default(item.date) | w3DateFormat }}</updated>
+        <title>{{ item.data.title | default(item_of_title) | safe }}</title>
+        <category term="{{ item.data.category }}" />{% if item.data.lede %}
+        <content type="html"><![CDATA[
+            {{ item.data.lede | striptags(true) | safe }}
+        ]]></content>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
+        <content type="html"><![CDATA[
+            {{ item.templateContent | striptags(true) | safe }}
+        ]]></content>{% else %}
+        <content type="html"><![CDATA[
+            {{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title }}
+        ]]></content>
+        {% endif %}
+    </entry>
+{% endmacro %}

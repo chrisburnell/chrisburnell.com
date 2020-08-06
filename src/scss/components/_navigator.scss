@@ -1,0 +1,16 @@
+////
+/// Navigator
+/// @group components
+////
+
+.navigator {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(12em, max-content);
+    justify-content: center;
+    @include v(grid-gap, gutter);
+
+    @include media("above:small") {
+        grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
+    }
+}

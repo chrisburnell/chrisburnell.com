@@ -3,19 +3,6 @@
 /// @group components
 ////
 
-// Banner
-// Can take two images, which are displayed with `srcset`
 .banner {
-    @include border-radius;
-    @include v(width, content);
-    max-height: 100vh;
 
-    @include media("screen", "below:small") {
-        @include v(width, breakpoint-small);
-    }
-}
-
-.banner--cover {
-    width: auto;
-    @include v(max-width, line-length-minimum);
 }

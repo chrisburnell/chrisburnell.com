@@ -1,0 +1,107 @@
+////
+/// Prose
+/// @group base
+////
+
+abbr[title],
+dfn[title] {
+    @include v(color, dove);
+    font-style: italic;
+    font-weight: v(font-weight) !important;
+}
+abbr[title],
+dfn[title] {
+    @include v(border-bottom-width, hairline);
+    @include v(border-bottom-style, alternate);
+    @include v(border-bottom-color, dove);
+    cursor: help;
+
+    a & {
+        border-bottom-width: 0;
+    }
+}
+abbr[title],
+dfn[title],
+ins {
+    text-decoration: none;
+}
+
+ins {
+    @include v(background-color, liquid-white);
+    color: contrasting-color($color-liquid-white);
+    font-size: var(--font-scale-0);
+}
+
+del {
+    @include v(color, canada);
+}
+
+s {
+    @include v(color, dove);
+}
+
+strong {
+    @include v(font-weight, bold);
+}
+
+em {
+    font-weight: v(font-weight) !important;
+
+    & > small,
+    small > & {
+        font-variant: small-caps;
+        text-transform: lowercase;
+    }
+}
+
+small {
+    font-size: var(--font-scale--1);
+}
+
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 1em;
+    line-height: 0;
+    text-transform: initial;
+}
+sub {
+    bottom: 0;
+    font-variant-position: sub;
+}
+sup {
+    top: 0;
+    font-variant-position: super;
+}
+
+hr {
+    @include v(background-color, black--gamma);
+    width: 100%;
+    height: var(--border-width-thin);
+    display: block;
+    margin: var(--measure-large) 0;
+    border: 0;
+    position: relative;
+    // show the overflow in Edge and IE
+    overflow: visible;
+}
+
+// Hide elements visually
+[hidden]:not([hidden="false"]),
+.hidden {
+    &:not([href]),
+    &[href]:not(:focus):not(:active) {
+        @include hidden;
+    }
+}
+
+// Text Selection
+::selection {
+    @include v(background-color, raven);
+    @include v(color, white);
+    text-shadow: none;
+}
+.canada::selection {
+    @include v(background-color, canada);
+}

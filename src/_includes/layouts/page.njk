@@ -1,0 +1,26 @@
+---
+layout: base
+---
+<div id="content" class=" [ content ] [ wrap ] [ page ] ">
+
+    <h1 id="title" class="title">
+        <span class="p-name">{{ tagline | default(title) | safe }}</span>
+    </h1>
+
+    <div class=" [ details ] ">
+        {% if lede %}
+            <p class=" [ p-summary ] ">{{ lede | safe }}</p>
+        {% endif %}
+    </div>
+
+    <div class=" [ content__body ] ">
+        <div class=" [ e-content ] ">
+            {{ content | safe }}
+        </div>
+
+        {% include 'webmentions.njk' %}
+
+        {% include 'ads.njk' %}
+    </div>
+
+</div>

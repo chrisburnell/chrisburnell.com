@@ -1,0 +1,137 @@
+////
+/// Main
+/// @group layout
+////
+
+.main {
+    @include owl;
+    @include v(padding-bottom, gigantic);
+}
+
+.content {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+
+    @include media("above:medium") {
+        grid-template-columns:
+            [marginalia-start]
+            14em
+            [marginalia-end]
+            var(--measure-gutter)
+            [content-start outdent-start]
+            repeat(6, 1fr)
+            [content-end outdent-end];
+        grid-template-rows: auto auto 1fr;
+    }
+
+    @include media("above:large") {
+        grid-template-columns:
+            [marginalia-start]
+            16em
+            [marginalia-end]
+            var(--measure-gap)
+            [content-start]
+            repeat(6, 1fr)
+            [content-end]
+            var(--measure-gap)
+            [outdent-start]
+            10em
+            [outdent-end];
+    }
+
+    & > %content-elements {
+        @include v(max-width, line-length-clamp);
+    }
+}
+
+.title {
+    @include v(margin-top, gigantic);
+    @include v(margin-bottom, gigantic);
+
+    @include media("above:medium") {
+        grid-column: content;
+        grid-row: 1/2;
+    }
+}
+
+.details {
+    @include v(margin-bottom, large);
+    @include v(font-family, serif);
+    font-style: italic;
+
+    @include media("above:medium") {
+        grid-column: marginalia;
+        grid-row: 2/3;
+        margin-bottom: 0;
+        text-align: right;
+    }
+
+    .title[hidden] ~ & {
+        @include v(margin-top, gigantic);
+    }
+
+    a {
+        color: inherit;
+    }
+
+    time {
+        white-space: nowrap;
+    }
+}
+.details--published {
+    @include media("below:medium") {
+        order: -1;
+        @include v(margin-top, large);
+        margin-bottom: 0;
+        font-size: var(--font-scale--1);
+    }
+
+    .title[hidden] ~ & {
+        @include media("below:medium") {
+            @include v(margin-bottom, large);
+        }
+    }
+}
+
+.content__body {
+    @include owl;
+
+    @include media("above:medium") {
+        grid-column: content;
+        grid-row: 2/4;
+    }
+
+    &.content__body--wide {
+        @include media("above:medium") {
+            grid-column: content-start/outdent-end;
+        }
+    }
+
+    .title[hidden] ~ & {
+        @include media("above:medium") {
+            @include v(margin-top, gigantic);
+        }
+    }
+}
+.e-content {
+    @include owl;
+}
+
+.meta {
+    @include v(margin-top, large);
+
+    @include media("above:medium") {
+        grid-column: marginalia;
+        grid-row: 3/4;
+    }
+}
+
+.lede {
+    @include v(max-width, line-length-clamp);
+    @include v(font-weight, bold);
+
+    .post & {
+        font-size: var(--font-scale-1);
+    }
+}

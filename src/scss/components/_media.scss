@@ -4,9 +4,16 @@
 /// @link https://chrisburnell.com/styleguide/#figure
 ////
 
+@each $aspect-ratio, $percentage in $aspect-ratios {
+    .media--#{$aspect-ratio} {
+        padding-top: $percentage;
+    }
+}
+
 // Contains embedded media properly and allows them to be dynamically resized
 // inside a set aspect ratio container.
 .media {
+    @extend .media--16-by-9 !optional;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -18,17 +25,6 @@
         height: 100%;
         margin-bottom: 0;
     }
-}
-
-@each $aspect-ratio, $percentage in $aspect-ratios {
-    .media--#{$aspect-ratio} {
-        padding-top: $percentage;
-    }
-}
-
-.media--vimeo,
-.media--youtube {
-    @extend .media--16-by-9 !optional;
 }
 
 .media--speakerdeck {
