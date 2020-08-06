@@ -99,8 +99,8 @@ module.exports = function(config) {
             // Attempt to get the profile picture if the account still exists
             try {
                 let twitterAvatarInfo = await getTwitterAvatarUrl(twitterUsername);
-                imgData = await getImageData(twitterAvatarInfo.url.small);
-                console.log(`Twitter image for @${twitterUsername}:`, twitterAvatarInfo.url.small);
+                imgData = await getImageData(twitterAvatarInfo.url.large);
+                console.log(`Twitter image for @${twitterUsername}:`, twitterAvatarInfo.url.large);
             }
             // Serve the default if not
             catch {

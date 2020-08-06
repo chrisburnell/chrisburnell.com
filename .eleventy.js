@@ -164,7 +164,7 @@ module.exports = function(config) {
     config.addCollection("featurePostsNotWriting", collection => {
         return collection.getFilteredByTags("feature")
             .filter(isPublished)
-            // .filter(isNotReply)
+            .filter(isNotReply)
             .filter(item => {
                 return !item.data.tags.includes("writing");
             })
