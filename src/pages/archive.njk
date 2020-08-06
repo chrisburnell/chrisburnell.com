@@ -19,7 +19,7 @@ lede: Browse all of my posts by a variety of metrics.
         <p class=" [ p-summary ] ">Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
     </div>
 
-    <div class=" [ content__body  content__body--wide ] [ h-feed ] ">
+    <div class=" [ content__body ] [ h-feed ] ">
         {% for lookup in collections.categories %}
             {%- if lookup.title == 'note' -%}
                 {% set collection = collections.notesWithoutReplies %}
@@ -55,8 +55,6 @@ lede: Browse all of my posts by a variety of metrics.
         {% endfor %}
 
         {% include 'webmentions.njk' %}
-
-        {% include 'ads.njk' %}
     </div>
 
     <div class=" [ meta ] ">
@@ -69,5 +67,7 @@ lede: Browse all of my posts by a variety of metrics.
             {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
         </ul>
     </div>
+
+    {% include 'ads.njk' %}
 
 </div>

@@ -127,11 +127,9 @@
     }
 }
 
-.lede {
-    @include v(max-width, line-length-clamp);
-    @include v(font-weight, bold);
-
-    .post & {
-        font-size: var(--font-scale-1);
+.ads {
+    @include media("above:medium") {
+        grid-column: content;
+        grid-row: 4/5;
     }
 }

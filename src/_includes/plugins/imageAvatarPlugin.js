@@ -66,6 +66,15 @@ module.exports = function(config) {
             }
             asset = new AssetCache(`avatar-twitter-${twitterUsername}`);
         }
+        // Webmention is from my website
+        else if (url.includes('https://chrisburnell.com')) {
+            return [
+                `<picture class=" [ avatar ] ">`,
+                    `<source type="webp" srcset="/images/avatar.webp" />`,
+                    `<img alt="" src="/images/avatar.jpg" width="48" height="48" loading="lazy">`,
+                `</picture>`
+            ].join("");
+        }
         // Webmention is from a personal URL and has a photo attached
         else if (photo) {
             host = getHost(authorUrl);

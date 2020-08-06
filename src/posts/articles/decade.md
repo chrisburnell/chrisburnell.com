@@ -25,10 +25,8 @@ No longer was I just another not-yet-eclipsed star in the Geocities galaxy. More
 
 Looking back on my content, *my, how I’ve aged… thankfully*.
 
-But it’s that I have any content to speak of that I’m celebrating. Just write and just publish[^1]. A decade later, when I look back to my earliest work, it’s almost like looking into the mind of a different person. I do remember being that person, but I feel like I’ve grown a great deal since my first foray into web development.
+But it’s that I have any content to speak of that I’m celebrating. <q>Just write and just publish.</q> <em>(I’m aware of the <a href="http://bradfrost.com/blog/post/just" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.)</em> A decade later, when I look back to my earliest work, it’s almost like looking into the mind of a different person. I do remember being that person, but I feel like I’ve grown a great deal since my first foray into web development.
 
 Over the years of writing, editing, and not publishing, I regret almost every piece of work I’ve not published. I naïvely wanted to write prose that was ephemeral and rung true no matter how far into the future a reader might be. Sure,
 
 But this is an impossible task. There is an inescapable timeliness to words and prose.
-
-[^1]: I’m aware of the <a href="http://bradfrost.com/blog/post/just" title="Just, an article by Brad Frost">assumptions</a> I’m making when using the word <q>just</q> here. I think my point, though, is that the only thing stopping you from publishing is <em>you</em>.

@@ -81,6 +81,15 @@
     }
 }
 
+.lede {
+    @include v(max-width, line-length-clamp);
+    @include v(font-weight, bold);
+
+    .post & {
+        font-size: var(--font-scale-1);
+    }
+}
+
 // Rating
 .rating {
     display: inline-block;

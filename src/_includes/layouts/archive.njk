@@ -46,8 +46,6 @@ layout: base
                 {{ deckItem(item, global.now, collections.all, webmentions) }}
             {% endfor %}
         </nav>
-
-        {% include 'ads.njk' %}
     </div>
 
     <div class=" [ meta ] ">
@@ -60,5 +58,7 @@ layout: base
             {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
         </ul>
     </div>
+
+    {% include 'ads.njk' %}
 
 </div>

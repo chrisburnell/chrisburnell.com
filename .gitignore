@@ -45,6 +45,7 @@ node_modules/
 # Site Assets
 /css
 /fonts
+/images/avatars
 /static
 /src/_includes/generated/
 /.cache
