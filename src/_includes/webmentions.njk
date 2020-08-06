@@ -18,7 +18,7 @@
                     {% if reactions.length %}
                         <dt class="hidden">Reactions:</dt>
                         <dd id="reactions" class="webmentions__list__reactions">
-                            <ol class="todo">
+                            <ol class="reactions">
                                 {% for webmention in reactions %}
                                     {%- set authorName = webmention.data.author.name | default(webmention.data.name) -%}
                                     {%- set authorUrl = webmention.data.author.url | default(webmention.data.url) -%}
@@ -38,7 +38,7 @@
                     {% if replies.length %}
                         <dt>Replies:</dt>
                         <dd id="replies" class="webmentions__list__replies">
-                            <ol class="todo">
+                            <ol class="replies">
                                 {% for webmention in replies %}
                                     {%- set authorName = webmention.data.author.name | default(webmention.data.name) -%}
                                     {%- set authorUrl = webmention.data.author.url | default(webmention.data.url) -%}

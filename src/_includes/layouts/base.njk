@@ -87,7 +87,7 @@
 
     <meta http-equiv="cleartype" content="on">
 
-    <style>{%- include 'generated/critical.css' -%}</style>
+    <style>{%- include "../../../css/critical.css" -%}</style>
     <link rel="preload" as="style" href="/css/non-critical.css">
     <link rel="stylesheet" href="/css/non-critical.css" media="print" onload="this.media='all'">
 
@@ -262,11 +262,14 @@
         </div>
     </footer>
 
-    <script src="/js/helpers.js"></script>
-    <script src="/js/navigator.js"></script>
-    <script src="/js/color-scheme.js"></script>
-    <script src="/js/sparklines.js"></script>
-    <script src="/js/welcome.js"></script>
+    {% if page.inputPath.includes('httpstatus') -%}
+    {%- else %}
+        <script src="/js/helpers.js"></script>
+        <script src="/js/navigator.js"></script>
+        <script src="/js/color-scheme.js"></script>
+        <script src="/js/sparklines.js"></script>
+        <script src="/js/welcome.js"></script>
+    {% endif %}
 
     {% if category == 'code' or caniuse %}
         <!-- Can I Use Embeds -->

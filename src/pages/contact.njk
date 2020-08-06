@@ -14,13 +14,12 @@ lede: Let's get in touch!
     <dd><a class="canada" href="{{ author.urls.mastodon }}">{{ '@' + author.mastodon }}</a></dd>
 </dl>
 
-<p>There are a number of Feeds you also can subscribe to:</p>
+<p>There are a number of Feeds you can also subscribe to:</p>
 
 <ul class="shelf" role="navigation">
     <li><a class="button" href="/feed.xml" rel="alternate">All Posts</a></li>
-    {# {% for item in categories %}
-        <li>
-            <a class="button" href="/{{ page.type }}.xml" rel="alternate">{{ page.title }}</a>
-        </li>
-    {% endfor %} #}
+    <li><a class="button" href="/writing.xml" rel="alternate">Writing</a></li>
+    <li><a class="button" href="/replies.xml" rel="alternate">Replies</a></li>
+    <li><a class="button" href="/checkins.xml" rel="alternate">Checkins</a></li>
+    <li><a class="button" href="/rsvps.xml" rel="alternate">RSVPs</a></li>
 </ul>

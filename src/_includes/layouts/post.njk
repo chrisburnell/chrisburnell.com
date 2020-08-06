@@ -41,7 +41,6 @@ layout: base
     {% set syndicate_to = [of_url] %}
 {%- endif -%}
 
-{# TODO change from collections.posts #}
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) -%}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
 <article id="content" class=" [ content ] [ wrap ] [ post h-{{ page.mf_root }}{% if page.mf_property %} p-{{ page.mf_property }}{% endif %} ] ">

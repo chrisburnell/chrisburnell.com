@@ -61,7 +61,7 @@
     float: left;
     position: relative;
     box-shadow: inset 0 var(--border-width-default) 0 0 var(--color-black--gamma);
-    text-decoration: none;
+    text-decoration: none !important;
     @include transition(opacity);
 
     &,
@@ -95,7 +95,7 @@
         }
 
         & img {
-            animation: peek v(transition-duration, long) v(transition-function) v(transition-duration, long) var(--animation-fill-mode);
+            animation: peek v(transition-duration, long) v(transition-function) v(transition-duration, default) var(--animation-fill-mode);
 
             @at-root {
                 @keyframes peek {

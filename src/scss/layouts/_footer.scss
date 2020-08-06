@@ -4,7 +4,7 @@
 ////
 
 .footer {
-    background-color: var(--color-mineshaft);
+    @include v(background-color, mineshaft);
     @include v(padding-top, large);
     @include v(padding-bottom, large);
     border-top: var(--border-width-thin) solid var(--color-coyote);
@@ -12,7 +12,8 @@
     &,
     a,
     button {
-        color: var(--color-white);
+        @include v(color, white);
+        @include v(text-decoration-color, kaiser);
     }
 
     .wrap {
