@@ -37,7 +37,7 @@
 
     <article{% if hfeed %} class="h-{{ item.data.mf_root }}"{% endif %}>
         {% if item_in_reply_to %}
-            <div class="italic">
+            <div class="deck__context">
                 {% if item.data.rsvp %}
                     <data class="p-rsvp" value="{{ item.data.rsvp.value }}" hidden></data>
                     {% if item.data.rsvp.value == 'yes' %}
@@ -172,7 +172,7 @@
             <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% endif %}
         {% if item.date %}
-            <div class="italic">
+            <div class="deck__meta">
                 <small>published</small>
                 <a class="u-url" href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class="dt-published" datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
                 {%- if item.data.updated %}
@@ -181,7 +181,7 @@
                 {% endif %}
                 {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
                 {% if responses.length %}
-                    <a class="webmentions-count" href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{% emoji '📢' %} {{ responses.length | numberStringFormat }} responses</a>
+                    <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{% emoji '📢' %} {% if responses.length < 10 %}{{ responses.length | numberStringFormat | title }}{% else %}{{ responses.length }}{% endif %} response{{ 's' if responses.length > 1 }}</a>
                 {% endif %}
             </div>
         {% endif %}

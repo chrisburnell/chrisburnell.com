@@ -4,7 +4,6 @@
 ////
 
 .deck {
-
     article {
         @include owl(tiny);
         @include v(max-width, breakpoint-medium);
@@ -38,4 +37,13 @@
             @include v(padding-right, small);
         }
     }
+}
+
+.deck__context,
+.deck__meta {
+    font-style: italic;
+}
+
+.deck__meta a {
+    @include v(margin-right, small);
 }
