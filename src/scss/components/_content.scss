@@ -1,0 +1,85 @@
+////
+/// Content
+/// @group components
+////
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include v(gap, gutter);
+}
+.title--error span,
+.title--success span {
+    padding: v(measure, tiny) v(measure, small);
+    text-shadow: none;
+}
+.title--error > span {
+    @include v(background-color, canada);
+    @include v(color, white);
+}
+.title--success > span {
+    @include v(background-color, liquid);
+    @include v(color, white);
+}
+
+.sparkline {
+    width: 106.66px;
+    height: 16px;
+
+    @include media("above:small") {
+        width: 160px;
+        height: 24px;
+    }
+}
+
+.lede {
+    @include v(max-width, line-length-clamp);
+    @include v(font-weight, bold);
+
+    .post & {
+        font-size: var(--font-scale-1);
+    }
+}
+
+// Rating
+.rating {
+    display: inline-block;
+    position: relative;
+    font-size: var(--font-scale-1);
+    line-height: 1;
+
+    &::before,
+    &::after {
+        content: "★★★★★";
+        speak: none;
+    }
+
+    &::before {
+        @include v(color, alto);
+    }
+
+    &::after {
+        background-color: inherit;
+        @include v(color, kaiser);
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:not([value]) {
+        display: none;
+    }
+
+    @for $i from 1 through 19 {
+        &[value="#{$i / 4}"]::after {
+            width: range-map($i, 0, 20, 0%, 100%);
+        }
+    }
+    &[value="5"]::after {
+        width: 100%;
+    }
+}

@@ -30,8 +30,8 @@
             if (window.devicePixelRatio) {
                 c.width = c.width * window.devicePixelRatio;
                 c.height = c.height * window.devicePixelRatio;
-                c.style.width = `${c.width / window.devicePixelRatio}px`;
-                c.style.height = `${c.height / window.devicePixelRatio}px`;
+                // c.style.width = `${c.width / window.devicePixelRatio}px`;
+                // c.style.height = `${c.height / window.devicePixelRatio}px`;
                 ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
             }
             ctx.clearRect(0, 0, width, height);

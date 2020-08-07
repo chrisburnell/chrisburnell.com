@@ -13,6 +13,7 @@ lede: Browse all of my posts by a variety of metrics.
 
     <h1 id="title" class="title">
         <span class="p-name">{{ title | safe }}</span>
+        {% sparkline title, collection %}
     </h1>
 
     <div class=" [ details ] ">

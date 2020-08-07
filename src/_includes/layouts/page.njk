@@ -3,8 +3,8 @@ layout: base
 ---
 <div id="content" class=" [ content ] [ wrap ] [ page ] ">
 
-    <h1 id="title" class="title">
-        <span class="p-name">{{ tagline | default(title) | safe }}</span>
+    <h1 id="title" class=" [ title{% if title_error %} title--error{% elif title_success %} title--success{% endif %} ] ">
+        <span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
     </h1>
 
     <div class=" [ details ] ">

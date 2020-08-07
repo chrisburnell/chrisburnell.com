@@ -140,36 +140,36 @@
         {% if item_title or item_of_title %}
             <h3>
                 {% if item.data.tags and item.data.tags.includes('clickthrough') and item.data.emoji %}
-                    <a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
+                    <a class=" [ p-name ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
                         {% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
                     </a>
                 {% elif item.data.emoji %}
-                    <a href="{{ item.url | striptags(true) | safe }}">
+                    <a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">
                         {% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
                     </a>
                 {% else %}
-                    <a href="{{ item.url | striptags(true) | safe }}">
+                    <a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">
                         {{ item_title | default(item_of_title) | striptags(true) | safe }}
                     </a>
                 {% endif %}
             </h3>
         {% endif %}
         {% if item.data.lede and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
-            <p>{{ item.data.lede | striptags(true) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | urlize | safe }}</p>
         {% elif item.data.lede %}
-            <p>{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'bookmark' %}
-            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'code' %}
-            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'like' %}
-            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'note' %}
-            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'recipe' %}
-            <p>A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {% for author in item.data.authors | toArray %}{% if author.url %}<a href="{{ author | getPerson('url') }}">{{ author | getPerson }}</a>{% if not loop.last %}, {% endif %}{% else %}{{ author | getPerson }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}{% endif %}</p>
+            <p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {% for author in item.data.authors | toArray %}{% if author.url %}<a href="{{ author | getPerson('url') }}">{{ author | getPerson }}</a>{% if not loop.last %}, {% endif %}{% else %}{{ author | getPerson }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}{% endif %}</p>
         {% elif item.data.category == 'talk' %}
-            <p>{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% endif %}
         {% if item.date %}
             <div class="deck__meta">

@@ -81,7 +81,7 @@
 .webmentions__response__avatar {
     box-sizing: content-box;
     @include v(width, avatar-small);
-    border: var(--border-width-thin) solid var(--color-raven--alpha);
+    border: var(--border-width-thin) solid var(--color-raven--beta);
 
     &,
     .avatar,

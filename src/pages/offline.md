@@ -11,6 +11,7 @@ coil: false
     <button type="button" onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
 
+{% raw %}
 <script>
 (async function listPages() {
   const browsingHistory = [];
@@ -60,3 +61,4 @@ coil: false
   }
 })();
 </script>
+{% endraw %}

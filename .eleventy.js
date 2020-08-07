@@ -319,8 +319,24 @@ module.exports = function(config) {
     });
 
     // Sparkline
-    config.addShortcode("sparkline", (title, values) => {
-        return `<canvas id="sparkline-${title}" class="sparkline" data-values="${values}" width="160" height="24" tabindex="0" hidden></canvas>`;
+    config.addShortcode("sparkline", (title, collection) => {
+        let values = [];
+        let week = (1000 * 60 * 60 * 24  * 7);
+        let end, before, count;
+        for (let i = 0; i < 26; i++) {
+            end = epochFormat(now) - (i * week);
+            before = epochFormat(now) - ((i + 1) * week);
+            count = 0;
+            for (let item of collection) {
+                if (before < epochFormat(item.date) && epochFormat(item.date) < end) {
+                    count++;
+                }
+            }
+            values.push(count);
+            end = before - 1;
+            before = before - (60 * 60 * 24  * 7);
+        }
+        return `<canvas id="sparkline-${title}" class="sparkline" data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`;
     });
 
     // Magic Image

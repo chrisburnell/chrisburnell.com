@@ -5,7 +5,7 @@ lede: What have I been listening to?
 
 Powered by [LastFM](https://last.fm). Check out my [Music Reviews](/music) for more musical data.
 
-<nav id="listening" class=" [ shelf ] [ h-feed ] [ js-lastfm-feed ] ">
+<nav id="listening" class=" [ shelf ] [ js-lastfm-feed ] ">
 </nav>
 
 <script src="/js/lastfm.js"></script>
@@ -44,20 +44,20 @@ function timeSince(timeStamp) {
     const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";
     const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
     const LASTFM_TEMPLATE = `
-<div class="h-cite  p-listen-of">
-    <picture class="cover">
-        <img alt="" class="u-photo" role="presentation" loading="lazy" src="{{ image }}">
+<a href="{{ url }}">
+    <picture class=" [ cover ] ">
+        <img class=" [ u-photo ] " src="{{ image }}" alt="" role="presentation" loading="lazy">
     </picture>
-    <h3>
-        <a href="{{ url }}" rel="external">
-            <cite class="p-name  p-summary">{{ name }}</cite>
-        </a>
-    </h3>
-    <div>
-        <a class="h-cite" href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
-    </div>
-    <time class="dt-published" datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+</a>
+<h3>
+    <a href="{{ url }}">
+        <cite class="p-name  p-summary">{{ name }}</cite>
+    </a>
+</h3>
+<div>
+    <a class="h-cite" href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
 </div>
+<time class="dt-published" datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
 `;
 
     fetch(LASTFM_URL)

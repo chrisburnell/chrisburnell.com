@@ -47,3 +47,7 @@
 .deck__meta a {
     @include v(margin-right, small);
 }
+
+.webmentions-count {
+    @include v(margin-left, small);
+}

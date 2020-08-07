@@ -23,7 +23,6 @@ samp,
 var {
     // force text to wrap
     @include break-words;
-    font-size: var(--font-scale--1);
 }
 h1 > code,
 h2 > code,
@@ -35,6 +34,7 @@ mark,
 samp {
     @include border-radius;
     padding: calc(var(--measure-one-relative) / 4);
+    font-size: var(--font-scale--1);
     @include v(line-height, medium);
 }
 h1 > code,
