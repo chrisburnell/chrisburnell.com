@@ -24,7 +24,7 @@ lede: Browse all of my posts by a variety of metrics.
             {%- if lookup.title == 'note' -%}
                 {% set collection = collections.notesWithoutReplies %}
             {%- else -%}
-                {% set collection = collections[lookup.title] | reverse %}
+                {% set collection = collections[lookup.title] | publishedFilter | reverse %}
             {%- endif -%}
             <h2 id="{{ lookup.plural }}">
                 <a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
@@ -36,22 +36,14 @@ lede: Browse all of my posts by a variety of metrics.
             </h2>
             {% if collection[0].data.mf_root == 'review' %}
                 <nav class=" [ shelf ] ">
-                    {%- set count = 0 -%}
-                    {% for item in collection %}
-                        {% if not item.draft and count < 3 %}
-                            {{ shelfItem(item, global.now, collections.all) }}
-                            {%- set count = count + 1 -%}
-                        {% endif %}
+                    {% for item in collection | limit(site.limits.snapshot) %}
+                        {{ shelfItem(item, global.now, collections.all) }}
                     {% endfor %}
                 </nav>
             {% else %}
                 <nav class=" [ deck ] ">
-                    {%- set count = 0 -%}
-                    {% for item in collection %}
-                        {% if not item.draft and count < 3 %}
-                            {{ deckItem(item, global.now, collections.all, webmentions) }}
-                            {%- set count = count + 1 -%}
-                        {% endif %}
+                    {% for item in collection | limit(site.limits.snapshot) %}
+                        {{ deckItem(item, global.now, collections.all, webmentions) }}
                     {% endfor %}
                 </nav>
             {% endif %}

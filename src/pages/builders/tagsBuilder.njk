@@ -27,9 +27,7 @@ eleventyComputed:
     <div class=" [ content__body ] ">
         <nav class=" [ deck ] [ h-feed ] ">
             {% for item in collection %}
-                {% if not item.draft %}
-                    {{ deckItem(item, global.now, collections.all, webmentions) }}
-                {% endif %}
+                {{ deckItem(item, global.now, collections.all, webmentions) }}
             {% endfor %}
         </nav>
     </div>

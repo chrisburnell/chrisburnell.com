@@ -32,9 +32,7 @@ eleventyComputed:
         {% if collection[0].data.mf_root == 'review' %}
             <nav class=" [ shelf ] ">
                 {% for item in collection %}
-                    {% if not item.draft %}
-                        {{ shelfItem(item, global.now, collections.all) }}
-                    {% endif %}
+                    {{ shelfItem(item, global.now, collections.all) }}
                 {% endfor %}
             </nav>
         {% else %}
@@ -50,23 +48,21 @@ eleventyComputed:
             </h2>
             <nav class=" [ deck ] ">
                 {% for item in collection %}
-                    {% if not item.draft %}
-                        {% if year != item.date.getFullYear() %}
-                            {%- set year = item.date.getFullYear() -%}
-                            </nav>
-                            <h2 id="{{ year }}">
-                                {{ year }}
-                                <small>({{ collection | getCountByYear(year) }})</small>
-                                <a href="#{{ year }}" class="fragment-anchor">
-                                    <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                                        <use xlink:href="/images/sprites.svg#svg--link"></use>
-                                    </svg>
-                                </a>
-                            </h2>
-                            <nav class=" [ deck ] ">
-                        {% endif %}
-                        {{ deckItem(item, global.now, collections.all, webmentions) }}
+                    {% if year != item.date.getFullYear() %}
+                        {%- set year = item.date.getFullYear() -%}
+                        </nav>
+                        <h2 id="{{ year }}">
+                            {{ year }}
+                            <small>({{ collection | getCountByYear(year) }})</small>
+                            <a href="#{{ year }}" class="fragment-anchor">
+                                <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+                                    <use xlink:href="/images/sprites.svg#svg--link"></use>
+                                </svg>
+                            </a>
+                        </h2>
+                        <nav class=" [ deck ] ">
                     {% endif %}
+                    {{ deckItem(item, global.now, collections.all, webmentions) }}
                 {% endfor %}
             </nav>
         {% endif %}
