@@ -38,7 +38,7 @@ lede: Browse all of my posts by a variety of metrics.
                 <nav class=" [ shelf ] ">
                     {%- set count = 0 -%}
                     {% for item in collection %}
-                        {% if not item.draft and count < 4 %}
+                        {% if not item.draft and count < 3 %}
                             {{ shelfItem(item, global.now, collections.all) }}
                             {%- set count = count + 1 -%}
                         {% endif %}
