@@ -9,7 +9,7 @@ Expects a URL in the following format:
 
 <form class="get-youtube-feed">
     <input type="text" inputmode="url" id="url">
-    <button type="submit">Submit</button>
+    <button class="button" type="submit">Submit</button>
 </form>
 
 <script src="/js/url-input.js"></script>

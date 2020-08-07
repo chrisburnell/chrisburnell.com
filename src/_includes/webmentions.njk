@@ -13,7 +13,7 @@
             {% if responses.length %}
                 {%- set reactions = responses | getWebmentionReactions -%}
                 {%- set replies = responses | getWebmentionReplies -%}
-                <h2 id="responses">{{ responses.length | numberStringFormat }} Response{{ 's' if responses.length > 1 }}</h2>
+                <h2 id="responses">{{ responses.length }} Response{{ 's' if responses.length > 1 }}</h2>
                 <dl class=" [ webmentions__list ] [ full ] ">
                     {% if reactions.length %}
                         <dt class="hidden">Reactions:</dt>

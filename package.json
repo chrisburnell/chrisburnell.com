@@ -39,8 +39,8 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "scss:build": "sass src/scss/main.scss:css/main.css src/scss/variables.scss:css/variables.css src/scss/non-critical.scss:css/non-critical.css src/scss/critical.scss:css/critical.css --no-source-map --color --quiet --style=compressed",
-    "scss:serve": "sass src/scss/main.scss:css/main.css src/scss/variables.scss:css/variables.css src/scss/non-critical.scss:css/non-critical.css src/scss/critical.scss:css/critical.css --no-source-map --color --quiet --style=expanded --watch --poll",
+    "scss:build": "sass src/scss:css --no-source-map --color --quiet --style=compressed",
+    "scss:serve": "sass src/scss:css --no-source-map --color --quiet --watch",
     "images": "imagemin testing/* --out-dir out",
     "build": "npm run scss:build; ELEVENTY_ENV=production npx @11ty/eleventy",
     "serve": "npm run scss:serve & cross-env npx @11ty/eleventy --serve --quiet",

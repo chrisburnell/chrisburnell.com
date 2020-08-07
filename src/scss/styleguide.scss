@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+////
+/// Chris Burnell
+///
+/// Please contact me if you want to learn about anything you see here.
+///
+/// @author Chris Burnell <me@chrisburnell.com>
+/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
+////
+
+/// REQUIRED — ABSTRACTS & VENDORS
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/collections";
+@import "abstracts/lists";
+@import "abstracts/maps";
+@import "abstracts/mathematics";
+@import "abstracts/mixins";
+@import "vendors/include-media";
+
+/// STYLEGUIDE
+@import "pages/styleguide";

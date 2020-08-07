@@ -3,7 +3,7 @@ title: IndieWeb
 lede: How I've implemented and interact with the <a href="https://indieweb.org">IndieWeb</a>.
 ---
 
-<figure class="media">
+<figure>
     <img src="/images/content/indiewebcamp.svg" alt="IndieWebCamp logo">
 </figure>
 
@@ -12,19 +12,19 @@ lede: How I've implemented and interact with the <a href="https://indieweb.org">
 I author posts of various *types* on this website, some of which I syndicate to silos around the web.
 
 <dl>
-    <dt><h2 class="delta"><a href="/articles">Articles</a></h2></dt>
+    <dt><a href="/articles">Articles</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><h2 class="delta"><a href="/notes">Notes</a></h2></dt>
+    <dt><a href="/notes">Notes</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><h2 class="delta"><a href="/bookmarks">Bookmarks</a></h2></dt>
+    <dt><a href="/bookmarks">Bookmarks</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><h2 class="delta"><a href="/pens">Pens</a></h2></dt>
+    <dt><a href="/pens">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
-    <dt><h2 class="delta"><a href="/beer">Beer</a></h2></dt>
+    <dt><a href="/beer">Beer</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external">Untappd</a> using my project, <a href="https://ownyour.beer" rel="external">OwnYourBeer</a>, to this website.</dd>
-    <dt><h2 class="delta"><a href="/books">Books</a></h2></dt>
+    <dt><a href="/books">Books</a></dt>
     <dd>Typically posted only on this website.</dd>
-    <dt><h2 class="delta"><a href="/music">Music</a></h2></dt>
+    <dt><a href="/music">Music</a></dt>
     <dd>Typically posted only on this website.</dd>
 </dl>
 

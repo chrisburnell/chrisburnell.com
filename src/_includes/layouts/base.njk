@@ -41,6 +41,9 @@
     <link rel="self" href="{{ site.url + '/feed.xml' }}">
     <link rel="alternate" type="application/atom+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
     <link rel="alternate" type="application/atom+xml" title="Writing Feed" href="{{ site.url + '/writing.xml' }}">
+    <link rel="alternate" type="application/atom+xml" title="Replies Feed" href="{{ site.url + '/replies.xml' }}">
+    <link rel="alternate" type="application/atom+xml" title="RSVPs Feed" href="{{ site.url + '/rsvps.xml' }}">
+    <link rel="alternate" type="application/atom+xml" title="Checkins Feed" href="{{ site.url + '/checkins.xml' }}">
     <link rel="pingback" href="{{ author.urls.webmention }}/xmlrpc">
     <link rel="webmention" href="{{ author.urls.webmention }}/webmention">
     <link rel="authorization_endpoint" href="{{ author.urls.authorization }}">
@@ -157,14 +160,15 @@
         <link rel="preconnect" href="https://assets.codepen.io">
         <link rel="preconnect" href="https://s.codepen.io">
     {% endif %}
+    {% if speakerdeck %}
+        <link rel="preconnect" href="https://speakerdeck.com">
+    {% endif %}
     {% if twitter %}
         <link rel="preconnect" href="https://platform.twitter.com">
     {% endif %}
 
     {% block head %}
     {% endblock %}
-
-    <script>performance.mark("Head · End");</script>
 </head>
 <body>
     <a href="#content" hidden>Skip to main content</a>
@@ -262,6 +266,8 @@
         </div>
     </footer>
 
+    <div class="notification" hidden aria-hidden="true"></div>
+
     {% if page.inputPath.includes('httpstatus') -%}
     {%- else %}
         <script src="/js/helpers.js"></script>
@@ -290,5 +296,6 @@
         <!-- Speaker Deck Embeds -->
         <script src="https://speakerdeck.com/assets/embed.js" async defer></script>
     {% endif %}
+
 </body>
 </html>

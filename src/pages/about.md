@@ -64,7 +64,7 @@ Over the near four years with *City*, I had the opportunity to learn a great dea
     </a>
 </figure>
 
-In <time datetime="2018-02">February 2018</time>, after having made a difficult, deliberating choice, I made the choice to work again at *Squiz* as a *Front-End Developer*. I’m extremely excited to see how old traditions have carried forward, how they’ve adapted to new technologies over the last four years, join a new team to push these technologies and rapidly deliver high quality implementations, and to get to work with some of my favourite developers again.
+In <time datetime="2018-02">February 2018</time>, after much deliberation, I made the choice to rejoin *Squiz* as a *Front-End Developer*. I’m extremely excited to see how old traditions have carried forward, how they’ve adapted to new technologies over the last four years, join a new team to push these technologies and rapidly deliver high quality implementations, and to get to work with some of my favourite developers again.
 
 
 ## The Web is Awesome
