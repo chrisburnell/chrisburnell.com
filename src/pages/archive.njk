@@ -36,14 +36,22 @@ lede: Browse all of my posts by a variety of metrics.
             </h2>
             {% if collection[0].data.mf_root == 'review' %}
                 <nav class=" [ shelf ] ">
-                    {% for item in collection | limit(site.limits.snapshot) %}
-                        {{ shelfItem(item, global.now, collections.all) }}
+                    {%- set count = 0 -%}
+                    {% for item in collection %}
+                        {% if not item.draft and count < 4 %}
+                            {{ shelfItem(item, global.now, collections.all) }}
+                            {%- set count = count + 1 -%}
+                        {% endif %}
                     {% endfor %}
                 </nav>
             {% else %}
                 <nav class=" [ deck ] ">
-                    {% for item in collection | limit(site.limits.snapshot) %}
-                        {{ deckItem(item, global.now, collections.all, webmentions) }}
+                    {%- set count = 0 -%}
+                    {% for item in collection %}
+                        {% if not item.draft and count < 3 %}
+                            {{ deckItem(item, global.now, collections.all, webmentions) }}
+                            {%- set count = count + 1 -%}
+                        {% endif %}
                     {% endfor %}
                 </nav>
             {% endif %}
