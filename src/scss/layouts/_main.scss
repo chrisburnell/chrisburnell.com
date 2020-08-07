@@ -96,6 +96,7 @@
 
 .content__body {
     @include owl;
+    overflow: hidden;
 
     @include media("above:medium") {
         grid-column: content;

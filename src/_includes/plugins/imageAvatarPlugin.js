@@ -51,7 +51,7 @@ module.exports = function(config) {
             if (authorUrl == 'https://chrisburnell.com' || authorUrl == 'https://twitter.com/iamchrisburnell') {
                 return [
                     `<picture class=" [ avatar ] ">`,
-                        `<source type="webp" srcset="/images/avatar.webp" />`,
+                        `<source type="image/webp" srcset="/images/avatar.webp" />`,
                         `<img alt="" src="/images/avatar.jpg" width="48" height="48" loading="lazy">`,
                     `</picture>`
                 ].join("");
@@ -70,7 +70,7 @@ module.exports = function(config) {
         else if (url.includes('https://chrisburnell.com')) {
             return [
                 `<picture class=" [ avatar ] ">`,
-                    `<source type="webp" srcset="/images/avatar.webp" />`,
+                    `<source type="image/webp" srcset="/images/avatar.webp" />`,
                     `<img alt="" src="/images/avatar.jpg" width="48" height="48" loading="lazy">`,
                 `</picture>`
             ].join("");
@@ -84,7 +84,7 @@ module.exports = function(config) {
         else {
             return [
                 `<picture class=" [ avatar ] ">`,
-                    `<source type="webp" srcset="/images/default-profile.webp" />`,
+                    `<source type="image/webp" srcset="/images/default-profile.webp" />`,
                     `<img alt="" src="/images/default-profile.jpg" width="48" height="48" loading="lazy">`,
                 `</picture>`
             ].join("");
@@ -106,7 +106,7 @@ module.exports = function(config) {
             catch {
                 return [
                     `<picture class=" [ avatar ] ">`,
-                        `<source type="webp" srcset="/images/default-profile.webp" />`,
+                        `<source type="image/webp" srcset="/images/default-profile.webp" />`,
                         `<img alt="" src="/images/default-profile.jpg" width="48" height="48" loading="lazy">`,
                     `</picture>`
                 ].join("");

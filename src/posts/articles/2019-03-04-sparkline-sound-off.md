@@ -31,9 +31,8 @@ Let’s pause and review a little background about musical notes and their relat
 As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
 
 <figure>
-    <a href="/images/content/diatonic-scale.svg">
-        <img src="/images/content/diatonic-scale.svg" alt="graph showing the logarithmic relationship of frequencies in a diatonic scale">
-    </a>
+    <img src="/images/content/diatonic-scale.svg" alt="" loading="lazy">
+    <figcaption><a href="/images/content/diatonic-scale.svg">graph showing the logarithmic relationship of frequencies in a diatonic scale</a></figcaption>
 </figure>
 
 **A<sub>4</sub>** = <samp>440Hz</samp>
