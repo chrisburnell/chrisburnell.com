@@ -208,5 +208,13 @@
         <a href="https://fed.brid.gy" hidden></a>
     </li>
 </ul>
-<data class="u-url" value="{{ page.url }}" hidden></data>
-<data class="u-author" value="/" hidden></data>
+{% if title or of.title %}
+    <data class=" [ p-name ] " value="{{ title | default(of.title) | safe }}" hidden></data>
+{% endif %}
+<data class=" [ u-url ] " value="{{ page.url }}" hidden></data>
+<div class=" [ h-card  p-author ] " hidden>
+    <data class=" [ p-name ] " value="{{ author.name }}"></data>
+    <data class=" [ u-url  u-uid ] " value="/"></data>
+    <data class=" [ u-url ] " value="/about"></data>
+    <data class=" [ u-photo ] " value="/images/avatar@2x.jpg"></data>
+</div>

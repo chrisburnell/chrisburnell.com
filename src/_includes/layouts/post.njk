@@ -43,15 +43,15 @@ layout: base
 
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) -%}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
-<article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }}{% if mf_property %} p-{{ mf_property }}{% endif %} ] ">
+<article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
     <h1 id="title" class="title" {{ 'hidden' if not title and not of_title }}>
         {% if of_title %}
-            <span class="p-name">{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
+            <span>{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
         {% elif title %}
-            <span class="p-name">{{ title | safe }}</span>
+            <span>{{ title | safe }}</span>
         {% else %}
-            {{ categoryProper | default(category) | title }} from {{ page.date | dateFormat }}
+            <span>{{ categoryProper | default(category) | title }} from {{ page.date | dateFormat }}</span>
         {% endif %}
     </h1>
 
@@ -85,7 +85,7 @@ layout: base
                 {% set of_label = 'Watch now' %}
             {%- endif -%}
             <nav class=" [ navigator ] ">
-                <a class="button" href="{{ of_url }}">{{ of_label }} →</a>
+                <a class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" href="{{ of_url }}">{{ of_label }} →</a>
             </nav>
         {% endif %}
 
@@ -93,9 +93,11 @@ layout: base
             <iframe width="100%" height="150" src="https://embed.song.link/?url=spotify:album:{{ listen_of.url | default(listen_of) }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
         {% endif %}
 
-        <div class=" [ e-content ] ">
-            {{ content | safe }}
-        </div>
+        {% if content.length %}
+            <div class=" [ e-content ] ">
+                {{ content | safe }}
+            </div>
+        {% endif %}
 
         {% include 'webmentions.njk' %}
 

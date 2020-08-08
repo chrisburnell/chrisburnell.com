@@ -1,0 +1,31 @@
+<div class=" [ author ] [ h-card  p-author ] ">
+    <a class=" [ author__information ] [ u-url ] " href="/about" rel="author  me">
+        <picture class=" [ author__image ] [ canada ] ">
+            <source srcset="/images/avatar.webp,
+                            /images/avatar@2x.webp 2x,
+                            /images/avatar@3x.webp 3x,
+                            /images/avatar@4x.webp 4x"
+                    type="image/webp" />
+            <img alt="{{ author.name }}" class=" [ u-photo ] "
+                src="/images/avatar@2x.jpg"
+                srcset="/images/avatar.jpg,
+                        /images/avatar@2x.jpg 2x,
+                        /images/avatar@3x.jpg 3x,
+                        /images/avatar@4x.jpg 4x"
+                width="100" height="100"
+                role="presentation">
+        </picture>
+        <div class=" [ author__name ] ">
+            <small>about</small>
+            <span class=" [ anchor ] [ canada ] [ p-name ] ">{{ author.name }}</span>
+        </div>
+    </a>
+    <div class=" [ author__biography ] ">
+        <p class=" [ p-note ] ">{{ site.lede | safe }}</p>
+        <p><a href="{{ author.urls.github_repo }}/tree/master/{{ page.inputPath }}">You can edit this page.</a></p>
+    </div>
+    <a class=" [ u-url u-uid ] " href="/" rel="author me" hidden> </a>
+    <data class=" [ p-x-pronoun-nominative ] " value="he" hidden> </data>
+    <data class=" [ p-x-pronoun-oblique ] " value="him" hidden> </data>
+    <data class=" [ p-x-pronoun-possessive ] " value="his" hidden> </data>
+</div>
