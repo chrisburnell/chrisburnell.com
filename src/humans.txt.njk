@@ -1,28 +1,25 @@
 ---
-layout: null
 permalink: /humans.txt
-sitemap:
-  exclude: true
 ---
 # humanstxt.org
 
 /* OWNER & DEVELOPER */
 
-    Name: {{ site.author.name }}
-    Email: {{ site.author.email }}
-    GitHub: {{ site.author.urls.github }}
-    Mastodon: {{ site.author.urls.mastodon }}
-    Twitter: {{ site.author.urls.twitter }}
-    PGP: {{ site.author.pgp }}
+    Name: {{ author.name }}
+    Email: {{ author.email }}
+    GitHub: {{ author.urls.github }}
+    Mastodon: {{ author.urls.mastodon }}
+    Twitter: {{ author.urls.twitter }}
+    PGP: {{ author.pgp }}
 
 /* SITE */
 
-    Last updated:  {{ site.time | date: '%F' }}
-    URL:           {{ site.live_url }}
-    Language:      {{ site.language }}
+    Last updated:  {{ global.now | dateFormat }} {{ global.now | timeFormat }}
+    URL:           {{ site.url }}
+    Language:      {{ site.locale }}
     Doctype:       HTML5
     Fonts:         Heebo, Proxima Nova
-    Compiled with: Jekyll
+    Compiled with: Eleventy
 
 /* LANGUAGES */
 
@@ -30,7 +27,7 @@ sitemap:
     CSS (SCSS)
     JavaScript
     JSON
-    Liquid
+    Nunjucks
     Markdown
     XML
     YAML
@@ -40,7 +37,6 @@ sitemap:
     Aperture:      https://aperture.p3k.io
     Atlas:         https://atlas.p3k.io
     CodePen:       https://codepen.io
-    Disqus:        https://disqus.com
     IndieAuth:     https://indieauth.com
     Switchboard:   https://switchboard.p3k.io
     Telegraph:     https://telegraph.p3k.io
