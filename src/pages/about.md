@@ -20,7 +20,7 @@ I have been doing freelance work, off and on, since about <time datetime="2008">
 In <time datetime="2011-12">December of 2011</time>, I made the decision to move to London to be with my girlfriend, Rachel, who moved from Singapore to work on her Fine Arts degree from *Camberwell* (which she received in <time datetime="2014-06">June 2014</time>)!
 
 <figure>
-    <img src='/images/content/logo-cabfix.png' alt='Cabfix' height='150px'>
+    <img src="/images/content/logo-cabfix.png" alt="Cabfix" height="150">
 </figure>
 
 After a bit of searching, I found a job at a small startup company that did cab bookings in the city called *Cabfix*. Previously, the codebase that *Cabfix* ran on had been built by a foreign company, and my job, in essence, was to flesh out and refine the branding of the website. This entailed modifying and creating short snippets/modules to be used across various pages of the website. This was (triumphantly) my first job in the field, but my role at *Cabfix* wasn’t thoroughly defined and, again, I wasn’t particularly challenged by the work, so I started to look elsewhere for a deeper role to satiate my desire for a challenge.
@@ -32,7 +32,7 @@ After a bit of searching, I found a job at a small startup company that did cab 
 
 <figure>
     <a rel="external" href="https://squiz.net/uk" title="Squiz">
-        <img src='/images/content/logo-squiz.svg' alt='' height='150px' >
+        <img src="/images/content/logo-squiz.svg" alt="" width="300" height="150">
     </a>
 </figure>
 
@@ -47,7 +47,7 @@ For a long time I was also the organiser of a weekly meeting, *Implementor Scrum
 
 <figure>
     <a rel="external" href="https://www.city.ac.uk" title="City, University of London">
-        <img src="/images/content/logo-city-university.svg" alt="" height="150px">
+        <img src="/images/content/logo-city-university.svg" alt="" height="150">
     </a>
 </figure>
 
@@ -60,7 +60,7 @@ Over the near four years with *City*, I had the opportunity to learn a great dea
 
 <figure>
     <a rel="external" href="https://squiz.net/uk" title="Squiz">
-        <img src='/images/content/logo-squiz.svg' alt='' height='150px' >
+        <img src="/images/content/logo-squiz.svg" alt="" width="300" height="150">
     </a>
 </figure>
 
