@@ -63,20 +63,21 @@ layout: base
 
         {% include 'banner.njk' %}
 
+        {% include 'cover.njk' %}
+
+        {% include 'photo.njk' %}
+
         {% if lede %}
             <p class=" [ lede ] [ p-summary ] ">{{ lede | safe }}</p>
         {% endif %}
 
-        {% include 'cover.njk' %}
-
-        {% include 'photo.njk' %}
+        {% include 'updated.njk' %}
 
         {% if of_url %}
             {% set of_label = 'Read more' %}
             {%- if drink_of -%}
                 {% set of_label = 'See more on Untappd' %}
             {%- elif listen_of -%}
-
                 {% set of_label = 'See more on Odesli' %}
             {%- elif read_of -%}
                 {% set of_label = 'Read more on Goodreads' %}

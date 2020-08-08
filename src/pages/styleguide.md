@@ -6,6 +6,9 @@ codepen: true
 speakerdeck: true
 twitter: true
 ---
+{% block head %}
+    <link rel="stylesheet" href="/css/styleguide.css" media="print" onload="this.media='all'">
+{% endblock %}
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
 

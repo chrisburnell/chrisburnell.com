@@ -1,0 +1,8 @@
+{% if updated_text %}
+    <div class="updated">
+        {% if updated %}
+            <time datetime="{{ updated | w3DateFormat }}">Updated {{ updated | dateFormat }}:</time>
+        {% endif %}
+        {{ updated_text | markdownFormat | safe }}
+    </div>
+{% endif %}

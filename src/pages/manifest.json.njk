@@ -34,18 +34,18 @@ icon_sizes:
   },
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/images/favicon.ico",
       "type": "image/ico",
       "sizes": "16x16 32x32 48x48 64x64"
     },
     {% for size in icon_sizes %}
       {
-        "src": "/favicon-{{ size }}.png",
+        "src": "/images/favicon-{{ size }}.png",
         "type": "image/png",
         "sizes": "{{ size }}x{{ size }}"
       },
       {
-        "src": "/favicon-{{ size }}.webp",
+        "src": "/images/favicon-{{ size }}.webp",
         "type": "image/webp",
         "sizes": "{{ size }}x{{ size }}"
       }{% if not loop.last %},{% endif %}

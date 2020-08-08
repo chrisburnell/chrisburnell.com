@@ -24,7 +24,7 @@
     }
   },
   {
-    "url": "https://ownyour.beer",
+    "url": "https://ownyourbeer.chrisburnell.com",
     "data": {
       "title": "OwnYour.Beer",
       "lede": "An IndieWeb tool to help you pull check-ins from Untappd. Still a work-in-progress.",
@@ -35,7 +35,7 @@
     "url": "https://repc.co",
     "data": {
       "title": "Reptile C",
-      "lede": "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60.",
+      "lede": "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: <a href=\"https://chrisburnell.com/article/liquid-base-60\">LiquidBase60</a></em>.",
       "emoji": "🔗"
     }
   },

@@ -64,7 +64,7 @@ module.exports = function(config) {
 
     // Simple Filters & Sorts
     const isPublished = item => !item.data.draft;
-    const isNotReply = item => !item.data.in_reply_to;
+    const isNotReply = item => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes('https://chrisburnell.com')) || (item.data.in_reply_to && typeof item.data.in_reply_to === 'string' && item.data.in_reply_to.includes('https://chrisburnell.com'));
     const dateSort = (a, b) => b.date - a.date;
     const isTodayRSVP = item => item.data.rsvp && dateFormat(item.data.rsvp.date) == dateFormat(now);
     const isFutureRSVP = item => item.data.rsvp && item.data.rsvp.date > now && dateFormat(item.data.rsvp.date) != dateFormat(now);

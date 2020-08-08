@@ -54,14 +54,10 @@
     }
 }
 
-// Make text serifed and italicised
-.fancy {
-    @include v(font-family, serif);
-    font-style: italic;
-    // font-size: var(--font-scale--1);
+.strong {
+    @include v(font-weight, bold);
 }
 
-// Make text italicised
 .italic {
     font-style: italic;
 }
@@ -72,6 +68,12 @@
 
 .monospace {
     @include v(font-family, monospace);
+}
+
+// Make text serifed and italicised
+.fancy {
+    @include v(font-family, serif);
+    font-style: italic;
 }
 
 // Owls
