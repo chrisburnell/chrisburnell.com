@@ -2,14 +2,13 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-[![License](https://img.shields.io/badge/license-CC-BY-NC-SA-4.0-blue.svg?longCache=true&style=for-the-badge)](LICENSE)
-[![Dependencies](https://img.shields.io/david/chrisburnell/chrisburnell.com.svg?maxAge=2592000&longCache=true&style=for-the-badge)](https://raw.githubusercontent.com/chrisburnell/chrisburnell.com/master/package.json)
 [![Build Status](https://semaphoreci.com/api/v1/chrisburnell/chrisburnell-com/branches/master/badge.svg)](https://semaphoreci.com/chrisburnell/chrisburnell-com)
 
 ### Table of Contents
 
 -   [Title](#chrisburnellcom)
 -   [Description](#description)
+-   [Code of Conduct](#code-of-conduct)
 -   [Contributing](#contributing)
 -   [Build Process](#build-process)
 -   [Network](#network)

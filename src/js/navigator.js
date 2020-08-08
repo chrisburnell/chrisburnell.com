@@ -15,7 +15,7 @@
         setTimeout(() => {
             notification.hidden = true;
             notification.classList.remove(`notification--${type}`);
-        }, 1000);
+        }, 5250);
     };
 
     let updateNetwork = () => {
@@ -32,7 +32,7 @@
         setTimeout(() => {
             notification.hidden = true;
             notification.classList.remove("notification--positive", "notification--negative");
-        }, 1000);
+        }, 5250);
     };
 
     if (!!navigator.serviceWorker) {
@@ -51,7 +51,7 @@
                 if (serviceWorker) {
                     serviceWorker.addEventListener("statechange", () => {
                         if (registration.active && !navigator.serviceWorker.controller) {
-                            updateNotification("🤩 All cached and ready to go offline!", "positive");
+                            updateNotification("👍 Cached and ready to go offline.", "positive");
                         }
                     });
                 }

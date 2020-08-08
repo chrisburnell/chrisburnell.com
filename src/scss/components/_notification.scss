@@ -1,0 +1,43 @@
+////
+/// Notification
+/// @group components
+////
+
+.notification {
+    @include v(background-color, mineshaft);
+    @include v(color, white);
+    display: block;
+    padding: var(--measure-small) var(--measure-medium);
+    position: fixed;
+    @include v(bottom, large);
+    @include v(right, medium);
+    @include v(left, medium);
+    @include v(font-weight, bold);
+
+    @include media("screen", "above:small") {
+        left: auto;
+    }
+
+    &:not([class*="hidden"]) {
+        animation: var(--animation-duration) var(--animation-function) calc(var(--animation-duration) * 2) fade-out;
+
+        @at-root {
+            @keyframes fade-out {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.notification--positive {
+        @include v(background-color, liquid);
+    }
+
+    &.notification--negative {
+        @include v(background-color, canada);
+    }
+}

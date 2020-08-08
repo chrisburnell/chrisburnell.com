@@ -10,17 +10,17 @@
     align-items: center;
     @include v(gap, gutter);
 }
-.title--error span,
-.title--success span {
+.title--positive span,
+.title--negative span {
     padding: v(measure, tiny) v(measure, small);
     text-shadow: none;
 }
-.title--error > span {
-    @include v(background-color, canada);
+.title--positive > span {
+    @include v(background-color, liquid);
     @include v(color, white);
 }
-.title--success > span {
-    @include v(background-color, liquid);
+.title--negative > span {
+    @include v(background-color, canada);
     @include v(color, white);
 }
 

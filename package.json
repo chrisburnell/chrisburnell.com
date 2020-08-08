@@ -27,8 +27,6 @@
     "@tbranyen/jsdom": "^13.0.0",
     "html-minifier": "^4.0.0",
     "image-size": "^0.8.3",
-    "imagemin-cli": "^6.0.0",
-    "imagemin-webp": "^6.0.0",
     "luxon": "^1.24.1",
     "sass": "^1.26.10",
     "slugify": "^1.4.4",
@@ -41,9 +39,8 @@
   "scripts": {
     "scss:build": "sass src/scss:css --no-source-map --color --quiet --style=compressed",
     "scss:serve": "sass src/scss:css --no-source-map --color --quiet --watch",
-    "images": "imagemin testing/* --out-dir out",
     "build": "npm run scss:build; ELEVENTY_ENV=production npx @11ty/eleventy",
-    "serve": "npm run scss:serve & cross-env npx @11ty/eleventy --serve --quiet",
+    "serve": "npm run scss:serve & npx @11ty/eleventy --serve --quiet",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.2";
+const VERSION = "v3.0.3";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -17,7 +17,7 @@ const CACHES = [
 ];
 
 // Represents the maximum number of items in each cache (except ASSETS_CACHE)
-const CACHE_SIZE = 20;
+const CACHE_SIZE = 30;
 
 // Represents the maximum amount of time to wait for the network
 const TIMEOUT = 15000;
