@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.3";
+const VERSION = "v3.0.4";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -42,19 +42,19 @@ const OPTIONAL_FILES = [
 
 // Pages to cache
 const OFFLINE_PAGES = [
-    "/offline",
+    "/offline/",
     "/",
-    "/about",
-    "/contact",
-    "/archive",
-    "/writing",
-    "/projects",
-    "/styleguide"
+    "/about/",
+    "/contact/",
+    "/archive/",
+    "/writing/",
+    "/projects/",
+    "/styleguide/"
 ];
 
 // Pages to ignore
 const IGNORE_PAGES = [
-    "/ignore"
+    "/ignore/"
 ];
 
 let updateAssetsCache = () => {
@@ -152,7 +152,6 @@ self.addEventListener("fetch", event => {
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get("Accept").includes("text/html")) {
-        url.pathname = url.pathname.replace(/\/$/, "");
         event.respondWith(
             new Promise(resolveWithResponse => {
                 let timer = setTimeout(() => {

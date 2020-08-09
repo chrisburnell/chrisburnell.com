@@ -17,7 +17,7 @@ eleventyComputed:
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
-    <h1 id="title" class="title">
+    <h1 id="title" class=" [ title ] ">
         <span class="p-name">{{ title | safe }}</span>
         {% sparkline category.title, collection %}
     </h1>

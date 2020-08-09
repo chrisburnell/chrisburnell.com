@@ -35,11 +35,11 @@
 
     {%- set item_title = item.data.title -%}
 
-    <article{% if hfeed %} class="h-{{ item.data.mf_root }}"{% endif %}>
+    <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
         {% if item_in_reply_to %}
-            <div class="deck__context">
+            <div class=" [ deck__context ] ">
                 {% if item.data.rsvp %}
-                    <data class="p-rsvp" value="{{ item.data.rsvp.value }}" hidden></data>
+                    <data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
                     {% if item.data.rsvp.value == 'yes' %}
                         {% emoji '✅' %}
                         {% if item.data.rsvp.date | epochFormat > now %}
@@ -83,7 +83,7 @@
                 {% else %}
                     <small>in reply to</small>
                 {% endif %}
-                <a class="h-cite  u-in-reply-to" href="{{ item_in_reply_to_url }}">{{ item_in_reply_to_title | getPerson | getInternalTarget(posts) | getMastodonHandle | getTwitterHandle | getHost }}</a>
+                <a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url }}">{{ item_in_reply_to_title | getPerson | getInternalTarget(posts) | getMastodonHandle | getTwitterHandle | getHost }}</a>
                 {% if item_in_reply_to_authors %}
                     {% set first_author = item_in_reply_to_authors | toArray | first | getPerson %}
                     {% if first_author != item_in_reply_to_title | getPerson %}
@@ -103,35 +103,35 @@
                     {% if item.data.rsvp.date | dateFormat == now | dateFormat %}
                         {# Today #}
                         <small>from</small>
-                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
+                        <time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
                         –
-                        <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
+                        <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
                     {% elif item.data.rsvp.date | epochFormat > now %}
                         {# Future #}
                         <small>on</small>
                         {% if item.data.rsvp.date | dateFormat != item.data.rsvp.finish | dateFormat %}
-                            <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                            <time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
                             –
-                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
+                            <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
                         {% else %}
-                            <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
-                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
+                            <time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                            <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
                         {% endif %}
                     {% elif item.data.rsvp.date | epochFormat < now and item.data.rsvp.finish | epochFormat > now %}
                         {# Current #}
                         <small>from</small>
-                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
+                        <time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | timeFormat(false) }}</time>
                         –
-                        <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
+                        <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | timeFormat(true) }}</time>
                     {% else %}
                         {# Past #}
                         <small>on</small>
-                        <time class="dt-start" datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
+                        <time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | w3DateFormat }}">{{ item.data.rsvp.date | dateFormat }}</time>
                         {% if item.data.rsvp.date | dateFormat != item.data.rsvp.finish | dateFormat %}
                             –
-                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
+                            <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}">{{ item.data.rsvp.finish | dateFormat }}</time>
                         {% else %}
-                            <time class="dt-end" datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
+                            <time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | w3DateFormat }}" hidden></time>
                         {% endif %}
                     {% endif %}
                 {% endif %}
@@ -172,12 +172,12 @@
             <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% endif %}
         {% if item.date %}
-            <div class="deck__meta">
+            <div class=" [ deck__meta ] ">
                 <small>published</small>
-                <a class="u-url" href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class="dt-published" datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
+                <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class="dt-published" datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
                 {%- if item.data.updated %}
                     <small>updated</small>
-                    <time class="dt-updated" datetime="{{ item.data.updated | w3DateFormat }}">{{ item.data.updated | dateFormat }}</time>
+                    <time class=" [ dt-updated ] " datetime="{{ item.data.updated | w3DateFormat }}">{{ item.data.updated | dateFormat }}</time>
                 {% endif %}
                 {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
                 {% if responses.length %}
@@ -186,11 +186,11 @@
             </div>
         {% endif %}
         {% if item.data.mf_property and item_of %}
-            <data class="u-{{ item.data.mf_property }}" hidden>{{ item_of_url | default(item_of) }}</data>
+            <data class=" [ u-{{ item.data.mf_property }} ] " hidden>{{ item_of_url | default(item_of) }}</data>
         {% endif %}
         {% if item.data.category %}
-            <data class="u-category" value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
+            <data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
         {% endif %}
-        <data class="u-author" value="/" hidden></data>
+        <data class=" [ u-author ] " value="/" hidden></data>
     </article>
 {% endmacro %}

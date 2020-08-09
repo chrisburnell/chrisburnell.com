@@ -1,0 +1,12 @@
+////
+/// Box
+/// @group components
+////
+
+.box {
+    @include v(background-color, black--delta);
+    @include v(padding, medium);
+    border-top: var(--border-width-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    background-clip: padding-box;
+}

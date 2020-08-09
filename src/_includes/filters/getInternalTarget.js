@@ -17,7 +17,7 @@ module.exports = function getInternalTarget(value, pages) {
     else if (value.includes(site.url) || value.includes('localhost')) {
 
         let page = pages.filter(item => {
-            if (getPath(value) == item.url.replace(/\/$/, "")) {
+            if (getPath(value) == item.url) {
                 return true;
             }
             return false;

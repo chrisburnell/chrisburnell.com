@@ -45,7 +45,8 @@ layout: base
 {%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
 <article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
-    <h1 id="title" class="title" {{ 'hidden' if not title and not of_title }}>
+
+    <h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">
         {% if of_title %}
             <span>{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
         {% elif title %}
@@ -55,8 +56,8 @@ layout: base
         {% endif %}
     </h1>
 
-    <div class=" [ details details--published ] ">
-        <p>This <a class="u-category" href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> was published on <time class="dt-published" datetime="{{ date | w3DateFormat }}">{{ date | dateFormat }}</time>{% if updated %} and last updated on <time class="dt-updated" datetime="{{ updated | w3DateFormat }}">{{ updated | dateFormat }}</time>{% endif %}.</p>
+    <div class=" [ details  details--published ] ">
+        <p>This <a class="[ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> was published on <time class=" [ dt-published ] " datetime="{{ date | w3DateFormat }}">{{ date | dateFormat }}</time>{% if updated %} and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | w3DateFormat }}">{{ updated | dateFormat }}</time>{% endif %}.</p>
     </div>
 
     <div class=" [ content__body ] ">

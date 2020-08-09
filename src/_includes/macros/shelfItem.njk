@@ -21,19 +21,15 @@
 
     {%- set item_title = item.data.title -%}
 
-    <article{% if hfeed %} class="h-{{ item.data.mf_root }}"{% endif %}>
+    <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
         {% if item.data.cover %}
             <a href="{{ item.url }}">
-                <picture class="cover">
-                    {% if item.data.cover.includes('://') %}
-                        <img alt="" class="u-photo" role="presentation" loading="lazy" src="{{ item.data.cover }}">
-                    {% else %}
-                        <source srcset="/images/covers/{{ item.data.cover | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
-                                type="image/webp" />
-                        <img    alt="" class="u-photo" role="presentation" loading="lazy"
-                                src="/images/covers/{{ item.data.cover }}"
-                                srcset="/images/covers/{{ item.data.cover }}">
-                    {% endif %}
+                <picture class=" [ cover ] ">
+                    <source srcset="/images/covers/{{ item.data.cover | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
+                            type="image/webp" />
+                    <img    alt="" class=" [ u-photo ] " role="presentation" loading="lazy"
+                            src="/images/covers/{{ item.data.cover }}"
+                            srcset="/images/covers/{{ item.data.cover }}">
                 </picture>
             </a>
         {% endif %}
@@ -69,18 +65,18 @@
             </div>
         {% endif %}
         {% if item.date %}
-            <time class="dt-published" datetime="{{ item.date | w3DateFormat }}" hidden>{{ item.date | dateFormat }}</time>
+            <time class=" [ dt-published ] " datetime="{{ item.date | w3DateFormat }}" hidden>{{ item.date | dateFormat }}</time>
             {% if item.data.updated %}
-                <time class="dt-updated" datetime="{{ item.data.updated | w3DateFormat }}" hidden>{{ item.data.updated | dateFormat }}</time>
+                <time class=" [ dt-updated ] " datetime="{{ item.data.updated | w3DateFormat }}" hidden>{{ item.data.updated | dateFormat }}</time>
             {% endif %}
         {% endif %}
         {% if item.data.mf_property and item_of %}
-            <data class="u-{{ item.data.mf_property }}" hidden>{{ item_of_url | default(item_of) }}</data>
+            <data class=" [ u-{{ item.data.mf_property }} ] " hidden>{{ item_of_url | default(item_of) }}</data>
         {% endif %}
         {% if item.data.category %}
-            <data class="u-category" value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
+            <data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
         {% endif %}
-        <a class="u-url" href="{{ item.url }}" hidden></a>
-        <data class="u-author" value="/" hidden></data>
+        <a class=" [ u-url ] " href="{{ item.url }}" hidden></a>
+        <data class=" [ u-author ] " value="/" hidden></data>
     </article>
 {% endmacro %}

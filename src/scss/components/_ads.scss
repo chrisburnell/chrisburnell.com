@@ -37,13 +37,9 @@
 }
 
 .ad__split {
-    @include v(background-color, black--delta);
-    background-clip: padding-box;
+    @extend .box;
     display: flex;
     align-items: center;
-    @include v(padding, medium);
-    border-top: var(--border-width-thin) solid var(--color-raven--beta);
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
 }
 
 .ad__image {

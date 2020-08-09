@@ -67,7 +67,8 @@
         text-align: right;
     }
 
-    .title[hidden] ~ & {
+    .title[hidden] ~ &,
+    .title.hidden ~ & {
         @include v(margin-top, gigantic);
     }
 
@@ -87,7 +88,8 @@
         font-size: var(--font-scale--1);
     }
 
-    .title[hidden] ~ & {
+    .title[hidden] ~ &,
+    .title.hidden ~ & {
         @include media("below:medium") {
             @include v(margin-bottom, large);
         }
@@ -109,7 +111,8 @@
         }
     }
 
-    .title[hidden] ~ & {
+    .title[hidden] ~ &,
+    .title.hidden ~ & {
         @include media("above:medium") {
             @include v(margin-top, gigantic);
         }

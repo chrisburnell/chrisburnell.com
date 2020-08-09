@@ -5,11 +5,6 @@
 
 .updated {
     @include owl(small);
-    @include v(background-color, black--delta);
-    @include v(padding, medium);
-    border-top: var(--border-width-thin) solid var(--color-raven--beta);
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
-    width: 100%;
     @include v(max-width, line-length-responsive);
     @include v(margin-left, auto);
     @include v(margin-right, auto);
