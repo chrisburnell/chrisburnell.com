@@ -38,6 +38,12 @@
 
     <title>{{ meta_title | safe }}</title>
 
+    <link rel="preload" href="/css/non-critical.css" as="style">
+    <link rel="preload" href="/fonts/heebo-black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/proxima-nova-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/proxima-nova-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/proxima-nova-semibold.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="self" href="{{ site.url + '/feed.xml' }}">
     <link rel="alternate" type="application/atom+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
     <link rel="alternate" type="application/atom+xml" title="Writing Feed" href="{{ site.url + '/writing.xml' }}">
@@ -85,7 +91,6 @@
     <meta http-equiv="cleartype" content="on">
 
     <style>{%- include "../../../css/critical.css" -%}</style>
-    <link rel="preload" as="style" href="/css/non-critical.css">
     <link rel="stylesheet" href="/css/non-critical.css" media="print" onload="this.media='all'">
 
     {% if page.inputPath.includes('httpstatus') %}
