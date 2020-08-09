@@ -58,7 +58,7 @@ lede: Browse all of my posts by a variety of metrics.
         {% include 'webmentions.njk' %}
     </div>
 
-    <div class=" [ meta ] ">
+    <div class=" [ meta ] [ box ] ">
         <h3>Browse by category:</h3>
         <ul class=" [ meta__list ] ">
             {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}

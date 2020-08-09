@@ -69,7 +69,7 @@ eleventyComputed:
         {% endif %}
     </div>
 
-    <div class=" [ meta ] ">
+    <div class=" [ meta ] [ box ] ">
         <h3>Browse other categories:</h3>
         <ul class=" [ meta__list ] ">
             {% for lookup in collections.categories %}{% if lookup.title != category.title %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endif %}{% endfor %}
