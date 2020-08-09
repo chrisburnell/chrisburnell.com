@@ -30,3 +30,15 @@
 @import "base/reset";
 @import "base/page";
 @import "base/anchor";
+@import "base/headings";
+@import "base/paragraph";
+
+/// LAYOUTS
+@import "layouts/wrap";
+@import "layouts/header";
+@import "layouts/main";
+
+/// COMPONENTS
+@import "components/logo";
+@import "components/navigation";
+@import "components/content";

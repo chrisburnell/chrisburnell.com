@@ -3,43 +3,17 @@ title: Listening
 lede: What have I been listening to?
 ---
 
-Powered by [LastFM](https://last.fm). Check out my [Music Reviews](/music) for more musical data.
+<p>Powered by <a href="https://last.fm">LastFM</a>. Check out my <a href="/music/">Music Reviews</a> for more musical data.</p>
 
-<nav id="listening" class=" [ shelf ] [ js-lastfm-feed ] ">
-</nav>
+<p>To see (almost) my entire listening history, checkout my <a href="{{ author.urls.lastfm }}">LastFM profile</a>.</p>
 
-<script src="/js/lastfm.js"></script>
+<nav id="listening" class=" [ shelf ] [ js-lastfm-feed ] "></nav>
+
+{% block foot %}
 {% raw %}
+<!-- Not currently in use -->
+<!-- <script src="/js/lastfm.js"></script> -->
 <script>
-function timeSince(timeStamp) {
-    var now = new Date(),
-    secondsPast = (now.getTime() - timeStamp.getTime()) / 1000,
-    relativeTime = 0;
-    relativeTimeUnit = "second";
-
-    if (secondsPast <= 86400) {
-        if (secondsPast < 60) {
-            relativeTime = parseInt(secondsPast);
-            relativeTimeUnit = "second";
-        }
-        if (secondsPast < 3600) {
-            relativeTime = parseInt(secondsPast/60);
-            relativeTimeUnit = "minute";
-        }
-        else {
-            relativeTime = parseInt(secondsPast/3600);
-            relativeTimeUnit = "hour";
-        }
-        return `${relativeTime} ${relativeTimeUnit}${relativeTime != 1 ? "s" : ""} ago`;
-    }
-    else {
-        day = timeStamp.getDate();
-        month = timeStamp.toDateString().match(/ [a-zA-Z]*/)[0].replace(" ","");
-        year = timeStamp.getFullYear() == now.getFullYear() ? "" :  " "  +timeStamp.getFullYear();
-        return day + " " + month + year;
-    }
-}
-
 (() => {
     const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";
     const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
@@ -51,13 +25,13 @@ function timeSince(timeStamp) {
 </a>
 <h3>
     <a href="{{ url }}">
-        <cite class="p-name  p-summary">{{ name }}</cite>
+        <cite class=" [ p-name  p-summary ] ">{{ name }}</cite>
     </a>
 </h3>
 <div>
-    <a class="h-cite" href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
+    <a class=" [ h-cite ] " href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
 </div>
-<time class="dt-published" datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+<time class=" [ since ] [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
 `;
 
     fetch(LASTFM_URL)
@@ -80,10 +54,10 @@ function timeSince(timeStamp) {
                 let trackArtist = track["artist"]["name"];
                 let trackArtistURL = track["artist"]["url"];
                 let datetime = new Date();
-                let datetimeFriendly = "🎶 <em>Listening now</em>";
+                let datetimeFriendly = "<em>listening now</em>";
                 if (track.hasOwnProperty("date")) {
                     datetime.setTime(Number(track["date"]["uts"]) * 1000);
-                    datetimeFriendly = `🎵 <em>${timeSince(datetime)}</em>`;
+                    datetimeFriendly = `<em>listened ${helpers.since(datetime)}</em>`;
                 }
                 let image = track["image"][3]["#text"];
 
@@ -111,5 +85,4 @@ function timeSince(timeStamp) {
 })();
 </script>
 {% endraw %}
-
-To see (almost) my entire listening history, checkout my [LastFM profile]({{ author.urls.lastfm }}).
+{% endblock foot %}

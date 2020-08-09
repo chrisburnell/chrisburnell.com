@@ -174,7 +174,7 @@
         {% if item.date %}
             <div class=" [ deck__meta ] ">
                 <small>published</small>
-                <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class="dt-published" datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
+                <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.date | w3DateFormat }}">{{ item.date | dateFormat }}</time></a>
                 {%- if item.data.updated %}
                     <small>updated</small>
                     <time class=" [ dt-updated ] " datetime="{{ item.data.updated | w3DateFormat }}">{{ item.data.updated | dateFormat }}</time>

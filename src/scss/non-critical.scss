@@ -21,8 +21,6 @@
 
 /// BASE
 @import "base/button";
-@import "base/headings";
-@import "base/paragraph";
 @import "base/list";
 @import "base/prose";
 @import "base/figure";
@@ -34,16 +32,10 @@
 @import "base/details";
 
 /// LAYOUTS
-@import "layouts/wrap";
-@import "layouts/header";
-@import "layouts/main";
 @import "layouts/footer";
 
 /// COMPONENTS
-@import "components/logo";
 @import "components/anchor";
-@import "components/navigation";
-@import "components/content";
 @import "components/box";
 @import "components/meta";
 @import "components/deck";

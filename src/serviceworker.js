@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.4";
+const VERSION = "v3.0.5";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -28,7 +28,9 @@ const REQUIRED_FILES = [
     "/js/helpers.js",
     "/js/navigator.js",
     "/js/color-scheme.js",
-    "/js/sparklines.js"
+    "/js/sparklines.js",
+    "/js/since.js",
+    "/js/welcome.js"
 ];
 
 // Files that are cached but non-blocking
