@@ -6,9 +6,9 @@
 @each $font-face in $font-faces {
     @font-face {
         font-family: "#{map-get($font-face, 'family')}";
-        font-display: #{map-get($font-face, "display")};
+        font-display: #{map-get($font-displays, map-get($font-face, "display"))};
         font-style: #{map-get($font-face, "style")};
-        font-weight: #{map-get($font-face, "weight")};
+        font-weight: #{map-get($font-weights, map-get($font-face, "weight"))};
         src: local("#{map-get($font-face, 'family') map-get($font-face, 'name')}"),
             url("/fonts/#{map-get($font-face, 'filename')}.woff2") format("woff2"),
             url("/fonts/#{map-get($font-face, 'filename')}.woff") format("woff"),
