@@ -35,22 +35,15 @@
 @import "layouts/footer";
 
 /// COMPONENTS
-@import "components/anchor";
-@import "components/box";
-@import "components/meta";
-@import "components/deck";
-@import "components/shelf";
 @import "components/updated";
 @import "components/banner";
 @import "components/cover";
 @import "components/navigator";
+@import "components/anchor";
 @import "components/helpers";
 @import "components/notification";
 @import "components/webmentions";
-// @import "components/widget";
 @import "components/author";
 @import "components/media";
 @import "components/ads";
-
-/// PAGES
-@import "pages/styleguide";
+// @import "components/widget";
