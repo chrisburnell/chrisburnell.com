@@ -34,7 +34,7 @@
         }
 
         @each $color-name, $color-value in $palette-colors {
-            &[data-color="#{$color-name}"] {
+            &[data-color="#{'' + $color-name}"] {
                 @include v(background-color, $color-name);
                 color: contrasting-color($color-value);
             }

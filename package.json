@@ -37,8 +37,8 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "scss:build": "sass src/scss:css --no-source-map --color --quiet --style=compressed",
-    "scss:serve": "sass src/scss:css --no-source-map --color --quiet --watch",
+    "scss:build": "npx sass src/scss:css --no-source-map --color --style=compressed",
+    "scss:serve": "npx sass src/scss:css --no-source-map --color --watch",
     "build": "npm run scss:build; ELEVENTY_ENV=production npx @11ty/eleventy",
     "serve": "npm run scss:serve & npx @11ty/eleventy --serve --quiet",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"

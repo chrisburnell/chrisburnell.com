@@ -1,5 +1,13 @@
 [
   {
+    "url": "https://github.com/chrisburnell/bowhead",
+    "data": {
+      "title": "Bowhead",
+      "lede": "A small framework on which to build your design tokens in SCSS.",
+      "emoji": "🐋"
+    }
+  },
+  {
     "url": "https://micro.bloodbuilder.online",
     "data": {
       "title": "Micrathene",

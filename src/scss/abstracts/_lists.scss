@@ -13,9 +13,5 @@ $font-family-serif: Georgia, Times, Times New Roman, serif !default;
 $font-family-monospace: monospace !default;
 
 /// @type List
-/// @prop {String} Body / Primary Navigation Class
-$navigation-classes: about, archive, search !default;
-
-/// @type List
 /// @prop {String} Generic Property Value
 $generic-values: auto, inherit, initial, none, revert, unset, 0, 1, 100%, currentColor !default;
