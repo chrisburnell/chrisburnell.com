@@ -258,7 +258,7 @@
         <script src="https://codepen.io/assets/embed/ei.js" async defer></script>
     {% endif %}
 
-    {%- set in_reply_to_url = in_reply_to.url | default(in_reply_to) -%}}
+    {%- set in_reply_to_url = in_reply_to.url | default(in_reply_to) -%}
     {% if twitter or (in_reply_to_url.length and in_reply_to_url.includes('twitter.com')) %}
         <!-- Twitter Cards -->
         <script src="https://platform.twitter.com/widgets.js" async defer></script>
