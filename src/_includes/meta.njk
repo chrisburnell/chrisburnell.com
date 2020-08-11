@@ -152,19 +152,23 @@
         </li>
     {% endif %}
     {% if checkin %}
-        <li class="checkin" hidden>
-            {% emoji '📍', 'checked in at' %}
+        <li class="checkin">
+            {% emoji '📍' %}
+            <small>check-in</small>
             {% set checkin = checkin.title | default(checkin) | getPlace('object') %}
             {% if checkin.url %}
                 <a class="u-location" href="{{ checkin.url }}">{{ checkin.title }}</span>
+            {% elif checkin.lat and checkin.long %}
+                <a class="u-location" href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</span>
             {% else %}
-                <span class="p-location">{{ checkin.title | default(checkin) | getPlace() }}</span>
+                <strong class="p-location">{{ checkin.title | default(checkin) }}</strong>
             {% endif %}
         </li>
     {% endif %}
     {% if badges %}
         <li class="badges">
-            {% emoji '🏆', 'earning badges' %}
+            {% emoji '🏆' %}
+            <small><span class="hidden">earning</span> badges</small>
             {% if badges.length > 1 %}<ul class="meta__list">{% endif %}
             {% for badge in badges -%}
                 {% if badges.length > 1 %}<li>{% endif %}
