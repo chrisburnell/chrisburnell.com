@@ -34,9 +34,10 @@ layout: base
     {% endif %}
 {%- endif -%}
 
-{%- if category == 'beer' -%}
+{%- if drink_of -%}
     {% set syndicate_to = ['https://untappd.com/user/chrisburnell/checkin/' + page.fileSlug] %}
-{%- elif category == 'music' -%}
+{%- endif -%}
+{%- if listen_of -%}
     {% set of_url = 'https://album.link/s/' + of_url %}
     {% set syndicate_to = [of_url] %}
 {%- endif -%}
@@ -72,18 +73,22 @@ layout: base
             <p class=" [ lede ] [ p-summary ] ">{{ lede | safe }}</p>
         {% endif %}
 
+        {% if category == 'recipe' %}
+            <p class=" [ lede ] ">Recipes are very much under construction until I get them set up in Eleventy.<br>You can find this one in its old state <a href="{{ 'https://v2.chrisburnell.com' + page.url }}">here</a>.</p>
+        {% endif %}
+
         {% include 'updated.njk' %}
 
         {% if of_url %}
             {% set of_label = 'Read more' %}
-            {%- if drink_of -%}
+            {%- if of_url.includes('https://untappd.com') -%}
                 {% set of_label = 'See more on Untappd' %}
-            {%- elif listen_of -%}
+            {%- elif of_url.includes('https://album.link') -%}
                 {% set of_label = 'See more on Odesli' %}
-            {%- elif read_of -%}
+            {%- elif of_url.includes('http://abookapart.com') -%}
+                {% set of_label = 'Read more on A Book Apart' %}
+            {%- elif of_url.includes('http://www.goodreads.com') -%}
                 {% set of_label = 'Read more on Goodreads' %}
-            {%- elif watch_of -%}
-                {% set of_label = 'Watch now' %}
             {%- endif -%}
             <nav class=" [ navigator ] ">
                 <a class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" href="{{ of_url }}">{{ of_label }} →</a>
@@ -91,7 +96,7 @@ layout: base
         {% endif %}
 
         {% if listen_of %}
-            <iframe width="100%" height="150" src="https://embed.song.link/?url=spotify:album:{{ listen_of.url | default(listen_of) }}&theme=dark" fframeborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+            <iframe width="100%" height="150" src="https://embed.song.link/?url=spotify:album:{{ listen_of.url | default(listen_of) }}&theme=dark" fframeborder="0" allowtransparency sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
         {% endif %}
 
         {% if content.length %}
