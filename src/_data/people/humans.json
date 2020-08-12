@@ -1,5 +1,9 @@
 [
   {
+    "title": "BloodBuilder",
+    "url": "https://bloodbuilder.online"
+  },
+  {
     "title": "Aaron Parecki",
     "url": "https://aaronparecki.com",
     "twitter": "aaronpk"
@@ -124,5 +128,9 @@
   {
     "title": "Tom Evans",
     "url": "https://www.thomas-evans-ux.com"
+  },
+  {
+    "title": "Will Liew",
+    "url": "https://mymothers.recipes"
   }
 ]
