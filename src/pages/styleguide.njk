@@ -9,7 +9,7 @@ twitter: true
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
 
-## Colours
+<h2>Colours</h2>
 
 <ul class="palette-list" id="colors">
     {%- for colour in palette -%}
@@ -22,7 +22,7 @@ twitter: true
 </ul>
 
 
-## Measures
+<h2>Measures</h2>
 
 <dl>
     <dt>Tiny</dt>
@@ -40,7 +40,7 @@ twitter: true
 </dl>
 
 
-## Transitions
+<h2>Transitions</h2>
 
 <div class="transition-example  transition-example--slide">
     <div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
@@ -51,7 +51,7 @@ twitter: true
 </div>
 
 
-## Fonts
+<h2>Fonts</h2>
 
 <p>Primary Font: "Proxima Nova", sans-serif;</p>
 
@@ -68,7 +68,7 @@ twitter: true
 <p style="font-family: 'Heebo', sans-serif; font-size: 1.375rem;">Title Font: "Heebo", sans-serif;</p>
 
 
-## Headings
+<h2>Headings</h2>
 
 <p class="alpha">Heading Level 1 · α</p>
 
@@ -83,14 +83,14 @@ twitter: true
 <p class="zeta">Heading Level 6 · ζ</p>
 
 
-## Paragraph
+<h2>Paragraph</h2>
 
 <p>A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 <p class="columns">A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 
-## Aside
+<h2>Aside</h2>
 
 <aside>
     <p>An aside represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.</p>
@@ -99,7 +99,7 @@ twitter: true
 <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 
-## Inline Elements
+<h2>Inline Elements</h2>
 
 <p>[This is a text link](#_)</p>
 
@@ -144,14 +144,7 @@ twitter: true
 <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
 
 
-## Blockquote
-
-<blockquote>
-    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
-</blockquote>
-
-
-## Blockquote with Citation
+<h2>Blockquote</h2>
 
 <blockquote>
     <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
@@ -159,12 +152,7 @@ twitter: true
 </blockquote>
 
 
-## Twitter Embedded Quote
-
-{% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}
-
-
-## Unordered List
+<h2>Unordered List</h2>
 
 <ul>
     <li>This is a list item in an unordered list</li>
@@ -180,7 +168,7 @@ twitter: true
 </ul>
 
 
-## Ordered List
+<h2>Ordered List</h2>
 
 <ol>
     <li>This is a list item in an ordered list</li>
@@ -196,7 +184,7 @@ twitter: true
 </ol>
 
 
-## Ordered List Reversed
+<h2>Ordered List Reversed</h2>
 
 <ol reversed>
     <li>This is a list item in an ordered list</li>
@@ -211,7 +199,7 @@ twitter: true
 </ol>
 
 
-## Ordered List Reversed, Twice
+<h2>Ordered List Reversed, Twice</h2>
 
 <ol reversed>
     <li>This is a list item in an ordered list</li>
@@ -226,7 +214,7 @@ twitter: true
 </ol>
 
 
-## Definition List
+<h2>Definition List</h2>
 
 <dl>
     <dt>Definition List</dt>
@@ -238,7 +226,7 @@ twitter: true
 </dl>
 
 
-## Table
+<h2>Table</h2>
 
 <figure>
     <table>
@@ -282,7 +270,7 @@ twitter: true
 </figure>
 
 
-## Table with Alternating Rows
+<h2>Table with Alternating Rows</h2>
 
 <figure>
     <table class="zebra">
@@ -331,7 +319,7 @@ twitter: true
 </figure>
 
 
-## Table with Subheadings
+<h2>Table with Subheadings</h2>
 
 <figure>
     <table>
@@ -369,7 +357,7 @@ twitter: true
 </figure>
 
 
-## Details and Summary
+<h2>Details and Summary</h2>
 
 <figure>
     <details>
@@ -380,7 +368,7 @@ twitter: true
 </figure>
 
 
-## Preformatted Text
+<h2>Preformatted Text</h2>
 
 <pre><code>
 P R E F O R M A T T E D T E X T
@@ -393,35 +381,12 @@ p q r s t u v w x y z { | } ~
 </code></pre>
 
 
-## Code Block
+<h2>Code Block</h2>
 
-```scss
-@mixin owl($measure: 1em) {
-  & > * + * {
-    margin-top: $measure;
-  }
-}
-```
+<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token variable">$measure</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token selector"><span class="token parent important">&amp;</span> &gt; * + * </span><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token variable">$measure</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 
 
-## CodePen Embed
-
-{% codepen 'mglHp', false, 425 %}
-
-
-## Can I Use Embed
-
-{% caniuse 'css-sel3' %}
-
-
-## Figure
-
-<figure>
-    <img src="/images/content/SintraSkyline.jpg" alt="">
-</figure>
-
-
-## Figure with Caption
+<h2>Figure</h2>
 
 <figure>
     <img src="https://chrisburnell.com/images/content/SintraSkyline.jpg">
@@ -429,47 +394,68 @@ p q r s t u v w x y z { | } ~
 </figure>
 
 
-## Video
+<h2>Video</h2>
 
 <iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" allowfullscreen loading="lazy"></iframe>
 
 
-## Speakerdeck
+<h2>Speakerdeck</h2>
 
 <figure>
-    <div class=" [ media  speakerdeck ] ">
+    <div class=" [ media  media--speakerdeck ] ">
         <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
     </div>
 </figure>
 
 
-## Buttons
+<h2>Navigator</h2>
 
 <nav class=" [ navigator ] ">
     <button type="button">Button</button>
     <button type="button" disabled>Button</button>
-    <button class="button--small" type="button">Button</button>
+    <a class=" [ button ] " href="#_">Anchor</a>
 </nav>
 
 
-## Deck
+<h2>Deck</h2>
 
 <nav class=" [ deck ] ">
-{% for item in collections.article | reverse | limit(site.limits.snapshot) %}{{ deckItem(item, global.now, collections.all, webmentions, false) }}{% endfor %}
+{% for item in collections.article | publishedFilter | reverse | limit(site.limits.snapshot) %}
+    {{ deckItem(item, global.now, collections.all, webmentions, false) }}
+{% endfor %}
 </nav>
 
 
-## Shelf
+<h2>Shelf</h2>
 
 <nav class=" [ shelf ] ">
-{% for item in collections.beer | limit(site.limits.snapshot) %}{{ shelfItem(item, global.now, collections.all, false) }}{% endfor %}
+{% for item in collections.beer | publishedFilter | reverse | limit(site.limits.snapshot) %}
+    {{ shelfItem(item, global.now, collections.all, false) }}
+{% endfor %}
 </nav>
 
 
-## Shelf with Images
+<h2>Shelf with Images</h2>
 
 <nav class=" [ shelf ] ">
-{% for item in collections.music | limit(site.limits.snapshot) %}{{ shelfItem(item, global.now, collections.all, false) }}{% endfor %}
+{% for item in collections.music | publishedFilter | reverse | limit(site.limits.snapshot) %}
+    {{ shelfItem(item, global.now, collections.all, false) }}
+{% endfor %}
 </nav>
+
+
+<h2>Twitter Embedded Quote</h2>
+
+{% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}
+
+
+<h2>CodePen Embed</h2>
+
+{% codepen 'mglHp', false, 425 %}
+
+
+<h2>Can I Use Embed</h2>
+
+{% caniuse 'css-sel3' %}
 
 <link rel="stylesheet" href="/css/styleguide.css">
