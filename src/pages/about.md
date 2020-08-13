@@ -32,7 +32,7 @@ After a bit of searching, I found a job at a small startup company that did cab 
 
 <figure>
     <a rel="external" href="https://squiz.net/uk" title="Squiz">
-        <img src="/images/content/logo-squiz.svg" alt="" width="300" height="150">
+        <img src="/images/content/logo-squiz.svg" alt="" style="width: 300px;">
     </a>
 </figure>
 
@@ -60,7 +60,7 @@ Over the near four years with *City*, I had the opportunity to learn a great dea
 
 <figure>
     <a rel="external" href="https://squiz.net/uk" title="Squiz">
-        <img src="/images/content/logo-squiz.svg" alt="" width="300" height="150">
+        <img src="/images/content/logo-squiz.svg" alt="" style="width: 300px;">
     </a>
 </figure>
 
