@@ -6,9 +6,6 @@ codepen: true
 speakerdeck: true
 twitter: true
 ---
-{% block head %}
-    <link rel="stylesheet" href="/css/styleguide.css" media="print" onload="this.media='all'">
-{% endblock %}
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
 
@@ -104,47 +101,47 @@ twitter: true
 
 ## Inline Elements
 
-[This is a text link](#_)
+<p>[This is a text link](#_)</p>
 
-**Strong is used to indicate strong importance**
+<p>**Strong is used to indicate strong importance**</p>
 
-*This text has added emphasis*
+<p>*This text has added emphasis*</p>
 
-The <b>b element</b> is stylistically different text from normal text, without any special importance
+<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
 
-The <i>i element</i> is text that is set off from the normal text
+<p>The <i>i element</i> is text that is set off from the normal text</p>
 
-The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation
+<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>
 
-<del>This text is deleted</del> and <ins>This text is inserted</ins>
+<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>
 
-<p><s>This text has a strikethrough</s></p>
+<p><p><s>This text has a strikethrough</s></p></p>
 
-Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp>
+<p>Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp></p>
 
-Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp>
+<p>Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp></p>
 
-This <small>small text</small> for fine print, etc.
+<p>This <small>small text</small> for fine print, etc.</p>
 
-Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
+<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-Keyboard input: <kbd>Tab</kbd>
+<p>Keyboard input: <kbd>Tab</kbd></p>
 
-This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation</q>
+<p>This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation</q></p>
 
-This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation with <q>another short inline quotation</q> inside</q>
+<p>This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation with <q>another short inline quotation</q> inside</q></p>
 
-This is a <cite class="h-cite">citation</cite>
+<p>This is a <cite class="h-cite">citation</cite></p>
 
-The <dfn title="definition element">dfn element</dfn> indicates a definition
+<p>The <dfn title="definition element">dfn element</dfn> indicates a definition</p>
 
-The <mark>mark element</mark> indicates a highlight
+<p>The <mark>mark element</mark> indicates a highlight</p>
 
-This is what <code>inline code</code> looks like
+<p>This is what <code>inline code</code> looks like</p>
 
-This is <samp>sample output</samp> from a computer program
+<p>This is <samp>sample output</samp> from a computer program</p>
 
-The <var>variable element</var>, such as <var>x</var> = <var>y</var>
+<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
 
 
 ## Blockquote
@@ -398,26 +395,11 @@ p q r s t u v w x y z { | } ~
 
 ## Code Block
 
-```
-@function strip-unit($number) {
-    @if not $number {
-        @warn "strip-unit() expects at least one parameter.";
-        @return false;
-    }
-    @return $number / ($number * 0 + 1);
-}
-```
-
-
-## Code Block with Language
-
 ```scss
-@function strip-unit($number) {
-    @if not $number {
-        @warn "strip-unit() expects at least one parameter.";
-        @return false;
-    }
-    @return $number / ($number * 0 + 1);
+@mixin owl($measure: 1em) {
+  & > * + * {
+    margin-top: $measure;
+  }
 }
 ```
 
@@ -501,3 +483,5 @@ p q r s t u v w x y z { | } ~
         {{ shelfItem(item, global.now, collections.all, false) }}
     {% endfor %}
 </nav>
+
+<link rel="stylesheet" href="/css/styleguide.css">

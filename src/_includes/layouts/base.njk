@@ -165,9 +165,6 @@
     {% if twitter %}
         <link rel="preconnect" href="https://platform.twitter.com">
     {% endif %}
-
-    {% block head %}
-    {% endblock %}
 </head>
 <body>
     <a href="#content" hidden>Skip to main content</a>
@@ -194,9 +191,7 @@
     </header>
 
     <main class=" [ main ] ">
-
         {{ content | safe }}
-
     </main>
 
     <footer class=" [ footer ] ">
@@ -268,9 +263,5 @@
         <!-- Speaker Deck Embeds -->
         <script src="https://speakerdeck.com/assets/embed.js" async defer></script>
     {% endif %}
-
-    {% block foot %}
-    {% endblock %}
-
 </body>
 </html>

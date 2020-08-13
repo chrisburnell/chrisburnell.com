@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Search
 lede: Search for something!
 ---
@@ -11,7 +10,6 @@ lede: Search for something!
 
 <p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
 
-{% block foot %}
 <script>
     const input = document.querySelector("input");
 
@@ -21,4 +19,3 @@ lede: Search for something!
         input.value = "site:chrisburnell.com " + input.value;
     }
 </script>
-{% endblock foot %}
