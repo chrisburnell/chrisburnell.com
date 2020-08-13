@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<div id="content" class=" [ content ] [ wrap ] [ page ] ">
+<article id="content" class=" [ content ] [ wrap ] [ page ] ">
 
     <h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
         <span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
@@ -23,4 +23,4 @@ layout: base
 
     {% include 'ads.njk' %}
 
-</div>
+</article>

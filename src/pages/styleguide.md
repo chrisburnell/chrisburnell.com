@@ -431,13 +431,7 @@ p q r s t u v w x y z { | } ~
 
 ## Video
 
-<figure>
-    <iframe src="https://www.youtube.com/embed/G7RgN9ijwE4" title="Have you ever had a dream like this?" allowfullscreen loading="lazy"></iframe>
-</figure>
-
-<figure>
-    <iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" title="Cloud Lapse on Vimeo" allowfullscreen loading="lazy"></iframe>
-</figure>
+<iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" allowfullscreen loading="lazy"></iframe>
 
 
 ## Speakerdeck
@@ -461,27 +455,21 @@ p q r s t u v w x y z { | } ~
 ## Deck
 
 <nav class=" [ deck ] ">
-    {% for item in collections.article | reverse | limit(site.limits.snapshot) %}
-        {{ deckItem(item, global.now, collections.all, webmentions, false) }}
-    {% endfor %}
+{% for item in collections.article | reverse | limit(site.limits.snapshot) %}{{ deckItem(item, global.now, collections.all, webmentions, false) }}{% endfor %}
 </nav>
 
 
 ## Shelf
 
 <nav class=" [ shelf ] ">
-    {% for item in collections.beer | limit(site.limits.snapshot) %}
-        {{ shelfItem(item, global.now, collections.all, false) }}
-    {% endfor %}
+{% for item in collections.beer | limit(site.limits.snapshot) %}{{ shelfItem(item, global.now, collections.all, false) }}{% endfor %}
 </nav>
 
 
 ## Shelf with Images
 
 <nav class=" [ shelf ] ">
-    {% for item in collections.music | limit(site.limits.snapshot) %}
-        {{ shelfItem(item, global.now, collections.all, false) }}
-    {% endfor %}
+{% for item in collections.music | limit(site.limits.snapshot) %}{{ shelfItem(item, global.now, collections.all, false) }}{% endfor %}
 </nav>
 
 <link rel="stylesheet" href="/css/styleguide.css">

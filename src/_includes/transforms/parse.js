@@ -63,6 +63,13 @@ module.exports = function parse(value, outputPath) {
                     const player = document.createElement('div');
                     player.classList.add('media');
 
+                    if (embed.getAttribute('src').includes('youtube.com')) {
+                        player.classList.add('media--youtube');
+                    }
+                    else if (embed.getAttribute('src').includes('vimeo.com')) {
+                        player.classList.add('media--vimeo');
+                    }
+
                     if (embed.hasAttribute('title')) {
                         const figure = document.createElement('figure');
 

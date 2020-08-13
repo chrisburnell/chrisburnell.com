@@ -46,7 +46,6 @@ layout: base
 {%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
 <article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
-
     <h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">
         {% if of_title %}
             <span>{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
