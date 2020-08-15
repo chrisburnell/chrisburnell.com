@@ -4,7 +4,7 @@ title: The Homepage
 carbon: true
 coil: true
 eleventyComputed:
-  lede: "{{ site.lede | safe }}"
+  lede: "<span aria-hidden=\"true\">{{ site.lede | safe }}</span>"
   tagline: "{{ site.tagline | safe }}"
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
@@ -42,6 +42,24 @@ eleventyComputed:
     </nav>
 {% endif %}
 
+{% if collections.throwbackPosts.length %}
+    <div class=" [ box ] [ owl--medium ] ">
+        <h2 id="on-this-day">
+            On This Day
+            <a href="#on-this-day" class="fragment-anchor">
+                <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+                    <use xlink:href="/images/sprites.svg#svg--link"></use>
+                </svg>
+            </a>
+        </h2>
+        <nav class=" [ deck ] ">
+            {% for item in collections.throwbackPosts | limit(site.limits.snapshot) %}
+                {{ deckItem(item, global.now, collections.all, webmentions, false) }}
+            {% endfor %}
+        </nav>
+    </div>
+{% endif %}
+
 <h2 id="writing">
     <a href="/writing/">Latest Writing</a>
     <a href="#writing" class="fragment-anchor">
@@ -69,22 +87,6 @@ eleventyComputed:
         {{ deckItem(item, global.now, collections.all, webmentions) }}
     {% endfor %}
 </nav>
-
-{% if collections.throwbackPosts.length %}
-    <h2 id="on-this-day">
-        On This Day
-        <a href="#on-this-day" class="fragment-anchor">
-            <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                <use xlink:href="/images/sprites.svg#svg--link"></use>
-            </svg>
-        </a>
-    </h2>
-    <nav class=" [ deck ] ">
-        {% for item in collections.throwbackPosts | limit(site.limits.snapshot) %}
-            {{ deckItem(item, global.now, collections.all, webmentions, false) }}
-        {% endfor %}
-    </nav>
-{% endif %}
 
 <nav class=" [ navigator ] ">
     <a class="button" href="/archive/">Browse the Archive</a>
