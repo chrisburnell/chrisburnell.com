@@ -32,6 +32,11 @@
     "url": "https://speakerdeck.com/chrisburnell"
   },
   {
+    "title": "Nintendo Switch ID",
+    "value": "SW-5773-6068-9986",
+    "mf_property": "nintendo-friend-id"
+  },
+  {
     "title": "DEV.to",
     "url": "https://dev.to/chrisburnell",
     "hidden": true

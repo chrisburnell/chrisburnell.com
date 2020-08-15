@@ -215,10 +215,14 @@
                 <li>
                     <a id="copyright" rel="license" href="/license">© 2020 <span class="canada">Chris Burnell</span></a>
                 </li>
-                {% for link in social %}
-                    {% if not link.hidden %}
-                        <li{% if not link.primary %} hidden{% endif %}>
-                            <a href="{{ link.url }}" rel="me">{{ link.title }}</a>
+                {% for item in social %}
+                    {% if not item.hidden %}
+                        <li {% if not item.primary %} hidden{% endif %}>
+                            {% if item.url %}
+                                <a{% if item.mf_propery %} class="p-{{ item.mf_propery }}"{% endif %} href="{{ item.url }}" rel="me">{{ item.title }}</a>
+                            {% else %}
+                                <data{% if item.mf_propery %} class="p-{{ item.mf_propery }}"{% endif %} value="{{ item.value }}" rel="me">{{ item.title }}</data>
+                            {% endif %}
                         </li>
                     {% endif %}
                 {% endfor %}

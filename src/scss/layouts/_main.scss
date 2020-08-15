@@ -72,6 +72,10 @@
         @include v(margin-top, gigantic);
     }
 
+    p {
+        @include v(max-width, line-length-clamp);
+    }
+
     a {
         color: inherit;
     }

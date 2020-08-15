@@ -6,7 +6,7 @@ module.exports = function getTarget(url) {
     let target = getHost(url);
 
     for (let item of social) {
-        if (item.url.includes(target)) {
+        if (item.url && item.url.includes(target)) {
             target = item.title;
             break;
         }

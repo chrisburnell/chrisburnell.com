@@ -9,7 +9,7 @@ details {
     @include v(max-width, line-length-clamp);
     position: relative;
 
-    %content-elements {
+    %collection-content {
         padding: 0 var(--measure-small) var(--measure-small);
     }
 
