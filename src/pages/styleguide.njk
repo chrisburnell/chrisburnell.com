@@ -101,11 +101,11 @@ twitter: true
 
 <h2>Inline Elements</h2>
 
-<p>[This is a text link](#_)</p>
+<p><a href="#_">This is a text link</a></p>
 
-<p>**Strong is used to indicate strong importance**</p>
+<p><strong>Strong is used to indicate strong importance</strong></p>
 
-<p>*This text has added emphasis*</p>
+<p><em>This text has added emphasis</em></p>
 
 <p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
 
@@ -117,21 +117,17 @@ twitter: true
 
 <p><p><s>This text has a strikethrough</s></p></p>
 
-<p>Superscript for things like: <samp>8<sup>th</sup> of August</samp> <samp>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></samp> <samp>E = mc<sup>2</sup></samp></p>
+<p>Superscript for things like: 8<sup>th</sup> of August, a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>, E = mc<sup>2</sup>, etc.</p>
 
-<p>Subscript for things like: <samp>H<sub>2</sub>O</samp> <samp>H<sub>2</sub>SO<sub>4</sub></samp> <samp>C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></samp></p>
+<p>Subscript for things like: H<sub>2</sub>O, H<sub>2</sub>SO<sub>4</sub> C<sub>24</sub>H<sub>26</sub>O<sub>7</sub></p>
 
 <p>This <small>small text</small> for fine print, etc.</p>
 
 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-<p>Keyboard input: <kbd>Tab</kbd></p>
+<p>This text has a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation</q></p>
 
-<p>This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation</q></p>
-
-<p>This text is a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation with <q>another short inline quotation</q> inside</q></p>
-
-<p>This is a <cite class="h-cite">citation</cite></p>
+<p>This text has a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation with <q>another short inline quotation</q> inside</q></p>
 
 <p>The <dfn title="definition element">dfn element</dfn> indicates a definition</p>
 
@@ -143,12 +139,14 @@ twitter: true
 
 <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
 
+<p>Keyboard input: <kbd>Tab</kbd></p>
+
 
 <h2>Blockquote</h2>
 
 <blockquote>
     <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
-    <cite class="h-cite">Quote Source</cite>
+    <cite>Quote Source</cite>
 </blockquote>
 
 
@@ -444,11 +442,6 @@ p q r s t u v w x y z { | } ~
 </nav>
 
 
-<h2>Twitter Embedded Quote</h2>
-
-{% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}
-
-
 <h2>CodePen Embed</h2>
 
 {% codepen 'mglHp', false, 425 %}
@@ -459,3 +452,8 @@ p q r s t u v w x y z { | } ~
 {% caniuse 'css-sel3' %}
 
 <link rel="stylesheet" href="/css/styleguide.css">
+
+
+<h2>Twitter Embedded Quote</h2>
+
+{% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}
