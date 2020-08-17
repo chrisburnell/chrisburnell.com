@@ -12,7 +12,7 @@ lede: Browse all of my posts by a variety of metrics.
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
     <h1 id="title" class=" [ title ] ">
-        <span class="p-name">{{ title | safe }}</span>
+        <span class=" [ p-name ] ">{{ title | safe }}</span>
         {% sparkline title, collection %}
     </h1>
 
@@ -29,7 +29,7 @@ lede: Browse all of my posts by a variety of metrics.
             {%- endif -%}
             <h2 id="{{ lookup.plural }}">
                 <a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
-                <a href="#{{ lookup.plural }}" class="fragment-anchor">
+                <a href="#{{ lookup.plural }}" class=" [ fragment-anchor ] ">
                     <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
                         <use xlink:href="/images/sprites.svg#svg--link"></use>
                     </svg>
@@ -50,7 +50,7 @@ lede: Browse all of my posts by a variety of metrics.
             {% endif %}
             {% if collection.length > site.limits.spotlight %}
                 <nav class=" [ navigator ] ">
-                    <a class="button" href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
+                    <a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
                 </nav>
             {% endif %}
         {% endfor %}

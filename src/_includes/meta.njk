@@ -1,8 +1,8 @@
 <ul class=" [ meta ] [ box ] ">
     {% if in_reply_to %}
-        <li class="in-reply-to">
+        <li class=" [ in-reply-to ] ">
             {% if rsvp %}
-                <data class="p-rsvp" value="{{ rsvp.value }}" hidden></data>
+                <data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
                 {% if rsvp.value == 'yes' %}
                     {% emoji '✅' %}
                     {% if rsvp.date | epochFormat > global.now %}
@@ -47,7 +47,7 @@
                 {% emoji '↪️' %}
                 <small>in reply to</small>
             {% endif %}
-            <a class="h-cite  u-in-reply-to" href="{{ in_reply_to_url }}">
+            <a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url }}">
                 {{ in_reply_to_title | getPerson | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}
             </a>
             {% if in_reply_to_authors %}
@@ -67,20 +67,20 @@
         </li>
     {% endif %}
     {% if rsvp %}
-        <li class="rsvp">
+        <li class=" [ rsvp ] ">
             {% emoji '🗓' %}
             {% if rsvp.finish | epochFormat > global.now %}
                 <small>taking place</small>
             {% else %}
                 <small>took place</small>
             {% endif %}
-            <time class="dt-start" datetime="{{ rsvp.date | w3DateFormat }}">{{ rsvp.date | dateFormat }} {{ rsvp.date | timeFormat(false) }}</time>
+            <time class=" [ dt-start ] " datetime="{{ rsvp.date | w3DateFormat }}">{{ rsvp.date | dateFormat }} {{ rsvp.date | timeFormat(false) }}</time>
             –
-            <time class="dt-end" datetime="{{ rsvp.finish | w3DateFormat }}">{% if rsvp.date | dateFormat != rsvp.finish | dateFormat %}{{ rsvp.finish | dateFormat }} {% endif %}{{ rsvp.finish | timeFormat(true) }}</time>
+            <time class=" [ dt-end ] " datetime="{{ rsvp.finish | w3DateFormat }}">{% if rsvp.date | dateFormat != rsvp.finish | dateFormat %}{{ rsvp.finish | dateFormat }} {% endif %}{{ rsvp.finish | timeFormat(true) }}</time>
         </li>
     {% endif %}
     {% if tags.includes('article') %}
-        <li class="reading-length">
+        <li class=" [ reading-length ] ">
             {% emoji '📚' %}
             <strong>{{ helpers.getReadingTime(content) }}</strong>
             <small>minute read</small>
@@ -88,18 +88,18 @@
     {% endif %}
     {%- set tags_filtered = tags | categoryFilter | tagFilter -%}
     {% if tags_filtered.length %}
-        <li class="tags">
+        <li class=" [ tags ] ">
             {% emoji '🏷' %}
             <small>tagged</small>
-            {% if tags_filtered.length > 1 %}<ul class="meta__list">{% endif %}
+            {% if tags_filtered.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
                 {% for tag in tags_filtered %}
-                    {% if tags_filtered.length > 1 %}<li>{% endif %}<a class="p-tag" href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
+                    {% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
                 {% endfor %}
             {% if tags_filtered.length > 1 %}</ul>{% endif %}
         </li>
     {% endif %}
     {% if authors %}
-        <li class="authors">
+        <li class=" [ authors ] ">
             {% if category == 'beer' %}
                 {% emoji '🍺' %}
                 <small>brewed by</small>
@@ -120,7 +120,7 @@
                 <small>authored by</small>
             {% endif %}
             {%- set authors = authors | toArray -%}
-            {% if authors.length > 1 %}<ul class="meta__list">{% endif %}
+            {% if authors.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
             {% for author in authors -%}
                 {% if authors.length > 1 %}<li>{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
             {%- endfor %}
@@ -132,14 +132,14 @@
         </li>
     {% endif %}
     {% if release %}
-        <li class="date-released">
+        <li class=" [ date-released ] ">
             {% emoji '🗓' %}
             <small>released</small>
-            <time class="dt-released" datetime="{{ release | w3DateFormat }}">{{ release | dateFormat }}</time>
+            <time class=" [ dt-released ] " datetime="{{ release | w3DateFormat }}">{{ release | dateFormat }}</time>
         </li>
     {% endif %}
     {% if rating %}
-        <li class="review-rating">
+        <li class=" [ review-rating ] ">
             {% emoji '✨' %}
             <small>my rating</small>
             {% if rating == 'Parti Pris' %}
@@ -152,24 +152,24 @@
         </li>
     {% endif %}
     {% if checkin %}
-        <li class="checkin">
+        <li class=" [ checkin ] ">
             {% emoji '📍' %}
             <small>check-in</small>
             {% set checkin = checkin.title | default(checkin) | getPlace('object') %}
             {% if checkin.url %}
-                <a class="u-location" href="{{ checkin.url }}">{{ checkin.title }}</span>
+                <a class=" [ u-location ] " href="{{ checkin.url }}">{{ checkin.title }}</span>
             {% elif checkin.lat and checkin.long %}
-                <a class="u-location" href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</span>
+                <a class=" [ u-location ] " href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</span>
             {% else %}
-                <strong class="p-location">{{ checkin.title | default(checkin) }}</strong>
+                <strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
             {% endif %}
         </li>
     {% endif %}
     {% if badges %}
-        <li class="badges">
+        <li class=" [ badges ] ">
             {% emoji '🏆' %}
-            <small><span class="hidden">earning</span> badges</small>
-            {% if badges.length > 1 %}<ul class="meta__list">{% endif %}
+            <small><span class=" [ hidden ] ">earning</span> badges</small>
+            {% if badges.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
             {% for badge in badges -%}
                 {% if badges.length > 1 %}<li>{% endif %}
                     {% if badge.id %}
@@ -184,16 +184,16 @@
     {% endif %}
     {% if syndicate_to %}
         {% set syndicate_to = syndicate_to | toArray %}
-        <li class="syndicate-to">
+        <li class=" [ syndicate-to ] ">
             {% emoji '⤴️' %}
             <small>also on</small>
-            {% if syndicate_to.length > 1 %}<ul class="meta__list">{% endif %}
+            {% if syndicate_to.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
             {% for syndication in syndicate_to %}{% if syndicate_to.length > 1 %}<li>{% endif %}<a href="{{ syndication }}">{{ syndication | getTarget }}</a>{% if syndicate_to.length > 1 %}</li>{% endif %}{% endfor %}
             {% if syndicate_to.length > 1 %}</ul>{% endif %}
         </li>
     {% endif %}
     {% if posting_method %}
-        <li class="posting-method">
+        <li class=" [ posting-method ] ">
             {% emoji '🖋' %}
             <small>posted with</small>
             {% if posting_method | getMethod('url') %}
@@ -203,7 +203,7 @@
             {% endif %}
         </li>
     {% endif %}
-    <li class="shorturl">
+    <li class=" [ shorturl ] ">
         {%- set shorturl_id %}{{ page.date | newBase60Format(prefix, collections[category]) }}{% endset -%}
         {% emoji '🔗', 'shorturl' %}
         <a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>

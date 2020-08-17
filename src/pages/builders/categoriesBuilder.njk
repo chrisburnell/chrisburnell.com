@@ -18,7 +18,7 @@ eleventyComputed:
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
     <h1 id="title" class=" [ title ] ">
-        <span class="p-name">{{ title | safe }}</span>
+        <span class=" [ p-name ] ">{{ title | safe }}</span>
         {% sparkline category.title, collection %}
     </h1>
 
@@ -41,7 +41,7 @@ eleventyComputed:
             <h2 id="{{ year }}">
                 {{ year }}
                 <small>({{ collection | getCountByYear(year) }})</small>
-                <a href="#{{ year }}" class="fragment-anchor">
+                <a href="#{{ year }}" class=" [ fragment-anchor ] ">
                     <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
                         <use xlink:href="/images/sprites.svg#svg--link"></use>
                     </svg>
@@ -55,7 +55,7 @@ eleventyComputed:
                         <h2 id="{{ year }}">
                             {{ year }}
                             <small>({{ collection | getCountByYear(year) }})</small>
-                            <a href="#{{ year }}" class="fragment-anchor">
+                            <a href="#{{ year }}" class=" [ fragment-anchor ] ">
                                 <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
                                     <use xlink:href="/images/sprites.svg#svg--link"></use>
                                 </svg>

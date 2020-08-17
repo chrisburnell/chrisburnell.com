@@ -47,7 +47,7 @@ For a long time I was also the organiser of a weekly meeting, *Implementor Scrum
 
 <figure>
     <a rel="external" href="https://www.city.ac.uk" title="City, University of London">
-        <img src="/images/content/logo-city-university.svg" alt="" height="150">
+        <img src="/images/content/logo-city-university.svg" alt="" style="height: 150px;">
     </a>
 </figure>
 

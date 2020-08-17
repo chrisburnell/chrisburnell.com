@@ -1,13 +1,13 @@
 ---
 title: Network Offline
-lede: <span class="canada">Sorry</span>, it looks like there's a problem with your Internet connection.
+lede: <span class=" [ canada ] ">Sorry</span>, it looks like there's a problem with your Internet connection.
 sitemap:
   exclude: true
 carbon: false
 coil: false
 ---
 
-<nav class="buttons-list" role="navigation">
+<nav class=" [ buttons-list ] " role="navigation">
     <button type="button" onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
 
@@ -44,7 +44,7 @@ coil: false
     browsingHistory.sort( (a,b) => {
       return b.timestamp - a.timestamp;
     });
-    let markup = '<h2>Here are some cached pages</h2><nav class="deck">';
+    let markup = '<h2>Here are some cached pages</h2><nav class=" [ deck ] ">';
     browsingHistory.forEach( data => {
       markup += `
     <article>
@@ -55,7 +55,7 @@ coil: false
 `
       if (data.timestamp) {
           markup += `
-<div class="deck__meta">
+<div class=" [ deck__meta ] ">
     <small>published</small>
     <a href="${ data.url }" tabindex="-1">
         <time datetime="${ data.timestamp }">${ data.published }</time>

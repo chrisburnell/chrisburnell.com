@@ -6,7 +6,7 @@
             <label class=" [ webmentions__label ] " for="webmention-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
             <input id="webmention-source" class=" [ webmentions__input ] " type="url" inputmode="url" name="source" size="1" aria-required="true" required>
             <input type="hidden" name="target" value="{{ canonical }}">
-            <input class="button  webmentions__submit" type="submit" value="Send">
+            <input class=" [ button ] [ webmentions__submit ] " type="submit" value="Send">
         </form>
         <div class=" [ webmentions__responses ] ">
             {%- set responses = webmentions | getWebmentions(page.url) | reverse -%}
@@ -16,7 +16,7 @@
                 <h2 id="responses">{{ responses.length }} Response{{ 's' if responses.length > 1 }}</h2>
                 <dl class=" [ webmentions__list ] [ full ] ">
                     {% if reactions.length %}
-                        <dt class="hidden">Reactions:</dt>
+                        <dt class=" [ hidden ] ">Reactions:</dt>
                         <dd id="reactions" class=" [ webmentions__list__reactions ] ">
                             <ol class=" [ reactions ] ">
                                 {% for webmention in reactions %}

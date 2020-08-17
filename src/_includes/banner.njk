@@ -4,7 +4,7 @@
         {% if banners.length == 1 %}
             <source srcset="/images/banners/{{ banners[0] | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
                     type="image/webp" />
-            <img alt="" class="u-photo" src="/images/banners/{{ banners[0] }}" role="presentation" loading="lazy">
+            <img alt="" class=" [ u-photo ] " src="/images/banners/{{ banners[0] }}" role="presentation" loading="lazy">
         {% else %}
             <source srcset="
 {%- for item in banners -%}
@@ -15,7 +15,7 @@
     {% endif %}
 {%- endfor -%}"
                     type="image/webp" />
-            <img    alt="" class="u-photo" role="presentation" loading="lazy"
+            <img    alt="" class=" [ u-photo ] " role="presentation" loading="lazy"
                     src="/images/banners/{{ banners | last }}"
                     srcset="
 {%- for item in banners -%}
