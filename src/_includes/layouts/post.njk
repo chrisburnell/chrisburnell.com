@@ -72,10 +72,6 @@ layout: base
             <p class=" [ lede ] [ p-summary ] ">{{ lede | safe }}</p>
         {% endif %}
 
-        {% if category == 'recipe' %}
-            <p class=" [ lede ] ">Recipes are very much under construction until I get them set up in Eleventy.<br>You can find this one in its old state <a href="{{ 'https://v2.chrisburnell.com' + page.url }}">here</a>.</p>
-        {% endif %}
-
         {% include 'updated.njk' %}
 
         {% if of_url %}
@@ -96,6 +92,158 @@ layout: base
 
         {% if listen_of %}
             <iframe width="100%" height="150" src="https://embed.song.link/?url=spotify:album:{{ listen_of.url | default(listen_of) }}&theme=dark" fframeborder="0" allowtransparency sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+        {% endif %}
+
+        {% if category == 'recipe' %}
+            {% if makes or serves %}
+                <p id="serves">{% if makes %}Makes{% else %}Serves{% endif %} {{ makes | default(serves) }}.</p>
+            {% endif %}
+
+            {% if prep_time or cooking_time %}
+                <dl>
+                    {% if prep_time %}
+                        <dt>Prep Time:</dt>
+                        <dd>{{ prep_time }}</dd>
+                    {% endif %}
+                    {% if cooking_time %}
+                        <dt>Cooking Time:</dt>
+                        <dd>{{ cooking_time }}</dd>
+                    {% endif %}
+                </dl>
+            {% endif %}
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Ingredients</th>
+                    </tr>
+                    <tr class="hidden">
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in ingredients %}
+                        {% if item.g %}
+                            {% set metric = item.g | round(2) + ' g' %}
+                            {% set us = metric %}
+                            {% if item.g >= cooking_units.mass.kg %}
+                                {% set metric = item.g / cooking_units.mass.kg | round(2) + ' kg' %}
+                            {% endif %}
+                            {% set canada = metric %}
+                            {% if item.g >= cooking_units.mass.lb %}
+                                {% set us = item.g / cooking_units.mass.lb | round(2) + ' lb' %}
+                            {% elif item.g >= cooking_units.mass.oz %}
+                                {% set us = item.g / cooking_units.mass.oz | round(2) + ' oz' %}
+                            {% endif %}
+                            {% set uk = us %}
+                        {% elif item.ml %}
+                            {% set metric = item.ml %}
+                            {% if metric >= cooking_units.volume.l %}
+                                {% set metric = metric / cooking_units.volume.l | round(2) + ' L' %}
+                            {% else %}
+                                {% set metric = metric | round(2) + ' mL' %}
+                            {% endif %}
+                            {% set canada = item.ml %}
+                            {% if canada >= cooking_units.volume.quarter_cup %}
+                                {% set canada = canada / cooking_units.volume.cup | round(2) + ' cup' %}
+                                {% if item.ml > cooking_units.volume.cup %}
+                                    {% set canada = canada + 's' %}
+                                {% endif %}
+                            {% elif canada >= cooking_units.volume.tbsp %}
+                                {% set canada = canada / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+                            {% else %}
+                                {% set canada = canada / cooking_units.volume.tsp | round(2) + ' tsp' %}
+                            {% endif %}
+                            {% set uk = item.ml %}
+                            {% if uk >= cooking_units.volume.gallon %}
+                                {% set uk = uk / cooking_units.volume.gallon | round(2) + ' gallon' %}
+                                {% if item.ml > cooking_units.volume.gallon %}
+                                    {% set uk = uk + 's' %}
+                                {% endif %}
+                            {% elif uk >= cooking_units.volume.quart %}
+                                {% set uk = uk / cooking_units.volume.quart | round(2) + ' quart' %}
+                                {% if item.ml > cooking_units.volume.quart %}
+                                    {% set uk = uk + 's' %}
+                                {% endif %}
+                            {% elif uk >= cooking_units.volume.pint %}
+                                {% set uk = uk / cooking_units.volume.pint | round(2) + ' pint' %}
+                                {% if item.ml > cooking_units.volume.pint %}
+                                    {% set uk = uk + 's' %}
+                                {% endif %}
+                            {% elif uk >= cooking_units.volume.quarter_cup_uk %}
+                                {% set uk = uk / cooking_units.volume.cup_uk | round(2) + ' cup' %}
+                                {% if item.ml >= cooking_units.volume.cup_uk %}
+                                    {% set uk = uk + 's' %}
+                                {% endif %}
+                            {% elif uk >= cooking_units.volume.tbsp %}
+                                {% set uk = uk / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+                            {% else %}
+                                {% set uk = uk / cooking_units.volume.tsp | round(2) + ' tsp' %}
+                            {% endif %}
+                            {% set us = item.ml %}
+                            {% if us >= cooking_units.volume.gallon_us %}
+                                {% set us = us / cooking_units.volume.gallon_us | round(2) + ' gallon' %}
+                                {% if item.ml > cooking_units.volume.gallon_us %}
+                                    {% set us = us + 's' %}
+                                {% endif %}
+                            {% elif us >= cooking_units.volume.quart_us %}
+                                {% set us = us / cooking_units.volume.quart_us | round(2) + ' quart' %}
+                                {% if item.ml > cooking_units.volume.quart_us %}
+                                    {% set us = us + 's' %}
+                                {% endif %}
+                            {% elif us >= cooking_units.volume.pint_us %}
+                                {% set us = us / cooking_units.volume.pint_us | round(2) + ' pint' %}
+                                {% if item.ml > cooking_units.volume.pint_us %}
+                                    {% set us = us + 's' %}
+                                {% endif %}
+                            {% elif us >= cooking_units.volume.quarter_cup_us %}
+                                {% set us = us / cooking_units.volume.cup_us | round(2) + ' cup' %}
+                                {% if item.ml > cooking_units.volume.cup_us %}
+                                    {% set us = us + 's' %}
+                                {% endif %}
+                            {% elif us >= cooking_units.volume.floz_us %}
+                                {% set us = us / cooking_units.volume.floz_us | round(2) + ' fl. oz' %}
+                            {% elif us >= cooking_units.volume.tbsp %}
+                                {% set us = us / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+                            {% else %}
+                                {% set us = us / cooking_units.volume.tsp | round(2) + ' tsp' %}
+                            {% endif %}
+                        {% elif item.amount %}
+                            {% set metric = item.amount %}
+                            {% set canada = metric %}
+                            {% set uk = metric %}
+                            {% set us = metric %}
+                        {% endif %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>
+                                {% if item.g %}
+                                    {{ item.g }} g
+                                {% elif item.ml %}
+                                    {{ item.ml }} ml
+                                {% elif item.amount %}
+                                    {{ item.amount }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if item.notes %}
+                                    <ul class>
+                                        {% for note in item.notes %}
+                                            <li>{{ note }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            {% if preheat %}
+                <p id="preheat">There is a <a href="#preheat-step">preheat</a> step in this recipe.<p>
+            {% endif %}
         {% endif %}
 
         {% if content.length %}

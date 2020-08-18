@@ -35,35 +35,5 @@
     "title": "Nintendo Switch ID",
     "value": "SW-5773-6068-9986",
     "mf_property": "nintendo-friend-id"
-  },
-  {
-    "title": "DEV.to",
-    "url": "https://dev.to/chrisburnell",
-    "hidden": true
-  },
-  {
-    "title": "GitHub Gist",
-    "url": "https://gist.github.com/chrisburnell",
-    "hidden": true
-  },
-  {
-    "title": "IndieNews",
-    "url": "https://news.indieweb.org",
-    "hidden": true
-  },
-  {
-    "title": "Odesli",
-    "url": "https://album.link",
-    "hidden": true
-  },
-  {
-    "title": "Vimeo",
-    "url": "https://vimeo.com/chrisburnell",
-    "hidden": true
-  },
-  {
-    "title": "YouTube",
-    "url": "https://www.youtube.com",
-    "hidden": true
   }
 ]

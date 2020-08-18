@@ -1,9 +1,9 @@
-const replacements = require("../../_data/replacements.json");
+const capitalizers = require("../../_data/capitalizers.json");
 
 module.exports = function capitalizeFormat(string) {
-    for (let replacement of replacements) {
-        let regex = new RegExp(replacement, 'gi');
-        string = string.replace(regex, replacement);
+    for (let capitalizer of capitalizers) {
+        let regex = new RegExp(capitalizer, 'gi');
+        string = string.replace(regex, capitalizer);
     }
 
     return string;

@@ -9,13 +9,13 @@ ingredients:
   - title: red chilli
     amount: 1
     notes:
-    - chopped finely
+      - chopped finely
   - title: chilli sauce (e.g. Sriracha)
     ml: 15
   - title: garlic cloves
     amount: 2
     notes:
-    - peeled and minced
+      - peeled and minced
   - title: brown sugar
     ml: 60
   - title: light soy sauce
@@ -34,7 +34,8 @@ ingredients:
     amount: a pinch
   - title: water
     ml: 60
-    optional: true
+    notes:
+      - optional
 authors:
   - title: Kitchen Sanctuary
     url: https://www.kitchensanctuary.com/firecracker-chicken/
