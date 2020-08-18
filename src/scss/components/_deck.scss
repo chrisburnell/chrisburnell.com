@@ -44,13 +44,6 @@
     font-style: italic;
 }
 
-.deck__meta a + a::before {
-    content: "·";
-    @include v(width, gutter);
-    display: inline-block;
-    text-align: center;
-}
-
 .webmentions-count {
     @include v(margin-left, small);
 }
