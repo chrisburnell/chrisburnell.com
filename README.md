@@ -25,6 +25,8 @@ don’t hesitate to get in touch—via
 [twitter](https://twitter.com/iamchrisburnell) or email—or open a new issue to
 report bugs or suggestions.
 
+While the source for my website is open source, it is not intended to be used as a template for your own website. By all means, copy and share what you like, but make sure it’s part of something you can call your own. :)
+
 ### Code of Conduct
 
 Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
