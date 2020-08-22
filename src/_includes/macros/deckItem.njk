@@ -179,10 +179,12 @@
                     <small>updated</small>
                     <time class=" [ dt-updated ] " datetime="{{ item.data.updated | w3DateFormat }}">{{ item.data.updated | dateFormat }}</time>
                 {% endif %}
-                {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
-                {% if responses.length %}
-                    <span aria-hidden="true">·</span>
-                    <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }}</a>
+                {% if global.environment == 'production' %}
+                    {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
+                    {% if responses.length %}
+                        <span aria-hidden="true">·</span>
+                        <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }}</a>
+                    {% endif %}
                 {% endif %}
             </div>
         {% endif %}

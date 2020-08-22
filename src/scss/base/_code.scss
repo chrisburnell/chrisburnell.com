@@ -61,13 +61,23 @@ pre {
 
 // Highlighted Code Blocks
 pre[class*="language-"] {
-    @include v(background-color, mineshaft);
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(var(--measure-gap) - var(--border-width-thin)),
+        var(--color-raven--beta) calc(var(--measure-gap) - var(--border-width-thin)),
+        var(--color-raven--beta) var(--measure-gap),
+        var(--color-mineshaft) var(--measure-gap),
+        var(--color-mineshaft) 100%
+    );
     @include v(color, white);
     width: auto;
     min-width: 10vw;
     margin-bottom: 0;
     @include v(padding, gutter);
+    padding-top: calc(var(--measure-gutter) + var(--measure-gap));
     border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    background-clip: padding-box;
     // disallow text from wrapping inside the container
     overflow-x: auto;
     overflow-y: hidden;
@@ -84,19 +94,22 @@ pre[class*="language-"] {
         display: block;
         overflow-wrap: normal;
         word-break: normal;
+        white-space: pre;
     }
 }
 
 code[class*="language-"] {
-    padding-top: calc(var(--measure-large) + var(--measure-small));
-
     &::before {
-        @include absolute(top-full);
+        @include absolute(top-left);
         @include font-family(alpha);
         @include v(background-color, dove);
         @include v(color, white);
-        padding: var(--measure-small) var(--measure-gutter);
-        border-bottom: var(--border-width-thin) solid var(--color-coyote);
+        @include v(height, gap);
+        display: flex;
+        align-items: center;
+        padding: 0 var(--measure-gutter);
+        border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+        background-clip: padding-box;
         text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
     }
 

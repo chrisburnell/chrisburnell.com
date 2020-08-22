@@ -11,7 +11,7 @@
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
 
-:root {
+html {
     @each $key, $value in $measures {
         #{"--measure-" + $key}: #{$value};
     }

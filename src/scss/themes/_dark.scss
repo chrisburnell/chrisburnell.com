@@ -9,8 +9,10 @@
     --color-dove: #{$color-kaiser};
     --color-coyote: #{$color-bowhead};
     --color-bowhead: #{$color-coyote};
-    $color-bear: mix($color-raven, $color-mineshaft, $opacity-gamma * 100);
-    --color-bear: #{$color-bear};
+    --color-bear: #{$color-lynx};
+    --color-lynx: #{$color-bear};
+
+    scrollbar-color: v(color, raven) v(color, mineshaft);
 
     .header,
     .main {
@@ -48,14 +50,27 @@
             @include v(color, alto);
         }
     }
+
+    pre[class*="language-"] {
+        @include v(background-color, mineshaft);
+        background-image: linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(var(--measure-gap) - var(--border-width-thin)),
+            var(--color-raven--beta) calc(var(--measure-gap) - var(--border-width-thin)),
+            var(--color-raven--beta) var(--measure-gap),
+            var(--color-black--gamma) var(--measure-gap),
+            var(--color-black--gamma) 100%
+        );
+    }
 }
 
 @include media("dark") {
-    :root {
+    html {
         --color-scheme: "dark";
     }
 
-    :root:not([data-user-color-scheme]) {
+    html:not([data-user-color-scheme]) {
         @include theme-dark;
     }
 }

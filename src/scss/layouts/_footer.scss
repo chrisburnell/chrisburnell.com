@@ -13,7 +13,10 @@
     a,
     button {
         @include v(color, white);
-        @include v(text-decoration-color, kaiser);
+
+        &:not(:hover):not(:focus):not(:active) {
+            @include v(text-decoration-color, kaiser);
+        }
     }
 
     .wrap {
