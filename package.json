@@ -39,8 +39,9 @@
   "scripts": {
     "scss:build": "npx sass src/scss:css --no-source-map --color --style=compressed",
     "scss:serve": "npx sass src/scss:css --no-source-map --color --watch",
-    "build": "npm run scss:build; ELEVENTY_ENV=production npx @11ty/eleventy",
-    "serve": "npm run scss:serve & npx @11ty/eleventy --serve --quiet",
+    "js:build": "cat src/js/helpers.js src/js/navigator.js src/js/color-scheme.js src/js/sparklines.js src/js/since.js src/js/welcome.js > src/js/main.js",
+    "build": "npm run js:build; npm run scss:build; ELEVENTY_ENV=production npx @11ty/eleventy",
+    "serve": "npm run js:build; npm run scss:serve & npx @11ty/eleventy --serve --quiet",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }
