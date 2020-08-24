@@ -8,10 +8,19 @@
     }
   },
   {
+    "url": "https://v2.chrisburnell.com",
+    "data": {
+      "title": "Version 2",
+      "lede": "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
+      "emoji": "🐓"
+    }
+  },
+  {
     "url": "https://micro.bloodbuilder.online",
     "data": {
       "title": "Micrathene",
-      "lede": "Super Simple PWA for building Microlite20 characters.",
+      "lede": "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
+      "lede_markdown": true,
       "emoji": "🔬"
     }
   },
@@ -19,7 +28,8 @@
     "url": "https://waterdeep.bloodbuilder.online",
     "data": {
       "title": "Waterdeep, A Curated Guide",
-      "lede": "I’m the Dungeon Master for a D&D campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.",
+      "lede": "I’m the Game Master for a [D&D](https://dnd.wizards.com/) campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.",
+      "lede_markdown": true,
       "emoji": "🐉"
     }
   },
@@ -35,7 +45,8 @@
     "url": "https://ownyourbeer.chrisburnell.com",
     "data": {
       "title": "OwnYour.Beer",
-      "lede": "An IndieWeb tool to help you pull check-ins from Untappd. Still a work-in-progress.",
+      "lede": "An IndieWeb tool to help you pull check-ins from [Untappd](https://untappd.com). Still a work-in-progress.",
+      "lede_markdown": true,
       "emoji": "🍻"
     }
   },
@@ -43,7 +54,8 @@
     "url": "https://repc.co",
     "data": {
       "title": "Reptile C",
-      "lede": "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: <a href=\"https://chrisburnell.com/article/liquid-base-60\">LiquidBase60</a></em>.",
+      "lede": "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: *[LiquidBase60](https://chrisburnell.com/article/liquid-base-60)*.",
+      "lede_markdown": true,
       "emoji": "🔗"
     }
   },
@@ -51,7 +63,8 @@
     "url": "https://corvus.chrisburnell.com",
     "data": {
       "title": "Corvus",
-      "lede": "My personal Micropub endpoint.",
+      "lede": "My personal [micropub](https://indieweb.org/micropub) endpoint.",
+      "lede_markdown": true,
       "emoji": "🐦"
     }
   },
@@ -59,7 +72,8 @@
     "url": "https://bloodbuilder.online",
     "data": {
       "title": "BloodBuilder",
-      "lede": "Super Simple PWA for 1st Edition Pathfinder Pure Core Classes.",
+      "lede": "Super Simple PWA for [1e Pathfinder](https://paizo.com/pathfinder) Pure Core Classes.",
+      "lede_markdown": true,
       "emoji": "🗡"
     }
   },

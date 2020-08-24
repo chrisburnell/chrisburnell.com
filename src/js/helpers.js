@@ -2,8 +2,7 @@
  * Helpers
  * @author Chris Burnell <me@chrisburnell.com>
  */
-
-helpers = {
+const helpers = {
     ////
     /// Injects content into template using placeholder
     /// @param {String} originalContent

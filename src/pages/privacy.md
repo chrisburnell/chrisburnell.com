@@ -7,7 +7,7 @@ coil: false
 
 ## Activity and Interaction
 
-I use a handful of services, most often in the form of webmentions, to keep track of how people interact with the content I make. If you have responded to, liked, reposted, quoted, commented on my activity on Twitter, on Mastodon, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/contact), and I would be happy to oblige your request.
+I use a handful of services, most often in the form of webmentions, to keep track of how people interact with the content I make. If you have responded to, liked, reposted, quoted, commented on my activity on Twitter, on Mastodon, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/about/#contact), and I would be happy to oblige your request.
 
 
 ## Browse Freely
@@ -19,9 +19,9 @@ I do, however, employ the use of Service Workers. If you’re using a relatively
 
 ## Ads
 
-I serve ads on this website through [Carbon Ads](https://www.carbonads.net/). If you experience an ad that you think is inappropriate or offends you, please [contact me](/contact) so that I can take it to the necessary channels and get it removed.
+I serve ads on this website through [Carbon Ads](https://www.carbonads.net/). If you experience an ad that you think is inappropriate or offends you, please [contact me](/contact/#about) so that I can take it to the necessary channels and get it removed.
 
 
 ## Further
 
-If you have any further questions or concerns regarding your privacy on this website, please [contact me](/contact) so that I can address it as soon as possible.
+If you have any further questions or concerns regarding your privacy on this website, please [contact me](/contact/#about) so that I can address it as soon as possible.

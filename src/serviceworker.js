@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.10";
+const VERSION = "v3.0.12";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -25,12 +25,7 @@ const TIMEOUT = 15000;
 // Files that *must* be cached
 const REQUIRED_FILES = [
     "/css/main.css",
-    "/js/helpers.js",
-    "/js/navigator.js",
-    "/js/color-scheme.js",
-    "/js/sparklines.js",
-    "/js/since.js",
-    "/js/welcome.js"
+    "/js/main.js"
 ];
 
 // Files that are cached but non-blocking
@@ -47,7 +42,6 @@ const OFFLINE_PAGES = [
     "/offline/",
     "/",
     "/about/",
-    "/contact/",
     "/archive/",
     "/writing/",
     "/projects/",

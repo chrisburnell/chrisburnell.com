@@ -156,6 +156,8 @@
         {% endif %}
         {% if item.data.lede and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
             <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | urlize | safe }}</p>
+        {% elif item.data.lede and item.data.lede_markdown %}
+            <p class=" [ p-summary ] ">{{ item.data.lede | markdownFormat | safe }}</p>
         {% elif item.data.lede %}
             <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'bookmark' %}
