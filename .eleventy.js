@@ -125,9 +125,8 @@ module.exports = function(config) {
     config.addPassthroughCopy("css");
     config.addPassthroughCopy("fonts");
     config.addPassthroughCopy("images");
-    config.addPassthroughCopy("src/js");
-    config.addPassthroughCopy("src/serviceworker.js");
     config.addPassthroughCopy("static");
+    config.addPassthroughCopy("src/serviceworker.js");
 
     // Pages Collection
     config.addCollection("pages", collection => {
