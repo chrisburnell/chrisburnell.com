@@ -39,7 +39,7 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
+    "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_generated-tokens.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "build": "npm run scss -- --style=compressed; ELEVENTY_ENV=production npx @11ty/eleventy",
     "serve": "npm run scss -- --watch & npx @11ty/eleventy --serve --quiet",

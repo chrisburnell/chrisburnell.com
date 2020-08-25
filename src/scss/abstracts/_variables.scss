@@ -180,6 +180,15 @@ $color-spotify: hsl(141.2, 72.9%, 42%); // #1db954
 /// @type Color
 $color-twitter: hsl(205.9, 81.8%, 63.3%); // #55acee
 
+/// @type List
+$font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+/// @type List
+$font-family-alpha: "Heebo", sans-serif;
+/// @type List
+$font-family-serif: Georgia, Times, Times New Roman, serif;
+/// @type List
+$font-family-monospace: monospace;
+
 /// @type Number
 $font-weight-default: 400;
 /// @type Number
@@ -250,6 +259,3 @@ $fluid-size: 16;
 $fluid-ratio-minimum: 1.2;
 /// @type Number
 $fluid-ratio-maximum: 1.292;
-
-$bowhead-show-fallback: false;
-$bowhead-generate: false;

@@ -1,72 +1,79 @@
+////
+/// Maps
+/// @group abstracts
+////
+
+/// @type Map
+/// @see {Mixin} v
 $tokens: (
-  measure: (
-    breakpoint-small: 500px,
-    breakpoint-medium: 700px,
-    breakpoint-large: 1000px,
-    breakpoint-gigantic: 1200px,
-    gap: 2.5rem,
-    gutter: 1.25rem,
-    avatar: 6.25rem,
-    avatar-small: 3rem,
-    tiny: 0.3125rem,
-    small: 0.625rem,
-    medium: 1.25rem,
-    large: 2.25rem,
-    gigantic: 4rem,
-    line-length-minimum: 21em,
-    line-length-maximum: 30em,
-    line-length-clamp: clamp(21em, 100vw, 30em)
-  ),
-  opacity: (
-    alpha: 0.9,
-    beta: 0.5,
-    gamma: 0.1,
-    delta: 0.05
-  ),
-  color: (
-    
-  ),
-  border-width: (
-    default: 0.25rem,
-    thin: 0.125rem,
-    hairline: 1px,
-    button: 0.182em
-  ),
-  font-family: (
-    default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
-    alpha: "Heebo", sans-serif,
-    serif: Georgia, Times, Times New Roman, serif,
-    monospace: monospace
-  ),
-  font-weight: (
-    default: 400,
-    bold: 600
-  ),
-  line-height: (
-    default: 1.875,
-    small: 1.25,
-    medium: 1.429,
-    code: 2
-  ),
-  letter-spacing: (
-    default: 0,
-    uppercase: 1px
-  ),
-  transition-duration: (
-    default: 0.2s,
-    long: 1s
-  ),
-  transition-function: (
-    default: ease,
-    alternate: linear
-  ),
-  z-index: (
-    below: -1,
-    root: 0,
-    default: 1,
-    above: 2,
-    modal: 3,
-    dialog: 4,
-    notification: 5
-  )
+    measure: (
+        breakpoint-small: $measure-breakpoint-small,
+        breakpoint-medium: $measure-breakpoint-medium,
+        breakpoint-large: $measure-breakpoint-large,
+        breakpoint-gigantic: $measure-breakpoint-gigantic,
+        gap: $measure-gap,
+        gutter: $measure-gutter,
+        avatar: $measure-avatar,
+        avatar-small: $measure-avatar-small,
+        tiny: $measure-tiny,
+        small: $measure-small,
+        medium: $measure-medium,
+        large: $measure-large,
+        gigantic: $measure-gigantic,
+        line-length-minimum: $measure-line-length-minimum,
+        line-length-maximum: $measure-line-length-maximum,
+        line-length-clamp: $measure-line-length-clamp,
+        border-default: $measure-border-default,
+        border-thin: $measure-border-thin,
+        border-hairline: $measure-border-hairline,
+        border-button: $measure-border-button
+    ),
+    opacity: (
+        alpha: $opacity-alpha,
+        beta: $opacity-beta,
+        gamma: $opacity-gamma,
+        delta: $opacity-delta
+    ),
+    color: map-multiple-merge($site-colors, $highlight-colors, $language-colors),
+    font-family: (
+        default: $font-family-default,
+        alpha: $font-family-alpha,
+        serif: $font-family-serif,
+        monospace: $font-family-monospace
+    ),
+    font-weight: (
+        default: $font-weight-default,
+        bold: $font-weight-bold
+    ),
+    line-height: (
+        default: $line-height-default,
+        small: $line-height-small,
+        medium: $line-height-medium,
+        code: $line-height-code
+    ),
+    letter-spacing: (
+        default: $letter-spacing-default,
+        uppercase: $letter-spacing-uppercase
+    ),
+    transition-duration: (
+        default: $transition-duration-default,
+        long: $transition-duration-long
+    ),
+    transition-function: (
+        default: $transition-function-default,
+        alternate: $transition-function-alternate
+    ),
+    z-index: (
+        below: $z-index-below,
+        root: $z-index-root,
+        default: $z-index-default,
+        above: $z-index-above,
+        modal: $z-index-modal,
+        dialog: $z-index-dialog,
+        notification: $z-index-notification
+    )
 );
+
+$bowhead-tokens: $tokens;
+$bowhead-show-fallback: false;
+$bowhead-generate: false;
