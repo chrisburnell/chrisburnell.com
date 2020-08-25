@@ -4,14 +4,10 @@
 ////
 
 /// @type List
-$font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$font-family-default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 /// @type List
-$font-family-alpha: "Heebo", sans-serif !default;
+$font-family-alpha: "Heebo", sans-serif;
 /// @type List
-$font-family-serif: Georgia, Times, Times New Roman, serif !default;
+$font-family-serif: Georgia, Times, Times New Roman, serif;
 /// @type List
-$font-family-monospace: monospace !default;
-
-/// @type List
-/// @prop {String} Generic Property Value
-$generic-values: auto, inherit, initial, none, revert, unset, 0, 1, 100%, currentColor !default;
+$font-family-monospace: monospace;

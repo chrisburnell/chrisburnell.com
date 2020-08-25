@@ -77,12 +77,12 @@
 .webmentions__response__avatar {
     box-sizing: content-box;
     @include v(width, avatar-small);
-    border: var(--border-width-thin) solid var(--color-raven--beta);
+    border: var(--measure-border-thin) solid var(--color-raven--beta);
 
     &,
     .avatar,
     .avatar img {
-        @include border-radius(50%);
+        border-radius: 50%;
     }
 
     .avatar {

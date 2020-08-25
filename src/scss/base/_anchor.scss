@@ -13,7 +13,7 @@ a,
     position: relative;
     text-decoration: underline;
     @include v(text-decoration-color, alto);
-    text-decoration-thickness: var(--border-width-thin);
+    @include v(text-decoration-thickness, border-thin);
     text-decoration-skip-ink: auto;
 
     &:hover,
@@ -24,14 +24,14 @@ a,
 
     &:focus-visible {
         @include v(outline-color, raven);
-        outline-width: var(--border-width-thin);
-        outline-offset: var(--border-width-thin);
+        @include v(outline-width, border-thin);
+        @include v(outline-offset, border-thin);
     }
 
     &:active {
         @include v(background-color, canada);
-        color: var(--color-white) !important;
-        outline-width: var(--border-width-thin);
+        color: v(color, white) !important;
+        @include v(outline-width, border-thin);
         outline-offset: 0;
     }
 }

@@ -7,8 +7,8 @@ a {
     h2 & {
         @include v(color, kaiser);
         @include v(text-decoration-color, transparent);
-        @include v(text-decoration-thickness, thin);
-        @include v(text-underline-offset);
+        @include v(text-decoration-thickness, border-thin);
+        @include v(text-underline-offset, border-default);
     }
 
     // hide extra content, text targetted only to screen readers
@@ -40,7 +40,7 @@ a {
     @include v(padding-left, small);
     @include v(padding-right, small);
     position: absolute;
-    top: var(--border-width-thin);
+    top: var(--measure-border-thin);
     right: calc(var(--measure-small) * -1);
     font-size: inherit;
     @include v(font-weight, bold);

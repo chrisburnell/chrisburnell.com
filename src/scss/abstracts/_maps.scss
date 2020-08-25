@@ -240,7 +240,11 @@ $tokens: (
         gigantic: $measure-gigantic,
         line-length-minimum: $measure-line-length-minimum,
         line-length-maximum: $measure-line-length-maximum,
-        line-length-clamp: $measure-line-length-clamp
+        line-length-clamp: $measure-line-length-clamp,
+        border-default: $measure-border-default,
+        border-thin: $measure-border-thin,
+        border-hairline: $measure-border-hairline,
+        border-button: $measure-border-button
     ),
     opacity: (
         alpha: $opacity-alpha,
@@ -249,16 +253,6 @@ $tokens: (
         delta: $opacity-delta
     ),
     color: map-multiple-merge($site-colors, $highlight-colors, $language-colors),
-    border-width: (
-        default: $border-width-default,
-        thin: $border-width-thin,
-        hairline: $border-width-hairline,
-        button: $border-width-button
-    ),
-    border-radius: (
-        default: $border-radius-default,
-        hairline: $border-radius-hairline
-    ),
     font-family: (
         default: $font-family-default,
         alpha: $font-family-alpha,

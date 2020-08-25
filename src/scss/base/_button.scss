@@ -17,7 +17,6 @@ button {
 
 .button,
 [type="button"] {
-    @include border-radius;
     @include font-family(default);
     @include non-selectable;
     @include transition(background-color);
@@ -27,7 +26,8 @@ button {
     display: inline-block;
     padding: 0.5em var(--measure-small);
     border-width: 0;
-    box-shadow: inset 0 calc(var(--border-width-button) * -1) 0 0 var(--color-black--gamma);
+    @include v(border-radius, border-default);
+    box-shadow: inset 0 calc(v(measure, border-button) * -1) 0 0 v(color, black--gamma);
     outline: 0 solid var(--color-raven);
     overflow: visible;
     position: relative;
@@ -36,7 +36,7 @@ button {
     @include v(line-height, medium);
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 var(--border-width-hairline) var(--border-width-hairline) var(--color-black--gamma);
+    text-shadow: 0 v(measure, border-hairline) v(measure, border-hairline) v(color, black--gamma);
     appearance: none;
 
     &:hover,
@@ -47,18 +47,18 @@ button {
     }
 
     &:focus-visible {
-        outline-width: var(--border-width-thin);
-        outline-offset: var(--border-width-thin);
+        @include v(outline-width, border-thin);
+        @include v(outline-offset, border-thin);
     }
 
     &:active {
         box-shadow: none;
         outline-width: 0;
-        transform: translateY(var(--border-width-button));
+        transform: translateY(v(measure, border-button));
 
         &::before {
             content: "";
-            height: var(--border-width-button);
+            @include v(height, border-button);
             position: absolute;
             bottom: 100%;
             left: 0;
@@ -72,7 +72,7 @@ button {
     }
 
     .icon {
-        filter: drop-shadow(0 0 var(--border-width-hairline) var(--color-black--gamma));
+        filter: drop-shadow(0 0 var(--measure-border-hairline) var(--color-black--gamma));
     }
 }
 

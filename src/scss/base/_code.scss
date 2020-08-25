@@ -12,8 +12,8 @@
 }
 
 %content-monospace-elements {
-    @include border-radius;
-    padding: 0.25em;
+    @include v(padding, border-default);
+    @include v(border-radius, border-default);
 }
 
 %collection-monospace,
@@ -39,7 +39,7 @@ samp {
 
 kbd {
     @include case(uppercase);
-    box-shadow: inset 0 0 0 var(--border-width-hairline) var(--color-kaiser);
+    box-shadow: inset 0 0 0 var(--measure-border-hairline) var(--color-kaiser);
 }
 
 mark {
@@ -64,8 +64,8 @@ pre[class*="language-"] {
     background-image: linear-gradient(
         to bottom,
         transparent 0,
-        transparent calc(var(--measure-gap) - var(--border-width-thin)),
-        var(--color-raven--beta) calc(var(--measure-gap) - var(--border-width-thin)),
+        transparent calc(var(--measure-gap) - var(--measure-border-thin)),
+        var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)),
         var(--color-raven--beta) var(--measure-gap),
         var(--color-mineshaft) var(--measure-gap),
         var(--color-mineshaft) 100%
@@ -76,7 +76,7 @@ pre[class*="language-"] {
     margin-bottom: 0;
     @include v(padding, gutter);
     padding-top: calc(var(--measure-gutter) + var(--measure-gap));
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
     background-clip: padding-box;
     // disallow text from wrapping inside the container
     overflow-x: auto;
@@ -108,9 +108,9 @@ code[class*="language-"] {
         display: flex;
         align-items: center;
         padding: 0 var(--measure-gutter);
-        border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+        border-radius: var(--measure-border-default) var(--measure-border-default) 0 0;
         background-clip: padding-box;
-        text-shadow: 0 var(--border-width-hairline) 0 var(--color-mineshaft);
+        text-shadow: 0 var(--measure-border-hairline) 0 var(--color-mineshaft);
     }
 
     // Highlighted Code Block Labels
@@ -119,7 +119,7 @@ code[class*="language-"] {
             &::before {
                 background-color: #{$color} !important;
                 color: contrasting-color($color, $color-mineshaft, $color-white) !important;
-                text-shadow: 0 var(--border-width-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft) !important;
+                text-shadow: 0 var(--measure-border-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft) !important;
             }
         }
     }

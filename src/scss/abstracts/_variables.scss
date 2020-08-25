@@ -4,248 +4,242 @@
 ////
 
 /// @type Length
-$measure-breakpoint-small: 500px !default;
+$measure-breakpoint-small: 500px;
 /// @type Length
-$measure-breakpoint-medium: 700px !default;
+$measure-breakpoint-medium: 700px;
 /// @type Length
-$measure-breakpoint-large: 1000px !default;
+$measure-breakpoint-large: 1000px;
 /// @type Length
-$measure-breakpoint-gigantic: 1200px !default;
+$measure-breakpoint-gigantic: 1200px;
 
 /// @type Length
-$measure-gap: 2.5rem !default;
+$measure-gap: 2.5rem;
 /// @type Length
-$measure-gutter: 1.25rem !default;
+$measure-gutter: 1.25rem;
 
 /// @type Length
-$measure-avatar: 6.25rem !default;
+$measure-avatar: 6.25rem;
 /// @type Length
-$measure-avatar-small: 3rem !default;
+$measure-avatar-small: 3rem;
 
 /// @type Length
-$measure-tiny: 0.3125rem !default;
+$measure-tiny: 0.3125rem;
 /// @type Length
-$measure-small: 0.625rem !default;
+$measure-small: 0.625rem;
 /// @type Length
-$measure-medium: 1.25rem !default;
+$measure-medium: 1.25rem;
 /// @type Length
-$measure-large: 2.25rem !default;
+$measure-large: 2.25rem;
 /// @type Length
-$measure-gigantic: 4rem !default;
+$measure-gigantic: 4rem;
 
 /// @type Length
-$measure-line-length-minimum: 21em !default;
+$measure-line-length-minimum: 21em;
 /// @type Length
-$measure-line-length-maximum: 30em !default;
+$measure-line-length-maximum: 30em;
 /// @type Length
-$measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-line-length-maximum) !default;
+$measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-line-length-maximum);
+
+/// @type Length
+$measure-border-default: 0.25rem;
+/// @type Length
+$measure-border-thin: 0.125rem;
+/// @type Length
+$measure-border-hairline: 1px;
+/// @type Length
+$measure-border-button: 0.182em;
 
 /// @type Number
-$opacity-alpha: 0.9 !default;
+$opacity-alpha: 0.9;
 /// @type Number
-$opacity-beta: 0.5 !default;
+$opacity-beta: 0.5;
 /// @type Number
-$opacity-gamma: 0.1 !default;
+$opacity-gamma: 0.1;
 /// @type Number
-$opacity-delta: 0.05 !default;
+$opacity-delta: 0.05;
 
 // this allows transparency to be transitioned to a different color
 /// @type Color
-$color-transparent: hsla(0, 0, 0, 0) !default;
+$color-transparent: hsla(0, 0, 0, 0);
 /// @type Color
-$color-black: hsl(0, 0%, 2.4%) !default; // #060606
+$color-black: hsl(0, 0%, 2.4%); // #060606
 /// @type Color
-$color-mineshaft: hsl(0, 0%, 16.9%) !default; // #2b2b2b
+$color-mineshaft: hsl(0, 0%, 16.9%); // #2b2b2b
 /// @type Color
-$color-kaiser: hsl(0, 0%, 31%) !default; // #4f4f4f
+$color-kaiser: hsl(0, 0%, 31%); // #4f4f4f
 /// @type Color
-$color-dove: hsl(0, 0%, 45.1%) !default; // #737373
+$color-dove: hsl(0, 0%, 45.1%); // #737373
 /// @type Color
-$color-alto: hsl(0, 0%, 86.7%) !default; // #dddddd
+$color-alto: hsl(0, 0%, 86.7%); // #dddddd
 /// @type Color
-$color-white: hsl(0, 0%, 97.6%) !default; // #f9f9f9
+$color-white: hsl(0, 0%, 97.6%); // #f9f9f9
 /// @type Color
-$color-bowhead: hsl(203.7, 28.5%, 43.2%) !default; // #4f758e
+$color-bowhead: hsl(203.7, 28.5%, 43.2%); // #4f758e
 /// @type Color
-$color-raven: hsl(203.7, 28.5%, 51.2%) !default; // #5f8aa6
+$color-raven: hsl(203.7, 28.5%, 51.2%); // #5f8aa6
 /// @type Color
-$color-coyote: hsl(203.7, 28.5%, 57.1%) !default; // #7298b1
+$color-coyote: hsl(203.7, 28.5%, 57.1%); // #7298b1
 /// @type Color
-$color-bear: mix($color-raven, $color-white, $opacity-gamma * 100) !default; // #eaeef1
+$color-bear: mix($color-raven, $color-white, $opacity-gamma * 100); // #eaeef1
 /// @type Color
-$color-lynx: mix($color-raven, $color-mineshaft, $opacity-gamma * 100) !default; // #303537
+$color-lynx: mix($color-raven, $color-mineshaft, $opacity-gamma * 100); // #303537
 /// @type Color
-$color-canada: hsl(356.8, 82.6%, 54.9%) !default; // #eb2d37
+$color-canada: hsl(356.8, 82.6%, 54.9%); // #eb2d37
 /// @type Color
-$color-highlight: hsl(50.6, 100%, 50%) !default; // #ffd700
+$color-highlight: hsl(50.6, 100%, 50%); // #ffd700
 
 /// @type Color
-$color-black--alpha: rgba($color-black, $opacity-alpha) !default;
+$color-black--alpha: rgba($color-black, $opacity-alpha);
 /// @type Color
-$color-black--beta: rgba($color-black, $opacity-beta) !default;
+$color-black--beta: rgba($color-black, $opacity-beta);
 /// @type Color
-$color-black--gamma: rgba($color-black, $opacity-gamma) !default;
+$color-black--gamma: rgba($color-black, $opacity-gamma);
 /// @type Color
-$color-black--delta: rgba($color-black, $opacity-delta) !default;
+$color-black--delta: rgba($color-black, $opacity-delta);
 
 /// @type Color
-$color-white--alpha: rgba($color-white, $opacity-alpha) !default;
+$color-white--alpha: rgba($color-white, $opacity-alpha);
 /// @type Color
-$color-white--beta: rgba($color-white, $opacity-beta) !default;
+$color-white--beta: rgba($color-white, $opacity-beta);
 /// @type Color
-$color-white--gamma: rgba($color-white, $opacity-gamma) !default;
+$color-white--gamma: rgba($color-white, $opacity-gamma);
 /// @type Color
-$color-white--delta: rgba($color-white, $opacity-delta) !default;
+$color-white--delta: rgba($color-white, $opacity-delta);
 
 /// @type Color
-$color-raven--alpha: rgba($color-raven, $opacity-alpha) !default;
+$color-raven--alpha: rgba($color-raven, $opacity-alpha);
 /// @type Color
-$color-raven--beta: rgba($color-raven, $opacity-beta) !default;
+$color-raven--beta: rgba($color-raven, $opacity-beta);
 /// @type Color
-$color-raven--gamma: rgba($color-raven, $opacity-gamma) !default;
+$color-raven--gamma: rgba($color-raven, $opacity-gamma);
 /// @type Color
-$color-raven--delta: rgba($color-raven, $opacity-delta) !default;
+$color-raven--delta: rgba($color-raven, $opacity-delta);
 
 /// @type Color
-$color-coyote--alpha: rgba($color-coyote, $opacity-alpha) !default;
+$color-coyote--alpha: rgba($color-coyote, $opacity-alpha);
 /// @type Color
-$color-coyote--beta: rgba($color-coyote, $opacity-beta) !default;
+$color-coyote--beta: rgba($color-coyote, $opacity-beta);
 /// @type Color
-$color-coyote--gamma: rgba($color-coyote, $opacity-gamma) !default;
+$color-coyote--gamma: rgba($color-coyote, $opacity-gamma);
 /// @type Color
-$color-coyote--delta: rgba($color-coyote, $opacity-delta) !default;
+$color-coyote--delta: rgba($color-coyote, $opacity-delta);
 
 /// @type Color
-$color-bowhead--alpha: rgba($color-bowhead, $opacity-alpha) !default;
+$color-bowhead--alpha: rgba($color-bowhead, $opacity-alpha);
 /// @type Color
-$color-bowhead--beta: rgba($color-bowhead, $opacity-beta) !default;
+$color-bowhead--beta: rgba($color-bowhead, $opacity-beta);
 /// @type Color
-$color-bowhead--gamma: rgba($color-bowhead, $opacity-gamma) !default;
+$color-bowhead--gamma: rgba($color-bowhead, $opacity-gamma);
 /// @type Color
-$color-bowhead--delta: rgba($color-bowhead, $opacity-delta) !default;
+$color-bowhead--delta: rgba($color-bowhead, $opacity-delta);
 
 /// @type Color
-$color-highlight-alpha: hsl(194.5, 14.1%, 40.2%) !default; // #586e75
+$color-highlight-alpha: hsl(194.5, 14.1%, 40.2%); // #586e75
 /// @type Color
-$color-highlight-beta: hsl(180, 10.5%, 70.2%) !default; // #abbbbb
+$color-highlight-beta: hsl(180, 10.5%, 70.2%); // #abbbbb
 /// @type Color
-$color-highlight-gamma: hsl(120, 73.4%, 74.9%) !default; // #90ee90
+$color-highlight-gamma: hsl(120, 73.4%, 74.9%); // #90ee90
 /// @type Color
-$color-highlight-delta: hsl(17.6, 80.4%, 44.1%) !default; // #cb4b16
+$color-highlight-delta: hsl(17.6, 80.4%, 44.1%); // #cb4b16
 /// @type Color
-$color-highlight-epsilon: hsl(157, 100%, 49%) !default; // #00fa9a
+$color-highlight-epsilon: hsl(157, 100%, 49%); // #00fa9a
 /// @type Color
-$color-highlight-zeta: hsl(1, 71.2%, 52.4%) !default; // #dc322f
+$color-highlight-zeta: hsl(1, 71.2%, 52.4%); // #dc322f
 /// @type Color
-$color-highlight-eta: hsl(197.4, 71.4%, 72.5%) !default; // #87ceeb
+$color-highlight-eta: hsl(197.4, 71.4%, 72.5%); // #87ceeb
 /// @type Color
-$color-highlight-theta: hsl(45.4, 100%, 35.5%) !default; // #b58900
+$color-highlight-theta: hsl(45.4, 100%, 35.5%); // #b58900
 
 /// @type Color
-$color-css: hsl(204.3, 98.9%, 36.7%) !default; // #016fba
+$color-css: hsl(204.3, 98.9%, 36.7%); // #016fba
 /// @type Color
-$color-html: hsl(12.3, 78.6%, 52.4%) !default; // #e54d26
+$color-html: hsl(12.3, 78.6%, 52.4%); // #e54d26
 /// @type Color
-$color-javascript: hsl(44, 85.5%, 62.2%) !default; // #f1c54c
+$color-javascript: hsl(44, 85.5%, 62.2%); // #f1c54c
 /// @type Color
-$color-liquid: hsl(99.8, 37.6%, 53.5%) !default; // #7ab55c
+$color-liquid: hsl(99.8, 37.6%, 53.5%); // #7ab55c
 /// @type Color
-$color-markdown: hsl(210, 9.8%, 32.2%) !default; // #4a525a
+$color-markdown: hsl(210, 9.8%, 32.2%); // #4a525a
 /// @type Color
-$color-nunjucks: hsl(115.1, 40.2%, 36.1%) !default; // #3d8137
+$color-nunjucks: hsl(115.1, 40.2%, 36.1%); // #3d8137
 /// @type Color
-$color-sass: hsl(330.3, 50.2%, 55.1%) !default; // #c6538c
+$color-sass: hsl(330.3, 50.2%, 55.1%); // #c6538c
 /// @type Color
-$color-liquid-white: mix($color-white, $color-liquid, 80%) !default; // #dfebd9
+$color-liquid-white: mix($color-white, $color-liquid, 80%); // #dfebd9
 
 /// @type Color
-$color-codepen: hsl(0, 0%, 12.9%) !default; // #212121
+$color-codepen: hsl(0, 0%, 12.9%); // #212121
 /// @type Color
-$color-github: hsl(0, 0%, 20%) !default; // #333333
+$color-github: hsl(0, 0%, 20%); // #333333
 /// @type Color
-$color-lastfm: hsl(357.6, 78.7%, 49.8%) !default; // #e31b23
+$color-lastfm: hsl(357.6, 78.7%, 49.8%); // #e31b23
 /// @type Color
-$color-nintendo: hsl(355.3, 100%, 45.1%) !default; // #e60012
+$color-nintendo: hsl(355.3, 100%, 45.1%); // #e60012
 /// @type Color
-$color-spotify: hsl(141.2, 72.9%, 42%) !default; // #1db954
+$color-spotify: hsl(141.2, 72.9%, 42%); // #1db954
 /// @type Color
-$color-twitter: hsl(205.9, 81.8%, 63.3%) !default; // #55acee
-
-/// @type Length
-$border-width-default: 0.25rem !default;
-/// @type Length
-$border-width-thin: 0.125rem !default;
-/// @type Length
-$border-width-hairline: 1px !default;
-/// @type Length
-$border-width-button: 0.182em !default;
-
-/// @type Length
-/// @see {Mixin} border-radius
-$border-radius-default: 0.25rem !default;
-/// @type Length
-/// @see {Mixin} border-radius
-$border-radius-hairline: 0.125rem !default;
+$color-twitter: hsl(205.9, 81.8%, 63.3%); // #55acee
 
 /// @type Number
-$font-weight-default: 400 !default;
+$font-weight-default: 400;
 /// @type Number
-$font-weight-bold: 600 !default;
+$font-weight-bold: 600;
 
 /// @type Number
-$line-height-default: 1.875 !default;
+$line-height-default: 1.875;
 /// @type Number
-$line-height-small: 1.25 !default;
+$line-height-small: 1.25;
 /// @type Number
-$line-height-medium: 1.429 !default;
+$line-height-medium: 1.429;
 /// @type Number
-$line-height-code: 2 !default;
+$line-height-code: 2;
 
 /// @type Length
-$letter-spacing-default: 0 !default;
+$letter-spacing-default: 0;
 /// @type Length
-$letter-spacing-uppercase: 1px !default;
-
-/// @type Length
-$animation-duration: 2s !default;
-/// @type String
-$animation-function: linear !default;
-/// @type String
-$animation-fill-mode: forwards !default;
-
-/// @type Length
-$rotation-default: 5deg !default;
+$letter-spacing-uppercase: 1px;
 
 /// @type Length
 /// @see {Mixin} transition
-$transition-duration-default: 0.2s !default;
+$transition-duration-default: 0.2s;
 /// @type Length
 /// @see {Mixin} transition
-$transition-duration-long: 1s !default;
+$transition-duration-long: 1s;
+
 /// @type String
 /// @see {Mixin} transition
-$transition-function-default: ease !default;
+$transition-function-default: ease;
 /// @type String
 /// @see {Mixin} transition
-$transition-function-alternate: linear !default;
+$transition-function-alternate: linear;
 
 /// @type Number
-$z-index-below: -1 !default;
+$z-index-below: -1;
 /// @type Number
-$z-index-root: 0 !default;
+$z-index-root: 0;
 /// @type Number
-$z-index-default: 1 !default;
+$z-index-default: 1;
 /// @type Number
-$z-index-above: 2 !default;
+$z-index-above: 2;
 /// @type Number
-$z-index-modal: 3 !default;
+$z-index-modal: 3;
 /// @type Number
-$z-index-dialog: 4 !default;
+$z-index-dialog: 4;
 /// @type Number
-$z-index-notification: 5 !default;
+$z-index-notification: 5;
+
+/// @type Length
+$animation-duration: 2s;
+/// @type String
+$animation-function: linear;
+/// @type String
+$animation-fill-mode: forwards;
+
+/// @type Length
+$rotation-default: 5deg;
 
 /// @type Number
-$max-columns: 2 !default;
+$max-columns: 2;
 
 /// @type String
 $color-scheme: "light";

@@ -145,50 +145,6 @@
 }
 
 ///
-/// Add a border-radius.
-///
-/// @author Chris Burnell
-///
-/// @param {String} $width - Width of Border Radius
-/// @param {String} $edge - Sides of Border Radius
-///
-/// @example scss - Zero parameters
-///   @include radius;
-///   // border-radius: 0.375rem;
-///
-/// @example scss - One parameter
-///   @include radius(1em);
-///   // border-radius: 1em;
-///
-@mixin border-radius($width: default, $edge: null) {
-    @if not is-length($width) {
-        $border-radii: map-get($tokens, "border-radius");
-        @if map-has-key($border-radii, $width) {
-            $width: map-get($border-radii, $width);
-        } @else if is-edge($width) {
-            $edge: $width;
-            $width: $border-radius-default;
-        } @else {
-            @error "There is no `width` named `#{$width}` in `$border-radii`. `width` should be one of `#{map-keys($border-radii)}`.";
-        }
-    }
-
-    $border-radius: $width;
-
-    @if $edge and is-edge($edge) {
-        $top-left: if(index((top, left, top-left), $edge), $width, 0);
-        $top-right: if(index((top, right, top-right), $edge), $width, 0);
-        $bottom-right: if(index((bottom, right, bottom-right), $edge), $width, 0);
-        $bottom-left: if(index((bottom, left, bottom-left), $edge), $width, 0);
-
-        $border-radius: $top-left $top-right $bottom-right $bottom-left;
-    }
-
-    background-clip: padding-box;
-    border-radius: $border-radius;
-}
-
-///
 /// Change the case of text and apply appropriate letter-spacing.
 ///
 /// @param {String} $case - Case of Text

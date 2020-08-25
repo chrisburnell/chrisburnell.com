@@ -55,13 +55,13 @@ textarea,
 
 input,
 textarea {
-    @include border-radius;
     @include transition(border-color);
     @include v(background-color, white);
     @include v(color, black);
     box-sizing: inherit !important;
     padding: 0 0.4em;
-    border: v(border-width, thin) solid v(color, alto);
+    border: v(measure, border-thin) solid v(color, alto);
+    @include v(border-radius, border-default);
     outline-width: 0;
 
     &:hover {
@@ -124,18 +124,18 @@ input[type="checkbox"] {
     }
 
     & + label {
-        @include border-radius;
         @include non-selectable;
         @include transition;
         @include v(background-color, kaiser);
         @include v(color, white);
         display: inline-block;
-        padding: 0 var(--measure-medium);
+        padding: 0 v(measure, medium);
+        @include v(border-radius, border-default);
         position: relative;
         overflow: hidden;
         text-align: center;
         cursor: pointer;
-        line-height: calc(var(--line-height-code) * 1.25);
+        line-height: calc(v(line-height, code) * 1.25);
 
         &::after {
             content: "✔";
@@ -148,7 +148,7 @@ input[type="checkbox"] {
             bottom: 0;
             font-size: var(--font-scale-2);
             line-height: 1;
-            border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+            border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
         }
     }
 

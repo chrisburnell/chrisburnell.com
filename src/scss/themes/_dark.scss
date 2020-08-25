@@ -56,8 +56,8 @@
         background-image: linear-gradient(
             to bottom,
             transparent 0,
-            transparent calc(var(--measure-gap) - var(--border-width-thin)),
-            var(--color-raven--beta) calc(var(--measure-gap) - var(--border-width-thin)),
+            transparent calc(var(--measure-gap) - var(--measure-border-thin)),
+            var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)),
             var(--color-raven--beta) var(--measure-gap),
             var(--color-black--gamma) var(--measure-gap),
             var(--color-black--gamma) 100%

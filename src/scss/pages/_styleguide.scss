@@ -51,7 +51,7 @@
     @include v(background-color, alto);
     background-image: linear-gradient(to bottom, $color-canada, $color-canada);
     background-position: center center;
-    background-size: 100% var(--border-width-thin);
+    background-size: 100% var(--measure-border-thin);
     background-repeat: no-repeat;
     @include v(height, medium);
     display: block;
@@ -94,19 +94,19 @@
 }
 
 .transition-example__demo {
-    border-top: var(--border-width-thin) solid var(--color-raven--beta);
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    border-top: var(--measure-border-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
     @include transition(color);
     width: 100%;
     @include v(max-width, line-length-clamp);
     height: calc(var(--measure-large) * 1.5);
     display: block;
-    border: v(border-width, thin) solid v(color, alto);
+    border: v(measure, border-thin) solid v(color, alto);
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
     position: relative;
-    line-height: strip-unit($measure-large * 1.5 - $border-width-thin * 2);
+    line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
     text-align: center;
     @include v(z-index, above);
 
@@ -118,8 +118,8 @@
     &::before {
         content: "";
         @include absolute(full);
-        @include border-radius(hairline);
         @include v(background-color, kaiser);
+        @include v(border-radius, border-thin);
         @include v(z-index, below);
     }
 

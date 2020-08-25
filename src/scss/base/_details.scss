@@ -4,13 +4,13 @@
 ////
 
 details {
-    @include border-radius;
     width: 100%;
     @include v(max-width, line-length-clamp);
+    @include v(border-radius, border-default);
     position: relative;
 
     %collection-content {
-        padding: 0 var(--measure-small) var(--measure-small);
+        padding: 0 v(measure, small) v(measure, small);
     }
 
     & > div {
@@ -44,9 +44,7 @@ summary {
 
     & + %collection-content {
         @include v(margin-top, small);
-        @include v(border-top-width, thin);
-        border-top-style: solid;
-        @include v(border-top-color, raven);
+        border-top: v(measure, border-thin) solid v(color, raven);
         @include v(padding-top, medium);
     }
 }

@@ -39,15 +39,15 @@
 .ad__split {
     @include v(background-color, black--delta);
     @include v(padding, medium);
-    border-top: var(--border-width-thin) solid var(--color-raven--beta);
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    border-top: var(--measure-border-thin) solid var(--color-raven--beta);
+    border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
     background-clip: padding-box;
     display: flex;
     align-items: center;
 }
 
 .ad__image {
-    border-radius: 0 0 0 var(--border-radius-thin);
+    border-radius: 0 0 0 var(--measure-border-default);
     border-right-width: 0;
     justify-content: center;
     margin: 0;
@@ -60,7 +60,7 @@
 
 .ad__content {
     flex: 1;
-    border-radius: 0 0 var(--border-radius-thin) 0;
+    border-radius: 0 0 var(--measure-border-default) 0;
     border-left-width: 0;
     @include v(line-height, small);
 }

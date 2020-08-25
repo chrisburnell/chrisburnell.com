@@ -11,7 +11,7 @@ dfn[title] {
 }
 abbr[title],
 dfn[title] {
-    border-bottom: v(border-width, thin) dotted v(color, dove);
+    border-bottom: v(measure, border-thin) dotted v(color, dove);
     cursor: help;
 
     a & {
@@ -76,7 +76,7 @@ sup {
 hr {
     @include v(background-color, black--gamma);
     width: 100%;
-    height: var(--border-width-thin);
+    height: var(--measure-border-thin);
     display: block;
     margin: var(--measure-large) 0;
     border: 0;

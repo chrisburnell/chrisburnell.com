@@ -60,16 +60,16 @@
     @include v(flex-basis, avatar);
     float: left;
     position: relative;
-    box-shadow: inset 0 var(--border-width-default) 0 0 var(--color-black--gamma);
+    box-shadow: inset 0 var(--measure-border-default) 0 0 var(--color-black--gamma);
     text-decoration: none !important;
     @include transition(opacity);
 
     &,
     img,
     &::before {
-        @include border-radius(50%);
         @include v(width, avatar);
         @include v(height, avatar);
+        border-radius: 50%;
 
         @supports (shape-outside: circle(50%)) {
             shape-outside: circle(50%);

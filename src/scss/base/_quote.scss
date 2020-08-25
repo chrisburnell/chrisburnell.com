@@ -4,12 +4,12 @@
 ////
 
 blockquote {
-    @include border-radius;
     @include quotes;
     @include v(background-color, raven--gamma);
     width: 100%;
     @include v(max-width, line-length-clamp);
     @include v(padding, medium);
+    @include v(border-radius, border-default);
     margin: 0 auto var(--measure-medium);
 
     cite,

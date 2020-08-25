@@ -1,0 +1,72 @@
+$tokens: (
+  measure: (
+    breakpoint-small: 500px,
+    breakpoint-medium: 700px,
+    breakpoint-large: 1000px,
+    breakpoint-gigantic: 1200px,
+    gap: 2.5rem,
+    gutter: 1.25rem,
+    avatar: 6.25rem,
+    avatar-small: 3rem,
+    tiny: 0.3125rem,
+    small: 0.625rem,
+    medium: 1.25rem,
+    large: 2.25rem,
+    gigantic: 4rem,
+    line-length-minimum: 21em,
+    line-length-maximum: 30em,
+    line-length-clamp: clamp(21em, 100vw, 30em)
+  ),
+  opacity: (
+    alpha: 0.9,
+    beta: 0.5,
+    gamma: 0.1,
+    delta: 0.05
+  ),
+  color: (
+    
+  ),
+  border-width: (
+    default: 0.25rem,
+    thin: 0.125rem,
+    hairline: 1px,
+    button: 0.182em
+  ),
+  font-family: (
+    default: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
+    alpha: "Heebo", sans-serif,
+    serif: Georgia, Times, Times New Roman, serif,
+    monospace: monospace
+  ),
+  font-weight: (
+    default: 400,
+    bold: 600
+  ),
+  line-height: (
+    default: 1.875,
+    small: 1.25,
+    medium: 1.429,
+    code: 2
+  ),
+  letter-spacing: (
+    default: 0,
+    uppercase: 1px
+  ),
+  transition-duration: (
+    default: 0.2s,
+    long: 1s
+  ),
+  transition-function: (
+    default: ease,
+    alternate: linear
+  ),
+  z-index: (
+    below: -1,
+    root: 0,
+    default: 1,
+    above: 2,
+    modal: 3,
+    dialog: 4,
+    notification: 5
+  )
+);

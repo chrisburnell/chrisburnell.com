@@ -7,7 +7,7 @@
     @include v(background-color, mineshaft);
     @include v(padding-top, large);
     @include v(padding-bottom, large);
-    border-top: var(--border-width-thin) solid var(--color-coyote);
+    border-top: var(--measure-border-thin) solid var(--color-coyote);
 
     &,
     a,
