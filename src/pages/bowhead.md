@@ -1,6 +1,7 @@
 ---
 title: Bowhead
 lede: Memorable and maintainable design tokens in SCSS
+show_webmentions: true
 ---
 
 ## What?
