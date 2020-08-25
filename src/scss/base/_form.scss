@@ -61,9 +61,7 @@ textarea {
     @include v(color, black);
     box-sizing: inherit !important;
     padding: 0 0.4em;
-    @include v(border-width, thin);
-    @include v(border-style);
-    @include v(border-color, alto);
+    border: v(measure, border-width-thin) solid v(color, alto);
     outline-width: 0;
 
     &:hover {

@@ -28,7 +28,7 @@ button {
     padding: 0.5em var(--measure-small);
     border-width: 0;
     box-shadow: inset 0 calc(var(--border-width-button) * -1) 0 0 var(--color-black--gamma);
-    outline: 0 var(--border-style-default) var(--color-raven);
+    outline: 0 solid var(--color-raven);
     overflow: visible;
     position: relative;
     font-size: var(--font-scale-0);
