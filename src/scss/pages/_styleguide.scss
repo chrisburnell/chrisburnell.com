@@ -101,7 +101,7 @@
     @include v(max-width, line-length-clamp);
     height: calc(var(--measure-large) * 1.5);
     display: block;
-    border: v(measure, border-width-thin) solid v(color, alto);
+    border: v(border-width, thin) solid v(color, alto);
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;

@@ -45,7 +45,7 @@ summary {
     & + %collection-content {
         @include v(margin-top, small);
         @include v(border-top-width, thin);
-        @include v(border-top-style);
+        border-top-style: solid;
         @include v(border-top-color, raven);
         @include v(padding-top, medium);
     }
