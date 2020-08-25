@@ -9,14 +9,16 @@
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
 ////
 
+
 /// REQUIRED — ABSTRACTS & VENDORS
 @import "abstracts/variables";
-@import "abstracts/functions";
 @import "abstracts/collections";
+@import "abstracts/functions";
 @import "abstracts/lists";
 @import "abstracts/maps";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";
+@import "../../node_modules/@chrisburnell/bowhead/bowhead";
 @import "vendors/include-media";
 
 /// FIRST THINGS FIRST

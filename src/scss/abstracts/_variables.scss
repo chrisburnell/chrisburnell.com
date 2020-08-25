@@ -4,11 +4,6 @@
 ////
 
 /// @type Length
-$measure-one: 1rem !default;
-/// @type Length
-$measure-one-relative: 1em !default;
-
-/// @type Length
 $measure-breakpoint-small: 500px !default;
 /// @type Length
 $measure-breakpoint-medium: 700px !default;
@@ -22,18 +17,10 @@ $measure-gap: 2.5rem !default;
 /// @type Length
 $measure-gutter: 1.25rem !default;
 
-/// ARE THESE NEEDED
-/// @type Length
-$measure-logo: 8.5rem !default;
-/// ARE THESE NEEDED
 /// @type Length
 $measure-avatar: 6.25rem !default;
-/// ARE THESE NEEDED
 /// @type Length
 $measure-avatar-small: 3rem !default;
-/// ARE THESE NEEDED
-/// @type Length
-$measure-icon: 40px !default;
 
 /// @type Length
 $measure-tiny: 0.3125rem !default;
@@ -50,8 +37,6 @@ $measure-gigantic: 4rem !default;
 $measure-line-length-minimum: 21em !default;
 /// @type Length
 $measure-line-length-maximum: 30em !default;
-/// @type Length
-$measure-line-length-responsive: calc(#{$measure-line-length-minimum} + (#{$measure-line-length-maximum / ($measure-line-length-maximum * 0 + 1)} - #{$measure-line-length-minimum / ($measure-line-length-minimum * 0 + 1)}) * ((100vw - #{$measure-breakpoint-small}) / (#{$measure-breakpoint-large / ($measure-breakpoint-large * 0 + 1)} - #{$measure-breakpoint-small / ($measure-breakpoint-small * 0 + 1)}))) !default;
 /// @type Length
 $measure-line-length-clamp: clamp($measure-line-length-minimum, 100vw, $measure-line-length-maximum) !default;
 
@@ -207,22 +192,10 @@ $border-radius-default: 0.25rem !default;
 /// @see {Mixin} border-radius
 $border-radius-hairline: 0.125rem !default;
 
-/// @type String
-$font-display-default: swap !default;
-
-/// @type String
-$font-stretch-default: normal !default;
-
-/// @type String
-$font-variant-default: normal !default;
-
 /// @type Number
 $font-weight-default: 400 !default;
 /// @type Number
 $font-weight-bold: 600 !default;
-
-/// @type String
-$unicode-range-default: "U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000" !default;
 
 /// @type Number
 $line-height-default: 1.875 !default;
@@ -288,3 +261,6 @@ $fluid-size: 16;
 $fluid-ratio-minimum: 1.2;
 /// @type Number
 $fluid-ratio-maximum: 1.292;
+
+$bowhead-show-fallback: false;
+$bowhead-generate: false;

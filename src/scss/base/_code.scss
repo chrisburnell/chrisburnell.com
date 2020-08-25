@@ -13,7 +13,7 @@
 
 %content-monospace-elements {
     @include border-radius;
-    padding: calc(var(--measure-one-relative) / 4);
+    padding: 0.25em;
 }
 
 %collection-monospace,

@@ -79,13 +79,13 @@ let keyIntervals = [2, 3, 2, 2, 3];
 Given that our base note is **C<sub>4</sub>**, the *<var>40</var><sup>th</sup> key* on a keyboard, the possible keys that we’re working with are as follows:
 
 <figure>
-    <samp style="max-width: var(--measure-line-length-responsive);">40, 42, 45, 47, 49, 52, 54, 57, 59, 61, 64, 66, …</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">40, 42, 45, 47, 49, 52, 54, 57, 59, 61, 64, 66, …</samp>
 </figure>
 
 With these keys we can calculate their respective frequencies:
 
 <figure>
-    <samp style="max-width: var(--measure-line-length-responsive);">261.626, 293.665, 349.228, 391.995, 440.000, 523.251, 587.330, 698.456, 783.991, 880.000, 1046.502, 1174.659, …</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">261.626, 293.665, 349.228, 391.995, 440.000, 523.251, 587.330, 698.456, 783.991, 880.000, 1046.502, 1174.659, …</samp>
 </figure>
 
 In order to quell any feverish posting on my part, *as unlikely as that may be*, I am limiting the highest value for the sparkline arbitrarily to <var>12</var>. This prevents clarity from being lost at the bottom end of the visual sparkline and limits the tunes that are generated from varying too wildly or playing notes which are unpleasant or [imperceptible](https://en.wikipedia.org/wiki/Hearing_range).
@@ -100,15 +100,15 @@ In order to quell any feverish posting on my part, *as unlikely as that may be*,
 Here’s an example. First, we need the per-week data:
 
 <figure>
-    <samp style="max-width: var(--measure-line-length-responsive);">0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 9, 1, 4, 5, 2, 4, 2, 6, 4, 6, 4, 6, 5, 0</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 9, 1, 4, 5, 2, 4, 2, 6, 4, 6, 4, 6, 5, 0</samp>
 </figure>
 
 If we work through this array, item by item, using each value as the key to retrieve the correct frequency, we end up with the following keys and frequencies:
 
 <figure>
-    <samp style="max-width: var(--measure-line-length-responsive);">40, 40, 40, 40, 40, 40, 40, 40, 49, 40, 40, 49, 61, 42, 49, 52, 45, 49, 45, 54, 49, 54, 49, 54, 52, 40</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">40, 40, 40, 40, 40, 40, 40, 40, 49, 40, 40, 49, 61, 42, 49, 52, 45, 49, 45, 54, 49, 54, 49, 54, 52, 40</samp>
     <span>becomes</span>
-    <samp style="max-width: var(--measure-line-length-responsive);">261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 440.000, 261.626, 261.626, 440.000, 880.000, 293.665, 440.000, 523.251, 349.228, 440.000, 349.228, 587.330, 440.000, 587.330, 440.000, 587.330, 523.251, 261.626</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 440.000, 261.626, 261.626, 440.000, 880.000, 293.665, 440.000, 523.251, 349.228, 440.000, 349.228, 587.330, 440.000, 587.330, 440.000, 587.330, 523.251, 261.626</samp>
 </figure>
 
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) to create the tones in our browsers, playing each frequency in succession over four seconds:

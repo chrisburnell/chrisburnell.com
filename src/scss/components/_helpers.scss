@@ -77,7 +77,7 @@
 }
 
 // Owls
-@each $key, $_ in $measures {
+@each $key, $_ in map-get($tokens, "measure") {
     .owl--#{$key} > * + * {
         @include v(margin-top, #{$key});
     }

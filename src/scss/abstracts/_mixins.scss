@@ -162,6 +162,7 @@
 ///
 @mixin border-radius($width: default, $edge: null) {
     @if not is-length($width) {
+        $border-radii: map-get($tokens, "border-radius");
         @if map-has-key($border-radii, $width) {
             $width: map-get($border-radii, $width);
         } @else if is-edge($width) {
@@ -231,8 +232,10 @@
         @error "font-family() expects at least one parameter.";
     }
 
-    @if not map-has-key($font-families, $family) {
-        @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($font-families)}`.";
+    $families: map-get($tokens, "font-family");
+
+    @if not map-has-key($families, $family) {
+        @error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($families)}`.";
     }
 
     @include v(font-family, $family);
@@ -246,6 +249,7 @@
 /// Space out elements evenly
 ///
 @mixin owl($measure: large) {
+    $measures: map-get($tokens, "measure");
     @if not map-has-key($measures, $measure) {
         @error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
     }
@@ -309,59 +313,6 @@
     }
 
     transition: $transition;
-}
-
-///
-/// Output a property, CSS Variable, and, optionally, SCSS value
-///
-/// @author Chris Burnell
-///
-/// @param {String} $property - key from $property-map or $variable-map
-/// @param {String} $value [default] - key from inner map
-/// @param {Boolean} $showFallback [false] - if the SCSS value should be shown
-///
-/// @example scss
-///   @include v(padding, small);
-///   // padding: var(--measure-small);
-/// @example scss
-///   @include v(padding, small, true);
-///   // padding: 0.625rem;
-///   // padding: var(--measure-small);
-///
-/// @return Associated property and CSS Variable or SCSS value
-///
-@mixin v($property, $value: default, $showFallback: false) {
-    // leverage the v() function and output the CSS Variable(s) and optionally
-    // the respective SCSS value(s) as well as the property
-    @if $showFallback {
-        #{$property}: v($property, $value, true);
-    }
-    #{$property}: v($property, $value);
-}
-
-///
-/// Output properties and values for all defined themes
-///
-@mixin t($properties...) {
-    @each $theme, $data in $themes {
-        @if $theme == "light" {
-            @each $property in $properties {
-                @if map-has-key($data, $property) {
-                    $property-clean: nth(str-split($property, "--"), 1); // first item in the array
-                    @include v($property-clean, map-get($data, $property));
-                }
-            }
-        } @else {
-            .theme--#{$theme} & {
-                @each $property in $properties {
-                    @if map-has-key($data, $property) {
-                        $property-clean: nth(str-split($property, "--"), 1); // first item in the array
-                        @include v($property-clean, map-get($data, $property));
-                    }
-                }
-            }
-        }
-    }
 }
 
 ///

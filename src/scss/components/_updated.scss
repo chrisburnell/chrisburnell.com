@@ -5,7 +5,7 @@
 
 .updated {
     @include owl(small);
-    @include v(max-width, line-length-responsive);
+    @include v(max-width, line-length-clamp);
     @include v(margin-left, auto);
     @include v(margin-right, auto);
 

@@ -6,15 +6,15 @@
 @each $font-face in $font-faces {
     @font-face {
         font-family: "#{map-get($font-face, 'family')}";
-        font-display: #{map-get($font-displays, map-get($font-face, "display"))};
+        font-display: swap;
         font-style: #{map-get($font-face, "style")};
-        font-weight: #{map-get($font-weights, map-get($font-face, "weight"))};
+        font-weight: #{map-get(map-get($tokens, "font-weight"), map-get($font-face, "weight"))};
         src: local("#{map-get($font-face, 'family') map-get($font-face, 'name')}"),
             url("/fonts/#{map-get($font-face, 'filename')}.woff2") format("woff2"),
             url("/fonts/#{map-get($font-face, 'filename')}.woff") format("woff"),
             url("/fonts/#{map-get($font-face, 'filename')}.ttf") format("truetype"),
             url("/fonts/#{map-get($font-face, 'filename')}.eot?#iefix") format('embedded-opentype'),
             url("/fonts/#{map-get($font-face, 'filename')}.svg##{map-get($font-face, 'filename')}") format("svg");
-        unicode-range: #{$unicode-range-default};
+        unicode-range: U+0020-007D, U+007F-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
     }
 }
