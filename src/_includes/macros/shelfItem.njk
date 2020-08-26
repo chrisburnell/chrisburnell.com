@@ -45,7 +45,7 @@
                 {% if item.data.authors %}
                     {%- set authors = item.data.authors | toArray -%}
                     {% for author in authors -%}
-                        {% if not loop.first %}, {% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a class=" [ h-cite ] " href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}<span class=" [ h-cite ] ">{{ author | safe }}</span>{% endif %}
+                        {% if not loop.first %}{% if authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a class=" [ h-cite ] " href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}<span class=" [ h-cite ] ">{{ author | safe }}</span>{% endif %}
                     {%- endfor %}
                 {% endif %}
                 {% if item.data.release %}
