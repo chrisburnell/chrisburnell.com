@@ -47,5 +47,4 @@ node_modules/
 /fonts
 /static
 /images/avatars
-/src/_includes/generated/
 /.cache
