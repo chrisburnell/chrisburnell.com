@@ -1,5 +1,105 @@
 [
   {
+    "source": "https://brid-gy.appspot.com/repost/twitter/iamchrisburnell/1298550501307486208/1298555947162492928",
+    "verified": true,
+    "verified_date": "2020-08-26T09:41:47+00:00",
+    "id": 844175,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Michael Bernth",
+        "url": "https://twitter.com/monovoce",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6933c9f91770633d56d15092ee46de01c4c649e236859bcc2dbf32515a23e614.jpg"
+      },
+      "url": "https://twitter.com/monovoce/status/1298555947162492928",
+      "name": null,
+      "content": "📦 Packaged up a bit of SCSS I’ve been happily using into a thing called Bowhead (it’s a whale, but I totally swear the filesize is tiny) and",
+      "published": "2020-08-26T09:40:38+00:00",
+      "published_ts": 1598434838
+    },
+    "activity": {
+      "type": "repost",
+      "sentence": "Michael Bernth retweeted a tweet https://chrisburnell.com/bowhead/",
+      "sentence_html": "<a href=\"https://twitter.com/monovoce\">Michael Bernth</a> retweeted a tweet <a href=\"https://chrisburnell.com/bowhead/\">https://chrisburnell.com/bowhead/</a>"
+    },
+    "target": "https://chrisburnell.com/bowhead/"
+  },
+  {
+    "source": "https://brid-gy.appspot.com/post/twitter/iamchrisburnell/1298553828644728833",
+    "verified": true,
+    "verified_date": "2020-08-26T09:41:47+00:00",
+    "id": 844176,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Andy Bell",
+        "url": "https://twitter.com/hankchizljaw",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/0bba9494ed9c9af6c7159db93d81fb6226fd21730be7aeb21049df90098e320b.jpg"
+      },
+      "url": "https://twitter.com/hankchizljaw/status/1298553828644728833",
+      "name": null,
+      "content": "This is exceptionally smart stuff by Chris.\n\nLove to see anything related to making tokens easier—especially with Sass.\n<a class=\"u-mention\" href=\"https://chrisburnell.com/bowhead/\"></a>",
+      "published": "2020-08-26T09:32:13+00:00",
+      "published_ts": 1598434333
+    },
+    "activity": {
+      "type": "link",
+      "sentence": "Andy Bell posted 'This is exceptionally smart stuff by Chris.  Love to see anything related to mak...' linking to https://chrisburnell.com/bowhead/",
+      "sentence_html": "<a href=\"https://twitter.com/hankchizljaw\">Andy Bell</a> posted 'This is exceptionally smart stuff by Chris.  Love to see anything related to mak...' linking to <a href=\"https://chrisburnell.com/bowhead/\">https://chrisburnell.com/bowhead/</a>"
+    },
+    "target": "https://chrisburnell.com/bowhead/"
+  },
+  {
+    "source": "https://brid-gy.appspot.com/like/twitter/iamchrisburnell/1298550501307486208/205775928",
+    "verified": true,
+    "verified_date": "2020-08-26T09:41:45+00:00",
+    "id": 844173,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Michelle Barker",
+        "url": "https://twitter.com/MicheBarks",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/177a0fbddbc491370fc07fe81f4294a5247bb9d4528f4e020c6aad6fe89298e7.jpg"
+      },
+      "url": "https://twitter.com/iamchrisburnell/status/1298550501307486208#favorited-by-205775928",
+      "name": null,
+      "content": null,
+      "published": null,
+      "published_ts": null
+    },
+    "activity": {
+      "type": "like",
+      "sentence": "Michelle Barker favorited a tweet https://chrisburnell.com/bowhead/",
+      "sentence_html": "<a href=\"https://twitter.com/MicheBarks\">Michelle Barker</a> favorited a tweet <a href=\"https://chrisburnell.com/bowhead/\">https://chrisburnell.com/bowhead/</a>"
+    },
+    "target": "https://chrisburnell.com/bowhead/"
+  },
+  {
+    "source": "https://brid-gy.appspot.com/like/twitter/iamchrisburnell/1298550501307486208/98734097",
+    "verified": true,
+    "verified_date": "2020-08-26T09:41:46+00:00",
+    "id": 844174,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Andy Bell",
+        "url": "https://twitter.com/hankchizljaw",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/0bba9494ed9c9af6c7159db93d81fb6226fd21730be7aeb21049df90098e320b.jpg"
+      },
+      "url": "https://twitter.com/iamchrisburnell/status/1298550501307486208#favorited-by-98734097",
+      "name": null,
+      "content": null,
+      "published": null,
+      "published_ts": null
+    },
+    "activity": {
+      "type": "like",
+      "sentence": "Andy Bell favorited a tweet https://chrisburnell.com/bowhead/",
+      "sentence_html": "<a href=\"https://twitter.com/hankchizljaw\">Andy Bell</a> favorited a tweet <a href=\"https://chrisburnell.com/bowhead/\">https://chrisburnell.com/bowhead/</a>"
+    },
+    "target": "https://chrisburnell.com/bowhead/"
+  },
+  {
     "source": "https://chrisburnell.com/note/1598433539",
     "verified": true,
     "verified_date": "2020-08-26T09:24:35+00:00",

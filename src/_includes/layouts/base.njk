@@ -19,11 +19,11 @@
 {%- endif -%}
 
 {%- set meta_description = lede | striptags(true) | default('A page on chrisburnell.com') | safe -%}
-{%- set meta_image = '/images/avatar@4x.jpg' -%}
+{%- set meta_image = site.url + '/images/avatar@4x.jpg' -%}
 {%- if banner -%}
-    {%- set meta_image -%}/images/banners/{{ banner | toArray | last }}{%- endset -%}
+    {%- set meta_image -%}{{ site.url }}/images/banners/{{ banner | toArray | last }}{%- endset -%}
 {%- elif cover -%}
-    {%- set meta_image -%}/images/covers/{{ cover }}{%- endset -%}
+    {%- set meta_image -%}{{ site.url }}/images/covers/{{ cover }}{%- endset -%}
 {%- endif -%}
 {%- set canonical = site.url + page.url -%}
 {%- if category -%}
@@ -109,7 +109,7 @@
         <meta name="twitter:creator" content="@{{ author.twitter }}">
         <meta name="twitter:title" content="{{ meta_title }}">
         <meta name="twitter:description" content="{{ meta_description }}">
-        <meta name="twitter:image" content="{{ cover.url | default(cover) | default(meta_image) }}">
+        <meta name="twitter:image" content="{{ meta_image }}">
         <meta name="twitter:domain" content="{{ site.url | getHost }}">
         {% if twitter %}
             <meta name="twitter:widgets:theme" content="light">
