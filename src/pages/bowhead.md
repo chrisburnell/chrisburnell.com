@@ -4,6 +4,14 @@ lede: Memorable and maintainable design tokens in SCSS
 show_webmentions: true
 ---
 
+<figure>
+    <picture>
+        <source srcset="/images/bowhead.webp" type="image/webp" />
+        <img src="/images/bowhead.png" alt="" role="presentation" loading="lazy">
+    </picture>
+    <figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
+</figure>
+
 ## What?
 
 **Bowhead** is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks.
