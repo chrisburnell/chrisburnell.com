@@ -24,6 +24,8 @@
     {%- set meta_image -%}{{ site.url }}/images/banners/{{ banner | toArray | last }}{%- endset -%}
 {%- elif cover -%}
     {%- set meta_image -%}{{ site.url }}/images/covers/{{ cover }}{%- endset -%}
+{%- elif photo -%}
+    {%- set meta_image -%}{{ photo }}{%- endset -%}
 {%- endif -%}
 {%- set canonical = site.url + page.url -%}
 {%- if category -%}

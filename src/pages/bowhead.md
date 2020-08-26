@@ -1,6 +1,7 @@
 ---
 title: Bowhead
 lede: Memorable and maintainable design tokens in SCSS
+photo: https://chrisburnell.com/images/bowhead.png
 show_webmentions: true
 ---
 
