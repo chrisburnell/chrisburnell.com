@@ -1,5 +1,30 @@
 [
   {
+    "source": "https://brid-gy.appspot.com/like/twitter/iamchrisburnell/1298550501307486208/2260815740",
+    "verified": true,
+    "verified_date": "2020-08-26T23:29:52+00:00",
+    "id": 844354,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Jake",
+        "url": "https://twitter.com/JakeDChampion",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/55452fdbb1b010495f28472fab8127f5c5d5ed7aa4f83162020af3774bb163a8.jpg"
+      },
+      "url": "https://twitter.com/iamchrisburnell/status/1298550501307486208#favorited-by-2260815740",
+      "name": null,
+      "content": null,
+      "published": null,
+      "published_ts": null
+    },
+    "activity": {
+      "type": "like",
+      "sentence": "Jake favorited a tweet https://chrisburnell.com/bowhead/",
+      "sentence_html": "<a href=\"https://twitter.com/JakeDChampion\">Jake</a> favorited a tweet <a href=\"https://chrisburnell.com/bowhead/\">https://chrisburnell.com/bowhead/</a>"
+    },
+    "target": "https://chrisburnell.com/bowhead/"
+  },
+  {
     "source": "https://brid-gy.appspot.com/like/twitter/iamchrisburnell/1298550501307486208/85053418",
     "verified": true,
     "verified_date": "2020-08-26T20:13:39+00:00",
