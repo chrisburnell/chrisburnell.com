@@ -4,7 +4,7 @@ const COLOR_SCHEME_KEY = "--color-scheme";
 const schemeToggleButton = document.querySelector(".js-color-scheme-toggle");
 const schemeStatusText = document.querySelector(".js-color-scheme-status");
 
-const getCSSCustomProp = propKey => {
+const getCSSCustomProp = (propKey) => {
     let response = getComputedStyle(document.documentElement).getPropertyValue(propKey);
 
     if (response.length) {
@@ -14,14 +14,13 @@ const getCSSCustomProp = propKey => {
     return response;
 };
 
-const applySetting = passedSetting => {
+const applySetting = (passedSetting) => {
     let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
 
     if (currentSetting) {
         document.documentElement.setAttribute("data-user-color-scheme", currentSetting);
         schemeStatusText.innerText = `Enable ${currentSetting === "dark" ? "Light" : "Dark"} Mode`;
-    }
-    else {
+    } else {
         schemeStatusText.innerText = `Enable ${getCSSCustomProp(COLOR_SCHEME_KEY) === "dark" ? "Light" : "Dark"} Mode`;
     }
 };
@@ -46,7 +45,7 @@ const toggleSetting = () => {
     return currentSetting;
 };
 
-schemeToggleButton.addEventListener("click", event => {
+schemeToggleButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     applySetting(toggleSetting());

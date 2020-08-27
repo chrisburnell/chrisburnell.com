@@ -22,7 +22,7 @@ const helpers = {
     /// @param {String} name
     /// @return {String} parameter value
     ////
-    getParameterByName: name => {
+    getParameterByName: (name) => {
         const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 
         return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
@@ -104,7 +104,7 @@ const helpers = {
     /// @return {Object} response
     /// @throw {Object} error
     ////
-    getFetchResponse: response => {
+    getFetchResponse: (response) => {
         if (response.ok) {
             return response;
         } else {
@@ -139,7 +139,7 @@ const helpers = {
     /// @param {String} html
     /// @return {String} text
     ////
-    decodeHTML: html => {
+    decodeHTML: (html) => {
         let text = document.createElement("textarea");
         text.innerHTML = html;
         return text.value;
@@ -174,7 +174,7 @@ const helpers = {
         const rtf = new Intl.RelativeTimeFormat("en", {
             localeMatcher: "best fit", // other values: "lookup"
             numeric: "always", // other values: "auto"
-            style: "long" // other values: "short" or "narrow"
+            style: "long", // other values: "short" or "narrow"
         });
 
         if (difference < minute * 2) {
@@ -204,7 +204,7 @@ const helpers = {
         if (total === 0) {
             return {
                 left: 0,
-                right: 0
+                right: 0,
             };
         }
 
@@ -221,7 +221,7 @@ const helpers = {
 
         return {
             left: (a - b) / c,
-            right: (a + b) / c
+            right: (a + b) / c,
         };
-    }
+    },
 };

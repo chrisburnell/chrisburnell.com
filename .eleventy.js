@@ -3,7 +3,7 @@ const fs = require("fs");
 // Import 11ty plugins
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const RemoteCache = require('@11ty/eleventy-cache-assets');
+const RemoteCache = require("@11ty/eleventy-cache-assets");
 const Image = require("@11ty/eleventy-img");
 const imageAvatarPlugin = require("./src/_includes/plugins/imageAvatarPlugin.js");
 

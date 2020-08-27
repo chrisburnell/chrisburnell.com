@@ -34,7 +34,7 @@ let updateNetwork = () => {
 if (!!navigator.serviceWorker) {
     navigator.serviceWorker
         .register("/serviceworker.js")
-        .then(registration => {
+        .then((registration) => {
             console.log("ServiceWorker registration successful with scope:", registration.scope);
             let serviceWorker;
             if (registration.installing) {
@@ -52,7 +52,7 @@ if (!!navigator.serviceWorker) {
                 });
             }
         })
-        .catch(err => {
+        .catch((err) => {
             console.log("ServiceWorker registration failed:", err);
         });
     window.addEventListener("load", () => {
@@ -60,7 +60,7 @@ if (!!navigator.serviceWorker) {
         window.addEventListener("offline", updateNetwork);
         if (!!navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({
-                command: "trimCaches"
+                command: "trimCaches",
             });
         }
     });
@@ -72,14 +72,14 @@ if (!!navigator.share) {
     navigator
         .share({
             title: document.querySelector("title").textContent,
-            url: document.querySelector("link[rel='canonical']").getAttribute("href")
+            url: document.querySelector("link[rel='canonical']").getAttribute("href"),
             // breaks in iOS, copies text to clipboard instead of URL
             // text: document.querySelector("meta[name='description']").getAttribute("content")
         })
         .then(() => {
             console.log("Successfully shared the page");
         })
-        .catch(error => {
+        .catch((error) => {
             console.log("Error sharing the page", error);
         });
 }
