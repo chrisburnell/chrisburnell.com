@@ -1,0 +1,31 @@
+---
+title: My Guestbook
+lede: Remember the '90s, man? Those dope little guestbooks above the endlessly spinning visitor counter… Well, here’s mine, and it runs on <a href="https://indieweb.org/Webmention">WebMentions</a>!
+theme: dark
+---
+
+<figure>
+    <img src="/images/visitor-counter.gif">
+</figure>
+
+{% include 'webmentions.njk' %}
+
+<figure>
+    <img src="/images/shoyru.gif">
+</figure>
+
+<style>
+    html {
+        --color-coyote: #00cc00 !important;
+        --color-raven: #00dd00 !important;
+        --color-bowhead: #00ee00 !important;
+        --color-bear: #273d27 !important;
+        --color-lynx: #e0f6e0 !important;
+        --font-family-default: "Comic Sans MS", sans-serif;
+        --font-family-alpha: "Comic Sans MS", serif;
+        --font-family-serif: serif;
+    }
+    .webmentions {
+        margin-top: var(--measure-large);
+    }
+</style>

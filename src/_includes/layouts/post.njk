@@ -258,7 +258,9 @@ layout: base
             </div>
         {% endif %}
 
-        {% include 'webmentions.njk' %}
+        {% if show_webmentions %}
+            {% include 'webmentions.njk' %}
+        {% endif %}
     </div>
 
     {% include 'meta.njk' %}

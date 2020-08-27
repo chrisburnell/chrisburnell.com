@@ -75,6 +75,7 @@
     }
 }
 
-[data-user-color-scheme="dark"] {
+[data-user-color-scheme="dark"],
+.dark {
     @include theme-dark;
 }

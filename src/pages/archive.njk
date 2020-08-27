@@ -55,7 +55,9 @@ lede: Browse all of my posts by a variety of metrics.
             {% endif %}
         {% endfor %}
 
-        {% include 'webmentions.njk' %}
+        {% if show_webmentions %}
+            {% include 'webmentions.njk' %}
+        {% endif %}
     </div>
 
     <div class=" [ meta ] [ box ] ">

@@ -18,7 +18,9 @@ layout: base
             {{ content | safe }}
         </div>
 
-        {% include 'webmentions.njk' %}
+        {% if show_webmentions %}
+            {% include 'webmentions.njk' %}
+        {% endif %}
     </div>
 
     {% include 'ads.njk' %}

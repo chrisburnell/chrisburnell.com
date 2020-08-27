@@ -19,9 +19,9 @@ I do, however, employ the use of Service Workers. If you’re using a relatively
 
 ## Ads
 
-I serve ads on this website through [Carbon Ads](https://www.carbonads.net/). If you experience an ad that you think is inappropriate or offends you, please [contact me](/contact/#about) so that I can take it to the necessary channels and get it removed.
+I serve ads on this website through [Carbon Ads](https://www.carbonads.net/). If you experience an ad that you think is inappropriate or offends you, please [contact me](/about/#contact) so that I can take it to the necessary channels and get it removed.
 
 
 ## Further
 
-If you have any further questions or concerns regarding your privacy on this website, please [contact me](/contact/#about) so that I can address it as soon as possible.
+If you have any further questions or concerns regarding your privacy on this website, please [contact me](/about/#contact) so that I can address it as soon as possible.

@@ -33,7 +33,7 @@
     {% set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ site.locale }}" class=" [ no-js ] ">
+<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }} {% endif %}no-js">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
