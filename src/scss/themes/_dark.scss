@@ -4,8 +4,6 @@
 ////
 
 @mixin theme-dark() {
-    --color-kaiser: #{$color-dove};
-    --color-dove: #{$color-kaiser};
     --color-coyote: #{$color-bowhead};
     --color-bowhead: #{$color-coyote};
     --color-bear: #{$color-lynx};
