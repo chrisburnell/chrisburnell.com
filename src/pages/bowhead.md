@@ -38,7 +38,7 @@ There are **three** main moving parts to this set-up, and an optional **fourth**
 3. [`$bowhead-generate`](#generate)
 4. [`$bowhead-property-map`](#property-map)
 
-<h3 id="tokens">1. Tokens</h3>
+<h3 id="tokens">01. Tokens</h3>
 
 `$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.
 
@@ -68,7 +68,7 @@ $bowhead-tokens: (
 );
 ```
 
-<h3 id="fallback">2. Show Fallback Value</h3>
+<h3 id="fallback">02. Show Fallback Value</h3>
 
 `$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
 
@@ -89,7 +89,7 @@ body {
 }
 ```
 
-<h3 id="generate">3. Generating CSS Variables</h3>
+<h3 id="generate">03. Generating CSS Variables</h3>
 
 `$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
 
@@ -111,7 +111,7 @@ body {
 }
 ```
 
-<h3 id="property-map">4. Property Map <em>(optional)</em></h3>
+<h3 id="property-map">04. Property Map <em>(optional)</em></h3>
 
 `$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
 
