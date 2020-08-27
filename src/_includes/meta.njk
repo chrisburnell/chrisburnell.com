@@ -56,10 +56,11 @@
                     <small>by</small>
                     {% for author in in_reply_to_authors | toArray %}
                         {% set author = author.url | default(author) | getPerson('object') %}
+                        {% if not loop.first %}{% if in_reply_to_authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}
                         {% if author.url %}
-                            <a href="{{ author.url }}">{{ author.title }}</a>{% if not loop.last %},{% endif %}
+                            <a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
                         {% else %}
-                            {{ author | getPerson }}{% if not loop.last %},{% endif %}
+                            {{ author | getPerson }}
                         {% endif %}
                     {% endfor %}
                 {% endif %}
@@ -122,7 +123,7 @@
             {%- set authors = authors | toArray -%}
             {% if authors.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
             {% for author in authors -%}
-                {% if authors.length > 1 %}<li>{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
+                {% if authors.length > 1 %}<li>{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
             {%- endfor %}
             {% if authors.length > 1 %}</ul>{% endif %}
             {% if console %}

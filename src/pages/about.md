@@ -10,7 +10,7 @@ eleventyComputed:
 
 Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.
 
-<div class=" [ box ] ">I’m looking for new full-time work right now, so please [get in touch](#contact) if you’d like to have a chat!</div>
+<div class=" [ box ] ">I’m looking for new full-time work right now, so please <a href="#contact">get in touch</a> if you’d like to have a chat!</div>
 
 From 2018–2020 I worked at [Squiz](https://squiz.net) as a *Front-End Developer* where I championed heavily for CSS, worked on the foundations for using design systems, and helped to build code frameworks that aimed to strengthen communication about design elements and reduce mental overhead, as well as serve the needs of our projects.
 

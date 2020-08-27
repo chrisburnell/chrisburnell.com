@@ -8,22 +8,22 @@
         {% else %}
             <source srcset="
 {%- for item in banners -%}
-    {% if not loop.first %},{% endif %}
     /images/banners/{{ item | replace('jpg', 'webp') | replace('png', 'webp') }}
     {% if item.includes('@') %}
         {{ item.split('@')[1].split('.')[0] }}
     {% endif %}
+    {% if not loop.last %},{% endif %}
 {%- endfor -%}"
                     type="image/webp" />
             <img    alt="" class=" [ u-photo ] " role="presentation" loading="lazy"
                     src="/images/banners/{{ banners | last }}"
                     srcset="
 {%- for item in banners -%}
-    {% if not loop.first %},{% endif %}
     /images/banners/{{ item }}
     {% if item.includes('@') %}
         {{ item.split('@')[1].split('.')[0] }}
     {% endif %}
+    {% if not loop.last %},{% endif %}
 {%- endfor -%}">
         {% endif %}
     </picture>
