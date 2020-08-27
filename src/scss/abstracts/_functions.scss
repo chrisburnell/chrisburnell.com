@@ -332,13 +332,13 @@
                             @if $second-key != $third-key and not index($seen-second, $third-key) {
                                 $unique-group: (
                                     (
-                                        $first-key: $first-value
+                                        $first-key: $first-value,
                                     ),
                                     (
-                                        $second-key: $second-value
+                                        $second-key: $second-value,
                                     ),
                                     (
-                                        $third-key: $third-value
+                                        $third-key: $third-value,
                                     )
                                 );
                                 $unique-groups: append($unique-groups, $unique-group);
@@ -347,10 +347,10 @@
                     } @else {
                         $unique-group: (
                             (
-                                $first-key: $first-value
+                                $first-key: $first-value,
                             ),
                             (
-                                $second-key: $second-value
+                                $second-key: $second-value,
                             )
                         );
                         $unique-groups: append($unique-groups, $unique-group);

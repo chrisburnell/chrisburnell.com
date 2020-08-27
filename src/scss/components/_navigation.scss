@@ -4,7 +4,6 @@
 ////
 
 .navigation {
-
 }
 
 .navigation__list {
@@ -32,11 +31,7 @@
         padding: var(--measure-tiny) var(--measure-small);
         position: relative;
         text-decoration: none;
-        text-shadow:
-            1px 1px var(--color-bear),
-            -1px 1px var(--color-bear),
-            1px -1px var(--color-bear),
-            -1px -1px var(--color-bear);
+        text-shadow: 1px 1px var(--color-bear), -1px 1px var(--color-bear), 1px -1px var(--color-bear), -1px -1px var(--color-bear);
         z-index: 0;
 
         &:hover,
@@ -44,29 +39,13 @@
         &:active,
         &[aria-current="page"] {
             background-color: transparent;
-            background-image: linear-gradient(
-                to bottom,
-                $color-transparent 0,
-                $color-transparent 55%,
-                $color-coyote 55%,
-                $color-bowhead calc(55% + 0.5em),
-                $color-transparent calc(55% + 0.5em),
-                $color-transparent 100%
-            );
+            background-image: linear-gradient(to bottom, $color-transparent 0, $color-transparent 55%, $color-coyote 55%, $color-bowhead calc(55% + 0.5em), $color-transparent calc(55% + 0.5em), $color-transparent 100%);
             outline: none;
         }
     }
 
     &:hover [aria-current="page"]:not(:hover):not(:focus):not(:active) {
-        background-image: linear-gradient(
-            to bottom,
-            $color-transparent 0,
-            $color-transparent 55%,
-            $color-coyote--beta 55%,
-            $color-bowhead--beta calc(55% + 0.625em),
-            $color-transparent calc(55% + 0.625em),
-            $color-transparent 100%
-        );
+        background-image: linear-gradient(to bottom, $color-transparent 0, $color-transparent 55%, $color-coyote--beta 55%, $color-bowhead--beta calc(55% + 0.625em), $color-transparent calc(55% + 0.625em), $color-transparent 100%);
     }
 
     // Cicada Interactions

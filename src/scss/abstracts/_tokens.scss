@@ -26,42 +26,42 @@ $tokens: (
         border-default: $measure-border-default,
         border-thin: $measure-border-thin,
         border-hairline: $measure-border-hairline,
-        border-button: $measure-border-button
+        border-button: $measure-border-button,
     ),
     opacity: (
         alpha: $opacity-alpha,
         beta: $opacity-beta,
         gamma: $opacity-gamma,
-        delta: $opacity-delta
+        delta: $opacity-delta,
     ),
     color: map-multiple-merge($site-colors, $highlight-colors, $language-colors),
     font-family: (
         default: $font-family-default,
         alpha: $font-family-alpha,
         serif: $font-family-serif,
-        monospace: $font-family-monospace
+        monospace: $font-family-monospace,
     ),
     font-weight: (
         default: $font-weight-default,
-        bold: $font-weight-bold
+        bold: $font-weight-bold,
     ),
     line-height: (
         default: $line-height-default,
         small: $line-height-small,
         medium: $line-height-medium,
-        code: $line-height-code
+        code: $line-height-code,
     ),
     letter-spacing: (
         default: $letter-spacing-default,
-        uppercase: $letter-spacing-uppercase
+        uppercase: $letter-spacing-uppercase,
     ),
     transition-duration: (
         default: $transition-duration-default,
-        long: $transition-duration-long
+        long: $transition-duration-long,
     ),
     transition-function: (
         default: $transition-function-default,
-        alternate: $transition-function-alternate
+        alternate: $transition-function-alternate,
     ),
     z-index: (
         below: $z-index-below,
@@ -70,8 +70,8 @@ $tokens: (
         above: $z-index-above,
         modal: $z-index-modal,
         dialog: $z-index-dialog,
-        notification: $z-index-notification
-    )
+        notification: $z-index-notification,
+    ),
 );
 
 $bowhead-tokens: $tokens;

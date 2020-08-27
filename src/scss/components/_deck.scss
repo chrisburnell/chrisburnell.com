@@ -8,7 +8,7 @@
         @include owl(tiny);
         @include v(max-width, breakpoint-medium);
         @include v(max-width, line-length-clamp);
-        @include v(padding-top,    medium);
+        @include v(padding-top, medium);
         @include v(padding-bottom, medium);
 
         &:first-child {

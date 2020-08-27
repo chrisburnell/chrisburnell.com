@@ -11,7 +11,7 @@ $breakpoints: (
     small: $measure-breakpoint-small,
     medium: $measure-breakpoint-medium,
     large: $measure-breakpoint-large,
-    gigantic: $measure-breakpoint-gigantic
+    gigantic: $measure-breakpoint-gigantic,
 );
 
 $site-colors: (
@@ -48,7 +48,7 @@ $site-colors: (
     bowhead--alpha: $color-bowhead--alpha,
     bowhead--beta: $color-bowhead--beta,
     bowhead--gamma: $color-bowhead--gamma,
-    bowhead--delta: $color-bowhead--delta
+    bowhead--delta: $color-bowhead--delta,
 );
 
 $palette-colors: (
@@ -61,7 +61,7 @@ $palette-colors: (
     kaiser: $color-kaiser,
     dove: $color-dove,
     alto: $color-alto,
-    white: $color-white
+    white: $color-white,
 );
 
 $highlight-colors: (
@@ -72,7 +72,7 @@ $highlight-colors: (
     highlight-epsilon: $color-highlight-epsilon,
     highlight-zeta: $color-highlight-zeta,
     highlight-eta: $color-highlight-eta,
-    highlight-theta: $color-highlight-theta
+    highlight-theta: $color-highlight-theta,
 );
 
 $language-colors: (
@@ -86,7 +86,7 @@ $language-colors: (
     nunjucks: $color-nunjucks,
     sass: $color-sass,
     scss: $color-sass,
-    liquid-white: $color-liquid-white
+    liquid-white: $color-liquid-white,
 );
 
 /// @type Map
@@ -107,7 +107,7 @@ $font-faces: (
         style: normal,
         variant: default,
         weight: default,
-        filename: "heebo-black"
+        filename: "heebo-black",
     ),
     (
         family: "Proxima Nova",
@@ -117,7 +117,7 @@ $font-faces: (
         style: normal,
         variant: default,
         weight: default,
-        filename: "proxima-nova-regular"
+        filename: "proxima-nova-regular",
     ),
     (
         family: "Proxima Nova",
@@ -127,7 +127,7 @@ $font-faces: (
         style: italic,
         variant: default,
         weight: default,
-        filename: "proxima-nova-italic"
+        filename: "proxima-nova-italic",
     ),
     (
         family: "Proxima Nova",
@@ -137,7 +137,7 @@ $font-faces: (
         style: normal,
         variant: default,
         weight: bold,
-        filename: "proxima-nova-semibold"
+        filename: "proxima-nova-semibold",
     )
 ) !default;
 
@@ -146,7 +146,7 @@ $font-faces: (
 /// @prop {Length} value - Percentage for sizing
 $aspect-ratios: (
     "16-by-9": 56.25%,
-    "4-by-3": 75%
+    "4-by-3": 75%,
 ) !default;
 
 /// @type Map
@@ -157,66 +157,66 @@ $brand-details: (
     (
         name: "codepen",
         color: white,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "github",
         color: white,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "lastfm",
         color: lastfm,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "switch",
         color: nintendo,
-        ratio: 0.9
+        ratio: 0.9,
     ),
     (
         name: "rss",
         color: white,
-        ratio: 0.775
+        ratio: 0.775,
     ),
     (
         name: "spotify",
         color: spotify,
-        ratio: 0.925
+        ratio: 0.925,
     ),
     (
         name: "twitter",
         color: twitter,
-        ratio: 0.925
+        ratio: 0.925,
     ),
     (
         name: "article",
         color: white,
-        ratio: 0.9
+        ratio: 0.9,
     ),
     (
         name: "feather",
         color: white,
-        ratio: 0.725
+        ratio: 0.725,
     ),
     (
         name: "heart",
         color: white,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "link",
         color: white,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "search",
         color: white,
-        ratio: 1
+        ratio: 1,
     ),
     (
         name: "tag",
         color: white,
-        ratio: 1
+        ratio: 1,
     )
 );
