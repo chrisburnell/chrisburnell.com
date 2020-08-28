@@ -1,0 +1,128 @@
+---
+permalink: /feed.xsl
+---
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" />
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title><xsl:value-of select="/feed/title" /></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>{%- include "../css/xsl.css" -%}</style>
+      </head>
+      <body>
+        <header class=" [ header ] ">
+          <div class="[ wrap wrap--large ]">
+            <nav>
+              <p>
+                <strong>This is a web feed.</strong> Subscribe by copying the URL from the address bar into your newsreader.
+              </p>
+              <p>
+                Visit <a href="https://aboutfeeds.com">About Feeds</a> to get started with newsreaders and subscribing. It’s free.
+              </p>
+            </nav>
+          </div>
+        </header>
+        <main class=" [ main ] ">
+          <div id="content" class=" [ content ] [ wrap ] [ page ] ">
+            <h1 id="title" class=" [ title ] ">
+              <xsl:value-of select="/feed/title" />
+            </h1>
+            <div class=" [ details ]">
+              <p><xsl:value-of select="/feed/subtitle" /></p>
+            </div>
+            <div class=" [ content__body ] ">
+              <h2>Recent Posts</h2>
+              <nav class="[ deck ]">
+                <xsl:for-each select="/feed/entry">
+                  <article>
+                    <xsl:choose>
+                      <xsl:when test="title = ''">
+                        <p><xsl:value-of select="content" /></p>
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <h3 class="mb-0">
+                          <a target="_blank">
+                            <xsl:attribute name="href">
+                              <xsl:value-of select="id" />
+                            </xsl:attribute>
+                            <xsl:value-of select="title" />
+                          </a>
+                        </h3>
+                      </xsl:otherwise>
+                    </xsl:choose>
+                    <div class=" [ deck__meta ] ">
+                      <small>published </small>
+                      <xsl:choose>
+                        <xsl:when test="title = ''">
+                          <a target="_blank">
+                            <xsl:attribute name="href">
+                              <xsl:value-of select="id" />
+                            </xsl:attribute>
+                            <xsl:value-of select="published" />
+                          </a>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:value-of select="published" />
+                        </xsl:otherwise>
+                      </xsl:choose>
+                      <xsl:if test="updated != published">
+                        <small> updated </small>
+                        <xsl:value-of select="updated" />
+                      </xsl:if>
+                    </div>
+                  </article>
+                </xsl:for-each>
+              </nav>
+            </div>
+          </div>
+        </main>
+        <footer class="[ footer ]">
+          <div class="[ wrap ]">
+            <ol class="[ footer__navigation ]">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archive/">Archive</a>
+              </li>
+              <li>
+                <a href="/projects/">Projects</a>
+              </li>
+              <li>
+                <a href="/about/">About</a>
+              </li>
+              <li>
+                <a href="/privacy/">Privacy</a>
+              </li>
+              <li>
+                <a href="/styleguide/">Styleguide</a>
+              </li>
+            </ol>
+            <ol class="[ footer__navigation ]">
+              <li>
+                <a id="copyright" href="/license">© 2020 <span class="[ canada ]">Chris Burnell</span></a>
+              </li>
+              <li>
+                <a href="https://github.com/chrisburnell">GitHub</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/iamchrisburnell">Twitter</a>
+              </li>
+              <li>
+                <a href="https://codepen.io/chrisburnell">CodePen</a>
+              </li>
+              <li>
+                <a href="/feed.xml">RSS</a>
+              </li>
+            </ol>
+          </div>
+        </footer>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

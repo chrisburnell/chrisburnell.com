@@ -1,14 +1,3 @@
-@charset "UTF-8";
-
-////
-/// Chris Burnell
-///
-/// Please contact me if you want to learn about anything you see here.
-///
-/// @author Chris Burnell <me@chrisburnell.com>
-/// @link https://github.com/chrisburnell/chrisburnell.com/tree/master/src/scss
-////
-
 /// REQUIRED — ABSTRACTS & VENDORS
 @import "abstracts/variables";
 @import "abstracts/collections";
@@ -31,7 +20,6 @@
 @import "base/reset";
 @import "base/page";
 @import "base/anchor";
-@import "base/button";
 @import "base/headings";
 @import "base/paragraph";
 @import "base/list";
@@ -39,10 +27,6 @@
 @import "base/figure";
 @import "base/media";
 @import "base/quote";
-@import "base/code";
-@import "base/form";
-@import "base/table";
-@import "base/details";
 
 /// LAYOUTS
 @import "layouts/wrap";
@@ -51,23 +35,11 @@
 @import "layouts/footer";
 
 /// COMPONENTS
-@import "components/logo";
 @import "components/anchor";
-@import "components/navigation";
 @import "components/content";
 @import "components/box";
 @import "components/meta";
 @import "components/deck";
-@import "components/shelf";
 @import "components/updated";
-@import "components/cover";
-@import "components/navigator";
 @import "components/helpers";
-@import "components/notification";
-@import "components/webmentions";
-@import "components/author";
 @import "components/media";
-@import "components/ads";
-
-/// PAGES
-@import "pages/styleguide";
