@@ -16,7 +16,7 @@ One of the most important aspects to any codebase, besides the obvious fact that
 
 ## In Comes Sass
 
-Well, not quite. I haven’t found a need myself for the full library of options available in [<abbr title="a CSS extension language">Sass</abbr>](http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <abbr title="a superset of CSS3’s syntax">SCSS</abbr>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
+Well, not quite. I haven’t found a need myself for the full library of options available in [<abbr title="a CSS extension language">Sass</abbr>](https://sass-lang.com/ "Sass: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <abbr title="a superset of CSS3’s syntax">SCSS</abbr>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
 
 
 <h2 id="i-dont-want-to-do-anything">I don’t want to do anything, anymore!</h2>
@@ -25,7 +25,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
-One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: [Can I Use](http://caniuse.com "Can I Use"), a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
+One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: [Can I Use](https://caniuse.com/ "Can I Use"), a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
 
 --------
@@ -35,7 +35,7 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 <aside><p><code>autoprefixer -i</code> to run <em>Autoprefixer</em> from the command line.</p></aside>
 
-Fortunately there’s a great tool that plugs into *Can I Use*’s API: [Autoprefixer](https://github.com/ai/autoprefixer "Autoprefixer"). In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient… but not the perfect solution; I still have to manually run this command whenever I want to compile.
+Fortunately there’s a great tool that plugs into *Can I Use*’s API: [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer"). In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient… but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 
 --------
@@ -43,7 +43,7 @@ Fortunately there’s a great tool that plugs into *Can I Use*’s API: [Autopre
 
 <aside><p><code>sass</code> to compile Sass or SCSS from the command line.</p></aside>
 
-Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://sublime.wbond.net/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
+Because I also decided to make the switch to SCSS, I was wasting a lot of time in the command line, running the command to compile my SCSS every time I made a change. *Then* I was minifying it because that’s what I serve to users (using [this](https://packagecontrol.io/packages/Minify "Sublime Minify")). To be fair, I actually used a bash alias to run a chain of commands, but I wanted *true* automation!
 
 It’s only a small amount of time spent each time I wanted to compile my SCSS, but as anyone who writes CSS knows, an awful lot of time is spent tweaking a value, refreshing the browser, tweaking a value, refreshing the browser, and so on. The time spent compiling the SCSS *myself* added up to one big frustration.
 
@@ -57,7 +57,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
     <figcaption>There is!</figcaption>
 </figure>
 
-And it comes in the form of *[gulp](http://gulpjs.com "gulp.js - the streaming build system")*. *gulp* is a <q>streaming build system</q> built on *[node.js](https://nodejs.org "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](http://gruntjs.com "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
+And it comes in the form of *[gulp](https://gulpjs.com/ "gulp.js - the streaming build system")*. *gulp* is a <q>streaming build system</q> built on *[node.js](https://nodejs.org/en/ "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](https://gruntjs.com/ "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
 
 
 <h2 id="what-gulp-does-for-me">Let’s see what gulp does for me</h2>
@@ -525,7 +525,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 ## Useful Links
 
-1. [Sass Guide](http://sass-lang.com/guide "Sass: Sass Basics")
+1. [Sass Guide](https://sass-lang.com/guide "Sass: Sass Basics")
 2. [Sass Guide - Variables](http://sass-lang.com/guide#2 "Sass: Sass Variables")
 3. [Sass Guide - Nesting](http://sass-lang.com/guide#3 "Sass: Sass Nesting")
 4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
@@ -534,7 +534,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 7. [My Sass files]({{ author.urls.github_repo }}/tree/master/src/scss "Sass files for chrisburnell.com")
 8. [My gulpfile configuration]({{ author.urls.gist }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
-And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp "Getting started with gulp")</q>, by [Mark Goodyear](https://markgoodyear.com "Mark Goodyear — Front-end designer and developer").
+And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp/ "Getting started with gulp")</q>, by [Mark Goodyear](https://markgoodyear.com/ "Mark Goodyear — Front-end designer and developer").
 
 
 ## Wrapping it up

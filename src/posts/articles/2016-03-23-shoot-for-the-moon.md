@@ -28,7 +28,7 @@ A confusing subject for the uninitiated (myself included), decimals in CSS behav
 
 <h2 id="prerequisite-information">A Bit of Prerequisite Information</h2>
 
-It’s probably worth refreshing yourself on the various rounding methods used in CSS in various browsers. [Alex Kilgour](https://github.com/howlingmad/) wrote an excellent article on the subject, [Browser Rounding and Fractional Pixels](http://cruft.io/posts/percentage-calculations-in-ie/), that’s more than worth reading through and bookmarking, if only for his [concise table of rounding methods](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table) used by browsers and when they’re used. I’ve summarised these different rounding methods below, but I still recommend checking out Alex’s article.
+It’s probably worth refreshing yourself on the various rounding methods used in CSS in various browsers. [Alex Kilgour](https://github.com/howlingmad/) wrote an excellent article on the subject, [Browser Rounding and Fractional Pixels](https://cruft.io/posts/percentage-calculations-in-ie/), that’s more than worth reading through and bookmarking, if only for his [concise table of rounding methods](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table) used by browsers and when they’re used. I’ve summarised these different rounding methods below, but I still recommend checking out Alex’s article.
 
 <dl>
     <dt>truncate to <em>x</em> decimals</dt>

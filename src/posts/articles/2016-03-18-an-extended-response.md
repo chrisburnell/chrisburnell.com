@@ -22,7 +22,7 @@ further_reading:
     title: "Sass Mixins vs Extends: The Data"
 ---
 
-A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](http://csswizardry.com/2016/02/mixins-better-for-performance/) some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
+A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](https://csswizardry.com/2016/02/mixins-better-for-performance/) some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
 
 <div class="edit">
     <p>N.B. This assumes that you are gzipping your assets on the front-end.</p>

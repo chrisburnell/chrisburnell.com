@@ -16,9 +16,9 @@ In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I 
 --------
 
 
-I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](http://a11yproject.com/) in the form of [ARIA](http://html5doctor.com/using-aria-in-html/) and [Microdata](https://schema.org/docs/documents.html).
+I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](https://www.a11yproject.com/) in the form of [ARIA](http://html5doctor.com/using-aria-in-html/) and [Microdata](https://schema.org/docs/documents.html).
 
-In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/) and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
+In doing this research, I learned a lot about the [title attribute on anchors](https://silktide.com/blog/i-thought-title-text-improved-accessibility-i-was-wrong/) and how to present content properly for impaired users. Specifically, I learned about a technique that has relatively broad use for hiding anchor text that isn’t important to the visual journey but would be for someone with a visual impairment—that is to use a `span` to designate hidden text inside an anchor.
 
 ```html
 <a href="/article/interesting-article">

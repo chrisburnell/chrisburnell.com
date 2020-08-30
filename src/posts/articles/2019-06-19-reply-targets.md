@@ -58,7 +58,7 @@ The same can be done in the library for replies to non-siloed content, where the
 
 ## Federated Networks
 
-Things get a little bit more complicated when we consider replies to federated networks, such as *Mastodon*. The tricky part here is the decentralised aspect of these networks—users on one network can interact with people on other networks. For example, I have an account on [Mastodon.social](https://mastodon.social/) and could reply to someone on [Social.coop](https://social.coop/).
+Things get a little bit more complicated when we consider replies to federated networks, such as *Mastodon*. The tricky part here is the decentralised aspect of these networks—users on one network can interact with people on other networks. For example, I have an account on [Mastodon.social](https://mastodon.social/about) and could reply to someone on [Social.coop](https://social.coop/about).
 
 So how can I differentiate a *Mastodon* URL from a *Personal Website* URL? At the time of writing, there are over 5000 *Mastodon* instances, and that number is ever-changing, some instances are private, etc. It is not entirely feasible for me to replicate and maintain this list of *Mastodon* instances, a gross majority of which I will never interact with. Instead, I opted to maintain a finite list of *Mastodon* instances, populated based on which instances I have already replied to and which instances I may reply to in the future (updated manually as and when I do).
 

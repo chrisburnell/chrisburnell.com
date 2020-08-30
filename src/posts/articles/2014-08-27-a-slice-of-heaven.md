@@ -11,7 +11,7 @@ codepen: true
 caniuse: true
 ---
 
-I’ve been making quite a few pens over on [CodePen](https://codepen.io) lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
+I’ve been making quite a few pens over on [CodePen](https://codepen.io/) lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.
 
 All of the examples are interactive, so make sure you hover or click where necessary; although, they are best suited for a tablet or desktop, so if you’re viewing on mobile, they may not work as intended.
 
@@ -42,7 +42,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 ## Modal Container without JavaScript
 
-This pen was inspired by Chris Coyier’s [blog post on *CodePen*](https://codepen.io/chriscoyier/blog/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
+This pen was inspired by Chris Coyier’s [blog post on _CodePen_](https://codepen.io/chriscoyier/post/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
 
 {% codepen 'scyKF', false, 350 %}
 
@@ -75,6 +75,6 @@ Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Tw
 
 ## Over to you
 
-Interested in these sorts of projects? Check out [A Single Div](http://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
+Interested in these sorts of projects? Check out [A Single Div](https://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
 
 Let me know in the [comments](#comments) if you have any examples or cool pens of your own!

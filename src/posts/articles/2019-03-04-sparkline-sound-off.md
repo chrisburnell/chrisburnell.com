@@ -116,7 +116,3 @@ We can pump these values into the [Web Audio API](https://developer.mozilla.org/
 <figure>
     <canvas id="sparkline-demo-3" class="sparkline" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" tabindex="0"></canvas>
 </figure>
-
---------
-
-Lastly, I've included a link below if you’re a guitar player and you’re interested in playing in this type of scale! Thanks to [Jess Miller](https://www.jenreviews.com) for reaching out.

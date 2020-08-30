@@ -204,7 +204,7 @@ An important caveat to note before diving too deep, at least at the time of writ
 
 {% codepen 'JryQoM' %}
 
-*IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [ResizeObserver](https://wicg.github.io/ResizeObserver) and [Mutation Observer](https://dom.spec.whatwg.org/#mutation-observers):
+*IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [ResizeObserver](https://wicg.github.io/ResizeObserver/) and [Mutation Observer](https://dom.spec.whatwg.org/#mutation-observers):
 
 Let the developer figure out *what* to do. Let the browser figure out *how* to do it.
 

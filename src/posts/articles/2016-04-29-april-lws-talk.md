@@ -8,7 +8,7 @@ tags:
 edit: Check out the Talk in question, <a href="/talk/middle-out">Supporting Middle-Out in CSS</a>.
 ---
 
-Last week, [I spoke](http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/) at [London Web Standards](http://londonwebstandards.org/), a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a free front-end development course](http://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html), I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
+Last week, [I spoke](http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/) at [London Web Standards](https://londonwebstandards.org/), a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a free front-end development course](https://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html), I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
 
 
 ## Nerves from Hell

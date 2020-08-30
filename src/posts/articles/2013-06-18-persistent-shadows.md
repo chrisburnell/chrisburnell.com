@@ -34,7 +34,7 @@ It may be interesting to note that as the medium we’re working with is compose
 
 <h2 id="what-else">What else is there?</h2>
 
-What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#comments), or [send me a pen](https://codepen.io "CodePen")!
+What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#comments), or [send me a pen](https://codepen.io/ "CodePen")!
 
 
 <h2 id="something-extra">A little something-something extra, just for you</h2>

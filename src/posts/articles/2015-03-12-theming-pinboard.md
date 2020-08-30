@@ -11,7 +11,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/576014944627490816
 ---
 
-I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com) and [Adactio: Jeremy Keith’s website](https://adactio.com) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](https://jakearchibald.com):
+I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com/) and [Adactio: Jeremy Keith’s website](https://adactio.com/) to finally tackle a design problem that’ve been dealing with for a couple of months. What really pushed me to do it was a *misleading* tweet by [Jake Archibald](https://jakearchibald.com/):
 
 <blockquote class="twitter-tweet" lang="en"><p>Pinboard implemented their own simpler layout model & used canvas for the drawing which is GPU-backed.</p>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></blockquote>
 <noscript>Please enable JavaScript to see Twitter-specific components.</noscript>
@@ -59,7 +59,7 @@ So it was important for me to make these parts distinct in the new design, whils
 
 That was a <del>hilarious</del> decent joke, right? And I'm sure you appreciated <del>that moment of tear-filled laughter</del> that I tried.
 
-Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe), [Firefox](https://addons.mozilla.org/en-us/firefox/addon/stylish), and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
+Anyway, I needed to find a way to inject my CSS into pages on *Pinboard*, for which I settled on [Stylish](https://userstyles.org/), a browser plugin (for [Chrome](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/stylish/), and [Opera](https://addons.opera.com/en-gb/extensions/details/stylish/)) that <q>lets you easily install [and create] themes and skins for many popular sites.</q>
 
 <figure>
     <a href="https://userstyles.org">
@@ -157,7 +157,7 @@ html {
 @import url("https://chrisburnell.com/css/normalize.min.css");
 ```
 
-- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](https://www.google.com/fonts) with <samp>@import</samp>:
+- changing the base <samp>font-family</samp> to <samp>Open Sans</samp>, hosted by [Google Fonts](https://fonts.google.com/) with <samp>@import</samp>:
 
 ```css
 @import url("https:/fonts.googleapis.com/css?family=Open+Sans:400italic,400,600");
@@ -214,7 +214,7 @@ html {
 ```
 
 - modified the colour palette to match [my styleguide](/styleguide)
-- implemented hooks with [IFTTT](https://ifttt.com) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
+- implemented hooks with [IFTTT](https://ifttt.com/) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 
 --------
@@ -231,6 +231,6 @@ html {
 
 I’m not trying to point any fingers, but there’s a lesson in there: that it’s our job as developers to eliminate trifling work like this. We need to educate our peers, colleagues, and fellow developers on subjects we’re strong with, building towards the goal of creating a better web for everyone.
 
-I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl) article in Smashing Magazine, [Design Last](http://www.smashingmagazine.com/2015/02/20/design-last), are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
+I think the ideas discussed in [Rik Schennink’s](http://rikschennink.nl/) article in Smashing Magazine, [Design Last](https://www.smashingmagazine.com/2015/02/design-last/), are a great ethos to take on when building websites. Content is king. If we understand first how we want to present and differentiate content from one another, then the design and development stage is much easier, and promotes a component-driven architecture.
 
 If all we’re doing is changing a few colours, fonts, and sizes of elements on websites we use everyday, and finding it to be a cumbersome task, imagine the difficulty the developers of these websites face when updating their own websites. This isn’t the foundation for the web I want to use and build for in the future. We can do better.
