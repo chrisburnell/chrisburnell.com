@@ -19,5 +19,5 @@ DESCRIPTION:{{ item.data.in_reply_to.title | default(item.data.in_reply_to.url) 
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
-{%- endif -%}
+{% endif -%}
 {% endfor %}END:VCALENDAR
