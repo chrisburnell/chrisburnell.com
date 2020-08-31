@@ -9,7 +9,7 @@ layout: base
 
     <div class=" [ details ] ">
         {% if lede == site.lede %}
-            <p class=" [ p-summary ] " aria-hidden="true">{{ lede | safe }}</p>
+            <p class=" [ p-summary ] " aria-hidden="true">{{ lede | safe | replace('href=', 'tabindex="-1" href=') }}</p>
         {% elif lede %}
             <p class=" [ p-summary ] ">{{ lede | safe }}</p>
         {% endif %}
