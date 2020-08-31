@@ -38,7 +38,7 @@ layout: base
     {% set syndicate_to = ["https://untappd.com/user/chrisburnell/checkin/" + page.fileSlug] %}
 {%- endif -%}
 {%- if listen_of -%}
-    {% set of_url = "https://album.link/s/" + of_url %}
+    {% set of_url = "https://album.link/s/" + listen_of %}
     {% set syndicate_to = [of_url] %}
 {%- endif -%}
 {%- if read_of -%}
@@ -46,8 +46,6 @@ layout: base
     {% set syndicate_to = [of_url] %}
 {%- endif -%}
 
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) -%}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) -%}
 <article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
     <h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">

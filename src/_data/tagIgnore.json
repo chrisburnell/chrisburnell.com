@@ -1,6 +1,7 @@
 [
   "all",
   "page",
+  "httpstatus",
   "post",
   "clickthrough",
   "feature",

@@ -54,7 +54,7 @@ eleventyComputed:
         </h2>
         <nav class=" [ deck ] ">
             {% for item in collections.throwbackPosts | limit(site.limits.snapshot) %}
-                {{ deckItem(item, global.now, collections.all, webmentions, false) }}
+                {{ deckItem(item, global.now, collections.all, [], false) }}
             {% endfor %}
         </nav>
     </div>

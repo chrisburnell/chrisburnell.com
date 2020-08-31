@@ -15,8 +15,11 @@
         {% endif %}
     {%- endif -%}
 
-    {%- if category == 'music' -%}
-        {% set item_of_url = 'https://album.link/s/' + item_of_url %}
+    {%- if item.data.listen_of -%}
+        {% set item_of_url = "https://album.link/s/" + item.data.listen_of %}
+    {%- endif -%}
+    {%- if item.data.read_of -%}
+        {% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
     {%- endif -%}
 
     {%- set item_title = item.data.title -%}
@@ -53,17 +56,23 @@
                 {% endif %}
             </div>
         {% endif %}
-        {% if item.data.rating %}
-            <div>
-                {% if item.data.rating == 'Parti Pris' %}
-                    <data class=" [ p-rating ] ">Parti Pris</data>
-                {% else %}
-                    <data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" title="{{ item.data.rating }} out of 5"> </data>
-                    <data class=" [ p-worst ] " hidden>0</data>
-                    <data class=" [ p-best ] " hidden>5</data>
-                {% endif %}
-            </div>
-        {% endif %}
+        <div>
+            {% if item.data.rating == 'Parti Pris' %}
+                <data class=" [ p-rating ] ">Parti Pris</data>
+            {% elif item.data.rating %}
+                <data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" title="{{ item.data.rating }} out of 5"> </data>
+                <data class=" [ p-worst ] " hidden>0</data>
+                <data class=" [ p-best ] " hidden>5</data>
+            {% elif item.data.listen_of and not item.data.finish %}
+                <em>Currently listening</em>
+            {% elif item.data.play_of and not item.data.finish %}
+                <em>Currently playing</em>
+            {% elif item.data.read_of and not item.data.finish %}
+                <em>Currently reading</em>
+            {% else %}
+                <data class=" [ p-rating ] ">Unrated</data>
+            {% endif %}
+        </div>
         {% if item.date %}
             <time class=" [ dt-published ] " datetime="{{ item.date | w3DateFormat }}" hidden>{{ item.date | dateFormat }}</time>
             {% if item.data.updated %}

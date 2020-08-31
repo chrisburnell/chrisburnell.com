@@ -130,50 +130,50 @@ module.exports = function(config) {
 
     // Pages Collection
     config.addCollection("pages", collection => {
-        return collection.getFilteredByGlob("./src/pages/*.md")
+        return collection.getFilteredByTag("page")
             .filter(isPublished);
     });
 
     // HTTP Status Pages Collection
     config.addCollection("httpstatusPages", collection => {
-        return collection.getFilteredByGlob("./src/pages/httpstatuses/*.md");
+        return collection.getFilteredByTag("httpstatus");
     });
 
     // Posts Collection
     config.addCollection("posts", collection => {
-        return collection.getFilteredByGlob("./src/posts/**/*.md")
+        return collection.getFilteredByTag("post")
             .filter(isPublished)
             .sort(dateSort);
     });
 
     // Writing Posts Collection
     config.addCollection("writingPosts", collection => {
-        return collection.getFilteredByTags("writing")
+        return collection.getFilteredByTag("writing")
             .filter(isPublished)
             .sort(dateSort);
     });
 
     // Feature Posts Collection
     config.addCollection("featurePosts", collection => {
-        return collection.getFilteredByTags("feature")
+        return collection.getFilteredByTag("feature")
             .filter(isPublished)
             .filter(isNotReply)
             .sort(dateSort);
     });
     config.addCollection("featurePostsNotWriting", collection => {
-        return collection.getFilteredByTags("feature")
-            .filter(isPublished)
-            .filter(isNotReply)
+        return collection.getFilteredByTag("feature")
             .filter(item => {
                 return !item.data.tags.includes("writing");
             })
+            .filter(isPublished)
+            .filter(isNotReply)
             .sort(dateSort)
             .slice(0, 3);
     });
 
     // Throwback Posts Collection
     config.addCollection("throwbackPosts", collection => {
-        return collection.getFilteredByTags("throwback")
+        return collection.getFilteredByTag("throwback")
             .filter(isPublished)
             .filter(item => {
                 if (item.data.rsvp || !item.data.in_reply_to) {
@@ -204,7 +204,7 @@ module.exports = function(config) {
 
     // All Checkins Collection
     config.addCollection("checkins", collection => {
-        return collection.getFilteredByGlob("./src/posts/**/*.md")
+        return collection.getFilteredByTag("post")
             .filter(isPublished)
             .filter(item => {
                 return "checkin" in item.data;
@@ -214,7 +214,7 @@ module.exports = function(config) {
 
     // All RSVP Collection
     config.addCollection("replies", collection => {
-        return collection.getFilteredByTags("note")
+        return collection.getFilteredByTag("note")
             .filter(isPublished)
             .filter(item => {
                 return "in_reply_to" in item.data;
@@ -230,7 +230,7 @@ module.exports = function(config) {
 
     // Notes without Replies Collection
     config.addCollection("notesWithoutReplies", collection => {
-        return collection.getFilteredByTags("note")
+        return collection.getFilteredByTag("note")
             .filter(isPublished)
             .filter(item => {
                 if ("in_reply_to" in item.data) {
@@ -243,7 +243,7 @@ module.exports = function(config) {
 
     // All RSVP Collection
     config.addCollection("rsvps", collection => {
-        return collection.getFilteredByGlob("./src/posts/**/*.md")
+        return collection.getFilteredByTag("post")
             .filter(isPublished)
             .filter(item => {
                 return "rsvp" in item.data;
@@ -253,14 +253,14 @@ module.exports = function(config) {
 
     // Today RSVP Collection
     config.addCollection("todayRSVPs", collection => {
-        return collection.getFilteredByGlob("./src/posts/**/*.md")
+        return collection.getFilteredByTag("post")
             .filter(isPublished)
             .filter(isTodayRSVP);
     });
 
     // Future RSVP Collection
     config.addCollection("futureRSVPs", collection => {
-        return collection.getFilteredByGlob("./src/posts/**/*.md")
+        return collection.getFilteredByTag("post")
             .filter(isPublished)
             .filter(isFutureRSVP);
     });
