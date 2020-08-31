@@ -221,9 +221,9 @@
                     {% if not item.hidden %}
                         <li {% if not item.primary %} hidden{% endif %}>
                             {% if item.url %}
-                                <a{% if item.mf_propery %} class=" [ p-{{ item.mf_propery }} ] "{% endif %} href="{{ item.url }}" rel="me">{{ item.title }}</a>
+                                <a{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ item.url }}" rel="me">{{ item.title }}</a>
                             {% else %}
-                                <data{% if item.mf_propery %} class=" [ p-{{ item.mf_propery }} ] "{% endif %} value="{{ item.value }}" rel="me">{{ item.title }}</data>
+                                <data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ item.value }}" rel="me">{{ item.title }}</data>
                             {% endif %}
                         </li>
                     {% endif %}

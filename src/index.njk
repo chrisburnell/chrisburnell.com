@@ -4,7 +4,7 @@ title: The Homepage
 carbon: true
 coil: true
 eleventyComputed:
-  lede: "<span aria-hidden=\"true\">{{ site.lede | safe }}</span>"
+  lede: "{{ site.lede | safe }}"
   tagline: "{{ site.tagline | safe }}"
 ---
 {% from 'macros/deckItem.njk' import deckItem %}

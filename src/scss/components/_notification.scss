@@ -34,7 +34,7 @@
     }
 
     &.notification--positive {
-        @include v(background-color, liquid);
+        @include v(background-color, nunjucks);
     }
 
     &.notification--negative {

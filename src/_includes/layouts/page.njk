@@ -8,7 +8,9 @@ layout: base
     </h1>
 
     <div class=" [ details ] ">
-        {% if lede %}
+        {% if lede == site.lede %}
+            <p class=" [ p-summary ] " aria-hidden="true">{{ lede | safe }}</p>
+        {% elif lede %}
             <p class=" [ p-summary ] ">{{ lede | safe }}</p>
         {% endif %}
     </div>
