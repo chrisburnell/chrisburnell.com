@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.14";
+const VERSION = "v3.0.15";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -206,7 +206,7 @@ self.addEventListener("fetch", event => {
                 let copy = responseFromFetch.clone();
                 try {
                     event.waitUntil(
-                        stashInCache((request.url.match(/\.(jpe?g|png|gif|svg)/) ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
+                        stashInCache((request.url.match(/\.(jpe?g|png|gif|webp)/) ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
                     );
                 }
                 catch(error) {
@@ -219,7 +219,7 @@ self.addEventListener("fetch", event => {
                 console.error(error);
                 // CACHE or FALLBACK
                 cachePromise.then(responseFromCache => {
-                    resolveWithResponse(responseFromCache || (request.url.match(/\.(jpe?g|png|gif|svg)/) ? new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { "Content-Type": "image/svg+xml", "Cache-Control": "no-store" } }) : caches.match("/offline/")));
+                    resolveWithResponse(responseFromCache || (request.url.match(/\.(jpe?g|png|gif|webp)/) ? new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { "Content-Type": "image/svg+xml", "Cache-Control": "no-store" } }) : caches.match("/offline/")));
                 });
             });
         })
