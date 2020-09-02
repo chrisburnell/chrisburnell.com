@@ -3,14 +3,14 @@ draft: true
 date: 2020-02-09T09:31:00+0100
 title: Let me show you the door, <code>col-md-4</code>
 lede: For over a decade now, it’s been the norm to layout our websites with a system in CSS that divides the page into columns and defines the size of components on the page based on the number of columns it should take up. I’m proposing we move away from using arbitrary column counts and write CSS that expresses what we actually want, shedding the limitations imposed by a column-based layout.
-tags:
-  - css
+# tags:
+#   - css
 banner:
   - death-to-cols.png
   - death-to-cols@2x.png
 ---
 
-You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework like the ol’ [960 Grid System](https://960.gs). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework like the ol’ [960 Grid System](https://960.gs/). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
 Specifically, they approach layout by dividing the width of the page into <var>n</var> (typically 12 or 24) columns and assigning the width of components on the page to a different number of these columns. For example, a <var>12</var>-column layout might be split into a <var>9</var>-column content section and a <var>3</var>-column sidebar. <var>12</var> is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject *double* the granularity and opt for a <var>24</var>-column grid; although, you’re certainly not limited to these numbers.
 
