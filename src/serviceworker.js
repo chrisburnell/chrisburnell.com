@@ -24,7 +24,7 @@ const TIMEOUT = 15000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
-    "/css/main.css",
+    "/css/non-critical.css",
     "/js/main.js"
 ];
 
@@ -117,9 +117,9 @@ self.addEventListener("activate", event => {
     );
 });
 
-if (registration.navigationPreload) {
-    addEventListener("activate", event => {
-        event.waitUntil(registration.navigationPreload.enable());
+if (self.registration.navigationPreload) {
+    self.addEventListener("activate", event => {
+        event.waitUntil(self.registration.navigationPreload.enable());
     });
 }
 
@@ -143,8 +143,7 @@ self.addEventListener("fetch", event => {
     }
 
     // Pinkie Swear?
-    let fetchPromise = event.preloadResponse ? event.preloadResponse : fetch(request);
-    let cachePromise = caches.match(request);
+    const cachePromise = caches.match(request);
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get("Accept").includes("text/html")) {
@@ -159,11 +158,13 @@ self.addEventListener("fetch", event => {
                     })
                 }, TIMEOUT);
 
+                let fetchPromise = event.preloadResponse || fetch(request);
+
                 fetchPromise.then(responseFromFetch => {
                     // NETWORK
                     // Stash a copy of this page in the PAGES cache
-                    clearTimeout(timer);
                     let copy = responseFromFetch.clone();
+                    clearTimeout(timer);
                     try {
                         event.waitUntil(
                             stashInCache(PAGES_CACHE, request, copy)
@@ -199,11 +200,13 @@ self.addEventListener("fetch", event => {
                 })
             }, TIMEOUT);
 
+            let fetchPromise = event.preloadResponse || fetch(request);
+
             fetchPromise.then(responseFromFetch => {
                 // NETWORK
                 // Stash a copy of this asset in the ASSETS or IMAGES cache
-                clearTimeout(timer);
                 let copy = responseFromFetch.clone();
+                clearTimeout(timer);
                 try {
                     event.waitUntil(
                         stashInCache((request.url.match(/\.(jpe?g|png|gif|webp)/) ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
