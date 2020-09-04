@@ -21,7 +21,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 <h2 id="i-dont-want-to-do-anything">I don’t want to do anything, anymore!</h2>
 
-<aside><p>I also wrote about <a rel="external" href="http://browser.londonwebstandards.org" title="State of the Browser 2013">State of the Browser 2013</a> in <a href="/article/first-article-ever" title="First Ever Article">my first article</a>.</p></aside>
+<aside><p>I also wrote about <a rel="external" href="http://browser.londonwebstandards.org" title="State of the Browser 2013">State of the Browser 2013</a> in <a href="/article/first-article-ever/" title="First Ever Article">my first article</a>.</p></aside>
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 

@@ -58,7 +58,7 @@ This was an effect I’ve seen used across the web before that I’d wanted to t
 
 ## Jazzy CSS Checkbox Revisited
 
-This is a pen which I overhauled a bit since I first wrote about it in <a href="/article/persistent-shadows">Persistent Shadows</a>:
+This is a pen which I overhauled a bit since I first wrote about it in <a href="/article/persistent-shadows/">Persistent Shadows</a>:
 
 {% codepen 'arouk', false, 250 %}
 

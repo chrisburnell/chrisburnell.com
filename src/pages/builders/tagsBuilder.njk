@@ -39,7 +39,7 @@ eleventyComputed:
         </ul>
         <h3>Here are some other tags that you can explore, too:</h3>
         <ul class=" [ meta__list ] ">
-            {% for lookup in collections.tags | sort %}{% if lookup != tag %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endif %}{% endfor %}
+            {% for lookup in collections.tags | sort %}{% if lookup != tag %}<li><a href="/tag/{{ lookup }}/">#{{ lookup }}</a></li>{% endif %}{% endfor %}
         </ul>
     </div>
 

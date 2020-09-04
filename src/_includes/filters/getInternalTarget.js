@@ -1,7 +1,11 @@
-const getPath = require("./getPath.js");
 const toArray = require("./toArray.js");
 
 const site = require("../../_data/site.json");
+
+const getPath = function(url) {
+    let urlObject = new URL(url);
+    return urlObject.pathname;
+};
 
 module.exports = function getInternalTarget(value, pages) {
 

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.15";
+const VERSION = "v3.0.16";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -24,7 +24,6 @@ const TIMEOUT = 15000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
-    "/css/non-critical.css",
     "/js/main.js"
 ];
 

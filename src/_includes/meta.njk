@@ -197,8 +197,8 @@
         <li class=" [ posting-method ] ">
             {% emoji '🖋' %}
             <small>posted with</small>
-            {% if posting_method | getMethod('url') %}
-                <a href="{{ posting_method }}">{{ posting_method | getMethod }}</a>
+            {% if posting_method | getPostingMethod('url') %}
+                <a href="{{ posting_method }}">{{ posting_method | getPostingMethod }}</a>
             {% else %}
                 <strong>{{ posting_method }}</strong>
             {% endif %}

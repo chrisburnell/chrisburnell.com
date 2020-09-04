@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://chrisburnell.com/bowhead",
+    "url": "/bowhead/",
     "data": {
       "title": "Bowhead",
       "lede": "A small framework on which to build your design tokens in SCSS.",

@@ -22,7 +22,6 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-cache-assets": "^2.0.3",
     "@11ty/eleventy-img": "^0.3.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@chrisburnell/bowhead": "^0.1.6",
     "@tbranyen/jsdom": "^13.0.0",
@@ -35,14 +34,15 @@
     "twitter-avatar-url": "^1.0.2"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
     "prettier": "^1.19.1"
   },
   "scripts": {
     "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_generated-tokens.scss",
-    "scss": "npx sass src/scss:css --no-source-map --color",
-    "build": "npm run scss -- --style=compressed; ELEVENTY_ENV=production npx @11ty/eleventy",
-    "serve": "npm run scss -- --watch & npx @11ty/eleventy --serve --quiet",
+    "scss": "npx sass src/scss:css --no-source-map --color --style=compressed",
+    "build": "npm run scss; ELEVENTY_ENV=production npx @11ty/eleventy",
+    "serve": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }

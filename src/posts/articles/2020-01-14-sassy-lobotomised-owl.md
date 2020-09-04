@@ -10,7 +10,7 @@ syndicate_to:
 banner:
   - sassy-lobotomised-owl@2x.jpg
   - sassy-lobotomised-owl.jpg
-edit: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both">Variables for Both</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
+edit: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both/">Variables for Both</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
 ---
 
 The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external">lobotomised owl</a> technique, given graciously to us by the incredibly talented <a href="https://heydonworks.com" rel="external">Heydon Pickering</a>, takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:
@@ -79,7 +79,7 @@ article {
 
 But now let’s take the excitement up to to **4**.
 
-Using the same concepts, and, in particular, the <a href="/article/variables-for-both"><samp>v</samp> mixin</a> that I introduced in [Variables for Both](/article/variables-for-both), we need to set up some SCSS variables and assign them within a Map so that we can iterate through them and reference them using our chosen familiar words—<samp>small</samp>, <samp>medium</samp>, and <samp>large</samp> in this case.
+Using the same concepts, and, in particular, the <a href="/article/variables-for-both/"><samp>v</samp> mixin</a> that I introduced in [Variables for Both](/article/variables-for-both), we need to set up some SCSS variables and assign them within a Map so that we can iterate through them and reference them using our chosen familiar words—<samp>small</samp>, <samp>medium</samp>, and <samp>large</samp> in this case.
 
 ```scss
 $measure-large:  4em;
@@ -99,7 +99,7 @@ $measures: (
 }
 ```
 
-And using my <a href="/article/variables-for-both"><samp>v</samp> mixin</a> I can now rewrite my <samp>owl</samp> mixin with the above configuration in place.
+And using my <a href="/article/variables-for-both/"><samp>v</samp> mixin</a> I can now rewrite my <samp>owl</samp> mixin with the above configuration in place.
 
 ```scss
 @mixin owl($measure: small) {
@@ -109,7 +109,7 @@ And using my <a href="/article/variables-for-both"><samp>v</samp> mixin</a> I ca
 }
 ```
 
-In congruency with the methodology behind using the <a href="/article/variables-for-both"><samp>v</samp> mixin</a>, we’ve now abstracted away the need to remember or look up the numeric values for the various measures you might be using, and can instead refer to them as you might think about them or speak about them—using words like <samp>small</samp>, <samp>medium</samp>, <samp>large</samp>, and so on:
+In congruency with the methodology behind using the <a href="/article/variables-for-both/"><samp>v</samp> mixin</a>, we’ve now abstracted away the need to remember or look up the numeric values for the various measures you might be using, and can instead refer to them as you might think about them or speak about them—using words like <samp>small</samp>, <samp>medium</samp>, <samp>large</samp>, and so on:
 
 ```scss
 body {

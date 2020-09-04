@@ -1,9 +1,7 @@
 const fs = require("fs");
 
 // Import 11ty plugins
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const RemoteCache = require("@11ty/eleventy-cache-assets");
 const Image = require("@11ty/eleventy-img");
 const imageAvatarPlugin = require("./src/_includes/plugins/imageAvatarPlugin.js");
 
@@ -22,22 +20,18 @@ const capitalizeFormat = require("./src/_includes/formats/capitalizeFormat.js");
 const publishedFilter = require("./src/_includes/filters/publishedFilter.js");
 const limitFilter = require("./src/_includes/filters/limit.js");
 const keySortFilter = require("./src/_includes/filters/keySort.js");
-const keyFilter = require("./src/_includes/filters/keyFilter.js");
-const titleSortFilter = require("./src/_includes/filters/titleSort.js");
 const tagFilter = require("./src/_includes/filters/tagFilter.js");
 const categoryFilter = require("./src/_includes/filters/categoryFilter.js");
 const toArrayFilter = require("./src/_includes/filters/toArray.js");
 const getHostFilter = require("./src/_includes/filters/getHost.js");
-const getPathFilter = require("./src/_includes/filters/getPath.js");
 const getTargetFilter = require("./src/_includes/filters/getTarget.js");
-const getMethodFilter = require("./src/_includes/filters/getMethod.js");
+const getPostingMethodFilter = require("./src/_includes/filters/getPostingMethod.js");
 const getConsoleFilter = require("./src/_includes/filters/getConsole.js");
 const getPersonFilter = require("./src/_includes/filters/getPerson.js");
 const getMastodonHandleFilter = require("./src/_includes/filters/getMastodonHandle.js");
 const getTwitterHandleFilter = require("./src/_includes/filters/getTwitterHandle.js");
 const getPlaceFilter = require("./src/_includes/filters/getPlace.js");
 const getInternalTargetFilter = require("./src/_includes/filters/getInternalTarget.js");
-const getPostsTodayFilter = require("./src/_includes/filters/getPostsToday.js");
 const getWebmentionsFilter = require("./src/_includes/filters/getWebmentions.js");
 const getWebmentionReactionsFilter = require("./src/_includes/filters/getWebmentionReactions.js");
 const getWebmentionRepliesFilter = require("./src/_includes/filters/getWebmentionReplies.js");
@@ -52,27 +46,28 @@ const categoriesBuilder = require("./src/_includes/builders/categories.js");
 const tagsBuilder = require("./src/_includes/builders/tags.js");
 
 // Import data
-const global = require("./src/_data/global.js");
-const helpers = require("./src/_data/helpers.js");
-const site = require("./src/_data/site.json");
+// const global = require("./src/_data/global.js");
+// const helpers = require("./src/_data/helpers.js");
+// const site = require("./src/_data/site.json");
 const author = require("./src/_data/author.json");
-const webmentions = require("./src/_data/webmentions.json");
+// const webmentions = require("./src/_data/webmentions.json");
+
+// Simple Filters & Sorts
+const isPublished = item => !item.data.draft;
+const isNotReply = item => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes('https://chrisburnell.com')) || (item.data.in_reply_to && typeof item.data.in_reply_to === 'string' && item.data.in_reply_to.includes('https://chrisburnell.com'));
+const dateSort = (a, b) => b.date - a.date;
 
 module.exports = function(config) {
     const now = new Date();
     config.setDataDeepMerge(true);
 
-    // Simple Filters & Sorts
-    const isPublished = item => !item.data.draft;
-    const isNotReply = item => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes('https://chrisburnell.com')) || (item.data.in_reply_to && typeof item.data.in_reply_to === 'string' && item.data.in_reply_to.includes('https://chrisburnell.com'));
-    const dateSort = (a, b) => b.date - a.date;
-    const isTodayRSVP = item => item.data.rsvp && dateFormat(item.data.rsvp.date) == dateFormat(now);
-    const isFutureRSVP = item => item.data.rsvp && item.data.rsvp.date > now && dateFormat(item.data.rsvp.date) != dateFormat(now);
-
     // 11ty Plugins
-    config.addPlugin(rssPlugin);
     config.addPlugin(syntaxHighlightPlugin);
     config.addPlugin(imageAvatarPlugin);
+
+    // Transforms
+    config.addTransform("htmlmin", htmlMinTransform);
+    config.addTransform("parse", parseTransform);
 
     // Formats
     config.addFilter("markdownFormat", markdownFormat);
@@ -89,30 +84,42 @@ module.exports = function(config) {
     config.addFilter("publishedFilter", publishedFilter);
     config.addFilter("limit", limitFilter);
     config.addFilter("keySort", keySortFilter);
-    config.addFilter("keyFilter", keyFilter);
-    config.addFilter("titleSort", titleSortFilter);
     config.addFilter("tagFilter", tagFilter);
     config.addFilter("categoryFilter", categoryFilter);
     config.addFilter("toArray", toArrayFilter);
     config.addFilter("getHost", getHostFilter);
-    config.addFilter("getPath", getPathFilter);
     config.addFilter("getTarget", getTargetFilter);
-    config.addFilter("getMethod", getMethodFilter);
+    config.addFilter("getPostingMethod", getPostingMethodFilter);
     config.addFilter("getConsole", getConsoleFilter);
     config.addFilter("getPerson", getPersonFilter);
     config.addFilter("getMastodonHandle", getMastodonHandleFilter);
     config.addFilter("getTwitterHandle", getTwitterHandleFilter);
     config.addFilter("getPlace", getPlaceFilter);
     config.addFilter("getInternalTarget", getInternalTargetFilter);
-    config.addFilter("getPostsToday", getPostsTodayFilter);
     config.addFilter("getWebmentions", getWebmentionsFilter);
     config.addFilter("getWebmentionReactions", getWebmentionReactionsFilter);
     config.addFilter("getWebmentionReplies", getWebmentionRepliesFilter);
     config.addFilter("getCountByYear", getCountByYearFilter);
 
-    // Transforms
-    config.addTransform("htmlmin", htmlMinTransform);
-    config.addTransform("parse", parseTransform);
+    // Truncate Text Filters
+    const truncate = (() => {
+        const truncate = (at, str = "", count = 1, end = "…") =>
+            (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : '');
+        return Object.freeze({
+            sentences: (...args) => truncate(".", ...args),
+            words: (...args) => truncate(" ", ...args),
+            characters: (...args) => truncate("", ...args)
+        });
+    })();
+    // config.addFilter("maxSentences", (string, count, condition = true) => {
+    //     return (condition ? truncate.sentences(string, count) : string);
+    // });
+    config.addFilter("maxWords", (string, count, condition = true) => {
+        return (condition ? truncate.words(string, count) : string);
+    });
+    // config.addFilter("maxChars", (string, count, condition = true) => {
+    //     return (condition ? truncate.characters(string, count) : string);
+    // });
 
     // Layouts
     config.addLayoutAlias("base", "layouts/base.njk");
@@ -255,35 +262,19 @@ module.exports = function(config) {
     config.addCollection("todayRSVPs", collection => {
         return collection.getFilteredByTag("post")
             .filter(isPublished)
-            .filter(isTodayRSVP);
+            .filter(item => item.data.rsvp && dateFormat(item.data.rsvp.date) == dateFormat(now));
     });
 
     // Future RSVP Collection
     config.addCollection("futureRSVPs", collection => {
         return collection.getFilteredByTag("post")
             .filter(isPublished)
-            .filter(isFutureRSVP);
+            .filter(item => item.data.rsvp && item.data.rsvp.date > now && dateFormat(item.data.rsvp.date) != dateFormat(now));
     });
 
     // Builder Collections
     config.addCollection("categories", categoriesBuilder);
     config.addCollection("tags", tagsBuilder);
-
-    // 404
-    config.setBrowserSyncConfig({
-        callbacks: {
-            ready: function(err, browserSync) {
-                const content_404 = fs.readFileSync("_site/404.html");
-                browserSync.addMiddleware("*", (req, res) => {
-                    // Provides the 404 content without redirect.
-                    res.write(content_404);
-                    res.end();
-                });
-            }
-        },
-        ui: false,
-        ghostMode: false
-    });
 
     // Can I Use Embed
     config.addShortcode("caniuse", (feature, periods = 'future_1,current,past_1,past_2') => {
@@ -310,11 +301,6 @@ module.exports = function(config) {
             return `<span class="emoji" title="${title}" aria-hidden="true">${emoji}</span><span class="hidden">${title}</span>`;
         }
         return `<span class="emoji" aria-hidden="true">${emoji}</span>`;
-    });
-
-    // SVG
-    config.addShortcode("svg", (type) => {
-        return `<svg class="icon  icon--${type}" role="img" aria-label="${type}"><use xlink:href="/images/sprites.svg#svg--${type}" /></svg>`
     });
 
     // Sparkline
@@ -361,24 +347,20 @@ module.exports = function(config) {
                 </picture>`
     });
 
-    // Truncate Words
-    const truncate = (() => {
-        const truncate = (at, str = "", count = 1, end = "…") =>
-            (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : '');
-        return Object.freeze({
-            sentences: (...args) => truncate(".", ...args),
-            words: (...args) => truncate(" ", ...args),
-            characters: (...args) => truncate("", ...args)
-        });
-    })();
-    config.addFilter("maxSentences", (string, count, condition = true) => {
-        return (condition ? truncate.sentences(string, count) : string);
-    });
-    config.addFilter("maxWords", (string, count, condition = true) => {
-        return (condition ? truncate.words(string, count) : string);
-    });
-    config.addFilter("maxChars", (string, count, condition = true) => {
-        return (condition ? truncate.characters(string, count) : string);
+    // 404
+    config.setBrowserSyncConfig({
+        callbacks: {
+            ready: function(err, browserSync) {
+                const content_404 = fs.readFileSync("_site/404.html");
+                browserSync.addMiddleware("*", (req, res) => {
+                    // Provides the 404 content without redirect.
+                    res.write(content_404);
+                    res.end();
+                });
+            }
+        },
+        ui: false,
+        ghostMode: false
     });
 
     return {

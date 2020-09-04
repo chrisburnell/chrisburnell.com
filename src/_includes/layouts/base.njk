@@ -40,7 +40,6 @@
 
     <title>{{ meta_title | safe }}</title>
 
-    <link rel="preload" href="/css/non-critical.css" as="style">
     <link rel="preload" href="/fonts/heebo-black.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/proxima-nova-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/proxima-nova-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -92,8 +91,7 @@
 
     <meta http-equiv="cleartype" content="on">
 
-    <style>{%- include "../../../css/critical.css" -%}</style>
-    <link rel="stylesheet" href="/css/non-critical.css" media="print" onload="this.media='all'">
+    <style>{%- include "../../../css/main.css" -%}</style>
 
     {% if page.inputPath.includes('httpstatus') %}
         <meta name="robots" content="noindex,nofollow">
@@ -215,7 +213,7 @@
             </ol>
             <ol class=" [ footer__navigation ] " role="navigation">
                 <li>
-                    <a id="copyright" rel="license" href="/license">© 2020 <span class=" [ canada ] ">Chris Burnell</span></a>
+                    <a id="copyright" rel="license" href="/license/">© 2020 <span class=" [ canada ] ">Chris Burnell</span></a>
                 </li>
                 {% for item in socials %}
                     {% if not item.hidden %}

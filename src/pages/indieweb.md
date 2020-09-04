@@ -12,19 +12,19 @@ lede: How I've implemented and interact with the <a href="https://indieweb.org">
 I author posts of various *types* on this website, some of which I syndicate to silos around the web.
 
 <dl>
-    <dt><a href="/articles">Articles</a></dt>
+    <dt><a href="/articles/">Articles</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><a href="/notes">Notes</a></dt>
+    <dt><a href="/notes/">Notes</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><a href="/bookmarks">Bookmarks</a></dt>
+    <dt><a href="/bookmarks/">Bookmarks</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
-    <dt><a href="/pens">Pens</a></dt>
+    <dt><a href="/code/">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
-    <dt><a href="/beer">Beer</a></dt>
+    <dt><a href="/beer/">Beer</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external">Untappd</a> using my project, <a href="https://ownyour.beer" rel="external">OwnYourBeer</a>, to this website.</dd>
-    <dt><a href="/books">Books</a></dt>
+    <dt><a href="/books/">Books</a></dt>
     <dd>Typically posted only on this website.</dd>
-    <dt><a href="/music">Music</a></dt>
+    <dt><a href="/music/">Music</a></dt>
     <dd>Typically posted only on this website.</dd>
 </dl>
 
