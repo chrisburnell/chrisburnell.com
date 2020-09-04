@@ -58,6 +58,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     @include v(flex-basis, avatar);
+    @include v(height, avatar);
     float: left;
     position: relative;
     box-shadow: inset 0 var(--measure-border-default) 0 0 var(--color-black--gamma);
