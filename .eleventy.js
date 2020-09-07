@@ -269,7 +269,7 @@ module.exports = function(config) {
     config.addCollection("futureRSVPs", collection => {
         return collection.getFilteredByTag("post")
             .filter(isPublished)
-            .filter(item => item.data.rsvp && item.data.rsvp.date > now && dateFormat(item.data.rsvp.date) != dateFormat(now));
+            .filter(item => item.data.rsvp && epochFormat(item.data.rsvp.date) > now && dateFormat(item.data.rsvp.date) != dateFormat(now));
     });
 
     // Builder Collections

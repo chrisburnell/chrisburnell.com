@@ -21,7 +21,7 @@ eleventyComputed:
     </h2>
     <nav class=" [ deck ] ">
         {% for item in collections.todayRSVPs %}
-            {{ deckItem(item, global.now, collections.all, webmentions, false) }}
+            {{ deckItem(item, global.now, collections.all, [], false) }}
         {% endfor %}
     </nav>
 {% endif %}
@@ -37,7 +37,7 @@ eleventyComputed:
     </h2>
     <nav class=" [ deck ] ">
         {% for item in collections.futureRSVPs %}
-            {{ deckItem(item, global.now, collections.all, webmentions, false) }}
+            {{ deckItem(item, global.now, collections.all, [], false) }}
         {% endfor %}
     </nav>
 {% endif %}
