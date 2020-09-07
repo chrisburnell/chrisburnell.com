@@ -1,4 +1,33 @@
 [
+
+  {
+    "source": "https://chrisburnell.com/article/april-lws-talk/",
+    "verified": true,
+    "verified_date": "2020-09-07T14:54:21+00:00",
+    "id": 849055,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "Chris Burnell",
+        "url": "https://chrisburnell.com/",
+        "photo": "https://webmention.io/avatar/chrisburnell.com/aeaa55f6196144ff0e4f3ef127d6466c91cd17eb8d7abb09b94917fe3d5c194a.jpg"
+      },
+      "url": "https://chrisburnell.com/article/april-lws-talk/",
+      "name": "April LWS Talk",
+      "content": "<p>Last week, <a href=\"http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/\">I spoke</a> at <a href=\"https://londonwebstandards.org/\">London Web Standards</a>, a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent <em>media queries</em>.</p>",
+      "published": "2016-04-29T11:00:00+00:00",
+      "published_ts": 1461927600
+    },
+    "activity": {
+      "type": "link",
+      "sentence": "Chris Burnell posted 'Last week, I spoke at London Web Standards, a monthl...' linking to https://chrisburnell.com/talk/middle-out/",
+      "sentence_html": "<a href=\"https://chrisburnell.com/\">Chris Burnell</a> posted 'Last week, I spoke at London Web Standards, a monthl...' linking to <a href=\"https://chrisburnell.com/talk/middle-out/\">https://chrisburnell.com/talk/middle-out/</a>"
+    },
+    "rels": {
+      "canonical": "https://chrisburnell.com/article/april-lws-talk/"
+    },
+    "target": "https://chrisburnell.com/talk/middle-out/"
+  },
   {
     "source": "https://chrisburnell.com/note/1599467305/",
     "verified": true,
@@ -6676,26 +6705,6 @@
       "sentence_html": "<a href=\"https://twitter.com/rgr35s\">Rowdy</a> favorited a tweet <a href=\"https://chrisburnell.com/note/911332601306152961/\">https://chrisburnell.com/note/911332601306152961/</a>"
     },
     "target": "https://chrisburnell.com/note/911332601306152961/"
-  },
-  {
-    "source": "https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css",
-    "verified": true,
-    "verified_date": "2017-08-21T22:20:02+00:00",
-    "id": 452690,
-    "private": false,
-    "data": {
-      "url": "https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css",
-      "name": null,
-      "content": null,
-      "published": null,
-      "published_ts": null
-    },
-    "activity": {
-      "type": "link",
-      "sentence": "https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css posted '' linking to https://chrisburnell.com/talk/middle-out/",
-      "sentence_html": "<a href=\"https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css\">someone</a> posted '' linking to <a href=\"https://chrisburnell.com/talk/middle-out/\">https://chrisburnell.com/talk/middle-out/</a>"
-    },
-    "target": "https://chrisburnell.com/talk/middle-out/"
   },
   {
     "source": "http://mailchi.mp/responsivedesign/265?e=c9f997f633",
