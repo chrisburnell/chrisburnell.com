@@ -80,7 +80,7 @@
             <time class=" [ dt-end ] " datetime="{{ rsvp.finish | w3DateFormat }}">{% if rsvp.date | dateFormat != rsvp.finish | dateFormat %}{{ rsvp.finish | dateFormat }} {% endif %}{{ rsvp.finish | timeFormat(true) }}</time>
         </li>
     {% endif %}
-    {% if tags.includes('article') %}
+    {% if show_reading_length %}
         <li class=" [ reading-length ] ">
             {% emoji '📚' %}
             <strong>{{ helpers.getReadingTime(content) }}</strong>

@@ -8,5 +8,6 @@
     "throwback",
     "writing"
   ],
-  "prefix": "a"
+  "prefix": "a",
+  "show_reading_length": true
 }

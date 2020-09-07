@@ -93,7 +93,7 @@
 
     <style>{%- include "../../../css/main.css" -%}</style>
 
-    {% if page.inputPath.includes('httpstatus') %}
+    {% if tags and tags.includes('httpstatus') %}
         <meta name="robots" content="noindex,nofollow">
     {% else %}
         <!-- The URL -->
