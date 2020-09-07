@@ -13,7 +13,7 @@
       },
       "url": "https://chrisburnell.com/note/1599467305/",
       "name": null,
-      "content": "<p>🚚 <a href=\"https://chrisburnell.com/bowhead/\">Bowhead</a> is now at <a href=\"https://github.com/chrisburnell/bowhead/releases/tag/0.1.8\">version 0.1.8</a>, which adds a few things and fixes others, namely cleaning up what files are packaged for <em>npm</em> so as to send as little as necessary.</p>\n<p>If you're looking for a barebones SCSS solution for managing design tokens or even for a tool that will generate CSS Variables for you, I’d be honoured if you gave it a try:</p>\n<pre><code>npm install @chrisburnell/bowhead\n</code></pre>",
+      "content": "<p>🚚 <a href=\"https://chrisburnell.com/bowhead/\">Bowhead</a> is now at <a href=\"https://github.com/chrisburnell/bowhead/releases/tag/0.1.8\">version 0.1.8</a>, which adds a few things and fixes others, namely cleaning up what files are packaged for <em>npm</em> so as to send as little as necessary. If you're looking for a barebones SCSS solution for managing design tokens or even for a tool that will generate CSS Variables for you, I’d be honoured if you gave it a try.</p>",
       "published": "2020-09-07T08:28:23+00:00",
       "published_ts": 1599467303
     },

@@ -1,5 +1,7 @@
 ---
 date: 2019-08-30T10:48:00+0100
+updated: 2020-09-07T13:00:00+0100
+updated_text: "Since <a href=\"/note/1596729985/\">moving to Eleventy</a> I have put a bit more thought and effort into how I would transition my design from light to dark, and no longer use the <code>filter()</code> technique described below."
 title: "The Flip-Flop Technique"
 lede: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://hankchizljaw.com\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, and I found a wonky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
 tags:
