@@ -13,13 +13,8 @@ eleventyComputed:
 {% if collections.todayRSVPs.length %}
     <h2 id="today-rsvps">
         <a href="/rsvps/">Events I’m Attending Today</a>
-        <a href="#today-rsvps" class=" [ fragment-anchor ] ">
-            <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                <use xlink:href="/images/sprites.svg#svg--link"></use>
-            </svg>
-        </a>
     </h2>
-    <nav class=" [ deck ] ">
+    <nav class=" [ deck ] " aria-labelledby="today-rsvps">
         {% for item in collections.todayRSVPs %}
             {{ deckItem(item, global.now, collections.all, [], false) }}
         {% endfor %}
@@ -29,13 +24,8 @@ eleventyComputed:
 {% if collections.futureRSVPs.length %}
     <h2 id="upcoming-rsvps">
         <a href="/rsvps/">Upcoming Events</a>
-        <a href="#upcoming-rsvps" class=" [ fragment-anchor ] ">
-            <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                <use xlink:href="/images/sprites.svg#svg--link"></use>
-            </svg>
-        </a>
     </h2>
-    <nav class=" [ deck ] ">
+    <nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
         {% for item in collections.futureRSVPs %}
             {{ deckItem(item, global.now, collections.all, [], false) }}
         {% endfor %}
@@ -46,13 +36,8 @@ eleventyComputed:
     <div class=" [ box ] [ owl--medium ] ">
         <h2 id="on-this-day">
             On This Day
-            <a href="#on-this-day" class=" [ fragment-anchor ] ">
-                <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                    <use xlink:href="/images/sprites.svg#svg--link"></use>
-                </svg>
-            </a>
         </h2>
-        <nav class=" [ deck ] ">
+        <nav class=" [ deck ] " aria-labelledby="on-this-day">
             {% for item in collections.throwbackPosts | limit(site.limits.snapshot) %}
                 {{ deckItem(item, global.now, collections.all, [], false) }}
             {% endfor %}
@@ -62,13 +47,8 @@ eleventyComputed:
 
 <h2 id="writing">
     <a href="/writing/">Latest Writing</a>
-    <a href="#writing" class=" [ fragment-anchor ] ">
-        <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-            <use xlink:href="/images/sprites.svg#svg--link"></use>
-        </svg>
-    </a>
 </h2>
-<nav class=" [ deck ] [ h-feed ] ">
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="writing">
     {% for item in collections.writingPosts | limit(site.limits.snapshot) %}
         {{ deckItem(item, global.now, collections.all, webmentions) }}
     {% endfor %}
@@ -76,18 +56,13 @@ eleventyComputed:
 
 <h2 id="posts">
     <a href="/archive/">More Posts</a>
-    <a href="#posts" class=" [ fragment-anchor ] ">
-        <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-            <use xlink:href="/images/sprites.svg#svg--link"></use>
-        </svg>
-    </a>
 </h2>
-<nav class=" [ deck ] [ h-feed ] ">
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
     {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
         {{ deckItem(item, global.now, collections.all, webmentions) }}
     {% endfor %}
 </nav>
 
-<nav class=" [ navigator ] ">
+<nav class=" [ navigator ] " aria-label="Archive Navigation">
     <a class=" [ button ] " href="/archive/">Browse the Archive</a>
 </nav>

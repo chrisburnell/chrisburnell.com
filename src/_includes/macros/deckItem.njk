@@ -185,7 +185,7 @@
                 {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
                 {% if responses.length %}
                     ·
-                    <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }}</a>
+                    <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
                 {% endif %}
             </div>
         {% endif %}
