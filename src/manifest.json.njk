@@ -1,5 +1,5 @@
 ---
-permalink: /manifest.webmanifest
+permalink: /manifest.json
 icon_sizes:
 - 16
 - 32
@@ -19,7 +19,7 @@ icon_sizes:
   "name": "{{ site.title | striptags(true) }}",
   "short_name": "{{ site.title | replace(' ', '') | striptags(true) }}",
   "description": "{{ site.lede | striptags(true) }}",
-  "display": "browser",
+  "display": "minimal-ui",
   "orientation": "any",
   "start_url": "{{ site.url }}",
   "homepage_url": "{{ site.url }}",
