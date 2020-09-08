@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.17";
+const VERSION = "v3.0.18";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -142,28 +142,28 @@ self.addEventListener("fetch", event => {
     }
 
     // Pinkie Swear?
-    const cachePromise = caches.match(request);
+    const retrieveFromCache = caches.match(request);
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
     if (request.headers.get("Accept").includes("text/html")) {
         event.respondWith(
             new Promise(resolveWithResponse => {
-                let timer = setTimeout(() => {
+                const timer = setTimeout(() => {
                     // Timeout: CACHE
-                    cachePromise.then(responseFromCache => {
+                    retrieveFromCache.then(responseFromCache => {
                         if (responseFromCache) {
                             resolveWithResponse(responseFromCache);
                         }
                     })
                 }, TIMEOUT);
 
-                let fetchPromise = event.preloadResponse || fetch(request);
+                const retrieveFromFetch = event.preloadResponse || fetch(request);
 
-                fetchPromise.then(responseFromFetch => {
+                retrieveFromFetch.then(responseFromFetch => {
                     // NETWORK
-                    // Stash a copy of this page in the PAGES cache
-                    let copy = responseFromFetch.clone();
                     clearTimeout(timer);
+                    let copy = responseFromFetch.clone();
+                    // Stash a copy of this page in the PAGES cache
                     try {
                         event.waitUntil(
                             stashInCache(PAGES_CACHE, request, copy)
@@ -174,55 +174,48 @@ self.addEventListener("fetch", event => {
                     }
                     resolveWithResponse(responseFromFetch);
                 })
-                .catch(error => {
+                .catch(fetchError => {
                     clearTimeout(timer);
-                    console.error(error);
+                    console.error(fetchError);
                     // CACHE or FALLBACK
-                    cachePromise.then(responseFromCache => {
+                    caches.match(request).then(responseFromCache => {
                         resolveWithResponse(responseFromCache || caches.match("/offline/"));
                     });
                 });
             })
-        );
+        )
         return;
     }
 
     // For all other requests, look in the cache first, fall back to the network
     event.respondWith(
-        new Promise(resolveWithResponse => {
-            let timer = setTimeout(() => {
-                // Timeout: CACHE
-                cachePromise.then(responseFromCache => {
-                    if (responseFromCache) {
-                        resolveWithResponse(responseFromCache);
-                    }
-                })
-            }, TIMEOUT);
-
-            let fetchPromise = event.preloadResponse || fetch(request);
-
-            fetchPromise.then(responseFromFetch => {
+        caches.match(request)
+        .then(responseFromCache => {
+            // CACHE
+            return responseFromCache || fetch(request)
+            .then(responseFromFetch => {
                 // NETWORK
-                // Stash a copy of this asset in the ASSETS or IMAGES cache
-                let copy = responseFromFetch.clone();
-                clearTimeout(timer);
-                try {
-                    event.waitUntil(
-                        stashInCache((request.url.match(/\.(jpe?g|png|gif|webp)/) ? IMAGES_CACHE : ASSETS_CACHE), request, copy)
-                    );
+                // Stash a copy of this asset in the IMAGES cache
+                if (request.url.match(/\.(jpe?g|png|gif|webp)/)) {
+                    const copy = responseFromFetch.clone();
+                    try {
+                        event.waitUntil(
+                            stashInCache(IMAGES_CACHE, request, copy)
+                        );
+                    }
+                    catch (error) {
+                        console.error(error);
+                    }
                 }
-                catch(error) {
-                    console.error(error);
-                }
-                resolveWithResponse(responseFromFetch);
+                return responseFromFetch;
             })
-            .catch(error => {
-                clearTimeout(timer);
-                console.error(error);
-                // CACHE or FALLBACK
-                cachePromise.then(responseFromCache => {
-                    resolveWithResponse(responseFromCache || (request.url.match(/\.(jpe?g|png|gif|webp)/) ? new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#f9f9f9" d="M0 0h400v300H0z"/><text fill="#2b2b2b" font-family="sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">Offline</tspan></text></g></svg>', { headers: { "Content-Type": "image/svg+xml", "Cache-Control": "no-store" } }) : caches.match("/offline/")));
-                });
+            .catch(fetchError => {
+                console.error(fetchError);
+                // FALLBACK
+                // show an offline placeholder image
+                if (request.url.match(/\.(jpe?g|png|gif|webp)/)) {
+                    return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>', {headers: {'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store'}});
+                }
             });
         })
     );

@@ -44,7 +44,8 @@ module.exports = function parse(value, outputPath) {
                 const anchor = document.createElement('a');
 
                 anchor.setAttribute('href', `#${headingID}`);
-                anchor.classList.add('fragment-anchor');
+                anchor.setAttribute('title', `Permalink for ${heading.textContent.trim()}`);
+                anchor.className = 'fragment-anchor';
                 anchor.innerHTML = minify(`
                     <span class="hidden"> permalink</span>
                     <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
