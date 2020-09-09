@@ -38,7 +38,8 @@ icon_sizes:
       {
         "src": "/images/favicon-{{ size }}.png",
         "type": "image/png",
-        "sizes": "{{ size }}x{{ size }}"
+        "sizes": "{{ size }}x{{ size }}"{% if loop.last %},
+        "purpose": "any maskable"{% endif %}
       },
       {
         "src": "/images/favicon-{{ size }}.webp",
