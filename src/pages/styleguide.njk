@@ -384,6 +384,11 @@ p q r s t u v w x y z { | } ~
 <pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$measure</span></span><span class="token punctuation">:</span> small<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$measures</span><span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"There is no measure named #{$measure} in `$measures`. measure should be one of #{map-keys($measures)}."</span><span class="token punctuation">;</span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br>  &amp; <span class="token operator">&gt;</span> <span class="token operator">*</span> <span class="token operator">+</span> *</span> <span class="token punctuation">{</span><br><span class="highlight-line">    <span class="token keyword">@include</span> <span class="token function">v</span><span class="token punctuation">(</span>margin-top<span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 
 
+<h2>Sparkline</h2>
+
+<div>{% sparkline 'Example', collections.posts %}</div>
+
+
 <h2>Figure</h2>
 
 <figure>
@@ -394,7 +399,7 @@ p q r s t u v w x y z { | } ~
 
 <h2>Video</h2>
 
-<iframe src="https://player.vimeo.com/video/11933164?color={{ site.color }}&title=0&byline=0&portrait=0" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://player.vimeo.com/video/11933164?color={{ tokens.color.raven | replace('#','') }}&title=0&byline=0&portrait=0" allowfullscreen loading="lazy"></iframe>
 
 
 <h2>Speakerdeck</h2>

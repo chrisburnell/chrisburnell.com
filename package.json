@@ -42,7 +42,7 @@
     "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
     "scss": "npx sass src/scss:css --no-source-map --color --style=compressed",
     "build": "npm run tokens; npm run scss; ELEVENTY_ENV=production npx @11ty/eleventy",
-    "serve": "npm run tokens; concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
+    "serve": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }

@@ -317,7 +317,7 @@ module.exports = function(config) {
                     count++;
                 }
             }
-            values.push(count);
+            values.push(Math.min(count, 12));
             end = before - 1;
             before = before - (60 * 60 * 24  * 7);
         }
@@ -346,6 +346,8 @@ module.exports = function(config) {
                          alt="${alt}" loading="lazy">
                 </picture>`
     });
+
+    config.addWatchTarget("./src/js/");
 
     // 404
     config.setBrowserSyncConfig({

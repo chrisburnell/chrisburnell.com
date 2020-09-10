@@ -4,7 +4,6 @@
   "lede": "My name’s <span class=\"canada\">Chris Burnell</span>, and I’m a <span class=\"canada\">Canadian</span> <span class=\"p-job-title\">Front End Developer</span>, <span class=\"p-role\">Organiser</span> for <a href=\"https://stateofthebrowser.com\"><span class=\"p-org\">London Web Standards</span></a>, <a href=\"https://bloodbuilder.online/feonir\">Elven Sorcerer</a>, and <a href=\"/projects\">rabbit-hole deep-diver</a> living in <span class=\"p-locality\">London, England</span>. This is where I think, write, and share my passion for the web.",
   "url": "https://chrisburnell.com",
   "locale": "en",
-  "color": "5f8aa6",
   "established": "2008",
   "limits": {
     "snapshot": 3,
