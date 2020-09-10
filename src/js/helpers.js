@@ -107,7 +107,8 @@ const helpers = {
     getFetchResponse: (response) => {
         if (response.ok) {
             return response;
-        } else {
+        }
+        else {
             let error = new Error(response.statusText);
             error.response = response;
             throw error;
@@ -179,15 +180,20 @@ const helpers = {
 
         if (difference < minute * 2) {
             return "just moments ago";
-        } else if (difference < hour * 2) {
+        }
+        else if (difference < hour * 2) {
             return rtf.format(Math.ceil((compare - today) / minute), "minute");
-        } else if (difference < day * 2) {
+        }
+        else if (difference < day * 2) {
             return rtf.format(Math.ceil((compare - today) / hour), "hour");
-        } else if (difference < week * 2) {
+        }
+        else if (difference < week * 2) {
             return rtf.format(Math.ceil((compare - today) / day), "day");
-        } else if (difference < month * 2) {
+        }
+        else if (difference < month * 2) {
             return rtf.format(Math.ceil((compare - today) / week), "week");
-        } else if (difference < year * 2) {
+        }
+        else if (difference < year * 2) {
             return rtf.format(Math.ceil((compare - today) / month), "month");
         }
         return rtf.format(Math.ceil((compare - today) / year), "year");

@@ -19,7 +19,8 @@ let updateNetwork = () => {
         console.log("You have regained your network connection.");
         notification.innerHTML = "👍 You have regained your network connection.";
         notification.classList.add("notification--positive");
-    } else {
+    }
+    else {
         console.log("You have lost your network connection.");
         notification.innerHTML = "👎 You have lost your network connection.";
         notification.classList.add("notification--negative");
@@ -39,9 +40,11 @@ if (!!navigator.serviceWorker) {
             let serviceWorker;
             if (registration.installing) {
                 serviceWorker = registration.installing;
-            } else if (registration.waiting) {
+            }
+            else if (registration.waiting) {
                 serviceWorker = registration.waiting;
-            } else if (registration.active) {
+            }
+            else if (registration.active) {
                 serviceWorker = registration.active;
             }
             if (serviceWorker) {
@@ -64,7 +67,8 @@ if (!!navigator.serviceWorker) {
             });
         }
     });
-} else {
+}
+else {
     console.log("ServiceWorkers are not supported in your browser.");
 }
 

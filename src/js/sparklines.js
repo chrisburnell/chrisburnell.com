@@ -40,7 +40,8 @@ let buildSparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%,
             dX = (dX + x) / 2;
             if (y > dY) {
                 dY = ((dY + y) / 3) * 2;
-            } else if (y < dY) {
+            }
+            else if (y < dY) {
                 dY = (dY + y) / 3;
             }
             // ctx.quadraticCurveTo(x, y, dX, dY);
@@ -78,7 +79,8 @@ let playSparkline = (notes, frequencies = [440], duration = 3000, volume = 0.5) 
         if (note < notes.length) {
             instrument.frequency.value = frequencies[notes[note]];
             note = note + 1;
-        } else {
+        }
+        else {
             amplifier.gain.value = 0;
         }
         playing = window.setTimeout(playNotes, noteLength);

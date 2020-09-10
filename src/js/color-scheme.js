@@ -20,7 +20,8 @@ const applySetting = (passedSetting) => {
     if (currentSetting) {
         document.documentElement.setAttribute("data-user-color-scheme", currentSetting);
         schemeStatusText.innerText = `Enable ${currentSetting === "dark" ? "Light" : "Dark"} Mode`;
-    } else {
+    }
+    else {
         schemeStatusText.innerText = `Enable ${getCSSCustomProp(COLOR_SCHEME_KEY) === "dark" ? "Light" : "Dark"} Mode`;
     }
 };
