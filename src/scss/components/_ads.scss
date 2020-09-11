@@ -37,7 +37,7 @@
 }
 
 .ad__split {
-    @include v(background-color, black--delta);
+    @include v(background-color, thunder--delta);
     @include v(padding, medium);
     border-top: var(--measure-border-thin) solid var(--color-raven--beta);
     border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);

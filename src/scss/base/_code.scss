@@ -62,7 +62,7 @@ pre {
 // Highlighted Code Blocks
 pre[class*="language-"] {
     background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-mineshaft) var(--measure-gap), var(--color-mineshaft) 100%);
-    @include v(color, white);
+    @include v(color, milou);
     width: auto;
     min-width: 10vw;
     margin-bottom: 0;
@@ -95,7 +95,7 @@ code[class*="language-"] {
         @include absolute(top-left);
         @include font-family(alpha);
         @include v(background-color, dove);
-        @include v(color, white);
+        @include v(color, milou);
         @include v(height, gap);
         display: flex;
         align-items: center;
@@ -110,8 +110,8 @@ code[class*="language-"] {
         &.language-#{$language} {
             &::before {
                 background-color: #{$color} !important;
-                color: contrasting-color($color, $color-mineshaft, $color-white) !important;
-                text-shadow: 0 var(--measure-border-hairline) 0 contrasting-color($color, $color-white, $color-mineshaft) !important;
+                color: contrasting-color($color, $color-mineshaft, $color-milou) !important;
+                text-shadow: 0 var(--measure-border-hairline) 0 contrasting-color($color, $color-milou, $color-mineshaft) !important;
             }
         }
     }

@@ -56,8 +56,8 @@ textarea,
 input,
 textarea {
     @include transition(border-color);
-    @include v(background-color, white);
-    @include v(color, black);
+    @include v(background-color, milou);
+    @include v(color, thunder);
     box-sizing: inherit !important;
     padding: 0 0.4em;
     border: v(measure, border-thin) solid v(color, alto);
@@ -127,7 +127,7 @@ input[type="checkbox"] {
         @include non-selectable;
         @include transition;
         @include v(background-color, kaiser);
-        @include v(color, white);
+        @include v(color, milou);
         display: inline-block;
         padding: 0 v(measure, medium);
         @include v(border-radius, border-default);
@@ -139,7 +139,7 @@ input[type="checkbox"] {
 
         &::after {
             content: "✔";
-            @include v(background-color, black--gamma);
+            @include v(background-color, thunder--gamma);
             width: var(--measure-large);
             display: none;
             position: absolute;

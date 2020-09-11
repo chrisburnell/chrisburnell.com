@@ -87,8 +87,8 @@
 /// Contrasting Text Color
 ///
 /// @param {Color} $background-color - Background-color to contrast against
-/// @param {Color} $text-color-light [$color-white] - Color for dark backgrounds
-/// @param {Color} $text-color-dark [$color-black] - Color for light backgrounds
+/// @param {Color} $text-color-light [$color-milou] - Color for dark backgrounds
+/// @param {Color} $text-color-dark [$color-thunder] - Color for light backgrounds
 ///
 /// @example scss
 ///   background-color: #111111;
@@ -100,7 +100,7 @@
 ///
 /// @return {Color} Contrasting Text Color
 ///
-@function contrasting-color($background-color, $text-color-dark: $color-kaiser, $text-color-light: $color-white) {
+@function contrasting-color($background-color, $text-color-dark: $color-kaiser, $text-color-light: $color-milou) {
     @if not $background-color {
         @warn "`contrasting-color()` expects at least one parameter.";
         @return false;

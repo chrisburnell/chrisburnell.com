@@ -13,7 +13,7 @@
 
     .header,
     .main {
-        color: var(--color-white);
+        color: var(--color-milou);
     }
 
     .main {
@@ -21,7 +21,7 @@
     }
 
     .footer {
-        background-image: linear-gradient(to bottom, var(--color-black--gamma), var(--color-black--gamma));
+        background-image: linear-gradient(to bottom, var(--color-thunder--gamma), var(--color-thunder--gamma));
     }
 
     h1 {
@@ -56,8 +56,8 @@
             transparent calc(var(--measure-gap) - var(--measure-border-thin)),
             var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)),
             var(--color-raven--beta) var(--measure-gap),
-            var(--color-black--gamma) var(--measure-gap),
-            var(--color-black--gamma) 100%
+            var(--color-thunder--gamma) var(--measure-gap),
+            var(--color-thunder--gamma) 100%
         );
     }
 }

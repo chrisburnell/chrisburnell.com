@@ -5,7 +5,7 @@
 
 .notification {
     @include v(background-color, mineshaft);
-    @include v(color, white);
+    @include v(color, milou);
     display: block;
     padding: var(--measure-small) var(--measure-medium);
     position: fixed;

@@ -11,7 +11,7 @@ html {
     overflow-y: scroll;
     overscroll-behavior: contain;
     scroll-behavior: smooth;
-    scrollbar-color: v(color, raven) v(color, white);
+    scrollbar-color: v(color, raven) v(color, milou);
     font-size: 100%;
     // prevent adjustments of font-size after orientation changes in IE on
     // Windows Phone and in iOS
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    @include v(background-color, white);
+    @include v(background-color, milou);
     @include v(color, kaiser);
     width: 100%;
     min-height: 100vh;

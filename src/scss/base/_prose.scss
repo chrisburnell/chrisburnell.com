@@ -74,7 +74,7 @@ sup {
 }
 
 hr {
-    @include v(background-color, black--gamma);
+    @include v(background-color, thunder--gamma);
     width: 100%;
     height: var(--measure-border-thin);
     display: block;
@@ -97,7 +97,7 @@ hr {
 // Text Selection
 ::selection {
     @include v(background-color, raven);
-    @include v(color, white);
+    @include v(color, milou);
     text-shadow: none;
 }
 .canada::selection {

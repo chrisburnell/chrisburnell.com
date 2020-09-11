@@ -33,13 +33,6 @@
             flex: 1 0 33.333%;
         }
 
-        @each $color-name, $color-value in $palette-colors {
-            &[data-color="#{'' + $color-name}"] {
-                @include v(background-color, $color-name);
-                color: contrasting-color($color-value);
-            }
-        }
-
         h3 {
             font-size: var(--font-scale-0);
             margin-bottom: 0;
@@ -112,7 +105,7 @@
 
     &:hover,
     &:focus {
-        @include v(color, white);
+        @include v(color, milou);
     }
 
     &::before {

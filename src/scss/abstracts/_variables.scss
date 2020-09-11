@@ -62,7 +62,7 @@ $opacity-delta: 0.05;
 /// @type Color
 $color-transparent: hsla(0, 0, 0, 0);
 /// @type Color
-$color-black: hsl(0, 0%, 2.4%); // #060606
+$color-thunder: hsl(0, 0%, 2.4%); // #060606
 /// @type Color
 $color-mineshaft: hsl(0, 0%, 16.9%); // #2b2b2b
 /// @type Color
@@ -72,7 +72,7 @@ $color-dove: hsl(0, 0%, 45.1%); // #737373
 /// @type Color
 $color-alto: hsl(0, 0%, 86.7%); // #dddddd
 /// @type Color
-$color-white: hsl(0, 0%, 97.6%); // #f9f9f9
+$color-milou: hsl(0, 0%, 97.6%); // #f9f9f9
 /// @type Color
 $color-bowhead: hsl(203.7, 28.5%, 43.2%); // #4f758e
 /// @type Color
@@ -80,7 +80,7 @@ $color-raven: hsl(203.7, 28.5%, 51.2%); // #5f8aa6
 /// @type Color
 $color-coyote: hsl(203.7, 28.5%, 57.1%); // #7298b1
 /// @type Color
-$color-bear: mix($color-raven, $color-white, $opacity-gamma * 100); // #eaeef1
+$color-bear: mix($color-raven, $color-milou, $opacity-gamma * 100); // #eaeef1
 /// @type Color
 $color-lynx: mix($color-raven, $color-mineshaft, $opacity-gamma * 100); // #303537
 /// @type Color
@@ -89,22 +89,22 @@ $color-canada: hsl(356.8, 82.6%, 54.9%); // #eb2d37
 $color-highlight: hsl(50.6, 100%, 50%); // #ffd700
 
 /// @type Color
-$color-black--alpha: rgba($color-black, $opacity-alpha);
+$color-thunder--alpha: rgba($color-thunder, $opacity-alpha);
 /// @type Color
-$color-black--beta: rgba($color-black, $opacity-beta);
+$color-thunder--beta: rgba($color-thunder, $opacity-beta);
 /// @type Color
-$color-black--gamma: rgba($color-black, $opacity-gamma);
+$color-thunder--gamma: rgba($color-thunder, $opacity-gamma);
 /// @type Color
-$color-black--delta: rgba($color-black, $opacity-delta);
+$color-thunder--delta: rgba($color-thunder, $opacity-delta);
 
 /// @type Color
-$color-white--alpha: rgba($color-white, $opacity-alpha);
+$color-milou--alpha: rgba($color-milou, $opacity-alpha);
 /// @type Color
-$color-white--beta: rgba($color-white, $opacity-beta);
+$color-milou--beta: rgba($color-milou, $opacity-beta);
 /// @type Color
-$color-white--gamma: rgba($color-white, $opacity-gamma);
+$color-milou--gamma: rgba($color-milou, $opacity-gamma);
 /// @type Color
-$color-white--delta: rgba($color-white, $opacity-delta);
+$color-milou--delta: rgba($color-milou, $opacity-delta);
 
 /// @type Color
 $color-raven--alpha: rgba($color-raven, $opacity-alpha);
@@ -165,7 +165,7 @@ $color-nunjucks: hsl(115.1, 40.2%, 36.1%); // #3d8137
 /// @type Color
 $color-sass: hsl(330.3, 50.2%, 55.1%); // #c6538c
 /// @type Color
-$color-liquid-white: mix($color-white, $color-liquid, 80%); // #dfebd9
+$color-liquid-white: mix($color-milou, $color-liquid, 80%); // #dfebd9
 
 /// @type Color
 $color-codepen: hsl(0, 0%, 12.9%); // #212121

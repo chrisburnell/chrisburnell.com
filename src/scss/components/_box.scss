@@ -4,7 +4,7 @@
 ////
 
 .box {
-    @include v(background-color, black--delta);
+    @include v(background-color, thunder--delta);
     @include v(padding, medium);
     border-top: var(--measure-border-thin) solid var(--color-raven--beta);
     border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);

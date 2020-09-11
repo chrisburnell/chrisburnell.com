@@ -4,12 +4,12 @@
 ////
 
 [data-user-color-scheme="halloween"] {
-    --color-black: #{invert($color-black)};
+    --color-thunder: #{invert($color-thunder)};
     --color-mineshaft: #{invert($color-mineshaft)};
     --color-kaiser: #{invert($color-kaiser)};
     --color-dove: #{invert($color-dove)};
     --color-alto: #{invert($color-alto)};
-    --color-white: #{invert($color-white)};
+    --color-milou: #{invert($color-milou)};
     --color-raven: #ff751a; // hsl(24, 100%, 55%)
     --color-bowhead: #f56200; // hsl(24, 100%, 48%)
     --color-coyote: #ff8b3d; // hsl(24, 100%, 62%)

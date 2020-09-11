@@ -30,7 +30,7 @@ a,
 
     &:active {
         @include v(background-color, canada);
-        color: v(color, white) !important;
+        color: v(color, milou) !important;
         @include v(outline-width, border-thin);
         outline-offset: 0;
     }

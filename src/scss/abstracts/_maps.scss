@@ -22,21 +22,21 @@ $site-colors: (
     bear: $color-bear,
     lynx: $color-lynx,
     canada: $color-canada,
-    black: $color-black,
+    thunder: $color-thunder,
     mineshaft: $color-mineshaft,
     kaiser: $color-kaiser,
     dove: $color-dove,
     alto: $color-alto,
-    white: $color-white,
+    milou: $color-milou,
     highlight: $color-highlight,
-    black--alpha: $color-black--alpha,
-    black--beta: $color-black--beta,
-    black--gamma: $color-black--gamma,
-    black--delta: $color-black--delta,
-    white--alpha: $color-white--alpha,
-    white--beta: $color-white--beta,
-    white--gamma: $color-white--gamma,
-    white--delta: $color-white--delta,
+    thunder--alpha: $color-thunder--alpha,
+    thunder--beta: $color-thunder--beta,
+    thunder--gamma: $color-thunder--gamma,
+    thunder--delta: $color-thunder--delta,
+    milou--alpha: $color-milou--alpha,
+    milou--beta: $color-milou--beta,
+    milou--gamma: $color-milou--gamma,
+    milou--delta: $color-milou--delta,
     raven--alpha: $color-raven--alpha,
     raven--beta: $color-raven--beta,
     raven--gamma: $color-raven--gamma,
@@ -55,13 +55,15 @@ $palette-colors: (
     bowhead: $color-bowhead,
     raven: $color-raven,
     coyote: $color-coyote,
-    canada: $color-canada,
-    black: $color-black,
+    bear: $color-bear,
+    lynx: $color-lynx,
+    thunder: $color-thunder,
     mineshaft: $color-mineshaft,
     kaiser: $color-kaiser,
     dove: $color-dove,
     alto: $color-alto,
-    white: $color-white,
+    milou: $color-milou,
+    canada: $color-canada,
 );
 
 $highlight-colors: (
@@ -86,7 +88,7 @@ $language-colors: (
     nunjucks: $color-nunjucks,
     sass: $color-sass,
     scss: $color-sass,
-    liquid-white: $color-liquid-white,
+    liquid-milou: $color-liquid-white,
 );
 
 /// @type Map
@@ -156,12 +158,12 @@ $aspect-ratios: (
 $brand-details: (
     (
         name: "codepen",
-        color: white,
+        color: milou,
         ratio: 1,
     ),
     (
         name: "github",
-        color: white,
+        color: milou,
         ratio: 1,
     ),
     (
@@ -176,7 +178,7 @@ $brand-details: (
     ),
     (
         name: "rss",
-        color: white,
+        color: milou,
         ratio: 0.775,
     ),
     (
@@ -191,32 +193,32 @@ $brand-details: (
     ),
     (
         name: "article",
-        color: white,
+        color: milou,
         ratio: 0.9,
     ),
     (
         name: "feather",
-        color: white,
+        color: milou,
         ratio: 0.725,
     ),
     (
         name: "heart",
-        color: white,
+        color: milou,
         ratio: 1,
     ),
     (
         name: "link",
-        color: white,
+        color: milou,
         ratio: 1,
     ),
     (
         name: "search",
-        color: white,
+        color: milou,
         ratio: 1,
     ),
     (
         name: "tag",
-        color: white,
+        color: milou,
         ratio: 1,
     )
 );

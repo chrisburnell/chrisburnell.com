@@ -12,7 +12,7 @@
     &,
     a,
     button {
-        @include v(color, white);
+        @include v(color, milou);
 
         &:not(:hover):not(:focus):not(:active) {
             @include v(text-decoration-color, kaiser);

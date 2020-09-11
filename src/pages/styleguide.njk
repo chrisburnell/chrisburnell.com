@@ -13,7 +13,7 @@ twitter: true
 
 <ul class="palette-list" id="colors">
     {%- for colour in palette -%}
-        <li data-color="{{ colour.name | lower }}">
+        <li style="background-color: #{{ colour.hex }}; color: {% if colour.alternate %}var(--color-mineshaft){% else %}var(--color-milou){% endif %};">
             <h3>{{ colour.name }}</h3>
             <div class="monospace">#{{ colour.hex }}</div>
             <div class="monospace">{{ colour.hsl }}</div>
@@ -386,8 +386,9 @@ p q r s t u v w x y z { | } ~
 
 <h2>Sparkline</h2>
 
-<div>{% sparkline 'Example', collections.posts %}</div>
-
+<div>
+    <canvas id="sparkline-example" class="sparkline" data-values="3,6,1,1,1,3,1,1,0,4,3,0,9,1,0,2,2,5,2,3,2,5,1,3,3,6" width="320" height="48" tabindex="0"></canvas>
+</div>
 
 <h2>Figure</h2>
 

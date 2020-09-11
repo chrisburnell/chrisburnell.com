@@ -56,13 +56,13 @@
 h1 {
     @extend %alpha;
     text-shadow:
-         0.025em  -0.025em 0 var(--color-white),
-         0.025em -0.0125em 0 var(--color-white),
-         0.025em   0.025em 0 var(--color-white),
-         0         0.025em 0 var(--color-white),
-        -0.025em   0.025em 0 var(--color-white),
-        -0.025em -0.0125em 0 var(--color-white),
-        -0.025em  -0.025em 0 var(--color-white);
+         0.025em  -0.025em 0 var(--color-milou),
+         0.025em -0.0125em 0 var(--color-milou),
+         0.025em   0.025em 0 var(--color-milou),
+         0         0.025em 0 var(--color-milou),
+        -0.025em   0.025em 0 var(--color-milou),
+        -0.025em -0.0125em 0 var(--color-milou),
+        -0.025em  -0.025em 0 var(--color-milou);
     @include v(z-index, above);
 }
 

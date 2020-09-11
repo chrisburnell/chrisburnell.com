@@ -16,12 +16,18 @@
     "hsl": "203.7, 28.5%, 57.1%"
   },
   {
-    "name": "Canada",
-    "hex": "eb2d37",
-    "hsl": "356.8, 82.6%, 54.9%"
+    "name": "Lynx",
+    "hex": "303537",
+    "hsl": "197, 7%, 20%"
   },
   {
-    "name": "Black",
+    "name": "Bear",
+    "hex": "eaeef1",
+    "hsl": "206, 20%, 93%",
+    "alternate": true
+  },
+  {
+    "name": "Thunder",
     "hex": "060606",
     "hsl": "0, 0%, 2.4%"
   },
@@ -43,11 +49,18 @@
   {
     "name": "Alto",
     "hex": "dddddd",
-    "hsl": "0, 0%, 86.7%"
+    "hsl": "0, 0%, 86.7%",
+    "alternate": true
   },
   {
-    "name": "White",
+    "name": "Milou",
     "hex": "f9f9f9",
-    "hsl": "0, 0%, 97.6%"
+    "hsl": "0, 0%, 97.6%",
+    "alternate": true
+  },
+  {
+    "name": "Canada",
+    "hex": "eb2d37",
+    "hsl": "356.8, 82.6%, 54.9%"
   }
 ]

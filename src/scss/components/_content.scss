@@ -17,11 +17,11 @@
 }
 .title--positive > span {
     @include v(background-color, liquid);
-    @include v(color, white);
+    @include v(color, milou);
 }
 .title--negative > span {
     @include v(background-color, canada);
-    @include v(color, white);
+    @include v(color, milou);
 }
 
 .sparkline {
