@@ -1,7 +1,7 @@
 ---
 draft: true
 title: Chris Burnell
-lede: UI Developer
+lede: Front-End Developer
 ---
 
 **Website:** <a href="https://chrisburnell.com/">chrisburnell.com</a>
@@ -58,9 +58,9 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 ## References
 
-- Dan Whittington *(Front-End Lead, my boss)*
-- James Burnage *(Technical Consultant, peer)*
-- Tom Evans *(UX Researcher, peer)*
-- Dave Letorey *(Head of Change and Security, peer)*
+- Dan Whittington *(Technical Consultant @ Squiz)*
+- James Burnage *(Technical Consultant @ Squiz)*
+- Tom Evans *(UX Researcher @ Squiz)*
+- Dave Letorey *(Head of Change and Security @ Squiz)*
 
 *Contact details available upon request.*
