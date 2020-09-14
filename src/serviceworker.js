@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.19";
+const VERSION = "v3.0.20";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
@@ -141,7 +141,6 @@ self.addEventListener("fetch", event => {
         return;
     }
 
-    // Pinkie Swear?
     const retrieveFromCache = caches.match(request);
 
     // For HTML requests, try the network first, fall back to the cache, finally the offline page
@@ -177,8 +176,8 @@ self.addEventListener("fetch", event => {
                 .catch(fetchError => {
                     clearTimeout(timer);
                     console.error(fetchError);
-                    // CACHE or FALLBACK
-                    caches.match(request).then(responseFromCache => {
+                    // CACHE or OFFLINE PAGE FALLBACK
+                    retrieveFromCache.then(responseFromCache => {
                         resolveWithResponse(responseFromCache || caches.match("/offline/"));
                     });
                 });
@@ -189,8 +188,7 @@ self.addEventListener("fetch", event => {
 
     // For all other requests, look in the cache first, fall back to the network
     event.respondWith(
-        caches.match(request)
-        .then(responseFromCache => {
+        retrieveFromCache.then(responseFromCache => {
             // CACHE
             return responseFromCache || fetch(request)
             .then(responseFromFetch => {
