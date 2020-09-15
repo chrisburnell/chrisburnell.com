@@ -34,16 +34,17 @@
                 [right-start]
                 1fr
                 [right-end];
-            grid-template-rows: auto 1fr;
+            grid-template-rows: auto 1fr auto;
             @include v(row-gap, gutter);
         }
 
         .author {
             grid-column: right;
-            grid-row: 1/3;
+            grid-row: 1/4;
         }
 
-        .footer__navigation {
+        .footer__navigation,
+        p {
             grid-column: left;
         }
     }
@@ -60,4 +61,10 @@
             display: inline-block;
         }
     }
+}
+
+.speedlify-anchor {
+    display: inline-block;
+    @include v(margin-top, small);
+    text-decoration: none;
 }

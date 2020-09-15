@@ -92,6 +92,9 @@
     <meta http-equiv="cleartype" content="on">
 
     <style>{%- include "../../../css/main.css" -%}</style>
+    {% if speedlify[canonical] %}
+        <style>{%- include "../../../css/speedlify-score.css" -%}</style>
+    {% endif %}
 
     {% if tags and tags.includes('httpstatus') %}
         <meta name="robots" content="noindex,nofollow">
@@ -191,7 +194,9 @@
     </header>
 
     <main class=" [ main ] ">
+
         {{ content | safe }}
+
     </main>
 
     <footer class=" [ footer ] ">
@@ -232,6 +237,13 @@
                     <a rel="external" id="webring" class=" [ webring-links__next ] " href="{{ author.urls.webring }}/next" title="Next website in the IndieWeb Webring"><span class="hidden">Next</span> →</a>
                 </li>
             </ol>
+            {% if speedlify[canonical] %}
+                <p>
+                    <a class="speedlify-anchor" href="https://speedlify.chrisburnell.com/chrisburnell.com/">
+                        <speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="https://speedlify.chrisburnell.com" score weight requests></speedlify-score>
+                    </a>
+                </p>
+            {% endif %}
         </div>
     </footer>
 
@@ -240,6 +252,9 @@
     {% if page.inputPath.includes('httpstatus') -%}
     {%- else %}
         <script src="/js/main.js"></script>
+    {% endif %}
+    {% if speedlify[canonical] %}
+        <script src="/js/speedlify-score.js"></script>
     {% endif %}
 
     {% if category == 'code' or caniuse %}

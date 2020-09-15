@@ -133,6 +133,7 @@ module.exports = function(config) {
     config.addPassthroughCopy("fonts");
     config.addPassthroughCopy("images");
     config.addPassthroughCopy("static");
+    config.addPassthroughCopy("src/js");
     config.addPassthroughCopy("src/serviceworker.js");
 
     // Pages Collection
