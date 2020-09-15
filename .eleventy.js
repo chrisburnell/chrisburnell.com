@@ -49,8 +49,8 @@ const tagsBuilder = require("./src/_includes/builders/tags.js");
 // const global = require("./src/_data/global.js");
 // const helpers = require("./src/_data/helpers.js");
 // const site = require("./src/_data/site.json");
-const author = require("./src/_data/author.json");
 // const webmentions = require("./src/_data/webmentions.json");
+const author = require("./src/_data/author.json");
 
 // Simple Filters & Sorts
 const isPublished = item => !item.data.draft;
@@ -322,29 +322,6 @@ module.exports = function(config) {
             before = before - (60 * 60 * 24  * 7);
         }
         return `<canvas id="sparkline-${title}" class="sparkline" data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`;
-    });
-
-    // Magic Image
-    config.addNunjucksAsyncShortcode("picture", async function(src, alt, pictureClass = "", imgClass = "") {
-        if (alt === undefined) {
-            throw new Error(`Missing \`alt\` on {{ image }} from: ${src}`);
-        }
-
-        let stats = await Image(src, {
-            widths: [null],
-            urlPath: "/src/images/",
-            outputDir: "images/"
-        });
-        let lowestImage = stats.jpeg ? stats.jpeg[0] : stats.png[0];
-
-        return `<picture class="${pictureClass}">
-                    ${Object.values(stats).map(type => {
-                        return `<source type="image/${type[0].format}" srcset="${type.map(entry => `${entry.url} ${entry.url.includes('@') ? entry.url.split('@')[1].split('.')[0] : '1x'}`).join(", ")}">`;
-                    }).join("\n")}
-                    <img src="${lowestImage.url}"
-                         class="${imgClass}"
-                         alt="${alt}" loading="lazy">
-                </picture>`
     });
 
     config.addWatchTarget("./src/js/");
