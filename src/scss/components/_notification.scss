@@ -15,7 +15,7 @@
     @include v(font-weight, bold);
 
     @include media("screen", "above:small") {
-        left: auto;
+        right: auto;
     }
 
     &:not([class*="hidden"]) {
