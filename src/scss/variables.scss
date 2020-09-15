@@ -79,12 +79,6 @@ html {
     --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
     --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
     --font-scale-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
-
-    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
-    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
-    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
-    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
-    --font-scale-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
 }
 
 @media screen and (min-width: #{$measure-breakpoint-gigantic}) {

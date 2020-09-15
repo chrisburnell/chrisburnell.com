@@ -39,13 +39,13 @@
         &:active,
         &[aria-current="page"] {
             background-color: transparent;
-            background-image: linear-gradient(to bottom, $color-transparent 0, $color-transparent 55%, $color-coyote 55%, $color-bowhead calc(55% + 0.5em), $color-transparent calc(55% + 0.5em), $color-transparent 100%);
+            background-image: linear-gradient(to bottom, transparent 0, transparent 55%, var(--color-coyote) 55%, var(--color-bowhead) calc(55% + 0.5em), transparent calc(55% + 0.5em), transparent 100%);
             outline: none;
         }
     }
 
     &:hover [aria-current="page"]:not(:hover):not(:focus):not(:active) {
-        background-image: linear-gradient(to bottom, $color-transparent 0, $color-transparent 55%, $color-coyote--beta 55%, $color-bowhead--beta calc(55% + 0.625em), $color-transparent calc(55% + 0.625em), $color-transparent 100%);
+        background-image: linear-gradient(to bottom, transparent 0, transparent 55%, var(--color-coyote--beta) 55%, var(--color-bowhead--beta) calc(55% + 0.625em), transparent calc(55% + 0.625em), transparent 100%);
     }
 
     // Cicada Interactions

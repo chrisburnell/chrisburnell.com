@@ -25,10 +25,12 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@chrisburnell/bowhead": "^0.1.8",
     "@tbranyen/jsdom": "^13.0.0",
+    "autoprefixer": "^9.8.6",
     "html-minifier": "^4.0.0",
     "image-size": "^0.8.3",
-    "json-to-scss": "^1.5.0",
+    "json-to-scss": "^1.6.1",
     "luxon": "^1.25.0",
+    "postcss-cli": "^7.1.2",
     "sass": "^1.26.10",
     "slugify": "^1.4.5",
     "twitter-avatar-url": "^1.0.2"
@@ -40,8 +42,9 @@
   },
   "scripts": {
     "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
-    "scss": "npx sass src/scss:css --no-source-map --color --style=compressed",
-    "build": "npm run tokens; npm run scss; ELEVENTY_ENV=production npx @11ty/eleventy",
+    "scss": "npx sass src/scss:css --no-source-map --color",
+    "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
+    "build": "npm run tokens; npm run scss -- --style=compressed; npm run prefix; ELEVENTY_ENV=production npx @11ty/eleventy",
     "serve": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }

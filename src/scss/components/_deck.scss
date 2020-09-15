@@ -44,6 +44,6 @@
     font-style: italic;
 }
 
-.webmentions-count {
-    @include v(margin-left, small);
+.deck__meta a {
+    white-space: nowrap;
 }
