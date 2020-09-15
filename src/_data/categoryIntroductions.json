@@ -1,6 +1,6 @@
 {
   "beer": [
-    "Connect with me on [Untappd]({{ author.urls.untappd }})!"
+    "Connect with me on <a href=\"https://untappd.com/user/chrisburnell\">Untappd</a>!"
   ],
   "code": [
     "<dl class=\"full\"><dt>What’s a <q>pen</q>?</dt><dd><q><a href=\"https://codepen.io\"><em>CodePen</em></a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q></dd></dl>",
