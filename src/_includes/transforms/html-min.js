@@ -5,7 +5,7 @@ module.exports = function htmlMinTransform(value, outputPath) {
         return htmlmin.minify(value, {
             useShortDoctype: true,
             removeComments: false,
-            collapseWhitespace: false,
+            collapseWhitespace: true,
             minifyCSS: true
         });
     }
