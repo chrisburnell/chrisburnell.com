@@ -10,7 +10,7 @@ lede: What have I been listening to?
 <nav id="listening" class=" [ shelf ] [ js-lastfm-feed ] "></nav>
 
 {% raw %}
-<script>
+<script defer>
 (() => {
     const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";
     const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
@@ -28,7 +28,7 @@ lede: What have I been listening to?
 <div>
     <a class=" [ h-cite ] " href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
 </div>
-<time class=" [ since ] [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+<time class=" [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
 `;
 
     fetch(LASTFM_URL)
