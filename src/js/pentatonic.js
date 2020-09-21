@@ -1,19 +1,22 @@
-let duration = 4000; // milliseconds
-let keyStart = 29; // C♯3 / D♭3
-let keyIntervals = [2, 3, 2, 2, 3]; // https://en.wikipedia.org/wiki/Pentatonic_scale
-let keyCount = 12;
-
+////
+/// Pentatonic
+/// Pass in an array of numbers ranging from 0 to 12.
 ///
-// Play Sparkline
-// Pass in an array of numbers ranging from 0 to 12.
-// by Jeremy Keith <@adactio>, modified by Chris Burnell <me@chrisburnell.com>
-// https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
-// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-// http://creativecommons.org/publicdomain/zero/1.0/
+/// @author Jeremy Keith <@adactio>
+/// @author Chris Burnell <@iamchrisburnell>
 ///
-let playSparkline = (target, frequencies = [440], duration = 3000, volume = 0.5) => {
-    if (!window.AudioContext && !window.webkitAudioContext) {
+/// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+/// http://creativecommons.org/publicdomain/zero/1.0/
+////
+let pentatonic = (target, duration = 4000, volume = 0.5, keyStart = 29, keyIntervals = [2, 3, 2, 2, 3], keyLimit = 12) => {
+    if ((!window.AudioContext && !window.webkitAudioContext) || !target.getAttribute("data-values")){
         return;
+    }
+    let frequencies = [getFrequencyFromKeys(keyStart)];
+    let keyInterval = 0;
+    for (let count = 0; count < keyLimit; count++) {
+        keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
+        frequencies.push(getFrequencyFromKeys(keyStart + keyInterval));
     }
     let note = 0;
     let notes = target.getAttribute("data-values").split(",")
@@ -54,15 +57,8 @@ let getFrequencyFromKeys = (key = 49) => {
     return 2 ** ((key - 49) / 12) * 440;
 };
 
-let frequencies = [getFrequencyFromKeys(keyStart)];
-let keyInterval = 0;
-for (let count = 0; count < keyCount; count++) {
-    keyInterval = keyInterval + keyIntervals[count % keyIntervals.length];
-    frequencies.push(getFrequencyFromKeys(keyStart + keyInterval));
-}
-
 for (let target of document.querySelectorAll(".pentatonic")) {
     target.addEventListener("click", () => {
-        playSparkline(target, frequencies, duration);
+        pentatonic(target);
     });
 }
