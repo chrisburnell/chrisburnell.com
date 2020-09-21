@@ -33,7 +33,8 @@
     "postcss-cli": "^7.1.2",
     "sass": "^1.26.10",
     "slugify": "^1.4.5",
-    "twitter-avatar-url": "^1.0.2"
+    "twitter-avatar-url": "^1.0.2",
+    "uglify-es": "^3.3.9"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
@@ -44,7 +45,8 @@
     "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
-    "build": "npm run tokens; npm run scss -- --style=compressed; npm run prefix; ELEVENTY_ENV=production npx @11ty/eleventy",
+    "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",
+    "build": "npm run tokens; npm run scss -- --style=compressed; npm run prefix; ELEVENTY_ENV=production npx @11ty/eleventy; npm run js",
     "serve": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
