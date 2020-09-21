@@ -1,8 +1,11 @@
 ////
 /// Pentatonic
 /// Pass in an array of numbers ranging from 0 to 12.
+/// Starts on  C♯3 / D♭3 by default.
+/// https://en.wikipedia.org/wiki/Pentatonic_scale
 ///
 /// @author Jeremy Keith <@adactio>
+/// https://gist.github.com/adactio/d988edc418aabfa2220456dc548dedc1
 /// @author Chris Burnell <@iamchrisburnell>
 ///
 /// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication

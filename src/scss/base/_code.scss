@@ -49,6 +49,7 @@ mark {
 var {
     @include v(color, raven);
     font-style: normal;
+    font-size: inherit;
     @include v(font-weight, bold);
 }
 
