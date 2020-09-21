@@ -14,9 +14,9 @@ lede: Front-End Developer
 
 I’m a self-taught developer driven by a passion for the front-end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/chrisburnell) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).
 
-## Experience
+## Work Experience
 
-0. **London Web Standards & State of the Browser**
+0. **[London Web Standards](https://londonwebstandards.org) & [State of the Browser](https://stateofthebrowser.com)**
 
     *Organiser*
 
@@ -24,7 +24,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
 
-0. **Squiz**
+0. **[Squiz](https://squiz.net)**
 
     *Front-End Developer*
 
@@ -35,7 +35,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
     - was part of an internal group in charge of building and maintaining the company’s front-end build tools
     - championed and helped to educate our developers on best practices and techniques to make our jobs easier and more enjoyable<br><br>
 
-0. **City, University of London**
+0. **[City, University of London](https://city.ac.uk)**
 
     *Web Developer*
 
@@ -46,21 +46,37 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
     - Clearing Web Application (<a href="https://clearing.city.ac.uk" target="_blank">clearing.city.ac.uk</a>) — Complex system of logic built around a Node.js app on top of a minimal design system
     - *Cass Business School* Website Refresh (<a href="https://cass.city.ac.uk" target="_blank">cass.city.ac.uk</a>) — Full implementation of a design system<br><br>
 
-0. **Squiz**
+0. **[Squiz](https://squiz.net)**
 
     *Front-End Web Developer / UI Developer*
 
     *April 2012 – April 2014*<br><br>
 
-    This was my first job in the industry and was extremely invigourating to learn the ins-and-outs of professional web development. My main tasks were in delivering cut-ups and building solutions in *Squiz Matrix*; although, halfway into my time I switched roles and my focus became solely on cut-ups advocating for best practices.
+    This was my first job in the industry and was extremely invigourating to learn the ins-and-outs of professional web development. My main tasks were in delivering cut-ups and building solutions in *Squiz Matrix*; although, halfway into my time I switched roles and my focus became solely on cut-ups and advocating for best practices.
 
+    - worked on establishing a standard by which front-end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
     - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
 
-## References
+## My Favourite Projects & Articles
 
-- Dan Whittington *(Technical Consultant @ Squiz)*
-- James Burnage *(Technical Consultant @ Squiz)*
-- Tom Evans *(UX Researcher @ Squiz)*
-- Dave Letorey *(Head of Change and Security @ Squiz)*
+0. **[Bowhead](https://chrisburnell.com/bowhead/)**
+
+    <q>Memorable and maintainable design tokens in SCSS.</q>
+
+    Bowhead is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. Available [on GitHub](https://github.com/chrisburnell/bowhead) and [on NPM](https://www.npmjs.com/package/@chrisburnell/bowhead).<br><br>
+
+0. **[My Website](https://chrisburnell.com/)**
+
+    My website has been online in various forms since 2008, and it’s my favourite thing that I own—I think of it as part of who I am and gives others a rare lens into my life. Since discovering the [IndieWeb](https://indieweb.org/) in 2017, I’ve begun posting various types of content, from simple [notes](https://chrisburnell.com/notes/) to [likes](https://chrisburnell.com/likes/) and [bookmarks](https://chrisburnell.com/bookmarks/). Everything is built by [Eleventy](https://www.11ty.dev/) and is available for perusal [on GitHub](https://github.com/chrisburnell/chrisburnell.com).<br><br>
+
+0. **[Sassy Lobotomoised Owl](https://chrisburnell.com/article/sassy-lobotomised-owl/)**
+
+    “Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin.”<br><br>
+
+0. **[The Flip-Flop Technique](https://chrisburnell.com/article/the-flip-flop-technique/)**
+
+    “I recently implemented a colour scheme toggler in the footer of my website, following Andy Bell’s guide, [Create a user controlled dark or light mode](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode), and I found a wonky but fun alternative solution for styling my dark theme which leverages CSS’s filter property.”
+
+## References
 
 *Contact details available upon request.*
