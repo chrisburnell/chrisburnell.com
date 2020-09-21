@@ -148,8 +148,10 @@
             <meta property="profile:username" content="{{ author.shortname }}">
         {% endif %}
 
-        <!-- Coil -->
-        <meta name="monetization" content="{{ site.payment_pointer }}">
+        {% if global.environment == 'production' %}
+            <!-- Coil -->
+            <meta name="monetization" content="{{ site.payment_pointer }}">
+        {% endif %}
     {% endif %}
 
     <script>document.documentElement.classList.remove("no-js");</script>

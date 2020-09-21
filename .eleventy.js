@@ -322,7 +322,7 @@ module.exports = function(config) {
             end = before - 1;
             before = before - (60 * 60 * 24  * 7);
         }
-        return `<canvas id="sparkline-${title}" class="sparkline" data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`;
+        return `<canvas id="sparkline-${title}" class=" [ sparkline ] [ pentatonic ] " data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`;
     });
 
     config.addWatchTarget("./src/js/");
