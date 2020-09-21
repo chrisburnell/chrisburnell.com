@@ -434,7 +434,7 @@ p q r s t u v w x y z { | } ~
 
 <nav class=" [ shelf ] ">
 {% for item in collections.beer | publishedFilter | reverse | limit(site.limits.snapshot) %}
-    {{ shelfItem(item, global.now, collections.all, false) }}
+    {{ shelfItem(item, global.now, false) }}
 {% endfor %}
 </nav>
 
@@ -443,7 +443,7 @@ p q r s t u v w x y z { | } ~
 
 <nav class=" [ shelf ] ">
 {% for item in collections.music | publishedFilter | reverse | limit(site.limits.snapshot) %}
-    {{ shelfItem(item, global.now, collections.all, false) }}
+    {{ shelfItem(item, global.now, false) }}
 {% endfor %}
 </nav>
 

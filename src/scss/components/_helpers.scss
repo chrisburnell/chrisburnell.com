@@ -70,6 +70,10 @@
     @include v(font-family, monospace);
 }
 
+.small {
+    font-size: var(--font-scale--1);
+}
+
 // Make text serifed and italicised
 .fancy {
     @include v(font-family, serif);

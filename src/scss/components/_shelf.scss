@@ -8,10 +8,6 @@
     grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
     @include v(grid-gap, gutter);
 
-    @include media("screen", "above:medium") {
-        @include v(grid-gap, gap);
-    }
-
     article {
         @include owl(small);
         @include v(line-height, medium);
@@ -27,5 +23,20 @@
                 text-decoration-color: var(--color-raven);
             }
         }
+    }
+
+    .cover img {
+        margin: 0;
+        object-fit: contain;
+    }
+}
+
+.shelf--books {
+    grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
+
+    .cover img {
+        height: 240px;
+        object-fit: contain;
+        margin: 0;
     }
 }

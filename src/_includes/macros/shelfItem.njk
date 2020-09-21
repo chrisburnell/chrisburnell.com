@@ -1,4 +1,5 @@
-{% macro shelfItem(item, now, posts, hfeed = true, truncate = true) %}
+{% macro shelfItem(item, now, hfeed = true) %}
+    {%- set item_title = item.data.title -%}
     {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
     {%- set item_of_url = item_of -%}
     {%- if item_of.url -%}
@@ -22,7 +23,6 @@
         {% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
     {%- endif -%}
 
-    {%- set item_title = item.data.title -%}
 
     <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
         {% if item.data.cover %}
@@ -30,19 +30,27 @@
                 <picture class=" [ cover ] ">
                     <source srcset="/images/covers/{{ item.data.cover | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
                             type="image/webp" />
-                    <img    alt="" class=" [ u-photo ] " role="presentation" loading="lazy"
-                            src="/images/covers/{{ item.data.cover }}"
-                            srcset="/images/covers/{{ item.data.cover }}">
+                    <img alt="" class=" [ u-photo ] " role="presentation" loading="lazy"
+                         src="/images/covers/{{ item.data.cover }}"
+                         srcset="/images/covers/{{ item.data.cover }}">
                 </picture>
             </a>
         {% endif %}
         <h3>
             {% if item.data.tags and item.data.tags.includes('clickthrough') %}
-                <a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">{{ item_title | default(item_of_title) | striptags(true) | safe }}</a>
+                <a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
             {% else %}
-                <a href="{{ item.url | striptags(true) | safe }}">{{ item_title | default(item_of_title) | striptags(true) | safe }}</a>
+                <a href="{{ item.url | striptags(true) | safe }}">
             {% endif %}
+                {{ item_title | default(item_of_title) | striptags(true) | safe }}
+                {% if item.data.listened %}
+                    {% emoji '🎧' %}
+                {% endif %}
+            </a>
         </h3>
+        {% if item.data.subtitle %}
+            <p class=" [ small ] ">{{ item.data.subtitle | safe }}</p>
+        {% endif %}
         {% if item.data.authors or item.data.release %}
             <div>
                 {% if item.data.authors %}
@@ -52,7 +60,7 @@
                     {%- endfor %}
                 {% endif %}
                 {% if item.data.release %}
-                    ({{ item.data.release | dateFormat('yyyy') }})
+                    <small>({{ item.data.release | dateFormat('yyyy') }})</small>
                 {% endif %}
             </div>
         {% endif %}

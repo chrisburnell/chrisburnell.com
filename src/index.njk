@@ -8,7 +8,6 @@ eleventyComputed:
   tagline: "{{ site.tagline | safe }}"
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
-{% from 'macros/shelfItem.njk' import shelfItem %}
 
 {% if collections.todayRSVPs.length %}
     <h2 id="today-rsvps">

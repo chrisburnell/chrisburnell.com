@@ -31,9 +31,9 @@ eleventyComputed:
             {{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
         {% endif %}
         {% if collection[0].data.mf_root == 'review' %}
-            <nav class=" [ shelf ] ">
+            <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] ">
                 {% for item in collection %}
-                    {{ shelfItem(item, global.now, collections.all) }}
+                    {{ shelfItem(item, global.now) }}
                 {% endfor %}
             </nav>
         {% else %}

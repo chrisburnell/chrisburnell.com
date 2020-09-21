@@ -36,9 +36,9 @@ lede: Browse all of my posts by a variety of metrics.
                 </a>
             </h2>
             {% if collection[0].data.mf_root == 'review' %}
-                <nav class=" [ shelf ] ">
+                <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] ">
                     {% for item in collection | limit(site.limits.snapshot) %}
-                        {{ shelfItem(item, global.now, collections.all) }}
+                        {{ shelfItem(item, global.now) }}
                     {% endfor %}
                 </nav>
             {% else %}

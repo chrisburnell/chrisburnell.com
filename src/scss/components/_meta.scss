@@ -25,6 +25,10 @@
     time {
         @include v(font-weight, bold);
     }
+
+    .rating {
+        @include v(margin-left, tiny);
+    }
 }
 
 .meta__list {
@@ -43,4 +47,7 @@
 }
 h3 + .meta__list {
     margin-top: v(measure, small) !important;
+}
+small + .meta__list {
+    @include v(padding-left, tiny);
 }

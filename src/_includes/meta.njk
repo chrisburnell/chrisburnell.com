@@ -120,7 +120,7 @@
                 {% emoji '✍️' %}
                 <small>authored by</small>
             {% endif %}
-            {%- set authors = authors | toArray -%}
+            {% set authors = authors | toArray %}
             {% if authors.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
             {% for author in authors -%}
                 {% if authors.length > 1 %}<li>{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
