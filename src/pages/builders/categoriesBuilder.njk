@@ -31,14 +31,14 @@ eleventyComputed:
             {{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
         {% endif %}
         {% if collection[0].data.mf_root == 'review' %}
-            <p>
+            <div class=" [ box ] ">
                 You can sort these {{ category.properPlural }}:
-                <button class=" [ anchor  strong ] [ sort-chronological ] " aria-current="true" disabled>chronologically</button>,
-                <button class=" [ anchor  strong ] [ sort-alphabetical ] ">alphabetically</button>,
-                <button class=" [ anchor  strong ] [ sort-release ] ">by release</button>, or
-                <button class=" [ anchor  strong ] [ sort-rating ] ">by rating</button>.
-                <noscript>Although, you will need JavaScript enabled.</noscript>
-            </p>
+                <button class=" [ anchor  strong ] [ sort-chronological ] " aria-current="true" disabled>by publish date</button>,
+                <button class=" [ anchor  strong ] [ sort-release ] ">by release date</button>,
+                <button class=" [ anchor  strong ] [ sort-rating ] ">by rating</button>, or
+                <button class=" [ anchor  strong ] [ sort-alphabetical ] ">by title</button>.
+                <noscript>Although, you will need to enable JavaScript.</noscript>
+            </div>
             <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
                 {% for item in collection %}
                     {{ shelfItem(item, global.now) }}
