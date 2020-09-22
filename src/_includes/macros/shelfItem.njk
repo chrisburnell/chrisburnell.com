@@ -26,7 +26,7 @@
 
     <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
         {% if item.data.cover %}
-            <a href="{{ item.url }}">
+            <a href="{{ item.url }}" title="{{ item_title | default(item_of_title) | striptags(true) | safe }}">
                 <picture class=" [ cover ] ">
                     <source srcset="/images/covers/{{ item.data.cover | replace('.jpg', '.webp') | replace('.png', '.webp') }}"
                             type="image/webp" />

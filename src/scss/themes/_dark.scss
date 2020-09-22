@@ -4,10 +4,12 @@
 ////
 
 @mixin theme-dark() {
-    --color-coyote: #{$color-bowhead};
-    --color-bowhead: #{$color-coyote};
-    --color-bear: #{$color-lynx};
-    --color-lynx: #{$color-bear};
+    --color-coyote: v(color, bowhead, true);
+    --color-bowhead: v(color, coyote, true);
+    --color-bear: v(color, lynx, true);
+    --color-lynx: v(color, bear, true);
+    --color-wolf: v(color, highland, true);
+    --color-highland: v(color, wolf, true);
 
     scrollbar-color: v(color, raven) v(color, mineshaft);
 

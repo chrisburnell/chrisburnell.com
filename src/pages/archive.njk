@@ -36,20 +36,20 @@ lede: Browse all of my posts by a variety of metrics.
                 </a>
             </h2>
             {% if collection[0].data.mf_root == 'review' %}
-                <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] ">
+                <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
                     {% for item in collection | limit(site.limits.snapshot) %}
                         {{ shelfItem(item, global.now) }}
                     {% endfor %}
                 </nav>
             {% else %}
-                <nav class=" [ deck ] ">
+                <nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
                     {% for item in collection | limit(site.limits.snapshot) %}
                         {{ deckItem(item, global.now, collections.all, webmentions) }}
                     {% endfor %}
                 </nav>
             {% endif %}
-            {% if collection.length > site.limits.spotlight %}
-                <nav class=" [ navigator ] ">
+            {% if collection.length > site.limits.snapshot %}
+                <nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
                     <a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
                 </nav>
             {% endif %}
@@ -58,14 +58,14 @@ lede: Browse all of my posts by a variety of metrics.
         {% include 'webmentions.njk' %}
     </div>
 
-    <div class=" [ meta ] [ box ] ">
+    <div class=" [ box ] [ meta ] ">
         <h3>Browse by category:</h3>
         <ul class=" [ meta__list ] ">
             {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}
         </ul>
         <h3>Here are some tags that you can explore, too:</h3>
         <ul class=" [ meta__list ] ">
-            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
+            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}/">#{{ lookup }}</a></li>{% endfor %}
         </ul>
     </div>
 

@@ -9,4 +9,8 @@
     border-top: var(--measure-border-thin) solid var(--color-raven--beta);
     border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
     background-clip: padding-box;
+
+    a {
+        @include v(color, wolf);
+    }
 }
