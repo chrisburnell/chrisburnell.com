@@ -60,7 +60,7 @@
                     {%- endfor %}
                 {% endif %}
                 {% if item.data.release %}
-                    <small>({{ item.data.release | dateFormat('yyyy') }})</small>
+                    <small>(<time datetime="{{ item.data.release | w3DateFormat }}" class="release">{{ item.data.release | dateFormat('yyyy') }}</time>)</small>
                 {% endif %}
             </div>
         {% endif %}

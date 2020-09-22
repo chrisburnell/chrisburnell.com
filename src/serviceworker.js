@@ -5,7 +5,7 @@
 
 "use strict";
 
-const VERSION = "v3.0.23";
+const VERSION = "v3.0.24";
 // Set up the caches
 const ASSETS_CACHE = "assets::" + VERSION;
 const IMAGES_CACHE = "images";
