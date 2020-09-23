@@ -94,3 +94,10 @@
     vertical-align: middle;
     text-shadow: none;
 }
+
+[data-direction="ascending"][aria-current="true"]::after {
+    content: "​ ▲ ​";
+}
+[data-direction="descending"][aria-current="true"]::after {
+    content: "​ ▼ ​";
+}

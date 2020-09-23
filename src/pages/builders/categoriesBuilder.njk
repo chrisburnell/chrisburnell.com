@@ -33,10 +33,11 @@ eleventyComputed:
         {% if collection[0].data.mf_root == 'review' %}
             <div class=" [ box ] ">
                 You can sort these {{ category.properPlural }}:
-                <button class=" [ anchor  strong ] [ sort-chronological ] " aria-current="true" disabled>by publish date</button>,
-                <button class=" [ anchor  strong ] [ sort-release ] ">by release date</button>,
-                <button class=" [ anchor  strong ] [ sort-rating ] ">by rating</button>, or
-                <button class=" [ anchor  strong ] [ sort-alphabetical ] ">by title</button>.
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>,
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>, or
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
                 <noscript>Although, you will need to enable JavaScript.</noscript>
             </div>
             <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
