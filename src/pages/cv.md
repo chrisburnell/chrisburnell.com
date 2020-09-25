@@ -59,6 +59,12 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 ## My Favourite Projects & Articles
 
+0. **[Penatonic](https://chrisburnell.com/pentatonic/)**
+
+    <q>Turn any array of integers into a fun little melody.</q>
+
+    Pentatonic is a little JS library that turns any sequence of numbers on a page into generated music. Available [on GitHub](https://github.com/chrisburnell/pentatonic) and [on NPM](https://www.npmjs.com/package/@chrisburnell/pentatonic).<br><br>
+
 0. **[Bowhead](https://chrisburnell.com/bowhead/)**
 
     <q>Memorable and maintainable design tokens in SCSS.</q>
