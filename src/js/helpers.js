@@ -118,15 +118,6 @@ const helpers = {
     ////
     /// Return a frequency based on starting key and interval
     /// @param {Number} keyStart [49]
-    /// @return {Number} frequency
-    ////
-    getFrequencyFromKeys: (key = 49) => {
-        return 2 ** ((key - 49) / 12) * 440;
-    },
-
-    ////
-    /// Return a frequency based on starting key and interval
-    /// @param {Number} keyStart [49]
     /// @param {Number} keyInterval [0]
     /// @return {Number} frequency
     ////
