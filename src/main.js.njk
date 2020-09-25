@@ -2,6 +2,7 @@
 permalink: /js/main.js
 ---
 {% include "./js/helpers.js" %}
+{% include "../node_modules/@chrisburnell/pentatonic/pentatonic.js" %}
 
 (() => {
     "use strict";
@@ -9,13 +10,12 @@ permalink: /js/main.js
     {% include "./js/navigator.js" %}
     {% include "./js/color-scheme.js" %}
     {% include "./js/sparklines.js" %}
-    {% include "../node_modules/@chrisburnell/pentatonic/pentatonic.js" %}
     {% include "./js/librarian.js" %}
     {% include "./js/url-input.js" %}
 
     for (let target of document.querySelectorAll(".pentatonic")) {
         target.addEventListener("click", () => {
-            pentatonic(target);
+            pentatonic(target.getAttribute("data-values").split(","));
         });
     }
 })();
