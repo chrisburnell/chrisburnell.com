@@ -1,10 +1,13 @@
 ---
 title: Projects
-lede: A list of my work, side-projects, and rabbit-hole-deep-dives.
+lede: A list of my work, side-projects, and rabbit-hole deep-dives.
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
+
+<h2>A smattering of personal projects, websites I’ve built at work, and previous iterations of chrisburnell.com.</h2>
+
 <nav class=" [ deck ] [ h-feed ] ">
     {% for item in projects %}
-        {{ deckItem(item, global.now, collections.all, webmentions, false, false) }}
+        {{ deckItem(item, global.now, [], [], false, false) }}
     {% endfor %}
 </nav>
