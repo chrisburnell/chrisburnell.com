@@ -1,5 +1,14 @@
 [
   {
+    "url": "/pentatonic/",
+    "data": {
+      "title": "Pentatonic",
+      "lede": "Turn any array of integers into a fun little melody.",
+      "lede_markdown": true,
+      "emoji": "🎹"
+    }
+  },
+  {
     "url": "/bowhead/",
     "data": {
       "title": "Bowhead",
