@@ -27,30 +27,12 @@
     }
   },
   {
-    "url": "https://www.thewi.org.uk",
-    "data": {
-      "title": "National Federation of Women's Institutes",
-      "lede": "*NFWI* was one of my favourite projects to work on while I was at *Squiz*—I worked on the HTML and CSS side of the front-end as well as doing some work for *NFWI’s* authors in the CMS.",
-      "lede_markdown": true,
-      "emoji": "👩‍💻"
-    }
-  },
-  {
     "url": "https://weather.chrisburnell.com",
     "data": {
       "title": "Weather",
       "lede": "Not the most interesting of project titles, this is a personalised weather web app.",
       "lede_markdown": true,
       "emoji": "⛈"
-    }
-  },
-  {
-    "url": "https://www.onehousing.co.uk",
-    "data": {
-      "title": "One Housing",
-      "lede": "*One Housing* was a project while I was at *Squiz* where I really got to put my knowledge of CSS to the test, so I worked hard to produce a robust framework that was part of the foundation of further front-end development in the *One Housing* network of sites.",
-      "lede_markdown": true,
-      "emoji": "🏡"
     }
   },
   {
@@ -132,42 +114,6 @@
       "lede": "Pens of mine that were featured on Codepen’s homepage.",
       "lede_markdown": true,
       "emoji": "💻"
-    }
-  },
-  {
-    "url": "https://v2.chrisburnell.com",
-    "data": {
-      "title": "Version 2",
-      "lede": "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
-      "lede_markdown": true,
-      "emoji": "🐓"
-    }
-  },
-  {
-    "url": "https://squiz.net",
-    "data": {
-      "title": "Squiz",
-      "lede": "Front-End Developer, *2018–2020*<br>UI Developer, *2012–2014*",
-      "lede_markdown": true,
-      "emoji": "💻"
-    }
-  },
-  {
-    "url": "https://city.ac.uk",
-    "data": {
-      "title": "City, University of London",
-      "lede": "Web Developer, *2014–2018*",
-      "lede_markdown": true,
-      "emoji": "🏫"
-    }
-  },
-  {
-    "url": "https://v1.chrisburnell.com/",
-    "data": {
-      "title": "Version 1",
-      "lede": "The first-ever version of my personal site. Things have changed slightly since 2009.",
-      "lede_markdown": true,
-      "emoji": "🐣"
     }
   }
 ]

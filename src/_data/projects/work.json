@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.thewi.org.uk",
+    "data": {
+      "title": "National Federation of Women's Institutes",
+      "lede": "*NFWI* was one of my favourite projects to work on while I was at *Squiz*—I worked on the HTML and CSS side of the front-end as well as doing some work for *NFWI’s* authors in the CMS.",
+      "lede_markdown": true,
+      "emoji": "👩‍💻"
+    }
+  },
+  {
+    "url": "https://www.onehousing.co.uk",
+    "data": {
+      "title": "One Housing",
+      "lede": "*One Housing* was a project while I was at *Squiz* where I really got to put my knowledge of CSS to the test, so I worked hard to produce a robust framework that was part of the foundation of further front-end development in the *One Housing* network of sites.",
+      "lede_markdown": true,
+      "emoji": "🏡"
+    }
+  },
+  {
+    "url": "https://squiz.net",
+    "data": {
+      "title": "Squiz",
+      "lede": "Front-End Developer, *2018–2020*<br>UI Developer, *2012–2014*",
+      "lede_markdown": true,
+      "emoji": "💻"
+    }
+  },
+  {
+    "url": "https://city.ac.uk",
+    "data": {
+      "title": "City, University of London",
+      "lede": "Web Developer, *2014–2018*",
+      "lede_markdown": true,
+      "emoji": "🏫"
+    }
+  },
+  {
+    "url": "#_",
+    "data": {
+      "title": "Cabfix",
+      "lede": "Web Developer, *2011–2012*",
+      "lede_markdown": true,
+      "emoji": "🚕"
+    }
+  }
+]

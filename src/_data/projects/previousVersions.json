@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://v2.chrisburnell.com",
+    "data": {
+      "title": "Version 2",
+      "lede": "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
+      "lede_markdown": true,
+      "emoji": "🐓"
+    }
+  },
+  {
+    "url": "https://v1.chrisburnell.com/",
+    "data": {
+      "title": "Version 1",
+      "lede": "The first-ever version of my personal site. Things have changed slightly since 2009.",
+      "lede_markdown": true,
+      "emoji": "🐣"
+    }
+  }
+]
