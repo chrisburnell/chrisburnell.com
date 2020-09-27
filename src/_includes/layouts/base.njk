@@ -253,7 +253,7 @@
 
     {% if page.inputPath.includes('httpstatus') -%}
     {%- else %}
-        <script src="/js/main.js"></script>
+        <script src="/js/main.js?{{ pkg.version }}"></script>
     {% endif %}
     {% if speedlify[canonical] %}
         <script src="/js/speedlify-score.js"></script>

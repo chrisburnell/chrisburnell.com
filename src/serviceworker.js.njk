@@ -1,3 +1,6 @@
+---
+permalink: /serviceworker.js
+---
 /*!
  * Service Worker
  * @author Chris Burnell <me@chrisburnell.com>
@@ -5,9 +8,8 @@
 
 "use strict";
 
-const VERSION = "v3.0.26";
 // Set up the caches
-const ASSETS_CACHE = "assets::" + VERSION;
+const ASSETS_CACHE = "assets::{{ pkg.version }}";
 const IMAGES_CACHE = "images";
 const PAGES_CACHE = "pages";
 const CACHES = [
@@ -24,7 +26,7 @@ const TIMEOUT = 15000;
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
-    "/js/main.js"
+    "/js/main.js?{{ pkg.version }}"
 ];
 
 // Files that are cached but non-blocking
@@ -42,9 +44,10 @@ const OFFLINE_PAGES = [
     "/",
     "/about/",
     "/archive/",
-    "/writing/",
+    "/privacy/",
     "/projects/",
-    "/styleguide/"
+    "/styleguide/",
+    "/writing/"
 ];
 
 // Pages to ignore
