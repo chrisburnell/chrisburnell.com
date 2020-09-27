@@ -73,13 +73,13 @@ Without going into gory detail, [which you can read about here](https://en.wikip
 As opposed to a chromatic scale where notes are a semi-tone apart, a major pentatonic scale follows a pattern of whole-tones and semi-tones, which we’ll implement inside an array, each value representing one semi-tone step:
 
 ```javascript
-let keyIntervals = [2, 3, 2, 2, 3];
+let keyIntervals = [2, 2, 3, 2, 3];
 ```
 
 Given that our base note is **C<sub>4</sub>**, the *<var>40</var><sup>th</sup> key* on a keyboard, the possible keys that we’re working with are as follows:
 
 <figure>
-    <samp style="max-width: var(--measure-line-length-clamp);">40, 42, 45, 47, 49, 52, 54, 57, 59, 61, 64, 66, …</samp>
+    <samp style="max-width: var(--measure-line-length-clamp);">40, 42, 44, 47, 49, 52, 54, 56, 59, 61, 64, 66, …</samp>
 </figure>
 
 With these keys we can calculate their respective frequencies:

@@ -1,8 +1,17 @@
 ---
 title: Pentatonic
 lede: Turn any array of integers into a fun little melody.
+photo: https://chrisburnell.com/images/pentatonic.png
 show_webmentions: true
 ---
+
+<figure>
+    <picture>
+        <source srcset="/images/pentatonic.webp" type="image/webp" />
+        <img src="/images/pentatonic.png" alt="" role="presentation" loading="lazy">
+    </picture>
+    <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
+</figure>
 
 ## What?
 
@@ -37,7 +46,7 @@ The function takes six parameters:
 0. `duration` — the length of time to play the audio for, represented in milliseconds *(default = 4000)*
 0. `volume` — controls the *gain* of the audio, represented by a 0–1 range *(default = 0.5)*
 0. `keyStart` — the zero-index of the key on a standard keyboard from which the scale should start *(default = 29 / C♯3 / D♭3)*
-0. `keyIntervals` — an array of integers which represent half-steps in a loop which composes the desired scale *(default = [2, 3, 2, 2, 3] / a pentatonic scale)*
+0. `keyIntervals` — an array of integers which represent half-steps in a loop which composes the desired scale *(default = [2, 2, 3, 2, 3] / a pentatonic scale)*
 0. `keyLimit` — represents the highest index in the desired scale by which input is bound by *(default = 12)*
 
 ## Examples
