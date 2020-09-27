@@ -6,7 +6,8 @@
 .shelf {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-    @include v(grid-gap, gutter);
+    @include v(column-gap, gutter);
+    @include v(row-gap, gap);
 
     article {
         @include owl(small);

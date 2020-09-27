@@ -18,7 +18,7 @@ if (shelvers.length > 0) {
         "author": [...shelfItems].sort((a, b) => {
             return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime);
         }).sort((a, b) => {
-            return (b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : 0) - (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : 0);
+            return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : 0).localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : 0);
         })
     };
 
