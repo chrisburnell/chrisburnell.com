@@ -9,6 +9,10 @@
     @include v(padding-bottom, large);
     border-top: var(--measure-border-thin) solid var(--color-coyote);
 
+    @include media("print") {
+        display: none;
+    }
+
     &,
     a,
     button {

@@ -6,6 +6,10 @@
 .header {
     @include v(background-color, bear);
 
+    @include media("print") {
+        display: none;
+    }
+
     .wrap {
         width: 100%;
         display: flex;

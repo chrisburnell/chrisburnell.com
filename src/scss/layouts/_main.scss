@@ -40,6 +40,10 @@
             [outdent-end];
     }
 
+    @include media("print") {
+        display: block;
+    }
+
     & > %collection-content {
         @include v(max-width, line-length-clamp);
     }

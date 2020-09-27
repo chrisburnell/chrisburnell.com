@@ -11,7 +11,7 @@
     font-variant-numeric: proportional-nums;
 }
 
-%content-monospace-elements {
+%collection-monospace-elements {
     @include v(padding, border-default);
     @include v(border-radius, border-default);
 }
@@ -26,7 +26,7 @@ mark {
     h1 > &,
     h2 > &,
     %collection-content > & {
-        @extend %content-monospace-elements;
+        @extend %collection-monospace-elements;
     }
 }
 

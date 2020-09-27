@@ -35,4 +35,8 @@ body {
     font-style: normal;
     @include v(font-weight);
     @include v(line-height);
+
+    @include media("print") {
+        display: block;
+    }
 }

@@ -1,6 +1,7 @@
 ---
 draft: true
-title: Chris Burnell
+title: CV
+tagline: Chris Burnell
 lede: Front-End Developer
 ---
 
@@ -43,8 +44,8 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     The Web Team at *City* was in charge of maintaining *City’s* five school websites and fielding incoming requests and web-related queries. My work was heavily focussed on the CSS-side of our codebase, and this allowed me to research, build, and test a robust library of SCSS that simplified how we developed, how quickly and easily design iterations could be made, and significantly cut down on mental overhead. These skills and knowledge I acquired were critical on some important projects which I helped lead:
 
-    - Clearing Web Application (<a href="https://clearing.city.ac.uk" target="_blank">clearing.city.ac.uk</a>) — Complex system of logic built around a Node.js app on top of a minimal design system
-    - *Cass Business School* Website Refresh (<a href="https://cass.city.ac.uk" target="_blank">cass.city.ac.uk</a>) — Full implementation of a design system<br><br>
+    - Clearing Web Application (<a href="https://clearing.city.ac.uk">clearing.city.ac.uk</a>) — Complex system of logic built around a Node.js app on top of a minimal design system
+    - *Cass Business School* Website Refresh (<a href="https://cass.city.ac.uk">cass.city.ac.uk</a>) — Full implementation of a design system<br><br>
 
 0. **[Squiz](https://squiz.net)**
 
