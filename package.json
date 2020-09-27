@@ -25,7 +25,7 @@
     "@11ty/eleventy-img": "^0.3.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@chrisburnell/bowhead": "^0.1.8",
-    "@chrisburnell/pentatonic": "^0.0.3",
+    "@chrisburnell/pentatonic": "^0.1.0",
     "@tbranyen/jsdom": "^13.0.0",
     "autoprefixer": "^9.8.6",
     "html-minifier": "^4.0.0",
