@@ -5,26 +5,19 @@
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 // http://creativecommons.org/publicdomain/zero/1.0/
 ///
-let buildSparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%, 1)", endpointColor = "hsla(357, 83%, 55%, 0.5)") => {
+let sparkline = (id, data, width = 160, height = 21, endpoint = true, color = "hsla(0, 0%, 31%, 1)", endpointColor = "hsla(357, 83%, 55%, 0.5)") => {
     if (window.HTMLCanvasElement) {
-        var c = document.getElementById(canvasID),
+        var c = document.getElementById(id),
             ctx = c.getContext("2d"),
-            height = c.height - 3,
-            width = c.width,
             total = data.length,
             max = Math.max.apply(Math, data),
-            xStep = width / total,
+            xStep = (width - 2) / (total - 1),
             yStep = max / height,
             x = 0,
-            y = height - data[0] / yStep,
-            dX,
-            dY,
-            i;
+            y = height - data[0] / yStep + 2;
         if (window.devicePixelRatio) {
-            c.width = c.width * window.devicePixelRatio;
-            c.height = c.height * window.devicePixelRatio;
-            // c.style.width = `${c.width / window.devicePixelRatio}px`;
-            // c.style.height = `${c.height / window.devicePixelRatio}px`;
+            c.width = 160 * window.devicePixelRatio;
+            c.height = 24 * window.devicePixelRatio;
             ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
         }
         ctx.clearRect(0, 0, width, height);
@@ -32,20 +25,12 @@ let buildSparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%,
         ctx.strokeStyle = color;
         ctx.lineWidth = 2;
         ctx.moveTo(x, y);
-        for (i = 0; i < total; i = i + 1) {
-            dX = x;
-            dY = y;
-            x = x + xStep;
-            y = height - data[i] / yStep + 2;
-            dX = (dX + x) / 2;
-            if (y > dY) {
-                dY = ((dY + y) / 3) * 2;
+        for (let i in data) {
+            if (i != 0) {
+                x = x + xStep;
+                y = height - data[i] / yStep + 2;
+                ctx.lineTo(x, y);
             }
-            else if (y < dY) {
-                dY = (dY + y) / 3;
-            }
-            // ctx.quadraticCurveTo(x, y, dX, dY);
-            ctx.lineTo(x, y);
         }
         ctx.stroke();
         if (endpoint) {
@@ -56,9 +41,3 @@ let buildSparkline = (canvasID, data, endpoint = true, color = "hsla(0, 0%, 31%,
         }
     }
 };
-
-for (let sparkline of document.querySelectorAll(".sparkline")) {
-    if (sparkline.hasAttribute("data-values")) {
-        buildSparkline(sparkline.id, sparkline.getAttribute("data-values").split(","));
-    }
-}

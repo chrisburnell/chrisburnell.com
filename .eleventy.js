@@ -324,7 +324,7 @@ module.exports = function(config) {
         return `<canvas id="sparkline-${title}" class=" [ sparkline ] [ pentatonic ] " data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`;
     });
 
-    config.addWatchTarget("./css/");
+    config.addWatchTarget("./src/css/");
     config.addWatchTarget("./js/");
 
     // 404

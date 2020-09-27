@@ -24,16 +24,6 @@
     @include v(color, milou);
 }
 
-.sparkline {
-    width: 106.66px;
-    height: 16px;
-
-    @include media("above:small") {
-        width: 160px;
-        height: 24px;
-    }
-}
-
 .lede {
     @include v(max-width, line-length-clamp);
     @include v(font-weight, bold);
@@ -41,6 +31,18 @@
     .post & {
         font-size: var(--font-scale-1);
     }
+}
+
+// Visual Data
+.sparkline {
+    width: 160px;
+    height: 24px;
+    speak: none;
+}
+
+// Musical Data
+.pentatonic {
+    cursor: pointer;
 }
 
 // Rating
@@ -81,5 +83,11 @@
     }
     &[value="5"]::after {
         width: 100%;
+    }
+}
+
+%collection-content {
+    @include media("print") {
+        page-break-inside: avoid;
     }
 }
