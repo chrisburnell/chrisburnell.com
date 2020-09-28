@@ -1,15 +1,15 @@
 {%- from 'macros/feedItem.njk' import feedItem -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}">
 
     <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
     <subtitle>{{ lede | striptags(true) }}</subtitle>
-    <id>{{ site.url }}</id>
-    <updated>{{ global.now | w3DateFormat }}</updated>
+    <id>{{ site.url + '/' }}</id>
+    <updated>{{ global.now | w3DateFormat(true, true) }}</updated>
     <author>
         <name>{{ author.name }}</name>
-        <uri>{{ site.url }}</uri>
+        <uri>{{ site.url + '/' }}</uri>
     </author>
     <generator>Eleventy v{{ pkg['dependencies']['@11ty/eleventy'] | replace('^', '') }}</generator>
     <icon>{{ site.url + author.avatar }}</icon>
