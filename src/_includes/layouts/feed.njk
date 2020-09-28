@@ -1,7 +1,7 @@
 {%- from 'macros/feedItem.njk' import feedItem -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
-<feed xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
 
     <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
     <subtitle>{{ lede | striptags(true) }}</subtitle>
