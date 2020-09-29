@@ -42,7 +42,7 @@ permalink: /feed.xsl
                   <article>
                     <xsl:choose>
                       <xsl:when test="title = 'Untitled'">
-                        <p><xsl:value-of select="content" /></p>
+                        <p><xsl:value-of select="description" /></p>
                       </xsl:when>
                       <xsl:otherwise>
                         <h3>
