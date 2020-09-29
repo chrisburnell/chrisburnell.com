@@ -8,25 +8,23 @@
     {%- if item_of.title -%}
         {% set item_of_title = item_of.title %}
     {%- endif -%}
-
-    <entry>
-        <id>{{ site.url + item.url }}</id>
-        <link href="{{ site.url + item.url }}" />{% if item_of_url %}
-        <link rel="via" href="{{ item_of_url }}" />{% endif %}{% if item.data.in_reply_to %}
-        <link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />{% endif %}
-        <published>{{ item.date | w3DateFormat(true, true) }}</published>
-        <updated>{{ item.data.updated | default(item.date) | w3DateFormat(true, true) }}</updated>
-        <title>{{ item.data.title | default(item_of_title) | default(item.data.category) | safe }}</title>
-        <category term="{{ item.data.category }}" />{% if item.data.lede %}
-        <content type="html"><![CDATA[
+    <item>
+        <title>{{ item.data.title | default(item_of_title) | default("Untitled") | safe }}</title>
+        <link>{{ site.url + item.url }}</link>
+        <guid>{{ site.url + item.url }}</guid>
+        <pubDate>{{ item.date | rssDateFormat }}</pubDate>
+        <category>{{ item.data.category }}</category>{% if item.data.lede %}
+        <description><![CDATA[
             {{ item.data.lede | striptags(true) | safe }}
-        ]]></content>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
-        <content type="html"><![CDATA[
+        ]]></description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
+        <description><![CDATA[
             {{ item.templateContent | striptags(true) | safe }}
-        ]]></content>{% else %}
-        <content type="html"><![CDATA[
+        ]]></description>{% else %}
+        <description><![CDATA[
             {{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title }}
-        ]]></content>
-        {% endif %}
-    </entry>
+        ]]></description>
+        {% endif %}{% if item_of_url %}
+        <atom:link rel="via" href="{{ item_of_url }}" />{% endif %}{% if item.data.in_reply_to %}
+        <atom:link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />{% endif %}
+    </item>
 {% endmacro %}

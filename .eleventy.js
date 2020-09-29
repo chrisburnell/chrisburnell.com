@@ -10,6 +10,7 @@ const markdownFormat = require("./src/_includes/formats/markdownFormat.js");
 const dateFormat = require("./src/_includes/formats/dateFormat.js");
 const timeFormat = require("./src/_includes/formats/timeFormat.js");
 const w3DateFormat = require("./src/_includes/formats/w3DateFormat.js");
+const rssDateFormat = require("./src/_includes/formats/rssDateFormat.js");
 const epochFormat = require("./src/_includes/formats/epochFormat.js");
 const newBase60Format = require("./src/_includes/formats/newBase60Format.js");
 const timezoneFormat = require("./src/_includes/formats/timezoneFormat.js");
@@ -74,6 +75,7 @@ module.exports = function(config) {
     config.addFilter("dateFormat", dateFormat);
     config.addFilter("timeFormat", timeFormat);
     config.addFilter("w3DateFormat", w3DateFormat);
+    config.addFilter("rssDateFormat", rssDateFormat);
     config.addFilter("epochFormat", epochFormat);
     config.addFilter("newBase60Format", newBase60Format);
     config.addFilter("timezoneFormat", timezoneFormat);

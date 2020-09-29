@@ -5,11 +5,11 @@ permalink: /feed.xsl
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
                 xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
-  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" />
-  <xsl:template match="/">
+  <xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes" />
+  <xsl:template match="*">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title><xsl:value-of select="/feed/title" /></title>
+        <title><xsl:value-of select="/rss/channel/title" /></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>{%- include "../css/xslt.css" -%}</style>
@@ -30,25 +30,25 @@ permalink: /feed.xsl
         <main class=" [ main ] ">
           <div id="content" class=" [ content ] [ wrap ] [ page ] ">
             <h1 id="title" class=" [ title ] ">
-              <xsl:value-of select="/feed/title" />
+              <xsl:value-of select="/rss/channel/title" />
             </h1>
-            <div class=" [ details ]">
-              <p><xsl:value-of select="/feed/subtitle" /></p>
+            <div class=" [ details ] ">
+              <p><xsl:value-of select="/rss/channel/subtitle" /></p>
             </div>
             <div class=" [ content__body ] ">
               <h2>Recent Posts</h2>
-              <nav class="[ deck ]">
-                <xsl:for-each select="/feed/entry">
+              <nav class=" [ deck ] ">
+                <xsl:for-each select="/rss/channel/item">
                   <article>
                     <xsl:choose>
-                      <xsl:when test="title = ''">
+                      <xsl:when test="title = 'Untitled'">
                         <p><xsl:value-of select="content" /></p>
                       </xsl:when>
                       <xsl:otherwise>
-                        <h3 class="mb-0">
+                        <h3>
                           <a target="_blank">
                             <xsl:attribute name="href">
-                              <xsl:value-of select="id" />
+                              <xsl:value-of select="link" />
                             </xsl:attribute>
                             <xsl:value-of select="title" />
                           </a>
@@ -58,22 +58,18 @@ permalink: /feed.xsl
                     <div class=" [ deck__meta ] ">
                       <small>published </small>
                       <xsl:choose>
-                        <xsl:when test="title = ''">
+                        <xsl:when test="title = 'Untitled'">
                           <a target="_blank">
                             <xsl:attribute name="href">
-                              <xsl:value-of select="id" />
+                              <xsl:value-of select="link" />
                             </xsl:attribute>
-                            <xsl:value-of select="published" />
+                            <xsl:value-of select="pubDate" />
                           </a>
                         </xsl:when>
                         <xsl:otherwise>
-                          <xsl:value-of select="published" />
+                          <xsl:value-of select="pubDate" />
                         </xsl:otherwise>
                       </xsl:choose>
-                      <xsl:if test="updated != published">
-                        <small> updated </small>
-                        <xsl:value-of select="updated" />
-                      </xsl:if>
                     </div>
                   </article>
                 </xsl:for-each>
