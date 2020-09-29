@@ -11,8 +11,8 @@
         <language>{{ site.locale }}</language>
         <link>{{ related_page }}</link>
         <lastBuildDate>{{ global.now | rssDateFormat }}</lastBuildDate>
-        <managingEditor>{{ author.name }}</managingEditor>
-        <webMaster>{{ author.name }}</webMaster>
+        <managingEditor>{{ author.email }} ({{ author.name }})</managingEditor>
+        <webMaster>{{ author.email }} ({{ author.name }})</webMaster>
         <image>
             <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
             <link>{{ related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') }}</link>
