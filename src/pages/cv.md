@@ -60,7 +60,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 ## My Favourite Projects & Articles
 
-0. **[Penatonic](https://chrisburnell.com/pentatonic/)**
+0. **[Pentatonic](https://chrisburnell.com/pentatonic/)**
 
     <q>Turn any array of integers into a fun little melody.</q>
 
