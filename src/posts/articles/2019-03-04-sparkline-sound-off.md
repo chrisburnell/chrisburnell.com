@@ -1,13 +1,13 @@
 ---
+sitemap:
+  lastmod: 2020-09-29T19:45:49+0100
+edit: Added an <a href="#interactive-demo">interactive demo</a> at the bottom!
 date: 2019-03-04T13:10:40+0000
 title: Sparkline Sound-Off
 lede: I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.
 tags:
   - canvas
   - javascript
-further_reading:
-  - url: https://beginnerguitarhq.com/pentatonic-scale
-    title: "How to Play the Pentatonic Scale | Beginner Guitar HQ"
 ---
 
 To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js) and made some modifications. I won’t go into detail about how the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API), but there are many resources available if you want a background.
@@ -60,7 +60,8 @@ let getFrequencyFromKeys = (key) => {
 So if we want to calculate the frequency of **C<sub>4</sub>** (Middle C), the *<var>40</var><sup>th</sup> key* on the keyboard:
 
 <figure>
-    <samp>f(<var>40</var>) = (<sup>12</sup>√2)<sup><var>40</var>-49</sup> × 440Hz = 261.626Hz</samp>
+    <samp class="beta">f(<var>40</var>) = (<sup>12</sup>√2)<sup><var>40</var>-49</sup> × 440Hz</samp>
+    <samp class="beta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 261.626Hz</samp>
 </figure>
 
 
@@ -116,3 +117,24 @@ We can pump these values into the [Web Audio API](https://developer.mozilla.org/
 <figure>
     <canvas id="sparkline-demo-3" class="sparkline pentatonic" width="160" height="24" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" tabindex="0"></canvas>
 </figure>
+
+## Interactive Demo
+
+Type some numbers in the input field below and a playable sparkline will be built!
+
+<p><input id="custom-input" type="text" pattern="[0-9]+" maxlength="26" oninput="fire()"></p>
+
+<div>
+    <canvas id="custom-sparkline" class="sparkline" width="160" height="24" tabindex="0"></canvas>
+    <script>
+        let input = document.querySelector("#custom-input");
+        function fire() {
+            input.value = input.value.replace(/(?![0-9])./gmi, "");
+            sparkline("custom-sparkline", input.value.split(""));
+        }
+        document.querySelector("#custom-sparkline").addEventListener("click", function(event) {
+            pentatonic(input.value.split(""), (160 * input.value.split("").length));
+        });
+    </script>
+    <noscript>Requires JavaScript, unfortunately.</noscript>
+</div>
