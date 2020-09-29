@@ -129,6 +129,12 @@
 .e-content {
     @include owl;
 }
+.content__body,
+.e-content {
+    & > * + h2 {
+        @include v(margin-top, gigantic);
+    }
+}
 
 .meta {
     @include v(margin-top, large);

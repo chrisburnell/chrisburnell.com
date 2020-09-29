@@ -8,22 +8,28 @@
     {%- if item_of.title -%}
         {% set item_of_title = item_of.title %}
     {%- endif -%}
+    {%- if item.data.title or item_of_title -%}
+        {% set item_title = item.data.title | default(item_of_title) | safe %}
+    {%- else -%}
+        {% set item_date = item.date | dateFormat %}
+        {% set item_title = item.data.category | title %}
+        {% set item_title = item_title + " from " + item_date %}
+    {%- endif -%}
     <item>
-        <title>{{ item.data.title | default(item_of_title) | default("Untitled") | safe }}</title>
+        <title>{{ item_title }}</title>
         <link>{{ site.url + item.url }}</link>
-        <guid>{{ site.url + item.url }}</guid>
+        <guid>{{ site.url + item.url }}</guid>{% if item.data.show_webmentions %}
+        <comments>{{ site.url + item.url + "#webmentions" }}</comments>{% endif %}
         <pubDate>{{ item.date | rssDateFormat }}</pubDate>
-        <category>{{ item.data.category }}</category>{% if item.data.lede %}
-        <description><![CDATA[
-            {{ item.data.lede | striptags(true) | safe }}
-        ]]></description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
-        <description><![CDATA[
-            {{ item.templateContent | striptags(true) | safe }}
-        ]]></description>{% else %}
-        <description><![CDATA[
-            {{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title }}
-        ]]></description>
+        <category domain="{{ site.url + '/' + item.data.category + '/' }}">{{ item.data.category }}</category>{% if item.data.lede %}
+        <description>{{ item.data.lede | striptags(true) | safe }}</description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
+        <description>{{ item.templateContent | striptags(true) | safe }}</description>
+        <content:encoded><![CDATA[
+            {{ item.templateContent | safe }}{% if item_of_url %}<p><a href="{{ item_of_url }}">{{ item_of_url }}</a></p>{% endif %}
+        ]]></content:encoded>{% else %}
+        <description>{{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title }}</description>
         {% endif %}{% if item_of_url %}
+        <source url="{{ item_of_url }}">{{ item_of_title }}</source>
         <atom:link rel="via" href="{{ item_of_url }}" />{% endif %}{% if item.data.in_reply_to %}
         <atom:link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />{% endif %}
     </item>

@@ -33,43 +33,25 @@ permalink: /feed.xsl
               <xsl:value-of select="/rss/channel/title" />
             </h1>
             <div class=" [ details ] ">
-              <p><xsl:value-of select="/rss/channel/subtitle" /></p>
+              <p><xsl:value-of select="/rss/channel/description" /></p>
             </div>
             <div class=" [ content__body ] ">
               <h2>Recent Posts</h2>
               <nav class=" [ deck ] ">
                 <xsl:for-each select="/rss/channel/item">
                   <article>
-                    <xsl:choose>
-                      <xsl:when test="title = 'Untitled'">
-                        <p><xsl:value-of select="description" /></p>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <h3>
-                          <a target="_blank">
-                            <xsl:attribute name="href">
-                              <xsl:value-of select="link" />
-                            </xsl:attribute>
-                            <xsl:value-of select="title" />
-                          </a>
-                        </h3>
-                      </xsl:otherwise>
-                    </xsl:choose>
+                    <h3>
+                      <a target="_blank">
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="link" />
+                      </xsl:attribute>
+                      <xsl:value-of select="title" />
+                      </a>
+                    </h3>
+                    <p><xsl:value-of select="description" /></p>
                     <div class=" [ deck__meta ] ">
                       <small>published </small>
-                      <xsl:choose>
-                        <xsl:when test="title = 'Untitled'">
-                          <a target="_blank">
-                            <xsl:attribute name="href">
-                              <xsl:value-of select="link" />
-                            </xsl:attribute>
-                            <xsl:value-of select="pubDate" />
-                          </a>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <xsl:value-of select="pubDate" />
-                        </xsl:otherwise>
-                      </xsl:choose>
+                      <xsl:value-of select="pubDate" />
                     </div>
                   </article>
                 </xsl:for-each>

@@ -1,5 +1,5 @@
 <div class=" [ author ] [ h-card  p-author ] ">
-    <a class=" [ author__information ] [ u-url ] " href="/about/" rel="author  me">
+    <a class=" [ author__information ] [ u-url u-uid ] " href="/" rel="author  me">
         <picture class=" [ author__image ] [ canada ] ">
             <source srcset="/images/avatar.webp 1x,
                             /images/avatar@2x.webp 2x,
@@ -23,7 +23,7 @@
         <p class=" [ p-note ] ">{{ site.lede | safe }}</p>
         <p><a href="{{ author.urls.github_repo }}/tree/master/{{ page.inputPath }}">You can edit this page.</a></p>
     </div>
-    <a class=" [ u-url u-uid ] " href="/" rel="author me" hidden> </a>
+    <a class=" [ u-url ] " href="/about/" rel="author me" hidden> </a>
     <data class=" [ p-x-pronoun-nominative ] " value="he" hidden> </data>
     <data class=" [ p-x-pronoun-oblique ] " value="him" hidden> </data>
     <data class=" [ p-x-pronoun-possessive ] " value="his" hidden> </data>

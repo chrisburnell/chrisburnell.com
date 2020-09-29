@@ -1,5 +1,6 @@
 {%- from 'macros/feedItem.njk' import feedItem -%}
 {%- set related_page = site.url + '/' + related_collection + '/' -%}
+{%- set related_page = related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"  xmlns:atom="http://www.w3.org/2005/Atom">
@@ -8,10 +9,10 @@
         <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
         <description>{{ lede | striptags(true) }}</description>
         <language>{{ site.locale }}</language>
-        <link>{{ related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') }}</link>
+        <link>{{ related_page }}</link>
         <lastBuildDate>{{ global.now | rssDateFormat }}</lastBuildDate>
-        <managingEditor>{{ author.email }} ({{ author.name }})</managingEditor>
-        <webMaster>{{ author.email }} ({{ author.name }})</webMaster>
+        <managingEditor>{{ author.name }}</managingEditor>
+        <webMaster>{{ author.name }}</webMaster>
         <image>
             <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
             <link>{{ related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') }}</link>

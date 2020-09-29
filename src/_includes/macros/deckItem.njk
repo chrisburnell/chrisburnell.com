@@ -194,7 +194,7 @@
             <data class=" [ u-{{ item.data.mf_property }} ] " hidden>{{ item_of_url | default(item_of) }}</data>
         {% endif %}
         {% if item.data.category %}
-            <data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
+            <data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}/" hidden>{{ item.data.category }}</data>
         {% endif %}
         <data class=" [ u-author ] " value="/" hidden></data>
     </article>
