@@ -54,10 +54,17 @@ layout: base
         <ul class=" [ meta__list ] ">
             {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}
         </ul>
-        <h3>Here are some tags that you can explore, too:</h3>
+        <h3>Browse by tag:</h3>
         <ul class=" [ meta__list ] ">
             {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
         </ul>
+        <h3>Latest projects:</h3>
+        <div class=" [ meta__list ] ">
+            {% for lookup in projects.personal | limit(2) %}
+                <h4><a href="{{ lookup.url }}">{{ lookup.data.title }}</a></h4>
+                {{ lookup.data.lede | markdownFormat | safe }}
+            {% endfor %}
+        </div>
     </div>
 
     {% include 'ads.njk' %}
