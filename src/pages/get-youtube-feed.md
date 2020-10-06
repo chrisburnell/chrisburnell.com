@@ -12,4 +12,4 @@ Expects a URL in the following format:
     <button class="button" type="submit">Submit</button>
 </form>
 
-<script src="/js/get-youtube-feed.js"></script>
+<script defer src="/js/get-youtube-feed.js"></script>
