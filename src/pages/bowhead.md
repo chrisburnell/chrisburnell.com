@@ -4,7 +4,7 @@ photo: https://chrisburnell.com/images/bowhead.png
 show_webmentions: true
 eleventyComputed:
   tagline: "Bowhead v{{ pkg['dependencies']['@chrisburnell/bowhead'] | replace('^', '') }}"
-  lede: "Memorable and maintainable design tokens in SCSS.<br>{{ npm-bowhead['downloads'] }} downloads in the last month <a href='https://www.npmjs.com/package/@chrisburnell/bowhead'>on npm</a>.<br>{{ github-bowhead['stargazers_count'] }} stargazers <a href='https://github.com/chrisburnell/bowhead'>on GitHub</a>."
+  lede: "Memorable and maintainable design tokens in SCSS.<br>There are {{ github.bowhead['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/bowhead'>on GitHub</a> and it was downloaded {{ npm.bowhead['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/bowhead'>on npm</a>."
 ---
 
 <figure>
