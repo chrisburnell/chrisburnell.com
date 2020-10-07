@@ -1,8 +1,10 @@
 ---
 title: Pentatonic
-lede: Turn any array of integers into a fun little melody.
 photo: https://chrisburnell.com/images/pentatonic.png
 show_webmentions: true
+eleventyComputed:
+  tagline: "Pentatonic v{{ pkg['dependencies']['@chrisburnell/pentatonic'] | replace('^', '') }}"
+  lede: "Turn any array of integers into a fun little melody.<br>{{ pentatonic['downloads'] }} downloads in the last month."
 ---
 
 <figure>

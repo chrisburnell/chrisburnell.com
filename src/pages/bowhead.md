@@ -1,8 +1,10 @@
 ---
 title: Bowhead
-lede: Memorable and maintainable design tokens in SCSS
 photo: https://chrisburnell.com/images/bowhead.png
 show_webmentions: true
+eleventyComputed:
+  tagline: "Bowhead v{{ pkg['dependencies']['@chrisburnell/bowhead'] | replace('^', '') }}"
+  lede: "Memorable and maintainable design tokens in SCSS.<br>{{ bowhead['downloads'] }} downloads in the last month."
 ---
 
 <figure>
