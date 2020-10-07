@@ -20,7 +20,7 @@
 .alpha {
     @include font-family(alpha);
     font-size: var(--font-scale-4);
-    @include v(line-height, small);
+    @include v(line-height, medium);
 }
 
 %beta,
