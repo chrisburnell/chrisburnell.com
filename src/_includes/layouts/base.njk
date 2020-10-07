@@ -44,11 +44,6 @@
     <link rel="preload" href="/fonts/proxima-nova-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/proxima-nova-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/proxima-nova-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    {% if page.inputPath.includes('httpstatus') -%}
-    {%- else %}
-        <link rel="preload" href="/js/main.js?{{ pkg.version }}" as="script">
-    {% endif %}
-
 
     <link rel="self" href="{{ site.url + '/feed.xml' }}">
     <link rel="alternate" type="application/rss+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
