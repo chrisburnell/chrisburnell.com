@@ -143,11 +143,6 @@ module.exports = function(config) {
             .filter(isPublished);
     });
 
-    // HTTP Status Pages Collection
-    config.addCollection("httpstatusPages", collection => {
-        return collection.getFilteredByTag("httpstatus");
-    });
-
     // Posts Collection
     config.addCollection("posts", collection => {
         return collection.getFilteredByTag("post")
