@@ -75,9 +75,16 @@
 }
 
 .webmentions__response__avatar {
+    @include transition(border-color);
     box-sizing: content-box;
     @include v(width, avatar-small);
-    border: var(--measure-border-thin) solid var(--color-raven--beta);
+    border: var(--measure-border-default) solid var(--color-raven--beta);
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: var(--color-canada);
+    }
 
     &,
     .avatar,
