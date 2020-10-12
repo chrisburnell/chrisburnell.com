@@ -92,6 +92,19 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     “I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.”
 
+## Companies and brands I’ve worked with
+
+- [Buckinghamshire New University](https://bucks.ac.uk/)
+- [The Electoral Commission](https://www.electoralcommission.org.uk/)
+- [Mercator Media](https://www.mercatormedia.com/)
+- [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice)
+- [National Federation of Women's Institutes](https://www.thewi.org.uk/)
+- [One Housing](https://www.onehousing.co.uk/)
+- [Shared Services Connected Ltd](https://www.sscl.com/)
+- [University of Hertfordshire](https://www.herts.ac.uk/)
+- [William Hill](https://www.williamhill.com/)
+- [Wood](https://www.woodplc.com/)
+
 ## References
 
 *Contact details available upon request.*
