@@ -58,7 +58,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
     - worked on establishing a standard by which front-end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
     - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
 
-## My Favourite Projects & Articles
+## Notable Projects & Articles
 
 0. **[Pentatonic](https://chrisburnell.com/pentatonic/)**
 
@@ -71,6 +71,14 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
     <q>Memorable and maintainable design tokens in SCSS.</q>
 
     Bowhead is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. Available [on GitHub](https://github.com/chrisburnell/bowhead) and [on NPM](https://www.npmjs.com/package/@chrisburnell/bowhead).<br><br>
+
+0. **[National Federation of Women's Institutes](https://www.thewi.org.uk)**
+
+    *NFWI* was one of my favourite projects to work on while I was at *Squiz*—I worked on the HTML and CSS side of the front-end as well as doing some work for *NFWI’s* authors in the CMS.<br><br>
+
+0. **[One Housing](https://www.onehousing.co.uk/)**
+
+    *One Housing* was a project while I was at *Squiz* where I really got to put my knowledge of CSS to the test, so I worked hard to produce a robust framework that was part of the foundation of further front-end development in the *One Housing* network of sites.<br><br>
 
 0. **[My Website](https://chrisburnell.com/)**
 

@@ -15,7 +15,7 @@ eleventyComputed:
 
 Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.
 
-<div class=" [ box ] ">I’m looking for new full-time work right now, so please <a href="#contact">get in touch</a> if you’d like to have a chat!</div>
+<div class=" [ box ] ">I’m looking for new full-time work right now, so please <a href="/cv/">check out my CV</a> and <a href="#contact">get in touch</a> if you’d like to have a chat!</div>
 
 I’m a big fan of <q>rabbit-hole deep-diving</q>, a phrase I use to describe sudden bursts of motivation and inspiration into new and weighty [projects](/projects/).
 

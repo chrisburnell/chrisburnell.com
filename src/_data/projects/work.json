@@ -18,6 +18,15 @@
     }
   },
   {
+    "url": "https://clearing.city.ac.uk",
+    "data": {
+      "title": "Clearing at City, University of London",
+      "lede": "The pressure was truly on with this project at *City*; we had a relatively short amount of time to turn around a robust, multi-view website to handle the universities entire Clearing period. I was in charge of implementing a lightweight and maintainable design system and contributed towards the Node.js app that handled everything in the background.",
+      "lede_markdown": true,
+      "emoji": "🎓"
+    }
+  },
+  {
     "url": "https://squiz.net",
     "data": {
       "title": "Squiz",
