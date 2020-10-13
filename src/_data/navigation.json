@@ -11,14 +11,14 @@
     "primary": true
   },
   {
-    "title": "Writing",
-    "url": "/writing/",
-    "secondary": true
-  },
-  {
     "title": "Archive",
     "url": "/archive/",
     "primary": true,
+    "secondary": true
+  },
+  {
+    "title": "Writing",
+    "url": "/writing/",
     "secondary": true
   },
   {
