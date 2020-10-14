@@ -5,12 +5,6 @@ tagline: Chris Burnell
 lede: Front-End Developer
 ---
 
-**Website:** <a href="https://chrisburnell.com/">chrisburnell.com</a>
-<br>
-**Email:** <a href="mailto:me@chrisburnell.com">me at chrisburnell dot com</a>
-<br>
-**Phone:** <a href="tel:+447857812279">+44 785 781 2279</a>
-
 ## Biography
 
 I’m a self-taught developer driven by a passion for the front-end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/chrisburnell) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).

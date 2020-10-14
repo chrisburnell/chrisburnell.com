@@ -13,53 +13,17 @@ eleventyComputed:
     </picture>
 </figure>
 
-Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.
-
 <div class=" [ box ] ">I’m looking for new full-time work right now, so please <a href="/cv/">check out my CV</a> and <a href="#contact">get in touch</a> if you’d like to have a chat!</div>
 
-I’m a big fan of <q>rabbit-hole deep-diving</q>, a phrase I use to describe sudden bursts of motivation and inspiration into new and weighty [projects](/projects/).
+Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.
+
+The web my passion—my website is my favourite thing that I own. I believe the web to be a powerful agent for change and empowering people, and I love nothing more than helping people feel connected, knowledgable, and in-control of their experience online.
+
+For the most part, I live in the world of front-end, mostly to do with CSS and performance; although, in recent years I’ve been more and more interested in the wider world of web development. With the emergence of ES6, I’ve grown particularly keen on JavaScript and have really enjoyed rebuilding my website using Eleventy. I also continue to tinker other technologies to help support my website as part of the [IndieWeb](https://indieweb.org/) and my other <q>rabbit-hole deep-dives</q>, a phrase I use to describe sudden bursts of motivation and inspiration into new and weighty [projects](/projects/).
 
 If you’d like to keep up-to-date of my work, you can follow me with [RSS](/feed.xml), on [Twitter]({{ author.urls.twitter }}), on [Mastodon]({{ author.urls.mastodon }}), or on [GitHub]({{ author.urls.github }}).
 
-## My Work
-
-- **[London Web Standards](https://londonwebstandards.org) & [State of the Browser](https://stateofthebrowser.com)**
-
-    *Organiser*
-
-    *March 2018 – Present*
-
-- **[Squiz](https://squiz.net)**
-
-    *Front-End Developer*
-
-    *February 2018 – July 2020*
-
-- **[City, University of London](https://city.ac.uk)**
-
-    *Web Developer*
-
-    *June 2014 – February 2018*
-
-- **[Squiz](https://squiz.net)**
-
-    *Front-End Web Developer / UI Developer*
-
-    *April 2012 – April 2014*
-
-## Recent Projects
-
-- **[Pentatonic](/pentatonic/)**
-
-    Turn any array of integers into a fun little melody.
-
-- **[Bowhead](/bowhead/)**
-
-    A small framework on which to build your design tokens in SCSS.
-
-- **[Micrathene](https://micro.bloodbuilder.online/)**
-
-    Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.
+I also play the piano, bake bread from time to time, and play and DM Dungeons & Dragons here and there too.
 
 ## Colophon
 
