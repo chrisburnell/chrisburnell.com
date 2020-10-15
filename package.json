@@ -33,6 +33,7 @@
     "json-to-scss": "^1.6.2",
     "luxon": "^1.25.0",
     "postcss-cli": "^7.1.2",
+    "prettier": "^1.19.1",
     "sass": "^1.27.0",
     "slugify": "^1.4.5",
     "twitter-avatar-url": "^1.0.2",
@@ -40,8 +41,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "cross-env": "^7.0.2",
-    "prettier": "^1.19.1"
+    "cross-env": "^7.0.2"
   },
   "scripts": {
     "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
