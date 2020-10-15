@@ -259,14 +259,26 @@ module.exports = function(config) {
     config.addCollection("todayRSVPs", collection => {
         return collection.getFilteredByTag("post")
             .filter(isPublished)
-            .filter(item => item.data.rsvp && dateFormat(item.data.rsvp.date) == dateFormat(now));
+            .filter(item => {
+                if (item.data.rsvp
+                    && dateFormat(item.data.rsvp.date) == dateFormat(now)) {
+                    return true;
+                }
+            })
     });
 
     // Future RSVP Collection
     config.addCollection("futureRSVPs", collection => {
         return collection.getFilteredByTag("post")
             .filter(isPublished)
-            .filter(item => item.data.rsvp && epochFormat(item.data.rsvp.date) > now && dateFormat(item.data.rsvp.date) != dateFormat(now));
+            .filter(item => {
+                if (item.data.rsvp
+                    && epochFormat(item.data.rsvp.date) > now
+                    && epochFormat(item.data.rsvp.date) - epochFormat(now) < 604800000
+                    && dateFormat(item.data.rsvp.date) != dateFormat(now)) {
+                    return true;
+                }
+            })
     });
 
     // Builder Collections
