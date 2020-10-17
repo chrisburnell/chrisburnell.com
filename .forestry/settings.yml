@@ -19,8 +19,8 @@ sections:
   label: Bookmarks
   create: documents
   match: "**/*"
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: images/content
+public_path: "/images/content"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
