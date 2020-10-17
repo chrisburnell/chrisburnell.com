@@ -9,6 +9,16 @@ sections:
   label: Articles
   create: documents
   match: "**/*"
+- type: directory
+  path: src/posts/notes
+  label: Notes
+  create: documents
+  match: "**/*"
+- type: directory
+  path: src/posts/bookmarks
+  label: Bookmarks
+  create: documents
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
