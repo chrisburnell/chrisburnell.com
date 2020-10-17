@@ -1,0 +1,16 @@
+---
+label: Bookmark
+hide_body: true
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: lede
+  label: lede
+- type: text
+  name: bookmark_of
+  label: bookmark_of
