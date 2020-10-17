@@ -1,0 +1,13 @@
+---
+label: Note
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: list
+  name: syndicate_to
+  label: syndicate_to
+- type: text
+  name: posting_method
+  label: posting_method
