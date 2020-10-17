@@ -2,16 +2,6 @@
 label: Article
 hide_body: false
 fields:
-- type: field_group
-  name: sitemap
-  label: sitemap
-  fields:
-  - type: datetime
-    name: lastmod
-    label: lastmod
-- type: text
-  name: edit
-  label: edit
 - type: datetime
   name: date
   label: date
