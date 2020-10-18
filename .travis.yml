@@ -1,9 +1,16 @@
 language: node_js
 node_js:
-  - 12
+  - node
 before_script:
   - npm install
-script: npm run build
+  - export TZ=Europe/London
+  - export SSHPASS=$password
+script:
+  - npm run build
+after_script:
+  - tar -czvf file.tgz _site/*
+  - sshpass -e scp -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path
+  - sshpass -e ssh -p $port $username@$host $path/$file
 deploy:
   local-dir: _site
   provider: pages
