@@ -19,7 +19,6 @@ before_script:
 script:
   - npm run build
 after_success:
-  - set -x
   - tar -czvf file.tgz _site/*
   - scp -i deploy -o stricthostkeychecking=no -P $port file.tgz $username@$host:$path
   - ssh -i deploy -o stricthostkeychecking=no -p $port $username@$host $path/$file
