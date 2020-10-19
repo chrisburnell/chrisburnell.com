@@ -7,6 +7,9 @@ addons:
 branches:
   only:
     - master
+cache:
+  directories:
+    - .cache
 before_script:
   - export TZ=Europe/London
 script:
