@@ -12,7 +12,10 @@ cache:
     - .cache
 before_install:
   - openssl aes-256-cbc -K $encrypted_b0d51b9ff91b_key -iv $encrypted_b0d51b9ff91b_iv -in deploy.enc -out deploy -d
-  - chmod 600 deploy && mv deploy ~/.ssh/idrsa
+  - eval "$(ssh-agent -s)"
+  - chmod 600 deploy
+  - echo -e "Host {SERVER_IP}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add deploy
 before_script:
   - export TZ=Europe/London
 script:
@@ -20,5 +23,5 @@ script:
 after_success:
   - set -x
   - tar -czvf file.tgz _site/*
-  - scp -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path && \
-    ssh -p $port $username@$host $path/$file
+  - scp -i deploy -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path
+  - ssh -i deploy -p $port $username@$host $path/$file
