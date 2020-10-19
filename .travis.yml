@@ -15,6 +15,7 @@ before_install:
   - eval "$(ssh-agent -s)"
   - chmod 600 deploy
   - echo -e "Host {SERVER_IP}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add deploy
 before_script:
   - export TZ=Europe/London
 script:
