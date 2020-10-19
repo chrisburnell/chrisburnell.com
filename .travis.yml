@@ -1,21 +1,17 @@
 language: node_js
 node_js:
   - node
+addons:
+  sshknownhosts:
+    - 104.24.123.188
+branches:
+  only:
+    - master
 before_script:
-  - npm install
   - export TZ=Europe/London
-  - export SSHPASS=$password
 script:
   - npm run build
-after_script:
+after_success:
   - tar -czvf file.tgz _site/*
-  - sshpass -e scp -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path
-  - sshpass -e ssh -p $port $username@$host $path/$file
-deploy:
-  local-dir: _site
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-  keep-history: true
-  on:
-    branch: master
+  - scp -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path
+  - ssh -p $port $username@$host $path/$file
