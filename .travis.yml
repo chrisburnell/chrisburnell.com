@@ -15,7 +15,6 @@ before_install:
   - eval "$(ssh-agent -s)"
   - chmod 600 deploy
   - echo -e "Host {SERVER_IP}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - ssh-add deploy
 before_script:
   - export TZ=Europe/London
 script:
@@ -23,5 +22,5 @@ script:
 after_success:
   - set -x
   - tar -czvf file.tgz _site/*
-  - scp -i deploy -P $port -o stricthostkeychecking=no file.tgz $username@$host:$path
+  - scp -i deploy -P $port file.tgz $username@$host:$path
   - ssh -i deploy -p $port $username@$host $path/$file
