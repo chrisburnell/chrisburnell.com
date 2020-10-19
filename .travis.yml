@@ -11,8 +11,8 @@ cache:
   directories:
     - .cache
 before_install:
-  - openssl aes-256-cbc -K $encrypted_b0d51b9ff91b_key -iv $encrypted_b0d51b9ff91b_iv
-    - in deploy.enc -out deploy -d
+  - openssl aes-256-cbc -K $encrypted_b0d51b9ff91b_key -iv $encrypted_b0d51b9ff91b_iv -in deploy.enc -out deploy -d
+  - chmod 600 deploy && mv deploy ~/.ssh/idrsa
 before_script:
   - export TZ=Europe/London
 script:
