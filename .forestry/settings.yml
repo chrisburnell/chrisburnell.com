@@ -15,27 +15,28 @@ sections:
     label: Pages
     create: documents
     match: "**/*"
+    exclude: "*.json"
     templates:
       - page
   - type: directory
     path: src/posts/articles
     label: Articles
     create: documents
-    match: "**/*"
+    match: "**/*.md"
     templates:
       - article
   - type: directory
     path: src/posts/notes
     label: Notes
     create: documents
-    match: "**/*"
+    match: "**/*.md"
     templates:
       - note
   - type: directory
     path: src/posts/bookmarks
     label: Bookmarks
     create: documents
-    match: "**/*"
+    match: "**/*.md"
     templates:
       - bookmark
 upload_dir: images/content
