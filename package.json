@@ -44,7 +44,7 @@
     "cross-env": "^7.0.2"
   },
   "scripts": {
-    "tokens": "npx json-to-scss src/_data/tokens.json src/scss/abstracts/_tokens.scss",
+    "tokens": "npx json-to-scss src/data/tokens.json src/scss/abstracts/_tokens.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
     "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",

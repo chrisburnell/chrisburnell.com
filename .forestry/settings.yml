@@ -5,10 +5,10 @@ admin_path: "/admin/"
 webhook_url:
 sections:
   - type: document
-    path: src/_data/site.json
+    path: src/data/site.json
     label: Site Settings
   - type: document
-    path: src/_data/author.json
+    path: src/data/author.json
     label: Author Settings
   - type: directory
     path: src/pages
