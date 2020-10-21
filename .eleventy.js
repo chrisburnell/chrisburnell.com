@@ -89,13 +89,6 @@ module.exports = function(config) {
     config.addLayoutAlias("post", "post.njk");
     config.addLayoutAlias("feed", "feed.njk");
 
-    // Static Files
-    config.addPassthroughCopy("css");
-    config.addPassthroughCopy("fonts");
-    config.addPassthroughCopy("images");
-    config.addPassthroughCopy("static");
-    config.addPassthroughCopy("src/js");
-
     // Collections
     config.addCollection("pages", collections.page);
     config.addCollection("posts", collections.post);
@@ -120,6 +113,13 @@ module.exports = function(config) {
     config.addShortcode("tweet", shortcodes.tweet);
     config.addShortcode("emoji", shortcodes.emoji);
     config.addShortcode("sparkline", shortcodes.sparkline);
+
+    // Static Files
+    config.addPassthroughCopy("css");
+    config.addPassthroughCopy("fonts");
+    config.addPassthroughCopy("images");
+    config.addPassthroughCopy("static");
+    config.addPassthroughCopy("src/js");
 
     // Watch targets
     config.addWatchTarget("./src/css/");
