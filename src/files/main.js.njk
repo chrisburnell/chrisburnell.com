@@ -1,17 +1,17 @@
 ---
 permalink: /js/main.js
 ---
-{% include "./js/helpers.js" %}
-{% include "./js/sparklines.js" %}
-{% include "../node_modules/@chrisburnell/pentatonic/pentatonic.js" %}
+{% include "../js/helpers.js" %}
+{% include "../js/sparklines.js" %}
+{% include "../../node_modules/@chrisburnell/pentatonic/pentatonic.js" %}
 
 ;(function() {
     "use strict";
-    {% include "./js/welcome.js" %}
-    {% include "./js/navigator.js" %}
-    {% include "./js/color-scheme.js" %}
-    {% include "./js/librarian.js" %}
-    {% include "./js/url-input.js" %}
+    {% include "../js/welcome.js" %}
+    {% include "../js/navigator.js" %}
+    {% include "../js/color-scheme.js" %}
+    {% include "../js/librarian.js" %}
+    {% include "../js/url-input.js" %}
 
     for (let target of document.querySelectorAll(".sparkline")) {
         if ("values" in target.dataset) {

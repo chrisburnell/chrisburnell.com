@@ -1,0 +1,6 @@
+{
+  "permalink": "{{ page.fileSlug }}",
+  "sitemap": {
+    "exclude": true
+  }
+}

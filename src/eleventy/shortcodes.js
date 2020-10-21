@@ -1,5 +1,4 @@
 const author = require("../data/author.json");
-
 const dateFilters = require("./filters/dates.js");
 
 const now = new Date();
