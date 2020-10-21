@@ -148,9 +148,9 @@ module.exports = function(config) {
         passthroughFileCopy: true,
         dir: {
             input: "src",
-			includes: "includes",
-			layouts: "layouts",
-			data: "data"
+            includes: "includes",
+            layouts: "layouts",
+            data: "data"
         }
     };
 };
