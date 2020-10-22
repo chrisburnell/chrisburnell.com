@@ -1,6 +1,7 @@
 {
   "name": "chrisburnell",
   "version": "3.0.32",
+  "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
     {
@@ -10,7 +11,6 @@
       "twitter": "@iamchrisburnell"
     }
   ],
-  "description": "Some real sweet codestuffs.",
   "license": "CC-BY-NC-SA-4.0",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-cache-assets": "^2.0.3",
     "@11ty/eleventy-img": "^0.3.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
