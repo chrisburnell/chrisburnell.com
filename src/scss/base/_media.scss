@@ -19,10 +19,6 @@ svg {
 }
 img {
     border-style: none;
-
-    &[src=""] {
-        display: none !important;
-    }
 }
 picture {
     &,
