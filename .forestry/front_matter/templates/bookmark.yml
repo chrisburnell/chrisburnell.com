@@ -2,37 +2,47 @@
 label: Bookmark
 hide_body: true
 fields:
-  - type: boolean
-    name: draft
-    label: Draft
-    default: false
-  - type: datetime
-    name: date
-    label: Published Date
-    default: now
-    config:
-      required: true
-      date_format: YYYY-MM-DD
-      time_format: HH:mm:ss Z
-      export_format: YYYY-MM-DD HH:mm:ss Z
-  - type: datetime
-    name: updated
-    label: Updated Date
+- type: boolean
+  name: draft
+  label: Draft
+  default: false
+- type: datetime
+  name: date
+  label: Published Date
+  default: now
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    time_format: HH:mm:ss Z
+    export_format: YYYY-MM-DD HH:mm:ss Z
+- type: datetime
+  name: updated
+  label: Updated Date
+  config:
+    required: false
+    date_format: YYYY-MM-DD
+    time_format: HH:mm:ss Z
+    export_format: YYYY-MM-DD HH:mm:ss Z
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: textarea
+  name: lede
+  label: Lede
+- name: bookmark_of
+  type: field_group
+  config: {}
+  fields:
+  - name: title
+    type: text
     config:
       required: false
-      date_format: YYYY-MM-DD
-      time_format: HH:mm:ss Z
-      export_format: YYYY-MM-DD HH:mm:ss Z
-  - type: text
-    name: title
     label: Title
+  - name: url
+    type: text
     config:
-      required: true
-  - type: textarea
-    name: lede
-    label: Lede
-  - type: text
-    name: bookmark_of
-    label: Bookmark URL
-    config:
-      required: true
+      required: false
+    label: URL
+  label: Bookmark

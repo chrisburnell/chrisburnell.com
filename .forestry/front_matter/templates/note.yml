@@ -2,24 +2,24 @@
 label: Note
 hide_body: false
 fields:
-  - type: boolean
-    name: draft
-    label: Draft
-    default: false
-  - type: datetime
-    name: date
-    label: Published Date
-    default: now
-    config:
-      required: true
-      date_format: YYYY-MM-DD
-      time_format: HH:mm:ss Z
-      export_format: YYYY-MM-DD HH:mm:ss Z
-  - type: datetime
-    name: updated
-    label: Updated Date
-    config:
-      required: false
-      date_format: YYYY-MM-DD
-      time_format: HH:mm:ss Z
-      export_format: YYYY-MM-DD HH:mm:ss Z
+- type: boolean
+  name: draft
+  label: Draft
+  default: false
+- type: datetime
+  name: date
+  label: Published Date
+  default: now
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    time_format: HH:mm:ss Z
+    export_format: YYYY-MM-DD HH:mm:ss Z
+- type: datetime
+  name: updated
+  label: Updated Date
+  config:
+    required: false
+    date_format: YYYY-MM-DD
+    time_format: HH:mm:ss Z
+    export_format: YYYY-MM-DD HH:mm:ss Z

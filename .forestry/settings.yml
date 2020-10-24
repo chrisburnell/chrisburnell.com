@@ -2,46 +2,46 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: "/admin/"
-webhook_url:
+webhook_url: 
 sections:
-  - type: document
-    path: src/data/site.json
-    label: Site Settings
-  - type: document
-    path: src/data/author.json
-    label: Author Settings
-  - type: directory
-    path: src/pages
-    label: Pages
-    create: documents
-    match: "**/*"
-    exclude: "*.json"
-    templates:
-      - page
-  - type: directory
-    path: src/posts/articles
-    label: Articles
-    create: documents
-    match: "**/*.md"
-    templates:
-      - article
-  - type: directory
-    path: src/posts/notes
-    label: Notes
-    create: documents
-    match: "**/*.md"
-    templates:
-      - note
-  - type: directory
-    path: src/posts/bookmarks
-    label: Bookmarks
-    create: documents
-    match: "**/*.md"
-    templates:
-      - bookmark
+- type: document
+  path: src/data/site.json
+  label: Site Settings
+- type: document
+  path: src/data/author.json
+  label: Author Settings
+- type: directory
+  path: src/pages
+  label: Pages
+  create: documents
+  match: "**/*"
+  exclude: "*.json"
+  templates:
+  - page
+- type: directory
+  path: src/posts/articles
+  label: Articles
+  create: documents
+  match: "**/*.md"
+  templates:
+  - article
+- type: directory
+  path: src/posts/notes
+  label: Notes
+  create: documents
+  match: "**/*.md"
+  templates:
+  - note
+- type: directory
+  path: src/posts/bookmarks
+  label: Bookmarks
+  create: documents
+  match: "**/*.md"
+  templates:
+  - bookmark
 upload_dir: images/content
 public_path: "/images/content"
-front_matter_path: ""
+front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
