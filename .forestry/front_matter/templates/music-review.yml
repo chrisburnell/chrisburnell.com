@@ -1,0 +1,32 @@
+---
+label: Music review
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: datetime
+  name: release
+  label: release
+- type: field_group_list
+  name: authors
+  label: authors
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: url
+    label: url
+- type: text
+  name: listen_of
+  label: listen_of
+- type: file
+  name: cover
+  label: cover
+- type: number
+  name: rating
+  label: rating
