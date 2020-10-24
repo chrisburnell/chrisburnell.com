@@ -26,19 +26,24 @@ sections:
   templates:
   - article
 - type: directory
-  path: src/posts/notes
-  label: Notes
-  create: documents
-  match: "**/*.md"
-  templates:
-  - note
-- type: directory
   path: src/posts/bookmarks
   label: Bookmarks
   create: documents
   match: "**/*.md"
   templates:
   - bookmark
+- type: directory
+  path: src/posts/music
+  label: Music reviews
+  create: all
+  match: "**/*.md"
+- type: directory
+  path: src/posts/notes
+  label: Notes
+  create: documents
+  match: "**/*.md"
+  templates:
+  - note
 upload_dir: images/content
 public_path: "/images/content"
 front_matter_path: ''
