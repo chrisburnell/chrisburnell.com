@@ -14,7 +14,7 @@ fields:
     required: true
     date_format: YYYY-MM-DD
     time_format: HH:mm:ss Z
-    export_format: YYYY-MM-DD HH:mm:ss Z
+    export_format: YYYY-MM-DDTHH:mm:ssZ
 - type: datetime
   name: updated
   label: Updated Date
@@ -22,4 +22,4 @@ fields:
     required: false
     date_format: YYYY-MM-DD
     time_format: HH:mm:ss Z
-    export_format: YYYY-MM-DD HH:mm:ss Z
+    export_format: YYYY-MM-DDTHH:mm:ssZ
