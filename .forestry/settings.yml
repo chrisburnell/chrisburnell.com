@@ -37,6 +37,8 @@ sections:
   label: Music reviews
   create: all
   match: "**/*.md"
+  templates:
+  - music-review
 - type: directory
   path: src/posts/notes
   label: Notes
