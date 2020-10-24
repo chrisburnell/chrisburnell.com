@@ -21,8 +21,20 @@ fields:
   - type: text
     name: url
     label: url
-- type: text
-  name: listen_of
+- name: listen_of
+  type: field_group
+  config: {}
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: title
+  - name: url
+    type: text
+    config:
+      required: true
+    label: URL
   label: listen_of
 - type: file
   name: cover
