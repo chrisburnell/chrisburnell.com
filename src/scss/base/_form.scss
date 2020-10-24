@@ -135,7 +135,7 @@ input[type="checkbox"] {
         overflow: hidden;
         text-align: center;
         cursor: pointer;
-        line-height: calc(v(line-height, code) * 1.25);
+        line-height: calc(var(--line-height-code) * 1.25);
 
         &::after {
             content: "✔";

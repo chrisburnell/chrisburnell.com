@@ -4,12 +4,19 @@
 ////
 
 @mixin theme-dark() {
-    --color-coyote: v(color, bowhead, true);
-    --color-bowhead: v(color, coyote, true);
-    --color-bear: v(color, lynx, true);
-    --color-lynx: v(color, bear, true);
-    --color-wolf: v(color, highland, true);
-    --color-highland: v(color, wolf, true);
+    $swap-coyote: v(color, bowhead, true);
+    $swap-bowhead: v(color, coyote, true);
+    $swap-bear: v(color, lynx, true);
+    $swap-lynx: v(color, bear, true);
+    $swap-wolf: v(color, highland, true);
+    $swap-highland: v(color, wolf, true);
+
+    --color-coyote: #{$swap-coyote};
+    --color-bowhead: #{$swap-bowhead};
+    --color-bear: #{$swap-bear};
+    --color-lynx: #{$swap-lynx};
+    --color-wolf: #{$swap-wolf};
+    --color-highland: #{$swap-highland};
 
     scrollbar-color: v(color, raven) v(color, mineshaft);
 
