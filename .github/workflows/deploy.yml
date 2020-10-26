@@ -30,6 +30,8 @@ jobs:
           key: ${{ runner.OS }}-eleventy-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-eleventy-cache-
+      - name: Set the timezone
+        run: export TZ=Europe/London
       - name: Install npm modules
         run: npm ci
       - name: Build website
@@ -45,7 +47,7 @@ jobs:
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
-      - name: Post-deploy
+      - name: Post-action
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
