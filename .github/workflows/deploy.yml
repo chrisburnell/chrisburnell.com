@@ -43,6 +43,7 @@ jobs:
           rm: true
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}html"
+          strip_components: 1
       - name: Executing remote SSH commands
         uses: appleboy/ssh-action@master
         with:
