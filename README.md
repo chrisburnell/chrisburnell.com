@@ -2,7 +2,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
-[![Build Status](https://travis-ci.org/chrisburnell/chrisburnell.com.svg?branch=master)](https://travis-ci.org/chrisburnell/chrisburnell.com)
+[![Deploy](https://github.com/chrisburnell/chrisburnell.com/workflows/Deploy/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions?query=workflow%3A%22Deploy%22)
 
 ### Table of Contents
 
