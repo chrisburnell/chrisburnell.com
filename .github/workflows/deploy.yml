@@ -10,30 +10,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout from git
+        uses: actions/checkout@master
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Cache NPM dependencies
+      - name: Cache npm dependencies
         uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
-      - name: Cache Eleventy dependencies
+      - name: Cache 11ty dependencies
         uses: actions/cache@v2
         with:
           path: .cache
           key: ${{ runner.OS }}-eleventy-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-eleventy-cache-
-      - name: Install
+      - name: Install npm modules
         run: npm ci
-      - name: Build
+      - name: Build website
         run: npm run build --if-present
-      - name: Copy files to server with SCP
+      - name: Copy to server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -42,9 +43,9 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           rm: true
           source: "_site/*"
-          target: "${{ secrets.DEPLOY_PATH }}html"
+          target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
-      - name: Executing remote SSH commands
+      - name: Post-deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
