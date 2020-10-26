@@ -6,13 +6,13 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 👌
 
 ### Table of Contents
 
--   [Title](#chrisburnellcom)
--   [Description](#description)
--   [Code of Conduct](#code-of-conduct)
--   [Contributing](#contributing)
--   [Build Process](#build-process)
--   [Network](#network)
--   [License](#license)
+- [Title](#chrisburnellcom)
+- [Description](#description)
+- [Code of Conduct](#code-of-conduct)
+- [Contributing](#contributing)
+- [Build Process](#build-process)
+- [Network](#network)
+- [License](#license)
 
 ### Description
 
