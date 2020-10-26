@@ -1,5 +1,3 @@
-# .github/workflows/ssh_deploy.yml
-
 name: Deploy Eleventy via SSH
 
 on:
@@ -11,19 +9,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE,
-      # so your workflow can access it
       - uses: actions/checkout@master
-
-      # Build your static website with Eleventy
-      - name: Build Eleventy
-        uses: TartanLlama/actions-eleventy@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          install_dependencies: true
-
-      # Copying files and artifacts via SSH
-      - name: Copying files to server
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run build --if-present
+      - name: Copying files to server with SCP
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -33,9 +30,7 @@ jobs:
           rm: true
           source: "_site/"
           target: "${{ secrets.DEPLOY_PATH }}html"
-
-      # Execute deploy functions
-      - name: executing remote ssh commands using password
+      - name: Executing remote SSH commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
