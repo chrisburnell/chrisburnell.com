@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           rm: true
-          source: "_site/"
+          source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}html"
       - name: Executing remote SSH commands
         uses: appleboy/ssh-action@master
