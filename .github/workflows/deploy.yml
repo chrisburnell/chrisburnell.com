@@ -25,8 +25,8 @@ jobs:
       - name: Cache Eleventy dependencies
         uses: actions/cache@v2
         with:
-          path: ~/.cache
-          key: ${{ runner.OS }}-eleventy-cache-${{ hashFiles('**/package-lock.json') }}
+          path: .cache
+          key: ${{ runner.OS }}-eleventy-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-eleventy-cache-
       - name: Install
