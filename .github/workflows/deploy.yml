@@ -33,7 +33,9 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-eleventy-cache-
       - name: Set the timezone
-        run: export TZ=Europe/London
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Europe/London
       - name: Install npm modules
         run: npm ci
       - name: Build website
