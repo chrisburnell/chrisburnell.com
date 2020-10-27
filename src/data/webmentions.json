@@ -1,5 +1,29 @@
 [
-
+  {
+    "source": "https://brid-gy.appspot.com/like/twitter/iamchrisburnell/1100400148868407298/29101152",
+    "verified": true,
+    "verified_date": "2020-10-27T09:40:59+00:00",
+    "id": 889073,
+    "private": false,
+    "data": {
+      "author": {
+        "name": "victor",
+        "url": "https://twitter.com/v1ctrawr",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/46f2643fe30f9c473f9ff083e9f2cb35215b4dd3d84a5282bb38c51e21323366.jpg"
+      },
+      "url": "https://twitter.com/iamchrisburnell/status/1100400148868407298#favorited-by-29101152",
+      "name": null,
+      "content": null,
+      "published": null,
+      "published_ts": null
+    },
+    "activity": {
+      "type": "like",
+      "sentence": "victor favorited a tweet https://chrisburnell.com/note/1551190813/",
+      "sentence_html": "<a href=\"https://twitter.com/v1ctrawr\">victor</a> favorited a tweet <a href=\"https://chrisburnell.com/note/1551190813/\">https://chrisburnell.com/note/1551190813/</a>"
+    },
+    "target": "https://chrisburnell.com/note/1551190813/"
+  },
   {
     "source": "https://chrisburnell.com/article/april-lws-talk/",
     "verified": true,
