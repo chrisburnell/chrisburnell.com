@@ -9,6 +9,32 @@ eleventyComputed:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
+{% if collections.todayRSVPs.length %}
+    <div class=" [ box ] [ owl--medium ] ">
+        <h2 id="today-rsvps">
+            <a href="/rsvps/">Events I’m Attending Today</a>
+        </h2>
+        <nav class=" [ deck ] " aria-labelledby="today-rsvps">
+            {% for item in collections.todayRSVPs %}
+                {{ deckItem(item, global.now, collections.all, [], false) }}
+            {% endfor %}
+        </nav>
+    </div>
+{% endif %}
+
+{% if collections.futureRSVPs.length %}
+    <div class=" [ box ] [ owl--medium ] ">
+        <h2 id="upcoming-rsvps">
+            <a href="/rsvps/">Upcoming Events</a>
+        </h2>
+        <nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
+            {% for item in collections.futureRSVPs %}
+                {{ deckItem(item, global.now, collections.all, [], false) }}
+            {% endfor %}
+        </nav>
+    </div>
+{% endif %}
+
 <h2 id="writing">
     <a href="/writing/">Latest Writing</a>
 </h2>
@@ -30,28 +56,6 @@ eleventyComputed:
 <nav class=" [ navigator ] " aria-label="Archive Navigation">
     <a class=" [ button ] " href="/archive/">Browse the Archive</a>
 </nav>
-
-{% if collections.todayRSVPs.length %}
-    <h2 id="today-rsvps">
-        <a href="/rsvps/">Events I’m Attending Today</a>
-    </h2>
-    <nav class=" [ deck ] " aria-labelledby="today-rsvps">
-        {% for item in collections.todayRSVPs %}
-            {{ deckItem(item, global.now, collections.all, [], false) }}
-        {% endfor %}
-    </nav>
-{% endif %}
-
-{% if collections.futureRSVPs.length %}
-    <h2 id="upcoming-rsvps">
-        <a href="/rsvps/">Upcoming Events</a>
-    </h2>
-    <nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
-        {% for item in collections.futureRSVPs %}
-            {{ deckItem(item, global.now, collections.all, [], false) }}
-        {% endfor %}
-    </nav>
-{% endif %}
 
 {% if collections.throwbackPosts.length %}
     <div class=" [ box ] [ owl--medium ] ">
