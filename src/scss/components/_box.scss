@@ -14,3 +14,13 @@
         @include v(color, wolf);
     }
 }
+
+.box--error {
+    @include v(background-color, canada--delta);
+    border-top-color: var(--color-canada--beta);
+}
+
+.box--warning {
+    @include v(background-color, highlight--delta);
+    border-top-color: var(--color-highlight--beta);
+}
