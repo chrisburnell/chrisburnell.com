@@ -9,6 +9,28 @@ eleventyComputed:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
+<h2 id="writing">
+    <a href="/writing/">Latest Writing</a>
+</h2>
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="writing">
+    {% for item in collections.writingPosts | limit(site.limits.snapshot) %}
+        {{ deckItem(item, global.now, collections.all, webmentions) }}
+    {% endfor %}
+</nav>
+
+<h2 id="posts">
+    <a href="/archive/">More Posts</a>
+</h2>
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
+    {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
+        {{ deckItem(item, global.now, collections.all, webmentions) }}
+    {% endfor %}
+</nav>
+
+<nav class=" [ navigator ] " aria-label="Archive Navigation">
+    <a class=" [ button ] " href="/archive/">Browse the Archive</a>
+</nav>
+
 {% if collections.todayRSVPs.length %}
     <h2 id="today-rsvps">
         <a href="/rsvps/">Events I’m Attending Today</a>
@@ -43,25 +65,3 @@ eleventyComputed:
         </nav>
     </div>
 {% endif %}
-
-<h2 id="writing">
-    <a href="/writing/">Latest Writing</a>
-</h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="writing">
-    {% for item in collections.writingPosts | limit(site.limits.snapshot) %}
-        {{ deckItem(item, global.now, collections.all, webmentions) }}
-    {% endfor %}
-</nav>
-
-<h2 id="posts">
-    <a href="/archive/">More Posts</a>
-</h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
-    {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
-        {{ deckItem(item, global.now, collections.all, webmentions) }}
-    {% endfor %}
-</nav>
-
-<nav class=" [ navigator ] " aria-label="Archive Navigation">
-    <a class=" [ button ] " href="/archive/">Browse the Archive</a>
-</nav>
