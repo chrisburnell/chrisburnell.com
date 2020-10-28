@@ -3,8 +3,8 @@
 /// @group components
 ////
 
-.navigation {
-}
+// .navigation {
+// }
 
 .navigation__list {
     display: grid;
@@ -18,20 +18,16 @@
         grid-template-rows: auto;
     }
 
-    li {
-        text-align: center;
-    }
-
     a {
         @include transition;
-        color: inherit;
+        color: inherit !important;
         display: inline-block;
         font-size: var(--font-scale-0);
         @include v(font-weight, bold);
         padding: v(measure, tiny) v(measure, small);
         position: relative;
+        text-align: center;
         text-decoration: none;
-        text-shadow: 1px 1px v(color, bear), -1px 1px v(color, bear), 1px -1px v(color, bear), -1px -1px v(color, bear);
         z-index: 0;
 
         &:hover,
@@ -39,13 +35,13 @@
         &:active,
         &[aria-current="page"] {
             background-color: transparent;
-            background-image: linear-gradient(to bottom, transparent 0, transparent 55%, v(color, coyote) 55%, v(color, bowhead) calc(55% + 0.5em), transparent calc(55% + 0.5em), transparent 100%);
+            background-image: linear-gradient(to bottom, transparent 0, transparent 85%, v(color, coyote) 85%, v(color, bowhead) calc(85% + 0.5em), transparent calc(85% + 0.5em), transparent 100%);
             outline: none;
         }
     }
 
     &:hover [aria-current="page"]:not(:hover):not(:focus):not(:active) {
-        background-image: linear-gradient(to bottom, transparent 0, transparent 55%, v(color, coyote--beta) 55%, v(color, bowhead--beta) calc(55% + 0.625em), transparent calc(55% + 0.625em), transparent 100%);
+        background-image: linear-gradient(to bottom, transparent 0, transparent 85%, v(color, coyote--beta) 85%, v(color, bowhead--beta) calc(85% + 0.625em), transparent calc(85% + 0.625em), transparent 100%);
     }
 
     // Cicada Interactions
