@@ -25,25 +25,28 @@ eleventyComputed:
 
 ## Why?
 
-Why not?
-
-No, but really though, there’s no serious reason for this. It’s just fun.
+*Why not?* No, but really though, there’s no serious reason for this. It’s just fun.
 
 ## Installation
 
-- **With npm:** `npm install @chrisburnell/pentatonic`
-- **Direct download:** [https://github.com/chrisburnell/pentatonic/archive/master.zip](https://github.com/chrisburnell/pentatonic/archive/master.zip)
+Yoink it [from npm](https://www.npmjs.com/package/@chrisburnell/pentatonic):
+
+```
+npm install @chrisburnell/pentatonic
+```
+
+You can also just download it directly [from GitHub](https://github.com/chrisburnell/pentatonic):<br><samp>[https://github.com/chrisburnell/pentatonic/archive/master.zip](https://github.com/chrisburnell/pentatonic/archive/master.zip)</samp>
 
 ## Usage
 
 *pentatonic.js* gives you a function, `pentatonic()` to use, like so:
 
 ```javascript
-for (let target of document.querySelectorAll(".pentatonic")) {
+document.querySelectorAll(".pentatonic").forEach(target => {
     target.addEventListener("click", () => {
-        pentatonic(target.getAttribute("data-values").split(","));
+        pentatonic(target.dataset.values.split(","));
     });
-}
+});
 ```
 
 The function takes six parameters:
