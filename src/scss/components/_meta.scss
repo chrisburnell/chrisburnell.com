@@ -6,6 +6,10 @@
 .meta {
     @include owl(tiny);
 
+    .details ~ & {
+        @include v(margin-top, large);
+    }
+
     .archive & {
         @include owl(large);
     }

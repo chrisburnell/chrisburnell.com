@@ -137,8 +137,6 @@
 }
 
 .meta {
-    @include v(margin-top, large);
-
     @include media("above:medium") {
         grid-column: marginalia;
         grid-row: 3/4;
