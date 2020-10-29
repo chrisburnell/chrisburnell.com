@@ -158,17 +158,17 @@
         {% if item.data.lede and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
             <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | urlize | safe }}</p>
         {% elif item.data.lede and item.data.lede_markdown %}
-            <p class=" [ p-summary ] ">{{ item.data.lede | markdownFormat | safe }}</p>
+            <p class=" [ p-summary ] ">{% if item.data.photo %}{% emoji '🖼' %} {% endif %}{{ item.data.lede | markdownFormat | safe }}</p>
         {% elif item.data.lede %}
-            <p class=" [ p-summary ] ">{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{% if item.data.photo %}{% emoji '🖼' %} {% endif %}{{ item.data.lede | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'bookmark' %}
-            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{% if item.data.photo %}{% emoji '🖼' %} {% endif %}{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'code' %}
             <p class=" [ p-summary ] ">One of my CodePens.</p>
         {% elif item.data.category == 'like' %}
             <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'note' %}
-            <p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+            <p class=" [ p-summary ] ">{% if item.data.photo %}{% emoji '🖼' %} {% endif %}{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
         {% elif item.data.category == 'recipe' %}
             <p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {% for author in item.data.authors | toArray %}{% if author.url %}<a href="{{ author | getPerson('url') }}">{{ author | getPerson }}</a>{% if not loop.last %}, {% endif %}{% else %}{{ author | getPerson }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}{% endif %}</p>
         {% elif item.data.category == 'talk' %}
