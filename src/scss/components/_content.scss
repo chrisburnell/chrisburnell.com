@@ -29,7 +29,7 @@
     @include v(font-weight, bold);
 
     .post & {
-        font-size: var(--font-scale-1);
+        @include v(font-size, delta);
     }
 }
 
@@ -49,7 +49,7 @@
 .rating {
     display: inline-block;
     position: relative;
-    font-size: var(--font-scale-1);
+    @include v(font-size, delta);
     line-height: 1;
 
     &::before,

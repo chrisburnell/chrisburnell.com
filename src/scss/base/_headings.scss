@@ -19,37 +19,37 @@
 %alpha,
 .alpha {
     @include font-family(alpha);
-    font-size: var(--font-scale-4);
+    @include v(font-size, alpha);
     @include v(line-height, medium);
 }
 
 %beta,
 .beta {
-    font-size: var(--font-scale-3);
+    @include v(font-size, beta);
     @include v(font-weight, bold);
 }
 
 %gamma,
 .gamma {
-    font-size: var(--font-scale-2);
+    @include v(font-size, gamma);
     @include v(font-weight, bold);
 }
 
 %delta,
 .delta {
-    font-size: var(--font-scale-1);
+    @include v(font-size, delta);
     @include v(font-weight, bold);
 }
 
 %epsilon,
 .epsilon {
-    font-size: var(--font-scale-0);
+    @include v(font-size, default);
     @include v(font-weight, bold);
 }
 
 %zeta,
 .zeta {
-    font-size: var(--font-scale-0);
+    @include v(font-size, default);
     @include v(font-weight, bold);
 }
 

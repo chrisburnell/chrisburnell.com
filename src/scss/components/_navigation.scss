@@ -22,7 +22,7 @@
         @include transition;
         color: inherit !important;
         display: inline-block;
-        font-size: var(--font-scale-0);
+        @include v(font-size, default);
         @include v(font-weight, bold);
         padding: v(measure, tiny) v(measure, small);
         position: relative;

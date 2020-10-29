@@ -32,10 +32,10 @@
     margin-top: 0;
 
     @include media("below:small") {
-        font-size: var(--font-scale--1);
+        @include v(font-size, small);
     }
     @include media("above:medium", "below:large") {
-        font-size: var(--font-scale--1);
+        @include v(font-size, small);
     }
 }
 
@@ -148,7 +148,7 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%) translateY(33%);
-        font-size: var(--font-scale--1);
+        @include v(font-size, small);
         line-height: 1;
         text-decoration: none;
         pointer-events: none;

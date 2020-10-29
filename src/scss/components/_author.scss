@@ -15,7 +15,7 @@
     color: inherit;
     display: flex;
     flex-direction: column;
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
     font-style: italic;
     @include v(line-height, medium);
     text-align: center;
@@ -119,7 +119,7 @@
 }
 
 .author__biography {
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
 
     @include media("above:medium") {
         text-align: right;

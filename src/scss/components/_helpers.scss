@@ -71,7 +71,7 @@
 }
 
 .small {
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
 }
 
 // Make text serifed and italicised
@@ -89,7 +89,7 @@
 
 // Emoji
 .emoji {
-    font-size: var(--font-scale-0);
+    @include v(font-size, default);
     font-style: normal;
     vertical-align: middle;
     text-shadow: none;

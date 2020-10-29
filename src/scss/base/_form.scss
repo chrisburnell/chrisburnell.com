@@ -43,7 +43,7 @@ optgroup,
 select,
 textarea {
     margin: 0;
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
     @include v(line-height);
 }
 
@@ -146,7 +146,7 @@ input[type="checkbox"] {
             top: 0;
             left: 0;
             bottom: 0;
-            font-size: var(--font-scale-2);
+            @include v(font-size, gamma);
             line-height: 1;
             border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
         }

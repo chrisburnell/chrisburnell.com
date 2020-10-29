@@ -70,7 +70,7 @@
     @include v(color, kaiser);
     display: block;
     @include v(padding, small);
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
     @include v(font-weight, bold);
     line-height: 1;
     text-align: center;

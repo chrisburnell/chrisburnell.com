@@ -20,7 +20,7 @@
     }
 
     h3 {
-        font-size: var(--font-scale-0);
+        @include v(font-size, default);
         @include v(line-height, medium);
     }
 
@@ -37,7 +37,7 @@
 
 .meta__list {
     display: inline;
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
 
     li {
         display: inline;

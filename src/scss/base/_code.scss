@@ -6,7 +6,7 @@
 
 %collection-monospace {
     @include font-family(monospace);
-    font-size: var(--font-scale--1);
+    @include v(font-size, small);
     @include v(line-height, medium);
     font-variant-numeric: proportional-nums;
 }

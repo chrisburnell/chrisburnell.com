@@ -17,7 +17,7 @@
         @include tabular-lining-numerals;
         padding: var(--measure-medium) 0;
         vertical-align: middle;
-        font-size: var(--font-scale--1);
+        @include v(font-size, small);
         text-align: center;
         white-space: nowrap;
 
@@ -34,7 +34,7 @@
         }
 
         h3 {
-            font-size: var(--font-scale-0);
+            @include v(font-size, default);
             margin-bottom: 0;
         }
     }

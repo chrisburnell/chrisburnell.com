@@ -31,7 +31,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     @include font-family(default);
-    font-size: var(--font-scale-0);
+    @include v(font-size, default);
     font-style: normal;
     @include v(font-weight);
     @include v(line-height);

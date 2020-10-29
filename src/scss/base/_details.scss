@@ -20,7 +20,7 @@ details {
         position: absolute;
         top: 100%;
         left: 0;
-        font-size: var(--font-scale--1);
+        @include v(font-size, small);
         @include transition(max-height);
         @include v(z-index, above);
     }
