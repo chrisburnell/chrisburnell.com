@@ -18,19 +18,6 @@ eleventyComputed:
     {% endfor %}
 </nav>
 
-<h2 id="posts">
-    <a href="/archive/">More Posts</a>
-</h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
-    {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
-        {{ deckItem(item, global.now, collections.all, webmentions) }}
-    {% endfor %}
-</nav>
-
-<nav class=" [ navigator ] " aria-label="Archive Navigation">
-    <a class=" [ button ] " href="/archive/">Browse the Archive</a>
-</nav>
-
 {% if collections.throwbackPosts.length %}
     <div class=" [ box ] [ owl--medium ] ">
         <h2 id="on-this-day">
@@ -43,6 +30,19 @@ eleventyComputed:
         </nav>
     </div>
 {% endif %}
+
+<h2 id="posts">
+    <a href="/archive/">More Posts</a>
+</h2>
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
+    {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
+        {{ deckItem(item, global.now, collections.all, webmentions) }}
+    {% endfor %}
+</nav>
+
+<nav class=" [ navigator ] " aria-label="Archive Navigation">
+    <a class=" [ button ] " href="/archive/">Browse the Archive</a>
+</nav>
 
 {% if collections.todayRSVPs.length %}
     <div class=" [ box ] [ owl--medium ] ">
