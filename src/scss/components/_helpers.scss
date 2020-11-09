@@ -95,9 +95,23 @@
     text-shadow: none;
 }
 
+// Sorting labels
 [data-direction="ascending"][aria-current="true"]::after {
     content: "​ ▲ ​";
 }
 [data-direction="descending"][aria-current="true"]::after {
     content: "​ ▼ ​";
+}
+
+// Limit lines
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@for $i from 1 through 4 {
+    .line-clamp--#{$i} {
+        --line-clamp: #{$i};
+    }
 }
