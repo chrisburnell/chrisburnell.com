@@ -102,6 +102,7 @@ module.exports = function(config) {
     config.addCollection("rsvps", collections.rsvp);
     config.addCollection("todayRSVPs", collections.rsvpToday);
     config.addCollection("futureRSVPs", collections.rsvpFuture);
+    config.addCollection("popular", collections.popular);
 
     // Builder Collections
     config.addCollection("categories", categoriesBuilder);

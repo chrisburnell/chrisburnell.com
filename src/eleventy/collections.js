@@ -1,5 +1,8 @@
 const dateFilters = require("./filters/dates.js");
 const collectionFilters = require("./filters/collections.js");
+const queryFilters = require("./filters/queries.js");
+
+const webmentions = require("../data/webmentions.json");
 
 const now = new Date();
 
@@ -20,6 +23,17 @@ module.exports = {
             .getFilteredByTag("writing")
             .filter(collectionFilters.published)
             .sort(collectionFilters.date);
+    },
+    popular: collection => {
+        return collection
+            .getFilteredByTag("writing")
+            .filter(collectionFilters.published)
+            .filter(item => queryFilters.webmentions(webmentions, item.url).length > 0)
+            .sort(collectionFilters.date)
+            .sort((a, b) => {
+                return queryFilters.webmentions(webmentions, b.url).length - queryFilters.webmentions(webmentions, a.url).length;
+            })
+            .slice(0, 10);
     },
     feature: collection => {
         return collection
