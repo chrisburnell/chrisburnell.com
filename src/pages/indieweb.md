@@ -50,9 +50,11 @@ As much work as I’ve put into my sections of code, I have to give a massive th
 
 <dl>
     <dt><a href="https://adactio.com" rel="external">Jeremy Keith</a></dt>
-    <dd>*for* <a href="https://gist.github.com/adactio/8168e6b78da7b16a4644" rel="external">Minimum micropub endpoint</a></dd>
+    <dd>for <a href="https://gist.github.com/adactio/8168e6b78da7b16a4644" rel="external">Minimum micropub endpoint</a></dd>
     <dt><a href="https://aaronparecki.com" rel="external">Aaron Parecki</a></dt>
-    <dd>*for* <a href="https://atlas.p3k.io" rel="external">Atlas</a>, <a href="https://switchboard.p3k.io" rel="external">Switchboard</a>, <a href="https://telegraph.p3k.io" rel="external">Telegraph</a>, and <a href="https://webmention.io" rel="external">Webmention.io</a></dd>
+    <dd>for <a href="https://switchboard.p3k.io" rel="external">Switchboard</a>, <a href="https://telegraph.p3k.io" rel="external">Telegraph</a>, and <a href="https://webmention.io" rel="external">Webmention.io</a></dd>
     <dt><a href="https://snarfed.org" rel="external">Ryan Barrett</a></dt>
-    <dd>*for* <a href="https://brid.gy" rel="external">Bridgy</a> and <a href="https://fed.brid.gy" rel="external">Bridgy Fed</a></dd>
+    <dd>for <a href="https://brid.gy" rel="external">Bridgy</a> and <a href="https://fed.brid.gy" rel="external">Bridgy Fed</a></dd>
+    <dt><a href="https://rusingh.com" rel="external">Ru Singh</a></dt>
+    <dd>for <a href="https://gocelestial.herokuapp.com" rel="external">Celestial</a></dd>
 </dl>

@@ -1,9 +1,9 @@
 {
   "layout": "page",
+  "carbon": true,
+  "coil": true,
   "tags": [
     "page"
   ],
-  "permalink": "/{{ page.fileSlug }}/index.html",
-  "carbon": true,
-  "coil": true
+  "permalink": "/{{ page.fileSlug }}/index.html"
 }

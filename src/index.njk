@@ -9,17 +9,17 @@ eleventyComputed:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
-<h2 id="posts">
+<h2 id="newest">
     <a href="/archive/">Newest Posts</a>
 </h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="posts">
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="newest">
     {% for item in collections.featurePostsNotWriting | limit(site.limits.snapshot) %}
         {{ deckItem(item, global.now, collections.all, webmentions) }}
     {% endfor %}
 </nav>
 
 <h2 id="popular">
-    <a href="/popular/">Popular Writing</a>
+    <a href="/popular/">Popular Posts</a>
 </h2>
 <nav class=" [ deck ] " aria-labelledby="popular">
     {% for item in collections.popular | limit(site.limits.snapshot) %}
