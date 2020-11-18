@@ -25,7 +25,7 @@ module.exports = function newBase60(date, prefix, collection) {
     let postsToday = [];
     for (let i in collection) {
         if ("date" in collection[i].data) {
-            if (dateFilters.friendly(collection[i].data.date) == dateFilters.friendly(date)) {
+            if (dateFilters.friendlyDate(collection[i].data.date) == dateFilters.friendlyDate(date)) {
                 postsToday.push(collection[i]);
             }
         }

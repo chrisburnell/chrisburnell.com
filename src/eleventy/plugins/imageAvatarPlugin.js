@@ -78,7 +78,7 @@ module.exports = function(config) {
         }
         // Webmention is from a personal URL and has a photo attached
         else if (photo) {
-            host = queryFilters.host(authorUrl);
+            host = queryFilters.getHost(authorUrl);
             asset = new AssetCache(`avatar-url-${host}`);
         }
         // Webmention is from a personal URL and has no photo

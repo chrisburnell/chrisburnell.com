@@ -1,8 +1,9 @@
 const dateFilters = require("./filters/dates.js");
 const collectionFilters = require("./filters/collections.js");
 const queryFilters = require("./filters/queries.js");
+const utilityFilters = require("./filters/utils.js");
 
-const webmentions = require("../data/webmentions.json");
+const webmentions = require("../data/webmentions.js");
 
 const now = new Date();
 
@@ -12,37 +13,42 @@ module.exports = {
             .getFilteredByTag("page")
             .filter(collectionFilters.published);
     },
-    post: collection => {
+    posts: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.published)
             .sort(collectionFilters.date);
     },
-    writing: collection => {
+    writingPosts: collection => {
         return collection
             .getFilteredByTag("writing")
             .filter(collectionFilters.published)
             .sort(collectionFilters.date);
     },
-    popular: collection => {
-        return collection
-            .getFilteredByTag("writing")
-            .filter(collectionFilters.published)
-            .filter(item => queryFilters.webmentions(webmentions, item.url).length > 0)
-            .sort(collectionFilters.date)
-            .sort((a, b) => {
-                return queryFilters.webmentions(webmentions, b.url).length - queryFilters.webmentions(webmentions, a.url).length;
-            })
-            .slice(0, 10);
+    popular: async (collection) => {
+        return (async () => {
+            const mentions = await webmentions();
+            return await collection
+                .getFilteredByTag("writing")
+                .filter(collectionFilters.published)
+                .sort(collectionFilters.date)
+                .filter(item => queryFilters.getWebmentions(mentions, item.url).length)
+                .sort((a, b) => {
+                    const alpha = queryFilters.getWebmentions(mentions, a.url);
+                    const beta = queryFilters.getWebmentions(mentions, b.url);
+                    return beta.length - alpha.length
+                })
+                .slice(0, 10)
+        })();
     },
-    feature: collection => {
+    featurePosts: collection => {
         return collection
             .getFilteredByTag("feature")
             .filter(collectionFilters.published)
             .filter(collectionFilters.notReply)
             .sort(collectionFilters.date);
     },
-    featureWithoutWriting: collection => {
+    featurePostsNotWriting: collection => {
         return collection
             .getFilteredByTag("feature")
             .filter(item => {
@@ -53,7 +59,7 @@ module.exports = {
             .sort(collectionFilters.date)
             .slice(0, 3);
     },
-    throwback: collection => {
+    throwbackPosts: collection => {
         return collection
             .getFilteredByTag("throwback")
             .filter(collectionFilters.published)
@@ -65,25 +71,25 @@ module.exports = {
             })
             .filter(item => {
                 if (item.date
-                    && dateFilters.friendly(item.date, 'dd LLLL') == dateFilters.friendly(now, 'dd LLLL')
-                    && dateFilters.friendly(item.date, 'yyyy') != dateFilters.friendly(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.date, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.date, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
                     return true;
                 }
                 else if (item.data.rsvp
-                    && dateFilters.friendly(item.data.rsvp.date, 'dd LLLL') == dateFilters.friendly(now, 'dd LLLL')
-                    && dateFilters.friendly(item.data.rsvp.date, 'yyyy') != dateFilters.friendly(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.data.rsvp.date, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.data.rsvp.date, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
                     return true;
                 }
                 else if (item.data.rsvp
-                    && dateFilters.friendly(item.data.rsvp.finish, 'dd LLLL') == dateFilters.friendly(now, 'dd LLLL')
-                    && dateFilters.friendly(item.data.rsvp.finish, 'yyyy') != dateFilters.friendly(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
                     return true;
                 }
                 return false;
             })
             .sort(collectionFilters.date);
     },
-    checkin: collection => {
+    checkins: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.published)
@@ -92,7 +98,7 @@ module.exports = {
             })
             .sort(collectionFilters.date);
     },
-    reply: collection => {
+    replies: collection => {
         return collection
             .getFilteredByTag("note")
             .filter(collectionFilters.published)
@@ -107,7 +113,7 @@ module.exports = {
             })
             .sort(collectionFilters.date);
     },
-    noteWithoutReply: collection => {
+    notesWithoutReplies: collection => {
         return collection
             .getFilteredByTag("note")
             .filter(collectionFilters.published)
@@ -119,7 +125,7 @@ module.exports = {
             })
             .sort(collectionFilters.date);
     },
-    rsvp: collection => {
+    rsvps: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.published)
@@ -128,18 +134,18 @@ module.exports = {
             })
             .sort(collectionFilters.date);
     },
-    rsvpToday: collection => {
+    todayRSVPs: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.published)
             .filter(item => {
                 if (item.data.rsvp
-                    && dateFilters.friendly(item.data.rsvp.date) == dateFilters.friendly(now)) {
+                    && dateFilters.friendlyDate(item.data.rsvp.date) == dateFilters.friendlyDate(now)) {
                     return true;
                 }
             })
     },
-    rsvpFuture: collection => {
+    futureRSVPs: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.published)
@@ -147,7 +153,7 @@ module.exports = {
                 if (item.data.rsvp
                     && dateFilters.epoch(item.data.rsvp.date) > now
                     && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(now) < 604800000
-                    && dateFilters.friendly(item.data.rsvp.date) != dateFilters.friendly(now)) {
+                    && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(now)) {
                     return true;
                 }
             })

@@ -15,28 +15,28 @@ module.exports = {
                 return d;
         }
     },
-    friendly: (value, format = "dd LLLL yyyy") => {
+    friendlyDate: (value, format = "dd LLLL yyyy") => {
         return DateTime.fromJSDate(new Date(value)).toFormat(format);
     },
-    iso: (value, showTimezone = true) => {
+    isoDate: (value, showTimezone = true) => {
         if (showTimezone) {
             return DateTime.fromJSDate(new Date(value)).toFormat("yyyy-MM-dd'T'HH:mm:ssZZZ");
         }
         return DateTime.fromJSDate(new Date(value)).toFormat("yyyy-MM-dd'T'HH:mm:ss");
     },
-    http: (value) => {
+    httpDate: (value) => {
         return DateTime.fromJSDate(new Date(value)).toHTTP();
     },
     epoch: (value) => {
         return new Date(value).getTime();
     },
-    time: (value, showTimezone = true) => {
+    friendlyTime: (value, showTimezone = true) => {
         if (showTimezone) {
             return DateTime.fromJSDate(new Date(value)).toFormat("HH:mm ZZZZ").replace('GMT+1', 'BST');
         }
         return DateTime.fromJSDate(new Date(value)).toFormat("HH:mm");
     },
-    timezone: (value) => {
+    friendlyTimezone: (value) => {
         return DateTime.fromJSDate(new Date(value)).zoneName;
     }
 };

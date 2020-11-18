@@ -38,49 +38,37 @@ module.exports = function(config) {
     config.addTransform("htmlmin", htmlMinTransform);
     config.addTransform("parse", parseTransform);
 
-    // Date Filters
-    config.addFilter("friendlyDate", dateFilters.friendly);
-    config.addFilter("isoDate", dateFilters.iso);
-    config.addFilter("httpDate", dateFilters.http);
-    config.addFilter("epoch", dateFilters.epoch);
-    config.addFilter("friendlyTime", dateFilters.time);
-    config.addFilter("friendlyTimezone", dateFilters.timezone);
-
-    // String Filters
-    config.addFilter("capitalizeFormat", stringFilters.capitalize);
-    config.addFilter("markdownFormat", stringFilters.markdown);
-    config.addFilter("numberStringFormat", stringFilters.numberString);
-    config.addFilter("maxSentences", stringFilters.maxSentences);
-    config.addFilter("maxWords", stringFilters.maxWords);
-    config.addFilter("maxChars", stringFilters.maxChars);
-
-    // Query Filters
-    config.addFilter("getConsole", queryFilters.console);
-    config.addFilter("getCountByYear", queryFilters.countByYear);
-    config.addFilter("getHost", queryFilters.host);
-    config.addFilter("getInternalTarget", queryFilters.internal);
-    config.addFilter("getMastodonHandle", queryFilters.mastodonHandle);
-    config.addFilter("getPerson", queryFilters.person);
-    config.addFilter("getPlace", queryFilters.place);
-    config.addFilter("getPostingMethod", queryFilters.postingMethod);
-    config.addFilter("getTarget", queryFilters.target);
-    config.addFilter("getTwitterHandle", queryFilters.twitterHandle);
-    config.addFilter("getWebmentionReactions", queryFilters.webmentionReactions);
-    config.addFilter("getWebmentionReplies", queryFilters.webmentionReplies);
-    config.addFilter("getWebmentions", queryFilters.webmentions);
-
-    // Collection Filters
+    // Filters
+    Object.keys(dateFilters).forEach(filterName => {
+        config.addFilter(filterName, dateFilters[filterName]);
+    });
+    Object.keys(stringFilters).forEach(filterName => {
+        config.addFilter(filterName, stringFilters[filterName]);
+    });
+    Object.keys(queryFilters).forEach(filterName => {
+        config.addFilter(filterName, queryFilters[filterName]);
+    });
+    Object.keys(utilityFilters).forEach(filterName => {
+        config.addFilter(filterName, utilityFilters[filterName]);
+    });
     config.addFilter("publishedFilter", (array) => array.filter(collectionFilters.published));
     config.addFilter("tagFilter", collectionFilters.tag);
     config.addFilter("categoryFilter", collectionFilters.category);
-
-    // Utility Filters
-    config.addFilter("keySort", utilityFilters.keySort);
-    config.addFilter("limit", utilityFilters.limit);
-    config.addFilter("toArray", utilityFilters.toArray);
-
-    // NewBase60 Magic Filter
     config.addFilter("newBase60", newBase60);
+
+    // Collections
+    Object.keys(collections).forEach(collectionName => {
+        config.addCollection(collectionName, collections[collectionName]);
+    });
+
+    // Builder Collections
+    config.addCollection("categories", categoriesBuilder);
+    config.addCollection("tags", tagsBuilder);
+
+    // Shortcodes
+    Object.keys(shortcodes).forEach(shortcodeName => {
+        config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+    });
 
     // Layouts
     config.addLayoutAlias("base", "base.njk");
@@ -88,32 +76,6 @@ module.exports = function(config) {
     config.addLayoutAlias("archive", "archive.njk");
     config.addLayoutAlias("post", "post.njk");
     config.addLayoutAlias("feed", "feed.njk");
-
-    // Collections
-    config.addCollection("pages", collections.page);
-    config.addCollection("posts", collections.post);
-    config.addCollection("writingPosts", collections.writing);
-    config.addCollection("featurePosts", collections.feature);
-    config.addCollection("featurePostsNotWriting", collections.featureWithoutWriting);
-    config.addCollection("throwbackPosts", collections.throwback);
-    config.addCollection("checkins", collections.checkin);
-    config.addCollection("replies", collections.reply);
-    config.addCollection("notesWithoutReplies", collections.noteWithoutReply);
-    config.addCollection("rsvps", collections.rsvp);
-    config.addCollection("todayRSVPs", collections.rsvpToday);
-    config.addCollection("futureRSVPs", collections.rsvpFuture);
-    config.addCollection("popular", collections.popular);
-
-    // Builder Collections
-    config.addCollection("categories", categoriesBuilder);
-    config.addCollection("tags", tagsBuilder);
-
-    // Shortcodes
-    config.addShortcode("caniuse", shortcodes.caniuse);
-    config.addShortcode("codepen", shortcodes.codepen);
-    config.addShortcode("tweet", shortcodes.tweet);
-    config.addShortcode("emoji", shortcodes.emoji);
-    config.addShortcode("sparkline", shortcodes.sparkline);
 
     // Static Files
     config.addPassthroughCopy("css");

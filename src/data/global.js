@@ -1,5 +1,4 @@
 module.exports = {
-    environment: process.env.ELEVENTY_ENV,
     now: Date.now(),
     random() {
         const segment = () => {

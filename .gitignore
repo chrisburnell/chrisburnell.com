@@ -28,6 +28,7 @@ Thumbs.db
 *.sqlite
 
 # Eleventy
+.env
 _site/
 
 # Sass

@@ -183,7 +183,7 @@
                     <small>updated</small>
                     <time class=" [ dt-updated ] " datetime="{{ item.data.updated | isoDate }}">{{ item.data.updated | friendlyDate }}</time>
                 {% endif %}
-                {%- set responses = webmentions | getWebmentions(item.url) | reverse -%}
+                {%- set responses = webmentions | getWebmentions(item.url) -%}
                 {% if responses.length %}
                     ·
                     <a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>

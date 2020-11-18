@@ -95,6 +95,11 @@
     text-shadow: none;
 }
 
+// For salty remarks
+.salty {
+    font-family: Comic Sans MS, Chalkboard SE, fantasy;
+}
+
 // Sorting labels
 [data-direction="ascending"][aria-current="true"]::after {
     content: "​ ▲ ​";

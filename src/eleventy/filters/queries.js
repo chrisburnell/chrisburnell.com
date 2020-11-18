@@ -1,3 +1,19 @@
+const sanitizeHTML = require("sanitize-html");
+
+const site = require("../../data/site.json");
+const consoles = require("../../data/consoles.json");
+const mastodonInstances = require("../../data/mastodonInstances.json");
+const humans = require("../../data/people/humans.js");
+const breweries = require("../../data/people/breweries.js");
+const gamePublishers = require("../../data/people/gamePublishers.js");
+const meetups = require("../../data/people/meetups.js");
+const musicArtists = require("../../data/people/musicArtists.js");
+const publications = require("../../data/people/publications.js");
+const people = [].concat(...[humans, breweries, gamePublishers, meetups, musicArtists, publications]);
+const places = require("../../data/places.json");
+const methods = require("../../data/postingMethods.json");
+const targets = require("../../data/targets.json");
+
 const toArray = function(value) {
     if (Array.isArray(value)) {
         return value;
@@ -10,22 +26,20 @@ const getPath = function(url) {
     return urlObject.pathname;
 };
 
-const site = require("../../data/site.json");
-const consoles = require("../../data/consoles.json");
-const mastodonInstances = require("../../data/mastodonInstances.json");
-const humans = require("../../data/people/humans.json");
-const breweries = require("../../data/people/breweries.json");
-const gamePublishers = require("../../data/people/gamePublishers.json");
-const meetups = require("../../data/people/meetups.json");
-const musicArtists = require("../../data/people/musicArtists.json");
-const publications = require("../../data/people/publications.json");
-const people = [].concat(...[humans, breweries, gamePublishers, meetups, musicArtists, publications]);
-const places = require("../../data/places.json");
-const methods = require("../../data/postingMethods.json");
-const targets = require("../../data/targets.json");
+const absoluteURL = function(url, base) {
+    if (!base) {
+        base = site.url;
+    }
+    try {
+        return (new URL(url, base)).toString();
+    } catch(e) {
+        console.log(`Trying to convert ${url} to be an absolute url with base ${base} and failed.`);
+        return url;
+    }
+};
 
 module.exports = {
-    console: (value) => {
+    getConsole: (value) => {
         for (let console of consoles) {
             if (value == console.title) {
                 return `<abbr title="${console.abbreviation}">${console.title}</abbr>`;
@@ -34,21 +48,21 @@ module.exports = {
 
         return value;
     },
-    countByYear: (items, year) => {
+    getCountByYear: (items, year) => {
         return items.filter(item => {
             return !item.data.draft;
         }).filter(item => {
             return item.data.page.date.getFullYear() === parseInt(year, 10);
         }).length;
     },
-    host: (url) => {
+    getHost: (url) => {
         if (typeof url === "string" && url.includes('//')) {
             let urlObject = new URL(url);
             return urlObject.hostname;
         }
         return url;
     },
-    internal: (value, pages) => {
+    getInternalTarget: (value, pages) => {
         // Mastodon
         if (value.includes('https://mastodon.social/users/chrisburnell/statuses/')) {
             return 'a previous toot';
@@ -88,7 +102,7 @@ module.exports = {
 
         return value;
     },
-    mastodonHandle: (url) => {
+    getMastodonHandle: (url) => {
         for (let instance of mastodonInstances) {
             if (url.includes(instance)) {
                 if (url.includes('/@')) {
@@ -101,7 +115,7 @@ module.exports = {
         }
         return url;
     },
-    person: (value, intent) => {
+    getPerson: (value, intent) => {
         // Default metadata to the passed value (string/object)
         let title, url, mastodon, twitter;
 
@@ -202,7 +216,7 @@ module.exports = {
         }
         return (value.title || value);
     },
-    place: (value, intent) => {
+    getPlace: (value, intent) => {
         // Default metadata to the passed value (string/object)
         let title, url, lat, long, address;
 
@@ -270,7 +284,7 @@ module.exports = {
         }
         return (value.title || value);
     },
-    postingMethod: (url) => {
+    getPostingMethod: (url) => {
         let target;
         if (url.includes("//")) {
             let urlObject = new URL(url);
@@ -286,8 +300,8 @@ module.exports = {
 
         return target;
     },
-    target: (url) => {
-        let target = module.exports.host(url);
+    getTarget: (url) => {
+        let target = module.exports.getHost(url);
 
         for (let item of targets) {
             if (item.url && item.url.includes(target)) {
@@ -298,35 +312,80 @@ module.exports = {
 
         return target;
     },
-    twitterHandle: (url) => {
+    getTwitterHandle: (url) => {
         if (url.includes('https://twitter.com')) {
             return '@' + url.split('/status/')[0].split('twitter.com/')[1];
         }
 
         return url;
     },
-    webmentionReactions: (webmentions) => {
-        return webmentions.filter(webmention => {
-            if (['like', 'repost', 'bookmark'].includes(webmention.activity.type)) {
-                return true;
-            }
-            return false;
-        });
+    getBaseUrl: (url) => {
+        let hashSplit = url.split("#");
+        let queryparamSplit = hashSplit[0].split("?");
+        return queryparamSplit[0];
     },
-    webmentionReplies: (webmentions) => {
-        return webmentions.filter(webmention => {
-            if (['link', 'reply'].includes(webmention.activity.type)) {
-                return true;
+    getWebmentions: (webmentions, url, allowedTypes) => {
+        url = absoluteURL(url)
+
+        if (!url || !webmentions.mentions || !webmentions.mentions[url]) {
+            return []
+        }
+
+        // if (!url) {
+        //     console.log("no URL provided")
+        //     return []
+        // }
+
+        // if (!webmentions.mentions) {
+        //     console.log("no mentions in webmentions")
+        //     return []
+        // }
+
+        // if (!webmentions.mentions[url]) {
+        //     console.log("no matching key in mentions in webmentions")
+        //     return []
+        // }
+
+        if (!allowedTypes) {
+            allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
+        }
+        else if (typeof allowedTypes === "string") {
+            allowedTypes = [allowedTypes]
+        }
+
+        // define which HTML tags you want to allow in the webmention body content
+        // https://github.com/apostrophecms/sanitize-html#what-are-the-default-options
+        const allowedHTML = {
+            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+            allowedAttributes: {
+                a: ['href']
             }
-            return false;
-        });
-    },
-    webmentions: (webmentions, url) => {
-        return webmentions.filter(webmention => {
-            if (webmention.target.replace(/\/?$/, "/").includes(url)) {
-                return true;
-            }
-            return false;
-        });
+        }
+
+        return webmentions.mentions[url]
+            .filter(entry => {
+                return allowedTypes.includes(entry["wm-property"]);
+            })
+            // .filter((entry) => {
+            //     const { author, published } = entry
+            //     return !!author && !!author.name && !!published
+            // })
+            .map(entry => {
+                if (!("content" in entry)) {
+                    return entry;
+                }
+                const { html, text } = entry.content
+                if (html) {
+                    // really long html mentions, usually newsletters or compilations
+                    entry.content.value =
+                        html.length > 2000
+                            ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
+                            : sanitizeHTML(html, allowedHTML)
+                }
+                else {
+                    entry.content.value = sanitizeHTML(text, allowedHTML)
+                }
+                return entry
+            });
     }
 };

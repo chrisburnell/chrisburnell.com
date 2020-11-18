@@ -16,7 +16,7 @@ const truncate = (() => {
 })();
 
 module.exports = {
-    capitalize: (string) => {
+    capitalizeFormat: (string) => {
         for (let capitalizer of capitalizers) {
             let regex = new RegExp(capitalizer, 'gi');
             string = string.replace(regex, capitalizer);
@@ -24,10 +24,10 @@ module.exports = {
 
         return string;
     },
-    markdown: (value) => {
+    markdownFormat: (value) => {
         return markdownIt.render(value);
     },
-    numberString: (number) => {
+    numberStringFormat: (number) => {
         let strings = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
         if (number < strings.length) {
             return strings[number];

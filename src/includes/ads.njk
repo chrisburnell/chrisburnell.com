@@ -1,4 +1,4 @@
-{% if global.environment == 'production' %}
+{% if process.env.ELEVENTY_ENV == 'production' %}
     {% if carbon %}
         <div class=" [ ads ] ">
             <!-- Carbon Ads  -->
