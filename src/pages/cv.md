@@ -66,14 +66,6 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     Bowhead is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. Available [on GitHub](https://github.com/chrisburnell/bowhead) and [on NPM](https://www.npmjs.com/package/@chrisburnell/bowhead).<br><br>
 
-0. **[National Federation of Women's Institutes](https://www.thewi.org.uk)**
-
-    *NFWI* was one of my favourite projects to work on while I was at *Squiz*—I worked on the HTML and CSS side of the front-end as well as doing some work for *NFWI’s* authors in the CMS.<br><br>
-
-0. **[One Housing](https://www.onehousing.co.uk/)**
-
-    *One Housing* was a project while I was at *Squiz* where I really got to put my knowledge of CSS to the test, so I worked hard to produce a robust framework that was part of the foundation of further front-end development in the *One Housing* network of sites.<br><br>
-
 0. **[My Website](https://chrisburnell.com/)**
 
     My website has been online in various forms since 2008, and it’s my favourite thing that I own—I think of it as part of who I am and gives others a rare lens into my life. Since discovering the [IndieWeb](https://indieweb.org/) in 2017, I’ve begun posting various types of content, from simple [notes](https://chrisburnell.com/notes/) to [likes](https://chrisburnell.com/likes/) and [bookmarks](https://chrisburnell.com/bookmarks/). Everything is built by [Eleventy](https://www.11ty.dev/) and is available for perusal [on GitHub](https://github.com/chrisburnell/chrisburnell.com).<br><br>
