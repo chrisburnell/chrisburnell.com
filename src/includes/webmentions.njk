@@ -9,8 +9,8 @@
             <input class=" [ button ] [ webmentions__submit ] " type="submit" value="Send">
         </form>
         <div class=" [ webmentions__responses ] ">
-            {%- set reactions = webmentions | getWebmentions(page.url, ["like-of", "repost-of", "bookmark-of"]) -%}
-            {%- set replies = webmentions | getWebmentions(page.url, ["mention-of", "in-reply-to"]) -%}
+            {%- set reactions = webmentions | getWebmentions(page.url, ["like-of", "repost-of", "bookmark-of", "mention-of"]) -%}
+            {%- set replies = webmentions | getWebmentions(page.url, ["in-reply-to"]) -%}
             {% if reactions.length or replies.length %}
                 <h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
                 <dl class=" [ webmentions__list ] [ full ] ">
