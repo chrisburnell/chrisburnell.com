@@ -155,19 +155,19 @@
     }
 }
 
-[data-type="bookmark"] .webmentions__response__type::before {
+[data-type="bookmark-of"] .webmentions__response__type::before {
     content: "🔖";
 }
 
-[data-type="like"] .webmentions__response__type::before {
+[data-type="like-of"] .webmentions__response__type::before {
     content: "❤️";
 }
 
-[data-type="link"] .webmentions__response__type::before {
+[data-type="mention-of"] .webmentions__response__type::before {
     content: "💬";
 }
 
-[data-type="repost"] .webmentions__response__type::before {
+[data-type="repost-of"] .webmentions__response__type::before {
     content: "🔄️";
 }
 

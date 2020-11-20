@@ -46,7 +46,7 @@
                                     {%- set authorUrlHost = authorUrl | getHost -%}
                                     {%- set webmentionDate = webmention.published | default(webmention['wm-received']) -%}
                                     {%- set sentiment = webmention.content.text | getSentimentValue -%}
-                                    <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < 0 %}[ salty ] {% endif %}" data-type="{{ webmention['wm-property'] }}">
+                                    <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.17 %}[ salty ] {% endif %}" data-type="{{ webmention['wm-property'] }}">
                                         <a class=" [ webmentions__response__avatar ] [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external" title="{{ authorName }}">
                                             {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
                                         </a>

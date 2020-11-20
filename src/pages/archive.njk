@@ -38,13 +38,13 @@ lede: Browse all of my posts by a variety of metrics.
             {% if collection[0].data.mf_root == 'review' %}
                 <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
                     {% for item in collection | limit(site.limits.snapshot) %}
-                        {{ shelfItem(item, global.now) }}
+                        {{ shelfItem(item, global.now, people) }}
                     {% endfor %}
                 </nav>
             {% else %}
                 <nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
                     {% for item in collection | limit(site.limits.snapshot) %}
-                        {{ deckItem(item, global.now, collections.all, webmentions) }}
+                        {{ deckItem(item, global.now, collections.all, people, webmentions) }}
                     {% endfor %}
                 </nav>
             {% endif %}

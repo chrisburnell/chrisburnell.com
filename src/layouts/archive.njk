@@ -44,7 +44,7 @@ layout: base
                     </h2>
                     <nav class=" [ deck ] ">
                 {% endif %}
-                {{ deckItem(item, global.now, collections.all, webmentions) }}
+                {{ deckItem(item, global.now, collections.all, people, webmentions) }}
             {% endfor %}
         </nav>
     </div>

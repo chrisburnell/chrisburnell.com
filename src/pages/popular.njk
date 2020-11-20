@@ -20,7 +20,7 @@ related_collection: popular
     <div class=" [ content__body ] [ h-feed ] ">
         <nav class=" [ deck ] ">
             {% for item in collection %}
-                {{ deckItem(item, global.now, collections.all, webmentions) }}
+                {{ deckItem(item, global.now, collections.all, people, webmentions) }}
             {% endfor %}
         </nav>
     </div>

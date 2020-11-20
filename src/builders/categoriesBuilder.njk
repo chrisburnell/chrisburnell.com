@@ -41,7 +41,7 @@ eleventyComputed:
             </div>
             <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
                 {% for item in collection %}
-                    {{ shelfItem(item, global.now) }}
+                    {{ shelfItem(item, global.now, people) }}
                 {% endfor %}
             </nav>
         {% else %}
@@ -71,7 +71,7 @@ eleventyComputed:
                         </h2>
                         <nav class=" [ deck ] ">
                     {% endif %}
-                    {{ deckItem(item, global.now, collections.all, webmentions) }}
+                    {{ deckItem(item, global.now, collections.all, people, webmentions) }}
                 {% endfor %}
             </nav>
         {% endif %}

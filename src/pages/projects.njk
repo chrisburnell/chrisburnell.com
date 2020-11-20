@@ -8,7 +8,7 @@ lede: A list of my personal projects, work, and rabbit-hole deep-dives.
 
 <nav class=" [ deck ] [ h-feed ] ">
     {% for item in projects.personal %}
-        {{ deckItem(item, global.now, [], [], false, false) }}
+        {{ deckItem(item, global.now, [], people, [], false, false) }}
     {% endfor %}
 </nav>
 
@@ -16,7 +16,7 @@ lede: A list of my personal projects, work, and rabbit-hole deep-dives.
 
 <nav class=" [ deck ] [ h-feed ] ">
     {% for item in projects.work %}
-        {{ deckItem(item, global.now, [], [], false, false) }}
+        {{ deckItem(item, global.now, [], people, [], false, false) }}
     {% endfor %}
 </nav>
 
@@ -24,6 +24,6 @@ lede: A list of my personal projects, work, and rabbit-hole deep-dives.
 
 <nav class=" [ deck ] [ h-feed ] ">
     {% for item in projects.previousVersions %}
-        {{ deckItem(item, global.now, [], [], false, false) }}
+        {{ deckItem(item, global.now, [], people, [], false, false) }}
     {% endfor %}
 </nav>

@@ -1,7 +1,6 @@
 const dateFilters = require("./filters/dates.js");
 const collectionFilters = require("./filters/collections.js");
 const queryFilters = require("./filters/queries.js");
-const utilityFilters = require("./filters/utils.js");
 
 const webmentions = require("../data/webmentions.js");
 

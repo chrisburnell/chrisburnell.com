@@ -1,4 +1,4 @@
-{% macro shelfItem(item, now, hfeed = true) %}
+{% macro shelfItem(item, now, people, hfeed = true) %}
     {%- set item_title = item.data.title -%}
     {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
     {%- set item_of_url = item_of -%}
@@ -10,7 +10,7 @@
         {% set item_of_title = item_of.title %}
     {%- endif -%}
     {%- if not item.data.authors -%}
-        {% set item_of_author_by_url = item_of_url | getPerson('object') %}
+        {% set item_of_author_by_url = people | getPerson(item_of_url, 'object') %}
         {% if item_of_author_by_url != item_of_url %}
             {% set item_of_authors = item_of_author_by_url %}
         {% endif %}
@@ -56,7 +56,7 @@
                 {% if item.data.authors %}
                     {%- set authors = item.data.authors | toArray -%}
                     {% for author in authors -%}
-                        {% if not loop.first %}{% if authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a class=" [ h-cite ] " href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<span class=" [ h-cite ] ">{{ author | safe }}</span>{% endif %}
+                        {% if not loop.first %}{% if authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}{% set authorObject = people | getPerson(author, 'object') %}{% if authorObject.url %}<a class=" [ h-cite ] " href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<span class=" [ h-cite ] ">{{ author | safe }}</span>{% endif %}
                     {%- endfor %}
                 {% endif %}
                 {% if item.data.release %}

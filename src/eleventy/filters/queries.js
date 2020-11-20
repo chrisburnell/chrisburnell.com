@@ -3,16 +3,9 @@ const sanitizeHTML = require("sanitize-html");
 const site = require("../../data/site.json");
 const consoles = require("../../data/consoles.json");
 const mastodonInstances = require("../../data/mastodonInstances.json");
-const humans = require("../../data/people/humans.js");
-const breweries = require("../../data/people/breweries.js");
-const gamePublishers = require("../../data/people/gamePublishers.js");
-const meetups = require("../../data/people/meetups.js");
-const musicArtists = require("../../data/people/musicArtists.js");
-const publications = require("../../data/people/publications.js");
-const people = [].concat(...[humans, breweries, gamePublishers, meetups, musicArtists, publications]);
 const places = require("../../data/places.json");
 const methods = require("../../data/postingMethods.json");
-const targets = require("../../data/targets.json");
+const syndicationTargets = require("../../data/syndicationTargets.json");
 
 const toArray = function(value) {
     if (Array.isArray(value)) {
@@ -55,27 +48,26 @@ module.exports = {
             return item.data.page.date.getFullYear() === parseInt(year, 10);
         }).length;
     },
-    getHost: (url) => {
-        if (typeof url === "string" && url.includes('//')) {
-            let urlObject = new URL(url);
+    getHost: (valueHOST) => {
+        if (typeof valueHOST === "string" && valueHOST.includes('//')) {
+            const urlObject = new URL(valueHOST);
             return urlObject.hostname;
         }
-        return url;
+        return valueHOST
     },
-    getInternalTarget: (value, pages) => {
+    getInternalTarget: (valueINTERNAL, pages) => {
         // Mastodon
-        if (value.includes('https://mastodon.social/users/chrisburnell/statuses/')) {
+        if (valueINTERNAL.includes('https://mastodon.social/users/chrisburnell/statuses/')) {
             return 'a previous toot';
         }
         // Twitter
-        else if (value.includes('https://twitter.com/iamchrisburnell/status/')) {
+        else if (valueINTERNAL.includes('https://twitter.com/iamchrisburnell/status/')) {
             return 'a previous tweet';
         }
         // Internal URL
-        else if (value.includes(site.url) || value.includes('localhost')) {
-
+        else if (valueINTERNAL.includes(site.url) || valueINTERNAL.includes('localhost')) {
             let page = pages.filter(item => {
-                if (getPath(value) == item.url) {
+                if (getPath(valueINTERNAL) == item.url) {
                     return true;
                 }
                 return false;
@@ -99,23 +91,179 @@ module.exports = {
             // pages
             return `a previous page`;
         }
-
-        return value;
+        return valueINTERNAL
     },
-    getMastodonHandle: (url) => {
+    getMastodonHandle: (valueMASTODON) => {
         for (let instance of mastodonInstances) {
-            if (url.includes(instance)) {
-                if (url.includes('/@')) {
-                    return '@' + url.split('/@')[1].split('/')[0] + '@' + instance;
+            if (valueMASTODON.includes(instance)) {
+                if (valueMASTODON.includes('/@')) {
+                    return '@' + valueMASTODON.split('/@')[1].split('/')[0] + '@' + instance;
                 }
                 else {
-                    return '@' + url.split('/users/')[1].split('/')[0] + '@' + instance;
+                    return '@' + valueMASTODON.split('/users/')[1].split('/')[0] + '@' + instance;
                 }
             }
         }
-        return url;
+        return valueMASTODON
     },
-    getPerson: (value, intent) => {
+    getPlace: (value, intent) => {
+        // Default metadata to the passed value (string/object)
+        let title, url, lat, long, address;
+
+        // Extract bits of metadata if they exist
+        if (typeof value === "object") {
+            if ("title" in value) {
+                title = value.title;
+            }
+            if ("url" in value) {
+                url = value.url;
+            }
+            if ("lat" in value) {
+                lat = value.lat;
+            }
+            if ("long" in value) {
+                long = value.long;
+            }
+            if ("address" in value) {
+                address = value.address;
+            }
+        }
+        else {
+            title = value;
+            url = value;
+        }
+
+        // Loop through known places to make matches based on:
+        // - title
+        // - url
+        for (let lookup of places) {
+            // Check title
+            if (lookup.title === title) {
+                title = lookup.title;
+                value = lookup;
+                break;
+            }
+            // Check url
+            if (url && "url" in lookup) {
+                // Parse URL for lookup match
+                for (let lookup_url of toArray(lookup.url)) {
+                    if (url.includes(lookup_url)) {
+                        url = toArray(lookup.url)[0];
+                        value = lookup;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Spit out specific bits of metadata
+        if (intent == 'object') {
+            return value;
+        }
+        if (intent == 'url') {
+            return (value.url || value);
+        }
+        else if (intent == 'lat') {
+            return (value.lat || value);
+        }
+        else if (intent == 'long') {
+            return (value.long || value);
+        }
+        else if (intent == 'address') {
+            return (value.address || value);
+        }
+        return (value.title || value);
+    },
+    getPostingMethod: (url) => {
+        let target;
+        if (url.includes("//")) {
+            let urlObject = new URL(url);
+            target = urlObject.hostname;
+
+            for (let item of methods) {
+                if (item.url.includes(target)) {
+                    target = item.title;
+                    break;
+                }
+            }
+        }
+        return target;
+    },
+    getSyndicationTarget: (value) => {
+        if (typeof value === "string" && value.includes("//")) {
+            let urlObject = new URL(value);
+            value = urlObject.hostname || value;
+        }
+        return syndicationTargets.filter(item => {
+            return item.url.includes(value)
+        }).map(item => {
+            return item.title;
+        })[0];
+    },
+    getTwitterHandle: (valueTWITTER) => {
+        if (valueTWITTER.includes('https://twitter.com')) {
+            return '@' + valueTWITTER.split('/status/')[0].split('twitter.com/')[1];
+        }
+        return valueTWITTER
+    },
+    getBaseUrl: (url) => {
+        let hashSplit = url.split("#");
+        let queryparamSplit = hashSplit[0].split("?");
+        return queryparamSplit[0];
+    },
+    getWebmentions: (webmentions, url, allowedTypes) => {
+        url = absoluteURL(url)
+
+        if (!url || !webmentions.mentions || !webmentions.mentions[url]) {
+            return []
+        }
+
+        if (!allowedTypes) {
+            allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
+        }
+        else if (typeof allowedTypes === "string") {
+            allowedTypes = [allowedTypes]
+        }
+
+        const allowedHTML = {
+            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+            allowedAttributes: {
+                a: ['href']
+            }
+        }
+
+        return webmentions.mentions[url]
+            .filter(entry => {
+                return allowedTypes.includes(entry["wm-property"]);
+            })
+            .filter((entry) => {
+                const { author } = entry
+                return !!author && !!author.name
+            })
+            .map(entry => {
+                if (!("content" in entry)) {
+                    return entry;
+                }
+                const { html, text } = entry.content
+                if (html) {
+                    // really long html mentions, usually newsletters or compilations
+                    entry.content.value =
+                        html.length > 2000
+                            ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
+                            : sanitizeHTML(html, allowedHTML)
+                }
+                else {
+                    entry.content.value = sanitizeHTML(text, allowedHTML)
+                }
+                return entry
+            });
+    },
+    getPerson: (peopleData, value, intent) => {
+        if (!peopleData) {
+            return value
+        }
+        const { lastFetched, people } = peopleData
+
         // Default metadata to the passed value (string/object)
         let title, url, mastodon, twitter;
 
@@ -215,177 +363,5 @@ module.exports = {
             return (value.twitter || value);
         }
         return (value.title || value);
-    },
-    getPlace: (value, intent) => {
-        // Default metadata to the passed value (string/object)
-        let title, url, lat, long, address;
-
-        // Extract bits of metadata if they exist
-        if (typeof value === "object") {
-            if ("title" in value) {
-                title = value.title;
-            }
-            if ("url" in value) {
-                url = value.url;
-            }
-            if ("lat" in value) {
-                lat = value.lat;
-            }
-            if ("long" in value) {
-                long = value.long;
-            }
-            if ("address" in value) {
-                address = value.address;
-            }
-        }
-        else {
-            title = value;
-            url = value;
-        }
-
-        // Loop through known people to make matches based on:
-        // - title
-        // - url
-        for (let lookup of places) {
-            // Check title
-            if (lookup.title === title) {
-                title = lookup.title;
-                value = lookup;
-                break;
-            }
-            // Check url
-            if (url && "url" in lookup) {
-                // Parse URL for lookup match
-                for (let lookup_url of toArray(lookup.url)) {
-                    if (url.includes(lookup_url)) {
-                        url = toArray(lookup.url)[0];
-                        value = lookup;
-                        break;
-                    }
-                }
-            }
-        }
-
-        // Spit out specific bits of metadata
-        if (intent == 'object') {
-            return value;
-        }
-        if (intent == 'url') {
-            return (value.url || value);
-        }
-        else if (intent == 'lat') {
-            return (value.lat || value);
-        }
-        else if (intent == 'long') {
-            return (value.long || value);
-        }
-        else if (intent == 'address') {
-            return (value.address || value);
-        }
-        return (value.title || value);
-    },
-    getPostingMethod: (url) => {
-        let target;
-        if (url.includes("//")) {
-            let urlObject = new URL(url);
-            target = urlObject.hostname;
-
-            for (let item of methods) {
-                if (item.url.includes(target)) {
-                    target = item.title;
-                    break;
-                }
-            }
-        }
-
-        return target;
-    },
-    getTarget: (url) => {
-        let target = module.exports.getHost(url);
-
-        for (let item of targets) {
-            if (item.url && item.url.includes(target)) {
-                target = item.title;
-                break;
-            }
-        }
-
-        return target;
-    },
-    getTwitterHandle: (url) => {
-        if (url.includes('https://twitter.com')) {
-            return '@' + url.split('/status/')[0].split('twitter.com/')[1];
-        }
-
-        return url;
-    },
-    getBaseUrl: (url) => {
-        let hashSplit = url.split("#");
-        let queryparamSplit = hashSplit[0].split("?");
-        return queryparamSplit[0];
-    },
-    getWebmentions: (webmentions, url, allowedTypes) => {
-        url = absoluteURL(url)
-
-        if (!url || !webmentions.mentions || !webmentions.mentions[url]) {
-            return []
-        }
-
-        // if (!url) {
-        //     console.log("no URL provided")
-        //     return []
-        // }
-
-        // if (!webmentions.mentions) {
-        //     console.log("no mentions in webmentions")
-        //     return []
-        // }
-
-        // if (!webmentions.mentions[url]) {
-        //     console.log("no matching key in mentions in webmentions")
-        //     return []
-        // }
-
-        if (!allowedTypes) {
-            allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
-        }
-        else if (typeof allowedTypes === "string") {
-            allowedTypes = [allowedTypes]
-        }
-
-        // define which HTML tags you want to allow in the webmention body content
-        // https://github.com/apostrophecms/sanitize-html#what-are-the-default-options
-        const allowedHTML = {
-            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
-            allowedAttributes: {
-                a: ['href']
-            }
-        }
-
-        return webmentions.mentions[url]
-            .filter(entry => {
-                return allowedTypes.includes(entry["wm-property"]);
-            })
-            // .filter((entry) => {
-            //     const { author, published } = entry
-            //     return !!author && !!author.name && !!published
-            // })
-            .map(entry => {
-                if (!("content" in entry)) {
-                    return entry;
-                }
-                const { html, text } = entry.content
-                if (html) {
-                    // really long html mentions, usually newsletters or compilations
-                    entry.content.value =
-                        html.length > 2000
-                            ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
-                            : sanitizeHTML(html, allowedHTML)
-                }
-                else {
-                    entry.content.value = sanitizeHTML(text, allowedHTML)
-                }
-                return entry
-            });
     }
 };

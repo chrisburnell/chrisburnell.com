@@ -60,7 +60,7 @@
     <link rel="openid.delegate" href="{{ site.url }}" />
     <link rel="openid.server" href="{{ author.urls.openid }}" />
 
-    {% if process.env.ELEVENTY_ENV == 'production' %}
+    {% if global.environment == 'production' %}
         <link rel="icon" href="/images/favicon.ico" sizes="512x512">
         <link rel="mask-icon" href="/images/favicon.svg" color="{{ tokens.color.raven }}">
         <link rel="apple-touch-icon" href="/images/favicon-180.png">
@@ -148,7 +148,7 @@
             <meta property="profile:username" content="{{ author.shortname }}">
         {% endif %}
 
-        {% if process.env.ELEVENTY_ENV == 'production' %}
+        {% if global.environment == 'production' %}
             <!-- Coil -->
             <meta name="monetization" content="{{ site.monetization }}">
         {% endif %}

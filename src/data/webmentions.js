@@ -83,14 +83,15 @@ async function readFromCache() {
 module.exports = async function() {
     const cache = await readFromCache()
     const { lastFetched, mentions } = cache
+    const now = new Date()
 
-    if (webmentionsEnabled() || !lastFetched) {
+    if ((webmentionsEnabled() && now - lastFetched > 3600) || !lastFetched) {
         const feed = await fetchWebmentions(lastFetched)
 
         if (feed) {
-            for(let webmention of feed.children) {
+            for (let webmention of feed.children) {
                 let url = getBaseUrl(webmention["wm-target"])
-                if(!mentions[url]) {
+                if (!mentions[url]) {
                     mentions[url] = []
                 }
 
@@ -110,7 +111,7 @@ module.exports = async function() {
             }
 
             const webmentions = {
-                lastFetched: new Date().toISOString(),
+                lastFetched: new Date(),
                 count: totalCount,
                 mentions: mentions
             }

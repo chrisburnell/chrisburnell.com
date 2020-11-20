@@ -10,8 +10,8 @@ layout: base
 {%- if of.title -%}
     {% set of_title = of.title %}
 {%- endif -%}
-{%- if not authors -%}
-    {% set of_author_by_url = of_url | getPerson('object') %}
+{%- if of_url and not authors -%}
+    {% set of_author_by_url = people | getPerson(of_url, 'object') %}
     {% if of_author_by_url != of_url %}
         {% set authors = of_author_by_url %}
     {% endif %}
@@ -28,7 +28,7 @@ layout: base
 {%- if in_reply_to.authors -%}
     {% set in_reply_to_authors = in_reply_to.authors %}
 {%- else -%}
-    {% set in_reply_to_author_lookup = in_reply_to_url | getPerson('object') %}
+    {% set in_reply_to_author_lookup = people | getPerson(in_reply_to_url, 'object') %}
     {% if in_reply_to_author_lookup != in_reply_to_url %}
         {% set in_reply_to_authors = in_reply_to_author_lookup %}
     {% endif %}
