@@ -25,7 +25,8 @@ mark {
 
     h1 > &,
     h2 > &,
-    %collection-content > & {
+    %collection-content > &,
+    li > & {
         @extend %collection-monospace-elements;
     }
 }
@@ -33,6 +34,7 @@ mark {
 h1 > code,
 h2 > code,
 %collection-content > code,
+li > code,
 samp {
     @include v(background-color, raven--gamma);
 }
@@ -140,7 +142,7 @@ code[class*="language-"] {
     &.language-liquid::before {
         content: "Liquid";
     }
-    &.language-nunjucks::before {
+    &.language-twig::before {
         content: "Nunjucks";
     }
 }

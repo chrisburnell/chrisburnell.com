@@ -10,31 +10,31 @@ module.exports = {
     page: collection => {
         return collection
             .getFilteredByTag("page")
-            .filter(collectionFilters.published);
+            .filter(collectionFilters.isPublished);
     },
     posts: collection => {
         return collection
             .getFilteredByTag("post")
-            .filter(collectionFilters.published)
-            .sort(collectionFilters.date);
+            .filter(collectionFilters.isPublished)
+            .sort(collectionFilters.dateFilter);
     },
     writingPosts: collection => {
         return collection
             .getFilteredByTag("writing")
-            .filter(collectionFilters.published)
-            .sort(collectionFilters.date);
+            .filter(collectionFilters.isPublished)
+            .sort(collectionFilters.dateFilter);
     },
     popular: async (collection) => {
         return (async () => {
-            const mentions = await webmentions();
+            const wm = await webmentions();
             return await collection
                 .getFilteredByTag("writing")
-                .filter(collectionFilters.published)
-                .sort(collectionFilters.date)
-                .filter(item => queryFilters.getWebmentions(mentions, item.url).length)
+                .filter(collectionFilters.isPublished)
+                .filter(item => queryFilters.getWebmentions(wm, item.url).length)
+                .sort(collectionFilters.dateFilter)
                 .sort((a, b) => {
-                    const alpha = queryFilters.getWebmentions(mentions, a.url);
-                    const beta = queryFilters.getWebmentions(mentions, b.url);
+                    const alpha = queryFilters.getWebmentions(wm, a.url);
+                    const beta = queryFilters.getWebmentions(wm, b.url);
                     return beta.length - alpha.length
                 })
                 .slice(0, 10)
@@ -43,9 +43,9 @@ module.exports = {
     featurePosts: collection => {
         return collection
             .getFilteredByTag("feature")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(collectionFilters.notReply)
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     featurePostsNotWriting: collection => {
         return collection
@@ -53,15 +53,15 @@ module.exports = {
             .filter(item => {
                 return !item.data.tags.includes("writing");
             })
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(collectionFilters.notReply)
-            .sort(collectionFilters.date)
+            .sort(collectionFilters.dateFilter)
             .slice(0, 3);
     },
     throwbackPosts: collection => {
         return collection
             .getFilteredByTag("throwback")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 if (item.data.rsvp || !item.data.in_reply_to) {
                     return true;
@@ -86,21 +86,21 @@ module.exports = {
                 }
                 return false;
             })
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     checkins: collection => {
         return collection
             .getFilteredByTag("post")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 return "checkin" in item.data;
             })
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     replies: collection => {
         return collection
             .getFilteredByTag("note")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 return "in_reply_to" in item.data;
             })
@@ -110,33 +110,33 @@ module.exports = {
                 }
                 return true;
             })
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     notesWithoutReplies: collection => {
         return collection
             .getFilteredByTag("note")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 if ("in_reply_to" in item.data) {
                     return false;
                 }
                 return true;
             })
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     rsvps: collection => {
         return collection
             .getFilteredByTag("post")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 return "rsvp" in item.data;
             })
-            .sort(collectionFilters.date);
+            .sort(collectionFilters.dateFilter);
     },
     todayRSVPs: collection => {
         return collection
             .getFilteredByTag("post")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 if (item.data.rsvp
                     && dateFilters.friendlyDate(item.data.rsvp.date) == dateFilters.friendlyDate(now)) {
@@ -147,7 +147,7 @@ module.exports = {
     futureRSVPs: collection => {
         return collection
             .getFilteredByTag("post")
-            .filter(collectionFilters.published)
+            .filter(collectionFilters.isPublished)
             .filter(item => {
                 if (item.data.rsvp
                     && dateFilters.epoch(item.data.rsvp.date) > now

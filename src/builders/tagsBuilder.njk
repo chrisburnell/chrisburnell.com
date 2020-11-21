@@ -9,7 +9,7 @@ eleventyComputed:
   lede: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
-{%- set collection = collections[tag] | publishedFilter | reverse -%}
+{%- set collection = collections[tag] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}

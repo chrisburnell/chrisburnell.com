@@ -25,7 +25,7 @@ lede: Browse all of my posts by a variety of metrics.
             {%- if lookup.title == 'note' -%}
                 {% set collection = collections.notesWithoutReplies %}
             {%- else -%}
-                {% set collection = collections[lookup.title] | publishedFilter | reverse %}
+                {% set collection = collections[lookup.title] | arePublished | reverse %}
             {%- endif -%}
             <h2 id="{{ lookup.plural }}">
                 <a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>

@@ -13,10 +13,10 @@ const API_ORIGIN = "https://webmention.io/api/mentions.jf2"
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
 const getBaseUrl = (url) => {
-    let hashSplit = url.split("#");
-    let queryparamSplit = hashSplit[0].split("?");
-    return queryparamSplit[0].replace(/\/?$/, "/");
-};
+    let hashSplit = url.split("#")
+    let queryparamSplit = hashSplit[0].split("?")
+    return queryparamSplit[0].replace(/\/?$/, "/")
+}
 
 async function fetchWebmentions(since, perPage = 9001) {
     // If we dont have a token, abort

@@ -10,7 +10,7 @@ eleventyComputed:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
-{% set collection = collections[category.title] | publishedFilter | reverse %}
+{%- set collection = collections[category.title] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}

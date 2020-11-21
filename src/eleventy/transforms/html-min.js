@@ -1,4 +1,4 @@
-const htmlmin = require('html-minifier');
+const htmlmin = require('html-minifier')
 
 module.exports = function htmlMinTransform(value, outputPath) {
     if (outputPath.indexOf('.html') > -1) {
@@ -7,7 +7,7 @@ module.exports = function htmlMinTransform(value, outputPath) {
             removeComments: false,
             collapseWhitespace: true,
             minifyCSS: true
-        });
+        })
     }
-    return value;
-};
+    return value
+}
