@@ -24,12 +24,37 @@ module.exports = {
             .filter(collectionFilters.isPublished)
             .sort(collectionFilters.dateFilter);
     },
+    featurePosts: collection => {
+        return collection
+            .getFilteredByTag("feature")
+            .filter(collectionFilters.isPublished)
+            .filter(collectionFilters.notReply)
+            .sort(collectionFilters.dateFilter);
+    },
+    featurePostsNotPopular: async (collection) => {
+        return (async () => {
+            const wm = await webmentions();
+            return await collection
+                .getFilteredByTag("feature")
+                .filter(collectionFilters.isPublished)
+                .filter(collectionFilters.notReply)
+                .sort((a, b) => {
+                    const alpha = queryFilters.getWebmentions(wm, a.url);
+                    const beta = queryFilters.getWebmentions(wm, b.url);
+                    return (beta.length || 0) - (alpha.length || 0)
+                })
+                .slice(3)
+                .sort(collectionFilters.dateFilter)
+                .slice(0, 3);
+        })();
+    },
     popular: async (collection) => {
         return (async () => {
             const wm = await webmentions();
             return await collection
-                .getFilteredByTag("writing")
+                .getFilteredByTag("feature")
                 .filter(collectionFilters.isPublished)
+                .filter(collectionFilters.notReply)
                 .filter(item => queryFilters.getWebmentions(wm, item.url).length)
                 .sort(collectionFilters.dateFilter)
                 .sort((a, b) => {
@@ -39,24 +64,6 @@ module.exports = {
                 })
                 .slice(0, 10)
         })();
-    },
-    featurePosts: collection => {
-        return collection
-            .getFilteredByTag("feature")
-            .filter(collectionFilters.isPublished)
-            .filter(collectionFilters.notReply)
-            .sort(collectionFilters.dateFilter);
-    },
-    featurePostsNotWriting: collection => {
-        return collection
-            .getFilteredByTag("feature")
-            .filter(item => {
-                return !item.data.tags.includes("writing");
-            })
-            .filter(collectionFilters.isPublished)
-            .filter(collectionFilters.notReply)
-            .sort(collectionFilters.dateFilter)
-            .slice(0, 3);
     },
     throwbackPosts: collection => {
         return collection

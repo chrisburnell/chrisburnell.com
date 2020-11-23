@@ -67,9 +67,8 @@ async function readFromCache() {
 module.exports = async function() {
     const cache = await readFromCache()
     const { lastFetched, people } = cache
-    const now = new Date()
 
-    if (now - lastFetched > 86400 || !lastFetched) {
+    if (!lastFetched) {
         const feed = await fetchPeople(lastFetched)
 
         if (feed) {

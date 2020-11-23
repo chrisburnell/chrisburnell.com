@@ -44,10 +44,6 @@ async function fetchWebmentions(since, perPage = 9001) {
     return null
 }
 
-function webmentionsEnabled() {
-    return process.env.ELEVENTY_FEATURES && process.env.ELEVENTY_FEATURES.split(",").indexOf("webmentions") > -1
-}
-
 // save combined webmentions in cache file
 function writeToCache(data) {
     const filePath = `${CACHE_DIR}/webmentions.json`
@@ -83,9 +79,9 @@ async function readFromCache() {
 module.exports = async function() {
     const cache = await readFromCache()
     const { lastFetched, mentions } = cache
-    const now = new Date()
 
-    if ((webmentionsEnabled() && now - lastFetched > 3600) || !lastFetched) {
+    // process.env.ELEVENTY_FEATURES && process.env.ELEVENTY_FEATURES.split(",").indexOf("webmentions") > -1
+    if (!lastFetched) {
         const feed = await fetchWebmentions(lastFetched)
 
         if (feed) {
