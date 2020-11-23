@@ -1,7 +1,6 @@
 ---
-draft: true
-date: 2020-11-20T12:00:00+0000
-title: "It’s Time to Cache Up"
+date: 2020-11-23T14:45:00+0000
+title: "Time to Cache Up"
 lede: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
 ---
 
@@ -123,7 +122,7 @@ to produce markup like this:
 
 ---------
 
-Thanks for following along—I hope you enjoyed this tutorial and found it helpful to your [Eleventy](https://www.11ty.dev/) project!
+Thanks for following along—I hope you enjoyed this tutorial and found it helpful to your [Eleventy](https://www.11ty.dev/) project, whether it be in joining the [IndieWeb](https://indieweb.org/), adding/caching webmentions to your website, or adding a popular collection as I’ve shown above!
 
 I’m positive there are some optimisations that could be made here, and I’m more than happy to hear them! Let me know with a reply or even [send me a pull request]({{ author.urls.github_repo }}).
 
