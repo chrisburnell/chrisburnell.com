@@ -2,13 +2,15 @@
 date: 2020-11-23T14:45:00+0000
 title: "Time to Cache Up"
 lede: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
+syndicate_to:
+  - https://twitter.com/iamchrisburnell/status/1330889024228233221
 ---
 
 One of the great advantages I’ve found in using Eleventy since switching from Jekyll has been its ability to pull in external content and cache it for the build. I first experimented with this using [eleventy-img](https://github.com/11ty/eleventy-img) and [eleventy-cache-assets](https://github.com/11ty/eleventy-cache-assets), two Eleventy plugins aimed at simplifying that exact ability of Eleventy’s.
 
 It took some time for the pieces to fall into place—first-of-all was watching [Sia Karamalegos’](https://sia.codes/) talk at [Jamstack Toronto: 11ties](/note/1603756300/) a couple of weeks ago, where she gave an incredible overview of the IndieWeb and how to embrace it without sacrificing connecting with others on social networks. In the talk, she briefly described her solution for fetching fresh webmentions and caching them for build and even included some fantastic code examples too; how lucky that this would be during a conference about Eleventy!
 
-And it was during a pair programming exercise this week that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular posts based on their webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
+It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular posts based on their webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
 
 
 ## The Set-up
@@ -126,4 +128,4 @@ Thanks for following along—I hope you enjoyed this tutorial and found it helpf
 
 I’m positive there are some optimisations that could be made here, and I’m more than happy to hear them! Let me know with a reply or even [send me a pull request]({{ author.urls.github_repo }}).
 
-*Thanks to my Dad for the title!*
+*Thanks to [Dave Letorey](https://letorey.co.uk) for proofreading, and thanks to my Dad for editing and the title… Cache up, sucker!*
