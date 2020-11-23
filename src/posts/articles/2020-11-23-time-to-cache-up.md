@@ -4,6 +4,7 @@ title: "Time to Cache Up"
 lede: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1330889024228233221
+  - https://mastodon.social/users/chrisburnell/statuses/105260511557824260
 ---
 
 One of the great advantages I’ve found in using Eleventy since switching from Jekyll has been its ability to pull in external content and cache it for the build. I first experimented with this using [eleventy-img](https://github.com/11ty/eleventy-img) and [eleventy-cache-assets](https://github.com/11ty/eleventy-cache-assets), two Eleventy plugins aimed at simplifying that exact ability of Eleventy’s.
