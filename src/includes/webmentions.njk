@@ -23,14 +23,13 @@
                                     {%- set authorUrl = webmention.author.url -%}
                                     {%- set webmentionDate = published | default(webmention['wm-received']) -%}
                                     <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
-                                        <a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ webmention.url }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
+                                        <a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ authorUrl }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
                                             {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
                                             <span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
-                                            <data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ authorUrl }}" hidden></data>
                                         </a>
                                         <span class=" [ webmentions__response__type ] " aria-hidden="true"></span>
-                                        <data class=" [ u-url ] " value="{{ webmention.url }}" hidden></data>
                                         <time class=" [ dt-published ] " datetime="{{ webmentionDate | isoDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
+                                        <data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ webmention.url }}" hidden></data>
                                     </li>
                                 {% endfor %}
                             </ol>
