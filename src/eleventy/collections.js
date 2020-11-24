@@ -31,23 +31,6 @@ module.exports = {
             .filter(collectionFilters.notReply)
             .sort(collectionFilters.dateFilter);
     },
-    featurePostsNotPopular: async (collection) => {
-        return (async () => {
-            const wm = await webmentions();
-            return await collection
-                .getFilteredByTag("feature")
-                .filter(collectionFilters.isPublished)
-                .filter(collectionFilters.notReply)
-                .sort((a, b) => {
-                    const alpha = queryFilters.getWebmentions(wm, a.url);
-                    const beta = queryFilters.getWebmentions(wm, b.url);
-                    return (beta.length || 0) - (alpha.length || 0)
-                })
-                .slice(3)
-                .sort(collectionFilters.dateFilter)
-                .slice(0, 3);
-        })();
-    },
     popular: async (collection) => {
         return (async () => {
             const wm = await webmentions();
@@ -55,8 +38,9 @@ module.exports = {
                 .getFilteredByTag("feature")
                 .filter(collectionFilters.isPublished)
                 .filter(collectionFilters.notReply)
-                .filter(item => queryFilters.getWebmentions(wm, item.url).length)
                 .sort(collectionFilters.dateFilter)
+                .slice(3)
+                .filter(item => queryFilters.getWebmentions(wm, item.url).length)
                 .sort((a, b) => {
                     const alpha = queryFilters.getWebmentions(wm, a.url);
                     const beta = queryFilters.getWebmentions(wm, b.url);
