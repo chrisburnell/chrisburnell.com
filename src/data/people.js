@@ -62,13 +62,17 @@ async function readFromCache() {
         lastFetched: null,
         people: []
     }
-  }
+}
+
+function enablePeople() {
+    return process.env.ELEVENTY_FEATURES && process.env.ELEVENTY_FEATURES.split(",").indexOf("people") > -1
+}
 
 module.exports = async function() {
     const cache = await readFromCache()
     const { lastFetched, people } = cache
 
-    if (!lastFetched) {
+    if (enablePeople() || !lastFetched) {
         const feed = await fetchPeople(lastFetched)
 
         if (feed) {
