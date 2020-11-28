@@ -25,13 +25,6 @@ jobs:
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
-      - name: Cache 11ty dependencies
-        uses: actions/cache@v2
-        with:
-          path: .cache
-          key: ${{ runner.OS }}-eleventy-cache-${{ hashFiles('**/lockfiles') }}
-          restore-keys: |
-            ${{ runner.OS }}-eleventy-cache-
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:
