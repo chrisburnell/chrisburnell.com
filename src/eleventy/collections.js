@@ -2,6 +2,7 @@ const dateFilters = require("./filters/dates.js");
 const collectionFilters = require("./filters/collections.js");
 const queryFilters = require("./filters/queries.js");
 
+const site = require("../data/site.json");
 const webmentions = require("../data/webmentions.js");
 
 const now = new Date();
@@ -38,15 +39,32 @@ module.exports = {
                 .getFilteredByTag("feature")
                 .filter(collectionFilters.isPublished)
                 .filter(collectionFilters.notReply)
+                .filter(item => queryFilters.getWebmentions(wm, item.url).length)
                 .sort(collectionFilters.dateFilter)
-                .slice(3)
+                .sort((a, b) => {
+                    const alpha = queryFilters.getWebmentions(wm, a.url);
+                    const beta = queryFilters.getWebmentions(wm, b.url);
+                    return beta.length - alpha.length
+                })
+                .slice(0, site.limits.feed)
+        })();
+    },
+    popularHomepage: async (collection) => {
+        return (async () => {
+            const wm = await webmentions();
+            return await collection
+                .getFilteredByTag("feature")
+                .filter(collectionFilters.isPublished)
+                .filter(collectionFilters.notReply)
+                .sort(collectionFilters.dateFilter)
+                .slice(site.limits.feature)
                 .filter(item => queryFilters.getWebmentions(wm, item.url).length)
                 .sort((a, b) => {
                     const alpha = queryFilters.getWebmentions(wm, a.url);
                     const beta = queryFilters.getWebmentions(wm, b.url);
                     return beta.length - alpha.length
                 })
-                .slice(0, 10)
+                .slice(0, site.limits.feature)
         })();
     },
     throwbackPosts: collection => {

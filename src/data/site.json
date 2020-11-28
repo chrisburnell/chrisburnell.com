@@ -6,7 +6,8 @@
   "locale": "en",
   "established": "2008",
   "limits": {
-    "snapshot": 3,
+    "snapshot": 2,
+    "feature": 3,
     "feed": 10
   },
   "sparklines": {
