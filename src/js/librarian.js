@@ -8,7 +8,10 @@ if (shelvers.length > 0) {
             return a.innerText.localeCompare(b.innerText);
         }),
         "release": [...shelfItems].sort((a, b) => {
-            return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime);
+            if (a.querySelector(".release") && b.querySelector(".release")) {
+                return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime);
+            }
+            return false
         }),
         "rating": [...shelfItems].sort((a, b) => {
             return a.innerText.localeCompare(b.innerText);
@@ -16,9 +19,12 @@ if (shelvers.length > 0) {
             return (b.querySelector(".rating") ? b.querySelector(".rating").value : 0) - (a.querySelector(".rating") ? a.querySelector(".rating").value : 0);
         }),
         "author": [...shelfItems].sort((a, b) => {
-            return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime);
+            if (a.querySelector(".release") && b.querySelector(".release")) {
+                return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime);
+            }
+            return false
         }).sort((a, b) => {
-            return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : 0).localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : 0);
+            return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : "").localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : "");
         })
     };
 
