@@ -82,11 +82,12 @@ module.exports = async function() {
 
             const data = {
                 lastFetched: new Date(),
+                count: people.length,
                 people: people
             }
 
             writeToCache(data)
-            console.log(`Wrote ${data.people.count} people to cache.`)
+            console.log(`Wrote ${data.count} people to cache.`)
             return data
         }
     }

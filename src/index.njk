@@ -22,7 +22,7 @@ eleventyComputed:
     <a href="/popular/">Popular Posts</a>
 </h2>
 <nav class=" [ deck ] " aria-labelledby="popular">
-    {% for item in collections.popularHomepage | limit(site.limits.feature) %}
+    {% for item in collections.popular | limit(site.limits.feature) %}
         {{ deckItem(item, global.now, collections.all, people, webmentions, false, true, true) }}
     {% endfor %}
 </nav>
