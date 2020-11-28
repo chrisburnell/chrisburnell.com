@@ -42,7 +42,7 @@ jobs:
         run: npm run build --if-present
         env:
           ELEVENTY_ENV: production
-          ELEVENTY_FEATURES: webmentions
+          ELEVENTY_FEATURES: people,webmentions
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
