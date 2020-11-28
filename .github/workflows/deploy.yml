@@ -25,25 +25,23 @@ jobs:
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
+      - name: Cache 11ty dependencies
+        uses: actions/cache@v2
+        with:
+          path: .cache
+          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.OS }}-11ty-cache-
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:
           timezone: Europe/London
       - name: Install npm modules
         run: npm ci
-      - name: Build webmentions
-        run: npm run webmentions --if-present
-        env:
-          ELEVENTY_ENV: production
-          ELEVENTY_FEATURES: people,webmentions
-          PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
-          PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
-          WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
       - name: Build website
-        run: npm run build --if-present
+        run: npm run build
         env:
           ELEVENTY_ENV: production
-          ELEVENTY_FEATURES: people,webmentions
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
