@@ -97,7 +97,7 @@
                             {% if author.url %}
                                 <a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
                             {% else %}
-                                {{ author }}
+                                {{ author.title | default(author) | safe }}
                             {% endif %}
                         {% endfor %}
                     {% endif %}

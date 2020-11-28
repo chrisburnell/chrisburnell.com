@@ -80,9 +80,9 @@
     @include v(width, avatar-small);
     border: var(--measure-border-default) solid var(--color-raven--beta);
 
-    &:hover,
-    &:focus,
-    &:active {
+    &:link:hover,
+    &:link:focus,
+    &:link:active {
         border-color: var(--color-canada);
     }
 

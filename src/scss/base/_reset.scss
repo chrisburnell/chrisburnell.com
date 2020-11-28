@@ -23,16 +23,11 @@ textarea {
     touch-action: manipulation;
 }
 
-// Remove outline for mouse users
-:focus:not(:focus-visible) {
-    outline: none;
-}
-
 // Reduced Motion
-*,
-::before,
-::after {
-    @include media("reduced-motion") {
+@include media("reduced-motion") {
+    *,
+    *::before,
+    *::after {
         background-attachment: initial !important;
         animation-play-state: paused !important;
         transition: none !important;

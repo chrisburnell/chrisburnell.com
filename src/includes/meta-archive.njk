@@ -1,0 +1,17 @@
+<div class=" [ box ] [ meta ] ">
+    <h3>Browse by category:</h3>
+    <ul class=" [ meta__list ] ">
+        {% for lookup in collections.categories %}<li>{% if '/' + lookup.plural + '/' != page.url %}<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>{% else %}<a href="#content">{{ lookup.properPlural }}</a>{% endif %}</li>{% endfor %}
+    </ul>
+    <h3>Browse by tag:</h3>
+    <ul class=" [ meta__list ] ">
+        {% for lookup in collections.tags | sort %}<li>{% if '/tag/' + lookup != page.url %}<a href="/tag/{{ lookup }}">#{{ lookup }}</a>{% else %}<a href="#content">#{{ lookup }}</a>{% endif %}</li>{% endfor %}
+    </ul>
+    <h3>Latest projects:</h3>
+    <div class=" [ meta__list ] ">
+        {% for lookup in projects.personal | limit(site.limits.snapshot) %}
+            <a href="{{ lookup.url }}">{{ lookup.data.title }}</a>
+            {{ lookup.data.lede | markdownFormat | safe }}
+        {% endfor %}
+    </div>
+</div>

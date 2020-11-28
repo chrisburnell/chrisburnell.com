@@ -37,18 +37,18 @@ lede: Browse all of my posts by a variety of metrics.
             </h2>
             {% if collection[0].data.mf_root == 'review' %}
                 <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-                    {% for item in collection | limit(site.limits.snapshot) %}
+                    {% for item in collection | limit(site.limits.feature) %}
                         {{ shelfItem(item, global.now, people) }}
                     {% endfor %}
                 </nav>
             {% else %}
                 <nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-                    {% for item in collection | limit(site.limits.snapshot) %}
+                    {% for item in collection | limit(site.limits.feature) %}
                         {{ deckItem(item, global.now, collections.all, people, webmentions) }}
                     {% endfor %}
                 </nav>
             {% endif %}
-            {% if collection.length > site.limits.snapshot %}
+            {% if collection.length > site.limits.feature %}
                 <nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
                     <a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
                 </nav>
@@ -58,23 +58,7 @@ lede: Browse all of my posts by a variety of metrics.
         {% include 'webmentions.njk' %}
     </div>
 
-    <div class=" [ box ] [ meta ] ">
-        <h3>Browse by category:</h3>
-        <ul class=" [ meta__list ] ">
-            {% for lookup in collections.categories %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endfor %}
-        </ul>
-        <h3>Browse by tag:</h3>
-        <ul class=" [ meta__list ] ">
-            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}/">#{{ lookup }}</a></li>{% endfor %}
-        </ul>
-        <h3>Latest projects:</h3>
-        <div class=" [ meta__list ] ">
-            {% for lookup in projects.personal | limit(2) %}
-                <h4><a href="{{ lookup.url }}">{{ lookup.data.title }}</a></h4>
-                {{ lookup.data.lede | markdownFormat | safe }}
-            {% endfor %}
-        </div>
-    </div>
+    {% include 'meta-archive.njk' %}
 
     {% include 'ads.njk' %}
 
