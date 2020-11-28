@@ -34,8 +34,8 @@ eleventyComputed:
                 You can sort these {{ category.properPlural }}:
                 <button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
                 <button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>,
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>, or
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
+                <button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
                 <button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
                 <noscript>Although, you will need to enable JavaScript.</noscript>
             </div>
@@ -77,22 +77,6 @@ eleventyComputed:
         {% endif %}
     </div>
 
-    <div class=" [ meta ] [ box ] ">
-        <h3>Browse other categories:</h3>
-        <ul class=" [ meta__list ] ">
-            {% for lookup in collections.categories %}{% if lookup.title != category.title %}<li><a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a></li>{% endif %}{% endfor %}
-        </ul>
-        <h3>Browse by tag:</h3>
-        <ul class=" [ meta__list ] ">
-            {% for lookup in collections.tags | sort %}<li><a href="/tag/{{ lookup }}">#{{ lookup }}</a></li>{% endfor %}
-        </ul>
-        <h3>Latest projects:</h3>
-        <div class=" [ meta__list ] ">
-            {% for lookup in projects.personal | limit(2) %}
-                <h4><a href="{{ lookup.url }}">{{ lookup.data.title }}</a></h4>
-                {{ lookup.data.lede | markdownFormat | safe }}
-            {% endfor %}
-        </div>
-    </div>
+    {% include 'meta-archive.njk' %}
 
 </div>
