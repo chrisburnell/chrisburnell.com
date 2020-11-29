@@ -136,20 +136,20 @@ module.exports = {
         // Loop through known places to make matches based on:
         // - title
         // - url
-        for (let lookup of places) {
+        for (let place of places) {
             // Check title
-            if (lookup.title === title) {
-                title = lookup.title
-                value = lookup
+            if (place.title === title) {
+                title = place.title
+                value = place
                 break
             }
             // Check url
-            if (url && "url" in lookup) {
-                // Parse URL for lookup match
-                for (let lookup_url of toArray(lookup.url)) {
-                    if (url.includes(lookup_url)) {
-                        url = toArray(lookup.url)[0]
-                        value = lookup
+            if (url && "url" in place) {
+                // Parse URL for place match
+                for (let place_url of toArray(place.url)) {
+                    if (url.includes(place_url)) {
+                        url = toArray(place.url)[0]
+                        value = place
                         break
                     }
                 }
@@ -262,7 +262,7 @@ module.exports = {
         if (!peopleData) {
             return value
         }
-        const { lastFetched, people } = peopleData
+        const { lastFetched, count, people } = peopleData
 
         // Default metadata to the passed value (string/object)
         let title, url, mastodon, twitter
@@ -292,15 +292,15 @@ module.exports = {
         // - url
         // - mastodon
         // - twitter
-        for (let lookup of people) {
+        for (let person of people) {
             // Check title
-            if (lookup.title === title) {
-                title = lookup.title
-                value = lookup
+            if (person.title === title) {
+                title = person.title
+                value = person
                 break
             }
             // Check url
-            if (url && "url" in lookup) {
+            if (url && "url" in person) {
                 // Parse URL for Mastodon instance + username
                 for (let instance of mastodonInstances) {
                     if (url.includes(instance)) {
@@ -317,36 +317,40 @@ module.exports = {
                 if (url.includes('https://twitter.com')) {
                     twitter = url.split('/status/')[0].split('twitter.com/')[1]
                 }
-                // Parse URL for lookup match
-                for (let lookup_url of toArray(lookup.url)) {
-                    if (url.includes(lookup_url)) {
-                        url = toArray(lookup.url)[0]
-                        value = lookup
+                // Parse URL for person match
+                for (let person_url of toArray(person.url)) {
+                    if (url.includes(person_url)) {
+                        url = person_url
+                        value = person
                         break
                     }
                 }
             }
             // Check mastodon
-            if (mastodon && "mastodon" in lookup) {
-                if (mastodon == lookup.mastodon) {
-                    mastodon = toArray(lookup.mastodon)[0]
-                    value = lookup
-                    break
+            if (mastodon && "mastodon" in person) {
+                for (let person_mastodon of toArray(person.mastodon)) {
+                    if (person_mastodon == person.mastodon) {
+                        mastodon = person_mastodon
+                        value = person
+                        break
+                    }
                 }
             }
             // Check twitter
-            if (twitter && "twitter" in lookup) {
-                if (twitter == lookup.twitter) {
-                    twitter = toArray(lookup.twitter)[0]
-                    value = lookup
-                    break
+            if (twitter && "twitter" in person) {
+                for (let person_twitter of toArray(person.twitter)) {
+                    if (person_twitter == person.twitter) {
+                        twitter = person_twitter
+                        value = person
+                        break
+                    }
                 }
             }
         }
 
         // create titles from mastodon/twitter URLs
         if (title == url) {
-            title = (mastodon || twitter | title)
+            title = (mastodon || twitter || title)
         }
 
         // Spit out specific bits of metadata

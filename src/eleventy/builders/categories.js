@@ -14,9 +14,9 @@ module.exports = function categories(collection) {
     })
 
     // Remove duplicates based on `title`
-    categories = categories.filter((lookup, index, self) =>
+    categories = categories.filter((category, index, self) =>
         index === self.findIndex((t) => (
-            t.title === lookup.title
+            t.title === category.title
         ))
     )
 
