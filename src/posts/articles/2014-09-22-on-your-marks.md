@@ -85,7 +85,7 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 
 ```html
 <button class="button--show-comments" id="js-show-comments" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
+    <svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 ```
@@ -188,7 +188,7 @@ Here’s the entire snippet of code for my comments section:
 
 ```html
 <button class="button--show-comments" id="js-show-comments" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use xlink:href="#svg--feather" /></svg>
+    <svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
     <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 ```

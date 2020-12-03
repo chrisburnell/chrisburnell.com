@@ -49,7 +49,7 @@ module.exports = function parse(value, outputPath) {
                 anchor.innerHTML = minify(`
                     <span class="hidden"> permalink</span>
                     <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                        <use xlink:href="/images/sprites.svg#svg--link"></use>
+                        <use href="/images/sprites.svg#svg--link"></use>
                     </svg>`)
 
                 heading.setAttribute('id', headingID)
