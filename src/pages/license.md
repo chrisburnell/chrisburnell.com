@@ -20,4 +20,4 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 
 No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
-See [the full license]({{ author.urls.github_repo }}/blob/master/LICENSE) for further details.
+See [the full license]({{ author.urls.github_repo }}/blob/main/LICENSE) for further details.
