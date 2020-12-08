@@ -43,7 +43,7 @@
     }
 
     h2 a {
-        @include v(color, alto);
+        color: inherit !important;
         @include v(text-decoration-color, transparent);
     }
 
