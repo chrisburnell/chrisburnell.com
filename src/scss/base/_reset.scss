@@ -34,3 +34,8 @@ textarea {
         scroll-behavior: auto !important;
     }
 }
+
+// Remove focus for mouse users
+:focus:not(:focus-visible) {
+    outline: none !important;
+}

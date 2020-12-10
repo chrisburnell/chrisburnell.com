@@ -22,7 +22,6 @@ a,
         @include v(text-decoration-color, canada);
     }
 
-    // &:focus-visible {
     &:focus {
         @include v(outline-color, raven);
         @include v(outline-width, border-thin);

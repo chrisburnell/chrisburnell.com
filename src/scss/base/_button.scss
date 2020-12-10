@@ -46,7 +46,6 @@ button {
         text-decoration: none;
     }
 
-    // &:focus-visible {
     &:focus {
         @include v(outline-width, border-thin);
         @include v(outline-offset, border-thin);
