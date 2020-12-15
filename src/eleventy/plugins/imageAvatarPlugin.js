@@ -68,7 +68,7 @@ module.exports = function(config) {
             asset = new AssetCache(`avatar-twitter-${twitterUsername}`)
         }
         // Webmention is from my website
-        else if (url.includes('https://chrisburnell.com')) {
+        else if (url.includes(site.url)) {
             return [
                 `<picture class=" [ avatar ] ">`,
                     `<source type="image/webp" srcset="/images/avatar.webp" />`,

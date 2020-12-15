@@ -176,7 +176,7 @@
 
     <header class=" [ header ] ">
         <div class=" [ wrap  wrap--large ] ">
-            <a rel="home" class=" [ logo ] " href="/" title="Chris Burnell">
+            <a rel="home" class=" [ logo ] " href="/" title="{{ author.name }}">
                 <svg class=" [ icon icon--raven ] " aria-hidden="true" focusable="false">
                     <use href="/images/sprites.svg#svg--raven"></use>
                 </svg>
@@ -220,7 +220,7 @@
             </ol>
             <ol class=" [ footer__navigation ] ">
                 <li>
-                    <a id="copyright" rel="license" href="/license/">© 2020 <span class=" [ canada ] ">Chris Burnell</span></a>
+                    <a id="copyright" rel="license" href="/license/">© {{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
                 </li>
                 {% for item in socials %}
                     {% if not item.hidden %}
@@ -241,8 +241,8 @@
             </ol>
             {% if speedlify[canonical] %}
                 <p>
-                    <a class="speedlify-anchor" href="https://speedlify.chrisburnell.com/chrisburnell.com/#site-{{ speedlify[canonical].hash }}">
-                        <speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="https://speedlify.chrisburnell.com" score weight requests></speedlify-score>
+                    <a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}">
+                        <speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="{{ author.urls.speedlify }}" score weight requests></speedlify-score>
                     </a>
                 </p>
             {% endif %}

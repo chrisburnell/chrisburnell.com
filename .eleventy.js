@@ -2,7 +2,6 @@ const fs = require("fs")
 
 // Import Eleventy plugins
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-const Image = require("@11ty/eleventy-img")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 
 // Import transforms

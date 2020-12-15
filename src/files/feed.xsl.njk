@@ -80,16 +80,16 @@
             </ol>
             <ol class="[ footer__navigation ]">
               <li>
-                <a id="copyright" href="/license/">© 2020 <span class="[ canada ]">Chris Burnell</span></a>
+                <a id="copyright" href="/license/">© {{ global.now | friendlyDate("yyyy") }} <span class="[ canada ]">{{ author.name }}</span></a>
               </li>
               <li>
-                <a href="https://github.com/chrisburnell">GitHub</a>
+                <a href="{{ author.urls.github }}">GitHub</a>
               </li>
               <li>
-                <a href="https://twitter.com/iamchrisburnell">Twitter</a>
+                <a href="{{ author.urls.twitter }}">Twitter</a>
               </li>
               <li>
-                <a href="https://codepen.io/chrisburnell">CodePen</a>
+                <a href="{{ author.urls.codepen }}">CodePen</a>
               </li>
               <li>
                 <a href="/feed.xml">RSS</a>

@@ -35,7 +35,7 @@ layout: base
 {%- endif -%}
 
 {%- if drink_of -%}
-    {% set syndicate_to = ["https://untappd.com/user/chrisburnell/checkin/" + page.fileSlug] %}
+    {% set syndicate_to = [author.urls.untappd + "/checkin/" + page.fileSlug] %}
 {%- endif -%}
 {%- if listen_of -%}
     {% set of_url = "https://album.link/s/" + listen_of %}

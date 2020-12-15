@@ -1,13 +1,14 @@
 ---
 draft: true
 title: CV
-tagline: Chris Burnell
-lede: Front-End Developer
+eleventyComputed:
+  lede: "{{ author.role }}"
+  tagline: "{{ author.name }}"
 ---
 
 ## Biography
 
-I’m a self-taught developer driven by a passion for the front-end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/chrisburnell) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).
+I’m a self-taught developer driven by a passion for the front-end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting]({{ author.urls.codepen }}) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).
 
 ## Work Experience
 
@@ -17,7 +18,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     *March 2018 – Present*<br><br>
 
-    Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
+    Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out/) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
 
 0. **[Squiz](https://squiz.net)**
 
@@ -68,7 +69,7 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 0. **[My Website](https://chrisburnell.com/)**
 
-    My website has been online in various forms since 2008, and it’s my favourite thing that I own—I think of it as part of who I am and gives others a rare lens into my life. Since discovering the [IndieWeb](https://indieweb.org/) in 2017, I’ve begun posting various types of content, from simple [notes](https://chrisburnell.com/notes/) to [likes](https://chrisburnell.com/likes/) and [bookmarks](https://chrisburnell.com/bookmarks/). Everything is built by [Eleventy](https://www.11ty.dev/) and is available for perusal [on GitHub](https://github.com/chrisburnell/chrisburnell.com).<br><br>
+    My website has been online in various forms since 2008, and it’s my favourite thing that I own—I think of it as part of who I am and gives others a rare lens into my life. Since discovering the [IndieWeb](https://indieweb.org/) in 2017, I’ve begun posting various types of content, from simple [notes](https://chrisburnell.com/notes/) to [likes](https://chrisburnell.com/likes/) and [bookmarks](https://chrisburnell.com/bookmarks/). Everything is built by [Eleventy](https://www.11ty.dev/) and is available for perusal [on GitHub]({{ author.urls.github_repo }}).<br><br>
 
 0. **[Sassy Lobotomoised Owl](https://chrisburnell.com/article/sassy-lobotomised-owl/)**
 
