@@ -7,4 +7,4 @@ module.exports = async function() {
         type: "json",
     })
     return json
-};
+}

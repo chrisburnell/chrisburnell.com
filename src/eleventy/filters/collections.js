@@ -1,6 +1,6 @@
-const site = require("../../data/site.json");
-const categories = require("../../data/categories.json");
-const ignoredTags = require("../../data/tagIgnore.json");
+const site = require("../../data/site.json")
+const categories = require("../../data/categories.json")
+const ignoredTags = require("../../data/tagIgnore.json")
 
 module.exports = {
     isPublished: item => {
@@ -13,21 +13,20 @@ module.exports = {
     categoryFilter: (array) => {
         array = array.filter(item => {
             if (categories.includes(item)) {
-                return false;
+                return false
             }
-            return true;
-        });
-        return array;
+            return true
+        })
+        return array
     },
     tagFilter: (array) => {
-        array = array.filter(item => {
+        return array.filter(item => {
             if (ignoredTags.includes(item)) {
-                return false;
+                return false
             }
-            return true;
-        });
-        return array;
+            return true
+        })
     },
     dateFilter: (a, b) => b.date - a.date,
     notReply: item => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes(site.url)) || (item.data.in_reply_to && typeof item.data.in_reply_to === 'string' && item.data.in_reply_to.includes(site.url))
-};
+}
