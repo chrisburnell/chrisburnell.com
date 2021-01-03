@@ -6,25 +6,27 @@ prep_time: 2 hours 40 minutes
 cooking_time: 10–12 minutes
 ingredients:
   - title: warm water
-    ml: 140
+    amount: ½ cup
   - title: active dry yeast
-    ml: 3.125
+    amount: ⅝ tsp
   - title: granulated sugar, divided
-    ml: 15
+    amount: 1 Tbsp
   - title: plain flour
-    ml: 375
+    amount: 1 ½ cups
+  - title: active dry yeast
+    amount: 1 ⅝ tsp
   - title: salt
-    ml: 3.75
+    amount: ¾ tsp
   - title: oil (olive, vegetable, canola)
-    ml: 22.5
+    amount: 1 ½ Tbsp
   - title: corn flour (optional)
     amount: a dusting
-  - title: butter or margarine, melted
-    ml: 15
+  - title: butter/margarine, melted
+    amount: 1 Tbsp
   - title: salt
-    ml: 1.25
+    amount: ½ tsp
   - title: garlic powder
-    ml: 0.625
+    amount: ¼ tsp
 authors:
   - title: Tastes Better From Scratch
     url: https://tastesbetterfromscratch.com/homemade-olive-garden-breadsticks
