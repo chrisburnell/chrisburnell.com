@@ -16,7 +16,7 @@ twitter: true
         <li style="background-color: #{{ colour.hex }}; color: {% if colour.alternate %}var(--color-mineshaft){% else %}var(--color-milou){% endif %};">
             <h3>{{ colour.name }}</h3>
             <div class="monospace">#{{ colour.hex }}</div>
-            <div class="monospace">{{ colour.hsl }}</div>
+            <div class="monospace">hsl({{ colour.hsl }})</div>
         </li>
     {%- endfor -%}
 </ul>
@@ -398,20 +398,6 @@ p q r s t u v w x y z { | } ~
 </figure>
 
 
-<h2>Video</h2>
-
-<iframe src="https://player.vimeo.com/video/11933164?color={{ tokens.color.raven | replace('#','') }}&title=0&byline=0&portrait=0" allowfullscreen loading="lazy"></iframe>
-
-
-<h2>Speakerdeck</h2>
-
-<figure>
-    <div class=" [ media  media--speakerdeck ] ">
-        <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
-    </div>
-</figure>
-
-
 <h2>Navigator</h2>
 
 <nav class=" [ navigator ] ">
@@ -446,6 +432,20 @@ p q r s t u v w x y z { | } ~
     {{ shelfItem(item, global.now, people, false) }}
 {% endfor %}
 </nav>
+
+
+<h2>Video</h2>
+
+<lite-vimeo videoid="11933164"></lite-vimeo>
+
+
+<h2>Speakerdeck</h2>
+
+<figure>
+    <div class=" [ media  media--speakerdeck ] ">
+        <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
+    </div>
+</figure>
 
 
 <h2>CodePen Embed</h2>
