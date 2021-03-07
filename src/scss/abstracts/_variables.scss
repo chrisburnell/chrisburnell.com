@@ -60,7 +60,7 @@ $opacity-delta: 0.05;
 
 // this allows transparency to be transitioned to a different color
 /// @type Color
-$color-transparent: hsla(0, 0, 0, 0);
+$color-transparent: hsla(0, 0%, 0%, 0%);
 /// @type Color
 $color-thunder: hsl(0, 0%, 2.4%); // #060606
 /// @type Color
