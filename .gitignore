@@ -47,4 +47,5 @@ node_modules/
 /css
 /fonts
 /static
+/images/avatars
 /.cache

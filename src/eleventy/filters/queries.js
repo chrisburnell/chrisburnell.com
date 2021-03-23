@@ -311,6 +311,7 @@ module.exports = {
                             mastodon = url.split('/users/')[1].split('/')[0]
                         }
                         mastodon += `@${instance}`
+                        break
                     }
                 }
                 // Parse URL for Twitter username
@@ -329,7 +330,7 @@ module.exports = {
             // Check mastodon
             if (mastodon && "mastodon" in person) {
                 for (let person_mastodon of toArray(person.mastodon)) {
-                    if (person_mastodon == person.mastodon) {
+                    if (person_mastodon == mastodon) {
                         mastodon = person_mastodon
                         value = person
                         break
@@ -339,7 +340,7 @@ module.exports = {
             // Check twitter
             if (twitter && "twitter" in person) {
                 for (let person_twitter of toArray(person.twitter)) {
-                    if (person_twitter == person.twitter) {
+                    if (person_twitter == twitter) {
                         twitter = person_twitter
                         value = person
                         break
