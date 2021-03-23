@@ -24,12 +24,12 @@
                                     {%- set webmentionDate = published | default(webmention['wm-received']) -%}
                                     <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
                                         <a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ webmention.url }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
-                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
+                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url, 'u-author' %}
                                             <span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
                                             <data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ authorUrl }}" hidden></data>
                                         </a>
                                         <span class=" [ webmentions__response__type ] " aria-hidden="true"></span>
-                                        <time class=" [ dt-published ] " datetime="{{ webmentionDate | isoDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
+                                        <time class=" [ dt-published ] " datetime="{{ webmentionDate | rfcDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
                                     </li>
                                 {% endfor %}
                             </ol>
@@ -47,7 +47,7 @@
                                     {%- set sentiment = webmention.content.text | getSentimentValue -%}
                                     <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}"{% if sentiment < -0.3 %} data-sentiment="{{ sentiment }}"{% endif %} data-type="{{ webmention['wm-property'] }}">
                                         <div class=" [ webmentions__response__avatar ] ">
-                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
+                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url, 'u-author' %}
                                         </div>
                                         <div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | safe }}</div>
                                         <div class=" [ webmentions__response__meta ] ">
@@ -56,7 +56,7 @@
                                                 <span class=" [ p-name ] ">{{ authorName }}</span>
                                             </a>
                                             <small>on</small>
-                                            <a class=" [ u-url  u-{{ webmention['wm-property'] }} ] " href="{{ webmention.url }}" rel="external" title="Read externally"><time class=" [ webmentions__response__time ] " datetime="{{ webmentionDate | isoDate }}">{{ webmentionDate | friendlyDate }}</time></a>
+                                            <a class=" [ u-url  u-{{ webmention['wm-property'] }} ] " href="{{ webmention.url }}" rel="external" title="Read externally"><time class=" [ webmentions__response__time ] " datetime="{{ webmentionDate | rfcDate }}">{{ webmentionDate | friendlyDate }}</time></a>
                                         </div>
                                     </li>
                                 {% endfor %}

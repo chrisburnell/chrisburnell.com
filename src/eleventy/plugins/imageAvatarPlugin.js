@@ -2,127 +2,138 @@ const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const queryFilters = require("../filters/queries.js")
 const getTwitterAvatarUrl = require("twitter-avatar-url")
-const Image = require("@11ty/eleventy-img")
-const RemoteCache = require("@11ty/eleventy-cache-assets")
-const AssetCache = RemoteCache.AssetCache
+const eleventyImage = require("@11ty/eleventy-img")
 
-function getImageMarkup(imageData, props = {}) {
-    if(!props.alt) {
-        throw new Error("alt property required in `img` shortcode.")
-    }
+const chunkArray = (arr, size) =>
+    Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
+)
 
-    let webp = imageData.webp[0]
-    let jpeg = imageData.jpeg[0]
-
-    return [
-`<picture class=" [ avatar ] ">`,
-    `<source type="${webp.sourceType}" srcset="${webp.url}" />`,
-    `<img class=" [ u-photo ] " alt="${props.alt}" src="${jpeg.url}" width="${jpeg.width}" height="${jpeg.height}" loading="lazy">`,
-"</picture>"].join("")
-}
-
-async function getImageData(url) {
-    if (!url) {
-        throw new Error("src property required in `img` shortcode.")
-    }
-
-    let imageData = await Image(url, {
+function getImageOptions(lookup) {
+    return {
         widths: [48],
         urlPath: "/images/avatars/",
         outputDir: "images/avatars",
-        formats: ["webp", "jpeg"],
+        formats: process.env.ELEVENTY_ENV === "production" ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
+        cacheDuration: "4w",
+        cacheDirectory: ".cache",
         cacheOptions: {
-            duration: "8w"
+            duration: "4w",
+            directory: ".cache",
+        },
+        filenameFormat: function(id, src, width, format) {
+            return `${lookup.toLowerCase()}.${format}`;
         }
+    }
+}
+
+function fetchImageData(lookup, url) {
+    if (!url) {
+        console.log(lookup)
+        throw new Error("src property required in `img` shortcode.")
+    }
+
+    eleventyImage(url, getImageOptions(lookup)).then( function() {
+        // return nothing, even though this returns a promise
+    })
+}
+
+async function twitterAvatar(username, classes = "") {
+    // We know where the images will be
+    let fakeUrl = `https://twitter.com/${username}.jpg`
+    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(username))
+    let markup = eleventyImage.generateHTML(imgData, {
+        alt: `${username}’s Avatar`,
+        class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
+        loading: "lazy",
+        decoding: "async",
+    }, {
+        whitespaceMode: "inline"
     })
 
-    return imageData
+    return markup
+}
+
+async function domainAvatar(domain, classes = "") {
+    // We know where the images will be
+    let fakeUrl = `https://chrisburnell.com/${domain}.jpg`
+    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(domain))
+    let markup = eleventyImage.generateHTML(imgData, {
+        alt: `Avatar for ${domain}`,
+        class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
+        loading: "lazy",
+        decoding: "async",
+    }, {
+        whitespaceMode: "inline"
+    })
+
+    return markup
 }
 
 module.exports = function(config) {
-    config.addNunjucksAsyncShortcode("avatar", async function(photo, url, authorUrl) {
-        // normalise author URL
-        authorUrl = authorUrl ? authorUrl : url
+    let usernames
+    let domains
 
-        let twitterUsername, host, asset, imgData
+    config.on("beforeBuild", () => {
+        usernames = new Set()
+        domains = new Set()
+    })
 
-        // Webmention is from Twitter
-        if (url.includes('https://twitter.com')) {
-            // Webmention is by me
-            if (authorUrl == site.url || authorUrl == author.urls.twitter) {
-                return [
-                    `<picture class=" [ avatar ] ">`,
-                        `<source type="image/webp" srcset="/images/avatar.webp" />`,
-                        `<img alt="" src="/images/avatar.jpg" width="48" height="48" loading="lazy">`,
-                    `</picture>`
-                ].join("")
-            }
-            // Webmention is an interaction against my tweet, so username lives in author URL
-            else if (url.includes('https://twitter.com/iamchrisburnell')) {
-                twitterUsername = authorUrl.split('twitter.com/')[1]
-            }
-            // Webmention is an original tweet by another Twitter user
-            else {
-                twitterUsername = url.split('twitter.com/')[1].split('/status/')[0]
-            }
-            asset = new AssetCache(`avatar-twitter-${twitterUsername}`)
-        }
-        // Webmention is from my website
-        else if (url.includes(site.url)) {
-            return [
-                `<picture class=" [ avatar ] ">`,
-                    `<source type="image/webp" srcset="/images/avatar.webp" />`,
-                    `<img alt="" src="/images/avatar.jpg" width="48" height="48" loading="lazy">`,
-                `</picture>`
-            ].join("")
-        }
-        // Webmention is from a personal URL and has a photo attached
-        else if (photo) {
-            host = queryFilters.getHost(authorUrl)
-            asset = new AssetCache(`avatar-url-${host}`)
-        }
-        // Webmention is from a personal URL and has no photo
-        else {
-            return [
-                `<picture class=" [ avatar ] ">`,
-                    `<source type="image/webp" srcset="/images/default-profile.webp" />`,
-                    `<img alt="" src="/images/default-profile.jpg" width="48" height="48" loading="lazy">`,
-                `</picture>`
-            ].join("")
+    config.on("afterBuild", () => {
+        let array, chunks
+
+        array = Array.from(usernames)
+        chunks = chunkArray(array, 100)
+        console.log(`Generating ${array.length} Twitter avatars.`)
+        for (let usernames of chunks) {
+            getTwitterAvatarUrl(usernames).then(results => {
+                for (let result of results) {
+                    fetchImageData(result.username, result.url.large)
+                }
+            })
         }
 
-        // Check if asset is in cache and past valid date
-        if (asset.isCacheValid("8w")) {
-            return asset.getCachedValue()
+        array = Array.from(domains)
+        console.log(`Generating ${array.length} domain avatars.`)
+        for (let domain of array) {
+            fetchImageData(domain.url, domain.photo)
         }
+    })
 
-        if (twitterUsername) {
-            // Attempt to get the profile picture if the account still exists
-            try {
-                let twitterAvatarInfo = await getTwitterAvatarUrl(twitterUsername)
-                imgData = await getImageData(twitterAvatarInfo.url.large)
-                console.log(`Twitter image for @${twitterUsername}:`, twitterAvatarInfo.url.large)
-            }
-            // Serve the default if not
-            catch {
-                return [
-                    `<picture class=" [ avatar ] ">`,
-                        `<source type="image/webp" srcset="/images/default-profile.webp" />`,
-                        `<img alt="" src="/images/default-profile.jpg" width="48" height="48" loading="lazy">`,
-                    `</picture>`
-                ].join("")
-            }
+    config.addNunjucksAsyncShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
+        if (url.includes("twitter.com")) {
+            let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
+            let username = target.split("twitter.com/")[1].split("/")[0]
+            usernames.add(username.toLowerCase())
+            return twitterAvatar(username, classes)
         }
         else {
-            imgData = await getImageData(photo)
-            console.log(`Host image for ${host}:`, photo)
+            if (!photo) {
+                return `<picture><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpg" width="48" height="48"></picture>`
+            }
+
+            let domain = queryFilters.getHost(authorUrl || url)
+            domains.add({
+                "url": domain,
+                "photo": photo.toLowerCase(),
+            })
+            return domainAvatar(domain, classes)
+        }
+    })
+
+    config.addNunjucksAsyncShortcode("twitterAvatar", async function(username, classes = "") {
+        usernames.add(username.toLowerCase())
+        return twitterAvatar(username, classes)
+    })
+
+    config.addNunjucksAsyncShortcode("domainAvatar", async function(photo, domain = "", classes = "") {
+        if (!photo) {
+            return `<picture><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpg" width="48" height="48"></picture>`
         }
 
-
-        let markup = getImageMarkup(imgData, {
-            alt: `Avatar for ${twitterUsername || host}`
+        domains.add({
+            "photo": photo.toLowerCase(),
+            "url": url,
         })
-        asset.save(markup, "text")
-        return markup
+        return domainAvatar(domain, classes)
     })
 }
