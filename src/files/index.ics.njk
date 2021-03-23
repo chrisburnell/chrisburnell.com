@@ -7,8 +7,8 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 SUMMARY:{{ item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) }}
 DESCRIPTION:Details:\n{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}
-DTSTART;TZID="{{ item.data.rsvp.date | friendlyTimezone }}":{{ item.data.rsvp.date | isoDate(false) | replace("-", "") | replace(":", "") }}
-DTEND;TZID="{{ item.data.rsvp.finish | friendlyTimezone }}":{{ item.data.rsvp.finish | isoDate(false) | replace("-", "") | replace(":", "") }}{% if location %}
+DTSTART;TZID="{{ item.data.rsvp.date | friendlyTimezone }}":{{ item.data.rsvp.date | rfcDate(false) | replace("-", "") | replace(":", "") }}
+DTEND;TZID="{{ item.data.rsvp.finish | friendlyTimezone }}":{{ item.data.rsvp.finish | rfcDate(false) | replace("-", "") | replace(":", "") }}{% if location %}
 LOCATION:{{ location }}{% endif %}
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -60,7 +60,7 @@
                     {%- endfor %}
                 {% endif %}
                 {% if item.data.release %}
-                    <small>(<time datetime="{{ item.data.release | isoDate }}" class="release">{{ item.data.release | friendlyDate('yyyy') }}</time>)</small>
+                    <small>(<time datetime="{{ item.data.release | rfcDate }}" class="release">{{ item.data.release | friendlyDate('yyyy') }}</time>)</small>
                 {% endif %}
             </div>
         {% endif %}
@@ -82,9 +82,9 @@
             {% endif %}
         </div>
         {% if item.date %}
-            <time class=" [ dt-published ] " datetime="{{ item.date | isoDate }}" hidden>{{ item.date | friendlyDate }}</time>
+            <time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}" hidden>{{ item.date | friendlyDate }}</time>
             {% if item.data.updated %}
-                <time class=" [ dt-updated ] " datetime="{{ item.data.updated | isoDate }}" hidden>{{ item.data.updated | friendlyDate }}</time>
+                <time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}" hidden>{{ item.data.updated | friendlyDate }}</time>
             {% endif %}
         {% endif %}
         {% if item.data.mf_property and item_of %}

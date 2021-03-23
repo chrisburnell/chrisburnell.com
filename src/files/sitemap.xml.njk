@@ -4,7 +4,7 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>{{ site.url + '/' }}</loc>
-        <lastmod>{{ global.now | isoDate }}</lastmod>
+        <lastmod>{{ global.now | rfcDate }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
@@ -12,7 +12,7 @@
         {% if not item.data.draft and not item.sitemap.exclude %}
             <url>
                 <loc>{{ site.url + item.url }}</loc>
-                <lastmod>{{ item.data.update | default(item.date) | default(global.now) | isoDate }}</lastmod>
+                <lastmod>{{ item.data.update | default(item.date) | default(global.now) | rfcDate }}</lastmod>
                 <changefreq>{{ item.data.sitemap.changefreq | default('monthly') }}</changefreq>
                 <priority>{{ item.data.sitemap.priority | default('0.5') }}</priority>
             </url>
