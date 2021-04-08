@@ -1,7 +1,7 @@
 ---
 title: About
+tagline: About me
 eleventyComputed:
-  tagline: "About me"
   lede: "{{ site.lede | safe }}"
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}

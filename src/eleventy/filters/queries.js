@@ -48,26 +48,26 @@ module.exports = {
             return item.data.page.date.getFullYear() === parseInt(year, 10)
         }).length
     },
-    getHost: (valueHOST) => {
-        if (typeof valueHOST === "string" && valueHOST.includes('//')) {
-            const urlObject = new URL(valueHOST)
+    getHost: (value) => {
+        if (typeof value === "string" && value.includes('//')) {
+            const urlObject = new URL(value)
             return urlObject.hostname
         }
-        return valueHOST
+        return value
     },
-    getInternalTarget: (valueINTERNAL, pages) => {
+    getInternalTarget: (value, pages) => {
         // Mastodon
-        if (valueINTERNAL.includes('https://mastodon.social/users/chrisburnell/statuses/')) {
+        if (value.includes('https://mastodon.social/users/chrisburnell/statuses/')) {
             return 'a previous toot'
         }
         // Twitter
-        else if (valueINTERNAL.includes('https://twitter.com/iamchrisburnell/status/')) {
+        else if (value.includes('https://twitter.com/iamchrisburnell/status/')) {
             return 'a previous tweet'
         }
         // Internal URL
-        else if (valueINTERNAL.includes(site.url) || valueINTERNAL.includes('localhost')) {
+        else if (value.includes(site.url) || value.includes('localhost')) {
             let page = pages.filter(item => {
-                if (getPath(valueINTERNAL) == item.url) {
+                if (getPath(value) == item.url) {
                     return true
                 }
                 return false
@@ -91,20 +91,20 @@ module.exports = {
             // pages
             return `a previous page`
         }
-        return valueINTERNAL
+        return value
     },
-    getMastodonHandle: (valueMASTODON) => {
+    getMastodonHandle: (value) => {
         for (let instance of mastodonInstances) {
-            if (valueMASTODON.includes(instance)) {
-                if (valueMASTODON.includes('/@')) {
-                    return '@' + valueMASTODON.split('/@')[1].split('/')[0] + '@' + instance
+            if (value.includes(instance)) {
+                if (value.includes('/@')) {
+                    return '@' + value.split('/@')[1].split('/')[0] + '@' + instance
                 }
                 else {
-                    return '@' + valueMASTODON.split('/users/')[1].split('/')[0] + '@' + instance
+                    return '@' + value.split('/users/')[1].split('/')[0] + '@' + instance
                 }
             }
         }
-        return valueMASTODON
+        return value
     },
     getPlace: (value, intent) => {
         // Default metadata to the passed value (string/object)
@@ -200,11 +200,11 @@ module.exports = {
             return item.title
         })[0]
     },
-    getTwitterHandle: (valueTWITTER) => {
-        if (valueTWITTER.includes('https://twitter.com')) {
-            return '@' + valueTWITTER.split('/status/')[0].split('twitter.com/')[1]
+    getTwitterHandle: (value) => {
+        if (value.includes('https://twitter.com')) {
+            return '@' + value.split('/status/')[0].split('twitter.com/')[1]
         }
-        return valueTWITTER
+        return value
     },
     getBaseUrl: (url) => {
         let hashSplit = url.split("#")

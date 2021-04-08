@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 const jsdom = require("@tbranyen/jsdom")
 const {JSDOM} = jsdom
 const slugify = require("slugify")

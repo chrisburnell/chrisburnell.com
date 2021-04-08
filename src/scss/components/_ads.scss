@@ -6,6 +6,10 @@
 .ads {
     @include owl;
     @include v(margin-top, gigantic);
+
+    @include media("print") {
+        display: none;
+    }
 }
 
 .ad {

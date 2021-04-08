@@ -6,7 +6,8 @@ permalink: /js/main.js
 {% include "../../node_modules/@chrisburnell/pentatonic/pentatonic.js" %}
 
 ;(function() {
-    "use strict";
+    "use strict"
+
     {% include "../js/welcome.js" %}
     {% include "../js/navigator.js" %}
     {% include "../js/color-scheme.js" %}
@@ -15,15 +16,15 @@ permalink: /js/main.js
 
     for (let target of document.querySelectorAll(".sparkline")) {
         if ("values" in target.dataset) {
-            sparkline(target.id, target.dataset.values.split(","));
+            sparkline(target.id, target.dataset.values.split(","))
         }
     }
 
     for (let target of document.querySelectorAll(".pentatonic")) {
         target.addEventListener("click", () => {
-            pentatonic(target.dataset.values.split(","));
-        });
+            pentatonic(target.dataset.values.split(","))
+        })
     }
-})();
+})()
 
 {% include "../js/share-button.js" %}

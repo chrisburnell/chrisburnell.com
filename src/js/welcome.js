@@ -1,5 +1,3 @@
-document.documentElement.classList.remove("no-js");
-
 console.log("%cRAVEN", "color: #507791");
 console.log("%c  OUSRAV", "color: #507791");
 console.log("%c    ENOUSRA", "color: #507791");

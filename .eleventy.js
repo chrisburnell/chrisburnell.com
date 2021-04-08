@@ -82,7 +82,7 @@ module.exports = function(config) {
     config.addPassthroughCopy("src/js")
 
     // Watch targets
-    config.addWatchTarget("./src/css/")
+    config.addWatchTarget("./src/scss/")
     config.addWatchTarget("./src/js/")
 
     // 404
