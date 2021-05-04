@@ -33,61 +33,225 @@ Yoink it [from npm](https://www.npmjs.com/package/@chrisburnell/bowhead):
 npm install @chrisburnell/bowhead
 ```
 
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead):<br><samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>
+You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead): <samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>
+
+## What are <q>types of values</q>?
+
+```css
+selector {
+    property: value;
+}
+```
+
+An important first step to using *Bowhead* is to understand how it organises CSS properties into different <q>types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
+
+```css
+selector {
+    background-color: #b22222;
+    color: #3cb371;
+    outline-color: #d2b48c;
+
+    padding: 0.5rem;
+    margin: 2rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+```
+
+If we take the above snippet as an example, we can quickly identify two <q>types</q> of values present: colors and measures. *Colors* typically stand out quite easily, and, historically, developers have done well to assign colors to variables to simplify their use throughout the codebase. *Measures* (or *sizes*), on the other hand, are rarely seen reflected as design tokens in *CSS* despite their frequent prescence in other forms of design tokens, e.g. the space around a logo or iconography is usually defined in a brand's guidelines.
+
+Despite being presented in different formats, we can confidently say that `background-color`, `color`, and `outline-color` expect a *color*-type value, not just because <q>color</q> is in their names, but because we can interchange the values between the properties and they still make sense.
+
+Measures can take trickier forms to identify and categorise, and I recommend allowing for more measures than you might expect at first and paring it back later. Getting everything categorised is the hard part; swapping tokens later becomes very trivial off the back of this up-front effort. Regardless, I attach any kind of distance-related value to a measure, and, once again, we could interchange any of the values between `padding`, `margin`, `border-width`, or `width` and the CSS still makes sense.
+
+Extrapolating from here across the vast variety of CSS *properties* and the *types of values* they expect, you end up with a map of *most properties* against value types:
+
+<table>
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>measure</th>
+            <th>alignment</th>
+            <th>…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>background-color</code><br>
+                <code>border-color</code><br>
+                <code>outline-color</code><br>
+                <code>color</code><br>
+                <code>fill</code><br>
+                <code>stroke</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>width</code><br>
+                <code>height</code><br>
+                <code>padding</code><br>
+                <code>margin</code><br>
+                <code>border-width</code><br>
+                <code>min-width</code><br>
+                <code>max-width</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>align-items</code><br>
+                <code>justify-content</code><br>
+                <code>…</code>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+With this knowledge under our belt, we can begin to define the design tokens for our particular project by fleshing out what *values* are available underneath each *type*:
+
+<table>
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>measure</th>
+            <th>alignment</th>
+            <th>…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>#b22222</code><br>
+                <code>#3cb371</code><br>
+                <code>#d2b48c</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>1em</code><br>
+                <code>20px</code><br>
+                <code>2px</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>flex-start</code><br>
+                <code>flex-end</code><br>
+                <code>center</code><br>
+                <code>…</code>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Usage
 
-There are **three** main moving parts to this set-up, and an optional **fourth**:
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Values</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><code>$bowhead-variable-as-default</code><br><em>(optional)</em></th>
+            <td style="white-space:nowrap">
+                <strong>true</strong> <em>(default)</em><br>
+                <strong>false</strong>
+            </td>
+            <td>Decides whether or not use the CSS Variable or raw value when calling the <samp>@v</samp> function.</td>
+        </tr>
+        <tr>
+            <th><code>$bowhead-show-fallback</code><br><em>(optional)</em></th>
+            <td style="white-space:nowrap">
+                <strong>true</strong> <em>(default)</em><br>
+                <strong>false</strong>
+            </td>
+            <td>Decides whether or not to show a fallback value for the CSS Variable. Only works when <samp>$bowhead-variable-as-default</samp> is also <samp>true</samp>.</td>
+        </tr>
+        <tr>
+            <th><code>$bowhead-generate</code><br><em>(optional)</em></th>
+            <td style="white-space:nowrap">
+                <strong>true</strong> <em>(default)</em><br>
+                <strong>false</strong>
+            </td>
+            <td>Decides whether or not to generate CSS Variables for you.</td>
+        </tr>
+        <tr>
+            <th><code>$bowhead-property-map</code><br><em>(optional)</em></th>
+            <td><a href="#property-map">See below.</a></td>
+            <td>Defines which <q>types of values</q> each CSS property should map against.</td>
+        </tr>
+        <tr>
+            <th><code>$bowhead-tokens</code></th>
+            <td><a href="#tokens">See below.</a></td>
+          <td>Defines the design token values, categorised by <q>types of values</q>.</td>
+        </tr>
+    </tbody>
+</table>
 
-1. [`$bowhead-tokens`](#tokens)
-2. [`$bowhead-show-fallback`](#fallback)
-3. [`$bowhead-generate`](#generate)
-4. [`$bowhead-property-map`](#property-map)
+<h3 id="default">01. Variable As Default</h3>
 
-<h3 id="tokens">01. Tokens</h3>
-
-`$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.
+<div class="columns"><div class="owl">
 
 ```scss
-$bowhead-tokens: (
-    measure: (
-        small:  0.5rem,
-        medium:   1rem,
-        large:    2rem,
-    ),
-    color: (
-        brick:    #b22222,
-        plankton: #3cb371,
-        desert:   #d2b48c
-    ),
-    opacity: (
-        alpha: 0.8,
-        beta:  0.5,
-        gamma: 0.2
-    ),
-    z-index: (
-        below:  -1,
-        root:    0,
-        default: 1,
-        above:   2
-    )
-);
+$bowhead-variable-as-default: true;
+body {
+    color: v(color, brick);
+}
 ```
 
-<h3 id="fallback">02. Show Fallback Value</h3>
+```css
+body {
+    color: var(--color-brick);
+}
+```
 
-`$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
+</div><div class="owl">
 
-**`$bowhead-show-fallback: true;`**
+```scss
+$bowhead-variable-as-default: false;
+body {
+    color: v(color, brick);
+}
+```
 
 ```css
 body {
     color: #b22222;
+}
+```
+
+</div></div>
+
+<h3 id="fallback">02. Show Fallback Value</h3>
+
+<div class="columns"><div class="owl">
+
+```scss
+$bowhead-variable-as-default: true;
+$bowhead-show-fallback: true;
+body {
+    @include v(color, desert);
+}
+```
+
+```css
+body {
+    color: #d2b48c;
     color: var(--color-desert);
 }
 ```
 
-**`$bowhead-show-fallback: false;`**
+</div><div class="owl">
+
+```scss
+$bowhead-variable-as-default: true;
+$bowhead-show-fallback: false;
+body {
+    @include v(color, desert);
+}
+```
 
 ```css
 body {
@@ -95,9 +259,51 @@ body {
 }
 ```
 
+</div></div>
+
+When <samp>$bowhead-variable-as-default</samp> is <samp>false</samp>, <samp>$bowhead-show-fallback</samp> has no effect.
+
+<div class="columns"><div class="owl">
+
+```scss
+$bowhead-variable-as-default: false;
+$bowhead-show-fallback: true;
+body {
+    @include v(color, desert);
+}
+```
+
+```css
+body {
+    color: #d2b48c;
+}
+```
+
+</div><div class="owl">
+
+```scss
+$bowhead-variable-as-default: false;
+$bowhead-show-fallback: false;
+body {
+    @include v(color, desert);
+}
+```
+
+```css
+body {
+    color: #d2b48c;
+}
+```
+
+</div></div>
+
 <h3 id="generate">03. Generating CSS Variables</h3>
 
-`$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
+<div class="columns"><div class="owl">
+
+```scss
+$bowhead-generate: true;
+```
 
 ```css
 :root {
@@ -117,12 +323,22 @@ body {
 }
 ```
 
+</div><div class="owl">
+
+```scss
+$bowhead-generate: false;
+```
+
+Nothing is generated!
+
+</div></div>
+
 <h3 id="property-map">04. Property Map <em>(optional)</em></h3>
 
 `$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
 
 ```scss
-(
+$bowhead-property-map: (
     width: measure,
     min-width: measure,
     max-width: measure,
@@ -153,7 +369,37 @@ $bowhead-tokens: (
 );
 ```
 
-**Bowhead** will merge your defined map into its own defaults automatically!
+**Bowhead** will merge new types in your defined map into its own defaults automatically! Any that you re-declare will overwrite what exists as a default from *Bowhead*.
+
+<h3 id="tokens">05. Tokens</h3>
+
+`$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.
+
+```scss
+$bowhead-tokens: (
+    measure: (
+        small:  0.5rem,
+        medium:   1rem,
+        large:    2rem,
+    ),
+    color: (
+        brick:    #b22222,
+        plankton: #3cb371,
+        desert:   #d2b48c
+    ),
+    opacity: (
+        alpha: 0.8,
+        beta:  0.5,
+        gamma: 0.2
+    ),
+    z-index: (
+        below:  -1,
+        root:    0,
+        default: 1,
+        above:   2
+    )
+);
+```
 
 --------
 
@@ -213,5 +459,31 @@ will generate…
     /* 3 */
     text-decoration-color: #b22222;
     text-decoration-color: var(--color-brick);
+}
+```
+
+## Extras
+
+Need a negative value? Use `calc()`:
+
+```scss
+.thing {
+    margin-left: calc(v(measure, medium) * -1);
+}
+```
+
+Combining values? Same idea:
+
+```scss
+.thing {
+    margin-left: calc(v(measure, medium) + v(measure, small));
+}
+```
+
+What about multiple values in a function?
+
+```scss
+.thing {
+    background-color: rgba(v(color, desert), v(opacity, alpha));
 }
 ```
