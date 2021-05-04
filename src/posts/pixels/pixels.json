@@ -1,0 +1,9 @@
+{
+  "permalink": "pixels/{{ page.fileSlug }}/",
+  "category": "pixels",
+  "tags": [
+    "pixels"
+  ],
+  "emoji": "🎨",
+  "prefix": "p"
+}
