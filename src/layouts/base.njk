@@ -62,13 +62,11 @@
 
     {% if global.environment == 'production' %}
         <link rel="icon" href="/images/favicon.ico" sizes="512x512">
-        <link rel="mask-icon" href="/images/favicon.svg" color="{{ tokens.color.raven }}">
         <link rel="apple-touch-icon" href="/images/favicon-180.png">
         <link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
         <link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
     {% else %}
         <link rel="icon" href="/images/favicon-bw.ico" sizes="512x512">
-        <link rel="mask-icon" href="/images/favicon-bw.svg" color="{{ tokens.color.raven }}">
         <link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
         <link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
         <link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
