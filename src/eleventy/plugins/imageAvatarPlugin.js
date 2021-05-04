@@ -12,7 +12,7 @@ function getImageOptions(lookup) {
     return {
         widths: [48],
         urlPath: "/images/avatars/",
-        outputDir: "images/avatars",
+        outputDir: "./_site/images/avatars",
         formats: process.env.ELEVENTY_ENV === "production" ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
         cacheDuration: "4w",
         cacheDirectory: ".cache",
@@ -42,13 +42,13 @@ async function twitterAvatar(username, classes = "") {
     let fakeUrl = `https://twitter.com/${username}.jpg`
     let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(username))
     let markup = eleventyImage.generateHTML(imgData, {
-        alt: `${username}’s Avatar`,
-        class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
-        loading: "lazy",
-        decoding: "async",
-    }, {
-        whitespaceMode: "inline"
-    })
+            alt: `${username}’s Avatar`,
+            class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
+            loading: "lazy",
+            decoding: "async",
+        }, {
+            whitespaceMode: "inline"
+        })
 
     return markup
 }
@@ -70,22 +70,22 @@ async function domainAvatar(domain, classes = "") {
 }
 
 module.exports = function(config) {
-    let usernames
+    let twitterUsernames
     let domains
 
     config.on("beforeBuild", () => {
-        usernames = new Set()
+        twitterUsernames = new Set()
         domains = new Set()
     })
 
     config.on("afterBuild", () => {
         let array, chunks
 
-        array = Array.from(usernames)
+        array = Array.from(twitterUsernames)
         chunks = chunkArray(array, 100)
         console.log(`Generating ${array.length} Twitter avatars.`)
-        for (let usernames of chunks) {
-            getTwitterAvatarUrl(usernames).then(results => {
+        for (let twitterUsernames of chunks) {
+            getTwitterAvatarUrl(twitterUsernames).then(results => {
                 for (let result of results) {
                     fetchImageData(result.username, result.url.large)
                 }
@@ -103,7 +103,7 @@ module.exports = function(config) {
         if (url.includes("twitter.com")) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
             let username = target.split("twitter.com/")[1].split("/")[0]
-            usernames.add(username.toLowerCase())
+            twitterUsernames.add(username.toLowerCase())
             return twitterAvatar(username, classes)
         }
         else {
@@ -121,7 +121,7 @@ module.exports = function(config) {
     })
 
     config.addNunjucksAsyncShortcode("twitterAvatar", async function(username, classes = "") {
-        usernames.add(username.toLowerCase())
+        twitterUsernames.add(username.toLowerCase())
         return twitterAvatar(username, classes)
     })
 
