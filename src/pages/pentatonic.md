@@ -8,9 +8,9 @@ eleventyComputed:
 ---
 
 <figure>
-    <picture>
+    <picture class="pixelated">
         <source srcset="/images/pentatonic.webp" type="image/webp" />
-        <img src="/images/pentatonic.png" alt="" role="presentation" loading="lazy">
+        <img class="pixelated" src="/images/pentatonic.png" alt="" role="presentation" loading="lazy">
     </picture>
     <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
