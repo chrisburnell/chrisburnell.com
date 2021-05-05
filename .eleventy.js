@@ -5,8 +5,8 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 
 // Import transforms
-const htmlMinTransform = require("./src/eleventy/transforms/html-min.js")
 const parseTransform = require("./src/eleventy/transforms/parse.js")
+const htmlMinTransform = require("./src/eleventy/transforms/html-min.js")
 
 // Import filters
 const dateFilters = require("./src/eleventy/filters/dates.js")
@@ -32,8 +32,8 @@ module.exports = function(config) {
     config.addPlugin(imageAvatarPlugin)
 
     // Transforms
-    config.addTransform("htmlmin", htmlMinTransform)
     config.addTransform("parse", parseTransform)
+    config.addTransform("htmlmin", htmlMinTransform)
 
     // Filters
     Object.keys(dateFilters).forEach(filterName => {

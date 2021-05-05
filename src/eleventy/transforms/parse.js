@@ -1,5 +1,4 @@
-const jsdom = require("@tbranyen/jsdom")
-const {JSDOM} = jsdom
+const {JSDOM} = require("@tbranyen/jsdom")
 const slugify = require("slugify")
 
 function minify(input) {
@@ -9,7 +8,7 @@ function minify(input) {
 module.exports = function parse(value, outputPath) {
     if (outputPath.endsWith(".html")) {
         const DOM = new JSDOM(value, {
-            // resources: "usable"
+            // resources: "usable" // loads external scripts, nah thanks
         })
 
         const document = DOM.window.document
@@ -59,7 +58,7 @@ module.exports = function parse(value, outputPath) {
             })
         }
 
-        return document.documentElement.outerHTML
+        return `<!DOCTYPE ${document.doctype.name}>` + document.documentElement.outerHTML
     }
     return value
 }

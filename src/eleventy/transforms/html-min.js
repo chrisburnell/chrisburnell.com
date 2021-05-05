@@ -1,11 +1,11 @@
-const htmlmin = require('html-minifier')
+const minifier = require('html-minifier')
 
-module.exports = function htmlMinTransform(value, outputPath) {
-    if (outputPath.indexOf('.html') > -1) {
-        return htmlmin.minify(value, {
-            useShortDoctype: false,
+module.exports = function htmlmin(value, outputPath) {
+    if (outputPath.endsWith(".html")) {
+        return minifier.minify(value, {
+            useShortDoctype: true,
             removeComments: false,
-            collapseWhitespace: false,
+            collapseWhitespace: true,
             minifyCSS: true
         })
     }
