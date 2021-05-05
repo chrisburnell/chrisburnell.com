@@ -4,6 +4,7 @@ title: Crossing Guards
 lede: Throttle back on your scroll events and watch out for the IntersectionObserver!
 tags:
   - javascript
+  - performance
 banner:
   - crossing-guards@2x.png
   - crossing-guards.png
