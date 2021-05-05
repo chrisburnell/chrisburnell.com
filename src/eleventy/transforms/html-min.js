@@ -3,9 +3,9 @@ const htmlmin = require('html-minifier')
 module.exports = function htmlMinTransform(value, outputPath) {
     if (outputPath.indexOf('.html') > -1) {
         return htmlmin.minify(value, {
-            useShortDoctype: true,
+            useShortDoctype: false,
             removeComments: false,
-            collapseWhitespace: true,
+            collapseWhitespace: false,
             minifyCSS: true
         })
     }
