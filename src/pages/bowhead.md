@@ -468,7 +468,7 @@ Need a negative value? Use `calc()`:
 
 ```scss
 .thing {
-    margin-left: calc(v(measure, medium) * -1);
+    margin-left: calc(#{v(measure, medium)} * -1);
 }
 ```
 
@@ -476,14 +476,15 @@ Combining values? Same idea:
 
 ```scss
 .thing {
-    margin-left: calc(v(measure, medium) + v(measure, small));
+    margin-left: calc(#{v(measure, medium)} + #{v(measure, small)});
 }
 ```
 
-What about multiple values in a function?
+What about multiple values in a function? Just make sure you're using the *raw* values from the `v()` function:
 
 ```scss
 .thing {
-    background-color: rgba(v(color, desert), v(opacity, alpha));
+    background-color: rgba(v(color, desert, true), v(opacity, alpha, true));
 }
+```
 ```
