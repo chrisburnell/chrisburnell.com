@@ -11,7 +11,7 @@ syndicate_to:
 banner:
   - sassy-lobotomised-owl@2x.jpg
   - sassy-lobotomised-owl.jpg
-edit: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both/">Variables for Both</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
+updated_text: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both/">Variables for Both</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
 ---
 
 The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external">lobotomised owl</a> technique, given graciously to us by the incredibly talented <a href="https://heydonworks.com" rel="external">Heydon Pickering</a>, takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:

@@ -19,9 +19,8 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
 caniuse: true
-sitemap:
-  lastmod: 2020-02-04T10:00:00+0000
-edit: Since writing this post, I have made a number of small tweaks to the original mixin and now function, and I've reflected those changes in the contents below.
+updated: 2021-05-06T12:00:00+0100
+updated_text: I’ve since turned this into a full-blown package of its own called <a href="/bowhead">Bowhead</a>!
 ---
 
 {% caniuse 'css-variables', 'current' %}

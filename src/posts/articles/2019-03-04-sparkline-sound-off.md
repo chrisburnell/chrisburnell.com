@@ -1,7 +1,6 @@
 ---
-sitemap:
-  lastmod: 2020-09-29T19:45:49+0100
-edit: Added an <a href="#interactive-demo">interactive demo</a> at the bottom!
+updated: 2020-09-29T19:45:49+0100
+updated_text: Added an <a href="#interactive-demo">interactive demo</a> at the bottom!
 date: 2019-03-04T13:10:40+0000
 title: Sparkline Sound-Off
 lede: I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.
