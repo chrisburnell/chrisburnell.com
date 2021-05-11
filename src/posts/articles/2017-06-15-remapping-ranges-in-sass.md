@@ -35,7 +35,7 @@ It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman) streams
 
 Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to another in this thoroughly informative video:
 
-<iframe src="https://www.youtube.com/embed/nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
 

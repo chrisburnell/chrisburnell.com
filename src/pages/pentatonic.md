@@ -10,7 +10,7 @@ eleventyComputed:
 <figure>
     <picture class="pixelated">
         <source srcset="/images/pentatonic.webp" type="image/webp" />
-        <img class="pixelated" src="/images/pentatonic.png" alt="" role="presentation" loading="lazy">
+        <img class="pixelated" src="/images/pentatonic.png" alt="" role="presentation">
     </picture>
     <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
@@ -51,12 +51,57 @@ document.querySelectorAll(".pentatonic").forEach(target => {
 
 The function takes six parameters:
 
-0. `notes` — an array of positive integers *(required)*
-0. `duration` — the length of time to play the audio for, represented in milliseconds *(default = 4000)*
-0. `volume` — controls the *gain* of the audio, represented by a 0–1 range *(default = 0.5)*
-0. `keyStart` — the zero-index of the key on a standard keyboard from which the scale should start *(default = 29 / C♯3 / D♭3)*
-0. `keyIntervals` — an array of integers which represent half-steps in a loop which composes the desired scale *(default = [2, 2, 3, 2, 3] / a pentatonic scale)*
-0. `keyLimit` — represents the highest index in the desired scale by which input is bound by *(default = 12)*
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Values</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><code>notes</code><br><em>(required)</em></th>
+            <td><a href="#notes">See below.</a></td>
+            <td>an array of positive integers</td>
+        </tr>
+        <tr>
+            <th><code>duration</code></th>
+            <td style="white-space:nowrap">
+                4000 <em>(default)</em>
+            </td>
+            <td>the length of time to play the audio for, represented in milliseconds</td>
+        </tr>
+        <tr>
+            <th><code>volume</code></th>
+            <td style="white-space:nowrap">
+                0.5 <em>(default)</em>
+            </td>
+            <td>controls the *gain* of the audio, represented by a 0–1 range</td>
+        </tr>
+        <tr>
+            <th><code>keyStart</code></th>
+            <td style="white-space:nowrap">
+                29 / C♯3 / D♭3 <em>(default)</em>
+            </td>
+            <td>the zero-index of the key on a standard keyboard from which the scale should start</td>
+        </tr>
+        <tr>
+            <th><code>keyIntervals</code></th>
+            <td style="white-space:nowrap">
+                [2, 2, 3, 2, 3] <em>(default)</em>
+            </td>
+          <td>an array of integers which represent half-steps in a loop which composes the desired scale</td>
+        </tr>
+        <tr>
+            <th><code>keyLimit</code></th>
+            <td style="white-space:nowrap">
+                12 <em>(default)</em>
+            </td>
+          <td>represents the highest index in the desired scale by which notes are bound by</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Examples
 

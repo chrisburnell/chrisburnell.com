@@ -9,7 +9,7 @@ eleventyComputed:
 <figure>
     <picture>
         <source type="image/webp" srcset="/images/content/rachel-and-i.webp" />
-        <img src="/images/content/rachel-and-i.jpg" alt="Chris Burnell" loading="lazy">
+        <img src="/images/content/rachel-and-i.jpg" alt="Chris Burnell">
     </picture>
 </figure>
 

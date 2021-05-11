@@ -10,7 +10,7 @@ eleventyComputed:
 <figure>
     <picture class="pixelated">
         <source srcset="/images/bowhead.webp" type="image/webp" />
-        <img class="pixelated" src="/images/bowhead.png" alt="" role="presentation" loading="lazy">
+        <img class="pixelated" src="/images/bowhead.png" alt="" role="presentation">
     </picture>
     <figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
 </figure>
