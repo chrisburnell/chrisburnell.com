@@ -50,18 +50,21 @@
 @mixin absolute($position, $offset: 0) {
     @if not $position {
         @error "absolute() expects one parameter.";
-    } @else if $position == none {
+    }
+    @else if $position == none {
         position: relative;
         top: auto;
         right: auto;
         bottom: auto;
         left: auto;
-    } @else if $position == center {
+    }
+    @else if $position == center {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-    } @else if str-index(#{$position}, "full") {
+    }
+    @else if str-index(#{$position}, "full") {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -70,47 +73,56 @@
             @if str-index(#{$position}, "offset") {
                 right: v(measure, $offset);
                 left: v(measure, $offset);
-            } @else {
+            }
+            @else {
                 right: 0;
                 left: 0;
             }
-        } @else if str-index(#{$position}, "right") {
+        }
+        @else if str-index(#{$position}, "right") {
             right: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
                 top: v(measure, $offset);
                 bottom: v(measure, $offset);
-            } @else {
+            }
+            @else {
                 top: 0;
                 bottom: 0;
             }
-        } @else if str-index(#{$position}, "bottom") {
+        }
+        @else if str-index(#{$position}, "bottom") {
             bottom: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
                 right: v(measure, $offset);
                 left: v(measure, $offset);
-            } @else {
+            }
+            @else {
                 right: 0;
                 left: 0;
             }
-        } @else if str-index(#{$position}, "left") {
+        }
+        @else if str-index(#{$position}, "left") {
             left: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
                 top: v(measure, $offset);
                 bottom: v(measure, $offset);
-            } @else {
+            }
+            @else {
                 top: 0;
                 bottom: 0;
             }
-        } @else {
+        }
+        @else {
             top: v(measure, $offset);
             right: v(measure, $offset);
             bottom: v(measure, $offset);
             left: v(measure, $offset);
         }
-    } @else if is-edge($position) {
+    }
+    @else if is-edge($position) {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
@@ -164,7 +176,8 @@
 
     @if $letter-spacing != null {
         @include v(letter-spacing, $letter-spacing);
-    } @else if $case == "uppercase" {
+    }
+    @else if $case == "uppercase" {
         @include v(letter-spacing, uppercase);
     }
 }
@@ -264,7 +277,8 @@
         @each $transition-segment in $transitions {
             $transition: append($transition, unpack-transition($transition-segment), comma);
         }
-    } @else {
+    }
+    @else {
         $transition: unpack-transition($transitions...);
     }
 

@@ -202,7 +202,8 @@
             $slice: str-slice($remaining, 1, $index - 1);
             $result: append($result, $slice);
             $remaining: str-slice($remaining, $index + str-length($delimiter));
-        } @else {
+        }
+        @else {
             $running: false;
         }
     }
@@ -312,14 +313,16 @@
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    } @else {
+                    }
+                    @else {
                         $unique-group: ($first, $second);
                         $unique-groups: append($unique-groups, $unique-group);
                     }
                 }
             }
         }
-    } @else if type-of($data) == map {
+    }
+    @else if type-of($data) == map {
         $seen-first: ();
         @each $first-key, $first-value in $data {
             $seen-first: append($seen-first, $first-key);
@@ -344,7 +347,8 @@
                                 $unique-groups: append($unique-groups, $unique-group);
                             }
                         }
-                    } @else {
+                    }
+                    @else {
                         $unique-group: (
                             (
                                 $first-key: $first-value,
@@ -358,7 +362,8 @@
                 }
             }
         }
-    } @else {
+    }
+    @else {
         @warn "`unique-groups()` expects either a List or Map `$data` parameter.";
         @return false;
     }
