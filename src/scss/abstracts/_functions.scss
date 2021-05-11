@@ -241,16 +241,16 @@
         @warn "old maximum must be greater than old minimum";
         @return false;
     }
-    @if $number <= $old-minimum {
+    @if $new-minimum >= $new-maximum {
+        @warn "new maximum must be greater than new minimum";
+        @return false;
+    }
+    @if $number < $old-minimum {
         @warn "initial number must be greater than old minimum";
         @return false;
     }
-    @if $number >= $old-maximum {
+    @if $number > $old-maximum {
         @warn "initial number must be less than old maximum";
-        @return false;
-    }
-    @if $new-minimum >= $new-maximum {
-        @warn "new maximum must be greater than new minimum";
         @return false;
     }
 
