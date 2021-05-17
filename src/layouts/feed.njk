@@ -16,7 +16,7 @@
         <image>
             <title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
             <link>{{ related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') }}</link>
-            <url>{{ site.url + "/images/avatar.jpg" }}</url>
+            <url>{{ site.url + author.avatar }}</url>
             <width>100</width>
             <height>100</height>
         </image>

@@ -81,11 +81,13 @@
         content: "";
         // base64-encoded SVG generated from `/images/avatar@4x.png`
         // https://github.com/technopagan/sqip using default settings
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjZDBjZGNjIiBkPSJNMCAwaDQwMHY0MDBIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC44IC44KSBzY2FsZSgxLjU2MjUpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBmaWxsPSIjN2EzYzAxIiBjeD0iMTMwIiBjeT0iODEiIHJ4PSI1NCIgcnk9IjQzIi8+PGVsbGlwc2UgZmlsbD0iIzM5NWY5NyIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtMTIxLjUyNDc2IDYuNjM4NDggLTMuNTY2MzEgLTY1LjI4NTMyIDEyNy44IDI0OS4zKSIvPjxlbGxpcHNlIGZpbGw9IiNmZWIzN2MiIGN4PSIxMjgiIGN5PSIxNDMiIHJ4PSI0NSIgcnk9IjgxIi8+PGVsbGlwc2UgZmlsbD0iI2ZmZiIgcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtNDkuMzk3MDUgMi41ODg3OSAtOC4yODAwNSAtMTU3Ljk5MjczIDIyNi41IDU2LjUpIi8+PGVsbGlwc2UgZmlsbD0iI2ZmZiIgY3g9IjI1IiBjeT0iODciIHJ4PSI1MyIgcnk9IjEzMCIvPjxlbGxpcHNlIGZpbGw9IiNmZmYiIGN4PSIxMDkiIGN5PSIxNiIgcng9IjI1NSIgcnk9IjI0Ii8+PHBhdGggZmlsbD0iIzE0MDkwMCIgZD0iTTEwOCA0Mmw3NSA1MS0yNy00OXoiLz48ZWxsaXBzZSBmaWxsPSIjYmY3NzQ4IiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KDI3LjQwNjE1IC00LjU2OTI4IDYuMTY1NTYgMzYuOTgwNTUgMTMyLjMgMTcyLjIpIi8+PC9nPjwvc3ZnPg==");
+        background-image: url("/images/avatar-pixelated.png");
         background-size: 100%;
         position: absolute;
         top: 0;
         left: 0;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
     }
 
     .author__information:hover &,
@@ -93,27 +95,6 @@
     .author__information:active & {
         &::before {
             @include v(z-index);
-        }
-
-        & img {
-            animation: peek v(transition-duration, long) v(transition-function) v(transition-duration, default) var(--animation-fill-mode);
-
-            @at-root {
-                @keyframes peek {
-                    0% {
-                        transform: none;
-                    }
-                    50% {
-                        transform: translateY(-60%);
-                    }
-                    75% {
-                        transform: translateY(-30%);
-                    }
-                    100% {
-                        transform: rotateZ(calc(var(--rotation-default) * 2 * -1)) translateY(-60%);
-                    }
-                }
-            }
         }
     }
 }

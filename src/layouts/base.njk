@@ -19,7 +19,7 @@
 {%- endif -%}
 
 {%- set meta_description = lede | striptags(true) | default('A page on chrisburnell.com') | safe -%}
-{%- set meta_image = site.url + '/images/avatar@4x.jpg' -%}
+{%- set meta_image = site.url + author.avatar -%}
 {%- if banner -%}
     {%- set meta_image -%}{{ site.url }}/images/banners/{{ banner | toArray | last }}{%- endset -%}
 {%- elif cover -%}
