@@ -41,9 +41,6 @@
 
 .webmentions__list {
     @include media("screen", "above:medium") {
-        // 1───────────────────────────2───────────────────3
-        // │ minmax(6rem, max-content) │ minmax(12em, 1fr) │
-        // 2───────────────────────────┴───────────────────┘
         grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
         @include v(row-gap, small);
     }

@@ -37,6 +37,7 @@ h2 > code,
 li > code,
 samp {
     @include v(background-color, raven--gamma);
+    user-select: all;
 }
 
 kbd {
