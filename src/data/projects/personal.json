@@ -1,5 +1,14 @@
 [
   {
+    "url": "https://highwater.chrisburnell.com",
+    "data": {
+      "title": "Come Hell or Highwater",
+      "lede": "Another D&D-related labour of love, this time a 12-chapter campaign for 5<sup>th</sup> edition.",
+      "lede_markdown": true,
+      "emoji": "🦎"
+    }
+  },
+  {
     "url": "/pentatonic/",
     "data": {
       "title": "Pentatonic (v{{ pkg['dependencies']['@chrisburnell/pentatonic'] | replace('^', '') }})",
