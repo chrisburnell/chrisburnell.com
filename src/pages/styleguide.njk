@@ -366,6 +366,20 @@ twitter: true
 </figure>
 
 
+<h2>Meter</h2>
+
+<figure>
+    <meter value="40" min="0" low="10" optimum="50" high="90" max="100"></meter>
+</figure>
+
+
+<h2>Progress</h2>
+
+<figure>
+    <progress>progress</progress>
+</figure>
+
+
 <h2>Preformatted Text</h2>
 
 <pre><code>
@@ -384,18 +398,29 @@ p q r s t u v w x y z { | } ~
 <pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$measure</span></span><span class="token punctuation">:</span> small<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$measures</span><span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"There is no measure named #{$measure} in `$measures`. measure should be one of #{map-keys($measures)}."</span><span class="token punctuation">;</span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br>  &amp; <span class="token operator">&gt;</span> <span class="token operator">*</span> <span class="token operator">+</span> *</span> <span class="token punctuation">{</span><br><span class="highlight-line">    <span class="token keyword">@include</span> <span class="token function">v</span><span class="token punctuation">(</span>margin-top<span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 
 
+<h2>Figure</h2>
+
+<figure>
+    <img src="/images/content/SintraSkyline.jpg">
+    <figcaption>Sintra, Portugal skyline by … me</figcaption>
+</figure>
+
+
+<h2>Audio</h2>
+
+<audio controls></audio>
+
+
+<h2>Video</h2>
+
+<video controls></video>
+
+
 <h2>Sparkline</h2>
 
 <div>
     <canvas id="sparkline-example" class="sparkline" data-values="3,6,1,1,1,3,1,1,0,4,3,0,9,1,0,2,2,5,2,3,2,5,1,3,3,6" width="160" height="24" tabindex="0"></canvas>
 </div>
-
-<h2>Figure</h2>
-
-<figure>
-    <img src="https://chrisburnell.com/images/content/SintraSkyline.jpg">
-    <figcaption>Sintra, Portugal skyline by … me</figcaption>
-</figure>
 
 
 <h2>Navigator</h2>
@@ -434,11 +459,6 @@ p q r s t u v w x y z { | } ~
 </nav>
 
 
-<h2>Video</h2>
-
-<iframe src="https://player.vimeo.com/video/11933164?color={{ tokens.color.raven | replace('#','') }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
-
-
 <h2>Speakerdeck</h2>
 
 <figure>
@@ -446,6 +466,11 @@ p q r s t u v w x y z { | } ~
         <div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
     </div>
 </figure>
+
+
+<h2>Video Embed</h2>
+
+<iframe src="https://player.vimeo.com/video/11933164?color={{ tokens.color.raven | replace('#','') }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
 
 
 <h2>CodePen Embed</h2>

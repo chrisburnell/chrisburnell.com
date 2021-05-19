@@ -52,3 +52,35 @@ iframe {
     max-width: 100% !important;
     margin: 0;
 }
+
+meter {
+    @include v(width, line-length-clamp);
+
+    &::-webkit-meter-bar {
+        @include v(background-color, dove);
+    }
+
+    &::-webkit-meter-optimum-value {
+        @include v(background-color, nunjucks);
+    }
+
+    &::-webkit-meter-suboptimum-value {
+        @include v(background-color, javascript);
+    }
+
+    &::-webkit-meter-even-less-good-value {
+        @include v(background-color, html);
+    }
+}
+
+progress {
+    @include v(width, line-length-clamp);
+
+    &::-webkit-progress-bar {
+        @include v(background-color, dove);
+    }
+
+    &::-webkit-progress-value {
+        @include v(background-color, raven);
+    }
+}
