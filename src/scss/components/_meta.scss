@@ -7,7 +7,7 @@
     @include owl(tiny);
 
     .details ~ & {
-        @include v(margin-top, large);
+        @include v(margin-block-start, large);
     }
 
     .archive & {
@@ -31,7 +31,7 @@
     }
 
     .rating {
-        @include v(margin-left, tiny);
+        @include v(margin-inline-start, tiny);
     }
 }
 
@@ -50,8 +50,8 @@
     }
 }
 h3 + .meta__list {
-    margin-top: v(measure, small) !important;
+    margin-block-start: v(measure, small) !important;
 }
 small + .meta__list {
-    @include v(padding-left, tiny);
+    @include v(padding-inline-start, tiny);
 }

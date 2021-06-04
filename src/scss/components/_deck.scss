@@ -8,19 +8,19 @@
         @include owl(tiny);
         @include v(max-width, breakpoint-medium);
         @include v(max-width, line-length-clamp);
-        @include v(padding-top, medium);
-        @include v(padding-bottom, medium);
+        @include v(padding-block-start, medium);
+        @include v(padding-block-end, medium);
 
         &:first-child {
-            padding-top: 0;
+            padding-block-start: 0;
         }
 
         &:last-child {
-            padding-bottom: 0;
+            padding-block-end: 0;
         }
     }
     article + article {
-        border-top: var(--measure-border-thin) solid var(--color-thunder--delta);
+        border-block-start: var(--measure-border-thin) solid var(--color-thunder--delta);
     }
 
     a {
@@ -34,7 +34,7 @@
 
         .emoji {
             display: inline-block;
-            @include v(padding-right, small);
+            @include v(padding-inline-end, small);
         }
     }
 }

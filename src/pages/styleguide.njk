@@ -16,7 +16,6 @@ twitter: true
         <li style="background-color: #{{ colour.hex }}; color: {% if colour.alternate %}var(--color-mineshaft){% else %}var(--color-milou){% endif %};">
             <h3>{{ colour.name }}</h3>
             <div class="monospace">#{{ colour.hex }}</div>
-            <div class="monospace">hsl({{ colour.hsl }})</div>
         </li>
     {%- endfor -%}
 </ul>
@@ -140,6 +139,8 @@ twitter: true
 <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
 
 <p>Keyboard input: <kbd>Tab</kbd></p>
+
+<p><button>Button</button></p>
 
 
 <h2>Blockquote</h2>

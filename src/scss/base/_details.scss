@@ -16,10 +16,10 @@ details {
     & > div {
         @include v(background-color, alto);
         max-height: 0;
-        @include v(padding-top, small);
+        @include v(padding-block-start, small);
         position: absolute;
-        top: 100%;
-        left: 0;
+        inset-block-start: 100%;
+        inset-inline-start: 0;
         @include v(font-size, small);
         @include transition(max-height);
         @include v(z-index, above);
@@ -43,8 +43,8 @@ summary {
     }
 
     & + %collection-content {
-        @include v(margin-top, small);
-        border-top: v(measure, border-thin) solid v(color, raven);
-        @include v(padding-top, medium);
+        @include v(margin-block-start, small);
+        border-block-start: v(measure, border-thin) solid v(color, raven);
+        @include v(padding-block-start, medium);
     }
 }

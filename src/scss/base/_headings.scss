@@ -55,14 +55,6 @@
 
 h1 {
     @extend %alpha;
-    text-shadow:
-         0.025em  -0.025em 0 var(--color-milou),
-         0.025em -0.0125em 0 var(--color-milou),
-         0.025em   0.025em 0 var(--color-milou),
-         0         0.025em 0 var(--color-milou),
-        -0.025em   0.025em 0 var(--color-milou),
-        -0.025em -0.0125em 0 var(--color-milou),
-        -0.025em  -0.025em 0 var(--color-milou);
     @include v(z-index, above);
 }
 
@@ -70,19 +62,17 @@ h2 {
     @extend %delta;
 
     @include case(uppercase);
-    border-bottom: v(measure, border-thin) solid v(color, alto);
+    border-block-end: v(measure, border-thin) solid v(color, alto);
     width: auto;
     max-width: 100%;
     display: inline-block;
-    @include v(padding-right, large);
+    @include v(padding-inline-end, large);
 }
 
 h3 {
     @extend %delta;
 }
 
-h4,
-h5,
-h6 {
+:is(h4, h5, h6) {
     @extend %epsilon;
 }

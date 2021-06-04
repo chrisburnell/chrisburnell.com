@@ -40,10 +40,6 @@ body {
     @include media("print") {
         display: block;
     }
-
-    @include media("print") {
-        display: block;
-    }
 }
 
 // @page {

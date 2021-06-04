@@ -35,16 +35,16 @@
 
         h3 {
             @include v(font-size, default);
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
     }
 }
 
 .measure-example {
     @include v(background-color, alto);
-    background-image: linear-gradient(to bottom, $color-canada, $color-canada);
+    background-image: linear-gradient(to bottom, v(color, maple), v(color, maple));
     background-position: center center;
-    background-size: 100% var(--measure-border-thin);
+    background-size: 100% v(measure, border-thin);
     background-repeat: no-repeat;
     @include v(height, medium);
     display: block;
@@ -70,13 +70,13 @@
 
 .transition-example {
     position: relative;
-    margin-bottom: calc(var(--measure-large) + var(--measure-medium));
+    margin-block-end: calc(v(measure, large) + v(measure, medium));
 
     &::before {
         content: "(Hover to interact.)";
         @include absolute(top, 100%);
         @include v(color, kaiser);
-        @include v(margin-top, small);
+        @include v(margin-block-start, small);
     }
 
     @include media("coarse") {
@@ -87,19 +87,21 @@
 }
 
 .transition-example__demo {
-    border-top: var(--measure-border-thin) solid var(--color-raven--beta);
+    border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
     border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
     @include transition(color);
     width: 100%;
     @include v(max-width, line-length-clamp);
     height: calc(var(--measure-large) * 1.5);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: v(measure, border-thin) solid v(color, alto);
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
     overflow-x: hidden;
     position: relative;
-    line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
+    // line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
     text-align: center;
     @include v(z-index, above);
 
@@ -157,7 +159,7 @@
 
     li {
         display: inline-block;
-        @include v(margin-left, medium);
-        @include v(margin-right, medium);
+        @include v(margin-inline-start, medium);
+        @include v(margin-inline-end, medium);
     }
 }

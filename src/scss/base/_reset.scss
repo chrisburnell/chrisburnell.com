@@ -13,13 +13,7 @@
 }
 
 // Touch Action
-a,
-button,
-input,
-label,
-select,
-summary,
-textarea {
+:is(a, button, input, label, select, summary, textarea) {
     touch-action: manipulation;
 }
 

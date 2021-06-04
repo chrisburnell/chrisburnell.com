@@ -3,35 +3,30 @@
 /// @group base
 ////
 
-abbr[title],
-dfn[title] {
+:is(abbr, dfn)[title] {
     @include v(color, dove);
     font-style: italic;
     font-weight: v(font-weight) !important;
-}
-abbr[title],
-dfn[title] {
-    border-bottom: v(measure, border-thin) dotted v(color, dove);
+    border-block-end: v(measure, border-thin) dotted v(color, dove);
     cursor: help;
 
     a & {
-        border-bottom-width: 0;
+        border-block-end-width: 0;
     }
 }
-abbr[title],
-dfn[title],
+:is(abbr, dfn)[title],
 ins {
     text-decoration: none;
 }
 
 ins {
-    @include v(background-color, nunjucks);
-    color: contrasting-color($color-nunjucks);
+    @include v(background-color, conifer);
+    color: contrasting-color(v(color, conifer, true));
     @include v(font-size, default);
 }
 
 del {
-    @include v(color, canada);
+    @include v(color, maple);
 }
 
 s {
@@ -56,8 +51,7 @@ small {
     @include v(font-size, small);
 }
 
-sub,
-sup {
+:is(sub, sup) {
     position: relative;
     vertical-align: baseline;
     font-size: 1em;
@@ -65,11 +59,11 @@ sup {
     text-transform: initial;
 }
 sub {
-    bottom: 0;
+    inset-block-end: 0;
     font-variant-position: sub;
 }
 sup {
-    top: 0;
+    inset-block-start: 0;
     font-variant-position: super;
 }
 
@@ -94,11 +88,21 @@ hr {
 }
 
 // Text Selection
-::selection {
+::selection,
+::target-text {
     @include v(background-color, raven);
     @include v(color, milou);
     text-shadow: none;
+
+    &.canada {
+        @include v(background-color, maple);
+    }
 }
-.canada::selection {
-    @include v(background-color, canada);
+
+::spelling-error {
+    text-decoration: v(color, maple) wavy underline;
+}
+
+::grammar-error {
+    text-decoration: v(color, conifer) wavy underline;
 }

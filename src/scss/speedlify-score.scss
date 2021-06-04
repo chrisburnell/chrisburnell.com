@@ -14,7 +14,7 @@ speedlify-score {
     justify-content: center;
     border-radius: 50%;
     border: 2px solid #0cce6b;
-    margin-left: 8px;
+    margin-inline-start: 8px;
 }
 .speedlify-score-ok {
     color: #ffa400;
@@ -46,9 +46,9 @@ speedlify-score {
     content: "⬇";
 }
 speedlify-score > :not(.speedlify-score) {
-    margin-left: 1em;
+    margin-inline-start: 1em;
     font-size: 12px;
 }
 speedlify-score > :first-child {
-    margin-left: 0;
+    margin-inline-start: 0;
 }

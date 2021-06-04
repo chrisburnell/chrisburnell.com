@@ -5,9 +5,9 @@
 
 .footer {
     @include v(background-color, mineshaft);
-    @include v(padding-top, large);
-    @include v(padding-bottom, large);
-    border-top: var(--measure-border-thin) solid var(--color-coyote);
+    @include v(padding-block-start, large);
+    @include v(padding-block-end, large);
+    border-block-start: var(--measure-border-thin) solid var(--color-coyote);
 
     @include media("print") {
         display: none;
@@ -75,6 +75,6 @@
 
 .speedlify-anchor {
     display: inline-block;
-    @include v(margin-top, small);
+    @include v(margin-block-start, small);
     text-decoration: none;
 }

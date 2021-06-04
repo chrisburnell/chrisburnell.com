@@ -6,7 +6,7 @@
 
 @each $aspect-ratio, $percentage in $aspect-ratios {
     .media--#{$aspect-ratio} {
-        padding-top: $percentage;
+        padding-block-start: $percentage;
     }
 }
 
@@ -23,7 +23,7 @@
         @include absolute(full);
         // necessary for `iframe`
         height: 100%;
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 }
 
@@ -42,6 +42,6 @@
     overflow: auto;
 
     iframe {
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 }

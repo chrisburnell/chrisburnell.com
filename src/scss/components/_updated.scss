@@ -6,8 +6,8 @@
 .updated {
     @include owl(small);
     @include v(max-width, line-length-clamp);
-    @include v(margin-left, auto);
-    @include v(margin-right, auto);
+    @include v(margin-inline-start, auto);
+    @include v(margin-inline-end, auto);
 
     time {
         @include v(font-weight, bold);

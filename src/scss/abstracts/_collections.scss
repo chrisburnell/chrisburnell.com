@@ -3,73 +3,30 @@
 /// @group abstracts
 ////
 
-img,
-picture,
-svg {
+:is(img, picture, svg) {
     @extend %collection-images !optional;
 }
 
-audio,
-canvas,
-embed,
-iframe,
-object,
-video {
+:is(audio, canvas, embed, iframe, object, video) {
     @extend %collection-media !optional;
 }
 
-blockquote,
-details,
-table,
-dl,
-ol,
-ul,
-figure:not([class]),
-p {
+:is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
     @extend %collection-content !optional;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
     @extend %collection-headings !optional;
 }
 
-code,
-kbd,
-samp,
-var,
-.monospace {
+:is(code, kbd, samp, var, .monospace) {
     @extend %collection-monospace !optional;
 }
 
-button,
-.button,
-[type="button"] {
+:is(button, .button, [type="button"]) {
     @extend %collection-buttons !optional;
 }
 
-input[type="checkbox"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="file"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="range"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="week"],
-input[type="url"],
-optgroup,
-select,
-textarea {
+:is(input, optgroup, select, textarea) {
     @extend %collection-form !optional;
 }

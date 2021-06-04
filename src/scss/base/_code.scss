@@ -46,11 +46,11 @@ kbd {
 }
 
 mark {
-    @include v(background-color, highlight);
+    @include v(background-color, aspen);
 }
 
 var {
-    @include v(color, raven);
+    @include v(color, bowhead);
     font-style: normal;
     font-size: inherit;
     @include v(font-weight, bold);
@@ -65,13 +65,13 @@ pre {
 
 // Highlighted Code Blocks
 pre[class*="language-"] {
-    background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-mineshaft) var(--measure-gap), var(--color-mineshaft) 100%);
+    background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-lynx) var(--measure-gap), var(--color-lynx) 100%);
     @include v(color, milou);
     width: auto;
     min-width: 10vw;
-    margin-bottom: 0;
+    margin-block-end: 0;
     @include v(padding, gutter);
-    padding-top: calc(var(--measure-gutter) + var(--measure-gap));
+    padding-block-start: calc(var(--measure-gutter) + var(--measure-gap));
     border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
     background-clip: padding-box;
     // disallow text from wrapping inside the container
@@ -86,6 +86,7 @@ pre[class*="language-"] {
     }
 
     code {
+        @include v(background-color, lynx);
         min-width: 100%;
         display: block;
         overflow-wrap: normal;
@@ -106,16 +107,14 @@ code[class*="language-"] {
         padding: 0 var(--measure-gutter);
         border-radius: var(--measure-border-default) var(--measure-border-default) 0 0;
         background-clip: padding-box;
-        text-shadow: 0 var(--measure-border-hairline) 0 var(--color-mineshaft);
     }
 
     // Highlighted Code Block Labels
     @each $language, $color in $language-colors {
         &.language-#{$language} {
             &::before {
-                background-color: #{$color} !important;
-                color: contrasting-color($color, $color-mineshaft, $color-milou) !important;
-                text-shadow: 0 var(--measure-border-hairline) 0 contrasting-color($color, $color-milou, $color-mineshaft) !important;
+                background-color: v(color, #{$color}) !important;
+                color: contrasting-color(v(color, $color, true)) !important;
             }
         }
     }

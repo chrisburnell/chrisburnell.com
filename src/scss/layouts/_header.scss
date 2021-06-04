@@ -15,8 +15,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @include v(padding-top, small);
-        @include v(padding-bottom, small);
+        @include v(padding-block-start, small);
+        @include v(padding-block-end, small);
     }
 
     .logo {

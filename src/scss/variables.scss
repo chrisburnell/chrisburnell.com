@@ -3,10 +3,12 @@
 /// @group base
 ////
 
+@use "sass:math";
+
 /// ABSTRACTS & VENDORS
-@import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/maps";
+@import "abstracts/palette";
 @import "abstracts/tokens";
 @import "abstracts/mathematics";
 @import "abstracts/config";
@@ -20,15 +22,15 @@ html {
         }
     }
 
-    --animation-duration: #{$animation-duration};
-    --animation-function: #{$animation-function};
-    --animation-fill-mode: #{$animation-fill-mode};
+    --animation-duration: 2s;
+    --animation-function: linear;
+    --animation-fill-mode: forwards;
 
-    --rotation-default: #{$rotation-default};
+    --rotation-default: 5deg;
 
-    --line-clamp: #{$line-clamp};
+    --line-clamp: 3;
 
-    --max-columns: #{$max-columns};
+    --max-columns: 2;
 
-    --color-scheme: "#{$color-scheme}";
+    --color-scheme: "light";
 }

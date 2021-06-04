@@ -1,0 +1,64 @@
+////
+/// Colors
+/// @group abstracts
+////
+
+$opacities: (
+    alpha: 0.9,
+    beta: 0.5,
+    gamma: 0.1,
+    delta: 0.05,
+);
+
+$colors-richtones: (
+    lynx: #091217,
+    wolf: #20323d,
+    bowhead: #3e5c6d,
+    raven: #5f8aa6,
+    highland: #80b7d7,
+    coyote: #c0dbed,
+    bear: #ebf3f9,
+    maple: #e0151f,
+    conifer: #3d8137,
+    aspen: #ffd700,
+);
+
+$colors-monotones: (
+    thunder: #060606,
+    mineshaft: #2b2b2b,
+    kaiser: #4f4f4f,
+    dove: #737373,
+    alto: #dddddd,
+    milou: #f9f9f9,
+);
+
+$colors-languages: (
+    css: #016fba,
+    html: #e54d26,
+    javascript: #f1c54c,
+    liquid: #7ab55c,
+    markdown: #4a525a,
+    nunjucks: #3d8137,
+    scss: #c6538c,
+);
+
+
+$colors: map-multiple-merge(
+    (
+        transparent: rgba(0, 0, 0, 0%)
+    ),
+    $colors-richtones,
+    $colors-monotones,
+    $colors-languages,
+);
+
+@each $name, $color in map-merge($colors-richtones, $colors-monotones) {
+    @each $friendly, $value in $opacities {
+        $colors: map-merge(
+            $colors,
+            (
+                #{$name}--#{$friendly}: rgba($color, $value)
+            )
+        );
+    }
+}

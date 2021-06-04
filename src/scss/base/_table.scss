@@ -25,8 +25,7 @@ tr {
 }
 
 // Cells
-th,
-td {
+:is(th, td) {
     @include transition(background-color);
     @include v(padding, small);
     text-align: left;

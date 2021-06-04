@@ -12,8 +12,7 @@ blockquote {
     @include v(border-radius, border-default);
     margin: 0 auto var(--measure-medium);
 
-    cite,
-    strong {
+    :is(cite, strong) {
         font-style: normal;
     }
 
@@ -39,7 +38,7 @@ blockquote {
     cite {
         @include v(color, kaiser);
         display: block;
-        @include v(margin-top, medium);
+        @include v(margin-block-start, medium);
         text-align: right;
 
         &::before {
@@ -49,8 +48,8 @@ blockquote {
     }
 }
 .twitter-tweet {
-    margin-top: var(--measure-large) !important;
-    margin-bottom: 0 !important;
+    margin-block-start: var(--measure-large) !important;
+    margin-block-end: 0 !important;
 }
 
 cite {

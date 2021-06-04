@@ -6,10 +6,10 @@
 .wrap {
     width: 100%;
     @include v(max-width, breakpoint-gigantic);
-    @include v(padding-left, gutter);
-    @include v(padding-right, gutter);
-    margin-left: auto;
-    margin-right: auto;
+    @include v(padding-inline-start, gutter);
+    @include v(padding-inline-end, gutter);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
 }
 
 @each $name, $measure in $breakpoints {

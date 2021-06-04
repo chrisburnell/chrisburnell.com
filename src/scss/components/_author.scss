@@ -22,18 +22,18 @@
     text-decoration: none;
 
     @include media("below:small") {
-        @include v(margin-bottom, gutter);
+        @include v(margin-block-end, gutter);
     }
 
     @include media("below:medium") {
-        float: left;
-        @include v(margin-right, gap);
-        @include v(margin-bottom, gap);
+        float: inline-start;
+        @include v(margin-inline-end, gap);
+        @include v(margin-block-end, gap);
     }
 
     @include media("above:medium") {
-        float: right;
-        @include v(margin-left, gap);
+        float: inline-end;
+        @include v(margin-inline-start, gap);
     }
 
     .anchor {
@@ -49,7 +49,7 @@
     &:focus,
     &:active {
         .anchor {
-            @include v(text-decoration-color, canada);
+            @include v(text-decoration-color, maple);
         }
     }
 }
@@ -59,7 +59,7 @@
     flex-shrink: 0;
     @include v(flex-basis, avatar);
     @include v(height, avatar);
-    float: left;
+    float: inline-start;
     position: relative;
     box-shadow: inset 0 var(--measure-border-default) 0 0 var(--color-thunder--gamma);
     text-decoration: none !important;
@@ -84,8 +84,8 @@
         background-image: url("/images/avatar-pixelated.png");
         background-size: 100%;
         position: absolute;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
         image-rendering: crisp-edges;
         image-rendering: pixelated;
     }
@@ -116,11 +116,11 @@
 .webring-links {
     .webring-links__previous,
     .webring-links__home {
-        margin-right: 0;
+        margin-inline-end: 0;
     }
 
     .webring-links__next,
     .webring-links__home {
-        margin-left: 0;
+        margin-inline-start: 0;
     }
 }

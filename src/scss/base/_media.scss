@@ -4,10 +4,8 @@
 /// @link https://chrisburnell.com/styleguide/#figure
 ////
 
-img,
-picture,
-svg {
-    margin: 0 auto;
+:is(img, picture, svg) {
+    margin-inline: auto;
     position: relative;
 
     &,
@@ -31,9 +29,7 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-audio,
-iframe,
-video {
+:is(audio, canvas, iframe, video) {
     width: 100%;
     display: block;
     border: 0;
@@ -61,15 +57,15 @@ meter {
     }
 
     &::-webkit-meter-optimum-value {
-        @include v(background-color, nunjucks);
+        @include v(background-color, conifer);
     }
 
     &::-webkit-meter-suboptimum-value {
-        @include v(background-color, javascript);
+        @include v(background-color, aspen);
     }
 
     &::-webkit-meter-even-less-good-value {
-        @include v(background-color, html);
+        @include v(background-color, maple);
     }
 }
 

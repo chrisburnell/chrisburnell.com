@@ -5,31 +5,31 @@
 
 .webmentions {
     @include owl(medium);
-    @include v(margin-top, gigantic);
+    @include v(margin-block-start, gigantic);
 }
 
 .webmentions__thread {
-    @include v(margin-top, medium);
+    @include v(margin-block-start, medium);
 }
 
 .webmentions__form {
     @include v(max-width, breakpoint-small);
     grid-template-columns: 1fr min-content;
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
 .webmentions__label {
     grid-column: 1 / span 2;
-    @include v(margin-bottom, small);
+    @include v(margin-block-end, small);
 
     @include media("below:small") {
-        @include v(margin-bottom, medium);
+        @include v(margin-block-end, medium);
     }
 }
 
 .webmentions__submit {
     min-width: 5em;
-    margin-top: 0;
+    margin-block-start: 0;
 
     @include media("below:small") {
         @include v(font-size, small);
@@ -50,7 +50,7 @@
     }
 
     .webmentions__list__replies ol {
-        margin-top: 0;
+        margin-block-start: 0;
     }
 }
 
@@ -63,7 +63,7 @@
     position: relative;
 
     .webmentions__list__replies & + & {
-        @include v(margin-top, medium);
+        @include v(margin-block-start, medium);
     }
 
     small {
@@ -80,7 +80,7 @@
     &:link:hover,
     &:link:focus,
     &:link:active {
-        border-color: var(--color-canada);
+        border-color: var(--color-maple);
     }
 
     &,
@@ -99,14 +99,14 @@
 
 .webmentions__response__avatar {
     .webmentions__list__replies & {
-        float: left;
-        @include v(margin-right, medium);
-        @include v(margin-bottom, small);
+        float: inline-start;
+        @include v(margin-inline-end, medium);
+        @include v(margin-block-end, small);
     }
 }
 
 .webmentions__response__name {
-    @include v(padding-right, medium);
+    @include v(padding-inline-end, medium);
 
     .webmentions__list__reactions & {
         display: none;
@@ -114,7 +114,7 @@
 }
 
 .webmentions__list__reactions {
-    padding-left: calc(var(--measure-small) + var(--measure-tiny));
+    padding-inline-start: calc(var(--measure-small) + var(--measure-tiny));
 
     .hidden + & {
         grid-column-start: 1;
@@ -123,8 +123,8 @@
 
     li {
         display: inline-block;
-        margin-left: calc((var(--measure-small) + var(--measure-tiny)) * -1);
-        @include v(margin-bottom, small);
+        margin-inline-start: calc((var(--measure-small) + var(--measure-tiny)) * -1);
+        @include v(margin-block-end, small);
 
         &:hover {
             @include v(z-index, above);
@@ -142,8 +142,8 @@
 
     .webmentions__response__type {
         position: absolute;
-        bottom: 0;
-        left: 50%;
+        inset-block-end: 0;
+        inset-inline-start: 50%;
         transform: translateX(-50%) translateY(33%);
         @include v(font-size, small);
         line-height: 1;

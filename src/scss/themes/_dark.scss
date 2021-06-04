@@ -8,15 +8,11 @@
     $swap-bowhead: v(color, coyote, true);
     $swap-bear: v(color, lynx, true);
     $swap-lynx: v(color, bear, true);
-    $swap-wolf: v(color, highland, true);
-    $swap-highland: v(color, wolf, true);
 
     --color-coyote: #{$swap-coyote};
     --color-bowhead: #{$swap-bowhead};
     --color-bear: #{$swap-bear};
     --color-lynx: #{$swap-lynx};
-    --color-wolf: #{$swap-wolf};
-    --color-highland: #{$swap-highland};
 
     scrollbar-color: v(color, raven) v(color, mineshaft);
 

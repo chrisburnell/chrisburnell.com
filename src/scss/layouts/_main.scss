@@ -5,7 +5,7 @@
 
 .main {
     @include owl;
-    @include v(padding-bottom, gigantic);
+    @include v(padding-block-end, gigantic);
 }
 
 .content {
@@ -50,8 +50,8 @@
 }
 
 .title {
-    @include v(margin-top, gigantic);
-    @include v(margin-bottom, gigantic);
+    @include v(margin-block-start, gigantic);
+    @include v(margin-block-end, gigantic);
 
     @include media("above:medium") {
         grid-column: content;
@@ -60,20 +60,20 @@
 }
 
 .details {
-    @include v(margin-bottom, large);
+    @include v(margin-block-end, large);
     @include v(font-family, serif);
     font-style: italic;
 
     @include media("above:medium") {
         grid-column: marginalia;
         grid-row: 2/3;
-        margin-bottom: 0;
+        margin-block-end: 0;
         text-align: right;
     }
 
     .title[hidden] ~ &,
     .title.hidden ~ & {
-        @include v(margin-top, gigantic);
+        @include v(margin-block-start, gigantic);
     }
 
     p {
@@ -91,15 +91,15 @@
 .details--published {
     @include media("below:medium") {
         order: -1;
-        @include v(margin-top, large);
-        margin-bottom: 0;
+        @include v(margin-block-start, large);
+        margin-block-end: 0;
         @include v(font-size, small);
     }
 
     .title[hidden] ~ &,
     .title.hidden ~ & {
         @include media("below:medium") {
-            @include v(margin-bottom, large);
+            @include v(margin-block-end, large);
         }
     }
 }
@@ -122,7 +122,7 @@
     .title[hidden] ~ &,
     .title.hidden ~ & {
         @include media("above:medium") {
-            @include v(margin-top, gigantic);
+            @include v(margin-block-start, gigantic);
         }
     }
 }
@@ -132,7 +132,7 @@
 .content__body,
 .e-content {
     & > * + h2 {
-        @include v(margin-top, gigantic);
+        @include v(margin-block-start, gigantic);
     }
 }
 

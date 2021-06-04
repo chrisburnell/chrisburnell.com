@@ -14,36 +14,36 @@
 /// @example scss
 ///   @include absolute(bottom-left);
 ///   // position: absolute;
-///   // bottom: 0;
-///   // left: 0;
+///   // inset-block-end: 0;
+///   // inset-inline-start: 0;
 ///
 /// @example scss
 ///   @include absolute(right, medium);
 ///   // position: absolute;
-///   // right: var(--measure-medium);
-///   // top: 50%;
+///   // inset-inline-end: var(--measure-medium);
+///   // inset-block-start: 50%;
 ///   // transform: translateY(-50%);
 ///
 /// @example scss
 ///   @include absolute(top-full);
 ///   // position: absolute;
-///   // top: 0;
-///   // right: 0;
-///   // left: 0;
+///   // inset-block-start: 0;
+///   // inset-inline-end: 0;
+///   // inset-inline-start: 0;
 ///
 /// @example scss
 ///   @include absolute(top-full, medium);
 ///   // position: absolute;
-///   // top: var(--measure-medium);
-///   // right: 0;
-///   // left: 0;
+///   // inset-block-start: var(--measure-medium);
+///   // inset-inline-end: 0;
+///   // inset-inline-start: 0;
 ///
 /// @example scss
 ///   @include absolute(top-full-offset, medium);
 ///   // position: absolute;
-///   // top: var(--measure-medium);
-///   // right: var(--measure-medium);
-///   // left: var(--measure-medium);
+///   // inset-block-start: var(--measure-medium);
+///   // inset-inline-end: var(--measure-medium);
+///   // inset-inline-start: var(--measure-medium);
 ///
 /// @throw Error if no parameters are passed.
 ///
@@ -53,103 +53,103 @@
     }
     @else if $position == none {
         position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
+        inset-block-start: auto;
+        inset-inline-end: auto;
+        inset-block-end: auto;
+        inset-inline-start: auto;
     }
     @else if $position == center {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
     @else if str-index(#{$position}, "full") {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
-            top: v(measure, $offset);
+            inset-block-start: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                right: v(measure, $offset);
-                left: v(measure, $offset);
+                inset-inline-end: v(measure, $offset);
+                inset-inline-start: v(measure, $offset);
             }
             @else {
-                right: 0;
-                left: 0;
+                inset-inline-end: 0;
+                inset-inline-start: 0;
             }
         }
         @else if str-index(#{$position}, "right") {
-            right: v(measure, $offset);
+            inset-inline-end: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                top: v(measure, $offset);
-                bottom: v(measure, $offset);
+                inset-block-start: v(measure, $offset);
+                inset-block-end: v(measure, $offset);
             }
             @else {
-                top: 0;
-                bottom: 0;
+                inset-block-start: 0;
+                inset-block-end: 0;
             }
         }
         @else if str-index(#{$position}, "bottom") {
-            bottom: v(measure, $offset);
+            inset-block-end: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                right: v(measure, $offset);
-                left: v(measure, $offset);
+                inset-inline-end: v(measure, $offset);
+                inset-inline-start: v(measure, $offset);
             }
             @else {
-                right: 0;
-                left: 0;
+                inset-inline-end: 0;
+                inset-inline-start: 0;
             }
         }
         @else if str-index(#{$position}, "left") {
-            left: v(measure, $offset);
+            inset-inline-start: v(measure, $offset);
 
             @if str-index(#{$position}, "offset") {
-                top: v(measure, $offset);
-                bottom: v(measure, $offset);
+                inset-block-start: v(measure, $offset);
+                inset-block-end: v(measure, $offset);
             }
             @else {
-                top: 0;
-                bottom: 0;
+                inset-block-start: 0;
+                inset-block-end: 0;
             }
         }
         @else {
-            top: v(measure, $offset);
-            right: v(measure, $offset);
-            bottom: v(measure, $offset);
-            left: v(measure, $offset);
+            inset-block-start: v(measure, $offset);
+            inset-inline-end: v(measure, $offset);
+            inset-block-end: v(measure, $offset);
+            inset-inline-start: v(measure, $offset);
         }
     }
     @else if is-edge($position) {
         position: absolute;
 
         @if str-index(#{$position}, "top") {
-            top: v(measure, $offset);
+            inset-block-start: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
-                left: 50%;
+                inset-inline-start: 50%;
                 transform: translateX(-50%);
             }
         }
         @if str-index(#{$position}, "right") {
-            right: v(measure, $offset);
+            inset-inline-end: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
-                top: 50%;
+                inset-block-start: 50%;
                 transform: translateY(-50%);
             }
         }
         @if str-index(#{$position}, "bottom") {
-            bottom: v(measure, $offset);
+            inset-block-end: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
-                left: 50%;
+                inset-inline-start: 50%;
                 transform: translateX(-50%);
             }
         }
         @if str-index(#{$position}, "left") {
-            left: v(measure, $offset);
+            inset-inline-start: v(measure, $offset);
             @if not str-index(#{$position}, "-") {
-                top: 50%;
+                inset-block-start: 50%;
                 transform: translateY(-50%);
             }
         }
@@ -224,7 +224,7 @@
     }
 
     & > * + * {
-        @include v(margin-top, $measure);
+        @include v(margin-block-start, $measure);
     }
 }
 

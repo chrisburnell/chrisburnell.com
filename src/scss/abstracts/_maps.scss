@@ -8,88 +8,20 @@
 /// @prop {Length} value - Breakpoint value
 /// @see {Mixin} media
 $breakpoints: (
-    small: $measure-breakpoint-small,
-    medium: $measure-breakpoint-medium,
-    large: $measure-breakpoint-large,
-    gigantic: $measure-breakpoint-gigantic,
-);
-
-$site-colors: (
-    transparent: $color-transparent,
-    bowhead: $color-bowhead,
-    raven: $color-raven,
-    coyote: $color-coyote,
-    bear: $color-bear,
-    lynx: $color-lynx,
-    wolf: $color-wolf,
-    highland: $color-highland,
-    canada: $color-canada,
-    thunder: $color-thunder,
-    mineshaft: $color-mineshaft,
-    kaiser: $color-kaiser,
-    dove: $color-dove,
-    alto: $color-alto,
-    milou: $color-milou,
-    highlight: $color-highlight,
-    thunder--alpha: $color-thunder--alpha,
-    thunder--beta: $color-thunder--beta,
-    thunder--gamma: $color-thunder--gamma,
-    thunder--delta: $color-thunder--delta,
-    milou--alpha: $color-milou--alpha,
-    milou--beta: $color-milou--beta,
-    milou--gamma: $color-milou--gamma,
-    milou--delta: $color-milou--delta,
-    raven--alpha: $color-raven--alpha,
-    raven--beta: $color-raven--beta,
-    raven--gamma: $color-raven--gamma,
-    raven--delta: $color-raven--delta,
-    coyote--alpha: $color-coyote--alpha,
-    coyote--beta: $color-coyote--beta,
-    coyote--gamma: $color-coyote--gamma,
-    coyote--delta: $color-coyote--delta,
-    bowhead--alpha: $color-bowhead--alpha,
-    bowhead--beta: $color-bowhead--beta,
-    bowhead--gamma: $color-bowhead--gamma,
-    bowhead--delta: $color-bowhead--delta,
-);
-
-$palette-colors: (
-    bowhead: $color-bowhead,
-    raven: $color-raven,
-    coyote: $color-coyote,
-    bear: $color-bear,
-    lynx: $color-lynx,
-    thunder: $color-thunder,
-    mineshaft: $color-mineshaft,
-    kaiser: $color-kaiser,
-    dove: $color-dove,
-    alto: $color-alto,
-    milou: $color-milou,
-    canada: $color-canada,
-);
-
-$highlight-colors: (
-    highlight-alpha: $color-highlight-alpha,
-    highlight-beta: $color-highlight-beta,
-    highlight-gamma: $color-highlight-gamma,
-    highlight-delta: $color-highlight-delta,
-    highlight-epsilon: $color-highlight-epsilon,
-    highlight-zeta: $color-highlight-zeta,
-    highlight-eta: $color-highlight-eta,
-    highlight-theta: $color-highlight-theta,
+    small: 500px,
+    medium: 700px,
+    large: 1000px,
+    gigantic: 1200px,
 );
 
 $language-colors: (
-    css: $color-css,
-    haml: $color-html,
-    html: $color-html,
-    jade: $color-html,
-    javascript: $color-javascript,
-    liquid: $color-liquid,
-    markdown: $color-markdown,
-    twig: $color-nunjucks,
-    sass: $color-sass,
-    scss: $color-sass
+    css: "css",
+    html: "html",
+    javascript: "javascript",
+    liquid: "liquid",
+    markdown: "markdown",
+    twig: "nunjucks",
+    scss: "scss"
 );
 
 /// @type Map
@@ -151,75 +83,3 @@ $aspect-ratios: (
     "16-by-9": 56.25%,
     "4-by-3": 75%,
 ) !default;
-
-/// @type Map
-/// @prop {String} name - Brand name
-/// @prop {Color} color - Icon color
-/// @prop {Number} opacity - Brand icon opacity
-$brand-details: (
-    (
-        name: "codepen",
-        color: milou,
-        ratio: 1,
-    ),
-    (
-        name: "github",
-        color: milou,
-        ratio: 1,
-    ),
-    (
-        name: "lastfm",
-        color: lastfm,
-        ratio: 1,
-    ),
-    (
-        name: "switch",
-        color: nintendo,
-        ratio: 0.9,
-    ),
-    (
-        name: "rss",
-        color: milou,
-        ratio: 0.775,
-    ),
-    (
-        name: "spotify",
-        color: spotify,
-        ratio: 0.925,
-    ),
-    (
-        name: "twitter",
-        color: twitter,
-        ratio: 0.925,
-    ),
-    (
-        name: "article",
-        color: milou,
-        ratio: 0.9,
-    ),
-    (
-        name: "feather",
-        color: milou,
-        ratio: 0.725,
-    ),
-    (
-        name: "heart",
-        color: milou,
-        ratio: 1,
-    ),
-    (
-        name: "link",
-        color: milou,
-        ratio: 1,
-    ),
-    (
-        name: "search",
-        color: milou,
-        ratio: 1,
-    ),
-    (
-        name: "tag",
-        color: milou,
-        ratio: 1,
-    )
-);

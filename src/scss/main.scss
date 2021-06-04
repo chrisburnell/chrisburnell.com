@@ -7,11 +7,13 @@
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/main/src/scss
 ////
 
+@use "sass:math";
+
 /// REQUIRED — ABSTRACTS & VENDORS
-@import "abstracts/variables";
 @import "abstracts/collections";
 @import "abstracts/functions";
 @import "abstracts/maps";
+@import "abstracts/palette";
 @import "abstracts/tokens";
 @import "abstracts/mathematics";
 @import "abstracts/mixins";

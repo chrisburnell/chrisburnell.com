@@ -1,66 +1,68 @@
 [
   {
+    "name": "Lynx",
+    "hex": "091217"
+  },
+  {
+    "name": "Wolf",
+    "hex": "20323d"
+  },
+  {
     "name": "Bowhead",
-    "hex": "4f758e",
-    "hsl": "203.7, 28.5%, 43.2%"
+    "hex": "3e5c6d"
   },
   {
     "name": "Raven",
     "hex": "5f8aa6",
-    "hsl": "203.7, 28.5%, 51.2%",
     "pantone": "7454 C"
   },
   {
     "name": "Coyote",
-    "hex": "7298b1",
-    "hsl": "203.7, 28.5%, 57.1%"
-  },
-  {
-    "name": "Lynx",
-    "hex": "303537",
-    "hsl": "197, 7%, 20%"
+    "hex": "c0dbed",
+    "alternate": true
   },
   {
     "name": "Bear",
-    "hex": "eaeef1",
-    "hsl": "206, 20%, 93%",
+    "hex": "ebf3f9",
+    "alternate": true
+  },
+  {
+    "name": "Maple",
+    "hex": "e0151f"
+  },
+  {
+    "name": "Conifer",
+    "hex": "3d8137"
+  },
+  {
+    "name": "Aspen",
+    "hex": "ffd700",
     "alternate": true
   },
   {
     "name": "Thunder",
-    "hex": "060606",
-    "hsl": "0, 0%, 2.4%"
+    "hex": "060606"
   },
   {
     "name": "Mineshaft",
-    "hex": "2b2b2b",
-    "hsl": "0, 0%, 16.9%"
+    "hex": "2b2b2b"
   },
   {
     "name": "Kaiser",
-    "hex": "4f4f4f",
-    "hsl": "0, 0%, 31%"
+    "hex": "4f4f4f"
   },
   {
     "name": "Dove",
-    "hex": "737373",
-    "hsl": "0, 0%, 45.1%"
+    "hex": "737373"
   },
   {
     "name": "Alto",
     "hex": "dddddd",
-    "hsl": "0, 0%, 86.7%",
     "alternate": true
   },
   {
     "name": "Milou",
     "hex": "f9f9f9",
-    "hsl": "0, 0%, 97.6%",
     "alternate": true
-  },
-  {
-    "name": "Canada",
-    "hex": "eb2d37",
-    "hsl": "356.8, 82.6%, 54.9%"
   }
 ]

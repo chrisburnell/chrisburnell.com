@@ -21,13 +21,15 @@ button {
     @include non-selectable;
     @include transition(background-color);
     @include v(background-color, bowhead);
-    @include v(color, milou);
+    @include v(color, bear);
     min-width: 8em;
     display: inline-block;
     padding: 0.5em var(--measure-small);
+    @include v(padding, small);
+    margin: calc(#{v(measure, border-thin)} * 2); // accounts for outline-width + outline-offset
     border-width: 0;
     @include v(border-radius, border-default);
-    box-shadow: inset 0 calc(var(--measure-border-button) * -1) 0 0 v(color, thunder--gamma);
+    box-shadow: inset 0 calc(var(--measure-border-button) * -1) 0 0 v(color, lynx--gamma);
     outline: 0 solid var(--color-raven);
     overflow: visible;
     position: relative;
@@ -36,33 +38,29 @@ button {
     @include v(line-height, medium);
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 v(measure, border-hairline) v(measure, border-hairline) v(color, thunder--gamma);
     appearance: none;
 
     &:hover,
     &:focus,
     &:active {
-        @include v(background-color, raven);
+        @include v(outline-offset, border-thin);
+        outline-width: v(measure, border-thin) !important;
         text-decoration: none;
     }
 
-    &:focus {
-        @include v(outline-width, border-thin);
-        @include v(outline-offset, border-thin);
-    }
-
     &:active {
+        background-color: v(color, bowhead) !important;
+        color: v(color, bear) !important;
         box-shadow: none;
-        outline-width: 0;
         transform: translateY(v(measure, border-button));
 
         &::before {
             content: "";
             @include v(height, border-button);
             position: absolute;
-            bottom: 100%;
-            left: 0;
-            right: 0;
+            inset-block-end: 100%;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
         }
     }
 
@@ -72,7 +70,7 @@ button {
     }
 
     .icon {
-        filter: drop-shadow(0 0 var(--measure-border-hairline) var(--color-thunder--gamma));
+        filter: drop-shadow(0 0 var(--measure-border-hairline) var(--color-lynx--gamma));
     }
 }
 

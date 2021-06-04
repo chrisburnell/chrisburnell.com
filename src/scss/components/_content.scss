@@ -20,7 +20,7 @@
     @include v(color, milou);
 }
 .title--negative > span {
-    @include v(background-color, canada);
+    @include v(background-color, maple);
     @include v(color, milou);
 }
 
@@ -68,8 +68,8 @@
         width: 0;
         overflow: hidden;
         position: absolute;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
     }
 
     &:not([value]) {
@@ -77,7 +77,7 @@
     }
 
     @for $i from 1 through 19 {
-        &[value="#{$i / 4}"]::after {
+        &[value="#{math.div($i, 4)}"]::after {
             width: range-map($i, 0, 20, 0%, 100%);
         }
     }

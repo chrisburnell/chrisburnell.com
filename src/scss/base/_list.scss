@@ -3,30 +3,26 @@
 /// @group base
 ////
 
-ol,
-ul {
+:is(ol, ul) {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-ol:not([class]),
-ul:not([class]),
-dl:not([class]),
+:is(dl, ol, ul):not([class]),
 .default-list {
     // Space out lists nested in a list
     & & {
-        @include v(margin-top, medium);
+        @include v(margin-block-start, medium);
     }
 }
-ol:not([class]),
-ul:not([class]),
+:is(ol, ul):not([class]),
 .default-list {
     li {
-        @include v(padding-left, large);
+        @include v(padding-inline-start, large);
         position: relative;
 
         &:not(:last-child) {
-            @include v(margin-bottom, small);
+            @include v(margin-block-end, small);
         }
 
         &::before {
@@ -86,18 +82,18 @@ ol.default-list {
         // fix spacing based on reverse ordering
         & > li {
             &:first-child {
-                margin-bottom: 0;
+                margin-block-end: 0;
             }
 
             &:not(:first-child) {
-                @include v(margin-bottom, small);
+                @include v(margin-block-end, small);
             }
         }
     }
 
     // Nested Ordered List Item
     & & li {
-        padding-left: calc(var(--measure-large) + var(--measure-medium));
+        padding-inline-start: calc(var(--measure-large) + var(--measure-medium));
     }
 }
 [counter-reset] {
@@ -115,7 +111,7 @@ dl {
     grid-template-columns: 100%;
     @include v(column-gap, medium);
     @include v(row-gap, large);
-    margin-top: 0;
+    margin-block-start: 0;
     overflow: hidden;
 
     @include media("screen", "above:small") {

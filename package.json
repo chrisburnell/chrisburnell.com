@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.1.3",
+  "version": "3.2.0",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -31,7 +31,6 @@
     "dotenv": "^8.5.1",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
-    "json-to-scss": "^1.6.2",
     "lodash": "^4.17.21",
     "luxon": "^1.26.0",
     "natural": "^5.0.3",
@@ -49,11 +48,10 @@
     "cross-env": "^7.0.3"
   },
   "scripts": {
-    "tokens": "npx json-to-scss src/data/tokens.json src/scss/abstracts/_tokens.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
     "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",
-    "build": "npm run tokens; npm run scss -- --style=compressed; npm run prefix; ELEVENTY_FEATURES=people,webmentions npx @11ty/eleventy",
+    "build": "npm run scss -- --style=compressed; npm run prefix; ELEVENTY_FEATURES=people,webmentions npx @11ty/eleventy",
     "start": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "serve": "npm run start",
     "people": "ELEVENTY_FEATURES=people npx @11ty/eleventy --quiet",

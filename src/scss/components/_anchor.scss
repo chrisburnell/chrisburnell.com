@@ -22,7 +22,7 @@ a {
     &:hover,
     &:focus,
     &:active {
-        background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-canada));
+        background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-maple));
         background-clip: text;
         text-fill-color: transparent;
         box-decoration-break: clone;
@@ -37,11 +37,11 @@ a {
     @include v(color, dove);
     display: none;
     visibility: hidden;
-    @include v(padding-left, small);
-    @include v(padding-right, small);
+    @include v(padding-inline-start, small);
+    @include v(padding-inline-end, small);
     position: absolute;
-    top: var(--measure-border-thin);
-    right: calc(var(--measure-small) * -1);
+    inset-block-start: var(--measure-border-thin);
+    inset-inline-end: calc(var(--measure-small) * -1);
     font-size: inherit;
     @include v(font-weight, bold);
     @include v(line-height);
@@ -74,7 +74,7 @@ li {
                 @keyframes anchor-target {
                     0%,
                     50% {
-                        @include v(background-color, highlight);
+                        @include v(background-color, aspen);
                     }
                     100% {
                         @include v(background-color, transparent);

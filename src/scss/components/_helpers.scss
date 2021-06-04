@@ -6,7 +6,7 @@
 // Full Bleed
 .full-bleed {
     width: 100vw;
-    margin-left: 50%;
+    margin-inline-start: 50%;
     transform: translateX(-50%);
 }
 
@@ -81,7 +81,7 @@
 // Owls
 @each $key, $_ in map-get($tokens, "measure") {
     .owl--#{$key} > * + * {
-        @include v(margin-top, #{$key});
+        @include v(margin-block-start, #{$key});
     }
 }
 

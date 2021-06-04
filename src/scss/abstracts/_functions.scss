@@ -100,17 +100,17 @@
 ///
 /// @return {Color} Contrasting Text Color
 ///
-@function contrasting-color($background-color, $text-color-dark: $color-kaiser, $text-color-light: $color-milou) {
+@function contrasting-color($background-color, $text-color-dark: "mineshaft", $text-color-light: "milou") {
     @if not $background-color {
         @warn "`contrasting-color()` expects at least one parameter.";
         @return false;
     }
 
     @if lightness($background-color) > 65 {
-        @return $text-color-dark;
+        @return v(color, #{$text-color-dark});
     }
 
-    @return $text-color-light;
+    @return v(color, #{$text-color-light});
 }
 
 ///
@@ -255,7 +255,7 @@
         @return false;
     }
 
-    @return ($number - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
+    @return math.div($number - $old-minimum, $old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 
 ///
@@ -391,8 +391,8 @@
     }
 
     $property: nth($list, 1);
-    $time: if(length($list) > 1, nth($list, 2), $transition-duration-default);
-    $function: if(length($list) > 2, nth($list, 3), $transition-function-default);
+    $time: if(length($list) > 1, nth($list, 2), var(--transition-duration-default));
+    $function: if(length($list) > 2, nth($list, 3), var(--transition-function-default));
     $delay: if(length($list) > 3, nth($list, 4), 0s);
 
     @return $property $time $function $delay;
