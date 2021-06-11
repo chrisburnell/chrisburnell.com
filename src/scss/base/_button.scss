@@ -20,8 +20,8 @@ button {
     @include font-family(default);
     @include non-selectable;
     @include transition(background-color);
-    @include v(background-color, bowhead);
-    @include v(color, bear);
+    @include v(background-color, coyote);
+    @include v(color, lynx);
     min-width: 8em;
     display: inline-block;
     padding: 0.5em var(--measure-small);
@@ -49,8 +49,8 @@ button {
     }
 
     &:active {
-        background-color: v(color, bowhead) !important;
-        color: v(color, bear) !important;
+        background-color: v(color, coyote) !important;
+        color: v(color, lynx) !important;
         box-shadow: none;
         transform: translateY(v(measure, border-button));
 
