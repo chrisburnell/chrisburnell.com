@@ -1,9 +1,9 @@
 [
   {
-    "url": "https://highwater.chrisburnell.com",
+    "url": "https://dnd.chrisburnell.com",
     "data": {
-      "title": "Come Hell or Highwater",
-      "lede": "Another D&D-related labour of love, this time a 12-chapter campaign for 5<sup>th</sup> edition.",
+      "title": "The Arcanum",
+      "lede": "Another D&D-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> edition.",
       "lede_markdown": true,
       "emoji": "🦎"
     }
@@ -27,10 +27,10 @@
     }
   },
   {
-    "url": "https://micro.bloodbuilder.online",
+    "url": "https://micro.chrisburnell.com",
     "data": {
       "title": "Micrathene",
-      "lede": "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
+      "lede": "Super Simple PWA for building [Microlite20](https://micro.chrisburnell.com/docs/Microlite20.pdf) characters.",
       "lede_markdown": true,
       "emoji": "🔬"
     }
@@ -81,7 +81,7 @@
     }
   },
   {
-    "url": "https://bloodbuilder.online",
+    "url": "https://dnd.chrisburnell.com/feonir",
     "data": {
       "title": "BloodBuilder",
       "lede": "Super Simple PWA for [1e Pathfinder](https://paizo.com/pathfinder) Pure Core Classes.",

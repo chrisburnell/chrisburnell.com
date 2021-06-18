@@ -84,6 +84,44 @@
 }
 
 ///
+/// Calcualte Luminance of a Color
+///
+/// @param {Color} $color - Color to calculate luminance from
+///
+/// @throw Error if no parameters are passed.
+///
+/// @return {Color} Contrasting Text Color
+///
+@function luminance($color) {
+    @if not $color {
+        @error "`luminance()` expects one parameter.";
+    }
+
+    $colors: (
+        'red': red($color),
+        'green': green($color),
+        'blue': blue($color)
+    );
+
+    @each $name, $value in $colors {
+        $adjusted: 0;
+        $value: $value / 255;
+
+        @if $value < 0.03928 {
+            $value: $value / 12.92;
+        }
+        @else {
+            $value: ($value + .055) / 1.055;
+            $value: power($value, 2.4);
+        }
+
+        $colors: map-merge($colors, ($name: $value));
+    }
+
+    @return (map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
+}
+
+///
 /// Contrasting Text Color
 ///
 /// @param {Color} $background-color - Background-color to contrast against
@@ -106,7 +144,7 @@
         @return false;
     }
 
-    @if lightness($background-color) > 65 {
+    @if luminance($background-color) > 0.5 {
         @return v(color, #{$text-color-dark});
     }
 
