@@ -79,10 +79,8 @@ module.exports = function(config) {
     })
 
     config.on("afterBuild", () => {
-        let array, chunks
-
-        array = Array.from(twitterUsernames)
-        chunks = chunkArray(array, 100)
+        let array = Array.from(twitterUsernames)
+        let chunks = chunkArray(array, 100)
         console.log(`Generating ${array.length} Twitter avatars.`)
         for (let twitterUsernames of chunks) {
             getTwitterAvatarUrl(twitterUsernames).then(results => {
