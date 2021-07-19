@@ -50,7 +50,7 @@
       "title": "Weather",
       "lede": "Not the most interesting of project titles, this is a personalised weather web app.",
       "lede_markdown": true,
-      "emoji": "⛈"
+      "emoji": "⛈️"
     }
   },
   {
@@ -86,7 +86,7 @@
       "title": "BloodBuilder",
       "lede": "Super Simple PWA for [1e Pathfinder](https://paizo.com/pathfinder) Pure Core Classes.",
       "lede_markdown": true,
-      "emoji": "🗡"
+      "emoji": "🗡️"
     }
   },
   {
@@ -122,7 +122,7 @@
       "title": "Feelin’ Dizzy",
       "lede": "Feelin’ dizzy or blue? This should sort you right out.",
       "lede_markdown": true,
-      "emoji": "🌪"
+      "emoji": "🌪️"
     }
   },
   {
