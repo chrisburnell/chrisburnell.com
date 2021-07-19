@@ -101,6 +101,7 @@
         </li>
     {% endif %}
     {% if authors %}
+        {%- set authors = authors | toArray -%}
         <li class=" [ authors ] ">
             {% if category == 'beer' %}
                 {% emoji '🍺' %}
@@ -194,7 +195,7 @@
     {% endif %}
     {% if posting_method %}
         <li class=" [ posting-method ] ">
-            {% emoji '🖋' %}
+            {% emoji '🖋️' %}
             <small>posted with</small>
             {% if posting_method | getPostingMethod('url') %}
                 <a href="{{ posting_method }}">{{ posting_method | getPostingMethod }}</a>
