@@ -70,7 +70,7 @@
     {% endif %}
     {% if rsvp %}
         <li class=" [ rsvp ] ">
-            {% emoji '🗓' %}
+            {% emoji '🗓️' %}
             {% if rsvp.finish | epoch > global.now %}
                 <small>taking place</small>
             {% else %}
@@ -91,7 +91,7 @@
     {%- set tags_filtered = tags | categoryFilter | tagFilter -%}
     {% if tags_filtered.length %}
         <li class=" [ tags ] ">
-            {% emoji '🏷' %}
+            {% emoji '🏷️' %}
             <small>tagged</small>
             {% if tags_filtered.length > 1 %}<ul class=" [ meta__list ] ">{% endif %}
                 {% for tag in tags_filtered %}
@@ -110,7 +110,7 @@
                 {% emoji '✍️' %}
                 <small>written by</small>
             {% elif category == 'game' %}
-                {% emoji '🕹' %}
+                {% emoji '🕹️' %}
                 <small>produced by</small>
             {% elif category == 'music' %}
                 {% emoji '🎼' %}
@@ -135,7 +135,7 @@
     {% endif %}
     {% if release %}
         <li class=" [ date-released ] ">
-            {% emoji '🗓' %}
+            {% emoji '🗓️' %}
             <small>released</small>
             <time class=" [ dt-released ] " datetime="{{ release | rfcDate }}">{{ release | friendlyDate }}</time>
         </li>
