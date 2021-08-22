@@ -11,7 +11,7 @@
   {
     "url": "/pentatonic/",
     "data": {
-      "title": "Pentatonic (v{{ pkg['dependencies']['@chrisburnell/pentatonic'] | replace('^', '') }})",
+      "title": "Pentatonic (v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }})",
       "lede": "Turn any array of integers into a fun little melody.",
       "lede_markdown": true,
       "emoji": "🎹"
@@ -20,7 +20,7 @@
   {
     "url": "/bowhead/",
     "data": {
-      "title": "Bowhead (v{{ pkg['dependencies']['@chrisburnell/bowhead'] | replace('^', '') }})",
+      "title": "Bowhead (v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }})",
       "lede": "Memorable and maintainable design tokens in SCSS.",
       "lede_markdown": true,
       "emoji": "🐋"
