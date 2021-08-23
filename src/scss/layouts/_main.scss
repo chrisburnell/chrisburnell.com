@@ -49,6 +49,17 @@
         }
     }
 
+    &.wide {
+        @include media("above:medium") {
+            grid-template-columns:
+                1fr
+                [content-start outdent-start marginalia-start]
+                repeat(6, 1fr)
+                [content-end outdent-end marginalia-end]
+                1fr;
+        }
+    }
+
     @include media("print") {
         display: block;
     }
@@ -78,6 +89,11 @@
         grid-row: 2/3;
         margin-block-end: 0;
         text-align: right;
+    }
+
+    .full &,
+    .wide &  {
+        text-align: left;
     }
 
     .title[hidden] ~ &,
@@ -122,13 +138,15 @@
         grid-row: 2/4;
     }
 
-    .full > & {
+    .full > &,
+    .wide > & {
         @include media("above:medium") {
             grid-row: 3/4;
         }
     }
 
-    &.full {
+    &.full,
+    &.wide {
         @include media("above:medium") {
             grid-column: content-start/outdent-end;
         }
