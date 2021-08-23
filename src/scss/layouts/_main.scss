@@ -122,6 +122,12 @@
         grid-row: 2/4;
     }
 
+    .full > & {
+        @include media("above:medium") {
+            grid-row: 3/4;
+        }
+    }
+
     &.full {
         @include media("above:medium") {
             grid-column: content-start/outdent-end;
