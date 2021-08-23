@@ -40,6 +40,15 @@
             [outdent-end];
     }
 
+    &.full {
+        @include media("above:medium") {
+            grid-template-columns:
+                [content-start outdent-start marginalia-start]
+                repeat(6, 1fr)
+                [content-end outdent-end marginalia-end];
+        }
+    }
+
     @include media("print") {
         display: block;
     }
@@ -113,7 +122,7 @@
         grid-row: 2/4;
     }
 
-    &.content__body--wide {
+    &.full {
         @include media("above:medium") {
             grid-column: content-start/outdent-end;
         }

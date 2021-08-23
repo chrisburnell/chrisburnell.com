@@ -25,7 +25,7 @@ eleventyComputed:
         <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
     </div>
 
-    <div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  content__body--wide{% endif %} ] [ h-feed ] ">
+    <div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] ">
         {% if categoryIntroductions[category.title] %}
             {{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
         {% endif %}
