@@ -13,7 +13,7 @@ function getImageOptions(lookup) {
         widths: [48],
         urlPath: "/images/avatars/",
         outputDir: "./_site/images/avatars",
-        formats: process.env.ELEVENTY_ENV === "production" ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
+        formats: ["webp", "jpeg"],
         cacheDuration: "4w",
         cacheDirectory: ".cache",
         cacheOptions: {
