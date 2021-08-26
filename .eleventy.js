@@ -85,7 +85,7 @@ module.exports = function(config) {
     config.addWatchTarget("./src/scss/")
     config.addWatchTarget("./src/js/")
 
-    // 404
+    // BrowserSync and Local 404
     config.setBrowserSyncConfig({
         callbacks: {
             ready: function(err, browserSync) {
