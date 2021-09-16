@@ -16,13 +16,11 @@ const truncate = (() => {
 })()
 
 module.exports = {
-    capitalizeFormat: (string) => {
-        for (let capitalizer of capitalizers) {
-            let regex = new RegExp(capitalizer, 'gi')
-            string = string.replace(regex, capitalizer)
-        }
-
-        return string
+    capitalizeFormat: (input) => {
+        return capitalizers.reduce((output, capitalizer) => {
+            const regex = new RegExp(capitalizer, "gi")
+            return output.replace(regex, capitalizer)
+        }, input)
     },
     markdownFormat: (value) => {
         return markdownIt.render(value)
@@ -33,6 +31,10 @@ module.exports = {
             return strings[number]
         }
         return number
+    },
+    smartjoin: (array, joiner = ", ") => {
+        const last = array.pop()
+        return array.join(joiner) + (array.length > 1 ? "," : "") + " and " + last
     },
     maxSentences: (string, count, condition = true) => {
         return (condition ? truncate.sentences(string, count) : string)

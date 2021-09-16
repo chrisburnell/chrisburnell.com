@@ -73,11 +73,11 @@ $font-faces: (
         variant: default,
         weight: bold,
         filename: "proxima-nova-semibold",
-    )
+    ),
 ) !default;
 
 /// @type Map
-/// @prop {Array} key - Aspect Ratio
+/// @prop {String} key - Aspect Ratio
 /// @prop {Length} value - Percentage for sizing
 $aspect-ratios: (
     "16-by-9": 56.25%,

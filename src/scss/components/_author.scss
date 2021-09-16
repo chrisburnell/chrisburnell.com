@@ -61,7 +61,8 @@
     @include v(height, avatar);
     float: inline-start;
     position: relative;
-    box-shadow: inset 0 var(--measure-border-default) 0 0 var(--color-thunder--gamma);
+    --color-shadow: var(--color-thunder--gamma);
+    @include v(box-shadow, inset);
     text-decoration: none !important;
     @include transition(opacity);
 

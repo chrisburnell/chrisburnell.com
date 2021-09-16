@@ -42,7 +42,8 @@ samp {
 
 kbd {
     @include case(uppercase);
-    box-shadow: inset 0 0 0 var(--measure-border-hairline) var(--color-kaiser);
+    --color-shadow: var(--color-kaiser);
+    @include v(box-shadow, small);
 }
 
 mark {

@@ -70,5 +70,17 @@ $tokens: (
     modal: 3,
     dialog: 4,
     notification: 5
-  )
+  ),
+  box-shadow: (
+    small: "0.5px 1px 1px hsl(var(--color-shadow) / 0.7)",
+    medium: "1px 2px 2px hsl(var(--color-shadow) / 0.333),
+             2px 4px 4px hsl(var(--color-shadow) / 0.333),
+             3px 6px 6px hsl(var(--color-shadow) / 0.333)",
+    large: " 1px  2px  2px hsl(var(--color-shadow) / 0.2),
+             2px  4px  4px hsl(var(--color-shadow) / 0.2),
+             4px  8px  8px hsl(var(--color-shadow) / 0.2),
+             8px 16px 16px hsl(var(--color-shadow) / 0.2),
+            16px 32px 32px hsl(var(--color-shadow) / 0.2)",
+    inset: "inset 0 calc(var(--measure-border-button) * -1) 0 0 var(--color-shadow)",
+  ),
 );
