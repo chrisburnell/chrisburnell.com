@@ -3,11 +3,11 @@
 /// @group abstracts
 ////
 
-:is(img, picture, svg) {
+:is(img, input[type="image"], picture, svg) {
     @extend %collection-images !optional;
 }
 
-:is(audio, canvas, embed, iframe, object, video) {
+:is(audio, canvas, embed, iframe, marquee, object, video) {
     @extend %collection-media !optional;
 }
 

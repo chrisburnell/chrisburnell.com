@@ -1,7 +1,7 @@
 {
   "title": "Chris Burnell",
   "tagline": "Hey, my name’s Chris, <br> and I’m ravenous for CSS.",
-  "lede": "I’m <span class=\"canada\">Chris Burnell</span>, a <span class=\"canada\">Canadian</span> <span class=\"p-job-title\">Front End Developer</span>, <span class=\"p-role\">Organiser</span> for <a href=\"https://stateofthebrowser.com\"><span class=\"p-org\">London Web Standards</span></a>, <a href=\"https://highwater.chrisburnell.com\">Dungeon Master</a>, and <a href=\"/projects\">rabbit-hole deep-diver</a> living in <span class=\"p-locality\">London, England</span>. This is where I think, write, and share my passion for the web.",
+  "lede": "I’m <span class=\"canada\">Chris Burnell</span>, a <span class=\"p-job-title\">Senior Front End Developer</span> for <a href=\"http://www.squiz.net\">Squiz</a>, <span class=\"p-role\">Organiser</span> for <a href=\"https://stateofthebrowser.com\" class=\"p-org\">London Web Standards</a>, <a href=\"https://dnd.chrisburnell.com\">Dungeon Master</a>, and <a href=\"/projects\">rabbit-hole deep-diver</a> living in <span class=\"p-locality\">London, England</span> but originally from  <span class=\"canada\">Halifax (NS), Canada</span>. This is where I think, write, and share my passion for the web.",
   "url": "https://chrisburnell.com",
   "locale": "en",
   "established": "2008",

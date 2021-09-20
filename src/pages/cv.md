@@ -22,9 +22,15 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 0. **[Squiz](https://squiz.net)**
 
+    *Senior Front-End Developer (Contracting)*
+
+    *September 2021 – Present*<br><br>
+
+0. **[Squiz](https://squiz.net)**
+
     *Front-End Developer (Contracting)*
 
-    *February 2021 – Present*<br><br>
+    *February 2021 – September 2021*<br><br>
 
 0. **[Squiz](https://squiz.net)**
 

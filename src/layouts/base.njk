@@ -216,7 +216,7 @@
             </ol>
             <ol class=" [ footer__navigation ] ">
                 <li>
-                    <a id="copyright" rel="license" href="/license/">© {{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
+                    <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
                 </li>
                 {% for item in socials %}
                     {% if not item.hidden %}
