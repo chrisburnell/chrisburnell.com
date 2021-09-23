@@ -82,7 +82,9 @@
     }
 
     &::before {
+        @include non-interactive;
         content: "";
+        opacity: 0;
         // base64-encoded SVG generated from `/images/avatar@4x.png`
         // https://github.com/technopagan/sqip using default settings
         background-image: url("/images/avatar-pixelated.png");
@@ -92,13 +94,17 @@
         inset-inline-start: 0;
         image-rendering: crisp-edges;
         image-rendering: pixelated;
+        @include transition(opacity long, visibility);
+        transition: opacity var(--transition-duration-default) var(--transition-function-default), visibility 0s linear var(--transition-duration-default);
+        @include v(z-index);
     }
 
     .author__information:hover &,
     .author__information:focus &,
     .author__information:active & {
         &::before {
-            @include v(z-index);
+            opacity: 1;
+            transition: opacity var(--transition-duration-long) var(--transition-function-default);
         }
     }
 }
