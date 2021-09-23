@@ -2,36 +2,6 @@
  * Navigator
  * @author Chris Burnell <me@chrisburnell.com>
  */
-const notification = document.querySelector(".notification");
-
-let updateNotification = (text, type = "positive") => {
-    notification.innerHTML = text;
-    notification.classList.add(`notification--${type}`);
-    notification.hidden = false;
-    setTimeout(() => {
-        notification.hidden = true;
-        notification.classList.remove(`notification--${type}`);
-    }, 5250);
-};
-
-let updateNetwork = () => {
-    if (navigator.onLine) {
-        console.log("You have regained your network connection.");
-        notification.innerHTML = "👍 You have regained your network connection.";
-        notification.classList.add("notification--positive");
-    }
-    else {
-        console.log("You have lost your network connection.");
-        notification.innerHTML = "👎 You have lost your network connection.";
-        notification.classList.add("notification--negative");
-    }
-    notification.hidden = false;
-    setTimeout(() => {
-        notification.hidden = true;
-        notification.classList.remove("notification--positive", "notification--negative");
-    }, 5250);
-};
-
 if (navigator.serviceWorker) {
     navigator.serviceWorker
         .register("/serviceworker.js")
@@ -46,13 +16,6 @@ if (navigator.serviceWorker) {
             }
             else if (registration.active) {
                 serviceWorker = registration.active;
-            }
-            if (serviceWorker) {
-                serviceWorker.addEventListener("statechange", () => {
-                    if (registration.active && !navigator.serviceWorker.controller) {
-                        updateNotification("👍 Cached and ready to go offline.", "positive");
-                    }
-                });
             }
         })
         .catch((err) => {
@@ -71,7 +34,6 @@ if (navigator.serviceWorker) {
 else {
     console.log("ServiceWorkers are not supported in your browser.");
 }
-
 if (navigator.share) {
     navigator
         .share({
