@@ -21,11 +21,12 @@ module.exports = {
     },
     sparkline: (title, collection) => {
         let values = []
-        let week = (1000 * 60 * 60 * 24  * 7)
+        let ms = 1000
+        let week = 60 * 60 * 24 * 7
         let end, before, count
         for (let i = 0; i < 26; i++) {
-            end = dateFilters.epoch(now) - (i * week)
-            before = dateFilters.epoch(now) - ((i + 1) * week)
+            end = dateFilters.epoch(now) - (i * week * ms)
+            before = dateFilters.epoch(now) - ((i + 1) * week * ms)
             count = 0
             for (let item of collection) {
                 if (before < dateFilters.epoch(item.date) && dateFilters.epoch(item.date) < end) {
@@ -34,7 +35,7 @@ module.exports = {
             }
             values.push(Math.min(count, 12))
             end = before - 1
-            before = before - (60 * 60 * 24  * 7)
+            before = before - week
         }
         return `<canvas id="sparkline-${title}" class=" [ sparkline ] [ pentatonic ] " data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`
     }

@@ -26,12 +26,14 @@
     }
 
     @include media("below:medium") {
+        float: left;
         float: inline-start;
         @include v(margin-inline-end, gap);
         @include v(margin-block-end, gap);
     }
 
     @include media("above:medium") {
+        float: right;
         float: inline-end;
         @include v(margin-inline-start, gap);
     }
@@ -59,6 +61,7 @@
     flex-shrink: 0;
     @include v(flex-basis, avatar);
     @include v(height, avatar);
+    float: left;
     float: inline-start;
     position: relative;
     --color-shadow: var(--color-thunder--gamma);

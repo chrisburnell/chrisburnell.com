@@ -99,6 +99,7 @@
 
 .webmentions__response__avatar {
     .webmentions__list__replies & {
+        float: left;
         float: inline-start;
         @include v(margin-inline-end, medium);
         @include v(margin-block-end, small);
