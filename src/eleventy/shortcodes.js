@@ -20,13 +20,13 @@ module.exports = {
         return `<span class="emoji" aria-hidden="true">${emoji}</span>`
     },
     sparkline: (title, collection) => {
+        const MS = 1000
+        const WEEK = 60 * 60 * 24 * 7
         let values = []
-        let ms = 1000
-        let week = 60 * 60 * 24 * 7
         let end, before, count
         for (let i = 0; i < 26; i++) {
-            end = dateFilters.epoch(now) - (i * week * ms)
-            before = dateFilters.epoch(now) - ((i + 1) * week * ms)
+            end = dateFilters.epoch(now) - (i * WEEK * MS)
+            before = dateFilters.epoch(now) - ((i + 1) * WEEK * MS)
             count = 0
             for (let item of collection) {
                 if (before < dateFilters.epoch(item.date) && dateFilters.epoch(item.date) < end) {
@@ -35,7 +35,7 @@ module.exports = {
             }
             values.push(Math.min(count, 12))
             end = before - 1
-            before = before - week
+            before = before - WEEK
         }
         return `<canvas id="sparkline-${title}" class=" [ sparkline ] [ pentatonic ] " data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`
     }
