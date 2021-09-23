@@ -32,7 +32,7 @@ let updateNetwork = () => {
     }, 5250);
 };
 
-if (!!navigator.serviceWorker) {
+if (navigator.serviceWorker) {
     navigator.serviceWorker
         .register("/serviceworker.js")
         .then((registration) => {
@@ -61,7 +61,7 @@ if (!!navigator.serviceWorker) {
     window.addEventListener("load", () => {
         window.addEventListener("online", updateNetwork);
         window.addEventListener("offline", updateNetwork);
-        if (!!navigator.serviceWorker.controller) {
+        if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({
                 command: "trimCaches",
             });
@@ -72,7 +72,7 @@ else {
     console.log("ServiceWorkers are not supported in your browser.");
 }
 
-if (!!navigator.share) {
+if (navigator.share) {
     navigator
         .share({
             title: document.querySelector("title").textContent,

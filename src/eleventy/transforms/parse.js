@@ -41,7 +41,7 @@ module.exports = function parse(value, outputPath) {
             // Loop each heading and add a little anchor and an ID to each one
             articleHeadings.forEach(heading => {
                 const headingSlug = slugify(heading.textContent.toLowerCase())
-                const headingID = !!heading.id ? heading.id : headingSlug
+                const headingID = heading.id || headingSlug
                 const anchor = document.createElement("a")
 
                 anchor.setAttribute("href", `#${headingID}`)

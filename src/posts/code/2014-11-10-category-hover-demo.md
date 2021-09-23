@@ -72,7 +72,7 @@ $red:          #B02A1A;
     }
 }
 
-// Go Go border-box!!
+// Go Go border-box!
 html {
     box-sizing: border-box;
 }
