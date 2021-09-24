@@ -122,15 +122,3 @@
     flex-direction: column;
     justify-content: center;
 }
-
-.webring-links {
-    .webring-links__previous,
-    .webring-links__home {
-        margin-inline-end: 0;
-    }
-
-    .webring-links__next,
-    .webring-links__home {
-        margin-inline-start: 0;
-    }
-}
