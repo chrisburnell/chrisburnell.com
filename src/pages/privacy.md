@@ -1,8 +1,8 @@
 ---
 title: Privacy
 lede: Your right to privacy on this website.
-carbon: false
-coil: false
+ads: false
+monetization: false
 ---
 
 ## Activity and Interaction

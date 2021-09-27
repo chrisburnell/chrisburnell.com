@@ -1,5 +1,5 @@
 {
   "layout": "base",
-  "carbon": true,
-  "coil": true
+  "ads": true,
+  "monetization": true
 }

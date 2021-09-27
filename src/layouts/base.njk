@@ -146,8 +146,7 @@
             <meta property="profile:username" content="{{ author.shortname }}">
         {% endif %}
 
-        {% if global.environment == 'production' %}
-            <!-- Coil -->
+        {% if site.monetization and page.monetization and global.environment == 'production' %}
             <meta name="monetization" content="{{ site.monetization }}">
         {% endif %}
     {% endif %}

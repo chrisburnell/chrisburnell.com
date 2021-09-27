@@ -5,6 +5,6 @@
     "post"
   ],
   "show_webmentions": true,
-  "carbon": true,
-  "coil": true
+  "ads": true,
+  "monetization": true
 }

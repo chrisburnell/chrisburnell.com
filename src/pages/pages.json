@@ -1,7 +1,7 @@
 {
   "layout": "page",
-  "carbon": true,
-  "coil": true,
+  "ads": true,
+  "monetization": true,
   "tags": [
     "page"
   ],

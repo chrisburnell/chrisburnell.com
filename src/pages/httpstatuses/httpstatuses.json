@@ -6,6 +6,6 @@
   "sitemap": {
     "exclude": true
   },
-  "carbon": false,
-  "coil": false
+  "ads": false,
+  "monetization": false
 }
