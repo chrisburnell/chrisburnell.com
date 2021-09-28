@@ -10,8 +10,12 @@
                 const title = doc.querySelector('title').innerText;
                 const url = win.location.href;
                 if (navigator.share) {
-                    navigator.share({ title: title, url: url });
-                } else {
+                    navigator.share({
+                        title: title,
+                        url: url
+                    });
+                }
+                else {
                     win.location.href='mailto:?subject='+title+'&body='+url;
                 }
             }

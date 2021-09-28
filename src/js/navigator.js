@@ -32,18 +32,3 @@ if (navigator.serviceWorker) {
 else {
     console.log("ServiceWorkers are not supported in your browser.");
 }
-if (navigator.share) {
-    navigator
-        .share({
-            title: document.querySelector("title").textContent,
-            url: document.querySelector("link[rel='canonical']").getAttribute("href"),
-            // breaks in iOS, copies text to clipboard instead of URL
-            // text: document.querySelector("meta[name='description']").getAttribute("content")
-        })
-        .then(() => {
-            console.log("Successfully shared the page");
-        })
-        .catch((error) => {
-            console.log("Error sharing the page", error);
-        });
-}
