@@ -2,7 +2,10 @@ const fs = require("fs")
 const fetch = require("node-fetch")
 const { DateTime } = require("luxon")
 const uniqBy = require("lodash/uniqBy")
-const domain = require("./site.json").url.replace("https://", "")
+const queryFilters = require("../eleventy/filters/queries.js")
+const site = require("./site.json")
+
+const domain = queryFilters.getHost(site.url) || "example.com"
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -21,12 +24,12 @@ const getBaseUrl = (url) => {
 async function fetchWebmentions(since, perPage = 9001) {
     // If we dont have a token, abort
     if (!TOKEN) {
-        console.warn("Unable to fetch WebMentions: no access token specified in environment!")
+        console.warn(`[${queryFilters.getHost(site.url)}] Unable to fetch WebMentions: no access token specified in environment!`)
         return false
     }
     // If we dont have a domain, abort
     if (!domain) {
-        console.warn("Unable to fetch WebMentions: no url specified in site metadata!")
+        console.warn(`[${queryFilters.getHost(site.url)}] Unable to fetch WebMentions: no url specified in site metadata!`)
         return false
     }
 
@@ -37,7 +40,7 @@ async function fetchWebmentions(since, perPage = 9001) {
     const response = await fetch(url)
     if (response.ok) {
         const feed = await response.json()
-        console.log(`${feed.children.length} WebMentions fetched from ${API_ORIGIN}`)
+        console.log(`[${queryFilters.getHost(site.url)}] ${feed.children.length} webmentions fetched from ${API_ORIGIN}`)
         return feed
     }
 
@@ -56,7 +59,7 @@ function writeToCache(data) {
     // write data to cache json file
     fs.writeFile(filePath, fileContent, err => {
         if (err) throw err
-        console.log(`WebMentions cached to ${filePath}.`)
+        console.log(`[${queryFilters.getHost(site.url)}] webmentions cached to ${filePath}.`)
     })
 }
 
@@ -121,6 +124,6 @@ module.exports = async function() {
         }
     }
 
-    // console.log(`Loaded ${cache.count} WebMentions from cache.`)
+    // console.log(`[${queryFilters.getHost(site.url)}] Loaded ${cache.count} webmentions from cache.`)
     return cache
 }

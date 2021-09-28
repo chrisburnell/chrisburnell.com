@@ -1,8 +1,15 @@
+const fs = require("fs")
 const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const queryFilters = require("../filters/queries.js")
 const getTwitterAvatarUrl = require("twitter-avatar-url")
 const eleventyImage = require("@11ty/eleventy-img")
+
+// Load .env variables with dotenv
+require("dotenv").config()
+
+// Define Cache Location and API Endpoint
+const CACHE_DIR = ".cache"
 
 const chunkArray = (arr, size) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
@@ -10,16 +17,12 @@ const chunkArray = (arr, size) =>
 
 function getImageOptions(lookup) {
     return {
-        widths: [48],
+        widths: [72],
         urlPath: "/images/avatars/",
         outputDir: "./_site/images/avatars",
         formats: ["webp", "jpeg"],
         cacheDuration: "4w",
         cacheDirectory: ".cache",
-        cacheOptions: {
-            duration: "4w",
-            directory: ".cache",
-        },
         filenameFormat: function(id, src, width, format) {
             return `${lookup.toLowerCase()}.${format}`;
         }
@@ -69,35 +72,40 @@ async function domainAvatar(domain, classes = "") {
     return markup
 }
 
+function webmentionsEnabled() {
+    return process.env.ELEVENTY_FEATURES && process.env.ELEVENTY_FEATURES.split(",").indexOf("webmentions") > -1
+}
+
 module.exports = function(config) {
-    let twitterUsernames
-    let domains
+    let twitterUsernames, domains
 
     config.on("beforeBuild", () => {
         twitterUsernames = new Set()
         domains = new Set()
     })
 
-    config.on("afterBuild", () => {
-        let array = Array.from(twitterUsernames)
-        let chunks = chunkArray(array, 100)
-        console.log(`Generating ${array.length} Twitter avatars.`)
-        for (let twitterUsernames of chunks) {
-            getTwitterAvatarUrl(twitterUsernames).then(results => {
-                for (let result of results) {
-                    fetchImageData(result.username, result.url.large)
-                }
-            })
-        }
+    if (webmentionsEnabled()) {
+        config.on("afterBuild", () => {
+            let array = Array.from(twitterUsernames)
+            let chunks = chunkArray(array, 100)
+            console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
+            for (let twitterUsernames of chunks) {
+                getTwitterAvatarUrl(twitterUsernames).then(results => {
+                    for (let result of results) {
+                        fetchImageData(result.username, result.url.large)
+                    }
+                })
+            }
 
-        array = Array.from(domains)
-        console.log(`Generating ${array.length} domain avatars.`)
-        for (let domain of array) {
-            fetchImageData(domain.url, domain.photo)
-        }
-    })
+            array = Array.from(domains)
+            console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
+            for (let domain of array) {
+                fetchImageData(domain.url, domain.photo)
+            }
+        })
+    }
 
-    config.addNunjucksAsyncShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
+    config.addNunjucksShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
         if (url.includes("twitter.com")) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
             let username = target.split("twitter.com/")[1].split("/")[0]
@@ -116,22 +124,5 @@ module.exports = function(config) {
             })
             return domainAvatar(domain, classes)
         }
-    })
-
-    config.addNunjucksAsyncShortcode("twitterAvatar", async function(username, classes = "") {
-        twitterUsernames.add(username.toLowerCase())
-        return twitterAvatar(username, classes)
-    })
-
-    config.addNunjucksAsyncShortcode("domainAvatar", async function(photo, domain = "", classes = "") {
-        if (!photo) {
-            return `<picture><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpg" width="48" height="48"></picture>`
-        }
-
-        domains.add({
-            "photo": photo.toLowerCase(),
-            "url": url,
-        })
-        return domainAvatar(domain, classes)
     })
 }

@@ -1,4 +1,4 @@
-const ignoredTags = require("../../data/tagIgnore.json")
+const ignoredTags = require("../../data/ignoredTags.json")
 const categoriesMap = require("./categories.js")
 
 module.exports = function tags(collection) {

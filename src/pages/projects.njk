@@ -1,6 +1,6 @@
 ---
 title: Projects
-lede: A list of my personal projects, work, and rabbit-hole deep-dives.
+lede: A list of my personal projects and rabbit-hole deep-dives.
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
@@ -8,14 +8,6 @@ lede: A list of my personal projects, work, and rabbit-hole deep-dives.
 
 <nav class=" [ deck ] [ h-feed ] ">
     {% for item in projects.personal %}
-        {{ deckItem(item, global.now, [], people, [], false, false) }}
-    {% endfor %}
-</nav>
-
-<h2>Work and work projects</h2>
-
-<nav class=" [ deck ] [ h-feed ] ">
-    {% for item in projects.work %}
         {{ deckItem(item, global.now, [], people, [], false, false) }}
     {% endfor %}
 </nav>

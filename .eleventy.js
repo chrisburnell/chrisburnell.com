@@ -1,5 +1,7 @@
 const fs = require("fs")
 
+const site = require("./src/data/site.json")
+
 // Import Eleventy plugins
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
@@ -102,6 +104,10 @@ module.exports = function(config) {
     })
 
     config.setDataDeepMerge(true)
+
+    config.on("beforeBuild", () => {
+        console.log(`[${queryFilters.getHost(site.url)}] Building…`);
+    });
 
     return {
         dataTemplateEngine: "njk",

@@ -1,6 +1,6 @@
 const site = require("../../data/site.json")
 const categories = require("../../data/categories.json")
-const ignoredTags = require("../../data/tagIgnore.json")
+const ignoredTags = require("../../data/ignoredTags.json")
 
 module.exports = {
     isPublished: item => {
