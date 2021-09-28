@@ -5,6 +5,7 @@
 
 .header {
     @include v(background-color, bear);
+    @include v(box-shadow, small);
 
     @include media("print") {
         display: none;

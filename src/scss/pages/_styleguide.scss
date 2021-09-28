@@ -103,6 +103,7 @@
     position: relative;
     // line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
     text-align: center;
+    @include v(box-shadow, medium);
     @include v(z-index, above);
 
     &:hover,

@@ -45,7 +45,8 @@ $colors-languages: (
 
 $colors: map-multiple-merge(
     (
-        transparent: rgba(0, 0, 0, 0%)
+        transparent: rgba(0, 0, 0, 0%),
+        shadow: 0deg 0% 60%
     ),
     $colors-richtones,
     $colors-monotones,

@@ -84,9 +84,15 @@
 [id="carbonads"] {
     @extend .ad;
     min-height: 9.75rem;
+
+    & > span {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 .carbon-wrap {
     @extend .ad__wrap;
+    @include v(box-shadow, medium);
 }
 .carbon-img,
 .carbon-text {

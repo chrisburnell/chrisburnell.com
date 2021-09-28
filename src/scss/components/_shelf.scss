@@ -29,6 +29,7 @@
     .cover img {
         margin: 0;
         object-fit: contain;
+        @include v(box-shadow, small);
     }
 }
 

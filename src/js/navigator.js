@@ -22,8 +22,6 @@ if (navigator.serviceWorker) {
             console.log("ServiceWorker registration failed:", err);
         });
     window.addEventListener("load", () => {
-        window.addEventListener("online", updateNetwork);
-        window.addEventListener("offline", updateNetwork);
         if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({
                 command: "trimCaches",
