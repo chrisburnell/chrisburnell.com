@@ -22,8 +22,8 @@ icon_sizes:
   "orientation": "any",
   "start_url": "{{ site.url }}",
   "homepage_url": "{{ site.url }}",
-  "theme_color": "{{ tokens.color.raven }}",
-  "background_color": "{{ tokens.color.raven }}",
+  "theme_color": "#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}",
+  "background_color": "#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}",
   "background": {
     "persistent": false
   },

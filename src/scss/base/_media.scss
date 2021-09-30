@@ -51,7 +51,7 @@ iframe {
 
 meter {
     @include v(width, line-length-clamp);
-    @include v(box-shadow, small);
+    @include v(box-shadow, medium);
 
     &::-webkit-meter-bar {
         @include v(background-color, dove);
@@ -72,7 +72,7 @@ meter {
 
 progress {
     @include v(width, line-length-clamp);
-    @include v(box-shadow, small);
+    @include v(box-shadow, medium);
 
     &::-webkit-progress-bar {
         @include v(background-color, dove);

@@ -30,7 +30,7 @@ button {
     border-width: 0;
     @include v(border-radius, border-default);
     --color-shadow: var(--color-bowhead--gamma);
-    @include v(box-shadow, inset);
+    @include v(box-shadow, small);
     outline: 0 solid var(--color-raven);
     overflow: visible;
     position: relative;

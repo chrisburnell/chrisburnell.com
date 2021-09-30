@@ -473,7 +473,7 @@ p q r s t u v w x y z { | } ~
 
 <figure>
     <div class=" [ media ] ">
-        <iframe src="https://player.vimeo.com/video/11933164?color={{ tokens.color.raven | replace('#','') }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/11933164?color={{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
     </div>
 </figure>
 

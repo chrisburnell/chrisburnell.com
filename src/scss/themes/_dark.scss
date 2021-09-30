@@ -14,6 +14,8 @@
     --color-bear: #{$swap-bear};
     --color-lynx: #{$swap-lynx};
 
+    --color-shadow: 0deg 0% 40%;
+
     scrollbar-color: v(color, raven) v(color, mineshaft);
 
     .header,

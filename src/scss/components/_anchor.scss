@@ -68,7 +68,7 @@ sup,
 li {
     &[id] {
         &:target {
-            animation: anchor-target var(--animation-duration) var(--animation-function);
+            animation: var(--animation-duration) var(--animation-function) anchor-target;
 
             @at-root {
                 @keyframes anchor-target {
