@@ -105,7 +105,7 @@ module.exports = function(config) {
         })
     }
 
-    config.addNunjucksShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
+    config.addNunjucksAsyncShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
         if (url.includes("twitter.com")) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
             let username = target.split("twitter.com/")[1].split("/")[0]
