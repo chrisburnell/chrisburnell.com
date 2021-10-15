@@ -135,7 +135,7 @@ function curve(ctx, points, tension, numOfSeg, close) {
 
     customElements.define(NAME, class extends HTMLElement {
         connectedCallback() {
-            this.data = this.getAttribute("data");
+            this.values = this.getAttribute("values");
             this.width = parseFloat(this.getAttribute("width")) || 160;
             this.height = parseFloat(this.getAttribute("height")) || 24;
             this.lineWidth = parseFloat(this.getAttribute("line-width")) || 2;
@@ -144,8 +144,8 @@ function curve(ctx, points, tension, numOfSeg, close) {
             this.color = this.getAttribute("color") || "hsla(0, 0%, 31%, 1)";
             this.endpointColor = this.getAttribute("endpoint-color") || "hsla(357, 83%, 55%, 0.5)";
 
-            if (!this.data) {
-                console.log(`Missing \`data\` attribute in <${NAME}>`);
+            if (!this.values) {
+                console.log(`Missing \`values\` attribute in <${NAME}>`);
                 return;
             }
 
@@ -153,10 +153,10 @@ function curve(ctx, points, tension, numOfSeg, close) {
         }
 
         async init() {
-            this.appendChild(this.render(this.data.match(/\d+/g)));
+            this.appendChild(this.render(this.values.match(/\d+/g)));
         }
 
-        render(data) {
+        render(values) {
             const canvas = document.createElement("canvas");
             canvas.className = "sparkline";
             canvas.width = this.width;
@@ -164,8 +164,8 @@ function curve(ctx, points, tension, numOfSeg, close) {
             canvas.tabIndex = "0";
 
             let ctx = canvas.getContext("2d");
-            let max = Math.max.apply(Math, data);
-            let xStep = (this.width - (this.lineWidth * 2)) / (data.length - 1);
+            let max = Math.max.apply(Math, values);
+            let xStep = (this.width - (this.lineWidth * 2)) / (values.length - 1);
             let yStep = (this.height - this.lineWidth * 2) / max;
 
             ctx.clearRect(0, 0, this.width, this.height);
@@ -175,9 +175,9 @@ function curve(ctx, points, tension, numOfSeg, close) {
             ctx.lineWidth = this.lineWidth;
 
             let coordinates = [];
-            for (let i in data) {
+            for (let i in values) {
                 let x = this.lineWidth + (i * xStep);
-                let y = this.height - (this.lineWidth * 2) - (data[i] * yStep);
+                let y = this.height - (this.lineWidth * 2) - (values[i] * yStep);
                 if (this.curve) {
                     coordinates.push(x);
                     coordinates.push(y);
