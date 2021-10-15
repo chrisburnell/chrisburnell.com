@@ -37,6 +37,6 @@ module.exports = {
             end = before - 1
             before = before - WEEK
         }
-        return `<canvas id="sparkline-${title}" class=" [ sparkline ] [ pentatonic ] " data-values="${values.reverse().join(',')}" width="160" height="24" tabindex="0"></canvas>`
+        return `<sparkline-component data="${values.reverse().join(',')}"></sparkline-component>`
     }
 }

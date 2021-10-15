@@ -16,8 +16,8 @@ let sparkline = (id, values, width = 160, height = 21, endpoint = true, color = 
             x = 0,
             y = height - values[0] / yStep + 2;
         if (window.devicePixelRatio) {
-            c.width = 160 * window.devicePixelRatio;
-            c.height = 24 * window.devicePixelRatio;
+            c.width = width * window.devicePixelRatio;
+            c.height = height * window.devicePixelRatio;
             ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
         }
         ctx.clearRect(0, 0, width, height);
