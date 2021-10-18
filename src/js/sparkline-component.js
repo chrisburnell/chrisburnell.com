@@ -137,7 +137,7 @@ function curve(ctx, points, tension, numOfSeg, close) {
         connectedCallback() {
             this.values = this.getAttribute("values");
             this.width = parseFloat(this.getAttribute("width")) || 160;
-            this.height = parseFloat(this.getAttribute("height")) || 24;
+            this.height = parseFloat(this.getAttribute("height")) || 28;
             this.lineWidth = parseFloat(this.getAttribute("line-width")) || 2;
             this.curve = this.getAttribute("curve") !== "false";
             this.endpoint = this.getAttribute("endpoint") !== "false";
@@ -166,7 +166,7 @@ function curve(ctx, points, tension, numOfSeg, close) {
             let ctx = canvas.getContext("2d");
             let max = Math.max.apply(Math, values);
             let xStep = (this.width - (this.lineWidth * 2)) / (values.length - 1);
-            let yStep = (this.height - this.lineWidth * 2) / max;
+            let yStep = (this.height - this.lineWidth * 3) / max;
 
             ctx.clearRect(0, 0, this.width, this.height);
             ctx.beginPath();
@@ -177,7 +177,7 @@ function curve(ctx, points, tension, numOfSeg, close) {
             let coordinates = [];
             for (let i in values) {
                 let x = this.lineWidth + (i * xStep);
-                let y = this.height - (this.lineWidth * 2) - (values[i] * yStep);
+                let y = this.height - (this.lineWidth * 1.5) - (values[i] * yStep);
                 if (this.curve) {
                     coordinates.push(x);
                     coordinates.push(y);

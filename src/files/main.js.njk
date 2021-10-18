@@ -17,7 +17,10 @@ permalink: /js/main.js
 
     for (let target of document.querySelectorAll(".pentatonic, sparkline-component")) {
         target.addEventListener("click", () => {
-            pentatonic(target.dataset.values.split(","))
+            let values = target.values || target.dataset.values
+            if (values) {
+                pentatonic(values.split(","))
+            }
         })
     }
 })()
