@@ -8,9 +8,6 @@ const eleventyImage = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-// Define Cache Location and API Endpoint
-const CACHE_DIR = ".cache"
-
 const chunkArray = (arr, size) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
 )
@@ -91,8 +88,12 @@ module.exports = function(config) {
             console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
             for (let twitterUsernames of chunks) {
                 getTwitterAvatarUrl(twitterUsernames).then(results => {
-                    for (let result of results) {
-                        fetchImageData(result.username, result.url.large)
+                    try {
+                        for (let result of results) {
+                            fetchImageData(result.username, result.url.large)
+                        }
+                    } catch (error) {
+                        console.log(results)
                     }
                 })
             }
