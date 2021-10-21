@@ -93,7 +93,7 @@ In order to quell any feverish posting on my part, *as unlikely as that may be*,
 ## Put your money where your mouth is
 
 <figure>
-    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
+    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
 </figure>
 
 Here’s an example. First, we need the per-week data:
@@ -113,27 +113,9 @@ If we work through this array, item by item, using each value as the key to retr
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) to create the tones in our browsers, playing each frequency in succession over four seconds:
 
 <figure>
-    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
+    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
 </figure>
 
 ## Interactive Demo
 
-Type some numbers in the input field below and a playable sparkline will be built!
-
-<p><input id="custom-input" type="text" pattern="[0-9]+" maxlength="26" oninput="fire()"></p>
-
-<div>
-    <spark-line id="custom-sparkline" values="0"></spark-line>
-    <script>
-        let input = document.querySelector("#custom-input");
-        let customSparkline = document.querySelector("#custom-sparkline");
-        function fire() {
-            input.value = input.value.replace(/(?![0-9])./gmi, "");
-            customSparkline.setAttribute("values", input.value.split(""));
-        }
-        customSparkline.addEventListener("click", function(event) {
-            pentatonic(input.value.split(""), (160 * input.value.split("").length));
-        });
-    </script>
-    <noscript>Requires JavaScript, unfortunately.</noscript>
-</div>
+Check out my new interactive demo at [/spark-line/](/spark-line/)!

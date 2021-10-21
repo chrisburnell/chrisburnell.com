@@ -5,7 +5,7 @@ show_webmentions: true
 ---
 
 <figure>
-    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></spark-line>
+    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
 </figure>
 
 <div class="box">
@@ -37,8 +37,8 @@ Element attributes:
 - `line-width`: defines the width/thickness of the line as an integer *(default = 2)*
 - `curve`: toggles applying curves (cardinal splines) to the line *(default = true)*
 - `endpoint`: toggles the display of a point at the end of the line *(default = true)*
-- `color`: defines the color of the line *(default = black)*
-- `endpoint-color`: defines the color of the endpoint *(default = red)*
+- `color`: defines the color of the line *(default = currentColor)*
+- `endpoint-color`: defines the color of the endpoint *(default = LinkText)*
 
 
 ## Examples
