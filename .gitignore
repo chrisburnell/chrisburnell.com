@@ -38,6 +38,7 @@ _site/
 node_modules/
 
 # Lockfiles
+package-lock.json
 *.lock
 
 # Git Config
