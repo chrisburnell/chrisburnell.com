@@ -1,5 +1,5 @@
 ---
-updated: 2020-09-29T19:45:49+0100
+updated: 2021-10-21T12:29:00+0100
 updated_text: Added an <a href="#interactive-demo">interactive demo</a> at the bottom!
 date: 2019-03-04T13:10:40+0000
 title: Sparkline Sound-Off
@@ -15,7 +15,7 @@ To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://git
 I’m using the same CSV to generate the audio as I am the sparkline itself. Each of the values in the array represent how many posts I made per week for the most recent 26 weeks (half a year).
 
 ```html
-<canvas class="sparkline" width="160" height="28" data-values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></canvas>
+<sparkline-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></sparkline-component>
 ```
 
 Because this is really just a fun little easter egg as opposed to a perfect 1-to-1 representation of the data, I decided to map the values against a [major pentatonic scale](https://en.wikipedia.org/wiki/Pentatonic_scale) which results in <q>music</q> that is a bit more pleasant to listen to, rather than unharmonious noise if I used a [chromatic scale](https://en.wikipedia.org/wiki/Chromatic_scale). If I was going for a perfect representation of the data, I would stick to a chromatic scale so that the difference between notes matches their difference in numerical value.
