@@ -1,6 +1,7 @@
 ---
 title: spark-line
-lede: "Turn any array of integers into a fun little chart. Lends well to “automusic”."
+eleventyComputed:
+  lede: "Turn any array of integers into a fun little chart. Lends well to <a href="/pentatonic/">“automusic”</a>."
 show_webmentions: true
 ---
 
@@ -46,7 +47,7 @@ Element attributes:
 <div class=" [ shelf ] ">
     <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
-        <p>Default</p>
+        <p><em>default</em></p>
     </article>
     <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></spark-line>
