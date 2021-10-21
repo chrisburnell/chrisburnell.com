@@ -1,7 +1,7 @@
 ---
 title: spark-line
 eleventyComputed:
-  lede: "Turn any array of integers into a fun little chart. Lends well to <a href="/pentatonic/">“automusic”</a>."
+  lede: "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>."
 show_webmentions: true
 ---
 
