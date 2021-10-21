@@ -37,6 +37,6 @@ module.exports = {
             end = before - 1
             before = before - WEEK
         }
-        return `<sparkline-component values="${values.reverse().join(',')}" class="pentatonic"></sparkline-component>`
+        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="var(--color-maple--beta)" class="pentatonic"></spark-line>`
     }
 }
