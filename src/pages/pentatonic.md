@@ -107,10 +107,10 @@ The function takes six parameters:
 
 <button id="button" class="button  pentatonic" data-values="0,1,2,3,4,5,6,7,8,9,10,8,6,4,2,0,0,0"><code>0,1,2,3,4,5,6,7,8,9,10,8,6,4,2,0,0,0</code></button>
 
-<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
+<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)" class="pentatonic"></spark-line>
 
 <button id="treasure" class="button" onclick="pentatonic([0,2,4,6,0,2,4,6,1,3,5,7,1,3,5,7,2,4,6,8,2,4,6,8,3,5,7,9,3,5,7,9,4,6,8,10,4,6,8,10,10,10,3,3,4,4,5,5,6,6,6,6,6,6], 8000, 0.5, 36, [1], 20)">🔑</button>
 
 ## Interactive Demo
 
-Check out my new interactive demo at [/spark-line/](/spark-line/)!
+Check out my new interactive demo at [spark-line](/spark-line/)!

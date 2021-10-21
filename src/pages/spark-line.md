@@ -90,7 +90,7 @@ Element attributes:
         <br>
         <label><input id="input-endpoint-color" type="color" value="#ff0000" oninput="processSparkline()"> Endpoint Color</label>
     </fieldset>
-    <spark-line id="sparkline"></spark-line>
+    <spark-line id="sparkline" class="pentatonic"></spark-line>
     <style>
         [id="sparkline"] {
             margin-block-start: 0;

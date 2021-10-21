@@ -113,9 +113,9 @@ If we work through this array, item by item, using each value as the key to retr
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) to create the tones in our browsers, playing each frequency in succession over four seconds:
 
 <figure>
-    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
+    <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="hsla(357, 83%, 55%, 0.5)" class="pentatonic"></spark-line>
 </figure>
 
 ## Interactive Demo
 
-Check out my new interactive demo at [/spark-line/](/spark-line/)!
+Check out my new interactive demo at [spark-line](/spark-line/)!
