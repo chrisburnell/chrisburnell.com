@@ -1,8 +1,5 @@
 const minifier = require('html-minifier')
 
-// const fs = require("fs")
-// const fetch = require("node-fetch")
-
 // Load .env variables with dotenv
 require("dotenv").config()
 

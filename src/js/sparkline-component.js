@@ -135,6 +135,30 @@ function curve(ctx, points, tension, numOfSeg, close) {
 
     customElements.define(NAME, class extends HTMLElement {
         connectedCallback() {
+            if (!this.values) {
+                console.log(`Missing \`values\` attribute in <${NAME}>`);
+                return;
+            }
+
+            this.init();
+        }
+
+        static get observedAttributes() {
+            return ["values", "width", "height", "line-width", "curve", "endpoint", "color", "endpoint-color"];
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            this.init();
+        }
+
+        async init() {
+            if (this.getAttribute("values") === "") {
+                console.log(`Empty \`values\` attributes in <${NAME}>`);
+                return;
+            }
+
+            this.textContent = "";
+
             this.values = this.getAttribute("values");
             this.width = parseFloat(this.getAttribute("width")) || 160;
             this.height = parseFloat(this.getAttribute("height")) || 28;
@@ -144,15 +168,6 @@ function curve(ctx, points, tension, numOfSeg, close) {
             this.color = this.getAttribute("color") || "hsla(0, 0%, 31%, 1)";
             this.endpointColor = this.getAttribute("endpoint-color") || "hsla(357, 83%, 55%, 0.5)";
 
-            if (!this.values) {
-                console.log(`Missing \`values\` attribute in <${NAME}>`);
-                return;
-            }
-
-            this.init();
-        }
-
-        async init() {
             this.appendChild(this.render(this.values.match(/\d+/g)));
         }
 
@@ -174,10 +189,11 @@ function curve(ctx, points, tension, numOfSeg, close) {
             ctx.strokeStyle = this.color;
             ctx.lineWidth = this.lineWidth;
 
+            let x, y;
             let coordinates = [];
             for (let i in values) {
-                let x = this.lineWidth + (i * xStep);
-                let y = this.height - (this.lineWidth * 1.5) - (values[i] * yStep);
+                x = this.lineWidth + (i * xStep);
+                y = this.height - (this.lineWidth * 1.5) - (values[i] * yStep);
                 if (this.curve) {
                     coordinates.push(x);
                     coordinates.push(y);
@@ -197,7 +213,7 @@ function curve(ctx, points, tension, numOfSeg, close) {
             if (this.endpoint) {
                 ctx.beginPath();
                 ctx.fillStyle = this.endpointColor;
-                ctx.arc(coordinates[coordinates.length - 2] - (this.lineWidth / 2), coordinates[coordinates.length - 1], this.lineWidth * 1.5, 0, Math.PI * 2);
+                ctx.arc(x - (this.lineWidth / 2), y, this.lineWidth * 1.5, 0, Math.PI * 2);
                 ctx.fill();
             }
 

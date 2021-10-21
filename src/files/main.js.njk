@@ -15,7 +15,7 @@ permalink: /js/main.js
     {% include "../js/librarian.js" %}
     {% include "../js/url-input.js" %}
 
-    for (let target of document.querySelectorAll(".pentatonic, sparkline-component")) {
+    for (let target of document.querySelectorAll(".pentatonic")) {
         target.addEventListener("click", () => {
             let values = target.values || target.dataset.values
             if (values) {

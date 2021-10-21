@@ -19,12 +19,12 @@ module.exports = {
         }
         return `<span class="emoji" aria-hidden="true">${emoji}</span>`
     },
-    sparkline: (title, collection) => {
+    sparkline: (title, collection, weekRange = 52) => {
         const MS = 1000
         const WEEK = 60 * 60 * 24 * 7
         let values = []
         let end, before, count
-        for (let i = 0; i < 26; i++) {
+        for (let i = 0; i < weekRange; i++) {
             end = dateFilters.epoch(now) - (i * WEEK * MS)
             before = dateFilters.epoch(now) - ((i + 1) * WEEK * MS)
             count = 0
@@ -37,6 +37,6 @@ module.exports = {
             end = before - 1
             before = before - WEEK
         }
-        return `<sparkline-component values="${values.reverse().join(',')}"></sparkline-component>`
+        return `<sparkline-component values="${values.reverse().join(',')}" class="pentatonic"></sparkline-component>`
     }
 }
