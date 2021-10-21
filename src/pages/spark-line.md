@@ -44,7 +44,7 @@ Element attributes:
 - `curve`: toggles applying curves (cardinal splines) to the line *(default = true)*
 - `endpoint`: toggles the display of a point at the end of the line *(default = true)*
 - `color`: defines the color of the line *(default = currentColor)*
-- `endpoint-color`: defines the color of the endpoint *(default = LinkText)*
+- `endpoint-color`: defines the color of the endpoint *(defaults to whatever color is defined as)*
 
 
 ## Examples
@@ -93,7 +93,7 @@ Element attributes:
         <br>
         <label><input id="input-color" type="color" value="#000000" oninput="processSparkline()"> Color</label>
         <br>
-        <label><input id="input-endpoint-color" type="color" value="#ff0000" oninput="processSparkline()"> Endpoint Color</label>
+        <label><input id="input-endpoint-color" type="color" value="#000000" oninput="processSparkline()"> Endpoint Color</label>
     </fieldset>
     <spark-line id="sparkline" class="pentatonic"></spark-line>
     <style>
