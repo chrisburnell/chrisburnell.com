@@ -1,5 +1,14 @@
 [
   {
+    "url": "/spark-line/",
+    "data": {
+      "title": "spark-line (v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }})",
+      "lede": "Turn any array of integers into a fun little chart. Lends well to “automusic”.",
+      "lede_markdown": true,
+      "emoji": "📈"
+    }
+  },
+  {
     "url": "https://dnd.chrisburnell.com",
     "data": {
       "title": "The Arcanum",

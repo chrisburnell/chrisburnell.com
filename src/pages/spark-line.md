@@ -1,7 +1,8 @@
 ---
 title: spark-line
 eleventyComputed:
-  lede: "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>."
+  tagline: "spark-line v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }}"
+  lede: "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>.<br>There are {{ github.spark-line['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/spark-line'>on GitHub</a> and it was downloaded {{ npm.spark-line['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/spark-line'>on npm</a>."
 show_webmentions: true
 ---
 
