@@ -29,6 +29,10 @@ You can also just download it directly [from GitHub](https://github.com/chrisbur
 
 This exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front-end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
 
+Include `spark-line.js` in your page however you like (as-is, as part of a build script, etc.).
+
+Use `<spark-line>` in your HTML!
+
 ```html
 <spark-line values="1,2,3,5,8,13,21"></spark-line>
 ```
