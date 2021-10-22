@@ -2,8 +2,8 @@
   {
     "url": "/spark-line/",
     "data": {
-      "title": "spark-line (v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }})",
-      "lede": "Turn any array of integers into a fun little chart. Lends well to “automusic”.",
+      "title": "spark-line (v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }})",
+      "lede": "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>.",
       "lede_markdown": true,
       "emoji": "📈"
     }

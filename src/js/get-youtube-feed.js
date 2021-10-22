@@ -2,7 +2,7 @@
     "use strict";
 
     let form = document.querySelector(".get-youtube-feed");
-    let input = form.querySelector('input');
+    let input = form.querySelector("input");
 
     let convertURL = text => {
         if (text.includes("/channel/")) {
@@ -12,12 +12,12 @@
         }
     };
 
-    form.addEventListener('submit', event => {
+    form.addEventListener("submit", event => {
         event.preventDefault();
         convertURL(input.value);
     });
 
-    input.addEventListener('blur', event => {
+    input.addEventListener("blur", event => {
         event.preventDefault();
         convertURL(input.value);
     });
