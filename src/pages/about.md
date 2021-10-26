@@ -13,8 +13,6 @@ eleventyComputed:
     </picture>
 </figure>
 
-<div class=" [ box ] ">I’m looking for new full-time work right now, so please <a href="/cv/">check out my CV</a> and <a href="#contact">get in touch</a> if you’d like to have a chat!</div>
-
 Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.
 
 The web my passion—my website is my favourite thing that I own. I believe the web to be a powerful agent for change and empowering people, and I love nothing more than helping people feel connected, knowledgable, and in-control of their experience online.
