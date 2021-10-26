@@ -20,7 +20,7 @@ $color: (
     highland: #80b7d7,
     coyote: #c0dbed,
     bear: #ebf3f9,
-    maple: #e0151f,
+    maple: #eb2d36,
     conifer: #3d8137,
     aspen: #ffd700,
 );

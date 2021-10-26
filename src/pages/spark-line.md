@@ -7,7 +7,7 @@ show_webmentions: true
 ---
 
 <figure>
-    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" endpoint-color="hsla(357, 83%, 55%, 0.5)"></spark-line>
+    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" endpoint-color="#eb2d36"></spark-line>
 </figure>
 
 <div class="box">
@@ -71,8 +71,8 @@ Element attributes:
         <p><code>color="rebeccapurple"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="darkcyan"></spark-line>
-        <p><code>endpoint-color="darkcyan"</code></p>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></spark-line>
+        <p><code>endpoint-color="red"</code></p>
     </article>
 </div>
 

@@ -37,6 +37,6 @@ module.exports = {
             end = before - 1
             before = before - WEEK
         }
-        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="hsla(357, 83%, 55%, 0.5)" class="pentatonic"></spark-line>`
+        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="#eb2d36" class="pentatonic"></spark-line>`
     }
 }
