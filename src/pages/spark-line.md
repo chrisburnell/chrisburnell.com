@@ -7,7 +7,7 @@ show_webmentions: true
 ---
 
 <figure>
-    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
+    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" key-start="23" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
 </figure>
 
 <div class="box">
