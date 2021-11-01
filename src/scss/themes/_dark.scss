@@ -66,6 +66,10 @@
             var(--color-thunder--gamma) var(--measure-gap),
             var(--color-thunder--gamma) 100%
         );
+
+        code {
+            background-color: transparent;
+        }
     }
 }
 
