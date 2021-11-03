@@ -21,14 +21,14 @@
             color: inherit;
 
             &:not(:hover):not(:focus):not(:active) {
-                text-decoration-color: var(--color-raven);
+                @include v(text-decoration-color, raven);
             }
         }
     }
 
     .cover img {
         margin: 0;
-        object-fit: contain;
+        object-fit: cover;
         @include v(box-shadow, small);
     }
 }
@@ -38,7 +38,5 @@
 
     .cover img {
         height: 240px;
-        object-fit: contain;
-        margin: 0;
     }
 }

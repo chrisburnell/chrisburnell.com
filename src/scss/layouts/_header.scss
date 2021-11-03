@@ -19,10 +19,7 @@
         @include v(padding-block-end, small);
     }
 
-    .logo {
-        flex: 0 1 auto;
-    }
-
+    .logo,
     .navigation {
         flex: 0 1 auto;
     }

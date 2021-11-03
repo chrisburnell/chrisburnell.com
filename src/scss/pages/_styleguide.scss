@@ -15,7 +15,7 @@
 
     li {
         @include tabular-lining-numerals;
-        padding: var(--measure-medium) 0;
+        padding: #{v(measure, medium)} 0;
         vertical-align: middle;
         @include v(font-size, small);
         text-align: center;
@@ -150,17 +150,5 @@
                 opacity: 1;
             }
         }
-    }
-}
-
-.icons-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-        display: inline-block;
-        @include v(margin-inline-start, medium);
-        @include v(margin-inline-end, medium);
     }
 }

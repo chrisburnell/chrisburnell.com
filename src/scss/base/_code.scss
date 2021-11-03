@@ -42,7 +42,7 @@ samp {
 
 kbd {
     @include case(uppercase);
-    --color-shadow: var(--color-kaiser);
+    --color-shadow: #{v(color, kaiser)};
     @include v(box-shadow, small);
 }
 
@@ -58,7 +58,7 @@ var {
 }
 
 pre {
-    margin: 0 0 var(--measure-large);
+    margin: 0 0 #{v(measure, large)};
     tab-size: 4;
     font-size: initial;
     white-space: pre-wrap;

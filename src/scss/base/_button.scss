@@ -24,14 +24,13 @@ button {
     @include v(color, bear);
     min-width: 8em;
     display: inline-block;
-    padding: 0.5em var(--measure-small);
     @include v(padding, small);
     margin: calc(#{v(measure, border-thin)} * 2); // accounts for outline-width + outline-offset
     border-width: 0;
     @include v(border-radius, border-default);
-    --color-shadow: var(--color-bowhead--gamma);
+    --color-shadow: #{v(color, bowhead--gamma)};
     @include v(box-shadow, small);
-    outline: 0 solid var(--color-raven);
+    outline: 0 solid #{v(color, raven)};
     overflow: visible;
     position: relative;
     @include v(font-size, default);
@@ -71,13 +70,13 @@ button {
     }
 
     .icon {
-        filter: drop-shadow(0 0 var(--measure-border-hairline) var(--color-bear--gamma));
+        filter: drop-shadow(0 0 var(--measure-border-hairline) #{v(color, bear--gamma)});
     }
 }
 
 .button--small {
     min-width: 5em;
-    padding: var(--measure-tiny) var(--measure-small);
+    padding: #{v(measure, tiny)} #{v(measure, small)};
     @include v(font-size, small);
     line-height: 1;
 }
