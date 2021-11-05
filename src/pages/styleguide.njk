@@ -12,10 +12,10 @@ twitter: true
 <h2>Colours</h2>
 
 <ul class="palette-list" id="colors">
-    {%- for colour in palette -%}
-        <li style="background-color: #{{ colour.hex }}; color: {% if colour.alternate %}var(--color-mineshaft){% else %}var(--color-milou){% endif %};">
-            <h3>{{ colour.name }}</h3>
-            <div class="monospace">#{{ colour.hex }}</div>
+    {%- for name, color in palette -%}
+        <li class="background--{{ name }}">
+            <h3>{{ name }}</h3>
+            <div class="monospace">{{ color }}</div>
         </li>
     {%- endfor -%}
 </ul>
@@ -473,7 +473,7 @@ p q r s t u v w x y z { | } ~
 
 <figure>
     <div class=" [ media ] ">
-        <iframe src="https://player.vimeo.com/video/11933164?color={{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/11933164?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
     </div>
 </figure>
 

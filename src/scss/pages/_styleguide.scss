@@ -39,6 +39,12 @@
         }
     }
 }
+@each $name, $color in $colors {
+    .background--#{$name} {
+        background-color: v(color, #{$name});
+        color: contrasting-color(v(color, $name, true));
+    }
+}
 
 .measure-example {
     @include v(background-color, alto);

@@ -49,10 +49,14 @@ iframe {
     margin: 0;
 }
 
-meter {
+meter,
+progress {
     @include v(width, line-length-clamp);
+    max-width: 100%;
     @include v(box-shadow, medium);
+}
 
+meter {
     &::-webkit-meter-bar {
         @include v(background-color, dove);
     }
@@ -71,9 +75,6 @@ meter {
 }
 
 progress {
-    @include v(width, line-length-clamp);
-    @include v(box-shadow, medium);
-
     &::-webkit-progress-bar {
         @include v(background-color, dove);
     }

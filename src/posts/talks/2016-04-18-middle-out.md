@@ -25,7 +25,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
 ## Video
 
 <figure>
-    <iframe src="https://player.vimeo.com/video/164122074?color={{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
+    <iframe src="https://player.vimeo.com/video/164122074?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
     <figcaption>
         <a class="u-syndication" rel="syndication" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
     </figcaption>

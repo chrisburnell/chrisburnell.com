@@ -111,11 +111,11 @@ code[class*="language-"] {
     }
 
     // Highlighted Code Block Labels
-    @each $language, $color in $language-colors {
-        &.language-#{$language} {
+    @each $name, $color in $language-colors {
+        &.language-#{$name} {
             &::before {
-                background-color: v(color, #{$color}) !important;
-                color: contrasting-color(v(color, $color, true)) !important;
+                background-color: v(color, #{$name}) !important;
+                color: contrasting-color(v(color, $name, true)) !important;
             }
         }
     }

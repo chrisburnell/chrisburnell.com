@@ -82,8 +82,8 @@
     <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
     <meta name="msapplication-starturl" content="{{ site.url }}">
     <meta name="description" content="{{ meta_description }}">
-    <meta name="theme-color" content="#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}">
-    <meta name="msapplication-navbutton-color" content="#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}">
+    <meta name="theme-color" content="#{{ palette | keyValue("raven") }}">
+    <meta name="msapplication-navbutton-color" content="#{{ palette | keyValue("raven") }}">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="supported-color-schemes" content="light dark">
 
@@ -114,8 +114,8 @@
         <meta name="twitter:domain" content="{{ site.url | getHost }}">
         {% if twitter %}
             <meta name="twitter:widgets:theme" content="light">
-            <meta name="twitter:widgets:link-color" content="#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}">
-            <meta name="twitter:widgets:border-color" content="#{{ palette | arrayKeyEquals("name", "Raven") | first | keyValue("hex") }}">
+            <meta name="twitter:widgets:link-color" content="#{{ palette | keyValue("raven") }}">
+            <meta name="twitter:widgets:border-color" content="#{{ palette | keyValue("raven") }}">
         {% endif %}
         <!-- OpenGraph Microdata -->
         {% if mf_root == 'review' %}
