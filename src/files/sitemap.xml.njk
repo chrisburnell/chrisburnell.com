@@ -2,14 +2,8 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>{{ site.url + '/' }}</loc>
-        <lastmod>{{ global.now | rfcDate }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    {% for item in collections.all %}
-        {% if not item.data.draft and not item.sitemap.exclude %}
+    {% for item in collections.all | keySort("inputPath") %}
+        {% if item.url and not item.data.draft and not item.data.sitemap.exclude %}
             <url>
                 <loc>{{ site.url + item.url }}</loc>
                 <lastmod>{{ item.data.update | default(item.date) | default(global.now) | rfcDate }}</lastmod>

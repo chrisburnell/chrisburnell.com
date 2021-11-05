@@ -6,6 +6,9 @@ monetization: true
 eleventyComputed:
   lede: "{{ site.lede | safe }}"
   tagline: "{{ site.tagline | safe }}"
+sitemap:
+  changefreq: daily
+  priority: 1.0
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 

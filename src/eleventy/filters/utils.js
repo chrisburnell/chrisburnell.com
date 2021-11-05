@@ -32,7 +32,7 @@ module.exports = {
         return [value]
     },
     getSentimentValue: (content) => {
-        if( content ) {
+        if (content) {
             const tokenizer = new Natural.WordTokenizer()
             return analyze.getSentiment(tokenizer.tokenize(content))
         }
