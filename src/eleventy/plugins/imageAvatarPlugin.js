@@ -43,7 +43,7 @@ async function twitterAvatar(username, classes = "") {
     let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(username))
     let markup = eleventyImage.generateHTML(imgData, {
             alt: `${username}’s Avatar`,
-            class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
+            class: "[ avatar ] [ u-author ] " + (classes ? ` ${classes}` : ""),
             loading: "lazy",
             decoding: "async",
         }, {
@@ -59,7 +59,7 @@ async function domainAvatar(domain, classes = "") {
     let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(domain))
     let markup = eleventyImage.generateHTML(imgData, {
         alt: `Avatar for ${domain}`,
-        class: "[ avatar ]" + (classes ? ` ${classes}` : ""),
+        class: "[ avatar ] [ u-author ] " + (classes ? ` ${classes}` : ""),
         loading: "lazy",
         decoding: "async",
     }, {
