@@ -12,7 +12,7 @@
     "url": "https://dnd.chrisburnell.com",
     "data": {
       "title": "The Arcanum",
-      "lede": "Another D&D-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> edition.",
+      "lede": "Another <abbr title=\"Dungeons & Dragons\">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.",
       "lede_markdown": true,
       "emoji": "🦎"
     }
@@ -48,7 +48,7 @@
     "url": "https://waterdeep.bloodbuilder.online",
     "data": {
       "title": "Waterdeep, A Curated Guide",
-      "lede": "I’m the Game Master for a [D&D](https://dnd.wizards.com/) campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.",
+      "lede": "I’m the Game Master for a <abbr title=\"Dungeons & Dragons\">D&D</abbr> campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.",
       "lede_markdown": true,
       "emoji": "🐉"
     }

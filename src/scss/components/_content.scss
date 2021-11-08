@@ -38,12 +38,20 @@ spark-line {
     display: inline-flex;
     align-items: center;
     @include v(gap, small);
+    @include v(font-family);
     @include v(font-size, small);
-    @include v(font-weight);
+    font-style: normal;
+    @include v(font-weight, bold);
     speak: none;
 
     canvas {
         width: auto;
+    }
+
+    span {
+        @include media("below:small") {
+            display: none;
+        }
     }
 }
 

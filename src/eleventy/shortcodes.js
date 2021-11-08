@@ -19,27 +19,20 @@ module.exports = {
         }
         return `<span class="emoji" aria-hidden="true">${emoji}</span>`
     },
-    sparkline: (title, collection, weekRange = 52) => {
-        const MS = 1000
-        const WEEK = 60 * 60 * 24 * 7
-        // const endLabel = dateFilters.friendlyDate(now, "LLL yyyy")
-        const endLabel = "Today"
-        const startLabel = dateFilters.friendlyDate(now - ((weekRange + 1) * WEEK * MS), "LLL yyyy")
+    sparkline: (title, collection, startLabel, endLabel) => {
+        const startYear = parseFloat(dateFilters.friendlyDate(collection[collection.length - 1].date, "yyyy"))
+        const endYear = parseFloat(dateFilters.friendlyDate(now, "yyyy"))
         let values = []
-        let end, before, count
-        for (let i = 0; i < weekRange; i++) {
-            end = dateFilters.epoch(now) - (i * WEEK * MS)
-            before = dateFilters.epoch(now) - ((i + 1) * WEEK * MS)
+        let count
+        for (let i = startYear; i <= endYear; i++) {
             count = 0
             for (let item of collection) {
-                if (before < dateFilters.epoch(item.date) && dateFilters.epoch(item.date) < end) {
+                if (i === parseFloat(dateFilters.friendlyDate(item.date, "yyyy"))) {
                     count++
                 }
             }
             values.push(Math.min(count, 12))
-            end = before - 1
-            before = before - WEEK
         }
-        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="#eb2d36" start="${startLabel}" end="${endLabel}" class="pentatonic">${values.reverse().join(',')}</spark-line>`
+        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "start-label=\"" + endLabel + "\"" : ""} class="pentatonic"></spark-line>`
     }
 }

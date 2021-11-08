@@ -80,6 +80,7 @@
 }
 
 .details {
+    @include owl;
     @include v(margin-block-end, large);
     @include v(font-family, serif);
     font-style: italic;

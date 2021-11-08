@@ -45,6 +45,8 @@ Element attributes:
 - `endpoint`: toggles the display of a point at the end of the line *(default = true)*
 - `color`: defines the color of the line *(default = currentColor)*
 - `endpoint-color`: defines the color of the endpoint *(defaults to whatever color is defined as)*
+- `start-label`: creates a label before the chart
+- `end-label`: creates a label after the chart
 
 
 ## Examples
@@ -73,6 +75,10 @@ Element attributes:
     <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></spark-line>
         <p><code>endpoint-color="red"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
+        <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>
 
