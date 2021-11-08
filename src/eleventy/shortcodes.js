@@ -22,6 +22,9 @@ module.exports = {
     sparkline: (title, collection, weekRange = 52) => {
         const MS = 1000
         const WEEK = 60 * 60 * 24 * 7
+        // const endLabel = dateFilters.friendlyDate(now, "LLL yyyy")
+        const endLabel = "Today"
+        const startLabel = dateFilters.friendlyDate(now - ((weekRange + 1) * WEEK * MS), "LLL yyyy")
         let values = []
         let end, before, count
         for (let i = 0; i < weekRange; i++) {
@@ -37,6 +40,6 @@ module.exports = {
             end = before - 1
             before = before - WEEK
         }
-        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="#eb2d36" class="pentatonic"></spark-line>`
+        return `<spark-line values="${values.reverse().join(',')}" endpoint-color="#eb2d36" start="${startLabel}" end="${endLabel}" class="pentatonic">${values.reverse().join(',')}</spark-line>`
     }
 }

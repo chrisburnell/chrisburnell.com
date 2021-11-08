@@ -35,8 +35,16 @@
 
 // Visual Data
 spark-line {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    @include v(gap, small);
+    @include v(font-size, small);
+    @include v(font-weight);
     speak: none;
+
+    canvas {
+        width: auto;
+    }
 }
 
 // Musical Data
