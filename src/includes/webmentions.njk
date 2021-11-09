@@ -49,7 +49,7 @@
                                         <div class=" [ webmentions__response__avatar ] ">
                                             {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
                                         </div>
-                                        <div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | safe }}</div>
+                                        <div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | fixUrl | safe }}</div>
                                         <div class=" [ webmentions__response__meta ] ">
                                             <small>by</small>
                                             <a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external">

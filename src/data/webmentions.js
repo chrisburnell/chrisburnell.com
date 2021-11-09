@@ -4,8 +4,9 @@ const { DateTime } = require("luxon")
 const uniqBy = require("lodash/uniqBy")
 const queryFilters = require("../eleventy/filters/queries.js")
 const site = require("./site.json")
+const urlReplacements = require("./urlReplacements.json")
 
-const domain = queryFilters.getHost(site.url) || "example.com"
+const domain = queryFilters.getHost(site.url)
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -14,6 +15,12 @@ require("dotenv").config()
 const CACHE_DIR = ".cache"
 const API_ORIGIN = "https://webmention.io/api/mentions.jf2"
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
+
+const fixUrl = (url) => {
+    return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
+        return accumulator.replace(key, value)
+    }, url)
+}
 
 const getBaseUrl = (url) => {
     let hashSplit = url.split("#")
@@ -92,7 +99,7 @@ module.exports = async function() {
 
         if (feed) {
             for (let webmention of feed.children) {
-                let url = getBaseUrl(webmention["wm-target"])
+                let url = getBaseUrl(fixUrl(webmention["wm-target"]))
                 if (!mentions[url]) {
                     mentions[url] = []
                 }

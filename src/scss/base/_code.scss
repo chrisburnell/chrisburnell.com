@@ -100,6 +100,7 @@ code[class*="language-"] {
     &::before {
         @include absolute(top-left);
         @include font-family(alpha);
+        @include v(font-size);
         @include v(background-color, dove);
         @include v(color, milou);
         @include v(height, gap);

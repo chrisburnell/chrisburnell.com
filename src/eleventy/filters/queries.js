@@ -6,6 +6,7 @@ const mastodonInstances = require("../../data/mastodonInstances.json")
 const places = require("../../data/places.json")
 const methods = require("../../data/postingMethods.json")
 const syndicationTargets = require("../../data/syndicationTargets.json")
+const urlReplacements = require("../../data/urlReplacements.json")
 
 const toArray = function(value) {
     if (Array.isArray(value)) {
@@ -205,6 +206,12 @@ module.exports = {
             return '@' + value.split('/status/')[0].split('twitter.com/')[1]
         }
         return value
+    },
+    fixUrl: (url) => {
+        return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
+            const regex = new RegExp(key, "g")
+            return accumulator.replace(regex, value)
+        }, url)
     },
     getBaseUrl: (url) => {
         let hashSplit = url.split("#")
