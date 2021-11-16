@@ -8,16 +8,19 @@ const eleventyImage = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
+// Avatar Dimensions
+const size = 72
+
 const chunkArray = (arr, size) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
 )
 
 function getImageOptions(lookup) {
     return {
-        widths: [72],
+        widths: [size],
         urlPath: "/images/avatars/",
-        outputDir: "./images/avatars",
-        formats: ["webp", "jpeg"],
+        outputDir: "./_site/images/avatars",
+        formats: ["avif", "webp", "jpeg"],
         cacheDuration: "4w",
         cacheDirectory: ".cache",
         filenameFormat: function(id, src, width, format) {
@@ -37,28 +40,12 @@ function fetchImageData(lookup, url) {
     })
 }
 
-async function twitterAvatar(username, classes = "") {
+async function storeAvatar(id, classes = "") {
     // We know where the images will be
-    let fakeUrl = `https://twitter.com/${username}.jpg`
-    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(username))
+    let fakeUrl = `https://chrisburnell.com/images/avatars/${id}.jpg`
+    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
     let markup = eleventyImage.generateHTML(imgData, {
-            alt: `${username}’s Avatar`,
-            class: "[ avatar ] [ u-author ] " + (classes ? ` ${classes}` : ""),
-            loading: "lazy",
-            decoding: "async",
-        }, {
-            whitespaceMode: "inline"
-        })
-
-    return markup
-}
-
-async function domainAvatar(domain, classes = "") {
-    // We know where the images will be
-    let fakeUrl = `https://chrisburnell.com/${domain}.jpg`
-    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 48, 48, getImageOptions(domain))
-    let markup = eleventyImage.generateHTML(imgData, {
-        alt: `Avatar for ${domain}`,
+        alt: `Avatar for ${id}`,
         class: "[ avatar ] [ u-author ] " + (classes ? ` ${classes}` : ""),
         loading: "lazy",
         decoding: "async",
@@ -111,19 +98,17 @@ module.exports = function(config) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
             let username = target.split("twitter.com/")[1].split("/")[0]
             twitterUsernames.add(username.toLowerCase())
-            return twitterAvatar(username, classes)
+            return storeAvatar(username, classes)
         }
-        else {
-            if (!photo) {
-                return `<picture><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpg" width="48" height="48"></picture>`
-            }
-
+        else if (photo) {
             let domain = queryFilters.getHost(authorUrl || url)
             domains.add({
                 "url": domain,
                 "photo": photo.toLowerCase(),
             })
-            return domainAvatar(domain, classes)
+            return storeAvatar(domain, classes)
         }
+
+        return `<picture><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpg" width="48" height="48"></picture>`
     })
 }

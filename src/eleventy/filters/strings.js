@@ -1,4 +1,4 @@
-const markdownIt = require('markdown-it')({
+const markdownIt = require("markdown-it")({
     html: true,
     breaks: true,
     linkify: true
@@ -7,13 +7,17 @@ const capitalizers = require("../../data/capitalizers.json")
 
 const truncate = (() => {
     const truncate = (at, str = "", count = 1, end = "…") =>
-        (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : '')
+        (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : "")
     return Object.freeze({
         sentences: (...args) => truncate(".", ...args),
         words: (...args) => truncate(" ", ...args),
         characters: (...args) => truncate("", ...args)
     })
 })()
+
+const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"]
+const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
 module.exports = {
     capitalizeFormat: (input) => {
@@ -25,10 +29,18 @@ module.exports = {
     markdownFormat: (value) => {
         return markdownIt.render(value)
     },
+    numberNthFormat: (n) => {
+        if (n < 20) {
+            return specialNumbers[n]
+        }
+        if (n % 10 === 0) {
+            return decaNumbers[Math.floor(n / 10) - 2] + "ieth"
+        }
+        return decaNumbers[Math.floor(n / 10) - 2] + "y-" + specialNumbers[n % 10];
+    },
     numberStringFormat: (number) => {
-        let strings = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-        if (number < strings.length) {
-            return strings[number]
+        if (number < stringNumbers.length) {
+            return stringNumbers[number]
         }
         return number
     },

@@ -9,7 +9,7 @@
     </ul>
     <h3>Latest projects:</h3>
     <div class=" [ meta__list ] ">
-        {% for lookup in projects.personal | limit(site.limits.snapshot) %}
+        {% for lookup in projects.personal | limit(site.limits.feature) %}
             <a href="{{ lookup.url }}">{{ lookup.data.title }}</a>
             {{ lookup.data.lede | markdownFormat | safe }}
         {% endfor %}

@@ -33,6 +33,6 @@ module.exports = {
             }
             values.push(Math.min(count, 12))
         }
-        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "start-label=\"" + endLabel + "\"" : ""} class="pentatonic"></spark-line>`
+        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class="pentatonic"></spark-line>`
     }
 }

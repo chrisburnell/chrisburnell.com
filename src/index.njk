@@ -12,10 +12,23 @@ sitemap:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
-<h2 id="newest">
-    <a href="/archive/">Newest Posts</a>
+{% if collections.todayRSVPs.length %}
+    <div class=" [ box ] [ owl--medium ] ">
+        <h2 id="today-rsvps">
+            <a href="/rsvps/">Events I’m Attending Today</a>
+        </h2>
+        <nav class=" [ deck ] " aria-labelledby="today-rsvps">
+            {% for item in collections.todayRSVPs %}
+                {{ deckItem(item, global.now, collections.all, people, [], false) }}
+            {% endfor %}
+        </nav>
+    </div>
+{% endif %}
+
+<h2 id="latest">
+    <a href="/archive/">Latest Posts</a>
 </h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="newest">
+<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
     {% for item in collections.featurePosts | limit(site.limits.feature) %}
         {{ deckItem(item, global.now, collections.all, people, webmentions) }}
     {% endfor %}
@@ -30,22 +43,28 @@ sitemap:
     {% endfor %}
 </nav>
 
+<h2 id="projects">
+    <a href="/projects/">Latest Projects</a>
+</h2>
+<nav class=" [ deck ] " aria-labelledby="projects">
+    {% for item in projects.personal | limit(site.limits.feature) %}
+        <article>
+            <h3>
+                <a class=" [ p-name ] " href="{{ item.url }}">{{ item.data.title }}</a>
+            </h3>
+            <div class=" [ p-summary ] [ line-clamp ] ">
+                {{ item.data.lede | markdownFormat | safe }}
+            </div>
+            <data class="[ u-author ]" value="/" hidden=""></data>
+        </article>
+    {% endfor %}
+</nav>
+
+
+
 <nav class=" [ navigator ] " aria-label="Archive Navigation">
     <a class=" [ button ] " href="/archive/">Browse the Archive</a>
 </nav>
-
-{% if collections.todayRSVPs.length %}
-    <div class=" [ box ] [ owl--medium ] ">
-        <h2 id="today-rsvps">
-            <a href="/rsvps/">Events I’m Attending Today</a>
-        </h2>
-        <nav class=" [ deck ] " aria-labelledby="today-rsvps">
-            {% for item in collections.todayRSVPs %}
-                {{ deckItem(item, global.now, collections.all, people, [], false) }}
-            {% endfor %}
-        </nav>
-    </div>
-{% endif %}
 
 {% if collections.futureRSVPs.length %}
     <div class=" [ box ] [ owl--medium ] ">

@@ -9,12 +9,12 @@
     }
   },
   {
-    "url": "https://dnd.chrisburnell.com",
+    "url": "/bowhead/",
     "data": {
-      "title": "The Arcanum",
-      "lede": "Another <abbr title=\"Dungeons & Dragons\">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.",
+      "title": "Bowhead (v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }})",
+      "lede": "Memorable and maintainable design tokens in SCSS.",
       "lede_markdown": true,
-      "emoji": "🦎"
+      "emoji": "🐋"
     }
   },
   {
@@ -27,12 +27,12 @@
     }
   },
   {
-    "url": "/bowhead/",
+    "url": "https://dnd.chrisburnell.com",
     "data": {
-      "title": "Bowhead (v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }})",
-      "lede": "Memorable and maintainable design tokens in SCSS.",
+      "title": "The Arcanum",
+      "lede": "Another <abbr title=\"Dungeons & Dragons\">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.",
       "lede_markdown": true,
-      "emoji": "🐋"
+      "emoji": "🦎"
     }
   },
   {

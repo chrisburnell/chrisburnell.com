@@ -21,8 +21,8 @@ eleventyComputed:
     </h1>
 
     <div class=" [ details ] ">
-        {% sparkline category.title, collection %}
         <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+        {% sparkline category.title, collection, first_year, latest_year %}
     </div>
 
     <div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] ">
