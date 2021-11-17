@@ -42,7 +42,7 @@ jobs:
       - name: Build website
         run: npm run build
         env:
-          ELEVENTY_ENV: production
+          ELEVENTY_PRODUCTION: true
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
