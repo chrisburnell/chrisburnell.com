@@ -39,10 +39,10 @@ module.exports = {
             values.push(count)
             count = 0
         }
-        // Normalise the range
+        // Range Map to the rescue
         let highestCount = values.reduce((highest, current) => Math.max(highest, current));
         values = values.reduce((array, count) => {
-            return [...array, rangeMap(count, 0, highestCount, 0, limit)]
+            return [...array, Math.round(rangeMap(count, 0, highestCount, 0, limit))]
         }, []);
         return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class=" [ pentatonic ] "></spark-line>`
     }
