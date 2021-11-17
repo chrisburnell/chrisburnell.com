@@ -20,7 +20,7 @@ function getImageOptions(lookup) {
         widths: [size],
         urlPath: "/images/avatars/",
         outputDir: "./_site/images/avatars",
-        formats: ["avif", "webp", "jpeg"],
+        formats: ["webp", "jpeg"],
         cacheDuration: "4w",
         cacheDirectory: ".cache",
         filenameFormat: function(id, src, width, format) {
