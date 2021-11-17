@@ -20,8 +20,8 @@ permalink: /js/main.js
             let values = target.values || target.dataset.values
             let duration = parseFloat(target.getAttribute("duration")) || 4000
             let keyStart = parseFloat(target.getAttribute("key-start")) || 29
-            let keyIntervals = target.getAttribute("key-intervals") ? target.getAttribute("key-intervals").split(",") : [2, 2, 3, 2, 3]
-            let keyLimit = parseFloat(target.getAttribute("key-limit")) || 12
+            let keyIntervals = target.getAttribute("key-intervals") ? target.getAttribute("key-intervals").split(",").map(interval => parseFloat(interval)) : [2, 2, 3, 2, 3]
+            let keyLimit = parseFloat(target.getAttribute("key-limit")) || {{ site.limits.sparkline }}
             if (values) {
                 pentatonic(values.split(","), duration, 0.5, keyStart, keyIntervals, keyLimit)
             }

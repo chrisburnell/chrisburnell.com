@@ -1,5 +1,6 @@
 const author = require("../data/author.json")
 const global = require("../data/global.js")
+const palette = require("../data/palette.json")
 const site = require("../data/site.json")
 const dateFilters = require("./filters/dates.js")
 
@@ -39,11 +40,13 @@ module.exports = {
             values.push(count)
             count = 0
         }
-        // Range Map to the rescue
         let highestCount = values.reduce((highest, current) => Math.max(highest, current));
-        values = values.reduce((array, count) => {
-            return [...array, Math.round(rangeMap(count, 0, highestCount, 0, limit))]
-        }, []);
-        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class=" [ pentatonic ] "></spark-line>`
+        if (highestCount > limit) {
+            // Range Map to the rescue
+            values = values.reduce((array, count) => {
+                return [...array, Math.round(rangeMap(count, 0, highestCount, 0, limit))]
+            }, []);
+        }
+        return `<spark-line values="${values.join(',')}" endpoint-color="${palette.maple}" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class=" [ pentatonic ] " key-intervals="1"></spark-line>`
     }
 }
