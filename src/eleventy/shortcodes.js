@@ -55,6 +55,7 @@ module.exports = {
                             ${endLabel ? "end-label=\"" + endLabel + "\"" : ""}
                             class=" [ pentatonic ] "
                             key-start="25"
-                            key-intervals="2, 1, 2, 2, 1, 2, 2"></spark-line>`
+                            key-intervals="2, 1, 2, 2, 1, 2, 2"
+                            key-limit="${site.limits.sparkline}"></spark-line>`
     }
 }
