@@ -7,11 +7,8 @@
   "established": "2008",
   "limits": {
     "feature": 2,
-    "feed": 10
-  },
-  "sparklines": {
-    "limit_x": 26,
-    "limit_y": 9
+    "feed": 10,
+    "sparkline": 12
   },
   "carbon": "CE7D523U",
   "monetization": "$ilp.uphold.com/wDqKwewbX8by"

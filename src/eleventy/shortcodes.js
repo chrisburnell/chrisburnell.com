@@ -1,7 +1,11 @@
 const author = require("../data/author.json")
+const global = require("../data/global.js")
+const site = require("../data/site.json")
 const dateFilters = require("./filters/dates.js")
 
-const now = new Date()
+let rangeMap = (number, oldMinimum, oldMaximum, newMinimum, newMaximum) => {
+    return ((number - oldMinimum) / (oldMaximum - oldMinimum)) * (newMaximum - newMinimum) + newMinimum;
+};
 
 module.exports = {
     caniuse: (feature, periods = 'future_1,current,past_1,past_2') => {
@@ -19,20 +23,27 @@ module.exports = {
         }
         return `<span class="emoji" aria-hidden="true">${emoji}</span>`
     },
-    sparkline: (title, collection, startLabel, endLabel) => {
+    sparkline: (collection, startLabel, endLabel, limit = site.limits.sparkline) => {
         const startYear = parseFloat(dateFilters.friendlyDate(collection[collection.length - 1].date, "yyyy"))
-        const endYear = parseFloat(dateFilters.friendlyDate(now, "yyyy"))
+        const endYear = parseFloat(dateFilters.friendlyDate(global.now, "yyyy"))
         let values = []
-        let count
+        let count = 0
+        // Loop through years
         for (let i = startYear; i <= endYear; i++) {
-            count = 0
+            // Loop through collection comparing Year
             for (let item of collection) {
                 if (i === parseFloat(dateFilters.friendlyDate(item.date, "yyyy"))) {
                     count++
                 }
             }
-            values.push(Math.min(count, 12))
+            values.push(count)
+            count = 0
         }
-        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class="pentatonic"></spark-line>`
+        // Normalise the range
+        let highestCount = values.reduce((highest, current) => Math.max(highest, current));
+        values = values.reduce((array, count) => {
+            return [...array, rangeMap(count, 0, highestCount, 0, limit)]
+        }, []);
+        return `<spark-line values="${values.join(',')}" endpoint-color="#eb2d36" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class=" [ pentatonic ] "></spark-line>`
     }
 }
