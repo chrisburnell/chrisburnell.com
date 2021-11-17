@@ -70,12 +70,14 @@ function enablePeople() {
 
 module.exports = async function() {
     const cache = await readFromCache()
-    const { lastFetched, people } = cache
+    let { lastFetched, people } = cache
 
     if (enablePeople() || !lastFetched) {
         const feed = await fetchPeople(lastFetched)
 
         if (feed) {
+            people = []
+
             for (let person of feed) {
                 people.push(person)
             }
