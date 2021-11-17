@@ -9,6 +9,7 @@ eleventyComputed:
 
 <figure>
     <picture class="pixelated">
+        <source srcset="/images/bowhead.avif" type="image/avif" />
         <source srcset="/images/bowhead.webp" type="image/webp" />
         <img class="pixelated" src="/images/bowhead.png" alt="" role="presentation">
     </picture>

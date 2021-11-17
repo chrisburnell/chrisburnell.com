@@ -47,6 +47,11 @@ icon_sizes:
         "purpose": "any maskable"{% endif %}
       },
       {
+        "src": "/images/favicon-{{ size }}.avif",
+        "type": "image/avif",
+        "sizes": "{{ size }}x{{ size }}"
+      },
+      {
         "src": "/images/favicon-{{ size }}.webp",
         "type": "image/webp",
         "sizes": "{{ size }}x{{ size }}"

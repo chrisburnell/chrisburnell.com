@@ -9,6 +9,7 @@ eleventyComputed:
 
 <figure>
     <picture class="pixelated">
+        <source srcset="/images/pentatonic.avif" type="image/avif" />
         <source srcset="/images/pentatonic.webp" type="image/webp" />
         <img class="pixelated" src="/images/pentatonic.png" alt="" role="presentation">
     </picture>

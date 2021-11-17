@@ -8,6 +8,7 @@ eleventyComputed:
 
 <figure>
     <picture>
+        <source type="image/avif" srcset="/images/content/rachel-and-i.avif" />
         <source type="image/webp" srcset="/images/content/rachel-and-i.webp" />
         <img src="/images/content/rachel-and-i.jpg" alt="Chris Burnell">
     </picture>
