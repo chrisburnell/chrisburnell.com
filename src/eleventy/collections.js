@@ -2,10 +2,9 @@ const dateFilters = require("./filters/dates.js")
 const collectionFilters = require("./filters/collections.js")
 const queryFilters = require("./filters/queries.js")
 
+const global = require("../data/global.js")
 const site = require("../data/site.json")
 const webmentions = require("../data/webmentions.js")
-
-const now = new Date()
 
 module.exports = {
     page: collection => {
@@ -61,18 +60,18 @@ module.exports = {
             })
             .filter(item => {
                 if (item.date
-                    && dateFilters.friendlyDate(item.date, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
-                    && dateFilters.friendlyDate(item.date, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.date, 'dd LLLL') == dateFilters.friendlyDate(global.now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.date, 'yyyy') != dateFilters.friendlyDate(global.now, 'yyyy')) {
                     return true
                 }
                 else if (item.data.rsvp
-                    && dateFilters.friendlyDate(item.data.rsvp.date, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
-                    && dateFilters.friendlyDate(item.data.rsvp.date, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.data.rsvp.date, 'dd LLLL') == dateFilters.friendlyDate(global.now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.data.rsvp.date, 'yyyy') != dateFilters.friendlyDate(global.now, 'yyyy')) {
                     return true
                 }
                 else if (item.data.rsvp
-                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'dd LLLL') == dateFilters.friendlyDate(now, 'dd LLLL')
-                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'yyyy') != dateFilters.friendlyDate(now, 'yyyy')) {
+                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'dd LLLL') == dateFilters.friendlyDate(global.now, 'dd LLLL')
+                    && dateFilters.friendlyDate(item.data.rsvp.finish, 'yyyy') != dateFilters.friendlyDate(global.now, 'yyyy')) {
                     return true
                 }
                 return false
@@ -130,7 +129,7 @@ module.exports = {
             .filter(collectionFilters.isPublished)
             .filter(item => {
                 if (item.data.rsvp
-                    && dateFilters.friendlyDate(item.data.rsvp.date) == dateFilters.friendlyDate(now)) {
+                    && dateFilters.friendlyDate(item.data.rsvp.date) == dateFilters.friendlyDate(global.now)) {
                     return true
                 }
             })
@@ -141,9 +140,9 @@ module.exports = {
             .filter(collectionFilters.isPublished)
             .filter(item => {
                 if (item.data.rsvp
-                    && dateFilters.epoch(item.data.rsvp.date) > now
-                    && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(now) < 604800000
-                    && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(now)) {
+                    && dateFilters.epoch(item.data.rsvp.date) > global.now
+                    && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < 604800000
+                    && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)) {
                     return true
                 }
             })
