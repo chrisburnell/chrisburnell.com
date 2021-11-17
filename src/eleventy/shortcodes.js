@@ -40,13 +40,21 @@ module.exports = {
             values.push(count)
             count = 0
         }
-        let highestCount = values.reduce((highest, current) => Math.max(highest, current));
-        if (highestCount > limit) {
+        let highestValue = values.reduce((highest, current) => Math.max(highest, current));
+        // Calculate if the highest value extends beyond the limit
+        if (highestValue > limit) {
             // Range Map to the rescue
             values = values.reduce((array, count) => {
-                return [...array, Math.round(rangeMap(count, 0, highestCount, 0, limit))]
+                return [...array, Math.round(rangeMap(count, 0, highestValue, 0, limit))]
             }, []);
         }
-        return `<spark-line values="${values.join(',')}" endpoint-color="${palette.maple}" ${startLabel ? "start-label=\"" + startLabel + "\"" : ""} ${endLabel ? "end-label=\"" + endLabel + "\"" : ""} class=" [ pentatonic ] " key-intervals="1"></spark-line>`
+        // Sparklines in A minor
+        return `<spark-line values="${values.join(',')}"
+                            endpoint-color="${palette.maple}"
+                            ${startLabel ? "start-label=\"" + startLabel + "\"" : ""}
+                            ${endLabel ? "end-label=\"" + endLabel + "\"" : ""}
+                            class=" [ pentatonic ] "
+                            key-start="25"
+                            key-intervals="2, 1, 2, 2, 1, 2, 2"></spark-line>`
     }
 }
