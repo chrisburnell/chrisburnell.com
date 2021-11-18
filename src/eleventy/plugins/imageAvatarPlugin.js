@@ -79,7 +79,8 @@ module.exports = function(config) {
                         for (let result of results) {
                             fetchImageData(result.username, result.url.large)
                         }
-                    } catch (error) {
+                    }
+                    catch (error) {
                         console.log(results)
                     }
                 })
