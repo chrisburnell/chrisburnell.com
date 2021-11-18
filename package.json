@@ -20,7 +20,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.3",
+    "@11ty/eleventy": "^1.0.0-beta.8",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
