@@ -1,6 +1,4 @@
-const fs = require("fs")
 const site = require("../../data/site.json")
-const author = require("../../data/author.json")
 const queryFilters = require("../filters/queries.js")
 const eleventyImage = require("@11ty/eleventy-img")
 
@@ -14,10 +12,6 @@ function getImageOptions(lookup) {
         outputDir: "./_site/images/content",
         formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
         cacheDuration: "4w",
-        cacheDirectory: ".cache",
-        sharpAvifOptions: {
-            lossless: true,
-        },
         filenameFormat: function(id, src, width, format) {
             return `${String(lookup)}.${format}`;
         }

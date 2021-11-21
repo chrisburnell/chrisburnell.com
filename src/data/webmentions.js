@@ -1,10 +1,8 @@
 const CacheAsset = require("@11ty/eleventy-cache-assets")
-const { DateTime } = require("luxon")
 const uniqBy = require("lodash/uniqBy")
 
 const site = require("./site.json")
 const queryFilters = require("../eleventy/filters/queries.js")
-const urlReplacements = require("./urlReplacements.json")
 
 const domain = queryFilters.getHost(site.url)
 

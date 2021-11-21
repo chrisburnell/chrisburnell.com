@@ -8,6 +8,13 @@ const methods = require("../../data/postingMethods.json")
 const syndicationTargets = require("../../data/syndicationTargets.json")
 const urlReplacements = require("../../data/urlReplacements.json")
 
+const allowedHTML = {
+    allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+    allowedAttributes: {
+        a: ['href']
+    }
+}
+
 const toArray = function(value) {
     if (Array.isArray(value)) {
         return value
@@ -230,13 +237,6 @@ module.exports = {
         }
         else if (typeof allowedTypes === "string") {
             allowedTypes = [allowedTypes]
-        }
-
-        const allowedHTML = {
-            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
-            allowedAttributes: {
-                a: ['href']
-            }
         }
 
         return webmentions[url]

@@ -1,4 +1,3 @@
-const fs = require("fs")
 const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const twitterReplacements = require("../../data/twitterReplacements.json")
@@ -25,7 +24,6 @@ function getImageOptions(lookup) {
         outputDir: "./_site/images/avatars",
         formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
         cacheDuration: "4w",
-        cacheDirectory: ".cache",
         filenameFormat: function(id, src, width, format) {
             return `${String(lookup).toLowerCase()}.${format}`;
         }
