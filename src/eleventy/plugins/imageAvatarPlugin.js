@@ -1,6 +1,7 @@
 const fs = require("fs")
 const site = require("../../data/site.json")
 const author = require("../../data/author.json")
+const twitterReplacements = require("../../data/twitterReplacements.json")
 const queryFilters = require("../filters/queries.js")
 const getTwitterAvatarUrl = require("twitter-avatar-url")
 const eleventyImage = require("@11ty/eleventy-img")
@@ -9,11 +10,17 @@ const eleventyImage = require("@11ty/eleventy-img")
 require("dotenv").config()
 
 // Avatar Dimensions
-const size = 72
+const size = 96 // 48 * 2
 
 const chunkArray = (arr, size) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
 )
+
+const fixTwitterUsername = (twitterUsername) => {
+    return Object.entries(twitterReplacements).reduce((accumulator, [key, value]) => {
+        return accumulator.replace(key, value)
+    }, twitterUsername)
+}
 
 function getImageOptions(lookup) {
     return {
@@ -24,14 +31,13 @@ function getImageOptions(lookup) {
         cacheDuration: "4w",
         cacheDirectory: ".cache",
         filenameFormat: function(id, src, width, format) {
-            return `${lookup.toLowerCase()}.${format}`;
+            return `${String(lookup).toLowerCase()}.${format}`;
         }
     }
 }
 
 function fetchImageData(lookup, url) {
     if (!url) {
-        console.log(lookup)
         throw new Error("src property required in `img` shortcode.")
     }
 
@@ -105,7 +111,7 @@ module.exports = function(config) {
         const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)
         if (url.includes("twitter.com")) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
-            let username = target.split("twitter.com/")[1].split("/")[0]
+            let username = fixTwitterUsername(target.split("twitter.com/")[1].split("/")[0])
             twitterUsernames.add(username.toLowerCase())
             return storeAvatar(username, classes)
         }
