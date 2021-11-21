@@ -12,10 +12,6 @@ require("dotenv").config()
 // Avatar Dimensions
 const size = 96 // 48 * 2
 
-const chunkArray = (arr, size) =>
-    Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(i * size, i * size + size)
-)
-
 const fixTwitterUsername = (twitterUsername) => {
     return Object.entries(twitterReplacements).reduce((accumulator, [key, value]) => {
         return accumulator.replace(key, value)
@@ -78,20 +74,12 @@ module.exports = function(config) {
     if (webmentionsEnabled()) {
         config.on("afterBuild", () => {
             let array = Array.from(twitterUsernames)
-            let chunks = chunkArray(array, 100)
             console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
-            for (let twitterUsernames of chunks) {
-                getTwitterAvatarUrl(twitterUsernames).then(results => {
-                    try {
-                        for (let result of results) {
-                            fetchImageData(result.username, result.url.large)
-                        }
-                    }
-                    catch (error) {
-                        console.log(results)
-                    }
-                })
-            }
+            getTwitterAvatarUrl(array).then(results => {
+                for (let result of results) {
+                    fetchImageData(result.username, result.url.large)
+                }
+            })
 
             array = Array.from(mastodonHandles)
             console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
