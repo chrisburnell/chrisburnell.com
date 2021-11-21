@@ -211,7 +211,7 @@ module.exports = {
         return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
             const regex = new RegExp(key, "g")
             return accumulator.replace(regex, value)
-        }, url)
+        }, url.replace(/\/?$/, '/'))
     },
     getBaseUrl: (url) => {
         let hashSplit = url.split("#")
