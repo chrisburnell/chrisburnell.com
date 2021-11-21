@@ -221,7 +221,7 @@ module.exports = {
     getWebmentions: (webmentions, url, allowedTypes) => {
         url = absoluteURL(url)
 
-        if (!url || !webmentions.mentions || !webmentions.mentions[url]) {
+        if (!url || !webmentions || !webmentions[url]) {
             return []
         }
 
@@ -239,7 +239,7 @@ module.exports = {
             }
         }
 
-        return webmentions.mentions[url]
+        return webmentions[url]
             .filter(entry => {
                 return allowedTypes.includes(entry["wm-property"])
             })
@@ -265,11 +265,10 @@ module.exports = {
                 return entry
             })
     },
-    getPerson: (peopleData, value, intent) => {
-        if (!peopleData) {
+    getPerson: (people, value, intent) => {
+        if (!people) {
             return value
         }
-        const { lastFetched, count, people } = peopleData
 
         // Default metadata to the passed value (string/object)
         let title, url, mastodon, twitter
