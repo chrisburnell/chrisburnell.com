@@ -61,10 +61,11 @@ function webmentionsEnabled() {
 }
 
 module.exports = function(config) {
-    let twitterUsernames, domains
+    let twitterUsernames, mastodonHandles, domains
 
     config.on("beforeBuild", () => {
         twitterUsernames = new Set()
+        mastodonHandles = new Set()
         domains = new Set()
     })
 
@@ -86,6 +87,12 @@ module.exports = function(config) {
                 })
             }
 
+            array = Array.from(mastodonHandles)
+            console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
+            for (let mastodonHandle of array) {
+                fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
+            }
+
             array = Array.from(domains)
             console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
             for (let domain of array) {
@@ -95,11 +102,19 @@ module.exports = function(config) {
     }
 
     config.addNunjucksAsyncShortcode("avatar", async function(photo, url, authorUrl, classes = "") {
+        const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)
         if (url.includes("twitter.com")) {
             let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
             let username = target.split("twitter.com/")[1].split("/")[0]
             twitterUsernames.add(username.toLowerCase())
             return storeAvatar(username, classes)
+        }
+        else if (mastodonHandle !== authorUrl) {
+            mastodonHandles.add({
+                "handle": mastodonHandle,
+                "photo": photo.toLowerCase(),
+            })
+            return storeAvatar(mastodonHandle, classes)
         }
         else if (photo) {
             let domain = queryFilters.getHost(authorUrl || url)
