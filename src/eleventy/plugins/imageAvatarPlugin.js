@@ -22,7 +22,7 @@ function getImageOptions(lookup) {
         widths: [size],
         urlPath: "/images/avatars/",
         outputDir: "./_site/images/avatars",
-        formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
+        formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
         cacheDuration: "4w",
         filenameFormat: function(id, src, width, format) {
             return `${String(lookup).toLowerCase()}.${format}`;

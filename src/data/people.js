@@ -25,7 +25,5 @@ module.exports = async function() {
         people = [...people, ...lookup]
     }
 
-    console.log(`Wrote ${people.length} people to cache.`)
-
     return people
 }

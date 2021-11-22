@@ -1,68 +1,37 @@
-const site = require("../../data/site.json")
-const queryFilters = require("../filters/queries.js")
-const eleventyImage = require("@11ty/eleventy-img")
+const path = require("path");
+const Image = require("@11ty/eleventy-img")
 
 // Load .env variables with dotenv
 require("dotenv").config()
 
-function getImageOptions(lookup) {
-    return {
-        widths: [null],
-        urlPath: "/images/content/",
-        outputDir: "./_site/images/content",
-        formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpeg"] : ["webp", "jpeg"],
-        cacheDuration: "4w",
+async function imageShortcode(src, alt, cls, widths, sizes = "100vw") {
+    const originalFormat = src.includes("png") ? "png" : "jpg"
+    let metadata = await Image(src, {
+        widths: widths,
+        urlPath: "/images/built/",
+        outputDir: "./_site/images/built",
+        formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat],
         filenameFormat: function(id, src, width, format) {
-            return `${String(lookup)}.${format}`;
-        }
-    }
-}
-
-function fetchImageData(lookup, src) {
-    if (!src) {
-        throw new Error("src property required in `img` shortcode.")
-    }
-
-    eleventyImage(`https://chrisburnell.com/images/content/${src}`, getImageOptions(lookup)).then( function() {
-        // return nothing, even though this returns a promise
+            const extension = path.extname(src);
+            const name = path.basename(src, extension);
+            return `${name}-${width}.${format}`
+        },
     })
-}
 
-async function storeImage(src, alt = "") {
-    // We know where the images will be
-    let fakeUrl = `https://chrisburnell.com/images/content/${src}`
-    let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, 810, 300, getImageOptions(src))
-    let markup = eleventyImage.generateHTML(imgData, {
-        alt: alt,
+    let imageAttributes = {
+        class: cls,
+        alt,
+        sizes,
         loading: "lazy",
         decoding: "async",
-    }, {
-        whitespaceMode: "inline"
-    })
+    }
 
-    return markup
+    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes, {
+        whitespaceMode: "inline"
+    });
 }
 
 module.exports = function(config) {
-    let contentImages
-
-    config.on("beforeBuild", () => {
-        contentImages = new Set()
-    })
-
-    config.on("afterBuild", () => {
-        array = Array.from(contentImages)
-        console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} content images.`)
-        for (let contentImage of array) {
-            fetchImageData(contentImage.alt, contentImage.src)
-        }
-    })
-
-    config.addNunjucksAsyncShortcode("img", async function(src, alt) {
-            contentImages.add({
-                "src": src,
-                "alt": alt
-            })
-            return storeImage(src, alt)
-    })
+    config.addNunjucksAsyncShortcode("img", imageShortcode);
 }

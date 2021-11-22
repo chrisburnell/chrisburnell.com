@@ -76,7 +76,7 @@ button {
 
 .button--small {
     min-width: 5em;
-    padding: #{v(measure, tiny)} #{v(measure, small)};
+    @include v(padding-block, tiny);
     @include v(font-size, small);
     line-height: 1;
 }

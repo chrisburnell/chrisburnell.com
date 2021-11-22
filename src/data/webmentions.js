@@ -43,7 +43,5 @@ module.exports = async function() {
         })
     }
 
-    console.log(`Wrote ${rawWebmentions.children.length} webmentions to cache.`)
-
     return webmentions
 }

@@ -82,7 +82,7 @@
         </li>
     {% endif %}
     {% if show_reading_length %}
-        <li class=" [ reading-length ] ">
+        <li class=" [ reading-length ] " hidden>
             {% emoji '📚' %}
             <strong>{{ helpers.getReadingTime(content) }}</strong>
             <small>minute read</small>
