@@ -66,13 +66,13 @@ sitemap:
     <a class=" [ button ] " href="/archive/">Browse the Archive</a>
 </nav>
 
-{% if collections.futureRSVPs.length %}
+{% if collections.upcomingRSVPs.length %}
     <div class=" [ box ] [ owl--medium ] ">
         <h2 id="upcoming-rsvps">
             <a href="/rsvps/">Upcoming Events</a>
         </h2>
         <nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
-            {% for item in collections.futureRSVPs %}
+            {% for item in collections.upcomingRSVPs %}
                 {{ deckItem(item, global.now, collections.all, people, [], false) }}
             {% endfor %}
         </nav>

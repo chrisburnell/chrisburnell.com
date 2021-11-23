@@ -7,11 +7,7 @@ eleventyComputed:
 {%- from 'macros/deckItem.njk' import deckItem -%}
 
 <figure>
-    <picture>
-        <source type="image/avif" srcset="/images/content/rachel-and-i.avif" />
-        <source type="image/webp" srcset="/images/content/rachel-and-i.webp" />
-        <img src="/images/content/rachel-and-i.jpg" alt="Chris Burnell">
-    </picture>
+    {% img './images/content/rachel-and-i.jpg', 'Chris Burnell' %}
 </figure>
 
 Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.

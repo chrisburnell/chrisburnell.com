@@ -53,7 +53,7 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 <h2 id="a-better-way">There must be a better way!</h2>
 
 <figure>
-    <img src="/images/content/good-news-everyone.png" alt="Good news everyone!">
+    {% img './images/content/good-news-everyone.png', 'Good news everyone!' %}
     <figcaption>There is!</figcaption>
 </figure>
 

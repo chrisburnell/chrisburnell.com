@@ -3,9 +3,9 @@ const fs = require("fs")
 const site = require("./src/data/site.json")
 
 // Import Eleventy plugins
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 // Import transforms
 const parseTransform = require("./src/eleventy/transforms/parse.js")
@@ -31,9 +31,9 @@ const tagsBuilder = require("./src/eleventy/builders/tags.js")
 
 module.exports = function(config) {
     // Eleventy Plugins
-    config.addPlugin(syntaxHighlightPlugin)
     config.addPlugin(imageAvatarPlugin)
     config.addPlugin(imagePlugin)
+    config.addPlugin(syntaxHighlightPlugin)
 
     // Transforms
     config.addTransform("parse", parseTransform)

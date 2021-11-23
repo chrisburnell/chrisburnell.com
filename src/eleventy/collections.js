@@ -134,7 +134,7 @@ module.exports = {
                 }
             })
     },
-    futureRSVPs: collection => {
+    upcomingRSVPs: collection => {
         return collection
             .getFilteredByTag("post")
             .filter(collectionFilters.isPublished)
