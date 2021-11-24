@@ -200,13 +200,13 @@
         <div class=" [ wrap ] ">
             {% include 'author.njk' %}
             <ol class=" [ footer__navigation ] ">
-                {% for link in navigation %}
-                    {% if link.secondary %}
+                {%- for link in navigation -%}
+                    {%- if link.secondary -%}
                         <li>
                             <a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
                         </li>
-                    {% endif %}
-                {% endfor %}
+                    {%- endif -%}
+                {%- endfor -%}
                 <li>
                     <button id="color-scheme-toggle" class=" [ anchor ] [ requires-js  js-color-scheme-toggle ] ">
                         <span class=" [ js-color-scheme-status ] ">Enable dark mode</span>
@@ -217,17 +217,17 @@
                 <li>
                     <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
                 </li>
-                {% for item in socials %}
-                    {% if not item.hidden %}
+                {%- for item in socials -%}
+                    {%- if not item.hidden -%}
                         <li {% if not item.primary %} hidden{% endif %}>
-                            {% if item.url %}
+                            {%- if item.url -%}
                                 <a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ item.url }}" rel="me">{{ item.title }}</a>
-                            {% else %}
+                            {%- else -%}
                                 <data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ item.value }}" rel="me">{{ item.title }}</data>
-                            {% endif %}
+                            {%- endif -%}
                         </li>
-                    {% endif %}
-                {% endfor %}
+                    {%- endif -%}
+                {%- endfor -%}
             </ol>
             {% if speedlify[canonical] %}
                 <p>
@@ -241,7 +241,9 @@
 
     <div class=" [ notification ] " hidden aria-hidden="true"></div>
 
-    {% if not tags or (tags and not tags.includes('httpstatus')) -%}
+    {% if tags and tags.includes('httpstatus') %}
+        <script defer src="/js/simple.js?{{ pkg.version }}"></script>
+    {% else %}
         <script defer src="/js/main.js?{{ pkg.version }}"></script>
     {% endif %}
     {% if speedlify[canonical] %}
