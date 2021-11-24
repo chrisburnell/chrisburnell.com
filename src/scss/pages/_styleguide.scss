@@ -33,9 +33,10 @@
             flex: 1 0 33.333%;
         }
 
-        h3 {
-            @include v(font-size, default);
+        %collection-headings {
             margin-block-end: 0;
+            @include v(font-size, default);
+            text-transform: capitalize;
         }
     }
 }
