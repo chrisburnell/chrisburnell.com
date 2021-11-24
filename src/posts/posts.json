@@ -4,7 +4,5 @@
   "tags": [
     "post"
   ],
-  "show_webmentions": true,
-  "ads": true,
-  "monetization": true
+  "show_webmentions": true
 }

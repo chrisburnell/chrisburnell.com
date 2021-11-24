@@ -146,7 +146,7 @@
             <meta property="profile:username" content="{{ author.shortname }}">
         {% endif %}
 
-        {% if global.production and site.monetization and monetization %}
+        {% if global.production and site.monetization and monetization != false %}
             <meta name="monetization" content="{{ site.monetization }}">
         {% endif %}
     {% endif %}
@@ -241,8 +241,7 @@
 
     <div class=" [ notification ] " hidden aria-hidden="true"></div>
 
-    {% if page.inputPath.includes('httpstatus') -%}
-    {%- else %}
+    {% if not tags or (tags and not tags.includes('httpstatus')) -%}
         <script defer src="/js/main.js?{{ pkg.version }}"></script>
     {% endif %}
     {% if speedlify[canonical] %}
