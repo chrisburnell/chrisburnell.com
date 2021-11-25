@@ -202,9 +202,7 @@
             <ol class=" [ footer__navigation ] ">
                 {%- for link in navigation -%}
                     {%- if link.secondary -%}
-                        <li>
-                            <a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
-                        </li>
+                        <li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
                     {%- endif -%}
                 {%- endfor -%}
                 <li>

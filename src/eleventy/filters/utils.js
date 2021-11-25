@@ -37,5 +37,11 @@ module.exports = {
             return analyze.getSentiment(tokenizer.tokenize(content))
         }
         return 0
+    },
+    getRGB: (hex) => {
+        const COLOR = hex.replace("#", "").slice(0, 6);
+        return COLOR.match(/.{1,2}/g).map(function(value) {
+            return parseInt(value, 16);
+        })
     }
 }

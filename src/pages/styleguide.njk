@@ -11,14 +11,19 @@ twitter: true
 
 <h2>Colours</h2>
 
-<ul class="palette-list" id="colors">
-    {%- for name, color in palette -%}
-        <li class="background--{{ name }}">
-            <h3>{{ name }}</h3>
-            <div class="monospace">{{ color }}</div>
-        </li>
-    {%- endfor -%}
-</ul>
+<figure>
+    <ul class="palette-list" id="colors">
+        {%- for name, color in palette -%}
+            <li class="background--{{ name }}">
+                <h3>{{ name }}</h3>
+                <div class="monospace">{{ color }}</div>
+            </li>
+        {%- endfor -%}
+    </ul>
+    <figcaption>
+        <p>Available as a <a href="/palette.gpl">palette file</a> for your favourite image/pixel editor!</p>
+    </figcaption>
+</figure>
 
 
 <h2>Measures</h2>
