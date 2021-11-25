@@ -19,10 +19,6 @@
 
         a {
             color: inherit;
-
-            &:not(:hover):not(:focus):not(:active) {
-                @include v(text-decoration-color, raven);
-            }
         }
     }
 

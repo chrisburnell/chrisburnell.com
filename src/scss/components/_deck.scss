@@ -28,10 +28,6 @@
     }
 
     h3 {
-        a:not(:hover):not(:focus):not(:active) {
-            text-decoration-color: var(--color-raven);
-        }
-
         .emoji {
             display: inline-block;
             @include v(padding-inline-end, small);
