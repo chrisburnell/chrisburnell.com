@@ -1,44 +1,18 @@
-////
-/// Colors
-/// @group abstracts
-////
-
-$opacities: (
-    alpha: 0.9,
-    beta: 0.5,
-    gamma: 0.1,
-    delta: 0.05,
-);
-
-// Generate opacity-versions of each color in $all-colors
-$all-colors: $colors;
-@each $name, $color in $all-colors {
-    @each $friendly, $value in $opacities {
-        $all-colors: map-merge(
-            $all-colors,
-            (
-                #{$name}--#{$friendly}: rgba($color, $value)
-            )
-        );
-    }
-}
-
-$language-colors: (
-    css: #016fba,
-    html: #e54d26,
-    javascript: #f1c54c,
-    liquid: #7ab55c,
-    markdown: #4a525a,
-    nunjucks: #3d8137,
-    scss: #c6538c,
-);
-
-// Now that opacity-versions are generated, merge all colors into $colors
-$all-colors: map-multiple-merge(
-    $all-colors,
-    $language-colors,
-    (
-        transparent: rgba(0, 0, 0, 0%),
-        shadow: 0deg 0% 60%,
-    )
+$palette: (
+  lynx: #091217,
+  wolf: #20323d,
+  bowhead: #3e5c6d,
+  raven: #5f8aa6,
+  highland: #80b7d7,
+  coyote: #c0dbed,
+  bear: #ebf3f9,
+  maple: #eb2d36,
+  conifer: #3d8137,
+  aspen: #ffd700,
+  thunder: #060606,
+  mineshaft: #2b2b2b,
+  kaiser: #4f4f4f,
+  dove: #737373,
+  alto: #dddddd,
+  milou: #f9f9f9
 );
