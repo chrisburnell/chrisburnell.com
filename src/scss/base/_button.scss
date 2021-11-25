@@ -15,8 +15,9 @@ button {
     cursor: pointer;
 }
 
-.button,
-[type="button"] {
+button:not([class*="anchor"]),
+[type="button"],
+.button {
     @include font-family(default);
     @include non-selectable;
     @include transition(background-color);

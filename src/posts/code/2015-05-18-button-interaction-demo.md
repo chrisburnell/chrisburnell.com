@@ -9,7 +9,7 @@ codepen_slug: RPRwoo
 {% codepen codepen_slug, false, 300 %}
 
 ```html
-<button type="button">Hello!</button>
+<button>Hello!</button>
 ```
 
 ```scss

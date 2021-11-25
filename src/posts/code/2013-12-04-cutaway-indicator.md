@@ -9,7 +9,7 @@ codepen_slug: yIwzd
 {% codepen codepen_slug, false, 200 %}
 
 ```html
-<button type="button">Hover Me</button>
+<button>Hover Me</button>
 ```
 
 ```scss
