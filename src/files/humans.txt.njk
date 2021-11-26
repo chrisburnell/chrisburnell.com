@@ -4,9 +4,9 @@
 
     Name: {{ author.name }}
     Email: {{ author.email }}
-    GitHub: {{ author.urls.github }}
-    Mastodon: {{ author.urls.mastodon }}
-    Twitter: {{ author.urls.twitter }}
+    GitHub: https://github.com/{{ author.github }}
+    Mastodon: https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}
+    Twitter: https://twitter.com/{{ author.twitter }}
     PGP: {{ author.pgp }}
 
 /* SITE */

@@ -131,6 +131,6 @@ to produce markup like this:
 
 Thanks for following along—I hope you enjoyed this tutorial and found it helpful to your [Eleventy](https://www.11ty.dev/) project, whether it be in joining the [IndieWeb](https://indieweb.org/), adding/caching webmentions to your website, or adding a popular collection as I’ve shown above!
 
-I’m positive there are some optimisations that could be made here, and I’m more than happy to hear them! Let me know with a reply or even [send me a pull request]({{ author.urls.github_repo }}).
+I’m positive there are some optimisations that could be made here, and I’m more than happy to hear them! Let me know with a reply or even [send me a pull request](https://github.com/{{ author.github }}/{{ site.repository }}).
 
 *Thanks to [Dave Letorey](https://letorey.co.uk) for proofreading, and thanks to my Dad for editing and the title… Cache up, sucker!*

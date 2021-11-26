@@ -213,7 +213,7 @@ html {
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <nav class=" [ navigator ] ">
-    <a class="button" href="{{ author.urls.gist }}/ef5367e7dd263356c48a">gist.github.com →</a>
+    <a class="button" href="https://gist.github.com/{{ author.github }}/ef5367e7dd263356c48a">gist.github.com →</a>
 </nav>
 
 

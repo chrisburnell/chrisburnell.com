@@ -175,7 +175,7 @@
             {% for badge in badges -%}
                 {% if badges.length > 1 %}<li>{% endif %}
                     {% if badge.id %}
-                        <a href="{{ author.urls.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
+                        <a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
                     {% else %}
                         <a href="#_">{{ badge.title | default(badge) }}</a>
                     {% endif %}

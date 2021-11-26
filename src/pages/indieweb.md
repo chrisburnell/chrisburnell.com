@@ -13,11 +13,11 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 <dl>
     <dt><a href="/articles/">Articles</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the lede to <a href="https://twitter.com/{{ author.twitter }}" rel="external">Twitter</a> and <a href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><a href="/notes/">Notes</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="https://twitter.com/{{ author.twitter }}" rel="external">Twitter</a> and <a href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><a href="/bookmarks/">Bookmarks</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ site.author.urls.twitter }}" rel="external">Twitter</a> and <a href="{{ site.author.urls.mastodon }}" rel="external">Mastodon</a> then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="https://twitter.com/{{ author.twitter }}" rel="external">Twitter</a> and <a href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> then to this website.</dd>
     <dt><a href="/code/">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
     <dt><a href="/beer/">Beer</a></dt>

@@ -48,7 +48,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="{{ author.urls.github_repo }}" rel="external">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="https://github.com/{{ author.github }}/{{ site.repository }}" rel="external">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -91,4 +91,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 <h2 id="thats-it">And that’s it!</h2>
 
-Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "All Posts Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Twitter]({{ author.urls.twitter }} "My Twitter") or [send me an email](mailto:{{ author.email }})!
+Like I said before, I hope to be able to write about a number of topics in front-end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "All Posts Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Twitter](https://twitter.com/{{ author.twitter }} "My Twitter") or [send me an email](mailto:{{ author.email }})!
