@@ -4,6 +4,7 @@ eleventyComputed:
   tagline: "spark-line v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }}"
   lede: "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>.<br>There are {{ github.sparkline['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/spark-line'>on GitHub</a> and it was downloaded {{ npm.sparkline['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/spark-line'>on npm</a>."
 show_webmentions: true
+js: spark-line.js
 ---
 
 <figure>
@@ -109,28 +110,5 @@ Element attributes:
             justify-self: center;
         }
     </style>
-    <script>
-        let inputValues = document.querySelector("#input-values");
-        let inputCurve = document.querySelector("#input-curve");
-        let inputEndpoint = document.querySelector("#input-endpoint");
-        let inputLineWidth = document.querySelector("#input-line-width");
-        let inputColor = document.querySelector("#input-color");
-        let inputEndpointColor = document.querySelector("#input-endpoint-color");
-        let customSparkline = document.querySelector("#sparkline");
-        function processSparkline() {
-            // strip non-numbers from the input
-            inputValues.value = inputValues.value.replace(/(?![0-9])./gmi, "");
-            // set attributes of the custom sparkline
-            customSparkline.setAttribute("curve", inputCurve.checked);
-            customSparkline.setAttribute("endpoint", inputEndpoint.checked);
-            customSparkline.setAttribute("line-width", inputLineWidth.value);
-            customSparkline.setAttribute("color", inputColor.value);
-            customSparkline.setAttribute("endpoint-color", inputEndpointColor.value);
-            customSparkline.setAttribute("values", inputValues.value.split(""));
-        }
-        ;(function() {
-            processSparkline();
-        })();
-    </script>
     <noscript>Requires JavaScript, unfortunately.</noscript>
 </form>

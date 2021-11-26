@@ -1,6 +1,7 @@
 ---
 title: Listening
 lede: What have I been listening to?
+js: listening.js
 ---
 
 <p>Powered by <a href="https://last.fm">LastFM</a>. Check out my <a href="/music/">Music Reviews</a> for more musical data.</p>
@@ -8,77 +9,3 @@ lede: What have I been listening to?
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">LastFM profile</a>.</p>
 
 <nav id="listening" class=" [ shelf ] [ js-lastfm-feed ] "></nav>
-
-{% raw %}
-<script defer>
-(() => {
-	const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";
-	const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
-	const LASTFM_TEMPLATE = `
-<a href="{{ url }}">
-	<picture class=" [ cover ] ">
-		<img class=" [ u-photo ] " src="{{ image }}" alt="" role="presentation">
-	</picture>
-</a>
-<h3>
-	<a href="{{ url }}">
-		<cite class=" [ p-name  p-summary ] ">{{ name }}</cite>
-	</a>
-</h3>
-<div>
-	<a class=" [ h-cite ] " href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
-</div>
-<time class=" [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
-`;
-
-	fetch(LASTFM_URL)
-		.then(response => {
-			if (response.ok) {
-				return response;
-			}
-			else {
-				let error = new Error(response.statusText);
-				error.response = response;
-				throw error;
-			}
-		})
-		.then(response => response.json())
-		.then(data => {
-			// Success!
-			for (let track of data) {
-				let url = track["url"];
-				let trackName = track["name"];
-				let trackArtist = track["artist"]["name"];
-				let trackArtistURL = track["artist"]["url"];
-				let datetime = new Date();
-				let datetimeFriendly = "<em>listening now</em>";
-				if (track.hasOwnProperty("date")) {
-					datetime.setTime(Number(track["date"]["uts"]) * 1000);
-					datetimeFriendly = `<em>listened ${helpers.since(datetime)}</em>`;
-				}
-				let image = track["image"][3]["#text"];
-
-				datetime = datetime.toISOString();
-
-				let article = document.createElement("article");
-				article.className = "h-review";
-				article.innerHTML =
-					LASTFM_TEMPLATE
-						.replace(/{{ url }}/g, url)
-						.replace(/{{ name }}/g, trackName)
-						.replace(/{{ artist }}/g, trackArtist)
-						.replace(/{{ artistURL }}/g, trackArtistURL)
-						.replace(/{{ datetime }}/g, datetime)
-						.replace(/{{ datetimeFriendly }}/g, datetimeFriendly)
-						.replace(/{{ image }}/g, image);
-
-				LASTFM_FEED.appendChild(article);
-			}
-		})
-		.catch(error => {
-			// Fail!
-			console.error(`LastFM request status error: ${error}`);
-		});
-})();
-</script>
-{% endraw %}

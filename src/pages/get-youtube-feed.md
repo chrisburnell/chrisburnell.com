@@ -1,6 +1,7 @@
 ---
 title: Get YouTube Feed
 lede: Paste a YouTube channel URL and get the URL to the equivalent Atom Feed for use in your Microsub setup.
+js: get-youtube-feed.js
 ---
 
 Expects a URL in the following format:
@@ -11,5 +12,3 @@ Expects a URL in the following format:
     <input type="text" inputmode="url" id="url">
     <button type="submit">Submit</button>
 </form>
-
-<script defer src="/js/get-youtube-feed.js"></script>

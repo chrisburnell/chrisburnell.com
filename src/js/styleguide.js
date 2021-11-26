@@ -8,10 +8,14 @@
 	button.setAttribute("aria-expanded", "true");
 	list.setAttribute("aria-expanded", "true");
 
-	button.addEventListener("click", () => {
+	const togglePalette = () => {
 		const isExpanded = list.getAttribute("aria-expanded") === "true";
 
+		button.innerText = isExpanded ? "Show opacity variants" : "Hide opacity variants";
 		button.setAttribute("aria-expanded", isExpanded ? "false" : "true");
 		list.setAttribute("aria-expanded", isExpanded ? "false" : "true");
-	});
+	};
+
+	togglePalette();
+	button.addEventListener("click", togglePalette);
 })();

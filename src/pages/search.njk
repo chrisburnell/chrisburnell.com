@@ -1,6 +1,7 @@
 ---
 title: Search
 lede: Search for something!
+js: search.js
 ---
 
 <form id="search" class=" [ search ] " method="get" name="search" action="https://duckduckgo.com/" onsubmit="prepend()">
@@ -9,13 +10,3 @@ lede: Search for something!
 </form>
 
 <p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
-
-<script>
-	const input = document.querySelector("input");
-
-	input.value = "";
-
-	function prepend() {
-		input.value = "site:chrisburnell.com " + input.value;
-	}
-</script>
