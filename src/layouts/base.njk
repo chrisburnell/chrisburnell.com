@@ -33,7 +33,7 @@
 	{% set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }} {% endif %}no-js">
+<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,6 +90,9 @@
 	<meta http-equiv="cleartype" content="on">
 
 	<style>{%- include "../../css/main.css" -%}</style>
+	{% if css %}
+		<style>{%- include "../../css/" + css -%}</style>
+	{% endif %}
 	{% if speedlify[canonical] %}
 		<style>{%- include "../../css/speedlify-score.css" -%}</style>
 	{% endif %}

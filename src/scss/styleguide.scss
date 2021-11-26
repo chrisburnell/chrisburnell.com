@@ -4,7 +4,24 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
+@use "sass:color";
+@use "sass:math";
+
+/// REQUIRED — GENERATED, ABSTRACTS & VENDORS
+@import "generated/opacities";
+@import "generated/palette";
+@import "abstracts/collections";
+@import "abstracts/functions";
+@import "abstracts/maps";
+@import "abstracts/colors";
+@import "abstracts/tokens";
+@import "abstracts/mixins";
+@import "abstracts/config";
+@import "../../node_modules/@chrisburnell/bowhead/bowhead";
+@import "vendors/include-media";
+
 .palette-list {
+	@include v(background-color, milou);
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -30,7 +47,7 @@
 		}
 
 		@include media("screen", "above:large") {
-			flex: 1 0 33.333%;
+			flex: 1 0 20%;
 		}
 
 		%collection-headings {
@@ -39,11 +56,33 @@
 			text-transform: capitalize;
 		}
 	}
+
+	[type="checkbox"]:not(:checked) + & {
+		li {
+			@include media("screen", "above:large") {
+				flex: 1 0 33.333%;
+			}
+		}
+
+		.extra {
+			display: none;
+		}
+
+		[class*="hidden"] {
+			display: none;
+		}
+	}
 }
-@each $name, $color in $palette {
+@each $name, $color in $hsl-palette {
 	.background--#{$name} {
-		background-color: v(color, #{$name});
-		color: contrasting-color(v(color, $name, true));
+		background-color: v(color, $name);
+		color: contrasting-color(map-get($palette, $name));
+	}
+	@each $opacity, $value in $opacities {
+		.background--#{$name}--#{$opacity} {
+			background-color: v(color, #{$name}--#{$opacity});
+			color: contrasting-color(mix(map-get($palette, "milou"), rgba(map-get($palette, $name), $value)));
+		}
 	}
 }
 

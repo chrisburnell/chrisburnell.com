@@ -50,7 +50,7 @@
     "cross-env": "^7.0.3"
   },
   "scripts": {
-    "palette": "json-to-scss src/data/palette.json src/scss/abstracts/_palette.scss",
+    "palette": "json-to-scss src/data/opacities.json src/scss/generated/_opacities.scss; json-to-scss src/data/palette.json src/scss/generated/_palette.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
     "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",

@@ -3,14 +3,20 @@
 /// @group abstracts
 ////
 
-$opacities: (
-	alpha: 0.9,
-	beta: 0.5,
-	gamma: 0.1,
-	delta: 0.05,
-);
+// Process hex values defined in palette and convert into HSL values
+$hsl-palette: ();
+@each $name, $color in $palette {
+	$hsl-palette: map-merge($hsl-palette, (#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)}));
+}
 
-$all-colors: $palette;
+// Generate versions of each color in HSL Palette
+$full-palette: ();
+@each $name, $color in $palette {
+	$full-palette: map-merge($full-palette, (#{$name}: hsl(var(--hsl-#{$name}))));
+	@each $opacity, $value in $opacities {
+		$full-palette: map-merge($full-palette, (#{$name}--#{$opacity}: hsla(var(--hsl-#{$name}) / var(--opacity-#{$opacity}))));
+	}
+}
 
 $language-colors: (
 	css: #016fba,
@@ -22,19 +28,12 @@ $language-colors: (
 	scss: #c6538c,
 );
 
-// Generate opacity-versions of each color in $all-colors
-@each $name, $color in $all-colors {
-	@each $friendly, $value in $opacities {
-		$all-colors: map-merge($all-colors, (#{$name}--#{$friendly}: rgba($color, $value)));
-	}
-}
-
 // Now that opacity-versions are generated, merge all colors together
 $all-colors: map-multiple-merge(
-	$all-colors,
-	$language-colors,
+	$full-palette,
 	(
 		transparent: rgba(0, 0, 0, 0%),
 		shadow: 0deg 0% 60%,
-	)
+	),
+	$language-colors,
 );

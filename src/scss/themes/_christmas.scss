@@ -1,0 +1,24 @@
+////
+/// Christmas
+/// @group themes
+////
+
+$christmas-palette: (
+	lynx: #0b2716,
+	wolf: #144c2a,
+	bowhead: #208246,
+	raven: #2dc464,
+	highland: #68df8e,
+	coyote: #abefbc,
+	bear: #e6fbe9
+);
+
+@mixin theme-christmas() {
+	@each $name, $color in $christmas-palette {
+		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	}
+}
+
+.christmas {
+	@include theme-dark;
+}

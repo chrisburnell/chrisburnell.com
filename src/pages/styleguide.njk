@@ -1,23 +1,35 @@
 ---
 title: Styleguide
-lede: The style guide for <span class="canada">chrisburnell.com</span>.
+lede: The style guide for <span class="canada">this website</span>.
 caniuse: true
 codepen: true
 speakerdeck: true
 twitter: true
+css: styleguide.css
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
 
 <h2>Colours</h2>
 
-<figure>
+<div class="navigator">
+	<label for="palette-toggle" class="button">Toggle extras</label>
+</div>
+
+<figure class="owl">
+	<input type="checkbox" id="palette-toggle" role="checkbox" aria-checked="false" hidden>
 	<ul class="palette-list" id="colors">
 		{%- for name, color in palette -%}
 			<li class="background--{{ name }}">
-				<h3>{{ name }}</h3>
+				<h3>{{ name }} <span class="hidden-above--large">— Full</span> </h3>
 				<div class="monospace">{{ color }}</div>
 			</li>
+			{%- for opacity, value in opacities -%}
+				<li class="background--{{ name }}--{{ opacity }}  extra">
+					<h3><span class="hidden-above--large">{{ name }} —</span> {{ opacity }}</h3>
+					<div class="monospace">{{ value * 100 | round }}%</div>
+				</li>
+			{%- endfor -%}
 		{%- endfor -%}
 	</ul>
 	<figcaption>

@@ -21,8 +21,8 @@ ins {
 
 ins {
 	@include v(background-color, conifer);
-	color: contrasting-color(v(color, conifer, true));
-	@include v(font-size, default);
+	@include v(color, milou);
+	@include v(font-size);
 }
 
 del {
@@ -84,6 +84,19 @@ hr {
 	&:not([href]),
 	&[href]:not(:focus):not(:active) {
 		@include hidden;
+	}
+}
+// Breakpoint-conditional hidden
+@each $name, $measure in $breakpoints {
+	.hidden-below--#{$name} {
+		@include media("below:#{$name}") {
+			@include hidden;
+		}
+	}
+	.hidden-above--#{$name} {
+		@include media("above:#{$name}") {
+			@include hidden;
+		}
 	}
 }
 

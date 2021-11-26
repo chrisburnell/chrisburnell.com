@@ -4,10 +4,10 @@
 ////
 
 @mixin theme-dark() {
-	$swap-coyote: v(color, bowhead, true);
-	$swap-bowhead: v(color, coyote, true);
-	$swap-bear: v(color, lynx, true);
-	$swap-lynx: v(color, bear, true);
+	$swap-coyote: v(color, bowhead);
+	$swap-bowhead: v(color, coyote);
+	$swap-bear: v(color, lynx);
+	$swap-lynx: v(color, bear);
 
 	--color-coyote: #{$swap-coyote};
 	--color-bowhead: #{$swap-bowhead};

@@ -1,10 +1,12 @@
+@use "sass:color";
 @use "sass:math";
 
-/// REQUIRED — ABSTRACTS & VENDORS
+/// REQUIRED — GENERATED, ABSTRACTS & VENDORS
+@import "generated/opacities";
+@import "generated/palette";
 @import "abstracts/collections";
 @import "abstracts/functions";
 @import "abstracts/maps";
-@import "abstracts/palette";
 @import "abstracts/colors";
 @import "abstracts/tokens";
 @import "abstracts/mixins";
