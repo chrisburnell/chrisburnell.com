@@ -1,9 +1,12 @@
 ---
-draft: true
 title: CV
 eleventyComputed:
   lede: "{{ author.role }}"
   tagline: "{{ author.name }}"
+sitemap:
+  exclude: true
+ads: false
+monetizaton: false
 ---
 
 ## Biography
