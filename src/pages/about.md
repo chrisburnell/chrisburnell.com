@@ -40,3 +40,11 @@ I also serve (what I hope are unobtrusive) ads, currently coming through from [C
     <dt>Mastdon:</dt>
     <dd><a class=" [ canada ] " href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
 </dl>
+
+## Support
+
+On the peculiar off-chance you really like the work that I do, you can help support me by sponsoring me [on GitHub](https://github.com/sponsors/{{ author.github }}):
+
+<figure>
+    <iframe src="https://github.com/sponsors/{{ author.github }}/card" title="Sponsor {{ author.github }}" height="225" width="360" style="border: 0;"></iframe>
+</figure>
