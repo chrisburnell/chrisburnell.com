@@ -6,4 +6,6 @@ bookmark_of:
   title: "Dynamic, Date-Based Color with JavaScript, HSL, and CSS Variables | Rob …"
   url: https://v6.robweychert.com/blog/2019/12/dynamic-color-javascript-hsl/
 posting_method: https://omnibear.com
+tags:
+  - color
 ---

@@ -9,5 +9,6 @@ bookmark_of:
     - title: "Dave Letorey"
       link: https://letorey.co.uk
 posting_method: https://omnibear.com
+tags:
+  - color
 ---
-

@@ -6,4 +6,6 @@ bookmark_of:
   title: "Accessible Color Spaces - Color Contrast Tool | Kevin Gutowski"
   url: https://kevingutowski.github.io/color.html
 posting_method: https://omnibear.com
+tags:
+  - color
 ---
