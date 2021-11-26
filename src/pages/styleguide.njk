@@ -6,6 +6,7 @@ codepen: true
 speakerdeck: true
 twitter: true
 css: styleguide.css
+js: styleguide.js
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
@@ -13,12 +14,12 @@ css: styleguide.css
 <h2>Colours</h2>
 
 <div class="navigator">
-	<label for="palette-toggle" class="button">Toggle extras</label>
+	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false" hidden>
+		Toggle extras
+	</button>
 </div>
-
-<figure class="owl">
-	<input type="checkbox" id="palette-toggle" role="checkbox" aria-checked="false" hidden>
-	<ul class="palette-list" id="colors">
+<figure>
+	<ul id="palette-list" aria-expanded="false" aria-labelledby="palette-toggler" class="palette-list" id="colors">
 		{%- for name, color in palette -%}
 			<li class="background--{{ name }}">
 				<h3>{{ name }} <span class="hidden-above--large">— Full</span> </h3>
@@ -26,7 +27,7 @@ css: styleguide.css
 			</li>
 			{%- for opacity, value in opacities -%}
 				<li class="background--{{ name }}--{{ opacity }}  extra">
-					<h3><span class="hidden-above--large">{{ name }} —</span> {{ opacity }}</h3>
+					<h3><span class="hidden-above--large">{{ name | lower }} —</span> {{ opacity }}</h3>
 					<div class="monospace">{{ value * 100 | round }}%</div>
 				</li>
 			{%- endfor -%}

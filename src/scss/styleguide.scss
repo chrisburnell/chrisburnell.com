@@ -57,17 +57,14 @@
 		}
 	}
 
-	[type="checkbox"]:not(:checked) + & {
+	&[aria-expanded="false"] {
 		li {
 			@include media("screen", "above:large") {
 				flex: 1 0 33.333%;
 			}
 		}
 
-		.extra {
-			display: none;
-		}
-
+		.extra,
 		[class*="hidden"] {
 			display: none;
 		}
