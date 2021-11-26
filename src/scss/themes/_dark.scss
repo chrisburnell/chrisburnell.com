@@ -4,86 +4,78 @@
 ////
 
 @mixin theme-dark() {
-    $swap-coyote: v(color, bowhead, true);
-    $swap-bowhead: v(color, coyote, true);
-    $swap-bear: v(color, lynx, true);
-    $swap-lynx: v(color, bear, true);
+	$swap-coyote: v(color, bowhead, true);
+	$swap-bowhead: v(color, coyote, true);
+	$swap-bear: v(color, lynx, true);
+	$swap-lynx: v(color, bear, true);
 
-    --color-coyote: #{$swap-coyote};
-    --color-bowhead: #{$swap-bowhead};
-    --color-bear: #{$swap-bear};
-    --color-lynx: #{$swap-lynx};
+	--color-coyote: #{$swap-coyote};
+	--color-bowhead: #{$swap-bowhead};
+	--color-bear: #{$swap-bear};
+	--color-lynx: #{$swap-lynx};
 
-    --color-shadow: 0deg 0% 40%;
+	--color-shadow: 0deg 0% 40%;
 
-    scrollbar-color: v(color, raven) v(color, mineshaft);
+	scrollbar-color: v(color, raven) v(color, mineshaft);
 
-    .header,
-    .main {
-        color: var(--color-milou);
-    }
+	.header,
+	.main {
+		color: var(--color-milou);
+	}
 
-    .main {
-        background-color: var(--color-mineshaft);
-    }
+	.main {
+		background-color: var(--color-mineshaft);
+	}
 
-    .footer {
-        background-image: linear-gradient(to bottom, var(--color-thunder--gamma), var(--color-thunder--gamma));
-    }
+	.footer {
+		background-image: linear-gradient(to bottom, var(--color-thunder--gamma), var(--color-thunder--gamma));
+	}
 
-    h1 {
-        text-shadow: 0.025em -0.025em 0 var(--color-mineshaft), 0.025em -0.0125em 0 var(--color-mineshaft), 0.025em 0.025em 0 var(--color-mineshaft), 0 0.025em 0 var(--color-mineshaft), -0.025em 0.025em 0 var(--color-mineshaft), -0.025em -0.0125em 0 var(--color-mineshaft), -0.025em -0.025em 0 var(--color-mineshaft);
-    }
+	h1 {
+		text-shadow: 0.025em -0.025em 0 var(--color-mineshaft), 0.025em -0.0125em 0 var(--color-mineshaft), 0.025em 0.025em 0 var(--color-mineshaft), 0 0.025em 0 var(--color-mineshaft), -0.025em 0.025em 0 var(--color-mineshaft), -0.025em -0.0125em 0 var(--color-mineshaft), -0.025em -0.025em 0 var(--color-mineshaft);
+	}
 
-    a,
-    .anchor {
-        @include v(text-decoration-color, kaiser);
-    }
+	a,
+	.anchor {
+		@include v(text-decoration-color, kaiser);
+	}
 
-    h2 a {
-        color: inherit !important;
-        @include v(text-decoration-color, transparent);
-    }
+	h2 a {
+		color: inherit !important;
+		@include v(text-decoration-color, transparent);
+	}
 
-    .rating {
-        &::before {
-            @include v(color, kaiser);
-        }
+	.rating {
+		&::before {
+			@include v(color, kaiser);
+		}
 
-        &::after {
-            @include v(color, alto);
-        }
-    }
+		&::after {
+			@include v(color, alto);
+		}
+	}
 
-    pre[class*="language-"] {
-        @include v(background-color, mineshaft);
-        background-image: linear-gradient(
-            to bottom,
-            transparent 0,
-            transparent calc(var(--measure-gap) - var(--measure-border-thin)),
-            var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)),
-            var(--color-raven--beta) var(--measure-gap),
-            var(--color-thunder--gamma) var(--measure-gap),
-            var(--color-thunder--gamma) 100%
-        );
+	pre[class*="language-"] {
+		@include v(background-color, mineshaft);
+		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-thunder--gamma) var(--measure-gap), var(--color-thunder--gamma) 100%);
 
-        code {
-            background-color: transparent;
-        }
-    }
+		code {
+			background-color: transparent;
+		}
+	}
 }
 
 @include media("dark") {
-    html {
-        --color-scheme: "dark";
-    }
+	html {
+		--color-scheme: "dark";
+	}
 
-    html:not([data-user-color-scheme]) {
-        @include theme-dark;
-    }
+	html:not([data-user-color-scheme]) {
+		@include theme-dark;
+	}
 }
 
 [data-user-color-scheme="dark"],
 .dark {
-    @include theme-dark;
+	@include theme-dark;
 }

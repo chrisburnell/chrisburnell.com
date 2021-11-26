@@ -16,67 +16,67 @@ eleventyComputed:
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
-    <h1 id="title" class=" [ title ] ">
-        <span class=" [ p-name ] ">{{ title | safe }}</span>
-    </h1>
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
+	</h1>
 
-    <div class=" [ details ] ">
-        <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
-        {% sparkline collection, first_year, latest_year %}
-    </div>
+	<div class=" [ details ] ">
+		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+		{% sparkline collection, first_year, latest_year %}
+	</div>
 
-    <div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] ">
-        {% if categoryIntroductions[category.title] %}
-            {{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
-        {% endif %}
-        {% if collection[0].data.mf_root == 'review' %}
-            <div class=" [ box ] ">
-                You can sort these {{ category.properPlural }}:
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
-                <button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
-                <noscript>Although, you will need to enable JavaScript.</noscript>
-            </div>
-            <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
-                {% for item in collection %}
-                    {{ shelfItem(item, global.now, people) }}
-                {% endfor %}
-            </nav>
-        {% else %}
-            {%- set year = latest_year -%}
-            <h2 id="{{ year }}">
-                {{ year }}
-                <small>({{ collection | getCountByYear(year) }})</small>
-                <a href="#{{ year }}" class=" [ fragment-anchor ] ">
-                    <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                        <use href="/images/sprites.svg#svg--link"></use>
-                    </svg>
-                </a>
-            </h2>
-            <nav class=" [ deck ] ">
-                {% for item in collection %}
-                    {% if item.date.getFullYear() != year %}
-                        {%- set year = item.date.getFullYear() -%}
-                        </nav>
-                        <h2 id="{{ year }}">
-                            {{ year }}
-                            <small>({{ collection | getCountByYear(year) }})</small>
-                            <a href="#{{ year }}" class=" [ fragment-anchor ] ">
-                                <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                                    <use href="/images/sprites.svg#svg--link"></use>
-                                </svg>
-                            </a>
-                        </h2>
-                        <nav class=" [ deck ] ">
-                    {% endif %}
-                    {{ deckItem(item, global.now, collections.all, people, webmentions) }}
-                {% endfor %}
-            </nav>
-        {% endif %}
-    </div>
+	<div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] ">
+		{% if categoryIntroductions[category.title] %}
+			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
+		{% endif %}
+		{% if collection[0].data.mf_root == 'review' %}
+			<div class=" [ box ] ">
+				You can sort these {{ category.properPlural }}:
+				<button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
+				<button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
+				<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
+				<button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
+				<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
+				<noscript>Although, you will need to enable JavaScript.</noscript>
+			</div>
+			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
+				{% for item in collection %}
+					{{ shelfItem(item, global.now, people) }}
+				{% endfor %}
+			</nav>
+		{% else %}
+			{%- set year = latest_year -%}
+			<h2 id="{{ year }}">
+				{{ year }}
+				<small>({{ collection | getCountByYear(year) }})</small>
+				<a href="#{{ year }}" class=" [ fragment-anchor ] ">
+					<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+						<use href="/images/sprites.svg#svg--link"></use>
+					</svg>
+				</a>
+			</h2>
+			<nav class=" [ deck ] ">
+				{% for item in collection %}
+					{% if item.date.getFullYear() != year %}
+						{%- set year = item.date.getFullYear() -%}
+						</nav>
+						<h2 id="{{ year }}">
+							{{ year }}
+							<small>({{ collection | getCountByYear(year) }})</small>
+							<a href="#{{ year }}" class=" [ fragment-anchor ] ">
+								<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+									<use href="/images/sprites.svg#svg--link"></use>
+								</svg>
+							</a>
+						</h2>
+						<nav class=" [ deck ] ">
+					{% endif %}
+					{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+				{% endfor %}
+			</nav>
+		{% endif %}
+	</div>
 
-    {% include 'meta-archive.njk' %}
+	{% include 'meta-archive.njk' %}
 
 </div>

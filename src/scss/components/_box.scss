@@ -4,23 +4,23 @@
 ////
 
 .box {
-    @include v(background-color, thunder--delta);
-    @include v(padding, medium);
-    border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
-    border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
-    background-clip: padding-box;
+	@include v(background-color, thunder--delta);
+	@include v(padding, medium);
+	border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
+	border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
+	background-clip: padding-box;
 
-    a {
-        @include v(color, bowhead);
-    }
+	a {
+		@include v(color, bowhead);
+	}
 }
 
 .box--error {
-    @include v(background-color, maple--delta);
-    border-block-start-color: var(--color-maple--beta);
+	@include v(background-color, maple--delta);
+	border-block-start-color: var(--color-maple--beta);
 }
 
 .box--warning {
-    @include v(background-color, aspen--delta);
-    border-block-start-color: var(--color-aspen--beta);
+	@include v(background-color, aspen--delta);
+	border-block-start-color: var(--color-aspen--beta);
 }

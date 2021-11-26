@@ -4,25 +4,25 @@
 ////
 
 .logo {
-    @include v(fill, raven);
-    width:  4rem;
-    height: 4rem;
-    display: inline-block;
+	@include v(fill, raven);
+	width: 4rem;
+	height: 4rem;
+	display: inline-block;
 
-    svg {
-        @include transition(transform);
-        max-height: 100%;
-        object-fit: contain;
-    }
+	svg {
+		@include transition(transform);
+		max-height: 100%;
+		object-fit: contain;
+	}
 
-    &:hover,
-    &:focus,
-    &:active {
-        background: none;
-        outline: none;
+	&:hover,
+	&:focus,
+	&:active {
+		background: none;
+		outline: none;
 
-        svg {
-            transform: scale(1.1) rotate(-6deg);
-        }
-    }
+		svg {
+			transform: scale(1.1) rotate(-6deg);
+		}
+	}
 }

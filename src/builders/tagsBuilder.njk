@@ -15,22 +15,22 @@ eleventyComputed:
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
-    <h1 id="title" class=" [ title ] ">
-        <span class=" [ p-name ] ">{{ title | safe }}</span>
-    </h1>
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
+	</h1>
 
-    <div class=" [ details ] ">
-        <p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
-    </div>
+	<div class=" [ details ] ">
+		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
+	</div>
 
-    <div class=" [ content__body ] ">
-        <nav class=" [ deck ] [ h-feed ] ">
-            {% for item in collection %}
-                {{ deckItem(item, global.now, collections.all, people, webmentions) }}
-            {% endfor %}
-        </nav>
-    </div>
+	<div class=" [ content__body ] ">
+		<nav class=" [ deck ] [ h-feed ] ">
+			{% for item in collection %}
+				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+			{% endfor %}
+		</nav>
+	</div>
 
-    {% include 'meta-archive.njk' %}
+	{% include 'meta-archive.njk' %}
 
 </div>

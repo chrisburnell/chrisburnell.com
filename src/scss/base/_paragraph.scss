@@ -4,23 +4,23 @@
 ////
 
 p {
-    @include break-words;
-    margin: 0;
+	@include break-words;
+	margin: 0;
 
-    &:empty {
-        display: none;
-        visibility: hidden;
-    }
+	&:empty {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 .columns {
-    @include media("screen", "above:small", "below:medium") {
-        column-count: var(--max-columns);
-        @include v(column-gap, medium);
-    }
+	@include media("screen", "above:small", "below:medium") {
+		column-count: var(--max-columns);
+		@include v(column-gap, medium);
+	}
 
-    @include media("screen", "above:large") {
-        column-count: var(--max-columns);
-        @include v(column-gap, medium);
-    }
+	@include media("screen", "above:large") {
+		column-count: var(--max-columns);
+		@include v(column-gap, medium);
+	}
 }

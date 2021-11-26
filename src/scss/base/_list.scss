@@ -4,153 +4,153 @@
 ////
 
 :is(ol, ul) {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 :is(dl, ol, ul):not([class]),
 .default-list {
-    // Space out lists nested in a list
-    & & {
-        @include v(margin-block-start, medium);
-    }
+	// Space out lists nested in a list
+	& & {
+		@include v(margin-block-start, medium);
+	}
 }
 :is(ol, ul):not([class]),
 .default-list {
-    li {
-        @include v(padding-inline-start, large);
-        position: relative;
+	li {
+		@include v(padding-inline-start, large);
+		position: relative;
 
-        &:not(:last-child) {
-            @include v(margin-block-end, small);
-        }
+		&:not(:last-child) {
+			@include v(margin-block-end, small);
+		}
 
-        &::before {
-            @include absolute(top-left);
-            @include v(font-weight, bold);
-        }
-    }
+		&::before {
+			@include absolute(top-left);
+			@include v(font-weight, bold);
+		}
+	}
 }
 ol:not([class]),
 ol.default-list {
-    // This class *requires* `default-list` to work
-    &:not([class*="continued-list"]) {
-        & > li:first-child {
-            counter-reset: ordered-list;
-        }
-    }
+	// This class *requires* `default-list` to work
+	&:not([class*="continued-list"]) {
+		& > li:first-child {
+			counter-reset: ordered-list;
+		}
+	}
 
-    @for $i from 1 through 10 {
-        &[start="#{$i}"] {
-            counter-increment: ordered-list #{$i - 1} !important;
-        }
-    }
+	@for $i from 1 through 10 {
+		&[start="#{$i}"] {
+			counter-increment: ordered-list #{$i - 1} !important;
+		}
+	}
 
-    & > li {
-        counter-increment: ordered-list;
+	& > li {
+		counter-increment: ordered-list;
 
-        &::before {
-            @include tabular-lining-numerals;
-            content: counters(ordered-list, "·", decimal-leading-zero);
-        }
-    }
+		&::before {
+			@include tabular-lining-numerals;
+			content: counters(ordered-list, "·", decimal-leading-zero);
+		}
+	}
 
-    &[type="a"] li::before,
-    &.lower-alpha li::before {
-        content: counters(ordered-list, "·", lower-alpha);
-    }
+	&[type="a"] li::before,
+	&.lower-alpha li::before {
+		content: counters(ordered-list, "·", lower-alpha);
+	}
 
-    &[type="A"] li::before,
-    &.upper-alpha li::before {
-        content: counters(ordered-list, "·", upper-alpha);
-    }
+	&[type="A"] li::before,
+	&.upper-alpha li::before {
+		content: counters(ordered-list, "·", upper-alpha);
+	}
 
-    &[type="i"] li::before,
-    &.lower-roman li::before {
-        content: counters(ordered-list, "·", lower-roman);
-    }
+	&[type="i"] li::before,
+	&.lower-roman li::before {
+		content: counters(ordered-list, "·", lower-roman);
+	}
 
-    &[type="I"] li::before,
-    &.upper-roman li::before {
-        content: counters(ordered-list, "·", upper-roman);
-    }
+	&[type="I"] li::before,
+	&.upper-roman li::before {
+		content: counters(ordered-list, "·", upper-roman);
+	}
 
-    &[reversed] {
-        display: flex;
-        flex-direction: column-reverse;
+	&[reversed] {
+		display: flex;
+		flex-direction: column-reverse;
 
-        // fix spacing based on reverse ordering
-        & > li {
-            &:first-child {
-                margin-block-end: 0;
-            }
+		// fix spacing based on reverse ordering
+		& > li {
+			&:first-child {
+				margin-block-end: 0;
+			}
 
-            &:not(:first-child) {
-                @include v(margin-block-end, small);
-            }
-        }
-    }
+			&:not(:first-child) {
+				@include v(margin-block-end, small);
+			}
+		}
+	}
 
-    // Nested Ordered List Item
-    & & li {
-        padding-inline-start: calc(var(--measure-large) + var(--measure-medium));
-    }
+	// Nested Ordered List Item
+	& & li {
+		padding-inline-start: calc(var(--measure-large) + var(--measure-medium));
+	}
 }
 [counter-reset] {
-    counter-reset: ordered-list;
+	counter-reset: ordered-list;
 }
 ul:not([class]) li::before,
 ul.default-list li::before {
-    // BULLET
-    content: "•";
-    font-size: 1.5em;
-    line-height: 1;
+	// BULLET
+	content: "•";
+	font-size: 1.5em;
+	line-height: 1;
 }
 dl {
-    display: grid;
-    grid-template-columns: 100%;
-    @include v(column-gap, medium);
-    @include v(row-gap, large);
-    margin-block-start: 0;
-    overflow: hidden;
+	display: grid;
+	grid-template-columns: 100%;
+	@include v(column-gap, medium);
+	@include v(row-gap, large);
+	margin-block-start: 0;
+	overflow: hidden;
 
-    @include media("screen", "above:small") {
-        grid-template-columns: minmax(min-content, 33.33%) 1fr;
-        // grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
-    }
+	@include media("screen", "above:small") {
+		grid-template-columns: minmax(min-content, 33.33%) 1fr;
+		// grid-template-columns: repeat(auto-fill, max-content 1fr); // broken in Firefox :(
+	}
 
-    @include media("screen", "above:700px", "below:medium") {
-        grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
-    }
+	@include media("screen", "above:700px", "below:medium") {
+		grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
+	}
 
-    @include media("screen", "above:985px") {
-        grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
-    }
+	@include media("screen", "above:985px") {
+		grid-template-columns: repeat(2, minmax(min-content, 16.67%) 1fr);
+	}
 
-    &.full {
-        @include media("screen", "above:small") {
-            grid-template-columns: max-content 1fr !important;
-        }
-    }
+	&.full {
+		@include media("screen", "above:small") {
+			grid-template-columns: max-content 1fr !important;
+		}
+	}
 
-    &.compact {
-        row-gap: 0.5rem;
-    }
+	&.compact {
+		row-gap: 0.5rem;
+	}
 }
 dt {
-    @include v(font-weight, bold);
+	@include v(font-weight, bold);
 
-    h2 {
-        @include v(line-height);
-    }
+	h2 {
+		@include v(line-height);
+	}
 }
 dd {
-    margin: 0;
-    vertical-align: top;
+	margin: 0;
+	vertical-align: top;
 
-    :not([class*="full"]) > &:only-of-type {
-        @include media("screen", "above:medium") {
-            grid-column: 2 / span 3;
-        }
-    }
+	:not([class*="full"]) > &:only-of-type {
+		@include media("screen", "above:medium") {
+			grid-column: 2 / span 3;
+		}
+	}
 }

@@ -1,70 +1,70 @@
 {% if show_webmentions %}
-    <div id="webmentions" class=" [ webmentions ] [ box ] ">
-        <!-- </textarea> -->
-        <!-- '"´ -->
-        <form id="webmentions-form" class=" [ webmentions__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
-            <label class=" [ webmentions__label ] " for="webmention-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
-            <input id="webmention-source" class=" [ webmentions__input ] " type="url" inputmode="url" name="source" size="1" aria-required="true" required>
-            <input type="hidden" name="target" value="{{ canonical }}">
-            <input class=" [ button ] [ webmentions__submit ] " type="submit" value="Send">
-        </form>
-        <div class=" [ webmentions__responses ] ">
-            {%- set reactions = webmentions | getWebmentions(page.url, ["like-of", "repost-of", "bookmark-of"]) -%}
-            {%- set replies = webmentions | getWebmentions(page.url, ["mention-of", "in-reply-to"]) -%}
-            {% if reactions.length or replies.length %}
-                <h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
-                <dl class=" [ webmentions__list ] [ full ] ">
-                    {% if reactions.length %}
-                        <dt class=" [ hidden ] ">Reactions:</dt>
-                        <dd id="reactions" class=" [ webmentions__list__reactions ] ">
-                            <ol class=" [ reactions ] ">
-                                {% for webmention in reactions %}
-                                    {%- set authorName = webmention.author.name | default('Anonymous') -%}
-                                    {%- set authorUrl = webmention.author.url -%}
-                                    {%- set webmentionDate = published | default(webmention['wm-received']) -%}
-                                    <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
-                                        <a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ webmention.url }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
-                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
-                                            <span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
-                                            <data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ authorUrl }}" hidden></data>
-                                        </a>
-                                        <span class=" [ webmentions__response__type ] " aria-hidden="true"></span>
-                                        <time class=" [ dt-published ] " datetime="{{ webmentionDate | rfcDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
-                                    </li>
-                                {% endfor %}
-                            </ol>
-                        </dd>
-                    {% endif %}
-                    {% if replies.length %}
-                        <dt>Replies:</dt>
-                        <dd id="replies" class=" [ webmentions__list__replies ] ">
-                            <ol class=" [ replies ] ">
-                                {% for webmention in replies %}
-                                    {%- set authorName = webmention.author.name | default('Anonymous') -%}
-                                    {%- set authorUrl = webmention.author.url -%}
-                                    {%- set authorUrlHost = authorUrl | getHost -%}
-                                    {%- set webmentionDate = webmention.published | default(webmention['wm-received']) -%}
-                                    {%- set sentiment = webmention.content.text | getSentimentValue -%}
-                                    <li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}"{% if sentiment < -0.3 %} data-sentiment="{{ sentiment }}"{% endif %} data-type="{{ webmention['wm-property'] }}">
-                                        <div class=" [ webmentions__response__avatar ] ">
-                                            {% avatar webmention.author.photo, webmention.url, webmention.author.url %}
-                                        </div>
-                                        <div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | fixUrl | safe }}</div>
-                                        <div class=" [ webmentions__response__meta ] ">
-                                            <small>by</small>
-                                            <a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external">
-                                                <span class=" [ p-name ] ">{{ authorName }}</span>
-                                            </a>
-                                            <small>on</small>
-                                            <a class=" [ u-url  u-{{ webmention['wm-property'] }} ] " href="{{ webmention.url }}" rel="external" title="Read externally"><time class=" [ webmentions__response__time ] " datetime="{{ webmentionDate | rfcDate }}">{{ webmentionDate | friendlyDate }}</time></a>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                            </ol>
-                        </dd>
-                    {% endif %}
-                </dl>
-            {% endif %}
-        </div>
-    </div>
+	<div id="webmentions" class=" [ webmentions ] [ box ] ">
+		<!-- </textarea> -->
+		<!-- '"´ -->
+		<form id="webmentions-form" class=" [ webmentions__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
+			<label class=" [ webmentions__label ] " for="webmention-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
+			<input id="webmention-source" class=" [ webmentions__input ] " type="url" inputmode="url" name="source" size="1" aria-required="true" required>
+			<input type="hidden" name="target" value="{{ canonical }}">
+			<input class=" [ button ] [ webmentions__submit ] " type="submit" value="Send">
+		</form>
+		<div class=" [ webmentions__responses ] ">
+			{%- set reactions = webmentions | getWebmentions(page.url, ["like-of", "repost-of", "bookmark-of"]) -%}
+			{%- set replies = webmentions | getWebmentions(page.url, ["mention-of", "in-reply-to"]) -%}
+			{% if reactions.length or replies.length %}
+				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
+				<dl class=" [ webmentions__list ] [ full ] ">
+					{% if reactions.length %}
+						<dt class=" [ hidden ] ">Reactions:</dt>
+						<dd id="reactions" class=" [ webmentions__list__reactions ] ">
+							<ol class=" [ reactions ] ">
+								{% for webmention in reactions %}
+									{%- set authorName = webmention.author.name | default('Anonymous') -%}
+									{%- set authorUrl = webmention.author.url -%}
+									{%- set webmentionDate = published | default(webmention['wm-received']) -%}
+									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
+										<a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ webmention.url }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
+											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
+											<span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
+											<data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ authorUrl }}" hidden></data>
+										</a>
+										<span class=" [ webmentions__response__type ] " aria-hidden="true"></span>
+										<time class=" [ dt-published ] " datetime="{{ webmentionDate | rfcDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
+									</li>
+								{% endfor %}
+							</ol>
+						</dd>
+					{% endif %}
+					{% if replies.length %}
+						<dt>Replies:</dt>
+						<dd id="replies" class=" [ webmentions__list__replies ] ">
+							<ol class=" [ replies ] ">
+								{% for webmention in replies %}
+									{%- set authorName = webmention.author.name | default('Anonymous') -%}
+									{%- set authorUrl = webmention.author.url -%}
+									{%- set authorUrlHost = authorUrl | getHost -%}
+									{%- set webmentionDate = webmention.published | default(webmention['wm-received']) -%}
+									{%- set sentiment = webmention.content.text | getSentimentValue -%}
+									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}"{% if sentiment < -0.3 %} data-sentiment="{{ sentiment }}"{% endif %} data-type="{{ webmention['wm-property'] }}">
+										<div class=" [ webmentions__response__avatar ] ">
+											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
+										</div>
+										<div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | fixUrl | safe }}</div>
+										<div class=" [ webmentions__response__meta ] ">
+											<small>by</small>
+											<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external">
+												<span class=" [ p-name ] ">{{ authorName }}</span>
+											</a>
+											<small>on</small>
+											<a class=" [ u-url  u-{{ webmention['wm-property'] }} ] " href="{{ webmention.url }}" rel="external" title="Read externally"><time class=" [ webmentions__response__time ] " datetime="{{ webmentionDate | rfcDate }}">{{ webmentionDate | friendlyDate }}</time></a>
+										</div>
+									</li>
+								{% endfor %}
+							</ol>
+						</dd>
+					{% endif %}
+				</dl>
+			{% endif %}
+		</div>
+	</div>
 {% endif %}

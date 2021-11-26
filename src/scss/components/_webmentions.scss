@@ -4,175 +4,175 @@
 ////
 
 .webmentions {
-    @include owl(medium);
-    @include v(margin-block-start, gigantic);
+	@include owl(medium);
+	@include v(margin-block-start, gigantic);
 }
 
 .webmentions__thread {
-    @include v(margin-block-start, medium);
+	@include v(margin-block-start, medium);
 }
 
 .webmentions__form {
-    @include v(max-width, breakpoint-small);
-    grid-template-columns: 1fr min-content;
-    margin-inline: auto;
+	@include v(max-width, breakpoint-small);
+	grid-template-columns: 1fr min-content;
+	margin-inline: auto;
 }
 
 .webmentions__label {
-    grid-column: 1 / span 2;
-    @include v(margin-block-end, small);
+	grid-column: 1 / span 2;
+	@include v(margin-block-end, small);
 
-    @include media("below:small") {
-        @include v(margin-block-end, medium);
-    }
+	@include media("below:small") {
+		@include v(margin-block-end, medium);
+	}
 }
 
 .webmentions__submit {
-    min-width: 5em;
-    margin-block-start: 0;
+	min-width: 5em;
+	margin-block-start: 0;
 
-    @include media("below:small") {
-        @include v(font-size, small);
-    }
-    @include media("above:medium", "below:large") {
-        @include v(font-size, small);
-    }
+	@include media("below:small") {
+		@include v(font-size, small);
+	}
+	@include media("above:medium", "below:large") {
+		@include v(font-size, small);
+	}
 }
 
 .webmentions__list {
-    @include media("screen", "above:medium") {
-        grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
-        @include v(row-gap, small);
-    }
+	@include media("screen", "above:medium") {
+		grid-template-columns: minmax(6rem, max-content) minmax(12em, 1fr);
+		@include v(row-gap, small);
+	}
 
-    a {
-        @include break-words;
-    }
+	a {
+		@include break-words;
+	}
 
-    .webmentions__list__replies ol {
-        margin-block-start: 0;
-    }
+	.webmentions__list__replies ol {
+		margin-block-start: 0;
+	}
 }
 
 .webmentions__responses {
-    @include owl;
-    contain: content;
+	@include owl;
+	contain: content;
 }
 
 .webmentions__response {
-    position: relative;
+	position: relative;
 
-    .webmentions__list__replies & + & {
-        @include v(margin-block-start, medium);
-    }
+	.webmentions__list__replies & + & {
+		@include v(margin-block-start, medium);
+	}
 
-    small {
-        @include v(color, dove);
-    }
+	small {
+		@include v(color, dove);
+	}
 }
 
 .webmentions__response__avatar {
-    @include transition(border-color);
-    box-sizing: content-box;
-    @include v(width, avatar-small);
-    border: var(--measure-border-default) solid var(--color-raven--beta);
+	@include transition(border-color);
+	box-sizing: content-box;
+	@include v(width, avatar-small);
+	border: var(--measure-border-default) solid var(--color-raven--beta);
 
-    &:link:hover,
-    &:link:focus,
-    &:link:active {
-        border-color: var(--color-maple);
-    }
+	&:link:hover,
+	&:link:focus,
+	&:link:active {
+		border-color: var(--color-maple);
+	}
 
-    &,
-    .avatar,
-    .avatar img {
-        border-radius: 50%;
-    }
+	&,
+	.avatar,
+	.avatar img {
+		border-radius: 50%;
+	}
 
-    .avatar {
-        &,
-        img {
-            display: block;
-        }
-    }
+	.avatar {
+		&,
+		img {
+			display: block;
+		}
+	}
 }
 
 .webmentions__response__avatar {
-    .webmentions__list__replies & {
-        float: left;
-        float: inline-start;
-        @include v(margin-inline-end, medium);
-        @include v(margin-block-end, small);
-    }
+	.webmentions__list__replies & {
+		float: left;
+		float: inline-start;
+		@include v(margin-inline-end, medium);
+		@include v(margin-block-end, small);
+	}
 }
 
 .webmentions__response__name {
-    @include v(padding-inline-end, medium);
+	@include v(padding-inline-end, medium);
 
-    .webmentions__list__reactions & {
-        display: none;
-    }
+	.webmentions__list__reactions & {
+		display: none;
+	}
 }
 
 .webmentions__list__reactions {
-    padding-inline-start: calc(var(--measure-small) + var(--measure-tiny));
+	padding-inline-start: calc(var(--measure-small) + var(--measure-tiny));
 
-    .hidden + & {
-        grid-column-start: 1;
-        grid-column-end: -1;
-    }
+	.hidden + & {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
 
-    li {
-        display: inline-block;
-        margin-inline-start: calc((var(--measure-small) + var(--measure-tiny)) * -1);
-        @include v(margin-block-end, small);
+	li {
+		display: inline-block;
+		margin-inline-start: calc((var(--measure-small) + var(--measure-tiny)) * -1);
+		@include v(margin-block-end, small);
 
-        &:hover {
-            @include v(z-index, above);
-        }
-    }
+		&:hover {
+			@include v(z-index, above);
+		}
+	}
 
-    .webmentions__response__avatar,
-    .webmentions__response__type {
-        display: block;
+	.webmentions__response__avatar,
+	.webmentions__response__type {
+		display: block;
 
-        &:active {
-            outline-width: 0;
-        }
-    }
+		&:active {
+			outline-width: 0;
+		}
+	}
 
-    .webmentions__response__type {
-        position: absolute;
-        inset-block-end: 0;
-        inset-inline-start: 50%;
-        transform: translateX(-50%) translateY(33%);
-        @include v(font-size, small);
-        line-height: 1;
-        text-decoration: none;
-        pointer-events: none;
-    }
+	.webmentions__response__type {
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline-start: 50%;
+		transform: translateX(-50%) translateY(33%);
+		@include v(font-size, small);
+		line-height: 1;
+		text-decoration: none;
+		pointer-events: none;
+	}
 }
 
 [data-type="bookmark-of"] .webmentions__response__type::before {
-    content: "🔖";
+	content: "🔖";
 }
 
 [data-type="like-of"] .webmentions__response__type::before {
-    content: "❤️";
+	content: "❤️";
 }
 
 [data-type="mention-of"] .webmentions__response__type::before {
-    content: "💬";
+	content: "💬";
 }
 
 [data-type="repost-of"] .webmentions__response__type::before {
-    content: "🔄️";
+	content: "🔄️";
 }
 
 .webmentions__response__type[data-reacji]:not([data-reacji=""])::before {
-    content: attr(data-reacji);
+	content: attr(data-reacji);
 }
 
 .webmentions__response__meta {
-    clear: both;
+	clear: both;
 }

@@ -4,12 +4,12 @@
 ////
 
 .updated {
-    @include owl(small);
-    @include v(max-width, line-length-clamp);
-    @include v(margin-inline-start, auto);
-    @include v(margin-inline-end, auto);
+	@include owl(small);
+	@include v(max-width, line-length-clamp);
+	@include v(margin-inline-start, auto);
+	@include v(margin-inline-end, auto);
 
-    time {
-        @include v(font-weight, bold);
-    }
+	time {
+		@include v(font-weight, bold);
+	}
 }

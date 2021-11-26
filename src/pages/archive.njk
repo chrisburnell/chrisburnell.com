@@ -11,55 +11,55 @@ lede: Browse all of my posts by a variety of metrics.
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
-    <h1 id="title" class=" [ title ] ">
-        <span class=" [ p-name ] ">{{ title | safe }}</span>
-    </h1>
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
+	</h1>
 
-    <div class=" [ details ] ">
-        <p class=" [ p-summary ] ">Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
-        {% sparkline collection, first_year, latest_year %}
-    </div>
+	<div class=" [ details ] ">
+		<p class=" [ p-summary ] ">Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
+		{% sparkline collection, first_year, latest_year %}
+	</div>
 
-    <div class=" [ content__body ] [ h-feed ] ">
-        {% for lookup in collections.categories %}
-            {%- if lookup.title == 'note' -%}
-                {% set collection = collections.notesWithoutReplies %}
-            {%- else -%}
-                {% set collection = collections[lookup.title] | arePublished | reverse %}
-            {%- endif -%}
-            <h2 id="{{ lookup.plural }}">
-                <a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
-                <a href="#{{ lookup.plural }}" class=" [ fragment-anchor ] ">
-                    <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-                        <use href="/images/sprites.svg#svg--link"></use>
-                    </svg>
-                </a>
-            </h2>
-            {% if collection[0].data.mf_root == 'review' %}
-                <nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-                    {% for item in collection | limit(site.limits.feature) %}
-                        {{ shelfItem(item, global.now, people) }}
-                    {% endfor %}
-                </nav>
-            {% else %}
-                <nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-                    {% for item in collection | limit(site.limits.feature) %}
-                        {{ deckItem(item, global.now, collections.all, people, webmentions) }}
-                    {% endfor %}
-                </nav>
-            {% endif %}
-            {% if collection.length > site.limits.feature %}
-                <nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
-                    <a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
-                </nav>
-            {% endif %}
-        {% endfor %}
+	<div class=" [ content__body ] [ h-feed ] ">
+		{% for lookup in collections.categories %}
+			{%- if lookup.title == 'note' -%}
+				{% set collection = collections.notesWithoutReplies %}
+			{%- else -%}
+				{% set collection = collections[lookup.title] | arePublished | reverse %}
+			{%- endif -%}
+			<h2 id="{{ lookup.plural }}">
+				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
+				<a href="#{{ lookup.plural }}" class=" [ fragment-anchor ] ">
+					<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
+						<use href="/images/sprites.svg#svg--link"></use>
+					</svg>
+				</a>
+			</h2>
+			{% if collection[0].data.mf_root == 'review' %}
+				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
+					{% for item in collection | limit(site.limits.feature) %}
+						{{ shelfItem(item, global.now, people) }}
+					{% endfor %}
+				</nav>
+			{% else %}
+				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
+					{% for item in collection | limit(site.limits.feature) %}
+						{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+					{% endfor %}
+				</nav>
+			{% endif %}
+			{% if collection.length > site.limits.feature %}
+				<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
+					<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
+				</nav>
+			{% endif %}
+		{% endfor %}
 
-        {% include 'webmentions.njk' %}
-    </div>
+		{% include 'webmentions.njk' %}
+	</div>
 
-    {% include 'meta-archive.njk' %}
+	{% include 'meta-archive.njk' %}
 
-    {% include 'ads.njk' %}
+	{% include 'ads.njk' %}
 
 </div>

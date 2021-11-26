@@ -16,21 +16,21 @@
 @import "abstracts/mixins";
 
 html {
-    @each $key, $map in $tokens {
-        @each $property, $value in $map {
-            #{"--" + $key + "-" + $property}: #{$value};
-        }
-    }
+	@each $key, $map in $tokens {
+		@each $property, $value in $map {
+			#{"--" + $key + "-" + $property}: #{$value};
+		}
+	}
 
-    --animation-duration: 2s;
-    --animation-function: linear;
-    --animation-fill-mode: forwards;
+	--animation-duration: 2s;
+	--animation-function: linear;
+	--animation-fill-mode: forwards;
 
-    --rotation-default: 5deg;
+	--rotation-default: 5deg;
 
-    --line-clamp: 3;
+	--line-clamp: 3;
 
-    --max-columns: 2;
+	--max-columns: 2;
 
-    --color-scheme: "light";
+	--color-scheme: "light";
 }

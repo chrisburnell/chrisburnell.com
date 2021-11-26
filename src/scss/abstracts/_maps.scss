@@ -8,20 +8,20 @@
 /// @prop {Length} value - Breakpoint value
 /// @see {Mixin} media
 $breakpoints: (
-    small: 500px,
-    medium: 700px,
-    large: 1000px,
-    gigantic: 1200px,
+	small: 500px,
+	medium: 700px,
+	large: 1000px,
+	gigantic: 1200px,
 );
 
 $language-colors: (
-    css: "css",
-    html: "html",
-    javascript: "javascript",
-    liquid: "liquid",
-    markdown: "markdown",
-    twig: "nunjucks",
-    scss: "scss"
+	css: "css",
+	html: "html",
+	javascript: "javascript",
+	liquid: "liquid",
+	markdown: "markdown",
+	twig: "nunjucks",
+	scss: "scss",
 );
 
 /// @type Map
@@ -34,44 +34,44 @@ $language-colors: (
 /// @prop {Number} weight - Font Weight
 /// @prop {String} filename - Font Filename
 $font-faces: (
-    (
-        family: "Heebo",
-        name: "Black",
-        display: default,
-        stretch: default,
-        style: normal,
-        variant: default,
-        weight: default,
-        filename: "heebo-black",
-    ),
-    (
-        family: "Proxima Nova",
-        name: "Regular",
-        display: default,
-        stretch: default,
-        style: normal,
-        variant: default,
-        weight: default,
-        filename: "proxima-nova-regular",
-    ),
-    (
-        family: "Proxima Nova",
-        name: "Italic",
-        display: default,
-        stretch: default,
-        style: italic,
-        variant: default,
-        weight: default,
-        filename: "proxima-nova-italic",
-    ),
-    (
-        family: "Proxima Nova",
-        name: "Semibold",
-        display: default,
-        stretch: default,
-        style: normal,
-        variant: default,
-        weight: bold,
-        filename: "proxima-nova-semibold",
-    ),
+	(
+		family: "Heebo",
+		name: "Black",
+		display: default,
+		stretch: default,
+		style: normal,
+		variant: default,
+		weight: default,
+		filename: "heebo-black",
+	),
+	(
+		family: "Proxima Nova",
+		name: "Regular",
+		display: default,
+		stretch: default,
+		style: normal,
+		variant: default,
+		weight: default,
+		filename: "proxima-nova-regular",
+	),
+	(
+		family: "Proxima Nova",
+		name: "Italic",
+		display: default,
+		stretch: default,
+		style: italic,
+		variant: default,
+		weight: default,
+		filename: "proxima-nova-italic",
+	),
+	(
+		family: "Proxima Nova",
+		name: "Semibold",
+		display: default,
+		stretch: default,
+		style: normal,
+		variant: default,
+		weight: bold,
+		filename: "proxima-nova-semibold",
+	)
 ) !default;

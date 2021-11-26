@@ -4,59 +4,59 @@
 ////
 
 blockquote {
-    @include quotes;
-    @include v(background-color, raven--gamma);
-    width: 100%;
-    @include v(max-width, line-length-clamp);
-    @include v(padding, medium);
-    @include v(border-radius, border-default);
-    margin: 0 auto var(--measure-medium);
-    @include v(box-shadow, medium);
+	@include quotes;
+	@include v(background-color, raven--gamma);
+	width: 100%;
+	@include v(max-width, line-length-clamp);
+	@include v(padding, medium);
+	@include v(border-radius, border-default);
+	margin: 0 auto var(--measure-medium);
+	@include v(box-shadow, medium);
 
-    :is(cite, strong) {
-        font-style: normal;
-    }
+	:is(cite, strong) {
+		font-style: normal;
+	}
 
-    p {
-        @include font-family(serif);
-        font-style: italic;
+	p {
+		@include font-family(serif);
+		font-style: italic;
 
-        &::before {
-            content: open-quote;
-        }
+		&::before {
+			content: open-quote;
+		}
 
-        &::after {
-            content: close-quote;
-        }
+		&::after {
+			content: close-quote;
+		}
 
-        &:not(:last-of-type) {
-            &::after {
-                @include hidden;
-            }
-        }
-    }
+		&:not(:last-of-type) {
+			&::after {
+				@include hidden;
+			}
+		}
+	}
 
-    cite {
-        @include v(color, kaiser);
-        display: block;
-        @include v(margin-block-start, medium);
-        text-align: right;
+	cite {
+		@include v(color, kaiser);
+		display: block;
+		@include v(margin-block-start, medium);
+		text-align: right;
 
-        &::before {
-            // EN DASH, NO-BREAK SPACE
-            content: "– ";
-        }
-    }
+		&::before {
+			// EN DASH, NO-BREAK SPACE
+			content: "– ";
+		}
+	}
 }
 .twitter-tweet {
-    margin-block-start: var(--measure-large) !important;
-    margin-block-end: 0 !important;
+	margin-block-start: var(--measure-large) !important;
+	margin-block-end: 0 !important;
 }
 
 cite {
-    font-style: normal;
+	font-style: normal;
 }
 
 q {
-    @include quotes;
+	@include quotes;
 }

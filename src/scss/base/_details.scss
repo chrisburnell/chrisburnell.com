@@ -4,47 +4,47 @@
 ////
 
 details {
-    width: 100%;
-    @include v(max-width, line-length-clamp);
-    @include v(border-radius, border-default);
-    position: relative;
+	width: 100%;
+	@include v(max-width, line-length-clamp);
+	@include v(border-radius, border-default);
+	position: relative;
 
-    %collection-content {
-        padding: 0 v(measure, small) v(measure, small);
-    }
+	%collection-content {
+		padding: 0 v(measure, small) v(measure, small);
+	}
 
-    & > div {
-        @include v(background-color, alto);
-        max-height: 0;
-        @include v(padding-block-start, small);
-        position: absolute;
-        inset-block-start: 100%;
-        inset-inline-start: 0;
-        @include v(font-size, small);
-        @include transition(max-height);
-        @include v(z-index, above);
-    }
+	& > div {
+		@include v(background-color, alto);
+		max-height: 0;
+		@include v(padding-block-start, small);
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+		@include v(font-size, small);
+		@include transition(max-height);
+		@include v(z-index, above);
+	}
 
-    &[open] > div {
-        max-height: 9999vh;
-    }
+	&[open] > div {
+		max-height: 9999vh;
+	}
 }
 
 summary {
-    @include non-selectable;
-    @include transition(padding);
-    display: list-item;
-    outline-width: 0;
-    @include v(font-weight, bold);
-    cursor: pointer;
+	@include non-selectable;
+	@include transition(padding);
+	display: list-item;
+	outline-width: 0;
+	@include v(font-weight, bold);
+	cursor: pointer;
 
-    &::-webkit-details-marker {
-        display: none;
-    }
+	&::-webkit-details-marker {
+		display: none;
+	}
 
-    & + %collection-content {
-        @include v(margin-block-start, small);
-        border-block-start: v(measure, border-thin) solid v(color, raven);
-        @include v(padding-block-start, medium);
-    }
+	& + %collection-content {
+		@include v(margin-block-start, small);
+		border-block-start: v(measure, border-thin) solid v(color, raven);
+		@include v(padding-block-start, medium);
+	}
 }

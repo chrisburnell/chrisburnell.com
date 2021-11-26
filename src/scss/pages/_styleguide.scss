@@ -5,157 +5,157 @@
 ////
 
 .palette-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 
-    @include media("screen", "below:small") {
-        flex-direction: column;
-    }
+	@include media("screen", "below:small") {
+		flex-direction: column;
+	}
 
-    li {
-        @include tabular-lining-numerals;
-        padding: #{v(measure, medium)} 0;
-        vertical-align: middle;
-        @include v(font-size, small);
-        text-align: center;
-        white-space: nowrap;
+	li {
+		@include tabular-lining-numerals;
+		padding: #{v(measure, medium)} 0;
+		vertical-align: middle;
+		@include v(font-size, small);
+		text-align: center;
+		white-space: nowrap;
 
-        @include media("screen", "below:small") {
-            flex: 1 0 100%;
-        }
+		@include media("screen", "below:small") {
+			flex: 1 0 100%;
+		}
 
-        @include media("screen", "above:small", "below:large") {
-            flex: 1 0 50%;
-        }
+		@include media("screen", "above:small", "below:large") {
+			flex: 1 0 50%;
+		}
 
-        @include media("screen", "above:large") {
-            flex: 1 0 33.333%;
-        }
+		@include media("screen", "above:large") {
+			flex: 1 0 33.333%;
+		}
 
-        %collection-headings {
-            margin-block-end: 0;
-            @include v(font-size, default);
-            text-transform: capitalize;
-        }
-    }
+		%collection-headings {
+			margin-block-end: 0;
+			@include v(font-size, default);
+			text-transform: capitalize;
+		}
+	}
 }
 @each $name, $color in $palette {
-    .background--#{$name} {
-        background-color: v(color, #{$name});
-        color: contrasting-color(v(color, $name, true));
-    }
+	.background--#{$name} {
+		background-color: v(color, #{$name});
+		color: contrasting-color(v(color, $name, true));
+	}
 }
 
 .measure-example {
-    @include v(background-color, alto);
-    background-image: linear-gradient(to bottom, v(color, maple), v(color, maple));
-    background-position: center center;
-    background-size: 100% v(measure, border-thin);
-    background-repeat: no-repeat;
-    @include v(height, medium);
-    display: block;
+	@include v(background-color, alto);
+	background-image: linear-gradient(to bottom, v(color, maple), v(color, maple));
+	background-position: center center;
+	background-size: 100% v(measure, border-thin);
+	background-repeat: no-repeat;
+	@include v(height, medium);
+	display: block;
 }
 .measure-example--tiny {
-    @include v(width, tiny);
+	@include v(width, tiny);
 }
 .measure-example--small {
-    @include v(width, small);
+	@include v(width, small);
 }
 .measure-example--medium {
-    @include v(width, medium);
+	@include v(width, medium);
 }
 .measure-example--large {
-    @include v(width, large);
+	@include v(width, large);
 }
 .measure-example--gigantic {
-    @include v(width, gigantic);
+	@include v(width, gigantic);
 }
 .measure-example--responsive {
-    @include v(width, line-length-clamp);
+	@include v(width, line-length-clamp);
 }
 
 .transition-example {
-    position: relative;
-    margin-block-end: calc(v(measure, large) + v(measure, medium));
+	position: relative;
+	margin-block-end: calc(v(measure, large) + v(measure, medium));
 
-    &::before {
-        content: "(Hover to interact.)";
-        @include absolute(top, 100%);
-        @include v(color, kaiser);
-        @include v(margin-block-start, small);
-    }
+	&::before {
+		content: "(Hover to interact.)";
+		@include absolute(top, 100%);
+		@include v(color, kaiser);
+		@include v(margin-block-start, small);
+	}
 
-    @include media("coarse") {
-        &::before {
-            content: "(Tap to interact.)";
-        }
-    }
+	@include media("coarse") {
+		&::before {
+			content: "(Tap to interact.)";
+		}
+	}
 }
 
 .transition-example__demo {
-    border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
-    border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
-    @include transition(color);
-    width: 100%;
-    @include v(max-width, line-length-clamp);
-    height: calc(var(--measure-large) * 1.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: v(measure, border-thin) solid v(color, alto);
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    overflow-x: hidden;
-    position: relative;
-    // line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
-    text-align: center;
-    @include v(box-shadow, medium);
-    @include v(z-index, above);
+	border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
+	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
+	@include transition(color);
+	width: 100%;
+	@include v(max-width, line-length-clamp);
+	height: calc(var(--measure-large) * 1.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: v(measure, border-thin) solid v(color, alto);
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	overflow-x: hidden;
+	position: relative;
+	// line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
+	text-align: center;
+	@include v(box-shadow, medium);
+	@include v(z-index, above);
 
-    &:hover,
-    &:focus {
-        @include v(color, milou);
-    }
+	&:hover,
+	&:focus {
+		@include v(color, milou);
+	}
 
-    &::before {
-        content: "";
-        @include absolute(full);
-        @include v(background-color, kaiser);
-        @include v(border-radius, border-thin);
-        @include v(z-index, below);
-    }
+	&::before {
+		content: "";
+		@include absolute(full);
+		@include v(background-color, kaiser);
+		@include v(border-radius, border-thin);
+		@include v(z-index, below);
+	}
 
-    .transition-example--slide & {
-        cursor: e-resize;
+	.transition-example--slide & {
+		cursor: e-resize;
 
-        &::before {
-            @include transition(transform);
-            // ugly, but a single pixel peeks out at certain zoom levels
-            transform: translateX(-101%);
-        }
+		&::before {
+			@include transition(transform);
+			// ugly, but a single pixel peeks out at certain zoom levels
+			transform: translateX(-101%);
+		}
 
-        &:hover,
-        &:focus {
-            &::before {
-                transform: translateX(0);
-            }
-        }
-    }
+		&:hover,
+		&:focus {
+			&::before {
+				transform: translateX(0);
+			}
+		}
+	}
 
-    .transition-example--fade & {
-        cursor: cell;
+	.transition-example--fade & {
+		cursor: cell;
 
-        &::before {
-            @include transition(opacity);
-            opacity: 0;
-        }
+		&::before {
+			@include transition(opacity);
+			opacity: 0;
+		}
 
-        &:hover,
-        &:focus {
-            &::before {
-                opacity: 1;
-            }
-        }
-    }
+		&:hover,
+		&:focus {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
 }

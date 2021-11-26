@@ -6,32 +6,32 @@
 
 a,
 .anchor {
-    @include transition(background-color, color, text-decoration-color);
-    @include v(background-color, transparent);
-    @include v(color, bowhead);
-    outline: 0 solid var(--color-maple);
-    position: relative;
-    text-decoration: underline;
-    @include v(text-decoration-color, alto);
-    @include v(text-decoration-thickness, border-thin);
-    text-decoration-skip-ink: auto;
+	@include transition(background-color, color, text-decoration-color);
+	@include v(background-color, transparent);
+	@include v(color, bowhead);
+	outline: 0 solid var(--color-maple);
+	position: relative;
+	text-decoration: underline;
+	@include v(text-decoration-color, alto);
+	@include v(text-decoration-thickness, border-thin);
+	text-decoration-skip-ink: auto;
 
-    &:hover,
-    &:focus,
-    &:active {
-        @include v(text-decoration-color, maple);
-    }
+	&:hover,
+	&:focus,
+	&:active {
+		@include v(text-decoration-color, maple);
+	}
 
-    &:focus {
-        @include v(outline-color, raven);
-        @include v(outline-width, border-thin);
-        @include v(outline-offset, border-thin);
-    }
+	&:focus {
+		@include v(outline-color, raven);
+		@include v(outline-width, border-thin);
+		@include v(outline-offset, border-thin);
+	}
 
-    &:active {
-        @include v(background-color, maple);
-        color: v(color, milou) !important;
-        @include v(outline-width, border-thin);
-        outline-offset: 0;
-    }
+	&:active {
+		@include v(background-color, maple);
+		color: v(color, milou) !important;
+		@include v(outline-width, border-thin);
+		outline-offset: 0;
+	}
 }

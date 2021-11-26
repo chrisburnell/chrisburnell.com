@@ -5,9 +5,9 @@
 
 // Full Bleed
 .full-bleed {
-    width: 100vw;
-    margin-inline-start: 50%;
-    transform: translateX(-50%);
+	width: 100vw;
+	margin-inline-start: 50%;
+	transform: translateX(-50%);
 }
 
 // <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
@@ -15,106 +15,106 @@
 // opposed to an initialism, for which each letter is spoken individually,
 // (e.g. HTML, CSS).
 .acronym {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 // Break text on any character
 .break-anywhere {
-    word-wrap: anywhere;
+	word-wrap: anywhere;
 }
 
 // Hyphenate any looooooooooooooooooooo-
 // oooooong text
 .hyphen,
 .hyphenate {
-    @include hyphenate;
+	@include hyphenate;
 }
 
 // Make things non-selectable
 .non-selectable {
-    @include non-selectable;
+	@include non-selectable;
 }
 
 // Make things non-interactive
 .non-interactive {
-    pointer-events: none;
+	pointer-events: none;
 }
 
 // Turn off motion (for reduced-motion-like cases)
 .non-motion {
-    animation-play-state: paused !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
+	animation-play-state: paused !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
 }
 
 // Disable things which require JS when JS is not available
 .no-js .requires-js {
-    display: none;
+	display: none;
 }
 
 .strong {
-    @include v(font-weight, bold);
+	@include v(font-weight, bold);
 }
 
 .italic {
-    font-style: italic;
+	font-style: italic;
 }
 
 .serif {
-    @include v(font-family, serif);
+	@include v(font-family, serif);
 }
 
 .monospace {
-    @include v(font-family, monospace);
+	@include v(font-family, monospace);
 }
 
 .small {
-    @include v(font-size, small);
+	@include v(font-size, small);
 }
 
 // Make text serifed and italicised
 .fancy {
-    @include v(font-family, serif);
-    font-style: italic;
+	@include v(font-family, serif);
+	font-style: italic;
 }
 
 // Owls
 @each $key, $_ in map-get($tokens, "measure") {
-    .owl--#{$key} > * + * {
-        @include v(margin-block-start, #{$key});
-    }
+	.owl--#{$key} > * + * {
+		@include v(margin-block-start, #{$key});
+	}
 }
 
 // Emoji
 .emoji {
-    @include v(font-size, default);
-    font-style: normal;
-    vertical-align: middle;
-    text-shadow: none;
+	@include v(font-size, default);
+	font-style: normal;
+	vertical-align: middle;
+	text-shadow: none;
 }
 
 // For salty remarks
 .salty {
-    font-family: Comic Sans MS, Chalkboard SE, fantasy;
+	font-family: Comic Sans MS, Chalkboard SE, fantasy;
 }
 
 // Sorting labels
 [data-direction="ascending"][aria-current="true"]::after {
-    content: "​ ▲ ​";
+	content: "​ ▲ ​";
 }
 [data-direction="descending"][aria-current="true"]::after {
-    content: "​ ▼ ​";
+	content: "​ ▼ ​";
 }
 
 // Limit lines
 .line-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp);
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--line-clamp);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 @for $i from 1 through 4 {
-    .line-clamp--#{$i} {
-        --line-clamp: #{$i};
-    }
+	.line-clamp--#{$i} {
+		--line-clamp: #{$i};
+	}
 }

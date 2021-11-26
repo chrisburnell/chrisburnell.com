@@ -2,40 +2,40 @@
 
 /* OWNER & DEVELOPER */
 
-    Name: {{ author.name }}
-    Email: {{ author.email }}
-    GitHub: https://github.com/{{ author.github }}
-    Mastodon: https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}
-    Twitter: https://twitter.com/{{ author.twitter }}
-    PGP: {{ author.pgp }}
+	Name: {{ author.name }}
+	Email: {{ author.email }}
+	GitHub: https://github.com/{{ author.github }}
+	Mastodon: https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}
+	Twitter: https://twitter.com/{{ author.twitter }}
+	PGP: {{ author.pgp }}
 
 /* SITE */
 
-    Last updated:  {{ global.now | friendlyDate }} {{ global.now | friendlyTime }}
-    URL:           {{ site.url }}
-    Language:      {{ site.locale }}
-    Doctype:       HTML5
-    Fonts:         Heebo, Proxima Nova
-    Compiled with: Eleventy v{{ pkg.dependencies['@11ty/eleventy'] | replace('^', '') }}
+	Last updated:  {{ global.now | friendlyDate }} {{ global.now | friendlyTime }}
+	URL:           {{ site.url }}
+	Language:      {{ site.locale }}
+	Doctype:       HTML5
+	Fonts:         Heebo, Proxima Nova
+	Compiled with: Eleventy v{{ pkg.dependencies['@11ty/eleventy'] | replace('^', '') }}
 
 /* LANGUAGES */
 
-    HTML
-    CSS (SCSS)
-    JavaScript
-    JSON
-    Nunjucks
-    Markdown
-    XML
-    YAML
+	HTML
+	CSS (SCSS)
+	JavaScript
+	JSON
+	Nunjucks
+	Markdown
+	XML
+	YAML
 
 /* SERVICES */
 
-    Aperture:      https://aperture.p3k.io
-    Atlas:         https://atlas.p3k.io
-    CodePen:       https://codepen.io
-    IndieAuth:     https://indieauth.com
-    Switchboard:   https://switchboard.p3k.io
-    Telegraph:     https://telegraph.p3k.io
-    Twitter:       https://dev.twitter.com
-    Webmention.io: https://webmention.io
+	Aperture:      https://aperture.p3k.io
+	Atlas:         https://atlas.p3k.io
+	CodePen:       https://codepen.io
+	IndieAuth:     https://indieauth.com
+	Switchboard:   https://switchboard.p3k.io
+	Telegraph:     https://telegraph.p3k.io
+	Twitter:       https://dev.twitter.com
+	Webmention.io: https://webmention.io

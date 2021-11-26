@@ -9,27 +9,27 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 // Touch Action
 :is(a, button, input, label, select, summary, textarea) {
-    touch-action: manipulation;
+	touch-action: manipulation;
 }
 
 // Reduced Motion
 @include media("reduced-motion") {
-    *,
-    *::before,
-    *::after {
-        background-attachment: initial !important;
-        animation-play-state: paused !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
+	*,
+	*::before,
+	*::after {
+		background-attachment: initial !important;
+		animation-play-state: paused !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 // Remove focus for mouse users
 :focus:not(:focus-visible) {
-    outline: none !important;
+	outline: none !important;
 }

@@ -4,29 +4,29 @@
 ////
 
 :is(img, input[type="image"], picture, svg) {
-    @extend %collection-images !optional;
+	@extend %collection-images !optional;
 }
 
 :is(audio, canvas, embed, iframe, marquee, object, video) {
-    @extend %collection-media !optional;
+	@extend %collection-media !optional;
 }
 
 :is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
-    @extend %collection-content !optional;
+	@extend %collection-content !optional;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-    @extend %collection-headings !optional;
+	@extend %collection-headings !optional;
 }
 
 :is(code, kbd, samp, var, .monospace) {
-    @extend %collection-monospace !optional;
+	@extend %collection-monospace !optional;
 }
 
 :is(button, .button, [type="button"]) {
-    @extend %collection-buttons !optional;
+	@extend %collection-buttons !optional;
 }
 
 :is(input, optgroup, select, textarea) {
-    @extend %collection-form !optional;
+	@extend %collection-form !optional;
 }

@@ -4,105 +4,105 @@
 ////
 
 :is(abbr, dfn)[title] {
-    @include v(color, dove);
-    font-style: italic;
-    font-weight: v(font-weight) !important;
-    border-block-end: v(measure, border-thin) dotted v(color, dove);
-    cursor: help;
+	@include v(color, dove);
+	font-style: italic;
+	font-weight: v(font-weight) !important;
+	border-block-end: v(measure, border-thin) dotted v(color, dove);
+	cursor: help;
 
-    a & {
-        border-block-end-width: 0;
-    }
+	a & {
+		border-block-end-width: 0;
+	}
 }
 :is(abbr, dfn)[title],
 ins {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 ins {
-    @include v(background-color, conifer);
-    color: contrasting-color(v(color, conifer, true));
-    @include v(font-size, default);
+	@include v(background-color, conifer);
+	color: contrasting-color(v(color, conifer, true));
+	@include v(font-size, default);
 }
 
 del {
-    @include v(color, maple);
+	@include v(color, maple);
 }
 
 s {
-    @include v(color, dove);
+	@include v(color, dove);
 }
 
 strong {
-    @include v(font-weight, bold);
+	@include v(font-weight, bold);
 }
 
 em {
-    font-weight: v(font-weight) !important;
+	font-weight: v(font-weight) !important;
 
-    & > small,
-    small > & {
-        font-variant: small-caps;
-        text-transform: lowercase;
-    }
+	& > small,
+	small > & {
+		font-variant: small-caps;
+		text-transform: lowercase;
+	}
 }
 
 small {
-    @include v(font-size, small);
+	@include v(font-size, small);
 }
 
 :is(sub, sup) {
-    position: relative;
-    vertical-align: baseline;
-    font-size: 1em;
-    line-height: 0;
-    text-transform: initial;
+	position: relative;
+	vertical-align: baseline;
+	font-size: 1em;
+	line-height: 0;
+	text-transform: initial;
 }
 sub {
-    inset-block-end: 0;
-    font-variant-position: sub;
+	inset-block-end: 0;
+	font-variant-position: sub;
 }
 sup {
-    inset-block-start: 0;
-    font-variant-position: super;
+	inset-block-start: 0;
+	font-variant-position: super;
 }
 
 hr {
-    @include v(background-color, thunder--gamma);
-    width: 100%;
-    height: var(--measure-border-thin);
-    display: block;
-    border: 0;
-    position: relative;
-    // show the overflow in Edge and IE
-    overflow: visible;
+	@include v(background-color, thunder--gamma);
+	width: 100%;
+	height: var(--measure-border-thin);
+	display: block;
+	border: 0;
+	position: relative;
+	// show the overflow in Edge and IE
+	overflow: visible;
 }
 
 // Hide elements visually
 [hidden]:not([hidden="false"]),
 .hidden {
-    &:not([href]),
-    &[href]:not(:focus):not(:active) {
-        @include hidden;
-    }
+	&:not([href]),
+	&[href]:not(:focus):not(:active) {
+		@include hidden;
+	}
 }
 
 // Text Selection
 ::selection,
 ::target-text {
-    @include v(background-color, raven);
-    @include v(color, milou);
-    text-shadow: none;
+	@include v(background-color, raven);
+	@include v(color, milou);
+	text-shadow: none;
 
-    &.canada {
-        @include v(background-color, maple);
-    }
+	&.canada {
+		@include v(background-color, maple);
+	}
 }
 
 ::spelling-error {
-    text-decoration: v(color, maple) wavy underline;
+	text-decoration: v(color, maple) wavy underline;
 }
 
 ::grammar-error {
-    text-decoration: v(color, conifer) wavy underline;
+	text-decoration: v(color, conifer) wavy underline;
 }

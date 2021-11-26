@@ -4,83 +4,83 @@
 ////
 
 a {
-    h2 & {
-        color: v(color, kaiser) !important;
-        @include v(text-decoration-color, transparent);
-        @include v(text-decoration-thickness, border-thin);
-        @include v(text-underline-offset, border-default);
-    }
+	h2 & {
+		color: v(color, kaiser) !important;
+		@include v(text-decoration-color, transparent);
+		@include v(text-decoration-thickness, border-thin);
+		@include v(text-underline-offset, border-default);
+	}
 
-    // hide extra content, text targetted only to screen readers
-    :not(.cf-wrapper) > & span:not([class]) {
-        @include hidden;
-    }
+	// hide extra content, text targetted only to screen readers
+	:not(.cf-wrapper) > & span:not([class]) {
+		@include hidden;
+	}
 }
 
 // Fancy gradient anchor text
 .colourful-anchor {
-    &:hover,
-    &:focus,
-    &:active {
-        background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-maple));
-        background-clip: text;
-        text-fill-color: transparent;
-        box-decoration-break: clone;
-        text-shadow: none;
-    }
+	&:hover,
+	&:focus,
+	&:active {
+		background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-maple));
+		background-clip: text;
+		text-fill-color: transparent;
+		box-decoration-break: clone;
+		text-shadow: none;
+	}
 }
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-    @include case(lowercase);
-    @include font-family(monospace);
-    @include v(color, dove);
-    display: none;
-    visibility: hidden;
-    @include v(padding-inline-start, small);
-    @include v(padding-inline-end, small);
-    position: absolute;
-    inset-block-start: var(--measure-border-thin);
-    inset-inline-end: calc(var(--measure-small) * -1);
-    font-size: inherit;
-    @include v(font-weight, bold);
-    @include v(line-height);
-    text-shadow: none;
+	@include case(lowercase);
+	@include font-family(monospace);
+	@include v(color, dove);
+	display: none;
+	visibility: hidden;
+	@include v(padding-inline-start, small);
+	@include v(padding-inline-end, small);
+	position: absolute;
+	inset-block-start: var(--measure-border-thin);
+	inset-inline-end: calc(var(--measure-small) * -1);
+	font-size: inherit;
+	@include v(font-weight, bold);
+	@include v(line-height);
+	text-shadow: none;
 
-    h2:hover &,
-    h2:focus &,
-    h2:active &,
-    &:target {
-        display: inline-block;
-        visibility: visible;
-    }
+	h2:hover &,
+	h2:focus &,
+	h2:active &,
+	&:target {
+		display: inline-block;
+		visibility: visible;
+	}
 }
 
 // Related Anchors
 .related-anchor::after {
-    // NO-BREAK SPACE, RIGHTWARDS ARROW
-    content: " →";
+	// NO-BREAK SPACE, RIGHTWARDS ARROW
+	content: " →";
 }
 
 // Anchor Target Animation
 h2,
 sup,
 li {
-    &[id] {
-        &:target {
-            animation: var(--animation-duration) var(--animation-function) anchor-target;
+	&[id] {
+		&:target {
+			animation: var(--animation-duration) var(--animation-function) anchor-target;
 
-            @at-root {
-                @keyframes anchor-target {
-                    0%,
-                    50% {
-                        @include v(background-color, aspen);
-                    }
-                    100% {
-                        @include v(background-color, transparent);
-                    }
-                }
-            }
-        }
-    }
+			@at-root {
+				@keyframes anchor-target {
+					0%,
+					50% {
+						@include v(background-color, aspen);
+					}
+					100% {
+						@include v(background-color, transparent);
+					}
+				}
+			}
+		}
+	}
 }

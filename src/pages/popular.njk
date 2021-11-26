@@ -8,24 +8,24 @@ related_collection: popular
 {%- set collection = collections[related_collection] -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
-    <h1 id="title" class=" [ title ] ">
-        <span class=" [ p-name ] ">{{ title | safe }}</span>
-    </h1>
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
+	</h1>
 
-    <div class=" [ details ] ">
-        <p class=" [ p-summary ] ">{{ lede | safe }}</p>
-    </div>
+	<div class=" [ details ] ">
+		<p class=" [ p-summary ] ">{{ lede | safe }}</p>
+	</div>
 
-    <div class=" [ content__body ] [ h-feed ] ">
-        <nav class=" [ deck ] ">
-            {% for item in collection %}
-                {{ deckItem(item, global.now, collections.all, people, webmentions) }}
-            {% endfor %}
-        </nav>
-    </div>
+	<div class=" [ content__body ] [ h-feed ] ">
+		<nav class=" [ deck ] ">
+			{% for item in collection %}
+				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+			{% endfor %}
+		</nav>
+	</div>
 
-    {% include 'meta-archive.njk' %}
+	{% include 'meta-archive.njk' %}
 
-    {% include 'ads.njk' %}
+	{% include 'ads.njk' %}
 
 </div>

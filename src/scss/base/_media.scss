@@ -5,80 +5,80 @@
 ////
 
 :is(img, picture, svg) {
-    margin-inline: auto;
-    position: relative;
+	margin-inline: auto;
+	position: relative;
 
-    &,
-    a & {
-        max-width: 100%;
-        height: auto;
-    }
+	&,
+	a & {
+		max-width: 100%;
+		height: auto;
+	}
 }
 img {
-    border-style: none;
+	border-style: none;
 }
 picture {
-    &,
-    img,
-    svg {
-        display: block;
-    }
+	&,
+	img,
+	svg {
+		display: block;
+	}
 }
 svg:not(:root) {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 :is(audio, canvas, iframe, video) {
-    width: 100%;
-    display: block;
-    border: 0;
-    overflow-x: hidden;
+	width: 100%;
+	display: block;
+	border: 0;
+	overflow-x: hidden;
 }
 audio {
-    width: 100%;
-    @include v(max-width, breakpoint-small);
+	width: 100%;
+	@include v(max-width, breakpoint-small);
 
-    &:not([controls]) {
-        display: none;
-        height: 0;
-    }
+	&:not([controls]) {
+		display: none;
+		height: 0;
+	}
 }
 iframe {
-    max-width: 100% !important;
-    margin: 0;
+	max-width: 100% !important;
+	margin: 0;
 }
 
 meter,
 progress {
-    @include v(width, line-length-clamp);
-    max-width: 100%;
-    @include v(box-shadow, medium);
+	@include v(width, line-length-clamp);
+	max-width: 100%;
+	@include v(box-shadow, medium);
 }
 
 meter {
-    &::-webkit-meter-bar {
-        @include v(background-color, dove);
-    }
+	&::-webkit-meter-bar {
+		@include v(background-color, dove);
+	}
 
-    &::-webkit-meter-optimum-value {
-        @include v(background-color, conifer);
-    }
+	&::-webkit-meter-optimum-value {
+		@include v(background-color, conifer);
+	}
 
-    &::-webkit-meter-suboptimum-value {
-        @include v(background-color, aspen);
-    }
+	&::-webkit-meter-suboptimum-value {
+		@include v(background-color, aspen);
+	}
 
-    &::-webkit-meter-even-less-good-value {
-        @include v(background-color, maple);
-    }
+	&::-webkit-meter-even-less-good-value {
+		@include v(background-color, maple);
+	}
 }
 
 progress {
-    &::-webkit-progress-bar {
-        @include v(background-color, dove);
-    }
+	&::-webkit-progress-bar {
+		@include v(background-color, dove);
+	}
 
-    &::-webkit-progress-value {
-        @include v(background-color, raven);
-    }
+	&::-webkit-progress-value {
+		@include v(background-color, raven);
+	}
 }

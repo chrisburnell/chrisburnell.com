@@ -4,75 +4,75 @@
 ////
 
 %collection-headings {
-    padding: 0;
-    margin: 0;
-    position: relative;
-    @include v(font-weight);
-    font-variant-numeric: lining-nums;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	@include v(font-weight);
+	font-variant-numeric: lining-nums;
 
-    // For special Monospace titles
-    &.monospace {
-        @include case(none);
-    }
+	// For special Monospace titles
+	&.monospace {
+		@include case(none);
+	}
 }
 
 %alpha,
 .alpha {
-    @include font-family(alpha);
-    @include v(font-size, alpha);
-    @include v(line-height, medium);
+	@include font-family(alpha);
+	@include v(font-size, alpha);
+	@include v(line-height, medium);
 }
 
 %beta,
 .beta {
-    @include v(font-size, beta);
-    @include v(font-weight, bold);
+	@include v(font-size, beta);
+	@include v(font-weight, bold);
 }
 
 %gamma,
 .gamma {
-    @include v(font-size, gamma);
-    @include v(font-weight, bold);
+	@include v(font-size, gamma);
+	@include v(font-weight, bold);
 }
 
 %delta,
 .delta {
-    @include v(font-size, delta);
-    @include v(font-weight, bold);
+	@include v(font-size, delta);
+	@include v(font-weight, bold);
 }
 
 %epsilon,
 .epsilon {
-    @include v(font-size, default);
-    @include v(font-weight, bold);
+	@include v(font-size, default);
+	@include v(font-weight, bold);
 }
 
 %zeta,
 .zeta {
-    @include v(font-size, default);
-    @include v(font-weight, bold);
+	@include v(font-size, default);
+	@include v(font-weight, bold);
 }
 
 h1 {
-    @extend %alpha;
-    @include v(z-index, above);
+	@extend %alpha;
+	@include v(z-index, above);
 }
 
 h2 {
-    @extend %delta;
+	@extend %delta;
 
-    @include case(uppercase);
-    border-block-end: v(measure, border-thin) solid v(color, alto);
-    width: auto;
-    max-width: 100%;
-    display: inline-block;
-    @include v(padding-inline-end, large);
+	@include case(uppercase);
+	border-block-end: v(measure, border-thin) solid v(color, alto);
+	width: auto;
+	max-width: 100%;
+	display: inline-block;
+	@include v(padding-inline-end, large);
 }
 
 h3 {
-    @extend %delta;
+	@extend %delta;
 }
 
 :is(h4, h5, h6) {
-    @extend %epsilon;
+	@extend %epsilon;
 }

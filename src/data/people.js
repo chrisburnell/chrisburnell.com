@@ -8,22 +8,22 @@ const TOKEN = process.env.WEBMENTION_IO_TOKEN
 const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists", "publications"]
 
 async function getPeopleByType(type) {
-    return await CacheAsset(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
-        duration: "4w",
-        type: "json",
-        fetchOptions: {
-            method: "GET"
-        }
-    })
+	return await CacheAsset(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
+		duration: "4w",
+		type: "json",
+		fetchOptions: {
+			method: "GET",
+		},
+	})
 }
 
-module.exports = async function() {
-    let people = []
+module.exports = async function () {
+	let people = []
 
-    for (let type of TYPES) {
-        let lookup = await getPeopleByType(type)
-        people = [...people, ...lookup]
-    }
+	for (let type of TYPES) {
+		let lookup = await getPeopleByType(type)
+		people = [...people, ...lookup]
+	}
 
-    return people
+	return people
 }

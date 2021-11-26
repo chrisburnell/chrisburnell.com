@@ -4,54 +4,54 @@
 ////
 
 .meta {
-    @include owl(tiny);
+	@include owl(tiny);
 
-    .details ~ & {
-        @include v(margin-block-start, large);
-    }
+	.details ~ & {
+		@include v(margin-block-start, large);
+	}
 
-    .archive & {
-        @include owl(large);
-    }
+	.archive & {
+		@include owl(large);
+	}
 
-    .emoji {
-        width: calc(var(--measure-medium) + var(--measure-tiny));
-        display: inline-block;
-    }
+	.emoji {
+		width: calc(var(--measure-medium) + var(--measure-tiny));
+		display: inline-block;
+	}
 
-    h3 {
-        @include v(font-size, default);
-        @include v(line-height, medium);
-    }
+	h3 {
+		@include v(font-size, default);
+		@include v(line-height, medium);
+	}
 
-    a,
-    data,
-    time {
-        @include v(font-weight, bold);
-    }
+	a,
+	data,
+	time {
+		@include v(font-weight, bold);
+	}
 
-    .rating {
-        @include v(margin-inline-start, tiny);
-    }
+	.rating {
+		@include v(margin-inline-start, tiny);
+	}
 }
 
 .meta__list {
-    display: inline;
-    @include v(font-size, small);
+	display: inline;
+	@include v(font-size, small);
 
-    li {
-        display: inline;
+	li {
+		display: inline;
 
-        &:not(:last-child) {
-            &::after {
-                content: ", ";
-            }
-        }
-    }
+		&:not(:last-child) {
+			&::after {
+				content: ", ";
+			}
+		}
+	}
 }
 h3 + .meta__list {
-    margin-block-start: v(measure, small) !important;
+	margin-block-start: v(measure, small) !important;
 }
 small + .meta__list {
-    @include v(padding-inline-start, tiny);
+	@include v(padding-inline-start, tiny);
 }

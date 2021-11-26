@@ -4,20 +4,20 @@
 ////
 
 table {
-    @include tabular-lining-numerals;
-    flex: 1 0 auto;
-    align-self: flex-start;
-    border-width: 0;
-    border-collapse: collapse;
-    overflow-x: auto;
-    overflow-y: hidden;
-    font-variant-numeric: lining-nums tabular-nums;
+	@include tabular-lining-numerals;
+	flex: 1 0 auto;
+	align-self: flex-start;
+	border-width: 0;
+	border-collapse: collapse;
+	overflow-x: auto;
+	overflow-y: hidden;
+	font-variant-numeric: lining-nums tabular-nums;
 
-    &.zebra {
-        tbody tr:nth-child(even) td {
-            @include v(background-color, thunder--delta);
-        }
-    }
+	&.zebra {
+		tbody tr:nth-child(even) td {
+			@include v(background-color, thunder--delta);
+		}
+	}
 }
 
 // Rows
@@ -26,34 +26,34 @@ tr {
 
 // Cells
 :is(th, td) {
-    @include transition(background-color);
-    @include v(padding, small);
-    text-align: left;
-    vertical-align: top;
-    user-select: text;
+	@include transition(background-color);
+	@include v(padding, small);
+	text-align: left;
+	vertical-align: top;
+	user-select: text;
 
-    &.numeral {
-        text-align: right;
-    }
+	&.numeral {
+		text-align: right;
+	}
 }
 
 // Heading Cells
 th {
-    @include v(font-weight, bold);
-    white-space: nowrap;
+	@include v(font-weight, bold);
+	white-space: nowrap;
 
-    &:not(:empty) {
-        @include v(background-color, thunder--delta);
-    }
+	&:not(:empty) {
+		@include v(background-color, thunder--delta);
+	}
 
-    tbody & {
-        width: 1px;
-    }
+	tbody & {
+		width: 1px;
+	}
 }
 
 // Body Cells
 td {
-    &.numeral {
-        white-space: nowrap;
-    }
+	&.numeral {
+		white-space: nowrap;
+	}
 }

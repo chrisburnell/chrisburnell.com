@@ -4,77 +4,77 @@
 ////
 
 $tokens: (
-  measure: (
-    breakpoint-small: 500px,
-    breakpoint-medium: 700px,
-    breakpoint-large: 1000px,
-    breakpoint-gigantic: 1200px,
-    gap: 2.5rem,
-    gutter: 1.25rem,
-    avatar: 100px,
-    avatar-small: 48px,
-    tiny: 0.3125rem,
-    small: 0.625rem,
-    medium: 1.25rem,
-    large: 2.25rem,
-    gigantic: 4rem,
-    line-length-clamp: clamp(21em, 100vw, 30em),
-    border-default: 0.25rem,
-    border-thin: 0.125rem,
-    border-hairline: 1px,
-    border-button: 0.182em
-  ),
-  opacity: $opacities,
-  color: $all-colors,
-  font-family: (
-    default: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
-    alpha: "Heebo, sans-serif",
-    serif: "Georgia, Times, Times New Roman, serif",
-    monospace: monospace
-  ),
-  font-size: (
-    alpha: clamp(2.0738rem, 1.5648rem + 1.6286vw, 2.7863rem),
-    beta: clamp(1.7281rem, 1.4219rem + 0.98vw, 2.1569rem),
-    gamma: clamp(1.44rem, 1.2762rem + 0.5243vw, 1.6694rem),
-    delta: clamp(1.2rem, 1.1344rem + 0.21vw, 1.2919rem),
-    default: 1rem,
-    small: 0.875rem
-  ),
-  font-weight: (
-    default: 400,
-    bold: 600
-  ),
-  line-height: (
-    default: 1.875,
-    small: 1.25,
-    medium: 1.429,
-    code: 2
-  ),
-  letter-spacing: (
-    default: 0,
-    uppercase: 1px
-  ),
-  transition-duration: (
-    default: 0.2s,
-    long: 1s
-  ),
-  transition-function: (
-    default: ease,
-    alternate: linear
-  ),
-  z-index: (
-    below: -1,
-    root: 0,
-    default: 1,
-    above: 2,
-    modal: 3,
-    dialog: 4,
-    notification: 5
-  ),
-  box-shadow: (
-    small: "0.5px 1px 1px hsl(var(--color-shadow) / 0.7)",
-    medium: "1px 2px 2px hsl(var(--color-shadow) / 0.333), 2px 4px 4px hsl(var(--color-shadow) / 0.333), 3px 6px 6px hsl(var(--color-shadow) / 0.333)",
-    large: "1px 2px 2px hsl(var(--color-shadow) / 0.2), 2px 4px 4px hsl(var(--color-shadow) / 0.2), 4px 8px 8px hsl(var(--color-shadow) / 0.2), 8px 16px 16px hsl(var(--color-shadow) / 0.2), 16px 32px 32px hsl(var(--color-shadow) / 0.2)",
-    inset: "inset 0 calc(var(--measure-border-button) * -1) 0 0 var(--color-shadow)",
-  ),
+	measure: (
+		breakpoint-small: 500px,
+		breakpoint-medium: 700px,
+		breakpoint-large: 1000px,
+		breakpoint-gigantic: 1200px,
+		gap: 2.5rem,
+		gutter: 1.25rem,
+		avatar: 100px,
+		avatar-small: 48px,
+		tiny: 0.3125rem,
+		small: 0.625rem,
+		medium: 1.25rem,
+		large: 2.25rem,
+		gigantic: 4rem,
+		line-length-clamp: clamp(21em, 100vw, 30em),
+		border-default: 0.25rem,
+		border-thin: 0.125rem,
+		border-hairline: 1px,
+		border-button: 0.182em,
+	),
+	opacity: $opacities,
+	color: $all-colors,
+	font-family: (
+		default: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
+		alpha: "Heebo, sans-serif",
+		serif: "Georgia, Times, Times New Roman, serif",
+		monospace: monospace,
+	),
+	font-size: (
+		alpha: clamp(2.0738rem, 1.5648rem + 1.6286vw, 2.7863rem),
+		beta: clamp(1.7281rem, 1.4219rem + 0.98vw, 2.1569rem),
+		gamma: clamp(1.44rem, 1.2762rem + 0.5243vw, 1.6694rem),
+		delta: clamp(1.2rem, 1.1344rem + 0.21vw, 1.2919rem),
+		default: 1rem,
+		small: 0.875rem,
+	),
+	font-weight: (
+		default: 400,
+		bold: 600,
+	),
+	line-height: (
+		default: 1.875,
+		small: 1.25,
+		medium: 1.429,
+		code: 2,
+	),
+	letter-spacing: (
+		default: 0,
+		uppercase: 1px,
+	),
+	transition-duration: (
+		default: 0.2s,
+		long: 1s,
+	),
+	transition-function: (
+		default: ease,
+		alternate: linear,
+	),
+	z-index: (
+		below: -1,
+		root: 0,
+		default: 1,
+		above: 2,
+		modal: 3,
+		dialog: 4,
+		notification: 5,
+	),
+	box-shadow: (
+		small: "0.5px 1px 1px hsl(var(--color-shadow) / 0.7)",
+		medium: "1px 2px 2px hsl(var(--color-shadow) / 0.333), 2px 4px 4px hsl(var(--color-shadow) / 0.333), 3px 6px 6px hsl(var(--color-shadow) / 0.333)",
+		large: "1px 2px 2px hsl(var(--color-shadow) / 0.2), 2px 4px 4px hsl(var(--color-shadow) / 0.2), 4px 8px 8px hsl(var(--color-shadow) / 0.2), 8px 16px 16px hsl(var(--color-shadow) / 0.2), 16px 32px 32px hsl(var(--color-shadow) / 0.2)",
+		inset: "inset 0 calc(var(--measure-border-button) * -1) 0 0 var(--color-shadow)",
+	),
 );

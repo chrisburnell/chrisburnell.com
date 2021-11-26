@@ -4,77 +4,77 @@
 ////
 
 .footer {
-    @include v(background-color, mineshaft);
-    @include v(padding-block-start, large);
-    @include v(padding-block-end, large);
-    border-block-start: var(--measure-border-thin) solid var(--color-coyote);
+	@include v(background-color, mineshaft);
+	@include v(padding-block-start, large);
+	@include v(padding-block-end, large);
+	border-block-start: var(--measure-border-thin) solid var(--color-coyote);
 
-    @include media("print") {
-        display: none;
-    }
+	@include media("print") {
+		display: none;
+	}
 
-    &,
-    a,
-    button {
-        @include v(color, milou);
+	&,
+	a,
+	button {
+		@include v(color, milou);
 
-        &:not(:hover):not(:focus):not(:active) {
-            @include v(text-decoration-color, kaiser);
-        }
-    }
+		&:not(:hover):not(:focus):not(:active) {
+			@include v(text-decoration-color, kaiser);
+		}
+	}
 
-    button {
-        font-size: inherit;
-    }
+	button {
+		font-size: inherit;
+	}
 
-    .wrap {
-        @include media("below:medium") {
-            @include owl(medium);
-        }
+	.wrap {
+		@include media("below:medium") {
+			@include owl(medium);
+		}
 
-        @include media("above:medium") {
-            display: grid;
-            grid-template-columns:
-                [left-start]
-                1fr
-                [left-end]
-                var(--measure-gap)
-                [right-start]
-                1fr
-                [right-end];
-            grid-template-rows: auto 1fr auto;
-            @include v(row-gap, gutter);
-        }
+		@include media("above:medium") {
+			display: grid;
+			grid-template-columns:
+				[left-start]
+				1fr
+				[left-end]
+				var(--measure-gap)
+				[right-start]
+				1fr
+				[right-end];
+			grid-template-rows: auto 1fr auto;
+			@include v(row-gap, gutter);
+		}
 
-        .author {
-            grid-column: right;
-            grid-row: 1/4;
-        }
+		.author {
+			grid-column: right;
+			grid-row: 1/4;
+		}
 
-        .footer__navigation,
-        p {
-            grid-column: left;
-        }
-    }
+		.footer__navigation,
+		p {
+			grid-column: left;
+		}
+	}
 }
 
 .footer__navigation {
-    li {
-        display: inline-block;
-    }
+	li {
+		display: inline-block;
+	}
 
-    li + li {
-        &::before {
-            content: "·";
-            width: 1em;
-            display: inline-block;
-            text-align: center;
-        }
-    }
+	li + li {
+		&::before {
+			content: "·";
+			width: 1em;
+			display: inline-block;
+			text-align: center;
+		}
+	}
 }
 
 .speedlify-anchor {
-    display: inline-block;
-    @include v(margin-block-start, small);
-    text-decoration: none;
+	display: inline-block;
+	@include v(margin-block-start, small);
+	text-decoration: none;
 }

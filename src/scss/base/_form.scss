@@ -5,147 +5,147 @@
 ////
 
 form {
-    width: 100%;
-    display: grid;
-    @include v(grid-gap, small);
-    grid-template-columns: 65% 1fr;
-    position: relative;
+	width: 100%;
+	display: grid;
+	@include v(grid-gap, small);
+	grid-template-columns: 65% 1fr;
+	position: relative;
 
-    &:not([class]) {
-        @include owl;
+	&:not([class]) {
+		@include owl;
 
-        @include media("screen", "below:small") {
-            grid-template-columns: 1fr;
-        }
-    }
+		@include media("screen", "below:small") {
+			grid-template-columns: 1fr;
+		}
+	}
 }
 
 %collection-form {
-    margin: 0;
-    @include v(font-size, small);
-    @include v(line-height);
+	margin: 0;
+	@include v(font-size, small);
+	@include v(line-height);
 }
 
 input,
 textarea,
 [contenteditable] {
-    @include v(caret-color, raven);
+	@include v(caret-color, raven);
 }
 
 input,
 textarea {
-    @include transition(border-color);
-    @include v(background-color, milou);
-    @include v(color, thunder);
-    box-sizing: inherit !important;
-    padding: 0 0.4em;
-    border: v(measure, border-thin) solid v(color, alto);
-    @include v(border-radius, border-default);
-    outline-width: 0;
+	@include transition(border-color);
+	@include v(background-color, milou);
+	@include v(color, thunder);
+	box-sizing: inherit !important;
+	padding: 0 0.4em;
+	border: v(measure, border-thin) solid v(color, alto);
+	@include v(border-radius, border-default);
+	outline-width: 0;
 
-    &:hover {
-        @include v(border-color, coyote);
-    }
+	&:hover {
+		@include v(border-color, coyote);
+	}
 
-    &:focus {
-        @include v(border-color, raven);
-    }
+	&:focus {
+		@include v(border-color, raven);
+	}
 
-    &[disabled] {
-        @include v(opacity, beta);
-        pointer-events: none;
-    }
+	&[disabled] {
+		@include v(opacity, beta);
+		pointer-events: none;
+	}
 
-    &::-moz-focus-inner {
-        padding: 0;
-        margin: 0;
-    }
+	&::-moz-focus-inner {
+		padding: 0;
+		margin: 0;
+	}
 }
 
 input {
-    overflow: visible;
+	overflow: visible;
 
-    &[type="number"]::-webkit-inner-spin-button,
-    &[type="number"]::-webkit-outer-spin-button {
-        height: auto;
-    }
+	&[type="number"]::-webkit-inner-spin-button,
+	&[type="number"]::-webkit-outer-spin-button {
+		height: auto;
+	}
 
-    &[type="search"],
-    &[type="url"] {
-        // correct odd appearance in Chrome and Safari
-        -webkit-appearance: textfield;
-        // correct the outline style in Safari
-        outline-offset: -2px;
+	&[type="search"],
+	&[type="url"] {
+		// correct odd appearance in Chrome and Safari
+		-webkit-appearance: textfield;
+		// correct the outline style in Safari
+		outline-offset: -2px;
 
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-decoration {
-            -webkit-appearance: none;
-        }
-    }
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
 
-    &::-webkit-file-upload-button {
-        // correct inability to style clickable types in iOS and Safari
-        -webkit-appearance: button;
-    }
+	&::-webkit-file-upload-button {
+		// correct inability to style clickable types in iOS and Safari
+		-webkit-appearance: button;
+	}
 
-    &::-webkit-inner-spin-button {
-        opacity: 1;
-    }
+	&::-webkit-inner-spin-button {
+		opacity: 1;
+	}
 }
 
 textarea {
-    overflow: auto;
+	overflow: auto;
 }
 
 input[type="checkbox"] {
-    .code-toggle & {
-        @include hidden;
-    }
+	.code-toggle & {
+		@include hidden;
+	}
 
-    & + label {
-        @include non-selectable;
-        @include transition;
-        @include v(background-color, kaiser);
-        @include v(color, milou);
-        display: inline-block;
-        padding: 0 v(measure, medium);
-        @include v(border-radius, border-default);
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        cursor: pointer;
-        line-height: calc(var(--line-height-code) * 1.25);
+	& + label {
+		@include non-selectable;
+		@include transition;
+		@include v(background-color, kaiser);
+		@include v(color, milou);
+		display: inline-block;
+		padding: 0 v(measure, medium);
+		@include v(border-radius, border-default);
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		cursor: pointer;
+		line-height: calc(var(--line-height-code) * 1.25);
 
-        &::after {
-            content: "✔";
-            @include v(background-color, thunder--gamma);
-            width: var(--measure-large);
-            display: none;
-            position: absolute;
-            inset-block-start: 0;
-            inset-inline-start: 0;
-            inset-block-end: 0;
-            @include v(font-size, gamma);
-            line-height: 1;
-            border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
-        }
-    }
+		&::after {
+			content: "✔";
+			@include v(background-color, thunder--gamma);
+			width: var(--measure-large);
+			display: none;
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			inset-block-end: 0;
+			@include v(font-size, gamma);
+			line-height: 1;
+			border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
+		}
+	}
 
-    &:checked + label {
-        background-color: var(--color-liquid);
-        padding-inline-start: calc(var(--measure-large) + var(--measure-small));
-        padding-inline-end: calc(var(--measure-medium) - var(--measure-small));
+	&:checked + label {
+		background-color: var(--color-liquid);
+		padding-inline-start: calc(var(--measure-large) + var(--measure-small));
+		padding-inline-end: calc(var(--measure-medium) - var(--measure-small));
 
-        &::after {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
+		&::after {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }
 
 fieldset {
-    padding: 0;
-    border-width: 0;
-    margin: 0;
+	padding: 0;
+	border-width: 0;
+	margin: 0;
 }

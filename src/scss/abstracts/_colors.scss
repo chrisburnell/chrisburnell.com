@@ -4,42 +4,37 @@
 ////
 
 $opacities: (
-    alpha: 0.9,
-    beta: 0.5,
-    gamma: 0.1,
-    delta: 0.05,
+	alpha: 0.9,
+	beta: 0.5,
+	gamma: 0.1,
+	delta: 0.05,
 );
 
 $all-colors: $palette;
 
 $language-colors: (
-    css: #016fba,
-    html: #e54d26,
-    javascript: #f1c54c,
-    liquid: #7ab55c,
-    markdown: #4a525a,
-    nunjucks: #3d8137,
-    scss: #c6538c,
+	css: #016fba,
+	html: #e54d26,
+	javascript: #f1c54c,
+	liquid: #7ab55c,
+	markdown: #4a525a,
+	nunjucks: #3d8137,
+	scss: #c6538c,
 );
 
 // Generate opacity-versions of each color in $all-colors
 @each $name, $color in $all-colors {
-    @each $friendly, $value in $opacities {
-        $all-colors: map-merge(
-            $all-colors,
-            (
-                #{$name}--#{$friendly}: rgba($color, $value)
-            )
-        );
-    }
+	@each $friendly, $value in $opacities {
+		$all-colors: map-merge($all-colors, (#{$name}--#{$friendly}: rgba($color, $value)));
+	}
 }
 
 // Now that opacity-versions are generated, merge all colors together
 $all-colors: map-multiple-merge(
-    $all-colors,
-    $language-colors,
-    (
-        transparent: rgba(0, 0, 0, 0%),
-        shadow: 0deg 0% 60%,
-    )
+	$all-colors,
+	$language-colors,
+	(
+		transparent: rgba(0, 0, 0, 0%),
+		shadow: 0deg 0% 60%,
+	)
 );

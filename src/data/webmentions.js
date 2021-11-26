@@ -12,36 +12,36 @@ require("dotenv").config()
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
 async function getWebmentions() {
-    return await CacheAsset(`https://webmention.io/api/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=9999`, {
-        duration: "1d",
-        type: "json",
-        fetchOptions: {
-            method: "GET"
-        }
-    })
+	return await CacheAsset(`https://webmention.io/api/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=9999`, {
+		duration: "1d",
+		type: "json",
+		fetchOptions: {
+			method: "GET",
+		},
+	})
 }
 
-module.exports = async function() {
-    const rawWebmentions = await getWebmentions()
-    let webmentions = {}
+module.exports = async function () {
+	const rawWebmentions = await getWebmentions()
+	let webmentions = {}
 
-    // Sort webmentions into groups by target
-    for (let webmention of rawWebmentions.children) {
-        let url = queryFilters.getBaseUrl(queryFilters.fixUrl(webmention["wm-target"]))
+	// Sort webmentions into groups by target
+	for (let webmention of rawWebmentions.children) {
+		let url = queryFilters.getBaseUrl(queryFilters.fixUrl(webmention["wm-target"]))
 
-        if (!webmentions[url]) {
-            webmentions[url] = []
-        }
+		if (!webmentions[url]) {
+			webmentions[url] = []
+		}
 
-        webmentions[url].push(webmention)
-    }
+		webmentions[url].push(webmention)
+	}
 
-    // Sort mentions in groups by date
-    for (let url in webmentions) {
-        webmentions[url] = uniqBy(webmentions[url], function(item) {
-            return item["wm-id"]
-        })
-    }
+	// Sort mentions in groups by date
+	for (let url in webmentions) {
+		webmentions[url] = uniqBy(webmentions[url], function (item) {
+			return item["wm-id"]
+		})
+	}
 
-    return webmentions
+	return webmentions
 }

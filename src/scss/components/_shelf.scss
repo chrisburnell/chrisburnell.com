@@ -4,35 +4,35 @@
 ////
 
 .shelf {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-    @include v(column-gap, gutter);
-    @include v(row-gap, gap);
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	@include v(column-gap, gutter);
+	@include v(row-gap, gap);
 
-    article {
-        @include owl(small);
-        @include v(line-height, medium);
-    }
+	article {
+		@include owl(small);
+		@include v(line-height, medium);
+	}
 
-    h3 {
-        @include v(font-size, default);
+	h3 {
+		@include v(font-size, default);
 
-        a {
-            color: inherit;
-        }
-    }
+		a {
+			color: inherit;
+		}
+	}
 
-    .cover img {
-        margin: 0;
-        object-fit: cover;
-        @include v(box-shadow, small);
-    }
+	.cover img {
+		margin: 0;
+		object-fit: cover;
+		@include v(box-shadow, small);
+	}
 }
 
 .shelf--books {
-    grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
 
-    .cover img {
-        height: 240px;
-    }
+	.cover img {
+		height: 240px;
+	}
 }

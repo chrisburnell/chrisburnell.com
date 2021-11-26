@@ -4,42 +4,42 @@
 ////
 
 .deck {
-    article {
-        @include owl(tiny);
-        @include v(max-width, breakpoint-medium);
-        @include v(max-width, line-length-clamp);
-        @include v(padding-block-start, medium);
-        @include v(padding-block-end, medium);
+	article {
+		@include owl(tiny);
+		@include v(max-width, breakpoint-medium);
+		@include v(max-width, line-length-clamp);
+		@include v(padding-block-start, medium);
+		@include v(padding-block-end, medium);
 
-        &:first-child {
-            padding-block-start: 0;
-        }
+		&:first-child {
+			padding-block-start: 0;
+		}
 
-        &:last-child {
-            padding-block-end: 0;
-        }
-    }
-    article + article {
-        border-block-start: var(--measure-border-thin) solid var(--color-thunder--delta);
-    }
+		&:last-child {
+			padding-block-end: 0;
+		}
+	}
+	article + article {
+		border-block-start: var(--measure-border-thin) solid var(--color-thunder--delta);
+	}
 
-    a {
-        color: inherit;
-    }
+	a {
+		color: inherit;
+	}
 
-    h3 {
-        .emoji {
-            display: inline-block;
-            @include v(padding-inline-end, small);
-        }
-    }
+	h3 {
+		.emoji {
+			display: inline-block;
+			@include v(padding-inline-end, small);
+		}
+	}
 }
 
 .deck__context,
 .deck__meta {
-    font-style: italic;
+	font-style: italic;
 }
 
 .deck__meta a {
-    white-space: nowrap;
+	white-space: nowrap;
 }
