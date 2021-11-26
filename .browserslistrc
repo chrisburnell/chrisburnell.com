@@ -1,8 +1,5 @@
 # Browsers that are supported
 
-> 0.5%
+> 0.2%
 last 2 versions
-not ie <= 10
-not ie_mob <= 10
-not bb <= 10
-not op_mob <= 12.1
+not dead
