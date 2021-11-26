@@ -25,8 +25,10 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
 ## Video
 
 <figure>
-    <iframe src="https://player.vimeo.com/video/164122074?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
-    <figcaption>
-        <a class="u-syndication" rel="syndication" href="https://vimeo.com/164122074" title="Supporting Middle-Out in CSS on Vimeo">View this Talk on <em>Vimeo</em></a>
-    </figcaption>
+    <video controls>
+        <source src="/static/Supporting Middle-Out in CSS 640x360.mp4" type="video/mp4" media="all and (max-width: 640px)">
+        <source src="/static/Supporting Middle-Out in CSS 960x540.mp4" type="video/mp4" media="all and (max-width: 960px)">
+        <source src="/static/Supporting Middle-Out in CSS 1024x768.mp4" type="video/mp4">
+        Sorry, your browser doesn't support embedded videos.
+    </video>
 </figure>
