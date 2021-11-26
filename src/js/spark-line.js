@@ -10,7 +10,7 @@
 	const customSparkline = document.querySelector("#sparkline");
 
 	// strip non-numbers from the input
-	inputValues.value = inputValues.value.replace(/(?![0-9])./gmi, "");
+	inputValues.value = inputValues.value.replace(/(?![0-9])./gim, "");
 
 	// set attributes of the custom sparkline
 	customSparkline.setAttribute("curve", inputCurve.checked);

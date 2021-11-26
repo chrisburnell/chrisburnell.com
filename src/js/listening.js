@@ -21,18 +21,17 @@
 `;
 
 	fetch(LASTFM_URL)
-		.then(response => {
+		.then((response) => {
 			if (response.ok) {
 				return response;
-			}
-			else {
+			} else {
 				let error = new Error(response.statusText);
 				error.response = response;
 				throw error;
 			}
 		})
-		.then(response => response.json())
-		.then(data => {
+		.then((response) => response.json())
+		.then((data) => {
 			// Success!
 			for (let track of data) {
 				let url = track["url"];
@@ -51,20 +50,18 @@
 
 				let article = document.createElement("article");
 				article.className = "h-review";
-				article.innerHTML =
-					LASTFM_TEMPLATE
-						.replace(/{{ url }}/g, url)
-						.replace(/{{ name }}/g, trackName)
-						.replace(/{{ artist }}/g, trackArtist)
-						.replace(/{{ artistURL }}/g, trackArtistURL)
-						.replace(/{{ datetime }}/g, datetime)
-						.replace(/{{ datetimeFriendly }}/g, datetimeFriendly)
-						.replace(/{{ image }}/g, image);
+				article.innerHTML = LASTFM_TEMPLATE.replace(/{{ url }}/g, url)
+					.replace(/{{ name }}/g, trackName)
+					.replace(/{{ artist }}/g, trackArtist)
+					.replace(/{{ artistURL }}/g, trackArtistURL)
+					.replace(/{{ datetime }}/g, datetime)
+					.replace(/{{ datetimeFriendly }}/g, datetimeFriendly)
+					.replace(/{{ image }}/g, image);
 
 				LASTFM_FEED.appendChild(article);
 			}
 		})
-		.catch(error => {
+		.catch((error) => {
 			// Fail!
 			console.error(`LastFM request status error: ${error}`);
 		});

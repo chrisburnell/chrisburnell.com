@@ -1,30 +1,25 @@
 (() => {
 	"use strict";
 
-	let getParameterByName = name => {
+	let getParameterByName = (name) => {
 		const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
 		return regex && decodeURIComponent(regex[1].replace(/\+/g, " "));
 	};
 
-	let targetURL = getParameterByName("query")
-		? getParameterByName("query") : getParameterByName("q")
-		? getParameterByName("q") : getParameterByName("t")
-		? getParameterByName("t") : null;
+	let targetURL = getParameterByName("query") ? getParameterByName("query") : getParameterByName("q") ? getParameterByName("q") : getParameterByName("t") ? getParameterByName("t") : null;
 
 	if (targetURL) {
 		function targetURLCheck() {
-			fetch(targetURL + "?q=" + (+ new Date()))
-				.then(function(response) {
-					let targetURL = response.url.split('?q=')[0];
-					document.querySelector('#target-url').innerHTML = '<a href="' + targetURL + '">' + targetURL + '</a>';
-					console.log("Checking … " + targetURL);
-					if (response.status == 200) {
-						window.location.href = targetURL;
-					}
-					else {
-						console.log("Returned failing response … " + response.status);
-					}
-				});
+			fetch(targetURL + "?q=" + +new Date()).then(function (response) {
+				let targetURL = response.url.split("?q=")[0];
+				document.querySelector("#target-url").innerHTML = '<a href="' + targetURL + '">' + targetURL + "</a>";
+				console.log("Checking … " + targetURL);
+				if (response.status == 200) {
+					window.location.href = targetURL;
+				} else {
+					console.log("Returned failing response … " + response.status);
+				}
+			});
 			setTimeout(targetURLCheck, 10000);
 		}
 		targetURLCheck();
@@ -38,10 +33,9 @@
 		dots = (title.innerHTML.match(/\./g) || []).length;
 		if (dots == 3) {
 			title.innerHTML = titleText;
-		}
-		else {
+		} else {
 			dots++;
-			title.innerHTML = titleText + (".").repeat(dots);
+			title.innerHTML = titleText + ".".repeat(dots);
 		}
 	}, 1000);
 })();

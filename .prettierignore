@@ -1,0 +1,7 @@
+# Ignore generated files
+**/generated
+
+# Ignore specific filetypes
+*.html
+*.json
+*.md
