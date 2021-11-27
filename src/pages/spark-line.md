@@ -5,6 +5,7 @@ eleventyComputed:
   lede: "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>.<br>There are {{ github.sparkline['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/spark-line'>on GitHub</a> and it was downloaded {{ npm.sparkline['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/spark-line'>on npm</a>."
 show_webmentions: true
 js: spark-line.js
+toc: true
 ---
 
 <figure>

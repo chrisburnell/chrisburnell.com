@@ -27,6 +27,8 @@
 
 		&::before {
 			@include absolute(top-left);
+			@include v(font-family);
+			font-style: normal;
 			@include v(font-weight, bold);
 		}
 	}

@@ -16,7 +16,7 @@ layout: base
 	</div>
 
 	<div class=" [ content__body ] ">
-		<div class=" [ e-content ] ">
+		<div class=" [ e-content ] {% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>
 

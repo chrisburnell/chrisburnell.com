@@ -1,12 +1,13 @@
 ---
 title: CV
 eleventyComputed:
-  lede: "{{ author.role }}"
+  lede: "{{ author.role }}{% if author.employer %} and {{ author.employer.role }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
 sitemap:
   exclude: true
 ads: false
 monetizaton: false
+toc: true
 ---
 
 ## Biography
@@ -100,8 +101,10 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     “I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.”
 
-## Companies and brands I’ve worked with
+## Companies and brands I have worked with
 
+- [Glasgow Caledonian University](https://www.gcu.ac.uk/)
+- [Burness Paull](https://www.burnesspaull.com/)
 - [Buckinghamshire New University](https://bucks.ac.uk/)
 - [The Electoral Commission](https://www.electoralcommission.org.uk/)
 - [Mercator Media](https://www.mercatormedia.com/)

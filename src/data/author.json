@@ -37,7 +37,8 @@
     "token": "https://tokens.indieauth.com/token"
   },
   "employer": {
-    "name": "Squiz",
+    "title": "Squiz",
+    "role": "Lead Developer",
     "url": "https://www.squiz.net"
   }
 }

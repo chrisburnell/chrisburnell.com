@@ -5,6 +5,10 @@ function minify(input) {
 	return input.replace(/\s{2,}/g, "").replace(/\'/g, '"')
 }
 
+function headingSlugify(heading) {
+	return heading.id || slugify(heading.textContent.toLowerCase())
+}
+
 module.exports = function parse(value, outputPath) {
 	if (outputPath.endsWith(".html")) {
 		const DOM = new JSDOM(value, {
@@ -14,6 +18,7 @@ module.exports = function parse(value, outputPath) {
 		const document = DOM.window.document
 		const articleImages = [...document.querySelectorAll("main article img")]
 		const articleHeadings = [...document.querySelectorAll("main article h2")]
+		const tocHeadings = [...document.querySelectorAll(".generate-toc h2")]
 
 		if (articleImages.length) {
 			articleImages.forEach((image) => {
@@ -37,11 +42,35 @@ module.exports = function parse(value, outputPath) {
 			})
 		}
 
+		if (tocHeadings.length) {
+			const tocParent = document.querySelector(".details")
+
+			const box = document.createElement("div")
+			box.classList.add("box")
+
+			const list = document.createElement("ol")
+			list.classList.add = "default-list"
+
+			// Loop each heading and add a little anchor and an ID to each one
+			tocHeadings.forEach((heading) => {
+				const headingID = headingSlugify(heading)
+				const listItem = document.createElement("li")
+
+				listItem.innerHTML = minify(`
+                    <a href="#${headingID}">${heading.textContent}</a>
+				`)
+
+				list.appendChild(listItem)
+			})
+
+			box.appendChild(list)
+			tocParent.appendChild(box)
+		}
+
 		if (articleHeadings.length) {
 			// Loop each heading and add a little anchor and an ID to each one
 			articleHeadings.forEach((heading) => {
-				const headingSlug = slugify(heading.textContent.toLowerCase())
-				const headingID = heading.id || headingSlug
+				const headingID = headingSlugify(heading)
 				const anchor = document.createElement("a")
 
 				anchor.setAttribute("href", `#${headingID}`)
@@ -51,7 +80,8 @@ module.exports = function parse(value, outputPath) {
                     <span class="hidden"> permalink</span>
                     <svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
                         <use href="/images/sprites.svg#svg--link"></use>
-                    </svg>`)
+                    </svg>
+				`)
 
 				heading.setAttribute("id", headingID)
 				heading.appendChild(anchor)
