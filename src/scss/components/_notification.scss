@@ -4,8 +4,8 @@
 ////
 
 .notification {
-	@include v(background-color, mineshaft);
-	@include v(color, milou);
+	background-color: h(mineshaft);
+	color: h(milou);
 	display: block;
 	padding: var(--measure-small) var(--measure-medium);
 	position: fixed;
@@ -34,10 +34,10 @@
 	}
 
 	&.notification--positive {
-		@include v(background-color, conifer);
+		background-color: h(conifer);
 	}
 
 	&.notification--negative {
-		@include v(background-color, maple);
+		background-color: h(maple);
 	}
 }

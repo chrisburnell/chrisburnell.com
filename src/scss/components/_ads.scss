@@ -41,9 +41,9 @@
 }
 
 .ad__split {
-	@include v(background-color, thunder--delta);
+	background-color: h(thunder, delta);
 	@include v(padding, medium);
-	border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
+	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
 	background-clip: padding-box;
 	display: flex;
@@ -71,7 +71,7 @@
 
 .ad__label {
 	@include case(uppercase);
-	@include v(color, kaiser);
+	color: h(kaiser);
 	display: block;
 	@include v(padding, small);
 	@include v(font-size, small);

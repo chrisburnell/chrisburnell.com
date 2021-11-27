@@ -44,14 +44,14 @@
 		color: inherit;
 		font-style: normal;
 		@include v(font-weight, bold);
-		@include v(text-decoration-color, transparent);
+		text-decoration-color: transparent;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		.anchor {
-			@include v(text-decoration-color, maple);
+			text-decoration-color: h(maple);
 		}
 	}
 }
@@ -64,7 +64,7 @@
 	float: left;
 	float: inline-start;
 	position: relative;
-	--color-shadow: var(--color-thunder--gamma);
+	--color-shadow: #{h(thunder, gamma)};
 	@include v(box-shadow, inset);
 	text-decoration: none !important;
 	@include transition(opacity);

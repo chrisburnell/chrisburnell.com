@@ -20,7 +20,7 @@
 		}
 	}
 	article + article {
-		border-block-start: var(--measure-border-thin) solid var(--color-thunder--delta);
+		border-block-start: var(--measure-border-thin) solid h(thunder, delta);
 	}
 
 	a {

@@ -5,8 +5,8 @@
 
 a {
 	h2 & {
-		color: v(color, kaiser) !important;
-		@include v(text-decoration-color, transparent);
+		color: h(kaiser) !important;
+		text-decoration-color: transparent;
 		@include v(text-decoration-thickness, border-thin);
 		@include v(text-underline-offset, border-default);
 	}
@@ -22,7 +22,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		background-image: linear-gradient(to bottom right, var(--color-raven), var(--color-maple));
+		background-image: linear-gradient(to bottom right, h(raven), h(maple));
 		background-clip: text;
 		text-fill-color: transparent;
 		box-decoration-break: clone;
@@ -34,7 +34,7 @@ a {
 .fragment-anchor {
 	@include case(lowercase);
 	@include font-family(monospace);
-	@include v(color, dove);
+	color: h(dove);
 	display: none;
 	visibility: hidden;
 	@include v(padding-inline-start, small);
@@ -74,10 +74,10 @@ li {
 				@keyframes anchor-target {
 					0%,
 					50% {
-						@include v(background-color, aspen);
+						background-color: h(aspen);
 					}
 					100% {
-						@include v(background-color, transparent);
+						background-color: transparent;
 					}
 				}
 			}

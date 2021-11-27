@@ -42,7 +42,7 @@ figure {
 	}
 
 	& > a figcaption {
-		@include v(color, dove);
+		color: h(dove);
 		font-style: italic;
 	}
 

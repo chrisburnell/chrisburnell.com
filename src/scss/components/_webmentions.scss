@@ -67,7 +67,7 @@
 	}
 
 	small {
-		@include v(color, dove);
+		color: h(dove);
 	}
 }
 
@@ -75,12 +75,12 @@
 	@include transition(border-color);
 	box-sizing: content-box;
 	@include v(width, avatar-small);
-	border: var(--measure-border-default) solid var(--color-raven--beta);
+	border: var(--measure-border-default) solid h(raven, beta);
 
 	&:link:hover,
 	&:link:focus,
 	&:link:active {
-		border-color: var(--color-maple);
+		border-color: h(maple);
 	}
 
 	&,

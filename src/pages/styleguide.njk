@@ -14,7 +14,7 @@ toc: true
 
 <h2>Colours</h2>
 
-<div class="navigator  requires-js">
+<div class="navigator  requires-js" hidden>
 	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false">Show opacity variants</button>
 </div>
 <figure>
@@ -201,9 +201,6 @@ toc: true
 	<li>This is the last list item</li>
 </ol>
 
-
-<h2>Ordered List Reversed</h2>
-
 <ol reversed>
 	<li>This is a list item in an ordered list</li>
 	<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
@@ -215,9 +212,6 @@ toc: true
 		</ol>
 	</li>
 </ol>
-
-
-<h2>Ordered List Reversed, Twice</h2>
 
 <ol reversed>
 	<li>This is a list item in an ordered list</li>
@@ -288,7 +282,7 @@ toc: true
 </figure>
 
 
-<h2>Table with Alternating Rows</h2>
+<h3>Table with Alternating Rows</h3>
 
 <figure>
 	<table class="zebra">
@@ -337,7 +331,7 @@ toc: true
 </figure>
 
 
-<h2>Table with Subheadings</h2>
+<h3>Table with Subheadings</h3>
 
 <figure>
 	<table>
@@ -462,10 +456,6 @@ p q r s t u v w x y z { | } ~
 	<p>Uh oh, this box might mean something went wrong.</p>
 </div>
 
-<div class=" [ box  box--success ] ">
-	<p>Whereas this one probably signifies something good happened.</p>
-</div>
-
 
 <h2>Deck</h2>
 
@@ -484,14 +474,20 @@ p q r s t u v w x y z { | } ~
 {% endfor %}
 </nav>
 
-
-<h2>Shelf with Images</h2>
-
 <nav class=" [ shelf ] ">
 {% for item in collections.music | arePublished | reverse | limit(site.limits.feature) %}
 	{{ shelfItem(item, global.now, people, false) }}
 {% endfor %}
 </nav>
+
+
+<h2>Video</h2>
+
+<figure>
+	<div class=" [ media ] ">
+		<iframe src="https://player.vimeo.com/video/11933164?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
+	</div>
+</figure>
 
 
 <h2>Speakerdeck</h2>
@@ -503,25 +499,16 @@ p q r s t u v w x y z { | } ~
 </figure>
 
 
-<h2>Video Embed</h2>
-
-<figure>
-	<div class=" [ media ] ">
-		<iframe src="https://player.vimeo.com/video/11933164?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
-	</div>
-</figure>
-
-
-<h2>CodePen Embed</h2>
+<h2>CodePen</h2>
 
 {% codepen 'mglHp', false, 425 %}
 
 
-<h2>Can I Use Embed</h2>
+<h2>Can I Use</h2>
 
 {% caniuse 'css-sel3' %}
 
 
-<h2>Twitter Embedded Quote</h2>
+<h2>Tweet</h2>
 
 {% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}

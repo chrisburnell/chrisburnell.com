@@ -132,11 +132,17 @@
 
 .table-of-contents {
 	@include v(margin-block, large);
+	overflow-y: auto;
+
+	@include media("below:medium") {
+		max-height: 60vh;
+	}
 
 	@include media("above:medium") {
 		grid-column: marginalia;
 		grid-row: 3 / 5;
 		margin-block-end: 0;
+		max-height: calc(100vh - #{v(measure, medium)} * 2);
 		position: sticky;
 		@include v(top, medium);
 	}

@@ -15,7 +15,7 @@ table {
 
 	&.zebra {
 		tbody tr:nth-child(even) td {
-			@include v(background-color, thunder--delta);
+			background-color: h(thunder, delta);
 		}
 	}
 }
@@ -43,7 +43,7 @@ th {
 	white-space: nowrap;
 
 	&:not(:empty) {
-		@include v(background-color, thunder--delta);
+		background-color: h(thunder, delta);
 	}
 
 	tbody & {

@@ -29,26 +29,26 @@ form {
 input,
 textarea,
 [contenteditable] {
-	@include v(caret-color, raven);
+	caret-color: h(raven);
 }
 
 input,
 textarea {
 	@include transition(border-color);
-	@include v(background-color, milou);
-	@include v(color, thunder);
+	background-color: h(milou);
+	color: h(thunder);
 	box-sizing: inherit !important;
 	padding: 0 0.4em;
-	border: v(measure, border-thin) solid v(color, alto);
+	border: v(measure, border-thin) solid h(alto);
 	@include v(border-radius, border-default);
 	outline-width: 0;
 
 	&:hover {
-		@include v(border-color, coyote);
+		border-color: h(coyote);
 	}
 
 	&:focus {
-		@include v(border-color, raven);
+		border-color: h(raven);
 	}
 
 	&[disabled] {
@@ -105,8 +105,8 @@ input[type="checkbox"] {
 	& + label {
 		@include non-selectable;
 		@include transition;
-		@include v(background-color, kaiser);
-		@include v(color, milou);
+		background-color: h(kaiser);
+		color: h(milou);
 		display: inline-block;
 		padding: 0 v(measure, medium);
 		@include v(border-radius, border-default);
@@ -118,7 +118,7 @@ input[type="checkbox"] {
 
 		&::after {
 			content: "✔";
-			@include v(background-color, thunder--gamma);
+			background-color: h(thunder, gamma);
 			width: var(--measure-large);
 			display: none;
 			position: absolute;
@@ -132,7 +132,7 @@ input[type="checkbox"] {
 	}
 
 	&:checked + label {
-		background-color: var(--color-liquid);
+		background-color: h(confier);
 		padding-inline-start: calc(var(--measure-large) + var(--measure-small));
 		padding-inline-end: calc(var(--measure-medium) - var(--measure-small));
 

@@ -7,30 +7,30 @@
 a,
 .anchor {
 	@include transition(background-color, color, text-decoration-color);
-	@include v(background-color, transparent);
-	@include v(color, bowhead);
-	outline: 0 solid var(--color-maple);
+	background-color: transparent;
+	color: h(bowhead);
+	outline: 0 solid h(maple);
 	position: relative;
 	text-decoration: underline;
-	@include v(text-decoration-color, alto);
+	text-decoration-color: h(alto);
 	@include v(text-decoration-thickness, border-thin);
 	text-decoration-skip-ink: auto;
 
 	&:hover,
 	&:focus,
 	&:active {
-		@include v(text-decoration-color, maple);
+		text-decoration-color: h(maple);
 	}
 
 	&:focus {
-		@include v(outline-color, raven);
+		outline-color: h(raven);
 		@include v(outline-width, border-thin);
 		@include v(outline-offset, border-thin);
 	}
 
 	&:active {
-		@include v(background-color, maple);
-		color: v(color, milou) !important;
+		background-color: h(maple);
+		color: h(milou) !important;
 		@include v(outline-width, border-thin);
 		outline-offset: 0;
 	}

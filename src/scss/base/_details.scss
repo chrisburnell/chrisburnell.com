@@ -14,7 +14,7 @@ details {
 	}
 
 	& > div {
-		@include v(background-color, alto);
+		background-color: h(alto);
 		max-height: 0;
 		@include v(padding-block-start, small);
 		position: absolute;
@@ -44,7 +44,7 @@ summary {
 
 	& + %collection-content {
 		@include v(margin-block-start, small);
-		border-block-start: v(measure, border-thin) solid v(color, raven);
+		border-block-start: v(measure, border-thin) solid h(raven);
 		@include v(padding-block-start, medium);
 	}
 }

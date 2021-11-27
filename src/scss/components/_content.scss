@@ -16,12 +16,12 @@
 	text-shadow: none;
 }
 .title--positive > span {
-	@include v(background-color, liquid);
-	@include v(color, milou);
+	background-color: h(liquid);
+	color: h(milou);
 }
 .title--negative > span {
-	@include v(background-color, maple);
-	@include v(color, milou);
+	background-color: h(maple);
+	color: h(milou);
 }
 
 .lede {
@@ -79,12 +79,12 @@ spark-line {
 	}
 
 	&::before {
-		@include v(color, alto);
+		color: h(alto);
 	}
 
 	&::after {
 		background-color: inherit;
-		@include v(color, kaiser);
+		color: h(kaiser);
 		width: 0;
 		overflow: hidden;
 		position: absolute;

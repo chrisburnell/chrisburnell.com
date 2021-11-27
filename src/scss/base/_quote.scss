@@ -5,7 +5,7 @@
 
 blockquote {
 	@include quotes;
-	@include v(background-color, raven--gamma);
+	background-color: h(raven, gamma);
 	width: 100%;
 	@include v(max-width, line-length-clamp);
 	@include v(padding, medium);
@@ -37,7 +37,7 @@ blockquote {
 	}
 
 	cite {
-		@include v(color, kaiser);
+		color: h(kaiser);
 		display: block;
 		@include v(margin-block-start, medium);
 		text-align: right;

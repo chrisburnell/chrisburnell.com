@@ -4,7 +4,7 @@
 ////
 
 .header {
-	@include v(background-color, bear);
+	background-color: h(bear);
 
 	@include media("print") {
 		display: none;

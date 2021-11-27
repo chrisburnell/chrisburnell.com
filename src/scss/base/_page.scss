@@ -4,15 +4,15 @@
 ////
 
 html {
-	@include v(background-color, kaiser);
+	background-color: h(kaiser);
 	position: relative;
 	overflow-x: hidden;
 	// prevent horizontal jump when navigating short page <--> tall page
 	overflow-y: scroll;
 	overscroll-behavior: contain;
-	accent-color: v(color, raven);
+	accent-color: h(raven);
 	scroll-behavior: smooth;
-	scrollbar-color: v(color, raven) v(color, milou);
+	scrollbar-color: h(raven) h(milou);
 	font-size: 100%;
 	// prevent adjustments of font-size after orientation changes in IE on
 	// Windows Phone and in iOS
@@ -22,8 +22,8 @@ html {
 }
 
 body {
-	@include v(background-color, milou);
-	@include v(color, kaiser);
+	background-color: h(milou);
+	color: h(kaiser);
 	width: 100%;
 	min-height: 100vh;
 	margin: 0;

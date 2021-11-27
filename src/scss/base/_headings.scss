@@ -62,7 +62,7 @@ h2 {
 	@extend %delta;
 
 	@include case(uppercase);
-	border-block-end: v(measure, border-thin) solid v(color, alto);
+	border-block-end: v(measure, border-thin) solid h(alto);
 	width: auto;
 	max-width: 100%;
 	display: inline-block;

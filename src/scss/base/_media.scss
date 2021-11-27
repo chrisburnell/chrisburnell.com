@@ -57,28 +57,28 @@ progress {
 
 meter {
 	&::-webkit-meter-bar {
-		@include v(background-color, dove);
+		background-color: h(dove);
 	}
 
 	&::-webkit-meter-optimum-value {
-		@include v(background-color, conifer);
+		background-color: h(conifer);
 	}
 
 	&::-webkit-meter-suboptimum-value {
-		@include v(background-color, aspen);
+		background-color: h(aspen);
 	}
 
 	&::-webkit-meter-even-less-good-value {
-		@include v(background-color, maple);
+		background-color: h(maple);
 	}
 }
 
 progress {
 	&::-webkit-progress-bar {
-		@include v(background-color, dove);
+		background-color: h(dove);
 	}
 
 	&::-webkit-progress-value {
-		@include v(background-color, raven);
+		background-color: h(raven);
 	}
 }

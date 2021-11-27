@@ -36,22 +36,22 @@ h2 > code,
 %collection-content > code,
 li > code,
 samp {
-	@include v(background-color, raven--gamma);
+	background-color: h(raven, gamma);
 	user-select: all;
 }
 
 kbd {
 	@include case(uppercase);
-	--color-shadow: #{v(color, kaiser)};
+	--color-shadow: #{h(kaiser)};
 	@include v(box-shadow, small);
 }
 
 mark {
-	@include v(background-color, aspen);
+	background-color: h(aspen);
 }
 
 var {
-	@include v(color, bowhead);
+	color: h(bowhead);
 	font-style: normal;
 	font-size: inherit;
 	@include v(font-weight, bold);
@@ -66,8 +66,8 @@ pre {
 
 // Highlighted Code Blocks
 pre[class*="language-"] {
-	background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-lynx) var(--measure-gap), var(--color-lynx) 100%);
-	@include v(color, milou);
+	background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) var(--measure-gap), h(lynx) var(--measure-gap), h(lynx) 100%);
+	color: h(milou);
 	width: auto;
 	min-width: 10vw;
 	margin-block-end: 0;
@@ -87,7 +87,7 @@ pre[class*="language-"] {
 	}
 
 	code {
-		@include v(background-color, lynx);
+		background-color: h(lynx);
 		min-width: 100%;
 		display: block;
 		overflow-wrap: normal;
@@ -101,8 +101,8 @@ code[class*="language-"] {
 		@include absolute(top-left);
 		@include font-family(alpha);
 		@include v(font-size);
-		@include v(background-color, dove);
-		@include v(color, milou);
+		background-color: h(dove);
+		color: h(milou);
 		@include v(height, gap);
 		display: flex;
 		align-items: center;

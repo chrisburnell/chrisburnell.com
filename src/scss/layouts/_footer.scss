@@ -4,10 +4,10 @@
 ////
 
 .footer {
-	@include v(background-color, mineshaft);
+	background-color: h(mineshaft);
 	@include v(padding-block-start, large);
 	@include v(padding-block-end, large);
-	border-block-start: var(--measure-border-thin) solid var(--color-coyote);
+	border-block-start: var(--measure-border-thin) solid h(coyote);
 
 	@include media("print") {
 		display: none;
@@ -16,10 +16,10 @@
 	&,
 	a,
 	button {
-		@include v(color, milou);
+		color: h(milou);
 
 		&:not(:hover):not(:focus):not(:active) {
-			@include v(text-decoration-color, kaiser);
+			text-decoration-color: h(kaiser);
 		}
 	}
 

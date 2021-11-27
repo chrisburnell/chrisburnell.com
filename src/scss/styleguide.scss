@@ -21,7 +21,7 @@
 @import "vendors/include-media";
 
 .palette-list {
-	@include v(background-color, milou);
+	background-color: h(milou);
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -72,20 +72,20 @@
 }
 @each $name, $color in $hsl-palette {
 	.background--#{$name} {
-		background-color: v(color, $name);
+		background-color: map-get($palette, $name);
 		color: contrasting-color(map-get($palette, $name));
 	}
-	@each $opacity, $value in $opacities {
-		.background--#{$name}--#{$opacity} {
-			background-color: v(color, #{$name}--#{$opacity});
-			color: contrasting-color(mix(map-get($palette, "milou"), rgba(map-get($palette, $name), $value)));
-		}
-	}
+	// @each $opacity, $value in $opacities {
+	// 	.background--#{$name}--#{$opacity} {
+	// 		background-color: h($name, $opacity);
+	// 		color: contrasting-color(mix(map-get($palette, "milou"), hsla(#{map-get($hsl-palette, $name)} / #{$value})));
+	// 	}
+	// }
 }
 
 .measure-example {
-	@include v(background-color, alto);
-	background-image: linear-gradient(to bottom, v(color, maple), v(color, maple));
+	background-color: h(alto);
+	background-image: linear-gradient(to bottom, h(maple), h(maple));
 	background-position: center center;
 	background-size: 100% v(measure, border-thin);
 	background-repeat: no-repeat;
@@ -118,7 +118,7 @@
 	&::before {
 		content: "(Hover to interact.)";
 		@include absolute(top, 100%);
-		@include v(color, kaiser);
+		color: h(kaiser);
 		@include v(margin-block-start, small);
 	}
 
@@ -130,7 +130,7 @@
 }
 
 .transition-example__demo {
-	border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
+	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
 	@include transition(color);
 	width: 100%;
@@ -139,7 +139,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: v(measure, border-thin) solid v(color, alto);
+	border: v(measure, border-thin) solid h(alto);
 	margin-inline-start: auto;
 	margin-inline-end: auto;
 	overflow-x: hidden;
@@ -151,13 +151,13 @@
 
 	&:hover,
 	&:focus {
-		@include v(color, milou);
+		color: h(milou);
 	}
 
 	&::before {
 		content: "";
 		@include absolute(full);
-		@include v(background-color, kaiser);
+		background-color: h(kaiser);
 		@include v(border-radius, border-thin);
 		@include v(z-index, below);
 	}

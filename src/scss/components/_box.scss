@@ -4,9 +4,9 @@
 ////
 
 .box {
-	@include v(background-color, thunder--delta);
+	background-color: h(thunder, delta);
 	@include v(padding, medium);
-	border-block-start: var(--measure-border-thin) solid var(--color-raven--beta);
+	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
 	background-clip: padding-box;
 	text-align: left;
@@ -14,16 +14,16 @@
 	font-style: normal;
 
 	a {
-		@include v(color, bowhead);
+		color: h(bowhead);
 	}
 }
 
 .box--error {
-	@include v(background-color, maple--delta);
-	border-block-start-color: var(--color-maple--beta);
+	background-color: h(maple, delta);
+	border-block-start-color: h(maple, beta);
 }
 
 .box--warning {
-	@include v(background-color, aspen--delta);
-	border-block-start-color: var(--color-aspen--beta);
+	background-color: h(aspen, delta);
+	border-block-start-color: h(aspen, beta);
 }

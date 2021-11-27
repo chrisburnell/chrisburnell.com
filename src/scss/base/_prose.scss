@@ -4,10 +4,10 @@
 ////
 
 :is(abbr, dfn)[title] {
-	@include v(color, dove);
+	color: h(dove);
 	font-style: italic;
 	font-weight: v(font-weight) !important;
-	border-block-end: v(measure, border-thin) dotted v(color, dove);
+	border-block-end: v(measure, border-thin) dotted h(dove);
 	cursor: help;
 
 	a & {
@@ -20,17 +20,17 @@ ins {
 }
 
 ins {
-	@include v(background-color, conifer);
-	@include v(color, milou);
+	background-color: h(conifer);
+	color: h(milou);
 	@include v(font-size);
 }
 
 del {
-	@include v(color, maple);
+	color: h(maple);
 }
 
 s {
-	@include v(color, dove);
+	color: h(dove);
 }
 
 strong {
@@ -68,7 +68,7 @@ sup {
 }
 
 hr {
-	@include v(background-color, thunder--gamma);
+	background-color: h(thunder, gamma);
 	width: 100%;
 	height: var(--measure-border-thin);
 	display: block;
@@ -103,19 +103,19 @@ hr {
 // Text Selection
 ::selection,
 ::target-text {
-	@include v(background-color, raven);
-	@include v(color, milou);
+	background-color: h(raven);
+	color: h(milou);
 	text-shadow: none;
 
 	&.canada {
-		@include v(background-color, maple);
+		background-color: h(maple);
 	}
 }
 
 ::spelling-error {
-	text-decoration: v(color, maple) wavy underline;
+	text-decoration: h(maple) wavy underline;
 }
 
 ::grammar-error {
-	text-decoration: v(color, conifer) wavy underline;
+	text-decoration: h(conifer) wavy underline;
 }

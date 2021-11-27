@@ -1,0 +1,30 @@
+////
+/// The Matrix has you...
+/// @group themes
+////
+
+$matrix-palette: (
+	lynx: #273d27,
+	bowhead: #00ee00,
+	raven: #00dd00,
+	coyote: #00cc00,
+	bear: #e0f6e0,
+);
+
+@mixin theme-matrix() {
+	@each $name, $color in $matrix-palette {
+		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	}
+
+	--font-family-default: "Comic Sans MS", sans-serif;
+	--font-family-alpha: "Comic Sans MS", serif;
+	--font-family-serif: serif;
+
+	.webmentions {
+		margin-top: var(--measure-large);
+	}
+}
+
+.matrix {
+	@include theme-matrix;
+}

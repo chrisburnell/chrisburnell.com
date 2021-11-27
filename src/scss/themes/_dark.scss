@@ -4,18 +4,18 @@
 ////
 
 @mixin theme-dark() {
-	--color-shadow: var(--hsl-thunder);
+	--hsl-shadow: var(--hsl-thunder);
 
-	scrollbar-color: v(color, raven) v(color, mineshaft);
+	scrollbar-color: h(raven) h(mineshaft);
 
 	.header,
 	.main {
-		@include v(background-color, wolf);
-		@include v(color, milou);
+		background-color: h(wolf);
+		color: h(milou);
 	}
 
 	.main {
-		@include v(background-color, mineshaft);
+		background-color: h(mineshaft);
 	}
 
 	:is(abbr, dfn)[title],
@@ -23,46 +23,46 @@
 	blockquote cite,
 	.fragment-anchor,
 	.webmentions__response small {
-		@include v(color, alto);
+		color: h(alto);
 	}
 
 	var,
 	.box a {
-		@include v(color, highland);
+		color: h(highland);
 	}
 
 	.footer {
-		background-image: linear-gradient(to bottom, var(--color-thunder--gamma), var(--color-thunder--gamma));
+		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
 	}
 
 	h1 {
-		text-shadow: 0.025em -0.025em 0 var(--color-mineshaft), 0.025em -0.0125em 0 var(--color-mineshaft), 0.025em 0.025em 0 var(--color-mineshaft), 0 0.025em 0 var(--color-mineshaft), -0.025em 0.025em 0 var(--color-mineshaft), -0.025em -0.0125em 0 var(--color-mineshaft), -0.025em -0.025em 0 var(--color-mineshaft);
+		text-shadow: 0.025em -0.025em 0 h(mineshaft), 0.025em -0.0125em 0 h(mineshaft), 0.025em 0.025em 0 h(mineshaft), 0 0.025em 0 h(mineshaft), -0.025em 0.025em 0 h(mineshaft), -0.025em -0.0125em 0 h(mineshaft), -0.025em -0.025em 0 h(mineshaft);
 	}
 
 	a,
 	.anchor {
-		@include v(color, highland);
-		@include v(text-decoration-color, kaiser);
+		color: h(highland);
+		text-decoration-color: h(kaiser);
 	}
 
 	h2 a {
 		color: inherit !important;
-		@include v(text-decoration-color, transparent);
+		text-decoration-color: transparent;
 	}
 
 	.rating {
 		&::before {
-			@include v(color, kaiser);
+			color: h(kaiser);
 		}
 
 		&::after {
-			@include v(color, alto);
+			color: h(alto);
 		}
 	}
 
 	pre[class*="language-"] {
-		@include v(background-color, mineshaft);
-		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) calc(var(--measure-gap) - var(--measure-border-thin)), var(--color-raven--beta) var(--measure-gap), var(--color-thunder--gamma) var(--measure-gap), var(--color-thunder--gamma) 100%);
+		background-color: h(mineshaft);
+		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) var(--measure-gap), h(thunder, gamma) var(--measure-gap), h(thunder, gamma) 100%);
 
 		code {
 			background-color: transparent;

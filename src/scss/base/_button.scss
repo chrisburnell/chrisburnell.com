@@ -21,17 +21,17 @@ button:not([class*="anchor"]),
 	@include font-family(default);
 	@include non-selectable;
 	@include transition(background-color);
-	@include v(background-color, bowhead);
-	color: v(color, bear) !important; // prevent dark theme from overriding this
+	background-color: h(bowhead);
+	color: h(bear) !important; // prevent dark theme from overriding this
 	min-width: 8em;
 	display: inline-block;
 	@include v(padding, small);
 	margin: calc(#{v(measure, border-thin)} * 2); // accounts for outline-width + outline-offset
 	border-width: 0;
 	@include v(border-radius, border-default);
-	--color-shadow: #{v(color, bowhead--gamma)};
+	--color-shadow: #{h(bowhead, gamma)};
 	@include v(box-shadow, small);
-	outline: 0 solid #{v(color, raven)};
+	outline: 0 solid #{h(raven)};
 	overflow: visible;
 	position: relative;
 	@include v(font-size, default);
@@ -50,8 +50,8 @@ button:not([class*="anchor"]),
 	}
 
 	&:active {
-		background-color: v(color, bowhead) !important;
-		color: v(color, bear) !important;
+		background-color: h(bowhead) !important;
+		color: h(bear) !important;
 		box-shadow: none;
 		transform: translateY(v(measure, border-button));
 
@@ -71,7 +71,7 @@ button:not([class*="anchor"]),
 	}
 
 	.icon {
-		filter: drop-shadow(0 0 var(--measure-border-hairline) #{v(color, bear--gamma)});
+		filter: drop-shadow(0 0 var(--measure-border-hairline) #{h(bear, gamma)});
 	}
 }
 
