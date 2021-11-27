@@ -22,7 +22,7 @@
 			[content-start outdent-start]
 			repeat(6, 1fr)
 			[content-end outdent-end];
-		grid-template-rows: auto auto 1fr;
+		grid-template-rows: auto auto auto 1fr;
 	}
 
 	@include media("above:large") {
@@ -75,7 +75,7 @@
 
 	@include media("above:medium") {
 		grid-column: content;
-		grid-row: 1/2;
+		grid-row: 1 / 2;
 	}
 }
 
@@ -87,7 +87,7 @@
 
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: 2/3;
+		grid-row: 2 / 3;
 		margin-block-end: 0;
 		text-align: right;
 	}
@@ -130,19 +130,31 @@
 	}
 }
 
+.table-of-contents {
+	@include v(margin-block, large);
+
+	@include media("above:medium") {
+		grid-column: marginalia;
+		grid-row: 3 / 5;
+		margin-block-end: 0;
+		position: sticky;
+		@include v(top, medium);
+	}
+}
+
 .content__body {
 	@include owl;
 	overflow: hidden;
 
 	@include media("above:medium") {
 		grid-column: content;
-		grid-row: 2/4;
+		grid-row: 2 / 5;
 	}
 
 	.full > &,
 	.wide > & {
 		@include media("above:medium") {
-			grid-row: 3/4;
+			grid-row: 3 / 4;
 		}
 	}
 
@@ -173,13 +185,13 @@
 .meta {
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: 3/4;
+		grid-row: 4 / 5;
 	}
 }
 
 .ads {
 	@include media("above:medium") {
 		grid-column: content;
-		grid-row: 4/5;
+		grid-row: 5 / 6;
 	}
 }

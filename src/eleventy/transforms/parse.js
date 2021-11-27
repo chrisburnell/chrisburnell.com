@@ -43,10 +43,12 @@ module.exports = function parse(value, outputPath) {
 		}
 
 		if (tocHeadings.length) {
-			const tocParent = document.querySelector(".details")
+			const tocParent = document.getElementById("content")
+			const tocBefore = document.querySelector(".content__body")
 
 			const box = document.createElement("div")
 			box.classList.add("box")
+			box.classList.add("table-of-contents")
 
 			const list = document.createElement("ol")
 			list.classList.add = "default-list"
@@ -64,7 +66,7 @@ module.exports = function parse(value, outputPath) {
 			})
 
 			box.appendChild(list)
-			tocParent.appendChild(box)
+			tocParent.insertBefore(box, tocBefore)
 		}
 
 		if (articleHeadings.length) {
