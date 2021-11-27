@@ -10,11 +10,25 @@
 
 	.header,
 	.main {
-		color: var(--color-milou);
+		@include v(background-color, wolf);
+		@include v(color, milou);
 	}
 
 	.main {
-		background-color: var(--color-mineshaft);
+		@include v(background-color, mineshaft);
+	}
+
+	:is(abbr, dfn)[title],
+	figure > a figcaption,
+	blockquote cite,
+	.fragment-anchor,
+	.webmentions__response small {
+		@include v(color, alto);
+	}
+
+	var,
+	.box a {
+		@include v(color, highland);
 	}
 
 	.footer {
@@ -27,6 +41,7 @@
 
 	a,
 	.anchor {
+		@include v(color, highland);
 		@include v(text-decoration-color, kaiser);
 	}
 

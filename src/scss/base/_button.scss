@@ -22,7 +22,7 @@ button:not([class*="anchor"]),
 	@include non-selectable;
 	@include transition(background-color);
 	@include v(background-color, bowhead);
-	@include v(color, bear);
+	color: v(color, bear) !important; // prevent dark theme from overriding this
 	min-width: 8em;
 	display: inline-block;
 	@include v(padding, small);
