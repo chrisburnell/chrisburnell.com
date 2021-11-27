@@ -13,9 +13,6 @@ js: styleguide.js
 
 <h2>Colours</h2>
 
-<div class="navigator">
-	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false" hidden>Show opacity variants</button>
-</div>
 <figure>
 	<ul id="palette-list" aria-expanded="false" aria-labelledby="palette-toggler" class="palette-list" id="colors">
 		{%- for name, color in palette -%}
@@ -35,6 +32,9 @@ js: styleguide.js
 		<p>Available as a <a href="/palette.gpl">palette file</a> for your favourite image/pixel editor!</p>
 	</figcaption>
 </figure>
+<div class="navigator  requires-js">
+	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false">Show opacity variants</button>
+</div>
 
 
 <h2>Measures</h2>
