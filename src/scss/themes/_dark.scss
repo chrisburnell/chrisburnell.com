@@ -4,15 +4,10 @@
 ////
 
 @mixin theme-dark() {
-	$swap-coyote: v(color, bowhead);
-	$swap-bowhead: v(color, coyote);
-	$swap-bear: v(color, lynx);
-	$swap-lynx: v(color, bear);
-
-	--color-coyote: #{$swap-coyote};
-	--color-bowhead: #{$swap-bowhead};
-	--color-bear: #{$swap-bear};
-	--color-lynx: #{$swap-lynx};
+	--hsl-coyote: #{map-get($hsl-palette, "bowhead")};
+	--hsl-bowhead: #{map-get($hsl-palette, "coyote")};
+	--hsl-bear: #{map-get($hsl-palette, "lynx")};
+	--hsl-lynx: #{map-get($hsl-palette, "bear")};
 
 	--color-shadow: 0deg 0% 40%;
 
