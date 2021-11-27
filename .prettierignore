@@ -1,5 +1,6 @@
 # Ignore generated files
 **/generated
+**/vendors
 
 # Ignore specific filetypes
 *.html

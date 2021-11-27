@@ -33,7 +33,7 @@ $all-colors: map-multiple-merge(
 	$full-palette,
 	(
 		transparent: rgba(0, 0, 0, 0%),
-		shadow: 0deg 0% 60%,
+		shadow: var(--hsl-alto),
 	),
 	$language-colors
 );

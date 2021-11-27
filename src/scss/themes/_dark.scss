@@ -4,12 +4,7 @@
 ////
 
 @mixin theme-dark() {
-	--hsl-coyote: #{map-get($hsl-palette, "bowhead")};
-	--hsl-bowhead: #{map-get($hsl-palette, "coyote")};
-	--hsl-bear: #{map-get($hsl-palette, "lynx")};
-	--hsl-lynx: #{map-get($hsl-palette, "bear")};
-
-	--color-shadow: 0deg 0% 40%;
+	--color-shadow: var(--hsl-thunder);
 
 	scrollbar-color: v(color, raven) v(color, mineshaft);
 

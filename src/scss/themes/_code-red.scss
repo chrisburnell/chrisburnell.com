@@ -1,0 +1,24 @@
+////
+/// Code Red
+/// @group themes
+////
+
+$code-red-palette: (
+	lynx: #270a0a,
+	wolf: #4c1313,
+	bowhead: #822020,
+	raven: #c62d2d,
+	highland: #e06969,
+	coyote: #efadad,
+	bear: #fbe9e9,
+);
+
+@mixin theme-code-red() {
+	@each $name, $color in $code-red-palette {
+		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	}
+}
+
+.code-red {
+	@include theme-code-red;
+}
