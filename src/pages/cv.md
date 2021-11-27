@@ -1,7 +1,7 @@
 ---
 title: CV
 eleventyComputed:
-  lede: "{{ author.role }}{% if author.employer %} and {{ author.employer.role }} at {{ author.employer.title }}{% endif %}"
+  description: "{{ author.role }}{% if author.employer %} and {{ author.employer.role }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
 sitemap:
   exclude: true

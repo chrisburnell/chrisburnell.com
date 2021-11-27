@@ -1,6 +1,6 @@
 ---
 title: Uses
-lede: A list of stuff I use day-to-day.
+description: A list of stuff I use day-to-day.
 ---
 
 ## Coding

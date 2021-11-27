@@ -2,7 +2,7 @@
 draft: true
 date: 2020-08-26T12:00:00+0100
 title: Behemoth
-lede: Ever since hearing of Zach Leatherman’s static site generator, <a href="https://www.11ty.dev/">Eleventy</a>, in 2018, I was entranced, and as much as I still do love Jekyll, my bloated use of it suddenly looked tarnished and worn.
+description: Ever since hearing of Zach Leatherman’s static site generator, <a href="https://www.11ty.dev/">Eleventy</a>, in 2018, I was entranced, and as much as I still do love Jekyll, my bloated use of it suddenly looked tarnished and worn.
 # tags:
 #   - eleventy
 ---

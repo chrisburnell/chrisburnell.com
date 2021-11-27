@@ -1,7 +1,7 @@
 ---
 date: 2020-11-23T14:45:00+0000
 title: "Time to Cache Up"
-lede: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
+description: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
 tags:
   - eleventy
   - indieweb

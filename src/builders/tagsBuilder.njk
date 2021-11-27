@@ -6,7 +6,7 @@ pagination:
 permalink: /tag/{{ tag }}/
 eleventyComputed:
   title: "Tagged: <q>{{ tag | capitalizeFormat }}</q>"
-  lede: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
+  description: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {%- set collection = collections[tag] | arePublished | reverse -%}

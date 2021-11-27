@@ -1,7 +1,7 @@
 ---
 date: 2016-04-29T12:00:00+0100
 title: April LWS Talk
-lede: I gave a talk at London Web Standards and asked the question, <q>So how can we write media queries that are both consistent and succinct?</q>
+description: I gave a talk at London Web Standards and asked the question, <q>So how can we write media queries that are both consistent and succinct?</q>
 tags:
   - css
 updated_text: Check out the Talk in question, <a href="/talk/middle-out/">Supporting Middle-Out in CSS</a>.

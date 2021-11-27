@@ -3,7 +3,7 @@ published: false
 draft: true
 date: 2021-06-17T09:30:00+0100
 title: "Theming with Bowhead"
-lede: "Bowhead, a small design token framework for SCSS and personal project of mine, works beautifully at its job. In this article, I'll explain how I go about extrapolating on it to build a robust way to apply colour-schemes across your site."
+description: "Bowhead, a small design token framework for SCSS and personal project of mine, works beautifully at its job. In this article, I'll explain how I go about extrapolating on it to build a robust way to apply colour-schemes across your site."
 # syndicate_to:
 #   - https://twitter.com/iamchrisburnell/status/
 #   - https://mastodon.social/users/chrisburnell/statuses/

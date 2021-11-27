@@ -74,8 +74,8 @@ layout: base
 
 		{% include 'photo.njk' %}
 
-		{% if lede %}
-			<p class=" [ lede ] [ p-summary ] ">{{ lede | safe }}</p>
+		{% if description %}
+			<p class=" [ description ] [ p-summary ] ">{{ description | safe }}</p>
 		{% endif %}
 
 		{% include 'updated.njk' %}

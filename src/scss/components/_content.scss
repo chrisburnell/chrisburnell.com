@@ -24,7 +24,7 @@
 	color: h(milou);
 }
 
-.lede {
+.description {
 	@include v(max-width, line-length-clamp);
 	@include v(font-weight, bold);
 

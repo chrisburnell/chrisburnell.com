@@ -1,7 +1,7 @@
 ---
 date: 2019-03-14T12:00:00+0000
 title: Buffalo Sauce
-lede: Throw this on some wings and you're off to the races.
+description: Throw this on some wings and you're off to the races.
 prep_time: 5 minutes
 ingredients:
   - title: Frank’s Hot Sauce

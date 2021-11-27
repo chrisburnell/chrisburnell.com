@@ -2,7 +2,7 @@
 layout: page
 title: The Homepage
 eleventyComputed:
-  lede: "{{ site.lede | safe }}"
+  description: "{{ site.description | safe }}"
   tagline: "{{ site.tagline | safe }}"
 sitemap:
   changefreq: daily
@@ -51,7 +51,7 @@ sitemap:
 				<a class=" [ p-name ] " href="{{ item.url }}">{{ item.data.title }}</a>
 			</h3>
 			<div class=" [ p-summary ] [ line-clamp ] ">
-				{{ item.data.lede | markdownFormat | safe }}
+				{{ item.data.description | markdownFormat | safe }}
 			</div>
 			<data class=" [ u-author ] " value="/" hidden=""></data>
 		</article>

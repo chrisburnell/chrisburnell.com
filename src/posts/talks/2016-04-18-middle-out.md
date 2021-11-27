@@ -1,7 +1,7 @@
 ---
 date: 2016-04-18T19:45:00+0100
 title: Supporting Middle-Out in CSS
-lede: My first ever talk, given at London Web Standards.
+description: My first ever talk, given at London Web Standards.
 checkin:
   title: London Web Standards
   url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/

@@ -1,7 +1,7 @@
 ---
 date: 2015-06-08T15:00:00+0100
 title: Backscratching Revisited
-lede: I revised my original technique for styling default elements and took it a step further to scratch the greatest number of backs.
+description: I revised my original technique for styling default elements and took it a step further to scratch the greatest number of backs.
 tags:
   - css
 banner: backscratching-revisited.png

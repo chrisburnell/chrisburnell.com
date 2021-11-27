@@ -2,7 +2,7 @@
 draft: true
 date: 2017-09-25T22:00:00+0100
 title: Jekyll Components
-lede: I've been using Jekyll for over five years, and built a series of useful reusable components to streamline my templating and authoring processes.
+description: I've been using Jekyll for over five years, and built a series of useful reusable components to streamline my templating and authoring processes.
 # tags:
 #   - jekyll
 #   - liquid

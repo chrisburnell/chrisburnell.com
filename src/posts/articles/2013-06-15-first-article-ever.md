@@ -1,7 +1,7 @@
 ---
 date: 2013-06-15T13:21:00+0100
 title: First Article Ever
-lede: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
+description: Well, I've finally gotten my site up and running to a point where I can consider it to be a success. What was the process, and what did it involve? What mistakes did I make that you can avoid?
 tags:
   - css
   - github

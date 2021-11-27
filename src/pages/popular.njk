@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Popular Posts
-lede: Top 10 most interacted-with pieces of writing, cause, y'know, ego, I guess?
+description: Top 10 most interacted-with pieces of writing, cause, y'know, ego, I guess?
 related_collection: popular
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
@@ -13,7 +13,7 @@ related_collection: popular
 	</h1>
 
 	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{{ lede | safe }}</p>
+		<p class=" [ p-summary ] ">{{ description | safe }}</p>
 	</div>
 
 	<div class=" [ content__body ] [ h-feed ] ">

@@ -3,7 +3,7 @@ title: Pentatonic
 photo: https://chrisburnell.com/images/pentatonic.png
 eleventyComputed:
   tagline: "Pentatonic v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }}"
-  lede: "Turn any array of integers into a fun little melody.<br>There are {{ github.pentatonic['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/pentatonic'>on GitHub</a> and it was downloaded {{ npm.pentatonic['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/pentatonic'>on npm</a>."
+  description: "Turn any array of integers into a fun little melody.<br>There are {{ github.pentatonic['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/pentatonic'>on GitHub</a> and it was downloaded {{ npm.pentatonic['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/pentatonic'>on npm</a>."
 show_webmentions: true
 toc: true
 ---

@@ -6,7 +6,7 @@ pagination:
 permalink: /{{ category.plural }}/
 eleventyComputed:
   title: "{{ category.properPlural | title }}"
-  lede: "All of my {{ category.properPlural }}."
+  description: "All of my {{ category.properPlural }}."
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}

@@ -1,6 +1,6 @@
 ---
 title: Privacy
-lede: Your right to privacy on this website.
+description: Your right to privacy on this website.
 ads: false
 monetization: false
 ---

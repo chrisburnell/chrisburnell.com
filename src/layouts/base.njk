@@ -18,7 +18,7 @@
 	{% set meta_title %}{{ site.tagline | striptags(true) }} · {{ site.title }}{% endset %}
 {%- endif -%}
 
-{%- set meta_description = lede | striptags(true) | default('A page on chrisburnell.com') | safe -%}
+{%- set meta_description = description | striptags(true) | default('A page on chrisburnell.com') | safe -%}
 {%- set meta_image = site.url + author.avatar -%}
 {%- if banner -%}
 	{%- set meta_image -%}{{ site.url }}/images/banners/{{ banner | toArray | last }}{%- endset -%}

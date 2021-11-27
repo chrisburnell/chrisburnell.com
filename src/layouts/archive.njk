@@ -13,7 +13,7 @@ layout: base
 	</h1>
 
 	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{{ lede | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+		<p class=" [ p-summary ] ">{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
 		{% sparkline collection, first_year, latest_year %}
 	</div>
 
