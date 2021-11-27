@@ -28,13 +28,13 @@ js: styleguide.js
 			{%- endfor -%}
 		{%- endfor -%}
 	</ul>
+	<div class="navigator  requires-js">
+		<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false">Show opacity variants</button>
+	</div>
 	<figcaption>
 		<p>Available as a <a href="/palette.gpl">palette file</a> for your favourite image/pixel editor!</p>
 	</figcaption>
 </figure>
-<div class="navigator  requires-js">
-	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false">Show opacity variants</button>
-</div>
 
 
 <h2>Measures</h2>
@@ -55,14 +55,16 @@ js: styleguide.js
 </dl>
 
 
-<h2>Transitions</h2>
+<div class="owl  requires-motion">
+	<h2>Transitions</h2>
 
-<div class="transition-example  transition-example--slide">
-	<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
-</div>
+	<div class="transition-example  transition-example--slide">
+		<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
+	</div>
 
-<div class="transition-example  transition-example--fade">
-	<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
+	<div class="transition-example  transition-example--fade">
+		<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
+	</div>
 </div>
 
 

@@ -52,6 +52,13 @@
 	display: none;
 }
 
+// Disable things which require motion when reduced-motion is on
+.requires-motion {
+	@include media("reduced-motion") {
+		display: none;
+	}
+}
+
 .strong {
 	@include v(font-weight, bold);
 }
