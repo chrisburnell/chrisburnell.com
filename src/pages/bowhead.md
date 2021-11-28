@@ -490,3 +490,8 @@ What about multiple values in a function? Just make sure you're using the *raw* 
 }
 ```
 ```
+
+## Read more
+
+- [Variables for Both](/article/variables-for-both/)
+- [A Deep Dive into Colour with Bowhead](/article/deep-dive-into-colour/)
