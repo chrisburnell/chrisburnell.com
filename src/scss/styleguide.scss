@@ -70,17 +70,18 @@
 		}
 	}
 }
-@each $name, $color in $hsl-palette {
+@each $name, $color in $palette {
 	.background--#{$name} {
-		background-color: map-get($palette, $name);
-		color: contrasting-color(map-get($palette, $name));
+		background-color: h($name);
+		color: contrasting-color($color);
 	}
-	// @each $opacity, $value in $opacities {
-	// 	.background--#{$name}--#{$opacity} {
-	// 		background-color: h($name, $opacity);
-	// 		color: contrasting-color(mix(map-get($palette, "milou"), hsla(#{map-get($hsl-palette, $name)} / #{$value})));
-	// 	}
-	// }
+	@each $opacity, $value in $opacities {
+		.background--#{$name}--#{$opacity} {
+			background-color: h($name, $opacity);
+			$rgba: rgba(red($color), green($color), blue($color), $value);
+			color: contrasting-color(mix(map-get($palette, "milou"), $rgba));
+		}
+	}
 }
 
 .measure-example {
