@@ -132,7 +132,7 @@ input[type="checkbox"] {
 	}
 
 	&:checked + label {
-		background-color: h(confier);
+		background-color: h(conifer);
 		padding-inline-start: calc(var(--measure-large) + var(--measure-small));
 		padding-inline-end: calc(var(--measure-medium) - var(--measure-small));
 

@@ -16,7 +16,7 @@
 	text-shadow: none;
 }
 .title--positive > span {
-	background-color: h(liquid);
+	@include v(background-color, liquid);
 	color: h(milou);
 }
 .title--negative > span {
