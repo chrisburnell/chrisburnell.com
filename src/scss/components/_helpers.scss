@@ -87,9 +87,12 @@
 
 // Owls
 @each $key, $_ in map-get($tokens, "measure") {
-	.owl--#{$key} > * + * {
-		@include v(margin-block-start, #{$key});
+	.owl--#{$key} {
+		@include owl($key);
 	}
+}
+.owl {
+	@extend .owl--large;
 }
 
 // Emoji
