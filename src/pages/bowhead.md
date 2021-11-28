@@ -489,7 +489,6 @@ What about multiple values in a function? Just make sure you're using the *raw* 
     background-color: rgba(v(color, desert, true), v(opacity, alpha, true));
 }
 ```
-```
 
 ## Read more
 
