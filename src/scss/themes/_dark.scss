@@ -6,16 +6,25 @@
 @mixin theme-dark() {
 	--hsl-shadow: var(--hsl-thunder);
 
+	background-color: h(mineshaft);
+	color: h(milou);
 	scrollbar-color: h(raven) h(mineshaft);
 
-	.header,
-	.main {
-		background-color: h(wolf);
-		color: h(milou);
-	}
+	// Target these if applied to html or body elements
+	&:is(html, body) {
+		.header,
+		.main {
+			background-color: h(wolf);
+			color: h(milou);
+		}
 
-	.main {
-		background-color: h(mineshaft);
+		.main {
+			background-color: h(mineshaft);
+		}
+
+		.footer {
+			background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
+		}
 	}
 
 	:is(abbr, dfn)[title],
@@ -29,10 +38,6 @@
 	var,
 	.box a {
 		color: h(highland);
-	}
-
-	.footer {
-		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
 	}
 
 	h1 {

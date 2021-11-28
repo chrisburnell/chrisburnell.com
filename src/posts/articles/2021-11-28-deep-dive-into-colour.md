@@ -189,6 +189,39 @@ Or inside a box like this:
 	<p>I'm not sure why this is such a great thing, to be fair, though…</p>
 </div>
 
+Or inside a table like this:
+
+<figure>
+	<table class=" [ dark ] ">
+		<thead>
+			<tr>
+				<th>Heading A</th>
+				<th>Heading B</th>
+				<th>Heading C</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell A-1</td>
+				<td>Cell B-1</td>
+				<td>Cell C-1</td>
+			</tr>
+			<tr>
+				<td>Cell A-2</td>
+				<td>Cell B-2</td>
+				<td>Cell C-2</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Foot A</th>
+				<th>Foot B</th>
+				<th>Foot C</th>
+			</tr>
+		</tfoot>
+	</table>
+</figure>
+
 --------
 
 Hope that explains how my colours now work, and please do get in touch if you’re familiar with *Bowhead* and can think of an intelligent way that this might be integrated into the framework itself!

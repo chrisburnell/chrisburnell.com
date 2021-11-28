@@ -16,7 +16,7 @@
 	&,
 	a,
 	button {
-		color: h(milou);
+		color: h(milou) !important;
 
 		&:not(:hover):not(:focus):not(:active) {
 			text-decoration-color: h(kaiser);
