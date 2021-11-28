@@ -1,4 +1,4 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets")
+const Cache = require("@11ty/eleventy-cache-assets")
 const uniqBy = require("lodash/uniqBy")
 
 const site = require("./site.json")
@@ -11,9 +11,11 @@ require("dotenv").config()
 
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
-async function getWebmentions() {
-	return await CacheAsset(`https://webmention.io/api/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=9999`, {
-		duration: "1d",
+const getWebmentions = async (since) => {
+	const url = `https://webmention.io/api/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=9001${since ? `&since=${since}` : ``}`
+	return await Cache(url, {
+		removeUrlQueryParams: true,
+		duration: "23h",
 		type: "json",
 		fetchOptions: {
 			method: "GET",
@@ -21,7 +23,7 @@ async function getWebmentions() {
 	})
 }
 
-module.exports = async function () {
+module.exports = async () => {
 	const rawWebmentions = await getWebmentions()
 	let webmentions = {}
 
@@ -36,9 +38,9 @@ module.exports = async function () {
 		webmentions[url].push(webmention)
 	}
 
-	// Sort mentions in groups by date
+	// Sort mentions in groups by url
 	for (let url in webmentions) {
-		webmentions[url] = uniqBy(webmentions[url], function (item) {
+		webmentions[url] = uniqBy(webmentions[url], (item) => {
 			return item["wm-id"]
 		})
 	}

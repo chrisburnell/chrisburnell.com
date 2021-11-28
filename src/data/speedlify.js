@@ -1,10 +1,10 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets")
+const Cache = require("@11ty/eleventy-cache-assets")
 
 const author = require("./author.json")
 
-module.exports = async function () {
+module.exports = async () => {
 	let url = `${author.urls.speedlify}/api/urls.json`
-	let json = await CacheAsset(url, {
+	let json = await Cache(url, {
 		duration: "1w",
 		type: "json",
 	})

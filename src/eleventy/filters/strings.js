@@ -19,6 +19,11 @@ const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth",
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
 module.exports = {
+	getReadingTime: (text) => {
+		const wordsPerMinute = 200
+		const numberOfWords = text.split(/\s/g).length
+		return Math.ceil(numberOfWords / wordsPerMinute)
+	},
 	capitalizeFormat: (input) => {
 		return capitalizers.reduce((output, capitalizer) => {
 			const regex = new RegExp(capitalizer, "gi")

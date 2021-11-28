@@ -1,4 +1,4 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets")
+const Cache = require("@11ty/eleventy-cache-assets")
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -8,8 +8,8 @@ const TOKEN = process.env.WEBMENTION_IO_TOKEN
 const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists", "publications"]
 
 async function getPeopleByType(type) {
-	return await CacheAsset(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
-		duration: "4w",
+	return await Cache(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
+		duration: "23h",
 		type: "json",
 		fetchOptions: {
 			method: "GET",
@@ -17,7 +17,7 @@ async function getPeopleByType(type) {
 	})
 }
 
-module.exports = async function () {
+module.exports = async () => {
 	let people = []
 
 	for (let type of TYPES) {

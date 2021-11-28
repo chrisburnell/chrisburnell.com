@@ -2,8 +2,8 @@ const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const twitterReplacements = require("../../data/twitterReplacements.json")
 const queryFilters = require("../filters/queries.js")
-const getTwitterAvatarUrl = require("twitter-avatar-url")
-const eleventyImage = require("@11ty/eleventy-img")
+const TwitterAvatarUrl = require("twitter-avatar-url")
+const Image = require("@11ty/eleventy-img")
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -35,7 +35,7 @@ function fetchImageData(lookup, url) {
 		throw new Error("src property required in `img` shortcode.")
 	}
 
-	eleventyImage(url, getImageOptions(lookup)).then(function () {
+	Image(url, getImageOptions(lookup)).then(function () {
 		// return nothing, even though this returns a promise
 	})
 }
@@ -43,8 +43,8 @@ function fetchImageData(lookup, url) {
 async function storeAvatar(id, classes = "") {
 	// We know where the images will be
 	let fakeUrl = `https://chrisburnell.com/images/avatars/${id}.jpg`
-	let imgData = eleventyImage.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
-	let markup = eleventyImage.generateHTML(
+	let imgData = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
+	let markup = Image.generateHTML(
 		imgData,
 		{
 			alt: `Avatar for ${id}`,
@@ -77,7 +77,7 @@ module.exports = function (config) {
 		config.on("afterBuild", () => {
 			let array = Array.from(twitterUsernames)
 			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
-			getTwitterAvatarUrl(array).then((results) => {
+			TwitterAvatarUrl(array).then((results) => {
 				for (let result of results) {
 					fetchImageData(result.username, result.url.large)
 				}
