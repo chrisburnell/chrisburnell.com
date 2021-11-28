@@ -33,6 +33,6 @@
 	grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
 
 	.cover img {
-		height: 240px;
+		block-size: 240px;
 	}
 }

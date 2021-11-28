@@ -4,8 +4,8 @@
 ////
 
 details {
-	width: 100%;
-	@include v(max-width, line-length-clamp);
+	inline-size: 100%;
+	@include v(max-inline-size, line-length-clamp);
 	@include v(border-radius, border-default);
 	position: relative;
 
@@ -15,7 +15,7 @@ details {
 
 	& > div {
 		background-color: h(alto);
-		max-height: 0;
+		max-block-size: 0;
 		@include v(padding-block-start, small);
 		position: absolute;
 		inset-block-start: 100%;
@@ -26,7 +26,7 @@ details {
 	}
 
 	&[open] > div {
-		max-height: 9999vh;
+		max-block-size: 9999vh;
 	}
 }
 

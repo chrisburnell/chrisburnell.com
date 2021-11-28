@@ -69,8 +69,8 @@ sup {
 
 hr {
 	background-color: h(thunder, gamma);
-	width: 100%;
-	height: var(--measure-border-thin);
+	inline-size: 100%;
+	block-size: var(--measure-border-thin);
 	display: block;
 	border: 0;
 	position: relative;

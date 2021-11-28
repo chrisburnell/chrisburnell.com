@@ -7,12 +7,12 @@
 // Contains embedded media properly and allows them to be dynamically resized
 // inside a set aspect ratio container.
 .media {
-	width: 100%;
+	inline-size: 100%;
 
 	%collection-media {
 		aspect-ratio: 16 / 9;
-		width: 100% !important;
-		height: auto !important;
+		inline-size: 100% !important;
+		block-size: auto !important;
 		margin: 0 auto;
 	}
 }

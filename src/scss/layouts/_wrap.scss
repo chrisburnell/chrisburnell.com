@@ -4,8 +4,8 @@
 ////
 
 .wrap {
-	width: 100%;
-	@include v(max-width, breakpoint-gigantic);
+	inline-size: 100%;
+	@include v(max-inline-size, breakpoint-gigantic);
 	@include v(padding-inline-start, gutter);
 	@include v(padding-inline-end, gutter);
 	margin-inline-start: auto;
@@ -14,6 +14,6 @@
 
 @each $name, $measure in $breakpoints {
 	.wrap--#{$name} {
-		max-width: $measure;
+		max-inline-size: $measure;
 	}
 }

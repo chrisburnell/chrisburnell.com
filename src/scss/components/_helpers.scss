@@ -5,7 +5,7 @@
 
 // Full Bleed
 .full-bleed {
-	width: 100vw;
+	inline-size: 100vw;
 	margin-inline-start: 50%;
 	transform: translateX(-50%);
 }

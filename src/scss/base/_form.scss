@@ -5,7 +5,7 @@
 ////
 
 form {
-	width: 100%;
+	inline-size: 100%;
 	display: grid;
 	@include v(grid-gap, small);
 	grid-template-columns: 65% 1fr;
@@ -67,7 +67,7 @@ input {
 
 	&[type="number"]::-webkit-inner-spin-button,
 	&[type="number"]::-webkit-outer-spin-button {
-		height: auto;
+		block-size: auto;
 	}
 
 	&[type="search"],
@@ -119,7 +119,7 @@ input[type="checkbox"] {
 		&::after {
 			content: "✔";
 			background-color: h(thunder, gamma);
-			width: var(--measure-large);
+			inline-size: var(--measure-large);
 			display: none;
 			position: absolute;
 			inset-block-start: 0;

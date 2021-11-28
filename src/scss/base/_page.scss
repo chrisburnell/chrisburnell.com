@@ -6,9 +6,9 @@
 html {
 	background-color: h(kaiser);
 	position: relative;
-	overflow-x: hidden;
+	overflow-inline: hidden;
 	// prevent horizontal jump when navigating short page <--> tall page
-	overflow-y: scroll;
+	overflow-block: scroll;
 	overscroll-behavior: contain;
 	accent-color: h(raven);
 	scroll-behavior: smooth;
@@ -24,8 +24,8 @@ html {
 body {
 	background-color: h(milou);
 	color: h(kaiser);
-	width: 100%;
-	min-height: 100vh;
+	inline-size: 100%;
+	min-block-size: 100vh;
 	margin: 0;
 	display: grid;
 	grid-template-rows: auto 1fr auto;

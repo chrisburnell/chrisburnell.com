@@ -65,7 +65,7 @@
 	}
 
 	& > %collection-content {
-		@include v(max-width, line-length-clamp);
+		@include v(max-inline-size, line-length-clamp);
 	}
 }
 
@@ -89,12 +89,12 @@
 		grid-column: marginalia;
 		grid-row: 2 / 3;
 		margin-block-end: 0;
-		text-align: right;
+		text-align: end;
 	}
 
 	.full &,
 	.wide & {
-		text-align: left;
+		text-align: start;
 	}
 
 	.title[hidden] ~ &,
@@ -103,7 +103,7 @@
 	}
 
 	p {
-		@include v(max-width, line-length-clamp);
+		@include v(max-inline-size, line-length-clamp);
 	}
 
 	a {
@@ -132,17 +132,17 @@
 
 .table-of-contents {
 	@include v(margin-block, large);
-	overflow-y: auto;
+	overflow-block: auto;
 
 	@include media("below:medium") {
-		max-height: 60vh;
+		max-block-size: 60vh;
 	}
 
 	@include media("above:medium") {
 		grid-column: marginalia;
 		grid-row: 3 / 5;
 		margin-block-end: 0;
-		max-height: calc(100vh - #{v(measure, medium)} * 2);
+		max-block-size: calc(100vh - #{v(measure, medium)} * 2);
 		position: sticky;
 		@include v(top, medium);
 	}

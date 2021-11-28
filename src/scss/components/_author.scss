@@ -26,14 +26,14 @@
 	}
 
 	@include media("below:medium") {
-		float: left;
+		float: inline-start;
 		float: inline-start;
 		@include v(margin-inline-end, gap);
 		@include v(margin-block-end, gap);
 	}
 
 	@include media("above:medium") {
-		float: right;
+		float: inline-end;
 		float: inline-end;
 		@include v(margin-inline-start, gap);
 	}
@@ -60,8 +60,8 @@
 	flex-grow: 0;
 	flex-shrink: 0;
 	@include v(flex-basis, avatar);
-	@include v(height, avatar);
-	float: left;
+	@include v(block-size, avatar);
+	float: inline-start;
 	float: inline-start;
 	position: relative;
 	--color-shadow: #{h(thunder, gamma)};
@@ -72,8 +72,8 @@
 	&,
 	img,
 	&::before {
-		@include v(width, avatar);
-		@include v(height, avatar);
+		@include v(inline-size, avatar);
+		@include v(block-size, avatar);
 		border-radius: 50%;
 
 		@supports (shape-outside: circle(50%)) {
@@ -113,7 +113,7 @@
 	@include v(font-size, small);
 
 	@include media("above:medium") {
-		text-align: right;
+		text-align: end;
 	}
 }
 

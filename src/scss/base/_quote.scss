@@ -6,8 +6,8 @@
 blockquote {
 	@include quotes;
 	background-color: h(raven, gamma);
-	width: 100%;
-	@include v(max-width, line-length-clamp);
+	inline-size: 100%;
+	@include v(max-inline-size, line-length-clamp);
 	@include v(padding, medium);
 	@include v(border-radius, border-default);
 	margin: 0 auto var(--measure-medium);
@@ -40,7 +40,7 @@ blockquote {
 		color: h(kaiser);
 		display: block;
 		@include v(margin-block-start, medium);
-		text-align: right;
+		text-align: end;
 
 		&::before {
 			// EN DASH, NO-BREAK SPACE

@@ -13,8 +13,8 @@
 }
 
 .ad {
-	width: 100%;
-	@include v(max-width, breakpoint-small);
+	inline-size: 100%;
+	@include v(max-inline-size, breakpoint-small);
 	display: flex;
 	flex-direction: column;
 
@@ -83,7 +83,7 @@
 
 [id="carbonads"] {
 	@extend .ad;
-	min-height: 9.75rem;
+	min-block-size: 9.75rem;
 
 	& > span {
 		display: flex;
@@ -102,8 +102,8 @@
 	@extend .ad__image;
 
 	img {
-		width: 130px !important;
-		height: 100px !important;
+		inline-size: 130px !important;
+		block-size: 100px !important;
 	}
 }
 .carbon-text {

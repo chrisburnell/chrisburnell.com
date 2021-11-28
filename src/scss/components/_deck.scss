@@ -6,8 +6,8 @@
 .deck {
 	article {
 		@include owl(tiny);
-		@include v(max-width, breakpoint-medium);
-		@include v(max-width, line-length-clamp);
+		@include v(max-inline-size, breakpoint-medium);
+		@include v(max-inline-size, line-length-clamp);
 		@include v(padding-block-start, medium);
 		@include v(padding-block-end, medium);
 

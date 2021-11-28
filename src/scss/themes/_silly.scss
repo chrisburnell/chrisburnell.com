@@ -1,0 +1,14 @@
+////
+/// Silly goose
+/// @group themes
+////
+
+@mixin theme-silly() {
+	--font-family-default: "Comic Sans MS", sans-serif;
+	--font-family-alpha: "Comic Sans MS", serif;
+	--font-family-serif: serif;
+}
+
+.silly {
+	@include theme-silly;
+}

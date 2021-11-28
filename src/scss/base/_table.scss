@@ -9,8 +9,8 @@ table {
 	align-self: flex-start;
 	border-width: 0;
 	border-collapse: collapse;
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-inline: auto;
+	overflow-block: hidden;
 	font-variant-numeric: lining-nums tabular-nums;
 
 	&.zebra {
@@ -28,12 +28,12 @@ tr {
 :is(th, td) {
 	@include transition(background-color);
 	@include v(padding, small);
-	text-align: left;
+	text-align: start;
 	vertical-align: top;
 	user-select: text;
 
 	&.numeral {
-		text-align: right;
+		text-align: end;
 	}
 }
 
@@ -47,7 +47,7 @@ th {
 	}
 
 	tbody & {
-		width: 1px;
+		inline-size: 1px;
 	}
 }
 

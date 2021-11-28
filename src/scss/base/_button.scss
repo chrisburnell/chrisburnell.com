@@ -23,7 +23,7 @@ button:not([class*="anchor"]),
 	@include transition(background-color);
 	background-color: h(bowhead);
 	color: h(bear) !important; // prevent dark theme from overriding this
-	min-width: 8em;
+	min-inline-size: 8em;
 	display: inline-block;
 	@include v(padding, small);
 	margin: calc(#{v(measure, border-thin)} * 2); // accounts for outline-width + outline-offset
@@ -57,7 +57,7 @@ button:not([class*="anchor"]),
 
 		&::before {
 			content: "";
-			@include v(height, border-button);
+			@include v(block-size, border-button);
 			position: absolute;
 			inset-block-end: 100%;
 			inset-inline-start: 0;
@@ -76,7 +76,7 @@ button:not([class*="anchor"]),
 }
 
 .button--small {
-	min-width: 5em;
+	min-inline-size: 5em;
 	@include v(padding-block, tiny);
 	@include v(font-size, small);
 	line-height: 1;

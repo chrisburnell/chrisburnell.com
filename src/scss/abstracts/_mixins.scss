@@ -283,8 +283,8 @@
 /// Visually hide an element properly.
 ///
 @mixin hidden() {
-	width: 1px !important;
-	height: 1px !important;
+	inline-size: 1px !important;
+	block-size: 1px !important;
 	padding: 0 !important;
 	margin: -1px !important;
 	border: 0 !important;

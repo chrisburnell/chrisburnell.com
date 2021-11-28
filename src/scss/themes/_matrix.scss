@@ -15,16 +15,9 @@ $matrix-palette: (
 	@each $name, $color in $matrix-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
-
-	--font-family-default: "Comic Sans MS", sans-serif;
-	--font-family-alpha: "Comic Sans MS", serif;
-	--font-family-serif: serif;
-
-	.webmentions {
-		margin-top: var(--measure-large);
-	}
 }
 
 .matrix {
+	@include theme-dark;
 	@include theme-matrix;
 }

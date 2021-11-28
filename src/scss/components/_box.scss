@@ -9,7 +9,7 @@
 	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
 	background-clip: padding-box;
-	text-align: left;
+	text-align: start;
 	@include v(font-family);
 	font-style: normal;
 

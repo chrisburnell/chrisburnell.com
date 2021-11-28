@@ -15,7 +15,7 @@
 	}
 
 	.emoji {
-		width: calc(var(--measure-medium) + var(--measure-tiny));
+		inline-size: calc(var(--measure-medium) + var(--measure-tiny));
 		display: inline-block;
 	}
 

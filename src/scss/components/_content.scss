@@ -25,7 +25,7 @@
 }
 
 .description {
-	@include v(max-width, line-length-clamp);
+	@include v(max-inline-size, line-length-clamp);
 	@include v(font-weight, bold);
 
 	.post & {
@@ -45,18 +45,18 @@ spark-line {
 	speak: none;
 
 	canvas {
-		width: auto;
+		inline-size: auto;
 		grid-column: 1 / 3;
 		grid-row: 1 / 2;
 	}
 
 	span {
 		grid-column: 1 / 2;
-		text-align: left;
+		text-align: start;
 	}
 	canvas + span {
 		grid-column: 2 / 3;
-		text-align: right;
+		text-align: end;
 	}
 }
 
@@ -85,7 +85,7 @@ spark-line {
 	&::after {
 		background-color: inherit;
 		color: h(kaiser);
-		width: 0;
+		inline-size: 0;
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;
@@ -98,11 +98,11 @@ spark-line {
 
 	@for $i from 1 through 19 {
 		&[value="#{math.div($i, 4)}"]::after {
-			width: range-map($i, 0, 20, 0%, 100%);
+			inline-size: range-map($i, 0, 20, 0%, 100%);
 		}
 	}
 	&[value="5"]::after {
-		width: 100%;
+		inline-size: 100%;
 	}
 }
 

@@ -22,7 +22,7 @@
 
 .palette-list {
 	background-color: h(milou);
-	width: 100%;
+	inline-size: 100%;
 	display: flex;
 	flex-wrap: wrap;
 
@@ -89,26 +89,26 @@
 	background-position: center center;
 	background-size: 100% v(measure, border-thin);
 	background-repeat: no-repeat;
-	@include v(height, medium);
+	@include v(block-size, medium);
 	display: block;
 }
 .measure-example--tiny {
-	@include v(width, tiny);
+	@include v(inline-size, tiny);
 }
 .measure-example--small {
-	@include v(width, small);
+	@include v(inline-size, small);
 }
 .measure-example--medium {
-	@include v(width, medium);
+	@include v(inline-size, medium);
 }
 .measure-example--large {
-	@include v(width, large);
+	@include v(inline-size, large);
 }
 .measure-example--gigantic {
-	@include v(width, gigantic);
+	@include v(inline-size, gigantic);
 }
 .measure-example--responsive {
-	@include v(width, line-length-clamp);
+	@include v(inline-size, line-length-clamp);
 }
 
 .transition-example {
@@ -133,16 +133,16 @@
 	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
 	@include transition(color);
-	width: 100%;
-	@include v(max-width, line-length-clamp);
-	height: calc(var(--measure-large) * 1.5);
+	inline-size: 100%;
+	@include v(max-inline-size, line-length-clamp);
+	block-size: calc(var(--measure-large) * 1.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border: v(measure, border-thin) solid h(alto);
 	margin-inline-start: auto;
 	margin-inline-end: auto;
-	overflow-x: hidden;
+	overflow-inline: hidden;
 	position: relative;
 	// line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
 	text-align: center;

@@ -66,7 +66,7 @@
 	li + li {
 		&::before {
 			content: "·";
-			width: 1em;
+			inline-size: 1em;
 			display: inline-block;
 			text-align: center;
 		}
