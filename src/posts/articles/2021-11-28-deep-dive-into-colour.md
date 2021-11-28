@@ -8,7 +8,12 @@ tags:
 # syndicate_to:
 ---
 
-Even though I publicly released [Bowhead](/bowhead/), a small SCSS framework for handling design tokens, a little over a year ago, I’ve been using it across my website and other projects for some years now. In that time, it has evolved and changed, but the core principle of *what it does* has never changed: assign any reused CSS values to variables and put them into <q>value-type</q> maps which correspond to specific CSS properties and refer to your property-values through these maps.
+Even though I publicly released [Bowhead](/bowhead/) a little over a year ago, I’ve been using it across my website and other projects for some years now. In that time, it has evolved and changed, but the core principle of *what it does* has never changed: assign any reused CSS values to variables and put them into <q>value-type</q> maps which correspond to specific CSS properties and refer to your property-values through these maps.
+
+<div class=" [ box ] ">
+	<h2>What’s Bowhead?</h2>
+	<p><em>Bowhead</em> is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. You can read more about it on the <a href="/bowhead/">Bowhead page</a>.</p>
+</div>
 
 As with the passing of time, technology matures and becomes more widespread and common, and with that, I decided to overhaul the way I refer to colours in my (S)CSS through the power of CSS Variables and HSL.
 
@@ -16,7 +21,7 @@ As with the passing of time, technology matures and becomes more widespread and 
 
 To start off, what are we working with—how do I manage and print colours at present?
 
-This is pretty well-documented (I hope) over on the [Bowhead page](/bowhead/) but in essence, I’m passing *Bowhead* something that looks like this for colours:
+This is pretty well-documented (I hope) on the [Bowhead page](/bowhead/) but in essence, I’m passing *Bowhead* something that looks like this for colours:
 
 ```scss
 $palette: (

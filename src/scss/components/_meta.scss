@@ -19,11 +19,6 @@
 		display: inline-block;
 	}
 
-	h3 {
-		@include v(font-size, default);
-		@include v(line-height, medium);
-	}
-
 	a,
 	data,
 	time {

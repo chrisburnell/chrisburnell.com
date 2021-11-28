@@ -61,12 +61,14 @@ h1 {
 h2 {
 	@extend %delta;
 
-	@include case(uppercase);
-	border-block-end: v(measure, border-thin) solid h(alto);
-	inline-size: auto;
-	max-inline-size: 100%;
-	display: inline-block;
-	@include v(padding-inline-end, large);
+	:not(.box) > & {
+		@include case(uppercase);
+		border-block-end: v(measure, border-thin) solid h(alto);
+		inline-size: auto;
+		max-inline-size: 100%;
+		display: inline-block;
+		@include v(padding-inline-end, large);
+	}
 }
 
 h3 {

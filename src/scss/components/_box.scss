@@ -4,6 +4,7 @@
 ////
 
 .box {
+	@include owl(small);
 	background-color: h(thunder, delta);
 	@include v(padding, medium);
 	border-block-start: var(--measure-border-thin) solid h(raven, beta);
@@ -12,6 +13,11 @@
 	text-align: start;
 	@include v(font-family);
 	font-style: normal;
+
+	:is(h2, h3) {
+		@include v(font-size, default);
+		@include v(line-height, medium);
+	}
 
 	a {
 		color: h(bowhead);
