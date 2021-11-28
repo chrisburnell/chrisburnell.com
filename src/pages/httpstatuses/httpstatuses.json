@@ -7,5 +7,6 @@
     "exclude": true
   },
   "ads": false,
-  "monetization": false
+  "monetization": false,
+  "theme": "dark  code-red"
 }
