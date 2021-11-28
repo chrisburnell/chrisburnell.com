@@ -1,6 +1,7 @@
 ---
 title: Uses
 description: A list of stuff I use day-to-day.
+toc: true
 ---
 
 ## Coding
