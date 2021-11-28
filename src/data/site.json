@@ -11,6 +11,13 @@
     "feed": 10,
     "sparkline": 15
   },
+  "weights": {
+    "time": 0.02
+  },
+  "sitemap": {
+    "changefreq": "monthly",
+    "priority": 0.5
+  },
   "carbon": "CE7D523U",
   "monetization": "$ilp.uphold.com/wDqKwewbX8by"
 }

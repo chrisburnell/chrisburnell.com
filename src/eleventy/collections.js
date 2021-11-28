@@ -19,6 +19,34 @@ module.exports = {
 	featurePosts: (collection) => {
 		return collection.getFilteredByTag("feature").filter(collectionFilters.isPublished).filter(collectionFilters.notReply).sort(collectionFilters.dateFilter)
 	},
+	hot: async (collection) => {
+		return (async () => {
+			const wm = await webmentions()
+			return await collection
+				.getFilteredByTag("feature")
+				.filter(collectionFilters.isPublished)
+				.filter(collectionFilters.notReply)
+				.filter((item) => queryFilters.getWebmentions(wm, item.url).length)
+				.sort((a, b) => {
+					const alpha = queryFilters.getWebmentions(wm, a.url)
+					let alphaPopularity = 0
+					for (let webmention of alpha) {
+						alphaPopularity = (alphaPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+					}
+					alphaPopularity = site.weights.time * dateFilters.epoch(a.date) + (1 - site.weights.time) * alphaPopularity
+
+					const beta = queryFilters.getWebmentions(wm, b.url)
+					let betaPopularity = 0
+					for (let webmention of beta) {
+						betaPopularity = (betaPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+					}
+					betaPopularity = site.weights.time * dateFilters.epoch(b.date) + (1 - site.weights.time) * betaPopularity
+
+					return betaPopularity - alphaPopularity
+				})
+				.slice(0, site.limits.feed)
+		})()
+	},
 	popular: async (collection) => {
 		return (async () => {
 			const wm = await webmentions()

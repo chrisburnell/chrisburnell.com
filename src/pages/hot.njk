@@ -1,12 +1,12 @@
 ---
 layout: base
-title: Popular Posts
+title: Hot Posts
 description: |
-  Top 10 most interacted-with pieces of writing, cause, y'know, ego, I guess?
+  Top 10 posts ordered by webmentions per day.
 
 
-  You can also <a href="/hot/">order by webmentions per day</a>.
-related_collection: popular
+  You can also <a href="/popular/">order strictly by webmentions</a>.
+related_collection: hot
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 {%- set collection = collections[related_collection] -%}

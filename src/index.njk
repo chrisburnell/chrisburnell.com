@@ -32,11 +32,11 @@ sitemap:
 	{% endfor %}
 </nav>
 
-<h2 id="popular">
-	<a href="/popular/">Popular Posts</a>
+<h2 id="hot">
+	<a href="/hot/">Hot Posts</a>
 </h2>
-<nav class=" [ deck ] " aria-labelledby="popular">
-	{% for item in collections.popular | limit(site.limits.feature) %}
+<nav class=" [ deck ] " aria-labelledby="hot">
+	{% for item in collections.hot | limit(site.limits.feature) %}
 		{{ deckItem(item, global.now, collections.all, people, webmentions, false, true, true) }}
 	{% endfor %}
 </nav>

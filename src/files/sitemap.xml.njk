@@ -5,8 +5,8 @@
 			<url>
 				<loc>{{ site.url + item.url }}</loc>
 				<lastmod>{{ item.data.update | default(item.date) | default(global.now) | rfcDate }}</lastmod>
-				<changefreq>{{ item.data.sitemap.changefreq | default('monthly') }}</changefreq>
-				<priority>{{ item.data.sitemap.priority | default('0.5') }}</priority>
+				<changefreq>{{ item.data.sitemap.changefreq | default(site.sitemap.changefreq) }}</changefreq>
+				<priority>{{ item.data.sitemap.priority | default(site.sitemap.priority) }}</priority>
 			</url>
 		{% endif %}
 	{% endfor %}
