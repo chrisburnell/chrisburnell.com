@@ -367,7 +367,7 @@ module.exports = {
 				return entry
 			})
 			.sort((a, b) => {
-				return b["wm-received"] - a["wm-received"]
+				return a["wm-received"] - b["wm-received"]
 			})
 	},
 }
