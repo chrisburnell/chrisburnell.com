@@ -5,7 +5,8 @@ description: How to make powerful use of CSS Variables, colour spaces, and the c
 tags:
   - css
   - scss
-# syndicate_to:
+syndicate_to:
+  - https://twitter.com/iamchrisburnell/status/1465268696440582148
 ---
 
 Even though I publicly released [Bowhead](/bowhead/) a little over a year ago, I’ve been using it across my website and other projects for some years now. In that time, it has evolved and changed, but the core principle of *what it does* has never changed: assign any reused CSS values to variables and put them into <q>value-type</q> maps which correspond to specific CSS properties and refer to your property-values through these maps.
