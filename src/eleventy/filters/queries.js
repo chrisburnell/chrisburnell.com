@@ -367,7 +367,7 @@ module.exports = {
 				return entry
 			})
 			.sort((a, b) => {
-				return dateFilters.epoch(a["wm-received"]) - dateFilters.epoch(b["wm-received"])
+				return dateFilters.epoch(a.published || a["wm-received"]) - dateFilters.epoch(b.published || b["wm-received"])
 			})
 	},
 }

@@ -3,10 +3,11 @@ const uniqBy = require("lodash/uniqBy")
 const { AssetCache } = require("@11ty/eleventy-cache-assets")
 
 const site = require("./site.json")
+const dateFilters = require("../eleventy/filters/dates.js")
 const queryFilters = require("../eleventy/filters/queries.js")
 
 const domain = queryFilters.getHost(site.url)
-const duration = "23h"
+const duration = "10m"
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -36,8 +37,12 @@ const getWebmentions = async () => {
 		const response = await fetch(url)
 		if (response.ok) {
 			const feed = await response.json()
-			console.log(`[${queryFilters.getHost(site.url)}] ${feed.children.length} new Webmentions fetched.`)
-			webmentions = Object.assign(webmentions, feed)
+			if (feed.children.length) {
+				console.log(`[${queryFilters.getHost(site.url)}] ${feed.children.length} new Webmentions fetched into cache.`)
+			}
+			webmentions.children = [...feed.children, ...webmentions.children].sort((a, b) => {
+				return dateFilters.epoch(b.published || b["wm-received"]) - dateFilters.epoch(a.published || a["wm-received"])
+			})
 			await asset.save(webmentions, "json")
 			return webmentions
 		}
@@ -51,7 +56,7 @@ module.exports = async () => {
 	let webmentions = {}
 
 	// Sort Webmentions into groups by target
-	for (let webmention of rawWebmentions.children) {
+	rawWebmentions.children.forEach((webmention) => {
 		// Get the target of the Webmention and fix it up
 		let url = queryFilters.getBaseUrl(queryFilters.fixUrl(webmention["wm-target"].replace(/\/?$/, "/")))
 
@@ -60,9 +65,9 @@ module.exports = async () => {
 		}
 
 		webmentions[url].push(webmention)
-	}
+	})
 
-	// Sort Webmentions in groups by url
+	// Sort Webmentions in groups by url and remove duplicates by wm-id
 	for (let url in webmentions) {
 		webmentions[url] = uniqBy(webmentions[url], (item) => {
 			return item["wm-id"]
