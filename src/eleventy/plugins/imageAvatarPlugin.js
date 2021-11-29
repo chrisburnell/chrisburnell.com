@@ -60,10 +60,6 @@ async function storeAvatar(id, classes = "") {
 	return markup
 }
 
-function webmentionsEnabled() {
-	return process.env.ELEVENTY_FEATURES && process.env.ELEVENTY_FEATURES.split(",").indexOf("webmentions") > -1
-}
-
 module.exports = function (config) {
 	let twitterUsernames, mastodonHandles, domains
 
@@ -73,29 +69,27 @@ module.exports = function (config) {
 		domains = new Set()
 	})
 
-	if (webmentionsEnabled()) {
-		config.on("afterBuild", () => {
-			let array = Array.from(twitterUsernames)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
-			TwitterAvatarUrl(array).then((results) => {
-				for (let result of results) {
-					fetchImageData(result.username, result.url.large)
-				}
-			})
-
-			array = Array.from(mastodonHandles)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
-			for (let mastodonHandle of array) {
-				fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
-			}
-
-			array = Array.from(domains)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
-			for (let domain of array) {
-				fetchImageData(domain.url, domain.photo)
+	config.on("afterBuild", () => {
+		let array = Array.from(twitterUsernames)
+		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
+		TwitterAvatarUrl(array).then((results) => {
+			for (let result of results) {
+				fetchImageData(result.username, result.url.large)
 			}
 		})
-	}
+
+		array = Array.from(mastodonHandles)
+		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
+		for (let mastodonHandle of array) {
+			fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
+		}
+
+		array = Array.from(domains)
+		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
+		for (let domain of array) {
+			fetchImageData(domain.url, domain.photo)
+		}
+	})
 
 	config.addNunjucksAsyncShortcode("avatar", async function (photo, url, authorUrl, classes = "") {
 		const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)

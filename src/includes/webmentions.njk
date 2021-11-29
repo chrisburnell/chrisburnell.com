@@ -22,7 +22,7 @@
 									{%- set authorName = webmention.author.name | default('Anonymous') -%}
 									{%- set authorUrl = webmention.author.url -%}
 									{%- set webmentionDate = published | default(webmention['wm-received']) -%}
-									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
+									<li id="webmention-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
 										<a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ webmention.url }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
 											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
 											<span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>

@@ -22,8 +22,8 @@ It was during a pair programming exercise recently that I had a moment of enligh
 
 First, we need to run through a checklist to make sure we’re prepared to build the collection:
 
-0. Set yourself up with [IndieAuth](https://indieauth.com/) and [WebMention.io](https://webmention.io/)
-0. [Pull in WebMentions as cached data into your repository](https://gist.github.com/chrisburnell/4e29dcf84431808b6c915d87a3b5790e)
+0. Set yourself up with [IndieAuth](https://indieauth.com/) and [Webmention.io](https://webmention.io/)
+0. [Pull in Webmentions as cached data into your repository](https://gist.github.com/chrisburnell/4e29dcf84431808b6c915d87a3b5790e)
     - Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in an `.env` file.
     - This is heavily inspired and in places downright taken from [Sia Karamalegos](https://sia.codes/posts/webmentions-eleventy-in-depth/), [Max Böck](https://github.com/maxboeck/eleventy-webmentions/blob/master/_data/webmentions.js), and [Zach Leatherman](https://github.com/zachleat/zachleat.com/blob/master/_data/webmentions.js)—many thanks to them for putting most of the work here!
 0. [Implement a way to pair webmentions with posts](https://gist.github.com/chrisburnell/36134bbb26234a4d92423e352a693f44)
@@ -67,15 +67,15 @@ module.exports = function(eleventyConfig) {
 
 ## What's going on here?
 
-0. Wait for the fetch/cache lookup for WebMentions to resolve and assign it to a `const`.
+0. Wait for the fetch/cache lookup for Webmentions to resolve and assign it to a `const`.
 0. Begin creating the collection by matching pages that have the `post` tag.
     - *Narrow the matching however you like!*
 0. Check that pages are not drafts
-    - *Although, it is unlikely that drafts would have many WebMentions!*
-0. Check that pages have WebMentions at all—if they do not, discard them from the collection.
+    - *Although, it is unlikely that drafts would have many Webmentions!*
+0. Check that pages have Webmentions at all—if they do not, discard them from the collection.
 0. Sort pages by `date`—this is to ensure that pages with equal popularity appear in chronological order.
     - *This step is optional if pages don’t have a *`date`*.*
-0. Sort pages by their number of WebMentions.
+0. Sort pages by their number of Webmentions.
 0. Limit the collection to `10` items or less; otherwise, we could be generating an enormous set of data that we probably don’t need all of.
     - Once again, this step is optional if you do want to utilise the full ordered collection.
 
