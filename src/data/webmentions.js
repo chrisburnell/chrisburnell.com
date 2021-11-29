@@ -14,7 +14,7 @@ require("dotenv").config()
 
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
-const getWebmentions = async () => {
+const fetchWebmentions = async () => {
 	let asset = new AssetCache("webmentions")
 	asset.ensureDir()
 
@@ -52,7 +52,7 @@ const getWebmentions = async () => {
 }
 
 module.exports = async () => {
-	const rawWebmentions = await getWebmentions()
+	const rawWebmentions = await fetchWebmentions()
 	let webmentions = {}
 
 	// Sort Webmentions into groups by target
