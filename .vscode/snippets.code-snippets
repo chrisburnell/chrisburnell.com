@@ -1,5 +1,5 @@
 {
-  "CSS Variable Fallback": {
+  "Bowhead Variable": {
     "description": "De-abstracts variables from their colloquial names into their programmatic goodness and provides a fallback to the CSS Variables.",
     "scope": "scss",
     "prefix": "v",
@@ -7,12 +7,20 @@
       "@include v($1, $2);"
     ]
   },
+  "HSL Colour": {
+    "description": "Uses Bowhead to pull in HSL (and opacity) variables in a way that embraces the cascade.",
+    "scope": "scss",
+    "prefix": "h",
+    "body": [
+      "@include h($1);"
+    ]
+  },
   "Media Query": {
     "description": "Media Query",
     "scope": "scss",
     "prefix": "m",
     "body": [
-        "@include media(\"screen\", \"$1:$2\") {$3}"
+        "@include media(\"screen\", \"$1:$2\") {$0}"
     ]
   },
   "Query Selector": {
