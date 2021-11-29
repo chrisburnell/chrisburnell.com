@@ -8,7 +8,7 @@ const methods = require("../../data/postingMethods.json")
 const syndicationTargets = require("../../data/syndicationTargets.json")
 const urlReplacements = require("../../data/urlReplacements.json")
 
-const collectionFilters = require("./collections.js")
+const dateFilters = require("./dates.js")
 
 const allowedHTML = {
 	allowedTags: ["b", "i", "em", "strong", "a"],
@@ -367,7 +367,7 @@ module.exports = {
 				return entry
 			})
 			.sort((a, b) => {
-				return a["wm-received"] - b["wm-received"]
+				return dateFilters.epoch(a["wm-received"]) - dateFilters.epoch(b["wm-received"])
 			})
 	},
 }
