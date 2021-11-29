@@ -29,7 +29,7 @@ module.exports = async () => {
 
 	// Sort webmentions into groups by target
 	for (let webmention of rawWebmentions.children) {
-		let url = queryFilters.getBaseUrl(queryFilters.fixUrl(webmention["wm-target"]))
+		let url = queryFilters.getBaseUrl(queryFilters.fixUrl(webmention["wm-target"].replace(/\/?$/, "/")))
 
 		if (!webmentions[url]) {
 			webmentions[url] = []

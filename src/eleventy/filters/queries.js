@@ -8,6 +8,8 @@ const methods = require("../../data/postingMethods.json")
 const syndicationTargets = require("../../data/syndicationTargets.json")
 const urlReplacements = require("../../data/urlReplacements.json")
 
+const collectionFilters = require("./collections.js")
+
 const allowedHTML = {
 	allowedTags: ["b", "i", "em", "strong", "a"],
 	allowedAttributes: {
@@ -217,47 +219,12 @@ module.exports = {
 		return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
 			const regex = new RegExp(key, "g")
 			return accumulator.replace(regex, value)
-		}, url.replace(/\/?$/, "/"))
+		}, url)
 	},
 	getBaseUrl: (url) => {
 		let hashSplit = url.split("#")
 		let queryparamSplit = hashSplit[0].split("?")
 		return queryparamSplit[0]
-	},
-	getWebmentions: (webmentions, url, allowedTypes) => {
-		url = absoluteURL(url)
-
-		if (!url || !webmentions || !webmentions[url]) {
-			return []
-		}
-
-		if (!allowedTypes) {
-			allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
-		} else if (typeof allowedTypes === "string") {
-			allowedTypes = [allowedTypes]
-		}
-
-		return webmentions[url]
-			.filter((entry) => {
-				return allowedTypes.includes(entry["wm-property"])
-			})
-			.filter((entry) => {
-				const { author } = entry
-				return !!author && !!author.name
-			})
-			.map((entry) => {
-				if (!("content" in entry)) {
-					return entry
-				}
-				const { html, text } = entry.content
-				if (html) {
-					// really long html mentions, usually newsletters or compilations
-					entry.content.value = html.length > 2000 ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>` : sanitizeHTML(html, allowedHTML)
-				} else {
-					entry.content.value = sanitizeHTML(text, allowedHTML)
-				}
-				return entry
-			})
 	},
 	getPerson: (people, value, intent) => {
 		if (!people) {
@@ -364,5 +331,43 @@ module.exports = {
 			return value.twitter || value
 		}
 		return value.title || value
+	},
+	getWebmentions: (webmentions, url, allowedTypes) => {
+		url = absoluteURL(url)
+
+		if (!url || !webmentions || !webmentions[url]) {
+			return []
+		}
+
+		if (!allowedTypes) {
+			allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
+		} else if (typeof allowedTypes === "string") {
+			allowedTypes = [allowedTypes]
+		}
+
+		return webmentions[url]
+			.filter((entry) => {
+				return allowedTypes.includes(entry["wm-property"])
+			})
+			.filter((entry) => {
+				const { author } = entry
+				return !!author && !!author.name
+			})
+			.map((entry) => {
+				if (!("content" in entry)) {
+					return entry
+				}
+				const { html, text } = entry.content
+				if (html) {
+					// really long html mentions, usually newsletters or compilations
+					entry.content.value = html.length > 2000 ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>` : sanitizeHTML(html, allowedHTML)
+				} else {
+					entry.content.value = sanitizeHTML(text, allowedHTML)
+				}
+				return entry
+			})
+			.sort((a, b) => {
+				return b["wm-received"] - a["wm-received"]
+			})
 	},
 }
